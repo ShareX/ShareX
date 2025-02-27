@@ -126,9 +126,6 @@
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
     <value>設定をクリップボードにコピーしました。</value>
   </data>
-  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
-    <value>大 (正方形) 160x160</value>
-  </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>秒</value>
   </data>
@@ -346,9 +343,6 @@
   <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
     <value>アクティブ モニターをキャプチャー</value>
   </data>
-  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
-    <value>小  160x160</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>印刷</value>
   </data>
@@ -448,9 +442,6 @@
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>ファイル名に番号を追加</value>
   </data>
-  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
-    <value>大 640x640</value>
-  </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>年 (2桁)</value>
   </data>
@@ -498,9 +489,6 @@
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>描画: カーソル</value>
-  </data>
-  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
-    <value>特大 1024x1024</value>
   </data>
   <data name="LinearGradientMode_Horizontal" xml:space="preserve">
     <value>水平方向</value>
@@ -794,9 +782,6 @@
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>最近使用した領域の動画キャプチャー (GIF) を開始/停止</value>
   </data>
-  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
-    <value>小 (正方形) 90x90</value>
-  </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>モニター テスト</value>
   </data>
@@ -967,9 +952,6 @@
   </data>
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
     <value>最近使用した領域の自動キャプチャーを開始</value>
-  </data>
-  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
-    <value>中 320x320</value>
   </data>
   <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
     <value>元に戻す</value>

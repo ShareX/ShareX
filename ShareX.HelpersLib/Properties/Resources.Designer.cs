@@ -2108,60 +2108,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Big square.
-        /// </summary>
-        internal static string ImgurThumbnailType_Big_Square {
-            get {
-                return ResourceManager.GetString("ImgurThumbnailType_Big_Square", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Huge thumbnail.
-        /// </summary>
-        internal static string ImgurThumbnailType_Huge_Thumbnail {
-            get {
-                return ResourceManager.GetString("ImgurThumbnailType_Huge_Thumbnail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Large thumbnail.
-        /// </summary>
-        internal static string ImgurThumbnailType_Large_Thumbnail {
-            get {
-                return ResourceManager.GetString("ImgurThumbnailType_Large_Thumbnail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Medium thumbnail.
-        /// </summary>
-        internal static string ImgurThumbnailType_Medium_Thumbnail {
-            get {
-                return ResourceManager.GetString("ImgurThumbnailType_Medium_Thumbnail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Small square.
-        /// </summary>
-        internal static string ImgurThumbnailType_Small_Square {
-            get {
-                return ResourceManager.GetString("ImgurThumbnailType_Small_Square", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Small thumbnail.
-        /// </summary>
-        internal static string ImgurThumbnailType_Small_Thumbnail {
-            get {
-                return ResourceManager.GetString("ImgurThumbnailType_Small_Thumbnail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Backward diagonal.
         /// </summary>
         internal static string LinearGradientMode_BackwardDiagonal {

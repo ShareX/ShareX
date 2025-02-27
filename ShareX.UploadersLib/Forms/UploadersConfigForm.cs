@@ -161,22 +161,22 @@ namespace ShareX.UploadersLib
         {
             #region Imgur
 
-            oauth2Imgur.Enabled = Config.ImgurAccountType == AccountType.User;
+            //oauth2Imgur.Enabled = Config.ImgurAccountType == AccountType.User;
 
-            if (OAuth2Info.CheckOAuth(Config.ImgurOAuth2Info))
-            {
-                oauth2Imgur.Status = OAuthLoginStatus.LoginSuccessful;
-                btnImgurRefreshAlbumList.Enabled = true;
-            }
+            //if (OAuth2Info.CheckOAuth(Config.ImgurOAuth2Info))
+            //{
+            //    oauth2Imgur.Status = OAuthLoginStatus.LoginSuccessful;
+            //    btnImgurRefreshAlbumList.Enabled = true;
+            //}
 
-            atcImgurAccountType.SelectedAccountType = Config.ImgurAccountType;
-            cbImgurDirectLink.Checked = Config.ImgurDirectLink;
-            cbImgurThumbnailType.Items.Clear();
-            cbImgurThumbnailType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImgurThumbnailType>());
-            cbImgurThumbnailType.SelectedIndex = (int)Config.ImgurThumbnailType;
-            cbImgurUseGIFV.Checked = Config.ImgurUseGIFV;
-            cbImgurUploadSelectedAlbum.Checked = Config.ImgurUploadSelectedAlbum;
-            ImgurFillAlbumList();
+            //atcImgurAccountType.SelectedAccountType = Config.ImgurAccountType;
+            //cbImgurDirectLink.Checked = Config.ImgurDirectLink;
+            //cbImgurThumbnailType.Items.Clear();
+            //cbImgurThumbnailType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImgurThumbnailType>());
+            //cbImgurThumbnailType.SelectedIndex = (int)Config.ImgurThumbnailType;
+            //cbImgurUseGIFV.Checked = Config.ImgurUseGIFV;
+            //cbImgurUploadSelectedAlbum.Checked = Config.ImgurUploadSelectedAlbum;
+            //ImgurFillAlbumList();
 
             #endregion Imgur
 
@@ -797,73 +797,73 @@ namespace ShareX.UploadersLib
 
         #region Imgur
 
-        private void atcImgurAccountType_AccountTypeChanged(AccountType accountType)
-        {
-            Config.ImgurAccountType = accountType;
-            oauth2Imgur.Enabled = Config.ImgurAccountType == AccountType.User;
-        }
+        //private void atcImgurAccountType_AccountTypeChanged(AccountType accountType)
+        //{
+        //    Config.ImgurAccountType = accountType;
+        //    oauth2Imgur.Enabled = Config.ImgurAccountType == AccountType.User;
+        //}
 
-        private void oauth2Imgur_OpenButtonClicked()
-        {
-            OAuth2Info oauth = new OAuth2Info(APIKeys.ImgurClientID, APIKeys.ImgurClientSecret);
-            Config.ImgurOAuth2Info = OAuth2Open(new Imgur(oauth));
-        }
+        //private void oauth2Imgur_OpenButtonClicked()
+        //{
+        //    OAuth2Info oauth = new OAuth2Info(APIKeys.ImgurClientID, APIKeys.ImgurClientSecret);
+        //    Config.ImgurOAuth2Info = OAuth2Open(new Imgur(oauth));
+        //}
 
-        private void oauth2Imgur_CompleteButtonClicked(string code)
-        {
-            btnImgurRefreshAlbumList.Enabled = OAuth2Complete(new Imgur(Config.ImgurOAuth2Info), code, oauth2Imgur);
-        }
+        //private void oauth2Imgur_CompleteButtonClicked(string code)
+        //{
+        //    btnImgurRefreshAlbumList.Enabled = OAuth2Complete(new Imgur(Config.ImgurOAuth2Info), code, oauth2Imgur);
+        //}
 
-        private void oauth2Imgur_ClearButtonClicked()
-        {
-            Config.ImgurOAuth2Info = null;
-        }
+        //private void oauth2Imgur_ClearButtonClicked()
+        //{
+        //    Config.ImgurOAuth2Info = null;
+        //}
 
-        private void oauth2Imgur_RefreshButtonClicked()
-        {
-            btnImgurRefreshAlbumList.Enabled = OAuth2Refresh(new Imgur(Config.ImgurOAuth2Info), oauth2Imgur);
-        }
+        //private void oauth2Imgur_RefreshButtonClicked()
+        //{
+        //    btnImgurRefreshAlbumList.Enabled = OAuth2Refresh(new Imgur(Config.ImgurOAuth2Info), oauth2Imgur);
+        //}
 
-        private void cbImgurDirectLink_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.ImgurDirectLink = cbImgurDirectLink.Checked;
-        }
+        //private void cbImgurDirectLink_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    Config.ImgurDirectLink = cbImgurDirectLink.Checked;
+        //}
 
-        private void cbImgurThumbnailType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Config.ImgurThumbnailType = (ImgurThumbnailType)cbImgurThumbnailType.SelectedIndex;
-        }
+        //private void cbImgurThumbnailType_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    Config.ImgurThumbnailType = (ImgurThumbnailType)cbImgurThumbnailType.SelectedIndex;
+        //}
 
-        private void cbImgurUseGIFV_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.ImgurUseGIFV = cbImgurUseGIFV.Checked;
-        }
+        //private void cbImgurUseGIFV_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    Config.ImgurUseGIFV = cbImgurUseGIFV.Checked;
+        //}
 
-        private void cbImgurUploadSelectedAlbum_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.ImgurUploadSelectedAlbum = cbImgurUploadSelectedAlbum.Checked;
-        }
+        //private void cbImgurUploadSelectedAlbum_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    Config.ImgurUploadSelectedAlbum = cbImgurUploadSelectedAlbum.Checked;
+        //}
 
-        private void btnImgurRefreshAlbumList_Click(object sender, EventArgs e)
-        {
-            ImgurRefreshAlbumList();
-        }
+        //private void btnImgurRefreshAlbumList_Click(object sender, EventArgs e)
+        //{
+        //    ImgurRefreshAlbumList();
+        //}
 
-        private void lvImgurAlbumList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lvImgurAlbumList.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvImgurAlbumList.SelectedItems[0];
-                if (lvi.Tag is ImgurAlbumData albumData)
-                {
-                    Config.ImgurSelectedAlbum = albumData;
-                }
-            }
-            else
-            {
-                Config.ImgurSelectedAlbum = null;
-            }
-        }
+        //private void lvImgurAlbumList_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (lvImgurAlbumList.SelectedItems.Count > 0)
+        //    {
+        //        ListViewItem lvi = lvImgurAlbumList.SelectedItems[0];
+        //        if (lvi.Tag is ImgurAlbumData albumData)
+        //        {
+        //            Config.ImgurSelectedAlbum = albumData;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Config.ImgurSelectedAlbum = null;
+        //    }
+        //}
 
         #endregion Imgur
 

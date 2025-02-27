@@ -28,11 +28,9 @@ using System.ComponentModel;
 
 namespace ShareX.UploadersLib
 {
-    [Description("Image uploaders"), DefaultValue(Imgur)]
+    [Description("Image uploaders"), DefaultValue(FileUploader)]
     public enum ImageDestination
     {
-        [Description("Imgur")]
-        Imgur,
         [Description("ImageShack")]
         ImageShack,
         [Description("Flickr")]

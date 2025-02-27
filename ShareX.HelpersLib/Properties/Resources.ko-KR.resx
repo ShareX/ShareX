@@ -126,9 +126,6 @@
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
     <value>설정이 클립보드에 복사되었습니다.</value>
   </data>
-  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
-    <value>큰 정사각형</value>
-  </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>현재 초</value>
   </data>
@@ -337,9 +334,6 @@
   <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
     <value>활성화 된 모니터 촬영</value>
   </data>
-  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
-    <value>작은 섬네일</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>인쇄</value>
   </data>
@@ -433,9 +427,6 @@
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>파일 이름에 숫자 덧붙이기</value>
   </data>
-  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
-    <value>큰 섬네일</value>
-  </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>현재 년도 (2자리)</value>
   </data>
@@ -477,9 +468,6 @@
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>커서 그리기</value>
-  </data>
-  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
-    <value>더 큰 섬네일</value>
   </data>
   <data name="LinearGradientMode_Horizontal" xml:space="preserve">
     <value>가로</value>
@@ -746,9 +734,6 @@
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>마지막 영역으로 화면 녹화 (GIF)</value>
   </data>
-  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
-    <value>작은 정사각형</value>
-  </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>모니터 테스트</value>
   </data>
@@ -901,9 +886,6 @@
   </data>
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
     <value>마지막 영역으로 자동 촬영</value>
-  </data>
-  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
-    <value>중간 섬네일</value>
   </data>
   <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
     <value>파일을 클립보드에 복사하기</value>

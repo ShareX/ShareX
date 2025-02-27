@@ -36,19 +36,6 @@ namespace ShareX.UploadersLib
     {
         #region Image uploaders
 
-        #region Imgur
-
-        public AccountType ImgurAccountType { get; set; } = AccountType.Anonymous;
-        public bool ImgurDirectLink { get; set; } = true;
-        public ImgurThumbnailType ImgurThumbnailType { get; set; } = ImgurThumbnailType.Medium_Thumbnail;
-        public bool ImgurUseGIFV { get; set; } = true;
-        public OAuth2Info ImgurOAuth2Info { get; set; } = null;
-        public bool ImgurUploadSelectedAlbum { get; set; } = false;
-        public ImgurAlbumData ImgurSelectedAlbum { get; set; } = null;
-        public List<ImgurAlbumData> ImgurAlbumList { get; set; } = null;
-
-        #endregion Imgur
-
         #region ImageShack
 
         public ImageShackOptions ImageShackSettings { get; set; } = new ImageShackOptions();

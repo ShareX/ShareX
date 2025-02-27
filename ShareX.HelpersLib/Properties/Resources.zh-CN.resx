@@ -126,9 +126,6 @@
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
     <value>设置已复制到剪贴板。</value>
   </data>
-  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
-    <value>大正方形</value>
-  </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>当前秒</value>
   </data>
@@ -346,9 +343,6 @@
   <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
     <value>截图活动显示器</value>
   </data>
-  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
-    <value>小缩略图</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>打印</value>
   </data>
@@ -448,9 +442,6 @@
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>附加数字到文件名</value>
   </data>
-  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
-    <value>大缩略图</value>
-  </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>当前年（2 位数字）</value>
   </data>
@@ -498,9 +489,6 @@
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>绘图：指针</value>
-  </data>
-  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
-    <value>巨大缩略图</value>
   </data>
   <data name="LinearGradientMode_Horizontal" xml:space="preserve">
     <value>水平</value>
@@ -794,9 +782,6 @@
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>使用上一次的区域开始屏幕录制（GIF）</value>
   </data>
-  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
-    <value>小正方形</value>
-  </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>显示器测试</value>
   </data>
@@ -967,9 +952,6 @@
   </data>
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
     <value>使用最后一个区域开始自动采集</value>
-  </data>
-  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
-    <value>中缩略图</value>
   </data>
   <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
     <value>撤销</value>

@@ -4107,91 +4107,91 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tcImageUploaders, "tcImageUploaders");
             this.tcImageUploaders.Name = "tcImageUploaders";
             this.tcImageUploaders.SelectedIndex = 0;
-            // 
-            // tpImgur
-            // 
-            this.tpImgur.BackColor = System.Drawing.SystemColors.Window;
-            this.tpImgur.Controls.Add(this.cbImgurUseGIFV);
-            this.tpImgur.Controls.Add(this.cbImgurUploadSelectedAlbum);
-            this.tpImgur.Controls.Add(this.cbImgurDirectLink);
-            this.tpImgur.Controls.Add(this.atcImgurAccountType);
-            this.tpImgur.Controls.Add(this.oauth2Imgur);
-            this.tpImgur.Controls.Add(this.lvImgurAlbumList);
-            this.tpImgur.Controls.Add(this.btnImgurRefreshAlbumList);
-            this.tpImgur.Controls.Add(this.cbImgurThumbnailType);
-            this.tpImgur.Controls.Add(this.lblImgurThumbnailType);
-            resources.ApplyResources(this.tpImgur, "tpImgur");
-            this.tpImgur.Name = "tpImgur";
-            // 
-            // cbImgurUseGIFV
-            // 
-            resources.ApplyResources(this.cbImgurUseGIFV, "cbImgurUseGIFV");
-            this.cbImgurUseGIFV.Name = "cbImgurUseGIFV";
-            this.cbImgurUseGIFV.UseVisualStyleBackColor = true;
-            this.cbImgurUseGIFV.CheckedChanged += new System.EventHandler(this.cbImgurUseGIFV_CheckedChanged);
-            // 
-            // cbImgurUploadSelectedAlbum
-            // 
-            resources.ApplyResources(this.cbImgurUploadSelectedAlbum, "cbImgurUploadSelectedAlbum");
-            this.cbImgurUploadSelectedAlbum.Name = "cbImgurUploadSelectedAlbum";
-            this.cbImgurUploadSelectedAlbum.UseVisualStyleBackColor = true;
-            this.cbImgurUploadSelectedAlbum.CheckedChanged += new System.EventHandler(this.cbImgurUploadSelectedAlbum_CheckedChanged);
-            // 
-            // cbImgurDirectLink
-            // 
-            resources.ApplyResources(this.cbImgurDirectLink, "cbImgurDirectLink");
-            this.cbImgurDirectLink.Name = "cbImgurDirectLink";
-            this.cbImgurDirectLink.UseVisualStyleBackColor = true;
-            this.cbImgurDirectLink.CheckedChanged += new System.EventHandler(this.cbImgurDirectLink_CheckedChanged);
-            // 
-            // lvImgurAlbumList
-            // 
-            this.lvImgurAlbumList.AllowColumnSort = true;
-            this.lvImgurAlbumList.AutoFillColumn = true;
-            this.lvImgurAlbumList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chImgurID,
-            this.chImgurTitle,
-            this.chImgurDescription});
-            this.lvImgurAlbumList.FullRowSelect = true;
-            this.lvImgurAlbumList.HideSelection = false;
-            resources.ApplyResources(this.lvImgurAlbumList, "lvImgurAlbumList");
-            this.lvImgurAlbumList.MultiSelect = false;
-            this.lvImgurAlbumList.Name = "lvImgurAlbumList";
-            this.lvImgurAlbumList.UseCompatibleStateImageBehavior = false;
-            this.lvImgurAlbumList.View = System.Windows.Forms.View.Details;
-            this.lvImgurAlbumList.SelectedIndexChanged += new System.EventHandler(this.lvImgurAlbumList_SelectedIndexChanged);
-            // 
-            // chImgurID
-            // 
-            resources.ApplyResources(this.chImgurID, "chImgurID");
-            // 
-            // chImgurTitle
-            // 
-            resources.ApplyResources(this.chImgurTitle, "chImgurTitle");
-            // 
-            // chImgurDescription
-            // 
-            resources.ApplyResources(this.chImgurDescription, "chImgurDescription");
-            // 
-            // btnImgurRefreshAlbumList
-            // 
-            resources.ApplyResources(this.btnImgurRefreshAlbumList, "btnImgurRefreshAlbumList");
-            this.btnImgurRefreshAlbumList.Name = "btnImgurRefreshAlbumList";
-            this.btnImgurRefreshAlbumList.UseVisualStyleBackColor = true;
-            this.btnImgurRefreshAlbumList.Click += new System.EventHandler(this.btnImgurRefreshAlbumList_Click);
-            // 
-            // cbImgurThumbnailType
-            // 
-            this.cbImgurThumbnailType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbImgurThumbnailType.FormattingEnabled = true;
-            resources.ApplyResources(this.cbImgurThumbnailType, "cbImgurThumbnailType");
-            this.cbImgurThumbnailType.Name = "cbImgurThumbnailType";
-            this.cbImgurThumbnailType.SelectedIndexChanged += new System.EventHandler(this.cbImgurThumbnailType_SelectedIndexChanged);
-            // 
-            // lblImgurThumbnailType
-            // 
-            resources.ApplyResources(this.lblImgurThumbnailType, "lblImgurThumbnailType");
-            this.lblImgurThumbnailType.Name = "lblImgurThumbnailType";
+            //// 
+            //// tpImgur
+            //// 
+            //this.tpImgur.BackColor = System.Drawing.SystemColors.Window;
+            //this.tpImgur.Controls.Add(this.cbImgurUseGIFV);
+            //this.tpImgur.Controls.Add(this.cbImgurUploadSelectedAlbum);
+            //this.tpImgur.Controls.Add(this.cbImgurDirectLink);
+            //this.tpImgur.Controls.Add(this.atcImgurAccountType);
+            //this.tpImgur.Controls.Add(this.oauth2Imgur);
+            //this.tpImgur.Controls.Add(this.lvImgurAlbumList);
+            //this.tpImgur.Controls.Add(this.btnImgurRefreshAlbumList);
+            //this.tpImgur.Controls.Add(this.cbImgurThumbnailType);
+            //this.tpImgur.Controls.Add(this.lblImgurThumbnailType);
+            //resources.ApplyResources(this.tpImgur, "tpImgur");
+            //this.tpImgur.Name = "tpImgur";
+            //// 
+            //// cbImgurUseGIFV
+            //// 
+            //resources.ApplyResources(this.cbImgurUseGIFV, "cbImgurUseGIFV");
+            //this.cbImgurUseGIFV.Name = "cbImgurUseGIFV";
+            //this.cbImgurUseGIFV.UseVisualStyleBackColor = true;
+            //this.cbImgurUseGIFV.CheckedChanged += new System.EventHandler(this.cbImgurUseGIFV_CheckedChanged);
+            //// 
+            //// cbImgurUploadSelectedAlbum
+            //// 
+            //resources.ApplyResources(this.cbImgurUploadSelectedAlbum, "cbImgurUploadSelectedAlbum");
+            //this.cbImgurUploadSelectedAlbum.Name = "cbImgurUploadSelectedAlbum";
+            //this.cbImgurUploadSelectedAlbum.UseVisualStyleBackColor = true;
+            //this.cbImgurUploadSelectedAlbum.CheckedChanged += new System.EventHandler(this.cbImgurUploadSelectedAlbum_CheckedChanged);
+            //// 
+            //// cbImgurDirectLink
+            //// 
+            //resources.ApplyResources(this.cbImgurDirectLink, "cbImgurDirectLink");
+            //this.cbImgurDirectLink.Name = "cbImgurDirectLink";
+            //this.cbImgurDirectLink.UseVisualStyleBackColor = true;
+            //this.cbImgurDirectLink.CheckedChanged += new System.EventHandler(this.cbImgurDirectLink_CheckedChanged);
+            //// 
+            //// lvImgurAlbumList
+            //// 
+            //this.lvImgurAlbumList.AllowColumnSort = true;
+            //this.lvImgurAlbumList.AutoFillColumn = true;
+            //this.lvImgurAlbumList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            //this.chImgurID,
+            //this.chImgurTitle,
+            //this.chImgurDescription});
+            //this.lvImgurAlbumList.FullRowSelect = true;
+            //this.lvImgurAlbumList.HideSelection = false;
+            //resources.ApplyResources(this.lvImgurAlbumList, "lvImgurAlbumList");
+            //this.lvImgurAlbumList.MultiSelect = false;
+            //this.lvImgurAlbumList.Name = "lvImgurAlbumList";
+            //this.lvImgurAlbumList.UseCompatibleStateImageBehavior = false;
+            //this.lvImgurAlbumList.View = System.Windows.Forms.View.Details;
+            //this.lvImgurAlbumList.SelectedIndexChanged += new System.EventHandler(this.lvImgurAlbumList_SelectedIndexChanged);
+            //// 
+            //// chImgurID
+            //// 
+            //resources.ApplyResources(this.chImgurID, "chImgurID");
+            //// 
+            //// chImgurTitle
+            //// 
+            //resources.ApplyResources(this.chImgurTitle, "chImgurTitle");
+            //// 
+            //// chImgurDescription
+            //// 
+            //resources.ApplyResources(this.chImgurDescription, "chImgurDescription");
+            //// 
+            //// btnImgurRefreshAlbumList
+            //// 
+            //resources.ApplyResources(this.btnImgurRefreshAlbumList, "btnImgurRefreshAlbumList");
+            //this.btnImgurRefreshAlbumList.Name = "btnImgurRefreshAlbumList";
+            //this.btnImgurRefreshAlbumList.UseVisualStyleBackColor = true;
+            //this.btnImgurRefreshAlbumList.Click += new System.EventHandler(this.btnImgurRefreshAlbumList_Click);
+            //// 
+            //// cbImgurThumbnailType
+            //// 
+            //this.cbImgurThumbnailType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            //this.cbImgurThumbnailType.FormattingEnabled = true;
+            //resources.ApplyResources(this.cbImgurThumbnailType, "cbImgurThumbnailType");
+            //this.cbImgurThumbnailType.Name = "cbImgurThumbnailType";
+            //this.cbImgurThumbnailType.SelectedIndexChanged += new System.EventHandler(this.cbImgurThumbnailType_SelectedIndexChanged);
+            //// 
+            //// lblImgurThumbnailType
+            //// 
+            //resources.ApplyResources(this.lblImgurThumbnailType, "lblImgurThumbnailType");
+            //this.lblImgurThumbnailType.Name = "lblImgurThumbnailType";
             // 
             // tpImageShack
             // 
@@ -4500,23 +4500,23 @@ namespace ShareX.UploadersLib
             this.tttvMain.SeparatorColor = System.Drawing.SystemColors.ControlDark;
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 230;
-            // 
-            // atcImgurAccountType
-            // 
-            resources.ApplyResources(this.atcImgurAccountType, "atcImgurAccountType");
-            this.atcImgurAccountType.Name = "atcImgurAccountType";
-            this.atcImgurAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            this.atcImgurAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcImgurAccountType_AccountTypeChanged);
-            // 
-            // oauth2Imgur
-            // 
-            resources.ApplyResources(this.oauth2Imgur, "oauth2Imgur");
-            this.oauth2Imgur.Name = "oauth2Imgur";
-            this.oauth2Imgur.UserInfo = null;
-            this.oauth2Imgur.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Imgur_OpenButtonClicked);
-            this.oauth2Imgur.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Imgur_CompleteButtonClicked);
-            this.oauth2Imgur.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Imgur_ClearButtonClicked);
-            this.oauth2Imgur.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Imgur_RefreshButtonClicked);
+            //// 
+            //// atcImgurAccountType
+            //// 
+            //resources.ApplyResources(this.atcImgurAccountType, "atcImgurAccountType");
+            //this.atcImgurAccountType.Name = "atcImgurAccountType";
+            //this.atcImgurAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
+            //this.atcImgurAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcImgurAccountType_AccountTypeChanged);
+            //// 
+            //// oauth2Imgur
+            //// 
+            //resources.ApplyResources(this.oauth2Imgur, "oauth2Imgur");
+            //this.oauth2Imgur.Name = "oauth2Imgur";
+            //this.oauth2Imgur.UserInfo = null;
+            //this.oauth2Imgur.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Imgur_OpenButtonClicked);
+            //this.oauth2Imgur.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Imgur_CompleteButtonClicked);
+            //this.oauth2Imgur.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Imgur_ClearButtonClicked);
+            //this.oauth2Imgur.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Imgur_RefreshButtonClicked);
             // 
             // oauthFlickr
             // 

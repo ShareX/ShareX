@@ -38,46 +38,6 @@ namespace ShareX.UploadersLib
 {
     public partial class UploadersConfigForm
     {
-        #region Imgur
-
-        private void ImgurRefreshAlbumList()
-        {
-            try
-            {
-                lvImgurAlbumList.Items.Clear();
-
-                if (OAuth2Info.CheckOAuth(Config.ImgurOAuth2Info))
-                {
-                    Config.ImgurAlbumList = new Imgur(Config.ImgurOAuth2Info).GetAlbums();
-                    ImgurFillAlbumList();
-                    lvImgurAlbumList.Focus();
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
-
-        private void ImgurFillAlbumList()
-        {
-            if (Config.ImgurAlbumList != null)
-            {
-                foreach (ImgurAlbumData album in Config.ImgurAlbumList)
-                {
-                    ListViewItem lvi = new ListViewItem(album.id ?? "");
-                    lvi.SubItems.Add(album.title ?? "");
-                    lvi.SubItems.Add(album.description ?? "");
-                    lvi.Selected = Config.ImgurSelectedAlbum != null && !string.IsNullOrEmpty(Config.ImgurSelectedAlbum.id) &&
-                        album.id.Equals(Config.ImgurSelectedAlbum.id, StringComparison.OrdinalIgnoreCase);
-                    lvi.Tag = album;
-                    lvImgurAlbumList.Items.Add(lvi);
-                }
-            }
-        }
-
-        #endregion Imgur
-
         #region Flickr
 
         private void FlickrAuthOpen()
