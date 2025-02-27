@@ -506,48 +506,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Tải lên ảnh tới</value>
   </data>
-  <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>Mật khẩu:</value>
-  </data>
-  <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>Tên người dùng:</value>
-  </data>
-  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>Mở trang chứa ảnh của tôi...</value>
-  </data>
-  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>Tải lên công khai?</value>
-  </data>
-  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
-    <value>Mở trang cá nhân công khai...</value>
-  </data>
-  <data name="btnImageShackLogin.Text" xml:space="preserve">
-    <value>Đăng nhập</value>
-  </data>
-  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>Kiểu ảnh thu nhỏ/thumbnail:</value>
-  </data>
-  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
-    <value>Làm mới danh sách album</value>
-  </data>
-  <data name="chImgurDescription.Text" xml:space="preserve">
-    <value>Mô tả</value>
-  </data>
-  <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>Tiêu đề</value>
-  </data>
-  <data name="chImgurID.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>Dùng liên kết trực tiếp</value>
-  </data>
-  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>Tải ảnh lên các album đã chọn</value>
-  </data>
-  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
-    <value>Dùng liên kết GIFV thay vì GIF</value>
-  </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Tạo album mới</value>
   </data>
@@ -886,12 +844,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="lblFTPImage.Text" xml:space="preserve">
     <value>Ảnh:</value>
-  </data>
-  <data name="tpImageShack.Text" xml:space="preserve">
-    <value>ImageShack</value>
-  </data>
-  <data name="tpImgur.Text" xml:space="preserve">
-    <value>Imgur</value>
   </data>
   <data name="lblSFTPKeyLocation.Text" xml:space="preserve">
     <value>Vị trí tệp key:</value>

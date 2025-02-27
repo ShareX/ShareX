@@ -564,45 +564,6 @@
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>上传图像至</value>
   </data>
-  <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>密码：</value>
-  </data>
-  <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>用户名：</value>
-  </data>
-  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>打开我的图片页面...</value>
-  </data>
-  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>是否公开上传?</value>
-  </data>
-  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
-    <value>打开公共资料页面...</value>
-  </data>
-  <data name="btnImageShackLogin.Text" xml:space="preserve">
-    <value>登录</value>
-  </data>
-  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>缩略图类型：</value>
-  </data>
-  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
-    <value>刷新相册列表</value>
-  </data>
-  <data name="chImgurDescription.Text" xml:space="preserve">
-    <value>描述</value>
-  </data>
-  <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>标题</value>
-  </data>
-  <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>使用直链</value>
-  </data>
-  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>上传图片到选中相册</value>
-  </data>
-  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
-    <value>使用 GIF 而不是 GIFV 链接</value>
-  </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>创建新相册</value>
   </data>
@@ -1160,12 +1121,6 @@
   </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>URL:</value>
-  </data>
-  <data name="tpImageShack.Text" xml:space="preserve">
-    <value>ImageShack</value>
-  </data>
-  <data name="tpImgur.Text" xml:space="preserve">
-    <value>Imgur</value>
   </data>
   <data name="tpLithiio.Text" xml:space="preserve">
     <value>Lithiio</value>

@@ -525,26 +525,6 @@ namespace ShareX.UploadersLib
             this.cbPastieIsPublic = new System.Windows.Forms.CheckBox();
             this.tpImageUploaders = new System.Windows.Forms.TabPage();
             this.tcImageUploaders = new System.Windows.Forms.TabControl();
-            this.tpImgur = new System.Windows.Forms.TabPage();
-            this.cbImgurUseGIFV = new System.Windows.Forms.CheckBox();
-            this.cbImgurUploadSelectedAlbum = new System.Windows.Forms.CheckBox();
-            this.cbImgurDirectLink = new System.Windows.Forms.CheckBox();
-            this.lvImgurAlbumList = new ShareX.HelpersLib.MyListView();
-            this.chImgurID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chImgurTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chImgurDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnImgurRefreshAlbumList = new System.Windows.Forms.Button();
-            this.cbImgurThumbnailType = new System.Windows.Forms.ComboBox();
-            this.lblImgurThumbnailType = new System.Windows.Forms.Label();
-            this.tpImageShack = new System.Windows.Forms.TabPage();
-            this.btnImageShackLogin = new System.Windows.Forms.Button();
-            this.btnImageShackOpenPublicProfile = new System.Windows.Forms.Button();
-            this.cbImageShackIsPublic = new System.Windows.Forms.CheckBox();
-            this.btnImageShackOpenMyImages = new System.Windows.Forms.Button();
-            this.lblImageShackUsername = new System.Windows.Forms.Label();
-            this.txtImageShackUsername = new System.Windows.Forms.TextBox();
-            this.txtImageShackPassword = new System.Windows.Forms.TextBox();
-            this.lblImageShackPassword = new System.Windows.Forms.Label();
             this.tpFlickr = new System.Windows.Forms.TabPage();
             this.cbFlickrDirectLink = new System.Windows.Forms.CheckBox();
             this.tpPhotobucket = new System.Windows.Forms.TabPage();
@@ -579,8 +559,6 @@ namespace ShareX.UploadersLib
             this.lvlVgymeUserKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.atcImgurAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.oauth2Imgur = new ShareX.UploadersLib.OAuthControl();
             this.oauthFlickr = new ShareX.UploadersLib.OAuthControl();
             this.oAuth2Gist = new ShareX.UploadersLib.OAuthControl();
             this.oauth2Dropbox = new ShareX.UploadersLib.OAuthControl();
@@ -663,8 +641,6 @@ namespace ShareX.UploadersLib
             this.tpPastie.SuspendLayout();
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
-            this.tpImgur.SuspendLayout();
-            this.tpImageShack.SuspendLayout();
             this.tpFlickr.SuspendLayout();
             this.tpPhotobucket.SuspendLayout();
             this.gbPhotobucketAlbumPath.SuspendLayout();
@@ -4098,165 +4074,13 @@ namespace ShareX.UploadersLib
             // 
             // tcImageUploaders
             // 
-            this.tcImageUploaders.Controls.Add(this.tpImgur);
-            this.tcImageUploaders.Controls.Add(this.tpImageShack);
             this.tcImageUploaders.Controls.Add(this.tpFlickr);
             this.tcImageUploaders.Controls.Add(this.tpPhotobucket);
             this.tcImageUploaders.Controls.Add(this.tpChevereto);
             this.tcImageUploaders.Controls.Add(this.tpVgyme);
             resources.ApplyResources(this.tcImageUploaders, "tcImageUploaders");
             this.tcImageUploaders.Name = "tcImageUploaders";
-            this.tcImageUploaders.SelectedIndex = 0;
-            //// 
-            //// tpImgur
-            //// 
-            //this.tpImgur.BackColor = System.Drawing.SystemColors.Window;
-            //this.tpImgur.Controls.Add(this.cbImgurUseGIFV);
-            //this.tpImgur.Controls.Add(this.cbImgurUploadSelectedAlbum);
-            //this.tpImgur.Controls.Add(this.cbImgurDirectLink);
-            //this.tpImgur.Controls.Add(this.atcImgurAccountType);
-            //this.tpImgur.Controls.Add(this.oauth2Imgur);
-            //this.tpImgur.Controls.Add(this.lvImgurAlbumList);
-            //this.tpImgur.Controls.Add(this.btnImgurRefreshAlbumList);
-            //this.tpImgur.Controls.Add(this.cbImgurThumbnailType);
-            //this.tpImgur.Controls.Add(this.lblImgurThumbnailType);
-            //resources.ApplyResources(this.tpImgur, "tpImgur");
-            //this.tpImgur.Name = "tpImgur";
-            //// 
-            //// cbImgurUseGIFV
-            //// 
-            //resources.ApplyResources(this.cbImgurUseGIFV, "cbImgurUseGIFV");
-            //this.cbImgurUseGIFV.Name = "cbImgurUseGIFV";
-            //this.cbImgurUseGIFV.UseVisualStyleBackColor = true;
-            //this.cbImgurUseGIFV.CheckedChanged += new System.EventHandler(this.cbImgurUseGIFV_CheckedChanged);
-            //// 
-            //// cbImgurUploadSelectedAlbum
-            //// 
-            //resources.ApplyResources(this.cbImgurUploadSelectedAlbum, "cbImgurUploadSelectedAlbum");
-            //this.cbImgurUploadSelectedAlbum.Name = "cbImgurUploadSelectedAlbum";
-            //this.cbImgurUploadSelectedAlbum.UseVisualStyleBackColor = true;
-            //this.cbImgurUploadSelectedAlbum.CheckedChanged += new System.EventHandler(this.cbImgurUploadSelectedAlbum_CheckedChanged);
-            //// 
-            //// cbImgurDirectLink
-            //// 
-            //resources.ApplyResources(this.cbImgurDirectLink, "cbImgurDirectLink");
-            //this.cbImgurDirectLink.Name = "cbImgurDirectLink";
-            //this.cbImgurDirectLink.UseVisualStyleBackColor = true;
-            //this.cbImgurDirectLink.CheckedChanged += new System.EventHandler(this.cbImgurDirectLink_CheckedChanged);
-            //// 
-            //// lvImgurAlbumList
-            //// 
-            //this.lvImgurAlbumList.AllowColumnSort = true;
-            //this.lvImgurAlbumList.AutoFillColumn = true;
-            //this.lvImgurAlbumList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            //this.chImgurID,
-            //this.chImgurTitle,
-            //this.chImgurDescription});
-            //this.lvImgurAlbumList.FullRowSelect = true;
-            //this.lvImgurAlbumList.HideSelection = false;
-            //resources.ApplyResources(this.lvImgurAlbumList, "lvImgurAlbumList");
-            //this.lvImgurAlbumList.MultiSelect = false;
-            //this.lvImgurAlbumList.Name = "lvImgurAlbumList";
-            //this.lvImgurAlbumList.UseCompatibleStateImageBehavior = false;
-            //this.lvImgurAlbumList.View = System.Windows.Forms.View.Details;
-            //this.lvImgurAlbumList.SelectedIndexChanged += new System.EventHandler(this.lvImgurAlbumList_SelectedIndexChanged);
-            //// 
-            //// chImgurID
-            //// 
-            //resources.ApplyResources(this.chImgurID, "chImgurID");
-            //// 
-            //// chImgurTitle
-            //// 
-            //resources.ApplyResources(this.chImgurTitle, "chImgurTitle");
-            //// 
-            //// chImgurDescription
-            //// 
-            //resources.ApplyResources(this.chImgurDescription, "chImgurDescription");
-            //// 
-            //// btnImgurRefreshAlbumList
-            //// 
-            //resources.ApplyResources(this.btnImgurRefreshAlbumList, "btnImgurRefreshAlbumList");
-            //this.btnImgurRefreshAlbumList.Name = "btnImgurRefreshAlbumList";
-            //this.btnImgurRefreshAlbumList.UseVisualStyleBackColor = true;
-            //this.btnImgurRefreshAlbumList.Click += new System.EventHandler(this.btnImgurRefreshAlbumList_Click);
-            //// 
-            //// cbImgurThumbnailType
-            //// 
-            //this.cbImgurThumbnailType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            //this.cbImgurThumbnailType.FormattingEnabled = true;
-            //resources.ApplyResources(this.cbImgurThumbnailType, "cbImgurThumbnailType");
-            //this.cbImgurThumbnailType.Name = "cbImgurThumbnailType";
-            //this.cbImgurThumbnailType.SelectedIndexChanged += new System.EventHandler(this.cbImgurThumbnailType_SelectedIndexChanged);
-            //// 
-            //// lblImgurThumbnailType
-            //// 
-            //resources.ApplyResources(this.lblImgurThumbnailType, "lblImgurThumbnailType");
-            //this.lblImgurThumbnailType.Name = "lblImgurThumbnailType";
-            // 
-            // tpImageShack
-            // 
-            this.tpImageShack.BackColor = System.Drawing.SystemColors.Window;
-            this.tpImageShack.Controls.Add(this.btnImageShackLogin);
-            this.tpImageShack.Controls.Add(this.btnImageShackOpenPublicProfile);
-            this.tpImageShack.Controls.Add(this.cbImageShackIsPublic);
-            this.tpImageShack.Controls.Add(this.btnImageShackOpenMyImages);
-            this.tpImageShack.Controls.Add(this.lblImageShackUsername);
-            this.tpImageShack.Controls.Add(this.txtImageShackUsername);
-            this.tpImageShack.Controls.Add(this.txtImageShackPassword);
-            this.tpImageShack.Controls.Add(this.lblImageShackPassword);
-            resources.ApplyResources(this.tpImageShack, "tpImageShack");
-            this.tpImageShack.Name = "tpImageShack";
-            // 
-            // btnImageShackLogin
-            // 
-            resources.ApplyResources(this.btnImageShackLogin, "btnImageShackLogin");
-            this.btnImageShackLogin.Name = "btnImageShackLogin";
-            this.btnImageShackLogin.UseVisualStyleBackColor = true;
-            this.btnImageShackLogin.Click += new System.EventHandler(this.btnImageShackLogin_Click);
-            // 
-            // btnImageShackOpenPublicProfile
-            // 
-            resources.ApplyResources(this.btnImageShackOpenPublicProfile, "btnImageShackOpenPublicProfile");
-            this.btnImageShackOpenPublicProfile.Name = "btnImageShackOpenPublicProfile";
-            this.btnImageShackOpenPublicProfile.UseVisualStyleBackColor = true;
-            this.btnImageShackOpenPublicProfile.Click += new System.EventHandler(this.btnImageShackOpenPublicProfile_Click);
-            // 
-            // cbImageShackIsPublic
-            // 
-            resources.ApplyResources(this.cbImageShackIsPublic, "cbImageShackIsPublic");
-            this.cbImageShackIsPublic.Name = "cbImageShackIsPublic";
-            this.cbImageShackIsPublic.UseVisualStyleBackColor = true;
-            this.cbImageShackIsPublic.CheckedChanged += new System.EventHandler(this.cbImageShackIsPublic_CheckedChanged);
-            // 
-            // btnImageShackOpenMyImages
-            // 
-            resources.ApplyResources(this.btnImageShackOpenMyImages, "btnImageShackOpenMyImages");
-            this.btnImageShackOpenMyImages.Name = "btnImageShackOpenMyImages";
-            this.btnImageShackOpenMyImages.UseVisualStyleBackColor = true;
-            this.btnImageShackOpenMyImages.Click += new System.EventHandler(this.btnImageShackOpenMyImages_Click);
-            // 
-            // lblImageShackUsername
-            // 
-            resources.ApplyResources(this.lblImageShackUsername, "lblImageShackUsername");
-            this.lblImageShackUsername.Name = "lblImageShackUsername";
-            // 
-            // txtImageShackUsername
-            // 
-            resources.ApplyResources(this.txtImageShackUsername, "txtImageShackUsername");
-            this.txtImageShackUsername.Name = "txtImageShackUsername";
-            this.txtImageShackUsername.TextChanged += new System.EventHandler(this.txtImageShackUsername_TextChanged);
-            // 
-            // txtImageShackPassword
-            // 
-            resources.ApplyResources(this.txtImageShackPassword, "txtImageShackPassword");
-            this.txtImageShackPassword.Name = "txtImageShackPassword";
-            this.txtImageShackPassword.UseSystemPasswordChar = true;
-            this.txtImageShackPassword.TextChanged += new System.EventHandler(this.txtImageShackPassword_TextChanged);
-            // 
-            // lblImageShackPassword
-            // 
-            resources.ApplyResources(this.lblImageShackPassword, "lblImageShackPassword");
-            this.lblImageShackPassword.Name = "lblImageShackPassword";
+            this.tcImageUploaders.SelectedIndex = 0;            
             // 
             // tpFlickr
             // 
@@ -4764,10 +4588,6 @@ namespace ShareX.UploadersLib
             this.tpPastie.PerformLayout();
             this.tpImageUploaders.ResumeLayout(false);
             this.tcImageUploaders.ResumeLayout(false);
-            this.tpImgur.ResumeLayout(false);
-            this.tpImgur.PerformLayout();
-            this.tpImageShack.ResumeLayout(false);
-            this.tpImageShack.PerformLayout();
             this.tpFlickr.ResumeLayout(false);
             this.tpFlickr.PerformLayout();
             this.tpPhotobucket.ResumeLayout(false);
@@ -4908,23 +4728,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtUpasteUserKey;
         private System.Windows.Forms.TabPage tpImageUploaders;
         private System.Windows.Forms.TabControl tcImageUploaders;
-        private OAuthControl oauth2Imgur;
-        private ShareX.HelpersLib.MyListView lvImgurAlbumList;
-        private System.Windows.Forms.ColumnHeader chImgurID;
-        private System.Windows.Forms.ColumnHeader chImgurTitle;
-        private System.Windows.Forms.ColumnHeader chImgurDescription;
-        private System.Windows.Forms.Button btnImgurRefreshAlbumList;
-        private System.Windows.Forms.ComboBox cbImgurThumbnailType;
-        private System.Windows.Forms.Label lblImgurThumbnailType;
-        private AccountTypeControl atcImgurAccountType;
-        private System.Windows.Forms.Button btnImageShackLogin;
-        private System.Windows.Forms.Button btnImageShackOpenPublicProfile;
-        private System.Windows.Forms.CheckBox cbImageShackIsPublic;
-        private System.Windows.Forms.Button btnImageShackOpenMyImages;
-        private System.Windows.Forms.Label lblImageShackUsername;
-        private System.Windows.Forms.TextBox txtImageShackUsername;
-        private System.Windows.Forms.TextBox txtImageShackPassword;
-        private System.Windows.Forms.Label lblImageShackPassword;
         private System.Windows.Forms.GroupBox gbPhotobucketAlbumPath;
         private System.Windows.Forms.Button btnPhotobucketAddAlbum;
         private System.Windows.Forms.Button btnPhotobucketRemoveAlbum;
@@ -5085,8 +4888,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.CheckBox cbPastebinRaw;
         private System.Windows.Forms.CheckBox cbGistUseRawURL;
         private System.Windows.Forms.CheckBox cbStreamableUseDirectURL;
-        internal System.Windows.Forms.TabPage tpImgur;
-        internal System.Windows.Forms.TabPage tpImageShack;
         internal System.Windows.Forms.TabPage tpFlickr;
         internal System.Windows.Forms.TabPage tpPhotobucket;
         internal System.Windows.Forms.TabPage tpChevereto;

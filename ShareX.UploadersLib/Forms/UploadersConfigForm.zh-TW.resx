@@ -570,45 +570,6 @@
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>上傳圖片到</value>
   </data>
-  <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>密碼：</value>
-  </data>
-  <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>使用者名稱：</value>
-  </data>
-  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>開啟我的圖片頁面...</value>
-  </data>
-  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>是否公開上傳？</value>
-  </data>
-  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
-    <value>開啟公開個人資料頁面...</value>
-  </data>
-  <data name="btnImageShackLogin.Text" xml:space="preserve">
-    <value>登入</value>
-  </data>
-  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>縮圖類型：</value>
-  </data>
-  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
-    <value>重新整理相簿清單</value>
-  </data>
-  <data name="chImgurDescription.Text" xml:space="preserve">
-    <value>描述</value>
-  </data>
-  <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>標題</value>
-  </data>
-  <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>使用直連連結</value>
-  </data>
-  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>上傳圖片到選定的相簿</value>
-  </data>
-  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
-    <value>使用 GIFV 而非 GIF 連結</value>
-  </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>建立新相簿</value>
   </data>
@@ -1175,12 +1136,6 @@
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-  </data>
-  <data name="tpImageShack.Text" xml:space="preserve">
-    <value>ImageShack</value>
-  </data>
-  <data name="tpImgur.Text" xml:space="preserve">
-    <value>Imgur</value>
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>

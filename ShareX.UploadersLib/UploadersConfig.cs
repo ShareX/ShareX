@@ -36,12 +36,6 @@ namespace ShareX.UploadersLib
     {
         #region Image uploaders
 
-        #region ImageShack
-
-        public ImageShackOptions ImageShackSettings { get; set; } = new ImageShackOptions();
-
-        #endregion ImageShack
-
         #region Flickr
 
         public OAuthInfo FlickrOAuthInfo { get; set; } = null;

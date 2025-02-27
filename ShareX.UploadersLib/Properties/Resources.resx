@@ -233,9 +233,6 @@ Created folders:</value>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Browse for a key file...</value>
   </data>
-  <data name="ImageShack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\ImageShack.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Box" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Box.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
