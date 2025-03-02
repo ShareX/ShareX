@@ -105,7 +105,7 @@ namespace ShareX
             string cultureName;
 
             switch (language)
-            {                
+            {
                 default:
                 case SupportedLanguage.English:
                     cultureName = "en-US";
