@@ -159,16 +159,6 @@ namespace ShareX.UploadersLib
 
         private void LoadImageUploaderSettings()
         {
-            #region Flickr
-
-            if (OAuthInfo.CheckOAuth(Config.FlickrOAuthInfo))
-            {
-                oauthFlickr.Status = OAuthLoginStatus.LoginSuccessful;
-            }
-
-            cbFlickrDirectLink.Checked = Config.FlickrSettings.DirectLink;
-
-            #endregion Flickr
 
             #region Photobucket
 
@@ -765,30 +755,6 @@ namespace ShareX.UploadersLib
         }
 
         #region Image uploaders      
-
-        #region Flickr
-
-        private void oauthFlickr_OpenButtonClicked()
-        {
-            FlickrAuthOpen();
-        }
-
-        private void oauthFlickr_CompleteButtonClicked(string code)
-        {
-            FlickrAuthComplete(code);
-        }
-
-        private void oauthFlickr_ClearButtonClicked()
-        {
-            Config.FlickrOAuthInfo = null;
-        }
-
-        private void cbFlickrDirectLink_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.FlickrSettings.DirectLink = cbFlickrDirectLink.Checked;
-        }
-
-        #endregion Flickr
 
         #region Photobucket
 

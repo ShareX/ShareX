@@ -4082,21 +4082,6 @@ namespace ShareX.UploadersLib
             this.tcImageUploaders.Name = "tcImageUploaders";
             this.tcImageUploaders.SelectedIndex = 0;            
             // 
-            // tpFlickr
-            // 
-            this.tpFlickr.BackColor = System.Drawing.SystemColors.Window;
-            this.tpFlickr.Controls.Add(this.cbFlickrDirectLink);
-            this.tpFlickr.Controls.Add(this.oauthFlickr);
-            resources.ApplyResources(this.tpFlickr, "tpFlickr");
-            this.tpFlickr.Name = "tpFlickr";
-            // 
-            // cbFlickrDirectLink
-            // 
-            resources.ApplyResources(this.cbFlickrDirectLink, "cbFlickrDirectLink");
-            this.cbFlickrDirectLink.Name = "cbFlickrDirectLink";
-            this.cbFlickrDirectLink.UseVisualStyleBackColor = true;
-            this.cbFlickrDirectLink.CheckedChanged += new System.EventHandler(this.cbFlickrDirectLink_CheckedChanged);
-            // 
             // tpPhotobucket
             // 
             this.tpPhotobucket.BackColor = System.Drawing.SystemColors.Window;
@@ -4324,33 +4309,6 @@ namespace ShareX.UploadersLib
             this.tttvMain.SeparatorColor = System.Drawing.SystemColors.ControlDark;
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 230;
-            //// 
-            //// atcImgurAccountType
-            //// 
-            //resources.ApplyResources(this.atcImgurAccountType, "atcImgurAccountType");
-            //this.atcImgurAccountType.Name = "atcImgurAccountType";
-            //this.atcImgurAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            //this.atcImgurAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcImgurAccountType_AccountTypeChanged);
-            //// 
-            //// oauth2Imgur
-            //// 
-            //resources.ApplyResources(this.oauth2Imgur, "oauth2Imgur");
-            //this.oauth2Imgur.Name = "oauth2Imgur";
-            //this.oauth2Imgur.UserInfo = null;
-            //this.oauth2Imgur.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Imgur_OpenButtonClicked);
-            //this.oauth2Imgur.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Imgur_CompleteButtonClicked);
-            //this.oauth2Imgur.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Imgur_ClearButtonClicked);
-            //this.oauth2Imgur.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Imgur_RefreshButtonClicked);
-            // 
-            // oauthFlickr
-            // 
-            this.oauthFlickr.IsRefreshable = false;
-            resources.ApplyResources(this.oauthFlickr, "oauthFlickr");
-            this.oauthFlickr.Name = "oauthFlickr";
-            this.oauthFlickr.UserInfo = null;
-            this.oauthFlickr.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauthFlickr_OpenButtonClicked);
-            this.oauthFlickr.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauthFlickr_CompleteButtonClicked);
-            this.oauthFlickr.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauthFlickr_ClearButtonClicked);
             // 
             // oAuth2Gist
             // 

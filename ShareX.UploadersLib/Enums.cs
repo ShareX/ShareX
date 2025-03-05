@@ -31,8 +31,6 @@ namespace ShareX.UploadersLib
     [Description("Image uploaders"), DefaultValue(FileUploader)]
     public enum ImageDestination
     {
-        [Description("Flickr")]
-        Flickr,
         [Description("Photobucket")]
         Photobucket,
         [Description("X")]

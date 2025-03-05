@@ -36,13 +36,6 @@ namespace ShareX.UploadersLib
     {
         #region Image uploaders
 
-        #region Flickr
-
-        public OAuthInfo FlickrOAuthInfo { get; set; } = null;
-        public FlickrSettings FlickrSettings { get; set; } = new FlickrSettings();
-
-        #endregion Flickr
-
         #region Photobucket
 
         public OAuthInfo PhotobucketOAuthInfo { get; set; } = null;

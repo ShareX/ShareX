@@ -28,8 +28,6 @@ namespace ShareX.UploadersLib
     internal static partial class APIKeys
     {
         // Image uploaders
-        public static readonly string FlickrKey = "";
-        public static readonly string FlickrSecret = "";
         public static readonly string PhotobucketConsumerKey = "";
         public static readonly string PhotobucketConsumerSecret = "";
 

@@ -1882,13 +1882,6 @@
             resources.ApplyResources(this.tsmiTrayImageEffects, "tsmiTrayImageEffects");
             this.tsmiTrayImageEffects.Click += new System.EventHandler(this.tsmiImageEffects_Click);
             // 
-            // tsmiTrayImageViewer
-            // 
-            this.tsmiTrayImageViewer.Image = global::ShareX.Properties.Resources.images_flickr;
-            this.tsmiTrayImageViewer.Name = "tsmiTrayImageViewer";
-            resources.ApplyResources(this.tsmiTrayImageViewer, "tsmiTrayImageViewer");
-            this.tsmiTrayImageViewer.Click += new System.EventHandler(this.tsmiImageViewer_Click);
-            // 
             // tsmiTrayImageCombiner
             // 
             this.tsmiTrayImageCombiner.Image = global::ShareX.Properties.Resources.document_break;

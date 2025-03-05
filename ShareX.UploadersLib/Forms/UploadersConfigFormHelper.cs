@@ -38,61 +38,7 @@ namespace ShareX.UploadersLib
 {
     public partial class UploadersConfigForm
     {
-        #region Flickr
-
-        private void FlickrAuthOpen()
-        {
-            try
-            {
-                OAuthInfo oauth = new OAuthInfo(APIKeys.FlickrKey, APIKeys.FlickrSecret);
-
-                string url = new FlickrUploader(oauth).GetAuthorizationURL();
-
-                if (!string.IsNullOrEmpty(url))
-                {
-                    Config.FlickrOAuthInfo = oauth;
-                    URLHelpers.OpenURL(url);
-                    DebugHelper.WriteLine("FlickrAuthOpen - Authorization URL is opened: " + url);
-                }
-                else
-                {
-                    DebugHelper.WriteLine("FlickrAuthOpen - Authorization URL is empty.");
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
-
-        private void FlickrAuthComplete(string code)
-        {
-            try
-            {
-                if (!string.IsNullOrEmpty(code) && Config.FlickrOAuthInfo != null)
-                {
-                    bool result = new FlickrUploader(Config.FlickrOAuthInfo).GetAccessToken(code);
-
-                    if (result)
-                    {
-                        oauthFlickr.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        oauthFlickr.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
-
-        #endregion Flickr
-
+        
         #region Photobucket
 
         public void PhotobucketAuthOpen()
