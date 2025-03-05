@@ -36,13 +36,6 @@ namespace ShareX.UploadersLib
     {
         #region Image uploaders
 
-        #region Photobucket
-
-        public OAuthInfo PhotobucketOAuthInfo { get; set; } = null;
-        public PhotobucketAccountInfo PhotobucketAccountInfo { get; set; } = null;
-
-        #endregion Photobucket
-
         #region Chevereto
 
         public CheveretoUploader CheveretoUploader { get; set; } = new CheveretoUploader();

@@ -162,26 +162,26 @@ namespace ShareX.UploadersLib
 
             #region Photobucket
 
-            if (OAuthInfo.CheckOAuth(Config.PhotobucketOAuthInfo))
-            {
-                lblPhotobucketAccountStatus.Text = Resources.UploadersConfigForm_Login_successful;
-            }
+            //if (OAuthInfo.CheckOAuth(Config.PhotobucketOAuthInfo))
+            //{
+            //    lblPhotobucketAccountStatus.Text = Resources.UploadersConfigForm_Login_successful;
+            //}
 
-            if (Config.PhotobucketAccountInfo != null)
-            {
-                txtPhotobucketDefaultAlbumName.Text = Config.PhotobucketAccountInfo.AlbumID;
-                lblPhotobucketParentAlbumPath.Text = Resources.UploadersConfigForm_LoadSettings_Parent_album_path_e_g_ + " " +
-                    Config.PhotobucketAccountInfo.AlbumID + "/Personal/" + DateTime.Now.Year;
+            //if (Config.PhotobucketAccountInfo != null)
+            //{
+            //    txtPhotobucketDefaultAlbumName.Text = Config.PhotobucketAccountInfo.AlbumID;
+            //    lblPhotobucketParentAlbumPath.Text = Resources.UploadersConfigForm_LoadSettings_Parent_album_path_e_g_ + " " +
+            //        Config.PhotobucketAccountInfo.AlbumID + "/Personal/" + DateTime.Now.Year;
 
-                cbPhotobucketAlbumPaths.Items.Clear();
+            //    cbPhotobucketAlbumPaths.Items.Clear();
 
-                if (Config.PhotobucketAccountInfo.AlbumList.Count > 0)
-                {
-                    cbPhotobucketAlbumPaths.Items.AddRange(Config.PhotobucketAccountInfo.AlbumList.ToArray());
-                    cbPhotobucketAlbumPaths.SelectedIndex = Config.PhotobucketAccountInfo.ActiveAlbumID.
-                        BetweenOrDefault(0, Config.PhotobucketAccountInfo.AlbumList.Count - 1);
-                }
-            }
+            //    if (Config.PhotobucketAccountInfo.AlbumList.Count > 0)
+            //    {
+            //        cbPhotobucketAlbumPaths.Items.AddRange(Config.PhotobucketAccountInfo.AlbumList.ToArray());
+            //        cbPhotobucketAlbumPaths.SelectedIndex = Config.PhotobucketAccountInfo.ActiveAlbumID.
+            //            BetweenOrDefault(0, Config.PhotobucketAccountInfo.AlbumList.Count - 1);
+            //    }
+            //}
 
             #endregion Photobucket
 
@@ -755,52 +755,6 @@ namespace ShareX.UploadersLib
         }
 
         #region Image uploaders      
-
-        #region Photobucket
-
-        private void btnPhotobucketAuthOpen_Click(object sender, EventArgs e)
-        {
-            PhotobucketAuthOpen();
-        }
-
-        private void btnPhotobucketAuthComplete_Click(object sender, EventArgs e)
-        {
-            PhotobucketAuthComplete();
-        }
-
-        private void btnPhotobucketCreateAlbum_Click(object sender, EventArgs e)
-        {
-            PhotobucketCreateAlbum();
-        }
-
-        private void cbPhotobucketAlbumPaths_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Config.PhotobucketAccountInfo != null)
-            {
-                Config.PhotobucketAccountInfo.ActiveAlbumID = cbPhotobucketAlbumPaths.SelectedIndex;
-            }
-        }
-
-        private void btnPhotobucketAddAlbum_Click(object sender, EventArgs e)
-        {
-            string albumPath = cbPhotobucketAlbumPaths.Text;
-            if (!Config.PhotobucketAccountInfo.AlbumList.Contains(albumPath))
-            {
-                Config.PhotobucketAccountInfo.AlbumList.Add(albumPath);
-                cbPhotobucketAlbumPaths.Items.Add(albumPath);
-            }
-        }
-
-        private void btnPhotobucketRemoveAlbum_Click(object sender, EventArgs e)
-        {
-            if (cbPhotobucketAlbumPaths.Items.Count > 1)
-            {
-                cbPhotobucketAlbumPaths.Items.RemoveAt(cbPhotobucketAlbumPaths.SelectedIndex);
-                cbPhotobucketAlbumPaths.SelectedIndex = cbPhotobucketAlbumPaths.Items.Count - 1;
-            }
-        }
-
-        #endregion Photobucket
 
         #region Chevereto
 
