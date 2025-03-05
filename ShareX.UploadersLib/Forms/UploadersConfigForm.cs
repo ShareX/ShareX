@@ -160,36 +160,6 @@ namespace ShareX.UploadersLib
         private void LoadImageUploaderSettings()
         {
 
-            #region Photobucket
-
-            //if (OAuthInfo.CheckOAuth(Config.PhotobucketOAuthInfo))
-            //{
-            //    lblPhotobucketAccountStatus.Text = Resources.UploadersConfigForm_Login_successful;
-            //}
-
-            //if (Config.PhotobucketAccountInfo != null)
-            //{
-            //    txtPhotobucketDefaultAlbumName.Text = Config.PhotobucketAccountInfo.AlbumID;
-            //    lblPhotobucketParentAlbumPath.Text = Resources.UploadersConfigForm_LoadSettings_Parent_album_path_e_g_ + " " +
-            //        Config.PhotobucketAccountInfo.AlbumID + "/Personal/" + DateTime.Now.Year;
-
-            //    cbPhotobucketAlbumPaths.Items.Clear();
-
-            //    if (Config.PhotobucketAccountInfo.AlbumList.Count > 0)
-            //    {
-            //        cbPhotobucketAlbumPaths.Items.AddRange(Config.PhotobucketAccountInfo.AlbumList.ToArray());
-            //        cbPhotobucketAlbumPaths.SelectedIndex = Config.PhotobucketAccountInfo.ActiveAlbumID.
-            //            BetweenOrDefault(0, Config.PhotobucketAccountInfo.AlbumList.Count - 1);
-            //    }
-            //}
-
-            #endregion Photobucket
-
-            #region vgy.me
-
-            txtVgymeUserKey.Text = Config.VgymeUserKey;
-
-            #endregion vgy.me
         }
 
         private void LoadTextUploaderSettings()
@@ -749,15 +719,15 @@ namespace ShareX.UploadersLib
 
         #region vgy.me
 
-        private void txtVgymeUserKey_TextChanged(object sender, EventArgs e)
-        {
-            Config.VgymeUserKey = txtVgymeUserKey.Text;
-        }
+        //private void txtVgymeUserKey_TextChanged(object sender, EventArgs e)
+        //{
+        //    Config.VgymeUserKey = txtVgymeUserKey.Text;
+        //}
 
-        private void llVgymeAccountDetailsPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL("http://vgy.me/account/details");
-        }
+        //private void llVgymeAccountDetailsPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        //{
+        //    URLHelpers.OpenURL("http://vgy.me/account/details");
+        //}
 
         #endregion vgy.me
 

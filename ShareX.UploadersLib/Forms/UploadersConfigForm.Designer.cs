@@ -546,10 +546,6 @@ namespace ShareX.UploadersLib
             this.btnPhotobucketAuthComplete = new System.Windows.Forms.Button();
             this.txtPhotobucketVerificationCode = new System.Windows.Forms.TextBox();
             this.lblPhotobucketAccountStatus = new System.Windows.Forms.Label();
-            this.tpVgyme = new System.Windows.Forms.TabPage();
-            this.llVgymeAccountDetailsPage = new System.Windows.Forms.LinkLabel();
-            this.txtVgymeUserKey = new System.Windows.Forms.TextBox();
-            this.lvlVgymeUserKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.oauthFlickr = new ShareX.UploadersLib.OAuthControl();
@@ -639,7 +635,6 @@ namespace ShareX.UploadersLib
             this.gbPhotobucketAlbumPath.SuspendLayout();
             this.gbPhotobucketAlbums.SuspendLayout();
             this.gbPhotobucketUserAccount.SuspendLayout();
-            this.tpVgyme.SuspendLayout();
             this.tcUploaders.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -4068,38 +4063,9 @@ namespace ShareX.UploadersLib
             // 
             this.tcImageUploaders.Controls.Add(this.tpFlickr);
             this.tcImageUploaders.Controls.Add(this.tpPhotobucket);
-            this.tcImageUploaders.Controls.Add(this.tpVgyme);
             resources.ApplyResources(this.tcImageUploaders, "tcImageUploaders");
             this.tcImageUploaders.Name = "tcImageUploaders";
-            this.tcImageUploaders.SelectedIndex = 0;                      
-            // 
-            // tpVgyme
-            // 
-            this.tpVgyme.BackColor = System.Drawing.SystemColors.Window;
-            this.tpVgyme.Controls.Add(this.llVgymeAccountDetailsPage);
-            this.tpVgyme.Controls.Add(this.txtVgymeUserKey);
-            this.tpVgyme.Controls.Add(this.lvlVgymeUserKey);
-            resources.ApplyResources(this.tpVgyme, "tpVgyme");
-            this.tpVgyme.Name = "tpVgyme";
-            // 
-            // llVgymeAccountDetailsPage
-            // 
-            resources.ApplyResources(this.llVgymeAccountDetailsPage, "llVgymeAccountDetailsPage");
-            this.llVgymeAccountDetailsPage.Name = "llVgymeAccountDetailsPage";
-            this.llVgymeAccountDetailsPage.TabStop = true;
-            this.llVgymeAccountDetailsPage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llVgymeAccountDetailsPage_LinkClicked);
-            // 
-            // txtVgymeUserKey
-            // 
-            resources.ApplyResources(this.txtVgymeUserKey, "txtVgymeUserKey");
-            this.txtVgymeUserKey.Name = "txtVgymeUserKey";
-            this.txtVgymeUserKey.UseSystemPasswordChar = true;
-            this.txtVgymeUserKey.TextChanged += new System.EventHandler(this.txtVgymeUserKey_TextChanged);
-            // 
-            // lvlVgymeUserKey
-            // 
-            resources.ApplyResources(this.lvlVgymeUserKey, "lvlVgymeUserKey");
-            this.lvlVgymeUserKey.Name = "lvlVgymeUserKey";
+            this.tcImageUploaders.SelectedIndex = 0;                                
             // 
             // tcUploaders
             // 
@@ -4368,8 +4334,6 @@ namespace ShareX.UploadersLib
             this.gbPhotobucketAlbums.PerformLayout();
             this.gbPhotobucketUserAccount.ResumeLayout(false);
             this.gbPhotobucketUserAccount.PerformLayout();
-            this.tpVgyme.ResumeLayout(false);
-            this.tpVgyme.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -4643,15 +4607,11 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblStreamablePassword;
         private System.Windows.Forms.Label lblSulAPIKey;
         private System.Windows.Forms.TextBox txtSulAPIKey;
-        private System.Windows.Forms.TextBox txtVgymeUserKey;
-        private System.Windows.Forms.Label lvlVgymeUserKey;
-        private System.Windows.Forms.LinkLabel llVgymeAccountDetailsPage;
         private System.Windows.Forms.CheckBox cbPastebinRaw;
         private System.Windows.Forms.CheckBox cbGistUseRawURL;
         private System.Windows.Forms.CheckBox cbStreamableUseDirectURL;
         internal System.Windows.Forms.TabPage tpFlickr;
         internal System.Windows.Forms.TabPage tpPhotobucket;
-        internal System.Windows.Forms.TabPage tpVgyme;
         internal System.Windows.Forms.TabPage tpPastebin;
         internal System.Windows.Forms.TabPage tpPaste_ee;
         internal System.Windows.Forms.TabPage tpGist;
