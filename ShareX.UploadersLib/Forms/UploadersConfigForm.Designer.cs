@@ -546,13 +546,6 @@ namespace ShareX.UploadersLib
             this.btnPhotobucketAuthComplete = new System.Windows.Forms.Button();
             this.txtPhotobucketVerificationCode = new System.Windows.Forms.TextBox();
             this.lblPhotobucketAccountStatus = new System.Windows.Forms.Label();
-            this.tpChevereto = new System.Windows.Forms.TabPage();
-            this.lblCheveretoUploadURLExample = new System.Windows.Forms.Label();
-            this.cbCheveretoDirectURL = new System.Windows.Forms.CheckBox();
-            this.lblCheveretoUploadURL = new System.Windows.Forms.Label();
-            this.txtCheveretoUploadURL = new System.Windows.Forms.TextBox();
-            this.txtCheveretoAPIKey = new System.Windows.Forms.TextBox();
-            this.lblCheveretoAPIKey = new System.Windows.Forms.Label();
             this.tpVgyme = new System.Windows.Forms.TabPage();
             this.llVgymeAccountDetailsPage = new System.Windows.Forms.LinkLabel();
             this.txtVgymeUserKey = new System.Windows.Forms.TextBox();
@@ -646,7 +639,6 @@ namespace ShareX.UploadersLib
             this.gbPhotobucketAlbumPath.SuspendLayout();
             this.gbPhotobucketAlbums.SuspendLayout();
             this.gbPhotobucketUserAccount.SuspendLayout();
-            this.tpChevereto.SuspendLayout();
             this.tpVgyme.SuspendLayout();
             this.tcUploaders.SuspendLayout();
             this.SuspendLayout();
@@ -4076,58 +4068,10 @@ namespace ShareX.UploadersLib
             // 
             this.tcImageUploaders.Controls.Add(this.tpFlickr);
             this.tcImageUploaders.Controls.Add(this.tpPhotobucket);
-            this.tcImageUploaders.Controls.Add(this.tpChevereto);
             this.tcImageUploaders.Controls.Add(this.tpVgyme);
             resources.ApplyResources(this.tcImageUploaders, "tcImageUploaders");
             this.tcImageUploaders.Name = "tcImageUploaders";
             this.tcImageUploaders.SelectedIndex = 0;                      
-            // 
-            // tpChevereto
-            // 
-            this.tpChevereto.BackColor = System.Drawing.SystemColors.Window;
-            this.tpChevereto.Controls.Add(this.lblCheveretoUploadURLExample);
-            this.tpChevereto.Controls.Add(this.cbCheveretoDirectURL);
-            this.tpChevereto.Controls.Add(this.lblCheveretoUploadURL);
-            this.tpChevereto.Controls.Add(this.txtCheveretoUploadURL);
-            this.tpChevereto.Controls.Add(this.txtCheveretoAPIKey);
-            this.tpChevereto.Controls.Add(this.lblCheveretoAPIKey);
-            resources.ApplyResources(this.tpChevereto, "tpChevereto");
-            this.tpChevereto.Name = "tpChevereto";
-            // 
-            // lblCheveretoUploadURLExample
-            // 
-            resources.ApplyResources(this.lblCheveretoUploadURLExample, "lblCheveretoUploadURLExample");
-            this.lblCheveretoUploadURLExample.Name = "lblCheveretoUploadURLExample";
-            // 
-            // cbCheveretoDirectURL
-            // 
-            resources.ApplyResources(this.cbCheveretoDirectURL, "cbCheveretoDirectURL");
-            this.cbCheveretoDirectURL.Name = "cbCheveretoDirectURL";
-            this.cbCheveretoDirectURL.UseVisualStyleBackColor = true;
-            this.cbCheveretoDirectURL.CheckedChanged += new System.EventHandler(this.cbCheveretoDirectURL_CheckedChanged);
-            // 
-            // lblCheveretoUploadURL
-            // 
-            resources.ApplyResources(this.lblCheveretoUploadURL, "lblCheveretoUploadURL");
-            this.lblCheveretoUploadURL.Name = "lblCheveretoUploadURL";
-            // 
-            // txtCheveretoUploadURL
-            // 
-            resources.ApplyResources(this.txtCheveretoUploadURL, "txtCheveretoUploadURL");
-            this.txtCheveretoUploadURL.Name = "txtCheveretoUploadURL";
-            this.txtCheveretoUploadURL.TextChanged += new System.EventHandler(this.txtCheveretoWebsite_TextChanged);
-            // 
-            // txtCheveretoAPIKey
-            // 
-            resources.ApplyResources(this.txtCheveretoAPIKey, "txtCheveretoAPIKey");
-            this.txtCheveretoAPIKey.Name = "txtCheveretoAPIKey";
-            this.txtCheveretoAPIKey.UseSystemPasswordChar = true;
-            this.txtCheveretoAPIKey.TextChanged += new System.EventHandler(this.txtCheveretoAPIKey_TextChanged);
-            // 
-            // lblCheveretoAPIKey
-            // 
-            resources.ApplyResources(this.lblCheveretoAPIKey, "lblCheveretoAPIKey");
-            this.lblCheveretoAPIKey.Name = "lblCheveretoAPIKey";
             // 
             // tpVgyme
             // 
@@ -4424,8 +4368,6 @@ namespace ShareX.UploadersLib
             this.gbPhotobucketAlbums.PerformLayout();
             this.gbPhotobucketUserAccount.ResumeLayout(false);
             this.gbPhotobucketUserAccount.PerformLayout();
-            this.tpChevereto.ResumeLayout(false);
-            this.tpChevereto.PerformLayout();
             this.tpVgyme.ResumeLayout(false);
             this.tpVgyme.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
@@ -4596,7 +4538,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblOwnCloudHost;
         private System.Windows.Forms.CheckBox cbOwnCloudCreateShare;
         private System.Windows.Forms.CheckBox cbOwnCloudDirectLink;
-        private System.Windows.Forms.CheckBox cbImgurDirectLink;
         private System.Windows.Forms.TextBox txtMediaFirePassword;
         private System.Windows.Forms.TextBox txtMediaFireEmail;
         private System.Windows.Forms.Label lblMediaFirePassword;
@@ -4605,7 +4546,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblMediaFirePath;
         private System.Windows.Forms.CheckBox cbMediaFireUseLongLink;
         private OAuthControl oAuth2OneDrive;
-        private System.Windows.Forms.CheckBox cbImgurUploadSelectedAlbum;
         private System.Windows.Forms.Label lblPastebinLoginStatus;
         private System.Windows.Forms.TextBox txtPastebinTitle;
         private System.Windows.Forms.TextBox txtPastebinPassword;
@@ -4619,11 +4559,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.ComboBox cbPastebinPrivacy;
         private System.Windows.Forms.Label lblPastebinSyntax;
         private System.Windows.Forms.Button btnPastebinRegister;
-        private System.Windows.Forms.Label lblCheveretoUploadURL;
-        private System.Windows.Forms.TextBox txtCheveretoUploadURL;
-        private System.Windows.Forms.TextBox txtCheveretoAPIKey;
-        private System.Windows.Forms.Label lblCheveretoAPIKey;
-        private System.Windows.Forms.CheckBox cbCheveretoDirectURL;
         private System.Windows.Forms.ComboBox cbPastebinSyntax;
         private System.Windows.Forms.TextBox txtHastebinSyntaxHighlighting;
         private System.Windows.Forms.TextBox txtHastebinCustomDomain;
@@ -4657,7 +4592,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblPolrAPIKey;
         private System.Windows.Forms.TextBox txtPolrAPIHostname;
         private System.Windows.Forms.Label lblPolrAPIHostname;
-        private System.Windows.Forms.CheckBox cbImgurUseGIFV;
         private System.Windows.Forms.ListBox lbTwitterAccounts;
         private System.Windows.Forms.Button btnTwitterNameUpdate;
         private System.Windows.Forms.Label lblPomfResultURL;
@@ -4712,13 +4646,11 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtVgymeUserKey;
         private System.Windows.Forms.Label lvlVgymeUserKey;
         private System.Windows.Forms.LinkLabel llVgymeAccountDetailsPage;
-        private System.Windows.Forms.Label lblCheveretoUploadURLExample;
         private System.Windows.Forms.CheckBox cbPastebinRaw;
         private System.Windows.Forms.CheckBox cbGistUseRawURL;
         private System.Windows.Forms.CheckBox cbStreamableUseDirectURL;
         internal System.Windows.Forms.TabPage tpFlickr;
         internal System.Windows.Forms.TabPage tpPhotobucket;
-        internal System.Windows.Forms.TabPage tpChevereto;
         internal System.Windows.Forms.TabPage tpVgyme;
         internal System.Windows.Forms.TabPage tpPastebin;
         internal System.Windows.Forms.TabPage tpPaste_ee;

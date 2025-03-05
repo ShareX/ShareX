@@ -33,8 +33,6 @@ namespace ShareX.UploadersLib
     {
         [Description("X")]
         Twitter,
-        [Description("Chevereto")]
-        Chevereto,
         [Description("vgy.me")]
         Vgyme,
         CustomImageUploader, // Localized

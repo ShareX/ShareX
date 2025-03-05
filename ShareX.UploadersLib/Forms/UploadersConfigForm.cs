@@ -185,15 +185,6 @@ namespace ShareX.UploadersLib
 
             #endregion Photobucket
 
-            #region Chevereto
-
-            if (Config.CheveretoUploader == null) Config.CheveretoUploader = new CheveretoUploader();
-            txtCheveretoUploadURL.Text = Config.CheveretoUploader.UploadURL;
-            txtCheveretoAPIKey.Text = Config.CheveretoUploader.APIKey;
-            cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
-
-            #endregion Chevereto
-
             #region vgy.me
 
             txtVgymeUserKey.Text = Config.VgymeUserKey;
@@ -755,25 +746,6 @@ namespace ShareX.UploadersLib
         }
 
         #region Image uploaders      
-
-        #region Chevereto
-
-        private void txtCheveretoWebsite_TextChanged(object sender, EventArgs e)
-        {
-            Config.CheveretoUploader.UploadURL = txtCheveretoUploadURL.Text;
-        }
-
-        private void txtCheveretoAPIKey_TextChanged(object sender, EventArgs e)
-        {
-            Config.CheveretoUploader.APIKey = txtCheveretoAPIKey.Text;
-        }
-
-        private void cbCheveretoDirectURL_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.CheveretoDirectURL = cbCheveretoDirectURL.Checked;
-        }
-
-        #endregion Chevereto
 
         #region vgy.me
 
