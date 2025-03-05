@@ -268,4 +268,16 @@
   <data name="PinToScreen" xml:space="preserve">
     <value>Pin to screen</value>
   </data>
+  <data name="RemoveSelectedItem" xml:space="preserve">
+    <value>Remove selected item(s)</value>
+  </data>
+  <data name="DeleteSelectedFile" xml:space="preserve">
+    <value>Delete selected file(s)</value>
+  </data>
+  <data name="FileDeleteConfirmationTitle" xml:space="preserve">
+    <value>File Delete Confirmation</value>
+  </data>
+  <data name="FileDeleteConfirmationText" xml:space="preserve">
+    <value>Deleted file(s) will be moved to Recycle Bin. Continue?</value>
+  </data>
 </root>

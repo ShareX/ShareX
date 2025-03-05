@@ -66,6 +66,8 @@ namespace ShareX.HistoryLib
             him = new HistoryItemManager(uploadFile, editImage, pinToScreen);
             him.GetHistoryItems += him_GetHistoryItems;
             him.SelectAllHistoryItems += ilvImages.SelectAll;
+            him.RemoveSelectedItems += RemoveSelectItemsWithRefreshAsync;
+            him.DeleteSelectedFiles += DeleteSelectedItemsWithRefreshAsync;
             ilvImages.ContextMenuStrip = him.cmsHistory;
 
             defaultTitle = Text;
@@ -175,20 +177,75 @@ namespace ShareX.HistoryLib
             ilvImages.Items.AddRange(ilvItems);
         }
 
-        private void RemoveSelectedItems()
+        private int RemoveSelectedItems()
         {
             List<ImageListViewItem> selectedItems = GetSelectedItemsList();
             if (selectedItems.Any())
             {
+                int[] indices = new int[selectedItems.Count];
                 foreach (ImageListViewItem selectedItem in selectedItems)
                 {
-                    allHistoryItems.Remove(selectedItem.Tag as HistoryItem);
-                    ilvImages.Items.Remove(selectedItem);
+                    var hi = selectedItem.Tag as HistoryItem;
+                    if (hi != null)
+                    {
+                        allHistoryItems.Remove(hi);
+                        indices[selectedItems.IndexOf(selectedItem)] = selectedItem.Index;
+                }
                 }
                 // Reverse back to normal order, without effecting current list instance
                 var allHistoryItemsClone = allHistoryItems.Copy();
                 allHistoryItemsClone.Reverse();
                 him.UpdateHistoryItemsFile(HistoryPath, allHistoryItemsClone);
+
+                return Math.Max((indices.Min() - 1), 0);
+            }
+
+            return 0;
+        }
+
+        private async void RemoveSelectItemsWithRefreshAsync()
+        {
+            try
+            {
+                var indexOfNextItem = RemoveSelectedItems();
+                await RefreshHistoryItems();
+                if (ilvImages.Items.Count > 0)
+                {
+                    ilvImages.Items[indexOfNextItem].Selected = true;
+                    ilvImages.EnsureVisible(indexOfNextItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+        }
+
+        private bool DeleteSelectedItems()
+        {
+            if (MessageBox.Show(Resources.FileDeleteConfirmationText,
+               "ShareX - " + Resources.FileDeleteConfirmationTitle, MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                return him.DeleteFiles();
+            }
+
+            return false;
+        }
+
+        private async void DeleteSelectedItemsWithRefreshAsync()
+        {
+            try
+            {
+                if (DeleteSelectedItems())
+                {
+                    var indexOfNextItem = RemoveSelectedItems();
+                    await RefreshHistoryItems();
+                    ilvImages.EnsureVisible(indexOfNextItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
             }
         }
 
@@ -233,11 +290,10 @@ namespace ShareX.HistoryLib
                     e.SuppressKeyPress = true;
                     break;
                 case Keys.Delete:
-                    RemoveSelectedItems();
+                    RemoveSelectItemsWithRefreshAsync();
                     break;
                 case Keys.Shift | Keys.Delete:
-                    him.DeleteFiles();
-                    RemoveSelectedItems();
+                    DeleteSelectedItemsWithRefreshAsync();
                     break;
             }
         }

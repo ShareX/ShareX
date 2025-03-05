@@ -81,11 +81,38 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete selected file(s).
+        /// </summary>
+        internal static string DeleteSelectedFile {
+            get {
+                return ResourceManager.GetString("DeleteSelectedFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error occurred while reading history file:.
         /// </summary>
         internal static string ErrorOccuredWhileReadingHistoryFile {
             get {
                 return ResourceManager.GetString("ErrorOccuredWhileReadingHistoryFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deleted file(s) will be moved to Recycle Bin. Continue?.
+        /// </summary>
+        internal static string FileDeleteConfirmationText {
+            get {
+                return ResourceManager.GetString("FileDeleteConfirmationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Delete Confirmation.
+        /// </summary>
+        internal static string FileDeleteConfirmationTitle {
+            get {
+                return ResourceManager.GetString("FileDeleteConfirmationTitle", resourceCulture);
             }
         }
         
@@ -507,6 +534,15 @@ namespace ShareX.HistoryLib.Properties {
         internal static string ProcessNames {
             get {
                 return ResourceManager.GetString("ProcessNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove selected item(s).
+        /// </summary>
+        internal static string RemoveSelectedItem {
+            get {
+                return ResourceManager.GetString("RemoveSelectedItem", resourceCulture);
             }
         }
         

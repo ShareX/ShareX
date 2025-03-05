@@ -76,6 +76,8 @@ namespace ShareX.HistoryLib
             him = new HistoryItemManager(uploadFile, editImage, pinToScreen, true);
             him.GetHistoryItems += him_GetHistoryItems;
             him.SelectAllHistoryItems += lvHistory.SelectAll;
+            him.RemoveSelectedItems += RemoveSelectedItemsWithRefreshAsync;
+            him.DeleteSelectedFiles += DeleteSelectedItemsWithRefreshAsync;
             lvHistory.ContextMenuStrip = him.cmsHistory;
 
             pbThumbnail.Reset();
@@ -405,8 +407,8 @@ namespace ShareX.HistoryLib
                 }
 
                 // Smallest value minus 1 to move the index up
-                moveSelectionIndexTo = selectedIndices.Min(index => index) - 1;
-                moveSelectionIndexTo = moveSelectionIndexTo >= 0 ? moveSelectionIndexTo : 0;
+                moveSelectionIndexTo = selectedIndices.Min() - 1;
+                moveSelectionIndexTo = Math.Max(moveSelectionIndexTo, 0);
 
                 // Reverse back to normal order, without effecting current list instance
                 var allHistoryItemsClone = allHistoryItems.Copy();
@@ -415,6 +417,39 @@ namespace ShareX.HistoryLib
             }
 
             return moveSelectionIndexTo;
+        }
+
+        private async void RemoveSelectedItemsWithRefreshAsync()
+        {
+            int moveSelectionIndexTo = RemoveSelectedItems();
+            await RefreshHistoryItems(false, false, moveSelectionIndexTo);
+        }
+
+        private bool DeleteSelectedItems()
+        {
+            if (MessageBox.Show(Resources.FileDeleteConfirmationText,
+               "ShareX - " + Resources.FileDeleteConfirmationTitle, MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                return him.DeleteFiles();
+            }
+
+            return false;
+        }
+
+        private async void DeleteSelectedItemsWithRefreshAsync()
+        {
+            try
+            {
+                if (DeleteSelectedItems())
+                {
+                    int moveSelectionIndexTo = RemoveSelectedItems();
+                    await RefreshHistoryItems(false, false, moveSelectionIndexTo);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
         }
 
         #region Form events
@@ -453,13 +488,10 @@ namespace ShareX.HistoryLib
                     await RefreshHistoryItems(true);
                     break;
                 case Keys.Delete:
-                    int moveSelectionIndexTo = RemoveSelectedItems();
-                    await RefreshHistoryItems(false, false, moveSelectionIndexTo);
+                    RemoveSelectedItemsWithRefreshAsync();
                     break;
                 case Keys.Shift | Keys.Delete:
-                    him.DeleteFiles();
-                    int moveSelectionIndexTo1 = RemoveSelectedItems();
-                    await RefreshHistoryItems(false, false, moveSelectionIndexTo1);
+                    DeleteSelectedItemsWithRefreshAsync();
                     break;
             }
         }

@@ -74,6 +74,8 @@ namespace ShareX.HistoryLib
         private ToolStripMenuItem tsmiUploadFile;
         private ToolStripMenuItem tsmiEditImage;
         private ToolStripMenuItem tsmiPinToScreen;
+        private ToolStripMenuItem tsmiRemoveSelectedItem;
+        private ToolStripMenuItem tsmiDeleteSelectedFile;
         private ToolStripMenuItem tsmiShowMoreInfo;
 
         private void InitializeComponent()
@@ -120,6 +122,8 @@ namespace ShareX.HistoryLib
             tsmiUploadFile = new ToolStripMenuItem();
             tsmiEditImage = new ToolStripMenuItem();
             tsmiPinToScreen = new ToolStripMenuItem();
+            tsmiRemoveSelectedItem = new ToolStripMenuItem();
+            tsmiDeleteSelectedFile = new ToolStripMenuItem();
             tsmiShowMoreInfo = new ToolStripMenuItem();
 
             cmsHistory.SuspendLayout();
@@ -135,6 +139,8 @@ namespace ShareX.HistoryLib
                 tsmiUploadFile,
                 tsmiEditImage,
                 tsmiPinToScreen,
+                tsmiRemoveSelectedItem,
+                tsmiDeleteSelectedFile,
                 tsmiShowMoreInfo
             });
             cmsHistory.Name = "cmsHistory";
@@ -442,6 +448,22 @@ namespace ShareX.HistoryLib
             tsmiPinToScreen.Text = Resources.PinToScreen;
             tsmiPinToScreen.Click += tsmiPinToScreen_Click;
             //
+            // tsmiPinToScreen
+            //
+            tsmiRemoveSelectedItem.Name = "tsmiRemoveSelectedItem";
+            tsmiRemoveSelectedItem.ShortcutKeyDisplayString = "Del";
+            tsmiRemoveSelectedItem.Size = new Size(127, 22);
+            tsmiRemoveSelectedItem.Text = Resources.RemoveSelectedItem;
+            tsmiRemoveSelectedItem.Click += TsmiRemoveSelectedItem_Click;
+            //
+            // tsmiPinToScreen
+            //
+            tsmiDeleteSelectedFile.Name = "tsmiDeleteSelectedFile";
+            tsmiDeleteSelectedFile.ShortcutKeyDisplayString = "Shift+Del";
+            tsmiDeleteSelectedFile.Size = new Size(127, 22);
+            tsmiDeleteSelectedFile.Text = Resources.DeleteSelectedFile;
+            tsmiDeleteSelectedFile.Click += TsmiDeleteSelectedFile_Click;
+            //
             // tsmiShowMoreInfo
             //
             tsmiShowMoreInfo.Name = "tsmiShowMoreInfo";
@@ -451,6 +473,7 @@ namespace ShareX.HistoryLib
 
             cmsHistory.ResumeLayout(false);
         }
+
 
         public void UpdateContextMenu(int itemCount)
         {
@@ -519,6 +542,7 @@ namespace ShareX.HistoryLib
                 tsmiShowImagePreview.Enabled = false;
                 tsmiUploadFile.Enabled = false;
                 tsmiEditImage.Enabled = false;
+                tsmiDeleteSelectedFile.Enabled = AnyFileExist;
                 tsmiPinToScreen.Enabled = false;
                 tsmiShowMoreInfo.Enabled = false;
             }
@@ -584,6 +608,7 @@ namespace ShareX.HistoryLib
                 tsmiShowImagePreview.Enabled = IsImageFile;
                 tsmiUploadFile.Enabled = uploadFile != null && IsFileExist;
                 tsmiEditImage.Enabled = editImage != null && IsImageFile;
+                tsmiDeleteSelectedFile.Enabled = IsFileExist;
                 tsmiPinToScreen.Enabled = pinToScreen != null && IsImageFile;
                 tsmiShowMoreInfo.Enabled = true;
             }
@@ -739,6 +764,16 @@ namespace ShareX.HistoryLib
         private void tsmiPinToScreen_Click(object sender, EventArgs e)
         {
             PinToScreen();
+        }
+
+        private void TsmiRemoveSelectedItem_Click(object sender, EventArgs e)
+        {
+            RemoveSelectedItems?.Invoke();
+        }
+
+        private void TsmiDeleteSelectedFile_Click(object sender, EventArgs e)
+        {
+            DeleteSelectedFiles?.Invoke();
         }
 
         private void tsmiShowMoreInfo_Click(object sender, EventArgs e)

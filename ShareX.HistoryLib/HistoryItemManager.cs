@@ -39,8 +39,16 @@ namespace ShareX.HistoryLib
         public event GetHistoryItemsEventHandler GetHistoryItems;
 
         public event Action SelectAllHistoryItems;
+        public event Action RemoveSelectedItems;
+        public event Action DeleteSelectedFiles;
 
         public HistoryItem HistoryItem { get; private set; }
+
+        /// <summary>
+        /// This property is intended to contain only currently selected items
+        /// (Not for storing all history items). It is updated in the
+        /// <see cref="UpdateSelectedHistoryItem"/> method upon selection change event.
+        /// </summary>
         public List<HistoryItem> HistoryItems { get; private set; }
 
         public bool IsURLExist { get; private set; }
@@ -51,6 +59,7 @@ namespace ShareX.HistoryLib
         public bool IsTextURL { get; private set; }
         public bool IsFilePathValid { get; private set; }
         public bool IsFileExist { get; private set; }
+        public bool AnyFileExist { get; private set; }
         public bool IsImageFile { get; private set; }
         public bool IsTextFile { get; private set; }
 
@@ -98,6 +107,10 @@ namespace ShareX.HistoryLib
                 IsTextURL = IsURLExist && FileHelpers.IsTextFile(HistoryItem.URL);
                 IsFilePathValid = !string.IsNullOrEmpty(HistoryItem.FilePath) && Path.HasExtension(HistoryItem.FilePath);
                 IsFileExist = IsFilePathValid && File.Exists(HistoryItem.FilePath);
+
+                if (HistoryItems.Count > 1)
+                    AnyFileExist = HistoryItems.Where(hi => File.Exists(hi.FilePath)).Any();
+
                 IsImageFile = IsFileExist && FileHelpers.IsImageFile(HistoryItem.FilePath);
                 IsTextFile = IsFileExist && FileHelpers.IsTextFile(HistoryItem.FilePath);
 
@@ -153,7 +166,7 @@ namespace ShareX.HistoryLib
                     OpenFolder();
                     break;
                 case Keys.Control | Keys.A:
-                    SelectAllHistoryItems?.Invoke(); // Null check is good practice for events
+                    SelectAllHistoryItems?.Invoke();
                     break;
                 case Keys.Control | Keys.C:
                     CopyURL();
@@ -615,7 +628,7 @@ namespace ShareX.HistoryLib
             new HistoryItemInfoForm(HistoryItem).Show();
         }
 
-        public void DeleteFiles()
+        public bool DeleteFiles()
         {
             if (HistoryItems.Any())
             {
@@ -623,7 +636,9 @@ namespace ShareX.HistoryLib
                 {
                     FileHelpers.DeleteFile(filePath, true);
                 }
+                return true;
             }
+            return false;
         }
     }
 }
