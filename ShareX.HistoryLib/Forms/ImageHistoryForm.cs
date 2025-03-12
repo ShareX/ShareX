@@ -25,6 +25,7 @@
 
 using Manina.Windows.Forms;
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Forms;
 using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -190,7 +191,7 @@ namespace ShareX.HistoryLib
                     {
                         allHistoryItems.Remove(hi);
                         indices[selectedItems.IndexOf(selectedItem)] = selectedItem.Index;
-                }
+                    }
                 }
                 // Reverse back to normal order, without effecting current list instance
                 var allHistoryItemsClone = allHistoryItems.Copy();
@@ -361,5 +362,13 @@ namespace ShareX.HistoryLib
         }
 
         #endregion Form events
+
+        private async void tsbMediaImporter_Click(object sender, EventArgs e)
+        {
+            if (new MediaImporter(HistoryPath, him, allHistoryItems).ShowDialog() == DialogResult.OK)
+            {
+                await RefreshHistoryItems();
+            }
+        }
     }
 }

@@ -249,11 +249,23 @@
   <data name="tsbSettings.Text" xml:space="preserve">
     <value>Settings...</value>
   </data>
+  <data name="tsbMediaImporter.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbMediaImporter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbMediaImporter.Text" xml:space="preserve">
+    <value>Media Importer</value>
+  </data>
+  <data name="tsbMediaImporter.ToolTipText" xml:space="preserve">
+    <value>Open Media Importer.</value>
+  </data>
   <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 25</value>
+    <value>456, 25</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -337,6 +349,12 @@
     <value>tsbSettings</value>
   </data>
   <data name="&gt;&gt;tsbSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbMediaImporter.Name" xml:space="preserve">
+    <value>tsbMediaImporter</value>
+  </data>
+  <data name="&gt;&gt;tsbMediaImporter.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
