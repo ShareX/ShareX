@@ -134,6 +134,7 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
                 {
                     Direct3D11CaptureFrame f;
                     currentSession = session;
+                    currentSession.Session.IsBorderRequired = false;
                     session.Session.StartCapture();
                     while ((f = session.FramePool.TryGetNextFrame()) == null)
                     {
@@ -238,6 +239,7 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
 
         private void ProcessFrame(Direct3D11CaptureFrame frame)
         {
+            currentSession.Session.IsBorderRequired = false;
             // Do proecssing
             using (frame)
             {
