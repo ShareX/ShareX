@@ -281,6 +281,9 @@ namespace ShareX
         [Category("Drag and drop window"), DefaultValue(255), Description("When you drag file to drop window then opacity will change to this.")]
         public int DropHoverOpacity { get; set; }
 
+        [Category("Clipboard"), DefaultValue(false), Description("When you enable this option your clipboard will be cleared directly after you capture a screenshot.")]
+        public bool ClearClipboardAfterCapture { get; set; }
+
         #endregion Advanced
 
         #endregion Settings Form

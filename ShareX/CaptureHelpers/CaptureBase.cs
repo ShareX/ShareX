@@ -101,6 +101,11 @@ namespace ShareX
         {
             if (metadata != null && metadata.Image != null)
             {
+                if (taskSettings.AdvancedSettings.ClearClipboardAfterCapture)
+                {
+                    Clipboard.Clear();
+                }
+
                 TaskHelpers.PlayNotificationSoundAsync(NotificationSound.Capture, taskSettings);
 
                 if (taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage) && !AllowAnnotation)
