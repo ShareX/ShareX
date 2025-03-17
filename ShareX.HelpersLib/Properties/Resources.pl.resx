@@ -282,9 +282,6 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Przeslij</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>Ustawienie DNS nie powiodło się z kodem błędu:</value>
-  </data>
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
     <value>Wytnij</value>
   </data>
@@ -308,9 +305,6 @@
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>Rozpocznij/Zatrzymaj nagrywanie ekranu (GIF) przy użyciu wstępnie skonfigurowanego regionu</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>DNS ustawiony pomyślnie.</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Przechwytywanie wstępnie skonfigurowanego regionu</value>
@@ -427,12 +421,6 @@ Czy chcesz ją pobrać?</value>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>Automatycznie rosnąca liczba alfanumeryczna bez uwzględniania wielkości liter (liczba 0 na początku: {n})</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>Ustawienie DNS nie powiodło się.</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Ręcznie</value>
-  </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Dodaj efekty graficzne</value>
   </data>
@@ -462,9 +450,6 @@ Czy chcesz ją pobrać?</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Region elipsy</value>
-  </data>
-  <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>Zmiana DNS</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>Rozpocznij/Zatrzymaj nagrywanie ekranu (GIF)</value>
@@ -781,9 +766,6 @@ Czy chcesz ją pobrać i zainstalować?</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Nie udało się utworzyć katalogu.</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>DNS ustawiony pomyślnie. Wymagane jest ponowne uruchomienie komputera.</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
     <value>Ręcznie</value>

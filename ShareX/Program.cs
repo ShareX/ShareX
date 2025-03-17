@@ -276,8 +276,6 @@ namespace ShareX
             if (CheckUninstall()) return; // Steam will run ShareX with -Uninstall when uninstalling
 #endif
 
-            if (CheckAdminTasks()) return; // If ShareX opened just for be able to execute task as Admin
-
             SystemOptions.UpdateSystemOptions();
             UpdatePersonalPath();
 
@@ -660,20 +658,6 @@ namespace ShareX
             {
                 errorForm.ShowDialog();
             }
-        }
-
-        private static bool CheckAdminTasks()
-        {
-            if (CLI.IsCommandExist("dnschanger"))
-            {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Helpers.TryFixHandCursor();
-                Application.Run(new DNSChangerForm());
-                return true;
-            }
-
-            return false;
         }
 
         private static bool CheckUninstall()

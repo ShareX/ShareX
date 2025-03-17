@@ -1835,11 +1835,6 @@ namespace ShareX
             TaskHelpers.OpenMonitorTest();
         }
 
-        private void tsmiDNSChanger_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenDNSChanger();
-        }
-
         private void TsddbAfterCaptureTasks_DropDownOpening(object sender, EventArgs e)
         {
             UpdateImageEffectsMenu(tsddbAfterCaptureTasks);

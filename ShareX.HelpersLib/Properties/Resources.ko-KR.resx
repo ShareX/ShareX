@@ -273,9 +273,6 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>업로드</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>DNS 설정이 실패되었으며, 다음 에러코드를 반환했습니다:</value>
-  </data>
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
     <value>잘라내기</value>
   </data>
@@ -299,9 +296,6 @@
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>미리 지정된 영역에서 화면 녹화 (GIF) 시작/중단</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>DNS 설정이 완료되었습니다.</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>미리 지정된 영역 촬영</value>
@@ -412,12 +406,6 @@
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>자동 증가하는 소문자 영숫자 (대소문자 미구분). 0으로 {n}만큼 패딩</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>DNS 설정이 실패되었습니다.</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>직접 입력</value>
-  </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>이미지 효과 및 워터마크 추가하기</value>
   </data>
@@ -447,9 +435,6 @@
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>타원 영역</value>
-  </data>
-  <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>DNS 변경기</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>화면 녹화 (GIF)</value>
@@ -733,9 +718,6 @@
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>폴더를 추가할 수 없습니다. 경로 설정을 확인해 주세요.</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>DNS 설정이 완료되었으며, 재부팅해야 합니다.</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
     <value>직접 입력</value>

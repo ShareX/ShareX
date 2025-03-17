@@ -282,9 +282,6 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Upload</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>Setting DNS failed with error code:</value>
-  </data>
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
     <value>Cut</value>
   </data>
@@ -308,9 +305,6 @@
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>Start/Stop screen recording (GIF) using pre configured region</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>DNS successfully set.</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Capture pre configured region</value>
@@ -431,12 +425,6 @@ Would you like to download it?</value>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>Auto increment alphanumeric case-insensitive (0 pad left using {n})</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>Setting DNS failed.</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Manual</value>
-  </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Add image effects</value>
   </data>
@@ -466,9 +454,6 @@ Would you like to download it?</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Ellipse region</value>
-  </data>
-  <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>DNS changer</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>Start/Stop screen recording (GIF)</value>
@@ -803,9 +788,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Could not create directory.</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>DNS successfully set. Reboot is required.</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
     <value>Manual</value>

@@ -282,9 +282,6 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>رفع</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>فشل في إعداد DNS مع رمز الخطأ التالي:</value>
-  </data>
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
     <value>قص</value>
   </data>
@@ -308,9 +305,6 @@
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>بدء/إيقاف تسجيل الشاشة من النوع (GIF) الخاص بالمنطقة مسبقة التحديد</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>تم إعداد DNS بنجاح.</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>التقاط مساحة مهيئة مسبقًا</value>
@@ -424,12 +418,6 @@
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>زيادة تلقائية للأرقام والحروف  (حشو بالأصفار بمقدار {n})</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>فشل في إعداد DNS.</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>يدوي</value>
-  </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>إضافة مؤثرات للصورة</value>
   </data>
@@ -459,9 +447,6 @@
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>مساحة بيضاوية الشكل</value>
-  </data>
-  <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>إعدادات DNS</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>بدء/إيقاف تسجيل الشاشة من النوع (GIF)</value>
@@ -775,9 +760,6 @@
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>فشل إنشاء المجلد.</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>تم إعداد DNS بنجاح. يجب إعادة تشغيل النظام.</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
     <value>يدوي</value>

@@ -329,9 +329,6 @@ namespace ShareX
                 case HotkeyType.MonitorTest:
                     OpenMonitorTest();
                     break;
-                case HotkeyType.DNSChanger:
-                    OpenDNSChanger();
-                    break;
                 // Other
                 case HotkeyType.DisableHotkeys:
                     ToggleHotkeys(safeTaskSettings);
@@ -1340,22 +1337,6 @@ namespace ShareX
             }
         }
 
-        public static void OpenDNSChanger()
-        {
-#if MicrosoftStore
-            MessageBox.Show("Not supported in Microsoft Store build.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-#else
-            if (Helpers.IsAdministrator())
-            {
-                new DNSChangerForm().Show();
-            }
-            else
-            {
-                RunShareXAsAdmin("-dnschanger");
-            }
-#endif
-        }
-
         public static void RunShareXAsAdmin(string arguments = null)
         {
             try
@@ -1900,7 +1881,6 @@ namespace ShareX
                     case HotkeyType.ActiveWindowTopMost: return Resources.pin;
                     case HotkeyType.InspectWindow: return Resources.application_search_result;
                     case HotkeyType.MonitorTest: return Resources.monitor;
-                    case HotkeyType.DNSChanger: return Resources.network_ip;
                     // Other
                     case HotkeyType.DisableHotkeys: return Resources.keyboard__minus;
                     case HotkeyType.OpenMainWindow: return Resources.application_home;

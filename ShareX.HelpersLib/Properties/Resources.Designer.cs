@@ -749,51 +749,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DNS successfully set..
-        /// </summary>
-        internal static string DNSChangerForm_btnSave_Click_DNS_successfully_set_ {
-            get {
-                return ResourceManager.GetString("DNSChangerForm_btnSave_Click_DNS_successfully_set_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to DNS successfully set. Reboot is required..
-        /// </summary>
-        internal static string DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_ {
-            get {
-                return ResourceManager.GetString("DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Setting DNS failed..
-        /// </summary>
-        internal static string DNSChangerForm_btnSave_Click_Setting_DNS_failed_ {
-            get {
-                return ResourceManager.GetString("DNSChangerForm_btnSave_Click_Setting_DNS_failed_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Setting DNS failed with error code:.
-        /// </summary>
-        internal static string DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_ {
-            get {
-                return ResourceManager.GetString("DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manual.
-        /// </summary>
-        internal static string DNSChangerForm_DNSChangerForm_Manual {
-            get {
-                return ResourceManager.GetString("DNSChangerForm_DNSChangerForm_Manual", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Status: {0}.
         /// </summary>
         internal static string DownloaderForm_ChangeStatus_Status___0_ {
@@ -1429,15 +1384,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_DisableHotkeys {
             get {
                 return ResourceManager.GetString("HotkeyType_DisableHotkeys", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to DNS changer.
-        /// </summary>
-        internal static string HotkeyType_DNSChanger {
-            get {
-                return ResourceManager.GetString("HotkeyType_DNSChanger", resourceCulture);
             }
         }
         

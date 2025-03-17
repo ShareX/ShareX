@@ -270,9 +270,6 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Вивантажити</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>Збій налаштування DNS з кодом помилки:</value>
-  </data>
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
     <value>Вирізати</value>
   </data>
@@ -296,9 +293,6 @@
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>Почати/зупинити запис налаштованої області екрану (GIF)</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>DNS вдало налаштовано.</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Захоплення попередньо налаштованої області</value>
@@ -409,12 +403,6 @@
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>Auto increment alphanumeric case-insensitive. 0 pad left using {n}</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>Збій налаштування DNS.</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Вручну</value>
-  </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Додати ефекти/водяний знак</value>
   </data>
@@ -444,9 +432,6 @@
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Еліптична область</value>
-  </data>
-  <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>Замінювач DNS</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>Почати/зупинити запис області екрану (GIF)</value>
@@ -736,9 +721,6 @@
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Неможливо створити теку.</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>DNS вдалоналаштовано. Потрібне перезавантаження.</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
     <value>Вручну</value>

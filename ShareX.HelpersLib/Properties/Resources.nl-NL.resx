@@ -237,9 +237,6 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Uploaden</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>DNS instellen mislukt met de foutcode:</value>
-  </data>
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
     <value>Knip</value>
   </data>
@@ -257,9 +254,6 @@
   </data>
   <data name="ImageEditorStartMode_Normal" xml:space="preserve">
     <value>Normaal</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>DNS succesvol ingesteld.</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Leg aangepaste regio vast</value>
@@ -340,12 +334,6 @@ Wil je deze downloaden?</value>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>Zelf ophogende alfa-numerieke sequentie, niet hoofdlettergevoelig. Voorloopnullen links met {n}</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>DNS niet correct ingesteld.</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Manueel</value>
-  </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Voeg afbeeldingseffecten / watermerk toe</value>
   </data>
@@ -363,9 +351,6 @@ Wil je deze downloaden?</value>
   </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>Huidig jaar (2 cijfers)</value>
-  </data>
-  <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>DNS wijziger</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>Schermopname (GIF)</value>
@@ -568,9 +553,6 @@ Wil je deze downloaden en installeren?</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Kon de map niet aanmaken, kijk je padinstellingen na.</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>DNS succesvol ingesteld. Opnieuw opstarten is nodig.</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
     <value>Manueel</value>

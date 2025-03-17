@@ -713,9 +713,6 @@ namespace ShareX.HelpersLib
         [DllImport("avifil32.dll")]
         public static extern int AVIMakeCompressedStream(out IntPtr compressedStream, IntPtr sourceStream, ref AVICOMPRESSOPTIONS options, IntPtr clsidHandler);
 
-        [DllImport("dnsapi.dll")]
-        public static extern uint DnsFlushResolverCache();
-
         [DllImport("uxtheme.dll", CharSet = CharSet.Unicode, ExactSpelling = true)]
         public static extern int SetWindowTheme(IntPtr hWnd, string pszSubAppName, string pszSubIdList);
 
