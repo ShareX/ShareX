@@ -102,7 +102,7 @@ namespace ShareX
         {
             if (metadata != null && metadata.Image != null)
             {
-                if (taskSettings.AdvancedSettings.ClearClipboardAfterCapture)
+                if (HelpersOptions.ClearClipboardAfterCapture)
                 {
                     Clipboard.Clear();
                 }

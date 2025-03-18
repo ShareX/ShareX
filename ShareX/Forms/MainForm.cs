@@ -951,6 +951,7 @@ namespace ShareX
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             HelpersOptions.RecentColors = Program.Settings.RecentColors;
             HelpersOptions.DevMode = Program.Settings.DevMode;
+            HelpersOptions.ClearClipboardAfterCapture = Program.Settings.ClearClipboardAfterCapture;
             Program.UpdateHelpersSpecialFolders();
 
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
