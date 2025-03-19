@@ -28,97 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MediaImporter));
             this.txtFolderPath = new System.Windows.Forms.TextBox();
             this.btnBrowseFolderPath = new System.Windows.Forms.Button();
             this.lblFolderPath = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.lblCount = new System.Windows.Forms.Label();
+            this.pbImportProgress = new System.Windows.Forms.ProgressBar();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtFolderPath
             // 
-            this.txtFolderPath.Location = new System.Drawing.Point(12, 51);
+            resources.ApplyResources(this.txtFolderPath, "txtFolderPath");
             this.txtFolderPath.Name = "txtFolderPath";
             this.txtFolderPath.ReadOnly = true;
-            this.txtFolderPath.Size = new System.Drawing.Size(408, 20);
-            this.txtFolderPath.TabIndex = 2;
             // 
             // btnBrowseFolderPath
             // 
-            this.btnBrowseFolderPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBrowseFolderPath.Location = new System.Drawing.Point(437, 49);
+            resources.ApplyResources(this.btnBrowseFolderPath, "btnBrowseFolderPath");
             this.btnBrowseFolderPath.Name = "btnBrowseFolderPath";
-            this.btnBrowseFolderPath.Size = new System.Drawing.Size(96, 23);
-            this.btnBrowseFolderPath.TabIndex = 3;
-            this.btnBrowseFolderPath.Text = "Browse...";
             this.btnBrowseFolderPath.UseVisualStyleBackColor = true;
             this.btnBrowseFolderPath.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // lblFolderPath
             // 
-            this.lblFolderPath.AutoSize = true;
-            this.lblFolderPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblFolderPath.Location = new System.Drawing.Point(12, 26);
+            resources.ApplyResources(this.lblFolderPath, "lblFolderPath");
             this.lblFolderPath.Name = "lblFolderPath";
-            this.lblFolderPath.Size = new System.Drawing.Size(63, 13);
-            this.lblFolderPath.TabIndex = 4;
-            this.lblFolderPath.Text = "Folder path:";
             // 
-            // progressBar1
+            // pbImportProgress
             // 
-            this.progressBar1.Location = new System.Drawing.Point(15, 109);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(405, 23);
-            this.progressBar1.TabIndex = 5;
-            // 
-            // lblCount
-            // 
-            this.lblCount.AutoSize = true;
-            this.lblCount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCount.Location = new System.Drawing.Point(434, 109);
-            this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(36, 13);
-            this.lblCount.TabIndex = 6;
-            this.lblCount.Text = "34/34";
+            resources.ApplyResources(this.pbImportProgress, "pbImportProgress");
+            this.pbImportProgress.Name = "pbImportProgress";
+            this.pbImportProgress.UseWaitCursor = true;
             // 
             // btnImport
             // 
-            this.btnImport.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnImport.Location = new System.Drawing.Point(309, 186);
+            resources.ApplyResources(this.btnImport, "btnImport");
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(96, 23);
-            this.btnImport.TabIndex = 7;
-            this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnClose
             // 
-            this.btnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnClose.Location = new System.Drawing.Point(437, 186);
+            resources.ApplyResources(this.btnClose, "btnClose");
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(96, 23);
-            this.btnClose.TabIndex = 8;
-            this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lbStatus
+            // 
+            resources.ApplyResources(this.lbStatus, "lbStatus");
+            this.lbStatus.Name = "lbStatus";
+            // 
             // MediaImporter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 221);
+            this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnImport);
-            this.Controls.Add(this.lblCount);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.pbImportProgress);
             this.Controls.Add(this.lblFolderPath);
             this.Controls.Add(this.btnBrowseFolderPath);
             this.Controls.Add(this.txtFolderPath);
             this.Name = "MediaImporter";
-            this.Text = "ShareX - Media Importer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MediaImporter_FormClosing);
             this.Load += new System.EventHandler(this.ImageImporter_Load);
             this.ResumeLayout(false);
@@ -131,9 +105,9 @@
         private System.Windows.Forms.TextBox txtFolderPath;
         private System.Windows.Forms.Button btnBrowseFolderPath;
         private System.Windows.Forms.Label lblFolderPath;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.ProgressBar pbImportProgress;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lbStatus;
     }
 }

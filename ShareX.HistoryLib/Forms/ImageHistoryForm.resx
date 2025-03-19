@@ -219,9 +219,6 @@
   <data name="tslSearch.Text" xml:space="preserve">
     <value>Search:</value>
   </data>
-  <data name="tstbSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
   <data name="tstbSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 25</value>
   </data>
@@ -259,7 +256,7 @@
     <value>Media Importer</value>
   </data>
   <data name="tsbMediaImporter.ToolTipText" xml:space="preserve">
-    <value>Open Media Importer.</value>
+    <value>Open Media Importer</value>
   </data>
   <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>

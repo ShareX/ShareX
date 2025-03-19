@@ -356,13 +356,6 @@ namespace ShareX.HistoryLib
             ApplyFilter();
         }
 
-        private void ilvImages_KeyDown(object sender, KeyEventArgs e)
-        {
-            e.SuppressKeyPress = him.HandleKeyInput(e);
-        }
-
-        #endregion Form events
-
         private async void tsbMediaImporter_Click(object sender, EventArgs e)
         {
             if (new MediaImporter(HistoryPath, him, allHistoryItems).ShowDialog() == DialogResult.OK)
@@ -370,5 +363,12 @@ namespace ShareX.HistoryLib
                 await RefreshHistoryItems();
             }
         }
+
+        private void ilvImages_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = him.HandleKeyInput(e);
+        }
+
+        #endregion Form events
     }
 }

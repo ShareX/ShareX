@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Forms;
 using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -70,6 +71,7 @@ namespace ShareX.HistoryLib
             il.Images.Add(Resources.image);
             il.Images.Add(Resources.notebook);
             il.Images.Add(Resources.application_block);
+            il.Images.Add(Resources.ic_fluent_video_clip_24_regular);
             il.Images.Add(Resources.globe);
             lvHistory.SmallImageList = il;
 
@@ -252,9 +254,13 @@ namespace ShareX.HistoryLib
             {
                 lvi.ImageIndex = 2;
             }
-            else
+            else if (hi.Type.Equals("Video", StringComparison.InvariantCultureIgnoreCase))
             {
                 lvi.ImageIndex = 3;
+            }
+            else
+            {
+                lvi.ImageIndex = 4;
             }
 
             lvi.SubItems.Add(hi.DateTime.ToString());
@@ -531,6 +537,14 @@ namespace ShareX.HistoryLib
             using (HistorySettingsForm form = new HistorySettingsForm(Settings))
             {
                 form.ShowDialog();
+            }
+        }
+
+        private async void tsbMediaImporter_Click(object sender, EventArgs e)
+        {
+            if (new MediaImporter(HistoryPath, him, allHistoryItems).ShowDialog() == DialogResult.OK)
+            {
+                await RefreshHistoryItems();
             }
         }
 

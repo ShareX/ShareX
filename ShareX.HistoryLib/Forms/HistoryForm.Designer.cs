@@ -46,6 +46,7 @@
             this.tsbShowStats = new System.Windows.Forms.ToolStripButton();
             this.tss2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSettings = new System.Windows.Forms.ToolStripButton();
+            this.tsbMediaImporter = new System.Windows.Forms.ToolStripButton();
             this.gbAdvancedSearch = new System.Windows.Forms.GroupBox();
             this.btnAdvancedSearchClose = new System.Windows.Forms.Button();
             this.btnAdvancedSearchReset = new System.Windows.Forms.Button();
@@ -149,7 +150,8 @@
             this.tsbToggleMoreInfo,
             this.tsbShowStats,
             this.tss2,
-            this.tsbSettings});
+            this.tsbSettings,
+            this.tsbMediaImporter});
             this.tsHistory.Name = "tsHistory";
             // 
             // tslSearch
@@ -215,6 +217,14 @@
             resources.ApplyResources(this.tsbSettings, "tsbSettings");
             this.tsbSettings.Name = "tsbSettings";
             this.tsbSettings.Click += new System.EventHandler(this.tsbSettings_Click);
+            // 
+            // tsbMediaImporter
+            // 
+            this.tsbMediaImporter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbMediaImporter.Image = global::ShareX.HistoryLib.Properties.Resources.ic_fluent_image_add_24_regular;
+            resources.ApplyResources(this.tsbMediaImporter, "tsbMediaImporter");
+            this.tsbMediaImporter.Name = "tsbMediaImporter";
+            this.tsbMediaImporter.Click += new System.EventHandler(this.tsbMediaImporter_Click);
             // 
             // gbAdvancedSearch
             // 
@@ -452,5 +462,6 @@
         private System.Windows.Forms.ToolStripButton tsbToggleMoreInfo;
         private System.Windows.Forms.ToolStripButton tsbShowStats;
         private System.Windows.Forms.Button btnAdvancedSearchClose;
+        private System.Windows.Forms.ToolStripButton tsbMediaImporter;
     }
 }
