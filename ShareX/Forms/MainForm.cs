@@ -202,11 +202,6 @@ namespace ShareX
 
             ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
 
-#if MicrosoftStore
-            tsmiDNSChanger.Visible = false;
-            tsmiTrayDNSChanger.Visible = false;
-#endif
-
             if (SystemOptions.DisableUpload)
             {
                 tsddbUpload.Visible = false;
