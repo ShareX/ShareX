@@ -2171,6 +2171,10 @@ namespace ShareX.HelpersLib
                 {
                     imageFormat = ImageFormat.Tiff;
                 }
+                else if (ext.Equals("webp", StringComparison.OrdinalIgnoreCase))
+                {
+                    imageFormat = ImageFormat.Webp
+                }
             }
 
             return imageFormat;
