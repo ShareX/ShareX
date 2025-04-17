@@ -283,14 +283,14 @@ begin
   end;
 end;
 
-procedure Dependency_AddDotNet48;
+procedure Dependency_AddDotnet8.0;
 begin
-  // https://dotnet.microsoft.com/download/dotnet-framework/net48
-  if not IsDotNetInstalled(net48, 0) then begin
-    Dependency_Add('dotnetfx48.exe',
-      '/lcid ' + IntToStr(GetUILanguage) + ' /passive /norestart',
-      '.NET Framework 4.8',
-      'https://go.microsoft.com/fwlink/?LinkId=2085155',
+  // https://dotnet.microsoft.com/download/dotnet/8.0
+  if not IsDotNetInstalled(net8.0, 0) then begin
+    Dependency_Add('dotnet-install.exe',
+      '/install /quiet /norestart',
+      '.NET 8.0',
+      'https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-8.0.100-windows-x64-installer',
       '', False, False);
   end;
 end;

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <OutputType>WinExe</OutputType>
     <PlatformTarget>x86</PlatformTarget>
     <AssemblyName>ShareX_Launcher</AssemblyName>

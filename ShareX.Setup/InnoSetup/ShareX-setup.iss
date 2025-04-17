@@ -137,7 +137,7 @@ end;
 
 function InitializeSetup(): Boolean;
 begin
-  Dependency_AddDotNet48;
+  Dependency_AddDotnet8.0;
   Result := true;
 end;
 
