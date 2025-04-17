@@ -450,6 +450,9 @@ namespace ShareX
                     case EImageFormat.TIFF:
                         img.Save(ms, ImageFormat.Tiff);
                         break;
+                    case EImageFormat.WEBP:
+                        img.Save(ms, ImageFormat.Webp);
+                        break;
                 }
             }
             catch (Exception e)
