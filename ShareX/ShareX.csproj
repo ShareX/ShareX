@@ -10,9 +10,6 @@
     <Description>Screen capture, file sharing and productivity tool</Description>
   </PropertyGroup>
   <ItemGroup>
-    <FrameworkReference Include="Microsoft.Windows.Compatibility" />
-</ItemGroup>
-  <ItemGroup>
     <Reference Include="System.Design" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Web" />
