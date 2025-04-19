@@ -42,6 +42,9 @@ namespace ShareX.HelpersLib
     {
         private const InterpolationMode DefaultInterpolationMode = InterpolationMode.HighQualityBicubic;
 
+        private static readonly Guid ImageFormatWEBP = new Guid(3110812855u, 1832, 4563, 157, 123, 0, 0, 248, 30, 243, 46);
+        public static readonly ImageFormat WebP = new ImageFormat(ImageFormatWEBP);
+
         public static Bitmap ResizeImage(Bitmap bmp, int width, int height, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
             if (width < 1 || height < 1 || (bmp.Width == width && bmp.Height == height))
@@ -2124,8 +2127,8 @@ namespace ShareX.HelpersLib
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Image files (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.tif, *.tiff)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.tif;*.tiff|" +
-                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
+                ofd.Filter = "Image files (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.tif, *.tiff, *.webp)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.tif;*.tiff;*.webp|" +
+                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff|WEBP (*.webp)|*.webp";
 
                 ofd.Multiselect = multiselect;
 
@@ -2171,6 +2174,10 @@ namespace ShareX.HelpersLib
                 {
                     imageFormat = ImageFormat.Tiff;
                 }
+                else if (ext.Equals("webp", StringComparison.OrdinalIgnoreCase))
+                {
+                    imageFormat = WebP;
+                }
             }
 
             return imageFormat;
@@ -2199,7 +2206,7 @@ namespace ShareX.HelpersLib
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
-                sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
+                sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff|WEBP (*.webp)|*.webp";
                 sfd.DefaultExt = "png";
 
                 string initialDirectory = null;
@@ -2247,6 +2254,9 @@ namespace ShareX.HelpersLib
                             case "tiff":
                                 sfd.FilterIndex = 5;
                                 break;
+                            case "webp":
+                                sfd.FilterIndex = 6;
+                                break;
                         }
                     }
                 }
@@ -2274,6 +2284,50 @@ namespace ShareX.HelpersLib
 
                     if (!string.IsNullOrEmpty(filePath) && FileHelpers.IsImageFile(filePath) && File.Exists(filePath))
                     {
+                        // Check if it's a WebP file
+                        if (Path.GetExtension(filePath).Equals(".webp", StringComparison.OrdinalIgnoreCase))
+                        {
+                            // Use libwebp decoder to load WebP image
+                            byte[] data = File.ReadAllBytes(filePath);
+                            IntPtr dataPtr = Marshal.AllocHGlobal(data.Length);
+                            try
+                            {
+                                Marshal.Copy(data, 0, dataPtr, data.Length);
+                                int width, height;
+                                if (NativeMethods.WebPGetInfo(dataPtr, (uint)data.Length, out width, out height) != 0)
+                                {
+                                    IntPtr outputBuffer = NativeMethods.WebPDecodeBGRA(dataPtr, (uint)data.Length, out width, out height);
+                                    if (outputBuffer != IntPtr.Zero)
+                                    {
+                                        try
+                                        {
+                                            Bitmap bitmap = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+                                            BitmapData bmpData = bitmap.LockBits(new Rectangle(0, 0, width, height), 
+                                                ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
+                                            
+                                            byte[] pixelData = new byte[width * height * 4];
+                                            Marshal.Copy(outputBuffer, pixelData, 0, pixelData.Length);
+                                            Marshal.Copy(pixelData, 0, bmpData.Scan0, pixelData.Length);
+                                            
+                                            bitmap.UnlockBits(bmpData);
+                                            NativeMethods.WebPFree(outputBuffer);
+                                            return bitmap;
+                                        }
+                                        catch
+                                        {
+                                            NativeMethods.WebPFree(outputBuffer);
+                                            throw;
+                                        }
+                                    }
+                                }
+                            }
+                            finally
+                            {
+                                Marshal.FreeHGlobal(dataPtr);
+                            }
+                        }
+
+                        // For other image formats
                         // http://stackoverflow.com/questions/788335/why-does-image-fromfile-keep-a-file-handle-open-sometimes
                         Bitmap bmp = (Bitmap)Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
 

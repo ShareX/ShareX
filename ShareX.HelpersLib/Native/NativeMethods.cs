@@ -479,6 +479,24 @@ namespace ShareX.HelpersLib
 
         #endregion
 
+        #region libwebp.dll
+            private const string LibWebP = "libwebp.dll";
+
+            [DllImport(LibWebP, CallingConvention = CallingConvention.Cdecl)]
+            public static extern int WebPEncodeBGRA(
+                IntPtr rgba, int width, int height, int stride, 
+                float quality_factor, out IntPtr output);
+
+            [DllImport(LibWebP, CallingConvention = CallingConvention.Cdecl)]
+            public static extern void WebPFree(IntPtr ptr);
+
+            [DllImport(LibWebP, CallingConvention = CallingConvention.Cdecl)]
+            public static extern int WebPGetInfo(IntPtr data, uint data_size, out int width, out int height);
+
+            [DllImport(LibWebP, CallingConvention = CallingConvention.Cdecl)]
+            public static extern IntPtr WebPDecodeBGRA(IntPtr data, uint data_size, out int width, out int height);
+        #endregion libwebp.dll
+
         #region Other dll
 
         [DllImport("msvcrt.dll")]
