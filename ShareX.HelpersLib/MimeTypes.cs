@@ -87,8 +87,8 @@ namespace ShareX.HelpersLib
                 mimeType.Equals(Mappings["gif"], StringComparison.OrdinalIgnoreCase) ||
                 mimeType.Equals(Mappings["bmp"], StringComparison.OrdinalIgnoreCase) ||
                 mimeType.Equals(Mappings["tiff"], StringComparison.OrdinalIgnoreCase) ||
-                mimeType.Equals(Mappings["webp"], StringComparison.OrdinalIgnoreCase)) ||
-                mimeType.Equals(Mappings["avif"], StringComparison.OrdinalIgnoreCase);
+                mimeType.Equals(Mappings["webp"], StringComparison.OrdinalIgnoreCase) ||
+                mimeType.Equals(Mappings["avif"], StringComparison.OrdinalIgnoreCase));
         }
 
         // http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types
