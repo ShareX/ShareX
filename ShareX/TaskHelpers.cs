@@ -452,54 +452,10 @@ namespace ShareX
                         img.Save(ms, ImageFormat.Tiff);
                         break;
                     case EImageFormat.WEBP:
-                        try 
-                        {
-                            using (Bitmap bmpBgra = new Bitmap(img.Width, img.Height, PixelFormat.Format32bppArgb))
-                            {
-                                using (Graphics g = Graphics.FromImage(bmpBgra))
-                                {
-                                    g.DrawImage(img, 0, 0, img.Width, img.Height);
-                                }
-                    
-                                BitmapData bmpData = bmpBgra.LockBits(
-                                    new Rectangle(0, 0, bmpBgra.Width, bmpBgra.Height),
-                                    ImageLockMode.ReadOnly, 
-                                    PixelFormat.Format32bppArgb);
-                    
-                                try
-                                {
-                                    IntPtr output;
-                                    int size = NativeMethods.WebPEncodeBGRA(
-                                        bmpData.Scan0,
-                                        bmpBgra.Width,
-                                        bmpBgra.Height,
-                                        bmpData.Stride,
-                                        jpegQuality, // 使用 JPEG 质量作为 WebP 质量
-                                        out output);
-                    
-                                    if (size > 0)
-                                    {
-                                        byte[] buffer = new byte[size];
-                                        Marshal.Copy(output, buffer, 0, size);
-                                        NativeMethods.WebPFree(output);
-                                        ms.Write(buffer, 0, size);
-                                    }
-                                    else
-                                    {
-                                        throw new Exception("WebP encoding failed");
-                                    }
-                                }
-                                finally
-                                {
-                                    bmpBgra.UnlockBits(bmpData);
-                                }
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            DebugHelper.WriteException(e);
-                            e.ShowError();
-                        }
+                        ImageHelpers.SaveWebPToStream(img, ms, quality: jpegQuality);
+                        break;
+                    case EImageFormat.AVIF:
+                        ImageHelpers.SaveAvifToStream(img, ms, quality: jpegQuality);
                         break;
                 }
             }
@@ -508,7 +464,6 @@ namespace ShareX
                 DebugHelper.WriteException(e);
                 e.ShowError();
             }
-
             return ms;
         }
 

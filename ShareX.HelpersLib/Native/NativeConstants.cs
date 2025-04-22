@@ -132,4 +132,21 @@ namespace ShareX.HelpersLib
         public const int LWA_COLORKEY = 0x1;
         public const int LWA_ALPHA = 0x2;
     }
+
+    public static class AvifAddImageFlags
+    {
+        public const uint AVIF_ADD_IMAGE_FLAG_NONE = 0;
+        public const uint AVIF_ADD_IMAGE_FLAG_FORCE_KEYFRAME = (1 << 0);
+        public const uint AVIF_ADD_IMAGE_FLAG_SINGLE = (1 << 1);
+    }
+
+    // Added based on avif.h
+    public static class AvifConstants
+    {
+        public const int AVIF_PLANE_COUNT_YUV = 3;
+        public const int AVIF_QUALITY_DEFAULT = -1;
+        public const int AVIF_QUALITY_WORST = 0;
+        public const int AVIF_QUALITY_BEST = 100;
+        public const int AVIF_QUALITY_LOSSLESS = 100;
+    }
 }

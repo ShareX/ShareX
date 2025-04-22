@@ -65,7 +65,9 @@ namespace ShareX.HelpersLib
         [Description("tif")]
         TIFF,
         [Description("webp")]
-        WEBP
+        WEBP,
+        [Description("avif")]
+        AVIF
     }
 
     public enum HashType

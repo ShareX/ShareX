@@ -87,7 +87,8 @@ namespace ShareX.HelpersLib
                 mimeType.Equals(Mappings["gif"], StringComparison.OrdinalIgnoreCase) ||
                 mimeType.Equals(Mappings["bmp"], StringComparison.OrdinalIgnoreCase) ||
                 mimeType.Equals(Mappings["tiff"], StringComparison.OrdinalIgnoreCase) ||
-                mimeType.Equals(Mappings["webp"], StringComparison.OrdinalIgnoreCase));
+                mimeType.Equals(Mappings["webp"], StringComparison.OrdinalIgnoreCase)) ||
+                mimeType.Equals(Mappings["avif"], StringComparison.OrdinalIgnoreCase);
         }
 
         // http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types
@@ -139,6 +140,7 @@ namespace ShareX.HelpersLib
             { "atx", "application/vnd.antix.game-component" },
             { "au", "audio/basic" },
             { "avi", "video/x-msvideo" },
+            { "avif", "image/avif" },
             { "aw", "application/applixware" },
             { "azf", "application/vnd.airzip.filesecure.azf" },
             { "azs", "application/vnd.airzip.filesecure.azs" },

@@ -3428,4 +3428,210 @@ namespace ShareX.HelpersLib
         /// <summary>In a Maximize button.</summary>
         HTZOOM = 9,
     }
+
+    public enum AvifPixelFormat
+    {
+        // No YUV pixels are present. Alpha plane can still be present.
+        AVIF_PIXEL_FORMAT_NONE = 0,
+
+        AVIF_PIXEL_FORMAT_YUV444,
+        AVIF_PIXEL_FORMAT_YUV422,
+        AVIF_PIXEL_FORMAT_YUV420,
+        AVIF_PIXEL_FORMAT_YUV400,
+        AVIF_PIXEL_FORMAT_COUNT
+    }
+
+    public enum AvifRGBFormat
+    {
+        AVIF_RGB_FORMAT_RGB = 0,
+        AVIF_RGB_FORMAT_RGBA, // This is the default format set in avifRGBImageSetDefaults().
+        AVIF_RGB_FORMAT_ARGB,
+        AVIF_RGB_FORMAT_BGR,
+        AVIF_RGB_FORMAT_BGRA,
+        AVIF_RGB_FORMAT_ABGR,
+        // RGB_565 format uses five bits for the red and blue components and six
+        // bits for the green component. Each RGB pixel is 16 bits (2 bytes), which
+        // is packed as follows:
+        //   uint16_t: [r4 r3 r2 r1 r0 g5 g4 g3 g2 g1 g0 b4 b3 b2 b1 b0]
+        //   r4 and r0 are the MSB and LSB of the red component respectively.
+        //   g5 and g0 are the MSB and LSB of the green component respectively.
+        //   b4 and b0 are the MSB and LSB of the blue component respectively.
+        // This format is only supported for YUV -> RGB conversion and when
+        // avifRGBImage.depth is set to 8.
+        AVIF_RGB_FORMAT_RGB_565,
+        AVIF_RGB_FORMAT_GRAY,
+        AVIF_RGB_FORMAT_GRAYA,
+        AVIF_RGB_FORMAT_AGRAY,
+        AVIF_RGB_FORMAT_COUNT
+    }
+    public enum AvifChromaUpsampling : int
+    {
+        AVIF_CHROMA_UPSAMPLING_AUTOMATIC = 0,    // Chooses best trade off of speed/quality (uses BILINEAR libyuv if available,
+                                                // or falls back to NEAREST libyuv if available, or falls back to BILINEAR built-in)
+        AVIF_CHROMA_UPSAMPLING_FASTEST = 1,      // Chooses speed over quality (same as NEAREST)
+        AVIF_CHROMA_UPSAMPLING_BEST_QUALITY = 2, // Chooses the best quality upsampling, given settings (same as BILINEAR)
+        AVIF_CHROMA_UPSAMPLING_NEAREST = 3,      // Uses nearest-neighbor filter
+        AVIF_CHROMA_UPSAMPLING_BILINEAR = 4      // Uses bilinear filter
+    }
+
+    public enum AvifChromaDownsampling : int
+    {
+        AVIF_CHROMA_DOWNSAMPLING_AUTOMATIC = 0,    // Chooses best trade off of speed/quality (same as AVERAGE)
+        AVIF_CHROMA_DOWNSAMPLING_FASTEST = 1,      // Chooses speed over quality (same as AVERAGE)
+        AVIF_CHROMA_DOWNSAMPLING_BEST_QUALITY = 2, // Chooses the best quality upsampling (same as AVERAGE)
+        AVIF_CHROMA_DOWNSAMPLING_AVERAGE = 3,      // Uses averaging filter
+        AVIF_CHROMA_DOWNSAMPLING_SHARP_YUV = 4     // Uses sharp yuv filter (libsharpyuv), available for 4:2:0 only, ignored for 4:2:2
+    }
+    public enum AvifResult
+    {
+        AVIF_RESULT_OK = 0,
+        AVIF_RESULT_UNKNOWN_ERROR = 1,
+        AVIF_RESULT_INVALID_FTYP = 2,
+        AVIF_RESULT_NO_CONTENT = 3,
+        AVIF_RESULT_NO_YUV_FORMAT_SELECTED = 4,
+        AVIF_RESULT_REFORMAT_FAILED = 5,
+        AVIF_RESULT_UNSUPPORTED_DEPTH = 6,
+        AVIF_RESULT_ENCODE_COLOR_FAILED = 7,
+        AVIF_RESULT_ENCODE_ALPHA_FAILED = 8,
+        AVIF_RESULT_BMFF_PARSE_FAILED = 9,
+        AVIF_RESULT_MISSING_IMAGE_ITEM = 10,
+        AVIF_RESULT_DECODE_COLOR_FAILED = 11,
+        AVIF_RESULT_DECODE_ALPHA_FAILED = 12,
+        AVIF_RESULT_COLOR_ALPHA_SIZE_MISMATCH = 13,
+        AVIF_RESULT_ISPE_SIZE_MISMATCH = 14,
+        AVIF_RESULT_NO_CODEC_AVAILABLE = 15,
+        AVIF_RESULT_NO_IMAGES_REMAINING = 16,
+        AVIF_RESULT_INVALID_EXIF_PAYLOAD = 17,
+        AVIF_RESULT_INVALID_IMAGE_GRID = 18,
+        AVIF_RESULT_INVALID_CODEC_SPECIFIC_OPTION = 19,
+        AVIF_RESULT_TRUNCATED_DATA = 20,
+        AVIF_RESULT_IO_NOT_SET = 21,
+        AVIF_RESULT_IO_ERROR = 22,
+        AVIF_RESULT_WAITING_ON_IO = 23,
+        AVIF_RESULT_INVALID_ARGUMENT = 24,
+        AVIF_RESULT_NOT_IMPLEMENTED = 25,
+        AVIF_RESULT_OUT_OF_MEMORY = 26,
+        AVIF_RESULT_CANNOT_CHANGE_SETTING = 27,
+        AVIF_RESULT_INCOMPATIBLE_IMAGE = 28,
+        // Add other results as needed from avif.h
+    }
+    public enum AvifRange
+    {
+        // avifRange is only applicable to YUV planes. RGB and alpha planes are always full range.
+        AVIF_RANGE_LIMITED = 0, // Y  [16..235],  UV  [16..240]  (bit depth 8)
+                                // Y  [64..940],  UV  [64..960]  (bit depth 10)
+                                // Y [256..3760], UV [256..3840] (bit depth 12)
+        AVIF_RANGE_FULL = 1     // [0..255]  (bit depth 8)
+                                // [0..1023] (bit depth 10)
+                                // [0..4095] (bit depth 12)
+    }
+    public enum AvifChromaSamplePosition : int
+    {
+        AVIF_CHROMA_SAMPLE_POSITION_UNKNOWN = 0,
+        AVIF_CHROMA_SAMPLE_POSITION_VERTICAL = 1,
+        AVIF_CHROMA_SAMPLE_POSITION_COLOCATED = 2,
+        AVIF_CHROMA_SAMPLE_POSITION_RESERVED = 3
+    }
+    public enum AvifColorPrimaries : int
+    {
+        // This is actually reserved, but libavif uses it as a sentinel value.
+        AVIF_COLOR_PRIMARIES_UNKNOWN = 0,
+
+        AVIF_COLOR_PRIMARIES_BT709 = 1,
+        AVIF_COLOR_PRIMARIES_SRGB = 1,
+        AVIF_COLOR_PRIMARIES_IEC61966_2_4 = 1,
+        AVIF_COLOR_PRIMARIES_UNSPECIFIED = 2,
+        AVIF_COLOR_PRIMARIES_BT470M = 4,
+        AVIF_COLOR_PRIMARIES_BT470BG = 5,
+        AVIF_COLOR_PRIMARIES_BT601 = 6,
+        AVIF_COLOR_PRIMARIES_SMPTE240 = 7,
+        AVIF_COLOR_PRIMARIES_GENERIC_FILM = 8,
+        AVIF_COLOR_PRIMARIES_BT2020 = 9,
+        AVIF_COLOR_PRIMARIES_BT2100 = 9,
+        AVIF_COLOR_PRIMARIES_XYZ = 10,
+        AVIF_COLOR_PRIMARIES_SMPTE431 = 11,
+        AVIF_COLOR_PRIMARIES_SMPTE432 = 12,
+        AVIF_COLOR_PRIMARIES_DCI_P3 = 12,
+        AVIF_COLOR_PRIMARIES_EBU3213 = 22
+    }
+    public enum AvifMatrixCoefficients : int
+    {
+        AVIF_MATRIX_COEFFICIENTS_IDENTITY = 0,
+        AVIF_MATRIX_COEFFICIENTS_BT709 = 1,
+        AVIF_MATRIX_COEFFICIENTS_UNSPECIFIED = 2,
+        AVIF_MATRIX_COEFFICIENTS_FCC = 4,
+        AVIF_MATRIX_COEFFICIENTS_BT470BG = 5,
+        AVIF_MATRIX_COEFFICIENTS_BT601 = 6,
+        AVIF_MATRIX_COEFFICIENTS_SMPTE240 = 7,
+        AVIF_MATRIX_COEFFICIENTS_YCGCO = 8,
+        AVIF_MATRIX_COEFFICIENTS_BT2020_NCL = 9,
+        AVIF_MATRIX_COEFFICIENTS_BT2020_CL = 10,
+        AVIF_MATRIX_COEFFICIENTS_SMPTE2085 = 11,
+        AVIF_MATRIX_COEFFICIENTS_CHROMA_DERIVED_NCL = 12,
+        AVIF_MATRIX_COEFFICIENTS_CHROMA_DERIVED_CL = 13,
+        AVIF_MATRIX_COEFFICIENTS_ICTCP = 14,
+        AVIF_MATRIX_COEFFICIENTS_YCGCO_RE = 16, // Added to libavif in Feb 2025
+        AVIF_MATRIX_COEFFICIENTS_YCGCO_RO = 17, // Added to libavif in Feb 2025
+        AVIF_MATRIX_COEFFICIENTS_LAST
+    }
+    public enum AvifTransferCharacteristics : int
+    {
+        AVIF_TRANSFER_CHARACTERISTICS_UNKNOWN = 0,
+
+        AVIF_TRANSFER_CHARACTERISTICS_BT709 = 1,
+        AVIF_TRANSFER_CHARACTERISTICS_UNSPECIFIED = 2,
+        AVIF_TRANSFER_CHARACTERISTICS_BT470M = 4,  // 2.2 gamma
+        AVIF_TRANSFER_CHARACTERISTICS_BT470BG = 5, // 2.8 gamma
+        AVIF_TRANSFER_CHARACTERISTICS_BT601 = 6,
+        AVIF_TRANSFER_CHARACTERISTICS_SMPTE240 = 7,
+        AVIF_TRANSFER_CHARACTERISTICS_LINEAR = 8,
+        AVIF_TRANSFER_CHARACTERISTICS_LOG100 = 9,
+        AVIF_TRANSFER_CHARACTERISTICS_LOG100_SQRT10 = 10,
+        AVIF_TRANSFER_CHARACTERISTICS_IEC61966 = 11,
+        AVIF_TRANSFER_CHARACTERISTICS_BT1361 = 12,
+        AVIF_TRANSFER_CHARACTERISTICS_SRGB = 13,
+        AVIF_TRANSFER_CHARACTERISTICS_BT2020_10BIT = 14,
+        AVIF_TRANSFER_CHARACTERISTICS_BT2020_12BIT = 15,
+        AVIF_TRANSFER_CHARACTERISTICS_PQ = 16, // Perceptual Quantizer (HDR); BT.2100 PQ
+        AVIF_TRANSFER_CHARACTERISTICS_SMPTE2084 = 16,
+        AVIF_TRANSFER_CHARACTERISTICS_SMPTE428 = 17,
+        AVIF_TRANSFER_CHARACTERISTICS_HLG = 18 // Hybrid Log-Gamma (HDR); ARIB STD-B67; BT.2100 HLG
+    }
+    public enum AvifTransformFlags : int
+    {
+        AVIF_TRANSFORM_NONE = 0,
+
+        AVIF_TRANSFORM_PASP = (1 << 0),
+        AVIF_TRANSFORM_CLAP = (1 << 1),
+        AVIF_TRANSFORM_IROT = (1 << 2),
+        AVIF_TRANSFORM_IMIR = (1 << 3)
+    }
+    public enum AvifCodecChoice : int
+    {
+        AVIF_CODEC_CHOICE_AUTO = 0,
+        AVIF_CODEC_CHOICE_AOM,
+        AVIF_CODEC_CHOICE_DAV1D,   // Decode only
+        AVIF_CODEC_CHOICE_LIBGAV1, // Decode only
+        AVIF_CODEC_CHOICE_RAV1E,   // Encode only
+        AVIF_CODEC_CHOICE_SVT,     // Encode only
+        AVIF_CODEC_CHOICE_AVM      // Experimental (AV2)
+    }
+    public enum AvifDecoderSource : int
+    {
+        // Honor the major brand signaled in the beginning of the file to pick between an AVIF sequence
+        // ('avis', tracks-based) or a single image ('avif', item-based). If the major brand is neither
+        // of these, prefer the AVIF sequence ('avis', tracks-based), if present.
+        AVIF_DECODER_SOURCE_AUTO = 0,
+
+        // Use the primary item and the aux (alpha) item in the avif(s).
+        // This is where single-image avifs store their image.
+        AVIF_DECODER_SOURCE_PRIMARY_ITEM,
+
+        // Use the chunks inside primary/aux tracks in the moov block.
+        // This is where avifs image sequences store their images.
+        AVIF_DECODER_SOURCE_TRACKS
+
+        // Decode the thumbnail item. Currently unimplemented.
+        // AVIF_DECODER_SOURCE_THUMBNAIL_ITEM
+    }
 }

@@ -40,10 +40,12 @@ namespace ShareX.HelpersLib
 {
     public static class ImageHelpers
     {
-        private const InterpolationMode DefaultInterpolationMode = InterpolationMode.HighQualityBicubic;
+        private static readonly Guid WebP_GUID = new Guid(3110812855u, 1832, 4563, 157, 123, 0, 0, 248, 30, 243, 46);
+        public static readonly ImageFormat WebP = new ImageFormat(WebP_GUID);
+        private static readonly Guid AVIF_GUID = new Guid(104845947u, 37650, 64832, 164, 215, 25, 172, 247, 193, 106, 213);
+        public static readonly ImageFormat AVIF = new ImageFormat(AVIF_GUID);
 
-        private static readonly Guid ImageFormatWEBP = new Guid(3110812855u, 1832, 4563, 157, 123, 0, 0, 248, 30, 243, 46);
-        public static readonly ImageFormat WebP = new ImageFormat(ImageFormatWEBP);
+        private const InterpolationMode DefaultInterpolationMode = InterpolationMode.HighQualityBicubic;
 
         public static Bitmap ResizeImage(Bitmap bmp, int width, int height, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
@@ -2127,8 +2129,8 @@ namespace ShareX.HelpersLib
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Image files (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.tif, *.tiff, *.webp)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.tif;*.tiff;*.webp|" +
-                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff|WEBP (*.webp)|*.webp";
+                ofd.Filter = "Image files (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.tif, *.tiff, *.webp, *.avif)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.tif;*.tiff;*.webp;*.avif|" +
+                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff|WEBP (*.webp)|*.webp|AVIF (*.avif)|*.avif";
 
                 ofd.Multiselect = multiselect;
 
@@ -2178,6 +2180,10 @@ namespace ShareX.HelpersLib
                 {
                     imageFormat = WebP;
                 }
+                else if (ext.Equals("avif", StringComparison.OrdinalIgnoreCase))
+                {
+                    imageFormat = AVIF;
+                }
             }
 
             return imageFormat;
@@ -2187,21 +2193,394 @@ namespace ShareX.HelpersLib
         {
             FileHelpers.CreateDirectoryFromFilePath(filePath);
             ImageFormat imageFormat = GetImageFormat(filePath);
-
             try
             {
-                img.Save(filePath, imageFormat);
+                if (imageFormat.Equals(WebP))
+                {
+                    SaveWebP(img, filePath);
+                }
+                else if (imageFormat.Equals(AVIF))
+                {
+                    SaveAvif(img, filePath);
+                }
+                else
+                {
+                    img.Save(filePath, imageFormat);
+                }
                 return true;
             }
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
                 e.ShowError();
+                return false;
             }
-
-            return false;
+        }
+        public static void SavePNG(Image img, string filePath, PNGBitDepth bitDepth)
+        {
+            using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Read))
+            {
+                SavePNG(img, fs, bitDepth);
+            }
         }
 
+        // Add SaveGIF overload that takes filePath
+        public static void SaveGIF(Image img, string filePath, GIFQuality quality)
+        {
+            using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Read))
+            {
+                SaveGIF(img, fs, quality);
+            }
+        }
+
+        public static void SaveWebP(Image img, string filePath, int quality = 80)
+        {
+            using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Read))
+            {
+                SaveWebPToStream(img, fs, quality);
+            }
+        }
+
+        public static void SaveWebPToStream(Image img, Stream stream, int quality = 80)
+        {
+            if (img == null)
+                throw new ArgumentNullException(nameof(img));
+            if (stream == null)
+                throw new ArgumentNullException(nameof(stream));
+            if (quality < 0 || quality > 100)
+                throw new ArgumentOutOfRangeException(nameof(quality), "Quality must be between 0 and 100");
+            if (!stream.CanWrite)
+                throw new ArgumentException("Stream must be writable", nameof(stream));
+
+            using (var bmpBgra = new Bitmap(img.Width, img.Height, PixelFormat.Format32bppArgb))
+            {
+                using (var g = Graphics.FromImage(bmpBgra))
+                {
+                    // Use high quality settings for the conversion
+                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+                    g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                    g.CompositingQuality = CompositingQuality.HighQuality;
+
+                    g.DrawImage(img, 0, 0, img.Width, img.Height);
+                }
+
+                BitmapData bmpData = null;
+                IntPtr output = IntPtr.Zero;
+
+                try
+                {
+                    bmpData = bmpBgra.LockBits(
+                        new Rectangle(0, 0, bmpBgra.Width, bmpBgra.Height),
+                        ImageLockMode.ReadOnly,
+                        PixelFormat.Format32bppArgb);
+
+                    int size = NativeMethods.WebPEncodeBGRA(
+                        bmpData.Scan0,
+                        bmpBgra.Width,
+                        bmpBgra.Height,
+                        bmpData.Stride,
+                        quality,
+                        out output);
+
+                    if (size <= 0)
+                    {
+                        throw new ApplicationException("WebP encoding failed");
+                    }
+
+                    byte[] buffer = new byte[size];
+                    Marshal.Copy(output, buffer, 0, size);
+                    stream.Write(buffer, 0, size);
+                }
+                finally
+                {
+                    if (bmpData != null)
+                    {
+                        bmpBgra.UnlockBits(bmpData);
+                    }
+
+                    if (output != IntPtr.Zero)
+                    {
+                        NativeMethods.WebPFree(output);
+                    }
+                }
+            }
+        }
+        public static bool SaveAvif(Image img, string filePath, int quality = 80, int speed = 6)
+        {
+            if (img == null)
+                throw new ArgumentNullException(nameof(img));
+            if (string.IsNullOrEmpty(filePath))
+                throw new ArgumentNullException(nameof(filePath));
+
+            try
+            {
+                using (var fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    return SaveAvifToStream(img, fileStream, quality, speed);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex, $"Failed to create file for AVIF: {filePath}");
+                return false;
+            }
+        }
+
+        public static bool SaveAvifToStream(Image img, Stream outputStream, int quality = 80, int speed = 6)
+        {
+            if (img == null)
+                throw new ArgumentNullException(nameof(img));
+            if (outputStream == null)
+                throw new ArgumentNullException(nameof(outputStream));
+            if (!outputStream.CanWrite)
+                throw new ArgumentException("Stream must be writable", nameof(outputStream));
+            if (quality < 0 || quality > 100)
+                throw new ArgumentOutOfRangeException(nameof(quality), "Quality must be between 0 and 100");
+            if (speed < 0 || speed > 10)
+                throw new ArgumentOutOfRangeException(nameof(speed), "Speed must be between 0 and 10");
+
+            // Create bitmap with proper format
+            using (var bmp32 = CreateArgbBitmap(img))
+            {
+                IntPtr avifImage = IntPtr.Zero;
+                IntPtr encoder = IntPtr.Zero;
+                AvifRWData avifData = default;
+
+                try
+                {
+                    // Create AVIF image
+                    avifImage = CreateAvifImage(bmp32, out BitmapData bmpData);
+                    if (avifImage == IntPtr.Zero)
+                        return false;
+
+                    try
+                    {
+                        // Convert RGB to YUV
+                        if (!ConvertBitmapToYuv(bmp32, avifImage, bmpData))
+                            return false;
+                    }
+                    finally
+                    {
+                        bmp32.UnlockBits(bmpData);
+                    }
+
+                    // Create and configure encoder
+                    encoder = CreateAndConfigureEncoder(quality, speed);
+                    if (encoder == IntPtr.Zero)
+                        return false;
+
+                    // Encode the image
+                    if (!EncodeAvifImage(avifImage, encoder, ref avifData))
+                        return false;
+
+                    // Write encoded data to stream
+                    return WriteAvifDataToStream(avifData, outputStream);
+                }
+                finally
+                {
+                    // Clean up native resources
+                    CleanupAvifNativeResources(ref avifData, encoder, avifImage);
+                }
+            }
+        }
+
+        private static Bitmap CreateArgbBitmap(Image sourceImage)
+        {
+            // Always create a new 32bpp ARGB format bitmap to avoid releasing the original image.
+            var resultBitmap = new Bitmap(sourceImage.Width, sourceImage.Height, PixelFormat.Format32bppArgb);
+
+            resultBitmap.SetResolution(sourceImage.HorizontalResolution, sourceImage.VerticalResolution);
+
+            using (var g = Graphics.FromImage(resultBitmap))
+            {
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+                g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+
+                g.DrawImage(sourceImage, 0, 0, sourceImage.Width, sourceImage.Height);
+            }
+
+            return resultBitmap;
+        }
+        private static IntPtr CreateAvifImage(Bitmap bitmap, out BitmapData bmpData)
+        {
+            int width = bitmap.Width;
+            int height = bitmap.Height;
+
+            // Lock bitmap bits for direct memory access
+            bmpData = bitmap.LockBits(
+                new Rectangle(0, 0, width, height),
+                ImageLockMode.ReadOnly,
+                PixelFormat.Format32bppArgb);
+
+            // Create AVIF image with YUV444 for highest quality
+            var avifImage = NativeMethods.avifImageCreate(
+                (uint)width,
+                (uint)height,
+                8, // 8-bit depth for standard bitmap
+                AvifPixelFormat.AVIF_PIXEL_FORMAT_YUV444);
+
+            if (avifImage == IntPtr.Zero)
+            {
+                DebugHelper.WriteLine("Failed to create AVIF image");
+                bitmap.UnlockBits(bmpData);
+            }
+
+            return avifImage;
+        }
+
+        private static bool ConvertBitmapToYuv(Bitmap bitmap, IntPtr avifImage, BitmapData bmpData)
+        {
+            // Prepare RGB image struct
+            AvifRGBImage rgb = default;
+            NativeMethods.avifRGBImageSetDefaults(ref rgb, avifImage);
+            rgb.format = AvifRGBFormat.AVIF_RGB_FORMAT_BGRA; // Input is BGRA from Bitmap
+            rgb.pixels = bmpData.Scan0;
+            rgb.rowBytes = (uint)bmpData.Stride;
+
+            // Convert RGB to YUV
+            int result = NativeMethods.avifImageRGBToYUV(avifImage, ref rgb);
+            if (result != (int)AvifResult.AVIF_RESULT_OK)
+            {
+                string errorMsg = Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(result));
+                DebugHelper.WriteLine($"RGB to YUV conversion failed: {errorMsg} (Result Code: {result})");
+                return false;
+            }
+
+            return true;
+        }
+
+        private static IntPtr CreateAndConfigureEncoder(int quality, int speed)
+        {
+            var encoder = NativeMethods.avifEncoderCreate();
+            if (encoder == IntPtr.Zero)
+            {
+                DebugHelper.WriteLine("Failed to create AVIF encoder");
+                return IntPtr.Zero;
+            }
+
+            try
+            {
+                // Get current encoder settings
+                avifEncoder settings = Marshal.PtrToStructure<avifEncoder>(encoder);
+
+                // Configure encoder
+                settings.quality = quality < 0 ? 0 : (quality > 100 ? 100 : quality);
+                settings.qualityAlpha = settings.quality;
+                settings.speed = speed < 0 ? 0 : (speed > 10 ? 10 : speed);
+                settings.maxThreads = Math.Max(1, Environment.ProcessorCount - 1);
+                settings.autoTiling = 1;
+
+                // Write settings back to the encoder
+                Marshal.StructureToPtr(settings, encoder, false);
+                return encoder;
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex, "Failed to configure AVIF encoder");
+                NativeMethods.avifEncoderDestroy(encoder);
+                return IntPtr.Zero;
+            }
+        }
+
+        private static bool EncodeAvifImage(IntPtr avifImage, IntPtr encoder, ref AvifRWData avifData)
+        {
+            // Add the image to the encoder
+            int addResult = NativeMethods.avifEncoderAddImage(
+                encoder,
+                avifImage,
+                1, // Duration (irrelevant for single image)
+                AvifAddImageFlags.AVIF_ADD_IMAGE_FLAG_SINGLE);
+
+            if (addResult != (int)AvifResult.AVIF_RESULT_OK)
+            {
+                string errorMsg = Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(addResult));
+                DebugHelper.WriteLine($"Failed to add image to encoder: {errorMsg} (Result Code: {addResult})");
+            }
+
+            // Finish encoding to get compressed data
+            int finishResult = NativeMethods.avifEncoderFinish(encoder, ref avifData);
+            if (finishResult != (int)AvifResult.AVIF_RESULT_OK)
+            {
+                string errorMsg = Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(finishResult));
+                DebugHelper.WriteLine($"AVIF encoding failed: {errorMsg} (Result Code: {finishResult})");
+                return false;
+            }
+
+            return avifData.data != IntPtr.Zero && avifData.size.ToInt64() > 0;
+        }
+
+        private static bool WriteAvifDataToStream(AvifRWData avifData, Stream outputStream)
+        {
+            long dataSize = avifData.size.ToInt64();
+            if (dataSize <= 0 || avifData.data == IntPtr.Zero)
+            {
+                DebugHelper.WriteLine("AVIF encoding produced no data");
+                return false;
+            }
+
+            try
+            {
+                // Handle large files by writing in chunks if necessary
+                const int maxChunkSize = 81920; // 80KB chunks
+
+                if (dataSize <= maxChunkSize)
+                {
+                    // Standard case: data fits in a reasonably sized buffer
+                    byte[] buffer = new byte[dataSize];
+                    Marshal.Copy(avifData.data, buffer, 0, (int)dataSize);
+                    outputStream.Write(buffer, 0, (int)dataSize);
+                }
+                else
+                {
+                    // Handle large files by writing in chunks
+                    byte[] chunkBuffer = new byte[maxChunkSize];
+                    long bytesRemaining = dataSize;
+                    long offset = 0;
+
+                    while (bytesRemaining > 0)
+                    {
+                        int bytesToCopy = (int)Math.Min(bytesRemaining, maxChunkSize);
+                        Marshal.Copy(IntPtr.Add(avifData.data, (int)offset), chunkBuffer, 0, bytesToCopy);
+                        outputStream.Write(chunkBuffer, 0, bytesToCopy);
+
+                        offset += bytesToCopy;
+                        bytesRemaining -= bytesToCopy;
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex, "Failed to write AVIF data to stream");
+                return false;
+            }
+        }
+
+        private static void CleanupAvifNativeResources(ref AvifRWData avifData, IntPtr encoder, IntPtr avifImage)
+        {
+            // Release AVIF data if allocated
+            if (avifData.data != IntPtr.Zero)
+            {
+                NativeMethods.avifRWDataFree(ref avifData);
+            }
+
+            // Destroy encoder if created
+            if (encoder != IntPtr.Zero)
+            {
+                NativeMethods.avifEncoderDestroy(encoder);
+            }
+
+            // Destroy AVIF image if created
+            if (avifImage != IntPtr.Zero)
+            {
+                NativeMethods.avifImageDestroy(avifImage);
+            }
+        }
         public static string SaveImageFileDialog(Image img, string filePath = "", bool useLastDirectory = true)
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
@@ -2257,6 +2636,9 @@ namespace ShareX.HelpersLib
                             case "webp":
                                 sfd.FilterIndex = 6;
                                 break;
+                            case "avif":
+                                sfd.FilterIndex = 7;
+                                break;
                         }
                     }
                 }
@@ -2276,76 +2658,268 @@ namespace ShareX.HelpersLib
 
         public static Bitmap LoadImage(string filePath)
         {
-            if (!string.IsNullOrEmpty(filePath))
+            if (string.IsNullOrEmpty(filePath))
+                return null;
+
+            try
             {
-                try
+                filePath = FileHelpers.GetAbsolutePath(filePath);
+                string ext = Path.GetExtension(filePath)?.ToLowerInvariant();
+
+                if (string.IsNullOrEmpty(ext) || !File.Exists(filePath))
                 {
-                    filePath = FileHelpers.GetAbsolutePath(filePath);
+                    DebugHelper.WriteLine($"File not found or invalid extension: {filePath}");
+                    return null;
+                }
 
-                    if (!string.IsNullOrEmpty(filePath) && FileHelpers.IsImageFile(filePath) && File.Exists(filePath))
+                Bitmap bitmap = null;
+                switch (ext)
+                {
+                    case ".webp":
+                        bitmap = LoadWebPImage(filePath);
+                        break;
+                    case ".avif":
+                        bitmap = LoadAvifImage(filePath);
+                        break;
+                    default:
+                        bitmap = LoadStandardImage(filePath);
+                        break;
+                }
+
+                if (bitmap != null && HelpersOptions.RotateImageByExifOrientationData)
+                {
+                    RotateImageByExifOrientationData(bitmap);
+                }
+
+                return bitmap;
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, $"Error loading image file: {filePath}");
+                return null;
+            }
+        }
+
+        private static Bitmap LoadWebPImage(string filePath)
+        {
+            byte[] data = File.ReadAllBytes(filePath);
+            IntPtr dataPtr = Marshal.AllocHGlobal(data.Length);
+            try
+            {
+                Marshal.Copy(data, 0, dataPtr, data.Length);
+                int width, height;
+
+                // Use WebPGetInfo for dimensions first
+                if (NativeMethods.WebPGetInfo(dataPtr, (uint)data.Length, out width, out height) != 0)
+                {
+                    // Decode to BGRA (matches PixelFormat.Format32bppArgb byte order)
+                    IntPtr outputBuffer = NativeMethods.WebPDecodeBGRA(dataPtr, (uint)data.Length, out width, out height);
+                    if (outputBuffer != IntPtr.Zero)
                     {
-                        // Check if it's a WebP file
-                        if (Path.GetExtension(filePath).Equals(".webp", StringComparison.OrdinalIgnoreCase))
+                        Bitmap bitmap = null;
+                        try
                         {
-                            // Use libwebp decoder to load WebP image
-                            byte[] data = File.ReadAllBytes(filePath);
-                            IntPtr dataPtr = Marshal.AllocHGlobal(data.Length);
-                            try
+                            bitmap = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+                            BitmapData bmpData = bitmap.LockBits(new Rectangle(0, 0, width, height),
+                                ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
+
+                            // Calculate size based on stride
+                            int size = bmpData.Stride * height;
+                            // Copy from native buffer to BitmapData
+                            NativeMethods.CopyMemory(bmpData.Scan0, outputBuffer, (uint)size);
+
+                            bitmap.UnlockBits(bmpData);
+                            // Free the native buffer *after* copying
+                            NativeMethods.WebPFree(outputBuffer);
+                            outputBuffer = IntPtr.Zero; // Prevent double free in finally
+                            return bitmap;
+                        }
+                        catch
+                        {
+                            // Ensure bitmap is disposed if creation/copying fails
+                            bitmap?.Dispose();
+                            throw; // Re-throw the exception
+                        }
+                        finally
+                        {
+                            // Ensure WebP buffer is freed even on exceptions during Bitmap handling
+                            if (outputBuffer != IntPtr.Zero)
                             {
-                                Marshal.Copy(data, 0, dataPtr, data.Length);
-                                int width, height;
-                                if (NativeMethods.WebPGetInfo(dataPtr, (uint)data.Length, out width, out height) != 0)
-                                {
-                                    IntPtr outputBuffer = NativeMethods.WebPDecodeBGRA(dataPtr, (uint)data.Length, out width, out height);
-                                    if (outputBuffer != IntPtr.Zero)
-                                    {
-                                        try
-                                        {
-                                            Bitmap bitmap = new Bitmap(width, height, PixelFormat.Format32bppArgb);
-                                            BitmapData bmpData = bitmap.LockBits(new Rectangle(0, 0, width, height), 
-                                                ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
-                                            
-                                            byte[] pixelData = new byte[width * height * 4];
-                                            Marshal.Copy(outputBuffer, pixelData, 0, pixelData.Length);
-                                            Marshal.Copy(pixelData, 0, bmpData.Scan0, pixelData.Length);
-                                            
-                                            bitmap.UnlockBits(bmpData);
-                                            NativeMethods.WebPFree(outputBuffer);
-                                            return bitmap;
-                                        }
-                                        catch
-                                        {
-                                            NativeMethods.WebPFree(outputBuffer);
-                                            throw;
-                                        }
-                                    }
-                                }
-                            }
-                            finally
-                            {
-                                Marshal.FreeHGlobal(dataPtr);
+                                NativeMethods.WebPFree(outputBuffer);
                             }
                         }
-
-                        // For other image formats
-                        // http://stackoverflow.com/questions/788335/why-does-image-fromfile-keep-a-file-handle-open-sometimes
-                        Bitmap bmp = (Bitmap)Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
-
-                        if (HelpersOptions.RotateImageByExifOrientationData)
-                        {
-                            RotateImageByExifOrientationData(bmp);
-                        }
-
-                        return bmp;
+                    }
+                    else
+                    {
+                        DebugHelper.WriteLine($"WebPDecodeBGRA failed for {filePath}");
                     }
                 }
-                catch (Exception e)
+                else
                 {
-                    DebugHelper.WriteException(e);
+                    DebugHelper.WriteLine($"WebPGetInfo failed for {filePath}");
                 }
             }
+            finally
+            {
+                Marshal.FreeHGlobal(dataPtr);
+            }
+            return null; // WebP loading failed
+        }
 
-            return null;
+        private static Bitmap LoadAvifImage(string filePath)
+        {
+            byte[] data = File.ReadAllBytes(filePath);
+            IntPtr decoder = IntPtr.Zero;
+            IntPtr avifImageHandle = IntPtr.Zero; // Store the native avifImage pointer
+            AvifRGBImage rgb = default; // Keep the managed struct
+            Bitmap bitmap = null;
+
+            try
+            {
+                decoder = NativeMethods.AvifDecoderCreate();
+                if (decoder == IntPtr.Zero)
+                {
+                    DebugHelper.WriteLine("Failed to create AVIF decoder.");
+                    return null;
+                }
+
+                // Set memory IO
+                int result = NativeMethods.AvifDecoderSetIOMemory(decoder, data, (IntPtr)data.Length);
+                if (result != (int)AvifResult.AVIF_RESULT_OK)
+                {
+                    DebugHelper.WriteLine($"AvifDecoderSetIOMemory failed: {Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(result))}");
+                    return null;
+                }
+
+                // Parse the file
+                result = NativeMethods.AvifDecoderParse(decoder);
+                if (result != (int)AvifResult.AVIF_RESULT_OK)
+                {
+                    // AVIF_RESULT_WAITING_ON_IO can happen with truncated files, treat as error here
+                    DebugHelper.WriteLine($"AvifDecoderParse failed: {Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(result))}");
+                    return null;
+                }
+
+                // Decode the first image
+                result = NativeMethods.AvifDecoderNextImage(decoder);
+                if (result != (int)AvifResult.AVIF_RESULT_OK)
+                {
+                    // AVIF_RESULT_NO_IMAGES_REMAINING is technically OK after the first frame,
+                    // but for LoadImage, if the *first* call fails, it's an error.
+                    // Also handle AVIF_RESULT_WAITING_ON_IO etc.
+                    DebugHelper.WriteLine($"AvifDecoderNextImage failed: {Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(result))}");
+                    return null;
+                }
+
+                // Get the internal avifImage struct pointer from the decoder
+                avifImageHandle = NativeMethods.AvifDecoderGetImage(decoder); // Use the helper
+                if (avifImageHandle == IntPtr.Zero)
+                {
+                    DebugHelper.WriteLine("Failed to get avifImage from decoder (internal pointer was null).");
+                    return null;
+                }
+
+                // Prepare the RGB struct for output
+                NativeMethods.avifRGBImageSetDefaults(ref rgb, avifImageHandle);
+                // rgb.depth is set by SetDefaults based on the decoded image, but we want 8-bit output
+                rgb.depth = 8;
+                rgb.format = AvifRGBFormat.AVIF_RGB_FORMAT_BGRA; // Request BGRA for Bitmap compatibility
+
+                // Allocate native memory for RGB pixels *within the AvifRGBImage struct*
+                result = NativeMethods.avifRGBImageAllocatePixels(ref rgb);
+                if (result != (int)AvifResult.AVIF_RESULT_OK)
+                {
+                    DebugHelper.WriteLine($"avifRGBImageAllocatePixels failed: {Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(result))}");
+                    return null;
+                }
+
+                // Convert the decoded YUV image to our requested RGB format
+                result = NativeMethods.avifImageYUVToRGB(avifImageHandle, ref rgb);
+                if (result != (int)AvifResult.AVIF_RESULT_OK)
+                {
+                    DebugHelper.WriteLine($"avifImageYUVToRGB failed: {Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(result))}");
+                    // Need to free allocated pixels even if conversion fails
+                    NativeMethods.avifRGBImageFreePixels(ref rgb);
+                    rgb.pixels = IntPtr.Zero;
+                    return null;
+                }
+
+                // Create the C# Bitmap
+                // Use rgb.width and rgb.height from the prepared struct
+                bitmap = new Bitmap((int)rgb.width, (int)rgb.height, PixelFormat.Format32bppArgb);
+                BitmapData bmpData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height),
+                                                    ImageLockMode.WriteOnly,
+                                                    PixelFormat.Format32bppArgb);
+                try
+                {
+                    // Copy the pixels from libavif's buffer to the Bitmap
+                    int bytesToCopy = bmpData.Stride * bmpData.Height;
+                    int sourceStride = (int)rgb.rowBytes;
+                    int destStride = bmpData.Stride;
+                    IntPtr sourcePtr = rgb.pixels;
+                    IntPtr destPtr = bmpData.Scan0;
+
+                    if (sourceStride == destStride)
+                    {
+                        // Direct copy if strides match
+                        NativeMethods.CopyMemory(destPtr, sourcePtr, (uint)bytesToCopy);
+                    }
+                    else
+                    {
+                        // Copy row by row if strides differ
+                        int rowLength = (int)rgb.width * 4; // 4 bytes per pixel for BGRA
+                        int copyLength = Math.Min(rowLength, Math.Min(sourceStride, destStride)); // Safest length to copy per row
+                        for (int y = 0; y < rgb.height; y++)
+                        {
+                            NativeMethods.CopyMemory(destPtr, sourcePtr, (uint)copyLength);
+                            sourcePtr += sourceStride; // Advance source by its stride
+                            destPtr += destStride;     // Advance dest by its stride
+                        }
+                        if (rowLength > copyLength)
+                        {
+                            DebugHelper.WriteLine($"AVIF Load: Row copy truncated due to stride mismatch (row: {rowLength}, srcStride: {sourceStride}, dstStride: {destStride})");
+                        }
+                    }
+                }
+                finally
+                {
+                    bitmap.UnlockBits(bmpData);
+                }
+
+                // Free the native RGB pixel buffer *after* copying
+                NativeMethods.avifRGBImageFreePixels(ref rgb);
+                rgb.pixels = IntPtr.Zero; // Mark as freed
+
+                return bitmap; // Success!
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex, $"Error loading AVIF: {filePath}");
+                bitmap?.Dispose(); // Dispose bitmap if created before exception
+                return null;
+            }
+            finally
+            {
+                // Ensure native resources are always freed
+                if (rgb.pixels != IntPtr.Zero) // Check if it was allocated and not freed
+                {
+                    NativeMethods.avifRGBImageFreePixels(ref rgb);
+                }
+                // Note: We don't destroy avifImageHandle directly, AvifDecoderDestroy handles it.
+                if (decoder != IntPtr.Zero)
+                {
+                    NativeMethods.AvifDecoderDestroy(decoder);
+                }
+            }
+        }
+
+        private static Bitmap LoadStandardImage(string filePath)
+        {
+            // http://stackoverflow.com/questions/788335/why-does-image-fromfile-keep-a-file-handle-open-sometimes
+            // Reading the file into memory and then loading the image from a MemoryStream is a reliable method to ensure the file handle is released immediately.
+            Bitmap bmp = (Bitmap)Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
+
+            return bmp;
         }
 
         public static Bitmap LoadImageWithFileDialog(Form form = null)

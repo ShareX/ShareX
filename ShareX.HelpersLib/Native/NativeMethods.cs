@@ -309,6 +309,10 @@ namespace ShareX.HelpersLib
         public static extern bool CreateProcess(string lpApplicationName, string lpCommandLine, ref SECURITY_ATTRIBUTES lpProcessAttributes, ref SECURITY_ATTRIBUTES lpThreadAttributes,
             bool bInheritHandles, uint dwCreationFlags, IntPtr lpEnvironment, string lpCurrentDirectory, [In] ref STARTUPINFO lpStartupInfo, out PROCESS_INFORMATION lpProcessInformation);
 
+        // Memory copy (optional, can use Marshal.Copy)
+        [DllImport("kernel32.dll", EntryPoint = "CopyMemory", SetLastError = false)]
+        public static extern void CopyMemory(IntPtr dest, IntPtr src, uint count);
+
         [DllImport("kernel32.dll")]
         public static extern int ResumeThread(IntPtr hThread);
 
@@ -477,25 +481,98 @@ namespace ShareX.HelpersLib
         [DllImport("winmm.dll", EntryPoint = "timeGetDevCaps")]
         public static extern uint TimeGetDevCaps(ref TimeCaps timeCaps, uint sizeTimeCaps);
 
-        #endregion
+        #endregion winmm.dll
 
         #region libwebp.dll
-            private const string LibWebP = "libwebp.dll";
+        private const string LibWebP = "libwebp.dll";
 
-            [DllImport(LibWebP, CallingConvention = CallingConvention.Cdecl)]
-            public static extern int WebPEncodeBGRA(
-                IntPtr rgba, int width, int height, int stride, 
-                float quality_factor, out IntPtr output);
+        [DllImport(LibWebP, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int WebPEncodeBGRA(
+            IntPtr rgba, int width, int height, int stride,
+            float quality_factor, out IntPtr output);
 
-            [DllImport(LibWebP, CallingConvention = CallingConvention.Cdecl)]
-            public static extern void WebPFree(IntPtr ptr);
+        [DllImport(LibWebP, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void WebPFree(IntPtr ptr);
 
-            [DllImport(LibWebP, CallingConvention = CallingConvention.Cdecl)]
-            public static extern int WebPGetInfo(IntPtr data, uint data_size, out int width, out int height);
+        [DllImport(LibWebP, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int WebPGetInfo(IntPtr data, uint data_size, out int width, out int height);
 
-            [DllImport(LibWebP, CallingConvention = CallingConvention.Cdecl)]
-            public static extern IntPtr WebPDecodeBGRA(IntPtr data, uint data_size, out int width, out int height);
+        [DllImport(LibWebP, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr WebPDecodeBGRA(IntPtr data, uint data_size, out int width, out int height);
         #endregion libwebp.dll
+
+        #region avif.dll
+
+        private const string AvifDll = "avif.dll";
+
+        // --- Decoder functions ---
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr AvifDecoderCreate();
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int AvifDecoderSetIOMemory(IntPtr decoder, byte[] data, IntPtr size); // size_t -> IntPtr
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int AvifDecoderParse(IntPtr decoder); // Returns avifResult
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int AvifDecoderNextImage(IntPtr decoder); // Returns avifResult
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void AvifDecoderDestroy(IntPtr decoder);
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int avifImageYUVToRGB(IntPtr image, ref AvifRGBImage rgb); // Returns avifResult
+
+        // --- RGB Image functions ---
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void avifRGBImageSetDefaults(ref AvifRGBImage rgb, IntPtr image);
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int avifRGBImageAllocatePixels(ref AvifRGBImage rgb); // Returns avifResult
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void avifRGBImageFreePixels(ref AvifRGBImage rgb);
+
+        // --- Utility functions ---
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr avifResultToString(int result); // avifResult -> int
+
+        // --- AVIF Encoding Functions ---
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr avifImageCreate(uint width, uint height, uint depth, AvifPixelFormat yuvFormat);
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void avifImageDestroy(IntPtr image); // Matches decoder one
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int avifImageRGBToYUV(IntPtr image, ref AvifRGBImage rgb);
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr avifEncoderCreate();
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        public static extern int avifEncoderSetCodecSpecificOption(IntPtr encoder, string key, string value);
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void avifEncoderDestroy(IntPtr encoder);
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int avifEncoderAddImage(IntPtr encoder, IntPtr image, ulong durationInTimescales, uint addImageFlags); // Use uint for flags
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int avifEncoderFinish(IntPtr encoder, ref AvifRWData output); // Pass AvifRWData by ref
+
+        // --- RWData functions ---
+
+        [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void avifRWDataFree(ref AvifRWData data); // Pass AvifRWData by ref
+
+        #endregion avif.dll
 
         #region Other dll
 
