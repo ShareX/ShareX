@@ -163,7 +163,7 @@
     <value>Загальні</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>Скинути</value>
+    <value>Скинути...</value>
   </data>
   <data name="btnThemeRemove.Text" xml:space="preserve">
     <value>Вилучити</value>
@@ -229,7 +229,7 @@
     <value>Відкрити...</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Користувацька тека для знімків:</value>
+    <value>Власна тека для знімків:</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>Шаблон назви підтек:</value>
@@ -358,6 +358,81 @@
     <value>Розширені</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — налаштування програми</value>
+    <value>ShareX — Налаштування програми</value>
+  </data>
+  <data name="lblUpdateChannel.Text" xml:space="preserve">
+    <value>Канал оновлень:</value>
+  </data>
+  <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
+    <value>Автоматично перевіряти наявність оновлень</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>Використовувати власну тему</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>Шаблон назви підтек для вікна:</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Автоматично очищати старі файли журналів</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Кількість файлів для зберігання:</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Автоматично очищати старі файли резервних копій</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>Головне вікно</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>Розташування мініатюри:</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>Видимість мініатюри:</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>Режим мініатюр</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>Розмір мініатюри:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>Дія при натисканні:</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>Перевизначити принтер за замовчуванням:</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>Скинути</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>Показувати заголовок</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>Показувати меню</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>Показувати стовпці</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>Формати буферу обміну</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Під час повторної спроби використовувати вторинні вивантажувачі в порядку пріоритету</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>Режим списку</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>Режим перегляду завдань:</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>Ці формати з'являться у підменю "Копіювати" контекстного меню головного вікна.</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>Розташування заголовка:</value>
   </data>
 </root>

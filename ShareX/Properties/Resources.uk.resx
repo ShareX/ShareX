@@ -507,4 +507,155 @@
   <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
     <value>Угорська</value>
   </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
+    <value>Ваше антивірусне програмне забезпечення або функція контрольованого доступу до папок у Windows може блокувати ShareX.</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Закріпити на екрані</value>
+  </data>
+  <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
+    <value>Подяка</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
+    <value>Арабська</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Персидська</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
+    <value>Іврит</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+    <value>Японська</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pl" xml:space="preserve">
+    <value>Польська</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Португальська</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ro" xml:space="preserve">
+    <value>Румунська</value>
+  </data>
+  <data name="AboutForm_AboutForm_Links" xml:space="preserve">
+    <value>Посилання</value>
+  </data>
+  <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
+    <value>Політика конфіденційності</value>
+  </data>
+  <data name="AboutForm_AboutForm_Team" xml:space="preserve">
+    <value>Команда</value>
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>Бажаєте скинути теми?</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>ShareX не можна закрити під час активного запису екрана.
+
+Ви хочете перервати активний запис екрану?</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>Ця функція не працюватиме, якщо увімкнено опцію "DisableUpload"!</value>
+  </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>Не вдалося знайти вікно з вказаним заголовком.</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>Бажаєте повторити спробу завантаження з буфера обміну?</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>Ваш системний адміністратор вимкнув функцію вивантаження.</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>Бажаєте увімкнути ефекти зображення?
+
+Пізніше ви зможете вимкнути їх у меню "Завдання після захоплення".</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Помилка</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Вміст буфера обміну: Файл (кількість: {0})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Вміст буфера обміну: Зображення (розмір: {0}х{1})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Вміст буфера обміну: Текст (довжина: {0})</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>У буфері обміну немає зображення.</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>Вивантаження з буфера обміну</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>Буфер обміну порожній або містить невідомі дані.</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Підтвердження</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>Не вдалося зберегти налаштування</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+    <value>Помилка FFmpeg</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>Джерело відео та аудіо FFmpeg не може бути одночасно "None".</value>
+  </data>
+  <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
+    <value>FFmpeg не існує за таким шляхом:</value>
+  </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>FFmpeg відсутній</value>
+  </data>
+  <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
+    <value>FFmpeg, що постачається з ShareX, підтримує лише 64-розрядні операційні системи.</value>
+  </data>
+  <data name="ImageData_Write_Error_Message" xml:space="preserve">
+    <value>Не вдалося записати зображення до шляху:</value>
+  </data>
+  <data name="InspectWindow_ClassName" xml:space="preserve">
+    <value>Ім'я класу</value>
+  </data>
+  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
+    <value>Клієнтський прямокутник</value>
+  </data>
+  <data name="InspectWindow_ExtendedWindowStyles" xml:space="preserve">
+    <value>Розширені стилі вікна</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>Ім'я файлу процесу</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>Ідентифікатор процесу</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>Ім'я процесу</value>
+  </data>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>Дескриптор вікна</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>Прямокутник вікна</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>Стилі вікна</value>
+  </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>Заголовок вікна</value>
+  </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>ShareX актуальний!</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX згорнуто до системного лотка.</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>Вибір кольору на екрані</value>
+  </data>
+  <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
+    <value>Функція оптичного розпізнавання тексту доступна лише у Windows версії {0} або новішої.</value>
+  </data>
 </root>

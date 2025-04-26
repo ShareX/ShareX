@@ -132,4 +132,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Налаштування поєднання клавіш</value>
   </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>Гарячі клавіші вимкнено. Ви можете натиснути тут, щоб увімкнути їх.</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Скинути...</value>
+  </data>
 </root>
