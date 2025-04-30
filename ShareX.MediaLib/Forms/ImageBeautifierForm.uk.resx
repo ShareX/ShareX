@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -59,7 +59,7 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -117,52 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Додати...</value>
+  <data name="btnCopy.ToolTip" xml:space="preserve">
+    <value>Скопіювати</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Вилучити</value>
+  <data name="btnPrint.ToolTip" xml:space="preserve">
+    <value>Друк...</value>
   </data>
-  <data name="btnMoveUp.Text" xml:space="preserve">
-    <value>Вгору</value>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>Скинути налаштування...</value>
   </data>
-  <data name="btnMoveDown.Text" xml:space="preserve">
-    <value>Вниз</value>
+  <data name="btnSave.ToolTip" xml:space="preserve">
+    <value>Зберегти</value>
   </data>
-  <data name="chFilepath.Text" xml:space="preserve">
-    <value>Шлях до файла зображення</value>
+  <data name="btnSaveAs.ToolTip" xml:space="preserve">
+    <value>Зберегти як...</value>
   </data>
-  <data name="btnCombine.Text" xml:space="preserve">
-    <value>Обʼєднати зображення і зберегти/вивантажити в залежності від налаштувань дій по завершенні захоплення</value>
+  <data name="btnShadowColor.Text" xml:space="preserve">
+    <value>Колір...</value>
   </data>
-  <data name="lblSpace.Text" xml:space="preserve">
-    <value>Простір між зображеннями:</value>
+  <data name="btnUpload.ToolTip" xml:space="preserve">
+    <value>Вивантажити</value>
   </data>
-  <data name="lblOrientation.Text" xml:space="preserve">
-    <value>Орієнтація:</value>
+  <data name="cbSmartPadding.Text" xml:space="preserve">
+    <value>Розумні відступи</value>
   </data>
-  <data name="lblSpacePixel.Text" xml:space="preserve">
-    <value>пікселів</value>
+  <data name="btnBackgroundImageFilePathBrowse.Text" xml:space="preserve">
+    <value>Відкрити файл зображення...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Об’єднувач зображень</value>
+    <value>ShareX — Покращувач зображень</value>
   </data>
-  <data name="cbAutoFillBackground.Text" xml:space="preserve">
-    <value>Автозаповнення тла</value>
+  <data name="gbShadow.Text" xml:space="preserve">
+    <value>Тінь</value>
   </data>
-  <data name="lblImageAlignment.Text" xml:space="preserve">
-    <value>Вирівнювання зображення:</value>
+  <data name="lblBackground.Text" xml:space="preserve">
+    <value>Тло:</value>
   </data>
-  <data name="rbOrientationVertical.Text" xml:space="preserve">
-    <value>Вертикальна</value>
+  <data name="lblMargin.Text" xml:space="preserve">
+    <value>Зовнішній відступ:</value>
   </data>
-  <data name="rbOrientationHorizontal.Text" xml:space="preserve">
-    <value>Горизонтальна</value>
+  <data name="lblPadding.Text" xml:space="preserve">
+    <value>Внутрішній відступ:</value>
   </data>
-  <data name="lblWrapAfterImages.Text" xml:space="preserve">
-    <value>зображень</value>
+  <data name="lblShadowAngle.Text" xml:space="preserve">
+    <value>Кут:</value>
   </data>
-  <data name="lblWrapAfter.Text" xml:space="preserve">
-    <value>Переносити після:</value>
+  <data name="lblShadowDistance.Text" xml:space="preserve">
+    <value>Відстань:</value>
+  </data>
+  <data name="lblShadowOpacity.Text" xml:space="preserve">
+    <value>Непрозорість:</value>
+  </data>
+  <data name="lblShadowRadius.Text" xml:space="preserve">
+    <value>Радіус:</value>
+  </data>
+  <data name="lblRoundedCorner.Text" xml:space="preserve">
+    <value>Заокруглений кут:</value>
   </data>
 </root>

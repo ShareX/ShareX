@@ -177,9 +177,6 @@
   <data name="cbFirebaseIsShort.Text" xml:space="preserve">
     <value>Коротке посилання</value>
   </data>
-  <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
-    <value>Динамічні посилання Firebase</value>
-  </data>
   <data name="lblKuttPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
   </data>
@@ -304,10 +301,7 @@
     <value>Оновити список тек</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Публічне вивантаження?</value>
-  </data>
-  <data name="tpGoogleDrive.Text" xml:space="preserve">
-    <value>Диск Google</value>
+    <value>Публічне вивантаження</value>
   </data>
   <data name="lblPuushAPIKey.Text" xml:space="preserve">
     <value>Ключ API:</value>
@@ -420,9 +414,6 @@
   <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
     <value>Домен користувача:</value>
   </data>
-  <data name="tpAzureStorage.Text" xml:space="preserve">
-    <value>Сховище Azure</value>
-  </data>
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
     <value>Попередній перегляд</value>
   </data>
@@ -520,7 +511,7 @@
     <value>Шаблон</value>
   </data>
   <data name="lblJiraHost.Text" xml:space="preserve">
-    <value>Хост Jira: </value>
+    <value>Хост Jira:</value>
   </data>
   <data name="gbJiraServer.Text" xml:space="preserve">
     <value>Сервер Jira</value>
@@ -621,9 +612,6 @@
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>Пароль:</value>
   </data>
-  <data name="tpStreamable.Text" xml:space="preserve">
-    <value>Потоковий</value>
-  </data>
   <data name="btnSulGetAPIKey.Text" xml:space="preserve">
     <value>Отримати ключ API...</value>
   </data>
@@ -658,7 +646,7 @@
     <value>Інші налаштування</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
-    <value>Файли будуть автоматично видалені через </value>
+    <value>Файли будуть автоматично видалені через</value>
   </data>
   <data name="lblPlikURL.Text" xml:space="preserve">
     <value>Хост</value>
@@ -667,7 +655,7 @@
     <value>Потрібні імʼя користувача та пароль?</value>
   </data>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
-    <value>Ключ API: </value>
+    <value>Ключ API:</value>
   </data>
   <data name="lblPlikPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
@@ -923,5 +911,188 @@
   </data>
   <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
     <value>Використовувати пряме посилання</value>
+  </data>
+  <data name="lblZWSToken.Text" xml:space="preserve">
+    <value>Токен:</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
+    <value>ніколи</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
+    <value>хвилин</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
+    <value>годин</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
+    <value>днів</value>
+  </data>
+  <data name="lblZWSURL.Text" xml:space="preserve">
+    <value>Посилання:</value>
+  </data>
+  <data name="lblKuttDomain.Text" xml:space="preserve">
+    <value>Домен:</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>Додавати ім'я файлу до URL-адреси</value>
+  </data>
+  <data name="cbFTPAppendRemoteDirectory.Text" xml:space="preserve">
+    <value>Додавати віддалену теку до URL-адреси</value>
+  </data>
+  <data name="lblB2ApplicationKey.Text" xml:space="preserve">
+    <value>Ключ застосунку (secret):</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
+    <value>Ідентифікатор ключа застосунку:</value>
+  </data>
+  <data name="lblAmazonS3StripExtension.Text" xml:space="preserve">
+    <value>Видалити розширення файлу:</value>
+  </data>
+  <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
+    <value>Видалити розширення файлу:</value>
+  </data>
+  <data name="lblPastebinTitle.Text" xml:space="preserve">
+    <value>Заголовок:</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>URL-адреса результату:</value>
+  </data>
+  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
+    <value>Вивантажувати зображення до вибраного альбому</value>
+  </data>
+  <data name="cbB2CustomUrl.Text" xml:space="preserve">
+    <value>Використовувати власну URL-адресу:</value>
+  </data>
+  <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
+    <value>Використовувати застарілий API v1</value>
+  </data>
+  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
+    <value>Використовувати пряму URL-адресу, якщо вона існує</value>
+  </data>
+  <data name="cbHastebinUseFileExtension.Text" xml:space="preserve">
+    <value>Використовувати розширення файлу для підсвічування синтаксису (крім .txt)</value>
+  </data>
+  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
+    <value>Використовувати посилання на GIFV замість GIF</value>
+  </data>
+  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
+    <value>Використовувати довге посилання, яке містить ім'я файлу</value>
+  </data>
+  <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
+    <value>Використовувати запит у вигляді шляху</value>
+  </data>
+  <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>Використовувати посилання для попереднього перегляду (лише NextCloud)</value>
+  </data>
+  <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
+    <value>Автоматичне завершення терміну дії спільних посилань</value>
+  </data>
+  <data name="lblAzureStorageCacheControl.Text" xml:space="preserve">
+    <value>Заголовок Cache-Control:</value>
+  </data>
+  <data name="lblB2ManageLink.Text" xml:space="preserve">
+    <value>Натисніть тут, щоб створити ключ застосунку або керувати своїми відрами.</value>
+  </data>
+  <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
+    <value>Термін дії (днів):</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
+    <value>Ключ Web API:</value>
+  </data>
+  <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
+    <value>Видимість:</value>
+  </data>
+  <data name="cbAmazonS3SignedPayload.Text" xml:space="preserve">
+    <value>Підписане корисне навантаження</value>
+  </data>
+  <data name="lblAmazonS3Endpoints.Text" xml:space="preserve">
+    <value>Кінцеві точки:</value>
+  </data>
+  <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
+    <value>Використовуйте цю опцію, якщо ви маєте відро з власним доменом.
+Якщо текстове поле порожнє, то в якості URL буде використано ім'я вашого відра.
+Наприклад, якщо ваше відро називається "bucket.example.com", то URL буде "http://bucket.example.com/...".</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
+    <value>Встановити для файлів public-read ACL</value>
+  </data>
+  <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
+    <value>Встановити для файлів public-read ACL</value>
+  </data>
+  <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
+    <value>Використовувати сиру URL-адресу</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>Показувати діалогове вікно налаштувань відео</value>
+  </data>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Налаштування спільного доступу Seafile</value>
+  </data>
+  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
+    <value>Секретний ключ доступу:</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.Text" xml:space="preserve">
+    <value>Клас сховища:</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>Ви можете відкликати доступ у будь-який час, скориставшись посиланням нижче:</value>
+  </data>
+  <data name="lblYourlsNote.Text" xml:space="preserve">
+    <value>Примітка: Якщо ви маєте підпис, вам не потрібні ім'я користувача та пароль.</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
+    <value>Бібліотеки без дозволів на запис приховано.
+Використання зашифрованої бібліотеки вимикає спільний доступ.</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>Рівень доступу спільного посилання:</value>
+  </data>
+  <data name="lblBoxFolderTip.Text" xml:space="preserve">
+    <value>Примітка: Ви можете двічі клацнути назву теки, щоб перейти до неї.</value>
+  </data>
+  <data name="lblGistOAuthInfo.Text" xml:space="preserve">
+    <value>Примітка: GitHub Enterprise не підтримується.</value>
+  </data>
+  <data name="cbKuttReuse.Text" xml:space="preserve">
+    <value>Якщо URL-адреса з вказаною ціллю існує, повернути її</value>
+  </data>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>Код підтвердження (отримайте код підтвердження на сторінці авторизації):</value>
+  </data>
+  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
+    <value>Ключ API користувача:</value>
+  </data>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>Нова назва альбому (має містити від 2 до 50 символів. Допустимі символи: літери, цифри, символ підкреслення ( _ ), дефіс (-) та пробіл)</value>
+  </data>
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>Щоб отримати ключ API, увійдіть до Lambda за адресою https://lambda.sx/, натисніть на своє ім'я користувача, а потім натисніть "Керувати обліковим записом".</value>
+  </data>
+  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
+    <value>Шифрування на стороні клієнта</value>
+  </data>
+  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
+    <value>Генерувати ключ для видалення</value>
+  </data>
+  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
+    <value>UID API:</value>
+  </data>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>ID альбому для вивантаження (Порожньо = не вивантажувати в альбом):</value>
+  </data>
+  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
+    <value>URL для автентифікації:</value>
+  </data>
+  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
+    <value>URL API Paste:</value>
+  </data>
+  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
+    <value>URL API для вивантаження:</value>
+  </data>
+  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
+    <value>URL API сервісу коротких посилань:</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>Тут можна знайти ваші ключ API та UID</value>
   </data>
 </root>

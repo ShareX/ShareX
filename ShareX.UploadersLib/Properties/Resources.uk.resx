@@ -127,7 +127,7 @@
     <value>Збій авторизації.</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Шлях до батьківського альбому, наприклад,</value>
+    <value>Шлях до батьківського альбому, наприклад:</value>
   </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
     <value>Помилка: Результат порожній.</value>
@@ -237,5 +237,53 @@
   </data>
   <data name="DuplicateNameNotAllowed" xml:space="preserve">
     <value>Повтор назв не дозволений.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Помилка</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Відключити</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Підключення...</value>
+  </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>Мій диск</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>Форматування не вдалося.</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>Форматування не вдалося.</value>
+  </data>
+  <data name="Headers" xml:space="preserve">
+    <value>Заголовки</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>Текст відповіді</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>URL-адреса відповіді</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>Скорочена URL-адреса</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Код стану</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>URL-адреса мініатюри</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>Посилання</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>URL-адреса для видалення</value>
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>Експорт не вдався.</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>Вхід здійснено як {0}.</value>
   </data>
 </root>

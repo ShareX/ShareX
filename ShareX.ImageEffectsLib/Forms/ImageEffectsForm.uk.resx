@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -143,5 +143,44 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Ефекти зображення</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Шаблони:</value>
+  </data>
+  <data name="lblEffects.Text" xml:space="preserve">
+    <value>Ефекти:</value>
+  </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>Назва ефекту:</value>
+  </data>
+  <data name="btnPresetNew.ToolTip" xml:space="preserve">
+    <value>Новий</value>
+  </data>
+  <data name="btnPresetRemove.ToolTip" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="btnPresetDuplicate.ToolTip" xml:space="preserve">
+    <value>Дублювати</value>
+  </data>
+  <data name="btnPackager.Text" xml:space="preserve">
+    <value>Пакувальник...</value>
+  </data>
+  <data name="btnEffectRefresh.ToolTip" xml:space="preserve">
+    <value>Оновити</value>
+  </data>
+  <data name="btnEffectAdd.ToolTip" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="btnEffectClear.ToolTip" xml:space="preserve">
+    <value>Очистити...</value>
+  </data>
+  <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
+    <value>Дублювати</value>
+  </data>
+  <data name="btnEffectRemove.ToolTip" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Ефекти зображення...</value>
   </data>
 </root>

@@ -65,20 +65,20 @@
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -114,5 +114,27 @@
   </data>
   <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
     <value>Скасувати</value>
+  </data>
+  <data name="WouldYouLikeToClearEffects" xml:space="preserve">
+    <value>Бажаєте очистити ефекти?</value>
+  </data>
+  <data name="PresetNameCannotBeEmpty" xml:space="preserve">
+    <value>Ім'я шаблону не може бути порожнім.</value>
+  </data>
+  <data name="MissingPresetName" xml:space="preserve">
+    <value>Відсутнє ім'я шаблону</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Підтвердження</value>
+  </data>
+  <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
+    <value>Пакунок з такою назвою вже існує.
+Ви хочете його перезаписати?</value>
+  </data>
+  <data name="InvalidAssetsFolderPath" xml:space="preserve">
+    <value>Невірний шлях до теки ресурсів</value>
+  </data>
+  <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
+    <value>Тека ресурсів має бути всередині теки ефектів зображень ShareX.</value>
   </data>
 </root>

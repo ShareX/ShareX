@@ -124,7 +124,7 @@
     <value>Посилання на мініатюру</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Попередній перегляд зображення</value>
+    <value>Попередній перегляд зображення...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>Файл</value>
@@ -218,5 +218,26 @@
   </data>
   <data name="HistoryStats_Hosts" xml:space="preserve">
     <value>Хости:</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Закріпити на екрані</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Статистика історії</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Імена процесів:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Всього</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Відфільтровано</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Виникла помилка при читанні файлу історії:</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>Ім'я файлу, заголовок вікна, ім'я процесу тощо.</value>
   </data>
 </root>
