@@ -1,14 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
+     <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System.Design" />
-    <Reference Include="System.ServiceModel.Web" />
-    <Reference Include="System.Web" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
   </ItemGroup>
@@ -16,12 +13,15 @@
     <EmbeddedResource Include="APIKeys\jira_sharex.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.14" />
     <PackageReference Include="FluentFTP" Version="52.0.0" />
     <PackageReference Include="MegaApiClient" Version="1.10.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="SSH.NET" Version="2024.2.0" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\OAuthCallbackPage.html" />
+    <ItemGroup>
+      <None Update="Resources/OAuthCallbackPage.html">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
   </ItemGroup>
 </Project>

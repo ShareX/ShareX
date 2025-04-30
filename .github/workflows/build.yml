@@ -42,6 +42,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install Windows SDK
+        run: choco install windows-sdk-10-version-1903-all
+
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v2
 

@@ -217,7 +217,17 @@ namespace ShareX.Setup
             {
                 Console.WriteLine("Invalid parent directory: " + ParentDir);
 
-                ParentDir = FileHelpers.GetAbsolutePath(@"..\..\..\");
+                //ParentDir = FileHelpers.GetAbsolutePath(@"..\..\..\");
+
+                var directory = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory);
+
+                while (!File.Exists(SolutionPath))
+                {
+                    directory = directory.Parent;
+                    ParentDir = directory.FullName;
+                }
+                    
+           
 
                 if (!File.Exists(SolutionPath))
                 {
@@ -359,7 +369,8 @@ namespace ShareX.Setup
             Directory.CreateDirectory(destination);
 
             FileHelpers.CopyFiles(Path.Combine(source, "ShareX.exe"), destination);
-            FileHelpers.CopyFiles(Path.Combine(source, "ShareX.exe.config"), destination);
+            FileHelpers.CopyFiles(Path.Combine(source, "ShareX.dll.config"), destination);
+            FileHelpers.CopyFiles(Path.Combine(source, "ShareX.runtimeconfig.json"), destination);
             FileHelpers.CopyFiles(source, destination, "*.dll");
 
             if (job == SetupJobs.CreateDebug || job == SetupJobs.CreateMicrosoftStoreDebugFolder)

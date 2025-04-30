@@ -1,11 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>arm64</PlatformTarget>
     <AssemblyName>ShareX_Launcher</AssemblyName>
     <ApplicationIcon>ShareX_Icon.ico</ApplicationIcon>
     <UseWindowsForms>true</UseWindowsForms>
+     <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Management" />
@@ -20,5 +22,8 @@
     <None Update="steam_api.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Management" Version="9.0.3" />
   </ItemGroup>
 </Project>

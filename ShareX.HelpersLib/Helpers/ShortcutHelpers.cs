@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using IWshRuntimeLibrary;
 using System;
 using System.IO;
+using IWshRuntimeLibrary;
 using File = System.IO.File;
 
 namespace ShareX.HelpersLib

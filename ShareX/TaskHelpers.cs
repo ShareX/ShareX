@@ -47,6 +47,7 @@ using ZXing;
 using ZXing.Common;
 using ZXing.QrCode;
 using ZXing.Rendering;
+using ZXing.Windows.Compatibility;
 
 namespace ShareX
 {
@@ -2197,7 +2198,7 @@ namespace ShareX
             {
                 try
                 {
-                    BarcodeWriter writer = new BarcodeWriter
+                    var writer = new BarcodeWriter<Bitmap>
                     {
                         Format = BarcodeFormat.QR_CODE,
                         Options = new QrCodeEncodingOptions
@@ -2227,7 +2228,8 @@ namespace ShareX
         {
             try
             {
-                BarcodeReader barcodeReader = new BarcodeReader
+
+                var barcodeReader = new ZXing.Windows.Compatibility.BarcodeReader
                 {
                     AutoRotate = true,
                     Options = new DecodingOptions

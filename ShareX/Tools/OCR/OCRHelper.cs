@@ -27,15 +27,19 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Imaging;
+
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Windows.Globalization;
-using Windows.Graphics.Imaging;
 using Windows.Media.Ocr;
+
+using System.Drawing;
 using Windows.Storage.Streams;
+using Windows.Graphics.Imaging;
+using Windows.Globalization;
+using System.Drawing.Imaging;
+
+
 
 namespace ShareX
 {
@@ -86,6 +90,7 @@ namespace ShareX
 
         private static async Task<string> OCRInternal(Bitmap bmp, string languageTag, bool singleLine = false)
         {
+
             Language language = new Language(languageTag);
 
             if (!OcrEngine.IsLanguageSupported(language))
@@ -97,7 +102,10 @@ namespace ShareX
 
             using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
             {
+
                 bmp.Save(stream.AsStream(), ImageFormat.Bmp);
+
+
                 BitmapDecoder decoder = await BitmapDecoder.CreateAsync(stream);
 
                 using (SoftwareBitmap softwareBitmap = await decoder.GetSoftwareBitmapAsync())
