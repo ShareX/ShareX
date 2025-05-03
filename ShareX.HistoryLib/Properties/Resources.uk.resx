@@ -142,7 +142,7 @@
     <value>Посилання</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>Назва файла з розширенням</value>
+    <value>Назва файлу з розширенням</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>Копіювати</value>
@@ -190,7 +190,7 @@
     <value>Скорочене посилання</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>Назва файла</value>
+    <value>Назва файлу</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>Шлях до файла</value>

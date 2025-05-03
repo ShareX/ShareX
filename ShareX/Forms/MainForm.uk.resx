@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="chFilename.Text" xml:space="preserve">
-    <value>Назва файла</value>
+    <value>Назва файлу</value>
   </data>
   <data name="chStatus.Text" xml:space="preserve">
     <value>Стан</value>
@@ -277,10 +277,10 @@
     <value>Інструменти</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
-    <value>Після завдання захоплення</value>
+    <value>Завдання після захоплення</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>Після завдання вивантаження</value>
+    <value>Завдання після вивантаження</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Вивантажувачі зображень</value>
@@ -442,10 +442,10 @@
     <value>Шлях до файла</value>
   </data>
   <data name="tsmiCopyFileName.Text" xml:space="preserve">
-    <value>Назва файла</value>
+    <value>Назва файлу</value>
   </data>
   <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
-    <value>Назва файла з розширенням</value>
+    <value>Назва файлу з розширенням</value>
   </data>
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
     <value>Теку</value>
@@ -634,10 +634,10 @@
     <value>Інструменти</value>
   </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
-    <value>Після завдання захоплення</value>
+    <value>Завдання після захоплення</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
-    <value>Після завдання вивантаження</value>
+    <value>Завдання після вивантаження</value>
   </data>
   <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
     <value>Вивантажувачі зображень</value>
