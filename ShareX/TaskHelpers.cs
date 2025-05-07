@@ -897,6 +897,17 @@ namespace ShareX
             hashCheckerForm.Show();
         }
 
+        public static void OpenMetadataWindow(string filePath = null)
+        {
+            if (!CheckExifTool())
+            {
+                return;
+            }
+
+            MetadataForm metadataForm = new MetadataForm(filePath);
+            metadataForm.Show();
+        }
+
         public static void OpenDirectoryIndexer(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
@@ -1651,6 +1662,22 @@ namespace ShareX
             {
                 MessageBox.Show(Resources.FFmpegDoesNotExistAtTheFollowingPath + "\r\n" + ffmpegPath,
                     "ShareX - " + Resources.FFmpegIsMissing, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool CheckExifTool()
+        {
+            string exifToolPath = FileHelpers.GetAbsolutePath("exiftool.exe");
+
+            if (!File.Exists(exifToolPath))
+            {
+                // TODO: Translate
+                MessageBox.Show("ExifTool does not exist at the following path:" + "\r\n" + exifToolPath,
+                    "ShareX - " + "ExifTool is missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return false;
             }

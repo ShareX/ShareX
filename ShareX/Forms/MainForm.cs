@@ -1756,7 +1756,7 @@ namespace ShareX
             TaskHelpers.OpenImageCombiner();
         }
 
-        private void TsmiImageSplitter_Click(object sender, EventArgs e)
+        private void tsmiImageSplitter_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenImageSplitter();
         }
@@ -1803,6 +1803,11 @@ namespace ShareX
         private void tsmiHashChecker_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenHashCheck();
+        }
+
+        private void tsmiMetadata_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenMetadataWindow();
         }
 
         private void tsmiIndexFolder_Click(object sender, EventArgs e)
