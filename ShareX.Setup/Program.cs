@@ -45,15 +45,15 @@ namespace ShareX.Setup
             CreateMicrosoftStoreFolder = 1 << 4,
             CreateMicrosoftStoreDebugFolder = 1 << 5,
             CompileAppx = 1 << 6,
-            DownloadFFmpeg = 1 << 7,
+            DownloadTools = 1 << 7,
             CreateChecksumFile = 1 << 8,
             OpenOutputDirectory = 1 << 9,
 
-            Release = CreateSetup | CreatePortable | DownloadFFmpeg | OpenOutputDirectory,
-            Debug = CreateDebug | DownloadFFmpeg | OpenOutputDirectory,
-            Steam = CreateSteamFolder | DownloadFFmpeg | OpenOutputDirectory,
-            MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadFFmpeg | OpenOutputDirectory,
-            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | DownloadFFmpeg | OpenOutputDirectory
+            Release = CreateSetup | CreatePortable | DownloadTools | OpenOutputDirectory,
+            Debug = CreateDebug | DownloadTools | OpenOutputDirectory,
+            Steam = CreateSteamFolder | DownloadTools | OpenOutputDirectory,
+            MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadTools | OpenOutputDirectory,
+            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | DownloadTools | OpenOutputDirectory
         }
 
         private static SetupJobs Job { get; set; } = SetupJobs.Release;
@@ -90,11 +90,14 @@ namespace ShareX.Setup
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appx");
         private static string MicrosoftStoreDebugAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.appx");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
+        private static string ExifToolPath => Path.Combine(OutputDir, "exiftool.exe");
         private static string MakeAppxPath => Path.Combine(WindowsKitsDir, "x64", "makeappx.exe");
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         private const string FFmpegVersion = "7.1";
         private static string FFmpegDownloadURL = $"https://github.com/ShareX/FFmpeg/releases/download/v{FFmpegVersion}/ffmpeg-{FFmpegVersion}-win64.zip";
+        private const string ExifToolVersion = "13.29";
+        private static string ExifToolDownloadURL = $"https://github.com/ShareX/ExifTool/releases/download/v{ExifToolVersion}/exiftool-{ExifToolVersion}-win64.zip";
 
         private static void Main(string[] args)
         {
@@ -113,9 +116,10 @@ namespace ShareX.Setup
                 Directory.Delete(OutputDir, true);
             }
 
-            if (Job.HasFlag(SetupJobs.DownloadFFmpeg))
+            if (Job.HasFlag(SetupJobs.DownloadTools))
             {
                 DownloadFFmpeg();
+                DownloadExifTool();
             }
 
             if (Job.HasFlag(SetupJobs.CreateSetup))
@@ -398,6 +402,12 @@ namespace ShareX.Setup
                 FileHelpers.CopyFiles(FFmpegPath, destination);
             }
 
+            if (File.Exists(ExifToolPath))
+            {
+                FileHelpers.CopyFiles(ExifToolPath, destination);
+                FileHelpers.CopyAll(Path.Combine(OutputDir, "exiftool_files"), Path.Combine(destination, "exiftool_files"));
+            }
+
             FileHelpers.CopyAll(Path.Combine(ParentDir, @"ShareX.ScreenCaptureLib\Stickers"), Path.Combine(destination, "Stickers"));
 
             if (job == SetupJobs.CreatePortable)
@@ -432,6 +442,21 @@ namespace ShareX.Setup
 
                 Console.WriteLine("Extracting: " + filePath);
                 ZipManager.Extract(filePath, OutputDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
+            }
+        }
+
+        private static void DownloadExifTool()
+        {
+            if (!File.Exists(ExifToolPath))
+            {
+                string fileName = Path.GetFileName(ExifToolDownloadURL);
+                string filePath = Path.Combine(OutputDir, fileName);
+
+                Console.WriteLine("Downloading: " + ExifToolDownloadURL);
+                WebHelpers.DownloadFileAsync(ExifToolDownloadURL, filePath).GetAwaiter().GetResult();
+
+                Console.WriteLine("Extracting: " + filePath);
+                ZipManager.Extract(filePath, OutputDir);
             }
         }
 
