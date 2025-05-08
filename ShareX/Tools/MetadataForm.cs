@@ -31,6 +31,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -48,13 +49,14 @@ namespace ShareX
 
             FilePath = filePath;
 
-            UpdateControls();
+            UpdateControls(false);
         }
 
-        private void UpdateControls()
+        private void UpdateControls(bool isBusy)
         {
-            btnCopyAll.Enabled = !string.IsNullOrEmpty(rtbMetadata.Text);
-            btnStripMetadata.Enabled = !string.IsNullOrEmpty(FilePath) && File.Exists(FilePath);
+            btnOpen.Enabled = !isBusy;
+            btnCopyAll.Enabled = !isBusy && !string.IsNullOrEmpty(rtbMetadata.Text);
+            btnStripMetadata.Enabled = !isBusy && !string.IsNullOrEmpty(FilePath) && File.Exists(FilePath);
         }
 
         private string GetFileMetadata(string filePath)
@@ -91,6 +93,11 @@ namespace ShareX
             }
         }
 
+        private async Task<string> GetFileMetadataAsync(string filePath)
+        {
+            return await Task.Run(() => GetFileMetadata(filePath));
+        }
+
         private void StripFileMetadata(string filePath)
         {
             StringBuilder sbArguments = new StringBuilder();
@@ -124,6 +131,11 @@ namespace ShareX
                     throw new InvalidOperationException($"ExifTool failed to strip metadata. Error: {errorOutput}");
                 }
             }
+        }
+
+        private async Task StripFileMetadataAsync(string filePath)
+        {
+            await Task.Run(() => StripFileMetadata(filePath));
         }
 
         private void PopulateMetadataRichTextBox(string metadata)
@@ -169,11 +181,14 @@ namespace ShareX
             rtbMetadata.SelectionStart = 0;
         }
 
-        public bool LoadMetadata()
+        public async Task<bool> LoadMetadata()
         {
             try
             {
-                string metadata = GetFileMetadata(FilePath);
+                UpdateControls(true);
+
+                string metadata = await GetFileMetadataAsync(FilePath);
+
                 PopulateMetadataRichTextBox(metadata);
             }
             catch (Exception ex)
@@ -184,13 +199,13 @@ namespace ShareX
             }
             finally
             {
-                UpdateControls();
+                UpdateControls(false);
             }
 
             return true;
         }
 
-        private void OpenFile()
+        private async Task OpenFile()
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
@@ -202,21 +217,21 @@ namespace ShareX
                     {
                         FilePath = filePath;
 
-                        LoadMetadata();
+                        await LoadMetadata();
                     }
                 }
             }
         }
 
-        private void MetadataForm_Shown(object sender, EventArgs e)
+        private async void MetadataForm_Shown(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(FilePath) && File.Exists(FilePath))
             {
-                LoadMetadata();
+                await LoadMetadata();
             }
             else
             {
-                OpenFile();
+                await OpenFile();
             }
         }
 
@@ -225,9 +240,9 @@ namespace ShareX
             URLHelpers.OpenURL(e.LinkText);
         }
 
-        private void btnOpen_Click(object sender, EventArgs e)
+        private async void btnOpen_Click(object sender, EventArgs e)
         {
-            OpenFile();
+            await OpenFile();
         }
 
         private void btnCopyAll_Click(object sender, EventArgs e)
@@ -235,7 +250,7 @@ namespace ShareX
             ClipboardHelpers.CopyText(rtbMetadata.Text);
         }
 
-        private void btnStripMetadata_Click(object sender, EventArgs e)
+        private async void btnStripMetadata_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(FilePath) && File.Exists(FilePath))
             {
@@ -248,18 +263,21 @@ namespace ShareX
                         return;
                     }
 
-                    StripFileMetadata(FilePath);
+                    UpdateControls(true);
+
+                    await StripFileMetadataAsync(FilePath);
                 }
                 catch (Exception ex)
                 {
                     DebugHelper.WriteException(ex);
                     ex.ShowError();
+                    UpdateControls(false);
                     return;
                 }
 
                 TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
 
-                LoadMetadata();
+                await LoadMetadata();
             }
         }
     }
