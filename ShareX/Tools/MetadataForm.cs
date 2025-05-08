@@ -41,11 +41,14 @@ namespace ShareX
         public string ExifToolPath { get; set; } = FileHelpers.GetAbsolutePath("exiftool.exe");
         public string FilePath { get; private set; }
 
+        private string title;
+
         public MetadataForm(string filePath = null)
         {
             InitializeComponent();
             rtbMetadata.AddContextMenu();
             ShareXResources.ApplyTheme(this, true);
+            title = Text;
 
             FilePath = filePath;
 
@@ -57,6 +60,16 @@ namespace ShareX
             btnOpen.Enabled = !isBusy;
             btnCopyAll.Enabled = !isBusy && !string.IsNullOrEmpty(rtbMetadata.Text);
             btnStripMetadata.Enabled = !isBusy && !string.IsNullOrEmpty(FilePath) && File.Exists(FilePath);
+
+            if (!string.IsNullOrEmpty(rtbMetadata.Text) && !string.IsNullOrEmpty(FilePath) && File.Exists(FilePath))
+            {
+                string fileName = Path.GetFileName(FilePath);
+                Text = $"{title} - {fileName}";
+            }
+            else
+            {
+                Text = title;
+            }
         }
 
         private string GetFileMetadata(string filePath)
