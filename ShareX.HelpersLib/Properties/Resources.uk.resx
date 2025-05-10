@@ -133,7 +133,7 @@
     <value>Секунда</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
-    <value>Нетиповий вивантажувач тексту</value>
+    <value>Власний вивантажувач тексту</value>
   </data>
   <data name="ProxyMethod_None" xml:space="preserve">
     <value>Немає</value>
@@ -178,7 +178,7 @@
     <value>Текстова хмарка (S)</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} is up to date</value>
+    <value>{0} в актуальному стані</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Запис екрану</value>
@@ -187,10 +187,10 @@
     <value>1 година</value>
   </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
-    <value>Захоплення з прокручуванням</value>
+    <value>Почати/зупинити захоплення з прокручуванням</value>
   </data>
   <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
-    <value>Auto increment alphanumeric case-sensitive. 0 pad left using {n}</value>
+    <value>Алфавітно-цифровий лічильник з урахуванням регістру (Нулі ліворуч, {n} задає довжину)</value>
   </data>
   <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
     <value>Заголовок вікна</value>
@@ -217,7 +217,7 @@
     <value>Захоплення області (прозоре тло)</value>
   </data>
   <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
-    <value>Download completed.</value>
+    <value>Завантаження завершено.</value>
   </data>
   <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
     <value>Поділитися посиланням</value>
@@ -241,10 +241,10 @@
     <value>Вивантажити зображення на сервер</value>
   </data>
   <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
-    <value>Auto increment hexadecimal. 0 pad left using {n}</value>
+    <value>Шістнадцятковий лічильник (Нулі ліворуч, {n} задає довжину)</value>
   </data>
   <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
-    <value>Cyan: {0:0.0}%, Magenta: {1:0.0}%, Yellow: {2:0.0}%, Key: {3:0.0}%</value>
+    <value>Блакитний: {0:0.0}%, Пурпуровий: {1:0.0}%, Жовтий: {2:0.0}%, Ключовий: {3:0.0}%</value>
   </data>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Вивантажити теку</value>
@@ -286,7 +286,7 @@
     <value>Почати/зупинити запис області екрану з активним вікном (GIF)</value>
   </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
-    <value>Capture entire screen</value>
+    <value>Захоплення всього екрану</value>
   </data>
   <data name="ImageEditorStartMode_Normal" xml:space="preserve">
     <value>Звичайний</value>
@@ -307,7 +307,7 @@
     <value>Змінити тип інструменту</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
-    <value>Capture region</value>
+    <value>Захоплення області</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Розпізнати текст (OCR)</value>
@@ -335,7 +335,7 @@
     <value>Друк</value>
   </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
-    <value>Octree quantizer 16 colors</value>
+    <value>Octree quantizer 16 кольорів</value>
   </data>
   <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
     <value>Показати вікно „Після вивантаження“</value>
@@ -344,40 +344,40 @@
     <value>Вибрати все</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
-    <value>Custom file uploader</value>
+    <value>Власний вивантажувач файлів</value>
   </data>
   <data name="LinearGradientMode_Vertical" xml:space="preserve">
     <value>Вертикаль</value>
   </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
-    <value>Random</value>
+    <value>Випадкові числа</value>
   </data>
   <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
-    <value>Вивантажувач зображення</value>
+    <value>Вивантажувач зображень</value>
   </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
-    <value>Hash check</value>
+    <value>Перевірка контрольної суми</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
     <value>Почати/зупинити запис області екрану з активним вікном</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>Random number 0 to 9. Repeat using {n}</value>
+    <value>Випадкове число від 0 до 9 (Повтор за допомогою {n})</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
-    <value>Upload from clipboard with content viewer</value>
+    <value>Вивантаження з буфера обміну з попереднім переглядом</value>
   </data>
   <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
     <value>Відкритий доступ</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
-    <value>Hue: {0:0.0}°, Saturation: {1:0.0}%, Brightness: {2:0.0}%</value>
+    <value>Відтінок: {0:0.0}°, Насиченість: {1:0.0}%, Яскравість: {2:0.0}%</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
-    <value>Гаразд</value>
+    <value>ОК</value>
   </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
-    <value>Drag and drop upload</value>
+    <value>Вивантажити перетягуванням</value>
   </data>
   <data name="PastebinExpiration_N" xml:space="preserve">
     <value>Ніколи</value>
@@ -392,16 +392,16 @@
     <value>Назва місяця (місцевою мовою)</value>
   </data>
   <data name="GIFQuality_Bit8" xml:space="preserve">
-    <value>Octree quantizer 256 colors (Slow encoding but better quality)</value>
+    <value>Octree quantizer 256 кольорів (Повільне кодування, але краща якість)</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
     <value>Зображення (файл)</value>
   </data>
   <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
-    <value>.NET (погана якість)</value>
+    <value>.NET (Погана якість)</value>
   </data>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
-    <value>Auto increment alphanumeric case-insensitive. 0 pad left using {n}</value>
+    <value>Алфавітно-цифровий лічильник без урахування регістру (Нулі ліворуч, {n} задає довжину)</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Додати ефекти/водяний знак</value>
@@ -413,10 +413,10 @@
     <value>Збій експорту.</value>
   </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
-    <value>Computer</value>
+    <value>Комп'ютер</value>
   </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
-    <value>Додати номер до назви файла</value>
+    <value>Додати номер до назви файлу</value>
   </data>
   <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
     <value>Велика мінатюра</value>
@@ -437,13 +437,13 @@
     <value>Почати/зупинити запис області екрану (GIF)</value>
   </data>
   <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Name</value>
+    <value>Назва</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Ruler</value>
+    <value>Лінійка</value>
   </data>
   <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
-    <value>URL to download settings from</value>
+    <value>Посилання для завантаження налаштувань</value>
   </data>
   <data name="ShapeType_DrawingFreehand" xml:space="preserve">
     <value>Від руки (F)</value>
@@ -485,25 +485,25 @@
     <value>Зберегти зображення в файл</value>
   </data>
   <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
-    <value>Шлях до файла без розширення + „Розширення кінцевого файла“</value>
+    <value>Шлях до файлу без розширення + "Розширення кінцевого файлу"</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Зображення Google</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
-    <value>Index folder</value>
+    <value>Індексація теки</value>
   </data>
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Позначка часу Unix</value>
   </data>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
-    <value>FFmpeg (гарна якість)</value>
+    <value>FFmpeg (Гарна якість)</value>
   </data>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Tweet message</value>
+    <value>Повідомлення у Twitter</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
-    <value>Stop all active uploads</value>
+    <value>Зупинити всі активні вивантаження</value>
   </data>
   <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
     <value>Відкрити посилання</value>
@@ -515,7 +515,7 @@
     <value>Завантаження зображення...</value>
   </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
-    <value>Capture last region</value>
+    <value>Захоплення останньої області</value>
   </data>
   <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
     <value>Тека не існує:</value>
@@ -537,10 +537,10 @@
     <value>Файл не існує:</value>
   </data>
   <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
-    <value>Оберіть теку</value>
+    <value>Виберіть теку</value>
   </data>
   <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
-    <value>Import failed.</value>
+    <value>Збій імпорту.</value>
   </data>
   <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
     <value>Видалити</value>
@@ -582,7 +582,7 @@
     <value>Наліпка</value>
   </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
-    <value>QR code</value>
+    <value>QR-код</value>
   </data>
   <data name="PastebinExpiration_W1" xml:space="preserve">
     <value>1 тиждень</value>
@@ -594,13 +594,13 @@
     <value>Підсвічування (Р)</value>
   </data>
   <data name="GIFQuality_Grayscale" xml:space="preserve">
-    <value>Palette quantizer grayscale 256 colors</value>
+    <value>Palette quantizer 256 градацій сірого</value>
   </data>
   <data name="GIFQuality_Default" xml:space="preserve">
-    <value>Default .NET encoding (Fast encoding but average quality)</value>
+    <value>Кодування .NET за замовчуванням (Швидко, але середня якість)</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
-    <value>Random hexadecimal char. Repeat using {n}</value>
+    <value>Випадковий шістнадцятковий символ (Повтор за допомогою {n})</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Помилка</value>
@@ -633,7 +633,7 @@
     <value>Вибрати та перемістити (M)</value>
   </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
-    <value>Auto increment by base {n} using alphanumeric (1 &lt; n &lt; 63)</value>
+    <value>Алфавітно-цифровий лічильник з основою {n} (1 &lt; n &lt; 63)</value>
   </data>
   <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
     <value>Захоплення веб-сторінки</value>
@@ -669,7 +669,7 @@
     <value>Показати файл у провіднику</value>
   </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
-    <value>Custom image uploader</value>
+    <value>Власний вивантажувач зображень</value>
   </data>
   <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
     <value>Захоплення екрана</value>
@@ -684,7 +684,7 @@
     <value>Крок (I)</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Auto increment number. 0 pad left using {n}</value>
+    <value>Числовий лічильник (Нулі ліворуч, {n} задає довжину)</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Вивантажити з буфера обміну</value>
@@ -696,7 +696,7 @@
     <value>Назва місяця (англійською)</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
-    <value>Open screenshots folder</value>
+    <value>Відкрити теку зі знімками</value>
   </data>
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
     <value>Ширина зображення</value>
@@ -708,7 +708,7 @@
     <value>Огляд виконуваних файлів...</value>
   </data>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
-    <value>File uploader</value>
+    <value>Вивантажувач файлів</value>
   </data>
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Автоматичний розмір</value>
@@ -747,7 +747,7 @@
     <value>Інструменти</value>
   </data>
   <data name="FileDestination_SharedFolder" xml:space="preserve">
-    <value>Shared folder</value>
+    <value>Спільна тека</value>
   </data>
   <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
     <value>Захоплення активного монітора</value>
@@ -759,7 +759,7 @@
     <value>Інші</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
-    <value>Назва файла: {0}</value>
+    <value>Назва файлу: {0}</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
     <value>Еліпс (E)</value>
@@ -774,10 +774,10 @@
     <value>Вивантажувач файлів</value>
   </data>
   <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Loading image: {0}%</value>
+    <value>Завантаження зображення: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Random alphanumeric char. Repeat using {n}</value>
+    <value>Випадковий алфавітно-цифровий символ (Повтор за допомогою {n})</value>
   </data>
   <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
     <value>Значення</value>
@@ -816,7 +816,7 @@
     <value>Вибір кольору з екрана</value>
   </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
-    <value>Name: {0}, Size: {1}</value>
+    <value>Назва: {0}, Розмір: {1}</value>
   </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Автоматичне захоплення</value>
@@ -846,7 +846,7 @@
     <value>Текст (тло) (T)</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
-    <value>Custom URL shortener</value>
+    <value>Власний сервіс скорочення посилань</value>
   </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>Загальне</value>
@@ -1119,7 +1119,7 @@
     <value>Випадковий недвозначний алфавітно-цифровий символ (Повторити за допомогою {n})</value>
   </data>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
-    <value>Захоплення останнього регіону</value>
+    <value>Захоплення останньої області</value>
   </data>
   <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
     <value>Видалити фігуру або скасувати захоплення</value>
@@ -1194,7 +1194,7 @@
     <value>Відкрити файл</value>
   </data>
   <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
-    <value>Відкрити папку</value>
+    <value>Відкрити теку</value>
   </data>
   <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
     <value>Відкрити переглядач зображень</value>

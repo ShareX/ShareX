@@ -130,7 +130,7 @@
     <value>Віддзеркалити по горизонталі</value>
   </data>
   <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>Stop</value>
+    <value>Зупинити</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>Захоплення кількох областей</value>
@@ -265,7 +265,7 @@
     <value>Показувати широке перехрестя на екрані</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
-    <value>Image</value>
+    <value>Зображення</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
     <value>Кількість пікселів у лупі:</value>
@@ -394,7 +394,7 @@
     <value>Почати</value>
   </data>
   <data name="ScreenRecordForm_Stop" xml:space="preserve">
-    <value>Стоп</value>
+    <value>Зупинити</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
     <value>Налаштування</value>
@@ -477,7 +477,7 @@
     <value>Режим редактора при запуску:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
-    <value>Області захоплення</value>
+    <value>Захоплення областей</value>
   </data>
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
     <value>Центральні точки:</value>

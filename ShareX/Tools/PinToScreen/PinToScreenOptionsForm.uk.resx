@@ -130,7 +130,7 @@
     <value>Рамка</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
-    <value>Гаразд</value>
+    <value>ОК</value>
   </data>
   <data name="cbKeepCenterLocation.Text" xml:space="preserve">
     <value>Запам'ятати розташування центру</value>

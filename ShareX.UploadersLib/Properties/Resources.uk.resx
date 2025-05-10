@@ -281,7 +281,7 @@
     <value>URL-адреса для видалення</value>
   </data>
   <data name="ExportFailed" xml:space="preserve">
-    <value>Експорт не вдався.</value>
+    <value>Збій експорту.</value>
   </data>
   <data name="LoggedInAs0" xml:space="preserve">
     <value>Вхід здійснено як {0}.</value>

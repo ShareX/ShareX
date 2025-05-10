@@ -121,7 +121,7 @@
     <value>Огляд...</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
-    <value>Тип хешу:</value>
+    <value>Тип контрольної суми:</value>
   </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Результат:</value>
@@ -169,7 +169,7 @@
     <value>Перетворення тексту</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Перевірка хешу</value>
+    <value>ShareX — Перевірка контрольної суми</value>
   </data>
   <data name="btnFilePathBrowse2.Text" xml:space="preserve">
     <value>Огляд...</value>
