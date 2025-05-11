@@ -78,6 +78,7 @@
             this.tsmiCopyCMYK = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyHSB = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyDecimal = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyNormalized = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyPosition = new System.Windows.Forms.ToolStripMenuItem();
             this.pCursorPosition = new System.Windows.Forms.Panel();
             this.txtY = new System.Windows.Forms.TextBox();
@@ -456,6 +457,7 @@
             this.tsmiCopyCMYK,
             this.tsmiCopyHSB,
             this.tsmiCopyDecimal,
+            this.tsmiCopyNormalized,
             this.tsmiCopyPosition});
             this.cmsCopy.Name = "cmsCopy";
             this.cmsCopy.ShowImageMargin = false;
@@ -496,6 +498,12 @@
             this.tsmiCopyDecimal.Name = "tsmiCopyDecimal";
             resources.ApplyResources(this.tsmiCopyDecimal, "tsmiCopyDecimal");
             this.tsmiCopyDecimal.Click += new System.EventHandler(this.tsmiCopyDecimal_Click);
+            // 
+            // tsmiCopyNormalized
+            // 
+            this.tsmiCopyNormalized.Name = "tsmiCopyNormalized";
+            resources.ApplyResources(this.tsmiCopyNormalized, "tsmiCopyNormalized");
+            this.tsmiCopyNormalized.Click += new System.EventHandler(this.tsmiCopyNormalized_Click);
             // 
             // tsmiCopyPosition
             // 
@@ -747,6 +755,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyCMYK;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyHSB;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyDecimal;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyNormalized;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyPosition;
         private System.Windows.Forms.Panel pCursorPosition;
         private System.Windows.Forms.Label lblCursorPosition;

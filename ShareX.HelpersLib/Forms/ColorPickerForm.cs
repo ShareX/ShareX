@@ -473,6 +473,19 @@ namespace ShareX.HelpersLib
             ClipboardHelpers.CopyText(dec.ToString());
         }
 
+        private void tsmiCopyNormalized_Click(object sender, EventArgs e)
+        {
+            RGBA rgba = colorPicker.SelectedColor.RGBA;
+            String formatted = string.Format("{0:0.0}, {1:0.0}, {2:0.0}, {3:0.0}",
+                Convert.ToSingle(rgba.Red) / 255f,
+                Convert.ToSingle(rgba.Green) / 255f,
+                Convert.ToSingle(rgba.Blue) / 255f,
+                Convert.ToSingle(rgba.Alpha) / 255f
+                );
+
+            ClipboardHelpers.CopyText(formatted);
+        }
+
         private void tsmiCopyPosition_Click(object sender, EventArgs e)
         {
             ClipboardHelpers.CopyText($"{txtX.Text}, {txtY.Text}");
