@@ -476,13 +476,12 @@ namespace ShareX.HelpersLib
         private void tsmiCopyNormalized_Click(object sender, EventArgs e)
         {
             RGBA rgba = colorPicker.SelectedColor.RGBA;
-            String formatted = string.Format("{0:0.0}, {1:0.0}, {2:0.0}, {3:0.0}",
-                Convert.ToSingle(rgba.Red) / 255f,
-                Convert.ToSingle(rgba.Green) / 255f,
-                Convert.ToSingle(rgba.Blue) / 255f,
-                Convert.ToSingle(rgba.Alpha) / 255f
-                );
+            float red = rgba.Red / 255f;
+            float green = rgba.Green / 255f;
+            float blue = rgba.Blue / 255f;
+            float alpha = rgba.Alpha / 255f;
 
+            string formatted = $"{ColorHelpers.FormatNormalizedRGBA(red)}, {ColorHelpers.FormatNormalizedRGBA(green)}, {ColorHelpers.FormatNormalizedRGBA(blue)}, {ColorHelpers.FormatNormalizedRGBA(alpha)}";
             ClipboardHelpers.CopyText(formatted);
         }
 

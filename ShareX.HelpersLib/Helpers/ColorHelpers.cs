@@ -462,5 +462,10 @@ namespace ShareX.HelpersLib
             Color knownColor = FindClosestKnownColor(color);
             return Helpers.GetProperName(knownColor.Name);
         }
+
+        public static string FormatNormalizedRGBA(float value)
+        {
+            return value == Math.Round(value) ? $"{value:0.0}" : value.ToString();
+        }
     }
 }
