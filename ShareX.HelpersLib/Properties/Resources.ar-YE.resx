@@ -1232,4 +1232,7 @@
   <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
     <value>تثبيت على الشاشة وإغلاق الكل</value>
   </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value />
+  </data>
 </root>

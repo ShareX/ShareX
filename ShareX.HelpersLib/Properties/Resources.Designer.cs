@@ -1523,6 +1523,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Metadata.
+        /// </summary>
+        internal static string HotkeyType_Metadata {
+            get {
+                return ResourceManager.GetString("HotkeyType_Metadata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monitor test.
         /// </summary>
         internal static string HotkeyType_MonitorTest {

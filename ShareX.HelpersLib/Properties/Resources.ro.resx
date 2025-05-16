@@ -1157,4 +1157,7 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Fereastră fără margini</value>
   </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value />
+  </data>
 </root>
