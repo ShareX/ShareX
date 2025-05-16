@@ -121,7 +121,7 @@
     <value>Скасувати</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
-    <value>Гаразд</value>
+    <value>ОК</value>
   </data>
   <data name="lblOld.Text" xml:space="preserve">
     <value>Старий:</value>

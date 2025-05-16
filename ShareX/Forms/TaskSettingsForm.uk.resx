@@ -523,7 +523,7 @@
     <value>Завдання:</value>
   </data>
   <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
-    <value>Перевизначити теку для скріншотів</value>
+    <value>Перевизначити теку для знімків</value>
   </data>
   <data name="btnActions.Text" xml:space="preserve">
     <value>Дії...</value>

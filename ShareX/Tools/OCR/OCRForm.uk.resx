@@ -130,7 +130,7 @@
     <value>Сервіс:</value>
   </data>
   <data name="btnSelectRegion.Text" xml:space="preserve">
-    <value>Виберіть регіон для розпізнавання...</value>
+    <value>Виберіть область для розпізнавання...</value>
   </data>
   <data name="cbSingleLine.Text" xml:space="preserve">
     <value>Один рядок</value>
