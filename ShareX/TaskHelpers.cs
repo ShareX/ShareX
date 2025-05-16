@@ -308,6 +308,9 @@ namespace ShareX
                 case HotkeyType.HashCheck:
                     OpenHashCheck(filePath, safeTaskSettings);
                     break;
+                case HotkeyType.Metadata:
+                    OpenMetadataWindow();
+                    break;
                 case HotkeyType.IndexFolder:
                     UploadManager.IndexFolder();
                     break;
@@ -1901,6 +1904,7 @@ namespace ShareX
                     case HotkeyType.QRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
                     case HotkeyType.QRCodeDecodeFromScreen: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
                     case HotkeyType.HashCheck: return Resources.application_task;
+                    case HotkeyType.Metadata: return Resources.tag_hash;
                     case HotkeyType.IndexFolder: return Resources.folder_tree;
                     case HotkeyType.ClipboardViewer: return Resources.clipboard_block;
                     case HotkeyType.BorderlessWindow: return Resources.application_resize_full;
