@@ -309,7 +309,7 @@ namespace ShareX
                     OpenHashCheck(filePath, safeTaskSettings);
                     break;
                 case HotkeyType.Metadata:
-                    OpenMetadataWindow();
+                    OpenMetadataWindow(filePath);
                     break;
                 case HotkeyType.IndexFolder:
                     UploadManager.IndexFolder();
