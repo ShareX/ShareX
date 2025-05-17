@@ -380,6 +380,29 @@ namespace ShareX.HelpersLib
             return filePath;
         }
 
+        public static string BrowseFile(IWin32Window window = null, string title = null)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                if (!string.IsNullOrEmpty(title))
+                {
+                    ofd.Title = title;
+                }
+
+                if (ofd.ShowDialog(window) == DialogResult.OK)
+                {
+                    string filePath = ofd.FileName;
+
+                    if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+                    {
+                        return filePath;
+                    }
+                }
+            }
+
+            return null;
+        }
+
         public static bool BrowseFile(TextBox tb, string initialDirectory = "", bool detectSpecialFolders = false, string filter = "")
         {
             return BrowseFile("ShareX - " + Resources.Helpers_BrowseFile_Choose_file, tb, initialDirectory, detectSpecialFolders, filter);

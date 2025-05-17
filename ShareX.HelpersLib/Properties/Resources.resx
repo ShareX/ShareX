@@ -1296,4 +1296,7 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>Metadata</value>
   </data>
+  <data name="HotkeyType_StripMetadata" xml:space="preserve">
+    <value>Strip metadata</value>
+  </data>
 </root>

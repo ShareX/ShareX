@@ -1838,6 +1838,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Strip metadata.
+        /// </summary>
+        internal static string HotkeyType_StripMetadata {
+            get {
+                return ResourceManager.GetString("HotkeyType_StripMetadata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Toggle actions toolbar.
         /// </summary>
         internal static string HotkeyType_ToggleActionsToolbar {

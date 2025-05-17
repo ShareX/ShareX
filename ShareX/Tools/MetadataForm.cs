@@ -38,7 +38,8 @@ namespace ShareX
 {
     public partial class MetadataForm : Form
     {
-        public string ExifToolPath { get; set; } = FileHelpers.GetAbsolutePath("exiftool.exe");
+        public static string ExifToolPath => FileHelpers.GetAbsolutePath("exiftool.exe");
+
         public string FilePath { get; private set; }
 
         private string title;
@@ -111,7 +112,7 @@ namespace ShareX
             return await Task.Run(() => GetFileMetadata(filePath));
         }
 
-        private void StripFileMetadata(string filePath)
+        public static void StripFileMetadata(string filePath)
         {
             StringBuilder sbArguments = new StringBuilder();
             sbArguments.Append($"\"{filePath}\"");
@@ -220,19 +221,13 @@ namespace ShareX
 
         private async Task OpenFile()
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
+            string filePath = FileHelpers.BrowseFile(this);
+
+            if (!string.IsNullOrEmpty(filePath))
             {
-                if (ofd.ShowDialog(this) == DialogResult.OK)
-                {
-                    string filePath = ofd.FileName;
+                FilePath = filePath;
 
-                    if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
-                    {
-                        FilePath = filePath;
-
-                        await LoadMetadata();
-                    }
-                }
+                await LoadMetadata();
             }
         }
 
