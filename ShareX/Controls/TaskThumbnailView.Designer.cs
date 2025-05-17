@@ -56,6 +56,8 @@
             this.pMain.Name = "pMain";
             this.pMain.Size = new System.Drawing.Size(242, 228);
             this.pMain.TabIndex = 1;
+            this.pMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDown);
+            this.pMain.MouseEnter += new System.EventHandler(this.Panel_MouseEnter);
             this.pMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseUp);
             this.pMain.Resize += new System.EventHandler(this.pMain_Resize);
             // 
