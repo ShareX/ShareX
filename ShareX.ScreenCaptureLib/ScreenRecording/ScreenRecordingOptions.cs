@@ -292,6 +292,16 @@ namespace ShareX.ScreenCaptureLib
                             args.Append("-plays 0 ");
                             break;
                     }
+
+                    switch (FFmpeg.VideoCodec)
+                    {
+                        case FFmpegVideoCodec.libx265:
+                        case FFmpegVideoCodec.hevc_nvenc:
+                        case FFmpegVideoCodec.hevc_amf:
+                        case FFmpegVideoCodec.hevc_qsv:
+                            args.Append("-tag:v hvc1 "); // https://trac.ffmpeg.org/wiki/Encode/H.265#FinalCutandApplestuffcompatibility
+                            break;
+                    }
                 }
             }
 
