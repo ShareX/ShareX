@@ -376,16 +376,7 @@ namespace ShareX.ImageEffectsLib
                 if (PreviewImage != null) PreviewImage.Dispose();
                 PreviewImage = new Bitmap(size, size);
 
-                Color backgroundColor;
-
-                if (ShareXResources.UseCustomTheme)
-                {
-                    backgroundColor = ShareXResources.Theme.BackgroundColor;
-                }
-                else
-                {
-                    backgroundColor = Color.DarkGray;
-                }
+                Color backgroundColor = ShareXResources.Theme.BackgroundColor;
 
                 using (Graphics g = Graphics.FromImage(PreviewImage))
                 {

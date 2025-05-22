@@ -43,21 +43,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static bool useCustomTheme;
-
-        public static bool UseCustomTheme
-        {
-            get
-            {
-                return useCustomTheme && Theme != null;
-            }
-            set
-            {
-                useCustomTheme = value;
-            }
-        }
-
-        public static bool IsDarkTheme => UseCustomTheme && Theme.IsDarkTheme;
+        public static bool IsDarkTheme => Theme.IsDarkTheme;
 
         private static bool useWhiteIcon;
 
@@ -135,21 +121,18 @@ namespace ShareX.HelpersLib
                 form.Icon = Icon;
             }
 
-            if (UseCustomTheme)
+            ApplyCustomThemeToControl(form);
+
+            IContainer components = form.GetType().GetField("components", BindingFlags.NonPublic | BindingFlags.Instance)?.GetValue(form) as IContainer;
+            ApplyCustomThemeToComponents(components);
+
+            if (form.IsHandleCreated)
             {
-                ApplyCustomThemeToControl(form);
-
-                IContainer components = form.GetType().GetField("components", BindingFlags.NonPublic | BindingFlags.Instance)?.GetValue(form) as IContainer;
-                ApplyCustomThemeToComponents(components);
-
-                if (form.IsHandleCreated)
-                {
-                    NativeMethods.UseImmersiveDarkMode(form.Handle, Theme.IsDarkTheme);
-                }
-                else
-                {
-                    form.HandleCreated += (s, e) => NativeMethods.UseImmersiveDarkMode(form.Handle, Theme.IsDarkTheme);
-                }
+                NativeMethods.UseImmersiveDarkMode(form.Handle, Theme.IsDarkTheme);
+            }
+            else
+            {
+                form.HandleCreated += (s, e) => NativeMethods.UseImmersiveDarkMode(form.Handle, Theme.IsDarkTheme);
             }
         }
 

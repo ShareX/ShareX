@@ -171,14 +171,7 @@ namespace ShareX
 
         public void UpdateTheme()
         {
-            if (ShareXResources.UseCustomTheme)
-            {
-                BackColor = ShareXResources.Theme.BackgroundColor;
-            }
-            else
-            {
-                BackColor = SystemColors.Window;
-            }
+            BackColor = ShareXResources.Theme.BackgroundColor;
 
             foreach (TaskThumbnailPanel panel in Panels)
             {

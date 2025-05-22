@@ -60,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            using (Pen pen1 = new Pen(ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : Color.Black) { DashPattern = new float[] { 5, 5 } })
+            using (Pen pen1 = new Pen(ShareXResources.Theme.BorderColor) { DashPattern = new float[] { 5, 5 } })
             using (Pen pen2 = new Pen(Color.Lime) { DashPattern = new float[] { 5, 5 }, DashOffset = 5 })
             {
                 e.Graphics.DrawRectangleProper(pen1, borderRectangleClient);

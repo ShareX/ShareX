@@ -195,18 +195,10 @@ namespace ShareX.HelpersLib
 
         public void UpdateTheme()
         {
-            if (ShareXResources.UseCustomTheme)
-            {
-                lblImageSize.BackColor = ShareXResources.Theme.BackgroundColor;
-                lblImageSize.ForeColor = ShareXResources.Theme.TextColor;
+            lblImageSize.BackColor = ShareXResources.Theme.BackgroundColor;
+            lblImageSize.ForeColor = ShareXResources.Theme.TextColor;
 
-                ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsMenu);
-            }
-            else
-            {
-                lblImageSize.BackColor = SystemColors.Window;
-                lblImageSize.ForeColor = SystemColors.ControlText;
-            }
+            ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsMenu);
         }
 
         public void UpdateCheckers(bool forceUpdate = false)
