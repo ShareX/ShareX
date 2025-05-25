@@ -508,19 +508,19 @@ namespace ShareX.HelpersLib
         // --- Decoder functions ---
 
         [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr AvifDecoderCreate();
+        public static extern IntPtr avifDecoderCreate();
 
         [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int AvifDecoderSetIOMemory(IntPtr decoder, byte[] data, IntPtr size); // size_t -> IntPtr
+        public static extern int avifDecoderSetIOMemory(IntPtr decoder, byte[] data, IntPtr size); // size_t -> IntPtr
 
         [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int AvifDecoderParse(IntPtr decoder); // Returns avifResult
+        public static extern int avifDecoderParse(IntPtr decoder);
 
         [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int AvifDecoderNextImage(IntPtr decoder); // Returns avifResult
+        public static extern int avifDecoderNextImage(IntPtr decoder);
 
         [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void AvifDecoderDestroy(IntPtr decoder);
+        public static extern void avifDecoderDestroy(IntPtr decoder);
 
         [DllImport(AvifDll, CallingConvention = CallingConvention.Cdecl)]
         public static extern int avifImageYUVToRGB(IntPtr image, ref AvifRGBImage rgb); // Returns avifResult
