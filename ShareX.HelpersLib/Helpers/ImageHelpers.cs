@@ -2777,7 +2777,7 @@ namespace ShareX.HelpersLib
 
             try
             {
-                decoder = NativeMethods.AvifDecoderCreate();
+                decoder = NativeMethods.avifDecoderCreate();
                 if (decoder == IntPtr.Zero)
                 {
                     DebugHelper.WriteLine("Failed to create AVIF decoder.");
@@ -2785,30 +2785,30 @@ namespace ShareX.HelpersLib
                 }
 
                 // Set memory IO
-                int result = NativeMethods.AvifDecoderSetIOMemory(decoder, data, (IntPtr)data.Length);
+                int result = NativeMethods.avifDecoderSetIOMemory(decoder, data, (IntPtr)data.Length);
                 if (result != (int)AvifResult.AVIF_RESULT_OK)
                 {
-                    DebugHelper.WriteLine($"AvifDecoderSetIOMemory failed: {Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(result))}");
+                    DebugHelper.WriteLine($"avifDecoderSetIOMemory failed: {Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(result))}");
                     return null;
                 }
 
                 // Parse the file
-                result = NativeMethods.AvifDecoderParse(decoder);
+                result = NativeMethods.avifDecoderParse(decoder);
                 if (result != (int)AvifResult.AVIF_RESULT_OK)
                 {
                     // AVIF_RESULT_WAITING_ON_IO can happen with truncated files, treat as error here
-                    DebugHelper.WriteLine($"AvifDecoderParse failed: {Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(result))}");
+                    DebugHelper.WriteLine($"avifDecoderParse failed: {Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(result))}");
                     return null;
                 }
 
                 // Decode the first image
-                result = NativeMethods.AvifDecoderNextImage(decoder);
+                result = NativeMethods.avifDecoderNextImage(decoder);
                 if (result != (int)AvifResult.AVIF_RESULT_OK)
                 {
                     // AVIF_RESULT_NO_IMAGES_REMAINING is technically OK after the first frame,
                     // but for LoadImage, if the *first* call fails, it's an error.
                     // Also handle AVIF_RESULT_WAITING_ON_IO etc.
-                    DebugHelper.WriteLine($"AvifDecoderNextImage failed: {Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(result))}");
+                    DebugHelper.WriteLine($"avifDecoderNextImage failed: {Marshal.PtrToStringAnsi(NativeMethods.avifResultToString(result))}");
                     return null;
                 }
 
@@ -2906,10 +2906,10 @@ namespace ShareX.HelpersLib
                 {
                     NativeMethods.avifRGBImageFreePixels(ref rgb);
                 }
-                // Note: We don't destroy avifImageHandle directly, AvifDecoderDestroy handles it.
+                // Note: We don't destroy avifImageHandle directly, avifDecoderDestroy handles it.
                 if (decoder != IntPtr.Zero)
                 {
-                    NativeMethods.AvifDecoderDestroy(decoder);
+                    NativeMethods.avifDecoderDestroy(decoder);
                 }
             }
         }
