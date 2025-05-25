@@ -123,4 +123,34 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Відповідь</value>
   </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>Інформація про відповідь</value>
+  </data>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>Текст відповіді</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="tsbCopyDeletionURL.Text" xml:space="preserve">
+    <value>Скопіювати URL-адресу видалення</value>
+  </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>Скопіювати відповідь</value>
+  </data>
+  <data name="tsbCopyShortenedURL.Text" xml:space="preserve">
+    <value>Скопіювати скорочену URL-адресу</value>
+  </data>
+  <data name="tsbCopyThumbnailURL.Text" xml:space="preserve">
+    <value>Скопіювати URL-адресу мініатюри</value>
+  </data>
+  <data name="tsbCopyURL.Text" xml:space="preserve">
+    <value>Скопіювати URL-адресу</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>JSON формат</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>XML формат</value>
+  </data>
 </root>

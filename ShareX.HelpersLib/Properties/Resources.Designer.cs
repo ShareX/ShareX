@@ -1523,6 +1523,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Metadata.
+        /// </summary>
+        internal static string HotkeyType_Metadata {
+            get {
+                return ResourceManager.GetString("HotkeyType_Metadata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monitor test.
         /// </summary>
         internal static string HotkeyType_MonitorTest {
@@ -1825,6 +1834,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_StopUploads {
             get {
                 return ResourceManager.GetString("HotkeyType_StopUploads", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strip metadata.
+        /// </summary>
+        internal static string HotkeyType_StripMetadata {
+            get {
+                return ResourceManager.GetString("HotkeyType_StripMetadata", resourceCulture);
             }
         }
         

@@ -81,7 +81,6 @@ namespace ShareX
 
         #region Theme
 
-        public bool UseCustomTheme = true;
         public List<ShareXTheme> Themes = ShareXTheme.GetDefaultThemes();
         public int SelectedTheme = 0;
 

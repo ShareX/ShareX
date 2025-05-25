@@ -72,10 +72,7 @@ namespace ShareX
             }, cmsTask);
             SetEnumCheckedContextMenu(HotkeySettings.TaskSettings.Job, cmsTask);
 
-            if (ShareXResources.UseCustomTheme)
-            {
-                ShareXResources.ApplyCustomThemeToControl(this);
-            }
+            ShareXResources.ApplyCustomThemeToControl(this);
 
             UpdateHotkeyStatus();
         }

@@ -532,7 +532,7 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -721,13 +721,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnThemeReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>400, 40</value>
+    <value>208, 48</value>
   </data>
   <data name="btnThemeReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 24</value>
+    <value>104, 24</value>
   </data>
   <data name="btnThemeReset.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
     <value>Reset...</value>
@@ -748,13 +748,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnThemeRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 40</value>
+    <value>128, 16</value>
   </data>
   <data name="btnThemeRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 24</value>
+    <value>104, 24</value>
   </data>
   <data name="btnThemeRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="btnThemeRemove.Text" xml:space="preserve">
     <value>Remove</value>
@@ -775,13 +775,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnThemeAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
+    <value>16, 16</value>
   </data>
   <data name="btnThemeAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 24</value>
+    <value>104, 24</value>
   </data>
   <data name="btnThemeAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>Add</value>
@@ -799,13 +799,13 @@
     <value>2</value>
   </data>
   <data name="cbThemes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 14</value>
+    <value>240, 18</value>
   </data>
   <data name="cbThemes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 21</value>
+    <value>304, 21</value>
   </data>
   <data name="cbThemes.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;cbThemes.Name" xml:space="preserve">
     <value>cbThemes</value>
@@ -823,13 +823,13 @@
     <value>False</value>
   </data>
   <data name="pgTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>16, 80</value>
   </data>
   <data name="pgTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 312</value>
+    <value>528, 312</value>
   </data>
   <data name="pgTheme.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;pgTheme.Name" xml:space="preserve">
     <value>pgTheme</value>
@@ -843,56 +843,26 @@
   <data name="&gt;&gt;pgTheme.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="cbUseCustomTheme.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbUseCustomTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbUseCustomTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="cbUseCustomTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 17</value>
-  </data>
-  <data name="cbUseCustomTheme.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>Use custom theme</value>
-  </data>
-  <data name="&gt;&gt;cbUseCustomTheme.Name" xml:space="preserve">
-    <value>cbUseCustomTheme</value>
-  </data>
-  <data name="&gt;&gt;cbUseCustomTheme.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbUseCustomTheme.Parent" xml:space="preserve">
-    <value>tpTheme</value>
-  </data>
-  <data name="&gt;&gt;cbUseCustomTheme.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="eiTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 40</value>
+    <value>16, 48</value>
   </data>
   <data name="eiTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 24</value>
   </data>
   <data name="eiTheme.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;eiTheme.Name" xml:space="preserve">
     <value>eiTheme</value>
   </data>
   <data name="&gt;&gt;eiTheme.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiTheme.Parent" xml:space="preserve">
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;eiTheme.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="tpTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2785,7 +2755,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>tpClipboardFormats</value>
@@ -2836,7 +2806,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -2917,7 +2887,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -2968,7 +2938,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -4078,7 +4048,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>

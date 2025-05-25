@@ -149,10 +149,7 @@ namespace ShareX.HelpersLib
 
             ShareXResources.ApplyTheme(this);
 
-            if (ShareXResources.UseCustomTheme)
-            {
-                panel.BackColor = ShareXResources.Theme.BorderColor;
-            }
+            panel.BackColor = ShareXResources.Theme.BorderColor;
         }
 
         private void MyMessageBox_Shown(object sender, EventArgs e)

@@ -40,33 +40,24 @@ namespace ShareX.HistoryLib
 
             ItemDrawOrder = ItemDrawOrder.NormalSelectedHovered;
 
-            if (ShareXResources.UseCustomTheme)
-            {
-                ImageListView.BackColor = ShareXResources.Theme.BackgroundColor;
-                ImageListView.Colors.BackColor = ShareXResources.Theme.LightBackgroundColor;
-                ImageListView.Colors.BorderColor = ShareXResources.Theme.BorderColor;
-                ImageListView.Colors.ForeColor = ShareXResources.Theme.TextColor;
-                ImageListView.Colors.SelectedForeColor = ShareXResources.Theme.TextColor;
-                ImageListView.Colors.UnFocusedForeColor = ShareXResources.Theme.TextColor;
+            ImageListView.BackColor = ShareXResources.Theme.BackgroundColor;
+            ImageListView.Colors.BackColor = ShareXResources.Theme.LightBackgroundColor;
+            ImageListView.Colors.BorderColor = ShareXResources.Theme.BorderColor;
+            ImageListView.Colors.ForeColor = ShareXResources.Theme.TextColor;
+            ImageListView.Colors.SelectedForeColor = ShareXResources.Theme.TextColor;
+            ImageListView.Colors.UnFocusedForeColor = ShareXResources.Theme.TextColor;
 
-                Color hoverColor;
-                if (ShareXResources.IsDarkTheme)
-                {
-                    hoverColor = ColorHelpers.LighterColor(ShareXResources.Theme.LightBackgroundColor, 0.1f);
-                }
-                else
-                {
-                    hoverColor = ColorHelpers.DarkerColor(ShareXResources.Theme.LightBackgroundColor, 0.1f);
-                }
-                ImageListView.Colors.SelectedColor1 = ImageListView.Colors.HoverColor1 = ImageListView.Colors.UnFocusedColor1 =
-                    ImageListView.Colors.SelectedColor2 = ImageListView.Colors.HoverColor2 = ImageListView.Colors.UnFocusedColor2 = hoverColor;
+            Color hoverColor;
+            if (ShareXResources.IsDarkTheme)
+            {
+                hoverColor = ColorHelpers.LighterColor(ShareXResources.Theme.LightBackgroundColor, 0.1f);
             }
             else
             {
-                ImageListView.Colors.BackColor = SystemColors.Control;
-                ImageListView.Colors.SelectedColor1 = ImageListView.Colors.HoverColor1 = ImageListView.Colors.UnFocusedColor1 =
-                    ImageListView.Colors.SelectedColor2 = ImageListView.Colors.HoverColor2 = ImageListView.Colors.UnFocusedColor2 = SystemColors.ControlLight;
+                hoverColor = ColorHelpers.DarkerColor(ShareXResources.Theme.LightBackgroundColor, 0.1f);
             }
+            ImageListView.Colors.SelectedColor1 = ImageListView.Colors.HoverColor1 = ImageListView.Colors.UnFocusedColor1 =
+                ImageListView.Colors.SelectedColor2 = ImageListView.Colors.HoverColor2 = ImageListView.Colors.UnFocusedColor2 = hoverColor;
         }
 
         public override void DrawItem(Graphics g, ImageListViewItem item, ItemState state, Rectangle bounds)

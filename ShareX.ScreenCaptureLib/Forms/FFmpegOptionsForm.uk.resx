@@ -167,19 +167,19 @@
     <value>Власний шлях</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>Користувацькі команди</value>
+    <value>Власні команди:</value>
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
     <value>кбіт/с</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
-    <value>Змінний бітрейт:</value>
+    <value>Бітрейт:</value>
   </data>
   <data name="lblNVENCPreset.Text" xml:space="preserve">
     <value>Шаблон:</value>
   </data>
   <data name="lblNVENCBitrate.Text" xml:space="preserve">
-    <value>Швидкотік:</value>
+    <value>Бітрейт:</value>
   </data>
   <data name="lblGIFDither.Text" xml:space="preserve">
     <value>Режим розпливання:</value>
@@ -197,7 +197,7 @@
     <value>Шаблон:</value>
   </data>
   <data name="lblQSVBitrate.Text" xml:space="preserve">
-    <value>Швидкотік:</value>
+    <value>Бітрейт:</value>
   </data>
   <data name="btnTest.Text" xml:space="preserve">
     <value>Тест у консолі</value>
@@ -206,19 +206,16 @@
     <value>Копіювати</value>
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>Швидкотік:</value>
+    <value>Бітрейт:</value>
   </data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>Якість:</value>
-  </data>
-  <data name="tpVorbis.Text" xml:space="preserve">
-    <value>Vorbis</value>
   </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Якість:</value>
   </data>
   <data name="lblOpusQuality.Text" xml:space="preserve">
-    <value>Швидкотік:</value>
+    <value>Бітрейт:</value>
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>Джерело відео:</value>
@@ -233,12 +230,48 @@
     <value>Встановлює джерела відео/аудіо «screen-capture-recorder» і «virtual-audio-capturer».</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Встановити пристрої запису</value>
+    <value>Встановити пристрої запису...</value>
   </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Оновити</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Налаштування запису екрану</value>
+  </data>
+  <data name="lblOpusBitrate.Text" xml:space="preserve">
+    <value>Бітрейт:</value>
+  </data>
+  <data name="lblAACBitrate.Text" xml:space="preserve">
+    <value>Бітрейт:</value>
+  </data>
+  <data name="lblAMFBitrate.Text" xml:space="preserve">
+    <value>Бітрейт:</value>
+  </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>Фіксований бітрейт</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>Скинути налаштування...</value>
+  </data>
+  <data name="cbUseCustomFFmpegPath.Text" xml:space="preserve">
+    <value>Власний шлях до FFmpeg:</value>
+  </data>
+  <data name="lblCommandLineArgs.Text" xml:space="preserve">
+    <value>Додаткові параметри командного рядка:</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>Кодувальник відео:</value>
+  </data>
+  <data name="lblAudioEncoder.Text" xml:space="preserve">
+    <value>Кодувальник звуку:</value>
+  </data>
+  <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
+    <value>Керує індексом шкали Байєра, чим вища шкала, тим більше смуг буде видно. За замовчуванням 2.</value>
+  </data>
+  <data name="lblCommandLinePreview.Text" xml:space="preserve">
+    <value>Попередній перегляд:</value>
+  </data>
+  <data name="lblFFmpegPath.Text" xml:space="preserve">
+    <value>Шлях до FFmpeg:</value>
   </data>
 </root>

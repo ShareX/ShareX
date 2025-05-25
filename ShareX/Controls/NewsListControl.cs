@@ -47,29 +47,16 @@ namespace ShareX
 
         public void UpdateTheme()
         {
-            if (ShareXResources.UseCustomTheme)
-            {
-                dgvNews.BackgroundColor = ShareXResources.Theme.BackgroundColor;
-                dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = ShareXResources.Theme.BackgroundColor;
-                dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = ShareXResources.Theme.TextColor;
-                dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
-                    ColorHelpers.LighterColor(ShareXResources.Theme.BackgroundColor, 0.02f);
-                dgvNews.GridColor = ShareXResources.Theme.BorderColor;
-            }
-            else
-            {
-                dgvNews.BackgroundColor = SystemColors.Window;
-                dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = SystemColors.Window;
-                dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
-                dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
-                    ColorHelpers.DarkerColor(SystemColors.Window, 0.02f);
-                dgvNews.GridColor = ProfessionalColors.SeparatorDark;
-            }
+            dgvNews.BackgroundColor = ShareXResources.Theme.BackgroundColor;
+            dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = ShareXResources.Theme.BackgroundColor;
+            dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = ShareXResources.Theme.TextColor;
+            dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
+                ColorHelpers.LighterColor(ShareXResources.Theme.BackgroundColor, 0.02f);
+            dgvNews.GridColor = ShareXResources.Theme.BorderColor;
 
             foreach (DataGridViewRow row in dgvNews.Rows)
             {
-                row.Cells[2].Style.ForeColor = row.Cells[2].Style.SelectionForeColor =
-                    ShareXResources.UseCustomTheme ? ShareXResources.Theme.TextColor : SystemColors.ControlText;
+                row.Cells[2].Style.ForeColor = row.Cells[2].Style.SelectionForeColor = ShareXResources.Theme.TextColor;
             }
         }
 
@@ -179,8 +166,7 @@ namespace ShareX
                 if (row.Tag is NewsItem newsItem && !string.IsNullOrEmpty(newsItem.URL))
                 {
                     dgvNews.Cursor = Cursors.Hand;
-                    row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
-                        ShareXResources.UseCustomTheme ? Color.White : SystemColors.HotTrack;
+                    row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor = Color.White;
                 }
             }
         }
@@ -192,8 +178,7 @@ namespace ShareX
                 DataGridViewRow row = dgvNews.Rows[e.RowIndex];
                 if (row.Tag is NewsItem newsItem && !string.IsNullOrEmpty(newsItem.URL))
                 {
-                    row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
-                        ShareXResources.UseCustomTheme ? ShareXResources.Theme.TextColor : SystemColors.ControlText;
+                    row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor = ShareXResources.Theme.TextColor;
                 }
             }
 

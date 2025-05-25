@@ -57,11 +57,7 @@ namespace ShareX.HistoryLib
 
             ilvImages.SetRenderer(new HistoryImageListViewRenderer());
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
-
-            if (ShareXResources.UseCustomTheme)
-            {
-                ilvImages.BorderStyle = BorderStyle.None;
-            }
+            ilvImages.BorderStyle = BorderStyle.None;
 
             him = new HistoryItemManager(uploadFile, editImage, pinToScreen);
             him.GetHistoryItems += him_GetHistoryItems;

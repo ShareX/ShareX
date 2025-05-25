@@ -815,47 +815,26 @@ namespace ShareX
             }
 
             ShareXResources.Theme = Program.Settings.Themes[Program.Settings.SelectedTheme];
-            ShareXResources.UseCustomTheme = Program.Settings.UseCustomTheme;
 
             if (IsHandleCreated)
             {
                 NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.IsDarkTheme);
             }
 
-            if (ShareXResources.UseCustomTheme)
-            {
-                BackColor = ShareXResources.Theme.BackgroundColor;
-                tsMain.Font = ShareXResources.Theme.MenuFont;
-                tsMain.Renderer = new ToolStripDarkRenderer();
-                tsMain.DrawCustomBorder = false;
-                ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsTray);
-                ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsTaskInfo);
-                ttMain.BackColor = ShareXResources.Theme.BackgroundColor;
-                ttMain.ForeColor = ShareXResources.Theme.TextColor;
-                lvUploads.BackColor = ShareXResources.Theme.BackgroundColor;
-                lvUploads.ForeColor = ShareXResources.Theme.TextColor;
-                scMain.SplitterColor = ShareXResources.Theme.BackgroundColor;
-                scMain.SplitterLineColor = ShareXResources.Theme.BorderColor;
-                ShareXResources.ApplyCustomThemeToControl(dgvHotkeys);
-                dgvHotkeys.BackgroundColor = ShareXResources.Theme.BackgroundColor;
-            }
-            else
-            {
-                BackColor = SystemColors.Window;
-                tsMain.Renderer = new ToolStripCustomRenderer();
-                tsMain.DrawCustomBorder = true;
-                cmsTray.Renderer = new ToolStripCustomRenderer();
-                cmsTray.Opacity = 1;
-                cmsTaskInfo.Renderer = new ToolStripCustomRenderer();
-                cmsTaskInfo.Opacity = 1;
-                ttMain.BackColor = SystemColors.Window;
-                ttMain.ForeColor = SystemColors.ControlText;
-                lvUploads.BackColor = SystemColors.Window;
-                lvUploads.ForeColor = SystemColors.ControlText;
-                scMain.SplitterColor = Color.White;
-                scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;
-                dgvHotkeys.BackgroundColor = SystemColors.Window;
-            }
+            BackColor = ShareXResources.Theme.BackgroundColor;
+            tsMain.Font = ShareXResources.Theme.MenuFont;
+            tsMain.Renderer = new ToolStripDarkRenderer();
+            tsMain.DrawCustomBorder = false;
+            ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsTray);
+            ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsTaskInfo);
+            ttMain.BackColor = ShareXResources.Theme.BackgroundColor;
+            ttMain.ForeColor = ShareXResources.Theme.TextColor;
+            lvUploads.BackColor = ShareXResources.Theme.BackgroundColor;
+            lvUploads.ForeColor = ShareXResources.Theme.TextColor;
+            scMain.SplitterColor = ShareXResources.Theme.BackgroundColor;
+            scMain.SplitterLineColor = ShareXResources.Theme.BorderColor;
+            ShareXResources.ApplyCustomThemeToControl(dgvHotkeys);
+            dgvHotkeys.BackgroundColor = ShareXResources.Theme.BackgroundColor;
 
             tsmiTweetMessage.Image = TaskHelpers.FindMenuIcon(HotkeyType.TweetMessage);
             tsmiTrayTweetMessage.Image = TaskHelpers.FindMenuIcon(HotkeyType.TweetMessage);
@@ -1756,7 +1735,7 @@ namespace ShareX
             TaskHelpers.OpenImageCombiner();
         }
 
-        private void TsmiImageSplitter_Click(object sender, EventArgs e)
+        private void tsmiImageSplitter_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenImageSplitter();
         }
@@ -1803,6 +1782,11 @@ namespace ShareX
         private void tsmiHashChecker_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenHashCheck();
+        }
+
+        private void tsmiMetadata_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenMetadataWindow();
         }
 
         private void tsmiIndexFolder_Click(object sender, EventArgs e)

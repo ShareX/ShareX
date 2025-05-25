@@ -680,4 +680,7 @@ Wil je deze downloaden en installeren?</value>
   <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
     <value>Kopieer bestand naar klembord</value>
   </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value />
+  </data>
 </root>
