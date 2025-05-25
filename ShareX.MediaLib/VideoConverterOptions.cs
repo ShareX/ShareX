@@ -226,6 +226,16 @@ namespace ShareX.MediaLib
                     break;
             }
 
+            switch (VideoCodec)
+            {
+                case ConverterVideoCodecs.x265:
+                case ConverterVideoCodecs.hevc_nvenc:
+                case ConverterVideoCodecs.hevc_amf:
+                case ConverterVideoCodecs.hevc_qsv:
+                    args.Append("-tag:v hvc1 "); // https://trac.ffmpeg.org/wiki/Encode/H.265#FinalCutandApplestuffcompatibility
+                    break;
+            }
+
             if (!IsInputFileAnimationOnly)
             {
                 // Audio encoder

@@ -34,6 +34,11 @@ namespace ShareX
 {
     public partial class TaskThumbnailView : UserControl
     {
+        public delegate void TaskViewMouseEventHandler(object sender, MouseEventArgs e);
+        public event TaskViewMouseEventHandler ContextMenuRequested;
+
+        public event EventHandler SelectedPanelChanged;
+
         public List<TaskThumbnailPanel> Panels { get; private set; }
         public List<TaskThumbnailPanel> SelectedPanels { get; private set; }
 
@@ -140,10 +145,15 @@ namespace ShareX
             }
         }
 
-        public delegate void TaskViewMouseEventHandler(object sender, MouseEventArgs e);
-        public event TaskViewMouseEventHandler ContextMenuRequested;
-
-        public event EventHandler SelectedPanelChanged;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ExStyle |= (int)WindowStyles.WS_EX_COMPOSITED;
+                return createParams;
+            }
+        }
 
         public TaskThumbnailView()
         {
@@ -161,14 +171,7 @@ namespace ShareX
 
         public void UpdateTheme()
         {
-            if (ShareXResources.UseCustomTheme)
-            {
-                BackColor = ShareXResources.Theme.BackgroundColor;
-            }
-            else
-            {
-                BackColor = SystemColors.Window;
-            }
+            BackColor = ShareXResources.Theme.BackgroundColor;
 
             foreach (TaskThumbnailPanel panel in Panels)
             {
@@ -196,6 +199,7 @@ namespace ShareX
             Panels.Add(panel);
             flpMain.Controls.Add(panel);
             flpMain.Controls.SetChildIndex(panel, 0);
+            UpdateScrollBar();
             return panel;
         }
 
@@ -209,6 +213,7 @@ namespace ShareX
                 SelectedPanels.Remove(panel);
                 flpMain.Controls.Remove(panel);
                 panel.Dispose();
+                UpdateScrollBar();
             }
         }
 
@@ -342,6 +347,86 @@ namespace ShareX
             OnKeyDown(new KeyEventArgs(keyData));
 
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        protected override void OnMouseWheel(MouseEventArgs e)
+        {
+            base.OnMouseWheel(e);
+
+            if (sbMain.Visible)
+            {
+                int systemLines = SystemInformation.MouseWheelScrollLines;
+                if (systemLines <= 0) systemLines = 3;
+                int scrollAmount = systemLines * 16;
+                int delta = Math.Sign(-e.Delta) * scrollAmount;
+                int newValue = Math.Max(0, Math.Min(sbMain.Maximum, sbMain.Value + delta));
+                sbMain.Value = newValue;
+
+                ScrollContent();
+            }
+        }
+
+        private void ScrollContent()
+        {
+            pMain.SuspendLayout();
+
+            flpMain.Location = new Point(0, -sbMain.Value);
+
+            pMain.ResumeLayout();
+        }
+
+        private void UpdateScrollBar()
+        {
+            int scrollbarWidth = sbMain.Visible ? sbMain.Width : 0;
+            flpMain.Size = new Size(pMain.ClientSize.Width - scrollbarWidth, flpMain.PreferredSize.Height);
+
+            int viewportHeight = pMain.ClientSize.Height;
+            int contentHeight = flpMain.PreferredSize.Height;
+
+            if (contentHeight <= viewportHeight)
+            {
+                sbMain.Visible = false;
+                flpMain.Location = new Point(0, 0);
+            }
+            else
+            {
+                sbMain.Visible = true;
+                sbMain.Maximum = contentHeight - viewportHeight;
+                sbMain.PageSize = viewportHeight;
+                sbMain.Value = Math.Min(sbMain.Value, sbMain.Maximum);
+            }
+        }
+
+        private void TaskThumbnailView_VisibleChanged(object sender, EventArgs e)
+        {
+            if (Visible)
+            {
+                UpdateScrollBar();
+            }
+        }
+
+        private void TaskThumbnailView_SizeChanged(object sender, EventArgs e)
+        {
+            UpdateScrollBar();
+        }
+
+        private void pMain_Resize(object sender, EventArgs e)
+        {
+            int scrollbarWidth = sbMain.Visible ? sbMain.Width : 0;
+            flpMain.Size = new Size(pMain.ClientSize.Width - scrollbarWidth, flpMain.PreferredSize.Height);
+            flpMain.MaximumSize = new Size(pMain.ClientSize.Width, 0);
+
+            UpdateScrollBar();
+        }
+
+        private void flpMain_SizeChanged(object sender, EventArgs e)
+        {
+            UpdateScrollBar();
+        }
+
+        private void sbMain_ValueChanged(object sender, EventArgs e)
+        {
+            ScrollContent();
         }
     }
 }

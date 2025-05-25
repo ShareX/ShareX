@@ -166,10 +166,10 @@
     <value>Дублювати</value>
   </data>
   <data name="btnActionsAdd.Text" xml:space="preserve">
-    <value>Додати</value>
+    <value>Додати...</value>
   </data>
   <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>Змінити</value>
+    <value>Змінити...</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Вилучити</value>
@@ -328,7 +328,7 @@
     <value>Розміри області для привʼязки, при утриманні клавіші „Alt“:</value>
   </data>
   <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
-    <value>Показувати свій текст біля курсора:</value>
+    <value>Показувати власний текст біля курсора:</value>
   </data>
   <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
     <value>Також виявляти елементи керування всередині вікон</value>
@@ -518,5 +518,149 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Налаштування завдань</value>
+  </data>
+  <data name="lblTask.Text" xml:space="preserve">
+    <value>Завдання:</value>
+  </data>
+  <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
+    <value>Перевизначити теку для знімків</value>
+  </data>
+  <data name="btnActions.Text" xml:space="preserve">
+    <value>Дії...</value>
+  </data>
+  <data name="cbOverrideActions.Text" xml:space="preserve">
+    <value>Перевизначити дії</value>
+  </data>
+  <data name="cbOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>Перевизначити загальні налаштування</value>
+  </data>
+  <data name="cbOverrideImageSettings.Text" xml:space="preserve">
+    <value>Перевизначити налаштування зображення</value>
+  </data>
+  <data name="cbOverrideToolsSettings.Text" xml:space="preserve">
+    <value>Перевизначити налаштування інструментів</value>
+  </data>
+  <data name="cbOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Перевизначити налаштування вивантаження</value>
+  </data>
+  <data name="cbOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Перевизначити власний вивантажувач</value>
+  </data>
+  <data name="cbOverrideFTPAccount.Text" xml:space="preserve">
+    <value>Перевизначити обліковий запис FTP за замовчуванням</value>
+  </data>
+  <data name="cbOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>Перевизначити налаштування захоплення</value>
+  </data>
+  <data name="cbOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>Перевизначити розширені налаштування</value>
+  </data>
+  <data name="cbCloseWindowAfterOpenServiceLink.Text" xml:space="preserve">
+    <value>Закрити вікно OCR після відкриття посилання на сервіс</value>
+  </data>
+  <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
+    <value>Переглянути...</value>
+  </data>
+  <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
+    <value>Вимкнути сповіщення в повноекранному режимі</value>
+  </data>
+  <data name="tpNotifications.Text" xml:space="preserve">
+    <value>Сповіщення</value>
+  </data>
+  <data name="gbToastWindow.Text" xml:space="preserve">
+    <value>Сповіщення з попереднім переглядом</value>
+  </data>
+  <data name="cbPlaySoundAfterAction.Text" xml:space="preserve">
+    <value>Відтворити звук після завершення дії</value>
+  </data>
+  <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
+    <value>Показувати сповіщення після завершення завдання</value>
+  </data>
+  <data name="cbShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>Показувати вікно ефектів після захвату</value>
+  </data>
+  <data name="cbDisableNotifications.Text" xml:space="preserve">
+    <value>Вимкнути сповіщення</value>
+  </data>
+  <data name="cbImageAutoJPEGQuality.Text" xml:space="preserve">
+    <value>Автоматично адаптувати якість JPEG, щоб наблизити розмір зображення до заданого</value>
+  </data>
+  <data name="cbRegionCaptureActiveMonitorMode.Text" xml:space="preserve">
+    <value>Обмежити захоплення області та курсору в межах активного монітора</value>
+  </data>
+  <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
+    <value>Використовувати прозорий вибір області</value>
+  </data>
+  <data name="cbScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>Почати записувати після:</value>
+  </data>
+  <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
+    <value>Автоматично приховувати під час захоплення екрана</value>
+  </data>
+  <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
+    <value>Власний звук завершення завдання:</value>
+  </data>
+  <data name="cbUseCustomErrorSound.Text" xml:space="preserve">
+    <value>Власний звук помилки:</value>
+  </data>
+  <data name="cbUseCustomCaptureSound.Text" xml:space="preserve">
+    <value>Власний звук захоплення:</value>
+  </data>
+  <data name="cbUseCustomActionCompletedSound.Text" xml:space="preserve">
+    <value>Власний звук завершення дії:</value>
+  </data>
+  <data name="cbUseRandomImageEffect.Text" xml:space="preserve">
+    <value>Використовувати випадковий ефект зображення</value>
+  </data>
+  <data name="cbURLRegexReplace.Text" xml:space="preserve">
+    <value>Замінити URL-адресу результату за допомогою регулярних виразів</value>
+  </data>
+  <data name="lblCaptureCustomWindow.Text" xml:space="preserve">
+    <value>Заголовок попередньо налаштованого вікна:</value>
+  </data>
+  <data name="lblRegionCaptureBackgroundDimStrength.Text" xml:space="preserve">
+    <value>Рівень тьмяності тла:</value>
+  </data>
+  <data name="lblRegionCaptureFPSLimit.Text" xml:space="preserve">
+    <value>Обмеження FPS:</value>
+  </data>
+  <data name="lblToastWindowDuration.Text" xml:space="preserve">
+    <value>Тривалість:</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
+    <value>секунд</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Text" xml:space="preserve">
+    <value>секунд</value>
+  </data>
+  <data name="lblToastWindowPlacement.Text" xml:space="preserve">
+    <value>Розміщення:</value>
+  </data>
+  <data name="lblToastWindowSize.Text" xml:space="preserve">
+    <value>Розмір:</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
+    <value>Дія ЛКМ:</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>Дія СКМ:</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
+    <value>Дія ПКМ:</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
+    <value>Формат вибору кольору екрану (Ctrl + натискання):</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
+    <value>Тривалість згасання:</value>
+  </data>
+  <data name="lblURLRegexReplacePattern.Text" xml:space="preserve">
+    <value>Шаблон:</value>
+  </data>
+  <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
+    <value>Заміна:</value>
+  </data>
+  <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
+    <value>Інформаційний текст для вибору кольору екрана:</value>
   </data>
 </root>

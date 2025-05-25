@@ -1199,4 +1199,7 @@ Você gostaria de baixar e instalar?</value>
   <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
     <value>Seta à mão livre</value>
   </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value />
+  </data>
 </root>

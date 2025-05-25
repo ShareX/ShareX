@@ -300,6 +300,10 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         HashCheck,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        Metadata,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        StripMetadata,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         IndexFolder,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ClipboardViewer,
