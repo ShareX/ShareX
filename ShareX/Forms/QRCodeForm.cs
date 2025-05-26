@@ -170,6 +170,8 @@ namespace ShareX
             finally
             {
                 this.ForceActivate();
+
+                TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
             }
         }
 
@@ -193,6 +195,8 @@ namespace ShareX
             finally
             {
                 this.ForceActivate();
+
+                TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
             }
         }
 
