@@ -137,19 +137,43 @@ namespace ShareX
 
         private void ScanImage(Bitmap bmp)
         {
-            string output = "";
-
-            string[] results = TaskHelpers.BarcodeScan(bmp);
-
-            if (results != null)
+            if (bmp != null)
             {
-                output = string.Join(Environment.NewLine + Environment.NewLine, results);
-            }
+                string output = "";
 
-            txtText.Text = output;
+                string[] results = TaskHelpers.BarcodeScan(bmp);
+
+                if (results != null)
+                {
+                    output = string.Join(Environment.NewLine + Environment.NewLine, results);
+                }
+
+                txtText.Text = output;
+            }
         }
 
         private void ScanFromScreen()
+        {
+            try
+            {
+                if (Visible)
+                {
+                    Hide();
+                    Thread.Sleep(250);
+                }
+
+                using (Bitmap bmp = new Screenshot().CaptureFullscreen())
+                {
+                    ScanImage(bmp);
+                }
+            }
+            finally
+            {
+                this.ForceActivate();
+            }
+        }
+
+        private void ScanFromRegion()
         {
             try
             {
@@ -163,10 +187,7 @@ namespace ShareX
 
                 using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
                 {
-                    if (bmp != null)
-                    {
-                        ScanImage(bmp);
-                    }
+                    ScanImage(bmp);
                 }
             }
             finally
@@ -204,22 +225,6 @@ namespace ShareX
             {
                 GenerateQRCode(txtText.Text);
             }
-        }
-
-        private void btnScanQRCodeFromScreen_Click(object sender, EventArgs e)
-        {
-            txtText.ResetText();
-
-            ScanFromScreen();
-        }
-
-        private void btnScanQRCodeFromImageFile_Click(object sender, EventArgs e)
-        {
-            txtText.ResetText();
-
-            string filePath = ImageHelpers.OpenImageFileDialog();
-
-            ScanFromImageFile(filePath);
         }
 
         private void txtText_TextChanged(object sender, EventArgs e)
@@ -288,6 +293,29 @@ namespace ShareX
                 Bitmap bmp = (Bitmap)pbQRCode.Image.Clone();
                 TaskHelpers.MainFormUploadImage(bmp);
             }
+        }
+
+        private void btnScanScreen_Click(object sender, EventArgs e)
+        {
+            txtText.ResetText();
+
+            ScanFromScreen();
+        }
+
+        private void btnScanRegion_Click(object sender, EventArgs e)
+        {
+            txtText.ResetText();
+
+            ScanFromRegion();
+        }
+
+        private void btnScanImageFile_Click(object sender, EventArgs e)
+        {
+            txtText.ResetText();
+
+            string filePath = ImageHelpers.OpenImageFileDialog();
+
+            ScanFromImageFile(filePath);
         }
     }
 }
