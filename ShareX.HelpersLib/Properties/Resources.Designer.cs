@@ -1667,7 +1667,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR code (Decode from screen).
+        ///   Looks up a localized string similar to QR code (Scan screen).
         /// </summary>
         internal static string HotkeyType_QRCodeDecodeFromScreen {
             get {
