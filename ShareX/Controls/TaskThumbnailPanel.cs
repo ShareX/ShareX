@@ -370,6 +370,16 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(filePath))
                 {
+                    if (FileHelpers.IsVideoFile(filePath))
+                    {
+                        Bitmap bmpResult = NativeMethods.GetFileThumbnail(filePath, ThumbnailSize);
+
+                        if (bmpResult != null)
+                        {
+                            return bmpResult;
+                        }
+                    }
+
                     using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
                     using (Bitmap bmpResult = icon.ToBitmap())
                     {
