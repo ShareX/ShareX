@@ -34,6 +34,7 @@ namespace ShareX
     public static class IntegrationHelpers
     {
         private static readonly string ApplicationPath = $"\"{Application.ExecutablePath}\"";
+        private static readonly string FileIconPath = $"\"{FileHelpers.GetAbsolutePath("ShareX_File_Icon.ico")}\"";
 
         private static readonly string ShellExtMenuName = "ShareX";
         private static readonly string ShellExtMenuFiles = $@"Software\Classes\*\shell\{ShellExtMenuName}";
@@ -56,7 +57,7 @@ namespace ShareX
         private static readonly string ShellCustomUploaderAssociatePath = $@"Software\Classes\{ShellCustomUploaderExtensionValue}";
         private static readonly string ShellCustomUploaderAssociateValue = "ShareX custom uploader";
         private static readonly string ShellCustomUploaderIconPath = $@"{ShellCustomUploaderAssociatePath}\DefaultIcon";
-        private static readonly string ShellCustomUploaderIconValue = $"{ApplicationPath},0";
+        private static readonly string ShellCustomUploaderIconValue = $"{FileIconPath}";
         private static readonly string ShellCustomUploaderCommandPath = $@"{ShellCustomUploaderAssociatePath}\shell\open\command";
         private static readonly string ShellCustomUploaderCommandValue = $"{ApplicationPath} -CustomUploader \"%1\"";
 
@@ -65,7 +66,7 @@ namespace ShareX
         private static readonly string ShellImageEffectAssociatePath = $@"Software\Classes\{ShellImageEffectExtensionValue}";
         private static readonly string ShellImageEffectAssociateValue = "ShareX image effect";
         private static readonly string ShellImageEffectIconPath = $@"{ShellImageEffectAssociatePath}\DefaultIcon";
-        private static readonly string ShellImageEffectIconValue = $"{ApplicationPath},0";
+        private static readonly string ShellImageEffectIconValue = $"{FileIconPath}";
         private static readonly string ShellImageEffectCommandPath = $@"{ShellImageEffectAssociatePath}\shell\open\command";
         private static readonly string ShellImageEffectCommandValue = $"{ApplicationPath} -ImageEffect \"%1\"";
 

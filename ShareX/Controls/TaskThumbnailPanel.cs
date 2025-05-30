@@ -380,7 +380,7 @@ namespace ShareX
                         }
                     }
 
-                    using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
+                    using (Icon icon = NativeMethods.GetJumboFileIcon(filePath))
                     using (Bitmap bmpResult = icon.ToBitmap())
                     {
                         return ImageHelpers.ResizeImage(bmpResult, ThumbnailSize, false, true);
