@@ -71,12 +71,39 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancelled.
+        /// </summary>
+        internal static string CancelledString {
+            get {
+                return ResourceManager.GetString("CancelledString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string CancelString {
+            get {
+                return ResourceManager.GetString("CancelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap chart {
             get {
                 object obj = ResourceManager.GetObject("chart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete selected file(s).
+        /// </summary>
+        internal static string DeleteSelectedFile {
+            get {
+                return ResourceManager.GetString("DeleteSelectedFile", resourceCulture);
             }
         }
         
@@ -90,11 +117,47 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An error occurred.
+        /// </summary>
+        internal static string ErrorOccurred {
+            get {
+                return ResourceManager.GetString("ErrorOccurred", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deleted file(s) will be moved to Recycle Bin. Continue?.
+        /// </summary>
+        internal static string FileDeleteConfirmationText {
+            get {
+                return ResourceManager.GetString("FileDeleteConfirmationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Delete Confirmation.
+        /// </summary>
+        internal static string FileDeleteConfirmationTitle {
+            get {
+                return ResourceManager.GetString("FileDeleteConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Filtered.
         /// </summary>
         internal static string Filtered {
             get {
                 return ResourceManager.GetString("Filtered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The selected folder does not exist..
+        /// </summary>
+        internal static string FolderDoesntExist {
+            get {
+                return ResourceManager.GetString("FolderDoesntExist", resourceCulture);
             }
         }
         
@@ -445,6 +508,26 @@ namespace ShareX.HistoryLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_fluent_image_add_24_regular {
+            get {
+                object obj = ResourceManager.GetObject("ic_fluent_image_add_24_regular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_fluent_video_clip_24_regular {
+            get {
+                object obj = ResourceManager.GetObject("ic_fluent_video_clip_24_regular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image {
             get {
                 object obj = ResourceManager.GetObject("image", resourceCulture);
@@ -493,6 +576,15 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The operation was cancelled..
+        /// </summary>
+        internal static string OperationCancelled {
+            get {
+                return ResourceManager.GetString("OperationCancelled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pin to screen.
         /// </summary>
         internal static string PinToScreen {
@@ -507,6 +599,51 @@ namespace ShareX.HistoryLib.Properties {
         internal static string ProcessNames {
             get {
                 return ResourceManager.GetString("ProcessNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove selected item(s).
+        /// </summary>
+        internal static string RemoveSelectedItem {
+            get {
+                return ResourceManager.GetString("RemoveSelectedItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a folder to import media from..
+        /// </summary>
+        internal static string SelectImportFolder {
+            get {
+                return ResourceManager.GetString("SelectImportFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Done! Ready....
+        /// </summary>
+        internal static string StatusImportDone {
+            get {
+                return ResourceManager.GetString("StatusImportDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Importing....
+        /// </summary>
+        internal static string StatusImporting {
+            get {
+                return ResourceManager.GetString("StatusImporting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to cancel the import operation?.
+        /// </summary>
+        internal static string SureCancelImport {
+            get {
+                return ResourceManager.GetString("SureCancelImport", resourceCulture);
             }
         }
         

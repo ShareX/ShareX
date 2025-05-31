@@ -162,9 +162,10 @@ namespace ShareX.HelpersLib
         {
             if (AllowSelectAll && MultiSelect)
             {
-                foreach (ListViewItem lvi in Items)
+                int listLength = Items.Count;
+                for (int i = 0; i < listLength; i++)
                 {
-                    lvi.Selected = true;
+                    Items[i].Selected = true;
                 }
             }
         }
