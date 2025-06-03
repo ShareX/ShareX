@@ -87,10 +87,17 @@ namespace ShareX
             return form;
         }
 
-        public static QRCodeForm OpenFormScanFromScreen()
+        public static QRCodeForm OpenFormScanScreen()
         {
             QRCodeForm form = Instance;
-            form.ScanFromScreen();
+            form.ScanScreen();
+            return form;
+        }
+
+        public static QRCodeForm OpenFormScanRegion()
+        {
+            QRCodeForm form = Instance;
+            form.ScanRegion();
             return form;
         }
 
@@ -152,7 +159,7 @@ namespace ShareX
             }
         }
 
-        private void ScanFromScreen()
+        private void ScanScreen()
         {
             try
             {
@@ -175,7 +182,7 @@ namespace ShareX
             }
         }
 
-        private void ScanFromRegion()
+        private void ScanRegion()
         {
             try
             {
@@ -303,14 +310,14 @@ namespace ShareX
         {
             txtText.ResetText();
 
-            ScanFromScreen();
+            ScanScreen();
         }
 
         private void btnScanRegion_Click(object sender, EventArgs e)
         {
             txtText.ResetText();
 
-            ScanFromRegion();
+            ScanRegion();
         }
 
         private void btnScanImageFile_Click(object sender, EventArgs e)

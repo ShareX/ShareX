@@ -1676,6 +1676,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to QR code (Scan region).
+        /// </summary>
+        internal static string HotkeyType_QRCodeScanRegion {
+            get {
+                return ResourceManager.GetString("HotkeyType_QRCodeScanRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture region (Light).
         /// </summary>
         internal static string HotkeyType_RectangleLight {

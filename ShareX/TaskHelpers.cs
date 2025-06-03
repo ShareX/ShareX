@@ -303,7 +303,10 @@ namespace ShareX
                     }
                     break;
                 case HotkeyType.QRCodeDecodeFromScreen:
-                    OpenQRCodeDecodeFromScreen();
+                    OpenQRCodeScanScreen();
+                    break;
+                case HotkeyType.QRCodeScanRegion:
+                    OpenQRCodeScanRegion();
                     break;
                 case HotkeyType.HashCheck:
                     OpenHashCheck(filePath, safeTaskSettings);
@@ -1432,9 +1435,14 @@ namespace ShareX
             QRCodeForm.OpenFormScanFromImageFile(filePath).Show();
         }
 
-        public static void OpenQRCodeDecodeFromScreen()
+        public static void OpenQRCodeScanScreen()
         {
-            QRCodeForm.OpenFormScanFromScreen();
+            QRCodeForm.OpenFormScanScreen();
+        }
+
+        public static void OpenQRCodeScanRegion()
+        {
+            QRCodeForm.OpenFormScanRegion();
         }
 
         public static void OpenRuler(TaskSettings taskSettings = null)
@@ -1951,6 +1959,7 @@ namespace ShareX
                     case HotkeyType.OCR: return ShareXResources.IsDarkTheme ? Resources.edit_drop_cap_white : Resources.edit_drop_cap;
                     case HotkeyType.QRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
                     case HotkeyType.QRCodeDecodeFromScreen: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
+                    case HotkeyType.QRCodeScanRegion: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
                     case HotkeyType.HashCheck: return Resources.application_task;
                     case HotkeyType.Metadata: return Resources.tag_hash;
                     case HotkeyType.StripMetadata: return Resources.tag__minus;
