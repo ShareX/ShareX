@@ -311,7 +311,8 @@ namespace ShareX.ScreenCaptureLib
 
         private async void btnInstallHelperDevices_Click(object sender, EventArgs e)
         {
-            string filePath = FileHelpers.GetAbsolutePath("Recorder-devices-setup.exe");
+            string version = "0.12.10";
+            string filePath = FileHelpers.GetAbsolutePath($"recorder-devices-{version}-setup.exe");
 
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
