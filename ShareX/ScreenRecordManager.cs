@@ -276,6 +276,7 @@ namespace ShareX
 
                             Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
                             screenshot.CaptureCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor;
+                            screenshot.UseWinRTCaptureAPI = taskSettings.CaptureSettings.UseWinRTGraphicsCaptureAPI;
 
                             screenRecorder?.Dispose();
                             screenRecorder = new ScreenRecorder(ScreenRecordOutput.FFmpeg, options, screenshot, captureRectangle);
