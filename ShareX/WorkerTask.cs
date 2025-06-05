@@ -614,6 +614,11 @@ namespace ShareX
                 return true;
             }
 
+            if (Program.Settings.CopyToClipboardFirst)
+            {
+                CopyToClipboardIfEnabled();
+            }
+
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.BeautifyImage))
             {
                 Image = TaskHelpers.BeautifyImage(Image, Info.TaskSettings);
@@ -645,11 +650,7 @@ namespace ShareX
                 }
             }
 
-            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
-            {
-                ClipboardHelpers.CopyImage(Image, Info.FileName);
-                DebugHelper.WriteLine("Image copied to clipboard.");
-            }
+            CopyToClipboardIfEnabled();
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.PinToScreen))
             {
@@ -753,6 +754,15 @@ namespace ShareX
             }
 
             return true;
+        }
+
+        private void CopyToClipboardIfEnabled()
+        {
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
+            {
+                ClipboardHelpers.CopyImage(Image, Info.FileName);
+                DebugHelper.WriteLine("Image copied to clipboard.");
+            }
         }
 
         private void DoFileJobs()
