@@ -59,7 +59,7 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -126,6 +126,15 @@
   <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
     <value>Колір підсвічування...</value>
   </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>Переключитися на інструмент малювання після виділення фігури</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Розмір ефекту вирізання:</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>Додати ефекти зображення...</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
     <value>Віддзеркалити по горизонталі</value>
   </data>
@@ -135,8 +144,8 @@
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>Захоплення кількох областей</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
-    <value>Значення на першому кроці:</value>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>Розмір пікселя:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
     <value>Розмір зображення...</value>
@@ -147,14 +156,26 @@
   <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
     <value>Застосувати зміни та продовжити завдання (Enter)</value>
   </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>Відкрити веб-сторінку клавішних сполучень...</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>Дублювати</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>Змінити</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Зображення збережено</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Автозакриття редактора за завданням</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>Скасувати</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
-    <value>Ширина:</value>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>Повторити</value>
   </data>
   <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
     <value>Редактор зображень</value>
@@ -165,8 +186,47 @@
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>Режим області фіксованого розміру</value>
   </data>
+  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Буфер обміну не містить зображень.</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>Новий рядок: Ctrl + Enter, OK: Enter</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>Захоплення монітора</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>На задній план</value>
+  </data>
   <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
     <value>Захоплення активного монітора</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>Перемістити вперед</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Повернути на 90° проти годинникової стрілки</value>
+  </data>
+  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
+    <value>Почати захоплення</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+    <value>Режим інтерполяції:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>Ширина:</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Натисніть, щоб зупинити запис.</value>
+  </data>
+  <data name="ShapeManager_CenterPoints" xml:space="preserve">
+    <value>Центральні точки:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>Стиль рамки:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
     <value>Захоплення</value>
@@ -174,11 +234,50 @@
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} Ш: {2} В: {3}</value>
   </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>Ви впевнені, що хочете перервати запис?</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
     <value>Відкрити файл зображення...</value>
   </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Обробка...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>Очікування...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>Повернути на 90° за годинниковою стрілкою</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>Закрити (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>Значення на першому кроці:</value>
+  </data>
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
     <value>Захопити</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Підсвічування</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>Ступінь збільшення:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>Радіус скруглення:</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>Бітрейт:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>Друк зображення... (Ctrl + P)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>Показати FPS</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>Новий рядок: Enter, OK: Ctrl + Enter</value>
   </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>Тип курсора:</value>
@@ -189,11 +288,26 @@
   <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
     <value>Тінь</value>
   </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>Квадратна лупа</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Продовжити</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>Режим редактора при запуску:</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>Зображення збережено</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>Напрямок стрілки:</value>
+  </data>
   <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
     <value>Захоплення всього екрану</value>
   </data>
-  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
-    <value>Почати захоплення</value>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>Захоплення областей</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Прямокутне захоплення з підсвічуванням</value>
@@ -201,8 +315,32 @@
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
     <value>Зберегти зображення</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
+    <value>Нове зображення...</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>Розмиття</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>Кодування...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>Сила розмивання:</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>Зображення вивантажується</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>Увімкнути анімації</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>Перемістити назад</value>
+  </data>
   <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
     <value>Висота:</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>Зображення скопійовано</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
     <value>Колір заливки...</value>
@@ -210,8 +348,17 @@
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
     <value>Зберегти зображення як... (Ctrl + Shift + S)</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>Продовжити завдання (пробіл або ПКМ)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
+    <value>Розмір шрифту:</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
     <value>Розмір полотна...</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>Розмір іконок меню:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
     <value>Віддзеркалити по вертикалі</value>
@@ -219,17 +366,32 @@
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>Автообрізання...</value>
   </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>Пікселювання</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>Зафіксувати меню</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
     <value>На передній план</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
     <value>Повернути на 180°</value>
   </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Легкі елементи для зміни розміру</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
     <value>Захопити останню область</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
+    <value>Вставити зображення з екрану...</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
     <value>Видалити все</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Автоматично копіювати зображення до буфера обміну</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
     <value>Товщина меж:</value>
@@ -249,8 +411,17 @@
   <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
     <value>Показувати лупу</value>
   </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX — Редактор зображень</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>Колір тіні...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>Переключитися на інструмент виділення після малювання фігури</value>
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Прозоре прямокутне захоплення</value>
@@ -258,8 +429,17 @@
   <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
     <value>Показувати інформацію про положення та розмір</value>
   </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>Почати</value>
+  </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Зупинити захоплення</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>Тип кроку:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>Скопіювати зображення в буфер обміну (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>Показувати широке перехрестя на екрані</value>
@@ -270,261 +450,81 @@
   <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
     <value>Кількість пікселів у лупі:</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
-    <value>Розмір шрифту:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
-    <value>Вставити файл зображення...</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
-    <value>Памʼятати стан меню</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
-    <value>Розмір пікселя в лупі:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
-    <value>Радіус скруглення:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
-    <value>Розмір пікселя:</value>
-  </data>
-  <data name="MagnifyStrength" xml:space="preserve">
-    <value>Ступінь збільшення:</value>
-  </data>
-  <data name="CloseEsc" xml:space="preserve">
-    <value>Закрити (Esc)</value>
-  </data>
-  <data name="Bitrate" xml:space="preserve">
-    <value>Бітрейт:</value>
-  </data>
-  <data name="Blur" xml:space="preserve">
-    <value>Розмиття</value>
-  </data>
-  <data name="AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Автоматично копіювати зображення до буфера обміну</value>
-  </data>
-  <data name="Duplicate" xml:space="preserve">
-    <value>Дублювати</value>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>Це вікно закриється перед відкриттям веб-сторінки сполучень клавіш. Ви хочете продовжити?</value>
   </data>
   <data name="FPSLimit" xml:space="preserve">
     <value>Обмеження FPS:</value>
   </data>
-  <data name="Highlight" xml:space="preserve">
-    <value>Підсвічування</value>
+  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
+    <value>Вставити файл зображення...</value>
   </data>
-  <data name="ImageCopied" xml:space="preserve">
-    <value>Зображення скопійовано</value>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Масштабувати до розміру вікна при відкриванні</value>
   </data>
-  <data name="ImageSaved" xml:space="preserve">
-    <value>Зображення збережено</value>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>Порада: Ви можете переміщувати зображення, утримуючи середню кнопку миші.</value>
   </data>
-  <data name="ImageSavedAs" xml:space="preserve">
-    <value>Зображення збережено</value>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>Виконати завдання після захоплення (Enter)</value>
   </data>
-  <data name="ImageUploading" xml:space="preserve">
-    <value>Зображення вивантажується</value>
-  </data>
-  <data name="LockMenu" xml:space="preserve">
-    <value>Зафіксувати меню</value>
-  </data>
-  <data name="Pause" xml:space="preserve">
-    <value>Пауза</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
-    <value>Показати FPS</value>
-  </data>
-  <data name="Confirmation" xml:space="preserve">
-    <value>Підтвердження</value>
-  </data>
-  <data name="ImageEffects" xml:space="preserve">
-    <value>Додати ефекти зображення...</value>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>Памʼятати стан меню</value>
   </data>
   <data name="CutOutEffectType" xml:space="preserve">
     <value>Ефект вирізання:</value>
   </data>
-  <data name="CutOutEffectSize" xml:space="preserve">
-    <value>Розмір ефекту вирізання:</value>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>Розмір пікселя в лупі:</value>
   </data>
-  <data name="CutOutBackgroundColor" xml:space="preserve">
-    <value>Колір вирізаного тла...</value>
-  </data>
-  <data name="DropShadowColor" xml:space="preserve">
-    <value>Колір тіні...</value>
-  </data>
-  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
-    <value>Буфер обміну не містить зображень.</value>
-  </data>
-  <data name="ImageURL" xml:space="preserve">
-    <value>URL-адреса зображення</value>
-  </data>
-  <data name="LightResizeNodes" xml:space="preserve">
-    <value>Легкі елементи для зміни розміру</value>
-  </data>
-  <data name="MenuIconSize" xml:space="preserve">
-    <value>Розмір іконок меню:</value>
-  </data>
-  <data name="OpenKeybindsPage" xml:space="preserve">
-    <value>Відкрити веб-сторінку клавішних сполучень...</value>
-  </data>
-  <data name="Pixelate" xml:space="preserve">
-    <value>Пікселювання</value>
-  </data>
-  <data name="Processing" xml:space="preserve">
-    <value>Обробка...</value>
-  </data>
-  <data name="Resume" xml:space="preserve">
-    <value>Продовжити</value>
-  </data>
-  <data name="RulerAngle" xml:space="preserve">
-    <value>Кут</value>
-  </data>
-  <data name="RulerArea" xml:space="preserve">
-    <value>Площа</value>
-  </data>
-  <data name="RulerDistance" xml:space="preserve">
-    <value>Відстань</value>
-  </data>
-  <data name="RulerHeight" xml:space="preserve">
-    <value>Висота</value>
-  </data>
-  <data name="RulerWidth" xml:space="preserve">
-    <value>Ширина</value>
-  </data>
-  <data name="ScreenRecordForm_Start" xml:space="preserve">
-    <value>Почати</value>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>Налаштування інструменту</value>
   </data>
   <data name="ScreenRecordForm_Stop" xml:space="preserve">
     <value>Зупинити</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
-    <value>Налаштування</value>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Натисніть, щоб почати запис.</value>
   </data>
-  <data name="RulerBottom" xml:space="preserve">
-    <value>Низ</value>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>Бажаєте скинути налаштування?</value>
   </data>
-  <data name="RulerPerimeter" xml:space="preserve">
-    <value>Периметр</value>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Підтвердження</value>
   </data>
-  <data name="RulerRight" xml:space="preserve">
-    <value>Право</value>
-  </data>
-  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
-    <value>Ви впевнені, що хочете перервати запис?</value>
-  </data>
-  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
-    <value>Новий рядок: Ctrl + Enter, OK: Enter</value>
-  </data>
-  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
-    <value>Новий рядок: Enter, OK: Ctrl + Enter</value>
-  </data>
-  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
-    <value>Порада: Ви можете переміщувати зображення, утримуючи середню кнопку миші.</value>
+  <data name="ImageURL" xml:space="preserve">
+    <value>URL-адреса зображення</value>
   </data>
   <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
     <value>Залишилися незбережені зміни.
 
 Бажаєте зберегти зміни перед закриттям редактора зображень?</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Натисніть, щоб почати запис.</value>
+  <data name="CutOutBackgroundColor" xml:space="preserve">
+    <value>Колір вирізаного тла...</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Натисніть, щоб зупинити запис.</value>
+  <data name="RulerAngle" xml:space="preserve">
+    <value>Кут</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Кодування...</value>
+  <data name="RulerPerimeter" xml:space="preserve">
+    <value>Периметр</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Очікування...</value>
+  <data name="RulerArea" xml:space="preserve">
+    <value>Площа</value>
   </data>
-  <data name="ShapeManager_BorderStyle" xml:space="preserve">
-    <value>Стиль рамки:</value>
+  <data name="RulerWidth" xml:space="preserve">
+    <value>Ширина</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
-    <value>Сила розмивання:</value>
+  <data name="RulerHeight" xml:space="preserve">
+    <value>Висота</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
-    <value>Захоплення монітора</value>
+  <data name="RulerDistance" xml:space="preserve">
+    <value>Відстань</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
-    <value>Увімкнути анімації</value>
+  <data name="RulerRight" xml:space="preserve">
+    <value>Право</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
-    <value>Квадратна лупа</value>
-  </data>
-  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
-    <value>Бажаєте скинути налаштування?</value>
-  </data>
-  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
-    <value>Це вікно закриється перед відкриттям веб-сторінки сполучень клавіш. Ви хочете продовжити?</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Масштабувати до розміру вікна при відкриванні</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
-    <value>Налаштування інструменту</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
-    <value>Нове зображення...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
-    <value>Друк зображення... (Ctrl + P)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
-    <value>Режим інтерполяції:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
-    <value>Режим редактора при запуску:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
-    <value>Захоплення областей</value>
-  </data>
-  <data name="ShapeManager_CenterPoints" xml:space="preserve">
-    <value>Центральні точки:</value>
-  </data>
-  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
-    <value>Напрямок стрілки:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
-    <value>Перемістити вперед</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
-    <value>Повторити</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
-    <value>Вставити зображення з екрану...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
-    <value>Перемістити назад</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
-    <value>На задній план</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Автозакриття редактора за завданням</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Скопіювати зображення в буфер обміну (Ctrl + C)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
-    <value>Тип кроку:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
-    <value>Переключитися на інструмент малювання після виділення фігури</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
-    <value>Переключитися на інструмент виділення після малювання фігури</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
-    <value>Продовжити завдання (пробіл або ПКМ)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
-    <value>Виконати завдання після захоплення (Enter)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
-    <value>Повернути на 90° за годинниковою стрілкою</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
-    <value>Повернути на 90° проти годинникової стрілки</value>
+  <data name="RulerBottom" xml:space="preserve">
+    <value>Низ</value>
   </data>
 </root>

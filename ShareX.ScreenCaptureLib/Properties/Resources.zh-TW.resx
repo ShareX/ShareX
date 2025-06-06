@@ -53,6 +53,7 @@
     value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
+
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
@@ -116,390 +117,390 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
-    <value>瀏覽 ffmpeg.exe</value>
-  </data>
-  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
-    <value>區域擷取</value>
-  </data>
-  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
-    <value>開始擷取</value>
-  </data>
-  <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
-    <value>停止擷取</value>
-  </data>
-  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
-    <value>矩形擷取 (透明)</value>
-  </data>
-  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
-    <value>矩形擷取 (高亮)</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
-    <value>顯示幀率</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
-    <value>高：</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
-    <value>寬：</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
-    <value>固定尺寸區域模式</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
-    <value>顯示全螢幕十字線</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
-    <value>放大鏡像素尺寸：</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
-    <value>放大鏡像素數量：</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
-    <value>方形放大鏡</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
-    <value>顯示放大鏡</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
-    <value>顯示位置和尺寸資訊</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
-    <value>多區域模式</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
-    <value>選項</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
-    <value>擷取顯示器</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
-    <value>擷取目前顯示器</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
-    <value>擷取全螢幕</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
-    <value>高亮顏色...</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
-    <value>像素尺寸：</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
-    <value>模糊強度：</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
-    <value>圓角半徑：</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
-    <value>填充顏色...</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
-    <value>邊框尺寸：</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
-    <value>邊框顏色...</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>擷取</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>停止</value>
-  </data>
-  <data name="CloseEsc" xml:space="preserve">
-    <value>關閉 (Esc)</value>
-  </data>
-  <data name="DropShadowColor" xml:space="preserve">
-    <value>陰影顏色...</value>
-  </data>
-  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
-    <value>剪貼簿中無圖片。</value>
-  </data>
-  <data name="ImageEffects" xml:space="preserve">
-    <value>新增圖片效果...</value>
-  </data>
-  <data name="LightResizeNodes" xml:space="preserve">
-    <value>使用高亮尺寸調整點</value>
-  </data>
-  <data name="MagnifyStrength" xml:space="preserve">
-    <value>放大強度：</value>
-  </data>
-  <data name="OpenKeybindsPage" xml:space="preserve">
-    <value>開啟按鍵配置網頁...</value>
-  </data>
-  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
-    <value>圖片編輯器</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
-    <value>ShareX - 圖片編輯器</value>
-  </data>
-  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
-    <value>提示：點擊滑鼠中鍵並拖曳即可平移圖片。</value>
-  </data>
-  <data name="ShapeManager_CenterPoints" xml:space="preserve">
-    <value>中心點：</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
-    <value>擷取</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
-    <value>啟用動畫</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
-    <value>記住選單狀態</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
-    <value>選取形狀後切換到繪圖工具</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
-    <value>繪製形狀後切換到選取工具</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
-    <value>編輯器選單</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
-    <value>套用變更並繼續排程 (Enter)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>在排程中自動關閉編輯器</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
-    <value>自動裁切圖片...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
-    <value>上移一層</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
-    <value>置於最上層</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
     <value>取消排程 (Esc)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
-    <value>畫布尺寸...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
-    <value>擷取區域</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
-    <value>繼續排程 (空白鍵或滑鼠右鍵)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>將圖片複製到剪貼簿 (Ctrl + C)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
-    <value>裁切圖片...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
-    <value>刪除</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
-    <value>刪除全部</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
-    <value>陰影</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
-    <value>編輯</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
-    <value>編輯器啟動模式：</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
-    <value>水平翻轉</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
-    <value>垂直翻轉</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
-    <value>字型大小：</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
-    <value>圖片</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
-    <value>圖片尺寸...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
-    <value>插入圖片檔案...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
-    <value>從螢幕插入圖片...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
-    <value>內插模式：</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
-    <value>擷取上個區域</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
-    <value>新圖片...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
-    <value>開啟圖片檔案...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
-    <value>貼上圖片/文字</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
-    <value>列印圖片... (Ctrl + P)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
-    <value>旋轉 180°</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
-    <value>順時針旋轉 90°</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
-    <value>逆時針旋轉 90°</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
-    <value>執行擷取後的排程 (Enter)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
-    <value>儲存圖片 (Ctrl + S)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
-    <value>儲存圖片為... (Ctrl + Shift + S)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
-    <value>下移一層</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
-    <value>置於底層</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
-    <value>復原</value>
   </data>
   <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
     <value>上傳圖片 (Ctrl + U)</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
-    <value>第一步的值：</value>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>高亮顏色...</value>
   </data>
-  <data name="ShapeManager_CursorType" xml:space="preserve">
-    <value>游標類型：</value>
-  </data>
-  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
-    <value>此視窗將在開啟按鍵配置網頁前關閉。是否要繼續？</value>
-  </data>
-  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
-    <value>是否要重設選項？</value>
-  </data>
-  <data name="AutoCopyImageToClipboard" xml:space="preserve">
-    <value>自動複製圖片到剪貼簿</value>
-  </data>
-  <data name="Bitrate" xml:space="preserve">
-    <value>位元率：</value>
-  </data>
-  <data name="Blur" xml:space="preserve">
-    <value>模糊</value>
-  </data>
-  <data name="Confirmation" xml:space="preserve">
-    <value>確認</value>
-  </data>
-  <data name="Duplicate" xml:space="preserve">
-    <value>複製</value>
-  </data>
-  <data name="FPSLimit" xml:space="preserve">
-    <value>幀率限制：</value>
-  </data>
-  <data name="Highlight" xml:space="preserve">
-    <value>高亮</value>
-  </data>
-  <data name="ImageCopied" xml:space="preserve">
-    <value>已複製圖片</value>
-  </data>
-  <data name="ImageSaved" xml:space="preserve">
-    <value>已儲存圖片</value>
-  </data>
-  <data name="ImageSavedAs" xml:space="preserve">
-    <value>已儲存圖片</value>
-  </data>
-  <data name="ImageUploading" xml:space="preserve">
-    <value>正在上傳圖片</value>
-  </data>
-  <data name="LockMenu" xml:space="preserve">
-    <value>鎖定選單</value>
-  </data>
-  <data name="MenuIconSize" xml:space="preserve">
-    <value>選單圖示大小：</value>
-  </data>
-  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
-    <value>Ctrl + Enter：換行；Enter：確認</value>
-  </data>
-  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
-    <value>Ctrl + Enter：確認；Enter：換行</value>
-  </data>
-  <data name="Pause" xml:space="preserve">
-    <value>暫停</value>
-  </data>
-  <data name="Pixelate" xml:space="preserve">
-    <value>像素化</value>
-  </data>
-  <data name="Processing" xml:space="preserve">
-    <value>處理中...</value>
-  </data>
-  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
-    <value>X: {0} Y: {1} W: {2} H: {3}</value>
-  </data>
-  <data name="Resume" xml:space="preserve">
-    <value>繼續</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
-    <value>工具選項</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
-    <value>步驟類型：</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
-    <value>打開時縮放到適當大小</value>
-  </data>
-  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
-    <value>確定要取消這次錄製嗎？</value>
-  </data>
-  <data name="ScreenRecordForm_Start" xml:space="preserve">
-    <value>開始</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>點擊開始錄製。</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>點擊停止錄製。</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>轉檔中...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>等待中...</value>
-  </data>
-  <data name="ScreenRecordForm_Stop" xml:space="preserve">
-    <value>停止</value>
-  </data>
-  <data name="ShapeManager_BorderStyle" xml:space="preserve">
-    <value>邊框樣式：</value>
-  </data>
-  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
-    <value>箭頭頭部方向：</value>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>選取形狀後切換到繪圖工具</value>
   </data>
   <data name="CutOutEffectSize" xml:space="preserve">
     <value>剪紙效果大小：</value>
   </data>
-  <data name="CutOutEffectType" xml:space="preserve">
-    <value>剪紙效果：</value>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>新增圖片效果...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
+    <value>水平翻轉</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>多區域模式</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>像素尺寸：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>圖片尺寸...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
+    <value>套用變更並繼續排程 (Enter)</value>
+  </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>開啟按鍵配置網頁...</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
+    <value>編輯</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>已儲存圖片</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>在排程中自動關閉編輯器</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>復原</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
     <value>重做</value>
   </data>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>圖片編輯器</value>
+  </data>
+  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
+    <value>區域擷取</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>固定尺寸區域模式</value>
+  </data>
+  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>剪貼簿中無圖片。</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>Ctrl + Enter：換行；Enter：確認</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>擷取顯示器</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>置於底層</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
+    <value>擷取目前顯示器</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>上移一層</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>逆時針旋轉 90°</value>
+  </data>
+  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
+    <value>開始擷取</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+    <value>內插模式：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>寬：</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>點擊停止錄製。</value>
+  </data>
+  <data name="ShapeManager_CenterPoints" xml:space="preserve">
+    <value>中心點：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>選項</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>邊框樣式：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>擷取</value>
+  </data>
+  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
+    <value>X: {0} Y: {1} W: {2} H: {3}</value>
+  </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>確定要取消這次錄製嗎？</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
+    <value>開啟圖片檔案...</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>處理中...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>等待中...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>順時針旋轉 90°</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>關閉 (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>第一步的值：</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>擷取</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>高亮</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>放大強度：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>圓角半徑：</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>位元率：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>列印圖片... (Ctrl + P)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>顯示幀率</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>Ctrl + Enter：確認；Enter：換行</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>游標類型：</value>
+  </data>
+  <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
+    <value>瀏覽 ffmpeg.exe</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>陰影</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>方形放大鏡</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>繼續</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>編輯器啟動模式：</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>已儲存圖片</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>箭頭頭部方向：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>擷取全螢幕</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>擷取區域</value>
+  </data>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>矩形擷取 (高亮)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
+    <value>儲存圖片 (Ctrl + S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
+    <value>新圖片...</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>模糊</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>轉檔中...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>模糊強度：</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>正在上傳圖片</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>啟用動畫</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>下移一層</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>高：</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>已複製圖片</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>填充顏色...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
+    <value>儲存圖片為... (Ctrl + Shift + S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>繼續排程 (空白鍵或滑鼠右鍵)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
+    <value>字型大小：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
+    <value>畫布尺寸...</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>選單圖示大小：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
+    <value>垂直翻轉</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
+    <value>自動裁切圖片...</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>像素化</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>鎖定選單</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>置於最上層</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>旋轉 180°</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>使用高亮尺寸調整點</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>擷取上個區域</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
+    <value>從螢幕插入圖片...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
+    <value>刪除全部</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>自動複製圖片到剪貼簿</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>邊框尺寸：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
+    <value>編輯器選單</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
+    <value>貼上圖片/文字</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
+    <value>裁切圖片...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>邊框顏色...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>顯示放大鏡</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>暫停</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
+    <value>ShareX - 圖片編輯器</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>陰影顏色...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>繪製形狀後切換到選取工具</value>
+  </data>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>矩形擷取 (透明)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>顯示位置和尺寸資訊</value>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
+    <value>停止擷取</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>步驟類型：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>將圖片複製到剪貼簿 (Ctrl + C)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>顯示全螢幕十字線</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
+    <value>圖片</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>放大鏡像素數量：</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>此視窗將在開啟按鍵配置網頁前關閉。是否要繼續？</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>幀率限制：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
+    <value>插入圖片檔案...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>打開時縮放到適當大小</value>
+  </data>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>提示：點擊滑鼠中鍵並拖曳即可平移圖片。</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>執行擷取後的排程 (Enter)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>記住選單狀態</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>剪紙效果：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>放大鏡像素尺寸：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>工具選項</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>點擊開始錄製。</value>
+  </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>是否要重設選項？</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>確認</value>
+  </data>
   <data name="ImageURL" xml:space="preserve">
     <value>圖片網址</value>
-  </data>
-  <data name="CutOutBackgroundColor" xml:space="preserve">
-    <value>剪紙背景顏色...</value>
   </data>
   <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
     <value>有尚未儲存的變更。
 
 是否要在關閉圖片編輯器前儲存變更？</value>
+  </data>
+  <data name="CutOutBackgroundColor" xml:space="preserve">
+    <value>剪紙背景顏色...</value>
   </data>
 </root>
