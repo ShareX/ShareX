@@ -857,4 +857,7 @@ Would you like to save the changes before closing the image editor?</value>
   <data name="RulerBottom" xml:space="preserve">
     <value>Bottom</value>
   </data>
+  <data name="QP" xml:space="preserve">
+    <value>QP:</value>
+  </data>
 </root>

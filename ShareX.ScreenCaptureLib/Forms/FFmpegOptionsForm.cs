@@ -103,6 +103,8 @@ namespace ShareX.ScreenCaptureLib
             nudNVENCBitrate.SetValue(Options.FFmpeg.NVENC_Bitrate);
             cbNVENCPreset.SelectedIndex = (int)Options.FFmpeg.NVENC_Preset;
             cbNVENCTune.SelectedIndex = (int)Options.FFmpeg.NVENC_Tune;
+            nudNVENCQP.SetValue(Options.FFmpeg.NVENC_QP);
+            cbNVENCUseBitrate.Checked = Options.FFmpeg.NVENC_Use_Bitrate;
 
             // GIF
             cbGIFStatsMode.SelectedIndex = (int)Options.FFmpeg.GIFStatsMode;
@@ -113,10 +115,14 @@ namespace ShareX.ScreenCaptureLib
             cbAMFUsage.SelectedIndex = (int)Options.FFmpeg.AMF_Usage;
             cbAMFQuality.SelectedIndex = (int)Options.FFmpeg.AMF_Quality;
             nudAMFBitrate.SetValue(Options.FFmpeg.AMF_Bitrate);
+            nudAMFQP.SetValue(Options.FFmpeg.AMF_QP);
+            cbAMFUseBitrate.Checked = Options.FFmpeg.AMF_Use_Bitrate;
 
             // QuickSync
             cbQSVPreset.SelectedIndex = (int)Options.FFmpeg.QSV_Preset;
             nudQSVBitrate.SetValue(Options.FFmpeg.QSV_Bitrate);
+            nudQSVQP.SetValue(Options.FFmpeg.QSV_QP);
+            cbQSVUseBitrate.Checked = Options.FFmpeg.QSV_Use_Bitrate;
 
             // AAC
             int indexAACBitrate = cbAACBitrate.Items.IndexOf(Options.FFmpeg.AAC_Bitrate);
@@ -261,6 +267,18 @@ namespace ShareX.ScreenCaptureLib
                 nudx264CRF.Visible = !Options.FFmpeg.x264_Use_Bitrate;
                 nudx264Bitrate.Visible = lblx264BitrateK.Visible = Options.FFmpeg.x264_Use_Bitrate;
                 pbx264PresetWarning.Visible = (FFmpegPreset)cbx264Preset.SelectedIndex > FFmpegPreset.fast;
+
+                lblNVENCBitrate.Text = Options.FFmpeg.NVENC_Use_Bitrate ? Resources.Bitrate : Resources.QP;
+                nudNVENCQP.Visible = !Options.FFmpeg.NVENC_Use_Bitrate;
+                nudNVENCBitrate.Visible = lblNVENCBitrateK.Visible = Options.FFmpeg.NVENC_Use_Bitrate;
+
+                lblAMFBitrate.Text = Options.FFmpeg.AMF_Use_Bitrate ? Resources.Bitrate : Resources.QP;
+                nudAMFQP.Visible = !Options.FFmpeg.AMF_Use_Bitrate;
+                nudAMFBitrate.Visible = lblAMFBitrateK.Visible = Options.FFmpeg.AMF_Use_Bitrate;
+
+                lblQSVBitrate.Text = Options.FFmpeg.QSV_Use_Bitrate ? Resources.Bitrate : Resources.QP;
+                nudQSVQP.Visible = !Options.FFmpeg.QSV_Use_Bitrate;
+                nudQSVBitrate.Visible = lblQSVBitrateK.Visible = Options.FFmpeg.QSV_Use_Bitrate;
 
                 if (!Options.FFmpeg.UseCustomCommands)
                 {
@@ -463,6 +481,18 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
+        private void nudNVENCQP_ValueChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.NVENC_QP = (int)nudNVENCQP.Value;
+            UpdateUI();
+        }
+
+        private void cbNVENCUseBitrate_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.NVENC_Use_Bitrate = cbNVENCUseBitrate.Checked;
+            UpdateUI();
+        }
+
         private void cbNVENCPreset_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.NVENC_Preset = (FFmpegNVENCPreset)cbNVENCPreset.SelectedIndex;
@@ -510,6 +540,17 @@ namespace ShareX.ScreenCaptureLib
             Options.FFmpeg.AMF_Bitrate = (int)nudAMFBitrate.Value;
             UpdateUI();
         }
+        private void nudAMFQP_ValueChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.AMF_QP = (int)nudAMFQP.Value;
+            UpdateUI();
+        }
+
+        private void cbAMFUseBitrate_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.AMF_Use_Bitrate = cbAMFUseBitrate.Checked;
+            UpdateUI();
+        }
 
         private void cbQSVPreset_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -520,6 +561,17 @@ namespace ShareX.ScreenCaptureLib
         private void nudQSVBitrate_ValueChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.QSV_Bitrate = (int)nudQSVBitrate.Value;
+            UpdateUI();
+        }
+        private void nudQSVQP_ValueChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.QSV_QP = (int)nudQSVQP.Value;
+            UpdateUI();
+        }
+
+        private void cbQSVUseBitrate_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.QSV_Use_Bitrate = cbQSVUseBitrate.Checked;
             UpdateUI();
         }
 

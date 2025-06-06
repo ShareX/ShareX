@@ -51,14 +51,20 @@ namespace ShareX.ScreenCaptureLib
         public FFmpegNVENCPreset NVENC_Preset { get; set; } = FFmpegNVENCPreset.p4;
         public FFmpegNVENCTune NVENC_Tune { get; set; } = FFmpegNVENCTune.ll;
         public int NVENC_Bitrate { get; set; } = 3000; // kbps
+        public bool NVENC_Use_Bitrate { get; set; } = false;
+        public int NVENC_QP { get; set; } = 28;
         public FFmpegPaletteGenStatsMode GIFStatsMode { get; set; } = FFmpegPaletteGenStatsMode.full;
         public FFmpegPaletteUseDither GIFDither { get; set; } = FFmpegPaletteUseDither.sierra2_4a;
         public int GIFBayerScale { get; set; } = 2;
         public FFmpegAMFUsage AMF_Usage { get; set; } = FFmpegAMFUsage.lowlatency;
         public FFmpegAMFQuality AMF_Quality { get; set; } = FFmpegAMFQuality.speed;
         public int AMF_Bitrate { get; set; } = 3000; // kbps
+        public bool AMF_Use_Bitrate { get; set; } = false;
+        public int AMF_QP { get; set; } = 28;
         public FFmpegQSVPreset QSV_Preset { get; set; } = FFmpegQSVPreset.fast;
         public int QSV_Bitrate { get; set; } = 3000; // kbps
+        public bool QSV_Use_Bitrate { get; set; } = false;
+        public int QSV_QP { get; set; } = 28;
 
         // Audio
         public int AAC_Bitrate { get; set; } = 128; // kbps

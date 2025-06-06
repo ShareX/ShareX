@@ -117,74 +117,188 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
-    <value>Bắt đầu chụp</value>
+  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
+    <value>Hủy tác vụ (Esc)</value>
   </data>
-  <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
-    <value>Dừng chụp</value>
+  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
+    <value>Tải lên ảnh (Ctrl + U)</value>
   </data>
-  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
-    <value>Chụp theo vùng</value>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>Màu đánh dấu...</value>
   </data>
-  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
-    <value>Chụp hình chữ nhật (Bản nhẹ)</value>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>Chuyển qua công vụ vẽ sau khi chọn hình</value>
   </data>
-  <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
-    <value>Duyệt đến ffmpeg.exe</value>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Cắt bỏ kích thước hiệu ứng:</value>
   </data>
-  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
-    <value>X: {0} Y: {1} W: {2} H: {3}</value>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>Thêm hiệu ứng ảnh...</value>
   </data>
-  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
-    <value>Chụp hình chữ nhật kiểu trong suốt</value>
+  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
+    <value>Lật theo chiều ngang</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
-    <value>Menu chú thích</value>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>Dừng lại</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>Chế độ đa vùng</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>Kích thước điểm ảnh:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>Kích thước ảnh...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
+    <value>Xóa</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
     <value>Áp dụng thay đổi và tiếp tục tác vụ (Enter)</value>
   </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>Mở trang web chứa thiết lập phím tắt...</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>Nhân bản</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
+    <value>Chỉnh sửa</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Đã lưu hình ảnh</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
     <value>Tự đóng trình chỉnh sửa khi chạy tác vụ</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
-    <value>Tự động cắt ảnh...</value>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>Hoàn tác</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
-    <value>Độ làm mờ:</value>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>Trình chỉnh sửa ảnh</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
-    <value>Màu đường viền...</value>
+  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
+    <value>Chụp theo vùng</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
-    <value>Kích cỡ đường viền:</value>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>Chế độ vùng cố định kích thước</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
-    <value>Đem ra phía trước</value>
+  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Vùng nhớ tạm không chứa hình ảnh.</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
-    <value>Đem ra đằng trước nhất</value>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>Dòng mới: Ctrl + Enter, OK: Enter</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
-    <value>Hủy tác vụ (Esc)</value>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>Chụp màn hình</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
-    <value>Kích thước canvas...</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>Chụp</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
-    <value>Chụp</value>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>Đẩy về phía sau</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
     <value>Chụp màn hình đang hoạt động</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
-    <value>Chụp vùng lần trước</value>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>Đem ra phía trước</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
-    <value>Chụp màn hình</value>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Xoay 90° ngược chiều kim đồng hồ</value>
+  </data>
+  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
+    <value>Bắt đầu chụp</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+    <value>Chế độ nội suy:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>Rộng:</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Bấm để dừng ghi.</value>
+  </data>
+  <data name="ShapeManager_CenterPoints" xml:space="preserve">
+    <value>Các điểm giữa:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>Lựa chọn</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>Kiểu viền:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>Chụp</value>
+  </data>
+  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
+    <value>X: {0} Y: {1} W: {2} H: {3}</value>
+  </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn hủy bản ghi này không?</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
+    <value>Mở tệp ảnh...</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Đang xử lý...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>Đang chờ đợi...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>Xoay 90° theo chiều kim đồng hồ</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>Đóng (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>Giá trị bước đầu tiên:</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Chụp</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Điểm nổi bật</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>Độ phóng to:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>Bán kính góc:</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>Tốc độ bit:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>In ảnh... (Ctrl + P)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>Hiện tốc độ khung hình/giây (FPS)</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>Dòng mới: Enter, OK: Ctrl + Enter</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>Kiểu con trỏ:</value>
+  </data>
+  <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
+    <value>Duyệt đến ffmpeg.exe</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>Đổ bóng</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>Phóng đại kiểu hình vuông</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Tiếp tục</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>Chế độ bắt đầu trình chỉnh sửa:</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>Đã lưu hình ảnh</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>Hướng đầu mũi tên:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
     <value>Chụp toàn màn hình</value>
@@ -192,295 +306,181 @@
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
     <value>Chụp theo các vùng</value>
   </data>
-  <data name="ShapeManager_CenterPoints" xml:space="preserve">
-    <value>Các điểm giữa:</value>
-  </data>
-  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
-    <value>Vùng nhớ tạm không chứa hình ảnh.</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
-    <value>Tiếp tục tác vụ (Phím cách hoặc chuột phải)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Chép ảnh vào vùng nhớ tạm (Ctrl + C)</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
-    <value>Bán kính góc:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
-    <value>Cắt ảnh...</value>
-  </data>
-  <data name="ShapeManager_CursorType" xml:space="preserve">
-    <value>Kiểu con trỏ:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
-    <value>Xóa</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
-    <value>Xóa tất cả</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
-    <value>Đổ bóng</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
-    <value>Chỉnh sửa</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
-    <value>Chế độ bắt đầu trình chỉnh sửa:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
-    <value>Kích hoạt hiệu ứng hoạt hình/animation</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
-    <value>Tô màu...</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
-    <value>Chế độ vùng cố định kích thước</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
-    <value>Lật theo chiều ngang</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
-    <value>Lật theo chiều dọc</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
-    <value>Cỡ phông chữ:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
-    <value>Rộng:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
-    <value>Giá trị bước đầu tiên:</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
-    <value>ShareX - Trình chỉnh sửa ảnh</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
-    <value>Hiện tốc độ khung hình/giây (FPS)</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
-    <value>Hiện vùng phóng đại</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
-    <value>Hiện thông tin vị trí và kích thước</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
-    <value>Hoàn tác</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
-    <value>Tải lên ảnh (Ctrl + U)</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>Dừng lại</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
-    <value>Cao:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
-    <value>Màu đánh dấu...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
-    <value>Chế độ nội suy:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
-    <value>Chế độ đa vùng</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
-    <value>Ảnh mới...</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
-    <value>Lựa chọn</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
-    <value>Mở tệp ảnh...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
-    <value>Dán ảnh/văn bản</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
-    <value>Kích thước điểm ảnh:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
-    <value>In ảnh... (Ctrl + P)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
-    <value>Xoay 180°</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
-    <value>Xoay 90° theo chiều kim đồng hồ</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
-    <value>Xoay 90° ngược chiều kim đồng hồ</value>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>Chụp hình chữ nhật (Bản nhẹ)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
     <value>Lưu ảnh (Ctrl + S)</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
-    <value>Lưu ảnh thành... (Ctrl + Shift + S)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
-    <value>Kích thước ảnh...</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
-    <value>Kích cỡ phóng đại điểm ảnh:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
-    <value>Chèn tệp ảnh...</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
-    <value>Số lượng điểm ảnh phóng đại:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
-    <value>Ghi nhớ trạng thái menu</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
-    <value>Chạy tác vụ sau khi chụp (Enter)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
-    <value>Ảnh</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
-    <value>Hiện tâm ngắm trên màn hình</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
-    <value>Chèn ảnh từ màn hình...</value>
-  </data>
-  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
-    <value>Tip: Bạn có thể di chuyển ảnh bằng cách giữ nút chuột giữa và kéo.</value>
-  </data>
-  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
-    <value>Trình chỉnh sửa ảnh</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
-    <value>Đẩy về sau cùng</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
-    <value>Đẩy về phía sau</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
-    <value>Phóng đại kiểu hình vuông</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
-    <value>Chuyển qua công vụ vẽ sau khi chọn hình</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
-    <value>Chuyển qua công cụ chọn hình sau khi vẽ hình</value>
-  </data>
-  <data name="CloseEsc" xml:space="preserve">
-    <value>Đóng (Esc)</value>
-  </data>
-  <data name="ImageEffects" xml:space="preserve">
-    <value>Thêm hiệu ứng ảnh...</value>
-  </data>
-  <data name="DropShadowColor" xml:space="preserve">
-    <value>Đổ bóng có màu...</value>
-  </data>
-  <data name="MagnifyStrength" xml:space="preserve">
-    <value>Độ phóng to:</value>
-  </data>
-  <data name="OpenKeybindsPage" xml:space="preserve">
-    <value>Mở trang web chứa thiết lập phím tắt...</value>
-  </data>
-  <data name="LightResizeNodes" xml:space="preserve">
-    <value>Dùng light resize nodes</value>
-  </data>
-  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
-    <value>Cửa sổ sẽ được đóng trước khi mở trang web chứa thông tin phím tắt. Bạn có muốn tiếp tục không?</value>
-  </data>
-  <data name="AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Tự động sao chép hình ảnh vào khay nhớ tạm</value>
-  </data>
-  <data name="Bitrate" xml:space="preserve">
-    <value>Tốc độ bit:</value>
+  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
+    <value>Ảnh mới...</value>
   </data>
   <data name="Blur" xml:space="preserve">
     <value>Làm mờ</value>
   </data>
-  <data name="CutOutEffectType" xml:space="preserve">
-    <value>Cắt bỏ hiệu ứng:</value>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>Mã hóa ...</value>
   </data>
-  <data name="CutOutEffectSize" xml:space="preserve">
-    <value>Cắt bỏ kích thước hiệu ứng:</value>
-  </data>
-  <data name="Duplicate" xml:space="preserve">
-    <value>Nhân bản</value>
-  </data>
-  <data name="FPSLimit" xml:space="preserve">
-    <value>Giới hạn FPS:</value>
-  </data>
-  <data name="Highlight" xml:space="preserve">
-    <value>Điểm nổi bật</value>
-  </data>
-  <data name="ImageCopied" xml:space="preserve">
-    <value>Đã sao chép hình ảnh</value>
-  </data>
-  <data name="ImageSaved" xml:space="preserve">
-    <value>Đã lưu hình ảnh</value>
-  </data>
-  <data name="ImageSavedAs" xml:space="preserve">
-    <value>Đã lưu hình ảnh</value>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>Độ làm mờ:</value>
   </data>
   <data name="ImageUploading" xml:space="preserve">
     <value>Tải lên hình ảnh</value>
   </data>
-  <data name="LockMenu" xml:space="preserve">
-    <value>Khóa menu</value>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>Kích hoạt hiệu ứng hoạt hình/animation</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>Đẩy về sau cùng</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>Cao:</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>Đã sao chép hình ảnh</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>Tô màu...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
+    <value>Lưu ảnh thành... (Ctrl + Shift + S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>Tiếp tục tác vụ (Phím cách hoặc chuột phải)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
+    <value>Cỡ phông chữ:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
+    <value>Kích thước canvas...</value>
   </data>
   <data name="MenuIconSize" xml:space="preserve">
     <value>Kích thước biểu tượng menu:</value>
   </data>
-  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
-    <value>Dòng mới: Ctrl + Enter, OK: Enter</value>
+  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
+    <value>Lật theo chiều dọc</value>
   </data>
-  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
-    <value>Dòng mới: Enter, OK: Ctrl + Enter</value>
-  </data>
-  <data name="Pause" xml:space="preserve">
-    <value>Dừng</value>
-  </data>
-  <data name="Processing" xml:space="preserve">
-    <value>Đang xử lý...</value>
-  </data>
-  <data name="Resume" xml:space="preserve">
-    <value>Tiếp tục</value>
-  </data>
-  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
-    <value>Bạn có chắc chắn muốn hủy bản ghi này không?</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Bấm để bắt đầu ghi.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Bấm để dừng ghi.</value>
-  </data>
-  <data name="ScreenRecordForm_Start" xml:space="preserve">
-    <value>Bắt đầu</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Mã hóa ...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Đang chờ đợi...</value>
-  </data>
-  <data name="ScreenRecordForm_Stop" xml:space="preserve">
-    <value>Dừng</value>
-  </data>
-  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
-    <value>Hướng đầu mũi tên:</value>
-  </data>
-  <data name="ShapeManager_BorderStyle" xml:space="preserve">
-    <value>Kiểu viền:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
-    <value>Loại bước:</value>
+  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
+    <value>Tự động cắt ảnh...</value>
   </data>
   <data name="Pixelate" xml:space="preserve">
     <value>Pixelate</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
-    <value>Tùy chọn công cụ</value>
+  <data name="LockMenu" xml:space="preserve">
+    <value>Khóa menu</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>Đem ra đằng trước nhất</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>Xoay 180°</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Dùng light resize nodes</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>Chụp vùng lần trước</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
+    <value>Chèn ảnh từ màn hình...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
+    <value>Xóa tất cả</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Tự động sao chép hình ảnh vào khay nhớ tạm</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>Kích cỡ đường viền:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
+    <value>Menu chú thích</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
+    <value>Dán ảnh/văn bản</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
+    <value>Cắt ảnh...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>Màu đường viền...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>Hiện vùng phóng đại</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Dừng</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
+    <value>ShareX - Trình chỉnh sửa ảnh</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>Đổ bóng có màu...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>Chuyển qua công cụ chọn hình sau khi vẽ hình</value>
+  </data>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>Chụp hình chữ nhật kiểu trong suốt</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>Hiện thông tin vị trí và kích thước</value>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>Bắt đầu</value>
+  </data>
+  <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
+    <value>Dừng chụp</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>Loại bước:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>Chép ảnh vào vùng nhớ tạm (Ctrl + C)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>Hiện tâm ngắm trên màn hình</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
+    <value>Ảnh</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>Số lượng điểm ảnh phóng đại:</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>Cửa sổ sẽ được đóng trước khi mở trang web chứa thông tin phím tắt. Bạn có muốn tiếp tục không?</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>Giới hạn FPS:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
+    <value>Chèn tệp ảnh...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
     <value>Thu phóng để vừa mở</value>
+  </data>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>Tip: Bạn có thể di chuyển ảnh bằng cách giữ nút chuột giữa và kéo.</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>Chạy tác vụ sau khi chụp (Enter)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>Ghi nhớ trạng thái menu</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Cắt bỏ hiệu ứng:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>Kích cỡ phóng đại điểm ảnh:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>Tùy chọn công cụ</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>Dừng</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Bấm để bắt đầu ghi.</value>
   </data>
 </root>

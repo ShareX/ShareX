@@ -267,20 +267,41 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.hevc_nvenc:
                             args.Append($"-preset {FFmpeg.NVENC_Preset} ");
                             args.Append($"-tune {FFmpeg.NVENC_Tune} ");
-                            args.Append($"-b:v {FFmpeg.NVENC_Bitrate}k ");
+                            if (FFmpeg.NVENC_Use_Bitrate)
+                            {
+                                args.Append($"-b:v {FFmpeg.NVENC_Bitrate}k ");
+                            }
+                            else
+                            {
+                                args.Append($"-rc cqp -qp {FFmpeg.NVENC_QP} ");
+                            }
                             args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
                         case FFmpegVideoCodec.h264_amf:
                         case FFmpegVideoCodec.hevc_amf:
                             args.Append($"-usage {FFmpeg.AMF_Usage} ");
                             args.Append($"-quality {FFmpeg.AMF_Quality} ");
-                            args.Append($"-b:v {FFmpeg.AMF_Bitrate}k ");
+                            if (FFmpeg.AMF_Use_Bitrate)
+                            {
+                                args.Append($"-b:v {FFmpeg.AMF_Bitrate}k ");
+                            }
+                            else
+                            {
+                                args.Append($"-rc cqp -qp {FFmpeg.AMF_QP} ");
+                            }
                             args.Append("-pix_fmt yuv420p ");
                             break;
                         case FFmpegVideoCodec.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
                         case FFmpegVideoCodec.hevc_qsv:
                             args.Append($"-preset {FFmpeg.QSV_Preset} ");
-                            args.Append($"-b:v {FFmpeg.QSV_Bitrate}k ");
+                            if (FFmpeg.QSV_Use_Bitrate)
+                            {
+                                args.Append($"-b:v {FFmpeg.QSV_Bitrate}k ");
+                            }
+                            else
+                            {
+                                args.Append($"-rc cqp -qp {FFmpeg.QSV_QP} ");
+                            }
                             break;
                         case FFmpegVideoCodec.libwebp: // https://www.ffmpeg.org/ffmpeg-codecs.html#libwebp
                             args.Append("-lossless 0 ");

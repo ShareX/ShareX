@@ -126,6 +126,12 @@
   <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
     <value>Cor para realçar...</value>
   </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>Mudar para a ferramenta de desenho depois de seleccionar a forma</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>Adicionar efeitos de imagem...</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
     <value>Inversão horizontal</value>
   </data>
@@ -135,8 +141,8 @@
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>Modo multi-região</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
-    <value>Valor do primeiro passo:</value>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>Tamanho do pixel:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
     <value>Tamanho da imagem...</value>
@@ -147,6 +153,9 @@
   <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
     <value>Aplicar alterações e continuar tarefa (Enter)</value>
   </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>Abrir site de atalhos...</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>Editar</value>
   </data>
@@ -155,9 +164,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>Reverter</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
-    <value>Largura:</value>
   </data>
   <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
     <value>Editor de Imagem</value>
@@ -186,8 +192,14 @@
   <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
     <value>Rodar 90º contrário ao relógio</value>
   </data>
+  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
+    <value>Iniciar captura</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Modo de interpolação</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>Largura:</value>
   </data>
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
     <value>Pontos centrais:</value>
@@ -207,23 +219,26 @@
   <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
     <value>Rodar 90º</value>
   </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>Fechar (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>Valor do primeiro passo:</value>
+  </data>
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
     <value>Capturar</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Copiar imagem para a área de transferência (Ctrl + C)</value>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>Força da lupa:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>Raio dos cantos:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Imprimir imagem... (Ctrl + P)</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
     <value>Mostrar FPS</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
-    <value>Mudar para a ferramenta de desenho depois de seleccionar a forma</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
-    <value>Mudar para a ferramenta da forma depois do desenho</value>
   </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>Tipo de cursor:</value>
@@ -245,9 +260,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
     <value>Capturar regiões</value>
-  </data>
-  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
-    <value>Iniciar captura</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Captura de retângulo leve</value>
@@ -279,6 +291,9 @@
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
     <value>Continuar tarefa (Espaço ou clique lado direito)</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
+    <value>Tamanho da fonte:</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
     <value>Tamanho do ecrã...</value>
   </data>
@@ -293,6 +308,9 @@
   </data>
   <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
     <value>Rodar 180º</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Utilizar nós de redireccionamento transparentes</value>
   </data>
   <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
     <value>Capturar última região</value>
@@ -324,6 +342,12 @@
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - Editor de imagem</value>
   </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>Cor da sombra projectada...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>Mudar para a ferramenta da forma depois do desenho</value>
+  </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Captura de retângulo transparente</value>
   </data>
@@ -332,6 +356,9 @@
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Para captura</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>Copiar imagem para a área de transferência (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>Mostrar mira da largura do ecrã</value>
@@ -342,8 +369,8 @@
   <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
     <value>Quantidade de pixels da lupa:</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
-    <value>Tamanho da fonte:</value>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>Esta janela irá fechar antes de abrir o site de atalhos. Deseja continuar?</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
     <value>Inserir imagem...</value>
@@ -359,32 +386,5 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
     <value>Tamanho da lupa:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
-    <value>Raio dos cantos:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
-    <value>Tamanho do pixel:</value>
-  </data>
-  <data name="LightResizeNodes" xml:space="preserve">
-    <value>Utilizar nós de redireccionamento transparentes</value>
-  </data>
-  <data name="OpenKeybindsPage" xml:space="preserve">
-    <value>Abrir site de atalhos...</value>
-  </data>
-  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
-    <value>Esta janela irá fechar antes de abrir o site de atalhos. Deseja continuar?</value>
-  </data>
-  <data name="DropShadowColor" xml:space="preserve">
-    <value>Cor da sombra projectada...</value>
-  </data>
-  <data name="ImageEffects" xml:space="preserve">
-    <value>Adicionar efeitos de imagem...</value>
-  </data>
-  <data name="MagnifyStrength" xml:space="preserve">
-    <value>Força da lupa:</value>
-  </data>
-  <data name="CloseEsc" xml:space="preserve">
-    <value>Fechar (Esc)</value>
   </data>
 </root>
