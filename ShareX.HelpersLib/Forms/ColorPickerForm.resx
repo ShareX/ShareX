@@ -1302,6 +1302,12 @@
   <data name="tsmiCopyDecimal.Text" xml:space="preserve">
     <value>Copy decimal</value>
   </data>
+  <data name="tsmiCopyNormalized.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 22</value>
+  </data>
+  <data name="tsmiCopyNormalized.Text" xml:space="preserve">
+    <value>Copy Normalized RGBA</value>
+  </data>
   <data name="tsmiCopyPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 22</value>
   </data>
@@ -1846,6 +1852,12 @@
     <value>tsmiCopyDecimal</value>
   </data>
   <data name="&gt;&gt;tsmiCopyDecimal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyNormalized.Name" xml:space="preserve">
+    <value>tsmiCopyNormalized</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyNormalized.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyPosition.Name" xml:space="preserve">
