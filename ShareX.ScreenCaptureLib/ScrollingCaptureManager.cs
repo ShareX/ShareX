@@ -127,7 +127,27 @@ namespace ShareX.ScreenCaptureLib
                             break;
                         }
 
-                        InputHelpers.SendMouseWheel(-120 * Options.ScrollAmount);
+                        switch (Options.ScrollMethod)
+                        {
+                            case ScrollMethod.MouseWheel:
+                                InputHelpers.SendMouseWheel(-120 * Options.ScrollAmount);
+                                break;
+                            case ScrollMethod.DownArrow:
+                                for (int i = 0; i < Options.ScrollAmount; i++)
+                                {
+                                    InputHelpers.SendKeyPress(VirtualKeyCode.DOWN);
+                                }
+                                break;
+                            case ScrollMethod.PageDown:
+                                InputHelpers.SendKeyPress(VirtualKeyCode.NEXT);
+                                break;
+                            case ScrollMethod.ScrollMessage:
+                                for (int i = 0; i < Options.ScrollAmount; i++)
+                                {
+                                    NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_LINEDOWN, 0);
+                                }
+                                break;
+                        }
 
                         Stopwatch timer = Stopwatch.StartNew();
 

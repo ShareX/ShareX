@@ -1302,4 +1302,16 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
     <value>QR code (Scan region)</value>
   </data>
+  <data name="ScrollMethod_DownArrow" xml:space="preserve">
+    <value>Down arrow</value>
+  </data>
+  <data name="ScrollMethod_MouseWheel" xml:space="preserve">
+    <value>Mouse wheel</value>
+  </data>
+  <data name="ScrollMethod_PageDown" xml:space="preserve">
+    <value>Page down</value>
+  </data>
+  <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
+    <value>Scroll message</value>
+  </data>
 </root>

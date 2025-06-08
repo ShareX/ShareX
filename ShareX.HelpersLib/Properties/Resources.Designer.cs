@@ -2967,6 +2967,42 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Down arrow.
+        /// </summary>
+        internal static string ScrollMethod_DownArrow {
+            get {
+                return ResourceManager.GetString("ScrollMethod_DownArrow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mouse wheel.
+        /// </summary>
+        internal static string ScrollMethod_MouseWheel {
+            get {
+                return ResourceManager.GetString("ScrollMethod_MouseWheel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page down.
+        /// </summary>
+        internal static string ScrollMethod_PageDown {
+            get {
+                return ResourceManager.GetString("ScrollMethod_PageDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scroll message.
+        /// </summary>
+        internal static string ScrollMethod_ScrollMessage {
+            get {
+                return ResourceManager.GetString("ScrollMethod_ScrollMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arrow (A).
         /// </summary>
         internal static string ShapeType_DrawingArrow {

@@ -39,6 +39,7 @@ namespace ShareX.ScreenCaptureLib
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
+            cbScrollMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ScrollMethod>());
 
             LoadOptions();
         }
@@ -48,6 +49,7 @@ namespace ShareX.ScreenCaptureLib
             nudStartDelay.SetValue(Options.StartDelay);
             cbAutoScrollTop.Checked = Options.AutoScrollTop;
             nudScrollDelay.SetValue(Options.ScrollDelay);
+            cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;
             nudScrollAmount.SetValue(Options.ScrollAmount);
             cbAutoUpload.Checked = Options.AutoUpload;
             cbShowRegion.Checked = Options.ShowRegion;
@@ -59,10 +61,20 @@ namespace ShareX.ScreenCaptureLib
             Options.StartDelay = (int)nudStartDelay.Value;
             Options.AutoScrollTop = cbAutoScrollTop.Checked;
             Options.ScrollDelay = (int)nudScrollDelay.Value;
+            Options.ScrollMethod = (ScrollMethod)cbScrollMethod.SelectedIndex;
             Options.ScrollAmount = (int)nudScrollAmount.Value;
             Options.AutoUpload = cbAutoUpload.Checked;
             Options.ShowRegion = cbShowRegion.Checked;
             Options.AutoIgnoreBottomEdge = cbAutoIgnoreBottomEdge.Checked;
+        }
+
+        private void cbScrollMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool hideScrollAmount = (ScrollMethod)cbScrollMethod.SelectedIndex == ScrollMethod.PageDown;
+
+            lblScrollAmount.Visible = !hideScrollAmount;
+            nudScrollAmount.Visible = !hideScrollAmount;
+            lblScrollAmountHint.Visible = !hideScrollAmount;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
