@@ -273,7 +273,7 @@ namespace ShareX.ScreenCaptureLib
                             }
                             else
                             {
-                                args.Append($"-rc cqp -qp {FFmpeg.NVENC_QP} ");
+                                args.Append($"-rc constqp -qp {FFmpeg.NVENC_QP} ");
                             }
                             args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
