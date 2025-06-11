@@ -376,6 +376,11 @@ namespace ShareX
 
                         if (bmpResult != null)
                         {
+                            if (bmpResult.Width > 64 && bmpResult.Height > 64)
+                            {
+                                ImageHelpers.DrawImageCentered(bmpResult, Resources.Play);
+                            }
+
                             return bmpResult;
                         }
                     }
