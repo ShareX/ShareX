@@ -87,10 +87,17 @@ namespace ShareX
             return form;
         }
 
-        public static QRCodeForm OpenFormScanFromScreen()
+        public static QRCodeForm OpenFormScanScreen()
         {
             QRCodeForm form = Instance;
-            form.ScanFromScreen();
+            form.ScanScreen();
+            return form;
+        }
+
+        public static QRCodeForm OpenFormScanRegion()
+        {
+            QRCodeForm form = Instance;
+            form.ScanRegion();
             return form;
         }
 
@@ -137,19 +144,45 @@ namespace ShareX
 
         private void ScanImage(Bitmap bmp)
         {
-            string output = "";
-
-            string[] results = TaskHelpers.BarcodeScan(bmp);
-
-            if (results != null)
+            if (bmp != null)
             {
-                output = string.Join(Environment.NewLine + Environment.NewLine, results);
-            }
+                string output = "";
 
-            txtText.Text = output;
+                string[] results = TaskHelpers.BarcodeScan(bmp);
+
+                if (results != null)
+                {
+                    output = string.Join(Environment.NewLine + Environment.NewLine, results);
+                }
+
+                txtText.Text = output;
+            }
         }
 
-        private void ScanFromScreen()
+        private void ScanScreen()
+        {
+            try
+            {
+                if (Visible)
+                {
+                    Hide();
+                    Thread.Sleep(250);
+                }
+
+                using (Bitmap bmp = new Screenshot().CaptureFullscreen())
+                {
+                    ScanImage(bmp);
+                }
+            }
+            finally
+            {
+                this.ForceActivate();
+
+                TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
+            }
+        }
+
+        private void ScanRegion()
         {
             try
             {
@@ -163,15 +196,14 @@ namespace ShareX
 
                 using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
                 {
-                    if (bmp != null)
-                    {
-                        ScanImage(bmp);
-                    }
+                    ScanImage(bmp);
                 }
             }
             finally
             {
                 this.ForceActivate();
+
+                TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
             }
         }
 
@@ -204,22 +236,6 @@ namespace ShareX
             {
                 GenerateQRCode(txtText.Text);
             }
-        }
-
-        private void btnScanQRCodeFromScreen_Click(object sender, EventArgs e)
-        {
-            txtText.ResetText();
-
-            ScanFromScreen();
-        }
-
-        private void btnScanQRCodeFromImageFile_Click(object sender, EventArgs e)
-        {
-            txtText.ResetText();
-
-            string filePath = ImageHelpers.OpenImageFileDialog();
-
-            ScanFromImageFile(filePath);
         }
 
         private void txtText_TextChanged(object sender, EventArgs e)
@@ -288,6 +304,29 @@ namespace ShareX
                 Bitmap bmp = (Bitmap)pbQRCode.Image.Clone();
                 TaskHelpers.MainFormUploadImage(bmp);
             }
+        }
+
+        private void btnScanScreen_Click(object sender, EventArgs e)
+        {
+            txtText.ResetText();
+
+            ScanScreen();
+        }
+
+        private void btnScanRegion_Click(object sender, EventArgs e)
+        {
+            txtText.ResetText();
+
+            ScanRegion();
+        }
+
+        private void btnScanImageFile_Click(object sender, EventArgs e)
+        {
+            txtText.ResetText();
+
+            string filePath = ImageHelpers.OpenImageFileDialog();
+
+            ScanFromImageFile(filePath);
         }
     }
 }

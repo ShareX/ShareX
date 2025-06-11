@@ -425,6 +425,10 @@ namespace ShareX.HelpersLib
         [DllImport("shell32.dll")]
         public static extern void ILFree(IntPtr pidl);
 
+        [DllImport("shell32.dll", CharSet = CharSet.Unicode, PreserveSig = false)]
+        public static extern void SHCreateItemFromParsingName([In][MarshalAs(UnmanagedType.LPWStr)] string pszPath, IntPtr pbc,
+            [In][MarshalAs(UnmanagedType.LPStruct)] Guid riid, [Out][MarshalAs(UnmanagedType.Interface)] out IShellItemImageFactory ppv);
+
         #endregion shell32.dll
 
         #region dwmapi.dll

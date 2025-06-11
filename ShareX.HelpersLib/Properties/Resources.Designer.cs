@@ -1667,11 +1667,20 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR code (Decode from screen).
+        ///   Looks up a localized string similar to QR code (Scan screen).
         /// </summary>
         internal static string HotkeyType_QRCodeDecodeFromScreen {
             get {
                 return ResourceManager.GetString("HotkeyType_QRCodeDecodeFromScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QR code (Scan region).
+        /// </summary>
+        internal static string HotkeyType_QRCodeScanRegion {
+            get {
+                return ResourceManager.GetString("HotkeyType_QRCodeScanRegion", resourceCulture);
             }
         }
         
@@ -2954,6 +2963,42 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ScreenRecordGIFEncoding_OctreeQuantizer {
             get {
                 return ResourceManager.GetString("ScreenRecordGIFEncoding_OctreeQuantizer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Down arrow.
+        /// </summary>
+        internal static string ScrollMethod_DownArrow {
+            get {
+                return ResourceManager.GetString("ScrollMethod_DownArrow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mouse wheel.
+        /// </summary>
+        internal static string ScrollMethod_MouseWheel {
+            get {
+                return ResourceManager.GetString("ScrollMethod_MouseWheel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page down.
+        /// </summary>
+        internal static string ScrollMethod_PageDown {
+            get {
+                return ResourceManager.GetString("ScrollMethod_PageDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scroll message.
+        /// </summary>
+        internal static string ScrollMethod_ScrollMessage {
+            get {
+                return ResourceManager.GetString("ScrollMethod_ScrollMessage", resourceCulture);
             }
         }
         

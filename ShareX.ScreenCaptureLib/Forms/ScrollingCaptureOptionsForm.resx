@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblStartDelay.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="nudStartDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 40</value>
@@ -169,7 +169,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudStartDelay.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="lblScrollDelay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -196,7 +196,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblScrollDelay.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="nudScrollDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 136</value>
@@ -220,7 +220,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudScrollDelay.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="cbAutoScrollTop.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -247,19 +247,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbAutoScrollTop.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="lblScrollAmount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblScrollAmount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 176</value>
+    <value>165, 176</value>
   </data>
   <data name="lblScrollAmount.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 16</value>
   </data>
   <data name="lblScrollAmount.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="lblScrollAmount.Text" xml:space="preserve">
     <value>Scroll amount:</value>
@@ -274,16 +274,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblScrollAmount.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="nudScrollAmount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 200</value>
+    <value>168, 201</value>
   </data>
   <data name="nudScrollAmount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 22</value>
+    <value>64, 22</value>
   </data>
   <data name="nudScrollAmount.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="nudScrollAmount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -298,19 +298,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudScrollAmount.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="cbAutoUpload.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbAutoUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 240</value>
+    <value>16, 304</value>
   </data>
   <data name="cbAutoUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 20</value>
   </data>
   <data name="cbAutoUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>14</value>
   </data>
   <data name="cbAutoUpload.Text" xml:space="preserve">
     <value>Automatically upload / save</value>
@@ -325,7 +325,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbAutoUpload.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="lblStartDelayHint.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -352,7 +352,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblStartDelayHint.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="lblScrollDelayHint.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -379,19 +379,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblScrollDelayHint.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="lblScrollAmountHint.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblScrollAmountHint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 203</value>
+    <value>237, 204</value>
   </data>
   <data name="lblScrollAmountHint.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 16</value>
   </data>
   <data name="lblScrollAmountHint.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="lblScrollAmountHint.Text" xml:space="preserve">
     <value>times</value>
@@ -406,7 +406,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblScrollAmountHint.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>152, 336</value>
@@ -415,7 +415,7 @@
     <value>104, 32</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
@@ -430,7 +430,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 336</value>
@@ -439,7 +439,7 @@
     <value>104, 32</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -454,7 +454,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="cbShowRegion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -466,7 +466,7 @@
     <value>201, 20</value>
   </data>
   <data name="cbShowRegion.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="cbShowRegion.Text" xml:space="preserve">
     <value>Show scrolling capture region</value>
@@ -481,13 +481,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbShowRegion.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="cbAutoIgnoreBottomEdge.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbAutoIgnoreBottomEdge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 304</value>
+    <value>16, 240</value>
   </data>
   <data name="cbAutoIgnoreBottomEdge.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 20</value>
@@ -508,6 +508,54 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbAutoIgnoreBottomEdge.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbScrollMethod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 200</value>
+  </data>
+  <data name="cbScrollMethod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 24</value>
+  </data>
+  <data name="cbScrollMethod.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;cbScrollMethod.Name" xml:space="preserve">
+    <value>cbScrollMethod</value>
+  </data>
+  <data name="&gt;&gt;cbScrollMethod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbScrollMethod.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbScrollMethod.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblScrollMethod.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblScrollMethod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 176</value>
+  </data>
+  <data name="lblScrollMethod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 16</value>
+  </data>
+  <data name="lblScrollMethod.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>Scroll method:</value>
+  </data>
+  <data name="&gt;&gt;lblScrollMethod.Name" xml:space="preserve">
+    <value>lblScrollMethod</value>
+  </data>
+  <data name="&gt;&gt;lblScrollMethod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScrollMethod.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblScrollMethod.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

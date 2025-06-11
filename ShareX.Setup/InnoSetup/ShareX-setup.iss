@@ -48,10 +48,9 @@ Source: "{#MyAppFilePath}"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppFilePath}.config"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppRootDirectory}\Licenses\*.txt"; DestDir: {app}\Licenses; Flags: ignoreversion
-Source: "{#MyAppOutputDirectory}\Recorder-devices-setup.exe"; DestDir: {app}; Flags: ignoreversion
-Source: "{#MyAppOutputDirectory}\ffmpeg.exe"; DestDir: {app}; Flags: ignoreversion
-Source: "{#MyAppOutputDirectory}\exiftool.exe"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppOutputDirectory}\*.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppOutputDirectory}\exiftool_files\*"; DestDir: {app}\exiftool_files; Flags: ignoreversion recursesubdirs
+Source: "{#MyAppReleaseDirectory}\ShareX_File_Icon.ico"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\ShareX_NativeMessagingHost.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\host-manifest-chrome.json"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\host-manifest-firefox.json"; DestDir: {app}; Flags: ignoreversion

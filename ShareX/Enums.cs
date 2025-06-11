@@ -298,6 +298,8 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         QRCodeDecodeFromScreen,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        QRCodeScanRegion,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         HashCheck,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         Metadata,

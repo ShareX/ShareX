@@ -555,6 +555,26 @@ namespace ShareX.HelpersLib
             return icon;
         }
 
+        public static Bitmap GetFileThumbnail(string filePath, Size thumbnailSize)
+        {
+            Guid guid = typeof(IShellItemImageFactory).GUID;
+            SHCreateItemFromParsingName(filePath, IntPtr.Zero, guid, out IShellItemImageFactory imageFactory);
+            SIZE size = new SIZE(thumbnailSize.Width, thumbnailSize.Height);
+            imageFactory.GetImage(size, SIIGBF.SIIGBF_RESIZETOFIT, out IntPtr hbitmap);
+            Bitmap bmp = null;
+
+            try
+            {
+                bmp = Image.FromHbitmap(hbitmap);
+            }
+            finally
+            {
+                DeleteObject(hbitmap);
+            }
+
+            return bmp;
+        }
+
         public static float GetScreenScalingFactor()
         {
             float scalingFactor;

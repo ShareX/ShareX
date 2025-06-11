@@ -388,11 +388,6 @@ namespace ShareX
 
         private static void SingleInstanceManager_ArgumentsReceived(string[] arguments)
         {
-            if (IsAdmin && arguments != null && arguments.Length > 0)
-            {
-                return;
-            }
-
             string message = "Arguments received: ";
 
             if (arguments == null)

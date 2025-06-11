@@ -370,7 +370,22 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(filePath))
                 {
-                    using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
+                    if (FileHelpers.IsVideoFile(filePath))
+                    {
+                        Bitmap bmpResult = NativeMethods.GetFileThumbnail(filePath, ThumbnailSize);
+
+                        if (bmpResult != null)
+                        {
+                            if (bmpResult.Width > 64 && bmpResult.Height > 64)
+                            {
+                                ImageHelpers.DrawImageCentered(bmpResult, Resources.Play);
+                            }
+
+                            return bmpResult;
+                        }
+                    }
+
+                    using (Icon icon = NativeMethods.GetJumboFileIcon(filePath))
                     using (Bitmap bmpResult = icon.ToBitmap())
                     {
                         return ImageHelpers.ResizeImage(bmpResult, ThumbnailSize, false, true);

@@ -33,6 +33,9 @@
     <None Update="host-manifest-firefox.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="ShareX_File_Icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
   <Content Include="libwebp.dll">
