@@ -84,6 +84,7 @@
             // 
             // MetadataForm
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 561);
@@ -98,6 +99,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Metadata";
             this.Shown += new System.EventHandler(this.MetadataForm_Shown);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MetadataForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MetadataForm_DragEnter);
             this.ResumeLayout(false);
 
         }

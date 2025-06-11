@@ -223,6 +223,11 @@ namespace ShareX
         {
             string filePath = FileHelpers.BrowseFile(this);
 
+            await OpenFile(filePath);
+        }
+
+        private async Task OpenFile(string filePath)
+        {
             if (!string.IsNullOrEmpty(filePath))
             {
                 FilePath = filePath;
@@ -286,6 +291,26 @@ namespace ShareX
                 TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
 
                 await LoadMetadata();
+            }
+        }
+
+        private void MetadataForm_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private async void MetadataForm_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
+            {
+                await OpenFile(files[0]);
             }
         }
     }
