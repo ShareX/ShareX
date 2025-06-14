@@ -60,6 +60,43 @@ namespace ShareX.HistoryLib
             return new List<HistoryItem>();
         }
 
+        protected override bool StoreHistoryItemsBack(string filePath, List<HistoryItem> historyItems)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                lock (thisLock)
+                {
+                    if (historyItems != null)
+                    {
+                        JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings()
+                        {
+                            DefaultValueHandling = DefaultValueHandling.Ignore
+                        };
+                        var serializedHistoryItems = JsonConvert.SerializeObject(historyItems, jsonSerializerSettings);
+                        // Not sure why Serialize and Deserialize are not used to manage the history file, would not have required to add/remove these.
+                        serializedHistoryItems = serializedHistoryItems.Replace("[", "");
+                        serializedHistoryItems = serializedHistoryItems.Replace("]", "");
+
+                        var fileMode = File.Exists(filePath)
+                            ? FileMode.Truncate   // overwrites all of the content of an existing file
+                            : FileMode.CreateNew;  // creates a new file
+
+                        using (FileStream fileStream = new FileStream(filePath, fileMode, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
+                        {
+                            using (StreamWriter streamWriter = new StreamWriter(fileStream))
+                            {
+                                streamWriter.Write(serializedHistoryItems);
+                            }
+                        }
+
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
         protected override bool Append(string filePath, IEnumerable<HistoryItem> historyItems)
         {
             if (!string.IsNullOrEmpty(filePath))

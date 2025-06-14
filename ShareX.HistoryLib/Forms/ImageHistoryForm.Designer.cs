@@ -41,6 +41,7 @@
             this.tsbSearch = new System.Windows.Forms.ToolStripButton();
             this.tss1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSettings = new System.Windows.Forms.ToolStripButton();
+            this.tsbMediaImporter = new System.Windows.Forms.ToolStripButton();
             this.tscMain.ContentPanel.SuspendLayout();
             this.tscMain.TopToolStripPanel.SuspendLayout();
             this.tscMain.SuspendLayout();
@@ -112,7 +113,8 @@
             this.tstbSearch,
             this.tsbSearch,
             this.tss1,
-            this.tsbSettings});
+            this.tsbSettings,
+            this.tsbMediaImporter});
             this.tsMain.Name = "tsMain";
             // 
             // tslSearch
@@ -125,8 +127,8 @@
             this.tstbSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tstbSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.tstbSearch, "tstbSearch");
             this.tstbSearch.Name = "tstbSearch";
+            resources.ApplyResources(this.tstbSearch, "tstbSearch");
             this.tstbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyDown);
             // 
             // tsbSearch
@@ -149,6 +151,14 @@
             resources.ApplyResources(this.tsbSettings, "tsbSettings");
             this.tsbSettings.Name = "tsbSettings";
             this.tsbSettings.Click += new System.EventHandler(this.tsbSettings_Click);
+            // 
+            // tsbMediaImporter
+            // 
+            this.tsbMediaImporter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbMediaImporter.Image = global::ShareX.HistoryLib.Properties.Resources.ic_fluent_image_add_24_regular;
+            resources.ApplyResources(this.tsbMediaImporter, "tsbMediaImporter");
+            this.tsbMediaImporter.Name = "tsbMediaImporter";
+            this.tsbMediaImporter.Click += new System.EventHandler(this.tsbMediaImporter_Click);
             // 
             // ImageHistoryForm
             // 
@@ -181,5 +191,6 @@
         private System.Windows.Forms.ToolStripButton tsbSearch;
         private System.Windows.Forms.ToolStripSeparator tss1;
         private System.Windows.Forms.ToolStripButton tsbSettings;
+        private System.Windows.Forms.ToolStripButton tsbMediaImporter;
     }
 }

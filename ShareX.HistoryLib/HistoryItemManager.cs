@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -37,7 +38,18 @@ namespace ShareX.HistoryLib
 
         public event GetHistoryItemsEventHandler GetHistoryItems;
 
+        public event Action SelectAllHistoryItems;
+        public event Action RemoveSelectedItems;
+        public event Action DeleteSelectedFiles;
+
         public HistoryItem HistoryItem { get; private set; }
+
+        /// <summary>
+        /// This property is intended to contain only currently selected items
+        /// (Not for storing all history items). It is updated in the
+        /// <see cref="UpdateSelectedHistoryItem"/> method upon selection change event.
+        /// </summary>
+        public List<HistoryItem> HistoryItems { get; private set; }
 
         public bool IsURLExist { get; private set; }
         public bool IsShortenedURLExist { get; private set; }
@@ -47,6 +59,7 @@ namespace ShareX.HistoryLib
         public bool IsTextURL { get; private set; }
         public bool IsFilePathValid { get; private set; }
         public bool IsFileExist { get; private set; }
+        public bool AnyFileExist { get; private set; }
         public bool IsImageFile { get; private set; }
         public bool IsTextFile { get; private set; }
 
@@ -57,6 +70,7 @@ namespace ShareX.HistoryLib
             this.uploadFile = uploadFile;
             this.editImage = editImage;
             this.pinToScreen = pinToScreen;
+            HistoryItems = new List<HistoryItem>();
 
             InitializeComponent();
 
@@ -75,10 +89,12 @@ namespace ShareX.HistoryLib
             if (historyItems != null && historyItems.Length > 0)
             {
                 HistoryItem = historyItems[0];
+                HistoryItems = historyItems.ToList();
             }
             else
             {
                 HistoryItem = null;
+                HistoryItems = new List<HistoryItem>();
             }
 
             if (HistoryItem != null)
@@ -91,6 +107,10 @@ namespace ShareX.HistoryLib
                 IsTextURL = IsURLExist && FileHelpers.IsTextFile(HistoryItem.URL);
                 IsFilePathValid = !string.IsNullOrEmpty(HistoryItem.FilePath) && Path.HasExtension(HistoryItem.FilePath);
                 IsFileExist = IsFilePathValid && File.Exists(HistoryItem.FilePath);
+
+                if (HistoryItems.Count > 1)
+                    AnyFileExist = HistoryItems.Where(hi => File.Exists(hi.FilePath)).Any();
+
                 IsImageFile = IsFileExist && FileHelpers.IsImageFile(HistoryItem.FilePath);
                 IsTextFile = IsFileExist && FileHelpers.IsTextFile(HistoryItem.FilePath);
 
@@ -99,6 +119,10 @@ namespace ShareX.HistoryLib
             else
             {
                 cmsHistory.Enabled = false;
+            }
+            if (HistoryItems != null)
+            {
+
             }
 
             return HistoryItem;
@@ -112,6 +136,18 @@ namespace ShareX.HistoryLib
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Use this method to store changes to history items back to the JSON file
+        /// </summary>
+        /// <param name="historyPath">History file path</param>
+        /// <param name="updatedHistoryItems">Items to be saved back to JSON File</param>
+        /// <returns>Success bool</returns>
+        public bool UpdateHistoryItemsFile(string historyPath, List<HistoryItem> updatedHistoryItems)
+        {
+            HistoryManager history = new HistoryManagerJSON(historyPath);
+            return history.UpdateHistoryItemsFile(updatedHistoryItems);
         }
 
         public bool HandleKeyInput(KeyEventArgs e)
@@ -128,6 +164,9 @@ namespace ShareX.HistoryLib
                     break;
                 case Keys.Shift | Keys.Enter:
                     OpenFolder();
+                    break;
+                case Keys.Control | Keys.A:
+                    SelectAllHistoryItems?.Invoke();
                     break;
                 case Keys.Control | Keys.C:
                     CopyURL();
@@ -587,6 +626,19 @@ namespace ShareX.HistoryLib
         public void ShowMoreInfo()
         {
             new HistoryItemInfoForm(HistoryItem).Show();
+        }
+
+        public bool DeleteFiles()
+        {
+            if (HistoryItems.Any())
+            {
+                foreach (string filePath in HistoryItems.Select(x => x.FilePath))
+                {
+                    FileHelpers.DeleteFile(filePath, true);
+                }
+                return true;
+            }
+            return false;
         }
     }
 }

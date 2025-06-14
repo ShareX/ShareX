@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Forms;
 using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -41,8 +42,8 @@ namespace ShareX.HistoryLib
         public HistorySettings Settings { get; private set; }
 
         private HistoryItemManager him;
-        private HistoryItem[] allHistoryItems;
-        private HistoryItem[] filteredHistoryItems;
+        private List<HistoryItem> allHistoryItems;
+        private List<HistoryItem> filteredHistoryItems;
         private string defaultTitle;
         private Dictionary<string, string> typeNamesLocaleLookup;
         private string[] allTypeNames;
@@ -70,11 +71,15 @@ namespace ShareX.HistoryLib
             il.Images.Add(Resources.image);
             il.Images.Add(Resources.notebook);
             il.Images.Add(Resources.application_block);
+            il.Images.Add(Resources.ic_fluent_video_clip_24_regular);
             il.Images.Add(Resources.globe);
             lvHistory.SmallImageList = il;
 
             him = new HistoryItemManager(uploadFile, editImage, pinToScreen, true);
             him.GetHistoryItems += him_GetHistoryItems;
+            him.SelectAllHistoryItems += lvHistory.SelectAll;
+            him.RemoveSelectedItems += RemoveSelectedItemsWithRefreshAsync;
+            him.DeleteSelectedFiles += DeleteSelectedItemsWithRefreshAsync;
             lvHistory.ContextMenuStrip = him.cmsHistory;
 
             pbThumbnail.Reset();
@@ -118,7 +123,7 @@ namespace ShareX.HistoryLib
             cbHostFilterSelection.ResetText();
         }
 
-        private async Task RefreshHistoryItems(bool mockData = false)
+        private async Task RefreshHistoryItems(bool mockData = false, bool resetFilters = true, int moveSelectionIndexTo = 0)
         {
             allHistoryItems = await GetHistoryItems(mockData);
 
@@ -126,7 +131,7 @@ namespace ShareX.HistoryLib
             cbHostFilterSelection.Items.Clear();
             tstbSearch.AutoCompleteCustomSource.Clear();
 
-            if (allHistoryItems.Length > 0)
+            if (allHistoryItems.Count > 0)
             {
                 allTypeNames = allHistoryItems.Select(x => x.Type).Where(x => !string.IsNullOrWhiteSpace(x)).Distinct().ToArray();
                 cbTypeFilterSelection.Items.AddRange(allTypeNames.Select(x => typeNamesLocaleLookup.TryGetValue(x, out string value) ? value : x).ToArray());
@@ -134,9 +139,12 @@ namespace ShareX.HistoryLib
                 tstbSearch.AutoCompleteCustomSource.AddRange(allHistoryItems.Select(x => x.TagsProcessName).Where(x => !string.IsNullOrWhiteSpace(x)).Distinct().ToArray());
             }
 
-            ApplyFilterSimple();
+            ApplyFilterSimple(moveSelectionIndexTo);
 
-            ResetFilters();
+            if (resetFilters)
+            {
+                ResetFilters();
+            }
         }
 
         private HistoryItem[] him_GetHistoryItems()
@@ -144,7 +152,7 @@ namespace ShareX.HistoryLib
             return lvHistory.SelectedIndices.Cast<int>().Select(i => filteredHistoryItems[i]).ToArray();
         }
 
-        private async Task<HistoryItem[]> GetHistoryItems(bool mockData = false)
+        private async Task<List<HistoryItem>> GetHistoryItems(bool mockData = false)
         {
             HistoryManager history;
 
@@ -159,15 +167,15 @@ namespace ShareX.HistoryLib
 
             List<HistoryItem> historyItems = await history.GetHistoryItemsAsync();
             historyItems.Reverse();
-            return historyItems.ToArray();
+            return historyItems;
         }
 
-        private void ApplyFilter(HistoryFilter filter)
+        private void ApplyFilter(HistoryFilter filter, int moveSelectionIndexTo = 0)
         {
-            if (allHistoryItems != null && allHistoryItems.Length > 0)
+            if (allHistoryItems != null && allHistoryItems.Count > 0)
             {
                 IEnumerable<HistoryItem> historyItems = filter.ApplyFilter(allHistoryItems);
-                filteredHistoryItems = historyItems.ToArray();
+                filteredHistoryItems = historyItems.ToList();
 
                 UpdateTitle(filteredHistoryItems);
 
@@ -175,15 +183,17 @@ namespace ShareX.HistoryLib
                 listViewCacheStartIndex = 0;
                 lvHistory.VirtualListSize = 0;
 
-                if (filteredHistoryItems.Length > 0)
+                if (filteredHistoryItems.Count > 0)
                 {
-                    lvHistory.VirtualListSize = filteredHistoryItems.Length;
-                    lvHistory.SelectedIndices.Add(0);
+                    lvHistory.VirtualListSize = filteredHistoryItems.Count;
+                    lvHistory.SelectedIndices.Add(moveSelectionIndexTo);
+                    // EnsureVisible does not give perfect view sometimes but better than without it. The intention is to simulate deletion without much friction, as direct item Removal is not possible.
+                    lvHistory.EnsureVisible(moveSelectionIndexTo);
                 }
             }
         }
 
-        private void ApplyFilterSimple()
+        private void ApplyFilterSimple(int moveSelectionIndexTo = 0)
         {
             string searchText = tstbSearch.Text;
 
@@ -201,7 +211,7 @@ namespace ShareX.HistoryLib
                 Filename = searchText
             };
 
-            ApplyFilter(filter);
+            ApplyFilter(filter, moveSelectionIndexTo);
         }
 
         private void ApplyFilterAdvanced()
@@ -244,9 +254,13 @@ namespace ShareX.HistoryLib
             {
                 lvi.ImageIndex = 2;
             }
-            else
+            else if (hi.Type.Equals("Video", StringComparison.InvariantCultureIgnoreCase))
             {
                 lvi.ImageIndex = 3;
+            }
+            else
+            {
+                lvi.ImageIndex = 4;
             }
 
             lvi.SubItems.Add(hi.DateTime.ToString());
@@ -256,7 +270,7 @@ namespace ShareX.HistoryLib
             return lvi;
         }
 
-        private void UpdateTitle(HistoryItem[] historyItems = null)
+        private void UpdateTitle(List<HistoryItem> historyItems = null)
         {
             string title = defaultTitle;
 
@@ -265,11 +279,11 @@ namespace ShareX.HistoryLib
                 StringBuilder status = new StringBuilder();
 
                 status.Append(" (");
-                status.AppendFormat(Resources.HistoryForm_UpdateItemCount_Total___0_, allHistoryItems.Length.ToString("N0"));
+                status.AppendFormat(Resources.HistoryForm_UpdateItemCount_Total___0_, allHistoryItems.Count.ToString("N0"));
 
-                if (allHistoryItems.Length > historyItems.Length)
+                if (allHistoryItems.Count > historyItems.Count)
                 {
-                    status.AppendFormat(" - " + Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Length.ToString("N0"));
+                    status.AppendFormat(" - " + Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Count.ToString("N0"));
                 }
 
                 IEnumerable<string> types = historyItems.
@@ -323,19 +337,19 @@ namespace ShareX.HistoryLib
             }
         }
 
-        private string OutputStats(HistoryItem[] historyItems)
+        private string OutputStats(List<HistoryItem> historyItems)
         {
             string empty = "(empty)";
 
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(Resources.HistoryItemCounts);
-            sb.AppendLine(Resources.HistoryStats_Total + " " + historyItems.Length);
+            sb.AppendLine(Resources.HistoryStats_Total + " " + historyItems.Count);
 
             IEnumerable<string> types = historyItems.
                 GroupBy(x => x.Type).
                 OrderByDescending(x => x.Count()).
-                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Length * 100));
+                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Count * 100));
 
             sb.AppendLine(string.Join(Environment.NewLine, types));
 
@@ -345,7 +359,7 @@ namespace ShareX.HistoryLib
             IEnumerable<string> yearlyUsages = historyItems.
                 GroupBy(x => x.DateTime.Year).
                 OrderByDescending(x => x.Key).
-                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Length * 100));
+                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Count * 100));
 
             sb.AppendLine(string.Join(Environment.NewLine, yearlyUsages));
 
@@ -384,6 +398,66 @@ namespace ShareX.HistoryLib
             return sb.ToString();
         }
 
+        private int RemoveSelectedItems()
+        {
+            int moveSelectionIndexTo = 0;
+            IEnumerable<int> selectedIndices = lvHistory.SelectedIndices.Cast<int>();
+            if (selectedIndices.Any())
+            {
+                foreach (int index in selectedIndices)
+                {
+                    allHistoryItems.Remove(allHistoryItems[index]);
+                    filteredHistoryItems.Remove(filteredHistoryItems[index]);
+                    // NOTE: unfortunately due to VirtualMode of the lvHistory, it is not possible to remove an item
+                    // directly/inline and has be to refreshed after deletion and selection index moved up
+                }
+
+                // Smallest value minus 1 to move the index up
+                moveSelectionIndexTo = selectedIndices.Min() - 1;
+                moveSelectionIndexTo = Math.Max(moveSelectionIndexTo, 0);
+
+                // Reverse back to normal order, without effecting current list instance
+                var allHistoryItemsClone = allHistoryItems.Copy();
+                allHistoryItemsClone.Reverse();
+                him.UpdateHistoryItemsFile(HistoryPath, allHistoryItemsClone);
+            }
+
+            return moveSelectionIndexTo;
+        }
+
+        private async void RemoveSelectedItemsWithRefreshAsync()
+        {
+            int moveSelectionIndexTo = RemoveSelectedItems();
+            await RefreshHistoryItems(false, false, moveSelectionIndexTo);
+        }
+
+        private bool DeleteSelectedItems()
+        {
+            if (MessageBox.Show(Resources.FileDeleteConfirmationText,
+               "ShareX - " + Resources.FileDeleteConfirmationTitle, MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                return him.DeleteFiles();
+            }
+
+            return false;
+        }
+
+        private async void DeleteSelectedItemsWithRefreshAsync()
+        {
+            try
+            {
+                if (DeleteSelectedItems())
+                {
+                    int moveSelectionIndexTo = RemoveSelectedItems();
+                    await RefreshHistoryItems(false, false, moveSelectionIndexTo);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+        }
+
         #region Form events
 
         private async void HistoryForm_Shown(object sender, EventArgs e)
@@ -418,6 +492,12 @@ namespace ShareX.HistoryLib
                 case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
                     e.SuppressKeyPress = true;
                     await RefreshHistoryItems(true);
+                    break;
+                case Keys.Delete:
+                    RemoveSelectedItemsWithRefreshAsync();
+                    break;
+                case Keys.Shift | Keys.Delete:
+                    DeleteSelectedItemsWithRefreshAsync();
                     break;
             }
         }
@@ -457,6 +537,14 @@ namespace ShareX.HistoryLib
             using (HistorySettingsForm form = new HistorySettingsForm(Settings))
             {
                 form.ShowDialog();
+            }
+        }
+
+        private async void tsbMediaImporter_Click(object sender, EventArgs e)
+        {
+            if (new MediaImporter(HistoryPath, him, allHistoryItems).ShowDialog() == DialogResult.OK)
+            {
+                await RefreshHistoryItems();
             }
         }
 
@@ -549,14 +637,14 @@ namespace ShareX.HistoryLib
         {
             int currentImageIndex = lvHistory.SelectedIndex;
 
-            if (currentImageIndex > -1 && pbThumbnail.Image != null && filteredHistoryItems != null && filteredHistoryItems.Length > 0)
+            if (currentImageIndex > -1 && pbThumbnail.Image != null && filteredHistoryItems != null && filteredHistoryItems.Count > 0)
             {
                 pbThumbnail.Enabled = false;
 
                 int modifiedImageIndex = 0;
                 int halfRange = 100;
                 int startIndex = Math.Max(currentImageIndex - halfRange, 0);
-                int endIndex = Math.Min(startIndex + (halfRange * 2) + 1, filteredHistoryItems.Length);
+                int endIndex = Math.Min(startIndex + (halfRange * 2) + 1, filteredHistoryItems.Count);
 
                 List<string> filteredImages = new List<string>();
 
