@@ -1339,6 +1339,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to QP:.
+        /// </summary>
+        internal static string QP {
+            get {
+                return ResourceManager.GetString("QP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rectangle capture light.
         /// </summary>
         internal static string RectangleLight_InitializeComponent_Rectangle_capture_light {
