@@ -1268,6 +1268,15 @@ namespace ShareX
             Refresh();
         }
 
+        private void MainForm_VisibleChanged(object sender, EventArgs e)
+        {
+            if (Visible && !CaptureHelpers.GetScreenBounds().IntersectsWith(Bounds))
+            {
+                Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
+                Location = new Point((activeScreen.Width - Size.Width) / 2, (activeScreen.Height - Size.Height) / 2);
+            }
+        }
+
         private void MainForm_LocationChanged(object sender, EventArgs e)
         {
             if (IsReady && WindowState == FormWindowState.Normal)

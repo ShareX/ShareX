@@ -53,6 +53,7 @@ namespace ShareX.ScreenCaptureLib
                     cts = new CancellationTokenSource();
                     cts.CancelAfter(Timeout);
                 }
+
                 bool EvalWindow(IntPtr hWnd, IntPtr _)
                 {
                     return CheckHandle(hWnd, null);
@@ -97,7 +98,6 @@ namespace ShareX.ScreenCaptureLib
 
         private bool CheckHandle(IntPtr handle, Rectangle? clipRect)
         {
-            // If we are asked to clip against our parent we are not a window
             bool isWindow = clipRect == null;
 
             if (cts != null && cts.IsCancellationRequested)
@@ -119,8 +119,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                var rect = NativeMethods.GetWindowRect(handle);
-                // A window can be physically bigger than its parent, but not visually
+                Rectangle rect = NativeMethods.GetWindowRect(handle);
                 windowInfo.Rectangle = Rectangle.Intersect(rect, clipRect.Value);
             }
 
@@ -137,6 +136,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     return CheckHandle(hWnd, windowInfo.Rectangle);
                 }
+
                 NativeMethods.EnumChildWindows(handle, EvalControl, IntPtr.Zero);
             }
 

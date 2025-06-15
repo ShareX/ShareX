@@ -64,6 +64,7 @@ namespace ShareX.HelpersLib
                 while ((desktopHandle = NativeMethods.FindWindowEx(IntPtr.Zero, desktopHandle, "WorkerW", null)) != IntPtr.Zero)
                 {
                     defView = NativeMethods.FindWindowEx(desktopHandle, IntPtr.Zero, "SHELLDLL_DefView", null);
+
                     if (defView != IntPtr.Zero)
                     {
                         break;
