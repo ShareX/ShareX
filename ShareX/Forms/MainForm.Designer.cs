@@ -266,15 +266,18 @@
             this.tsmiTrayFileUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayURLShorteners = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayURLSharingServices = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssTray2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayApplicationSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTaskSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHotkeySettings = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayToggleHotkeys = new System.Windows.Forms.ToolStripMenuItem();
-            this.tssTray2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiTrayDestinationSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayCustomUploaderSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiScreenshotsFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageHistory = new System.Windows.Forms.ToolStripMenuItem();
-            this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tssTray4 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiRestartAsAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRecentItems = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpenActionsToolbar = new System.Windows.Forms.ToolStripMenuItem();
@@ -290,9 +293,6 @@
             this.pMain = new System.Windows.Forms.Panel();
             this.pHotkeys = new System.Windows.Forms.Panel();
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
-            this.tsmiTrayDestinationSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayCustomUploaderSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.tssTray4 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -2093,6 +2093,11 @@
             this.tsmiTrayURLSharingServices.Name = "tsmiTrayURLSharingServices";
             resources.ApplyResources(this.tsmiTrayURLSharingServices, "tsmiTrayURLSharingServices");
             // 
+            // tssTray2
+            // 
+            this.tssTray2.Name = "tssTray2";
+            resources.ApplyResources(this.tssTray2, "tssTray2");
+            // 
             // tsmiTrayApplicationSettings
             // 
             this.tsmiTrayApplicationSettings.Image = global::ShareX.Properties.Resources.wrench_screwdriver;
@@ -2121,10 +2126,24 @@
             resources.ApplyResources(this.tsmiTrayToggleHotkeys, "tsmiTrayToggleHotkeys");
             this.tsmiTrayToggleHotkeys.Click += new System.EventHandler(this.tsmiTrayToggleHotkeys_Click);
             // 
-            // tssTray2
+            // tsmiTrayDestinationSettings
             // 
-            this.tssTray2.Name = "tssTray2";
-            resources.ApplyResources(this.tssTray2, "tssTray2");
+            this.tsmiTrayDestinationSettings.Image = global::ShareX.Properties.Resources.globe_pencil;
+            this.tsmiTrayDestinationSettings.Name = "tsmiTrayDestinationSettings";
+            resources.ApplyResources(this.tsmiTrayDestinationSettings, "tsmiTrayDestinationSettings");
+            this.tsmiTrayDestinationSettings.Click += new System.EventHandler(this.tsbDestinationSettings_Click);
+            // 
+            // tsmiTrayCustomUploaderSettings
+            // 
+            this.tsmiTrayCustomUploaderSettings.Image = global::ShareX.Properties.Resources.network_cloud;
+            this.tsmiTrayCustomUploaderSettings.Name = "tsmiTrayCustomUploaderSettings";
+            resources.ApplyResources(this.tsmiTrayCustomUploaderSettings, "tsmiTrayCustomUploaderSettings");
+            this.tsmiTrayCustomUploaderSettings.Click += new System.EventHandler(this.tsbCustomUploaderSettings_Click);
+            // 
+            // tssTray3
+            // 
+            this.tssTray3.Name = "tssTray3";
+            resources.ApplyResources(this.tssTray3, "tssTray3");
             // 
             // tsmiScreenshotsFolder
             // 
@@ -2147,10 +2166,10 @@
             resources.ApplyResources(this.tsmiTrayImageHistory, "tsmiTrayImageHistory");
             this.tsmiTrayImageHistory.Click += new System.EventHandler(this.tsbImageHistory_Click);
             // 
-            // tssTray3
+            // tssTray4
             // 
-            this.tssTray3.Name = "tssTray3";
-            resources.ApplyResources(this.tssTray3, "tssTray3");
+            this.tssTray4.Name = "tssTray4";
+            resources.ApplyResources(this.tssTray4, "tssTray4");
             // 
             // tsmiRestartAsAdmin
             // 
@@ -2296,25 +2315,6 @@
             this.ucTaskThumbnailView.ContextMenuRequested += new ShareX.TaskThumbnailView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
             this.ucTaskThumbnailView.SelectedPanelChanged += new System.EventHandler(this.ucTaskThumbnailView_SelectedPanelChanged);
             this.ucTaskThumbnailView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvUploads_KeyDown);
-            // 
-            // tsmiTrayDestinationSettings
-            // 
-            this.tsmiTrayDestinationSettings.Image = global::ShareX.Properties.Resources.globe_pencil;
-            this.tsmiTrayDestinationSettings.Name = "tsmiTrayDestinationSettings";
-            resources.ApplyResources(this.tsmiTrayDestinationSettings, "tsmiTrayDestinationSettings");
-            this.tsmiTrayDestinationSettings.Click += new System.EventHandler(this.tsbDestinationSettings_Click);
-            // 
-            // tsmiTrayCustomUploaderSettings
-            // 
-            this.tsmiTrayCustomUploaderSettings.Image = global::ShareX.Properties.Resources.network_cloud;
-            this.tsmiTrayCustomUploaderSettings.Name = "tsmiTrayCustomUploaderSettings";
-            resources.ApplyResources(this.tsmiTrayCustomUploaderSettings, "tsmiTrayCustomUploaderSettings");
-            this.tsmiTrayCustomUploaderSettings.Click += new System.EventHandler(this.tsbCustomUploaderSettings_Click);
-            // 
-            // tssTray4
-            // 
-            this.tssTray4.Name = "tssTray4";
-            resources.ApplyResources(this.tssTray4, "tssTray4");
             // 
             // MainForm
             // 

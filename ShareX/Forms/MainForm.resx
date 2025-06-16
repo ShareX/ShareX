@@ -172,7 +172,7 @@
     <value>0, 0</value>
   </data>
   <data name="lvUploads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 530</value>
+    <value>335, 531</value>
   </data>
   <data name="lvUploads.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -208,7 +208,7 @@
     <value>0, 0</value>
   </data>
   <data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>315, 530</value>
+    <value>350, 531</value>
   </data>
   <data name="pbPreview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -238,7 +238,7 @@
     <value>1</value>
   </data>
   <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>656, 530</value>
+    <value>691, 531</value>
   </data>
   <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
     <value>335</value>
@@ -904,7 +904,7 @@
     <value>8, 6, 8, 3</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 530</value>
+    <value>188, 531</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1819,7 +1819,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 512</value>
+    <value>220, 490</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -1846,7 +1846,7 @@
     <value>0, 0</value>
   </data>
   <data name="pToolbars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 530</value>
+    <value>188, 531</value>
   </data>
   <data name="pToolbars.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1900,7 +1900,7 @@
     <value>None</value>
   </data>
   <data name="dgvHotkeys.Size" type="System.Drawing.Size, System.Drawing">
-    <value>640, 514</value>
+    <value>675, 515</value>
   </data>
   <data name="dgvHotkeys.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1927,7 +1927,7 @@
     <value>16, 16, 0, 0</value>
   </data>
   <data name="pHotkeys.Size" type="System.Drawing.Size, System.Drawing">
-    <value>656, 530</value>
+    <value>691, 531</value>
   </data>
   <data name="pHotkeys.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1954,7 +1954,7 @@
     <value>0, 0</value>
   </data>
   <data name="ucTaskThumbnailView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>656, 530</value>
+    <value>691, 531</value>
   </data>
   <data name="ucTaskThumbnailView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1978,7 +1978,7 @@
     <value>188, 0</value>
   </data>
   <data name="pMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>656, 530</value>
+    <value>691, 531</value>
   </data>
   <data name="pMain.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2005,7 +2005,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>844, 530</value>
+    <value>879, 531</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>650, 500</value>
@@ -3375,6 +3375,12 @@
   <data name="&gt;&gt;tsmiTrayURLSharingServices.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tssTray2.Name" xml:space="preserve">
+    <value>tssTray2</value>
+  </data>
+  <data name="&gt;&gt;tssTray2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayApplicationSettings.Name" xml:space="preserve">
     <value>tsmiTrayApplicationSettings</value>
   </data>
@@ -3399,10 +3405,22 @@
   <data name="&gt;&gt;tsmiTrayToggleHotkeys.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssTray2.Name" xml:space="preserve">
-    <value>tssTray2</value>
+  <data name="&gt;&gt;tsmiTrayDestinationSettings.Name" xml:space="preserve">
+    <value>tsmiTrayDestinationSettings</value>
   </data>
-  <data name="&gt;&gt;tssTray2.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiTrayDestinationSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayCustomUploaderSettings.Name" xml:space="preserve">
+    <value>tsmiTrayCustomUploaderSettings</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayCustomUploaderSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssTray3.Name" xml:space="preserve">
+    <value>tssTray3</value>
+  </data>
+  <data name="&gt;&gt;tssTray3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotsFolder.Name" xml:space="preserve">
@@ -3423,10 +3441,10 @@
   <data name="&gt;&gt;tsmiTrayImageHistory.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssTray3.Name" xml:space="preserve">
-    <value>tssTray3</value>
+  <data name="&gt;&gt;tssTray4.Name" xml:space="preserve">
+    <value>tssTray4</value>
   </data>
-  <data name="&gt;&gt;tssTray3.Type" xml:space="preserve">
+  <data name="&gt;&gt;tssTray4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiRestartAsAdmin.Name" xml:space="preserve">
@@ -3488,24 +3506,6 @@
   </data>
   <data name="&gt;&gt;cDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayDestinationSettings.Name" xml:space="preserve">
-    <value>tsmiTrayDestinationSettings</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayDestinationSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayCustomUploaderSettings.Name" xml:space="preserve">
-    <value>tsmiTrayCustomUploaderSettings</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayCustomUploaderSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssTray4.Name" xml:space="preserve">
-    <value>tssTray4</value>
-  </data>
-  <data name="&gt;&gt;tssTray4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
