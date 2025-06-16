@@ -466,6 +466,12 @@ namespace ShareX
                     case EImageFormat.TIFF:
                         img.Save(ms, ImageFormat.Tiff);
                         break;
+                    case EImageFormat.WEBP:
+                        ImageHelpers.SaveWebPToStream(img, ms, quality: jpegQuality);
+                        break;
+                    case EImageFormat.AVIF:
+                        ImageHelpers.SaveAvifToStream(img, ms, quality: jpegQuality);
+                        break;
                 }
             }
             catch (Exception e)
