@@ -1453,7 +1453,7 @@
     <value>Screenshot delay</value>
   </data>
   <data name="tsmiTrayCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>Capture</value>
@@ -1507,13 +1507,13 @@
     <value>Tweet message...</value>
   </data>
   <data name="tsmiTrayUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
     <value>Upload</value>
   </data>
   <data name="tsmiTrayWorkflows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
@@ -1663,58 +1663,88 @@
     <value>Monitor test...</value>
   </data>
   <data name="tsmiTrayTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Tools</value>
   </data>
   <data name="tssTray1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 6</value>
+    <value>216, 6</value>
   </data>
   <data name="tsmiTrayAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
     <value>After capture tasks</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>After upload tasks</value>
   </data>
   <data name="tsmiTrayImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
     <value>Image uploaders</value>
   </data>
   <data name="tsmiTrayTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
     <value>Text uploaders</value>
   </data>
   <data name="tsmiTrayFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
     <value>File uploaders</value>
   </data>
   <data name="tsmiTrayURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
     <value>URL shorteners</value>
   </data>
   <data name="tsmiTrayURLSharingServices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
     <value>URL sharing services</value>
   </data>
-  <data name="tssTrayDestinations1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiTrayDestinations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
+    <value>Destinations</value>
+  </data>
+  <data name="tssTray2.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 6</value>
+  </data>
+  <data name="tsmiTrayApplicationSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
+    <value>Application settings...</value>
+  </data>
+  <data name="tsmiTrayTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
+    <value>Task settings...</value>
+  </data>
+  <data name="tsmiTrayHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
+    <value>Hotkey settings...</value>
+  </data>
+  <data name="tsmiTrayToggleHotkeys.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
+    <value>Disable hotkeys</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>219, 22</value>
@@ -1728,62 +1758,32 @@
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>Custom uploader settings...</value>
   </data>
-  <data name="tsmiTrayDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
-  </data>
-  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
-    <value>Destinations</value>
-  </data>
-  <data name="tsmiTrayApplicationSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
-  </data>
-  <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
-    <value>Application settings...</value>
-  </data>
-  <data name="tsmiTrayTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
-  </data>
-  <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
-    <value>Task settings...</value>
-  </data>
-  <data name="tsmiTrayHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
-  </data>
-  <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
-    <value>Hotkey settings...</value>
-  </data>
-  <data name="tsmiTrayToggleHotkeys.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
-  </data>
-  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
-    <value>Disable hotkeys</value>
-  </data>
-  <data name="tssTray2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 6</value>
+  <data name="tssTray3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 6</value>
   </data>
   <data name="tsmiScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
     <value>Screenshots folder...</value>
   </data>
   <data name="tsmiTrayHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>History...</value>
   </data>
   <data name="tsmiTrayImageHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Image history...</value>
   </data>
-  <data name="tssTray3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 6</value>
+  <data name="tssTray4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 6</value>
   </data>
   <data name="tsmiRestartAsAdmin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
     <value>Restart ShareX as admin</value>
@@ -1792,7 +1792,7 @@
     <value>False</value>
   </data>
   <data name="tsmiTrayRecentItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>Recent links</value>
@@ -1801,25 +1801,25 @@
     <value>False</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Toggle actions toolbar</value>
   </data>
   <data name="tsmiTrayShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>Open main window</value>
   </data>
   <data name="tsmiTrayExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>219, 22</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 440</value>
+    <value>220, 512</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -2457,6 +2457,12 @@
   <data name="&gt;&gt;tsmiURLSharingServices.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tssMain2.Name" xml:space="preserve">
+    <value>tssMain2</value>
+  </data>
+  <data name="&gt;&gt;tssMain2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsbApplicationSettings.Name" xml:space="preserve">
     <value>tsbApplicationSettings</value>
   </data>
@@ -2487,10 +2493,10 @@
   <data name="&gt;&gt;tsbCustomUploaderSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssMain2.Name" xml:space="preserve">
-    <value>tssMain2</value>
+  <data name="&gt;&gt;tssMain3.Name" xml:space="preserve">
+    <value>tssMain3</value>
   </data>
-  <data name="&gt;&gt;tssMain2.Type" xml:space="preserve">
+  <data name="&gt;&gt;tssMain3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbScreenshotsFolder.Name" xml:space="preserve">
@@ -2511,10 +2517,10 @@
   <data name="&gt;&gt;tsbImageHistory.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssMain3.Name" xml:space="preserve">
-    <value>tssMain3</value>
+  <data name="&gt;&gt;tssMain4.Name" xml:space="preserve">
+    <value>tssMain4</value>
   </data>
-  <data name="&gt;&gt;tssMain3.Type" xml:space="preserve">
+  <data name="&gt;&gt;tssMain4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbDebug.Name" xml:space="preserve">
@@ -3369,24 +3375,6 @@
   <data name="&gt;&gt;tsmiTrayURLSharingServices.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssTrayDestinations1.Name" xml:space="preserve">
-    <value>tssTrayDestinations1</value>
-  </data>
-  <data name="&gt;&gt;tssTrayDestinations1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayDestinationSettings.Name" xml:space="preserve">
-    <value>tsmiTrayDestinationSettings</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayDestinationSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayCustomUploaderSettings.Name" xml:space="preserve">
-    <value>tsmiTrayCustomUploaderSettings</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayCustomUploaderSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiTrayApplicationSettings.Name" xml:space="preserve">
     <value>tsmiTrayApplicationSettings</value>
   </data>
@@ -3501,10 +3489,22 @@
   <data name="&gt;&gt;cDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssMain4.Name" xml:space="preserve">
-    <value>tssMain4</value>
+  <data name="&gt;&gt;tsmiTrayDestinationSettings.Name" xml:space="preserve">
+    <value>tsmiTrayDestinationSettings</value>
   </data>
-  <data name="&gt;&gt;tssMain4.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiTrayDestinationSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayCustomUploaderSettings.Name" xml:space="preserve">
+    <value>tsmiTrayCustomUploaderSettings</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayCustomUploaderSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssTray4.Name" xml:space="preserve">
+    <value>tssTray4</value>
+  </data>
+  <data name="&gt;&gt;tssTray4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
