@@ -1838,16 +1838,6 @@ namespace ShareX
             UpdateDestinationStates();
         }
 
-        private void tsmiDestinationSettings_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenUploadersConfigWindow();
-        }
-
-        private void tsmiCustomUploaderSettings_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenCustomUploaderSettingsWindow();
-        }
-
         private void tsbApplicationSettings_Click(object sender, EventArgs e)
         {
             using (ApplicationSettingsForm settingsForm = new ApplicationSettingsForm())
@@ -1892,6 +1882,16 @@ namespace ShareX
                     SettingManager.SaveHotkeysConfigAsync();
                 }
             }
+        }
+
+        private void tsbDestinationSettings_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenUploadersConfigWindow();
+        }
+
+        private void tsbCustomUploaderSettings_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenCustomUploaderSettingsWindow();
         }
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
