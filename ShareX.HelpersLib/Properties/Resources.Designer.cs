@@ -3520,6 +3520,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete file locally.
+        /// </summary>
+        internal static string ToastClickAction_DeleteFile {
+            get {
+                return ResourceManager.GetString("ToastClickAction_DeleteFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open file.
         /// </summary>
         internal static string ToastClickAction_OpenFile {

@@ -350,7 +350,8 @@ namespace ShareX
         OpenFolder,
         OpenUrl,
         Upload,
-        PinToScreen
+        PinToScreen,
+        DeleteFile
     }
 
     public enum ThumbnailViewClickAction // Localized
