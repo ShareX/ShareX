@@ -210,6 +210,7 @@ namespace ShareX.Steam
                     // Workaround 1.
                     try
                     {
+                        // TODO: .
                         /*
                         using (ManagementClass managementClass = new ManagementClass("Win32_Process"))
                         {

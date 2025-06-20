@@ -1406,19 +1406,25 @@ namespace ShareX
         {
             try
             {
-                using (Process process = new Process())
-                {
-                    ProcessStartInfo psi = new ProcessStartInfo()
-                    {
-                        FileName = Application.ExecutablePath,
-                        Arguments = arguments,
-                        UseShellExecute = true,
-                        Verb = "runas"
-                    };
+                string exePath = Application.ExecutablePath;
 
-                    process.StartInfo = psi;
-                    process.Start();
+                string cmdArgs = $"/c timeout /t 1 & powershell -Command \"Start-Process '{exePath}' -Verb runAs";
+
+                if (!string.IsNullOrEmpty(arguments))
+                {
+                    cmdArgs += " -ArgumentList '{arguments}'";
                 }
+
+                cmdArgs += "\"";
+
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "cmd.exe",
+                    Arguments = cmdArgs,
+                    UseShellExecute = true,
+                    CreateNoWindow = true,
+                    WindowStyle = ProcessWindowStyle.Hidden
+                });
             }
             catch
             {
