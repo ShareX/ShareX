@@ -49,7 +49,7 @@ namespace ShareX.UploadersLib
 
             string accept = null;
             string referer = null;
-            string userAgent = ShareXResources.Headers["User-Agent"].ToString();
+            string userAgent = ShareXResources.UserAgent;
 
             if (headers != null)
             {
@@ -120,7 +120,7 @@ namespace ShareX.UploadersLib
             IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             if (proxy != null) request.Proxy = proxy;
             request.Referer = referer;
-            request.Headers["User-Agent"].ToString() = userAgent;
+            request.UserAgent = userAgent;
 
             if (contentLength > 0)
             {

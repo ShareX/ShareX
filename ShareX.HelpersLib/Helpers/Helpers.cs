@@ -39,7 +39,6 @@ using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
-using System.Security.Permissions;
 using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -815,24 +814,6 @@ namespace ShareX.HelpersLib
             result += GetNextRomanNumeralStep(ref num, 4, "IV");
             result += GetNextRomanNumeralStep(ref num, 1, "I");
             return result;
-        }
-
-        [ReflectionPermission(SecurityAction.Assert, MemberAccess = true)]
-        public static bool TryFixHandCursor()
-        {
-            try
-            {
-                // https://referencesource.microsoft.com/#System.Windows.Forms/winforms/Managed/System/WinForms/Cursors.cs,423
-                typeof(Cursors).GetField("hand", BindingFlags.NonPublic | BindingFlags.Static)
-                    .SetValue(null, new Cursor(NativeMethods.LoadCursor(IntPtr.Zero, NativeConstants.IDC_HAND)));
-
-                return true;
-            }
-            catch
-            {
-                // If it fails, we'll just have to live with the old hand.
-                return false;
-            }
         }
 
         public static bool IsTabletMode()

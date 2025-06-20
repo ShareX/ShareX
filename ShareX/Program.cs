@@ -353,7 +353,6 @@ namespace ShareX
             UpdateManager = new ShareXUpdateManager();
             LanguageHelper.ChangeLanguage(Settings.Language);
             CleanupManager.CleanupAsync();
-            Helpers.TryFixHandCursor();
 
             DebugHelper.WriteLine("MainForm init started.");
             MainForm = new MainForm();

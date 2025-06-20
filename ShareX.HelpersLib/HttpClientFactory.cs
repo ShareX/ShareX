@@ -48,7 +48,7 @@ namespace ShareX.HelpersLib
                         };
 
                         client = new HttpClient(clientHandler);
-                        client.DefaultRequestHeaders.Headers["User-Agent"].ToString().ParseAdd(ShareXResources.Headers["User-Agent"].ToString());
+                        client.DefaultRequestHeaders.UserAgent.ParseAdd(ShareXResources.UserAgent);
                         client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue()
                         {
                             NoCache = true

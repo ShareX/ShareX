@@ -100,8 +100,10 @@ namespace ShareX.HelpersLib
                         pipeSecurity.AddAccessRule(new PipeAccessRule(identity.User, PipeAccessRights.ReadWrite, AccessControlType.Allow));
                     }
 
-                    using (NamedPipeServerStream namedPipeServer = new NamedPipeServerStream(PipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous, 0, 0, pipeSecurity))
+                    using (NamedPipeServerStream namedPipeServer = new NamedPipeServerStream(PipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous, 0, 0))
                     {
+                        namedPipeServer.SetAccessControl(pipeSecurity);
+
                         namedPipeServerCreated = true;
 
                         await namedPipeServer.WaitForConnectionAsync(cts.Token).ConfigureAwait(false);

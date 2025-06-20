@@ -26,7 +26,6 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Management;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -211,6 +210,7 @@ namespace ShareX.Steam
                     // Workaround 1.
                     try
                     {
+                        /*
                         using (ManagementClass managementClass = new ManagementClass("Win32_Process"))
                         {
                             ManagementClass processInfo = new ManagementClass("Win32_ProcessStartup");
@@ -227,6 +227,7 @@ namespace ShareX.Steam
                                 return;
                             }
                         }
+                        */
                     }
                     catch
                     {

@@ -27,7 +27,6 @@ using System;
 using System.Drawing;
 using System.Globalization;
 using System.Runtime.InteropServices;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace ShareX.HelpersLib
 {
