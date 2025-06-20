@@ -29,274 +29,270 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonitorTestForm));
-            this.pSettings = new System.Windows.Forms.Panel();
-            this.btnScreenTearingTest = new System.Windows.Forms.Button();
-            this.btnGradientColor2 = new ShareX.HelpersLib.ColorButton();
-            this.btnGradientColor1 = new ShareX.HelpersLib.ColorButton();
-            this.lblTip = new System.Windows.Forms.Label();
-            this.cbGradient = new System.Windows.Forms.ComboBox();
-            this.rbGradient = new System.Windows.Forms.RadioButton();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.lblShapeSize = new System.Windows.Forms.Label();
-            this.lblShapeSizeValue = new System.Windows.Forms.Label();
-            this.tbShapeSize = new System.Windows.Forms.TrackBar();
-            this.btnColorDialog = new System.Windows.Forms.Button();
-            this.cbShapes = new System.Windows.Forms.ComboBox();
-            this.rbShapes = new System.Windows.Forms.RadioButton();
-            this.lblBlue = new System.Windows.Forms.Label();
-            this.lblBlueValue = new System.Windows.Forms.Label();
-            this.tbBlue = new System.Windows.Forms.TrackBar();
-            this.lblGreen = new System.Windows.Forms.Label();
-            this.lblGreenValue = new System.Windows.Forms.Label();
-            this.tbGreen = new System.Windows.Forms.TrackBar();
-            this.lblRed = new System.Windows.Forms.Label();
-            this.lblRedValue = new System.Windows.Forms.Label();
-            this.tbRed = new System.Windows.Forms.TrackBar();
-            this.rbRedGreenBlue = new System.Windows.Forms.RadioButton();
-            this.lblBlackWhiteValue = new System.Windows.Forms.Label();
-            this.tbBlackWhite = new System.Windows.Forms.TrackBar();
-            this.rbBlackWhite = new System.Windows.Forms.RadioButton();
-            this.pSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbShapeSize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbBlue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbGreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbRed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbBlackWhite)).BeginInit();
-            this.SuspendLayout();
+            pSettings = new System.Windows.Forms.Panel();
+            btnScreenTearingTest = new System.Windows.Forms.Button();
+            btnGradientColor2 = new ColorButton();
+            btnGradientColor1 = new ColorButton();
+            lblTip = new System.Windows.Forms.Label();
+            cbGradient = new System.Windows.Forms.ComboBox();
+            rbGradient = new System.Windows.Forms.RadioButton();
+            btnClose = new System.Windows.Forms.Button();
+            lblShapeSize = new System.Windows.Forms.Label();
+            lblShapeSizeValue = new System.Windows.Forms.Label();
+            tbShapeSize = new System.Windows.Forms.TrackBar();
+            btnColorDialog = new System.Windows.Forms.Button();
+            cbShapes = new System.Windows.Forms.ComboBox();
+            rbShapes = new System.Windows.Forms.RadioButton();
+            lblBlue = new System.Windows.Forms.Label();
+            lblBlueValue = new System.Windows.Forms.Label();
+            tbBlue = new System.Windows.Forms.TrackBar();
+            lblGreen = new System.Windows.Forms.Label();
+            lblGreenValue = new System.Windows.Forms.Label();
+            tbGreen = new System.Windows.Forms.TrackBar();
+            lblRed = new System.Windows.Forms.Label();
+            lblRedValue = new System.Windows.Forms.Label();
+            tbRed = new System.Windows.Forms.TrackBar();
+            rbRedGreenBlue = new System.Windows.Forms.RadioButton();
+            lblBlackWhiteValue = new System.Windows.Forms.Label();
+            tbBlackWhite = new System.Windows.Forms.TrackBar();
+            rbBlackWhite = new System.Windows.Forms.RadioButton();
+            pSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tbShapeSize).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbBlue).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbGreen).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbRed).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbBlackWhite).BeginInit();
+            SuspendLayout();
             // 
             // pSettings
             // 
-            this.pSettings.BackColor = System.Drawing.SystemColors.Window;
-            this.pSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pSettings.Controls.Add(this.btnScreenTearingTest);
-            this.pSettings.Controls.Add(this.btnGradientColor2);
-            this.pSettings.Controls.Add(this.btnGradientColor1);
-            this.pSettings.Controls.Add(this.lblTip);
-            this.pSettings.Controls.Add(this.cbGradient);
-            this.pSettings.Controls.Add(this.rbGradient);
-            this.pSettings.Controls.Add(this.btnClose);
-            this.pSettings.Controls.Add(this.lblShapeSize);
-            this.pSettings.Controls.Add(this.lblShapeSizeValue);
-            this.pSettings.Controls.Add(this.tbShapeSize);
-            this.pSettings.Controls.Add(this.btnColorDialog);
-            this.pSettings.Controls.Add(this.cbShapes);
-            this.pSettings.Controls.Add(this.rbShapes);
-            this.pSettings.Controls.Add(this.lblBlue);
-            this.pSettings.Controls.Add(this.lblBlueValue);
-            this.pSettings.Controls.Add(this.tbBlue);
-            this.pSettings.Controls.Add(this.lblGreen);
-            this.pSettings.Controls.Add(this.lblGreenValue);
-            this.pSettings.Controls.Add(this.tbGreen);
-            this.pSettings.Controls.Add(this.lblRed);
-            this.pSettings.Controls.Add(this.lblRedValue);
-            this.pSettings.Controls.Add(this.tbRed);
-            this.pSettings.Controls.Add(this.rbRedGreenBlue);
-            this.pSettings.Controls.Add(this.lblBlackWhiteValue);
-            this.pSettings.Controls.Add(this.tbBlackWhite);
-            this.pSettings.Controls.Add(this.rbBlackWhite);
-            resources.ApplyResources(this.pSettings, "pSettings");
-            this.pSettings.Name = "pSettings";
+            pSettings.BackColor = System.Drawing.SystemColors.Window;
+            pSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pSettings.Controls.Add(btnScreenTearingTest);
+            pSettings.Controls.Add(btnGradientColor2);
+            pSettings.Controls.Add(btnGradientColor1);
+            pSettings.Controls.Add(lblTip);
+            pSettings.Controls.Add(cbGradient);
+            pSettings.Controls.Add(rbGradient);
+            pSettings.Controls.Add(btnClose);
+            pSettings.Controls.Add(lblShapeSize);
+            pSettings.Controls.Add(lblShapeSizeValue);
+            pSettings.Controls.Add(tbShapeSize);
+            pSettings.Controls.Add(btnColorDialog);
+            pSettings.Controls.Add(cbShapes);
+            pSettings.Controls.Add(rbShapes);
+            pSettings.Controls.Add(lblBlue);
+            pSettings.Controls.Add(lblBlueValue);
+            pSettings.Controls.Add(tbBlue);
+            pSettings.Controls.Add(lblGreen);
+            pSettings.Controls.Add(lblGreenValue);
+            pSettings.Controls.Add(tbGreen);
+            pSettings.Controls.Add(lblRed);
+            pSettings.Controls.Add(lblRedValue);
+            pSettings.Controls.Add(tbRed);
+            pSettings.Controls.Add(rbRedGreenBlue);
+            pSettings.Controls.Add(lblBlackWhiteValue);
+            pSettings.Controls.Add(tbBlackWhite);
+            pSettings.Controls.Add(rbBlackWhite);
+            resources.ApplyResources(pSettings, "pSettings");
+            pSettings.Name = "pSettings";
             // 
             // btnScreenTearingTest
             // 
-            resources.ApplyResources(this.btnScreenTearingTest, "btnScreenTearingTest");
-            this.btnScreenTearingTest.Name = "btnScreenTearingTest";
-            this.btnScreenTearingTest.UseVisualStyleBackColor = true;
-            this.btnScreenTearingTest.Click += new System.EventHandler(this.btnScreenTearingTest_Click);
+            resources.ApplyResources(btnScreenTearingTest, "btnScreenTearingTest");
+            btnScreenTearingTest.Name = "btnScreenTearingTest";
+            btnScreenTearingTest.UseVisualStyleBackColor = true;
+            btnScreenTearingTest.Click += btnScreenTearingTest_Click;
             // 
             // btnGradientColor2
             // 
-            this.btnGradientColor2.Color = System.Drawing.Color.Empty;
-            this.btnGradientColor2.ColorPickerOptions = null;
-            resources.ApplyResources(this.btnGradientColor2, "btnGradientColor2");
-            this.btnGradientColor2.Name = "btnGradientColor2";
-            this.btnGradientColor2.UseVisualStyleBackColor = true;
-            this.btnGradientColor2.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor2_ColorChanged);
+            btnGradientColor2.Color = System.Drawing.Color.Empty;
+            btnGradientColor2.ColorPickerOptions = null;
+            resources.ApplyResources(btnGradientColor2, "btnGradientColor2");
+            btnGradientColor2.Name = "btnGradientColor2";
+            btnGradientColor2.UseVisualStyleBackColor = true;
+            btnGradientColor2.ColorChanged += btnGradientColor2_ColorChanged;
             // 
             // btnGradientColor1
             // 
-            this.btnGradientColor1.Color = System.Drawing.Color.Empty;
-            this.btnGradientColor1.ColorPickerOptions = null;
-            resources.ApplyResources(this.btnGradientColor1, "btnGradientColor1");
-            this.btnGradientColor1.Name = "btnGradientColor1";
-            this.btnGradientColor1.UseVisualStyleBackColor = true;
-            this.btnGradientColor1.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor1_ColorChanged);
+            btnGradientColor1.Color = System.Drawing.Color.Empty;
+            btnGradientColor1.ColorPickerOptions = null;
+            resources.ApplyResources(btnGradientColor1, "btnGradientColor1");
+            btnGradientColor1.Name = "btnGradientColor1";
+            btnGradientColor1.UseVisualStyleBackColor = true;
+            btnGradientColor1.ColorChanged += btnGradientColor1_ColorChanged;
             // 
             // lblTip
             // 
-            this.lblTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.lblTip, "lblTip");
-            this.lblTip.Name = "lblTip";
+            lblTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(lblTip, "lblTip");
+            lblTip.Name = "lblTip";
             // 
             // cbGradient
             // 
-            this.cbGradient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGradient.FormattingEnabled = true;
-            resources.ApplyResources(this.cbGradient, "cbGradient");
-            this.cbGradient.Name = "cbGradient";
-            this.cbGradient.SelectedIndexChanged += new System.EventHandler(this.cbGradient_SelectedIndexChanged);
+            cbGradient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbGradient.FormattingEnabled = true;
+            resources.ApplyResources(cbGradient, "cbGradient");
+            cbGradient.Name = "cbGradient";
+            cbGradient.SelectedIndexChanged += cbGradient_SelectedIndexChanged;
             // 
             // rbGradient
             // 
-            resources.ApplyResources(this.rbGradient, "rbGradient");
-            this.rbGradient.Name = "rbGradient";
-            this.rbGradient.UseVisualStyleBackColor = true;
-            this.rbGradient.CheckedChanged += new System.EventHandler(this.rbGradient_CheckedChanged);
+            resources.ApplyResources(rbGradient, "rbGradient");
+            rbGradient.Name = "rbGradient";
+            rbGradient.UseVisualStyleBackColor = true;
+            rbGradient.CheckedChanged += rbGradient_CheckedChanged;
             // 
             // btnClose
             // 
-            resources.ApplyResources(this.btnClose, "btnClose");
-            this.btnClose.Name = "btnClose";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            resources.ApplyResources(btnClose, "btnClose");
+            btnClose.Name = "btnClose";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // lblShapeSize
             // 
-            resources.ApplyResources(this.lblShapeSize, "lblShapeSize");
-            this.lblShapeSize.Name = "lblShapeSize";
+            resources.ApplyResources(lblShapeSize, "lblShapeSize");
+            lblShapeSize.Name = "lblShapeSize";
             // 
             // lblShapeSizeValue
             // 
-            resources.ApplyResources(this.lblShapeSizeValue, "lblShapeSizeValue");
-            this.lblShapeSizeValue.Name = "lblShapeSizeValue";
+            resources.ApplyResources(lblShapeSizeValue, "lblShapeSizeValue");
+            lblShapeSizeValue.Name = "lblShapeSizeValue";
             // 
             // tbShapeSize
             // 
-            resources.ApplyResources(this.tbShapeSize, "tbShapeSize");
-            this.tbShapeSize.Maximum = 100;
-            this.tbShapeSize.Minimum = 1;
-            this.tbShapeSize.Name = "tbShapeSize";
-            this.tbShapeSize.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.tbShapeSize.Value = 1;
-            this.tbShapeSize.ValueChanged += new System.EventHandler(this.tbShapeSize_ValueChanged);
+            resources.ApplyResources(tbShapeSize, "tbShapeSize");
+            tbShapeSize.Maximum = 100;
+            tbShapeSize.Minimum = 1;
+            tbShapeSize.Name = "tbShapeSize";
+            tbShapeSize.TickStyle = System.Windows.Forms.TickStyle.None;
+            tbShapeSize.Value = 1;
+            tbShapeSize.ValueChanged += tbShapeSize_ValueChanged;
             // 
             // btnColorDialog
             // 
-            resources.ApplyResources(this.btnColorDialog, "btnColorDialog");
-            this.btnColorDialog.Name = "btnColorDialog";
-            this.btnColorDialog.UseVisualStyleBackColor = true;
-            this.btnColorDialog.Click += new System.EventHandler(this.btnColorDialog_Click);
+            resources.ApplyResources(btnColorDialog, "btnColorDialog");
+            btnColorDialog.Name = "btnColorDialog";
+            btnColorDialog.UseVisualStyleBackColor = true;
+            btnColorDialog.Click += btnColorDialog_Click;
             // 
             // cbShapes
             // 
-            this.cbShapes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbShapes.FormattingEnabled = true;
-            this.cbShapes.Items.AddRange(new object[] {
-            resources.GetString("cbShapes.Items"),
-            resources.GetString("cbShapes.Items1"),
-            resources.GetString("cbShapes.Items2")});
-            resources.ApplyResources(this.cbShapes, "cbShapes");
-            this.cbShapes.Name = "cbShapes";
-            this.cbShapes.SelectedIndexChanged += new System.EventHandler(this.cbShapes_SelectedIndexChanged);
+            cbShapes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbShapes.FormattingEnabled = true;
+            cbShapes.Items.AddRange(new object[] { resources.GetString("cbShapes.Items"), resources.GetString("cbShapes.Items1"), resources.GetString("cbShapes.Items2") });
+            resources.ApplyResources(cbShapes, "cbShapes");
+            cbShapes.Name = "cbShapes";
+            cbShapes.SelectedIndexChanged += cbShapes_SelectedIndexChanged;
             // 
             // rbShapes
             // 
-            resources.ApplyResources(this.rbShapes, "rbShapes");
-            this.rbShapes.Name = "rbShapes";
-            this.rbShapes.UseVisualStyleBackColor = true;
-            this.rbShapes.CheckedChanged += new System.EventHandler(this.rbShapes_CheckedChanged);
+            resources.ApplyResources(rbShapes, "rbShapes");
+            rbShapes.Name = "rbShapes";
+            rbShapes.UseVisualStyleBackColor = true;
+            rbShapes.CheckedChanged += rbShapes_CheckedChanged;
             // 
             // lblBlue
             // 
-            resources.ApplyResources(this.lblBlue, "lblBlue");
-            this.lblBlue.Name = "lblBlue";
+            resources.ApplyResources(lblBlue, "lblBlue");
+            lblBlue.Name = "lblBlue";
             // 
             // lblBlueValue
             // 
-            resources.ApplyResources(this.lblBlueValue, "lblBlueValue");
-            this.lblBlueValue.Name = "lblBlueValue";
+            resources.ApplyResources(lblBlueValue, "lblBlueValue");
+            lblBlueValue.Name = "lblBlueValue";
             // 
             // tbBlue
             // 
-            resources.ApplyResources(this.tbBlue, "tbBlue");
-            this.tbBlue.Maximum = 255;
-            this.tbBlue.Name = "tbBlue";
-            this.tbBlue.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.tbBlue.ValueChanged += new System.EventHandler(this.tbRedGreenBlue_ValueChanged);
+            resources.ApplyResources(tbBlue, "tbBlue");
+            tbBlue.Maximum = 255;
+            tbBlue.Name = "tbBlue";
+            tbBlue.TickStyle = System.Windows.Forms.TickStyle.None;
+            tbBlue.ValueChanged += tbRedGreenBlue_ValueChanged;
             // 
             // lblGreen
             // 
-            resources.ApplyResources(this.lblGreen, "lblGreen");
-            this.lblGreen.Name = "lblGreen";
+            resources.ApplyResources(lblGreen, "lblGreen");
+            lblGreen.Name = "lblGreen";
             // 
             // lblGreenValue
             // 
-            resources.ApplyResources(this.lblGreenValue, "lblGreenValue");
-            this.lblGreenValue.Name = "lblGreenValue";
+            resources.ApplyResources(lblGreenValue, "lblGreenValue");
+            lblGreenValue.Name = "lblGreenValue";
             // 
             // tbGreen
             // 
-            resources.ApplyResources(this.tbGreen, "tbGreen");
-            this.tbGreen.Maximum = 255;
-            this.tbGreen.Name = "tbGreen";
-            this.tbGreen.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.tbGreen.ValueChanged += new System.EventHandler(this.tbRedGreenBlue_ValueChanged);
+            resources.ApplyResources(tbGreen, "tbGreen");
+            tbGreen.Maximum = 255;
+            tbGreen.Name = "tbGreen";
+            tbGreen.TickStyle = System.Windows.Forms.TickStyle.None;
+            tbGreen.ValueChanged += tbRedGreenBlue_ValueChanged;
             // 
             // lblRed
             // 
-            resources.ApplyResources(this.lblRed, "lblRed");
-            this.lblRed.Name = "lblRed";
+            resources.ApplyResources(lblRed, "lblRed");
+            lblRed.Name = "lblRed";
             // 
             // lblRedValue
             // 
-            resources.ApplyResources(this.lblRedValue, "lblRedValue");
-            this.lblRedValue.Name = "lblRedValue";
+            resources.ApplyResources(lblRedValue, "lblRedValue");
+            lblRedValue.Name = "lblRedValue";
             // 
             // tbRed
             // 
-            resources.ApplyResources(this.tbRed, "tbRed");
-            this.tbRed.Maximum = 255;
-            this.tbRed.Name = "tbRed";
-            this.tbRed.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.tbRed.ValueChanged += new System.EventHandler(this.tbRedGreenBlue_ValueChanged);
+            resources.ApplyResources(tbRed, "tbRed");
+            tbRed.Maximum = 255;
+            tbRed.Name = "tbRed";
+            tbRed.TickStyle = System.Windows.Forms.TickStyle.None;
+            tbRed.ValueChanged += tbRedGreenBlue_ValueChanged;
             // 
             // rbRedGreenBlue
             // 
-            resources.ApplyResources(this.rbRedGreenBlue, "rbRedGreenBlue");
-            this.rbRedGreenBlue.Name = "rbRedGreenBlue";
-            this.rbRedGreenBlue.UseVisualStyleBackColor = true;
-            this.rbRedGreenBlue.CheckedChanged += new System.EventHandler(this.rbRedGreenBlue_CheckedChanged);
+            resources.ApplyResources(rbRedGreenBlue, "rbRedGreenBlue");
+            rbRedGreenBlue.Name = "rbRedGreenBlue";
+            rbRedGreenBlue.UseVisualStyleBackColor = true;
+            rbRedGreenBlue.CheckedChanged += rbRedGreenBlue_CheckedChanged;
             // 
             // lblBlackWhiteValue
             // 
-            resources.ApplyResources(this.lblBlackWhiteValue, "lblBlackWhiteValue");
-            this.lblBlackWhiteValue.Name = "lblBlackWhiteValue";
+            resources.ApplyResources(lblBlackWhiteValue, "lblBlackWhiteValue");
+            lblBlackWhiteValue.Name = "lblBlackWhiteValue";
             // 
             // tbBlackWhite
             // 
-            resources.ApplyResources(this.tbBlackWhite, "tbBlackWhite");
-            this.tbBlackWhite.Maximum = 255;
-            this.tbBlackWhite.Name = "tbBlackWhite";
-            this.tbBlackWhite.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.tbBlackWhite.ValueChanged += new System.EventHandler(this.tbBlackWhite_ValueChanged);
+            resources.ApplyResources(tbBlackWhite, "tbBlackWhite");
+            tbBlackWhite.Maximum = 255;
+            tbBlackWhite.Name = "tbBlackWhite";
+            tbBlackWhite.TickStyle = System.Windows.Forms.TickStyle.None;
+            tbBlackWhite.ValueChanged += tbBlackWhite_ValueChanged;
             // 
             // rbBlackWhite
             // 
-            resources.ApplyResources(this.rbBlackWhite, "rbBlackWhite");
-            this.rbBlackWhite.Name = "rbBlackWhite";
-            this.rbBlackWhite.UseVisualStyleBackColor = true;
-            this.rbBlackWhite.CheckedChanged += new System.EventHandler(this.rbBlackWhite_CheckedChanged);
+            resources.ApplyResources(rbBlackWhite, "rbBlackWhite");
+            rbBlackWhite.Name = "rbBlackWhite";
+            rbBlackWhite.UseVisualStyleBackColor = true;
+            rbBlackWhite.CheckedChanged += rbBlackWhite_CheckedChanged;
             // 
             // MonitorTestForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.pSettings);
-            this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MonitorTestForm";
-            this.TopMost = true;
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MonitorTestForm_MouseDown);
-            this.pSettings.ResumeLayout(false);
-            this.pSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbShapeSize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbBlue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbGreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbRed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbBlackWhite)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            BackColor = System.Drawing.Color.White;
+            Controls.Add(pSettings);
+            DoubleBuffered = true;
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Name = "MonitorTestForm";
+            TopMost = true;
+            MouseDown += MonitorTestForm_MouseDown;
+            pSettings.ResumeLayout(false);
+            pSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tbShapeSize).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbBlue).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbGreen).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbRed).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbBlackWhite).EndInit();
+            ResumeLayout(false);
 
         }
 

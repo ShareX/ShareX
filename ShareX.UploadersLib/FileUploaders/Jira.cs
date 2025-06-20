@@ -90,7 +90,7 @@ namespace ShareX.UploadersLib.FileUploaders
             using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ShareX.UploadersLib.APIKeys.jira_sharex.pfx"))
             {
                 byte[] pfx = new byte[stream.Length];
-                stream.Read(pfx, 0, pfx.Length);
+                stream.ReadExactly(pfx);
                 jiraCertificate = new X509Certificate2(pfx, "", X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable);
             }
         }

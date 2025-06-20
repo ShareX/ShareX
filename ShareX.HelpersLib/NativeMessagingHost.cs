@@ -38,13 +38,13 @@ namespace ShareX.HelpersLib
             Stream inputStream = Console.OpenStandardInput();
 
             byte[] bytesLength = new byte[4];
-            inputStream.Read(bytesLength, 0, bytesLength.Length);
+            inputStream.ReadExactly(bytesLength);
             int inputLength = BitConverter.ToInt32(bytesLength, 0);
 
             if (inputLength > 0)
             {
                 byte[] bytesInput = new byte[inputLength];
-                inputStream.Read(bytesInput, 0, bytesInput.Length);
+                inputStream.ReadExactly(bytesInput);
                 input = Encoding.UTF8.GetString(bytesInput);
             }
 

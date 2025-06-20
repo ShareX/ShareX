@@ -15,113 +15,110 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScreenRecordForm));
-            this.btnStart = new ShareX.HelpersLib.NoFocusBorderButton();
-            this.lblTimer = new System.Windows.Forms.Label();
-            this.timerRefresh = new System.Windows.Forms.Timer(this.components);
-            this.btnAbort = new ShareX.HelpersLib.NoFocusBorderButton();
-            this.pInfo = new System.Windows.Forms.Panel();
-            this.btnPause = new ShareX.HelpersLib.NoFocusBorderButton();
-            this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiStart = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPause = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAbort = new System.Windows.Forms.ToolStripMenuItem();
-            this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
-            this.pInfo.SuspendLayout();
-            this.cmsMain.SuspendLayout();
-            this.SuspendLayout();
+            btnStart = new ShareX.HelpersLib.NoFocusBorderButton();
+            lblTimer = new System.Windows.Forms.Label();
+            timerRefresh = new System.Windows.Forms.Timer(components);
+            btnAbort = new ShareX.HelpersLib.NoFocusBorderButton();
+            pInfo = new System.Windows.Forms.Panel();
+            btnPause = new ShareX.HelpersLib.NoFocusBorderButton();
+            cmsMain = new System.Windows.Forms.ContextMenuStrip(components);
+            tsmiStart = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiPause = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiAbort = new System.Windows.Forms.ToolStripMenuItem();
+            niTray = new System.Windows.Forms.NotifyIcon(components);
+            pInfo.SuspendLayout();
+            cmsMain.SuspendLayout();
+            SuspendLayout();
             // 
             // btnStart
             // 
-            resources.ApplyResources(this.btnStart, "btnStart");
-            this.btnStart.Name = "btnStart";
-            this.btnStart.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
+            resources.ApplyResources(btnStart, "btnStart");
+            btnStart.Name = "btnStart";
+            btnStart.MouseClick += btnStart_MouseClick;
             // 
             // lblTimer
             // 
-            resources.ApplyResources(this.lblTimer, "lblTimer");
-            this.lblTimer.Name = "lblTimer";
-            this.lblTimer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblTimer_MouseDown);
-            this.lblTimer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblTimer_MouseMove);
-            this.lblTimer.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblTimer_MouseUp);
+            resources.ApplyResources(lblTimer, "lblTimer");
+            lblTimer.Name = "lblTimer";
+            lblTimer.MouseDown += lblTimer_MouseDown;
+            lblTimer.MouseMove += lblTimer_MouseMove;
+            lblTimer.MouseUp += lblTimer_MouseUp;
             // 
             // timerRefresh
             // 
-            this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
+            timerRefresh.Tick += timerRefresh_Tick;
             // 
             // btnAbort
             // 
-            resources.ApplyResources(this.btnAbort, "btnAbort");
-            this.btnAbort.Name = "btnAbort";
-            this.btnAbort.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAbort_MouseClick);
+            resources.ApplyResources(btnAbort, "btnAbort");
+            btnAbort.Name = "btnAbort";
+            btnAbort.MouseClick += btnAbort_MouseClick;
             // 
             // pInfo
             // 
-            resources.ApplyResources(this.pInfo, "pInfo");
-            this.pInfo.Controls.Add(this.btnPause);
-            this.pInfo.Controls.Add(this.btnAbort);
-            this.pInfo.Controls.Add(this.btnStart);
-            this.pInfo.Controls.Add(this.lblTimer);
-            this.pInfo.Name = "pInfo";
+            resources.ApplyResources(pInfo, "pInfo");
+            pInfo.Controls.Add(btnPause);
+            pInfo.Controls.Add(btnAbort);
+            pInfo.Controls.Add(btnStart);
+            pInfo.Controls.Add(lblTimer);
+            pInfo.Name = "pInfo";
             // 
             // btnPause
             // 
-            resources.ApplyResources(this.btnPause, "btnPause");
-            this.btnPause.Name = "btnPause";
-            this.btnPause.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnPause_MouseClick);
+            resources.ApplyResources(btnPause, "btnPause");
+            btnPause.Name = "btnPause";
+            btnPause.MouseClick += btnPause_MouseClick;
             // 
             // cmsMain
             // 
-            this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiStart,
-            this.tsmiPause,
-            this.tsmiAbort});
-            this.cmsMain.Name = "cmsMain";
-            resources.ApplyResources(this.cmsMain, "cmsMain");
+            cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiStart, tsmiPause, tsmiAbort });
+            cmsMain.Name = "cmsMain";
+            resources.ApplyResources(cmsMain, "cmsMain");
             // 
             // tsmiStart
             // 
-            this.tsmiStart.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.control_record;
-            this.tsmiStart.Name = "tsmiStart";
-            resources.ApplyResources(this.tsmiStart, "tsmiStart");
-            this.tsmiStart.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
+            tsmiStart.Image = Properties.Resources.control_record;
+            tsmiStart.Name = "tsmiStart";
+            resources.ApplyResources(tsmiStart, "tsmiStart");
+            tsmiStart.MouseUp += btnStart_MouseClick;
             // 
             // tsmiPause
             // 
-            this.tsmiPause.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.control_pause;
-            this.tsmiPause.Name = "tsmiPause";
-            resources.ApplyResources(this.tsmiPause, "tsmiPause");
-            this.tsmiPause.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnPause_MouseClick);
+            tsmiPause.Image = Properties.Resources.control_pause;
+            tsmiPause.Name = "tsmiPause";
+            resources.ApplyResources(tsmiPause, "tsmiPause");
+            tsmiPause.MouseUp += btnPause_MouseClick;
             // 
             // tsmiAbort
             // 
-            this.tsmiAbort.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.cross;
-            this.tsmiAbort.Name = "tsmiAbort";
-            resources.ApplyResources(this.tsmiAbort, "tsmiAbort");
-            this.tsmiAbort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnAbort_MouseClick);
+            tsmiAbort.Image = Properties.Resources.cross;
+            tsmiAbort.Name = "tsmiAbort";
+            resources.ApplyResources(tsmiAbort, "tsmiAbort");
+            tsmiAbort.MouseUp += btnAbort_MouseClick;
             // 
             // niTray
             // 
-            this.niTray.ContextMenuStrip = this.cmsMain;
-            resources.ApplyResources(this.niTray, "niTray");
-            this.niTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
+            niTray.ContextMenuStrip = cmsMain;
+            resources.ApplyResources(niTray, "niTray");
+            niTray.MouseClick += btnStart_MouseClick;
             // 
             // ScreenRecordForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.pInfo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ScreenRecordForm";
-            this.ShowInTaskbar = false;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ScreenRecordForm_FormClosed);
-            this.Shown += new System.EventHandler(this.ScreenRegionForm_Shown);
-            this.pInfo.ResumeLayout(false);
-            this.cmsMain.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.SystemColors.Window;
+            Controls.Add(pInfo);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Name = "ScreenRecordForm";
+            ShowInTaskbar = false;
+            FormClosed += ScreenRecordForm_FormClosed;
+            Shown += ScreenRegionForm_Shown;
+            pInfo.ResumeLayout(false);
+            cmsMain.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
