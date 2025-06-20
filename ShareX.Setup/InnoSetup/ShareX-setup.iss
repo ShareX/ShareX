@@ -44,16 +44,13 @@ Name: "EnableBrowserExtensionSupport"; Description: "Enable browser extension su
 Name: "DisablePrintScreenKeyForSnippingTool"; Description: "Disable Print Screen key for Snipping Tool"; GroupDescription: "Other tasks:"; Check: not IsUpdating
 
 [Files]
-Source: "{#MyAppFilePath}"; DestDir: {app}; Flags: ignoreversion
-Source: "{#MyAppFilePath}.config"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppReleaseDirectory}\*.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\*.dll"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppReleaseDirectory}\*.json"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppRootDirectory}\Licenses\*.txt"; DestDir: {app}\Licenses; Flags: ignoreversion
 Source: "{#MyAppOutputDirectory}\*.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppOutputDirectory}\exiftool_files\*"; DestDir: {app}\exiftool_files; Flags: ignoreversion recursesubdirs
 Source: "{#MyAppReleaseDirectory}\ShareX_File_Icon.ico"; DestDir: {app}; Flags: ignoreversion
-Source: "{#MyAppReleaseDirectory}\ShareX_NativeMessagingHost.exe"; DestDir: {app}; Flags: ignoreversion
-Source: "{#MyAppReleaseDirectory}\host-manifest-chrome.json"; DestDir: {app}; Flags: ignoreversion
-Source: "{#MyAppReleaseDirectory}\host-manifest-firefox.json"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\ar-YE\*.resources.dll"; DestDir: {app}\Languages\ar-YE; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\de\*.resources.dll"; DestDir: {app}\Languages\de; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\es\*.resources.dll"; DestDir: {app}\Languages\es; Flags: ignoreversion
@@ -108,8 +105,6 @@ Root: "HKCU"; Subkey: "SOFTWARE\Google\Chrome\NativeMessagingHosts\com.getsharex
 Root: "HKCU"; Subkey: "SOFTWARE\Mozilla\NativeMessagingHosts\ShareX"; ValueType: string; ValueData: "{app}\host-manifest-firefox.json"; Flags: uninsdeletekey; Tasks: EnableBrowserExtensionSupport
 Root: "HKCU"; Subkey: "Control Panel\Keyboard"; ValueType: dword; ValueName: "PrintScreenKeyForSnippingEnabled"; ValueData: "0"; Flags: uninsdeletevalue; Tasks: DisablePrintScreenKeyForSnippingTool
 
-#include "CodeDependencies.iss"
-
 [Code]
 procedure InitializeWizard;
 begin
@@ -117,29 +112,6 @@ begin
   begin
     WizardForm.DirEdit.Text := ExpandConstant('{userpf}\{#MyAppName}');
   end;
-
-  Dependency_InitializeWizard;
-end;
-
-function PrepareToInstall(var NeedsRestart: Boolean): String;
-begin
-  Result := Dependency_PrepareToInstall(NeedsRestart);
-end;
-
-function NeedRestart: Boolean;
-begin
-  Result := Dependency_NeedRestart;
-end;
-
-function UpdateReadyMemo(const Space, NewLine, MemoUserInfoInfo, MemoDirInfo, MemoTypeInfo, MemoComponentsInfo, MemoGroupInfo, MemoTasksInfo: String): String;
-begin
-  Result := Dependency_UpdateReadyMemo(Space, NewLine, MemoUserInfoInfo, MemoDirInfo, MemoTypeInfo, MemoComponentsInfo, MemoGroupInfo, MemoTasksInfo);
-end;
-
-function InitializeSetup(): Boolean;
-begin
-  Dependency_AddDotNet48;
-  Result := true;
 end;
 
 function InitializeUninstall(): Boolean;

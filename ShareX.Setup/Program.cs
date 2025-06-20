@@ -364,9 +364,9 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(destination);
 
-            FileHelpers.CopyFiles(Path.Combine(source, "ShareX.exe"), destination);
-            FileHelpers.CopyFiles(Path.Combine(source, "ShareX.exe.config"), destination);
+            FileHelpers.CopyFiles(source, destination, "*.exe");
             FileHelpers.CopyFiles(source, destination, "*.dll");
+            FileHelpers.CopyFiles(source, destination, "*.json");
 
             if (job == SetupJobs.CreateDebug || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
             {
@@ -381,12 +381,9 @@ namespace ShareX.Setup
                 {
                     FileHelpers.CopyFiles(RecorderDevicesSetupPath, destination);
                 }
-
-                FileHelpers.CopyFiles(Path.Combine(source, "ShareX_File_Icon.ico"), destination);
-                FileHelpers.CopyFiles(Path.Combine(source, "ShareX_NativeMessagingHost.exe"), destination);
-                FileHelpers.CopyFiles(Path.Combine(source, "host-manifest-chrome.json"), destination);
-                FileHelpers.CopyFiles(Path.Combine(source, "host-manifest-firefox.json"), destination);
             }
+
+            FileHelpers.CopyFiles(Path.Combine(source, "ShareX_File_Icon.ico"), destination);
 
             foreach (string directory in Directory.GetDirectories(source))
             {
