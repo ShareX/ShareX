@@ -49,7 +49,7 @@ namespace ShareX.HelpersLib
 
         static FastDateTime()
         {
-            LocalUtcOffset = TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now);
+            LocalUtcOffset = TimeZoneInfo.Local.GetUtcOffset(DateTime.Now);
         }
 
         public static DateTime ToLocalTime(DateTime dateTime)
