@@ -25,6 +25,7 @@
 
 using Newtonsoft.Json.Serialization;
 using System.Reflection;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ShareX.HelpersLib
 {
