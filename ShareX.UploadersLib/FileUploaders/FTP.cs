@@ -146,7 +146,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (!string.IsNullOrEmpty(account.FTPSCertificateLocation) && File.Exists(account.FTPSCertificateLocation))
                 {
-                    X509Certificate cert = X509Certificate2.CreateFromSignedFile(Account.FTPSCertificateLocation);
+                    X509Certificate cert = X509CertificateLoader.LoadCertificateFromFile(Account.FTPSCertificateLocation);
                     client.Config.ClientCertificates.Add(cert);
                 }
                 else
