@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 
 namespace ShareX.UploadersLib
@@ -52,6 +53,7 @@ namespace ShareX.UploadersLib
         protected ResponseInfo LastResponseInfo { get; set; }
 
         private HttpWebRequest currentWebRequest;
+        private HttpClient currentHttpClient;
 
         protected void OnProgressChanged(ProgressManager progress)
         {
@@ -96,22 +98,24 @@ namespace ShareX.UploadersLib
             }
         }
 
-        internal string SendRequest(ShareXHttpMethod method, string url, Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null)
+        internal string SendRequest(ShareXHttpMethod method, string url, Dictionary<string, string> args = null, NameValueCollection headers = null,
+            CookieCollection cookies = null)
         {
             return SendRequest(method, url, (Stream)null, null, args, headers, cookies);
         }
 
-        protected string SendRequest(ShareXHttpMethod method, string url, Stream data, string contentType = null, Dictionary<string, string> args = null, NameValueCollection headers = null,
-            CookieCollection cookies = null)
+        protected string SendRequest(ShareXHttpMethod method, string url, Stream data, string contentType = null, Dictionary<string, string> args = null,
+            NameValueCollection headers = null, CookieCollection cookies = null)
         {
-            using (HttpWebResponse webResponse = GetResponse(method, url, data, contentType, args, headers, cookies))
-            {
-                return ProcessWebResponseText(webResponse);
-            }
+            HttpRequestMessage request = RequestHelpers.CreateHttpRequestMessage(method, url, args, headers, data, contentType);
+            HttpClient client = RequestHelpers.CreateHttpClient(url, cookies);
+            currentHttpClient = client;
+            HttpResponseMessage response = client.SendAsync(request).GetAwaiter().GetResult();
+            return GetResponseAsString(response);
         }
 
-        protected string SendRequest(ShareXHttpMethod method, string url, string content, string contentType = null, Dictionary<string, string> args = null, NameValueCollection headers = null,
-            CookieCollection cookies = null)
+        protected string SendRequest(ShareXHttpMethod method, string url, string content, string contentType = null, Dictionary<string, string> args = null,
+            NameValueCollection headers = null, CookieCollection cookies = null)
         {
             byte[] data = Encoding.UTF8.GetBytes(content);
 
@@ -519,6 +523,16 @@ namespace ShareX.UploadersLib
             }
 
             return null;
+        }
+
+        private string GetResponseAsString(HttpResponseMessage response)
+        {
+            LastResponseInfo = new ResponseInfo()
+            {
+                StatusCode = response.StatusCode
+            };
+
+            return response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
         }
 
         #endregion Helper methods

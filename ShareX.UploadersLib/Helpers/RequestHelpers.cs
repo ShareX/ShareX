@@ -30,6 +30,8 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Net;
 using System.Net.Cache;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 
 namespace ShareX.UploadersLib
@@ -41,6 +43,133 @@ namespace ShareX.UploadersLib
         public const string ContentTypeXML = "application/xml";
         public const string ContentTypeURLEncoded = "application/x-www-form-urlencoded";
         public const string ContentTypeOctetStream = "application/octet-stream";
+
+        public static HttpRequestMessage CreateHttpRequestMessage(ShareXHttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null,
+            Stream data = null, string contentType = null)
+        {
+            url = URLHelpers.CreateQueryString(url, args);
+            long contentLength = data != null ? data.Length : 0;
+
+            HttpMethod httpMethod = GetHttpMethod(method);
+            HttpRequestMessage request = new HttpRequestMessage(httpMethod, url);
+            string accept = null;
+            string referer = null;
+            string userAgent = ShareXResources.UserAgent;
+
+            if (headers != null)
+            {
+                if (headers["Accept"] != null)
+                {
+                    accept = headers["Accept"];
+                    headers.Remove("Accept");
+                }
+
+                if (headers["Content-Length"] != null)
+                {
+                    if (long.TryParse(headers["Content-Length"], out var parsedLength))
+                    {
+                        contentLength = parsedLength;
+                    }
+                    headers.Remove("Content-Length");
+                }
+
+                if (headers["Content-Type"] != null)
+                {
+                    contentType = headers["Content-Type"];
+                    headers.Remove("Content-Type");
+                }
+
+                if (headers["Referer"] != null)
+                {
+                    referer = headers["Referer"];
+                    headers.Remove("Referer");
+                }
+
+                if (headers["User-Agent"] != null)
+                {
+                    userAgent = headers["User-Agent"];
+                    headers.Remove("User-Agent");
+                }
+
+                foreach (string key in headers.AllKeys)
+                {
+                    request.Headers.TryAddWithoutValidation(key, headers[key]);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(accept))
+            {
+                request.Headers.Accept.ParseAdd(accept);
+            }
+
+            if (!string.IsNullOrEmpty(referer))
+            {
+                request.Headers.Referrer = new Uri(referer);
+            }
+
+            if (!string.IsNullOrEmpty(userAgent))
+            {
+                request.Headers.UserAgent.ParseAdd(userAgent);
+            }
+
+            if (contentLength > 0)
+            {
+                request.Content = new StreamContent(data);
+
+                if (!string.IsNullOrEmpty(contentType))
+                {
+                    request.Content.Headers.ContentType = new MediaTypeHeaderValue(contentType);
+                }
+
+                if (contentLength > 0)
+                {
+                    request.Content.Headers.ContentLength = contentLength;
+                }
+            }
+
+            return request;
+        }
+
+        public static HttpClient CreateHttpClient(string url, CookieCollection cookies = null)
+        {
+            HttpClientHandler handler = new HttpClientHandler();
+
+            if (cookies != null)
+            {
+                handler.UseCookies = true;
+                handler.CookieContainer = new CookieContainer();
+                handler.CookieContainer.Add(new Uri(url), cookies);
+            }
+
+            IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
+
+            if (proxy != null)
+            {
+                handler.Proxy = proxy;
+                handler.UseProxy = true;
+            }
+            else
+            {
+                handler.UseProxy = false;
+            }
+
+            HttpClient client = new HttpClient(handler);
+
+            return client;
+        }
+
+        public static HttpMethod GetHttpMethod(ShareXHttpMethod method)
+        {
+            return method switch
+            {
+                ShareXHttpMethod.GET => HttpMethod.Get,
+                ShareXHttpMethod.POST => HttpMethod.Post,
+                ShareXHttpMethod.PUT => HttpMethod.Put,
+                ShareXHttpMethod.PATCH => HttpMethod.Patch,
+                ShareXHttpMethod.DELETE => HttpMethod.Delete,
+                _ => HttpMethod.Parse(method.ToString())
+            };
+        }
 
         public static HttpWebRequest CreateWebRequest(ShareXHttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null,
             string contentType = null, long contentLength = 0)
