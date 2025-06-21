@@ -5,11 +5,13 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ImageListView" Version="13.8.2" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
     <ProjectReference Include="..\ShareX.ImageEffectsLib\ShareX.ImageEffectsLib.csproj" />
     <ProjectReference Include="..\ShareX.MediaLib\ShareX.MediaLib.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ImageListView">
+      <HintPath>..\Libs\ImageListView.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

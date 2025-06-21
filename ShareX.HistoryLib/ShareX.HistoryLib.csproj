@@ -6,6 +6,10 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
-    <PackageReference Include="ImageListView" Version="13.8.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ImageListView">
+      <HintPath>..\Libs\ImageListView.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
