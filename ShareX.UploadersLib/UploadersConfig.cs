@@ -242,14 +242,6 @@ namespace ShareX.UploadersLib
 
         #endregion Email
 
-        #region Jira
-
-        public string JiraHost { get; set; } = "http://";
-        public string JiraIssuePrefix { get; set; } = "PROJECT-";
-        public OAuthInfo JiraOAuthInfo { get; set; } = null;
-
-        #endregion Jira
-
         #region Mega
 
         public MegaAuthInfos MegaAuthInfos { get; set; } = null;

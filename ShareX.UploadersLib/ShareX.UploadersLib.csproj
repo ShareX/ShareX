@@ -14,9 +14,6 @@
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="APIKeys\jira_sharex.pfx" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Resources\OAuthCallbackPage.html" />
   </ItemGroup>
 </Project>

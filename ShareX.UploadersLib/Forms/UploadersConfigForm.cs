@@ -463,42 +463,6 @@ namespace ShareX.UploadersLib
 
             #endregion Shared folder
 
-            #region Jira
-
-            txtJiraHost.Text = Config.JiraHost;
-            txtJiraIssuePrefix.Text = Config.JiraIssuePrefix;
-
-            try
-            {
-                txtJiraConfigHelp.Text = string.Format(@"How to configure your Jira server:
-
-- Go to 'Administration' -> 'Add-ons'
-- Select 'Application Links'
-
-- Add a new 'Application Link' with following settings:
-    - Server URL: {0}
-    - Application Name: {1}
-    - Application Type: Generic Application
-
-- Now, you have to configure Incoming Authentication
-        - Consumer Key: {2}
-        - Consumer Name: {1}
-        - Public Key (without quotes): '{3}'
-
-- You can now authenticate to Jira", Links.Website, "ShareX", APIKeys.JiraConsumerKey, Jira.PublicKey);
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            if (OAuthInfo.CheckOAuth(Config.JiraOAuthInfo))
-            {
-                oAuthJira.Status = OAuthLoginStatus.LoginSuccessful;
-            }
-
-            #endregion Jira
-
             #region Mega
 
             MegaConfigureTab(false);
@@ -1898,40 +1862,6 @@ However, there is a workaround. You can navigate to the Google Drive website in 
         }
 
         #endregion Localhostr
-
-        #region Jira
-
-        private void txtJiraHost_TextChanged(object sender, EventArgs e)
-        {
-            Config.JiraHost = txtJiraHost.Text;
-        }
-
-        private void txtJiraIssuePrefix_TextChanged(object sender, EventArgs e)
-        {
-            Config.JiraIssuePrefix = txtJiraIssuePrefix.Text;
-        }
-
-        private void oAuthJira_OpenButtonClicked()
-        {
-            JiraAuthOpen();
-        }
-
-        private void oAuthJira_CompleteButtonClicked(string code)
-        {
-            JiraAuthComplete(code);
-        }
-
-        private void oAuthJira_ClearButtonClicked()
-        {
-            Config.JiraOAuthInfo = null;
-        }
-
-        private void oAuthJira_RefreshButtonClicked()
-        {
-            MessageBox.Show(Resources.UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        #endregion Jira
 
         #region Mega
 

@@ -352,14 +352,6 @@ namespace ShareX.UploadersLib
             lblLocalhostrEmail = new System.Windows.Forms.Label();
             txtLocalhostrPassword = new System.Windows.Forms.TextBox();
             txtLocalhostrEmail = new System.Windows.Forms.TextBox();
-            tpJira = new System.Windows.Forms.TabPage();
-            txtJiraIssuePrefix = new System.Windows.Forms.TextBox();
-            lblJiraIssuePrefix = new System.Windows.Forms.Label();
-            gbJiraServer = new System.Windows.Forms.GroupBox();
-            txtJiraConfigHelp = new System.Windows.Forms.TextBox();
-            txtJiraHost = new System.Windows.Forms.TextBox();
-            lblJiraHost = new System.Windows.Forms.Label();
-            oAuthJira = new OAuthControl();
             tpLambda = new System.Windows.Forms.TabPage();
             lblLambdaInfo = new System.Windows.Forms.Label();
             lblLambdaApiKey = new System.Windows.Forms.Label();
@@ -631,8 +623,6 @@ namespace ShareX.UploadersLib
             tpPushbullet.SuspendLayout();
             tpSendSpace.SuspendLayout();
             tpHostr.SuspendLayout();
-            tpJira.SuspendLayout();
-            gbJiraServer.SuspendLayout();
             tpLambda.SuspendLayout();
             tpPomf.SuspendLayout();
             tpSeafile.SuspendLayout();
@@ -1168,7 +1158,6 @@ namespace ShareX.UploadersLib
             tcFileUploaders.Controls.Add(tpPushbullet);
             tcFileUploaders.Controls.Add(tpSendSpace);
             tcFileUploaders.Controls.Add(tpHostr);
-            tcFileUploaders.Controls.Add(tpJira);
             tcFileUploaders.Controls.Add(tpLambda);
             tcFileUploaders.Controls.Add(tpPomf);
             tcFileUploaders.Controls.Add(tpSeafile);
@@ -2821,64 +2810,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(txtLocalhostrEmail, "txtLocalhostrEmail");
             txtLocalhostrEmail.Name = "txtLocalhostrEmail";
             txtLocalhostrEmail.TextChanged += txtLocalhostrEmail_TextChanged;
-            // 
-            // tpJira
-            // 
-            tpJira.BackColor = System.Drawing.SystemColors.Window;
-            tpJira.Controls.Add(txtJiraIssuePrefix);
-            tpJira.Controls.Add(lblJiraIssuePrefix);
-            tpJira.Controls.Add(gbJiraServer);
-            tpJira.Controls.Add(oAuthJira);
-            resources.ApplyResources(tpJira, "tpJira");
-            tpJira.Name = "tpJira";
-            // 
-            // txtJiraIssuePrefix
-            // 
-            resources.ApplyResources(txtJiraIssuePrefix, "txtJiraIssuePrefix");
-            txtJiraIssuePrefix.Name = "txtJiraIssuePrefix";
-            txtJiraIssuePrefix.TextChanged += txtJiraIssuePrefix_TextChanged;
-            // 
-            // lblJiraIssuePrefix
-            // 
-            resources.ApplyResources(lblJiraIssuePrefix, "lblJiraIssuePrefix");
-            lblJiraIssuePrefix.Name = "lblJiraIssuePrefix";
-            // 
-            // gbJiraServer
-            // 
-            gbJiraServer.Controls.Add(txtJiraConfigHelp);
-            gbJiraServer.Controls.Add(txtJiraHost);
-            gbJiraServer.Controls.Add(lblJiraHost);
-            resources.ApplyResources(gbJiraServer, "gbJiraServer");
-            gbJiraServer.Name = "gbJiraServer";
-            gbJiraServer.TabStop = false;
-            // 
-            // txtJiraConfigHelp
-            // 
-            txtJiraConfigHelp.BackColor = System.Drawing.SystemColors.Window;
-            resources.ApplyResources(txtJiraConfigHelp, "txtJiraConfigHelp");
-            txtJiraConfigHelp.Name = "txtJiraConfigHelp";
-            txtJiraConfigHelp.ReadOnly = true;
-            // 
-            // txtJiraHost
-            // 
-            resources.ApplyResources(txtJiraHost, "txtJiraHost");
-            txtJiraHost.Name = "txtJiraHost";
-            txtJiraHost.TextChanged += txtJiraHost_TextChanged;
-            // 
-            // lblJiraHost
-            // 
-            resources.ApplyResources(lblJiraHost, "lblJiraHost");
-            lblJiraHost.Name = "lblJiraHost";
-            // 
-            // oAuthJira
-            // 
-            resources.ApplyResources(oAuthJira, "oAuthJira");
-            oAuthJira.Name = "oAuthJira";
-            oAuthJira.UserInfo = null;
-            oAuthJira.OpenButtonClicked += oAuthJira_OpenButtonClicked;
-            oAuthJira.CompleteButtonClicked += oAuthJira_CompleteButtonClicked;
-            oAuthJira.ClearButtonClicked += oAuthJira_ClearButtonClicked;
-            oAuthJira.RefreshButtonClicked += oAuthJira_RefreshButtonClicked;
             // 
             // tpLambda
             // 
@@ -4627,10 +4558,6 @@ namespace ShareX.UploadersLib
             tpSendSpace.PerformLayout();
             tpHostr.ResumeLayout(false);
             tpHostr.PerformLayout();
-            tpJira.ResumeLayout(false);
-            tpJira.PerformLayout();
-            gbJiraServer.ResumeLayout(false);
-            gbJiraServer.PerformLayout();
             tpLambda.ResumeLayout(false);
             tpLambda.PerformLayout();
             tpPomf.ResumeLayout(false);
@@ -4787,13 +4714,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblLocalhostrEmail;
         private System.Windows.Forms.TextBox txtLocalhostrPassword;
         private System.Windows.Forms.TextBox txtLocalhostrEmail;
-        private System.Windows.Forms.TextBox txtJiraIssuePrefix;
-        private System.Windows.Forms.Label lblJiraIssuePrefix;
-        private System.Windows.Forms.GroupBox gbJiraServer;
-        private System.Windows.Forms.TextBox txtJiraConfigHelp;
-        private System.Windows.Forms.TextBox txtJiraHost;
-        private System.Windows.Forms.Label lblJiraHost;
-        private OAuthControl oAuthJira;
         private System.Windows.Forms.Label lblEmailSmtpServer;
         private System.Windows.Forms.Label lblEmailPassword;
         private System.Windows.Forms.CheckBox cbEmailRememberLastTo;
@@ -5024,7 +4944,6 @@ namespace ShareX.UploadersLib
         internal System.Windows.Forms.TabPage tpPushbullet;
         internal System.Windows.Forms.TabPage tpSendSpace;
         internal System.Windows.Forms.TabPage tpHostr;
-        internal System.Windows.Forms.TabPage tpJira;
         internal System.Windows.Forms.TabPage tpLambda;
         internal System.Windows.Forms.TabPage tpLithiio;
         internal System.Windows.Forms.TabPage tpPomf;
