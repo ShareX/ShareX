@@ -174,7 +174,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
-            string response = SendRequest(ShareXHttpMethod.GET, apiGetDevicesURL, headers: headers);
+            string response = SendRequest(HttpMethod.GET, apiGetDevicesURL, headers: headers);
 
             PushbulletResponseDevices devicesResponse = JsonConvert.DeserializeObject<PushbulletResponseDevices>(response);
 

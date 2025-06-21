@@ -98,7 +98,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 while (!StopUploadRequested)
                 {
-                    string statusJson = SendRequest(ShareXHttpMethod.GET, URLHelpers.CombineURL(Host, "videos", transcodeResponse.Shortcode));
+                    string statusJson = SendRequest(HttpMethod.GET, URLHelpers.CombineURL(Host, "videos", transcodeResponse.Shortcode));
                     StreamableStatusResponse response = JsonConvert.DeserializeObject<StreamableStatusResponse>(statusJson);
 
                     if (response.status > 2)

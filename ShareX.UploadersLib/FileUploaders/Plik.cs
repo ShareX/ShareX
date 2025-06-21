@@ -97,7 +97,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 metaDataReq.Login = Settings.Login;
                 metaDataReq.Password = Settings.Password;
             }
-            string metaDataResp = SendRequest(ShareXHttpMethod.POST, Settings.URL + "/upload", JsonConvert.SerializeObject(metaDataReq), headers: requestHeaders);
+            string metaDataResp = SendRequest(HttpMethod.POST, Settings.URL + "/upload", JsonConvert.SerializeObject(metaDataReq), headers: requestHeaders);
             UploadMetadataResponse metaData = JsonConvert.DeserializeObject<UploadMetadataResponse>(metaDataResp);
             requestHeaders["x-uploadtoken"] = metaData.uploadToken;
             string url = $"{Settings.URL}/file/{metaData.id}/{metaData.files.First().Value.id}/{fileName}";

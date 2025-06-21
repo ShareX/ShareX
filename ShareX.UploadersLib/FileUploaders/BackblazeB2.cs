@@ -264,7 +264,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(keyId, key);
 
-            using (HttpWebResponse res = GetResponse(ShareXHttpMethod.GET, B2AuthorizeAccountUrl, headers: headers, allowNon2xxResponses: true))
+            using (HttpWebResponse res = GetResponse(HttpMethod.GET, B2AuthorizeAccountUrl, headers: headers, allowNon2xxResponses: true))
             {
                 if (res.StatusCode != HttpStatusCode.OK)
                 {
@@ -301,7 +301,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             using (Stream data = CreateJsonBody(reqBody))
             {
-                using (HttpWebResponse res = GetResponse(ShareXHttpMethod.POST, auth.apiUrl + B2ListBucketsPath,
+                using (HttpWebResponse res = GetResponse(HttpMethod.POST, auth.apiUrl + B2ListBucketsPath,
                     contentType: ApplicationJson, headers: headers, data: data, allowNon2xxResponses: true))
                 {
                     if (res.StatusCode != HttpStatusCode.OK)
@@ -355,7 +355,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             using (Stream data = CreateJsonBody(reqBody))
             {
-                using (HttpWebResponse res = GetResponse(ShareXHttpMethod.POST, auth.apiUrl + B2GetUploadUrlPath,
+                using (HttpWebResponse res = GetResponse(HttpMethod.POST, auth.apiUrl + B2GetUploadUrlPath,
                     contentType: ApplicationJson, headers: headers, data: data, allowNon2xxResponses: true))
                 {
                     if (res.StatusCode != HttpStatusCode.OK)
@@ -420,7 +420,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string contentType = MimeTypes.GetMimeTypeFromFileName(destinationPath);
 
-            using (HttpWebResponse res = GetResponse(ShareXHttpMethod.POST, b2UploadUrl.uploadUrl,
+            using (HttpWebResponse res = GetResponse(HttpMethod.POST, b2UploadUrl.uploadUrl,
                 contentType: contentType, headers: headers, data: file, allowNon2xxResponses: true))
             {
                 // if connection failed, res will be null, and here we -do- want to check explicitly for this

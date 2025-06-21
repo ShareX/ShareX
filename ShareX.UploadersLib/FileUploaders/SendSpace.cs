@@ -416,7 +416,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("session_key", sessionKey);
             args.Add("speed_limit", SpeedLimit.ToString());
 
-            string response = SendRequest(ShareXHttpMethod.GET, APIURL, args);
+            string response = SendRequest(HttpMethod.GET, APIURL, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -445,7 +445,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("api_version", APIVersion);
             args.Add("app_version", AppVersion);
 
-            string response = SendRequest(ShareXHttpMethod.GET, APIURL, args);
+            string response = SendRequest(HttpMethod.GET, APIURL, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -554,7 +554,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     time = DateTime.Now;
                     try
                     {
-                        string response = sendSpace.SendRequest(ShareXHttpMethod.POST, url);
+                        string response = sendSpace.SendRequest(HttpMethod.POST, url);
 
                         progressInfo.ParseResponse(response);
 

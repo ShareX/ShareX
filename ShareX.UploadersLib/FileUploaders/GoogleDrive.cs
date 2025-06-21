@@ -159,7 +159,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 allowFileDiscovery = allowFileDiscovery.ToString()
             });
 
-            SendRequest(ShareXHttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON, null, OAuth2.GetAuthHeaders());
+            SendRequest(HttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON, null, OAuth2.GetAuthHeaders());
         }
 
         public List<GoogleDriveFile> GetFolders(string driveID = "", bool trashed = false, bool writer = true)
@@ -196,7 +196,7 @@ namespace ShareX.UploadersLib.FileUploaders
             do
             {
                 args["pageToken"] = pageToken;
-                string response = SendRequest(ShareXHttpMethod.GET, "https://www.googleapis.com/drive/v3/files", args, OAuth2.GetAuthHeaders());
+                string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v3/files", args, OAuth2.GetAuthHeaders());
                 pageToken = "";
 
                 if (!string.IsNullOrEmpty(response))
@@ -227,7 +227,7 @@ namespace ShareX.UploadersLib.FileUploaders
             do
             {
                 args["pageToken"] = pageToken;
-                string response = SendRequest(ShareXHttpMethod.GET, "https://www.googleapis.com/drive/v3/drives", args, OAuth2.GetAuthHeaders());
+                string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v3/drives", args, OAuth2.GetAuthHeaders());
                 pageToken = "";
 
                 if (!string.IsNullOrEmpty(response))

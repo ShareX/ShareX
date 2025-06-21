@@ -76,14 +76,14 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public string GetAuthorizationURL()
         {
-            return GetAuthorizationURL(URLRequestToken, URLAuthorize, AuthInfo, null, ShareXHttpMethod.POST);
+            return GetAuthorizationURL(URLRequestToken, URLAuthorize, AuthInfo, null, HttpMethod.POST);
         }
 
         public bool GetAccessToken(string verificationCode)
         {
             AuthInfo.AuthVerifier = verificationCode;
 
-            NameValueCollection nv = GetAccessTokenEx(URLAccessToken, AuthInfo, ShareXHttpMethod.POST);
+            NameValueCollection nv = GetAccessTokenEx(URLAccessToken, AuthInfo, HttpMethod.POST);
 
             if (nv != null)
             {
@@ -121,7 +121,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             */
 
             string url = "http://api.photobucket.com/album/!/upload";
-            string query = OAuthManager.GenerateQuery(url, args, ShareXHttpMethod.POST, AuthInfo);
+            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
             query = FixURL(query);
 
             UploadResult result = SendRequestFile(query, stream, fileName, "uploadfile");
@@ -148,7 +148,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("name", albumName); // Name of result. Must be between 2 and 50 characters. Valid characters are letters, numbers, underscore ( _ ), hyphen (-), and space.
 
             string url = "http://api.photobucket.com/album/!";
-            string query = OAuthManager.GenerateQuery(url, args, ShareXHttpMethod.POST, AuthInfo);
+            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
             query = FixURL(query);
 
             string response = SendRequestMultiPart(query, args);

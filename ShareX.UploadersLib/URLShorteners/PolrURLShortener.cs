@@ -95,7 +95,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 args.Add("is_secret", "true");
             }
 
-            string response = SendRequest(ShareXHttpMethod.GET, Host, args);
+            string response = SendRequest(HttpMethod.GET, Host, args);
 
             if (!string.IsNullOrEmpty(response))
             {

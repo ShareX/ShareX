@@ -197,7 +197,7 @@ namespace ShareX.UploadersLib
         CustomURLSharingService // Localized
     }
 
-    public enum ShareXHttpMethod
+    public enum HttpMethod
     {
         GET,
         POST,

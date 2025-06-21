@@ -155,7 +155,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string PostRequestJson(Uri url, string jsonData)
         {
-            return SendRequest(ShareXHttpMethod.POST, url.ToString(), jsonData, RequestHelpers.ContentTypeJSON);
+            return SendRequest(HttpMethod.POST, url.ToString(), jsonData, RequestHelpers.ContentTypeJSON);
         }
 
         public string PostRequestRaw(Uri url, Stream dataStream)
@@ -163,7 +163,7 @@ namespace ShareX.UploadersLib.FileUploaders
             try
             {
                 AllowReportProgress = true;
-                return SendRequest(ShareXHttpMethod.POST, url.ToString(), dataStream, "application/octet-stream");
+                return SendRequest(HttpMethod.POST, url.ToString(), dataStream, "application/octet-stream");
             }
             finally
             {

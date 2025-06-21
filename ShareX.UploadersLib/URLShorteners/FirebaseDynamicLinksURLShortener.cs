@@ -113,7 +113,7 @@ namespace ShareX.UploadersLib.URLShorteners
             };
 
             string serializedRequestOptions = JsonConvert.SerializeObject(requestOptions);
-            result.Response = SendRequest(ShareXHttpMethod.POST, "https://firebasedynamiclinks.googleapis.com/v1/shortLinks", serializedRequestOptions, RequestHelpers.ContentTypeJSON, args);
+            result.Response = SendRequest(HttpMethod.POST, "https://firebasedynamiclinks.googleapis.com/v1/shortLinks", serializedRequestOptions, RequestHelpers.ContentTypeJSON, args);
 
             FirebaseResponse firebaseResponse = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response);
 

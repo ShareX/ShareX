@@ -85,7 +85,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
             NameValueCollection headers = GetAuthHeaders();
 
-            string response = SendRequest(ShareXHttpMethod.POST, RequestURL, json, RequestHelpers.ContentTypeJSON, null, headers);
+            string response = SendRequest(HttpMethod.POST, RequestURL, json, RequestHelpers.ContentTypeJSON, null, headers);
 
             if (!string.IsNullOrEmpty(response))
             {

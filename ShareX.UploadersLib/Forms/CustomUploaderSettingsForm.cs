@@ -99,7 +99,7 @@ namespace ShareX.UploadersLib
             rtbResultErrorMessage.AddContextMenu();
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
             CustomUploaderAddDestinationTypes();
-            cbRequestMethod.Items.AddRange(Enum.GetNames(typeof(ShareXHttpMethod)));
+            cbRequestMethod.Items.AddRange(Enum.GetNames(typeof(HttpMethod)));
             cbBody.Items.AddRange(Helpers.GetEnumDescriptions<CustomUploaderBody>());
 
             ShareXResources.ApplyTheme(this, true);
@@ -940,7 +940,7 @@ namespace ShareX.UploadersLib
         private void cbCustomUploaderRequestType_SelectedIndexChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.RequestMethod = (ShareXHttpMethod)cbRequestMethod.SelectedIndex;
+            if (uploader != null) uploader.RequestMethod = (HttpMethod)cbRequestMethod.SelectedIndex;
         }
 
         private void rtbCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)
