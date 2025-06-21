@@ -109,9 +109,7 @@ namespace ShareX.UploadersLib
         {
             HttpRequestMessage request = RequestHelpers.CreateHttpRequestMessage(method, url, args, headers, data, contentType);
             HttpClient client = RequestHelpers.CreateHttpClient(url, cookies);
-            currentHttpClient = client;
-            HttpResponseMessage response = client.SendAsync(request).GetAwaiter().GetResult();
-            return GetResponseAsString(response);
+            return GetResponseAsString(client, request);
         }
 
         protected string SendRequest(ShareXHttpMethod method, string url, string content, string contentType = null, Dictionary<string, string> args = null,
@@ -523,6 +521,13 @@ namespace ShareX.UploadersLib
             }
 
             return null;
+        }
+
+        private string GetResponseAsString(HttpClient client, HttpRequestMessage request)
+        {
+            currentHttpClient = client;
+            HttpResponseMessage response = client.SendAsync(request).GetAwaiter().GetResult();
+            return GetResponseAsString(response);
         }
 
         private string GetResponseAsString(HttpResponseMessage response)
