@@ -45,7 +45,9 @@ namespace ShareX.UploadersLib
         public static HttpWebRequest CreateWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null,
             string contentType = null, long contentLength = 0)
         {
+#pragma warning disable SYSLIB0014
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+#pragma warning restore SYSLIB0014
 
             string accept = null;
             string referer = null;
