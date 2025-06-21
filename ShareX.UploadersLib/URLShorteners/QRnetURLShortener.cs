@@ -51,7 +51,7 @@ namespace ShareX.UploadersLib.URLShorteners
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("longurl", url);
 
-            string response = SendRequest(HttpMethod.GET, API_ENDPOINT, args);
+            string response = SendRequest(ShareXHttpMethod.GET, API_ENDPOINT, args);
 
             if (!string.IsNullOrEmpty(response))
             {

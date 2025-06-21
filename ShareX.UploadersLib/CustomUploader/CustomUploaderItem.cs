@@ -48,8 +48,8 @@ namespace ShareX.UploadersLib
         [DefaultValue(CustomUploaderDestinationType.None)]
         public CustomUploaderDestinationType DestinationType { get; set; }
 
-        [DefaultValue(HttpMethod.POST), JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
-        public HttpMethod RequestMethod { get; set; } = HttpMethod.POST;
+        [DefaultValue(ShareXHttpMethod.POST), JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
+        public ShareXHttpMethod RequestMethod { get; set; } = ShareXHttpMethod.POST;
 
         [DefaultValue("")]
         public string RequestURL { get; set; }
@@ -104,7 +104,7 @@ namespace ShareX.UploadersLib
             return new CustomUploaderItem()
             {
                 Version = Helpers.GetApplicationVersion(),
-                RequestMethod = HttpMethod.POST,
+                RequestMethod = ShareXHttpMethod.POST,
                 Body = CustomUploaderBody.MultipartFormData
             };
         }

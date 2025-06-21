@@ -93,7 +93,7 @@ namespace ShareX.UploadersLib.URLShorteners
             args.Add("code", code);
             args.Add("redirect_uri", Links.Callback);
 
-            string response = SendRequestURLEncoded(HttpMethod.POST, URLAccessToken, args);
+            string response = SendRequestURLEncoded(ShareXHttpMethod.POST, URLAccessToken, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -129,7 +129,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
                 NameValueCollection headers = GetAuthHeaders();
 
-                result.Response = SendRequest(HttpMethod.POST, URLShorten, json, RequestHelpers.ContentTypeJSON, null, headers);
+                result.Response = SendRequest(ShareXHttpMethod.POST, URLShorten, json, RequestHelpers.ContentTypeJSON, null, headers);
 
                 BitlyShortenResponse responseData = JsonConvert.DeserializeObject<BitlyShortenResponse>(result.Response);
 

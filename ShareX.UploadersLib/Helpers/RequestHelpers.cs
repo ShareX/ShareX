@@ -42,7 +42,7 @@ namespace ShareX.UploadersLib
         public const string ContentTypeURLEncoded = "application/x-www-form-urlencoded";
         public const string ContentTypeOctetStream = "application/octet-stream";
 
-        public static HttpWebRequest CreateWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null,
+        public static HttpWebRequest CreateWebRequest(ShareXHttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null,
             string contentType = null, long contentLength = 0)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -126,7 +126,7 @@ namespace ShareX.UploadersLib
             {
                 request.AllowWriteStreamBuffering = HelpersOptions.CurrentProxy.IsValidProxy();
 
-                if (method == HttpMethod.GET)
+                if (method == ShareXHttpMethod.GET)
                 {
                     request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
                 }

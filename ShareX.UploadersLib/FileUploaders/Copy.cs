@@ -88,9 +88,9 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (OAuthInfo.CheckOAuth(AuthInfo))
             {
-                string query = OAuthManager.GenerateQuery(URLAccountInfo, null, HttpMethod.GET, AuthInfo);
+                string query = OAuthManager.GenerateQuery(URLAccountInfo, null, ShareXHttpMethod.GET, AuthInfo);
 
-                string response = SendRequest(HttpMethod.GET, query, null, APIHeaders);
+                string response = SendRequest(ShareXHttpMethod.GET, query, null, APIHeaders);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -117,8 +117,8 @@ namespace ShareX.UploadersLib.FileUploaders
             if (!string.IsNullOrEmpty(path) && OAuthInfo.CheckOAuth(AuthInfo))
             {
                 string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLEncode(path, true));
-                string query = OAuthManager.GenerateQuery(url, null, HttpMethod.GET, AuthInfo);
-                return SendRequestDownload(HttpMethod.GET, query, downloadStream);
+                string query = OAuthManager.GenerateQuery(url, null, ShareXHttpMethod.GET, AuthInfo);
+                return SendRequestDownload(ShareXHttpMethod.GET, query, downloadStream);
             }
 
             return false;
@@ -139,7 +139,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("overwrite", "true");
 
-            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
+            string query = OAuthManager.GenerateQuery(url, args, ShareXHttpMethod.POST, AuthInfo);
 
             // There's a 1GB and 5 hour(max time for a single upload) limit to all uploads through the API.
             UploadResult result = SendRequestFile(query, stream, fileName, "file", headers: APIHeaders);
@@ -168,9 +168,9 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 string url = URLHelpers.CombineURL(URLMetaData, URLHelpers.URLEncode(path, true));
 
-                string query = OAuthManager.GenerateQuery(url, null, HttpMethod.GET, AuthInfo);
+                string query = OAuthManager.GenerateQuery(url, null, ShareXHttpMethod.GET, AuthInfo);
 
-                string response = SendRequest(HttpMethod.GET, query);
+                string response = SendRequest(ShareXHttpMethod.GET, query);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -210,7 +210,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string url = URLHelpers.CombineURL(URLLinks, URLHelpers.URLEncode(path, true));
 
-            string query = OAuthManager.GenerateQuery(url, null, HttpMethod.POST, AuthInfo);
+            string query = OAuthManager.GenerateQuery(url, null, ShareXHttpMethod.POST, AuthInfo);
 
             CopyLinkRequest publicLink = new CopyLinkRequest();
             publicLink.@public = true;
@@ -219,7 +219,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string content = JsonConvert.SerializeObject(publicLink);
 
-            string response = SendRequest(HttpMethod.POST, query, content, headers: APIHeaders);
+            string response = SendRequest(ShareXHttpMethod.POST, query, content, headers: APIHeaders);
 
             if (!string.IsNullOrEmpty(response))
             {

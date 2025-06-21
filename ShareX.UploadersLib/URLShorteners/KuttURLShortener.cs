@@ -94,7 +94,7 @@ namespace ShareX.UploadersLib.URLShorteners
             NameValueCollection headers = new NameValueCollection();
             headers.Add("X-API-KEY", Settings.APIKey);
 
-            string response = SendRequest(HttpMethod.POST, requestURL, json, RequestHelpers.ContentTypeJSON, headers: headers);
+            string response = SendRequest(ShareXHttpMethod.POST, requestURL, json, RequestHelpers.ContentTypeJSON, headers: headers);
 
             if (!string.IsNullOrEmpty(response))
             {

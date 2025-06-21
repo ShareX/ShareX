@@ -64,7 +64,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("paste[restricted]", IsPublic ? "0" : "1");
                 arguments.Add("paste[authorization]", "burger");
 
-                SendRequestURLEncoded(HttpMethod.POST, "http://pastie.org/pastes", arguments);
+                SendRequestURLEncoded(ShareXHttpMethod.POST, "http://pastie.org/pastes", arguments);
                 ur.URL = LastResponseInfo.ResponseURL;
             }
 

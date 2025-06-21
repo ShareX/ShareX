@@ -94,9 +94,9 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("method", "flickr.photos.getSizes");
             args.Add("photo_id", photoid);
 
-            string query = OAuthManager.GenerateQuery("https://api.flickr.com/services/rest", args, HttpMethod.POST, AuthInfo);
+            string query = OAuthManager.GenerateQuery("https://api.flickr.com/services/rest", args, ShareXHttpMethod.POST, AuthInfo);
 
-            string response = SendRequest(HttpMethod.GET, query);
+            string response = SendRequest(ShareXHttpMethod.GET, query);
 
             return JsonConvert.DeserializeObject<FlickrPhotosGetSizesResponse>(response);
         }
@@ -117,7 +117,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             if (!string.IsNullOrEmpty(Settings.ContentType)) args.Add("content_type", Settings.ContentType);
             if (!string.IsNullOrEmpty(Settings.Hidden)) args.Add("hidden", Settings.Hidden);
 
-            OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo, out Dictionary<string, string> parameters);
+            OAuthManager.GenerateQuery(url, args, ShareXHttpMethod.POST, AuthInfo, out Dictionary<string, string> parameters);
 
             UploadResult result = SendRequestFile(url, stream, fileName, "photo", parameters);
 

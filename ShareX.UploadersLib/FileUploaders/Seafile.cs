@@ -118,7 +118,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string url = URLHelpers.FixPrefix(APIURL);
             url = URLHelpers.CombineURL(url, "ping/?format=json");
 
-            string response = SendRequest(HttpMethod.GET, url);
+            string response = SendRequest(ShareXHttpMethod.GET, url);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -139,7 +139,7 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
-            string response = SendRequest(HttpMethod.GET, url, null, headers);
+            string response = SendRequest(ShareXHttpMethod.GET, url, null, headers);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -164,7 +164,7 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
-            string response = SendRequest(HttpMethod.GET, url, null, headers);
+            string response = SendRequest(ShareXHttpMethod.GET, url, null, headers);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -188,7 +188,7 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + (authtoken ?? AuthToken));
 
-            string response = SendRequest(HttpMethod.GET, url, null, headers);
+            string response = SendRequest(ShareXHttpMethod.GET, url, null, headers);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -208,7 +208,7 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
-            string response = SendRequest(HttpMethod.GET, url, null, headers);
+            string response = SendRequest(ShareXHttpMethod.GET, url, null, headers);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -228,7 +228,7 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
-            string response = SendRequest(HttpMethod.GET, url, null, headers);
+            string response = SendRequest(ShareXHttpMethod.GET, url, null, headers);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -305,7 +305,7 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
-            string response = SendRequest(HttpMethod.GET, url, null, headers);
+            string response = SendRequest(ShareXHttpMethod.GET, url, null, headers);
 
             string responseURL = response.Trim('"');
 
@@ -354,7 +354,7 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
-            SendRequestURLEncoded(HttpMethod.PUT, url, args, headers);
+            SendRequestURLEncoded(ShareXHttpMethod.PUT, url, args, headers);
             return LastResponseInfo.Headers["Location"];
         }
 

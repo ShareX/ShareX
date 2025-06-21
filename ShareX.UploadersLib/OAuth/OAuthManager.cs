@@ -52,12 +52,12 @@ namespace ShareX.UploadersLib
         private const string HMACSHA1SignatureType = "HMAC-SHA1";
         private const string RSASHA1SignatureType = "RSA-SHA1";
 
-        public static string GenerateQuery(string url, Dictionary<string, string> args, HttpMethod httpMethod, OAuthInfo oauth)
+        public static string GenerateQuery(string url, Dictionary<string, string> args, ShareXHttpMethod httpMethod, OAuthInfo oauth)
         {
             return GenerateQuery(url, args, httpMethod, oauth, out _);
         }
 
-        public static string GenerateQuery(string url, Dictionary<string, string> args, HttpMethod httpMethod, OAuthInfo oauth, out Dictionary<string, string> parameters)
+        public static string GenerateQuery(string url, Dictionary<string, string> args, ShareXHttpMethod httpMethod, OAuthInfo oauth, out Dictionary<string, string> parameters)
         {
             if (string.IsNullOrEmpty(oauth.ConsumerKey) ||
                 (oauth.SignatureMethod == OAuthInfo.OAuthInfoSignatureMethod.HMAC_SHA1 && string.IsNullOrEmpty(oauth.ConsumerSecret)) ||
@@ -175,7 +175,7 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        private static string GenerateSignatureBase(HttpMethod httpMethod, string normalizedUrl, string normalizedParameters)
+        private static string GenerateSignatureBase(ShareXHttpMethod httpMethod, string normalizedUrl, string normalizedParameters)
         {
             StringBuilder signatureBase = new StringBuilder();
             signatureBase.AppendFormat("{0}&", httpMethod.ToString());

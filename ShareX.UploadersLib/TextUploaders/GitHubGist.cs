@@ -144,7 +144,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 NameValueCollection headers = new NameValueCollection();
                 headers.Add("Authorization", "token " + AuthInfo.Token.access_token);
 
-                string response = SendRequest(HttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON, null, headers);
+                string response = SendRequest(ShareXHttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON, null, headers);
 
                 GistResponse gistResponse = JsonConvert.DeserializeObject<GistResponse>(response);
 

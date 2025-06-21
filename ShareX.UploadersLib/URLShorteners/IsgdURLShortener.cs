@@ -54,7 +54,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 arguments.Add("format", "simple");
                 arguments.Add("url", url);
 
-                result.Response = SendRequest(HttpMethod.GET, APIURL, arguments);
+                result.Response = SendRequest(ShareXHttpMethod.GET, APIURL, arguments);
 
                 if (!result.Response.StartsWith("Error:", StringComparison.OrdinalIgnoreCase))
                 {

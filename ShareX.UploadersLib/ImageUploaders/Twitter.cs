@@ -118,7 +118,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             }
 
             string url = string.Format("https://api.twitter.com/{0}/statuses/update.json", APIVersion);
-            string query = OAuthManager.GenerateQuery(url, null, HttpMethod.POST, AuthInfo);
+            string query = OAuthManager.GenerateQuery(url, null, ShareXHttpMethod.POST, AuthInfo);
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("status", message);
@@ -141,7 +141,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             }
 
             string url = string.Format("https://api.twitter.com/{0}/statuses/update_with_media.json", APIVersion);
-            string query = OAuthManager.GenerateQuery(url, null, HttpMethod.POST, AuthInfo);
+            string query = OAuthManager.GenerateQuery(url, null, ShareXHttpMethod.POST, AuthInfo);
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("status", message);
@@ -164,8 +164,8 @@ namespace ShareX.UploadersLib.ImageUploaders
         private string GetConfiguration()
         {
             string url = string.Format("https://api.twitter.com/{0}/help/configuration.json", APIVersion);
-            string query = OAuthManager.GenerateQuery(url, null, HttpMethod.GET, AuthInfo);
-            string response = SendRequest(HttpMethod.GET, query);
+            string query = OAuthManager.GenerateQuery(url, null, ShareXHttpMethod.GET, AuthInfo);
+            string response = SendRequest(ShareXHttpMethod.GET, query);
             return response;
         }
     }

@@ -182,7 +182,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string url = string.Format("https://api.box.com/2.0/folders/{0}/items", id);
 
-            string response = SendRequest(HttpMethod.GET, url, headers: GetAuthHeaders());
+            string response = SendRequest(ShareXHttpMethod.GET, url, headers: GetAuthHeaders());
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -194,7 +194,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string CreateSharedLink(string id, BoxShareAccessLevel accessLevel)
         {
-            string response = SendRequest(HttpMethod.PUT, "https://api.box.com/2.0/files/" + id, "{\"shared_link\": {\"access\": \"" + accessLevel.ToString().ToLower() + "\"}}", headers: GetAuthHeaders());
+            string response = SendRequest(ShareXHttpMethod.PUT, "https://api.box.com/2.0/files/" + id, "{\"shared_link\": {\"access\": \"" + accessLevel.ToString().ToLower() + "\"}}", headers: GetAuthHeaders());
 
             if (!string.IsNullOrEmpty(response))
             {

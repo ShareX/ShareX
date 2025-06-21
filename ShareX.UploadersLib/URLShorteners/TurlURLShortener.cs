@@ -50,7 +50,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
                 arguments.Add("url", url);
 
-                result.Response = SendRequest(HttpMethod.GET, "http://turl.ca/api.php", arguments);
+                result.Response = SendRequest(ShareXHttpMethod.GET, "http://turl.ca/api.php", arguments);
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {

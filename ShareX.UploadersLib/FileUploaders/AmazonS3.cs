@@ -209,7 +209,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string url = URLHelpers.CombineURL(scheme + host, canonicalURI);
             url = URLHelpers.FixPrefix(url);
 
-            SendRequest(HttpMethod.PUT, url, stream, contentType, null, headers);
+            SendRequest(ShareXHttpMethod.PUT, url, stream, contentType, null, headers);
 
             if (LastResponseInfo != null && LastResponseInfo.IsSuccess)
             {

@@ -106,7 +106,7 @@ namespace ShareX.UploadersLib.FileUploaders
             postRequestJson.Add("chunks", chunks);
             postRequestJson.Add("fileLength", fullUploadSize);
 
-            string postResult = SendRequest(HttpMethod.POST, URLHelpers.CombineURL(APIURL, fullFileName), JsonConvert.SerializeObject(postRequestJson), RequestHelpers.ContentTypeJSON, requestHeaders);
+            string postResult = SendRequest(ShareXHttpMethod.POST, URLHelpers.CombineURL(APIURL, fullFileName), JsonConvert.SerializeObject(postRequestJson), RequestHelpers.ContentTypeJSON, requestHeaders);
             Vault_oooMetaInfo metaInfo = JsonConvert.DeserializeObject<Vault_oooMetaInfo>(postResult);
 
             if (string.IsNullOrEmpty(metaInfo.UrlPathName))
@@ -163,7 +163,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     headers.Add("X-Put-Chunk-End", (uploadChunkStart + ms.Length).ToString());
                     headers.Add("X-Put-JWT", metaInfo.Token);
 
-                    SendRequest(HttpMethod.PUT, URLHelpers.CombineURL(APIURL, metaInfo.UrlPathName), ms, "application/octet-stream", null, headers);
+                    SendRequest(ShareXHttpMethod.PUT, URLHelpers.CombineURL(APIURL, metaInfo.UrlPathName), ms, "application/octet-stream", null, headers);
                 }
             }, chunks, fileSize);
 

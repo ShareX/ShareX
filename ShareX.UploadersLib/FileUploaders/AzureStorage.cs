@@ -121,7 +121,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
 
-            SendRequest(HttpMethod.PUT, requestURL, stream, contentType, null, requestHeaders);
+            SendRequest(ShareXHttpMethod.PUT, requestURL, stream, contentType, null, requestHeaders);
 
             if (LastResponseInfo != null && LastResponseInfo.IsSuccess)
             {

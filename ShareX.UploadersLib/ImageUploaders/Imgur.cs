@@ -220,7 +220,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 args.Add("page", page.ToString()); // default: 0
                 args.Add("perPage", perPage.ToString()); // default: 50, max: 100
 
-                string response = SendRequest(HttpMethod.GET, "https://api.imgur.com/3/account/me/albums", args, GetAuthHeaders());
+                string response = SendRequest(ShareXHttpMethod.GET, "https://api.imgur.com/3/account/me/albums", args, GetAuthHeaders());
 
                 ImgurResponse imgurResponse = JsonConvert.DeserializeObject<ImgurResponse>(response);
 
@@ -244,7 +244,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         {
             if (CheckAuthorization())
             {
-                string response = SendRequest(HttpMethod.GET, $"https://api.imgur.com/3/album/{albumID}/images", headers: GetAuthHeaders());
+                string response = SendRequest(ShareXHttpMethod.GET, $"https://api.imgur.com/3/album/{albumID}/images", headers: GetAuthHeaders());
 
                 ImgurResponse imgurResponse = JsonConvert.DeserializeObject<ImgurResponse>(response);
 
