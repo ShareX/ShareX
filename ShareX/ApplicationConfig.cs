@@ -238,9 +238,6 @@ namespace ShareX
         [Category("Upload"), DefaultValue(false), Description("Can be used to disable uploading application wide.")]
         public bool DisableUpload { get; set; }
 
-        [Category("Upload"), DefaultValue(false), Description("Accept invalid SSL certificates when uploading.")]
-        public bool AcceptInvalidSSLCertificates { get; set; }
-
         [Category("Upload"), DefaultValue(true), Description("Ignore emojis while URL encoding upload results.")]
         public bool URLEncodeIgnoreEmoji { get; set; }
 

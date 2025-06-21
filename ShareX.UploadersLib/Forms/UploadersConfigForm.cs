@@ -615,7 +615,6 @@ namespace ShareX.UploadersLib
             cbSeafileCreateShareableURL.Checked = Config.SeafileCreateShareableURL;
             cbSeafileCreateShareableURLRaw.Checked = Config.SeafileCreateShareableURLRaw;
             cbSeafileCreateShareableURLRaw.Enabled = cbSeafileCreateShareableURL.Checked;
-            cbSeafileIgnoreInvalidCert.Checked = Config.SeafileIgnoreInvalidCert;
             nudSeafileExpireDays.SetValue(Config.SeafileShareDaysToExpire);
             txtSeafileSharePassword.Text = Config.SeafileSharePassword;
             txtSeafileAccInfoEmail.Text = Config.SeafileAccInfoEmail;
@@ -2445,11 +2444,6 @@ However, there is a workaround. You can navigate to the Google Drive website in 
         private void cbSeafileCreateShareableURLRaw_CheckedChanged(object sender, EventArgs e)
         {
             Config.SeafileCreateShareableURLRaw = cbSeafileCreateShareableURLRaw.Checked;
-        }
-
-        private void cbSeafileIgnoreInvalidCert_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.SeafileIgnoreInvalidCert = cbSeafileIgnoreInvalidCert.Checked;
         }
 
         private void btnRefreshSeafileAccInfo_Click(object sender, EventArgs e)

@@ -316,8 +316,7 @@ namespace ShareX
 
         private static void Run()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            ApplicationConfiguration.Initialize();
 
             DebugHelper.WriteLine("ShareX starting.");
             DebugHelper.WriteLine("Version: " + VersionText);
@@ -349,7 +348,6 @@ namespace ShareX
 
             SettingManager.LoadInitialSettings();
 
-            Uploader.UpdateServicePointManager();
             UpdateManager = new ShareXUpdateManager();
             LanguageHelper.ChangeLanguage(Settings.Language);
             CleanupManager.CleanupAsync();

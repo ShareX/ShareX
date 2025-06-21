@@ -33,7 +33,6 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.Security;
-using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows.Forms;
@@ -143,7 +142,6 @@ namespace ShareX.UploadersLib.FileUploaders
                         break;
                 }
 
-                client.Config.SslProtocols = SslProtocols.Tls | SslProtocols.Tls11 | SslProtocols.Tls12;
                 client.Config.DataConnectionEncryption = true;
 
                 if (!string.IsNullOrEmpty(account.FTPSCertificateLocation) && File.Exists(account.FTPSCertificateLocation))

@@ -33,7 +33,6 @@ namespace ShareX.HelpersLib
         public const int RecentColorsMax = 32;
 
         public static ProxyInfo CurrentProxy { get; set; } = new ProxyInfo();
-        public static bool AcceptInvalidSSLCertificates { get; set; } = false;
         public static bool DefaultCopyImageFillBackground { get; set; } = true;
         public static bool UseAlternativeClipboardCopyImage { get; set; } = false;
         public static bool UseAlternativeClipboardGetImage { get; set; } = false;
