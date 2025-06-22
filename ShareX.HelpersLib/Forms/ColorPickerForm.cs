@@ -110,6 +110,11 @@ namespace ShareX.HelpersLib
         {
             using (ColorPickerForm dialog = new ColorPickerForm(currentColor, options: options))
             {
+                if (owner != null && owner.TopMost)
+                {
+                    dialog.TopMost = true;
+                }
+
                 if (openScreenColorPicker != null)
                 {
                     dialog.EnableScreenColorPickerButton(openScreenColorPicker);
