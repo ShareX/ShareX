@@ -8,6 +8,9 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="System.Management" Version="9.0.6" />
+  </ItemGroup>
+  <ItemGroup>
     <None Update="steam_appid.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
