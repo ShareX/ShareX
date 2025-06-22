@@ -81,7 +81,7 @@ jobs:
       - name: Setup
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
-          & "ShareX.Setup\bin\${{ matrix.configuration }}\ShareX.Setup.exe" -silent -job "${{ matrix.configuration }}"
+          & "ShareX.Setup\bin\${{ matrix.configuration }}\win-x64\publish\ShareX.Setup.exe" -silent -job "${{ matrix.configuration }}"
 
       - name: Upload artifact (Setup)
         if: matrix.configuration == 'Release'
