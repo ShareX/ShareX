@@ -462,33 +462,50 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static bool BrowseFolder(TextBox tb, string initialDirectory = "", bool detectSpecialFolders = false)
+        public static string BrowseFolder(string title = null, string initialDirectory = null)
+        {
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            {
+                if (!string.IsNullOrEmpty(title))
+                {
+                    fbd.Description = title;
+                    fbd.UseDescriptionForTitle = true;
+                }
+
+                if (!string.IsNullOrEmpty(initialDirectory) && Directory.Exists(initialDirectory))
+                {
+                    fbd.InitialDirectory = initialDirectory;
+                }
+
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+                    return fbd.SelectedPath;
+                }
+            }
+
+            return null;
+        }
+
+        public static bool BrowseFolder(TextBox tb, string initialDirectory = null, bool detectSpecialFolders = false)
         {
             return BrowseFolder("ShareX - " + Resources.Helpers_BrowseFolder_Choose_folder, tb, initialDirectory, detectSpecialFolders);
         }
 
-        public static bool BrowseFolder(string title, TextBox tb, string initialDirectory = "", bool detectSpecialFolders = false)
+        public static bool BrowseFolder(string title, TextBox tb, string initialDirectory = null, bool detectSpecialFolders = false)
         {
-            using (FolderSelectDialog fsd = new FolderSelectDialog())
+            string path = tb.Text;
+
+            if (!string.IsNullOrEmpty(path) && Directory.Exists(path))
             {
-                fsd.Title = title;
+                initialDirectory = path;
+            }
 
-                string path = tb.Text;
+            string selectedPath = BrowseFolder(title, initialDirectory);
 
-                if (!string.IsNullOrEmpty(path) && Directory.Exists(path))
-                {
-                    fsd.InitialDirectory = path;
-                }
-                else if (!string.IsNullOrEmpty(initialDirectory))
-                {
-                    fsd.InitialDirectory = initialDirectory;
-                }
-
-                if (fsd.ShowDialog())
-                {
-                    tb.Text = detectSpecialFolders ? GetVariableFolderPath(fsd.FileName) : fsd.FileName;
-                    return true;
-                }
+            if (!string.IsNullOrEmpty(selectedPath))
+            {
+                tb.Text = detectSpecialFolders ? GetVariableFolderPath(selectedPath) : selectedPath;
+                return true;
             }
 
             return false;

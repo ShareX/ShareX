@@ -39,14 +39,11 @@ namespace ShareX.HelpersLib
                 return base.EditValue(context, provider, value);
             }
 
-            using (FolderSelectDialog dlg = new FolderSelectDialog())
-            {
-                dlg.Title = Resources.DirectoryNameEditor_EditValue_Browse_for_a_folder___;
+            string selectedPath = FileHelpers.BrowseFolder(Resources.DirectoryNameEditor_EditValue_Browse_for_a_folder___);
 
-                if (dlg.ShowDialog())
-                {
-                    value = FileHelpers.GetVariableFolderPath(dlg.FileName, true);
-                }
+            if (!string.IsNullOrEmpty(selectedPath))
+            {
+                value = FileHelpers.GetVariableFolderPath(selectedPath, true);
             }
 
             return value;
