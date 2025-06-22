@@ -300,7 +300,8 @@ namespace ShareX.HelpersLib
                     {
                         ProcessStartInfo psi = new ProcessStartInfo()
                         {
-                            FileName = folderPath
+                            FileName = folderPath,
+                            UseShellExecute = true
                         };
 
                         process.StartInfo = psi;
