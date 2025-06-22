@@ -201,9 +201,6 @@ namespace ShareX.ScreenCaptureLib
                 FormBorderStyle = FormBorderStyle.None;
                 Bounds = ScreenBounds;
                 ShowInTaskbar = false;
-#if !DEBUG
-                TopMost = true;
-#endif
             }
             else
             {

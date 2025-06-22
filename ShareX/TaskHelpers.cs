@@ -1412,7 +1412,7 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(arguments))
                 {
-                    cmdArgs += " -ArgumentList '{arguments}'";
+                    cmdArgs += $" -ArgumentList '{arguments}'";
                 }
 
                 cmdArgs += "\"";

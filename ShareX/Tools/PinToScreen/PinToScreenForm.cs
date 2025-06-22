@@ -336,6 +336,11 @@ namespace ShareX
 
             using (PinToScreenOptionsForm pinToScreenOptionsForm = new PinToScreenOptionsForm(Options))
             {
+                if (TopMost)
+                {
+                    pinToScreenOptionsForm.TopMost = true;
+                }
+
                 if (pinToScreenOptionsForm.ShowDialog(this) == DialogResult.OK)
                 {
                     if (TopMost != Options.TopMost)
