@@ -58,7 +58,6 @@ namespace ShareX.Setup
 
         private static SetupJobs Job { get; set; } = SetupJobs.Release;
         private static bool Silent { get; set; } = false;
-        private static bool AppVeyor { get; set; } = false;
 
         private static string ParentDir;
         private static string Configuration;
@@ -66,8 +65,8 @@ namespace ShareX.Setup
         private static string WindowsKitsDir;
 
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
-        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration);
-        private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
+        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, "win-x64", "publish");
+        private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration, "win-x64", "publish");
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");
@@ -171,11 +170,6 @@ namespace ShareX.Setup
                 }
             }
 
-            if (AppVeyor)
-            {
-                FileHelpers.CopyAll(OutputDir, ParentDir);
-            }
-
             if (!Silent && Job.HasFlag(SetupJobs.OpenOutputDirectory))
             {
                 FileHelpers.OpenFolder(OutputDir, false);
@@ -190,7 +184,6 @@ namespace ShareX.Setup
             cli.ParseCommands();
 
             Silent = cli.IsCommandExist("Silent");
-            AppVeyor = cli.IsCommandExist("AppVeyor");
 
             if (Silent)
             {
