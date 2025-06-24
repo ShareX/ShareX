@@ -821,6 +821,17 @@ namespace ShareX
                 NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.IsDarkTheme);
             }
 
+#pragma warning disable WFO5001
+            if (ShareXResources.IsDarkTheme)
+            {
+                Application.SetColorMode(SystemColorMode.Dark);
+            }
+            else
+            {
+                Application.SetColorMode(SystemColorMode.Classic);
+            }
+#pragma warning restore WFO5001
+
             BackColor = ShareXResources.Theme.BackgroundColor;
             tsMain.Font = ShareXResources.Theme.MenuFont;
             tsMain.Renderer = new ToolStripDarkRenderer();
