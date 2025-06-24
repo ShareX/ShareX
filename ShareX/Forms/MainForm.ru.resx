@@ -777,4 +777,16 @@
   <data name="tsbX.Text" xml:space="preserve">
     <value>Читать @ShareX...</value>
   </data>
+  <data name="tsmiMetadata.Text" xml:space="preserve">
+    <value>Метаданные...</value>
+  </data>
+  <data name="tsbDestinationSettings.Text" xml:space="preserve">
+    <value>Настройка сервисов...</value>
+  </data>
+  <data name="tsbCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Настройка пользовательских сервисов...</value>
+  </data>
+  <data name="tsmiTrayMetadata.Text" xml:space="preserve">
+    <value>Метаданные...</value>
+  </data>
 </root>

@@ -663,4 +663,7 @@
   <data name="cbUseCustomActionCompletedSound.Text" xml:space="preserve">
     <value>Пользовательский звук выполнения действия:</value>
   </data>
+  <data name="cbCaptureAutoHideDesktopIcons.Text" xml:space="preserve">
+    <value>Автоматическое скрытие иконок рабочего стола</value>
+  </data>
 </root>

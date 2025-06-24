@@ -171,4 +171,13 @@
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>Загрузить</value>
   </data>
+  <data name="btnScanScreen.Text" xml:space="preserve">
+    <value>Сканировать экран</value>
+  </data>
+  <data name="btnScanRegion.Text" xml:space="preserve">
+    <value>Сканировать область...</value>
+  </data>
+  <data name="btnScanImageFile.Text" xml:space="preserve">
+    <value>Сканировать файл изображения...</value>
+  </data>
 </root>

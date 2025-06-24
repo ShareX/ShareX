@@ -156,4 +156,7 @@
   <data name="lblStartDelayHint.Text" xml:space="preserve">
     <value>мс</value>
   </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>Метод прокрутки:</value>
+  </data>
 </root>

@@ -135,4 +135,7 @@
   <data name="btnPause.Text" xml:space="preserve">
     <value>Пауза</value>
   </data>
+  <data name="tsmiPause.Text" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
 </root>
