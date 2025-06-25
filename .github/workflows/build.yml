@@ -42,8 +42,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Add msbuild to PATH
-        uses: microsoft/setup-msbuild@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
 
       - name: Set APP_VERSION
         run: |
@@ -68,17 +70,18 @@ jobs:
           Invoke-WebRequest -Uri "$env:API_KEYS" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
 
       - name: Restore NuGet packages
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: nuget restore "${{ env.SOLUTION_FILE_PATH }}" -Project2ProjectTimeOut 300
+        run: dotnet restore --runtime win-x64 "${{ env.SOLUTION_FILE_PATH }}"
 
-      - name: Build
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: msbuild -m -p:Configuration="${{ matrix.configuration }}" -p:Platform="${{ matrix.platform }}" "${{ env.SOLUTION_FILE_PATH }}"
+      #- name: Build
+      #  run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" "${{ env.SOLUTION_FILE_PATH }}"
+
+      - name: Publish
+        run: dotnet publish --no-restore --configuration "${{ matrix.configuration }}" --runtime win-x64 --self-contained true "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Setup
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
-          & "ShareX.Setup\bin\${{ matrix.configuration }}\ShareX.Setup.exe" -silent -job "${{ matrix.configuration }}"
+          & "ShareX.Setup\bin\${{ matrix.configuration }}\win-x64\publish\ShareX.Setup.exe" -silent -job "${{ matrix.configuration }}"
 
       - name: Upload artifact (Setup)
         if: matrix.configuration == 'Release'

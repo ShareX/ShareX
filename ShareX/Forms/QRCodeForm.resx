@@ -139,10 +139,10 @@
     <value>Both</value>
   </data>
   <data name="txtText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 464</value>
+    <value>552, 504</value>
   </data>
   <data name="txtText.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txtText.Name" xml:space="preserve">
     <value>txtText</value>
@@ -154,16 +154,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtText.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="lblQRCodeSizeHint.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>12</value>
   </data>
   <data name="lblQRCodeSizeHint.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblQRCodeSizeHint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>245, 568</value>
+    <value>1072, 16</value>
   </data>
   <data name="lblQRCodeSizeHint.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -172,7 +169,7 @@
     <value>21, 16</value>
   </data>
   <data name="lblQRCodeSizeHint.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="lblQRCodeSizeHint.Text" xml:space="preserve">
     <value>px</value>
@@ -187,16 +184,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblQRCodeSizeHint.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="lblQRCodeSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>9</value>
   </data>
   <data name="lblQRCodeSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblQRCodeSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 568</value>
+    <value>848, 16</value>
   </data>
   <data name="lblQRCodeSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -205,7 +199,7 @@
     <value>91, 16</value>
   </data>
   <data name="lblQRCodeSize.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="lblQRCodeSize.Text" xml:space="preserve">
     <value>QR code size:</value>
@@ -220,13 +214,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblQRCodeSize.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="nudQRCodeSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>10</value>
   </data>
   <data name="nudQRCodeSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 565</value>
+    <value>987, 13</value>
   </data>
   <data name="nudQRCodeSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -235,7 +226,7 @@
     <value>80, 22</value>
   </data>
   <data name="nudQRCodeSize.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="nudQRCodeSize.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -250,7 +241,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudQRCodeSize.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="pbQRCode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -265,19 +256,19 @@
     <value>512, 512</value>
   </data>
   <data name="pbQRCode.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;pbQRCode.Name" xml:space="preserve">
     <value>pbQRCode</value>
   </data>
   <data name="&gt;&gt;pbQRCode.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=17.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbQRCode.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbQRCode.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblQRCode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -292,7 +283,7 @@
     <value>64, 16</value>
   </data>
   <data name="lblQRCode.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="lblQRCode.Text" xml:space="preserve">
     <value>QR code:</value>
@@ -307,7 +298,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblQRCode.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -319,7 +310,7 @@
     <value>36, 16</value>
   </data>
   <data name="lblText.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblText.Text" xml:space="preserve">
     <value>Text:</value>
@@ -334,7 +325,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblText.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnCopyImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -346,7 +337,7 @@
     <value>160, 32</value>
   </data>
   <data name="btnCopyImage.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="btnCopyImage.Text" xml:space="preserve">
     <value>Copy image</value>
@@ -361,7 +352,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCopyImage.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnSaveImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -373,7 +364,7 @@
     <value>160, 32</value>
   </data>
   <data name="btnSaveImage.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Save image...</value>
@@ -388,7 +379,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSaveImage.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnUploadImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -400,7 +391,7 @@
     <value>160, 32</value>
   </data>
   <data name="btnUploadImage.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>Upload image</value>
@@ -415,54 +406,78 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnUploadImage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
-  <data name="btnScanQRCodeFromScreen.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnScanScreen.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
   </data>
-  <data name="btnScanQRCodeFromScreen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 40</value>
+  <data name="btnScanScreen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 40</value>
   </data>
-  <data name="btnScanQRCodeFromScreen.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnScanScreen.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
-    <value>Scan QR code from screen...</value>
+  <data name="btnScanScreen.Text" xml:space="preserve">
+    <value>Scan screen</value>
   </data>
-  <data name="&gt;&gt;btnScanQRCodeFromScreen.Name" xml:space="preserve">
-    <value>btnScanQRCodeFromScreen</value>
+  <data name="&gt;&gt;btnScanScreen.Name" xml:space="preserve">
+    <value>btnScanScreen</value>
   </data>
-  <data name="&gt;&gt;btnScanQRCodeFromScreen.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnScanScreen.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnScanQRCodeFromScreen.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnScanScreen.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnScanQRCodeFromScreen.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnScanScreen.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnScanRegion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 16</value>
+  </data>
+  <data name="btnScanRegion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 40</value>
+  </data>
+  <data name="btnScanRegion.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="btnScanQRCodeFromImageFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 16</value>
+  <data name="btnScanRegion.Text" xml:space="preserve">
+    <value>Scan region...</value>
   </data>
-  <data name="btnScanQRCodeFromImageFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 40</value>
+  <data name="&gt;&gt;btnScanRegion.Name" xml:space="preserve">
+    <value>btnScanRegion</value>
   </data>
-  <data name="btnScanQRCodeFromImageFile.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
-    <value>Scan QR code from image file...</value>
-  </data>
-  <data name="&gt;&gt;btnScanQRCodeFromImageFile.Name" xml:space="preserve">
-    <value>btnScanQRCodeFromImageFile</value>
-  </data>
-  <data name="&gt;&gt;btnScanQRCodeFromImageFile.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnScanRegion.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnScanQRCodeFromImageFile.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnScanRegion.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnScanQRCodeFromImageFile.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnScanRegion.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnScanImageFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 16</value>
+  </data>
+  <data name="btnScanImageFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 40</value>
+  </data>
+  <data name="btnScanImageFile.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnScanImageFile.Text" xml:space="preserve">
+    <value>Scan image file...</value>
+  </data>
+  <data name="&gt;&gt;btnScanImageFile.Name" xml:space="preserve">
+    <value>btnScanImageFile</value>
+  </data>
+  <data name="&gt;&gt;btnScanImageFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnScanImageFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnScanImageFile.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

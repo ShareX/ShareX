@@ -46,10 +46,7 @@ namespace ShareX
             ShareXResources.ApplyTheme(this, true);
             this.taskSettings = taskSettings;
 
-            if (ShareXResources.UseCustomTheme)
-            {
-                lblQuestion.BackColor = ShareXResources.Theme.BorderColor;
-            }
+            lblQuestion.BackColor = ShareXResources.Theme.BorderColor;
 
             cbDontShowThisWindow.Visible = showCheckBox;
 

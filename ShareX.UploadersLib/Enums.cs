@@ -109,8 +109,6 @@ namespace ShareX.UploadersLib
         SendSpace,
         [Description("Hostr")]
         Localhostr,
-        [Description("JIRA")]
-        Jira,
         [Description("Lambda")]
         Lambda,
         [Description("Pomf")]

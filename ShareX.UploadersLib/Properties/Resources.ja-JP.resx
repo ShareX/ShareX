@@ -277,4 +277,10 @@
   <data name="Headers" xml:space="preserve">
     <value>ヘッダー</value>
   </data>
+  <data name="Connect" xml:space="preserve">
+    <value>接続...</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>切断</value>
+  </data>
 </root>

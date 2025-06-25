@@ -58,7 +58,7 @@ namespace ShareX.UploadersLib
 
             byte[] buffer = new byte[32];
 
-            using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
+            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
             {
                 rng.GetBytes(buffer);
             }

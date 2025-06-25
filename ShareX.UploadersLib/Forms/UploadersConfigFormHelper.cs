@@ -875,59 +875,6 @@ namespace ShareX.UploadersLib
 
         #endregion Twitter
 
-        #region Jira
-
-        public void JiraAuthOpen()
-        {
-            try
-            {
-                OAuthInfo oauth = new OAuthInfo(APIKeys.JiraConsumerKey);
-                oauth.SignatureMethod = OAuthInfo.OAuthInfoSignatureMethod.RSA_SHA1;
-                oauth.ConsumerPrivateKey = Jira.PrivateKey;
-
-                string url = new Jira(Config.JiraHost, oauth).GetAuthorizationURL();
-
-                if (!string.IsNullOrEmpty(url))
-                {
-                    Config.JiraOAuthInfo = oauth;
-                    URLHelpers.OpenURL(url);
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
-
-        public void JiraAuthComplete(string code)
-        {
-            try
-            {
-                if (!string.IsNullOrEmpty(code) && Config.JiraOAuthInfo != null && !string.IsNullOrEmpty(Config.JiraOAuthInfo.AuthToken) && !string.IsNullOrEmpty(Config.JiraOAuthInfo.AuthSecret))
-                {
-                    Jira jira = new Jira(Config.JiraHost, Config.JiraOAuthInfo);
-                    bool result = jira.GetAccessToken(code);
-
-                    if (result)
-                    {
-                        oAuthJira.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        oAuthJira.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
-
-        #endregion Jira
-
         #region Shared folder
 
         private void SharedFolderUpdateControls()

@@ -39,8 +39,9 @@
             this.btnCopyImage = new System.Windows.Forms.Button();
             this.btnSaveImage = new System.Windows.Forms.Button();
             this.btnUploadImage = new System.Windows.Forms.Button();
-            this.btnScanQRCodeFromScreen = new System.Windows.Forms.Button();
-            this.btnScanQRCodeFromImageFile = new System.Windows.Forms.Button();
+            this.btnScanScreen = new System.Windows.Forms.Button();
+            this.btnScanRegion = new System.Windows.Forms.Button();
+            this.btnScanImageFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudQRCodeSize)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,12 +64,12 @@
             // 
             // nudQRCodeSize
             // 
-            resources.ApplyResources(this.nudQRCodeSize, "nudQRCodeSize");
             this.nudQRCodeSize.Increment = new decimal(new int[] {
             64,
             0,
             0,
             0});
+            resources.ApplyResources(this.nudQRCodeSize, "nudQRCodeSize");
             this.nudQRCodeSize.Maximum = new decimal(new int[] {
             2048,
             0,
@@ -116,27 +117,35 @@
             this.btnUploadImage.UseVisualStyleBackColor = true;
             this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
-            // btnScanQRCodeFromScreen
+            // btnScanScreen
             // 
-            resources.ApplyResources(this.btnScanQRCodeFromScreen, "btnScanQRCodeFromScreen");
-            this.btnScanQRCodeFromScreen.Name = "btnScanQRCodeFromScreen";
-            this.btnScanQRCodeFromScreen.UseVisualStyleBackColor = true;
-            this.btnScanQRCodeFromScreen.Click += new System.EventHandler(this.btnScanQRCodeFromScreen_Click);
+            resources.ApplyResources(this.btnScanScreen, "btnScanScreen");
+            this.btnScanScreen.Name = "btnScanScreen";
+            this.btnScanScreen.UseVisualStyleBackColor = true;
+            this.btnScanScreen.Click += new System.EventHandler(this.btnScanScreen_Click);
             // 
-            // btnScanQRCodeFromImageFile
+            // btnScanRegion
             // 
-            resources.ApplyResources(this.btnScanQRCodeFromImageFile, "btnScanQRCodeFromImageFile");
-            this.btnScanQRCodeFromImageFile.Name = "btnScanQRCodeFromImageFile";
-            this.btnScanQRCodeFromImageFile.UseVisualStyleBackColor = true;
-            this.btnScanQRCodeFromImageFile.Click += new System.EventHandler(this.btnScanQRCodeFromImageFile_Click);
+            resources.ApplyResources(this.btnScanRegion, "btnScanRegion");
+            this.btnScanRegion.Name = "btnScanRegion";
+            this.btnScanRegion.UseVisualStyleBackColor = true;
+            this.btnScanRegion.Click += new System.EventHandler(this.btnScanRegion_Click);
+            // 
+            // btnScanImageFile
+            // 
+            resources.ApplyResources(this.btnScanImageFile, "btnScanImageFile");
+            this.btnScanImageFile.Name = "btnScanImageFile";
+            this.btnScanImageFile.UseVisualStyleBackColor = true;
+            this.btnScanImageFile.Click += new System.EventHandler(this.btnScanImageFile_Click);
             // 
             // QRCodeForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.btnScanQRCodeFromImageFile);
-            this.Controls.Add(this.btnScanQRCodeFromScreen);
+            this.Controls.Add(this.btnScanImageFile);
+            this.Controls.Add(this.btnScanRegion);
+            this.Controls.Add(this.btnScanScreen);
             this.Controls.Add(this.btnUploadImage);
             this.Controls.Add(this.btnSaveImage);
             this.Controls.Add(this.btnCopyImage);
@@ -169,7 +178,8 @@
         private System.Windows.Forms.Button btnCopyImage;
         private System.Windows.Forms.Button btnSaveImage;
         private System.Windows.Forms.Button btnUploadImage;
-        private System.Windows.Forms.Button btnScanQRCodeFromScreen;
-        private System.Windows.Forms.Button btnScanQRCodeFromImageFile;
+        private System.Windows.Forms.Button btnScanScreen;
+        private System.Windows.Forms.Button btnScanRegion;
+        private System.Windows.Forms.Button btnScanImageFile;
     }
 }

@@ -58,6 +58,7 @@ namespace ShareX.HelpersLib
                         using (Process process = new Process())
                         {
                             ProcessStartInfo psi = new ProcessStartInfo();
+                            psi.UseShellExecute = true;
 
                             if (!string.IsNullOrEmpty(HelpersOptions.BrowserPath))
                             {

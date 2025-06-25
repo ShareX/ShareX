@@ -270,9 +270,6 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Carica</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>Impostazione DNS fallita con codice errore:</value>
-  </data>
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
     <value>Taglia</value>
   </data>
@@ -293,9 +290,6 @@
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>Avvia/Ferma Registrazione Schermo (GIF) usando la Regione Pre Configurata</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>DNS impostati correttamente.</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Cattura Regione Personalizzata</value>
@@ -400,12 +394,6 @@ Vuoi scaricarla ora?</value>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>Auto Incremento Alfanumerico (Case-Insensitive). Sarà aggiunto uno 0 davanti usando {n}</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>Impostazione DNS fallita.</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Manuale</value>
-  </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Aggiungi Effetti Immagine / Watermark</value>
   </data>
@@ -432,9 +420,6 @@ Vuoi scaricarla ora?</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Regione: Ellisse</value>
-  </data>
-  <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>Cambia DNS</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>Avvia/Ferma Registrazione Schermo (GIF) usando una Regione Personalizzata</value>
@@ -698,9 +683,6 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Impossibile creare la cartella.</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>DNS impostati correttamente. Riavvio richiesto.</value>
-  </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
     <value>Manuale</value>
   </data>
@@ -862,5 +844,8 @@ Vuoi scaricarla e installarla ora?</value>
   </data>
   <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
     <value>Copia File negli Appunti</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value />
   </data>
 </root>

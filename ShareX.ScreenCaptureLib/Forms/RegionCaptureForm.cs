@@ -162,26 +162,13 @@ namespace ShareX.ScreenCaptureLib
             infoFontBig = new Font("Verdana", 16, FontStyle.Bold);
             markerPen = new Pen(Color.FromArgb(200, Color.Red));
 
-            if (ShareXResources.UseCustomTheme)
-            {
-                canvasBackgroundColor = ShareXResources.Theme.BackgroundColor;
-                canvasBorderColor = ShareXResources.Theme.BorderColor;
-                textColor = ShareXResources.Theme.TextColor;
-                textShadowColor = ShareXResources.Theme.BorderColor;
-                textBackgroundColor = Color.FromArgb(200, ShareXResources.Theme.BackgroundColor);
-                textOuterBorderColor = Color.FromArgb(200, ShareXResources.Theme.SeparatorDarkColor);
-                textInnerBorderColor = Color.FromArgb(200, ShareXResources.Theme.SeparatorLightColor);
-            }
-            else
-            {
-                canvasBackgroundColor = Color.FromArgb(200, 200, 200);
-                canvasBorderColor = Color.FromArgb(176, 176, 176);
-                textColor = Color.White;
-                textShadowColor = Color.Black;
-                textBackgroundColor = Color.FromArgb(200, Color.FromArgb(42, 131, 199));
-                textOuterBorderColor = Color.FromArgb(200, Color.White);
-                textInnerBorderColor = Color.FromArgb(200, Color.FromArgb(0, 81, 145));
-            }
+            canvasBackgroundColor = ShareXResources.Theme.BackgroundColor;
+            canvasBorderColor = ShareXResources.Theme.BorderColor;
+            textColor = ShareXResources.Theme.TextColor;
+            textShadowColor = ShareXResources.Theme.BorderColor;
+            textBackgroundColor = Color.FromArgb(200, ShareXResources.Theme.BackgroundColor);
+            textOuterBorderColor = Color.FromArgb(200, ShareXResources.Theme.SeparatorDarkColor);
+            textInnerBorderColor = Color.FromArgb(200, ShareXResources.Theme.SeparatorLightColor);
 
             canvasBorderPen = new Pen(canvasBorderColor);
             textBrush = new SolidBrush(textColor);
@@ -214,9 +201,6 @@ namespace ShareX.ScreenCaptureLib
                 FormBorderStyle = FormBorderStyle.None;
                 Bounds = ScreenBounds;
                 ShowInTaskbar = false;
-#if !DEBUG
-                TopMost = true;
-#endif
             }
             else
             {

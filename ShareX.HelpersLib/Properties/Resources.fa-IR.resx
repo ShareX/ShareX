@@ -249,9 +249,6 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>آپلود</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>تنظیم DNS با مشکل مواجه شد. کد خطا:</value>
-  </data>
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
     <value>برداشتن</value>
   </data>
@@ -275,9 +272,6 @@
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>شروع/توقف ضبط فیلم صفحه (GIF) با ناحیه از پیش تنظیم شده</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>تنظیمات DNS با موفقیت انجام شد.</value>
   </data>
   <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
     <value>عکس</value>
@@ -355,12 +349,6 @@
   <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
     <value>.NET (کیفیت بد)</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>تنظیم DNS با مشکل مواجه شد.</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>دستی</value>
-  </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>اضافه کردن افکت های عکس / واترمارک</value>
   </data>
@@ -384,9 +372,6 @@
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>ناحیه بیضی</value>
-  </data>
-  <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>تغییردهنده DNS</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>شروع/توقف ضبط فیلم صفحه (GIF) از ناحیه سفارشی</value>
@@ -739,5 +724,8 @@
   </data>
   <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
     <value>فایل را به کلیپ بورد کپی کن</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value />
   </data>
 </root>

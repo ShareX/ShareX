@@ -33,6 +33,8 @@ namespace ShareX.HelpersLib
 {
     public partial class HashCheckerForm : Form
     {
+        public event Action PlayNotificationSound;
+
         public bool CompareTwoFiles { get; private set; }
 
         private HashChecker hashChecker;
@@ -57,6 +59,11 @@ namespace ShareX.HelpersLib
             {
                 txtFilePath.Text = filePath;
             }
+        }
+
+        protected void OnPlayNotificationSound()
+        {
+            PlayNotificationSound?.Invoke();
         }
 
         private void UpdateCompareControls()
@@ -140,6 +147,8 @@ namespace ShareX.HelpersLib
                             txtTarget.Text = result2.ToUpperInvariant();
                         }
                     }
+
+                    OnPlayNotificationSound();
                 }
 
                 btnStartHashCheck.Text = Resources.Check;

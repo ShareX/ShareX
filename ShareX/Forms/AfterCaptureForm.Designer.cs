@@ -29,164 +29,159 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AfterCaptureForm));
-            this.btnContinue = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnCopy = new System.Windows.Forms.Button();
-            this.tcTasks = new System.Windows.Forms.TabControl();
-            this.tpAfterCapture = new System.Windows.Forms.TabPage();
-            this.lvAfterCaptureTasks = new ShareX.HelpersLib.MyListView();
-            this.chAfterCapture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tpBeforeUpload = new System.Windows.Forms.TabPage();
-            this.ucBeforeUpload = new ShareX.BeforeUploadControl();
-            this.tpAfterUpload = new System.Windows.Forms.TabPage();
-            this.lvAfterUploadTasks = new ShareX.HelpersLib.MyListView();
-            this.chAfterUpload = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblFileName = new System.Windows.Forms.Label();
-            this.txtFileName = new System.Windows.Forms.TextBox();
-            this.pbImage = new ShareX.HelpersLib.MyPictureBox();
-            this.tcTasks.SuspendLayout();
-            this.tpAfterCapture.SuspendLayout();
-            this.tpBeforeUpload.SuspendLayout();
-            this.tpAfterUpload.SuspendLayout();
-            this.SuspendLayout();
+            btnContinue = new System.Windows.Forms.Button();
+            btnCancel = new System.Windows.Forms.Button();
+            btnCopy = new System.Windows.Forms.Button();
+            tcTasks = new System.Windows.Forms.TabControl();
+            tpAfterCapture = new System.Windows.Forms.TabPage();
+            lvAfterCaptureTasks = new ShareX.HelpersLib.MyListView();
+            chAfterCapture = new System.Windows.Forms.ColumnHeader();
+            tpBeforeUpload = new System.Windows.Forms.TabPage();
+            ucBeforeUpload = new BeforeUploadControl();
+            tpAfterUpload = new System.Windows.Forms.TabPage();
+            lvAfterUploadTasks = new ShareX.HelpersLib.MyListView();
+            chAfterUpload = new System.Windows.Forms.ColumnHeader();
+            lblFileName = new System.Windows.Forms.Label();
+            txtFileName = new System.Windows.Forms.TextBox();
+            pbImage = new ShareX.HelpersLib.MyPictureBox();
+            tcTasks.SuspendLayout();
+            tpAfterCapture.SuspendLayout();
+            tpBeforeUpload.SuspendLayout();
+            tpAfterUpload.SuspendLayout();
+            SuspendLayout();
             // 
             // btnContinue
             // 
-            resources.ApplyResources(this.btnContinue, "btnContinue");
-            this.btnContinue.Name = "btnContinue";
-            this.btnContinue.UseVisualStyleBackColor = true;
-            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            resources.ApplyResources(btnContinue, "btnContinue");
+            btnContinue.Name = "btnContinue";
+            btnContinue.UseVisualStyleBackColor = true;
+            btnContinue.Click += btnContinue_Click;
             // 
             // btnCancel
             // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            resources.ApplyResources(btnCancel, "btnCancel");
+            btnCancel.Name = "btnCancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnCopy
             // 
-            resources.ApplyResources(this.btnCopy, "btnCopy");
-            this.btnCopy.Name = "btnCopy";
-            this.btnCopy.UseVisualStyleBackColor = true;
-            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            resources.ApplyResources(btnCopy, "btnCopy");
+            btnCopy.Name = "btnCopy";
+            btnCopy.UseVisualStyleBackColor = true;
+            btnCopy.Click += btnCopy_Click;
             // 
             // tcTasks
             // 
-            resources.ApplyResources(this.tcTasks, "tcTasks");
-            this.tcTasks.Controls.Add(this.tpAfterCapture);
-            this.tcTasks.Controls.Add(this.tpBeforeUpload);
-            this.tcTasks.Controls.Add(this.tpAfterUpload);
-            this.tcTasks.Name = "tcTasks";
-            this.tcTasks.SelectedIndex = 0;
+            resources.ApplyResources(tcTasks, "tcTasks");
+            tcTasks.Controls.Add(tpAfterCapture);
+            tcTasks.Controls.Add(tpBeforeUpload);
+            tcTasks.Controls.Add(tpAfterUpload);
+            tcTasks.Name = "tcTasks";
+            tcTasks.SelectedIndex = 0;
             // 
             // tpAfterCapture
             // 
-            this.tpAfterCapture.BackColor = System.Drawing.SystemColors.Window;
-            this.tpAfterCapture.Controls.Add(this.lvAfterCaptureTasks);
-            resources.ApplyResources(this.tpAfterCapture, "tpAfterCapture");
-            this.tpAfterCapture.Name = "tpAfterCapture";
+            tpAfterCapture.BackColor = System.Drawing.SystemColors.Window;
+            tpAfterCapture.Controls.Add(lvAfterCaptureTasks);
+            resources.ApplyResources(tpAfterCapture, "tpAfterCapture");
+            tpAfterCapture.Name = "tpAfterCapture";
             // 
             // lvAfterCaptureTasks
             // 
-            this.lvAfterCaptureTasks.AutoFillColumn = true;
-            this.lvAfterCaptureTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvAfterCaptureTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chAfterCapture});
-            resources.ApplyResources(this.lvAfterCaptureTasks, "lvAfterCaptureTasks");
-            this.lvAfterCaptureTasks.FullRowSelect = true;
-            this.lvAfterCaptureTasks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvAfterCaptureTasks.HideSelection = false;
-            this.lvAfterCaptureTasks.MultiSelect = false;
-            this.lvAfterCaptureTasks.Name = "lvAfterCaptureTasks";
-            this.lvAfterCaptureTasks.UseCompatibleStateImageBehavior = false;
-            this.lvAfterCaptureTasks.View = System.Windows.Forms.View.Details;
-            this.lvAfterCaptureTasks.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvAfterCaptureTasks_ItemSelectionChanged);
-            this.lvAfterCaptureTasks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvAfterCaptureTasks_MouseDown);
+            lvAfterCaptureTasks.AutoFillColumn = true;
+            lvAfterCaptureTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            lvAfterCaptureTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { chAfterCapture });
+            resources.ApplyResources(lvAfterCaptureTasks, "lvAfterCaptureTasks");
+            lvAfterCaptureTasks.FullRowSelect = true;
+            lvAfterCaptureTasks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            lvAfterCaptureTasks.MultiSelect = false;
+            lvAfterCaptureTasks.Name = "lvAfterCaptureTasks";
+            lvAfterCaptureTasks.UseCompatibleStateImageBehavior = false;
+            lvAfterCaptureTasks.View = System.Windows.Forms.View.Details;
+            lvAfterCaptureTasks.ItemSelectionChanged += lvAfterCaptureTasks_ItemSelectionChanged;
+            lvAfterCaptureTasks.MouseDown += lvAfterCaptureTasks_MouseDown;
             // 
             // tpBeforeUpload
             // 
-            this.tpBeforeUpload.BackColor = System.Drawing.SystemColors.Window;
-            this.tpBeforeUpload.Controls.Add(this.ucBeforeUpload);
-            resources.ApplyResources(this.tpBeforeUpload, "tpBeforeUpload");
-            this.tpBeforeUpload.Name = "tpBeforeUpload";
+            tpBeforeUpload.BackColor = System.Drawing.SystemColors.Window;
+            tpBeforeUpload.Controls.Add(ucBeforeUpload);
+            resources.ApplyResources(tpBeforeUpload, "tpBeforeUpload");
+            tpBeforeUpload.Name = "tpBeforeUpload";
             // 
             // ucBeforeUpload
             // 
-            resources.ApplyResources(this.ucBeforeUpload, "ucBeforeUpload");
-            this.ucBeforeUpload.Name = "ucBeforeUpload";
+            resources.ApplyResources(ucBeforeUpload, "ucBeforeUpload");
+            ucBeforeUpload.Name = "ucBeforeUpload";
             // 
             // tpAfterUpload
             // 
-            this.tpAfterUpload.BackColor = System.Drawing.SystemColors.Window;
-            this.tpAfterUpload.Controls.Add(this.lvAfterUploadTasks);
-            resources.ApplyResources(this.tpAfterUpload, "tpAfterUpload");
-            this.tpAfterUpload.Name = "tpAfterUpload";
+            tpAfterUpload.BackColor = System.Drawing.SystemColors.Window;
+            tpAfterUpload.Controls.Add(lvAfterUploadTasks);
+            resources.ApplyResources(tpAfterUpload, "tpAfterUpload");
+            tpAfterUpload.Name = "tpAfterUpload";
             // 
             // lvAfterUploadTasks
             // 
-            this.lvAfterUploadTasks.AutoFillColumn = true;
-            this.lvAfterUploadTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvAfterUploadTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chAfterUpload});
-            resources.ApplyResources(this.lvAfterUploadTasks, "lvAfterUploadTasks");
-            this.lvAfterUploadTasks.FullRowSelect = true;
-            this.lvAfterUploadTasks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvAfterUploadTasks.HideSelection = false;
-            this.lvAfterUploadTasks.MultiSelect = false;
-            this.lvAfterUploadTasks.Name = "lvAfterUploadTasks";
-            this.lvAfterUploadTasks.UseCompatibleStateImageBehavior = false;
-            this.lvAfterUploadTasks.View = System.Windows.Forms.View.Details;
-            this.lvAfterUploadTasks.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvAfterUploadTasks_ItemSelectionChanged);
-            this.lvAfterUploadTasks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvAfterUploadTasks_MouseDown);
+            lvAfterUploadTasks.AutoFillColumn = true;
+            lvAfterUploadTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            lvAfterUploadTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { chAfterUpload });
+            resources.ApplyResources(lvAfterUploadTasks, "lvAfterUploadTasks");
+            lvAfterUploadTasks.FullRowSelect = true;
+            lvAfterUploadTasks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            lvAfterUploadTasks.MultiSelect = false;
+            lvAfterUploadTasks.Name = "lvAfterUploadTasks";
+            lvAfterUploadTasks.UseCompatibleStateImageBehavior = false;
+            lvAfterUploadTasks.View = System.Windows.Forms.View.Details;
+            lvAfterUploadTasks.ItemSelectionChanged += lvAfterUploadTasks_ItemSelectionChanged;
+            lvAfterUploadTasks.MouseDown += lvAfterUploadTasks_MouseDown;
             // 
             // lblFileName
             // 
-            resources.ApplyResources(this.lblFileName, "lblFileName");
-            this.lblFileName.Name = "lblFileName";
+            resources.ApplyResources(lblFileName, "lblFileName");
+            lblFileName.Name = "lblFileName";
             // 
             // txtFileName
             // 
-            resources.ApplyResources(this.txtFileName, "txtFileName");
-            this.txtFileName.Name = "txtFileName";
-            this.txtFileName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFileName_KeyDown);
-            this.txtFileName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFileName_KeyUp);
+            resources.ApplyResources(txtFileName, "txtFileName");
+            txtFileName.Name = "txtFileName";
+            txtFileName.KeyDown += txtFileName_KeyDown;
+            txtFileName.KeyUp += txtFileName_KeyUp;
             // 
             // pbImage
             // 
-            resources.ApplyResources(this.pbImage, "pbImage");
-            this.pbImage.BackColor = System.Drawing.SystemColors.Window;
-            this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImage.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pbImage.DrawCheckeredBackground = true;
-            this.pbImage.EnableRightClickMenu = true;
-            this.pbImage.FullscreenOnClick = true;
-            this.pbImage.Name = "pbImage";
-            this.pbImage.PictureBoxBackColor = System.Drawing.SystemColors.Window;
-            this.pbImage.ShowImageSizeLabel = true;
+            resources.ApplyResources(pbImage, "pbImage");
+            pbImage.BackColor = System.Drawing.SystemColors.Window;
+            pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pbImage.DrawCheckeredBackground = true;
+            pbImage.EnableRightClickMenu = true;
+            pbImage.FullscreenOnClick = true;
+            pbImage.Name = "pbImage";
+            pbImage.PictureBoxBackColor = System.Drawing.SystemColors.Window;
+            pbImage.ShowImageSizeLabel = true;
             // 
             // AfterCaptureForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.txtFileName);
-            this.Controls.Add(this.lblFileName);
-            this.Controls.Add(this.tcTasks);
-            this.Controls.Add(this.btnCopy);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnContinue);
-            this.Controls.Add(this.pbImage);
-            this.Name = "AfterCaptureForm";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.TopMost = true;
-            this.Shown += new System.EventHandler(this.AfterCaptureForm_Shown);
-            this.tcTasks.ResumeLayout(false);
-            this.tpAfterCapture.ResumeLayout(false);
-            this.tpBeforeUpload.ResumeLayout(false);
-            this.tpAfterUpload.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            BackColor = System.Drawing.SystemColors.Window;
+            Controls.Add(txtFileName);
+            Controls.Add(lblFileName);
+            Controls.Add(tcTasks);
+            Controls.Add(btnCopy);
+            Controls.Add(btnCancel);
+            Controls.Add(btnContinue);
+            Controls.Add(pbImage);
+            Name = "AfterCaptureForm";
+            SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            TopMost = true;
+            Shown += AfterCaptureForm_Shown;
+            tcTasks.ResumeLayout(false);
+            tpAfterCapture.ResumeLayout(false);
+            tpBeforeUpload.ResumeLayout(false);
+            tpAfterUpload.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

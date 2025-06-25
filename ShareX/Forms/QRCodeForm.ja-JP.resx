@@ -147,4 +147,31 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - QR コード</value>
   </data>
+  <data name="lblQRCodeSizeHint.Text" xml:space="preserve">
+    <value>ピクセル</value>
+  </data>
+  <data name="lblQRCodeSize.Text" xml:space="preserve">
+    <value>QRコードの大きさ:</value>
+  </data>
+  <data name="lblQRCode.Text" xml:space="preserve">
+    <value>QRコード:</value>
+  </data>
+  <data name="lblText.Text" xml:space="preserve">
+    <value>文字列:</value>
+  </data>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>画像をコピー</value>
+  </data>
+  <data name="btnSaveImage.Text" xml:space="preserve">
+    <value>画像を保存...</value>
+  </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>画像をアップロード</value>
+  </data>
+  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
+    <value>画面のQRコードを読込...</value>
+  </data>
+  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
+    <value>画像からQRコードを読込...</value>
+  </data>
 </root>

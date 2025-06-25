@@ -336,6 +336,11 @@ namespace ShareX
 
             using (PinToScreenOptionsForm pinToScreenOptionsForm = new PinToScreenOptionsForm(Options))
             {
+                if (TopMost)
+                {
+                    pinToScreenOptionsForm.TopMost = true;
+                }
+
                 if (pinToScreenOptionsForm.ShowDialog(this) == DialogResult.OK)
                 {
                     if (TopMost != Options.TopMost)
@@ -529,6 +534,27 @@ namespace ShareX
         private void tsMain_MouseLeave(object sender, EventArgs e)
         {
             UpdateControls();
+        }
+
+        private void PinToScreenForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            int speed = e.Shift ? 10 : 1;
+
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    Location = new Point(Location.X - speed, Location.Y);
+                    break;
+                case Keys.Right:
+                    Location = new Point(Location.X + speed, Location.Y);
+                    break;
+                case Keys.Up:
+                    Location = new Point(Location.X, Location.Y - speed);
+                    break;
+                case Keys.Down:
+                    Location = new Point(Location.X, Location.Y + speed);
+                    break;
+            }
         }
 
         private void PinToScreenForm_KeyUp(object sender, KeyEventArgs e)

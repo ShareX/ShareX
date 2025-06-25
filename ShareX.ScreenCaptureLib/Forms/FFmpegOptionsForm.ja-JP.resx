@@ -164,7 +164,7 @@
     <value>独自のコマンドラインを使用</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
-    <value>可変ビットレート:</value>
+    <value>ビットレート:</value>
   </data>
   <data name="lblNVENCPreset.Text" xml:space="preserve">
     <value>プリセット:</value>
@@ -206,7 +206,7 @@
     <value>映像/オーディオ入力の screen-capture-recorder と virtual-audio-capturer をインストール</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>録画デバイスをインストール</value>
+    <value>録画デバイスをインストール...</value>
   </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>更新</value>
@@ -246,5 +246,26 @@
   </data>
   <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
     <value>Bayer Scale を管理。高くするとバンディング（縞）を増やすでしょう。標準は 2 です。</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>動画エンコーダー:</value>
+  </data>
+  <data name="lblAudioEncoder.Text" xml:space="preserve">
+    <value>音声エンコーダー:</value>
+  </data>
+  <data name="lblAACBitrate.Text" xml:space="preserve">
+    <value>ビットレート:</value>
+  </data>
+  <data name="lblOpusBitrate.Text" xml:space="preserve">
+    <value>ビットレート:</value>
+  </data>
+  <data name="lblNVENCTune.Text" xml:space="preserve">
+    <value>調整:</value>
+  </data>
+  <data name="lblAMFBitrate.Text" xml:space="preserve">
+    <value>ビットレート:</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>オプションを初期化...</value>
   </data>
 </root>

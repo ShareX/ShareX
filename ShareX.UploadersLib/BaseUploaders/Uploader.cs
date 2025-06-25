@@ -53,25 +53,6 @@ namespace ShareX.UploadersLib
 
         private HttpWebRequest currentWebRequest;
 
-        public static void UpdateServicePointManager()
-        {
-            ServicePointManager.DefaultConnectionLimit = 25;
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.UseNagleAlgorithm = false;
-
-            if (Helpers.IsWindows7())
-            {
-                try
-                {
-                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
-                }
-                catch (NotSupportedException)
-                {
-                    DebugHelper.WriteLine("Unable to configure TLS 1.2 as the default security protocol.");
-                }
-            }
-        }
-
         protected void OnProgressChanged(ProgressManager progress)
         {
             ProgressChanged?.Invoke(progress);

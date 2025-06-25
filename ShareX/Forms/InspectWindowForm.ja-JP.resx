@@ -132,4 +132,13 @@
   <data name="btnPinToTop.Text" xml:space="preserve">
     <value>最前面に固定</value>
   </data>
+  <data name="mbWindowList.Text" xml:space="preserve">
+    <value>ウィンドウ一覧</value>
+  </data>
+  <data name="cbTopMost.Text" xml:space="preserve">
+    <value>常に手前に表示</value>
+  </data>
+  <data name="lblOpacity.Text" xml:space="preserve">
+    <value>不透過度:</value>
+  </data>
 </root>

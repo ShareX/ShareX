@@ -150,4 +150,31 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Історія</value>
   </data>
+  <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
+    <value>Скинути</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Пошук:</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
+    <value>Більше інформації</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>Показати статистику...</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Налаштування...</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Пошук</value>
+  </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>Розширений пошук</value>
+  </data>
+  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
+    <value>Розширений пошук...</value>
+  </data>
 </root>

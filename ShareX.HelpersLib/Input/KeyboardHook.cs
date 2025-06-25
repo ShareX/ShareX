@@ -54,7 +54,8 @@ namespace ShareX.HelpersLib
             using (Process currentProcess = Process.GetCurrentProcess())
             using (ProcessModule currentModule = currentProcess.MainModule)
             {
-                return NativeMethods.SetWindowsHookEx(hookType, hookProc, NativeMethods.GetModuleHandle(currentModule.ModuleName), 0);
+                IntPtr moduleHandle = NativeMethods.GetModuleHandle(currentModule.ModuleName);
+                return NativeMethods.SetWindowsHookEx(hookType, hookProc, moduleHandle, 0);
             }
         }
 

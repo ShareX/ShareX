@@ -282,9 +282,6 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>上传</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>DNS设置失败，错误代码：</value>
-  </data>
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
     <value>剪切</value>
   </data>
@@ -308,9 +305,6 @@
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>使用自定义区域开始屏幕录制（GIF）</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>DNS设置成功。</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>截图自定义区域</value>
@@ -427,12 +421,6 @@
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>自动递增字母数字不区分大小写（使用 {n} 向左填充 0）</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>DNS设置失败。</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>手动</value>
-  </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>添加图像特效</value>
   </data>
@@ -462,9 +450,6 @@
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>区域：椭圆</value>
-  </data>
-  <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>修改 DNS</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>开始/停止屏幕录制（GIF）</value>
@@ -781,9 +766,6 @@
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>未能创建目录。</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>DNS设置成功，需要重新启动。</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
     <value>手动</value>
@@ -1174,5 +1156,8 @@
   </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>无边框窗口</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value />
   </data>
 </root>

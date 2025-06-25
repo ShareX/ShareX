@@ -1,11 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System.IO.Compression" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
   </ItemGroup>

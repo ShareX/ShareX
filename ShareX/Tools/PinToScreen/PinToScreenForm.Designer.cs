@@ -79,6 +79,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PinToScreenForm";
             this.ShowInTaskbar = false;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PinToScreenForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PinToScreenForm_KeyUp);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PinToScreenForm_MouseDown);
             this.MouseEnter += new System.EventHandler(this.PinToScreenForm_MouseEnter);

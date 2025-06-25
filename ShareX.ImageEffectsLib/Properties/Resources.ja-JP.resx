@@ -136,7 +136,7 @@
     <value>調整</value>
   </data>
   <data name="WouldYouLikeToClearEffects" xml:space="preserve">
-    <value>画像エフェクトをクリアしますか？</value>
+    <value>これらのエフェクトをすべて消去しますか？</value>
   </data>
   <data name="PresetNameCannotBeEmpty" xml:space="preserve">
     <value>プリセット名は空白にできません。</value>

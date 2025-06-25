@@ -282,9 +282,6 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Tải lên</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>Thiết lập DNS thất bại với mã lỗi:</value>
-  </data>
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
     <value>Cắt</value>
   </data>
@@ -308,9 +305,6 @@
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>Bắt đầu / Dừng ghi màn hình (GIF) bằng cách sử dụng vùng được định cấu hình trước</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>Thiết lập DNS thành công.</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Chụp vùng tùy chỉnh</value>
@@ -427,12 +421,6 @@ Bạn có muốn tải về không?</value>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>Tự tăng theo chữ và số không phân biệt chữ viết hoa/thường. Chèn 0 bên trái sử dụng {n}</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>Thiết lập DNS thất bại.</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Thủ công</value>
-  </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Thêm hiệu ứng ảnh / hình đóng dấu (effects/watermark)</value>
   </data>
@@ -462,9 +450,6 @@ Bạn có muốn tải về không?</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Vùng: E-líp</value>
-  </data>
-  <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>Trình đổi DNS</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>Bắt đầu/Dừng ghi lại màn hình (dạng ảnh GIF) sử dụng vùng tự chọn</value>
@@ -781,9 +766,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Không thể tạo đường dẫn.</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>Thiết lập DNS thành công. Việc khởi động lại được yêu cầu.</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
     <value>Tự chỉnh</value>
@@ -1216,5 +1198,8 @@ Bạn có muốn tải về và cài đặt không?</value>
   </data>
   <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
     <value>Mũi tên tự do</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value />
   </data>
 </root>

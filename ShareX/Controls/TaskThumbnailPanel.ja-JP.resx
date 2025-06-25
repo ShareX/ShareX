@@ -120,4 +120,10 @@
   <data name="lblError.Text" xml:space="preserve">
     <value>エラー</value>
   </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>画像を結合 (縦)</value>
+  </data>
+  <data name="lblCombineHorizontal.Text" xml:space="preserve">
+    <value>画像を結合 (横)</value>
+  </data>
 </root>

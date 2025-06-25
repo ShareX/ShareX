@@ -105,10 +105,7 @@ namespace ShareX
             tsmiCancel.Click += (sender, e) => cms.Close();
             cms.Items.Add(tsmiCancel);
 
-            if (ShareXResources.UseCustomTheme)
-            {
-                ShareXResources.ApplyCustomThemeToContextMenuStrip(cms);
-            }
+            ShareXResources.ApplyCustomThemeToContextMenuStrip(cms);
 
             Point cursorPosition = CaptureHelpers.GetCursorPosition();
             cursorPosition.Offset(-10, -10);

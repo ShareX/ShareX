@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using IWshRuntimeLibrary;
 using System;
 using System.IO;
 using File = System.IO.File;
@@ -103,7 +102,7 @@ namespace ShareX.HelpersLib
                 DeleteShortcut(shortcutPath);
 
                 WshShell shell = new WshShell();
-                IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutPath);
+                IWshShortcut shortcut = ((IWshShell)shell).CreateShortcut(shortcutPath);
                 shortcut.TargetPath = targetPath;
                 shortcut.Arguments = arguments;
                 shortcut.WorkingDirectory = Path.GetDirectoryName(targetPath);
@@ -118,7 +117,7 @@ namespace ShareX.HelpersLib
         private static string GetShortcutTargetPath(string shortcutPath)
         {
             WshShell shell = new WshShell();
-            IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutPath);
+            IWshShortcut shortcut = ((IWshShell)shell).CreateShortcut(shortcutPath);
             return shortcut.TargetPath;
         }
 

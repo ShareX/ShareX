@@ -44,6 +44,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.cbShowRegion = new System.Windows.Forms.CheckBox();
             this.cbAutoIgnoreBottomEdge = new System.Windows.Forms.CheckBox();
+            this.cbScrollMethod = new System.Windows.Forms.ComboBox();
+            this.lblScrollMethod = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudStartDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollAmount)).BeginInit();
@@ -124,7 +126,7 @@
             // 
             resources.ApplyResources(this.nudScrollAmount, "nudScrollAmount");
             this.nudScrollAmount.Maximum = new decimal(new int[] {
-            5,
+            6,
             0,
             0,
             0});
@@ -187,10 +189,25 @@
             this.cbAutoIgnoreBottomEdge.Name = "cbAutoIgnoreBottomEdge";
             this.cbAutoIgnoreBottomEdge.UseVisualStyleBackColor = true;
             // 
+            // cbScrollMethod
+            // 
+            this.cbScrollMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbScrollMethod.FormattingEnabled = true;
+            resources.ApplyResources(this.cbScrollMethod, "cbScrollMethod");
+            this.cbScrollMethod.Name = "cbScrollMethod";
+            this.cbScrollMethod.SelectedIndexChanged += new System.EventHandler(this.cbScrollMethod_SelectedIndexChanged);
+            // 
+            // lblScrollMethod
+            // 
+            resources.ApplyResources(this.lblScrollMethod, "lblScrollMethod");
+            this.lblScrollMethod.Name = "lblScrollMethod";
+            // 
             // ScrollingCaptureOptionsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.lblScrollMethod);
+            this.Controls.Add(this.cbScrollMethod);
             this.Controls.Add(this.cbAutoIgnoreBottomEdge);
             this.Controls.Add(this.cbShowRegion);
             this.Controls.Add(this.btnCancel);
@@ -234,5 +251,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.CheckBox cbShowRegion;
         private System.Windows.Forms.CheckBox cbAutoIgnoreBottomEdge;
+        private System.Windows.Forms.ComboBox cbScrollMethod;
+        private System.Windows.Forms.Label lblScrollMethod;
     }
 }

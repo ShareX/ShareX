@@ -60,7 +60,6 @@ namespace ShareX
             this.btnThemeAdd = new System.Windows.Forms.Button();
             this.cbThemes = new System.Windows.Forms.ComboBox();
             this.pgTheme = new System.Windows.Forms.PropertyGrid();
-            this.cbUseCustomTheme = new System.Windows.Forms.CheckBox();
             this.eiTheme = new ShareX.HelpersLib.ExportImportControl();
             this.tpIntegration = new System.Windows.Forms.TabPage();
             this.gbFirefox = new System.Windows.Forms.GroupBox();
@@ -407,7 +406,6 @@ namespace ShareX
             this.tpTheme.Controls.Add(this.btnThemeAdd);
             this.tpTheme.Controls.Add(this.cbThemes);
             this.tpTheme.Controls.Add(this.pgTheme);
-            this.tpTheme.Controls.Add(this.cbUseCustomTheme);
             this.tpTheme.Controls.Add(this.eiTheme);
             resources.ApplyResources(this.tpTheme, "tpTheme");
             this.tpTheme.Name = "tpTheme";
@@ -449,13 +447,6 @@ namespace ShareX
             this.pgTheme.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgTheme.ToolbarVisible = false;
             this.pgTheme.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgTheme_PropertyValueChanged);
-            // 
-            // cbUseCustomTheme
-            // 
-            resources.ApplyResources(this.cbUseCustomTheme, "cbUseCustomTheme");
-            this.cbUseCustomTheme.Name = "cbUseCustomTheme";
-            this.cbUseCustomTheme.UseVisualStyleBackColor = true;
-            this.cbUseCustomTheme.CheckedChanged += new System.EventHandler(this.CbUseCustomTheme_CheckedChanged);
             // 
             // eiTheme
             // 
@@ -1446,7 +1437,6 @@ namespace ShareX
             this.tpGeneral.ResumeLayout(false);
             this.tpGeneral.PerformLayout();
             this.tpTheme.ResumeLayout(false);
-            this.tpTheme.PerformLayout();
             this.tpIntegration.ResumeLayout(false);
             this.gbFirefox.ResumeLayout(false);
             this.gbFirefox.PerformLayout();
@@ -1604,7 +1594,6 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbEditWithShareX;
         private System.Windows.Forms.Button btnCheckDevBuild;
         private System.Windows.Forms.Button btnPersonalFolderPathApply;
-        private System.Windows.Forms.CheckBox cbUseCustomTheme;
         private System.Windows.Forms.CheckBox cbUseWhiteShareXIcon;
         private System.Windows.Forms.TabPage tpTheme;
         private System.Windows.Forms.PropertyGrid pgTheme;

@@ -276,13 +276,12 @@ namespace ShareX
             if (CheckUninstall()) return; // Steam will run ShareX with -Uninstall when uninstalling
 #endif
 
-            if (CheckAdminTasks()) return; // If ShareX opened just for be able to execute task as Admin
-
             SystemOptions.UpdateSystemOptions();
             UpdatePersonalPath();
 
             DebugHelper.Init(LogsFilePath);
 
+            IsAdmin = Helpers.IsAdministrator();
             MultiInstance = CLI.IsCommandExist("multi", "m");
 
             using (SingleInstanceManager singleInstanceManager = new SingleInstanceManager(MutexName, PipeName, !MultiInstance, args))
@@ -317,8 +316,7 @@ namespace ShareX
 
         private static void Run()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            ApplicationConfiguration.Initialize();
 
             DebugHelper.WriteLine("ShareX starting.");
             DebugHelper.WriteLine("Version: " + VersionText);
@@ -330,7 +328,6 @@ namespace ShareX
                 DebugHelper.WriteLine("Personal path detection method: " + PersonalPathDetectionMethod);
             }
             DebugHelper.WriteLine("Operating system: " + Helpers.GetOperatingSystemProductName(true));
-            IsAdmin = Helpers.IsAdministrator();
             DebugHelper.WriteLine("Running as elevated process: " + IsAdmin);
 
             SilentRun = CLI.IsCommandExist("silent", "s");
@@ -351,11 +348,9 @@ namespace ShareX
 
             SettingManager.LoadInitialSettings();
 
-            Uploader.UpdateServicePointManager();
             UpdateManager = new ShareXUpdateManager();
             LanguageHelper.ChangeLanguage(Settings.Language);
             CleanupManager.CleanupAsync();
-            Helpers.TryFixHandCursor();
 
             DebugHelper.WriteLine("MainForm init started.");
             MainForm = new MainForm();
@@ -660,20 +655,6 @@ namespace ShareX
             {
                 errorForm.ShowDialog();
             }
-        }
-
-        private static bool CheckAdminTasks()
-        {
-            if (CLI.IsCommandExist("dnschanger"))
-            {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Helpers.TryFixHandCursor();
-                Application.Run(new DNSChangerForm());
-                return true;
-            }
-
-            return false;
         }
 
         private static bool CheckUninstall()

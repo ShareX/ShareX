@@ -154,7 +154,7 @@
     <value>追加</value>
   </data>
   <data name="btnEffectClear.ToolTip" xml:space="preserve">
-    <value>クリア...</value>
+    <value>消去...</value>
   </data>
   <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
     <value>複製</value>

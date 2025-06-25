@@ -637,4 +637,24 @@ ShareX を再起動しますか？</value>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
     <value>アンチウィルスソフトやWindowsのフォルダアクセス権限により、ShareX の使用が阻止されている可能性があります。</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
+    <value>ヘブライ語</value>
+  </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>最新版のShareXです！</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>クリップボードのアップロードを再試行しますか？</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>画面録画中はShareXを閉じることができません。
+
+現在の画面録画を中止しますか？</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>クリップボード アップロード</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
+    <value>アラビア語</value>
+  </data>
 </root>

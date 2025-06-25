@@ -43,15 +43,12 @@ namespace ShareX.ScreenCaptureLib
             ImageListView.Colors.SelectedColor1 = ImageListView.Colors.HoverColor1 = ImageListView.Colors.UnFocusedColor1 = Color.FromArgb(252, 221, 132);
             ImageListView.Colors.SelectedColor2 = ImageListView.Colors.HoverColor2 = ImageListView.Colors.UnFocusedColor2 = Color.Transparent;
 
-            if (ShareXResources.UseCustomTheme)
-            {
-                ImageListView.BackColor = ShareXResources.Theme.BackgroundColor;
-                ImageListView.Colors.BackColor = ShareXResources.Theme.LightBackgroundColor;
-                ImageListView.Colors.BorderColor = ShareXResources.Theme.BorderColor;
-                ImageListView.Colors.ForeColor = ShareXResources.Theme.TextColor;
-                ImageListView.Colors.SelectedForeColor = ShareXResources.Theme.TextColor;
-                ImageListView.Colors.UnFocusedForeColor = ShareXResources.Theme.TextColor;
-            }
+            ImageListView.BackColor = ShareXResources.Theme.BackgroundColor;
+            ImageListView.Colors.BackColor = ShareXResources.Theme.LightBackgroundColor;
+            ImageListView.Colors.BorderColor = ShareXResources.Theme.BorderColor;
+            ImageListView.Colors.ForeColor = ShareXResources.Theme.TextColor;
+            ImageListView.Colors.SelectedForeColor = ShareXResources.Theme.TextColor;
+            ImageListView.Colors.UnFocusedForeColor = ShareXResources.Theme.TextColor;
         }
 
         public override void DrawItem(Graphics g, ImageListViewItem item, ItemState state, Rectangle bounds)

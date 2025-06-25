@@ -282,9 +282,6 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>העלה</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>הגדרת DNS נכשלה עם קוד שגיאה:</value>
-  </data>
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
     <value>גזור</value>
   </data>
@@ -308,9 +305,6 @@
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>התחל/עצור הקלטת מסך (GIF) באמצעות אזור מוגדר מראש</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>DNS הוגדר בהצלחה.</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>צילום אזור מוגדר מראש</value>
@@ -427,12 +421,6 @@
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>הגדלה אוטומטית של אלפאנומרי לא רגיש לאותיות גדולות (0 משטח נותר באמצעות {n})</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>הגדרת DNS נכשלה.</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>ידני</value>
-  </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>הוסף אפקטים לתמונה</value>
   </data>
@@ -462,9 +450,6 @@
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>אליפסה לאזור</value>
-  </data>
-  <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>משנה DNS</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>התחל/עצור הקלטת מסך (GIF)</value>
@@ -778,9 +763,6 @@
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>לא ניתן ליצור תיקייה.</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>DNS הוגדר בהצלחה. נדרש אתחול.</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
     <value>ידני</value>
@@ -1213,5 +1195,8 @@
   </data>
   <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
     <value>חץ חופשי</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value />
   </data>
 </root>

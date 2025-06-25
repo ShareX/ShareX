@@ -543,6 +543,17 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
+        public static void DrawImageCentered(Bitmap bmp1, Bitmap bmp2)
+        {
+            using (Graphics g = Graphics.FromImage(bmp1))
+            {
+                g.PixelOffsetMode = PixelOffsetMode.Half;
+                int x = (bmp1.Width - bmp2.Width) / 2;
+                int y = (bmp1.Height - bmp2.Height) / 2;
+                g.DrawImage(bmp2, x, y, bmp2.Width, bmp2.Height);
+            }
+        }
+
         public static Bitmap DrawBackgroundImage(Bitmap bmp, Bitmap backgroundImage, bool center = true, bool tile = false)
         {
             if (bmp != null && backgroundImage != null)

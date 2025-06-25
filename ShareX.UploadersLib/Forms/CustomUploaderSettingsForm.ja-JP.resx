@@ -121,7 +121,7 @@
     <value>名前:</value>
   </data>
   <data name="btnTestURLSyntax.Text" xml:space="preserve">
-    <value>テスト</value>
+    <value>テスト...</value>
   </data>
   <data name="btnTextUploaderTest.Text" xml:space="preserve">
     <value>テスト</value>
@@ -227,5 +227,11 @@
   </data>
   <data name="tsmiUpdateFolder.Text" xml:space="preserve">
     <value>フォルダーの更新...</value>
+  </data>
+  <data name="lblRequestMethod.Text" xml:space="preserve">
+    <value>メソッド:</value>
+  </data>
+  <data name="btnDataBeautify.Text" xml:space="preserve">
+    <value>装飾</value>
   </data>
 </root>

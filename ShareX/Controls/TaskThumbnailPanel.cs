@@ -250,26 +250,13 @@ namespace ShareX
 
         public void UpdateTheme()
         {
-            if (ShareXResources.UseCustomTheme)
-            {
-                lblTitle.ForeColor = ShareXResources.Theme.TextColor;
-                lblTitle.TextShadowColor = ShareXResources.Theme.DarkBackgroundColor;
-                pThumbnail.PanelColor = ShareXResources.Theme.DarkBackgroundColor;
-                ttMain.BackColor = ShareXResources.Theme.BackgroundColor;
-                ttMain.ForeColor = ShareXResources.Theme.TextColor;
-                lblCombineHorizontal.BorderColor = ShareXResources.Theme.BorderColor;
-                lblCombineVertical.BorderColor = ShareXResources.Theme.BorderColor;
-            }
-            else
-            {
-                lblTitle.ForeColor = SystemColors.ControlText;
-                lblTitle.TextShadowColor = Color.Transparent;
-                pThumbnail.PanelColor = SystemColors.ControlLight;
-                ttMain.BackColor = SystemColors.Window;
-                ttMain.ForeColor = SystemColors.ControlText;
-                lblCombineHorizontal.BorderColor = Color.Black;
-                lblCombineVertical.BorderColor = Color.Black;
-            }
+            lblTitle.ForeColor = ShareXResources.Theme.TextColor;
+            lblTitle.TextShadowColor = ShareXResources.Theme.DarkBackgroundColor;
+            pThumbnail.PanelColor = ShareXResources.Theme.DarkBackgroundColor;
+            ttMain.BackColor = ShareXResources.Theme.BackgroundColor;
+            ttMain.ForeColor = ShareXResources.Theme.TextColor;
+            lblCombineHorizontal.BorderColor = ShareXResources.Theme.BorderColor;
+            lblCombineVertical.BorderColor = ShareXResources.Theme.BorderColor;
         }
 
         public void UpdateTitle()
@@ -383,7 +370,22 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(filePath))
                 {
-                    using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
+                    if (FileHelpers.IsVideoFile(filePath))
+                    {
+                        Bitmap bmpResult = NativeMethods.GetFileThumbnail(filePath, ThumbnailSize);
+
+                        if (bmpResult != null)
+                        {
+                            if (bmpResult.Width > 64 && bmpResult.Height > 64)
+                            {
+                                ImageHelpers.DrawImageCentered(bmpResult, Resources.Play);
+                            }
+
+                            return bmpResult;
+                        }
+                    }
+
+                    using (Icon icon = NativeMethods.GetJumboFileIcon(filePath))
                     using (Bitmap bmpResult = icon.ToBitmap())
                     {
                         return ImageHelpers.ResizeImage(bmpResult, ThumbnailSize, false, true);

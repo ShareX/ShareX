@@ -119,7 +119,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 int chunkLength = chunkEnd - chunkStart;
                 byte[] plainBytes = new byte[chunkLength];
-                stream.Read(plainBytes, 0, chunkLength);
+                stream.ReadExactly(plainBytes);
 
                 byte[] encryptedBytes = EncryptBytes(cryptoData, plainBytes);
 
@@ -225,7 +225,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private static byte[] EncryptBytes(Vault_oooCryptoData crypto, byte[] bytes)
         {
-            using (AesManaged aes = new AesManaged())
+            using (SymmetricAlgorithm aes = Aes.Create())
             {
                 aes.Mode = CipherMode.CBC;
                 aes.KeySize = AES_KEY_SIZE;

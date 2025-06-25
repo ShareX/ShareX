@@ -123,24 +123,21 @@ namespace ShareX
 
         public static void UploadFolder(TaskSettings taskSettings = null)
         {
-            using (FolderSelectDialog folderDialog = new FolderSelectDialog())
+            string initialDirectory;
+            if (!string.IsNullOrEmpty(Program.Settings.FileUploadDefaultDirectory) && Directory.Exists(Program.Settings.FileUploadDefaultDirectory))
             {
-                folderDialog.Title = "ShareX - " + Resources.UploadManager_UploadFolder_Folder_upload;
+                initialDirectory = Program.Settings.FileUploadDefaultDirectory;
+            }
+            else
+            {
+                initialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            }
+            string selectedPath = FileHelpers.BrowseFolder("ShareX - " + Resources.UploadManager_UploadFolder_Folder_upload, initialDirectory);
 
-                if (!string.IsNullOrEmpty(Program.Settings.FileUploadDefaultDirectory) && Directory.Exists(Program.Settings.FileUploadDefaultDirectory))
-                {
-                    folderDialog.InitialDirectory = Program.Settings.FileUploadDefaultDirectory;
-                }
-                else
-                {
-                    folderDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                }
-
-                if (folderDialog.ShowDialog() && !string.IsNullOrEmpty(folderDialog.FileName))
-                {
-                    Program.Settings.FileUploadDefaultDirectory = folderDialog.FileName;
-                    UploadFile(folderDialog.FileName, taskSettings);
-                }
+            if (!string.IsNullOrEmpty(selectedPath))
+            {
+                Program.Settings.FileUploadDefaultDirectory = selectedPath;
+                UploadFile(selectedPath, taskSettings);
             }
         }
 
@@ -560,12 +557,11 @@ namespace ShareX
 
         public static void IndexFolder(TaskSettings taskSettings = null)
         {
-            using (FolderSelectDialog dlg = new FolderSelectDialog())
+            string selectedPath = FileHelpers.BrowseFolder();
+
+            if (!string.IsNullOrEmpty(selectedPath))
             {
-                if (dlg.ShowDialog())
-                {
-                    IndexFolder(dlg.FileName, taskSettings);
-                }
+                IndexFolder(selectedPath, taskSettings);
             }
         }
 

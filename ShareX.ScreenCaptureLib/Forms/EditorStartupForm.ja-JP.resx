@@ -132,4 +132,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 画像エディター</value>
   </data>
+  <data name="btnLoadImageFromURL.Text" xml:space="preserve">
+    <value>URLから画像読み込み</value>
+  </data>
 </root>

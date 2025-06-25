@@ -110,7 +110,6 @@ namespace ShareX
             cbTrayIconProgressEnabled.Checked = Program.Settings.TrayIconProgressEnabled;
             cbTaskbarProgressEnabled.Enabled = TaskbarManager.IsPlatformSupported;
             cbTaskbarProgressEnabled.Checked = Program.Settings.TaskbarProgressEnabled;
-            cbUseCustomTheme.Checked = Program.Settings.UseCustomTheme;
             cbUseWhiteShareXIcon.Checked = Program.Settings.UseWhiteShareXIcon;
             cbRememberMainFormPosition.Checked = Program.Settings.RememberMainFormPosition;
             cbRememberMainFormSize.Checked = Program.Settings.RememberMainFormSize;
@@ -478,8 +477,7 @@ namespace ShareX
 
         private void UpdateThemeControls()
         {
-            btnThemeAdd.Enabled = eiTheme.Enabled = btnThemeReset.Enabled = pgTheme.Enabled = Program.Settings.UseCustomTheme;
-            cbThemes.Enabled = btnThemeRemove.Enabled = Program.Settings.UseCustomTheme && cbThemes.Items.Count > 0;
+            cbThemes.Enabled = btnThemeRemove.Enabled = cbThemes.Items.Count > 0;
         }
 
         private void ApplySelectedTheme()
@@ -498,16 +496,6 @@ namespace ShareX
                 Program.Settings.SelectedTheme = index;
                 cbThemes.SelectedIndex = index;
                 UpdateThemeControls();
-            }
-        }
-
-        private void CbUseCustomTheme_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ready)
-            {
-                Program.Settings.UseCustomTheme = cbUseCustomTheme.Checked;
-                UpdateThemeControls();
-                ApplySelectedTheme();
             }
         }
 
