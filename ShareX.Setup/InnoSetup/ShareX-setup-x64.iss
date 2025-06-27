@@ -2,7 +2,7 @@
 #define MyAppRootDirectory "..\.."
 #define MyAppOutputDirectory MyAppRootDirectory + "\Output"
 #define MyAppDependenciesDirectory MyAppOutputDirectory + "\Dependencies"
-#define MyAppReleaseDirectory MyAppRootDirectory + "\" + MyAppName + "\bin\Release\win-x64\publish"
+#define MyAppReleaseDirectory MyAppRootDirectory + "\" + MyAppName + "\bin\Release\win-x64"
 #define MyAppFileName MyAppName + ".exe"
 #define MyAppFilePath MyAppReleaseDirectory + "\" + MyAppFileName
 #define MyAppVersion GetStringFileInfo(MyAppFilePath, "ProductVersion")
