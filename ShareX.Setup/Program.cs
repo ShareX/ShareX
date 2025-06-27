@@ -65,8 +65,8 @@ namespace ShareX.Setup
         private static string WindowsKitsDir;
 
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
-        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, "win-x64", "publish");
-        private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration, "publish");
+        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, "win-x64");
+        private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");

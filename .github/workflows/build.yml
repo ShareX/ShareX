@@ -72,11 +72,8 @@ jobs:
       - name: Restore NuGet packages
         run: dotnet restore --runtime win-x64 "${{ env.SOLUTION_FILE_PATH }}"
 
-      #- name: Build
-      #  run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" "${{ env.SOLUTION_FILE_PATH }}"
-
-      - name: Publish
-        run: dotnet publish --no-restore --configuration "${{ matrix.configuration }}" --self-contained true /m:1 "${{ env.SOLUTION_FILE_PATH }}"
+      - name: Build
+        run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" --self-contained true /m:1 "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Setup
         working-directory: ${{ env.GITHUB_WORKSPACE }}
