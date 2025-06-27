@@ -2,6 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net9.0-windows</TargetFramework>
     <OutputType>Exe</OutputType>
+    <Platforms>AnyCPU;ARM32;ARM64;x64</Platforms>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />

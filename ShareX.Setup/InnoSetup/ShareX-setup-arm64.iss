@@ -1,6 +1,7 @@
 #define MyAppName "ShareX"
 #define MyAppRootDirectory "..\.."
 #define MyAppOutputDirectory MyAppRootDirectory + "\Output"
+#define MyAppDependenciesDirectory MyAppOutputDirectory + "\Dependencies"
 #define MyAppReleaseDirectory MyAppRootDirectory + "\" + MyAppName + "\bin\Release\win-arm64\publish"
 #define MyAppFileName MyAppName + ".exe"
 #define MyAppFilePath MyAppReleaseDirectory + "\" + MyAppFileName
@@ -25,7 +26,7 @@ DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile={#MyAppRootDirectory}\LICENSE.txt
 MinVersion=6.1sp1
-OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
+OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup-arm64
 OutputDir={#MyAppOutputDirectory}
 PrivilegesRequired=none
 SolidCompression=yes
@@ -48,7 +49,8 @@ Source: "{#MyAppReleaseDirectory}\*.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\*.json"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppRootDirectory}\Licenses\*.txt"; DestDir: {app}\Licenses; Flags: ignoreversion
-Source: "{#MyAppOutputDirectory}\*.exe"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppDependenciesDirectory}\*.exe"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppDependenciesDirectory}\exiftool_files\*"; DestDir: {app}\exiftool_files; Flags: ignoreversion recursesubdirs
 Source: "{#MyAppReleaseDirectory}\ShareX_File_Icon.ico"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\ar-YE\*.resources.dll"; DestDir: {app}\ar-YE; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\de\*.resources.dll"; DestDir: {app}\de; Flags: ignoreversion

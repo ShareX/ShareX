@@ -26,8 +26,10 @@
 using Microsoft.Win32;
 using ShareX.HelpersLib;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
 namespace ShareX.Setup
@@ -64,29 +66,52 @@ namespace ShareX.Setup
         private static string AppVersion;
         private static string WindowsKitsDir;
 
+        private static List<Architecture> SupportedArchitectures = new List<Architecture>
+        {
+            Architecture.X64,
+            Architecture.Arm64
+        };
+
+
+        private static string GetArchName(Architecture arch) =>
+            arch switch
+            {
+                Architecture.Arm64 => "arm64",
+                Architecture.X64 => "x64",
+                Architecture.X86 => "x86",
+                _ => throw new NotImplementedException($"Arch {arch} not implemented")
+            };
+
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
-        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, "win-x64", "publish");
+
+        private static string GetBinDir(Architecture arch) => Path.Combine(ParentDir, "ShareX", "bin", Configuration, $"win-{GetArchName(arch)}", "publish");
         private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration, "win-x64", "publish");
-        private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
+        private static string GetExecutablePath(Architecture arch) => Path.Combine(GetBinDir(arch), "ShareX.exe");
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");
-        private static string PortableOutputDir => Path.Combine(OutputDir, "ShareX-portable");
+        private static string DependenciesDir => Path.Combine(OutputDir, "Dependencies");
+        private static string GetPortableOutputDir(Architecture arch) => Path.Combine(OutputDir, $"ShareX-portable-{GetArchName(arch)}");
         private static string DebugOutputDir => Path.Combine(OutputDir, "ShareX-debug");
         private static string SteamOutputDir => Path.Combine(OutputDir, "ShareX-Steam");
-        private static string MicrosoftStoreOutputDir => Path.Combine(OutputDir, "ShareX-MicrosoftStore");
-        private static string MicrosoftStoreDebugOutputDir => Path.Combine(OutputDir, "ShareX-MicrosoftStore-debug");
+        private static string GetMicrosoftStoreOutputDir(Architecture arch) => Path.Combine(OutputDir, $"ShareX-MicrosoftStore-{GetArchName(arch)}");
+        private static string GetMicrosoftStoreDebugOutputDir(Architecture arch) => Path.Combine(OutputDir, $"ShareX-MicrosoftStore-debug-{GetArchName(arch)}");
 
         private static string SetupDir => Path.Combine(ParentDir, "ShareX.Setup");
         private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
-        private static string MicrosoftStorePackageFilesDir => Path.Combine(SetupDir, "MicrosoftStore");
+        private static string MicrosoftStorePackageFilesDir => Path.Combine(SetupDir, "MicrosoftStore", "Resources");
+        private static string GetMicrosoftStoreManifestDir(Architecture arch) => Path.Combine(SetupDir, "MicrosoftStore", GetArchName(arch));
 
-        private static string SetupPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-setup.exe");
-        private static string PortableZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-portable.zip");
+        private static string GetSetupPath(Architecture arch) => Path.Combine(OutputDir, $"ShareX-{AppVersion}-setup-{GetArchName(arch)}.exe");
+        private static string GetPortableZipPath(Architecture arch) => Path.Combine(OutputDir, $"ShareX-{AppVersion}-portable-{GetArchName(arch)}.zip");
         private static string DebugZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.zip");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam.zip");
-        private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appx");
-        private static string MicrosoftStoreDebugAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.appx");
+        private static string MicrosoftStoreAppxDir => Path.Combine(OutputDir, "Microstore-Appx");
+        private static string GetMicrosoftStoreAppxPath(Architecture arch) => Path.Combine( MicrosoftStoreAppxDir, $"ShareX-{AppVersion}-{GetArchName(arch)}.appx");
+        private static string MicrosoftStoreBundlePath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appxbundle");
+        private static string MicrosoftStoreDebugAppxDir => Path.Combine(OutputDir, "Microstore-Appx-Debug");
+        private static string GetMicrosoftStoreDebugAppxPath(Architecture arch) => Path.Combine(MicrosoftStoreDebugAppxDir, $"ShareX-{AppVersion}-debug-{GetArchName(arch)}.appx");
+        private static string MicrosoftStoreBundleDebugPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.appxbundle");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, $"recorder-devices-{RecorderDevicesVersion}-setup.exe");
         private static string ExifToolPath => Path.Combine(OutputDir, "exiftool.exe");
@@ -131,16 +156,23 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CreatePortable))
             {
-                CreateFolder(BinDir, PortableOutputDir, SetupJobs.CreatePortable);
-
-                CreateZipFile(PortableOutputDir, PortableZipPath);
+                SupportedArchitectures.ForEach(arch =>
+                {
+                    CreateFolder(GetBinDir(arch), GetPortableOutputDir(arch), arch, SetupJobs.CreatePortable);
+                    
+                    CreateZipFile(GetPortableOutputDir(arch), GetPortableZipPath(arch));
+                });
             }
 
             if (Job.HasFlag(SetupJobs.CreateDebug))
             {
-                CreateFolder(BinDir, DebugOutputDir, SetupJobs.CreateDebug);
+                SupportedArchitectures.ForEach(arch =>
+                {
+                    CreateFolder(GetBinDir(arch), DebugOutputDir, arch, SetupJobs.CreateDebug);
 
-                CreateZipFile(DebugOutputDir, DebugZipPath);
+                    CreateZipFile(DebugOutputDir, DebugZipPath);
+                });
+               
             }
 
             if (Job.HasFlag(SetupJobs.CreateSteamFolder))
@@ -152,23 +184,33 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
             {
-                CreateFolder(BinDir, MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreFolder);
-
-                if (Job.HasFlag(SetupJobs.CompileAppx))
+                SupportedArchitectures.ForEach(arch =>
                 {
-                    CompileAppx(MicrosoftStoreOutputDir, MicrosoftStoreAppxPath);
-                }
+                    CreateFolder(GetBinDir(arch), GetMicrosoftStoreOutputDir(arch), arch, SetupJobs.CreateMicrosoftStoreFolder);
+
+                    if (Job.HasFlag(SetupJobs.CompileAppx))
+                    {
+                        CompileAppx(GetMicrosoftStoreOutputDir(arch), GetMicrosoftStoreAppxPath(arch));
+                    }
+                });
+                CompileAppxBundle(MicrosoftStoreAppxDir, MicrosoftStoreBundlePath);
             }
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
             {
-                CreateFolder(BinDir, MicrosoftStoreDebugOutputDir, SetupJobs.CreateMicrosoftStoreDebugFolder);
-
-                if (Job.HasFlag(SetupJobs.CompileAppx))
+                SupportedArchitectures.ForEach(arch =>
                 {
-                    CompileAppx(MicrosoftStoreDebugOutputDir, MicrosoftStoreDebugAppxPath);
-                }
+                    CreateFolder(GetBinDir(arch), GetMicrosoftStoreDebugOutputDir(arch), arch, SetupJobs.CreateMicrosoftStoreDebugFolder);
+
+                    if (Job.HasFlag(SetupJobs.CompileAppx))
+                    {
+                        CompileAppx(GetMicrosoftStoreDebugOutputDir(arch), GetMicrosoftStoreDebugAppxPath(arch));
+                    }
+                });
+                
+                CompileAppxBundle(MicrosoftStoreDebugAppxDir, MicrosoftStoreBundleDebugPath);
             }
+
 
             if (!Silent && Job.HasFlag(SetupJobs.OpenOutputDirectory))
             {
@@ -252,7 +294,7 @@ namespace ShareX.Setup
 
             Console.WriteLine("Configuration: " + Configuration);
 
-            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ExecutablePath);
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(GetExecutablePath(Architecture.X64));
             AppVersion = versionInfo.ProductVersion;
 
             Console.WriteLine("Application version: " + AppVersion);
@@ -271,8 +313,11 @@ namespace ShareX.Setup
 
         private static void CompileSetup()
         {
-            CompileISSFile("ShareX-setup.iss");
-            CreateChecksumFile(SetupPath);
+            SupportedArchitectures.ForEach(arch =>
+            {
+                CompileISSFile($"ShareX-setup-{arch}.iss");
+                CreateChecksumFile(GetSetupPath(arch));
+            });
         }
 
         private static void CompileISSFile(string fileName)
@@ -327,6 +372,29 @@ namespace ShareX.Setup
             CreateChecksumFile(outputPackageName);
         }
 
+        private static void CompileAppxBundle(string contentDirectory, string outputPackageName)
+        {
+            Console.WriteLine("Compiling appx file: " + contentDirectory);
+
+            using (Process process = new Process())
+            {
+                ProcessStartInfo psi = new ProcessStartInfo()
+                {
+                    FileName = MakeAppxPath,
+                    Arguments = $"bundle /d \"{contentDirectory}\" /p \"{outputPackageName}\"",
+                    UseShellExecute = false
+                };
+
+                process.StartInfo = psi;
+                process.Start();
+                process.WaitForExit();
+            }
+
+            Console.WriteLine("Appx file compiled: " + outputPackageName);
+
+            CreateChecksumFile(outputPackageName);
+        }
+
         private static void CreateSteamFolder()
         {
             Console.WriteLine("Creating Steam folder: " + SteamOutputDir);
@@ -343,10 +411,10 @@ namespace ShareX.Setup
             FileHelpers.CopyFiles(Path.Combine(SteamLauncherDir, "installscript.vdf"), SteamOutputDir);
             FileHelpers.CopyFiles(SteamLauncherDir, SteamOutputDir, "*.dll");
 
-            CreateFolder(BinDir, SteamUpdatesDir, SetupJobs.CreateSteamFolder);
+            CreateFolder(GetBinDir(Architecture.X64), SteamUpdatesDir, Architecture.X64, SetupJobs.CreateSteamFolder);
         }
 
-        private static void CreateFolder(string source, string destination, SetupJobs job)
+        private static void CreateFolder(string source, string destination, Architecture architecture, SetupJobs job)
         {
             Console.WriteLine("Creating folder: " + destination);
 
@@ -408,6 +476,7 @@ namespace ShareX.Setup
             else if (job == SetupJobs.CreateMicrosoftStoreFolder || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
             {
                 FileHelpers.CopyAll(MicrosoftStorePackageFilesDir, destination);
+                FileHelpers.CopyAll(GetMicrosoftStoreManifestDir(architecture), destination);
             }
 
             Console.WriteLine("Folder created: " + destination);
@@ -426,13 +495,13 @@ namespace ShareX.Setup
             if (!File.Exists(FFmpegPath))
             {
                 string fileName = Path.GetFileName(FFmpegDownloadURL);
-                string filePath = Path.Combine(OutputDir, fileName);
+                string filePath = Path.Combine(DependenciesDir, fileName);
 
                 Console.WriteLine("Downloading: " + FFmpegDownloadURL);
                 WebHelpers.DownloadFileAsync(FFmpegDownloadURL, filePath).GetAwaiter().GetResult();
 
                 Console.WriteLine("Extracting: " + filePath);
-                ZipManager.Extract(filePath, OutputDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
+                ZipManager.Extract(filePath, DependenciesDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
             }
         }
 
@@ -441,7 +510,7 @@ namespace ShareX.Setup
             if (!File.Exists(RecorderDevicesSetupPath))
             {
                 string fileName = Path.GetFileName(RecorderDevicesDownloadURL);
-                string filePath = Path.Combine(OutputDir, fileName);
+                string filePath = Path.Combine(DependenciesDir, fileName);
 
                 Console.WriteLine("Downloading: " + RecorderDevicesDownloadURL);
                 WebHelpers.DownloadFileAsync(RecorderDevicesDownloadURL, filePath).GetAwaiter().GetResult();
@@ -453,13 +522,13 @@ namespace ShareX.Setup
             if (!File.Exists(ExifToolPath))
             {
                 string fileName = Path.GetFileName(ExifToolDownloadURL);
-                string filePath = Path.Combine(OutputDir, fileName);
+                string filePath = Path.Combine(DependenciesDir, fileName);
 
                 Console.WriteLine("Downloading: " + ExifToolDownloadURL);
                 WebHelpers.DownloadFileAsync(ExifToolDownloadURL, filePath).GetAwaiter().GetResult();
 
                 Console.WriteLine("Extracting: " + filePath);
-                ZipManager.Extract(filePath, OutputDir);
+                ZipManager.Extract(filePath, DependenciesDir);
             }
         }
 
