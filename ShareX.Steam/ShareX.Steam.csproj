@@ -6,7 +6,7 @@
     <AssemblyName>ShareX_Launcher</AssemblyName>
     <ApplicationIcon>ShareX_Icon.ico</ApplicationIcon>
     <UseWindowsForms>true</UseWindowsForms>
-    <Platforms>AnyCPU;ARM32;ARM64;x64</Platforms>
+    <Platforms>AnyCPU;ARM64;x64</Platforms>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Management" />
