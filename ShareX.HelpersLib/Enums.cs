@@ -161,12 +161,6 @@ namespace ShareX.HelpersLib
         Suffix
     }
 
-    public enum ScreenTearingTestMode
-    {
-        VerticalLines,
-        HorizontalLines
-    }
-
     public enum HotkeyStatus
     {
         Registered,

@@ -142,7 +142,7 @@ namespace ShareX.ScreenCaptureLib
 
             using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, TextOptions, SupportGradient, Manager.Options.ColorPickerOptions))
             {
-                result = inputBox.ShowDialog(Manager.Form) == DialogResult.OK;
+                result = inputBox.ShowDialogTopMost(Manager.Form) == DialogResult.OK;
                 Text = inputBox.InputText;
                 OnConfigSave();
             }

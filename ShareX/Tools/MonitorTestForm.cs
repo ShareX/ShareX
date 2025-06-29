@@ -23,12 +23,13 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX
 {
     public partial class MonitorTestForm : Form
     {

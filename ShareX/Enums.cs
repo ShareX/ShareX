@@ -393,6 +393,12 @@ namespace ShareX
         Default, Light, Transparent
     }
 
+    public enum ScreenTearingTestMode
+    {
+        VerticalLines,
+        HorizontalLines
+    }
+
 #if !MicrosoftStore
     public enum StartupState
     {

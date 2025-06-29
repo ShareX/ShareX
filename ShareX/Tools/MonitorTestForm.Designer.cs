@@ -1,4 +1,4 @@
-﻿namespace ShareX.HelpersLib
+﻿namespace ShareX
 {
     partial class MonitorTestForm
     {
@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonitorTestForm));
             pSettings = new System.Windows.Forms.Panel();
             btnScreenTearingTest = new System.Windows.Forms.Button();
-            btnGradientColor2 = new ColorButton();
-            btnGradientColor1 = new ColorButton();
+            btnGradientColor2 = new HelpersLib.ColorButton();
+            btnGradientColor1 = new HelpersLib.ColorButton();
             lblTip = new System.Windows.Forms.Label();
             cbGradient = new System.Windows.Forms.ComboBox();
             rbGradient = new System.Windows.Forms.RadioButton();
@@ -322,8 +322,8 @@
         private System.Windows.Forms.ComboBox cbGradient;
         private System.Windows.Forms.RadioButton rbGradient;
         private System.Windows.Forms.Label lblTip;
-        private ColorButton btnGradientColor2;
-        private ColorButton btnGradientColor1;
+        private HelpersLib.ColorButton btnGradientColor2;
+        private HelpersLib.ColorButton btnGradientColor1;
         private System.Windows.Forms.Button btnScreenTearingTest;
     }
 }
