@@ -40,8 +40,9 @@ namespace ShareX
         {
             InitializeComponent();
             lblProductName.Text = Program.Title;
-            pbLogo.Image = ShareXResources.Logo;
             ShareXResources.ApplyTheme(this, true);
+            pLogo.BackColor = Color.FromArgb(35, 35, 35);
+            cLogo.BackColor = Color.FromArgb(35, 35, 35);
 
 #if STEAM
             uclUpdate.Visible = false;
@@ -147,22 +148,6 @@ ExifTool: https://exiftool.org
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             URLHelpers.OpenURL(e.LinkText);
-        }
-
-        private void btnShareXLicense_Click(object sender, EventArgs e)
-        {
-            FileHelpers.OpenFile(FileHelpers.GetAbsolutePath("Licenses\\ShareX_license.txt"));
-        }
-
-        private void btnLicenses_Click(object sender, EventArgs e)
-        {
-            FileHelpers.OpenFolder(FileHelpers.GetAbsolutePath("Licenses"));
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
         }
     }
 }
