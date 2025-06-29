@@ -138,7 +138,7 @@ namespace ShareX
                     }
                 }
 
-                return "";
+                return null;
             }
         }
 
