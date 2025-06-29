@@ -28,24 +28,27 @@ namespace ShareX.HelpersLib
     public static class Links
     {
         public const string Website = "https://getsharex.com";
-        public const string GitHub = "https://github.com/ShareX/ShareX";
-        public const string GitHubIssues = GitHub + "/issues?q=is%3Aissue";
         public const string Callback = Website + "/callback/";
         public const string Changelog = Website + "/changelog";
         public const string Donate = Website + "/donate";
         public const string PrivacyPolicy = Website + "/privacy-policy";
         public const string ImageEffects = Website + "/image-effects";
         public const string Actions = Website + "/actions";
-        public const string Jaex = "https://github.com/Jaex";
-        public const string McoreD = "https://github.com/McoreD";
-        public const string Steam = "https://store.steampowered.com/app/400040/ShareX/";
-        public const string Discord = "https://discord.gg/ShareX";
-        public const string X = "https://twitter.com/ShareX";
-        public const string XFollow = "https://twitter.com/intent/follow?screen_name=ShareX";
         private const string Docs = Website + "/docs";
         public const string DocsCustomUploader = Docs + "/custom-uploader";
         public const string DocsKeybinds = Docs + "/keybinds";
         public const string DocsOCR = Docs + "/ocr";
         public const string DocsScrollingScreenshot = Docs + "/scrolling-screenshot";
+
+        public const string GitHub = "https://github.com/ShareX/ShareX";
+        public const string GitHubIssues = GitHub + "/issues?q=is%3Aissue";
+        public const string Jaex = "https://github.com/Jaex";
+        public const string McoreD = "https://github.com/McoreD";
+        public const string Discord = "https://discord.gg/ShareX";
+        public const string X = "https://x.com/ShareX";
+        public const string XFollow = "https://x.com/intent/follow?screen_name=ShareX";
+        public const string Reddit = "https://www.reddit.com/r/sharex";
+        public const string Steam = "https://store.steampowered.com/app/400040/ShareX/";
+        public const string MicrosoftStore = "https://apps.microsoft.com/detail/9nblggh4z1sp";
     }
 }

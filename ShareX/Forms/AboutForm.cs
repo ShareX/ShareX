@@ -68,6 +68,12 @@ namespace ShareX
 {Resources.AboutForm_AboutForm_Project_page}: {Links.GitHub}
 {Resources.AboutForm_AboutForm_Changelog}: {Links.Changelog}
 {Resources.AboutForm_AboutForm_Privacy_policy}: {Links.PrivacyPolicy}
+{Resources.AboutForm_AboutForm_Donate}: {Links.Donate}
+X: {Links.X}
+Discord: {Links.Discord}
+Reddit: {Links.Reddit}
+Steam: {Links.Steam}
+Microsoft Store: {Links.MicrosoftStore}
 ", FontStyle.Regular);
 
             rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Team, FontStyle.Bold, 13);
@@ -111,7 +117,6 @@ Recorder devices: https://github.com/rdp/screen-capture-recorder-to-video-window
 FluentFTP: https://github.com/robinrodricks/FluentFTP
 ZXing.Net: https://github.com/micjahn/ZXing.Net
 MegaApiClient: https://github.com/gpailler/MegaApiClient
-Inno Setup Dependency Installer: https://github.com/DomGries/InnoDependencyInstaller
 Blob Emoji: http://blobs.gg
 ExifTool: https://exiftool.org
 ", FontStyle.Regular);

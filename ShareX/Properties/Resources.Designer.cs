@@ -79,6 +79,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Donate.
+        /// </summary>
+        internal static string AboutForm_AboutForm_Donate {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Donate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arabic.
         /// </summary>
         internal static string AboutForm_AboutForm_Language_ar_YE {
