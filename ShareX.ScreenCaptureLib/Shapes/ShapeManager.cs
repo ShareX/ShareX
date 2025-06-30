@@ -2123,7 +2123,7 @@ namespace ShareX.ScreenCaptureLib
 
                 using (ImageInsertForm imageInsertForm = new ImageInsertForm())
                 {
-                    imageInsertForm.ShowDialog(Form);
+                    imageInsertForm.ShowDialogTopMost(Form);
 
                     switch (imageInsertForm.ImageInsertMethod)
                     {
