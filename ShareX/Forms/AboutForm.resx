@@ -195,6 +195,9 @@
   <data name="pbLogo.Size" type="System.Drawing.Size, System.Drawing">
     <value>400, 600</value>
   </data>
+  <data name="pbLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
   <data name="pbLogo.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
