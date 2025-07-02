@@ -65,7 +65,7 @@ namespace ShareX
         public FileDestination TextFileDestination = FileDestination.Dropbox;
         public FileDestination FileDestination = FileDestination.Dropbox;
         public UrlShortenerType URLShortenerDestination = UrlShortenerType.BITLY;
-        public URLSharingServices URLSharingServiceDestination = URLSharingServices.Twitter;
+        public URLSharingServices URLSharingServiceDestination = URLSharingServices.Email;
 
         public bool OverrideFTP = false;
         public int FTPIndex = 0;

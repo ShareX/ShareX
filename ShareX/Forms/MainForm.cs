@@ -847,10 +847,7 @@ namespace ShareX
             ShareXResources.ApplyCustomThemeToControl(dgvHotkeys);
             dgvHotkeys.BackgroundColor = ShareXResources.Theme.BackgroundColor;
 
-            tsmiTweetMessage.Image = TaskHelpers.FindMenuIcon(HotkeyType.TweetMessage);
-            tsmiTrayTweetMessage.Image = TaskHelpers.FindMenuIcon(HotkeyType.TweetMessage);
-            tsbX.Image = TaskHelpers.FindMenuIcon(HotkeyType.TweetMessage);
-
+            tsbX.Image = ShareXResources.IsDarkTheme ? Resources.X_white : Resources.X_black;
             tsbDiscord.Image = ShareXResources.IsDarkTheme ? Resources.Discord_white : Resources.Discord_black;
 
             tsmiQRCode.Image = TaskHelpers.FindMenuIcon(HotkeyType.QRCode);
@@ -1702,11 +1699,6 @@ namespace ShareX
         private void tsmiShortenURL_Click(object sender, EventArgs e)
         {
             UploadManager.ShowShortenURLDialog();
-        }
-
-        private void tsmiTweetMessage_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.TweetMessage();
         }
 
         private void tsmiColorPicker_Click(object sender, EventArgs e)
