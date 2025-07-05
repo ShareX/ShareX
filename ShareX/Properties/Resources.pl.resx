@@ -518,9 +518,6 @@ Czy chcesz ponownie uruchomić ShareX?</value>
   <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
     <value>Źródło wideo i audio FFmpeg nie może być jednocześnie "Brak".</value>
   </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>OCR jest przetwarzany.</value>
-  </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>Dziennik debugowania może zawierać poufne informacje. Czy na pewno chcesz kontynuować?</value>
   </data>
@@ -533,9 +530,6 @@ Czy chcesz ponownie uruchomić ShareX?</value>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
     <value>ShareX jest zminimalizowany do zasobnika systemowego.</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tweet pomyślnie wysłany.</value>
-  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Nie można zapisać obrazu do ścieżki:</value>
   </data>
@@ -544,12 +538,6 @@ Czy chcesz ponownie uruchomić ShareX?</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
     <value>Potwierdzenie usunięcia pliku</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>Dane wyjściowe OCR zostały skopiowane do schowka.</value>
-  </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>Podczas przetwarzania OCR wystąpił błąd lub nie zwrócono żadnego tekstu.</value>
   </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Nie można utworzyć folderu:</value>
@@ -572,9 +560,6 @@ Proszę uruchomić ShareX jako administrator, aby zmienić ścieżkę folderu os
   </data>
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Selektor kolorów ekranu</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Nie można znaleźć prawidłowego konta na Twitterze.</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Zadanie ukończone</value>

@@ -126,9 +126,6 @@
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>Actualizar</value>
   </data>
-  <data name="btnPinToTop.Text" xml:space="preserve">
-    <value>Fijar en la parte superior</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Inspeccionar ventana</value>
   </data>

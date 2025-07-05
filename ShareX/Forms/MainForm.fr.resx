@@ -183,12 +183,6 @@
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Effets d'image...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Vérifier un hash...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>Changeur de DNS...</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>Code QR...</value>
   </data>
@@ -197,9 +191,6 @@
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Règle...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweeter un message...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Test d'écran...</value>
@@ -227,9 +218,6 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Services de partage d'URL</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Paramètres de destination...</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
     <value>Paramètres de l'application...</value>
@@ -423,12 +411,6 @@
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Effets d'image...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Vérifier un hash...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Changeur de DNS...</value>
-  </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>Code QR...</value>
   </data>
@@ -437,9 +419,6 @@
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Règle...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tweeter un message...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Test d'écran...</value>
@@ -702,9 +681,6 @@
   <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
     <value>Afficher le curseur</value>
   </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Paramètres de service de mise en ligne personnalisé...</value>
-  </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>Paramètres de service de mise en ligne personnalisé...</value>
   </data>
@@ -719,9 +695,6 @@
   </data>
   <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
     <value>Aucun délai</value>
-  </data>
-  <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>Twitter</value>
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord...</value>

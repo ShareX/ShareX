@@ -156,9 +156,6 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>מחולל תמונה ממוזערת לווידאו...</value>
   </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>הגדרות מותאמות אישית של שירות העלאה...</value>
-  </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>הגדרות מותאמות אישית של שירות העלאה...</value>
   </data>
@@ -552,9 +549,6 @@
   <data name="tsmiUploadURL.Text" xml:space="preserve">
     <value>העלה מקישור...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>צייץ הודעה...</value>
-  </data>
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>העלה</value>
   </data>
@@ -573,14 +567,8 @@
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>קוד QR...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>בדיקת Hash...</value>
-  </data>
   <data name="tsmiClipboardViewer.Text" xml:space="preserve">
     <value>מציג לוח הגזירה...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>משנה DNS...</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
     <value>משימות לאחר העלאה</value>
@@ -591,9 +579,6 @@
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>שירותי שיתוף קישורים</value>
   </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>הגדרות יעד...</value>
-  </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
     <value>הגדרות למטלות...</value>
   </data>
@@ -602,9 +587,6 @@
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>היסטוריית תמונות...</value>
-  </data>
-  <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>טוויטר...</value>
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>דיסקורד...</value>
@@ -714,9 +696,6 @@
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>שתף קישור</value>
   </data>
-  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
-    <value>חיפוש תמונות ב-Google...</value>
-  </data>
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>עבור לתצוגת תמונות ממוזערות</value>
   </data>
@@ -756,9 +735,6 @@
   <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
     <value>קצר קישור...</value>
   </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>צייץ הודעה...</value>
-  </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
     <value>העלה</value>
   </data>
@@ -771,14 +747,8 @@
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>קוד QR...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>בדיקת Hash...</value>
-  </data>
   <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
     <value>מציג לוח הגזירה...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>משנה DNS...</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>משימות לאחר העלאה</value>

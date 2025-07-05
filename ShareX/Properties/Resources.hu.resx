@@ -281,9 +281,6 @@ ide</value>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Projekt weboldal</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tweet sikeresen elküldve.</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Nem sikerült a(z) "{0}" fájl elérése.
 Kérlek futtasd a ShareX-et adminisztrátori jogosultságokkal a személyes mappa megváltoztatásához.</value>

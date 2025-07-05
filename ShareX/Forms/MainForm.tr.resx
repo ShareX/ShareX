@@ -195,12 +195,6 @@
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Resim efektleri...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Dosya denetleyici...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>DNS değiştirici...</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR kod...</value>
   </data>
@@ -209,9 +203,6 @@
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Cetvel...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet gönder...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Monitör testi...</value>
@@ -239,9 +230,6 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Adres paylaşım servisleri</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Hedef ayarları...</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
     <value>Uygulama ayarları...</value>
@@ -450,12 +438,6 @@
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Resim efektleri...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Dosya denetleyici...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>DNS değiştirici...</value>
-  </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR kod...</value>
   </data>
@@ -464,9 +446,6 @@
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Cetvel...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tweet gönder...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Monitör testi...</value>
@@ -663,9 +642,6 @@
   <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
     <value>5 saniye</value>
   </data>
-  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
-    <value>Google resim arama...</value>
-  </data>
   <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
     <value>1 saniye</value>
   </data>
@@ -689,9 +665,6 @@
   </data>
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>Resim boyutları</value>
-  </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Özel yükleyici ayarları...</value>
   </data>
   <data name="tsmiImageSplitter.Text" xml:space="preserve">
     <value>Resim ayırıcı...</value>
@@ -752,5 +725,41 @@
   </data>
   <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
     <value>Kenarsız pencere...</value>
+  </data>
+  <data name="tsmiImageBeautifier.Text" xml:space="preserve">
+    <value>Resim güzelleştirici...</value>
+  </data>
+  <data name="tsmiHashChecker.Text" xml:space="preserve">
+    <value>Dosya denetleyici...</value>
+  </data>
+  <data name="tsmiMetadata.Text" xml:space="preserve">
+    <value>Metadata...</value>
+  </data>
+  <data name="tsbDestinationSettings.Text" xml:space="preserve">
+    <value>Hedef ayarları...</value>
+  </data>
+  <data name="tsmiTrayHashChecker.Text" xml:space="preserve">
+    <value>Dosya denetleyici...</value>
+  </data>
+  <data name="tsmiTrayImageBeautifier.Text" xml:space="preserve">
+    <value>Resim güzelleştirici...</value>
+  </data>
+  <data name="tsmiTrayMetadata.Text" xml:space="preserve">
+    <value>Metadata...</value>
+  </data>
+  <data name="tsbCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Özel yükleyici ayarları...</value>
+  </data>
+  <data name="cDescription.HeaderText" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="cHotkey.HeaderText" xml:space="preserve">
+    <value>Kısayol tuşu</value>
+  </data>
+  <data name="tsbX.Text" xml:space="preserve">
+    <value>Bizi takip et: @ShareX...</value>
+  </data>
+  <data name="tsmiBeautifyImage.Text" xml:space="preserve">
+    <value>Resmi güzelleştir...</value>
   </data>
 </root>

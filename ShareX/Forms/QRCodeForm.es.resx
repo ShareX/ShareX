@@ -120,10 +120,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - QR código</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
-  </data>
 </root>

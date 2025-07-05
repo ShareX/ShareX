@@ -120,33 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Kod QR</value>
   </data>
-  <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>Wynik:</value>
-  </data>
-  <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>Dekoduj z pliku obrazu...</value>
-  </data>
-  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>Dekoduj z ekranu...</value>
-  </data>
-  <data name="tsmiUpload.Text" xml:space="preserve">
-    <value>Prześlij obraz</value>
-  </data>
-  <data name="tpEncode.Text" xml:space="preserve">
-    <value>Enkoduj</value>
-  </data>
-  <data name="tpDecode.Text" xml:space="preserve">
-    <value>Dekoduj</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Zapisz jako plik obrazu...</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Skopiuj obraz do schowka</value>
-  </data>
-  <data name="tsmiDecode.Text" xml:space="preserve">
-    <value>Dekoduj</value>
-  </data>
   <data name="btnCopyImage.Text" xml:space="preserve">
     <value>Kopiuj obraz</value>
   </data>
@@ -158,12 +131,6 @@
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Zapisz obraz...</value>
-  </data>
-  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
-    <value>Skanuj kod QR z pliku obrazu...</value>
-  </data>
-  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
-    <value>Skanuj kod QR z ekranu...</value>
   </data>
   <data name="lblQRCode.Text" xml:space="preserve">
     <value>Kod QR:</value>

@@ -171,6 +171,7 @@
   </data>
   <data name="lblTimer.Text" xml:space="preserve">
     <value>00:00:00</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="lblTimer.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -324,6 +325,7 @@
   </metadata>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="niTray.Visible" type="System.Boolean, mscorlib">
     <value>True</value>

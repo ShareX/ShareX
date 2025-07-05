@@ -123,9 +123,6 @@
   <data name="btnYes.Text" xml:space="preserve">
     <value>Đồng ý</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Không hỏi nữa cho đến khi ShareX chạy lần sau</value>
-  </data>
   <data name="lblViewChangelog.Text" xml:space="preserve">
     <value>Xem lịch sử thay đổi</value>
   </data>

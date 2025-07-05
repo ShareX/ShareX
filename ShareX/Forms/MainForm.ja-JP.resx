@@ -222,12 +222,6 @@
   <data name="tsmiImageViewer.Text" xml:space="preserve">
     <value>画像ビューア...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>ハッシュ値の照合...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>DNS 変更...</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR コード...</value>
   </data>
@@ -245,9 +239,6 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>動画のサムネイル作成...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>メッセージをツイート...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>モニター テスト...</value>
@@ -275,9 +266,6 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>URL共有サービス</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>アップロード先の設定...</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
     <value>タスクの設定...</value>
@@ -540,12 +528,6 @@
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>画像エフェクト...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>ハッシュ値の照合...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>DNS 変更...</value>
-  </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR コード...</value>
   </data>
@@ -563,9 +545,6 @@
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>動画のサムネイル作成...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>メッセージをツイート...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>モニター テスト...</value>
@@ -675,9 +654,6 @@
   <data name="tsmiVideoConverter.Text" xml:space="preserve">
     <value>動画の変換...</value>
   </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>アップロード先を自分で設定...</value>
-  </data>
   <data name="tsmiAddImageEffects.Text" xml:space="preserve">
     <value>画像エフェクトを追加...</value>
   </data>
@@ -716,9 +692,6 @@
   </data>
   <data name="tsmiInspectWindow.Text" xml:space="preserve">
     <value>ウィンドウの調査...</value>
-  </data>
-  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
-    <value>Google画像検索...</value>
   </data>
   <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
     <value>横に並べて結合</value>

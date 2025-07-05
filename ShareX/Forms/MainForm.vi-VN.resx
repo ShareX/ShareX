@@ -252,12 +252,6 @@
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
     <value>Xóa tệp trong máy...</value>
   </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Thiết lập dịch vụ tải lên</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>Trình đổi DNS</value>
-  </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Chỉnh sửa ảnh...</value>
   </data>
@@ -266,9 +260,6 @@
   </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Toàn màn hình</value>
-  </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Kiểm tra Hash...</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Trình gộp ảnh...</value>
@@ -399,9 +390,6 @@
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>Chọn màu sắc...</value>
   </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Trình đổi DNS...</value>
-  </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Thoát</value>
   </data>
@@ -413,9 +401,6 @@
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Toàn màn hình</value>
-  </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Kiểm tra Hash...</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>Lịch sử...</value>
@@ -534,9 +519,6 @@
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Cửa sổ</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet tin nhắn...</value>
-  </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Dịch vụ chia sẻ URL</value>
   </data>
@@ -548,9 +530,6 @@
   </data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Công cụ</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tweet tin nhắn...</value>
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Vô hiệu hóa phím tắt</value>
@@ -651,9 +630,6 @@
   <data name="tsmiImageSplitter.Text" xml:space="preserve">
     <value>Trình chia ảnh...</value>
   </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Thiết lập dịch vụ tải lên tùy chọn...</value>
-  </data>
   <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Enter</value>
   </data>
@@ -743,9 +719,6 @@
   </data>
   <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
     <value>Gộp ảnh theo chiều dọc</value>
-  </data>
-  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
-    <value>Tìm kiếm hình ảnh bằng Google ...</value>
   </data>
   <data name="tsmiImageViewer.Text" xml:space="preserve">
     <value>Xem ảnh...</value>

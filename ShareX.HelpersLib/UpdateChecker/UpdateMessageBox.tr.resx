@@ -123,9 +123,6 @@
   <data name="btnYes.Text" xml:space="preserve">
     <value>Evet</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>ShareX bir sonraki defa açılana kadar tekrar sorma</value>
-  </data>
   <data name="lblViewChangelog.Text" xml:space="preserve">
     <value>Değişim günlüğünü gör</value>
   </data>

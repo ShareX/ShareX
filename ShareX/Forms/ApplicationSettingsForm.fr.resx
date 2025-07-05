@@ -300,9 +300,6 @@
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
     <value>Lors d'un clic de la molette sur l'icône dans la zone de notification :</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>Vérifier des mises à jour de pré-version</value>
-  </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
     <value>Installer l'extension ShareX pour Firefox...</value>
   </data>
@@ -356,9 +353,6 @@
   </data>
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>Ajouter</value>
-  </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>Utiliser un thème personnalisé</value>
   </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>Thème</value>

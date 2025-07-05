@@ -120,31 +120,31 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - QR kod</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Resimi panoya kopyala</value>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>Resmi kopyala</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Resim dosyası olarak kaydet...</value>
+  <data name="btnSaveImage.Text" xml:space="preserve">
+    <value>Resmi kaydet...</value>
   </data>
-  <data name="tsmiUpload.Text" xml:space="preserve">
-    <value>Resimi yükle</value>
+  <data name="btnScanImageFile.Text" xml:space="preserve">
+    <value>Resim dosyasını tara...</value>
   </data>
-  <data name="tpDecode.Text" xml:space="preserve">
-    <value>Çöz</value>
+  <data name="btnScanRegion.Text" xml:space="preserve">
+    <value>Bölgeyi tara...</value>
   </data>
-  <data name="tsmiDecode.Text" xml:space="preserve">
-    <value>Çöz</value>
+  <data name="btnScanScreen.Text" xml:space="preserve">
+    <value>Ekranı tara</value>
   </data>
-  <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>Resim dosyasından çöz...</value>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>Resim yükle</value>
   </data>
-  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>Ekrandan çöz...</value>
+  <data name="lblQRCode.Text" xml:space="preserve">
+    <value>QR kodu:</value>
   </data>
-  <data name="tpEncode.Text" xml:space="preserve">
-    <value>Kodla</value>
+  <data name="lblQRCodeSize.Text" xml:space="preserve">
+    <value>QR kodu boyutu:</value>
   </data>
-  <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>Sonuç:</value>
+  <data name="lblText.Text" xml:space="preserve">
+    <value>Yazı:</value>
   </data>
 </root>

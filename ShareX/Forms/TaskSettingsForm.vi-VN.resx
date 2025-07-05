@@ -384,9 +384,6 @@
   <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
     <value>Xác định các vùng cửa sổ và cho phép di chuyển chuột để chọn vùng chụp</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Làm tối nền để nhận biết vùng đã chọn dễ hơn (ảnh hưởng tới tốc độ khởi động)</value>
-  </data>
   <data name="btnWatchFolderEdit.Text" xml:space="preserve">
     <value>Chỉnh sửa...</value>
   </data>
@@ -539,9 +536,6 @@
   </data>
   <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
     <value>Duyệt qua ...</value>
-  </data>
-  <data name="cbDisableNotifications.Text" xml:space="preserve">
-    <value>Tắt thông báo</value>
   </data>
   <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
     <value>Tắt thông báo trên toàn màn hình</value>

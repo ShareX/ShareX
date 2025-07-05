@@ -198,9 +198,6 @@
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>إعدادات الرافع المخصص...</value>
   </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>إعدادات الرافع المخصص...</value>
-  </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>التنقيح</value>
   </data>
@@ -222,9 +219,6 @@
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>إعدادات الوجهة...</value>
   </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>إعدادات الوجهة...</value>
-  </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>الوجهات</value>
   </data>
@@ -239,12 +233,6 @@
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>تعطيل الاختصارات</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>إعدادات DNS...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>إعدادات DNS...</value>
   </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>تبرع...</value>
@@ -653,12 +641,6 @@
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>الأدوات</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>تغريدة...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>تغريدة...</value>
   </data>
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>رفع</value>

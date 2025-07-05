@@ -309,9 +309,6 @@
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Marca de tiempo Unix</value>
   </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Tweet mensaje</value>
-  </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Detener todas las subidas activos</value>
   </data>

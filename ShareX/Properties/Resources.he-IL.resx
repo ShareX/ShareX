@@ -129,9 +129,6 @@
   <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
     <value>סינית פשוטה</value>
   </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>מעבד OCR.</value>
-  </data>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>נתיב הקובץ לא יכול להיות ריק.</value>
   </data>
@@ -227,9 +224,6 @@
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>האם אתה בטוח שברצונך להעלות את צילום המסך הזה?
 לחץ על 'לא' כדי לבטל את ההעלאה הנוכחית ולהשבית את ההעלאה האוטומטית של צילום מסך.</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>לא ניתן למצוא חשבון טוויטר תקין.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>מעלה</value>
@@ -419,9 +413,6 @@
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>סגור</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>ציוץ נשלח בהצלחה.</value>
-  </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
     <value>יש להפעיל מחדש את ShareX כדי ששינויי התיקייה האישיים יחולו.
 
@@ -530,9 +521,6 @@
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
     <value>קיצור מקש</value>
   </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>אירעה שגיאה במהלך עיבוד OCR, או שלא הוחזר טקסט.</value>
-  </data>
   <data name="InspectWindow_ClientRectangle" xml:space="preserve">
     <value>מלבן לקוח</value>
   </data>
@@ -576,9 +564,6 @@
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>לוח הגזירה ריק או מכיל נתונים לא ידועים.</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>פלט ה-OCR הועתק ללוח שלך.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>השהייה בצילום מסך: {0} שניות</value>

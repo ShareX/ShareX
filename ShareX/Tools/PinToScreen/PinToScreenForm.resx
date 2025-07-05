@@ -142,6 +142,7 @@
   </data>
   <data name="tslScale.Text" xml:space="preserve">
     <value>100%</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tslScale.ToolTipText" xml:space="preserve">
     <value>Scale</value>

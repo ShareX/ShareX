@@ -119,9 +119,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>剩餘時間: {0}秒 ({1}%) 總計: {2}</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>無法找到有效的 Twitter 帳戶。</value>
-  </data>
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
     <value>網址為空。</value>
   </data>
@@ -309,9 +306,6 @@
   </data>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>專案頁面</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>推文傳送成功。</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>無法存取「{0}」檔案。

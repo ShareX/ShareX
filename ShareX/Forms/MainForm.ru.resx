@@ -426,9 +426,6 @@
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Журнал отладки...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Проверка хеша...</value>
-  </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Объединитель изображений...</value>
   </data>
@@ -464,9 +461,6 @@
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Выход</value>
-  </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Проверка хеша...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Объединитель изображений...</value>
@@ -516,26 +510,11 @@
   <data name="tsddbDestinations.Text" xml:space="preserve">
     <value>Сервисы загрузок</value>
   </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Настройки сервисов...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>Изменение DNS...</value>
-  </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>Сервисы загрузок</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>Настройки сервисов...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Изменение DNS...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Сообщение в Twitter...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Сообщение в Twitter...</value>
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
     <value>Сервисы коротких ссылок</value>
@@ -627,9 +606,6 @@
   <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
     <value>Показывать курсор</value>
   </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Настройки пользовательских сервисов...</value>
-  </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>Настройки пользовательских сервисов...</value>
   </data>
@@ -713,9 +689,6 @@
   </data>
   <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
     <value>Исследовать окно...</value>
-  </data>
-  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
-    <value>Искать по картинкам в Google...</value>
   </data>
   <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
     <value>Визуальный поиск Bing (OCR)...</value>

@@ -133,20 +133,8 @@
   <data name="lblFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
   </data>
-  <data name="tpFileHashCheck.Text" xml:space="preserve">
-    <value>چک هش فایل</value>
-  </data>
-  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
-    <value>کپی کردن همه</value>
-  </data>
   <data name="lblHashCheckText.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 13</value>
-  </data>
-  <data name="lblHashCheckText.Text" xml:space="preserve">
-    <value>متن:</value>
-  </data>
-  <data name="tpTextConversions.Text" xml:space="preserve">
-    <value>مبدل متن</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - چک کردن هش</value>

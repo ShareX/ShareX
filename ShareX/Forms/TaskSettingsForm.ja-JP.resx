@@ -345,9 +345,6 @@
   <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
     <value>幅:</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>背景を暗くして、選択範囲を区別しやすくする (起動速度に影響します)</value>
-  </data>
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>動画キャプチャー</value>
   </data>
@@ -527,9 +524,6 @@
   </data>
   <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
     <value>マウスを乗せたときの色表示の形式:</value>
-  </data>
-  <data name="cbDisableNotifications.Text" xml:space="preserve">
-    <value>通知を無効にする</value>
   </data>
   <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
     <value>全画面では通知を無効にする</value>

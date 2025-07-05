@@ -195,20 +195,11 @@
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Afbeeldingseffecten...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Hash controleren...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>DNS wijzigen...</value>
-  </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Meetlat...</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Indexmap...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet bericht...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Scherm tester...</value>
@@ -236,9 +227,6 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Diensten om link te delen</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Bestemmingsinstellingen...</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
     <value>Instellingen programma...</value>
@@ -429,20 +417,11 @@
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Afbeeldingseffecten...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Hash controleren...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>DNS wijzigen...</value>
-  </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Liniaal...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Indexmap...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tweet bericht...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Test scherm...</value>

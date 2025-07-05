@@ -126,7 +126,4 @@
   <data name="lblViewChangelog.Text" xml:space="preserve">
     <value>查看更新日志</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>ShareX 下一次启动后再提示</value>
-  </data>
 </root>

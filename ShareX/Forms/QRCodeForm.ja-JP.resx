@@ -117,33 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>クリップボードにコピー</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>名前を付けて保存...</value>
-  </data>
-  <data name="tsmiUpload.Text" xml:space="preserve">
-    <value>画像をアップロード</value>
-  </data>
-  <data name="tsmiDecode.Text" xml:space="preserve">
-    <value>デコード</value>
-  </data>
-  <data name="tpEncode.Text" xml:space="preserve">
-    <value>エンコード</value>
-  </data>
-  <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>画像ファイルからデコード...</value>
-  </data>
-  <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>結果:</value>
-  </data>
-  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>スクリーンからデコード...</value>
-  </data>
-  <data name="tpDecode.Text" xml:space="preserve">
-    <value>デコード</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - QR コード</value>
   </data>
@@ -167,11 +140,5 @@
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>画像をアップロード</value>
-  </data>
-  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
-    <value>画面のQRコードを読込...</value>
-  </data>
-  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
-    <value>画像からQRコードを読込...</value>
   </data>
 </root>

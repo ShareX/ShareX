@@ -126,9 +126,6 @@
   <data name="btnInspectWindow.Text" xml:space="preserve">
     <value>Kiểm tra cửa sổ ...</value>
   </data>
-  <data name="btnPinToTop.Text" xml:space="preserve">
-    <value>Ghim đầu trang</value>
-  </data>
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>Làm mới</value>
   </data>

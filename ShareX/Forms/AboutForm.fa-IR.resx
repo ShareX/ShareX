@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>بستن</value>
-  </data>
-  <data name="btnShareXLicense.Text" xml:space="preserve">
-    <value>لایسنس ShareX</value>
-  </data>
-  <data name="btnLicenses.Text" xml:space="preserve">
-    <value>لایسنس ها</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblBuild.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 16</value>

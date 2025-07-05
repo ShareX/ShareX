@@ -168,9 +168,6 @@
   <data name="tsbTaskSettings.Text" xml:space="preserve">
     <value>Definições das Tarefas...</value>
   </data>
-  <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>Twitter</value>
-  </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
     <value>Tarefas após captura</value>
   </data>
@@ -279,9 +276,6 @@
   <data name="tsmiCopyURL.Text" xml:space="preserve">
     <value>Hiperligação</value>
   </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Definições personalizadas de hospedagem</value>
-  </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
     <value>Apagar ficheiro local...</value>
   </data>
@@ -290,12 +284,6 @@
   </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>Remover tarefa da lista</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Configurações do destino...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>Alterar o DNS...</value>
   </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>Baixar</value>
@@ -308,9 +296,6 @@
   </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Ecrã inteiro</value>
-  </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Verificar hash do ficheiro...</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Juntar imagens...</value>
@@ -501,9 +486,6 @@
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>Configuração de destinos...</value>
   </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Alterar DNS...</value>
-  </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Sair</value>
   </data>
@@ -512,9 +494,6 @@
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Ecrã inteiro</value>
-  </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Verificação de Hash...</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>Histórico...</value>
@@ -627,9 +606,6 @@
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Ferramentas</value>
   </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Enviar um Tweet...</value>
-  </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
     <value>Envio</value>
   </data>
@@ -668,9 +644,6 @@
   </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Fluxos de trabalho</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Enviar um Tweet...</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>Enviar através da área de transferências...</value>

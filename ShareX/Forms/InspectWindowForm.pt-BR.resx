@@ -129,7 +129,4 @@
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>Atualizar</value>
   </data>
-  <data name="btnPinToTop.Text" xml:space="preserve">
-    <value>Fixar no topo</value>
-  </data>
 </root>
