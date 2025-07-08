@@ -66,7 +66,6 @@ namespace ShareX.HistoryLib
             tsmiUploadFile.Visible = uploadFile != null;
             tsmiEditImage.Visible = editImage != null;
             tsmiPinToScreen.Visible = pinToScreen != null;
-            tsmiShowMoreInfo.Visible = !hideShowMoreInfoButton;
         }
 
         public HistoryItem UpdateSelectedHistoryItem()
@@ -588,11 +587,6 @@ namespace ShareX.HistoryLib
         public void PinToScreen()
         {
             if (pinToScreen != null && HistoryItem != null && IsImageFile) pinToScreen(HistoryItem.FilePath);
-        }
-
-        public void ShowMoreInfo()
-        {
-            new HistoryItemInfoForm(HistoryItem).Show();
         }
     }
 }

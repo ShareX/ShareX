@@ -326,15 +326,6 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to More info....
-        /// </summary>
-        internal static string HistoryItemManager_InitializeComponent_More_info {
-            get {
-                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_More_info", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Open.
         /// </summary>
         internal static string HistoryItemManager_InitializeComponent_Open {

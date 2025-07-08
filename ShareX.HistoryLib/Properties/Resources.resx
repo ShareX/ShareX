@@ -129,9 +129,6 @@
   <data name="HistoryStats_Hosts" xml:space="preserve">
     <value>Hosts:</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>More info...</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
     <value>Image preview...</value>
   </data>

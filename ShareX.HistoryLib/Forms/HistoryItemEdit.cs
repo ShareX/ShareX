@@ -47,6 +47,7 @@ namespace ShareX.HistoryLib.Forms
         {
             txtFileName.Text = historyItem.FileName;
             txtFilePath.Text = historyItem.FilePath;
+            txtDateTime.Text = historyItem.DateTime.ToString();
             txtType.Text = historyItem.Type;
             txtHost.Text = historyItem.Host;
             txtURL.Text = historyItem.URL;
