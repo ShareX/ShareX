@@ -70,6 +70,7 @@ namespace ShareX.HistoryLib
         private ToolStripMenuItem tsmiCopyFileNameWithExtension;
         private ToolStripMenuItem tsmiCopyFolder;
 
+        private ToolStripMenuItem tsmiEdit;
         private ToolStripMenuItem tsmiShowImagePreview;
         private ToolStripMenuItem tsmiUploadFile;
         private ToolStripMenuItem tsmiEditImage;
@@ -116,6 +117,7 @@ namespace ShareX.HistoryLib
             tsmiCopyFileNameWithExtension = new ToolStripMenuItem();
             tsmiCopyFolder = new ToolStripMenuItem();
 
+            tsmiEdit = new ToolStripMenuItem();
             tsmiShowImagePreview = new ToolStripMenuItem();
             tsmiUploadFile = new ToolStripMenuItem();
             tsmiEditImage = new ToolStripMenuItem();
@@ -131,6 +133,7 @@ namespace ShareX.HistoryLib
             {
                 tsmiOpen,
                 tsmiCopy,
+                tsmiEdit,
                 tsmiShowImagePreview,
                 tsmiUploadFile,
                 tsmiEditImage,
@@ -411,6 +414,13 @@ namespace ShareX.HistoryLib
             tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder;
             tsmiCopyFolder.Click += tsmiCopyFolder_Click;
             //
+            // tsmiEdit
+            //
+            tsmiEdit.Name = "tsmiEdit";
+            tsmiEdit.Size = new Size(127, 22);
+            tsmiEdit.Text = "Edit..."; // TODO: Translate
+            tsmiEdit.Click += TsmiEdit_Click;
+            //
             // tsmiShowImagePreview
             //
             tsmiShowImagePreview.Name = "tsmiShowImagePreview";
@@ -516,6 +526,7 @@ namespace ShareX.HistoryLib
                 tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder + " (" + itemCount + ")";
 
                 // Other
+                tsmiEdit.Enabled = false;
                 tsmiShowImagePreview.Enabled = false;
                 tsmiUploadFile.Enabled = false;
                 tsmiEditImage.Enabled = false;
@@ -581,6 +592,7 @@ namespace ShareX.HistoryLib
                 tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder;
 
                 // Other
+                tsmiEdit.Enabled = true;
                 tsmiShowImagePreview.Enabled = IsImageFile;
                 tsmiUploadFile.Enabled = uploadFile != null && IsFileExist;
                 tsmiEditImage.Enabled = editImage != null && IsImageFile;
@@ -719,6 +731,11 @@ namespace ShareX.HistoryLib
         private void tsmiCopyFolder_Click(object sender, EventArgs e)
         {
             CopyFolder();
+        }
+
+        private void TsmiEdit_Click(object sender, EventArgs e)
+        {
+            Edit();
         }
 
         private void tsmiShowImagePreview_Click(object sender, EventArgs e)

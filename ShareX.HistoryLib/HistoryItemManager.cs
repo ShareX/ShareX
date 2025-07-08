@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Forms;
 using System;
 using System.IO;
 using System.Linq;
@@ -562,6 +563,11 @@ namespace ShareX.HistoryLib
                     }
                 }
             }
+        }
+
+        public void Edit()
+        {
+            new HistoryItemEdit(HistoryItem).Show();
         }
 
         public void ShowImagePreview()
