@@ -65,7 +65,7 @@ namespace ShareX.HistoryLib
 
         public async Task<List<HistoryItem>> GetHistoryItemsAsync()
         {
-            return await Task.Run(() => GetHistoryItems());
+            return await Task.Run(GetHistoryItems);
         }
 
         public bool AppendHistoryItem(HistoryItem historyItem)
@@ -93,12 +93,12 @@ namespace ShareX.HistoryLib
                 (!string.IsNullOrEmpty(historyItem.URL) || !string.IsNullOrEmpty(historyItem.FilePath));
         }
 
-        protected List<HistoryItem> Load()
+        internal List<HistoryItem> Load()
         {
             return Load(FilePath);
         }
 
-        protected abstract List<HistoryItem> Load(string filePath);
+        internal abstract List<HistoryItem> Load(string filePath);
 
         protected bool Append(IEnumerable<HistoryItem> historyItems)
         {

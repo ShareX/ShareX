@@ -32,6 +32,8 @@ namespace ShareX.HistoryLib
 {
     public class HistoryItem
     {
+        [JsonIgnore]
+        public long Id { get; set; }
         public string FileName { get; set; }
         public string FilePath { get; set; }
         public DateTime DateTime { get; set; }
