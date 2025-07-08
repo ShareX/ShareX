@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
@@ -63,14 +64,8 @@ CREATE TABLE IF NOT EXISTS History (
     URL TEXT,
     ThumbnailURL TEXT,
     DeletionURL TEXT,
-    ShortenedURL TEXT
-);
-
-CREATE TABLE IF NOT EXISTS Tags (
-    HistoryId INTEGER,
-    Key TEXT,
-    Value TEXT,
-    FOREIGN KEY(HistoryId) REFERENCES History(Id)
+    ShortenedURL TEXT,
+    Tags TEXT
 );
 ";
                     cmd.ExecuteNonQuery();
@@ -102,29 +97,10 @@ CREATE TABLE IF NOT EXISTS Tags (
                             ThumbnailURL = reader["ThumbnailURL"].ToString(),
                             DeletionURL = reader["DeletionURL"].ToString(),
                             ShortenedURL = reader["ShortenedURL"].ToString(),
-                            Tags = new Dictionary<string, string>()
+                            Tags = JsonConvert.DeserializeObject<Dictionary<string, string>>(reader["Tags"]?.ToString() ?? "{}")
                         };
 
                         items.Add(item);
-                    }
-                }
-
-                string tagSql = @"SELECT HistoryId, Key, Value FROM Tags;";
-                using (SQLiteCommand cmd = new SQLiteCommand(tagSql, connection))
-                using (SQLiteDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        long historyId = (long)reader["HistoryId"];
-                        string key = reader["Key"].ToString();
-                        string value = reader["Value"].ToString();
-
-                        HistoryItem item = items.Find(i => i.Id == historyId);
-
-                        if (item != null)
-                        {
-                            item.Tags[key] = value;
-                        }
                     }
                 }
             }
@@ -146,8 +122,8 @@ CREATE TABLE IF NOT EXISTS Tags (
                         {
                             cmd.CommandText = @"
 INSERT INTO History
-(FileName, FilePath, DateTime, Type, Host, URL, ThumbnailURL, DeletionURL, ShortenedURL)
-VALUES (@FileName, @FilePath, @DateTime, @Type, @Host, @URL, @ThumbnailURL, @DeletionURL, @ShortenedURL);
+(FileName, FilePath, DateTime, Type, Host, URL, ThumbnailURL, DeletionURL, ShortenedURL, Tags)
+VALUES (@FileName, @FilePath, @DateTime, @Type, @Host, @URL, @ThumbnailURL, @DeletionURL, @ShortenedURL, @Tags);
 SELECT last_insert_rowid();";
                             cmd.Parameters.AddWithValue("@FileName", item.FileName);
                             cmd.Parameters.AddWithValue("@FilePath", item.FilePath);
@@ -158,23 +134,8 @@ SELECT last_insert_rowid();";
                             cmd.Parameters.AddWithValue("@ThumbnailURL", item.ThumbnailURL);
                             cmd.Parameters.AddWithValue("@DeletionURL", item.DeletionURL);
                             cmd.Parameters.AddWithValue("@ShortenedURL", item.ShortenedURL);
+                            cmd.Parameters.AddWithValue("@Tags", item.Tags != null ? JsonConvert.SerializeObject(item.Tags) : null);
                             newId = (long)cmd.ExecuteScalar();
-                        }
-
-                        if (item.Tags != null)
-                        {
-                            foreach (KeyValuePair<string, string> kvp in item.Tags)
-                            {
-                                using (SQLiteCommand tagCmd = connection.CreateCommand())
-                                {
-                                    tagCmd.CommandText = @"
-INSERT INTO Tags (HistoryId, Key, Value) VALUES (@HistoryId, @Key, @Value);";
-                                    tagCmd.Parameters.AddWithValue("@HistoryId", newId);
-                                    tagCmd.Parameters.AddWithValue("@Key", kvp.Key);
-                                    tagCmd.Parameters.AddWithValue("@Value", kvp.Value);
-                                    tagCmd.ExecuteNonQuery();
-                                }
-                            }
                         }
                     }
 
@@ -203,7 +164,8 @@ Host = @Host,
 URL = @URL,
 ThumbnailURL = @ThumbnailURL,
 DeletionURL = @DeletionURL,
-ShortenedURL = @ShortenedURL
+ShortenedURL = @ShortenedURL,
+Tags = @Tags
 WHERE Id = @Id;";
                         cmd.Parameters.AddWithValue("@FileName", item.FileName);
                         cmd.Parameters.AddWithValue("@FilePath", item.FilePath);
@@ -214,30 +176,9 @@ WHERE Id = @Id;";
                         cmd.Parameters.AddWithValue("@ThumbnailURL", item.ThumbnailURL);
                         cmd.Parameters.AddWithValue("@DeletionURL", item.DeletionURL);
                         cmd.Parameters.AddWithValue("@ShortenedURL", item.ShortenedURL);
+                        cmd.Parameters.AddWithValue("@Tags", item.Tags != null ? JsonConvert.SerializeObject(item.Tags) : null);
                         cmd.Parameters.AddWithValue("@Id", item.Id);
                         cmd.ExecuteNonQuery();
-                    }
-
-                    using (SQLiteCommand cmd = connection.CreateCommand())
-                    {
-                        cmd.CommandText = "DELETE FROM Tags WHERE HistoryId = @HistoryId;";
-                        cmd.Parameters.AddWithValue("@HistoryId", item.Id);
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    if (item.Tags != null)
-                    {
-                        foreach (KeyValuePair<string, string> kvp in item.Tags)
-                        {
-                            using (SQLiteCommand cmd = connection.CreateCommand())
-                            {
-                                cmd.CommandText = "INSERT INTO Tags (HistoryId, Key, Value) VALUES (@HistoryId, @Key, @Value);";
-                                cmd.Parameters.AddWithValue("@HistoryId", item.Id);
-                                cmd.Parameters.AddWithValue("@Key", kvp.Key);
-                                cmd.Parameters.AddWithValue("@Value", kvp.Value);
-                                cmd.ExecuteNonQuery();
-                            }
-                        }
                     }
 
                     transaction.Commit();
@@ -251,13 +192,6 @@ WHERE Id = @Id;";
             {
                 using (SQLiteTransaction transaction = connection.BeginTransaction())
                 {
-                    using (SQLiteCommand cmd = connection.CreateCommand())
-                    {
-                        cmd.CommandText = "DELETE FROM Tags WHERE HistoryId = @HistoryId;";
-                        cmd.Parameters.AddWithValue("@HistoryId", item.Id);
-                        cmd.ExecuteNonQuery();
-                    }
-
                     using (SQLiteCommand cmd = connection.CreateCommand())
                     {
                         cmd.CommandText = "DELETE FROM History WHERE Id = @Id;";
