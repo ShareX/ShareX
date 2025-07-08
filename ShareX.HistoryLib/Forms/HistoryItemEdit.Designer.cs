@@ -288,6 +288,7 @@
             Controls.Add(lblFileName);
             Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "HistoryItemEdit";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "ShareX - Edit item";

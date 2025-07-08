@@ -37,7 +37,7 @@ namespace ShareX.HistoryLib
 {
     public partial class HistoryForm : Form
     {
-        public string HistoryPath { get; private set; }
+        public HistoryManager HistoryManager { get; private set; }
         public HistorySettings Settings { get; private set; }
 
         private HistoryItemManager him;
@@ -49,9 +49,9 @@ namespace ShareX.HistoryLib
         private ListViewItem[] listViewCache;
         private int listViewCacheStartIndex;
 
-        public HistoryForm(string historyPath, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
+        public HistoryForm(HistoryManager historyManager, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
         {
-            HistoryPath = historyPath;
+            HistoryManager = historyManager;
             Settings = settings;
 
             InitializeComponent();
@@ -150,11 +150,13 @@ namespace ShareX.HistoryLib
 
             if (mockData)
             {
-                history = new HistoryManagerMock(HistoryPath);
+                // TODO
+                //history = new HistoryManagerMock(HistoryPath);
+                return null;
             }
             else
             {
-                history = new HistoryManagerJSON(HistoryPath);
+                history = HistoryManager;
             }
 
             List<HistoryItem> historyItems = await history.GetHistoryItemsAsync();

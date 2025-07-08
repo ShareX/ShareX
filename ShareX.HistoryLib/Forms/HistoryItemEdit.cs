@@ -76,7 +76,7 @@ namespace ShareX.HistoryLib.Forms
             historyItem.Tags = new Dictionary<string, string>();
             foreach (DataGridViewRow row in dgvTags.Rows)
             {
-                if (row.Cells[0].Value != null)
+                if (!string.IsNullOrEmpty(row.Cells[0].Value as string))
                 {
                     historyItem.Tags[row.Cells[0].Value.ToString()] = row.Cells[1].Value.ToString();
                 }

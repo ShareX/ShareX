@@ -147,6 +147,7 @@ namespace ShareX
             DefaultTaskSettings = Settings.DefaultTaskSettings;
             ApplicationConfigBackwardCompatibilityTasks();
             MigrateHistoryFile();
+            Program.HistoryManager = new HistoryManagerSQLite(Program.HistoryFilePath);
         }
 
         private static void Settings_SettingsSaveFailed(Exception e)
@@ -256,15 +257,11 @@ namespace ShareX
             {
                 if (!File.Exists(Program.HistoryFilePath))
                 {
-                    DebugHelper.WriteLine($"Migrating XML history file \"{Program.HistoryFilePathOld}\" to JSON history file \"{Program.HistoryFilePath}\"");
+                    DebugHelper.WriteLine($"Migrating JSON history file \"{Program.HistoryFilePathOld}\" to SQLite history file \"{Program.HistoryFilePath}\"");
 
-                    HistoryManagerXML historyManagerXML = new HistoryManagerXML(Program.HistoryFilePathOld);
-                    List<HistoryItem> historyItems = historyManagerXML.GetHistoryItems();
-
-                    if (historyItems.Count > 0)
+                    using (HistoryManagerSQLite historyManager = new HistoryManagerSQLite(Program.HistoryFilePath))
                     {
-                        HistoryManagerJSON historyManagerJSON = new HistoryManagerJSON(Program.HistoryFilePath);
-                        historyManagerJSON.AppendHistoryItems(historyItems);
+                        historyManager.MigrateFromJSON(Program.HistoryFilePathOld);
                     }
                 }
 

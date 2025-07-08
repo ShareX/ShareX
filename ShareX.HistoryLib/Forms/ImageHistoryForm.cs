@@ -38,7 +38,7 @@ namespace ShareX.HistoryLib
 {
     public partial class ImageHistoryForm : Form
     {
-        public string HistoryPath { get; private set; }
+        public HistoryManager HistoryManager { get; private set; }
         public ImageHistorySettings Settings { get; private set; }
         public string SearchText { get; set; }
         public bool SearchInTags { get; set; } = true;
@@ -47,12 +47,12 @@ namespace ShareX.HistoryLib
         private string defaultTitle;
         private List<HistoryItem> allHistoryItems;
 
-        public ImageHistoryForm(string historyPath, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
+        public ImageHistoryForm(HistoryManager historyManager, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
         {
             InitializeComponent();
             tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
 
-            HistoryPath = historyPath;
+            HistoryManager = historyManager;
             Settings = settings;
 
             ilvImages.SetRenderer(new HistoryImageListViewRenderer());
@@ -119,11 +119,13 @@ namespace ShareX.HistoryLib
 
             if (mockData)
             {
-                history = new HistoryManagerMock(HistoryPath);
+                // TODO
+                //history = new HistoryManagerMock(HistoryPath);
+                return null;
             }
             else
             {
-                history = new HistoryManagerJSON(HistoryPath);
+                history = HistoryManager;
             }
 
             List<HistoryItem> historyItems = await history.GetHistoryItemsAsync();

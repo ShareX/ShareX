@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
@@ -125,6 +126,7 @@ namespace ShareX
         internal static TaskSettings DefaultTaskSettings { get; set; }
         internal static UploadersConfig UploadersConfig { get; set; }
         internal static HotkeysConfig HotkeysConfig { get; set; }
+        internal static HistoryManagerSQLite HistoryManager { get; set; }
 
         internal static MainForm MainForm { get; private set; }
         internal static Stopwatch StartTimer { get; private set; }
@@ -178,7 +180,7 @@ namespace ShareX
             }
         }
 
-        public const string HistoryFileName = "History.json";
+        public const string HistoryFileName = "History.db";
 
         public static string HistoryFilePath
         {
@@ -190,7 +192,7 @@ namespace ShareX
             }
         }
 
-        public const string HistoryFileNameOld = "History.xml";
+        public const string HistoryFileNameOld = "History.json";
 
         public static string HistoryFilePathOld
         {
