@@ -37,6 +37,7 @@ namespace ShareX.HistoryLib
         public event Func<HistoryItem[]> GetHistoryItems;
         public event Action<HistoryItem> EditRequested;
         public event Action<HistoryItem> DeleteRequested;
+        public event Action<HistoryItem> DeleteFileRequested;
 
         public HistoryItem HistoryItem { get; private set; }
 
@@ -114,14 +115,19 @@ namespace ShareX.HistoryLib
             return null;
         }
 
-        public void OnEditRequested(HistoryItem historyItem)
+        protected void OnEditRequested(HistoryItem historyItem)
         {
             EditRequested?.Invoke(historyItem);
         }
 
-        public void OnDeleteRequested(HistoryItem historyItem)
+        protected void OnDeleteRequested(HistoryItem historyItem)
         {
             DeleteRequested?.Invoke(historyItem);
+        }
+
+        protected void OnDeleteFileRequested(HistoryItem historyItem)
+        {
+            DeleteFileRequested?.Invoke(historyItem);
         }
 
         public bool HandleKeyInput(KeyEventArgs e)
@@ -591,6 +597,15 @@ namespace ShareX.HistoryLib
             if (MessageBox.Show("Do you really want to delete this item?", "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 OnDeleteRequested(HistoryItem);
+            }
+        }
+
+        public void DeleteFile()
+        {
+            // TODO: Translate
+            if (MessageBox.Show("Do you really want to delete this file?", "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                OnDeleteFileRequested(HistoryItem);
             }
         }
 

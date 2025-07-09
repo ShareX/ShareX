@@ -63,6 +63,7 @@ namespace ShareX.HistoryLib
             him.GetHistoryItems += him_GetHistoryItems;
             him.EditRequested += him_EditRequested;
             him.DeleteRequested += him_DeleteRequested;
+            him.DeleteFileRequested += him_DeleteFileRequested;
             ilvImages.ContextMenuStrip = him.cmsHistory;
 
             defaultTitle = Text;
@@ -188,6 +189,18 @@ namespace ShareX.HistoryLib
 
         private async void him_DeleteRequested(HistoryItem hi)
         {
+            HistoryManager.Delete(hi);
+
+            await RefreshHistoryItems();
+        }
+
+        private async void him_DeleteFileRequested(HistoryItem hi)
+        {
+            if (File.Exists(hi.FilePath))
+            {
+                File.Delete(hi.FilePath);
+            }
+
             HistoryManager.Delete(hi);
 
             await RefreshHistoryItems();

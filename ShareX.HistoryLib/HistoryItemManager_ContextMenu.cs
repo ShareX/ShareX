@@ -73,6 +73,7 @@ namespace ShareX.HistoryLib
         private ToolStripSeparator tssMain1;
         private ToolStripMenuItem tsmiEdit;
         private ToolStripMenuItem tsmiDelete;
+        private ToolStripMenuItem tsmiDeleteFile;
         private ToolStripSeparator tssMain2;
         private ToolStripMenuItem tsmiShowImagePreview;
         private ToolStripMenuItem tsmiUploadFile;
@@ -122,6 +123,7 @@ namespace ShareX.HistoryLib
             tssMain1 = new ToolStripSeparator();
             tsmiEdit = new ToolStripMenuItem();
             tsmiDelete = new ToolStripMenuItem();
+            tsmiDeleteFile = new ToolStripMenuItem();
             tssMain2 = new ToolStripSeparator();
             tsmiShowImagePreview = new ToolStripMenuItem();
             tsmiUploadFile = new ToolStripMenuItem();
@@ -140,6 +142,7 @@ namespace ShareX.HistoryLib
                 tssMain1,
                 tsmiEdit,
                 tsmiDelete,
+                tsmiDeleteFile,
                 tssMain2,
                 tsmiShowImagePreview,
                 tsmiUploadFile,
@@ -434,6 +437,13 @@ namespace ShareX.HistoryLib
             tsmiDelete.Text = "Delete item..."; // TODO: Translate
             tsmiDelete.Click += tsmiDelete_Click;
             //
+            // tsmiDeleteFile
+            //
+            tsmiDeleteFile.Name = "tsmiDeleteFile";
+            tsmiDeleteFile.Size = new Size(127, 22);
+            tsmiDeleteFile.Text = "Delete file && item..."; // TODO: Translate
+            tsmiDeleteFile.Click += tsmiDeleteFile_Click;
+            //
             // tsmiShowImagePreview
             //
             tsmiShowImagePreview.Name = "tsmiShowImagePreview";
@@ -534,6 +544,7 @@ namespace ShareX.HistoryLib
                 // Other
                 tsmiEdit.Enabled = false;
                 tsmiDelete.Enabled = false;
+                tsmiDeleteFile.Enabled = false;
                 tsmiShowImagePreview.Enabled = false;
                 tsmiUploadFile.Enabled = false;
                 tsmiEditImage.Enabled = false;
@@ -600,6 +611,7 @@ namespace ShareX.HistoryLib
                 // Other
                 tsmiEdit.Enabled = true;
                 tsmiDelete.Enabled = true;
+                tsmiDeleteFile.Enabled = IsFileExist;
                 tsmiShowImagePreview.Enabled = IsImageFile;
                 tsmiUploadFile.Enabled = uploadFile != null && IsFileExist;
                 tsmiEditImage.Enabled = editImage != null && IsImageFile;
@@ -747,6 +759,11 @@ namespace ShareX.HistoryLib
         private void tsmiDelete_Click(object sender, EventArgs e)
         {
             Delete();
+        }
+
+        private void tsmiDeleteFile_Click(object sender, EventArgs e)
+        {
+            DeleteFile();
         }
 
         private void tsmiShowImagePreview_Click(object sender, EventArgs e)
