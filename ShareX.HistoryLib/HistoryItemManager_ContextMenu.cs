@@ -70,8 +70,10 @@ namespace ShareX.HistoryLib
         private ToolStripMenuItem tsmiCopyFileNameWithExtension;
         private ToolStripMenuItem tsmiCopyFolder;
 
+        private ToolStripSeparator tssMain1;
         private ToolStripMenuItem tsmiEdit;
         private ToolStripMenuItem tsmiDelete;
+        private ToolStripSeparator tssMain2;
         private ToolStripMenuItem tsmiShowImagePreview;
         private ToolStripMenuItem tsmiUploadFile;
         private ToolStripMenuItem tsmiEditImage;
@@ -117,8 +119,10 @@ namespace ShareX.HistoryLib
             tsmiCopyFileNameWithExtension = new ToolStripMenuItem();
             tsmiCopyFolder = new ToolStripMenuItem();
 
+            tssMain1 = new ToolStripSeparator();
             tsmiEdit = new ToolStripMenuItem();
             tsmiDelete = new ToolStripMenuItem();
+            tssMain2 = new ToolStripSeparator();
             tsmiShowImagePreview = new ToolStripMenuItem();
             tsmiUploadFile = new ToolStripMenuItem();
             tsmiEditImage = new ToolStripMenuItem();
@@ -133,8 +137,10 @@ namespace ShareX.HistoryLib
             {
                 tsmiOpen,
                 tsmiCopy,
+                tssMain1,
                 tsmiEdit,
                 tsmiDelete,
+                tssMain2,
                 tsmiShowImagePreview,
                 tsmiUploadFile,
                 tsmiEditImage,

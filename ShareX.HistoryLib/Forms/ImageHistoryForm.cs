@@ -38,7 +38,7 @@ namespace ShareX.HistoryLib
 {
     public partial class ImageHistoryForm : Form
     {
-        public HistoryManager HistoryManager { get; private set; }
+        public HistoryManagerSQLite HistoryManager { get; private set; }
         public ImageHistorySettings Settings { get; private set; }
         public string SearchText { get; set; }
         public bool SearchInTags { get; set; } = true;
@@ -47,7 +47,7 @@ namespace ShareX.HistoryLib
         private string defaultTitle;
         private List<HistoryItem> allHistoryItems;
 
-        public ImageHistoryForm(HistoryManager historyManager, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
+        public ImageHistoryForm(HistoryManagerSQLite historyManager, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
         {
             InitializeComponent();
             tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
@@ -61,6 +61,8 @@ namespace ShareX.HistoryLib
 
             him = new HistoryItemManager(uploadFile, editImage, pinToScreen);
             him.GetHistoryItems += him_GetHistoryItems;
+            him.EditRequested += him_EditRequested;
+            him.DeleteRequested += him_DeleteRequested;
             ilvImages.ContextMenuStrip = him.cmsHistory;
 
             defaultTitle = Text;
@@ -175,6 +177,20 @@ namespace ShareX.HistoryLib
         private HistoryItem[] him_GetHistoryItems()
         {
             return ilvImages.SelectedItems.Select(x => x.Tag as HistoryItem).ToArray();
+        }
+
+        private async void him_EditRequested(HistoryItem hi)
+        {
+            HistoryManager.Edit(hi);
+
+            await RefreshHistoryItems();
+        }
+
+        private async void him_DeleteRequested(HistoryItem hi)
+        {
+            HistoryManager.Delete(hi);
+
+            await RefreshHistoryItems();
         }
 
         #region Form events
