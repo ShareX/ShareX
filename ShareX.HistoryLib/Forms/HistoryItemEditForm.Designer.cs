@@ -1,6 +1,6 @@
 ﻿namespace ShareX.HistoryLib.Forms
 {
-    partial class HistoryItemEdit
+    partial class HistoryItemEditForm
     {
         /// <summary>
         /// Required designer variable.

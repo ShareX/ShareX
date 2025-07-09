@@ -34,9 +34,9 @@ namespace ShareX.HistoryLib
 {
     public partial class HistoryItemManager
     {
-        public delegate HistoryItem[] GetHistoryItemsEventHandler();
-
-        public event GetHistoryItemsEventHandler GetHistoryItems;
+        public event Func<HistoryItem[]> GetHistoryItems;
+        public event Action<HistoryItem> EditRequested;
+        public event Action<HistoryItem> DeleteRequested;
 
         public HistoryItem HistoryItem { get; private set; }
 
@@ -112,6 +112,16 @@ namespace ShareX.HistoryLib
             }
 
             return null;
+        }
+
+        public void OnEditRequested(HistoryItem historyItem)
+        {
+            EditRequested?.Invoke(historyItem);
+        }
+
+        public void OnDeleteRequested(HistoryItem historyItem)
+        {
+            DeleteRequested?.Invoke(historyItem);
         }
 
         public bool HandleKeyInput(KeyEventArgs e)
@@ -566,7 +576,22 @@ namespace ShareX.HistoryLib
 
         public void Edit()
         {
-            new HistoryItemEdit(HistoryItem).Show();
+            using (HistoryItemEditForm form = new HistoryItemEditForm(HistoryItem))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    OnEditRequested(form.HistoryItem);
+                }
+            }
+        }
+
+        public void Delete()
+        {
+            // TODO: Translate
+            if (MessageBox.Show("Do you really want to delete this item?", "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                OnDeleteRequested(HistoryItem);
+            }
         }
 
         public void ShowImagePreview()

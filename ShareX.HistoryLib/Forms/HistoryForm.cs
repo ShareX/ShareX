@@ -37,7 +37,7 @@ namespace ShareX.HistoryLib
 {
     public partial class HistoryForm : Form
     {
-        public HistoryManager HistoryManager { get; private set; }
+        public HistoryManagerSQLite HistoryManager { get; private set; }
         public HistorySettings Settings { get; private set; }
 
         private HistoryItemManager him;
@@ -49,7 +49,7 @@ namespace ShareX.HistoryLib
         private ListViewItem[] listViewCache;
         private int listViewCacheStartIndex;
 
-        public HistoryForm(HistoryManager historyManager, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
+        public HistoryForm(HistoryManagerSQLite historyManager, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
         {
             HistoryManager = historyManager;
             Settings = settings;
@@ -75,6 +75,8 @@ namespace ShareX.HistoryLib
 
             him = new HistoryItemManager(uploadFile, editImage, pinToScreen, true);
             him.GetHistoryItems += him_GetHistoryItems;
+            him.EditRequested += him_EditRequested;
+            him.DeleteRequested += him_DeleteRequested;
             lvHistory.ContextMenuStrip = him.cmsHistory;
 
             pbThumbnail.Reset();
@@ -142,6 +144,20 @@ namespace ShareX.HistoryLib
         private HistoryItem[] him_GetHistoryItems()
         {
             return lvHistory.SelectedIndices.Cast<int>().Select(i => filteredHistoryItems[i]).ToArray();
+        }
+
+        private async void him_EditRequested(HistoryItem hi)
+        {
+            HistoryManager.Edit(hi);
+
+            await RefreshHistoryItems();
+        }
+
+        private async void him_DeleteRequested(HistoryItem hi)
+        {
+            HistoryManager.Delete(hi);
+
+            await RefreshHistoryItems();
         }
 
         private async Task<HistoryItem[]> GetHistoryItems(bool mockData = false)

@@ -29,34 +29,34 @@ using System.Windows.Forms;
 
 namespace ShareX.HistoryLib.Forms
 {
-    public partial class HistoryItemEdit : Form
+    public partial class HistoryItemEditForm : Form
     {
-        private HistoryItem historyItem;
+        public HistoryItem HistoryItem { get; private set; }
 
-        public HistoryItemEdit(HistoryItem historyItem)
+        public HistoryItemEditForm(HistoryItem historyItem)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
 
-            this.historyItem = historyItem;
+            this.HistoryItem = historyItem;
 
             LoadSettings();
         }
 
         private void LoadSettings()
         {
-            txtFileName.Text = historyItem.FileName;
-            txtFilePath.Text = historyItem.FilePath;
-            txtDateTime.Text = historyItem.DateTime.ToString();
-            txtType.Text = historyItem.Type;
-            txtHost.Text = historyItem.Host;
-            txtURL.Text = historyItem.URL;
-            txtThumbnailURL.Text = historyItem.ThumbnailURL;
-            txtDeletionURL.Text = historyItem.DeletionURL;
-            txtShortenedURL.Text = historyItem.ShortenedURL;
-            if (historyItem.Tags != null)
+            txtFileName.Text = HistoryItem.FileName;
+            txtFilePath.Text = HistoryItem.FilePath;
+            txtDateTime.Text = HistoryItem.DateTime.ToString();
+            txtType.Text = HistoryItem.Type;
+            txtHost.Text = HistoryItem.Host;
+            txtURL.Text = HistoryItem.URL;
+            txtThumbnailURL.Text = HistoryItem.ThumbnailURL;
+            txtDeletionURL.Text = HistoryItem.DeletionURL;
+            txtShortenedURL.Text = HistoryItem.ShortenedURL;
+            if (HistoryItem.Tags != null)
             {
-                foreach (KeyValuePair<string, string> tag in historyItem.Tags)
+                foreach (KeyValuePair<string, string> tag in HistoryItem.Tags)
                 {
                     dgvTags.Rows.Add(tag.Key, tag.Value);
                 }
@@ -65,20 +65,20 @@ namespace ShareX.HistoryLib.Forms
 
         private void SaveSettings()
         {
-            historyItem.FileName = txtFileName.Text;
-            historyItem.FilePath = txtFilePath.Text;
-            historyItem.Type = txtType.Text;
-            historyItem.Host = txtHost.Text;
-            historyItem.URL = txtURL.Text;
-            historyItem.ThumbnailURL = txtThumbnailURL.Text;
-            historyItem.DeletionURL = txtDeletionURL.Text;
-            historyItem.ShortenedURL = txtShortenedURL.Text;
-            historyItem.Tags = new Dictionary<string, string>();
+            HistoryItem.FileName = txtFileName.Text;
+            HistoryItem.FilePath = txtFilePath.Text;
+            HistoryItem.Type = txtType.Text;
+            HistoryItem.Host = txtHost.Text;
+            HistoryItem.URL = txtURL.Text;
+            HistoryItem.ThumbnailURL = txtThumbnailURL.Text;
+            HistoryItem.DeletionURL = txtDeletionURL.Text;
+            HistoryItem.ShortenedURL = txtShortenedURL.Text;
+            HistoryItem.Tags = new Dictionary<string, string>();
             foreach (DataGridViewRow row in dgvTags.Rows)
             {
                 if (!string.IsNullOrEmpty(row.Cells[0].Value as string))
                 {
-                    historyItem.Tags[row.Cells[0].Value.ToString()] = row.Cells[1].Value.ToString();
+                    HistoryItem.Tags[row.Cells[0].Value.ToString()] = row.Cells[1].Value.ToString();
                 }
             }
         }
