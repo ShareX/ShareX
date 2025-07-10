@@ -147,7 +147,22 @@ namespace ShareX
             DefaultTaskSettings = Settings.DefaultTaskSettings;
             ApplicationConfigBackwardCompatibilityTasks();
             MigrateHistoryFile();
+            HistoryConnect();
+        }
+
+        private static void HistoryConnect()
+        {
+            HistoryClose();
             Program.HistoryManager = new HistoryManagerSQLite(Program.HistoryFilePath);
+        }
+
+        private static void HistoryClose()
+        {
+            if (Program.HistoryManager != null)
+            {
+                Program.HistoryManager.Dispose();
+                Program.HistoryManager = null;
+            }
         }
 
         private static void Settings_SettingsSaveFailed(Exception e)
@@ -406,6 +421,7 @@ namespace ShareX
                 if (history)
                 {
                     entries.Add(new ZipEntryInfo(Program.HistoryFilePath));
+                    HistoryClose();
                 }
 
                 ZipManager.Compress(archivePath, entries);
@@ -421,6 +437,11 @@ namespace ShareX
                 msApplicationConfig?.Dispose();
                 msUploadersConfig?.Dispose();
                 msHotkeysConfig?.Dispose();
+
+                if (history)
+                {
+                    HistoryConnect();
+                }
             }
 
             return false;
@@ -430,6 +451,8 @@ namespace ShareX
         {
             try
             {
+                HistoryClose();
+
                 ZipManager.Extract(archivePath, Program.PersonalFolder, true, entry =>
                 {
                     return FileHelpers.CheckExtension(entry.Name, new string[] { "json", "xml" });
@@ -441,6 +464,10 @@ namespace ShareX
             {
                 DebugHelper.WriteException(e);
                 MessageBox.Show("Error while importing backup:\r\n" + e, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                HistoryConnect();
             }
 
             return false;
