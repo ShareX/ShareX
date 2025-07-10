@@ -543,8 +543,6 @@ namespace ShareX.HistoryLib
 
                 // Other
                 tsmiEdit.Enabled = false;
-                tsmiDelete.Enabled = false;
-                tsmiDeleteFile.Enabled = false;
                 tsmiShowImagePreview.Enabled = false;
                 tsmiUploadFile.Enabled = false;
                 tsmiEditImage.Enabled = false;
@@ -610,8 +608,6 @@ namespace ShareX.HistoryLib
 
                 // Other
                 tsmiEdit.Enabled = true;
-                tsmiDelete.Enabled = true;
-                tsmiDeleteFile.Enabled = IsFileExist;
                 tsmiShowImagePreview.Enabled = IsImageFile;
                 tsmiUploadFile.Enabled = uploadFile != null && IsFileExist;
                 tsmiEditImage.Enabled = editImage != null && IsImageFile;

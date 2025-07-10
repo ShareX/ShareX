@@ -36,8 +36,8 @@ namespace ShareX.HistoryLib
     {
         public event Func<HistoryItem[]> GetHistoryItems;
         public event Action<HistoryItem> EditRequested;
-        public event Action<HistoryItem> DeleteRequested;
-        public event Action<HistoryItem> DeleteFileRequested;
+        public event Action<HistoryItem[]> DeleteRequested;
+        public event Action<HistoryItem[]> DeleteFileRequested;
 
         public HistoryItem HistoryItem { get; private set; }
 
@@ -120,14 +120,14 @@ namespace ShareX.HistoryLib
             EditRequested?.Invoke(historyItem);
         }
 
-        protected void OnDeleteRequested(HistoryItem historyItem)
+        protected void OnDeleteRequested(HistoryItem[] historyItems)
         {
-            DeleteRequested?.Invoke(historyItem);
+            DeleteRequested?.Invoke(historyItems);
         }
 
-        protected void OnDeleteFileRequested(HistoryItem historyItem)
+        protected void OnDeleteFileRequested(HistoryItem[] historyItems)
         {
-            DeleteFileRequested?.Invoke(historyItem);
+            DeleteFileRequested?.Invoke(historyItems);
         }
 
         public bool HandleKeyInput(KeyEventArgs e)
@@ -596,7 +596,12 @@ namespace ShareX.HistoryLib
             // TODO: Translate
             if (MessageBox.Show("Do you really want to delete this item?", "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                OnDeleteRequested(HistoryItem);
+                HistoryItem[] historyItems = OnGetHistoryItems();
+
+                if (historyItems != null)
+                {
+                    OnDeleteRequested(historyItems);
+                }
             }
         }
 
@@ -605,7 +610,12 @@ namespace ShareX.HistoryLib
             // TODO: Translate
             if (MessageBox.Show("Do you really want to delete this file?", "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                OnDeleteFileRequested(HistoryItem);
+                HistoryItem[] historyItems = OnGetHistoryItems();
+
+                if (historyItems != null)
+                {
+                    OnDeleteFileRequested(historyItems);
+                }
             }
         }
 

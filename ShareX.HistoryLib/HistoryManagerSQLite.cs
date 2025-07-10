@@ -79,8 +79,7 @@ CREATE TABLE IF NOT EXISTS History (
 
             lock (dbLock)
             {
-                string sql = @"SELECT * FROM History;";
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, connection))
+                using (SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM History;", connection))
                 using (SQLiteDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -151,10 +150,9 @@ SELECT last_insert_rowid();";
             lock (dbLock)
             {
                 using (SQLiteTransaction transaction = connection.BeginTransaction())
+                using (SQLiteCommand cmd = connection.CreateCommand())
                 {
-                    using (SQLiteCommand cmd = connection.CreateCommand())
-                    {
-                        cmd.CommandText = @"
+                    cmd.CommandText = @"
 UPDATE History SET
 FileName = @FileName,
 FilePath = @FilePath,
@@ -167,39 +165,46 @@ DeletionURL = @DeletionURL,
 ShortenedURL = @ShortenedURL,
 Tags = @Tags
 WHERE Id = @Id;";
-                        cmd.Parameters.AddWithValue("@FileName", item.FileName);
-                        cmd.Parameters.AddWithValue("@FilePath", item.FilePath);
-                        cmd.Parameters.AddWithValue("@DateTime", item.DateTime.ToString("o"));
-                        cmd.Parameters.AddWithValue("@Type", item.Type);
-                        cmd.Parameters.AddWithValue("@Host", item.Host);
-                        cmd.Parameters.AddWithValue("@URL", item.URL);
-                        cmd.Parameters.AddWithValue("@ThumbnailURL", item.ThumbnailURL);
-                        cmd.Parameters.AddWithValue("@DeletionURL", item.DeletionURL);
-                        cmd.Parameters.AddWithValue("@ShortenedURL", item.ShortenedURL);
-                        cmd.Parameters.AddWithValue("@Tags", item.Tags != null ? JsonConvert.SerializeObject(item.Tags) : null);
-                        cmd.Parameters.AddWithValue("@Id", item.Id);
-                        cmd.ExecuteNonQuery();
-                    }
+                    cmd.Parameters.AddWithValue("@FileName", item.FileName);
+                    cmd.Parameters.AddWithValue("@FilePath", item.FilePath);
+                    cmd.Parameters.AddWithValue("@DateTime", item.DateTime.ToString("o"));
+                    cmd.Parameters.AddWithValue("@Type", item.Type);
+                    cmd.Parameters.AddWithValue("@Host", item.Host);
+                    cmd.Parameters.AddWithValue("@URL", item.URL);
+                    cmd.Parameters.AddWithValue("@ThumbnailURL", item.ThumbnailURL);
+                    cmd.Parameters.AddWithValue("@DeletionURL", item.DeletionURL);
+                    cmd.Parameters.AddWithValue("@ShortenedURL", item.ShortenedURL);
+                    cmd.Parameters.AddWithValue("@Tags", item.Tags != null ? JsonConvert.SerializeObject(item.Tags) : null);
+                    cmd.Parameters.AddWithValue("@Id", item.Id);
+                    cmd.ExecuteNonQuery();
 
                     transaction.Commit();
                 }
             }
         }
 
-        public void Delete(HistoryItem item)
+        public void Delete(params HistoryItem[] items)
         {
-            lock (dbLock)
+            if (items != null && items.Length > 0)
             {
-                using (SQLiteTransaction transaction = connection.BeginTransaction())
+                lock (dbLock)
                 {
+                    using (SQLiteTransaction transaction = connection.BeginTransaction())
                     using (SQLiteCommand cmd = connection.CreateCommand())
                     {
                         cmd.CommandText = "DELETE FROM History WHERE Id = @Id;";
-                        cmd.Parameters.AddWithValue("@Id", item.Id);
-                        cmd.ExecuteNonQuery();
-                    }
+                        SQLiteParameter idParam = cmd.CreateParameter();
+                        idParam.ParameterName = "@Id";
+                        cmd.Parameters.Add(idParam);
 
-                    transaction.Commit();
+                        foreach (HistoryItem item in items)
+                        {
+                            idParam.Value = item.Id;
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                    }
                 }
             }
         }

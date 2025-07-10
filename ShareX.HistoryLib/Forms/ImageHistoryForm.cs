@@ -187,21 +187,24 @@ namespace ShareX.HistoryLib
             await RefreshHistoryItems();
         }
 
-        private async void him_DeleteRequested(HistoryItem hi)
+        private async void him_DeleteRequested(HistoryItem[] historyItems)
         {
-            HistoryManager.Delete(hi);
+            HistoryManager.Delete(historyItems);
 
             await RefreshHistoryItems();
         }
 
-        private async void him_DeleteFileRequested(HistoryItem hi)
+        private async void him_DeleteFileRequested(HistoryItem[] historyItems)
         {
-            if (File.Exists(hi.FilePath))
+            foreach (HistoryItem historyItem in historyItems)
             {
-                File.Delete(hi.FilePath);
+                if (!string.IsNullOrEmpty(historyItem.FilePath) && File.Exists(historyItem.FilePath))
+                {
+                    File.Delete(historyItem.FilePath);
+                }
             }
 
-            HistoryManager.Delete(hi);
+            HistoryManager.Delete(historyItems);
 
             await RefreshHistoryItems();
         }
