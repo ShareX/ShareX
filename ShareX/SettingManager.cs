@@ -150,21 +150,6 @@ namespace ShareX
             HistoryConnect();
         }
 
-        private static void HistoryConnect()
-        {
-            HistoryClose();
-            Program.HistoryManager = new HistoryManagerSQLite(Program.HistoryFilePath);
-        }
-
-        private static void HistoryClose()
-        {
-            if (Program.HistoryManager != null)
-            {
-                Program.HistoryManager.Dispose();
-                Program.HistoryManager = null;
-            }
-        }
-
         private static void Settings_SettingsSaveFailed(Exception e)
         {
             string message;
@@ -263,6 +248,21 @@ namespace ShareX
                 {
                     DefaultTaskSettings.CaptureSettings.SurfaceOptions.BackgroundDimStrength = 0;
                 }
+            }
+        }
+
+        public static void HistoryConnect()
+        {
+            HistoryClose();
+            Program.HistoryManager = new HistoryManagerSQLite(Program.HistoryFilePath);
+        }
+
+        public static void HistoryClose()
+        {
+            if (Program.HistoryManager != null)
+            {
+                Program.HistoryManager.Dispose();
+                Program.HistoryManager = null;
             }
         }
 

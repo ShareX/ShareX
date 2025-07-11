@@ -373,6 +373,7 @@ namespace ShareX
                 DebugHelper.WriteLine("ShareX closing.");
 
                 WatchFolderManager?.Dispose();
+                SettingManager.HistoryClose();
                 SettingManager.SaveAllSettings();
 
                 DebugHelper.WriteLine("ShareX closed.");
