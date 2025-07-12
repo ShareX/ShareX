@@ -58,7 +58,7 @@ namespace ShareX.Setup
             MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | DownloadTools | OpenOutputDirectory
         }
 
-        private static SetupJobs Job { get; set; } = SetupJobs.Release;
+        private static SetupJobs Job { get; set; } = SetupJobs.MicrosoftStore;
         private static bool Silent { get; set; } = false;
 
         private static string ParentDir;
@@ -106,10 +106,10 @@ namespace ShareX.Setup
         private static string DebugZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.zip");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam.zip");
-        private static string MicrosoftStoreAppxDir => Path.Combine(OutputDir, "Microstore-Appx");
+        private static string MicrosoftStoreAppxDir => Path.Combine(OutputDir, "ShareX-Appx");
         private static string GetMicrosoftStoreAppxPath(Architecture arch) => Path.Combine( MicrosoftStoreAppxDir, $"ShareX-{AppVersion}-{GetArchName(arch)}.appx");
         private static string MicrosoftStoreBundlePath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appxbundle");
-        private static string MicrosoftStoreDebugAppxDir => Path.Combine(OutputDir, "Microstore-Appx-Debug");
+        private static string MicrosoftStoreDebugAppxDir => Path.Combine(OutputDir, "ShareX-Appx-Debug");
         private static string GetMicrosoftStoreDebugAppxPath(Architecture arch) => Path.Combine(MicrosoftStoreDebugAppxDir, $"ShareX-{AppVersion}-debug-{GetArchName(arch)}.appx");
         private static string MicrosoftStoreBundleDebugPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.appxbundle");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
