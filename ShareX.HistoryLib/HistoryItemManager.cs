@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.HistoryLib.Forms;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -38,6 +39,7 @@ namespace ShareX.HistoryLib
         public event Action<HistoryItem> EditRequested;
         public event Action<HistoryItem[]> DeleteRequested;
         public event Action<HistoryItem[]> DeleteFileRequested;
+        public event Action<HistoryItem[]> FavoriteRequested;
 
         public HistoryItem HistoryItem { get; private set; }
 
@@ -113,6 +115,11 @@ namespace ShareX.HistoryLib
             }
 
             return null;
+        }
+
+        protected void OnFavoriteRequested(HistoryItem[] historyItems)
+        {
+            FavoriteRequested?.Invoke(historyItems);
         }
 
         protected void OnEditRequested(HistoryItem historyItem)
@@ -577,6 +584,33 @@ namespace ShareX.HistoryLib
                         ClipboardHelpers.CopyText(folderPaths);
                     }
                 }
+            }
+        }
+
+        public void ToggleFavorite()
+        {
+            HistoryItem[] historyItems = OnGetHistoryItems();
+
+            if (historyItems != null)
+            {
+                foreach (HistoryItem item in historyItems)
+                {
+                    if (item.Tags == null)
+                    {
+                        item.Tags = new Dictionary<string, string>();
+                    }
+
+                    if (item.Tags.ContainsKey("Favorite"))
+                    {
+                        item.Tags.Remove("Favorite");
+                    }
+                    else
+                    {
+                        item.Tags["Favorite"] = null;
+                    }
+                }
+
+                OnFavoriteRequested(historyItems);
             }
         }
 

@@ -71,6 +71,7 @@ namespace ShareX.HistoryLib
         private ToolStripMenuItem tsmiCopyFolder;
 
         private ToolStripSeparator tssMain1;
+        private ToolStripMenuItem tsmiFavorite;
         private ToolStripMenuItem tsmiEdit;
         private ToolStripMenuItem tsmiDelete;
         private ToolStripMenuItem tsmiDeleteFile;
@@ -121,6 +122,7 @@ namespace ShareX.HistoryLib
             tsmiCopyFolder = new ToolStripMenuItem();
 
             tssMain1 = new ToolStripSeparator();
+            tsmiFavorite = new ToolStripMenuItem();
             tsmiEdit = new ToolStripMenuItem();
             tsmiDelete = new ToolStripMenuItem();
             tsmiDeleteFile = new ToolStripMenuItem();
@@ -140,6 +142,7 @@ namespace ShareX.HistoryLib
                 tsmiOpen,
                 tsmiCopy,
                 tssMain1,
+                tsmiFavorite,
                 tsmiEdit,
                 tsmiDelete,
                 tsmiDeleteFile,
@@ -422,6 +425,13 @@ namespace ShareX.HistoryLib
             tsmiCopyFolder.Size = new Size(233, 22);
             tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder;
             tsmiCopyFolder.Click += tsmiCopyFolder_Click;
+            //
+            // tsmiFavorite
+            //
+            tsmiFavorite.Name = "tsmiFavorite";
+            tsmiFavorite.Size = new Size(127, 22);
+            tsmiFavorite.Text = "Favorite"; // TODO: Translate
+            tsmiFavorite.Click += tsmiFavorite_Click;
             //
             // tsmiEdit
             //
@@ -745,6 +755,11 @@ namespace ShareX.HistoryLib
         private void tsmiCopyFolder_Click(object sender, EventArgs e)
         {
             CopyFolder();
+        }
+
+        private void tsmiFavorite_Click(object sender, EventArgs e)
+        {
+            ToggleFavorite();
         }
 
         private void tsmiEdit_Click(object sender, EventArgs e)

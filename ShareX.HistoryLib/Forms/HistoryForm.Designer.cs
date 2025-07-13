@@ -42,6 +42,7 @@
             tsbSearch = new System.Windows.Forms.ToolStripButton();
             tsbAdvancedSearch = new System.Windows.Forms.ToolStripButton();
             tss1 = new System.Windows.Forms.ToolStripSeparator();
+            tsbFavorites = new System.Windows.Forms.ToolStripButton();
             tsbShowStats = new System.Windows.Forms.ToolStripButton();
             tss2 = new System.Windows.Forms.ToolStripSeparator();
             tsbSettings = new System.Windows.Forms.ToolStripButton();
@@ -128,7 +129,7 @@
             // 
             resources.ApplyResources(tsHistory, "tsHistory");
             tsHistory.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            tsHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tslSearch, tstbSearch, tsbSearch, tsbAdvancedSearch, tss1, tsbShowStats, tss2, tsbSettings });
+            tsHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tslSearch, tstbSearch, tsbSearch, tsbAdvancedSearch, tss1, tsbFavorites, tsbShowStats, tss2, tsbSettings });
             tsHistory.Name = "tsHistory";
             // 
             // tslSearch
@@ -165,6 +166,15 @@
             // 
             tss1.Name = "tss1";
             resources.ApplyResources(tss1, "tss1");
+            // 
+            // tsbFavorites
+            // 
+            tsbFavorites.CheckOnClick = true;
+            tsbFavorites.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsbFavorites.Image = Properties.Resources.star;
+            resources.ApplyResources(tsbFavorites, "tsbFavorites");
+            tsbFavorites.Name = "tsbFavorites";
+            tsbFavorites.Click += tsbFavorites_Click;
             // 
             // tsbShowStats
             // 
@@ -393,5 +403,6 @@
         private System.Windows.Forms.ToolStripSeparator tss2;
         private System.Windows.Forms.ToolStripButton tsbShowStats;
         private System.Windows.Forms.Button btnAdvancedSearchClose;
+        private System.Windows.Forms.ToolStripButton tsbFavorites;
     }
 }

@@ -39,6 +39,7 @@ namespace ShareX.HistoryLib
     {
         public HistoryManagerSQLite HistoryManager { get; private set; }
         public HistorySettings Settings { get; private set; }
+        public bool Favorites { get; private set; }
 
         private HistoryItemManager him;
         private HistoryItem[] allHistoryItems;
@@ -48,6 +49,7 @@ namespace ShareX.HistoryLib
         private string[] allTypeNames;
         private ListViewItem[] listViewCache;
         private int listViewCacheStartIndex;
+        private bool busy;
 
         public HistoryForm(HistoryManagerSQLite historyManager, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
         {
@@ -71,10 +73,12 @@ namespace ShareX.HistoryLib
             il.Images.Add(Resources.notebook);
             il.Images.Add(Resources.application_block);
             il.Images.Add(Resources.globe);
+            il.Images.Add(Resources.star);
             lvHistory.SmallImageList = il;
 
             him = new HistoryItemManager(uploadFile, editImage, pinToScreen, true);
             him.GetHistoryItems += him_GetHistoryItems;
+            him.FavoriteRequested += him_FavoriteRequested;
             him.EditRequested += him_EditRequested;
             him.DeleteRequested += him_DeleteRequested;
             him.DeleteFileRequested += him_DeleteFileRequested;
@@ -105,6 +109,8 @@ namespace ShareX.HistoryLib
 
         private void ResetFilters()
         {
+            busy = true;
+
             txtFilenameFilter.ResetText();
             txtURLFilter.ResetText();
             cbDateFilter.Checked = false;
@@ -117,6 +123,8 @@ namespace ShareX.HistoryLib
             }
             cbHostFilter.Checked = false;
             cbHostFilterSelection.ResetText();
+
+            busy = false;
         }
 
         private async Task RefreshHistoryItems(bool mockData = false)
@@ -143,6 +151,16 @@ namespace ShareX.HistoryLib
         private HistoryItem[] him_GetHistoryItems()
         {
             return lvHistory.SelectedIndices.Cast<int>().Select(i => filteredHistoryItems[i]).ToArray();
+        }
+
+        private async void him_FavoriteRequested(HistoryItem[] historyItems)
+        {
+            foreach (HistoryItem hi in historyItems)
+            {
+                HistoryManager.Edit(hi);
+            }
+
+            await RefreshHistoryItems();
         }
 
         private async void him_EditRequested(HistoryItem hi)
@@ -230,7 +248,8 @@ namespace ShareX.HistoryLib
 
             HistoryFilter filter = new HistoryFilter()
             {
-                Filename = searchText
+                Filename = searchText,
+                FilterFavorites = Favorites
             };
 
             ApplyFilter(filter);
@@ -264,7 +283,11 @@ namespace ShareX.HistoryLib
 
             ListViewItem lvi = new ListViewItem();
 
-            if (hi.Type.Equals("Image", StringComparison.InvariantCultureIgnoreCase))
+            if (hi.Tags != null && hi.Tags.ContainsKey("Favorite"))
+            {
+                lvi.ImageIndex = 4;
+            }
+            else if (hi.Type.Equals("Image", StringComparison.InvariantCultureIgnoreCase))
             {
                 lvi.ImageIndex = 0;
             }
@@ -469,6 +492,13 @@ namespace ShareX.HistoryLib
             tsbAdvancedSearch.Checked = !isPanelVisible;
         }
 
+        private async void tsbFavorites_Click(object sender, EventArgs e)
+        {
+            Favorites = tsbFavorites.Checked;
+
+            await RefreshHistoryItems();
+        }
+
         private void tsbShowStats_Click(object sender, EventArgs e)
         {
             string stats = OutputStats(allHistoryItems);
@@ -485,7 +515,10 @@ namespace ShareX.HistoryLib
 
         private void AdvancedFilter_ValueChanged(object sender, EventArgs e)
         {
-            ApplyFilterAdvanced();
+            if (!busy)
+            {
+                ApplyFilterAdvanced();
+            }
         }
 
         private void btnAdvancedSearchReset_Click(object sender, EventArgs e)
