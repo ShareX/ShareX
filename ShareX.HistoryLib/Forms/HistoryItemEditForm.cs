@@ -78,7 +78,7 @@ namespace ShareX.HistoryLib.Forms
             {
                 if (!string.IsNullOrEmpty(row.Cells[0].Value as string))
                 {
-                    HistoryItem.Tags[row.Cells[0].Value.ToString()] = row.Cells[1].Value.ToString();
+                    HistoryItem.Tags[row.Cells[0].Value.ToString()] = row.Cells[1].Value?.ToString();
                 }
             }
         }
