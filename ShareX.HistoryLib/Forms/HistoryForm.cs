@@ -153,14 +153,13 @@ namespace ShareX.HistoryLib
             return lvHistory.SelectedIndices.Cast<int>().Select(i => filteredHistoryItems[i]).ToArray();
         }
 
-        private async void him_FavoriteRequested(HistoryItem[] historyItems)
+        private void him_FavoriteRequested(HistoryItem[] historyItems)
         {
             foreach (HistoryItem hi in historyItems)
             {
                 HistoryManager.Edit(hi);
+                EditListViewItem(hi);
             }
-
-            await RefreshHistoryItems();
         }
 
         private async void him_EditRequested(HistoryItem hi)
@@ -282,7 +281,27 @@ namespace ShareX.HistoryLib
             HistoryItem hi = filteredHistoryItems[index];
 
             ListViewItem lvi = new ListViewItem();
+            EditListViewItem(hi, lvi);
+            return lvi;
+        }
 
+        private void EditListViewItem(HistoryItem hi)
+        {
+            for (int i = 0; i < lvHistory.Items.Count; i++)
+            {
+                ListViewItem lvi = lvHistory.Items[i];
+
+                if ((HistoryItem)lvi.Tag == hi)
+                {
+                    EditListViewItem(hi, lvi);
+                    lvHistory.Invalidate();
+                    return;
+                }
+            }
+        }
+
+        private void EditListViewItem(HistoryItem hi, ListViewItem lvi)
+        {
             if (hi.Favorite)
             {
                 lvi.ImageIndex = 4;
@@ -304,11 +323,15 @@ namespace ShareX.HistoryLib
                 lvi.ImageIndex = 3;
             }
 
+            if (lvi.SubItems.Count > 0)
+            {
+                lvi.SubItems.Clear();
+            }
+
             lvi.SubItems.Add(hi.DateTime.ToString());
             lvi.SubItems.Add(hi.FileName);
             lvi.SubItems.Add(hi.URL);
-
-            return lvi;
+            lvi.Tag = hi;
         }
 
         private void UpdateTitle(HistoryItem[] historyItems = null)

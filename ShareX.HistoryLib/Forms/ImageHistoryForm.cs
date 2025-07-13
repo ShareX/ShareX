@@ -189,14 +189,12 @@ namespace ShareX.HistoryLib
             return ilvImages.SelectedItems.Select(x => x.Tag as HistoryItem).ToArray();
         }
 
-        private async void him_FavoriteRequested(HistoryItem[] historyItems)
+        private void him_FavoriteRequested(HistoryItem[] historyItems)
         {
             foreach (HistoryItem hi in historyItems)
             {
                 HistoryManager.Edit(hi);
             }
-
-            await RefreshHistoryItems();
         }
 
         private async void him_EditRequested(HistoryItem hi)
