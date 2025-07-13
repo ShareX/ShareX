@@ -63,12 +63,18 @@ namespace ShareX.HistoryLib
             this.pinToScreen = pinToScreen;
 
             InitializeComponent();
+            cmsHistory.Opening += cmsHistory_Opening;
 
             tsmiOpen.HideImageMargin();
             tsmiCopy.HideImageMargin();
             tsmiUploadFile.Visible = uploadFile != null;
             tsmiEditImage.Visible = editImage != null;
             tsmiPinToScreen.Visible = pinToScreen != null;
+        }
+
+        private void cmsHistory_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            UpdateSelectedHistoryItem();
         }
 
         public HistoryItem UpdateSelectedHistoryItem()
@@ -103,6 +109,9 @@ namespace ShareX.HistoryLib
             {
                 cmsHistory.Enabled = false;
             }
+
+            // TODO: Translate
+            tsmiFavorite.Text = HistoryItem != null && HistoryItem.Favorite ? "Unfavorite" : "Favorite";
 
             return HistoryItem;
         }
