@@ -82,8 +82,6 @@ namespace ShareX.HistoryLib
 
             pbThumbnail.Reset();
             lvHistory.FillLastColumn();
-            scHistoryItemInfo.SplitterWidth = 7; // Because of bug must be assigned here again
-            scHistoryItemInfo.Panel2Collapsed = true;
 
             tstbSearch.TextBox.HandleCreated += (sender, e) => tstbSearch.TextBox.SetWatermark(Resources.HistoryForm_Search_Watermark, true);
 
@@ -336,8 +334,6 @@ namespace ShareX.HistoryLib
             {
                 UpdatePictureBox();
             }
-
-            pgHistoryItemInfo.SelectedObject = historyItem;
         }
 
         private void UpdatePictureBox()
@@ -471,13 +467,6 @@ namespace ShareX.HistoryLib
             bool isPanelVisible = gbAdvancedSearch.Visible;
             gbAdvancedSearch.Visible = !isPanelVisible;
             tsbAdvancedSearch.Checked = !isPanelVisible;
-        }
-
-        private void tsbToggleMoreInfo_Click(object sender, EventArgs e)
-        {
-            bool isPanelVisible = !scHistoryItemInfo.Panel2Collapsed;
-            scHistoryItemInfo.Panel2Collapsed = isPanelVisible;
-            tsbToggleMoreInfo.Checked = !isPanelVisible;
         }
 
         private void tsbShowStats_Click(object sender, EventArgs e)
