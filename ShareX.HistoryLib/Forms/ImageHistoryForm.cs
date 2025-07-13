@@ -42,6 +42,7 @@ namespace ShareX.HistoryLib
         public ImageHistorySettings Settings { get; private set; }
         public string SearchText { get; set; }
         public bool SearchInTags { get; set; } = true;
+        public bool Favorites { get; private set; }
 
         private HistoryItemManager him;
         private string defaultTitle;
@@ -61,6 +62,7 @@ namespace ShareX.HistoryLib
 
             him = new HistoryItemManager(uploadFile, editImage, pinToScreen);
             him.GetHistoryItems += him_GetHistoryItems;
+            him.FavoriteRequested += him_FavoriteRequested;
             him.EditRequested += him_EditRequested;
             him.DeleteRequested += him_DeleteRequested;
             him.DeleteFileRequested += him_DeleteFileRequested;
@@ -156,7 +158,14 @@ namespace ShareX.HistoryLib
             {
                 HistoryItem hi = allHistoryItems[i];
 
-                if (!string.IsNullOrEmpty(hi.FilePath) && FileHelpers.IsImageFile(hi.FilePath) &&
+                if (Favorites)
+                {
+                    if (hi.Favorite)
+                    {
+                        filteredHistoryItems.Add(hi);
+                    }
+                }
+                else if (!string.IsNullOrEmpty(hi.FilePath) && FileHelpers.IsImageFile(hi.FilePath) &&
                     (regex == null || regex.IsMatch(hi.FileName) || (SearchInTags && hi.Tags != null && hi.Tags.Any(tag => regex.IsMatch(tag.Value)))) &&
                     (!Settings.FilterMissingFiles || File.Exists(hi.FilePath)))
                 {
@@ -178,6 +187,16 @@ namespace ShareX.HistoryLib
         private HistoryItem[] him_GetHistoryItems()
         {
             return ilvImages.SelectedItems.Select(x => x.Tag as HistoryItem).ToArray();
+        }
+
+        private async void him_FavoriteRequested(HistoryItem[] historyItems)
+        {
+            foreach (HistoryItem hi in historyItems)
+            {
+                HistoryManager.Edit(hi);
+            }
+
+            await RefreshHistoryItems();
         }
 
         private async void him_EditRequested(HistoryItem hi)
@@ -285,6 +304,13 @@ namespace ShareX.HistoryLib
         private void tsbSearch_Click(object sender, EventArgs e)
         {
             ApplyFilter();
+        }
+
+        private async void tsbFavorites_Click(object sender, EventArgs e)
+        {
+            Favorites = tsbFavorites.Checked;
+
+            await RefreshHistoryItems();
         }
 
         private void tsbSettings_Click(object sender, EventArgs e)

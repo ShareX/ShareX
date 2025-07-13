@@ -54,7 +54,7 @@ namespace ShareX.HistoryLib
         {
             if (FilterFavorites)
             {
-                historyItems = historyItems.Where(x => x.Tags != null && x.Tags.ContainsKey("Favorite"));
+                historyItems = historyItems.Where(x => x.Favorite);
             }
             else
             {

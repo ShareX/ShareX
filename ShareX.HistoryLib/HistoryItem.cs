@@ -74,5 +74,14 @@ namespace ShareX.HistoryLib
                 return null;
             }
         }
+
+        [JsonIgnore]
+        public bool Favorite
+        {
+            get
+            {
+                return Tags != null && Tags.ContainsKey("Favorite");
+            }
+        }
     }
 }

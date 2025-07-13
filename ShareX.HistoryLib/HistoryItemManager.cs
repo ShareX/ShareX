@@ -595,17 +595,17 @@ namespace ShareX.HistoryLib
             {
                 foreach (HistoryItem item in historyItems)
                 {
-                    if (item.Tags == null)
-                    {
-                        item.Tags = new Dictionary<string, string>();
-                    }
-
-                    if (item.Tags.ContainsKey("Favorite"))
+                    if (item.Favorite)
                     {
                         item.Tags.Remove("Favorite");
                     }
                     else
                     {
+                        if (item.Tags == null)
+                        {
+                            item.Tags = new Dictionary<string, string>();
+                        }
+
                         item.Tags["Favorite"] = null;
                     }
                 }

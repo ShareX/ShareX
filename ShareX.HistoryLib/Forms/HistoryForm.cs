@@ -283,7 +283,7 @@ namespace ShareX.HistoryLib
 
             ListViewItem lvi = new ListViewItem();
 
-            if (hi.Tags != null && hi.Tags.ContainsKey("Favorite"))
+            if (hi.Favorite)
             {
                 lvi.ImageIndex = 4;
             }
