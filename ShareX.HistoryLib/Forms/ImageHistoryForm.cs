@@ -107,6 +107,20 @@ namespace ShareX.HistoryLib
             ApplyFilter();
         }
 
+        private void DeleteHistoryItems(HistoryItem[] historyItems)
+        {
+            if (historyItems != null && historyItems.Length > 0)
+            {
+                foreach (HistoryItem hi in historyItems)
+                {
+                    if (hi != null)
+                    {
+                        allHistoryItems.Remove(hi);
+                    }
+                }
+            }
+        }
+
         private void UpdateSearchText()
         {
             SearchText = tstbSearch.Text;
@@ -211,7 +225,8 @@ namespace ShareX.HistoryLib
         {
             HistoryManager.Delete(historyItems);
 
-            await RefreshHistoryItems();
+            DeleteHistoryItems(historyItems);
+            await RefreshHistoryItems(false);
         }
 
         private async void him_DeleteFileRequested(HistoryItem[] historyItems)
@@ -226,7 +241,8 @@ namespace ShareX.HistoryLib
 
             HistoryManager.Delete(historyItems);
 
-            await RefreshHistoryItems();
+            DeleteHistoryItems(historyItems);
+            await RefreshHistoryItems(false);
         }
 
         #region Form events

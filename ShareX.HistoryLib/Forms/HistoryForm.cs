@@ -161,6 +161,7 @@ namespace ShareX.HistoryLib
             foreach (HistoryItem hi in historyItems)
             {
                 HistoryManager.Edit(hi);
+
                 EditListViewItem(hi);
             }
         }
@@ -168,6 +169,7 @@ namespace ShareX.HistoryLib
         private void him_EditRequested(HistoryItem hi)
         {
             HistoryManager.Edit(hi);
+
             EditListViewItem(hi);
         }
 
@@ -175,7 +177,8 @@ namespace ShareX.HistoryLib
         {
             HistoryManager.Delete(historyItems);
 
-            await RefreshHistoryItems();
+            DeleteHistoryItems(historyItems);
+            await RefreshHistoryItems(false);
         }
 
         private async void him_DeleteFileRequested(HistoryItem[] historyItems)
@@ -190,7 +193,8 @@ namespace ShareX.HistoryLib
 
             HistoryManager.Delete(historyItems);
 
-            await RefreshHistoryItems();
+            DeleteHistoryItems(historyItems);
+            await RefreshHistoryItems(false);
         }
 
         private async Task<List<HistoryItem>> GetHistoryItems(bool mockData = false)
@@ -211,6 +215,20 @@ namespace ShareX.HistoryLib
             List<HistoryItem> historyItems = await history.GetHistoryItemsAsync();
             historyItems.Reverse();
             return historyItems;
+        }
+
+        private void DeleteHistoryItems(HistoryItem[] historyItems)
+        {
+            if (historyItems != null && historyItems.Length > 0)
+            {
+                foreach (HistoryItem hi in historyItems)
+                {
+                    if (hi != null)
+                    {
+                        allHistoryItems.Remove(hi);
+                    }
+                }
+            }
         }
 
         private void ApplyFilter(HistoryFilter filter)
