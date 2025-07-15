@@ -42,7 +42,7 @@ namespace ShareX.HistoryLib
         public bool Favorites { get; private set; }
 
         private HistoryItemManager him;
-        private HistoryItem[] allHistoryItems;
+        private List<HistoryItem> allHistoryItems;
         private HistoryItem[] filteredHistoryItems;
         private string defaultTitle;
         private Dictionary<string, string> typeNamesLocaleLookup;
@@ -138,7 +138,7 @@ namespace ShareX.HistoryLib
             cbHostFilterSelection.Items.Clear();
             tstbSearch.AutoCompleteCustomSource.Clear();
 
-            if (allHistoryItems.Length > 0)
+            if (allHistoryItems.Count > 0)
             {
                 allTypeNames = allHistoryItems.Select(x => x.Type).Where(x => !string.IsNullOrWhiteSpace(x)).Distinct().ToArray();
                 cbTypeFilterSelection.Items.AddRange(allTypeNames.Select(x => typeNamesLocaleLookup.TryGetValue(x, out string value) ? value : x).ToArray());
@@ -193,7 +193,7 @@ namespace ShareX.HistoryLib
             await RefreshHistoryItems();
         }
 
-        private async Task<HistoryItem[]> GetHistoryItems(bool mockData = false)
+        private async Task<List<HistoryItem>> GetHistoryItems(bool mockData = false)
         {
             HistoryManager history;
 
@@ -210,12 +210,12 @@ namespace ShareX.HistoryLib
 
             List<HistoryItem> historyItems = await history.GetHistoryItemsAsync();
             historyItems.Reverse();
-            return historyItems.ToArray();
+            return historyItems;
         }
 
         private void ApplyFilter(HistoryFilter filter)
         {
-            if (allHistoryItems != null && allHistoryItems.Length > 0)
+            if (allHistoryItems != null && allHistoryItems.Count > 0)
             {
                 IEnumerable<HistoryItem> historyItems = filter.ApplyFilter(allHistoryItems);
                 filteredHistoryItems = historyItems.ToArray();
@@ -345,9 +345,9 @@ namespace ShareX.HistoryLib
                 StringBuilder status = new StringBuilder();
 
                 status.Append(" (");
-                status.AppendFormat(Resources.HistoryForm_UpdateItemCount_Total___0_, allHistoryItems.Length.ToString("N0"));
+                status.AppendFormat(Resources.HistoryForm_UpdateItemCount_Total___0_, allHistoryItems.Count.ToString("N0"));
 
-                if (allHistoryItems.Length > historyItems.Length)
+                if (allHistoryItems.Count > historyItems.Length)
                 {
                     status.AppendFormat(" - " + Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Length.ToString("N0"));
                 }
@@ -399,67 +399,6 @@ namespace ShareX.HistoryLib
                     pbThumbnail.LoadImageFromURLAsync(him.HistoryItem.URL);
                 }
             }
-        }
-
-        private string OutputStats(HistoryItem[] historyItems)
-        {
-            string empty = "(empty)";
-
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine(Resources.HistoryItemCounts);
-            sb.AppendLine(Resources.HistoryStats_Total + " " + historyItems.Length);
-
-            IEnumerable<string> types = historyItems.
-                GroupBy(x => x.Type).
-                OrderByDescending(x => x.Count()).
-                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Length * 100));
-
-            sb.AppendLine(string.Join(Environment.NewLine, types));
-
-            sb.AppendLine();
-            sb.AppendLine(Resources.HistoryStats_YearlyUsages);
-
-            IEnumerable<string> yearlyUsages = historyItems.
-                GroupBy(x => x.DateTime.Year).
-                OrderByDescending(x => x.Key).
-                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Length * 100));
-
-            sb.AppendLine(string.Join(Environment.NewLine, yearlyUsages));
-
-            sb.AppendLine();
-            sb.AppendLine(Resources.HistoryStats_FileExtensions);
-
-            IEnumerable<string> fileExtensions = historyItems.
-                Where(x => !string.IsNullOrEmpty(x.FileName) && !x.FileName.EndsWith(")")).
-                Select(x => FileHelpers.GetFileNameExtension(x.FileName)).
-                GroupBy(x => string.IsNullOrWhiteSpace(x) ? empty : x).
-                OrderByDescending(x => x.Count()).
-                Select(x => string.Format("[{0}] {1}", x.Count(), x.Key));
-
-            sb.AppendLine(string.Join(Environment.NewLine, fileExtensions));
-
-            sb.AppendLine();
-            sb.AppendLine(Resources.HistoryStats_Hosts);
-
-            IEnumerable<string> hosts = historyItems.
-                GroupBy(x => string.IsNullOrWhiteSpace(x.Host) ? empty : x.Host).
-                OrderByDescending(x => x.Count()).
-                Select(x => string.Format("[{0}] {1}", x.Count(), x.Key));
-
-            sb.AppendLine(string.Join(Environment.NewLine, hosts));
-
-            sb.AppendLine();
-            sb.AppendLine(Resources.ProcessNames);
-
-            IEnumerable<string> processNames = historyItems.
-                GroupBy(x => string.IsNullOrWhiteSpace(x.TagsProcessName) ? empty : x.TagsProcessName).
-                OrderByDescending(x => x.Count()).
-                Select(x => string.Format("[{0}] {1}", x.Count(), x.Key));
-
-            sb.Append(string.Join(Environment.NewLine, processNames));
-
-            return sb.ToString();
         }
 
         #region Form events
@@ -526,7 +465,7 @@ namespace ShareX.HistoryLib
 
         private void tsbShowStats_Click(object sender, EventArgs e)
         {
-            string stats = OutputStats(allHistoryItems);
+            string stats = HistoryHelpers.OutputStats(allHistoryItems);
             OutputBox.Show(stats, Resources.HistoryStats);
         }
 

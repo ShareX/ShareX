@@ -314,6 +314,12 @@ namespace ShareX.HistoryLib
             await RefreshHistoryItems(false);
         }
 
+        private void tsbShowStats_Click(object sender, EventArgs e)
+        {
+            string stats = HistoryHelpers.OutputStats(allHistoryItems);
+            OutputBox.Show(stats, Resources.HistoryStats);
+        }
+
         private void tsbSettings_Click(object sender, EventArgs e)
         {
             using (ImageHistorySettingsForm form = new ImageHistorySettingsForm(Settings))
