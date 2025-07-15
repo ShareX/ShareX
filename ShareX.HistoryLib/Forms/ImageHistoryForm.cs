@@ -90,9 +90,12 @@ namespace ShareX.HistoryLib
             Text = $"{defaultTitle} ({Resources.Total}: {total:N0} - {Resources.Filtered}: {filtered:N0})";
         }
 
-        private async Task RefreshHistoryItems(bool mockData = false)
+        private async Task RefreshHistoryItems(bool refreshItems = true, bool mockData = false)
         {
-            allHistoryItems = await GetHistoryItems(mockData);
+            if (refreshItems)
+            {
+                allHistoryItems = await GetHistoryItems(mockData);
+            }
 
             tstbSearch.AutoCompleteCustomSource.Clear();
 
@@ -253,7 +256,7 @@ namespace ShareX.HistoryLib
                     e.SuppressKeyPress = true;
                     break;
                 case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
-                    await RefreshHistoryItems(true);
+                    await RefreshHistoryItems(true, true);
                     e.SuppressKeyPress = true;
                     break;
             }
@@ -308,7 +311,7 @@ namespace ShareX.HistoryLib
         {
             Favorites = tsbFavorites.Checked;
 
-            await RefreshHistoryItems();
+            await RefreshHistoryItems(false);
         }
 
         private void tsbSettings_Click(object sender, EventArgs e)

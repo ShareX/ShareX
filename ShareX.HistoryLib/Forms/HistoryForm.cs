@@ -127,9 +127,12 @@ namespace ShareX.HistoryLib
             busy = false;
         }
 
-        private async Task RefreshHistoryItems(bool mockData = false)
+        private async Task RefreshHistoryItems(bool refreshItems = true, bool mockData = false)
         {
-            allHistoryItems = await GetHistoryItems(mockData);
+            if (refreshItems)
+            {
+                allHistoryItems = await GetHistoryItems(mockData);
+            }
 
             cbTypeFilterSelection.Items.Clear();
             cbHostFilterSelection.Items.Clear();
@@ -492,7 +495,7 @@ namespace ShareX.HistoryLib
                     break;
                 case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
                     e.SuppressKeyPress = true;
-                    await RefreshHistoryItems(true);
+                    await RefreshHistoryItems(true, true);
                     break;
             }
         }
@@ -518,7 +521,7 @@ namespace ShareX.HistoryLib
         {
             Favorites = tsbFavorites.Checked;
 
-            await RefreshHistoryItems();
+            await RefreshHistoryItems(false);
         }
 
         private void tsbShowStats_Click(object sender, EventArgs e)
