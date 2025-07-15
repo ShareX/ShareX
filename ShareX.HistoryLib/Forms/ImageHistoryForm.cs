@@ -214,11 +214,9 @@ namespace ShareX.HistoryLib
             }
         }
 
-        private async void him_EditRequested(HistoryItem hi)
+        private void him_EditRequested(HistoryItem hi)
         {
             HistoryManager.Edit(hi);
-
-            await RefreshHistoryItems();
         }
 
         private async void him_DeleteRequested(HistoryItem[] historyItems)
