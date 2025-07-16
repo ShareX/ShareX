@@ -39,7 +39,6 @@ namespace ShareX.HistoryLib
     {
         public HistoryManagerSQLite HistoryManager { get; private set; }
         public HistorySettings Settings { get; private set; }
-        public bool Favorites { get; private set; }
 
         private HistoryItemManager him;
         private List<HistoryItem> allHistoryItems;
@@ -105,6 +104,8 @@ namespace ShareX.HistoryLib
                     scMain.SplitterDistance = Settings.SplitterDistance;
                 }
             }
+
+            tsbFavorites.Checked = Settings.Favorites;
         }
 
         private void ResetFilters()
@@ -268,7 +269,7 @@ namespace ShareX.HistoryLib
             HistoryFilter filter = new HistoryFilter()
             {
                 Filename = searchText,
-                FilterFavorites = Favorites
+                FilterFavorites = Settings.Favorites
             };
 
             ApplyFilter(filter);
@@ -476,7 +477,7 @@ namespace ShareX.HistoryLib
 
         private async void tsbFavorites_Click(object sender, EventArgs e)
         {
-            Favorites = tsbFavorites.Checked;
+            Settings.Favorites = tsbFavorites.Checked;
 
             await RefreshHistoryItems(false);
         }

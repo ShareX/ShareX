@@ -42,7 +42,6 @@ namespace ShareX.HistoryLib
         public ImageHistorySettings Settings { get; private set; }
         public string SearchText { get; set; }
         public bool SearchInTags { get; set; } = true;
-        public bool Favorites { get; private set; }
 
         private HistoryItemManager him;
         private string defaultTitle;
@@ -83,6 +82,8 @@ namespace ShareX.HistoryLib
             {
                 Settings.WindowState.ApplyFormState(this);
             }
+
+            tsbFavorites.Checked = Settings.Favorites;
         }
 
         private void UpdateTitle(int total, int filtered)
@@ -175,7 +176,7 @@ namespace ShareX.HistoryLib
             {
                 HistoryItem hi = allHistoryItems[i];
 
-                if (Favorites)
+                if (Settings.Favorites)
                 {
                     if (hi.Favorite)
                     {
@@ -324,7 +325,7 @@ namespace ShareX.HistoryLib
 
         private async void tsbFavorites_Click(object sender, EventArgs e)
         {
-            Favorites = tsbFavorites.Checked;
+            Settings.Favorites = tsbFavorites.Checked;
 
             await RefreshHistoryItems(false);
         }

@@ -34,5 +34,6 @@ namespace ShareX.HistoryLib
         public int SplitterDistance { get; set; } = 550;
         public bool RememberSearchText { get; set; } = false;
         public string SearchText { get; set; } = "";
+        public bool Favorites { get; set; } = false;
     }
 }
