@@ -640,6 +640,20 @@ namespace ShareX.HistoryLib
             }
         }
 
+        public void RenameFile()
+        {
+            // TODO: Translate
+            string newFileName = InputBox.Show("Rename file", HistoryItem.FileName);
+
+            if (!string.IsNullOrEmpty(newFileName) && !HistoryItem.FileName.Equals(newFileName, StringComparison.OrdinalIgnoreCase))
+            {
+                HistoryItem.FileName = newFileName;
+                string newFilePath = FileHelpers.RenameFile(HistoryItem.FilePath, newFileName);
+                HistoryItem.FilePath = newFilePath;
+                OnEditRequested(HistoryItem);
+            }
+        }
+
         public void Delete()
         {
             // TODO: Translate

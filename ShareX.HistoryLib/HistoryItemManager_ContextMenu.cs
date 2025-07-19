@@ -73,6 +73,7 @@ namespace ShareX.HistoryLib
         private ToolStripSeparator tssMain1;
         private ToolStripMenuItem tsmiFavorite;
         private ToolStripMenuItem tsmiEdit;
+        private ToolStripMenuItem tsmiRenameFile;
         private ToolStripMenuItem tsmiDelete;
         private ToolStripMenuItem tsmiDeleteFile;
         private ToolStripSeparator tssMain2;
@@ -124,6 +125,7 @@ namespace ShareX.HistoryLib
             tssMain1 = new ToolStripSeparator();
             tsmiFavorite = new ToolStripMenuItem();
             tsmiEdit = new ToolStripMenuItem();
+            tsmiRenameFile = new ToolStripMenuItem();
             tsmiDelete = new ToolStripMenuItem();
             tsmiDeleteFile = new ToolStripMenuItem();
             tssMain2 = new ToolStripSeparator();
@@ -144,6 +146,7 @@ namespace ShareX.HistoryLib
                 tssMain1,
                 tsmiFavorite,
                 tsmiEdit,
+                tsmiRenameFile,
                 tsmiDelete,
                 tsmiDeleteFile,
                 tssMain2,
@@ -442,6 +445,14 @@ namespace ShareX.HistoryLib
             tsmiEdit.Text = "Edit item..."; // TODO: Translate
             tsmiEdit.Click += tsmiEdit_Click;
             tsmiEdit.Image = Resources.database__pencil;
+            //
+            // tsmiRenameFile
+            //
+            tsmiRenameFile.Name = "tsmiRenameFile";
+            tsmiRenameFile.Size = new Size(127, 22);
+            tsmiRenameFile.Text = "Rename file..."; // TODO: Translate
+            tsmiRenameFile.Click += tsmiRenameFile_Click;
+            tsmiRenameFile.Image = Resources.document_rename;
             //
             // tsmiDelete
             //
@@ -776,6 +787,11 @@ namespace ShareX.HistoryLib
         private void tsmiEdit_Click(object sender, EventArgs e)
         {
             Edit();
+        }
+
+        private void tsmiRenameFile_Click(object sender, EventArgs e)
+        {
+            RenameFile();
         }
 
         private void tsmiDelete_Click(object sender, EventArgs e)
