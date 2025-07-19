@@ -173,6 +173,12 @@ namespace ShareX.HistoryLib
                 case Keys.Control | Keys.Shift | Keys.C:
                     CopyFilePath();
                     break;
+                case Keys.Delete:
+                    Delete();
+                    break;
+                case Keys.Shift | Keys.Delete:
+                    DeleteFile();
+                    break;
                 case Keys.Control | Keys.U:
                     UploadFile();
                     break;

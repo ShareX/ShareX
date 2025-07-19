@@ -446,6 +446,7 @@ namespace ShareX.HistoryLib
             // tsmiDelete
             //
             tsmiDelete.Name = "tsmiDelete";
+            tsmiDelete.ShortcutKeyDisplayString = "Del";
             tsmiDelete.Size = new Size(127, 22);
             tsmiDelete.Text = "Delete item..."; // TODO: Translate
             tsmiDelete.Click += tsmiDelete_Click;
@@ -454,6 +455,7 @@ namespace ShareX.HistoryLib
             // tsmiDeleteFile
             //
             tsmiDeleteFile.Name = "tsmiDeleteFile";
+            tsmiDeleteFile.ShortcutKeyDisplayString = "Shift+Del";
             tsmiDeleteFile.Size = new Size(127, 22);
             tsmiDeleteFile.Text = "Delete file && item..."; // TODO: Translate
             tsmiDeleteFile.Click += tsmiDeleteFile_Click;
