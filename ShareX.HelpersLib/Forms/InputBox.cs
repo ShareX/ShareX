@@ -98,36 +98,36 @@ namespace ShareX.HelpersLib
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputBox));
-            btnOK = new System.Windows.Forms.Button();
-            btnCancel = new System.Windows.Forms.Button();
-            txtInputText = new System.Windows.Forms.TextBox();
+            btnOK = new Button();
+            btnCancel = new Button();
+            txtInputText = new TextBox();
             SuspendLayout();
-            //
+            // 
             // btnOK
-            //
+            // 
             resources.ApplyResources(btnOK, "btnOK");
             btnOK.Name = "btnOK";
             btnOK.UseVisualStyleBackColor = true;
-            btnOK.Click += new System.EventHandler(btnOK_Click);
-            //
+            btnOK.Click += btnOK_Click;
+            // 
             // btnCancel
-            //
+            // 
             resources.ApplyResources(btnCancel, "btnCancel");
             btnCancel.Name = "btnCancel";
             btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += new System.EventHandler(btnCancel_Click);
-            //
+            btnCancel.Click += btnCancel_Click;
+            // 
             // txtInputText
-            //
+            // 
             resources.ApplyResources(txtInputText, "txtInputText");
             txtInputText.Name = "txtInputText";
-            //
+            // 
             // InputBox
-            //
+            // 
             AcceptButton = btnOK;
             resources.ApplyResources(this, "$this");
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.SystemColors.Window;
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
             Controls.Add(txtInputText);
             Controls.Add(btnCancel);
             Controls.Add(btnOK);
@@ -135,9 +135,9 @@ namespace ShareX.HelpersLib
             MinimizeBox = false;
             Name = "InputBox";
             ShowInTaskbar = false;
-            SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            SizeGripStyle = SizeGripStyle.Hide;
             TopMost = true;
-            Shown += new System.EventHandler(InputBox_Shown);
+            Shown += InputBox_Shown;
             ResumeLayout(false);
             PerformLayout();
         }
