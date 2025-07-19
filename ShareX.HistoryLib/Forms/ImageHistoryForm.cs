@@ -185,7 +185,7 @@ namespace ShareX.HistoryLib
                 }
                 else if (!string.IsNullOrEmpty(hi.FilePath) && FileHelpers.IsImageFile(hi.FilePath) &&
                     (regex == null || regex.IsMatch(hi.FileName) || (SearchInTags && hi.Tags != null &&
-                    hi.Tags.Any(tag => tag.Value != null && regex.IsMatch(tag.Value)))) &&
+                    hi.Tags.Any(tag => !string.IsNullOrEmpty(tag.Value) && regex.IsMatch(tag.Value)))) &&
                     (!Settings.FilterMissingFiles || File.Exists(hi.FilePath)))
                 {
                     filteredHistoryItems.Add(hi);
