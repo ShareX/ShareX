@@ -650,7 +650,7 @@ namespace ShareX.HistoryLib
             if (!string.IsNullOrEmpty(newFileName) && !HistoryItem.FileName.Equals(newFileName, StringComparison.OrdinalIgnoreCase))
             {
                 HistoryItem.FileName = newFileName;
-                  string newFilePath = FileHelpers.RenameFile(HistoryItem.FilePath, newFileName);
+                string newFilePath = FileHelpers.RenameFile(HistoryItem.FilePath, newFileName);
                 HistoryItem.FilePath = newFilePath;
                 OnEditRequested(HistoryItem);
             }
