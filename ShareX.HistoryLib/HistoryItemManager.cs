@@ -53,6 +53,7 @@ namespace ShareX.HistoryLib
         public bool IsFileExist { get; private set; }
         public bool IsImageFile { get; private set; }
         public bool IsTextFile { get; private set; }
+        public int SelectedItemCount { get; private set; }
 
         private Action<string> uploadFile, editImage, pinToScreen;
 
@@ -80,6 +81,7 @@ namespace ShareX.HistoryLib
         public HistoryItem UpdateSelectedHistoryItem()
         {
             HistoryItem[] historyItems = OnGetHistoryItems();
+            SelectedItemCount = historyItems?.Length ?? 0;
 
             if (historyItems != null && historyItems.Length > 0)
             {
@@ -103,7 +105,7 @@ namespace ShareX.HistoryLib
                 IsImageFile = IsFileExist && FileHelpers.IsImageFile(HistoryItem.FilePath);
                 IsTextFile = IsFileExist && FileHelpers.IsTextFile(HistoryItem.FilePath);
 
-                UpdateContextMenu(historyItems.Length);
+                UpdateContextMenu(SelectedItemCount);
             }
             else
             {
@@ -657,7 +659,11 @@ namespace ShareX.HistoryLib
         public void Delete()
         {
             // TODO: Translate
-            if (MessageBox.Show("Do you really want to delete this item?", "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            string message = SelectedItemCount > 1 ?
+                "Do you really want to delete these items?" :
+                "Do you really want to delete this item?";
+
+            if (MessageBox.Show(message, "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 HistoryItem[] historyItems = OnGetHistoryItems();
 
@@ -671,7 +677,11 @@ namespace ShareX.HistoryLib
         public void DeleteFile()
         {
             // TODO: Translate
-            if (MessageBox.Show("Do you really want to delete this file?", "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            string message = SelectedItemCount > 1 ?
+                "Do you really want to delete these files?" :
+                "Do you really want to delete this file?";
+
+            if (MessageBox.Show(message, "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 HistoryItem[] historyItems = OnGetHistoryItems();
 
