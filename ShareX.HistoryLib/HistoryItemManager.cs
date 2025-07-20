@@ -650,7 +650,7 @@ namespace ShareX.HistoryLib
             if (!string.IsNullOrEmpty(newFileName) && !HistoryItem.FileName.Equals(newFileName, StringComparison.OrdinalIgnoreCase))
             {
                 HistoryItem.FileName = newFileName;
-                string newFilePath = FileHelpers.RenameFile(HistoryItem.FilePath, newFileName);
+                  string newFilePath = FileHelpers.RenameFile(HistoryItem.FilePath, newFileName);
                 HistoryItem.FilePath = newFilePath;
                 OnEditRequested(HistoryItem);
             }
@@ -658,36 +658,38 @@ namespace ShareX.HistoryLib
 
         public void Delete()
         {
-            // TODO: Translate
-            string message = SelectedItemCount > 1 ?
-                "Do you really want to delete these items?" :
-                "Do you really want to delete this item?";
-
-            if (MessageBox.Show(message, "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (SelectedItemCount > 0)
             {
-                HistoryItem[] historyItems = OnGetHistoryItems();
+                // TODO: Translate
+                string itemText = SelectedItemCount > 1 ? "these items" : "this item";
+                string message = $"Do you really want to delete {itemText}?";
 
-                if (historyItems != null)
+                if (MessageBox.Show(message, "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    OnDeleteRequested(historyItems);
+                    HistoryItem[] historyItems = OnGetHistoryItems();
+                    if (historyItems != null && historyItems.Length > 0)
+                    {
+                        OnDeleteRequested(historyItems);
+                    }
                 }
             }
         }
 
         public void DeleteFile()
         {
-            // TODO: Translate
-            string message = SelectedItemCount > 1 ?
-                "Do you really want to delete these files?" :
-                "Do you really want to delete this file?";
-
-            if (MessageBox.Show(message, "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (SelectedItemCount > 0)
             {
-                HistoryItem[] historyItems = OnGetHistoryItems();
+                // TODO: Translate
+                string fileText = SelectedItemCount > 1 ? "these files" : "this file";
+                string message = $"Do you really want to delete {fileText}?";
 
-                if (historyItems != null)
+                if (MessageBox.Show(message, "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    OnDeleteFileRequested(historyItems);
+                    HistoryItem[] historyItems = OnGetHistoryItems();
+                    if (historyItems != null && historyItems.Length > 0)
+                    {
+                        OnDeleteFileRequested(historyItems);
+                    }
                 }
             }
         }
