@@ -72,6 +72,7 @@ namespace ShareX.HistoryLib
 
         private ToolStripSeparator tssMain1;
         private ToolStripMenuItem tsmiFavorite;
+        private ToolStripMenuItem tsmiTag;
         private ToolStripMenuItem tsmiEdit;
         private ToolStripMenuItem tsmiRenameFile;
         private ToolStripMenuItem tsmiDelete;
@@ -124,6 +125,7 @@ namespace ShareX.HistoryLib
 
             tssMain1 = new ToolStripSeparator();
             tsmiFavorite = new ToolStripMenuItem();
+            tsmiTag = new ToolStripMenuItem();
             tsmiEdit = new ToolStripMenuItem();
             tsmiRenameFile = new ToolStripMenuItem();
             tsmiDelete = new ToolStripMenuItem();
@@ -145,6 +147,7 @@ namespace ShareX.HistoryLib
                 tsmiCopy,
                 tssMain1,
                 tsmiFavorite,
+                tsmiTag,
                 tsmiEdit,
                 tsmiRenameFile,
                 tsmiDelete,
@@ -437,6 +440,14 @@ namespace ShareX.HistoryLib
             tsmiFavorite.Text = "Favorite"; // TODO: Translate
             tsmiFavorite.Click += tsmiFavorite_Click;
             tsmiFavorite.Image = Resources.star;
+            //
+            // tsmiTag
+            //
+            tsmiTag.Name = "tsmiTag";
+            tsmiTag.Size = new Size(127, 22);
+            tsmiTag.Text = "Edit tag..."; // TODO: Translate
+            tsmiTag.Click += tsmiTag_Click;
+            tsmiTag.Image = Resources.tag_hash;
             //
             // tsmiEdit
             //
@@ -782,6 +793,11 @@ namespace ShareX.HistoryLib
         private void tsmiFavorite_Click(object sender, EventArgs e)
         {
             ToggleFavorite();
+        }
+
+        private void tsmiTag_Click(object sender, EventArgs e)
+        {
+            EditTag();
         }
 
         private void tsmiEdit_Click(object sender, EventArgs e)

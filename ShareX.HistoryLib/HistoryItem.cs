@@ -83,5 +83,35 @@ namespace ShareX.HistoryLib
                 return Tags != null && Tags.ContainsKey("Favorite");
             }
         }
+
+        public string Tag
+        {
+            get
+            {
+                if (Tags != null && Tags.TryGetValue("Tag", out string value))
+                {
+                    return value;
+                }
+
+                return null;
+            }
+            set
+            {
+                if (Tags == null)
+                {
+                    Tags = new Dictionary<string, string>();
+                }
+
+                if (!string.IsNullOrEmpty(value))
+                {
+                    Tags["Tag"] = value;
+
+                }
+                else
+                {
+                    Tags.Remove("Tag");
+                }
+            }
+        }
     }
 }

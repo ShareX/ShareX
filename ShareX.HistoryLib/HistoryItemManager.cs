@@ -631,6 +631,18 @@ namespace ShareX.HistoryLib
             }
         }
 
+        public void EditTag()
+        {
+            string tag = HistoryItem.Tag;
+            // TODO: Translate
+            string newTag = InputBox.Show("Edit tag", tag);
+            if (newTag != null && newTag != tag)
+            {
+                HistoryItem.Tag = newTag;
+                OnEditRequested(HistoryItem);
+            }
+        }
+
         public void Edit()
         {
             using (HistoryItemEditForm form = new HistoryItemEditForm(HistoryItem))
