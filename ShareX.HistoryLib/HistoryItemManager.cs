@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.HistoryLib.Forms;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -612,19 +611,7 @@ namespace ShareX.HistoryLib
             {
                 foreach (HistoryItem item in historyItems)
                 {
-                    if (item.Favorite)
-                    {
-                        item.Tags.Remove("Favorite");
-                    }
-                    else
-                    {
-                        if (item.Tags == null)
-                        {
-                            item.Tags = new Dictionary<string, string>();
-                        }
-
-                        item.Tags["Favorite"] = null;
-                    }
+                    item.Favorite = !item.Favorite;
                 }
 
                 OnFavoriteRequested(historyItems);
