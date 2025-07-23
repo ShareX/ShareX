@@ -183,7 +183,7 @@ namespace ShareX.HistoryLib
                         filteredHistoryItems.Add(hi);
                     }
                 }
-                else if (!string.IsNullOrEmpty(hi.FilePath) && FileHelpers.IsImageFile(hi.FilePath) &&
+                else if (!string.IsNullOrEmpty(hi.FilePath) && (!Settings.ImageOnly || FileHelpers.IsImageFile(hi.FilePath)) &&
                     (regex == null || regex.IsMatch(hi.FileName) || (SearchInTags && hi.Tags != null &&
                     hi.Tags.Any(tag => !string.IsNullOrEmpty(tag.Value) && regex.IsMatch(tag.Value)))) &&
                     (!Settings.FilterMissingFiles || File.Exists(hi.FilePath)))
@@ -285,27 +285,39 @@ namespace ShareX.HistoryLib
 
         private void ilvImages_ItemDoubleClick(object sender, ItemClickEventArgs e)
         {
-            int currentImageIndex = ilvImages.SelectedItems[0].Index;
-            int modifiedImageIndex = 0;
-            int halfRange = 100;
-            int startIndex = Math.Max(currentImageIndex - halfRange, 0);
-            int endIndex = Math.Min(startIndex + (halfRange * 2) + 1, ilvImages.Items.Count);
+            ImageListViewItem selectedItem = ilvImages.SelectedItems[0];
+            HistoryItem hi = selectedItem.Tag as HistoryItem;
 
-            List<string> filteredImages = new List<string>();
-
-            for (int i = startIndex; i < endIndex; i++)
+            if (FileHelpers.IsImageFile(hi.FilePath))
             {
-                string imageFilePath = ilvImages.Items[i].FileName;
+                int currentImageIndex = selectedItem.Index;
+                int modifiedImageIndex = 0;
+                int halfRange = 100;
+                int startIndex = Math.Max(currentImageIndex - halfRange, 0);
+                int endIndex = Math.Min(startIndex + (halfRange * 2) + 1, ilvImages.Items.Count);
 
-                if (i == currentImageIndex)
+                List<string> filteredImages = new List<string>();
+
+                for (int i = startIndex; i < endIndex; i++)
                 {
-                    modifiedImageIndex = filteredImages.Count;
+                    string imageFilePath = ilvImages.Items[i].FileName;
+
+                    if (i == currentImageIndex)
+                    {
+                        modifiedImageIndex = filteredImages.Count;
+                    }
+
+                    filteredImages.Add(imageFilePath);
                 }
 
-                filteredImages.Add(imageFilePath);
+                ImageViewer.ShowImage(filteredImages.ToArray(), modifiedImageIndex);
+            } // TODO: Translate
+            else if (FileHelpers.IsTextFile(hi.FilePath) || FileHelpers.IsVideoFile(hi.FilePath) ||
+                MessageBox.Show("Would you like to open this file?" + "\r\n\r\n" + hi.FilePath,
+                "ShareX - Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FileHelpers.OpenFile(hi.FilePath);
             }
-
-            ImageViewer.ShowImage(filteredImages.ToArray(), modifiedImageIndex);
         }
 
         private void tstbSearch_KeyDown(object sender, KeyEventArgs e)

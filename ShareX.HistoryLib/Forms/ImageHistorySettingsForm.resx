@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -126,7 +126,7 @@
     <value>13, 16</value>
   </data>
   <data name="lblThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
+    <value>90, 15</value>
   </data>
   <data name="lblThumbnailSize.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -138,13 +138,13 @@
     <value>lblThumbnailSize</value>
   </data>
   <data name="&gt;&gt;lblThumbnailSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblThumbnailSize.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblThumbnailSize.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblMaximumImageLimit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -153,7 +153,7 @@
     <value>13, 64</value>
   </data>
   <data name="lblMaximumImageLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 13</value>
+    <value>127, 15</value>
   </data>
   <data name="lblMaximumImageLimit.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -165,24 +165,24 @@
     <value>lblMaximumImageLimit</value>
   </data>
   <data name="&gt;&gt;lblMaximumImageLimit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblMaximumImageLimit.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMaximumImageLimit.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="nudThumbnailSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
   </data>
   <data name="nudThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
+    <value>64, 23</value>
   </data>
   <data name="nudThumbnailSize.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="nudThumbnailSize.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -190,19 +190,19 @@
     <value>nudThumbnailSize</value>
   </data>
   <data name="&gt;&gt;nudThumbnailSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudThumbnailSize.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudThumbnailSize.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="nudMaximumImageLimit.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
   </data>
   <data name="nudMaximumImageLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
+    <value>64, 23</value>
   </data>
   <data name="nudMaximumImageLimit.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -214,13 +214,13 @@
     <value>nudMaximumImageLimit</value>
   </data>
   <data name="&gt;&gt;nudMaximumImageLimit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudMaximumImageLimit.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudMaximumImageLimit.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblThumbnailSizeUnit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -229,26 +229,25 @@
     <value>85, 36</value>
   </data>
   <data name="lblThumbnailSizeUnit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 13</value>
+    <value>19, 15</value>
   </data>
   <data name="lblThumbnailSizeUnit.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
     <value>px</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblThumbnailSizeUnit.Name" xml:space="preserve">
     <value>lblThumbnailSizeUnit</value>
   </data>
   <data name="&gt;&gt;lblThumbnailSizeUnit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblThumbnailSizeUnit.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblThumbnailSizeUnit.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbRememberSearchText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -257,10 +256,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbRememberSearchText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>16, 160</value>
   </data>
   <data name="cbRememberSearchText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
+    <value>152, 19</value>
   </data>
   <data name="cbRememberSearchText.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -272,13 +271,13 @@
     <value>cbRememberSearchText</value>
   </data>
   <data name="&gt;&gt;cbRememberSearchText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbRememberSearchText.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbRememberSearchText.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbFilterMissingFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -287,7 +286,7 @@
     <value>16, 112</value>
   </data>
   <data name="cbFilterMissingFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 17</value>
+    <value>120, 19</value>
   </data>
   <data name="cbFilterMissingFiles.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -299,22 +298,22 @@
     <value>cbFilterMissingFiles</value>
   </data>
   <data name="&gt;&gt;cbFilterMissingFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbFilterMissingFiles.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbFilterMissingFiles.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbRememberWindowState.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbRememberWindowState.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
+    <value>16, 184</value>
   </data>
   <data name="cbRememberWindowState.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 17</value>
+    <value>157, 19</value>
   </data>
   <data name="cbRememberWindowState.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -326,12 +325,39 @@
     <value>cbRememberWindowState</value>
   </data>
   <data name="&gt;&gt;cbRememberWindowState.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbRememberWindowState.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbRememberWindowState.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbImageOnly.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbImageOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 136</value>
+  </data>
+  <data name="cbImageOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 19</value>
+  </data>
+  <data name="cbImageOnly.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="cbImageOnly.Text" xml:space="preserve">
+    <value>Only show image files</value>
+  </data>
+  <data name="&gt;&gt;cbImageOnly.Name" xml:space="preserve">
+    <value>cbImageOnly</value>
+  </data>
+  <data name="&gt;&gt;cbImageOnly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbImageOnly.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbImageOnly.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -341,7 +367,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>334, 211</value>
+    <value>334, 217</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -353,6 +379,6 @@
     <value>ImageHistorySettingsForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
