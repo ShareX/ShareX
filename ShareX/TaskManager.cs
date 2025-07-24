@@ -525,7 +525,15 @@ namespace ShareX
         {
             Task.Run(() =>
             {
-                Program.HistoryManager.AppendHistoryItem(historyItem);
+                try
+                {
+                    Program.HistoryManager.AppendHistoryItem(historyItem);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                    e.ShowError();
+                }
             });
         }
 

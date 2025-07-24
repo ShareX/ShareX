@@ -262,7 +262,7 @@
     <value>152, 19</value>
   </data>
   <data name="cbRememberSearchText.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbRememberSearchText.Text" xml:space="preserve">
     <value>Remember search input</value>
@@ -316,7 +316,7 @@
     <value>157, 19</value>
   </data>
   <data name="cbRememberWindowState.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="cbRememberWindowState.Text" xml:space="preserve">
     <value>Remember window state</value>
@@ -343,7 +343,7 @@
     <value>142, 19</value>
   </data>
   <data name="cbImageOnly.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="cbImageOnly.Text" xml:space="preserve">
     <value>Only show image files</value>

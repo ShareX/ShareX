@@ -270,17 +270,25 @@ namespace ShareX
         {
             if (File.Exists(Program.HistoryFilePathOld))
             {
-                if (!File.Exists(Program.HistoryFilePath))
+                try
                 {
-                    DebugHelper.WriteLine($"Migrating JSON history file \"{Program.HistoryFilePathOld}\" to SQLite history file \"{Program.HistoryFilePath}\"");
-
-                    using (HistoryManagerSQLite historyManager = new HistoryManagerSQLite(Program.HistoryFilePath))
+                    if (!File.Exists(Program.HistoryFilePath))
                     {
-                        historyManager.MigrateFromJSON(Program.HistoryFilePathOld);
-                    }
-                }
+                        DebugHelper.WriteLine($"Migrating JSON history file \"{Program.HistoryFilePathOld}\" to SQLite history file \"{Program.HistoryFilePath}\"");
 
-                FileHelpers.MoveFile(Program.HistoryFilePathOld, BackupFolder);
+                        using (HistoryManagerSQLite historyManager = new HistoryManagerSQLite(Program.HistoryFilePath))
+                        {
+                            historyManager.MigrateFromJSON(Program.HistoryFilePathOld);
+                        }
+                    }
+
+                    FileHelpers.MoveFile(Program.HistoryFilePathOld, BackupFolder);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                    e.ShowError();
+                }
             }
         }
 
