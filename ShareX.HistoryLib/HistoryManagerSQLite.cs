@@ -48,6 +48,17 @@ namespace ShareX.HistoryLib
             string connectionString = $"Data Source={filePath};Version=3;";
             connection = new SQLiteConnection(connectionString);
             connection.Open();
+
+            SetBusyTimeout(5000);
+        }
+
+        private void SetBusyTimeout(int milliseconds)
+        {
+            using (SQLiteCommand cmd = connection.CreateCommand())
+            {
+                cmd.CommandText = $"PRAGMA busy_timeout = {milliseconds};";
+                cmd.ExecuteNonQuery();
+            }
         }
 
         private void EnsureDatabase()
