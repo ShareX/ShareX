@@ -45,6 +45,7 @@
             tsbFavorites = new System.Windows.Forms.ToolStripButton();
             tsbShowStats = new System.Windows.Forms.ToolStripButton();
             tss2 = new System.Windows.Forms.ToolStripSeparator();
+            tsbImportFolder = new System.Windows.Forms.ToolStripButton();
             tsbSettings = new System.Windows.Forms.ToolStripButton();
             gbAdvancedSearch = new System.Windows.Forms.GroupBox();
             btnAdvancedSearchClose = new System.Windows.Forms.Button();
@@ -129,7 +130,7 @@
             // 
             resources.ApplyResources(tsHistory, "tsHistory");
             tsHistory.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            tsHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tslSearch, tstbSearch, tsbSearch, tsbAdvancedSearch, tss1, tsbFavorites, tsbShowStats, tss2, tsbSettings });
+            tsHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tslSearch, tstbSearch, tsbSearch, tsbAdvancedSearch, tss1, tsbFavorites, tsbShowStats, tss2, tsbImportFolder, tsbSettings });
             tsHistory.Name = "tsHistory";
             // 
             // tslSearch
@@ -188,6 +189,14 @@
             // 
             tss2.Name = "tss2";
             resources.ApplyResources(tss2, "tss2");
+            // 
+            // tsbImportFolder
+            // 
+            tsbImportFolder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsbImportFolder.Image = Properties.Resources.folder_search_result;
+            resources.ApplyResources(tsbImportFolder, "tsbImportFolder");
+            tsbImportFolder.Name = "tsbImportFolder";
+            tsbImportFolder.Click += tsbImportFolder_Click;
             // 
             // tsbSettings
             // 
@@ -404,5 +413,6 @@
         private System.Windows.Forms.ToolStripButton tsbShowStats;
         private System.Windows.Forms.Button btnAdvancedSearchClose;
         private System.Windows.Forms.ToolStripButton tsbFavorites;
+        private System.Windows.Forms.ToolStripButton tsbImportFolder;
     }
 }

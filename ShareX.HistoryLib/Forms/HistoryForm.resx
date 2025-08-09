@@ -288,6 +288,15 @@
   <data name="tss2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
+  <data name="tsbImportFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbImportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbImportFolder.Text" xml:space="preserve">
+    <value>Import folder...</value>
+  </data>
   <data name="tsbSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -301,7 +310,7 @@
     <value>3, 0</value>
   </data>
   <data name="tsHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>477, 25</value>
+    <value>500, 25</value>
   </data>
   <data name="tsHistory.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -930,6 +939,12 @@
   </data>
   <data name="&gt;&gt;tss2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbImportFolder.Name" xml:space="preserve">
+    <value>tsbImportFolder</value>
+  </data>
+  <data name="&gt;&gt;tsbImportFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbSettings.Name" xml:space="preserve">
     <value>tsbSettings</value>

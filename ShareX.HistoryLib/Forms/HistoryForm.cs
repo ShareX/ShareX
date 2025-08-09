@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Forms;
 using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -486,6 +487,14 @@ namespace ShareX.HistoryLib
         {
             string stats = HistoryHelpers.OutputStats(allHistoryItems);
             OutputBox.Show(stats, Resources.HistoryStats);
+        }
+
+        private void tsbImportFolder_Click(object sender, EventArgs e)
+        {
+            using (HistoryImportForm historyImportForm = new HistoryImportForm(HistoryManager, allHistoryItems))
+            {
+                historyImportForm.ShowDialog();
+            }
         }
 
         private void tsbSettings_Click(object sender, EventArgs e)

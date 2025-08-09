@@ -77,7 +77,7 @@ namespace ShareX.HistoryLib
         {
             try
             {
-                return Append(historyItems.Where(x => IsValidHistoryItem(x)));
+                return Append(historyItems.Where(IsValidHistoryItem));
             }
             catch (Exception e)
             {
