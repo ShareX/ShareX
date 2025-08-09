@@ -102,6 +102,9 @@ namespace ShareX.HistoryLib.Forms
             if (historyItems.Count() > 0)
             {
                 HistoryManager.AppendHistoryItems(historyItems);
+
+                DialogResult = DialogResult.OK;
+                Close();
             }
         }
 

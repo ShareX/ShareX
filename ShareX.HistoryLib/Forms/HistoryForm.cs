@@ -489,11 +489,14 @@ namespace ShareX.HistoryLib
             OutputBox.Show(stats, Resources.HistoryStats);
         }
 
-        private void tsbImportFolder_Click(object sender, EventArgs e)
+        private async void tsbImportFolder_Click(object sender, EventArgs e)
         {
             using (HistoryImportForm historyImportForm = new HistoryImportForm(HistoryManager, allHistoryItems))
             {
-                historyImportForm.ShowDialog();
+                if (historyImportForm.ShowDialog() == DialogResult.OK)
+                {
+                    await RefreshHistoryItems();
+                }
             }
         }
 
