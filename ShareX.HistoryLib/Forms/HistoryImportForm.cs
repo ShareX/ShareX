@@ -99,9 +99,13 @@ namespace ShareX.HistoryLib.Forms
                 historyItems.Add(historyItem);
             }
 
-            if (historyItems.Count() > 0)
+            if (historyItems.Count > 0)
             {
                 HistoryManager.AppendHistoryItems(historyItems);
+
+                // TODO: Translate
+                MessageBox.Show(string.Format("Successfully imported {0} files.", historyItems.Count),
+                    "ShareX - Import complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 DialogResult = DialogResult.OK;
                 Close();
