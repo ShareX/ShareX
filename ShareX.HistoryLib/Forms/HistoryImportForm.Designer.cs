@@ -109,6 +109,7 @@
             Controls.Add(cbSkipDuplicates);
             Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "HistoryImportForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "ShareX - Import folder";

@@ -130,7 +130,7 @@
             // 
             resources.ApplyResources(tsHistory, "tsHistory");
             tsHistory.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            tsHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tslSearch, tstbSearch, tsbSearch, tsbAdvancedSearch, tss1, tsbFavorites, tsbShowStats, tss2, tsbImportFolder, tsbSettings });
+            tsHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tslSearch, tstbSearch, tsbSearch, tsbAdvancedSearch, tss1, tsbFavorites, tsbShowStats, tsbImportFolder, tss2, tsbSettings });
             tsHistory.Name = "tsHistory";
             // 
             // tslSearch

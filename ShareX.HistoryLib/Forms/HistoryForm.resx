@@ -285,9 +285,6 @@
   <data name="tsbShowStats.Text" xml:space="preserve">
     <value>Show stats...</value>
   </data>
-  <data name="tss2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
   <data name="tsbImportFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -296,6 +293,9 @@
   </data>
   <data name="tsbImportFolder.Text" xml:space="preserve">
     <value>Import folder...</value>
+  </data>
+  <data name="tss2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
   </data>
   <data name="tsbSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
