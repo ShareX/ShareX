@@ -39,6 +39,8 @@
             // cbSkipDuplicates
             // 
             cbSkipDuplicates.AutoSize = true;
+            cbSkipDuplicates.Checked = true;
+            cbSkipDuplicates.CheckState = System.Windows.Forms.CheckState.Checked;
             cbSkipDuplicates.Location = new System.Drawing.Point(16, 112);
             cbSkipDuplicates.Name = "cbSkipDuplicates";
             cbSkipDuplicates.Size = new System.Drawing.Size(135, 21);
@@ -75,6 +77,7 @@
             // 
             // btnImport
             // 
+            btnImport.Enabled = false;
             btnImport.Location = new System.Drawing.Point(16, 144);
             btnImport.Name = "btnImport";
             btnImport.Size = new System.Drawing.Size(112, 32);

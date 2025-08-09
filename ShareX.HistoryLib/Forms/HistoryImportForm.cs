@@ -103,13 +103,13 @@ namespace ShareX.HistoryLib.Forms
             {
                 HistoryManager.AppendHistoryItems(historyItems);
 
-                // TODO: Translate
-                MessageBox.Show(string.Format("Successfully imported {0} files.", historyItems.Count),
-                    "ShareX - Import complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 DialogResult = DialogResult.OK;
                 Close();
             }
+
+            // TODO: Translate
+            MessageBox.Show(string.Format("Successfully imported {0} files.", historyItems.Count),
+                "ShareX - Import complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void txtFolderPath_TextChanged(object sender, EventArgs e)
