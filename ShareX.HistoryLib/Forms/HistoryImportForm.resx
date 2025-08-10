@@ -117,4 +117,184 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbSkipDuplicates.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbSkipDuplicates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 112</value>
+  </data>
+  <data name="cbSkipDuplicates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 21</value>
+  </data>
+  <data name="cbSkipDuplicates.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbSkipDuplicates.Text" xml:space="preserve">
+    <value>Skip duplicate files</value>
+  </data>
+  <data name="&gt;&gt;cbSkipDuplicates.Name" xml:space="preserve">
+    <value>cbSkipDuplicates</value>
+  </data>
+  <data name="&gt;&gt;cbSkipDuplicates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbSkipDuplicates.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbSkipDuplicates.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtFolderPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 40</value>
+  </data>
+  <data name="txtFolderPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 25</value>
+  </data>
+  <data name="txtFolderPath.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtFolderPath.Name" xml:space="preserve">
+    <value>txtFolderPath</value>
+  </data>
+  <data name="&gt;&gt;txtFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFolderPath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtFolderPath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 36</value>
+  </data>
+  <data name="btnBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 32</value>
+  </data>
+  <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnBrowse.Text" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
+    <value>btnBrowse</value>
+  </data>
+  <data name="&gt;&gt;btnBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBrowse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnBrowse.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblFolderPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFolderPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblFolderPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 17</value>
+  </data>
+  <data name="lblFolderPath.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblFolderPath.Text" xml:space="preserve">
+    <value>Folder path:</value>
+  </data>
+  <data name="&gt;&gt;lblFolderPath.Name" xml:space="preserve">
+    <value>lblFolderPath</value>
+  </data>
+  <data name="&gt;&gt;lblFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFolderPath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblFolderPath.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnImport.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 144</value>
+  </data>
+  <data name="btnImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 32</value>
+  </data>
+  <data name="btnImport.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="&gt;&gt;btnImport.Name" xml:space="preserve">
+    <value>btnImport</value>
+  </data>
+  <data name="&gt;&gt;btnImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnImport.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnImport.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbOnlyImportImageFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbOnlyImportImageFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="cbOnlyImportImageFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 21</value>
+  </data>
+  <data name="cbOnlyImportImageFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cbOnlyImportImageFiles.Text" xml:space="preserve">
+    <value>Only import image files</value>
+  </data>
+  <data name="&gt;&gt;cbOnlyImportImageFiles.Name" xml:space="preserve">
+    <value>cbOnlyImportImageFiles</value>
+  </data>
+  <data name="&gt;&gt;cbOnlyImportImageFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOnlyImportImageFiles.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbOnlyImportImageFiles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 17</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>497, 192</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Import folder</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>HistoryImportForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryImportForm));
             cbSkipDuplicates = new System.Windows.Forms.CheckBox();
             txtFolderPath = new System.Windows.Forms.TextBox();
             btnBrowse = new System.Windows.Forms.Button();
@@ -38,81 +39,56 @@
             // 
             // cbSkipDuplicates
             // 
-            cbSkipDuplicates.AutoSize = true;
+            resources.ApplyResources(cbSkipDuplicates, "cbSkipDuplicates");
             cbSkipDuplicates.Checked = true;
             cbSkipDuplicates.CheckState = System.Windows.Forms.CheckState.Checked;
-            cbSkipDuplicates.Location = new System.Drawing.Point(16, 112);
             cbSkipDuplicates.Name = "cbSkipDuplicates";
-            cbSkipDuplicates.Size = new System.Drawing.Size(135, 21);
-            cbSkipDuplicates.TabIndex = 4;
-            cbSkipDuplicates.Text = "Skip duplicate files";
             cbSkipDuplicates.UseVisualStyleBackColor = true;
             // 
             // txtFolderPath
             // 
-            txtFolderPath.Location = new System.Drawing.Point(16, 40);
+            resources.ApplyResources(txtFolderPath, "txtFolderPath");
             txtFolderPath.Name = "txtFolderPath";
-            txtFolderPath.Size = new System.Drawing.Size(344, 25);
-            txtFolderPath.TabIndex = 1;
             txtFolderPath.TextChanged += txtFolderPath_TextChanged;
             // 
             // btnBrowse
             // 
-            btnBrowse.Location = new System.Drawing.Point(368, 36);
+            resources.ApplyResources(btnBrowse, "btnBrowse");
             btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new System.Drawing.Size(112, 32);
-            btnBrowse.TabIndex = 2;
-            btnBrowse.Text = "Browse...";
             btnBrowse.UseVisualStyleBackColor = true;
             btnBrowse.Click += btnBrowse_Click;
             // 
             // lblFolderPath
             // 
-            lblFolderPath.AutoSize = true;
-            lblFolderPath.Location = new System.Drawing.Point(13, 16);
+            resources.ApplyResources(lblFolderPath, "lblFolderPath");
             lblFolderPath.Name = "lblFolderPath";
-            lblFolderPath.Size = new System.Drawing.Size(78, 17);
-            lblFolderPath.TabIndex = 0;
-            lblFolderPath.Text = "Folder path:";
             // 
             // btnImport
             // 
-            btnImport.Enabled = false;
-            btnImport.Location = new System.Drawing.Point(16, 144);
+            resources.ApplyResources(btnImport, "btnImport");
             btnImport.Name = "btnImport";
-            btnImport.Size = new System.Drawing.Size(112, 32);
-            btnImport.TabIndex = 5;
-            btnImport.Text = "Import";
             btnImport.UseVisualStyleBackColor = true;
             btnImport.Click += btnImport_Click;
             // 
             // cbOnlyImportImageFiles
             // 
-            cbOnlyImportImageFiles.AutoSize = true;
-            cbOnlyImportImageFiles.Location = new System.Drawing.Point(16, 80);
+            resources.ApplyResources(cbOnlyImportImageFiles, "cbOnlyImportImageFiles");
             cbOnlyImportImageFiles.Name = "cbOnlyImportImageFiles";
-            cbOnlyImportImageFiles.Size = new System.Drawing.Size(163, 21);
-            cbOnlyImportImageFiles.TabIndex = 3;
-            cbOnlyImportImageFiles.Text = "Only import image files";
             cbOnlyImportImageFiles.UseVisualStyleBackColor = true;
             // 
             // HistoryImportForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(497, 192);
             Controls.Add(cbOnlyImportImageFiles);
             Controls.Add(btnImport);
             Controls.Add(lblFolderPath);
             Controls.Add(btnBrowse);
             Controls.Add(txtFolderPath);
             Controls.Add(cbSkipDuplicates);
-            Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "HistoryImportForm";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "ShareX - Import folder";
             ResumeLayout(false);
             PerformLayout();
         }
