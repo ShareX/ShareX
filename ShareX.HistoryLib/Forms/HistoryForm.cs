@@ -129,11 +129,11 @@ namespace ShareX.HistoryLib
             busy = false;
         }
 
-        private async Task RefreshHistoryItems(bool refreshItems = true, bool mockData = false)
+        private async Task RefreshHistoryItems(bool refreshItems = true)
         {
             if (refreshItems)
             {
-                allHistoryItems = await GetHistoryItems(mockData);
+                allHistoryItems = await GetHistoryItems();
             }
 
             cbTypeFilterSelection.Items.Clear();
@@ -199,22 +199,9 @@ namespace ShareX.HistoryLib
             await RefreshHistoryItems(false);
         }
 
-        private async Task<List<HistoryItem>> GetHistoryItems(bool mockData = false)
+        private async Task<List<HistoryItem>> GetHistoryItems()
         {
-            HistoryManager history;
-
-            if (mockData)
-            {
-                // TODO
-                //history = new HistoryManagerMock(HistoryPath);
-                return null;
-            }
-            else
-            {
-                history = HistoryManager;
-            }
-
-            List<HistoryItem> historyItems = await history.GetHistoryItemsAsync();
+            List<HistoryItem> historyItems = await HistoryManager.GetHistoryItemsAsync();
             historyItems.Reverse();
             return historyItems;
         }
@@ -451,10 +438,6 @@ namespace ShareX.HistoryLib
                 case Keys.F5:
                     e.SuppressKeyPress = true;
                     await RefreshHistoryItems();
-                    break;
-                case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
-                    e.SuppressKeyPress = true;
-                    await RefreshHistoryItems(true, true);
                     break;
             }
         }
