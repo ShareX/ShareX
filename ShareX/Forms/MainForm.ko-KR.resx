@@ -252,12 +252,6 @@
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>이미지 편집...</value>
   </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>DNS 변경기...</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>목적지 설정...</value>
-  </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
     <value>로컬 파일 삭제...</value>
   </data>
@@ -363,9 +357,6 @@
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>목적지</value>
   </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>DNS 변경기...</value>
-  </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
     <value>끌어서 업로드...</value>
   </data>
@@ -383,12 +374,6 @@
   </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>전체 화면</value>
-  </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>해시 검사...</value>
-  </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>해시 검사...</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>히스토리...</value>
@@ -464,12 +449,6 @@
   </data>
   <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
     <value>섬네일 URL</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>트윗 날리기...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>트윗 날리기...</value>
   </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
     <value>업로드</value>
@@ -693,9 +672,6 @@
   <data name="tsmiAddImageEffects.Text" xml:space="preserve">
     <value>이미지 효과 추가...</value>
   </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>커스텀 업로더 설정...</value>
-  </data>
   <data name="tsmiVideoConverter.Text" xml:space="preserve">
     <value>비디오 컨버터...</value>
   </data>
@@ -710,9 +686,6 @@
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>디스코드</value>
-  </data>
-  <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>트위터</value>
   </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>커스텀 업로더 설정...</value>

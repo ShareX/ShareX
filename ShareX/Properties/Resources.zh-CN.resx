@@ -120,9 +120,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>剩余时间：{0}秒 ({1}%) 总计：{2}</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>无法找到可用的 Twitter 账号。</value>
-  </data>
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
     <value>URL是空的。</value>
   </data>
@@ -310,9 +307,6 @@
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>项目页面</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tweet 发送成功。</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>无法访问 "{0}" 文件.
 请以管理员权限运行 ShareX 以更改个人文件夹路径。</value>
@@ -465,23 +459,14 @@
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>启动已由你的组织启用</value>
   </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>文本识别时出错，或未识别到任何文本。</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
     <value>乌克兰语</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>文本识别结果已复制至剪贴板。</value>
   </data>
   <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
     <value>印尼语</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
     <value>开机启动项已被你的组织禁用</value>
-  </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>文字识别中。</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>调试日志可能包含敏感信息，确定继续吗？</value>

@@ -130,9 +130,6 @@
   <data name="cbCheckPreReleaseUpdates.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 17</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>همه اپدیت ها را انجام بده (ممکن است خطا داشته باشد)</value>
-  </data>
   <data name="lblTrayMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 13</value>
   </data>

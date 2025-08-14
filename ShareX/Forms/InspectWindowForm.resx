@@ -140,6 +140,7 @@
   </data>
   <data name="rtbInfo.Text" xml:space="preserve">
     <value />
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;rtbInfo.Name" xml:space="preserve">
     <value>rtbInfo</value>
@@ -386,6 +387,7 @@
   </data>
   <data name="lblOpacityTip.Text" xml:space="preserve">
     <value>%</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblOpacityTip.Name" xml:space="preserve">
     <value>lblOpacityTip</value>

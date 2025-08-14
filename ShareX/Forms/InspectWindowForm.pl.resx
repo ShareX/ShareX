@@ -120,9 +120,6 @@
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>Odśwież</value>
   </data>
-  <data name="btnPinToTop.Text" xml:space="preserve">
-    <value>Przypnij na górze</value>
-  </data>
   <data name="btnInspectControl.Text" xml:space="preserve">
     <value>Sprawdź sterowanie...</value>
   </data>

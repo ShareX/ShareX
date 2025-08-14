@@ -207,9 +207,6 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Servizio di Caricamento Immagini: {0}</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Impossibile trovare un account Twitter valido.</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL da Scaricare e Caricare</value>
   </data>
@@ -252,9 +249,6 @@ Qui</value>
   </data>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Pagina del Progetto</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tweet inviato.</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>Errore</value>

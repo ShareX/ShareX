@@ -120,15 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - О программе</value>
   </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
-  <data name="btnShareXLicense.Text" xml:space="preserve">
-    <value>Лицензия ShareX...</value>
-  </data>
-  <data name="btnLicenses.Text" xml:space="preserve">
-    <value>Лицензии...</value>
-  </data>
   <data name="lblBuild.Text" xml:space="preserve">
     <value>Сборка</value>
   </data>

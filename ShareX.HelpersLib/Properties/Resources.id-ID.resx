@@ -505,9 +505,6 @@ Apakah anda ingin mengunduhnya?</value>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (Kualitas bagus)</value>
   </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Tweet pesan</value>
-  </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Hentikan semua unggahan aktif</value>
   </data>

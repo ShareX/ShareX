@@ -52,6 +52,8 @@ namespace ShareX
             Canvas.MouseDown += Canvas_MouseDown;
             Canvas.Draw += Canvas_Draw;
 
+            Size = Canvas.Size;
+
             easterEggBounce = new EasterEggBounce(form);
         }
 

@@ -58,7 +58,6 @@ namespace ShareX.Setup
 
         private static SetupJobs Job { get; set; } = SetupJobs.Release;
         private static bool Silent { get; set; } = false;
-        private static bool AppVeyor { get; set; } = false;
 
         private static string ParentDir;
         private static string Configuration;
@@ -66,7 +65,7 @@ namespace ShareX.Setup
         private static string WindowsKitsDir;
 
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
-        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration);
+        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, "win-x64");
         private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
@@ -171,11 +170,6 @@ namespace ShareX.Setup
                 }
             }
 
-            if (AppVeyor)
-            {
-                FileHelpers.CopyAll(OutputDir, ParentDir);
-            }
-
             if (!Silent && Job.HasFlag(SetupJobs.OpenOutputDirectory))
             {
                 FileHelpers.OpenFolder(OutputDir, false);
@@ -190,7 +184,6 @@ namespace ShareX.Setup
             cli.ParseCommands();
 
             Silent = cli.IsCommandExist("Silent");
-            AppVeyor = cli.IsCommandExist("AppVeyor");
 
             if (Silent)
             {
@@ -364,9 +357,9 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(destination);
 
-            FileHelpers.CopyFiles(Path.Combine(source, "ShareX.exe"), destination);
-            FileHelpers.CopyFiles(Path.Combine(source, "ShareX.exe.config"), destination);
+            FileHelpers.CopyFiles(source, destination, "*.exe");
             FileHelpers.CopyFiles(source, destination, "*.dll");
+            FileHelpers.CopyFiles(source, destination, "*.json");
 
             if (job == SetupJobs.CreateDebug || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
             {
@@ -381,12 +374,9 @@ namespace ShareX.Setup
                 {
                     FileHelpers.CopyFiles(RecorderDevicesSetupPath, destination);
                 }
-
-                FileHelpers.CopyFiles(Path.Combine(source, "ShareX_File_Icon.ico"), destination);
-                FileHelpers.CopyFiles(Path.Combine(source, "ShareX_NativeMessagingHost.exe"), destination);
-                FileHelpers.CopyFiles(Path.Combine(source, "host-manifest-chrome.json"), destination);
-                FileHelpers.CopyFiles(Path.Combine(source, "host-manifest-firefox.json"), destination);
             }
+
+            FileHelpers.CopyFiles(Path.Combine(source, "ShareX_File_Icon.ico"), destination);
 
             foreach (string directory in Directory.GetDirectories(source))
             {
@@ -394,7 +384,7 @@ namespace ShareX.Setup
 
                 if (Regex.IsMatch(language, "^[a-z]{2}(?:-[A-Z]{2})?$"))
                 {
-                    FileHelpers.CopyFiles(Path.Combine(source, language), Path.Combine(destination, "Languages", language), "*.resources.dll");
+                    FileHelpers.CopyFiles(Path.Combine(source, language), Path.Combine(destination, language), "*.resources.dll");
                 }
             }
 

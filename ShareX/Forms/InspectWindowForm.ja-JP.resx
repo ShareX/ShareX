@@ -129,9 +129,6 @@
   <data name="btnInspectControl.Text" xml:space="preserve">
     <value>コントロールを調べる...</value>
   </data>
-  <data name="btnPinToTop.Text" xml:space="preserve">
-    <value>最前面に固定</value>
-  </data>
   <data name="mbWindowList.Text" xml:space="preserve">
     <value>ウィンドウ一覧</value>
   </data>

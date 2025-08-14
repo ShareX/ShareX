@@ -150,9 +150,6 @@
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Ingat ukuran jendela utama</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>Periksa pembaruan pra-rilis</value>
-  </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
     <value>Klik tengah di ikon baki:</value>
   </data>

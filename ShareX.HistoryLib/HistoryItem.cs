@@ -26,12 +26,13 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace ShareX.HistoryLib
 {
     public class HistoryItem
     {
+        [JsonIgnore]
+        public long Id { get; set; }
         public string FileName { get; set; }
         public string FilePath { get; set; }
         public DateTime DateTime { get; set; }
@@ -41,11 +42,9 @@ namespace ShareX.HistoryLib
         public string ThumbnailURL { get; set; }
         public string DeletionURL { get; set; }
         public string ShortenedURL { get; set; }
-
-        [Browsable(false)]
         public Dictionary<string, string> Tags { get; set; }
 
-        [JsonIgnore, DisplayName("Tags[WindowTitle]")]
+        [JsonIgnore]
         public string TagsWindowTitle
         {
             get
@@ -59,7 +58,7 @@ namespace ShareX.HistoryLib
             }
         }
 
-        [JsonIgnore, DisplayName("Tags[ProcessName]")]
+        [JsonIgnore]
         public string TagsProcessName
         {
             get
@@ -70,6 +69,61 @@ namespace ShareX.HistoryLib
                 }
 
                 return null;
+            }
+        }
+
+        [JsonIgnore]
+        public bool Favorite
+        {
+            get
+            {
+                return Tags != null && Tags.ContainsKey("Favorite");
+            }
+            set
+            {
+                if (Tags == null)
+                {
+                    Tags = new Dictionary<string, string>();
+                }
+
+                if (value)
+                {
+                    Tags["Favorite"] = null;
+                }
+                else
+                {
+                    Tags.Remove("Favorite");
+                }
+            }
+        }
+
+        [JsonIgnore]
+        public string Tag
+        {
+            get
+            {
+                if (Tags != null && Tags.TryGetValue("Tag", out string value))
+                {
+                    return value;
+                }
+
+                return null;
+            }
+            set
+            {
+                if (Tags == null)
+                {
+                    Tags = new Dictionary<string, string>();
+                }
+
+                if (!string.IsNullOrEmpty(value))
+                {
+                    Tags["Tag"] = value;
+                }
+                else
+                {
+                    Tags.Remove("Tag");
+                }
             }
         }
     }

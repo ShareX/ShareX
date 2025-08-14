@@ -46,7 +46,7 @@ using System.Windows.Forms;
 using ZXing;
 using ZXing.Common;
 using ZXing.QrCode;
-using ZXing.Rendering;
+using ZXing.Windows.Compatibility;
 
 namespace ShareX
 {
@@ -103,9 +103,6 @@ namespace ShareX
                     break;
                 case HotkeyType.ShortenURL:
                     UploadManager.ShowShortenURLDialog(safeTaskSettings);
-                    break;
-                case HotkeyType.TweetMessage:
-                    TweetMessage();
                     break;
                 case HotkeyType.StopUploads:
                     TaskManager.StopAllTasks();
@@ -830,7 +827,7 @@ namespace ShareX
 
         public static void OpenHistory()
         {
-            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistorySettings,
+            HistoryForm historyForm = new HistoryForm(Program.HistoryManager, Program.Settings.HistorySettings,
                 filePath => UploadManager.UploadFile(filePath),
                 filePath => AnnotateImageFromFile(filePath),
                 filePath => PinToScreen(filePath));
@@ -840,7 +837,7 @@ namespace ShareX
 
         public static void OpenImageHistory()
         {
-            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistorySettings,
+            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryManager, Program.Settings.ImageHistorySettings,
                 filePath => UploadManager.UploadFile(filePath),
                 filePath => AnnotateImageFromFile(filePath),
                 filePath => PinToScreen(filePath));
@@ -1412,19 +1409,25 @@ namespace ShareX
         {
             try
             {
-                using (Process process = new Process())
-                {
-                    ProcessStartInfo psi = new ProcessStartInfo()
-                    {
-                        FileName = Application.ExecutablePath,
-                        Arguments = arguments,
-                        UseShellExecute = true,
-                        Verb = "runas"
-                    };
+                string exePath = Application.ExecutablePath;
 
-                    process.StartInfo = psi;
-                    process.Start();
+                string cmdArgs = $"/c timeout /t 1 & powershell -Command \"Start-Process '{exePath}' -Verb runAs";
+
+                if (!string.IsNullOrEmpty(arguments))
+                {
+                    cmdArgs += $" -ArgumentList '{arguments}'";
                 }
+
+                cmdArgs += "\"";
+
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "cmd.exe",
+                    Arguments = cmdArgs,
+                    UseShellExecute = true,
+                    CreateNoWindow = true,
+                    WindowStyle = ProcessWindowStyle.Hidden
+                });
             }
             catch
             {
@@ -1642,35 +1645,6 @@ namespace ShareX
             PinToScreenForm.CloseAll();
 
             PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
-        }
-
-        public static void TweetMessage()
-        {
-            if (IsUploadAllowed())
-            {
-                if (Program.UploadersConfig != null && Program.UploadersConfig.TwitterOAuthInfoList != null)
-                {
-                    OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
-
-                    if (twitterOAuth != null && OAuthInfo.CheckOAuth(twitterOAuth))
-                    {
-                        Task.Run(() =>
-                        {
-                            using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth))
-                            {
-                                if (twitter.ShowDialog() == DialogResult.OK && twitter.IsTweetSent)
-                                {
-                                    ShowNotificationTip(Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_);
-                                }
-                            }
-                        });
-
-                        return;
-                    }
-                }
-
-                MessageBox.Show(Resources.TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
 
         public static EDataType FindDataType(string filePath, TaskSettings taskSettings)
@@ -1917,7 +1891,6 @@ namespace ShareX
                     case HotkeyType.UploadURL: return Resources.drive;
                     case HotkeyType.DragDropUpload: return Resources.inbox;
                     case HotkeyType.ShortenURL: return ShareXResources.IsDarkTheme ? Resources.edit_scale_white : Resources.edit_scale;
-                    case HotkeyType.TweetMessage: return ShareXResources.IsDarkTheme ? Resources.X_white : Resources.X_black;
                     case HotkeyType.StopUploads: return Resources.cross_button;
                     // Screen capture
                     case HotkeyType.PrintScreen: return Resources.layer_fullscreen;
@@ -2292,7 +2265,7 @@ namespace ShareX
             {
                 try
                 {
-                    BarcodeWriter writer = new BarcodeWriter
+                    BarcodeWriter writer = new BarcodeWriter()
                     {
                         Format = BarcodeFormat.QR_CODE,
                         Options = new QrCodeEncodingOptions
@@ -2322,7 +2295,7 @@ namespace ShareX
         {
             try
             {
-                BarcodeReader barcodeReader = new BarcodeReader
+                BarcodeReader barcodeReader = new BarcodeReader()
                 {
                     AutoRotate = true,
                     Options = new DecodingOptions

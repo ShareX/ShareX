@@ -48,7 +48,6 @@ namespace ShareX.UploadersLib
         public static readonly string BoxClientID = "";
         public static readonly string BoxClientSecret = "";
         public static readonly string SendSpaceKey = "";
-        public static readonly string JiraConsumerKey = "";
         public static readonly string MediaFireAppId = "";
         public static readonly string MediaFireApiKey = "";
         public static readonly string OneDriveClientID = "";
@@ -61,7 +60,5 @@ namespace ShareX.UploadersLib
         // Other services
         public static readonly string GoogleClientID = "";
         public static readonly string GoogleClientSecret = "";
-        public static readonly string TwitterConsumerKey = "";
-        public static readonly string TwitterConsumerSecret = "";
     }
 }

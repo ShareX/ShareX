@@ -505,9 +505,6 @@
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (좋은 품질)</value>
   </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>트윗 날리기</value>
-  </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>현재 진행중인 모든 업로드 중단</value>
   </data>

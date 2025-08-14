@@ -403,9 +403,6 @@ Wil je deze downloaden?</value>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (Goede kwaliteit)</value>
   </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Tweet bericht</value>
-  </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Stop alle actieve uploads</value>
   </data>

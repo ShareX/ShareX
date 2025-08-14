@@ -246,9 +246,6 @@
   <data name="chFormat.Text" xml:space="preserve">
     <value>형식</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>시험판 버전 업데이트 확인하기</value>
-  </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
     <value>트레이 아이콘 가운데 클릭시:</value>
   </data>
@@ -359,9 +356,6 @@
   </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>테마</value>
-  </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>커스텀 테마 사용</value>
   </data>
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>추가</value>

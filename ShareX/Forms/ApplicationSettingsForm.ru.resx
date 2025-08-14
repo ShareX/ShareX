@@ -300,9 +300,6 @@
   <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
     <value>Клик левой кнопкой по иконке в трее:</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>Проверять наличие пре-релизных обновлений</value>
-  </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
     <value>Установить дополнение ShareX для Firefox...</value>
   </data>
@@ -356,9 +353,6 @@
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
     <value>Сбросить...</value>
-  </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>Пользовательская тема</value>
   </data>
   <data name="tpSettings.Text" xml:space="preserve">
     <value>Настройки</value>

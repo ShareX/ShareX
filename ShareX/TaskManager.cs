@@ -525,14 +525,15 @@ namespace ShareX
         {
             Task.Run(() =>
             {
-                HistoryManager history = new HistoryManagerJSON(Program.HistoryFilePath)
+                try
                 {
-                    BackupFolder = SettingManager.BackupFolder,
-                    CreateBackup = false,
-                    CreateWeeklyBackup = true
-                };
-
-                history.AppendHistoryItem(historyItem);
+                    Program.HistoryManager.AppendHistoryItem(historyItem);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                    e.ShowError();
+                }
             });
         }
 

@@ -126,9 +126,6 @@
   <data name="btnInspectWindow.Text" xml:space="preserve">
     <value>Перевірити вікно...</value>
   </data>
-  <data name="btnPinToTop.Text" xml:space="preserve">
-    <value>Закріпити поверх вікон</value>
-  </data>
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>Оновити</value>
   </data>

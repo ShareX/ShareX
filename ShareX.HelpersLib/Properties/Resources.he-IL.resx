@@ -523,9 +523,6 @@
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (איכות טובה)</value>
   </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>צייץ הודעה</value>
-  </data>
   <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
     <value>אל תשנה גודל</value>
   </data>

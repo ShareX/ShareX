@@ -162,9 +162,6 @@
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Projektseite</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tweet erfolgreich gesendet.</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Es kann nicht auf die Datei {0} zugegriffen werden.
 Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</value>
@@ -186,9 +183,6 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>In Zwischenablage kopiert: {0}</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Kann kein gültiges Twitter-Konto finden.</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Abbrechen</value>
@@ -455,9 +449,6 @@ Mittlere Maustaste um die Aktionsleiste zu schließen</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Screenshot-Verzögerung: {0}s</value>
   </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>Texterkennung wird verarbeitet.</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
     <value>Indonesisch</value>
   </data>
@@ -492,12 +483,6 @@ Soll ShareX neu gestartet werden?</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>Alle Quick-Tasks auf die Standardeinstellungen zurücksetzen?</value>
-  </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>Bei der OCR-Verarbeitung ist ein Fehler aufgetreten oder es wurde kein Text zurückgegeben.</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>Die OCR-Ausgabe wurde in die Zwischenablage kopiert.</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>Autostart wurde im Task-Manager deaktiviert</value>

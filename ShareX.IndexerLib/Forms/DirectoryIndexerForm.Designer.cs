@@ -29,117 +29,117 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectoryIndexerForm));
-            this.txtFolderPath = new System.Windows.Forms.TextBox();
-            this.btnBrowseFolder = new System.Windows.Forms.Button();
-            this.btnIndexFolder = new System.Windows.Forms.Button();
-            this.btnUpload = new System.Windows.Forms.Button();
-            this.tcMain = new System.Windows.Forms.TabControl();
-            this.tpPreview = new System.Windows.Forms.TabPage();
-            this.txtPreview = new System.Windows.Forms.TextBox();
-            this.tpSettings = new System.Windows.Forms.TabPage();
-            this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.btnSaveAs = new System.Windows.Forms.Button();
-            this.wbPreview = new System.Windows.Forms.WebBrowser();
-            this.tcMain.SuspendLayout();
-            this.tpPreview.SuspendLayout();
-            this.tpSettings.SuspendLayout();
-            this.SuspendLayout();
+            txtFolderPath = new System.Windows.Forms.TextBox();
+            btnBrowseFolder = new System.Windows.Forms.Button();
+            btnIndexFolder = new System.Windows.Forms.Button();
+            btnUpload = new System.Windows.Forms.Button();
+            tcMain = new System.Windows.Forms.TabControl();
+            tpPreview = new System.Windows.Forms.TabPage();
+            txtPreview = new System.Windows.Forms.TextBox();
+            wbPreview = new System.Windows.Forms.WebBrowser();
+            tpSettings = new System.Windows.Forms.TabPage();
+            pgSettings = new System.Windows.Forms.PropertyGrid();
+            btnSaveAs = new System.Windows.Forms.Button();
+            tcMain.SuspendLayout();
+            tpPreview.SuspendLayout();
+            tpSettings.SuspendLayout();
+            SuspendLayout();
             // 
             // txtFolderPath
             // 
-            resources.ApplyResources(this.txtFolderPath, "txtFolderPath");
-            this.txtFolderPath.Name = "txtFolderPath";
-            this.txtFolderPath.TextChanged += new System.EventHandler(this.txtFolderPath_TextChanged);
+            resources.ApplyResources(txtFolderPath, "txtFolderPath");
+            txtFolderPath.Name = "txtFolderPath";
+            txtFolderPath.TextChanged += txtFolderPath_TextChanged;
             // 
             // btnBrowseFolder
             // 
-            resources.ApplyResources(this.btnBrowseFolder, "btnBrowseFolder");
-            this.btnBrowseFolder.Name = "btnBrowseFolder";
-            this.btnBrowseFolder.UseVisualStyleBackColor = true;
-            this.btnBrowseFolder.Click += new System.EventHandler(this.btnBrowseFolder_Click);
+            resources.ApplyResources(btnBrowseFolder, "btnBrowseFolder");
+            btnBrowseFolder.Name = "btnBrowseFolder";
+            btnBrowseFolder.UseVisualStyleBackColor = true;
+            btnBrowseFolder.Click += btnBrowseFolder_Click;
             // 
             // btnIndexFolder
             // 
-            resources.ApplyResources(this.btnIndexFolder, "btnIndexFolder");
-            this.btnIndexFolder.Name = "btnIndexFolder";
-            this.btnIndexFolder.UseVisualStyleBackColor = true;
-            this.btnIndexFolder.Click += new System.EventHandler(this.btnIndexFolder_Click);
+            resources.ApplyResources(btnIndexFolder, "btnIndexFolder");
+            btnIndexFolder.Name = "btnIndexFolder";
+            btnIndexFolder.UseVisualStyleBackColor = true;
+            btnIndexFolder.Click += btnIndexFolder_Click;
             // 
             // btnUpload
             // 
-            resources.ApplyResources(this.btnUpload, "btnUpload");
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.UseVisualStyleBackColor = true;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            resources.ApplyResources(btnUpload, "btnUpload");
+            btnUpload.Name = "btnUpload";
+            btnUpload.UseVisualStyleBackColor = true;
+            btnUpload.Click += btnUpload_Click;
             // 
             // tcMain
             // 
-            resources.ApplyResources(this.tcMain, "tcMain");
-            this.tcMain.Controls.Add(this.tpPreview);
-            this.tcMain.Controls.Add(this.tpSettings);
-            this.tcMain.Name = "tcMain";
-            this.tcMain.SelectedIndex = 0;
+            resources.ApplyResources(tcMain, "tcMain");
+            tcMain.Controls.Add(tpPreview);
+            tcMain.Controls.Add(tpSettings);
+            tcMain.Name = "tcMain";
+            tcMain.SelectedIndex = 0;
             // 
             // tpPreview
             // 
-            this.tpPreview.BackColor = System.Drawing.SystemColors.Window;
-            this.tpPreview.Controls.Add(this.txtPreview);
-            this.tpPreview.Controls.Add(this.wbPreview);
-            resources.ApplyResources(this.tpPreview, "tpPreview");
-            this.tpPreview.Name = "tpPreview";
+            tpPreview.BackColor = System.Drawing.SystemColors.Window;
+            tpPreview.Controls.Add(txtPreview);
+            tpPreview.Controls.Add(wbPreview);
+            resources.ApplyResources(tpPreview, "tpPreview");
+            tpPreview.Name = "tpPreview";
             // 
             // txtPreview
             // 
-            this.txtPreview.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtPreview, "txtPreview");
-            this.txtPreview.Name = "txtPreview";
-            // 
-            // tpSettings
-            // 
-            this.tpSettings.BackColor = System.Drawing.SystemColors.Window;
-            this.tpSettings.Controls.Add(this.pgSettings);
-            resources.ApplyResources(this.tpSettings, "tpSettings");
-            this.tpSettings.Name = "tpSettings";
-            // 
-            // pgSettings
-            // 
-            resources.ApplyResources(this.pgSettings, "pgSettings");
-            this.pgSettings.Name = "pgSettings";
-            this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgSettings.ToolbarVisible = false;
-            // 
-            // btnSaveAs
-            // 
-            resources.ApplyResources(this.btnSaveAs, "btnSaveAs");
-            this.btnSaveAs.Name = "btnSaveAs";
-            this.btnSaveAs.UseVisualStyleBackColor = true;
-            this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
+            txtPreview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(txtPreview, "txtPreview");
+            txtPreview.Name = "txtPreview";
             // 
             // wbPreview
             // 
-            resources.ApplyResources(this.wbPreview, "wbPreview");
-            this.wbPreview.Name = "wbPreview";
+            resources.ApplyResources(wbPreview, "wbPreview");
+            wbPreview.Name = "wbPreview";
+            // 
+            // tpSettings
+            // 
+            tpSettings.BackColor = System.Drawing.SystemColors.Window;
+            tpSettings.Controls.Add(pgSettings);
+            resources.ApplyResources(tpSettings, "tpSettings");
+            tpSettings.Name = "tpSettings";
+            // 
+            // pgSettings
+            // 
+            pgSettings.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(pgSettings, "pgSettings");
+            pgSettings.Name = "pgSettings";
+            pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
+            pgSettings.ToolbarVisible = false;
+            // 
+            // btnSaveAs
+            // 
+            resources.ApplyResources(btnSaveAs, "btnSaveAs");
+            btnSaveAs.Name = "btnSaveAs";
+            btnSaveAs.UseVisualStyleBackColor = true;
+            btnSaveAs.Click += btnSaveAs_Click;
             // 
             // DirectoryIndexerForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.btnSaveAs);
-            this.Controls.Add(this.tcMain);
-            this.Controls.Add(this.btnUpload);
-            this.Controls.Add(this.btnIndexFolder);
-            this.Controls.Add(this.btnBrowseFolder);
-            this.Controls.Add(this.txtFolderPath);
-            this.Name = "DirectoryIndexerForm";
-            this.Load += new System.EventHandler(this.DirectoryIndexerForm_Load);
-            this.tcMain.ResumeLayout(false);
-            this.tpPreview.ResumeLayout(false);
-            this.tpPreview.PerformLayout();
-            this.tpSettings.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            BackColor = System.Drawing.SystemColors.Window;
+            Controls.Add(btnSaveAs);
+            Controls.Add(tcMain);
+            Controls.Add(btnUpload);
+            Controls.Add(btnIndexFolder);
+            Controls.Add(btnBrowseFolder);
+            Controls.Add(txtFolderPath);
+            Name = "DirectoryIndexerForm";
+            Load += DirectoryIndexerForm_Load;
+            tcMain.ResumeLayout(false);
+            tpPreview.ResumeLayout(false);
+            tpPreview.PerformLayout();
+            tpSettings.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

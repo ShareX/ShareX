@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Forms;
 using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -37,21 +38,22 @@ namespace ShareX.HistoryLib
 {
     public partial class HistoryForm : Form
     {
-        public string HistoryPath { get; private set; }
+        public HistoryManagerSQLite HistoryManager { get; private set; }
         public HistorySettings Settings { get; private set; }
 
         private HistoryItemManager him;
-        private HistoryItem[] allHistoryItems;
+        private List<HistoryItem> allHistoryItems;
         private HistoryItem[] filteredHistoryItems;
         private string defaultTitle;
         private Dictionary<string, string> typeNamesLocaleLookup;
         private string[] allTypeNames;
         private ListViewItem[] listViewCache;
         private int listViewCacheStartIndex;
+        private bool busy;
 
-        public HistoryForm(string historyPath, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
+        public HistoryForm(HistoryManagerSQLite historyManager, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
         {
-            HistoryPath = historyPath;
+            HistoryManager = historyManager;
             Settings = settings;
 
             InitializeComponent();
@@ -71,16 +73,19 @@ namespace ShareX.HistoryLib
             il.Images.Add(Resources.notebook);
             il.Images.Add(Resources.application_block);
             il.Images.Add(Resources.globe);
+            il.Images.Add(Resources.star);
             lvHistory.SmallImageList = il;
 
             him = new HistoryItemManager(uploadFile, editImage, pinToScreen, true);
             him.GetHistoryItems += him_GetHistoryItems;
+            him.FavoriteRequested += him_FavoriteRequested;
+            him.EditRequested += him_EditRequested;
+            him.DeleteRequested += him_DeleteRequested;
+            him.DeleteFileRequested += him_DeleteFileRequested;
             lvHistory.ContextMenuStrip = him.cmsHistory;
 
             pbThumbnail.Reset();
             lvHistory.FillLastColumn();
-            scHistoryItemInfo.SplitterWidth = 7; // Because of bug must be assigned here again
-            scHistoryItemInfo.Panel2Collapsed = true;
 
             tstbSearch.TextBox.HandleCreated += (sender, e) => tstbSearch.TextBox.SetWatermark(Resources.HistoryForm_Search_Watermark, true);
 
@@ -100,10 +105,14 @@ namespace ShareX.HistoryLib
                     scMain.SplitterDistance = Settings.SplitterDistance;
                 }
             }
+
+            tsbFavorites.Checked = Settings.Favorites;
         }
 
         private void ResetFilters()
         {
+            busy = true;
+
             txtFilenameFilter.ResetText();
             txtURLFilter.ResetText();
             cbDateFilter.Checked = false;
@@ -116,17 +125,22 @@ namespace ShareX.HistoryLib
             }
             cbHostFilter.Checked = false;
             cbHostFilterSelection.ResetText();
+
+            busy = false;
         }
 
-        private async Task RefreshHistoryItems(bool mockData = false)
+        private async Task RefreshHistoryItems(bool refreshItems = true)
         {
-            allHistoryItems = await GetHistoryItems(mockData);
+            if (refreshItems)
+            {
+                allHistoryItems = await GetHistoryItems();
+            }
 
             cbTypeFilterSelection.Items.Clear();
             cbHostFilterSelection.Items.Clear();
             tstbSearch.AutoCompleteCustomSource.Clear();
 
-            if (allHistoryItems.Length > 0)
+            if (allHistoryItems.Count > 0)
             {
                 allTypeNames = allHistoryItems.Select(x => x.Type).Where(x => !string.IsNullOrWhiteSpace(x)).Distinct().ToArray();
                 cbTypeFilterSelection.Items.AddRange(allTypeNames.Select(x => typeNamesLocaleLookup.TryGetValue(x, out string value) ? value : x).ToArray());
@@ -144,27 +158,71 @@ namespace ShareX.HistoryLib
             return lvHistory.SelectedIndices.Cast<int>().Select(i => filteredHistoryItems[i]).ToArray();
         }
 
-        private async Task<HistoryItem[]> GetHistoryItems(bool mockData = false)
+        private void him_FavoriteRequested(HistoryItem[] historyItems)
         {
-            HistoryManager history;
-
-            if (mockData)
+            foreach (HistoryItem hi in historyItems)
             {
-                history = new HistoryManagerMock(HistoryPath);
+                HistoryManager.Edit(hi);
+
+                EditListViewItem(hi);
             }
-            else
+        }
+
+        private void him_EditRequested(HistoryItem hi)
+        {
+            HistoryManager.Edit(hi);
+
+            EditListViewItem(hi);
+        }
+
+        private async void him_DeleteRequested(HistoryItem[] historyItems)
+        {
+            HistoryManager.Delete(historyItems);
+
+            DeleteHistoryItems(historyItems);
+            await RefreshHistoryItems(false);
+        }
+
+        private async void him_DeleteFileRequested(HistoryItem[] historyItems)
+        {
+            foreach (HistoryItem historyItem in historyItems)
             {
-                history = new HistoryManagerJSON(HistoryPath);
+                if (!string.IsNullOrEmpty(historyItem.FilePath) && File.Exists(historyItem.FilePath))
+                {
+                    File.Delete(historyItem.FilePath);
+                }
             }
 
-            List<HistoryItem> historyItems = await history.GetHistoryItemsAsync();
+            HistoryManager.Delete(historyItems);
+
+            DeleteHistoryItems(historyItems);
+            await RefreshHistoryItems(false);
+        }
+
+        private async Task<List<HistoryItem>> GetHistoryItems()
+        {
+            List<HistoryItem> historyItems = await HistoryManager.GetHistoryItemsAsync();
             historyItems.Reverse();
-            return historyItems.ToArray();
+            return historyItems;
+        }
+
+        private void DeleteHistoryItems(HistoryItem[] historyItems)
+        {
+            if (historyItems != null && historyItems.Length > 0)
+            {
+                foreach (HistoryItem hi in historyItems)
+                {
+                    if (hi != null)
+                    {
+                        allHistoryItems.Remove(hi);
+                    }
+                }
+            }
         }
 
         private void ApplyFilter(HistoryFilter filter)
         {
-            if (allHistoryItems != null && allHistoryItems.Length > 0)
+            if (allHistoryItems != null && allHistoryItems.Count > 0)
             {
                 IEnumerable<HistoryItem> historyItems = filter.ApplyFilter(allHistoryItems);
                 filteredHistoryItems = historyItems.ToArray();
@@ -198,7 +256,8 @@ namespace ShareX.HistoryLib
 
             HistoryFilter filter = new HistoryFilter()
             {
-                Filename = searchText
+                Filename = searchText,
+                FilterFavorites = Settings.Favorites
             };
 
             ApplyFilter(filter);
@@ -231,8 +290,32 @@ namespace ShareX.HistoryLib
             HistoryItem hi = filteredHistoryItems[index];
 
             ListViewItem lvi = new ListViewItem();
+            EditListViewItem(hi, lvi);
+            return lvi;
+        }
 
-            if (hi.Type.Equals("Image", StringComparison.InvariantCultureIgnoreCase))
+        private void EditListViewItem(HistoryItem hi)
+        {
+            for (int i = 0; i < lvHistory.Items.Count; i++)
+            {
+                ListViewItem lvi = lvHistory.Items[i];
+
+                if ((HistoryItem)lvi.Tag == hi)
+                {
+                    EditListViewItem(hi, lvi);
+                    lvHistory.Invalidate();
+                    return;
+                }
+            }
+        }
+
+        private void EditListViewItem(HistoryItem hi, ListViewItem lvi)
+        {
+            if (hi.Favorite)
+            {
+                lvi.ImageIndex = 4;
+            }
+            else if (hi.Type.Equals("Image", StringComparison.InvariantCultureIgnoreCase))
             {
                 lvi.ImageIndex = 0;
             }
@@ -249,11 +332,15 @@ namespace ShareX.HistoryLib
                 lvi.ImageIndex = 3;
             }
 
+            if (lvi.SubItems.Count > 0)
+            {
+                lvi.SubItems.Clear();
+            }
+
             lvi.SubItems.Add(hi.DateTime.ToString());
             lvi.SubItems.Add(hi.FileName);
             lvi.SubItems.Add(hi.URL);
-
-            return lvi;
+            lvi.Tag = hi;
         }
 
         private void UpdateTitle(HistoryItem[] historyItems = null)
@@ -265,9 +352,9 @@ namespace ShareX.HistoryLib
                 StringBuilder status = new StringBuilder();
 
                 status.Append(" (");
-                status.AppendFormat(Resources.HistoryForm_UpdateItemCount_Total___0_, allHistoryItems.Length.ToString("N0"));
+                status.AppendFormat(Resources.HistoryForm_UpdateItemCount_Total___0_, allHistoryItems.Count.ToString("N0"));
 
-                if (allHistoryItems.Length > historyItems.Length)
+                if (allHistoryItems.Count > historyItems.Length)
                 {
                     status.AppendFormat(" - " + Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Length.ToString("N0"));
                 }
@@ -302,8 +389,6 @@ namespace ShareX.HistoryLib
             {
                 UpdatePictureBox();
             }
-
-            pgHistoryItemInfo.SelectedObject = historyItem;
         }
 
         private void UpdatePictureBox()
@@ -321,67 +406,6 @@ namespace ShareX.HistoryLib
                     pbThumbnail.LoadImageFromURLAsync(him.HistoryItem.URL);
                 }
             }
-        }
-
-        private string OutputStats(HistoryItem[] historyItems)
-        {
-            string empty = "(empty)";
-
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine(Resources.HistoryItemCounts);
-            sb.AppendLine(Resources.HistoryStats_Total + " " + historyItems.Length);
-
-            IEnumerable<string> types = historyItems.
-                GroupBy(x => x.Type).
-                OrderByDescending(x => x.Count()).
-                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Length * 100));
-
-            sb.AppendLine(string.Join(Environment.NewLine, types));
-
-            sb.AppendLine();
-            sb.AppendLine(Resources.HistoryStats_YearlyUsages);
-
-            IEnumerable<string> yearlyUsages = historyItems.
-                GroupBy(x => x.DateTime.Year).
-                OrderByDescending(x => x.Key).
-                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Length * 100));
-
-            sb.AppendLine(string.Join(Environment.NewLine, yearlyUsages));
-
-            sb.AppendLine();
-            sb.AppendLine(Resources.HistoryStats_FileExtensions);
-
-            IEnumerable<string> fileExtensions = historyItems.
-                Where(x => !string.IsNullOrEmpty(x.FileName) && !x.FileName.EndsWith(")")).
-                Select(x => FileHelpers.GetFileNameExtension(x.FileName)).
-                GroupBy(x => string.IsNullOrWhiteSpace(x) ? empty : x).
-                OrderByDescending(x => x.Count()).
-                Select(x => string.Format("[{0}] {1}", x.Count(), x.Key));
-
-            sb.AppendLine(string.Join(Environment.NewLine, fileExtensions));
-
-            sb.AppendLine();
-            sb.AppendLine(Resources.HistoryStats_Hosts);
-
-            IEnumerable<string> hosts = historyItems.
-                GroupBy(x => string.IsNullOrWhiteSpace(x.Host) ? empty : x.Host).
-                OrderByDescending(x => x.Count()).
-                Select(x => string.Format("[{0}] {1}", x.Count(), x.Key));
-
-            sb.AppendLine(string.Join(Environment.NewLine, hosts));
-
-            sb.AppendLine();
-            sb.AppendLine(Resources.ProcessNames);
-
-            IEnumerable<string> processNames = historyItems.
-                GroupBy(x => string.IsNullOrWhiteSpace(x.TagsProcessName) ? empty : x.TagsProcessName).
-                OrderByDescending(x => x.Count()).
-                Select(x => string.Format("[{0}] {1}", x.Count(), x.Key));
-
-            sb.Append(string.Join(Environment.NewLine, processNames));
-
-            return sb.ToString();
         }
 
         #region Form events
@@ -415,10 +439,6 @@ namespace ShareX.HistoryLib
                     e.SuppressKeyPress = true;
                     await RefreshHistoryItems();
                     break;
-                case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
-                    e.SuppressKeyPress = true;
-                    await RefreshHistoryItems(true);
-                    break;
             }
         }
 
@@ -439,17 +459,28 @@ namespace ShareX.HistoryLib
             tsbAdvancedSearch.Checked = !isPanelVisible;
         }
 
-        private void tsbToggleMoreInfo_Click(object sender, EventArgs e)
+        private async void tsbFavorites_Click(object sender, EventArgs e)
         {
-            bool isPanelVisible = !scHistoryItemInfo.Panel2Collapsed;
-            scHistoryItemInfo.Panel2Collapsed = isPanelVisible;
-            tsbToggleMoreInfo.Checked = !isPanelVisible;
+            Settings.Favorites = tsbFavorites.Checked;
+
+            await RefreshHistoryItems(false);
         }
 
         private void tsbShowStats_Click(object sender, EventArgs e)
         {
-            string stats = OutputStats(allHistoryItems);
+            string stats = HistoryHelpers.OutputStats(allHistoryItems);
             OutputBox.Show(stats, Resources.HistoryStats);
+        }
+
+        private async void tsbImportFolder_Click(object sender, EventArgs e)
+        {
+            using (HistoryImportForm historyImportForm = new HistoryImportForm(HistoryManager, allHistoryItems))
+            {
+                if (historyImportForm.ShowDialog() == DialogResult.OK)
+                {
+                    await RefreshHistoryItems();
+                }
+            }
         }
 
         private void tsbSettings_Click(object sender, EventArgs e)
@@ -462,7 +493,10 @@ namespace ShareX.HistoryLib
 
         private void AdvancedFilter_ValueChanged(object sender, EventArgs e)
         {
-            ApplyFilterAdvanced();
+            if (!busy)
+            {
+                ApplyFilterAdvanced();
+            }
         }
 
         private void btnAdvancedSearchReset_Click(object sender, EventArgs e)

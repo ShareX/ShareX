@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtFolderPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -126,7 +126,7 @@
     <value>192, 8</value>
   </data>
   <data name="txtFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>682, 20</value>
+    <value>682, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtFolderPath.TabIndex" type="System.Int32, mscorlib">
@@ -136,7 +136,7 @@
     <value>txtFolderPath</value>
   </data>
   <data name="&gt;&gt;txtFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtFolderPath.Parent" xml:space="preserve">
     <value>$this</value>
@@ -163,7 +163,7 @@
     <value>btnBrowseFolder</value>
   </data>
   <data name="&gt;&gt;btnBrowseFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnBrowseFolder.Parent" xml:space="preserve">
     <value>$this</value>
@@ -193,7 +193,7 @@
     <value>btnIndexFolder</value>
   </data>
   <data name="&gt;&gt;btnIndexFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnIndexFolder.Parent" xml:space="preserve">
     <value>$this</value>
@@ -223,7 +223,7 @@
     <value>btnUpload</value>
   </data>
   <data name="&gt;&gt;btnUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnUpload.Parent" xml:space="preserve">
     <value>$this</value>
@@ -234,11 +234,80 @@
   <data name="tcMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="txtPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="txtPreview.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtPreview.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="txtPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>860, 562</value>
+  </data>
+  <data name="txtPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtPreview.Name" xml:space="preserve">
+    <value>txtPreview</value>
+  </data>
+  <data name="&gt;&gt;txtPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPreview.Parent" xml:space="preserve">
+    <value>tpPreview</value>
+  </data>
+  <data name="&gt;&gt;txtPreview.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="wbPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="wbPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="wbPreview.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="wbPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>860, 562</value>
+  </data>
+  <data name="wbPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;wbPreview.Name" xml:space="preserve">
+    <value>wbPreview</value>
+  </data>
+  <data name="&gt;&gt;wbPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wbPreview.Parent" xml:space="preserve">
+    <value>tpPreview</value>
+  </data>
+  <data name="&gt;&gt;wbPreview.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tpPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>860, 562</value>
+  </data>
+  <data name="tpPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpPreview.Text" xml:space="preserve">
+    <value>Preview</value>
+  </data>
   <data name="&gt;&gt;tpPreview.Name" xml:space="preserve">
     <value>tpPreview</value>
   </data>
   <data name="&gt;&gt;tpPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpPreview.Parent" xml:space="preserve">
     <value>tcMain</value>
@@ -246,11 +315,47 @@
   <data name="&gt;&gt;tpPreview.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="pgSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pgSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>860, 562</value>
+  </data>
+  <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
+    <value>pgSettings</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.Parent" xml:space="preserve">
+    <value>tpSettings</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tpSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>860, 562</value>
+  </data>
+  <data name="tpSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="&gt;&gt;tpSettings.Name" xml:space="preserve">
     <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;tpSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpSettings.Parent" xml:space="preserve">
     <value>tcMain</value>
@@ -271,151 +376,13 @@
     <value>tcMain</value>
   </data>
   <data name="&gt;&gt;tcMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tcMain.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tcMain.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtPreview.Name" xml:space="preserve">
-    <value>txtPreview</value>
-  </data>
-  <data name="&gt;&gt;txtPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPreview.Parent" xml:space="preserve">
-    <value>tpPreview</value>
-  </data>
-  <data name="&gt;&gt;txtPreview.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;wbPreview.Name" xml:space="preserve">
-    <value>wbPreview</value>
-  </data>
-  <data name="&gt;&gt;wbPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wbPreview.Parent" xml:space="preserve">
-    <value>tpPreview</value>
-  </data>
-  <data name="&gt;&gt;wbPreview.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tpPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>860, 564</value>
-  </data>
-  <data name="tpPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tpPreview.Text" xml:space="preserve">
-    <value>Preview</value>
-  </data>
-  <data name="&gt;&gt;tpPreview.Name" xml:space="preserve">
-    <value>tpPreview</value>
-  </data>
-  <data name="&gt;&gt;tpPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpPreview.Parent" xml:space="preserve">
-    <value>tcMain</value>
-  </data>
-  <data name="&gt;&gt;tpPreview.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="txtPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="txtPreview.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtPreview.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="txtPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>860, 564</value>
-  </data>
-  <data name="txtPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtPreview.Name" xml:space="preserve">
-    <value>txtPreview</value>
-  </data>
-  <data name="&gt;&gt;txtPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPreview.Parent" xml:space="preserve">
-    <value>tpPreview</value>
-  </data>
-  <data name="&gt;&gt;txtPreview.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
-    <value>pgSettings</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Parent" xml:space="preserve">
-    <value>tpSettings</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>860, 564</value>
-  </data>
-  <data name="tpSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tpSettings.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="&gt;&gt;tpSettings.Name" xml:space="preserve">
-    <value>tpSettings</value>
-  </data>
-  <data name="&gt;&gt;tpSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpSettings.Parent" xml:space="preserve">
-    <value>tcMain</value>
-  </data>
-  <data name="&gt;&gt;tpSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pgSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pgSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>860, 564</value>
-  </data>
-  <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
-    <value>pgSettings</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Parent" xml:space="preserve">
-    <value>tpSettings</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="btnSaveAs.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -439,7 +406,7 @@
     <value>btnSaveAs</value>
   </data>
   <data name="&gt;&gt;btnSaveAs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnSaveAs.Parent" xml:space="preserve">
     <value>$this</value>
@@ -447,44 +414,14 @@
   <data name="&gt;&gt;btnSaveAs.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="wbPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="wbPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="wbPreview.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="wbPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>860, 564</value>
-  </data>
-  <data name="wbPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;wbPreview.Name" xml:space="preserve">
-    <value>wbPreview</value>
-  </data>
-  <data name="&gt;&gt;wbPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wbPreview.Parent" xml:space="preserve">
-    <value>tpPreview</value>
-  </data>
-  <data name="&gt;&gt;wbPreview.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>884, 661</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -496,6 +433,6 @@
     <value>DirectoryIndexerForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

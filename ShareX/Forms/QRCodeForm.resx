@@ -173,6 +173,7 @@
   </data>
   <data name="lblQRCodeSizeHint.Text" xml:space="preserve">
     <value>px</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblQRCodeSizeHint.Name" xml:space="preserve">
     <value>lblQRCodeSizeHint</value>

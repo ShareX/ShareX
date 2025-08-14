@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Forms;
 using System;
 using System.IO;
 using System.Linq;
@@ -33,9 +34,11 @@ namespace ShareX.HistoryLib
 {
     public partial class HistoryItemManager
     {
-        public delegate HistoryItem[] GetHistoryItemsEventHandler();
-
-        public event GetHistoryItemsEventHandler GetHistoryItems;
+        public event Func<HistoryItem[]> GetHistoryItems;
+        public event Action<HistoryItem> EditRequested;
+        public event Action<HistoryItem[]> DeleteRequested;
+        public event Action<HistoryItem[]> DeleteFileRequested;
+        public event Action<HistoryItem[]> FavoriteRequested;
 
         public HistoryItem HistoryItem { get; private set; }
 
@@ -49,6 +52,7 @@ namespace ShareX.HistoryLib
         public bool IsFileExist { get; private set; }
         public bool IsImageFile { get; private set; }
         public bool IsTextFile { get; private set; }
+        public int SelectedItemCount { get; private set; }
 
         private Action<string> uploadFile, editImage, pinToScreen;
 
@@ -59,18 +63,24 @@ namespace ShareX.HistoryLib
             this.pinToScreen = pinToScreen;
 
             InitializeComponent();
+            cmsHistory.Opening += cmsHistory_Opening;
 
             tsmiOpen.HideImageMargin();
             tsmiCopy.HideImageMargin();
             tsmiUploadFile.Visible = uploadFile != null;
             tsmiEditImage.Visible = editImage != null;
             tsmiPinToScreen.Visible = pinToScreen != null;
-            tsmiShowMoreInfo.Visible = !hideShowMoreInfoButton;
+        }
+
+        private void cmsHistory_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            UpdateSelectedHistoryItem();
         }
 
         public HistoryItem UpdateSelectedHistoryItem()
         {
             HistoryItem[] historyItems = OnGetHistoryItems();
+            SelectedItemCount = historyItems?.Length ?? 0;
 
             if (historyItems != null && historyItems.Length > 0)
             {
@@ -94,12 +104,15 @@ namespace ShareX.HistoryLib
                 IsImageFile = IsFileExist && FileHelpers.IsImageFile(HistoryItem.FilePath);
                 IsTextFile = IsFileExist && FileHelpers.IsTextFile(HistoryItem.FilePath);
 
-                UpdateContextMenu(historyItems.Length);
+                UpdateContextMenu(SelectedItemCount);
             }
             else
             {
                 cmsHistory.Enabled = false;
             }
+
+            // TODO: Translate
+            tsmiFavorite.Text = HistoryItem != null && HistoryItem.Favorite ? "Unfavorite" : "Favorite";
 
             return HistoryItem;
         }
@@ -112,6 +125,26 @@ namespace ShareX.HistoryLib
             }
 
             return null;
+        }
+
+        protected void OnFavoriteRequested(HistoryItem[] historyItems)
+        {
+            FavoriteRequested?.Invoke(historyItems);
+        }
+
+        protected void OnEditRequested(HistoryItem historyItem)
+        {
+            EditRequested?.Invoke(historyItem);
+        }
+
+        protected void OnDeleteRequested(HistoryItem[] historyItems)
+        {
+            DeleteRequested?.Invoke(historyItems);
+        }
+
+        protected void OnDeleteFileRequested(HistoryItem[] historyItems)
+        {
+            DeleteFileRequested?.Invoke(historyItems);
         }
 
         public bool HandleKeyInput(KeyEventArgs e)
@@ -140,6 +173,12 @@ namespace ShareX.HistoryLib
                     break;
                 case Keys.Control | Keys.Shift | Keys.C:
                     CopyFilePath();
+                    break;
+                case Keys.Delete:
+                    Delete();
+                    break;
+                case Keys.Shift | Keys.Delete:
+                    DeleteFile();
                     break;
                 case Keys.Control | Keys.U:
                     UploadFile();
@@ -564,6 +603,96 @@ namespace ShareX.HistoryLib
             }
         }
 
+        public void ToggleFavorite()
+        {
+            HistoryItem[] historyItems = OnGetHistoryItems();
+
+            if (historyItems != null)
+            {
+                foreach (HistoryItem item in historyItems)
+                {
+                    item.Favorite = !item.Favorite;
+                }
+
+                OnFavoriteRequested(historyItems);
+            }
+        }
+
+        public void EditTag()
+        {
+            string tag = HistoryItem.Tag;
+            // TODO: Translate
+            string newTag = InputBox.Show("Edit tag", tag);
+            if (newTag != null && newTag != tag)
+            {
+                HistoryItem.Tag = newTag;
+                OnEditRequested(HistoryItem);
+            }
+        }
+
+        public void Edit()
+        {
+            using (HistoryItemEditForm form = new HistoryItemEditForm(HistoryItem))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    OnEditRequested(form.HistoryItem);
+                }
+            }
+        }
+
+        public void RenameFile()
+        {
+            // TODO: Translate
+            string newFileName = InputBox.Show("Rename file", HistoryItem.FileName);
+
+            if (!string.IsNullOrEmpty(newFileName) && !HistoryItem.FileName.Equals(newFileName, StringComparison.OrdinalIgnoreCase))
+            {
+                HistoryItem.FileName = newFileName;
+                string newFilePath = FileHelpers.RenameFile(HistoryItem.FilePath, newFileName);
+                HistoryItem.FilePath = newFilePath;
+                OnEditRequested(HistoryItem);
+            }
+        }
+
+        public void Delete()
+        {
+            if (SelectedItemCount > 0)
+            {
+                // TODO: Translate
+                string itemText = SelectedItemCount > 1 ? "these items" : "this item";
+                string message = $"Do you really want to delete {itemText}?";
+
+                if (MessageBox.Show(message, "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    HistoryItem[] historyItems = OnGetHistoryItems();
+                    if (historyItems != null && historyItems.Length > 0)
+                    {
+                        OnDeleteRequested(historyItems);
+                    }
+                }
+            }
+        }
+
+        public void DeleteFile()
+        {
+            if (SelectedItemCount > 0)
+            {
+                // TODO: Translate
+                string fileText = SelectedItemCount > 1 ? "these files" : "this file";
+                string message = $"Do you really want to delete {fileText}?";
+
+                if (MessageBox.Show(message, "ShareX - Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    HistoryItem[] historyItems = OnGetHistoryItems();
+                    if (historyItems != null && historyItems.Length > 0)
+                    {
+                        OnDeleteFileRequested(historyItems);
+                    }
+                }
+            }
+        }
+
         public void ShowImagePreview()
         {
             if (HistoryItem != null && IsImageFile) ImageViewer.ShowImage(HistoryItem.FilePath);
@@ -582,11 +711,6 @@ namespace ShareX.HistoryLib
         public void PinToScreen()
         {
             if (pinToScreen != null && HistoryItem != null && IsImageFile) pinToScreen(HistoryItem.FilePath);
-        }
-
-        public void ShowMoreInfo()
-        {
-            new HistoryItemInfoForm(HistoryItem).Show();
         }
     }
 }

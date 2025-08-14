@@ -526,9 +526,6 @@ Gostaria de baixá-la?</value>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (qualidade boa)</value>
   </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Tuitar mensagem</value>
-  </data>
   <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
     <value>Não redimensionar</value>
   </data>

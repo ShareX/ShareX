@@ -371,9 +371,6 @@
   <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
     <value>顯示標題</value>
   </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>使用自訂的佈景主題</value>
-  </data>
   <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
     <value>重試時使用備用的上傳工具設定</value>
   </data>

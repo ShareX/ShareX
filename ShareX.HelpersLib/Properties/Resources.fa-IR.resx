@@ -418,9 +418,6 @@
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (کیفیت خوب)</value>
   </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>پیام توئیت</value>
-  </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>توقف تمام آپلودهای جاری</value>
   </data>

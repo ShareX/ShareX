@@ -204,12 +204,6 @@
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Effetti Immagine...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Controlla Hash...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>Cambia DNS...</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>Codice QR...</value>
   </data>
@@ -221,9 +215,6 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Crea Miniature Video...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Prova il Monitor...</value>
@@ -254,9 +245,6 @@
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Indicizza Cartella...</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Impostazioni Destinazione...</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
     <value>Destinazioni</value>
@@ -501,12 +489,6 @@
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Effetti Immagine...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Controlla Hash...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Cambia DNS...</value>
-  </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>Codica QR...</value>
   </data>
@@ -521,9 +503,6 @@
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Crea Miniature Video...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tweet...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Prova Monitor...</value>

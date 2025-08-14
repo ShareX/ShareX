@@ -484,9 +484,6 @@ Vuoi scaricarla ora?</value>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (Qualità Buona)</value>
   </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Tweet</value>
-  </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Ferma Tutti i Caricamenti Attivi</value>
   </data>

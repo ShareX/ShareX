@@ -282,9 +282,6 @@
   <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
     <value>Dezactivarea notificărilor pe ecran complet</value>
   </data>
-  <data name="cbDisableNotifications.Text" xml:space="preserve">
-    <value>Dezactivați notificările</value>
-  </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Se redă un sunetul după ce se face captura</value>
   </data>
@@ -479,9 +476,6 @@
   </data>
   <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
     <value>Lățime:</value>
-  </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Fundalul se întunecă pentru ca selecția să poată fi diferențiată cu ușurință (afectează viteza de pornire)</value>
   </data>
   <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
     <value>Utilizați selectarea regiunii transparente</value>

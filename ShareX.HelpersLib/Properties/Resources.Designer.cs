@@ -1874,15 +1874,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tweet message.
-        /// </summary>
-        internal static string HotkeyType_TweetMessage {
-            get {
-                return ResourceManager.GetString("HotkeyType_TweetMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Upload text.
         /// </summary>
         internal static string HotkeyType_UploadText {
@@ -3516,6 +3507,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ToastClickAction_CopyUrl {
             get {
                 return ResourceManager.GetString("ToastClickAction_CopyUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete file locally.
+        /// </summary>
+        internal static string ToastClickAction_DeleteFile {
+            get {
+                return ResourceManager.GetString("ToastClickAction_DeleteFile", resourceCulture);
             }
         }
         

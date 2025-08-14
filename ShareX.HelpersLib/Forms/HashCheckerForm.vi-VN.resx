@@ -135,45 +135,6 @@
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Đối tượng:</value>
   </data>
-  <data name="lblHashCheckBase64.Text" xml:space="preserve">
-    <value>Base64:</value>
-  </data>
-  <data name="lblHashCheckBinary.Text" xml:space="preserve">
-    <value>Nhị phân:</value>
-  </data>
-  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
-    <value>Sao chép tất cả</value>
-  </data>
-  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
-    <value>Giải mã</value>
-  </data>
-  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
-    <value>Giải mã</value>
-  </data>
-  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
-    <value>Giải mã</value>
-  </data>
-  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
-    <value>Giải mã</value>
-  </data>
-  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
-    <value>Nén</value>
-  </data>
-  <data name="tpFileHashCheck.Text" xml:space="preserve">
-    <value>Kiểm tra hash của tệp</value>
-  </data>
-  <data name="tpTextConversions.Text" xml:space="preserve">
-    <value>Chuyển đổi văn bản</value>
-  </data>
-  <data name="lblHashCheckText.Text" xml:space="preserve">
-    <value>Văn bản:</value>
-  </data>
-  <data name="lblHashCheckHex.Text" xml:space="preserve">
-    <value>Mã 16 (Hex):</value>
-  </data>
-  <data name="lblHashCheckHash.Text" xml:space="preserve">
-    <value>Hash:</value>
-  </data>
   <data name="btnFilePathBrowse2.Text" xml:space="preserve">
     <value>Duyệt...</value>
   </data>
@@ -185,11 +146,5 @@
   </data>
   <data name="lblFilePath2.Text" xml:space="preserve">
     <value>Đường dẫn tập tin:</value>
-  </data>
-  <data name="lblHashCheckASCII.Text" xml:space="preserve">
-    <value>ASCII:</value>
-  </data>
-  <data name="lblProgressPercentage.Text" xml:space="preserve">
-    <value>0%</value>
   </data>
 </root>

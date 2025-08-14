@@ -465,9 +465,6 @@
   <data name="tpUploaderFilters.Text" xml:space="preserve">
     <value>업로더 필터</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>배경을 어둡게 해서 선택 영역을 두드러지게 하기 (시작 속도에 영향을 줌)</value>
-  </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>영역 크기 조절과 이동을 할 수 있는 멀티 영역 모드를 사용함</value>
   </data>

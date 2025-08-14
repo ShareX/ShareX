@@ -303,9 +303,6 @@
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Unix időbélyeg</value>
   </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Tweet üzenet</value>
-  </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Az összes aktív feltöltés leállítása</value>
   </data>

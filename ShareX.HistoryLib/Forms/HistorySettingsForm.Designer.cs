@@ -30,36 +30,36 @@ namespace ShareX.HistoryLib
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorySettingsForm));
-            this.cbRememberSearchText = new System.Windows.Forms.CheckBox();
-            this.cbRememberWindowState = new System.Windows.Forms.CheckBox();
-            this.SuspendLayout();
+            cbRememberSearchText = new System.Windows.Forms.CheckBox();
+            cbRememberWindowState = new System.Windows.Forms.CheckBox();
+            SuspendLayout();
             // 
             // cbRememberSearchText
             // 
-            resources.ApplyResources(this.cbRememberSearchText, "cbRememberSearchText");
-            this.cbRememberSearchText.Name = "cbRememberSearchText";
-            this.cbRememberSearchText.UseVisualStyleBackColor = true;
-            this.cbRememberSearchText.CheckedChanged += new System.EventHandler(this.cbRememberSearchText_CheckedChanged);
+            resources.ApplyResources(cbRememberSearchText, "cbRememberSearchText");
+            cbRememberSearchText.Name = "cbRememberSearchText";
+            cbRememberSearchText.UseVisualStyleBackColor = true;
+            cbRememberSearchText.CheckedChanged += cbRememberSearchText_CheckedChanged;
             // 
             // cbRememberWindowState
             // 
-            resources.ApplyResources(this.cbRememberWindowState, "cbRememberWindowState");
-            this.cbRememberWindowState.Name = "cbRememberWindowState";
-            this.cbRememberWindowState.UseVisualStyleBackColor = true;
-            this.cbRememberWindowState.CheckedChanged += new System.EventHandler(this.cbRememberWindowState_CheckedChanged);
+            resources.ApplyResources(cbRememberWindowState, "cbRememberWindowState");
+            cbRememberWindowState.Name = "cbRememberWindowState";
+            cbRememberWindowState.UseVisualStyleBackColor = true;
+            cbRememberWindowState.CheckedChanged += cbRememberWindowState_CheckedChanged;
             // 
             // HistorySettingsForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.cbRememberWindowState);
-            this.Controls.Add(this.cbRememberSearchText);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "HistorySettingsForm";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            BackColor = System.Drawing.SystemColors.Window;
+            Controls.Add(cbRememberWindowState);
+            Controls.Add(cbRememberSearchText);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "HistorySettingsForm";
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

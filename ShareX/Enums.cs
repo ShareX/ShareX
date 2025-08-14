@@ -205,8 +205,6 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Upload)]
         ShortenURL,
         [Category(EnumExtensions.HotkeyType_Category_Upload)]
-        TweetMessage,
-        [Category(EnumExtensions.HotkeyType_Category_Upload)]
         StopUploads,
         // Screen capture
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
@@ -350,7 +348,8 @@ namespace ShareX
         OpenFolder,
         OpenUrl,
         Upload,
-        PinToScreen
+        PinToScreen,
+        DeleteFile
     }
 
     public enum ThumbnailViewClickAction // Localized
@@ -390,6 +389,12 @@ namespace ShareX
     public enum RegionCaptureType
     {
         Default, Light, Transparent
+    }
+
+    public enum ScreenTearingTestMode
+    {
+        VerticalLines,
+        HorizontalLines
     }
 
 #if !MicrosoftStore

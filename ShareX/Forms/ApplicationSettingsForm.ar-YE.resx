@@ -420,9 +420,6 @@
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>استخدام مجلد مخصص للقطات الشاشة:</value>
   </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>تخصيص المظهر</value>
-  </data>
   <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
     <value>استخدام ترتيب الرافع الثانوي للتفضيلات عند إعادة المحاولة</value>
   </data>

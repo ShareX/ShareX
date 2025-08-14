@@ -123,47 +123,8 @@
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Target:</value>
   </data>
-  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
-    <value>Salin semua</value>
-  </data>
-  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
-    <value>Dekode</value>
-  </data>
-  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
-    <value>Dekode</value>
-  </data>
-  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
-    <value>Dekode</value>
-  </data>
-  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
-    <value>Dekode</value>
-  </data>
-  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
-    <value>Enkode</value>
-  </data>
-  <data name="tpTextConversions.Text" xml:space="preserve">
-    <value>Konversi teks</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Periksa Hash</value>
-  </data>
-  <data name="lblHashCheckText.Text" xml:space="preserve">
-    <value>Teks:</value>
-  </data>
-  <data name="lblHashCheckBinary.Text" xml:space="preserve">
-    <value>Biner:</value>
-  </data>
-  <data name="lblHashCheckHex.Text" xml:space="preserve">
-    <value>Heksadesimal:</value>
-  </data>
-  <data name="lblHashCheckBase64.Text" xml:space="preserve">
-    <value>Basis64:</value>
-  </data>
-  <data name="lblHashCheckHash.Text" xml:space="preserve">
-    <value>Hash:</value>
-  </data>
-  <data name="tpFileHashCheck.Text" xml:space="preserve">
-    <value>File pemeriksaan hash</value>
   </data>
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>Periksa</value>

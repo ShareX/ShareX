@@ -69,9 +69,26 @@ namespace ShareX
 
         private void CaptureInternal(TaskSettings taskSettings, bool autoHideForm)
         {
+            bool wait = false;
+            bool showDesktopIcons = false;
+            bool showMainForm = false;
+
+            if (taskSettings.CaptureSettings.CaptureAutoHideDesktopIcons && !CaptureHelpers.IsActiveWindowFullscreen() && DesktopIconManager.AreDesktopIconsVisible())
+            {
+                DesktopIconManager.SetDesktopIconsVisibility(false);
+                showDesktopIcons = true;
+                wait = true;
+            }
+
             if (autoHideForm && AllowAutoHideForm)
             {
                 Program.MainForm.Hide();
+                showMainForm = true;
+                wait = true;
+            }
+
+            if (wait)
+            {
                 Thread.Sleep(250);
             }
 
@@ -88,7 +105,12 @@ namespace ShareX
             }
             finally
             {
-                if (autoHideForm && AllowAutoHideForm)
+                if (showDesktopIcons)
+                {
+                    DesktopIconManager.SetDesktopIconsVisibility(true);
+                }
+
+                if (showMainForm)
                 {
                     Program.MainForm.ForceActivate();
                 }

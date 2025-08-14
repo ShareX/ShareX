@@ -309,9 +309,6 @@
   <data name="btnResetSettings.Text" xml:space="preserve">
     <value>Einstellungen zurücksetzen...</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>Nach Vorabversions-Updates suchen</value>
-  </data>
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
     <value>Chrome-Erweiterungsunterstützung aktivieren</value>
   </data>
@@ -359,9 +356,6 @@
   </data>
   <data name="cbExportSettings.Text" xml:space="preserve">
     <value>Einstellungen</value>
-  </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>Eigenes Thema verwenden</value>
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
     <value>Hinweis: Geben Sie die exportierte Datei an niemanden weiter, da sie private Informationen wie Kontodaten und Ihre Upload-Historie enthalten könnte.</value>

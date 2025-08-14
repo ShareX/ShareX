@@ -213,9 +213,6 @@
   <data name="lblExportImportNote.Text" xml:space="preserve">
     <value>הערה: אל תשתף את הקובץ המיוצא עם אף אחד מכיוון שהוא עשוי להכיל מידע אישי כמו פרטי חשבון והיסטוריית ההעלאות שלך.</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>בדוק אם קיימים עדכונים לא רשמיים</value>
-  </data>
   <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
     <value>מיקום כותרת:</value>
   </data>
@@ -359,9 +356,6 @@
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>השתמש בתיקיית צילומי מסך מותאמת אישית:</value>
-  </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>השתמש בערכת נושא מותאמת אישית</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
     <value>השתמש בסמל ShareX לבן</value>

@@ -39,7 +39,6 @@ using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
-using System.Security.Permissions;
 using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -708,7 +707,7 @@ namespace ShareX.HelpersLib
 
         public static byte[] ComputeSHA256(byte[] data)
         {
-            using (SHA256Managed hashAlgorithm = new SHA256Managed())
+            using (HashAlgorithm hashAlgorithm = SHA256.Create())
             {
                 return hashAlgorithm.ComputeHash(data);
             }
@@ -718,7 +717,7 @@ namespace ShareX.HelpersLib
         {
             BufferedStream bufferedStream = new BufferedStream(stream, bufferSize);
 
-            using (SHA256Managed hashAlgorithm = new SHA256Managed())
+            using (HashAlgorithm hashAlgorithm = SHA256.Create())
             {
                 return hashAlgorithm.ComputeHash(bufferedStream);
             }
@@ -817,24 +816,6 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        [ReflectionPermission(SecurityAction.Assert, MemberAccess = true)]
-        public static bool TryFixHandCursor()
-        {
-            try
-            {
-                // https://referencesource.microsoft.com/#System.Windows.Forms/winforms/Managed/System/WinForms/Cursors.cs,423
-                typeof(Cursors).GetField("hand", BindingFlags.NonPublic | BindingFlags.Static)
-                    .SetValue(null, new Cursor(NativeMethods.LoadCursor(IntPtr.Zero, NativeConstants.IDC_HAND)));
-
-                return true;
-            }
-            catch
-            {
-                // If it fails, we'll just have to live with the old hand.
-                return false;
-            }
-        }
-
         public static bool IsTabletMode()
         {
             //int state = NativeMethods.GetSystemMetrics(SystemMetric.SM_CONVERTIBLESLATEMODE);
@@ -931,7 +912,7 @@ namespace ShareX.HelpersLib
 
         public static string GetChecksum(string filePath)
         {
-            using (SHA256Managed hashAlgorithm = new SHA256Managed())
+            using (HashAlgorithm hashAlgorithm = SHA256.Create())
             {
                 return GetChecksum(filePath, hashAlgorithm);
             }

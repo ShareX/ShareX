@@ -41,7 +41,7 @@ namespace ShareX.HistoryLib
         {
         }
 
-        protected override List<HistoryItem> Load(string filePath)
+        internal override List<HistoryItem> Load(string filePath)
         {
             List<HistoryItem> historyItemList = new List<HistoryItem>();
 

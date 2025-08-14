@@ -120,4 +120,10 @@
   <data name="lblError.Text" xml:space="preserve">
     <value>Hata</value>
   </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Resimleri birleştir (Dikey)</value>
+  </data>
+  <data name="lblCombineHorizontal.Text" xml:space="preserve">
+    <value>Resimleri birleştir (Yatay)</value>
+  </data>
 </root>

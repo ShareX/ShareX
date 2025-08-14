@@ -278,6 +278,7 @@ namespace ShareX
             cbCaptureShadow.Checked = TaskSettings.CaptureSettings.CaptureShadow;
             nudCaptureShadowOffset.SetValue(TaskSettings.CaptureSettings.CaptureShadowOffset);
             cbCaptureClientArea.Checked = TaskSettings.CaptureSettings.CaptureClientArea;
+            cbCaptureAutoHideDesktopIcons.Checked = TaskSettings.CaptureSettings.CaptureAutoHideDesktopIcons;
             cbCaptureAutoHideTaskbar.Checked = TaskSettings.CaptureSettings.CaptureAutoHideTaskbar;
             nudCaptureCustomRegionX.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.X);
             nudCaptureCustomRegionY.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Y);
@@ -1089,6 +1090,11 @@ namespace ShareX
         private void cbCaptureClientArea_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.CaptureClientArea = cbCaptureClientArea.Checked;
+        }
+
+        private void cbCaptureAutoHideDesktopIcons_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.CaptureAutoHideDesktopIcons = cbCaptureAutoHideDesktopIcons.Checked;
         }
 
         private void cbCaptureAutoHideTaskbar_CheckedChanged(object sender, EventArgs e)

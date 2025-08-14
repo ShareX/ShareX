@@ -237,12 +237,6 @@
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Ефекти зображення...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Перевірка контрольної суми...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>Замінювач DNS...</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR-код...</value>
   </data>
@@ -266,9 +260,6 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр відео...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Повідомлення у Twitter...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Тест монітора...</value>
@@ -296,12 +287,6 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Служби обміну посиланнями</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Параметри призначення...</value>
-  </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Налаштування власних вивантажувачів...</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
     <value>Призначення</value>
@@ -594,12 +579,6 @@
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Ефекти зображення...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Перевірка контрольної суми...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Замінювач DNS...</value>
-  </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR-код...</value>
   </data>
@@ -623,9 +602,6 @@
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр відео...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Повідомлення у Twitter...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Тест монітора...</value>
@@ -752,9 +728,6 @@
   </data>
   <data name="tsmiHashChecker.Text" xml:space="preserve">
     <value>Перевірка контрольної суми...</value>
-  </data>
-  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
-    <value>Шукати за зображеннями в Google...</value>
   </data>
   <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
     <value>Об’єднати горизонтально</value>

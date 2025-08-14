@@ -477,4 +477,13 @@
   <data name="CutOutEffectType" xml:space="preserve">
     <value>Kesip çıkarma efekti:</value>
   </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Duraklat</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Devam et</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>Yeniden yap</value>
+  </data>
 </root>

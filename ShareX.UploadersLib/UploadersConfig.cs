@@ -242,14 +242,6 @@ namespace ShareX.UploadersLib
 
         #endregion Email
 
-        #region Jira
-
-        public string JiraHost { get; set; } = "http://";
-        public string JiraIssuePrefix { get; set; } = "PROJECT-";
-        public OAuthInfo JiraOAuthInfo { get; set; } = null;
-
-        #endregion Jira
-
         #region Mega
 
         public MegaAuthInfos MegaAuthInfos { get; set; } = null;
@@ -336,7 +328,6 @@ namespace ShareX.UploadersLib
         public string SeafileEncryptedLibraryPassword { get; set; } = "";
         public bool SeafileCreateShareableURL { get; set; } = true;
         public bool SeafileCreateShareableURLRaw { get; set; } = false;
-        public bool SeafileIgnoreInvalidCert { get; set; } = false;
         public int SeafileShareDaysToExpire { get; set; } = 0;
         [JsonEncrypt]
         public string SeafileSharePassword { get; set; } = "";
@@ -466,15 +457,6 @@ namespace ShareX.UploadersLib
         #endregion URL shorteners
 
         #region Other uploaders
-
-        #region Twitter
-
-        public List<OAuthInfo> TwitterOAuthInfoList { get; set; } = new List<OAuthInfo>();
-        public int TwitterSelectedAccount { get; set; } = 0;
-        public bool TwitterSkipMessageBox { get; set; } = false;
-        public string TwitterDefaultMessage { get; set; } = "";
-
-        #endregion Twitter
 
         #region Custom uploaders
 

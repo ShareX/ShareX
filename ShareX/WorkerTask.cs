@@ -476,15 +476,8 @@ namespace ShareX
                 }
             }
 
-            SSLBypassHelper sslBypassHelper = null;
-
             try
             {
-                if (HelpersOptions.AcceptInvalidSSLCertificates)
-                {
-                    sslBypassHelper = new SSLBypassHelper();
-                }
-
                 if (!CheckUploadFilters(data, fileName))
                 {
                     switch (Info.UploadDestination)
@@ -514,11 +507,6 @@ namespace ShareX
             }
             finally
             {
-                if (sslBypassHelper != null)
-                {
-                    sslBypassHelper.Dispose();
-                }
-
                 if (Info.Result == null)
                 {
                     Info.Result = new UploadResult();

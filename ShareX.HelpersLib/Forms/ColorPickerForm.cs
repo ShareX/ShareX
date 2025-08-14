@@ -115,7 +115,7 @@ namespace ShareX.HelpersLib
                     dialog.EnableScreenColorPickerButton(openScreenColorPicker);
                 }
 
-                if (dialog.ShowDialog(owner) == DialogResult.OK)
+                if (dialog.ShowDialogTopMost(owner) == DialogResult.OK)
                 {
                     newColor = dialog.NewColor;
                     return true;

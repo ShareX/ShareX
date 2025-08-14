@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>閉じる</value>
-  </data>
-  <data name="btnShareXLicense.Text" xml:space="preserve">
-    <value>ShareXの使用許諾...</value>
-  </data>
-  <data name="btnLicenses.Text" xml:space="preserve">
-    <value>使用許諾...</value>
-  </data>
   <data name="lblBuild.Text" xml:space="preserve">
     <value>ビルド</value>
   </data>

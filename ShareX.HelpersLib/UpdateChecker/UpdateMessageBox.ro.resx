@@ -123,9 +123,6 @@
   <data name="btnYes.Text" xml:space="preserve">
     <value>Da</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Nu solicitați din nou până la următoarea pornire a ShareX</value>
-  </data>
   <data name="lblViewChangelog.Text" xml:space="preserve">
     <value>Vedeți jurnalul de modificări</value>
   </data>

@@ -249,12 +249,6 @@
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Wyłącz skróty klawiszowe</value>
   </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tweetnij wiadomość...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweetnij wiadomość...</value>
-  </data>
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>Prześlij</value>
   </data>
@@ -477,9 +471,6 @@
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Serwisy obrazów</value>
   </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Ustawienia własnego serwisu plików...</value>
-  </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
     <value>Zadania po przesłaniu</value>
   </data>
@@ -609,23 +600,11 @@
   <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
     <value>Link z obrazem markdown</value>
   </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>Zmiana DNS...</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Ustawienia przeznaczenia...</value>
-  </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>Usuń zadanie z listy</value>
   </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Pełny ekran</value>
-  </data>
-  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
-    <value>Wyszukiwarka grafiki Google...</value>
-  </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Sprawdzenie haszu...</value>
   </data>
   <data name="tsmiImageEditor.Text" xml:space="preserve">
     <value>Edytor obrazu...</value>
@@ -722,12 +701,6 @@
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>Historia...</value>
-  </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Sprawdzenie haszu...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Zmiana DNS...</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
     <value>Ustawienia zadania...</value>

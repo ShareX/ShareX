@@ -252,9 +252,6 @@
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Mở...</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>Kiểm tra các bản cập nhật trước phát hành chính thức</value>
-  </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Tiện ích mở rộng Chrome</value>
   </data>
@@ -386,9 +383,6 @@
   </data>
   <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
     <value>Hiển thị tiêu đề</value>
-  </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>Sử dụng chủ đề tùy chỉnh</value>
   </data>
   <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
     <value>Sử dụng thứ tự ưu tiên của người tải lên phụ khi thử lại</value>

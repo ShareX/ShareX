@@ -32,13 +32,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Add msbuild to PATH
-        uses: microsoft/setup-msbuild@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
 
       - name: Restore NuGet packages
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: nuget restore "${{ env.SOLUTION_FILE_PATH }}" -Project2ProjectTimeOut 300
+        run: dotnet restore --runtime win-x64 "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Build
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: msbuild -m -p:Configuration="${{ matrix.configuration }}" -p:Platform="${{ matrix.platform }}" "${{ env.SOLUTION_FILE_PATH }}"
+        run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" --self-contained true /m:1 "${{ env.SOLUTION_FILE_PATH }}"

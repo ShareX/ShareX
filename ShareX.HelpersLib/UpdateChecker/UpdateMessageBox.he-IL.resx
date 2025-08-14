@@ -126,7 +126,4 @@
   <data name="lblViewChangelog.Text" xml:space="preserve">
     <value>צפה ביומן השינויים</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>אל תציג שוב עד לאתחול מחדש</value>
-  </data>
 </root>

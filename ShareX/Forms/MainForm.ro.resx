@@ -291,9 +291,6 @@
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>Setări destinație personalizată...</value>
   </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Setări destinație personalizată...</value>
-  </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Depanare</value>
   </data>
@@ -312,9 +309,6 @@
   <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
     <value>URL de ștergere</value>
   </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Setări destinație...</value>
-  </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>Setări destinație...</value>
   </data>
@@ -332,12 +326,6 @@
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Schimbător DNS...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>Schimbător DNS...</value>
   </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Donați...</value>
@@ -401,15 +389,6 @@
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Ecran complet</value>
-  </data>
-  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
-    <value>Căutare imagine pe Google...</value>
-  </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Verificare hash...</value>
-  </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Verificare hash...</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>Istoric...</value>
@@ -704,15 +683,6 @@
   </data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Instrumente</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Dați Tweet cu mesajul...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Dați Tweet cu mesajul...</value>
-  </data>
-  <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>Twitter...</value>
   </data>
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>Încărcați</value>

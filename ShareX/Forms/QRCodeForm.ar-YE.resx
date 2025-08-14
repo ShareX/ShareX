@@ -132,12 +132,6 @@
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>حفظ الصورة...</value>
   </data>
-  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
-    <value>مسح رمز QR من صورة...</value>
-  </data>
-  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
-    <value>مسح رمز QR من الشاشة...</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - رمز QR</value>
   </data>

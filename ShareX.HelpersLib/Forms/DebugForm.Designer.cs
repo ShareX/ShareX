@@ -29,88 +29,87 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DebugForm));
-            this.btnLoadedAssemblies = new System.Windows.Forms.Button();
-            this.btnCopyAll = new System.Windows.Forms.Button();
-            this.rtbDebug = new System.Windows.Forms.RichTextBox();
-            this.btnOpenLogFile = new System.Windows.Forms.Button();
-            this.llRunningFrom = new System.Windows.Forms.LinkLabel();
-            this.flpRunningFrom = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblRunningFrom = new System.Windows.Forms.Label();
-            this.btnUploadLog = new System.Windows.Forms.Button();
-            this.flpRunningFrom.SuspendLayout();
-            this.SuspendLayout();
+            btnLoadedAssemblies = new System.Windows.Forms.Button();
+            btnCopyAll = new System.Windows.Forms.Button();
+            rtbDebug = new System.Windows.Forms.RichTextBox();
+            btnOpenLogFile = new System.Windows.Forms.Button();
+            llRunningFrom = new System.Windows.Forms.LinkLabel();
+            flpRunningFrom = new System.Windows.Forms.FlowLayoutPanel();
+            lblRunningFrom = new System.Windows.Forms.Label();
+            btnUploadLog = new System.Windows.Forms.Button();
+            flpRunningFrom.SuspendLayout();
+            SuspendLayout();
             // 
             // btnLoadedAssemblies
             // 
-            resources.ApplyResources(this.btnLoadedAssemblies, "btnLoadedAssemblies");
-            this.btnLoadedAssemblies.Name = "btnLoadedAssemblies";
-            this.btnLoadedAssemblies.UseVisualStyleBackColor = true;
-            this.btnLoadedAssemblies.Click += new System.EventHandler(this.btnLoadedAssemblies_Click);
+            resources.ApplyResources(btnLoadedAssemblies, "btnLoadedAssemblies");
+            btnLoadedAssemblies.Name = "btnLoadedAssemblies";
+            btnLoadedAssemblies.UseVisualStyleBackColor = true;
+            btnLoadedAssemblies.Click += btnLoadedAssemblies_Click;
             // 
             // btnCopyAll
             // 
-            resources.ApplyResources(this.btnCopyAll, "btnCopyAll");
-            this.btnCopyAll.Name = "btnCopyAll";
-            this.btnCopyAll.UseVisualStyleBackColor = true;
-            this.btnCopyAll.Click += new System.EventHandler(this.btnCopyAll_Click);
+            resources.ApplyResources(btnCopyAll, "btnCopyAll");
+            btnCopyAll.Name = "btnCopyAll";
+            btnCopyAll.UseVisualStyleBackColor = true;
+            btnCopyAll.Click += btnCopyAll_Click;
             // 
             // rtbDebug
             // 
-            resources.ApplyResources(this.rtbDebug, "rtbDebug");
-            this.rtbDebug.BackColor = System.Drawing.SystemColors.Window;
-            this.rtbDebug.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbDebug.Name = "rtbDebug";
-            this.rtbDebug.ReadOnly = true;
-            this.rtbDebug.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbDebug_LinkClicked);
+            resources.ApplyResources(rtbDebug, "rtbDebug");
+            rtbDebug.BackColor = System.Drawing.SystemColors.Window;
+            rtbDebug.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            rtbDebug.Name = "rtbDebug";
+            rtbDebug.ReadOnly = true;
+            rtbDebug.LinkClicked += rtbDebug_LinkClicked;
             // 
             // btnOpenLogFile
             // 
-            resources.ApplyResources(this.btnOpenLogFile, "btnOpenLogFile");
-            this.btnOpenLogFile.Name = "btnOpenLogFile";
-            this.btnOpenLogFile.UseVisualStyleBackColor = true;
-            this.btnOpenLogFile.Click += new System.EventHandler(this.btnOpenLogFile_Click);
+            resources.ApplyResources(btnOpenLogFile, "btnOpenLogFile");
+            btnOpenLogFile.Name = "btnOpenLogFile";
+            btnOpenLogFile.UseVisualStyleBackColor = true;
+            btnOpenLogFile.Click += btnOpenLogFile_Click;
             // 
             // llRunningFrom
             // 
-            resources.ApplyResources(this.llRunningFrom, "llRunningFrom");
-            this.llRunningFrom.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.llRunningFrom.Name = "llRunningFrom";
+            resources.ApplyResources(llRunningFrom, "llRunningFrom");
+            llRunningFrom.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            llRunningFrom.Name = "llRunningFrom";
             // 
             // flpRunningFrom
             // 
-            resources.ApplyResources(this.flpRunningFrom, "flpRunningFrom");
-            this.flpRunningFrom.Controls.Add(this.lblRunningFrom);
-            this.flpRunningFrom.Controls.Add(this.llRunningFrom);
-            this.flpRunningFrom.Name = "flpRunningFrom";
+            resources.ApplyResources(flpRunningFrom, "flpRunningFrom");
+            flpRunningFrom.Controls.Add(lblRunningFrom);
+            flpRunningFrom.Controls.Add(llRunningFrom);
+            flpRunningFrom.Name = "flpRunningFrom";
             // 
             // lblRunningFrom
             // 
-            resources.ApplyResources(this.lblRunningFrom, "lblRunningFrom");
-            this.lblRunningFrom.Name = "lblRunningFrom";
+            resources.ApplyResources(lblRunningFrom, "lblRunningFrom");
+            lblRunningFrom.Name = "lblRunningFrom";
             // 
             // btnUploadLog
             // 
-            resources.ApplyResources(this.btnUploadLog, "btnUploadLog");
-            this.btnUploadLog.Name = "btnUploadLog";
-            this.btnUploadLog.UseVisualStyleBackColor = true;
-            this.btnUploadLog.Click += new System.EventHandler(this.btnUploadLog_Click);
+            resources.ApplyResources(btnUploadLog, "btnUploadLog");
+            btnUploadLog.Name = "btnUploadLog";
+            btnUploadLog.UseVisualStyleBackColor = true;
+            btnUploadLog.Click += btnUploadLog_Click;
             // 
             // DebugForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.btnUploadLog);
-            this.Controls.Add(this.flpRunningFrom);
-            this.Controls.Add(this.btnOpenLogFile);
-            this.Controls.Add(this.rtbDebug);
-            this.Controls.Add(this.btnCopyAll);
-            this.Controls.Add(this.btnLoadedAssemblies);
-            this.Name = "DebugForm";
-            this.flpRunningFrom.ResumeLayout(false);
-            this.flpRunningFrom.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            BackColor = System.Drawing.SystemColors.Window;
+            Controls.Add(btnUploadLog);
+            Controls.Add(flpRunningFrom);
+            Controls.Add(btnOpenLogFile);
+            Controls.Add(rtbDebug);
+            Controls.Add(btnCopyAll);
+            Controls.Add(btnLoadedAssemblies);
+            Name = "DebugForm";
+            flpRunningFrom.ResumeLayout(false);
+            flpRunningFrom.PerformLayout();
+            ResumeLayout(false);
 
         }
 

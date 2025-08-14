@@ -378,16 +378,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap jira {
-            get {
-                object obj = ResourceManager.GetObject("jira", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Issue not found.
         /// </summary>
         internal static string JiraUpload_ValidateIssueId_Issue_not_found {
@@ -782,16 +772,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Twitter {
-            get {
-                object obj = ResourceManager.GetObject("Twitter", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Tweet error.
         /// </summary>
         internal static string TwitterTweetForm_SendTweet_Tweet_error {
@@ -961,16 +941,6 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_MegaConfigureTab_Not_configured {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_MegaConfigureTab_Not_configured", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Refresh authorization is not supported..
-        /// </summary>
-        internal static string UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_s" +
-                        "upported_", resourceCulture);
             }
         }
         

@@ -177,9 +177,6 @@
   <data name="btnThemeReset.Text" xml:space="preserve">
     <value>Repor</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>Verificar actualizações beta</value>
-  </data>
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
     <value>Activar suporte para extensão do Chrome</value>
   </data>
@@ -251,9 +248,6 @@
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Usar pasta personalizada para capturas</value>
-  </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>Usar tema personalizado</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
     <value>Usar ícon branco do ShareX</value>

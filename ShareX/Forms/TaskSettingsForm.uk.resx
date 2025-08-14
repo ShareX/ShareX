@@ -363,9 +363,6 @@
   <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
     <value>Ширина:</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Затьмарювати тло, щоб легше визначати виділення (впливає на час запуску)</value>
-  </data>
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Запис екрану</value>
   </data>
@@ -578,9 +575,6 @@
   </data>
   <data name="cbShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
     <value>Показувати вікно ефектів після захвату</value>
-  </data>
-  <data name="cbDisableNotifications.Text" xml:space="preserve">
-    <value>Вимкнути сповіщення</value>
   </data>
   <data name="cbImageAutoJPEGQuality.Text" xml:space="preserve">
     <value>Автоматично адаптувати якість JPEG, щоб наблизити розмір зображення до заданого</value>

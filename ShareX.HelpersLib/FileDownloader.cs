@@ -166,11 +166,11 @@ namespace ShareX.HelpersLib
                     }
                 }
             }
-            catch (Exception e)
+            catch
             {
                 if (!IsCanceled)
                 {
-                    throw e;
+                    throw;
                 }
             }
             finally

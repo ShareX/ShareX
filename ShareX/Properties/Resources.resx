@@ -351,9 +351,6 @@ Press 'No' to cancel the current upload and disable screenshot auto uploading.</
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
     <value>FFmpeg that comes with ShareX only supports 64-bit operating systems.</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Unable to find a valid Twitter account.</value>
-  </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Uploading</value>
   </data>
@@ -745,9 +742,6 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tweet successfully sent.</value>
-  </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
     <value>ShareX needs to be restarted for the personal folder changes to apply.
 
@@ -1138,5 +1132,11 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="Play" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AboutForm_AboutForm_Donate" xml:space="preserve">
+    <value>Donate</value>
+  </data>
+  <data name="About_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\About_Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

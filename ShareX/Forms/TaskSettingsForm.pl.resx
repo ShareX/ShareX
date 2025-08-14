@@ -225,9 +225,6 @@
   <data name="btnDestinations.Text" xml:space="preserve">
     <value>Miejsca docelowe...</value>
   </data>
-  <data name="cbDisableNotifications.Text" xml:space="preserve">
-    <value>Wyłącz powiadomienia</value>
-  </data>
   <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
     <value>Wyłącz powiadomienia na pełnym ekranie</value>
   </data>
@@ -599,9 +596,6 @@
   </data>
   <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
     <value>Użyj niestandardowego tekstu informacyjnego w pobliżu kursora:</value>
-  </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Przyciemnione tło, aby można było łatwo rozróżnić wybór (wpływa na szybkość uruchamiania)</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Pokaż kursor w nagraniu</value>

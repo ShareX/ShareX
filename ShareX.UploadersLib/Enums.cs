@@ -39,8 +39,6 @@ namespace ShareX.UploadersLib
         Flickr,
         [Description("Photobucket")]
         Photobucket,
-        [Description("X")]
-        Twitter,
         [Description("Chevereto")]
         Chevereto,
         [Description("vgy.me")]
@@ -109,8 +107,6 @@ namespace ShareX.UploadersLib
         SendSpace,
         [Description("Hostr")]
         Localhostr,
-        [Description("JIRA")]
-        Jira,
         [Description("Lambda")]
         Lambda,
         [Description("Pomf")]
@@ -170,12 +166,10 @@ namespace ShareX.UploadersLib
         CustomURLShortener // Localized
     }
 
-    [Description("URL sharing services"), DefaultValue(Twitter)]
+    [Description("URL sharing services"), DefaultValue(Email)]
     public enum URLSharingServices
     {
         Email, // Localized
-        [Description("X")]
-        Twitter,
         [Description("Facebook")]
         Facebook,
         [Description("Reddit")]

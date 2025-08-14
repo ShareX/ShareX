@@ -242,9 +242,6 @@
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>{0} のタスク設定</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>有効なTwitter アカウントが見つかりません。</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>ダウンロード後にアップロードするファイルのあるURL</value>
   </data>
@@ -299,9 +296,6 @@
   </data>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>プロジェクト ページ</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>ツイートを送信しました。</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>ファイル「{0}」にアクセスできません。
@@ -494,15 +488,6 @@ ShareX を再起動しますか？</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>スタートアップの設定は組織によって有効にされています</value>
-  </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>OCR実行中</value>
-  </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>OCR処理中にエラーが発生。またはテキストがありません。</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>OCRの結果をクリップボードにコピーしました。</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
     <value>クリップボード内のデータ：画像（サイズ：{0}x{1}）</value>
