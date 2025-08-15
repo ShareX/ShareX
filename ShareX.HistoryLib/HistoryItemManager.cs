@@ -643,15 +643,25 @@ namespace ShareX.HistoryLib
 
         public void RenameFile()
         {
-            // TODO: Translate
-            string newFileName = InputBox.Show("Rename file", HistoryItem.FileName);
-
-            if (!string.IsNullOrEmpty(newFileName) && !HistoryItem.FileName.Equals(newFileName, StringComparison.OrdinalIgnoreCase))
+            if (!string.IsNullOrEmpty(HistoryItem.FilePath))
             {
-                HistoryItem.FileName = newFileName;
-                string newFilePath = FileHelpers.RenameFile(HistoryItem.FilePath, newFileName);
-                HistoryItem.FilePath = newFilePath;
-                OnEditRequested(HistoryItem);
+                string oldFileName = Path.GetFileNameWithoutExtension(HistoryItem.FilePath);
+
+                // TODO: Translate
+                string newFileName = InputBox.Show("Rename file", oldFileName);
+
+                if (!string.IsNullOrEmpty(newFileName) && !oldFileName.Equals(newFileName, StringComparison.OrdinalIgnoreCase))
+                {
+                    if (Path.HasExtension(HistoryItem.FilePath))
+                    {
+                        newFileName += Path.GetExtension(HistoryItem.FilePath);
+                    }
+
+                    HistoryItem.FileName = newFileName;
+                    string newFilePath = FileHelpers.RenameFile(HistoryItem.FilePath, newFileName);
+                    HistoryItem.FilePath = newFilePath;
+                    OnEditRequested(HistoryItem);
+                }
             }
         }
 
