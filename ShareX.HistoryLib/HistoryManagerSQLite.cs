@@ -46,7 +46,10 @@ namespace ShareX.HistoryLib
             FileHelpers.CreateDirectoryFromFilePath(filePath);
 
             string connectionString = $"Data Source={filePath};Version=3;";
-            connection = new SQLiteConnection(connectionString);
+            connection = new SQLiteConnection(connectionString)
+            {
+                ParseViaFramework = true
+            };
             connection.Open();
 
             SetBusyTimeout(5000);
