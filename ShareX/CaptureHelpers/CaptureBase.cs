@@ -28,6 +28,7 @@ using System;
 using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ShareX
 {
@@ -123,6 +124,11 @@ namespace ShareX
         {
             if (metadata != null && metadata.Image != null)
             {
+                if (HelpersOptions.ClearClipboardAfterCapture)
+                {
+                    Clipboard.Clear();
+                }
+
                 TaskHelpers.PlayNotificationSoundAsync(NotificationSound.Capture, taskSettings);
 
                 if (taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage) && !AllowAnnotation)
