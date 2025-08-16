@@ -235,7 +235,7 @@ namespace ShareX
         [Category("Image"), DefaultValue(false), Description("Strip color space information chunks from PNG image.")]
         public bool PNGStripColorSpaceInformation { get; set; }
 
-        [Category("Upload"), DefaultValue(false), Description("Can be used to disable uploading application wide.")]
+        [Category("Upload"), DefaultValue(true), Description("Can be used to disable uploading application wide.")]
         public bool DisableUpload { get; set; }
 
         [Category("Upload"), DefaultValue(true), Description("Ignore emojis while URL encoding upload results.")]
