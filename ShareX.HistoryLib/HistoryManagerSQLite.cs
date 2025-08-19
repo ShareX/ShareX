@@ -124,8 +124,6 @@ CREATE TABLE IF NOT EXISTS History (
             {
                 foreach (HistoryItem item in historyItems)
                 {
-                    long newId;
-
                     using (SQLiteCommand cmd = connection.CreateCommand())
                     {
                         cmd.CommandText = @"
@@ -143,7 +141,7 @@ SELECT last_insert_rowid();";
                         cmd.Parameters.AddWithValue("@DeletionURL", item.DeletionURL);
                         cmd.Parameters.AddWithValue("@ShortenedURL", item.ShortenedURL);
                         cmd.Parameters.AddWithValue("@Tags", item.Tags != null ? JsonConvert.SerializeObject(item.Tags) : null);
-                        newId = (long)cmd.ExecuteScalar();
+                        item.Id = (long)cmd.ExecuteScalar();
                     }
                 }
 
