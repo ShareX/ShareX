@@ -376,7 +376,7 @@
     <value>У черзі</value>
   </data>
   <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
-    <value>Вивантаження файла</value>
+    <value>Вивантаження файлу</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>Ви впевнені, що хочете вивантажити знімок?
@@ -642,5 +642,8 @@
   </data>
   <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
     <value>Функція оптичного розпізнавання тексту доступна лише у Windows версії {0} або новішої.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Donate" xml:space="preserve">
+    <value>Задонатити</value>
   </data>
 </root>

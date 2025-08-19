@@ -121,7 +121,7 @@
     <value>Зберегти...</value>
   </data>
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
-    <value>З файла...</value>
+    <value>З файлу...</value>
   </data>
   <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
     <value>З буфера обміну</value>

@@ -657,4 +657,7 @@
   <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
     <value>Інформаційний текст для вибору кольору екрана:</value>
   </data>
+  <data name="cbCaptureAutoHideDesktopIcons.Text" xml:space="preserve">
+    <value>Автоматично приховувати піктограми на робочому столі</value>
+  </data>
 </root>
