@@ -132,4 +132,13 @@
   <data name="tsbSettings.Text" xml:space="preserve">
     <value>Настройки...</value>
   </data>
+  <data name="tsbFavorites.Text" xml:space="preserve">
+    <value>Избранное</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>Показать статистику...</value>
+  </data>
+  <data name="tsbImportFolder.Text" xml:space="preserve">
+    <value>Импортировать папку...</value>
+  </data>
 </root>
