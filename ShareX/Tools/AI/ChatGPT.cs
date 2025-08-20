@@ -137,7 +137,7 @@ namespace ShareX
 
             if (result.output != null && result.output.Length > 0)
             {
-                return result.output[1].content[0].text;
+                return result.output[0].content?[0].text ?? result.output[1].content?[0].text ?? "";
             }
 
             return "";

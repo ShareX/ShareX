@@ -52,6 +52,11 @@ namespace ShareX
             txtInput.Text = Options.Input;
         }
 
+        private void UpdateControls()
+        {
+            btnAnalyze.Enabled = !string.IsNullOrEmpty(txtAPIKey.Text) && !string.IsNullOrEmpty(txtImage.Text);
+        }
+
         private void cbModel_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.Model = cbModel.SelectedItem.ToString();
@@ -60,11 +65,17 @@ namespace ShareX
         private void txtAPIKey_TextChanged(object sender, EventArgs e)
         {
             Options.ChatGPTAPIKey = txtAPIKey.Text;
+            UpdateControls();
         }
 
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
             Options.Input = txtInput.Text;
+        }
+
+        private void txtImage_TextChanged(object sender, EventArgs e)
+        {
+            UpdateControls();
         }
 
         private void btnImageBrowse_Click(object sender, EventArgs e)

@@ -96,9 +96,11 @@
             txtImage.Name = "txtImage";
             txtImage.Size = new System.Drawing.Size(224, 22);
             txtImage.TabIndex = 7;
+            txtImage.TextChanged += txtImage_TextChanged;
             // 
             // btnAnalyze
             // 
+            btnAnalyze.Enabled = false;
             btnAnalyze.Location = new System.Drawing.Point(16, 512);
             btnAnalyze.Name = "btnAnalyze";
             btnAnalyze.Size = new System.Drawing.Size(264, 32);
