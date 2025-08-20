@@ -207,6 +207,8 @@ namespace ShareX
                 tsddbUpload.Visible = false;
                 tsddbAfterUploadTasks.Visible = false;
                 tsddbDestinations.Visible = false;
+                tsbDestinationSettings.Visible = false;
+                tsbCustomUploaderSettings.Visible = false;
                 tsmiTestImageUpload.Visible = false;
                 tsmiTestTextUpload.Visible = false;
                 tsmiTestFileUpload.Visible = false;
@@ -216,6 +218,8 @@ namespace ShareX
                 tsmiTrayUpload.Visible = false;
                 tsmiTrayAfterUploadTasks.Visible = false;
                 tsmiTrayDestinations.Visible = false;
+                tsmiTrayDestinationSettings.Visible = false;
+                tsmiTrayCustomUploaderSettings.Visible = false;
 
                 tsmiUploadSelectedFile.Visible = false;
                 tsmiShortenSelectedURL.Visible = false;
