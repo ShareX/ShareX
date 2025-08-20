@@ -2411,8 +2411,6 @@ namespace ShareX.HelpersLib
 
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.SetHighQuality();
-
                 for (int i = 0; i < imageCount; i++)
                 {
                     Bitmap image = images[i];
