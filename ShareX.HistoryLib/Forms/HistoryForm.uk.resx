@@ -177,4 +177,10 @@
   <data name="tsbAdvancedSearch.Text" xml:space="preserve">
     <value>Розширений пошук...</value>
   </data>
+  <data name="tsbFavorites.Text" xml:space="preserve">
+    <value>Обране</value>
+  </data>
+  <data name="tsbImportFolder.Text" xml:space="preserve">
+    <value>Імпортувати теку...</value>
+  </data>
 </root>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -59,7 +59,7 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -118,33 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — QR-код</value>
+    <value>ShareX — Імпортувати теку</value>
   </data>
-  <data name="btnUploadImage.Text" xml:space="preserve">
-    <value>Вивантажити зображення</value>
+  <data name="cbSkipDuplicates.Text" xml:space="preserve">
+    <value>Пропускати дублікати файлів</value>
   </data>
-  <data name="btnCopyImage.Text" xml:space="preserve">
-    <value>Копіювати зображення</value>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Імпортувати</value>
   </data>
-  <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>Зберегти зображення...</value>
+  <data name="cbOnlyImportImageFiles.Text" xml:space="preserve">
+    <value>Імпортувати лише файли зображень</value>
   </data>
-  <data name="lblQRCode.Text" xml:space="preserve">
-    <value>QR-код:</value>
+  <data name="lblFolderPath.Text" xml:space="preserve">
+    <value>Шлях до теки:</value>
   </data>
-  <data name="lblQRCodeSize.Text" xml:space="preserve">
-    <value>Розмір QR-коду:</value>
-  </data>
-  <data name="lblText.Text" xml:space="preserve">
-    <value>Текст:</value>
-  </data>
-  <data name="btnScanScreen.Text" xml:space="preserve">
-    <value>Сканувати з екрану</value>
-  </data>
-  <data name="btnScanImageFile.Text" xml:space="preserve">
-    <value>Сканувати з файлу зображення...</value>
-  </data>
-  <data name="btnScanRegion.Text" xml:space="preserve">
-    <value>Сканувати область...</value>
+  <data name="btnBrowse.Text" xml:space="preserve">
+    <value>Огляд...</value>
   </data>
 </root>

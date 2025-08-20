@@ -319,7 +319,7 @@
     <value>Перевірка вивантаження тексту</value>
   </data>
   <data name="tsmiTestFileUpload.Text" xml:space="preserve">
-    <value>Перевірка вивантаження файла</value>
+    <value>Перевірка вивантаження файлу</value>
   </data>
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
     <value>Перевірка скорочення посилання</value>
@@ -424,7 +424,7 @@
     <value>Позначити зображення з посиланням</value>
   </data>
   <data name="tsmiCopyFilePath.Text" xml:space="preserve">
-    <value>Шлях до файла</value>
+    <value>Шлях до файлу</value>
   </data>
   <data name="tsmiCopyFileName.Text" xml:space="preserve">
     <value>Назва файлу</value>
@@ -631,7 +631,7 @@
     <value>Служби обміну посиланнями</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
-    <value>Параметри призначення...</value>
+    <value>Налаштування призначень...</value>
   </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>Налаштування власних вивантажувачів...</value>
@@ -749,5 +749,17 @@
   </data>
   <data name="tsbX.Text" xml:space="preserve">
     <value>Слідкуйте за @ShareX...</value>
+  </data>
+  <data name="tsmiMetadata.Text" xml:space="preserve">
+    <value>Метадані...</value>
+  </data>
+  <data name="tsmiTrayMetadata.Text" xml:space="preserve">
+    <value>Метадані...</value>
+  </data>
+  <data name="tsbDestinationSettings.Text" xml:space="preserve">
+    <value>Налаштування призначень...</value>
+  </data>
+  <data name="tsbCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Налаштування власних вивантажувачів...</value>
   </data>
 </root>
