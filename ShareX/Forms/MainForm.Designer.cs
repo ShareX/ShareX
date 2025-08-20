@@ -91,6 +91,7 @@
             tsmiVideoConverter = new System.Windows.Forms.ToolStripMenuItem();
             tsmiVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             tssTools3 = new System.Windows.Forms.ToolStripSeparator();
+            tsmiAI = new System.Windows.Forms.ToolStripMenuItem();
             tsmiOCR = new System.Windows.Forms.ToolStripMenuItem();
             tsmiQRCode = new System.Windows.Forms.ToolStripMenuItem();
             tsmiHashChecker = new System.Windows.Forms.ToolStripMenuItem();
@@ -291,6 +292,7 @@
             pMain = new System.Windows.Forms.Panel();
             pHotkeys = new System.Windows.Forms.Panel();
             ucTaskThumbnailView = new TaskThumbnailView();
+            tsmiTrayAI = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)scMain).BeginInit();
             scMain.Panel1.SuspendLayout();
             scMain.Panel2.SuspendLayout();
@@ -595,7 +597,7 @@
             // 
             // tsddbTools
             // 
-            tsddbTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiColorPicker, tsmiScreenColorPicker, tsmiRuler, tsmiPinToScreen, tssTools1, tsmiImageEditor, tsmiImageBeautifier, tsmiImageEffects, tsmiImageViewer, tsmiImageCombiner, tsmiImageSplitter, tsmiImageThumbnailer, tssTools2, tsmiVideoConverter, tsmiVideoThumbnailer, tssTools3, tsmiOCR, tsmiQRCode, tsmiHashChecker, tsmiMetadata, tsmiIndexFolder, tssTools4, tsmiClipboardViewer, tsmiBorderlessWindow, tsmiInspectWindow, tsmiMonitorTest });
+            tsddbTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiColorPicker, tsmiScreenColorPicker, tsmiRuler, tsmiPinToScreen, tssTools1, tsmiImageEditor, tsmiImageBeautifier, tsmiImageEffects, tsmiImageViewer, tsmiImageCombiner, tsmiImageSplitter, tsmiImageThumbnailer, tssTools2, tsmiVideoConverter, tsmiVideoThumbnailer, tssTools3, tsmiAI, tsmiOCR, tsmiQRCode, tsmiHashChecker, tsmiMetadata, tsmiIndexFolder, tssTools4, tsmiClipboardViewer, tsmiBorderlessWindow, tsmiInspectWindow, tsmiMonitorTest });
             tsddbTools.Image = Properties.Resources.toolbox;
             resources.ApplyResources(tsddbTools, "tsddbTools");
             tsddbTools.Name = "tsddbTools";
@@ -705,6 +707,13 @@
             // 
             tssTools3.Name = "tssTools3";
             resources.ApplyResources(tssTools3, "tssTools3");
+            // 
+            // tsmiAI
+            // 
+            tsmiAI.Image = Properties.Resources.robot;
+            tsmiAI.Name = "tsmiAI";
+            resources.ApplyResources(tsmiAI, "tsmiAI");
+            tsmiAI.Click += tsmiAI_Click;
             // 
             // tsmiOCR
             // 
@@ -1599,7 +1608,7 @@
             // 
             // tsmiTrayTools
             // 
-            tsmiTrayTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiTrayColorPicker, tsmiTrayScreenColorPicker, tsmiTrayRuler, tsmiTrayPinToScreen, tssTrayTools1, tsmiTrayImageEditor, tsmiTrayImageBeautifier, tsmiTrayImageEffects, tsmiTrayImageViewer, tsmiTrayImageCombiner, tsmiTrayImageSplitter, tsmiTrayImageThumbnailer, tssTrayTools2, tsmiTrayVideoConverter, tsmiTrayVideoThumbnailer, tssTrayTools3, tsmiTrayOCR, tsmiTrayQRCode, tsmiTrayHashChecker, tsmiTrayMetadata, tsmiTrayIndexFolder, tssTrayTools4, tsmiTrayClipboardViewer, tsmiTrayBorderlessWindow, tsmiTrayInspectWindow, tsmiTrayMonitorTest });
+            tsmiTrayTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiTrayColorPicker, tsmiTrayScreenColorPicker, tsmiTrayRuler, tsmiTrayPinToScreen, tssTrayTools1, tsmiTrayImageEditor, tsmiTrayImageBeautifier, tsmiTrayImageEffects, tsmiTrayImageViewer, tsmiTrayImageCombiner, tsmiTrayImageSplitter, tsmiTrayImageThumbnailer, tssTrayTools2, tsmiTrayVideoConverter, tsmiTrayVideoThumbnailer, tssTrayTools3, tsmiTrayAI, tsmiTrayOCR, tsmiTrayQRCode, tsmiTrayHashChecker, tsmiTrayMetadata, tsmiTrayIndexFolder, tssTrayTools4, tsmiTrayClipboardViewer, tsmiTrayBorderlessWindow, tsmiTrayInspectWindow, tsmiTrayMonitorTest });
             tsmiTrayTools.Image = Properties.Resources.toolbox;
             tsmiTrayTools.Name = "tsmiTrayTools";
             resources.ApplyResources(tsmiTrayTools, "tsmiTrayTools");
@@ -2053,6 +2062,13 @@
             ucTaskThumbnailView.SelectedPanelChanged += ucTaskThumbnailView_SelectedPanelChanged;
             ucTaskThumbnailView.KeyDown += lvUploads_KeyDown;
             // 
+            // tsmiTrayAI
+            // 
+            tsmiTrayAI.Image = Properties.Resources.robot;
+            tsmiTrayAI.Name = "tsmiTrayAI";
+            resources.ApplyResources(tsmiTrayAI, "tsmiTrayAI");
+            tsmiTrayAI.Click += tsmiAI_Click;
+            // 
             // MainForm
             // 
             AllowDrop = true;
@@ -2349,5 +2365,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayDestinationSettings;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayCustomUploaderSettings;
         private System.Windows.Forms.ToolStripSeparator tssTray4;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAI;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayAI;
     }
 }

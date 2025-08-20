@@ -1465,6 +1465,14 @@ namespace ShareX
             new BingVisualSearchSharingService().CreateSharer(null, null).ShareURL(url);
         }
 
+        public static void OpenAI(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            AIForm aiForm = new AIForm(taskSettings.ToolsSettingsReference.AIOptions);
+            aiForm.Show();
+        }
+
         public static async Task OCRImage(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();

@@ -1776,6 +1776,11 @@ namespace ShareX
             TaskHelpers.OpenVideoThumbnailer();
         }
 
+        private void tsmiAI_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenAI();
+        }
+
         private async void tsmiOCR_Click(object sender, EventArgs e)
         {
             Hide();

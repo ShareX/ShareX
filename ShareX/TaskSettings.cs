@@ -463,6 +463,7 @@ namespace ShareX
         public VideoConverterOptions VideoConverterOptions = new VideoConverterOptions();
         public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
         public BorderlessWindowSettings BorderlessWindowSettings = new BorderlessWindowSettings();
+        public AIOptions AIOptions = new AIOptions();
     }
 
     public class TaskSettingsAdvanced
