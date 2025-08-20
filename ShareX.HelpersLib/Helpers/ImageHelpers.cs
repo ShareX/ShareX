@@ -507,13 +507,11 @@ namespace ShareX.HelpersLib
 
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.SetHighQuality();
                 g.DrawImage(img, margin.Left, margin.Top, img.Width, img.Height);
 
                 if (canvasColor.A > 0)
                 {
                     g.CompositingMode = CompositingMode.SourceCopy;
-                    g.SmoothingMode = SmoothingMode.None;
 
                     using (Brush brush = new SolidBrush(canvasColor))
                     {
@@ -1238,7 +1236,6 @@ namespace ShareX.HelpersLib
 
                     using (Graphics g = Graphics.FromImage(bmpResult))
                     {
-                        g.SetHighQuality();
                         g.DrawImage(bmpShadow, -size + offset.X, -size + offset.Y, bmpShadow.Width, bmpShadow.Height);
                         g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
                     }
