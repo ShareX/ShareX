@@ -81,6 +81,9 @@ namespace ShareX
             {
                 btnAnalyze.Enabled = false;
                 Cursor = Cursors.WaitCursor;
+                txtResult.Cursor = Cursors.WaitCursor;
+                // TODO: Translate
+                txtResult.Text = "Thinking...";
 
                 try
                 {
@@ -97,6 +100,7 @@ namespace ShareX
                 {
                     btnAnalyze.Enabled = true;
                     Cursor = Cursors.Default;
+                    txtResult.Cursor = Cursors.Default;
                 }
             }
         }

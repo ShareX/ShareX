@@ -138,7 +138,18 @@ namespace ShareX
 
             if (result.output != null && result.output.Length > 0)
             {
-                return result.output[0].content?[0].text ?? result.output[1].content?[0].text ?? "";
+                for (int i = 0; i < result.output.Length; i++)
+                {
+                    if (result.output[i].content != null && result.output[i].content.Length > 0)
+                    {
+                        string text = result.output[i].content[0].text;
+
+                        if (!string.IsNullOrEmpty(text))
+                        {
+                            return text;
+                        }
+                    }
+                }
             }
 
             return "";

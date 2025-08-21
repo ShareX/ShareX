@@ -186,10 +186,10 @@
             tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             tsmiShareSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiAnalyzeImage = new System.Windows.Forms.ToolStripMenuItem();
             tsmiGoogleLens = new System.Windows.Forms.ToolStripMenuItem();
             tsmiBingVisualSearch = new System.Windows.Forms.ToolStripMenuItem();
             tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
-            tsmiAnalyzeImage = new System.Windows.Forms.ToolStripMenuItem();
             tsmiOCRImage = new System.Windows.Forms.ToolStripMenuItem();
             tsmiCombineImages = new System.Windows.Forms.ToolStripMenuItem();
             tsmiCombineImagesHorizontally = new System.Windows.Forms.ToolStripMenuItem();
@@ -1316,6 +1316,13 @@
             tsmiShareSelectedURL.Name = "tsmiShareSelectedURL";
             resources.ApplyResources(tsmiShareSelectedURL, "tsmiShareSelectedURL");
             // 
+            // tsmiAnalyzeImage
+            // 
+            tsmiAnalyzeImage.Image = Properties.Resources.robot;
+            tsmiAnalyzeImage.Name = "tsmiAnalyzeImage";
+            resources.ApplyResources(tsmiAnalyzeImage, "tsmiAnalyzeImage");
+            tsmiAnalyzeImage.Click += tsmiAnalyzeImage_Click;
+            // 
             // tsmiGoogleLens
             // 
             tsmiGoogleLens.Image = Properties.Resources.Google_Lens;
@@ -1336,13 +1343,6 @@
             tsmiShowQRCode.Name = "tsmiShowQRCode";
             resources.ApplyResources(tsmiShowQRCode, "tsmiShowQRCode");
             tsmiShowQRCode.Click += tsmiShowQRCode_Click;
-            // 
-            // tsmiAnalyzeImage
-            // 
-            tsmiAnalyzeImage.Image = Properties.Resources.robot;
-            tsmiAnalyzeImage.Name = "tsmiAnalyzeImage";
-            resources.ApplyResources(tsmiAnalyzeImage, "tsmiAnalyzeImage");
-            tsmiAnalyzeImage.Click += tsmiAnalyzeImage_Click;
             // 
             // tsmiOCRImage
             // 

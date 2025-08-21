@@ -557,7 +557,7 @@
     <value>184, 22</value>
   </data>
   <data name="tsmiAI.Text" xml:space="preserve">
-    <value>AI...</value>
+    <value>Analyze image...</value>
   </data>
   <data name="tsmiOCR.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1613,7 +1613,7 @@
     <value>184, 22</value>
   </data>
   <data name="tsmiTrayAI.Text" xml:space="preserve">
-    <value>AI...</value>
+    <value>Analyze image...</value>
   </data>
   <data name="tsmiTrayOCR.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -2914,6 +2914,12 @@
   <data name="&gt;&gt;tsmiShareSelectedURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiAnalyzeImage.Name" xml:space="preserve">
+    <value>tsmiAnalyzeImage</value>
+  </data>
+  <data name="&gt;&gt;tsmiAnalyzeImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiGoogleLens.Name" xml:space="preserve">
     <value>tsmiGoogleLens</value>
   </data>
@@ -2930,12 +2936,6 @@
     <value>tsmiShowQRCode</value>
   </data>
   <data name="&gt;&gt;tsmiShowQRCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiAnalyzeImage.Name" xml:space="preserve">
-    <value>tsmiAnalyzeImage</value>
-  </data>
-  <data name="&gt;&gt;tsmiAnalyzeImage.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiOCRImage.Name" xml:space="preserve">
