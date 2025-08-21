@@ -24,8 +24,10 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib;
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -73,14 +75,24 @@ namespace ShareX
             btnAnalyze.Enabled = !string.IsNullOrEmpty(txtAPIKey.Text) && !string.IsNullOrEmpty(txtImage.Text);
         }
 
-        private async Task AnalyzeImage()
+        private async Task AnalyzeImage(bool isCapture = false)
         {
             txtResult.Clear();
             lblTimer.ResetText();
-            string imagePath = txtImage.Text;
-            pbImage.LoadImageFromFile(imagePath);
 
-            if (!string.IsNullOrEmpty(Options.ChatGPTAPIKey) && !string.IsNullOrEmpty(imagePath))
+            string imagePath = null;
+
+            if (!isCapture)
+            {
+                imagePath = txtImage.Text;
+                pbImage.LoadImageFromFile(imagePath);
+                if (string.IsNullOrEmpty(imagePath))
+                {
+                    return;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Options.ChatGPTAPIKey))
             {
                 btnAnalyze.Enabled = false;
                 Cursor = Cursors.WaitCursor;
@@ -92,7 +104,16 @@ namespace ShareX
                 try
                 {
                     ChatGPT chatGPT = new ChatGPT(Options.ChatGPTAPIKey, Options.Model);
-                    string result = await chatGPT.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort);
+                    string result = null;
+                    if (isCapture)
+                    {
+                        result = await chatGPT.AnalyzeImage(pbImage.Image, Options.Input, Options.ReasoningEffort);
+                    }
+                    else
+                    {
+                        result = await chatGPT.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort);
+                    }
+                    // TODO: Translate
                     lblTimer.Text = $"Time: {timer.ElapsedMilliseconds} ms";
                     txtResult.Text = result.Replace("\n", "\r\n");
                 }
@@ -173,6 +194,21 @@ namespace ShareX
         private async void btnAnalyze_Click(object sender, EventArgs e)
         {
             await AnalyzeImage();
+        }
+
+        private async void btnCapture_Click(object sender, EventArgs e)
+        {
+            FormWindowState previousState = WindowState;
+            WindowState = FormWindowState.Minimized;
+            await Task.Delay(250);
+            Bitmap regionImage = RegionCaptureTasks.GetRegionImage();
+            WindowState = previousState;
+
+            if (regionImage != null)
+            {
+                pbImage.LoadImage(regionImage);
+                await AnalyzeImage(true);
+            }
         }
     }
 }

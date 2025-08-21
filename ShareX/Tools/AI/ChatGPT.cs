@@ -25,6 +25,8 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -95,13 +97,33 @@ namespace ShareX
 
         public async Task<string> AnalyzeImage(string filePath, string input = null, string reasoningEffort = null)
         {
-            HttpClient httpClient = HttpClientFactory.Create();
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", APIKey);
-
             string mimeType = MimeTypes.GetMimeTypeFromFileName(filePath);
             byte[] imageBytes = await File.ReadAllBytesAsync(filePath);
             string base64Image = Convert.ToBase64String(imageBytes);
             string imageDataUri = $"data:{mimeType};base64,{base64Image}";
+
+            return await AnalyzeImageInternal(imageDataUri, input, reasoningEffort);
+        }
+
+        public async Task<string> AnalyzeImage(Image image, string input = null, string reasoningEffort = null)
+        {
+            string imageDataUri;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, ImageFormat.Png);
+                byte[] imageBytes = ms.ToArray();
+                string base64Image = Convert.ToBase64String(imageBytes);
+                imageDataUri = $"data:image/png;base64,{base64Image}";
+            }
+
+            return await AnalyzeImageInternal(imageDataUri, input, reasoningEffort);
+        }
+
+        private async Task<string> AnalyzeImageInternal(string imageDataUri, string input = null, string reasoningEffort = null)
+        {
+            HttpClient httpClient = HttpClientFactory.Create();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", APIKey);
 
             if (string.IsNullOrEmpty(input))
             {

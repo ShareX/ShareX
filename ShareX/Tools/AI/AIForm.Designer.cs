@@ -44,6 +44,7 @@
             lblReasoningEffort = new System.Windows.Forms.Label();
             cbReasoningEffort = new System.Windows.Forms.ComboBox();
             lblTimer = new System.Windows.Forms.Label();
+            btnCapture = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // lblModel
@@ -96,7 +97,7 @@
             btnAnalyze.Enabled = false;
             btnAnalyze.Location = new System.Drawing.Point(16, 568);
             btnAnalyze.Name = "btnAnalyze";
-            btnAnalyze.Size = new System.Drawing.Size(264, 32);
+            btnAnalyze.Size = new System.Drawing.Size(224, 32);
             btnAnalyze.TabIndex = 12;
             btnAnalyze.Text = "Analyze image";
             btnAnalyze.UseVisualStyleBackColor = true;
@@ -202,12 +203,23 @@
             lblTimer.TabIndex = 15;
             lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnCapture
+            // 
+            btnCapture.Image = Properties.Resources.camera;
+            btnCapture.Location = new System.Drawing.Point(248, 568);
+            btnCapture.Name = "btnCapture";
+            btnCapture.Size = new System.Drawing.Size(32, 32);
+            btnCapture.TabIndex = 16;
+            btnCapture.UseVisualStyleBackColor = true;
+            btnCapture.Click += btnCapture_Click;
+            // 
             // AIForm
             // 
             AllowDrop = true;
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(928, 616);
+            Controls.Add(btnCapture);
             Controls.Add(txtResult);
             Controls.Add(lblTimer);
             Controls.Add(cbReasoningEffort);
@@ -255,5 +267,6 @@
         private System.Windows.Forms.Label lblReasoningEffort;
         private System.Windows.Forms.ComboBox cbReasoningEffort;
         private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Button btnCapture;
     }
 }
