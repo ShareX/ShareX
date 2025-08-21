@@ -735,4 +735,88 @@
   <data name="tsmiTrayImageBeautifier.Text" xml:space="preserve">
     <value>Upiększacz obrazu...</value>
   </data>
+  <data name="tsmiAI.Text" xml:space="preserve">
+    <value>Analizuj obraz...</value>
+  </data>
+  <data name="tsmiHashChecker.Text" xml:space="preserve">
+    <value>Sprawdzanie hashów...</value>
+  </data>
+  <data name="tsmiMetadata.Text" xml:space="preserve">
+    <value>Metadane...</value>
+  </data>
+  <data name="tsbDestinationSettings.Text" xml:space="preserve">
+    <value>Ustawienia miejsca docelowego...</value>
+  </data>
+  <data name="tsbCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Ustawienia własnego uploadu...</value>
+  </data>
+  <data name="tsbX.Text" xml:space="preserve">
+    <value>Zaobserwuj @ShareX...</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Discord...</value>
+  </data>
+  <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Enter</value>
+  </data>
+  <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Enter</value>
+  </data>
+  <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+C</value>
+  </data>
+  <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+C</value>
+  </data>
+  <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Alt+C</value>
+  </data>
+  <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Shift+C</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+U</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+D</value>
+  </data>
+  <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+E</value>
+  </data>
+  <data name="tsmiPinSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+P</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Del</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Del</value>
+  </data>
+  <data name="tsmiAnalyzeImage.Text" xml:space="preserve">
+    <value>Analizuj obraz...</value>
+  </data>
+  <data name="tsmiGoogleLens.Text" xml:space="preserve">
+    <value>Google Lens...</value>
+  </data>
+  <data name="tsmiTrayAI.Text" xml:space="preserve">
+    <value>Analizuj obraz...</value>
+  </data>
+  <data name="tsmiTrayHashChecker.Text" xml:space="preserve">
+    <value>Sprawdzanie hashów...</value>
+  </data>
+  <data name="tsmiTrayMetadata.Text" xml:space="preserve">
+    <value>Metadane...</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
+  </data>
+  <data name="cDescription.HeaderText" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="cHotkey.HeaderText" xml:space="preserve">
+    <value>Skrót klawiszowy</value>
+  </data>
 </root>
