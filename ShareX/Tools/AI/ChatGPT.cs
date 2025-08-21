@@ -94,7 +94,8 @@ namespace ShareX
 
             byte[] imageBytes = await File.ReadAllBytesAsync(filePath);
             string base64Image = Convert.ToBase64String(imageBytes);
-            string imageDataUri = $"data:image/png;base64,{base64Image}";
+            string mimeType = MimeTypes.GetMimeTypeFromFileName(filePath);
+            string imageDataUri = $"data:{mimeType};base64,{base64Image}";
 
             if (string.IsNullOrEmpty(input))
             {
