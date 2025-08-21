@@ -639,4 +639,25 @@
   <data name="tpOCR.Text" xml:space="preserve">
     <value>OCR</value>
   </data>
+  <data name="cbUseCustomActionCompletedSound.Text" xml:space="preserve">
+    <value>Użyj własnego dźwięku zakończenia akcji:</value>
+  </data>
+  <data name="cbPlaySoundAfterAction.Text" xml:space="preserve">
+    <value>Odtwórz dźwięk po zakończeniu akcji</value>
+  </data>
+  <data name="cbUseRandomImageEffect.Text" xml:space="preserve">
+    <value>Użyj losowego efektu obrazu</value>
+  </data>
+  <data name="cbCaptureAutoHideDesktopIcons.Text" xml:space="preserve">
+    <value>Automatycznie ukrywaj ikony pulpitu</value>
+  </data>
+  <data name="lblCaptureCustomWindow.Text" xml:space="preserve">
+    <value>Predefiniowany tytuł okna:</value>
+  </data>
+  <data name="lblRegionCaptureBackgroundDimStrength.Text" xml:space="preserve">
+    <value>Siła przyciemnienia tła:</value>
+  </data>
+  <data name="cbCloseWindowAfterOpenServiceLink.Text" xml:space="preserve">
+    <value>Zamknij okno OCR po otwarciu linku do usługi</value>
+  </data>
 </root>
