@@ -163,7 +163,7 @@
     <value>Kolor...</value>
   </data>
   <data name="lblShadowOpacity.Text" xml:space="preserve">
-    <value>Nieprzezroczystość:</value>
+    <value>Przezroczystość:</value>
   </data>
   <data name="lblShadowDistance.Text" xml:space="preserve">
     <value>Odległość:</value>
