@@ -40,8 +40,7 @@
             lblResult = new System.Windows.Forms.Label();
             txtResult = new System.Windows.Forms.TextBox();
             btnImageBrowse = new System.Windows.Forms.Button();
-            pbImage = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pbImage).BeginInit();
+            pbImage = new ShareX.HelpersLib.MyPictureBox();
             SuspendLayout();
             // 
             // lblModel
@@ -160,13 +159,16 @@
             // 
             // pbImage
             // 
+            pbImage.BackColor = System.Drawing.SystemColors.Window;
             pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pbImage.DrawCheckeredBackground = true;
+            pbImage.FullscreenOnClick = true;
             pbImage.Location = new System.Drawing.Point(16, 240);
+            pbImage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pbImage.Name = "pbImage";
+            pbImage.PictureBoxBackColor = System.Drawing.SystemColors.Window;
             pbImage.Size = new System.Drawing.Size(264, 264);
-            pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pbImage.TabIndex = 12;
-            pbImage.TabStop = false;
+            pbImage.TabIndex = 13;
             // 
             // AIForm
             // 
@@ -196,7 +198,6 @@
             Shown += AIForm_Shown;
             DragDrop += AIForm_DragDrop;
             DragEnter += AIForm_DragEnter;
-            ((System.ComponentModel.ISupportInitialize)pbImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -215,6 +216,6 @@
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button btnImageBrowse;
-        private System.Windows.Forms.PictureBox pbImage;
+        private HelpersLib.MyPictureBox pbImage;
     }
 }

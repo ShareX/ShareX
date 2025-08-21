@@ -60,7 +60,7 @@ namespace ShareX
             if (!string.IsNullOrEmpty(filePath))
             {
                 txtImage.Text = filePath;
-                pbImage.ImageLocation = filePath;
+                pbImage.LoadImageFromFile(filePath);
                 UpdateControls();
                 autoStart = true;
             }
@@ -75,7 +75,7 @@ namespace ShareX
         {
             txtResult.Clear();
             string imagePath = txtImage.Text;
-            pbImage.ImageLocation = imagePath;
+            pbImage.LoadImageFromFile(imagePath);
 
             if (!string.IsNullOrEmpty(Options.ChatGPTAPIKey) && !string.IsNullOrEmpty(imagePath))
             {
