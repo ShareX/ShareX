@@ -640,4 +640,10 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
     <value>Hebrajski</value>
   </data>
+  <data name="AboutForm_AboutForm_Donate" xml:space="preserve">
+    <value>Wesprzyj</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
+    <value>Arabski</value>
+  </data>
 </root>
