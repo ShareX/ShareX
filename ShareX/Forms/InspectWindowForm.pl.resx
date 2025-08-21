@@ -130,10 +130,10 @@
     <value>ShareX - Sprawdź okno</value>
   </data>
   <data name="cbTopMost.Text" xml:space="preserve">
-    <value>Na wierzchu</value>
+    <value>Zawsze na wierzchu</value>
   </data>
   <data name="lblOpacity.Text" xml:space="preserve">
-    <value>Nieprzezroczystość:</value>
+    <value>Przezroczystość:</value>
   </data>
   <data name="mbWindowList.Text" xml:space="preserve">
     <value>Lista okien</value>
