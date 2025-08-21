@@ -240,4 +240,7 @@
   <data name="lblRequestURL.Text" xml:space="preserve">
     <value>Link żądania:</value>
   </data>
+  <data name="mbHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
 </root>
