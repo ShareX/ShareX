@@ -168,4 +168,7 @@
   <data name="lblTip.Text" xml:space="preserve">
     <value>Wskazówka: Możesz kliknąć na zewnątrz, aby ukryć/pokazać ten panel.</value>
   </data>
+  <data name="lblRed.Text" xml:space="preserve">
+    <value>R:</value>
+  </data>
 </root>
