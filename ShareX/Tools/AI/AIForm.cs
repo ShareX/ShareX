@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -75,6 +76,7 @@ namespace ShareX
         private async Task AnalyzeImage()
         {
             txtResult.Clear();
+            lblTimer.ResetText();
             string imagePath = txtImage.Text;
             pbImage.LoadImageFromFile(imagePath);
 
@@ -85,11 +87,13 @@ namespace ShareX
                 txtResult.Cursor = Cursors.WaitCursor;
                 // TODO: Translate
                 txtResult.Text = "Thinking...";
+                Stopwatch timer = Stopwatch.StartNew();
 
                 try
                 {
                     ChatGPT chatGPT = new ChatGPT(Options.ChatGPTAPIKey, Options.Model);
                     string result = await chatGPT.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort);
+                    lblTimer.Text = $"Time: {timer.ElapsedMilliseconds} ms";
                     txtResult.Text = result.Replace("\n", "\r\n");
                 }
                 catch (Exception ex)

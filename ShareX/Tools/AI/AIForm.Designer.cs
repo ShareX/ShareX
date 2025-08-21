@@ -43,6 +43,7 @@
             cbInput = new System.Windows.Forms.ComboBox();
             lblReasoningEffort = new System.Windows.Forms.Label();
             cbReasoningEffort = new System.Windows.Forms.ComboBox();
+            lblTimer = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
             // lblModel
@@ -70,7 +71,7 @@
             lblInput.Location = new System.Drawing.Point(13, 184);
             lblInput.Name = "lblInput";
             lblInput.Size = new System.Drawing.Size(53, 16);
-            lblInput.TabIndex = 4;
+            lblInput.TabIndex = 6;
             lblInput.Text = "Prompt:";
             // 
             // lblImage
@@ -79,7 +80,7 @@
             lblImage.Location = new System.Drawing.Point(13, 240);
             lblImage.Name = "lblImage";
             lblImage.Size = new System.Drawing.Size(77, 16);
-            lblImage.TabIndex = 6;
+            lblImage.TabIndex = 8;
             lblImage.Text = "Image path:";
             // 
             // txtImage
@@ -87,7 +88,7 @@
             txtImage.Location = new System.Drawing.Point(16, 264);
             txtImage.Name = "txtImage";
             txtImage.Size = new System.Drawing.Size(224, 22);
-            txtImage.TabIndex = 7;
+            txtImage.TabIndex = 9;
             txtImage.TextChanged += txtImage_TextChanged;
             // 
             // btnAnalyze
@@ -96,7 +97,7 @@
             btnAnalyze.Location = new System.Drawing.Point(16, 568);
             btnAnalyze.Name = "btnAnalyze";
             btnAnalyze.Size = new System.Drawing.Size(264, 32);
-            btnAnalyze.TabIndex = 9;
+            btnAnalyze.TabIndex = 12;
             btnAnalyze.Text = "Analyze image";
             btnAnalyze.UseVisualStyleBackColor = true;
             btnAnalyze.Click += btnAnalyze_Click;
@@ -125,7 +126,7 @@
             lblResult.Location = new System.Drawing.Point(301, 16);
             lblResult.Name = "lblResult";
             lblResult.Size = new System.Drawing.Size(48, 16);
-            lblResult.TabIndex = 10;
+            lblResult.TabIndex = 13;
             lblResult.Text = "Result:";
             // 
             // txtResult
@@ -138,14 +139,14 @@
             txtResult.ReadOnly = true;
             txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             txtResult.Size = new System.Drawing.Size(608, 560);
-            txtResult.TabIndex = 11;
+            txtResult.TabIndex = 14;
             // 
             // btnImageBrowse
             // 
             btnImageBrowse.Location = new System.Drawing.Point(248, 263);
             btnImageBrowse.Name = "btnImageBrowse";
             btnImageBrowse.Size = new System.Drawing.Size(32, 24);
-            btnImageBrowse.TabIndex = 8;
+            btnImageBrowse.TabIndex = 10;
             btnImageBrowse.Text = "...";
             btnImageBrowse.UseVisualStyleBackColor = true;
             btnImageBrowse.Click += btnImageBrowse_Click;
@@ -161,7 +162,7 @@
             pbImage.Name = "pbImage";
             pbImage.PictureBoxBackColor = System.Drawing.SystemColors.Window;
             pbImage.Size = new System.Drawing.Size(264, 264);
-            pbImage.TabIndex = 13;
+            pbImage.TabIndex = 11;
             // 
             // cbInput
             // 
@@ -170,7 +171,7 @@
             cbInput.Location = new System.Drawing.Point(16, 208);
             cbInput.Name = "cbInput";
             cbInput.Size = new System.Drawing.Size(264, 24);
-            cbInput.TabIndex = 14;
+            cbInput.TabIndex = 7;
             cbInput.TextChanged += cbInput_TextChanged;
             // 
             // lblReasoningEffort
@@ -179,7 +180,7 @@
             lblReasoningEffort.Location = new System.Drawing.Point(13, 128);
             lblReasoningEffort.Name = "lblReasoningEffort";
             lblReasoningEffort.Size = new System.Drawing.Size(108, 16);
-            lblReasoningEffort.TabIndex = 15;
+            lblReasoningEffort.TabIndex = 4;
             lblReasoningEffort.Text = "Reasoning effort:";
             // 
             // cbReasoningEffort
@@ -190,8 +191,16 @@
             cbReasoningEffort.Location = new System.Drawing.Point(16, 152);
             cbReasoningEffort.Name = "cbReasoningEffort";
             cbReasoningEffort.Size = new System.Drawing.Size(264, 24);
-            cbReasoningEffort.TabIndex = 16;
+            cbReasoningEffort.TabIndex = 5;
             cbReasoningEffort.SelectedIndexChanged += cbReasoningEffort_SelectedIndexChanged;
+            // 
+            // lblTimer
+            // 
+            lblTimer.Location = new System.Drawing.Point(744, 12);
+            lblTimer.Name = "lblTimer";
+            lblTimer.Size = new System.Drawing.Size(168, 24);
+            lblTimer.TabIndex = 15;
+            lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // AIForm
             // 
@@ -199,12 +208,13 @@
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(928, 616);
+            Controls.Add(txtResult);
+            Controls.Add(lblTimer);
             Controls.Add(cbReasoningEffort);
             Controls.Add(lblReasoningEffort);
             Controls.Add(cbInput);
             Controls.Add(pbImage);
             Controls.Add(btnImageBrowse);
-            Controls.Add(txtResult);
             Controls.Add(lblResult);
             Controls.Add(txtAPIKey);
             Controls.Add(lblAPIKey);
@@ -244,5 +254,6 @@
         private System.Windows.Forms.ComboBox cbInput;
         private System.Windows.Forms.Label lblReasoningEffort;
         private System.Windows.Forms.ComboBox cbReasoningEffort;
+        private System.Windows.Forms.Label lblTimer;
     }
 }
