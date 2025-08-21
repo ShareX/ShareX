@@ -603,7 +603,7 @@ Czy chcesz ją pobrać i zainstalować?</value>
     <value>Zapisz miniaturkę obrazu do pliku</value>
   </data>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
-    <value>Pobieranie.</value>
+    <value>Pobieranie...</value>
   </data>
   <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
     <value>Usuń kształt lub anuluj przechwytywanie</value>
@@ -660,7 +660,7 @@ Czy chcesz ją pobrać i zainstalować?</value>
     <value>Nazwa procesu okna</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
-    <value>Oczekiwanie.</value>
+    <value>Oczekiwanie...</value>
   </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>Edytor obrazu</value>
@@ -801,7 +801,7 @@ Czy chcesz ją pobrać i zainstalować?</value>
     <value>Przechwytywanie aktywnego monitora</value>
   </data>
   <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
-    <value>Uzyskaj rozmiar pliku.</value>
+    <value>Uzyskaj rozmiar pliku...</value>
   </data>
   <data name="HotkeyType_Category_Other" xml:space="preserve">
     <value>Inne</value>
@@ -1200,6 +1200,81 @@ Czy chcesz ją pobrać i zainstalować?</value>
     <value>Upiększ obraz</value>
   </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value />
+    <value>Metadane</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>Ząbkowane</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Sprawdź</value>
+  </data>
+  <data name="HotkeyType_CustomWindow" xml:space="preserve">
+    <value>Przechwyć wstępnie skonfigurowane okno</value>
+  </data>
+  <data name="UpdateChannel_Dev" xml:space="preserve">
+    <value>Deweloperski (dev)</value>
+  </data>
+  <data name="UpdateChannel_PreRelease" xml:space="preserve">
+    <value>Wersja przedpremierowa (pre-release)</value>
+  </data>
+  <data name="UpdateChannel_Release" xml:space="preserve">
+    <value>Stabilne wydanie (release)</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
+    <value>Postęp</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
+    <value>Prędkość pobierania</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
+    <value>Rozmiar pliku</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowBorderless" xml:space="preserve">
+    <value>Ustaw aktywne okno jako bezramkowe</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
+    <value>Ustaw aktywne okno jako zawsze na wierzchu</value>
+  </data>
+  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
+    <value>Przypnij do ekranu (zamknij wszystkie)</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Color" xml:space="preserve">
+    <value>Kolor</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Desktop" xml:space="preserve">
+    <value>Pulpit</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Image" xml:space="preserve">
+    <value>Zdjęcie</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Gradient" xml:space="preserve">
+    <value>Gradient</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
+    <value>Przezroczystość</value>
+  </data>
+  <data name="HotkeyType_StripMetadata" xml:space="preserve">
+    <value>Wyczyść metadane</value>
+  </data>
+  <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
+    <value>Kod QR (skanuj obszar)</value>
+  </data>
+  <data name="ScrollMethod_DownArrow" xml:space="preserve">
+    <value>Strzałka w dół</value>
+  </data>
+  <data name="ScrollMethod_MouseWheel" xml:space="preserve">
+    <value>Kółko myszy</value>
+  </data>
+  <data name="ScrollMethod_PageDown" xml:space="preserve">
+    <value>Strona w dół</value>
+  </data>
+  <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
+    <value>Przewiń wiadomość</value>
+  </data>
+  <data name="ToastClickAction_DeleteFile" xml:space="preserve">
+    <value>Usuń plik lokalnie</value>
+  </data>
+  <data name="AfterCaptureTasks_AnalyzeImage" xml:space="preserve">
+    <value>Analizuj obraz</value>
   </data>
 </root>
