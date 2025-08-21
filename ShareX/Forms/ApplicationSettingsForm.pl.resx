@@ -423,4 +423,7 @@
   <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
     <value>Automatycznie sprawdzaj aktualizacje</value>
   </data>
+  <data name="lblUpdateChannel.Text" xml:space="preserve">
+    <value>Kanał aktualizacji:</value>
+  </data>
 </root>
