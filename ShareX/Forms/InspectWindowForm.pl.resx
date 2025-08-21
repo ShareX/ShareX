@@ -129,4 +129,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Sprawdź okno</value>
   </data>
+  <data name="cbTopMost.Text" xml:space="preserve">
+    <value>Na wierzchu</value>
+  </data>
+  <data name="lblOpacity.Text" xml:space="preserve">
+    <value>Nieprzezroczystość:</value>
+  </data>
+  <data name="mbWindowList.Text" xml:space="preserve">
+    <value>Lista okien</value>
+  </data>
 </root>
