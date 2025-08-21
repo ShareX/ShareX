@@ -135,4 +135,10 @@
   <data name="lblMaximumImageLimit.Text" xml:space="preserve">
     <value>Maksymalny limit obrazów:</value>
   </data>
+  <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
+    <value>px</value>
+  </data>
+  <data name="cbImageOnly.Text" xml:space="preserve">
+    <value>Pokazuj tylko pliki obrazów</value>
+  </data>
 </root>
