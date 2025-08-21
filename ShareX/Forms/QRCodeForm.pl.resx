@@ -138,4 +138,13 @@
   <data name="lblQRCodeSize.Text" xml:space="preserve">
     <value>Rozmiar kodu QR:</value>
   </data>
+  <data name="btnScanScreen.Text" xml:space="preserve">
+    <value>Skanuj ekran</value>
+  </data>
+  <data name="btnScanRegion.Text" xml:space="preserve">
+    <value>Skanuj obszar...</value>
+  </data>
+  <data name="btnScanImageFile.Text" xml:space="preserve">
+    <value>Skanuj plik obrazu...</value>
+  </data>
 </root>
