@@ -168,6 +168,7 @@
             // 
             // AIForm
             // 
+            AllowDrop = true;
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(929, 561);
@@ -189,6 +190,8 @@
             Name = "AIForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "ShareX - AI";
+            DragDrop += AIForm_DragDrop;
+            DragEnter += AIForm_DragEnter;
             ((System.ComponentModel.ISupportInitialize)pbImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
