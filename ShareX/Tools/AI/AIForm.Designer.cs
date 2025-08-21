@@ -41,6 +41,8 @@
             btnImageBrowse = new System.Windows.Forms.Button();
             pbImage = new ShareX.HelpersLib.MyPictureBox();
             cbInput = new System.Windows.Forms.ComboBox();
+            lblReasoningEffort = new System.Windows.Forms.Label();
+            cbReasoningEffort = new System.Windows.Forms.ComboBox();
             SuspendLayout();
             // 
             // lblModel
@@ -65,7 +67,7 @@
             // lblInput
             // 
             lblInput.AutoSize = true;
-            lblInput.Location = new System.Drawing.Point(13, 128);
+            lblInput.Location = new System.Drawing.Point(13, 184);
             lblInput.Name = "lblInput";
             lblInput.Size = new System.Drawing.Size(53, 16);
             lblInput.TabIndex = 4;
@@ -74,7 +76,7 @@
             // lblImage
             // 
             lblImage.AutoSize = true;
-            lblImage.Location = new System.Drawing.Point(13, 184);
+            lblImage.Location = new System.Drawing.Point(13, 240);
             lblImage.Name = "lblImage";
             lblImage.Size = new System.Drawing.Size(77, 16);
             lblImage.TabIndex = 6;
@@ -82,7 +84,7 @@
             // 
             // txtImage
             // 
-            txtImage.Location = new System.Drawing.Point(16, 208);
+            txtImage.Location = new System.Drawing.Point(16, 264);
             txtImage.Name = "txtImage";
             txtImage.Size = new System.Drawing.Size(224, 22);
             txtImage.TabIndex = 7;
@@ -91,7 +93,7 @@
             // btnAnalyze
             // 
             btnAnalyze.Enabled = false;
-            btnAnalyze.Location = new System.Drawing.Point(16, 512);
+            btnAnalyze.Location = new System.Drawing.Point(16, 568);
             btnAnalyze.Name = "btnAnalyze";
             btnAnalyze.Size = new System.Drawing.Size(264, 32);
             btnAnalyze.TabIndex = 9;
@@ -135,12 +137,12 @@
             txtResult.Name = "txtResult";
             txtResult.ReadOnly = true;
             txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            txtResult.Size = new System.Drawing.Size(608, 504);
+            txtResult.Size = new System.Drawing.Size(608, 560);
             txtResult.TabIndex = 11;
             // 
             // btnImageBrowse
             // 
-            btnImageBrowse.Location = new System.Drawing.Point(248, 207);
+            btnImageBrowse.Location = new System.Drawing.Point(248, 263);
             btnImageBrowse.Name = "btnImageBrowse";
             btnImageBrowse.Size = new System.Drawing.Size(32, 24);
             btnImageBrowse.TabIndex = 8;
@@ -154,7 +156,7 @@
             pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pbImage.DrawCheckeredBackground = true;
             pbImage.FullscreenOnClick = true;
-            pbImage.Location = new System.Drawing.Point(16, 240);
+            pbImage.Location = new System.Drawing.Point(16, 296);
             pbImage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pbImage.Name = "pbImage";
             pbImage.PictureBoxBackColor = System.Drawing.SystemColors.Window;
@@ -165,18 +167,40 @@
             // 
             cbInput.FormattingEnabled = true;
             cbInput.Items.AddRange(new object[] { "What is in this image?", "Thoroughly describe this image.", "Transcribe the image's text, do not write anything else." });
-            cbInput.Location = new System.Drawing.Point(16, 152);
+            cbInput.Location = new System.Drawing.Point(16, 208);
             cbInput.Name = "cbInput";
             cbInput.Size = new System.Drawing.Size(264, 24);
             cbInput.TabIndex = 14;
             cbInput.TextChanged += cbInput_TextChanged;
+            // 
+            // lblReasoningEffort
+            // 
+            lblReasoningEffort.AutoSize = true;
+            lblReasoningEffort.Location = new System.Drawing.Point(13, 128);
+            lblReasoningEffort.Name = "lblReasoningEffort";
+            lblReasoningEffort.Size = new System.Drawing.Size(108, 16);
+            lblReasoningEffort.TabIndex = 15;
+            lblReasoningEffort.Text = "Reasoning effort:";
+            // 
+            // cbReasoningEffort
+            // 
+            cbReasoningEffort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbReasoningEffort.FormattingEnabled = true;
+            cbReasoningEffort.Items.AddRange(new object[] { "minimal", "low", "medium", "high" });
+            cbReasoningEffort.Location = new System.Drawing.Point(16, 152);
+            cbReasoningEffort.Name = "cbReasoningEffort";
+            cbReasoningEffort.Size = new System.Drawing.Size(264, 24);
+            cbReasoningEffort.TabIndex = 16;
+            cbReasoningEffort.SelectedIndexChanged += cbReasoningEffort_SelectedIndexChanged;
             // 
             // AIForm
             // 
             AllowDrop = true;
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(929, 561);
+            ClientSize = new System.Drawing.Size(928, 616);
+            Controls.Add(cbReasoningEffort);
+            Controls.Add(lblReasoningEffort);
             Controls.Add(cbInput);
             Controls.Add(pbImage);
             Controls.Add(btnImageBrowse);
@@ -218,5 +242,7 @@
         private System.Windows.Forms.Button btnImageBrowse;
         private HelpersLib.MyPictureBox pbImage;
         private System.Windows.Forms.ComboBox cbInput;
+        private System.Windows.Forms.Label lblReasoningEffort;
+        private System.Windows.Forms.ComboBox cbReasoningEffort;
     }
 }

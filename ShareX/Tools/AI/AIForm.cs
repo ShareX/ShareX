@@ -44,6 +44,15 @@ namespace ShareX
             Options = options;
             cbModel.Text = Options.Model;
             txtAPIKey.Text = Options.ChatGPTAPIKey;
+            int index = cbReasoningEffort.FindStringExact(Options.ReasoningEffort);
+            if (index >= 0)
+            {
+                cbReasoningEffort.SelectedIndex = index;
+            }
+            else
+            {
+                cbReasoningEffort.SelectedIndex = 2;
+            }
             cbInput.Text = Options.Input;
         }
 
@@ -80,7 +89,7 @@ namespace ShareX
                 try
                 {
                     ChatGPT chatGPT = new ChatGPT(Options.ChatGPTAPIKey, Options.Model);
-                    string result = await chatGPT.AnalyzeImage(imagePath, Options.Input);
+                    string result = await chatGPT.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort);
                     txtResult.Text = result.Replace("\n", "\r\n");
                 }
                 catch (Exception ex)
@@ -135,6 +144,11 @@ namespace ShareX
         {
             Options.ChatGPTAPIKey = txtAPIKey.Text;
             UpdateControls();
+        }
+
+        private void cbReasoningEffort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.ReasoningEffort = cbReasoningEffort.Text;
         }
 
         private void cbInput_TextChanged(object sender, EventArgs e)

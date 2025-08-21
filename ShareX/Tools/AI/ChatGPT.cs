@@ -38,13 +38,19 @@ namespace ShareX
     public class ChatGPTRequest
     {
         public string model { get; set; }
+        public ChatGPTReasoning reasoning { get; set; }
         public ChatGPTInput[] input { get; set; }
-        public bool store { get; set; } = false;
+        public bool store { get; set; }
+    }
+
+    public class ChatGPTReasoning
+    {
+        public string effort { get; set; }
     }
 
     public class ChatGPTInput
     {
-        public string role { get; set; } = "user";
+        public string role { get; set; }
         public ChatGPTInputContent[] content { get; set; }
     }
 
@@ -87,7 +93,7 @@ namespace ShareX
             Model = model;
         }
 
-        public async Task<string> AnalyzeImage(string filePath, string input = null)
+        public async Task<string> AnalyzeImage(string filePath, string input = null, string reasoningEffort = null)
         {
             HttpClient httpClient = HttpClientFactory.Create();
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", APIKey);
@@ -105,7 +111,10 @@ namespace ShareX
             ChatGPTRequest request = new ChatGPTRequest()
             {
                 model = Model,
-                store = false,
+                reasoning = new ChatGPTReasoning()
+                {
+                    effort = reasoningEffort ?? "medium"
+                },
                 input = new ChatGPTInput[]
                 {
                     new ChatGPTInput()
@@ -125,7 +134,8 @@ namespace ShareX
                             }
                         }
                     }
-                }
+                },
+                store = false
             };
 
             string json = JsonSerializer.Serialize(request);
