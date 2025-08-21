@@ -103,7 +103,7 @@ McoreD: {Links.McoreD}
 {Resources.AboutForm_AboutForm_Language_pt_PT}: https://github.com/FarewellAngelina
 {Resources.AboutForm_AboutForm_Language_ja_JP}: https://github.com/kanaxx
 {Resources.AboutForm_AboutForm_Language_ro}: https://github.com/Edward205
-{Resources.AboutForm_AboutForm_Language_pl}: https://github.com/RikoDEV
+{Resources.AboutForm_AboutForm_Language_pl}: https://github.com/RikoDEV & https://github.com/sefinek
 {Resources.AboutForm_AboutForm_Language_he_IL}: https://github.com/erelado
 {Resources.AboutForm_AboutForm_Language_ar_YE}: https://github.com/OthmanAliModaes
 ", FontStyle.Regular);
