@@ -1314,4 +1314,7 @@ Would you like to download and install it?</value>
   <data name="ToastClickAction_DeleteFile" xml:space="preserve">
     <value>Delete file locally</value>
   </data>
+  <data name="AfterCaptureTasks_AnalyzeImage" xml:space="preserve">
+    <value>Analyze image</value>
+  </data>
 </root>

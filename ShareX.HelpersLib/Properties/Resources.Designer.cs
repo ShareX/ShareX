@@ -155,6 +155,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Analyze image.
+        /// </summary>
+        internal static string AfterCaptureTasks_AnalyzeImage {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_AnalyzeImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open in image editor.
         /// </summary>
         internal static string AfterCaptureTasks_AnnotateImage {

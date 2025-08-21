@@ -144,6 +144,7 @@
             txtResult.Multiline = true;
             txtResult.Name = "txtResult";
             txtResult.ReadOnly = true;
+            txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             txtResult.Size = new System.Drawing.Size(608, 504);
             txtResult.TabIndex = 11;
             // 
@@ -189,6 +190,7 @@
             Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             Name = "AIForm";
+            SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "ShareX - AI";
             Shown += AIForm_Shown;
