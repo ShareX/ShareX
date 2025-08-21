@@ -31,7 +31,6 @@
             lblModel = new System.Windows.Forms.Label();
             cbModel = new System.Windows.Forms.ComboBox();
             lblInput = new System.Windows.Forms.Label();
-            txtInput = new System.Windows.Forms.TextBox();
             lblImage = new System.Windows.Forms.Label();
             txtImage = new System.Windows.Forms.TextBox();
             btnAnalyze = new System.Windows.Forms.Button();
@@ -41,6 +40,7 @@
             txtResult = new System.Windows.Forms.TextBox();
             btnImageBrowse = new System.Windows.Forms.Button();
             pbImage = new ShareX.HelpersLib.MyPictureBox();
+            cbInput = new System.Windows.Forms.ComboBox();
             SuspendLayout();
             // 
             // lblModel
@@ -54,14 +54,13 @@
             // 
             // cbModel
             // 
-            cbModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbModel.FormattingEnabled = true;
             cbModel.Items.AddRange(new object[] { "gpt-5", "gpt-5-mini", "gpt-5-nano" });
             cbModel.Location = new System.Drawing.Point(16, 40);
             cbModel.Name = "cbModel";
             cbModel.Size = new System.Drawing.Size(264, 24);
             cbModel.TabIndex = 1;
-            cbModel.SelectedIndexChanged += cbModel_SelectedIndexChanged;
+            cbModel.TextChanged += cbModel_TextChanged;
             // 
             // lblInput
             // 
@@ -71,14 +70,6 @@
             lblInput.Size = new System.Drawing.Size(53, 16);
             lblInput.TabIndex = 4;
             lblInput.Text = "Prompt:";
-            // 
-            // txtInput
-            // 
-            txtInput.Location = new System.Drawing.Point(16, 152);
-            txtInput.Name = "txtInput";
-            txtInput.Size = new System.Drawing.Size(264, 22);
-            txtInput.TabIndex = 5;
-            txtInput.TextChanged += txtInput_TextChanged;
             // 
             // lblImage
             // 
@@ -170,12 +161,23 @@
             pbImage.Size = new System.Drawing.Size(264, 264);
             pbImage.TabIndex = 13;
             // 
+            // cbInput
+            // 
+            cbInput.FormattingEnabled = true;
+            cbInput.Items.AddRange(new object[] { "What is in this image?", "Thoroughly describe this image.", "Transcribe the image's text, do not write anything else." });
+            cbInput.Location = new System.Drawing.Point(16, 152);
+            cbInput.Name = "cbInput";
+            cbInput.Size = new System.Drawing.Size(264, 24);
+            cbInput.TabIndex = 14;
+            cbInput.TextChanged += cbInput_TextChanged;
+            // 
             // AIForm
             // 
             AllowDrop = true;
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(929, 561);
+            Controls.Add(cbInput);
             Controls.Add(pbImage);
             Controls.Add(btnImageBrowse);
             Controls.Add(txtResult);
@@ -185,7 +187,6 @@
             Controls.Add(btnAnalyze);
             Controls.Add(txtImage);
             Controls.Add(lblImage);
-            Controls.Add(txtInput);
             Controls.Add(lblInput);
             Controls.Add(cbModel);
             Controls.Add(lblModel);
@@ -207,7 +208,6 @@
         private System.Windows.Forms.Label lblModel;
         private System.Windows.Forms.ComboBox cbModel;
         private System.Windows.Forms.Label lblInput;
-        private System.Windows.Forms.TextBox txtInput;
         private System.Windows.Forms.Label lblImage;
         private System.Windows.Forms.TextBox txtImage;
         private System.Windows.Forms.Button btnAnalyze;
@@ -217,5 +217,6 @@
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button btnImageBrowse;
         private HelpersLib.MyPictureBox pbImage;
+        private System.Windows.Forms.ComboBox cbInput;
     }
 }

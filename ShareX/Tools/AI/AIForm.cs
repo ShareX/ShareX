@@ -42,17 +42,9 @@ namespace ShareX
             ShareXResources.ApplyTheme(this, true);
 
             Options = options;
-            int index = cbModel.FindStringExact(Options.Model);
-            if (index >= 0)
-            {
-                cbModel.SelectedIndex = index;
-            }
-            else
-            {
-                cbModel.SelectedIndex = 1;
-            }
+            cbModel.Text = Options.Model;
             txtAPIKey.Text = Options.ChatGPTAPIKey;
-            txtInput.Text = Options.Input;
+            cbInput.Text = Options.Input;
         }
 
         public AIForm(string filePath, AIOptions options) : this(options)
@@ -134,9 +126,9 @@ namespace ShareX
             }
         }
 
-        private void cbModel_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbModel_TextChanged(object sender, EventArgs e)
         {
-            Options.Model = cbModel.SelectedItem.ToString();
+            Options.Model = cbModel.Text;
         }
 
         private void txtAPIKey_TextChanged(object sender, EventArgs e)
@@ -145,9 +137,9 @@ namespace ShareX
             UpdateControls();
         }
 
-        private void txtInput_TextChanged(object sender, EventArgs e)
+        private void cbInput_TextChanged(object sender, EventArgs e)
         {
-            Options.Input = txtInput.Text;
+            Options.Input = cbInput.Text;
         }
 
         private void txtImage_TextChanged(object sender, EventArgs e)
