@@ -597,7 +597,7 @@ Możesz je później wyłączyć w menu "Zadania po przechwyceniu".</value>
     <value>Prostokąt klienta</value>
   </data>
   <data name="InspectWindow_WindowHandle" xml:space="preserve">
-    <value>Klamka okna</value>
+    <value>Uchwyt okna</value>
   </data>
   <data name="InspectWindow_WindowRectangle" xml:space="preserve">
     <value>Prostokąt okna</value>
