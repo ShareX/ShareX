@@ -1212,13 +1212,13 @@ Czy chcesz ją pobrać i zainstalować?</value>
     <value>Przechwyć wstępnie skonfigurowane okno</value>
   </data>
   <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Deweloperski (dev)</value>
+    <value>Deweloperski</value>
   </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
-    <value>Wersja przedpremierowa (pre-release)</value>
+    <value>Wersja przedpremierowa</value>
   </data>
   <data name="UpdateChannel_Release" xml:space="preserve">
-    <value>Stabilne wydanie (release)</value>
+    <value>Stabilne wydanie</value>
   </data>
   <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
     <value>Postęp</value>
