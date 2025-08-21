@@ -310,13 +310,13 @@
     <value>Użyj niestandardowego folderu zrzutów ekranu:</value>
   </data>
   <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
-    <value>Po kliknięciu lewym na ikonę w zasobniku:</value>
+    <value>Po kliknięciu LPM na ikonę w zasobniku:</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
-    <value>Po podwójnym kliknięciu lewym na ikonę w zasobniku:</value>
+    <value>Po dwukliku LPM na ikonę w zasobniku:</value>
   </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
-    <value>Po kliknięciu środkowym na ikonę w zasobniku:</value>
+    <value>Po kliknięciu scrollem na ikonę w zasobniku:</value>
   </data>
   <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
     <value>Wielkość miniaturki:</value>
