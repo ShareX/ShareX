@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -32,6 +33,8 @@ namespace ShareX
     public partial class AIForm : Form
     {
         public AIOptions Options { get; private set; }
+
+        private bool autoStart;
 
         public AIForm(AIOptions options)
         {
@@ -52,9 +55,50 @@ namespace ShareX
             txtInput.Text = Options.Input;
         }
 
+        public AIForm(string filePath, AIOptions options) : this(options)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                txtImage.Text = filePath;
+                pbImage.ImageLocation = filePath;
+                UpdateControls();
+                autoStart = true;
+            }
+        }
+
         private void UpdateControls()
         {
             btnAnalyze.Enabled = !string.IsNullOrEmpty(txtAPIKey.Text) && !string.IsNullOrEmpty(txtImage.Text);
+        }
+
+        private async Task AnalyzeImage()
+        {
+            txtResult.Clear();
+            string imagePath = txtImage.Text;
+            pbImage.ImageLocation = imagePath;
+
+            if (!string.IsNullOrEmpty(Options.ChatGPTAPIKey) && !string.IsNullOrEmpty(imagePath))
+            {
+                btnAnalyze.Enabled = false;
+                Cursor = Cursors.WaitCursor;
+
+                try
+                {
+                    ChatGPT chatGPT = new ChatGPT(Options.ChatGPTAPIKey, Options.Model);
+                    string result = await chatGPT.AnalyzeImage(imagePath, Options.Input);
+                    txtResult.Text = result.Replace("\n", "\r\n");
+                }
+                catch (Exception ex)
+                {
+                    DebugHelper.WriteException(ex);
+                    ex.ShowError();
+                }
+                finally
+                {
+                    btnAnalyze.Enabled = true;
+                    Cursor = Cursors.Default;
+                }
+            }
         }
 
         private void AIForm_DragEnter(object sender, DragEventArgs e)
@@ -74,6 +118,15 @@ namespace ShareX
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
             {
                 txtImage.Text = files[0];
+            }
+        }
+
+        private async void AIForm_Shown(object sender, EventArgs e)
+        {
+            if (autoStart)
+            {
+                btnAnalyze.Focus();
+                await AnalyzeImage();
             }
         }
 
@@ -105,29 +158,7 @@ namespace ShareX
 
         private async void btnAnalyze_Click(object sender, EventArgs e)
         {
-            string imagePath = txtImage.Text;
-            pbImage.ImageLocation = imagePath;
-
-            if (!string.IsNullOrEmpty(Options.ChatGPTAPIKey) && !string.IsNullOrEmpty(imagePath))
-            {
-                btnAnalyze.Enabled = false;
-
-                try
-                {
-                    ChatGPT chatGPT = new ChatGPT(Options.ChatGPTAPIKey, Options.Model);
-                    string result = await chatGPT.AnalyzeImage(imagePath, Options.Input);
-                    txtResult.Text = result;
-                }
-                catch (Exception ex)
-                {
-                    DebugHelper.WriteException(ex);
-                    ex.ShowError();
-                }
-                finally
-                {
-                    btnAnalyze.Enabled = true;
-                }
-            }
+            await AnalyzeImage();
         }
     }
 }

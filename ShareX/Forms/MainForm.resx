@@ -1261,6 +1261,12 @@
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Share URL</value>
   </data>
+  <data name="tsmiAnalyzeImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiAnalyzeImage.Text" xml:space="preserve">
+    <value>Analyze image...</value>
+  </data>
   <data name="tsmiGoogleLens.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -1325,7 +1331,7 @@
     <value>Switch to thumbnail view</value>
   </data>
   <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 516</value>
+    <value>229, 538</value>
   </data>
   <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
     <value>cmsTaskInfo</value>
@@ -2926,6 +2932,12 @@
   <data name="&gt;&gt;tsmiShowQRCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiAnalyzeImage.Name" xml:space="preserve">
+    <value>tsmiAnalyzeImage</value>
+  </data>
+  <data name="&gt;&gt;tsmiAnalyzeImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiOCRImage.Name" xml:space="preserve">
     <value>tsmiOCRImage</value>
   </data>
@@ -3262,6 +3274,12 @@
   <data name="&gt;&gt;tssTrayTools3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayAI.Name" xml:space="preserve">
+    <value>tsmiTrayAI</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayAI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayOCR.Name" xml:space="preserve">
     <value>tsmiTrayOCR</value>
   </data>
@@ -3507,12 +3525,6 @@
   </data>
   <data name="&gt;&gt;cDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayAI.Name" xml:space="preserve">
-    <value>tsmiTrayAI</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayAI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

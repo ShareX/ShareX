@@ -1465,11 +1465,19 @@ namespace ShareX
             new BingVisualSearchSharingService().CreateSharer(null, null).ShareURL(url);
         }
 
-        public static void OpenAI(TaskSettings taskSettings = null)
+        public static void AnalyzeImage(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             AIForm aiForm = new AIForm(taskSettings.ToolsSettingsReference.AIOptions);
+            aiForm.Show();
+        }
+
+        public static void AnalyzeImage(string filePath, TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            AIForm aiForm = new AIForm(filePath, taskSettings.ToolsSettingsReference.AIOptions);
             aiForm.Show();
         }
 

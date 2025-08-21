@@ -23,11 +23,14 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+
 namespace ShareX
 {
     public class AIOptions
     {
         public string Model { get; set; } = "gpt-5-mini";
+        [JsonEncrypt]
         public string ChatGPTAPIKey { get; set; }
         public string Input { get; set; } = "what is in this image?";
     }

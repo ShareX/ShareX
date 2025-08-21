@@ -189,6 +189,7 @@
             tsmiGoogleLens = new System.Windows.Forms.ToolStripMenuItem();
             tsmiBingVisualSearch = new System.Windows.Forms.ToolStripMenuItem();
             tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiAnalyzeImage = new System.Windows.Forms.ToolStripMenuItem();
             tsmiOCRImage = new System.Windows.Forms.ToolStripMenuItem();
             tsmiCombineImages = new System.Windows.Forms.ToolStripMenuItem();
             tsmiCombineImagesHorizontally = new System.Windows.Forms.ToolStripMenuItem();
@@ -246,6 +247,7 @@
             tsmiTrayVideoConverter = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             tssTrayTools3 = new System.Windows.Forms.ToolStripSeparator();
+            tsmiTrayAI = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTrayOCR = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTrayQRCode = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTrayHashChecker = new System.Windows.Forms.ToolStripMenuItem();
@@ -292,7 +294,6 @@
             pMain = new System.Windows.Forms.Panel();
             pHotkeys = new System.Windows.Forms.Panel();
             ucTaskThumbnailView = new TaskThumbnailView();
-            tsmiTrayAI = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)scMain).BeginInit();
             scMain.Panel1.SuspendLayout();
             scMain.Panel2.SuspendLayout();
@@ -992,7 +993,7 @@
             // 
             // cmsTaskInfo
             // 
-            cmsTaskInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiShowErrors, tsmiStopUpload, tsmiOpen, tsmiCopy, tsmiUploadSelectedFile, tsmiDownloadSelectedURL, tsmiEditSelectedFile, tsmiBeautifyImage, tsmiAddImageEffects, tsmiPinSelectedFile, tsmiRunAction, tsmiDeleteSelectedItem, tsmiDeleteSelectedFile, tsmiShortenSelectedURL, tsmiShareSelectedURL, tsmiGoogleLens, tsmiBingVisualSearch, tsmiShowQRCode, tsmiOCRImage, tsmiCombineImages, tsmiShowResponse, tsmiClearList, tssUploadInfo1, tsmiSwitchTaskViewMode });
+            cmsTaskInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiShowErrors, tsmiStopUpload, tsmiOpen, tsmiCopy, tsmiUploadSelectedFile, tsmiDownloadSelectedURL, tsmiEditSelectedFile, tsmiBeautifyImage, tsmiAddImageEffects, tsmiPinSelectedFile, tsmiRunAction, tsmiDeleteSelectedItem, tsmiDeleteSelectedFile, tsmiShortenSelectedURL, tsmiShareSelectedURL, tsmiAnalyzeImage, tsmiGoogleLens, tsmiBingVisualSearch, tsmiShowQRCode, tsmiOCRImage, tsmiCombineImages, tsmiShowResponse, tsmiClearList, tssUploadInfo1, tsmiSwitchTaskViewMode });
             cmsTaskInfo.Name = "cmsHistory";
             resources.ApplyResources(cmsTaskInfo, "cmsTaskInfo");
             cmsTaskInfo.Closing += cmsTaskInfo_Closing;
@@ -1335,6 +1336,13 @@
             tsmiShowQRCode.Name = "tsmiShowQRCode";
             resources.ApplyResources(tsmiShowQRCode, "tsmiShowQRCode");
             tsmiShowQRCode.Click += tsmiShowQRCode_Click;
+            // 
+            // tsmiAnalyzeImage
+            // 
+            tsmiAnalyzeImage.Image = Properties.Resources.robot;
+            tsmiAnalyzeImage.Name = "tsmiAnalyzeImage";
+            resources.ApplyResources(tsmiAnalyzeImage, "tsmiAnalyzeImage");
+            tsmiAnalyzeImage.Click += tsmiAnalyzeImage_Click;
             // 
             // tsmiOCRImage
             // 
@@ -1719,6 +1727,13 @@
             tssTrayTools3.Name = "tssTrayTools3";
             resources.ApplyResources(tssTrayTools3, "tssTrayTools3");
             // 
+            // tsmiTrayAI
+            // 
+            tsmiTrayAI.Image = Properties.Resources.robot;
+            tsmiTrayAI.Name = "tsmiTrayAI";
+            resources.ApplyResources(tsmiTrayAI, "tsmiTrayAI");
+            tsmiTrayAI.Click += tsmiAI_Click;
+            // 
             // tsmiTrayOCR
             // 
             tsmiTrayOCR.Image = Properties.Resources.edit_drop_cap;
@@ -2062,13 +2077,6 @@
             ucTaskThumbnailView.SelectedPanelChanged += ucTaskThumbnailView_SelectedPanelChanged;
             ucTaskThumbnailView.KeyDown += lvUploads_KeyDown;
             // 
-            // tsmiTrayAI
-            // 
-            tsmiTrayAI.Image = Properties.Resources.robot;
-            tsmiTrayAI.Name = "tsmiTrayAI";
-            resources.ApplyResources(tsmiTrayAI, "tsmiTrayAI");
-            tsmiTrayAI.Click += tsmiAI_Click;
-            // 
             // MainForm
             // 
             AllowDrop = true;
@@ -2367,5 +2375,6 @@
         private System.Windows.Forms.ToolStripSeparator tssTray4;
         private System.Windows.Forms.ToolStripMenuItem tsmiAI;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayAI;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAnalyzeImage;
     }
 }

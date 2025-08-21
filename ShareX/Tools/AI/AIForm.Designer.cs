@@ -86,9 +86,9 @@
             lblImage.AutoSize = true;
             lblImage.Location = new System.Drawing.Point(13, 184);
             lblImage.Name = "lblImage";
-            lblImage.Size = new System.Drawing.Size(48, 16);
+            lblImage.Size = new System.Drawing.Size(77, 16);
             lblImage.TabIndex = 6;
-            lblImage.Text = "Image:";
+            lblImage.Text = "Image path:";
             // 
             // txtImage
             // 
@@ -159,6 +159,7 @@
             // 
             // pbImage
             // 
+            pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pbImage.Location = new System.Drawing.Point(16, 240);
             pbImage.Name = "pbImage";
             pbImage.Size = new System.Drawing.Size(264, 264);
@@ -190,6 +191,7 @@
             Name = "AIForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "ShareX - AI";
+            Shown += AIForm_Shown;
             DragDrop += AIForm_DragDrop;
             DragEnter += AIForm_DragEnter;
             ((System.ComponentModel.ISupportInitialize)pbImage).EndInit();
