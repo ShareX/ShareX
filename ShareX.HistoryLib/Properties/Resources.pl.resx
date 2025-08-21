@@ -162,9 +162,6 @@
   <data name="HistoryStats_Hosts" xml:space="preserve">
     <value>Hosty:</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Więcej informacji...</value>
-  </data>
   <data name="HistoryStats_FileExtensions" xml:space="preserve">
     <value>Rozszerzenia pliku:</value>
   </data>
