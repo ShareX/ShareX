@@ -127,6 +127,8 @@ namespace ShareX
                     btnAnalyze.Enabled = true;
                     Cursor = Cursors.Default;
                     txtResult.Cursor = Cursors.Default;
+
+                    TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
                 }
             }
         }
