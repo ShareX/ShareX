@@ -85,7 +85,6 @@ namespace ShareX
             if (!isCapture)
             {
                 imagePath = txtImage.Text;
-                pbImage.LoadImageFromFile(imagePath);
                 if (string.IsNullOrEmpty(imagePath))
                 {
                     return;
@@ -124,7 +123,7 @@ namespace ShareX
                 }
                 finally
                 {
-                    btnAnalyze.Enabled = true;
+                    UpdateControls();
                     Cursor = Cursors.Default;
                     txtResult.Cursor = Cursors.Default;
 
@@ -190,7 +189,10 @@ namespace ShareX
 
         private void btnImageBrowse_Click(object sender, EventArgs e)
         {
-            FileHelpers.BrowseFile(txtImage);
+            if (FileHelpers.BrowseFile(txtImage))
+            {
+                pbImage.LoadImageFromFile(txtImage.Text);
+            }
         }
 
         private async void btnAnalyze_Click(object sender, EventArgs e)
@@ -209,6 +211,7 @@ namespace ShareX
             if (regionImage != null)
             {
                 pbImage.LoadImage(regionImage);
+                txtImage.ResetText();
                 await AnalyzeImage(true);
             }
         }
