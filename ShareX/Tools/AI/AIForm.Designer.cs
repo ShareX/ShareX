@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AIForm));
             lblModel = new System.Windows.Forms.Label();
             cbModel = new System.Windows.Forms.ComboBox();
             lblInput = new System.Windows.Forms.Label();
@@ -49,106 +50,67 @@
             // 
             // lblModel
             // 
-            lblModel.AutoSize = true;
-            lblModel.Location = new System.Drawing.Point(13, 16);
+            resources.ApplyResources(lblModel, "lblModel");
             lblModel.Name = "lblModel";
-            lblModel.Size = new System.Drawing.Size(48, 16);
-            lblModel.TabIndex = 0;
-            lblModel.Text = "Model:";
             // 
             // cbModel
             // 
             cbModel.FormattingEnabled = true;
-            cbModel.Items.AddRange(new object[] { "gpt-5", "gpt-5-mini", "gpt-5-nano" });
-            cbModel.Location = new System.Drawing.Point(16, 40);
+            cbModel.Items.AddRange(new object[] { resources.GetString("cbModel.Items"), resources.GetString("cbModel.Items1"), resources.GetString("cbModel.Items2") });
+            resources.ApplyResources(cbModel, "cbModel");
             cbModel.Name = "cbModel";
-            cbModel.Size = new System.Drawing.Size(264, 24);
-            cbModel.TabIndex = 1;
             cbModel.TextChanged += cbModel_TextChanged;
             // 
             // lblInput
             // 
-            lblInput.AutoSize = true;
-            lblInput.Location = new System.Drawing.Point(13, 184);
+            resources.ApplyResources(lblInput, "lblInput");
             lblInput.Name = "lblInput";
-            lblInput.Size = new System.Drawing.Size(53, 16);
-            lblInput.TabIndex = 6;
-            lblInput.Text = "Prompt:";
             // 
             // lblImage
             // 
-            lblImage.AutoSize = true;
-            lblImage.Location = new System.Drawing.Point(13, 240);
+            resources.ApplyResources(lblImage, "lblImage");
             lblImage.Name = "lblImage";
-            lblImage.Size = new System.Drawing.Size(77, 16);
-            lblImage.TabIndex = 8;
-            lblImage.Text = "Image path:";
             // 
             // txtImage
             // 
-            txtImage.Location = new System.Drawing.Point(16, 264);
+            resources.ApplyResources(txtImage, "txtImage");
             txtImage.Name = "txtImage";
-            txtImage.Size = new System.Drawing.Size(224, 22);
-            txtImage.TabIndex = 9;
             txtImage.TextChanged += txtImage_TextChanged;
             // 
             // btnAnalyze
             // 
-            btnAnalyze.Enabled = false;
-            btnAnalyze.Location = new System.Drawing.Point(16, 568);
+            resources.ApplyResources(btnAnalyze, "btnAnalyze");
             btnAnalyze.Name = "btnAnalyze";
-            btnAnalyze.Size = new System.Drawing.Size(224, 32);
-            btnAnalyze.TabIndex = 12;
-            btnAnalyze.Text = "Analyze image";
             btnAnalyze.UseVisualStyleBackColor = true;
             btnAnalyze.Click += btnAnalyze_Click;
             // 
             // lblAPIKey
             // 
-            lblAPIKey.AutoSize = true;
-            lblAPIKey.Location = new System.Drawing.Point(13, 72);
+            resources.ApplyResources(lblAPIKey, "lblAPIKey");
             lblAPIKey.Name = "lblAPIKey";
-            lblAPIKey.Size = new System.Drawing.Size(56, 16);
-            lblAPIKey.TabIndex = 2;
-            lblAPIKey.Text = "API key:";
             // 
             // txtAPIKey
             // 
-            txtAPIKey.Location = new System.Drawing.Point(16, 96);
+            resources.ApplyResources(txtAPIKey, "txtAPIKey");
             txtAPIKey.Name = "txtAPIKey";
-            txtAPIKey.Size = new System.Drawing.Size(264, 22);
-            txtAPIKey.TabIndex = 3;
             txtAPIKey.UseSystemPasswordChar = true;
             txtAPIKey.TextChanged += txtAPIKey_TextChanged;
             // 
             // lblResult
             // 
-            lblResult.AutoSize = true;
-            lblResult.Location = new System.Drawing.Point(301, 16);
+            resources.ApplyResources(lblResult, "lblResult");
             lblResult.Name = "lblResult";
-            lblResult.Size = new System.Drawing.Size(48, 16);
-            lblResult.TabIndex = 13;
-            lblResult.Text = "Result:";
             // 
             // txtResult
             // 
-            txtResult.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtResult.Location = new System.Drawing.Point(304, 40);
-            txtResult.Multiline = true;
+            resources.ApplyResources(txtResult, "txtResult");
             txtResult.Name = "txtResult";
             txtResult.ReadOnly = true;
-            txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            txtResult.Size = new System.Drawing.Size(608, 560);
-            txtResult.TabIndex = 14;
             // 
             // btnImageBrowse
             // 
-            btnImageBrowse.Location = new System.Drawing.Point(248, 263);
+            resources.ApplyResources(btnImageBrowse, "btnImageBrowse");
             btnImageBrowse.Name = "btnImageBrowse";
-            btnImageBrowse.Size = new System.Drawing.Size(32, 24);
-            btnImageBrowse.TabIndex = 10;
-            btnImageBrowse.Text = "...";
             btnImageBrowse.UseVisualStyleBackColor = true;
             btnImageBrowse.Click += btnImageBrowse_Click;
             // 
@@ -158,67 +120,50 @@
             pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pbImage.DrawCheckeredBackground = true;
             pbImage.FullscreenOnClick = true;
-            pbImage.Location = new System.Drawing.Point(16, 296);
-            pbImage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            resources.ApplyResources(pbImage, "pbImage");
             pbImage.Name = "pbImage";
             pbImage.PictureBoxBackColor = System.Drawing.SystemColors.Window;
-            pbImage.Size = new System.Drawing.Size(264, 264);
-            pbImage.TabIndex = 11;
             // 
             // cbInput
             // 
             cbInput.FormattingEnabled = true;
-            cbInput.Items.AddRange(new object[] { "What is in this image?", "Thoroughly describe this image.", "Transcribe the image's text, do not write anything else." });
-            cbInput.Location = new System.Drawing.Point(16, 208);
+            cbInput.Items.AddRange(new object[] { resources.GetString("cbInput.Items"), resources.GetString("cbInput.Items1"), resources.GetString("cbInput.Items2") });
+            resources.ApplyResources(cbInput, "cbInput");
             cbInput.Name = "cbInput";
-            cbInput.Size = new System.Drawing.Size(264, 24);
-            cbInput.TabIndex = 7;
             cbInput.TextChanged += cbInput_TextChanged;
             // 
             // lblReasoningEffort
             // 
-            lblReasoningEffort.AutoSize = true;
-            lblReasoningEffort.Location = new System.Drawing.Point(13, 128);
+            resources.ApplyResources(lblReasoningEffort, "lblReasoningEffort");
             lblReasoningEffort.Name = "lblReasoningEffort";
-            lblReasoningEffort.Size = new System.Drawing.Size(108, 16);
-            lblReasoningEffort.TabIndex = 4;
-            lblReasoningEffort.Text = "Reasoning effort:";
             // 
             // cbReasoningEffort
             // 
             cbReasoningEffort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbReasoningEffort.FormattingEnabled = true;
-            cbReasoningEffort.Items.AddRange(new object[] { "minimal", "low", "medium", "high" });
-            cbReasoningEffort.Location = new System.Drawing.Point(16, 152);
+            cbReasoningEffort.Items.AddRange(new object[] { resources.GetString("cbReasoningEffort.Items"), resources.GetString("cbReasoningEffort.Items1"), resources.GetString("cbReasoningEffort.Items2"), resources.GetString("cbReasoningEffort.Items3") });
+            resources.ApplyResources(cbReasoningEffort, "cbReasoningEffort");
             cbReasoningEffort.Name = "cbReasoningEffort";
-            cbReasoningEffort.Size = new System.Drawing.Size(264, 24);
-            cbReasoningEffort.TabIndex = 5;
             cbReasoningEffort.SelectedIndexChanged += cbReasoningEffort_SelectedIndexChanged;
             // 
             // lblTimer
             // 
-            lblTimer.Location = new System.Drawing.Point(744, 12);
+            resources.ApplyResources(lblTimer, "lblTimer");
             lblTimer.Name = "lblTimer";
-            lblTimer.Size = new System.Drawing.Size(168, 24);
-            lblTimer.TabIndex = 15;
-            lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnCapture
             // 
             btnCapture.Image = Properties.Resources.camera;
-            btnCapture.Location = new System.Drawing.Point(248, 568);
+            resources.ApplyResources(btnCapture, "btnCapture");
             btnCapture.Name = "btnCapture";
-            btnCapture.Size = new System.Drawing.Size(32, 32);
-            btnCapture.TabIndex = 16;
             btnCapture.UseVisualStyleBackColor = true;
             btnCapture.Click += btnCapture_Click;
             // 
             // AIForm
             // 
             AllowDrop = true;
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(928, 616);
             Controls.Add(btnCapture);
             Controls.Add(txtResult);
             Controls.Add(lblTimer);
@@ -236,12 +181,8 @@
             Controls.Add(lblInput);
             Controls.Add(cbModel);
             Controls.Add(lblModel);
-            Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             Name = "AIForm";
             SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "ShareX - AI";
             Shown += AIForm_Shown;
             DragDrop += AIForm_DragDrop;
             DragEnter += AIForm_DragEnter;
