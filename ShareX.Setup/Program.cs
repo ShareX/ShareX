@@ -384,7 +384,7 @@ namespace ShareX.Setup
 
                 if (Regex.IsMatch(language, "^[a-z]{2}(?:-[A-Z]{2})?$"))
                 {
-                    FileHelpers.CopyFiles(Path.Combine(source, language), Path.Combine(destination, language), "*.resources.dll");
+                    FileHelpers.CopyFiles(Path.Combine(source, language), Path.Combine(destination, "Languages", language), "*.resources.dll");
                 }
             }
 
