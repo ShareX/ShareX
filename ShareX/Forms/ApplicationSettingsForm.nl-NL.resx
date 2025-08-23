@@ -294,7 +294,4 @@
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
     <value>Maximale nummer van taken om op te slaan:</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>Controleer op pre-release-updates</value>
-  </data>
 </root>

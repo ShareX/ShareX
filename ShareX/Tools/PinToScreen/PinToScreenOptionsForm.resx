@@ -542,6 +542,7 @@
   </data>
   <data name="lblMinimizeSizeX.Text" xml:space="preserve">
     <value>x</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblMinimizeSizeX.Name" xml:space="preserve">
     <value>lblMinimizeSizeX</value>

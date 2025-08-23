@@ -402,15 +402,6 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>Jurnalul de depanării poate conține informații cu caracter personal. Sunteți sigur că doriți să continuați?</value>
   </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>Rezultatul OCR a fost copiat în clipboard.</value>
-  </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>A apărut o eroare în timpul procesării OCR sau nu a fost returnat niciun text.</value>
-  </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>OCR procesează.</value>
-  </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Nu s-a putut crea folderul:</value>
   </data>
@@ -467,12 +458,6 @@ Doriți să reporniți ShareX?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Taste rapide activate.</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tweet trimis cu succes.</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Nu s-a putut găsi un cont de Twitter valid.</value>
   </data>
   <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
     <value>Istoric</value>

@@ -249,9 +249,6 @@
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>语言：</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>检查预览版更新</value>
-  </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
     <value>鼠标中键单击托盘图标：</value>
   </data>
@@ -368,9 +365,6 @@
   </data>
   <data name="tpSettings.Text" xml:space="preserve">
     <value>设置</value>
-  </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>使用自定义主题</value>
   </data>
   <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
     <value>重置</value>

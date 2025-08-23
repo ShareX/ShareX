@@ -182,9 +182,6 @@ sürükle</value>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Proje sayfası</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tweet başarıyla gönderildi.</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>"{0}" dosyasına erişilemiyor.
 Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çalıştırın.</value>
@@ -206,9 +203,6 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Panoya kopyalandı: {0}</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Geçerli Twitter hesabı bulunamadı.</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>İptal</value>
@@ -517,14 +511,8 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Ayarlar kaydedilemedi</value>
   </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>OCR işlemi sırasında hata oluştu veya metin döndürülmedi.</value>
-  </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>Pano boş veya bilinmeyen veriler içeriyor.</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>OCR çıkışı panonuza kopyalandı.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Ekran görüntüsü gecikmesi: {0}sn</value>
@@ -577,9 +565,6 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   <data name="InspectWindow_WindowTitle" xml:space="preserve">
     <value>Pencere başlığı</value>
   </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>OCR işleniyor.</value>
-  </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>Hata ayıklama kütüğü hassas bilgiler içerebilir. Devam etmek istediğinize emin misiniz?</value>
   </data>
@@ -627,5 +612,37 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Sistem yöneticiniz yükleme özelliğini devre dışı bıraktı.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Donate" xml:space="preserve">
+    <value>Bağış</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
+    <value>Arapça</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
+    <value>İbranice</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>Panodan yükle</value>
+  </data>
+  <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
+    <value>FFmpeg aşağıdaki yolda bulunamadı:</value>
+  </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>FFmpeg eksik</value>
+  </data>
+  <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
+    <value>ShareX ile birlikte gelen FFmpeg yalnızca 64 bit işletim sistemlerini destekler.</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>Ekran kaydı aktifken ShareX kapatılamaz.
+
+Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
+  </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>ShareX güncel!</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>Panodan yüklemeyi tekrar denemek ister misiniz?</value>
   </data>
 </root>

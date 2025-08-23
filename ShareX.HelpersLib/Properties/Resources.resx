@@ -533,9 +533,6 @@ Would you like to download it?</value>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (Good quality)</value>
   </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Tweet message</value>
-  </data>
   <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
     <value>Don't resize</value>
   </data>
@@ -1316,5 +1313,8 @@ Would you like to download and install it?</value>
   </data>
   <data name="ToastClickAction_DeleteFile" xml:space="preserve">
     <value>Delete file locally</value>
+  </data>
+  <data name="AfterCaptureTasks_AnalyzeImage" xml:space="preserve">
+    <value>Analyze image</value>
   </data>
 </root>

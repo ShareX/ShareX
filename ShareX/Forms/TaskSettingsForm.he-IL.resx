@@ -414,9 +414,6 @@
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>צלם אזור</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>עמעם רקע כך שניתן להבדיל בקלות בבחירה (משפיע על מהירות ההפעלה)</value>
-  </data>
   <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
     <value>השתמש בבחירת אזור שקופה</value>
   </data>
@@ -638,9 +635,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - הגדרות למטלות</value>
-  </data>
-  <data name="cbDisableNotifications.Text" xml:space="preserve">
-    <value>השבת התראות</value>
   </data>
   <data name="cbUseRandomImageEffect.Text" xml:space="preserve">
     <value>השתמש באפקט תמונה אקראי</value>

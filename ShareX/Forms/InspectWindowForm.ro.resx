@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Inspectare fereastră</value>
   </data>
-  <data name="btnPinToTop.Text" xml:space="preserve">
-    <value>Fixare deasupra</value>
-  </data>
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>Reîmprospătare</value>
   </data>

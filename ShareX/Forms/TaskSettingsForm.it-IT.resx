@@ -447,9 +447,6 @@
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>Usa Modalità Multi Regione, che consente anche Ridimensionamento e Spostamento delle Regioni</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Scurisci lo Sfondo per Distinguere meglio la Selezione (Influisce sulla velocità di avvio)</value>
-  </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Durata Fissa:</value>
   </data>

@@ -435,9 +435,6 @@
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>Usar modo multirregião que também permitirá redimensionar e reposicionar regiões</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Escurecer plano de fundo para que a seleção seja diferenciada facilmente (afeta velocidade de inicialização)</value>
-  </data>
   <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
     <value>Se o tamanho da imagem for maior que o especificado, utilizar JPEG como formato de imagem:</value>
   </data>
@@ -455,9 +452,6 @@
   </data>
   <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
     <value>Se a área de transferência conter um URL: fazer download e upload</value>
-  </data>
-  <data name="cbDisableNotifications.Text" xml:space="preserve">
-    <value>Desabilitar notificações</value>
   </data>
   <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
     <value>Desabilitar notificações em tela cheia</value>

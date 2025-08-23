@@ -186,20 +186,11 @@
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Bildeffekte...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Hash-Überprüfung...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>DNS-Wechsler...</value>
-  </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Verzeichnisindizierer...</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Lineal...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Nachricht twittern...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Monitortest...</value>
@@ -224,9 +215,6 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>URL-Freigabedienste</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Zieleinstellungen...</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
     <value>Ziele</value>
@@ -417,20 +405,11 @@
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Bildeffekte...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Hash-Überprüfung...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>DNS-Wechsler...</value>
-  </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Verzeichnisindizierer...</value>
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Lineal...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Nachricht twittern...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Monitortest...</value>
@@ -663,9 +642,6 @@
   <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
     <value>Bild-Thumbnailer...</value>
   </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Benutzerdefinierte Uploader-Einstellungen...</value>
-  </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>Benutzerdefinierte Uploader-Einstellungen...</value>
   </data>
@@ -719,9 +695,6 @@
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord...</value>
-  </data>
-  <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>Twitter</value>
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>

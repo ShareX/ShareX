@@ -168,9 +168,6 @@
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Страница проекта</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Твит успешно отправлен.</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Нет доступа к файлу "{0}".
 Пожалуйста запустите ShareX от имени администратора для изменения пути к личной папке.</value>
@@ -192,9 +189,6 @@
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Скопировано в буфер: {0}</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Не удалось найти рабочий аккаунт Twitter.</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Отменить</value>
@@ -481,15 +475,6 @@
   <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
     <value>Испанский (Мексика)</value>
   </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>Распознавание в процессе.</value>
-  </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>Произошла ошибка распознавания, либо текст не обнаружен.</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>Результат распознавания скопирован в буфер обмена.</value>
-  </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
     <value>Для применения настроек персональной папки ShareX должен быть перезапущен. 
 
@@ -657,5 +642,8 @@
   </data>
   <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
     <value>Арабский</value>
+  </data>
+  <data name="AboutForm_AboutForm_Donate" xml:space="preserve">
+    <value>Пожертвовать</value>
   </data>
 </root>

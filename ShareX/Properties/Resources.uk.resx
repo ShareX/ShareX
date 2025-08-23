@@ -163,17 +163,11 @@
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>Автозапуск увімкнено Вашою організацією</value>
   </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>Сталася помилка під час розпізнавання тексту або тексту не виявлено.</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
     <value>Українська</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Завдання виконано</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>Результат розпізнавання скопійовано у буфер обміну.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Затримка для знімка: {0}с</value>
@@ -254,9 +248,6 @@
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Неможливо створити теку:</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Не вдалось знайти дійсний обліковий запис Twitter.</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>Посилання для завантаження та вивантаження</value>
   </data>
@@ -321,9 +312,6 @@
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Сторінка проекту</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Твіт успішно надіслано.</value>
-  </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
     <value>Автозапуск вимкнено Вашою організацією</value>
   </data>
@@ -372,9 +360,6 @@
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Після захоплення: {0}</value>
   </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>Виконується розпізнавання.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>Скорочене посилання: {0}</value>
   </data>
@@ -391,7 +376,7 @@
     <value>У черзі</value>
   </data>
   <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
-    <value>Вивантаження файла</value>
+    <value>Вивантаження файлу</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>Ви впевнені, що хочете вивантажити знімок?
@@ -657,5 +642,8 @@
   </data>
   <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
     <value>Функція оптичного розпізнавання тексту доступна лише у Windows версії {0} або новішої.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Donate" xml:space="preserve">
+    <value>Задонатити</value>
   </data>
 </root>

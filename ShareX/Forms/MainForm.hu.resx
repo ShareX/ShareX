@@ -192,12 +192,6 @@
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Kép effektek...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Hash ellenőrzés...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>DNS változtató...</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR kód...</value>
   </data>
@@ -206,9 +200,6 @@
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Vonalzó...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet üzenet...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Monitor teszt...</value>
@@ -236,9 +227,6 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>URL megosztó szolgáltatások</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Cél beállítások...</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
     <value>Alkalmazás beállítások...</value>
@@ -438,12 +426,6 @@
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Kép effektek...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Hash ellenőrzés...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>DNS változtató....</value>
-  </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR kód...</value>
   </data>
@@ -452,9 +434,6 @@
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Vonalzó...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tweet üzenet...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Monitor teszt...</value>

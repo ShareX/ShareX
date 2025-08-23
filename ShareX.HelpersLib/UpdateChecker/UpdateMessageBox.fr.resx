@@ -123,9 +123,6 @@
   <data name="btnYes.Text" xml:space="preserve">
     <value>Oui</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Ne pas redemander jusqu'au prochain démarrage de ShareX</value>
-  </data>
   <data name="lblViewChangelog.Text" xml:space="preserve">
     <value>Voir l'historique des modifications</value>
   </data>

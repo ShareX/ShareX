@@ -123,9 +123,6 @@
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
     <value>Instalați versiune de dezvoltare...</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>Verificați dacă există actualizări pre-release</value>
-  </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
     <value>Faceți clic în mijloc pe pictograma din bară:</value>
   </data>
@@ -170,9 +167,6 @@
   </data>
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>Adăugați</value>
-  </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>Utilizați o temă personalizată</value>
   </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>Tema</value>

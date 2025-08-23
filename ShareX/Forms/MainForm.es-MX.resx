@@ -216,12 +216,6 @@
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Efectos de imágenes...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Verificar hash...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>Modificador de DNS...</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>Código QR...</value>
   </data>
@@ -239,9 +233,6 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Generador de miniaturas de video...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tuitear mensaje...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Prueba de monitor...</value>
@@ -269,9 +260,6 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Servicios para compartir enlaces</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Configuración de destinos...</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
     <value>Destinos</value>
@@ -570,12 +558,6 @@
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Efectos de imágenes...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Verificar hash...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Modificador de DNS...</value>
-  </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>Código QR...</value>
   </data>
@@ -593,9 +575,6 @@
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Generador de miniaturas de video...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tuitear mensaje...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Prueba de monitor...</value>
@@ -690,9 +669,6 @@
   <data name="tsmiImageSplitter.Text" xml:space="preserve">
     <value>Separador de imágenes...</value>
   </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Configuración de servidor personalizado...</value>
-  </data>
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>Dimensiones de la imagen</value>
   </data>
@@ -729,9 +705,6 @@
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>Configuración de servidor personalizado...</value>
   </data>
-  <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>Twitter</value>
-  </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
   </data>
@@ -761,9 +734,6 @@
   </data>
   <data name="tsmiAddImageEffects.Text" xml:space="preserve">
     <value>Añadir efectos de imagen...</value>
-  </data>
-  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
-    <value>Búsqueda de imágenes de Google...</value>
   </data>
   <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
     <value>Búsqueda visual de Bing (OCR)...</value>

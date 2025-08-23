@@ -132,4 +132,10 @@
   <data name="tsmiAbort.Text" xml:space="preserve">
     <value>İptal</value>
   </data>
+  <data name="btnPause.Text" xml:space="preserve">
+    <value>Duraklat</value>
+  </data>
+  <data name="tsmiPause.Text" xml:space="preserve">
+    <value>Duraklat</value>
+  </data>
 </root>

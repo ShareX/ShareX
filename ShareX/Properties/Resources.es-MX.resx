@@ -232,9 +232,6 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiado al portapapeles: {0}</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>No se puede encontrar una cuenta de Twitter válida.</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>Enlace para descargar y subir</value>
   </data>
@@ -295,9 +292,6 @@ aquí</value>
   </data>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Página del proyecto</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tuit publicado con éxito.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>No se puede acceder al archivo "{0}". 
@@ -463,14 +457,8 @@ Clic medio para cerrar</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>El inicio ha sido habilitado por su organización</value>
   </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>Ocurrió un error al procesar el OCR, o no se ha producido ningún texto.</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
     <value>Ucraniano</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>El resultado del OCR ha sido copiado al portapapeles.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Aplazar captura: {0} s</value>
@@ -486,9 +474,6 @@ Clic medio para cerrar</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>El registro de depuración podría contener información sensible. ¿Desea continuar?</value>
-  </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>El OCR está en proceso.</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
     <value>ShareX - Confirmación</value>

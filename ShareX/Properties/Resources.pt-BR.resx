@@ -120,9 +120,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Tempo restante: {0}s ({1}%) Total: {2}</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Não foi possível encontrar uma conta válida do Twitter.</value>
-  </data>
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
     <value>URL está vazio.</value>
   </data>
@@ -310,9 +307,6 @@ aqui</value>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Página do projeto</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tuíte enviado com sucesso.</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Não foi possivel acessar "{0}".
 Por favor, execute o ShareX como administrador para mudar a pasta de destino.</value>
@@ -498,12 +492,6 @@ Você pode desativar posteriormente no menu "Tarefas após a captura".</value>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
     <value>Conteúdo da área de transferência: Imagem (Tamanho: {0}x{1})</value>
   </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>Ocorreu um erro durante o processamento de OCR ou nenhum texto foi retornado.</value>
-  </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>Processando OCR.</value>
-  </data>
   <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
     <value>Identificador do processo</value>
   </data>
@@ -527,9 +515,6 @@ Você pode desativar posteriormente no menu "Tarefas após a captura".</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>A área de transferência está vazia ou contém dados desconhecidos.</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>A saída do OCR foi copiada para a área de transferência.</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>A inicialização foi habilitada por sua organização</value>

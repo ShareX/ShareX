@@ -474,5 +474,15 @@ namespace ShareX.HelpersLib
             tabControl.SelectedTab = tabPage;
             tabControl.Enabled = true;
         }
+
+        public static DialogResult ShowDialogTopMost(this Form form, Form owner)
+        {
+            if (owner != null && owner.TopMost)
+            {
+                form.TopMost = true;
+            }
+
+            return form.ShowDialog(owner);
+        }
     }
 }

@@ -123,9 +123,6 @@
   <data name="btnNo.Text" xml:space="preserve">
     <value>Nie</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Nie pytaj ponownie, dopóki ShareX nie uruchomi się następnym razem</value>
-  </data>
   <data name="lblViewChangelog.Text" xml:space="preserve">
     <value>Zobacz dziennik zmian</value>
   </data>

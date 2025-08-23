@@ -458,15 +458,6 @@ namespace ShareX.UploadersLib
 
         #region Other uploaders
 
-        #region Twitter
-
-        public List<OAuthInfo> TwitterOAuthInfoList { get; set; } = new List<OAuthInfo>();
-        public int TwitterSelectedAccount { get; set; } = 0;
-        public bool TwitterSkipMessageBox { get; set; } = false;
-        public string TwitterDefaultMessage { get; set; } = "";
-
-        #endregion Twitter
-
         #region Custom uploaders
 
         public List<CustomUploaderItem> CustomUploadersList { get; set; } = new List<CustomUploaderItem>();

@@ -426,14 +426,8 @@
   <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
     <value>هذا الميزة لن تعمل عندما يكون الخيار "تعطيل الرفع" مفعلًا!</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>تم إرسال التغريدة.</value>
-  </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>خطأ في إنشاء المجلد:</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>لم يتم العثور على حساب تويتر صالح.</value>
   </data>
   <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
     <value>لم يتم العثور على نافذة لديها العنوان المحدد.</value>

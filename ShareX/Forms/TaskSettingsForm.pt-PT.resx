@@ -279,9 +279,6 @@
   <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
     <value>Utilizar texto personalizado próximo ao cursor:</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Escurecer plano de fundo para que a selecção seja facilmente distinguida (afecta velocidade de inicialização)</value>
-  </data>
   <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
     <value>Utilizar forma quadrada da lente magnificada em vez de circular</value>
   </data>

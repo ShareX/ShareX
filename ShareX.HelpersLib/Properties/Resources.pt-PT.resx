@@ -508,9 +508,6 @@ Gostaria de transferí-la?</value>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (qualidade boa)</value>
   </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Enviar mensagem no Tweet</value>
-  </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Parar todos os envios ativos</value>
   </data>

@@ -348,9 +348,6 @@
   <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
     <value>Ancho:</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Atenuar fondo para resaltar la selección (afecta la velocidad de inicio)</value>
-  </data>
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Grabadora de pantalla</value>
   </data>
@@ -588,9 +585,6 @@ en el portapapeles</value>
   </data>
   <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
     <value>Desactivar notificaciones en pantalla completa</value>
-  </data>
-  <data name="cbDisableNotifications.Text" xml:space="preserve">
-    <value>Desactivar notificaciones</value>
   </data>
   <data name="tpNotifications.Text" xml:space="preserve">
     <value>Notificaciones</value>

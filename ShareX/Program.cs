@@ -24,12 +24,14 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.Loader;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -125,6 +127,7 @@ namespace ShareX
         internal static TaskSettings DefaultTaskSettings { get; set; }
         internal static UploadersConfig UploadersConfig { get; set; }
         internal static HotkeysConfig HotkeysConfig { get; set; }
+        internal static HistoryManagerSQLite HistoryManager { get; set; }
 
         internal static MainForm MainForm { get; private set; }
         internal static Stopwatch StartTimer { get; private set; }
@@ -178,7 +181,7 @@ namespace ShareX
             }
         }
 
-        public const string HistoryFileName = "History.json";
+        public const string HistoryFileName = "History.db";
 
         public static string HistoryFilePath
         {
@@ -190,7 +193,7 @@ namespace ShareX
             }
         }
 
-        public const string HistoryFileNameOld = "History.xml";
+        public const string HistoryFileNameOld = "History.json";
 
         public static string HistoryFilePathOld
         {
@@ -265,7 +268,7 @@ namespace ShareX
         [STAThread]
         private static void Main(string[] args)
         {
-            HandleExceptions();
+            StartupWork();
 
             StartTimer = Stopwatch.StartNew();
 
@@ -328,6 +331,7 @@ namespace ShareX
                 DebugHelper.WriteLine("Personal path detection method: " + PersonalPathDetectionMethod);
             }
             DebugHelper.WriteLine("Operating system: " + Helpers.GetOperatingSystemProductName(true));
+            DebugHelper.WriteLine(".NET version: " + Environment.Version);
             DebugHelper.WriteLine("Running as elevated process: " + IsAdmin);
 
             SilentRun = CLI.IsCommandExist("silent", "s");
@@ -370,6 +374,7 @@ namespace ShareX
                 DebugHelper.WriteLine("ShareX closing.");
 
                 WatchFolderManager?.Dispose();
+                SettingManager.HistoryClose();
                 SettingManager.SaveAllSettings();
 
                 DebugHelper.WriteLine("ShareX closed.");
@@ -620,8 +625,20 @@ namespace ShareX
             return false;
         }
 
-        private static void HandleExceptions()
+        private static void StartupWork()
         {
+            AssemblyLoadContext.Default.Resolving += (ctx, asmName) =>
+            {
+                if (string.IsNullOrEmpty(asmName.CultureName) || !asmName.Name.EndsWith(".resources", StringComparison.OrdinalIgnoreCase))
+                {
+                    return null;
+                }
+
+                string baseDir = AppContext.BaseDirectory;
+                string path = Path.Combine(baseDir, "Languages", asmName.CultureName, asmName.Name + ".dll");
+                return File.Exists(path) ? ctx.LoadFromAssemblyPath(path) : null;
+            };
+
 #if DEBUG
             if (Debugger.IsAttached)
             {

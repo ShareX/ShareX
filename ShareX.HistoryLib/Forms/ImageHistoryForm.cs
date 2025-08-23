@@ -25,6 +25,7 @@
 
 using Manina.Windows.Forms;
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Forms;
 using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,7 @@ namespace ShareX.HistoryLib
 {
     public partial class ImageHistoryForm : Form
     {
-        public string HistoryPath { get; private set; }
+        public HistoryManagerSQLite HistoryManager { get; private set; }
         public ImageHistorySettings Settings { get; private set; }
         public string SearchText { get; set; }
         public bool SearchInTags { get; set; } = true;
@@ -47,12 +48,12 @@ namespace ShareX.HistoryLib
         private string defaultTitle;
         private List<HistoryItem> allHistoryItems;
 
-        public ImageHistoryForm(string historyPath, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
+        public ImageHistoryForm(HistoryManagerSQLite historyManager, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
         {
             InitializeComponent();
             tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
 
-            HistoryPath = historyPath;
+            HistoryManager = historyManager;
             Settings = settings;
 
             ilvImages.SetRenderer(new HistoryImageListViewRenderer());
@@ -61,6 +62,10 @@ namespace ShareX.HistoryLib
 
             him = new HistoryItemManager(uploadFile, editImage, pinToScreen);
             him.GetHistoryItems += him_GetHistoryItems;
+            him.FavoriteRequested += him_FavoriteRequested;
+            him.EditRequested += him_EditRequested;
+            him.DeleteRequested += him_DeleteRequested;
+            him.DeleteFileRequested += him_DeleteFileRequested;
             ilvImages.ContextMenuStrip = him.cmsHistory;
 
             defaultTitle = Text;
@@ -78,6 +83,8 @@ namespace ShareX.HistoryLib
             {
                 Settings.WindowState.ApplyFormState(this);
             }
+
+            tsbFavorites.Checked = Settings.Favorites;
         }
 
         private void UpdateTitle(int total, int filtered)
@@ -85,9 +92,12 @@ namespace ShareX.HistoryLib
             Text = $"{defaultTitle} ({Resources.Total}: {total:N0} - {Resources.Filtered}: {filtered:N0})";
         }
 
-        private async Task RefreshHistoryItems(bool mockData = false)
+        private async Task RefreshHistoryItems(bool refreshItems = true)
         {
-            allHistoryItems = await GetHistoryItems(mockData);
+            if (refreshItems)
+            {
+                allHistoryItems = await GetHistoryItems();
+            }
 
             tstbSearch.AutoCompleteCustomSource.Clear();
 
@@ -97,6 +107,20 @@ namespace ShareX.HistoryLib
             }
 
             ApplyFilter();
+        }
+
+        private void DeleteHistoryItems(HistoryItem[] historyItems)
+        {
+            if (historyItems != null && historyItems.Length > 0)
+            {
+                foreach (HistoryItem hi in historyItems)
+                {
+                    if (hi != null)
+                    {
+                        allHistoryItems.Remove(hi);
+                    }
+                }
+            }
         }
 
         private void UpdateSearchText()
@@ -113,20 +137,9 @@ namespace ShareX.HistoryLib
             }
         }
 
-        private async Task<List<HistoryItem>> GetHistoryItems(bool mockData = false)
+        private async Task<List<HistoryItem>> GetHistoryItems()
         {
-            HistoryManager history;
-
-            if (mockData)
-            {
-                history = new HistoryManagerMock(HistoryPath);
-            }
-            else
-            {
-                history = new HistoryManagerJSON(HistoryPath);
-            }
-
-            List<HistoryItem> historyItems = await history.GetHistoryItemsAsync();
+            List<HistoryItem> historyItems = await HistoryManager.GetHistoryItemsAsync();
             historyItems.Reverse();
             return historyItems;
         }
@@ -151,8 +164,16 @@ namespace ShareX.HistoryLib
             {
                 HistoryItem hi = allHistoryItems[i];
 
-                if (!string.IsNullOrEmpty(hi.FilePath) && FileHelpers.IsImageFile(hi.FilePath) &&
-                    (regex == null || regex.IsMatch(hi.FileName) || (SearchInTags && hi.Tags != null && hi.Tags.Any(tag => regex.IsMatch(tag.Value)))) &&
+                if (Settings.Favorites)
+                {
+                    if (hi.Favorite)
+                    {
+                        filteredHistoryItems.Add(hi);
+                    }
+                }
+                else if (!string.IsNullOrEmpty(hi.FilePath) && (!Settings.ImageOnly || FileHelpers.IsImageFile(hi.FilePath)) &&
+                    (regex == null || regex.IsMatch(hi.FileName) || (SearchInTags && hi.Tags != null &&
+                    hi.Tags.Any(tag => !string.IsNullOrEmpty(tag.Value) && regex.IsMatch(tag.Value)))) &&
                     (!Settings.FilterMissingFiles || File.Exists(hi.FilePath)))
                 {
                     filteredHistoryItems.Add(hi);
@@ -173,6 +194,43 @@ namespace ShareX.HistoryLib
         private HistoryItem[] him_GetHistoryItems()
         {
             return ilvImages.SelectedItems.Select(x => x.Tag as HistoryItem).ToArray();
+        }
+
+        private void him_FavoriteRequested(HistoryItem[] historyItems)
+        {
+            foreach (HistoryItem hi in historyItems)
+            {
+                HistoryManager.Edit(hi);
+            }
+        }
+
+        private void him_EditRequested(HistoryItem hi)
+        {
+            HistoryManager.Edit(hi);
+        }
+
+        private async void him_DeleteRequested(HistoryItem[] historyItems)
+        {
+            HistoryManager.Delete(historyItems);
+
+            DeleteHistoryItems(historyItems);
+            await RefreshHistoryItems(false);
+        }
+
+        private async void him_DeleteFileRequested(HistoryItem[] historyItems)
+        {
+            foreach (HistoryItem historyItem in historyItems)
+            {
+                if (!string.IsNullOrEmpty(historyItem.FilePath) && File.Exists(historyItem.FilePath))
+                {
+                    File.Delete(historyItem.FilePath);
+                }
+            }
+
+            HistoryManager.Delete(historyItems);
+
+            DeleteHistoryItems(historyItems);
+            await RefreshHistoryItems(false);
         }
 
         #region Form events
@@ -201,10 +259,6 @@ namespace ShareX.HistoryLib
                     await RefreshHistoryItems();
                     e.SuppressKeyPress = true;
                     break;
-                case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
-                    await RefreshHistoryItems(true);
-                    e.SuppressKeyPress = true;
-                    break;
             }
         }
 
@@ -215,27 +269,39 @@ namespace ShareX.HistoryLib
 
         private void ilvImages_ItemDoubleClick(object sender, ItemClickEventArgs e)
         {
-            int currentImageIndex = ilvImages.SelectedItems[0].Index;
-            int modifiedImageIndex = 0;
-            int halfRange = 100;
-            int startIndex = Math.Max(currentImageIndex - halfRange, 0);
-            int endIndex = Math.Min(startIndex + (halfRange * 2) + 1, ilvImages.Items.Count);
+            ImageListViewItem selectedItem = ilvImages.SelectedItems[0];
+            HistoryItem hi = selectedItem.Tag as HistoryItem;
 
-            List<string> filteredImages = new List<string>();
-
-            for (int i = startIndex; i < endIndex; i++)
+            if (FileHelpers.IsImageFile(hi.FilePath))
             {
-                string imageFilePath = ilvImages.Items[i].FileName;
+                int currentImageIndex = selectedItem.Index;
+                int modifiedImageIndex = 0;
+                int halfRange = 100;
+                int startIndex = Math.Max(currentImageIndex - halfRange, 0);
+                int endIndex = Math.Min(startIndex + (halfRange * 2) + 1, ilvImages.Items.Count);
 
-                if (i == currentImageIndex)
+                List<string> filteredImages = new List<string>();
+
+                for (int i = startIndex; i < endIndex; i++)
                 {
-                    modifiedImageIndex = filteredImages.Count;
+                    string imageFilePath = ilvImages.Items[i].FileName;
+
+                    if (i == currentImageIndex)
+                    {
+                        modifiedImageIndex = filteredImages.Count;
+                    }
+
+                    filteredImages.Add(imageFilePath);
                 }
 
-                filteredImages.Add(imageFilePath);
+                ImageViewer.ShowImage(filteredImages.ToArray(), modifiedImageIndex);
+            } // TODO: Translate
+            else if (FileHelpers.IsTextFile(hi.FilePath) || FileHelpers.IsVideoFile(hi.FilePath) ||
+                MessageBox.Show("Would you like to open this file?" + "\r\n\r\n" + hi.FilePath,
+                "ShareX - Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FileHelpers.OpenFile(hi.FilePath);
             }
-
-            ImageViewer.ShowImage(filteredImages.ToArray(), modifiedImageIndex);
         }
 
         private void tstbSearch_KeyDown(object sender, KeyEventArgs e)
@@ -251,6 +317,30 @@ namespace ShareX.HistoryLib
         private void tsbSearch_Click(object sender, EventArgs e)
         {
             ApplyFilter();
+        }
+
+        private async void tsbFavorites_Click(object sender, EventArgs e)
+        {
+            Settings.Favorites = tsbFavorites.Checked;
+
+            await RefreshHistoryItems(false);
+        }
+
+        private void tsbShowStats_Click(object sender, EventArgs e)
+        {
+            string stats = HistoryHelpers.OutputStats(allHistoryItems);
+            OutputBox.Show(stats, Resources.HistoryStats);
+        }
+
+        private async void tsbImportFolder_Click(object sender, EventArgs e)
+        {
+            using (HistoryImportForm historyImportForm = new HistoryImportForm(HistoryManager, allHistoryItems))
+            {
+                if (historyImportForm.ShowDialog() == DialogResult.OK)
+                {
+                    await RefreshHistoryItems();
+                }
+            }
         }
 
         private void tsbSettings_Click(object sender, EventArgs e)

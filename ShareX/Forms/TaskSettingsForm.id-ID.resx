@@ -477,9 +477,6 @@
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>Gunakan mode multi area yang juga mengizinkan mengubah ukuran dan memindahkan area</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Redupkan latar belakang agar pilihan bisa dibedakan dengan mudah (mempengaruhi kecepatan mulai)</value>
-  </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>Ukuran area akan berubah saat menekan "Alt":</value>
   </data>

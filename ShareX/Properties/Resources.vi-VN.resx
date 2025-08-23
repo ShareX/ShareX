@@ -120,9 +120,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Thời gian còn lại: {0}giây ({1}%) Tổng cộng: {2}</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Không thể tìm thấy tài khoàn Twitter hợp lệ.</value>
-  </data>
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
     <value>URL đang trống.</value>
   </data>
@@ -310,9 +307,6 @@ Bạn có muốn khởi động lại ShareX không?</value>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Trang dự án</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Đã gửi Tweet thành công.</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Không thể truy cập tới tệp "{0}"
 Vui lòng chạy ShareX dưới quyền administrator để thay đổi thư mục riêng.</value>
@@ -468,9 +462,6 @@ Nhấn chuột giữa để đóng</value>
   <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
     <value>Giữ ở trên cùng</value>
   </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>Lỗi xảy ra trong quá trình xử lí nhận diện văn bản (OCR), hoặc không có văn bản được nhận diện.</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
     <value>Tiếng Ukraina</value>
   </data>
@@ -479,12 +470,6 @@ Nhấn chuột giữa để đóng</value>
   </data>
   <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
     <value>Tiếng Indonesia</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>Kết quả nhận diện văn bản (OCR) đã được sao chép vào vùng nhớ tạm</value>
-  </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>Đang nhận diện văn bản (OCR)</value>
   </data>
   <data name="SwitchToThumbnailView" xml:space="preserve">
     <value>Chuyển qua xem trước ảnh</value>

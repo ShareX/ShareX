@@ -375,9 +375,6 @@
   <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
     <value>Действие 5-й кнопки мыши:</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Затемнить фон, чтобы зону выделения было легче отличать (влияет на время запуска)</value>
-  </data>
   <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
     <value>Показывать FPS в верхнем левом углу</value>
   </data>
@@ -534,9 +531,6 @@
   <data name="tpNotifications.Text" xml:space="preserve">
     <value>Уведомления</value>
   </data>
-  <data name="cbDisableNotifications.Text" xml:space="preserve">
-    <value>Отключить уведомления</value>
-  </data>
   <data name="gbToastWindow.Text" xml:space="preserve">
     <value>Уведомление с предпросмотром</value>
   </data>
@@ -662,5 +656,8 @@
   </data>
   <data name="cbUseCustomActionCompletedSound.Text" xml:space="preserve">
     <value>Пользовательский звук выполнения действия:</value>
+  </data>
+  <data name="cbCaptureAutoHideDesktopIcons.Text" xml:space="preserve">
+    <value>Автоматически скрыть значки рабочего стола</value>
   </data>
 </root>

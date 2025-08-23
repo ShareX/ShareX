@@ -126,24 +126,6 @@
   <data name="btnFilePathBrowse2.Text" xml:space="preserve">
     <value>Przeglądaj...</value>
   </data>
-  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
-    <value>Skopiuj wszystko</value>
-  </data>
-  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
-    <value>Dekoduj</value>
-  </data>
-  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
-    <value>Dekoduj</value>
-  </data>
-  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
-    <value>Dekoduj</value>
-  </data>
-  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
-    <value>Dekoduj</value>
-  </data>
-  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
-    <value>Enkoduj</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Sprawdź hash</value>
   </data>
@@ -156,21 +138,6 @@
   <data name="lblResult.Text" xml:space="preserve">
     <value>Wynik:</value>
   </data>
-  <data name="lblHashCheckHash.Text" xml:space="preserve">
-    <value>Hash:</value>
-  </data>
-  <data name="lblHashCheckBase64.Text" xml:space="preserve">
-    <value>Base64:</value>
-  </data>
-  <data name="lblHashCheckBinary.Text" xml:space="preserve">
-    <value>Binary:</value>
-  </data>
-  <data name="lblHashCheckText.Text" xml:space="preserve">
-    <value>Tekst:</value>
-  </data>
-  <data name="lblHashCheckHex.Text" xml:space="preserve">
-    <value>Szesnastkowo:</value>
-  </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Typ hashu:</value>
   </data>
@@ -179,11 +146,5 @@
   </data>
   <data name="lblFilePath2.Text" xml:space="preserve">
     <value>Ścieżka pliku:</value>
-  </data>
-  <data name="tpTextConversions.Text" xml:space="preserve">
-    <value>Konwersje tekstu</value>
-  </data>
-  <data name="tpFileHashCheck.Text" xml:space="preserve">
-    <value>Sprawdzanie hashu pliku</value>
   </data>
 </root>

@@ -207,6 +207,8 @@ namespace ShareX
                 tsddbUpload.Visible = false;
                 tsddbAfterUploadTasks.Visible = false;
                 tsddbDestinations.Visible = false;
+                tsbDestinationSettings.Visible = false;
+                tsbCustomUploaderSettings.Visible = false;
                 tsmiTestImageUpload.Visible = false;
                 tsmiTestTextUpload.Visible = false;
                 tsmiTestFileUpload.Visible = false;
@@ -216,11 +218,19 @@ namespace ShareX
                 tsmiTrayUpload.Visible = false;
                 tsmiTrayAfterUploadTasks.Visible = false;
                 tsmiTrayDestinations.Visible = false;
+                tsmiTrayDestinationSettings.Visible = false;
+                tsmiTrayCustomUploaderSettings.Visible = false;
 
                 tsmiUploadSelectedFile.Visible = false;
                 tsmiShortenSelectedURL.Visible = false;
                 tsmiShareSelectedURL.Visible = false;
             }
+
+            // TODO: Translate
+#if STEAM
+            tsbDonate.Text = "ShareX website...";
+            tsbDonate.Image = Resources.globe;
+#endif
 
             HandleCreated += MainForm_HandleCreated;
         }
@@ -632,7 +642,7 @@ namespace ShareX
             cmsTaskInfo.SuspendLayout();
 
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible =
-                tsmiGoogleLens.Visible = tsmiBingVisualSearch.Visible = tsmiShowQRCode.Visible = tsmiOCRImage.Visible =
+                tsmiAnalyzeImage.Visible = tsmiGoogleLens.Visible = tsmiBingVisualSearch.Visible = tsmiShowQRCode.Visible = tsmiOCRImage.Visible =
                 tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible = tsmiEditSelectedFile.Visible =
                 tsmiBeautifyImage.Visible = tsmiAddImageEffects.Visible = tsmiPinSelectedFile.Visible = tsmiRunAction.Visible =
                 tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = false;
@@ -750,6 +760,7 @@ namespace ShareX
                     tsmiDeleteSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiShortenSelectedURL.Visible = !SystemOptions.DisableUpload && uim.SelectedItem.IsURLExist;
                     tsmiShareSelectedURL.Visible = !SystemOptions.DisableUpload && uim.SelectedItem.IsURLExist;
+                    tsmiAnalyzeImage.Visible = uim.SelectedItem.IsImageFile;
                     tsmiGoogleLens.Visible = uim.SelectedItem.IsURLExist;
                     tsmiBingVisualSearch.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
@@ -847,10 +858,7 @@ namespace ShareX
             ShareXResources.ApplyCustomThemeToControl(dgvHotkeys);
             dgvHotkeys.BackgroundColor = ShareXResources.Theme.BackgroundColor;
 
-            tsmiTweetMessage.Image = TaskHelpers.FindMenuIcon(HotkeyType.TweetMessage);
-            tsmiTrayTweetMessage.Image = TaskHelpers.FindMenuIcon(HotkeyType.TweetMessage);
-            tsbX.Image = TaskHelpers.FindMenuIcon(HotkeyType.TweetMessage);
-
+            tsbX.Image = ShareXResources.IsDarkTheme ? Resources.X_white : Resources.X_black;
             tsbDiscord.Image = ShareXResources.IsDarkTheme ? Resources.Discord_white : Resources.Discord_black;
 
             tsmiQRCode.Image = TaskHelpers.FindMenuIcon(HotkeyType.QRCode);
@@ -1704,11 +1712,6 @@ namespace ShareX
             UploadManager.ShowShortenURLDialog();
         }
 
-        private void tsmiTweetMessage_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.TweetMessage();
-        }
-
         private void tsmiColorPicker_Click(object sender, EventArgs e)
         {
             TaskHelpers.ShowScreenColorPickerDialog();
@@ -1772,6 +1775,11 @@ namespace ShareX
         private void tsmiVideoThumbnailer_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenVideoThumbnailer();
+        }
+
+        private void tsmiAI_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.AnalyzeImage();
         }
 
         private async void tsmiOCR_Click(object sender, EventArgs e)
@@ -1951,7 +1959,11 @@ namespace ShareX
 
         private void tsbDonate_Click(object sender, EventArgs e)
         {
+#if STEAM
+            URLHelpers.OpenURL(Links.Website);
+#else
             URLHelpers.OpenURL(Links.Donate);
+#endif
         }
 
         private void tsbX_Click(object sender, EventArgs e)
@@ -2369,6 +2381,11 @@ namespace ShareX
         private void tsmiBingVisualSearch_Click(object sender, EventArgs e)
         {
             uim.SearchImageUsingBing();
+        }
+
+        private void tsmiAnalyzeImage_Click(object sender, EventArgs e)
+        {
+            uim.AnalyzeImage();
         }
 
         private void tsmiShowQRCode_Click(object sender, EventArgs e)

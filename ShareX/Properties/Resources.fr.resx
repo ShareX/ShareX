@@ -182,9 +182,6 @@ ici</value>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Page du projet</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Le tweet a bien été envoyé.</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Impossible d'accéder au fichier « {0} ».
 Veuillez exécuter ShareX en tant qu'administrateur pour changer le chemin du dossier personnel.</value>
@@ -206,9 +203,6 @@ Veuillez exécuter ShareX en tant qu'administrateur pour changer le chemin du do
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copié dans le presse-papier : {0}</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Impossible de trouver un compte Twitter valide.</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Annuler</value>
@@ -462,12 +456,6 @@ Clique de la molette pour fermer</value>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Modifier avec ShareX</value>
   </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>Une erreur est survenue lors du traitement OCR, ou aucun texte n'a été retourné.</value>
-  </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>L'OCR est en cours de traitement.</value>
-  </data>
   <data name="ShareXConfirmation" xml:space="preserve">
     <value>ShareX - Confirmation</value>
   </data>
@@ -479,9 +467,6 @@ Clique de la molette pour fermer</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>Le démarrage a été activé par votre organisation</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>La résultat de l'OCR a été copié vers votre presse-papier.</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>Le journal de déboggage peut contenir des informations sensibles. Êtes-vous sûr de vouloir continuer ?</value>

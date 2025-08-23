@@ -42,9 +42,10 @@
             tsbSearch = new System.Windows.Forms.ToolStripButton();
             tsbAdvancedSearch = new System.Windows.Forms.ToolStripButton();
             tss1 = new System.Windows.Forms.ToolStripSeparator();
-            tsbToggleMoreInfo = new System.Windows.Forms.ToolStripButton();
+            tsbFavorites = new System.Windows.Forms.ToolStripButton();
             tsbShowStats = new System.Windows.Forms.ToolStripButton();
             tss2 = new System.Windows.Forms.ToolStripSeparator();
+            tsbImportFolder = new System.Windows.Forms.ToolStripButton();
             tsbSettings = new System.Windows.Forms.ToolStripButton();
             gbAdvancedSearch = new System.Windows.Forms.GroupBox();
             btnAdvancedSearchClose = new System.Windows.Forms.Button();
@@ -63,9 +64,7 @@
             dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             txtFilenameFilter = new System.Windows.Forms.TextBox();
             scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
-            scHistoryItemInfo = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
-            pgHistoryItemInfo = new System.Windows.Forms.PropertyGrid();
             tscHistory.ContentPanel.SuspendLayout();
             tscHistory.TopToolStripPanel.SuspendLayout();
             tscHistory.SuspendLayout();
@@ -75,10 +74,6 @@
             scMain.Panel1.SuspendLayout();
             scMain.Panel2.SuspendLayout();
             scMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)scHistoryItemInfo).BeginInit();
-            scHistoryItemInfo.Panel1.SuspendLayout();
-            scHistoryItemInfo.Panel2.SuspendLayout();
-            scHistoryItemInfo.SuspendLayout();
             SuspendLayout();
             // 
             // tscHistory
@@ -135,7 +130,7 @@
             // 
             resources.ApplyResources(tsHistory, "tsHistory");
             tsHistory.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            tsHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tslSearch, tstbSearch, tsbSearch, tsbAdvancedSearch, tss1, tsbToggleMoreInfo, tsbShowStats, tss2, tsbSettings });
+            tsHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tslSearch, tstbSearch, tsbSearch, tsbAdvancedSearch, tss1, tsbFavorites, tsbShowStats, tsbImportFolder, tss2, tsbSettings });
             tsHistory.Name = "tsHistory";
             // 
             // tslSearch
@@ -173,13 +168,14 @@
             tss1.Name = "tss1";
             resources.ApplyResources(tss1, "tss1");
             // 
-            // tsbToggleMoreInfo
+            // tsbFavorites
             // 
-            tsbToggleMoreInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            tsbToggleMoreInfo.Image = Properties.Resources.layout_header_3_mix;
-            resources.ApplyResources(tsbToggleMoreInfo, "tsbToggleMoreInfo");
-            tsbToggleMoreInfo.Name = "tsbToggleMoreInfo";
-            tsbToggleMoreInfo.Click += tsbToggleMoreInfo_Click;
+            tsbFavorites.CheckOnClick = true;
+            tsbFavorites.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsbFavorites.Image = Properties.Resources.star;
+            resources.ApplyResources(tsbFavorites, "tsbFavorites");
+            tsbFavorites.Name = "tsbFavorites";
+            tsbFavorites.Click += tsbFavorites_Click;
             // 
             // tsbShowStats
             // 
@@ -193,6 +189,14 @@
             // 
             tss2.Name = "tss2";
             resources.ApplyResources(tss2, "tss2");
+            // 
+            // tsbImportFolder
+            // 
+            tsbImportFolder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsbImportFolder.Image = Properties.Resources.folder_search_result;
+            resources.ApplyResources(tsbImportFolder, "tsbImportFolder");
+            tsbImportFolder.Name = "tsbImportFolder";
+            tsbImportFolder.Click += tsbImportFolder_Click;
             // 
             // tsbSettings
             // 
@@ -329,26 +333,10 @@
             // 
             // scMain.Panel2
             // 
-            scMain.Panel2.Controls.Add(scHistoryItemInfo);
+            scMain.Panel2.Controls.Add(gbAdvancedSearch);
+            scMain.Panel2.Controls.Add(pbThumbnail);
             scMain.SplitterColor = System.Drawing.Color.White;
             scMain.SplitterLineColor = System.Drawing.Color.FromArgb(189, 189, 189);
-            // 
-            // scHistoryItemInfo
-            // 
-            resources.ApplyResources(scHistoryItemInfo, "scHistoryItemInfo");
-            scHistoryItemInfo.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            scHistoryItemInfo.Name = "scHistoryItemInfo";
-            // 
-            // scHistoryItemInfo.Panel1
-            // 
-            scHistoryItemInfo.Panel1.Controls.Add(gbAdvancedSearch);
-            scHistoryItemInfo.Panel1.Controls.Add(pbThumbnail);
-            // 
-            // scHistoryItemInfo.Panel2
-            // 
-            scHistoryItemInfo.Panel2.Controls.Add(pgHistoryItemInfo);
-            scHistoryItemInfo.SplitterColor = System.Drawing.Color.White;
-            scHistoryItemInfo.SplitterLineColor = System.Drawing.Color.FromArgb(189, 189, 189);
             // 
             // pbThumbnail
             // 
@@ -360,14 +348,6 @@
             pbThumbnail.PictureBoxBackColor = System.Drawing.SystemColors.Control;
             pbThumbnail.ShowImageSizeLabel = true;
             pbThumbnail.MouseDown += pbThumbnail_MouseDown;
-            // 
-            // pgHistoryItemInfo
-            // 
-            pgHistoryItemInfo.BackColor = System.Drawing.SystemColors.Window;
-            resources.ApplyResources(pgHistoryItemInfo, "pgHistoryItemInfo");
-            pgHistoryItemInfo.Name = "pgHistoryItemInfo";
-            pgHistoryItemInfo.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            pgHistoryItemInfo.ToolbarVisible = false;
             // 
             // HistoryForm
             // 
@@ -393,10 +373,6 @@
             scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)scMain).EndInit();
             scMain.ResumeLayout(false);
-            scHistoryItemInfo.Panel1.ResumeLayout(false);
-            scHistoryItemInfo.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)scHistoryItemInfo).EndInit();
-            scHistoryItemInfo.ResumeLayout(false);
             ResumeLayout(false);
 
         }
@@ -434,10 +410,9 @@
         private System.Windows.Forms.ToolStripButton tsbAdvancedSearch;
         private System.Windows.Forms.Button btnAdvancedSearchReset;
         private System.Windows.Forms.ToolStripSeparator tss2;
-        private System.Windows.Forms.PropertyGrid pgHistoryItemInfo;
-        private HelpersLib.SplitContainerCustomSplitter scHistoryItemInfo;
-        private System.Windows.Forms.ToolStripButton tsbToggleMoreInfo;
         private System.Windows.Forms.ToolStripButton tsbShowStats;
         private System.Windows.Forms.Button btnAdvancedSearchClose;
+        private System.Windows.Forms.ToolStripButton tsbFavorites;
+        private System.Windows.Forms.ToolStripButton tsbImportFolder;
     }
 }

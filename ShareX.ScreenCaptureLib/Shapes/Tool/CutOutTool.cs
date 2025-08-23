@@ -58,10 +58,12 @@ namespace ShareX.ScreenCaptureLib
                 {
                     return new RectangleF(Rectangle.X, Manager.Form.CanvasRectangle.Y, Rectangle.Width, Manager.Form.CanvasRectangle.Height);
                 }
+
                 if (IsVerticalTrim)
                 {
                     return new RectangleF(Manager.Form.CanvasRectangle.X, Rectangle.Y, Manager.Form.CanvasRectangle.Width, Rectangle.Height);
                 }
+
                 return RectangleF.Empty;
             }
         }

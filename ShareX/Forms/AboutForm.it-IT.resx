@@ -120,13 +120,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Informazioni</value>
   </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Chiudi</value>
-  </data>
-  <data name="btnLicenses.Text" xml:space="preserve">
-    <value>Licenze...</value>
-  </data>
-  <data name="btnShareXLicense.Text" xml:space="preserve">
-    <value>Licenza ShareX...</value>
-  </data>
 </root>

@@ -510,9 +510,6 @@
   <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
     <value>Auch Steuerbereiche innerhalb von Fenstern erkennen</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Hintergrund zur einfachen Unterscheidung der Auswahl abdunkeln (beeinträchtigt Startgeschwindigkeit)</value>
-  </data>
   <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
     <value>Wenn die Zwischenablage eine Datei-URL enthält, lade sie herunter und hoch</value>
   </data>
@@ -608,9 +605,6 @@
   </data>
   <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
     <value>Benachrichtigungen bei Vollbild deaktivieren</value>
-  </data>
-  <data name="cbDisableNotifications.Text" xml:space="preserve">
-    <value>Benachrichtigungen deaktivieren</value>
   </data>
   <data name="tpNotifications.Text" xml:space="preserve">
     <value>Benachrichtigungen</value>

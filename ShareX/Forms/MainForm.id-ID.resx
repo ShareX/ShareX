@@ -216,12 +216,6 @@
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Efek gambar...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Periksa hash...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>Pengubah DNS...</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>Kode QR...</value>
   </data>
@@ -239,9 +233,6 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Pemotret video...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet pesan...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Uji monitor...</value>
@@ -266,9 +257,6 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Layanan berbagi URL</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Pengaturan tujuan...</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
     <value>Tujuan</value>
@@ -567,12 +555,6 @@
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Efek gambar...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Periksa hash...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Pengubah DNS...</value>
-  </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>Kode QR...</value>
   </data>
@@ -590,9 +572,6 @@
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Pemotret video...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tweet pesan...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Uji monitor...</value>

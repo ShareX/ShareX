@@ -123,9 +123,6 @@
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
     <value>Встановити збірку для розробників...</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>Перевірити наявність передрелізних онорвлень</value>
-  </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
     <value>Середній притиск по піктограмі у лотку:</value>
   </data>
@@ -365,9 +362,6 @@
   </data>
   <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
     <value>Автоматично перевіряти наявність оновлень</value>
-  </data>
-  <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>Використовувати власну тему</value>
   </data>
   <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
     <value>Шаблон назви підтек для вікна:</value>

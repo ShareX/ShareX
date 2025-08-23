@@ -117,35 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copier dans le presse-papier</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Enregistrer en tant que fichier image...</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Code QR</value>
-  </data>
-  <data name="tpDecode.Text" xml:space="preserve">
-    <value>Décoder</value>
-  </data>
-  <data name="tpEncode.Text" xml:space="preserve">
-    <value>Encoder</value>
-  </data>
-  <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>Résultat :</value>
-  </data>
-  <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>Décoder à partir d'un fichier image...</value>
-  </data>
-  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>Décoder à partir de l'écran...</value>
-  </data>
-  <data name="tsmiDecode.Text" xml:space="preserve">
-    <value>Décoder</value>
-  </data>
-  <data name="tsmiUpload.Text" xml:space="preserve">
-    <value>Mettre en ligne une image</value>
   </data>
   <data name="lblQRCodeSize.Text" xml:space="preserve">
     <value>Taille du QR code :</value>
@@ -161,12 +134,6 @@
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>Mettre en ligne l'image</value>
-  </data>
-  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
-    <value>Scanner un QR code depuis l'écran...</value>
-  </data>
-  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
-    <value>Scanner un QR code depuis un fichier image...</value>
   </data>
   <data name="lblText.Text" xml:space="preserve">
     <value>Texte :</value>

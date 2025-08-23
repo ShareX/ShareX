@@ -120,31 +120,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Código QR</value>
   </data>
-  <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>Descodificar através de ficheiro de imagem...</value>
-  </data>
-  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>Descodificar através do ecrã...</value>
-  </data>
-  <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>Resultado:</value>
-  </data>
-  <data name="tpDecode.Text" xml:space="preserve">
-    <value>Descodificar</value>
-  </data>
-  <data name="tpEncode.Text" xml:space="preserve">
-    <value>Codificar</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar imagem para a área de transferência</value>
-  </data>
-  <data name="tsmiDecode.Text" xml:space="preserve">
-    <value>Descodificar</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar como ficheiro de imagem...</value>
-  </data>
-  <data name="tsmiUpload.Text" xml:space="preserve">
-    <value>Enviar imagem</value>
-  </data>
 </root>

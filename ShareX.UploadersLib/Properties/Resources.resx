@@ -194,9 +194,6 @@
     <value>Connected!
 Created folders:</value>
   </data>
-  <data name="Twitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Twitter.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Browse for a certificate file...</value>
   </data>

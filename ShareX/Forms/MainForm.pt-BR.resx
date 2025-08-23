@@ -258,9 +258,6 @@
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
     <value>Deletar arquivo local...</value>
   </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Configurações de destino...</value>
-  </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Editar imagem...</value>
   </data>
@@ -308,9 +305,6 @@
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
     <value>Encurtadores de URL</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tuitar mensagem...</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>Envio da área de transferência...</value>
@@ -365,9 +359,6 @@
   </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
     <value>Enviar</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tuitar mensagem...</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
     <value>Envio de arquivo da área de transferência...</value>
@@ -432,14 +423,8 @@
   <data name="tsmiCopyThumbnailImage.Text" xml:space="preserve">
     <value>Imagem da miniatura</value>
   </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>Trocador de DNS...</value>
-  </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>Envio de arquivos</value>
-  </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Conferir hash...</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Envio de imagens</value>
@@ -486,14 +471,8 @@
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>Seletor de cores...</value>
   </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Trocador de DNS...</value>
-  </data>
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
     <value>Envio de arquivos</value>
-  </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Conferir hash...</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Efeitos de imagem...</value>
@@ -588,14 +567,8 @@
   <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
     <value>Pesquisa visual do Bing (OCR)...</value>
   </data>
-  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
-    <value>Pesquisa de imagens do Google...</value>
-  </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Alternar barra de ferramentas de ações</value>
-  </data>
-  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Configurações personalizadas de upload...</value>
   </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>Configurações personalizadas de upload...</value>
@@ -773,9 +746,6 @@
   </data>
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>Alternar para exibição de miniaturas</value>
-  </data>
-  <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>Twitter...</value>
   </data>
   <data name="tsmiUploadText.Text" xml:space="preserve">
     <value>Upload de texto...</value>

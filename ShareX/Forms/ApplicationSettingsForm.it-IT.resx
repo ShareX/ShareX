@@ -120,9 +120,6 @@
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Sfoglia...</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>Controlla aggiornamenti pre-release</value>
-  </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
     <value>Click Centrale sull'Icona dell'Area di Notifica</value>
   </data>

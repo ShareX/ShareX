@@ -198,12 +198,6 @@
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Efectos de imágenes...</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Verificación hash...</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>Cambiador de DNS...</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR código...</value>
   </data>
@@ -212,9 +206,6 @@
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Carpeta de índice...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet mensaje...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Prueba del monitor...</value>
@@ -242,9 +233,6 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Servicios para compartir URL</value>
-  </data>
-  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Configuración de destinacion...</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
     <value>Ajustes: Aplicaciones...</value>
@@ -456,12 +444,6 @@
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Efectos de imágenes...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Verificación hash...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Cambiador de DNS...</value>
-  </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR código...</value>
   </data>
@@ -470,9 +452,6 @@
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Carpeta de índice...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tweet mensaje...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Prueba del monitor...</value>

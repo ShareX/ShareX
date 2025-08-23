@@ -63,19 +63,6 @@ namespace ShareX.UploadersLib
             txtB2UploadPath = new System.Windows.Forms.TextBox();
             txtB2ApplicationKey = new System.Windows.Forms.TextBox();
             txtB2ApplicationKeyId = new System.Windows.Forms.TextBox();
-            tpOtherUploaders = new System.Windows.Forms.TabPage();
-            tcOtherUploaders = new System.Windows.Forms.TabControl();
-            tpTwitter = new System.Windows.Forms.TabPage();
-            btnTwitterNameUpdate = new System.Windows.Forms.Button();
-            lbTwitterAccounts = new System.Windows.Forms.ListBox();
-            lblTwitterDefaultMessage = new System.Windows.Forms.Label();
-            txtTwitterDefaultMessage = new System.Windows.Forms.TextBox();
-            cbTwitterSkipMessageBox = new System.Windows.Forms.CheckBox();
-            oauthTwitter = new OAuthControl();
-            txtTwitterDescription = new System.Windows.Forms.TextBox();
-            lblTwitterDescription = new System.Windows.Forms.Label();
-            btnTwitterRemove = new System.Windows.Forms.Button();
-            btnTwitterAdd = new System.Windows.Forms.Button();
             tpURLShorteners = new System.Windows.Forms.TabPage();
             tcURLShorteners = new System.Windows.Forms.TabControl();
             tpBitly = new System.Windows.Forms.TabPage();
@@ -585,9 +572,6 @@ namespace ShareX.UploadersLib
             tcUploaders = new System.Windows.Forms.TabControl();
             tttvMain = new ShareX.HelpersLib.TabToTreeView();
             actRapidShareAccountType = new AccountTypeControl();
-            tpOtherUploaders.SuspendLayout();
-            tcOtherUploaders.SuspendLayout();
-            tpTwitter.SuspendLayout();
             tpURLShorteners.SuspendLayout();
             tcURLShorteners.SuspendLayout();
             tpBitly.SuspendLayout();
@@ -724,102 +708,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(txtB2ApplicationKeyId, "txtB2ApplicationKeyId");
             txtB2ApplicationKeyId.Name = "txtB2ApplicationKeyId";
             txtB2ApplicationKeyId.TextChanged += txtB2ApplicationKeyId_TextChanged;
-            // 
-            // tpOtherUploaders
-            // 
-            tpOtherUploaders.BackColor = System.Drawing.SystemColors.Window;
-            tpOtherUploaders.Controls.Add(tcOtherUploaders);
-            resources.ApplyResources(tpOtherUploaders, "tpOtherUploaders");
-            tpOtherUploaders.Name = "tpOtherUploaders";
-            // 
-            // tcOtherUploaders
-            // 
-            tcOtherUploaders.Controls.Add(tpTwitter);
-            resources.ApplyResources(tcOtherUploaders, "tcOtherUploaders");
-            tcOtherUploaders.Name = "tcOtherUploaders";
-            tcOtherUploaders.SelectedIndex = 0;
-            // 
-            // tpTwitter
-            // 
-            tpTwitter.BackColor = System.Drawing.SystemColors.Window;
-            tpTwitter.Controls.Add(btnTwitterNameUpdate);
-            tpTwitter.Controls.Add(lbTwitterAccounts);
-            tpTwitter.Controls.Add(lblTwitterDefaultMessage);
-            tpTwitter.Controls.Add(txtTwitterDefaultMessage);
-            tpTwitter.Controls.Add(cbTwitterSkipMessageBox);
-            tpTwitter.Controls.Add(oauthTwitter);
-            tpTwitter.Controls.Add(txtTwitterDescription);
-            tpTwitter.Controls.Add(lblTwitterDescription);
-            tpTwitter.Controls.Add(btnTwitterRemove);
-            tpTwitter.Controls.Add(btnTwitterAdd);
-            resources.ApplyResources(tpTwitter, "tpTwitter");
-            tpTwitter.Name = "tpTwitter";
-            // 
-            // btnTwitterNameUpdate
-            // 
-            resources.ApplyResources(btnTwitterNameUpdate, "btnTwitterNameUpdate");
-            btnTwitterNameUpdate.Name = "btnTwitterNameUpdate";
-            btnTwitterNameUpdate.UseVisualStyleBackColor = true;
-            btnTwitterNameUpdate.Click += btnTwitterNameUpdate_Click;
-            // 
-            // lbTwitterAccounts
-            // 
-            lbTwitterAccounts.FormattingEnabled = true;
-            resources.ApplyResources(lbTwitterAccounts, "lbTwitterAccounts");
-            lbTwitterAccounts.Name = "lbTwitterAccounts";
-            lbTwitterAccounts.SelectedIndexChanged += lbTwitterAccounts_SelectedIndexChanged;
-            // 
-            // lblTwitterDefaultMessage
-            // 
-            resources.ApplyResources(lblTwitterDefaultMessage, "lblTwitterDefaultMessage");
-            lblTwitterDefaultMessage.Name = "lblTwitterDefaultMessage";
-            // 
-            // txtTwitterDefaultMessage
-            // 
-            resources.ApplyResources(txtTwitterDefaultMessage, "txtTwitterDefaultMessage");
-            txtTwitterDefaultMessage.Name = "txtTwitterDefaultMessage";
-            txtTwitterDefaultMessage.TextChanged += txtTwitterDefaultMessage_TextChanged;
-            // 
-            // cbTwitterSkipMessageBox
-            // 
-            resources.ApplyResources(cbTwitterSkipMessageBox, "cbTwitterSkipMessageBox");
-            cbTwitterSkipMessageBox.Name = "cbTwitterSkipMessageBox";
-            cbTwitterSkipMessageBox.UseVisualStyleBackColor = true;
-            cbTwitterSkipMessageBox.CheckedChanged += cbTwitterSkipMessageBox_CheckedChanged;
-            // 
-            // oauthTwitter
-            // 
-            resources.ApplyResources(oauthTwitter, "oauthTwitter");
-            oauthTwitter.IsRefreshable = false;
-            oauthTwitter.Name = "oauthTwitter";
-            oauthTwitter.UserInfo = null;
-            oauthTwitter.OpenButtonClicked += oauthTwitter_OpenButtonClicked;
-            oauthTwitter.CompleteButtonClicked += oauthTwitter_CompleteButtonClicked;
-            oauthTwitter.ClearButtonClicked += oauthTwitter_ClearButtonClicked;
-            // 
-            // txtTwitterDescription
-            // 
-            resources.ApplyResources(txtTwitterDescription, "txtTwitterDescription");
-            txtTwitterDescription.Name = "txtTwitterDescription";
-            // 
-            // lblTwitterDescription
-            // 
-            resources.ApplyResources(lblTwitterDescription, "lblTwitterDescription");
-            lblTwitterDescription.Name = "lblTwitterDescription";
-            // 
-            // btnTwitterRemove
-            // 
-            resources.ApplyResources(btnTwitterRemove, "btnTwitterRemove");
-            btnTwitterRemove.Name = "btnTwitterRemove";
-            btnTwitterRemove.UseVisualStyleBackColor = true;
-            btnTwitterRemove.Click += btnTwitterRemove_Click;
-            // 
-            // btnTwitterAdd
-            // 
-            resources.ApplyResources(btnTwitterAdd, "btnTwitterAdd");
-            btnTwitterAdd.Name = "btnTwitterAdd";
-            btnTwitterAdd.UseVisualStyleBackColor = true;
-            btnTwitterAdd.Click += btnTwitterAdd_Click;
             // 
             // tpURLShorteners
             // 
@@ -4457,7 +4345,6 @@ namespace ShareX.UploadersLib
             tcUploaders.Controls.Add(tpTextUploaders);
             tcUploaders.Controls.Add(tpFileUploaders);
             tcUploaders.Controls.Add(tpURLShorteners);
-            tcUploaders.Controls.Add(tpOtherUploaders);
             resources.ApplyResources(tcUploaders, "tcUploaders");
             tcUploaders.Name = "tcUploaders";
             tcUploaders.SelectedIndex = 0;
@@ -4490,10 +4377,6 @@ namespace ShareX.UploadersLib
             Name = "UploadersConfigForm";
             Shown += UploadersConfigForm_Shown;
             Resize += UploadersConfigForm_Resize;
-            tpOtherUploaders.ResumeLayout(false);
-            tcOtherUploaders.ResumeLayout(false);
-            tpTwitter.ResumeLayout(false);
-            tpTwitter.PerformLayout();
             tpURLShorteners.ResumeLayout(false);
             tcURLShorteners.ResumeLayout(false);
             tpBitly.ResumeLayout(false);
@@ -4634,8 +4517,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtRapidSharePremiumUserName;
         private AccountTypeControl actRapidShareAccountType;
         private System.Windows.Forms.ToolTip ttHelpTip;
-        private System.Windows.Forms.TabPage tpOtherUploaders;
-        private System.Windows.Forms.TabControl tcOtherUploaders;
         private System.Windows.Forms.TabPage tpURLShorteners;
         private System.Windows.Forms.TabControl tcURLShorteners;
         private OAuthControl oauth2Bitly;
@@ -4846,14 +4727,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.ComboBox cbLambdaUploadURL;
         private System.Windows.Forms.Label lblLithiioApiKey;
         private System.Windows.Forms.TextBox txtLithiioApiKey;
-        private OAuthControl oauthTwitter;
-        private System.Windows.Forms.TextBox txtTwitterDescription;
-        private System.Windows.Forms.Label lblTwitterDescription;
-        private System.Windows.Forms.Button btnTwitterRemove;
-        private System.Windows.Forms.Button btnTwitterAdd;
-        private System.Windows.Forms.Label lblTwitterDefaultMessage;
-        private System.Windows.Forms.TextBox txtTwitterDefaultMessage;
-        private System.Windows.Forms.CheckBox cbTwitterSkipMessageBox;
         private System.Windows.Forms.CheckBox cbOwnCloud81Compatibility;
         private System.Windows.Forms.Label lblOneTimeSecretAPIKey;
         private System.Windows.Forms.Label lblOneTimeSecretEmail;
@@ -4864,8 +4737,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtPolrAPIHostname;
         private System.Windows.Forms.Label lblPolrAPIHostname;
         private System.Windows.Forms.CheckBox cbImgurUseGIFV;
-        private System.Windows.Forms.ListBox lbTwitterAccounts;
-        private System.Windows.Forms.Button btnTwitterNameUpdate;
         private System.Windows.Forms.Label lblPomfResultURL;
         private System.Windows.Forms.Label lblPomfUploadURL;
         private System.Windows.Forms.TextBox txtPomfUploadURL;
@@ -4955,7 +4826,6 @@ namespace ShareX.UploadersLib
         internal System.Windows.Forms.TabPage tpBitly;
         internal System.Windows.Forms.TabPage tpYourls;
         internal System.Windows.Forms.TabPage tpPolr;
-        internal System.Windows.Forms.TabPage tpTwitter;
         private System.Windows.Forms.TextBox txtEmailAutomaticSendTo;
         private System.Windows.Forms.CheckBox cbEmailAutomaticSend;
         private System.Windows.Forms.Button btnLithiioGetAPIKey;

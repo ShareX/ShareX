@@ -459,7 +459,7 @@ namespace ShareX
                                 {
                                     pbThumbnail.Enabled = true;
                                 }
-                            }
+                            } // TODO: Translate
                             else if (FileHelpers.IsTextFile(filePath) || FileHelpers.IsVideoFile(filePath) ||
                                 MessageBox.Show("Would you like to open this file?" + "\r\n\r\n" + filePath,
                                 Resources.ShareXConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

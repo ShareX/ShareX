@@ -798,6 +798,14 @@ namespace ShareX
                     FileHelpers.OpenFolderWithFile(Info.FilePath);
                 }
 
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnalyzeImage) && Info.DataType == EDataType.Image)
+                {
+                    using (AIForm aiForm = new AIForm(Info.FilePath, Info.TaskSettings.ToolsSettingsReference.AIOptions))
+                    {
+                        aiForm.ShowDialog();
+                    }
+                }
+
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ScanQRCode) && Info.DataType == EDataType.Image)
                 {
                     QRCodeForm.OpenFormScanFromImageFile(Info.FilePath).ShowDialog();
