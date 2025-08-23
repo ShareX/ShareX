@@ -911,7 +911,6 @@ namespace ShareX.HelpersLib
                 using (Graphics g = Graphics.FromImage(bmpResult))
                 {
                     g.DrawRectangleProper(borderPen, 0, 0, bmpResult.Width, bmpResult.Height);
-                    g.SetHighQuality();
                     g.DrawImage(bmp, borderSize, borderSize, bmp.Width, bmp.Height);
                 }
             }
