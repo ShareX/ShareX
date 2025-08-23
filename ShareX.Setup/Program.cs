@@ -58,7 +58,7 @@ namespace ShareX.Setup
             MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | DownloadTools | OpenOutputDirectory
         }
 
-        private static SetupJobs Job { get; set; } = SetupJobs.MicrosoftStore;
+        private static SetupJobs Job { get; set; } = SetupJobs.Release;
         private static bool Silent { get; set; } = false;
 
         private static string ParentDir;
