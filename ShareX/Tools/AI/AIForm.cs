@@ -119,6 +119,7 @@ namespace ShareX
                 }
                 catch (Exception ex)
                 {
+                    txtResult.Clear();
                     DebugHelper.WriteException(ex);
                     ex.ShowError();
                 }
