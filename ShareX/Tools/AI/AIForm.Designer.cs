@@ -204,6 +204,7 @@
             Controls.Add(lblModel);
             Name = "AIForm";
             SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            Load += AIForm_Load;
             Shown += AIForm_Shown;
             DragDrop += AIForm_DragDrop;
             DragEnter += AIForm_DragEnter;

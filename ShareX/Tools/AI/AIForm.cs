@@ -37,9 +37,7 @@ namespace ShareX
     {
         public AIOptions Options { get; private set; }
 
-        private bool autoStart, autoStartRegion;
-
-        public AIForm(AIOptions options, bool autoStartRegion = false)
+        public AIForm(AIOptions options)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
@@ -57,19 +55,6 @@ namespace ShareX
                 cbReasoningEffort.SelectedIndex = 2;
             }
             cbInput.Text = Options.Input;
-
-            if (autoStartRegion)
-            {
-                this.autoStartRegion = true;
-
-                Bitmap regionImage = RegionCaptureTasks.GetRegionImage();
-
-                if (regionImage != null)
-                {
-                    pbImage.LoadImage(regionImage);
-                    autoStart = true;
-                }
-            }
         }
 
         public AIForm(string filePath, AIOptions options) : this(options)
@@ -79,7 +64,6 @@ namespace ShareX
                 txtImage.Text = filePath;
                 pbImage.LoadImageFromFile(filePath);
                 UpdateControls();
-                autoStart = true;
             }
         }
 
@@ -166,12 +150,25 @@ namespace ShareX
             }
         }
 
+        private void AIForm_Load(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtImage.Text) && Options.AutoStartRegion)
+            {
+                Bitmap regionImage = RegionCaptureTasks.GetRegionImage();
+
+                if (regionImage != null)
+                {
+                    pbImage.LoadImage(regionImage);
+                }
+            }
+        }
+
         private async void AIForm_Shown(object sender, EventArgs e)
         {
-            if (autoStart)
+            if (Options.AutoStartAnalyze)
             {
                 btnAnalyze.Focus();
-                await AnalyzeImage(autoStartRegion);
+                await AnalyzeImage(Options.AutoStartRegion);
             }
         }
 

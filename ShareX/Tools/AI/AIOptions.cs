@@ -34,5 +34,7 @@ namespace ShareX
         public string ChatGPTAPIKey { get; set; }
         public string ReasoningEffort { get; set; } = "minimal";
         public string Input { get; set; } = "what is in this image?";
+        public bool AutoStartRegion { get; set; } = true;
+        public bool AutoStartAnalyze { get; set; } = true;
     }
 }

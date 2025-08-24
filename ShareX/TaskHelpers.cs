@@ -1472,7 +1472,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            AIForm aiForm = new AIForm(taskSettings.ToolsSettingsReference.AIOptions, true);
+            AIForm aiForm = new AIForm(taskSettings.ToolsSettingsReference.AIOptions);
             aiForm.Show();
         }
 
