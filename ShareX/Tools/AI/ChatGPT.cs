@@ -160,6 +160,7 @@ namespace ShareX
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = await httpClient.PostAsync("https://api.openai.com/v1/responses", content);
+            response.EnsureSuccessStatusCode();
             string responseString = await response.Content.ReadAsStringAsync();
 
             ChatGPTResponse result = JsonSerializer.Deserialize<ChatGPTResponse>(responseString);
