@@ -440,7 +440,10 @@
     <value>Thoroughly describe this image.</value>
   </data>
   <data name="cbInput.Items2" xml:space="preserve">
-    <value>Transcribe the image's text, do not write anything else.</value>
+    <value>Transcribe the image's text. Do not write anything else.</value>
+  </data>
+  <data name="cbInput.Items3" xml:space="preserve">
+    <value>Translate this text into English. Do not write anything else.</value>
   </data>
   <data name="cbInput.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 208</value>
@@ -588,6 +591,9 @@
   </data>
   <data name="&gt;&gt;btnAPIKeyHelp.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnResultCopy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="btnResultCopy.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>

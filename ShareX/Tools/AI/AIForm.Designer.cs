@@ -130,7 +130,7 @@
             // cbInput
             // 
             cbInput.FormattingEnabled = true;
-            cbInput.Items.AddRange(new object[] { resources.GetString("cbInput.Items"), resources.GetString("cbInput.Items1"), resources.GetString("cbInput.Items2") });
+            cbInput.Items.AddRange(new object[] { resources.GetString("cbInput.Items"), resources.GetString("cbInput.Items1"), resources.GetString("cbInput.Items2"), resources.GetString("cbInput.Items3") });
             resources.ApplyResources(cbInput, "cbInput");
             cbInput.Name = "cbInput";
             cbInput.TextChanged += cbInput_TextChanged;
