@@ -58,25 +58,14 @@ namespace ShareX
 
         private void UpdateControls()
         {
-            btnAnalyze.Enabled = !string.IsNullOrEmpty(Options.ChatGPTAPIKey) && !string.IsNullOrEmpty(txtImage.Text);
+            btnAnalyze.Enabled = !string.IsNullOrEmpty(Options.ChatGPTAPIKey) && (!string.IsNullOrEmpty(txtImage.Text) || pbImage.Image != null);
             btnResultCopy.Enabled = !string.IsNullOrEmpty(txtResult.Text);
         }
 
-        private async Task AnalyzeImage(bool isCapture = false)
+        private async Task AnalyzeImage()
         {
             txtResult.Clear();
             lblTimer.ResetText();
-
-            string imagePath = null;
-
-            if (!isCapture)
-            {
-                imagePath = txtImage.Text;
-                if (string.IsNullOrEmpty(imagePath))
-                {
-                    return;
-                }
-            }
 
             if (!string.IsNullOrEmpty(Options.ChatGPTAPIKey))
             {
@@ -91,23 +80,28 @@ namespace ShareX
                 {
                     ChatGPT chatGPT = new ChatGPT(Options.ChatGPTAPIKey, Options.Model);
                     string result = null;
-                    if (isCapture)
-                    {
-                        result = await chatGPT.AnalyzeImage(pbImage.Image, Options.Input, Options.ReasoningEffort);
-                    }
-                    else
+                    string imagePath = txtImage.Text;
+                    if (!string.IsNullOrEmpty(imagePath))
                     {
                         result = await chatGPT.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort);
                     }
-                    result = result.Replace("\n", "\r\n");
-                    // TODO: Translate
-                    lblTimer.Text = $"Time: {timer.ElapsedMilliseconds} ms";
-                    txtResult.Text = result;
-                    if (Options.AutoCopyResult)
+                    else if (pbImage.Image != null)
                     {
-                        ClipboardHelpers.CopyText(result);
+                        result = await chatGPT.AnalyzeImage(pbImage.Image, Options.Input, Options.ReasoningEffort);
                     }
-                    TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
+
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        result = result.Replace("\n", "\r\n");
+                        // TODO: Translate
+                        lblTimer.Text = $"Time: {timer.ElapsedMilliseconds} ms";
+                        txtResult.Text = result;
+                        if (Options.AutoCopyResult)
+                        {
+                            ClipboardHelpers.CopyText(result);
+                        }
+                        TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -153,6 +147,7 @@ namespace ShareX
                 if (regionImage != null)
                 {
                     pbImage.LoadImage(regionImage);
+                    UpdateControls();
                 }
             }
         }
@@ -162,7 +157,7 @@ namespace ShareX
             if (Options.AutoStartAnalyze)
             {
                 btnAnalyze.Focus();
-                await AnalyzeImage(Options.AutoStartRegion);
+                await AnalyzeImage();
             }
         }
 
@@ -210,7 +205,7 @@ namespace ShareX
             {
                 pbImage.LoadImage(regionImage);
                 txtImage.ResetText();
-                await AnalyzeImage(true);
+                await AnalyzeImage();
             }
         }
 
