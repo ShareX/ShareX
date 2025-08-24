@@ -115,6 +115,7 @@ namespace ShareX
                     // TODO: Translate
                     lblTimer.Text = $"Time: {timer.ElapsedMilliseconds} ms";
                     txtResult.Text = result.Replace("\n", "\r\n");
+                    TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
                 }
                 catch (Exception ex)
                 {
@@ -126,8 +127,6 @@ namespace ShareX
                     UpdateControls();
                     Cursor = Cursors.Default;
                     txtResult.Cursor = Cursors.Default;
-
-                    TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
                 }
             }
         }
