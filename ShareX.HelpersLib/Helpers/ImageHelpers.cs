@@ -987,7 +987,6 @@ namespace ShareX.HelpersLib
             using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
             {
                 g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmpResult.Width, bmpResult.Height));
-                g.SetHighQuality();
                 g.DrawImage(img, 0, 0, img.Width, img.Height);
             }
 
