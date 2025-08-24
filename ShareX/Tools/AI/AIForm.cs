@@ -67,7 +67,7 @@ namespace ShareX
             txtResult.Clear();
             lblTimer.ResetText();
 
-            if (!string.IsNullOrEmpty(Options.ChatGPTAPIKey))
+            if (!string.IsNullOrEmpty(Options.ChatGPTAPIKey) && (!string.IsNullOrEmpty(txtImage.Text) || pbImage.Image != null))
             {
                 btnAnalyze.Enabled = false;
                 Cursor = Cursors.WaitCursor;
