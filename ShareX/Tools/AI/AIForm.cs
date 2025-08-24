@@ -37,9 +37,9 @@ namespace ShareX
     {
         public AIOptions Options { get; private set; }
 
-        private bool autoStart;
+        private bool autoStart, autoStartRegion;
 
-        public AIForm(AIOptions options)
+        public AIForm(AIOptions options, bool autoStartRegion = false)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
@@ -57,6 +57,19 @@ namespace ShareX
                 cbReasoningEffort.SelectedIndex = 2;
             }
             cbInput.Text = Options.Input;
+
+            if (autoStartRegion)
+            {
+                this.autoStartRegion = true;
+
+                Bitmap regionImage = RegionCaptureTasks.GetRegionImage();
+
+                if (regionImage != null)
+                {
+                    pbImage.LoadImage(regionImage);
+                    autoStart = true;
+                }
+            }
         }
 
         public AIForm(string filePath, AIOptions options) : this(options)
@@ -158,7 +171,7 @@ namespace ShareX
             if (autoStart)
             {
                 btnAnalyze.Focus();
-                await AnalyzeImage();
+                await AnalyzeImage(autoStartRegion);
             }
         }
 
