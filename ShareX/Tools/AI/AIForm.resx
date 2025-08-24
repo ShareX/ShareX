@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblModel.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="cbModel.Items" xml:space="preserve">
     <value>gpt-5</value>
@@ -174,7 +174,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbModel.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="lblInput.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -186,7 +186,7 @@
     <value>53, 16</value>
   </data>
   <data name="lblInput.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblInput.Text" xml:space="preserve">
     <value>Prompt:</value>
@@ -201,7 +201,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblInput.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="lblImage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -213,7 +213,7 @@
     <value>77, 16</value>
   </data>
   <data name="lblImage.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblImage.Text" xml:space="preserve">
     <value>Image path:</value>
@@ -228,7 +228,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblImage.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="txtImage.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 264</value>
@@ -237,7 +237,7 @@
     <value>224, 22</value>
   </data>
   <data name="txtImage.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;txtImage.Name" xml:space="preserve">
     <value>txtImage</value>
@@ -249,7 +249,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtImage.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="btnAnalyze.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -261,7 +261,7 @@
     <value>224, 32</value>
   </data>
   <data name="btnAnalyze.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="btnAnalyze.Text" xml:space="preserve">
     <value>Analyze image</value>
@@ -276,7 +276,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAnalyze.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="lblAPIKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -303,13 +303,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblAPIKey.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="txtAPIKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 96</value>
   </data>
   <data name="txtAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 22</value>
+    <value>224, 22</value>
   </data>
   <data name="txtAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -324,7 +324,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtAPIKey.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lblResult.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -336,7 +336,7 @@
     <value>48, 16</value>
   </data>
   <data name="lblResult.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Result:</value>
@@ -351,7 +351,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblResult.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtResult.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -373,7 +373,7 @@
     <value>608, 560</value>
   </data>
   <data name="txtResult.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;txtResult.Name" xml:space="preserve">
     <value>txtResult</value>
@@ -385,7 +385,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtResult.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnImageBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>248, 263</value>
@@ -394,10 +394,7 @@
     <value>32, 24</value>
   </data>
   <data name="btnImageBrowse.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="btnImageBrowse.Text" xml:space="preserve">
-    <value>...</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;btnImageBrowse.Name" xml:space="preserve">
     <value>btnImageBrowse</value>
@@ -409,7 +406,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnImageBrowse.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="pbImage.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 296</value>
@@ -422,7 +419,7 @@
     <value>264, 264</value>
   </data>
   <data name="pbImage.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;pbImage.Name" xml:space="preserve">
     <value>pbImage</value>
@@ -434,7 +431,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbImage.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbInput.Items" xml:space="preserve">
     <value>What is in this image?</value>
@@ -452,7 +449,7 @@
     <value>264, 24</value>
   </data>
   <data name="cbInput.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;cbInput.Name" xml:space="preserve">
     <value>cbInput</value>
@@ -464,7 +461,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbInput.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblReasoningEffort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -476,7 +473,7 @@
     <value>108, 16</value>
   </data>
   <data name="lblReasoningEffort.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblReasoningEffort.Text" xml:space="preserve">
     <value>Reasoning effort:</value>
@@ -491,7 +488,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblReasoningEffort.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbReasoningEffort.Items" xml:space="preserve">
     <value>minimal</value>
@@ -512,7 +509,7 @@
     <value>264, 24</value>
   </data>
   <data name="cbReasoningEffort.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;cbReasoningEffort.Name" xml:space="preserve">
     <value>cbReasoningEffort</value>
@@ -524,7 +521,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbReasoningEffort.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblTimer.Location" type="System.Drawing.Point, System.Drawing">
     <value>744, 12</value>
@@ -533,7 +530,7 @@
     <value>168, 24</value>
   </data>
   <data name="lblTimer.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="lblTimer.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -548,7 +545,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTimer.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnCapture.Location" type="System.Drawing.Point, System.Drawing">
     <value>248, 568</value>
@@ -557,7 +554,7 @@
     <value>32, 32</value>
   </data>
   <data name="btnCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;btnCapture.Name" xml:space="preserve">
     <value>btnCapture</value>
@@ -569,6 +566,27 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCapture.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnAPIKeyHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 95</value>
+  </data>
+  <data name="btnAPIKeyHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 24</value>
+  </data>
+  <data name="btnAPIKeyHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnAPIKeyHelp.Name" xml:space="preserve">
+    <value>btnAPIKeyHelp</value>
+  </data>
+  <data name="&gt;&gt;btnAPIKeyHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAPIKeyHelp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAPIKeyHelp.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

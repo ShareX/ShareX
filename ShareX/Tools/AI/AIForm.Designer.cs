@@ -46,6 +46,7 @@
             cbReasoningEffort = new System.Windows.Forms.ComboBox();
             lblTimer = new System.Windows.Forms.Label();
             btnCapture = new System.Windows.Forms.Button();
+            btnAPIKeyHelp = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // lblModel
@@ -109,6 +110,7 @@
             // 
             // btnImageBrowse
             // 
+            btnImageBrowse.Image = Properties.Resources.folder_open_image;
             resources.ApplyResources(btnImageBrowse, "btnImageBrowse");
             btnImageBrowse.Name = "btnImageBrowse";
             btnImageBrowse.UseVisualStyleBackColor = true;
@@ -159,11 +161,20 @@
             btnCapture.UseVisualStyleBackColor = true;
             btnCapture.Click += btnCapture_Click;
             // 
+            // btnAPIKeyHelp
+            // 
+            btnAPIKeyHelp.Image = Properties.Resources.question;
+            resources.ApplyResources(btnAPIKeyHelp, "btnAPIKeyHelp");
+            btnAPIKeyHelp.Name = "btnAPIKeyHelp";
+            btnAPIKeyHelp.UseVisualStyleBackColor = true;
+            btnAPIKeyHelp.Click += btnAPIKeyHelp_Click;
+            // 
             // AIForm
             // 
             AllowDrop = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(btnAPIKeyHelp);
             Controls.Add(btnCapture);
             Controls.Add(txtResult);
             Controls.Add(lblTimer);
@@ -209,5 +220,6 @@
         private System.Windows.Forms.ComboBox cbReasoningEffort;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Button btnCapture;
+        private System.Windows.Forms.Button btnAPIKeyHelp;
     }
 }

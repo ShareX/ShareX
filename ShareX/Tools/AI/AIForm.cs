@@ -172,6 +172,11 @@ namespace ShareX
             UpdateControls();
         }
 
+        private void btnAPIKeyHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://platform.openai.com/api-keys");
+        }
+
         private void cbReasoningEffort_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.ReasoningEffort = cbReasoningEffort.Text;
