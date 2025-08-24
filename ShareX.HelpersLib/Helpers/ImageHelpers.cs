@@ -779,7 +779,6 @@ namespace ShareX.HelpersLib
             using (reflection)
             using (Graphics g = Graphics.FromImage(bmpResult))
             {
-                g.SetHighQuality();
                 g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
                 g.DrawImage(reflection, 0, bmp.Height + offset, reflection.Width, reflection.Height);
             }
@@ -1223,7 +1222,6 @@ namespace ShareX.HelpersLib
 
                     using (Graphics g = Graphics.FromImage(bmpResult))
                     {
-                        g.SetHighQuality();
                         g.DrawImage(bmpShadow, Math.Max(0, offset.X), Math.Max(0, offset.Y), bmpShadow.Width, bmpShadow.Height);
                         g.DrawImage(bmp, Math.Max(size, -offset.X + size), Math.Max(size, -offset.Y + size), bmp.Width, bmp.Height);
                     }
