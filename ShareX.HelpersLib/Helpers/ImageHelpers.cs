@@ -1283,7 +1283,6 @@ namespace ShareX.HelpersLib
 
                 using (Graphics g = Graphics.FromImage(bmpResult))
                 {
-                    g.SetHighQuality();
                     g.DrawImage(bmpMask, Math.Max(0, offset.X), Math.Max(0, offset.Y), bmpMask.Width, bmpMask.Height);
                     g.DrawImage(bmp, Math.Max(size, -offset.X + size), Math.Max(size, -offset.Y + size), bmp.Width, bmp.Height);
                 }
