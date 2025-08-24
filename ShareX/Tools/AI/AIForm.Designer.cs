@@ -47,6 +47,7 @@
             lblTimer = new System.Windows.Forms.Label();
             btnCapture = new System.Windows.Forms.Button();
             btnAPIKeyHelp = new System.Windows.Forms.Button();
+            btnResultCopy = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // lblModel
@@ -169,11 +170,20 @@
             btnAPIKeyHelp.UseVisualStyleBackColor = true;
             btnAPIKeyHelp.Click += btnAPIKeyHelp_Click;
             // 
+            // btnResultCopy
+            // 
+            resources.ApplyResources(btnResultCopy, "btnResultCopy");
+            btnResultCopy.Image = Properties.Resources.document_copy;
+            btnResultCopy.Name = "btnResultCopy";
+            btnResultCopy.UseVisualStyleBackColor = true;
+            btnResultCopy.Click += btnResultCopy_Click;
+            // 
             // AIForm
             // 
             AllowDrop = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(btnResultCopy);
             Controls.Add(btnAPIKeyHelp);
             Controls.Add(btnCapture);
             Controls.Add(txtResult);
@@ -221,5 +231,6 @@
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Button btnCapture;
         private System.Windows.Forms.Button btnAPIKeyHelp;
+        private System.Windows.Forms.Button btnResultCopy;
     }
 }

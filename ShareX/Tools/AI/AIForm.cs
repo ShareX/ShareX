@@ -73,6 +73,7 @@ namespace ShareX
         private void UpdateControls()
         {
             btnAnalyze.Enabled = !string.IsNullOrEmpty(txtAPIKey.Text) && !string.IsNullOrEmpty(txtImage.Text);
+            btnResultCopy.Enabled = !string.IsNullOrEmpty(txtResult.Text);
         }
 
         private async Task AnalyzeImage(bool isCapture = false)
@@ -218,6 +219,14 @@ namespace ShareX
                 pbImage.LoadImage(regionImage);
                 txtImage.ResetText();
                 await AnalyzeImage(true);
+            }
+        }
+
+        private void btnResultCopy_Click(object sender, EventArgs e)
+        {
+            if (ClipboardHelpers.CopyText(txtResult.Text))
+            {
+                TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
             }
         }
     }
