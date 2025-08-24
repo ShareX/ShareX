@@ -1320,7 +1320,4 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>Analyze image</value>
   </data>
-  <data name="HotkeyType_AnalyzeImageRegion" xml:space="preserve">
-    <value>Analyze image (Region)</value>
-  </data>
 </root>

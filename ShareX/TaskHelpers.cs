@@ -282,9 +282,6 @@ namespace ShareX
                 case HotkeyType.AnalyzeImage:
                     AnalyzeImage(safeTaskSettings);
                     break;
-                case HotkeyType.AnalyzeImageRegion:
-                    AnalyzeImageRegion(safeTaskSettings);
-                    break;
                 case HotkeyType.OCR:
                     if (!string.IsNullOrEmpty(filePath))
                     {
@@ -1487,15 +1484,6 @@ namespace ShareX
             aiForm.Show();
         }
 
-        public static void AnalyzeImageRegion(TaskSettings taskSettings = null)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            AIForm aiForm = new AIForm(taskSettings.ToolsSettingsReference.AIOptions);
-            aiForm.StartRegion = true;
-            aiForm.Show();
-        }
-
         public static async Task OCRImage(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
@@ -1962,7 +1950,6 @@ namespace ShareX
                     case HotkeyType.VideoConverter: return Resources.camcorder_pencil;
                     case HotkeyType.VideoThumbnailer: return Resources.images_stack;
                     case HotkeyType.AnalyzeImage: return Resources.robot;
-                    case HotkeyType.AnalyzeImageRegion: return Resources.robot;
                     case HotkeyType.OCR: return ShareXResources.IsDarkTheme ? Resources.edit_drop_cap_white : Resources.edit_drop_cap;
                     case HotkeyType.QRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
                     case HotkeyType.QRCodeDecodeFromScreen: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;

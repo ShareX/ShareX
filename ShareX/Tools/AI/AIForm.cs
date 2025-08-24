@@ -36,7 +36,6 @@ namespace ShareX
     public partial class AIForm : Form
     {
         public AIOptions Options { get; private set; }
-        public bool StartRegion { get; set; }
 
         private bool autoStart;
 
@@ -154,26 +153,12 @@ namespace ShareX
             }
         }
 
-        private void AIForm_Load(object sender, EventArgs e)
-        {
-            if (StartRegion)
-            {
-                Bitmap regionImage = RegionCaptureTasks.GetRegionImage();
-
-                if (regionImage != null)
-                {
-                    pbImage.LoadImage(regionImage);
-                    autoStart = true;
-                }
-            }
-        }
-
         private async void AIForm_Shown(object sender, EventArgs e)
         {
             if (autoStart)
             {
                 btnAnalyze.Focus();
-                await AnalyzeImage(StartRegion);
+                await AnalyzeImage();
             }
         }
 
