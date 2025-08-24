@@ -83,11 +83,11 @@ namespace ShareX
                     string imagePath = txtImage.Text;
                     if (!string.IsNullOrEmpty(imagePath))
                     {
-                        result = await chatGPT.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort);
+                        result = await chatGPT.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort, Options.Verbosity);
                     }
                     else if (pbImage.Image != null)
                     {
-                        result = await chatGPT.AnalyzeImage(pbImage.Image, Options.Input, Options.ReasoningEffort);
+                        result = await chatGPT.AnalyzeImage(pbImage.Image, Options.Input, Options.ReasoningEffort, Options.Verbosity);
                     }
 
                     if (!string.IsNullOrEmpty(result))
