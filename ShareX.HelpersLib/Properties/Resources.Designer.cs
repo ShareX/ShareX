@@ -1271,6 +1271,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Analyze image (Region).
+        /// </summary>
+        internal static string HotkeyType_AnalyzeImageRegion {
+            get {
+                return ResourceManager.GetString("HotkeyType_AnalyzeImageRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto capture.
         /// </summary>
         internal static string HotkeyType_AutoCapture {
