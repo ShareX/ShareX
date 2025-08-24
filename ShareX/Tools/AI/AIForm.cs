@@ -39,21 +39,10 @@ namespace ShareX
 
         public AIForm(AIOptions options)
         {
+            Options = options;
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
 
-            Options = options;
-            cbModel.Text = Options.Model;
-            txtAPIKey.Text = Options.ChatGPTAPIKey;
-            int index = cbReasoningEffort.FindStringExact(Options.ReasoningEffort);
-            if (index >= 0)
-            {
-                cbReasoningEffort.SelectedIndex = index;
-            }
-            else
-            {
-                cbReasoningEffort.SelectedIndex = 2;
-            }
             cbInput.Text = Options.Input;
         }
 
@@ -69,7 +58,7 @@ namespace ShareX
 
         private void UpdateControls()
         {
-            btnAnalyze.Enabled = !string.IsNullOrEmpty(txtAPIKey.Text) && !string.IsNullOrEmpty(txtImage.Text);
+            btnAnalyze.Enabled = !string.IsNullOrEmpty(Options.ChatGPTAPIKey) && !string.IsNullOrEmpty(txtImage.Text);
             btnResultCopy.Enabled = !string.IsNullOrEmpty(txtResult.Text);
         }
 
@@ -110,9 +99,14 @@ namespace ShareX
                     {
                         result = await chatGPT.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort);
                     }
+                    result = result.Replace("\n", "\r\n");
                     // TODO: Translate
                     lblTimer.Text = $"Time: {timer.ElapsedMilliseconds} ms";
-                    txtResult.Text = result.Replace("\n", "\r\n");
+                    txtResult.Text = result;
+                    if (Options.AutoCopyResult)
+                    {
+                        ClipboardHelpers.CopyText(result);
+                    }
                     TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
                 }
                 catch (Exception ex)
@@ -172,25 +166,13 @@ namespace ShareX
             }
         }
 
-        private void cbModel_TextChanged(object sender, EventArgs e)
+        private void btnOptions_Click(object sender, EventArgs e)
         {
-            Options.Model = cbModel.Text;
-        }
-
-        private void txtAPIKey_TextChanged(object sender, EventArgs e)
-        {
-            Options.ChatGPTAPIKey = txtAPIKey.Text;
-            UpdateControls();
-        }
-
-        private void btnAPIKeyHelp_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://platform.openai.com/api-keys");
-        }
-
-        private void cbReasoningEffort_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Options.ReasoningEffort = cbReasoningEffort.Text;
+            using (AIOptionsForm optionsForm = new AIOptionsForm(Options))
+            {
+                optionsForm.ShowDialog(this);
+                UpdateControls();
+            }
         }
 
         private void cbInput_TextChanged(object sender, EventArgs e)

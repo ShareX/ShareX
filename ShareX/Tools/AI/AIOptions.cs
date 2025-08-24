@@ -36,5 +36,6 @@ namespace ShareX
         public string Input { get; set; } = "what is in this image?";
         public bool AutoStartRegion { get; set; } = true;
         public bool AutoStartAnalyze { get; set; } = true;
+        public bool AutoCopyResult { get; set; } = false;
     }
 }
