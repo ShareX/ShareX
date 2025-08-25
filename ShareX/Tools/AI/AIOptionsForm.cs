@@ -55,6 +55,15 @@ namespace ShareX
             {
                 cbReasoningEffort.SelectedIndex = 2;
             }
+            index = cbVerbosity.FindStringExact(Options.Verbosity);
+            if (index >= 0)
+            {
+                cbVerbosity.SelectedIndex = index;
+            }
+            else
+            {
+                cbVerbosity.SelectedIndex = 2;
+            }
             cbAutoStartRegion.Checked = Options.AutoStartRegion;
             cbAutoStartAnalyze.Checked = Options.AutoStartAnalyze;
             cbAutoCopyResult.Checked = Options.AutoCopyResult;
@@ -65,6 +74,7 @@ namespace ShareX
             Options.Model = cbModel.Text;
             Options.ChatGPTAPIKey = txtAPIKey.Text;
             Options.ReasoningEffort = cbReasoningEffort.Text;
+            Options.Verbosity = cbVerbosity.Text;
             Options.AutoStartRegion = cbAutoStartRegion.Checked;
             Options.AutoStartAnalyze = cbAutoStartAnalyze.Checked;
             Options.AutoCopyResult = cbAutoCopyResult.Checked;
