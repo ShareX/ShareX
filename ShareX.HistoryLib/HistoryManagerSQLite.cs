@@ -128,16 +128,16 @@ INSERT INTO History
 (FileName, FilePath, DateTime, Type, Host, URL, ThumbnailURL, DeletionURL, ShortenedURL, Tags)
 VALUES (@FileName, @FilePath, @DateTime, @Type, @Host, @URL, @ThumbnailURL, @DeletionURL, @ShortenedURL, @Tags);
 SELECT last_insert_rowid();";
-                        cmd.Parameters.AddWithValue("@FileName", item.FileName);
-                        cmd.Parameters.AddWithValue("@FilePath", item.FilePath);
-                        cmd.Parameters.AddWithValue("@DateTime", item.DateTime.ToString("o"));
-                        cmd.Parameters.AddWithValue("@Type", item.Type);
-                        cmd.Parameters.AddWithValue("@Host", item.Host);
-                        cmd.Parameters.AddWithValue("@URL", item.URL);
-                        cmd.Parameters.AddWithValue("@ThumbnailURL", item.ThumbnailURL);
-                        cmd.Parameters.AddWithValue("@DeletionURL", item.DeletionURL);
-                        cmd.Parameters.AddWithValue("@ShortenedURL", item.ShortenedURL);
-                        cmd.Parameters.AddWithValue("@Tags", item.Tags != null ? JsonConvert.SerializeObject(item.Tags) : null);
+                        cmd.Parameters.AddWithValue("@FileName", item.FileName ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@FilePath", item.FilePath ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@DateTime", item.DateTime.ToString("o") ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Type", item.Type ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Host", item.Host ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@URL", item.URL ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@ThumbnailURL", item.ThumbnailURL ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@DeletionURL", item.DeletionURL ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@ShortenedURL", item.ShortenedURL ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Tags", item.Tags != null ? JsonConvert.SerializeObject(item.Tags) : (object)DBNull.Value);
                         item.Id = (long)cmd.ExecuteScalar();
                     }
                 }
