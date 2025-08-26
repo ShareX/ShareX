@@ -229,6 +229,9 @@ namespace ShareX
         [Category("Clipboard"), DefaultValue(false), Description("Default .NET method can't get image with alpha channel from clipboard. When this setting is true, ShareX checks if clipboard contains \"PNG\" or 32 bit \"DIB\" in order to retain image transparency.")]
         public bool UseAlternativeClipboardGetImage { get; set; }
 
+        [Category("History"), DefaultValue(false), Description("Automatically closes the database connection after operations to allow OneDrive or other sync services to update the history.")]
+        public bool EnableConnectionRelease { get; set; }
+
         [Category("Image"), DefaultValue(true), Description("If JPEG exif contains orientation data then rotate image accordingly.")]
         public bool RotateImageByExifOrientationData { get; set; }
 

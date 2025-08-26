@@ -35,6 +35,5 @@ namespace ShareX.HistoryLib
         public bool RememberSearchText { get; set; } = false;
         public string SearchText { get; set; } = "";
         public bool Favorites { get; set; } = false;
-        public bool EnableConnectionRelease = false;
     }
 }
