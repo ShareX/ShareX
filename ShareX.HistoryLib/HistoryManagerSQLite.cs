@@ -23,20 +23,22 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.Data.Sqlite;
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
-using Microsoft.Data.Sqlite;
 
 namespace ShareX.HistoryLib
 {
     public class HistoryManagerSQLite : HistoryManager, IDisposable
     {
+        private bool enableConnectionRelease;
         private SqliteConnection connection;
 
-        public HistoryManagerSQLite(string filePath) : base(filePath)
+        public HistoryManagerSQLite(string filePath, bool _enableConnectionRelease = false) : base(filePath)
         {
+            enableConnectionRelease = _enableConnectionRelease;
             Connect(filePath);
             EnsureDatabase();
         }
@@ -50,6 +52,11 @@ namespace ShareX.HistoryLib
             connection.Open();
 
             SetBusyTimeout(5000);
+        }
+
+        private void CloseConnection()
+        {
+            connection.Close();
         }
 
         private void SetBusyTimeout(int milliseconds)
@@ -82,10 +89,12 @@ CREATE TABLE IF NOT EXISTS History (
 ";
                 cmd.ExecuteNonQuery();
             }
+            if (enableConnectionRelease) CloseConnection();
         }
 
         internal override List<HistoryItem> Load(string dbPath)
         {
+            if (enableConnectionRelease) EnsureConnectionOpen();
             List<HistoryItem> items = new List<HistoryItem>();
 
             using (SqliteCommand cmd = new SqliteCommand("SELECT * FROM History;", connection))
@@ -111,12 +120,16 @@ CREATE TABLE IF NOT EXISTS History (
                     items.Add(item);
                 }
             }
-
+            if (enableConnectionRelease) CloseConnection();
             return items;
         }
-
+        private void EnsureConnectionOpen()
+        {
+            if (connection.State == System.Data.ConnectionState.Closed) connection.Open();
+        }
         protected override bool Append(string dbPath, IEnumerable<HistoryItem> historyItems)
         {
+            if (enableConnectionRelease) EnsureConnectionOpen();
             using (SqliteTransaction transaction = connection.BeginTransaction())
             {
                 foreach (HistoryItem item in historyItems)
@@ -144,12 +157,14 @@ SELECT last_insert_rowid();";
 
                 transaction.Commit();
             }
+            if (enableConnectionRelease) CloseConnection();
 
             return true;
         }
 
         public void Edit(HistoryItem item)
         {
+            if (enableConnectionRelease) EnsureConnectionOpen();
             using (SqliteTransaction transaction = connection.BeginTransaction())
             using (SqliteCommand cmd = connection.CreateCommand())
             {
@@ -181,12 +196,14 @@ WHERE Id = @Id;";
 
                 transaction.Commit();
             }
+            if (enableConnectionRelease) CloseConnection();
         }
 
         public void Delete(params HistoryItem[] items)
         {
             if (items != null && items.Length > 0)
             {
+                if (enableConnectionRelease) EnsureConnectionOpen();
                 using (SqliteTransaction transaction = connection.BeginTransaction())
                 using (SqliteCommand cmd = connection.CreateCommand())
                 {
@@ -203,6 +220,7 @@ WHERE Id = @Id;";
 
                     transaction.Commit();
                 }
+                if (enableConnectionRelease) CloseConnection();
             }
         }
 
