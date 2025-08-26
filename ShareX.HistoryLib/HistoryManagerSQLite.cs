@@ -176,7 +176,7 @@ WHERE Id = @Id;";
                 cmd.Parameters.AddWithValue("@DeletionURL", item.DeletionURL ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@ShortenedURL", item.ShortenedURL ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@Tags", item.Tags != null ? JsonConvert.SerializeObject(item.Tags) : (object)DBNull.Value);
-                cmd.Parameters.AddWithValue("@Id", item.Id ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@Id", item.Id);
                 cmd.ExecuteNonQuery();
 
                 transaction.Commit();
