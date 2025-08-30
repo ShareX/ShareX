@@ -23,11 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.Data.Sqlite;
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
-using Microsoft.Data.Sqlite;
 
 namespace ShareX.HistoryLib
 {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AIOptionsForm));
             btnAPIKeyHelp = new System.Windows.Forms.Button();
             cbReasoningEffort = new System.Windows.Forms.ComboBox();
             lblReasoningEffort = new System.Windows.Forms.Label();
@@ -47,12 +48,8 @@
             // btnAPIKeyHelp
             // 
             btnAPIKeyHelp.Image = Properties.Resources.question;
-            btnAPIKeyHelp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            btnAPIKeyHelp.Location = new System.Drawing.Point(336, 88);
-            btnAPIKeyHelp.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(btnAPIKeyHelp, "btnAPIKeyHelp");
             btnAPIKeyHelp.Name = "btnAPIKeyHelp";
-            btnAPIKeyHelp.Size = new System.Drawing.Size(32, 32);
-            btnAPIKeyHelp.TabIndex = 4;
             btnAPIKeyHelp.UseVisualStyleBackColor = true;
             btnAPIKeyHelp.Click += btnAPIKeyHelp_Click;
             // 
@@ -60,139 +57,87 @@
             // 
             cbReasoningEffort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbReasoningEffort.FormattingEnabled = true;
-            cbReasoningEffort.Items.AddRange(new object[] { "minimal", "low", "medium", "high" });
-            cbReasoningEffort.Location = new System.Drawing.Point(16, 152);
-            cbReasoningEffort.Margin = new System.Windows.Forms.Padding(4);
+            cbReasoningEffort.Items.AddRange(new object[] { resources.GetString("cbReasoningEffort.Items"), resources.GetString("cbReasoningEffort.Items1"), resources.GetString("cbReasoningEffort.Items2"), resources.GetString("cbReasoningEffort.Items3") });
+            resources.ApplyResources(cbReasoningEffort, "cbReasoningEffort");
             cbReasoningEffort.Name = "cbReasoningEffort";
-            cbReasoningEffort.Size = new System.Drawing.Size(352, 24);
-            cbReasoningEffort.TabIndex = 6;
             // 
             // lblReasoningEffort
             // 
-            lblReasoningEffort.AutoSize = true;
-            lblReasoningEffort.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            lblReasoningEffort.Location = new System.Drawing.Point(16, 128);
-            lblReasoningEffort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(lblReasoningEffort, "lblReasoningEffort");
             lblReasoningEffort.Name = "lblReasoningEffort";
-            lblReasoningEffort.Size = new System.Drawing.Size(108, 16);
-            lblReasoningEffort.TabIndex = 5;
-            lblReasoningEffort.Text = "Reasoning effort:";
             // 
             // txtAPIKey
             // 
-            txtAPIKey.Location = new System.Drawing.Point(16, 96);
-            txtAPIKey.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(txtAPIKey, "txtAPIKey");
             txtAPIKey.Name = "txtAPIKey";
-            txtAPIKey.Size = new System.Drawing.Size(312, 22);
-            txtAPIKey.TabIndex = 3;
             txtAPIKey.UseSystemPasswordChar = true;
             // 
             // lblAPIKey
             // 
-            lblAPIKey.AutoSize = true;
-            lblAPIKey.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            lblAPIKey.Location = new System.Drawing.Point(16, 72);
-            lblAPIKey.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(lblAPIKey, "lblAPIKey");
             lblAPIKey.Name = "lblAPIKey";
-            lblAPIKey.Size = new System.Drawing.Size(56, 16);
-            lblAPIKey.TabIndex = 2;
-            lblAPIKey.Text = "API key:";
             // 
             // cbModel
             // 
             cbModel.FormattingEnabled = true;
-            cbModel.Items.AddRange(new object[] { "gpt-5", "gpt-5-mini", "gpt-5-nano" });
-            cbModel.Location = new System.Drawing.Point(16, 40);
-            cbModel.Margin = new System.Windows.Forms.Padding(4);
+            cbModel.Items.AddRange(new object[] { resources.GetString("cbModel.Items"), resources.GetString("cbModel.Items1"), resources.GetString("cbModel.Items2") });
+            resources.ApplyResources(cbModel, "cbModel");
             cbModel.Name = "cbModel";
-            cbModel.Size = new System.Drawing.Size(352, 24);
-            cbModel.TabIndex = 1;
             // 
             // lblModel
             // 
-            lblModel.AutoSize = true;
-            lblModel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            lblModel.Location = new System.Drawing.Point(16, 16);
-            lblModel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(lblModel, "lblModel");
             lblModel.Name = "lblModel";
-            lblModel.Size = new System.Drawing.Size(48, 16);
-            lblModel.TabIndex = 0;
-            lblModel.Text = "Model:";
             // 
             // cbAutoStartRegion
             // 
-            cbAutoStartRegion.AutoSize = true;
-            cbAutoStartRegion.Location = new System.Drawing.Point(16, 248);
+            resources.ApplyResources(cbAutoStartRegion, "cbAutoStartRegion");
             cbAutoStartRegion.Name = "cbAutoStartRegion";
-            cbAutoStartRegion.Size = new System.Drawing.Size(122, 20);
-            cbAutoStartRegion.TabIndex = 9;
-            cbAutoStartRegion.Text = "Auto start region";
             cbAutoStartRegion.UseVisualStyleBackColor = true;
             // 
             // cbAutoStartAnalyze
             // 
-            cbAutoStartAnalyze.AutoSize = true;
-            cbAutoStartAnalyze.Location = new System.Drawing.Point(16, 280);
+            resources.ApplyResources(cbAutoStartAnalyze, "cbAutoStartAnalyze");
             cbAutoStartAnalyze.Name = "cbAutoStartAnalyze";
-            cbAutoStartAnalyze.Size = new System.Drawing.Size(131, 20);
-            cbAutoStartAnalyze.TabIndex = 10;
-            cbAutoStartAnalyze.Text = "Auto start analyze";
             cbAutoStartAnalyze.UseVisualStyleBackColor = true;
             // 
             // btnOK
             // 
-            btnOK.Location = new System.Drawing.Point(152, 344);
+            resources.ApplyResources(btnOK, "btnOK");
             btnOK.Name = "btnOK";
-            btnOK.Size = new System.Drawing.Size(104, 32);
-            btnOK.TabIndex = 12;
-            btnOK.Text = "OK";
             btnOK.UseVisualStyleBackColor = true;
             btnOK.Click += btnOK_Click;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new System.Drawing.Point(264, 344);
+            resources.ApplyResources(btnCancel, "btnCancel");
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new System.Drawing.Size(104, 32);
-            btnCancel.TabIndex = 13;
-            btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
             // cbAutoCopyResult
             // 
-            cbAutoCopyResult.AutoSize = true;
-            cbAutoCopyResult.Location = new System.Drawing.Point(16, 312);
+            resources.ApplyResources(cbAutoCopyResult, "cbAutoCopyResult");
             cbAutoCopyResult.Name = "cbAutoCopyResult";
-            cbAutoCopyResult.Size = new System.Drawing.Size(121, 20);
-            cbAutoCopyResult.TabIndex = 11;
-            cbAutoCopyResult.Text = "Auto copy result";
             cbAutoCopyResult.UseVisualStyleBackColor = true;
             // 
             // cbVerbosity
             // 
             cbVerbosity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbVerbosity.FormattingEnabled = true;
-            cbVerbosity.Items.AddRange(new object[] { "high", "medium", "low" });
-            cbVerbosity.Location = new System.Drawing.Point(16, 208);
+            cbVerbosity.Items.AddRange(new object[] { resources.GetString("cbVerbosity.Items"), resources.GetString("cbVerbosity.Items1"), resources.GetString("cbVerbosity.Items2") });
+            resources.ApplyResources(cbVerbosity, "cbVerbosity");
             cbVerbosity.Name = "cbVerbosity";
-            cbVerbosity.Size = new System.Drawing.Size(352, 24);
-            cbVerbosity.TabIndex = 8;
             // 
             // lblVerbosity
             // 
-            lblVerbosity.AutoSize = true;
-            lblVerbosity.Location = new System.Drawing.Point(16, 184);
+            resources.ApplyResources(lblVerbosity, "lblVerbosity");
             lblVerbosity.Name = "lblVerbosity";
-            lblVerbosity.Size = new System.Drawing.Size(67, 16);
-            lblVerbosity.TabIndex = 7;
-            lblVerbosity.Text = "Verbosity:";
             // 
             // AIOptionsForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(384, 391);
             Controls.Add(lblVerbosity);
             Controls.Add(cbVerbosity);
             Controls.Add(cbAutoCopyResult);
@@ -207,13 +152,9 @@
             Controls.Add(lblAPIKey);
             Controls.Add(cbModel);
             Controls.Add(lblModel);
-            Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            Margin = new System.Windows.Forms.Padding(4);
             MaximizeBox = false;
             Name = "AIOptionsForm";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "ShareX - AI options";
             ResumeLayout(false);
             PerformLayout();
         }
