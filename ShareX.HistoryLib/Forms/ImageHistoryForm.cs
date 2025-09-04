@@ -48,7 +48,8 @@ namespace ShareX.HistoryLib
         private string defaultTitle;
         private List<HistoryItem> allHistoryItems;
 
-        public ImageHistoryForm(HistoryManagerSQLite historyManager, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
+        public ImageHistoryForm(HistoryManagerSQLite historyManager, ImageHistorySettings settings, Action<string> uploadFile = null,
+            Action<string> editImage = null, Action<string> pinToScreen = null, Action<string> analyzeImage = null)
         {
             InitializeComponent();
             tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
@@ -60,7 +61,7 @@ namespace ShareX.HistoryLib
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
             ilvImages.BorderStyle = BorderStyle.None;
 
-            him = new HistoryItemManager(uploadFile, editImage, pinToScreen);
+            him = new HistoryItemManager(uploadFile, editImage, pinToScreen, analyzeImage);
             him.GetHistoryItems += him_GetHistoryItems;
             him.FavoriteRequested += him_FavoriteRequested;
             him.EditRequested += him_EditRequested;

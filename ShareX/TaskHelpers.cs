@@ -827,7 +827,8 @@ namespace ShareX
             HistoryForm historyForm = new HistoryForm(Program.HistoryManager, Program.Settings.HistorySettings,
                 filePath => UploadManager.UploadFile(filePath),
                 filePath => AnnotateImageFromFile(filePath),
-                filePath => PinToScreen(filePath));
+                filePath => PinToScreen(filePath),
+                filePath => AnalyzeImage(filePath));
 
             historyForm.Show();
         }
@@ -837,7 +838,8 @@ namespace ShareX
             ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryManager, Program.Settings.ImageHistorySettings,
                 filePath => UploadManager.UploadFile(filePath),
                 filePath => AnnotateImageFromFile(filePath),
-                filePath => PinToScreen(filePath));
+                filePath => PinToScreen(filePath),
+                filePath => AnalyzeImage(filePath));
 
             imageHistoryForm.Show();
         }

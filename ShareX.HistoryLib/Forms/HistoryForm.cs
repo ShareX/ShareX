@@ -51,7 +51,8 @@ namespace ShareX.HistoryLib
         private int listViewCacheStartIndex;
         private bool busy;
 
-        public HistoryForm(HistoryManagerSQLite historyManager, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
+        public HistoryForm(HistoryManagerSQLite historyManager, HistorySettings settings, Action<string> uploadFile = null,
+            Action<string> editImage = null, Action<string> pinToScreen = null, Action<string> analyzeImage = null)
         {
             HistoryManager = historyManager;
             Settings = settings;
@@ -76,7 +77,7 @@ namespace ShareX.HistoryLib
             il.Images.Add(Resources.star);
             lvHistory.SmallImageList = il;
 
-            him = new HistoryItemManager(uploadFile, editImage, pinToScreen, true);
+            him = new HistoryItemManager(uploadFile, editImage, pinToScreen, analyzeImage);
             him.GetHistoryItems += him_GetHistoryItems;
             him.FavoriteRequested += him_FavoriteRequested;
             him.EditRequested += him_EditRequested;
