@@ -41,6 +41,7 @@ namespace ShareX
         public string model { get; set; }
         public ChatGPTReasoning reasoning { get; set; }
         public ChatGPTInput[] input { get; set; }
+        public ChatGPTText text { get; set; }
         public bool store { get; set; }
     }
 
@@ -53,6 +54,11 @@ namespace ShareX
     {
         public string role { get; set; }
         public ChatGPTInputContent[] content { get; set; }
+    }
+
+    public class ChatGPTText
+    {
+        public string verbosity { get; set; }
     }
 
     public class ChatGPTInputContent
@@ -94,14 +100,14 @@ namespace ShareX
             Model = model;
         }
 
-        public async Task<string> AnalyzeImage(string filePath, string input = null, string reasoningEffort = null)
+        public async Task<string> AnalyzeImage(string filePath, string input = null, string reasoningEffort = null, string textVerbosity = null)
         {
             Image image = ImageHelpers.LoadImage(filePath);
 
-            return await AnalyzeImage(image, input, reasoningEffort);
+            return await AnalyzeImage(image, input, reasoningEffort, textVerbosity);
         }
 
-        public async Task<string> AnalyzeImage(Image image, string input = null, string reasoningEffort = null)
+        public async Task<string> AnalyzeImage(Image image, string input = null, string reasoningEffort = null, string textVerbosity = null)
         {
             string imageDataUri;
 
@@ -113,10 +119,10 @@ namespace ShareX
                 imageDataUri = $"data:image/jpeg;base64,{base64Image}";
             }
 
-            return await AnalyzeImageInternal(imageDataUri, input, reasoningEffort);
+            return await AnalyzeImageInternal(imageDataUri, input, reasoningEffort, textVerbosity);
         }
 
-        private async Task<string> AnalyzeImageInternal(string imageDataUri, string input = null, string reasoningEffort = null)
+        private async Task<string> AnalyzeImageInternal(string imageDataUri, string input = null, string reasoningEffort = null, string textVerbosity = null)
         {
             HttpClient httpClient = HttpClientFactory.Create();
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", APIKey);
@@ -153,6 +159,10 @@ namespace ShareX
                         }
                     }
                 },
+                text = new ChatGPTText()
+                {
+                    verbosity = textVerbosity ?? "medium"
+                },
                 store = false
             };
 
@@ -160,6 +170,7 @@ namespace ShareX
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = await httpClient.PostAsync("https://api.openai.com/v1/responses", content);
+            response.EnsureSuccessStatusCode();
             string responseString = await response.Content.ReadAsStringAsync();
 
             ChatGPTResponse result = JsonSerializer.Deserialize<ChatGPTResponse>(responseString);

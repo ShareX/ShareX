@@ -37,25 +37,12 @@ namespace ShareX
     {
         public AIOptions Options { get; private set; }
 
-        private bool autoStart;
-
         public AIForm(AIOptions options)
         {
+            Options = options;
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
 
-            Options = options;
-            cbModel.Text = Options.Model;
-            txtAPIKey.Text = Options.ChatGPTAPIKey;
-            int index = cbReasoningEffort.FindStringExact(Options.ReasoningEffort);
-            if (index >= 0)
-            {
-                cbReasoningEffort.SelectedIndex = index;
-            }
-            else
-            {
-                cbReasoningEffort.SelectedIndex = 2;
-            }
             cbInput.Text = Options.Input;
         }
 
@@ -66,32 +53,21 @@ namespace ShareX
                 txtImage.Text = filePath;
                 pbImage.LoadImageFromFile(filePath);
                 UpdateControls();
-                autoStart = true;
             }
         }
 
         private void UpdateControls()
         {
-            btnAnalyze.Enabled = !string.IsNullOrEmpty(txtAPIKey.Text) && !string.IsNullOrEmpty(txtImage.Text);
+            btnAnalyze.Enabled = !string.IsNullOrEmpty(Options.ChatGPTAPIKey) && (!string.IsNullOrEmpty(txtImage.Text) || pbImage.Image != null);
+            btnResultCopy.Enabled = !string.IsNullOrEmpty(txtResult.Text);
         }
 
-        private async Task AnalyzeImage(bool isCapture = false)
+        private async Task AnalyzeImage()
         {
             txtResult.Clear();
             lblTimer.ResetText();
 
-            string imagePath = null;
-
-            if (!isCapture)
-            {
-                imagePath = txtImage.Text;
-                if (string.IsNullOrEmpty(imagePath))
-                {
-                    return;
-                }
-            }
-
-            if (!string.IsNullOrEmpty(Options.ChatGPTAPIKey))
+            if (!string.IsNullOrEmpty(Options.ChatGPTAPIKey) && (!string.IsNullOrEmpty(txtImage.Text) || pbImage.Image != null))
             {
                 btnAnalyze.Enabled = false;
                 Cursor = Cursors.WaitCursor;
@@ -104,20 +80,32 @@ namespace ShareX
                 {
                     ChatGPT chatGPT = new ChatGPT(Options.ChatGPTAPIKey, Options.Model);
                     string result = null;
-                    if (isCapture)
+                    string imagePath = txtImage.Text;
+                    if (!string.IsNullOrEmpty(imagePath))
                     {
-                        result = await chatGPT.AnalyzeImage(pbImage.Image, Options.Input, Options.ReasoningEffort);
+                        result = await chatGPT.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort, Options.Verbosity);
                     }
-                    else
+                    else if (pbImage.Image != null)
                     {
-                        result = await chatGPT.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort);
+                        result = await chatGPT.AnalyzeImage(pbImage.Image, Options.Input, Options.ReasoningEffort, Options.Verbosity);
                     }
-                    // TODO: Translate
-                    lblTimer.Text = $"Time: {timer.ElapsedMilliseconds} ms";
-                    txtResult.Text = result.Replace("\n", "\r\n");
+
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        result = result.Replace("\n", "\r\n");
+                        // TODO: Translate
+                        lblTimer.Text = $"Time: {timer.ElapsedMilliseconds} ms";
+                        txtResult.Text = result;
+                        if (Options.AutoCopyResult)
+                        {
+                            ClipboardHelpers.CopyText(result);
+                        }
+                        TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
+                    }
                 }
                 catch (Exception ex)
                 {
+                    txtResult.Clear();
                     DebugHelper.WriteException(ex);
                     ex.ShowError();
                 }
@@ -126,8 +114,6 @@ namespace ShareX
                     UpdateControls();
                     Cursor = Cursors.Default;
                     txtResult.Cursor = Cursors.Default;
-
-                    TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
                 }
             }
         }
@@ -152,29 +138,36 @@ namespace ShareX
             }
         }
 
+        private void AIForm_Load(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtImage.Text) && Options.AutoStartRegion)
+            {
+                Bitmap regionImage = RegionCaptureTasks.GetRegionImage();
+
+                if (regionImage != null)
+                {
+                    pbImage.LoadImage(regionImage);
+                    UpdateControls();
+                }
+            }
+        }
+
         private async void AIForm_Shown(object sender, EventArgs e)
         {
-            if (autoStart)
+            if (Options.AutoStartAnalyze)
             {
                 btnAnalyze.Focus();
                 await AnalyzeImage();
             }
         }
 
-        private void cbModel_TextChanged(object sender, EventArgs e)
+        private void btnOptions_Click(object sender, EventArgs e)
         {
-            Options.Model = cbModel.Text;
-        }
-
-        private void txtAPIKey_TextChanged(object sender, EventArgs e)
-        {
-            Options.ChatGPTAPIKey = txtAPIKey.Text;
-            UpdateControls();
-        }
-
-        private void cbReasoningEffort_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Options.ReasoningEffort = cbReasoningEffort.Text;
+            using (AIOptionsForm optionsForm = new AIOptionsForm(Options))
+            {
+                optionsForm.ShowDialog(this);
+                UpdateControls();
+            }
         }
 
         private void cbInput_TextChanged(object sender, EventArgs e)
@@ -212,7 +205,15 @@ namespace ShareX
             {
                 pbImage.LoadImage(regionImage);
                 txtImage.ResetText();
-                await AnalyzeImage(true);
+                await AnalyzeImage();
+            }
+        }
+
+        private void btnResultCopy_Click(object sender, EventArgs e)
+        {
+            if (ClipboardHelpers.CopyText(txtResult.Text))
+            {
+                TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
             }
         }
     }

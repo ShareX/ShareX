@@ -223,7 +223,9 @@ namespace ShareX.UploadersLib
         [Description("ftps://")]
         ftps,
         [Description("file://")]
-        file
+        file,
+        [Description("sftp://")]
+        sftp
     }
 
     public enum Privacy

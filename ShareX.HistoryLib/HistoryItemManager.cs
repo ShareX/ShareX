@@ -54,13 +54,14 @@ namespace ShareX.HistoryLib
         public bool IsTextFile { get; private set; }
         public int SelectedItemCount { get; private set; }
 
-        private Action<string> uploadFile, editImage, pinToScreen;
+        private Action<string> uploadFile, editImage, pinToScreen, analyzeImage;
 
-        public HistoryItemManager(Action<string> uploadFile, Action<string> editImage, Action<string> pinToScreen, bool hideShowMoreInfoButton = false)
+        public HistoryItemManager(Action<string> uploadFile, Action<string> editImage, Action<string> pinToScreen, Action<string> analyzeImage)
         {
             this.uploadFile = uploadFile;
             this.editImage = editImage;
             this.pinToScreen = pinToScreen;
+            this.analyzeImage = analyzeImage;
 
             InitializeComponent();
             cmsHistory.Opening += cmsHistory_Opening;
@@ -70,6 +71,7 @@ namespace ShareX.HistoryLib
             tsmiUploadFile.Visible = uploadFile != null;
             tsmiEditImage.Visible = editImage != null;
             tsmiPinToScreen.Visible = pinToScreen != null;
+            tsmiAnalyzeImage.Visible = analyzeImage != null;
         }
 
         private void cmsHistory_Opening(object sender, System.ComponentModel.CancelEventArgs e)
@@ -721,6 +723,11 @@ namespace ShareX.HistoryLib
         public void PinToScreen()
         {
             if (pinToScreen != null && HistoryItem != null && IsImageFile) pinToScreen(HistoryItem.FilePath);
+        }
+
+        public void AnalyzeImage()
+        {
+            if (analyzeImage != null && HistoryItem != null && IsImageFile) analyzeImage(HistoryItem.FilePath);
         }
     }
 }

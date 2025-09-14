@@ -29,37 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AIForm));
-            lblModel = new System.Windows.Forms.Label();
-            cbModel = new System.Windows.Forms.ComboBox();
             lblInput = new System.Windows.Forms.Label();
             lblImage = new System.Windows.Forms.Label();
             txtImage = new System.Windows.Forms.TextBox();
             btnAnalyze = new System.Windows.Forms.Button();
-            lblAPIKey = new System.Windows.Forms.Label();
-            txtAPIKey = new System.Windows.Forms.TextBox();
             lblResult = new System.Windows.Forms.Label();
             txtResult = new System.Windows.Forms.TextBox();
             btnImageBrowse = new System.Windows.Forms.Button();
             pbImage = new ShareX.HelpersLib.MyPictureBox();
             cbInput = new System.Windows.Forms.ComboBox();
-            lblReasoningEffort = new System.Windows.Forms.Label();
-            cbReasoningEffort = new System.Windows.Forms.ComboBox();
             lblTimer = new System.Windows.Forms.Label();
             btnCapture = new System.Windows.Forms.Button();
+            btnResultCopy = new System.Windows.Forms.Button();
+            btnOptions = new System.Windows.Forms.Button();
             SuspendLayout();
-            // 
-            // lblModel
-            // 
-            resources.ApplyResources(lblModel, "lblModel");
-            lblModel.Name = "lblModel";
-            // 
-            // cbModel
-            // 
-            cbModel.FormattingEnabled = true;
-            cbModel.Items.AddRange(new object[] { resources.GetString("cbModel.Items"), resources.GetString("cbModel.Items1"), resources.GetString("cbModel.Items2") });
-            resources.ApplyResources(cbModel, "cbModel");
-            cbModel.Name = "cbModel";
-            cbModel.TextChanged += cbModel_TextChanged;
             // 
             // lblInput
             // 
@@ -84,18 +67,6 @@
             btnAnalyze.UseVisualStyleBackColor = true;
             btnAnalyze.Click += btnAnalyze_Click;
             // 
-            // lblAPIKey
-            // 
-            resources.ApplyResources(lblAPIKey, "lblAPIKey");
-            lblAPIKey.Name = "lblAPIKey";
-            // 
-            // txtAPIKey
-            // 
-            resources.ApplyResources(txtAPIKey, "txtAPIKey");
-            txtAPIKey.Name = "txtAPIKey";
-            txtAPIKey.UseSystemPasswordChar = true;
-            txtAPIKey.TextChanged += txtAPIKey_TextChanged;
-            // 
             // lblResult
             // 
             resources.ApplyResources(lblResult, "lblResult");
@@ -109,6 +80,7 @@
             // 
             // btnImageBrowse
             // 
+            btnImageBrowse.Image = Properties.Resources.folder_open_image;
             resources.ApplyResources(btnImageBrowse, "btnImageBrowse");
             btnImageBrowse.Name = "btnImageBrowse";
             btnImageBrowse.UseVisualStyleBackColor = true;
@@ -127,24 +99,10 @@
             // cbInput
             // 
             cbInput.FormattingEnabled = true;
-            cbInput.Items.AddRange(new object[] { resources.GetString("cbInput.Items"), resources.GetString("cbInput.Items1"), resources.GetString("cbInput.Items2") });
+            cbInput.Items.AddRange(new object[] { resources.GetString("cbInput.Items"), resources.GetString("cbInput.Items1"), resources.GetString("cbInput.Items2"), resources.GetString("cbInput.Items3") });
             resources.ApplyResources(cbInput, "cbInput");
             cbInput.Name = "cbInput";
             cbInput.TextChanged += cbInput_TextChanged;
-            // 
-            // lblReasoningEffort
-            // 
-            resources.ApplyResources(lblReasoningEffort, "lblReasoningEffort");
-            lblReasoningEffort.Name = "lblReasoningEffort";
-            // 
-            // cbReasoningEffort
-            // 
-            cbReasoningEffort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            cbReasoningEffort.FormattingEnabled = true;
-            cbReasoningEffort.Items.AddRange(new object[] { resources.GetString("cbReasoningEffort.Items"), resources.GetString("cbReasoningEffort.Items1"), resources.GetString("cbReasoningEffort.Items2"), resources.GetString("cbReasoningEffort.Items3") });
-            resources.ApplyResources(cbReasoningEffort, "cbReasoningEffort");
-            cbReasoningEffort.Name = "cbReasoningEffort";
-            cbReasoningEffort.SelectedIndexChanged += cbReasoningEffort_SelectedIndexChanged;
             // 
             // lblTimer
             // 
@@ -159,30 +117,42 @@
             btnCapture.UseVisualStyleBackColor = true;
             btnCapture.Click += btnCapture_Click;
             // 
+            // btnResultCopy
+            // 
+            resources.ApplyResources(btnResultCopy, "btnResultCopy");
+            btnResultCopy.Image = Properties.Resources.document_copy;
+            btnResultCopy.Name = "btnResultCopy";
+            btnResultCopy.UseVisualStyleBackColor = true;
+            btnResultCopy.Click += btnResultCopy_Click;
+            // 
+            // btnOptions
+            // 
+            resources.ApplyResources(btnOptions, "btnOptions");
+            btnOptions.Name = "btnOptions";
+            btnOptions.UseVisualStyleBackColor = true;
+            btnOptions.Click += btnOptions_Click;
+            // 
             // AIForm
             // 
             AllowDrop = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(btnOptions);
+            Controls.Add(btnResultCopy);
             Controls.Add(btnCapture);
             Controls.Add(txtResult);
             Controls.Add(lblTimer);
-            Controls.Add(cbReasoningEffort);
-            Controls.Add(lblReasoningEffort);
             Controls.Add(cbInput);
             Controls.Add(pbImage);
             Controls.Add(btnImageBrowse);
             Controls.Add(lblResult);
-            Controls.Add(txtAPIKey);
-            Controls.Add(lblAPIKey);
             Controls.Add(btnAnalyze);
             Controls.Add(txtImage);
             Controls.Add(lblImage);
             Controls.Add(lblInput);
-            Controls.Add(cbModel);
-            Controls.Add(lblModel);
             Name = "AIForm";
             SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            Load += AIForm_Load;
             Shown += AIForm_Shown;
             DragDrop += AIForm_DragDrop;
             DragEnter += AIForm_DragEnter;
@@ -191,23 +161,18 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblModel;
-        private System.Windows.Forms.ComboBox cbModel;
         private System.Windows.Forms.Label lblInput;
         private System.Windows.Forms.Label lblImage;
         private System.Windows.Forms.TextBox txtImage;
         private System.Windows.Forms.Button btnAnalyze;
-        private System.Windows.Forms.Label lblAPIKey;
-        private System.Windows.Forms.TextBox txtAPIKey;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button btnImageBrowse;
         private HelpersLib.MyPictureBox pbImage;
         private System.Windows.Forms.ComboBox cbInput;
-        private System.Windows.Forms.Label lblReasoningEffort;
-        private System.Windows.Forms.ComboBox cbReasoningEffort;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Button btnCapture;
+        private System.Windows.Forms.Button btnResultCopy;
+        private System.Windows.Forms.Button btnOptions;
     }
 }

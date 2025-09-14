@@ -32,7 +32,11 @@ namespace ShareX
         public string Model { get; set; } = "gpt-5-mini";
         [JsonEncrypt]
         public string ChatGPTAPIKey { get; set; }
-        public string ReasoningEffort { get; set; } = "medium";
-        public string Input { get; set; } = "what is in this image?";
+        public string ReasoningEffort { get; set; } = "minimal";
+        public string Verbosity { get; set; } = "medium";
+        public string Input { get; set; } = "What is in this image?";
+        public bool AutoStartRegion { get; set; } = true;
+        public bool AutoStartAnalyze { get; set; } = true;
+        public bool AutoCopyResult { get; set; } = false;
     }
 }
