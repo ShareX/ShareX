@@ -155,6 +155,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Analyze image.
+        /// </summary>
+        internal static string AfterCaptureTasks_AnalyzeImage {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_AnalyzeImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open in image editor.
         /// </summary>
         internal static string AfterCaptureTasks_AnnotateImage {
@@ -1249,6 +1258,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_ActiveWindowTopMost {
             get {
                 return ResourceManager.GetString("HotkeyType_ActiveWindowTopMost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Analyze image.
+        /// </summary>
+        internal static string HotkeyType_AnalyzeImage {
+            get {
+                return ResourceManager.GetString("HotkeyType_AnalyzeImage", resourceCulture);
             }
         }
         

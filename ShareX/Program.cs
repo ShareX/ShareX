@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.Loader;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -267,7 +268,7 @@ namespace ShareX
         [STAThread]
         private static void Main(string[] args)
         {
-            HandleExceptions();
+            StartupWork();
 
             StartTimer = Stopwatch.StartNew();
 
@@ -624,8 +625,20 @@ namespace ShareX
             return false;
         }
 
-        private static void HandleExceptions()
+        private static void StartupWork()
         {
+            AssemblyLoadContext.Default.Resolving += (ctx, asmName) =>
+            {
+                if (string.IsNullOrEmpty(asmName.CultureName) || !asmName.Name.EndsWith(".resources", StringComparison.OrdinalIgnoreCase))
+                {
+                    return null;
+                }
+
+                string baseDir = AppContext.BaseDirectory;
+                string path = Path.Combine(baseDir, "Languages", asmName.CultureName, asmName.Name + ".dll");
+                return File.Exists(path) ? ctx.LoadFromAssemblyPath(path) : null;
+            };
+
 #if DEBUG
             if (Debugger.IsAttached)
             {

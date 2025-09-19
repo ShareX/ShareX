@@ -512,13 +512,11 @@ namespace ShareX.HelpersLib
 
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.SetHighQuality();
                 g.DrawImage(img, margin.Left, margin.Top, img.Width, img.Height);
 
                 if (canvasColor.A > 0)
                 {
                     g.CompositingMode = CompositingMode.SourceCopy;
-                    g.SmoothingMode = SmoothingMode.None;
 
                     using (Brush brush = new SolidBrush(canvasColor))
                     {
@@ -786,7 +784,6 @@ namespace ShareX.HelpersLib
             using (reflection)
             using (Graphics g = Graphics.FromImage(bmpResult))
             {
-                g.SetHighQuality();
                 g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
                 g.DrawImage(reflection, 0, bmp.Height + offset, reflection.Width, reflection.Height);
             }
@@ -918,7 +915,6 @@ namespace ShareX.HelpersLib
                 using (Graphics g = Graphics.FromImage(bmpResult))
                 {
                     g.DrawRectangleProper(borderPen, 0, 0, bmpResult.Width, bmpResult.Height);
-                    g.SetHighQuality();
                     g.DrawImage(bmp, borderSize, borderSize, bmp.Width, bmp.Height);
                 }
             }
@@ -995,7 +991,6 @@ namespace ShareX.HelpersLib
             using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
             {
                 g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmpResult.Width, bmpResult.Height));
-                g.SetHighQuality();
                 g.DrawImage(img, 0, 0, img.Width, img.Height);
             }
 
@@ -1232,7 +1227,6 @@ namespace ShareX.HelpersLib
 
                     using (Graphics g = Graphics.FromImage(bmpResult))
                     {
-                        g.SetHighQuality();
                         g.DrawImage(bmpShadow, Math.Max(0, offset.X), Math.Max(0, offset.Y), bmpShadow.Width, bmpShadow.Height);
                         g.DrawImage(bmp, Math.Max(size, -offset.X + size), Math.Max(size, -offset.Y + size), bmp.Width, bmp.Height);
                     }
@@ -1243,7 +1237,6 @@ namespace ShareX.HelpersLib
 
                     using (Graphics g = Graphics.FromImage(bmpResult))
                     {
-                        g.SetHighQuality();
                         g.DrawImage(bmpShadow, -size + offset.X, -size + offset.Y, bmpShadow.Width, bmpShadow.Height);
                         g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
                     }
@@ -1292,7 +1285,6 @@ namespace ShareX.HelpersLib
 
                 using (Graphics g = Graphics.FromImage(bmpResult))
                 {
-                    g.SetHighQuality();
                     g.DrawImage(bmpMask, Math.Max(0, offset.X), Math.Max(0, offset.Y), bmpMask.Width, bmpMask.Height);
                     g.DrawImage(bmp, Math.Max(size, -offset.X + size), Math.Max(size, -offset.Y + size), bmp.Width, bmp.Height);
                 }

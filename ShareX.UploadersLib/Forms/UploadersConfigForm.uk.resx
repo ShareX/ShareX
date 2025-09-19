@@ -205,7 +205,7 @@
     <value>Назва:</value>
   </data>
   <data name="cbFTPRemoveFileExtension.Text" xml:space="preserve">
-    <value>Вилучити розширення файла зі шляху посилання</value>
+    <value>Вилучити розширення файлу зі шляху посилання</value>
   </data>
   <data name="lblFTPHost.Text" xml:space="preserve">
     <value>Хост:</value>

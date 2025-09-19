@@ -193,7 +193,7 @@
     <value>Назва файлу</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>Шлях до файла</value>
+    <value>Шлях до файлу</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
     <value>Форумне (BBCode) посилання</value>

@@ -430,6 +430,11 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsURLExist) new QRCodeForm(SelectedItem.Info.Result.URL).Show();
         }
 
+        public void AnalyzeImage()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.AnalyzeImage(SelectedItem.Info.FilePath);
+        }
+
         public async Task OCRImage()
         {
             if (IsItemSelected && SelectedItem.IsImageFile) await TaskHelpers.OCRImage(SelectedItem.Info.FilePath);

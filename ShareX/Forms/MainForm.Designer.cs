@@ -91,6 +91,7 @@
             tsmiVideoConverter = new System.Windows.Forms.ToolStripMenuItem();
             tsmiVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             tssTools3 = new System.Windows.Forms.ToolStripSeparator();
+            tsmiAI = new System.Windows.Forms.ToolStripMenuItem();
             tsmiOCR = new System.Windows.Forms.ToolStripMenuItem();
             tsmiQRCode = new System.Windows.Forms.ToolStripMenuItem();
             tsmiHashChecker = new System.Windows.Forms.ToolStripMenuItem();
@@ -185,6 +186,7 @@
             tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             tsmiShareSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiAnalyzeImage = new System.Windows.Forms.ToolStripMenuItem();
             tsmiGoogleLens = new System.Windows.Forms.ToolStripMenuItem();
             tsmiBingVisualSearch = new System.Windows.Forms.ToolStripMenuItem();
             tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
@@ -245,6 +247,7 @@
             tsmiTrayVideoConverter = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             tssTrayTools3 = new System.Windows.Forms.ToolStripSeparator();
+            tsmiTrayAI = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTrayOCR = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTrayQRCode = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTrayHashChecker = new System.Windows.Forms.ToolStripMenuItem();
@@ -595,7 +598,7 @@
             // 
             // tsddbTools
             // 
-            tsddbTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiColorPicker, tsmiScreenColorPicker, tsmiRuler, tsmiPinToScreen, tssTools1, tsmiImageEditor, tsmiImageBeautifier, tsmiImageEffects, tsmiImageViewer, tsmiImageCombiner, tsmiImageSplitter, tsmiImageThumbnailer, tssTools2, tsmiVideoConverter, tsmiVideoThumbnailer, tssTools3, tsmiOCR, tsmiQRCode, tsmiHashChecker, tsmiMetadata, tsmiIndexFolder, tssTools4, tsmiClipboardViewer, tsmiBorderlessWindow, tsmiInspectWindow, tsmiMonitorTest });
+            tsddbTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiColorPicker, tsmiScreenColorPicker, tsmiRuler, tsmiPinToScreen, tssTools1, tsmiImageEditor, tsmiImageBeautifier, tsmiImageEffects, tsmiImageViewer, tsmiImageCombiner, tsmiImageSplitter, tsmiImageThumbnailer, tssTools2, tsmiVideoConverter, tsmiVideoThumbnailer, tssTools3, tsmiAI, tsmiOCR, tsmiQRCode, tsmiHashChecker, tsmiMetadata, tsmiIndexFolder, tssTools4, tsmiClipboardViewer, tsmiBorderlessWindow, tsmiInspectWindow, tsmiMonitorTest });
             tsddbTools.Image = Properties.Resources.toolbox;
             resources.ApplyResources(tsddbTools, "tsddbTools");
             tsddbTools.Name = "tsddbTools";
@@ -705,6 +708,13 @@
             // 
             tssTools3.Name = "tssTools3";
             resources.ApplyResources(tssTools3, "tssTools3");
+            // 
+            // tsmiAI
+            // 
+            tsmiAI.Image = Properties.Resources.robot;
+            tsmiAI.Name = "tsmiAI";
+            resources.ApplyResources(tsmiAI, "tsmiAI");
+            tsmiAI.Click += tsmiAI_Click;
             // 
             // tsmiOCR
             // 
@@ -983,7 +993,7 @@
             // 
             // cmsTaskInfo
             // 
-            cmsTaskInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiShowErrors, tsmiStopUpload, tsmiOpen, tsmiCopy, tsmiUploadSelectedFile, tsmiDownloadSelectedURL, tsmiEditSelectedFile, tsmiBeautifyImage, tsmiAddImageEffects, tsmiPinSelectedFile, tsmiRunAction, tsmiDeleteSelectedItem, tsmiDeleteSelectedFile, tsmiShortenSelectedURL, tsmiShareSelectedURL, tsmiGoogleLens, tsmiBingVisualSearch, tsmiShowQRCode, tsmiOCRImage, tsmiCombineImages, tsmiShowResponse, tsmiClearList, tssUploadInfo1, tsmiSwitchTaskViewMode });
+            cmsTaskInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiShowErrors, tsmiStopUpload, tsmiOpen, tsmiCopy, tsmiUploadSelectedFile, tsmiDownloadSelectedURL, tsmiEditSelectedFile, tsmiBeautifyImage, tsmiAddImageEffects, tsmiPinSelectedFile, tsmiRunAction, tsmiDeleteSelectedItem, tsmiDeleteSelectedFile, tsmiShortenSelectedURL, tsmiShareSelectedURL, tsmiAnalyzeImage, tsmiGoogleLens, tsmiBingVisualSearch, tsmiShowQRCode, tsmiOCRImage, tsmiCombineImages, tsmiShowResponse, tsmiClearList, tssUploadInfo1, tsmiSwitchTaskViewMode });
             cmsTaskInfo.Name = "cmsHistory";
             resources.ApplyResources(cmsTaskInfo, "cmsTaskInfo");
             cmsTaskInfo.Closing += cmsTaskInfo_Closing;
@@ -1306,6 +1316,13 @@
             tsmiShareSelectedURL.Name = "tsmiShareSelectedURL";
             resources.ApplyResources(tsmiShareSelectedURL, "tsmiShareSelectedURL");
             // 
+            // tsmiAnalyzeImage
+            // 
+            tsmiAnalyzeImage.Image = Properties.Resources.robot;
+            tsmiAnalyzeImage.Name = "tsmiAnalyzeImage";
+            resources.ApplyResources(tsmiAnalyzeImage, "tsmiAnalyzeImage");
+            tsmiAnalyzeImage.Click += tsmiAnalyzeImage_Click;
+            // 
             // tsmiGoogleLens
             // 
             tsmiGoogleLens.Image = Properties.Resources.Google_Lens;
@@ -1599,7 +1616,7 @@
             // 
             // tsmiTrayTools
             // 
-            tsmiTrayTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiTrayColorPicker, tsmiTrayScreenColorPicker, tsmiTrayRuler, tsmiTrayPinToScreen, tssTrayTools1, tsmiTrayImageEditor, tsmiTrayImageBeautifier, tsmiTrayImageEffects, tsmiTrayImageViewer, tsmiTrayImageCombiner, tsmiTrayImageSplitter, tsmiTrayImageThumbnailer, tssTrayTools2, tsmiTrayVideoConverter, tsmiTrayVideoThumbnailer, tssTrayTools3, tsmiTrayOCR, tsmiTrayQRCode, tsmiTrayHashChecker, tsmiTrayMetadata, tsmiTrayIndexFolder, tssTrayTools4, tsmiTrayClipboardViewer, tsmiTrayBorderlessWindow, tsmiTrayInspectWindow, tsmiTrayMonitorTest });
+            tsmiTrayTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiTrayColorPicker, tsmiTrayScreenColorPicker, tsmiTrayRuler, tsmiTrayPinToScreen, tssTrayTools1, tsmiTrayImageEditor, tsmiTrayImageBeautifier, tsmiTrayImageEffects, tsmiTrayImageViewer, tsmiTrayImageCombiner, tsmiTrayImageSplitter, tsmiTrayImageThumbnailer, tssTrayTools2, tsmiTrayVideoConverter, tsmiTrayVideoThumbnailer, tssTrayTools3, tsmiTrayAI, tsmiTrayOCR, tsmiTrayQRCode, tsmiTrayHashChecker, tsmiTrayMetadata, tsmiTrayIndexFolder, tssTrayTools4, tsmiTrayClipboardViewer, tsmiTrayBorderlessWindow, tsmiTrayInspectWindow, tsmiTrayMonitorTest });
             tsmiTrayTools.Image = Properties.Resources.toolbox;
             tsmiTrayTools.Name = "tsmiTrayTools";
             resources.ApplyResources(tsmiTrayTools, "tsmiTrayTools");
@@ -1709,6 +1726,13 @@
             // 
             tssTrayTools3.Name = "tssTrayTools3";
             resources.ApplyResources(tssTrayTools3, "tssTrayTools3");
+            // 
+            // tsmiTrayAI
+            // 
+            tsmiTrayAI.Image = Properties.Resources.robot;
+            tsmiTrayAI.Name = "tsmiTrayAI";
+            resources.ApplyResources(tsmiTrayAI, "tsmiTrayAI");
+            tsmiTrayAI.Click += tsmiAI_Click;
             // 
             // tsmiTrayOCR
             // 
@@ -2349,5 +2373,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayDestinationSettings;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayCustomUploaderSettings;
         private System.Windows.Forms.ToolStripSeparator tssTray4;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAI;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayAI;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAnalyzeImage;
     }
 }

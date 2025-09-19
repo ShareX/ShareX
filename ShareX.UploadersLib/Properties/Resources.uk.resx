@@ -197,7 +197,7 @@
     <value>Коренева тека</value>
   </data>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
-    <value>Вилучити всі користувацькі вивантажувачі?</value>
+    <value>Вилучити всі власні вивантажувачі?</value>
   </data>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Вставте код підтвердження сюди</value>

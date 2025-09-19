@@ -207,6 +207,8 @@ namespace ShareX
                 tsddbUpload.Visible = false;
                 tsddbAfterUploadTasks.Visible = false;
                 tsddbDestinations.Visible = false;
+                tsbDestinationSettings.Visible = false;
+                tsbCustomUploaderSettings.Visible = false;
                 tsmiTestImageUpload.Visible = false;
                 tsmiTestTextUpload.Visible = false;
                 tsmiTestFileUpload.Visible = false;
@@ -216,6 +218,8 @@ namespace ShareX
                 tsmiTrayUpload.Visible = false;
                 tsmiTrayAfterUploadTasks.Visible = false;
                 tsmiTrayDestinations.Visible = false;
+                tsmiTrayDestinationSettings.Visible = false;
+                tsmiTrayCustomUploaderSettings.Visible = false;
 
                 tsmiUploadSelectedFile.Visible = false;
                 tsmiShortenSelectedURL.Visible = false;
@@ -638,7 +642,7 @@ namespace ShareX
             cmsTaskInfo.SuspendLayout();
 
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible =
-                tsmiGoogleLens.Visible = tsmiBingVisualSearch.Visible = tsmiShowQRCode.Visible = tsmiOCRImage.Visible =
+                tsmiAnalyzeImage.Visible = tsmiGoogleLens.Visible = tsmiBingVisualSearch.Visible = tsmiShowQRCode.Visible = tsmiOCRImage.Visible =
                 tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible = tsmiEditSelectedFile.Visible =
                 tsmiBeautifyImage.Visible = tsmiAddImageEffects.Visible = tsmiPinSelectedFile.Visible = tsmiRunAction.Visible =
                 tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = false;
@@ -756,6 +760,7 @@ namespace ShareX
                     tsmiDeleteSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiShortenSelectedURL.Visible = !SystemOptions.DisableUpload && uim.SelectedItem.IsURLExist;
                     tsmiShareSelectedURL.Visible = !SystemOptions.DisableUpload && uim.SelectedItem.IsURLExist;
+                    tsmiAnalyzeImage.Visible = uim.SelectedItem.IsImageFile;
                     tsmiGoogleLens.Visible = uim.SelectedItem.IsURLExist;
                     tsmiBingVisualSearch.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
@@ -1772,6 +1777,11 @@ namespace ShareX
             TaskHelpers.OpenVideoThumbnailer();
         }
 
+        private void tsmiAI_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.AnalyzeImage();
+        }
+
         private async void tsmiOCR_Click(object sender, EventArgs e)
         {
             Hide();
@@ -2371,6 +2381,11 @@ namespace ShareX
         private void tsmiBingVisualSearch_Click(object sender, EventArgs e)
         {
             uim.SearchImageUsingBing();
+        }
+
+        private void tsmiAnalyzeImage_Click(object sender, EventArgs e)
+        {
+            uim.AnalyzeImage();
         }
 
         private void tsmiShowQRCode_Click(object sender, EventArgs e)

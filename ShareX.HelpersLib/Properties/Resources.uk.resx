@@ -576,7 +576,7 @@
     <value>Вставити</value>
   </data>
   <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
-    <value>QR-код (зчитати з екрану)</value>
+    <value>QR-код (сканувати з екрану)</value>
   </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>Зворотна діагональ</value>
@@ -651,7 +651,7 @@
     <value>Випадкова тварина</value>
   </data>
   <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
-    <value>Користувацька служба обміну посиланнями</value>
+    <value>Власна служба обміну посиланнями</value>
   </data>
   <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
     <value>Захоплення всього екрану</value>
@@ -846,7 +846,7 @@
     <value>Вилучити фігуру</value>
   </data>
   <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
-    <value>Шлях до файла</value>
+    <value>Шлях до файлу</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Автоматично</value>
@@ -1242,6 +1242,27 @@
     <value>Прозорість</value>
   </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value />
+    <value>Метадані</value>
+  </data>
+  <data name="HotkeyType_StripMetadata" xml:space="preserve">
+    <value>Вилучити метадані</value>
+  </data>
+  <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
+    <value>QR-код (сканувати область)</value>
+  </data>
+  <data name="ScrollMethod_MouseWheel" xml:space="preserve">
+    <value>Коліщатко миші</value>
+  </data>
+  <data name="ScrollMethod_DownArrow" xml:space="preserve">
+    <value>Стрілка вниз</value>
+  </data>
+  <data name="ScrollMethod_PageDown" xml:space="preserve">
+    <value>Сторінка вниз</value>
+  </data>
+  <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
+    <value>Повідомлення про прокрутку</value>
+  </data>
+  <data name="ToastClickAction_DeleteFile" xml:space="preserve">
+    <value>Видалити файл локально</value>
   </data>
 </root>

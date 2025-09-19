@@ -121,7 +121,7 @@
     <value>Назва:</value>
   </data>
   <data name="lblPath.Text" xml:space="preserve">
-    <value>Шлях до файла:</value>
+    <value>Шлях до файлу:</value>
   </data>
   <data name="lblArgs.Text" xml:space="preserve">
     <value>Аргументи:</value>
@@ -136,7 +136,7 @@
     <value>Фільтр розширень: (Наприклад, jpg png mp4)</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Розширення назви кінцевого файла: (Порожньо = таке ж)</value>
+    <value>Розширення назви кінцевого файлу: (Порожньо = таке ж)</value>
   </data>
   <data name="cbHiddenWindow.Text" xml:space="preserve">
     <value>Приховати вікно</value>
