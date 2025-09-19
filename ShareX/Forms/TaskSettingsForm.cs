@@ -236,6 +236,7 @@ namespace ShareX
             nudImageJPEGQuality.SetValue(TaskSettings.ImageSettings.ImageJPEGQuality);
             cbImageGIFQuality.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<GIFQuality>());
             cbImageGIFQuality.SelectedIndex = (int)TaskSettings.ImageSettings.ImageGIFQuality;
+			UpdateImageQualityLabelBasedOnFormat();
             cbImageAutoUseJPEG.Checked = TaskSettings.ImageSettings.ImageAutoUseJPEG;
             nudImageAutoUseJPEGSize.Enabled = TaskSettings.ImageSettings.ImageAutoUseJPEG;
             cbImageAutoJPEGQuality.Enabled = TaskSettings.ImageSettings.ImageAutoUseJPEG;
@@ -969,7 +970,21 @@ namespace ShareX
         private void cbImageFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.ImageSettings.ImageFormat = (EImageFormat)cbImageFormat.SelectedIndex;
+			UpdateImageQualityLabelBasedOnFormat();
         }
+
+		private void UpdateImageQualityLabelBasedOnFormat()
+		{
+			EImageFormat currentFormat = (EImageFormat)cbImageFormat.SelectedIndex;
+			if (currentFormat == EImageFormat.AVIF)
+			{
+				lblImageJPEGQuality.Text = Resources.ResourceManager.GetString("Label_ImageQuality_IQ");
+			}
+			else
+			{
+				lblImageJPEGQuality.Text = Resources.ResourceManager.GetString("Label_JPEGQuality");
+			}
+		}
 
         private void cbImagePNGBitDepth_SelectedIndexChanged(object sender, EventArgs e)
         {
