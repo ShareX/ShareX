@@ -91,6 +91,12 @@ namespace ShareX.ScreenCaptureLib
         libx264,
         [Description("H.265 / x265")]
         libx265,
+        [Description("AV1 / SVT-AV1")]
+        libsvtav1,
+        [Description("AV1 / libaom")]
+        libaom_av1,
+        [Description("AV1 / rav1e")]
+        librav1e,
         [Description("VP8")]
         libvpx,
         [Description("VP9")]
@@ -101,14 +107,20 @@ namespace ShareX.ScreenCaptureLib
         h264_nvenc,
         [Description("HEVC / NVENC")]
         hevc_nvenc,
+        [Description("AV1 / NVENC")]
+        av1_nvenc,
         [Description("H.264 / AMF")]
         h264_amf,
         [Description("HEVC / AMF")]
         hevc_amf,
+        [Description("AV1 / AMF")]
+        av1_amf,
         [Description("H.264 / Quick Sync")]
         h264_qsv,
         [Description("HEVC / Quick Sync")]
         hevc_qsv,
+        [Description("AV1 / Quick Sync")]
+        av1_qsv,
         [Description("GIF")]
         gif,
         [Description("WebP")]
