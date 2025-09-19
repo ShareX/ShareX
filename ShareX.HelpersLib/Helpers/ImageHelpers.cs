@@ -2310,7 +2310,7 @@ namespace ShareX.HelpersLib
                 }
             }
         }
-        public static bool SaveAvif(Image img, string filePath, int quality = 80, int speed = 6)
+        public static bool SaveAvif(Image img, string filePath, int quality = 80, int speed = 6, AvifTuneIQ tuneIQ = AvifTuneIQ.Default)
         {
             if (img == null)
                 throw new ArgumentNullException(nameof(img));
@@ -2321,7 +2321,7 @@ namespace ShareX.HelpersLib
             {
                 using (var fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None))
                 {
-                    return SaveAvifToStream(img, fileStream, quality, speed);
+                    return SaveAvifToStream(img, fileStream, quality, speed, tuneIQ);
                 }
             }
             catch (Exception ex)
@@ -2331,7 +2331,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static bool SaveAvifToStream(Image img, Stream outputStream, int quality = 80, int speed = 6)
+        public static bool SaveAvifToStream(Image img, Stream outputStream, int quality = 80, int speed = 6, AvifTuneIQ tuneIQ = AvifTuneIQ.Default)
         {
             if (img == null)
                 throw new ArgumentNullException(nameof(img));
@@ -2370,7 +2370,7 @@ namespace ShareX.HelpersLib
                     }
 
                     // Create and configure encoder
-                    encoder = CreateAndConfigureEncoder(quality, speed);
+                    encoder = CreateAndConfigureEncoder(quality, speed, tuneIQ);
                     if (encoder == IntPtr.Zero)
                         return false;
 
@@ -2457,7 +2457,7 @@ namespace ShareX.HelpersLib
             return true;
         }
 
-        private static IntPtr CreateAndConfigureEncoder(int quality, int speed)
+        private static IntPtr CreateAndConfigureEncoder(int quality, int speed, AvifTuneIQ tuneIQ)
         {
             var encoder = NativeMethods.avifEncoderCreate();
             if (encoder == IntPtr.Zero)
@@ -2480,6 +2480,22 @@ namespace ShareX.HelpersLib
 
                 // Write settings back to the encoder
                 Marshal.StructureToPtr(settings, encoder, false);
+                // Apply codec-specific tune option if requested, after writing settings
+                try
+                {
+                    if (tuneIQ == AvifTuneIQ.PSNR)
+                    {
+                        NativeMethods.avifEncoderSetCodecSpecificOption(encoder, "tune", "psnr");
+                    }
+                    else if (tuneIQ == AvifTuneIQ.SSIM)
+                    {
+                        NativeMethods.avifEncoderSetCodecSpecificOption(encoder, "tune", "ssim");
+                    }
+                }
+                catch (Exception ex2)
+                {
+                    DebugHelper.WriteException(ex2, "Failed to set AVIF tune option");
+                }
                 return encoder;
             }
             catch (Exception ex)

@@ -339,6 +339,7 @@ namespace ShareX
         public PNGBitDepth ImagePNGBitDepth = PNGBitDepth.Default;
         public int ImageJPEGQuality = 90;
         public GIFQuality ImageGIFQuality = GIFQuality.Default;
+        public AvifTuneIQ ImageAVIFTuneIQ = AvifTuneIQ.Default;
         public bool ImageAutoUseJPEG = true;
         public int ImageAutoUseJPEGSize = 2048;
         public bool ImageAutoJPEGQuality = false;

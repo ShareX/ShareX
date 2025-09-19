@@ -428,11 +428,12 @@ namespace ShareX
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, TaskSettings taskSettings)
         {
             return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
-                taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality);
+                taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
+                taskSettings.ImageSettings.ImageAVIFTuneIQ);
         }
 
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
-            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
+            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default, AvifTuneIQ avifTuneIQ = AvifTuneIQ.Default)
         {
             MemoryStream ms = new MemoryStream();
 
@@ -470,7 +471,7 @@ namespace ShareX
                         ImageHelpers.SaveWebPToStream(img, ms, quality: jpegQuality);
                         break;
                     case EImageFormat.AVIF:
-                        ImageHelpers.SaveAvifToStream(img, ms, quality: jpegQuality);
+                        ImageHelpers.SaveAvifToStream(img, ms, quality: jpegQuality, tuneIQ: avifTuneIQ);
                         break;
                 }
             }

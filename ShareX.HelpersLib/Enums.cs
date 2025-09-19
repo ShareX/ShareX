@@ -70,6 +70,13 @@ namespace ShareX.HelpersLib
         AVIF
     }
 
+    public enum AvifTuneIQ // Localized
+    {
+        Default,
+        PSNR,
+        SSIM
+    }
+
     public enum HashType
     {
         [Description("CRC-32")]
