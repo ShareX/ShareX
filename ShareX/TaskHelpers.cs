@@ -144,6 +144,9 @@ namespace ShareX
                 case HotkeyType.StartAutoCapture:
                     StartAutoCapture(safeTaskSettings);
                     break;
+                case HotkeyType.StopAutoCapture:
+                    StopAutoCapture();
+                    break;
                 // Screen record
                 case HotkeyType.ScreenRecorder:
                     StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region, safeTaskSettings);
@@ -804,6 +807,14 @@ namespace ShareX
                 AutoCaptureForm form = AutoCaptureForm.Instance;
                 form.TaskSettings = taskSettings;
                 form.Show();
+                form.Execute();
+            }
+        }
+
+        public static void StopAutoCapture() {
+            if (AutoCaptureForm.IsRunning)
+            {
+                AutoCaptureForm form = AutoCaptureForm.Instance;
                 form.Execute();
             }
         }
@@ -1921,6 +1932,7 @@ namespace ShareX
                     case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
                     case HotkeyType.AutoCapture: return Resources.clock;
                     case HotkeyType.StartAutoCapture: return Resources.clock__arrow;
+                    case HotkeyType.StopAutoCapture: return Resources.clock;
                     // Screen record
                     case HotkeyType.ScreenRecorder: return Resources.camcorder_image;
                     case HotkeyType.ScreenRecorderActiveWindow: return Resources.camcorder__arrow;

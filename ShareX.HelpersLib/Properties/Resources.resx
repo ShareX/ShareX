@@ -906,6 +906,9 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Auto capture</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Stop auto capture</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Rectangle (R)</value>
   </data>

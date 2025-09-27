@@ -1827,7 +1827,18 @@ namespace ShareX.HelpersLib.Properties {
                 return ResourceManager.GetString("HotkeyType_StartAutoCapture", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Stop auto capture.
+        /// </summary>
+        internal static string HotkeyType_StopAutoCapture
+        {
+            get
+            {
+                return ResourceManager.GetString("HotkeyType_StopAutoCapture", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Start/Stop screen recording using last region.
         /// </summary>
@@ -1845,7 +1856,7 @@ namespace ShareX.HelpersLib.Properties {
                 return ResourceManager.GetString("HotkeyType_StartScreenRecorderGIF", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Stop screen recording.
         /// </summary>
