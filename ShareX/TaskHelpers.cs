@@ -811,7 +811,8 @@ namespace ShareX
             }
         }
 
-        public static void StopAutoCapture() {
+        public static void StopAutoCapture()
+        {
             if (AutoCaptureForm.IsRunning)
             {
                 AutoCaptureForm form = AutoCaptureForm.Instance;
@@ -1932,7 +1933,7 @@ namespace ShareX
                     case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
                     case HotkeyType.AutoCapture: return Resources.clock;
                     case HotkeyType.StartAutoCapture: return Resources.clock__arrow;
-                    case HotkeyType.StopAutoCapture: return Resources.clock;
+                    case HotkeyType.StopAutoCapture: return Resources.clock__minus;
                     // Screen record
                     case HotkeyType.ScreenRecorder: return Resources.camcorder_image;
                     case HotkeyType.ScreenRecorderActiveWindow: return Resources.camcorder__arrow;
