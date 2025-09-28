@@ -107,13 +107,13 @@ namespace ShareX.ScreenCaptureLib
         // Highlight effect
         public Color HighlightColor { get; set; } = Color.Yellow;
 
+        // Spotlight tool
+        public int SpotlightDim { get; set; } = 30;
+        public int SpotlightBlur { get; set; } = 10;
+
         // Cut out tool
         public CutOutEffectType CutOutEffectType { get; set; } = CutOutEffectType.None;
         public int CutOutEffectSize { get; set; } = 10;
         public Color CutOutBackgroundColor { get; set; } = Color.Transparent;
-
-        // Spotlight tool
-        public int SpotlightDim { get; set; } = 30;
-        public int SpotlightBlur { get; set; } = 10;
     }
 }
