@@ -33,8 +33,10 @@ namespace ShareX.ScreenCaptureLib
     {
         public string Text { get; set; }
         public Color ButtonColor { get; set; }
-        public int ButtonDepth { get; set; } = 3;
-        public Color ButtonDepthColor => ColorHelpers.DarkerColor(ButtonColor, 0.5f);
+        public Color IconColor { get; set; }
+        public int ButtonDepth { get; set; } = 5;
+        public Color ButtonDepthColor => ColorHelpers.DarkerColor(ButtonColor, 0.3f);
+        public Color IconDepthColor => ColorHelpers.DarkerColor(IconColor, 0.7f);
 
         public override void OnDraw(Graphics g)
         {
@@ -66,12 +68,13 @@ namespace ShareX.ScreenCaptureLib
 
             g.SmoothingMode = SmoothingMode.None;
 
-            using (Font font = new Font("Arial", 18))
+            using (Font font = new Font("Arial", 20))
             using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
-            using (SolidBrush textDepthBrush = new SolidBrush(ButtonDepthColor))
+            using (SolidBrush textBrush = new SolidBrush(IconColor))
+            using (SolidBrush textDepthBrush = new SolidBrush(IconDepthColor))
             {
-                g.DrawString(Text, font, textDepthBrush, rect.LocationOffset(0, 4), sf);
-                g.DrawString(Text, font, Brushes.White, rect.LocationOffset(0, 2), sf);
+                g.DrawString(Text, font, textDepthBrush, rect.LocationOffset(0, -1), sf);
+                g.DrawString(Text, font, textBrush, rect.LocationOffset(0, 2), sf);
             }
         }
     }

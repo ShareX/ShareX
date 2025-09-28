@@ -315,6 +315,7 @@ namespace ShareX.ScreenCaptureLib
         EffectBlur,
         EffectPixelate,
         EffectHighlight,
+        ToolSpotlight,
         ToolCrop,
         ToolCutOut
     }

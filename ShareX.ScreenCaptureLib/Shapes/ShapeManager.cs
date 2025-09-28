@@ -1223,6 +1223,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.EffectHighlight:
                     shape = new HighlightEffectShape();
                     break;
+                case ShapeType.ToolSpotlight:
+                    shape = new SpotlightTool();
+                    break;
                 case ShapeType.ToolCrop:
                     shape = new CropTool();
                     break;
@@ -1963,6 +1966,13 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public void SpotlightArea(RectangleF rect, int dim, int blur)
+        {
+            history.CreateCanvasMemento();
+            Bitmap bmp = Spotlight(rect.Round(), dim, blur);
+            UpdateCanvas(bmp);
+        }
+
         public Bitmap CropImage(RectangleF rect, bool onlyIfSizeDifferent = false)
         {
             rect = CaptureHelpers.ScreenToClient(rect.Round());
@@ -1993,13 +2003,48 @@ namespace ShareX.ScreenCaptureLib
             if (isHorizontal && cropRect.Width > 0)
             {
                 CollapseAllHorizontal(rect.X, rect.Width);
-                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Horizontal, cropRect.X, cropRect.Width, AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize, AnnotationOptions.CutOutBackgroundColor));
+                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Horizontal, cropRect.X, cropRect.Width,
+                    AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize, AnnotationOptions.CutOutBackgroundColor));
             }
             else if (!isHorizontal && cropRect.Height > 0)
             {
                 CollapseAllVertical(rect.Y, rect.Height);
-                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Vertical, cropRect.Y, cropRect.Height, AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize, AnnotationOptions.CutOutBackgroundColor));
+                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Vertical, cropRect.Y, cropRect.Height,
+                    AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize, AnnotationOptions.CutOutBackgroundColor));
             }
+        }
+
+        public Bitmap Spotlight(Rectangle rect, int dim, int blur)
+        {
+            Bitmap bmp = (Bitmap)Form.Canvas.Clone();
+
+            if (dim > 0)
+            {
+                float value = 1f - dim / 100f;
+                Bitmap bmpDimmed = ColorMatrixManager.Contrast(value).Apply(bmp);
+                bmp.Dispose();
+                bmp = bmpDimmed;
+            }
+
+            if (blur > 0)
+            {
+                ImageHelpers.BoxBlur(bmp, blur);
+            }
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                Bitmap selection = CropImage(rect);
+
+                Rectangle adjustedRect = CaptureHelpers.ScreenToClient(rect);
+                Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location.Round());
+                adjustedRect.X -= offset.X;
+                adjustedRect.Y -= offset.Y;
+                Rectangle cropRect = Rectangle.Intersect(new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height), adjustedRect);
+
+                g.DrawImage(selection, cropRect);
+            }
+
+            return bmp;
         }
 
         public Color GetColor(Bitmap bmp, Point pos)

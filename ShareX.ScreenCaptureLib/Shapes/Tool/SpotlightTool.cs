@@ -29,11 +29,13 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class CropTool : BaseTool
+    public class SpotlightTool : BaseTool
     {
-        public override ShapeType ShapeType { get; } = ShapeType.ToolCrop;
+        public override ShapeType ShapeType { get; } = ShapeType.ToolSpotlight;
 
         public override bool LimitRectangleToInsideCanvas { get; } = true;
+        public int Dim { get; set; } = 30;
+        public int Blur { get; set; } = 10;
 
         private ImageEditorButton confirmButton, cancelButton;
         private Size buttonSize = new Size(50, 40);
@@ -104,7 +106,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void ConfirmButton_MousePressed(object sender, MouseEventArgs e)
         {
-            Manager.CropArea(Rectangle);
+            Manager.SpotlightArea(Rectangle, Dim, Blur);
             Remove();
         }
 
