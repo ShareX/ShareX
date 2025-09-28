@@ -34,12 +34,26 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.ToolSpotlight;
 
         public override bool LimitRectangleToInsideCanvas { get; } = true;
-        public int Dim { get; set; } = 30;
-        public int Blur { get; set; } = 10;
+        public int Dim { get; set; }
+        public int Blur { get; set; }
 
         private ImageEditorButton confirmButton, cancelButton;
         private Size buttonSize = new Size(50, 40);
         private int buttonOffset = 15;
+
+        public override void OnConfigLoad()
+        {
+            base.OnConfigLoad();
+            Dim = AnnotationOptions.SpotlightDim;
+            Blur = AnnotationOptions.SpotlightBlur;
+        }
+
+        public override void OnConfigSave()
+        {
+            base.OnConfigSave();
+            AnnotationOptions.SpotlightDim = Dim;
+            AnnotationOptions.SpotlightBlur = Blur;
+        }
 
         public override void OnUpdate()
         {

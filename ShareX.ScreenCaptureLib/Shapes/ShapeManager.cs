@@ -1968,9 +1968,12 @@ namespace ShareX.ScreenCaptureLib
 
         public void SpotlightArea(RectangleF rect, int dim, int blur)
         {
-            history.CreateCanvasMemento();
-            Bitmap bmp = Spotlight(rect.Round(), dim, blur);
-            UpdateCanvas(bmp);
+            if (dim > 0 || blur > 0)
+            {
+                history.CreateCanvasMemento();
+                Bitmap bmp = Spotlight(rect.Round(), dim, blur);
+                UpdateCanvas(bmp);
+            }
         }
 
         public Bitmap CropImage(RectangleF rect, bool onlyIfSizeDifferent = false)
