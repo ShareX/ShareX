@@ -69,7 +69,8 @@ namespace ShareX.ScreenCaptureLib
             if (IsValidShape)
             {
                 Manager.DrawRegionArea(g, Rectangle, true, Manager.Options.ShowInfo);
-                g.DrawCross(Pens.Black, Rectangle.Center(), 10);
+                g.DrawCross(Pens.Black, Rectangle.Center().Add(-1, -1), 10);
+                g.DrawCross(Pens.White, Rectangle.Center(), 10);
             }
         }
 

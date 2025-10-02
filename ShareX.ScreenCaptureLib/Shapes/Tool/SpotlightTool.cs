@@ -36,6 +36,7 @@ namespace ShareX.ScreenCaptureLib
         public override bool LimitRectangleToInsideCanvas { get; } = true;
         public int Dim { get; set; }
         public int Blur { get; set; }
+        public bool EllipseShape { get; set; }
 
         private ImageEditorButton confirmButton, cancelButton;
         private Size buttonSize = new Size(50, 40);
@@ -46,6 +47,7 @@ namespace ShareX.ScreenCaptureLib
             base.OnConfigLoad();
             Dim = AnnotationOptions.SpotlightDim;
             Blur = AnnotationOptions.SpotlightBlur;
+            EllipseShape = AnnotationOptions.SpotlightEllipseShape;
         }
 
         public override void OnConfigSave()
@@ -53,6 +55,7 @@ namespace ShareX.ScreenCaptureLib
             base.OnConfigSave();
             AnnotationOptions.SpotlightDim = Dim;
             AnnotationOptions.SpotlightBlur = Blur;
+            AnnotationOptions.SpotlightEllipseShape = EllipseShape;
         }
 
         public override void OnUpdate()
@@ -84,8 +87,9 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsValidShape)
             {
-                Manager.DrawRegionArea(g, Rectangle, true, Manager.Options.ShowInfo);
-                g.DrawCross(Pens.Black, Rectangle.Center(), 10);
+                Manager.DrawRegionArea(g, Rectangle, true, Manager.Options.ShowInfo, EllipseShape);
+                g.DrawCross(Pens.Black, Rectangle.Center().Add(-1, -1), 10);
+                g.DrawCross(Pens.White, Rectangle.Center(), 10);
             }
         }
 
@@ -120,7 +124,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void ConfirmButton_MousePressed(object sender, MouseEventArgs e)
         {
-            Manager.SpotlightArea(Rectangle, Dim, Blur);
+            Manager.SpotlightArea(Rectangle, Dim, Blur, EllipseShape);
             Remove();
         }
 

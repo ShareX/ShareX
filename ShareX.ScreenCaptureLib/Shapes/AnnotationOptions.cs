@@ -110,6 +110,7 @@ namespace ShareX.ScreenCaptureLib
         // Spotlight tool
         public int SpotlightDim { get; set; } = 30;
         public int SpotlightBlur { get; set; } = 10;
+        public bool SpotlightEllipseShape { get; set; } = true;
 
         // Cut out tool
         public CutOutEffectType CutOutEffectType { get; set; } = CutOutEffectType.None;

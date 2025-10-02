@@ -1931,9 +1931,16 @@ namespace ShareX.ScreenCaptureLib
             Shapes.Add(shape);
         }
 
-        public void DrawRegionArea(Graphics g, RectangleF rect, bool isAnimated, bool showAreaInfo = false)
+        public void DrawRegionArea(Graphics g, RectangleF rect, bool isAnimated, bool showAreaInfo = false, bool ellipse = false)
         {
-            Form.DrawRegionArea(g, rect, isAnimated);
+            if (ellipse)
+            {
+                Form.DrawRegionAreaEllipse(g, rect, isAnimated);
+            }
+            else
+            {
+                Form.DrawRegionArea(g, rect, isAnimated);
+            }
 
             if (showAreaInfo)
             {
@@ -1966,12 +1973,12 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public void SpotlightArea(RectangleF rect, int dim, int blur)
+        public void SpotlightArea(RectangleF rect, int dim, int blur, bool ellipse = false)
         {
             if (dim > 0 || blur > 0)
             {
                 history.CreateCanvasMemento();
-                Bitmap bmp = Spotlight(rect.Round(), dim, blur);
+                Bitmap bmp = Spotlight(rect.Round(), dim, blur, ellipse);
                 UpdateCanvas(bmp);
             }
         }
@@ -2017,7 +2024,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Bitmap Spotlight(Rectangle rect, int dim, int blur)
+        public Bitmap Spotlight(Rectangle rect, int dim, int blur, bool ellipse = false)
         {
             Bitmap bmp = (Bitmap)Form.Canvas.Clone();
 
@@ -2044,10 +2051,23 @@ namespace ShareX.ScreenCaptureLib
                 adjustedRect.Y -= offset.Y;
                 Rectangle cropRect = Rectangle.Intersect(new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height), adjustedRect);
 
-                g.DrawImage(selection, cropRect);
-            }
+                if (ellipse)
+                {
+                    using (GraphicsPath gp = new GraphicsPath())
+                    {
+                        gp.AddEllipse(cropRect);
+                        g.SetClip(gp);
+                        g.DrawImage(selection, cropRect);
+                        g.ResetClip();
+                    }
+                }
+                else
+                {
+                    g.DrawImage(selection, cropRect);
+                }
 
-            return bmp;
+                return bmp;
+            }
         }
 
         public Color GetColor(Bitmap bmp, Point pos)

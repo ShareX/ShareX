@@ -1028,9 +1028,10 @@ namespace ShareX.ScreenCaptureLib
 
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 5, 10);
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 15, 100);
-
-                    g.DrawCross(borderPen, ShapeManager.CurrentRectangle.Center(), 10);
                 }
+
+                g.DrawCross(Pens.Black, ShapeManager.CurrentRectangle.Center().Add(-1, -1), 10);
+                g.DrawCross(Pens.White, ShapeManager.CurrentRectangle.Center(), 10);
 
                 DrawRegionArea(g, ShapeManager.CurrentRectangle, true);
             }
@@ -1093,6 +1094,20 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 g.DrawRectangleProper(borderDotStaticPen, rect);
+            }
+        }
+
+        internal void DrawRegionAreaEllipse(Graphics g, RectangleF rect, bool isAnimated)
+        {
+            g.DrawEllipse(borderPen, rect);
+
+            if (isAnimated)
+            {
+                g.DrawEllipse(borderDotPen, rect);
+            }
+            else
+            {
+                g.DrawEllipse(borderDotStaticPen, rect);
             }
         }
 
