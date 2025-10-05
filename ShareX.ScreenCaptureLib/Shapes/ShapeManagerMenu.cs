@@ -49,7 +49,8 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiUndo, tsmiRedo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
-            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier, tsmiCutOutBackgroundColor;
+            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier, tsmiCutOutBackgroundColor,
+            tsmiSpotlightEllipse;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength, tslnudCutOutEffectSize, tslnudSpotlightDim, tslnudSpotlightBlur;
         private ToolStripLabel tslDragLeft, tslDragRight;
@@ -658,7 +659,6 @@ namespace ShareX.ScreenCaptureLib
             tslnudSpotlightDim.Content.ValueChanged = (sender, e) =>
             {
                 AnnotationOptions.SpotlightDim = (int)tslnudSpotlightDim.Content.Value;
-                UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudSpotlightDim);
 
@@ -669,9 +669,17 @@ namespace ShareX.ScreenCaptureLib
             tslnudSpotlightBlur.Content.ValueChanged = (sender, e) =>
             {
                 AnnotationOptions.SpotlightBlur = (int)tslnudSpotlightBlur.Content.Value;
-                UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudSpotlightBlur);
+
+            // TODO: Translate
+            tsmiSpotlightEllipse = new ToolStripMenuItem("Ellipse shape");
+            tsmiSpotlightEllipse.CheckOnClick = true;
+            tsmiSpotlightEllipse.Click += (sender, e) =>
+            {
+                AnnotationOptions.SpotlightEllipse = tsmiSpotlightEllipse.Checked;
+            };
+            tsddbShapeOptions.DropDownItems.Add(tsmiSpotlightEllipse);
 
             tscbCutOutEffectType = new ToolStripLabeledComboBox(Resources.CutOutEffectType);
             tscbCutOutEffectType.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<CutOutEffectType>());
@@ -1534,6 +1542,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudSpotlightDim.Content.Value = AnnotationOptions.SpotlightDim;
             tslnudSpotlightBlur.Content.Value = AnnotationOptions.SpotlightBlur;
+            tsmiSpotlightEllipse.Checked = AnnotationOptions.SpotlightEllipse;
 
             tscbCutOutEffectType.Content.SelectedIndex = (int)AnnotationOptions.CutOutEffectType;
 
@@ -1656,6 +1665,7 @@ namespace ShareX.ScreenCaptureLib
             tsbHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
             tslnudSpotlightDim.Visible = shapeType == ShapeType.ToolSpotlight;
             tslnudSpotlightBlur.Visible = shapeType == ShapeType.ToolSpotlight;
+            tsmiSpotlightEllipse.Visible = shapeType == ShapeType.ToolSpotlight;
             tscbCutOutEffectType.Visible = shapeType == ShapeType.ToolCutOut;
             tslnudCutOutEffectSize.Visible = shapeType == ShapeType.ToolCutOut;
             tsmiCutOutBackgroundColor.Visible = shapeType == ShapeType.ToolCutOut;
