@@ -355,7 +355,7 @@ namespace ShareX.HelpersLib
         {
             IntPtr handle = NativeMethods.GetForegroundWindow();
 
-            if (handle.ToInt32() > 0)
+            if (handle != IntPtr.Zero)
             {
                 WindowInfo windowInfo = new WindowInfo(handle);
                 string className = windowInfo.ClassName;

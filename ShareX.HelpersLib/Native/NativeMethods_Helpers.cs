@@ -42,7 +42,7 @@ namespace ShareX.HelpersLib
 
         public static string GetWindowText(IntPtr handle)
         {
-            if (handle.ToInt32() > 0)
+            if (handle != IntPtr.Zero)
             {
                 try
                 {
@@ -83,7 +83,7 @@ namespace ShareX.HelpersLib
 
         public static Process GetProcessByWindowHandle(IntPtr hwnd)
         {
-            if (hwnd.ToInt32() > 0)
+            if (hwnd != IntPtr.Zero)
             {
                 try
                 {
@@ -105,7 +105,7 @@ namespace ShareX.HelpersLib
 
         public static string GetClassName(IntPtr handle)
         {
-            if (handle.ToInt32() > 0)
+            if (handle != IntPtr.Zero)
             {
                 StringBuilder sb = new StringBuilder(256);
 
