@@ -26,6 +26,7 @@
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Numerics;
 
 namespace ShareX.HelpersLib
 {
@@ -106,40 +107,103 @@ namespace ShareX.HelpersLib
             bmp1.Lock(ImageLockMode.ReadOnly);
             bmp2.Lock(ImageLockMode.ReadOnly);
 
-            ColorBgra* pointer1 = bmp1.Pointer;
-            ColorBgra* pointer2 = bmp2.Pointer;
-
-            for (int i = 0; i < pixelCount; i++)
+            try
             {
-                if (pointer1->Bgra != pointer2->Bgra)
+                // Create spans over the raw pixel buffers (BGRA as 32-bit uint)
+                uint* p1 = (uint*)bmp1.Pointer;
+                uint* p2 = (uint*)bmp2.Pointer;
+                ReadOnlySpan<uint> s1 = new ReadOnlySpan<uint>(p1, pixelCount);
+                ReadOnlySpan<uint> s2 = new ReadOnlySpan<uint>(p2, pixelCount);
+
+                if (Vector.IsHardwareAccelerated)
                 {
-                    return false;
+                    int vecWidth = Vector<uint>.Count;
+                    int i = 0;
+                    for (; i <= pixelCount - vecWidth; i += vecWidth)
+                    {
+                        var v1 = new Vector<uint>(s1.Slice(i, vecWidth));
+                        var v2 = new Vector<uint>(s2.Slice(i, vecWidth));
+                        if (!Vector.EqualsAll(v1, v2))
+                        {
+                            return false;
+                        }
+                    }
+
+                    // Tail
+                    for (; i < pixelCount; i++)
+                    {
+                        if (s1[i] != s2[i]) return false;
+                    }
+
+                    return true;
                 }
+                else
+                {
+                    for (int i = 0; i < pixelCount; i++)
+                    {
+                        if (s1[i] != s2[i])
+                        {
+                            return false;
+                        }
+                    }
 
-                pointer1++;
-                pointer2++;
+                    return true;
+                }
             }
-
-            return true;
+            finally
+            {
+                bmp1.Unlock();
+                bmp2.Unlock();
+            }
         }
 
         public bool IsTransparent()
         {
             int pixelCount = PixelCount;
 
-            ColorBgra* pointer = Pointer;
+            // Span over pixel buffer
+            uint* p = (uint*)Pointer;
+            ReadOnlySpan<uint> s = new ReadOnlySpan<uint>(p, pixelCount);
 
-            for (int i = 0; i < pixelCount; i++)
+            if (Vector.IsHardwareAccelerated)
             {
-                if (pointer->Alpha < 255)
+                int vecWidth = Vector<uint>.Count;
+                var alphaMask = new Vector<uint>(0xFF000000u);
+                int i = 0;
+
+                for (; i <= pixelCount - vecWidth; i += vecWidth)
                 {
-                    return true;
+                    var v = new Vector<uint>(s.Slice(i, vecWidth));
+                    var masked = v & alphaMask;
+                    // If not all alphas are 0xFF, then transparency exists
+                    if (!Vector.EqualsAll(masked, alphaMask))
+                    {
+                        return true;
+                    }
                 }
 
-                pointer++;
-            }
+                for (; i < pixelCount; i++)
+                {
+                    if ((s[i] & 0xFF000000u) != 0xFF000000u)
+                    {
+                        return true;
+                    }
+                }
 
-            return false;
+                return false;
+            }
+            else
+            {
+                for (int i = 0; i < pixelCount; i++)
+                {
+                    if ((s[i] & 0xFF000000u) != 0xFF000000u)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
         }
 
         public ColorBgra GetPixel(int i)
