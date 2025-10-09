@@ -195,7 +195,8 @@ namespace ShareX.HelpersLib
     {
         win64,
         win32,
-        macos64
+        macos64,
+        winarm64
     }
 
     public enum StepType // Localized

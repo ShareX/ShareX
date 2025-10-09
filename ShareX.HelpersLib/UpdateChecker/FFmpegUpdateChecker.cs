@@ -33,13 +33,42 @@ namespace ShareX.HelpersLib
 
         public FFmpegUpdateChecker(string owner, string repo) : base(owner, repo)
         {
-            if (Environment.Is64BitOperatingSystem)
+            // Prefer exact arch detection
+            try
             {
-                Architecture = FFmpegArchitecture.win64;
+#if NETSTANDARD2_0 || NETFRAMEWORK
+                // Fallback: detect 64-bit OS and default to win64 if not arm64
+                if (Environment.Is64BitOperatingSystem)
+                {
+                    Architecture = FFmpegArchitecture.win64;
+                }
+                else
+                {
+                    Architecture = FFmpegArchitecture.win32;
+                }
+#else
+                if (RuntimeInformation.OSArchitecture == System.Runtime.InteropServices.Architecture.Arm64)
+                {
+                    Architecture = FFmpegArchitecture.winarm64;
+                }
+                else if (RuntimeInformation.OSArchitecture == System.Runtime.InteropServices.Architecture.X64)
+                {
+                    Architecture = FFmpegArchitecture.win64;
+                }
+                else if (RuntimeInformation.OSArchitecture == System.Runtime.InteropServices.Architecture.X86)
+                {
+                    Architecture = FFmpegArchitecture.win32;
+                }
+                else
+                {
+                    // Default safe fallback
+                    Architecture = Environment.Is64BitOperatingSystem ? FFmpegArchitecture.win64 : FFmpegArchitecture.win32;
+                }
+#endif
             }
-            else
+            catch
             {
-                Architecture = FFmpegArchitecture.win32;
+                Architecture = Environment.Is64BitOperatingSystem ? FFmpegArchitecture.win64 : FFmpegArchitecture.win32;
             }
         }
 
@@ -56,46 +85,44 @@ namespace ShareX.HelpersLib
 
                 if (release.assets != null && release.assets.Length > 0)
                 {
-                    string endsWith;
+                    // Try preferred arch then graceful fallbacks
+                    string[] suffixCandidates = GetPreferredAssetSuffixes();
 
-                    switch (Architecture)
+                    foreach (string endsWith in suffixCandidates)
                     {
-                        default:
-                        case FFmpegArchitecture.win64:
-                            endsWith = "win64.zip";
-                            break;
-                        case FFmpegArchitecture.win32:
-                            endsWith = "win32.zip";
-                            break;
-                        case FFmpegArchitecture.macos64:
-                            endsWith = "macos64.zip";
-                            break;
-                    }
-
-                    foreach (GitHubAsset asset in release.assets)
-                    {
-                        if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(endsWith, StringComparison.OrdinalIgnoreCase))
+                        foreach (GitHubAsset asset in release.assets)
                         {
-                            FileName = asset.name;
-
-                            if (isBrowserDownloadURL)
+                            if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(endsWith, StringComparison.OrdinalIgnoreCase))
                             {
-                                DownloadURL = asset.browser_download_url;
+                                FileName = asset.name;
+                                DownloadURL = isBrowserDownloadURL ? asset.browser_download_url : asset.url;
+                                IsPreRelease = release.prerelease;
+                                return true;
                             }
-                            else
-                            {
-                                DownloadURL = asset.url;
-                            }
-
-                            IsPreRelease = release.prerelease;
-
-                            return true;
                         }
                     }
                 }
             }
 
             return false;
+        }
+
+        private string[] GetPreferredAssetSuffixes()
+        {
+            // Order by preferred first, then fallbacks to keep x64 working when arm64 asset is missing
+            switch (Architecture)
+            {
+                case FFmpegArchitecture.winarm64:
+                    return new[] { "winarm64.zip", "win64.zip", "win32.zip" };
+                case FFmpegArchitecture.win64:
+                    return new[] { "win64.zip", "winarm64.zip", "win32.zip" };
+                case FFmpegArchitecture.win32:
+                    return new[] { "win32.zip", "win64.zip" };
+                case FFmpegArchitecture.macos64:
+                    return new[] { "macos64.zip" };
+                default:
+                    return new[] { "win64.zip", "win32.zip" };
+            }
         }
     }
 }
