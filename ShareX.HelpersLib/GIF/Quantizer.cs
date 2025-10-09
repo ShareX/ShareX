@@ -119,25 +119,26 @@ namespace ShareX.HelpersLib
         /// <param name="height">The height in pixels of the image</param>
         protected virtual void FirstPass(BitmapData sourceData, int width, int height)
         {
-            // Define the source data pointers. The source row is a byte to
-            // keep addition of the stride value easier (as this is in bytes)
-            IntPtr pSourceRow = sourceData.Scan0;
-
             // Loop through each row
-            for (int row = 0; row < height; row++)
+            unsafe
             {
-                // Set the source pixel to the first pixel in this row
-                IntPtr pSourcePixel = pSourceRow;
-
-                // And loop through each column
-                for (int col = 0; col < width; col++)
+                byte* basePtr = (byte*)sourceData.Scan0;
+                int stride = sourceData.Stride;
+                for (int row = 0; row < height; row++)
                 {
-                    InitialQuantizePixel(new Color32(pSourcePixel));
-                    pSourcePixel = (IntPtr)((long)pSourcePixel + _pixelSize);
-                } // Now I have the pixel, call the FirstPassQuantize function...
+                    byte* rowPtr = basePtr + (row * stride);
+                    ReadOnlySpan<byte> rowSpan = new ReadOnlySpan<byte>(rowPtr, width * _pixelSize);
 
-                // Add the stride to the source row
-                pSourceRow = (IntPtr)((long)pSourceRow + sourceData.Stride);
+                    // And loop through each column
+                    for (int col = 0; col < width; col++)
+                    {
+                        int offset = col * _pixelSize;
+                        int argb = MemoryMarshal.Read<int>(rowSpan.Slice(offset, sizeof(int)));
+                        Color32 pixel = default;
+                        pixel.ARGB = argb;
+                        InitialQuantizePixel(pixel);
+                    }
+                }
             }
         }
 
@@ -158,58 +159,46 @@ namespace ShareX.HelpersLib
                 // Lock the output bitmap into memory
                 outputData = output.LockBits(bounds, ImageLockMode.WriteOnly, PixelFormat.Format8bppIndexed);
 
-                // Define the source data pointers. The source row is a byte to
-                // keep addition of the stride value easier (as this is in bytes)
-                IntPtr pSourceRow = sourceData.Scan0;
-                IntPtr pSourcePixel = pSourceRow;
-                IntPtr pPreviousPixel = pSourcePixel;
-
-                // Now define the destination data pointers
-                IntPtr pDestinationRow = outputData.Scan0;
-                IntPtr pDestinationPixel = pDestinationRow;
-
-                // And convert the first pixel, so that I have values going into the loop
-
-                byte pixelValue = QuantizePixel(new Color32(pSourcePixel));
-
-                // Assign the value of the first pixel
-                Marshal.WriteByte(pDestinationPixel, pixelValue);
-
-                // Loop through each row
-                for (int row = 0; row < height; row++)
+                unsafe
                 {
-                    // Set the source pixel to the first pixel in this row
-                    pSourcePixel = pSourceRow;
+                    byte* srcBase = (byte*)sourceData.Scan0;
+                    byte* dstBase = (byte*)outputData.Scan0;
+                    int srcStride = sourceData.Stride;
+                    int dstStride = outputData.Stride;
 
-                    // And set the destination pixel pointer to the first pixel in the row
-                    pDestinationPixel = pDestinationRow;
-
-                    // Loop through each pixel on this scan line
-                    for (int col = 0; col < width; col++)
+                    for (int row = 0; row < height; row++)
                     {
-                        // Check if this is the same as the last pixel. If so use that value
-                        // rather than calculating it again. This is an inexpensive optimisation.
-                        if (Marshal.ReadInt32(pPreviousPixel) != Marshal.ReadInt32(pSourcePixel))
+                        byte* srcRowPtr = srcBase + (row * srcStride);
+                        byte* dstRowPtr = dstBase + (row * dstStride);
+
+                        ReadOnlySpan<byte> srcRow = new ReadOnlySpan<byte>(srcRowPtr, width * _pixelSize);
+                        Span<byte> dstRow = new Span<byte>(dstRowPtr, width);
+
+                        int prevArgb = MemoryMarshal.Read<int>(srcRow.Slice(0, sizeof(int)));
+                        Color32 pixel = default;
+                        pixel.ARGB = prevArgb;
+                        byte q = QuantizePixel(pixel);
+                        dstRow[0] = q;
+
+                        int prevArgbCache = prevArgb;
+                        byte prevQ = q;
+
+                        for (int col = 1; col < width; col++)
                         {
-                            // Quantize the pixel
-                            pixelValue = QuantizePixel(new Color32(pSourcePixel));
+                            int offset = col * _pixelSize;
+                            int argb = MemoryMarshal.Read<int>(srcRow.Slice(offset, sizeof(int)));
 
-                            // And setup the previous pointer
-                            pPreviousPixel = pSourcePixel;
+                            if (argb != prevArgbCache)
+                            {
+                                pixel = default;
+                                pixel.ARGB = argb;
+                                prevQ = QuantizePixel(pixel);
+                                prevArgbCache = argb;
+                            }
+
+                            dstRow[col] = prevQ;
                         }
-
-                        // And set the pixel in the output
-                        Marshal.WriteByte(pDestinationPixel, pixelValue);
-
-                        pSourcePixel = (IntPtr)((long)pSourcePixel + _pixelSize);
-                        pDestinationPixel = (IntPtr)((long)pDestinationPixel + 1);
                     }
-
-                    // Add the stride to the source row
-                    pSourceRow = (IntPtr)((long)pSourceRow + sourceData.Stride);
-
-                    // And to the destination row
-                    pDestinationRow = (IntPtr)((long)pDestinationRow + outputData.Stride);
                 }
             }
             finally
