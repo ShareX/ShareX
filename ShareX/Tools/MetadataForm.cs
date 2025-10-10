@@ -38,7 +38,19 @@ namespace ShareX
 {
     public partial class MetadataForm : Form
     {
-        public static string ExifToolPath => FileHelpers.GetAbsolutePath("exiftool.exe");
+        public static string ExifToolPath
+        {
+            get
+            {
+                string basePath = FileHelpers.GetAbsolutePath("exiftool.exe");
+                if (ArchitectureHelper.IsArm64())
+                {
+                    string armPath = FileHelpers.GetAbsolutePath("exiftool-arm64.exe");
+                    if (File.Exists(armPath)) return armPath;
+                }
+                return basePath;
+            }
+        }
 
         public string FilePath { get; private set; }
 
@@ -90,6 +102,12 @@ namespace ShareX
                 UseShellExecute = false,
                 CreateNoWindow = true
             };
+            try
+            {
+                string dir = Path.GetDirectoryName(ExifToolPath);
+                if (!string.IsNullOrEmpty(dir)) startInfo.WorkingDirectory = dir;
+            }
+            catch { }
 
             using (Process process = Process.Start(startInfo))
             {
@@ -129,6 +147,12 @@ namespace ShareX
                 UseShellExecute = false,
                 CreateNoWindow = true
             };
+            try
+            {
+                string dir = Path.GetDirectoryName(ExifToolPath);
+                if (!string.IsNullOrEmpty(dir)) startInfo.WorkingDirectory = dir;
+            }
+            catch { }
 
             using (Process process = Process.Start(startInfo))
             {

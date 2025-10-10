@@ -82,6 +82,19 @@ namespace ShareX.ScreenCaptureLib
             lblHelperDevices.Visible = false;
 #endif
 
+            // Gate unsupported GPU encoders on ARM64
+            if (ArchitectureHelper.IsArm64())
+            {
+                if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.h264_nvenc ||
+                    Options.FFmpeg.VideoCodec == FFmpegVideoCodec.hevc_nvenc ||
+                    Options.FFmpeg.VideoCodec == FFmpegVideoCodec.h264_amf ||
+                    Options.FFmpeg.VideoCodec == FFmpegVideoCodec.hevc_amf ||
+                    Options.FFmpeg.VideoCodec == FFmpegVideoCodec.h264_qsv ||
+                    Options.FFmpeg.VideoCodec == FFmpegVideoCodec.hevc_qsv)
+                {
+                    Options.FFmpeg.VideoCodec = FFmpegVideoCodec.libx264;
+                }
+            }
             cbVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
             cbAudioCodec.SelectedIndex = (int)Options.FFmpeg.AudioCodec;
 
@@ -356,6 +369,21 @@ namespace ShareX.ScreenCaptureLib
         private void cbVideoCodec_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cbVideoCodec.SelectedIndex;
+
+            // Prevent choosing GPU encoders on ARM64
+            if (ArchitectureHelper.IsArm64())
+            {
+                if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.h264_nvenc ||
+                    Options.FFmpeg.VideoCodec == FFmpegVideoCodec.hevc_nvenc ||
+                    Options.FFmpeg.VideoCodec == FFmpegVideoCodec.h264_amf ||
+                    Options.FFmpeg.VideoCodec == FFmpegVideoCodec.hevc_amf ||
+                    Options.FFmpeg.VideoCodec == FFmpegVideoCodec.h264_qsv ||
+                    Options.FFmpeg.VideoCodec == FFmpegVideoCodec.hevc_qsv)
+                {
+                    Options.FFmpeg.VideoCodec = FFmpegVideoCodec.libx264;
+                    cbVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
+                }
+            }
 
             tcFFmpegVideoCodecs.Visible = Options.FFmpeg.VideoCodec != FFmpegVideoCodec.libwebp && Options.FFmpeg.VideoCodec != FFmpegVideoCodec.apng;
 

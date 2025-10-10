@@ -56,7 +56,22 @@ namespace ShareX.HelpersLib
 
         public string GetFullPath()
         {
-            return FileHelpers.ExpandFolderVariables(Path);
+            string basePath = FileHelpers.ExpandFolderVariables(Path);
+
+            if (!string.IsNullOrEmpty(basePath) && !File.Exists(basePath))
+            {
+                // Try architecture-specific suffix before failing
+                if (ArchitectureHelper.IsArm64())
+                {
+                    string dir = System.IO.Path.GetDirectoryName(basePath);
+                    string name = System.IO.Path.GetFileNameWithoutExtension(basePath);
+                    string ext = System.IO.Path.GetExtension(basePath);
+                    string arm64Candidate = System.IO.Path.Combine(dir ?? string.Empty, name + "-arm64" + ext);
+                    if (File.Exists(arm64Candidate)) return arm64Candidate;
+                }
+            }
+
+            return basePath;
         }
 
         public string Run(string inputPath)
@@ -106,6 +121,17 @@ namespace ShareX.HelpersLib
                                 UseShellExecute = false,
                                 CreateNoWindow = HiddenWindow
                             };
+
+                            // Ensure working directory is the executable directory for tools relying on relative files
+                            try
+                            {
+                                string exeDir = System.IO.Path.GetDirectoryName(path);
+                                if (!string.IsNullOrEmpty(exeDir) && Directory.Exists(exeDir))
+                                {
+                                    psi.WorkingDirectory = exeDir;
+                                }
+                            }
+                            catch { }
 
                             DebugHelper.WriteLine($"Action input: \"{inputPath}\" [{FileHelpers.GetFileSizeReadable(inputPath)}]");
                             DebugHelper.WriteLine($"Action run: \"{psi.FileName}\" {psi.Arguments}");

@@ -212,6 +212,20 @@ namespace ShareX.ScreenCaptureLib
                 {
                     string videoCodec;
 
+                    // On ARM64, force software encoders for unsupported GPU paths
+                    if (ArchitectureHelper.IsArm64())
+                    {
+                        if (FFmpeg.VideoCodec == FFmpegVideoCodec.h264_nvenc ||
+                            FFmpeg.VideoCodec == FFmpegVideoCodec.hevc_nvenc ||
+                            FFmpeg.VideoCodec == FFmpegVideoCodec.h264_amf ||
+                            FFmpeg.VideoCodec == FFmpegVideoCodec.hevc_amf ||
+                            FFmpeg.VideoCodec == FFmpegVideoCodec.h264_qsv ||
+                            FFmpeg.VideoCodec == FFmpegVideoCodec.hevc_qsv)
+                        {
+                            FFmpeg.VideoCodec = FFmpegVideoCodec.libx264;
+                        }
+                    }
+
                     if (IsLossless)
                     {
                         videoCodec = FFmpegVideoCodec.libx264.ToString();

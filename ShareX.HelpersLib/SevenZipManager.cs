@@ -36,7 +36,16 @@ namespace ShareX.HelpersLib
 
         public SevenZipManager()
         {
-            SevenZipPath = FileHelpers.GetAbsolutePath("7za.exe");
+            // Prefer architecture-specific binary when available
+            if (ArchitectureHelper.IsArm64())
+            {
+                string armPath = FileHelpers.GetAbsolutePath("7za-arm64.exe");
+                SevenZipPath = File.Exists(armPath) ? armPath : FileHelpers.GetAbsolutePath("7za.exe");
+            }
+            else
+            {
+                SevenZipPath = FileHelpers.GetAbsolutePath("7za.exe");
+            }
         }
 
         public SevenZipManager(string sevenZipPath)

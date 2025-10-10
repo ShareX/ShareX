@@ -99,6 +99,19 @@ namespace ShareX.MediaLib
             args.Append($"-i \"{InputFilePath}\" ");
 
             // Video encoder
+            if (ArchitectureHelper.IsArm64())
+            {
+                // Disable NVENC/AMF/QSV on ARM64
+                if (VideoCodec == ConverterVideoCodecs.h264_nvenc ||
+                    VideoCodec == ConverterVideoCodecs.hevc_nvenc ||
+                    VideoCodec == ConverterVideoCodecs.h264_amf ||
+                    VideoCodec == ConverterVideoCodecs.hevc_amf ||
+                    VideoCodec == ConverterVideoCodecs.h264_qsv ||
+                    VideoCodec == ConverterVideoCodecs.hevc_qsv)
+                {
+                    VideoCodec = ConverterVideoCodecs.x264;
+                }
+            }
             switch (VideoCodec)
             {
                 case ConverterVideoCodecs.x264: // https://trac.ffmpeg.org/wiki/Encode/H.264
