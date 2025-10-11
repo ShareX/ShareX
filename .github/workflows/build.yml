@@ -30,6 +30,9 @@ jobs:
           - MicrosoftStoreDebug
         platform:
           - Any CPU
+        rid:
+          - win-x64
+          - win-arm64
 
     env:
       SOLUTION_FILE_PATH: ShareX.sln
@@ -70,57 +73,83 @@ jobs:
           Invoke-WebRequest -Uri "$env:API_KEYS" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
 
       - name: Restore NuGet packages
-        run: dotnet restore --runtime win-x64 "${{ env.SOLUTION_FILE_PATH }}"
+        run: dotnet restore --runtime "${{ matrix.rid }}" "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Build
-        run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" --self-contained true /m:1 "${{ env.SOLUTION_FILE_PATH }}"
+        run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" -r "${{ matrix.rid }}" --self-contained true /m:1 "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Setup
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
-          & "ShareX.Setup\bin\${{ matrix.configuration }}\win-x64\ShareX.Setup.exe" -silent -job "${{ matrix.configuration }}"
+          & "ShareX.Setup\bin\${{ matrix.configuration }}\${{ matrix.rid }}\ShareX.Setup.exe" -silent -job "${{ matrix.configuration }}"
 
-      - name: Upload artifact (Setup)
+      - name: Rename outputs with arch suffix
+        shell: pwsh
+        run: |
+          $v = "${{ env.APP_VERSION }}"
+          $rid = "${{ matrix.rid }}"
+          New-Item -ItemType Directory -Path "Output" -Force | Out-Null
+
+          $files = @(
+            "ShareX-$v-setup.exe",
+            "ShareX-$v-portable.zip",
+            "ShareX-$v-debug.zip",
+            "ShareX-$v-Steam.zip",
+            "ShareX-$v.appx",
+            "ShareX-$v-debug.appx"
+          )
+
+          foreach ($f in $files) {
+            $src = Join-Path "Output" $f
+            if (Test-Path $src) {
+              $name = [System.IO.Path]::GetFileNameWithoutExtension($src)
+              $ext  = [System.IO.Path]::GetExtension($src)
+              $dst  = Join-Path "Output" ($name + "-" + $rid + $ext)
+              Move-Item -Force $src $dst
+            }
+          }
+
+      - name: Upload artifact Setup
         if: matrix.configuration == 'Release'
         uses: actions/upload-artifact@v4
         with:
-          name: Setup
-          path: Output\ShareX-${{ env.APP_VERSION }}-setup.exe
+          name: Setup-${{ matrix.rid }}
+          path: Output/ShareX-${{ env.APP_VERSION }}-setup-${{ matrix.rid }}.exe
 
-      - name: Upload artifact (Portable)
+      - name: Upload artifact Portable
         if: matrix.configuration == 'Release'
         uses: actions/upload-artifact@v4
         with:
-          name: Portable
-          path: Output\ShareX-${{ env.APP_VERSION }}-portable.zip
+          name: Portable-${{ matrix.rid }}
+          path: Output/ShareX-${{ env.APP_VERSION }}-portable-${{ matrix.rid }}.zip
 
-      - name: Upload artifact (Debug)
+      - name: Upload artifact Debug
         if: matrix.configuration == 'Debug'
         uses: actions/upload-artifact@v4
         with:
-          name: Debug
-          path: Output\ShareX-${{ env.APP_VERSION }}-debug.zip
+          name: Debug-${{ matrix.rid }}
+          path: Output/ShareX-${{ env.APP_VERSION }}-debug-${{ matrix.rid }}.zip
 
-      - name: Upload artifact (Steam)
+      - name: Upload artifact Steam
         if: matrix.configuration == 'Steam'
         uses: actions/upload-artifact@v4
         with:
-          name: Steam
-          path: Output\ShareX-${{ env.APP_VERSION }}-Steam.zip
+          name: Steam-${{ matrix.rid }}
+          path: Output/ShareX-${{ env.APP_VERSION }}-Steam-${{ matrix.rid }}.zip
 
-      - name: Upload artifact (MicrosoftStore)
+      - name: Upload artifact MicrosoftStore
         if: matrix.configuration == 'MicrosoftStore'
         uses: actions/upload-artifact@v4
         with:
-          name: MicrosoftStore
-          path: Output\ShareX-${{ env.APP_VERSION }}.appx
+          name: MicrosoftStore-${{ matrix.rid }}
+          path: Output/ShareX-${{ env.APP_VERSION }}-${{ matrix.rid }}.appx
 
-      - name: Upload artifact (MicrosoftStoreDebug)
+      - name: Upload artifact MicrosoftStoreDebug
         if: matrix.configuration == 'MicrosoftStoreDebug'
         uses: actions/upload-artifact@v4
         with:
-          name: MicrosoftStoreDebug
-          path: Output\ShareX-${{ env.APP_VERSION }}-debug.appx
+          name: MicrosoftStoreDebug-${{ matrix.rid }}
+          path: Output/ShareX-${{ env.APP_VERSION }}-debug-${{ matrix.rid }}.appx
 
   release:
     name: Release
@@ -137,45 +166,12 @@ jobs:
       APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
 
     steps:
-      - name: Download artifact (Setup)
+      - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
-          name: Setup
+          pattern: '*'
           path: Output
-
-      - name: Download artifact (Portable)
-        uses: actions/download-artifact@v4
-        with:
-          name: Portable
-          path: Output
-
-      - name: Download artifact (Debug)
-        if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v4
-        with:
-          name: Debug
-          path: Output
-
-      - name: Download artifact (Steam)
-        if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v4
-        with:
-          name: Steam
-          path: Output
-
-      - name: Download artifact (MicrosoftStore)
-        if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v4
-        with:
-          name: MicrosoftStore
-          path: Output
-
-      - name: Download artifact (MicrosoftStoreDebug)
-        if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v4
-        with:
-          name: MicrosoftStoreDebug
-          path: Output
+          merge-multiple: true
 
       - name: Create release body file
         run: |
@@ -191,7 +187,7 @@ jobs:
           echo $output
           Set-Content -Path "${{ env.RELEASE_BODY_PATH }}" -Value "$output" -NoNewline
 
-      - name: Release (Dev)
+      - name: Release Dev
         env:
           CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
         if: env.CUSTOM_GITHUB_TOKEN != '' && env.REPO_DEV_BUILDS != '' && github.ref == 'refs/heads/develop'
@@ -205,14 +201,13 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            Output/ShareX-${{ env.APP_VERSION }}-setup.exe
-            Output/ShareX-${{ env.APP_VERSION }}-portable.zip
-            Output/ShareX-${{ env.APP_VERSION }}-debug.zip
-            Output/ShareX-${{ env.APP_VERSION }}-Steam.zip
-            Output/ShareX-${{ env.APP_VERSION }}.appx
-            Output/ShareX-${{ env.APP_VERSION }}-debug.appx
+            Output/ShareX-${{ env.APP_VERSION }}-setup-*.exe
+            Output/ShareX-${{ env.APP_VERSION }}-portable-*.zip
+            Output/ShareX-${{ env.APP_VERSION }}-debug-*.zip
+            Output/ShareX-${{ env.APP_VERSION }}-Steam-*.zip
+            Output/ShareX-${{ env.APP_VERSION }}-*.appx
 
-      - name: Release (Stable)
+      - name: Release Stable
         env:
           CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
         if: env.CUSTOM_GITHUB_TOKEN != '' && startsWith(github.ref, 'refs/tags/v')
@@ -226,5 +221,5 @@ jobs:
           draft: false
           prerelease: true
           files: |
-            Output/ShareX-${{ env.APP_VERSION }}-setup.exe
-            Output/ShareX-${{ env.APP_VERSION }}-portable.zip
+            Output/ShareX-${{ env.APP_VERSION }}-setup-*.exe
+            Output/ShareX-${{ env.APP_VERSION }}-portable-*.zip
