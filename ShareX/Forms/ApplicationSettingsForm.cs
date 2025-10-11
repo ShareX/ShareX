@@ -751,7 +751,8 @@ namespace ShareX
                 using (SaveFileDialog sfd = new SaveFileDialog())
                 {
                     sfd.DefaultExt = "sxb";
-                    sfd.FileName = $"ShareX-{Helpers.GetApplicationVersion()}-backup.sxb";
+                    string pcName = FileHelpers.SanitizeFileName(Environment.MachineName);
+                    sfd.FileName = $"ShareX-{Helpers.GetApplicationVersion()}-{pcName}-backup.sxb";
                     sfd.Filter = "ShareX backup (*.sxb)|*.sxb|All files (*.*)|*.*";
 
                     if (sfd.ShowDialog() == DialogResult.OK)
