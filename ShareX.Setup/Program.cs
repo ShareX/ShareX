@@ -48,8 +48,10 @@ namespace ShareX.Setup
             DownloadTools = 1 << 7,
             CreateChecksumFile = 1 << 8,
             OpenOutputDirectory = 1 << 9,
+            CreateArm64 = 1 << 10,
 
             Release = CreateSetup | CreatePortable | DownloadTools | OpenOutputDirectory,
+            ReleaseArm64 = CreateSetup | CreatePortable | DownloadTools | OpenOutputDirectory | CreateArm64,
             Debug = CreateDebug | DownloadTools | OpenOutputDirectory,
             Steam = CreateSteamFolder | DownloadTools | OpenOutputDirectory,
             MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadTools | OpenOutputDirectory,
@@ -65,7 +67,7 @@ namespace ShareX.Setup
         private static string WindowsKitsDir;
 
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
-        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, "win-x64");
+        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Job.HasFlag(SetupJobs.CreateArm64) ? "ARM64" : "x64", Configuration);
         private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
@@ -94,11 +96,11 @@ namespace ShareX.Setup
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         private const string FFmpegVersion = "8.0";
-        private static string FFmpegDownloadURL = $"https://github.com/ShareX/FFmpeg/releases/download/v{FFmpegVersion}/ffmpeg-{FFmpegVersion}-win64.zip";
+        private static string FFmpegDownloadURL => $"https://github.com/ShareX/FFmpeg/releases/download/v{FFmpegVersion}/ffmpeg-{FFmpegVersion}-win-{(Job.HasFlag(SetupJobs.CreateArm64) ? "arm64" : "x64")}.zip";
         private const string RecorderDevicesVersion = "0.12.10";
         private static string RecorderDevicesDownloadURL = $"https://github.com/ShareX/RecorderDevices/releases/download/v{RecorderDevicesVersion}/recorder-devices-{RecorderDevicesVersion}-setup.exe";
         private const string ExifToolVersion = "13.29";
-        private static string ExifToolDownloadURL = $"https://github.com/ShareX/ExifTool/releases/download/v{ExifToolVersion}/exiftool-{ExifToolVersion}-win64.zip";
+        private static string ExifToolDownloadURL => $"https://github.com/ShareX/ExifTool/releases/download/v{ExifToolVersion}/exiftool-{ExifToolVersion}-win-{(Job.HasFlag(SetupJobs.CreateArm64) ? "arm64" : "x64")}.zip";
 
         private static void Main(string[] args)
         {

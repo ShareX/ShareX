@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <AssemblyName>ShareX_NativeMessagingHost</AssemblyName>
     <UseWindowsForms>true</UseWindowsForms>
+    <Platforms>x64;ARM64</Platforms>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />

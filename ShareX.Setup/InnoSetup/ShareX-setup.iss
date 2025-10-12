@@ -1,7 +1,25 @@
 #define MyAppName "ShareX"
 #define MyAppRootDirectory "..\.."
+
+// build switch. pass /DArch=arm64 for ARM64. default x64.
+#ifndef Arch
+  #define Arch "x64"
+#endif
+
+#if Arch == "arm64"
+  #define MyBin "ARM64"
+  #define MyRid "win-arm64"
+  #define ArchAllowed "arm64"
+  #define Install64 "arm64"
+#else
+  #define MyBin "x64"
+  #define MyRid "win-x64"
+  #define ArchAllowed "x64"
+  #define Install64 "x64"
+#endif
+
 #define MyAppOutputDirectory MyAppRootDirectory + "\Output"
-#define MyAppReleaseDirectory MyAppRootDirectory + "\" + MyAppName + "\bin\Release\win-x64"
+#define MyAppReleaseDirectory MyAppRootDirectory + "\" + MyAppName + "\bin\" + MyBin + "\Release"
 #define MyAppFileName MyAppName + ".exe"
 #define MyAppFilePath MyAppReleaseDirectory + "\" + MyAppFileName
 #define MyAppVersion GetStringFileInfo(MyAppFilePath, "ProductVersion")
@@ -18,14 +36,14 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppVerName={#MyAppName} {#MyAppVersion}
 AppVersion={#MyAppVersion}
-ArchitecturesAllowed=x64os arm64 x86
-ArchitecturesInstallIn64BitMode=x64os
+ArchitecturesAllowed={#ArchAllowed}
+ArchitecturesInstallIn64BitMode={#Install64}
 DefaultDirName={commonpf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile={#MyAppRootDirectory}\LICENSE.txt
 MinVersion=10.0.14393
-OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
+OutputBaseFilename={#MyAppName}-{#MyAppVersion}-{#MyRid}-setup
 OutputDir={#MyAppOutputDirectory}
 PrivilegesRequired=none
 SolidCompression=yes
@@ -36,12 +54,12 @@ VersionInfoTextVersion={#MyAppVersion}
 VersionInfoVersion={#MyAppVersion}
 
 [Tasks]
-Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating and not DesktopIconExists
-Name: "CreateContextMenuButton"; Description: "Show ""Upload with ShareX"" button in Windows Explorer context menu"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating
-Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating
-Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupDescription: "Other tasks:"; Check: not IsUpdating
-Name: "EnableBrowserExtensionSupport"; Description: "Enable browser extension support"; GroupDescription: "Other tasks:"; Check: not IsUpdating
-Name: "DisablePrintScreenKeyForSnippingTool"; Description: "Disable Print Screen key for Snipping Tool"; GroupDescription: "Other tasks:"; Check: not IsUpdating
+Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts"; Check: not IsUpdating and not DesktopIconExists
+Name: "CreateContextMenuButton"; Description: "Show ""Upload with ShareX"" button in Windows Explorer context menu"; GroupDescription: "Additional shortcuts"; Check: not IsUpdating
+Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescription: "Additional shortcuts"; Check: not IsUpdating
+Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupDescription: "Other tasks"; Check: not IsUpdating
+Name: "EnableBrowserExtensionSupport"; Description: "Enable browser extension support"; GroupDescription: "Other tasks"; Check: not IsUpdating
+Name: "DisablePrintScreenKeyForSnippingTool"; Description: "Disable Print Screen key for Snipping Tool"; GroupDescription: "Other tasks"; Check: not IsUpdating
 
 [Files]
 Source: "{#MyAppReleaseDirectory}\*.exe"; DestDir: {app}; Flags: ignoreversion
@@ -130,7 +148,6 @@ begin
       Exit;
     end;
   end;
-
   Result := True;
 end;
 
