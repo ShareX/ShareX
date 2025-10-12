@@ -100,8 +100,7 @@ namespace ShareX.Setup
         private const string RecorderDevicesVersion = "0.12.10";
         private static string RecorderDevicesDownloadURL = $"https://github.com/ShareX/RecorderDevices/releases/download/v{RecorderDevicesVersion}/recorder-devices-{RecorderDevicesVersion}-setup.exe";
         private const string ExifToolVersion = "13.29";
-        private static string ExifToolDownloadURL => $"https://github.com/ShareX/ExifTool/releases/download/v{ExifToolVersion}/exiftool-{ExifToolVersion}-win-{(Job.HasFlag(SetupJobs.CreateArm64) ? "arm64" : "x64")}.zip";
-
+        private static string ExifToolDownloadURL = $"https://github.com/ShareX/ExifTool/releases/download/v{ExifToolVersion}/exiftool-{ExifToolVersion}-win64.zip";
         private static void Main(string[] args)
         {
             Console.WriteLine("ShareX setup started.");
@@ -285,11 +284,13 @@ namespace ShareX.Setup
 
                 using (Process process = new Process())
                 {
+                    string arguments = Job.HasFlag(SetupJobs.CreateArm64) ? $"/Q /DArch=arm64 \"{fileName}\"" : $"/Q \"{fileName}\"";
+
                     ProcessStartInfo psi = new ProcessStartInfo()
                     {
                         FileName = InnoSetupCompilerPath,
                         WorkingDirectory = InnoSetupDir,
-                        Arguments = $"/Q \"{fileName}\"",
+                        Arguments = arguments,
                         UseShellExecute = false
                     };
 
