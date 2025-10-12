@@ -72,21 +72,30 @@ jobs:
         run: |
           Invoke-WebRequest -Uri "$env:API_KEYS" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
 
-      # Restore per RID to pull native assets
-      - name: Restore NuGet packages for RID
+      # Restore per RID so native assets resolve correctly
+      - name: Restore for RID
         run: dotnet restore --runtime "${{ matrix.rid }}" "${{ env.SOLUTION_FILE_PATH }}"
 
-      # Build the solution without RID to avoid NETSDK1134
+      # Build solution without RID to avoid NETSDK1134
       - name: Build solution
         run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" /m:1 "${{ env.SOLUTION_FILE_PATH }}"
 
-      # Build the Setup project per RID to produce RID specific Setup.exe
-      - name: Build Setup project for RID
-        run: dotnet build "${{ env.SETUP_PROJ_PATH }}" --no-restore --configuration "${{ matrix.configuration }}" -r "${{ matrix.rid }}" --self-contained true /m:1
+      # Build Setup framework-dependent for the target RID (no self-contained EXE)
+      - name: Build Setup (framework-dependent)
+        run: dotnet build "${{ env.SETUP_PROJ_PATH }}" --no-restore --configuration "${{ matrix.configuration }}" -r "${{ matrix.rid }}" --self-contained false /m:1
 
+      # Run Setup via dotnet DLL so it works on the x64 runner for both RIDs
       - name: Run Setup packager
+        shell: pwsh
         run: |
-          & "ShareX.Setup\bin\${{ matrix.configuration }}\${{ matrix.rid }}\ShareX.Setup.exe" -silent -job "${{ matrix.configuration }}"
+          $cfg = "${{ matrix.configuration }}"
+          $rid = "${{ matrix.rid }}"
+          $dll = "ShareX.Setup\bin\$cfg\$rid\ShareX.Setup.dll"
+          if (!(Test-Path $dll)) {
+            Write-Error "Setup DLL not found: $dll"
+            exit 1
+          }
+          dotnet $dll -silent -job "$cfg"
 
       - name: Suffix outputs with RID
         shell: pwsh
