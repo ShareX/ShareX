@@ -70,7 +70,7 @@ jobs:
           Invoke-WebRequest -Uri "$env:API_KEYS" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
 
       - name: Restore NuGet packages
-        run: dotnet restore "${{ env.SOLUTION_FILE_PATH }}"
+        run: dotnet restore --runtime win-x64 "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Build
         run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" --self-contained true /m:1 "${{ env.SOLUTION_FILE_PATH }}"
