@@ -38,7 +38,7 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Restore NuGet packages
-        run: dotnet restore --runtime win-x64 "${{ env.SOLUTION_FILE_PATH }}"
+        run: dotnet restore "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Build
         run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" --self-contained true /m:1 "${{ env.SOLUTION_FILE_PATH }}"

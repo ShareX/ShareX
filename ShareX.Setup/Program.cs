@@ -217,7 +217,7 @@ namespace ShareX.Setup
             {
                 Console.WriteLine("Invalid parent directory: " + ParentDir);
 
-                ParentDir = FileHelpers.GetAbsolutePath(@"..\..\..\");
+                ParentDir = FileHelpers.GetAbsolutePath(@"..\..\..\..\");
 
                 if (!File.Exists(SolutionPath))
                 {
