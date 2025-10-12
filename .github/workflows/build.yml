@@ -49,6 +49,7 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Set APP_VERSION
+        shell: pwsh
         run: |
           $content = Get-Content "${{ env.ASSEMBLY_INFO_PATH }}" -Raw
           $pattern = '<Version>([0-9]+(?:\.[0-9]+){1,3})</Version>'
@@ -59,72 +60,85 @@ jobs:
             $content = [regex]::Replace($content, $pattern, "<Version>$version</Version>")
             Set-Content -Path "${{ env.ASSEMBLY_INFO_PATH }}" -Value "$content" -NoNewline
           }
-          echo $version
           echo "APP_VERSION=$version" >> $env:GITHUB_ENV
 
       - name: Download API keys
+        if: env.API_KEYS != ''
         env:
           API_KEYS: ${{ secrets.API_KEYS }}
-        if: env.API_KEYS != ''
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        shell: pwsh
         run: |
           Invoke-WebRequest -Uri "$env:API_KEYS" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
 
-      - name: Restore NuGet packages
+      - name: Restore NuGet packages for RID
         run: dotnet restore --runtime "${{ matrix.platform }}" "${{ env.SOLUTION_FILE_PATH }}"
 
-      - name: Build
-        run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" --runtime "${{ matrix.platform }}" /m:1 "${{ env.SOLUTION_FILE_PATH }}"
+      - name: Build all projects for RID
+        shell: pwsh
+        run: |
+          # enumerate csproj files in solution to avoid NETSDK1134
+          $slnDir = Split-Path "${{ env.SOLUTION_FILE_PATH }}"
+          $projects = & dotnet sln "${{ env.SOLUTION_FILE_PATH }}" list | Where-Object { $_ -like "*.csproj" }
+          foreach ($proj in $projects) {
+            Write-Host "Building $proj for ${{ matrix.platform }} ${{ matrix.configuration }}"
+            dotnet build `
+              --no-restore `
+              --configuration "${{ matrix.configuration }}" `
+              --runtime "${{ matrix.platform }}" `
+              /m:1 `
+              "$proj"
+          }
 
-      - name: Publish
-        run: dotnet publish --no-build --configuration "${{ matrix.configuration }}" --self-contained true --runtime "${{ matrix.platform }}" "${{ env.SOLUTION_FILE_PATH }}"
+      # Publish step removed on purpose to avoid solution level RID issues.
+      # ShareX.Setup will package outputs into Output\* including portable and setup.
 
       - name: Setup
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        shell: pwsh
         run: |
           $setupExe = "ShareX.Setup\bin\${{ matrix.configuration }}\${{ matrix.platform }}\ShareX.Setup.exe"
-          $jobArgs = "-silent -job `"${{ matrix.configuration }}`""
-          if ("${{ matrix.platform }}" -eq "win-arm64") {
-            $jobArgs += " -CreateArm64"
+          if (-not (Test-Path $setupExe)) {
+            Write-Error "Setup executable not found at $setupExe"
           }
+          $jobArgs = "-silent -job `"${{ matrix.configuration }}`""
+          if ("${{ matrix.platform }}" -eq "win-arm64") { $jobArgs += " -CreateArm64" }
           & $setupExe $jobArgs
 
-      - name: Upload artifact (Setup)
+      - name: Upload artifact Setup
         if: matrix.configuration == 'Release'
         uses: actions/upload-artifact@v4
         with:
           name: Setup-${{ matrix.platform }}
           path: Output\ShareX-${{ env.APP_VERSION }}${{ matrix.platform == 'win-arm64' && '-win-arm64' || '' }}-setup.exe
 
-      - name: Upload artifact (Portable)
+      - name: Upload artifact Portable
         if: matrix.configuration == 'Release'
         uses: actions/upload-artifact@v4
         with:
           name: Portable-${{ matrix.platform }}
           path: Output\ShareX-${{ env.APP_VERSION }}${{ matrix.platform == 'win-arm64' && '-win-arm64' || '' }}-portable.zip
 
-      - name: Upload artifact (Debug)
+      - name: Upload artifact Debug
         if: matrix.configuration == 'Debug'
         uses: actions/upload-artifact@v4
         with:
           name: Debug-${{ matrix.platform }}
           path: Output\ShareX-${{ env.APP_VERSION }}${{ matrix.platform == 'win-arm64' && '-win-arm64' || '' }}-debug.zip
 
-      - name: Upload artifact (Steam)
+      - name: Upload artifact Steam
         if: matrix.configuration == 'Steam'
         uses: actions/upload-artifact@v4
         with:
           name: Steam-${{ matrix.platform }}
           path: Output\ShareX-${{ env.APP_VERSION }}${{ matrix.platform == 'win-arm64' && '-win-arm64' || '' }}-Steam.zip
 
-      - name: Upload artifact (MicrosoftStore)
+      - name: Upload artifact MicrosoftStore
         if: matrix.configuration == 'MicrosoftStore'
         uses: actions/upload-artifact@v4
         with:
           name: MicrosoftStore-${{ matrix.platform }}
           path: Output\ShareX-${{ env.APP_VERSION }}${{ matrix.platform == 'win-arm64' && '-win-arm64' || '' }}.appx
 
-      - name: Upload artifact (MicrosoftStoreDebug)
+      - name: Upload artifact MicrosoftStoreDebug
         if: matrix.configuration == 'MicrosoftStoreDebug'
         uses: actions/upload-artifact@v4
         with:
@@ -136,106 +150,91 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/tags/v')
     runs-on: windows-latest
-
     permissions:
       contents: write
-
     env:
       REPO_DEV_BUILDS: ${{ github.repository_owner }}/DevBuilds
       RELEASE_BODY_PATH: RELEASE_BODY.md
       APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
-
     steps:
-      - name: Download artifact (Setup win-x64)
+      - name: Download artifact Setup win-x64
         uses: actions/download-artifact@v4
         with:
           name: Setup-win-x64
           path: Output
-
-      - name: Download artifact (Setup win-arm64)
+      - name: Download artifact Setup win-arm64
         uses: actions/download-artifact@v4
         with:
           name: Setup-win-arm64
           path: Output
-
-      - name: Download artifact (Portable win-x64)
+      - name: Download artifact Portable win-x64
         uses: actions/download-artifact@v4
         with:
           name: Portable-win-x64
           path: Output
-
-      - name: Download artifact (Portable win-arm64)
+      - name: Download artifact Portable win-arm64
         uses: actions/download-artifact@v4
         with:
           name: Portable-win-arm64
           path: Output
-
-      - name: Download artifact (Debug win-x64)
+      - name: Download artifact Debug win-x64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
           name: Debug-win-x64
           path: Output
-
-      - name: Download artifact (Debug win-arm64)
+      - name: Download artifact Debug win-arm64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
           name: Debug-win-arm64
           path: Output
-
-      - name: Download artifact (Steam win-x64)
+      - name: Download artifact Steam win-x64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
           name: Steam-win-x64
           path: Output
-
-      - name: Download artifact (Steam win-arm64)
+      - name: Download artifact Steam win-arm64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
           name: Steam-win-arm64
           path: Output
-
-      - name: Download artifact (MicrosoftStore win-x64)
+      - name: Download artifact MicrosoftStore win-x64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
           name: MicrosoftStore-win-x64
           path: Output
-
-      - name: Download artifact (MicrosoftStore win-arm64)
+      - name: Download artifact MicrosoftStore win-arm64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
           name: MicrosoftStore-win-arm64
           path: Output
-
-      - name: Download artifact (MicrosoftStoreDebug win-x64)
+      - name: Download artifact MicrosoftStoreDebug win-x64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
           name: MicrosoftStoreDebug-win-x64
           path: Output
-
-      - name: Download artifact (MicrosoftStoreDebug win-arm64)
+      - name: Download artifact MicrosoftStoreDebug win-arm64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
           name: MicrosoftStoreDebug-win-arm64
           path: Output
-
       - name: Create release body file
+        shell: pwsh
         run: |
-          $checksums = Get-ChildItem -Path "Output\" -Recurse -File `
-            | Sort-Object -Property Name `
-            | ForEach-Object { "| $($_.Name) | ``$((Get-FileHash $_.FullName -Algorithm SHA256).Hash)`` |" } `
-            | Out-String
+          $checksums = Get-ChildItem -Path "Output\" -Recurse -File |
+            Sort-Object -Property Name |
+            ForEach-Object { "| $($_.Name) | ``$((Get-FileHash $_.FullName -Algorithm SHA256).Hash)`` |" } |
+            Out-String
           $output = "| File | SHA256 |`r`n| --- | --- |`r`n$($checksums.Trim())"
           echo $output >> $env:GITHUB_STEP_SUMMARY
           if ($env:GITHUB_REF.StartsWith("refs/tags/v")) {
             $output = "**Changelog:** https://getsharex.com/changelog#$env:GITHUB_REF_NAME`r`n`r`n$output"
           }
-          echo $output
           Set-Content -Path "${{ env.RELEASE_BODY_PATH }}" -Value "$output" -NoNewline
