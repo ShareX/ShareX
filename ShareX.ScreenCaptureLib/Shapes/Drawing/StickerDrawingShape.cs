@@ -73,7 +73,26 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Resize(int x, int y, bool fromBottomRight)
         {
-            Move(x, y);
+            // Store the current center
+            PointF center = new PointF(Rectangle.X + Rectangle.Width / 2, Rectangle.Y + Rectangle.Height / 2);
+            if (x != 0)
+            {
+                Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            }
+            if (y != 0)
+            {
+                Image.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            }
+
+            Bitmap flippedBmp = (Bitmap)Image.Clone();
+            SetImage(flippedBmp, true);
+            Rectangle = new RectangleF(
+                    center.X - flippedBmp.Width / 2,
+                    center.Y - flippedBmp.Height / 2,
+                    flippedBmp.Width,
+                    flippedBmp.Height
+                );
+
         }
 
         private bool OpenStickerForm()
