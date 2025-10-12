@@ -73,26 +73,33 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Resize(int x, int y, bool fromBottomRight)
         {
-            // Store the current center
-            PointF center = new PointF(Rectangle.X + Rectangle.Width / 2, Rectangle.Y + Rectangle.Height / 2);
-            if (x != 0)
+            RotateFlipType rotateFlipType = RotateFlipType.RotateNoneFlipNone;
+
+            if (x > 0)
             {
-                Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                rotateFlipType = RotateFlipType.Rotate90FlipNone;
             }
-            if (y != 0)
+            else if (x < 0)
             {
-                Image.RotateFlip(RotateFlipType.RotateNoneFlipY);
+                rotateFlipType = RotateFlipType.Rotate270FlipNone;
+            }
+            else if (y > 0)
+            {
+                rotateFlipType = RotateFlipType.RotateNoneFlipX;
+            }
+            else if (y < 0)
+            {
+                rotateFlipType = RotateFlipType.RotateNoneFlipY;
             }
 
-            Bitmap flippedBmp = (Bitmap)Image.Clone();
-            SetImage(flippedBmp, true);
-            Rectangle = new RectangleF(
-                    center.X - flippedBmp.Width / 2,
-                    center.Y - flippedBmp.Height / 2,
-                    flippedBmp.Width,
-                    flippedBmp.Height
-                );
-
+            if (rotateFlipType != RotateFlipType.RotateNoneFlipNone)
+            {
+                PointF center = new PointF(Rectangle.X + Rectangle.Width / 2, Rectangle.Y + Rectangle.Height / 2);
+                Bitmap flippedBmp = (Bitmap)Image.Clone();
+                flippedBmp.RotateFlip(rotateFlipType);
+                SetImage(flippedBmp, true);
+                Rectangle = new RectangleF(center.X - flippedBmp.Width / 2, center.Y - flippedBmp.Height / 2, flippedBmp.Width, flippedBmp.Height);
+            }
         }
 
         private bool OpenStickerForm()
