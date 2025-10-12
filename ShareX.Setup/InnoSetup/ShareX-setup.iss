@@ -19,7 +19,7 @@
 #endif
 
 #define MyAppOutputDirectory MyAppRootDirectory + "\Output"
-#define MyAppReleaseDirectory MyAppRootDirectory + "\" + MyAppName + "\bin\" + MyBin + "\Release"
+#define MyAppReleaseDirectory MyAppRootDirectory + "\" + MyAppName + "\bin\" + "\Release\" + MyRid
 #define MyAppFileName MyAppName + ".exe"
 #define MyAppFilePath MyAppReleaseDirectory + "\" + MyAppFileName
 #define MyAppVersion GetStringFileInfo(MyAppFilePath, "ProductVersion")

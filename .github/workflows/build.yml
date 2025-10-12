@@ -70,32 +70,32 @@ jobs:
         run: |
           Invoke-WebRequest -Uri "$env:API_KEYS" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
 
-      - name: Restore NuGet packages for RID
-        run: dotnet restore --runtime "${{ matrix.platform }}" "${{ env.SOLUTION_FILE_PATH }}"
+      - name: Restore NuGet packages for RIDs
+        shell: pwsh
+        run: |
+          dotnet restore --runtime "${{ matrix.platform }}" "${{ env.SOLUTION_FILE_PATH }}"
+          dotnet restore --runtime "win-x64" "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Build all projects for RID
         shell: pwsh
         run: |
-          # enumerate csproj files in solution to avoid NETSDK1134
-          $slnDir = Split-Path "${{ env.SOLUTION_FILE_PATH }}"
           $projects = & dotnet sln "${{ env.SOLUTION_FILE_PATH }}" list | Where-Object { $_ -like "*.csproj" }
           foreach ($proj in $projects) {
-            Write-Host "Building $proj for ${{ matrix.platform }} ${{ matrix.configuration }}"
+            $rid = "${{ matrix.platform }}"
+            if ($proj -like "*ShareX.Setup*") { $rid = "win-x64" }
+            Write-Host "Building $proj for $rid ${{ matrix.configuration }}"
             dotnet build `
               --no-restore `
               --configuration "${{ matrix.configuration }}" `
-              --runtime "${{ matrix.platform }}" `
+              --runtime $rid `
               /m:1 `
               "$proj"
           }
 
-      # Publish step removed on purpose to avoid solution level RID issues.
-      # ShareX.Setup will package outputs into Output\* including portable and setup.
-
       - name: Setup
         shell: pwsh
         run: |
-          $setupExe = "ShareX.Setup\bin\${{ matrix.configuration }}\${{ matrix.platform }}\ShareX.Setup.exe"
+          $setupExe = "ShareX.Setup\bin\${{ matrix.configuration }}\win-x64\ShareX.Setup.exe"
           if (-not (Test-Path $setupExe)) {
             Write-Error "Setup executable not found at $setupExe"
           }
