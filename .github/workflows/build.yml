@@ -36,6 +36,7 @@ jobs:
 
     env:
       SOLUTION_FILE_PATH: ShareX.sln
+      SETUP_PROJ_PATH: ShareX.Setup/ShareX.Setup.csproj
       ASSEMBLY_INFO_PATH: Directory.build.props
 
     outputs:
@@ -68,28 +69,31 @@ jobs:
         env:
           API_KEYS: ${{ secrets.API_KEYS }}
         if: env.API_KEYS != ''
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           Invoke-WebRequest -Uri "$env:API_KEYS" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
 
-      - name: Restore NuGet packages
+      # Restore per RID to pull native assets
+      - name: Restore NuGet packages for RID
         run: dotnet restore --runtime "${{ matrix.rid }}" "${{ env.SOLUTION_FILE_PATH }}"
 
-      - name: Build
-        run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" -r "${{ matrix.rid }}" --self-contained true /m:1 "${{ env.SOLUTION_FILE_PATH }}"
+      # Build the solution without RID to avoid NETSDK1134
+      - name: Build solution
+        run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" /m:1 "${{ env.SOLUTION_FILE_PATH }}"
 
-      - name: Setup
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
+      # Build the Setup project per RID to produce RID specific Setup.exe
+      - name: Build Setup project for RID
+        run: dotnet build "${{ env.SETUP_PROJ_PATH }}" --no-restore --configuration "${{ matrix.configuration }}" -r "${{ matrix.rid }}" --self-contained true /m:1
+
+      - name: Run Setup packager
         run: |
           & "ShareX.Setup\bin\${{ matrix.configuration }}\${{ matrix.rid }}\ShareX.Setup.exe" -silent -job "${{ matrix.configuration }}"
 
-      - name: Rename outputs with arch suffix
+      - name: Suffix outputs with RID
         shell: pwsh
         run: |
           $v = "${{ env.APP_VERSION }}"
           $rid = "${{ matrix.rid }}"
           New-Item -ItemType Directory -Path "Output" -Force | Out-Null
-
           $files = @(
             "ShareX-$v-setup.exe",
             "ShareX-$v-portable.zip",
@@ -98,7 +102,6 @@ jobs:
             "ShareX-$v.appx",
             "ShareX-$v-debug.appx"
           )
-
           foreach ($f in $files) {
             $src = Join-Path "Output" $f
             if (Test-Path $src) {
