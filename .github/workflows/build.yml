@@ -225,9 +225,9 @@ jobs:
 
       - name: Create release body file
         run: |
-          $checksums = Get-ChildItem -Path "Output\" -Recurse -File
-            | Sort-Object -Property Name
-            | ForEach-Object { "| $($_.Name) | ``$((Get-FileHash $_.FullName -Algorithm SHA256).Hash)`` |" }
+          $checksums = Get-ChildItem -Path "Output\" -Recurse -File `
+            | Sort-Object -Property Name `
+            | ForEach-Object { "| $($_.Name) | ``$((Get-FileHash $_.FullName -Algorithm SHA256).Hash)`` |" } `
             | Out-String
           $output = "| File | SHA256 |`r`n| --- | --- |`r`n$($checksums.Trim())"
           echo $output >> $env:GITHUB_STEP_SUMMARY
@@ -235,4 +235,4 @@ jobs:
             $output = "**Changelog:** https://getsharex.com/changelog#$env:GITHUB_REF_NAME`r`n`r`n$output"
           }
           echo $output
-          Set-Content -Path "${{ env.RELEASE_BODY
+          Set-Content -Path "${{ env.RELEASE_BODY_PATH }}" -Value "$output" -NoNewline
