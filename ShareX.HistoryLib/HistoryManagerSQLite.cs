@@ -45,7 +45,7 @@ namespace ShareX.HistoryLib
         {
             FileHelpers.CreateDirectoryFromFilePath(filePath);
 
-            string connectionString = $"Data Source={filePath}";
+            string connectionString = $"Data Source={filePath};";
             connection = new SqliteConnection(connectionString);
             connection.Open();
 
