@@ -74,7 +74,10 @@ jobs:
         run: dotnet restore "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Build
-        run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" /p:RuntimeIdentifier="${{ matrix.platform }}" /p:SelfContained=true /m:1 "${{ env.SOLUTION_FILE_PATH }}"
+        run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" /m:1 "${{ env.SOLUTION_FILE_PATH }}"
+
+      - name: Publish
+        run: dotnet publish --no-build --configuration "${{ matrix.configuration }}" --self-contained true --runtime "${{ matrix.platform }}" "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Setup
         working-directory: ${{ env.GITHUB_WORKSPACE }}
