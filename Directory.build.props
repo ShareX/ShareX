@@ -8,7 +8,19 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
     <Configurations>Release;Debug;Steam;MicrosoftStore;MicrosoftStoreDebug</Configurations>
+
+    <!-- Add both RIDs so restore creates RID assets -->
+    <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
+
+    <!-- Ensure windows targeting for netX.0-windows TFMs -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
+
+  <!-- Force the host tool to x64 only -->
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'ShareX.Setup'">
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)' == 'Steam'">
     <DefineConstants>$(DefineConstants);STEAM</DefineConstants>
     <Optimize>true</Optimize>
