@@ -113,10 +113,10 @@ jobs:
             exit 1
           }
           if ("${{ matrix.platform }}" -eq "win-arm64") {
-            $jobArgs = "-silent -job `"ReleaseArm64`""
+            $jobArgs = "-Silent -Job `"ReleaseArm64`""
           }
           else {
-            $jobArgs = "-silent -job `"Release`""
+            $jobArgs = "-Silent -Job `"Release`""
           }
           Write-Host "Running: $setupExe $jobArgs"
           & $setupExe $jobArgs
