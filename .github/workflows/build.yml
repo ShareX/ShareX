@@ -70,26 +70,38 @@ jobs:
         run: |
           Invoke-WebRequest -Uri "$env:API_KEYS" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
 
-      - name: Restore NuGet packages for RIDs
-        shell: pwsh
-        run: |
-          dotnet restore --runtime "${{ matrix.platform }}" "${{ env.SOLUTION_FILE_PATH }}"
-          dotnet restore --runtime "win-x64" "${{ env.SOLUTION_FILE_PATH }}"
-
-      - name: Build all projects for RID
+      - name: Restore and Build projects
         shell: pwsh
         run: |
           $projects = & dotnet sln "${{ env.SOLUTION_FILE_PATH }}" list | Where-Object { $_ -like "*.csproj" }
           foreach ($proj in $projects) {
             $rid = "${{ matrix.platform }}"
-            if ($proj -like "*ShareX.Setup*") { $rid = "win-x64" }
-            Write-Host "Building $proj for $rid ${{ matrix.configuration }}"
-            dotnet build `
-              --no-restore `
-              --configuration "${{ matrix.configuration }}" `
-              --runtime $rid `
-              /m:1 `
-              "$proj"
+            # ShareX.Setup always builds for win-x64
+            if ($proj -like "*ShareX.Setup*") { 
+              $rid = "win-x64" 
+            }
+            
+            # ShareX.Steam is .NET Framework 4.8 - build differently
+            if ($proj -like "*ShareX.Steam*") {
+              Write-Host "Restoring and building $proj (net4.8) for ${{ matrix.configuration }}"
+              dotnet restore "$proj"
+              dotnet build `
+                --no-restore `
+                --configuration "${{ matrix.configuration }}" `
+                /m:1 `
+                "$proj"
+            }
+            else {
+              Write-Host "Restoring and building $proj for $rid ${{ matrix.configuration }}"
+              dotnet restore --runtime $rid "$proj"
+              dotnet build `
+                --no-restore `
+                --configuration "${{ matrix.configuration }}" `
+                --runtime $rid `
+                --self-contained true `
+                /m:1 `
+                "$proj"
+            }
           }
 
       - name: Setup
@@ -98,6 +110,7 @@ jobs:
           $setupExe = "ShareX.Setup\bin\${{ matrix.configuration }}\win-x64\ShareX.Setup.exe"
           if (-not (Test-Path $setupExe)) {
             Write-Error "Setup executable not found at $setupExe"
+            exit 1
           }
           $jobArgs = "-silent -job `"${{ matrix.configuration }}`""
           if ("${{ matrix.platform }}" -eq "win-arm64") { $jobArgs += " -CreateArm64" }
