@@ -165,7 +165,6 @@ namespace ShareX.Setup
                     CompileAppx(MicrosoftStoreOutputDir, MicrosoftStoreAppxPath);
                 }
             }
-
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
             {
                 CreateFolder(BinDir, MicrosoftStoreDebugOutputDir, SetupJobs.CreateMicrosoftStoreDebugFolder);
@@ -205,6 +204,7 @@ namespace ShareX.Setup
                 if (Enum.TryParse(parameter, out SetupJobs job))
                 {
                     Job = job;
+                    Console.WriteLine("IsArm64: " + job.HasFlag(SetupJobs.CreateArm64));
                 }
                 else
                 {
@@ -235,26 +235,7 @@ namespace ShareX.Setup
 
             Console.WriteLine("Parent directory: " + ParentDir);
 
-            if (Job.HasFlag(SetupJobs.CreateDebug))
-            {
-                Configuration = "Debug";
-            }
-            else if (Job.HasFlag(SetupJobs.CreateSteamFolder))
-            {
-                Configuration = "Steam";
-            }
-            else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
-            {
-                Configuration = "MicrosoftStore";
-            }
-            else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
-            {
-                Configuration = "MicrosoftStoreDebug";
-            }
-            else
-            {
-                Configuration = "Release";
-            }
+            UpdateBuildConfig();
 
             Console.WriteLine("Configuration: " + Configuration);
             Console.WriteLine("Architecture: " + CurrentWinArch);
@@ -297,6 +278,30 @@ namespace ShareX.Setup
                 WindowsKitsDir = Path.Combine(sdkInstallationFolder, "bin", Helpers.NormalizeVersion(sdkProductVersion).ToString());
 
                 Console.WriteLine("Windows Kits directory: " + WindowsKitsDir);
+            }
+        }
+
+        private static void UpdateBuildConfig()
+        {
+            if (Job.HasFlag(SetupJobs.CreateDebug))
+            {
+                Configuration = "Debug";
+            }
+            else if (Job.HasFlag(SetupJobs.CreateSteamFolder))
+            {
+                Configuration = "Steam";
+            }
+            else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
+            {
+                Configuration = "MicrosoftStore";
+            }
+            else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
+            {
+                Configuration = "MicrosoftStoreDebug";
+            }
+            else
+            {
+                Configuration = "Release";
             }
         }
 
