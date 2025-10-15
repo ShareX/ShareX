@@ -112,9 +112,11 @@ jobs:
             Write-Error "Setup executable not found at $setupExe"
             exit 1
           }
-          $jobArgs = "-silent -job `"${{ matrix.configuration }}`""
-          if ("${{ matrix.platform }}" -eq "win-arm64") { 
-            $jobArgs += " -ReleaseArm64" 
+          if ("${{ matrix.platform }}" -eq "win-arm64") {
+            $jobArgs = "-silent -job `"ReleaseArm64`""
+          }
+          else {
+            $jobArgs = "-silent -job `"Release`""
           }
           Write-Host "Running: $setupExe $jobArgs"
           & $setupExe $jobArgs
