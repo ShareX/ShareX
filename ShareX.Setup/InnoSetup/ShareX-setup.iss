@@ -7,19 +7,19 @@
 #endif
 
 #if Arch == "arm64"
-  #define MyBin "ARM64"
+  #define MyBin "win-arm64"
   #define MyRid "win-arm64"
   #define ArchAllowed "arm64"
   #define Install64 "arm64"
 #else
-  #define MyBin "x64"
+  #define MyBin "win-x64"
   #define MyRid "win-x64"
   #define ArchAllowed "x64"
   #define Install64 "x64"
 #endif
 
 #define MyAppOutputDirectory MyAppRootDirectory + "\Output"
-#define MyAppReleaseDirectory MyAppRootDirectory + "\" + MyAppName + "\bin\" + "\Release\" + MyRid
+#define MyAppReleaseDirectory MyAppRootDirectory + "\" + MyAppName + "\bin\" + "\Release\" + MyBin
 #define MyAppFileName MyAppName + ".exe"
 #define MyAppFilePath MyAppReleaseDirectory + "\" + MyAppFileName
 #define MyAppVersion GetStringFileInfo(MyAppFilePath, "ProductVersion")
