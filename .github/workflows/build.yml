@@ -113,50 +113,61 @@ jobs:
             exit 1
           }
           $jobArgs = "-silent -job `"${{ matrix.configuration }}`""
-          if ("${{ matrix.platform }}" -eq "win-arm64") { $jobArgs += " -CreateArm64" }
+          if ("${{ matrix.platform }}" -eq "win-arm64") { 
+            $jobArgs += " -CreateArm64" 
+          }
+          Write-Host "Running: $setupExe $jobArgs"
           & $setupExe $jobArgs
+          
+          # List what was created in Output folder
+          Write-Host "`nFiles created in Output folder:"
+          if (Test-Path "Output") {
+            Get-ChildItem -Path "Output" -Recurse | ForEach-Object { Write-Host $_.FullName }
+          } else {
+            Write-Warning "Output folder does not exist!"
+          }
 
       - name: Upload artifact Setup
         if: matrix.configuration == 'Release'
         uses: actions/upload-artifact@v4
         with:
           name: Setup-${{ matrix.platform }}
-          path: Output\ShareX-${{ env.APP_VERSION }}${{ matrix.platform == 'win-arm64' && '-win-arm64' || '' }}-setup.exe
+          path: Output\ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-setup.exe
 
       - name: Upload artifact Portable
         if: matrix.configuration == 'Release'
         uses: actions/upload-artifact@v4
         with:
           name: Portable-${{ matrix.platform }}
-          path: Output\ShareX-${{ env.APP_VERSION }}${{ matrix.platform == 'win-arm64' && '-win-arm64' || '' }}-portable.zip
+          path: Output\ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-portable.zip
 
       - name: Upload artifact Debug
         if: matrix.configuration == 'Debug'
         uses: actions/upload-artifact@v4
         with:
           name: Debug-${{ matrix.platform }}
-          path: Output\ShareX-${{ env.APP_VERSION }}${{ matrix.platform == 'win-arm64' && '-win-arm64' || '' }}-debug.zip
+          path: Output\ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-debug.zip
 
       - name: Upload artifact Steam
         if: matrix.configuration == 'Steam'
         uses: actions/upload-artifact@v4
         with:
           name: Steam-${{ matrix.platform }}
-          path: Output\ShareX-${{ env.APP_VERSION }}${{ matrix.platform == 'win-arm64' && '-win-arm64' || '' }}-Steam.zip
+          path: Output\ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-Steam.zip
 
       - name: Upload artifact MicrosoftStore
         if: matrix.configuration == 'MicrosoftStore'
         uses: actions/upload-artifact@v4
         with:
           name: MicrosoftStore-${{ matrix.platform }}
-          path: Output\ShareX-${{ env.APP_VERSION }}${{ matrix.platform == 'win-arm64' && '-win-arm64' || '' }}.appx
+          path: Output\ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}.appx
 
       - name: Upload artifact MicrosoftStoreDebug
         if: matrix.configuration == 'MicrosoftStoreDebug'
         uses: actions/upload-artifact@v4
         with:
           name: MicrosoftStoreDebug-${{ matrix.platform }}
-          path: Output\ShareX-${{ env.APP_VERSION }}${{ matrix.platform == 'win-arm64' && '-win-arm64' || '' }}-debug.appx
+          path: Output\ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-debug.appx
 
   release:
     name: Release
