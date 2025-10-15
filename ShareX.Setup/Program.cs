@@ -112,9 +112,9 @@ namespace ShareX.Setup
 
             CheckArgs(args);
 
-            Console.WriteLine("Job: " + Job);
-
             UpdatePaths();
+
+            Console.WriteLine("Job: " + Job);
 
             if (Directory.Exists(OutputDir))
             {
@@ -245,8 +245,6 @@ namespace ShareX.Setup
             string versionSourcePath = ExecutablePath;
             if (!File.Exists(versionSourcePath))
             {
-                // If the expected executable isn't available (e.g., arm64 build not yet produced),
-                // fall back to the other architecture just to read the version number.
                 string fallbackArch = Job.HasFlag(SetupJobs.CreateArm64) ? WinX64 : WinArm64;
                 string fallbackBinDir = Path.Combine(ParentDir, "ShareX", "bin", Configuration, fallbackArch);
                 string fallbackExe = Path.Combine(fallbackBinDir, "ShareX.exe");
@@ -255,6 +253,12 @@ namespace ShareX.Setup
                 {
                     Console.WriteLine($"Executable not found at expected path. Falling back to {fallbackArch} for version info: {fallbackExe}");
                     versionSourcePath = fallbackExe;
+
+                    if (fallbackArch.Equals(WinArm64, StringComparison.OrdinalIgnoreCase))
+                    {
+                        Console.WriteLine("Switching job to ReleaseArm64 due to version detection fallback.");
+                        Job = SetupJobs.ReleaseArm64;
+                    }
                 }
                 else
                 {
