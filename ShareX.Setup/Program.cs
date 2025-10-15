@@ -257,8 +257,33 @@ namespace ShareX.Setup
             }
 
             Console.WriteLine("Configuration: " + Configuration);
+            Console.WriteLine("Architecture: " + CurrentWinArch);
+            Console.WriteLine("ExecutablePath (expected): " + ExecutablePath);
 
-            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ExecutablePath);
+            // Determine the correct executable path for reading version info.
+            string versionSourcePath = ExecutablePath;
+            if (!File.Exists(versionSourcePath))
+            {
+                // If the expected executable isn't available (e.g., arm64 build not yet produced),
+                // fall back to the other architecture just to read the version number.
+                string fallbackArch = Job.HasFlag(SetupJobs.CreateArm64) ? WinX64 : WinArm64;
+                string fallbackBinDir = Path.Combine(ParentDir, "ShareX", "bin", Configuration, fallbackArch);
+                string fallbackExe = Path.Combine(fallbackBinDir, "ShareX.exe");
+
+                if (File.Exists(fallbackExe))
+                {
+                    Console.WriteLine($"Executable not found at expected path. Falling back to {fallbackArch} for version info: {fallbackExe}");
+                    versionSourcePath = fallbackExe;
+                }
+                else
+                {
+                    Console.WriteLine("Executable not found for version detection at either path:");
+                    Console.WriteLine(" - Expected: " + ExecutablePath);
+                    Console.WriteLine(" - Fallback: " + fallbackExe);
+                }
+            }
+
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(versionSourcePath);
             AppVersion = versionInfo.ProductVersion;
 
             Console.WriteLine("Application version: " + AppVersion);
