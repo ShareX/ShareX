@@ -61,19 +61,18 @@ namespace ShareX.Setup
         private static SetupJobs Job { get; set; } = SetupJobs.Release;
         private static bool Silent { get; set; } = false;
 
-        private static string ParentDir;
-        private static string Configuration;
-        private static string AppVersion;
-        private static string WindowsKitsDir;
+        // Initialize with safe defaults to avoid null usage before UpdatePaths() runs
+        private static string ParentDir = Directory.GetCurrentDirectory();
+        private static string Configuration = "Release"; // default until UpdatePaths() adjusts based on Job
+        private static string AppVersion = "0.0.0"; // will be updated in UpdatePaths()
+        private static string WindowsKitsDir = string.Empty; // will be updated when compiling Appx
 
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
         private const string WinArm64 = "win-arm64";
         private const string WinX64 = "win-x64";
         private static string CurrentWinArch => Job.HasFlag(SetupJobs.CreateArm64) ? WinArm64 : WinX64;
-        private const string PlatformArm64 = "ARM64";
-        private const string PlatformX64 = "x64";
 
-        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", CurrentWinArch, Configuration);
+        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, CurrentWinArch);
         private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", CurrentWinArch, Configuration);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
