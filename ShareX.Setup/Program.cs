@@ -48,10 +48,8 @@ namespace ShareX.Setup
             DownloadTools = 1 << 7,
             CreateChecksumFile = 1 << 8,
             OpenOutputDirectory = 1 << 9,
-            CreateArm64 = 1 << 10,
 
             Release = CreateSetup | CreatePortable | DownloadTools | OpenOutputDirectory,
-            ReleaseArm64 = CreateSetup | CreatePortable | DownloadTools | OpenOutputDirectory | CreateArm64,
             Debug = CreateDebug | DownloadTools | OpenOutputDirectory,
             Steam = CreateSteamFolder | DownloadTools | OpenOutputDirectory,
             MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadTools | OpenOutputDirectory,
@@ -70,10 +68,12 @@ namespace ShareX.Setup
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
         private const string WinArm64 = "win-arm64";
         private const string WinX64 = "win-x64";
-        private static string CurrentWinArch => Job.HasFlag(SetupJobs.CreateArm64) ? WinArm64 : WinX64;
+    private static string TargetPlatform = WinX64;
+    private static bool IsArm64 => TargetPlatform == WinArm64;
+    private static string CurrentPlatform => TargetPlatform;
 
-        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, CurrentWinArch);
-        private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", CurrentWinArch, Configuration);
+    private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, CurrentPlatform);
+    private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", CurrentPlatform, Configuration);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");
@@ -87,9 +87,9 @@ namespace ShareX.Setup
         private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
         private static string MicrosoftStorePackageFilesDir => Path.Combine(SetupDir, "MicrosoftStore");
 
-        private static string SetupPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentWinArch}-setup.exe");
-        private static string PortableZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentWinArch}-portable.zip");
-        private static string DebugZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentWinArch}-debug.zip");
+    private static string SetupPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-setup.exe");
+    private static string PortableZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-portable.zip");
+    private static string DebugZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-debug.zip");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam.zip");
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appx");
@@ -101,7 +101,7 @@ namespace ShareX.Setup
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         private const string FFmpegVersion = "8.0";
-        private static string FFmpegDownloadURL => $"https://github.com/ShareX/FFmpeg/releases/download/v{FFmpegVersion}/ffmpeg-{FFmpegVersion}-win-{(Job.HasFlag(SetupJobs.CreateArm64) ? "arm64" : "x64")}.zip";
+    private static string FFmpegDownloadURL => $"https://github.com/ShareX/FFmpeg/releases/download/v{FFmpegVersion}/ffmpeg-{FFmpegVersion}-win-{(IsArm64 ? "arm64" : "x64")}.zip";
         private const string RecorderDevicesVersion = "0.12.10";
         private static string RecorderDevicesDownloadURL = $"https://github.com/ShareX/RecorderDevices/releases/download/v{RecorderDevicesVersion}/recorder-devices-{RecorderDevicesVersion}-setup.exe";
         private const string ExifToolVersion = "13.29";
@@ -204,11 +204,32 @@ namespace ShareX.Setup
                 if (Enum.TryParse(parameter, out SetupJobs job))
                 {
                     Job = job;
-                    Console.WriteLine("IsArm64: " + job.HasFlag(SetupJobs.CreateArm64));
                 }
                 else
                 {
                     Console.WriteLine("Invalid job: " + parameter);
+
+                    Environment.Exit(0);
+                }
+            }
+
+            CLICommand platformCommand = cli.GetCommand("Platform");
+
+            if (platformCommand != null)
+            {
+                string platformValue = platformCommand.Parameter;
+
+                if (platformValue.Equals(WinX64, StringComparison.OrdinalIgnoreCase))
+                {
+                    TargetPlatform = WinX64;
+                }
+                else if (platformValue.Equals(WinArm64, StringComparison.OrdinalIgnoreCase))
+                {
+                    TargetPlatform = WinArm64;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid platform: " + platformValue);
 
                     Environment.Exit(0);
                 }
@@ -238,27 +259,21 @@ namespace ShareX.Setup
             UpdateBuildConfig();
 
             Console.WriteLine("Configuration: " + Configuration);
-            Console.WriteLine("Architecture: " + CurrentWinArch);
+            Console.WriteLine("Platform: " + CurrentPlatform);
             Console.WriteLine("ExecutablePath (expected): " + ExecutablePath);
 
             // Determine the correct executable path for reading version info.
             string versionSourcePath = ExecutablePath;
             if (!File.Exists(versionSourcePath))
             {
-                string fallbackArch = Job.HasFlag(SetupJobs.CreateArm64) ? WinX64 : WinArm64;
-                string fallbackBinDir = Path.Combine(ParentDir, "ShareX", "bin", Configuration, fallbackArch);
+                string fallbackPlatform = IsArm64 ? WinX64 : WinArm64;
+                string fallbackBinDir = Path.Combine(ParentDir, "ShareX", "bin", Configuration, fallbackPlatform);
                 string fallbackExe = Path.Combine(fallbackBinDir, "ShareX.exe");
 
                 if (File.Exists(fallbackExe))
                 {
-                    Console.WriteLine($"Executable not found at expected path. Falling back to {fallbackArch} for version info: {fallbackExe}");
+                    Console.WriteLine($"Executable not found at expected path. Falling back to {fallbackPlatform} for version info: {fallbackExe}");
                     versionSourcePath = fallbackExe;
-
-                    if (fallbackArch.Equals(WinArm64, StringComparison.OrdinalIgnoreCase))
-                    {
-                        Console.WriteLine("Switching job to ReleaseArm64 due to version detection fallback.");
-                        Job = SetupJobs.ReleaseArm64;
-                    }
                 }
                 else
                 {
@@ -323,7 +338,7 @@ namespace ShareX.Setup
 
                 using (Process process = new Process())
                 {
-                    string arguments = Job.HasFlag(SetupJobs.CreateArm64) ? $"/Q /DArch=arm64 \"{fileName}\"" : $"/Q \"{fileName}\"";
+                    string arguments = IsArm64 ? $"/Q /DArch=arm64 \"{fileName}\"" : $"/Q \"{fileName}\"";
 
                     ProcessStartInfo psi = new ProcessStartInfo()
                     {
