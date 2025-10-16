@@ -74,8 +74,8 @@ namespace ShareX.Setup
         private static bool IsArm64 => TargetPlatform == WinArm64;
         private static string CurrentPlatform => TargetPlatform;
         private static string DetectedExecutablePath;
-    private static bool IsConfigurationOverridden;
-    private static bool IsPlatformOverridden;
+        private static bool IsConfigurationOverridden;
+        private static bool IsPlatformOverridden;
 
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, CurrentPlatform);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
@@ -114,9 +114,9 @@ namespace ShareX.Setup
         {
             Console.WriteLine("ShareX setup started.");
 
-            InitializeEnvironment();
-
             CheckArgs(args);
+
+            InitializeEnvironment();
 
             UpdatePaths();
 
@@ -294,7 +294,41 @@ namespace ShareX.Setup
         private static void InitializeEnvironment()
         {
             ResolveParentDirectory();
+            EnsureShareXBuildIfOverrides();
             DetectExecutablePath();
+        }
+
+        private static void EnsureShareXBuildIfOverrides()
+        {
+            try
+            {
+                if (!IsPlatformOverridden || !IsConfigurationOverridden)
+                {
+                    return;
+                }
+
+                string shareXBinRoot = Path.Combine(ParentDir, "ShareX", "bin");
+                string expectedExe = Path.Combine(shareXBinRoot, Configuration, TargetPlatform, "ShareX.exe");
+
+                if (File.Exists(expectedExe))
+                {
+                    // Already built; record path and return.
+                    DetectedExecutablePath = expectedExe;
+                    return;
+                }
+
+                Console.WriteLine($"Expected executable not found for overrides ({Configuration}/{TargetPlatform}). Attempting to build ShareX early...");
+                bool built = TryBuildShareX(Configuration, TargetPlatform);
+                if (built && File.Exists(expectedExe))
+                {
+                    DetectedExecutablePath = expectedExe;
+                    Console.WriteLine($"Early build completed. Using executable: {expectedExe}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error during early build attempt: " + ex);
+            }
         }
 
         private static void ResolveParentDirectory()
@@ -354,6 +388,20 @@ namespace ShareX.Setup
                     }
 
                     return;
+                }
+
+                // If both platform and configuration are explicitly overridden, attempt to build the ShareX project.
+                if (IsConfigurationOverridden)
+                {
+                    Console.WriteLine($"ShareX executable for {TargetPlatform}/{Configuration} not found. Attempting to build ShareX...");
+                    bool buildOk = TryBuildShareX(Configuration, TargetPlatform);
+                    string expectedAfterBuild = Path.Combine(shareXBinRoot, Configuration, TargetPlatform, "ShareX.exe");
+                    if (buildOk && File.Exists(expectedAfterBuild))
+                    {
+                        DetectedExecutablePath = expectedAfterBuild;
+                        Console.WriteLine($"Build completed. Using executable: {expectedAfterBuild}");
+                        return;
+                    }
                 }
 
                 Console.WriteLine($"ShareX executable for {TargetPlatform} not found. Using expected output path.");
@@ -474,6 +522,69 @@ namespace ShareX.Setup
         {
             CompileISSFile("ShareX-setup.iss");
             CreateChecksumFile(SetupPath);
+        }
+
+        private static bool TryBuildShareX(string configuration, string platform)
+        {
+            try
+            {
+                string runtime = platform; // expects values like "win-x64" or "win-arm64"
+                string csproj = Path.Combine(ParentDir, "ShareX", "ShareX.csproj");
+                if (!File.Exists(csproj))
+                {
+                    Console.WriteLine("ShareX.csproj not found: " + csproj);
+                    return false;
+                }
+
+                // dotnet restore -r <rid> ShareX\ShareX.csproj
+                using (Process restore = new Process())
+                {
+                    restore.StartInfo = new ProcessStartInfo
+                    {
+                        FileName = "dotnet",
+                        Arguments = $"restore -r {runtime} \"{csproj}\"",
+                        WorkingDirectory = ParentDir,
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true
+                    };
+                    restore.Start();
+                    restore.WaitForExit();
+                    if (restore.ExitCode != 0)
+                    {
+                        Console.WriteLine("dotnet restore failed:\n" + restore.StandardError.ReadToEnd());
+                        return false;
+                    }
+                }
+
+                // dotnet build -c <configuration> -r <rid> --no-restore ShareX\ShareX.csproj
+                using (Process build = new Process())
+                {
+                    build.StartInfo = new ProcessStartInfo
+                    {
+                        FileName = "dotnet",
+                        Arguments = $"build -c {configuration} -r {runtime} --no-restore \"{csproj}\"",
+                        WorkingDirectory = ParentDir,
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true
+                    };
+                    build.Start();
+                    build.WaitForExit();
+                    if (build.ExitCode != 0)
+                    {
+                        Console.WriteLine("dotnet build failed:\n" + build.StandardError.ReadToEnd());
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while building ShareX: " + ex);
+                return false;
+            }
         }
 
         private static void CompileISSFile(string fileName)
