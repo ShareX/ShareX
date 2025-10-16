@@ -28,6 +28,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace ShareX.Setup
@@ -68,12 +69,13 @@ namespace ShareX.Setup
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
         private const string WinArm64 = "win-arm64";
         private const string WinX64 = "win-x64";
-    private static string TargetPlatform = WinX64;
-    private static bool IsArm64 => TargetPlatform == WinArm64;
-    private static string CurrentPlatform => TargetPlatform;
+        private static string TargetPlatform = WinX64;
+        private static bool IsArm64 => TargetPlatform == WinArm64;
+        private static string CurrentPlatform => TargetPlatform;
+        private static string? DetectedExecutablePath;
 
-    private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, CurrentPlatform);
-    private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", CurrentPlatform, Configuration);
+        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, CurrentPlatform);
+        private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", CurrentPlatform, Configuration);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");
@@ -87,9 +89,9 @@ namespace ShareX.Setup
         private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
         private static string MicrosoftStorePackageFilesDir => Path.Combine(SetupDir, "MicrosoftStore");
 
-    private static string SetupPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-setup.exe");
-    private static string PortableZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-portable.zip");
-    private static string DebugZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-debug.zip");
+        private static string SetupPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-setup.exe");
+        private static string PortableZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-portable.zip");
+        private static string DebugZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-debug.zip");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam.zip");
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appx");
@@ -101,7 +103,7 @@ namespace ShareX.Setup
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         private const string FFmpegVersion = "8.0";
-    private static string FFmpegDownloadURL => $"https://github.com/ShareX/FFmpeg/releases/download/v{FFmpegVersion}/ffmpeg-{FFmpegVersion}-win-{(IsArm64 ? "arm64" : "x64")}.zip";
+        private static string FFmpegDownloadURL => $"https://github.com/ShareX/FFmpeg/releases/download/v{FFmpegVersion}/ffmpeg-{FFmpegVersion}-win-{(IsArm64 ? "arm64" : "x64")}.zip";
         private const string RecorderDevicesVersion = "0.12.10";
         private static string RecorderDevicesDownloadURL = $"https://github.com/ShareX/RecorderDevices/releases/download/v{RecorderDevicesVersion}/recorder-devices-{RecorderDevicesVersion}-setup.exe";
         private const string ExifToolVersion = "13.29";
@@ -109,6 +111,8 @@ namespace ShareX.Setup
         private static void Main(string[] args)
         {
             Console.WriteLine("ShareX setup started.");
+
+            InitializeEnvironment();
 
             CheckArgs(args);
 
@@ -212,48 +216,10 @@ namespace ShareX.Setup
                     Environment.Exit(0);
                 }
             }
-
-            CLICommand platformCommand = cli.GetCommand("Platform");
-
-            if (platformCommand != null)
-            {
-                string platformValue = platformCommand.Parameter;
-
-                if (platformValue.Equals(WinX64, StringComparison.OrdinalIgnoreCase))
-                {
-                    TargetPlatform = WinX64;
-                }
-                else if (platformValue.Equals(WinArm64, StringComparison.OrdinalIgnoreCase))
-                {
-                    TargetPlatform = WinArm64;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid platform: " + platformValue);
-
-                    Environment.Exit(0);
-                }
-            }
         }
 
         private static void UpdatePaths()
         {
-            ParentDir = Directory.GetCurrentDirectory();
-
-            if (!File.Exists(SolutionPath))
-            {
-                Console.WriteLine("Invalid parent directory: " + ParentDir);
-
-                ParentDir = FileHelpers.GetAbsolutePath(@"..\..\..\");
-
-                if (!File.Exists(SolutionPath))
-                {
-                    Console.WriteLine("Invalid parent directory: " + ParentDir);
-
-                    Environment.Exit(0);
-                }
-            }
-
             Console.WriteLine("Parent directory: " + ParentDir);
 
             UpdateBuildConfig();
@@ -262,26 +228,7 @@ namespace ShareX.Setup
             Console.WriteLine("Platform: " + CurrentPlatform);
             Console.WriteLine("ExecutablePath (expected): " + ExecutablePath);
 
-            // Determine the correct executable path for reading version info.
-            string versionSourcePath = ExecutablePath;
-            if (!File.Exists(versionSourcePath))
-            {
-                string fallbackPlatform = IsArm64 ? WinX64 : WinArm64;
-                string fallbackBinDir = Path.Combine(ParentDir, "ShareX", "bin", Configuration, fallbackPlatform);
-                string fallbackExe = Path.Combine(fallbackBinDir, "ShareX.exe");
-
-                if (File.Exists(fallbackExe))
-                {
-                    Console.WriteLine($"Executable not found at expected path. Falling back to {fallbackPlatform} for version info: {fallbackExe}");
-                    versionSourcePath = fallbackExe;
-                }
-                else
-                {
-                    Console.WriteLine("Executable not found for version detection at either path:");
-                    Console.WriteLine(" - Expected: " + ExecutablePath);
-                    Console.WriteLine(" - Fallback: " + fallbackExe);
-                }
-            }
+            string versionSourcePath = ResolveVersionSourcePath();
 
             FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(versionSourcePath);
             AppVersion = versionInfo.ProductVersion;
@@ -298,6 +245,103 @@ namespace ShareX.Setup
 
                 Console.WriteLine("Windows Kits directory: " + WindowsKitsDir);
             }
+        }
+
+        private static void InitializeEnvironment()
+        {
+            ResolveParentDirectory();
+            DetectExecutablePath();
+        }
+
+        private static void ResolveParentDirectory()
+        {
+            ParentDir = Directory.GetCurrentDirectory();
+
+            if (!File.Exists(SolutionPath))
+            {
+                Console.WriteLine("Invalid parent directory: " + ParentDir);
+
+                ParentDir = FileHelpers.GetAbsolutePath(@"..\..\..\");
+
+                if (!File.Exists(SolutionPath))
+                {
+                    Console.WriteLine("Invalid parent directory: " + ParentDir);
+
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        private static void DetectExecutablePath()
+        {
+            string shareXBinRoot = Path.Combine(ParentDir, "ShareX", "bin");
+
+            if (!Directory.Exists(shareXBinRoot))
+            {
+                Console.WriteLine("ShareX binary directory not found: " + shareXBinRoot);
+                TargetPlatform = WinX64;
+                DetectedExecutablePath = Path.Combine(shareXBinRoot, Configuration, WinX64, "ShareX.exe");
+                return;
+            }
+
+            string[] executables = Directory.GetFiles(shareXBinRoot, "ShareX.exe", SearchOption.AllDirectories);
+
+            string? arm64Executable = executables.FirstOrDefault(path =>
+                path.Split(Path.DirectorySeparatorChar)
+                    .Any(segment => segment.Equals(WinArm64, StringComparison.OrdinalIgnoreCase)));
+
+            if (arm64Executable != null)
+            {
+                TargetPlatform = WinArm64;
+                DetectedExecutablePath = arm64Executable;
+                Console.WriteLine($"Detected ShareX executable for {WinArm64}: {arm64Executable}");
+                return;
+            }
+
+            string? x64Executable = executables.FirstOrDefault(path =>
+                path.Split(Path.DirectorySeparatorChar)
+                    .Any(segment => segment.Equals(WinX64, StringComparison.OrdinalIgnoreCase)));
+
+            TargetPlatform = WinX64;
+            DetectedExecutablePath = x64Executable ?? Path.Combine(shareXBinRoot, Configuration, WinX64, "ShareX.exe");
+
+            if (x64Executable != null)
+            {
+                Console.WriteLine($"Detected ShareX executable for {WinX64}: {x64Executable}");
+            }
+            else
+            {
+                Console.WriteLine($"Defaulting platform to {WinX64}. Expected executable path: {DetectedExecutablePath}");
+            }
+        }
+
+        private static string ResolveVersionSourcePath()
+        {
+            if (!string.IsNullOrEmpty(DetectedExecutablePath) && File.Exists(DetectedExecutablePath))
+            {
+                return DetectedExecutablePath;
+            }
+
+            string expectedExecutablePath = ExecutablePath;
+
+            if (!File.Exists(expectedExecutablePath))
+            {
+                string fallbackPlatform = IsArm64 ? WinX64 : WinArm64;
+                string fallbackBinDir = Path.Combine(ParentDir, "ShareX", "bin", Configuration, fallbackPlatform);
+                string fallbackExe = Path.Combine(fallbackBinDir, "ShareX.exe");
+
+                if (File.Exists(fallbackExe))
+                {
+                    Console.WriteLine($"Executable not found at expected path. Falling back to {fallbackPlatform} for version info: {fallbackExe}");
+                    return fallbackExe;
+                }
+
+                Console.WriteLine("Executable not found for version detection at either path:");
+                Console.WriteLine(" - Expected: " + expectedExecutablePath);
+                Console.WriteLine(" - Fallback: " + fallbackExe);
+            }
+
+            return expectedExecutablePath;
         }
 
         private static void UpdateBuildConfig()
