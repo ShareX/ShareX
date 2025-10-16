@@ -52,7 +52,9 @@ namespace ShareX
             }
         }
 
-        private const string UploadersConfigFileName = "UploadersConfig.json";
+    private const string UploadersConfigFileName = "UploadersConfig.json";
+    private const string UploadersConfigFileNamePrefix = "UploadersConfig";
+    private const string UploadersConfigFileNameExtension = ".json";
 
         private static string UploadersConfigFilePath
         {
@@ -71,7 +73,9 @@ namespace ShareX
                     uploadersConfigFolder = Program.PersonalFolder;
                 }
 
-                return Path.Combine(uploadersConfigFolder, UploadersConfigFileName);
+                string uploadersConfigFileName = GetUploadersConfigFileName(uploadersConfigFolder);
+
+                return Path.Combine(uploadersConfigFolder, uploadersConfigFileName);
             }
         }
 
@@ -188,6 +192,46 @@ namespace ShareX
             LoadApplicationConfig();
             LoadUploadersConfig();
             LoadHotkeysConfig();
+        }
+
+        private static string GetUploadersConfigFileName(string destinationFolder)
+        {
+            if (string.IsNullOrEmpty(destinationFolder))
+            {
+                return UploadersConfigFileName;
+            }
+
+            if (Settings?.UseMachineSpecificUploadersConfig == true)
+            {
+                string sanitizedMachineName = FileHelpers.SanitizeFileName(Environment.MachineName);
+
+                if (!string.IsNullOrEmpty(sanitizedMachineName))
+                {
+                    string machineSpecificFileName = $"{UploadersConfigFileNamePrefix}-{sanitizedMachineName}{UploadersConfigFileNameExtension}";
+                    string machineSpecificPath = Path.Combine(destinationFolder, machineSpecificFileName);
+
+                    if (!File.Exists(machineSpecificPath))
+                    {
+                        string defaultFilePath = Path.Combine(destinationFolder, UploadersConfigFileName);
+
+                        if (File.Exists(defaultFilePath))
+                        {
+                            try
+                            {
+                                File.Copy(defaultFilePath, machineSpecificPath, false);
+                            }
+                            catch (IOException)
+                            {
+                                // Ignore copy issues; file may have been created in the meantime.
+                            }
+                        }
+                    }
+
+                    return machineSpecificFileName;
+                }
+            }
+
+            return UploadersConfigFileName;
         }
 
         private static void ApplicationConfigBackwardCompatibilityTasks()
