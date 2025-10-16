@@ -26,6 +26,7 @@
 using Microsoft.Win32;
 using ShareX.HelpersLib;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -73,6 +74,8 @@ namespace ShareX.Setup
         private static bool IsArm64 => TargetPlatform == WinArm64;
         private static string CurrentPlatform => TargetPlatform;
         private static string DetectedExecutablePath;
+    private static bool IsConfigurationOverridden;
+    private static bool IsPlatformOverridden;
 
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, CurrentPlatform);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
@@ -198,6 +201,61 @@ namespace ShareX.Setup
                 Console.WriteLine("Silent: " + Silent);
             }
 
+            CLICommand configurationCommand = cli.GetCommand("Configuration");
+
+            if (configurationCommand != null)
+            {
+                string configurationValue = configurationCommand.Parameter?.Trim();
+
+                if (string.IsNullOrWhiteSpace(configurationValue))
+                {
+                    Console.WriteLine("Configuration argument requires a value.");
+                    Environment.Exit(1);
+                }
+
+                if (!TryMapConfigurationToJob(configurationValue, out SetupJobs overrideJob, out string normalizedConfiguration))
+                {
+                    Console.WriteLine("Invalid configuration: " + configurationValue);
+                    Environment.Exit(1);
+                }
+
+                Job = overrideJob;
+                Configuration = normalizedConfiguration;
+                IsConfigurationOverridden = true;
+                Console.WriteLine("Using configuration override: " + Configuration);
+            }
+
+            CLICommand platformCommand = cli.GetCommand("Platform");
+
+            if (platformCommand != null)
+            {
+                string platformValue = platformCommand.Parameter?.Trim();
+
+                if (string.IsNullOrWhiteSpace(platformValue))
+                {
+                    Console.WriteLine("Platform argument requires a value.");
+                    Environment.Exit(1);
+                }
+
+                if (platformValue.Equals(WinX64, StringComparison.OrdinalIgnoreCase))
+                {
+                    TargetPlatform = WinX64;
+                    IsPlatformOverridden = true;
+                }
+                else if (platformValue.Equals(WinArm64, StringComparison.OrdinalIgnoreCase))
+                {
+                    TargetPlatform = WinArm64;
+                    IsPlatformOverridden = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid platform: " + platformValue);
+                    Environment.Exit(1);
+                }
+
+                Console.WriteLine("Using platform override: " + TargetPlatform);
+            }
+
             if (cli.IsCommandExist("Job"))
             {
                 Console.WriteLine("Job argument detected but ignored; configuration will be auto-detected.");
@@ -241,22 +299,24 @@ namespace ShareX.Setup
 
         private static void ResolveParentDirectory()
         {
-            ParentDir = Directory.GetCurrentDirectory();
+            string startingDirectory = Directory.GetCurrentDirectory();
+            DirectoryInfo current = new DirectoryInfo(startingDirectory);
 
-            if (!File.Exists(SolutionPath))
+            while (current != null)
             {
-                Console.WriteLine("Expected solution path: " + SolutionPath);
-                Console.WriteLine("Invalid parent directory: " + ParentDir);
+                string candidate = Path.Combine(current.FullName, "ShareX.sln");
 
-                ParentDir = FileHelpers.GetAbsolutePath(@"..\..\..\");
-
-                if (!File.Exists(SolutionPath))
+                if (File.Exists(candidate))
                 {
-                    Console.WriteLine("Invalid parent directory: " + ParentDir);
-
-                    Environment.Exit(0);
+                    ParentDir = current.FullName;
+                    return;
                 }
+
+                current = current.Parent;
             }
+
+            Console.WriteLine("ShareX.sln could not be located starting from: " + startingDirectory);
+            Environment.Exit(1);
         }
 
         private static void DetectExecutablePath()
@@ -266,29 +326,75 @@ namespace ShareX.Setup
             if (!Directory.Exists(shareXBinRoot))
             {
                 Console.WriteLine("ShareX binary directory not found: " + shareXBinRoot);
-                TargetPlatform = WinX64;
-                DetectedExecutablePath = Path.Combine(shareXBinRoot, Configuration, WinX64, "ShareX.exe");
+                DetectedExecutablePath = Path.Combine(shareXBinRoot, Configuration, TargetPlatform, "ShareX.exe");
                 return;
             }
 
             string[] executables = Directory.GetFiles(shareXBinRoot, "ShareX.exe", SearchOption.AllDirectories);
 
-            string arm64Executable = executables.FirstOrDefault(path =>
-                path.Split(Path.DirectorySeparatorChar)
-                    .Any(segment => segment.Equals(WinArm64, StringComparison.OrdinalIgnoreCase)));
+            if (executables.Length == 0)
+            {
+                Console.WriteLine("ShareX executable not found under: " + shareXBinRoot);
+                DetectedExecutablePath = Path.Combine(shareXBinRoot, Configuration, TargetPlatform, "ShareX.exe");
+                return;
+            }
+
+            if (IsPlatformOverridden)
+            {
+                string match = FindExecutable(executables, TargetPlatform, IsConfigurationOverridden ? Configuration : null);
+
+                if (match != null)
+                {
+                    DetectedExecutablePath = match;
+                    Console.WriteLine($"Using provided platform {TargetPlatform}: {match}");
+
+                    if (!IsConfigurationOverridden)
+                    {
+                        TryUpdateJobFromExecutablePath(match);
+                    }
+
+                    return;
+                }
+
+                Console.WriteLine($"ShareX executable for {TargetPlatform} not found. Using expected output path.");
+                DetectedExecutablePath = Path.Combine(shareXBinRoot, Configuration, TargetPlatform, "ShareX.exe");
+                return;
+            }
+
+            if (IsConfigurationOverridden)
+            {
+                string match = FindExecutable(executables, null, Configuration);
+
+                if (match != null)
+                {
+                    DetectedExecutablePath = match;
+                    string detectedPlatform = ExtractPlatformFromExecutablePath(match);
+
+                    if (!string.IsNullOrEmpty(detectedPlatform))
+                    {
+                        TargetPlatform = detectedPlatform;
+                    }
+
+                    Console.WriteLine($"Detected executable for configuration {Configuration}: {match}");
+                    return;
+                }
+            }
+
+            string arm64Executable = FindExecutable(executables, WinArm64, null);
 
             if (arm64Executable != null)
             {
                 TargetPlatform = WinArm64;
                 DetectedExecutablePath = arm64Executable;
                 Console.WriteLine($"Detected ShareX executable for {WinArm64}: {arm64Executable}");
-                TryUpdateJobFromExecutablePath(arm64Executable);
+                if (!IsConfigurationOverridden)
+                {
+                    TryUpdateJobFromExecutablePath(arm64Executable);
+                }
                 return;
             }
 
-            string x64Executable = executables.FirstOrDefault(path =>
-                path.Split(Path.DirectorySeparatorChar)
-                    .Any(segment => segment.Equals(WinX64, StringComparison.OrdinalIgnoreCase)));
+            string x64Executable = FindExecutable(executables, WinX64, null);
 
             TargetPlatform = WinX64;
             DetectedExecutablePath = x64Executable ?? Path.Combine(shareXBinRoot, Configuration, WinX64, "ShareX.exe");
@@ -296,12 +402,18 @@ namespace ShareX.Setup
             if (x64Executable != null)
             {
                 Console.WriteLine($"Detected ShareX executable for {WinX64}: {x64Executable}");
-                TryUpdateJobFromExecutablePath(x64Executable);
+                if (!IsConfigurationOverridden)
+                {
+                    TryUpdateJobFromExecutablePath(x64Executable);
+                }
             }
             else
             {
                 Console.WriteLine($"Defaulting platform to {WinX64}. Expected executable path: {DetectedExecutablePath}");
-                TryUpdateJobFromExecutablePath(DetectedExecutablePath);
+                if (!IsConfigurationOverridden)
+                {
+                    TryUpdateJobFromExecutablePath(DetectedExecutablePath);
+                }
             }
         }
 
@@ -572,8 +684,62 @@ namespace ShareX.Setup
             }
         }
 
+        private static string FindExecutable(IEnumerable<string> executables, string requiredPlatform, string preferredConfiguration)
+        {
+            IEnumerable<string> candidates = executables ?? Array.Empty<string>();
+
+            if (!string.IsNullOrEmpty(requiredPlatform))
+            {
+                candidates = candidates.Where(path => PathContainsSegment(path, requiredPlatform));
+            }
+
+            string[] candidateArray = candidates as string[] ?? candidates.ToArray();
+
+            if (candidateArray.Length == 0)
+            {
+                return null;
+            }
+
+            if (!string.IsNullOrEmpty(preferredConfiguration))
+            {
+                string preferredMatch = candidateArray.FirstOrDefault(path => PathContainsSegment(path, preferredConfiguration));
+
+                if (preferredMatch != null)
+                {
+                    return preferredMatch;
+                }
+            }
+
+            return candidateArray.OrderBy(path => path.Length).FirstOrDefault();
+        }
+
+        private static string ExtractPlatformFromExecutablePath(string executablePath)
+        {
+            if (string.IsNullOrEmpty(executablePath))
+            {
+                return null;
+            }
+
+            if (PathContainsSegment(executablePath, WinArm64))
+            {
+                return WinArm64;
+            }
+
+            if (PathContainsSegment(executablePath, WinX64))
+            {
+                return WinX64;
+            }
+
+            return null;
+        }
+
         private static bool TryUpdateJobFromExecutablePath(string executablePath)
         {
+            if (IsConfigurationOverridden)
+            {
+                return false;
+            }
+
             if (string.IsNullOrEmpty(executablePath) || !File.Exists(executablePath))
             {
                 return false;
@@ -586,7 +752,7 @@ namespace ShareX.Setup
                 return false;
             }
 
-            if (!TryMapConfigurationToJob(configurationName, out SetupJobs detectedJob))
+            if (!TryMapConfigurationToJob(configurationName, out SetupJobs detectedJob, out string normalizedConfiguration))
             {
                 return false;
             }
@@ -594,7 +760,7 @@ namespace ShareX.Setup
             if (Job != detectedJob)
             {
                 Job = detectedJob;
-                Configuration = configurationName;
+                Configuration = normalizedConfiguration;
                 Console.WriteLine($"Detected setup job: {Job}");
             }
 
@@ -622,29 +788,54 @@ namespace ShareX.Setup
             return configurationDirectory.Name;
         }
 
-        private static bool TryMapConfigurationToJob(string configurationName, out SetupJobs job)
+        private static bool TryMapConfigurationToJob(string configurationName, out SetupJobs job, out string normalizedConfiguration)
         {
-            switch (configurationName)
+            job = SetupJobs.None;
+            normalizedConfiguration = null;
+
+            if (string.IsNullOrWhiteSpace(configurationName))
             {
-                case "Release":
-                    job = SetupJobs.Release;
-                    return true;
-                case "Debug":
-                    job = SetupJobs.Debug;
-                    return true;
-                case "Steam":
-                    job = SetupJobs.Steam;
-                    return true;
-                case "MicrosoftStore":
-                    job = SetupJobs.MicrosoftStore;
-                    return true;
-                case "MicrosoftStoreDebug":
-                    job = SetupJobs.MicrosoftStoreDebug;
-                    return true;
-                default:
-                    job = SetupJobs.None;
-                    return false;
+                return false;
             }
+
+            string trimmed = configurationName.Trim();
+
+            if (trimmed.Equals("Release", StringComparison.OrdinalIgnoreCase))
+            {
+                job = SetupJobs.Release;
+                normalizedConfiguration = "Release";
+                return true;
+            }
+
+            if (trimmed.Equals("Debug", StringComparison.OrdinalIgnoreCase))
+            {
+                job = SetupJobs.Debug;
+                normalizedConfiguration = "Debug";
+                return true;
+            }
+
+            if (trimmed.Equals("Steam", StringComparison.OrdinalIgnoreCase))
+            {
+                job = SetupJobs.Steam;
+                normalizedConfiguration = "Steam";
+                return true;
+            }
+
+            if (trimmed.Equals("MicrosoftStore", StringComparison.OrdinalIgnoreCase))
+            {
+                job = SetupJobs.MicrosoftStore;
+                normalizedConfiguration = "MicrosoftStore";
+                return true;
+            }
+
+            if (trimmed.Equals("MicrosoftStoreDebug", StringComparison.OrdinalIgnoreCase))
+            {
+                job = SetupJobs.MicrosoftStoreDebug;
+                normalizedConfiguration = "MicrosoftStoreDebug";
+                return true;
+            }
+
+            return false;
         }
 
         private static string ResolveSteamLauncherDirectory()
