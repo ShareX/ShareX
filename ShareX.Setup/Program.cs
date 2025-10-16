@@ -75,7 +75,6 @@ namespace ShareX.Setup
         private static string? DetectedExecutablePath;
 
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, CurrentPlatform);
-        private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", CurrentPlatform, Configuration);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");
@@ -429,10 +428,18 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(SteamOutputDir);
 
-            FileHelpers.CopyFiles(Path.Combine(SteamLauncherDir, "ShareX_Launcher.exe"), SteamOutputDir);
-            FileHelpers.CopyFiles(Path.Combine(SteamLauncherDir, "steam_appid.txt"), SteamOutputDir);
-            FileHelpers.CopyFiles(Path.Combine(SteamLauncherDir, "installscript.vdf"), SteamOutputDir);
-            FileHelpers.CopyFiles(SteamLauncherDir, SteamOutputDir, "*.dll");
+            string? steamLauncherDir = ResolveSteamLauncherDirectory();
+
+            if (string.IsNullOrEmpty(steamLauncherDir))
+            {
+                Console.WriteLine("Steam launcher directory could not be determined. Aborting Steam artifact creation.");
+                Environment.Exit(1);
+            }
+
+            FileHelpers.CopyFiles(Path.Combine(steamLauncherDir, "ShareX_Launcher.exe"), SteamOutputDir);
+            FileHelpers.CopyFiles(Path.Combine(steamLauncherDir, "steam_appid.txt"), SteamOutputDir);
+            FileHelpers.CopyFiles(Path.Combine(steamLauncherDir, "installscript.vdf"), SteamOutputDir);
+            FileHelpers.CopyFiles(steamLauncherDir, SteamOutputDir, "*.dll");
 
             CreateFolder(BinDir, SteamUpdatesDir, SetupJobs.CreateSteamFolder);
         }
@@ -637,6 +644,51 @@ namespace ShareX.Setup
                     job = SetupJobs.None;
                     return false;
             }
+        }
+
+        private static string? ResolveSteamLauncherDirectory()
+        {
+            string steamBinRoot = Path.Combine(ParentDir, "ShareX.Steam", "bin");
+
+            if (!Directory.Exists(steamBinRoot))
+            {
+                Console.WriteLine("Steam binaries directory not found: " + steamBinRoot);
+                return null;
+            }
+
+            string[] launcherPaths = Directory.GetFiles(steamBinRoot, "ShareX_Launcher.exe", SearchOption.AllDirectories);
+
+            if (launcherPaths.Length == 0)
+            {
+                Console.WriteLine("ShareX_Launcher.exe not found under: " + steamBinRoot);
+                return null;
+            }
+
+            string? preferredLauncher = launcherPaths.FirstOrDefault(path =>
+                PathContainsSegment(path, CurrentPlatform) && PathContainsSegment(path, Configuration));
+
+            preferredLauncher ??= launcherPaths.FirstOrDefault(path => PathContainsSegment(path, CurrentPlatform));
+            preferredLauncher ??= launcherPaths.FirstOrDefault();
+
+            string? launcherDir = Path.GetDirectoryName(preferredLauncher);
+
+            if (!string.IsNullOrEmpty(launcherDir))
+            {
+                Console.WriteLine("Detected Steam launcher directory: " + launcherDir);
+            }
+
+            return launcherDir;
+        }
+
+        private static bool PathContainsSegment(string path, string segment)
+        {
+            if (string.IsNullOrEmpty(segment))
+            {
+                return false;
+            }
+
+            string[] parts = path.Split(new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar }, StringSplitOptions.RemoveEmptyEntries);
+            return parts.Any(part => part.Equals(segment, StringComparison.OrdinalIgnoreCase));
         }
     }
 }
