@@ -199,22 +199,9 @@ namespace ShareX.Setup
                 Console.WriteLine("Silent: " + Silent);
             }
 
-            CLICommand command = cli.GetCommand("Job");
-
-            if (command != null)
+            if (cli.IsCommandExist("Job"))
             {
-                string parameter = command.Parameter;
-
-                if (Enum.TryParse(parameter, out SetupJobs job))
-                {
-                    Job = job;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid job: " + parameter);
-
-                    Environment.Exit(0);
-                }
+                Console.WriteLine("Job argument detected but ignored; configuration will be auto-detected.");
             }
         }
 
@@ -295,6 +282,7 @@ namespace ShareX.Setup
                 TargetPlatform = WinArm64;
                 DetectedExecutablePath = arm64Executable;
                 Console.WriteLine($"Detected ShareX executable for {WinArm64}: {arm64Executable}");
+                TryUpdateJobFromExecutablePath(arm64Executable);
                 return;
             }
 
@@ -308,10 +296,12 @@ namespace ShareX.Setup
             if (x64Executable != null)
             {
                 Console.WriteLine($"Detected ShareX executable for {WinX64}: {x64Executable}");
+                TryUpdateJobFromExecutablePath(x64Executable);
             }
             else
             {
                 Console.WriteLine($"Defaulting platform to {WinX64}. Expected executable path: {DetectedExecutablePath}");
+                TryUpdateJobFromExecutablePath(DetectedExecutablePath);
             }
         }
 
@@ -571,6 +561,81 @@ namespace ShareX.Setup
                 Console.WriteLine("Creating checksum file: " + filePath);
 
                 Helpers.CreateChecksumFile(filePath);
+            }
+        }
+
+        private static bool TryUpdateJobFromExecutablePath(string executablePath)
+        {
+            if (string.IsNullOrEmpty(executablePath) || !File.Exists(executablePath))
+            {
+                return false;
+            }
+
+            string? configurationName = TryExtractConfigurationFromExecutablePath(executablePath);
+
+            if (string.IsNullOrEmpty(configurationName))
+            {
+                return false;
+            }
+
+            if (!TryMapConfigurationToJob(configurationName, out SetupJobs detectedJob))
+            {
+                return false;
+            }
+
+            if (Job != detectedJob)
+            {
+                Job = detectedJob;
+                Configuration = configurationName;
+                Console.WriteLine($"Detected setup job: {Job}");
+            }
+
+            return true;
+        }
+
+        private static string? TryExtractConfigurationFromExecutablePath(string executablePath)
+        {
+            FileInfo exeInfo = new FileInfo(executablePath);
+
+            DirectoryInfo? platformDirectory = exeInfo.Directory;
+            DirectoryInfo? configurationDirectory = platformDirectory?.Parent;
+            DirectoryInfo? binDirectory = configurationDirectory?.Parent;
+
+            if (platformDirectory == null || configurationDirectory == null || binDirectory == null)
+            {
+                return null;
+            }
+
+            if (!binDirectory.Name.Equals("bin", StringComparison.OrdinalIgnoreCase))
+            {
+                return null;
+            }
+
+            return configurationDirectory.Name;
+        }
+
+        private static bool TryMapConfigurationToJob(string configurationName, out SetupJobs job)
+        {
+            switch (configurationName)
+            {
+                case "Release":
+                    job = SetupJobs.Release;
+                    return true;
+                case "Debug":
+                    job = SetupJobs.Debug;
+                    return true;
+                case "Steam":
+                    job = SetupJobs.Steam;
+                    return true;
+                case "MicrosoftStore":
+                    job = SetupJobs.MicrosoftStore;
+                    return true;
+                case "MicrosoftStoreDebug":
+                    job = SetupJobs.MicrosoftStoreDebug;
+                    return true;
+                default:
+                    job = SetupJobs.None;
+                    return false;
             }
         }
     }

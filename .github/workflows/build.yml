@@ -112,9 +112,9 @@ jobs:
             Write-Error "Setup executable not found at $setupExe"
             exit 1
           }
-          $jobArgs = "-silent -job `"${{ matrix.configuration }}`" -platform `"${{ matrix.platform }}`""
-          Write-Host "Running: $setupExe $jobArgs"
-          & $setupExe $jobArgs
+          $setupArgs = "-silent"
+          Write-Host "Running: $setupExe $setupArgs"
+          & $setupExe $setupArgs
           
           # List what was created in Output folder
           Write-Host "`nFiles created in Output folder:"
