@@ -72,7 +72,7 @@ namespace ShareX.Setup
         private static string TargetPlatform = WinX64;
         private static bool IsArm64 => TargetPlatform == WinArm64;
         private static string CurrentPlatform => TargetPlatform;
-        private static string? DetectedExecutablePath;
+    private static string DetectedExecutablePath;
 
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, CurrentPlatform);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
@@ -272,7 +272,7 @@ namespace ShareX.Setup
 
             string[] executables = Directory.GetFiles(shareXBinRoot, "ShareX.exe", SearchOption.AllDirectories);
 
-            string? arm64Executable = executables.FirstOrDefault(path =>
+            string arm64Executable = executables.FirstOrDefault(path =>
                 path.Split(Path.DirectorySeparatorChar)
                     .Any(segment => segment.Equals(WinArm64, StringComparison.OrdinalIgnoreCase)));
 
@@ -285,7 +285,7 @@ namespace ShareX.Setup
                 return;
             }
 
-            string? x64Executable = executables.FirstOrDefault(path =>
+            string x64Executable = executables.FirstOrDefault(path =>
                 path.Split(Path.DirectorySeparatorChar)
                     .Any(segment => segment.Equals(WinX64, StringComparison.OrdinalIgnoreCase)));
 
@@ -428,7 +428,7 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(SteamOutputDir);
 
-            string? steamLauncherDir = ResolveSteamLauncherDirectory();
+            string steamLauncherDir = ResolveSteamLauncherDirectory();
 
             if (string.IsNullOrEmpty(steamLauncherDir))
             {
@@ -578,7 +578,7 @@ namespace ShareX.Setup
                 return false;
             }
 
-            string? configurationName = TryExtractConfigurationFromExecutablePath(executablePath);
+            string configurationName = TryExtractConfigurationFromExecutablePath(executablePath);
 
             if (string.IsNullOrEmpty(configurationName))
             {
@@ -600,13 +600,13 @@ namespace ShareX.Setup
             return true;
         }
 
-        private static string? TryExtractConfigurationFromExecutablePath(string executablePath)
+        private static string TryExtractConfigurationFromExecutablePath(string executablePath)
         {
             FileInfo exeInfo = new FileInfo(executablePath);
 
-            DirectoryInfo? platformDirectory = exeInfo.Directory;
-            DirectoryInfo? configurationDirectory = platformDirectory?.Parent;
-            DirectoryInfo? binDirectory = configurationDirectory?.Parent;
+            DirectoryInfo platformDirectory = exeInfo.Directory;
+            DirectoryInfo configurationDirectory = platformDirectory?.Parent;
+            DirectoryInfo binDirectory = configurationDirectory?.Parent;
 
             if (platformDirectory == null || configurationDirectory == null || binDirectory == null)
             {
@@ -646,7 +646,7 @@ namespace ShareX.Setup
             }
         }
 
-        private static string? ResolveSteamLauncherDirectory()
+        private static string ResolveSteamLauncherDirectory()
         {
             string steamBinRoot = Path.Combine(ParentDir, "ShareX.Steam", "bin");
 
@@ -664,13 +664,13 @@ namespace ShareX.Setup
                 return null;
             }
 
-            string? preferredLauncher = launcherPaths.FirstOrDefault(path =>
+            string preferredLauncher = launcherPaths.FirstOrDefault(path =>
                 PathContainsSegment(path, CurrentPlatform) && PathContainsSegment(path, Configuration));
 
             preferredLauncher ??= launcherPaths.FirstOrDefault(path => PathContainsSegment(path, CurrentPlatform));
             preferredLauncher ??= launcherPaths.FirstOrDefault();
 
-            string? launcherDir = Path.GetDirectoryName(preferredLauncher);
+            string launcherDir = Path.GetDirectoryName(preferredLauncher);
 
             if (!string.IsNullOrEmpty(launcherDir))
             {
