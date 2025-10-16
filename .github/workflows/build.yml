@@ -128,42 +128,42 @@ jobs:
         if: matrix.configuration == 'Release'
         uses: actions/upload-artifact@v4
         with:
-          name: Setup-${{ matrix.platform }}
+          name: ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-setup
           path: Output\ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-setup.exe
 
       - name: Upload artifact Portable
         if: matrix.configuration == 'Release'
         uses: actions/upload-artifact@v4
         with:
-          name: Portable-${{ matrix.platform }}
+          name: ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-portable
           path: Output\ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-portable.zip
 
       - name: Upload artifact Debug
         if: matrix.configuration == 'Debug'
         uses: actions/upload-artifact@v4
         with:
-          name: Debug-${{ matrix.platform }}
+          name: ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-debug
           path: Output\ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-debug.zip
 
       - name: Upload artifact Steam
         if: matrix.configuration == 'Steam'
         uses: actions/upload-artifact@v4
         with:
-          name: Steam-${{ matrix.platform }}
+          name: ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-Steam
           path: Output\ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-Steam.zip
 
       - name: Upload artifact MicrosoftStore
         if: matrix.configuration == 'MicrosoftStore'
         uses: actions/upload-artifact@v4
         with:
-          name: MicrosoftStore-${{ matrix.platform }}
+          name: ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-MicrosoftStore
           path: Output\ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}.appx
 
       - name: Upload artifact MicrosoftStoreDebug
         if: matrix.configuration == 'MicrosoftStoreDebug'
         uses: actions/upload-artifact@v4
         with:
-          name: MicrosoftStoreDebug-${{ matrix.platform }}
+          name: ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-MicrosoftStoreDebug
           path: Output\ShareX-${{ env.APP_VERSION }}-${{ matrix.platform }}-debug.appx
 
   release:
@@ -178,73 +178,73 @@ jobs:
       RELEASE_BODY_PATH: RELEASE_BODY.md
       APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
     steps:
-      - name: Download artifact Setup win-x64
+      - name: Download artifact ShareX setup win-x64
         uses: actions/download-artifact@v4
         with:
-          name: Setup-win-x64
+          name: ShareX-${{ env.APP_VERSION }}-win-x64-setup
           path: Output
-      - name: Download artifact Setup win-arm64
+      - name: Download artifact ShareX setup win-arm64
         uses: actions/download-artifact@v4
         with:
-          name: Setup-win-arm64
+          name: ShareX-${{ env.APP_VERSION }}-win-arm64-setup
           path: Output
-      - name: Download artifact Portable win-x64
+      - name: Download artifact ShareX portable win-x64
         uses: actions/download-artifact@v4
         with:
-          name: Portable-win-x64
+          name: ShareX-${{ env.APP_VERSION }}-win-x64-portable
           path: Output
-      - name: Download artifact Portable win-arm64
+      - name: Download artifact ShareX portable win-arm64
         uses: actions/download-artifact@v4
         with:
-          name: Portable-win-arm64
+          name: ShareX-${{ env.APP_VERSION }}-win-arm64-portable
           path: Output
-      - name: Download artifact Debug win-x64
+      - name: Download artifact ShareX debug win-x64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
-          name: Debug-win-x64
+          name: ShareX-${{ env.APP_VERSION }}-win-x64-debug
           path: Output
-      - name: Download artifact Debug win-arm64
+      - name: Download artifact ShareX debug win-arm64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
-          name: Debug-win-arm64
+          name: ShareX-${{ env.APP_VERSION }}-win-arm64-debug
           path: Output
-      - name: Download artifact Steam win-x64
+      - name: Download artifact ShareX Steam win-x64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
-          name: Steam-win-x64
+          name: ShareX-${{ env.APP_VERSION }}-win-x64-Steam
           path: Output
-      - name: Download artifact Steam win-arm64
+      - name: Download artifact ShareX Steam win-arm64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
-          name: Steam-win-arm64
+          name: ShareX-${{ env.APP_VERSION }}-win-arm64-Steam
           path: Output
-      - name: Download artifact MicrosoftStore win-x64
+      - name: Download artifact ShareX MicrosoftStore win-x64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
-          name: MicrosoftStore-win-x64
+          name: ShareX-${{ env.APP_VERSION }}-win-x64-MicrosoftStore
           path: Output
-      - name: Download artifact MicrosoftStore win-arm64
+      - name: Download artifact ShareX MicrosoftStore win-arm64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
-          name: MicrosoftStore-win-arm64
+          name: ShareX-${{ env.APP_VERSION }}-win-arm64-MicrosoftStore
           path: Output
-      - name: Download artifact MicrosoftStoreDebug win-x64
+      - name: Download artifact ShareX MicrosoftStoreDebug win-x64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
-          name: MicrosoftStoreDebug-win-x64
+          name: ShareX-${{ env.APP_VERSION }}-win-x64-MicrosoftStoreDebug
           path: Output
-      - name: Download artifact MicrosoftStoreDebug win-arm64
+      - name: Download artifact ShareX MicrosoftStoreDebug win-arm64
         if: github.ref == 'refs/heads/develop'
         uses: actions/download-artifact@v4
         with:
-          name: MicrosoftStoreDebug-win-arm64
+          name: ShareX-${{ env.APP_VERSION }}-win-arm64-MicrosoftStoreDebug
           path: Output
       - name: Create release body file
         shell: pwsh
