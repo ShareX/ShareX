@@ -72,7 +72,7 @@ namespace ShareX.Setup
         private static string TargetPlatform = WinX64;
         private static bool IsArm64 => TargetPlatform == WinArm64;
         private static string CurrentPlatform => TargetPlatform;
-    private static string DetectedExecutablePath;
+        private static string DetectedExecutablePath;
 
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, CurrentPlatform);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
@@ -92,9 +92,9 @@ namespace ShareX.Setup
         private static string PortableZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-portable.zip");
         private static string DebugZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-debug.zip");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
-    private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-Steam.zip");
-    private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}.appx");
-    private static string MicrosoftStoreDebugAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-debug.appx");
+        private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-Steam.zip");
+        private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}.appx");
+        private static string MicrosoftStoreDebugAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-{CurrentPlatform}-debug.appx");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, $"recorder-devices-{RecorderDevicesVersion}-setup.exe");
         private static string ExifToolPath => Path.Combine(OutputDir, "exiftool.exe");
@@ -245,6 +245,7 @@ namespace ShareX.Setup
 
             if (!File.Exists(SolutionPath))
             {
+                Console.WriteLine("Expected solution path: " + SolutionPath);
                 Console.WriteLine("Invalid parent directory: " + ParentDir);
 
                 ParentDir = FileHelpers.GetAbsolutePath(@"..\..\..\");
