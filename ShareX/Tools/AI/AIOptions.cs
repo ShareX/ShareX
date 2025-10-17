@@ -27,11 +27,31 @@ using ShareX.HelpersLib;
 
 namespace ShareX
 {
+    public enum AIProvider
+    {
+        OpenAI,
+        Gemini,
+        OpenRouter,
+        Custom
+    }
+
     public class AIOptions
     {
-        public string Model { get; set; } = "gpt-5-mini";
+        public AIProvider Provider { get; set; } = AIProvider.OpenAI;
+
         [JsonEncrypt]
-        public string ChatGPTAPIKey { get; set; }
+        public string OpenAIAPIKey { get; set; }
+        public string OpenAIModel { get; set; } = "gpt-4o-mini";
+        public string OpenAICustomURL { get; set; }
+
+        [JsonEncrypt]
+        public string GeminiAPIKey { get; set; }
+        public string GeminiModel { get; set; } = "gemini-1.5-flash-latest";
+
+        [JsonEncrypt]
+        public string OpenRouterAPIKey { get; set; }
+        public string OpenRouterModel { get; set; } = "google/gemini-flash-1.5";
+
         public string ReasoningEffort { get; set; } = "minimal";
         public string Verbosity { get; set; } = "medium";
         public string Input { get; set; } = "What is in this image?";
