@@ -51,12 +51,18 @@ namespace ShareX.HelpersLib
 
         private static IntPtr SetHook(int hookType, HookProc hookProc)
         {
-            using (Process currentProcess = Process.GetCurrentProcess())
-            using (ProcessModule currentModule = currentProcess.MainModule)
+            IntPtr moduleHandle = NativeMethods.GetModuleHandle(null);
+
+            if (moduleHandle == IntPtr.Zero)
             {
-                IntPtr moduleHandle = NativeMethods.GetModuleHandle(currentModule.ModuleName);
-                return NativeMethods.SetWindowsHookEx(hookType, hookProc, moduleHandle, 0);
+                using (Process currentProcess = Process.GetCurrentProcess())
+                using (ProcessModule currentModule = currentProcess.MainModule)
+                {
+                    moduleHandle = NativeMethods.GetModuleHandle(currentModule.ModuleName);
+                }
             }
+
+            return NativeMethods.SetWindowsHookEx(hookType, hookProc, moduleHandle, 0);
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
@@ -80,7 +86,7 @@ namespace ShareX.HelpersLib
 
                 if (handled)
                 {
-                    return keyboardHookHandle;
+                    return (IntPtr)1;
                 }
             }
 

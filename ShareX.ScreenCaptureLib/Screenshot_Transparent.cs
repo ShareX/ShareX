@@ -37,7 +37,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public Bitmap CaptureWindowTransparent(IntPtr handle)
         {
-            if (handle.ToInt32() > 0)
+            if (handle != IntPtr.Zero)
             {
                 Rectangle rect = CaptureHelpers.GetWindowRectangle(handle);
 

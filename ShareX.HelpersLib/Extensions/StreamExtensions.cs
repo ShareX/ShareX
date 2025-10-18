@@ -140,7 +140,7 @@ namespace ShareX.HelpersLib
 
         public static T Read<T>(this Stream stream)
         {
-            byte[] buffer = new byte[Marshal.SizeOf(typeof(T))];
+            byte[] buffer = new byte[Marshal.SizeOf<T>()];
             int bytes = stream.Read(buffer, 0, buffer.Length);
             if (bytes == 0) throw new InvalidOperationException("End-of-file reached");
             if (bytes != buffer.Length) throw new ArgumentException("File contains bad data");

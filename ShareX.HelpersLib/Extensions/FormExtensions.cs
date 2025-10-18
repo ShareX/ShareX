@@ -102,12 +102,12 @@ namespace ShareX.HelpersLib
 
         public static void BeginUpdate(this RichTextBox rtb)
         {
-            NativeMethods.SendMessage(rtb.Handle, (int)WindowsMessages.SETREDRAW, 0, 0);
+            NativeMethods.SendMessage(rtb.Handle, (uint)WindowsMessages.SETREDRAW, IntPtr.Zero, IntPtr.Zero);
         }
 
         public static void EndUpdate(this RichTextBox rtb)
         {
-            NativeMethods.SendMessage(rtb.Handle, (int)WindowsMessages.SETREDRAW, 1, 0);
+            NativeMethods.SendMessage(rtb.Handle, (uint)WindowsMessages.SETREDRAW, (IntPtr)1, IntPtr.Zero);
             rtb.Invalidate();
         }
 
@@ -221,7 +221,7 @@ namespace ShareX.HelpersLib
         {
             if (textBox != null && textBox.IsHandleCreated && watermarkText != null)
             {
-                NativeMethods.SendMessage(textBox.Handle, (int)NativeConstants.EM_SETCUEBANNER, showCueWhenFocus ? 1 : 0, watermarkText);
+                NativeMethods.SendMessage(textBox.Handle, (int)NativeConstants.EM_SETCUEBANNER, showCueWhenFocus ? (IntPtr)1 : IntPtr.Zero, watermarkText);
             }
         }
 

@@ -86,11 +86,11 @@ namespace ShareX.HelpersLib
         {
             get
             {
-                return (WindowStyles)(ulong)NativeMethods.GetWindowLong(Handle, NativeConstants.GWL_STYLE);
+                return (WindowStyles)(ulong)NativeMethods.GetWindowLongSafe(Handle, NativeConstants.GWL_STYLE);
             }
             set
             {
-                NativeMethods.SetWindowLong(Handle, NativeConstants.GWL_STYLE, (IntPtr)value);
+                NativeMethods.SetWindowLongSafe(Handle, NativeConstants.GWL_STYLE, (IntPtr)value);
             }
         }
 
@@ -98,11 +98,11 @@ namespace ShareX.HelpersLib
         {
             get
             {
-                return (WindowStyles)(ulong)NativeMethods.GetWindowLong(Handle, NativeConstants.GWL_EXSTYLE);
+                return (WindowStyles)(ulong)NativeMethods.GetWindowLongSafe(Handle, NativeConstants.GWL_EXSTYLE);
             }
             set
             {
-                NativeMethods.SetWindowLong(Handle, NativeConstants.GWL_EXSTYLE, (IntPtr)value);
+                NativeMethods.SetWindowLongSafe(Handle, NativeConstants.GWL_EXSTYLE, (IntPtr)value);
             }
         }
 

@@ -47,7 +47,7 @@ namespace ShareX.HelpersLib
         protected Quantizer(bool singlePass)
         {
             _singlePass = singlePass;
-            _pixelSize = Marshal.SizeOf(typeof(Color32));
+            _pixelSize = Marshal.SizeOf<Color32>();
         }
 
         /// <summary>

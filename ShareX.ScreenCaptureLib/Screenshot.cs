@@ -59,7 +59,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Bitmap CaptureWindow(IntPtr handle)
         {
-            if (handle.ToInt32() > 0)
+            if (handle != IntPtr.Zero)
             {
                 Rectangle rect;
 

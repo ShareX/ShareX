@@ -210,7 +210,10 @@ namespace ShareX.HelpersLib
 
             if (DisableDeselect && m.Msg >= (int)WindowsMessages.LBUTTONDOWN && m.Msg <= (int)WindowsMessages.MBUTTONDBLCLK)
             {
-                Point pos = new Point(m.LParam.ToInt32() & 0xffff, m.LParam.ToInt32() >> 16);
+                long lParam = m.LParam.ToInt64();
+                int x = unchecked((short)(lParam & 0xFFFF));
+                int y = unchecked((short)((lParam >> 16) & 0xFFFF));
+                Point pos = new Point(x, y);
                 ListViewHitTestInfo hit = HitTest(pos);
                 switch (hit.Location)
                 {

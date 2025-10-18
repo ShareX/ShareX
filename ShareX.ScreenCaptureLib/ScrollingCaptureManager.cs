@@ -108,7 +108,7 @@ namespace ShareX.ScreenCaptureLib
                     if (Options.AutoScrollTop)
                     {
                         InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
-                        NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
+                        NativeMethods.SendMessage(selectedWindow.Handle, (uint)WindowsMessages.VSCROLL, (IntPtr)ScrollBarCommands.SB_TOP, IntPtr.Zero);
 
                         await Task.Delay(Options.ScrollDelay);
                     }
@@ -144,7 +144,7 @@ namespace ShareX.ScreenCaptureLib
                             case ScrollMethod.ScrollMessage:
                                 for (int i = 0; i < Options.ScrollAmount; i++)
                                 {
-                                    NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_LINEDOWN, 0);
+                                    NativeMethods.SendMessage(selectedWindow.Handle, (uint)WindowsMessages.VSCROLL, (IntPtr)ScrollBarCommands.SB_LINEDOWN, IntPtr.Zero);
                                 }
                                 break;
                         }

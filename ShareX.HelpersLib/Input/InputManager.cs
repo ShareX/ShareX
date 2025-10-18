@@ -47,7 +47,7 @@ namespace ShareX.HelpersLib
         {
             INPUT[] inputList = InputList.ToArray();
             uint len = (uint)inputList.Length;
-            uint successfulInputs = NativeMethods.SendInput(len, inputList, Marshal.SizeOf(typeof(INPUT)));
+            uint successfulInputs = NativeMethods.SendInput(len, inputList, Marshal.SizeOf<INPUT>());
             if (AutoClearAfterSend) ClearInputs();
             return successfulInputs == len;
         }
@@ -184,9 +184,25 @@ namespace ShareX.HelpersLib
             INPUT input = new INPUT();
             input.Type = InputType.InputMouse;
             input.Data.Mouse = new MOUSEINPUT();
-            input.Data.Mouse.dx = (int)Math.Ceiling((double)(x * 65535) / NativeMethods.GetSystemMetrics(SystemMetric.SM_CXSCREEN)) + 1;
-            input.Data.Mouse.dy = (int)Math.Ceiling((double)(y * 65535) / NativeMethods.GetSystemMetrics(SystemMetric.SM_CYSCREEN)) + 1;
-            input.Data.Mouse.dwFlags = MouseEventFlags.MOUSEEVENTF_MOVE | MouseEventFlags.MOUSEEVENTF_ABSOLUTE;
+            int originX = NativeMethods.GetSystemMetrics(SystemMetric.SM_XVIRTUALSCREEN);
+            int originY = NativeMethods.GetSystemMetrics(SystemMetric.SM_YVIRTUALSCREEN);
+            int width = NativeMethods.GetSystemMetrics(SystemMetric.SM_CXVIRTUALSCREEN);
+            int height = NativeMethods.GetSystemMetrics(SystemMetric.SM_CYVIRTUALSCREEN);
+
+            if (width <= 0 || height <= 0)
+            {
+                width = NativeMethods.GetSystemMetrics(SystemMetric.SM_CXSCREEN);
+                height = NativeMethods.GetSystemMetrics(SystemMetric.SM_CYSCREEN);
+                originX = 0;
+                originY = 0;
+            }
+
+            double normalizedX = ((double)(x - originX) * 65535.0) / Math.Max(width - 1, 1);
+            double normalizedY = ((double)(y - originY) * 65535.0) / Math.Max(height - 1, 1);
+
+            input.Data.Mouse.dx = (int)Math.Round(normalizedX);
+            input.Data.Mouse.dy = (int)Math.Round(normalizedY);
+            input.Data.Mouse.dwFlags = MouseEventFlags.MOUSEEVENTF_MOVE | MouseEventFlags.MOUSEEVENTF_ABSOLUTE | MouseEventFlags.MOUSEEVENTF_VIRTUALDESK;
             InputList.Add(input);
         }
 

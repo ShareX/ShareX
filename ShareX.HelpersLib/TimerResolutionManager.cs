@@ -52,7 +52,7 @@ namespace ShareX.HelpersLib
                 if (!enabled)
                 {
                     TimeCaps timeCaps = new TimeCaps();
-                    uint result = NativeMethods.TimeGetDevCaps(ref timeCaps, (uint)Marshal.SizeOf(typeof(TimeCaps)));
+                    uint result = NativeMethods.TimeGetDevCaps(ref timeCaps, (uint)Marshal.SizeOf<TimeCaps>());
 
                     if (result == 0)
                     {

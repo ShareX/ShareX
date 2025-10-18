@@ -1100,7 +1100,7 @@ namespace ShareX
             {
                 IntPtr handle = NativeMethods.GetForegroundWindow();
 
-                if (handle.ToInt32() > 0)
+                if (handle != IntPtr.Zero)
                 {
                     BorderlessWindowManager.ToggleBorderlessWindow(handle, taskSettings.ToolsSettings.BorderlessWindowSettings.ExcludeTaskbarArea);
 
@@ -1121,7 +1121,7 @@ namespace ShareX
             {
                 IntPtr handle = NativeMethods.GetForegroundWindow();
 
-                if (handle.ToInt32() > 0)
+                if (handle != IntPtr.Zero)
                 {
                     WindowInfo windowInfo = new WindowInfo(handle);
                     windowInfo.TopMost = !windowInfo.TopMost;

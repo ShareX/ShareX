@@ -1290,7 +1290,7 @@ namespace ShareX.ScreenCaptureLib
             if (e.Button == MouseButtons.Left)
             {
                 NativeMethods.ReleaseCapture();
-                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
+                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (IntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
             }
             else if (e.Button == MouseButtons.Right)
             {

@@ -34,6 +34,11 @@ namespace ShareX.HelpersLib
 {
     public static partial class NativeMethods
     {
+        static NativeMethods()
+        {
+            NativeStructValidation.Ensure();
+        }
+
         public static string GetForegroundWindowText()
         {
             IntPtr handle = GetForegroundWindow();
@@ -128,7 +133,7 @@ namespace ShareX.HelpersLib
             return new IntPtr(GetClassLong(hWnd, nIndex));
         }
 
-        public static IntPtr GetWindowLong(IntPtr hWnd, int nIndex)
+        public static IntPtr GetWindowLongSafe(IntPtr hWnd, int nIndex)
         {
             if (IntPtr.Size == 4)
             {
@@ -138,7 +143,7 @@ namespace ShareX.HelpersLib
             return GetWindowLongPtr64(hWnd, nIndex);
         }
 
-        public static IntPtr SetWindowLong(IntPtr hWnd, int nIndex, IntPtr dwNewLong)
+        public static IntPtr SetWindowLongSafe(IntPtr hWnd, int nIndex, IntPtr dwNewLong)
         {
             if (IntPtr.Size == 4)
             {
@@ -152,11 +157,11 @@ namespace ShareX.HelpersLib
         {
             IntPtr iconHandle;
 
-            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_SMALL2, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
+            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, (IntPtr)NativeConstants.ICON_SMALL2, IntPtr.Zero, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
 
             if (iconHandle == IntPtr.Zero)
             {
-                SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_SMALL, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
+                SendMessageTimeout(handle, (int)WindowsMessages.GETICON, (IntPtr)NativeConstants.ICON_SMALL, IntPtr.Zero, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
 
                 if (iconHandle == IntPtr.Zero)
                 {
@@ -164,7 +169,7 @@ namespace ShareX.HelpersLib
 
                     if (iconHandle == IntPtr.Zero)
                     {
-                        SendMessageTimeout(handle, (int)WindowsMessages.QUERYDRAGICON, 0, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
+                        SendMessageTimeout(handle, (int)WindowsMessages.QUERYDRAGICON, IntPtr.Zero, IntPtr.Zero, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
                     }
                 }
             }
@@ -179,7 +184,7 @@ namespace ShareX.HelpersLib
 
         private static Icon GetBigApplicationIcon(IntPtr handle)
         {
-            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_BIG, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out IntPtr iconHandle);
+            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, (IntPtr)NativeConstants.ICON_BIG, IntPtr.Zero, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out IntPtr iconHandle);
 
             if (iconHandle == IntPtr.Zero)
             {
@@ -226,20 +231,37 @@ namespace ShareX.HelpersLib
 
         public static bool IsDWMEnabled()
         {
-            return Helpers.IsWindowsVistaOrGreater() && DwmIsCompositionEnabled();
+            if (!Helpers.IsWindowsVistaOrGreater())
+            {
+                return false;
+            }
+
+            try
+            {
+                DwmIsCompositionEnabled(out bool enabled);
+                return enabled;
+            }
+            catch (DllNotFoundException)
+            {
+            }
+            catch (EntryPointNotFoundException)
+            {
+            }
+
+            return false;
         }
 
         public static bool GetExtendedFrameBounds(IntPtr handle, out Rectangle rectangle)
         {
-            int result = DwmGetWindowAttribute(handle, (int)DWMWINDOWATTRIBUTE.DWMWA_EXTENDED_FRAME_BOUNDS, out RECT rect, Marshal.SizeOf(typeof(RECT)));
+            int result = DwmGetWindowAttribute(handle, (int)DWMWINDOWATTRIBUTE.DWMWA_EXTENDED_FRAME_BOUNDS, out RECT rect, Marshal.SizeOf<RECT>());
             rectangle = rect;
             return result == 0;
         }
 
         public static bool GetNCRenderingEnabled(IntPtr handle)
         {
-            int result = DwmGetWindowAttribute(handle, (int)DWMWINDOWATTRIBUTE.DWMWA_NCRENDERING_ENABLED, out bool enabled, sizeof(bool));
-            return result == 0 && enabled;
+            int result = DwmGetWindowAttribute(handle, (int)DWMWINDOWATTRIBUTE.DWMWA_NCRENDERING_ENABLED, out int enabled, sizeof(int));
+            return result == 0 && enabled != 0;
         }
 
         public static void SetNCRenderingPolicy(IntPtr handle, DWMNCRENDERINGPOLICY renderingPolicy)
@@ -413,7 +435,7 @@ namespace ShareX.HelpersLib
             IntPtr[] infPtrs = new IntPtr[1];
 
             // alloc unmanaged memory
-            IntPtr mem = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(AVICOMPRESSOPTIONS)));
+            IntPtr mem = Marshal.AllocHGlobal(Marshal.SizeOf<AVICOMPRESSOPTIONS>());
 
             // copy from managed structure to unmanaged memory
             Marshal.StructureToPtr(options, mem, false);

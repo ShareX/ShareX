@@ -59,11 +59,11 @@ namespace ShareX.HelpersLib
 
             if (ScrollToEnd)
             {
-                NativeMethods.SendMessage(rtbText.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_BOTTOM, 0);
+                NativeMethods.SendMessage(rtbText.Handle, (uint)WindowsMessages.VSCROLL, (IntPtr)ScrollBarCommands.SB_BOTTOM, IntPtr.Zero);
             }
             else
             {
-                NativeMethods.SendMessage(rtbText.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
+                NativeMethods.SendMessage(rtbText.Handle, (uint)WindowsMessages.VSCROLL, (IntPtr)ScrollBarCommands.SB_TOP, IntPtr.Zero);
             }
         }
     }

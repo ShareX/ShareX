@@ -228,7 +228,7 @@ namespace ShareX.HelpersLib
         }
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct WINDOWINFO
     {
         public uint cbSize;
@@ -245,11 +245,12 @@ namespace ShareX.HelpersLib
         public static WINDOWINFO Create()
         {
             WINDOWINFO wi = new WINDOWINFO();
-            wi.cbSize = (uint)Marshal.SizeOf(typeof(WINDOWINFO));
+            wi.cbSize = (uint)Marshal.SizeOf<WINDOWINFO>();
             return wi;
         }
     }
 
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct WINDOWPLACEMENT
     {
         public int length;
@@ -268,7 +269,7 @@ namespace ShareX.HelpersLib
         public byte AlphaFormat;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct APPBARDATA
     {
         public int cbSize;
@@ -281,21 +282,21 @@ namespace ShareX.HelpersLib
         public static APPBARDATA NewAPPBARDATA()
         {
             APPBARDATA abd = new APPBARDATA();
-            abd.cbSize = Marshal.SizeOf(typeof(APPBARDATA));
+            abd.cbSize = Marshal.SizeOf<APPBARDATA>();
             return abd;
         }
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct DWM_BLURBEHIND
     {
         public DWM_BB dwFlags;
-        public bool fEnable;
+        public int fEnable;
         public IntPtr hRgnBlur;
-        public bool fTransitionOnMaximized;
+        public int fTransitionOnMaximized;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct MARGINS
     {
         public int leftWidth;
@@ -304,18 +305,18 @@ namespace ShareX.HelpersLib
         public int bottomHeight;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct DWM_THUMBNAIL_PROPERTIES
     {
         public int dwFlags;
         public RECT rcDestination;
         public RECT rcSource;
         public byte opacity;
-        public bool fVisible;
-        public bool fSourceClientAreaOnly;
+        public int fVisible;
+        public int fSourceClientAreaOnly;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct CursorInfo
     {
         /// <summary>
@@ -660,7 +661,7 @@ namespace ShareX.HelpersLib
 
         public BITMAPINFOHEADER(int width, int height, ushort bpp)
         {
-            biSize = (uint)Marshal.SizeOf(typeof(BITMAPINFOHEADER));
+            biSize = (uint)Marshal.SizeOf<BITMAPINFOHEADER>();
             biPlanes = 1;
             biCompression = BI_COMPRESSION.BI_RGB;
             biWidth = width;
@@ -726,13 +727,14 @@ namespace ShareX.HelpersLib
         public CIEXYZ ciexyzBlue;
     }
 
+    [StructLayout(LayoutKind.Sequential, Pack = 8)]
     public struct INPUT
     {
         public InputType Type;
         public InputUnion Data;
     }
 
-    [StructLayout(LayoutKind.Explicit)]
+    [StructLayout(LayoutKind.Explicit, Pack = 8)]
     public struct InputUnion
     {
         [FieldOffset(0)]
@@ -745,7 +747,7 @@ namespace ShareX.HelpersLib
         public HARDWAREINPUT Hardware;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 8)]
     public struct MOUSEINPUT
     {
         public int dx;
@@ -756,7 +758,7 @@ namespace ShareX.HelpersLib
         public IntPtr dwExtraInfo;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 8)]
     public struct KEYBDINPUT
     {
         public VirtualKeyCode wVk;
@@ -766,12 +768,12 @@ namespace ShareX.HelpersLib
         public IntPtr dwExtraInfo;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 8)]
     public struct HARDWAREINPUT
     {
-        public int uMsg;
-        public short wParamL;
-        public short wParamH;
+        public uint uMsg;
+        public ushort wParamL;
+        public ushort wParamH;
     }
 
     [ComImport]
@@ -782,7 +784,7 @@ namespace ShareX.HelpersLib
         void Draw([MarshalAs(UnmanagedType.U4)] uint dwAspect, int lindex, IntPtr pvAspect, [In] IntPtr ptd, IntPtr hdcTargetDev, IntPtr hdcDraw, [MarshalAs(UnmanagedType.Struct)] ref RECT lprcBounds, [In] IntPtr lprcWBounds, IntPtr pfnContinue, [MarshalAs(UnmanagedType.U4)] uint dwContinue);
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct FLASHWINFO
     {
         public uint cbSize;
@@ -792,7 +794,7 @@ namespace ShareX.HelpersLib
         public uint dwTimeout;
     }
 
-    [Serializable, StructLayout(LayoutKind.Sequential)]
+    [Serializable, StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct SCROLLINFO
     {
         public uint cbSize;
@@ -804,7 +806,7 @@ namespace ShareX.HelpersLib
         public int nTrackPos;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct SECURITY_ATTRIBUTES
     {
         public int nLength;
@@ -812,7 +814,7 @@ namespace ShareX.HelpersLib
         public int bInheritHandle;
     }
 
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = 4)]
     public struct STARTUPINFO
     {
         public int cb;
@@ -835,7 +837,7 @@ namespace ShareX.HelpersLib
         public IntPtr hStdError;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct PROCESS_INFORMATION
     {
         public IntPtr hProcess;
@@ -844,7 +846,7 @@ namespace ShareX.HelpersLib
         public int dwThreadId;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = 4)]
     public struct SHFILEINFO
     {
         public const int NAMESIZE = 80;
@@ -857,7 +859,7 @@ namespace ShareX.HelpersLib
         public string szTypeName;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct IMAGELISTDRAWPARAMS
     {
         public int cbSize;
@@ -1024,5 +1026,33 @@ namespace ShareX.HelpersLib
     public interface IShellItemImageFactory
     {
         void GetImage([In, MarshalAs(UnmanagedType.Struct)] SIZE size, [In] SIIGBF flags, [Out] out IntPtr phbm);
+    }
+
+    internal static class NativeStructValidation
+    {
+        private static readonly bool IsValidated = Validate();
+
+        public static void Ensure()
+        {
+            _ = IsValidated;
+        }
+
+        private static bool Validate()
+        {
+            int expectedInputSize = IntPtr.Size == 8 ? 40 : 28;
+            int expectedMouseInputSize = IntPtr.Size == 8 ? 32 : 24;
+            int expectedKeyboardInputSize = IntPtr.Size == 8 ? 24 : 16;
+
+            int actualInputSize = Marshal.SizeOf<INPUT>();
+            int actualMouseInputSize = Marshal.SizeOf<MOUSEINPUT>();
+            int actualKeyboardInputSize = Marshal.SizeOf<KEYBDINPUT>();
+
+            if (actualInputSize != expectedInputSize || actualMouseInputSize != expectedMouseInputSize || actualKeyboardInputSize != expectedKeyboardInputSize)
+            {
+                throw new PlatformNotSupportedException($"Unexpected Win32 input struct size. INPUT={actualInputSize}, MOUSEINPUT={actualMouseInputSize}, KEYBDINPUT={actualKeyboardInputSize}.");
+            }
+
+            return true;
+        }
     }
 }
