@@ -58,8 +58,24 @@ namespace ShareX
 
         private void UpdateControls()
         {
-            btnAnalyze.Enabled = !string.IsNullOrEmpty(Options.ChatGPTAPIKey) && (!string.IsNullOrEmpty(txtImage.Text) || pbImage.Image != null);
+            btnAnalyze.Enabled = IsAPIKeyAvailable() && (!string.IsNullOrEmpty(txtImage.Text) || pbImage.Image != null);
             btnResultCopy.Enabled = !string.IsNullOrEmpty(txtResult.Text);
+        }
+
+        private bool IsAPIKeyAvailable()
+        {
+            switch (Options.Provider)
+            {
+                case AIProvider.OpenAI:
+                case AIProvider.Custom:
+                    return !string.IsNullOrEmpty(Options.OpenAIAPIKey);
+                case AIProvider.Gemini:
+                    return !string.IsNullOrEmpty(Options.GeminiAPIKey);
+                case AIProvider.OpenRouter:
+                    return !string.IsNullOrEmpty(Options.OpenRouterAPIKey);
+                default:
+                    return false;
+            }
         }
 
         private async Task AnalyzeImage()
@@ -67,7 +83,7 @@ namespace ShareX
             txtResult.Clear();
             lblTimer.ResetText();
 
-            if (!string.IsNullOrEmpty(Options.ChatGPTAPIKey) && (!string.IsNullOrEmpty(txtImage.Text) || pbImage.Image != null))
+            if (IsAPIKeyAvailable() && (!string.IsNullOrEmpty(txtImage.Text) || pbImage.Image != null))
             {
                 btnAnalyze.Enabled = false;
                 Cursor = Cursors.WaitCursor;
@@ -78,16 +94,16 @@ namespace ShareX
 
                 try
                 {
-                    ChatGPT chatGPT = new ChatGPT(Options.ChatGPTAPIKey, Options.Model);
+                    IAIProvider provider = AIProviderFactory.GetProvider(Options);
                     string result = null;
                     string imagePath = txtImage.Text;
                     if (!string.IsNullOrEmpty(imagePath))
                     {
-                        result = await chatGPT.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort, Options.Verbosity);
+                        result = await provider.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort, Options.Verbosity);
                     }
                     else if (pbImage.Image != null)
                     {
-                        result = await chatGPT.AnalyzeImage(pbImage.Image, Options.Input, Options.ReasoningEffort, Options.Verbosity);
+                        result = await provider.AnalyzeImage(pbImage.Image, Options.Input, Options.ReasoningEffort, Options.Verbosity);
                     }
 
                     if (!string.IsNullOrEmpty(result))

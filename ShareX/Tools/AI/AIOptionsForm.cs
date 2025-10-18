@@ -25,6 +25,9 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Drawing;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -39,13 +42,28 @@ namespace ShareX
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
 
+            foreach (AIProvider provider in Enum.GetValues(typeof(AIProvider)))
+            {
+                cbProvider.Items.Add(provider.ToString());
+            }
+
             LoadOptions();
         }
 
         private void LoadOptions()
         {
-            cbModel.Text = Options.Model;
-            txtAPIKey.Text = Options.ChatGPTAPIKey;
+            cbProvider.SelectedIndex = (int)Options.Provider;
+
+            txtOpenAIAPIKey.Text = Options.OpenAIAPIKey;
+            cbOpenAIModel.Text = Options.OpenAIModel;
+            txtOpenAICustomURL.Text = Options.OpenAICustomURL;
+
+            txtGeminiAPIKey.Text = Options.GeminiAPIKey;
+            cbGeminiModel.Text = Options.GeminiModel;
+
+            txtOpenRouterAPIKey.Text = Options.OpenRouterAPIKey;
+            cbOpenRouterModel.Text = Options.OpenRouterModel;
+
             int index = cbReasoningEffort.FindStringExact(Options.ReasoningEffort);
             if (index >= 0)
             {
@@ -71,8 +89,18 @@ namespace ShareX
 
         private void SaveOptions()
         {
-            Options.Model = cbModel.Text;
-            Options.ChatGPTAPIKey = txtAPIKey.Text;
+            Options.Provider = (AIProvider)cbProvider.SelectedIndex;
+
+            Options.OpenAIAPIKey = txtOpenAIAPIKey.Text;
+            Options.OpenAIModel = cbOpenAIModel.Text;
+            Options.OpenAICustomURL = txtOpenAICustomURL.Text;
+
+            Options.GeminiAPIKey = txtGeminiAPIKey.Text;
+            Options.GeminiModel = cbGeminiModel.Text;
+
+            Options.OpenRouterAPIKey = txtOpenRouterAPIKey.Text;
+            Options.OpenRouterModel = cbOpenRouterModel.Text;
+
             Options.ReasoningEffort = cbReasoningEffort.Text;
             Options.Verbosity = cbVerbosity.Text;
             Options.AutoStartRegion = cbAutoStartRegion.Checked;
@@ -80,9 +108,159 @@ namespace ShareX
             Options.AutoCopyResult = cbAutoCopyResult.Checked;
         }
 
+        private void cbProvider_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            gbOpenAI.Visible = false;
+            gbGemini.Visible = false;
+            gbOpenRouter.Visible = false;
+            lblOpenAICustomURL.Visible = false;
+            txtOpenAICustomURL.Visible = false;
+
+            switch ((AIProvider)cbProvider.SelectedIndex)
+            {
+                case AIProvider.OpenAI:
+                    gbOpenAI.Visible = true;
+                    break;
+                case AIProvider.Custom:
+                    gbOpenAI.Visible = true;
+                    lblOpenAICustomURL.Visible = true;
+                    txtOpenAICustomURL.Visible = true;
+                    break;
+                case AIProvider.Gemini:
+                    gbGemini.Visible = true;
+                    break;
+                case AIProvider.OpenRouter:
+                    gbOpenRouter.Visible = true;
+                    break;
+            }
+        }
+
+        private async void btnTestConnection_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                btnTestConnection.Enabled = false;
+                lblTestStatus.ForeColor = Color.Gold;
+                lblTestStatus.Text = "Testing...";
+
+                var client = HttpClientFactory.Create();
+                HttpRequestMessage req = null;
+                var provider = (AIProvider)cbProvider.SelectedIndex;
+
+                switch (provider)
+                {
+                    case AIProvider.OpenAI:
+                    case AIProvider.Custom:
+                    {
+                        var key = txtOpenAIAPIKey.Text?.Trim();
+                        if (string.IsNullOrEmpty(key))
+                        {
+                            lblTestStatus.ForeColor = Color.IndianRed;
+                            lblTestStatus.Text = "Missing OpenAI API key.";
+                            return;
+                        }
+
+                        var baseUrl = txtOpenAICustomURL.Text;
+                        if (string.IsNullOrWhiteSpace(baseUrl))
+                            baseUrl = "https://api.openai.com/v1";
+                        baseUrl = baseUrl.Trim().TrimEnd('/');
+
+                        var url = baseUrl + "/models";
+                        req = new HttpRequestMessage(HttpMethod.Get, url);
+                        req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", key);
+                        break;
+                    }
+
+                    case AIProvider.Gemini:
+                    {
+                        var key = txtGeminiAPIKey.Text?.Trim();
+                        if (string.IsNullOrEmpty(key))
+                        {
+                            lblTestStatus.ForeColor = Color.IndianRed;
+                            lblTestStatus.Text = "Missing Gemini API key.";
+                            return;
+                        }
+
+                        var url = "https://generativelanguage.googleapis.com/v1beta/models?key=" + Uri.EscapeDataString(key);
+                        req = new HttpRequestMessage(HttpMethod.Get, url);
+                        break;
+                    }
+
+                    case AIProvider.OpenRouter:
+                    {
+                        var key = txtOpenRouterAPIKey.Text?.Trim();
+                        if (string.IsNullOrEmpty(key))
+                        {
+                            lblTestStatus.ForeColor = Color.IndianRed;
+                            lblTestStatus.Text = "Missing OpenRouter API key.";
+                            return;
+                        }
+
+                        var url = "https://openrouter.ai/api/v1/models";
+                        req = new HttpRequestMessage(HttpMethod.Get, url);
+                        req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", key);
+                        break;
+                    }
+
+                    default:
+                        lblTestStatus.ForeColor = Color.IndianRed;
+                        lblTestStatus.Text = "Select a provider first.";
+                        return;
+                }
+
+                using (req)
+                using (var resp = await client.SendAsync(req))
+                {
+                    var ok = (int)resp.StatusCode >= 200 && (int)resp.StatusCode < 300;
+                    var text = await resp.Content.ReadAsStringAsync();
+
+                    if (ok)
+                    {
+                        lblTestStatus.ForeColor = Color.LimeGreen;
+                        lblTestStatus.Text = "Connection OK";
+                    }
+                    else
+                    {
+                        lblTestStatus.ForeColor = Color.IndianRed;
+                        string summary = resp.ReasonPhrase;
+                        if (string.IsNullOrWhiteSpace(summary)) summary = resp.StatusCode.ToString();
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            if (text.Length > 200) text = text.Substring(0, 200) + "...";
+                            summary += ": " + text;
+                        }
+                        lblTestStatus.Text = summary;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblTestStatus.ForeColor = Color.IndianRed;
+                lblTestStatus.Text = ex.Message;
+            }
+            finally
+            {
+                btnTestConnection.Enabled = true;
+            }
+        }
+
         private void btnAPIKeyHelp_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://platform.openai.com/api-keys");
+            string url = "";
+            switch ((AIProvider)cbProvider.SelectedIndex)
+            {
+                case AIProvider.OpenAI:
+                case AIProvider.Custom:
+                    url = "https://platform.openai.com/api-keys";
+                    break;
+                case AIProvider.Gemini:
+                    url = "https://aistudio.google.com/app/apikey";
+                    break;
+                case AIProvider.OpenRouter:
+                    url = "https://openrouter.ai/keys";
+                    break;
+            }
+            URLHelpers.OpenURL(url);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
