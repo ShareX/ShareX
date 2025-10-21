@@ -280,4 +280,10 @@
   <data name="Headers" xml:space="preserve">
     <value>头</value>
   </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>断开连接</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>连接...</value>
+  </data>
 </root>
