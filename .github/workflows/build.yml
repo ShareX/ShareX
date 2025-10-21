@@ -17,7 +17,7 @@ permissions:
 jobs:
   build:
     name: Build
-    runs-on: Windows-2022
+    runs-on: windows-latest
 
     strategy:
       fail-fast: false
