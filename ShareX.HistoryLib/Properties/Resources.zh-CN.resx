@@ -237,4 +237,7 @@
   <data name="Total" xml:space="preserve">
     <value>总计</value>
   </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>固定到屏幕</value>
+  </data>
 </root>
