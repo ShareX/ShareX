@@ -369,32 +369,6 @@ namespace ShareX
 
         private void DoUploadJob()
         {
-            if (Program.Settings.ShowUploadWarning)
-            {
-                bool disableUpload = !FirstTimeUploadForm.ShowForm();
-
-                Program.Settings.ShowUploadWarning = false;
-
-                if (disableUpload)
-                {
-                    Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
-
-                    foreach (HotkeySettings hotkeySettings in Program.HotkeysConfig.Hotkeys)
-                    {
-                        if (hotkeySettings.TaskSettings != null)
-                        {
-                            hotkeySettings.TaskSettings.AfterCaptureJob = hotkeySettings.TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
-                        }
-                    }
-
-                    Info.TaskSettings.AfterCaptureJob = Info.TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
-                    Info.Result.IsURLExpected = false;
-                    RequestSettingUpdate = true;
-
-                    return;
-                }
-            }
-
             if (Program.Settings.ShowLargeFileSizeWarning > 0)
             {
                 long dataSize = Program.Settings.BinaryUnits ? Program.Settings.ShowLargeFileSizeWarning * 1024 * 1024 : Program.Settings.ShowLargeFileSizeWarning * 1000 * 1000;

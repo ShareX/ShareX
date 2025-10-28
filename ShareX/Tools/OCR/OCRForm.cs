@@ -50,7 +50,6 @@ namespace ShareX
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
 
-
             OCRLanguage[] languages = OCRHelper.AvailableLanguages.OrderBy(x => x.DisplayName).ToArray();
 
             if (languages.Length > 0)
@@ -133,7 +132,6 @@ namespace ShareX
             nudScaleFactor.Enabled = !busy;
             cbSingleLine.Enabled = !busy;
         }
-
 
         private async Task OCR(Bitmap bmp)
         {
