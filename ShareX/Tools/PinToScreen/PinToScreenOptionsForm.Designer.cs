@@ -46,6 +46,8 @@
             this.nudMinimizeSizeWidth = new System.Windows.Forms.NumericUpDown();
             this.nudMinimizeSizeHeight = new System.Windows.Forms.NumericUpDown();
             this.lblMinimizeSizeX = new System.Windows.Forms.Label();
+            this.lblScaleStep = new System.Windows.Forms.Label();
+            this.nudScaleStep = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlacementOffset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBorderSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinimizeSizeWidth)).BeginInit();
@@ -179,11 +181,38 @@
             // 
             resources.ApplyResources(this.lblMinimizeSizeX, "lblMinimizeSizeX");
             this.lblMinimizeSizeX.Name = "lblMinimizeSizeX";
+            //
+            // lblScaleStep
+            //
+            resources.ApplyResources(this.lblScaleStep, "lblScaleStep");
+            this.lblScaleStep.Name = "lblScaleStep";
+            //
+            // nudScaleStep
+            //
+            resources.ApplyResources(this.nudScaleStep, "nudScaleStep");
+            this.nudScaleStep.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudScaleStep.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudScaleStep.Name = "nudScaleStep";
+            this.nudScaleStep.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // PinToScreenOptionsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.nudScaleStep);
+            this.Controls.Add(this.lblScaleStep);
             this.Controls.Add(this.lblMinimizeSizeX);
             this.Controls.Add(this.nudMinimizeSizeHeight);
             this.Controls.Add(this.nudMinimizeSizeWidth);
@@ -232,5 +261,7 @@
         private System.Windows.Forms.NumericUpDown nudMinimizeSizeWidth;
         private System.Windows.Forms.NumericUpDown nudMinimizeSizeHeight;
         private System.Windows.Forms.Label lblMinimizeSizeX;
+        private System.Windows.Forms.Label lblScaleStep;
+        private System.Windows.Forms.NumericUpDown nudScaleStep;
     }
 }
