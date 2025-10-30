@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 336</value>
+    <value>192, 400</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 32</value>
@@ -144,7 +144,7 @@
     <value>16</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 336</value>
+    <value>304, 400</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 32</value>
@@ -554,6 +554,57 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMinimizeSizeX.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblScaleStep.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblScaleStep.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 336</value>
+  </data>
+  <data name="lblScaleStep.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 16</value>
+  </data>
+  <data name="lblScaleStep.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblScaleStep.Text" xml:space="preserve">
+    <value>Scale step:</value>
+  </data>
+  <data name="&gt;&gt;lblScaleStep.Name" xml:space="preserve">
+    <value>lblScaleStep</value>
+  </data>
+  <data name="&gt;&gt;lblScaleStep.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScaleStep.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblScaleStep.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudScaleStep.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 361</value>
+  </data>
+  <data name="nudScaleStep.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 22</value>
+  </data>
+  <data name="nudScaleStep.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="nudScaleStep.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudScaleStep.Name" xml:space="preserve">
+    <value>nudScaleStep</value>
+  </data>
+  <data name="&gt;&gt;nudScaleStep.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudScaleStep.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nudScaleStep.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -563,7 +614,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>420, 380</value>
+    <value>420, 445</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
