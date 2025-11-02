@@ -283,6 +283,9 @@ namespace ShareX.ScreenCaptureLib
                     args.Append(":new=1");
                 }
 
+                // https://ffmpeg.org/ffmpeg-filters.html#mpdecimate
+                args.Append(",mpdecimate");
+
                 args.Append("\" ");
                 args.Append("-y ");
                 args.Append($"\"{output}\"");
