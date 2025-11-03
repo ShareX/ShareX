@@ -130,7 +130,7 @@ namespace ShareX
 
         #region Upload
 
-        public int UploadLimit = 5;
+        public int UploadLimit = 0;
         public int BufferSizePower = 5;
         public List<ClipboardFormat> ClipboardContentFormats = new List<ClipboardFormat>();
 
