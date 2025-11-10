@@ -1,0 +1,39 @@
+-- Colex Executor GUI -- Made with ninja style
+
+local Players = game:GetService("Players") local player = Players.LocalPlayer local CoreGui = game:GetService("CoreGui")
+
+-- ScreenGui local mainGui = Instance.new("ScreenGui") mainGui.Name = "ColexGui" mainGui.Parent = CoreGui
+
+-- Frame for verification local verifyFrame = Instance.new("Frame") verifyFrame.Size = UDim2.new(0, 300, 0, 200) verifyFrame.Position = UDim2.new(0.5, -150, 0.5, -100) verifyFrame.BackgroundColor3 = Color3.fromRGB(20,20,20) verifyFrame.BorderSizePixel = 0 verifyFrame.BackgroundTransparency = 0.1 verifyFrame.Parent = mainGui
+
+-- UICorner ninja style local corner = Instance.new("UICorner") corner.CornerRadius = UDim.new(0, 12) corner.Parent = verifyFrame
+
+-- Label local verifyLabel = Instance.new("TextLabel") verifyLabel.Size = UDim2.new(1, 0, 0, 50) verifyLabel.BackgroundTransparency = 1 verifyLabel.TextColor3 = Color3.fromRGB(0,255,150) verifyLabel.TextScaled = true verifyLabel.Font = Enum.Font.Fantasy verifyLabel.Text = "Colex Verification" verifyLabel.Parent = verifyFrame
+
+-- Generate 6 digit code local code = tostring(math.random(100000,999999))
+
+local codeLabel = Instance.new("TextLabel") codeLabel.Size = UDim2.new(1,0,0,40) codeLabel.Position = UDim2.new(0,0,0.3,0) codeLabel.BackgroundTransparency = 1 codeLabel.TextColor3 = Color3.fromRGB(255,255,255) codeLabel.Font = Enum.Font.Code codeLabel.TextScaled = true codeLabel.Text = "Enter this code: "..code codeLabel.Parent = verifyFrame
+
+-- TextBox local inputBox = Instance.new("TextBox") inputBox.Size = UDim2.new(0.8,0,0,40) inputBox.Position = UDim2.new(0.1,0,0.55,0) inputBox.BackgroundColor3 = Color3.fromRGB(10,10,10) inputBox.TextColor3 = Color3.fromRGB(0,255,150) inputBox.PlaceholderText = "Type code here" inputBox.Font = Enum.Font.Code inputBox.TextScaled = true inputBox.Parent = verifyFrame
+
+local corner2 = Instance.new("UICorner") corner2.CornerRadius = UDim.new(0,8) corner2.Parent = inputBox
+
+-- Button local verifyBtn = Instance.new("TextButton") verifyBtn.Size = UDim2.new(0.6,0,0,40) verifyBtn.Position = UDim2.new(0.2,0,0.8,0) verifyBtn.BackgroundColor3 = Color3.fromRGB(0,255,150) verifyBtn.TextColor3 = Color3.fromRGB(0,0,0) verifyBtn.Font = Enum.Font.Fantasy verifyBtn.TextScaled = true verifyBtn.Text = "Verify" verifyBtn.Parent = verifyFrame
+
+local corner3 = Instance.new("UICorner") corner3.CornerRadius = UDim.new(0,8) corner3.Parent = verifyBtn
+
+-- Executor Frame (hidden first) local execFrame = Instance.new("Frame") execFrame.Size = UDim2.new(0, 500, 0, 300) execFrame.Position = UDim2.new(0.5, -250, 0.5, -150) execFrame.BackgroundColor3 = Color3.fromRGB(15,15,15) execFrame.Visible = false execFrame.Parent = mainGui
+
+local corner4 = Instance.new("UICorner") corner4.CornerRadius = UDim.new(0,15) corner4.Parent = execFrame
+
+local title = Instance.new("TextLabel") title.Size = UDim2.new(1,0,0,40) title.BackgroundTransparency = 1 title.TextColor3 = Color3.fromRGB(0,255,150) title.Font = Enum.Font.Fantasy title.TextScaled = true title.Text = "Colex Ninja Executor" title.Parent = execFrame
+
+local box = Instance.new("TextBox") box.Size = UDim2.new(0.9,0,0.6,0) box.Position = UDim2.new(0.05,0,0.2,0) box.BackgroundColor3 = Color3.fromRGB(0,0,0) box.TextColor3 = Color3.fromRGB(0,255,150) box.MultiLine = true box.ClearTextOnFocus = false box.Font = Enum.Font.Code box.TextSize = 18 box.Text = "-- Type script here" box.Parent = execFrame
+
+local corner5 = Instance.new("UICorner") corner5.CornerRadius = UDim.new(0,10) corner5.Parent = box
+
+local execBtn = Instance.new("TextButton") execBtn.Size = UDim2.new(0.4,0,0,40) execBtn.Position = UDim2.new(0.3,0,0.85,0) execBtn.BackgroundColor3 = Color3.fromRGB(0,255,150) execBtn.TextColor3 = Color3.fromRGB(0,0,0) execBtn.Font = Enum.Font.Fantasy execBtn.TextScaled = true execBtn.Text = "Execute" execBtn.Parent = execFrame
+
+local corner6 = Instance.new("UICorner") corner6.CornerRadius = UDim.new(0,8) corner6.Parent = execBtn
+
+-- Verification logic verifyBtn.MouseButton1Click:Connect(function() if inputBox.Text == code then verifyFrame.Visible = false execFrame.Visible = true else inputBox.Text = "Wrong code!" task.wait(1) inputBox.Text = "" end end)
