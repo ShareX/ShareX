@@ -598,4 +598,49 @@
   <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
     <value>无法找到指定窗口标题的窗口。</value>
   </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>固定到屏幕</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ro" xml:space="preserve">
+    <value>罗马尼亚语</value>
+  </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>ShareX 为最新版！</value>
+  </data>
+  <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
+    <value>ShareX 内附的 FFmpeg 只支持 64 位操作系统。</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
+    <value>希伯来语</value>
+  </data>
+  <data name="AboutForm_AboutForm_Donate" xml:space="preserve">
+    <value>捐赠</value>
+  </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>缺少 FFmpeg</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pl" xml:space="preserve">
+    <value>波兰语</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>剪贴板不含图片。</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
+    <value>阿拉伯语</value>
+  </data>
+  <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
+    <value>只有 Windows {0} 版及更高版本有光学字符识别功能。</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>要重试剪贴板上传吗？</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>录屏活动时无法关闭 ShareX。要终止活跃的屏幕录制吗？</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>剪贴板上传</value>
+  </data>
+  <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
+    <value>下列路径中没有 FFmpeg：</value>
+  </data>
 </root>
