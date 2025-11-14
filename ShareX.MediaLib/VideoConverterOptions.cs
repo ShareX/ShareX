@@ -189,7 +189,7 @@ namespace ShareX.MediaLib
                         args.Append("-b:v 0 ");
                     }
                     break;
-                case ConverterVideoCodecs.av1: // https://trac.ffmpeg.org/wiki/Encode/AV1
+                case ConverterVideoCodecs.av1_svt: // https://trac.ffmpeg.org/wiki/Encode/AV1
                     args.Append("-c:v libsvtav1 ");
                     if (VideoQualityUseBitrate)
                     {
@@ -199,6 +199,49 @@ namespace ShareX.MediaLib
                     {
                         args.Append($"-crf {VideoQuality.Clamp(FFmpegCLIManager.av1_min, FFmpegCLIManager.av1_max)} ");
                     }
+                    break;
+                case ConverterVideoCodecs.av1_libaom:
+                    args.Append("-c:v libaom-av1 ");
+                    if (VideoQualityUseBitrate)
+                    {
+                        args.Append($"-b:v {VideoQualityBitrate}k ");
+                    }
+                    else
+                    {
+                        args.Append($"-crf {VideoQuality.Clamp(FFmpegCLIManager.av1_min, FFmpegCLIManager.av1_max)} ");
+                        args.Append("-b:v 0 ");
+                    }
+                    break;
+                case ConverterVideoCodecs.av1_rav1e:
+                    args.Append("-c:v librav1e ");
+                    if (VideoQualityUseBitrate)
+                    {
+                        args.Append($"-b:v {VideoQualityBitrate}k ");
+                    }
+                    else
+                    {
+                        // rav1e prefers -qp. We map our 0-63 range directly.
+                        args.Append($"-qp {VideoQuality.Clamp(FFmpegCLIManager.av1_min, FFmpegCLIManager.av1_max)} ");
+                    }
+                    break;
+                case ConverterVideoCodecs.av1_nvenc: // https://trac.ffmpeg.org/wiki/HWAccelIntro#NVENC
+                    args.Append("-c:v av1_nvenc ");
+                    args.Append("-preset p4 ");
+                    args.Append("-tune hq ");
+                    args.Append("-profile:v main ");
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
+                    break;
+                case ConverterVideoCodecs.av1_amf:
+                    args.Append("-c:v av1_amf ");
+                    args.Append("-usage transcoding ");
+                    args.Append("-profile main ");
+                    args.Append("-quality balanced ");
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
+                    break;
+                case ConverterVideoCodecs.av1_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
+                    args.Append("-c:v av1_qsv ");
+                    args.Append("-preset medium ");
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.xvid: // https://trac.ffmpeg.org/wiki/Encode/MPEG-4
                     args.Append("-c:v libxvid ");
@@ -234,6 +277,14 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.hevc_qsv:
                     args.Append("-tag:v hvc1 "); // https://trac.ffmpeg.org/wiki/Encode/H.265#FinalCutandApplestuffcompatibility
                     break;
+                case ConverterVideoCodecs.av1_svt:
+                case ConverterVideoCodecs.av1_libaom:
+                case ConverterVideoCodecs.av1_rav1e:
+                case ConverterVideoCodecs.av1_nvenc:
+                case ConverterVideoCodecs.av1_amf:
+                case ConverterVideoCodecs.av1_qsv:
+                    // No special tag; container selection handled below
+                    break;
             }
 
             if (!IsInputFileAnimationOnly)
@@ -249,6 +300,12 @@ namespace ShareX.MediaLib
                     case ConverterVideoCodecs.hevc_amf:
                     case ConverterVideoCodecs.h264_qsv:
                     case ConverterVideoCodecs.hevc_qsv:
+                    case ConverterVideoCodecs.av1_nvenc:
+                    case ConverterVideoCodecs.av1_amf:
+                    case ConverterVideoCodecs.av1_qsv:
+                    case ConverterVideoCodecs.av1_svt:
+                    case ConverterVideoCodecs.av1_libaom:
+                    case ConverterVideoCodecs.av1_rav1e:
                         args.Append("-c:a aac ");
                         args.Append("-b:a 128k ");
                         break;
@@ -256,10 +313,6 @@ namespace ShareX.MediaLib
                     case ConverterVideoCodecs.vp9:
                         args.Append("-c:a libvorbis ");
                         args.Append("-q:a 3 ");
-                        break;
-                    case ConverterVideoCodecs.av1: // https://ffmpeg.org/ffmpeg-codecs.html#libopus-1
-                        args.Append("-c:a libopus ");
-                        args.Append("-b:a 128k ");
                         break;
                     case ConverterVideoCodecs.xvid: // https://trac.ffmpeg.org/wiki/Encode/MP3
                         args.Append("-c:a libmp3lame ");
@@ -286,15 +339,20 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.x265:
                 case ConverterVideoCodecs.h264_nvenc:
                 case ConverterVideoCodecs.hevc_nvenc:
+                case ConverterVideoCodecs.av1_nvenc:
                 case ConverterVideoCodecs.h264_amf:
                 case ConverterVideoCodecs.hevc_amf:
+                case ConverterVideoCodecs.av1_amf:
                 case ConverterVideoCodecs.h264_qsv:
                 case ConverterVideoCodecs.hevc_qsv:
+                case ConverterVideoCodecs.av1_qsv:
                     return "mp4";
                 case ConverterVideoCodecs.vp8:
                 case ConverterVideoCodecs.vp9:
                     return "webm";
-                case ConverterVideoCodecs.av1:
+                case ConverterVideoCodecs.av1_svt:
+                case ConverterVideoCodecs.av1_libaom:
+                case ConverterVideoCodecs.av1_rav1e:
                     return "mkv";
                 case ConverterVideoCodecs.xvid:
                     return "avi";
