@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+﻿﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -106,6 +106,8 @@ namespace ShareX.ScreenCaptureLib
             UpdateEnterTip();
 
             txtInput.SupportSelectAll();
+
+            ApplyDpiSafeLayout();
         }
 
         private void Close(DialogResult result)
@@ -135,6 +137,130 @@ namespace ShareX.ScreenCaptureLib
         private void TextDrawingInputBox_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
+            ApplyDpiSafeLayout();
+        }
+
+        protected override void OnDpiChanged(DpiChangedEventArgs e)
+        {
+            base.OnDpiChanged(e);
+            ApplyDpiSafeLayout(e.DeviceDpiNew);
+            UpdateInputBox();
+        }
+
+        private void ApplyDpiSafeLayout(int? deviceDpi = null)
+        {
+            int dpi = deviceDpi ?? DeviceDpi;
+            float scale = Math.Max(1f, dpi / 96f);
+
+            if (flpProperties != null)
+            {
+                flpProperties.AutoSize = true;
+                flpProperties.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            }
+
+            if (cbFonts != null)
+            {
+                cbFonts.IntegralHeight = false;
+                cbFonts.AutoSize = false;
+                cbFonts.Height = Math.Max(cbFonts.Height, cbFonts.PreferredHeight);
+            }
+
+            if (nudTextSize != null)
+            {
+                nudTextSize.AutoSize = false;
+                nudTextSize.Height = Math.Max(nudTextSize.Height, nudTextSize.PreferredHeight);
+            }
+
+            if (txtInput != null)
+            {
+                txtInput.AutoSize = false;
+                int preferred = txtInput.PreferredHeight;
+                if (txtInput.Height < preferred)
+                {
+                    txtInput.Height = preferred;
+                }
+
+                int spacing = (int)Math.Round(6 * scale);
+
+                if (btnOK != null) btnOK.Anchor = AnchorStyles.Bottom | (btnOK.Anchor & AnchorStyles.Right) | AnchorStyles.Left;
+                if (btnCancel != null) btnCancel.Anchor = AnchorStyles.Bottom | (btnCancel.Anchor & AnchorStyles.Right) | AnchorStyles.Left;
+                if (btnSwapEnterKey != null) btnSwapEnterKey.Anchor = AnchorStyles.Bottom | (btnSwapEnterKey.Anchor & AnchorStyles.Right) | AnchorStyles.Left;
+                if (lblTip != null) lblTip.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+
+                int bottomRowHeight = 0;
+                if (btnOK != null) bottomRowHeight = Math.Max(bottomRowHeight, btnOK.Height);
+                if (btnCancel != null) bottomRowHeight = Math.Max(bottomRowHeight, btnCancel.Height);
+                if (btnSwapEnterKey != null) bottomRowHeight = Math.Max(bottomRowHeight, btnSwapEnterKey.Height);
+                if (lblTip != null) bottomRowHeight = Math.Max(bottomRowHeight, lblTip.Height);
+                if (bottomRowHeight <= 0) bottomRowHeight = (int)Math.Round(24 * scale);
+
+                int bottomRowTop = ClientSize.Height - bottomRowHeight - spacing;
+                if (btnOK != null && btnOK.Top != bottomRowTop) btnOK.Top = bottomRowTop;
+                if (btnCancel != null && btnCancel.Top != bottomRowTop) btnCancel.Top = bottomRowTop;
+                if (btnSwapEnterKey != null && btnSwapEnterKey.Top != bottomRowTop) btnSwapEnterKey.Top = bottomRowTop;
+                if (lblTip != null && lblTip.Top != bottomRowTop) lblTip.Top = bottomRowTop;
+
+                int topBound = txtInput.Top;
+                if (flpProperties != null)
+                {
+                    topBound = Math.Max(topBound, flpProperties.Bottom + spacing);
+                }
+
+                int left = txtInput.Left;
+                int rightBound = ClientSize.Width - spacing;
+                int bottomBound = bottomRowTop - spacing;
+
+                if (bottomBound > topBound)
+                {
+                    if (txtInput.Top != topBound) txtInput.Top = topBound;
+                    int desiredHeight = Math.Max(preferred, bottomBound - topBound);
+                    if (desiredHeight > 0 && txtInput.Height != desiredHeight)
+                    {
+                        txtInput.Height = desiredHeight;
+                    }
+                    int desiredWidth = Math.Max(50, rightBound - left);
+                    if (txtInput.Width != desiredWidth) txtInput.Width = desiredWidth;
+                }
+            }
+
+            int buttonMin = (int)Math.Round(24 * scale);
+            if (btnOK != null)
+            {
+                btnOK.AutoSize = true;
+                btnOK.MinimumSize = new Size(0, buttonMin);
+            }
+            if (btnCancel != null)
+            {
+                btnCancel.AutoSize = true;
+                btnCancel.MinimumSize = new Size(0, buttonMin);
+            }
+            if (btnSwapEnterKey != null)
+            {
+                btnSwapEnterKey.AutoSize = true;
+                btnSwapEnterKey.MinimumSize = new Size(0, buttonMin);
+            }
+            if (btnTextColor != null)
+            {
+                btnTextColor.AutoSize = true;
+                btnTextColor.MinimumSize = new Size(0, buttonMin);
+            }
+            if (btnGradient != null)
+            {
+                btnGradient.AutoSize = true;
+                btnGradient.MinimumSize = new Size(0, buttonMin);
+            }
+            if (cbBold != null)
+            {
+                cbBold.AutoSize = true;
+            }
+            if (cbItalic != null)
+            {
+                cbItalic.AutoSize = true;
+            }
+            if (cbUnderline != null)
+            {
+                cbUnderline.AutoSize = true;
+            }
         }
 
         private void cbFonts_SelectedIndexChanged(object sender, EventArgs e)
@@ -147,6 +273,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Options.Size = (int)nudTextSize.Value;
             UpdateInputBox();
+            ApplyDpiSafeLayout();
         }
 
         private void btnTextColor_ColorChanged(Color color)
@@ -320,12 +447,14 @@ namespace ShareX.ScreenCaptureLib
 
             try
             {
-                font = new Font(Options.Font, Options.Size, Options.Style);
+                float displayPoints = Math.Max(1f, Options.Size * 72f / Math.Max(1, DeviceDpi));
+                font = new Font(Options.Font, displayPoints, Options.Style, GraphicsUnit.Point);
             }
             catch
             {
                 Options.Font = AnnotationOptions.DefaultFont;
-                font = new Font(Options.Font, Options.Size, Options.Style);
+                float displayPoints = Math.Max(1f, Options.Size * 72f / Math.Max(1, DeviceDpi));
+                font = new Font(Options.Font, displayPoints, Options.Style, GraphicsUnit.Point);
             }
 
             txtInput.Font = font;
