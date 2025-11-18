@@ -69,8 +69,12 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (drawCache && cachedEffect != null)
             {
+                g.CompositingMode = CompositingMode.SourceCopy;
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
+
                 g.DrawImage(cachedEffect, RectangleInsideCanvas);
+
+                g.CompositingMode = CompositingMode.SourceOver;
                 g.InterpolationMode = InterpolationMode.Bilinear;
             }
             else
@@ -117,7 +121,11 @@ namespace ShareX.ScreenCaptureLib
                 {
                     ApplyEffect(croppedImage);
 
+                    g.CompositingMode = CompositingMode.SourceCopy;
+
                     g.DrawImage(croppedImage, cropRect);
+
+                    g.CompositingMode = CompositingMode.SourceOver;
                 }
             }
         }
