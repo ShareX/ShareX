@@ -1,0 +1,14 @@
+{
+  "Version": "12.4.1",
+  "Name": "Akari Link Shortener",
+  "DestinationType": "URLShortener",
+  "RequestMethod": "POST",
+  "RequestURL": "https://api.waa.ai/v2/links",
+  "Headers": {
+    "Authorization": "API-Key 84cbc456646F2E1111dc25b559e93f813fbd4c88"
+  },
+  "Body": "JSON",
+  "Data": "{\"url\":\"$input$\"}",
+  "URL": "$json:data.link$",
+  "DeletionURL": "https://api.waa.ai/links/$json:data.short_code$/$json:data.delete_hash$"
+}
