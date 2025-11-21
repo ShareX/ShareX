@@ -376,6 +376,7 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case FFmpegVideoCodec.h264_nvenc:
                     case FFmpegVideoCodec.hevc_nvenc:
+                    case FFmpegVideoCodec.av1_nvenc:
                         tcFFmpegVideoCodecs.SelectTabWithoutFocus(tpNVENC);
                         break;
                     case FFmpegVideoCodec.gif:
@@ -383,11 +384,19 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case FFmpegVideoCodec.h264_amf:
                     case FFmpegVideoCodec.hevc_amf:
+                    case FFmpegVideoCodec.av1_amf:
                         tcFFmpegVideoCodecs.SelectTabWithoutFocus(tpAMF);
                         break;
                     case FFmpegVideoCodec.h264_qsv:
                     case FFmpegVideoCodec.hevc_qsv:
+                    case FFmpegVideoCodec.av1_qsv:
                         tcFFmpegVideoCodecs.SelectTabWithoutFocus(tpQSV);
+                        break;
+                    case FFmpegVideoCodec.libsvtav1:
+                    case FFmpegVideoCodec.libaom_av1:
+                    case FFmpegVideoCodec.librav1e:
+                        // Reuse VPx tab for bitrate control for software AV1
+                        tcFFmpegVideoCodecs.SelectTabWithoutFocus(tpVpx);
                         break;
                 }
             }

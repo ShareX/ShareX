@@ -236,6 +236,10 @@ namespace ShareX
             nudImageJPEGQuality.SetValue(TaskSettings.ImageSettings.ImageJPEGQuality);
             cbImageGIFQuality.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<GIFQuality>());
             cbImageGIFQuality.SelectedIndex = (int)TaskSettings.ImageSettings.ImageGIFQuality;
+			UpdateImageQualityLabelBasedOnFormat();
+            cbImageAVIFTuneIQ.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<AvifTuneIQ>());
+            cbImageAVIFTuneIQ.SelectedIndex = (int)TaskSettings.ImageSettings.ImageAVIFTuneIQ;
+            UpdateAvifTuneVisibility();
             cbImageAutoUseJPEG.Checked = TaskSettings.ImageSettings.ImageAutoUseJPEG;
             nudImageAutoUseJPEGSize.Enabled = TaskSettings.ImageSettings.ImageAutoUseJPEG;
             cbImageAutoJPEGQuality.Enabled = TaskSettings.ImageSettings.ImageAutoUseJPEG;
@@ -969,6 +973,33 @@ namespace ShareX
         private void cbImageFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.ImageSettings.ImageFormat = (EImageFormat)cbImageFormat.SelectedIndex;
+			UpdateImageQualityLabelBasedOnFormat();
+            UpdateAvifTuneVisibility();
+        }
+
+		private void UpdateImageQualityLabelBasedOnFormat()
+		{
+			EImageFormat currentFormat = (EImageFormat)cbImageFormat.SelectedIndex;
+			if (currentFormat == EImageFormat.AVIF)
+			{
+				lblImageJPEGQuality.Text = Resources.ResourceManager.GetString("Label_ImageQuality_IQ");
+			}
+			else
+			{
+				lblImageJPEGQuality.Text = Resources.ResourceManager.GetString("Label_JPEGQuality");
+			}
+		}
+
+        private void UpdateAvifTuneVisibility()
+        {
+            bool isAvif = (EImageFormat)cbImageFormat.SelectedIndex == EImageFormat.AVIF;
+            lblImageAVIFTuneIQ.Visible = isAvif;
+            cbImageAVIFTuneIQ.Visible = isAvif;
+        }
+
+        private void cbImageAVIFTuneIQ_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ImageSettings.ImageAVIFTuneIQ = (AvifTuneIQ)cbImageAVIFTuneIQ.SelectedIndex;
         }
 
         private void cbImagePNGBitDepth_SelectedIndexChanged(object sender, EventArgs e)
