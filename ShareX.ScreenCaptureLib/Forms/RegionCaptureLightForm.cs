@@ -51,16 +51,14 @@ namespace ShareX.ScreenCaptureLib
         private Pen borderDotPen, borderDotPen2;
         private Point currentPosition, positionOnClick;
         private bool isMouseDown;
-        private Stopwatch penTimer;
 
         public RegionCaptureLightForm(Bitmap canvas, bool activeMonitorMode = false)
         {
             backgroundImage = canvas;
             backgroundBrush = new TextureBrush(backgroundImage);
-            borderDotPen = new Pen(Color.Black, 1);
-            borderDotPen2 = new Pen(Color.White, 1);
+            borderDotPen = new Pen(Color.White, 1);
+            borderDotPen2 = new Pen(Color.Black, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };
-            penTimer = Stopwatch.StartNew();
 
             if (activeMonitorMode)
             {
@@ -210,11 +208,17 @@ namespace ShareX.ScreenCaptureLib
 
             if (isMouseDown && SelectionRectangle0Based.Width > MinimumRectangleSize && SelectionRectangle0Based.Height > MinimumRectangleSize)
             {
-                borderDotPen2.DashOffset = (float)penTimer.Elapsed.TotalSeconds * -15;
-
-                g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
-                g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
+                DrawDottedRectangle(g, borderDotPen, borderDotPen2, SelectionRectangle0Based);
             }
+        }
+
+        private void DrawDottedRectangle(Graphics g, Pen pen1, Pen pen2, Rectangle rect)
+        {
+            g.DrawRectangleProper(pen1, rect);
+            g.DrawLine(pen2, rect.X, rect.Y, rect.Right - 1, rect.Y);
+            g.DrawLine(pen2, rect.X, rect.Y, rect.X, rect.Bottom - 1);
+            g.DrawLine(pen2, rect.Right - 1, rect.Y, rect.Right - 1, rect.Bottom - 1);
+            g.DrawLine(pen2, rect.X, rect.Bottom - 1, rect.Right - 1, rect.Bottom - 1);
         }
     }
 }
