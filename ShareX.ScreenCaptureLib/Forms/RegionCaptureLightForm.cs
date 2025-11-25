@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public sealed class RegionCaptureLightForm : Form
     {
-        private const int MinimumRectangleSize = 3;
+        private const int MinimumRectangleSize = 5;
 
         public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
@@ -45,7 +45,6 @@ namespace ShareX.ScreenCaptureLib
         public Rectangle SelectionRectangle0Based => new Rectangle(SelectionRectangle.X - ScreenRectangle.X, SelectionRectangle.Y - ScreenRectangle.Y,
             SelectionRectangle.Width, SelectionRectangle.Height);
 
-        private Timer timer;
         private Bitmap backgroundImage;
         private TextureBrush backgroundBrush;
         private Pen borderDotPen, borderDotPen2;
@@ -74,15 +73,10 @@ namespace ShareX.ScreenCaptureLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
             Cursor = Helpers.CreateCursor(Resources.Crosshair);
-
-            timer = new Timer { Interval = 10 };
-            timer.Tick += timer_Tick;
-            timer.Start();
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (timer != null) timer.Dispose();
             if (backgroundImage != null) backgroundImage.Dispose();
             if (backgroundBrush != null) backgroundBrush.Dispose();
             if (borderDotPen != null) borderDotPen.Dispose();
@@ -106,20 +100,47 @@ namespace ShareX.ScreenCaptureLib
             TopMost = true;
 #endif
 
-            Shown += RectangleLight_Shown;
-            KeyUp += RectangleLight_KeyUp;
-            MouseDown += RectangleLight_MouseDown;
-            MouseUp += RectangleLight_MouseUp;
+            Shown += RegionCaptureLightForm_Shown;
+            KeyUp += RegionCaptureLightForm_KeyUp;
+            MouseDown += RegionCaptureLightForm_MouseDown;
+            MouseUp += RegionCaptureLightForm_MouseUp;
+            MouseMove += RegionCaptureLightForm_MouseMove;
 
             ResumeLayout(false);
         }
 
-        private void RectangleLight_Shown(object sender, EventArgs e)
+        public Bitmap GetAreaImage()
+        {
+            Rectangle rect = SelectionRectangle0Based;
+
+            if (rect.Width > 0 && rect.Height > 0)
+            {
+                if (rect.X == 0 && rect.Y == 0 && rect.Width == backgroundImage.Width && rect.Height == backgroundImage.Height)
+                {
+                    return (Bitmap)backgroundImage.Clone();
+                }
+
+                return ImageHelpers.CropBitmap(backgroundImage, rect);
+            }
+
+            return null;
+        }
+
+        private void DrawDottedRectangle(Graphics g, Pen pen1, Pen pen2, Rectangle rect)
+        {
+            g.DrawRectangleProper(pen1, rect);
+            g.DrawLine(pen2, rect.X, rect.Y, rect.Right - 1, rect.Y);
+            g.DrawLine(pen2, rect.X, rect.Y, rect.X, rect.Bottom - 1);
+            g.DrawLine(pen2, rect.Right - 1, rect.Y, rect.Right - 1, rect.Bottom - 1);
+            g.DrawLine(pen2, rect.X, rect.Bottom - 1, rect.Right - 1, rect.Bottom - 1);
+        }
+
+        private void RegionCaptureLightForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
         }
 
-        private void RectangleLight_KeyUp(object sender, KeyEventArgs e)
+        private void RegionCaptureLightForm_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
@@ -128,7 +149,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void RectangleLight_MouseDown(object sender, MouseEventArgs e)
+        private void RegionCaptureLightForm_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -137,7 +158,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void RectangleLight_MouseUp(object sender, MouseEventArgs e)
+        private void RegionCaptureLightForm_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -167,24 +188,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Bitmap GetAreaImage()
-        {
-            Rectangle rect = SelectionRectangle0Based;
-
-            if (rect.Width > 0 && rect.Height > 0)
-            {
-                if (rect.X == 0 && rect.Y == 0 && rect.Width == backgroundImage.Width && rect.Height == backgroundImage.Height)
-                {
-                    return (Bitmap)backgroundImage.Clone();
-                }
-
-                return ImageHelpers.CropBitmap(backgroundImage, rect);
-            }
-
-            return null;
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
+        private void RegionCaptureLightForm_MouseMove(object sender, MouseEventArgs e)
         {
             currentPosition = CaptureHelpers.GetCursorPosition();
             SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
@@ -210,15 +214,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 DrawDottedRectangle(g, borderDotPen, borderDotPen2, SelectionRectangle0Based);
             }
-        }
-
-        private void DrawDottedRectangle(Graphics g, Pen pen1, Pen pen2, Rectangle rect)
-        {
-            g.DrawRectangleProper(pen1, rect);
-            g.DrawLine(pen2, rect.X, rect.Y, rect.Right - 1, rect.Y);
-            g.DrawLine(pen2, rect.X, rect.Y, rect.X, rect.Bottom - 1);
-            g.DrawLine(pen2, rect.Right - 1, rect.Y, rect.Right - 1, rect.Bottom - 1);
-            g.DrawLine(pen2, rect.X, rect.Bottom - 1, rect.Right - 1, rect.Bottom - 1);
         }
     }
 }
