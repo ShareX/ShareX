@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -37,18 +36,15 @@ namespace ShareX.ScreenCaptureLib
     {
         private const int MinimumRectangleSize = 5;
 
-        public static Rectangle LastSelectionRectangle0Based { get; private set; }
+        public static Rectangle LastSelectionRectangle { get; private set; }
 
         public Rectangle ScreenRectangle { get; private set; }
-        public Rectangle ScreenRectangle0Based => new Rectangle(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
         public Rectangle SelectionRectangle { get; private set; }
-        public Rectangle SelectionRectangle0Based => new Rectangle(SelectionRectangle.X - ScreenRectangle.X, SelectionRectangle.Y - ScreenRectangle.Y,
-            SelectionRectangle.Width, SelectionRectangle.Height);
 
         private Bitmap backgroundImage;
         private TextureBrush backgroundBrush;
         private Pen borderDotPen, borderDotPen2;
-        private Point currentPosition, positionOnClick;
+        private Point positionOnClick;
         private bool isMouseDown;
 
         public RegionCaptureLightForm(Bitmap canvas, bool activeMonitorMode = false)
@@ -111,7 +107,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Bitmap GetAreaImage()
         {
-            Rectangle rect = SelectionRectangle0Based;
+            Rectangle rect = SelectionRectangle;
 
             if (rect.Width > 0 && rect.Height > 0)
             {
@@ -153,7 +149,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left)
             {
-                positionOnClick = CaptureHelpers.GetCursorPosition();
+                positionOnClick = e.Location;
                 isMouseDown = true;
             }
         }
@@ -162,9 +158,10 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (isMouseDown && SelectionRectangle0Based.Width > MinimumRectangleSize && SelectionRectangle0Based.Height > MinimumRectangleSize)
+                if (isMouseDown && SelectionRectangle.Width > MinimumRectangleSize && SelectionRectangle.Height > MinimumRectangleSize)
                 {
-                    LastSelectionRectangle0Based = SelectionRectangle0Based;
+                    LastSelectionRectangle = SelectionRectangle;
+
                     DialogResult = DialogResult.OK;
                     Close();
                 }
@@ -190,8 +187,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void RegionCaptureLightForm_MouseMove(object sender, MouseEventArgs e)
         {
-            currentPosition = CaptureHelpers.GetCursorPosition();
-            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
+            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, e.X, e.Y);
 
             Refresh();
         }
@@ -208,11 +204,11 @@ namespace ShareX.ScreenCaptureLib
             g.SmoothingMode = SmoothingMode.HighSpeed;
             g.CompositingMode = CompositingMode.SourceCopy;
             g.CompositingQuality = CompositingQuality.HighSpeed;
-            g.FillRectangle(backgroundBrush, ScreenRectangle0Based);
+            g.FillRectangle(backgroundBrush, 0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
 
-            if (isMouseDown && SelectionRectangle0Based.Width > MinimumRectangleSize && SelectionRectangle0Based.Height > MinimumRectangleSize)
+            if (isMouseDown && SelectionRectangle.Width > MinimumRectangleSize && SelectionRectangle.Height > MinimumRectangleSize)
             {
-                DrawDottedRectangle(g, borderDotPen, borderDotPen2, SelectionRectangle0Based);
+                DrawDottedRectangle(g, borderDotPen, borderDotPen2, SelectionRectangle);
             }
         }
     }

@@ -50,11 +50,11 @@ namespace ShareX
                         return ExecuteRegionCapture(taskSettings);
                     }
                 case RegionCaptureType.Light:
-                    if (!RegionCaptureLightForm.LastSelectionRectangle0Based.IsEmpty)
+                    if (!RegionCaptureLightForm.LastSelectionRectangle.IsEmpty)
                     {
                         using (Bitmap screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
                         {
-                            Bitmap bmp = ImageHelpers.CropBitmap(screenshot, RegionCaptureLightForm.LastSelectionRectangle0Based);
+                            Bitmap bmp = ImageHelpers.CropBitmap(screenshot, RegionCaptureLightForm.LastSelectionRectangle);
                             return new TaskMetadata(bmp);
                         }
                     }
