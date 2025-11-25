@@ -47,9 +47,9 @@ namespace ShareX.ScreenCaptureLib
         private Point positionOnClick;
         private bool isMouseDown;
 
-        public RegionCaptureLightForm(Bitmap canvas, bool activeMonitorMode = false)
+        public RegionCaptureLightForm(Bitmap background, bool activeMonitorMode = false)
         {
-            backgroundImage = canvas;
+            backgroundImage = background;
             backgroundBrush = new TextureBrush(backgroundImage);
             borderDotPen = new Pen(Color.White, 1);
             borderDotPen2 = new Pen(Color.Black, 1);
@@ -67,18 +67,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             InitializeComponent();
-            Icon = ShareXResources.Icon;
-            Cursor = Helpers.CreateCursor(Resources.Crosshair);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (backgroundImage != null) backgroundImage.Dispose();
-            if (backgroundBrush != null) backgroundBrush.Dispose();
-            if (borderDotPen != null) borderDotPen.Dispose();
-            if (borderDotPen2 != null) borderDotPen2.Dispose();
-
-            base.Dispose(disposing);
         }
 
         private void InitializeComponent()
@@ -103,6 +91,19 @@ namespace ShareX.ScreenCaptureLib
             MouseMove += RegionCaptureLightForm_MouseMove;
 
             ResumeLayout(false);
+
+            Icon = ShareXResources.Icon;
+            Cursor = Helpers.CreateCursor(Resources.Crosshair);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            backgroundImage?.Dispose();
+            backgroundBrush?.Dispose();
+            borderDotPen?.Dispose();
+            borderDotPen2?.Dispose();
+
+            base.Dispose(disposing);
         }
 
         public Bitmap GetAreaImage()
@@ -161,7 +162,6 @@ namespace ShareX.ScreenCaptureLib
                 if (isMouseDown && SelectionRectangle.Width > MinimumRectangleSize && SelectionRectangle.Height > MinimumRectangleSize)
                 {
                     LastSelectionRectangle = SelectionRectangle;
-
                     DialogResult = DialogResult.OK;
                     Close();
                 }
@@ -188,7 +188,6 @@ namespace ShareX.ScreenCaptureLib
         private void RegionCaptureLightForm_MouseMove(object sender, MouseEventArgs e)
         {
             SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, e.X, e.Y);
-
             Refresh();
         }
 

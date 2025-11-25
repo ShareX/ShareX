@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public sealed class RegionCaptureTransparentForm : LayeredForm
     {
-        private const int MinimumRectangleSize = 3;
+        private const int MinimumRectangleSize = 5;
 
         public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
