@@ -88,11 +88,11 @@ namespace ShareX.ScreenCaptureLib
 
         public static bool GetRectangleRegionTransparent(out Rectangle rect)
         {
-            using (RegionCaptureTransparentForm regionCaptureTransparentForm = new RegionCaptureTransparentForm())
+            using (RegionCaptureLightForm regionCaptureTransparentForm = new RegionCaptureLightForm(null))
             {
                 if (regionCaptureTransparentForm.ShowDialog() == DialogResult.OK)
                 {
-                    rect = regionCaptureTransparentForm.SelectionRectangle;
+                    rect = regionCaptureTransparentForm.ScreenSelectionRectangle;
                     return true;
                 }
             }

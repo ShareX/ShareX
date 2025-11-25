@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using System.Drawing;
 
@@ -50,26 +49,20 @@ namespace ShareX
                         return ExecuteRegionCapture(taskSettings);
                     }
                 case RegionCaptureType.Light:
-                    if (!RegionCaptureLightForm.LastSelectionRectangle.IsEmpty)
+                    if (!RegionCaptureLightForm.LastScreenSelectionRectangle.IsEmpty)
                     {
-                        using (Bitmap screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
-                        {
-                            Bitmap bmp = ImageHelpers.CropBitmap(screenshot, RegionCaptureLightForm.LastSelectionRectangle);
-                            return new TaskMetadata(bmp);
-                        }
+                        Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(RegionCaptureLightForm.LastScreenSelectionRectangle);
+                        return new TaskMetadata(bmp);
                     }
                     else
                     {
                         return ExecuteRegionCaptureLight(taskSettings);
                     }
                 case RegionCaptureType.Transparent:
-                    if (!RegionCaptureTransparentForm.LastSelectionRectangle0Based.IsEmpty)
+                    if (!RegionCaptureLightForm.LastScreenSelectionRectangle.IsEmpty)
                     {
-                        using (Bitmap screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
-                        {
-                            Bitmap bmp = ImageHelpers.CropBitmap(screenshot, RegionCaptureTransparentForm.LastSelectionRectangle0Based);
-                            return new TaskMetadata(bmp);
-                        }
+                        Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(RegionCaptureLightForm.LastScreenSelectionRectangle);
+                        return new TaskMetadata(bmp);
                     }
                     else
                     {

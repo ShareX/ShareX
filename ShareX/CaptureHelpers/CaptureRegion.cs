@@ -165,7 +165,7 @@ namespace ShareX
         {
             bool activeMonitorMode = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
 
-            using (RegionCaptureTransparentForm rectangleTransparent = new RegionCaptureTransparentForm(activeMonitorMode))
+            using (RegionCaptureLightForm rectangleTransparent = new RegionCaptureLightForm(null, activeMonitorMode))
             {
                 if (rectangleTransparent.ShowDialog() == DialogResult.OK)
                 {

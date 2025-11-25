@@ -28,6 +28,7 @@ using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -37,20 +38,21 @@ namespace ShareX.ScreenCaptureLib
         private const int MinimumRectangleSize = 5;
 
         public static Rectangle LastSelectionRectangle { get; private set; }
+        public static Rectangle LastScreenSelectionRectangle { get; private set; }
 
         public Rectangle ScreenRectangle { get; private set; }
         public Rectangle SelectionRectangle { get; private set; }
+        public Rectangle ScreenSelectionRectangle { get; private set; }
 
         private Bitmap backgroundImage;
         private TextureBrush backgroundBrush;
         private Pen borderDotPen, borderDotPen2;
         private Point positionOnClick;
         private bool isMouseDown;
+        private bool isTransparentBackground;
 
         public RegionCaptureLightForm(Bitmap background, bool activeMonitorMode = false)
         {
-            backgroundImage = background;
-            backgroundBrush = new TextureBrush(backgroundImage);
             borderDotPen = new Pen(Color.White, 1);
             borderDotPen2 = new Pen(Color.Black, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };
@@ -66,6 +68,18 @@ namespace ShareX.ScreenCaptureLib
                 ScreenRectangle = CaptureHelpers.GetScreenBounds();
             }
 
+            isTransparentBackground = background == null;
+
+            if (!isTransparentBackground)
+            {
+                backgroundImage = background;
+                backgroundBrush = new TextureBrush(backgroundImage);
+            }
+            else
+            {
+                backgroundImage = new Bitmap(ScreenRectangle.Width, ScreenRectangle.Height, PixelFormat.Format32bppArgb);
+            }
+
             InitializeComponent();
         }
 
@@ -77,8 +91,16 @@ namespace ShareX.ScreenCaptureLib
             StartPosition = FormStartPosition.Manual;
             Bounds = ScreenRectangle;
             FormBorderStyle = FormBorderStyle.None;
-            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            Text = "ShareX - " + Resources.RectangleLight_InitializeComponent_Rectangle_capture_light;
+
+            if (!isTransparentBackground)
+            {
+                SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+                Text = "ShareX - " + Resources.RectangleLight_InitializeComponent_Rectangle_capture_light;
+            }
+            else
+            {
+                Text = "ShareX - " + Resources.RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent;
+            }
             ShowInTaskbar = false;
 #if !DEBUG
             TopMost = true;
@@ -96,6 +118,21 @@ namespace ShareX.ScreenCaptureLib
             Cursor = Helpers.CreateCursor(Resources.Crosshair);
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+
+                if (isTransparentBackground)
+                {
+                    createParams.ExStyle |= (int)WindowStyles.WS_EX_LAYERED;
+                }
+
+                return createParams;
+            }
+        }
+
         protected override void Dispose(bool disposing)
         {
             backgroundImage?.Dispose();
@@ -104,6 +141,46 @@ namespace ShareX.ScreenCaptureLib
             borderDotPen2?.Dispose();
 
             base.Dispose(disposing);
+        }
+
+        public void SelectBitmap(Bitmap bitmap, int opacity = 255)
+        {
+            if (bitmap.PixelFormat != PixelFormat.Format32bppArgb)
+            {
+                throw new ApplicationException("The bitmap must be 32bpp with alpha-channel.");
+            }
+
+            IntPtr screenDc = NativeMethods.GetDC(IntPtr.Zero);
+            IntPtr memDc = NativeMethods.CreateCompatibleDC(screenDc);
+            IntPtr hBitmap = IntPtr.Zero;
+            IntPtr hOldBitmap = IntPtr.Zero;
+
+            try
+            {
+                hBitmap = bitmap.GetHbitmap(Color.FromArgb(0));
+                hOldBitmap = NativeMethods.SelectObject(memDc, hBitmap);
+
+                SIZE newSize = new SIZE(bitmap.Width, bitmap.Height);
+                POINT sourceLocation = new POINT(0, 0);
+                POINT newLocation = new POINT(Left, Top);
+                BLENDFUNCTION blend = new BLENDFUNCTION();
+                blend.BlendOp = NativeConstants.AC_SRC_OVER;
+                blend.BlendFlags = 0;
+                blend.SourceConstantAlpha = (byte)opacity;
+                blend.AlphaFormat = NativeConstants.AC_SRC_ALPHA;
+
+                NativeMethods.UpdateLayeredWindow(Handle, screenDc, ref newLocation, ref newSize, memDc, ref sourceLocation, 0, ref blend, NativeConstants.ULW_ALPHA);
+            }
+            finally
+            {
+                NativeMethods.ReleaseDC(IntPtr.Zero, screenDc);
+                if (hBitmap != IntPtr.Zero)
+                {
+                    NativeMethods.SelectObject(memDc, hOldBitmap);
+                    NativeMethods.DeleteObject(hBitmap);
+                }
+                NativeMethods.DeleteDC(memDc);
+            }
         }
 
         public Bitmap GetAreaImage()
@@ -118,6 +195,18 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 return ImageHelpers.CropBitmap(backgroundImage, rect);
+            }
+
+            return null;
+        }
+
+        public Bitmap GetAreaImage(Screenshot screenshot)
+        {
+            Rectangle rect = ScreenSelectionRectangle;
+
+            if (rect.Width > 0 && rect.Height > 0)
+            {
+                return screenshot.CaptureRectangle(rect);
             }
 
             return null;
@@ -162,6 +251,8 @@ namespace ShareX.ScreenCaptureLib
                 if (isMouseDown && SelectionRectangle.Width > MinimumRectangleSize && SelectionRectangle.Height > MinimumRectangleSize)
                 {
                     LastSelectionRectangle = SelectionRectangle;
+                    LastScreenSelectionRectangle = new Rectangle(LastSelectionRectangle.X + ScreenRectangle.X,
+                        LastSelectionRectangle.Y + ScreenRectangle.Y, LastSelectionRectangle.Width, LastSelectionRectangle.Height);
                     DialogResult = DialogResult.OK;
                     Close();
                 }
@@ -175,7 +266,7 @@ namespace ShareX.ScreenCaptureLib
                 if (isMouseDown)
                 {
                     isMouseDown = false;
-                    Refresh();
+                    Render();
                 }
                 else
                 {
@@ -188,7 +279,10 @@ namespace ShareX.ScreenCaptureLib
         private void RegionCaptureLightForm_MouseMove(object sender, MouseEventArgs e)
         {
             SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, e.X, e.Y);
-            Refresh();
+            ScreenSelectionRectangle = new Rectangle(SelectionRectangle.X + ScreenRectangle.X, SelectionRectangle.Y + ScreenRectangle.Y,
+                SelectionRectangle.Width, SelectionRectangle.Height);
+
+            Render();
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -198,17 +292,47 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
-            g.InterpolationMode = InterpolationMode.NearestNeighbor;
-            g.SmoothingMode = SmoothingMode.HighSpeed;
-            g.CompositingMode = CompositingMode.SourceCopy;
-            g.CompositingQuality = CompositingQuality.HighSpeed;
-            g.FillRectangle(backgroundBrush, 0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
-
-            if (isMouseDown && SelectionRectangle.Width > MinimumRectangleSize && SelectionRectangle.Height > MinimumRectangleSize)
+            if (!isTransparentBackground)
             {
-                DrawDottedRectangle(g, borderDotPen, borderDotPen2, SelectionRectangle);
+                Graphics g = e.Graphics;
+                g.CompositingMode = CompositingMode.SourceCopy;
+                g.SmoothingMode = SmoothingMode.None;
+                g.FillRectangle(backgroundBrush, 0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
+
+                if (isMouseDown && SelectionRectangle.Width > MinimumRectangleSize && SelectionRectangle.Height > MinimumRectangleSize)
+                {
+                    DrawDottedRectangle(g, borderDotPen, borderDotPen2, SelectionRectangle);
+                }
             }
+        }
+
+        private void Render()
+        {
+            if (isTransparentBackground)
+            {
+                UpdateLayeredSurface();
+            }
+            else
+            {
+                Refresh();
+            }
+        }
+
+        private void UpdateLayeredSurface()
+        {
+            using (Graphics g = Graphics.FromImage(backgroundImage))
+            {
+                g.CompositingMode = CompositingMode.SourceCopy;
+                g.SmoothingMode = SmoothingMode.None;
+                g.Clear(Color.FromArgb(1, 0, 0, 0));
+
+                if (isMouseDown && SelectionRectangle.Width > MinimumRectangleSize && SelectionRectangle.Height > MinimumRectangleSize)
+                {
+                    DrawDottedRectangle(g, borderDotPen, borderDotPen2, SelectionRectangle);
+                }
+            }
+
+            SelectBitmap(backgroundImage);
         }
     }
 }
