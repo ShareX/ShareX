@@ -314,7 +314,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                Refresh();
+                Invalidate();
             }
         }
 
