@@ -254,6 +254,21 @@ namespace ShareX.ScreenCaptureLib
                             args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise can't stream in Chrome
                             args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
+                        case FFmpegVideoCodec.libsvtav1:
+                            args.Append("-c:v libsvtav1 ");
+                            args.Append($"-b:v {FFmpeg.VPx_Bitrate}k ");
+                            args.Append("-pix_fmt yuv420p ");
+                            break;
+                        case FFmpegVideoCodec.libaom_av1:
+                            args.Append("-c:v libaom-av1 ");
+                            args.Append($"-b:v {FFmpeg.VPx_Bitrate}k ");
+                            args.Append("-pix_fmt yuv420p ");
+                            break;
+                        case FFmpegVideoCodec.librav1e:
+                            args.Append("-c:v librav1e ");
+                            args.Append($"-b:v {FFmpeg.VPx_Bitrate}k ");
+                            args.Append("-pix_fmt yuv420p ");
+                            break;
                         case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
                         case FFmpegVideoCodec.libvpx_vp9: // https://trac.ffmpeg.org/wiki/Encode/VP9
                             if (IsRecording) args.Append("-deadline realtime ");
@@ -270,6 +285,13 @@ namespace ShareX.ScreenCaptureLib
                             args.Append($"-b:v {FFmpeg.NVENC_Bitrate}k ");
                             args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
+                        case FFmpegVideoCodec.av1_nvenc:
+                            args.Append($"-preset {FFmpeg.NVENC_Preset} ");
+                            args.Append($"-tune {FFmpeg.NVENC_Tune} ");
+                            args.Append($"-b:v {FFmpeg.NVENC_Bitrate}k ");
+                            args.Append("-pix_fmt yuv420p ");
+                            args.Append("-movflags +faststart ");
+                            break;
                         case FFmpegVideoCodec.h264_amf:
                         case FFmpegVideoCodec.hevc_amf:
                             args.Append($"-usage {FFmpeg.AMF_Usage} ");
@@ -277,8 +299,18 @@ namespace ShareX.ScreenCaptureLib
                             args.Append($"-b:v {FFmpeg.AMF_Bitrate}k ");
                             args.Append("-pix_fmt yuv420p ");
                             break;
+                        case FFmpegVideoCodec.av1_amf:
+                            args.Append($"-usage {FFmpeg.AMF_Usage} ");
+                            args.Append($"-quality {FFmpeg.AMF_Quality} ");
+                            args.Append($"-b:v {FFmpeg.AMF_Bitrate}k ");
+                            args.Append("-pix_fmt yuv420p ");
+                            break;
                         case FFmpegVideoCodec.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
                         case FFmpegVideoCodec.hevc_qsv:
+                            args.Append($"-preset {FFmpeg.QSV_Preset} ");
+                            args.Append($"-b:v {FFmpeg.QSV_Bitrate}k ");
+                            break;
+                        case FFmpegVideoCodec.av1_qsv:
                             args.Append($"-preset {FFmpeg.QSV_Preset} ");
                             args.Append($"-b:v {FFmpeg.QSV_Bitrate}k ");
                             break;

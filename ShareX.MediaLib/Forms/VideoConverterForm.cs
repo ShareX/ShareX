@@ -102,7 +102,9 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.x265:
                 case ConverterVideoCodecs.vp8:
                 case ConverterVideoCodecs.vp9:
-                case ConverterVideoCodecs.av1:
+                case ConverterVideoCodecs.av1_svt:
+                case ConverterVideoCodecs.av1_libaom:
+                case ConverterVideoCodecs.av1_rav1e:
                 case ConverterVideoCodecs.xvid:
                     cbVideoQualityUseBitrate.Visible = true;
                     tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible = lblVideoQualityHigher.Visible = !Options.VideoQualityUseBitrate;
@@ -110,10 +112,13 @@ namespace ShareX.MediaLib
                     break;
                 case ConverterVideoCodecs.h264_nvenc:
                 case ConverterVideoCodecs.hevc_nvenc:
+                case ConverterVideoCodecs.av1_nvenc:
                 case ConverterVideoCodecs.h264_amf:
                 case ConverterVideoCodecs.hevc_amf:
+                case ConverterVideoCodecs.av1_amf:
                 case ConverterVideoCodecs.h264_qsv:
                 case ConverterVideoCodecs.hevc_qsv:
+                case ConverterVideoCodecs.av1_qsv:
                     cbVideoQualityUseBitrate.Visible = false;
                     tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible = lblVideoQualityHigher.Visible = false;
                     nudVideoQualityBitrate.Visible = lblVideoQualityBitrateHint.Visible = true;
@@ -142,7 +147,9 @@ namespace ShareX.MediaLib
                     tbVideoQuality.Minimum = FFmpegCLIManager.vp9_min;
                     tbVideoQuality.Maximum = FFmpegCLIManager.vp9_max;
                     break;
-                case ConverterVideoCodecs.av1:
+                case ConverterVideoCodecs.av1_svt:
+                case ConverterVideoCodecs.av1_libaom:
+                case ConverterVideoCodecs.av1_rav1e:
                     tbVideoQuality.Minimum = FFmpegCLIManager.av1_min;
                     tbVideoQuality.Maximum = FFmpegCLIManager.av1_max;
                     break;

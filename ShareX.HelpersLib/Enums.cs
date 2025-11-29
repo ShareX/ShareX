@@ -63,7 +63,18 @@ namespace ShareX.HelpersLib
         [Description("bmp")]
         BMP,
         [Description("tif")]
-        TIFF
+        TIFF,
+        [Description("webp")]
+        WEBP,
+        [Description("avif")]
+        AVIF
+    }
+
+    public enum AvifTuneIQ // Localized
+    {
+        Default,
+        PSNR,
+        SSIM
     }
 
     public enum HashType

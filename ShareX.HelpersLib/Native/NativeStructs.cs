@@ -1025,4 +1025,340 @@ namespace ShareX.HelpersLib
     {
         void GetImage([In, MarshalAs(UnmanagedType.Struct)] SIZE size, [In] SIIGBF flags, [Out] out IntPtr phbm);
     }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct AvifRWData
+    {
+        public IntPtr data; // uint8_t*
+        public IntPtr size; // size_t - Use IntPtr for cross-platform size_t
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct AvifRGBImage
+    {
+        public uint width;
+        public uint height;
+        public uint depth;
+        public AvifRGBFormat format;
+
+        public AvifChromaUpsampling chromaUpsampling;
+        public AvifChromaDownsampling chromaDownsampling;
+        public uint avoidLibYUV; // Actually avifBool (int) in C, represented as uint here for simplicity or potential mapping
+        public uint ignoreAlpha; // Actually avifBool (int)
+        public uint alphaPremultiplied; // Actually avifBool (int)
+        public uint isFloat; // Actually avifBool (int)
+        public int maxThreads;
+
+        public IntPtr pixels;
+        public uint rowBytes;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct AvifPixelAspectRatioBox
+    {
+        public uint hSpacing;
+        public uint vSpacing;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct AvifCleanApertureBox
+    {
+        public uint widthN;
+        public uint widthD;
+        public uint heightN;
+        public uint heightD;
+        public uint horizOffN;
+        public uint horizOffD;
+        public uint vertOffN;
+        public uint vertOffD;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct AvifImageRotation
+    {
+        public byte angle; // legal values: [0-3]
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct AvifImageMirror
+    {
+        public byte axis; // legal values: [0, 1]
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct AvifContentLightLevelInformationBox
+    {
+        public ushort maxCLL; // uint16_t
+        public ushort maxPALL; // uint16_t
+    }
+
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct AvifImage
+    {
+        // --- Image information ---
+
+        /// <summary>
+        /// Width of the image in pixels.
+        /// </summary>
+        public uint Width;
+
+        /// <summary>
+        /// Height of the image in pixels.
+        /// </summary>
+        public uint Height;
+
+        /// <summary>
+        /// Bit depth of the image planes (8, 10, or 12). All planes must share this depth.
+        /// If depth > 8, all planes are uint16_t internally in libavif.
+        /// </summary>
+        public uint Depth;
+
+        /// <summary>
+        /// The pixel format (chroma subsampling).
+        /// </summary>
+        public AvifPixelFormat YuvFormat;
+
+        /// <summary>
+        /// The YUV color range (limited or full).
+        /// </summary>
+        public AvifRange YuvRange;
+
+        /// <summary>
+        /// The positioning of chroma samples relative to luma samples.
+        /// </summary>
+        public AvifChromaSamplePosition YuvChromaSamplePosition;
+
+        /// <summary>
+        /// Pointers to the start of each YUV plane's pixel data (Y, U, V).
+        /// Size is AVIF_PLANE_COUNT_YUV (usually 3).
+        /// Accessing the data requires marshalling from these IntPtrs.
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = AvifConstants.AVIF_PLANE_COUNT_YUV)]
+        public IntPtr[] YuvPlanes; // uint8_t * yuvPlanes[AVIF_PLANE_COUNT_YUV];
+
+        /// <summary>
+        /// The number of bytes per row for each YUV plane (stride).
+        /// Size is AVIF_PLANE_COUNT_YUV (usually 3).
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = AvifConstants.AVIF_PLANE_COUNT_YUV)]
+        public uint[] YuvRowBytes; // uint32_t yuvRowBytes[AVIF_PLANE_COUNT_YUV];
+
+        /// <summary>
+        /// If true, libavif allocated the YUV plane buffers and will free them on destroy.
+        /// If false, the caller owns the YUV plane buffers.
+        /// Mapped from avifBool (int). Use I4 for interop.
+        /// </summary>
+        [MarshalAs(UnmanagedType.I4)]
+        public bool ImageOwnsYUVPlanes; // avifBool is 'int' in avif.h
+
+        /// <summary>
+        /// Pointer to the start of the alpha plane's pixel data. NULL if no alpha.
+        /// Accessing the data requires marshalling from this IntPtr.
+        /// </summary>
+        public IntPtr AlphaPlane; // uint8_t * alphaPlane;
+
+        /// <summary>
+        /// The number of bytes per row for the alpha plane (stride). 0 if no alpha.
+        /// </summary>
+        public uint AlphaRowBytes;
+
+        /// <summary>
+        /// If true, libavif allocated the alpha plane buffer and will free it on destroy.
+        /// If false, the caller owns the alpha plane buffer.
+        /// Mapped from avifBool (int). Use I4 for interop.
+        /// </summary>
+        [MarshalAs(UnmanagedType.I4)]
+        public bool ImageOwnsAlphaPlane; // avifBool is 'int' in avif.h
+
+        /// <summary>
+        /// Indicates whether the alpha channel is premultiplied.
+        /// Mapped from avifBool (int). Use I4 for interop.
+        /// </summary>
+        [MarshalAs(UnmanagedType.I4)]
+        public bool AlphaPremultiplied; // avifBool is 'int' in avif.h
+
+        // --- Color Profiles ---
+
+        /// <summary>
+        /// ICC profile data. Check icc.size > 0 for presence.
+        /// </summary>
+        public AvifRWData Icc;
+
+        // --- CICP (Coding-Independent Code Points) Information ---
+        // Used if ICC profile is not present. Stored in AV1 payload and AVIF 'colr' box.
+
+        /// <summary>
+        /// Color primaries (e.g., BT.709, BT.2020). Part of CICP.
+        /// </summary>
+        public AvifColorPrimaries ColorPrimaries;
+
+        /// <summary>
+        /// Transfer characteristics (e.g., sRGB, PQ, HLG). Part of CICP.
+        /// </summary>
+        public AvifTransferCharacteristics TransferCharacteristics;
+
+        /// <summary>
+        /// Matrix coefficients (e.g., BT.709, BT.601, BT.2020). Part of CICP.
+        /// </summary>
+        public AvifMatrixCoefficients MatrixCoefficients;
+
+        // --- CLLI (Content Light Level Information) ---
+
+        /// <summary>
+        /// Content Light Level Information (max/average light levels).
+        /// Stored in AVIF 'clli' box. (0, 0) means unknown/unavailable.
+        /// </summary>
+        public AvifContentLightLevelInformationBox Clli;
+
+        // --- Transformations ---
+        // These metadata values are encoded/decoded based on transformFlags.
+        // They DO NOT modify the pixel data buffers directly during decode.
+
+        /// <summary>
+        /// Flags indicating which transformation boxes (pasp, clap, irot, imir) are present and active.
+        /// </summary>
+        public AvifTransformFlags TransformFlags;
+
+        /// <summary>
+        /// Pixel Aspect Ratio ('pasp' box). Active if (transformFlags & AVIF_TRANSFORM_PASP) != 0.
+        /// </summary>
+        public AvifPixelAspectRatioBox Pasp;
+
+        /// <summary>
+        /// Clean Aperture ('clap' box). Active if (transformFlags & AVIF_TRANSFORM_CLAP) != 0.
+        /// Defines the region of the image intended for display.
+        /// </summary>
+        public AvifCleanApertureBox Clap;
+
+        /// <summary>
+        /// Image Rotation ('irot' box). Active if (transformFlags & AVIF_TRANSFORM_IROT) != 0.
+        /// Specifies rotation in 90-degree increments (0-3).
+        /// </summary>
+        public AvifImageRotation Irot;
+
+        /// <summary>
+        /// Image Mirroring ('imir' box). Active if (transformFlags & AVIF_TRANSFORM_IMIR) != 0.
+        /// Specifies horizontal (1) or vertical (0) mirroring.
+        /// </summary>
+        public AvifImageMirror Imir;
+
+        // --- Metadata ---
+
+        /// <summary>
+        /// EXIF metadata payload. Check exif.size > 0 for presence.
+        /// </summary>
+        public AvifRWData Exif;
+
+        /// <summary>
+        /// XMP metadata payload. Check xmp.size > 0 for presence.
+        /// </summary>
+        public AvifRWData Xmp;
+
+        // --- Other Properties ---
+
+        /// <summary>
+        /// Pointer to an array of other image item properties (like 'auxC', 'prem'). NULL if numProperties is 0.
+        /// Interaction requires defining AvifImageItemProperty struct and marshalling.
+        /// </summary>
+        public IntPtr Properties; // avifImageItemProperty *
+
+        /// <summary>
+        /// Number of elements in the 'properties' array. Use IntPtr for size_t cross-platform compatibility.
+        /// Read as: (int)NumProperties on 32-bit, (long)NumProperties on 64-bit, or use nuint/nint in modern C#.
+        /// </summary>
+        public IntPtr NumProperties; // size_t
+
+        // --- Gain Map ---
+
+        /// <summary>
+        /// Gain map image and metadata. NULL if no gain map is present.
+        /// Owned by the avifImage. Interaction requires defining AvifGainMap struct and marshalling.
+        /// gainMap->image->transformFlags is always AVIF_TRANSFORM_NONE.
+        /// </summary>
+        public IntPtr GainMap; // avifGainMap *
+
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct AvifDecoder
+    {
+        // Settings - Must match the order and size in avif.h up to 'image'
+        public AvifCodecChoice codecChoice;
+        public int maxThreads;
+        public AvifDecoderSource requestedSource;
+        public int allowProgressive; // avifBool
+        public int allowIncremental; // avifBool
+        public int ignoreExif; // avifBool
+        public int ignoreXMP; // avifBool
+        public uint imageSizeLimit;
+        public uint imageDimensionLimit;
+        public uint imageCountLimit;
+        public uint strictFlags; // avifStrictFlags
+
+        // --- Outputs start here ---
+        public IntPtr image; // avifImage* - This is what we need
+        // Add other public output fields *after* image if needed by later code,
+        // but for GetImage, we only need the offset up to 'image'.
+        // int imageIndex;
+        // int imageCount;
+        // ... and so on
+    }
+
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+    public struct avifEncoder // Partial representation for setting options
+    {
+        // --- Fields must match avifEncoder in avif.h up to the ones we set ---
+        public AvifCodecChoice codecChoice;
+
+        // Defaults to 1. If < 2, multithreading is disabled. See also 'Understanding maxThreads' above. https://github.com/AOMediaCodec/libavif/blob/bb066689f9a5aba2b72732864ccb4a89e0ef520e/include/avif/avif.h#L903
+        public int maxThreads;
+
+        // Speed range: [AVIF_SPEED_SLOWEST - AVIF_SPEED_FASTEST]. Slower should make for a better quality
+        // image in fewer bytes. AVIF_SPEED_DEFAULT means "Leave the AV1 codec to its default speed settings".
+        // If avifEncoder uses rav1e, the speed value is directly passed through (0-10). If libaom is used,
+        // a combination of settings are tweaked to simulate this speed range.
+        public int speed;
+
+        public int keyframeInterval;
+        public ulong timescale;
+        public int repetitionCount;
+        public uint extraLayerCount;
+
+        // Quality settings
+        public int quality;             // Target field (0-100, 100=best)
+        public int qualityAlpha;        // Target field (0-100, 100=best)
+
+        // Tiling fields
+        public int tileRowsLog2;
+        public int tileColsLog2;
+
+        // If autoTiling is set to AVIF_TRUE, libavif ignores tileRowsLog2 and tileColsLog2 and
+        // automatically chooses suitable tiling values.
+        public int autoTiling;
+
+        // Scaling mode
+        public AvifScalingMode scalingMode;
+
+        // --- We don't need fields after this point for setting quality/speed ---
+        // IntPtr data; // Internal
+        // IntPtr csOptions; // Internal
+        // uint headerFormat; // Added v1.1.0
+        // int qualityGainMap; // Added v1.2.0
+        // ... other potential future fields or experimental ones ...
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct AvifFraction
+    {
+        public int n;
+        public int d;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct AvifScalingMode
+    {
+        public AvifFraction horizontal;
+        public AvifFraction vertical;
+    }
 }
