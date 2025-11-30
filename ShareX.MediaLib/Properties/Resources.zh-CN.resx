@@ -156,4 +156,10 @@
   <data name="StopEncoding" xml:space="preserve">
     <value>停止编码</value>
   </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>要重置选项吗？</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>确认</value>
+  </data>
 </root>
