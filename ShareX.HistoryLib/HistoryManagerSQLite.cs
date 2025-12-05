@@ -33,10 +33,12 @@ namespace ShareX.HistoryLib
 {
     public class HistoryManagerSQLite : HistoryManager, IDisposable
     {
+        private bool enableConnectionRelease;
         private SqliteConnection connection;
 
-        public HistoryManagerSQLite(string filePath) : base(filePath)
+        public HistoryManagerSQLite(string filePath, bool _enableConnectionRelease = false) : base(filePath)
         {
+            enableConnectionRelease = _enableConnectionRelease;
             Connect(filePath);
             EnsureDatabase();
         }
@@ -45,8 +47,18 @@ namespace ShareX.HistoryLib
         {
             FileHelpers.CreateDirectoryFromFilePath(filePath);
 
-            string connectionString = $"Data Source={filePath}";
-            connection = new SqliteConnection(connectionString);
+            var connectionStringBuilder = new SqliteConnectionStringBuilder()
+            {
+                DataSource = filePath
+            };
+            if (enableConnectionRelease)
+            {
+                connectionStringBuilder.Pooling = false;
+                connectionStringBuilder.ForeignKeys = false;
+                connectionStringBuilder.Cache = SqliteCacheMode.Shared;
+            }
+
+            connection = new SqliteConnection(connectionStringBuilder.ToString());
             connection.Open();
 
             SetBusyTimeout(5000);
@@ -111,10 +123,8 @@ CREATE TABLE IF NOT EXISTS History (
                     items.Add(item);
                 }
             }
-
             return items;
         }
-
         protected override bool Append(string dbPath, IEnumerable<HistoryItem> historyItems)
         {
             using (SqliteTransaction transaction = connection.BeginTransaction())
