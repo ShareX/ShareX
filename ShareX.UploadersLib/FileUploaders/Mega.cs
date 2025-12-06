@@ -158,6 +158,11 @@ namespace ShareX.UploadersLib.FileUploaders
             return SendRequest(HttpMethod.POST, url.ToString(), jsonData, RequestHelpers.ContentTypeJSON);
         }
 
+        public string PostRequestJson(Uri url, string jsonData, string hashcash)
+        {
+            throw new NotImplementedException();
+        }
+
         public string PostRequestRaw(Uri url, Stream dataStream)
         {
             try

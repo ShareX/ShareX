@@ -7,10 +7,10 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="FluentFTP" Version="52.1.0" />
-    <PackageReference Include="MegaApiClient" Version="1.10.4" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="SSH.NET" Version="2025.0.0" />
+    <PackageReference Include="FluentFTP" Version="53.0.2" />
+    <PackageReference Include="MegaApiClient" Version="1.10.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="SSH.NET" Version="2025.1.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
