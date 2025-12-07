@@ -143,65 +143,58 @@ namespace ShareX
                 lblTestStatus.ForeColor = Color.Gold;
                 lblTestStatus.Text = "Testing...";
 
-                var client = HttpClientFactory.Create();
+                HttpClient client = HttpClientFactory.Create();
                 HttpRequestMessage req = null;
-                var provider = (AIProvider)cbProvider.SelectedIndex;
+                AIProvider provider = (AIProvider)cbProvider.SelectedIndex;
 
                 switch (provider)
                 {
                     case AIProvider.OpenAI:
                     case AIProvider.Custom:
-                    {
-                        var key = txtOpenAIAPIKey.Text?.Trim();
-                        if (string.IsNullOrEmpty(key))
+                        string openAIKey = txtOpenAIAPIKey.Text?.Trim();
+                        if (string.IsNullOrEmpty(openAIKey))
                         {
                             lblTestStatus.ForeColor = Color.IndianRed;
                             lblTestStatus.Text = "Missing OpenAI API key.";
                             return;
                         }
 
-                        var baseUrl = txtOpenAICustomURL.Text;
-                        if (string.IsNullOrWhiteSpace(baseUrl))
-                            baseUrl = "https://api.openai.com/v1";
-                        baseUrl = baseUrl.Trim().TrimEnd('/');
+                        string openAIBaseURL = txtOpenAICustomURL.Text;
+                        if (string.IsNullOrWhiteSpace(openAIBaseURL))
+                        {
+                            openAIBaseURL = "https://api.openai.com/v1";
+                        }
+                        openAIBaseURL = openAIBaseURL.Trim().TrimEnd('/');
 
-                        var url = baseUrl + "/models";
-                        req = new HttpRequestMessage(HttpMethod.Get, url);
-                        req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", key);
+                        string openAIURL = openAIBaseURL + "/models";
+                        req = new HttpRequestMessage(HttpMethod.Get, openAIURL);
+                        req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", openAIKey);
                         break;
-                    }
-
                     case AIProvider.Gemini:
-                    {
-                        var key = txtGeminiAPIKey.Text?.Trim();
-                        if (string.IsNullOrEmpty(key))
+                        string geminiKey = txtGeminiAPIKey.Text?.Trim();
+                        if (string.IsNullOrEmpty(geminiKey))
                         {
                             lblTestStatus.ForeColor = Color.IndianRed;
                             lblTestStatus.Text = "Missing Gemini API key.";
                             return;
                         }
 
-                        var url = "https://generativelanguage.googleapis.com/v1beta/models?key=" + Uri.EscapeDataString(key);
-                        req = new HttpRequestMessage(HttpMethod.Get, url);
+                        string geminiURL = "https://generativelanguage.googleapis.com/v1beta/models?key=" + Uri.EscapeDataString(geminiKey);
+                        req = new HttpRequestMessage(HttpMethod.Get, geminiURL);
                         break;
-                    }
-
                     case AIProvider.OpenRouter:
-                    {
-                        var key = txtOpenRouterAPIKey.Text?.Trim();
-                        if (string.IsNullOrEmpty(key))
+                        string openRouterKey = txtOpenRouterAPIKey.Text?.Trim();
+                        if (string.IsNullOrEmpty(openRouterKey))
                         {
                             lblTestStatus.ForeColor = Color.IndianRed;
                             lblTestStatus.Text = "Missing OpenRouter API key.";
                             return;
                         }
 
-                        var url = "https://openrouter.ai/api/v1/models";
-                        req = new HttpRequestMessage(HttpMethod.Get, url);
-                        req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", key);
+                        string openRouterURL = "https://openrouter.ai/api/v1/models";
+                        req = new HttpRequestMessage(HttpMethod.Get, openRouterURL);
+                        req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", openRouterKey);
                         break;
-                    }
-
                     default:
                         lblTestStatus.ForeColor = Color.IndianRed;
                         lblTestStatus.Text = "Select a provider first.";
@@ -209,15 +202,15 @@ namespace ShareX
                 }
 
                 using (req)
-                using (var resp = await client.SendAsync(req))
+                using (HttpResponseMessage resp = await client.SendAsync(req))
                 {
-                    var ok = (int)resp.StatusCode >= 200 && (int)resp.StatusCode < 300;
-                    var text = await resp.Content.ReadAsStringAsync();
+                    bool ok = (int)resp.StatusCode >= 200 && (int)resp.StatusCode < 300;
+                    string text = await resp.Content.ReadAsStringAsync();
 
                     if (ok)
                     {
                         lblTestStatus.ForeColor = Color.LimeGreen;
-                        lblTestStatus.Text = "Connection OK";
+                        lblTestStatus.Text = "Connection OK.";
                     }
                     else
                     {

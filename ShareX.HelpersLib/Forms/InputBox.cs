@@ -102,28 +102,28 @@ namespace ShareX.HelpersLib
             btnCancel = new Button();
             txtInputText = new TextBox();
             SuspendLayout();
-            // 
+            //
             // btnOK
-            // 
+            //
             resources.ApplyResources(btnOK, "btnOK");
             btnOK.Name = "btnOK";
             btnOK.UseVisualStyleBackColor = true;
             btnOK.Click += btnOK_Click;
-            // 
+            //
             // btnCancel
-            // 
+            //
             resources.ApplyResources(btnCancel, "btnCancel");
             btnCancel.Name = "btnCancel";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
-            // 
+            //
             // txtInputText
-            // 
+            //
             resources.ApplyResources(txtInputText, "txtInputText");
             txtInputText.Name = "txtInputText";
-            // 
+            //
             // InputBox
-            // 
+            //
             AcceptButton = btnOK;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;

@@ -52,9 +52,9 @@ namespace ShareX
             }
         }
 
-    private const string UploadersConfigFileName = "UploadersConfig.json";
-    private const string UploadersConfigFileNamePrefix = "UploadersConfig";
-    private const string UploadersConfigFileNameExtension = ".json";
+        private const string UploadersConfigFileNamePrefix = "UploadersConfig";
+        private const string UploadersConfigFileNameExtension = "json";
+        private const string UploadersConfigFileName = UploadersConfigFileNamePrefix + "." + UploadersConfigFileNameExtension;
 
         private static string UploadersConfigFilePath
         {
@@ -201,13 +201,13 @@ namespace ShareX
                 return UploadersConfigFileName;
             }
 
-            if (Settings?.UseMachineSpecificUploadersConfig == true)
+            if (Settings != null && Settings.UseMachineSpecificUploadersConfig)
             {
                 string sanitizedMachineName = FileHelpers.SanitizeFileName(Environment.MachineName);
 
                 if (!string.IsNullOrEmpty(sanitizedMachineName))
                 {
-                    string machineSpecificFileName = $"{UploadersConfigFileNamePrefix}-{sanitizedMachineName}{UploadersConfigFileNameExtension}";
+                    string machineSpecificFileName = $"{UploadersConfigFileNamePrefix}-{sanitizedMachineName}.{UploadersConfigFileNameExtension}";
                     string machineSpecificPath = Path.Combine(destinationFolder, machineSpecificFileName);
 
                     if (!File.Exists(machineSpecificPath))
