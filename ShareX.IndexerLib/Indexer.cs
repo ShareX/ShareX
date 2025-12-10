@@ -86,17 +86,20 @@ namespace ShareX.IndexerLib
                         subFolderInfo.Parent = folderInfo;
                     }
 
-                    foreach (FileInfo fileInfo in currentDirectoryInfo.EnumerateFiles())
+                    if (!settings.SkipFiles)
                     {
-                        if (settings.SkipHiddenFiles && fileInfo.Attributes.HasFlag(FileAttributes.Hidden))
+                        foreach (FileInfo fileInfo in currentDirectoryInfo.EnumerateFiles())
                         {
-                            continue;
+                            if (settings.SkipHiddenFiles && fileInfo.Attributes.HasFlag(FileAttributes.Hidden))
+                            {
+                                continue;
+                            }
+
+                            folderInfo.Files.Add(fileInfo);
                         }
 
-                        folderInfo.Files.Add(fileInfo);
+                        folderInfo.Files.Sort((x, y) => x.Name.CompareTo(y.Name));
                     }
-
-                    folderInfo.Files.Sort((x, y) => x.Name.CompareTo(y.Name));
                 }
                 catch (UnauthorizedAccessException)
                 {
