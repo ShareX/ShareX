@@ -298,7 +298,7 @@ namespace ShareX
         public static void HistoryConnect()
         {
             HistoryClose();
-            Program.HistoryManager = new HistoryManagerSQLite(Program.HistoryFilePath);
+            Program.HistoryManager = new HistoryManagerSQLite(Program.HistoryFilePath, Settings.EnableConnectionRelease);
         }
 
         public static void HistoryClose()
@@ -320,7 +320,7 @@ namespace ShareX
                     {
                         DebugHelper.WriteLine($"Migrating JSON history file \"{Program.HistoryFilePathOld}\" to SQLite history file \"{Program.HistoryFilePath}\"");
 
-                        using (HistoryManagerSQLite historyManager = new HistoryManagerSQLite(Program.HistoryFilePath))
+                        using (HistoryManagerSQLite historyManager = new HistoryManagerSQLite(Program.HistoryFilePath, Settings.EnableConnectionRelease))
                         {
                             historyManager.MigrateFromJSON(Program.HistoryFilePathOld);
                         }
