@@ -130,17 +130,53 @@
     <value>4</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnLoad.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnLoad.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="btnLoad.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnLoad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>920, 596</value>
+  </data>
+  <data name="btnLoad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 40</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnLoad.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>107, 17</value>
+  </metadata>
+  <data name="btnLoad.ToolTip" xml:space="preserve">
+    <value>Load more</value>
+  </data>
+  <data name="&gt;&gt;btnLoad.Name" xml:space="preserve">
+    <value>btnLoad</value>
+  </data>
+  <data name="&gt;&gt;btnLoad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLoad.Parent" xml:space="preserve">
+    <value>pMain</value>
+  </data>
+  <data name="&gt;&gt;btnLoad.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ilvImages.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ilvImages.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="ilvImages.Size" type="System.Drawing.Size, System.Drawing">
     <value>994, 636</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ilvImages.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -151,9 +187,33 @@
     <value>Manina.Windows.Forms.ImageListView, ImageListView, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ilvImages.Parent" xml:space="preserve">
-    <value>tscMain.ContentPanel</value>
+    <value>pMain</value>
   </data>
   <data name="&gt;&gt;ilvImages.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>994, 636</value>
+  </data>
+  <data name="pMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pMain.Name" xml:space="preserve">
+    <value>pMain</value>
+  </data>
+  <data name="&gt;&gt;pMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pMain.Parent" xml:space="preserve">
+    <value>tscMain.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;pMain.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tscMain.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
@@ -280,7 +340,7 @@
     <value>3, 0</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>508, 25</value>
+    <value>477, 25</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -372,6 +432,12 @@
   <data name="&gt;&gt;tsbShowStats.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsbImportFolder.Name" xml:space="preserve">
+    <value>tsbImportFolder</value>
+  </data>
+  <data name="&gt;&gt;tsbImportFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tss2.Name" xml:space="preserve">
     <value>tss2</value>
   </data>
@@ -384,11 +450,11 @@
   <data name="&gt;&gt;tsbSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsbImportFolder.Name" xml:space="preserve">
-    <value>tsbImportFolder</value>
+  <data name="&gt;&gt;ttMain.Name" xml:space="preserve">
+    <value>ttMain</value>
   </data>
-  <data name="&gt;&gt;tsbImportFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ImageHistoryForm</value>

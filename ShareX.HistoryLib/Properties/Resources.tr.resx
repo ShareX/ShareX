@@ -117,113 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>Filtrelenmiş: {0}</value>
-  </data>
-  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>Toplam: {0}</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>Kopyala</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>Silme adresi</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
-    <value>Dosya</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>Dosya adı</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>Uzantılı dosya adı</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>Dosya yolu</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
-    <value>Dizin</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>Forum (BBCode) resim</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>Forum (BBCode) link</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>Forum (BBCode) linkli resim</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
-    <value>HTML resim</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>HTML link</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
-    <value>HTML linkli resim</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>Resim</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Resim önizleme...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Daha fazla bilgi...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
-    <value>Aç</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>Kısaltılmış adres</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>Yazı</value>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>Geçmiş girdi sayıları:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
     <value>Küçük resim adresi</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>Adres</value>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>Dosya yolu</value>
   </data>
-  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
-    <value>Hata</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>Forum (BBCode) resim</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
+    <value>Resim önizleme...</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>Dosya</value>
+  </data>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>Toplam: {0}</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>Kısaltılmış adres</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
     <value>Markdown bağlantı</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
-    <value>Markdown bağlantılı resim</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>Markdown resim</value>
-  </data>
   <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
     <value>Geçmiş dosyası okunurken hata oluştu:</value>
   </data>
-  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
-    <value>Dosya ismi, pencere başlığı, işlem ismi vs.</value>
-  </data>
-  <data name="HistoryItemCounts" xml:space="preserve">
-    <value>Geçmiş girdi sayıları:</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
-    <value>Resimi düzenle...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>Dosyayı karşıya aktar</value>
-  </data>
-  <data name="HistoryStats_FileExtensions" xml:space="preserve">
-    <value>Dosya uzantıları:</value>
-  </data>
-  <data name="HistoryStats_Hosts" xml:space="preserve">
-    <value>Sunucular:</value>
-  </data>
-  <data name="HistoryStats_Total" xml:space="preserve">
-    <value>Toplam:</value>
-  </data>
-  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
-    <value>Yıllık kullanım:</value>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>Dizin</value>
   </data>
   <data name="Total" xml:space="preserve">
     <value>Toplam</value>
@@ -231,13 +156,88 @@
   <data name="Filtered" xml:space="preserve">
     <value>Filtrelenmiş</value>
   </data>
-  <data name="HistoryStats" xml:space="preserve">
-    <value>Geçmiş istatistikleri</value>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>Dosya adı</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
+    <value>Uzantılı dosya adı</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Markdown resim</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>Dosyayı karşıya aktar</value>
+  </data>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>Filtrelenmiş: {0}</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
+    <value>HTML resim</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>Kopyala</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>Dosya ismi, pencere başlığı, işlem ismi vs.</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>Sunucular:</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Ekrana sabitle</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>Aç</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>Yıllık kullanım:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>HTML link</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
+    <value>HTML linkli resim</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>Resimi düzenle...</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>Forum (BBCode) linkli resim</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>Silme adresi</value>
   </data>
   <data name="ProcessNames" xml:space="preserve">
     <value>İşlem isimleri:</value>
   </data>
-  <data name="PinToScreen" xml:space="preserve">
-    <value>Ekrana sabitle</value>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Geçmiş istatistikleri</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>Yazı</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>Resim</value>
+  </data>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>Dosya uzantıları:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>Toplam:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>Forum (BBCode) link</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>Markdown bağlantılı resim</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>Daha fazla bilgi...</value>
   </data>
 </root>

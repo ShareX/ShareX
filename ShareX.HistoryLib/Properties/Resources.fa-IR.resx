@@ -117,44 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>آدرس</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>آپلود فایل</value>
-  </data>
-  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>جمع: {0}</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>متن</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>ادرس کوتاه شده</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
-    <value>بازکردن</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>آدرس حذف</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>کپی</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>نام فایل</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>مسیر فایل</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>لینک HTML</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>اطلاعات بیشتر</value>
-  </data>
-  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
-    <value>خطا</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
     <value>پیش نمایش عکس</value>
@@ -162,19 +126,55 @@
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>فایل</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>عکس</value>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>جمع: {0}</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>ادرس کوتاه شده</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>پوشه</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>نام فایل</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>نام فایل با پسوند</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>آپلود فایل</value>
+  </data>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>فیلترشده: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>عکس HTML</value>
   </data>
-  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>فیلترشده: {0}</value>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>کپی</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>بازکردن</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>لینک HTML</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>آدرس حذف</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>عکس</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>اطلاعات بیشتر</value>
   </data>
 </root>

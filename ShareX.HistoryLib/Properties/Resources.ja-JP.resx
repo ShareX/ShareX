@@ -117,14 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Filtered" xml:space="preserve">
-    <value>条件に一致</value>
-  </data>
-  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
-    <value>エラー</value>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>履歴の総数:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
     <value>サムネイルのURL</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>ファイルのパス</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>フォーラム (BBCode) 画像</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
     <value>画像のプレビュー...</value>
@@ -132,50 +135,74 @@
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>ファイル</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>画像</value>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>合計: {0}</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>短縮URL</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
     <value>Markdown リンク</value>
   </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>履歴を読み込むときにエラーがおきました:</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>フォルダー</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>URL</value>
+  <data name="Total" xml:space="preserve">
+    <value>合計</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>条件に一致</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>ファイル名</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>ファイル名と拡張子</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>コピー</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Markdown 画像</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
-    <value>HTML 画像</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
-    <value>Markdown リンク付き画像</value>
-  </data>
-  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>合計: {0}</value>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>ファイルアップロード</value>
   </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>条件に一致: {0}</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
+    <value>HTML 画像</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>コピー</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>ファイル名、ウィンドウ名などを入力して検索</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>ホストごとの履歴:</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>最前面に固定</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>開く</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>詳細情報...</value>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>年ごとの履歴:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
     <value>HTML リンク</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>Markdown 画像</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
     <value>HTML リンク付き画像</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>画像を編集...</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>エラー</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
     <value>フォーラム (BBCode) リンク付き画像</value>
@@ -183,61 +210,34 @@
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
     <value>削除用URL</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>フォーラム (BBCode) 画像</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>テキスト</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>短縮URL</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>ファイル名</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>ファイルのパス</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>フォーラム (BBCode) リンク</value>
-  </data>
-  <data name="HistoryItemCounts" xml:space="preserve">
-    <value>履歴の総数:</value>
-  </data>
-  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
-    <value>年ごとの履歴:</value>
-  </data>
-  <data name="HistoryStats_FileExtensions" xml:space="preserve">
-    <value>ファイル拡張子ごとの履歴:</value>
-  </data>
-  <data name="HistoryStats_Hosts" xml:space="preserve">
-    <value>ホストごとの履歴:</value>
-  </data>
-  <data name="HistoryStats_Total" xml:space="preserve">
-    <value>合計:</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
-    <value>画像を編集...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>ファイルアップロード</value>
-  </data>
-  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
-    <value>履歴を読み込むときにエラーがおきました:</value>
-  </data>
-  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
-    <value>ファイル名、ウィンドウ名などを入力して検索</value>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>プロセス名:</value>
   </data>
   <data name="HistoryStats" xml:space="preserve">
     <value>利用統計</value>
   </data>
-  <data name="ProcessNames" xml:space="preserve">
-    <value>プロセス名:</value>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>テキスト</value>
   </data>
-  <data name="Total" xml:space="preserve">
-    <value>合計</value>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>画像</value>
   </data>
-  <data name="PinToScreen" xml:space="preserve">
-    <value>最前面に固定</value>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>ファイル拡張子ごとの履歴:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>合計:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>フォーラム (BBCode) リンク</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>Markdown リンク付き画像</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>詳細情報...</value>
   </data>
 </root>

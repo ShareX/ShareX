@@ -117,11 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>텍스트</value>
+  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
+    <value>섬네일 URL</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>파일 경로</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>포럼용 (BBCode) 이미지</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
+    <value>이미지 미리보기</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>파일 이름</value>
+  </data>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>총: {0}</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>단축 URL</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
+    <value>마크다운 링크</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>폴더</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
     <value>파일 이름</value>
@@ -129,23 +150,20 @@
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>파일 이름 + 확장자</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>파일 경로</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>마크다운 이미지</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
-    <value>폴더</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>포럼용 (BBCode) 이미지</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>포럼용 (BBCode) 링크</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>포럼용 (BBCode) 링크 걸린 이미지</value>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>필터됨: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>HTML 이미지</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>복사</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>열기</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
     <value>HTML 링크</value>
@@ -153,49 +171,31 @@
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
     <value>HTML 링크 걸린 이미지</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>이미지</value>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>오류</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>이미지 미리보기</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>자세한 정보...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
-    <value>열기</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>단축 URL</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>섬네일 URL</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>URL</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>포럼용 (BBCode) 링크 걸린 이미지</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
     <value>삭제 URL</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>복사</value>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>텍스트</value>
   </data>
-  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>총: {0}</value>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>이미지</value>
   </data>
-  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>필터됨: {0}</value>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
-  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
-    <value>오류</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>마크다운 이미지</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
-    <value>마크다운 링크</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>포럼용 (BBCode) 링크</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
     <value>마크다운 링크 이미지</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>자세한 정보...</value>
   </data>
 </root>

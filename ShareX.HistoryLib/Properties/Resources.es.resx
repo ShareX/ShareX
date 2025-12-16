@@ -117,65 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>Total: {0}</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>Copiar</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
-    <value>Archivo</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>Nombre del archivo</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
-    <value>Carpeta</value>
+  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
+    <value>URL miniatura</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>Ruta de archivo</value>
   </data>
-  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>Filtrado: {0}</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>Nombre del archivo con extensión</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
-    <value>Imagen HTML</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>Enlace HTML</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>Imagen</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Más información</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
-    <value>Abrir</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>Texto</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>URL acortada</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>Enlace del foro (BBCode)</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>Imagen foro (BBCode)</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
     <value>Previsualización de imagen</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>URL</value>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>Archivo</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>URL miniatura</value>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>Total: {0}</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>Imagen foro (BBCode)</value>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>URL acortada</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>Carpeta</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>Nombre del archivo</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
+    <value>Nombre del archivo con extensión</value>
+  </data>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>Filtrado: {0}</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
+    <value>Imagen HTML</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>Enlace HTML</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
+    <value>Imagen enlazada HTML</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
     <value>Foro vinculado (BBCode)</value>
@@ -183,7 +171,19 @@
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
     <value>Supresión URL</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
-    <value>Imagen enlazada HTML</value>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>Imagen</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>Enlace del foro (BBCode)</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>Más información</value>
   </data>
 </root>

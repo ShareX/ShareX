@@ -121,6 +121,9 @@
   <data name="document_copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\document-copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>History item counts:</value>
+  </data>
   <data name="drive_upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drive-upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,20 +136,23 @@
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>File path</value>
   </data>
-  <data name="HistoryStats_Hosts" xml:space="preserve">
-    <value>Hosts:</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>Forum (BBCode) image</value>
   </data>
-  <data name="HistoryItemCounts" xml:space="preserve">
-    <value>History item counts:</value>
+  <data name="robot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\robot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="image__pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image--pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
     <value>Image preview...</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>Upload file</value>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>File</value>
   </data>
-  <data name="image__pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image--pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>Total: {0}</value>
   </data>
   <data name="chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,26 +178,26 @@
   <data name="Filtered" xml:space="preserve">
     <value>Filtered</value>
   </data>
-  <data name="globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\globe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
     <value>File name</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>HTML link</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>File name with extension</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>Copy</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Markdown image</value>
+  </data>
+  <data name="folder-search-result" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-search-result.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="image_sunset" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image-sunset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>Markdown image</value>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>Upload file</value>
+  </data>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>Filtered: {0}</value>
   </data>
   <data name="pin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,17 +205,17 @@
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>HTML image</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
-    <value>Markdown linked image</value>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>Copy</value>
   </data>
   <data name="HistoryForm_Search_Watermark" xml:space="preserve">
     <value>File name, window title, process name, etc.</value>
   </data>
-  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>Total: {0}</value>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>Hosts:</value>
   </data>
-  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>Filtered: {0}</value>
+  <data name="globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\globe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PinToScreen" xml:space="preserve">
     <value>Pin to screen</value>
@@ -223,8 +229,8 @@
   <data name="magnifier--plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnifier--plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
-    <value>File</value>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>HTML link</value>
   </data>
   <data name="document_rename" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\document-rename.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,8 +259,8 @@
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
     <value>Deletion URL</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>Forum (BBCode) image</value>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Process names:</value>
   </data>
   <data name="folder_open_document" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-open-document.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,8 +271,8 @@
   <data name="HistoryStats" xml:space="preserve">
     <value>History stats</value>
   </data>
-  <data name="HistoryStats_Total" xml:space="preserve">
-    <value>Total:</value>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>Text</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
     <value>Image</value>
@@ -276,9 +282,6 @@
   </data>
   <data name="application_block" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ProcessNames" xml:space="preserve">
-    <value>Process names:</value>
   </data>
   <data name="HistoryStats_FileExtensions" xml:space="preserve">
     <value>File extensions:</value>
@@ -292,16 +295,16 @@
   <data name="gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>Text</value>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>Total:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
     <value>Forum (BBCode) link</value>
   </data>
-  <data name="folder-search-result" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder-search-result.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>Markdown linked image</value>
   </data>
-  <data name="robot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\robot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow-skip-270" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-skip-270.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader5 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Name, "Name", 100, 0, true);
-            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader6 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FileSize, "Size", 100, 1, true);
-            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader7 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Dimensions, "Dimensions", 100, 2, true);
-            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader8 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FilePath, "Path", 100, 3, true);
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageHistoryForm));
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader1 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Name, "Name", 100, 0, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader2 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FileSize, "Size", 100, 1, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader3 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Dimensions, "Dimensions", 100, 2, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader4 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FilePath, "Path", 100, 3, true);
             tscMain = new System.Windows.Forms.ToolStripContainer();
+            pMain = new System.Windows.Forms.Panel();
+            btnLoad = new System.Windows.Forms.Button();
             ilvImages = new Manina.Windows.Forms.ImageListView();
             tsMain = new System.Windows.Forms.ToolStrip();
             tslSearch = new System.Windows.Forms.ToolStripLabel();
@@ -42,12 +45,14 @@
             tss1 = new System.Windows.Forms.ToolStripSeparator();
             tsbFavorites = new System.Windows.Forms.ToolStripButton();
             tsbShowStats = new System.Windows.Forms.ToolStripButton();
+            tsbImportFolder = new System.Windows.Forms.ToolStripButton();
             tss2 = new System.Windows.Forms.ToolStripSeparator();
             tsbSettings = new System.Windows.Forms.ToolStripButton();
-            tsbImportFolder = new System.Windows.Forms.ToolStripButton();
+            ttMain = new System.Windows.Forms.ToolTip(components);
             tscMain.ContentPanel.SuspendLayout();
             tscMain.TopToolStripPanel.SuspendLayout();
             tscMain.SuspendLayout();
+            pMain.SuspendLayout();
             tsMain.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,7 +61,7 @@
             // 
             // tscMain.ContentPanel
             // 
-            tscMain.ContentPanel.Controls.Add(ilvImages);
+            tscMain.ContentPanel.Controls.Add(pMain);
             resources.ApplyResources(tscMain.ContentPanel, "tscMain.ContentPanel");
             resources.ApplyResources(tscMain, "tscMain");
             tscMain.Name = "tscMain";
@@ -65,6 +70,22 @@
             // 
             tscMain.TopToolStripPanel.Controls.Add(tsMain);
             // 
+            // pMain
+            // 
+            pMain.Controls.Add(btnLoad);
+            pMain.Controls.Add(ilvImages);
+            resources.ApplyResources(pMain, "pMain");
+            pMain.Name = "pMain";
+            // 
+            // btnLoad
+            // 
+            resources.ApplyResources(btnLoad, "btnLoad");
+            btnLoad.Image = Properties.Resources.arrow_skip_270;
+            btnLoad.Name = "btnLoad";
+            ttMain.SetToolTip(btnLoad, resources.GetString("btnLoad.ToolTip"));
+            btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.Click += btnLoad_Click;
+            // 
             // ilvImages
             // 
             ilvImages.AllowDrag = true;
@@ -72,27 +93,27 @@
             ilvImages.AllowItemReorder = false;
             ilvImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             ilvImages.CacheLimit = "100MB";
-            imageListViewColumnHeader5.Comparer = null;
-            imageListViewColumnHeader5.DisplayIndex = 0;
-            imageListViewColumnHeader5.Grouper = null;
-            imageListViewColumnHeader5.Key = "";
-            imageListViewColumnHeader5.Type = Manina.Windows.Forms.ColumnType.Name;
-            imageListViewColumnHeader6.Comparer = null;
-            imageListViewColumnHeader6.DisplayIndex = 1;
-            imageListViewColumnHeader6.Grouper = null;
-            imageListViewColumnHeader6.Key = "";
-            imageListViewColumnHeader6.Type = Manina.Windows.Forms.ColumnType.FileSize;
-            imageListViewColumnHeader7.Comparer = null;
-            imageListViewColumnHeader7.DisplayIndex = 2;
-            imageListViewColumnHeader7.Grouper = null;
-            imageListViewColumnHeader7.Key = "";
-            imageListViewColumnHeader7.Type = Manina.Windows.Forms.ColumnType.Dimensions;
-            imageListViewColumnHeader8.Comparer = null;
-            imageListViewColumnHeader8.DisplayIndex = 3;
-            imageListViewColumnHeader8.Grouper = null;
-            imageListViewColumnHeader8.Key = "";
-            imageListViewColumnHeader8.Type = Manina.Windows.Forms.ColumnType.FilePath;
-            ilvImages.Columns.AddRange(new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader[] { imageListViewColumnHeader5, imageListViewColumnHeader6, imageListViewColumnHeader7, imageListViewColumnHeader8 });
+            imageListViewColumnHeader1.Comparer = null;
+            imageListViewColumnHeader1.DisplayIndex = 0;
+            imageListViewColumnHeader1.Grouper = null;
+            imageListViewColumnHeader1.Key = "";
+            imageListViewColumnHeader1.Type = Manina.Windows.Forms.ColumnType.Name;
+            imageListViewColumnHeader2.Comparer = null;
+            imageListViewColumnHeader2.DisplayIndex = 1;
+            imageListViewColumnHeader2.Grouper = null;
+            imageListViewColumnHeader2.Key = "";
+            imageListViewColumnHeader2.Type = Manina.Windows.Forms.ColumnType.FileSize;
+            imageListViewColumnHeader3.Comparer = null;
+            imageListViewColumnHeader3.DisplayIndex = 2;
+            imageListViewColumnHeader3.Grouper = null;
+            imageListViewColumnHeader3.Key = "";
+            imageListViewColumnHeader3.Type = Manina.Windows.Forms.ColumnType.Dimensions;
+            imageListViewColumnHeader4.Comparer = null;
+            imageListViewColumnHeader4.DisplayIndex = 3;
+            imageListViewColumnHeader4.Grouper = null;
+            imageListViewColumnHeader4.Key = "";
+            imageListViewColumnHeader4.Type = Manina.Windows.Forms.ColumnType.FilePath;
+            ilvImages.Columns.AddRange(new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader[] { imageListViewColumnHeader1, imageListViewColumnHeader2, imageListViewColumnHeader3, imageListViewColumnHeader4 });
             resources.ApplyResources(ilvImages, "ilvImages");
             ilvImages.Name = "ilvImages";
             ilvImages.ThumbnailSize = new System.Drawing.Size(100, 100);
@@ -152,6 +173,14 @@
             tsbShowStats.Name = "tsbShowStats";
             tsbShowStats.Click += tsbShowStats_Click;
             // 
+            // tsbImportFolder
+            // 
+            tsbImportFolder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsbImportFolder.Image = Properties.Resources.folder_search_result;
+            resources.ApplyResources(tsbImportFolder, "tsbImportFolder");
+            tsbImportFolder.Name = "tsbImportFolder";
+            tsbImportFolder.Click += tsbImportFolder_Click;
+            // 
             // tss2
             // 
             tss2.Name = "tss2";
@@ -164,14 +193,6 @@
             resources.ApplyResources(tsbSettings, "tsbSettings");
             tsbSettings.Name = "tsbSettings";
             tsbSettings.Click += tsbSettings_Click;
-            // 
-            // tsbImportFolder
-            // 
-            tsbImportFolder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            tsbImportFolder.Image = Properties.Resources.folder_search_result;
-            resources.ApplyResources(tsbImportFolder, "tsbImportFolder");
-            tsbImportFolder.Name = "tsbImportFolder";
-            tsbImportFolder.Click += tsbImportFolder_Click;
             // 
             // ImageHistoryForm
             // 
@@ -188,6 +209,7 @@
             tscMain.TopToolStripPanel.PerformLayout();
             tscMain.ResumeLayout(false);
             tscMain.PerformLayout();
+            pMain.ResumeLayout(false);
             tsMain.ResumeLayout(false);
             tsMain.PerformLayout();
             ResumeLayout(false);
@@ -208,5 +230,8 @@
         private System.Windows.Forms.ToolStripSeparator tss2;
         private System.Windows.Forms.ToolStripButton tsbShowStats;
         private System.Windows.Forms.ToolStripButton tsbImportFolder;
+        private System.Windows.Forms.Panel pMain;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.ToolTip ttMain;
     }
 }

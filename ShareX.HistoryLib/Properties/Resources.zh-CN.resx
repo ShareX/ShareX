@@ -117,20 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>已筛选：{0}</value>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>历史项目数:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
+    <value>缩略图 URL</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>文件路径</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>论坛（BB 代码）的图像</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
+    <value>图像预览...</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>文件</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
     <value>总计：{0}</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>复制</value>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>URL 短链</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>删除URL</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
+    <value>Markdown 链接</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
-    <value>文件</value>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>读取历史记录文件出错:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>文件夹</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>总计</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>已筛选</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
     <value>文件名</value>
@@ -138,23 +162,32 @@
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>文件名（含扩展名）</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>文件路径</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Markdown 图像</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
-    <value>文件夹</value>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>上传文件</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>论坛（BB 代码）的图像</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>论坛（BB 代码）链接</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>论坛（BB 代码）链接的图像</value>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>已筛选：{0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>HTML图像</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>文件名、窗口标题、进程名等。</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>主机:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>年用量:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
     <value>HTML链接</value>
@@ -162,79 +195,46 @@
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
     <value>HTML链接的图像</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>图像</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>图像预览...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>更多信息...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
-    <value>打开</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>URL 短链</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>文本</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>缩略图 URL</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>URL</value>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>编辑图像...</value>
   </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>错误</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
-    <value>Markdown 链接的图像</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>论坛（BB 代码）链接的图像</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
-    <value>Markdown 链接</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>Markdown 图像</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
-    <value>编辑图像...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>上传文件</value>
-  </data>
-  <data name="HistoryStats_Total" xml:space="preserve">
-    <value>总计:</value>
-  </data>
-  <data name="HistoryStats_FileExtensions" xml:space="preserve">
-    <value>文件扩展名:</value>
-  </data>
-  <data name="HistoryItemCounts" xml:space="preserve">
-    <value>历史项目数:</value>
-  </data>
-  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
-    <value>年用量:</value>
-  </data>
-  <data name="HistoryStats_Hosts" xml:space="preserve">
-    <value>主机:</value>
-  </data>
-  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
-    <value>读取历史记录文件出错:</value>
-  </data>
-  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
-    <value>文件名、窗口标题、进程名等。</value>
-  </data>
-  <data name="Filtered" xml:space="preserve">
-    <value>已筛选</value>
-  </data>
-  <data name="HistoryStats" xml:space="preserve">
-    <value>历史记录统计</value>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>删除URL</value>
   </data>
   <data name="ProcessNames" xml:space="preserve">
     <value>进程名称：</value>
   </data>
-  <data name="Total" xml:space="preserve">
-    <value>总计</value>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>历史记录统计</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>文本</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>图像</value>
+  </data>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>文件扩展名:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>总计:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>论坛（BB 代码）链接</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>Markdown 链接的图像</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>更多信息...</value>
   </data>
 </root>
