@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageHistoryForm));
             Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader1 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Name, "Name", 100, 0, true);
             Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader2 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FileSize, "Size", 100, 1, true);
             Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader3 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Dimensions, "Dimensions", 100, 2, true);
             Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader4 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FilePath, "Path", 100, 3, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageHistoryForm));
             tscMain = new System.Windows.Forms.ToolStripContainer();
             pMain = new System.Windows.Forms.Panel();
-            btnLoad = new System.Windows.Forms.Button();
             ilvImages = new Manina.Windows.Forms.ImageListView();
             tsMain = new System.Windows.Forms.ToolStrip();
             tslSearch = new System.Windows.Forms.ToolStripLabel();
@@ -72,19 +71,9 @@
             // 
             // pMain
             // 
-            pMain.Controls.Add(btnLoad);
             pMain.Controls.Add(ilvImages);
             resources.ApplyResources(pMain, "pMain");
             pMain.Name = "pMain";
-            // 
-            // btnLoad
-            // 
-            resources.ApplyResources(btnLoad, "btnLoad");
-            btnLoad.Image = Properties.Resources.arrow_skip_270;
-            btnLoad.Name = "btnLoad";
-            ttMain.SetToolTip(btnLoad, resources.GetString("btnLoad.ToolTip"));
-            btnLoad.UseVisualStyleBackColor = true;
-            btnLoad.Click += btnLoad_Click;
             // 
             // ilvImages
             // 
@@ -120,6 +109,7 @@
             ilvImages.UseWIC = true;
             ilvImages.ItemDoubleClick += ilvImages_ItemDoubleClick;
             ilvImages.SelectionChanged += ilvImages_SelectionChanged;
+            ilvImages.ThumbnailCached += ilvImages_ThumbnailCached;
             ilvImages.KeyDown += ilvImages_KeyDown;
             // 
             // tsMain
@@ -231,7 +221,6 @@
         private System.Windows.Forms.ToolStripButton tsbShowStats;
         private System.Windows.Forms.ToolStripButton tsbImportFolder;
         private System.Windows.Forms.Panel pMain;
-        private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.ToolTip ttMain;
     }
 }

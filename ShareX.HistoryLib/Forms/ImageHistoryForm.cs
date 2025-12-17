@@ -92,7 +92,6 @@ namespace ShareX.HistoryLib
         private void UpdateTitle(int total, int filtered)
         {
             Text = $"{defaultTitle} ({Resources.Total}: {total:N0} - {Resources.Filtered}: {filtered:N0})";
-            btnLoad.Visible = Settings.MaxItemCount > 0 && filtered >= Settings.MaxItemCount;
         }
 
         private async Task RefreshHistoryItems(bool refreshItems = true)
@@ -378,9 +377,13 @@ namespace ShareX.HistoryLib
             e.SuppressKeyPress = him.HandleKeyInput(e);
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void ilvImages_ThumbnailCached(object sender, ThumbnailCachedEventArgs e)
         {
-            ApplyFilter(false);
+            if (Settings.MaxItemCount > 0 && ilvImages.Items.Count >= Settings.MaxItemCount &&
+                e.Item == ilvImages.Items[ilvImages.Items.Count - 1])
+            {
+                ApplyFilter(false);
+            }
         }
 
         #endregion Form events
