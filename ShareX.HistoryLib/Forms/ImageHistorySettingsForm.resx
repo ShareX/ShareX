@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblThumbnailSize.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="lblMaximumImageLimit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -171,32 +171,32 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMaximumImageLimit.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
-  <data name="nudThumbnailSize.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="nudThumbnailSizeWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
   </data>
-  <data name="nudThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="nudThumbnailSizeWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 23</value>
   </data>
-  <data name="nudThumbnailSize.TabIndex" type="System.Int32, mscorlib">
+  <data name="nudThumbnailSizeWidth.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="nudThumbnailSize.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+  <data name="nudThumbnailSizeWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="&gt;&gt;nudThumbnailSize.Name" xml:space="preserve">
-    <value>nudThumbnailSize</value>
+  <data name="&gt;&gt;nudThumbnailSizeWidth.Name" xml:space="preserve">
+    <value>nudThumbnailSizeWidth</value>
   </data>
-  <data name="&gt;&gt;nudThumbnailSize.Type" xml:space="preserve">
+  <data name="&gt;&gt;nudThumbnailSizeWidth.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;nudThumbnailSize.Parent" xml:space="preserve">
+  <data name="&gt;&gt;nudThumbnailSizeWidth.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;nudThumbnailSize.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;nudThumbnailSizeWidth.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="nudMaximumImageLimit.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -220,34 +220,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudMaximumImageLimit.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
-  <data name="lblThumbnailSizeUnit.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblThumbnailSizeWidthUnit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblThumbnailSizeUnit.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblThumbnailSizeWidthUnit.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 36</value>
   </data>
-  <data name="lblThumbnailSizeUnit.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblThumbnailSizeWidthUnit.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 15</value>
   </data>
-  <data name="lblThumbnailSizeUnit.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblThumbnailSizeWidthUnit.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
+  <data name="lblThumbnailSizeWidthUnit.Text" xml:space="preserve">
     <value>px</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailSizeUnit.Name" xml:space="preserve">
-    <value>lblThumbnailSizeUnit</value>
+  <data name="&gt;&gt;lblThumbnailSizeWidthUnit.Name" xml:space="preserve">
+    <value>lblThumbnailSizeWidthUnit</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailSizeUnit.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblThumbnailSizeWidthUnit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailSizeUnit.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblThumbnailSizeWidthUnit.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailSizeUnit.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;lblThumbnailSizeWidthUnit.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="cbRememberSearchText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -277,7 +277,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbRememberSearchText.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="cbFilterMissingFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -304,7 +304,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbFilterMissingFiles.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="cbRememberWindowState.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -331,7 +331,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbRememberWindowState.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="cbImageOnly.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -358,7 +358,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbImageOnly.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="cbAutoLoadMoreItems.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -385,7 +385,61 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbAutoLoadMoreItems.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblThumbnailSizeHeightUnit.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblThumbnailSizeHeightUnit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblThumbnailSizeHeightUnit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 36</value>
+  </data>
+  <data name="lblThumbnailSizeHeightUnit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 15</value>
+  </data>
+  <data name="lblThumbnailSizeHeightUnit.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblThumbnailSizeHeightUnit.Text" xml:space="preserve">
+    <value>px</value>
+  </data>
+  <data name="&gt;&gt;lblThumbnailSizeHeightUnit.Name" xml:space="preserve">
+    <value>lblThumbnailSizeHeightUnit</value>
+  </data>
+  <data name="&gt;&gt;lblThumbnailSizeHeightUnit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblThumbnailSizeHeightUnit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblThumbnailSizeHeightUnit.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="nudThumbnailSizeHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 32</value>
+  </data>
+  <data name="nudThumbnailSizeHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 23</value>
+  </data>
+  <data name="nudThumbnailSizeHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="nudThumbnailSizeHeight.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudThumbnailSizeHeight.Name" xml:space="preserve">
+    <value>nudThumbnailSizeHeight</value>
+  </data>
+  <data name="&gt;&gt;nudThumbnailSizeHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudThumbnailSizeHeight.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nudThumbnailSizeHeight.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

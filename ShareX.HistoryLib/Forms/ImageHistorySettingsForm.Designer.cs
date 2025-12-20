@@ -31,16 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageHistorySettingsForm));
             lblThumbnailSize = new System.Windows.Forms.Label();
             lblMaximumImageLimit = new System.Windows.Forms.Label();
-            nudThumbnailSize = new System.Windows.Forms.NumericUpDown();
+            nudThumbnailSizeWidth = new System.Windows.Forms.NumericUpDown();
             nudMaximumImageLimit = new System.Windows.Forms.NumericUpDown();
-            lblThumbnailSizeUnit = new System.Windows.Forms.Label();
+            lblThumbnailSizeWidthUnit = new System.Windows.Forms.Label();
             cbRememberSearchText = new System.Windows.Forms.CheckBox();
             cbFilterMissingFiles = new System.Windows.Forms.CheckBox();
             cbRememberWindowState = new System.Windows.Forms.CheckBox();
             cbImageOnly = new System.Windows.Forms.CheckBox();
             cbAutoLoadMoreItems = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)nudThumbnailSize).BeginInit();
+            lblThumbnailSizeHeightUnit = new System.Windows.Forms.Label();
+            nudThumbnailSizeHeight = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)nudThumbnailSizeWidth).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMaximumImageLimit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudThumbnailSizeHeight).BeginInit();
             SuspendLayout();
             // 
             // lblThumbnailSize
@@ -53,14 +56,14 @@
             resources.ApplyResources(lblMaximumImageLimit, "lblMaximumImageLimit");
             lblMaximumImageLimit.Name = "lblMaximumImageLimit";
             // 
-            // nudThumbnailSize
+            // nudThumbnailSizeWidth
             // 
-            resources.ApplyResources(nudThumbnailSize, "nudThumbnailSize");
-            nudThumbnailSize.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
-            nudThumbnailSize.Minimum = new decimal(new int[] { 50, 0, 0, 0 });
-            nudThumbnailSize.Name = "nudThumbnailSize";
-            nudThumbnailSize.Value = new decimal(new int[] { 100, 0, 0, 0 });
-            nudThumbnailSize.ValueChanged += nudThumbnailSize_ValueChanged;
+            resources.ApplyResources(nudThumbnailSizeWidth, "nudThumbnailSizeWidth");
+            nudThumbnailSizeWidth.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            nudThumbnailSizeWidth.Minimum = new decimal(new int[] { 50, 0, 0, 0 });
+            nudThumbnailSizeWidth.Name = "nudThumbnailSizeWidth";
+            nudThumbnailSizeWidth.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            nudThumbnailSizeWidth.ValueChanged += nudThumbnailSizeWidth_ValueChanged;
             // 
             // nudMaximumImageLimit
             // 
@@ -69,10 +72,10 @@
             nudMaximumImageLimit.Name = "nudMaximumImageLimit";
             nudMaximumImageLimit.ValueChanged += nudMaximumImageLimit_ValueChanged;
             // 
-            // lblThumbnailSizeUnit
+            // lblThumbnailSizeWidthUnit
             // 
-            resources.ApplyResources(lblThumbnailSizeUnit, "lblThumbnailSizeUnit");
-            lblThumbnailSizeUnit.Name = "lblThumbnailSizeUnit";
+            resources.ApplyResources(lblThumbnailSizeWidthUnit, "lblThumbnailSizeWidthUnit");
+            lblThumbnailSizeWidthUnit.Name = "lblThumbnailSizeWidthUnit";
             // 
             // cbRememberSearchText
             // 
@@ -109,26 +112,43 @@
             cbAutoLoadMoreItems.UseVisualStyleBackColor = true;
             cbAutoLoadMoreItems.CheckedChanged += cbAutoLoadMoreItems_CheckedChanged;
             // 
+            // lblThumbnailSizeHeightUnit
+            // 
+            resources.ApplyResources(lblThumbnailSizeHeightUnit, "lblThumbnailSizeHeightUnit");
+            lblThumbnailSizeHeightUnit.Name = "lblThumbnailSizeHeightUnit";
+            // 
+            // nudThumbnailSizeHeight
+            // 
+            resources.ApplyResources(nudThumbnailSizeHeight, "nudThumbnailSizeHeight");
+            nudThumbnailSizeHeight.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            nudThumbnailSizeHeight.Minimum = new decimal(new int[] { 50, 0, 0, 0 });
+            nudThumbnailSizeHeight.Name = "nudThumbnailSizeHeight";
+            nudThumbnailSizeHeight.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            nudThumbnailSizeHeight.ValueChanged += nudThumbnailSizeHeight_ValueChanged;
+            // 
             // ImageHistorySettingsForm
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             BackColor = System.Drawing.SystemColors.Window;
+            Controls.Add(lblThumbnailSizeHeightUnit);
+            Controls.Add(nudThumbnailSizeHeight);
             Controls.Add(cbAutoLoadMoreItems);
             Controls.Add(cbImageOnly);
             Controls.Add(cbRememberWindowState);
             Controls.Add(cbFilterMissingFiles);
             Controls.Add(cbRememberSearchText);
-            Controls.Add(lblThumbnailSizeUnit);
+            Controls.Add(lblThumbnailSizeWidthUnit);
             Controls.Add(nudMaximumImageLimit);
-            Controls.Add(nudThumbnailSize);
+            Controls.Add(nudThumbnailSizeWidth);
             Controls.Add(lblMaximumImageLimit);
             Controls.Add(lblThumbnailSize);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "ImageHistorySettingsForm";
-            ((System.ComponentModel.ISupportInitialize)nudThumbnailSize).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudThumbnailSizeWidth).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudMaximumImageLimit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudThumbnailSizeHeight).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -137,13 +157,15 @@
         #endregion
         private System.Windows.Forms.Label lblThumbnailSize;
         private System.Windows.Forms.Label lblMaximumImageLimit;
-        private System.Windows.Forms.NumericUpDown nudThumbnailSize;
+        private System.Windows.Forms.NumericUpDown nudThumbnailSizeWidth;
         private System.Windows.Forms.NumericUpDown nudMaximumImageLimit;
-        private System.Windows.Forms.Label lblThumbnailSizeUnit;
+        private System.Windows.Forms.Label lblThumbnailSizeWidthUnit;
         private System.Windows.Forms.CheckBox cbRememberSearchText;
         private System.Windows.Forms.CheckBox cbFilterMissingFiles;
         private System.Windows.Forms.CheckBox cbRememberWindowState;
         private System.Windows.Forms.CheckBox cbImageOnly;
         private System.Windows.Forms.CheckBox cbAutoLoadMoreItems;
+        private System.Windows.Forms.Label lblThumbnailSizeHeightUnit;
+        private System.Windows.Forms.NumericUpDown nudThumbnailSizeHeight;
     }
 }
