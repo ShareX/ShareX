@@ -38,6 +38,7 @@
             cbFilterMissingFiles = new System.Windows.Forms.CheckBox();
             cbRememberWindowState = new System.Windows.Forms.CheckBox();
             cbImageOnly = new System.Windows.Forms.CheckBox();
+            cbAutoLoadMoreItems = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)nudThumbnailSize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMaximumImageLimit).BeginInit();
             SuspendLayout();
@@ -101,11 +102,19 @@
             cbImageOnly.UseVisualStyleBackColor = true;
             cbImageOnly.CheckedChanged += cbImageOnly_CheckedChanged;
             // 
+            // cbAutoLoadMoreItems
+            // 
+            resources.ApplyResources(cbAutoLoadMoreItems, "cbAutoLoadMoreItems");
+            cbAutoLoadMoreItems.Name = "cbAutoLoadMoreItems";
+            cbAutoLoadMoreItems.UseVisualStyleBackColor = true;
+            cbAutoLoadMoreItems.CheckedChanged += cbAutoLoadMoreItems_CheckedChanged;
+            // 
             // ImageHistorySettingsForm
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             BackColor = System.Drawing.SystemColors.Window;
+            Controls.Add(cbAutoLoadMoreItems);
             Controls.Add(cbImageOnly);
             Controls.Add(cbRememberWindowState);
             Controls.Add(cbFilterMissingFiles);
@@ -135,5 +144,6 @@
         private System.Windows.Forms.CheckBox cbFilterMissingFiles;
         private System.Windows.Forms.CheckBox cbRememberWindowState;
         private System.Windows.Forms.CheckBox cbImageOnly;
+        private System.Windows.Forms.CheckBox cbAutoLoadMoreItems;
     }
 }

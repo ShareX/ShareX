@@ -34,6 +34,7 @@ namespace ShareX.HistoryLib
         public WindowState WindowState { get; set; } = new WindowState();
         public Size ThumbnailSize { get; set; } = new Size(250, 250);
         public int MaxItemCount { get; set; } = 500;
+        public bool AutoLoadMoreItems { get; set; } = true;
         public bool FilterMissingFiles { get; set; } = false;
         public bool ImageOnly { get; set; } = true;
         public bool RememberSearchText { get; set; } = false;

@@ -379,7 +379,7 @@ namespace ShareX.HistoryLib
 
         private void ilvImages_ThumbnailCached(object sender, ThumbnailCachedEventArgs e)
         {
-            if (Settings.MaxItemCount > 0 && ilvImages.Items.Count >= Settings.MaxItemCount &&
+            if (Settings.AutoLoadMoreItems && Settings.MaxItemCount > 0 && ilvImages.Items.Count >= Settings.MaxItemCount &&
                 e.Item == ilvImages.Items[ilvImages.Items.Count - 1])
             {
                 ApplyFilter(false);

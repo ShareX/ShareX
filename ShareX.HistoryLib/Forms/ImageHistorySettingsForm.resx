@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblThumbnailSize.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblMaximumImageLimit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -171,7 +171,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMaximumImageLimit.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="nudThumbnailSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -196,7 +196,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudThumbnailSize.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="nudMaximumImageLimit.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -220,7 +220,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudMaximumImageLimit.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblThumbnailSizeUnit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -247,7 +247,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblThumbnailSizeUnit.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbRememberSearchText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -256,7 +256,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbRememberSearchText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
+    <value>16, 184</value>
   </data>
   <data name="cbRememberSearchText.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 19</value>
@@ -277,13 +277,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbRememberSearchText.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbFilterMissingFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbFilterMissingFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
+    <value>16, 136</value>
   </data>
   <data name="cbFilterMissingFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 19</value>
@@ -304,13 +304,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbFilterMissingFiles.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbRememberWindowState.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbRememberWindowState.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 184</value>
+    <value>16, 208</value>
   </data>
   <data name="cbRememberWindowState.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 19</value>
@@ -331,13 +331,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbRememberWindowState.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbImageOnly.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbImageOnly.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>16, 160</value>
   </data>
   <data name="cbImageOnly.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 19</value>
@@ -358,6 +358,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbImageOnly.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbAutoLoadMoreItems.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAutoLoadMoreItems.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 112</value>
+  </data>
+  <data name="cbAutoLoadMoreItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 19</value>
+  </data>
+  <data name="cbAutoLoadMoreItems.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="cbAutoLoadMoreItems.Text" xml:space="preserve">
+    <value>Automatically load more images</value>
+  </data>
+  <data name="&gt;&gt;cbAutoLoadMoreItems.Name" xml:space="preserve">
+    <value>cbAutoLoadMoreItems</value>
+  </data>
+  <data name="&gt;&gt;cbAutoLoadMoreItems.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAutoLoadMoreItems.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbAutoLoadMoreItems.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -367,7 +394,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>334, 217</value>
+    <value>334, 241</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
