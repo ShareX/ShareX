@@ -627,13 +627,13 @@ namespace ShareX
             Info.Metadata.Image = Image;
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.SaveImageToFileWithDialog, AfterCaptureTasks.DoOCR,
-                AfterCaptureTasks.UploadImageToHost))
+                AfterCaptureTasks.UploadImageToHost, AfterCaptureTasks.AnalyzeImage))
             {
                 ImageData imageData = TaskHelpers.PrepareImage(Image, Info.TaskSettings);
                 Data = imageData.ImageStream;
                 Info.FileName = Path.ChangeExtension(Info.FileName, imageData.ImageFormat.GetDescription());
 
-                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFile))
+                if (Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.AnalyzeImage))
                 {
                     string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings, Info.Metadata);
                     string filePath = TaskHelpers.HandleExistsFile(screenshotsFolder, Info.FileName, Info.TaskSettings);

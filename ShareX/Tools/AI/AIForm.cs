@@ -43,7 +43,20 @@ namespace ShareX
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
 
-            cbInput.Text = Options.Input;
+            txtInput.Text = Options.Input;
+
+            // Add preset prompts to context menu
+            AddPresetPrompt("What is in this image?");
+            AddPresetPrompt("Thoroughly describe this image.");
+            AddPresetPrompt("Transcribe the image's text. Do not write anything else.");
+            AddPresetPrompt("Translate this text into English. Do not write anything else.");
+        }
+
+        private void AddPresetPrompt(string prompt)
+        {
+            ToolStripMenuItem item = new ToolStripMenuItem(prompt);
+            item.Click += (s, e) => txtInput.Text = prompt;
+            cmsPresets.Items.Add(item);
         }
 
         public AIForm(string filePath, AIOptions options) : this(options)
@@ -186,9 +199,9 @@ namespace ShareX
             }
         }
 
-        private void cbInput_TextChanged(object sender, EventArgs e)
+        private void txtInput_TextChanged(object sender, EventArgs e)
         {
-            Options.Input = cbInput.Text;
+            Options.Input = txtInput.Text;
         }
 
         private void txtImage_TextChanged(object sender, EventArgs e)
