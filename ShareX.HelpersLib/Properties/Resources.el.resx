@@ -1,0 +1,1184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>Ελεύθερη περιοχή</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>Όνομα εβδομάδας (Τοπική γλώσσα)</value>
+  </data>
+  <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
+    <value>Οι ρυθμίσεις αντιγράφονται στο πρόχειρο.</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>Μεγάλο τετράγωνο</value>
+  </data>
+  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
+    <value>Δεύτερο</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>Προσαρμοσμένο πρόγραμμα μεταφόρτωσης κειμένου</value>
+  </data>
+  <data name="ProxyMethod_None" xml:space="preserve">
+    <value>Κανένα</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
+    <value>Μήνας</value>
+  </data>
+  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
+    <value>Αναζήτηση για ένα Cascading Style Sheet...</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>Επανάληψη</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
+    <value>Thumbnailer βίντεο</value>
+  </data>
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
+    <value>Θολούρα (B)</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>Εμφάνιση μενού γρήγορης εργασίας</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>Συντόμευση URL</value>
+  </data>
+  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
+    <value>Όνομα σύνδεσης χρήστη</value>
+  </data>
+  <data name="HotkeyType_ImageEffects" xml:space="preserve">
+    <value>Αποτελέσματα εικόνας</value>
+  </data>
+  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
+    <value>Εικόνα (οθόνη)</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
+    <value>Μια νεότερη έκδοση του {0} είναι διαθέσιμη</value>
+  </data>
+  <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
+    <value>Εμφάνιση παραθύρου κώδικα QR</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>Μπαλόνι ομιλίας (S)</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
+    <value>{0} είναι ενημερωμένο</value>
+  </data>
+  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
+    <value>Εγγραφή οθόνης</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>1 ώρα</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
+    <value>Έναρξη/διακοπή λήψης κύλισης</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>Αυτόματη αύξηση των αλφαριθμητικών, ευαίσθητη στην πεζότητα (0 pad αριστερά με χρήση {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
+    <value>Τίτλος του παραθύρου</value>
+  </data>
+  <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
+    <value>Εκτύπωση εικόνας</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>Περιοχή ορθογωνίου</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>Εναλλαγή της γραμμής εργαλείων ενεργειών</value>
+  </data>
+  <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
+    <value>Εκτέλεση ενεργειών</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Ποσοστό καμβά</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
+    <value>Ημερομηνία και ώρα</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
+    <value>Συνδυαστής εικόνας</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Περιοχή σύλληψης (Διαφανής)</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
+    <value>Η λήψη ολοκληρώθηκε.</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>Ιδιωτικό</value>
+  </data>
+  <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
+    <value>Μοιραστείτε τη διεύθυνση URL</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>Πρόγραμμα μεταφόρτωσης αρχείων</value>
+  </data>
+  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
+    <value>Ώρα</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
+    <value>Ο έλεγχος ενημέρωσης απέτυχε</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
+    <value>Χιλιοστά του δευτερολέπτου</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
+    <value>Εγκαταστήστε το</value>
+  </data>
+  <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
+    <value>Ανέβασμα εικόνας στον κεντρικό υπολογιστή</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>Αυτόματη αύξηση δεκαεξαδικών (0 pad αριστερά χρησιμοποιώντας {n})</value>
+  </data>
+  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
+    <value>Κυανό: {0:0.0}%, Ματζέντα: {1:0.0}%, Κίτρινο: {2:0.0}%, Key: {3:0.0}%</value>
+  </data>
+  <data name="HotkeyType_FolderUpload" xml:space="preserve">
+    <value>Φάκελος φόρτωσης</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
+    <value>Λεπτό</value>
+  </data>
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
+    <value>Pixelate (P)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
+    <value>Ημέρα</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>1 ημέρα</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>Βέλος (Α)</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Έξυπνη γόμα</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>Μη καταχωρημένο</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>Η ενημέρωση είναι διαθέσιμη</value>
+  </data>
+  <data name="HotkeyType_Category_Upload" xml:space="preserve">
+    <value>Ανέβασμα</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
+    <value>Κόψτε το</value>
+  </data>
+  <data name="FileExistAction_Cancel" xml:space="preserve">
+    <value>Μην αποθηκεύετε</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
+    <value>Αντιγραφή εικόνας στο πρόχειρο</value>
+  </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>32 bit</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
+    <value>Έναρξη/διακοπή εγγραφής οθόνης (GIF) χρησιμοποιώντας την περιοχή του ενεργού παραθύρου</value>
+  </data>
+  <data name="HotkeyType_PrintScreen" xml:space="preserve">
+    <value>Καταγραφή ολόκληρης της οθόνης</value>
+  </data>
+  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
+    <value>Κανονικό</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>Έναρξη/διακοπή εγγραφής οθόνης (GIF) με χρήση προκαθορισμένης περιοχής</value>
+  </data>
+  <data name="HotkeyType_CustomRegion" xml:space="preserve">
+    <value>Σύλληψη προκαθορισμένης περιοχής</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
+    <value>Εικόνα</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>10 λεπτά</value>
+  </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>Αλλαγή τύπου εργαλείου</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion" xml:space="preserve">
+    <value>Περιοχή σύλληψης</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>Αναγνώριση κειμένου (OCR)</value>
+  </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>Έξοδος ShareX</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>Μια νεότερη έκδοση του {0} είναι διαθέσιμη.
+Θα θέλατε να την κατεβάσετε;</value>
+  </data>
+  <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
+    <value>Λήψη αποτυχημένη:</value>
+  </data>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>Κείμενο (περίγραμμα) (O)</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>Σύλληψη ενεργής οθόνης</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>Μικρή μικρογραφία</value>
+  </data>
+  <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
+    <value>Εκτύπωση</value>
+  </data>
+  <data name="GIFQuality_Bit4" xml:space="preserve">
+    <value>Κβαντιστής Octree 16 χρώματα</value>
+  </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>Εμφάνιση του παραθύρου "Μετά το ανέβασμα"</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
+    <value>Τυχαίο επίθετο</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Επιλέξτε όλα</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>Προσαρμοσμένο πρόγραμμα μεταφόρτωσης αρχείων</value>
+  </data>
+  <data name="LinearGradientMode_Vertical" xml:space="preserve">
+    <value>Κατακόρυφο</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
+    <value>Τυχαία</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>Πρόγραμμα μεταφόρτωσης εικόνων</value>
+  </data>
+  <data name="HotkeyType_HashCheck" xml:space="preserve">
+    <value>Ελεγκτής κατακερματισμού</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
+    <value>Έναρξη/διακοπή εγγραφής οθόνης χρησιμοποιώντας την περιοχή του ενεργού παραθύρου</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
+    <value>Τυχαίος αριθμός 0 έως 9 (Επαναλάβετε χρησιμοποιώντας {n})</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
+    <value>Ανέβασμα από πρόχειρο με προβολή περιεχομένου</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>Δημόσιο</value>
+  </data>
+  <data name="HSB_ToString_" xml:space="preserve">
+    <value>Hue:  {1:0.0}%, Φωτεινότητα: {2:0.0}%</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="HotkeyType_DragDropUpload" xml:space="preserve">
+    <value>Μεταφόρτωση με drag and drop</value>
+  </data>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>Ποτέ</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
+    <value>Έναρξη/διακοπή εγγραφής οθόνης με χρήση της τελευταίας περιοχής</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
+    <value>Ναι</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Εικόνα thumbnailer</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
+    <value>Όνομα μήνα (Τοπική γλώσσα)</value>
+  </data>
+  <data name="GIFQuality_Bit8" xml:space="preserve">
+    <value>Octree quantizer 256 χρώματα (Αργή κωδικοποίηση αλλά καλύτερη ποιότητα)</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>Εικόνα (αρχείο)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
+    <value>.NET (κακή ποιότητα)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>Αυτόματη αύξηση των αλφαριθμητικών, χωρίς να λαμβάνεται υπόψη η πεζότητα (0 pad αριστερά με χρήση {n})</value>
+  </data>
+  <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
+    <value>Προσθήκη εφέ εικόνας</value>
+  </data>
+  <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
+    <value>Διαγραφή αρχείου τοπικά</value>
+  </data>
+  <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
+    <value>Η εξαγωγή απέτυχε.</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
+    <value>Υπολογιστής</value>
+  </data>
+  <data name="FileExistAction_UniqueName" xml:space="preserve">
+    <value>Προσθήκη αριθμού στο όνομα αρχείου</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>Μεγάλη μικρογραφία</value>
+  </data>
+  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
+    <value>Έτος (2 ψηφία)</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>Αυτόματη ανίχνευση</value>
+  </data>
+  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
+    <value>Προηγούμενο κράτος</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>Περιοχή έλλειψης</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
+    <value>Έναρξη/διακοπή εγγραφής οθόνης (GIF)</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>Μη καταχωρημένο</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Όνομα</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Παράθυρο</value>
+  </data>
+  <data name="HotkeyType_Ruler" xml:space="preserve">
+    <value>Χάρακας</value>
+  </data>
+  <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
+    <value>URL για να κατεβάσετε τις ρυθμίσεις από</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>Ελεύθερο χέρι (F)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
+    <value>Αναζήτηση φακέλου...</value>
+  </data>
+  <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
+    <value>Πίσω διαγώνιος</value>
+  </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>Δρομέας</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>Τεράστια μικρογραφία</value>
+  </data>
+  <data name="LinearGradientMode_Horizontal" xml:space="preserve">
+    <value>Οριζόντια</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>Διακοπή εγγραφής οθόνης</value>
+  </data>
+  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
+    <value>Έτος</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>2 εβδομάδες</value>
+  </data>
+  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
+    <value>Πλήρης οθόνη</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
+    <value>Αντιγραφή διαδρομής αρχείου στο πρόχειρο</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
+    <value>Έναρξη/διακοπή εγγραφής οθόνης</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
+    <value>Αποθήκευση εικόνας σε αρχείο</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
+    <value>Διαδρομή αρχείου με επέκταση ονόματος αρχείου εξόδου</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Φακός Google Lens</value>
+  </data>
+  <data name="HotkeyType_IndexFolder" xml:space="preserve">
+    <value>Ευρετήριο καταλόγου</value>
+  </data>
+  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
+    <value>Χρονοσήμανση Unix</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
+    <value>FFmpeg (Καλή ποιότητα)</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Μην αλλάζετε μέγεθος</value>
+  </data>
+  <data name="HotkeyType_StopUploads" xml:space="preserve">
+    <value>Διακοπή όλων των ενεργών μεταφορτώσεων</value>
+  </data>
+  <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
+    <value>Άνοιγμα URL</value>
+  </data>
+  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
+    <value>Άνοιγμα σε πρόγραμμα επεξεργασίας εικόνας</value>
+  </data>
+  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
+    <value>Φόρτωση εικόνας...</value>
+  </data>
+  <data name="HotkeyType_LastRegion" xml:space="preserve">
+    <value>Σύλληψη της τελευταίας περιοχής</value>
+  </data>
+  <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
+    <value>Ο φάκελος δεν υπάρχει:</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
+    <value>Τρέχουσα έκδοση</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>Ηλεκτρονικό ταχυδρομείο</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>Μια νεότερη έκδοση του {0} είναι διαθέσιμη.
+Θα θέλατε να την κατεβάσετε και να την εγκαταστήσετε;</value>
+  </data>
+  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
+    <value>Αναζήτηση για ένα αρχείο ήχου...</value>
+  </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>Το αρχείο δεν υπάρχει:</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>Επιλέξτε φάκελο</value>
+  </data>
+  <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
+    <value>Η εισαγωγή απέτυχε.</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>Διαγραφή</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
+    <value>Επικόλληση</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>Κωδικός QR (Σάρωση οθόνης)</value>
+  </data>
+  <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
+    <value>Διαγώνιος προς τα εμπρός</value>
+  </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>24 bit</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Εβδομάδα του έτους</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Απόλυτο μέγεθος</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>Άνοιγμα παραθύρου ιστορικού εικόνας</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
+    <value>Incremental</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Τυχαία emoji (Επαναλάβετε χρησιμοποιώντας {n})</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
+    <value>Αποθήκευση εικόνας μικρογραφίας σε αρχείο</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
+    <value>Λήψη...</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>Αφαίρεση σχήματος ή ακύρωση σύλληψης</value>
+  </data>
+  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
+    <value>Όνομα χρήστη</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>Μεγέθυνση</value>
+  </data>
+  <data name="CodeMenu_Create_Close" xml:space="preserve">
+    <value>Κλείστε το</value>
+  </data>
+  <data name="ShapeType_DrawingSticker" xml:space="preserve">
+    <value>Αυτοκόλλητο</value>
+  </data>
+  <data name="HotkeyType_QRCode" xml:space="preserve">
+    <value>Κωδικός QR</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>1 εβδομάδα</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>Υπηρεσία κοινής χρήσης URL</value>
+  </data>
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
+    <value>Επισήμανση (H)</value>
+  </data>
+  <data name="GIFQuality_Grayscale" xml:space="preserve">
+    <value>Παλέτα κβαντιστή κλίμακας του γκρι 256 χρώματα</value>
+  </data>
+  <data name="GIFQuality_Default" xml:space="preserve">
+    <value>Προεπιλεγμένη κωδικοποίηση .NET (Γρήγορη κωδικοποίηση αλλά μέτρια ποιότητα)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>Τυχαίος δεκαεξαδικός χαρακτήρας (Επαναλάβετε χρησιμοποιώντας {n})</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>Ιδιωτικό (μόνο για μέλη)</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Σφάλμα</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
+    <value>Τυχαίο ζώο</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>Προσαρμοσμένη υπηρεσία κοινής χρήσης URL</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>Σύλληψη πλήρους οθόνης</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>Όνομα διαδικασίας του παραθύρου</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
+    <value>Περιμένοντας...</value>
+  </data>
+  <data name="HotkeyType_ImageEditor" xml:space="preserve">
+    <value>Επεξεργαστής εικόνας</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>Ηλεκτρονικό ταχυδρομείο</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>Άνοιγμα παραθύρου ιστορικού</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Επιλογή και μετακίνηση (M)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>Αυτόματη αύξηση κατά βάση {n} με χρήση αλφαριθμητικών (1 &lt; n &lt; 63)</value>
+  </data>
+  <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
+    <value>Καταγραφή ιστοσελίδας</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>Ακύρωση σύλληψης</value>
+  </data>
+  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
+    <value>Σάρωση κώδικα QR</value>
+  </data>
+  <data name="HotkeyType_RectangleLight" xml:space="preserve">
+    <value>Περιοχή σύλληψης (φως)</value>
+  </data>
+  <data name="ProxyMethod_Automatic" xml:space="preserve">
+    <value>Αυτόματο</value>
+  </data>
+  <data name="HotkeyType_FileUpload" xml:space="preserve">
+    <value>Ανέβασμα αρχείου</value>
+  </data>
+  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
+    <value>Τυχαίο GUID</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>Γραμμή (L)</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Αντιγραφή τιμής</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>Εμφάνιση του παραθύρου "Πριν από τη μεταφόρτωση"</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>Εμφάνιση αρχείου στον εξερευνητή</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>Προσαρμοσμένο πρόγραμμα μεταφόρτωσης εικόνων</value>
+  </data>
+  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
+    <value>Λήψη οθόνης</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
+    <value>Όχι</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow" xml:space="preserve">
+    <value>Σύλληψη ενεργού παραθύρου</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>Βήμα (I)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
+    <value>Αριθμός αυτόματης αύξησης (0 pad αριστερά χρησιμοποιώντας {n})</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
+    <value>Ανέβασμα από το πρόχειρο</value>
+  </data>
+  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
+    <value>Νέα γραμμή</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
+    <value>Όνομα μήνα (Αγγλικά)</value>
+  </data>
+  <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
+    <value>Ανοίξτε το φάκελο screenshots</value>
+  </data>
+  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
+    <value>Πλάτος εικόνας</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>Όνομα εβδομάδας (Αγγλικά)</value>
+  </data>
+  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
+    <value>Αναζήτηση για εκτελέσιμο...</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>Πρόγραμμα μεταφόρτωσης αρχείων</value>
+  </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>Αυτόματο μέγεθος</value>
+  </data>
+  <data name="HotkeyType_None" xml:space="preserve">
+    <value>Κανένα</value>
+  </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>Προεπιλογή</value>
+  </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>Δεν μπόρεσε να δημιουργήσει κατάλογο.</value>
+  </data>
+  <data name="ProxyMethod_Manual" xml:space="preserve">
+    <value>Χειροκίνητο</value>
+  </data>
+  <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
+    <value>Κατάσταση: {0}</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
+    <value>Έναρξη/διακοπή εγγραφής οθόνης (GIF) χρησιμοποιώντας την τελευταία περιοχή</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>Μικρό τετράγωνο</value>
+  </data>
+  <data name="HotkeyType_MonitorTest" xml:space="preserve">
+    <value>Δοκιμή οθόνης</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
+    <value>Αντιγραφή</value>
+  </data>
+  <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
+    <value>Συντόμευση URL</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>Τυχαία γραμμή από ένα αρχείο (Χρησιμοποιήστε {filepath} για να προσδιορίσετε το αρχείο)</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
+    <value>Ακύρωση</value>
+  </data>
+  <data name="HotkeyType_Category_Tools" xml:space="preserve">
+    <value>Εργαλεία</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>Κοινόχρηστος φάκελος</value>
+  </data>
+  <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
+    <value>Σύλληψη ενεργής οθόνης</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
+    <value>Μέγεθος αρχείου...</value>
+  </data>
+  <data name="HotkeyType_Category_Other" xml:space="preserve">
+    <value>Άλλα</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
+    <value>Όνομα αρχείου: {0}</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>Έλλειψη (E)</value>
+  </data>
+  <data name="HotkeyType_ColorPicker" xml:space="preserve">
+    <value>Επιλογή χρώματος</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Σταματήστε το</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>Πρόγραμμα μεταφόρτωσης αρχείων</value>
+  </data>
+  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
+    <value>Φόρτωση εικόνας: {0}%</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>Τυχαίο αλφαριθμητικό char (Επαναλάβετε χρησιμοποιώντας {n})</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Αξία</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>Απενεργοποίηση/απενεργοποίηση πλήκτρων συντόμευσης</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>Μην κάνετε τίποτα</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
+    <value>Αποθήκευση εικόνας σε αρχείο ως...</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Αντιγραφή ονόματος</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>Αφαίρεση σχήματος</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
+    <value>Διαδρομή αρχείου</value>
+  </data>
+  <data name="SupportedLanguage_Automatic" xml:space="preserve">
+    <value>Αυτόματο</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Μετατροπέας βίντεο</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
+    <value>Ακύρωση</value>
+  </data>
+  <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
+    <value>Επιλέξτε έναν φάκελο</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>Άνοιγμα κύριου παραθύρου</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
+    <value>Επιλογή χρώματος οθόνης</value>
+  </data>
+  <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
+    <value>Όνομα: {0}, Μέγεθος: {1}</value>
+  </data>
+  <data name="HotkeyType_AutoCapture" xml:space="preserve">
+    <value>Αυτόματη λήψη</value>
+  </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Διακοπή αυτόματης λήψης</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>Ορθογώνιο (R)</value>
+  </data>
+  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
+    <value>Μεγιστοποιημένο</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>Έναρξη/διακοπή εγγραφής οθόνης με χρήση προκαθορισμένης περιοχής</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
+    <value>Κβαντιστής Octree (μέτρια ποιότητα)</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>Επιλέξτε αρχείο</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>Ύψος εικόνας</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>1 μήνας</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>Κείμενο (φόντο) (T)</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>Τυχαίο μη διφορούμενο αλφαριθμητικό char (Επαναλάβετε χρησιμοποιώντας {n})</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>Προσαρμοσμένος συντομευτής URL</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>Δημόσιο</value>
+  </data>
+  <data name="FileExistAction_Overwrite" xml:space="preserve">
+    <value>Αντικατάσταση αρχείου</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Ποσοστό της εικόνας</value>
+  </data>
+  <data name="HotkeyType_ShortenURL" xml:space="preserve">
+    <value>Συντόμευση URL</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>Πρόγραμμα μεταφόρτωσης κειμένου</value>
+  </data>
+  <data name="FileExistAction_Ask" xml:space="preserve">
+    <value>Ρωτήστε τι να κάνετε</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
+    <value>Τελευταία έκδοση</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>Εμφάνιση του παραθύρου "Μετά τη σύλληψη"</value>
+  </data>
+  <data name="HotkeyType_UploadText" xml:space="preserve">
+    <value>Ανέβασμα κειμένου</value>
+  </data>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>Περικοπή εικόνας (C)</value>
+  </data>
+  <data name="HotkeyType_UploadURL" xml:space="preserve">
+    <value>Ανέβασμα από URL</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>Διαχωριστής εικόνας</value>
+  </data>
+  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
+    <value>Αντιγραφή URL στο πρόχειρο</value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>Όνομα υπολογιστή</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
+    <value>Έναρξη αυτόματης λήψης με χρήση της τελευταίας περιοχής</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>Μεσαία μικρογραφία</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>Αναίρεση</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>Αντιγραφή αρχείου στο πρόχειρο</value>
+  </data>
+  <data name="ResultOfFirstFile" xml:space="preserve">
+    <value>Αποτέλεσμα του πρώτου αρχείου:</value>
+  </data>
+  <data name="ResultOfSecondFile" xml:space="preserve">
+    <value>Αποτέλεσμα του δεύτερου αρχείου:</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Αποτέλεσμα:</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Στόχος:</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>Τέλος</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>Έναρξη</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>Και οι δύο</value>
+  </data>
+  <data name="StepType_LettersLowercase" xml:space="preserve">
+    <value>Γράμματα (πεζά)</value>
+  </data>
+  <data name="StepType_LettersUppercase" xml:space="preserve">
+    <value>Γράμματα (κεφαλαία)</value>
+  </data>
+  <data name="StepType_Numbers" xml:space="preserve">
+    <value>Αριθμοί</value>
+  </data>
+  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
+    <value>Λατινικοί αριθμοί (πεζά)</value>
+  </data>
+  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
+    <value>Λατινικοί αριθμοί (κεφαλαία)</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
+    <value>Προβολή πρόχειρου</value>
+  </data>
+  <data name="HotkeyType_InspectWindow" xml:space="preserve">
+    <value>Επιθεώρηση παραθύρου</value>
+  </data>
+  <data name="BorderStyle_Solid" xml:space="preserve">
+    <value>Στερεά</value>
+  </data>
+  <data name="BorderStyle_Dash" xml:space="preserve">
+    <value>Dash</value>
+  </data>
+  <data name="BorderStyle_Dot" xml:space="preserve">
+    <value>Σημείο</value>
+  </data>
+  <data name="BorderStyle_DashDot" xml:space="preserve">
+    <value>DashDot</value>
+  </data>
+  <data name="BorderStyle_DashDotDot" xml:space="preserve">
+    <value>DashDotDot</value>
+  </data>
+  <data name="ToastClickAction_CloseNotification" xml:space="preserve">
+    <value>Κλείσιμο ειδοποίησης</value>
+  </data>
+  <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
+    <value>Επεξεργασία εικόνας</value>
+  </data>
+  <data name="ToastClickAction_CopyImageToClipboard" xml:space="preserve">
+    <value>Αντιγραφή εικόνας</value>
+  </data>
+  <data name="ToastClickAction_CopyFile" xml:space="preserve">
+    <value>Αντιγραφή αρχείου</value>
+  </data>
+  <data name="ToastClickAction_CopyFilePath" xml:space="preserve">
+    <value>Αντιγραφή της διαδρομής του αρχείου</value>
+  </data>
+  <data name="ToastClickAction_CopyUrl" xml:space="preserve">
+    <value>Αντιγραφή συνδέσμου</value>
+  </data>
+  <data name="ToastClickAction_OpenFile" xml:space="preserve">
+    <value>Άνοιγμα αρχείου</value>
+  </data>
+  <data name="ToastClickAction_OpenFolder" xml:space="preserve">
+    <value>Άνοιγμα φακέλου</value>
+  </data>
+  <data name="ToastClickAction_OpenUrl" xml:space="preserve">
+    <value>Άνοιγμα συνδέσμου</value>
+  </data>
+  <data name="ToastClickAction_Upload" xml:space="preserve">
+    <value>Ανέβασμα αρχείου</value>
+  </data>
+  <data name="ContentAlignment_TopLeft" xml:space="preserve">
+    <value>Επάνω αριστερά</value>
+  </data>
+  <data name="ContentAlignment_TopCenter" xml:space="preserve">
+    <value>Επάνω κέντρο</value>
+  </data>
+  <data name="ContentAlignment_TopRight" xml:space="preserve">
+    <value>Επάνω δεξιά</value>
+  </data>
+  <data name="ContentAlignment_MiddleLeft" xml:space="preserve">
+    <value>Μέση αριστερά</value>
+  </data>
+  <data name="ContentAlignment_MiddleCenter" xml:space="preserve">
+    <value>Μέσο κέντρο</value>
+  </data>
+  <data name="ContentAlignment_MiddleRight" xml:space="preserve">
+    <value>Μέση δεξιά</value>
+  </data>
+  <data name="ContentAlignment_BottomLeft" xml:space="preserve">
+    <value>Κάτω αριστερά</value>
+  </data>
+  <data name="ContentAlignment_BottomCenter" xml:space="preserve">
+    <value>Κάτω κέντρο</value>
+  </data>
+  <data name="ContentAlignment_BottomRight" xml:space="preserve">
+    <value>Κάτω δεξιά</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Bing οπτική αναζήτηση</value>
+  </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>Προεπιλογή</value>
+  </data>
+  <data name="EDataType_File" xml:space="preserve">
+    <value>Αρχείο</value>
+  </data>
+  <data name="EDataType_Image" xml:space="preserve">
+    <value>Εικόνα</value>
+  </data>
+  <data name="EDataType_Text" xml:space="preserve">
+    <value>Κείμενο</value>
+  </data>
+  <data name="EDataType_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
+    <value>Σύλληψη της τελευταίας περιοχής</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>Διακοπή εγγραφής οθόνης</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>Εναλλαγή μενού δίσκου</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>Προεπιλογή</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>Επεξεργασία εικόνας</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>Άνοιγμα αρχείου</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>Άνοιγμα φακέλου</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>Άνοιγμα προγράμματος προβολής εικόνων</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>Άνοιγμα URL</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>Επιλέξτε</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Κάτω μέρος</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Πλευρά</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Αυτόματο</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Απόκρυψη</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Εμφάνιση</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Προβολή λίστας</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Προβολή μικρογραφιών</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
+    <value>Κάτω μέρος</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
+    <value>Κορυφή</value>
+  </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>Πρόγραμμα προβολής εικόνας</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>Παράθυρο χωρίς περιθώρια</value>
+  </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>Καρφίτσα στην οθόνη</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>Καρφίτσα στην οθόνη</value>
+  </data>
+  <data name="ShareXImageViewer" xml:space="preserve">
+    <value>ShareX - Πρόγραμμα προβολής εικόνων</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>Καρφίτσα στην οθόνη</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>Καμία επίδραση</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>Σκισμένες άκρες</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>Κύμα</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>Sawtooth</value>
+  </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>Αποκοπή (X)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>Καρφίτσα στην οθόνη (Από το πρόχειρο)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>Καρφίτσα στην οθόνη (Από αρχείο)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>Καρφίτσα στην οθόνη (Από την οθόνη)</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
+    <value>Παύση εγγραφής οθόνης</value>
+  </data>
+  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
+    <value>Ελεύθερο βέλος</value>
+  </data>
+  <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
+    <value>Εξωραϊστής εικόνας</value>
+  </data>
+  <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
+    <value>Ομορφώστε την εικόνα</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Ελέγξτε το</value>
+  </data>
+  <data name="HotkeyType_CustomWindow" xml:space="preserve">
+    <value>Σύλληψη προκαθορισμένου παραθύρου</value>
+  </data>
+  <data name="UpdateChannel_Dev" xml:space="preserve">
+    <value>Dev</value>
+  </data>
+  <data name="UpdateChannel_PreRelease" xml:space="preserve">
+    <value>Προδημοσίευση</value>
+  </data>
+  <data name="UpdateChannel_Release" xml:space="preserve">
+    <value>Απελευθέρωση</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
+    <value>Πρόοδος</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
+    <value>Ταχύτητα λήψης</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
+    <value>Μέγεθος αρχείου</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowBorderless" xml:space="preserve">
+    <value>Κάντε το ενεργό παράθυρο χωρίς περιθώρια</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
+    <value>Κάντε το ενεργό παράθυρο πιο πάνω</value>
+  </data>
+  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
+    <value>Καρφίτσα στην οθόνη (Κλείσιμο όλων)</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Color" xml:space="preserve">
+    <value>Χρώμα</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Desktop" xml:space="preserve">
+    <value>Επιτραπέζια επιφάνεια εργασίας</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Gradient" xml:space="preserve">
+    <value>Κλίση</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Image" xml:space="preserve">
+    <value>Εικόνα</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
+    <value>Διαφανές</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>Μεταδεδομένα</value>
+  </data>
+  <data name="HotkeyType_StripMetadata" xml:space="preserve">
+    <value>Γδύστε τα μεταδεδομένα</value>
+  </data>
+  <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
+    <value>Κώδικας QR (περιοχή σάρωσης)</value>
+  </data>
+  <data name="ScrollMethod_DownArrow" xml:space="preserve">
+    <value>Βέλος προς τα κάτω</value>
+  </data>
+  <data name="ScrollMethod_MouseWheel" xml:space="preserve">
+    <value>Τροχός ποντικιού</value>
+  </data>
+  <data name="ScrollMethod_PageDown" xml:space="preserve">
+    <value>Σελίδα κάτω</value>
+  </data>
+  <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
+    <value>Μήνυμα κύλισης</value>
+  </data>
+  <data name="ToastClickAction_DeleteFile" xml:space="preserve">
+    <value>Διαγραφή αρχείου τοπικά</value>
+  </data>
+  <data name="AfterCaptureTasks_AnalyzeImage" xml:space="preserve">
+    <value>Ανάλυση εικόνας</value>
+  </data>
+  <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
+    <value>Ανάλυση εικόνας</value>
+  </data>
+  <data name="ShapeType_ToolSpotlight" xml:space="preserve">
+    <value>Spotlight</value>
+  </data>
+</root>

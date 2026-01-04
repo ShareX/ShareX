@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Filters" xml:space="preserve">
+    <value>Φίλτρα</value>
+  </data>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Drawings" xml:space="preserve">
+    <value>Σχέδια</value>
+  </data>
+  <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
+    <value>Εφέ εικόνας - Πλάτος: {0}, Ύψος: {1}, Χρόνος απόδοσης: {2} ms</value>
+  </data>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
+    <value>Χειρισμοί</value>
+  </data>
+  <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
+    <value>Ακύρωση</value>
+  </data>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Adjustments" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
+  </data>
+  <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
+    <value>Ο φάκελος Assets πρέπει να βρίσκεται μέσα στο φάκελο ShareX image effects.</value>
+  </data>
+  <data name="InvalidAssetsFolderPath" xml:space="preserve">
+    <value>Μη έγκυρη διαδρομή φακέλου περιουσιακών στοιχείων</value>
+  </data>
+  <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
+    <value>Πακέτο με αυτό το όνομα αρχείου υπάρχει ήδη.
+Θέλετε να το αντικαταστήσετε;</value>
+  </data>
+  <data name="WouldYouLikeToClearEffects" xml:space="preserve">
+    <value>Θα θέλατε να καθαρίσετε τα αποτελέσματα;</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Επιβεβαίωση</value>
+  </data>
+  <data name="PresetNameCannotBeEmpty" xml:space="preserve">
+    <value>Το όνομα της προεπιλογής δεν μπορεί να είναι κενό.</value>
+  </data>
+  <data name="MissingPresetName" xml:space="preserve">
+    <value>Λείπει το όνομα της προεπιλεγμένης ρύθμισης</value>
+  </data>
+</root>
