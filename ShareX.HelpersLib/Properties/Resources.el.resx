@@ -40,7 +40,7 @@
     <value>Αναζήτηση για ένα Cascading Style Sheet...</value>
   </data>
   <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>Redo</value>
+    <value>Επανάληψη</value>
   </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>Thumbnailer βίντεο</value>
@@ -525,7 +525,7 @@
     <value>Υπηρεσία κοινής χρήσης URL</value>
   </data>
   <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Highlight (H)</value>
+    <value>Επισήμανση (H)</value>
   </data>
   <data name="GIFQuality_Grayscale" xml:space="preserve">
     <value>Παλέτα κβαντιστή κλίμακας του γκρι 256 χρώματα</value>

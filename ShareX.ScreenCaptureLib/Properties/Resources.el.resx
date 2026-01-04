@@ -74,7 +74,7 @@
     <value>Αναίρεση</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
-    <value>Redo</value>
+    <value>Επανάληψη</value>
   </data>
   <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
     <value>Επεξεργαστής εικόνας</value>

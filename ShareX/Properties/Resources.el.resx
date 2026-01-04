@@ -16,7 +16,7 @@
     <value>Το ShareX ελαχιστοποιείται στο δίσκο του συστήματος.</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
-    <value>Timeleft: {0}s ({1}%) Σύνολο: {2}</value>
+    <value>Χρόνος που απομένει: {0}s ({1}%) Σύνολο: {2}</value>
   </data>
   <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
     <value>Υποστηριζόμενες μεταβλητές: {0} και άλλες μεταβλητές όπως {1} κ.λπ.</value>
@@ -67,7 +67,7 @@
     <value>Το ShareX είναι ενημερωμένο!</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
-    <value>Changelog</value>
+    <value>Αρχείο αλλαγών</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>Το ShareX πρέπει να επανεκκινήσει για να εφαρμοστούν οι γλωσσικές αλλαγές.
@@ -108,7 +108,7 @@
     <value>Επαναφορά όλων των γρήγορων εργασιών στις προεπιλογές;</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Περιεχόμενο πρόχειρο: (Count: {0})</value>
+    <value>Περιεχόμενο πρόχειρο: (Αριθμός: {0})</value>
   </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Αδυναμία δημιουργίας φακέλου:</value>
