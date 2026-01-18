@@ -25,8 +25,10 @@
 
 using ShareX.HelpersLib;
 using ShareX.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -87,6 +89,79 @@ namespace ShareX
             {
                 ShowFailedHotkeys();
             }
+        }
+
+        /// <summary>
+        /// Updates hotkeys and starts background retry for any failed registrations.
+        /// This method returns quickly after initial registration attempt, allowing
+        /// the application to become ready while retries continue in the background.
+        /// </summary>
+        /// <param name="hotkeys">List of hotkey settings to register</param>
+        /// <param name="showFailedHotkeys">Whether to show error dialog for failures</param>
+        public void UpdateHotkeysWithBackgroundRetry(List<HotkeySettings> hotkeys, bool showFailedHotkeys)
+        {
+            if (Hotkeys != null)
+            {
+                UnregisterAllHotkeys();
+            }
+
+            Hotkeys = hotkeys;
+
+            RegisterAllHotkeys();
+
+            // If retry is enabled and there are failed hotkeys, start background retry
+            if (Program.Settings.HotkeyRetryEnabled && HasFailedHotkeys())
+            {
+                // Fire-and-forget: retries run in background, don't block startup
+                _ = RetryFailedHotkeysInBackgroundAsync(showFailedHotkeys);
+            }
+            else if (showFailedHotkeys)
+            {
+                // No retries needed/enabled, show failures immediately
+                ShowFailedHotkeys();
+            }
+        }
+
+        /// <summary>
+        /// Retries failed hotkey registrations in the background.
+        /// Shows the failure dialog only after all retry attempts are exhausted.
+        /// </summary>
+        private async Task RetryFailedHotkeysInBackgroundAsync(bool showFailedHotkeys)
+        {
+            // Clamp values to safe ranges to prevent DoS via malicious config
+            // Min: 1 retry, Max: 10 retries (reasonable upper bound)
+            int retryCount = Math.Clamp(Program.Settings.HotkeyRetryCount, 1, 10);
+            // Min: 500ms, Max: 30000ms (30 seconds - reasonable upper bound)
+            int retryDelayMs = Math.Clamp(Program.Settings.HotkeyRetryDelayMs, 500, 30000);
+
+            for (int attempt = 1; attempt <= retryCount && HasFailedHotkeys(); attempt++)
+            {
+                DebugHelper.WriteLine($"Hotkey registration retry attempt {attempt}/{retryCount} in {retryDelayMs}ms...");
+
+                await Task.Delay(retryDelayMs);
+
+                RegisterFailedHotkeys();
+
+                if (!HasFailedHotkeys())
+                {
+                    DebugHelper.WriteLine($"All hotkeys registered successfully after {attempt} retry attempt(s).");
+                    return;
+                }
+            }
+
+            // After all retries exhausted, show failed hotkeys dialog if requested
+            if (showFailedHotkeys && HasFailedHotkeys())
+            {
+                ShowFailedHotkeys();
+            }
+        }
+
+        /// <summary>
+        /// Checks if there are any hotkeys that failed to register.
+        /// </summary>
+        public bool HasFailedHotkeys()
+        {
+            return Hotkeys != null && Hotkeys.Any(x => x.HotkeyInfo.Status == HotkeyStatus.Failed);
         }
 
         protected void OnHotkeyTrigger(HotkeySettings hotkeySetting)

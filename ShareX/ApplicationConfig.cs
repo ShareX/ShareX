@@ -72,6 +72,12 @@ namespace ShareX
         public HotkeyType TrayLeftDoubleClickAction = HotkeyType.OpenMainWindow;
         public HotkeyType TrayMiddleClickAction = HotkeyType.ClipboardUploadWithContentViewer;
 
+        // Hotkey retry settings - helps with race conditions at startup (e.g., OneDrive conflict)
+        // Values are clamped at runtime: HotkeyRetryCount [1-10], HotkeyRetryDelayMs [500-30000]
+        public bool HotkeyRetryEnabled = true;
+        public int HotkeyRetryCount = 3;
+        public int HotkeyRetryDelayMs = 2000;
+
         public bool AutoCheckUpdate = true;
         public UpdateChannel UpdateChannel = UpdateChannel.Release;
         // TEMP: For backward compatibility

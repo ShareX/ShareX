@@ -365,7 +365,9 @@ namespace ShareX
                 Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
             }
 
-            Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.IgnoreHotkeyWarning);
+            // Use retry mechanism to handle race conditions with other apps (e.g., OneDrive)
+            // Retries run in background to avoid blocking startup and WaitFormLoad timeout
+            Program.HotkeyManager.UpdateHotkeysWithBackgroundRetry(Program.HotkeysConfig.Hotkeys, !Program.IgnoreHotkeyWarning);
 
             DebugHelper.WriteLine("HotkeyManager started.");
 
