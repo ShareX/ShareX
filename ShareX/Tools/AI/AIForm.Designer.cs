@@ -29,6 +29,7 @@ namespace ShareX
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AIForm));
             lblInput = new System.Windows.Forms.Label();
             txtInput = new System.Windows.Forms.TextBox();
             cmsPresets = new System.Windows.Forms.ContextMenuStrip(components);
@@ -47,53 +48,37 @@ namespace ShareX
             // 
             // lblInput
             // 
-            lblInput.AutoSize = true;
-            lblInput.Location = new System.Drawing.Point(16, 51);
+            resources.ApplyResources(lblInput, "lblInput");
             lblInput.Name = "lblInput";
-            lblInput.Size = new System.Drawing.Size(53, 16);
-            lblInput.TabIndex = 1;
-            lblInput.Text = "Prompt:";
             // 
             // txtInput
             // 
             txtInput.ContextMenuStrip = cmsPresets;
-            txtInput.Location = new System.Drawing.Point(16, 70);
-            txtInput.Multiline = true;
+            resources.ApplyResources(txtInput, "txtInput");
             txtInput.Name = "txtInput";
-            txtInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            txtInput.Size = new System.Drawing.Size(264, 80);
-            txtInput.TabIndex = 2;
             txtInput.TextChanged += txtInput_TextChanged;
             // 
             // cmsPresets
             // 
             cmsPresets.Name = "cmsPresets";
-            cmsPresets.Size = new System.Drawing.Size(61, 4);
+            resources.ApplyResources(cmsPresets, "cmsPresets");
             // 
             // lblImage
             // 
-            lblImage.AutoSize = true;
-            lblImage.Location = new System.Drawing.Point(16, 153);
+            resources.ApplyResources(lblImage, "lblImage");
             lblImage.Name = "lblImage";
-            lblImage.Size = new System.Drawing.Size(77, 16);
-            lblImage.TabIndex = 3;
-            lblImage.Text = "Image path:";
             // 
             // txtImage
             // 
-            txtImage.Location = new System.Drawing.Point(16, 172);
+            resources.ApplyResources(txtImage, "txtImage");
             txtImage.Name = "txtImage";
-            txtImage.Size = new System.Drawing.Size(224, 22);
-            txtImage.TabIndex = 4;
             txtImage.TextChanged += txtImage_TextChanged;
             // 
             // btnImageBrowse
             // 
             btnImageBrowse.Image = Properties.Resources.folder_open_image;
-            btnImageBrowse.Location = new System.Drawing.Point(248, 172);
+            resources.ApplyResources(btnImageBrowse, "btnImageBrowse");
             btnImageBrowse.Name = "btnImageBrowse";
-            btnImageBrowse.Size = new System.Drawing.Size(32, 22);
-            btnImageBrowse.TabIndex = 5;
             btnImageBrowse.UseVisualStyleBackColor = true;
             btnImageBrowse.Click += btnImageBrowse_Click;
             // 
@@ -103,92 +88,61 @@ namespace ShareX
             pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pbImage.DrawCheckeredBackground = true;
             pbImage.FullscreenOnClick = true;
-            pbImage.Location = new System.Drawing.Point(16, 200);
-            pbImage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            resources.ApplyResources(pbImage, "pbImage");
             pbImage.Name = "pbImage";
             pbImage.PictureBoxBackColor = System.Drawing.SystemColors.Window;
-            pbImage.Size = new System.Drawing.Size(264, 234);
-            pbImage.TabIndex = 6;
             // 
             // btnAnalyze
             // 
-            btnAnalyze.Enabled = false;
-            btnAnalyze.Location = new System.Drawing.Point(16, 440);
+            resources.ApplyResources(btnAnalyze, "btnAnalyze");
             btnAnalyze.Name = "btnAnalyze";
-            btnAnalyze.Size = new System.Drawing.Size(224, 32);
-            btnAnalyze.TabIndex = 7;
-            btnAnalyze.Text = "Analyze image";
             btnAnalyze.UseVisualStyleBackColor = true;
             btnAnalyze.Click += btnAnalyze_Click;
             // 
             // btnCapture
             // 
             btnCapture.Image = Properties.Resources.camera;
-            btnCapture.Location = new System.Drawing.Point(248, 440);
+            resources.ApplyResources(btnCapture, "btnCapture");
             btnCapture.Name = "btnCapture";
-            btnCapture.Size = new System.Drawing.Size(32, 32);
-            btnCapture.TabIndex = 8;
             btnCapture.UseVisualStyleBackColor = true;
             btnCapture.Click += btnCapture_Click;
             // 
             // lblResult
             // 
-            lblResult.AutoSize = true;
-            lblResult.Location = new System.Drawing.Point(301, 16);
+            resources.ApplyResources(lblResult, "lblResult");
             lblResult.Name = "lblResult";
-            lblResult.Size = new System.Drawing.Size(48, 16);
-            lblResult.TabIndex = 9;
-            lblResult.Text = "Result:";
             // 
             // lblTimer
             // 
-            lblTimer.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            lblTimer.Location = new System.Drawing.Point(744, 12);
+            resources.ApplyResources(lblTimer, "lblTimer");
             lblTimer.Name = "lblTimer";
-            lblTimer.Size = new System.Drawing.Size(168, 24);
-            lblTimer.TabIndex = 10;
-            lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtResult
             // 
-            txtResult.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            txtResult.Location = new System.Drawing.Point(304, 40);
-            txtResult.Multiline = true;
+            resources.ApplyResources(txtResult, "txtResult");
             txtResult.Name = "txtResult";
             txtResult.ReadOnly = true;
-            txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            txtResult.Size = new System.Drawing.Size(608, 432);
-            txtResult.TabIndex = 11;
             // 
             // btnResultCopy
             // 
-            btnResultCopy.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnResultCopy.Enabled = false;
+            resources.ApplyResources(btnResultCopy, "btnResultCopy");
             btnResultCopy.Image = Properties.Resources.document_copy;
-            btnResultCopy.Location = new System.Drawing.Point(858, 440);
             btnResultCopy.Name = "btnResultCopy";
-            btnResultCopy.Size = new System.Drawing.Size(32, 32);
-            btnResultCopy.TabIndex = 12;
             btnResultCopy.UseVisualStyleBackColor = true;
             btnResultCopy.Click += btnResultCopy_Click;
             // 
             // btnOptions
             // 
-            btnOptions.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(btnOptions, "btnOptions");
             btnOptions.Name = "btnOptions";
-            btnOptions.Size = new System.Drawing.Size(264, 32);
-            btnOptions.TabIndex = 0;
-            btnOptions.Text = "Options...";
             btnOptions.UseVisualStyleBackColor = true;
             btnOptions.Click += btnOptions_Click;
             // 
             // AIForm
             // 
             AllowDrop = true;
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(928, 488);
             Controls.Add(btnOptions);
             Controls.Add(btnResultCopy);
             Controls.Add(txtResult);
@@ -202,12 +156,8 @@ namespace ShareX
             Controls.Add(lblImage);
             Controls.Add(txtInput);
             Controls.Add(lblInput);
-            Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             Name = "AIForm";
             SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "ShareX - AI";
             Load += AIForm_Load;
             Shown += AIForm_Shown;
             DragDrop += AIForm_DragDrop;

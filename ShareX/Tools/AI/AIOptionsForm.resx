@@ -117,4 +117,844 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblProvider.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblProvider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblProvider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 16</value>
+  </data>
+  <data name="lblProvider.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblProvider.Text" xml:space="preserve">
+    <value>Provider:</value>
+  </data>
+  <data name="&gt;&gt;lblProvider.Name" xml:space="preserve">
+    <value>lblProvider</value>
+  </data>
+  <data name="&gt;&gt;lblProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProvider.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblProvider.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbProvider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 40</value>
+  </data>
+  <data name="cbProvider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 24</value>
+  </data>
+  <data name="cbProvider.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbProvider.Name" xml:space="preserve">
+    <value>cbProvider</value>
+  </data>
+  <data name="&gt;&gt;cbProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbProvider.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbProvider.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnAPIKeyHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 36</value>
+  </data>
+  <data name="btnAPIKeyHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="btnAPIKeyHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnAPIKeyHelp.Name" xml:space="preserve">
+    <value>btnAPIKeyHelp</value>
+  </data>
+  <data name="&gt;&gt;btnAPIKeyHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAPIKeyHelp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAPIKeyHelp.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblOpenAIAPIKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOpenAIAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 24</value>
+  </data>
+  <data name="lblOpenAIAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="lblOpenAIAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblOpenAIAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="&gt;&gt;lblOpenAIAPIKey.Name" xml:space="preserve">
+    <value>lblOpenAIAPIKey</value>
+  </data>
+  <data name="&gt;&gt;lblOpenAIAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOpenAIAPIKey.Parent" xml:space="preserve">
+    <value>gbOpenAI</value>
+  </data>
+  <data name="&gt;&gt;lblOpenAIAPIKey.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtOpenAIAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 48</value>
+  </data>
+  <data name="txtOpenAIAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 22</value>
+  </data>
+  <data name="txtOpenAIAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtOpenAIAPIKey.Name" xml:space="preserve">
+    <value>txtOpenAIAPIKey</value>
+  </data>
+  <data name="&gt;&gt;txtOpenAIAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtOpenAIAPIKey.Parent" xml:space="preserve">
+    <value>gbOpenAI</value>
+  </data>
+  <data name="&gt;&gt;txtOpenAIAPIKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblOpenAIModel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOpenAIModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 80</value>
+  </data>
+  <data name="lblOpenAIModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
+  <data name="lblOpenAIModel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblOpenAIModel.Text" xml:space="preserve">
+    <value>Model:</value>
+  </data>
+  <data name="&gt;&gt;lblOpenAIModel.Name" xml:space="preserve">
+    <value>lblOpenAIModel</value>
+  </data>
+  <data name="&gt;&gt;lblOpenAIModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOpenAIModel.Parent" xml:space="preserve">
+    <value>gbOpenAI</value>
+  </data>
+  <data name="&gt;&gt;lblOpenAIModel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbOpenAIModel.Items" xml:space="preserve">
+    <value>gpt-5.2</value>
+  </data>
+  <data name="cbOpenAIModel.Items1" xml:space="preserve">
+    <value>gpt-5.1</value>
+  </data>
+  <data name="cbOpenAIModel.Items2" xml:space="preserve">
+    <value>gpt-5</value>
+  </data>
+  <data name="cbOpenAIModel.Items3" xml:space="preserve">
+    <value>gpt-5-mini</value>
+  </data>
+  <data name="cbOpenAIModel.Items4" xml:space="preserve">
+    <value>gpt-5-nano</value>
+  </data>
+  <data name="cbOpenAIModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 104</value>
+  </data>
+  <data name="cbOpenAIModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 24</value>
+  </data>
+  <data name="cbOpenAIModel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbOpenAIModel.Name" xml:space="preserve">
+    <value>cbOpenAIModel</value>
+  </data>
+  <data name="&gt;&gt;cbOpenAIModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOpenAIModel.Parent" xml:space="preserve">
+    <value>gbOpenAI</value>
+  </data>
+  <data name="&gt;&gt;cbOpenAIModel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblOpenAICustomURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOpenAICustomURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 248</value>
+  </data>
+  <data name="lblOpenAICustomURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 16</value>
+  </data>
+  <data name="lblOpenAICustomURL.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblOpenAICustomURL.Text" xml:space="preserve">
+    <value>Custom base URL:</value>
+  </data>
+  <data name="&gt;&gt;lblOpenAICustomURL.Name" xml:space="preserve">
+    <value>lblOpenAICustomURL</value>
+  </data>
+  <data name="&gt;&gt;lblOpenAICustomURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOpenAICustomURL.Parent" xml:space="preserve">
+    <value>gbOpenAI</value>
+  </data>
+  <data name="&gt;&gt;lblOpenAICustomURL.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtOpenAICustomURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 272</value>
+  </data>
+  <data name="txtOpenAICustomURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 22</value>
+  </data>
+  <data name="txtOpenAICustomURL.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;txtOpenAICustomURL.Name" xml:space="preserve">
+    <value>txtOpenAICustomURL</value>
+  </data>
+  <data name="&gt;&gt;txtOpenAICustomURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtOpenAICustomURL.Parent" xml:space="preserve">
+    <value>gbOpenAI</value>
+  </data>
+  <data name="&gt;&gt;txtOpenAICustomURL.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cbOpenAIReasoningEffort.Items" xml:space="preserve">
+    <value>minimal</value>
+  </data>
+  <data name="cbOpenAIReasoningEffort.Items1" xml:space="preserve">
+    <value>low</value>
+  </data>
+  <data name="cbOpenAIReasoningEffort.Items2" xml:space="preserve">
+    <value>medium</value>
+  </data>
+  <data name="cbOpenAIReasoningEffort.Items3" xml:space="preserve">
+    <value>high</value>
+  </data>
+  <data name="cbOpenAIReasoningEffort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 160</value>
+  </data>
+  <data name="cbOpenAIReasoningEffort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 24</value>
+  </data>
+  <data name="cbOpenAIReasoningEffort.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbOpenAIReasoningEffort.Name" xml:space="preserve">
+    <value>cbOpenAIReasoningEffort</value>
+  </data>
+  <data name="&gt;&gt;cbOpenAIReasoningEffort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOpenAIReasoningEffort.Parent" xml:space="preserve">
+    <value>gbOpenAI</value>
+  </data>
+  <data name="&gt;&gt;cbOpenAIReasoningEffort.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblReasoningEffort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReasoningEffort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 136</value>
+  </data>
+  <data name="lblReasoningEffort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 16</value>
+  </data>
+  <data name="lblReasoningEffort.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblReasoningEffort.Text" xml:space="preserve">
+    <value>Reasoning effort:</value>
+  </data>
+  <data name="&gt;&gt;lblReasoningEffort.Name" xml:space="preserve">
+    <value>lblReasoningEffort</value>
+  </data>
+  <data name="&gt;&gt;lblReasoningEffort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReasoningEffort.Parent" xml:space="preserve">
+    <value>gbOpenAI</value>
+  </data>
+  <data name="&gt;&gt;lblReasoningEffort.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblVerbosity.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblVerbosity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 192</value>
+  </data>
+  <data name="lblVerbosity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 16</value>
+  </data>
+  <data name="lblVerbosity.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblVerbosity.Text" xml:space="preserve">
+    <value>Verbosity:</value>
+  </data>
+  <data name="&gt;&gt;lblVerbosity.Name" xml:space="preserve">
+    <value>lblVerbosity</value>
+  </data>
+  <data name="&gt;&gt;lblVerbosity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVerbosity.Parent" xml:space="preserve">
+    <value>gbOpenAI</value>
+  </data>
+  <data name="&gt;&gt;lblVerbosity.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="cbOpenAIVerbosity.Items" xml:space="preserve">
+    <value>low</value>
+  </data>
+  <data name="cbOpenAIVerbosity.Items1" xml:space="preserve">
+    <value>medium</value>
+  </data>
+  <data name="cbOpenAIVerbosity.Items2" xml:space="preserve">
+    <value>high</value>
+  </data>
+  <data name="cbOpenAIVerbosity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 216</value>
+  </data>
+  <data name="cbOpenAIVerbosity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 24</value>
+  </data>
+  <data name="cbOpenAIVerbosity.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cbOpenAIVerbosity.Name" xml:space="preserve">
+    <value>cbOpenAIVerbosity</value>
+  </data>
+  <data name="&gt;&gt;cbOpenAIVerbosity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOpenAIVerbosity.Parent" xml:space="preserve">
+    <value>gbOpenAI</value>
+  </data>
+  <data name="&gt;&gt;cbOpenAIVerbosity.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="gbOpenAI.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="gbOpenAI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 312</value>
+  </data>
+  <data name="gbOpenAI.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="gbOpenAI.Text" xml:space="preserve">
+    <value>Provider Settings</value>
+  </data>
+  <data name="&gt;&gt;gbOpenAI.Name" xml:space="preserve">
+    <value>gbOpenAI</value>
+  </data>
+  <data name="&gt;&gt;gbOpenAI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbOpenAI.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbOpenAI.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblGeminiAPIKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGeminiAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 24</value>
+  </data>
+  <data name="lblGeminiAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="lblGeminiAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblGeminiAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="&gt;&gt;lblGeminiAPIKey.Name" xml:space="preserve">
+    <value>lblGeminiAPIKey</value>
+  </data>
+  <data name="&gt;&gt;lblGeminiAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGeminiAPIKey.Parent" xml:space="preserve">
+    <value>gbGemini</value>
+  </data>
+  <data name="&gt;&gt;lblGeminiAPIKey.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtGeminiAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 44</value>
+  </data>
+  <data name="txtGeminiAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 22</value>
+  </data>
+  <data name="txtGeminiAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtGeminiAPIKey.Name" xml:space="preserve">
+    <value>txtGeminiAPIKey</value>
+  </data>
+  <data name="&gt;&gt;txtGeminiAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtGeminiAPIKey.Parent" xml:space="preserve">
+    <value>gbGemini</value>
+  </data>
+  <data name="&gt;&gt;txtGeminiAPIKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblGeminiModel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGeminiModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 76</value>
+  </data>
+  <data name="lblGeminiModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
+  <data name="lblGeminiModel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblGeminiModel.Text" xml:space="preserve">
+    <value>Model:</value>
+  </data>
+  <data name="&gt;&gt;lblGeminiModel.Name" xml:space="preserve">
+    <value>lblGeminiModel</value>
+  </data>
+  <data name="&gt;&gt;lblGeminiModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGeminiModel.Parent" xml:space="preserve">
+    <value>gbGemini</value>
+  </data>
+  <data name="&gt;&gt;lblGeminiModel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbGeminiModel.Items" xml:space="preserve">
+    <value>gemini-2.0-flash</value>
+  </data>
+  <data name="cbGeminiModel.Items1" xml:space="preserve">
+    <value>gemini-2.0-flash-lite</value>
+  </data>
+  <data name="cbGeminiModel.Items2" xml:space="preserve">
+    <value>gemini-1.5-flash</value>
+  </data>
+  <data name="cbGeminiModel.Items3" xml:space="preserve">
+    <value>gemini-1.5-pro</value>
+  </data>
+  <data name="cbGeminiModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 96</value>
+  </data>
+  <data name="cbGeminiModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 24</value>
+  </data>
+  <data name="cbGeminiModel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbGeminiModel.Name" xml:space="preserve">
+    <value>cbGeminiModel</value>
+  </data>
+  <data name="&gt;&gt;cbGeminiModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGeminiModel.Parent" xml:space="preserve">
+    <value>gbGemini</value>
+  </data>
+  <data name="&gt;&gt;cbGeminiModel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="gbGemini.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="gbGemini.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 180</value>
+  </data>
+  <data name="gbGemini.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="gbGemini.Text" xml:space="preserve">
+    <value>Provider Settings</value>
+  </data>
+  <data name="gbGemini.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;gbGemini.Name" xml:space="preserve">
+    <value>gbGemini</value>
+  </data>
+  <data name="&gt;&gt;gbGemini.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbGemini.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbGemini.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblOpenRouterAPIKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOpenRouterAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 24</value>
+  </data>
+  <data name="lblOpenRouterAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="lblOpenRouterAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblOpenRouterAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="&gt;&gt;lblOpenRouterAPIKey.Name" xml:space="preserve">
+    <value>lblOpenRouterAPIKey</value>
+  </data>
+  <data name="&gt;&gt;lblOpenRouterAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOpenRouterAPIKey.Parent" xml:space="preserve">
+    <value>gbOpenRouter</value>
+  </data>
+  <data name="&gt;&gt;lblOpenRouterAPIKey.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtOpenRouterAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 44</value>
+  </data>
+  <data name="txtOpenRouterAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 22</value>
+  </data>
+  <data name="txtOpenRouterAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtOpenRouterAPIKey.Name" xml:space="preserve">
+    <value>txtOpenRouterAPIKey</value>
+  </data>
+  <data name="&gt;&gt;txtOpenRouterAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtOpenRouterAPIKey.Parent" xml:space="preserve">
+    <value>gbOpenRouter</value>
+  </data>
+  <data name="&gt;&gt;txtOpenRouterAPIKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblOpenRouterModel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOpenRouterModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 76</value>
+  </data>
+  <data name="lblOpenRouterModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
+  <data name="lblOpenRouterModel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblOpenRouterModel.Text" xml:space="preserve">
+    <value>Model:</value>
+  </data>
+  <data name="&gt;&gt;lblOpenRouterModel.Name" xml:space="preserve">
+    <value>lblOpenRouterModel</value>
+  </data>
+  <data name="&gt;&gt;lblOpenRouterModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOpenRouterModel.Parent" xml:space="preserve">
+    <value>gbOpenRouter</value>
+  </data>
+  <data name="&gt;&gt;lblOpenRouterModel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbOpenRouterModel.Items" xml:space="preserve">
+    <value>openai/gpt-4o</value>
+  </data>
+  <data name="cbOpenRouterModel.Items1" xml:space="preserve">
+    <value>anthropic/claude-3.5-sonnet</value>
+  </data>
+  <data name="cbOpenRouterModel.Items2" xml:space="preserve">
+    <value>google/gemini-pro-1.5</value>
+  </data>
+  <data name="cbOpenRouterModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 96</value>
+  </data>
+  <data name="cbOpenRouterModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 24</value>
+  </data>
+  <data name="cbOpenRouterModel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbOpenRouterModel.Name" xml:space="preserve">
+    <value>cbOpenRouterModel</value>
+  </data>
+  <data name="&gt;&gt;cbOpenRouterModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOpenRouterModel.Parent" xml:space="preserve">
+    <value>gbOpenRouter</value>
+  </data>
+  <data name="&gt;&gt;cbOpenRouterModel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="gbOpenRouter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="gbOpenRouter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 180</value>
+  </data>
+  <data name="gbOpenRouter.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="gbOpenRouter.Text" xml:space="preserve">
+    <value>Provider Settings</value>
+  </data>
+  <data name="gbOpenRouter.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;gbOpenRouter.Name" xml:space="preserve">
+    <value>gbOpenRouter</value>
+  </data>
+  <data name="&gt;&gt;gbOpenRouter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbOpenRouter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbOpenRouter.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnTestConnection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 400</value>
+  </data>
+  <data name="btnTestConnection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 32</value>
+  </data>
+  <data name="btnTestConnection.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnTestConnection.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;btnTestConnection.Name" xml:space="preserve">
+    <value>btnTestConnection</value>
+  </data>
+  <data name="&gt;&gt;btnTestConnection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTestConnection.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTestConnection.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblTestStatus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTestStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 408</value>
+  </data>
+  <data name="lblTestStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 16</value>
+  </data>
+  <data name="lblTestStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblTestStatus.Name" xml:space="preserve">
+    <value>lblTestStatus</value>
+  </data>
+  <data name="&gt;&gt;lblTestStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTestStatus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblTestStatus.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="cbAutoStartRegion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAutoStartRegion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 448</value>
+  </data>
+  <data name="cbAutoStartRegion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 20</value>
+  </data>
+  <data name="cbAutoStartRegion.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="cbAutoStartRegion.Text" xml:space="preserve">
+    <value>Auto start region</value>
+  </data>
+  <data name="&gt;&gt;cbAutoStartRegion.Name" xml:space="preserve">
+    <value>cbAutoStartRegion</value>
+  </data>
+  <data name="&gt;&gt;cbAutoStartRegion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAutoStartRegion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbAutoStartRegion.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="cbAutoStartAnalyze.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAutoStartAnalyze.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 472</value>
+  </data>
+  <data name="cbAutoStartAnalyze.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 20</value>
+  </data>
+  <data name="cbAutoStartAnalyze.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cbAutoStartAnalyze.Text" xml:space="preserve">
+    <value>Auto start analyze</value>
+  </data>
+  <data name="&gt;&gt;cbAutoStartAnalyze.Name" xml:space="preserve">
+    <value>cbAutoStartAnalyze</value>
+  </data>
+  <data name="&gt;&gt;cbAutoStartAnalyze.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAutoStartAnalyze.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbAutoStartAnalyze.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="cbAutoCopyResult.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAutoCopyResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 496</value>
+  </data>
+  <data name="cbAutoCopyResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
+  </data>
+  <data name="cbAutoCopyResult.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="cbAutoCopyResult.Text" xml:space="preserve">
+    <value>Auto copy result</value>
+  </data>
+  <data name="&gt;&gt;cbAutoCopyResult.Name" xml:space="preserve">
+    <value>cbAutoCopyResult</value>
+  </data>
+  <data name="&gt;&gt;cbAutoCopyResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAutoCopyResult.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbAutoCopyResult.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 528</value>
+  </data>
+  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 32</value>
+  </data>
+  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
+    <value>btnOK</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 528</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 32</value>
+  </data>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>384, 575</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - AI options</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>AIOptionsForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
