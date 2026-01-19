@@ -64,23 +64,23 @@ namespace ShareX
             txtOpenRouterAPIKey.Text = Options.OpenRouterAPIKey;
             cbOpenRouterModel.Text = Options.OpenRouterModel;
 
-            int index = cbReasoningEffort.FindStringExact(Options.ReasoningEffort);
+            int index = cbOpenAIReasoningEffort.FindStringExact(Options.OpenAIReasoningEffort);
             if (index >= 0)
             {
-                cbReasoningEffort.SelectedIndex = index;
+                cbOpenAIReasoningEffort.SelectedIndex = index;
             }
             else
             {
-                cbReasoningEffort.SelectedIndex = 2;
+                cbOpenAIReasoningEffort.SelectedIndex = 2;
             }
-            index = cbVerbosity.FindStringExact(Options.Verbosity);
+            index = cbOpenAIVerbosity.FindStringExact(Options.OpenAIVerbosity);
             if (index >= 0)
             {
-                cbVerbosity.SelectedIndex = index;
+                cbOpenAIVerbosity.SelectedIndex = index;
             }
             else
             {
-                cbVerbosity.SelectedIndex = 2;
+                cbOpenAIVerbosity.SelectedIndex = 2;
             }
             cbAutoStartRegion.Checked = Options.AutoStartRegion;
             cbAutoStartAnalyze.Checked = Options.AutoStartAnalyze;
@@ -101,8 +101,8 @@ namespace ShareX
             Options.OpenRouterAPIKey = txtOpenRouterAPIKey.Text;
             Options.OpenRouterModel = cbOpenRouterModel.Text;
 
-            Options.ReasoningEffort = cbReasoningEffort.Text;
-            Options.Verbosity = cbVerbosity.Text;
+            Options.OpenAIReasoningEffort = cbOpenAIReasoningEffort.Text;
+            Options.OpenAIVerbosity = cbOpenAIVerbosity.Text;
             Options.AutoStartRegion = cbAutoStartRegion.Checked;
             Options.AutoStartAnalyze = cbAutoStartAnalyze.Checked;
             Options.AutoCopyResult = cbAutoCopyResult.Checked;

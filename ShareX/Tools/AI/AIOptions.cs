@@ -43,6 +43,8 @@ namespace ShareX
         public string OpenAIAPIKey { get; set; }
         public string OpenAIModel { get; set; } = "gpt-5-mini";
         public string OpenAICustomURL { get; set; }
+        public string OpenAIReasoningEffort { get; set; } = "minimal";
+        public string OpenAIVerbosity { get; set; } = "medium";
 
         [JsonEncrypt]
         public string GeminiAPIKey { get; set; }
@@ -52,8 +54,6 @@ namespace ShareX
         public string OpenRouterAPIKey { get; set; }
         public string OpenRouterModel { get; set; } = "google/gemini-flash-1.5";
 
-        public string ReasoningEffort { get; set; } = "minimal";
-        public string Verbosity { get; set; } = "medium";
         public string Input { get; set; } = "What is in this image?";
         public bool AutoStartRegion { get; set; } = true;
         public bool AutoStartAnalyze { get; set; } = true;

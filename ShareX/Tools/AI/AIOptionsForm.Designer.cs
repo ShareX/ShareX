@@ -38,6 +38,10 @@ namespace ShareX
             cbOpenAIModel = new System.Windows.Forms.ComboBox();
             lblOpenAICustomURL = new System.Windows.Forms.Label();
             txtOpenAICustomURL = new System.Windows.Forms.TextBox();
+            cbOpenAIReasoningEffort = new System.Windows.Forms.ComboBox();
+            lblReasoningEffort = new System.Windows.Forms.Label();
+            lblVerbosity = new System.Windows.Forms.Label();
+            cbOpenAIVerbosity = new System.Windows.Forms.ComboBox();
             gbGemini = new System.Windows.Forms.GroupBox();
             lblGeminiAPIKey = new System.Windows.Forms.Label();
             txtGeminiAPIKey = new System.Windows.Forms.TextBox();
@@ -50,10 +54,6 @@ namespace ShareX
             cbOpenRouterModel = new System.Windows.Forms.ComboBox();
             btnTestConnection = new System.Windows.Forms.Button();
             lblTestStatus = new System.Windows.Forms.Label();
-            lblReasoningEffort = new System.Windows.Forms.Label();
-            cbReasoningEffort = new System.Windows.Forms.ComboBox();
-            lblVerbosity = new System.Windows.Forms.Label();
-            cbVerbosity = new System.Windows.Forms.ComboBox();
             cbAutoStartRegion = new System.Windows.Forms.CheckBox();
             cbAutoStartAnalyze = new System.Windows.Forms.CheckBox();
             cbAutoCopyResult = new System.Windows.Forms.CheckBox();
@@ -67,7 +67,7 @@ namespace ShareX
             // lblProvider
             // 
             lblProvider.AutoSize = true;
-            lblProvider.Location = new System.Drawing.Point(16, 16);
+            lblProvider.Location = new System.Drawing.Point(13, 16);
             lblProvider.Name = "lblProvider";
             lblProvider.Size = new System.Drawing.Size(61, 16);
             lblProvider.TabIndex = 0;
@@ -77,7 +77,7 @@ namespace ShareX
             // 
             cbProvider.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbProvider.FormattingEnabled = true;
-            cbProvider.Location = new System.Drawing.Point(16, 36);
+            cbProvider.Location = new System.Drawing.Point(16, 40);
             cbProvider.Name = "cbProvider";
             cbProvider.Size = new System.Drawing.Size(312, 24);
             cbProvider.TabIndex = 1;
@@ -86,7 +86,7 @@ namespace ShareX
             // btnAPIKeyHelp
             // 
             btnAPIKeyHelp.Image = Properties.Resources.question;
-            btnAPIKeyHelp.Location = new System.Drawing.Point(336, 32);
+            btnAPIKeyHelp.Location = new System.Drawing.Point(336, 36);
             btnAPIKeyHelp.Name = "btnAPIKeyHelp";
             btnAPIKeyHelp.Size = new System.Drawing.Size(32, 32);
             btnAPIKeyHelp.TabIndex = 2;
@@ -101,9 +101,13 @@ namespace ShareX
             gbOpenAI.Controls.Add(cbOpenAIModel);
             gbOpenAI.Controls.Add(lblOpenAICustomURL);
             gbOpenAI.Controls.Add(txtOpenAICustomURL);
-            gbOpenAI.Location = new System.Drawing.Point(16, 72);
+            gbOpenAI.Controls.Add(cbOpenAIReasoningEffort);
+            gbOpenAI.Controls.Add(lblReasoningEffort);
+            gbOpenAI.Controls.Add(lblVerbosity);
+            gbOpenAI.Controls.Add(cbOpenAIVerbosity);
+            gbOpenAI.Location = new System.Drawing.Point(16, 80);
             gbOpenAI.Name = "gbOpenAI";
-            gbOpenAI.Size = new System.Drawing.Size(352, 180);
+            gbOpenAI.Size = new System.Drawing.Size(352, 312);
             gbOpenAI.TabIndex = 3;
             gbOpenAI.TabStop = false;
             gbOpenAI.Text = "Provider Settings";
@@ -111,7 +115,7 @@ namespace ShareX
             // lblOpenAIAPIKey
             // 
             lblOpenAIAPIKey.AutoSize = true;
-            lblOpenAIAPIKey.Location = new System.Drawing.Point(12, 24);
+            lblOpenAIAPIKey.Location = new System.Drawing.Point(13, 24);
             lblOpenAIAPIKey.Name = "lblOpenAIAPIKey";
             lblOpenAIAPIKey.Size = new System.Drawing.Size(56, 16);
             lblOpenAIAPIKey.TabIndex = 0;
@@ -119,16 +123,16 @@ namespace ShareX
             // 
             // txtOpenAIAPIKey
             // 
-            txtOpenAIAPIKey.Location = new System.Drawing.Point(12, 44);
+            txtOpenAIAPIKey.Location = new System.Drawing.Point(16, 48);
             txtOpenAIAPIKey.Name = "txtOpenAIAPIKey";
-            txtOpenAIAPIKey.Size = new System.Drawing.Size(328, 22);
+            txtOpenAIAPIKey.Size = new System.Drawing.Size(320, 22);
             txtOpenAIAPIKey.TabIndex = 1;
             txtOpenAIAPIKey.UseSystemPasswordChar = true;
             // 
             // lblOpenAIModel
             // 
             lblOpenAIModel.AutoSize = true;
-            lblOpenAIModel.Location = new System.Drawing.Point(12, 76);
+            lblOpenAIModel.Location = new System.Drawing.Point(13, 80);
             lblOpenAIModel.Name = "lblOpenAIModel";
             lblOpenAIModel.Size = new System.Drawing.Size(48, 16);
             lblOpenAIModel.TabIndex = 2;
@@ -138,26 +142,62 @@ namespace ShareX
             // 
             cbOpenAIModel.FormattingEnabled = true;
             cbOpenAIModel.Items.AddRange(new object[] { "gpt-5.2", "gpt-5.1", "gpt-5", "gpt-5-mini", "gpt-5-nano" });
-            cbOpenAIModel.Location = new System.Drawing.Point(12, 96);
+            cbOpenAIModel.Location = new System.Drawing.Point(16, 104);
             cbOpenAIModel.Name = "cbOpenAIModel";
-            cbOpenAIModel.Size = new System.Drawing.Size(328, 24);
+            cbOpenAIModel.Size = new System.Drawing.Size(320, 24);
             cbOpenAIModel.TabIndex = 3;
             // 
             // lblOpenAICustomURL
             // 
             lblOpenAICustomURL.AutoSize = true;
-            lblOpenAICustomURL.Location = new System.Drawing.Point(12, 128);
+            lblOpenAICustomURL.Location = new System.Drawing.Point(13, 248);
             lblOpenAICustomURL.Name = "lblOpenAICustomURL";
             lblOpenAICustomURL.Size = new System.Drawing.Size(119, 16);
-            lblOpenAICustomURL.TabIndex = 4;
+            lblOpenAICustomURL.TabIndex = 8;
             lblOpenAICustomURL.Text = "Custom base URL:";
             // 
             // txtOpenAICustomURL
             // 
-            txtOpenAICustomURL.Location = new System.Drawing.Point(12, 148);
+            txtOpenAICustomURL.Location = new System.Drawing.Point(16, 272);
             txtOpenAICustomURL.Name = "txtOpenAICustomURL";
-            txtOpenAICustomURL.Size = new System.Drawing.Size(328, 22);
-            txtOpenAICustomURL.TabIndex = 5;
+            txtOpenAICustomURL.Size = new System.Drawing.Size(320, 22);
+            txtOpenAICustomURL.TabIndex = 9;
+            // 
+            // cbOpenAIReasoningEffort
+            // 
+            cbOpenAIReasoningEffort.FormattingEnabled = true;
+            cbOpenAIReasoningEffort.Items.AddRange(new object[] { "minimal", "low", "medium", "high" });
+            cbOpenAIReasoningEffort.Location = new System.Drawing.Point(16, 160);
+            cbOpenAIReasoningEffort.Name = "cbOpenAIReasoningEffort";
+            cbOpenAIReasoningEffort.Size = new System.Drawing.Size(320, 24);
+            cbOpenAIReasoningEffort.TabIndex = 5;
+            // 
+            // lblReasoningEffort
+            // 
+            lblReasoningEffort.AutoSize = true;
+            lblReasoningEffort.Location = new System.Drawing.Point(13, 136);
+            lblReasoningEffort.Name = "lblReasoningEffort";
+            lblReasoningEffort.Size = new System.Drawing.Size(108, 16);
+            lblReasoningEffort.TabIndex = 4;
+            lblReasoningEffort.Text = "Reasoning effort:";
+            // 
+            // lblVerbosity
+            // 
+            lblVerbosity.AutoSize = true;
+            lblVerbosity.Location = new System.Drawing.Point(13, 192);
+            lblVerbosity.Name = "lblVerbosity";
+            lblVerbosity.Size = new System.Drawing.Size(67, 16);
+            lblVerbosity.TabIndex = 6;
+            lblVerbosity.Text = "Verbosity:";
+            // 
+            // cbOpenAIVerbosity
+            // 
+            cbOpenAIVerbosity.FormattingEnabled = true;
+            cbOpenAIVerbosity.Items.AddRange(new object[] { "low", "medium", "high" });
+            cbOpenAIVerbosity.Location = new System.Drawing.Point(16, 216);
+            cbOpenAIVerbosity.Name = "cbOpenAIVerbosity";
+            cbOpenAIVerbosity.Size = new System.Drawing.Size(320, 24);
+            cbOpenAIVerbosity.TabIndex = 7;
             // 
             // gbGemini
             // 
@@ -165,7 +205,7 @@ namespace ShareX
             gbGemini.Controls.Add(txtGeminiAPIKey);
             gbGemini.Controls.Add(lblGeminiModel);
             gbGemini.Controls.Add(cbGeminiModel);
-            gbGemini.Location = new System.Drawing.Point(16, 72);
+            gbGemini.Location = new System.Drawing.Point(16, 80);
             gbGemini.Name = "gbGemini";
             gbGemini.Size = new System.Drawing.Size(352, 180);
             gbGemini.TabIndex = 4;
@@ -214,7 +254,7 @@ namespace ShareX
             gbOpenRouter.Controls.Add(txtOpenRouterAPIKey);
             gbOpenRouter.Controls.Add(lblOpenRouterModel);
             gbOpenRouter.Controls.Add(cbOpenRouterModel);
-            gbOpenRouter.Location = new System.Drawing.Point(16, 72);
+            gbOpenRouter.Location = new System.Drawing.Point(16, 80);
             gbOpenRouter.Name = "gbOpenRouter";
             gbOpenRouter.Size = new System.Drawing.Size(352, 180);
             gbOpenRouter.TabIndex = 5;
@@ -259,10 +299,10 @@ namespace ShareX
             // 
             // btnTestConnection
             // 
-            btnTestConnection.Location = new System.Drawing.Point(288, 260);
+            btnTestConnection.Location = new System.Drawing.Point(16, 400);
             btnTestConnection.Name = "btnTestConnection";
-            btnTestConnection.Size = new System.Drawing.Size(80, 28);
-            btnTestConnection.TabIndex = 6;
+            btnTestConnection.Size = new System.Drawing.Size(104, 32);
+            btnTestConnection.TabIndex = 4;
             btnTestConnection.Text = "Test";
             btnTestConnection.UseVisualStyleBackColor = true;
             btnTestConnection.Click += btnTestConnection_Click;
@@ -270,95 +310,57 @@ namespace ShareX
             // lblTestStatus
             // 
             lblTestStatus.AutoSize = true;
-            lblTestStatus.Location = new System.Drawing.Point(16, 266);
+            lblTestStatus.Location = new System.Drawing.Point(136, 408);
             lblTestStatus.Name = "lblTestStatus";
             lblTestStatus.Size = new System.Drawing.Size(0, 16);
-            lblTestStatus.TabIndex = 7;
-            // 
-            // lblReasoningEffort
-            // 
-            lblReasoningEffort.AutoSize = true;
-            lblReasoningEffort.Location = new System.Drawing.Point(16, 300);
-            lblReasoningEffort.Name = "lblReasoningEffort";
-            lblReasoningEffort.Size = new System.Drawing.Size(108, 16);
-            lblReasoningEffort.TabIndex = 8;
-            lblReasoningEffort.Text = "Reasoning effort:";
-            // 
-            // cbReasoningEffort
-            // 
-            cbReasoningEffort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            cbReasoningEffort.FormattingEnabled = true;
-            cbReasoningEffort.Items.AddRange(new object[] { "minimal", "low", "medium", "high" });
-            cbReasoningEffort.Location = new System.Drawing.Point(16, 320);
-            cbReasoningEffort.Name = "cbReasoningEffort";
-            cbReasoningEffort.Size = new System.Drawing.Size(352, 24);
-            cbReasoningEffort.TabIndex = 9;
-            // 
-            // lblVerbosity
-            // 
-            lblVerbosity.AutoSize = true;
-            lblVerbosity.Location = new System.Drawing.Point(16, 356);
-            lblVerbosity.Name = "lblVerbosity";
-            lblVerbosity.Size = new System.Drawing.Size(67, 16);
-            lblVerbosity.TabIndex = 10;
-            lblVerbosity.Text = "Verbosity:";
-            // 
-            // cbVerbosity
-            // 
-            cbVerbosity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            cbVerbosity.FormattingEnabled = true;
-            cbVerbosity.Items.AddRange(new object[] { "low", "medium", "high" });
-            cbVerbosity.Location = new System.Drawing.Point(16, 376);
-            cbVerbosity.Name = "cbVerbosity";
-            cbVerbosity.Size = new System.Drawing.Size(352, 24);
-            cbVerbosity.TabIndex = 11;
+            lblTestStatus.TabIndex = 5;
             // 
             // cbAutoStartRegion
             // 
             cbAutoStartRegion.AutoSize = true;
-            cbAutoStartRegion.Location = new System.Drawing.Point(16, 416);
+            cbAutoStartRegion.Location = new System.Drawing.Point(16, 448);
             cbAutoStartRegion.Name = "cbAutoStartRegion";
             cbAutoStartRegion.Size = new System.Drawing.Size(122, 20);
-            cbAutoStartRegion.TabIndex = 12;
+            cbAutoStartRegion.TabIndex = 6;
             cbAutoStartRegion.Text = "Auto start region";
             cbAutoStartRegion.UseVisualStyleBackColor = true;
             // 
             // cbAutoStartAnalyze
             // 
             cbAutoStartAnalyze.AutoSize = true;
-            cbAutoStartAnalyze.Location = new System.Drawing.Point(16, 440);
+            cbAutoStartAnalyze.Location = new System.Drawing.Point(16, 472);
             cbAutoStartAnalyze.Name = "cbAutoStartAnalyze";
             cbAutoStartAnalyze.Size = new System.Drawing.Size(131, 20);
-            cbAutoStartAnalyze.TabIndex = 13;
+            cbAutoStartAnalyze.TabIndex = 7;
             cbAutoStartAnalyze.Text = "Auto start analyze";
             cbAutoStartAnalyze.UseVisualStyleBackColor = true;
             // 
             // cbAutoCopyResult
             // 
             cbAutoCopyResult.AutoSize = true;
-            cbAutoCopyResult.Location = new System.Drawing.Point(16, 464);
+            cbAutoCopyResult.Location = new System.Drawing.Point(16, 496);
             cbAutoCopyResult.Name = "cbAutoCopyResult";
             cbAutoCopyResult.Size = new System.Drawing.Size(121, 20);
-            cbAutoCopyResult.TabIndex = 14;
+            cbAutoCopyResult.TabIndex = 8;
             cbAutoCopyResult.Text = "Auto copy result";
             cbAutoCopyResult.UseVisualStyleBackColor = true;
             // 
             // btnOK
             // 
-            btnOK.Location = new System.Drawing.Point(160, 500);
+            btnOK.Location = new System.Drawing.Point(152, 528);
             btnOK.Name = "btnOK";
-            btnOK.Size = new System.Drawing.Size(100, 32);
-            btnOK.TabIndex = 15;
+            btnOK.Size = new System.Drawing.Size(104, 32);
+            btnOK.TabIndex = 9;
             btnOK.Text = "OK";
             btnOK.UseVisualStyleBackColor = true;
             btnOK.Click += btnOK_Click;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new System.Drawing.Point(268, 500);
+            btnCancel.Location = new System.Drawing.Point(264, 528);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new System.Drawing.Size(100, 32);
-            btnCancel.TabIndex = 16;
+            btnCancel.Size = new System.Drawing.Size(104, 32);
+            btnCancel.TabIndex = 10;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
@@ -367,7 +369,7 @@ namespace ShareX
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(384, 548);
+            ClientSize = new System.Drawing.Size(384, 575);
             Controls.Add(lblProvider);
             Controls.Add(cbProvider);
             Controls.Add(btnAPIKeyHelp);
@@ -376,10 +378,6 @@ namespace ShareX
             Controls.Add(gbOpenRouter);
             Controls.Add(btnTestConnection);
             Controls.Add(lblTestStatus);
-            Controls.Add(lblReasoningEffort);
-            Controls.Add(cbReasoningEffort);
-            Controls.Add(lblVerbosity);
-            Controls.Add(cbVerbosity);
             Controls.Add(cbAutoStartRegion);
             Controls.Add(cbAutoStartAnalyze);
             Controls.Add(cbAutoCopyResult);
@@ -427,9 +425,9 @@ namespace ShareX
         private System.Windows.Forms.Button btnTestConnection;
         private System.Windows.Forms.Label lblTestStatus;
         private System.Windows.Forms.Label lblReasoningEffort;
-        private System.Windows.Forms.ComboBox cbReasoningEffort;
+        private System.Windows.Forms.ComboBox cbOpenAIReasoningEffort;
         private System.Windows.Forms.Label lblVerbosity;
-        private System.Windows.Forms.ComboBox cbVerbosity;
+        private System.Windows.Forms.ComboBox cbOpenAIVerbosity;
         private System.Windows.Forms.CheckBox cbAutoStartRegion;
         private System.Windows.Forms.CheckBox cbAutoStartAnalyze;
         private System.Windows.Forms.CheckBox cbAutoCopyResult;

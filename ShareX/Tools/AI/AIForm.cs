@@ -112,11 +112,11 @@ namespace ShareX
                     string imagePath = txtImage.Text;
                     if (!string.IsNullOrEmpty(imagePath))
                     {
-                        result = await provider.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort, Options.Verbosity);
+                        result = await provider.AnalyzeImage(imagePath, Options.Input, Options.OpenAIReasoningEffort, Options.OpenAIVerbosity);
                     }
                     else if (pbImage.Image != null)
                     {
-                        result = await provider.AnalyzeImage(pbImage.Image, Options.Input, Options.ReasoningEffort, Options.Verbosity);
+                        result = await provider.AnalyzeImage(pbImage.Image, Options.Input, Options.OpenAIReasoningEffort, Options.OpenAIVerbosity);
                     }
 
                     if (!string.IsNullOrEmpty(result))
