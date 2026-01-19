@@ -41,7 +41,7 @@ namespace ShareX
 
         [JsonEncrypt]
         public string OpenAIAPIKey { get; set; }
-        public string OpenAIModel { get; set; } = "gpt-4o-mini";
+        public string OpenAIModel { get; set; } = "gpt-5-mini";
         public string OpenAICustomURL { get; set; }
 
         [JsonEncrypt]

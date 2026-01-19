@@ -28,398 +28,377 @@ namespace ShareX
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblProvider = new System.Windows.Forms.Label();
-            this.cbProvider = new System.Windows.Forms.ComboBox();
-            this.btnAPIKeyHelp = new System.Windows.Forms.Button();
-            this.gbOpenAI = new System.Windows.Forms.GroupBox();
-            this.lblOpenAIAPIKey = new System.Windows.Forms.Label();
-            this.txtOpenAIAPIKey = new System.Windows.Forms.TextBox();
-            this.lblOpenAIModel = new System.Windows.Forms.Label();
-            this.cbOpenAIModel = new System.Windows.Forms.ComboBox();
-            this.lblOpenAICustomURL = new System.Windows.Forms.Label();
-            this.txtOpenAICustomURL = new System.Windows.Forms.TextBox();
-            this.gbGemini = new System.Windows.Forms.GroupBox();
-            this.lblGeminiAPIKey = new System.Windows.Forms.Label();
-            this.txtGeminiAPIKey = new System.Windows.Forms.TextBox();
-            this.lblGeminiModel = new System.Windows.Forms.Label();
-            this.cbGeminiModel = new System.Windows.Forms.ComboBox();
-            this.gbOpenRouter = new System.Windows.Forms.GroupBox();
-            this.lblOpenRouterAPIKey = new System.Windows.Forms.Label();
-            this.txtOpenRouterAPIKey = new System.Windows.Forms.TextBox();
-            this.lblOpenRouterModel = new System.Windows.Forms.Label();
-            this.cbOpenRouterModel = new System.Windows.Forms.ComboBox();
-            this.btnTestConnection = new System.Windows.Forms.Button();
-            this.lblTestStatus = new System.Windows.Forms.Label();
-            this.lblReasoningEffort = new System.Windows.Forms.Label();
-            this.cbReasoningEffort = new System.Windows.Forms.ComboBox();
-            this.lblVerbosity = new System.Windows.Forms.Label();
-            this.cbVerbosity = new System.Windows.Forms.ComboBox();
-            this.cbAutoStartRegion = new System.Windows.Forms.CheckBox();
-            this.cbAutoStartAnalyze = new System.Windows.Forms.CheckBox();
-            this.cbAutoCopyResult = new System.Windows.Forms.CheckBox();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.gbOpenAI.SuspendLayout();
-            this.gbGemini.SuspendLayout();
-            this.gbOpenRouter.SuspendLayout();
-            this.SuspendLayout();
-            //
+            lblProvider = new System.Windows.Forms.Label();
+            cbProvider = new System.Windows.Forms.ComboBox();
+            btnAPIKeyHelp = new System.Windows.Forms.Button();
+            gbOpenAI = new System.Windows.Forms.GroupBox();
+            lblOpenAIAPIKey = new System.Windows.Forms.Label();
+            txtOpenAIAPIKey = new System.Windows.Forms.TextBox();
+            lblOpenAIModel = new System.Windows.Forms.Label();
+            cbOpenAIModel = new System.Windows.Forms.ComboBox();
+            lblOpenAICustomURL = new System.Windows.Forms.Label();
+            txtOpenAICustomURL = new System.Windows.Forms.TextBox();
+            gbGemini = new System.Windows.Forms.GroupBox();
+            lblGeminiAPIKey = new System.Windows.Forms.Label();
+            txtGeminiAPIKey = new System.Windows.Forms.TextBox();
+            lblGeminiModel = new System.Windows.Forms.Label();
+            cbGeminiModel = new System.Windows.Forms.ComboBox();
+            gbOpenRouter = new System.Windows.Forms.GroupBox();
+            lblOpenRouterAPIKey = new System.Windows.Forms.Label();
+            txtOpenRouterAPIKey = new System.Windows.Forms.TextBox();
+            lblOpenRouterModel = new System.Windows.Forms.Label();
+            cbOpenRouterModel = new System.Windows.Forms.ComboBox();
+            btnTestConnection = new System.Windows.Forms.Button();
+            lblTestStatus = new System.Windows.Forms.Label();
+            lblReasoningEffort = new System.Windows.Forms.Label();
+            cbReasoningEffort = new System.Windows.Forms.ComboBox();
+            lblVerbosity = new System.Windows.Forms.Label();
+            cbVerbosity = new System.Windows.Forms.ComboBox();
+            cbAutoStartRegion = new System.Windows.Forms.CheckBox();
+            cbAutoStartAnalyze = new System.Windows.Forms.CheckBox();
+            cbAutoCopyResult = new System.Windows.Forms.CheckBox();
+            btnOK = new System.Windows.Forms.Button();
+            btnCancel = new System.Windows.Forms.Button();
+            gbOpenAI.SuspendLayout();
+            gbGemini.SuspendLayout();
+            gbOpenRouter.SuspendLayout();
+            SuspendLayout();
+            // 
             // lblProvider
-            //
-            this.lblProvider.AutoSize = true;
-            this.lblProvider.Location = new System.Drawing.Point(16, 16);
-            this.lblProvider.Name = "lblProvider";
-            this.lblProvider.Size = new System.Drawing.Size(61, 16);
-            this.lblProvider.TabIndex = 0;
-            this.lblProvider.Text = "Provider:";
-            //
+            // 
+            lblProvider.AutoSize = true;
+            lblProvider.Location = new System.Drawing.Point(16, 16);
+            lblProvider.Name = "lblProvider";
+            lblProvider.Size = new System.Drawing.Size(61, 16);
+            lblProvider.TabIndex = 0;
+            lblProvider.Text = "Provider:";
+            // 
             // cbProvider
-            //
-            this.cbProvider.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProvider.FormattingEnabled = true;
-            this.cbProvider.Location = new System.Drawing.Point(16, 36);
-            this.cbProvider.Name = "cbProvider";
-            this.cbProvider.Size = new System.Drawing.Size(312, 24);
-            this.cbProvider.TabIndex = 1;
-            this.cbProvider.SelectedIndexChanged += new System.EventHandler(this.cbProvider_SelectedIndexChanged);
-            //
+            // 
+            cbProvider.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbProvider.FormattingEnabled = true;
+            cbProvider.Location = new System.Drawing.Point(16, 36);
+            cbProvider.Name = "cbProvider";
+            cbProvider.Size = new System.Drawing.Size(312, 24);
+            cbProvider.TabIndex = 1;
+            cbProvider.SelectedIndexChanged += cbProvider_SelectedIndexChanged;
+            // 
             // btnAPIKeyHelp
-            //
-            this.btnAPIKeyHelp.Image = global::ShareX.Properties.Resources.question;
-            this.btnAPIKeyHelp.Location = new System.Drawing.Point(336, 32);
-            this.btnAPIKeyHelp.Name = "btnAPIKeyHelp";
-            this.btnAPIKeyHelp.Size = new System.Drawing.Size(32, 32);
-            this.btnAPIKeyHelp.TabIndex = 2;
-            this.btnAPIKeyHelp.UseVisualStyleBackColor = true;
-            this.btnAPIKeyHelp.Click += new System.EventHandler(this.btnAPIKeyHelp_Click);
-            //
+            // 
+            btnAPIKeyHelp.Image = Properties.Resources.question;
+            btnAPIKeyHelp.Location = new System.Drawing.Point(336, 32);
+            btnAPIKeyHelp.Name = "btnAPIKeyHelp";
+            btnAPIKeyHelp.Size = new System.Drawing.Size(32, 32);
+            btnAPIKeyHelp.TabIndex = 2;
+            btnAPIKeyHelp.UseVisualStyleBackColor = true;
+            btnAPIKeyHelp.Click += btnAPIKeyHelp_Click;
+            // 
             // gbOpenAI
-            //
-            this.gbOpenAI.Controls.Add(this.lblOpenAIAPIKey);
-            this.gbOpenAI.Controls.Add(this.txtOpenAIAPIKey);
-            this.gbOpenAI.Controls.Add(this.lblOpenAIModel);
-            this.gbOpenAI.Controls.Add(this.cbOpenAIModel);
-            this.gbOpenAI.Controls.Add(this.lblOpenAICustomURL);
-            this.gbOpenAI.Controls.Add(this.txtOpenAICustomURL);
-            this.gbOpenAI.Location = new System.Drawing.Point(16, 72);
-            this.gbOpenAI.Name = "gbOpenAI";
-            this.gbOpenAI.Size = new System.Drawing.Size(352, 180);
-            this.gbOpenAI.TabIndex = 3;
-            this.gbOpenAI.TabStop = false;
-            this.gbOpenAI.Text = "Provider Settings";
-            //
+            // 
+            gbOpenAI.Controls.Add(lblOpenAIAPIKey);
+            gbOpenAI.Controls.Add(txtOpenAIAPIKey);
+            gbOpenAI.Controls.Add(lblOpenAIModel);
+            gbOpenAI.Controls.Add(cbOpenAIModel);
+            gbOpenAI.Controls.Add(lblOpenAICustomURL);
+            gbOpenAI.Controls.Add(txtOpenAICustomURL);
+            gbOpenAI.Location = new System.Drawing.Point(16, 72);
+            gbOpenAI.Name = "gbOpenAI";
+            gbOpenAI.Size = new System.Drawing.Size(352, 180);
+            gbOpenAI.TabIndex = 3;
+            gbOpenAI.TabStop = false;
+            gbOpenAI.Text = "Provider Settings";
+            // 
             // lblOpenAIAPIKey
-            //
-            this.lblOpenAIAPIKey.AutoSize = true;
-            this.lblOpenAIAPIKey.Location = new System.Drawing.Point(12, 24);
-            this.lblOpenAIAPIKey.Name = "lblOpenAIAPIKey";
-            this.lblOpenAIAPIKey.Size = new System.Drawing.Size(56, 16);
-            this.lblOpenAIAPIKey.TabIndex = 0;
-            this.lblOpenAIAPIKey.Text = "API key:";
-            //
+            // 
+            lblOpenAIAPIKey.AutoSize = true;
+            lblOpenAIAPIKey.Location = new System.Drawing.Point(12, 24);
+            lblOpenAIAPIKey.Name = "lblOpenAIAPIKey";
+            lblOpenAIAPIKey.Size = new System.Drawing.Size(56, 16);
+            lblOpenAIAPIKey.TabIndex = 0;
+            lblOpenAIAPIKey.Text = "API key:";
+            // 
             // txtOpenAIAPIKey
-            //
-            this.txtOpenAIAPIKey.Location = new System.Drawing.Point(12, 44);
-            this.txtOpenAIAPIKey.Name = "txtOpenAIAPIKey";
-            this.txtOpenAIAPIKey.Size = new System.Drawing.Size(328, 22);
-            this.txtOpenAIAPIKey.TabIndex = 1;
-            this.txtOpenAIAPIKey.UseSystemPasswordChar = true;
-            //
+            // 
+            txtOpenAIAPIKey.Location = new System.Drawing.Point(12, 44);
+            txtOpenAIAPIKey.Name = "txtOpenAIAPIKey";
+            txtOpenAIAPIKey.Size = new System.Drawing.Size(328, 22);
+            txtOpenAIAPIKey.TabIndex = 1;
+            txtOpenAIAPIKey.UseSystemPasswordChar = true;
+            // 
             // lblOpenAIModel
-            //
-            this.lblOpenAIModel.AutoSize = true;
-            this.lblOpenAIModel.Location = new System.Drawing.Point(12, 76);
-            this.lblOpenAIModel.Name = "lblOpenAIModel";
-            this.lblOpenAIModel.Size = new System.Drawing.Size(48, 16);
-            this.lblOpenAIModel.TabIndex = 2;
-            this.lblOpenAIModel.Text = "Model:";
-            //
+            // 
+            lblOpenAIModel.AutoSize = true;
+            lblOpenAIModel.Location = new System.Drawing.Point(12, 76);
+            lblOpenAIModel.Name = "lblOpenAIModel";
+            lblOpenAIModel.Size = new System.Drawing.Size(48, 16);
+            lblOpenAIModel.TabIndex = 2;
+            lblOpenAIModel.Text = "Model:";
+            // 
             // cbOpenAIModel
-            //
-            this.cbOpenAIModel.FormattingEnabled = true;
-            this.cbOpenAIModel.Items.AddRange(new object[] {
-            "gpt-4o",
-            "gpt-4o-mini",
-            "gpt-4-turbo",
-            "gpt-4",
-            "o1",
-            "o1-mini",
-            "o3-mini"});
-            this.cbOpenAIModel.Location = new System.Drawing.Point(12, 96);
-            this.cbOpenAIModel.Name = "cbOpenAIModel";
-            this.cbOpenAIModel.Size = new System.Drawing.Size(328, 24);
-            this.cbOpenAIModel.TabIndex = 3;
-            //
+            // 
+            cbOpenAIModel.FormattingEnabled = true;
+            cbOpenAIModel.Items.AddRange(new object[] { "gpt-5.2", "gpt-5.1", "gpt-5", "gpt-5-mini", "gpt-5-nano" });
+            cbOpenAIModel.Location = new System.Drawing.Point(12, 96);
+            cbOpenAIModel.Name = "cbOpenAIModel";
+            cbOpenAIModel.Size = new System.Drawing.Size(328, 24);
+            cbOpenAIModel.TabIndex = 3;
+            // 
             // lblOpenAICustomURL
-            //
-            this.lblOpenAICustomURL.AutoSize = true;
-            this.lblOpenAICustomURL.Location = new System.Drawing.Point(12, 128);
-            this.lblOpenAICustomURL.Name = "lblOpenAICustomURL";
-            this.lblOpenAICustomURL.Size = new System.Drawing.Size(113, 16);
-            this.lblOpenAICustomURL.TabIndex = 4;
-            this.lblOpenAICustomURL.Text = "Custom base URL:";
-            //
+            // 
+            lblOpenAICustomURL.AutoSize = true;
+            lblOpenAICustomURL.Location = new System.Drawing.Point(12, 128);
+            lblOpenAICustomURL.Name = "lblOpenAICustomURL";
+            lblOpenAICustomURL.Size = new System.Drawing.Size(119, 16);
+            lblOpenAICustomURL.TabIndex = 4;
+            lblOpenAICustomURL.Text = "Custom base URL:";
+            // 
             // txtOpenAICustomURL
-            //
-            this.txtOpenAICustomURL.Location = new System.Drawing.Point(12, 148);
-            this.txtOpenAICustomURL.Name = "txtOpenAICustomURL";
-            this.txtOpenAICustomURL.Size = new System.Drawing.Size(328, 22);
-            this.txtOpenAICustomURL.TabIndex = 5;
-            //
+            // 
+            txtOpenAICustomURL.Location = new System.Drawing.Point(12, 148);
+            txtOpenAICustomURL.Name = "txtOpenAICustomURL";
+            txtOpenAICustomURL.Size = new System.Drawing.Size(328, 22);
+            txtOpenAICustomURL.TabIndex = 5;
+            // 
             // gbGemini
-            //
-            this.gbGemini.Controls.Add(this.lblGeminiAPIKey);
-            this.gbGemini.Controls.Add(this.txtGeminiAPIKey);
-            this.gbGemini.Controls.Add(this.lblGeminiModel);
-            this.gbGemini.Controls.Add(this.cbGeminiModel);
-            this.gbGemini.Location = new System.Drawing.Point(16, 72);
-            this.gbGemini.Name = "gbGemini";
-            this.gbGemini.Size = new System.Drawing.Size(352, 180);
-            this.gbGemini.TabIndex = 4;
-            this.gbGemini.TabStop = false;
-            this.gbGemini.Text = "Provider Settings";
-            this.gbGemini.Visible = false;
-            //
+            // 
+            gbGemini.Controls.Add(lblGeminiAPIKey);
+            gbGemini.Controls.Add(txtGeminiAPIKey);
+            gbGemini.Controls.Add(lblGeminiModel);
+            gbGemini.Controls.Add(cbGeminiModel);
+            gbGemini.Location = new System.Drawing.Point(16, 72);
+            gbGemini.Name = "gbGemini";
+            gbGemini.Size = new System.Drawing.Size(352, 180);
+            gbGemini.TabIndex = 4;
+            gbGemini.TabStop = false;
+            gbGemini.Text = "Provider Settings";
+            gbGemini.Visible = false;
+            // 
             // lblGeminiAPIKey
-            //
-            this.lblGeminiAPIKey.AutoSize = true;
-            this.lblGeminiAPIKey.Location = new System.Drawing.Point(12, 24);
-            this.lblGeminiAPIKey.Name = "lblGeminiAPIKey";
-            this.lblGeminiAPIKey.Size = new System.Drawing.Size(56, 16);
-            this.lblGeminiAPIKey.TabIndex = 0;
-            this.lblGeminiAPIKey.Text = "API key:";
-            //
+            // 
+            lblGeminiAPIKey.AutoSize = true;
+            lblGeminiAPIKey.Location = new System.Drawing.Point(12, 24);
+            lblGeminiAPIKey.Name = "lblGeminiAPIKey";
+            lblGeminiAPIKey.Size = new System.Drawing.Size(56, 16);
+            lblGeminiAPIKey.TabIndex = 0;
+            lblGeminiAPIKey.Text = "API key:";
+            // 
             // txtGeminiAPIKey
-            //
-            this.txtGeminiAPIKey.Location = new System.Drawing.Point(12, 44);
-            this.txtGeminiAPIKey.Name = "txtGeminiAPIKey";
-            this.txtGeminiAPIKey.Size = new System.Drawing.Size(328, 22);
-            this.txtGeminiAPIKey.TabIndex = 1;
-            this.txtGeminiAPIKey.UseSystemPasswordChar = true;
-            //
+            // 
+            txtGeminiAPIKey.Location = new System.Drawing.Point(12, 44);
+            txtGeminiAPIKey.Name = "txtGeminiAPIKey";
+            txtGeminiAPIKey.Size = new System.Drawing.Size(328, 22);
+            txtGeminiAPIKey.TabIndex = 1;
+            txtGeminiAPIKey.UseSystemPasswordChar = true;
+            // 
             // lblGeminiModel
-            //
-            this.lblGeminiModel.AutoSize = true;
-            this.lblGeminiModel.Location = new System.Drawing.Point(12, 76);
-            this.lblGeminiModel.Name = "lblGeminiModel";
-            this.lblGeminiModel.Size = new System.Drawing.Size(48, 16);
-            this.lblGeminiModel.TabIndex = 2;
-            this.lblGeminiModel.Text = "Model:";
-            //
+            // 
+            lblGeminiModel.AutoSize = true;
+            lblGeminiModel.Location = new System.Drawing.Point(12, 76);
+            lblGeminiModel.Name = "lblGeminiModel";
+            lblGeminiModel.Size = new System.Drawing.Size(48, 16);
+            lblGeminiModel.TabIndex = 2;
+            lblGeminiModel.Text = "Model:";
+            // 
             // cbGeminiModel
-            //
-            this.cbGeminiModel.FormattingEnabled = true;
-            this.cbGeminiModel.Items.AddRange(new object[] {
-            "gemini-2.0-flash",
-            "gemini-2.0-flash-lite",
-            "gemini-1.5-flash",
-            "gemini-1.5-pro"});
-            this.cbGeminiModel.Location = new System.Drawing.Point(12, 96);
-            this.cbGeminiModel.Name = "cbGeminiModel";
-            this.cbGeminiModel.Size = new System.Drawing.Size(328, 24);
-            this.cbGeminiModel.TabIndex = 3;
-            //
+            // 
+            cbGeminiModel.FormattingEnabled = true;
+            cbGeminiModel.Items.AddRange(new object[] { "gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-1.5-flash", "gemini-1.5-pro" });
+            cbGeminiModel.Location = new System.Drawing.Point(12, 96);
+            cbGeminiModel.Name = "cbGeminiModel";
+            cbGeminiModel.Size = new System.Drawing.Size(328, 24);
+            cbGeminiModel.TabIndex = 3;
+            // 
             // gbOpenRouter
-            //
-            this.gbOpenRouter.Controls.Add(this.lblOpenRouterAPIKey);
-            this.gbOpenRouter.Controls.Add(this.txtOpenRouterAPIKey);
-            this.gbOpenRouter.Controls.Add(this.lblOpenRouterModel);
-            this.gbOpenRouter.Controls.Add(this.cbOpenRouterModel);
-            this.gbOpenRouter.Location = new System.Drawing.Point(16, 72);
-            this.gbOpenRouter.Name = "gbOpenRouter";
-            this.gbOpenRouter.Size = new System.Drawing.Size(352, 180);
-            this.gbOpenRouter.TabIndex = 5;
-            this.gbOpenRouter.TabStop = false;
-            this.gbOpenRouter.Text = "Provider Settings";
-            this.gbOpenRouter.Visible = false;
-            //
+            // 
+            gbOpenRouter.Controls.Add(lblOpenRouterAPIKey);
+            gbOpenRouter.Controls.Add(txtOpenRouterAPIKey);
+            gbOpenRouter.Controls.Add(lblOpenRouterModel);
+            gbOpenRouter.Controls.Add(cbOpenRouterModel);
+            gbOpenRouter.Location = new System.Drawing.Point(16, 72);
+            gbOpenRouter.Name = "gbOpenRouter";
+            gbOpenRouter.Size = new System.Drawing.Size(352, 180);
+            gbOpenRouter.TabIndex = 5;
+            gbOpenRouter.TabStop = false;
+            gbOpenRouter.Text = "Provider Settings";
+            gbOpenRouter.Visible = false;
+            // 
             // lblOpenRouterAPIKey
-            //
-            this.lblOpenRouterAPIKey.AutoSize = true;
-            this.lblOpenRouterAPIKey.Location = new System.Drawing.Point(12, 24);
-            this.lblOpenRouterAPIKey.Name = "lblOpenRouterAPIKey";
-            this.lblOpenRouterAPIKey.Size = new System.Drawing.Size(56, 16);
-            this.lblOpenRouterAPIKey.TabIndex = 0;
-            this.lblOpenRouterAPIKey.Text = "API key:";
-            //
+            // 
+            lblOpenRouterAPIKey.AutoSize = true;
+            lblOpenRouterAPIKey.Location = new System.Drawing.Point(12, 24);
+            lblOpenRouterAPIKey.Name = "lblOpenRouterAPIKey";
+            lblOpenRouterAPIKey.Size = new System.Drawing.Size(56, 16);
+            lblOpenRouterAPIKey.TabIndex = 0;
+            lblOpenRouterAPIKey.Text = "API key:";
+            // 
             // txtOpenRouterAPIKey
-            //
-            this.txtOpenRouterAPIKey.Location = new System.Drawing.Point(12, 44);
-            this.txtOpenRouterAPIKey.Name = "txtOpenRouterAPIKey";
-            this.txtOpenRouterAPIKey.Size = new System.Drawing.Size(328, 22);
-            this.txtOpenRouterAPIKey.TabIndex = 1;
-            this.txtOpenRouterAPIKey.UseSystemPasswordChar = true;
-            //
+            // 
+            txtOpenRouterAPIKey.Location = new System.Drawing.Point(12, 44);
+            txtOpenRouterAPIKey.Name = "txtOpenRouterAPIKey";
+            txtOpenRouterAPIKey.Size = new System.Drawing.Size(328, 22);
+            txtOpenRouterAPIKey.TabIndex = 1;
+            txtOpenRouterAPIKey.UseSystemPasswordChar = true;
+            // 
             // lblOpenRouterModel
-            //
-            this.lblOpenRouterModel.AutoSize = true;
-            this.lblOpenRouterModel.Location = new System.Drawing.Point(12, 76);
-            this.lblOpenRouterModel.Name = "lblOpenRouterModel";
-            this.lblOpenRouterModel.Size = new System.Drawing.Size(48, 16);
-            this.lblOpenRouterModel.TabIndex = 2;
-            this.lblOpenRouterModel.Text = "Model:";
-            //
+            // 
+            lblOpenRouterModel.AutoSize = true;
+            lblOpenRouterModel.Location = new System.Drawing.Point(12, 76);
+            lblOpenRouterModel.Name = "lblOpenRouterModel";
+            lblOpenRouterModel.Size = new System.Drawing.Size(48, 16);
+            lblOpenRouterModel.TabIndex = 2;
+            lblOpenRouterModel.Text = "Model:";
+            // 
             // cbOpenRouterModel
-            //
-            this.cbOpenRouterModel.FormattingEnabled = true;
-            this.cbOpenRouterModel.Items.AddRange(new object[] {
-            "openai/gpt-4o",
-            "anthropic/claude-3.5-sonnet",
-            "google/gemini-pro-1.5"});
-            this.cbOpenRouterModel.Location = new System.Drawing.Point(12, 96);
-            this.cbOpenRouterModel.Name = "cbOpenRouterModel";
-            this.cbOpenRouterModel.Size = new System.Drawing.Size(328, 24);
-            this.cbOpenRouterModel.TabIndex = 3;
-            //
+            // 
+            cbOpenRouterModel.FormattingEnabled = true;
+            cbOpenRouterModel.Items.AddRange(new object[] { "openai/gpt-4o", "anthropic/claude-3.5-sonnet", "google/gemini-pro-1.5" });
+            cbOpenRouterModel.Location = new System.Drawing.Point(12, 96);
+            cbOpenRouterModel.Name = "cbOpenRouterModel";
+            cbOpenRouterModel.Size = new System.Drawing.Size(328, 24);
+            cbOpenRouterModel.TabIndex = 3;
+            // 
             // btnTestConnection
-            //
-            this.btnTestConnection.Location = new System.Drawing.Point(288, 260);
-            this.btnTestConnection.Name = "btnTestConnection";
-            this.btnTestConnection.Size = new System.Drawing.Size(80, 28);
-            this.btnTestConnection.TabIndex = 6;
-            this.btnTestConnection.Text = "Test";
-            this.btnTestConnection.UseVisualStyleBackColor = true;
-            this.btnTestConnection.Click += new System.EventHandler(this.btnTestConnection_Click);
-            //
+            // 
+            btnTestConnection.Location = new System.Drawing.Point(288, 260);
+            btnTestConnection.Name = "btnTestConnection";
+            btnTestConnection.Size = new System.Drawing.Size(80, 28);
+            btnTestConnection.TabIndex = 6;
+            btnTestConnection.Text = "Test";
+            btnTestConnection.UseVisualStyleBackColor = true;
+            btnTestConnection.Click += btnTestConnection_Click;
+            // 
             // lblTestStatus
-            //
-            this.lblTestStatus.AutoSize = true;
-            this.lblTestStatus.Location = new System.Drawing.Point(16, 266);
-            this.lblTestStatus.Name = "lblTestStatus";
-            this.lblTestStatus.Size = new System.Drawing.Size(0, 16);
-            this.lblTestStatus.TabIndex = 7;
-            //
+            // 
+            lblTestStatus.AutoSize = true;
+            lblTestStatus.Location = new System.Drawing.Point(16, 266);
+            lblTestStatus.Name = "lblTestStatus";
+            lblTestStatus.Size = new System.Drawing.Size(0, 16);
+            lblTestStatus.TabIndex = 7;
+            // 
             // lblReasoningEffort
-            //
-            this.lblReasoningEffort.AutoSize = true;
-            this.lblReasoningEffort.Location = new System.Drawing.Point(16, 300);
-            this.lblReasoningEffort.Name = "lblReasoningEffort";
-            this.lblReasoningEffort.Size = new System.Drawing.Size(108, 16);
-            this.lblReasoningEffort.TabIndex = 8;
-            this.lblReasoningEffort.Text = "Reasoning effort:";
-            //
+            // 
+            lblReasoningEffort.AutoSize = true;
+            lblReasoningEffort.Location = new System.Drawing.Point(16, 300);
+            lblReasoningEffort.Name = "lblReasoningEffort";
+            lblReasoningEffort.Size = new System.Drawing.Size(108, 16);
+            lblReasoningEffort.TabIndex = 8;
+            lblReasoningEffort.Text = "Reasoning effort:";
+            // 
             // cbReasoningEffort
-            //
-            this.cbReasoningEffort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReasoningEffort.FormattingEnabled = true;
-            this.cbReasoningEffort.Items.AddRange(new object[] {
-            "minimal",
-            "low",
-            "medium",
-            "high"});
-            this.cbReasoningEffort.Location = new System.Drawing.Point(16, 320);
-            this.cbReasoningEffort.Name = "cbReasoningEffort";
-            this.cbReasoningEffort.Size = new System.Drawing.Size(352, 24);
-            this.cbReasoningEffort.TabIndex = 9;
-            //
+            // 
+            cbReasoningEffort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbReasoningEffort.FormattingEnabled = true;
+            cbReasoningEffort.Items.AddRange(new object[] { "minimal", "low", "medium", "high" });
+            cbReasoningEffort.Location = new System.Drawing.Point(16, 320);
+            cbReasoningEffort.Name = "cbReasoningEffort";
+            cbReasoningEffort.Size = new System.Drawing.Size(352, 24);
+            cbReasoningEffort.TabIndex = 9;
+            // 
             // lblVerbosity
-            //
-            this.lblVerbosity.AutoSize = true;
-            this.lblVerbosity.Location = new System.Drawing.Point(16, 356);
-            this.lblVerbosity.Name = "lblVerbosity";
-            this.lblVerbosity.Size = new System.Drawing.Size(67, 16);
-            this.lblVerbosity.TabIndex = 10;
-            this.lblVerbosity.Text = "Verbosity:";
-            //
+            // 
+            lblVerbosity.AutoSize = true;
+            lblVerbosity.Location = new System.Drawing.Point(16, 356);
+            lblVerbosity.Name = "lblVerbosity";
+            lblVerbosity.Size = new System.Drawing.Size(67, 16);
+            lblVerbosity.TabIndex = 10;
+            lblVerbosity.Text = "Verbosity:";
+            // 
             // cbVerbosity
-            //
-            this.cbVerbosity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVerbosity.FormattingEnabled = true;
-            this.cbVerbosity.Items.AddRange(new object[] {
-            "high",
-            "medium",
-            "low"});
-            this.cbVerbosity.Location = new System.Drawing.Point(16, 376);
-            this.cbVerbosity.Name = "cbVerbosity";
-            this.cbVerbosity.Size = new System.Drawing.Size(352, 24);
-            this.cbVerbosity.TabIndex = 11;
-            //
+            // 
+            cbVerbosity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbVerbosity.FormattingEnabled = true;
+            cbVerbosity.Items.AddRange(new object[] { "high", "medium", "low" });
+            cbVerbosity.Location = new System.Drawing.Point(16, 376);
+            cbVerbosity.Name = "cbVerbosity";
+            cbVerbosity.Size = new System.Drawing.Size(352, 24);
+            cbVerbosity.TabIndex = 11;
+            // 
             // cbAutoStartRegion
-            //
-            this.cbAutoStartRegion.AutoSize = true;
-            this.cbAutoStartRegion.Location = new System.Drawing.Point(16, 416);
-            this.cbAutoStartRegion.Name = "cbAutoStartRegion";
-            this.cbAutoStartRegion.Size = new System.Drawing.Size(122, 20);
-            this.cbAutoStartRegion.TabIndex = 12;
-            this.cbAutoStartRegion.Text = "Auto start region";
-            this.cbAutoStartRegion.UseVisualStyleBackColor = true;
-            //
+            // 
+            cbAutoStartRegion.AutoSize = true;
+            cbAutoStartRegion.Location = new System.Drawing.Point(16, 416);
+            cbAutoStartRegion.Name = "cbAutoStartRegion";
+            cbAutoStartRegion.Size = new System.Drawing.Size(122, 20);
+            cbAutoStartRegion.TabIndex = 12;
+            cbAutoStartRegion.Text = "Auto start region";
+            cbAutoStartRegion.UseVisualStyleBackColor = true;
+            // 
             // cbAutoStartAnalyze
-            //
-            this.cbAutoStartAnalyze.AutoSize = true;
-            this.cbAutoStartAnalyze.Location = new System.Drawing.Point(16, 440);
-            this.cbAutoStartAnalyze.Name = "cbAutoStartAnalyze";
-            this.cbAutoStartAnalyze.Size = new System.Drawing.Size(131, 20);
-            this.cbAutoStartAnalyze.TabIndex = 13;
-            this.cbAutoStartAnalyze.Text = "Auto start analyze";
-            this.cbAutoStartAnalyze.UseVisualStyleBackColor = true;
-            //
+            // 
+            cbAutoStartAnalyze.AutoSize = true;
+            cbAutoStartAnalyze.Location = new System.Drawing.Point(16, 440);
+            cbAutoStartAnalyze.Name = "cbAutoStartAnalyze";
+            cbAutoStartAnalyze.Size = new System.Drawing.Size(131, 20);
+            cbAutoStartAnalyze.TabIndex = 13;
+            cbAutoStartAnalyze.Text = "Auto start analyze";
+            cbAutoStartAnalyze.UseVisualStyleBackColor = true;
+            // 
             // cbAutoCopyResult
-            //
-            this.cbAutoCopyResult.AutoSize = true;
-            this.cbAutoCopyResult.Location = new System.Drawing.Point(16, 464);
-            this.cbAutoCopyResult.Name = "cbAutoCopyResult";
-            this.cbAutoCopyResult.Size = new System.Drawing.Size(121, 20);
-            this.cbAutoCopyResult.TabIndex = 14;
-            this.cbAutoCopyResult.Text = "Auto copy result";
-            this.cbAutoCopyResult.UseVisualStyleBackColor = true;
-            //
+            // 
+            cbAutoCopyResult.AutoSize = true;
+            cbAutoCopyResult.Location = new System.Drawing.Point(16, 464);
+            cbAutoCopyResult.Name = "cbAutoCopyResult";
+            cbAutoCopyResult.Size = new System.Drawing.Size(121, 20);
+            cbAutoCopyResult.TabIndex = 14;
+            cbAutoCopyResult.Text = "Auto copy result";
+            cbAutoCopyResult.UseVisualStyleBackColor = true;
+            // 
             // btnOK
-            //
-            this.btnOK.Location = new System.Drawing.Point(160, 500);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(100, 32);
-            this.btnOK.TabIndex = 15;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            //
+            // 
+            btnOK.Location = new System.Drawing.Point(160, 500);
+            btnOK.Name = "btnOK";
+            btnOK.Size = new System.Drawing.Size(100, 32);
+            btnOK.TabIndex = 15;
+            btnOK.Text = "OK";
+            btnOK.UseVisualStyleBackColor = true;
+            btnOK.Click += btnOK_Click;
+            // 
             // btnCancel
-            //
-            this.btnCancel.Location = new System.Drawing.Point(268, 500);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 32);
-            this.btnCancel.TabIndex = 16;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            //
+            // 
+            btnCancel.Location = new System.Drawing.Point(268, 500);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new System.Drawing.Size(100, 32);
+            btnCancel.TabIndex = 16;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
             // AIOptionsForm
-            //
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 548);
-            this.Controls.Add(this.lblProvider);
-            this.Controls.Add(this.cbProvider);
-            this.Controls.Add(this.btnAPIKeyHelp);
-            this.Controls.Add(this.gbOpenAI);
-            this.Controls.Add(this.gbGemini);
-            this.Controls.Add(this.gbOpenRouter);
-            this.Controls.Add(this.btnTestConnection);
-            this.Controls.Add(this.lblTestStatus);
-            this.Controls.Add(this.lblReasoningEffort);
-            this.Controls.Add(this.cbReasoningEffort);
-            this.Controls.Add(this.lblVerbosity);
-            this.Controls.Add(this.cbVerbosity);
-            this.Controls.Add(this.cbAutoStartRegion);
-            this.Controls.Add(this.cbAutoStartAnalyze);
-            this.Controls.Add(this.cbAutoCopyResult);
-            this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.btnCancel);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "AIOptionsForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - AI options";
-            this.gbOpenAI.ResumeLayout(false);
-            this.gbOpenAI.PerformLayout();
-            this.gbGemini.ResumeLayout(false);
-            this.gbGemini.PerformLayout();
-            this.gbOpenRouter.ResumeLayout(false);
-            this.gbOpenRouter.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(384, 548);
+            Controls.Add(lblProvider);
+            Controls.Add(cbProvider);
+            Controls.Add(btnAPIKeyHelp);
+            Controls.Add(gbOpenAI);
+            Controls.Add(gbGemini);
+            Controls.Add(gbOpenRouter);
+            Controls.Add(btnTestConnection);
+            Controls.Add(lblTestStatus);
+            Controls.Add(lblReasoningEffort);
+            Controls.Add(cbReasoningEffort);
+            Controls.Add(lblVerbosity);
+            Controls.Add(cbVerbosity);
+            Controls.Add(cbAutoStartRegion);
+            Controls.Add(cbAutoStartAnalyze);
+            Controls.Add(cbAutoCopyResult);
+            Controls.Add(btnOK);
+            Controls.Add(btnCancel);
+            Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "AIOptionsForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "ShareX - AI options";
+            gbOpenAI.ResumeLayout(false);
+            gbOpenAI.PerformLayout();
+            gbGemini.ResumeLayout(false);
+            gbGemini.PerformLayout();
+            gbOpenRouter.ResumeLayout(false);
+            gbOpenRouter.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
