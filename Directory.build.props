@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Company>ShareX Team</Company>
     <Product>ShareX</Product>
-    <Copyright>Copyright (c) 2007-2025 ShareX Team</Copyright>
+    <Copyright>Copyright (c) 2007-2026 ShareX Team</Copyright>
     <Version>18.0.2</Version>
     <EmbeddedResourceUseDependentUponConvention>true</EmbeddedResourceUseDependentUponConvention>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>

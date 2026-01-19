@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2025 ShareX Team
+    Copyright (c) 2007-2026 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -122,7 +122,7 @@ Blob Emoji: http://blobs.gg
 ExifTool: https://exiftool.org
 ", FontStyle.Regular);
 
-            rtbInfo.AppendText("Copyright (c) 2007-2025 ShareX Team", FontStyle.Bold, 13);
+            rtbInfo.AppendText("Copyright (c) 2007-2026 ShareX Team", FontStyle.Bold, 13);
 
             easterEgg = new EasterEggAboutAnimation(cLogo, this);
         }
