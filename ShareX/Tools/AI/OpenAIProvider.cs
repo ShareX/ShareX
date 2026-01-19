@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
@@ -31,77 +30,191 @@ using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ShareX
 {
+    public class ChatGPTRequest
+    {
+        public string model { get; set; }
+        public ChatGPTReasoning reasoning { get; set; }
+        public ChatGPTInput[] input { get; set; }
+        public ChatGPTText text { get; set; }
+        public bool store { get; set; }
+    }
+
+    public class ChatGPTReasoning
+    {
+        public string effort { get; set; }
+    }
+
+    public class ChatGPTInput
+    {
+        public string role { get; set; }
+        public ChatGPTInputContent[] content { get; set; }
+    }
+
+    public class ChatGPTText
+    {
+        public string verbosity { get; set; }
+    }
+
+    public class ChatGPTInputContent
+    {
+        public string type { get; set; }
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string text { get; set; }
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string image_url { get; set; }
+    }
+
+    public class ChatGPTResponse
+    {
+        public string id { get; set; }
+        public ChatGPTResponseOutput[] output { get; set; }
+    }
+
+    public class ChatGPTResponseOutput
+    {
+        public string id { get; set; }
+        public string type { get; set; }
+        public ChatGPTResponseOutputContent[] content { get; set; }
+    }
+
+    public class ChatGPTResponseOutputContent
+    {
+        public string type { get; set; }
+        public string text { get; set; }
+    }
+
     public class OpenAIProvider : IAIProvider
     {
-        private readonly string apiKey;
-        private readonly string model;
-        private readonly string customUrl;
+        public string APIKey { get; set; }
+        public string Model { get; set; }
+        public string CustomURL { get; set; }
 
-        public OpenAIProvider(string apiKey, string model, string customUrl = null)
+        public OpenAIProvider(string apiKey, string model, string customURL = null)
         {
-            this.apiKey = apiKey;
-            this.model = model;
-            this.customUrl = customUrl;
+            APIKey = apiKey;
+            Model = model;
+            CustomURL = customURL;
         }
 
-        public async Task<string> AnalyzeImage(Image image, string prompt, string reasoningEffort, string verbosity)
+        public async Task<string> AnalyzeImage(string filePath, string input = null, string reasoningEffort = null, string textVerbosity = null)
         {
-            string base64Image = ImageHelpers.ImageToBase64(image, System.Drawing.Imaging.ImageFormat.Png);
-            return await AnalyzeImageInternal(base64Image, prompt, reasoningEffort, verbosity);
+            Image image = ImageHelpers.LoadImage(filePath);
+
+            return await AnalyzeImage(image, input, reasoningEffort, textVerbosity);
         }
 
-        public async Task<string> AnalyzeImage(string imagePath, string prompt, string reasoningEffort, string verbosity)
+        public async Task<string> AnalyzeImage(Image image, string input = null, string reasoningEffort = null, string textVerbosity = null)
         {
-            string base64Image = ImageHelpers.ImageFileToBase64(imagePath);
-            return await AnalyzeImageInternal(base64Image, prompt, reasoningEffort, verbosity);
-        }
+            string imageDataUri;
 
-        private async Task<string> AnalyzeImageInternal(string base64Image, string prompt, string reasoningEffort, string verbosity)
-        {
-            using (HttpClient client = new HttpClient())
+            using (MemoryStream ms = new MemoryStream())
             {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+                ImageHelpers.SaveJPEG(image, ms, 90);
+                byte[] imageBytes = ms.ToArray();
+                string base64Image = Convert.ToBase64String(imageBytes);
+                imageDataUri = $"data:image/jpeg;base64,{base64Image}";
+            }
 
-                var payload = new
+            return await AnalyzeImageInternal(imageDataUri, input, reasoningEffort, textVerbosity);
+        }
+
+        private async Task<string> AnalyzeImageInternal(string imageDataUri, string input = null, string reasoningEffort = null, string textVerbosity = null)
+        {
+            HttpClient httpClient = HttpClientFactory.Create();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", APIKey);
+
+            if (string.IsNullOrEmpty(input))
+            {
+                input = "What is in this image?";
+            }
+
+            if (Model.Equals("gpt-5.2", StringComparison.OrdinalIgnoreCase) ||
+                Model.Equals("gpt-5.1", StringComparison.OrdinalIgnoreCase))
+            {
+                if (reasoningEffort == null || reasoningEffort.Equals("minimal", StringComparison.OrdinalIgnoreCase))
                 {
-                    model = this.model,
-                    messages = new[]
-                    {
-                        new
-                        {
-                            role = "user",
-                            content = new object[]
-                            {
-                                new { type = "text", text = prompt },
-                                new { type = "image_url", image_url = new { url = $"data:image/png;base64,{base64Image}" } }
-                            }
-                        }
-                    },
-                    max_tokens = 1024
-                };
-
-                string jsonPayload = JsonConvert.SerializeObject(payload);
-                StringContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-
-                string url = string.IsNullOrEmpty(customUrl) ? "https://api.openai.com/v1/chat/completions" : customUrl;
-
-                HttpResponseMessage response = await client.PostAsync(url, content);
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                if (response.IsSuccessStatusCode)
-                {
-                    dynamic responseObject = JsonConvert.DeserializeObject(responseString);
-                    return responseObject.choices[0].message.content;
-                }
-                else
-                {
-                    throw new Exception($"Error from OpenAI API: {responseString}");
+                    reasoningEffort = "none";
                 }
             }
+            else
+            {
+                if (reasoningEffort == null)
+                {
+                    reasoningEffort = "minimal";
+                }
+            }
+
+            if (textVerbosity == null)
+            {
+                textVerbosity = "medium";
+            }
+
+            ChatGPTRequest request = new ChatGPTRequest()
+            {
+                model = Model,
+                reasoning = new ChatGPTReasoning()
+                {
+                    effort = reasoningEffort
+                },
+                input = new ChatGPTInput[]
+                {
+                    new ChatGPTInput()
+                    {
+                        role = "user",
+                        content = new ChatGPTInputContent[]
+                        {
+                            new ChatGPTInputContent()
+                            {
+                                type = "input_text",
+                                text = input
+                            },
+                            new ChatGPTInputContent()
+                            {
+                                type = "input_image",
+                                image_url = imageDataUri
+                            }
+                        }
+                    }
+                },
+                text = new ChatGPTText()
+                {
+                    verbosity = textVerbosity
+                },
+                store = false
+            };
+
+            string json = JsonSerializer.Serialize(request);
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = await httpClient.PostAsync("https://api.openai.com/v1/responses", content);
+            response.EnsureSuccessStatusCode();
+            string responseString = await response.Content.ReadAsStringAsync();
+
+            ChatGPTResponse result = JsonSerializer.Deserialize<ChatGPTResponse>(responseString);
+
+            if (result.output != null && result.output.Length > 0)
+            {
+                for (int i = 0; i < result.output.Length; i++)
+                {
+                    if (result.output[i].content != null && result.output[i].content.Length > 0)
+                    {
+                        string text = result.output[i].content[0].text;
+
+                        if (!string.IsNullOrEmpty(text))
+                        {
+                            return text;
+                        }
+                    }
+                }
+            }
+
+            return "";
         }
     }
 }

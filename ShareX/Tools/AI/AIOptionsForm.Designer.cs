@@ -307,7 +307,7 @@ namespace ShareX
             // 
             cbVerbosity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbVerbosity.FormattingEnabled = true;
-            cbVerbosity.Items.AddRange(new object[] { "high", "medium", "low" });
+            cbVerbosity.Items.AddRange(new object[] { "low", "medium", "high" });
             cbVerbosity.Location = new System.Drawing.Point(16, 376);
             cbVerbosity.Name = "cbVerbosity";
             cbVerbosity.Size = new System.Drawing.Size(352, 24);
