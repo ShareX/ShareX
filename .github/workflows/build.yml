@@ -195,7 +195,7 @@ jobs:
         env:
           CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
         if: env.CUSTOM_GITHUB_TOKEN != '' && env.REPO_DEV_BUILDS != '' && github.ref == 'refs/heads/develop'
-        uses: softprops/action-gh-release@975c1b265e11dd76618af1c374e7981f9a6ff44a
+        uses: softprops/action-gh-release@v2
         with:
           repository: ${{ env.REPO_DEV_BUILDS }}
           token: ${{ env.CUSTOM_GITHUB_TOKEN }}
@@ -216,7 +216,7 @@ jobs:
         env:
           CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
         if: env.CUSTOM_GITHUB_TOKEN != '' && startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@975c1b265e11dd76618af1c374e7981f9a6ff44a
+        uses: softprops/action-gh-release@v2
         with:
           repository: ${{ github.repository }}
           token: ${{ env.CUSTOM_GITHUB_TOKEN }}
