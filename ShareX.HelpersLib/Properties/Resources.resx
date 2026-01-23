@@ -1326,4 +1326,37 @@ Would you like to download and install it?</value>
   <data name="ShapeType_ToolSpotlight" xml:space="preserve">
     <value>Spotlight</value>
   </data>
+  <data name="PrivateBinExpiration_M5" xml:space="preserve">
+    <value>5 Minutes</value>
+  </data>
+  <data name="PrivateBinExpiration_M10" xml:space="preserve">
+    <value>10 Minutes</value>
+  </data>
+  <data name="PrivateBinExpiration_H1" xml:space="preserve">
+    <value>1 Hour</value>
+  </data>
+  <data name="PrivateBinExpiration_D1" xml:space="preserve">
+    <value>1 Day</value>
+  </data>
+  <data name="PrivateBinExpiration_W1" xml:space="preserve">
+    <value>1 Week</value>
+  </data>
+  <data name="PrivateBinExpiration_M1" xml:space="preserve">
+    <value>1 Month</value>
+  </data>
+  <data name="PrivateBinExpiration_Y1" xml:space="preserve">
+    <value>1 Year</value>
+  </data>
+  <data name="PrivateBinExpiration_N" xml:space="preserve">
+    <value>Never</value>
+  </data>
+  <data name="PrivateBinFormat_PlainText" xml:space="preserve">
+    <value>Plain Text</value>
+  </data>
+  <data name="PrivateBinFormat_SyntaxHighlighting" xml:space="preserve">
+    <value>Syntax Highlighting</value>
+  </data>
+  <data name="PrivateBinFormat_Markdown" xml:space="preserve">
+    <value>Markdown</value>
+  </data>
 </root>

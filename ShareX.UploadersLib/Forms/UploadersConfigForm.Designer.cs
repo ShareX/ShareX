@@ -57,6 +57,11 @@ namespace ShareX.UploadersLib
             txtRapidSharePremiumUserName = new System.Windows.Forms.TextBox();
             ttHelpTip = new System.Windows.Forms.ToolTip(components);
             cbAmazonS3CustomCNAME = new System.Windows.Forms.CheckBox();
+            gbPrivateBinCredentials = new System.Windows.Forms.GroupBox();
+            lblPrivateBinPassword = new System.Windows.Forms.Label();
+            lblPrivateBinUsername = new System.Windows.Forms.Label();
+            txtPrivateBinPassword = new System.Windows.Forms.TextBox();
+            txtPrivateBinUsername = new System.Windows.Forms.TextBox();
             txtB2CustomUrl = new System.Windows.Forms.TextBox();
             cbB2CustomUrl = new System.Windows.Forms.CheckBox();
             txtB2Bucket = new System.Windows.Forms.TextBox();
@@ -512,6 +517,16 @@ namespace ShareX.UploadersLib
             txtOneTimeSecretEmail = new System.Windows.Forms.TextBox();
             tpPastie = new System.Windows.Forms.TabPage();
             cbPastieIsPublic = new System.Windows.Forms.CheckBox();
+            tpPrivateBin = new System.Windows.Forms.TabPage();
+            lblPrivateBinCustomUrl = new System.Windows.Forms.Label();
+            txtPrivateBinCustomUrl = new System.Windows.Forms.TextBox();
+            lblPrivateBinExpiration = new System.Windows.Forms.Label();
+            cbPrivateBinExpiration = new System.Windows.Forms.ComboBox();
+            lblPrivateBinFormat = new System.Windows.Forms.Label();
+            cbPrivateBinFormat = new System.Windows.Forms.ComboBox();
+            lblPrivateBinPastePassword = new System.Windows.Forms.Label();
+            txtPrivateBinPastePassword = new System.Windows.Forms.TextBox();
+            cbPrivateBinBurnAfterReading = new System.Windows.Forms.CheckBox();
             tpImageUploaders = new System.Windows.Forms.TabPage();
             tcImageUploaders = new System.Windows.Forms.TabControl();
             tpImgur = new System.Windows.Forms.TabPage();
@@ -572,6 +587,7 @@ namespace ShareX.UploadersLib
             tcUploaders = new System.Windows.Forms.TabControl();
             tttvMain = new ShareX.HelpersLib.TabToTreeView();
             actRapidShareAccountType = new AccountTypeControl();
+            gbPrivateBinCredentials.SuspendLayout();
             tpURLShorteners.SuspendLayout();
             tcURLShorteners.SuspendLayout();
             tpBitly.SuspendLayout();
@@ -634,6 +650,7 @@ namespace ShareX.UploadersLib
             tpHastebin.SuspendLayout();
             tpOneTimeSecret.SuspendLayout();
             tpPastie.SuspendLayout();
+            tpPrivateBin.SuspendLayout();
             tpImageUploaders.SuspendLayout();
             tcImageUploaders.SuspendLayout();
             tpImgur.SuspendLayout();
@@ -647,14 +664,14 @@ namespace ShareX.UploadersLib
             tpVgyme.SuspendLayout();
             tcUploaders.SuspendLayout();
             SuspendLayout();
-            // 
+            //
             // txtRapidSharePremiumUserName
-            // 
+            //
             resources.ApplyResources(txtRapidSharePremiumUserName, "txtRapidSharePremiumUserName");
             txtRapidSharePremiumUserName.Name = "txtRapidSharePremiumUserName";
-            // 
+            //
             // ttHelpTip
-            // 
+            //
             ttHelpTip.AutomaticDelay = 0;
             ttHelpTip.AutoPopDelay = 30000;
             ttHelpTip.BackColor = System.Drawing.SystemColors.Window;
@@ -662,62 +679,96 @@ namespace ShareX.UploadersLib
             ttHelpTip.ReshowDelay = 100;
             ttHelpTip.UseAnimation = false;
             ttHelpTip.UseFading = false;
-            // 
+            //
             // cbAmazonS3CustomCNAME
-            // 
+            //
             resources.ApplyResources(cbAmazonS3CustomCNAME, "cbAmazonS3CustomCNAME");
             cbAmazonS3CustomCNAME.Name = "cbAmazonS3CustomCNAME";
             ttHelpTip.SetToolTip(cbAmazonS3CustomCNAME, resources.GetString("cbAmazonS3CustomCNAME.ToolTip"));
             cbAmazonS3CustomCNAME.UseVisualStyleBackColor = true;
             cbAmazonS3CustomCNAME.CheckedChanged += cbAmazonS3CustomCNAME_CheckedChanged;
-            // 
+            //
+            // gbPrivateBinCredentials
+            //
+            gbPrivateBinCredentials.Controls.Add(lblPrivateBinPassword);
+            gbPrivateBinCredentials.Controls.Add(lblPrivateBinUsername);
+            gbPrivateBinCredentials.Controls.Add(txtPrivateBinPassword);
+            gbPrivateBinCredentials.Controls.Add(txtPrivateBinUsername);
+            resources.ApplyResources(gbPrivateBinCredentials, "gbPrivateBinCredentials");
+            gbPrivateBinCredentials.Name = "gbPrivateBinCredentials";
+            gbPrivateBinCredentials.TabStop = false;
+            ttHelpTip.SetToolTip(gbPrivateBinCredentials, resources.GetString("gbPrivateBinCredentials.ToolTip"));
+            //
+            // lblPrivateBinPassword
+            //
+            resources.ApplyResources(lblPrivateBinPassword, "lblPrivateBinPassword");
+            lblPrivateBinPassword.Name = "lblPrivateBinPassword";
+            //
+            // lblPrivateBinUsername
+            //
+            resources.ApplyResources(lblPrivateBinUsername, "lblPrivateBinUsername");
+            lblPrivateBinUsername.Name = "lblPrivateBinUsername";
+            //
+            // txtPrivateBinPassword
+            //
+            resources.ApplyResources(txtPrivateBinPassword, "txtPrivateBinPassword");
+            txtPrivateBinPassword.Name = "txtPrivateBinPassword";
+            txtPrivateBinPassword.UseSystemPasswordChar = true;
+            txtPrivateBinPassword.TextChanged += txtPrivateBinPassword_TextChanged;
+            //
+            // txtPrivateBinUsername
+            //
+            resources.ApplyResources(txtPrivateBinUsername, "txtPrivateBinUsername");
+            txtPrivateBinUsername.Name = "txtPrivateBinUsername";
+            txtPrivateBinUsername.TextChanged += txtPrivateBinUsername_TextChanged;
+            //
             // txtB2CustomUrl
-            // 
+            //
             resources.ApplyResources(txtB2CustomUrl, "txtB2CustomUrl");
             txtB2CustomUrl.Name = "txtB2CustomUrl";
             txtB2CustomUrl.TextChanged += txtB2CustomUrl_TextChanged;
-            // 
+            //
             // cbB2CustomUrl
-            // 
+            //
             resources.ApplyResources(cbB2CustomUrl, "cbB2CustomUrl");
             cbB2CustomUrl.Name = "cbB2CustomUrl";
             cbB2CustomUrl.UseVisualStyleBackColor = true;
             cbB2CustomUrl.CheckedChanged += cbB2CustomUrl_CheckedChanged;
-            // 
+            //
             // txtB2Bucket
-            // 
+            //
             resources.ApplyResources(txtB2Bucket, "txtB2Bucket");
             txtB2Bucket.Name = "txtB2Bucket";
             txtB2Bucket.TextChanged += txtB2Bucket_TextChanged;
-            // 
+            //
             // txtB2UploadPath
-            // 
+            //
             resources.ApplyResources(txtB2UploadPath, "txtB2UploadPath");
             txtB2UploadPath.Name = "txtB2UploadPath";
             txtB2UploadPath.TextChanged += txtB2UploadPath_TextChanged;
-            // 
+            //
             // txtB2ApplicationKey
-            // 
+            //
             resources.ApplyResources(txtB2ApplicationKey, "txtB2ApplicationKey");
             txtB2ApplicationKey.Name = "txtB2ApplicationKey";
             txtB2ApplicationKey.UseSystemPasswordChar = true;
             txtB2ApplicationKey.TextChanged += txtB2ApplicationKey_TextChanged;
-            // 
+            //
             // txtB2ApplicationKeyId
-            // 
+            //
             resources.ApplyResources(txtB2ApplicationKeyId, "txtB2ApplicationKeyId");
             txtB2ApplicationKeyId.Name = "txtB2ApplicationKeyId";
             txtB2ApplicationKeyId.TextChanged += txtB2ApplicationKeyId_TextChanged;
-            // 
+            //
             // tpURLShorteners
-            // 
+            //
             tpURLShorteners.BackColor = System.Drawing.SystemColors.Window;
             tpURLShorteners.Controls.Add(tcURLShorteners);
             resources.ApplyResources(tpURLShorteners, "tpURLShorteners");
             tpURLShorteners.Name = "tpURLShorteners";
-            // 
+            //
             // tcURLShorteners
-            // 
+            //
             tcURLShorteners.Controls.Add(tpBitly);
             tcURLShorteners.Controls.Add(tpYourls);
             tcURLShorteners.Controls.Add(tpPolr);
@@ -727,29 +778,29 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(tcURLShorteners, "tcURLShorteners");
             tcURLShorteners.Name = "tcURLShorteners";
             tcURLShorteners.SelectedIndex = 0;
-            // 
+            //
             // tpBitly
-            // 
+            //
             tpBitly.BackColor = System.Drawing.SystemColors.Window;
             tpBitly.Controls.Add(txtBitlyDomain);
             tpBitly.Controls.Add(lblBitlyDomain);
             tpBitly.Controls.Add(oauth2Bitly);
             resources.ApplyResources(tpBitly, "tpBitly");
             tpBitly.Name = "tpBitly";
-            // 
+            //
             // txtBitlyDomain
-            // 
+            //
             resources.ApplyResources(txtBitlyDomain, "txtBitlyDomain");
             txtBitlyDomain.Name = "txtBitlyDomain";
             txtBitlyDomain.TextChanged += txtBitlyDomain_TextChanged;
-            // 
+            //
             // lblBitlyDomain
-            // 
+            //
             resources.ApplyResources(lblBitlyDomain, "lblBitlyDomain");
             lblBitlyDomain.Name = "lblBitlyDomain";
-            // 
+            //
             // oauth2Bitly
-            // 
+            //
             oauth2Bitly.IsRefreshable = false;
             resources.ApplyResources(oauth2Bitly, "oauth2Bitly");
             oauth2Bitly.Name = "oauth2Bitly";
@@ -757,9 +808,9 @@ namespace ShareX.UploadersLib
             oauth2Bitly.OpenButtonClicked += oauth2Bitly_OpenButtonClicked;
             oauth2Bitly.CompleteButtonClicked += oauth2Bitly_CompleteButtonClicked;
             oauth2Bitly.ClearButtonClicked += oauth2Bitly_ClearButtonClicked;
-            // 
+            //
             // tpYourls
-            // 
+            //
             tpYourls.BackColor = System.Drawing.SystemColors.Window;
             tpYourls.Controls.Add(txtYourlsPassword);
             tpYourls.Controls.Add(txtYourlsUsername);
@@ -772,60 +823,60 @@ namespace ShareX.UploadersLib
             tpYourls.Controls.Add(lblYourlsAPIURL);
             resources.ApplyResources(tpYourls, "tpYourls");
             tpYourls.Name = "tpYourls";
-            // 
+            //
             // txtYourlsPassword
-            // 
+            //
             resources.ApplyResources(txtYourlsPassword, "txtYourlsPassword");
             txtYourlsPassword.Name = "txtYourlsPassword";
             txtYourlsPassword.UseSystemPasswordChar = true;
             txtYourlsPassword.TextChanged += txtYourlsPassword_TextChanged;
-            // 
+            //
             // txtYourlsUsername
-            // 
+            //
             resources.ApplyResources(txtYourlsUsername, "txtYourlsUsername");
             txtYourlsUsername.Name = "txtYourlsUsername";
             txtYourlsUsername.TextChanged += txtYourlsUsername_TextChanged;
-            // 
+            //
             // txtYourlsSignature
-            // 
+            //
             resources.ApplyResources(txtYourlsSignature, "txtYourlsSignature");
             txtYourlsSignature.Name = "txtYourlsSignature";
             txtYourlsSignature.UseSystemPasswordChar = true;
             txtYourlsSignature.TextChanged += txtYourlsSignature_TextChanged;
-            // 
+            //
             // lblYourlsNote
-            // 
+            //
             resources.ApplyResources(lblYourlsNote, "lblYourlsNote");
             lblYourlsNote.Name = "lblYourlsNote";
-            // 
+            //
             // lblYourlsPassword
-            // 
+            //
             resources.ApplyResources(lblYourlsPassword, "lblYourlsPassword");
             lblYourlsPassword.Name = "lblYourlsPassword";
-            // 
+            //
             // lblYourlsUsername
-            // 
+            //
             resources.ApplyResources(lblYourlsUsername, "lblYourlsUsername");
             lblYourlsUsername.Name = "lblYourlsUsername";
-            // 
+            //
             // lblYourlsSignature
-            // 
+            //
             resources.ApplyResources(lblYourlsSignature, "lblYourlsSignature");
             lblYourlsSignature.Name = "lblYourlsSignature";
-            // 
+            //
             // txtYourlsAPIURL
-            // 
+            //
             resources.ApplyResources(txtYourlsAPIURL, "txtYourlsAPIURL");
             txtYourlsAPIURL.Name = "txtYourlsAPIURL";
             txtYourlsAPIURL.TextChanged += txtYourlsAPIURL_TextChanged;
-            // 
+            //
             // lblYourlsAPIURL
-            // 
+            //
             resources.ApplyResources(lblYourlsAPIURL, "lblYourlsAPIURL");
             lblYourlsAPIURL.Name = "lblYourlsAPIURL";
-            // 
+            //
             // tpPolr
-            // 
+            //
             tpPolr.BackColor = System.Drawing.SystemColors.Window;
             tpPolr.Controls.Add(cbPolrUseAPIv1);
             tpPolr.Controls.Add(cbPolrIsSecret);
@@ -835,46 +886,46 @@ namespace ShareX.UploadersLib
             tpPolr.Controls.Add(lblPolrAPIHostname);
             resources.ApplyResources(tpPolr, "tpPolr");
             tpPolr.Name = "tpPolr";
-            // 
+            //
             // cbPolrUseAPIv1
-            // 
+            //
             resources.ApplyResources(cbPolrUseAPIv1, "cbPolrUseAPIv1");
             cbPolrUseAPIv1.Name = "cbPolrUseAPIv1";
             cbPolrUseAPIv1.UseVisualStyleBackColor = true;
             cbPolrUseAPIv1.CheckedChanged += cbPolrUseAPIv1_CheckedChanged;
-            // 
+            //
             // cbPolrIsSecret
-            // 
+            //
             resources.ApplyResources(cbPolrIsSecret, "cbPolrIsSecret");
             cbPolrIsSecret.Name = "cbPolrIsSecret";
             cbPolrIsSecret.UseVisualStyleBackColor = true;
             cbPolrIsSecret.CheckedChanged += cbPolrIsSecret_CheckedChanged;
-            // 
+            //
             // txtPolrAPIKey
-            // 
+            //
             resources.ApplyResources(txtPolrAPIKey, "txtPolrAPIKey");
             txtPolrAPIKey.Name = "txtPolrAPIKey";
             txtPolrAPIKey.UseSystemPasswordChar = true;
             txtPolrAPIKey.TextChanged += txtPolrAPIKey_TextChanged;
-            // 
+            //
             // lblPolrAPIKey
-            // 
+            //
             resources.ApplyResources(lblPolrAPIKey, "lblPolrAPIKey");
             lblPolrAPIKey.Name = "lblPolrAPIKey";
-            // 
+            //
             // txtPolrAPIHostname
-            // 
+            //
             resources.ApplyResources(txtPolrAPIHostname, "txtPolrAPIHostname");
             txtPolrAPIHostname.Name = "txtPolrAPIHostname";
             txtPolrAPIHostname.TextChanged += txtPolrAPIHostname_TextChanged;
-            // 
+            //
             // lblPolrAPIHostname
-            // 
+            //
             resources.ApplyResources(lblPolrAPIHostname, "lblPolrAPIHostname");
             lblPolrAPIHostname.Name = "lblPolrAPIHostname";
-            // 
+            //
             // tpFirebaseDynamicLinks
-            // 
+            //
             tpFirebaseDynamicLinks.Controls.Add(lblFirebaseDomainExample);
             tpFirebaseDynamicLinks.Controls.Add(lblFirebaseDomain);
             tpFirebaseDynamicLinks.Controls.Add(cbFirebaseIsShort);
@@ -884,44 +935,44 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(tpFirebaseDynamicLinks, "tpFirebaseDynamicLinks");
             tpFirebaseDynamicLinks.Name = "tpFirebaseDynamicLinks";
             tpFirebaseDynamicLinks.UseVisualStyleBackColor = true;
-            // 
+            //
             // lblFirebaseDomainExample
-            // 
+            //
             resources.ApplyResources(lblFirebaseDomainExample, "lblFirebaseDomainExample");
             lblFirebaseDomainExample.Name = "lblFirebaseDomainExample";
-            // 
+            //
             // lblFirebaseDomain
-            // 
+            //
             resources.ApplyResources(lblFirebaseDomain, "lblFirebaseDomain");
             lblFirebaseDomain.Name = "lblFirebaseDomain";
-            // 
+            //
             // cbFirebaseIsShort
-            // 
+            //
             resources.ApplyResources(cbFirebaseIsShort, "cbFirebaseIsShort");
             cbFirebaseIsShort.Name = "cbFirebaseIsShort";
             cbFirebaseIsShort.UseVisualStyleBackColor = true;
             cbFirebaseIsShort.CheckedChanged += cbFirebaseIsShort_CheckedChanged;
-            // 
+            //
             // txtFirebaseDomain
-            // 
+            //
             resources.ApplyResources(txtFirebaseDomain, "txtFirebaseDomain");
             txtFirebaseDomain.Name = "txtFirebaseDomain";
             txtFirebaseDomain.TextChanged += txtFirebaseDomain_TextChanged;
-            // 
+            //
             // txtFirebaseWebAPIKey
-            // 
+            //
             resources.ApplyResources(txtFirebaseWebAPIKey, "txtFirebaseWebAPIKey");
             txtFirebaseWebAPIKey.Name = "txtFirebaseWebAPIKey";
             txtFirebaseWebAPIKey.UseSystemPasswordChar = true;
             txtFirebaseWebAPIKey.TextChanged += txtFirebaseWebAPIKey_TextChanged;
-            // 
+            //
             // lblFirebaseWebAPIKey
-            // 
+            //
             resources.ApplyResources(lblFirebaseWebAPIKey, "lblFirebaseWebAPIKey");
             lblFirebaseWebAPIKey.Name = "lblFirebaseWebAPIKey";
-            // 
+            //
             // tpKutt
-            // 
+            //
             tpKutt.Controls.Add(txtKuttDomain);
             tpKutt.Controls.Add(lblKuttDomain);
             tpKutt.Controls.Add(lblKuttPassword);
@@ -934,62 +985,62 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(tpKutt, "tpKutt");
             tpKutt.Name = "tpKutt";
             tpKutt.UseVisualStyleBackColor = true;
-            // 
+            //
             // txtKuttDomain
-            // 
+            //
             resources.ApplyResources(txtKuttDomain, "txtKuttDomain");
             txtKuttDomain.Name = "txtKuttDomain";
             txtKuttDomain.TextChanged += txtKuttDomain_TextChanged;
-            // 
+            //
             // lblKuttDomain
-            // 
+            //
             resources.ApplyResources(lblKuttDomain, "lblKuttDomain");
             lblKuttDomain.Name = "lblKuttDomain";
-            // 
+            //
             // lblKuttPassword
-            // 
+            //
             resources.ApplyResources(lblKuttPassword, "lblKuttPassword");
             lblKuttPassword.Name = "lblKuttPassword";
-            // 
+            //
             // txtKuttPassword
-            // 
+            //
             resources.ApplyResources(txtKuttPassword, "txtKuttPassword");
             txtKuttPassword.Name = "txtKuttPassword";
             txtKuttPassword.UseSystemPasswordChar = true;
             txtKuttPassword.TextChanged += txtKuttPassword_TextChanged;
-            // 
+            //
             // cbKuttReuse
-            // 
+            //
             resources.ApplyResources(cbKuttReuse, "cbKuttReuse");
             cbKuttReuse.Name = "cbKuttReuse";
             cbKuttReuse.UseVisualStyleBackColor = true;
             cbKuttReuse.CheckedChanged += cbKuttReuse_CheckedChanged;
-            // 
+            //
             // txtKuttAPIKey
-            // 
+            //
             resources.ApplyResources(txtKuttAPIKey, "txtKuttAPIKey");
             txtKuttAPIKey.Name = "txtKuttAPIKey";
             txtKuttAPIKey.UseSystemPasswordChar = true;
             txtKuttAPIKey.TextChanged += txtKuttAPIKey_TextChanged;
-            // 
+            //
             // txtKuttHost
-            // 
+            //
             resources.ApplyResources(txtKuttHost, "txtKuttHost");
             txtKuttHost.Name = "txtKuttHost";
             txtKuttHost.TextChanged += txtKuttHost_TextChanged;
-            // 
+            //
             // lblKuttAPIKey
-            // 
+            //
             resources.ApplyResources(lblKuttAPIKey, "lblKuttAPIKey");
             lblKuttAPIKey.Name = "lblKuttAPIKey";
-            // 
+            //
             // lblKuttHost
-            // 
+            //
             resources.ApplyResources(lblKuttHost, "lblKuttHost");
             lblKuttHost.Name = "lblKuttHost";
-            // 
+            //
             // tpZeroWidthShortener
-            // 
+            //
             tpZeroWidthShortener.Controls.Add(txtZWSToken);
             tpZeroWidthShortener.Controls.Add(txtZWSURL);
             tpZeroWidthShortener.Controls.Add(lblZWSToken);
@@ -997,39 +1048,39 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(tpZeroWidthShortener, "tpZeroWidthShortener");
             tpZeroWidthShortener.Name = "tpZeroWidthShortener";
             tpZeroWidthShortener.UseVisualStyleBackColor = true;
-            // 
+            //
             // txtZWSToken
-            // 
+            //
             resources.ApplyResources(txtZWSToken, "txtZWSToken");
             txtZWSToken.Name = "txtZWSToken";
             txtZWSToken.UseSystemPasswordChar = true;
             txtZWSToken.TextChanged += txtZWSToken_TextChanged;
-            // 
+            //
             // txtZWSURL
-            // 
+            //
             resources.ApplyResources(txtZWSURL, "txtZWSURL");
             txtZWSURL.Name = "txtZWSURL";
             txtZWSURL.TextChanged += txtZWSURL_TextChanged;
-            // 
+            //
             // lblZWSToken
-            // 
+            //
             resources.ApplyResources(lblZWSToken, "lblZWSToken");
             lblZWSToken.Name = "lblZWSToken";
-            // 
+            //
             // lblZWSURL
-            // 
+            //
             resources.ApplyResources(lblZWSURL, "lblZWSURL");
             lblZWSURL.Name = "lblZWSURL";
-            // 
+            //
             // tpFileUploaders
-            // 
+            //
             tpFileUploaders.BackColor = System.Drawing.SystemColors.Window;
             tpFileUploaders.Controls.Add(tcFileUploaders);
             resources.ApplyResources(tpFileUploaders, "tpFileUploaders");
             tpFileUploaders.Name = "tpFileUploaders";
-            // 
+            //
             // tcFileUploaders
-            // 
+            //
             tcFileUploaders.Controls.Add(tpFTP);
             tcFileUploaders.Controls.Add(tpDropbox);
             tcFileUploaders.Controls.Add(tpOneDrive);
@@ -1060,9 +1111,9 @@ namespace ShareX.UploadersLib
             tcFileUploaders.Multiline = true;
             tcFileUploaders.Name = "tcFileUploaders";
             tcFileUploaders.SelectedIndex = 0;
-            // 
+            //
             // tpFTP
-            // 
+            //
             tpFTP.BackColor = System.Drawing.SystemColors.Window;
             tpFTP.Controls.Add(gbFTPAccount);
             tpFTP.Controls.Add(btnFTPDuplicate);
@@ -1080,9 +1131,9 @@ namespace ShareX.UploadersLib
             tpFTP.Controls.Add(cbFTPText);
             resources.ApplyResources(tpFTP, "tpFTP");
             tpFTP.Name = "tpFTP";
-            // 
+            //
             // gbFTPAccount
-            // 
+            //
             gbFTPAccount.Controls.Add(gbSFTP);
             gbFTPAccount.Controls.Add(cbFTPAppendRemoteDirectory);
             gbFTPAccount.Controls.Add(lblFTPProtocol);
@@ -1111,9 +1162,9 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(gbFTPAccount, "gbFTPAccount");
             gbFTPAccount.Name = "gbFTPAccount";
             gbFTPAccount.TabStop = false;
-            // 
+            //
             // gbSFTP
-            // 
+            //
             gbSFTP.Controls.Add(txtSFTPKeyPassphrase);
             gbSFTP.Controls.Add(btnSFTPKeyLocationBrowse);
             gbSFTP.Controls.Add(lblSFTPKeyPassphrase);
@@ -1122,216 +1173,216 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(gbSFTP, "gbSFTP");
             gbSFTP.Name = "gbSFTP";
             gbSFTP.TabStop = false;
-            // 
+            //
             // txtSFTPKeyPassphrase
-            // 
+            //
             resources.ApplyResources(txtSFTPKeyPassphrase, "txtSFTPKeyPassphrase");
             txtSFTPKeyPassphrase.Name = "txtSFTPKeyPassphrase";
             txtSFTPKeyPassphrase.UseSystemPasswordChar = true;
             txtSFTPKeyPassphrase.TextChanged += txtSFTPKeyPassphrase_TextChanged;
-            // 
+            //
             // btnSFTPKeyLocationBrowse
-            // 
+            //
             resources.ApplyResources(btnSFTPKeyLocationBrowse, "btnSFTPKeyLocationBrowse");
             btnSFTPKeyLocationBrowse.Name = "btnSFTPKeyLocationBrowse";
             btnSFTPKeyLocationBrowse.UseVisualStyleBackColor = true;
             btnSFTPKeyLocationBrowse.Click += btnSFTPKeyLocationBrowse_Click;
-            // 
+            //
             // lblSFTPKeyPassphrase
-            // 
+            //
             resources.ApplyResources(lblSFTPKeyPassphrase, "lblSFTPKeyPassphrase");
             lblSFTPKeyPassphrase.Name = "lblSFTPKeyPassphrase";
-            // 
+            //
             // txtSFTPKeyLocation
-            // 
+            //
             resources.ApplyResources(txtSFTPKeyLocation, "txtSFTPKeyLocation");
             txtSFTPKeyLocation.Name = "txtSFTPKeyLocation";
             txtSFTPKeyLocation.TextChanged += txtSFTPKeyLocation_TextChanged;
-            // 
+            //
             // lblSFTPKeyLocation
-            // 
+            //
             resources.ApplyResources(lblSFTPKeyLocation, "lblSFTPKeyLocation");
             lblSFTPKeyLocation.Name = "lblSFTPKeyLocation";
-            // 
+            //
             // cbFTPAppendRemoteDirectory
-            // 
+            //
             resources.ApplyResources(cbFTPAppendRemoteDirectory, "cbFTPAppendRemoteDirectory");
             cbFTPAppendRemoteDirectory.Name = "cbFTPAppendRemoteDirectory";
             cbFTPAppendRemoteDirectory.UseVisualStyleBackColor = true;
             cbFTPAppendRemoteDirectory.CheckedChanged += cbFTPAppendRemoteDirectory_CheckedChanged;
-            // 
+            //
             // lblFTPProtocol
-            // 
+            //
             resources.ApplyResources(lblFTPProtocol, "lblFTPProtocol");
             lblFTPProtocol.Name = "lblFTPProtocol";
-            // 
+            //
             // lblFTPName
-            // 
+            //
             resources.ApplyResources(lblFTPName, "lblFTPName");
             lblFTPName.Name = "lblFTPName";
-            // 
+            //
             // cbFTPRemoveFileExtension
-            // 
+            //
             resources.ApplyResources(cbFTPRemoveFileExtension, "cbFTPRemoveFileExtension");
             cbFTPRemoveFileExtension.Name = "cbFTPRemoveFileExtension";
             cbFTPRemoveFileExtension.UseVisualStyleBackColor = true;
             cbFTPRemoveFileExtension.CheckedChanged += cbFTPRemoveFileExtension_CheckedChanged;
-            // 
+            //
             // txtFTPName
-            // 
+            //
             resources.ApplyResources(txtFTPName, "txtFTPName");
             txtFTPName.Name = "txtFTPName";
             txtFTPName.TextChanged += txtFTPName_TextChanged;
-            // 
+            //
             // lblFTPHost
-            // 
+            //
             resources.ApplyResources(lblFTPHost, "lblFTPHost");
             lblFTPHost.Name = "lblFTPHost";
-            // 
+            //
             // pFTPTransferMode
-            // 
+            //
             resources.ApplyResources(pFTPTransferMode, "pFTPTransferMode");
             pFTPTransferMode.Controls.Add(rbFTPTransferModeActive);
             pFTPTransferMode.Controls.Add(rbFTPTransferModePassive);
             pFTPTransferMode.Name = "pFTPTransferMode";
-            // 
+            //
             // rbFTPTransferModeActive
-            // 
+            //
             resources.ApplyResources(rbFTPTransferModeActive, "rbFTPTransferModeActive");
             rbFTPTransferModeActive.Name = "rbFTPTransferModeActive";
             rbFTPTransferModeActive.UseVisualStyleBackColor = true;
             rbFTPTransferModeActive.CheckedChanged += rbFTPTransferModeActive_CheckedChanged;
-            // 
+            //
             // rbFTPTransferModePassive
-            // 
+            //
             resources.ApplyResources(rbFTPTransferModePassive, "rbFTPTransferModePassive");
             rbFTPTransferModePassive.Checked = true;
             rbFTPTransferModePassive.Name = "rbFTPTransferModePassive";
             rbFTPTransferModePassive.TabStop = true;
             rbFTPTransferModePassive.UseVisualStyleBackColor = true;
             rbFTPTransferModePassive.CheckedChanged += rbFTPTransferModePassive_CheckedChanged;
-            // 
+            //
             // txtFTPHost
-            // 
+            //
             resources.ApplyResources(txtFTPHost, "txtFTPHost");
             txtFTPHost.Name = "txtFTPHost";
             txtFTPHost.TextChanged += txtFTPHost_TextChanged;
-            // 
+            //
             // pFTPProtocol
-            // 
+            //
             resources.ApplyResources(pFTPProtocol, "pFTPProtocol");
             pFTPProtocol.Controls.Add(rbFTPProtocolFTP);
             pFTPProtocol.Controls.Add(rbFTPProtocolFTPS);
             pFTPProtocol.Controls.Add(rbFTPProtocolSFTP);
             pFTPProtocol.Name = "pFTPProtocol";
-            // 
+            //
             // rbFTPProtocolFTP
-            // 
+            //
             resources.ApplyResources(rbFTPProtocolFTP, "rbFTPProtocolFTP");
             rbFTPProtocolFTP.Checked = true;
             rbFTPProtocolFTP.Name = "rbFTPProtocolFTP";
             rbFTPProtocolFTP.TabStop = true;
             rbFTPProtocolFTP.UseVisualStyleBackColor = true;
             rbFTPProtocolFTP.CheckedChanged += rbFTPProtocolFTP_CheckedChanged;
-            // 
+            //
             // rbFTPProtocolFTPS
-            // 
+            //
             resources.ApplyResources(rbFTPProtocolFTPS, "rbFTPProtocolFTPS");
             rbFTPProtocolFTPS.Name = "rbFTPProtocolFTPS";
             rbFTPProtocolFTPS.UseVisualStyleBackColor = true;
             rbFTPProtocolFTPS.CheckedChanged += rbFTPProtocolFTPS_CheckedChanged;
-            // 
+            //
             // rbFTPProtocolSFTP
-            // 
+            //
             resources.ApplyResources(rbFTPProtocolSFTP, "rbFTPProtocolSFTP");
             rbFTPProtocolSFTP.Name = "rbFTPProtocolSFTP";
             rbFTPProtocolSFTP.UseVisualStyleBackColor = true;
             rbFTPProtocolSFTP.CheckedChanged += rbFTPProtocolSFTP_CheckedChanged;
-            // 
+            //
             // lblFTPPort
-            // 
+            //
             resources.ApplyResources(lblFTPPort, "lblFTPPort");
             lblFTPPort.Name = "lblFTPPort";
-            // 
+            //
             // lblFTPTransferMode
-            // 
+            //
             resources.ApplyResources(lblFTPTransferMode, "lblFTPTransferMode");
             lblFTPTransferMode.Name = "lblFTPTransferMode";
-            // 
+            //
             // nudFTPPort
-            // 
+            //
             resources.ApplyResources(nudFTPPort, "nudFTPPort");
             nudFTPPort.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
             nudFTPPort.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudFTPPort.Name = "nudFTPPort";
             nudFTPPort.Value = new decimal(new int[] { 21, 0, 0, 0 });
             nudFTPPort.ValueChanged += nudFTPPort_ValueChanged;
-            // 
+            //
             // lblFTPURLPreviewValue
-            // 
+            //
             resources.ApplyResources(lblFTPURLPreviewValue, "lblFTPURLPreviewValue");
             lblFTPURLPreviewValue.Name = "lblFTPURLPreviewValue";
-            // 
+            //
             // lblFTPUsername
-            // 
+            //
             resources.ApplyResources(lblFTPUsername, "lblFTPUsername");
             lblFTPUsername.Name = "lblFTPUsername";
-            // 
+            //
             // lblFTPURLPreview
-            // 
+            //
             resources.ApplyResources(lblFTPURLPreview, "lblFTPURLPreview");
             lblFTPURLPreview.Name = "lblFTPURLPreview";
-            // 
+            //
             // txtFTPUsername
-            // 
+            //
             resources.ApplyResources(txtFTPUsername, "txtFTPUsername");
             txtFTPUsername.Name = "txtFTPUsername";
             txtFTPUsername.TextChanged += txtFTPUsername_TextChanged;
-            // 
+            //
             // cbFTPURLPathProtocol
-            // 
+            //
             cbFTPURLPathProtocol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbFTPURLPathProtocol.FormattingEnabled = true;
             resources.ApplyResources(cbFTPURLPathProtocol, "cbFTPURLPathProtocol");
             cbFTPURLPathProtocol.Name = "cbFTPURLPathProtocol";
             cbFTPURLPathProtocol.SelectedIndexChanged += cbFTPURLPathProtocol_SelectedIndexChanged;
-            // 
+            //
             // lblFTPPassword
-            // 
+            //
             resources.ApplyResources(lblFTPPassword, "lblFTPPassword");
             lblFTPPassword.Name = "lblFTPPassword";
-            // 
+            //
             // txtFTPURLPath
-            // 
+            //
             resources.ApplyResources(txtFTPURLPath, "txtFTPURLPath");
             txtFTPURLPath.Name = "txtFTPURLPath";
             txtFTPURLPath.TextChanged += txtFTPURLPath_TextChanged;
-            // 
+            //
             // txtFTPPassword
-            // 
+            //
             resources.ApplyResources(txtFTPPassword, "txtFTPPassword");
             txtFTPPassword.Name = "txtFTPPassword";
             txtFTPPassword.UseSystemPasswordChar = true;
             txtFTPPassword.TextChanged += txtFTPPassword_TextChanged;
-            // 
+            //
             // lblFTPURLPath
-            // 
+            //
             resources.ApplyResources(lblFTPURLPath, "lblFTPURLPath");
             lblFTPURLPath.Name = "lblFTPURLPath";
-            // 
+            //
             // lblFTPRemoteDirectory
-            // 
+            //
             resources.ApplyResources(lblFTPRemoteDirectory, "lblFTPRemoteDirectory");
             lblFTPRemoteDirectory.Name = "lblFTPRemoteDirectory";
-            // 
+            //
             // txtFTPRemoteDirectory
-            // 
+            //
             resources.ApplyResources(txtFTPRemoteDirectory, "txtFTPRemoteDirectory");
             txtFTPRemoteDirectory.Name = "txtFTPRemoteDirectory";
             txtFTPRemoteDirectory.TextChanged += txtFTPRemoteDirectory_TextChanged;
-            // 
+            //
             // gbFTPS
-            // 
+            //
             gbFTPS.Controls.Add(btnFTPSCertificateLocationBrowse);
             gbFTPS.Controls.Add(txtFTPSCertificateLocation);
             gbFTPS.Controls.Add(lblFTPSCertificateLocation);
@@ -1340,91 +1391,91 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(gbFTPS, "gbFTPS");
             gbFTPS.Name = "gbFTPS";
             gbFTPS.TabStop = false;
-            // 
+            //
             // btnFTPSCertificateLocationBrowse
-            // 
+            //
             resources.ApplyResources(btnFTPSCertificateLocationBrowse, "btnFTPSCertificateLocationBrowse");
             btnFTPSCertificateLocationBrowse.Name = "btnFTPSCertificateLocationBrowse";
             btnFTPSCertificateLocationBrowse.UseVisualStyleBackColor = true;
             btnFTPSCertificateLocationBrowse.Click += btnFTPSCertificateLocationBrowse_Click;
-            // 
+            //
             // txtFTPSCertificateLocation
-            // 
+            //
             resources.ApplyResources(txtFTPSCertificateLocation, "txtFTPSCertificateLocation");
             txtFTPSCertificateLocation.Name = "txtFTPSCertificateLocation";
             txtFTPSCertificateLocation.TextChanged += txtFTPSCertificateLocation_TextChanged;
-            // 
+            //
             // lblFTPSCertificateLocation
-            // 
+            //
             resources.ApplyResources(lblFTPSCertificateLocation, "lblFTPSCertificateLocation");
             lblFTPSCertificateLocation.Name = "lblFTPSCertificateLocation";
-            // 
+            //
             // cbFTPSEncryption
-            // 
+            //
             cbFTPSEncryption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbFTPSEncryption.FormattingEnabled = true;
             resources.ApplyResources(cbFTPSEncryption, "cbFTPSEncryption");
             cbFTPSEncryption.Name = "cbFTPSEncryption";
             cbFTPSEncryption.SelectedIndexChanged += cbFTPSEncryption_SelectedIndexChanged;
-            // 
+            //
             // lblFTPSEncryption
-            // 
+            //
             resources.ApplyResources(lblFTPSEncryption, "lblFTPSEncryption");
             lblFTPSEncryption.Name = "lblFTPSEncryption";
-            // 
+            //
             // btnFTPDuplicate
-            // 
+            //
             resources.ApplyResources(btnFTPDuplicate, "btnFTPDuplicate");
             btnFTPDuplicate.Name = "btnFTPDuplicate";
             btnFTPDuplicate.UseVisualStyleBackColor = true;
             btnFTPDuplicate.Click += btnFTPDuplicate_Click;
-            // 
+            //
             // btnFTPTest
-            // 
+            //
             resources.ApplyResources(btnFTPTest, "btnFTPTest");
             btnFTPTest.Name = "btnFTPTest";
             btnFTPTest.UseVisualStyleBackColor = true;
             btnFTPTest.Click += btnFTPTest_Click;
-            // 
+            //
             // btnFTPRemove
-            // 
+            //
             resources.ApplyResources(btnFTPRemove, "btnFTPRemove");
             btnFTPRemove.Name = "btnFTPRemove";
             btnFTPRemove.UseVisualStyleBackColor = true;
             btnFTPRemove.Click += btnFTPRemove_Click;
-            // 
+            //
             // btnFTPAdd
-            // 
+            //
             resources.ApplyResources(btnFTPAdd, "btnFTPAdd");
             btnFTPAdd.Name = "btnFTPAdd";
             btnFTPAdd.UseVisualStyleBackColor = true;
             btnFTPAdd.Click += btnFTPAdd_Click;
-            // 
+            //
             // cbFTPAccounts
-            // 
+            //
             cbFTPAccounts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbFTPAccounts.FormattingEnabled = true;
             resources.ApplyResources(cbFTPAccounts, "cbFTPAccounts");
             cbFTPAccounts.Name = "cbFTPAccounts";
             cbFTPAccounts.SelectedIndexChanged += cbFTPAccounts_SelectedIndexChanged;
-            // 
+            //
             // lblFTPAccounts
-            // 
+            //
             resources.ApplyResources(lblFTPAccounts, "lblFTPAccounts");
             lblFTPAccounts.Name = "lblFTPAccounts";
-            // 
+            //
             // lblFTPFile
-            // 
+            //
             resources.ApplyResources(lblFTPFile, "lblFTPFile");
             lblFTPFile.Name = "lblFTPFile";
-            // 
+            //
             // lblFTPText
-            // 
+            //
             resources.ApplyResources(lblFTPText, "lblFTPText");
             lblFTPText.Name = "lblFTPText";
-            // 
+            //
             // eiFTP
-            // 
+            //
             eiFTP.DefaultFileName = null;
             resources.ApplyResources(eiFTP, "eiFTP");
             eiFTP.Name = "eiFTP";
@@ -1432,38 +1483,38 @@ namespace ShareX.UploadersLib
             eiFTP.SerializationBinder = null;
             eiFTP.ExportRequested += eiFTP_ExportRequested;
             eiFTP.ImportRequested += eiFTP_ImportRequested;
-            // 
+            //
             // lblFTPImage
-            // 
+            //
             resources.ApplyResources(lblFTPImage, "lblFTPImage");
             lblFTPImage.Name = "lblFTPImage";
-            // 
+            //
             // cbFTPImage
-            // 
+            //
             cbFTPImage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbFTPImage.FormattingEnabled = true;
             resources.ApplyResources(cbFTPImage, "cbFTPImage");
             cbFTPImage.Name = "cbFTPImage";
             cbFTPImage.SelectedIndexChanged += cbFTPImage_SelectedIndexChanged;
-            // 
+            //
             // cbFTPFile
-            // 
+            //
             cbFTPFile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbFTPFile.FormattingEnabled = true;
             resources.ApplyResources(cbFTPFile, "cbFTPFile");
             cbFTPFile.Name = "cbFTPFile";
             cbFTPFile.SelectedIndexChanged += cbFTPFile_SelectedIndexChanged;
-            // 
+            //
             // cbFTPText
-            // 
+            //
             cbFTPText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbFTPText.FormattingEnabled = true;
             resources.ApplyResources(cbFTPText, "cbFTPText");
             cbFTPText.Name = "cbFTPText";
             cbFTPText.SelectedIndexChanged += cbFTPText_SelectedIndexChanged;
-            // 
+            //
             // tpDropbox
-            // 
+            //
             tpDropbox.BackColor = System.Drawing.SystemColors.Window;
             tpDropbox.Controls.Add(cbDropboxUseDirectLink);
             tpDropbox.Controls.Add(cbDropboxAutoCreateShareableLink);
@@ -1472,34 +1523,34 @@ namespace ShareX.UploadersLib
             tpDropbox.Controls.Add(oauth2Dropbox);
             resources.ApplyResources(tpDropbox, "tpDropbox");
             tpDropbox.Name = "tpDropbox";
-            // 
+            //
             // cbDropboxUseDirectLink
-            // 
+            //
             resources.ApplyResources(cbDropboxUseDirectLink, "cbDropboxUseDirectLink");
             cbDropboxUseDirectLink.Name = "cbDropboxUseDirectLink";
             cbDropboxUseDirectLink.UseVisualStyleBackColor = true;
             cbDropboxUseDirectLink.CheckedChanged += cbDropboxUseDirectLink_CheckedChanged;
-            // 
+            //
             // cbDropboxAutoCreateShareableLink
-            // 
+            //
             resources.ApplyResources(cbDropboxAutoCreateShareableLink, "cbDropboxAutoCreateShareableLink");
             cbDropboxAutoCreateShareableLink.Name = "cbDropboxAutoCreateShareableLink";
             cbDropboxAutoCreateShareableLink.UseVisualStyleBackColor = true;
             cbDropboxAutoCreateShareableLink.CheckedChanged += cbDropboxAutoCreateShareableLink_CheckedChanged;
-            // 
+            //
             // lblDropboxPath
-            // 
+            //
             resources.ApplyResources(lblDropboxPath, "lblDropboxPath");
             lblDropboxPath.Name = "lblDropboxPath";
-            // 
+            //
             // txtDropboxPath
-            // 
+            //
             resources.ApplyResources(txtDropboxPath, "txtDropboxPath");
             txtDropboxPath.Name = "txtDropboxPath";
             txtDropboxPath.TextChanged += txtDropboxPath_TextChanged;
-            // 
+            //
             // oauth2Dropbox
-            // 
+            //
             oauth2Dropbox.IsRefreshable = false;
             resources.ApplyResources(oauth2Dropbox, "oauth2Dropbox");
             oauth2Dropbox.Name = "oauth2Dropbox";
@@ -1507,9 +1558,9 @@ namespace ShareX.UploadersLib
             oauth2Dropbox.OpenButtonClicked += oauth2Dropbox_OpenButtonClicked;
             oauth2Dropbox.CompleteButtonClicked += oauth2Dropbox_CompleteButtonClicked;
             oauth2Dropbox.ClearButtonClicked += oauth2Dropbox_ClearButtonClicked;
-            // 
+            //
             // tpOneDrive
-            // 
+            //
             tpOneDrive.BackColor = System.Drawing.SystemColors.Window;
             tpOneDrive.Controls.Add(tvOneDrive);
             tpOneDrive.Controls.Add(lblOneDriveFolderID);
@@ -1518,35 +1569,35 @@ namespace ShareX.UploadersLib
             tpOneDrive.Controls.Add(oAuth2OneDrive);
             resources.ApplyResources(tpOneDrive, "tpOneDrive");
             tpOneDrive.Name = "tpOneDrive";
-            // 
+            //
             // tvOneDrive
-            // 
+            //
             resources.ApplyResources(tvOneDrive, "tvOneDrive");
             tvOneDrive.Name = "tvOneDrive";
             tvOneDrive.AfterExpand += tvOneDrive_AfterExpand;
             tvOneDrive.AfterSelect += tvOneDrive_AfterSelect;
-            // 
+            //
             // lblOneDriveFolderID
-            // 
+            //
             resources.ApplyResources(lblOneDriveFolderID, "lblOneDriveFolderID");
             lblOneDriveFolderID.Name = "lblOneDriveFolderID";
-            // 
+            //
             // cbOneDriveCreateShareableLink
-            // 
+            //
             resources.ApplyResources(cbOneDriveCreateShareableLink, "cbOneDriveCreateShareableLink");
             cbOneDriveCreateShareableLink.Name = "cbOneDriveCreateShareableLink";
             cbOneDriveCreateShareableLink.UseVisualStyleBackColor = true;
             cbOneDriveCreateShareableLink.CheckedChanged += cbOneDriveCreateShareableLink_CheckedChanged;
-            // 
+            //
             // cbOneDriveUseDirectLink
-            // 
+            //
             resources.ApplyResources(cbOneDriveUseDirectLink, "cbOneDriveUseDirectLink");
             cbOneDriveUseDirectLink.Name = "cbOneDriveUseDirectLink";
             cbOneDriveUseDirectLink.UseVisualStyleBackColor = true;
             cbOneDriveUseDirectLink.CheckedChanged += cbOneDriveUseDirectLink_CheckedChanged;
-            // 
+            //
             // oAuth2OneDrive
-            // 
+            //
             resources.ApplyResources(oAuth2OneDrive, "oAuth2OneDrive");
             oAuth2OneDrive.Name = "oAuth2OneDrive";
             oAuth2OneDrive.UserInfo = null;
@@ -1554,9 +1605,9 @@ namespace ShareX.UploadersLib
             oAuth2OneDrive.CompleteButtonClicked += oAuth2OneDrive_CompleteButtonClicked;
             oAuth2OneDrive.ClearButtonClicked += oAuth2OneDrive_ClearButtonClicked;
             oAuth2OneDrive.RefreshButtonClicked += oAuth2OneDrive_RefreshButtonClicked;
-            // 
+            //
             // tpGoogleDrive
-            // 
+            //
             tpGoogleDrive.BackColor = System.Drawing.SystemColors.Window;
             tpGoogleDrive.Controls.Add(btnGoogleDriveFolderIDHelp);
             tpGoogleDrive.Controls.Add(cbGoogleDriveSharedDrive);
@@ -1570,56 +1621,56 @@ namespace ShareX.UploadersLib
             tpGoogleDrive.Controls.Add(cbGoogleDriveIsPublic);
             resources.ApplyResources(tpGoogleDrive, "tpGoogleDrive");
             tpGoogleDrive.Name = "tpGoogleDrive";
-            // 
+            //
             // btnGoogleDriveFolderIDHelp
-            // 
+            //
             resources.ApplyResources(btnGoogleDriveFolderIDHelp, "btnGoogleDriveFolderIDHelp");
             btnGoogleDriveFolderIDHelp.Name = "btnGoogleDriveFolderIDHelp";
             btnGoogleDriveFolderIDHelp.UseVisualStyleBackColor = true;
             btnGoogleDriveFolderIDHelp.Click += btnGoogleDriveFolderIDHelp_Click;
-            // 
+            //
             // cbGoogleDriveSharedDrive
-            // 
+            //
             cbGoogleDriveSharedDrive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbGoogleDriveSharedDrive.FormattingEnabled = true;
             resources.ApplyResources(cbGoogleDriveSharedDrive, "cbGoogleDriveSharedDrive");
             cbGoogleDriveSharedDrive.Name = "cbGoogleDriveSharedDrive";
             cbGoogleDriveSharedDrive.SelectedIndexChanged += cbGoogleDriveSharedDrive_SelectedIndexChanged;
-            // 
+            //
             // cbGoogleDriveDirectLink
-            // 
+            //
             resources.ApplyResources(cbGoogleDriveDirectLink, "cbGoogleDriveDirectLink");
             cbGoogleDriveDirectLink.Name = "cbGoogleDriveDirectLink";
             cbGoogleDriveDirectLink.UseVisualStyleBackColor = true;
             cbGoogleDriveDirectLink.CheckedChanged += cbGoogleDriveDirectLink_CheckedChanged;
-            // 
+            //
             // cbGoogleDriveUseFolder
-            // 
+            //
             resources.ApplyResources(cbGoogleDriveUseFolder, "cbGoogleDriveUseFolder");
             cbGoogleDriveUseFolder.Name = "cbGoogleDriveUseFolder";
             cbGoogleDriveUseFolder.UseVisualStyleBackColor = true;
             cbGoogleDriveUseFolder.CheckedChanged += cbGoogleDriveUseFolder_CheckedChanged;
-            // 
+            //
             // txtGoogleDriveFolderID
-            // 
+            //
             resources.ApplyResources(txtGoogleDriveFolderID, "txtGoogleDriveFolderID");
             txtGoogleDriveFolderID.Name = "txtGoogleDriveFolderID";
             txtGoogleDriveFolderID.TextChanged += txtGoogleDriveFolderID_TextChanged;
-            // 
+            //
             // lblGoogleDriveFolderID
-            // 
+            //
             resources.ApplyResources(lblGoogleDriveFolderID, "lblGoogleDriveFolderID");
             lblGoogleDriveFolderID.Name = "lblGoogleDriveFolderID";
-            // 
+            //
             // oauth2GoogleDrive
-            // 
+            //
             resources.ApplyResources(oauth2GoogleDrive, "oauth2GoogleDrive");
             oauth2GoogleDrive.Name = "oauth2GoogleDrive";
             oauth2GoogleDrive.ConnectButtonClicked += oauth2GoogleDrive_ConnectButtonClicked;
             oauth2GoogleDrive.DisconnectButtonClicked += oauth2GoogleDrive_DisconnectButtonClicked;
-            // 
+            //
             // lvGoogleDriveFoldersList
-            // 
+            //
             lvGoogleDriveFoldersList.AutoFillColumn = true;
             lvGoogleDriveFoldersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { chGoogleDriveTitle, chGoogleDriveDescription });
             lvGoogleDriveFoldersList.FullRowSelect = true;
@@ -1629,31 +1680,31 @@ namespace ShareX.UploadersLib
             lvGoogleDriveFoldersList.UseCompatibleStateImageBehavior = false;
             lvGoogleDriveFoldersList.View = System.Windows.Forms.View.Details;
             lvGoogleDriveFoldersList.SelectedIndexChanged += lvGoogleDriveFoldersList_SelectedIndexChanged;
-            // 
+            //
             // chGoogleDriveTitle
-            // 
+            //
             resources.ApplyResources(chGoogleDriveTitle, "chGoogleDriveTitle");
-            // 
+            //
             // chGoogleDriveDescription
-            // 
+            //
             resources.ApplyResources(chGoogleDriveDescription, "chGoogleDriveDescription");
-            // 
+            //
             // btnGoogleDriveRefreshFolders
-            // 
+            //
             resources.ApplyResources(btnGoogleDriveRefreshFolders, "btnGoogleDriveRefreshFolders");
             btnGoogleDriveRefreshFolders.Name = "btnGoogleDriveRefreshFolders";
             btnGoogleDriveRefreshFolders.UseVisualStyleBackColor = true;
             btnGoogleDriveRefreshFolders.Click += btnGoogleDriveRefreshFolders_Click;
-            // 
+            //
             // cbGoogleDriveIsPublic
-            // 
+            //
             resources.ApplyResources(cbGoogleDriveIsPublic, "cbGoogleDriveIsPublic");
             cbGoogleDriveIsPublic.Name = "cbGoogleDriveIsPublic";
             cbGoogleDriveIsPublic.UseVisualStyleBackColor = true;
             cbGoogleDriveIsPublic.CheckedChanged += cbGoogleDriveIsPublic_CheckedChanged;
-            // 
+            //
             // tpPuush
-            // 
+            //
             tpPuush.BackColor = System.Drawing.SystemColors.Window;
             tpPuush.Controls.Add(lblPuushAPIKey);
             tpPuush.Controls.Add(txtPuushAPIKey);
@@ -1665,56 +1716,56 @@ namespace ShareX.UploadersLib
             tpPuush.Controls.Add(lblPuushPassword);
             resources.ApplyResources(tpPuush, "tpPuush");
             tpPuush.Name = "tpPuush";
-            // 
+            //
             // lblPuushAPIKey
-            // 
+            //
             resources.ApplyResources(lblPuushAPIKey, "lblPuushAPIKey");
             lblPuushAPIKey.Name = "lblPuushAPIKey";
-            // 
+            //
             // txtPuushAPIKey
-            // 
+            //
             resources.ApplyResources(txtPuushAPIKey, "txtPuushAPIKey");
             txtPuushAPIKey.Name = "txtPuushAPIKey";
             txtPuushAPIKey.UseSystemPasswordChar = true;
             txtPuushAPIKey.TextChanged += txtPuushAPIKey_TextChanged;
-            // 
+            //
             // llPuushForgottenPassword
-            // 
+            //
             resources.ApplyResources(llPuushForgottenPassword, "llPuushForgottenPassword");
             llPuushForgottenPassword.Name = "llPuushForgottenPassword";
             llPuushForgottenPassword.TabStop = true;
             llPuushForgottenPassword.LinkClicked += llPuushForgottenPassword_LinkClicked;
-            // 
+            //
             // btnPuushLogin
-            // 
+            //
             resources.ApplyResources(btnPuushLogin, "btnPuushLogin");
             btnPuushLogin.Name = "btnPuushLogin";
             btnPuushLogin.UseVisualStyleBackColor = true;
             btnPuushLogin.Click += btnPuushLogin_Click;
-            // 
+            //
             // txtPuushPassword
-            // 
+            //
             resources.ApplyResources(txtPuushPassword, "txtPuushPassword");
             txtPuushPassword.Name = "txtPuushPassword";
             txtPuushPassword.UseSystemPasswordChar = true;
-            // 
+            //
             // txtPuushEmail
-            // 
+            //
             resources.ApplyResources(txtPuushEmail, "txtPuushEmail");
             txtPuushEmail.Name = "txtPuushEmail";
-            // 
+            //
             // lblPuushEmail
-            // 
+            //
             resources.ApplyResources(lblPuushEmail, "lblPuushEmail");
             lblPuushEmail.Name = "lblPuushEmail";
-            // 
+            //
             // lblPuushPassword
-            // 
+            //
             resources.ApplyResources(lblPuushPassword, "lblPuushPassword");
             lblPuushPassword.Name = "lblPuushPassword";
-            // 
+            //
             // tpBox
-            // 
+            //
             tpBox.BackColor = System.Drawing.SystemColors.Window;
             tpBox.Controls.Add(lblBoxFolderTip);
             tpBox.Controls.Add(cbBoxShare);
@@ -1726,34 +1777,34 @@ namespace ShareX.UploadersLib
             tpBox.Controls.Add(oauth2Box);
             resources.ApplyResources(tpBox, "tpBox");
             tpBox.Name = "tpBox";
-            // 
+            //
             // lblBoxFolderTip
-            // 
+            //
             resources.ApplyResources(lblBoxFolderTip, "lblBoxFolderTip");
             lblBoxFolderTip.Name = "lblBoxFolderTip";
-            // 
+            //
             // cbBoxShare
-            // 
+            //
             resources.ApplyResources(cbBoxShare, "cbBoxShare");
             cbBoxShare.Name = "cbBoxShare";
             cbBoxShare.UseVisualStyleBackColor = true;
             cbBoxShare.CheckedChanged += cbBoxShare_CheckedChanged;
-            // 
+            //
             // cbBoxShareAccessLevel
-            // 
+            //
             cbBoxShareAccessLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbBoxShareAccessLevel.FormattingEnabled = true;
             resources.ApplyResources(cbBoxShareAccessLevel, "cbBoxShareAccessLevel");
             cbBoxShareAccessLevel.Name = "cbBoxShareAccessLevel";
             cbBoxShareAccessLevel.SelectedIndexChanged += cbBoxShareAccessLevel_SelectedIndexChanged;
-            // 
+            //
             // lblBoxShareAccessLevel
-            // 
+            //
             resources.ApplyResources(lblBoxShareAccessLevel, "lblBoxShareAccessLevel");
             lblBoxShareAccessLevel.Name = "lblBoxShareAccessLevel";
-            // 
+            //
             // lvBoxFolders
-            // 
+            //
             lvBoxFolders.AutoFillColumn = true;
             lvBoxFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { chBoxFoldersName });
             lvBoxFolders.FullRowSelect = true;
@@ -1763,25 +1814,25 @@ namespace ShareX.UploadersLib
             lvBoxFolders.View = System.Windows.Forms.View.Details;
             lvBoxFolders.SelectedIndexChanged += lvBoxFolders_SelectedIndexChanged;
             lvBoxFolders.MouseDoubleClick += lvBoxFolders_MouseDoubleClick;
-            // 
+            //
             // chBoxFoldersName
-            // 
+            //
             resources.ApplyResources(chBoxFoldersName, "chBoxFoldersName");
-            // 
+            //
             // lblBoxFolderID
-            // 
+            //
             resources.ApplyResources(lblBoxFolderID, "lblBoxFolderID");
             lblBoxFolderID.Name = "lblBoxFolderID";
-            // 
+            //
             // btnBoxRefreshFolders
-            // 
+            //
             resources.ApplyResources(btnBoxRefreshFolders, "btnBoxRefreshFolders");
             btnBoxRefreshFolders.Name = "btnBoxRefreshFolders";
             btnBoxRefreshFolders.UseVisualStyleBackColor = true;
             btnBoxRefreshFolders.Click += btnBoxRefreshFolders_Click;
-            // 
+            //
             // oauth2Box
-            // 
+            //
             resources.ApplyResources(oauth2Box, "oauth2Box");
             oauth2Box.Name = "oauth2Box";
             oauth2Box.UserInfo = null;
@@ -1789,9 +1840,9 @@ namespace ShareX.UploadersLib
             oauth2Box.CompleteButtonClicked += oauth2Box_CompleteButtonClicked;
             oauth2Box.ClearButtonClicked += oauth2Box_ClearButtonClicked;
             oauth2Box.RefreshButtonClicked += oauth2Box_RefreshButtonClicked;
-            // 
+            //
             // tpAmazonS3
-            // 
+            //
             tpAmazonS3.BackColor = System.Drawing.SystemColors.Window;
             tpAmazonS3.Controls.Add(gbAmazonS3Advanced);
             tpAmazonS3.Controls.Add(lblAmazonS3Endpoint);
@@ -1816,9 +1867,9 @@ namespace ShareX.UploadersLib
             tpAmazonS3.Controls.Add(txtAmazonS3AccessKey);
             resources.ApplyResources(tpAmazonS3, "tpAmazonS3");
             tpAmazonS3.Name = "tpAmazonS3";
-            // 
+            //
             // gbAmazonS3Advanced
-            // 
+            //
             gbAmazonS3Advanced.Controls.Add(cbAmazonS3SignedPayload);
             gbAmazonS3Advanced.Controls.Add(lblAmazonS3StripExtension);
             gbAmazonS3Advanced.Controls.Add(cbAmazonS3StripExtensionText);
@@ -1832,186 +1883,186 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(gbAmazonS3Advanced, "gbAmazonS3Advanced");
             gbAmazonS3Advanced.Name = "gbAmazonS3Advanced";
             gbAmazonS3Advanced.TabStop = false;
-            // 
+            //
             // cbAmazonS3SignedPayload
-            // 
+            //
             resources.ApplyResources(cbAmazonS3SignedPayload, "cbAmazonS3SignedPayload");
             cbAmazonS3SignedPayload.Name = "cbAmazonS3SignedPayload";
             cbAmazonS3SignedPayload.UseVisualStyleBackColor = true;
             cbAmazonS3SignedPayload.CheckedChanged += cbAmazonS3SignedPayload_CheckedChanged;
-            // 
+            //
             // lblAmazonS3StripExtension
-            // 
+            //
             resources.ApplyResources(lblAmazonS3StripExtension, "lblAmazonS3StripExtension");
             lblAmazonS3StripExtension.Name = "lblAmazonS3StripExtension";
-            // 
+            //
             // cbAmazonS3StripExtensionText
-            // 
+            //
             resources.ApplyResources(cbAmazonS3StripExtensionText, "cbAmazonS3StripExtensionText");
             cbAmazonS3StripExtensionText.Name = "cbAmazonS3StripExtensionText";
             cbAmazonS3StripExtensionText.UseVisualStyleBackColor = true;
             cbAmazonS3StripExtensionText.CheckedChanged += cbAmazonS3StripExtensionText_CheckedChanged;
-            // 
+            //
             // cbAmazonS3StorageClass
-            // 
+            //
             cbAmazonS3StorageClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbAmazonS3StorageClass.FormattingEnabled = true;
             resources.ApplyResources(cbAmazonS3StorageClass, "cbAmazonS3StorageClass");
             cbAmazonS3StorageClass.Name = "cbAmazonS3StorageClass";
             cbAmazonS3StorageClass.SelectedIndexChanged += cbAmazonS3StorageClass_SelectedIndexChanged;
-            // 
+            //
             // cbAmazonS3StripExtensionVideo
-            // 
+            //
             resources.ApplyResources(cbAmazonS3StripExtensionVideo, "cbAmazonS3StripExtensionVideo");
             cbAmazonS3StripExtensionVideo.Name = "cbAmazonS3StripExtensionVideo";
             cbAmazonS3StripExtensionVideo.UseVisualStyleBackColor = true;
             cbAmazonS3StripExtensionVideo.CheckedChanged += cbAmazonS3StripExtensionVideo_CheckedChanged;
-            // 
+            //
             // cbAmazonS3PublicACL
-            // 
+            //
             resources.ApplyResources(cbAmazonS3PublicACL, "cbAmazonS3PublicACL");
             cbAmazonS3PublicACL.Name = "cbAmazonS3PublicACL";
             cbAmazonS3PublicACL.UseVisualStyleBackColor = true;
             cbAmazonS3PublicACL.CheckedChanged += cbAmazonS3PublicACL_CheckedChanged;
-            // 
+            //
             // cbAmazonS3StripExtensionImage
-            // 
+            //
             resources.ApplyResources(cbAmazonS3StripExtensionImage, "cbAmazonS3StripExtensionImage");
             cbAmazonS3StripExtensionImage.Name = "cbAmazonS3StripExtensionImage";
             cbAmazonS3StripExtensionImage.UseVisualStyleBackColor = true;
             cbAmazonS3StripExtensionImage.CheckedChanged += cbAmazonS3StripExtensionImage_CheckedChanged;
-            // 
+            //
             // cbAmazonS3UsePathStyle
-            // 
+            //
             resources.ApplyResources(cbAmazonS3UsePathStyle, "cbAmazonS3UsePathStyle");
             cbAmazonS3UsePathStyle.Name = "cbAmazonS3UsePathStyle";
             cbAmazonS3UsePathStyle.UseVisualStyleBackColor = true;
             cbAmazonS3UsePathStyle.CheckedChanged += cbAmazonS3UsePathStyle_CheckedChanged;
-            // 
+            //
             // btnAmazonS3StorageClassHelp
-            // 
+            //
             resources.ApplyResources(btnAmazonS3StorageClassHelp, "btnAmazonS3StorageClassHelp");
             btnAmazonS3StorageClassHelp.Name = "btnAmazonS3StorageClassHelp";
             btnAmazonS3StorageClassHelp.UseVisualStyleBackColor = true;
             btnAmazonS3StorageClassHelp.Click += btnAmazonS3StorageClassHelp_Click;
-            // 
+            //
             // lblAmazonS3StorageClass
-            // 
+            //
             resources.ApplyResources(lblAmazonS3StorageClass, "lblAmazonS3StorageClass");
             lblAmazonS3StorageClass.Name = "lblAmazonS3StorageClass";
-            // 
+            //
             // lblAmazonS3Endpoint
-            // 
+            //
             resources.ApplyResources(lblAmazonS3Endpoint, "lblAmazonS3Endpoint");
             lblAmazonS3Endpoint.Name = "lblAmazonS3Endpoint";
-            // 
+            //
             // txtAmazonS3Endpoint
-            // 
+            //
             resources.ApplyResources(txtAmazonS3Endpoint, "txtAmazonS3Endpoint");
             txtAmazonS3Endpoint.Name = "txtAmazonS3Endpoint";
             txtAmazonS3Endpoint.TextChanged += txtAmazonS3Endpoint_TextChanged;
-            // 
+            //
             // lblAmazonS3Region
-            // 
+            //
             resources.ApplyResources(lblAmazonS3Region, "lblAmazonS3Region");
             lblAmazonS3Region.Name = "lblAmazonS3Region";
-            // 
+            //
             // txtAmazonS3Region
-            // 
+            //
             resources.ApplyResources(txtAmazonS3Region, "txtAmazonS3Region");
             txtAmazonS3Region.Name = "txtAmazonS3Region";
             txtAmazonS3Region.TextChanged += txtAmazonS3Region_TextChanged;
-            // 
+            //
             // txtAmazonS3CustomDomain
-            // 
+            //
             resources.ApplyResources(txtAmazonS3CustomDomain, "txtAmazonS3CustomDomain");
             txtAmazonS3CustomDomain.Name = "txtAmazonS3CustomDomain";
             txtAmazonS3CustomDomain.TextChanged += txtAmazonS3CustomDomain_TextChanged;
-            // 
+            //
             // lblAmazonS3PathPreviewLabel
-            // 
+            //
             resources.ApplyResources(lblAmazonS3PathPreviewLabel, "lblAmazonS3PathPreviewLabel");
             lblAmazonS3PathPreviewLabel.Name = "lblAmazonS3PathPreviewLabel";
-            // 
+            //
             // lblAmazonS3PathPreview
-            // 
+            //
             resources.ApplyResources(lblAmazonS3PathPreview, "lblAmazonS3PathPreview");
             lblAmazonS3PathPreview.Name = "lblAmazonS3PathPreview";
-            // 
+            //
             // btnAmazonS3BucketNameOpen
-            // 
+            //
             resources.ApplyResources(btnAmazonS3BucketNameOpen, "btnAmazonS3BucketNameOpen");
             btnAmazonS3BucketNameOpen.Name = "btnAmazonS3BucketNameOpen";
             btnAmazonS3BucketNameOpen.UseVisualStyleBackColor = true;
             btnAmazonS3BucketNameOpen.Click += btnAmazonS3BucketNameOpen_Click;
-            // 
+            //
             // btnAmazonS3AccessKeyOpen
-            // 
+            //
             resources.ApplyResources(btnAmazonS3AccessKeyOpen, "btnAmazonS3AccessKeyOpen");
             btnAmazonS3AccessKeyOpen.Name = "btnAmazonS3AccessKeyOpen";
             btnAmazonS3AccessKeyOpen.UseVisualStyleBackColor = true;
             btnAmazonS3AccessKeyOpen.Click += btnAmazonS3AccessKeyOpen_Click;
-            // 
+            //
             // cbAmazonS3Endpoints
-            // 
+            //
             cbAmazonS3Endpoints.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbAmazonS3Endpoints.FormattingEnabled = true;
             resources.ApplyResources(cbAmazonS3Endpoints, "cbAmazonS3Endpoints");
             cbAmazonS3Endpoints.Name = "cbAmazonS3Endpoints";
             cbAmazonS3Endpoints.SelectedIndexChanged += cbAmazonS3Endpoints_SelectedIndexChanged;
-            // 
+            //
             // lblAmazonS3BucketName
-            // 
+            //
             resources.ApplyResources(lblAmazonS3BucketName, "lblAmazonS3BucketName");
             lblAmazonS3BucketName.Name = "lblAmazonS3BucketName";
-            // 
+            //
             // txtAmazonS3BucketName
-            // 
+            //
             resources.ApplyResources(txtAmazonS3BucketName, "txtAmazonS3BucketName");
             txtAmazonS3BucketName.Name = "txtAmazonS3BucketName";
             txtAmazonS3BucketName.TextChanged += txtAmazonS3BucketName_TextChanged;
-            // 
+            //
             // lblAmazonS3Endpoints
-            // 
+            //
             resources.ApplyResources(lblAmazonS3Endpoints, "lblAmazonS3Endpoints");
             lblAmazonS3Endpoints.Name = "lblAmazonS3Endpoints";
-            // 
+            //
             // txtAmazonS3ObjectPrefix
-            // 
+            //
             resources.ApplyResources(txtAmazonS3ObjectPrefix, "txtAmazonS3ObjectPrefix");
             txtAmazonS3ObjectPrefix.Name = "txtAmazonS3ObjectPrefix";
             txtAmazonS3ObjectPrefix.TextChanged += txtAmazonS3ObjectPrefix_TextChanged;
-            // 
+            //
             // lblAmazonS3ObjectPrefix
-            // 
+            //
             resources.ApplyResources(lblAmazonS3ObjectPrefix, "lblAmazonS3ObjectPrefix");
             lblAmazonS3ObjectPrefix.Name = "lblAmazonS3ObjectPrefix";
-            // 
+            //
             // txtAmazonS3SecretKey
-            // 
+            //
             resources.ApplyResources(txtAmazonS3SecretKey, "txtAmazonS3SecretKey");
             txtAmazonS3SecretKey.Name = "txtAmazonS3SecretKey";
             txtAmazonS3SecretKey.UseSystemPasswordChar = true;
             txtAmazonS3SecretKey.TextChanged += txtAmazonS3SecretKey_TextChanged;
-            // 
+            //
             // lblAmazonS3SecretKey
-            // 
+            //
             resources.ApplyResources(lblAmazonS3SecretKey, "lblAmazonS3SecretKey");
             lblAmazonS3SecretKey.Name = "lblAmazonS3SecretKey";
-            // 
+            //
             // lblAmazonS3AccessKey
-            // 
+            //
             resources.ApplyResources(lblAmazonS3AccessKey, "lblAmazonS3AccessKey");
             lblAmazonS3AccessKey.Name = "lblAmazonS3AccessKey";
-            // 
+            //
             // txtAmazonS3AccessKey
-            // 
+            //
             resources.ApplyResources(txtAmazonS3AccessKey, "txtAmazonS3AccessKey");
             txtAmazonS3AccessKey.Name = "txtAmazonS3AccessKey";
             txtAmazonS3AccessKey.TextChanged += txtAmazonS3AccessKey_TextChanged;
-            // 
+            //
             // tpGoogleCloudStorage
-            // 
+            //
             tpGoogleCloudStorage.Controls.Add(oauth2GoogleCloudStorage);
             tpGoogleCloudStorage.Controls.Add(gbGoogleCloudStorageAdvanced);
             tpGoogleCloudStorage.Controls.Add(lblGoogleCloudStoragePathPreview);
@@ -2025,16 +2076,16 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(tpGoogleCloudStorage, "tpGoogleCloudStorage");
             tpGoogleCloudStorage.Name = "tpGoogleCloudStorage";
             tpGoogleCloudStorage.UseVisualStyleBackColor = true;
-            // 
+            //
             // oauth2GoogleCloudStorage
-            // 
+            //
             resources.ApplyResources(oauth2GoogleCloudStorage, "oauth2GoogleCloudStorage");
             oauth2GoogleCloudStorage.Name = "oauth2GoogleCloudStorage";
             oauth2GoogleCloudStorage.ConnectButtonClicked += oauth2GoogleCloudStorage_ConnectButtonClicked;
             oauth2GoogleCloudStorage.DisconnectButtonClicked += oauth2GoogleCloudStorage_DisconnectButtonClicked;
-            // 
+            //
             // gbGoogleCloudStorageAdvanced
-            // 
+            //
             gbGoogleCloudStorageAdvanced.Controls.Add(lblGoogleCloudStorageStripExtension);
             gbGoogleCloudStorageAdvanced.Controls.Add(cbGoogleCloudStorageStripExtensionText);
             gbGoogleCloudStorageAdvanced.Controls.Add(cbGoogleCloudStorageStripExtensionVideo);
@@ -2043,85 +2094,85 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(gbGoogleCloudStorageAdvanced, "gbGoogleCloudStorageAdvanced");
             gbGoogleCloudStorageAdvanced.Name = "gbGoogleCloudStorageAdvanced";
             gbGoogleCloudStorageAdvanced.TabStop = false;
-            // 
+            //
             // lblGoogleCloudStorageStripExtension
-            // 
+            //
             resources.ApplyResources(lblGoogleCloudStorageStripExtension, "lblGoogleCloudStorageStripExtension");
             lblGoogleCloudStorageStripExtension.Name = "lblGoogleCloudStorageStripExtension";
-            // 
+            //
             // cbGoogleCloudStorageStripExtensionText
-            // 
+            //
             resources.ApplyResources(cbGoogleCloudStorageStripExtensionText, "cbGoogleCloudStorageStripExtensionText");
             cbGoogleCloudStorageStripExtensionText.Name = "cbGoogleCloudStorageStripExtensionText";
             cbGoogleCloudStorageStripExtensionText.UseVisualStyleBackColor = true;
             cbGoogleCloudStorageStripExtensionText.CheckedChanged += cbGoogleCloudStorageStripExtensionText_CheckedChanged;
-            // 
+            //
             // cbGoogleCloudStorageStripExtensionVideo
-            // 
+            //
             resources.ApplyResources(cbGoogleCloudStorageStripExtensionVideo, "cbGoogleCloudStorageStripExtensionVideo");
             cbGoogleCloudStorageStripExtensionVideo.Name = "cbGoogleCloudStorageStripExtensionVideo";
             cbGoogleCloudStorageStripExtensionVideo.UseVisualStyleBackColor = true;
             cbGoogleCloudStorageStripExtensionVideo.CheckedChanged += cbGoogleCloudStorageStripExtensionVideo_CheckedChanged;
-            // 
+            //
             // cbGoogleCloudStorageSetPublicACL
-            // 
+            //
             resources.ApplyResources(cbGoogleCloudStorageSetPublicACL, "cbGoogleCloudStorageSetPublicACL");
             cbGoogleCloudStorageSetPublicACL.Name = "cbGoogleCloudStorageSetPublicACL";
             cbGoogleCloudStorageSetPublicACL.UseVisualStyleBackColor = true;
             cbGoogleCloudStorageSetPublicACL.CheckedChanged += cbGoogleCloudStorageSetPublicACL_CheckedChanged;
-            // 
+            //
             // cbGoogleCloudStorageStripExtensionImage
-            // 
+            //
             resources.ApplyResources(cbGoogleCloudStorageStripExtensionImage, "cbGoogleCloudStorageStripExtensionImage");
             cbGoogleCloudStorageStripExtensionImage.Name = "cbGoogleCloudStorageStripExtensionImage";
             cbGoogleCloudStorageStripExtensionImage.UseVisualStyleBackColor = true;
             cbGoogleCloudStorageStripExtensionImage.CheckedChanged += cbGoogleCloudStorageStripExtensionImage_CheckedChanged;
-            // 
+            //
             // lblGoogleCloudStoragePathPreview
-            // 
+            //
             resources.ApplyResources(lblGoogleCloudStoragePathPreview, "lblGoogleCloudStoragePathPreview");
             lblGoogleCloudStoragePathPreview.Name = "lblGoogleCloudStoragePathPreview";
-            // 
+            //
             // lblGoogleCloudStoragePathPreviewLabel
-            // 
+            //
             resources.ApplyResources(lblGoogleCloudStoragePathPreviewLabel, "lblGoogleCloudStoragePathPreviewLabel");
             lblGoogleCloudStoragePathPreviewLabel.Name = "lblGoogleCloudStoragePathPreviewLabel";
-            // 
+            //
             // txtGoogleCloudStorageObjectPrefix
-            // 
+            //
             resources.ApplyResources(txtGoogleCloudStorageObjectPrefix, "txtGoogleCloudStorageObjectPrefix");
             txtGoogleCloudStorageObjectPrefix.Name = "txtGoogleCloudStorageObjectPrefix";
             txtGoogleCloudStorageObjectPrefix.TextChanged += txtGoogleCloudStorageObjectPrefix_TextChanged;
-            // 
+            //
             // lblGoogleCloudStorageObjectPrefix
-            // 
+            //
             resources.ApplyResources(lblGoogleCloudStorageObjectPrefix, "lblGoogleCloudStorageObjectPrefix");
             lblGoogleCloudStorageObjectPrefix.Name = "lblGoogleCloudStorageObjectPrefix";
-            // 
+            //
             // lblGoogleCloudStorageDomain
-            // 
+            //
             resources.ApplyResources(lblGoogleCloudStorageDomain, "lblGoogleCloudStorageDomain");
             lblGoogleCloudStorageDomain.Name = "lblGoogleCloudStorageDomain";
-            // 
+            //
             // txtGoogleCloudStorageDomain
-            // 
+            //
             resources.ApplyResources(txtGoogleCloudStorageDomain, "txtGoogleCloudStorageDomain");
             txtGoogleCloudStorageDomain.Name = "txtGoogleCloudStorageDomain";
             txtGoogleCloudStorageDomain.TextChanged += txtGoogleCloudStorageDomain_TextChanged;
-            // 
+            //
             // lblGoogleCloudStorageBucket
-            // 
+            //
             resources.ApplyResources(lblGoogleCloudStorageBucket, "lblGoogleCloudStorageBucket");
             lblGoogleCloudStorageBucket.Name = "lblGoogleCloudStorageBucket";
-            // 
+            //
             // txtGoogleCloudStorageBucket
-            // 
+            //
             resources.ApplyResources(txtGoogleCloudStorageBucket, "txtGoogleCloudStorageBucket");
             txtGoogleCloudStorageBucket.Name = "txtGoogleCloudStorageBucket";
             txtGoogleCloudStorageBucket.TextChanged += txtGoogleCloudStorageBucket_TextChanged;
-            // 
+            //
             // tpAzureStorage
-            // 
+            //
             tpAzureStorage.BackColor = System.Drawing.SystemColors.Window;
             tpAzureStorage.Controls.Add(txtAzureStorageCacheControl);
             tpAzureStorage.Controls.Add(lblAzureStorageCacheControl);
@@ -2142,106 +2193,106 @@ namespace ShareX.UploadersLib
             tpAzureStorage.Controls.Add(lblAzureStorageCustomDomain);
             resources.ApplyResources(tpAzureStorage, "tpAzureStorage");
             tpAzureStorage.Name = "tpAzureStorage";
-            // 
+            //
             // txtAzureStorageCacheControl
-            // 
+            //
             resources.ApplyResources(txtAzureStorageCacheControl, "txtAzureStorageCacheControl");
             txtAzureStorageCacheControl.Name = "txtAzureStorageCacheControl";
             txtAzureStorageCacheControl.TextChanged += txtAzureStorageCacheControl_TextChanged;
-            // 
+            //
             // lblAzureStorageCacheControl
-            // 
+            //
             resources.ApplyResources(lblAzureStorageCacheControl, "lblAzureStorageCacheControl");
             lblAzureStorageCacheControl.Name = "lblAzureStorageCacheControl";
-            // 
+            //
             // lblAzureStorageURLPreview
-            // 
+            //
             resources.ApplyResources(lblAzureStorageURLPreview, "lblAzureStorageURLPreview");
             lblAzureStorageURLPreview.Name = "lblAzureStorageURLPreview";
-            // 
+            //
             // lblAzureStorageURLPreviewLabel
-            // 
+            //
             resources.ApplyResources(lblAzureStorageURLPreviewLabel, "lblAzureStorageURLPreviewLabel");
             lblAzureStorageURLPreviewLabel.Name = "lblAzureStorageURLPreviewLabel";
-            // 
+            //
             // txtAzureStorageUploadPath
-            // 
+            //
             resources.ApplyResources(txtAzureStorageUploadPath, "txtAzureStorageUploadPath");
             txtAzureStorageUploadPath.Name = "txtAzureStorageUploadPath";
             txtAzureStorageUploadPath.TextChanged += txtAzureStorageUploadPath_TextChanged;
-            // 
+            //
             // lblAzureStorageUploadPath
-            // 
+            //
             resources.ApplyResources(lblAzureStorageUploadPath, "lblAzureStorageUploadPath");
             lblAzureStorageUploadPath.Name = "lblAzureStorageUploadPath";
-            // 
+            //
             // cbAzureStorageEnvironment
-            // 
+            //
             cbAzureStorageEnvironment.FormattingEnabled = true;
             cbAzureStorageEnvironment.Items.AddRange(new object[] { resources.GetString("cbAzureStorageEnvironment.Items"), resources.GetString("cbAzureStorageEnvironment.Items1"), resources.GetString("cbAzureStorageEnvironment.Items2"), resources.GetString("cbAzureStorageEnvironment.Items3") });
             resources.ApplyResources(cbAzureStorageEnvironment, "cbAzureStorageEnvironment");
             cbAzureStorageEnvironment.Name = "cbAzureStorageEnvironment";
             cbAzureStorageEnvironment.SelectedIndexChanged += cbAzureStorageEnvironment_SelectedIndexChanged;
-            // 
+            //
             // lblAzureStorageEnvironment
-            // 
+            //
             resources.ApplyResources(lblAzureStorageEnvironment, "lblAzureStorageEnvironment");
             lblAzureStorageEnvironment.Name = "lblAzureStorageEnvironment";
-            // 
+            //
             // btnAzureStoragePortal
-            // 
+            //
             resources.ApplyResources(btnAzureStoragePortal, "btnAzureStoragePortal");
             btnAzureStoragePortal.Name = "btnAzureStoragePortal";
             btnAzureStoragePortal.UseVisualStyleBackColor = true;
             btnAzureStoragePortal.Click += btnAzureStoragePortal_Click;
-            // 
+            //
             // txtAzureStorageContainer
-            // 
+            //
             resources.ApplyResources(txtAzureStorageContainer, "txtAzureStorageContainer");
             txtAzureStorageContainer.Name = "txtAzureStorageContainer";
             txtAzureStorageContainer.TextChanged += txtAzureStorageContainer_TextChanged;
-            // 
+            //
             // lblAzureStorageContainer
-            // 
+            //
             resources.ApplyResources(lblAzureStorageContainer, "lblAzureStorageContainer");
             lblAzureStorageContainer.Name = "lblAzureStorageContainer";
-            // 
+            //
             // txtAzureStorageAccessKey
-            // 
+            //
             resources.ApplyResources(txtAzureStorageAccessKey, "txtAzureStorageAccessKey");
             txtAzureStorageAccessKey.Name = "txtAzureStorageAccessKey";
             txtAzureStorageAccessKey.UseSystemPasswordChar = true;
             txtAzureStorageAccessKey.TextChanged += txtAzureStorageAccessKey_TextChanged;
-            // 
+            //
             // lblAzureStorageAccessKey
-            // 
+            //
             resources.ApplyResources(lblAzureStorageAccessKey, "lblAzureStorageAccessKey");
             lblAzureStorageAccessKey.Name = "lblAzureStorageAccessKey";
-            // 
+            //
             // txtAzureStorageAccountName
-            // 
+            //
             resources.ApplyResources(txtAzureStorageAccountName, "txtAzureStorageAccountName");
             txtAzureStorageAccountName.Name = "txtAzureStorageAccountName";
             txtAzureStorageAccountName.TextChanged += txtAzureStorageAccountName_TextChanged;
-            // 
+            //
             // lblAzureStorageAccountName
-            // 
+            //
             resources.ApplyResources(lblAzureStorageAccountName, "lblAzureStorageAccountName");
             lblAzureStorageAccountName.Name = "lblAzureStorageAccountName";
-            // 
+            //
             // txtAzureStorageCustomDomain
-            // 
+            //
             resources.ApplyResources(txtAzureStorageCustomDomain, "txtAzureStorageCustomDomain");
             txtAzureStorageCustomDomain.Name = "txtAzureStorageCustomDomain";
             txtAzureStorageCustomDomain.TextChanged += txtAzureStorageCustomDomain_TextChanged;
-            // 
+            //
             // lblAzureStorageCustomDomain
-            // 
+            //
             resources.ApplyResources(lblAzureStorageCustomDomain, "lblAzureStorageCustomDomain");
             lblAzureStorageCustomDomain.Name = "lblAzureStorageCustomDomain";
-            // 
+            //
             // tpBackblazeB2
-            // 
+            //
             tpBackblazeB2.BackColor = System.Drawing.SystemColors.Window;
             tpBackblazeB2.Controls.Add(lblB2UrlPreview);
             tpBackblazeB2.Controls.Add(lblB2ManageLink);
@@ -2258,47 +2309,47 @@ namespace ShareX.UploadersLib
             tpBackblazeB2.Controls.Add(txtB2ApplicationKeyId);
             resources.ApplyResources(tpBackblazeB2, "tpBackblazeB2");
             tpBackblazeB2.Name = "tpBackblazeB2";
-            // 
+            //
             // lblB2UrlPreview
-            // 
+            //
             resources.ApplyResources(lblB2UrlPreview, "lblB2UrlPreview");
             lblB2UrlPreview.Name = "lblB2UrlPreview";
-            // 
+            //
             // lblB2ManageLink
-            // 
+            //
             resources.ApplyResources(lblB2ManageLink, "lblB2ManageLink");
             lblB2ManageLink.Name = "lblB2ManageLink";
             lblB2ManageLink.TabStop = true;
             lblB2ManageLink.VisitedLinkColor = System.Drawing.Color.Blue;
             lblB2ManageLink.LinkClicked += lblB2ManageLink_LinkClicked;
-            // 
+            //
             // lblB2UrlPreviewLabel
-            // 
+            //
             resources.ApplyResources(lblB2UrlPreviewLabel, "lblB2UrlPreviewLabel");
             lblB2UrlPreviewLabel.Name = "lblB2UrlPreviewLabel";
-            // 
+            //
             // lblB2Bucket
-            // 
+            //
             resources.ApplyResources(lblB2Bucket, "lblB2Bucket");
             lblB2Bucket.Name = "lblB2Bucket";
-            // 
+            //
             // lblB2UploadPath
-            // 
+            //
             resources.ApplyResources(lblB2UploadPath, "lblB2UploadPath");
             lblB2UploadPath.Name = "lblB2UploadPath";
-            // 
+            //
             // lblB2ApplicationKey
-            // 
+            //
             resources.ApplyResources(lblB2ApplicationKey, "lblB2ApplicationKey");
             lblB2ApplicationKey.Name = "lblB2ApplicationKey";
-            // 
+            //
             // lblB2ApplicationKeyId
-            // 
+            //
             resources.ApplyResources(lblB2ApplicationKeyId, "lblB2ApplicationKeyId");
             lblB2ApplicationKeyId.Name = "lblB2ApplicationKeyId";
-            // 
+            //
             // tpMega
-            // 
+            //
             tpMega.BackColor = System.Drawing.SystemColors.Window;
             tpMega.Controls.Add(btnMegaRefreshFolders);
             tpMega.Controls.Add(lblMegaStatus);
@@ -2313,38 +2364,38 @@ namespace ShareX.UploadersLib
             tpMega.Controls.Add(lblMegaPassword);
             resources.ApplyResources(tpMega, "tpMega");
             tpMega.Name = "tpMega";
-            // 
+            //
             // btnMegaRefreshFolders
-            // 
+            //
             resources.ApplyResources(btnMegaRefreshFolders, "btnMegaRefreshFolders");
             btnMegaRefreshFolders.Name = "btnMegaRefreshFolders";
             btnMegaRefreshFolders.UseVisualStyleBackColor = true;
             btnMegaRefreshFolders.Click += btnMegaRefreshFolders_Click;
-            // 
+            //
             // lblMegaStatus
-            // 
+            //
             resources.ApplyResources(lblMegaStatus, "lblMegaStatus");
             lblMegaStatus.Name = "lblMegaStatus";
-            // 
+            //
             // btnMegaRegister
-            // 
+            //
             resources.ApplyResources(btnMegaRegister, "btnMegaRegister");
             btnMegaRegister.Name = "btnMegaRegister";
             btnMegaRegister.UseVisualStyleBackColor = true;
             btnMegaRegister.Click += btnMegaRegister_Click;
-            // 
+            //
             // lblMegaFolder
-            // 
+            //
             resources.ApplyResources(lblMegaFolder, "lblMegaFolder");
             lblMegaFolder.Name = "lblMegaFolder";
-            // 
+            //
             // lblMegaStatusTitle
-            // 
+            //
             resources.ApplyResources(lblMegaStatusTitle, "lblMegaStatusTitle");
             lblMegaStatusTitle.Name = "lblMegaStatusTitle";
-            // 
+            //
             // cbMegaFolder
-            // 
+            //
             cbMegaFolder.DisplayMember = "DisplayName";
             cbMegaFolder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbMegaFolder.FormattingEnabled = true;
@@ -2352,37 +2403,37 @@ namespace ShareX.UploadersLib
             cbMegaFolder.Name = "cbMegaFolder";
             cbMegaFolder.ValueMember = "Node";
             cbMegaFolder.SelectedIndexChanged += cbMegaFolder_SelectedIndexChanged;
-            // 
+            //
             // lblMegaEmail
-            // 
+            //
             resources.ApplyResources(lblMegaEmail, "lblMegaEmail");
             lblMegaEmail.Name = "lblMegaEmail";
-            // 
+            //
             // btnMegaLogin
-            // 
+            //
             resources.ApplyResources(btnMegaLogin, "btnMegaLogin");
             btnMegaLogin.Name = "btnMegaLogin";
             btnMegaLogin.UseVisualStyleBackColor = true;
             btnMegaLogin.Click += btnMegaLogin_Click;
-            // 
+            //
             // txtMegaEmail
-            // 
+            //
             resources.ApplyResources(txtMegaEmail, "txtMegaEmail");
             txtMegaEmail.Name = "txtMegaEmail";
-            // 
+            //
             // txtMegaPassword
-            // 
+            //
             resources.ApplyResources(txtMegaPassword, "txtMegaPassword");
             txtMegaPassword.Name = "txtMegaPassword";
             txtMegaPassword.UseSystemPasswordChar = true;
-            // 
+            //
             // lblMegaPassword
-            // 
+            //
             resources.ApplyResources(lblMegaPassword, "lblMegaPassword");
             lblMegaPassword.Name = "lblMegaPassword";
-            // 
+            //
             // tpOwnCloud
-            // 
+            //
             tpOwnCloud.BackColor = System.Drawing.SystemColors.Window;
             tpOwnCloud.Controls.Add(cbOwnCloudAppendFileNameToURL);
             tpOwnCloud.Controls.Add(nudOwnCloudExpiryTime);
@@ -2403,117 +2454,117 @@ namespace ShareX.UploadersLib
             tpOwnCloud.Controls.Add(lblOwnCloudHost);
             resources.ApplyResources(tpOwnCloud, "tpOwnCloud");
             tpOwnCloud.Name = "tpOwnCloud";
-            // 
+            //
             // cbOwnCloudAppendFileNameToURL
-            // 
+            //
             resources.ApplyResources(cbOwnCloudAppendFileNameToURL, "cbOwnCloudAppendFileNameToURL");
             cbOwnCloudAppendFileNameToURL.Name = "cbOwnCloudAppendFileNameToURL";
             cbOwnCloudAppendFileNameToURL.UseMnemonic = false;
             cbOwnCloudAppendFileNameToURL.UseVisualStyleBackColor = true;
             cbOwnCloudAppendFileNameToURL.CheckedChanged += cbOwnCloudAppendFileNameToURL_CheckedChanged;
-            // 
+            //
             // nudOwnCloudExpiryTime
-            // 
+            //
             resources.ApplyResources(nudOwnCloudExpiryTime, "nudOwnCloudExpiryTime");
             nudOwnCloudExpiryTime.Maximum = new decimal(new int[] { 1410065407, 2, 0, 0 });
             nudOwnCloudExpiryTime.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudOwnCloudExpiryTime.Name = "nudOwnCloudExpiryTime";
             nudOwnCloudExpiryTime.Value = new decimal(new int[] { 1, 0, 0, 0 });
             nudOwnCloudExpiryTime.ValueChanged += nudOwnExpiryTime_TextChanged;
-            // 
+            //
             // cbOwnCloudAutoExpire
-            // 
+            //
             resources.ApplyResources(cbOwnCloudAutoExpire, "cbOwnCloudAutoExpire");
             cbOwnCloudAutoExpire.Name = "cbOwnCloudAutoExpire";
             cbOwnCloudAutoExpire.UseVisualStyleBackColor = true;
             cbOwnCloudAutoExpire.CheckedChanged += cbOwnCloudAutoExpire_CheckedChanged;
-            // 
+            //
             // lblOwnCloudExpiryTime
-            // 
+            //
             resources.ApplyResources(lblOwnCloudExpiryTime, "lblOwnCloudExpiryTime");
             lblOwnCloudExpiryTime.Name = "lblOwnCloudExpiryTime";
-            // 
+            //
             // cbOwnCloudUsePreviewLinks
-            // 
+            //
             resources.ApplyResources(cbOwnCloudUsePreviewLinks, "cbOwnCloudUsePreviewLinks");
             cbOwnCloudUsePreviewLinks.Name = "cbOwnCloudUsePreviewLinks";
             cbOwnCloudUsePreviewLinks.UseVisualStyleBackColor = true;
             cbOwnCloudUsePreviewLinks.CheckedChanged += cbOwnCloudUsePreviewLinks_CheckedChanged;
-            // 
+            //
             // lblOwnCloudHostExample
-            // 
+            //
             resources.ApplyResources(lblOwnCloudHostExample, "lblOwnCloudHostExample");
             lblOwnCloudHostExample.Name = "lblOwnCloudHostExample";
-            // 
+            //
             // cbOwnCloud81Compatibility
-            // 
+            //
             resources.ApplyResources(cbOwnCloud81Compatibility, "cbOwnCloud81Compatibility");
             cbOwnCloud81Compatibility.Name = "cbOwnCloud81Compatibility";
             cbOwnCloud81Compatibility.UseVisualStyleBackColor = true;
             cbOwnCloud81Compatibility.CheckedChanged += cbOwnCloud81Compatibility_CheckedChanged;
-            // 
+            //
             // cbOwnCloudDirectLink
-            // 
+            //
             resources.ApplyResources(cbOwnCloudDirectLink, "cbOwnCloudDirectLink");
             cbOwnCloudDirectLink.Name = "cbOwnCloudDirectLink";
             cbOwnCloudDirectLink.UseMnemonic = false;
             cbOwnCloudDirectLink.UseVisualStyleBackColor = true;
             cbOwnCloudDirectLink.CheckedChanged += cbOwnCloudDirectLink_CheckedChanged;
-            // 
+            //
             // cbOwnCloudCreateShare
-            // 
+            //
             resources.ApplyResources(cbOwnCloudCreateShare, "cbOwnCloudCreateShare");
             cbOwnCloudCreateShare.Name = "cbOwnCloudCreateShare";
             cbOwnCloudCreateShare.UseVisualStyleBackColor = true;
             cbOwnCloudCreateShare.CheckedChanged += cbOwnCloudCreateShare_CheckedChanged;
-            // 
+            //
             // txtOwnCloudPath
-            // 
+            //
             resources.ApplyResources(txtOwnCloudPath, "txtOwnCloudPath");
             txtOwnCloudPath.Name = "txtOwnCloudPath";
             txtOwnCloudPath.TextChanged += txtOwnCloudPath_TextChanged;
-            // 
+            //
             // txtOwnCloudPassword
-            // 
+            //
             resources.ApplyResources(txtOwnCloudPassword, "txtOwnCloudPassword");
             txtOwnCloudPassword.Name = "txtOwnCloudPassword";
             txtOwnCloudPassword.UseSystemPasswordChar = true;
             txtOwnCloudPassword.TextChanged += txtOwnCloudPassword_TextChanged;
-            // 
+            //
             // txtOwnCloudUsername
-            // 
+            //
             resources.ApplyResources(txtOwnCloudUsername, "txtOwnCloudUsername");
             txtOwnCloudUsername.Name = "txtOwnCloudUsername";
             txtOwnCloudUsername.TextChanged += txtOwnCloudUsername_TextChanged;
-            // 
+            //
             // txtOwnCloudHost
-            // 
+            //
             resources.ApplyResources(txtOwnCloudHost, "txtOwnCloudHost");
             txtOwnCloudHost.Name = "txtOwnCloudHost";
             txtOwnCloudHost.TextChanged += txtOwnCloudHost_TextChanged;
-            // 
+            //
             // lblOwnCloudPath
-            // 
+            //
             resources.ApplyResources(lblOwnCloudPath, "lblOwnCloudPath");
             lblOwnCloudPath.Name = "lblOwnCloudPath";
-            // 
+            //
             // lblOwnCloudPassword
-            // 
+            //
             resources.ApplyResources(lblOwnCloudPassword, "lblOwnCloudPassword");
             lblOwnCloudPassword.Name = "lblOwnCloudPassword";
-            // 
+            //
             // lblOwnCloudUsername
-            // 
+            //
             resources.ApplyResources(lblOwnCloudUsername, "lblOwnCloudUsername");
             lblOwnCloudUsername.Name = "lblOwnCloudUsername";
-            // 
+            //
             // lblOwnCloudHost
-            // 
+            //
             resources.ApplyResources(lblOwnCloudHost, "lblOwnCloudHost");
             lblOwnCloudHost.Name = "lblOwnCloudHost";
-            // 
+            //
             // tpMediaFire
-            // 
+            //
             tpMediaFire.BackColor = System.Drawing.SystemColors.Window;
             tpMediaFire.Controls.Add(cbMediaFireUseLongLink);
             tpMediaFire.Controls.Add(txtMediaFirePath);
@@ -2524,50 +2575,50 @@ namespace ShareX.UploadersLib
             tpMediaFire.Controls.Add(lblMediaFireEmail);
             resources.ApplyResources(tpMediaFire, "tpMediaFire");
             tpMediaFire.Name = "tpMediaFire";
-            // 
+            //
             // cbMediaFireUseLongLink
-            // 
+            //
             resources.ApplyResources(cbMediaFireUseLongLink, "cbMediaFireUseLongLink");
             cbMediaFireUseLongLink.Name = "cbMediaFireUseLongLink";
             cbMediaFireUseLongLink.UseVisualStyleBackColor = true;
             cbMediaFireUseLongLink.CheckedChanged += cbMediaFireUseLongLink_CheckedChanged;
-            // 
+            //
             // txtMediaFirePath
-            // 
+            //
             resources.ApplyResources(txtMediaFirePath, "txtMediaFirePath");
             txtMediaFirePath.Name = "txtMediaFirePath";
             txtMediaFirePath.TextChanged += txtMediaFirePath_TextChanged;
-            // 
+            //
             // lblMediaFirePath
-            // 
+            //
             resources.ApplyResources(lblMediaFirePath, "lblMediaFirePath");
             lblMediaFirePath.Name = "lblMediaFirePath";
-            // 
+            //
             // txtMediaFirePassword
-            // 
+            //
             resources.ApplyResources(txtMediaFirePassword, "txtMediaFirePassword");
             txtMediaFirePassword.Name = "txtMediaFirePassword";
             txtMediaFirePassword.UseSystemPasswordChar = true;
             txtMediaFirePassword.TextChanged += txtMediaFirePassword_TextChanged;
-            // 
+            //
             // txtMediaFireEmail
-            // 
+            //
             resources.ApplyResources(txtMediaFireEmail, "txtMediaFireEmail");
             txtMediaFireEmail.Name = "txtMediaFireEmail";
             txtMediaFireEmail.TextChanged += txtMediaFireUsername_TextChanged;
-            // 
+            //
             // lblMediaFirePassword
-            // 
+            //
             resources.ApplyResources(lblMediaFirePassword, "lblMediaFirePassword");
             lblMediaFirePassword.Name = "lblMediaFirePassword";
-            // 
+            //
             // lblMediaFireEmail
-            // 
+            //
             resources.ApplyResources(lblMediaFireEmail, "lblMediaFireEmail");
             lblMediaFireEmail.Name = "lblMediaFireEmail";
-            // 
+            //
             // tpPushbullet
-            // 
+            //
             tpPushbullet.BackColor = System.Drawing.SystemColors.Window;
             tpPushbullet.Controls.Add(lblPushbulletDevices);
             tpPushbullet.Controls.Add(cbPushbulletDevices);
@@ -2576,41 +2627,41 @@ namespace ShareX.UploadersLib
             tpPushbullet.Controls.Add(txtPushbulletUserKey);
             resources.ApplyResources(tpPushbullet, "tpPushbullet");
             tpPushbullet.Name = "tpPushbullet";
-            // 
+            //
             // lblPushbulletDevices
-            // 
+            //
             resources.ApplyResources(lblPushbulletDevices, "lblPushbulletDevices");
             lblPushbulletDevices.Name = "lblPushbulletDevices";
-            // 
+            //
             // cbPushbulletDevices
-            // 
+            //
             cbPushbulletDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(cbPushbulletDevices, "cbPushbulletDevices");
             cbPushbulletDevices.FormattingEnabled = true;
             cbPushbulletDevices.Name = "cbPushbulletDevices";
             cbPushbulletDevices.SelectedIndexChanged += cbPushbulletDevices_SelectedIndexChanged;
-            // 
+            //
             // btnPushbulletGetDeviceList
-            // 
+            //
             resources.ApplyResources(btnPushbulletGetDeviceList, "btnPushbulletGetDeviceList");
             btnPushbulletGetDeviceList.Name = "btnPushbulletGetDeviceList";
             btnPushbulletGetDeviceList.UseVisualStyleBackColor = true;
             btnPushbulletGetDeviceList.Click += btnPushbulletGetDeviceList_Click;
-            // 
+            //
             // lblPushbulletUserKey
-            // 
+            //
             resources.ApplyResources(lblPushbulletUserKey, "lblPushbulletUserKey");
             lblPushbulletUserKey.Name = "lblPushbulletUserKey";
-            // 
+            //
             // txtPushbulletUserKey
-            // 
+            //
             resources.ApplyResources(txtPushbulletUserKey, "txtPushbulletUserKey");
             txtPushbulletUserKey.Name = "txtPushbulletUserKey";
             txtPushbulletUserKey.UseSystemPasswordChar = true;
             txtPushbulletUserKey.TextChanged += txtPushbulletUserKey_TextChanged;
-            // 
+            //
             // tpSendSpace
-            // 
+            //
             tpSendSpace.BackColor = System.Drawing.SystemColors.Window;
             tpSendSpace.Controls.Add(btnSendSpaceRegister);
             tpSendSpace.Controls.Add(lblSendSpacePassword);
@@ -2620,46 +2671,46 @@ namespace ShareX.UploadersLib
             tpSendSpace.Controls.Add(atcSendSpaceAccountType);
             resources.ApplyResources(tpSendSpace, "tpSendSpace");
             tpSendSpace.Name = "tpSendSpace";
-            // 
+            //
             // btnSendSpaceRegister
-            // 
+            //
             resources.ApplyResources(btnSendSpaceRegister, "btnSendSpaceRegister");
             btnSendSpaceRegister.Name = "btnSendSpaceRegister";
             btnSendSpaceRegister.UseVisualStyleBackColor = true;
             btnSendSpaceRegister.Click += btnSendSpaceRegister_Click;
-            // 
+            //
             // lblSendSpacePassword
-            // 
+            //
             resources.ApplyResources(lblSendSpacePassword, "lblSendSpacePassword");
             lblSendSpacePassword.Name = "lblSendSpacePassword";
-            // 
+            //
             // lblSendSpaceUsername
-            // 
+            //
             resources.ApplyResources(lblSendSpaceUsername, "lblSendSpaceUsername");
             lblSendSpaceUsername.Name = "lblSendSpaceUsername";
-            // 
+            //
             // txtSendSpacePassword
-            // 
+            //
             resources.ApplyResources(txtSendSpacePassword, "txtSendSpacePassword");
             txtSendSpacePassword.Name = "txtSendSpacePassword";
             txtSendSpacePassword.UseSystemPasswordChar = true;
             txtSendSpacePassword.TextChanged += txtSendSpacePassword_TextChanged;
-            // 
+            //
             // txtSendSpaceUserName
-            // 
+            //
             resources.ApplyResources(txtSendSpaceUserName, "txtSendSpaceUserName");
             txtSendSpaceUserName.Name = "txtSendSpaceUserName";
             txtSendSpaceUserName.TextChanged += txtSendSpaceUserName_TextChanged;
-            // 
+            //
             // atcSendSpaceAccountType
-            // 
+            //
             resources.ApplyResources(atcSendSpaceAccountType, "atcSendSpaceAccountType");
             atcSendSpaceAccountType.Name = "atcSendSpaceAccountType";
             atcSendSpaceAccountType.SelectedAccountType = AccountType.Anonymous;
             atcSendSpaceAccountType.AccountTypeChanged += atcSendSpaceAccountType_AccountTypeChanged;
-            // 
+            //
             // tpHostr
-            // 
+            //
             tpHostr.BackColor = System.Drawing.SystemColors.Window;
             tpHostr.Controls.Add(cbLocalhostrDirectURL);
             tpHostr.Controls.Add(lblLocalhostrPassword);
@@ -2668,39 +2719,39 @@ namespace ShareX.UploadersLib
             tpHostr.Controls.Add(txtLocalhostrEmail);
             resources.ApplyResources(tpHostr, "tpHostr");
             tpHostr.Name = "tpHostr";
-            // 
+            //
             // cbLocalhostrDirectURL
-            // 
+            //
             resources.ApplyResources(cbLocalhostrDirectURL, "cbLocalhostrDirectURL");
             cbLocalhostrDirectURL.Name = "cbLocalhostrDirectURL";
             cbLocalhostrDirectURL.UseVisualStyleBackColor = true;
             cbLocalhostrDirectURL.CheckedChanged += cbLocalhostrDirectURL_CheckedChanged;
-            // 
+            //
             // lblLocalhostrPassword
-            // 
+            //
             resources.ApplyResources(lblLocalhostrPassword, "lblLocalhostrPassword");
             lblLocalhostrPassword.Name = "lblLocalhostrPassword";
-            // 
+            //
             // lblLocalhostrEmail
-            // 
+            //
             resources.ApplyResources(lblLocalhostrEmail, "lblLocalhostrEmail");
             lblLocalhostrEmail.Name = "lblLocalhostrEmail";
-            // 
+            //
             // txtLocalhostrPassword
-            // 
+            //
             resources.ApplyResources(txtLocalhostrPassword, "txtLocalhostrPassword");
             txtLocalhostrPassword.Name = "txtLocalhostrPassword";
             txtLocalhostrPassword.UseSystemPasswordChar = true;
             txtLocalhostrPassword.TextChanged += txtLocalhostrPassword_TextChanged;
-            // 
+            //
             // txtLocalhostrEmail
-            // 
+            //
             resources.ApplyResources(txtLocalhostrEmail, "txtLocalhostrEmail");
             txtLocalhostrEmail.Name = "txtLocalhostrEmail";
             txtLocalhostrEmail.TextChanged += txtLocalhostrEmail_TextChanged;
-            // 
+            //
             // tpLambda
-            // 
+            //
             tpLambda.BackColor = System.Drawing.SystemColors.Window;
             tpLambda.Controls.Add(lblLambdaInfo);
             tpLambda.Controls.Add(lblLambdaApiKey);
@@ -2709,40 +2760,40 @@ namespace ShareX.UploadersLib
             tpLambda.Controls.Add(cbLambdaUploadURL);
             resources.ApplyResources(tpLambda, "tpLambda");
             tpLambda.Name = "tpLambda";
-            // 
+            //
             // lblLambdaInfo
-            // 
+            //
             resources.ApplyResources(lblLambdaInfo, "lblLambdaInfo");
             lblLambdaInfo.Name = "lblLambdaInfo";
             lblLambdaInfo.Click += lambdaInfoLabel_Click;
-            // 
+            //
             // lblLambdaApiKey
-            // 
+            //
             resources.ApplyResources(lblLambdaApiKey, "lblLambdaApiKey");
             lblLambdaApiKey.Name = "lblLambdaApiKey";
-            // 
+            //
             // txtLambdaApiKey
-            // 
+            //
             resources.ApplyResources(txtLambdaApiKey, "txtLambdaApiKey");
             txtLambdaApiKey.Name = "txtLambdaApiKey";
             txtLambdaApiKey.UseSystemPasswordChar = true;
             txtLambdaApiKey.TextChanged += txtLambdaApiKey_TextChanged;
-            // 
+            //
             // lblLambdaUploadURL
-            // 
+            //
             resources.ApplyResources(lblLambdaUploadURL, "lblLambdaUploadURL");
             lblLambdaUploadURL.Name = "lblLambdaUploadURL";
-            // 
+            //
             // cbLambdaUploadURL
-            // 
+            //
             cbLambdaUploadURL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbLambdaUploadURL.FormattingEnabled = true;
             resources.ApplyResources(cbLambdaUploadURL, "cbLambdaUploadURL");
             cbLambdaUploadURL.Name = "cbLambdaUploadURL";
             cbLambdaUploadURL.SelectedIndexChanged += cbLambdaUploadURL_SelectedIndexChanged;
-            // 
+            //
             // tpPomf
-            // 
+            //
             tpPomf.BackColor = System.Drawing.SystemColors.Window;
             tpPomf.Controls.Add(txtPomfResultURL);
             tpPomf.Controls.Add(txtPomfUploadURL);
@@ -2750,31 +2801,31 @@ namespace ShareX.UploadersLib
             tpPomf.Controls.Add(lblPomfUploadURL);
             resources.ApplyResources(tpPomf, "tpPomf");
             tpPomf.Name = "tpPomf";
-            // 
+            //
             // txtPomfResultURL
-            // 
+            //
             resources.ApplyResources(txtPomfResultURL, "txtPomfResultURL");
             txtPomfResultURL.Name = "txtPomfResultURL";
             txtPomfResultURL.TextChanged += txtPomfResultURL_TextChanged;
-            // 
+            //
             // txtPomfUploadURL
-            // 
+            //
             resources.ApplyResources(txtPomfUploadURL, "txtPomfUploadURL");
             txtPomfUploadURL.Name = "txtPomfUploadURL";
             txtPomfUploadURL.TextChanged += txtPomfUploadURL_TextChanged;
-            // 
+            //
             // lblPomfResultURL
-            // 
+            //
             resources.ApplyResources(lblPomfResultURL, "lblPomfResultURL");
             lblPomfResultURL.Name = "lblPomfResultURL";
-            // 
+            //
             // lblPomfUploadURL
-            // 
+            //
             resources.ApplyResources(lblPomfUploadURL, "lblPomfUploadURL");
             lblPomfUploadURL.Name = "lblPomfUploadURL";
-            // 
+            //
             // tpSeafile
-            // 
+            //
             tpSeafile.BackColor = System.Drawing.SystemColors.Window;
             tpSeafile.Controls.Add(cbSeafileAPIURL);
             tpSeafile.Controls.Add(grpSeafileShareSettings);
@@ -2799,17 +2850,17 @@ namespace ShareX.UploadersLib
             tpSeafile.Controls.Add(lblSeafileAPIURL);
             resources.ApplyResources(tpSeafile, "tpSeafile");
             tpSeafile.Name = "tpSeafile";
-            // 
+            //
             // cbSeafileAPIURL
-            // 
+            //
             cbSeafileAPIURL.FormattingEnabled = true;
             cbSeafileAPIURL.Items.AddRange(new object[] { resources.GetString("cbSeafileAPIURL.Items"), resources.GetString("cbSeafileAPIURL.Items1") });
             resources.ApplyResources(cbSeafileAPIURL, "cbSeafileAPIURL");
             cbSeafileAPIURL.Name = "cbSeafileAPIURL";
             cbSeafileAPIURL.TextChanged += cbSeafileAPIURL_TextChanged;
-            // 
+            //
             // grpSeafileShareSettings
-            // 
+            //
             grpSeafileShareSettings.Controls.Add(txtSeafileSharePassword);
             grpSeafileShareSettings.Controls.Add(lblSeafileSharePassword);
             grpSeafileShareSettings.Controls.Add(nudSeafileExpireDays);
@@ -2817,53 +2868,53 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(grpSeafileShareSettings, "grpSeafileShareSettings");
             grpSeafileShareSettings.Name = "grpSeafileShareSettings";
             grpSeafileShareSettings.TabStop = false;
-            // 
+            //
             // txtSeafileSharePassword
-            // 
+            //
             resources.ApplyResources(txtSeafileSharePassword, "txtSeafileSharePassword");
             txtSeafileSharePassword.Name = "txtSeafileSharePassword";
             txtSeafileSharePassword.UseSystemPasswordChar = true;
             txtSeafileSharePassword.TextChanged += txtSeafileSharePassword_TextChanged;
-            // 
+            //
             // lblSeafileSharePassword
-            // 
+            //
             resources.ApplyResources(lblSeafileSharePassword, "lblSeafileSharePassword");
             lblSeafileSharePassword.Name = "lblSeafileSharePassword";
-            // 
+            //
             // nudSeafileExpireDays
-            // 
+            //
             resources.ApplyResources(nudSeafileExpireDays, "nudSeafileExpireDays");
             nudSeafileExpireDays.Maximum = new decimal(new int[] { 900, 0, 0, 0 });
             nudSeafileExpireDays.Name = "nudSeafileExpireDays";
             nudSeafileExpireDays.Value = new decimal(new int[] { 7, 0, 0, 0 });
             nudSeafileExpireDays.ValueChanged += nudSeafileExpireDays_ValueChanged;
-            // 
+            //
             // lblSeafileDaysToExpire
-            // 
+            //
             resources.ApplyResources(lblSeafileDaysToExpire, "lblSeafileDaysToExpire");
             lblSeafileDaysToExpire.Name = "lblSeafileDaysToExpire";
-            // 
+            //
             // btnSeafileLibraryPasswordValidate
-            // 
+            //
             resources.ApplyResources(btnSeafileLibraryPasswordValidate, "btnSeafileLibraryPasswordValidate");
             btnSeafileLibraryPasswordValidate.Name = "btnSeafileLibraryPasswordValidate";
             btnSeafileLibraryPasswordValidate.UseVisualStyleBackColor = true;
             btnSeafileLibraryPasswordValidate.Click += btnSeafileLibraryPasswordValidate_Click;
-            // 
+            //
             // txtSeafileLibraryPassword
-            // 
+            //
             resources.ApplyResources(txtSeafileLibraryPassword, "txtSeafileLibraryPassword");
             txtSeafileLibraryPassword.Name = "txtSeafileLibraryPassword";
             txtSeafileLibraryPassword.UseSystemPasswordChar = true;
             txtSeafileLibraryPassword.TextChanged += txtSeafileLibraryPassword_TextChanged;
-            // 
+            //
             // lblSeafileLibraryPassword
-            // 
+            //
             resources.ApplyResources(lblSeafileLibraryPassword, "lblSeafileLibraryPassword");
             lblSeafileLibraryPassword.Name = "lblSeafileLibraryPassword";
-            // 
+            //
             // lvSeafileLibraries
-            // 
+            //
             lvSeafileLibraries.AllowColumnSort = true;
             lvSeafileLibraries.AutoFillColumn = true;
             lvSeafileLibraries.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { colSeafileLibraryName, colSeafileLibrarySize, colSeafileLibraryEncrypted });
@@ -2874,56 +2925,56 @@ namespace ShareX.UploadersLib
             lvSeafileLibraries.UseCompatibleStateImageBehavior = false;
             lvSeafileLibraries.View = System.Windows.Forms.View.Details;
             lvSeafileLibraries.SelectedIndexChanged += lvSeafileLibraries_SelectedIndexChanged;
-            // 
+            //
             // colSeafileLibraryName
-            // 
+            //
             resources.ApplyResources(colSeafileLibraryName, "colSeafileLibraryName");
-            // 
+            //
             // colSeafileLibrarySize
-            // 
+            //
             resources.ApplyResources(colSeafileLibrarySize, "colSeafileLibrarySize");
-            // 
+            //
             // colSeafileLibraryEncrypted
-            // 
+            //
             resources.ApplyResources(colSeafileLibraryEncrypted, "colSeafileLibraryEncrypted");
-            // 
+            //
             // btnSeafilePathValidate
-            // 
+            //
             resources.ApplyResources(btnSeafilePathValidate, "btnSeafilePathValidate");
             btnSeafilePathValidate.Name = "btnSeafilePathValidate";
             btnSeafilePathValidate.UseVisualStyleBackColor = true;
             btnSeafilePathValidate.Click += btnSeafilePathValidate_Click;
-            // 
+            //
             // txtSeafileDirectoryPath
-            // 
+            //
             resources.ApplyResources(txtSeafileDirectoryPath, "txtSeafileDirectoryPath");
             txtSeafileDirectoryPath.Name = "txtSeafileDirectoryPath";
             txtSeafileDirectoryPath.TextChanged += txtSeafileDirectoryPath_TextChanged;
-            // 
+            //
             // lblSeafileWritePermNotif
-            // 
+            //
             resources.ApplyResources(lblSeafileWritePermNotif, "lblSeafileWritePermNotif");
             lblSeafileWritePermNotif.Name = "lblSeafileWritePermNotif";
-            // 
+            //
             // lblSeafilePath
-            // 
+            //
             resources.ApplyResources(lblSeafilePath, "lblSeafilePath");
             lblSeafilePath.Name = "lblSeafilePath";
-            // 
+            //
             // txtSeafileUploadLocationRefresh
-            // 
+            //
             resources.ApplyResources(txtSeafileUploadLocationRefresh, "txtSeafileUploadLocationRefresh");
             txtSeafileUploadLocationRefresh.Name = "txtSeafileUploadLocationRefresh";
             txtSeafileUploadLocationRefresh.UseVisualStyleBackColor = true;
             txtSeafileUploadLocationRefresh.Click += txtSeafileUploadLocationRefresh_Click;
-            // 
+            //
             // lblSeafileSelectLibrary
-            // 
+            //
             resources.ApplyResources(lblSeafileSelectLibrary, "lblSeafileSelectLibrary");
             lblSeafileSelectLibrary.Name = "lblSeafileSelectLibrary";
-            // 
+            //
             // grpSeafileAccInfo
-            // 
+            //
             grpSeafileAccInfo.Controls.Add(btnRefreshSeafileAccInfo);
             grpSeafileAccInfo.Controls.Add(txtSeafileAccInfoUsage);
             grpSeafileAccInfo.Controls.Add(txtSeafileAccInfoEmail);
@@ -2932,52 +2983,52 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(grpSeafileAccInfo, "grpSeafileAccInfo");
             grpSeafileAccInfo.Name = "grpSeafileAccInfo";
             grpSeafileAccInfo.TabStop = false;
-            // 
+            //
             // btnRefreshSeafileAccInfo
-            // 
+            //
             resources.ApplyResources(btnRefreshSeafileAccInfo, "btnRefreshSeafileAccInfo");
             btnRefreshSeafileAccInfo.Name = "btnRefreshSeafileAccInfo";
             btnRefreshSeafileAccInfo.UseVisualStyleBackColor = true;
             btnRefreshSeafileAccInfo.Click += btnRefreshSeafileAccInfo_Click;
-            // 
+            //
             // txtSeafileAccInfoUsage
-            // 
+            //
             resources.ApplyResources(txtSeafileAccInfoUsage, "txtSeafileAccInfoUsage");
             txtSeafileAccInfoUsage.Name = "txtSeafileAccInfoUsage";
             txtSeafileAccInfoUsage.ReadOnly = true;
-            // 
+            //
             // txtSeafileAccInfoEmail
-            // 
+            //
             resources.ApplyResources(txtSeafileAccInfoEmail, "txtSeafileAccInfoEmail");
             txtSeafileAccInfoEmail.Name = "txtSeafileAccInfoEmail";
             txtSeafileAccInfoEmail.ReadOnly = true;
-            // 
+            //
             // lblSeafileAccInfoEmail
-            // 
+            //
             resources.ApplyResources(lblSeafileAccInfoEmail, "lblSeafileAccInfoEmail");
             lblSeafileAccInfoEmail.Name = "lblSeafileAccInfoEmail";
-            // 
+            //
             // lblSeafileAccInfoUsage
-            // 
+            //
             resources.ApplyResources(lblSeafileAccInfoUsage, "lblSeafileAccInfoUsage");
             lblSeafileAccInfoUsage.Name = "lblSeafileAccInfoUsage";
-            // 
+            //
             // btnSeafileCheckAuthToken
-            // 
+            //
             resources.ApplyResources(btnSeafileCheckAuthToken, "btnSeafileCheckAuthToken");
             btnSeafileCheckAuthToken.Name = "btnSeafileCheckAuthToken";
             btnSeafileCheckAuthToken.UseVisualStyleBackColor = true;
             btnSeafileCheckAuthToken.Click += btnSeafileCheckAuthToken_Click;
-            // 
+            //
             // btnSeafileCheckAPIURL
-            // 
+            //
             resources.ApplyResources(btnSeafileCheckAPIURL, "btnSeafileCheckAPIURL");
             btnSeafileCheckAPIURL.Name = "btnSeafileCheckAPIURL";
             btnSeafileCheckAPIURL.UseVisualStyleBackColor = true;
             btnSeafileCheckAPIURL.Click += btnSeafileCheckAPIURL_Click;
-            // 
+            //
             // grpSeafileObtainAuthToken
-            // 
+            //
             grpSeafileObtainAuthToken.Controls.Add(btnSeafileGetAuthToken);
             grpSeafileObtainAuthToken.Controls.Add(txtSeafilePassword);
             grpSeafileObtainAuthToken.Controls.Add(txtSeafileUsername);
@@ -2986,69 +3037,69 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(grpSeafileObtainAuthToken, "grpSeafileObtainAuthToken");
             grpSeafileObtainAuthToken.Name = "grpSeafileObtainAuthToken";
             grpSeafileObtainAuthToken.TabStop = false;
-            // 
+            //
             // btnSeafileGetAuthToken
-            // 
+            //
             resources.ApplyResources(btnSeafileGetAuthToken, "btnSeafileGetAuthToken");
             btnSeafileGetAuthToken.Name = "btnSeafileGetAuthToken";
             btnSeafileGetAuthToken.UseVisualStyleBackColor = true;
             btnSeafileGetAuthToken.Click += btnSeafileGetAuthToken_Click;
-            // 
+            //
             // txtSeafilePassword
-            // 
+            //
             resources.ApplyResources(txtSeafilePassword, "txtSeafilePassword");
             txtSeafilePassword.Name = "txtSeafilePassword";
             txtSeafilePassword.UseSystemPasswordChar = true;
             txtSeafilePassword.KeyUp += txtSeafilePassword_KeyUp;
-            // 
+            //
             // txtSeafileUsername
-            // 
+            //
             resources.ApplyResources(txtSeafileUsername, "txtSeafileUsername");
             txtSeafileUsername.Name = "txtSeafileUsername";
-            // 
+            //
             // lblSeafileUsername
-            // 
+            //
             resources.ApplyResources(lblSeafileUsername, "lblSeafileUsername");
             lblSeafileUsername.Name = "lblSeafileUsername";
-            // 
+            //
             // lblSeafilePassword
-            // 
+            //
             resources.ApplyResources(lblSeafilePassword, "lblSeafilePassword");
             lblSeafilePassword.Name = "lblSeafilePassword";
-            // 
+            //
             // cbSeafileCreateShareableURL
-            // 
+            //
             resources.ApplyResources(cbSeafileCreateShareableURL, "cbSeafileCreateShareableURL");
             cbSeafileCreateShareableURL.Name = "cbSeafileCreateShareableURL";
             cbSeafileCreateShareableURL.UseVisualStyleBackColor = true;
             cbSeafileCreateShareableURL.CheckedChanged += cbSeafileCreateShareableURL_CheckedChanged;
-            // 
+            //
             // cbSeafileCreateShareableURLRaw
-            // 
+            //
             resources.ApplyResources(cbSeafileCreateShareableURLRaw, "cbSeafileCreateShareableURLRaw");
             cbSeafileCreateShareableURLRaw.Name = "cbSeafileCreateShareableURLRaw";
             cbSeafileCreateShareableURLRaw.UseVisualStyleBackColor = true;
             cbSeafileCreateShareableURLRaw.CheckedChanged += cbSeafileCreateShareableURLRaw_CheckedChanged;
-            // 
+            //
             // txtSeafileAuthToken
-            // 
+            //
             resources.ApplyResources(txtSeafileAuthToken, "txtSeafileAuthToken");
             txtSeafileAuthToken.Name = "txtSeafileAuthToken";
             txtSeafileAuthToken.UseSystemPasswordChar = true;
             txtSeafileAuthToken.TextChanged += txtSeafileAuthToken_TextChanged;
-            // 
+            //
             // lblSeafileAuthToken
-            // 
+            //
             resources.ApplyResources(lblSeafileAuthToken, "lblSeafileAuthToken");
             lblSeafileAuthToken.Name = "lblSeafileAuthToken";
-            // 
+            //
             // lblSeafileAPIURL
-            // 
+            //
             resources.ApplyResources(lblSeafileAPIURL, "lblSeafileAPIURL");
             lblSeafileAPIURL.Name = "lblSeafileAPIURL";
-            // 
+            //
             // tpStreamable
-            // 
+            //
             tpStreamable.BackColor = System.Drawing.SystemColors.Window;
             tpStreamable.Controls.Add(cbStreamableUseDirectURL);
             tpStreamable.Controls.Add(txtStreamablePassword);
@@ -3057,67 +3108,67 @@ namespace ShareX.UploadersLib
             tpStreamable.Controls.Add(lblStreamablePassword);
             resources.ApplyResources(tpStreamable, "tpStreamable");
             tpStreamable.Name = "tpStreamable";
-            // 
+            //
             // cbStreamableUseDirectURL
-            // 
+            //
             resources.ApplyResources(cbStreamableUseDirectURL, "cbStreamableUseDirectURL");
             cbStreamableUseDirectURL.Name = "cbStreamableUseDirectURL";
             cbStreamableUseDirectURL.UseVisualStyleBackColor = true;
             cbStreamableUseDirectURL.CheckedChanged += cbStreamableUseDirectURL_CheckedChanged;
-            // 
+            //
             // txtStreamablePassword
-            // 
+            //
             resources.ApplyResources(txtStreamablePassword, "txtStreamablePassword");
             txtStreamablePassword.Name = "txtStreamablePassword";
             txtStreamablePassword.UseSystemPasswordChar = true;
             txtStreamablePassword.TextChanged += txtStreamablePassword_TextChanged;
-            // 
+            //
             // txtStreamableUsername
-            // 
+            //
             resources.ApplyResources(txtStreamableUsername, "txtStreamableUsername");
             txtStreamableUsername.Name = "txtStreamableUsername";
             txtStreamableUsername.TextChanged += txtStreamableUsername_TextChanged;
-            // 
+            //
             // lblStreamableUsername
-            // 
+            //
             resources.ApplyResources(lblStreamableUsername, "lblStreamableUsername");
             lblStreamableUsername.Name = "lblStreamableUsername";
-            // 
+            //
             // lblStreamablePassword
-            // 
+            //
             resources.ApplyResources(lblStreamablePassword, "lblStreamablePassword");
             lblStreamablePassword.Name = "lblStreamablePassword";
-            // 
+            //
             // tpSul
-            // 
+            //
             tpSul.BackColor = System.Drawing.SystemColors.Window;
             tpSul.Controls.Add(btnSulGetAPIKey);
             tpSul.Controls.Add(txtSulAPIKey);
             tpSul.Controls.Add(lblSulAPIKey);
             resources.ApplyResources(tpSul, "tpSul");
             tpSul.Name = "tpSul";
-            // 
+            //
             // btnSulGetAPIKey
-            // 
+            //
             resources.ApplyResources(btnSulGetAPIKey, "btnSulGetAPIKey");
             btnSulGetAPIKey.Name = "btnSulGetAPIKey";
             btnSulGetAPIKey.UseVisualStyleBackColor = true;
             btnSulGetAPIKey.Click += btnSulGetAPIKey_Click;
-            // 
+            //
             // txtSulAPIKey
-            // 
+            //
             resources.ApplyResources(txtSulAPIKey, "txtSulAPIKey");
             txtSulAPIKey.Name = "txtSulAPIKey";
             txtSulAPIKey.UseSystemPasswordChar = true;
             txtSulAPIKey.TextChanged += txtSulAPIKey_TextChanged;
-            // 
+            //
             // lblSulAPIKey
-            // 
+            //
             resources.ApplyResources(lblSulAPIKey, "lblSulAPIKey");
             lblSulAPIKey.Name = "lblSulAPIKey";
-            // 
+            //
             // tpLithiio
-            // 
+            //
             tpLithiio.BackColor = System.Drawing.SystemColors.Window;
             tpLithiio.Controls.Add(btnLithiioFetchAPIKey);
             tpLithiio.Controls.Add(txtLithiioPassword);
@@ -3129,64 +3180,64 @@ namespace ShareX.UploadersLib
             tpLithiio.Controls.Add(txtLithiioApiKey);
             resources.ApplyResources(tpLithiio, "tpLithiio");
             tpLithiio.Name = "tpLithiio";
-            // 
+            //
             // btnLithiioFetchAPIKey
-            // 
+            //
             resources.ApplyResources(btnLithiioFetchAPIKey, "btnLithiioFetchAPIKey");
             btnLithiioFetchAPIKey.Name = "btnLithiioFetchAPIKey";
             btnLithiioFetchAPIKey.UseVisualStyleBackColor = true;
             btnLithiioFetchAPIKey.Click += btnLithiioLogin_Click;
-            // 
+            //
             // txtLithiioPassword
-            // 
+            //
             resources.ApplyResources(txtLithiioPassword, "txtLithiioPassword");
             txtLithiioPassword.Name = "txtLithiioPassword";
             txtLithiioPassword.UseSystemPasswordChar = true;
-            // 
+            //
             // txtLithiioEmail
-            // 
+            //
             resources.ApplyResources(txtLithiioEmail, "txtLithiioEmail");
             txtLithiioEmail.Name = "txtLithiioEmail";
-            // 
+            //
             // lblLithiioPassword
-            // 
+            //
             resources.ApplyResources(lblLithiioPassword, "lblLithiioPassword");
             lblLithiioPassword.Name = "lblLithiioPassword";
-            // 
+            //
             // lblLithiioEmail
-            // 
+            //
             resources.ApplyResources(lblLithiioEmail, "lblLithiioEmail");
             lblLithiioEmail.Name = "lblLithiioEmail";
-            // 
+            //
             // btnLithiioGetAPIKey
-            // 
+            //
             resources.ApplyResources(btnLithiioGetAPIKey, "btnLithiioGetAPIKey");
             btnLithiioGetAPIKey.Name = "btnLithiioGetAPIKey";
             btnLithiioGetAPIKey.UseVisualStyleBackColor = true;
             btnLithiioGetAPIKey.Click += btnLithiioGetAPIKey_Click;
-            // 
+            //
             // lblLithiioApiKey
-            // 
+            //
             resources.ApplyResources(lblLithiioApiKey, "lblLithiioApiKey");
             lblLithiioApiKey.Name = "lblLithiioApiKey";
-            // 
+            //
             // txtLithiioApiKey
-            // 
+            //
             resources.ApplyResources(txtLithiioApiKey, "txtLithiioApiKey");
             txtLithiioApiKey.Name = "txtLithiioApiKey";
             txtLithiioApiKey.UseSystemPasswordChar = true;
             txtLithiioApiKey.TextChanged += txtLithiioApiKey_TextChanged;
-            // 
+            //
             // tpPlik
-            // 
+            //
             tpPlik.BackColor = System.Drawing.SystemColors.Window;
             tpPlik.Controls.Add(gbPlikSettings);
             tpPlik.Controls.Add(gbPlikLoginCredentials);
             resources.ApplyResources(tpPlik, "tpPlik");
             tpPlik.Name = "tpPlik";
-            // 
+            //
             // gbPlikSettings
-            // 
+            //
             gbPlikSettings.Controls.Add(cbPlikOneShot);
             gbPlikSettings.Controls.Add(txtPlikComment);
             gbPlikSettings.Controls.Add(cbPlikComment);
@@ -3194,37 +3245,37 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(gbPlikSettings, "gbPlikSettings");
             gbPlikSettings.Name = "gbPlikSettings";
             gbPlikSettings.TabStop = false;
-            // 
+            //
             // cbPlikOneShot
-            // 
+            //
             resources.ApplyResources(cbPlikOneShot, "cbPlikOneShot");
             cbPlikOneShot.Name = "cbPlikOneShot";
             cbPlikOneShot.UseVisualStyleBackColor = true;
             cbPlikOneShot.CheckedChanged += cbPlikOneShot_CheckedChanged;
-            // 
+            //
             // txtPlikComment
-            // 
+            //
             resources.ApplyResources(txtPlikComment, "txtPlikComment");
             txtPlikComment.Name = "txtPlikComment";
             txtPlikComment.ReadOnly = true;
             txtPlikComment.TextChanged += txtPlikComment_TextChanged;
-            // 
+            //
             // cbPlikComment
-            // 
+            //
             resources.ApplyResources(cbPlikComment, "cbPlikComment");
             cbPlikComment.Name = "cbPlikComment";
             cbPlikComment.UseVisualStyleBackColor = true;
             cbPlikComment.CheckedChanged += cbPlikComment_CheckedChanged;
-            // 
+            //
             // cbPlikRemovable
-            // 
+            //
             resources.ApplyResources(cbPlikRemovable, "cbPlikRemovable");
             cbPlikRemovable.Name = "cbPlikRemovable";
             cbPlikRemovable.UseVisualStyleBackColor = true;
             cbPlikRemovable.CheckedChanged += cbPlikRemovable_CheckedChanged;
-            // 
+            //
             // gbPlikLoginCredentials
-            // 
+            //
             gbPlikLoginCredentials.Controls.Add(nudPlikTTL);
             gbPlikLoginCredentials.Controls.Add(cbPlikTTLUnit);
             gbPlikLoginCredentials.Controls.Add(lblPlikTTL);
@@ -3240,9 +3291,9 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(gbPlikLoginCredentials, "gbPlikLoginCredentials");
             gbPlikLoginCredentials.Name = "gbPlikLoginCredentials";
             gbPlikLoginCredentials.TabStop = false;
-            // 
+            //
             // nudPlikTTL
-            // 
+            //
             nudPlikTTL.DecimalPlaces = 2;
             resources.ApplyResources(nudPlikTTL, "nudPlikTTL");
             nudPlikTTL.Maximum = new decimal(new int[] { 1661992960, 1808227885, 5, 0 });
@@ -3250,76 +3301,76 @@ namespace ShareX.UploadersLib
             nudPlikTTL.Name = "nudPlikTTL";
             nudPlikTTL.Value = new decimal(new int[] { 1, 0, 0, 0 });
             nudPlikTTL.ValueChanged += nudPlikTTL_ValueChanged;
-            // 
+            //
             // cbPlikTTLUnit
-            // 
+            //
             cbPlikTTLUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbPlikTTLUnit.FormattingEnabled = true;
             cbPlikTTLUnit.Items.AddRange(new object[] { resources.GetString("cbPlikTTLUnit.Items"), resources.GetString("cbPlikTTLUnit.Items1"), resources.GetString("cbPlikTTLUnit.Items2"), resources.GetString("cbPlikTTLUnit.Items3") });
             resources.ApplyResources(cbPlikTTLUnit, "cbPlikTTLUnit");
             cbPlikTTLUnit.Name = "cbPlikTTLUnit";
             cbPlikTTLUnit.SelectedIndexChanged += cbPlikTTLUnit_SelectedIndexChanged;
-            // 
+            //
             // lblPlikTTL
-            // 
+            //
             resources.ApplyResources(lblPlikTTL, "lblPlikTTL");
             lblPlikTTL.Name = "lblPlikTTL";
-            // 
+            //
             // txtPlikURL
-            // 
+            //
             resources.ApplyResources(txtPlikURL, "txtPlikURL");
             txtPlikURL.Name = "txtPlikURL";
             txtPlikURL.TextChanged += txtPlikURL_TextChanged;
-            // 
+            //
             // lblPlikURL
-            // 
+            //
             resources.ApplyResources(lblPlikURL, "lblPlikURL");
             lblPlikURL.Name = "lblPlikURL";
-            // 
+            //
             // cbPlikIsSecured
-            // 
+            //
             resources.ApplyResources(cbPlikIsSecured, "cbPlikIsSecured");
             cbPlikIsSecured.Name = "cbPlikIsSecured";
             cbPlikIsSecured.UseVisualStyleBackColor = true;
             cbPlikIsSecured.CheckedChanged += cbPlikIsSecured_CheckedChanged;
-            // 
+            //
             // lblPlikAPIKey
-            // 
+            //
             resources.ApplyResources(lblPlikAPIKey, "lblPlikAPIKey");
             lblPlikAPIKey.Name = "lblPlikAPIKey";
-            // 
+            //
             // txtPlikAPIKey
-            // 
+            //
             resources.ApplyResources(txtPlikAPIKey, "txtPlikAPIKey");
             txtPlikAPIKey.Name = "txtPlikAPIKey";
             txtPlikAPIKey.UseSystemPasswordChar = true;
             txtPlikAPIKey.TextChanged += txtPlikAPIKey_TextChanged;
-            // 
+            //
             // lblPlikPassword
-            // 
+            //
             resources.ApplyResources(lblPlikPassword, "lblPlikPassword");
             lblPlikPassword.Name = "lblPlikPassword";
-            // 
+            //
             // lblPlikUsername
-            // 
+            //
             resources.ApplyResources(lblPlikUsername, "lblPlikUsername");
             lblPlikUsername.Name = "lblPlikUsername";
-            // 
+            //
             // txtPlikPassword
-            // 
+            //
             resources.ApplyResources(txtPlikPassword, "txtPlikPassword");
             txtPlikPassword.Name = "txtPlikPassword";
             txtPlikPassword.UseSystemPasswordChar = true;
             txtPlikPassword.TextChanged += txtPlikPassword_TextChanged;
-            // 
+            //
             // txtPlikLogin
-            // 
+            //
             resources.ApplyResources(txtPlikLogin, "txtPlikLogin");
             txtPlikLogin.Name = "txtPlikLogin";
             txtPlikLogin.TextChanged += txtPlikLogin_TextChanged;
-            // 
+            //
             // tpYouTube
-            // 
+            //
             tpYouTube.Controls.Add(oauth2YouTube);
             tpYouTube.Controls.Add(llYouTubePermissionsLink);
             tpYouTube.Controls.Add(lblYouTubePermissionsTip);
@@ -3330,55 +3381,55 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(tpYouTube, "tpYouTube");
             tpYouTube.Name = "tpYouTube";
             tpYouTube.UseVisualStyleBackColor = true;
-            // 
+            //
             // oauth2YouTube
-            // 
+            //
             resources.ApplyResources(oauth2YouTube, "oauth2YouTube");
             oauth2YouTube.Name = "oauth2YouTube";
             oauth2YouTube.ConnectButtonClicked += oauth2YouTube_ConnectButtonClicked;
             oauth2YouTube.DisconnectButtonClicked += oauth2YouTube_DisconnectButtonClicked;
-            // 
+            //
             // llYouTubePermissionsLink
-            // 
+            //
             resources.ApplyResources(llYouTubePermissionsLink, "llYouTubePermissionsLink");
             llYouTubePermissionsLink.Name = "llYouTubePermissionsLink";
             llYouTubePermissionsLink.TabStop = true;
             llYouTubePermissionsLink.LinkClicked += llYouTubePermissionsLink_LinkClicked;
-            // 
+            //
             // lblYouTubePermissionsTip
-            // 
+            //
             resources.ApplyResources(lblYouTubePermissionsTip, "lblYouTubePermissionsTip");
             lblYouTubePermissionsTip.Name = "lblYouTubePermissionsTip";
-            // 
+            //
             // cbYouTubeShowDialog
-            // 
+            //
             resources.ApplyResources(cbYouTubeShowDialog, "cbYouTubeShowDialog");
             cbYouTubeShowDialog.Name = "cbYouTubeShowDialog";
             cbYouTubeShowDialog.UseVisualStyleBackColor = true;
             cbYouTubeShowDialog.CheckedChanged += cbYouTubeShowDialog_CheckedChanged;
-            // 
+            //
             // cbYouTubeUseShortenedLink
-            // 
+            //
             resources.ApplyResources(cbYouTubeUseShortenedLink, "cbYouTubeUseShortenedLink");
             cbYouTubeUseShortenedLink.Name = "cbYouTubeUseShortenedLink";
             cbYouTubeUseShortenedLink.UseVisualStyleBackColor = true;
             cbYouTubeUseShortenedLink.CheckedChanged += cbYouTubeUseShortenedLink_CheckedChanged;
-            // 
+            //
             // cbYouTubePrivacyType
-            // 
+            //
             cbYouTubePrivacyType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbYouTubePrivacyType.FormattingEnabled = true;
             resources.ApplyResources(cbYouTubePrivacyType, "cbYouTubePrivacyType");
             cbYouTubePrivacyType.Name = "cbYouTubePrivacyType";
             cbYouTubePrivacyType.SelectedIndexChanged += cbYouTubePrivacyType_SelectedIndexChanged;
-            // 
+            //
             // lblYouTubePrivacyType
-            // 
+            //
             resources.ApplyResources(lblYouTubePrivacyType, "lblYouTubePrivacyType");
             lblYouTubePrivacyType.Name = "lblYouTubePrivacyType";
-            // 
+            //
             // tpSharedFolder
-            // 
+            //
             tpSharedFolder.BackColor = System.Drawing.SystemColors.Window;
             tpSharedFolder.Controls.Add(lbSharedFolderAccounts);
             tpSharedFolder.Controls.Add(pgSharedFolderAccount);
@@ -3393,85 +3444,85 @@ namespace ShareX.UploadersLib
             tpSharedFolder.Controls.Add(cbSharedFolderImages);
             resources.ApplyResources(tpSharedFolder, "tpSharedFolder");
             tpSharedFolder.Name = "tpSharedFolder";
-            // 
+            //
             // lbSharedFolderAccounts
-            // 
+            //
             lbSharedFolderAccounts.FormattingEnabled = true;
             resources.ApplyResources(lbSharedFolderAccounts, "lbSharedFolderAccounts");
             lbSharedFolderAccounts.Name = "lbSharedFolderAccounts";
             lbSharedFolderAccounts.SelectedIndexChanged += lbSharedFolderAccounts_SelectedIndexChanged;
-            // 
+            //
             // pgSharedFolderAccount
-            // 
+            //
             pgSharedFolderAccount.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(pgSharedFolderAccount, "pgSharedFolderAccount");
             pgSharedFolderAccount.Name = "pgSharedFolderAccount";
             pgSharedFolderAccount.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             pgSharedFolderAccount.ToolbarVisible = false;
             pgSharedFolderAccount.PropertyValueChanged += pgSharedFolderAccount_PropertyValueChanged;
-            // 
+            //
             // btnSharedFolderDuplicate
-            // 
+            //
             resources.ApplyResources(btnSharedFolderDuplicate, "btnSharedFolderDuplicate");
             btnSharedFolderDuplicate.Name = "btnSharedFolderDuplicate";
             btnSharedFolderDuplicate.UseVisualStyleBackColor = true;
             btnSharedFolderDuplicate.Click += btnSharedFolderDuplicate_Click;
-            // 
+            //
             // btnSharedFolderRemove
-            // 
+            //
             resources.ApplyResources(btnSharedFolderRemove, "btnSharedFolderRemove");
             btnSharedFolderRemove.Name = "btnSharedFolderRemove";
             btnSharedFolderRemove.UseVisualStyleBackColor = true;
             btnSharedFolderRemove.Click += btnSharedFolderRemove_Click;
-            // 
+            //
             // btnSharedFolderAdd
-            // 
+            //
             resources.ApplyResources(btnSharedFolderAdd, "btnSharedFolderAdd");
             btnSharedFolderAdd.Name = "btnSharedFolderAdd";
             btnSharedFolderAdd.UseVisualStyleBackColor = true;
             btnSharedFolderAdd.Click += btnSharedFolderAdd_Click;
-            // 
+            //
             // lblSharedFolderFiles
-            // 
+            //
             resources.ApplyResources(lblSharedFolderFiles, "lblSharedFolderFiles");
             lblSharedFolderFiles.Name = "lblSharedFolderFiles";
-            // 
+            //
             // lblSharedFolderText
-            // 
+            //
             resources.ApplyResources(lblSharedFolderText, "lblSharedFolderText");
             lblSharedFolderText.Name = "lblSharedFolderText";
-            // 
+            //
             // cbSharedFolderFiles
-            // 
+            //
             cbSharedFolderFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbSharedFolderFiles.FormattingEnabled = true;
             resources.ApplyResources(cbSharedFolderFiles, "cbSharedFolderFiles");
             cbSharedFolderFiles.Name = "cbSharedFolderFiles";
             cbSharedFolderFiles.SelectedIndexChanged += cbSharedFolderFiles_SelectedIndexChanged;
-            // 
+            //
             // lblSharedFolderImages
-            // 
+            //
             resources.ApplyResources(lblSharedFolderImages, "lblSharedFolderImages");
             lblSharedFolderImages.Name = "lblSharedFolderImages";
-            // 
+            //
             // cbSharedFolderText
-            // 
+            //
             cbSharedFolderText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbSharedFolderText.FormattingEnabled = true;
             resources.ApplyResources(cbSharedFolderText, "cbSharedFolderText");
             cbSharedFolderText.Name = "cbSharedFolderText";
             cbSharedFolderText.SelectedIndexChanged += cbSharedFolderText_SelectedIndexChanged;
-            // 
+            //
             // cbSharedFolderImages
-            // 
+            //
             cbSharedFolderImages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbSharedFolderImages.FormattingEnabled = true;
             resources.ApplyResources(cbSharedFolderImages, "cbSharedFolderImages");
             cbSharedFolderImages.Name = "cbSharedFolderImages";
             cbSharedFolderImages.SelectedIndexChanged += cbSharedFolderImages_SelectedIndexChanged;
-            // 
+            //
             // tpEmail
-            // 
+            //
             tpEmail.BackColor = System.Drawing.SystemColors.Window;
             tpEmail.Controls.Add(txtEmailAutomaticSendTo);
             tpEmail.Controls.Add(cbEmailAutomaticSend);
@@ -3490,110 +3541,110 @@ namespace ShareX.UploadersLib
             tpEmail.Controls.Add(txtEmailDefaultSubject);
             resources.ApplyResources(tpEmail, "tpEmail");
             tpEmail.Name = "tpEmail";
-            // 
+            //
             // txtEmailAutomaticSendTo
-            // 
+            //
             resources.ApplyResources(txtEmailAutomaticSendTo, "txtEmailAutomaticSendTo");
             txtEmailAutomaticSendTo.Name = "txtEmailAutomaticSendTo";
             txtEmailAutomaticSendTo.TextChanged += txtEmailAutomaticSendTo_TextChanged;
-            // 
+            //
             // cbEmailAutomaticSend
-            // 
+            //
             resources.ApplyResources(cbEmailAutomaticSend, "cbEmailAutomaticSend");
             cbEmailAutomaticSend.Name = "cbEmailAutomaticSend";
             cbEmailAutomaticSend.UseVisualStyleBackColor = true;
             cbEmailAutomaticSend.CheckedChanged += cbEmailAutomaticSend_CheckedChanged;
-            // 
+            //
             // lblEmailSmtpServer
-            // 
+            //
             resources.ApplyResources(lblEmailSmtpServer, "lblEmailSmtpServer");
             lblEmailSmtpServer.Name = "lblEmailSmtpServer";
-            // 
+            //
             // lblEmailPassword
-            // 
+            //
             resources.ApplyResources(lblEmailPassword, "lblEmailPassword");
             lblEmailPassword.Name = "lblEmailPassword";
-            // 
+            //
             // cbEmailRememberLastTo
-            // 
+            //
             resources.ApplyResources(cbEmailRememberLastTo, "cbEmailRememberLastTo");
             cbEmailRememberLastTo.Name = "cbEmailRememberLastTo";
             cbEmailRememberLastTo.UseVisualStyleBackColor = true;
             cbEmailRememberLastTo.CheckedChanged += cbRememberLastToEmail_CheckedChanged;
-            // 
+            //
             // txtEmailFrom
-            // 
+            //
             resources.ApplyResources(txtEmailFrom, "txtEmailFrom");
             txtEmailFrom.Name = "txtEmailFrom";
             txtEmailFrom.TextChanged += txtEmail_TextChanged;
-            // 
+            //
             // txtEmailPassword
-            // 
+            //
             resources.ApplyResources(txtEmailPassword, "txtEmailPassword");
             txtEmailPassword.Name = "txtEmailPassword";
             txtEmailPassword.UseSystemPasswordChar = true;
             txtEmailPassword.TextChanged += txtPassword_TextChanged;
-            // 
+            //
             // txtEmailDefaultBody
-            // 
+            //
             resources.ApplyResources(txtEmailDefaultBody, "txtEmailDefaultBody");
             txtEmailDefaultBody.Name = "txtEmailDefaultBody";
             txtEmailDefaultBody.TextChanged += txtDefaultBody_TextChanged;
-            // 
+            //
             // lblEmailFrom
-            // 
+            //
             resources.ApplyResources(lblEmailFrom, "lblEmailFrom");
             lblEmailFrom.Name = "lblEmailFrom";
-            // 
+            //
             // txtEmailSmtpServer
-            // 
+            //
             resources.ApplyResources(txtEmailSmtpServer, "txtEmailSmtpServer");
             txtEmailSmtpServer.Name = "txtEmailSmtpServer";
             txtEmailSmtpServer.TextChanged += txtSmtpServer_TextChanged;
-            // 
+            //
             // lblEmailDefaultSubject
-            // 
+            //
             resources.ApplyResources(lblEmailDefaultSubject, "lblEmailDefaultSubject");
             lblEmailDefaultSubject.Name = "lblEmailDefaultSubject";
-            // 
+            //
             // lblEmailDefaultBody
-            // 
+            //
             resources.ApplyResources(lblEmailDefaultBody, "lblEmailDefaultBody");
             lblEmailDefaultBody.Name = "lblEmailDefaultBody";
-            // 
+            //
             // nudEmailSmtpPort
-            // 
+            //
             resources.ApplyResources(nudEmailSmtpPort, "nudEmailSmtpPort");
             nudEmailSmtpPort.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
             nudEmailSmtpPort.Name = "nudEmailSmtpPort";
             nudEmailSmtpPort.Value = new decimal(new int[] { 65535, 0, 0, 0 });
             nudEmailSmtpPort.ValueChanged += nudSmtpPort_ValueChanged;
-            // 
+            //
             // lblEmailSmtpPort
-            // 
+            //
             resources.ApplyResources(lblEmailSmtpPort, "lblEmailSmtpPort");
             lblEmailSmtpPort.Name = "lblEmailSmtpPort";
-            // 
+            //
             // txtEmailDefaultSubject
-            // 
+            //
             resources.ApplyResources(txtEmailDefaultSubject, "txtEmailDefaultSubject");
             txtEmailDefaultSubject.Name = "txtEmailDefaultSubject";
             txtEmailDefaultSubject.TextChanged += txtDefaultSubject_TextChanged;
-            // 
+            //
             // btnCopyShowFiles
-            // 
+            //
             resources.ApplyResources(btnCopyShowFiles, "btnCopyShowFiles");
             btnCopyShowFiles.Name = "btnCopyShowFiles";
-            // 
+            //
             // tpTextUploaders
-            // 
+            //
             tpTextUploaders.BackColor = System.Drawing.SystemColors.Window;
             tpTextUploaders.Controls.Add(tcTextUploaders);
             resources.ApplyResources(tpTextUploaders, "tpTextUploaders");
             tpTextUploaders.Name = "tpTextUploaders";
-            // 
+            //
             // tcTextUploaders
-            // 
+            //
             tcTextUploaders.Controls.Add(tpPastebin);
             tcTextUploaders.Controls.Add(tpPaste_ee);
             tcTextUploaders.Controls.Add(tpGist);
@@ -3601,12 +3652,13 @@ namespace ShareX.UploadersLib
             tcTextUploaders.Controls.Add(tpHastebin);
             tcTextUploaders.Controls.Add(tpOneTimeSecret);
             tcTextUploaders.Controls.Add(tpPastie);
+            tcTextUploaders.Controls.Add(tpPrivateBin);
             resources.ApplyResources(tcTextUploaders, "tcTextUploaders");
             tcTextUploaders.Name = "tcTextUploaders";
             tcTextUploaders.SelectedIndex = 0;
-            // 
+            //
             // tpPastebin
-            // 
+            //
             tpPastebin.BackColor = System.Drawing.SystemColors.Window;
             tpPastebin.Controls.Add(cbPastebinRaw);
             tpPastebin.Controls.Add(cbPastebinSyntax);
@@ -3626,136 +3678,136 @@ namespace ShareX.UploadersLib
             tpPastebin.Controls.Add(btnPastebinLogin);
             resources.ApplyResources(tpPastebin, "tpPastebin");
             tpPastebin.Name = "tpPastebin";
-            // 
+            //
             // cbPastebinRaw
-            // 
+            //
             resources.ApplyResources(cbPastebinRaw, "cbPastebinRaw");
             cbPastebinRaw.Name = "cbPastebinRaw";
             cbPastebinRaw.UseVisualStyleBackColor = true;
             cbPastebinRaw.CheckedChanged += cbPastebinRaw_CheckedChanged;
-            // 
+            //
             // cbPastebinSyntax
-            // 
+            //
             cbPastebinSyntax.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbPastebinSyntax.FormattingEnabled = true;
             resources.ApplyResources(cbPastebinSyntax, "cbPastebinSyntax");
             cbPastebinSyntax.Name = "cbPastebinSyntax";
             cbPastebinSyntax.SelectedIndexChanged += cbPastebinSyntax_SelectedIndexChanged;
-            // 
+            //
             // btnPastebinRegister
-            // 
+            //
             resources.ApplyResources(btnPastebinRegister, "btnPastebinRegister");
             btnPastebinRegister.Name = "btnPastebinRegister";
             btnPastebinRegister.UseVisualStyleBackColor = true;
             btnPastebinRegister.Click += btnPastebinRegister_Click;
-            // 
+            //
             // lblPastebinSyntax
-            // 
+            //
             resources.ApplyResources(lblPastebinSyntax, "lblPastebinSyntax");
             lblPastebinSyntax.Name = "lblPastebinSyntax";
-            // 
+            //
             // lblPastebinExpiration
-            // 
+            //
             resources.ApplyResources(lblPastebinExpiration, "lblPastebinExpiration");
             lblPastebinExpiration.Name = "lblPastebinExpiration";
-            // 
+            //
             // lblPastebinPrivacy
-            // 
+            //
             resources.ApplyResources(lblPastebinPrivacy, "lblPastebinPrivacy");
             lblPastebinPrivacy.Name = "lblPastebinPrivacy";
-            // 
+            //
             // lblPastebinTitle
-            // 
+            //
             resources.ApplyResources(lblPastebinTitle, "lblPastebinTitle");
             lblPastebinTitle.Name = "lblPastebinTitle";
-            // 
+            //
             // lblPastebinPassword
-            // 
+            //
             resources.ApplyResources(lblPastebinPassword, "lblPastebinPassword");
             lblPastebinPassword.Name = "lblPastebinPassword";
-            // 
+            //
             // lblPastebinUsername
-            // 
+            //
             resources.ApplyResources(lblPastebinUsername, "lblPastebinUsername");
             lblPastebinUsername.Name = "lblPastebinUsername";
-            // 
+            //
             // cbPastebinExpiration
-            // 
+            //
             cbPastebinExpiration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbPastebinExpiration.FormattingEnabled = true;
             resources.ApplyResources(cbPastebinExpiration, "cbPastebinExpiration");
             cbPastebinExpiration.Name = "cbPastebinExpiration";
             cbPastebinExpiration.SelectedIndexChanged += cbPastebinExpiration_SelectedIndexChanged;
-            // 
+            //
             // cbPastebinPrivacy
-            // 
+            //
             cbPastebinPrivacy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbPastebinPrivacy.FormattingEnabled = true;
             resources.ApplyResources(cbPastebinPrivacy, "cbPastebinPrivacy");
             cbPastebinPrivacy.Name = "cbPastebinPrivacy";
             cbPastebinPrivacy.SelectedIndexChanged += cbPastebinPrivacy_SelectedIndexChanged;
-            // 
+            //
             // txtPastebinTitle
-            // 
+            //
             resources.ApplyResources(txtPastebinTitle, "txtPastebinTitle");
             txtPastebinTitle.Name = "txtPastebinTitle";
             txtPastebinTitle.TextChanged += txtPastebinTitle_TextChanged;
-            // 
+            //
             // txtPastebinPassword
-            // 
+            //
             resources.ApplyResources(txtPastebinPassword, "txtPastebinPassword");
             txtPastebinPassword.Name = "txtPastebinPassword";
             txtPastebinPassword.UseSystemPasswordChar = true;
             txtPastebinPassword.TextChanged += txtPastebinPassword_TextChanged;
-            // 
+            //
             // txtPastebinUsername
-            // 
+            //
             resources.ApplyResources(txtPastebinUsername, "txtPastebinUsername");
             txtPastebinUsername.Name = "txtPastebinUsername";
             txtPastebinUsername.TextChanged += txtPastebinUsername_TextChanged;
-            // 
+            //
             // lblPastebinLoginStatus
-            // 
+            //
             resources.ApplyResources(lblPastebinLoginStatus, "lblPastebinLoginStatus");
             lblPastebinLoginStatus.Name = "lblPastebinLoginStatus";
-            // 
+            //
             // btnPastebinLogin
-            // 
+            //
             resources.ApplyResources(btnPastebinLogin, "btnPastebinLogin");
             btnPastebinLogin.Name = "btnPastebinLogin";
             btnPastebinLogin.UseVisualStyleBackColor = true;
             btnPastebinLogin.Click += btnPastebinLogin_Click;
-            // 
+            //
             // tpPaste_ee
-            // 
+            //
             tpPaste_ee.BackColor = System.Drawing.SystemColors.Window;
             tpPaste_ee.Controls.Add(btnPaste_eeGetUserKey);
             tpPaste_ee.Controls.Add(lblPaste_eeUserAPIKey);
             tpPaste_ee.Controls.Add(txtPaste_eeUserAPIKey);
             resources.ApplyResources(tpPaste_ee, "tpPaste_ee");
             tpPaste_ee.Name = "tpPaste_ee";
-            // 
+            //
             // btnPaste_eeGetUserKey
-            // 
+            //
             resources.ApplyResources(btnPaste_eeGetUserKey, "btnPaste_eeGetUserKey");
             btnPaste_eeGetUserKey.Name = "btnPaste_eeGetUserKey";
             btnPaste_eeGetUserKey.UseVisualStyleBackColor = true;
             btnPaste_eeGetUserKey.Click += btnPaste_eeGetUserKey_Click;
-            // 
+            //
             // lblPaste_eeUserAPIKey
-            // 
+            //
             resources.ApplyResources(lblPaste_eeUserAPIKey, "lblPaste_eeUserAPIKey");
             lblPaste_eeUserAPIKey.Name = "lblPaste_eeUserAPIKey";
-            // 
+            //
             // txtPaste_eeUserAPIKey
-            // 
+            //
             resources.ApplyResources(txtPaste_eeUserAPIKey, "txtPaste_eeUserAPIKey");
             txtPaste_eeUserAPIKey.Name = "txtPaste_eeUserAPIKey";
             txtPaste_eeUserAPIKey.UseSystemPasswordChar = true;
             txtPaste_eeUserAPIKey.TextChanged += txtPaste_eeUserAPIKey_TextChanged;
-            // 
+            //
             // tpGist
-            // 
+            //
             tpGist.BackColor = System.Drawing.SystemColors.Window;
             tpGist.Controls.Add(lblGistCustomURLExample);
             tpGist.Controls.Add(lblGistOAuthInfo);
@@ -3766,44 +3818,44 @@ namespace ShareX.UploadersLib
             tpGist.Controls.Add(oAuth2Gist);
             resources.ApplyResources(tpGist, "tpGist");
             tpGist.Name = "tpGist";
-            // 
+            //
             // lblGistCustomURLExample
-            // 
+            //
             resources.ApplyResources(lblGistCustomURLExample, "lblGistCustomURLExample");
             lblGistCustomURLExample.Name = "lblGistCustomURLExample";
-            // 
+            //
             // lblGistOAuthInfo
-            // 
+            //
             resources.ApplyResources(lblGistOAuthInfo, "lblGistOAuthInfo");
             lblGistOAuthInfo.Name = "lblGistOAuthInfo";
-            // 
+            //
             // lblGistCustomURL
-            // 
+            //
             resources.ApplyResources(lblGistCustomURL, "lblGistCustomURL");
             lblGistCustomURL.Name = "lblGistCustomURL";
-            // 
+            //
             // txtGistCustomURL
-            // 
+            //
             resources.ApplyResources(txtGistCustomURL, "txtGistCustomURL");
             txtGistCustomURL.Name = "txtGistCustomURL";
             txtGistCustomURL.TextChanged += txtGistCustomURL_TextChanged;
-            // 
+            //
             // cbGistUseRawURL
-            // 
+            //
             resources.ApplyResources(cbGistUseRawURL, "cbGistUseRawURL");
             cbGistUseRawURL.Name = "cbGistUseRawURL";
             cbGistUseRawURL.UseVisualStyleBackColor = true;
             cbGistUseRawURL.CheckedChanged += cbGistUseRawURL_CheckedChanged;
-            // 
+            //
             // cbGistPublishPublic
-            // 
+            //
             resources.ApplyResources(cbGistPublishPublic, "cbGistPublishPublic");
             cbGistPublishPublic.Name = "cbGistPublishPublic";
             cbGistPublishPublic.UseVisualStyleBackColor = true;
             cbGistPublishPublic.CheckedChanged += cbGistPublishPublic_CheckedChanged;
-            // 
+            //
             // oAuth2Gist
-            // 
+            //
             oAuth2Gist.IsRefreshable = false;
             resources.ApplyResources(oAuth2Gist, "oAuth2Gist");
             oAuth2Gist.Name = "oAuth2Gist";
@@ -3811,37 +3863,37 @@ namespace ShareX.UploadersLib
             oAuth2Gist.OpenButtonClicked += oAuth2Gist_OpenButtonClicked;
             oAuth2Gist.CompleteButtonClicked += oAuth2Gist_CompleteButtonClicked;
             oAuth2Gist.ClearButtonClicked += oAuth2Gist_ClearButtonClicked;
-            // 
+            //
             // tpUpaste
-            // 
+            //
             tpUpaste.BackColor = System.Drawing.SystemColors.Window;
             tpUpaste.Controls.Add(cbUpasteIsPublic);
             tpUpaste.Controls.Add(lblUpasteUserKey);
             tpUpaste.Controls.Add(txtUpasteUserKey);
             resources.ApplyResources(tpUpaste, "tpUpaste");
             tpUpaste.Name = "tpUpaste";
-            // 
+            //
             // cbUpasteIsPublic
-            // 
+            //
             resources.ApplyResources(cbUpasteIsPublic, "cbUpasteIsPublic");
             cbUpasteIsPublic.Name = "cbUpasteIsPublic";
             cbUpasteIsPublic.UseVisualStyleBackColor = true;
             cbUpasteIsPublic.CheckedChanged += cbUpasteIsPublic_CheckedChanged;
-            // 
+            //
             // lblUpasteUserKey
-            // 
+            //
             resources.ApplyResources(lblUpasteUserKey, "lblUpasteUserKey");
             lblUpasteUserKey.Name = "lblUpasteUserKey";
-            // 
+            //
             // txtUpasteUserKey
-            // 
+            //
             resources.ApplyResources(txtUpasteUserKey, "txtUpasteUserKey");
             txtUpasteUserKey.Name = "txtUpasteUserKey";
             txtUpasteUserKey.UseSystemPasswordChar = true;
             txtUpasteUserKey.TextChanged += txtUpasteUserKey_TextChanged;
-            // 
+            //
             // tpHastebin
-            // 
+            //
             tpHastebin.BackColor = System.Drawing.SystemColors.Window;
             tpHastebin.Controls.Add(cbHastebinUseFileExtension);
             tpHastebin.Controls.Add(txtHastebinSyntaxHighlighting);
@@ -3850,38 +3902,38 @@ namespace ShareX.UploadersLib
             tpHastebin.Controls.Add(lblHastebinCustomDomain);
             resources.ApplyResources(tpHastebin, "tpHastebin");
             tpHastebin.Name = "tpHastebin";
-            // 
+            //
             // cbHastebinUseFileExtension
-            // 
+            //
             resources.ApplyResources(cbHastebinUseFileExtension, "cbHastebinUseFileExtension");
             cbHastebinUseFileExtension.Name = "cbHastebinUseFileExtension";
             cbHastebinUseFileExtension.UseVisualStyleBackColor = true;
             cbHastebinUseFileExtension.CheckedChanged += cbHastebinUseFileExtension_CheckedChanged;
-            // 
+            //
             // txtHastebinSyntaxHighlighting
-            // 
+            //
             resources.ApplyResources(txtHastebinSyntaxHighlighting, "txtHastebinSyntaxHighlighting");
             txtHastebinSyntaxHighlighting.Name = "txtHastebinSyntaxHighlighting";
             txtHastebinSyntaxHighlighting.TextChanged += txtHastebinSyntaxHighlighting_TextChanged;
-            // 
+            //
             // txtHastebinCustomDomain
-            // 
+            //
             resources.ApplyResources(txtHastebinCustomDomain, "txtHastebinCustomDomain");
             txtHastebinCustomDomain.Name = "txtHastebinCustomDomain";
             txtHastebinCustomDomain.TextChanged += txtHastebinCustomDomain_TextChanged;
-            // 
+            //
             // lblHastebinSyntaxHighlighting
-            // 
+            //
             resources.ApplyResources(lblHastebinSyntaxHighlighting, "lblHastebinSyntaxHighlighting");
             lblHastebinSyntaxHighlighting.Name = "lblHastebinSyntaxHighlighting";
-            // 
+            //
             // lblHastebinCustomDomain
-            // 
+            //
             resources.ApplyResources(lblHastebinCustomDomain, "lblHastebinCustomDomain");
             lblHastebinCustomDomain.Name = "lblHastebinCustomDomain";
-            // 
+            //
             // tpOneTimeSecret
-            // 
+            //
             tpOneTimeSecret.BackColor = System.Drawing.SystemColors.Window;
             tpOneTimeSecret.Controls.Add(lblOneTimeSecretAPIKey);
             tpOneTimeSecret.Controls.Add(lblOneTimeSecretEmail);
@@ -3889,53 +3941,125 @@ namespace ShareX.UploadersLib
             tpOneTimeSecret.Controls.Add(txtOneTimeSecretEmail);
             resources.ApplyResources(tpOneTimeSecret, "tpOneTimeSecret");
             tpOneTimeSecret.Name = "tpOneTimeSecret";
-            // 
+            //
             // lblOneTimeSecretAPIKey
-            // 
+            //
             resources.ApplyResources(lblOneTimeSecretAPIKey, "lblOneTimeSecretAPIKey");
             lblOneTimeSecretAPIKey.Name = "lblOneTimeSecretAPIKey";
-            // 
+            //
             // lblOneTimeSecretEmail
-            // 
+            //
             resources.ApplyResources(lblOneTimeSecretEmail, "lblOneTimeSecretEmail");
             lblOneTimeSecretEmail.Name = "lblOneTimeSecretEmail";
-            // 
+            //
             // txtOneTimeSecretAPIKey
-            // 
+            //
             resources.ApplyResources(txtOneTimeSecretAPIKey, "txtOneTimeSecretAPIKey");
             txtOneTimeSecretAPIKey.Name = "txtOneTimeSecretAPIKey";
             txtOneTimeSecretAPIKey.UseSystemPasswordChar = true;
             txtOneTimeSecretAPIKey.TextChanged += txtOneTimeSecretAPIKey_TextChanged;
-            // 
+            //
             // txtOneTimeSecretEmail
-            // 
+            //
             resources.ApplyResources(txtOneTimeSecretEmail, "txtOneTimeSecretEmail");
             txtOneTimeSecretEmail.Name = "txtOneTimeSecretEmail";
             txtOneTimeSecretEmail.TextChanged += txtOneTimeSecretEmail_TextChanged;
-            // 
+            //
             // tpPastie
-            // 
+            //
             tpPastie.BackColor = System.Drawing.SystemColors.Window;
             tpPastie.Controls.Add(cbPastieIsPublic);
             resources.ApplyResources(tpPastie, "tpPastie");
             tpPastie.Name = "tpPastie";
-            // 
+            //
             // cbPastieIsPublic
-            // 
+            //
             resources.ApplyResources(cbPastieIsPublic, "cbPastieIsPublic");
             cbPastieIsPublic.Name = "cbPastieIsPublic";
             cbPastieIsPublic.UseVisualStyleBackColor = true;
             cbPastieIsPublic.CheckedChanged += cbPastieIsPublic_CheckedChanged;
-            // 
+            //
+            // tpPrivateBin
+            //
+            tpPrivateBin.BackColor = System.Drawing.SystemColors.Window;
+            tpPrivateBin.Controls.Add(lblPrivateBinCustomUrl);
+            tpPrivateBin.Controls.Add(txtPrivateBinCustomUrl);
+            tpPrivateBin.Controls.Add(lblPrivateBinExpiration);
+            tpPrivateBin.Controls.Add(cbPrivateBinExpiration);
+            tpPrivateBin.Controls.Add(lblPrivateBinFormat);
+            tpPrivateBin.Controls.Add(cbPrivateBinFormat);
+            tpPrivateBin.Controls.Add(lblPrivateBinPastePassword);
+            tpPrivateBin.Controls.Add(txtPrivateBinPastePassword);
+            tpPrivateBin.Controls.Add(cbPrivateBinBurnAfterReading);
+            tpPrivateBin.Controls.Add(gbPrivateBinCredentials);
+            resources.ApplyResources(tpPrivateBin, "tpPrivateBin");
+            tpPrivateBin.Name = "tpPrivateBin";
+            //
+            // lblPrivateBinCustomUrl
+            //
+            resources.ApplyResources(lblPrivateBinCustomUrl, "lblPrivateBinCustomUrl");
+            lblPrivateBinCustomUrl.Name = "lblPrivateBinCustomUrl";
+            //
+            // txtPrivateBinCustomUrl
+            //
+            resources.ApplyResources(txtPrivateBinCustomUrl, "txtPrivateBinCustomUrl");
+            txtPrivateBinCustomUrl.Name = "txtPrivateBinCustomUrl";
+            txtPrivateBinCustomUrl.TextChanged += txtPrivateBinCustomUrl_TextChanged;
+            //
+            // lblPrivateBinExpiration
+            //
+            resources.ApplyResources(lblPrivateBinExpiration, "lblPrivateBinExpiration");
+            lblPrivateBinExpiration.Name = "lblPrivateBinExpiration";
+            //
+            // cbPrivateBinExpiration
+            //
+            cbPrivateBinExpiration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbPrivateBinExpiration.FormattingEnabled = true;
+            resources.ApplyResources(cbPrivateBinExpiration, "cbPrivateBinExpiration");
+            cbPrivateBinExpiration.Name = "cbPrivateBinExpiration";
+            cbPrivateBinExpiration.SelectedIndexChanged += cbPrivateBinExpiration_SelectedIndexChanged;
+            //
+            // lblPrivateBinFormat
+            //
+            resources.ApplyResources(lblPrivateBinFormat, "lblPrivateBinFormat");
+            lblPrivateBinFormat.Name = "lblPrivateBinFormat";
+            //
+            // cbPrivateBinFormat
+            //
+            cbPrivateBinFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbPrivateBinFormat.FormattingEnabled = true;
+            resources.ApplyResources(cbPrivateBinFormat, "cbPrivateBinFormat");
+            cbPrivateBinFormat.Name = "cbPrivateBinFormat";
+            cbPrivateBinFormat.SelectedIndexChanged += cbPrivateBinFormat_SelectedIndexChanged;
+            //
+            // lblPrivateBinPastePassword
+            //
+            resources.ApplyResources(lblPrivateBinPastePassword, "lblPrivateBinPastePassword");
+            lblPrivateBinPastePassword.Name = "lblPrivateBinPastePassword";
+            //
+            // txtPrivateBinPastePassword
+            //
+            resources.ApplyResources(txtPrivateBinPastePassword, "txtPrivateBinPastePassword");
+            txtPrivateBinPastePassword.Name = "txtPrivateBinPastePassword";
+            txtPrivateBinPastePassword.UseSystemPasswordChar = true;
+            txtPrivateBinPastePassword.TextChanged += txtPrivateBinPastePassword_TextChanged;
+            //
+            // cbPrivateBinBurnAfterReading
+            //
+            resources.ApplyResources(cbPrivateBinBurnAfterReading, "cbPrivateBinBurnAfterReading");
+            cbPrivateBinBurnAfterReading.Name = "cbPrivateBinBurnAfterReading";
+            cbPrivateBinBurnAfterReading.UseVisualStyleBackColor = true;
+            cbPrivateBinBurnAfterReading.CheckedChanged += cbPrivateBinBurnAfterReading_CheckedChanged;
+            //
             // tpImageUploaders
-            // 
+            //
             tpImageUploaders.BackColor = System.Drawing.SystemColors.Window;
             tpImageUploaders.Controls.Add(tcImageUploaders);
             resources.ApplyResources(tpImageUploaders, "tpImageUploaders");
             tpImageUploaders.Name = "tpImageUploaders";
-            // 
+            //
             // tcImageUploaders
-            // 
+            //
             tcImageUploaders.Controls.Add(tpImgur);
             tcImageUploaders.Controls.Add(tpImageShack);
             tcImageUploaders.Controls.Add(tpFlickr);
@@ -3945,9 +4069,9 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(tcImageUploaders, "tcImageUploaders");
             tcImageUploaders.Name = "tcImageUploaders";
             tcImageUploaders.SelectedIndex = 0;
-            // 
+            //
             // tpImgur
-            // 
+            //
             tpImgur.BackColor = System.Drawing.SystemColors.Window;
             tpImgur.Controls.Add(cbImgurUseGIFV);
             tpImgur.Controls.Add(cbImgurUploadSelectedAlbum);
@@ -3960,37 +4084,37 @@ namespace ShareX.UploadersLib
             tpImgur.Controls.Add(lblImgurThumbnailType);
             resources.ApplyResources(tpImgur, "tpImgur");
             tpImgur.Name = "tpImgur";
-            // 
+            //
             // cbImgurUseGIFV
-            // 
+            //
             resources.ApplyResources(cbImgurUseGIFV, "cbImgurUseGIFV");
             cbImgurUseGIFV.Name = "cbImgurUseGIFV";
             cbImgurUseGIFV.UseVisualStyleBackColor = true;
             cbImgurUseGIFV.CheckedChanged += cbImgurUseGIFV_CheckedChanged;
-            // 
+            //
             // cbImgurUploadSelectedAlbum
-            // 
+            //
             resources.ApplyResources(cbImgurUploadSelectedAlbum, "cbImgurUploadSelectedAlbum");
             cbImgurUploadSelectedAlbum.Name = "cbImgurUploadSelectedAlbum";
             cbImgurUploadSelectedAlbum.UseVisualStyleBackColor = true;
             cbImgurUploadSelectedAlbum.CheckedChanged += cbImgurUploadSelectedAlbum_CheckedChanged;
-            // 
+            //
             // cbImgurDirectLink
-            // 
+            //
             resources.ApplyResources(cbImgurDirectLink, "cbImgurDirectLink");
             cbImgurDirectLink.Name = "cbImgurDirectLink";
             cbImgurDirectLink.UseVisualStyleBackColor = true;
             cbImgurDirectLink.CheckedChanged += cbImgurDirectLink_CheckedChanged;
-            // 
+            //
             // atcImgurAccountType
-            // 
+            //
             resources.ApplyResources(atcImgurAccountType, "atcImgurAccountType");
             atcImgurAccountType.Name = "atcImgurAccountType";
             atcImgurAccountType.SelectedAccountType = AccountType.Anonymous;
             atcImgurAccountType.AccountTypeChanged += atcImgurAccountType_AccountTypeChanged;
-            // 
+            //
             // oauth2Imgur
-            // 
+            //
             resources.ApplyResources(oauth2Imgur, "oauth2Imgur");
             oauth2Imgur.Name = "oauth2Imgur";
             oauth2Imgur.UserInfo = null;
@@ -3998,9 +4122,9 @@ namespace ShareX.UploadersLib
             oauth2Imgur.CompleteButtonClicked += oauth2Imgur_CompleteButtonClicked;
             oauth2Imgur.ClearButtonClicked += oauth2Imgur_ClearButtonClicked;
             oauth2Imgur.RefreshButtonClicked += oauth2Imgur_RefreshButtonClicked;
-            // 
+            //
             // lvImgurAlbumList
-            // 
+            //
             lvImgurAlbumList.AllowColumnSort = true;
             lvImgurAlbumList.AutoFillColumn = true;
             lvImgurAlbumList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { chImgurID, chImgurTitle, chImgurDescription });
@@ -4011,41 +4135,41 @@ namespace ShareX.UploadersLib
             lvImgurAlbumList.UseCompatibleStateImageBehavior = false;
             lvImgurAlbumList.View = System.Windows.Forms.View.Details;
             lvImgurAlbumList.SelectedIndexChanged += lvImgurAlbumList_SelectedIndexChanged;
-            // 
+            //
             // chImgurID
-            // 
+            //
             resources.ApplyResources(chImgurID, "chImgurID");
-            // 
+            //
             // chImgurTitle
-            // 
+            //
             resources.ApplyResources(chImgurTitle, "chImgurTitle");
-            // 
+            //
             // chImgurDescription
-            // 
+            //
             resources.ApplyResources(chImgurDescription, "chImgurDescription");
-            // 
+            //
             // btnImgurRefreshAlbumList
-            // 
+            //
             resources.ApplyResources(btnImgurRefreshAlbumList, "btnImgurRefreshAlbumList");
             btnImgurRefreshAlbumList.Name = "btnImgurRefreshAlbumList";
             btnImgurRefreshAlbumList.UseVisualStyleBackColor = true;
             btnImgurRefreshAlbumList.Click += btnImgurRefreshAlbumList_Click;
-            // 
+            //
             // cbImgurThumbnailType
-            // 
+            //
             cbImgurThumbnailType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbImgurThumbnailType.FormattingEnabled = true;
             resources.ApplyResources(cbImgurThumbnailType, "cbImgurThumbnailType");
             cbImgurThumbnailType.Name = "cbImgurThumbnailType";
             cbImgurThumbnailType.SelectedIndexChanged += cbImgurThumbnailType_SelectedIndexChanged;
-            // 
+            //
             // lblImgurThumbnailType
-            // 
+            //
             resources.ApplyResources(lblImgurThumbnailType, "lblImgurThumbnailType");
             lblImgurThumbnailType.Name = "lblImgurThumbnailType";
-            // 
+            //
             // tpImageShack
-            // 
+            //
             tpImageShack.BackColor = System.Drawing.SystemColors.Window;
             tpImageShack.Controls.Add(btnImageShackLogin);
             tpImageShack.Controls.Add(btnImageShackOpenPublicProfile);
@@ -4057,75 +4181,75 @@ namespace ShareX.UploadersLib
             tpImageShack.Controls.Add(lblImageShackPassword);
             resources.ApplyResources(tpImageShack, "tpImageShack");
             tpImageShack.Name = "tpImageShack";
-            // 
+            //
             // btnImageShackLogin
-            // 
+            //
             resources.ApplyResources(btnImageShackLogin, "btnImageShackLogin");
             btnImageShackLogin.Name = "btnImageShackLogin";
             btnImageShackLogin.UseVisualStyleBackColor = true;
             btnImageShackLogin.Click += btnImageShackLogin_Click;
-            // 
+            //
             // btnImageShackOpenPublicProfile
-            // 
+            //
             resources.ApplyResources(btnImageShackOpenPublicProfile, "btnImageShackOpenPublicProfile");
             btnImageShackOpenPublicProfile.Name = "btnImageShackOpenPublicProfile";
             btnImageShackOpenPublicProfile.UseVisualStyleBackColor = true;
             btnImageShackOpenPublicProfile.Click += btnImageShackOpenPublicProfile_Click;
-            // 
+            //
             // cbImageShackIsPublic
-            // 
+            //
             resources.ApplyResources(cbImageShackIsPublic, "cbImageShackIsPublic");
             cbImageShackIsPublic.Name = "cbImageShackIsPublic";
             cbImageShackIsPublic.UseVisualStyleBackColor = true;
             cbImageShackIsPublic.CheckedChanged += cbImageShackIsPublic_CheckedChanged;
-            // 
+            //
             // btnImageShackOpenMyImages
-            // 
+            //
             resources.ApplyResources(btnImageShackOpenMyImages, "btnImageShackOpenMyImages");
             btnImageShackOpenMyImages.Name = "btnImageShackOpenMyImages";
             btnImageShackOpenMyImages.UseVisualStyleBackColor = true;
             btnImageShackOpenMyImages.Click += btnImageShackOpenMyImages_Click;
-            // 
+            //
             // lblImageShackUsername
-            // 
+            //
             resources.ApplyResources(lblImageShackUsername, "lblImageShackUsername");
             lblImageShackUsername.Name = "lblImageShackUsername";
-            // 
+            //
             // txtImageShackUsername
-            // 
+            //
             resources.ApplyResources(txtImageShackUsername, "txtImageShackUsername");
             txtImageShackUsername.Name = "txtImageShackUsername";
             txtImageShackUsername.TextChanged += txtImageShackUsername_TextChanged;
-            // 
+            //
             // txtImageShackPassword
-            // 
+            //
             resources.ApplyResources(txtImageShackPassword, "txtImageShackPassword");
             txtImageShackPassword.Name = "txtImageShackPassword";
             txtImageShackPassword.UseSystemPasswordChar = true;
             txtImageShackPassword.TextChanged += txtImageShackPassword_TextChanged;
-            // 
+            //
             // lblImageShackPassword
-            // 
+            //
             resources.ApplyResources(lblImageShackPassword, "lblImageShackPassword");
             lblImageShackPassword.Name = "lblImageShackPassword";
-            // 
+            //
             // tpFlickr
-            // 
+            //
             tpFlickr.BackColor = System.Drawing.SystemColors.Window;
             tpFlickr.Controls.Add(cbFlickrDirectLink);
             tpFlickr.Controls.Add(oauthFlickr);
             resources.ApplyResources(tpFlickr, "tpFlickr");
             tpFlickr.Name = "tpFlickr";
-            // 
+            //
             // cbFlickrDirectLink
-            // 
+            //
             resources.ApplyResources(cbFlickrDirectLink, "cbFlickrDirectLink");
             cbFlickrDirectLink.Name = "cbFlickrDirectLink";
             cbFlickrDirectLink.UseVisualStyleBackColor = true;
             cbFlickrDirectLink.CheckedChanged += cbFlickrDirectLink_CheckedChanged;
-            // 
+            //
             // oauthFlickr
-            // 
+            //
             oauthFlickr.IsRefreshable = false;
             resources.ApplyResources(oauthFlickr, "oauthFlickr");
             oauthFlickr.Name = "oauthFlickr";
@@ -4133,48 +4257,48 @@ namespace ShareX.UploadersLib
             oauthFlickr.OpenButtonClicked += oauthFlickr_OpenButtonClicked;
             oauthFlickr.CompleteButtonClicked += oauthFlickr_CompleteButtonClicked;
             oauthFlickr.ClearButtonClicked += oauthFlickr_ClearButtonClicked;
-            // 
+            //
             // tpPhotobucket
-            // 
+            //
             tpPhotobucket.BackColor = System.Drawing.SystemColors.Window;
             tpPhotobucket.Controls.Add(gbPhotobucketAlbumPath);
             tpPhotobucket.Controls.Add(gbPhotobucketAlbums);
             tpPhotobucket.Controls.Add(gbPhotobucketUserAccount);
             resources.ApplyResources(tpPhotobucket, "tpPhotobucket");
             tpPhotobucket.Name = "tpPhotobucket";
-            // 
+            //
             // gbPhotobucketAlbumPath
-            // 
+            //
             gbPhotobucketAlbumPath.Controls.Add(btnPhotobucketAddAlbum);
             gbPhotobucketAlbumPath.Controls.Add(btnPhotobucketRemoveAlbum);
             gbPhotobucketAlbumPath.Controls.Add(cbPhotobucketAlbumPaths);
             resources.ApplyResources(gbPhotobucketAlbumPath, "gbPhotobucketAlbumPath");
             gbPhotobucketAlbumPath.Name = "gbPhotobucketAlbumPath";
             gbPhotobucketAlbumPath.TabStop = false;
-            // 
+            //
             // btnPhotobucketAddAlbum
-            // 
+            //
             resources.ApplyResources(btnPhotobucketAddAlbum, "btnPhotobucketAddAlbum");
             btnPhotobucketAddAlbum.Name = "btnPhotobucketAddAlbum";
             btnPhotobucketAddAlbum.UseVisualStyleBackColor = true;
             btnPhotobucketAddAlbum.Click += btnPhotobucketAddAlbum_Click;
-            // 
+            //
             // btnPhotobucketRemoveAlbum
-            // 
+            //
             resources.ApplyResources(btnPhotobucketRemoveAlbum, "btnPhotobucketRemoveAlbum");
             btnPhotobucketRemoveAlbum.Name = "btnPhotobucketRemoveAlbum";
             btnPhotobucketRemoveAlbum.UseVisualStyleBackColor = true;
             btnPhotobucketRemoveAlbum.Click += btnPhotobucketRemoveAlbum_Click;
-            // 
+            //
             // cbPhotobucketAlbumPaths
-            // 
+            //
             cbPhotobucketAlbumPaths.FormattingEnabled = true;
             resources.ApplyResources(cbPhotobucketAlbumPaths, "cbPhotobucketAlbumPaths");
             cbPhotobucketAlbumPaths.Name = "cbPhotobucketAlbumPaths";
             cbPhotobucketAlbumPaths.SelectedIndexChanged += cbPhotobucketAlbumPaths_SelectedIndexChanged;
-            // 
+            //
             // gbPhotobucketAlbums
-            // 
+            //
             gbPhotobucketAlbums.Controls.Add(lblPhotobucketNewAlbumName);
             gbPhotobucketAlbums.Controls.Add(lblPhotobucketParentAlbumPath);
             gbPhotobucketAlbums.Controls.Add(txtPhotobucketNewAlbumName);
@@ -4183,36 +4307,36 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(gbPhotobucketAlbums, "gbPhotobucketAlbums");
             gbPhotobucketAlbums.Name = "gbPhotobucketAlbums";
             gbPhotobucketAlbums.TabStop = false;
-            // 
+            //
             // lblPhotobucketNewAlbumName
-            // 
+            //
             resources.ApplyResources(lblPhotobucketNewAlbumName, "lblPhotobucketNewAlbumName");
             lblPhotobucketNewAlbumName.Name = "lblPhotobucketNewAlbumName";
-            // 
+            //
             // lblPhotobucketParentAlbumPath
-            // 
+            //
             resources.ApplyResources(lblPhotobucketParentAlbumPath, "lblPhotobucketParentAlbumPath");
             lblPhotobucketParentAlbumPath.Name = "lblPhotobucketParentAlbumPath";
-            // 
+            //
             // txtPhotobucketNewAlbumName
-            // 
+            //
             resources.ApplyResources(txtPhotobucketNewAlbumName, "txtPhotobucketNewAlbumName");
             txtPhotobucketNewAlbumName.Name = "txtPhotobucketNewAlbumName";
-            // 
+            //
             // txtPhotobucketParentAlbumPath
-            // 
+            //
             resources.ApplyResources(txtPhotobucketParentAlbumPath, "txtPhotobucketParentAlbumPath");
             txtPhotobucketParentAlbumPath.Name = "txtPhotobucketParentAlbumPath";
-            // 
+            //
             // btnPhotobucketCreateAlbum
-            // 
+            //
             resources.ApplyResources(btnPhotobucketCreateAlbum, "btnPhotobucketCreateAlbum");
             btnPhotobucketCreateAlbum.Name = "btnPhotobucketCreateAlbum";
             btnPhotobucketCreateAlbum.UseVisualStyleBackColor = true;
             btnPhotobucketCreateAlbum.Click += btnPhotobucketCreateAlbum_Click;
-            // 
+            //
             // gbPhotobucketUserAccount
-            // 
+            //
             gbPhotobucketUserAccount.Controls.Add(lblPhotobucketDefaultAlbumName);
             gbPhotobucketUserAccount.Controls.Add(btnPhotobucketAuthOpen);
             gbPhotobucketUserAccount.Controls.Add(txtPhotobucketDefaultAlbumName);
@@ -4223,49 +4347,49 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(gbPhotobucketUserAccount, "gbPhotobucketUserAccount");
             gbPhotobucketUserAccount.Name = "gbPhotobucketUserAccount";
             gbPhotobucketUserAccount.TabStop = false;
-            // 
+            //
             // lblPhotobucketDefaultAlbumName
-            // 
+            //
             resources.ApplyResources(lblPhotobucketDefaultAlbumName, "lblPhotobucketDefaultAlbumName");
             lblPhotobucketDefaultAlbumName.Name = "lblPhotobucketDefaultAlbumName";
-            // 
+            //
             // btnPhotobucketAuthOpen
-            // 
+            //
             resources.ApplyResources(btnPhotobucketAuthOpen, "btnPhotobucketAuthOpen");
             btnPhotobucketAuthOpen.Name = "btnPhotobucketAuthOpen";
             btnPhotobucketAuthOpen.UseVisualStyleBackColor = true;
             btnPhotobucketAuthOpen.Click += btnPhotobucketAuthOpen_Click;
-            // 
+            //
             // txtPhotobucketDefaultAlbumName
-            // 
+            //
             resources.ApplyResources(txtPhotobucketDefaultAlbumName, "txtPhotobucketDefaultAlbumName");
             txtPhotobucketDefaultAlbumName.Name = "txtPhotobucketDefaultAlbumName";
             txtPhotobucketDefaultAlbumName.ReadOnly = true;
-            // 
+            //
             // lblPhotobucketVerificationCode
-            // 
+            //
             resources.ApplyResources(lblPhotobucketVerificationCode, "lblPhotobucketVerificationCode");
             lblPhotobucketVerificationCode.Name = "lblPhotobucketVerificationCode";
-            // 
+            //
             // btnPhotobucketAuthComplete
-            // 
+            //
             resources.ApplyResources(btnPhotobucketAuthComplete, "btnPhotobucketAuthComplete");
             btnPhotobucketAuthComplete.Name = "btnPhotobucketAuthComplete";
             btnPhotobucketAuthComplete.UseVisualStyleBackColor = true;
             btnPhotobucketAuthComplete.Click += btnPhotobucketAuthComplete_Click;
-            // 
+            //
             // txtPhotobucketVerificationCode
-            // 
+            //
             resources.ApplyResources(txtPhotobucketVerificationCode, "txtPhotobucketVerificationCode");
             txtPhotobucketVerificationCode.Name = "txtPhotobucketVerificationCode";
-            // 
+            //
             // lblPhotobucketAccountStatus
-            // 
+            //
             resources.ApplyResources(lblPhotobucketAccountStatus, "lblPhotobucketAccountStatus");
             lblPhotobucketAccountStatus.Name = "lblPhotobucketAccountStatus";
-            // 
+            //
             // tpChevereto
-            // 
+            //
             tpChevereto.BackColor = System.Drawing.SystemColors.Window;
             tpChevereto.Controls.Add(lblCheveretoUploadURLExample);
             tpChevereto.Controls.Add(cbCheveretoDirectURL);
@@ -4275,72 +4399,72 @@ namespace ShareX.UploadersLib
             tpChevereto.Controls.Add(lblCheveretoAPIKey);
             resources.ApplyResources(tpChevereto, "tpChevereto");
             tpChevereto.Name = "tpChevereto";
-            // 
+            //
             // lblCheveretoUploadURLExample
-            // 
+            //
             resources.ApplyResources(lblCheveretoUploadURLExample, "lblCheveretoUploadURLExample");
             lblCheveretoUploadURLExample.Name = "lblCheveretoUploadURLExample";
-            // 
+            //
             // cbCheveretoDirectURL
-            // 
+            //
             resources.ApplyResources(cbCheveretoDirectURL, "cbCheveretoDirectURL");
             cbCheveretoDirectURL.Name = "cbCheveretoDirectURL";
             cbCheveretoDirectURL.UseVisualStyleBackColor = true;
             cbCheveretoDirectURL.CheckedChanged += cbCheveretoDirectURL_CheckedChanged;
-            // 
+            //
             // lblCheveretoUploadURL
-            // 
+            //
             resources.ApplyResources(lblCheveretoUploadURL, "lblCheveretoUploadURL");
             lblCheveretoUploadURL.Name = "lblCheveretoUploadURL";
-            // 
+            //
             // txtCheveretoUploadURL
-            // 
+            //
             resources.ApplyResources(txtCheveretoUploadURL, "txtCheveretoUploadURL");
             txtCheveretoUploadURL.Name = "txtCheveretoUploadURL";
             txtCheveretoUploadURL.TextChanged += txtCheveretoWebsite_TextChanged;
-            // 
+            //
             // txtCheveretoAPIKey
-            // 
+            //
             resources.ApplyResources(txtCheveretoAPIKey, "txtCheveretoAPIKey");
             txtCheveretoAPIKey.Name = "txtCheveretoAPIKey";
             txtCheveretoAPIKey.UseSystemPasswordChar = true;
             txtCheveretoAPIKey.TextChanged += txtCheveretoAPIKey_TextChanged;
-            // 
+            //
             // lblCheveretoAPIKey
-            // 
+            //
             resources.ApplyResources(lblCheveretoAPIKey, "lblCheveretoAPIKey");
             lblCheveretoAPIKey.Name = "lblCheveretoAPIKey";
-            // 
+            //
             // tpVgyme
-            // 
+            //
             tpVgyme.BackColor = System.Drawing.SystemColors.Window;
             tpVgyme.Controls.Add(llVgymeAccountDetailsPage);
             tpVgyme.Controls.Add(txtVgymeUserKey);
             tpVgyme.Controls.Add(lvlVgymeUserKey);
             resources.ApplyResources(tpVgyme, "tpVgyme");
             tpVgyme.Name = "tpVgyme";
-            // 
+            //
             // llVgymeAccountDetailsPage
-            // 
+            //
             resources.ApplyResources(llVgymeAccountDetailsPage, "llVgymeAccountDetailsPage");
             llVgymeAccountDetailsPage.Name = "llVgymeAccountDetailsPage";
             llVgymeAccountDetailsPage.TabStop = true;
             llVgymeAccountDetailsPage.LinkClicked += llVgymeAccountDetailsPage_LinkClicked;
-            // 
+            //
             // txtVgymeUserKey
-            // 
+            //
             resources.ApplyResources(txtVgymeUserKey, "txtVgymeUserKey");
             txtVgymeUserKey.Name = "txtVgymeUserKey";
             txtVgymeUserKey.UseSystemPasswordChar = true;
             txtVgymeUserKey.TextChanged += txtVgymeUserKey_TextChanged;
-            // 
+            //
             // lvlVgymeUserKey
-            // 
+            //
             resources.ApplyResources(lvlVgymeUserKey, "lvlVgymeUserKey");
             lvlVgymeUserKey.Name = "lvlVgymeUserKey";
-            // 
+            //
             // tcUploaders
-            // 
+            //
             tcUploaders.Controls.Add(tpImageUploaders);
             tcUploaders.Controls.Add(tpTextUploaders);
             tcUploaders.Controls.Add(tpFileUploaders);
@@ -4348,9 +4472,9 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(tcUploaders, "tcUploaders");
             tcUploaders.Name = "tcUploaders";
             tcUploaders.SelectedIndex = 0;
-            // 
+            //
             // tttvMain
-            // 
+            //
             tttvMain.AutoSelectChild = true;
             resources.ApplyResources(tttvMain, "tttvMain");
             tttvMain.ImageList = null;
@@ -4360,15 +4484,15 @@ namespace ShareX.UploadersLib
             tttvMain.SeparatorColor = System.Drawing.SystemColors.ControlDark;
             tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 162);
             tttvMain.TreeViewSize = 230;
-            // 
+            //
             // actRapidShareAccountType
-            // 
+            //
             resources.ApplyResources(actRapidShareAccountType, "actRapidShareAccountType");
             actRapidShareAccountType.Name = "actRapidShareAccountType";
             actRapidShareAccountType.SelectedAccountType = AccountType.Anonymous;
-            // 
+            //
             // UploadersConfigForm
-            // 
+            //
             resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             BackColor = System.Drawing.SystemColors.Window;
@@ -4377,6 +4501,8 @@ namespace ShareX.UploadersLib
             Name = "UploadersConfigForm";
             Shown += UploadersConfigForm_Shown;
             Resize += UploadersConfigForm_Resize;
+            gbPrivateBinCredentials.ResumeLayout(false);
+            gbPrivateBinCredentials.PerformLayout();
             tpURLShorteners.ResumeLayout(false);
             tcURLShorteners.ResumeLayout(false);
             tpBitly.ResumeLayout(false);
@@ -4489,6 +4615,8 @@ namespace ShareX.UploadersLib
             tpOneTimeSecret.PerformLayout();
             tpPastie.ResumeLayout(false);
             tpPastie.PerformLayout();
+            tpPrivateBin.ResumeLayout(false);
+            tpPrivateBin.PerformLayout();
             tpImageUploaders.ResumeLayout(false);
             tcImageUploaders.ResumeLayout(false);
             tpImgur.ResumeLayout(false);
@@ -5026,6 +5154,21 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.CheckBox cbYouTubeShowDialog;
         private System.Windows.Forms.LinkLabel llYouTubePermissionsLink;
         private System.Windows.Forms.Label lblYouTubePermissionsTip;
+        private System.Windows.Forms.Label lblPrivateBinCustomUrl;
+        private System.Windows.Forms.TextBox txtPrivateBinCustomUrl;
+        private System.Windows.Forms.Label lblPrivateBinExpiration;
+        private System.Windows.Forms.ComboBox cbPrivateBinExpiration;
+        private System.Windows.Forms.Label lblPrivateBinFormat;
+        private System.Windows.Forms.ComboBox cbPrivateBinFormat;
+        private System.Windows.Forms.Label lblPrivateBinPastePassword;
+        private System.Windows.Forms.TextBox txtPrivateBinPastePassword;
+        private System.Windows.Forms.CheckBox cbPrivateBinBurnAfterReading;
+        private System.Windows.Forms.GroupBox gbPrivateBinCredentials;
+        private System.Windows.Forms.Label lblPrivateBinPassword;
+        private System.Windows.Forms.Label lblPrivateBinUsername;
+        private System.Windows.Forms.TextBox txtPrivateBinPassword;
+        private System.Windows.Forms.TextBox txtPrivateBinUsername;
+        internal System.Windows.Forms.TabPage tpPrivateBin;
         private OAuthLoopbackControl oauth2YouTube;
         private OAuthLoopbackControl oauth2GoogleDrive;
         private OAuthLoopbackControl oauth2GoogleCloudStorage;
