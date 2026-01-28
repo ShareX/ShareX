@@ -206,6 +206,7 @@ namespace ShareX.ScreenCaptureLib
                     UseSquareMagnifier = options.UseSquareMagnifier,
                     MagnifierPixelCount = options.MagnifierPixelCount,
                     MagnifierPixelSize = options.MagnifierPixelSize,
+                    ShowCenterCrosshair = options.ShowCenterCrosshair,
                     ShowCrosshair = options.ShowCrosshair,
                     AnnotationOptions = options.AnnotationOptions,
                     ScreenColorPickerInfoText = options.ScreenColorPickerInfoText

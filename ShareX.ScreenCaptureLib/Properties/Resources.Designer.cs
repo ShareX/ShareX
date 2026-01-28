@@ -1785,6 +1785,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show center crosshair.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Show_center_crosshair {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_center_crosshair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show FPS.
         /// </summary>
         internal static string ShapeManager_CreateContextMenu_Show_FPS {
