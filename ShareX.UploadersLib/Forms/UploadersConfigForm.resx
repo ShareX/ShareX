@@ -173,6 +173,135 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;cbAmazonS3CustomCNAME.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="lblPrivateBinPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPrivateBinPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPrivateBinPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 73</value>
+  </data>
+  <data name="lblPrivateBinPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblPrivateBinPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblPrivateBinPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinPassword.Name" xml:space="preserve">
+    <value>lblPrivateBinPassword</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinPassword.Parent" xml:space="preserve">
+    <value>gbPrivateBinCredentials</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinPassword.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblPrivateBinUsername.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPrivateBinUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPrivateBinUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 25</value>
+  </data>
+  <data name="lblPrivateBinUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="lblPrivateBinUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblPrivateBinUsername.Text" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinUsername.Name" xml:space="preserve">
+    <value>lblPrivateBinUsername</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinUsername.Parent" xml:space="preserve">
+    <value>gbPrivateBinCredentials</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinUsername.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtPrivateBinPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 89</value>
+  </data>
+  <data name="txtPrivateBinPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 20</value>
+  </data>
+  <data name="txtPrivateBinPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinPassword.Name" xml:space="preserve">
+    <value>txtPrivateBinPassword</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinPassword.Parent" xml:space="preserve">
+    <value>gbPrivateBinCredentials</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinPassword.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtPrivateBinUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 41</value>
+  </data>
+  <data name="txtPrivateBinUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 20</value>
+  </data>
+  <data name="txtPrivateBinUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinUsername.Name" xml:space="preserve">
+    <value>txtPrivateBinUsername</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinUsername.Parent" xml:space="preserve">
+    <value>gbPrivateBinCredentials</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinUsername.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="gbPrivateBinCredentials.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 232</value>
+  </data>
+  <data name="gbPrivateBinCredentials.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 126</value>
+  </data>
+  <data name="gbPrivateBinCredentials.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbPrivateBinCredentials.Text" xml:space="preserve">
+    <value>Credentials</value>
+  </data>
+  <data name="gbPrivateBinCredentials.ToolTip" xml:space="preserve">
+    <value>Some servers might require additional authorization</value>
+  </data>
+  <data name="&gt;&gt;gbPrivateBinCredentials.Name" xml:space="preserve">
+    <value>gbPrivateBinCredentials</value>
+  </data>
+  <data name="&gt;&gt;gbPrivateBinCredentials.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbPrivateBinCredentials.Parent" xml:space="preserve">
+    <value>tpPrivateBin</value>
+  </data>
+  <data name="&gt;&gt;gbPrivateBinCredentials.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="txtB2CustomUrl.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 256</value>
   </data>
@@ -12081,6 +12210,267 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;tpPastie.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="lblPrivateBinCustomUrl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPrivateBinCustomUrl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPrivateBinCustomUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 16</value>
+  </data>
+  <data name="lblPrivateBinCustomUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 13</value>
+  </data>
+  <data name="lblPrivateBinCustomUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="lblPrivateBinCustomUrl.Text" xml:space="preserve">
+    <value>Custom URL:</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinCustomUrl.Name" xml:space="preserve">
+    <value>lblPrivateBinCustomUrl</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinCustomUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinCustomUrl.Parent" xml:space="preserve">
+    <value>tpPrivateBin</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinCustomUrl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtPrivateBinCustomUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 32</value>
+  </data>
+  <data name="txtPrivateBinCustomUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 20</value>
+  </data>
+  <data name="txtPrivateBinCustomUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinCustomUrl.Name" xml:space="preserve">
+    <value>txtPrivateBinCustomUrl</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinCustomUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinCustomUrl.Parent" xml:space="preserve">
+    <value>tpPrivateBin</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinCustomUrl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblPrivateBinExpiration.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPrivateBinExpiration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPrivateBinExpiration.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 64</value>
+  </data>
+  <data name="lblPrivateBinExpiration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblPrivateBinExpiration.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lblPrivateBinExpiration.Text" xml:space="preserve">
+    <value>Expiration:</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinExpiration.Name" xml:space="preserve">
+    <value>lblPrivateBinExpiration</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinExpiration.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinExpiration.Parent" xml:space="preserve">
+    <value>tpPrivateBin</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinExpiration.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbPrivateBinExpiration.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 80</value>
+  </data>
+  <data name="cbPrivateBinExpiration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 21</value>
+  </data>
+  <data name="cbPrivateBinExpiration.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;cbPrivateBinExpiration.Name" xml:space="preserve">
+    <value>cbPrivateBinExpiration</value>
+  </data>
+  <data name="&gt;&gt;cbPrivateBinExpiration.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPrivateBinExpiration.Parent" xml:space="preserve">
+    <value>tpPrivateBin</value>
+  </data>
+  <data name="&gt;&gt;cbPrivateBinExpiration.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblPrivateBinFormat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPrivateBinFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPrivateBinFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 113</value>
+  </data>
+  <data name="lblPrivateBinFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="lblPrivateBinFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lblPrivateBinFormat.Text" xml:space="preserve">
+    <value>Format:</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinFormat.Name" xml:space="preserve">
+    <value>lblPrivateBinFormat</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinFormat.Parent" xml:space="preserve">
+    <value>tpPrivateBin</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinFormat.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbPrivateBinFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 129</value>
+  </data>
+  <data name="cbPrivateBinFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 21</value>
+  </data>
+  <data name="cbPrivateBinFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;cbPrivateBinFormat.Name" xml:space="preserve">
+    <value>cbPrivateBinFormat</value>
+  </data>
+  <data name="&gt;&gt;cbPrivateBinFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPrivateBinFormat.Parent" xml:space="preserve">
+    <value>tpPrivateBin</value>
+  </data>
+  <data name="&gt;&gt;cbPrivateBinFormat.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblPrivateBinPastePassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPrivateBinPastePassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPrivateBinPastePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 162</value>
+  </data>
+  <data name="lblPrivateBinPastePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="lblPrivateBinPastePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblPrivateBinPastePassword.Text" xml:space="preserve">
+    <value>Paste password:</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinPastePassword.Name" xml:space="preserve">
+    <value>lblPrivateBinPastePassword</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinPastePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinPastePassword.Parent" xml:space="preserve">
+    <value>tpPrivateBin</value>
+  </data>
+  <data name="&gt;&gt;lblPrivateBinPastePassword.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtPrivateBinPastePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 178</value>
+  </data>
+  <data name="txtPrivateBinPastePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 20</value>
+  </data>
+  <data name="txtPrivateBinPastePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinPastePassword.Name" xml:space="preserve">
+    <value>txtPrivateBinPastePassword</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinPastePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinPastePassword.Parent" xml:space="preserve">
+    <value>tpPrivateBin</value>
+  </data>
+  <data name="&gt;&gt;txtPrivateBinPastePassword.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cbPrivateBinBurnAfterReading.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbPrivateBinBurnAfterReading.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbPrivateBinBurnAfterReading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 207</value>
+  </data>
+  <data name="cbPrivateBinBurnAfterReading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 19</value>
+  </data>
+  <data name="cbPrivateBinBurnAfterReading.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="cbPrivateBinBurnAfterReading.Text" xml:space="preserve">
+    <value>Burn after reading</value>
+  </data>
+  <data name="&gt;&gt;cbPrivateBinBurnAfterReading.Name" xml:space="preserve">
+    <value>cbPrivateBinBurnAfterReading</value>
+  </data>
+  <data name="&gt;&gt;cbPrivateBinBurnAfterReading.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPrivateBinBurnAfterReading.Parent" xml:space="preserve">
+    <value>tpPrivateBin</value>
+  </data>
+  <data name="&gt;&gt;cbPrivateBinBurnAfterReading.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpPrivateBin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpPrivateBin.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpPrivateBin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>803, 543</value>
+  </data>
+  <data name="tpPrivateBin.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="tpPrivateBin.Text" xml:space="preserve">
+    <value>PrivateBin</value>
+  </data>
+  <data name="&gt;&gt;tpPrivateBin.Name" xml:space="preserve">
+    <value>tpPrivateBin</value>
+  </data>
+  <data name="&gt;&gt;tpPrivateBin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpPrivateBin.Parent" xml:space="preserve">
+    <value>tcTextUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpPrivateBin.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="tcTextUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

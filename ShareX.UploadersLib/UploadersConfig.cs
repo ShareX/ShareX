@@ -140,6 +140,12 @@ namespace ShareX.UploadersLib
 
         #endregion Pastie
 
+        #region PrivateBin
+
+        public PrivateBinSettings PrivateBinSettings { get; set; } = new PrivateBinSettings();
+
+        #endregion PrivateBin
+
         #endregion Text uploaders
 
         #region File uploaders

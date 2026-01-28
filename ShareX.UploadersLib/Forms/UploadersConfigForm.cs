@@ -312,6 +312,20 @@ namespace ShareX.UploadersLib
             cbPastieIsPublic.Checked = Config.PastieIsPublic;
 
             #endregion Pastie
+
+            #region PrivateBin
+
+            txtPrivateBinUsername.Text = Config.PrivateBinSettings.Username;
+            txtPrivateBinPassword.Text = Config.PrivateBinSettings.Password;
+            txtPrivateBinPastePassword.Text = Config.PrivateBinSettings.PastePassword;
+            txtPrivateBinCustomUrl.Text = Config.PrivateBinSettings.CustomUrl;
+            cbPrivateBinExpiration.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<PrivateBinExpiration>());
+            cbPrivateBinExpiration.SelectedIndex = (int)Config.PrivateBinSettings.Expiration;
+            cbPrivateBinFormat.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<PrivateBinFormat>());
+            cbPrivateBinFormat.SelectedIndex = (int)Config.PrivateBinSettings.Format;
+            cbPrivateBinBurnAfterReading.Checked = Config.PrivateBinSettings.BurnAfterReading;
+
+            #endregion PrivateBin
         }
 
         private void LoadFileUploaderSettings()
@@ -1123,6 +1137,45 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Pastie
+
+        #region PrivateBin
+
+        private void txtPrivateBinUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.PrivateBinSettings.Username = txtPrivateBinUsername.Text;
+        }
+
+        private void txtPrivateBinPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.PrivateBinSettings.Password = txtPrivateBinPassword.Text;
+        }
+
+        private void txtPrivateBinCustomUrl_TextChanged(object sender, EventArgs e)
+        {
+            Config.PrivateBinSettings.CustomUrl = txtPrivateBinCustomUrl.Text;
+        }
+
+        private void txtPrivateBinPastePassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.PrivateBinSettings.PastePassword = txtPrivateBinPastePassword.Text;
+        }
+
+        private void cbPrivateBinExpiration_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.PrivateBinSettings.Expiration = (PrivateBinExpiration)cbPrivateBinExpiration.SelectedIndex;
+        }
+
+        private void cbPrivateBinFormat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.PrivateBinSettings.Format = (PrivateBinFormat)cbPrivateBinFormat.SelectedIndex;
+        }
+
+        private void cbPrivateBinBurnAfterReading_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.PrivateBinSettings.BurnAfterReading = cbPrivateBinBurnAfterReading.Checked;
+        }
+
+        #endregion PrivateBin
 
         #endregion Text uploaders
 
