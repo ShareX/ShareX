@@ -3866,7 +3866,7 @@
     <value>149, 19</value>
   </data>
   <data name="cbRegionCaptureIsFixedSize.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>29</value>
   </data>
   <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
     <value>Fixed size region mode:</value>
@@ -3883,6 +3883,36 @@
   <data name="&gt;&gt;cbRegionCaptureIsFixedSize.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="cbRegionCaptureShowCenterCrosshair.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRegionCaptureShowCenterCrosshair.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbRegionCaptureShowCenterCrosshair.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 368</value>
+  </data>
+  <data name="cbRegionCaptureShowCenterCrosshair.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 19</value>
+  </data>
+  <data name="cbRegionCaptureShowCenterCrosshair.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="cbRegionCaptureShowCenterCrosshair.Text" xml:space="preserve">
+    <value>Show center crosshair</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureShowCenterCrosshair.Name" xml:space="preserve">
+    <value>cbRegionCaptureShowCenterCrosshair</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureShowCenterCrosshair.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureShowCenterCrosshair.Parent" xml:space="preserve">
+    <value>tpRegionCapture</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureShowCenterCrosshair.ZOrder" xml:space="preserve">
+    <value>99</value>
+  </data>
   <data name="cbRegionCaptureShowCrosshair.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3890,13 +3920,13 @@
     <value>NoControl</value>
   </data>
   <data name="cbRegionCaptureShowCrosshair.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 368</value>
+    <value>153, 368</value>
   </data>
   <data name="cbRegionCaptureShowCrosshair.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 19</value>
   </data>
   <data name="cbRegionCaptureShowCrosshair.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>28</value>
   </data>
   <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
     <value>Show screen wide crosshair</value>

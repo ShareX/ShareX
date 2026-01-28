@@ -1030,8 +1030,11 @@ namespace ShareX.ScreenCaptureLib
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 15, 100);
                 }
 
-                g.DrawCross(Pens.Black, ShapeManager.CurrentRectangle.Center().Add(-1, -1), 10);
-                g.DrawCross(Pens.White, ShapeManager.CurrentRectangle.Center(), 10);
+                if (Options.ShowCenterCrosshair)
+                {
+                    g.DrawCross(Pens.Black, ShapeManager.CurrentRectangle.Center().Add(-1, -1), 10);
+                    g.DrawCross(Pens.White, ShapeManager.CurrentRectangle.Center(), 10);
+                }
 
                 DrawRegionArea(g, ShapeManager.CurrentRectangle, true);
             }

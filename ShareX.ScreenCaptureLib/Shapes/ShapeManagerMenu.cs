@@ -1029,6 +1029,12 @@ namespace ShareX.ScreenCaptureLib
             tslnudMagnifierPixelSize.Content.ValueChanged = (sender, e) => Options.MagnifierPixelSize = (int)tslnudMagnifierPixelSize.Content.Value;
             tsddbOptions.DropDownItems.Add(tslnudMagnifierPixelSize);
 
+            ToolStripMenuItem tsmiShowCenterCrosshair = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_center_crosshair);
+            tsmiShowCenterCrosshair.Checked = Options.ShowCenterCrosshair;
+            tsmiShowCenterCrosshair.CheckOnClick = true;
+            tsmiShowCenterCrosshair.Click += (sender, e) => Options.ShowCenterCrosshair = tsmiShowCenterCrosshair.Checked;
+            tsddbOptions.DropDownItems.Add(tsmiShowCenterCrosshair);
+
             ToolStripMenuItem tsmiShowCrosshair = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_screen_wide_crosshair);
             tsmiShowCrosshair.Checked = Options.ShowCrosshair;
             tsmiShowCrosshair.CheckOnClick = true;

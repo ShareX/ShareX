@@ -319,6 +319,7 @@ namespace ShareX
             nudRegionCaptureMagnifierPixelSize.Minimum = RegionCaptureOptions.MagnifierPixelSizeMinimum;
             nudRegionCaptureMagnifierPixelSize.Maximum = RegionCaptureOptions.MagnifierPixelSizeMaximum;
             nudRegionCaptureMagnifierPixelSize.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.MagnifierPixelSize);
+            cbRegionCaptureShowCenterCrosshair.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowCenterCrosshair;
             cbRegionCaptureShowCrosshair.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowCrosshair;
             cbRegionCaptureIsFixedSize.Checked = TaskSettings.CaptureSettings.SurfaceOptions.IsFixedSize;
             nudRegionCaptureFixedSizeWidth.Enabled = nudRegionCaptureFixedSizeHeight.Enabled = TaskSettings.CaptureSettings.SurfaceOptions.IsFixedSize;
@@ -1255,6 +1256,11 @@ namespace ShareX
             {
                 TaskSettings.CaptureSettings.SurfaceOptions.MagnifierPixelSize = (int)nudRegionCaptureMagnifierPixelSize.Value;
             }
+        }
+
+        private void cbRegionCaptureShowCenterCrosshair_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.SurfaceOptions.ShowCenterCrosshair = cbRegionCaptureShowCenterCrosshair.Checked;
         }
 
         private void cbRegionCaptureShowCrosshair_CheckedChanged(object sender, EventArgs e)
