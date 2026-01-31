@@ -754,7 +754,7 @@
     <value>Hash-Überprüfung...</value>
   </data>
   <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
-    <value>Zwischenablage-Viewer...</value>
+    <value>Zwischenablage-Betrachter...</value>
   </data>
   <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
     <value>Randloses Fenster...</value>
@@ -775,7 +775,7 @@
     <value>Hash-Überprüfung...</value>
   </data>
   <data name="tsmiClipboardViewer.Text" xml:space="preserve">
-    <value>Zwischenanlage-Viewer...</value>
+    <value>Zwischenablage-Betrachter...</value>
   </data>
   <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
     <value>Randloses Fenster...</value>

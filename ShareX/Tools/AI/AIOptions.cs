@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2025 ShareX Team
+    Copyright (c) 2007-2026 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,13 +27,33 @@ using ShareX.HelpersLib;
 
 namespace ShareX
 {
+    public enum AIProvider
+    {
+        OpenAI,
+        Gemini,
+        OpenRouter,
+        Custom
+    }
+
     public class AIOptions
     {
-        public string Model { get; set; } = "gpt-5-mini";
+        public AIProvider Provider { get; set; } = AIProvider.OpenAI;
+
         [JsonEncrypt]
-        public string ChatGPTAPIKey { get; set; }
-        public string ReasoningEffort { get; set; } = "minimal";
-        public string Verbosity { get; set; } = "medium";
+        public string OpenAIAPIKey { get; set; }
+        public string OpenAIModel { get; set; } = "gpt-5-mini";
+        public string OpenAICustomURL { get; set; }
+        public string OpenAIReasoningEffort { get; set; } = "minimal";
+        public string OpenAIVerbosity { get; set; } = "medium";
+
+        [JsonEncrypt]
+        public string GeminiAPIKey { get; set; }
+        public string GeminiModel { get; set; } = "gemini-1.5-flash-latest";
+
+        [JsonEncrypt]
+        public string OpenRouterAPIKey { get; set; }
+        public string OpenRouterModel { get; set; } = "google/gemini-flash-1.5";
+
         public string Input { get; set; } = "What is in this image?";
         public bool AutoStartRegion { get; set; } = true;
         public bool AutoStartAnalyze { get; set; } = true;

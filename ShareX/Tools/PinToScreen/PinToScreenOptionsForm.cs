@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2025 ShareX Team
+    Copyright (c) 2007-2026 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -62,6 +62,7 @@ namespace ShareX
             btnBorderColor.Color = Options.BorderColor;
             nudMinimizeSizeWidth.SetValue(Options.MinimizeSize.Width);
             nudMinimizeSizeHeight.SetValue(Options.MinimizeSize.Height);
+            nudScaleStep.SetValue(Options.ScaleStep);
         }
 
         private void SaveOptions()
@@ -75,6 +76,7 @@ namespace ShareX
             Options.BorderSize = (int)nudBorderSize.Value;
             Options.BorderColor = btnBorderColor.Color;
             Options.MinimizeSize = new Size((int)nudMinimizeSizeWidth.Value, (int)nudMinimizeSizeHeight.Value);
+            Options.ScaleStep = (int)nudScaleStep.Value;
         }
 
         private void btnOK_Click(object sender, EventArgs e)

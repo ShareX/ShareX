@@ -1,4 +1,4 @@
-﻿namespace ShareX
+namespace ShareX
 {
     partial class AIForm
     {
@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AIForm));
             lblInput = new System.Windows.Forms.Label();
+            txtInput = new System.Windows.Forms.TextBox();
+            cmsPresets = new System.Windows.Forms.ContextMenuStrip(components);
             lblImage = new System.Windows.Forms.Label();
             txtImage = new System.Windows.Forms.TextBox();
-            btnAnalyze = new System.Windows.Forms.Button();
-            lblResult = new System.Windows.Forms.Label();
-            txtResult = new System.Windows.Forms.TextBox();
             btnImageBrowse = new System.Windows.Forms.Button();
             pbImage = new ShareX.HelpersLib.MyPictureBox();
-            cbInput = new System.Windows.Forms.ComboBox();
-            lblTimer = new System.Windows.Forms.Label();
+            btnAnalyze = new System.Windows.Forms.Button();
             btnCapture = new System.Windows.Forms.Button();
+            lblResult = new System.Windows.Forms.Label();
+            lblTimer = new System.Windows.Forms.Label();
+            txtResult = new System.Windows.Forms.TextBox();
             btnResultCopy = new System.Windows.Forms.Button();
             btnOptions = new System.Windows.Forms.Button();
             SuspendLayout();
@@ -48,6 +50,18 @@
             // 
             resources.ApplyResources(lblInput, "lblInput");
             lblInput.Name = "lblInput";
+            // 
+            // txtInput
+            // 
+            txtInput.ContextMenuStrip = cmsPresets;
+            resources.ApplyResources(txtInput, "txtInput");
+            txtInput.Name = "txtInput";
+            txtInput.TextChanged += txtInput_TextChanged;
+            // 
+            // cmsPresets
+            // 
+            cmsPresets.Name = "cmsPresets";
+            resources.ApplyResources(cmsPresets, "cmsPresets");
             // 
             // lblImage
             // 
@@ -59,24 +73,6 @@
             resources.ApplyResources(txtImage, "txtImage");
             txtImage.Name = "txtImage";
             txtImage.TextChanged += txtImage_TextChanged;
-            // 
-            // btnAnalyze
-            // 
-            resources.ApplyResources(btnAnalyze, "btnAnalyze");
-            btnAnalyze.Name = "btnAnalyze";
-            btnAnalyze.UseVisualStyleBackColor = true;
-            btnAnalyze.Click += btnAnalyze_Click;
-            // 
-            // lblResult
-            // 
-            resources.ApplyResources(lblResult, "lblResult");
-            lblResult.Name = "lblResult";
-            // 
-            // txtResult
-            // 
-            resources.ApplyResources(txtResult, "txtResult");
-            txtResult.Name = "txtResult";
-            txtResult.ReadOnly = true;
             // 
             // btnImageBrowse
             // 
@@ -96,18 +92,12 @@
             pbImage.Name = "pbImage";
             pbImage.PictureBoxBackColor = System.Drawing.SystemColors.Window;
             // 
-            // cbInput
+            // btnAnalyze
             // 
-            cbInput.FormattingEnabled = true;
-            cbInput.Items.AddRange(new object[] { resources.GetString("cbInput.Items"), resources.GetString("cbInput.Items1"), resources.GetString("cbInput.Items2"), resources.GetString("cbInput.Items3") });
-            resources.ApplyResources(cbInput, "cbInput");
-            cbInput.Name = "cbInput";
-            cbInput.TextChanged += cbInput_TextChanged;
-            // 
-            // lblTimer
-            // 
-            resources.ApplyResources(lblTimer, "lblTimer");
-            lblTimer.Name = "lblTimer";
+            resources.ApplyResources(btnAnalyze, "btnAnalyze");
+            btnAnalyze.Name = "btnAnalyze";
+            btnAnalyze.UseVisualStyleBackColor = true;
+            btnAnalyze.Click += btnAnalyze_Click;
             // 
             // btnCapture
             // 
@@ -116,6 +106,22 @@
             btnCapture.Name = "btnCapture";
             btnCapture.UseVisualStyleBackColor = true;
             btnCapture.Click += btnCapture_Click;
+            // 
+            // lblResult
+            // 
+            resources.ApplyResources(lblResult, "lblResult");
+            lblResult.Name = "lblResult";
+            // 
+            // lblTimer
+            // 
+            resources.ApplyResources(lblTimer, "lblTimer");
+            lblTimer.Name = "lblTimer";
+            // 
+            // txtResult
+            // 
+            resources.ApplyResources(txtResult, "txtResult");
+            txtResult.Name = "txtResult";
+            txtResult.ReadOnly = true;
             // 
             // btnResultCopy
             // 
@@ -139,16 +145,16 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             Controls.Add(btnOptions);
             Controls.Add(btnResultCopy);
-            Controls.Add(btnCapture);
             Controls.Add(txtResult);
             Controls.Add(lblTimer);
-            Controls.Add(cbInput);
+            Controls.Add(lblResult);
+            Controls.Add(btnCapture);
+            Controls.Add(btnAnalyze);
             Controls.Add(pbImage);
             Controls.Add(btnImageBrowse);
-            Controls.Add(lblResult);
-            Controls.Add(btnAnalyze);
             Controls.Add(txtImage);
             Controls.Add(lblImage);
+            Controls.Add(txtInput);
             Controls.Add(lblInput);
             Name = "AIForm";
             SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -158,20 +164,23 @@
             DragEnter += AIForm_DragEnter;
             ResumeLayout(false);
             PerformLayout();
+
         }
 
         #endregion
+
         private System.Windows.Forms.Label lblInput;
+        private System.Windows.Forms.TextBox txtInput;
+        private System.Windows.Forms.ContextMenuStrip cmsPresets;
         private System.Windows.Forms.Label lblImage;
         private System.Windows.Forms.TextBox txtImage;
-        private System.Windows.Forms.Button btnAnalyze;
-        private System.Windows.Forms.Label lblResult;
-        private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button btnImageBrowse;
         private HelpersLib.MyPictureBox pbImage;
-        private System.Windows.Forms.ComboBox cbInput;
-        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Button btnAnalyze;
         private System.Windows.Forms.Button btnCapture;
+        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button btnResultCopy;
         private System.Windows.Forms.Button btnOptions;
     }

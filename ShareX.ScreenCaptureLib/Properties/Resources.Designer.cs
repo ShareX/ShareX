@@ -669,6 +669,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap flashlight_shine {
+            get {
+                object obj = ResourceManager.GetObject("flashlight_shine", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap folder_open_image {
             get {
                 object obj = ResourceManager.GetObject("folder_open_image", resourceCulture);

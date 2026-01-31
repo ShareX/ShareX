@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2025 ShareX Team
+    Copyright (c) 2007-2026 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -1223,6 +1223,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.EffectHighlight:
                     shape = new HighlightEffectShape();
                     break;
+                case ShapeType.ToolSpotlight:
+                    shape = new SpotlightTool();
+                    break;
                 case ShapeType.ToolCrop:
                     shape = new CropTool();
                     break;
@@ -1928,9 +1931,16 @@ namespace ShareX.ScreenCaptureLib
             Shapes.Add(shape);
         }
 
-        public void DrawRegionArea(Graphics g, RectangleF rect, bool isAnimated, bool showAreaInfo = false)
+        public void DrawRegionArea(Graphics g, RectangleF rect, bool isAnimated, bool showAreaInfo = false, bool ellipse = false)
         {
-            Form.DrawRegionArea(g, rect, isAnimated);
+            if (ellipse)
+            {
+                Form.DrawRegionAreaEllipse(g, rect, isAnimated);
+            }
+            else
+            {
+                Form.DrawRegionArea(g, rect, isAnimated);
+            }
 
             if (showAreaInfo)
             {
@@ -1959,6 +1969,16 @@ namespace ShareX.ScreenCaptureLib
             {
                 history.CreateCanvasMemento();
                 MoveAll(Form.CanvasRectangle.X - rect.X, Form.CanvasRectangle.Y - rect.Y);
+                UpdateCanvas(bmp);
+            }
+        }
+
+        public void SpotlightArea(RectangleF rect, int dim, int blur, bool ellipse = false)
+        {
+            if (dim > 0 || blur > 0)
+            {
+                history.CreateCanvasMemento();
+                Bitmap bmp = Spotlight(rect.Round(), dim, blur, ellipse);
                 UpdateCanvas(bmp);
             }
         }
@@ -1993,12 +2013,60 @@ namespace ShareX.ScreenCaptureLib
             if (isHorizontal && cropRect.Width > 0)
             {
                 CollapseAllHorizontal(rect.X, rect.Width);
-                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Horizontal, cropRect.X, cropRect.Width, AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize, AnnotationOptions.CutOutBackgroundColor));
+                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Horizontal, cropRect.X, cropRect.Width,
+                    AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize, AnnotationOptions.CutOutBackgroundColor));
             }
             else if (!isHorizontal && cropRect.Height > 0)
             {
                 CollapseAllVertical(rect.Y, rect.Height);
-                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Vertical, cropRect.Y, cropRect.Height, AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize, AnnotationOptions.CutOutBackgroundColor));
+                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Vertical, cropRect.Y, cropRect.Height,
+                    AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize, AnnotationOptions.CutOutBackgroundColor));
+            }
+        }
+
+        public Bitmap Spotlight(Rectangle rect, int dim, int blur, bool ellipse = false)
+        {
+            Bitmap bmp = (Bitmap)Form.Canvas.Clone();
+
+            if (dim > 0)
+            {
+                float value = 1f - dim / 100f;
+                Bitmap bmpDimmed = ColorMatrixManager.Contrast(value).Apply(bmp);
+                bmp.Dispose();
+                bmp = bmpDimmed;
+            }
+
+            if (blur > 0)
+            {
+                ImageHelpers.BoxBlur(bmp, blur);
+            }
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                Bitmap selection = CropImage(rect);
+
+                Rectangle adjustedRect = CaptureHelpers.ScreenToClient(rect);
+                Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location.Round());
+                adjustedRect.X -= offset.X;
+                adjustedRect.Y -= offset.Y;
+                Rectangle cropRect = Rectangle.Intersect(new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height), adjustedRect);
+
+                if (ellipse)
+                {
+                    using (GraphicsPath gp = new GraphicsPath())
+                    {
+                        gp.AddEllipse(cropRect);
+                        g.SetClip(gp);
+                        g.DrawImage(selection, cropRect);
+                        g.ResetClip();
+                    }
+                }
+                else
+                {
+                    g.DrawImage(selection, cropRect);
+                }
+
+                return bmp;
             }
         }
 

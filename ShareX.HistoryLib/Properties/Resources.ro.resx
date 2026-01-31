@@ -117,20 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Filtered" xml:space="preserve">
-    <value>Filtrat</value>
-  </data>
   <data name="HistoryItemCounts" xml:space="preserve">
     <value>Numărătoarea elementelor din istoric:</value>
   </data>
-  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
-    <value>Eroare</value>
+  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
+    <value>URL miniatură</value>
   </data>
-  <data name="HistoryStats_Hosts" xml:space="preserve">
-    <value>Gazde:</value>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>Calea fișierului</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Mai multe informații...</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>Forum (BBCode) imagine</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
     <value>Previzualizare imagine...</value>
@@ -138,8 +135,11 @@
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>Fișier</value>
   </data>
-  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>Filtrat: {0}</value>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>Total: {0}</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>URL scurtat</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
     <value>Link Markdown</value>
@@ -153,44 +153,44 @@
   <data name="Total" xml:space="preserve">
     <value>Total</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>URL</value>
+  <data name="Filtered" xml:space="preserve">
+    <value>Filtrat</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>Numele fișierului</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>Numele fișierului cu extensie</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>Copiați</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Imagine Markdown</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>Forum (BBCode) imagine</value>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>Încărcați fișierul</value>
+  </data>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>Filtrat: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>Imagine HTML</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
-    <value>Markdown legat de imagine</value>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>Copiați</value>
   </data>
   <data name="HistoryForm_Search_Watermark" xml:space="preserve">
     <value>Numele fișierului, titlul ferestrei, numele procesului etc.</value>
   </data>
-  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>Total: {0}</value>
-  </data>
-  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
-    <value>Utilizări anuale:</value>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>Gazde:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Deschideți</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>URL miniatură</value>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>Utilizări anuale:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
     <value>Link HTML</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>Imagine Markdown</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
     <value>Imagine legată în HTML</value>
@@ -198,17 +198,20 @@
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
     <value>Editați imaginea...</value>
   </data>
-  <data name="HistoryStats_Total" xml:space="preserve">
-    <value>Total:</value>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>Eroare</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>Forum (BBCode) imagine legată</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
     <value>URL de ștergere</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>Încărcați fișierul</value>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Denumirile proceselor:</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>Forum (BBCode) imagine legată</value>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Statistici istoric</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Text</value>
@@ -216,25 +219,22 @@
   <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
     <value>Imagine</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>URL scurtat</value>
-  </data>
   <data name="HistoryStats_FileExtensions" xml:space="preserve">
     <value>Extensii de fișiere:</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>Numele fișierului</value>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>Calea fișierului</value>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>Total:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
     <value>Forum (BBCode) link</value>
   </data>
-  <data name="ProcessNames" xml:space="preserve">
-    <value>Denumirile proceselor:</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>Markdown legat de imagine</value>
   </data>
-  <data name="HistoryStats" xml:space="preserve">
-    <value>Statistici istoric</value>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>Mai multe informații...</value>
   </data>
 </root>

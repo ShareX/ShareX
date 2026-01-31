@@ -2,8 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net9.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <UseWindowsForms>true</UseWindowsForms>
-    <Platforms>AnyCPU;ARM64;x64</Platforms>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />

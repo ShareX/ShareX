@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
-    <value>Erro</value>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>Contador de items no histórico:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
     <value>Hiperligação de Miniatura</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>Caminho do ficheiro</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>Hiperligação Imagem para fórum (BBCode)</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
     <value>Pré-visualização de Imagem</value>
@@ -129,50 +135,62 @@
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>Ficheiro</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>Imagem</value>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>Total: {0}</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>Hiperligação encurtada</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
     <value>Hiperligação MarkDown</value>
   </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Erro ao ler o ficheiro de histórico:</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>Pasta</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>Hiperligação</value>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>Nome do ficheiro</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>Nome do ficheiro com extensão</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>Copiar</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Imagem MarkDown</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
-    <value>Imagem HTML</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
-    <value>Hiperligação de imagem MarkDown</value>
-  </data>
-  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>Total: {0}</value>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>Enviar ficheiro</value>
   </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Filtrados: {0}</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
+    <value>Imagem HTML</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>Hospedagem:</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Abrir</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Mais informações...</value>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>Usagem anual:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
     <value>Hiperligação HTML</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>Imagem MarkDown</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
     <value>Hiperligação Imagem HTML</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>Editar imagem...</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>Erro</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
     <value>Hiperligação Imagem direta para fórum (BBCode)</value>
@@ -180,46 +198,28 @@
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
     <value>Hiperligação de remoção</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>Hiperligação Imagem para fórum (BBCode)</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Texto</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>Hiperligação encurtada</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>Nome do ficheiro</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>Caminho do ficheiro</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>Hiperligação para fórum (BBCode)</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>Enviar ficheiro</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
-    <value>Editar imagem...</value>
-  </data>
-  <data name="HistoryItemCounts" xml:space="preserve">
-    <value>Contador de items no histórico:</value>
-  </data>
-  <data name="HistoryStats_Total" xml:space="preserve">
-    <value>Total:</value>
-  </data>
-  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
-    <value>Usagem anual:</value>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>Imagem</value>
   </data>
   <data name="HistoryStats_FileExtensions" xml:space="preserve">
     <value>Extensões de ficheiro:</value>
   </data>
-  <data name="HistoryStats_Hosts" xml:space="preserve">
-    <value>Hospedagem:</value>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>Hiperligação</value>
   </data>
-  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
-    <value>Erro ao ler o ficheiro de histórico:</value>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>Hiperligação para fórum (BBCode)</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>Hiperligação de imagem MarkDown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>Mais informações...</value>
   </data>
 </root>

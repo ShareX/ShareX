@@ -117,20 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>Szűrve: {0}</value>
+  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
+    <value>Előnézet URL</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>Fájl elérési útvonal</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>Fórum (BBkód) kép</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
+    <value>Kép előnézet</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>Fájl</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
     <value>Összesen: {0}</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>Másolás</value>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>Rövidített URL</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>Törlési URL</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
-    <value>Fájl</value>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>Mappa</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
     <value>Fájlnév</value>
@@ -138,23 +147,17 @@
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>Fájlnév kiterjesztéssel</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>Fájl elérési útvonal</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
-    <value>Mappa</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>Fórum (BBkód) kép</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>Fórum (BBkód) link</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>Fórum (BBkód) linkelt kép</value>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>Szűrve: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>HTML kép</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>Másolás</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>Megnyitás</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
     <value>HTML link</value>
@@ -162,28 +165,25 @@
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
     <value>HTML linkelt kép</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>Kép</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>Fórum (BBkód) linkelt kép</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Kép előnézet</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Bővebb infó</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
-    <value>Megnyitás</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>Rövidített URL</value>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>Törlési URL</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Szöveg</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>Előnézet URL</value>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>Kép</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>URL</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>Fórum (BBkód) link</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>Bővebb infó</value>
   </data>
 </root>

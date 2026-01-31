@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2025 ShareX Team
+    Copyright (c) 2007-2026 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -73,7 +73,33 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Resize(int x, int y, bool fromBottomRight)
         {
-            Move(x, y);
+            RotateFlipType rotateFlipType = RotateFlipType.RotateNoneFlipNone;
+
+            if (x > 0)
+            {
+                rotateFlipType = RotateFlipType.Rotate90FlipNone;
+            }
+            else if (x < 0)
+            {
+                rotateFlipType = RotateFlipType.Rotate270FlipNone;
+            }
+            else if (y > 0)
+            {
+                rotateFlipType = RotateFlipType.RotateNoneFlipX;
+            }
+            else if (y < 0)
+            {
+                rotateFlipType = RotateFlipType.RotateNoneFlipY;
+            }
+
+            if (rotateFlipType != RotateFlipType.RotateNoneFlipNone)
+            {
+                PointF center = new PointF(Rectangle.X + Rectangle.Width / 2, Rectangle.Y + Rectangle.Height / 2);
+                Bitmap flippedBmp = (Bitmap)Image.Clone();
+                flippedBmp.RotateFlip(rotateFlipType);
+                SetImage(flippedBmp, true);
+                Rectangle = new RectangleF(center.X - flippedBmp.Width / 2, center.Y - flippedBmp.Height / 2, flippedBmp.Width, flippedBmp.Height);
+            }
         }
 
         private bool OpenStickerForm()

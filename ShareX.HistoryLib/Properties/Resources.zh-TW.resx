@@ -53,6 +53,7 @@
     value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
+
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
@@ -116,20 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>已篩選: {0}</value>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>歷史項目總數：</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
+    <value>縮圖網址</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>檔案路徑</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>論壇 (BBCode) 圖片</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
+    <value>圖片預覽...</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>檔案</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
     <value>總計: {0}</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>複製</value>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>縮網址</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>刪除網址</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
+    <value>Markdown 連結</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
-    <value>檔案</value>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>讀取歷史記錄檔時發生錯誤：</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>資料夾</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>總計</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>已篩選</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
     <value>檔名</value>
@@ -137,23 +162,35 @@
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>含副檔名的檔名</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>檔案路徑</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Markdown 圖片</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
-    <value>資料夾</value>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>上傳檔案</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>論壇 (BBCode) 圖片</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>論壇 (BBCode) 連結</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>論壇 (BBCode) 圖片連結</value>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>已篩選: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>HTML 圖片</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>檔名、視窗標題、處理程序名稱等</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>主機：</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>釘選至螢幕</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>開啟</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>年用量：</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
     <value>HTML 連結</value>
@@ -161,82 +198,46 @@
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
     <value>HTML 圖片連結</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>圖片</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>圖片預覽...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>更多資訊...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
-    <value>開啟</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>縮網址</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>文字</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>縮圖網址</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>網址</value>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>編輯圖片...</value>
   </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>錯誤</value>
   </data>
-  <data name="HistoryItemCounts" xml:space="preserve">
-    <value>歷史項目總數：</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>論壇 (BBCode) 圖片連結</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
-    <value>編輯圖片...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>Markdown 圖片</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
-    <value>Markdown 連結</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
-    <value>Markdown 圖片連結</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>上傳檔案</value>
-  </data>
-  <data name="HistoryStats_FileExtensions" xml:space="preserve">
-    <value>副檔名：</value>
-  </data>
-  <data name="HistoryStats_Hosts" xml:space="preserve">
-    <value>主機：</value>
-  </data>
-  <data name="HistoryStats_Total" xml:space="preserve">
-    <value>總計：</value>
-  </data>
-  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
-    <value>年用量：</value>
-  </data>
-  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
-    <value>讀取歷史記錄檔時發生錯誤：</value>
-  </data>
-  <data name="Filtered" xml:space="preserve">
-    <value>已篩選</value>
-  </data>
-  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
-    <value>檔名、視窗標題、處理程序名稱等</value>
-  </data>
-  <data name="HistoryStats" xml:space="preserve">
-    <value>歷史記錄統計資料</value>
-  </data>
-  <data name="PinToScreen" xml:space="preserve">
-    <value>釘選至螢幕</value>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>刪除網址</value>
   </data>
   <data name="ProcessNames" xml:space="preserve">
     <value>處理程序名稱：</value>
   </data>
-  <data name="Total" xml:space="preserve">
-    <value>總計</value>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>歷史記錄統計資料</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>文字</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>圖片</value>
+  </data>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>副檔名：</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>網址</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>總計：</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>論壇 (BBCode) 連結</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>Markdown 圖片連結</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>更多資訊...</value>
   </data>
 </root>

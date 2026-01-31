@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2025 ShareX Team
+    Copyright (c) 2007-2026 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -43,7 +43,20 @@ namespace ShareX
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
 
-            cbInput.Text = Options.Input;
+            txtInput.Text = Options.Input;
+
+            // Add preset prompts to context menu
+            AddPresetPrompt("What is in this image?");
+            AddPresetPrompt("Thoroughly describe this image.");
+            AddPresetPrompt("Transcribe the image's text. Do not write anything else.");
+            AddPresetPrompt("Translate this text into English. Do not write anything else.");
+        }
+
+        private void AddPresetPrompt(string prompt)
+        {
+            ToolStripMenuItem item = new ToolStripMenuItem(prompt);
+            item.Click += (s, e) => txtInput.Text = prompt;
+            cmsPresets.Items.Add(item);
         }
 
         public AIForm(string filePath, AIOptions options) : this(options)
@@ -58,8 +71,24 @@ namespace ShareX
 
         private void UpdateControls()
         {
-            btnAnalyze.Enabled = !string.IsNullOrEmpty(Options.ChatGPTAPIKey) && (!string.IsNullOrEmpty(txtImage.Text) || pbImage.Image != null);
+            btnAnalyze.Enabled = IsAPIKeyAvailable() && (!string.IsNullOrEmpty(txtImage.Text) || pbImage.Image != null);
             btnResultCopy.Enabled = !string.IsNullOrEmpty(txtResult.Text);
+        }
+
+        private bool IsAPIKeyAvailable()
+        {
+            switch (Options.Provider)
+            {
+                case AIProvider.OpenAI:
+                case AIProvider.Custom:
+                    return !string.IsNullOrEmpty(Options.OpenAIAPIKey);
+                case AIProvider.Gemini:
+                    return !string.IsNullOrEmpty(Options.GeminiAPIKey);
+                case AIProvider.OpenRouter:
+                    return !string.IsNullOrEmpty(Options.OpenRouterAPIKey);
+                default:
+                    return false;
+            }
         }
 
         private async Task AnalyzeImage()
@@ -67,7 +96,7 @@ namespace ShareX
             txtResult.Clear();
             lblTimer.ResetText();
 
-            if (!string.IsNullOrEmpty(Options.ChatGPTAPIKey) && (!string.IsNullOrEmpty(txtImage.Text) || pbImage.Image != null))
+            if (IsAPIKeyAvailable() && (!string.IsNullOrEmpty(txtImage.Text) || pbImage.Image != null))
             {
                 btnAnalyze.Enabled = false;
                 Cursor = Cursors.WaitCursor;
@@ -78,16 +107,16 @@ namespace ShareX
 
                 try
                 {
-                    ChatGPT chatGPT = new ChatGPT(Options.ChatGPTAPIKey, Options.Model);
+                    IAIProvider provider = AIProviderFactory.GetProvider(Options);
                     string result = null;
                     string imagePath = txtImage.Text;
                     if (!string.IsNullOrEmpty(imagePath))
                     {
-                        result = await chatGPT.AnalyzeImage(imagePath, Options.Input, Options.ReasoningEffort, Options.Verbosity);
+                        result = await provider.AnalyzeImage(imagePath, Options.Input, Options.OpenAIReasoningEffort, Options.OpenAIVerbosity);
                     }
                     else if (pbImage.Image != null)
                     {
-                        result = await chatGPT.AnalyzeImage(pbImage.Image, Options.Input, Options.ReasoningEffort, Options.Verbosity);
+                        result = await provider.AnalyzeImage(pbImage.Image, Options.Input, Options.OpenAIReasoningEffort, Options.OpenAIVerbosity);
                     }
 
                     if (!string.IsNullOrEmpty(result))
@@ -170,9 +199,9 @@ namespace ShareX
             }
         }
 
-        private void cbInput_TextChanged(object sender, EventArgs e)
+        private void txtInput_TextChanged(object sender, EventArgs e)
         {
-            Options.Input = cbInput.Text;
+            Options.Input = txtInput.Text;
         }
 
         private void txtImage_TextChanged(object sender, EventArgs e)

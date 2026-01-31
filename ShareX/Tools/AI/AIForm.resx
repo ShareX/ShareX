@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
     Microsoft ResX Schema
@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblInput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 56</value>
+    <value>16, 51</value>
   </data>
   <data name="lblInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 16</value>
@@ -144,13 +144,53 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblInput.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <metadata name="cmsPresets.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="cmsPresets.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 4</value>
+  </data>
+  <data name="&gt;&gt;cmsPresets.Name" xml:space="preserve">
+    <value>cmsPresets</value>
+  </data>
+  <data name="&gt;&gt;cmsPresets.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtInput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 70</value>
+  </data>
+  <data name="txtInput.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtInput.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="txtInput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 80</value>
+  </data>
+  <data name="txtInput.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtInput.Name" xml:space="preserve">
+    <value>txtInput</value>
+  </data>
+  <data name="&gt;&gt;txtInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtInput.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtInput.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
   <data name="lblImage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 112</value>
+    <value>16, 153</value>
   </data>
   <data name="lblImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 16</value>
@@ -174,7 +214,7 @@
     <value>11</value>
   </data>
   <data name="txtImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>16, 172</value>
   </data>
   <data name="txtImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 22</value>
@@ -193,6 +233,52 @@
   </data>
   <data name="&gt;&gt;txtImage.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="btnImageBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 170</value>
+  </data>
+  <data name="btnImageBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 26</value>
+  </data>
+  <data name="btnImageBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnImageBrowse.Name" xml:space="preserve">
+    <value>btnImageBrowse</value>
+  </data>
+  <data name="&gt;&gt;btnImageBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnImageBrowse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnImageBrowse.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="pbImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 200</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pbImage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="pbImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 234</value>
+  </data>
+  <data name="pbImage.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;pbImage.Name" xml:space="preserve">
+    <value>pbImage</value>
+  </data>
+  <data name="&gt;&gt;pbImage.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pbImage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pbImage.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="btnAnalyze.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -219,7 +305,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAnalyze.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
+  </data>
+  <data name="btnCapture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 440</value>
+  </data>
+  <data name="btnCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="btnCapture.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;btnCapture.Name" xml:space="preserve">
+    <value>btnCapture</value>
+  </data>
+  <data name="&gt;&gt;btnCapture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCapture.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCapture.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="lblResult.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -246,120 +353,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblResult.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtResult.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="txtResult.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="txtResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 40</value>
-  </data>
-  <data name="txtResult.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtResult.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="txtResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>608, 560</value>
-  </data>
-  <data name="txtResult.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;txtResult.Name" xml:space="preserve">
-    <value>txtResult</value>
-  </data>
-  <data name="&gt;&gt;txtResult.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtResult.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtResult.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnImageBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 128</value>
-  </data>
-  <data name="btnImageBrowse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 32</value>
-  </data>
-  <data name="btnImageBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;btnImageBrowse.Name" xml:space="preserve">
-    <value>btnImageBrowse</value>
-  </data>
-  <data name="&gt;&gt;btnImageBrowse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnImageBrowse.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnImageBrowse.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="pbImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 168</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pbImage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="pbImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 264</value>
-  </data>
-  <data name="pbImage.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;pbImage.Name" xml:space="preserve">
-    <value>pbImage</value>
-  </data>
-  <data name="&gt;&gt;pbImage.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pbImage.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbImage.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="cbInput.Items" xml:space="preserve">
-    <value>What is in this image?</value>
-  </data>
-  <data name="cbInput.Items1" xml:space="preserve">
-    <value>Thoroughly describe this image.</value>
-  </data>
-  <data name="cbInput.Items2" xml:space="preserve">
-    <value>Transcribe the image's text. Do not write anything else.</value>
-  </data>
-  <data name="cbInput.Items3" xml:space="preserve">
-    <value>Translate this text into English. Do not write anything else.</value>
-  </data>
-  <data name="cbInput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
-  </data>
-  <data name="cbInput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 24</value>
-  </data>
-  <data name="cbInput.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbInput.Name" xml:space="preserve">
-    <value>cbInput</value>
-  </data>
-  <data name="&gt;&gt;cbInput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInput.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cbInput.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="lblTimer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="lblTimer.Location" type="System.Drawing.Point, System.Drawing">
     <value>744, 12</value>
@@ -368,7 +365,7 @@
     <value>168, 24</value>
   </data>
   <data name="lblTimer.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="lblTimer.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -385,26 +382,38 @@
   <data name="&gt;&gt;lblTimer.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="btnCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 440</value>
+  <data name="txtResult.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="btnCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 32</value>
+  <data name="txtResult.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
-  <data name="btnCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="txtResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 40</value>
   </data>
-  <data name="&gt;&gt;btnCapture.Name" xml:space="preserve">
-    <value>btnCapture</value>
+  <data name="txtResult.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;btnCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtResult.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
   </data>
-  <data name="&gt;&gt;btnCapture.Parent" xml:space="preserve">
+  <data name="txtResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>608, 432</value>
+  </data>
+  <data name="txtResult.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtResult.Name" xml:space="preserve">
+    <value>txtResult</value>
+  </data>
+  <data name="&gt;&gt;txtResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtResult.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnCapture.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;txtResult.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="btnResultCopy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -413,7 +422,7 @@
     <value>False</value>
   </data>
   <data name="btnResultCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>856, 560</value>
+    <value>858, 434</value>
   </data>
   <data name="btnResultCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 32</value>
@@ -431,7 +440,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnResultCopy.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnOptions.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -455,7 +464,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOptions.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -464,7 +473,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>928, 616</value>
+    <value>928, 488</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>

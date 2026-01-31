@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2025 ShareX Team
+    Copyright (c) 2007-2026 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -69,8 +69,12 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (drawCache && cachedEffect != null)
             {
+                g.CompositingMode = CompositingMode.SourceCopy;
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
+
                 g.DrawImage(cachedEffect, RectangleInsideCanvas);
+
+                g.CompositingMode = CompositingMode.SourceOver;
                 g.InterpolationMode = InterpolationMode.Bilinear;
             }
             else
@@ -117,7 +121,11 @@ namespace ShareX.ScreenCaptureLib
                 {
                     ApplyEffect(croppedImage);
 
+                    g.CompositingMode = CompositingMode.SourceCopy;
+
                     g.DrawImage(croppedImage, cropRect);
+
+                    g.CompositingMode = CompositingMode.SourceOver;
                 }
             }
         }

@@ -124,6 +124,6 @@
     <value>Aktualisieren</value>
   </data>
   <data name="btnClearClipboard.Text" xml:space="preserve">
-    <value>Zwischenablage leeren</value>
+    <value>Leeren</value>
   </data>
 </root>

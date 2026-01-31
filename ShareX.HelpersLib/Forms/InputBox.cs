@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2025 ShareX Team
+    Copyright (c) 2007-2026 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -102,28 +102,28 @@ namespace ShareX.HelpersLib
             btnCancel = new Button();
             txtInputText = new TextBox();
             SuspendLayout();
-            // 
+            //
             // btnOK
-            // 
+            //
             resources.ApplyResources(btnOK, "btnOK");
             btnOK.Name = "btnOK";
             btnOK.UseVisualStyleBackColor = true;
             btnOK.Click += btnOK_Click;
-            // 
+            //
             // btnCancel
-            // 
+            //
             resources.ApplyResources(btnCancel, "btnCancel");
             btnCancel.Name = "btnCancel";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
-            // 
+            //
             // txtInputText
-            // 
+            //
             resources.ApplyResources(txtInputText, "txtInputText");
             txtInputText.Name = "txtInputText";
-            // 
+            //
             // InputBox
-            // 
+            //
             AcceptButton = btnOK;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;

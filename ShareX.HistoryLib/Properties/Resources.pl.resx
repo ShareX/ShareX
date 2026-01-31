@@ -117,127 +117,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
-    <value>Wystąpił błąd podczas odczytu pliku historii:</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
-    <value>Otwórz</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>Tekst</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>Link</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>Prześlij plik</value>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>Liczba elementów historii:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
     <value>Link do miniatury</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>Skrócony link</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>Obraz</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Podgląd obrazu...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
-    <value>Folder</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
-    <value>Plik</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>Nazwa pliku</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>Kopiuj</value>
-  </data>
-  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
-    <value>Błąd</value>
-  </data>
-  <data name="HistoryStats_Hosts" xml:space="preserve">
-    <value>Hosty:</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Więcej informacji...</value>
-  </data>
-  <data name="HistoryStats_FileExtensions" xml:space="preserve">
-    <value>Rozszerzenia pliku:</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
-    <value>Edytuj obraz...</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>Ścieżka pliku</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>Nazwa pliku z rozszerzeniem</value>
-  </data>
-  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
-    <value>Nazwa pliku, tytuł okna, nazwa procesu itp.</value>
-  </data>
-  <data name="Filtered" xml:space="preserve">
-    <value>Przefiltrowany</value>
-  </data>
-  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>Filtrowane: {0}</value>
-  </data>
-  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>Łącznie: {0}</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
-    <value>Link markdown</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>Obraz markdown</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
-    <value>Obraz HTML</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>Link HTML</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
     <value>Obraz na forum (BBCode)</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>Link na forum (BBCode)</value>
+  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
+    <value>Podgląd obrazu...</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>Link usuwania</value>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>Plik</value>
   </data>
-  <data name="HistoryItemCounts" xml:space="preserve">
-    <value>Liczba elementów historii:</value>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>Łącznie: {0}</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>Link z obrazem na forum (BBCode)</value>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>Skrócony link</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
-    <value>Link z obrazem HTML</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
+    <value>Link markdown</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
-    <value>Link z obrazem markdown</value>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Wystąpił błąd podczas odczytu pliku historii:</value>
   </data>
-  <data name="HistoryStats" xml:space="preserve">
-    <value>Statystyki historii</value>
-  </data>
-  <data name="HistoryStats_Total" xml:space="preserve">
-    <value>Razem:</value>
-  </data>
-  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
-    <value>Wykorzystanie przez rok:</value>
-  </data>
-  <data name="ProcessNames" xml:space="preserve">
-    <value>Nazwy procesów:</value>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>Folder</value>
   </data>
   <data name="Total" xml:space="preserve">
     <value>Razem</value>
   </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Przefiltrowany</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>Nazwa pliku</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
+    <value>Nazwa pliku z rozszerzeniem</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Obraz markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>Prześlij plik</value>
+  </data>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>Filtrowane: {0}</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
+    <value>Obraz HTML</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>Kopiuj</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>Nazwa pliku, tytuł okna, nazwa procesu itp.</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>Hosty:</value>
+  </data>
   <data name="PinToScreen" xml:space="preserve">
     <value>Przypnij do ekranu</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>Otwórz</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>Wykorzystanie przez rok:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>Link HTML</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
+    <value>Link z obrazem HTML</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>Edytuj obraz...</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>Link z obrazem na forum (BBCode)</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>Link usuwania</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Nazwy procesów:</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Statystyki historii</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>Obraz</value>
+  </data>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>Rozszerzenia pliku:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>Razem:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>Link na forum (BBCode)</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>Link z obrazem markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>Więcej informacji...</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2025 ShareX Team
+    Copyright (c) 2007-2026 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using System.Drawing;
 
@@ -50,26 +49,20 @@ namespace ShareX
                         return ExecuteRegionCapture(taskSettings);
                     }
                 case RegionCaptureType.Light:
-                    if (!RegionCaptureLightForm.LastSelectionRectangle0Based.IsEmpty)
+                    if (!RegionCaptureLightForm.LastScreenSelectionRectangle.IsEmpty)
                     {
-                        using (Bitmap screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
-                        {
-                            Bitmap bmp = ImageHelpers.CropBitmap(screenshot, RegionCaptureLightForm.LastSelectionRectangle0Based);
-                            return new TaskMetadata(bmp);
-                        }
+                        Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(RegionCaptureLightForm.LastScreenSelectionRectangle);
+                        return new TaskMetadata(bmp);
                     }
                     else
                     {
                         return ExecuteRegionCaptureLight(taskSettings);
                     }
                 case RegionCaptureType.Transparent:
-                    if (!RegionCaptureTransparentForm.LastSelectionRectangle0Based.IsEmpty)
+                    if (!RegionCaptureLightForm.LastScreenSelectionRectangle.IsEmpty)
                     {
-                        using (Bitmap screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
-                        {
-                            Bitmap bmp = ImageHelpers.CropBitmap(screenshot, RegionCaptureTransparentForm.LastSelectionRectangle0Based);
-                            return new TaskMetadata(bmp);
-                        }
+                        Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(RegionCaptureLightForm.LastScreenSelectionRectangle);
+                        return new TaskMetadata(bmp);
                     }
                     else
                     {

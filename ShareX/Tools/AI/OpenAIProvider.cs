@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2025 ShareX Team
+    Copyright (c) 2007-2026 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -89,15 +89,17 @@ namespace ShareX
         public string text { get; set; }
     }
 
-    public class ChatGPT
+    public class OpenAIProvider : IAIProvider
     {
         public string APIKey { get; set; }
         public string Model { get; set; }
+        public string CustomURL { get; set; }
 
-        public ChatGPT(string apiKey, string model)
+        public OpenAIProvider(string apiKey, string model, string customURL = null)
         {
             APIKey = apiKey;
             Model = model;
+            CustomURL = customURL;
         }
 
         public async Task<string> AnalyzeImage(string filePath, string input = null, string reasoningEffort = null, string textVerbosity = null)
@@ -129,7 +131,28 @@ namespace ShareX
 
             if (string.IsNullOrEmpty(input))
             {
-                input = "what is in this image?";
+                input = "What is in this image?";
+            }
+
+            if (Model.Equals("gpt-5.2", StringComparison.OrdinalIgnoreCase) ||
+                Model.Equals("gpt-5.1", StringComparison.OrdinalIgnoreCase))
+            {
+                if (reasoningEffort == null || reasoningEffort.Equals("minimal", StringComparison.OrdinalIgnoreCase))
+                {
+                    reasoningEffort = "none";
+                }
+            }
+            else
+            {
+                if (reasoningEffort == null)
+                {
+                    reasoningEffort = "minimal";
+                }
+            }
+
+            if (textVerbosity == null)
+            {
+                textVerbosity = "medium";
             }
 
             ChatGPTRequest request = new ChatGPTRequest()
@@ -137,7 +160,7 @@ namespace ShareX
                 model = Model,
                 reasoning = new ChatGPTReasoning()
                 {
-                    effort = reasoningEffort ?? "medium"
+                    effort = reasoningEffort
                 },
                 input = new ChatGPTInput[]
                 {
@@ -161,7 +184,7 @@ namespace ShareX
                 },
                 text = new ChatGPTText()
                 {
-                    verbosity = textVerbosity ?? "medium"
+                    verbosity = textVerbosity
                 },
                 store = false
             };

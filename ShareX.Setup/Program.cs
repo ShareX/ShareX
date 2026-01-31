@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2025 ShareX Team
+    Copyright (c) 2007-2026 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -119,7 +119,7 @@ namespace ShareX.Setup
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         private const string FFmpegVersion = "8.0";
-        private static string FFmpegDownloadURL = $"https://github.com/ShareX/FFmpeg/releases/download/v{FFmpegVersion}/ffmpeg-{FFmpegVersion}-win64.zip";
+        private static string FFmpegDownloadURL = $"https://github.com/ShareX/FFmpeg/releases/download/v{FFmpegVersion}/ffmpeg-{FFmpegVersion}-win-x64.zip";
         private const string RecorderDevicesVersion = "0.12.10";
         private static string RecorderDevicesDownloadURL = $"https://github.com/ShareX/RecorderDevices/releases/download/v{RecorderDevicesVersion}/recorder-devices-{RecorderDevicesVersion}-setup.exe";
         private const string ExifToolVersion = "13.29";
@@ -151,15 +151,17 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CreateSetup))
             {
+                Console.WriteLine("Compiling setup...");
                 CompileSetup();
             }
 
             if (Job.HasFlag(SetupJobs.CreatePortable))
             {
+                Console.WriteLine("Creating portable version...");
                 SupportedArchitectures.ForEach(arch =>
                 {
                     CreateFolder(GetBinDir(arch), GetPortableOutputDir(arch), arch, SetupJobs.CreatePortable);
-                    
+        
                     CreateZipFile(GetPortableOutputDir(arch), GetPortableZipPath(arch));
                 });
             }
@@ -177,6 +179,7 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CreateSteamFolder))
             {
+                Console.WriteLine("Creating Steam folder...");
                 CreateSteamFolder();
 
                 CreateZipFile(SteamOutputDir, SteamZipPath);
@@ -184,6 +187,7 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
             {
+                Console.WriteLine("Creating Microsoft Store folder...");
                 SupportedArchitectures.ForEach(arch =>
                 {
                     CreateFolder(GetBinDir(arch), GetMicrosoftStoreOutputDir(arch), arch, SetupJobs.CreateMicrosoftStoreFolder);
@@ -238,6 +242,8 @@ namespace ShareX.Setup
             {
                 string parameter = command.Parameter;
 
+                Console.WriteLine("Job Found: " + parameter);
+
                 if (Enum.TryParse(parameter, out SetupJobs job))
                 {
                     Job = job;
@@ -259,7 +265,7 @@ namespace ShareX.Setup
             {
                 Console.WriteLine("Invalid parent directory: " + ParentDir);
 
-                ParentDir = FileHelpers.GetAbsolutePath(@"..\..\..\");
+                ParentDir = FileHelpers.GetAbsolutePath(@"..\..\..\..\");
 
                 if (!File.Exists(SolutionPath))
                 {

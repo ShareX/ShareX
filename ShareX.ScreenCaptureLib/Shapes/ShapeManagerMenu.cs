@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2025 ShareX Team
+    Copyright (c) 2007-2026 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -49,9 +49,10 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiUndo, tsmiRedo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
-            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier, tsmiCutOutBackgroundColor;
+            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier, tsmiCutOutBackgroundColor,
+            tsmiSpotlightEllipse;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
-            tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength, tslnudCutOutEffectSize;
+            tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength, tslnudCutOutEffectSize, tslnudSpotlightDim, tslnudSpotlightBlur;
         private ToolStripLabel tslDragLeft, tslDragRight;
         private ToolStripLabeledComboBox tscbBorderStyle, tscbArrowHeadDirection, tscbImageInterpolationMode, tscbCursorTypes, tscbStepType, tscbCutOutEffectType;
 
@@ -305,6 +306,9 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case ShapeType.EffectHighlight:
                         img = Resources.highlighter_text;
+                        break;
+                    case ShapeType.ToolSpotlight:
+                        img = Resources.flashlight_shine;
                         break;
                     case ShapeType.ToolCrop:
                         img = Resources.image_crop;
@@ -647,6 +651,35 @@ namespace ShareX.ScreenCaptureLib
                 Form.Resume();
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiShadowColor);
+
+            // TODO: Translate
+            tslnudSpotlightDim = new ToolStripLabeledNumericUpDown("Dim:");
+            tslnudSpotlightDim.Content.Minimum = 0;
+            tslnudSpotlightDim.Content.Maximum = 100;
+            tslnudSpotlightDim.Content.ValueChanged = (sender, e) =>
+            {
+                AnnotationOptions.SpotlightDim = (int)tslnudSpotlightDim.Content.Value;
+            };
+            tsddbShapeOptions.DropDownItems.Add(tslnudSpotlightDim);
+
+            // TODO: Translate
+            tslnudSpotlightBlur = new ToolStripLabeledNumericUpDown("Blur:");
+            tslnudSpotlightBlur.Content.Minimum = 0;
+            tslnudSpotlightBlur.Content.Maximum = 100;
+            tslnudSpotlightBlur.Content.ValueChanged = (sender, e) =>
+            {
+                AnnotationOptions.SpotlightBlur = (int)tslnudSpotlightBlur.Content.Value;
+            };
+            tsddbShapeOptions.DropDownItems.Add(tslnudSpotlightBlur);
+
+            // TODO: Translate
+            tsmiSpotlightEllipse = new ToolStripMenuItem("Ellipse shape");
+            tsmiSpotlightEllipse.CheckOnClick = true;
+            tsmiSpotlightEllipse.Click += (sender, e) =>
+            {
+                AnnotationOptions.SpotlightEllipse = tsmiSpotlightEllipse.Checked;
+            };
+            tsddbShapeOptions.DropDownItems.Add(tsmiSpotlightEllipse);
 
             tscbCutOutEffectType = new ToolStripLabeledComboBox(Resources.CutOutEffectType);
             tscbCutOutEffectType.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<CutOutEffectType>());
@@ -1507,6 +1540,10 @@ namespace ShareX.ScreenCaptureLib
 
             tscbArrowHeadDirection.Content.SelectedIndex = (int)AnnotationOptions.ArrowHeadDirection;
 
+            tslnudSpotlightDim.Content.Value = AnnotationOptions.SpotlightDim;
+            tslnudSpotlightBlur.Content.Value = AnnotationOptions.SpotlightBlur;
+            tsmiSpotlightEllipse.Checked = AnnotationOptions.SpotlightEllipse;
+
             tscbCutOutEffectType.Content.SelectedIndex = (int)AnnotationOptions.CutOutEffectType;
 
             tslnudCutOutEffectSize.Content.Value = AnnotationOptions.CutOutEffectSize;
@@ -1536,6 +1573,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingCursor:
                 case ShapeType.EffectBlur:
                 case ShapeType.EffectPixelate:
+                case ShapeType.ToolSpotlight:
                 case ShapeType.ToolCutOut:
                     tsddbShapeOptions.Visible = true;
                     break;
@@ -1625,6 +1663,9 @@ namespace ShareX.ScreenCaptureLib
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
             tsbHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
+            tslnudSpotlightDim.Visible = shapeType == ShapeType.ToolSpotlight;
+            tslnudSpotlightBlur.Visible = shapeType == ShapeType.ToolSpotlight;
+            tsmiSpotlightEllipse.Visible = shapeType == ShapeType.ToolSpotlight;
             tscbCutOutEffectType.Visible = shapeType == ShapeType.ToolCutOut;
             tslnudCutOutEffectSize.Visible = shapeType == ShapeType.ToolCutOut;
             tsmiCutOutBackgroundColor.Visible = shapeType == ShapeType.ToolCutOut;
