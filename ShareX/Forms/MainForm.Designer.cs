@@ -58,6 +58,7 @@
             tsmiAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             tssCapture1 = new System.Windows.Forms.ToolStripSeparator();
             tsmiShowCursor = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiMuteAudio = new System.Windows.Forms.ToolStripMenuItem();
             tsmiScreenshotDelay = new System.Windows.Forms.ToolStripMenuItem();
             tsmiScreenshotDelay0 = new System.Windows.Forms.ToolStripMenuItem();
             tsmiScreenshotDelay1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -214,6 +215,7 @@
             tsmiTrayAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             tssTrayCapture1 = new System.Windows.Forms.ToolStripSeparator();
             tsmiTrayShowCursor = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiTrayMuteAudio = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTrayScreenshotDelay = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTrayScreenshotDelay0 = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTrayScreenshotDelay1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -397,7 +399,7 @@
             // 
             // tsddbCapture
             // 
-            tsddbCapture.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiFullscreen, tsmiWindow, tsmiMonitor, tsmiRectangle, tsmiRectangleLight, tsmiRectangleTransparent, tsmiLastRegion, tsmiScreenRecordingFFmpeg, tsmiScreenRecordingGIF, tsmiScrollingCapture, tsmiAutoCapture, tssCapture1, tsmiShowCursor, tsmiScreenshotDelay });
+            tsddbCapture.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiFullscreen, tsmiWindow, tsmiMonitor, tsmiRectangle, tsmiRectangleLight, tsmiRectangleTransparent, tsmiLastRegion, tsmiScreenRecordingFFmpeg, tsmiScreenRecordingGIF, tsmiScrollingCapture, tsmiAutoCapture, tssCapture1, tsmiShowCursor, tsmiMuteAudio, tsmiScreenshotDelay });
             tsddbCapture.Image = Properties.Resources.camera;
             resources.ApplyResources(tsddbCapture, "tsddbCapture");
             tsddbCapture.Name = "tsddbCapture";
@@ -490,6 +492,14 @@
             tsmiShowCursor.Name = "tsmiShowCursor";
             resources.ApplyResources(tsmiShowCursor, "tsmiShowCursor");
             tsmiShowCursor.Click += tsmiShowCursor_Click;
+            // 
+            // tsmiMuteAudio
+            // 
+            tsmiMuteAudio.CheckOnClick = true;
+            tsmiMuteAudio.Image = Properties.Resources.muted.ToBitmap();
+            tsmiMuteAudio.Name = "tsmiMuteAudio";
+            resources.ApplyResources(tsmiMuteAudio, "tsmiMuteAudio");
+            tsmiMuteAudio.Click += tsmiMuteAudio_Click;
             // 
             // tsmiScreenshotDelay
             // 
@@ -1415,7 +1425,7 @@
             // 
             // tsmiTrayCapture
             // 
-            tsmiTrayCapture.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiTrayFullscreen, tsmiTrayWindow, tsmiTrayMonitor, tsmiTrayRectangle, tsmiTrayRectangleLight, tsmiTrayRectangleTransparent, tsmiTrayLastRegion, tsmiTrayScreenRecordingFFmpeg, tsmiTrayScreenRecordingGIF, tsmiTrayScrollingCapture, tsmiTrayAutoCapture, tssTrayCapture1, tsmiTrayShowCursor, tsmiTrayScreenshotDelay });
+            tsmiTrayCapture.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiTrayFullscreen, tsmiTrayWindow, tsmiTrayMonitor, tsmiTrayRectangle, tsmiTrayRectangleLight, tsmiTrayRectangleTransparent, tsmiTrayLastRegion, tsmiTrayScreenRecordingFFmpeg, tsmiTrayScreenRecordingGIF, tsmiTrayScrollingCapture, tsmiTrayAutoCapture, tssTrayCapture1, tsmiTrayShowCursor, tsmiTrayMuteAudio, tsmiTrayScreenshotDelay });
             tsmiTrayCapture.Image = Properties.Resources.camera;
             tsmiTrayCapture.Name = "tsmiTrayCapture";
             resources.ApplyResources(tsmiTrayCapture, "tsmiTrayCapture");
@@ -1508,6 +1518,14 @@
             tsmiTrayShowCursor.Name = "tsmiTrayShowCursor";
             resources.ApplyResources(tsmiTrayShowCursor, "tsmiTrayShowCursor");
             tsmiTrayShowCursor.Click += tsmiShowCursor_Click;
+            // 
+            // tsmiTrayMuteAudio
+            // 
+            tsmiTrayMuteAudio.CheckOnClick = true;
+            tsmiTrayMuteAudio.Image = Properties.Resources.muted.ToBitmap();
+            tsmiTrayMuteAudio.Name = "tsmiTrayMuteAudio";
+            resources.ApplyResources(tsmiTrayMuteAudio, "tsmiTrayMuteAudio");
+            tsmiTrayMuteAudio.Click += tsmiTrayMuteAudio_Click;
             // 
             // tsmiTrayScreenshotDelay
             // 
@@ -2298,8 +2316,10 @@
         private System.Windows.Forms.ToolStripSeparator tssCopy6;
         private System.Windows.Forms.ToolStripSeparator tssCapture1;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowCursor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMuteAudio;
         private System.Windows.Forms.ToolStripSeparator tssTrayCapture1;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayShowCursor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayMuteAudio;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyImageDimensions;
         private System.Windows.Forms.ToolStripMenuItem tsmiScreenshotDelay;
         private System.Windows.Forms.ToolStripMenuItem tsmiScreenshotDelay0;

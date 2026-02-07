@@ -40,6 +40,7 @@ namespace ShareX.ScreenCaptureLib
         public string UserArgs { get; set; } = "";
         public bool UseCustomCommands { get; set; } = false;
         public string CustomCommands { get; set; } = "";
+        public bool MuteAudio { get; set; } = false;
 
         // Video
         public FFmpegPreset x264_Preset { get; set; } = FFmpegPreset.ultrafast;
@@ -132,7 +133,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsVideoSourceSelected => !string.IsNullOrEmpty(VideoSource);
 
-        public bool IsAudioSourceSelected => !string.IsNullOrEmpty(AudioSource) && (!IsVideoSourceSelected || !IsAnimatedImage);
+        public bool IsAudioSourceSelected => !MuteAudio && !string.IsNullOrEmpty(AudioSource) && (!IsVideoSourceSelected || !IsAnimatedImage);
 
         public bool IsAnimatedImage => VideoCodec == FFmpegVideoCodec.gif || VideoCodec == FFmpegVideoCodec.libwebp || VideoCodec == FFmpegVideoCodec.apng;
 
