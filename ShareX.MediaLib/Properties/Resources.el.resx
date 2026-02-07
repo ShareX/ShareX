@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
+    <value>Δημιουργήθηκαν επιτυχώς μικρογραφίες.</value>
+  </data>
+  <data name="AlignmentTop" xml:space="preserve">
+    <value>Κορυφή</value>
+  </data>
+  <data name="StopEncoding" xml:space="preserve">
+    <value>Διακοπή κωδικοποίησης</value>
+  </data>
+  <data name="HigherQualitySize" xml:space="preserve">
+    <value>Υψηλότερη ποιότητα/μέγεθος</value>
+  </data>
+  <data name="AlignmentBottom" xml:space="preserve">
+    <value>Κάτω μέρος</value>
+  </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>Θα θέλατε να επαναφέρετε τις επιλογές;</value>
+  </data>
+  <data name="AlignmentRight" xml:space="preserve">
+    <value>Δεξιά</value>
+  </data>
+  <data name="StartEncoding" xml:space="preserve">
+    <value>Έναρξη κωδικοποίησης</value>
+  </data>
+  <data name="FFmpegError" xml:space="preserve">
+    <value>Σφάλμα FFmpeg</value>
+  </data>
+  <data name="AlignmentVerticalCenter" xml:space="preserve">
+    <value>Κέντρο</value>
+  </data>
+  <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
+    <value>Αναζήτηση για αρχείο πολυμέσων</value>
+  </data>
+  <data name="AlignmentLeft" xml:space="preserve">
+    <value>Αριστερά</value>
+  </data>
+  <data name="AlignmentHorizontalCenter" xml:space="preserve">
+    <value>Κέντρο</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Επιβεβαίωση</value>
+  </data>
+  <data name="LowerQualitySize" xml:space="preserve">
+    <value>Χαμηλότερη ποιότητα/μέγεθος</value>
+  </data>
+</root>
