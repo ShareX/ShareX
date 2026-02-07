@@ -32,6 +32,7 @@ using ShareX.UploadersLib.URLShorteners;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -235,6 +236,14 @@ namespace ShareX.UploadersLib
             txtVgymeUserKey.Text = Config.VgymeUserKey;
 
             #endregion vgy.me
+
+            #region Immich
+
+            txtImmichAPIKey.Text = Config.ImmichAPIKey;
+            txtImmichUploadURL.Text = Config.ImmichUploadURL;
+            txtImmichDeviceID.Text = Config.ImmichDeviceId;
+                
+            #endregion Immich
         }
 
         private void LoadTextUploaderSettings()
@@ -971,6 +980,29 @@ namespace ShareX.UploadersLib
         }
 
         #endregion vgy.me
+
+        #region Immich
+        private void txtImmichAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.ImmichAPIKey = txtImmichAPIKey.Text;
+        }
+
+        private void llImmichAPIKeyPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL("https://api.immich.app/getting-started");
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Config.ImmichUploadURL = txtImmichUploadURL.Text;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            Config.ImmichDeviceId = txtImmichDeviceID.Text;
+        }
+
+        #endregion Immich
 
         #endregion Image uploaders
 
@@ -2926,5 +2958,9 @@ However, there is a workaround. You can navigate to the Google Drive website in 
         #endregion
 
         #endregion URL shorteners
+
+
+
+        
     }
 }

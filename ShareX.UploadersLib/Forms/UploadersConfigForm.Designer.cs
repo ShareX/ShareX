@@ -62,12 +62,9 @@ namespace ShareX.UploadersLib
             lblPrivateBinUsername = new System.Windows.Forms.Label();
             txtPrivateBinPassword = new System.Windows.Forms.TextBox();
             txtPrivateBinUsername = new System.Windows.Forms.TextBox();
-            txtB2CustomUrl = new System.Windows.Forms.TextBox();
-            cbB2CustomUrl = new System.Windows.Forms.CheckBox();
-            txtB2Bucket = new System.Windows.Forms.TextBox();
-            txtB2UploadPath = new System.Windows.Forms.TextBox();
-            txtB2ApplicationKey = new System.Windows.Forms.TextBox();
-            txtB2ApplicationKeyId = new System.Windows.Forms.TextBox();
+            btnCopyShowFiles = new System.Windows.Forms.Button();
+            tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            actRapidShareAccountType = new AccountTypeControl();
             tpURLShorteners = new System.Windows.Forms.TabPage();
             tcURLShorteners = new System.Windows.Forms.TabControl();
             tpBitly = new System.Windows.Forms.TabPage();
@@ -282,11 +279,17 @@ namespace ShareX.UploadersLib
             tpBackblazeB2 = new System.Windows.Forms.TabPage();
             lblB2UrlPreview = new System.Windows.Forms.Label();
             lblB2ManageLink = new System.Windows.Forms.LinkLabel();
+            txtB2CustomUrl = new System.Windows.Forms.TextBox();
             lblB2UrlPreviewLabel = new System.Windows.Forms.Label();
+            cbB2CustomUrl = new System.Windows.Forms.CheckBox();
             lblB2Bucket = new System.Windows.Forms.Label();
+            txtB2Bucket = new System.Windows.Forms.TextBox();
+            txtB2UploadPath = new System.Windows.Forms.TextBox();
             lblB2UploadPath = new System.Windows.Forms.Label();
+            txtB2ApplicationKey = new System.Windows.Forms.TextBox();
             lblB2ApplicationKey = new System.Windows.Forms.Label();
             lblB2ApplicationKeyId = new System.Windows.Forms.Label();
+            txtB2ApplicationKeyId = new System.Windows.Forms.TextBox();
             tpOwnCloud = new System.Windows.Forms.TabPage();
             cbOwnCloudAppendFileNameToURL = new System.Windows.Forms.CheckBox();
             nudOwnCloudExpiryTime = new System.Windows.Forms.NumericUpDown();
@@ -456,7 +459,6 @@ namespace ShareX.UploadersLib
             nudEmailSmtpPort = new System.Windows.Forms.NumericUpDown();
             lblEmailSmtpPort = new System.Windows.Forms.Label();
             txtEmailDefaultSubject = new System.Windows.Forms.TextBox();
-            btnCopyShowFiles = new System.Windows.Forms.Button();
             tpTextUploaders = new System.Windows.Forms.TabPage();
             tcTextUploaders = new System.Windows.Forms.TabControl();
             tpPastebin = new System.Windows.Forms.TabPage();
@@ -572,9 +574,15 @@ namespace ShareX.UploadersLib
             llVgymeAccountDetailsPage = new System.Windows.Forms.LinkLabel();
             txtVgymeUserKey = new System.Windows.Forms.TextBox();
             lvlVgymeUserKey = new System.Windows.Forms.Label();
+            tpImmich = new System.Windows.Forms.TabPage();
+            txtImmichDeviceID = new System.Windows.Forms.TextBox();
+            label3 = new System.Windows.Forms.Label();
+            txtImmichUploadURL = new System.Windows.Forms.TextBox();
+            label2 = new System.Windows.Forms.Label();
+            llImmichAPIKeyPage = new System.Windows.Forms.LinkLabel();
+            txtImmichAPIKey = new System.Windows.Forms.TextBox();
+            label1 = new System.Windows.Forms.Label();
             tcUploaders = new System.Windows.Forms.TabControl();
-            tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            actRapidShareAccountType = new AccountTypeControl();
             gbPrivateBinCredentials.SuspendLayout();
             tpURLShorteners.SuspendLayout();
             tcURLShorteners.SuspendLayout();
@@ -649,6 +657,7 @@ namespace ShareX.UploadersLib
             gbPhotobucketUserAccount.SuspendLayout();
             tpChevereto.SuspendLayout();
             tpVgyme.SuspendLayout();
+            tpImmich.SuspendLayout();
             tcUploaders.SuspendLayout();
             SuspendLayout();
             // 
@@ -709,43 +718,28 @@ namespace ShareX.UploadersLib
             txtPrivateBinUsername.Name = "txtPrivateBinUsername";
             txtPrivateBinUsername.TextChanged += txtPrivateBinUsername_TextChanged;
             // 
-            // txtB2CustomUrl
+            // btnCopyShowFiles
             // 
-            resources.ApplyResources(txtB2CustomUrl, "txtB2CustomUrl");
-            txtB2CustomUrl.Name = "txtB2CustomUrl";
-            txtB2CustomUrl.TextChanged += txtB2CustomUrl_TextChanged;
+            resources.ApplyResources(btnCopyShowFiles, "btnCopyShowFiles");
+            btnCopyShowFiles.Name = "btnCopyShowFiles";
             // 
-            // cbB2CustomUrl
+            // tttvMain
             // 
-            resources.ApplyResources(cbB2CustomUrl, "cbB2CustomUrl");
-            cbB2CustomUrl.Name = "cbB2CustomUrl";
-            cbB2CustomUrl.UseVisualStyleBackColor = true;
-            cbB2CustomUrl.CheckedChanged += cbB2CustomUrl_CheckedChanged;
+            tttvMain.AutoSelectChild = true;
+            resources.ApplyResources(tttvMain, "tttvMain");
+            tttvMain.ImageList = null;
+            tttvMain.LeftPanelBackColor = System.Drawing.SystemColors.Window;
+            tttvMain.MainTabControl = null;
+            tttvMain.Name = "tttvMain";
+            tttvMain.SeparatorColor = System.Drawing.SystemColors.ControlDark;
+            tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 162);
+            tttvMain.TreeViewSize = 230;
             // 
-            // txtB2Bucket
+            // actRapidShareAccountType
             // 
-            resources.ApplyResources(txtB2Bucket, "txtB2Bucket");
-            txtB2Bucket.Name = "txtB2Bucket";
-            txtB2Bucket.TextChanged += txtB2Bucket_TextChanged;
-            // 
-            // txtB2UploadPath
-            // 
-            resources.ApplyResources(txtB2UploadPath, "txtB2UploadPath");
-            txtB2UploadPath.Name = "txtB2UploadPath";
-            txtB2UploadPath.TextChanged += txtB2UploadPath_TextChanged;
-            // 
-            // txtB2ApplicationKey
-            // 
-            resources.ApplyResources(txtB2ApplicationKey, "txtB2ApplicationKey");
-            txtB2ApplicationKey.Name = "txtB2ApplicationKey";
-            txtB2ApplicationKey.UseSystemPasswordChar = true;
-            txtB2ApplicationKey.TextChanged += txtB2ApplicationKey_TextChanged;
-            // 
-            // txtB2ApplicationKeyId
-            // 
-            resources.ApplyResources(txtB2ApplicationKeyId, "txtB2ApplicationKeyId");
-            txtB2ApplicationKeyId.Name = "txtB2ApplicationKeyId";
-            txtB2ApplicationKeyId.TextChanged += txtB2ApplicationKeyId_TextChanged;
+            resources.ApplyResources(actRapidShareAccountType, "actRapidShareAccountType");
+            actRapidShareAccountType.Name = "actRapidShareAccountType";
+            actRapidShareAccountType.SelectedAccountType = AccountType.Anonymous;
             // 
             // tpURLShorteners
             // 
@@ -2309,20 +2303,52 @@ namespace ShareX.UploadersLib
             lblB2ManageLink.VisitedLinkColor = System.Drawing.Color.Blue;
             lblB2ManageLink.LinkClicked += lblB2ManageLink_LinkClicked;
             // 
+            // txtB2CustomUrl
+            // 
+            resources.ApplyResources(txtB2CustomUrl, "txtB2CustomUrl");
+            txtB2CustomUrl.Name = "txtB2CustomUrl";
+            txtB2CustomUrl.TextChanged += txtB2CustomUrl_TextChanged;
+            // 
             // lblB2UrlPreviewLabel
             // 
             resources.ApplyResources(lblB2UrlPreviewLabel, "lblB2UrlPreviewLabel");
             lblB2UrlPreviewLabel.Name = "lblB2UrlPreviewLabel";
+            // 
+            // cbB2CustomUrl
+            // 
+            resources.ApplyResources(cbB2CustomUrl, "cbB2CustomUrl");
+            cbB2CustomUrl.Name = "cbB2CustomUrl";
+            cbB2CustomUrl.UseVisualStyleBackColor = true;
+            cbB2CustomUrl.CheckedChanged += cbB2CustomUrl_CheckedChanged;
             // 
             // lblB2Bucket
             // 
             resources.ApplyResources(lblB2Bucket, "lblB2Bucket");
             lblB2Bucket.Name = "lblB2Bucket";
             // 
+            // txtB2Bucket
+            // 
+            resources.ApplyResources(txtB2Bucket, "txtB2Bucket");
+            txtB2Bucket.Name = "txtB2Bucket";
+            txtB2Bucket.TextChanged += txtB2Bucket_TextChanged;
+            // 
+            // txtB2UploadPath
+            // 
+            resources.ApplyResources(txtB2UploadPath, "txtB2UploadPath");
+            txtB2UploadPath.Name = "txtB2UploadPath";
+            txtB2UploadPath.TextChanged += txtB2UploadPath_TextChanged;
+            // 
             // lblB2UploadPath
             // 
             resources.ApplyResources(lblB2UploadPath, "lblB2UploadPath");
             lblB2UploadPath.Name = "lblB2UploadPath";
+            // 
+            // txtB2ApplicationKey
+            // 
+            resources.ApplyResources(txtB2ApplicationKey, "txtB2ApplicationKey");
+            txtB2ApplicationKey.Name = "txtB2ApplicationKey";
+            txtB2ApplicationKey.UseSystemPasswordChar = true;
+            txtB2ApplicationKey.TextChanged += txtB2ApplicationKey_TextChanged;
             // 
             // lblB2ApplicationKey
             // 
@@ -2333,6 +2359,12 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(lblB2ApplicationKeyId, "lblB2ApplicationKeyId");
             lblB2ApplicationKeyId.Name = "lblB2ApplicationKeyId";
+            // 
+            // txtB2ApplicationKeyId
+            // 
+            resources.ApplyResources(txtB2ApplicationKeyId, "txtB2ApplicationKeyId");
+            txtB2ApplicationKeyId.Name = "txtB2ApplicationKeyId";
+            txtB2ApplicationKeyId.TextChanged += txtB2ApplicationKeyId_TextChanged;
             // 
             // tpOwnCloud
             // 
@@ -3533,11 +3565,6 @@ namespace ShareX.UploadersLib
             txtEmailDefaultSubject.Name = "txtEmailDefaultSubject";
             txtEmailDefaultSubject.TextChanged += txtDefaultSubject_TextChanged;
             // 
-            // btnCopyShowFiles
-            // 
-            resources.ApplyResources(btnCopyShowFiles, "btnCopyShowFiles");
-            btnCopyShowFiles.Name = "btnCopyShowFiles";
-            // 
             // tpTextUploaders
             // 
             tpTextUploaders.BackColor = System.Drawing.SystemColors.Window;
@@ -3968,6 +3995,7 @@ namespace ShareX.UploadersLib
             tcImageUploaders.Controls.Add(tpPhotobucket);
             tcImageUploaders.Controls.Add(tpChevereto);
             tcImageUploaders.Controls.Add(tpVgyme);
+            tcImageUploaders.Controls.Add(tpImmich);
             resources.ApplyResources(tcImageUploaders, "tcImageUploaders");
             tcImageUploaders.Name = "tcImageUploaders";
             tcImageUploaders.SelectedIndex = 0;
@@ -4365,6 +4393,60 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(lvlVgymeUserKey, "lvlVgymeUserKey");
             lvlVgymeUserKey.Name = "lvlVgymeUserKey";
             // 
+            // tpImmich
+            // 
+            tpImmich.BackColor = System.Drawing.SystemColors.Window;
+            tpImmich.Controls.Add(txtImmichDeviceID);
+            tpImmich.Controls.Add(label3);
+            tpImmich.Controls.Add(txtImmichUploadURL);
+            tpImmich.Controls.Add(label2);
+            tpImmich.Controls.Add(llImmichAPIKeyPage);
+            tpImmich.Controls.Add(txtImmichAPIKey);
+            tpImmich.Controls.Add(label1);
+            resources.ApplyResources(tpImmich, "tpImmich");
+            tpImmich.Name = "tpImmich";
+            // 
+            // txtImmichDeviceID
+            // 
+            resources.ApplyResources(txtImmichDeviceID, "txtImmichDeviceID");
+            txtImmichDeviceID.Name = "txtImmichDeviceID";
+            txtImmichDeviceID.TextChanged += textBox2_TextChanged;
+            // 
+            // label3
+            // 
+            resources.ApplyResources(label3, "label3");
+            label3.Name = "label3";
+            // 
+            // txtImmichUploadURL
+            // 
+            resources.ApplyResources(txtImmichUploadURL, "txtImmichUploadURL");
+            txtImmichUploadURL.Name = "txtImmichUploadURL";
+            txtImmichUploadURL.TextChanged += textBox1_TextChanged;
+            // 
+            // label2
+            // 
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
+            // 
+            // llImmichAPIKeyPage
+            // 
+            resources.ApplyResources(llImmichAPIKeyPage, "llImmichAPIKeyPage");
+            llImmichAPIKeyPage.Name = "llImmichAPIKeyPage";
+            llImmichAPIKeyPage.TabStop = true;
+            llImmichAPIKeyPage.LinkClicked += llImmichAPIKeyPage_LinkClicked;
+            // 
+            // txtImmichAPIKey
+            // 
+            resources.ApplyResources(txtImmichAPIKey, "txtImmichAPIKey");
+            txtImmichAPIKey.Name = "txtImmichAPIKey";
+            txtImmichAPIKey.UseSystemPasswordChar = true;
+            txtImmichAPIKey.TextChanged += txtImmichAPIKey_TextChanged;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
+            // 
             // tcUploaders
             // 
             tcUploaders.Controls.Add(tpImageUploaders);
@@ -4374,24 +4456,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(tcUploaders, "tcUploaders");
             tcUploaders.Name = "tcUploaders";
             tcUploaders.SelectedIndex = 0;
-            // 
-            // tttvMain
-            // 
-            tttvMain.AutoSelectChild = true;
-            resources.ApplyResources(tttvMain, "tttvMain");
-            tttvMain.ImageList = null;
-            tttvMain.LeftPanelBackColor = System.Drawing.SystemColors.Window;
-            tttvMain.MainTabControl = null;
-            tttvMain.Name = "tttvMain";
-            tttvMain.SeparatorColor = System.Drawing.SystemColors.ControlDark;
-            tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 162);
-            tttvMain.TreeViewSize = 230;
-            // 
-            // actRapidShareAccountType
-            // 
-            resources.ApplyResources(actRapidShareAccountType, "actRapidShareAccountType");
-            actRapidShareAccountType.Name = "actRapidShareAccountType";
-            actRapidShareAccountType.SelectedAccountType = AccountType.Anonymous;
             // 
             // UploadersConfigForm
             // 
@@ -4535,6 +4599,8 @@ namespace ShareX.UploadersLib
             tpChevereto.PerformLayout();
             tpVgyme.ResumeLayout(false);
             tpVgyme.PerformLayout();
+            tpImmich.ResumeLayout(false);
+            tpImmich.PerformLayout();
             tcUploaders.ResumeLayout(false);
             ResumeLayout(false);
 
@@ -4545,9 +4611,15 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtRapidSharePremiumUserName;
         private AccountTypeControl actRapidShareAccountType;
         private System.Windows.Forms.ToolTip ttHelpTip;
+        private System.Windows.Forms.Button btnCopyShowFiles;
+        private HelpersLib.TabToTreeView tttvMain;
         private System.Windows.Forms.TabPage tpURLShorteners;
         private System.Windows.Forms.TabControl tcURLShorteners;
+        internal System.Windows.Forms.TabPage tpBitly;
+        private System.Windows.Forms.TextBox txtBitlyDomain;
+        private System.Windows.Forms.Label lblBitlyDomain;
         private OAuthControl oauth2Bitly;
+        internal System.Windows.Forms.TabPage tpYourls;
         private System.Windows.Forms.TextBox txtYourlsPassword;
         private System.Windows.Forms.TextBox txtYourlsUsername;
         private System.Windows.Forms.TextBox txtYourlsSignature;
@@ -4557,19 +4629,152 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblYourlsSignature;
         private System.Windows.Forms.TextBox txtYourlsAPIURL;
         private System.Windows.Forms.Label lblYourlsAPIURL;
+        internal System.Windows.Forms.TabPage tpPolr;
+        private System.Windows.Forms.CheckBox cbPolrUseAPIv1;
+        private System.Windows.Forms.CheckBox cbPolrIsSecret;
+        private System.Windows.Forms.TextBox txtPolrAPIKey;
+        private System.Windows.Forms.Label lblPolrAPIKey;
+        private System.Windows.Forms.TextBox txtPolrAPIHostname;
+        private System.Windows.Forms.Label lblPolrAPIHostname;
+        internal System.Windows.Forms.TabPage tpFirebaseDynamicLinks;
+        private System.Windows.Forms.Label lblFirebaseDomainExample;
+        private System.Windows.Forms.Label lblFirebaseDomain;
+        private System.Windows.Forms.CheckBox cbFirebaseIsShort;
+        private System.Windows.Forms.TextBox txtFirebaseDomain;
+        private System.Windows.Forms.TextBox txtFirebaseWebAPIKey;
+        private System.Windows.Forms.Label lblFirebaseWebAPIKey;
+        internal System.Windows.Forms.TabPage tpKutt;
+        private System.Windows.Forms.TextBox txtKuttDomain;
+        private System.Windows.Forms.Label lblKuttDomain;
+        private System.Windows.Forms.Label lblKuttPassword;
+        private System.Windows.Forms.TextBox txtKuttPassword;
+        private System.Windows.Forms.CheckBox cbKuttReuse;
+        private System.Windows.Forms.TextBox txtKuttAPIKey;
+        private System.Windows.Forms.TextBox txtKuttHost;
+        private System.Windows.Forms.Label lblKuttAPIKey;
+        private System.Windows.Forms.Label lblKuttHost;
+        internal System.Windows.Forms.TabPage tpZeroWidthShortener;
+        private System.Windows.Forms.TextBox txtZWSToken;
+        private System.Windows.Forms.TextBox txtZWSURL;
+        private System.Windows.Forms.Label lblZWSToken;
+        private System.Windows.Forms.Label lblZWSURL;
         internal System.Windows.Forms.TabPage tpFileUploaders;
         private System.Windows.Forms.TabControl tcFileUploaders;
-        private System.Windows.Forms.CheckBox cbDropboxAutoCreateShareableLink;
-        private System.Windows.Forms.Label lblDropboxPath;
-        private System.Windows.Forms.TextBox txtDropboxPath;
-        private System.Windows.Forms.Button btnCopyShowFiles;
         internal System.Windows.Forms.TabPage tpFTP;
+        private System.Windows.Forms.GroupBox gbFTPAccount;
+        private System.Windows.Forms.GroupBox gbSFTP;
+        private System.Windows.Forms.TextBox txtSFTPKeyPassphrase;
+        private System.Windows.Forms.Button btnSFTPKeyLocationBrowse;
+        private System.Windows.Forms.Label lblSFTPKeyPassphrase;
+        private System.Windows.Forms.TextBox txtSFTPKeyLocation;
+        private System.Windows.Forms.Label lblSFTPKeyLocation;
+        private System.Windows.Forms.CheckBox cbFTPAppendRemoteDirectory;
+        private System.Windows.Forms.Label lblFTPProtocol;
+        private System.Windows.Forms.Label lblFTPName;
+        private System.Windows.Forms.CheckBox cbFTPRemoveFileExtension;
+        private System.Windows.Forms.TextBox txtFTPName;
+        private System.Windows.Forms.Label lblFTPHost;
+        private System.Windows.Forms.Panel pFTPTransferMode;
+        private System.Windows.Forms.RadioButton rbFTPTransferModeActive;
+        private System.Windows.Forms.RadioButton rbFTPTransferModePassive;
+        private System.Windows.Forms.TextBox txtFTPHost;
+        private System.Windows.Forms.Panel pFTPProtocol;
+        private System.Windows.Forms.RadioButton rbFTPProtocolFTP;
+        private System.Windows.Forms.RadioButton rbFTPProtocolFTPS;
+        private System.Windows.Forms.RadioButton rbFTPProtocolSFTP;
+        private System.Windows.Forms.Label lblFTPPort;
+        private System.Windows.Forms.Label lblFTPTransferMode;
+        private System.Windows.Forms.NumericUpDown nudFTPPort;
+        private System.Windows.Forms.Label lblFTPURLPreviewValue;
+        private System.Windows.Forms.Label lblFTPUsername;
+        private System.Windows.Forms.Label lblFTPURLPreview;
+        private System.Windows.Forms.TextBox txtFTPUsername;
+        private System.Windows.Forms.ComboBox cbFTPURLPathProtocol;
+        private System.Windows.Forms.Label lblFTPPassword;
+        private System.Windows.Forms.TextBox txtFTPURLPath;
+        private System.Windows.Forms.TextBox txtFTPPassword;
+        private System.Windows.Forms.Label lblFTPURLPath;
+        private System.Windows.Forms.Label lblFTPRemoteDirectory;
+        private System.Windows.Forms.TextBox txtFTPRemoteDirectory;
+        private System.Windows.Forms.GroupBox gbFTPS;
+        private System.Windows.Forms.Button btnFTPSCertificateLocationBrowse;
+        private System.Windows.Forms.TextBox txtFTPSCertificateLocation;
+        private System.Windows.Forms.Label lblFTPSCertificateLocation;
+        private System.Windows.Forms.ComboBox cbFTPSEncryption;
+        private System.Windows.Forms.Label lblFTPSEncryption;
+        private System.Windows.Forms.Button btnFTPDuplicate;
+        private System.Windows.Forms.Button btnFTPTest;
+        private System.Windows.Forms.Button btnFTPRemove;
+        private System.Windows.Forms.Button btnFTPAdd;
+        private System.Windows.Forms.ComboBox cbFTPAccounts;
+        private System.Windows.Forms.Label lblFTPAccounts;
         private System.Windows.Forms.Label lblFTPFile;
         private System.Windows.Forms.Label lblFTPText;
+        private HelpersLib.ExportImportControl eiFTP;
         private System.Windows.Forms.Label lblFTPImage;
         private System.Windows.Forms.ComboBox cbFTPImage;
         private System.Windows.Forms.ComboBox cbFTPFile;
         private System.Windows.Forms.ComboBox cbFTPText;
+        internal System.Windows.Forms.TabPage tpDropbox;
+        private System.Windows.Forms.CheckBox cbDropboxUseDirectLink;
+        private System.Windows.Forms.CheckBox cbDropboxAutoCreateShareableLink;
+        private System.Windows.Forms.Label lblDropboxPath;
+        private System.Windows.Forms.TextBox txtDropboxPath;
+        private OAuthControl oauth2Dropbox;
+        internal System.Windows.Forms.TabPage tpOneDrive;
+        private System.Windows.Forms.TreeView tvOneDrive;
+        private System.Windows.Forms.Label lblOneDriveFolderID;
+        private System.Windows.Forms.CheckBox cbOneDriveCreateShareableLink;
+        private System.Windows.Forms.CheckBox cbOneDriveUseDirectLink;
+        private OAuthControl oAuth2OneDrive;
+        internal System.Windows.Forms.TabPage tpGoogleDrive;
+        private System.Windows.Forms.Button btnGoogleDriveFolderIDHelp;
+        private System.Windows.Forms.ComboBox cbGoogleDriveSharedDrive;
+        private System.Windows.Forms.CheckBox cbGoogleDriveDirectLink;
+        private System.Windows.Forms.CheckBox cbGoogleDriveUseFolder;
+        private System.Windows.Forms.TextBox txtGoogleDriveFolderID;
+        private System.Windows.Forms.Label lblGoogleDriveFolderID;
+        private OAuthLoopbackControl oauth2GoogleDrive;
+        private HelpersLib.MyListView lvGoogleDriveFoldersList;
+        private System.Windows.Forms.ColumnHeader chGoogleDriveTitle;
+        private System.Windows.Forms.ColumnHeader chGoogleDriveDescription;
+        private System.Windows.Forms.Button btnGoogleDriveRefreshFolders;
+        private System.Windows.Forms.CheckBox cbGoogleDriveIsPublic;
+        internal System.Windows.Forms.TabPage tpPuush;
+        private System.Windows.Forms.Label lblPuushAPIKey;
+        private System.Windows.Forms.TextBox txtPuushAPIKey;
+        private System.Windows.Forms.LinkLabel llPuushForgottenPassword;
+        private System.Windows.Forms.Button btnPuushLogin;
+        private System.Windows.Forms.TextBox txtPuushPassword;
+        private System.Windows.Forms.TextBox txtPuushEmail;
+        private System.Windows.Forms.Label lblPuushEmail;
+        private System.Windows.Forms.Label lblPuushPassword;
+        internal System.Windows.Forms.TabPage tpBox;
+        private System.Windows.Forms.Label lblBoxFolderTip;
+        private System.Windows.Forms.CheckBox cbBoxShare;
+        private System.Windows.Forms.ComboBox cbBoxShareAccessLevel;
+        private System.Windows.Forms.Label lblBoxShareAccessLevel;
+        private HelpersLib.MyListView lvBoxFolders;
+        private System.Windows.Forms.ColumnHeader chBoxFoldersName;
+        private System.Windows.Forms.Label lblBoxFolderID;
+        private System.Windows.Forms.Button btnBoxRefreshFolders;
+        private OAuthControl oauth2Box;
+        internal System.Windows.Forms.TabPage tpAmazonS3;
+        private System.Windows.Forms.GroupBox gbAmazonS3Advanced;
+        private System.Windows.Forms.CheckBox cbAmazonS3SignedPayload;
+        private System.Windows.Forms.Label lblAmazonS3StripExtension;
+        private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionText;
+        private System.Windows.Forms.ComboBox cbAmazonS3StorageClass;
+        private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionVideo;
+        private System.Windows.Forms.CheckBox cbAmazonS3PublicACL;
+        private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionImage;
+        private System.Windows.Forms.CheckBox cbAmazonS3UsePathStyle;
+        private System.Windows.Forms.Button btnAmazonS3StorageClassHelp;
+        private System.Windows.Forms.Label lblAmazonS3StorageClass;
+        private System.Windows.Forms.Label lblAmazonS3Endpoint;
+        private System.Windows.Forms.TextBox txtAmazonS3Endpoint;
+        private System.Windows.Forms.Label lblAmazonS3Region;
+        private System.Windows.Forms.TextBox txtAmazonS3Region;
         private System.Windows.Forms.TextBox txtAmazonS3CustomDomain;
         private System.Windows.Forms.Label lblAmazonS3PathPreviewLabel;
         private System.Windows.Forms.Label lblAmazonS3PathPreview;
@@ -4586,32 +4791,210 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblAmazonS3SecretKey;
         private System.Windows.Forms.Label lblAmazonS3AccessKey;
         private System.Windows.Forms.TextBox txtAmazonS3AccessKey;
+        internal System.Windows.Forms.TabPage tpGoogleCloudStorage;
+        private OAuthLoopbackControl oauth2GoogleCloudStorage;
+        private System.Windows.Forms.GroupBox gbGoogleCloudStorageAdvanced;
+        private System.Windows.Forms.Label lblGoogleCloudStorageStripExtension;
+        private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionText;
+        private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionVideo;
+        private System.Windows.Forms.CheckBox cbGoogleCloudStorageSetPublicACL;
+        private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionImage;
+        private System.Windows.Forms.Label lblGoogleCloudStoragePathPreview;
+        private System.Windows.Forms.Label lblGoogleCloudStoragePathPreviewLabel;
+        private System.Windows.Forms.TextBox txtGoogleCloudStorageObjectPrefix;
+        private System.Windows.Forms.Label lblGoogleCloudStorageObjectPrefix;
+        private System.Windows.Forms.Label lblGoogleCloudStorageDomain;
+        private System.Windows.Forms.TextBox txtGoogleCloudStorageDomain;
+        private System.Windows.Forms.Label lblGoogleCloudStorageBucket;
+        private System.Windows.Forms.TextBox txtGoogleCloudStorageBucket;
+        internal System.Windows.Forms.TabPage tpAzureStorage;
+        private System.Windows.Forms.TextBox txtAzureStorageCacheControl;
+        private System.Windows.Forms.Label lblAzureStorageCacheControl;
+        private System.Windows.Forms.Label lblAzureStorageURLPreview;
+        private System.Windows.Forms.Label lblAzureStorageURLPreviewLabel;
+        private System.Windows.Forms.TextBox txtAzureStorageUploadPath;
+        private System.Windows.Forms.Label lblAzureStorageUploadPath;
+        private System.Windows.Forms.ComboBox cbAzureStorageEnvironment;
+        private System.Windows.Forms.Label lblAzureStorageEnvironment;
+        private System.Windows.Forms.Button btnAzureStoragePortal;
+        private System.Windows.Forms.TextBox txtAzureStorageContainer;
+        private System.Windows.Forms.Label lblAzureStorageContainer;
+        private System.Windows.Forms.TextBox txtAzureStorageAccessKey;
+        private System.Windows.Forms.Label lblAzureStorageAccessKey;
+        private System.Windows.Forms.TextBox txtAzureStorageAccountName;
+        private System.Windows.Forms.Label lblAzureStorageAccountName;
+        private System.Windows.Forms.TextBox txtAzureStorageCustomDomain;
+        private System.Windows.Forms.Label lblAzureStorageCustomDomain;
+        internal System.Windows.Forms.TabPage tpBackblazeB2;
+        private System.Windows.Forms.Label lblB2UrlPreview;
+        private System.Windows.Forms.LinkLabel lblB2ManageLink;
+        private System.Windows.Forms.TextBox txtB2CustomUrl;
+        private System.Windows.Forms.Label lblB2UrlPreviewLabel;
+        private System.Windows.Forms.CheckBox cbB2CustomUrl;
+        private System.Windows.Forms.Label lblB2Bucket;
+        private System.Windows.Forms.TextBox txtB2Bucket;
+        private System.Windows.Forms.TextBox txtB2UploadPath;
+        private System.Windows.Forms.Label lblB2UploadPath;
+        private System.Windows.Forms.TextBox txtB2ApplicationKey;
+        private System.Windows.Forms.Label lblB2ApplicationKey;
+        private System.Windows.Forms.Label lblB2ApplicationKeyId;
+        private System.Windows.Forms.TextBox txtB2ApplicationKeyId;
+        internal System.Windows.Forms.TabPage tpOwnCloud;
+        private System.Windows.Forms.CheckBox cbOwnCloudAppendFileNameToURL;
+        private System.Windows.Forms.NumericUpDown nudOwnCloudExpiryTime;
+        private System.Windows.Forms.CheckBox cbOwnCloudAutoExpire;
+        private System.Windows.Forms.Label lblOwnCloudExpiryTime;
+        private System.Windows.Forms.CheckBox cbOwnCloudUsePreviewLinks;
+        private System.Windows.Forms.Label lblOwnCloudHostExample;
+        private System.Windows.Forms.CheckBox cbOwnCloud81Compatibility;
+        private System.Windows.Forms.CheckBox cbOwnCloudDirectLink;
+        private System.Windows.Forms.CheckBox cbOwnCloudCreateShare;
+        private System.Windows.Forms.TextBox txtOwnCloudPath;
+        private System.Windows.Forms.TextBox txtOwnCloudPassword;
+        private System.Windows.Forms.TextBox txtOwnCloudUsername;
+        private System.Windows.Forms.TextBox txtOwnCloudHost;
+        private System.Windows.Forms.Label lblOwnCloudPath;
+        private System.Windows.Forms.Label lblOwnCloudPassword;
+        private System.Windows.Forms.Label lblOwnCloudUsername;
+        private System.Windows.Forms.Label lblOwnCloudHost;
+        internal System.Windows.Forms.TabPage tpMediaFire;
+        private System.Windows.Forms.CheckBox cbMediaFireUseLongLink;
+        private System.Windows.Forms.TextBox txtMediaFirePath;
+        private System.Windows.Forms.Label lblMediaFirePath;
+        private System.Windows.Forms.TextBox txtMediaFirePassword;
+        private System.Windows.Forms.TextBox txtMediaFireEmail;
+        private System.Windows.Forms.Label lblMediaFirePassword;
+        private System.Windows.Forms.Label lblMediaFireEmail;
+        internal System.Windows.Forms.TabPage tpPushbullet;
         private System.Windows.Forms.Label lblPushbulletDevices;
         private System.Windows.Forms.ComboBox cbPushbulletDevices;
         private System.Windows.Forms.Button btnPushbulletGetDeviceList;
         private System.Windows.Forms.Label lblPushbulletUserKey;
         private System.Windows.Forms.TextBox txtPushbulletUserKey;
-        private System.Windows.Forms.CheckBox cbGoogleDriveIsPublic;
-        private System.Windows.Forms.Label lblBoxFolderTip;
-        private System.Windows.Forms.CheckBox cbBoxShare;
-        private System.Windows.Forms.ComboBox cbBoxShareAccessLevel;
-        private System.Windows.Forms.Label lblBoxShareAccessLevel;
-        private ShareX.HelpersLib.MyListView lvBoxFolders;
-        private System.Windows.Forms.ColumnHeader chBoxFoldersName;
-        private System.Windows.Forms.Label lblBoxFolderID;
-        private System.Windows.Forms.Button btnBoxRefreshFolders;
-        private OAuthControl oauth2Box;
+        internal System.Windows.Forms.TabPage tpSendSpace;
         private System.Windows.Forms.Button btnSendSpaceRegister;
         private System.Windows.Forms.Label lblSendSpacePassword;
         private System.Windows.Forms.Label lblSendSpaceUsername;
         private System.Windows.Forms.TextBox txtSendSpacePassword;
         private System.Windows.Forms.TextBox txtSendSpaceUserName;
         private AccountTypeControl atcSendSpaceAccountType;
+        internal System.Windows.Forms.TabPage tpHostr;
         private System.Windows.Forms.CheckBox cbLocalhostrDirectURL;
         private System.Windows.Forms.Label lblLocalhostrPassword;
         private System.Windows.Forms.Label lblLocalhostrEmail;
         private System.Windows.Forms.TextBox txtLocalhostrPassword;
         private System.Windows.Forms.TextBox txtLocalhostrEmail;
+        internal System.Windows.Forms.TabPage tpLambda;
+        private System.Windows.Forms.Label lblLambdaInfo;
+        private System.Windows.Forms.Label lblLambdaApiKey;
+        private System.Windows.Forms.TextBox txtLambdaApiKey;
+        private System.Windows.Forms.Label lblLambdaUploadURL;
+        private System.Windows.Forms.ComboBox cbLambdaUploadURL;
+        internal System.Windows.Forms.TabPage tpPomf;
+        private System.Windows.Forms.TextBox txtPomfResultURL;
+        private System.Windows.Forms.TextBox txtPomfUploadURL;
+        private System.Windows.Forms.Label lblPomfResultURL;
+        private System.Windows.Forms.Label lblPomfUploadURL;
+        internal System.Windows.Forms.TabPage tpSeafile;
+        private System.Windows.Forms.ComboBox cbSeafileAPIURL;
+        private System.Windows.Forms.GroupBox grpSeafileShareSettings;
+        private System.Windows.Forms.TextBox txtSeafileSharePassword;
+        private System.Windows.Forms.Label lblSeafileSharePassword;
+        private System.Windows.Forms.NumericUpDown nudSeafileExpireDays;
+        private System.Windows.Forms.Label lblSeafileDaysToExpire;
+        private System.Windows.Forms.Button btnSeafileLibraryPasswordValidate;
+        private System.Windows.Forms.TextBox txtSeafileLibraryPassword;
+        private System.Windows.Forms.Label lblSeafileLibraryPassword;
+        private HelpersLib.MyListView lvSeafileLibraries;
+        private System.Windows.Forms.ColumnHeader colSeafileLibraryName;
+        private System.Windows.Forms.ColumnHeader colSeafileLibrarySize;
+        private System.Windows.Forms.ColumnHeader colSeafileLibraryEncrypted;
+        private System.Windows.Forms.Button btnSeafilePathValidate;
+        private System.Windows.Forms.TextBox txtSeafileDirectoryPath;
+        private System.Windows.Forms.Label lblSeafileWritePermNotif;
+        private System.Windows.Forms.Label lblSeafilePath;
+        private System.Windows.Forms.Button txtSeafileUploadLocationRefresh;
+        private System.Windows.Forms.Label lblSeafileSelectLibrary;
+        private System.Windows.Forms.GroupBox grpSeafileAccInfo;
+        private System.Windows.Forms.Button btnRefreshSeafileAccInfo;
+        private System.Windows.Forms.TextBox txtSeafileAccInfoUsage;
+        private System.Windows.Forms.TextBox txtSeafileAccInfoEmail;
+        private System.Windows.Forms.Label lblSeafileAccInfoEmail;
+        private System.Windows.Forms.Label lblSeafileAccInfoUsage;
+        private System.Windows.Forms.Button btnSeafileCheckAuthToken;
+        private System.Windows.Forms.Button btnSeafileCheckAPIURL;
+        private System.Windows.Forms.GroupBox grpSeafileObtainAuthToken;
+        private System.Windows.Forms.Button btnSeafileGetAuthToken;
+        private System.Windows.Forms.TextBox txtSeafilePassword;
+        private System.Windows.Forms.TextBox txtSeafileUsername;
+        private System.Windows.Forms.Label lblSeafileUsername;
+        private System.Windows.Forms.Label lblSeafilePassword;
+        private System.Windows.Forms.CheckBox cbSeafileCreateShareableURL;
+        private System.Windows.Forms.CheckBox cbSeafileCreateShareableURLRaw;
+        private System.Windows.Forms.TextBox txtSeafileAuthToken;
+        private System.Windows.Forms.Label lblSeafileAuthToken;
+        private System.Windows.Forms.Label lblSeafileAPIURL;
+        internal System.Windows.Forms.TabPage tpStreamable;
+        private System.Windows.Forms.CheckBox cbStreamableUseDirectURL;
+        private System.Windows.Forms.TextBox txtStreamablePassword;
+        private System.Windows.Forms.TextBox txtStreamableUsername;
+        private System.Windows.Forms.Label lblStreamableUsername;
+        private System.Windows.Forms.Label lblStreamablePassword;
+        internal System.Windows.Forms.TabPage tpSul;
+        private System.Windows.Forms.Button btnSulGetAPIKey;
+        private System.Windows.Forms.TextBox txtSulAPIKey;
+        private System.Windows.Forms.Label lblSulAPIKey;
+        internal System.Windows.Forms.TabPage tpLithiio;
+        private System.Windows.Forms.Button btnLithiioFetchAPIKey;
+        private System.Windows.Forms.TextBox txtLithiioPassword;
+        private System.Windows.Forms.TextBox txtLithiioEmail;
+        private System.Windows.Forms.Label lblLithiioPassword;
+        private System.Windows.Forms.Label lblLithiioEmail;
+        private System.Windows.Forms.Button btnLithiioGetAPIKey;
+        private System.Windows.Forms.Label lblLithiioApiKey;
+        private System.Windows.Forms.TextBox txtLithiioApiKey;
+        internal System.Windows.Forms.TabPage tpPlik;
+        private System.Windows.Forms.GroupBox gbPlikSettings;
+        private System.Windows.Forms.CheckBox cbPlikOneShot;
+        private System.Windows.Forms.TextBox txtPlikComment;
+        private System.Windows.Forms.CheckBox cbPlikComment;
+        private System.Windows.Forms.CheckBox cbPlikRemovable;
+        private System.Windows.Forms.GroupBox gbPlikLoginCredentials;
+        private System.Windows.Forms.NumericUpDown nudPlikTTL;
+        private System.Windows.Forms.ComboBox cbPlikTTLUnit;
+        private System.Windows.Forms.Label lblPlikTTL;
+        private System.Windows.Forms.TextBox txtPlikURL;
+        private System.Windows.Forms.Label lblPlikURL;
+        private System.Windows.Forms.CheckBox cbPlikIsSecured;
+        private System.Windows.Forms.Label lblPlikAPIKey;
+        private System.Windows.Forms.TextBox txtPlikAPIKey;
+        private System.Windows.Forms.Label lblPlikPassword;
+        private System.Windows.Forms.Label lblPlikUsername;
+        private System.Windows.Forms.TextBox txtPlikPassword;
+        private System.Windows.Forms.TextBox txtPlikLogin;
+        internal System.Windows.Forms.TabPage tpYouTube;
+        private OAuthLoopbackControl oauth2YouTube;
+        private System.Windows.Forms.LinkLabel llYouTubePermissionsLink;
+        private System.Windows.Forms.Label lblYouTubePermissionsTip;
+        private System.Windows.Forms.CheckBox cbYouTubeShowDialog;
+        private System.Windows.Forms.CheckBox cbYouTubeUseShortenedLink;
+        private System.Windows.Forms.ComboBox cbYouTubePrivacyType;
+        private System.Windows.Forms.Label lblYouTubePrivacyType;
+        internal System.Windows.Forms.TabPage tpSharedFolder;
+        private System.Windows.Forms.ListBox lbSharedFolderAccounts;
+        private System.Windows.Forms.PropertyGrid pgSharedFolderAccount;
+        private System.Windows.Forms.Button btnSharedFolderDuplicate;
+        private System.Windows.Forms.Button btnSharedFolderRemove;
+        private System.Windows.Forms.Button btnSharedFolderAdd;
+        private System.Windows.Forms.Label lblSharedFolderFiles;
+        private System.Windows.Forms.Label lblSharedFolderText;
+        private System.Windows.Forms.ComboBox cbSharedFolderFiles;
+        private System.Windows.Forms.Label lblSharedFolderImages;
+        private System.Windows.Forms.ComboBox cbSharedFolderText;
+        private System.Windows.Forms.ComboBox cbSharedFolderImages;
+        internal System.Windows.Forms.TabPage tpEmail;
+        private System.Windows.Forms.TextBox txtEmailAutomaticSendTo;
+        private System.Windows.Forms.CheckBox cbEmailAutomaticSend;
         private System.Windows.Forms.Label lblEmailSmtpServer;
         private System.Windows.Forms.Label lblEmailPassword;
         private System.Windows.Forms.CheckBox cbEmailRememberLastTo;
@@ -4625,33 +5008,85 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.NumericUpDown nudEmailSmtpPort;
         private System.Windows.Forms.Label lblEmailSmtpPort;
         private System.Windows.Forms.TextBox txtEmailDefaultSubject;
-        private System.Windows.Forms.Label lblSharedFolderFiles;
-        private System.Windows.Forms.Label lblSharedFolderText;
-        private System.Windows.Forms.Label lblSharedFolderImages;
-        private System.Windows.Forms.ComboBox cbSharedFolderFiles;
-        private System.Windows.Forms.ComboBox cbSharedFolderText;
-        private System.Windows.Forms.ComboBox cbSharedFolderImages;
         private System.Windows.Forms.TabPage tpTextUploaders;
         private System.Windows.Forms.TabControl tcTextUploaders;
+        internal System.Windows.Forms.TabPage tpPastebin;
+        private System.Windows.Forms.CheckBox cbPastebinRaw;
+        private System.Windows.Forms.ComboBox cbPastebinSyntax;
+        private System.Windows.Forms.Button btnPastebinRegister;
+        private System.Windows.Forms.Label lblPastebinSyntax;
+        private System.Windows.Forms.Label lblPastebinExpiration;
+        private System.Windows.Forms.Label lblPastebinPrivacy;
+        private System.Windows.Forms.Label lblPastebinTitle;
+        private System.Windows.Forms.Label lblPastebinPassword;
+        private System.Windows.Forms.Label lblPastebinUsername;
+        private System.Windows.Forms.ComboBox cbPastebinExpiration;
+        private System.Windows.Forms.ComboBox cbPastebinPrivacy;
+        private System.Windows.Forms.TextBox txtPastebinTitle;
+        private System.Windows.Forms.TextBox txtPastebinPassword;
+        private System.Windows.Forms.TextBox txtPastebinUsername;
+        private System.Windows.Forms.Label lblPastebinLoginStatus;
         private System.Windows.Forms.Button btnPastebinLogin;
+        internal System.Windows.Forms.TabPage tpPaste_ee;
+        private System.Windows.Forms.Button btnPaste_eeGetUserKey;
         private System.Windows.Forms.Label lblPaste_eeUserAPIKey;
         private System.Windows.Forms.TextBox txtPaste_eeUserAPIKey;
+        internal System.Windows.Forms.TabPage tpGist;
+        private System.Windows.Forms.Label lblGistCustomURLExample;
+        private System.Windows.Forms.Label lblGistOAuthInfo;
+        private System.Windows.Forms.Label lblGistCustomURL;
+        private System.Windows.Forms.TextBox txtGistCustomURL;
+        private System.Windows.Forms.CheckBox cbGistUseRawURL;
         private System.Windows.Forms.CheckBox cbGistPublishPublic;
         private OAuthControl oAuth2Gist;
+        internal System.Windows.Forms.TabPage tpUpaste;
         private System.Windows.Forms.CheckBox cbUpasteIsPublic;
         private System.Windows.Forms.Label lblUpasteUserKey;
         private System.Windows.Forms.TextBox txtUpasteUserKey;
+        internal System.Windows.Forms.TabPage tpHastebin;
+        private System.Windows.Forms.CheckBox cbHastebinUseFileExtension;
+        private System.Windows.Forms.TextBox txtHastebinSyntaxHighlighting;
+        private System.Windows.Forms.TextBox txtHastebinCustomDomain;
+        private System.Windows.Forms.Label lblHastebinSyntaxHighlighting;
+        private System.Windows.Forms.Label lblHastebinCustomDomain;
+        internal System.Windows.Forms.TabPage tpOneTimeSecret;
+        private System.Windows.Forms.Label lblOneTimeSecretAPIKey;
+        private System.Windows.Forms.Label lblOneTimeSecretEmail;
+        private System.Windows.Forms.TextBox txtOneTimeSecretAPIKey;
+        private System.Windows.Forms.TextBox txtOneTimeSecretEmail;
+        internal System.Windows.Forms.TabPage tpPastie;
+        private System.Windows.Forms.CheckBox cbPastieIsPublic;
+        internal System.Windows.Forms.TabPage tpPrivateBin;
+        private System.Windows.Forms.Label lblPrivateBinCustomUrl;
+        private System.Windows.Forms.TextBox txtPrivateBinCustomUrl;
+        private System.Windows.Forms.Label lblPrivateBinExpiration;
+        private System.Windows.Forms.ComboBox cbPrivateBinExpiration;
+        private System.Windows.Forms.Label lblPrivateBinFormat;
+        private System.Windows.Forms.ComboBox cbPrivateBinFormat;
+        private System.Windows.Forms.Label lblPrivateBinPastePassword;
+        private System.Windows.Forms.TextBox txtPrivateBinPastePassword;
+        private System.Windows.Forms.CheckBox cbPrivateBinBurnAfterReading;
+        private System.Windows.Forms.GroupBox gbPrivateBinCredentials;
+        private System.Windows.Forms.Label lblPrivateBinPassword;
+        private System.Windows.Forms.Label lblPrivateBinUsername;
+        private System.Windows.Forms.TextBox txtPrivateBinPassword;
+        private System.Windows.Forms.TextBox txtPrivateBinUsername;
         private System.Windows.Forms.TabPage tpImageUploaders;
         private System.Windows.Forms.TabControl tcImageUploaders;
+        internal System.Windows.Forms.TabPage tpImgur;
+        private System.Windows.Forms.CheckBox cbImgurUseGIFV;
+        private System.Windows.Forms.CheckBox cbImgurUploadSelectedAlbum;
+        private System.Windows.Forms.CheckBox cbImgurDirectLink;
+        private AccountTypeControl atcImgurAccountType;
         private OAuthControl oauth2Imgur;
-        private ShareX.HelpersLib.MyListView lvImgurAlbumList;
+        private HelpersLib.MyListView lvImgurAlbumList;
         private System.Windows.Forms.ColumnHeader chImgurID;
         private System.Windows.Forms.ColumnHeader chImgurTitle;
         private System.Windows.Forms.ColumnHeader chImgurDescription;
         private System.Windows.Forms.Button btnImgurRefreshAlbumList;
         private System.Windows.Forms.ComboBox cbImgurThumbnailType;
         private System.Windows.Forms.Label lblImgurThumbnailType;
-        private AccountTypeControl atcImgurAccountType;
+        internal System.Windows.Forms.TabPage tpImageShack;
         private System.Windows.Forms.Button btnImageShackLogin;
         private System.Windows.Forms.Button btnImageShackOpenPublicProfile;
         private System.Windows.Forms.CheckBox cbImageShackIsPublic;
@@ -4660,6 +5095,10 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtImageShackUsername;
         private System.Windows.Forms.TextBox txtImageShackPassword;
         private System.Windows.Forms.Label lblImageShackPassword;
+        internal System.Windows.Forms.TabPage tpFlickr;
+        private System.Windows.Forms.CheckBox cbFlickrDirectLink;
+        private OAuthControl oauthFlickr;
+        internal System.Windows.Forms.TabPage tpPhotobucket;
         private System.Windows.Forms.GroupBox gbPhotobucketAlbumPath;
         private System.Windows.Forms.Button btnPhotobucketAddAlbum;
         private System.Windows.Forms.Button btnPhotobucketRemoveAlbum;
@@ -4678,390 +5117,25 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Button btnPhotobucketAuthComplete;
         private System.Windows.Forms.TextBox txtPhotobucketVerificationCode;
         private System.Windows.Forms.Label lblPhotobucketAccountStatus;
-        private System.Windows.Forms.TabControl tcUploaders;
-        private ShareX.HelpersLib.ExportImportControl eiFTP;
-        private OAuthControl oauth2Dropbox;
-        private System.Windows.Forms.TextBox txtBitlyDomain;
-        private System.Windows.Forms.Label lblBitlyDomain;
-        private System.Windows.Forms.TextBox txtGoogleDriveFolderID;
-        private System.Windows.Forms.Label lblGoogleDriveFolderID;
-        private ShareX.HelpersLib.MyListView lvGoogleDriveFoldersList;
-        private System.Windows.Forms.ColumnHeader chGoogleDriveTitle;
-        private System.Windows.Forms.Button btnGoogleDriveRefreshFolders;
-        private System.Windows.Forms.ColumnHeader chGoogleDriveDescription;
-        private System.Windows.Forms.CheckBox cbGoogleDriveUseFolder;
-        private System.Windows.Forms.TextBox txtOwnCloudPath;
-        private System.Windows.Forms.TextBox txtOwnCloudPassword;
-        private System.Windows.Forms.TextBox txtOwnCloudUsername;
-        private System.Windows.Forms.TextBox txtOwnCloudHost;
-        private System.Windows.Forms.Label lblOwnCloudPath;
-        private System.Windows.Forms.Label lblOwnCloudPassword;
-        private System.Windows.Forms.Label lblOwnCloudUsername;
-        private System.Windows.Forms.Label lblOwnCloudHost;
-        private System.Windows.Forms.CheckBox cbOwnCloudCreateShare;
-        private System.Windows.Forms.CheckBox cbOwnCloudDirectLink;
-        private System.Windows.Forms.CheckBox cbImgurDirectLink;
-        private System.Windows.Forms.TextBox txtMediaFirePassword;
-        private System.Windows.Forms.TextBox txtMediaFireEmail;
-        private System.Windows.Forms.Label lblMediaFirePassword;
-        private System.Windows.Forms.Label lblMediaFireEmail;
-        private System.Windows.Forms.TextBox txtMediaFirePath;
-        private System.Windows.Forms.Label lblMediaFirePath;
-        private System.Windows.Forms.CheckBox cbMediaFireUseLongLink;
-        private OAuthControl oAuth2OneDrive;
-        private System.Windows.Forms.CheckBox cbImgurUploadSelectedAlbum;
-        private System.Windows.Forms.Label lblPastebinLoginStatus;
-        private System.Windows.Forms.TextBox txtPastebinTitle;
-        private System.Windows.Forms.TextBox txtPastebinPassword;
-        private System.Windows.Forms.TextBox txtPastebinUsername;
-        private System.Windows.Forms.Label lblPastebinExpiration;
-        private System.Windows.Forms.Label lblPastebinPrivacy;
-        private System.Windows.Forms.Label lblPastebinTitle;
-        private System.Windows.Forms.Label lblPastebinPassword;
-        private System.Windows.Forms.Label lblPastebinUsername;
-        private System.Windows.Forms.ComboBox cbPastebinExpiration;
-        private System.Windows.Forms.ComboBox cbPastebinPrivacy;
-        private System.Windows.Forms.Label lblPastebinSyntax;
-        private System.Windows.Forms.Button btnPastebinRegister;
+        internal System.Windows.Forms.TabPage tpChevereto;
+        private System.Windows.Forms.Label lblCheveretoUploadURLExample;
+        private System.Windows.Forms.CheckBox cbCheveretoDirectURL;
         private System.Windows.Forms.Label lblCheveretoUploadURL;
         private System.Windows.Forms.TextBox txtCheveretoUploadURL;
         private System.Windows.Forms.TextBox txtCheveretoAPIKey;
         private System.Windows.Forms.Label lblCheveretoAPIKey;
-        private System.Windows.Forms.CheckBox cbCheveretoDirectURL;
-        private System.Windows.Forms.ComboBox cbPastebinSyntax;
-        private System.Windows.Forms.TextBox txtHastebinSyntaxHighlighting;
-        private System.Windows.Forms.TextBox txtHastebinCustomDomain;
-        private System.Windows.Forms.Label lblHastebinSyntaxHighlighting;
-        private System.Windows.Forms.Label lblHastebinCustomDomain;
-        private System.Windows.Forms.CheckBox cbOneDriveCreateShareableLink;
-        private System.Windows.Forms.CheckBox cbOneDriveUseDirectLink;
-        private System.Windows.Forms.Label lblOneDriveFolderID;
-        private System.Windows.Forms.TreeView tvOneDrive;
-        private System.Windows.Forms.Label lblLambdaApiKey;
-        private System.Windows.Forms.TextBox txtLambdaApiKey;
-        private System.Windows.Forms.Label lblLambdaInfo;
-        private System.Windows.Forms.Label lblLambdaUploadURL;
-        private System.Windows.Forms.ComboBox cbLambdaUploadURL;
-        private System.Windows.Forms.Label lblLithiioApiKey;
-        private System.Windows.Forms.TextBox txtLithiioApiKey;
-        private System.Windows.Forms.CheckBox cbOwnCloud81Compatibility;
-        private System.Windows.Forms.Label lblOneTimeSecretAPIKey;
-        private System.Windows.Forms.Label lblOneTimeSecretEmail;
-        private System.Windows.Forms.TextBox txtOneTimeSecretAPIKey;
-        private System.Windows.Forms.TextBox txtOneTimeSecretEmail;
-        private System.Windows.Forms.TextBox txtPolrAPIKey;
-        private System.Windows.Forms.Label lblPolrAPIKey;
-        private System.Windows.Forms.TextBox txtPolrAPIHostname;
-        private System.Windows.Forms.Label lblPolrAPIHostname;
-        private System.Windows.Forms.CheckBox cbImgurUseGIFV;
-        private System.Windows.Forms.Label lblPomfResultURL;
-        private System.Windows.Forms.Label lblPomfUploadURL;
-        private System.Windows.Forms.TextBox txtPomfUploadURL;
-        private System.Windows.Forms.TextBox txtPomfResultURL;
-        private System.Windows.Forms.Button btnSeafileCheckAuthToken;
-        private System.Windows.Forms.Button btnSeafileCheckAPIURL;
-        private System.Windows.Forms.GroupBox grpSeafileObtainAuthToken;
-        private System.Windows.Forms.Button btnSeafileGetAuthToken;
-        private System.Windows.Forms.TextBox txtSeafilePassword;
-        private System.Windows.Forms.TextBox txtSeafileUsername;
-        private System.Windows.Forms.Label lblSeafileUsername;
-        private System.Windows.Forms.Label lblSeafilePassword;
-        private System.Windows.Forms.CheckBox cbSeafileCreateShareableURL;
-        private System.Windows.Forms.CheckBox cbSeafileCreateShareableURLRaw;
-        private System.Windows.Forms.TextBox txtSeafileAuthToken;
-        private System.Windows.Forms.Label lblSeafileAuthToken;
-        private System.Windows.Forms.Label lblSeafileAPIURL;
-        private System.Windows.Forms.GroupBox grpSeafileAccInfo;
-        private System.Windows.Forms.Button btnRefreshSeafileAccInfo;
-        private System.Windows.Forms.TextBox txtSeafileAccInfoUsage;
-        private System.Windows.Forms.TextBox txtSeafileAccInfoEmail;
-        private System.Windows.Forms.Label lblSeafileAccInfoEmail;
-        private System.Windows.Forms.Label lblSeafileAccInfoUsage;
-        private System.Windows.Forms.Button txtSeafileUploadLocationRefresh;
-        private System.Windows.Forms.Label lblSeafileSelectLibrary;
-        private System.Windows.Forms.Label lblSeafileWritePermNotif;
-        private HelpersLib.MyListView lvSeafileLibraries;
-        private System.Windows.Forms.ColumnHeader colSeafileLibraryName;
-        private System.Windows.Forms.Button btnSeafilePathValidate;
-        private System.Windows.Forms.TextBox txtSeafileDirectoryPath;
-        private System.Windows.Forms.Label lblSeafilePath;
-        private System.Windows.Forms.ColumnHeader colSeafileLibrarySize;
-        private System.Windows.Forms.ColumnHeader colSeafileLibraryEncrypted;
-        private System.Windows.Forms.Button btnSeafileLibraryPasswordValidate;
-        private System.Windows.Forms.TextBox txtSeafileLibraryPassword;
-        private System.Windows.Forms.Label lblSeafileLibraryPassword;
-        private System.Windows.Forms.GroupBox grpSeafileShareSettings;
-        private System.Windows.Forms.TextBox txtSeafileSharePassword;
-        private System.Windows.Forms.Label lblSeafileSharePassword;
-        private System.Windows.Forms.NumericUpDown nudSeafileExpireDays;
-        private System.Windows.Forms.Label lblSeafileDaysToExpire;
-        private System.Windows.Forms.ComboBox cbSeafileAPIURL;
-        private System.Windows.Forms.TextBox txtStreamablePassword;
-        private System.Windows.Forms.TextBox txtStreamableUsername;
-        private System.Windows.Forms.Label lblStreamableUsername;
-        private System.Windows.Forms.Label lblStreamablePassword;
-        private System.Windows.Forms.Label lblSulAPIKey;
-        private System.Windows.Forms.TextBox txtSulAPIKey;
+        internal System.Windows.Forms.TabPage tpVgyme;
+        private System.Windows.Forms.LinkLabel llVgymeAccountDetailsPage;
         private System.Windows.Forms.TextBox txtVgymeUserKey;
         private System.Windows.Forms.Label lvlVgymeUserKey;
-        private System.Windows.Forms.LinkLabel llVgymeAccountDetailsPage;
-        private System.Windows.Forms.Label lblCheveretoUploadURLExample;
-        private System.Windows.Forms.CheckBox cbPastebinRaw;
-        private System.Windows.Forms.CheckBox cbGistUseRawURL;
-        private System.Windows.Forms.CheckBox cbStreamableUseDirectURL;
-        internal System.Windows.Forms.TabPage tpImgur;
-        internal System.Windows.Forms.TabPage tpImageShack;
-        internal System.Windows.Forms.TabPage tpFlickr;
-        internal System.Windows.Forms.TabPage tpPhotobucket;
-        internal System.Windows.Forms.TabPage tpChevereto;
-        internal System.Windows.Forms.TabPage tpVgyme;
-        internal System.Windows.Forms.TabPage tpPastebin;
-        internal System.Windows.Forms.TabPage tpPaste_ee;
-        internal System.Windows.Forms.TabPage tpGist;
-        internal System.Windows.Forms.TabPage tpUpaste;
-        internal System.Windows.Forms.TabPage tpHastebin;
-        internal System.Windows.Forms.TabPage tpOneTimeSecret;
-        internal System.Windows.Forms.TabPage tpDropbox;
-        internal System.Windows.Forms.TabPage tpOneDrive;
-        internal System.Windows.Forms.TabPage tpGoogleDrive;
-        internal System.Windows.Forms.TabPage tpBox;
-        internal System.Windows.Forms.TabPage tpAmazonS3;
-        internal System.Windows.Forms.TabPage tpOwnCloud;
-        internal System.Windows.Forms.TabPage tpMediaFire;
-        internal System.Windows.Forms.TabPage tpPushbullet;
-        internal System.Windows.Forms.TabPage tpSendSpace;
-        internal System.Windows.Forms.TabPage tpHostr;
-        internal System.Windows.Forms.TabPage tpLambda;
-        internal System.Windows.Forms.TabPage tpLithiio;
-        internal System.Windows.Forms.TabPage tpPomf;
-        internal System.Windows.Forms.TabPage tpSeafile;
-        internal System.Windows.Forms.TabPage tpSul;
-        internal System.Windows.Forms.TabPage tpStreamable;
-        internal System.Windows.Forms.TabPage tpSharedFolder;
-        internal System.Windows.Forms.TabPage tpEmail;
-        internal System.Windows.Forms.TabPage tpBitly;
-        internal System.Windows.Forms.TabPage tpYourls;
-        internal System.Windows.Forms.TabPage tpPolr;
-        private System.Windows.Forms.TextBox txtEmailAutomaticSendTo;
-        private System.Windows.Forms.CheckBox cbEmailAutomaticSend;
-        private System.Windows.Forms.Button btnLithiioGetAPIKey;
-        private System.Windows.Forms.CheckBox cbGoogleDriveDirectLink;
-        private System.Windows.Forms.Label lblPuushAPIKey;
-        private System.Windows.Forms.TextBox txtPuushAPIKey;
-        private System.Windows.Forms.LinkLabel llPuushForgottenPassword;
-        private System.Windows.Forms.Button btnPuushLogin;
-        private System.Windows.Forms.TextBox txtPuushPassword;
-        private System.Windows.Forms.TextBox txtPuushEmail;
-        private System.Windows.Forms.Label lblPuushEmail;
-        private System.Windows.Forms.Label lblPuushPassword;
-        internal System.Windows.Forms.TabPage tpPuush;
-        private System.Windows.Forms.CheckBox cbHastebinUseFileExtension;
-        private System.Windows.Forms.Label lblOwnCloudHostExample;
-        internal System.Windows.Forms.TabPage tpPastie;
-        private System.Windows.Forms.CheckBox cbPastieIsPublic;
-        private System.Windows.Forms.CheckBox cbPolrUseAPIv1;
-        private System.Windows.Forms.CheckBox cbPolrIsSecret;
-        internal System.Windows.Forms.TabPage tpAzureStorage;
-        private System.Windows.Forms.Label lblAzureStorageAccessKey;
-        private System.Windows.Forms.TextBox txtAzureStorageAccountName;
-        private System.Windows.Forms.Label lblAzureStorageAccountName;
-        private System.Windows.Forms.TextBox txtAzureStorageAccessKey;
-        private System.Windows.Forms.TextBox txtAzureStorageContainer;
-        private System.Windows.Forms.Label lblAzureStorageContainer;
-        private System.Windows.Forms.Button btnAzureStoragePortal;
-        private System.Windows.Forms.ComboBox cbAzureStorageEnvironment;
-        private System.Windows.Forms.Label lblAzureStorageEnvironment;
-        private System.Windows.Forms.TextBox txtAzureStorageCustomDomain;
-        private System.Windows.Forms.Label lblAzureStorageCustomDomain;
-        internal System.Windows.Forms.TabPage tpPlik;
-        private System.Windows.Forms.GroupBox gbPlikSettings;
-        private System.Windows.Forms.TextBox txtPlikComment;
-        private System.Windows.Forms.CheckBox cbPlikComment;
-        private System.Windows.Forms.CheckBox cbPlikRemovable;
-        private System.Windows.Forms.GroupBox gbPlikLoginCredentials;
-        private System.Windows.Forms.CheckBox cbPlikIsSecured;
-        private System.Windows.Forms.Label lblPlikAPIKey;
-        private System.Windows.Forms.TextBox txtPlikAPIKey;
-        private System.Windows.Forms.Label lblPlikPassword;
-        private System.Windows.Forms.Label lblPlikUsername;
-        private System.Windows.Forms.TextBox txtPlikPassword;
-        private System.Windows.Forms.TextBox txtPlikLogin;
-        private System.Windows.Forms.Label lblPlikURL;
-        private System.Windows.Forms.TextBox txtPlikURL;
-        private System.Windows.Forms.CheckBox cbPlikOneShot;
-        private System.Windows.Forms.ComboBox cbPlikTTLUnit;
-        private System.Windows.Forms.NumericUpDown nudPlikTTL;
-        private System.Windows.Forms.Label lblPlikTTL;
-        private System.Windows.Forms.TextBox txtGistCustomURL;
-        private System.Windows.Forms.Label lblGistCustomURL;
-        private System.Windows.Forms.Label lblGistOAuthInfo;
-        private System.Windows.Forms.Label lblGistCustomURLExample;
-        private System.Windows.Forms.TextBox txtAmazonS3Region;
-        private System.Windows.Forms.TextBox txtAmazonS3Endpoint;
-        private System.Windows.Forms.Label lblAmazonS3Region;
-        private System.Windows.Forms.Label lblAmazonS3Endpoint;
-        private System.Windows.Forms.CheckBox cbDropboxUseDirectLink;
-        private System.Windows.Forms.CheckBox cbAmazonS3UsePathStyle;
-        private System.Windows.Forms.Panel pFTPTransferMode;
-        private System.Windows.Forms.RadioButton rbFTPTransferModeActive;
-        private System.Windows.Forms.RadioButton rbFTPTransferModePassive;
-        private System.Windows.Forms.Panel pFTPProtocol;
-        private System.Windows.Forms.RadioButton rbFTPProtocolFTP;
-        private System.Windows.Forms.RadioButton rbFTPProtocolFTPS;
-        private System.Windows.Forms.RadioButton rbFTPProtocolSFTP;
-        private System.Windows.Forms.Label lblFTPTransferMode;
-        private System.Windows.Forms.Label lblFTPURLPreviewValue;
-        private System.Windows.Forms.Label lblFTPURLPreview;
-        private System.Windows.Forms.ComboBox cbFTPURLPathProtocol;
-        private System.Windows.Forms.TextBox txtFTPURLPath;
-        private System.Windows.Forms.Label lblFTPURLPath;
-        private System.Windows.Forms.TextBox txtFTPRemoteDirectory;
-        private System.Windows.Forms.Label lblFTPRemoteDirectory;
-        private System.Windows.Forms.Button btnFTPRemove;
-        private System.Windows.Forms.Button btnFTPAdd;
-        private System.Windows.Forms.ComboBox cbFTPAccounts;
-        private System.Windows.Forms.Label lblFTPAccounts;
-        private System.Windows.Forms.TextBox txtFTPPassword;
-        private System.Windows.Forms.Label lblFTPPassword;
-        private System.Windows.Forms.TextBox txtFTPUsername;
-        private System.Windows.Forms.Label lblFTPUsername;
-        private System.Windows.Forms.NumericUpDown nudFTPPort;
-        private System.Windows.Forms.Label lblFTPPort;
-        private System.Windows.Forms.TextBox txtFTPHost;
-        private System.Windows.Forms.Label lblFTPHost;
-        private System.Windows.Forms.TextBox txtFTPName;
-        private System.Windows.Forms.Label lblFTPName;
-        private System.Windows.Forms.Label lblFTPProtocol;
-        private System.Windows.Forms.CheckBox cbFTPRemoveFileExtension;
-        private System.Windows.Forms.CheckBox cbFTPAppendRemoteDirectory;
-        private System.Windows.Forms.Button btnFTPDuplicate;
-        private System.Windows.Forms.Button btnFTPTest;
-        private System.Windows.Forms.GroupBox gbFTPAccount;
-        private System.Windows.Forms.GroupBox gbFTPS;
-        private System.Windows.Forms.TextBox txtFTPSCertificateLocation;
-        private System.Windows.Forms.Label lblFTPSCertificateLocation;
-        private System.Windows.Forms.ComboBox cbFTPSEncryption;
-        private System.Windows.Forms.Label lblFTPSEncryption;
-        private System.Windows.Forms.Button btnFTPSCertificateLocationBrowse;
-        private System.Windows.Forms.GroupBox gbSFTP;
-        private System.Windows.Forms.TextBox txtSFTPKeyLocation;
-        private System.Windows.Forms.Label lblSFTPKeyLocation;
-        private System.Windows.Forms.TextBox txtSFTPKeyPassphrase;
-        private System.Windows.Forms.Button btnSFTPKeyLocationBrowse;
-        private System.Windows.Forms.Label lblSFTPKeyPassphrase;
-        private System.Windows.Forms.Label lblAmazonS3StorageClass;
-        private System.Windows.Forms.ComboBox cbAmazonS3StorageClass;
-        private System.Windows.Forms.Button btnAmazonS3StorageClassHelp;
-        private System.Windows.Forms.Button btnPaste_eeGetUserKey;
-        private OAuthControl oauthFlickr;
-        private System.Windows.Forms.CheckBox cbFlickrDirectLink;
-        private System.Windows.Forms.Button btnSulGetAPIKey;
-        private System.Windows.Forms.Button btnLithiioFetchAPIKey;
-        private System.Windows.Forms.TextBox txtLithiioPassword;
-        private System.Windows.Forms.TextBox txtLithiioEmail;
-        private System.Windows.Forms.Label lblLithiioPassword;
-        private System.Windows.Forms.Label lblLithiioEmail;
-        private System.Windows.Forms.CheckBox cbAmazonS3PublicACL;
-        private System.Windows.Forms.GroupBox gbAmazonS3Advanced;
-        private System.Windows.Forms.Label lblAmazonS3StripExtension;
-        private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionText;
-        private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionVideo;
-        private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionImage;
-        private System.Windows.Forms.CheckBox cbOwnCloudUsePreviewLinks;
-        internal System.Windows.Forms.TabPage tpFirebaseDynamicLinks;
-        private System.Windows.Forms.CheckBox cbFirebaseIsShort;
-        private System.Windows.Forms.TextBox txtFirebaseDomain;
-        private System.Windows.Forms.TextBox txtFirebaseWebAPIKey;
-        private System.Windows.Forms.Label lblFirebaseWebAPIKey;
-        private System.Windows.Forms.ComboBox cbYouTubePrivacyType;
-        private System.Windows.Forms.Label lblYouTubePrivacyType;
-        internal System.Windows.Forms.TabPage tpYouTube;
-        private System.Windows.Forms.CheckBox cbYouTubeUseShortenedLink;
-        internal System.Windows.Forms.TabPage tpGoogleCloudStorage;
-        private System.Windows.Forms.TextBox txtGoogleCloudStorageBucket;
-        private System.Windows.Forms.Label lblGoogleCloudStorageBucket;
-        private System.Windows.Forms.TextBox txtGoogleCloudStorageDomain;
-        private System.Windows.Forms.Label lblGoogleCloudStorageDomain;
-        private System.Windows.Forms.TextBox txtGoogleCloudStorageObjectPrefix;
-        private System.Windows.Forms.Label lblGoogleCloudStorageObjectPrefix;
-        private System.Windows.Forms.Button btnSharedFolderDuplicate;
-        private System.Windows.Forms.Button btnSharedFolderRemove;
-        private System.Windows.Forms.Button btnSharedFolderAdd;
-        private System.Windows.Forms.PropertyGrid pgSharedFolderAccount;
-        private System.Windows.Forms.ListBox lbSharedFolderAccounts;
-        private System.Windows.Forms.Label lblGoogleCloudStoragePathPreviewLabel;
-        private System.Windows.Forms.Label lblGoogleCloudStoragePathPreview;
-        private System.Windows.Forms.TextBox txtAzureStorageUploadPath;
-        private System.Windows.Forms.Label lblAzureStorageUploadPath;
-        private System.Windows.Forms.Label lblFirebaseDomain;
-        private System.Windows.Forms.Label lblAzureStorageURLPreview;
-        private System.Windows.Forms.Label lblAzureStorageURLPreviewLabel;
-        private System.Windows.Forms.Label lblFirebaseDomainExample;
-        private System.Windows.Forms.Label lblOwnCloudExpiryTime;
-        private System.Windows.Forms.CheckBox cbOwnCloudAutoExpire;
-        private System.Windows.Forms.NumericUpDown nudOwnCloudExpiryTime;
-        internal System.Windows.Forms.TabPage tpBackblazeB2;
-        private System.Windows.Forms.TextBox txtB2CustomUrl;
-        private System.Windows.Forms.Label lblB2UrlPreviewLabel;
-        private System.Windows.Forms.CheckBox cbB2CustomUrl;
-        private System.Windows.Forms.Label lblB2Bucket;
-        private System.Windows.Forms.TextBox txtB2Bucket;
-        private System.Windows.Forms.TextBox txtB2UploadPath;
-        private System.Windows.Forms.Label lblB2UploadPath;
-        private System.Windows.Forms.TextBox txtB2ApplicationKey;
-        private System.Windows.Forms.Label lblB2ApplicationKey;
-        private System.Windows.Forms.Label lblB2ApplicationKeyId;
-        private System.Windows.Forms.TextBox txtB2ApplicationKeyId;
-        private System.Windows.Forms.LinkLabel lblB2ManageLink;
-        private System.Windows.Forms.TextBox txtKuttAPIKey;
-        private System.Windows.Forms.TextBox txtKuttHost;
-        private System.Windows.Forms.Label lblKuttAPIKey;
-        private System.Windows.Forms.Label lblKuttHost;
-        private System.Windows.Forms.CheckBox cbKuttReuse;
-        private System.Windows.Forms.Label lblKuttPassword;
-        private System.Windows.Forms.TextBox txtKuttPassword;
-        internal System.Windows.Forms.TabPage tpKutt;
-        private System.Windows.Forms.CheckBox cbAmazonS3SignedPayload;
-        private System.Windows.Forms.GroupBox gbGoogleCloudStorageAdvanced;
-        private System.Windows.Forms.Label lblGoogleCloudStorageStripExtension;
-        private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionText;
-        private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionVideo;
-        private System.Windows.Forms.CheckBox cbGoogleCloudStorageSetPublicACL;
-        private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionImage;
-        private System.Windows.Forms.Label lblB2UrlPreview;
-        private HelpersLib.TabToTreeView tttvMain;
-        private System.Windows.Forms.ComboBox cbGoogleDriveSharedDrive;
-        private System.Windows.Forms.TextBox txtKuttDomain;
-        private System.Windows.Forms.Label lblKuttDomain;
-        internal System.Windows.Forms.TabPage tpZeroWidthShortener;
-        private System.Windows.Forms.TextBox txtZWSToken;
-        private System.Windows.Forms.TextBox txtZWSURL;
-        private System.Windows.Forms.Label lblZWSToken;
-        private System.Windows.Forms.Label lblZWSURL;
-        private System.Windows.Forms.CheckBox cbOwnCloudAppendFileNameToURL;
-        private System.Windows.Forms.CheckBox cbYouTubeShowDialog;
-        private System.Windows.Forms.LinkLabel llYouTubePermissionsLink;
-        private System.Windows.Forms.Label lblYouTubePermissionsTip;
-        private System.Windows.Forms.Label lblPrivateBinCustomUrl;
-        private System.Windows.Forms.TextBox txtPrivateBinCustomUrl;
-        private System.Windows.Forms.Label lblPrivateBinExpiration;
-        private System.Windows.Forms.ComboBox cbPrivateBinExpiration;
-        private System.Windows.Forms.Label lblPrivateBinFormat;
-        private System.Windows.Forms.ComboBox cbPrivateBinFormat;
-        private System.Windows.Forms.Label lblPrivateBinPastePassword;
-        private System.Windows.Forms.TextBox txtPrivateBinPastePassword;
-        private System.Windows.Forms.CheckBox cbPrivateBinBurnAfterReading;
-        private System.Windows.Forms.GroupBox gbPrivateBinCredentials;
-        private System.Windows.Forms.Label lblPrivateBinPassword;
-        private System.Windows.Forms.Label lblPrivateBinUsername;
-        private System.Windows.Forms.TextBox txtPrivateBinPassword;
-        private System.Windows.Forms.TextBox txtPrivateBinUsername;
-        internal System.Windows.Forms.TabPage tpPrivateBin;
-        private OAuthLoopbackControl oauth2YouTube;
-        private OAuthLoopbackControl oauth2GoogleDrive;
-        private OAuthLoopbackControl oauth2GoogleCloudStorage;
-        private System.Windows.Forms.TextBox txtAzureStorageCacheControl;
-        private System.Windows.Forms.Label lblAzureStorageCacheControl;
-        private System.Windows.Forms.Button btnGoogleDriveFolderIDHelp;
+        private System.Windows.Forms.TabControl tcUploaders;
+        internal System.Windows.Forms.TabPage tpImmich;
+        private System.Windows.Forms.LinkLabel llImmichAPIKeyPage;
+        private System.Windows.Forms.TextBox txtImmichAPIKey;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtImmichDeviceID;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtImmichUploadURL;
+        private System.Windows.Forms.Label label2;
     }
 }
