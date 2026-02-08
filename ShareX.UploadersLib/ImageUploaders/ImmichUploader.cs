@@ -68,7 +68,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpVgyme;
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpImmich;
     }
 
     public sealed class ImmichUploader : ImageUploader

@@ -68,22 +68,5 @@ namespace ShareX.UploadersLib.ImageUploaders
                 DeviceId = config.ImmichDeviceId
             };
         }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpVgyme;
-    }
-
-    public sealed class ImmichUploaderVideo : ImageUploader
-    {
-        public string APIKey { get; set; }
-        public string UploadURL { get; set; }
-        public string DeviceId { get; set; }
-
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            var uploader = new ImmichUploaderVideo();
-            var result = uploader.Upload(stream, fileName);
-            return result;
-        }
-
     }
 }
