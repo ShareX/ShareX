@@ -85,11 +85,6 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            // Just call a dedicated method that handles the logic
-            return ExecuteImmichUpload(stream, fileName);
-        }
-        private UploadResult ExecuteImmichUpload(Stream stream, string fileName)
-        {
             UploadURL = UploadURL.TrimEnd('/');
 
             using HttpClient httpClient = new HttpClient

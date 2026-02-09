@@ -131,10 +131,11 @@ namespace ShareX.UploadersLib
         YouTube,
         [Description("Vault.ooo")]
         Vault_ooo,
+        [Description("Immich")]
+        Immich, 
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader, // Localized
-        Immich
     }
 
     [Description("URL shorteners"), DefaultValue(BITLY)]
