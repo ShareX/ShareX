@@ -25,7 +25,10 @@
 
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib;
+using ShareX.MediaLib;
 using ShareX.Properties;
+using ShareX.HelpersLib;
+using System.IO.Compression;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System;
@@ -33,6 +36,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -51,6 +55,194 @@ namespace ShareX
         public MainForm()
         {
             InitializeControls();
+            InitializeWebPFallback();
+        }
+
+        private void InitializeWebPFallback()
+        {
+            ImageHelpers.FFmpegWebPSaver = (img, stream, quality) =>
+            {
+                string ffmpegPath = Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.FFmpegPath;
+                StringBuilder sbDebug = new StringBuilder();
+                sbDebug.AppendLine("FFmpeg Discovery Log:");
+
+                // 1. Check configured path
+                if (!string.IsNullOrEmpty(ffmpegPath) && File.Exists(ffmpegPath))
+                {
+                    sbDebug.AppendLine($"[Success] Found configured path: {ffmpegPath}");
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(ffmpegPath)) sbDebug.AppendLine($"[Fail] Configured path not found: {ffmpegPath}");
+
+                    // 2. Check "Tools" folder in Personal Folder (Documents/ShareX/Tools/ffmpeg.exe)
+                    string personalTools = Path.Combine(Program.PersonalFolder, "Tools", "ffmpeg.exe");
+                    if (File.Exists(personalTools))
+                    {
+                        ffmpegPath = personalTools;
+                        sbDebug.AppendLine($"[Success] Found personal tools path: {ffmpegPath}");
+                    }
+                    else
+                    {
+                        sbDebug.AppendLine($"[Fail] Personal tools path: {personalTools}");
+                        
+                         // 3. Check Base Directory and Tools subdirectory
+                        string[] searchPaths = new string[] 
+                        { 
+                            Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ffmpeg.exe"),
+                            Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Tools", "ffmpeg.exe") 
+                        };
+
+                        foreach (string path in searchPaths)
+                        {
+                            if (File.Exists(path))
+                            {
+                                ffmpegPath = path;
+                                sbDebug.AppendLine($"[Success] Found app directory path: {ffmpegPath}");
+                                break;
+                            }
+                            sbDebug.AppendLine($"[Fail] App directory path: {path}");
+                        }
+                    }
+
+                    // 4. Check PATH
+                    if (string.IsNullOrEmpty(ffmpegPath) || !File.Exists(ffmpegPath))
+                    {
+                        var pathEnv = Environment.GetEnvironmentVariable("PATH");
+                        if (!string.IsNullOrEmpty(pathEnv))
+                        {
+                            foreach (var p in pathEnv.Split(Path.PathSeparator))
+                            {
+                                try 
+                                {
+                                    var fullPath = Path.Combine(p.Trim(), "ffmpeg.exe");
+                                    if (File.Exists(fullPath))
+                                    {
+                                        ffmpegPath = fullPath;
+                                        sbDebug.AppendLine($"[Success] Found in PATH: {ffmpegPath}");
+                                        break;
+                                    }
+                                }
+                                catch {}
+                            }
+                        }
+                    }
+                }
+
+                if (string.IsNullOrEmpty(ffmpegPath) || !File.Exists(ffmpegPath))
+                {
+                    // Prompt user to download FFmpeg
+                    DialogResult dr = MessageBox.Show(
+                        "FFmpeg is required for WebP encoding because native Windows components are missing.\n\n" +
+                        "Would you like to download FFmpeg automatically?", 
+                        "ShareX - FFmpeg Missing", 
+                        MessageBoxButtons.YesNo, 
+                        MessageBoxIcon.Question);
+                    
+                    if (dr == DialogResult.Yes)
+                    {
+                        try 
+                        {
+                            var toolsFolder = Path.Combine(Program.PersonalFolder, "Tools");
+                            FileHelpers.CreateDirectory(toolsFolder);
+
+                            // Use a direct reliable URL fallback to avoid empty URL issues failing the downloader
+                            string url = "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip";
+                            
+                            using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.zip"))
+                            {
+                                form.InstallType = InstallType.Event;
+                                form.RunInstallerInBackground = false;
+                                form.InstallRequested += (filePath) => 
+                                {
+                                    try 
+                                    {
+                                        using (ZipArchive archive = ZipFile.OpenRead(filePath))
+                                        {
+                                            var entry = archive.Entries.FirstOrDefault(e => e.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
+                                            if (entry != null)
+                                            {
+                                                string destinationPath = Path.Combine(toolsFolder, "ffmpeg.exe");
+                                                if (File.Exists(destinationPath)) File.Delete(destinationPath);
+                                                entry.ExtractToFile(destinationPath);
+                                                ffmpegPath = destinationPath;
+                                            }
+                                            else
+                                            {
+                                                DebugHelper.WriteLine("ffmpeg.exe not found in archive: " + filePath);
+                                            }
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        DebugHelper.WriteException(ex);
+                                    }
+                                };
+                                form.ShowDialog();
+                            }
+                            
+                            // Check if download succeeded and set path
+                            string potentialPath = Path.Combine(toolsFolder, "ffmpeg.exe");
+                            if (File.Exists(potentialPath))
+                            {
+                                ffmpegPath = potentialPath;
+                                sbDebug.AppendLine($"[Success] Downloaded to: {ffmpegPath}");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            sbDebug.AppendLine($"[Fail] Download attempt failed: {ex.Message}");
+                        }
+                    }
+                }
+
+                if (string.IsNullOrEmpty(ffmpegPath) || !File.Exists(ffmpegPath))
+                {
+                    // Throw specific error instead of returning false
+                    throw new FileNotFoundException($"FFmpeg not found. Please install FFmpeg or set the path in Task Settings.\n\n{sbDebug.ToString()}");
+                }
+
+                string tempPngPath = Path.Combine(Path.GetTempPath(), "ShareX_temp_" + Guid.NewGuid().ToString() + ".png");
+                string tempWebpPath = Path.Combine(Path.GetTempPath(), "ShareX_temp_" + Guid.NewGuid().ToString() + ".webp");
+
+                try
+                {
+                    img.Save(tempPngPath, System.Drawing.Imaging.ImageFormat.Png);
+
+                    quality = Math.Max(0, Math.Min(100, quality));
+                    
+                    string args = $"-y -i \"{tempPngPath}\" -c:v libwebp -q:v {quality} \"{tempWebpPath}\"";
+                    
+                    FFmpegCLIManager ffmpeg = new FFmpegCLIManager(ffmpegPath);
+                    if (ffmpeg.Run(args))
+                    {
+                        if (File.Exists(tempWebpPath))
+                        {
+                            byte[] bytes = File.ReadAllBytes(tempWebpPath);
+                            stream.Write(bytes, 0, bytes.Length);
+                            return true;
+                        }
+                        else
+                        {
+                            throw new FileNotFoundException("FFmpeg reported success but output file described not found: " + tempWebpPath);
+                        }
+                    }
+                    else
+                    {
+                       throw new Exception($"FFmpeg execution failed for '{ffmpegPath}'.\nArguments: {args}\nOutput:\n{ffmpeg.Output.ToString()}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DebugHelper.WriteException(ex);
+                    throw; // Re-throw to show the user
+                }
+                finally
+                {
+                    if (File.Exists(tempPngPath)) File.Delete(tempPngPath);
+                    if (File.Exists(tempWebpPath)) File.Delete(tempWebpPath);
+                }
+            };
         }
 
         private async void MainForm_HandleCreated(object sender, EventArgs e)
@@ -233,6 +425,8 @@ namespace ShareX
 #endif
 
             HandleCreated += MainForm_HandleCreated;
+
+
         }
 
         public async Task UpdateControls()

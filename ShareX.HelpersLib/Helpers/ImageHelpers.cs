@@ -2127,8 +2127,8 @@ namespace ShareX.HelpersLib
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Image files (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.tif, *.tiff)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.tif;*.tiff|" +
-                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
+                ofd.Filter = "Image files (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.tif, *.tiff, *.webp)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.tif;*.tiff;*.webp|" +
+                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff|WEBP (*.webp)|*.webp";
 
                 ofd.Multiselect = multiselect;
 
@@ -2182,6 +2182,25 @@ namespace ShareX.HelpersLib
         public static bool SaveImage(Image img, string filePath)
         {
             FileHelpers.CreateDirectoryFromFilePath(filePath);
+
+            string ext = FileHelpers.GetFileNameExtension(filePath);
+
+            if (!string.IsNullOrEmpty(ext) && ext.Equals("webp", StringComparison.OrdinalIgnoreCase))
+            {
+                try
+                {
+                    SaveWEBP(img, filePath, 75);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                    e.ShowError();
+                }
+
+                return false;
+            }
+
             ImageFormat imageFormat = GetImageFormat(filePath);
 
             try
@@ -2202,7 +2221,7 @@ namespace ShareX.HelpersLib
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
-                sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
+                sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff|WEBP (*.webp)|*.webp";
                 sfd.DefaultExt = "png";
 
                 string initialDirectory = null;
@@ -2249,6 +2268,9 @@ namespace ShareX.HelpersLib
                             case "tif":
                             case "tiff":
                                 sfd.FilterIndex = 5;
+                                break;
+                            case "webp":
+                                sfd.FilterIndex = 6;
                                 break;
                         }
                     }
@@ -3039,6 +3061,100 @@ namespace ShareX.HelpersLib
 
             return ms;
         }
+
+        public static MemoryStream SaveWEBP(Image img, int quality)
+        {
+            MemoryStream ms = new MemoryStream();
+            SaveWEBP(img, ms, quality);
+            return ms;
+        }
+
+        public static void SaveWEBP(Image img, string filePath, int quality)
+        {
+            using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Read))
+            {
+                SaveWEBP(img, fs, quality);
+            }
+        }
+
+        public static void SaveWEBP(Image img, Stream stream, int quality)
+        {
+            quality = quality.Clamp(0, 100);
+
+            try
+            {
+                // Try GDI+ Encoder first
+                ImageCodecInfo webpCodec = ImageCodecInfo.GetImageEncoders().FirstOrDefault(codec => codec.MimeType == "image/webp");
+
+                if (webpCodec != null)
+                {
+                    using (EncoderParameters encoderParameters = new EncoderParameters(1))
+                    {
+                        encoderParameters.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, quality);
+                        img.Save(stream, webpCodec, encoderParameters);
+                    }
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+
+            // Try WPF WIC Encoder second
+            try
+            {
+                // Use the known GUID for the WebP WIC encoder (Google's or Microsoft's)
+                // {275D7A94-C8E6-4E83-8B7C-A54A6B63B6F6} for WebP
+                Guid webpGuid = new Guid("275D7A94-C8E6-4E83-8B7C-A54A6B63B6F6");
+                
+                BitmapSource bitmapSource;
+                IntPtr hBitmap;
+
+                if (img is Bitmap bmp)
+                {
+                    hBitmap = bmp.GetHbitmap();
+                }
+                else
+                {
+                    using (Bitmap newBmp = new Bitmap(img))
+                    {
+                        hBitmap = newBmp.GetHbitmap();
+                    }
+                }
+
+                try
+                {
+                    bitmapSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                        hBitmap,
+                        IntPtr.Zero,
+                        System.Windows.Int32Rect.Empty,
+                        BitmapSizeOptions.FromEmptyOptions());
+
+                    BitmapEncoder encoder = BitmapEncoder.Create(webpGuid);
+                    encoder.Frames.Add(BitmapFrame.Create(bitmapSource));
+                    encoder.Save(stream);
+                    return;
+                }
+                finally
+                {
+                     NativeMethods.DeleteObject(hBitmap);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+
+            if (FFmpegWebPSaver != null && FFmpegWebPSaver(img, stream, quality))
+            {
+                return;
+            }
+
+            throw new Exception("WebP encoder not found. Native and WIC encoders failed. External FFmpeg fallback failed or not found (see debug log or install FFmpeg/WebP Extensions).");
+        }
+
+        public static Func<Image, Stream, int, bool> FFmpegWebPSaver { get; set; }
 
         public static MemoryStream SaveGIF(Image img, GIFQuality quality)
         {

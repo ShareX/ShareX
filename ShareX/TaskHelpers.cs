@@ -431,11 +431,11 @@ namespace ShareX
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, TaskSettings taskSettings)
         {
             return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
-                taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality);
+                taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageWEBPQuality, taskSettings.ImageSettings.ImageGIFQuality);
         }
 
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
-            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
+            int jpegQuality = 90, int webpQuality = 75, GIFQuality gifQuality = GIFQuality.Default)
         {
             MemoryStream ms = new MemoryStream();
 
@@ -468,6 +468,9 @@ namespace ShareX
                         break;
                     case EImageFormat.TIFF:
                         img.Save(ms, ImageFormat.Tiff);
+                        break;
+                    case EImageFormat.WEBP:
+                        ImageHelpers.SaveWEBP(img, ms, webpQuality);
                         break;
                 }
             }

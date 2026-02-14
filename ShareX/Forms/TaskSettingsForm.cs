@@ -233,7 +233,6 @@ namespace ShareX
             cbImageFormat.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat;
             cbImagePNGBitDepth.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<PNGBitDepth>());
             cbImagePNGBitDepth.SelectedIndex = (int)TaskSettings.ImageSettings.ImagePNGBitDepth;
-            nudImageJPEGQuality.SetValue(TaskSettings.ImageSettings.ImageJPEGQuality);
             cbImageGIFQuality.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<GIFQuality>());
             cbImageGIFQuality.SelectedIndex = (int)TaskSettings.ImageSettings.ImageGIFQuality;
             cbImageAutoUseJPEG.Checked = TaskSettings.ImageSettings.ImageAutoUseJPEG;
@@ -970,6 +969,7 @@ namespace ShareX
         private void cbImageFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.ImageSettings.ImageFormat = (EImageFormat)cbImageFormat.SelectedIndex;
+            UpdateImageQualityControls();
         }
 
         private void cbImagePNGBitDepth_SelectedIndexChanged(object sender, EventArgs e)
@@ -977,9 +977,37 @@ namespace ShareX
             TaskSettings.ImageSettings.ImagePNGBitDepth = (PNGBitDepth)cbImagePNGBitDepth.SelectedIndex;
         }
 
+        private void UpdateImageQualityControls()
+        {
+            if (TaskSettings.ImageSettings.ImageFormat == EImageFormat.JPEG)
+            {
+                lblImageJPEGQuality.Text = "JPEG quality:";
+                nudImageJPEGQuality.Enabled = true;
+                nudImageJPEGQuality.SetValue(TaskSettings.ImageSettings.ImageJPEGQuality);
+            }
+            else if (TaskSettings.ImageSettings.ImageFormat == EImageFormat.WEBP)
+            {
+                lblImageJPEGQuality.Text = "WEBP quality:";
+                nudImageJPEGQuality.Enabled = true;
+                nudImageJPEGQuality.SetValue(TaskSettings.ImageSettings.ImageWEBPQuality);
+            }
+            else
+            {
+                lblImageJPEGQuality.Text = "JPEG quality:";
+                nudImageJPEGQuality.Enabled = false;
+            }
+        }
+
         private void nudImageJPEGQuality_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.ImageSettings.ImageJPEGQuality = (int)nudImageJPEGQuality.Value;
+            if (TaskSettings.ImageSettings.ImageFormat == EImageFormat.WEBP)
+            {
+                TaskSettings.ImageSettings.ImageWEBPQuality = (int)nudImageJPEGQuality.Value;
+            }
+            else
+            {
+                TaskSettings.ImageSettings.ImageJPEGQuality = (int)nudImageJPEGQuality.Value;
+            }
         }
 
         private void cbImageGIFQuality_SelectedIndexChanged(object sender, EventArgs e)
