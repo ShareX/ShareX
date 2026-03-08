@@ -28,6 +28,8 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using System.Text.RegularExpressions;  
+
 
 namespace ShareX.HelpersLib
 {
@@ -89,14 +91,22 @@ namespace ShareX.HelpersLib
                     windowText = windowText.Truncate(MaxTitleLength);
                 }
 
-                sb.Replace(CodeMenuEntryFilename.t.ToPrefixString(), windowText);
+                string formatCode = CodeMenuEntryFilename.t.ToPrefixString();
+                string prefix = formatCode[..^CodeMenuEntryFilename.t.Value.Length];
+                string formatPattern = @"(?<!" + Regex.Escape(prefix) + ")" + Regex.Escape(formatCode);
+
+                sb = new StringBuilder(Regex.Replace(sb.ToString(), formatPattern, windowText.Replace("$", "$$")));
             }
 
             if (ProcessName != null)
             {
                 string processName = SanitizeInput(ProcessName);
 
-                sb.Replace(CodeMenuEntryFilename.pn.ToPrefixString(), processName);
+                string formatCode = CodeMenuEntryFilename.pn.ToPrefixString();
+                string prefix = formatCode[..^CodeMenuEntryFilename.pn.Value.Length];
+                string formatPattern = @"(?<!" + Regex.Escape(prefix) + ")" + Regex.Escape(formatCode);
+
+                sb = new StringBuilder(Regex.Replace(sb.ToString(), formatPattern, processName.Replace("$", "$$")));
             }
 
             string width = "", height = "";
@@ -320,6 +330,8 @@ namespace ShareX.HelpersLib
                 result = Helpers.GetValidURL(result);
             }
 
+            result = result.Replace("%%", "%");
+
             if (MaxNameLength > 0)
             {
                 result = result.Truncate(MaxNameLength);
@@ -330,7 +342,7 @@ namespace ShareX.HelpersLib
 
         private string SanitizeInput(string input)
         {
-            input = input.Trim().Replace(' ', '_');
+            input = input.Trim().Replace(' ', '_').Replace("%", "%%");
 
             if (Type == NameParserType.FileName || Type == NameParserType.FilePath)
             {
