@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using System;
+
 namespace ShareX.HelpersLib
 {
     public static class NativeConstants
@@ -130,5 +132,9 @@ namespace ShareX.HelpersLib
 
         public const int LWA_COLORKEY = 0x1;
         public const int LWA_ALPHA = 0x2;
+
+        public static readonly IntPtr DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 = new IntPtr(-4);
+        public const uint MONITOR_DEFAULTTONEAREST = 2;
+        public const int MDT_EFFECTIVE_DPI = 0;
     }
 }

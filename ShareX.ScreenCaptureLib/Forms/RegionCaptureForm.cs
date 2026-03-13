@@ -114,7 +114,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsFullscreen && Options.ActiveMonitorMode)
             {
-                ScreenBounds = CaptureHelpers.GetActiveScreenBounds();
+                ScreenBounds = CaptureHelpers.GetActiveScreenBoundsPhysical();
 
                 if (canvas == null)
                 {
@@ -125,7 +125,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                ScreenBounds = CaptureHelpers.GetScreenBounds();
+                ScreenBounds = CaptureHelpers.GetScreenBoundsPhysical();
 
                 if (canvas == null)
                 {
@@ -133,7 +133,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            ClientArea = new Rectangle(0, 0, ScreenBounds.Width, ScreenBounds.Height);
+            ClientArea = new Rectangle(0, 0, canvas.Width, canvas.Height);
             CanvasRectangle = ClientArea;
 
             timerStart = new Stopwatch();
@@ -872,6 +872,20 @@ namespace ShareX.ScreenCaptureLib
             {
                 UpdateTitle();
             }
+        }
+
+        private const int WM_DPICHANGED = 0x02E0;
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == WM_DPICHANGED && IsFullscreen)
+            {
+                // Block WinForms from resizing the fullscreen form due to DPI change.
+                // The form bounds are already set to physical pixel coordinates.
+                return;
+            }
+
+            base.WndProc(ref m);
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)

@@ -378,5 +378,49 @@ namespace ShareX.HelpersLib
             rect.Height -= rect.Height & 1;
             return rect;
         }
+
+        public static Rectangle GetScreenBoundsPhysical()
+        {
+            IntPtr previousContext = NativeMethods.SetDpiAwarenessForCapture();
+
+            try
+            {
+                int x = NativeMethods.GetSystemMetrics(SystemMetric.SM_XVIRTUALSCREEN);
+                int y = NativeMethods.GetSystemMetrics(SystemMetric.SM_YVIRTUALSCREEN);
+                int cx = NativeMethods.GetSystemMetrics(SystemMetric.SM_CXVIRTUALSCREEN);
+                int cy = NativeMethods.GetSystemMetrics(SystemMetric.SM_CYVIRTUALSCREEN);
+                return new Rectangle(x, y, cx, cy);
+            }
+            finally
+            {
+                NativeMethods.RestoreDpiAwareness(previousContext);
+            }
+        }
+
+        public static Rectangle GetActiveScreenBoundsPhysical()
+        {
+            IntPtr previousContext = NativeMethods.SetDpiAwarenessForCapture();
+
+            try
+            {
+                Point cursorPos = GetCursorPosition();
+                POINT pt = new POINT(cursorPos.X, cursorPos.Y);
+                IntPtr hMonitor = NativeMethods.MonitorFromPoint(pt, NativeConstants.MONITOR_DEFAULTTONEAREST);
+
+                MONITORINFO mi = new MONITORINFO();
+                mi.cbSize = System.Runtime.InteropServices.Marshal.SizeOf(typeof(MONITORINFO));
+
+                if (NativeMethods.GetMonitorInfo(hMonitor, ref mi))
+                {
+                    return mi.rcMonitor;
+                }
+
+                return Screen.FromPoint(cursorPos).Bounds;
+            }
+            finally
+            {
+                NativeMethods.RestoreDpiAwareness(previousContext);
+            }
+        }
     }
 }

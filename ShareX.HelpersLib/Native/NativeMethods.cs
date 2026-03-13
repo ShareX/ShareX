@@ -301,6 +301,15 @@ namespace ShareX.HelpersLib
         [DllImport("user32.dll")]
         public static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
 
+        [DllImport("user32.dll")]
+        public static extern IntPtr SetThreadDpiAwarenessContext(IntPtr dpiContext);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr MonitorFromPoint(POINT pt, uint dwFlags);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern bool GetMonitorInfo(IntPtr hMonitor, ref MONITORINFO lpmi);
+
         #endregion user32.dll
 
         #region kernel32.dll
@@ -482,6 +491,13 @@ namespace ShareX.HelpersLib
         public static extern uint TimeGetDevCaps(ref TimeCaps timeCaps, uint sizeTimeCaps);
 
         #endregion
+
+        #region shcore.dll
+
+        [DllImport("shcore.dll")]
+        public static extern int GetDpiForMonitor(IntPtr hmonitor, int dpiType, out uint dpiX, out uint dpiY);
+
+        #endregion shcore.dll
 
         #region Other dll
 
