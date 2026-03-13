@@ -64,6 +64,8 @@ namespace ShareX
         private ThreadWorker threadWorker;
         private GenericUploader uploader;
         private TaskReferenceHelper taskReferenceHelper;
+        private bool deferImageClipboardCopy;
+        private const int ClipboardHistoryDelayMs = 500;
 
         #region Constructors
 
@@ -566,6 +568,13 @@ namespace ShareX
                 Data.Position = 0;
             }
 
+            if (deferImageClipboardCopy && Image != null)
+            {
+                ClipboardHelpers.CopyImage(Image, Info.FileName);
+                DebugHelper.WriteLine("Image copied to clipboard.");
+                deferImageClipboardCopy = false;
+            }
+
             return true;
         }
 
@@ -609,8 +618,13 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
             {
-                ClipboardHelpers.CopyImage(Image, Info.FileName);
-                DebugHelper.WriteLine("Image copied to clipboard.");
+                deferImageClipboardCopy = Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.CopyFileToClipboard, AfterCaptureTasks.CopyFilePathToClipboard);
+
+                if (!deferImageClipboardCopy)
+                {
+                    ClipboardHelpers.CopyImage(Image, Info.FileName);
+                    DebugHelper.WriteLine("Image copied to clipboard.");
+                }
             }
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.PinToScreen))
@@ -765,6 +779,16 @@ namespace ShareX
                 else if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard))
                 {
                     ClipboardHelpers.CopyText(Info.FilePath);
+                }
+
+                if (deferImageClipboardCopy && Image != null)
+                {
+                    // Give Windows Clipboard History a moment to persist the file/path entry
+                    // before writing the image as the latest entry.
+                    Thread.Sleep(ClipboardHistoryDelayMs);
+                    ClipboardHelpers.CopyImage(Image, Info.FileName);
+                    DebugHelper.WriteLine("Image copied to clipboard.");
+                    deferImageClipboardCopy = false;
                 }
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowInExplorer))
