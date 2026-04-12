@@ -52,6 +52,21 @@ namespace ShareX
             LoadOptions();
         }
 
+        private enum OpenAIReasoningEffort
+        {
+            minimal,
+            low,
+            medium,
+            high
+        }
+
+        private enum OpenAIVerbosity
+        {
+            low,
+            medium,
+            high
+        }
+
         private void LoadOptions()
         {
             cbProvider.SelectedIndex = (int)Options.Provider;
@@ -66,19 +81,19 @@ namespace ShareX
             txtOpenRouterAPIKey.Text = Options.OpenRouterAPIKey;
             cbOpenRouterModel.Text = Options.OpenRouterModel;
 
-            int index = cbOpenAIReasoningEffort.FindStringExact(Options.OpenAIReasoningEffort);
-            if (index >= 0)
+            OpenAIReasoningEffort reasoningEffort;
+            if (Enum.TryParse(Options.OpenAIReasoningEffort, out reasoningEffort))
             {
-                cbOpenAIReasoningEffort.SelectedIndex = index;
+                cbOpenAIReasoningEffort.SelectedIndex = (int)reasoningEffort;
             }
             else
             {
                 cbOpenAIReasoningEffort.SelectedIndex = 2;
             }
-            index = cbOpenAIVerbosity.FindStringExact(Options.OpenAIVerbosity);
-            if (index >= 0)
+            OpenAIVerbosity verbosity;
+            if (Enum.TryParse(Options.OpenAIVerbosity, out verbosity))
             {
-                cbOpenAIVerbosity.SelectedIndex = index;
+                cbOpenAIVerbosity.SelectedIndex = (int)verbosity;
             }
             else
             {
@@ -103,8 +118,8 @@ namespace ShareX
             Options.OpenRouterAPIKey = txtOpenRouterAPIKey.Text;
             Options.OpenRouterModel = cbOpenRouterModel.Text;
 
-            Options.OpenAIReasoningEffort = cbOpenAIReasoningEffort.Text;
-            Options.OpenAIVerbosity = cbOpenAIVerbosity.Text;
+            Options.OpenAIReasoningEffort = ((OpenAIReasoningEffort)cbOpenAIReasoningEffort.SelectedIndex).ToString();
+            Options.OpenAIVerbosity = ((OpenAIVerbosity)cbOpenAIVerbosity.SelectedIndex).ToString();
             Options.AutoStartRegion = cbAutoStartRegion.Checked;
             Options.AutoStartAnalyze = cbAutoStartAnalyze.Checked;
             Options.AutoCopyResult = cbAutoCopyResult.Checked;
