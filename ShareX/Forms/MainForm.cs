@@ -181,6 +181,7 @@ namespace ShareX
             il.Images.Add(Resources.navigation_090_button);
             il.Images.Add(Resources.cross_button);
             il.Images.Add(Resources.tick_button);
+            tsmiMuteAudio.Text = tsmiTrayMuteAudio.Text = "Mute audio recording";
             il.Images.Add(Resources.navigation_000_button);
             il.Images.Add(Resources.clock);
             lvUploads.SmallImageList = il;
@@ -987,6 +988,7 @@ namespace ShareX
         private void AfterTaskSettingsJobs()
         {
             tsmiShowCursor.Checked = tsmiTrayShowCursor.Checked = Program.DefaultTaskSettings.CaptureSettings.ShowCursor;
+            tsmiMuteAudio.Checked = tsmiTrayMuteAudio.Checked = Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.MuteAudio;
             SetScreenshotDelay(Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay);
         }
 
@@ -1645,6 +1647,17 @@ namespace ShareX
         {
             Program.DefaultTaskSettings.CaptureSettings.ShowCursor = ((ToolStripMenuItem)sender).Checked;
             tsmiShowCursor.Checked = tsmiTrayShowCursor.Checked = Program.DefaultTaskSettings.CaptureSettings.ShowCursor;
+        }
+
+        private void tsmiMuteAudio_Click(object sender, EventArgs e)
+        {
+            Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.MuteAudio = ((ToolStripMenuItem)sender).Checked;
+            tsmiMuteAudio.Checked = tsmiTrayMuteAudio.Checked = Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.MuteAudio;
+        }
+
+        private void tsmiTrayMuteAudio_Click(object sender, EventArgs e)
+        {
+            tsmiMuteAudio_Click(sender, e);
         }
 
         private void tsmiScreenshotDelay0_Click(object sender, EventArgs e)
