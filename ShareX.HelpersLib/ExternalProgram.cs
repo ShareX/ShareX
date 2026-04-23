@@ -56,7 +56,35 @@ namespace ShareX.HelpersLib
 
         public string GetFullPath()
         {
-            return FileHelpers.ExpandFolderVariables(Path);
+            string path = FileHelpers.ExpandFolderVariables(Path);
+
+            // Empty, already absolute, or directly resolvable -> return unchanged.
+            if (string.IsNullOrEmpty(path) || System.IO.Path.IsPathRooted(path) || File.Exists(path))
+            {
+                return path;
+            }
+
+            // Unrooted name like "python.exe" -> walk %PATH%, matching Windows' standard
+            // executable lookup semantics. Append ".exe" if the user entered only the base name.
+            string executable = System.IO.Path.HasExtension(path) ? path : path + ".exe";
+            string pathEnv = Environment.GetEnvironmentVariable("PATH");
+
+            if (!string.IsNullOrEmpty(pathEnv))
+            {
+                foreach (string dir in pathEnv.Split(System.IO.Path.PathSeparator))
+                {
+                    if (string.IsNullOrWhiteSpace(dir)) continue;
+
+                    string candidate = System.IO.Path.Combine(dir.Trim(), executable);
+                    if (File.Exists(candidate))
+                    {
+                        return candidate;
+                    }
+                }
+            }
+
+            // Nothing found -> return the original path; Run() handles the missing-file case.
+            return path;
         }
 
         public string Run(string inputPath)
@@ -64,76 +92,93 @@ namespace ShareX.HelpersLib
             pendingInputFilePath = null;
             string path = GetFullPath();
 
-            if (!string.IsNullOrEmpty(path) && File.Exists(path) && !string.IsNullOrWhiteSpace(inputPath))
+            if (string.IsNullOrEmpty(path))
             {
-                inputPath = inputPath.Trim('"');
+                DebugHelper.WriteLine($"Action \"{Name}\" skipped: Path is empty.");
+                return null;
+            }
 
-                if (CheckExtension(inputPath))
+            if (!File.Exists(path))
+            {
+                DebugHelper.WriteLine($"Action \"{Name}\" skipped: Executable not found: \"{path}\"");
+                return null;
+            }
+
+            if (string.IsNullOrWhiteSpace(inputPath))
+            {
+                DebugHelper.WriteLine($"Action \"{Name}\" skipped: Input path is empty.");
+                return null;
+            }
+
+            inputPath = inputPath.Trim('"');
+
+            if (!CheckExtension(inputPath))
+            {
+                return null;
+            }
+
+            try
+            {
+                string outputPath = inputPath;
+
+                string arguments;
+
+                if (string.IsNullOrEmpty(Args))
                 {
-                    try
-                    {
-                        string outputPath = inputPath;
-
-                        string arguments;
-
-                        if (string.IsNullOrEmpty(Args))
-                        {
-                            arguments = '"' + inputPath + '"';
-                        }
-                        else
-                        {
-                            if (!string.IsNullOrWhiteSpace(OutputExtension))
-                            {
-                                outputPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(inputPath), System.IO.Path.GetFileNameWithoutExtension(inputPath));
-
-                                if (!OutputExtension.StartsWith("."))
-                                {
-                                    outputPath += ".";
-                                }
-
-                                outputPath += OutputExtension;
-                            }
-
-                            arguments = CodeMenuEntryActions.Parse(Args, inputPath, outputPath);
-                        }
-
-                        using (Process process = new Process())
-                        {
-                            ProcessStartInfo psi = new ProcessStartInfo()
-                            {
-                                FileName = path,
-                                Arguments = arguments,
-                                UseShellExecute = false,
-                                CreateNoWindow = HiddenWindow
-                            };
-
-                            DebugHelper.WriteLine($"Action input: \"{inputPath}\" [{FileHelpers.GetFileSizeReadable(inputPath)}]");
-                            DebugHelper.WriteLine($"Action run: \"{psi.FileName}\" {psi.Arguments}");
-
-                            process.StartInfo = psi;
-                            process.Start();
-                            process.WaitForExit();
-                        }
-
-                        if (!string.IsNullOrEmpty(outputPath) && File.Exists(outputPath))
-                        {
-                            DebugHelper.WriteLine($"Action output: \"{outputPath}\" [{FileHelpers.GetFileSizeReadable(outputPath)}]");
-
-                            if (DeleteInputFile && !inputPath.Equals(outputPath, StringComparison.OrdinalIgnoreCase))
-                            {
-                                pendingInputFilePath = inputPath;
-                            }
-
-                            return outputPath;
-                        }
-
-                        return inputPath;
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                    }
+                    arguments = '"' + inputPath + '"';
                 }
+                else
+                {
+                    if (!string.IsNullOrWhiteSpace(OutputExtension))
+                    {
+                        outputPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(inputPath), System.IO.Path.GetFileNameWithoutExtension(inputPath));
+
+                        if (!OutputExtension.StartsWith("."))
+                        {
+                            outputPath += ".";
+                        }
+
+                        outputPath += OutputExtension;
+                    }
+
+                    arguments = CodeMenuEntryActions.Parse(Args, inputPath, outputPath);
+                }
+
+                using (Process process = new Process())
+                {
+                    ProcessStartInfo psi = new ProcessStartInfo()
+                    {
+                        FileName = path,
+                        Arguments = arguments,
+                        UseShellExecute = false,
+                        CreateNoWindow = HiddenWindow
+                    };
+
+                    DebugHelper.WriteLine($"Action input: \"{inputPath}\" [{FileHelpers.GetFileSizeReadable(inputPath)}]");
+                    DebugHelper.WriteLine($"Action run: \"{psi.FileName}\" {psi.Arguments}");
+
+                    process.StartInfo = psi;
+                    process.Start();
+                    process.WaitForExit();
+                }
+
+                if (!string.IsNullOrEmpty(outputPath) && File.Exists(outputPath))
+                {
+                    DebugHelper.WriteLine($"Action output: \"{outputPath}\" [{FileHelpers.GetFileSizeReadable(outputPath)}]");
+
+                    if (DeleteInputFile && !inputPath.Equals(outputPath, StringComparison.OrdinalIgnoreCase))
+                    {
+                        pendingInputFilePath = inputPath;
+                    }
+
+                    return outputPath;
+                }
+
+                return inputPath;
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
             }
 
             return null;
