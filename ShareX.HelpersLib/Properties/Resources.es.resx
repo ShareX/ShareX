@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -257,6 +257,9 @@
   </data>
   <data name="GIFQuality_Bit8" xml:space="preserve">
     <value>256 colores de Octree cuantificador (Codificación lenta pero de mejor calidad)</value>
+  </data>
+  <data name="Watermark" xml:space="preserve">
+    <value>Marca de agua</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Añadir efectos de imagen / marca de agua</value>
@@ -525,5 +528,14 @@
   </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value />
+  </data>
+  <data name="AfterCaptureTasks_AddWatermark" xml:space="preserve">
+    <value>Añadir marca de agua</value>
+  </data>
+  <data name="WatermarkSettings" xml:space="preserve">
+    <value>Ajustes de marca de agua...</value>
+  </data>
+  <data name="WatermarkPreview" xml:space="preserve">
+    <value>VISTA PREVIA</value>
   </data>
 </root>

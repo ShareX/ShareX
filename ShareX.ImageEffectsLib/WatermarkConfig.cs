@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,30 +23,55 @@
 
 #endregion License Information (GPL v3)
 
+using System.ComponentModel;
 using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
+    [TypeConverter(typeof(ExpandableObjectConverter))]
     public class WatermarkConfig
     {
-        public WatermarkType Type = WatermarkType.Text;
-        public ContentAlignment Placement = ContentAlignment.BottomRight;
-        public int Offset = 5;
-        public DrawText Text = new DrawText { DrawTextShadow = false };
-        public DrawImage Image = new DrawImage();
+        [Category("General"), Description("Type of watermark")]
+        public WatermarkType Type { get; set; } = WatermarkType.Text;
+
+        [Category("General"), Description("Watermark placement")]
+        public ContentAlignment Placement { get; set; } = ContentAlignment.BottomRight;
+
+        [Category("General"), Description("Watermark offset from edge")]
+        public int Offset { get; set; } = 5;
+
+        [Category("Text"), Description("The text to display as watermark")]
+        public string Text
+        {
+            get => TextSettings.Text;
+            set => TextSettings.Text = value;
+        }
+
+        [Category("Text"), Description("Detailed text watermark settings"), DisplayName("Text settings")]
+        public DrawText TextSettings { get; set; } = new DrawText { DrawTextShadow = false };
+
+        [Category("Image"), Description("The image file to use as watermark"), Editor(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        public string ImagePath
+        {
+            get => ImageSettings.ImageLocation;
+            set => ImageSettings.ImageLocation = value;
+        }
+
+        [Category("Image"), Description("Detailed image watermark settings"), DisplayName("Image settings")]
+        public DrawImage ImageSettings { get; set; } = new DrawImage();
 
         public Bitmap Apply(Bitmap bmp)
         {
-            Text.Placement = Image.Placement = Placement;
-            Text.Offset = Image.Offset = new Point(Offset, Offset);
+            TextSettings.Placement = ImageSettings.Placement = Placement;
+            TextSettings.Offset = ImageSettings.Offset = new Point(Offset, Offset);
 
             switch (Type)
             {
                 default:
                 case WatermarkType.Text:
-                    return Text.Apply(bmp);
+                    return TextSettings.Apply(bmp);
                 case WatermarkType.Image:
-                    return Image.Apply(bmp);
+                    return ImageSettings.Apply(bmp);
             }
         }
     }

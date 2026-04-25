@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -357,6 +357,12 @@ namespace ShareX
         public bool UseRandomImageEffect = false;
 
         #endregion Image / Effects
+
+        #region Image / Watermark
+
+        public WatermarkConfig Watermark = new WatermarkConfig();
+
+        #endregion Image / Watermark
 
         #region Image / Thumbnail
 

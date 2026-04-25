@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -683,6 +683,17 @@ namespace ShareX
                         return imageEffect.ApplyEffects(bmp);
                     }
                 }
+            }
+
+            return bmp;
+        }
+
+        public static Bitmap ApplyWatermark(Bitmap bmp, WatermarkConfig watermark)
+        {
+            if (bmp != null && watermark != null)
+            {
+                bmp = ImageHelpers.NonIndexedBitmap(bmp);
+                return watermark.Apply(bmp);
             }
 
             return bmp;
@@ -1998,6 +2009,7 @@ namespace ShareX
                     case AfterCaptureTasks.ShowBeforeUploadWindow: return Resources.application__arrow;
                     case AfterCaptureTasks.UploadImageToHost: return Resources.upload_cloud;
                     case AfterCaptureTasks.DeleteFile: return Resources.bin;
+                    case AfterCaptureTasks.AddWatermark: return Resources.image_saturation;
                 }
             }
             else if (value is AfterUploadTasks afterUploadTask)

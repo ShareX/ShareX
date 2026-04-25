@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -30,6 +30,7 @@ using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
+    [TypeConverter(typeof(ExpandableObjectConverter))]
     public abstract class ImageEffect
     {
         [DefaultValue(true), Browsable(false)]

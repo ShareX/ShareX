@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -636,5 +636,14 @@ Clic medio para cerrar</value>
   </data>
   <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
     <value>La descarga falló: {0}</value>
+  </data>
+  <data name="Watermark" xml:space="preserve">
+    <value>Marca de agua</value>
+  </data>
+  <data name="WatermarkSettings" xml:space="preserve">
+    <value>Ajustes de marca de agua...</value>
+  </data>
+  <data name="WatermarkPreview" xml:space="preserve">
+    <value>VISTA PREVIA</value>
   </data>
 </root>

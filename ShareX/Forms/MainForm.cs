@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -231,6 +231,42 @@ namespace ShareX
             tsbDonate.Text = "ShareX website...";
             tsbDonate.Image = Resources.globe;
 #endif
+
+            // Watermark menu (Tray)
+            ToolStripMenuItem tsmiTrayWatermark = new ToolStripMenuItem(Resources.Watermark);
+            tsmiTrayWatermark.Image = Resources.image_saturation;
+            tsmiTrayWatermark.Font = new Font(tsmiTrayWatermark.Font, FontStyle.Bold);
+
+            ToolStripMenuItem tsmiTrayWatermarkEnabled = new ToolStripMenuItem("Activado"); // I'll keep this hardcoded for now or use a common one if I find it
+            tsmiTrayWatermarkEnabled.CheckOnClick = true;
+            tsmiTrayWatermarkEnabled.Checked = Program.DefaultTaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddWatermark);
+            tsmiTrayWatermarkEnabled.Click += (sender, e) =>
+            {
+                Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(AfterCaptureTasks.AddWatermark);
+            };
+
+            ToolStripMenuItem tsmiTrayWatermarkSettings = new ToolStripMenuItem(Resources.WatermarkSettings);
+            tsmiTrayWatermarkSettings.Image = Resources.gear;
+            tsmiTrayWatermarkSettings.Click += (sender, e) => TaskSettingsForm.ShowWatermarkSettings(Program.DefaultTaskSettings.ImageSettings.Watermark);
+
+            tsmiTrayWatermark.DropDownItems.Add(tsmiTrayWatermarkEnabled);
+            tsmiTrayWatermark.DropDownItems.Add(new ToolStripSeparator());
+            tsmiTrayWatermark.DropDownItems.Add(tsmiTrayWatermarkSettings);
+
+            tsmiTrayWatermark.DropDownOpening += (sender, e) =>
+            {
+                tsmiTrayWatermarkEnabled.Checked = Program.DefaultTaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddWatermark);
+            };
+
+            cmsTray.Items.Insert(0, tsmiTrayWatermark);
+            cmsTray.Items.Insert(1, new ToolStripSeparator());
+
+            // Watermark button (Main Toolbar)
+            ToolStripButton tsbWatermark = new ToolStripButton(Resources.Watermark);
+            tsbWatermark.Image = Resources.image_saturation;
+            tsbWatermark.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+            tsbWatermark.Click += (sender, e) => TaskSettingsForm.ShowWatermarkSettings(Program.DefaultTaskSettings.ImageSettings.Watermark);
+            tsMain.Items.Insert(tsMain.Items.IndexOf(tsddbCapture) + 1, tsbWatermark);
 
             HandleCreated += MainForm_HandleCreated;
         }
