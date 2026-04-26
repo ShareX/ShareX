@@ -3277,6 +3277,114 @@ namespace ShareX.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Screen recording preset.
+        /// </summary>
+        internal static string MainForm_InitializeScreenRecordPresetMenus_Screen_recording_preset {
+            get {
+                return ResourceManager.GetString("MainForm_InitializeScreenRecordPresetMenus_Screen_recording_preset", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string TaskHelpers_ScreenRecordPreset_Default_name {
+            get {
+                return ResourceManager.GetString("TaskHelpers_ScreenRecordPreset_Default_name", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Preset {0}.
+        /// </summary>
+        internal static string TaskHelpers_ScreenRecordPreset_Preset_name_format {
+            get {
+                return ResourceManager.GetString("TaskHelpers_ScreenRecordPreset_Preset_name_format", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Delete selected screen recording preset?.
+        /// </summary>
+        internal static string TaskSettingsForm_btnScreenRecordPresetDelete_Click_Delete_selected_screen_recording_preset_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_btnScreenRecordPresetDelete_Click_Delete_selected_screen_recording_preset_", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to {0} Copy.
+        /// </summary>
+        internal static string TaskSettingsForm_btnScreenRecordPresetDuplicate_Click_Copy_name_format {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_btnScreenRecordPresetDuplicate_Click_Copy_name_format", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Duplicate screen recording preset as:.
+        /// </summary>
+        internal static string TaskSettingsForm_btnScreenRecordPresetDuplicate_Click_Duplicate_screen_recording_preset_as_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_btnScreenRecordPresetDuplicate_Click_Duplicate_screen_recording_preset_as_", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Rename screen recording preset:.
+        /// </summary>
+        internal static string TaskSettingsForm_btnScreenRecordPresetRename_Click_Rename_screen_recording_preset_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_btnScreenRecordPresetRename_Click_Rename_screen_recording_preset_", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string TaskSettingsForm_InitializeScreenRecordPresetControls_Delete {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_InitializeScreenRecordPresetControls_Delete", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Duplicate.
+        /// </summary>
+        internal static string TaskSettingsForm_InitializeScreenRecordPresetControls_Duplicate {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_InitializeScreenRecordPresetControls_Duplicate", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to New.
+        /// </summary>
+        internal static string TaskSettingsForm_InitializeScreenRecordPresetControls_New {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_InitializeScreenRecordPresetControls_New", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Recording preset:.
+        /// </summary>
+        internal static string TaskSettingsForm_InitializeScreenRecordPresetControls_Recording_preset {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_InitializeScreenRecordPresetControls_Recording_preset", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Rename.
+        /// </summary>
+        internal static string TaskSettingsForm_InitializeScreenRecordPresetControls_Rename {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_InitializeScreenRecordPresetControls_Rename", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Your anti-virus software or the controlled folder access feature in Windows could be blocking ShareX..

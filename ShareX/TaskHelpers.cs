@@ -760,10 +760,148 @@ namespace ShareX
                 Program.Settings.DropHoverOpacity, taskSettings).ForceActivate();
         }
 
+        public static void EnsureScreenRecordPresets()
+        {
+            if (Program.Settings == null)
+            {
+                return;
+            }
+
+            if (Program.Settings.ScreenRecordPresets == null)
+            {
+                Program.Settings.ScreenRecordPresets = new List<ScreenRecordPreset>();
+            }
+
+            if (Program.Settings.ScreenRecordPresets.Any(x => x == null))
+            {
+                Program.Settings.ScreenRecordPresets = Program.Settings.ScreenRecordPresets.Where(x => x != null).ToList();
+            }
+
+            if (Program.Settings.ScreenRecordPresets.Count == 0)
+            {
+                TaskSettingsCapture captureSettings = Program.DefaultTaskSettings?.CaptureSettings ?? new TaskSettingsCapture();
+                Program.Settings.ScreenRecordPresets.Add(ScreenRecordPreset.CreateFromCaptureSettings(captureSettings,
+                    Resources.TaskHelpers_ScreenRecordPreset_Default_name));
+                Program.Settings.SelectedScreenRecordPreset = 0;
+            }
+
+            for (int i = 0; i < Program.Settings.ScreenRecordPresets.Count; i++)
+            {
+                ScreenRecordPreset preset = Program.Settings.ScreenRecordPresets[i];
+
+                if (preset.FFmpegOptions == null)
+                {
+                    preset.FFmpegOptions = new FFmpegOptions();
+                }
+
+                if (string.IsNullOrWhiteSpace(preset.Name))
+                {
+                    preset.Name = string.Format(Resources.TaskHelpers_ScreenRecordPreset_Preset_name_format, i + 1);
+                }
+            }
+
+            Program.Settings.SelectedScreenRecordPreset = Program.Settings.SelectedScreenRecordPreset.BetweenOrDefault(0, Program.Settings.ScreenRecordPresets.Count - 1);
+        }
+
+        public static List<ScreenRecordPreset> GetScreenRecordPresets()
+        {
+            if (Program.Settings == null)
+            {
+                return new List<ScreenRecordPreset>();
+            }
+
+            EnsureScreenRecordPresets();
+            return Program.Settings.ScreenRecordPresets;
+        }
+
+        public static int GetSelectedScreenRecordPresetIndex()
+        {
+            if (Program.Settings == null)
+            {
+                return 0;
+            }
+
+            EnsureScreenRecordPresets();
+            return Program.Settings.SelectedScreenRecordPreset;
+        }
+
+        public static ScreenRecordPreset GetSelectedScreenRecordPreset()
+        {
+            if (Program.Settings == null)
+            {
+                TaskSettingsCapture captureSettings = Program.DefaultTaskSettings?.CaptureSettings ?? new TaskSettingsCapture();
+                return ScreenRecordPreset.CreateFromCaptureSettings(captureSettings,
+                    Resources.TaskHelpers_ScreenRecordPreset_Default_name);
+            }
+
+            EnsureScreenRecordPresets();
+            return Program.Settings.ScreenRecordPresets[Program.Settings.SelectedScreenRecordPreset];
+        }
+
+        public static void SetSelectedScreenRecordPreset(int index, bool saveSettings = false)
+        {
+            if (Program.Settings == null)
+            {
+                return;
+            }
+
+            EnsureScreenRecordPresets();
+            Program.Settings.SelectedScreenRecordPreset = index.BetweenOrDefault(0, Program.Settings.ScreenRecordPresets.Count - 1);
+
+            if (saveSettings)
+            {
+                SettingManager.SaveApplicationConfigAsync();
+            }
+        }
+
+        public static int AddScreenRecordPreset(ScreenRecordPreset preset, bool setAsSelected = true)
+        {
+            if (Program.Settings == null)
+            {
+                return -1;
+            }
+
+            EnsureScreenRecordPresets();
+
+            if (preset == null)
+            {
+                preset = ScreenRecordPreset.CreateFromCaptureSettings(new TaskSettingsCapture(),
+                    Resources.TaskHelpers_ScreenRecordPreset_Default_name);
+            }
+
+            if (string.IsNullOrWhiteSpace(preset.Name))
+            {
+                preset.Name = string.Format(Resources.TaskHelpers_ScreenRecordPreset_Preset_name_format,
+                    Program.Settings.ScreenRecordPresets.Count + 1);
+            }
+
+            Program.Settings.ScreenRecordPresets.Add(preset);
+            int index = Program.Settings.ScreenRecordPresets.Count - 1;
+
+            if (setAsSelected)
+            {
+                Program.Settings.SelectedScreenRecordPreset = index;
+            }
+
+            return index;
+        }
+
+        public static void ApplySelectedScreenRecordPreset(TaskSettings taskSettings)
+        {
+            if (taskSettings?.CaptureSettings == null)
+            {
+                return;
+            }
+
+            ScreenRecordPreset preset = GetSelectedScreenRecordPreset();
+            preset.ApplyTo(taskSettings.CaptureSettings);
+        }
+
         public static void StartScreenRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
+            ApplySelectedScreenRecordPreset(taskSettings);
             ScreenRecordManager.StartStopRecording(outputType, startMethod, taskSettings);
         }
 

@@ -41,6 +41,14 @@ namespace ShareX
         public bool IsDefault { get; private set; }
 
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTextFileUploaders;
+        private Label lblScreenRecordPreset;
+        private ComboBox cbScreenRecordPreset;
+        private FlowLayoutPanel flpScreenRecordPresetButtons;
+        private Button btnScreenRecordPresetNew;
+        private Button btnScreenRecordPresetDuplicate;
+        private Button btnScreenRecordPresetRename;
+        private Button btnScreenRecordPresetDelete;
+        private bool isScreenRecordPresetUpdating;
         private bool loaded;
 
         public TaskSettingsForm(TaskSettings hotkeySetting, bool isDefault = false)
@@ -339,16 +347,8 @@ namespace ShareX
                 nudGIFFPS.Maximum = 60;
             }
 
-            nudScreenRecordFPS.SetValue(TaskSettings.CaptureSettings.ScreenRecordFPS);
-            nudGIFFPS.SetValue(TaskSettings.CaptureSettings.GIFFPS);
-            cbScreenRecorderFixedDuration.Checked = nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
-            nudScreenRecorderDuration.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordDuration);
-            cbScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
-            nudScreenRecorderStartDelay.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay);
-            cbScreenRecorderShowCursor.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursor;
-            cbScreenRecordTwoPassEncoding.Checked = TaskSettings.CaptureSettings.ScreenRecordTwoPassEncoding;
-            cbScreenRecordTransparentRegion.Checked = TaskSettings.CaptureSettings.ScreenRecordTransparentRegion;
-            cbScreenRecordConfirmAbort.Checked = TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort;
+            RefreshScreenRecorderControls();
+            InitializeScreenRecordPresetControls();
 
             #endregion Screen recorder
 
@@ -1320,6 +1320,328 @@ namespace ShareX
 
         #region Screen recorder
 
+        private void RefreshScreenRecorderControls()
+        {
+            bool previousUpdateState = isScreenRecordPresetUpdating;
+            isScreenRecordPresetUpdating = true;
+
+            nudScreenRecordFPS.SetValue(TaskSettings.CaptureSettings.ScreenRecordFPS);
+            nudGIFFPS.SetValue(TaskSettings.CaptureSettings.GIFFPS);
+            cbScreenRecorderFixedDuration.Checked = nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
+            nudScreenRecorderDuration.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordDuration);
+            cbScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
+            nudScreenRecorderStartDelay.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay);
+            cbScreenRecorderShowCursor.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursor;
+            cbScreenRecordTwoPassEncoding.Checked = TaskSettings.CaptureSettings.ScreenRecordTwoPassEncoding;
+            cbScreenRecordTransparentRegion.Checked = TaskSettings.CaptureSettings.ScreenRecordTransparentRegion;
+            cbScreenRecordConfirmAbort.Checked = TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort;
+
+            isScreenRecordPresetUpdating = previousUpdateState;
+        }
+
+        private void InitializeScreenRecordPresetControls()
+        {
+            if (cbScreenRecordPreset != null)
+            {
+                return;
+            }
+
+            TaskHelpers.EnsureScreenRecordPresets();
+
+            Control[] existingControls = tpScreenRecorder.Controls.Cast<Control>().ToArray();
+            int originalTop = existingControls.Length > 0 ? existingControls.Min(x => x.Top) : 8;
+
+            lblScreenRecordPreset = new Label
+            {
+                AutoSize = true,
+                Location = new Point(8, originalTop + 6),
+                Text = Resources.TaskSettingsForm_InitializeScreenRecordPresetControls_Recording_preset
+            };
+
+            cbScreenRecordPreset = new ComboBox
+            {
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                FormattingEnabled = true,
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right
+            };
+            cbScreenRecordPreset.SelectedIndexChanged += cbScreenRecordPreset_SelectedIndexChanged;
+
+            int comboLeft = lblScreenRecordPreset.Right + 8;
+            int comboWidth = Math.Max(140, tpScreenRecorder.ClientSize.Width - comboLeft - 8);
+            cbScreenRecordPreset.Location = new Point(comboLeft, originalTop + 2);
+            cbScreenRecordPreset.Size = new Size(comboWidth, 21);
+
+            flpScreenRecordPresetButtons = new FlowLayoutPanel
+            {
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                WrapContents = true,
+                Location = new Point(comboLeft, cbScreenRecordPreset.Bottom + 4),
+                Margin = Padding.Empty,
+                Padding = Padding.Empty
+            };
+
+            btnScreenRecordPresetDuplicate = new Button
+            {
+                Text = Resources.TaskSettingsForm_InitializeScreenRecordPresetControls_Duplicate,
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                Padding = new Padding(8, 0, 8, 0),
+                UseVisualStyleBackColor = true
+            };
+            btnScreenRecordPresetDuplicate.Click += btnScreenRecordPresetDuplicate_Click;
+
+            btnScreenRecordPresetNew = new Button
+            {
+                Text = Resources.TaskSettingsForm_InitializeScreenRecordPresetControls_New,
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                Padding = new Padding(8, 0, 8, 0),
+                UseVisualStyleBackColor = true
+            };
+            btnScreenRecordPresetNew.Click += btnScreenRecordPresetNew_Click;
+
+            btnScreenRecordPresetRename = new Button
+            {
+                Text = Resources.TaskSettingsForm_InitializeScreenRecordPresetControls_Rename,
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                Padding = new Padding(8, 0, 8, 0),
+                UseVisualStyleBackColor = true
+            };
+            btnScreenRecordPresetRename.Click += btnScreenRecordPresetRename_Click;
+
+            btnScreenRecordPresetDelete = new Button
+            {
+                Text = Resources.TaskSettingsForm_InitializeScreenRecordPresetControls_Delete,
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                Padding = new Padding(8, 0, 8, 0),
+                UseVisualStyleBackColor = true
+            };
+            btnScreenRecordPresetDelete.Click += btnScreenRecordPresetDelete_Click;
+
+            flpScreenRecordPresetButtons.Controls.Add(btnScreenRecordPresetNew);
+            flpScreenRecordPresetButtons.Controls.Add(btnScreenRecordPresetDuplicate);
+            flpScreenRecordPresetButtons.Controls.Add(btnScreenRecordPresetRename);
+            flpScreenRecordPresetButtons.Controls.Add(btnScreenRecordPresetDelete);
+
+            int desiredTop = flpScreenRecordPresetButtons.Bottom + 8;
+            int verticalOffset = Math.Max(0, desiredTop - originalTop);
+
+            foreach (Control control in existingControls)
+            {
+                control.Top += verticalOffset;
+            }
+
+            tpScreenRecorder.Controls.Add(lblScreenRecordPreset);
+            tpScreenRecorder.Controls.Add(cbScreenRecordPreset);
+            tpScreenRecorder.Controls.Add(flpScreenRecordPresetButtons);
+
+            ShareXResources.ApplyCustomThemeToControl(lblScreenRecordPreset);
+            ShareXResources.ApplyCustomThemeToControl(cbScreenRecordPreset);
+            ShareXResources.ApplyCustomThemeToControl(flpScreenRecordPresetButtons);
+            ShareXResources.ApplyCustomThemeToControl(btnScreenRecordPresetNew);
+            ShareXResources.ApplyCustomThemeToControl(btnScreenRecordPresetDuplicate);
+            ShareXResources.ApplyCustomThemeToControl(btnScreenRecordPresetRename);
+            ShareXResources.ApplyCustomThemeToControl(btnScreenRecordPresetDelete);
+
+            lblScreenRecordPreset.BringToFront();
+            cbScreenRecordPreset.BringToFront();
+            flpScreenRecordPresetButtons.BringToFront();
+
+            PopulateScreenRecordPresetCombo(TaskHelpers.GetSelectedScreenRecordPresetIndex());
+        }
+
+        private void PopulateScreenRecordPresetCombo(int selectedIndex)
+        {
+            if (cbScreenRecordPreset == null)
+            {
+                return;
+            }
+
+            List<ScreenRecordPreset> presets = TaskHelpers.GetScreenRecordPresets();
+
+            isScreenRecordPresetUpdating = true;
+
+            cbScreenRecordPreset.Items.Clear();
+
+            foreach (ScreenRecordPreset preset in presets)
+            {
+                cbScreenRecordPreset.Items.Add(preset.Name);
+            }
+
+            if (cbScreenRecordPreset.Items.Count > 0)
+            {
+                cbScreenRecordPreset.SelectedIndex = selectedIndex.BetweenOrDefault(0, cbScreenRecordPreset.Items.Count - 1);
+            }
+
+            isScreenRecordPresetUpdating = false;
+
+            bool hasPreset = cbScreenRecordPreset.Items.Count > 0;
+            btnScreenRecordPresetNew.Enabled = hasPreset;
+            btnScreenRecordPresetDuplicate.Enabled = hasPreset;
+            btnScreenRecordPresetRename.Enabled = hasPreset;
+            btnScreenRecordPresetDelete.Enabled = hasPreset && cbScreenRecordPreset.Items.Count > 1;
+        }
+
+        private void AutoSaveSelectedScreenRecordPreset()
+        {
+            if (!loaded || isScreenRecordPresetUpdating || cbScreenRecordPreset == null)
+            {
+                return;
+            }
+
+            int selectedIndex = cbScreenRecordPreset.SelectedIndex;
+            List<ScreenRecordPreset> presets = TaskHelpers.GetScreenRecordPresets();
+
+            if (selectedIndex < 0 || selectedIndex >= presets.Count)
+            {
+                return;
+            }
+
+            string presetName = presets[selectedIndex].Name;
+            presets[selectedIndex] = ScreenRecordPreset.CreateFromCaptureSettings(TaskSettings.CaptureSettings, presetName);
+
+            TaskHelpers.SetSelectedScreenRecordPreset(selectedIndex);
+            SettingManager.SaveApplicationConfigAsync();
+        }
+
+        private static string GetUniqueScreenRecordPresetName(string baseName)
+        {
+            List<ScreenRecordPreset> presets = TaskHelpers.GetScreenRecordPresets();
+            string name = baseName;
+            int index = 2;
+
+            while (presets.Any(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase)))
+            {
+                name = $"{baseName} {index}";
+                index++;
+            }
+
+            return name;
+        }
+
+        private void cbScreenRecordPreset_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!loaded || isScreenRecordPresetUpdating || cbScreenRecordPreset.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            int selectedIndex = cbScreenRecordPreset.SelectedIndex;
+            TaskHelpers.SetSelectedScreenRecordPreset(selectedIndex);
+            TaskHelpers.ApplySelectedScreenRecordPreset(TaskSettings);
+            RefreshScreenRecorderControls();
+            SettingManager.SaveApplicationConfigAsync();
+            PopulateScreenRecordPresetCombo(selectedIndex);
+        }
+
+        private void btnScreenRecordPresetNew_Click(object sender, EventArgs e)
+        {
+            int nextIndex = TaskHelpers.GetScreenRecordPresets().Count + 1;
+            string defaultName = string.Format(Resources.TaskHelpers_ScreenRecordPreset_Preset_name_format, nextIndex);
+            string presetName = GetUniqueScreenRecordPresetName(defaultName);
+            ScreenRecordPreset preset = ScreenRecordPreset.CreateFromCaptureSettings(new TaskSettingsCapture(), presetName);
+            int newSelectedIndex = TaskHelpers.AddScreenRecordPreset(preset);
+
+            if (newSelectedIndex < 0)
+            {
+                return;
+            }
+
+            TaskHelpers.ApplySelectedScreenRecordPreset(TaskSettings);
+            RefreshScreenRecorderControls();
+            SettingManager.SaveApplicationConfigAsync();
+            PopulateScreenRecordPresetCombo(newSelectedIndex);
+        }
+
+        private void btnScreenRecordPresetDuplicate_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = cbScreenRecordPreset?.SelectedIndex ?? -1;
+
+            if (selectedIndex < 0)
+            {
+                return;
+            }
+
+            string copyName = string.Format(Resources.TaskSettingsForm_btnScreenRecordPresetDuplicate_Click_Copy_name_format,
+                TaskHelpers.GetScreenRecordPresets()[selectedIndex].Name);
+            string defaultName = GetUniqueScreenRecordPresetName(copyName);
+            string presetName = InputBox.Show(Resources.TaskSettingsForm_btnScreenRecordPresetDuplicate_Click_Duplicate_screen_recording_preset_as_, defaultName);
+
+            if (presetName == null)
+            {
+                return;
+            }
+
+            presetName = string.IsNullOrWhiteSpace(presetName) ? defaultName : presetName.Trim();
+            ScreenRecordPreset preset = ScreenRecordPreset.CreateFromCaptureSettings(TaskSettings.CaptureSettings, presetName);
+            int newSelectedIndex = TaskHelpers.AddScreenRecordPreset(preset);
+
+            if (newSelectedIndex < 0)
+            {
+                return;
+            }
+
+            SettingManager.SaveApplicationConfigAsync();
+            PopulateScreenRecordPresetCombo(newSelectedIndex);
+        }
+
+        private void btnScreenRecordPresetRename_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = cbScreenRecordPreset?.SelectedIndex ?? -1;
+
+            if (selectedIndex < 0)
+            {
+                return;
+            }
+
+            List<ScreenRecordPreset> presets = TaskHelpers.GetScreenRecordPresets();
+            ScreenRecordPreset selectedPreset = presets[selectedIndex];
+            string defaultName = string.Format(Resources.TaskHelpers_ScreenRecordPreset_Preset_name_format, selectedIndex + 1);
+            string presetName = InputBox.Show(Resources.TaskSettingsForm_btnScreenRecordPresetRename_Click_Rename_screen_recording_preset_, selectedPreset.Name);
+
+            if (presetName == null)
+            {
+                return;
+            }
+
+            selectedPreset.Name = string.IsNullOrWhiteSpace(presetName) ? defaultName : presetName.Trim();
+
+            TaskHelpers.SetSelectedScreenRecordPreset(selectedIndex);
+            SettingManager.SaveApplicationConfigAsync();
+            PopulateScreenRecordPresetCombo(selectedIndex);
+        }
+
+        private void btnScreenRecordPresetDelete_Click(object sender, EventArgs e)
+        {
+            List<ScreenRecordPreset> presets = TaskHelpers.GetScreenRecordPresets();
+            int selectedIndex = cbScreenRecordPreset?.SelectedIndex ?? -1;
+
+            if (selectedIndex < 0 || presets.Count <= 1)
+            {
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(Resources.TaskSettingsForm_btnScreenRecordPresetDelete_Click_Delete_selected_screen_recording_preset_,
+                "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+
+            presets.RemoveAt(selectedIndex);
+            selectedIndex = Math.Min(selectedIndex, presets.Count - 1);
+
+            TaskHelpers.SetSelectedScreenRecordPreset(selectedIndex);
+            TaskHelpers.ApplySelectedScreenRecordPreset(TaskSettings);
+            RefreshScreenRecorderControls();
+            SettingManager.SaveApplicationConfigAsync();
+            PopulateScreenRecordPresetCombo(selectedIndex);
+        }
+
         private void btnScreenRecorderFFmpegOptions_Click(object sender, EventArgs e)
         {
             ScreenRecordingOptions options = new ScreenRecordingOptions
@@ -1339,58 +1661,70 @@ namespace ShareX
 
                 TaskSettings.CaptureSettings.FFmpegOptions = form.Options.FFmpeg;
             }
+
+            AutoSaveSelectedScreenRecordPreset();
         }
 
         private void nudScreenRecordFPS_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordFPS = (int)nudScreenRecordFPS.Value;
+            AutoSaveSelectedScreenRecordPreset();
         }
 
         private void nudGIFFPS_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.GIFFPS = (int)nudGIFFPS.Value;
+            AutoSaveSelectedScreenRecordPreset();
         }
 
         private void cbScreenRecorderFixedDuration_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordFixedDuration = cbScreenRecorderFixedDuration.Checked;
             nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
+            AutoSaveSelectedScreenRecordPreset();
         }
 
         private void nudScreenRecorderDuration_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordDuration = (float)nudScreenRecorderDuration.Value;
+            AutoSaveSelectedScreenRecordPreset();
         }
 
         private void cbScreenRecordAutoStart_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordAutoStart = cbScreenRecordAutoStart.Checked;
             nudScreenRecorderStartDelay.Enabled = cbScreenRecordAutoStart.Checked;
+            AutoSaveSelectedScreenRecordPreset();
         }
 
         private void nudScreenRecorderStartDelay_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordStartDelay = (float)nudScreenRecorderStartDelay.Value;
+            AutoSaveSelectedScreenRecordPreset();
         }
 
         private void cbScreenRecorderShowCursor_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordShowCursor = cbScreenRecorderShowCursor.Checked;
+            AutoSaveSelectedScreenRecordPreset();
         }
 
         private void cbScreenRecordTwoPassEncoding_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordTwoPassEncoding = cbScreenRecordTwoPassEncoding.Checked;
+            AutoSaveSelectedScreenRecordPreset();
         }
 
         private void cbScreenRecordTransparentRegion_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordTransparentRegion = cbScreenRecordTransparentRegion.Checked;
+            AutoSaveSelectedScreenRecordPreset();
         }
 
         private void cbScreenRecordConfirmAbort_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort = cbScreenRecordConfirmAbort.Checked;
+            AutoSaveSelectedScreenRecordPreset();
         }
 
         #endregion Screen recorder

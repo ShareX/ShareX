@@ -42,6 +42,8 @@ namespace ShareX
         public string FileUploadDefaultDirectory = "";
         public int NameParserAutoIncrementNumber = 0;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
+        public List<ScreenRecordPreset> ScreenRecordPresets = new List<ScreenRecordPreset>();
+        public int SelectedScreenRecordPreset = 0;
 
         // Main window
         public bool FirstTimeMinimizeToTray = true;

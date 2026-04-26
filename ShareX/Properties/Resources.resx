@@ -1151,4 +1151,40 @@ Middle click to close</value>
   <data name="folder-bookmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-bookmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MainForm_InitializeScreenRecordPresetMenus_Screen_recording_preset" xml:space="preserve">
+    <value>Screen recording preset</value>
+  </data>
+  <data name="TaskHelpers_ScreenRecordPreset_Default_name" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="TaskHelpers_ScreenRecordPreset_Preset_name_format" xml:space="preserve">
+    <value>Preset {0}</value>
+  </data>
+  <data name="TaskSettingsForm_InitializeScreenRecordPresetControls_Recording_preset" xml:space="preserve">
+    <value>Recording preset:</value>
+  </data>
+  <data name="TaskSettingsForm_InitializeScreenRecordPresetControls_New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="TaskSettingsForm_InitializeScreenRecordPresetControls_Duplicate" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="TaskSettingsForm_InitializeScreenRecordPresetControls_Rename" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="TaskSettingsForm_InitializeScreenRecordPresetControls_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="TaskSettingsForm_btnScreenRecordPresetDuplicate_Click_Copy_name_format" xml:space="preserve">
+    <value>{0} Copy</value>
+  </data>
+  <data name="TaskSettingsForm_btnScreenRecordPresetDuplicate_Click_Duplicate_screen_recording_preset_as_" xml:space="preserve">
+    <value>Duplicate screen recording preset as:</value>
+  </data>
+  <data name="TaskSettingsForm_btnScreenRecordPresetRename_Click_Rename_screen_recording_preset_" xml:space="preserve">
+    <value>Rename screen recording preset:</value>
+  </data>
+  <data name="TaskSettingsForm_btnScreenRecordPresetDelete_Click_Delete_selected_screen_recording_preset_" xml:space="preserve">
+    <value>Delete selected screen recording preset?</value>
+  </data>
 </root>
