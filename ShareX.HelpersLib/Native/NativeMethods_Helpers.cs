@@ -611,5 +611,63 @@ namespace ShareX.HelpersLib
 
             return hWnd;
         }
+
+        public static uint GetDpiForMonitor(Point screenPoint)
+        {
+            try
+            {
+                POINT pt = new POINT(screenPoint.X, screenPoint.Y);
+                IntPtr hMonitor = MonitorFromPoint(pt, NativeConstants.MONITOR_DEFAULTTONEAREST);
+
+                if (hMonitor != IntPtr.Zero)
+                {
+                    int result = GetDpiForMonitor(hMonitor, NativeConstants.MDT_EFFECTIVE_DPI, out uint dpiX, out uint dpiY);
+
+                    if (result == 0)
+                    {
+                        return dpiX;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return 96;
+        }
+
+        public static float GetScalingFactorForMonitor(Point screenPoint)
+        {
+            return GetDpiForMonitor(screenPoint) / 96f;
+        }
+
+        public static IntPtr SetDpiAwarenessForCapture()
+        {
+            try
+            {
+                return SetThreadDpiAwarenessContext(NativeConstants.DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+                return IntPtr.Zero;
+            }
+        }
+
+        public static void RestoreDpiAwareness(IntPtr previousContext)
+        {
+            if (previousContext != IntPtr.Zero)
+            {
+                try
+                {
+                    SetThreadDpiAwarenessContext(previousContext);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
+            }
+        }
     }
 }

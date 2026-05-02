@@ -85,7 +85,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (Options.MenuIconSize == 0)
             {
-                Options.MenuIconSize = (int)(16 * NativeMethods.GetScreenScalingFactor());
+                Options.MenuIconSize = (int)(16 * NativeMethods.GetScalingFactorForMonitor(CaptureHelpers.GetCursorPosition()));
             }
 
             int imageScalingSize = Options.MenuIconSize.Clamp(16, 64);

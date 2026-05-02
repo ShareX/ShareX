@@ -228,6 +228,15 @@ namespace ShareX.HelpersLib
         }
     }
 
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+    public struct MONITORINFO
+    {
+        public int cbSize;
+        public RECT rcMonitor;
+        public RECT rcWork;
+        public uint dwFlags;
+    }
+
     [StructLayout(LayoutKind.Sequential)]
     public struct WINDOWINFO
     {

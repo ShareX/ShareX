@@ -41,18 +41,27 @@ namespace ShareX.ScreenCaptureLib
 
         public Bitmap CaptureRectangle(Rectangle rect)
         {
-            if (RemoveOutsideScreenArea)
-            {
-                Rectangle bounds = CaptureHelpers.GetScreenBounds();
-                rect = Rectangle.Intersect(bounds, rect);
-            }
+            IntPtr previousContext = NativeMethods.SetDpiAwarenessForCapture();
 
-            return CaptureRectangleNative(rect, CaptureCursor);
+            try
+            {
+                if (RemoveOutsideScreenArea)
+                {
+                    Rectangle bounds = CaptureHelpers.GetScreenBoundsPhysical();
+                    rect = Rectangle.Intersect(bounds, rect);
+                }
+
+                return CaptureRectangleNative(rect, CaptureCursor);
+            }
+            finally
+            {
+                NativeMethods.RestoreDpiAwareness(previousContext);
+            }
         }
 
         public Bitmap CaptureFullscreen()
         {
-            Rectangle bounds = CaptureHelpers.GetScreenBounds();
+            Rectangle bounds = CaptureHelpers.GetScreenBoundsPhysical();
 
             return CaptureRectangle(bounds);
         }
@@ -104,7 +113,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Bitmap CaptureActiveMonitor()
         {
-            Rectangle bounds = CaptureHelpers.GetActiveScreenBounds();
+            Rectangle bounds = CaptureHelpers.GetActiveScreenBoundsPhysical();
 
             return CaptureRectangle(bounds);
         }
