@@ -63,7 +63,9 @@ namespace ShareX.HelpersLib
         [Description("bmp")]
         BMP,
         [Description("tif")]
-        TIFF
+        TIFF,
+        [Description("webp")]
+        WEBP
     }
 
     public enum HashType

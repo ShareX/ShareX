@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.IO;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -75,7 +76,30 @@ namespace ShareX.ScreenCaptureLib
                     return FileHelpers.GetAbsolutePath(CLIPath);
                 }
 
-                return FileHelpers.GetAbsolutePath("ffmpeg.exe");
+                string localPath = FileHelpers.GetAbsolutePath("ffmpeg.exe");
+                if (File.Exists(localPath)) return localPath;
+
+                // Fallback 1: Personal Tools folder (Standard ShareX location)
+                string personalPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ShareX", "Tools", "ffmpeg.exe");
+                if (File.Exists(personalPath)) return personalPath;
+
+                // Fallback 2: Check PATH
+                var pathEnv = Environment.GetEnvironmentVariable("PATH");
+                if (!string.IsNullOrEmpty(pathEnv))
+                {
+                    foreach (var p in pathEnv.Split(Path.PathSeparator))
+                    {
+                        try 
+                        {
+                            var fullPath = Path.Combine(p.Trim(), "ffmpeg.exe");
+                            if (File.Exists(fullPath)) return fullPath;
+                        }
+                        catch {}
+                    }
+                }
+
+                // Default to local path even if missing, so error message shows expected location
+                return localPath;
             }
         }
 
