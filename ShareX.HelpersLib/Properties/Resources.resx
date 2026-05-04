@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -425,8 +425,20 @@ Would you like to download it?</value>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>Auto increment alphanumeric case-insensitive (0 pad left using {n})</value>
   </data>
+  <data name="Watermark" xml:space="preserve">
+    <value>Watermark</value>
+  </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Add image effects</value>
+  </data>
+  <data name="AfterCaptureTasks_AddWatermark" xml:space="preserve">
+    <value>Add watermark</value>
+  </data>
+  <data name="WatermarkSettings" xml:space="preserve">
+    <value>Watermark settings...</value>
+  </data>
+  <data name="WatermarkPreview" xml:space="preserve">
+    <value>PREVIEW</value>
   </data>
   <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
     <value>Delete file locally</value>

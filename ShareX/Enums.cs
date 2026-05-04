@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -151,7 +151,8 @@ namespace ShareX
         DoOCR = 1 << 18,
         ShowBeforeUploadWindow = 1 << 19,
         UploadImageToHost = 1 << 20,
-        DeleteFile = 1 << 21
+        DeleteFile = 1 << 21,
+        AddWatermark = 1 << 22
     }
 
     [Flags]

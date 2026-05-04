@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1150,5 +1150,14 @@ Middle click to close</value>
   </data>
   <data name="folder-bookmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-bookmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Watermark" xml:space="preserve">
+    <value>Watermark</value>
+  </data>
+  <data name="WatermarkSettings" xml:space="preserve">
+    <value>Watermark settings...</value>
+  </data>
+  <data name="WatermarkPreview" xml:space="preserve">
+    <value>PREVIEW</value>
   </data>
 </root>

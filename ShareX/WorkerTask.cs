@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -593,6 +593,17 @@ namespace ShareX
                 if (Image == null)
                 {
                     DebugHelper.WriteLine("Error: Applying image effects resulted empty image.");
+                    return false;
+                }
+            }
+
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddWatermark))
+            {
+                Image = TaskHelpers.ApplyWatermark(Image, Info.TaskSettings.ImageSettingsReference.Watermark);
+
+                if (Image == null)
+                {
+                    DebugHelper.WriteLine("Error: Applying watermark resulted empty image.");
                     return false;
                 }
             }

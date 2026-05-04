@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
+using ShareX.ImageEffectsLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -169,6 +170,7 @@ namespace ShareX
                 txtScreenshotsFolder.Enabled = btnScreenshotsFolderBrowse.Enabled = TaskSettings.OverrideScreenshotsFolder;
 
                 UpdateTaskTabMenuNames();
+                InitializeWatermarkUI();
 
                 #endregion Task
 
@@ -1911,5 +1913,82 @@ namespace ShareX
         }
 
         #endregion Advanced
+        private void InitializeWatermarkUI()
+        {
+            Button btnWatermark = new Button();
+            btnWatermark.Text = Resources.WatermarkSettings;
+            btnWatermark.AutoSize = true;
+            btnWatermark.Location = new Point(btnImageEffects.Left, btnImageEffects.Bottom + 10);
+            btnWatermark.Click += (s, e) => ShowWatermarkSettings(TaskSettings.ImageSettingsReference.Watermark);
+            tpEffects.Controls.Add(btnWatermark);
+        }
+
+        public static void ShowWatermarkSettings(WatermarkConfig watermark)
+        {
+            using (Form form = new Form())
+            {
+                form.Text = Resources.WatermarkSettings;
+                form.Size = new Size(900, 600);
+                form.StartPosition = FormStartPosition.CenterParent;
+                form.MinimizeBox = false;
+                form.MaximizeBox = false;
+                ShareXResources.ApplyTheme(form, true);
+
+                SplitContainer sc = new SplitContainer();
+                sc.Dock = DockStyle.Fill;
+                sc.FixedPanel = FixedPanel.Panel1;
+                sc.SplitterDistance = 350;
+                form.Controls.Add(sc);
+
+                PropertyGrid pg = new PropertyGrid();
+                pg.Dock = DockStyle.Fill;
+                pg.SelectedObject = watermark;
+                sc.Panel1.Controls.Add(pg);
+
+                PictureBox pbPreview = new PictureBox();
+                pbPreview.Dock = DockStyle.Fill;
+                pbPreview.SizeMode = PictureBoxSizeMode.CenterImage;
+                pbPreview.BackColor = Color.FromArgb(64, 64, 64);
+                sc.Panel2.Controls.Add(pbPreview);
+
+                Action updatePreview = () =>
+                {
+                    try
+                    {
+                        int width = 500, height = 400;
+                        Bitmap bmp = new Bitmap(width, height);
+                        using (Graphics g = Graphics.FromImage(bmp))
+                        {
+                            // Draw checkered background
+                            int cellSize = 20;
+                            for (int y = 0; y < height; y += cellSize)
+                            {
+                                for (int x = 0; x < width; x += cellSize)
+                                {
+                                    Brush b = ((x / cellSize) + (y / cellSize)) % 2 == 0 ? Brushes.DimGray : Brushes.Gray;
+                                    g.FillRectangle(b, x, y, cellSize, cellSize);
+                                }
+                            }
+                            g.DrawString(Resources.WatermarkPreview, new Font(FontFamily.GenericSansSerif, 40, FontStyle.Bold), new SolidBrush(Color.FromArgb(50, 255, 255, 255)), 100, 150);
+                        }
+
+                        TaskHelpers.ApplyWatermark(bmp, watermark);
+                        
+                        var oldImage = pbPreview.Image;
+                        pbPreview.Image = bmp;
+                        oldImage?.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugHelper.WriteException(ex);
+                    }
+                };
+
+                pg.PropertyValueChanged += (s, e) => updatePreview();
+                form.Load += (s, e) => updatePreview();
+
+                form.ShowDialog();
+            }
+        }
     }
 }
