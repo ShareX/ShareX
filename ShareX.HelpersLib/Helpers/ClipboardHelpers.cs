@@ -236,6 +236,89 @@ namespace ShareX.HelpersLib
             return false;
         }
 
+        // Combines image, file drop and Unicode text into one IDataObject and sets the
+        // clipboard atomically, so the typical after-capture combination "image + file path"
+        // does not end up with the second job silently overwriting the first. Any subset of
+        // the three formats is supported: pass null (or empty) for the pieces that should
+        // not be written. Image formatting mirrors CopyImageAlternative2 (Bitmap + PNG + DIB)
+        // but deliberately omits the HTML <img> fragment: when a file drop list is also
+        // present, apps like Word prefer HTML over Bitmap and the relative src="" attribute
+        // doesn't resolve on the recipient side, so the paste degrades to an attachment.
+        public static bool CopyCombined(Image img, string fileDropPath, string textPayload)
+        {
+            bool hasImage = img != null;
+            bool hasFileDrop = !string.IsNullOrEmpty(fileDropPath);
+            bool hasText = !string.IsNullOrEmpty(textPayload);
+
+            if (!hasImage && !hasFileDrop && !hasText)
+            {
+                return false;
+            }
+
+            try
+            {
+                if (hasImage)
+                {
+                    using (Bitmap bmpNonTransparent = img.CreateEmptyBitmap(PixelFormat.Format24bppRgb))
+                    using (MemoryStream msPNG = new MemoryStream())
+                    using (MemoryStream msDIB = new MemoryStream())
+                    {
+                        IDataObject dataObject = new DataObject();
+
+                        using (Graphics g = Graphics.FromImage(bmpNonTransparent))
+                        {
+                            g.Clear(Color.White);
+                            g.DrawImage(img, 0, 0, img.Width, img.Height);
+                        }
+
+                        dataObject.SetData(DataFormats.Bitmap, true, bmpNonTransparent);
+
+                        img.Save(msPNG, ImageFormat.Png);
+                        dataObject.SetData(FORMAT_PNG, false, msPNG);
+
+                        byte[] dibData = ClipboardHelpersEx.ConvertToDib(img);
+                        msDIB.Write(dibData, 0, dibData.Length);
+                        dataObject.SetData(DataFormats.Dib, false, msDIB);
+
+                        if (hasFileDrop)
+                        {
+                            dataObject.SetData(DataFormats.FileDrop, true, new string[] { fileDropPath });
+                        }
+
+                        if (hasText)
+                        {
+                            dataObject.SetData(DataFormats.UnicodeText, true, textPayload);
+                        }
+
+                        return CopyData(dataObject);
+                    }
+                }
+                else
+                {
+                    // No image requested -> no MemoryStreams, plain DataObject.
+                    IDataObject dataObject = new DataObject();
+
+                    if (hasFileDrop)
+                    {
+                        dataObject.SetData(DataFormats.FileDrop, true, new string[] { fileDropPath });
+                    }
+
+                    if (hasText)
+                    {
+                        dataObject.SetData(DataFormats.UnicodeText, true, textPayload);
+                    }
+
+                    return CopyData(dataObject);
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "Clipboard combined copy failed.");
+            }
+
+            return false;
+        }
+
         public static bool CopyImageFromFile(string path)
         {
             if (!string.IsNullOrEmpty(path) && File.Exists(path))

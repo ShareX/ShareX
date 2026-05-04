@@ -607,7 +607,15 @@ namespace ShareX
                 }
             }
 
-            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
+            // Only copy the image to the clipboard here if no file-based clipboard task is
+            // also enabled. Otherwise we defer to the combined copy further down (after the
+            // file has been saved), so the image format is not overwritten by the later
+            // CopyFile / CopyText jobs.
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard) &&
+                !Info.TaskSettings.AfterCaptureJob.HasFlagAny(
+                    AfterCaptureTasks.CopyFileToClipboard,
+                    AfterCaptureTasks.CopyFilePathToClipboard,
+                    AfterCaptureTasks.CopyFolderPathToClipboard))
             {
                 ClipboardHelpers.CopyImage(Image, Info.FileName);
                 DebugHelper.WriteLine("Image copied to clipboard.");
@@ -758,17 +766,41 @@ namespace ShareX
                     }
                 }
 
-                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFileToClipboard))
+                // Combined clipboard write: bundle image, file drop list and file/folder
+                // path into one IDataObject so the formats coexist. CopyImageToClipboard is
+                // deferred to here whenever any file-based clipboard task is also set
+                // (see the earlier guard at the top of DoAfterCaptureJobs()).
+                bool copyImage = Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard);
+                bool copyFile = Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFileToClipboard);
+                bool copyFilePath = Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard);
+                bool copyFolderPath = Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFolderPathToClipboard);
+
+                if (copyImage || copyFile || copyFilePath || copyFolderPath)
                 {
-                    ClipboardHelpers.CopyFile(Info.FilePath);
-                }
-                else if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard))
-                {
-                    ClipboardHelpers.CopyText(Info.FilePath);
-                }
-                else if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFolderPathToClipboard))
-                {
-                    ClipboardHelpers.CopyText(Path.GetDirectoryName(Info.FilePath));
+                    Image clipboardImage = copyImage ? Image : null;
+                    string fileDropPath = copyFile ? Info.FilePath : null;
+
+                    // Only one text payload can be copied: file path takes precedence over
+                    // folder path to preserve the old exclusive behaviour of the if/else-if
+                    // chain. Users who configure both flags previously only ever saw the
+                    // file path on the clipboard.
+                    string textPayload = null;
+                    if (copyFilePath)
+                    {
+                        textPayload = Info.FilePath;
+                    }
+                    else if (copyFolderPath)
+                    {
+                        textPayload = Path.GetDirectoryName(Info.FilePath);
+                    }
+
+                    if (ClipboardHelpers.CopyCombined(clipboardImage, fileDropPath, textPayload))
+                    {
+                        if (copyImage) DebugHelper.WriteLine("Image copied to clipboard.");
+                        if (copyFile) DebugHelper.WriteLine("File copied to clipboard.");
+                        if (copyFilePath) DebugHelper.WriteLine("File path copied to clipboard.");
+                        if (copyFolderPath && !copyFilePath) DebugHelper.WriteLine("Folder path copied to clipboard.");
+                    }
                 }
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowInExplorer))
