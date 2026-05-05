@@ -248,6 +248,19 @@ namespace ShareX
             OnSelectedPanelChanged();
         }
 
+        public void SelectAllPanels()
+        {
+            SelectedPanels.Clear();
+
+            foreach (TaskThumbnailPanel panel in Panels)
+            {
+                panel.Selected = true;
+                SelectedPanels.Add(panel);
+            }
+
+            OnSelectedPanelChanged();
+        }
+
         protected void OnContextMenuRequested(object sender, MouseEventArgs e)
         {
             ContextMenuRequested?.Invoke(sender, e);
@@ -344,6 +357,12 @@ namespace ShareX
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
+            if (keyData == (Keys.Control | Keys.A))
+            {
+                SelectAllPanels();
+                return true;
+            }
+
             OnKeyDown(new KeyEventArgs(keyData));
 
             return base.ProcessCmdKey(ref msg, keyData);
