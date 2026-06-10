@@ -46,6 +46,7 @@ namespace ShareX
         private int trayClickCount = 0;
         private UploadInfoManager uim;
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTrayImageFileUploaders, tsmiTextFileUploaders, tsmiTrayTextFileUploaders;
+        private ToolStripMenuItem tsmiScreenRecordPresets, tsmiTrayScreenRecordPresets;
         private ImageFilesCache actionsMenuIconCache = new ImageFilesCache();
 
         public MainForm()
@@ -93,6 +94,9 @@ namespace ShareX
             tsmiShortenSelectedURL.HideImageMargin();
             tsmiShareSelectedURL.HideImageMargin();
             tsmiTrayRecentItems.HideImageMargin();
+
+            TaskHelpers.EnsureScreenRecordPresets();
+            InitializeScreenRecordPresetMenus();
 
             AfterCaptureTasks[] ignoreAfterCaptureTasks = null;
 
@@ -610,6 +614,79 @@ namespace ShareX
                 {
                     tsmiAddImageEffects.DropDownItems.AddRange(items.ToArray());
                 }
+            }
+        }
+
+        private void InitializeScreenRecordPresetMenus()
+        {
+            tsmiScreenRecordPresets = new ToolStripMenuItem(Resources.MainForm_InitializeScreenRecordPresetMenus_Screen_recording_preset);
+            tsmiTrayScreenRecordPresets = new ToolStripMenuItem(Resources.MainForm_InitializeScreenRecordPresetMenus_Screen_recording_preset);
+            tsmiScreenRecordPresets.Image = Resources.camcorder_image;
+            tsmiTrayScreenRecordPresets.Image = Resources.camcorder_image;
+
+            int captureIndex = tsddbCapture.DropDownItems.IndexOf(tsmiScreenRecordingGIF);
+
+            if (captureIndex >= 0)
+            {
+                tsddbCapture.DropDownItems.Insert(captureIndex + 1, tsmiScreenRecordPresets);
+            }
+            else
+            {
+                tsddbCapture.DropDownItems.Add(tsmiScreenRecordPresets);
+            }
+
+            int trayCaptureIndex = tsmiTrayCapture.DropDownItems.IndexOf(tsmiTrayScreenRecordingGIF);
+
+            if (trayCaptureIndex >= 0)
+            {
+                tsmiTrayCapture.DropDownItems.Insert(trayCaptureIndex + 1, tsmiTrayScreenRecordPresets);
+            }
+            else
+            {
+                tsmiTrayCapture.DropDownItems.Add(tsmiTrayScreenRecordPresets);
+            }
+
+            RefreshScreenRecordPresetMenus();
+        }
+
+        private void RefreshScreenRecordPresetMenus()
+        {
+            PopulateScreenRecordPresetMenu(tsmiScreenRecordPresets);
+            PopulateScreenRecordPresetMenu(tsmiTrayScreenRecordPresets);
+        }
+
+        private void PopulateScreenRecordPresetMenu(ToolStripMenuItem parent)
+        {
+            if (parent == null)
+            {
+                return;
+            }
+
+            List<ScreenRecordPreset> presets = TaskHelpers.GetScreenRecordPresets();
+            int selectedIndex = TaskHelpers.GetSelectedScreenRecordPresetIndex();
+            parent.DropDownItems.Clear();
+
+            for (int i = 0; i < presets.Count; i++)
+            {
+                ScreenRecordPreset preset = presets[i];
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(preset.Name);
+                tsmi.Tag = i;
+                tsmi.Checked = i == selectedIndex;
+                tsmi.Click += ScreenRecordPresetMenuItem_Click;
+                parent.DropDownItems.Add(tsmi);
+            }
+
+            parent.Enabled = parent.DropDownItems.Count > 0;
+        }
+
+        private void ScreenRecordPresetMenuItem_Click(object sender, EventArgs e)
+        {
+            if (sender is ToolStripMenuItem tsmi && tsmi.Tag is int index)
+            {
+                TaskHelpers.SetSelectedScreenRecordPreset(index);
+                TaskHelpers.ApplySelectedScreenRecordPreset(Program.DefaultTaskSettings);
+                RefreshScreenRecordPresetMenus();
+                SettingManager.SaveApplicationConfigAsync();
             }
         }
 
@@ -1579,6 +1656,7 @@ namespace ShareX
 
         private async void tsddbCapture_DropDownOpening(object sender, EventArgs e)
         {
+            RefreshScreenRecordPresetMenus();
             await PrepareCaptureMenuAsync(tsmiWindow, tsmiWindowItems_Click, tsmiMonitor, tsmiMonitorItems_Click);
         }
 
@@ -2047,6 +2125,7 @@ namespace ShareX
 
         private async void tsmiCapture_DropDownOpening(object sender, EventArgs e)
         {
+            RefreshScreenRecordPresetMenus();
             await PrepareCaptureMenuAsync(tsmiTrayWindow, tsmiTrayWindowItems_Click, tsmiTrayMonitor, tsmiTrayMonitorItems_Click);
         }
 

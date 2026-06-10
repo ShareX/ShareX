@@ -29,6 +29,7 @@ using ShareX.ImageEditor.Hosting;
 using ShareX.ImageEffectsLib;
 using ShareX.IndexerLib;
 using ShareX.MediaLib;
+using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System;
@@ -418,6 +419,78 @@ namespace ShareX
         public OCROptions OCROptions = new OCROptions();
 
         #endregion Capture / OCR
+    }
+
+    public class ScreenRecordPreset
+    {
+        public string Name = "";
+        public FFmpegOptions FFmpegOptions = new FFmpegOptions();
+        public int ScreenRecordFPS = 30;
+        public int GIFFPS = 15;
+        public bool ScreenRecordShowCursor = true;
+        public bool ScreenRecordAutoStart = true;
+        public float ScreenRecordStartDelay = 0f;
+        public bool ScreenRecordFixedDuration = false;
+        public float ScreenRecordDuration = 3f;
+        public bool ScreenRecordTwoPassEncoding = false;
+        public bool ScreenRecordAskConfirmationOnAbort = false;
+        public bool ScreenRecordTransparentRegion = false;
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
+        public static ScreenRecordPreset CreateFromCaptureSettings(TaskSettingsCapture captureSettings, string name = null)
+        {
+            ScreenRecordPreset preset = new ScreenRecordPreset();
+
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                preset.Name = Resources.TaskHelpers_ScreenRecordPreset_Default_name;
+            }
+            else
+            {
+                preset.Name = name;
+            }
+
+            if (captureSettings != null)
+            {
+                preset.FFmpegOptions = captureSettings.FFmpegOptions?.Copy() ?? new FFmpegOptions();
+                preset.ScreenRecordFPS = captureSettings.ScreenRecordFPS;
+                preset.GIFFPS = captureSettings.GIFFPS;
+                preset.ScreenRecordShowCursor = captureSettings.ScreenRecordShowCursor;
+                preset.ScreenRecordAutoStart = captureSettings.ScreenRecordAutoStart;
+                preset.ScreenRecordStartDelay = captureSettings.ScreenRecordStartDelay;
+                preset.ScreenRecordFixedDuration = captureSettings.ScreenRecordFixedDuration;
+                preset.ScreenRecordDuration = captureSettings.ScreenRecordDuration;
+                preset.ScreenRecordTwoPassEncoding = captureSettings.ScreenRecordTwoPassEncoding;
+                preset.ScreenRecordAskConfirmationOnAbort = captureSettings.ScreenRecordAskConfirmationOnAbort;
+                preset.ScreenRecordTransparentRegion = captureSettings.ScreenRecordTransparentRegion;
+            }
+
+            return preset;
+        }
+
+        public void ApplyTo(TaskSettingsCapture captureSettings)
+        {
+            if (captureSettings == null)
+            {
+                return;
+            }
+
+            captureSettings.FFmpegOptions = FFmpegOptions?.Copy() ?? new FFmpegOptions();
+            captureSettings.ScreenRecordFPS = ScreenRecordFPS;
+            captureSettings.GIFFPS = GIFFPS;
+            captureSettings.ScreenRecordShowCursor = ScreenRecordShowCursor;
+            captureSettings.ScreenRecordAutoStart = ScreenRecordAutoStart;
+            captureSettings.ScreenRecordStartDelay = ScreenRecordStartDelay;
+            captureSettings.ScreenRecordFixedDuration = ScreenRecordFixedDuration;
+            captureSettings.ScreenRecordDuration = ScreenRecordDuration;
+            captureSettings.ScreenRecordTwoPassEncoding = ScreenRecordTwoPassEncoding;
+            captureSettings.ScreenRecordAskConfirmationOnAbort = ScreenRecordAskConfirmationOnAbort;
+            captureSettings.ScreenRecordTransparentRegion = ScreenRecordTransparentRegion;
+        }
     }
 
     public class TaskSettingsUpload

@@ -150,6 +150,7 @@ namespace ShareX
             Settings.SettingsSaveFailed += Settings_SettingsSaveFailed;
             DefaultTaskSettings = Settings.DefaultTaskSettings;
             ApplicationConfigBackwardCompatibilityTasks();
+            TaskHelpers.EnsureScreenRecordPresets();
             MigrateHistoryFile();
             HistoryConnect();
         }
