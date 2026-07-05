@@ -28,6 +28,10 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using Avalonia.Platform;
+using Avalonia.VisualTree;
+using ShareX.ImageEditor.Presentation.Rendering;
+using SkiaSharp;
 
 namespace ShareX.ImageEditor.Presentation.Controls;
 
@@ -42,14 +46,16 @@ public class ImageComparisonSlider : Control
     public static readonly StyledProperty<double> SliderPositionProperty =
         AvaloniaProperty.Register<ImageComparisonSlider, double>(nameof(SliderPosition), 0.5);
 
-    private const double CheckerSize = 12d;
-    private static readonly IBrush CheckerLightBrush = new SolidColorBrush(Color.FromRgb(235, 235, 235));
-    private static readonly IBrush CheckerDarkBrush = new SolidColorBrush(Color.FromRgb(205, 205, 205));
+    private const double RenderCacheHeadroom = 1.25d;
+    private static readonly IBrush CheckerBrush = CreateCheckerBrush();
     private static readonly IBrush SliderBrush = new SolidColorBrush(Color.FromRgb(255, 255, 255));
     private static readonly IPen SliderPen = new Pen(SliderBrush, 2);
     private static readonly IBrush HandleBrush = new SolidColorBrush(Color.FromArgb(230, 35, 35, 35));
     private static readonly IPen HandlePen = new Pen(SliderBrush, 2);
     private readonly Cursor _sliderCursor = new(StandardCursorType.SizeWestEast);
+    private Bitmap? _scaledLeftImage;
+    private Bitmap? _scaledRightImage;
+    private PixelSize _renderCacheSize;
     private bool _isDragging;
 
     public ImageComparisonSlider()
@@ -79,11 +85,14 @@ public class ImageComparisonSlider : Control
     {
         base.OnPropertyChanged(change);
 
-        if (change.Property == LeftImageProperty ||
-            change.Property == RightImageProperty ||
-            change.Property == SliderPositionProperty)
+        if (change.Property == LeftImageProperty || change.Property == RightImageProperty)
         {
+            ClearRenderCache();
             Cursor = LeftImage != null && RightImage != null ? _sliderCursor : null;
+            InvalidateVisual();
+        }
+        else if (change.Property == SliderPositionProperty)
+        {
             InvalidateVisual();
         }
     }
@@ -103,21 +112,22 @@ public class ImageComparisonSlider : Control
         }
 
         Rect imageBounds = GetImageBounds(bounds, leftImage, rightImage);
+        EnsureRenderCache(imageBounds);
         DrawTransparencyBackground(context, imageBounds);
 
         if (leftImage == null || rightImage == null)
         {
-            DrawBitmap(context, leftImage ?? rightImage!, imageBounds);
+            DrawBitmap(context, GetRenderImage(leftImage ?? rightImage!), imageBounds);
             return;
         }
 
-        DrawBitmap(context, rightImage, imageBounds);
+        DrawBitmap(context, GetRenderImage(rightImage), imageBounds);
 
         double sliderX = GetSliderX(imageBounds);
         using (context.PushClip(new Rect(imageBounds.Left, imageBounds.Top, Math.Max(0, sliderX - imageBounds.Left), imageBounds.Height)))
         {
             DrawTransparencyBackground(context, imageBounds);
-            DrawBitmap(context, leftImage, imageBounds);
+            DrawBitmap(context, GetRenderImage(leftImage), imageBounds);
         }
 
         DrawSlider(context, imageBounds);
@@ -169,29 +179,42 @@ public class ImageComparisonSlider : Control
 
     private static void DrawTransparencyBackground(DrawingContext context, Rect bounds)
     {
-        context.FillRectangle(CheckerLightBrush, bounds);
+        context.FillRectangle(CheckerBrush, bounds);
+    }
 
-        int columns = (int)Math.Ceiling(bounds.Width / CheckerSize);
-        int rows = (int)Math.Ceiling(bounds.Height / CheckerSize);
+    private static unsafe IBrush CreateCheckerBrush()
+    {
+        const int cellSize = 12;
+        const int patternSize = cellSize * 2;
+        WriteableBitmap bitmap = new(
+            new PixelSize(patternSize, patternSize),
+            new Vector(96, 96),
+            PixelFormat.Bgra8888,
+            AlphaFormat.Opaque);
 
-        for (int y = 0; y < rows; y++)
+        using (ILockedFramebuffer framebuffer = bitmap.Lock())
         {
-            for (int x = 0; x < columns; x++)
+            const uint lightColor = 0xFFEBEBEB;
+            const uint darkColor = 0xFFCDCDCD;
+
+            for (int y = 0; y < patternSize; y++)
             {
-                if ((x + y) % 2 == 0)
+                uint* row = (uint*)((byte*)framebuffer.Address + y * framebuffer.RowBytes);
+
+                for (int x = 0; x < patternSize; x++)
                 {
-                    continue;
+                    row[x] = ((x / cellSize) + (y / cellSize)) % 2 == 0 ? lightColor : darkColor;
                 }
-
-                Rect cell = new(
-                    bounds.Left + x * CheckerSize,
-                    bounds.Top + y * CheckerSize,
-                    Math.Min(CheckerSize, bounds.Right - (bounds.Left + x * CheckerSize)),
-                    Math.Min(CheckerSize, bounds.Bottom - (bounds.Top + y * CheckerSize)));
-
-                context.FillRectangle(CheckerDarkBrush, cell);
             }
         }
+
+        return new ImageBrush(bitmap)
+        {
+            SourceRect = new RelativeRect(0, 0, 1, 1, RelativeUnit.Relative),
+            DestinationRect = new RelativeRect(0, 0, patternSize, patternSize, RelativeUnit.Absolute),
+            Stretch = Stretch.Fill,
+            TileMode = TileMode.Tile
+        };
     }
 
     private static Rect GetImageBounds(Rect bounds, Bitmap? leftImage, Bitmap? rightImage)
@@ -239,13 +262,120 @@ public class ImageComparisonSlider : Control
     private void UpdateSliderPosition(Point pointerPosition)
     {
         Rect imageBounds = GetImageBounds(new Rect(Bounds.Size), LeftImage, RightImage);
-        SliderPosition = imageBounds.Width <= 0
+        double newPosition = imageBounds.Width <= 0
             ? 0.5
             : Math.Clamp((pointerPosition.X - imageBounds.Left) / imageBounds.Width, 0d, 1d);
+
+        // Pointer events can arrive more often than the control can render. Avoid
+        // property notifications when the divider would remain on the same pixel.
+        double currentSliderX = Math.Round(imageBounds.Left + imageBounds.Width * SliderPosition);
+        double newSliderX = Math.Round(imageBounds.Left + imageBounds.Width * newPosition);
+
+        if (currentSliderX != newSliderX)
+        {
+            SliderPosition = newPosition;
+        }
+    }
+
+    protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        ClearRenderCache();
+        base.OnDetachedFromVisualTree(e);
     }
 
     private double GetSliderX(Rect imageBounds)
     {
         return Math.Round(imageBounds.Left + imageBounds.Width * SliderPosition);
+    }
+
+    private Bitmap GetRenderImage(Bitmap image)
+    {
+        if (ReferenceEquals(image, LeftImage))
+        {
+            return _scaledLeftImage ?? image;
+        }
+
+        if (ReferenceEquals(image, RightImage))
+        {
+            return _scaledRightImage ?? image;
+        }
+
+        return image;
+    }
+
+    private void EnsureRenderCache(Rect imageBounds)
+    {
+        if (imageBounds.Width <= 0 || imageBounds.Height <= 0)
+        {
+            return;
+        }
+
+        double renderScaling = TopLevel.GetTopLevel(this)?.RenderScaling ?? 1d;
+        int requiredWidth = Math.Max(1, (int)Math.Ceiling(imageBounds.Width * renderScaling));
+        int requiredHeight = Math.Max(1, (int)Math.Ceiling(imageBounds.Height * renderScaling));
+
+        if (_renderCacheSize.Width >= requiredWidth &&
+            _renderCacheSize.Height >= requiredHeight &&
+            IsRenderCacheEfficient(LeftImage, _scaledLeftImage, requiredWidth, requiredHeight) &&
+            IsRenderCacheEfficient(RightImage, _scaledRightImage, requiredWidth, requiredHeight))
+        {
+            return;
+        }
+
+        PixelSize cacheSize = new(
+            Math.Max(requiredWidth, (int)Math.Ceiling(requiredWidth * RenderCacheHeadroom)),
+            Math.Max(requiredHeight, (int)Math.Ceiling(requiredHeight * RenderCacheHeadroom)));
+
+        ClearRenderCache();
+        _scaledLeftImage = CreateRenderImage(LeftImage, cacheSize);
+        _scaledRightImage = CreateRenderImage(RightImage, cacheSize);
+        _renderCacheSize = cacheSize;
+    }
+
+    private static Bitmap? CreateRenderImage(Bitmap? image, PixelSize cacheSize)
+    {
+        if (image == null ||
+            image.PixelSize == cacheSize ||
+            GetPixelCount(image.PixelSize) <= GetPixelCount(cacheSize))
+        {
+            return null;
+        }
+
+        using SKBitmap sourceBitmap = BitmapConversionHelpers.ToSKBitmap(image);
+        SKImageInfo scaledInfo = new(
+            cacheSize.Width,
+            cacheSize.Height,
+            SKColorType.Bgra8888,
+            SKAlphaType.Premul);
+        using SKBitmap? scaledBitmap = sourceBitmap.Resize(
+            scaledInfo,
+            new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Linear));
+
+        return scaledBitmap != null ? BitmapConversionHelpers.ToAvaloniBitmap(scaledBitmap) : null;
+    }
+
+    private static bool IsRenderCacheEfficient(Bitmap? source, Bitmap? scaledImage, int requiredWidth, int requiredHeight)
+    {
+        if (source == null || scaledImage != null)
+        {
+            return true;
+        }
+
+        PixelSize requiredSize = new(requiredWidth, requiredHeight);
+        return GetPixelCount(source.PixelSize) <= GetPixelCount(requiredSize) * RenderCacheHeadroom * RenderCacheHeadroom;
+    }
+
+    private static long GetPixelCount(PixelSize size)
+    {
+        return (long)size.Width * size.Height;
+    }
+
+    private void ClearRenderCache()
+    {
+        _scaledLeftImage?.Dispose();
+        _scaledRightImage?.Dispose();
+        _scaledLeftImage = null;
+        _scaledRightImage = null;
+        _renderCacheSize = default;
     }
 }
