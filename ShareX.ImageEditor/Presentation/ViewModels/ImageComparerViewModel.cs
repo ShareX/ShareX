@@ -42,6 +42,7 @@ public enum ImageComparerMode
 
 public sealed partial class ImageComparerViewModel : ViewModelBase, IDisposable
 {
+    private const int MaxPreviewDimension = 2048;
     private readonly ImageComparisonService _comparisonService = new();
     private SKBitmap? _image1Bitmap;
     private SKBitmap? _image2Bitmap;
@@ -174,7 +175,7 @@ public sealed partial class ImageComparerViewModel : ViewModelBase, IDisposable
 
     private void SetImage(int imageNumber, string filePath, SKBitmap bitmap)
     {
-        Bitmap preview = BitmapConversionHelpers.ToAvaloniBitmap(bitmap);
+        Bitmap preview = CreatePreviewBitmap(bitmap);
 
         if (imageNumber == 1)
         {
@@ -229,6 +230,27 @@ public sealed partial class ImageComparerViewModel : ViewModelBase, IDisposable
     {
         DisplayedLeftImage = Image1Preview;
         DisplayedRightImage = Image2Preview;
+    }
+
+    private static Bitmap CreatePreviewBitmap(SKBitmap source)
+    {
+        int largestDimension = Math.Max(source.Width, source.Height);
+        if (largestDimension <= MaxPreviewDimension)
+        {
+            return BitmapConversionHelpers.ToAvaloniBitmap(source);
+        }
+
+        double scale = MaxPreviewDimension / (double)largestDimension;
+        SKImageInfo previewInfo = new(
+            Math.Max(1, (int)Math.Round(source.Width * scale)),
+            Math.Max(1, (int)Math.Round(source.Height * scale)),
+            SKColorType.Bgra8888,
+            SKAlphaType.Premul);
+        using SKBitmap? preview = source.Resize(
+            previewInfo,
+            new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Linear));
+
+        return BitmapConversionHelpers.ToAvaloniBitmap(preview ?? source);
     }
 
     public void Dispose()

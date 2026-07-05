@@ -29,10 +29,15 @@ namespace ShareX.ImageEditor.Core.ImageComparison;
 
 public sealed class ImageComparisonService
 {
-    public ImageComparisonResult Compare(SKBitmap image1, SKBitmap image2)
+    public unsafe ImageComparisonResult Compare(SKBitmap image1, SKBitmap image2, int maxDiffPreviewDimension = 2048)
     {
         ArgumentNullException.ThrowIfNull(image1);
         ArgumentNullException.ThrowIfNull(image2);
+
+        if (maxDiffPreviewDimension <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(maxDiffPreviewDimension));
+        }
 
         int width = Math.Max(image1.Width, image2.Width);
         int height = Math.Max(image1.Height, image2.Height);
@@ -42,27 +47,132 @@ public sealed class ImageComparisonService
             return new ImageComparisonResult(new SKBitmap(1, 1), 1, 1);
         }
 
-        SKBitmap diffBitmap = new SKBitmap(new SKImageInfo(width, height, SKColorType.Bgra8888, SKAlphaType.Opaque));
-        long matchingPixels = 0;
-        long totalPixels = (long)width * height;
+        SKBitmap? convertedImage1 = null;
+        SKBitmap? convertedImage2 = null;
 
-        for (int y = 0; y < height; y++)
+        try
         {
-            for (int x = 0; x < width; x++)
-            {
-                bool hasPixel1 = x < image1.Width && y < image1.Height;
-                bool hasPixel2 = x < image2.Width && y < image2.Height;
-                bool matches = hasPixel1 && hasPixel2 && image1.GetPixel(x, y) == image2.GetPixel(x, y);
+            SKBitmap comparisonImage1 = image1;
+            SKBitmap comparisonImage2 = image2;
 
-                if (matches)
+            if (!CanCompareRawPixels(image1, image2))
+            {
+                convertedImage1 = ConvertToComparisonFormat(image1);
+                convertedImage2 = ConvertToComparisonFormat(image2);
+                comparisonImage1 = convertedImage1;
+                comparisonImage2 = convertedImage2;
+            }
+
+            int commonWidth = Math.Min(comparisonImage1.Width, comparisonImage2.Width);
+            int commonHeight = Math.Min(comparisonImage1.Height, comparisonImage2.Height);
+            double previewScale = Math.Min(1d, maxDiffPreviewDimension / (double)Math.Max(width, height));
+            int previewWidth = Math.Max(1, (int)Math.Round(width * previewScale));
+            int previewHeight = Math.Max(1, (int)Math.Round(height * previewScale));
+
+            SKBitmap diffBitmap = new(new SKImageInfo(
+                previewWidth,
+                previewHeight,
+                SKColorType.Bgra8888,
+                SKAlphaType.Opaque));
+            diffBitmap.Erase(SKColors.Black);
+
+            IntPtr pixels1 = comparisonImage1.GetPixels();
+            IntPtr pixels2 = comparisonImage2.GetPixels();
+            IntPtr diffPixels = diffBitmap.GetPixels();
+            int rowBytes1 = comparisonImage1.RowBytes;
+            int rowBytes2 = comparisonImage2.RowBytes;
+            int diffRowBytes = diffBitmap.RowBytes;
+            int[] previewXBySourceX = new int[commonWidth];
+
+            for (int x = 0; x < commonWidth; x++)
+            {
+                previewXBySourceX[x] = (int)((long)x * previewWidth / width);
+            }
+
+            int firstExtraPreviewX = commonWidth < width
+                ? (int)((long)commonWidth * previewWidth / width)
+                : previewWidth;
+            long[] matchingPixelsByPreviewRow = new long[previewHeight];
+
+            Parallel.For(0, previewHeight, previewY =>
+            {
+                int sourceYStart = DivideRoundUp((long)previewY * height, previewHeight);
+                int sourceYEnd = DivideRoundUp((long)(previewY + 1) * height, previewHeight);
+                uint* diffRow = (uint*)((byte*)diffPixels + previewY * diffRowBytes);
+                long rowMatchingPixels = 0;
+
+                if (sourceYEnd > commonHeight)
                 {
-                    matchingPixels++;
+                    new Span<uint>(diffRow, previewWidth).Fill(uint.MaxValue);
+                }
+                else if (firstExtraPreviewX < previewWidth)
+                {
+                    new Span<uint>(diffRow + firstExtraPreviewX, previewWidth - firstExtraPreviewX).Fill(uint.MaxValue);
                 }
 
-                diffBitmap.SetPixel(x, y, matches ? SKColors.Black : SKColors.White);
-            }
+                int comparableSourceYEnd = Math.Min(sourceYEnd, commonHeight);
+
+                for (int sourceY = sourceYStart; sourceY < comparableSourceYEnd; sourceY++)
+                {
+                    uint* row1 = (uint*)((byte*)pixels1 + sourceY * rowBytes1);
+                    uint* row2 = (uint*)((byte*)pixels2 + sourceY * rowBytes2);
+
+                    for (int x = 0; x < commonWidth; x++)
+                    {
+                        if (row1[x] == row2[x])
+                        {
+                            rowMatchingPixels++;
+                        }
+                        else
+                        {
+                            diffRow[previewXBySourceX[x]] = uint.MaxValue;
+                        }
+                    }
+                }
+
+                matchingPixelsByPreviewRow[previewY] = rowMatchingPixels;
+            });
+
+            long matchingPixels = matchingPixelsByPreviewRow.Sum();
+            long totalPixels = (long)width * height;
+            return new ImageComparisonResult(diffBitmap, matchingPixels, totalPixels);
+        }
+        finally
+        {
+            convertedImage1?.Dispose();
+            convertedImage2?.Dispose();
+        }
+    }
+
+    private static bool CanCompareRawPixels(SKBitmap image1, SKBitmap image2)
+    {
+        return image1.BytesPerPixel == sizeof(uint) &&
+            image2.BytesPerPixel == sizeof(uint) &&
+            image1.ColorType == image2.ColorType &&
+            image1.AlphaType == image2.AlphaType;
+    }
+
+    private static SKBitmap ConvertToComparisonFormat(SKBitmap source)
+    {
+        SKImageInfo comparisonInfo = new(
+            source.Width,
+            source.Height,
+            SKColorType.Bgra8888,
+            SKAlphaType.Premul);
+        SKBitmap converted = new(comparisonInfo);
+
+        using SKPixmap sourcePixels = source.PeekPixels();
+        if (!sourcePixels.ReadPixels(comparisonInfo, converted.GetPixels(), converted.RowBytes, 0, 0))
+        {
+            converted.Dispose();
+            throw new InvalidOperationException("Unable to convert image pixels for comparison.");
         }
 
-        return new ImageComparisonResult(diffBitmap, matchingPixels, totalPixels);
+        return converted;
+    }
+
+    private static int DivideRoundUp(long value, int divisor)
+    {
+        return (int)((value + divisor - 1) / divisor);
     }
 }
