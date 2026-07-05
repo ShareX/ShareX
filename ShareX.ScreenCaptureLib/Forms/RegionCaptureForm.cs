@@ -1602,12 +1602,13 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (ShapeManager.IsCurrentShapeValid)
                 {
-                    rect = CaptureHelpers.ClientToScreen(ShapeManager.CurrentRectangle.Round());
+                    rect = ShapeManager.CurrentRectangle.Round();
+                    rect.Offset(ScreenBounds.Location);
                 }
             }
             else if (Result == RegionResult.Fullscreen)
             {
-                rect = CaptureHelpers.GetScreenBounds();
+                rect = ScreenBounds;
             }
             else if (Result == RegionResult.Monitor)
             {
