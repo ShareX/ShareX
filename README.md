@@ -64,18 +64,31 @@ Advanced users can create custom uploaders for services that are not built in. S
 
 ShareX includes many utilities that support everyday desktop work:
 
-* Color picker and screen color picker
-* Image editor and image viewer
-* Image effects and image beautifier
-* OCR for recognizing text in images
-* QR code scanning and QR code generation
+* Color picker
+* Screen color picker
 * Ruler
+* Pin to screen
+* Image editor
+* Image beautifier
+* Image effects
+* Image viewer
+* Background remover
+* Image comparer
+* Image combiner
+* Image splitter
+* Image thumbnailer
+* Video converter
+* Video thumbnailer
+* Analyze image
+* OCR for recognizing text in images
+* QR code
 * Hash checker
 * Metadata viewer
 * Directory indexer
 * Clipboard viewer
-* Video converter and video thumbnailer
-* Image combiner, splitter and thumbnailer
+* Borderless window
+* Inspect window
+* Monitor test
 
 These tools make ShareX useful beyond screenshots. It can help inspect images, prepare assets, extract information, verify files and speed up repetitive tasks.
 
@@ -93,21 +106,28 @@ For the safest download options, use the official links below.
 
 ## Links
 * Official website: https://getsharex.com
+* Downloads: https://getsharex.com/downloads
 * GitHub: https://github.com/ShareX/ShareX
 * Changelog: https://getsharex.com/changelog
+* Screenshots: https://getsharex.com/screenshots
 * Privacy policy: https://getsharex.com/privacy-policy
 * Donate: https://getsharex.com/donate
-* Twitter: https://twitter.com/ShareX
+* X: https://x.com/ShareX
 * Discord: https://discord.gg/ShareX
 * Reddit: https://www.reddit.com/r/sharex
 * Steam page: https://store.steampowered.com/app/400040/ShareX/
 * Microsoft Store page: https://apps.microsoft.com/detail/9nblggh4z1sp
+* ShareX related projects on GitHub: https://github.com/topics/sharex
 
 ## Documents
 * Image effects: https://getsharex.com/image-effects
 * Actions: https://getsharex.com/actions
 * Dev builds: https://getsharex.com/docs/dev-builds
 * Keybinds: https://getsharex.com/docs/keybinds
+* Region capture: https://getsharex.com/docs/region-capture
+* Image editor: https://getsharex.com/docs/image-editor
+* Background remover: https://getsharex.com/docs/background-remover
+* Pin to screen: https://getsharex.com/docs/pin-to-screen
 * Scrolling screenshot: https://getsharex.com/docs/scrolling-screenshot
 * Command line arguments: https://getsharex.com/docs/command-line-arguments
 * Translation: https://getsharex.com/docs/translation
