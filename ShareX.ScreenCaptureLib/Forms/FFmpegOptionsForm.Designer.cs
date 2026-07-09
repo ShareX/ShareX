@@ -49,7 +49,6 @@
             cbAudioSource = new System.Windows.Forms.ComboBox();
             lblAudioSource = new System.Windows.Forms.Label();
             cbAudioCodec = new System.Windows.Forms.ComboBox();
-            btnHelperDevicesHelp = new System.Windows.Forms.Button();
             lblHelperDevices = new System.Windows.Forms.Label();
             btnInstallHelperDevices = new System.Windows.Forms.Button();
             lblCommandLineArgs = new System.Windows.Forms.Label();
@@ -283,13 +282,6 @@
             resources.ApplyResources(cbAudioCodec, "cbAudioCodec");
             cbAudioCodec.Name = "cbAudioCodec";
             cbAudioCodec.SelectedIndexChanged += cbAudioCodec_SelectedIndexChanged;
-            // 
-            // btnHelperDevicesHelp
-            // 
-            resources.ApplyResources(btnHelperDevicesHelp, "btnHelperDevicesHelp");
-            btnHelperDevicesHelp.Name = "btnHelperDevicesHelp";
-            btnHelperDevicesHelp.UseVisualStyleBackColor = true;
-            btnHelperDevicesHelp.Click += btnHelperDevicesHelp_Click;
             // 
             // lblHelperDevices
             // 
@@ -735,7 +727,6 @@
             Controls.Add(txtCommandLinePreview);
             Controls.Add(txtUserArgs);
             Controls.Add(lblCommandLineArgs);
-            Controls.Add(btnHelperDevicesHelp);
             Controls.Add(cbAudioCodec);
             Controls.Add(lblHelperDevices);
             Controls.Add(cbVideoCodec);
@@ -829,7 +820,6 @@
         private System.Windows.Forms.Label lblGIFDither;
         private System.Windows.Forms.ComboBox cbGIFStatsMode;
         private System.Windows.Forms.Label lblGIFStatsMode;
-        private System.Windows.Forms.Button btnHelperDevicesHelp;
         private System.Windows.Forms.Label lblHelperDevices;
         private System.Windows.Forms.Button btnInstallHelperDevices;
         private System.Windows.Forms.PictureBox pbx264PresetWarning;

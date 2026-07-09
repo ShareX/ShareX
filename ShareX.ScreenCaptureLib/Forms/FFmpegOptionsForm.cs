@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.MediaLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -311,46 +310,7 @@ namespace ShareX.ScreenCaptureLib
 
         private async void btnInstallHelperDevices_Click(object sender, EventArgs e)
         {
-            string version = "0.12.10";
-            string filePath = FileHelpers.GetAbsolutePath($"recorder-devices-{version}-setup.exe");
-
-            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
-            {
-                bool result = false;
-
-                await Task.Run(() =>
-                {
-                    try
-                    {
-                        using (Process process = new Process())
-                        {
-                            ProcessStartInfo psi = new ProcessStartInfo()
-                            {
-                                FileName = filePath
-                            };
-
-                            process.StartInfo = psi;
-                            process.Start();
-                            result = process.WaitForExit(1000 * 60 * 5) && process.ExitCode == 0;
-                        }
-                    }
-                    catch { }
-                });
-
-                if (result)
-                {
-                    await RefreshSourcesAsync(true);
-                }
-            }
-            else
-            {
-                MessageBox.Show("File not exists: \"" + filePath + "\"", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnHelperDevicesHelp_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://github.com/rdp/screen-capture-recorder-to-video-windows-free");
+            URLHelpers.OpenURL("https://github.com/ShareX/RecorderDevices/releases/tag/v0.12.10");
         }
 
         private void cbVideoCodec_SelectedIndexChanged(object sender, EventArgs e)
