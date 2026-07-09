@@ -302,7 +302,7 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private async void btnInstallHelperDevices_Click(object sender, EventArgs e)
+        private void btnDownloadRecorderDevices_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL("https://github.com/ShareX/RecorderDevices/releases/tag/v0.12.10");
         }
