@@ -149,28 +149,26 @@
                         </Grid>
 
                         <Grid Grid.Row="2" ColumnDefinitions="100,*" ColumnSpacing="10">
-                            <Grid Grid.Column="0" ColumnDefinitions="*,Auto" ColumnSpacing="6">
-                                <TextBlock Grid.Column="0" Classes="row-label" Text="{Binding TargetLabel}"/>
-                                <TextBlock Grid.Column="1"
-                                           Text="{x:Static theming:LucideIcons.circle_check}"
-                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                           FontSize="18"
-                                           Foreground="#36B37E"
-                                           VerticalAlignment="Center"
-                                           IsVisible="{Binding HashesMatch}"/>
-                                <TextBlock Grid.Column="1"
-                                           Text="{x:Static theming:LucideIcons.circle_x}"
-                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                           FontSize="18"
-                                           Foreground="#E05252"
-                                           VerticalAlignment="Center"
-                                           IsVisible="{Binding HashesDiffer}"/>
-                            </Grid>
+                            <TextBlock Grid.Column="0" Classes="row-label" Text="{Binding TargetLabel}"/>
                             <TextBox Grid.Column="1"
                                      Classes="hash-value"
                                      Text="{Binding TargetHash}"
                                      IsReadOnly="{Binding CompareTwoFiles}"
                                      PlaceholderText="Paste a hash to compare"/>
+                            <Border Grid.Column="1"
+                                    Height="2"
+                                    Margin="1,0,1,1"
+                                    Background="#36B37E"
+                                    VerticalAlignment="Bottom"
+                                    IsHitTestVisible="False"
+                                    IsVisible="{Binding HashesMatch}"/>
+                            <Border Grid.Column="1"
+                                    Height="2"
+                                    Margin="1,0,1,1"
+                                    Background="#E05252"
+                                    VerticalAlignment="Bottom"
+                                    IsHitTestVisible="False"
+                                    IsVisible="{Binding HashesDiffer}"/>
                         </Grid>
                     </Grid>
                 </Border>
