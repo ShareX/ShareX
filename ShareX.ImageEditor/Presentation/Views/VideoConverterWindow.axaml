@@ -4,14 +4,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
         xmlns:theming="using:ShareX.ImageEditor.Presentation.Theming"
-        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="625"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="575"
         x:Class="ShareX.ImageEditor.Presentation.Views.VideoConverterWindow"
         x:DataType="vm:VideoConverterViewModel"
         Title="ShareX - Video Converter"
         Width="900"
-        Height="625"
+        Height="610"
         MinWidth="700"
-        MinHeight="625"
+        MinHeight="610"
         WindowStartupLocation="CenterScreen">
 
     <Window.Styles>
@@ -59,8 +59,12 @@
                     </Grid>
                 </Border>
 
-                <Grid Grid.Row="1" ColumnDefinitions="360,*" ColumnSpacing="12">
-                    <Border Grid.Column="0" Classes="converter-panel" Padding="16">
+                <Grid Grid.Row="1"
+                      ColumnDefinitions="360,*"
+                      RowDefinitions="Auto,*"
+                      ColumnSpacing="12"
+                      RowSpacing="12">
+                    <Border Grid.Row="0" Grid.Column="0" Classes="converter-panel" Padding="16">
                         <ScrollViewer VerticalScrollBarVisibility="Auto">
                             <StackPanel Spacing="18">
                                 <StackPanel>
@@ -87,7 +91,7 @@
                                         <TextBlock Text="Use a target bitrate" FontWeight="Normal"/>
                                     </CheckBox>
 
-                                    <StackPanel IsVisible="{Binding ShowsQualitySlider}" Spacing="2">
+                                    <StackPanel IsVisible="{Binding ShowsQualitySlider}" Spacing="0">
                                         <Grid ColumnDefinitions="*,Auto">
                                             <TextBlock Grid.Column="0" Classes="field-label" Text="Constant quality" Margin="0"/>
                                             <TextBlock Grid.Column="1" Text="{Binding VideoQuality, StringFormat={}{0:0}}"/>
@@ -123,8 +127,7 @@
                         </ScrollViewer>
                     </Border>
 
-                    <Grid Grid.Column="1" RowDefinitions="Auto,*" RowSpacing="12">
-                        <Border Grid.Row="0" Classes="converter-panel" Padding="16">
+                    <Border Grid.Row="0" Grid.Column="1" Classes="converter-panel" Padding="16">
                             <StackPanel>
                                 <TextBlock Classes="section-heading" Text="Output"/>
                                 <TextBlock Classes="field-label" Text="Folder"/>
@@ -154,9 +157,9 @@
                                                TextWrapping="Wrap"/>
                                 </CheckBox>
                             </StackPanel>
-                        </Border>
+                    </Border>
 
-                        <Border Grid.Row="1" Classes="converter-panel" Padding="16">
+                    <Border Grid.Row="1" Grid.ColumnSpan="2" Classes="converter-panel" Padding="16">
                             <Grid RowDefinitions="Auto,*" RowSpacing="8">
                                 <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
                                     <TextBlock Grid.Column="0" Classes="section-heading" Text="FFmpeg arguments" Margin="0"/>
@@ -176,8 +179,7 @@
                                          FontFamily="Consolas"
                                          FontSize="12"/>
                             </Grid>
-                        </Border>
-                    </Grid>
+                    </Border>
                 </Grid>
 
                 <Grid Grid.Row="2" RowDefinitions="Auto,Auto">
