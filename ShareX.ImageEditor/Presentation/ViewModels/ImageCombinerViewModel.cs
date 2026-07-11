@@ -110,6 +110,7 @@ public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
         : ["Left", "Center", "Right"];
 
     public bool HasPreview => PreviewImage != null;
+    public bool HasImages => Images.Count > 0;
     public bool CanCombine => Images.Count > 1 && !IsBusy;
     public bool CanRemove => _selectedImages.Count > 0 || SelectedImage != null;
     public bool CanMoveUp => SelectedImage != null && Images.IndexOf(SelectedImage) > 0;
@@ -245,6 +246,7 @@ public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
     private void CollectionChanged()
     {
         OnPropertyChanged(nameof(ImageCountText));
+        OnPropertyChanged(nameof(HasImages));
         NotifyStateChanged();
         _ = RefreshPreviewAsync();
     }
