@@ -26,7 +26,7 @@
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace ShareX.Tools.BackgroundRemover;
+namespace ShareX.Tools;
 
 public sealed partial class BackgroundRemoverViewModel
 {

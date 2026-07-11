@@ -28,7 +28,7 @@ using CommunityToolkit.Mvvm.Input;
 using ShareX.Tools.Infrastructure;
 using System.Text;
 
-namespace ShareX.Tools.VideoConverter;
+namespace ShareX.Tools;
 
 public sealed record VideoConverterCodecItem(VideoConverterCodec Codec, string DisplayName);
 

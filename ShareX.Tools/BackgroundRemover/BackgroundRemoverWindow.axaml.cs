@@ -30,7 +30,7 @@ using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
 using SkiaSharp;
 
-namespace ShareX.Tools.BackgroundRemover;
+namespace ShareX.Tools;
 
 public partial class BackgroundRemoverWindow : Window
 {

@@ -32,7 +32,7 @@ using SkiaSharp;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
-namespace ShareX.Tools.BackgroundRemover;
+namespace ShareX.Tools;
 
 public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposable
 {

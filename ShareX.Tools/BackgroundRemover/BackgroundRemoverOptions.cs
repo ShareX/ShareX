@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.Tools.BackgroundRemover;
+using ShareX.Tools;
 
-namespace ShareX.Tools.BackgroundRemover;
+namespace ShareX.Tools;
 
 public class BackgroundRemoverOptions
 {

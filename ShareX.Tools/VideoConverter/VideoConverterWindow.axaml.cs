@@ -27,10 +27,10 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
-using ShareX.Tools.VideoConverter;
+using ShareX.Tools;
 using ShareX.AvaloniaUI.Theming;
 
-namespace ShareX.Tools.VideoConverter;
+namespace ShareX.Tools;
 
 public partial class VideoConverterWindow : Window
 {

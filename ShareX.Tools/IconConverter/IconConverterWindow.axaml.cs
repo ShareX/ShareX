@@ -28,9 +28,9 @@ using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
-using ShareX.Tools.IconConverter;
+using ShareX.Tools;
 
-namespace ShareX.Tools.IconConverter;
+namespace ShareX.Tools;
 
 public partial class IconConverterWindow : Window
 {

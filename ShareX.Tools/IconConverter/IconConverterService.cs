@@ -26,7 +26,7 @@
 using SkiaSharp;
 using System.IO.Compression;
 
-namespace ShareX.Tools.IconConverter;
+namespace ShareX.Tools;
 
 public enum IconBitDepth
 {

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.Tools.QRCode;
+namespace ShareX.Tools;
 
 public enum QRCodeScanMode
 {

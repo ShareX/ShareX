@@ -27,10 +27,10 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
-using ShareX.Tools.HashChecker;
+using ShareX.Tools;
 using ShareX.AvaloniaUI.Theming;
 
-namespace ShareX.Tools.HashChecker;
+namespace ShareX.Tools;
 
 public partial class HashCheckerWindow : Window
 {

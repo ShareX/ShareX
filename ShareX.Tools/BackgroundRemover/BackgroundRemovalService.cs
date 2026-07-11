@@ -29,7 +29,7 @@ using SkiaSharp;
 using System.Diagnostics;
 using Vortice.DXGI;
 
-namespace ShareX.Tools.BackgroundRemover;
+namespace ShareX.Tools;
 
 public sealed class BackgroundRemovalModel
 {

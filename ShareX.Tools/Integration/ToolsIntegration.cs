@@ -25,13 +25,7 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
-using ShareX.Tools.BackgroundRemover;
-using ShareX.Tools.HashChecker;
-using ShareX.Tools.IconConverter;
-using ShareX.Tools.ImageCombiner;
-using ShareX.Tools.ImageComparer;
-using ShareX.Tools.QRCode;
-using ShareX.Tools.VideoConverter;
+using ShareX.Tools;
 
 namespace ShareX.Tools.Integration;
 

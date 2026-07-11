@@ -25,7 +25,7 @@
 
 using SkiaSharp;
 
-namespace ShareX.Tools.ImageComparer;
+namespace ShareX.Tools;
 
 public sealed class ImageComparisonResult : IDisposable
 {
