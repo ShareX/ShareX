@@ -124,6 +124,9 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         _videoQuality = settings.VideoQuality;
         _videoBitrate = settings.VideoQualityBitrate;
         _autoOpenFolder = settings.AutoOpenFolder;
+        _statusText = string.IsNullOrWhiteSpace(_inputFilePath)
+            ? "Choose a video or animation to get started."
+            : string.Empty;
 
         if (!string.IsNullOrWhiteSpace(inputFilePath))
         {
