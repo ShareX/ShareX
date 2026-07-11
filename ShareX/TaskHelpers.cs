@@ -1752,24 +1752,124 @@ namespace ShareX
             }
         }
 
-        public static void OpenQRCode()
+        public static void OpenQRCode(string text = null)
         {
-            QRCodeForm.GenerateQRCodeFromClipboard().Show();
+            if (text == null)
+            {
+                string clipboardText = ClipboardHelpers.GetText(true);
+                if (CheckQRCodeContent(clipboardText))
+                {
+                    text = clipboardText;
+                }
+            }
+
+            ShowQrCodeWindow(new QrCodeWindowOptions { InitialText = text });
         }
 
         public static void OpenQRCodeScanFromImageFile(string filePath)
         {
-            QRCodeForm.OpenFormScanFromImageFile(filePath).Show();
+            ShowQrCodeWindow(new QrCodeWindowOptions { InitialImageFilePath = filePath });
         }
 
         public static void OpenQRCodeScanScreen()
         {
-            QRCodeForm.OpenFormScanScreen();
+            ShowQrCodeWindow(new QrCodeWindowOptions { InitialScanMode = QrCodeScanMode.Screen });
         }
 
         public static void OpenQRCodeScanRegion()
         {
-            QRCodeForm.OpenFormScanRegion();
+            ShowQrCodeWindow(new QrCodeWindowOptions { InitialScanMode = QrCodeScanMode.Region });
+        }
+
+        private static void ShowQrCodeWindow(QrCodeWindowOptions options)
+        {
+            AvaloniaIntegration.ShowQrCodeWindow(new QrCodeServices
+            {
+                GeneratePreviewAsync = GenerateQrCodePreviewAsync,
+                ScanAsync = ScanQrCodeAsync,
+                SaveAsync = SaveQrCodeAsync,
+                CopyImage = CopyQrCodeImage,
+                UploadImage = UploadQrCodeImage,
+                PlayNotificationSound = () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted)
+            }, options);
+        }
+
+        private static Task<byte[]> GenerateQrCodePreviewAsync(string text, int size)
+        {
+            return Task.Run(() =>
+            {
+                using Image image = GenerateQRCode(text, size);
+                if (image == null)
+                {
+                    return null;
+                }
+
+                using MemoryStream stream = new MemoryStream();
+                image.Save(stream, ImageFormat.Png);
+                return stream.ToArray();
+            });
+        }
+
+        private static Task<string[]> ScanQrCodeAsync(QrCodeScanMode mode, string filePath)
+        {
+            using Bitmap bitmap = mode switch
+            {
+                QrCodeScanMode.Screen => new Screenshot().CaptureFullscreen(),
+                QrCodeScanMode.Region => RegionCaptureTasks.GetRegionImage(
+                    TaskSettings.GetDefaultTaskSettings().CaptureSettings.SurfaceOptions),
+                QrCodeScanMode.ImageFile when !string.IsNullOrWhiteSpace(filePath) => ImageHelpers.LoadImage(filePath),
+                _ => null
+            };
+
+            return Task.FromResult(bitmap != null ? BarcodeScan(bitmap) : null);
+        }
+
+        private static Task SaveQrCodeAsync(string text, int size, string filePath)
+        {
+            return Task.Run(() =>
+            {
+                if (filePath.EndsWith(".svg", StringComparison.OrdinalIgnoreCase))
+                {
+                    BarcodeWriterSvg writer = new BarcodeWriterSvg
+                    {
+                        Format = BarcodeFormat.QR_CODE,
+                        Options = new QrCodeEncodingOptions
+                        {
+                            Width = size,
+                            Height = size,
+                            CharacterSet = "UTF-8"
+                        }
+                    };
+                    var svgImage = writer.Write(text);
+                    File.WriteAllText(filePath, svgImage.Content, Encoding.UTF8);
+                }
+                else
+                {
+                    using Image image = GenerateQRCode(text, size);
+                    if (image != null)
+                    {
+                        ImageHelpers.SaveImage(image, filePath);
+                    }
+                }
+            });
+        }
+
+        private static void CopyQrCodeImage(string text, int size)
+        {
+            using Image image = GenerateQRCode(text, size);
+            if (image != null)
+            {
+                ClipboardHelpers.CopyImage(image);
+            }
+        }
+
+        private static void UploadQrCodeImage(string text, int size)
+        {
+            using Image image = GenerateQRCode(text, size);
+            if (image != null)
+            {
+                MainFormUploadImage(new Bitmap(image));
+            }
         }
 
         public static void OpenRuler(TaskSettings taskSettings = null)

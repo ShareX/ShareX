@@ -786,7 +786,7 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ScanQRCode) && Info.DataType == EDataType.Image)
                 {
-                    QRCodeForm.OpenFormScanFromImageFile(Info.FilePath).ShowDialog();
+                    TaskHelpers.OpenQRCodeScanFromImageFile(Info.FilePath);
                 }
             }
         }
@@ -890,7 +890,7 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShowQRCode))
                 {
-                    threadWorker.InvokeAsync(() => new QRCodeForm(Info.Result.ToString()).Show());
+                    threadWorker.InvokeAsync(() => TaskHelpers.OpenQRCode(Info.Result.ToString()));
                 }
             }
             catch (Exception e)

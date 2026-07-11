@@ -151,6 +151,17 @@ namespace ShareX.ImageEditor.Hosting
             });
         }
 
+        public static void ShowQrCodeWindow(QrCodeServices services, QrCodeWindowOptions options)
+        {
+            Initialize();
+
+            Dispatcher.UIThread.Post(() =>
+            {
+                QrCodeWindow window = new QrCodeWindow(services, options);
+                window.Show();
+            });
+        }
+
         public static void ShowVideoConverterWindow(
             VideoConverterSettings settings,
             VideoConversionHandler conversionHandler,

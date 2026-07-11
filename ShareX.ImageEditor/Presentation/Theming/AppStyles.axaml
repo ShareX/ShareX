@@ -36,6 +36,7 @@
 
         <Style Selector="^ TextBlock">
             <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
         <!-- Explicitly override ContentPresenter backgrounds for all states so the Fluent

@@ -427,7 +427,7 @@ namespace ShareX
 
         public void ShowQRCode()
         {
-            if (IsItemSelected && SelectedItem.IsURLExist) new QRCodeForm(SelectedItem.Info.Result.URL).Show();
+            if (IsItemSelected && SelectedItem.IsURLExist) TaskHelpers.OpenQRCode(SelectedItem.Info.Result.URL);
         }
 
         public void AnalyzeImage()
