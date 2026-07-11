@@ -51,7 +51,7 @@ public static class SkiaSharpConversions
         if (bitmap == null) return null;
 
         using var ms = new MemoryStream();
-        bitmap.Save(ms);
+        bitmap.Save(ms, PngBitmapEncoderOptions.Default);
         ms.Position = 0;
         return SKBitmap.Decode(ms);
     }

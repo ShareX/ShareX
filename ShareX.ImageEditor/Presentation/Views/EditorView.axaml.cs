@@ -30,6 +30,7 @@ using Avalonia.Input;
 using Avalonia.Input.Platform;
 using Avalonia.Interactivity;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Platform.Storage;
 using Avalonia.Styling;
@@ -2259,7 +2260,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 if (clipboardBitmap != null)
                 {
                     using var ms = new MemoryStream();
-                    clipboardBitmap.Save(ms);
+                    clipboardBitmap.Save(ms, PngBitmapEncoderOptions.Default);
                     (clipboardBitmap as IDisposable)?.Dispose();
                     ms.Position = 0;
 

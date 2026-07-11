@@ -27,6 +27,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using Avalonia.Platform.Storage;
 using ShareX.ImageEditor.Hosting;
 using ShareX.ImageEditor.Presentation.Theming;
@@ -162,7 +163,7 @@ public partial class QrCodeWindow : Window
         }
 
         using MemoryStream stream = new MemoryStream();
-        _viewModel.PreviewImage.Save(stream);
+        _viewModel.PreviewImage.Save(stream, PngBitmapEncoderOptions.Default);
         stream.Position = 0;
         Avalonia.Media.Imaging.Bitmap previewCopy = new Avalonia.Media.Imaging.Bitmap(stream);
 
