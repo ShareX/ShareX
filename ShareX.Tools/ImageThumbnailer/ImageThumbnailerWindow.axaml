@@ -1,0 +1,130 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="590"
+        x:Class="ShareX.Tools.ImageThumbnailerWindow"
+        x:DataType="vm:ImageThumbnailerViewModel"
+        Title="ShareX - Image Thumbnailer"
+        Width="900"
+        Height="590"
+        MinWidth="760"
+        MinHeight="520"
+        WindowStartupLocation="CenterScreen">
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid RowDefinitions="*,Auto" Margin="16" RowSpacing="12">
+                <Grid Grid.Row="0" ColumnDefinitions="*,360" ColumnSpacing="12">
+                    <Border Grid.Column="0" Classes="tool-panel">
+                        <Grid RowDefinitions="Auto,*" RowSpacing="10">
+                            <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,*" ColumnSpacing="8">
+                                <Button Grid.Column="0" Command="{Binding AddCommand}">
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <TextBlock Text="{x:Static theming:LucideIcons.plus}"
+                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                        <TextBlock Text="Add..."/>
+                                    </StackPanel>
+                                </Button>
+                                <Button Grid.Column="1" Command="{Binding RemoveCommand}" IsEnabled="{Binding CanRemove}">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.trash_2}"
+                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                </Button>
+                                <TextBlock Grid.Column="2" Text="{Binding ImageCountText}"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <ListBox x:Name="ImagesList"
+                                         ItemsSource="{Binding Images}"
+                                         SelectedItem="{Binding SelectedImage}"
+                                         SelectionMode="Multiple"
+                                         SelectionChanged="OnSelectionChanged">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate x:CompileBindings="False">
+                                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="4,3">
+                                                <TextBlock Text="{x:Static theming:LucideIcons.image}"
+                                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                           FontWeight="Normal"
+                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                           VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="1" Text="{Binding}"
+                                                           TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                                <StackPanel IsVisible="{Binding !HasImages}"
+                                            HorizontalAlignment="Center" VerticalAlignment="Center"
+                                            Spacing="8" IsHitTestVisible="False">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.square_dashed}"
+                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                               FontWeight="Normal" FontSize="42"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                               HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Drop images here or use the Add button"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+                    <StackPanel Grid.Column="1" Spacing="12">
+                        <Border Classes="tool-panel" Padding="16">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
+                                <TextBlock Grid.Row="0" Classes="section-heading" Text="Thumbnail size"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="90,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Width"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="1" Maximum="10000" FormatString="0"
+                                                   Value="{Binding Width}"/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="90,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Height"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="1" Maximum="10000" FormatString="0"
+                                                   Value="{Binding Height}"/>
+                                </Grid>
+                                <Grid Grid.Row="3" ColumnDefinitions="90,*,Auto" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="JPEG quality"/>
+                                    <Slider Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Quality}"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding Quality, StringFormat={}{0:0}%}"
+                                               FontWeight="Normal" MinWidth="40"
+                                               HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <Border Classes="tool-panel" Padding="16">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
+                                <TextBlock Grid.Row="0" Classes="section-heading" Text="Output"/>
+                                <TextBlock Grid.Row="1" Classes="row-label" Text="File name template"/>
+                                <TextBox Grid.Row="2" Text="{Binding OutputFileName}" PlaceholderText="$filename_th"/>
+                                <Grid Grid.Row="3" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                    <TextBlock Classes="path-text" Text="{Binding OutputFolderPath}"
+                                               VerticalAlignment="Center"/>
+                                    <Button Grid.Column="1" Command="{Binding BrowseOutputFolderCommand}" Content="Browse..."/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <Border Classes="tool-panel" IsVisible="{Binding HasMessage}">
+                            <TextBlock Text="{Binding Message}" TextWrapping="Wrap"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+
+                <Button Grid.Row="1" Command="{Binding GenerateCommand}" IsEnabled="{Binding CanGenerate}"
+                        HorizontalAlignment="Right">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <TextBlock Text="{x:Static theming:LucideIcons.images}"
+                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                        <TextBlock Text="Generate thumbnails"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

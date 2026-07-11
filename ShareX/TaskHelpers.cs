@@ -1121,14 +1121,12 @@ namespace ShareX
 
         public static void OpenImageSplitter()
         {
-            ImageSplitterForm imageSplitterForm = new ImageSplitterForm();
-            imageSplitterForm.Show();
+            ToolsIntegration.ShowImageSplitterWindow();
         }
 
         public static void OpenImageThumbnailer()
         {
-            ImageThumbnailerForm imageThumbnailerForm = new ImageThumbnailerForm();
-            imageThumbnailerForm.Show();
+            ToolsIntegration.ShowImageThumbnailerWindow();
         }
 
         public static void OpenVideoConverter(TaskSettings taskSettings = null)

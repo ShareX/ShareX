@@ -52,6 +52,16 @@ public static class ToolsIntegration
         Show(() => new ImageComparerWindow());
     }
 
+    public static void ShowImageSplitterWindow()
+    {
+        Show(() => new ImageSplitterWindow());
+    }
+
+    public static void ShowImageThumbnailerWindow()
+    {
+        Show(() => new ImageThumbnailerWindow());
+    }
+
     public static void ShowIconConverterWindow()
     {
         Show(() => new IconConverterWindow());
