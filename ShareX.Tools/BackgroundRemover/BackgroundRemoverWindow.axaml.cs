@@ -27,12 +27,10 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
-using ShareX.ImageEditor.Integration;
 using ShareX.AvaloniaUI.Theming;
-using ShareX.ImageEditor.Presentation.ViewModels;
 using SkiaSharp;
 
-namespace ShareX.ImageEditor.Presentation.Views;
+namespace ShareX.Tools.BackgroundRemover;
 
 public partial class BackgroundRemoverWindow : Window
 {

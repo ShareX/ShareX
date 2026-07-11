@@ -26,11 +26,11 @@
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.ImageEditor.Core.IconConversion;
-using ShareX.ImageEditor.Presentation.Rendering;
+using ShareX.Tools.IconConverter;
+using ShareX.AvaloniaUI.Imaging;
 using SkiaSharp;
 
-namespace ShareX.ImageEditor.Presentation.ViewModels;
+namespace ShareX.Tools.IconConverter;
 
 public sealed partial class IconConverterViewModel : ViewModelBase, IDisposable
 {

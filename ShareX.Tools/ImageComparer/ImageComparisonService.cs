@@ -25,7 +25,7 @@
 
 using SkiaSharp;
 
-namespace ShareX.ImageEditor.Core.ImageComparison;
+namespace ShareX.Tools.ImageComparer;
 
 public sealed class ImageComparisonService
 {

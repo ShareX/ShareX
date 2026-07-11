@@ -30,6 +30,7 @@ using ShareX.ImageEffectsLib;
 using ShareX.IndexerLib;
 using ShareX.MediaLib;
 using ShareX.ScreenCaptureLib;
+using ShareX.Tools.BackgroundRemover;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;

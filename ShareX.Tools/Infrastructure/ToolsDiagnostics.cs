@@ -23,29 +23,19 @@
 
 #endregion License Information (GPL v3)
 
-using SkiaSharp;
+using ShareX.HelpersLib;
 
-namespace ShareX.ImageEditor.Core.ImageComparison;
+namespace ShareX.Tools.Infrastructure;
 
-public sealed class ImageComparisonResult : IDisposable
+internal static class ToolsDiagnostics
 {
-    public ImageComparisonResult(SKBitmap diffBitmap, long matchingPixels, long totalPixels)
+    public static void ReportWarning(string source, string message, Exception? exception = null)
     {
-        DiffBitmap = diffBitmap;
-        MatchingPixels = matchingPixels;
-        TotalPixels = totalPixels;
-    }
+        DebugHelper.WriteLine($"[{source}] {message}");
 
-    public SKBitmap DiffBitmap { get; }
-
-    public long MatchingPixels { get; }
-
-    public long TotalPixels { get; }
-
-    public double SimilarityPercentage => TotalPixels > 0 ? MatchingPixels * 100d / TotalPixels : 100d;
-
-    public void Dispose()
-    {
-        DiffBitmap.Dispose();
+        if (exception != null)
+        {
+            DebugHelper.WriteException(exception);
+        }
     }
 }

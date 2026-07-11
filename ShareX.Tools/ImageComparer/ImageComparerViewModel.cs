@@ -27,12 +27,12 @@ using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.ImageEditor.Core.ImageComparison;
-using ShareX.ImageEditor.Presentation.Rendering;
+using ShareX.Tools.ImageComparer;
+using ShareX.AvaloniaUI.Imaging;
 using SkiaSharp;
 using System.Globalization;
 
-namespace ShareX.ImageEditor.Presentation.ViewModels;
+namespace ShareX.Tools.ImageComparer;
 
 public enum ImageComparerMode
 {

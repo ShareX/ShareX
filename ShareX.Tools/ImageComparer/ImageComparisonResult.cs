@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,12 +23,29 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.ImageEditor.Core.BackgroundRemoval;
+using SkiaSharp;
 
-namespace ShareX.ImageEditor.Integration;
+namespace ShareX.Tools.ImageComparer;
 
-public class BackgroundRemoverOptions
+public sealed class ImageComparisonResult : IDisposable
 {
-    public string SelectedModelFileName { get; set; } = "";
-    public BackgroundRemovalDevice SelectedDevice { get; set; } = BackgroundRemovalDevice.Auto;
+    public ImageComparisonResult(SKBitmap diffBitmap, long matchingPixels, long totalPixels)
+    {
+        DiffBitmap = diffBitmap;
+        MatchingPixels = matchingPixels;
+        TotalPixels = totalPixels;
+    }
+
+    public SKBitmap DiffBitmap { get; }
+
+    public long MatchingPixels { get; }
+
+    public long TotalPixels { get; }
+
+    public double SimilarityPercentage => TotalPixels > 0 ? MatchingPixels * 100d / TotalPixels : 100d;
+
+    public void Dispose()
+    {
+        DiffBitmap.Dispose();
+    }
 }

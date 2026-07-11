@@ -76,44 +76,6 @@ namespace ShareX.ImageEditor.Integration
             return ShowEditorDialog(null, options, events, taskMode, imageFilePath);
         }
 
-        public static void ShowImageComparerWindow()
-        {
-            Initialize();
-
-            Dispatcher.UIThread.Post(() =>
-            {
-                ImageComparerWindow window = new ImageComparerWindow();
-                window.Show();
-            });
-        }
-
-        public static void ShowIconConverterWindow()
-        {
-            Initialize();
-
-            Dispatcher.UIThread.Post(() =>
-            {
-                IconConverterWindow window = new IconConverterWindow();
-                window.Show();
-            });
-        }
-
-        public static void ShowBackgroundRemoverWindow(string? modelsFolder)
-        {
-            ShowBackgroundRemoverWindow(modelsFolder, new BackgroundRemoverOptions());
-        }
-
-        public static void ShowBackgroundRemoverWindow(string? modelsFolder, BackgroundRemoverOptions options)
-        {
-            Initialize();
-
-            Dispatcher.UIThread.Post(() =>
-            {
-                BackgroundRemoverWindow window = new BackgroundRemoverWindow(modelsFolder, options);
-                window.Show();
-            });
-        }
-
         public static SKBitmap? ShowEditorDialog(SKBitmap? imageBitmap, ImageEditorOptions options, ImageEditorCallbacks? events = null,
             bool taskMode = false, string? imageFilePath = null)
         {

@@ -2,12 +2,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
-        xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
+        xmlns:vm="using:ShareX.Tools.BackgroundRemover"
+        xmlns:controls="using:ShareX.Tools.Controls"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
-             xmlns:editorTheming="using:ShareX.ImageEditor.Presentation.Theming"
         mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="720"
-        x:Class="ShareX.ImageEditor.Presentation.Views.BackgroundRemoverWindow"
+        x:Class="ShareX.Tools.BackgroundRemover.BackgroundRemoverWindow"
         x:DataType="vm:BackgroundRemoverViewModel"
         Title="ShareX - Background Remover"
         Width="1080"
@@ -176,7 +175,7 @@
                     <Button
                             Command="{Binding SaveCommand}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSave}"
+                            <TextBlock Text="{x:Static theming:LucideIcons.save}"
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontWeight="Normal"
                                        VerticalAlignment="Center"/>
@@ -186,7 +185,7 @@
                     <Button
                             Command="{Binding SaveAsCommand}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSaveAs}"
+                            <TextBlock Text="{x:Static theming:LucideIcons.save_all}"
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontWeight="Normal"
                                        VerticalAlignment="Center"/>

@@ -27,9 +27,9 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
-using ShareX.ImageEditor.Presentation.ViewModels;
+using ShareX.Tools.ImageComparer;
 
-namespace ShareX.ImageEditor.Presentation.Views;
+namespace ShareX.Tools.ImageComparer;
 
 public partial class ImageComparerWindow : Window
 {

@@ -30,10 +30,10 @@ using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.VisualTree;
-using ShareX.ImageEditor.Presentation.Rendering;
+using ShareX.AvaloniaUI.Imaging;
 using SkiaSharp;
 
-namespace ShareX.ImageEditor.Presentation.Controls;
+namespace ShareX.Tools.Controls;
 
 public class ImageComparisonSlider : Control
 {

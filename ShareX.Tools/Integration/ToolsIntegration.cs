@@ -25,8 +25,11 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
+using ShareX.Tools.BackgroundRemover;
 using ShareX.Tools.HashChecker;
+using ShareX.Tools.IconConverter;
 using ShareX.Tools.ImageCombiner;
+using ShareX.Tools.ImageComparer;
 using ShareX.Tools.QRCode;
 using ShareX.Tools.VideoConverter;
 
@@ -34,6 +37,11 @@ namespace ShareX.Tools.Integration;
 
 public static class ToolsIntegration
 {
+    public static void ShowBackgroundRemoverWindow(string? modelsFolder, BackgroundRemoverOptions options)
+    {
+        Show(() => new BackgroundRemoverWindow(modelsFolder, options));
+    }
+
     public static void ShowHashCheckerWindow(HashCalculationHandler handler, Action? playSound = null, string? filePath = null)
     {
         Show(() => new HashCheckerWindow(handler, playSound, filePath));
@@ -43,6 +51,16 @@ public static class ToolsIntegration
         Action<ImageCombinerSettings>? settingsChanged = null, IEnumerable<string>? imageFiles = null)
     {
         Show(() => new ImageCombinerWindow(settings, services, settingsChanged, imageFiles));
+    }
+
+    public static void ShowImageComparerWindow()
+    {
+        Show(() => new ImageComparerWindow());
+    }
+
+    public static void ShowIconConverterWindow()
+    {
+        Show(() => new IconConverterWindow());
     }
 
     public static void ShowQRCodeWindow(QRCodeServices services, QRCodeWindowOptions options)

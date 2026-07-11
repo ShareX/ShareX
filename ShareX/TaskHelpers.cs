@@ -1093,19 +1093,19 @@ namespace ShareX
 
         public static void OpenImageComparer()
         {
-            ImageEditorIntegration.ShowImageComparerWindow();
+            ToolsIntegration.ShowImageComparerWindow();
         }
 
         public static void OpenIconConverter()
         {
-            ImageEditorIntegration.ShowIconConverterWindow();
+            ToolsIntegration.ShowIconConverterWindow();
         }
 
         public static void OpenBackgroundRemover(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            ImageEditorIntegration.ShowBackgroundRemoverWindow(Program.ModelsFolder, taskSettings.ToolsSettingsReference.BackgroundRemoverOptions);
+            ToolsIntegration.ShowBackgroundRemoverWindow(Program.ModelsFolder, taskSettings.ToolsSettingsReference.BackgroundRemoverOptions);
         }
 
         public static void CombineImages(IEnumerable<string> imageFiles, Orientation orientation, TaskSettings taskSettings = null)

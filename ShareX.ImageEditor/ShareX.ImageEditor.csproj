@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Using Include="ShareX.AvaloniaUI.Imaging" />
     <Using Include="ShareX.ImageEditor.Presentation.Theming" />
   </ItemGroup>
 
@@ -33,10 +34,8 @@
     <PackageReference Include="Avalonia.Fonts.Inter" />
     <PackageReference Include="Avalonia.Themes.Fluent" />
     <PackageReference Include="CommunityToolkit.Mvvm" />
-    <PackageReference Include="Microsoft.ML.OnnxRuntime.DirectML" />
     <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="SkiaSharp" />
     <PackageReference Include="Vortice.Direct2D1" VersionOverride="3.8.3" />
-    <PackageReference Include="Vortice.DXGI" VersionOverride="3.8.3" />
   </ItemGroup>
 </Project>

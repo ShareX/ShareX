@@ -26,15 +26,13 @@
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.ImageEditor.Core.BackgroundRemoval;
-using ShareX.ImageEditor.Integration;
-using ShareX.ImageEditor.Presentation.Rendering;
+using ShareX.AvaloniaUI.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using SkiaSharp;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
-namespace ShareX.ImageEditor.Presentation.ViewModels;
+namespace ShareX.Tools.BackgroundRemover;
 
 public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposable
 {
@@ -164,7 +162,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
         }
         catch (Exception ex)
         {
-            EditorServices.ReportWarning(nameof(BackgroundRemoverViewModel), "Failed to scan background removal models.", ex);
+            ToolsDiagnostics.ReportWarning(nameof(BackgroundRemoverViewModel), "Failed to scan background removal models.", ex);
         }
         finally
         {
@@ -194,7 +192,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
         }
         catch (Exception ex)
         {
-            EditorServices.ReportWarning(nameof(BackgroundRemoverViewModel), "Failed to open models folder.", ex);
+            ToolsDiagnostics.ReportWarning(nameof(BackgroundRemoverViewModel), "Failed to open models folder.", ex);
         }
     }
 
@@ -211,7 +209,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
         }
         catch (Exception ex)
         {
-            EditorServices.ReportWarning(nameof(BackgroundRemoverViewModel), "Failed to open the background remover guide.", ex);
+            ToolsDiagnostics.ReportWarning(nameof(BackgroundRemoverViewModel), "Failed to open the background remover guide.", ex);
         }
     }
 
@@ -251,7 +249,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
         }
         catch (Exception ex)
         {
-            EditorServices.ReportWarning(nameof(BackgroundRemoverViewModel), $"Failed to load image '{filePath}'.", ex);
+            ToolsDiagnostics.ReportWarning(nameof(BackgroundRemoverViewModel), $"Failed to load image '{filePath}'.", ex);
         }
     }
 
@@ -293,7 +291,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
 
             SetResultImage(result.Image);
             stopwatch.Stop();
-            ShowNotification($"Background removed in {stopwatch.ElapsedMilliseconds} ms.", EditorIcons.ToolSmartEraser);
+            ShowNotification($"Background removed in {stopwatch.ElapsedMilliseconds} ms.", LucideIcons.eraser);
             string cacheStatus = result.IsSessionCached ? "cached" : "not cached";
             Debug.WriteLine(
                 $"Background removal (device={selectedDevice}, execution={result.ExecutionDevice}, model={selectedModel.FileName}, {cacheStatus}): " +
@@ -303,7 +301,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
         }
         catch (Exception ex)
         {
-            EditorServices.ReportWarning(nameof(BackgroundRemoverViewModel), "Background removal failed.", ex);
+            ToolsDiagnostics.ReportWarning(nameof(BackgroundRemoverViewModel), "Background removal failed.", ex);
         }
         finally
         {
@@ -314,13 +312,13 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
     [RelayCommand(CanExecute = nameof(CanSaveImage))]
     private async Task SaveAsync()
     {
-        await SaveImageAsync(SaveImageRequested, EditorIcons.ActionSave);
+        await SaveImageAsync(SaveImageRequested, LucideIcons.save);
     }
 
     [RelayCommand(CanExecute = nameof(CanSaveImage))]
     private async Task SaveAsAsync()
     {
-        await SaveImageAsync(SaveImageAsRequested, EditorIcons.ActionSaveAs);
+        await SaveImageAsync(SaveImageAsRequested, LucideIcons.save_all);
     }
 
     private async Task SaveImageAsync(Func<SKBitmap, string?, Task<string?>>? saveRequested, string notificationIcon)
@@ -343,7 +341,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
         }
         catch (Exception ex)
         {
-            EditorServices.ReportWarning(nameof(BackgroundRemoverViewModel), "Failed to save background removal result.", ex);
+            ToolsDiagnostics.ReportWarning(nameof(BackgroundRemoverViewModel), "Failed to save background removal result.", ex);
         }
         finally
         {
