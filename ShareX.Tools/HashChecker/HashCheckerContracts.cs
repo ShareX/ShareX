@@ -23,28 +23,20 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.Tools.Features.QrCode;
+namespace ShareX.Tools.HashChecker;
 
-public enum QrCodeScanMode
+public enum HashCheckerAlgorithm
 {
-    Screen,
-    Region,
-    ImageFile
+    Crc32,
+    Md5,
+    Sha1,
+    Sha256,
+    Sha384,
+    Sha512
 }
 
-public sealed class QrCodeWindowOptions
-{
-    public string? InitialText { get; init; }
-    public string? InitialImageFilePath { get; init; }
-    public QrCodeScanMode? InitialScanMode { get; init; }
-}
-
-public sealed class QrCodeServices
-{
-    public required Func<string, int, Task<byte[]?>> GeneratePreviewAsync { get; init; }
-    public required Func<QrCodeScanMode, string?, Task<string[]?>> ScanAsync { get; init; }
-    public required Func<string, int, string, Task> SaveAsync { get; init; }
-    public required Action<string, int> CopyImage { get; init; }
-    public required Action<string, int> UploadImage { get; init; }
-    public Action? PlayNotificationSound { get; init; }
-}
+public delegate Task<string?> HashCalculationHandler(
+    string filePath,
+    HashCheckerAlgorithm algorithm,
+    IProgress<double> progress,
+    CancellationToken cancellationToken);

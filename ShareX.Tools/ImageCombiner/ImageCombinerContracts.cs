@@ -23,20 +23,34 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.Tools.Features.HashChecker;
+namespace ShareX.Tools.ImageCombiner;
 
-public enum HashCheckerAlgorithm
+public enum ImageCombinerOrientation
 {
-    Crc32,
-    Md5,
-    Sha1,
-    Sha256,
-    Sha384,
-    Sha512
+    Horizontal,
+    Vertical
 }
 
-public delegate Task<string?> HashCalculationHandler(
-    string filePath,
-    HashCheckerAlgorithm algorithm,
-    IProgress<double> progress,
-    CancellationToken cancellationToken);
+public enum ImageCombinerAlignment
+{
+    LeftOrTop,
+    Center,
+    RightOrBottom
+}
+
+public sealed class ImageCombinerSettings
+{
+    public ImageCombinerOrientation Orientation { get; set; } = ImageCombinerOrientation.Vertical;
+    public ImageCombinerAlignment Alignment { get; set; }
+    public int Space { get; set; }
+    public int WrapAfter { get; set; }
+    public bool AutoFillBackground { get; set; } = true;
+}
+
+public sealed record ImageCombineRequest(IReadOnlyList<string> ImageFiles, ImageCombinerSettings Settings);
+
+public sealed class ImageCombinerServices
+{
+    public required Func<ImageCombineRequest, Task<byte[]?>> CreatePreviewAsync { get; init; }
+    public required Func<ImageCombineRequest, Task> ProcessAsync { get; init; }
+}

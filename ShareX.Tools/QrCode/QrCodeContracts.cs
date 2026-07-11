@@ -23,34 +23,28 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.Tools.Features.ImageCombiner;
+namespace ShareX.Tools.QrCode;
 
-public enum ImageCombinerOrientation
+public enum QrCodeScanMode
 {
-    Horizontal,
-    Vertical
+    Screen,
+    Region,
+    ImageFile
 }
 
-public enum ImageCombinerAlignment
+public sealed class QrCodeWindowOptions
 {
-    LeftOrTop,
-    Center,
-    RightOrBottom
+    public string? InitialText { get; init; }
+    public string? InitialImageFilePath { get; init; }
+    public QrCodeScanMode? InitialScanMode { get; init; }
 }
 
-public sealed class ImageCombinerSettings
+public sealed class QrCodeServices
 {
-    public ImageCombinerOrientation Orientation { get; set; } = ImageCombinerOrientation.Vertical;
-    public ImageCombinerAlignment Alignment { get; set; }
-    public int Space { get; set; }
-    public int WrapAfter { get; set; }
-    public bool AutoFillBackground { get; set; } = true;
-}
-
-public sealed record ImageCombineRequest(IReadOnlyList<string> ImageFiles, ImageCombinerSettings Settings);
-
-public sealed class ImageCombinerServices
-{
-    public required Func<ImageCombineRequest, Task<byte[]?>> CreatePreviewAsync { get; init; }
-    public required Func<ImageCombineRequest, Task> ProcessAsync { get; init; }
+    public required Func<string, int, Task<byte[]?>> GeneratePreviewAsync { get; init; }
+    public required Func<QrCodeScanMode, string?, Task<string[]?>> ScanAsync { get; init; }
+    public required Func<string, int, string, Task> SaveAsync { get; init; }
+    public required Action<string, int> CopyImage { get; init; }
+    public required Action<string, int> UploadImage { get; init; }
+    public Action? PlayNotificationSound { get; init; }
 }

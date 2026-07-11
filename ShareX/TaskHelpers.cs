@@ -25,10 +25,10 @@
 
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
-using ShareX.Tools.Features.HashChecker;
-using ShareX.Tools.Features.ImageCombiner;
-using ShareX.Tools.Features.QrCode;
-using ShareX.Tools.Features.VideoConverter;
+using ShareX.Tools.HashChecker;
+using ShareX.Tools.ImageCombiner;
+using ShareX.Tools.QrCode;
+using ShareX.Tools.VideoConverter;
 using ShareX.Tools.Integration;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEffectsLib;
@@ -1030,7 +1030,7 @@ namespace ShareX
             ImageCombinerSettings settings = new ImageCombinerSettings
             {
                 Orientation = (ImageCombinerOrientation)source.Orientation,
-                Alignment = (ShareX.Tools.Features.ImageCombiner.ImageCombinerAlignment)source.Alignment,
+                Alignment = (ShareX.Tools.ImageCombiner.ImageCombinerAlignment)source.Alignment,
                 Space = source.Space,
                 WrapAfter = source.WrapAfter,
                 AutoFillBackground = source.AutoFillBackground

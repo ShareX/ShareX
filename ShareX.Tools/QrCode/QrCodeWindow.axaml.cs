@@ -29,10 +29,10 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform.Storage;
-using ShareX.Tools.Features.QrCode;
+using ShareX.Tools.QrCode;
 using ShareX.AvaloniaUI.Theming;
 
-namespace ShareX.Tools.Features.QrCode;
+namespace ShareX.Tools.QrCode;
 
 public partial class QrCodeWindow : Window
 {

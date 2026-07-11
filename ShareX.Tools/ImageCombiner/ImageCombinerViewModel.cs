@@ -29,7 +29,7 @@ using CommunityToolkit.Mvvm.Input;
 using ShareX.Tools.Infrastructure;
 using System.Collections.ObjectModel;
 
-namespace ShareX.Tools.Features.ImageCombiner;
+namespace ShareX.Tools.ImageCombiner;
 
 public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
 {

@@ -27,7 +27,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.Tools.Infrastructure;
 
-namespace ShareX.Tools.Features.HashChecker;
+namespace ShareX.Tools.HashChecker;
 
 public sealed record HashAlgorithmItem(HashCheckerAlgorithm Algorithm, string DisplayName);
 

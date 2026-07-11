@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.Tools.Features.VideoConverter;
+namespace ShareX.Tools.VideoConverter;
 
 public enum VideoConverterCodec
 {
