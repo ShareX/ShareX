@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -157,7 +157,7 @@ public sealed partial class IconConverterViewModel : ViewModelBase, IDisposable
             _sourceBitmap = bitmap;
             PreviewImage = preview;
             ImagePath = filePath;
-            ImageDetails = $"{bitmap.Width} × {bitmap.Height} pixels";
+            ImageDetails = $"{bitmap.Width} Ã— {bitmap.Height} pixels";
             StatusText = string.Empty;
         }
         catch (Exception ex)

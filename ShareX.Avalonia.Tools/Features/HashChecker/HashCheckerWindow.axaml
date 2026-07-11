@@ -1,0 +1,162 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.AvaloniaUI.Tools.Features.HashChecker"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="780" d:DesignHeight="440"
+        x:Class="ShareX.AvaloniaUI.Tools.Features.HashChecker.HashCheckerWindow"
+        x:DataType="vm:HashCheckerViewModel"
+        Title="ShareX - Hash Checker"
+        Width="700"
+        MinWidth="700"
+        SizeToContent="Height"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="TextBox.hash-value">
+            <Setter Property="FontFamily" Value="Consolas"/>
+        </Style>
+        <Style Selector="Button.browse-button">
+            <Setter Property="MinWidth" Value="88"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid RowDefinitions="Auto,Auto,Auto" Margin="16" RowSpacing="12">
+                <Border Grid.Row="0" Classes="tool-panel">
+                    <Grid RowDefinitions="Auto,Auto,Auto">
+                        <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+                            <TextBlock Grid.Column="0" Classes="section-heading" Text="Files"/>
+                            <CheckBox Grid.Column="1"
+                                      IsChecked="{Binding CompareTwoFiles}"
+                                      IsEnabled="{Binding IsIdle}">
+                                <TextBlock Text="Compare two files" FontWeight="Normal"/>
+                            </CheckBox>
+                        </Grid>
+
+                        <Grid Grid.Row="1"
+                              ColumnDefinitions="100,*,Auto"
+                              ColumnSpacing="10"
+                              Margin="0,10,0,0">
+                            <TextBlock Grid.Column="0" Classes="row-label" Text="File"/>
+                            <TextBox Grid.Column="1"
+                                     Text="{Binding FirstFilePath}"
+                                     PlaceholderText="Choose a file or drop it here"
+                                     IsEnabled="{Binding IsIdle}"/>
+                            <Button Grid.Column="2"
+                                    Classes="browse-button"
+                                    Content="Browse..."
+                                    Command="{Binding BrowseFirstFileCommand}"
+                                    IsEnabled="{Binding IsIdle}"/>
+                        </Grid>
+
+                        <Border Grid.Row="2"
+                                x:Name="SecondFileDropZone"
+                                IsVisible="{Binding CompareTwoFiles}"
+                                Background="Transparent"
+                                Margin="0,10,0,0">
+                            <Grid ColumnDefinitions="100,*,Auto" ColumnSpacing="10">
+                                <TextBlock Grid.Column="0" Classes="row-label" Text="Second file"/>
+                                <TextBox Grid.Column="1"
+                                         Text="{Binding SecondFilePath}"
+                                         PlaceholderText="Choose a second file or drop it here"
+                                         IsEnabled="{Binding IsIdle}"/>
+                                <Button Grid.Column="2"
+                                        Classes="browse-button"
+                                        Content="Browse..."
+                                        Command="{Binding BrowseSecondFileCommand}"
+                                        IsEnabled="{Binding IsIdle}"/>
+                            </Grid>
+                        </Border>
+
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Classes="tool-panel">
+                    <Grid ColumnDefinitions="100,180,*,Auto" ColumnSpacing="10">
+                        <TextBlock Grid.Column="0" Classes="row-label" Text="Hash type"/>
+                        <ComboBox Grid.Column="1"
+                                  ItemsSource="{x:Static vm:HashCheckerViewModel.Algorithms}"
+                                  SelectedItem="{Binding SelectedAlgorithm}"
+                                  IsEnabled="{Binding IsIdle}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate x:DataType="vm:HashAlgorithmItem">
+                                    <TextBlock Text="{Binding DisplayName}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <ProgressBar Grid.Column="2"
+                                     Minimum="0"
+                                     Maximum="100"
+                                     Value="{Binding Progress}"
+                                     Height="6"
+                                     VerticalAlignment="Center"
+                                     IsVisible="{Binding IsWorking}"/>
+                        <Button Grid.Column="3"
+                                Command="{Binding CheckCommand}"
+                                IsEnabled="{Binding CanCheck}"
+                                IsVisible="{Binding IsIdle}">
+                            <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                                <TextBlock Text="{x:Static theming:LucideIcons.search_check}"
+                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Text="Check" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="3"
+                                Command="{Binding StopCommand}"
+                                IsVisible="{Binding IsWorking}">
+                            <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                                <TextBlock Text="{x:Static theming:LucideIcons.square_stop}"
+                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Text="Stop" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="2" Classes="tool-panel">
+                    <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
+                        <TextBlock Grid.Row="0" Classes="section-heading" Text="Results"/>
+
+                        <Grid Grid.Row="1" ColumnDefinitions="100,*" ColumnSpacing="10">
+                            <TextBlock Grid.Column="0" Classes="row-label" Text="{Binding ResultLabel}"/>
+                            <TextBox Grid.Column="1"
+                                     Classes="hash-value"
+                                     Text="{Binding ResultHash}"
+                                     IsReadOnly="True"
+                                     PlaceholderText="Calculated hash will appear here"/>
+                        </Grid>
+
+                        <Grid Grid.Row="2" ColumnDefinitions="100,*" ColumnSpacing="10">
+                            <TextBlock Grid.Column="0" Classes="row-label" Text="{Binding TargetLabel}"/>
+                            <TextBox Grid.Column="1"
+                                     Classes="hash-value"
+                                     Text="{Binding TargetHash}"
+                                     IsReadOnly="{Binding CompareTwoFiles}"
+                                     PlaceholderText="Paste a hash to compare"/>
+                            <Border Grid.Column="1"
+                                    Height="2"
+                                    Margin="1,0,1,1"
+                                    Background="#36B37E"
+                                    VerticalAlignment="Bottom"
+                                    IsHitTestVisible="False"
+                                    IsVisible="{Binding HashesMatch}"/>
+                            <Border Grid.Column="1"
+                                    Height="2"
+                                    Margin="1,0,1,1"
+                                    Background="#E05252"
+                                    VerticalAlignment="Bottom"
+                                    IsHitTestVisible="False"
+                                    IsVisible="{Binding HashesDiffer}"/>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

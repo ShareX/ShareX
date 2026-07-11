@@ -6,6 +6,7 @@
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
              xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
              xmlns:theming="clr-namespace:ShareX.ImageEditor.Presentation.Theming;assembly=ShareX.ImageEditor"
+             xmlns:icons="clr-namespace:ShareX.AvaloniaUI.Theming;assembly=ShareX.Avalonia"
              x:Class="ShareX.ImageEditor.Presentation.Controls.AnnotationToolbar"
              x:Name="AnnotationToolbarRoot"
              x:DataType="abstractions:IAnnotationToolbarAdapter">
@@ -83,7 +84,7 @@
                                                           IsVisible="{Binding #AnnotationToolbarRoot.DataContext.HasRecentImageFiles}"
                                                           ItemsSource="{Binding #AnnotationToolbarRoot.DataContext.RecentImageMenuItems}">
                                                     <MenuItem.Icon>
-                                                        <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:LucideIcons.history}"/>
+                                                        <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static icons:LucideIcons.history}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                                 <Separator/>
@@ -106,7 +107,7 @@
                                                           IsVisible="{Binding #AnnotationToolbarRoot.DataContext.ShowOptionsButton}"
                                                           Click="OnOpenOptionsClick">
                                                     <MenuItem.Icon>
-                                                        <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:LucideIcons.settings}"/>
+                                                        <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static icons:LucideIcons.settings}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                                 <Separator IsVisible="{Binding #AnnotationToolbarRoot.DataContext.ShowOptionsButton}"/>

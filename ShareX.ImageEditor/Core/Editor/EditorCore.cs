@@ -27,7 +27,7 @@ using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Core.History;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Manipulations;
-using ShareX.ImageEditor.Hosting;
+using ShareX.ImageEditor.Integration;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.Editor;

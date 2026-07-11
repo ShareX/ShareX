@@ -35,7 +35,7 @@ using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.ImageEditor.Core.Abstractions;
 using ShareX.ImageEditor.Core.Annotations;
-using ShareX.ImageEditor.Presentation.Theming;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using ShareX.ImageEditor.Presentation.Views;
 using System.ComponentModel;

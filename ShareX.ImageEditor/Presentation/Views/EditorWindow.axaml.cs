@@ -26,7 +26,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using ShareX.ImageEditor.Hosting;
+using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using SkiaSharp;
 using System.Reflection;

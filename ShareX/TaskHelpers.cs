@@ -25,7 +25,12 @@
 
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
-using ShareX.ImageEditor.Hosting;
+using ShareX.AvaloniaUI.Tools.Features.HashChecker;
+using ShareX.AvaloniaUI.Tools.Features.ImageCombiner;
+using ShareX.AvaloniaUI.Tools.Features.QrCode;
+using ShareX.AvaloniaUI.Tools.Features.VideoConverter;
+using ShareX.AvaloniaUI.Tools.Integration;
+using ShareX.ImageEditor.Integration;
 using ShareX.ImageEffectsLib;
 using ShareX.IndexerLib;
 using ShareX.MediaLib;
@@ -932,7 +937,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            AvaloniaIntegration.ShowHashCheckerWindow(
+            ToolsIntegration.ShowHashCheckerWindow(
                 CalculateFileHashAsync,
                 () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings),
                 filePath);
@@ -1025,14 +1030,14 @@ namespace ShareX
             ImageCombinerSettings settings = new ImageCombinerSettings
             {
                 Orientation = (ImageCombinerOrientation)source.Orientation,
-                Alignment = (ShareX.ImageEditor.Hosting.ImageCombinerAlignment)source.Alignment,
+                Alignment = (ShareX.AvaloniaUI.Tools.Features.ImageCombiner.ImageCombinerAlignment)source.Alignment,
                 Space = source.Space,
                 WrapAfter = source.WrapAfter,
                 AutoFillBackground = source.AutoFillBackground
             };
 
             TaskSettings activeTaskSettings = taskSettings;
-            AvaloniaIntegration.ShowImageCombinerWindow(
+            ToolsIntegration.ShowImageCombinerWindow(
                 settings,
                 new ImageCombinerServices
                 {
@@ -1088,19 +1093,19 @@ namespace ShareX
 
         public static void OpenImageComparer()
         {
-            AvaloniaIntegration.ShowImageComparerWindow();
+            ImageEditorIntegration.ShowImageComparerWindow();
         }
 
         public static void OpenIconConverter()
         {
-            AvaloniaIntegration.ShowIconConverterWindow();
+            ImageEditorIntegration.ShowIconConverterWindow();
         }
 
         public static void OpenBackgroundRemover(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            AvaloniaIntegration.ShowBackgroundRemoverWindow(Program.ModelsFolder, taskSettings.ToolsSettingsReference.BackgroundRemoverOptions);
+            ImageEditorIntegration.ShowBackgroundRemoverWindow(Program.ModelsFolder, taskSettings.ToolsSettingsReference.BackgroundRemoverOptions);
         }
 
         public static void CombineImages(IEnumerable<string> imageFiles, Orientation orientation, TaskSettings taskSettings = null)
@@ -1172,7 +1177,7 @@ namespace ShareX
             };
 
             string ffmpegFilePath = taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath;
-            AvaloniaIntegration.ShowVideoConverterWindow(
+            ToolsIntegration.ShowVideoConverterWindow(
                 settings,
                 (request, progress, cancellationToken) => RunVideoConversionAsync(ffmpegFilePath, request, progress, cancellationToken),
                 updated =>
@@ -1482,7 +1487,7 @@ namespace ShareX
         {
             Bitmap bmpResult = null;
 
-            EditorEvents events = new EditorEvents
+            ImageEditorCallbacks events = new ImageEditorCallbacks
             {
                 CopyImageRequested = (skBitmap) =>
                 {
@@ -1539,12 +1544,12 @@ namespace ShareX
             if (bmp != null)
             {
                 using SKBitmap skBitmap = GdiBitmapToSkBitmap(bmp);
-                skBitmapResult = AvaloniaIntegration.ShowEditorDialog(skBitmap, taskSettings.ToolsSettingsReference.ImageEditorOptions,
+                skBitmapResult = ImageEditorIntegration.ShowEditorDialog(skBitmap, taskSettings.ToolsSettingsReference.ImageEditorOptions,
                     events, taskMode, filePath);
             }
             else
             {
-                skBitmapResult = AvaloniaIntegration.ShowEditorDialog(taskSettings.ToolsSettingsReference.ImageEditorOptions,
+                skBitmapResult = ImageEditorIntegration.ShowEditorDialog(taskSettings.ToolsSettingsReference.ImageEditorOptions,
                     events, taskMode, filePath);
             }
 
@@ -1843,7 +1848,7 @@ namespace ShareX
 
         private static void ShowQrCodeWindow(QrCodeWindowOptions options)
         {
-            AvaloniaIntegration.ShowQrCodeWindow(new QrCodeServices
+            ToolsIntegration.ShowQrCodeWindow(new QrCodeServices
             {
                 GeneratePreviewAsync = GenerateQrCodePreviewAsync,
                 ScanAsync = ScanQrCodeAsync,

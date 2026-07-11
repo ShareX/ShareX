@@ -25,7 +25,7 @@
 
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
-using ShareX.ImageEditor.Presentation.Theming;
+using ShareX.AvaloniaUI.Theming;
 using SkiaSharp;
 using System.Collections.Concurrent;
 

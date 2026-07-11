@@ -6,7 +6,8 @@
              xmlns:views="using:ShareX.ImageEditor.Presentation.Views"
              xmlns:models="using:ShareX.ImageEditor.Core.Annotations"
              xmlns:converters="using:ShareX.ImageEditor.Presentation.Converters"
-             xmlns:theming="using:ShareX.ImageEditor.Presentation.Theming"
+             xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+             xmlns:editorTheming="using:ShareX.ImageEditor.Presentation.Theming"
              xmlns:helpers="using:ShareX.ImageEditor.Presentation.Rendering"
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
              xmlns:easterEggs="using:ShareX.ImageEditor.Presentation.EasterEggs"
@@ -85,12 +86,12 @@
                      Cursor="Arrow">
             <MenuItem Header="Undo" Command="{Binding UndoCommand}" InputGesture="Ctrl+Z">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ActionUndo}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionUndo}"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="Redo" Command="{Binding RedoCommand}" InputGesture="Ctrl+Y">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ActionRedo}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionRedo}"/>
                 </MenuItem.Icon>
             </MenuItem>
 
@@ -98,17 +99,17 @@
 
             <MenuItem Header="Delete" Command="{Binding DeleteSelectedCommand}" InputGesture="Delete">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ActionDelete}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionDelete}"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="Delete all" Command="{Binding ClearAnnotationsCommand}" InputGesture="Shift+Delete">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ActionClearAll}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionClearAll}"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="Flatten" Command="{Binding FlattenImageCommand}" InputGesture="Ctrl+Shift+F">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.LayerFlatten}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.LayerFlatten}"/>
                 </MenuItem.Icon>
             </MenuItem>
 
@@ -116,22 +117,22 @@
 
             <MenuItem Header="Cut" Command="{Binding CutAnnotationCommand}" InputGesture="Ctrl+X">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ToolCutOut}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ToolCutOut}"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="Copy" Command="{Binding CopyAnnotationCommand}" InputGesture="Ctrl+Shift+C">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ActionCopy}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionCopy}"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="Paste" Command="{Binding PasteCommand}" InputGesture="Ctrl+V">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ActionPaste}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionPaste}"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="Duplicate" Command="{Binding DuplicateSelectedCommand}" InputGesture="Ctrl+D">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ActionDuplicate}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionDuplicate}"/>
                 </MenuItem.Icon>
             </MenuItem>
 
@@ -139,22 +140,22 @@
 
             <MenuItem Header="Bring to front" Command="{Binding BringToFrontCommand}" InputGesture="Home">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ActionBringToFront}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionBringToFront}"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="Bring forward" Command="{Binding BringForwardCommand}" InputGesture="PageUp">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ActionBringForward}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionBringForward}"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="Send backward" Command="{Binding SendBackwardCommand}" InputGesture="PageDown">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ActionSendBackward}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionSendBackward}"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="Send to back" Command="{Binding SendToBackCommand}" InputGesture="End">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ActionSendToBack}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionSendToBack}"/>
                 </MenuItem.Icon>
             </MenuItem>
 
@@ -162,7 +163,7 @@
 
             <MenuItem Header="{Binding ToggleToolbarsMenuHeader}" Command="{Binding ToggleToolbarsCommand}" InputGesture="Ctrl+H">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.ActionToggleToolbars}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionToggleToolbars}"/>
                 </MenuItem.Icon>
             </MenuItem>
         </ContextMenu>
@@ -187,7 +188,7 @@
                               ScrollChanged="OnSidebarScrollChanged">
                     <StackPanel Width="250" Spacing="0" Margin="16">
                         <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,8">
-                            <TextBlock Text="{x:Static theming:EditorIcons.PanelBackground}"
+                            <TextBlock Text="{x:Static editorTheming:EditorIcons.PanelBackground}"
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        VerticalAlignment="Center"
                                        Margin="0,2,0,0"/>
@@ -670,7 +671,7 @@
                             Width="55" Margin="0,0,0,0" Padding="27,0,10,0" CornerRadius="0,4,4,0"
                             ToolTip.Tip="Cancel (Esc)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"
                             ZIndex="0">
-                        <TextBlock Text="{x:Static theming:EditorIcons.ActionCancel}"
+                        <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionCancel}"
                                    FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                    FontSize="18" FontWeight="Normal"
                                    VerticalAlignment="Center"/>
@@ -685,7 +686,7 @@
                             Margin="0,0,0,-8"
                             ToolTip.Tip="{Binding ContinueButtonTooltip}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"
                             ZIndex="20">
-                        <TextBlock Text="{x:Static theming:EditorIcons.ActionContinue}"
+                        <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionContinue}"
                                    FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                    FontSize="22" FontWeight="Normal"
                                    HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -696,37 +697,37 @@
                 <Button Command="{Binding CopyCommand}" Width="40" Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
                         ToolTip.Tip="Copy image to clipboard (Ctrl+C)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static theming:EditorIcons.ActionCopy}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionCopy}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                 </Button>
 
                 <Button Command="{Binding SaveCommand}" Width="40" Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
                         ToolTip.Tip="Save image (Ctrl+S)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static theming:EditorIcons.ActionSave}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSave}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                 </Button>
 
                 <Button Command="{Binding SaveAsCommand}" Width="40" Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
                         ToolTip.Tip="Save image as... (Ctrl+Shift+S)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static theming:EditorIcons.ActionSaveAs}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSaveAs}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                 </Button>
 
                 <Button Command="{Binding PinToScreenCommand}" IsEnabled="{Binding HasPreviewImage}" Width="40" Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
                         ToolTip.Tip="Pin image to screen (Ctrl+P)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static theming:EditorIcons.ActionPinToScreen}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionPinToScreen}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                 </Button>
 
                 <Button Command="{Binding PrintCommand}" IsEnabled="{Binding HasPreviewImage}" Width="40" Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
                         ToolTip.Tip="Print image... (Ctrl+Shift+P)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static theming:EditorIcons.ActionPrint}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionPrint}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                 </Button>
 
                 <Button Command="{Binding UploadCommand}" IsEnabled="{Binding HasPreviewImage}" Width="40" Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
                         ToolTip.Tip="Upload image (Ctrl+U)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static theming:EditorIcons.ActionUpload}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionUpload}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                 </Button>
             </StackPanel>
         </Border>

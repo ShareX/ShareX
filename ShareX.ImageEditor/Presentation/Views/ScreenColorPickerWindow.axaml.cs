@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -29,7 +29,7 @@ using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using ShareX.ImageEditor.Presentation.Rendering;
-using ShareX.ImageEditor.Presentation.Theming;
+using ShareX.AvaloniaUI.Theming;
 using System.Runtime.InteropServices;
 
 namespace ShareX.ImageEditor.Presentation.Views

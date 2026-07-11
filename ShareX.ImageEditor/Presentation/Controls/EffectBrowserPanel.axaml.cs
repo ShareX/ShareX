@@ -31,7 +31,7 @@ using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.ImageEditor.Core.ImageEffects;
-using ShareX.ImageEditor.Hosting;
+using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.Effects;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -261,7 +261,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
         private const string FavoritesHeaderHint = "Right-click an effect item to add or remove it from Favorites.";
         private const int MaxRecentEffects = 10;
         private const string SearchWatermarkFormat = "Search image effects... ({0})";
-        private static readonly FontFamily IconFontFamily = new("avares://ShareX.ImageEditor/Assets#lucide");
+        private static readonly FontFamily IconFontFamily = new("avares://ShareX.Avalonia/Assets#lucide");
 
         private static readonly Dictionary<string, string> EffectAliases = new(StringComparer.OrdinalIgnoreCase)
         {

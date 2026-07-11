@@ -31,9 +31,9 @@ using CommunityToolkit.Mvvm.Input;
 using ShareX.ImageEditor.Core.Abstractions;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Core.Editor;
-using ShareX.ImageEditor.Hosting;
+using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.Emoji;
-using ShareX.ImageEditor.Presentation.Theming;
+using ShareX.AvaloniaUI.Theming;
 using System.Collections.ObjectModel;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels

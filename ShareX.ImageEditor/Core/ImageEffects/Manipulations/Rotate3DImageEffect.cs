@@ -25,7 +25,7 @@
 
 /* TODO: SkiaSharp bug
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
-using ShareX.ImageEditor.Presentation.Theming;
+using ShareX.AvaloniaUI.Theming;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.ImageEffects.Manipulations;

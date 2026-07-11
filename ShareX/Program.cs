@@ -26,7 +26,7 @@
 using Avalonia.Win32.Interoperability;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
-using ShareX.ImageEditor.Hosting;
+using ShareX.ImageEditor.Integration;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
@@ -355,7 +355,7 @@ namespace ShareX
 
             DebugHelper.WriteLine("Avalonia init started.");
             Application.AddMessageFilter(new WinFormsAvaloniaMessageFilter());
-            AvaloniaIntegration.Initialize();
+            ImageEditorIntegration.Initialize();
             DebugHelper.WriteLine("Avalonia init finished.");
 
             SettingManager.LoadInitialSettings();

@@ -11,8 +11,15 @@
   <ItemGroup>
     <AvaloniaResource Include="Assets\closedhand.cur" />
     <AvaloniaResource Include="Assets\Crosshair.cur" />
-    <AvaloniaResource Include="Assets\lucide.ttf" />
     <AvaloniaResource Include="Assets\openhand.cur" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="ShareX.ImageEditor.Presentation.Theming" />
   </ItemGroup>
 
   <ItemGroup>

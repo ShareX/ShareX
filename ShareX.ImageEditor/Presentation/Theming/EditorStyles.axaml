@@ -1,0 +1,119 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StyleInclude Source="avares://ShareX.ImageEditor/Presentation/Controls/EffectSlider.axaml" />
+    <!-- Editor layout primitives -->
+    <Style Selector="TextBlock.dropdown-chevron">
+        <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
+        <Setter Property="RenderTransform" Value="rotate(0deg)"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.16"/>
+            </Transitions>
+        </Setter>
+
+        <Style Selector="^.open">
+            <Setter Property="RenderTransform" Value="rotate(180deg)"/>
+        </Style>
+    </Style>
+
+    <Style Selector="Border.editor-sidebar">
+        <Setter Property="Width" Value="0"/>
+        <Setter Property="Opacity" Value="0"/>
+        <Setter Property="ClipToBounds" Value="True"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="RenderTransform" Value="translateX(0px)"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Width" Duration="0:0:0.22"/>
+                <DoubleTransition Property="Opacity" Duration="0:0:0.18"/>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.22"/>
+            </Transitions>
+        </Setter>
+
+        <Style Selector="^.left">
+            <Setter Property="RenderTransform" Value="translateX(-18px)"/>
+        </Style>
+
+        <Style Selector="^.right">
+            <Setter Property="RenderTransform" Value="translateX(18px)"/>
+        </Style>
+
+        <Style Selector="^.left > ScrollViewer > StackPanel > StackPanel:nth-child(1) > TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="Padding" Value="0,0,0,16"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+
+        <Style Selector="^.right ContentControl > :is(UserControl) > StackPanel > StackPanel:nth-child(1) > TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="Padding" Value="0,0,0,16"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+
+        <Style Selector="^.open">
+            <Setter Property="Width" Value="282"/>
+            <Setter Property="Opacity" Value="1"/>
+            <Setter Property="RenderTransform" Value="translateX(0px)"/>
+        </Style>
+
+        <Style Selector="^.left.open">
+            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+        </Style>
+
+        <Style Selector="^.right.open">
+            <Setter Property="BorderThickness" Value="1,0,0,0"/>
+        </Style>
+    </Style>
+
+    <Style Selector="Border.editor-toolbar-host">
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="RenderTransform" Value="translateY(0px)"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Opacity" Duration="0:0:0.2"/>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+
+        <Style Selector="^.top">
+            <Setter Property="RenderTransformOrigin" Value="50%,0%"/>
+        </Style>
+
+        <Style Selector="^.bottom">
+            <Setter Property="RenderTransformOrigin" Value="50%,100%"/>
+        </Style>
+
+        <Style Selector="^.top.hidden">
+            <Setter Property="Opacity" Value="0"/>
+            <Setter Property="RenderTransform" Value="translateY(-28px)"/>
+        </Style>
+
+        <Style Selector="^.bottom.hidden">
+            <Setter Property="Opacity" Value="0"/>
+            <Setter Property="RenderTransform" Value="translateY(28px)"/>
+        </Style>
+    </Style>
+
+    <Style Selector="Grid.overlay-scrim">
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Overlay.Soft}"/>
+        <Setter Property="Opacity" Value="0"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Opacity" Duration="0:0:0.18"/>
+            </Transitions>
+        </Setter>
+
+        <Style Selector="^.open">
+            <Setter Property="Opacity" Value="1"/>
+        </Style>
+    </Style>
+
+    <Style Selector="Border.modal-scrim">
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Overlay.Modal}"/>
+    </Style>
+
+</Styles>

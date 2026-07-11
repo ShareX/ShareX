@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:ShareX.ImageEditor.Presentation.ViewModels"
-             xmlns:theming="clr-namespace:ShareX.ImageEditor.Presentation.Theming"
+             xmlns:theming="clr-namespace:ShareX.AvaloniaUI.Theming;assembly=ShareX.Avalonia"
              mc:Ignorable="d" d:DesignWidth="750" d:DesignHeight="500"
              x:Class="ShareX.ImageEditor.Presentation.Views.StartScreenDialogView"
              x:DataType="vm:StartScreenDialogViewModel">

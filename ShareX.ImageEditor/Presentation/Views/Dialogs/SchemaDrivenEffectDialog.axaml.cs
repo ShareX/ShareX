@@ -31,7 +31,7 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
-using ShareX.ImageEditor.Hosting;
+using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.Effects;
 using System.Collections.ObjectModel;
 using System.ComponentModel;

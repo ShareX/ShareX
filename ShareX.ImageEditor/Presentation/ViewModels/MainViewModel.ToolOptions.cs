@@ -26,8 +26,8 @@
 using Avalonia.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using ShareX.ImageEditor.Core.Annotations;
-using ShareX.ImageEditor.Hosting;
-using ShareX.ImageEditor.Presentation.Theming;
+using ShareX.ImageEditor.Integration;
+using ShareX.AvaloniaUI.Theming;
 using System.Reflection;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels

@@ -4,7 +4,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
         xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
-        xmlns:theming="using:ShareX.ImageEditor.Presentation.Theming"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+             xmlns:editorTheming="using:ShareX.ImageEditor.Presentation.Theming"
         mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="720"
         x:Class="ShareX.ImageEditor.Presentation.Views.BackgroundRemoverWindow"
         x:DataType="vm:BackgroundRemoverViewModel"
@@ -175,7 +176,7 @@
                     <Button
                             Command="{Binding SaveCommand}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="{x:Static theming:EditorIcons.ActionSave}"
+                            <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSave}"
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontWeight="Normal"
                                        VerticalAlignment="Center"/>
@@ -185,7 +186,7 @@
                     <Button
                             Command="{Binding SaveAsCommand}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="{x:Static theming:EditorIcons.ActionSaveAs}"
+                            <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSaveAs}"
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontWeight="Normal"
                                        VerticalAlignment="Center"/>

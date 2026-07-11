@@ -3,7 +3,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
-             xmlns:theming="using:ShareX.ImageEditor.Presentation.Theming"
+             xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+             xmlns:editorTheming="using:ShareX.ImageEditor.Presentation.Theming"
              xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
              mc:Ignorable="d"
              d:DesignWidth="260"
@@ -32,7 +33,7 @@
                     Height="32"
                     Padding="0"
                     ToolTip.Tip="Close">
-                <TextBlock Text="{x:Static theming:EditorIcons.ActionCancel}"
+                <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionCancel}"
                            FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                            FontWeight="Normal"
                            HorizontalAlignment="Center"
