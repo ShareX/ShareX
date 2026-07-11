@@ -1021,9 +1021,69 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            ImageCombinerForm imageCombinerForm = new ImageCombinerForm(taskSettings.ToolsSettingsReference.ImageCombinerOptions, imageFiles);
-            imageCombinerForm.ProcessRequested += bmp => UploadManager.RunImageTask(bmp, taskSettings);
-            imageCombinerForm.Show();
+            ShareX.MediaLib.ImageCombinerOptions source = taskSettings.ToolsSettingsReference.ImageCombinerOptions;
+            ImageCombinerSettings settings = new ImageCombinerSettings
+            {
+                Orientation = (ImageCombinerOrientation)source.Orientation,
+                Alignment = (ShareX.ImageEditor.Hosting.ImageCombinerAlignment)source.Alignment,
+                Space = source.Space,
+                WrapAfter = source.WrapAfter,
+                AutoFillBackground = source.AutoFillBackground
+            };
+
+            TaskSettings activeTaskSettings = taskSettings;
+            AvaloniaIntegration.ShowImageCombinerWindow(
+                settings,
+                new ImageCombinerServices
+                {
+                    CreatePreviewAsync = CreateImageCombinerPreviewAsync,
+                    ProcessAsync = request => ProcessCombinedImagesAsync(request, activeTaskSettings)
+                },
+                updated =>
+                {
+                    source.Orientation = (Orientation)updated.Orientation;
+                    source.Alignment = (ShareX.HelpersLib.ImageCombinerAlignment)updated.Alignment;
+                    source.Space = updated.Space;
+                    source.WrapAfter = updated.WrapAfter;
+                    source.AutoFillBackground = updated.AutoFillBackground;
+                },
+                imageFiles?.ToArray());
+        }
+
+        private static Task<byte[]> CreateImageCombinerPreviewAsync(ImageCombineRequest request)
+        {
+            return Task.Run(() =>
+            {
+                using Bitmap output = CombineImages(request);
+                if (output == null)
+                {
+                    return null;
+                }
+
+                using MemoryStream stream = new MemoryStream();
+                output.Save(stream, ImageFormat.Png);
+                return stream.ToArray();
+            });
+        }
+
+        private static async Task ProcessCombinedImagesAsync(ImageCombineRequest request, TaskSettings taskSettings)
+        {
+            Bitmap output = await Task.Run(() => CombineImages(request));
+            if (output != null)
+            {
+                UploadManager.RunImageTask(output, taskSettings);
+            }
+        }
+
+        private static Bitmap CombineImages(ImageCombineRequest request)
+        {
+            return ImageHelpers.CombineImages(
+                request.ImageFiles,
+                (Orientation)request.Settings.Orientation,
+                (ShareX.HelpersLib.ImageCombinerAlignment)request.Settings.Alignment,
+                request.Settings.Space,
+                request.Settings.WrapAfter,
+                request.Settings.AutoFillBackground);
         }
 
         public static void OpenImageComparer()

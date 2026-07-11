@@ -137,6 +137,21 @@ namespace ShareX.ImageEditor.Hosting
             });
         }
 
+        public static void ShowImageCombinerWindow(
+            ImageCombinerSettings settings,
+            ImageCombinerServices services,
+            Action<ImageCombinerSettings>? settingsChanged = null,
+            IEnumerable<string>? imageFiles = null)
+        {
+            Initialize();
+
+            Dispatcher.UIThread.Post(() =>
+            {
+                ImageCombinerWindow window = new ImageCombinerWindow(settings, services, settingsChanged, imageFiles);
+                window.Show();
+            });
+        }
+
         public static void ShowHashCheckerWindow(
             HashCalculationHandler hashCalculationHandler,
             Action? playNotificationSound = null,
