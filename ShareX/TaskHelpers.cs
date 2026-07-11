@@ -27,7 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.Tools.HashChecker;
 using ShareX.Tools.ImageCombiner;
-using ShareX.Tools.QrCode;
+using ShareX.Tools.QRCode;
 using ShareX.Tools.VideoConverter;
 using ShareX.Tools.Integration;
 using ShareX.ImageEditor.Integration;
@@ -1828,38 +1828,38 @@ namespace ShareX
                 }
             }
 
-            ShowQrCodeWindow(new QrCodeWindowOptions { InitialText = text });
+            ShowQRCodeWindow(new QRCodeWindowOptions { InitialText = text });
         }
 
         public static void OpenQRCodeScanFromImageFile(string filePath)
         {
-            ShowQrCodeWindow(new QrCodeWindowOptions { InitialImageFilePath = filePath });
+            ShowQRCodeWindow(new QRCodeWindowOptions { InitialImageFilePath = filePath });
         }
 
         public static void OpenQRCodeScanScreen()
         {
-            ShowQrCodeWindow(new QrCodeWindowOptions { InitialScanMode = QrCodeScanMode.Screen });
+            ShowQRCodeWindow(new QRCodeWindowOptions { InitialScanMode = QRCodeScanMode.Screen });
         }
 
         public static void OpenQRCodeScanRegion()
         {
-            ShowQrCodeWindow(new QrCodeWindowOptions { InitialScanMode = QrCodeScanMode.Region });
+            ShowQRCodeWindow(new QRCodeWindowOptions { InitialScanMode = QRCodeScanMode.Region });
         }
 
-        private static void ShowQrCodeWindow(QrCodeWindowOptions options)
+        private static void ShowQRCodeWindow(QRCodeWindowOptions options)
         {
-            ToolsIntegration.ShowQrCodeWindow(new QrCodeServices
+            ToolsIntegration.ShowQRCodeWindow(new QRCodeServices
             {
-                GeneratePreviewAsync = GenerateQrCodePreviewAsync,
-                ScanAsync = ScanQrCodeAsync,
-                SaveAsync = SaveQrCodeAsync,
-                CopyImage = CopyQrCodeImage,
-                UploadImage = UploadQrCodeImage,
+                GeneratePreviewAsync = GenerateQRCodePreviewAsync,
+                ScanAsync = ScanQRCodeAsync,
+                SaveAsync = SaveQRCodeAsync,
+                CopyImage = CopyQRCodeImage,
+                UploadImage = UploadQRCodeImage,
                 PlayNotificationSound = () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted)
             }, options);
         }
 
-        private static Task<byte[]> GenerateQrCodePreviewAsync(string text, int size)
+        private static Task<byte[]> GenerateQRCodePreviewAsync(string text, int size)
         {
             return Task.Run(() =>
             {
@@ -1875,21 +1875,21 @@ namespace ShareX
             });
         }
 
-        private static Task<string[]> ScanQrCodeAsync(QrCodeScanMode mode, string filePath)
+        private static Task<string[]> ScanQRCodeAsync(QRCodeScanMode mode, string filePath)
         {
             using Bitmap bitmap = mode switch
             {
-                QrCodeScanMode.Screen => new Screenshot().CaptureFullscreen(),
-                QrCodeScanMode.Region => RegionCaptureTasks.GetRegionImage(
+                QRCodeScanMode.Screen => new Screenshot().CaptureFullscreen(),
+                QRCodeScanMode.Region => RegionCaptureTasks.GetRegionImage(
                     TaskSettings.GetDefaultTaskSettings().CaptureSettings.SurfaceOptions),
-                QrCodeScanMode.ImageFile when !string.IsNullOrWhiteSpace(filePath) => ImageHelpers.LoadImage(filePath),
+                QRCodeScanMode.ImageFile when !string.IsNullOrWhiteSpace(filePath) => ImageHelpers.LoadImage(filePath),
                 _ => null
             };
 
             return Task.FromResult(bitmap != null ? BarcodeScan(bitmap) : null);
         }
 
-        private static Task SaveQrCodeAsync(string text, int size, string filePath)
+        private static Task SaveQRCodeAsync(string text, int size, string filePath)
         {
             return Task.Run(() =>
             {
@@ -1919,7 +1919,7 @@ namespace ShareX
             });
         }
 
-        private static void CopyQrCodeImage(string text, int size)
+        private static void CopyQRCodeImage(string text, int size)
         {
             using Image image = GenerateQRCode(text, size);
             if (image != null)
@@ -1928,7 +1928,7 @@ namespace ShareX
             }
         }
 
-        private static void UploadQrCodeImage(string text, int size)
+        private static void UploadQRCodeImage(string text, int size)
         {
             using Image image = GenerateQRCode(text, size);
             if (image != null)

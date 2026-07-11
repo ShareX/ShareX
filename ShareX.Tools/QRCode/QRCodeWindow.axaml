@@ -2,11 +2,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="using:ShareX.Tools.QrCode"
+        xmlns:vm="using:ShareX.Tools.QRCode"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="940" d:DesignHeight="610"
-        x:Class="ShareX.Tools.QrCode.QrCodeWindow"
-        x:DataType="vm:QrCodeViewModel"
+        x:Class="ShareX.Tools.QRCode.QRCodeWindow"
+        x:DataType="vm:QRCodeViewModel"
         Title="ShareX - QR Code"
         Width="940"
         Height="610"
@@ -65,7 +65,7 @@
                                                Maximum="2048"
                                                Increment="64"
                                                FormatString="0"
-                                               Value="{Binding QrCodeSize}"/>
+                                               Value="{Binding QRCodeSize}"/>
                                 <TextBlock Grid.Column="2"
                                            Text="px"
                                            FontWeight="Normal"
@@ -84,12 +84,12 @@
                             <Border Background="White"
                                     CornerRadius="2"
                                     Padding="8"
-                                    IsVisible="{Binding HasQrCode}">
+                                    IsVisible="{Binding HasQRCode}">
                                 <Image Source="{Binding PreviewImage}"
                                        Stretch="Uniform"
                                        RenderOptions.BitmapInterpolationMode="None"/>
                             </Border>
-                            <StackPanel IsVisible="{Binding !HasQrCode}"
+                            <StackPanel IsVisible="{Binding !HasQRCode}"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
                                         Spacing="8">
@@ -107,21 +107,21 @@
                 </Grid>
 
                 <Grid Grid.Row="2" ColumnDefinitions="Auto,Auto,Auto" ColumnSpacing="8" HorizontalAlignment="Right">
-                    <Button Grid.Column="0" Command="{Binding CopyImageCommand}" IsEnabled="{Binding HasQrCode}">
+                    <Button Grid.Column="0" Command="{Binding CopyImageCommand}" IsEnabled="{Binding HasQRCode}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="{x:Static theming:LucideIcons.copy}"
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"/>
                             <TextBlock Text="Copy image"/>
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="1" Command="{Binding SaveImageCommand}" IsEnabled="{Binding HasQrCode}">
+                    <Button Grid.Column="1" Command="{Binding SaveImageCommand}" IsEnabled="{Binding HasQRCode}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="{x:Static theming:LucideIcons.save}"
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"/>
                             <TextBlock Text="Save..."/>
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="2" Command="{Binding UploadImageCommand}" IsEnabled="{Binding HasQrCode}">
+                    <Button Grid.Column="2" Command="{Binding UploadImageCommand}" IsEnabled="{Binding HasQRCode}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="{x:Static theming:LucideIcons.upload}"
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"/>

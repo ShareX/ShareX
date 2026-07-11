@@ -23,26 +23,26 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.Tools.QrCode;
+namespace ShareX.Tools.QRCode;
 
-public enum QrCodeScanMode
+public enum QRCodeScanMode
 {
     Screen,
     Region,
     ImageFile
 }
 
-public sealed class QrCodeWindowOptions
+public sealed class QRCodeWindowOptions
 {
     public string? InitialText { get; init; }
     public string? InitialImageFilePath { get; init; }
-    public QrCodeScanMode? InitialScanMode { get; init; }
+    public QRCodeScanMode? InitialScanMode { get; init; }
 }
 
-public sealed class QrCodeServices
+public sealed class QRCodeServices
 {
     public required Func<string, int, Task<byte[]?>> GeneratePreviewAsync { get; init; }
-    public required Func<QrCodeScanMode, string?, Task<string[]?>> ScanAsync { get; init; }
+    public required Func<QRCodeScanMode, string?, Task<string[]?>> ScanAsync { get; init; }
     public required Func<string, int, string, Task> SaveAsync { get; init; }
     public required Action<string, int> CopyImage { get; init; }
     public required Action<string, int> UploadImage { get; init; }

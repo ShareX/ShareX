@@ -29,13 +29,13 @@ using CommunityToolkit.Mvvm.Input;
 using ShareX.Tools.Infrastructure;
 using System.Text;
 
-namespace ShareX.Tools.QrCode;
+namespace ShareX.Tools.QRCode;
 
-public sealed partial class QrCodeViewModel : ViewModelBase, IDisposable
+public sealed partial class QRCodeViewModel : ViewModelBase, IDisposable
 {
     private const int MaximumContentBytes = 2952;
-    private readonly QrCodeServices _services;
-    private readonly QrCodeWindowOptions _options;
+    private readonly QRCodeServices _services;
+    private readonly QRCodeWindowOptions _options;
     private int _availableSize = 400;
     private int _generationVersion;
 
@@ -45,10 +45,10 @@ public sealed partial class QrCodeViewModel : ViewModelBase, IDisposable
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(EffectiveSize))]
-    private decimal _qrCodeSize;
+    private decimal _qRCodeSize;
 
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(HasQrCode))]
+    [NotifyPropertyChangedFor(nameof(HasQRCode))]
     private Bitmap? _previewImage;
 
     [ObservableProperty]
@@ -57,27 +57,27 @@ public sealed partial class QrCodeViewModel : ViewModelBase, IDisposable
     [ObservableProperty]
     private string _statusText = string.Empty;
 
-    public QrCodeViewModel(QrCodeServices services, QrCodeWindowOptions options)
+    public QRCodeViewModel(QRCodeServices services, QRCodeWindowOptions options)
     {
         _services = services;
         _options = options;
         _text = options.InitialText ?? string.Empty;
     }
 
-    public Func<QrCodeScanMode, Task<string[]?>>? CaptureScanRequested { get; set; }
+    public Func<QRCodeScanMode, Task<string[]?>>? CaptureScanRequested { get; set; }
     public Func<Task<string[]?>>? ImageFileScanRequested { get; set; }
     public Func<string, int, Task<bool>>? SaveRequested { get; set; }
 
-    public bool HasQrCode => PreviewImage != null;
+    public bool HasQRCode => PreviewImage != null;
     public bool HasValidContent => !string.IsNullOrEmpty(Text) && Encoding.UTF8.GetByteCount(Text) <= MaximumContentBytes;
-    public int EffectiveSize => Math.Max(QrCodeSize > 0 ? (int)QrCodeSize : _availableSize, 64);
+    public int EffectiveSize => Math.Max(QRCodeSize > 0 ? (int)QRCodeSize : _availableSize, 64);
     public async Task InitializeAsync()
     {
         await RegenerateAsync();
 
         if (!string.IsNullOrWhiteSpace(_options.InitialImageFilePath))
         {
-            await ScanAsync(QrCodeScanMode.ImageFile, _options.InitialImageFilePath);
+            await ScanAsync(QRCodeScanMode.ImageFile, _options.InitialImageFilePath);
         }
         else if (_options.InitialScanMode.HasValue)
         {
@@ -92,7 +92,7 @@ public sealed partial class QrCodeViewModel : ViewModelBase, IDisposable
         {
             _availableSize = size;
             OnPropertyChanged(nameof(EffectiveSize));
-            if (QrCodeSize == 0)
+            if (QRCodeSize == 0)
             {
                 _ = RegenerateAsync();
             }
@@ -104,7 +104,7 @@ public sealed partial class QrCodeViewModel : ViewModelBase, IDisposable
         _ = RegenerateAsync();
     }
 
-    partial void OnQrCodeSizeChanged(decimal value)
+    partial void OnQRCodeSizeChanged(decimal value)
     {
         _ = RegenerateAsync();
     }
@@ -180,10 +180,10 @@ public sealed partial class QrCodeViewModel : ViewModelBase, IDisposable
     }
 
     [RelayCommand]
-    private Task ScanScreenAsync() => ScanCaptureAsync(QrCodeScanMode.Screen);
+    private Task ScanScreenAsync() => ScanCaptureAsync(QRCodeScanMode.Screen);
 
     [RelayCommand]
-    private Task ScanRegionAsync() => ScanCaptureAsync(QrCodeScanMode.Region);
+    private Task ScanRegionAsync() => ScanCaptureAsync(QRCodeScanMode.Region);
 
     [RelayCommand]
     private async Task ScanImageFileAsync()
@@ -204,7 +204,7 @@ public sealed partial class QrCodeViewModel : ViewModelBase, IDisposable
         }
     }
 
-    private async Task ScanCaptureAsync(QrCodeScanMode mode)
+    private async Task ScanCaptureAsync(QRCodeScanMode mode)
     {
         if (CaptureScanRequested == null || IsScanning)
         {
@@ -222,7 +222,7 @@ public sealed partial class QrCodeViewModel : ViewModelBase, IDisposable
         }
     }
 
-    private async Task ScanAsync(QrCodeScanMode mode, string? filePath)
+    private async Task ScanAsync(QRCodeScanMode mode, string? filePath)
     {
         IsScanning = true;
         try
@@ -247,7 +247,7 @@ public sealed partial class QrCodeViewModel : ViewModelBase, IDisposable
         return Task.CompletedTask;
     }
 
-    public async Task<string[]?> ScanWithServiceAsync(QrCodeScanMode mode, string? filePath = null)
+    public async Task<string[]?> ScanWithServiceAsync(QRCodeScanMode mode, string? filePath = null)
     {
         return await _services.ScanAsync(mode, filePath);
     }

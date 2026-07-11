@@ -29,30 +29,30 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform.Storage;
-using ShareX.Tools.QrCode;
+using ShareX.Tools.QRCode;
 using ShareX.AvaloniaUI.Theming;
 
-namespace ShareX.Tools.QrCode;
+namespace ShareX.Tools.QRCode;
 
-public partial class QrCodeWindow : Window
+public partial class QRCodeWindow : Window
 {
-    private readonly QrCodeViewModel _viewModel;
+    private readonly QRCodeViewModel _viewModel;
 
-    public QrCodeWindow()
-        : this(new QrCodeServices
+    public QRCodeWindow()
+        : this(new QRCodeServices
         {
             GeneratePreviewAsync = (_, _) => Task.FromResult<byte[]?>(null),
             ScanAsync = (_, _) => Task.FromResult<string[]?>(null),
             SaveAsync = (_, _, _) => Task.CompletedTask,
             CopyImage = (_, _) => { },
             UploadImage = (_, _) => { }
-        }, new QrCodeWindowOptions())
+        }, new QRCodeWindowOptions())
     {
     }
 
-    public QrCodeWindow(QrCodeServices services, QrCodeWindowOptions options)
+    public QRCodeWindow(QRCodeServices services, QRCodeWindowOptions options)
     {
-        _viewModel = new QrCodeViewModel(services, options);
+        _viewModel = new QRCodeViewModel(services, options);
         DataContext = _viewModel;
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
@@ -92,7 +92,7 @@ public partial class QrCodeWindow : Window
             Math.Max(previewHost.Bounds.Height - 48, 64));
     }
 
-    private async Task<string[]?> ScanCaptureAsync(QrCodeScanMode mode)
+    private async Task<string[]?> ScanCaptureAsync(QRCodeScanMode mode)
     {
         try
         {
@@ -117,7 +117,7 @@ public partial class QrCodeWindow : Window
         });
 
         return files.Count > 0
-            ? await _viewModel.ScanWithServiceAsync(QrCodeScanMode.ImageFile, files[0].Path.LocalPath)
+            ? await _viewModel.ScanWithServiceAsync(QRCodeScanMode.ImageFile, files[0].Path.LocalPath)
             : null;
     }
 

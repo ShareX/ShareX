@@ -27,7 +27,7 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.Tools.HashChecker;
 using ShareX.Tools.ImageCombiner;
-using ShareX.Tools.QrCode;
+using ShareX.Tools.QRCode;
 using ShareX.Tools.VideoConverter;
 
 namespace ShareX.Tools.Integration;
@@ -45,9 +45,9 @@ public static class ToolsIntegration
         Show(() => new ImageCombinerWindow(settings, services, settingsChanged, imageFiles));
     }
 
-    public static void ShowQrCodeWindow(QrCodeServices services, QrCodeWindowOptions options)
+    public static void ShowQRCodeWindow(QRCodeServices services, QRCodeWindowOptions options)
     {
-        Show(() => new QrCodeWindow(services, options));
+        Show(() => new QRCodeWindow(services, options));
     }
 
     public static void ShowVideoConverterWindow(VideoConverterSettings settings, VideoConversionHandler handler,
