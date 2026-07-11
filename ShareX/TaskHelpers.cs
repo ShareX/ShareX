@@ -1926,9 +1926,7 @@ namespace ShareX
 
         public static void OpenRuler(TaskSettings taskSettings = null)
         {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            RegionCaptureTasks.ShowScreenRuler(taskSettings.CaptureSettings.SurfaceOptions);
+            ToolsIntegration.ShowRulerWindow();
         }
 
         public static void SearchImageUsingGoogleLens(string url)

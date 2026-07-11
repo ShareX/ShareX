@@ -79,6 +79,11 @@ public static class ToolsIntegration
         Show(() => new QRCodeWindow(services, options));
     }
 
+    public static void ShowRulerWindow()
+    {
+        Show(() => new RulerWindow());
+    }
+
     public static void ShowVideoConverterWindow(VideoConverterSettings settings, VideoConversionHandler handler,
         Action<VideoConverterSettings>? settingsChanged = null, string? inputFilePath = null)
     {
