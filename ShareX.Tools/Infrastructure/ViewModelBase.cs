@@ -25,7 +25,7 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace ShareX.AvaloniaUI.Tools.Infrastructure;
+namespace ShareX.Tools.Infrastructure;
 
 public class ViewModelBase : ObservableObject
 {

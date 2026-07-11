@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.AvaloniaUI.Tools.Features.ImageCombiner;
+namespace ShareX.Tools.Features.ImageCombiner;
 
 public enum ImageCombinerOrientation
 {

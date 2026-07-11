@@ -26,10 +26,10 @@
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.AvaloniaUI.Tools.Infrastructure;
+using ShareX.Tools.Infrastructure;
 using System.Collections.ObjectModel;
 
-namespace ShareX.AvaloniaUI.Tools.Features.ImageCombiner;
+namespace ShareX.Tools.Features.ImageCombiner;
 
 public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
 {

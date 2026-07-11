@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.AvaloniaUI.Tools.Features.HashChecker;
+namespace ShareX.Tools.Features.HashChecker;
 
 public enum HashCheckerAlgorithm
 {

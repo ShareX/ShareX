@@ -28,10 +28,10 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
-using ShareX.AvaloniaUI.Tools.Features.ImageCombiner;
+using ShareX.Tools.Features.ImageCombiner;
 using ShareX.AvaloniaUI.Theming;
 
-namespace ShareX.AvaloniaUI.Tools.Features.ImageCombiner;
+namespace ShareX.Tools.Features.ImageCombiner;
 
 public partial class ImageCombinerWindow : Window
 {

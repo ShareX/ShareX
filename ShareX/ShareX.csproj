@@ -24,7 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />
-    <ProjectReference Include="..\ShareX.Avalonia.Tools\ShareX.Avalonia.Tools.csproj" />
+    <ProjectReference Include="..\ShareX.Tools\ShareX.Tools.csproj" />
     <ProjectReference Include="..\ShareX.HistoryLib\ShareX.HistoryLib.csproj" />
     <ProjectReference Include="..\ShareX.ImageEditor.App\ShareX.ImageEditor.App.csproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

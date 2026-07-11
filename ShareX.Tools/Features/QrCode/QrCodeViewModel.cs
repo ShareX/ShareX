@@ -26,10 +26,10 @@
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.AvaloniaUI.Tools.Infrastructure;
+using ShareX.Tools.Infrastructure;
 using System.Text;
 
-namespace ShareX.AvaloniaUI.Tools.Features.QrCode;
+namespace ShareX.Tools.Features.QrCode;
 
 public sealed partial class QrCodeViewModel : ViewModelBase, IDisposable
 {

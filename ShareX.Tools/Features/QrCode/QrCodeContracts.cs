@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.AvaloniaUI.Tools.Features.QrCode;
+namespace ShareX.Tools.Features.QrCode;
 
 public enum QrCodeScanMode
 {

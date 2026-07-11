@@ -43,7 +43,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.ImageEditor.App", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Avalonia", "ShareX.Avalonia\ShareX.Avalonia.csproj", "{6760D11A-1E09-432D-AF4E-DA0C110B69B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Avalonia.Tools", "ShareX.Avalonia.Tools\ShareX.Avalonia.Tools.csproj", "{7432E9BA-0664-435B-9F22-53593EAEBE61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Tools", "ShareX.Tools\ShareX.Tools.csproj", "{7432E9BA-0664-435B-9F22-53593EAEBE61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

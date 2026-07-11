@@ -25,12 +25,12 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
-using ShareX.AvaloniaUI.Tools.Features.HashChecker;
-using ShareX.AvaloniaUI.Tools.Features.ImageCombiner;
-using ShareX.AvaloniaUI.Tools.Features.QrCode;
-using ShareX.AvaloniaUI.Tools.Features.VideoConverter;
+using ShareX.Tools.Features.HashChecker;
+using ShareX.Tools.Features.ImageCombiner;
+using ShareX.Tools.Features.QrCode;
+using ShareX.Tools.Features.VideoConverter;
 
-namespace ShareX.AvaloniaUI.Tools.Integration;
+namespace ShareX.Tools.Integration;
 
 public static class ToolsIntegration
 {

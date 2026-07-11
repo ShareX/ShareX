@@ -25,9 +25,9 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.AvaloniaUI.Tools.Infrastructure;
+using ShareX.Tools.Infrastructure;
 
-namespace ShareX.AvaloniaUI.Tools.Features.HashChecker;
+namespace ShareX.Tools.Features.HashChecker;
 
 public sealed record HashAlgorithmItem(HashCheckerAlgorithm Algorithm, string DisplayName);
 

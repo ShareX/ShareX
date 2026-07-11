@@ -25,10 +25,10 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.AvaloniaUI.Tools.Infrastructure;
+using ShareX.Tools.Infrastructure;
 using System.Text;
 
-namespace ShareX.AvaloniaUI.Tools.Features.VideoConverter;
+namespace ShareX.Tools.Features.VideoConverter;
 
 public sealed record VideoConverterCodecItem(VideoConverterCodec Codec, string DisplayName);
 

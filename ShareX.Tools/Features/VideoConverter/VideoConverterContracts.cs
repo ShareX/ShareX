@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.AvaloniaUI.Tools.Features.VideoConverter;
+namespace ShareX.Tools.Features.VideoConverter;
 
 public enum VideoConverterCodec
 {
