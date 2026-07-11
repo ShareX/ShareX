@@ -137,6 +137,21 @@ namespace ShareX.ImageEditor.Hosting
             });
         }
 
+        public static void ShowVideoConverterWindow(
+            VideoConverterSettings settings,
+            VideoConversionHandler conversionHandler,
+            Action<VideoConverterSettings>? settingsChanged = null,
+            string? inputFilePath = null)
+        {
+            Initialize();
+
+            Dispatcher.UIThread.Post(() =>
+            {
+                VideoConverterWindow window = new VideoConverterWindow(settings, conversionHandler, settingsChanged, inputFilePath);
+                window.Show();
+            });
+        }
+
         public static void ShowBackgroundRemoverWindow(string? modelsFolder)
         {
             ShowBackgroundRemoverWindow(modelsFolder, new BackgroundRemoverOptions());

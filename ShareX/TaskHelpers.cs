@@ -1063,9 +1063,7 @@ namespace ShareX
                 return;
             }
 
-            VideoConverterForm videoConverterForm = new VideoConverterForm(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
-                taskSettings.ToolsSettingsReference.VideoConverterOptions);
-            videoConverterForm.Show();
+            ShowVideoConverter(taskSettings);
         }
 
         public static void OpenVideoConverter(string filePath, TaskSettings taskSettings = null)
@@ -1079,10 +1077,83 @@ namespace ShareX
                     return;
                 }
 
-                VideoConverterForm videoConverterForm = new VideoConverterForm(filePath, taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
-                    taskSettings.ToolsSettingsReference.VideoConverterOptions);
-                videoConverterForm.Show();
+                ShowVideoConverter(taskSettings, filePath);
             }
+        }
+
+        private static void ShowVideoConverter(TaskSettings taskSettings, string inputFilePath = null)
+        {
+            ShareX.MediaLib.VideoConverterOptions source = taskSettings.ToolsSettingsReference.VideoConverterOptions;
+            VideoConverterSettings settings = new VideoConverterSettings
+            {
+                InputFilePath = source.InputFilePath,
+                OutputFolderPath = source.OutputFolderPath,
+                OutputFileName = source.OutputFileName,
+                VideoCodec = (VideoConverterCodec)source.VideoCodec,
+                VideoQuality = source.VideoQuality,
+                VideoQualityUseBitrate = source.VideoQualityUseBitrate,
+                VideoQualityBitrate = source.VideoQualityBitrate,
+                UseCustomArguments = source.UseCustomArguments,
+                CustomArguments = source.CustomArguments,
+                AutoOpenFolder = source.AutoOpenFolder
+            };
+
+            string ffmpegFilePath = taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath;
+            AvaloniaIntegration.ShowVideoConverterWindow(
+                settings,
+                (request, progress, cancellationToken) => RunVideoConversionAsync(ffmpegFilePath, request, progress, cancellationToken),
+                updated =>
+                {
+                    source.InputFilePath = updated.InputFilePath;
+                    source.OutputFolderPath = updated.OutputFolderPath;
+                    source.OutputFileName = updated.OutputFileName;
+                    source.VideoCodec = (ConverterVideoCodecs)updated.VideoCodec;
+                    source.VideoQuality = updated.VideoQuality;
+                    source.VideoQualityUseBitrate = updated.VideoQualityUseBitrate;
+                    source.VideoQualityBitrate = updated.VideoQualityBitrate;
+                    source.UseCustomArguments = updated.UseCustomArguments;
+                    source.CustomArguments = updated.CustomArguments;
+                    source.AutoOpenFolder = updated.AutoOpenFolder;
+                },
+                inputFilePath);
+        }
+
+        private static Task<VideoConversionResult> RunVideoConversionAsync(
+            string ffmpegFilePath,
+            VideoConversionRequest request,
+            IProgress<double> progress,
+            CancellationToken cancellationToken)
+        {
+            return Task.Run(() =>
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+
+                using FFmpegCLIManager ffmpeg = new FFmpegCLIManager(ffmpegFilePath)
+                {
+                    ShowError = false,
+                    TrackEncodeProgress = true
+                };
+
+                ffmpeg.EncodeProgressChanged += percentage => progress.Report(percentage);
+                using CancellationTokenRegistration registration = cancellationToken.Register(ffmpeg.Close);
+                bool succeeded = ffmpeg.Run(request.Arguments);
+                bool wasCancelled = cancellationToken.IsCancellationRequested || ffmpeg.StopRequested;
+
+                if (succeeded && !wasCancelled && request.AutoOpenFolder)
+                {
+                    FileHelpers.OpenFolderWithFile(request.OutputFilePath);
+                }
+
+                string errorMessage = null;
+                if (!succeeded && !wasCancelled)
+                {
+                    errorMessage = ffmpeg.Output.ToString()
+                        .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
+                        .LastOrDefault();
+                }
+
+                return new VideoConversionResult(succeeded, wasCancelled, errorMessage);
+            }, cancellationToken);
         }
 
         public static void OpenVideoThumbnailer(TaskSettings taskSettings = null)

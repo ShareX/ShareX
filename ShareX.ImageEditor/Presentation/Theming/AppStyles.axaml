@@ -523,6 +523,7 @@
         <Setter Property="Padding" Value="8,6"/>
         <Setter Property="CornerRadius" Value="4"/>
         <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
 
         <Style Selector="^:pointerover">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
