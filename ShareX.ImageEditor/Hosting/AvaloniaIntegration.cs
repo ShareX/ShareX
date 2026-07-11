@@ -137,6 +137,20 @@ namespace ShareX.ImageEditor.Hosting
             });
         }
 
+        public static void ShowHashCheckerWindow(
+            HashCalculationHandler hashCalculationHandler,
+            Action? playNotificationSound = null,
+            string? filePath = null)
+        {
+            Initialize();
+
+            Dispatcher.UIThread.Post(() =>
+            {
+                HashCheckerWindow window = new HashCheckerWindow(hashCalculationHandler, playNotificationSound, filePath);
+                window.Show();
+            });
+        }
+
         public static void ShowVideoConverterWindow(
             VideoConverterSettings settings,
             VideoConversionHandler conversionHandler,

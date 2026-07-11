@@ -932,9 +932,24 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            HashCheckerForm hashCheckerForm = new HashCheckerForm(filePath);
-            hashCheckerForm.PlayNotificationSound += () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
-            hashCheckerForm.Show();
+            AvaloniaIntegration.ShowHashCheckerWindow(
+                CalculateFileHashAsync,
+                () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings),
+                filePath);
+        }
+
+        private static async Task<string> CalculateFileHashAsync(
+            string filePath,
+            HashCheckerAlgorithm algorithm,
+            IProgress<double> progress,
+            CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            HashChecker hashChecker = new HashChecker();
+            hashChecker.FileCheckProgressChanged += value => progress.Report(value);
+            using CancellationTokenRegistration registration = cancellationToken.Register(hashChecker.Stop);
+            return await hashChecker.Start(filePath, (HashType)algorithm);
         }
 
         public static void OpenMetadataWindow(string filePath = null)
