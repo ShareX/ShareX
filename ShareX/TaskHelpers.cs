@@ -1093,8 +1093,6 @@ namespace ShareX
                 VideoQuality = source.VideoQuality,
                 VideoQualityUseBitrate = source.VideoQualityUseBitrate,
                 VideoQualityBitrate = source.VideoQualityBitrate,
-                UseCustomArguments = source.UseCustomArguments,
-                CustomArguments = source.CustomArguments,
                 AutoOpenFolder = source.AutoOpenFolder
             };
 
@@ -1111,8 +1109,6 @@ namespace ShareX
                     source.VideoQuality = updated.VideoQuality;
                     source.VideoQualityUseBitrate = updated.VideoQualityUseBitrate;
                     source.VideoQualityBitrate = updated.VideoQualityBitrate;
-                    source.UseCustomArguments = updated.UseCustomArguments;
-                    source.CustomArguments = updated.CustomArguments;
                     source.AutoOpenFolder = updated.AutoOpenFolder;
                 },
                 inputFilePath);

@@ -61,7 +61,6 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     private CancellationTokenSource? _cancellationTokenSource;
 
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(Arguments))]
     [NotifyPropertyChangedFor(nameof(OutputFilePath))]
     [NotifyPropertyChangedFor(nameof(InputFileDisplay))]
     private string _inputFilePath;
@@ -75,7 +74,6 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     private string _outputFileName;
 
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(Arguments))]
     [NotifyPropertyChangedFor(nameof(OutputFilePath))]
     [NotifyPropertyChangedFor(nameof(ShowsQualityControls))]
     [NotifyPropertyChangedFor(nameof(CanChooseRateControl))]
@@ -86,29 +84,18 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     private VideoConverterCodecItem _selectedCodec;
 
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(Arguments))]
     [NotifyPropertyChangedFor(nameof(ShowsQualitySlider))]
     [NotifyPropertyChangedFor(nameof(ShowsBitrate))]
     private bool _useBitrate;
 
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(Arguments))]
     private double _videoQuality;
 
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(Arguments))]
     private decimal _videoBitrate;
 
     [ObservableProperty]
     private bool _autoOpenFolder;
-
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(Arguments))]
-    private bool _useCustomArguments;
-
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(Arguments))]
-    private string _customArguments;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsIdle))]
@@ -118,7 +105,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     private double _progress;
 
     [ObservableProperty]
-    private string _statusText = "Choose a video or animation to get started.";
+    private string _statusText = "Choose a video to get started.";
 
     public VideoConverterViewModel(
         VideoConverterSettings settings,
@@ -137,8 +124,6 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         _videoQuality = settings.VideoQuality;
         _videoBitrate = settings.VideoQualityBitrate;
         _autoOpenFolder = settings.AutoOpenFolder;
-        _useCustomArguments = settings.UseCustomArguments;
-        _customArguments = settings.CustomArguments ?? string.Empty;
 
         if (!string.IsNullOrWhiteSpace(inputFilePath))
         {
@@ -182,18 +167,6 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
 
             string path = Path.Combine(OutputFolderPath, OutputFileName);
             return Path.HasExtension(OutputFileName) ? path : Path.ChangeExtension(path, GetFileExtension());
-        }
-    }
-
-    public string Arguments
-    {
-        get => UseCustomArguments ? CustomArguments : BuildArguments();
-        set
-        {
-            if (UseCustomArguments && value != CustomArguments)
-            {
-                CustomArguments = value;
-            }
         }
     }
 
@@ -279,7 +252,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
 
         try
         {
-            VideoConversionRequest request = new(Arguments, OutputFilePath, AutoOpenFolder);
+            VideoConversionRequest request = new(BuildArguments(), OutputFilePath, AutoOpenFolder);
             VideoConversionResult result = await _conversionHandler(request, progress, _cancellationTokenSource.Token);
 
             if (result.Succeeded && !result.WasCancelled)
@@ -342,22 +315,9 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     partial void OnVideoQualityChanged(double value) => SettingsValueChanged();
     partial void OnVideoBitrateChanged(decimal value) => SettingsValueChanged();
     partial void OnAutoOpenFolderChanged(bool value) => SettingsValueChanged();
-    partial void OnUseCustomArgumentsChanged(bool value)
-    {
-        if (value && string.IsNullOrWhiteSpace(CustomArguments))
-        {
-            _customArguments = BuildArguments();
-            OnPropertyChanged(nameof(CustomArguments));
-        }
-
-        SettingsValueChanged();
-    }
-    partial void OnCustomArgumentsChanged(string value) => SettingsValueChanged();
-
     private void SettingsValueChanged()
     {
         PersistSettings();
-        OnPropertyChanged(nameof(Arguments));
         StartEncodingCommand.NotifyCanExecuteChanged();
     }
 
@@ -371,8 +331,6 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         _settings.VideoQuality = (int)Math.Round(VideoQuality);
         _settings.VideoQualityBitrate = (int)VideoBitrate;
         _settings.AutoOpenFolder = AutoOpenFolder;
-        _settings.UseCustomArguments = UseCustomArguments;
-        _settings.CustomArguments = CustomArguments;
         _settingsChanged?.Invoke(_settings);
     }
 

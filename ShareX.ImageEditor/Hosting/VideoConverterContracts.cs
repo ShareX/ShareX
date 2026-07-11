@@ -53,8 +53,6 @@ public sealed class VideoConverterSettings
     public int VideoQuality { get; set; } = 23;
     public bool VideoQualityUseBitrate { get; set; }
     public int VideoQualityBitrate { get; set; } = 3000;
-    public bool UseCustomArguments { get; set; }
-    public string CustomArguments { get; set; } = string.Empty;
     public bool AutoOpenFolder { get; set; } = true;
 }
 
