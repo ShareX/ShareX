@@ -1756,22 +1756,14 @@ namespace ShareX
 
         public static void OpenImageViewer()
         {
-            string filePath = ImageHelpers.OpenImageFileDialog();
-            OpenImageViewer(filePath);
+            ToolsIntegration.ShowImageViewerWindow();
         }
 
         public static void OpenImageViewer(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
-                string folderPath = Path.GetDirectoryName(filePath);
-                string[] files = Directory.GetFiles(folderPath);
-
-                if (files != null && files.Length > 0)
-                {
-                    int imageIndex = Array.IndexOf(files, filePath);
-                    ImageViewer.ShowImage(files, imageIndex);
-                }
+                ToolsIntegration.ShowImageViewerWindow(filePath);
             }
         }
 

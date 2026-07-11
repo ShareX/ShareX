@@ -163,23 +163,8 @@ public partial class QRCodeWindow : Window
 
         using MemoryStream stream = new MemoryStream();
         _viewModel.PreviewImage.Save(stream, PngBitmapEncoderOptions.Default);
-        stream.Position = 0;
-        Avalonia.Media.Imaging.Bitmap previewCopy = new Avalonia.Media.Imaging.Bitmap(stream);
-
-        Window previewWindow = new Window
-        {
-            Title = "QR Code Preview",
-            WindowState = WindowState.Maximized,
-            Background = Brushes.White,
-            Content = new Image
-            {
-                Source = previewCopy,
-                Stretch = Stretch.Uniform,
-                Margin = new Avalonia.Thickness(24)
-            }
-        };
-        previewWindow.Closed += (_, _) => previewCopy.Dispose();
-        previewWindow.Show(this);
+        ImageViewerWindow viewer = new ImageViewerWindow(stream.ToArray(), "QR Code");
+        viewer.Show(this);
         e.Handled = true;
     }
 }

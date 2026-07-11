@@ -52,6 +52,13 @@ public static class ToolsIntegration
         Show(() => new ImageComparerWindow());
     }
 
+    public static void ShowImageViewerWindow(string? filePath = null)
+    {
+        Show(() => string.IsNullOrWhiteSpace(filePath)
+            ? new ImageViewerWindow()
+            : new ImageViewerWindow(filePath));
+    }
+
     public static void ShowImageSplitterWindow()
     {
         Show(() => new ImageSplitterWindow());
