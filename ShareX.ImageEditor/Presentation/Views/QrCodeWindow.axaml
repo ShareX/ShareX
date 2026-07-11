@@ -4,11 +4,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
         xmlns:theming="using:ShareX.ImageEditor.Presentation.Theming"
-        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="610"
+        mc:Ignorable="d" d:DesignWidth="940" d:DesignHeight="610"
         x:Class="ShareX.ImageEditor.Presentation.Views.QrCodeWindow"
         x:DataType="vm:QrCodeViewModel"
         Title="ShareX - QR Code"
-        Width="900"
+        Width="940"
         Height="610"
         MinWidth="760"
         MinHeight="520"
@@ -29,14 +29,11 @@
 
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid RowDefinitions="*,Auto" Margin="16" RowSpacing="12">
-                <Grid Grid.Row="0" ColumnDefinitions="Auto,*" ColumnSpacing="12">
-                    <Grid Grid.Column="0" RowDefinitions="Auto,*" RowSpacing="12">
-                <Border Grid.Row="0"
-                        Classes="qr-panel"
-                        Padding="12"
-                        HorizontalAlignment="Left">
-                    <Grid ColumnDefinitions="Auto,Auto,Auto" ColumnSpacing="8">
+            <Grid RowDefinitions="Auto,*,Auto" Margin="16" RowSpacing="12">
+                    <Grid Grid.Row="0"
+                          ColumnDefinitions="Auto,Auto,Auto"
+                          ColumnSpacing="8"
+                          HorizontalAlignment="Left">
                         <Button Grid.Column="0" Command="{Binding ScanScreenCommand}" IsEnabled="{Binding !IsScanning}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <TextBlock Text="{x:Static theming:LucideIcons.scan_qr_code}"
@@ -59,9 +56,9 @@
                             </StackPanel>
                         </Button>
                     </Grid>
-                </Border>
 
-                    <Border Grid.Row="1" Classes="qr-panel" Padding="16">
+                <Grid Grid.Row="1" ColumnDefinitions="430,*" ColumnSpacing="12">
+                    <Border Grid.Column="0" Classes="qr-panel" Padding="16">
                         <Grid RowDefinitions="Auto,*,Auto" RowSpacing="10">
                             <TextBlock Grid.Row="0" Classes="section-heading" Text="Content"/>
                             <TextBox Grid.Row="1"
@@ -89,7 +86,6 @@
                             </Grid>
                         </Grid>
                     </Border>
-                    </Grid>
 
                     <Border Grid.Column="1"
                             x:Name="PreviewHost"
@@ -123,7 +119,7 @@
                     </Border>
                 </Grid>
 
-                <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto,Auto" ColumnSpacing="8" HorizontalAlignment="Right">
+                <Grid Grid.Row="2" ColumnDefinitions="Auto,Auto,Auto" ColumnSpacing="8" HorizontalAlignment="Right">
                     <Button Grid.Column="0" Command="{Binding CopyImageCommand}" IsEnabled="{Binding HasQrCode}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="{x:Static theming:LucideIcons.copy}"
