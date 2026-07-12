@@ -1,0 +1,113 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="580" d:DesignHeight="360"
+        x:Class="ShareX.Tools.BorderlessWindowWindow"
+        x:DataType="vm:BorderlessWindowViewModel"
+        Title="ShareX - Borderless Window"
+        Width="580"
+        MinWidth="520"
+        SizeToContent="Height"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="16" RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
+                <Border Grid.Row="0" Classes="tool-panel">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto">
+                        <TextBlock Grid.Row="0" Classes="section-heading" Text="Window" Margin="0,0,0,10"/>
+                        <Grid Grid.Row="1" ColumnDefinitions="100,*" ColumnSpacing="10">
+                            <TextBlock Grid.Column="0" Classes="row-label" Text="Window list"/>
+                            <ComboBox Grid.Column="1"
+                                      ItemsSource="{Binding Windows}"
+                                      SelectedItem="{Binding SelectedWindow}"
+                                      PlaceholderText="Select window"
+                                      DropDownOpened="OnWindowListDropDownOpened">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate x:DataType="vm:InspectWindowListItem">
+                                        <Grid ColumnDefinitions="16,*" ColumnSpacing="8">
+                                            <Grid Grid.Column="0" Width="16" Height="16">
+                                                <Image Source="{Binding Icon}" Width="16" Height="16" Stretch="None"/>
+                                                <TextBlock IsVisible="{Binding !HasIcon}"
+                                                           Classes="icon"
+                                                           Text="{x:Static theming:LucideIcons.app_window}"
+                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                           HorizontalAlignment="Center"/>
+                                            </Grid>
+                                            <TextBlock Grid.Column="1"
+                                                       Text="{Binding DisplayName}"
+                                                       FontWeight="Normal"
+                                                       TextTrimming="CharacterEllipsis"
+                                                       VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </Grid>
+                        <Grid Grid.Row="2" ColumnDefinitions="100,*" ColumnSpacing="10" Margin="0,10,0,0">
+                            <TextBlock Grid.Column="0" Classes="row-label" Text="Window title"/>
+                            <TextBox Grid.Column="1"
+                                     Height="44"
+                                     Text="{Binding WindowTitle, Mode=TwoWay}"
+                                     PlaceholderText="Enter a window title manually"/>
+                        </Grid>
+                        <TextBlock Grid.Row="3"
+                                   Text="{Binding ErrorMessage}"
+                                   IsVisible="{Binding HasError}"
+                                   Margin="110,8,0,0"
+                                   FontWeight="Normal"
+                                   Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                   TextWrapping="Wrap"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Classes="tool-panel">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
+                        <TextBlock Grid.Row="0" Classes="section-heading" Text="Options"/>
+                        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" MinHeight="32">
+                            <TextBlock Text="Remember window title" FontWeight="Normal" VerticalAlignment="Center"/>
+                            <ToggleSwitch Grid.Column="1"
+                                          IsChecked="{Binding RememberWindowTitle}"
+                                          OnContent=""
+                                          OffContent=""
+                                          VerticalAlignment="Center"/>
+                        </Grid>
+                        <Grid Grid.Row="2" ColumnDefinitions="*,Auto" MinHeight="32">
+                            <TextBlock Text="Close after toggling" FontWeight="Normal" VerticalAlignment="Center"/>
+                            <ToggleSwitch Grid.Column="1"
+                                          IsChecked="{Binding AutoCloseWindow}"
+                                          OnContent=""
+                                          OffContent=""
+                                          VerticalAlignment="Center"/>
+                        </Grid>
+                        <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="32">
+                            <TextBlock Text="Keep taskbar visible" FontWeight="Normal" VerticalAlignment="Center"/>
+                            <ToggleSwitch Grid.Column="1"
+                                          IsChecked="{Binding ExcludeTaskbarArea}"
+                                          OnContent=""
+                                          OffContent=""
+                                          VerticalAlignment="Center"/>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                    <TextBlock Text="Toggle again to restore the original border and window size."
+                               FontWeight="Normal"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                               VerticalAlignment="Center"/>
+                    <Button Grid.Column="1" Command="{Binding ToggleCommand}" IsEnabled="{Binding CanToggle}">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.maximize_2}"/>
+                            <TextBlock Text="Toggle borderless"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

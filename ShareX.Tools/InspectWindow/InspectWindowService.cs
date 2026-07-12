@@ -40,6 +40,8 @@ public sealed class InspectWindowListItem : IDisposable
     {
         Icon?.Dispose();
     }
+
+    public override string ToString() => Title;
 }
 
 public static class InspectWindowService

@@ -1257,8 +1257,35 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             BorderlessWindowSettings settings = taskSettings.ToolsSettingsReference.BorderlessWindowSettings;
-            BorderlessWindowForm borderlessWindowForm = new BorderlessWindowForm(settings);
-            borderlessWindowForm.Show();
+            BorderlessWindowOptions options = new BorderlessWindowOptions
+            {
+                RememberWindowTitle = settings.RememberWindowTitle,
+                WindowTitle = settings.WindowTitle ?? string.Empty,
+                AutoCloseWindow = settings.AutoCloseWindow,
+                ExcludeTaskbarArea = settings.ExcludeTaskbarArea
+            };
+
+            ToolsIntegration.ShowBorderlessWindow(
+                options,
+                (windowTitle, excludeTaskbarArea) =>
+                {
+                    IntPtr handle = NativeMethods.SearchWindow(windowTitle);
+                    if (handle == IntPtr.Zero)
+                    {
+                        return false;
+                    }
+
+                    BorderlessWindowManager.ToggleBorderlessWindow(handle, excludeTaskbarArea);
+                    return true;
+                },
+                updatedOptions =>
+                {
+                    settings.RememberWindowTitle = updatedOptions.RememberWindowTitle;
+                    settings.WindowTitle = updatedOptions.WindowTitle;
+                    settings.AutoCloseWindow = updatedOptions.AutoCloseWindow;
+                    settings.ExcludeTaskbarArea = updatedOptions.ExcludeTaskbarArea;
+                },
+                () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
         }
 
         public static void MakeActiveWindowBorderless(TaskSettings taskSettings = null)

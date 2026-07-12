@@ -36,6 +36,15 @@ public static class ToolsIntegration
         Show(() => new BackgroundRemoverWindow(modelsFolder, options));
     }
 
+    public static void ShowBorderlessWindow(
+        BorderlessWindowOptions options,
+        Func<string, bool, bool> toggleWindow,
+        Action<BorderlessWindowOptions>? settingsChanged = null,
+        Action? playNotificationSound = null)
+    {
+        Show(() => new BorderlessWindowWindow(options, toggleWindow, settingsChanged, playNotificationSound));
+    }
+
     public static void ShowClipboardViewerWindow()
     {
         Show(() => new ClipboardViewerWindow());
