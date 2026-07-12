@@ -49,6 +49,11 @@ public partial class InspectWindowWindow : Window
     private void OnPickWindowClick(object? sender, RoutedEventArgs e) => StartPicking(true);
     private void OnPickControlClick(object? sender, RoutedEventArgs e) => StartPicking(false);
 
+    private void OnWindowListDropDownOpened(object? sender, EventArgs e)
+    {
+        _viewModel.ReloadWindowList();
+    }
+
     private void StartPicking(bool selectTopLevelWindow)
     {
         ClosePickerOverlays();

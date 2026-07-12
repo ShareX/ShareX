@@ -30,9 +30,7 @@
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid Margin="16" RowDefinitions="Auto,*" RowSpacing="12">
                 <Border Grid.Row="0" Classes="tool-panel">
-                    <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
-                        <TextBlock Grid.Row="0" Classes="section-heading" Text="Target"/>
-                        <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto,*,Auto,Auto" ColumnSpacing="8">
+                    <Grid ColumnDefinitions="Auto,Auto,*,Auto" ColumnSpacing="8">
                             <Button Grid.Column="0" Click="OnPickWindowClick">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
                                     <TextBlock Text="{x:Static theming:LucideIcons.scan}"
@@ -52,7 +50,9 @@
                             <ComboBox Grid.Column="2"
                                       ItemsSource="{Binding Windows}"
                                       SelectedItem="{Binding SelectedListItem}"
-                                      PlaceholderText="Choose a visible window">
+                                      PlaceholderText="Select window"
+                                      FontWeight="Normal"
+                                      DropDownOpened="OnWindowListDropDownOpened">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate x:DataType="vm:InspectWindowListItem">
                                         <Grid ColumnDefinitions="20,*" ColumnSpacing="8">
@@ -78,12 +78,7 @@
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
-                            <Button Grid.Column="3" Command="{Binding RefreshWindowListCommand}" ToolTip.Tip="Reload window list">
-                                <TextBlock Text="{x:Static theming:LucideIcons.list_restart}"
-                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                           FontWeight="Normal"/>
-                            </Button>
-                            <Button Grid.Column="4" Command="{Binding RefreshCommand}" IsEnabled="{Binding CanRefresh}">
+                            <Button Grid.Column="3" Command="{Binding RefreshCommand}" IsEnabled="{Binding CanRefresh}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
                                     <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}"
                                                FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
@@ -91,7 +86,6 @@
                                     <TextBlock Text="Refresh"/>
                                 </StackPanel>
                             </Button>
-                        </Grid>
                     </Grid>
                 </Border>
 

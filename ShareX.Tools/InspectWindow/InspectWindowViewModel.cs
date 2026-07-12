@@ -65,7 +65,7 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
     public void SetIgnoredWindowHandle(IntPtr handle)
     {
         _ignoredWindowHandle = handle;
-        RefreshWindowList();
+        ReloadWindowList();
     }
 
     public void SelectWindow(IntPtr handle, bool isTopLevelWindow)
@@ -89,8 +89,7 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
         }
     }
 
-    [RelayCommand]
-    private void RefreshWindowList()
+    public void ReloadWindowList()
     {
         _updating = true;
         try

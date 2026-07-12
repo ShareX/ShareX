@@ -502,6 +502,10 @@
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
             <Setter Property="Padding" Value="0"/>
         </Style>
+
+        <Style Selector="^ /template/ TextBlock#PlaceholderTextBlock">
+            <Setter Property="FontWeight" Value="Normal"/>
+        </Style>
     </Style>
 
     <Style Selector="ComboBoxItem">
