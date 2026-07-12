@@ -12,25 +12,23 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Collections.Generic;
+using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib;
+namespace ShareX.Tools;
 
 public sealed class ClipboardViewerPreview
 {
     public string Text { get; }
-    public byte[] ImageData { get; }
+    public byte[]? ImageData { get; }
     public int ImageWidth { get; }
     public int ImageHeight { get; }
 
     public bool IsImage => ImageData != null;
 
-    private ClipboardViewerPreview(string text, byte[] imageData, int imageWidth, int imageHeight)
+    private ClipboardViewerPreview(string text, byte[]? imageData, int imageWidth, int imageHeight)
     {
         Text = text;
         ImageData = imageData;
@@ -38,7 +36,7 @@ public sealed class ClipboardViewerPreview
         ImageHeight = imageHeight;
     }
 
-    public static ClipboardViewerPreview FromText(string text) => new(text ?? string.Empty, null, 0, 0);
+    public static ClipboardViewerPreview FromText(string? text) => new(text ?? string.Empty, null, 0, 0);
 
     public static ClipboardViewerPreview FromImage(Bitmap image)
     {
@@ -50,11 +48,11 @@ public sealed class ClipboardViewerPreview
 
 public sealed class ClipboardViewerData
 {
-    private readonly IDataObject _dataObject;
+    private readonly IDataObject? _dataObject;
 
     public IReadOnlyList<string> Formats { get; }
 
-    private ClipboardViewerData(IDataObject dataObject)
+    private ClipboardViewerData(IDataObject? dataObject)
     {
         _dataObject = dataObject;
         Formats = dataObject?.GetFormats() ?? [];
@@ -67,7 +65,7 @@ public sealed class ClipboardViewerData
 
     public ClipboardViewerPreview GetPreview(string format)
     {
-        object data = _dataObject?.GetData(format);
+        object? data = _dataObject?.GetData(format);
         if (data == null)
         {
             return ClipboardViewerPreview.FromText(string.Empty);
@@ -86,14 +84,14 @@ public sealed class ClipboardViewerData
 
             if (format.Equals(DataFormats.Dib, StringComparison.OrdinalIgnoreCase))
             {
-                using Bitmap image = ClipboardHelpersEx.ImageFromClipboardDib(bytes);
+                using Bitmap image = ClipboardHelpers.ConvertClipboardDibToBitmap(bytes);
                 return ClipboardViewerPreview.FromImage(image);
             }
 
             if (format.Equals(ClipboardHelpers.FORMAT_17, StringComparison.OrdinalIgnoreCase))
             {
-                using Bitmap source = ClipboardHelpersEx.DIBV5ToBitmap(bytes);
-                using Bitmap image = ClipboardHelpersEx.CloneImage(source);
+                using Bitmap source = ClipboardHelpers.ConvertClipboardDibV5ToBitmap(bytes);
+                using Bitmap image = new(source);
                 return ClipboardViewerPreview.FromImage(image);
             }
         }

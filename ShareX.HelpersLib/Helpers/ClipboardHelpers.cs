@@ -74,6 +74,16 @@ namespace ShareX.HelpersLib
             return false;
         }
 
+        public static Bitmap ConvertClipboardDibToBitmap(byte[] data)
+        {
+            return ClipboardHelpersEx.ImageFromClipboardDib(data);
+        }
+
+        public static Bitmap ConvertClipboardDibV5ToBitmap(byte[] data)
+        {
+            return ClipboardHelpersEx.DIBV5ToBitmap(data);
+        }
+
         public static bool CopyText(string text)
         {
             if (!string.IsNullOrEmpty(text))
