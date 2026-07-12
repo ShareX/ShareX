@@ -98,6 +98,24 @@ public static class ToolsIntegration
         Show(() => new MonitorTestWindow());
     }
 
+    public static void ShowPinToScreenWindow(PinToScreenServices services, PinToScreenOptions options)
+    {
+        Show(() => new PinToScreenStartupWindow(services, options));
+    }
+
+    public static void PinToScreen(byte[] imageData, PinToScreenOptions options, Action<byte[]> copyImage,
+        System.Drawing.Point? location = null)
+    {
+        AvaloniaBootstrapper.EnsureInitialized();
+        PinToScreenManager.Pin(imageData, options, copyImage, location);
+    }
+
+    public static void CloseAllPinnedImages()
+    {
+        AvaloniaBootstrapper.EnsureInitialized();
+        PinToScreenManager.CloseAll();
+    }
+
     public static Task<string?> ShowOCRWindowAsync(
         byte[] imageData,
         IReadOnlyList<OCRLanguageOption> languages,

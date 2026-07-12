@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="560" d:DesignHeight="300"
+        x:Class="ShareX.Tools.PinToScreenStartupWindow"
+        x:DataType="vm:PinToScreenStartupViewModel"
+        Title="ShareX - Pin to Screen"
+        Width="560"
+        SizeToContent="Height"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="16" RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
+                <Border Classes="tool-panel">
+                    <StackPanel Spacing="6">
+                        <TextBlock Classes="section-heading" Text="Choose an image"/>
+                        <TextBlock Text="Pin an image above your other windows for quick reference."
+                                   FontWeight="Normal"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                    </StackPanel>
+                </Border>
+                <Grid Grid.Row="1" ColumnDefinitions="*,*,*" ColumnSpacing="10">
+                    <Button Command="{Binding CaptureRegionCommand}" IsEnabled="{Binding IsIdle}" Height="72">
+                        <StackPanel Spacing="6">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scan}" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Select region..."/>
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="1" Command="{Binding FromClipboardCommand}" IsEnabled="{Binding IsIdle}" Height="72">
+                        <StackPanel Spacing="6">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}" HorizontalAlignment="Center"/>
+                            <TextBlock Text="From clipboard"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="2" Command="{Binding FromFileCommand}" IsEnabled="{Binding IsIdle}" Height="72">
+                        <StackPanel Spacing="6">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Select image..."/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                    <TextBlock Text="{Binding ErrorMessage}" IsVisible="{Binding HasError}"
+                               FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                               TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    <Button Grid.Column="1" Content="Cancel" Command="{Binding CancelCommand}"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

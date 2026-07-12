@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.Tools.PinToScreenWindow"
+        Title="Pinned image"
+        WindowDecorations="None"
+        ShowInTaskbar="False"
+        CanResize="False"
+        Background="Transparent"
+        TransparencyLevelHint="Transparent"
+        KeyDown="OnKeyDown"
+        PointerWheelChanged="OnPointerWheelChanged">
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid x:Name="Surface"
+              Background="Transparent"
+              PointerEntered="OnPointerEntered"
+              PointerExited="OnPointerExited"
+              PointerPressed="OnPointerPressed"
+              PointerReleased="OnPointerReleased">
+            <Border x:Name="ImageBorder">
+                <Image x:Name="PinnedImage" Stretch="Fill"/>
+            </Border>
+            <Border x:Name="Toolbar"
+                    Classes="tool-panel"
+                    Padding="4"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    IsVisible="False"
+                    PointerPressed="OnToolbarPointerPressed">
+                <StackPanel Orientation="Horizontal" Spacing="2">
+                    <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnCopyClick" ToolTip.Tip="Copy image">
+                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                    </Button>
+                    <Button Classes="picker-button" Height="32" Padding="8,4" Click="OnResetScaleClick" ToolTip.Tip="Reset scale and opacity">
+                        <TextBlock x:Name="ScaleText" Text="100%" FontWeight="Normal"/>
+                    </Button>
+                    <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnOptionsClick" ToolTip.Tip="Options">
+                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings}"/>
+                    </Button>
+                    <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnCloseClick" ToolTip.Tip="Close">
+                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.x}"/>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

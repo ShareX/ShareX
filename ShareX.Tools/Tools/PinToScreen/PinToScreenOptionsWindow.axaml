@@ -1,0 +1,118 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        xmlns:cp="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.ColorPicker"
+        mc:Ignorable="d" d:DesignWidth="760" d:DesignHeight="560"
+        x:Class="ShareX.Tools.PinToScreenOptionsWindow"
+        x:DataType="vm:PinToScreenOptionsViewModel"
+        Title="ShareX - Pin to Screen options"
+        Width="760" Height="560" MinWidth="700" MinHeight="520"
+        WindowStartupLocation="CenterOwner">
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="16" RowDefinitions="*,Auto" RowSpacing="12">
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                    <StackPanel Spacing="12">
+                        <Border Classes="tool-panel">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
+                                <TextBlock Classes="section-heading" Text="Size and opacity"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="150,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Initial scale"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="20" Maximum="500" FormatString="0'%'" Value="{Binding InitialScale}"/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="150,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Scale step"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="1" Maximum="100" FormatString="0'%'" Value="{Binding ScaleStep}"/>
+                                </Grid>
+                                <Grid Grid.Row="3" ColumnDefinitions="150,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Initial opacity"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="10" Maximum="100" FormatString="0'%'" Value="{Binding InitialOpacity}"/>
+                                </Grid>
+                                <Grid Grid.Row="4" ColumnDefinitions="150,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Opacity step"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="1" Maximum="90" FormatString="0'%'" Value="{Binding OpacityStep}"/>
+                                </Grid>
+                                <Grid Grid.Row="5" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="High quality scaling" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding HighQualityScale}" OnContent="" OffContent=""/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <Border Classes="tool-panel">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
+                                <TextBlock Classes="section-heading" Text="Placement"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="150,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Default position"/>
+                                    <ComboBox Grid.Column="1" ItemsSource="{Binding Placements}" SelectedItem="{Binding SelectedPlacement}"/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="150,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Screen edge offset"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="0" Maximum="300" FormatString="0' px'" Value="{Binding PlacementOffset}"/>
+                                </Grid>
+                                <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Keep center while resizing" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding KeepCenterLocation}" OnContent="" OffContent=""/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Spacing="12">
+                        <Border Classes="tool-panel">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
+                                <TextBlock Classes="section-heading" Text="Appearance"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Always on top" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding TopMost}" OnContent="" OffContent=""/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Window shadow" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding Shadow}" OnContent="" OffContent=""/>
+                                </Grid>
+                                <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Image border" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding Border}" OnContent="" OffContent=""/>
+                                </Grid>
+                                <Grid Grid.Row="4" ColumnDefinitions="150,*,Auto" ColumnSpacing="10" IsEnabled="{Binding Border}">
+                                    <TextBlock Classes="row-label" Text="Border size"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="1" Maximum="30" FormatString="0' px'" Value="{Binding BorderSize}"/>
+                                    <Button Grid.Column="2" Width="40" Padding="4" ToolTip.Tip="Border color">
+                                        <Border Width="20" Height="20" CornerRadius="3" Background="{Binding BorderColorBrush}" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"/>
+                                        <Button.Flyout><Flyout><cp:ColorView Width="300" Height="300" Color="{Binding BorderColor, Mode=TwoWay}"/></Flyout></Button.Flyout>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <Border Classes="tool-panel">
+                            <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
+                                <TextBlock Classes="section-heading" Text="Minimized preview"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="150,*,Auto,*" ColumnSpacing="8">
+                                    <TextBlock Classes="row-label" Text="Preview size"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="1" Maximum="1000" FormatString="0" Value="{Binding MinimizeWidth}"/>
+                                    <TextBlock Grid.Column="2" Text="×" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <NumericUpDown Grid.Column="3" Minimum="1" Maximum="1000" FormatString="0" Value="{Binding MinimizeHeight}"/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="150,*,Auto" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Background"/>
+                                    <TextBlock Grid.Column="1" Text="Shown around transparent images" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Text.Secondary}" VerticalAlignment="Center"/>
+                                    <Button Grid.Column="2" Width="40" Padding="4" ToolTip.Tip="Background color">
+                                        <Border Width="20" Height="20" CornerRadius="3" Background="{Binding BackgroundColorBrush}" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"/>
+                                        <Button.Flyout><Flyout><cp:ColorView Width="300" Height="300" Color="{Binding BackgroundColor, Mode=TwoWay}"/></Flyout></Button.Flyout>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+                    <TextBlock Text="Mouse wheel changes scale; Ctrl + wheel changes opacity."
+                               FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Text.Secondary}" VerticalAlignment="Center"/>
+                    <Button Grid.Column="1" Content="Save" Command="{Binding SaveCommand}"/>
+                    <Button Grid.Column="2" Content="Cancel" Command="{Binding CancelCommand}"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

@@ -2066,13 +2066,29 @@ namespace ShareX
 
         public static void PinToScreen(TaskSettings taskSettings = null)
         {
-            using (PinToScreenStartupForm form = new PinToScreenStartupForm())
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            PinToScreenOptions options = taskSettings.ToolsSettingsReference.PinToScreenOptions;
+            ToolsIntegration.ShowPinToScreenWindow(new PinToScreenServices
             {
-                if (form.ShowDialog() == DialogResult.OK)
+                CaptureRegionAsync = () =>
                 {
-                    PinToScreen(form.Image, form.PinToScreenLocation, taskSettings);
-                }
-            }
+                    using Image image = RegionCaptureTasks.GetRegionImage(out Rectangle rect);
+                    return Task.FromResult(CreatePinToScreenSource(image, rect.Location));
+                },
+                GetClipboardImageAsync = () =>
+                {
+                    using Image image = ClipboardHelpers.TryGetImage();
+                    return Task.FromResult(CreatePinToScreenSource(image));
+                },
+                SelectImageFileAsync = () =>
+                {
+                    using Image image = ImageHelpers.LoadImageWithFileDialog();
+                    return Task.FromResult(CreatePinToScreenSource(image));
+                },
+                CopyImage = CopyPinnedImage,
+                ImagePinned = () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings)
+            }, options);
         }
 
         public static void PinToScreen(Image image, TaskSettings taskSettings = null)
@@ -2087,9 +2103,18 @@ namespace ShareX
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
                 PinToScreenOptions options = taskSettings.ToolsSettingsReference.PinToScreenOptions;
-                options.BackgroundColor = ShareXResources.Theme.LightBackgroundColor;
+                PinToScreenSource source;
+                using (image)
+                {
+                    source = CreatePinToScreenSource(image, location);
+                }
 
-                PinToScreenForm.PinToScreenAsync(image, options, location);
+                if (source == null)
+                {
+                    return;
+                }
+
+                ToolsIntegration.PinToScreen(source.ImageData, options, CopyPinnedImage, source.Location);
 
                 PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
             }
@@ -2137,9 +2162,27 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            PinToScreenForm.CloseAll();
+            ToolsIntegration.CloseAllPinnedImages();
 
             PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
+        }
+
+        private static PinToScreenSource CreatePinToScreenSource(Image image, Point? location = null)
+        {
+            if (image == null)
+            {
+                return null;
+            }
+
+            using MemoryStream stream = new MemoryStream();
+            image.Save(stream, ImageFormat.Png);
+            return new PinToScreenSource(stream.ToArray(), location);
+        }
+
+        private static void CopyPinnedImage(byte[] imageData)
+        {
+            using Bitmap image = ImageHelpers.ByteArrayToBitmap(imageData);
+            ClipboardHelpers.CopyImage(image);
         }
 
         public static EDataType FindDataType(string filePath, TaskSettings taskSettings)
