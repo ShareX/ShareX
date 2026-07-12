@@ -30,7 +30,7 @@
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid Margin="16" RowDefinitions="Auto,*" RowSpacing="12">
                 <Border Grid.Row="0" Classes="tool-panel">
-                    <Grid ColumnDefinitions="Auto,Auto,*,Auto" ColumnSpacing="8">
+                    <Grid ColumnDefinitions="Auto,Auto,*" ColumnSpacing="8">
                             <Button Grid.Column="0" Click="OnPickWindowClick">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
                                     <TextBlock Text="{x:Static theming:LucideIcons.scan}"
@@ -78,33 +78,36 @@
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
-                            <Button Grid.Column="3" Command="{Binding RefreshCommand}" IsEnabled="{Binding CanRefresh}">
-                                <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                               FontWeight="Normal"/>
-                                    <TextBlock Text="Refresh"/>
-                                </StackPanel>
-                            </Button>
                     </Grid>
                 </Border>
 
                 <Grid Grid.Row="1" ColumnDefinitions="300,*" ColumnSpacing="12">
                     <StackPanel Grid.Column="0" Spacing="12">
                         <Border Classes="tool-panel" Padding="16">
-                            <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="8">
-                                <TextBlock Grid.Row="0"
-                                           Text="{x:Static theming:LucideIcons.app_window}"
-                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                           FontWeight="Normal"
-                                           FontSize="36"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
-                                <TextBlock Grid.Row="1"
-                                           Text="{Binding SelectedTitle}"
-                                           Classes="section-heading"
-                                           TextWrapping="Wrap"
-                                           MaxLines="3"/>
-                                <StackPanel Grid.Row="2" Spacing="5">
+                            <Grid RowDefinitions="Auto,Auto" RowSpacing="8">
+                                <Grid Grid.Row="0" ColumnDefinitions="16,*" ColumnSpacing="8">
+                                    <Grid Grid.Column="0" Width="16" Height="16" VerticalAlignment="Center">
+                                        <Image Source="{Binding SelectedIcon}"
+                                               Width="16"
+                                               Height="16"
+                                               Stretch="None"/>
+                                        <TextBlock IsVisible="{Binding !HasSelectedIcon}"
+                                                   Text="{x:Static theming:LucideIcons.app_window}"
+                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                   FontWeight="Normal"
+                                                   FontSize="16"
+                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <TextBlock Grid.Column="1"
+                                               Text="{Binding SelectedTitle}"
+                                               Classes="section-heading"
+                                               TextWrapping="Wrap"
+                                               MaxLines="3"
+                                               VerticalAlignment="Center"/>
+                                </Grid>
+                                <StackPanel Grid.Row="1" Spacing="5">
                                     <TextBlock Text="{Binding SelectedSubtitle}"
                                                FontWeight="Normal"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
@@ -150,7 +153,7 @@
 
                     <Border Grid.Column="1" Classes="tool-panel" Padding="0" ClipToBounds="True">
                         <Grid RowDefinitions="Auto,*">
-                            <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="12">
+                            <Grid Grid.Row="0" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" Margin="12">
                                 <TextBlock Classes="section-heading" Text="Window information"/>
                                 <Button Grid.Column="1" Click="OnCopyClick" IsEnabled="{Binding HasSelection}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
@@ -158,6 +161,14 @@
                                                    FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                    FontWeight="Normal"/>
                                         <TextBlock Text="Copy all"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button Grid.Column="2" Command="{Binding RefreshCommand}" IsEnabled="{Binding CanRefresh}">
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}"
+                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                   FontWeight="Normal"/>
+                                        <TextBlock Text="Refresh"/>
                                     </StackPanel>
                                 </Button>
                             </Grid>
@@ -175,7 +186,7 @@
                                                              Classes="detail-value"
                                                              Classes.multiline="{Binding IsMultiline}"
                                                              Text="{Binding Value}"
-                                                             Height="{Binding Height}"
+                                                             MinHeight="40"
                                                              IsReadOnly="True"
                                                              AcceptsReturn="True"
                                                              TextWrapping="NoWrap"

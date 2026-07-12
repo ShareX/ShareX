@@ -79,7 +79,7 @@ public static class InspectWindowService
                         handle,
                         title,
                         TryGet(() => window.ProcessName),
-                        TryGetIcon(window)));
+                        GetWindowIcon(window)));
                 }
             }
             catch (Exception ex)
@@ -105,7 +105,12 @@ public static class InspectWindowService
         }
     }
 
-    private static AvaloniaBitmap? TryGetIcon(WindowInfo window)
+    public static AvaloniaBitmap? GetWindowIcon(IntPtr handle)
+    {
+        return handle == IntPtr.Zero ? null : GetWindowIcon(new WindowInfo(handle));
+    }
+
+    private static AvaloniaBitmap? GetWindowIcon(WindowInfo window)
     {
         try
         {

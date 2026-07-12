@@ -17,10 +17,11 @@ using CommunityToolkit.Mvvm.Input;
 using ShareX.HelpersLib;
 using System.Collections.ObjectModel;
 using System.Drawing;
+using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 
 namespace ShareX.Tools;
 
-public sealed record InspectWindowProperty(string Name, string Value, double Height = 40, bool IsMultiline = false);
+public sealed record InspectWindowProperty(string Name, string Value, bool IsMultiline = false);
 
 public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
 {
@@ -50,6 +51,10 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
     private string _selectedType = string.Empty;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(HasSelectedIcon))]
+    private AvaloniaBitmap? _selectedIcon;
+
+    [ObservableProperty]
     private IReadOnlyList<InspectWindowProperty> _details = [];
 
     [ObservableProperty]
@@ -59,6 +64,7 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
     private double _opacity = 100;
 
     public bool CanRefresh => HasSelection;
+    public bool HasSelectedIcon => SelectedIcon != null;
     public string ClipboardText => string.Join(Environment.NewLine + Environment.NewLine,
         Details.Select(x => $"{x.Name}{Environment.NewLine}{x.Value}"));
 
@@ -181,6 +187,7 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
                 ? className
                 : string.IsNullOrWhiteSpace(className) ? processName : $"{processName}  |  {className}";
             SelectedType = IsTopLevelWindow ? "Window" : "Control";
+            ReplaceSelectedIcon(InspectWindowService.GetWindowIcon(handle));
             Details =
             [
                 new("Window handle", $"0x{handle.ToInt64():X8}"),
@@ -191,8 +198,8 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
                 new("Process identifier", processId),
                 new("Window rectangle", FormatRectangle(windowRectangle)),
                 new("Client rectangle", FormatRectangle(clientRectangle)),
-                new("Window styles", styles, 96, true),
-                new("Extended window styles", extendedStyles, 96, true)
+                new("Window styles", styles, true),
+                new("Extended window styles", extendedStyles, true)
             ];
 
             if (IsTopLevelWindow)
@@ -223,6 +230,7 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
         SelectedTitle = "No target selected";
         SelectedSubtitle = "Pick a window or control to inspect its properties";
         SelectedType = string.Empty;
+        ReplaceSelectedIcon(null);
         Details = [];
         IsTopMost = false;
         Opacity = 100;
@@ -267,8 +275,15 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
         }
     }
 
+    private void ReplaceSelectedIcon(AvaloniaBitmap? icon)
+    {
+        SelectedIcon?.Dispose();
+        SelectedIcon = icon;
+    }
+
     public void Dispose()
     {
+        ReplaceSelectedIcon(null);
         DisposeWindowList();
         Windows.Clear();
     }
