@@ -25,6 +25,7 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
+using ShareX.MediaLib;
 using ShareX.Tools;
 
 namespace ShareX.Tools.Integration;
@@ -148,6 +149,12 @@ public static class ToolsIntegration
         Action<VideoConverterSettings>? settingsChanged = null, string? inputFilePath = null)
     {
         Show(() => new VideoConverterWindow(settings, handler, settingsChanged, inputFilePath));
+    }
+
+    public static void ShowVideoThumbnailerWindow(string ffmpegPath, VideoThumbnailOptions options,
+        Action<IReadOnlyList<VideoThumbnailInfo>>? thumbnailsTaken = null)
+    {
+        Show(() => new VideoThumbnailerWindow(ffmpegPath, options, thumbnailsTaken));
     }
 
     private static void Show(Func<Avalonia.Controls.Window> windowFactory)

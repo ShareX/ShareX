@@ -1237,19 +1237,19 @@ namespace ShareX
             }
 
             taskSettings.ToolsSettingsReference.VideoThumbnailOptions.DefaultOutputDirectory = GetScreenshotsFolder(taskSettings);
-            VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
-                taskSettings.ToolsSettingsReference.VideoThumbnailOptions);
-            thumbnailerForm.ThumbnailsTaken += thumbnails =>
-            {
-                if (taskSettings.ToolsSettingsReference.VideoThumbnailOptions.UploadThumbnails)
+            ToolsIntegration.ShowVideoThumbnailerWindow(
+                taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
+                taskSettings.ToolsSettingsReference.VideoThumbnailOptions,
+                thumbnails =>
                 {
-                    foreach (VideoThumbnailInfo thumbnailInfo in thumbnails)
+                    if (taskSettings.ToolsSettingsReference.VideoThumbnailOptions.UploadThumbnails)
                     {
-                        UploadManager.UploadFile(thumbnailInfo.FilePath, taskSettings);
+                        foreach (VideoThumbnailInfo thumbnailInfo in thumbnails)
+                        {
+                            UploadManager.UploadFile(thumbnailInfo.FilePath, taskSettings);
+                        }
                     }
-                }
-            };
-            thumbnailerForm.Show();
+                });
         }
 
         public static void OpenBorderlessWindow(TaskSettings taskSettings = null)

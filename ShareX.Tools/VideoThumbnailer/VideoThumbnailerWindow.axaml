@@ -1,0 +1,187 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="650"
+        x:Class="ShareX.Tools.VideoThumbnailerWindow"
+        x:DataType="vm:VideoThumbnailerViewModel"
+        Title="ShareX - Video Thumbnailer"
+        Width="900"
+        Height="650"
+        MinWidth="760"
+        MinHeight="580"
+        WindowStartupLocation="CenterScreen">
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
+                <Border Grid.Row="0" Classes="tool-panel">
+                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                        <TextBlock Classes="section-heading" Text="Video" Margin="0" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="1"
+                                   Classes="path-text"
+                                   Text="{Binding VideoPath, TargetNullValue='No video selected'}"
+                                   VerticalAlignment="Center"
+                                   TextTrimming="CharacterEllipsis"/>
+                        <Button Grid.Column="2" Content="Browse..." Command="{Binding SelectVideoCommand}" IsEnabled="{Binding IsIdle}"/>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="12">
+                    <Grid Grid.Column="0" RowDefinitions="Auto,*" RowSpacing="12">
+                        <Border Grid.Row="0" Classes="tool-panel">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
+                                <TextBlock Classes="section-heading" Text="Thumbnails"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="125,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Count"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="1" Maximum="100" FormatString="0" Value="{Binding ThumbnailCount}"/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="125,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Image format"/>
+                                    <ComboBox Grid.Column="1"
+                                              ItemsSource="{Binding ImageFormats}"
+                                              SelectedItem="{Binding SelectedImageFormat}">
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate x:DataType="vm:VideoThumbnailFormatChoice">
+                                                <TextBlock Text="{Binding Name}" FontWeight="Normal"/>
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
+                                </Grid>
+                                <Grid Grid.Row="3" ColumnDefinitions="125,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Maximum width"/>
+                                    <NumericUpDown Grid.Column="1"
+                                                   Minimum="0"
+                                                   Maximum="10000"
+                                                   FormatString="0"
+                                                   Value="{Binding MaxThumbnailWidth}"
+                                                   PlaceholderText="0 keeps original size"/>
+                                </Grid>
+                                <Grid Grid.Row="4" ColumnDefinitions="125,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Filename suffix"/>
+                                    <TextBox Grid.Column="1" Text="{Binding FilenameSuffix}"/>
+                                </Grid>
+                                <Grid Grid.Row="5" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Choose a random frame for each thumbnail" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding RandomFrame}" OnContent="" OffContent=""/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Row="1" Classes="tool-panel">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto">
+                                <TextBlock Classes="section-heading" Text="Output" Margin="0,0,0,10"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="125,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Save to"/>
+                                    <ComboBox Grid.Column="1"
+                                              ItemsSource="{Binding OutputLocations}"
+                                              SelectedItem="{Binding SelectedOutputLocation}">
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate x:DataType="vm:VideoThumbnailOutputChoice">
+                                                <TextBlock Text="{Binding Name}" FontWeight="Normal"/>
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
+                                </Grid>
+                                <Grid Grid.Row="2"
+                                      ColumnDefinitions="*,Auto"
+                                      ColumnSpacing="8"
+                                      Margin="0,10,0,0"
+                                      IsVisible="{Binding IsCustomOutput}">
+                                    <TextBox Text="{Binding CustomOutputDirectory}" PlaceholderText="Choose an output folder"/>
+                                    <Button Grid.Column="1" Content="Browse..." Command="{Binding SelectOutputFolderCommand}" IsEnabled="{Binding IsIdle}"/>
+                                </Grid>
+                                <Grid Grid.Row="3" RowDefinitions="Auto,Auto" RowSpacing="8" Margin="0,10,0,0">
+                                    <Grid ColumnDefinitions="*,Auto" MinHeight="30">
+                                        <TextBlock Text="Upload created thumbnails" FontWeight="Normal" VerticalAlignment="Center"/>
+                                        <ToggleSwitch Grid.Column="1" IsChecked="{Binding UploadThumbnails}" OnContent="" OffContent=""/>
+                                    </Grid>
+                                    <Grid Grid.Row="1" ColumnDefinitions="*,Auto" MinHeight="30">
+                                        <TextBlock Text="Open output folder when finished" FontWeight="Normal" VerticalAlignment="Center"/>
+                                        <ToggleSwitch Grid.Column="1" IsChecked="{Binding OpenDirectory}" OnContent="" OffContent=""/>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <Border Grid.Column="1" Classes="tool-panel">
+                        <Grid RowDefinitions="Auto,*" RowSpacing="12">
+                            <Grid ColumnDefinitions="*,Auto" MinHeight="30">
+                                <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                                    <TextBlock Classes="section-heading" Text="Combined contact sheet" Margin="0"/>
+                                </StackPanel>
+                                <ToggleSwitch Grid.Column="1" IsChecked="{Binding CombineScreenshots}" OnContent="" OffContent="" IsEnabled="{Binding IsIdle}"/>
+                            </Grid>
+
+                            <Grid Grid.Row="1"
+                                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                                  RowSpacing="10"
+                                  IsEnabled="{Binding CombinedOptionsEnabled}">
+                                <Grid Grid.Row="0" ColumnDefinitions="150,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Columns"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="1" Maximum="20" FormatString="0" Value="{Binding ColumnCount}"/>
+                                </Grid>
+                                <Grid Grid.Row="1" ColumnDefinitions="150,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Outer padding"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="0" Maximum="500" FormatString="0" Value="{Binding Padding}"/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="150,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Thumbnail spacing"/>
+                                    <NumericUpDown Grid.Column="1" Minimum="0" Maximum="500" FormatString="0" Value="{Binding Spacing}"/>
+                                </Grid>
+                                <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Add video information" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding AddVideoInfo}" OnContent="" OffContent=""/>
+                                </Grid>
+                                <Grid Grid.Row="4" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Show timestamps" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding AddTimestamp}" OnContent="" OffContent=""/>
+                                </Grid>
+                                <Grid Grid.Row="5" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Draw thumbnail shadows" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding DrawShadow}" OnContent="" OffContent=""/>
+                                </Grid>
+                                <Grid Grid.Row="6" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Draw thumbnail borders" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding DrawBorder}" OnContent="" OffContent=""/>
+                                </Grid>
+                                <Grid Grid.Row="7" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Keep individual screenshots" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding KeepScreenshots}" OnContent="" OffContent=""/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="8">
+                    <ProgressBar Grid.Row="0"
+                                 Height="5"
+                                 Minimum="0"
+                                 Maximum="{Binding ProgressMaximum}"
+                                 Value="{Binding ProgressValue}"
+                                 IsVisible="{Binding IsBusy}"/>
+                    <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <Grid>
+                            <TextBlock Text="{Binding ErrorMessage}"
+                                       IsVisible="{Binding HasError}"
+                                       FontWeight="Normal"
+                                       Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                       TextWrapping="Wrap"
+                                       VerticalAlignment="Center"/>
+                        </Grid>
+                        <Button Grid.Column="1" Command="{Binding StartCommand}" IsEnabled="{Binding CanStart}">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.images}"/>
+                                <TextBlock Text="Create thumbnails"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
