@@ -30,7 +30,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 
-namespace ShareX.Tools
+namespace ShareX.HelpersLib
 {
     public class VideoInfo
     {

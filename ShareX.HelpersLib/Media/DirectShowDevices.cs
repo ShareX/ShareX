@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace ShareX.Tools
+namespace ShareX.HelpersLib
 {
     public class DirectShowDevices
     {
