@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,25 +23,24 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.Tools;
+using System;
+using System.IO;
 
-public enum ImageCombinerOrientation
+namespace ShareX.Tools
 {
-    Horizontal,
-    Vertical
-}
+    public class VideoThumbnailInfo
+    {
+        public string FilePath { get; set; }
+        public TimeSpan Timestamp { get; set; }
 
-public enum ImageCombinerAlignment
-{
-    LeftOrTop,
-    Center,
-    RightOrBottom
-}
+        public VideoThumbnailInfo(string filePath)
+        {
+            FilePath = filePath;
+        }
 
-public sealed record ImageCombineRequest(IReadOnlyList<string> ImageFiles, ImageCombinerOptions Options);
-
-public sealed class ImageCombinerServices
-{
-    public required Func<ImageCombineRequest, Task<byte[]?>> CreatePreviewAsync { get; init; }
-    public required Func<ImageCombineRequest, Task> ProcessAsync { get; init; }
+        public override string ToString()
+        {
+            return Path.GetFileName(FilePath);
+        }
+    }
 }

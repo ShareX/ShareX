@@ -38,7 +38,7 @@ public partial class ImageCombinerWindow : Window
     private readonly ImageCombinerViewModel _viewModel;
 
     public ImageCombinerWindow()
-        : this(new ImageCombinerSettings(), new ImageCombinerServices
+        : this(new ImageCombinerOptions(), new ImageCombinerServices
         {
             CreatePreviewAsync = _ => Task.FromResult<byte[]?>(null),
             ProcessAsync = _ => Task.CompletedTask
@@ -47,12 +47,11 @@ public partial class ImageCombinerWindow : Window
     }
 
     public ImageCombinerWindow(
-        ImageCombinerSettings settings,
+        ImageCombinerOptions options,
         ImageCombinerServices services,
-        Action<ImageCombinerSettings>? settingsChanged = null,
         IEnumerable<string>? imageFiles = null)
     {
-        _viewModel = new ImageCombinerViewModel(settings, services, settingsChanged, imageFiles);
+        _viewModel = new ImageCombinerViewModel(options, services, imageFiles);
         DataContext = _viewModel;
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();

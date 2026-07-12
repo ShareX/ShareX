@@ -55,9 +55,8 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
 
     private static readonly string[] AnimationOnlyExtensions = [".gif", ".webp", ".png", ".apng"];
 
-    private readonly VideoConverterSettings _settings;
+    private readonly VideoConverterOptions _options;
     private readonly VideoConversionHandler _conversionHandler;
-    private readonly Action<VideoConverterSettings>? _settingsChanged;
     private CancellationTokenSource? _cancellationTokenSource;
 
     [ObservableProperty]
@@ -108,22 +107,20 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     private string _statusText = "Choose a video to get started.";
 
     public VideoConverterViewModel(
-        VideoConverterSettings settings,
+        VideoConverterOptions options,
         VideoConversionHandler conversionHandler,
-        Action<VideoConverterSettings>? settingsChanged = null,
         string? inputFilePath = null)
     {
-        _settings = settings;
+        _options = options;
         _conversionHandler = conversionHandler;
-        _settingsChanged = settingsChanged;
-        _inputFilePath = settings.InputFilePath ?? string.Empty;
-        _outputFolderPath = settings.OutputFolderPath ?? string.Empty;
-        _outputFileName = settings.OutputFileName ?? string.Empty;
-        _selectedCodec = Codecs.First(x => x.Codec == settings.VideoCodec);
-        _useBitrate = settings.VideoQualityUseBitrate;
-        _videoQuality = settings.VideoQuality;
-        _videoBitrate = settings.VideoQualityBitrate;
-        _autoOpenFolder = settings.AutoOpenFolder;
+        _inputFilePath = options.InputFilePath ?? string.Empty;
+        _outputFolderPath = options.OutputFolderPath ?? string.Empty;
+        _outputFileName = options.OutputFileName ?? string.Empty;
+        _selectedCodec = Codecs.First(x => (int)x.Codec == (int)options.VideoCodec);
+        _useBitrate = options.VideoQualityUseBitrate;
+        _videoQuality = options.VideoQuality;
+        _videoBitrate = options.VideoQualityBitrate;
+        _autoOpenFolder = options.AutoOpenFolder;
         _statusText = string.IsNullOrWhiteSpace(_inputFilePath)
             ? "Choose a video or animation to get started."
             : string.Empty;
@@ -326,15 +323,14 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
 
     private void PersistSettings()
     {
-        _settings.InputFilePath = InputFilePath;
-        _settings.OutputFolderPath = OutputFolderPath;
-        _settings.OutputFileName = OutputFileName;
-        _settings.VideoCodec = SelectedCodec.Codec;
-        _settings.VideoQualityUseBitrate = UseBitrate;
-        _settings.VideoQuality = (int)Math.Round(VideoQuality);
-        _settings.VideoQualityBitrate = (int)VideoBitrate;
-        _settings.AutoOpenFolder = AutoOpenFolder;
-        _settingsChanged?.Invoke(_settings);
+        _options.InputFilePath = InputFilePath;
+        _options.OutputFolderPath = OutputFolderPath;
+        _options.OutputFileName = OutputFileName;
+        _options.VideoCodec = (ConverterVideoCodecs)SelectedCodec.Codec;
+        _options.VideoQualityUseBitrate = UseBitrate;
+        _options.VideoQuality = (int)Math.Round(VideoQuality);
+        _options.VideoQualityBitrate = (int)VideoBitrate;
+        _options.AutoOpenFolder = AutoOpenFolder;
     }
 
     private string BuildArguments()

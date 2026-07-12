@@ -21,7 +21,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
-    <ProjectReference Include="..\ShareX.MediaLib\ShareX.MediaLib.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -33,9 +33,8 @@ namespace ShareX.Tools;
 
 public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
 {
-    private readonly ImageCombinerSettings _settings;
+    private readonly ImageCombinerOptions _options;
     private readonly ImageCombinerServices _services;
-    private readonly Action<ImageCombinerSettings>? _settingsChanged;
     private readonly HashSet<string> _selectedImages = [];
     private int _previewVersion;
 
@@ -74,19 +73,17 @@ public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
     private string _statusText = "Add at least two images to combine.";
 
     public ImageCombinerViewModel(
-        ImageCombinerSettings settings,
+        ImageCombinerOptions options,
         ImageCombinerServices services,
-        Action<ImageCombinerSettings>? settingsChanged = null,
         IEnumerable<string>? imageFiles = null)
     {
-        _settings = settings;
+        _options = options;
         _services = services;
-        _settingsChanged = settingsChanged;
-        _isHorizontal = settings.Orientation == ImageCombinerOrientation.Horizontal;
-        _selectedAlignmentIndex = (int)settings.Alignment;
-        _space = settings.Space;
-        _wrapAfter = settings.WrapAfter;
-        _autoFillBackground = settings.AutoFillBackground;
+        _isHorizontal = options.Orientation == ImageCombinerOrientation.Horizontal;
+        _selectedAlignmentIndex = (int)options.Alignment;
+        _space = options.Space;
+        _wrapAfter = options.WrapAfter;
+        _autoFillBackground = options.AutoFillBackground;
 
         AddFiles(imageFiles);
     }
@@ -234,12 +231,11 @@ public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
 
     private void OptionsChanged()
     {
-        _settings.Orientation = IsHorizontal ? ImageCombinerOrientation.Horizontal : ImageCombinerOrientation.Vertical;
-        _settings.Alignment = (ImageCombinerAlignment)Math.Clamp(SelectedAlignmentIndex, 0, 2);
-        _settings.Space = (int)Space;
-        _settings.WrapAfter = (int)WrapAfter;
-        _settings.AutoFillBackground = AutoFillBackground;
-        _settingsChanged?.Invoke(_settings);
+        _options.Orientation = IsHorizontal ? ImageCombinerOrientation.Horizontal : ImageCombinerOrientation.Vertical;
+        _options.Alignment = (ImageCombinerAlignment)Math.Clamp(SelectedAlignmentIndex, 0, 2);
+        _options.Space = (int)Space;
+        _options.WrapAfter = (int)WrapAfter;
+        _options.AutoFillBackground = AutoFillBackground;
         _ = RefreshPreviewAsync();
     }
 
@@ -261,7 +257,7 @@ public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
 
     private ImageCombineRequest CreateRequest()
     {
-        ImageCombinerSettings settings = new ImageCombinerSettings
+        ImageCombinerOptions options = new ImageCombinerOptions
         {
             Orientation = IsHorizontal ? ImageCombinerOrientation.Horizontal : ImageCombinerOrientation.Vertical,
             Alignment = (ImageCombinerAlignment)Math.Clamp(SelectedAlignmentIndex, 0, 2),
@@ -269,7 +265,7 @@ public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
             WrapAfter = (int)WrapAfter,
             AutoFillBackground = AutoFillBackground
         };
-        return new ImageCombineRequest(Images.ToArray(), settings);
+        return new ImageCombineRequest(Images.ToArray(), options);
     }
 
     private async Task RefreshPreviewAsync()

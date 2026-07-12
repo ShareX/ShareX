@@ -1023,31 +1023,13 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            ShareX.MediaLib.ImageCombinerOptions source = taskSettings.ToolsSettingsReference.ImageCombinerOptions;
-            ImageCombinerSettings settings = new ImageCombinerSettings
-            {
-                Orientation = (ImageCombinerOrientation)source.Orientation,
-                Alignment = (ShareX.Tools.ImageCombinerAlignment)source.Alignment,
-                Space = source.Space,
-                WrapAfter = source.WrapAfter,
-                AutoFillBackground = source.AutoFillBackground
-            };
-
             TaskSettings activeTaskSettings = taskSettings;
             ToolsIntegration.ShowImageCombinerWindow(
-                settings,
+                taskSettings.ToolsSettingsReference.ImageCombinerOptions,
                 new ImageCombinerServices
                 {
                     CreatePreviewAsync = CreateImageCombinerPreviewAsync,
                     ProcessAsync = request => ProcessCombinedImagesAsync(request, activeTaskSettings)
-                },
-                updated =>
-                {
-                    source.Orientation = (Orientation)updated.Orientation;
-                    source.Alignment = (ShareX.HelpersLib.ImageCombinerAlignment)updated.Alignment;
-                    source.Space = updated.Space;
-                    source.WrapAfter = updated.WrapAfter;
-                    source.AutoFillBackground = updated.AutoFillBackground;
                 },
                 imageFiles?.ToArray());
         }
@@ -1081,11 +1063,11 @@ namespace ShareX
         {
             return ImageHelpers.CombineImages(
                 request.ImageFiles,
-                (Orientation)request.Settings.Orientation,
-                (ShareX.HelpersLib.ImageCombinerAlignment)request.Settings.Alignment,
-                request.Settings.Space,
-                request.Settings.WrapAfter,
-                request.Settings.AutoFillBackground);
+                (Orientation)request.Options.Orientation,
+                (ShareX.HelpersLib.ImageCombinerAlignment)request.Options.Alignment,
+                request.Options.Space,
+                request.Options.WrapAfter,
+                request.Options.AutoFillBackground);
         }
 
         public static void OpenImageComparer()
@@ -1109,7 +1091,8 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            Bitmap output = ImageHelpers.CombineImages(imageFiles, orientation, taskSettings.ToolsSettings.ImageCombinerOptions.Alignment,
+            Bitmap output = ImageHelpers.CombineImages(imageFiles, orientation,
+                (ShareX.HelpersLib.ImageCombinerAlignment)taskSettings.ToolsSettings.ImageCombinerOptions.Alignment,
                 taskSettings.ToolsSettings.ImageCombinerOptions.Space, taskSettings.ToolsSettings.ImageCombinerOptions.WrapAfter,
                 taskSettings.ToolsSettings.ImageCombinerOptions.AutoFillBackground);
 
@@ -1158,34 +1141,10 @@ namespace ShareX
 
         private static void ShowVideoConverter(TaskSettings taskSettings, string inputFilePath = null)
         {
-            ShareX.MediaLib.VideoConverterOptions source = taskSettings.ToolsSettingsReference.VideoConverterOptions;
-            VideoConverterSettings settings = new VideoConverterSettings
-            {
-                InputFilePath = source.InputFilePath,
-                OutputFolderPath = source.OutputFolderPath,
-                OutputFileName = source.OutputFileName,
-                VideoCodec = (VideoConverterCodec)source.VideoCodec,
-                VideoQuality = source.VideoQuality,
-                VideoQualityUseBitrate = source.VideoQualityUseBitrate,
-                VideoQualityBitrate = source.VideoQualityBitrate,
-                AutoOpenFolder = source.AutoOpenFolder
-            };
-
             string ffmpegFilePath = taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath;
             ToolsIntegration.ShowVideoConverterWindow(
-                settings,
+                taskSettings.ToolsSettingsReference.VideoConverterOptions,
                 (request, progress, cancellationToken) => RunVideoConversionAsync(ffmpegFilePath, request, progress, cancellationToken),
-                updated =>
-                {
-                    source.InputFilePath = updated.InputFilePath;
-                    source.OutputFolderPath = updated.OutputFolderPath;
-                    source.OutputFileName = updated.OutputFileName;
-                    source.VideoCodec = (ConverterVideoCodecs)updated.VideoCodec;
-                    source.VideoQuality = updated.VideoQuality;
-                    source.VideoQualityUseBitrate = updated.VideoQualityUseBitrate;
-                    source.VideoQualityBitrate = updated.VideoQualityBitrate;
-                    source.AutoOpenFolder = updated.AutoOpenFolder;
-                },
                 inputFilePath);
         }
 

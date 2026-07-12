@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.MediaLib;
+using ShareX.Tools;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using System;

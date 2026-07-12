@@ -25,7 +25,6 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
-using ShareX.MediaLib;
 using ShareX.Tools;
 
 namespace ShareX.Tools.Integration;
@@ -65,10 +64,10 @@ public static class ToolsIntegration
         Show(() => new HashCheckerWindow(handler, playSound, filePath));
     }
 
-    public static void ShowImageCombinerWindow(ImageCombinerSettings settings, ImageCombinerServices services,
-        Action<ImageCombinerSettings>? settingsChanged = null, IEnumerable<string>? imageFiles = null)
+    public static void ShowImageCombinerWindow(ImageCombinerOptions options, ImageCombinerServices services,
+        IEnumerable<string>? imageFiles = null)
     {
-        Show(() => new ImageCombinerWindow(settings, services, settingsChanged, imageFiles));
+        Show(() => new ImageCombinerWindow(options, services, imageFiles));
     }
 
     public static void ShowImageComparerWindow()
@@ -145,10 +144,10 @@ public static class ToolsIntegration
         Show(() => new RulerWindow());
     }
 
-    public static void ShowVideoConverterWindow(VideoConverterSettings settings, VideoConversionHandler handler,
-        Action<VideoConverterSettings>? settingsChanged = null, string? inputFilePath = null)
+    public static void ShowVideoConverterWindow(VideoConverterOptions options, VideoConversionHandler handler,
+        string? inputFilePath = null)
     {
-        Show(() => new VideoConverterWindow(settings, handler, settingsChanged, inputFilePath));
+        Show(() => new VideoConverterWindow(options, handler, inputFilePath));
     }
 
     public static void ShowVideoThumbnailerWindow(string ffmpegPath, VideoThumbnailOptions options,

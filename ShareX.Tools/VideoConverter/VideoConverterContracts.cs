@@ -44,18 +44,6 @@ public enum VideoConverterCodec
     Apng
 }
 
-public sealed class VideoConverterSettings
-{
-    public string InputFilePath { get; set; } = string.Empty;
-    public string OutputFolderPath { get; set; } = string.Empty;
-    public string OutputFileName { get; set; } = string.Empty;
-    public VideoConverterCodec VideoCodec { get; set; } = VideoConverterCodec.X264;
-    public int VideoQuality { get; set; } = 23;
-    public bool VideoQualityUseBitrate { get; set; }
-    public int VideoQualityBitrate { get; set; } = 3000;
-    public bool AutoOpenFolder { get; set; } = true;
-}
-
 public sealed record VideoConversionRequest(string Arguments, string OutputFilePath, bool AutoOpenFolder);
 
 public sealed record VideoConversionResult(bool Succeeded, bool WasCancelled, string? ErrorMessage = null);

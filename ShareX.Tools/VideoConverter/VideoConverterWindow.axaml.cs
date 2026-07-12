@@ -38,18 +38,17 @@ public partial class VideoConverterWindow : Window
 
     public VideoConverterWindow()
         : this(
-            new VideoConverterSettings(),
+            new VideoConverterOptions(),
             (_, _, _) => Task.FromResult(new VideoConversionResult(false, false, "FFmpeg is unavailable.")))
     {
     }
 
     public VideoConverterWindow(
-        VideoConverterSettings settings,
+        VideoConverterOptions options,
         VideoConversionHandler conversionHandler,
-        Action<VideoConverterSettings>? settingsChanged = null,
         string? inputFilePath = null)
     {
-        _viewModel = new VideoConverterViewModel(settings, conversionHandler, settingsChanged, inputFilePath);
+        _viewModel = new VideoConverterViewModel(options, conversionHandler, inputFilePath);
         DataContext = _viewModel;
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
