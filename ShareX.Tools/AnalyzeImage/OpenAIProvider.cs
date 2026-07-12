@@ -26,15 +26,11 @@
 #nullable disable
 
 using ShareX.HelpersLib;
-using System;
 using System.Drawing;
-using System.IO;
-using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace ShareX.Tools
 {
@@ -136,8 +132,7 @@ namespace ShareX.Tools
                 input = "What is in this image?";
             }
 
-            if (Model.Equals("gpt-5.2", StringComparison.OrdinalIgnoreCase) ||
-                Model.Equals("gpt-5.1", StringComparison.OrdinalIgnoreCase))
+            if (Model.StartsWith("gpt-5.", StringComparison.OrdinalIgnoreCase))
             {
                 if (reasoningEffort == null || reasoningEffort.Equals("minimal", StringComparison.OrdinalIgnoreCase))
                 {

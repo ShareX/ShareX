@@ -26,8 +26,8 @@ public sealed partial class AnalyzeImageOptionsViewModel : ViewModelBase
 
     public IReadOnlyList<AIProvider> Providers { get; } = Enum.GetValues<AIProvider>();
     public ObservableCollection<string> OpenAIModels { get; } = ["gpt-5.2", "gpt-5.1", "gpt-5", "gpt-5-mini", "gpt-5-nano"];
-    public IReadOnlyList<string> GeminiModels { get; } = ["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-1.5-flash", "gemini-1.5-pro"];
-    public IReadOnlyList<string> OpenRouterModels { get; } = ["openai/gpt-4o", "anthropic/claude-3.5-sonnet", "google/gemini-pro-1.5"];
+    public ObservableCollection<string> GeminiModels { get; } = ["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-1.5-flash", "gemini-1.5-pro"];
+    public ObservableCollection<string> OpenRouterModels { get; } = ["openai/gpt-4o", "anthropic/claude-3.5-sonnet", "google/gemini-pro-1.5"];
     public IReadOnlyList<string> ReasoningEfforts { get; } = ["minimal", "low", "medium", "high"];
     public IReadOnlyList<string> VerbosityLevels { get; } = ["low", "medium", "high"];
 
@@ -81,6 +81,8 @@ public sealed partial class AnalyzeImageOptionsViewModel : ViewModelBase
         _autoCopyResult = draft.AutoCopyResult;
 
         AddCurrentModel(OpenAIModels, OpenAIModel);
+        AddCurrentModel(GeminiModels, GeminiModel);
+        AddCurrentModel(OpenRouterModels, OpenRouterModel);
     }
 
     partial void OnStatusTextChanged(string value) => OnPropertyChanged(nameof(HasStatus));

@@ -43,7 +43,8 @@
                                     <TextBlock Classes="row-label" Text="Model"/>
                                     <ComboBox Grid.Column="1"
                                               ItemsSource="{Binding OpenAIModels}"
-                                              Text="{Binding OpenAIModel}"
+                                              Text="{Binding OpenAIModel, Mode=TwoWay}"
+                                              SelectedItem="{Binding OpenAIModel, Mode=TwoWay}"
                                               IsEditable="True"/>
                                     <Button Grid.Column="2" Command="{Binding LoadModelsCommand}" IsEnabled="{Binding !IsBusy}">
                                         <StackPanel Orientation="Horizontal" Spacing="8">
@@ -74,7 +75,11 @@
                                 </Grid>
                                 <Grid Grid.Row="2" ColumnDefinitions="120,*" ColumnSpacing="10">
                                     <TextBlock Classes="row-label" Text="Model"/>
-                                    <ComboBox Grid.Column="1" ItemsSource="{Binding GeminiModels}" Text="{Binding GeminiModel}" IsEditable="True"/>
+                                    <ComboBox Grid.Column="1"
+                                              ItemsSource="{Binding GeminiModels}"
+                                              Text="{Binding GeminiModel, Mode=TwoWay}"
+                                              SelectedItem="{Binding GeminiModel, Mode=TwoWay}"
+                                              IsEditable="True"/>
                                 </Grid>
                             </Grid>
                         </Border>
@@ -88,7 +93,11 @@
                                 </Grid>
                                 <Grid Grid.Row="2" ColumnDefinitions="120,*" ColumnSpacing="10">
                                     <TextBlock Classes="row-label" Text="Model"/>
-                                    <ComboBox Grid.Column="1" ItemsSource="{Binding OpenRouterModels}" Text="{Binding OpenRouterModel}" IsEditable="True"/>
+                                    <ComboBox Grid.Column="1"
+                                              ItemsSource="{Binding OpenRouterModels}"
+                                              Text="{Binding OpenRouterModel, Mode=TwoWay}"
+                                              SelectedItem="{Binding OpenRouterModel, Mode=TwoWay}"
+                                              IsEditable="True"/>
                                 </Grid>
                             </Grid>
                         </Border>
