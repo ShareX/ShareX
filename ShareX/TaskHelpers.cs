@@ -1306,8 +1306,7 @@ namespace ShareX
 
         public static void OpenInspectWindow()
         {
-            InspectWindowForm inspectWindowForm = new InspectWindowForm();
-            inspectWindowForm.Show();
+            ToolsIntegration.ShowInspectWindowWindow();
         }
 
         public static void OpenClipboardViewer()

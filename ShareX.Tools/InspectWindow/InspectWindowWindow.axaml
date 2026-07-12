@@ -1,0 +1,217 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="940" d:DesignHeight="650"
+        x:Class="ShareX.Tools.InspectWindowWindow"
+        x:DataType="vm:InspectWindowViewModel"
+        Title="ShareX - Inspect Window"
+        Width="940"
+        Height="650"
+        MinWidth="800"
+        MinHeight="540"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="TextBox.detail-value">
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10,8"/>
+        </Style>
+        <Style Selector="TextBox.detail-value.multiline">
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="16" RowDefinitions="Auto,*" RowSpacing="12">
+                <Border Grid.Row="0" Classes="tool-panel">
+                    <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
+                        <TextBlock Grid.Row="0" Classes="section-heading" Text="Target"/>
+                        <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto,*,Auto,Auto" ColumnSpacing="8">
+                            <Button Grid.Column="0" Click="OnPickWindowClick">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.scan}"
+                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                               FontWeight="Normal"/>
+                                    <TextBlock Text="Pick window"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="1" Click="OnPickControlClick">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.mouse_pointer_2}"
+                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                               FontWeight="Normal"/>
+                                    <TextBlock Text="Pick control"/>
+                                </StackPanel>
+                            </Button>
+                            <ComboBox Grid.Column="2"
+                                      ItemsSource="{Binding Windows}"
+                                      SelectedItem="{Binding SelectedListItem}"
+                                      PlaceholderText="Choose a visible window">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate x:DataType="vm:InspectWindowListItem">
+                                        <Grid ColumnDefinitions="20,*" ColumnSpacing="8">
+                                            <Grid Grid.Column="0" Width="20" Height="20">
+                                                <Image Source="{Binding Icon}"
+                                                       Width="20"
+                                                       Height="20"
+                                                       Stretch="Uniform"/>
+                                                <TextBlock IsVisible="{Binding !HasIcon}"
+                                                           Text="{x:Static theming:LucideIcons.app_window}"
+                                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                           FontWeight="Normal"
+                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"/>
+                                            </Grid>
+                                            <TextBlock Grid.Column="1"
+                                                       Text="{Binding DisplayName}"
+                                                       FontWeight="Normal"
+                                                       TextTrimming="CharacterEllipsis"
+                                                       VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <Button Grid.Column="3" Command="{Binding RefreshWindowListCommand}" ToolTip.Tip="Reload window list">
+                                <TextBlock Text="{x:Static theming:LucideIcons.list_restart}"
+                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                           FontWeight="Normal"/>
+                            </Button>
+                            <Button Grid.Column="4" Command="{Binding RefreshCommand}" IsEnabled="{Binding CanRefresh}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}"
+                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                               FontWeight="Normal"/>
+                                    <TextBlock Text="Refresh"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="1" ColumnDefinitions="300,*" ColumnSpacing="12">
+                    <StackPanel Grid.Column="0" Spacing="12">
+                        <Border Classes="tool-panel" Padding="16">
+                            <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="8">
+                                <TextBlock Grid.Row="0"
+                                           Text="{x:Static theming:LucideIcons.app_window}"
+                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                           FontWeight="Normal"
+                                           FontSize="36"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                <TextBlock Grid.Row="1"
+                                           Text="{Binding SelectedTitle}"
+                                           Classes="section-heading"
+                                           TextWrapping="Wrap"
+                                           MaxLines="3"/>
+                                <StackPanel Grid.Row="2" Spacing="5">
+                                    <TextBlock Text="{Binding SelectedSubtitle}"
+                                               FontWeight="Normal"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                               TextWrapping="Wrap"/>
+                                    <Border IsVisible="{Binding HasSelection}"
+                                            Background="{DynamicResource ShareX.Brush.Control.Background}"
+                                            BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                            BorderThickness="1"
+                                            CornerRadius="4"
+                                            Padding="7,3"
+                                            HorizontalAlignment="Left">
+                                        <TextBlock Text="{Binding SelectedType}" FontWeight="Normal"/>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+
+                        <Border Classes="tool-panel" Padding="16" IsVisible="{Binding IsTopLevelWindow}">
+                            <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
+                                <TextBlock Grid.Row="0" Classes="section-heading" Text="Window settings"/>
+                                <ToggleSwitch Grid.Row="1"
+                                              IsChecked="{Binding IsTopMost}"
+                                              OnContent="Always on top"
+                                              OffContent="Always on top"
+                                              FontWeight="Normal"/>
+                                <Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="6">
+                                    <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+                                        <TextBlock Classes="row-label" Text="Opacity"/>
+                                        <TextBlock Grid.Column="1"
+                                                   Text="{Binding Opacity, StringFormat={}{0:0}%}"
+                                                   FontWeight="Normal"/>
+                                    </Grid>
+                                    <Slider Grid.Row="1"
+                                            Minimum="10"
+                                            Maximum="100"
+                                            TickFrequency="10"
+                                            IsSnapToTickEnabled="True"
+                                            Value="{Binding Opacity}"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+
+                    <Border Grid.Column="1" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                        <Grid RowDefinitions="Auto,*">
+                            <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="12">
+                                <TextBlock Classes="section-heading" Text="Window information"/>
+                                <Button Grid.Column="1" Click="OnCopyClick" IsEnabled="{Binding HasSelection}">
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <TextBlock Text="{x:Static theming:LucideIcons.copy}"
+                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                   FontWeight="Normal"/>
+                                        <TextBlock Text="Copy all"/>
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Margin="12,0,12,12">
+                                <ScrollViewer IsVisible="{Binding HasSelection}"
+                                              VerticalScrollBarVisibility="Auto"
+                                              HorizontalScrollBarVisibility="Disabled">
+                                    <ItemsControl ItemsSource="{Binding Details}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate x:DataType="vm:InspectWindowProperty">
+                                                <Grid RowDefinitions="Auto,Auto" RowSpacing="5" Margin="0,0,0,10">
+                                                    <TextBlock Grid.Row="0" Classes="row-label" Text="{Binding Name}"/>
+                                                    <TextBox Grid.Row="1"
+                                                             Classes="detail-value"
+                                                             Classes.multiline="{Binding IsMultiline}"
+                                                             Text="{Binding Value}"
+                                                             Height="{Binding Height}"
+                                                             IsReadOnly="True"
+                                                             AcceptsReturn="True"
+                                                             TextWrapping="NoWrap"
+                                                             ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                                             ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </ScrollViewer>
+
+                                <StackPanel IsVisible="{Binding !HasSelection}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Spacing="10">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.scan_search}"
+                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                               FontWeight="Normal"
+                                               FontSize="48"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                               HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Pick a target to inspect its window properties"
+                                               FontWeight="Normal"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

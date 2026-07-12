@@ -64,6 +64,11 @@ public static class ToolsIntegration
             : new ImageViewerWindow(filePath));
     }
 
+    public static void ShowInspectWindowWindow()
+    {
+        Show(() => new InspectWindowWindow());
+    }
+
     public static void ShowImageSplitterWindow()
     {
         Show(() => new ImageSplitterWindow());
