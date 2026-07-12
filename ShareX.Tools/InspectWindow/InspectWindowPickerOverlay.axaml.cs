@@ -54,6 +54,13 @@ public partial class InspectWindowPickerOverlay : Window
 
     private void OnPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
+        if (e.InitialPressMouseButton == MouseButton.Right)
+        {
+            PickingCanceled?.Invoke(this, EventArgs.Empty);
+            e.Handled = true;
+            return;
+        }
+
         if (e.InitialPressMouseButton != MouseButton.Left)
         {
             return;
