@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,16 +23,16 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.MediaLib
+namespace ShareX.HelpersLib
 {
     public static class FFmpegGitHubDownloader
     {
-        public static async Task<DialogResult> DownloadFFmpeg(bool async, DownloaderForm.DownloaderInstallEventHandler installRequested)
+        public static async Task<DialogResult> DownloadFFmpeg(bool async,
+            DownloaderForm.DownloaderInstallEventHandler installRequested)
         {
             FFmpegUpdateChecker updateChecker = new FFmpegUpdateChecker("ShareX", "FFmpeg");
             string url = await updateChecker.GetLatestDownloadURL(true);
@@ -50,7 +50,8 @@ namespace ShareX.MediaLib
         {
             try
             {
-                ZipManager.Extract(archivePath, extractPath, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 200_000_000);
+                ZipManager.Extract(archivePath, extractPath, false,
+                    entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 200_000_000);
                 return true;
             }
             catch (Exception e)

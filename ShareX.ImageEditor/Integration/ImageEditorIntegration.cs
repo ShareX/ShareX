@@ -71,19 +71,19 @@ namespace ShareX.ImageEditor.Integration
         }
 
         public static SKBitmap? ShowEditorDialog(ImageEditorOptions options, ImageEditorCallbacks? events = null,
-            bool taskMode = false, string? imageFilePath = null)
+            bool taskMode = false, string? imageFilePath = null, bool openBackgroundPanel = false)
         {
-            return ShowEditorDialog(null, options, events, taskMode, imageFilePath);
+            return ShowEditorDialog(null, options, events, taskMode, imageFilePath, openBackgroundPanel);
         }
 
         public static SKBitmap? ShowEditorDialog(SKBitmap? imageBitmap, ImageEditorOptions options, ImageEditorCallbacks? events = null,
-            bool taskMode = false, string? imageFilePath = null)
+            bool taskMode = false, string? imageFilePath = null, bool openBackgroundPanel = false)
         {
-            return ShowEditorDialogCore(imageBitmap, options, events, taskMode, imageFilePath);
+            return ShowEditorDialogCore(imageBitmap, options, events, taskMode, imageFilePath, openBackgroundPanel);
         }
 
         private static SKBitmap? ShowEditorDialogCore(SKBitmap? imageBitmap, ImageEditorOptions options, ImageEditorCallbacks? events,
-            bool taskMode, string? imageFilePath)
+            bool taskMode, string? imageFilePath, bool openBackgroundPanel)
         {
             Initialize();
 
@@ -113,6 +113,11 @@ namespace ShareX.ImageEditor.Integration
                     vm.UseContinueWorkflow = taskMode;
                     vm.ShowBottomToolbar = true;
                     vm.ShowStartScreen = !taskMode;
+
+                    if (openBackgroundPanel)
+                    {
+                        vm.IsSettingsPanelOpen = true;
+                    }
                 }
 
                 SetupEvents(window, events);

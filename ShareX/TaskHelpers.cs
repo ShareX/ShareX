@@ -29,7 +29,6 @@ using ShareX.Tools;
 using ShareX.Tools.Integration;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEffectsLib;
-using ShareX.MediaLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -1460,7 +1459,8 @@ namespace ShareX
             return null;
         }
 
-        private static Bitmap AnnotateImageModern(Bitmap bmp, string filePath, TaskSettings taskSettings, bool taskMode = false)
+        private static Bitmap AnnotateImageModern(Bitmap bmp, string filePath, TaskSettings taskSettings, bool taskMode = false,
+            bool openBackgroundPanel = false)
         {
             Bitmap bmpResult = null;
 
@@ -1522,12 +1522,12 @@ namespace ShareX
             {
                 using SKBitmap skBitmap = GdiBitmapToSkBitmap(bmp);
                 skBitmapResult = ImageEditorIntegration.ShowEditorDialog(skBitmap, taskSettings.ToolsSettingsReference.ImageEditorOptions,
-                    events, taskMode, filePath);
+                    events, taskMode, filePath, openBackgroundPanel);
             }
             else
             {
                 skBitmapResult = ImageEditorIntegration.ShowEditorDialog(taskSettings.ToolsSettingsReference.ImageEditorOptions,
-                    events, taskMode, filePath);
+                    events, taskMode, filePath, openBackgroundPanel);
             }
 
             if (skBitmapResult != null)
@@ -1654,14 +1654,22 @@ namespace ShareX
 
         public static void OpenImageBeautifier(string filePath, TaskSettings taskSettings = null)
         {
-            if (!string.IsNullOrEmpty(filePath))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                ImageBeautifierForm imageBeautifierForm = new ImageBeautifierForm(filePath, taskSettings.ToolsSettingsReference.ImageBeautifierOptions);
-                imageBeautifierForm.UploadImageRequested += output => MainFormUploadImage(output, taskSettings);
-                imageBeautifierForm.PrintImageRequested += MainFormPrintImage;
-                imageBeautifierForm.Show();
+                Bitmap bmp = ImageHelpers.LoadImage(filePath);
+                ThreadWorker worker = new ThreadWorker();
+
+                worker.DoWork += () =>
+                {
+                    using (bmp)
+                    {
+                        AnnotateImageModern(bmp, filePath, taskSettings, openBackgroundPanel: true)?.Dispose();
+                    }
+                };
+
+                worker.Start(ApartmentState.STA);
             }
         }
 
@@ -1671,13 +1679,13 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                using (ImageBeautifierForm imageBeautifierForm = new ImageBeautifierForm(bmp, taskSettings.ToolsSettingsReference.ImageBeautifierOptions))
+                try
                 {
-                    imageBeautifierForm.UploadImageRequested += output => MainFormUploadImage(output, taskSettings);
-                    imageBeautifierForm.PrintImageRequested += MainFormPrintImage;
-                    imageBeautifierForm.ShowDialog();
-
-                    return (Bitmap)imageBeautifierForm.PreviewImage.Clone();
+                    return AnnotateImageModern(bmp, null, taskSettings, taskMode: true, openBackgroundPanel: true);
+                }
+                finally
+                {
+                    bmp.Dispose();
                 }
             }
 

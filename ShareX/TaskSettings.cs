@@ -27,7 +27,6 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEffectsLib;
-using ShareX.MediaLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.Tools;
 using ShareX.UploadersLib;
@@ -459,7 +458,6 @@ namespace ShareX
         public string ScreenColorPickerInfoText = "RGB: $r255, $g255, $b255$nHex: $hex$nX: $x Y: $y";
         public PinToScreenOptions PinToScreenOptions = new PinToScreenOptions();
         public IndexerSettings IndexerSettings = new IndexerSettings();
-        public ImageBeautifierOptions ImageBeautifierOptions = new ImageBeautifierOptions();
         public ImageCombinerOptions ImageCombinerOptions = new ImageCombinerOptions();
         public VideoConverterOptions VideoConverterOptions = new VideoConverterOptions();
         public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
