@@ -1767,10 +1767,7 @@ namespace ShareX
 
         public static void OpenMonitorTest()
         {
-            using (MonitorTestForm monitorTestForm = new MonitorTestForm())
-            {
-                monitorTestForm.ShowDialog();
-            }
+            ToolsIntegration.ShowMonitorTestWindow();
         }
 
         public static void RunShareXAsAdmin(string arguments = null)

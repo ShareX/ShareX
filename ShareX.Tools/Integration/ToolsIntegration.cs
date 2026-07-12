@@ -69,6 +69,11 @@ public static class ToolsIntegration
         Show(() => new InspectWindowWindow());
     }
 
+    public static void ShowMonitorTestWindow()
+    {
+        Show(() => new MonitorTestWindow());
+    }
+
     public static void ShowImageSplitterWindow()
     {
         Show(() => new ImageSplitterWindow());

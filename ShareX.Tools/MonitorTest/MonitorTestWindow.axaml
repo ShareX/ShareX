@@ -1,0 +1,191 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:controls="using:ShareX.Tools.Controls"
+        xmlns:cp="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.ColorPicker"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="760"
+        x:Class="ShareX.Tools.MonitorTestWindow"
+        x:DataType="vm:MonitorTestViewModel"
+        Title="ShareX - Monitor Test"
+        WindowDecorations="None"
+        ShowInTaskbar="False"
+        CanResize="False"
+        Topmost="True">
+
+    <Window.Resources>
+        <vm:MonitorTestEnumDisplayConverter x:Key="EnumDisplayConverter"/>
+    </Window.Resources>
+
+    <Window.Styles>
+        <Style Selector="Button.mode-button">
+            <Setter Property="MinWidth" Value="98"/>
+        </Style>
+        <Style Selector="Button.color-button">
+            <Setter Property="MinWidth" Value="112"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="Black" PointerReleased="OnSurfacePointerReleased" PointerWheelChanged="OnSurfacePointerWheelChanged">
+            <controls:MonitorTestPatternControl Mode="{Binding SelectedMode}"
+                                                GrayValue="{Binding GrayValue}"
+                                                Red="{Binding Red}"
+                                                Green="{Binding Green}"
+                                                Blue="{Binding Blue}"
+                                                GradientStart="{Binding GradientStart}"
+                                                GradientEnd="{Binding GradientEnd}"
+                                                GradientDirection="{Binding GradientDirection}"
+                                                Pattern="{Binding SelectedPattern}"
+                                                PatternSize="{Binding PatternSize}"
+                                                MotionDirection="{Binding MotionDirection}"
+                                                MotionSpeed="{Binding MotionSpeed}"/>
+
+            <Border Classes="tool-panel"
+                    IsVisible="{Binding ControlsVisible}"
+                    Width="760"
+                    Padding="12"
+                    Margin="16"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    PointerPressed="OnControlsPointerPressed"
+                    PointerReleased="OnControlsPointerReleased"
+                    PointerWheelChanged="OnControlsPointerWheelChanged">
+                <Grid RowDefinitions="Auto,Auto" RowSpacing="12">
+                    <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,*,Auto" ColumnSpacing="8">
+                        <Button Grid.Column="0" Classes="mode-button" Classes.active="{Binding IsGrayscale}" Click="OnGrayscaleClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Text="{x:Static theming:LucideIcons.contrast}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                <TextBlock Text="Grayscale"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="1" Classes="mode-button" Classes.active="{Binding IsRgb}" Click="OnRgbClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Text="{x:Static theming:LucideIcons.palette}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                <TextBlock Text="RGB"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="2" Classes="mode-button" Classes.active="{Binding IsGradient}" Click="OnGradientClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Text="{x:Static theming:LucideIcons.blend}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                <TextBlock Text="Gradient"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="3" Classes="mode-button" Classes.active="{Binding IsPattern}" Click="OnPatternClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Text="{x:Static theming:LucideIcons.grid_2x2}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                <TextBlock Text="Pattern"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="4" Classes="mode-button" Classes.active="{Binding IsMotion}" Click="OnMotionClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Text="{x:Static theming:LucideIcons.move_horizontal}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                <TextBlock Text="Motion"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="6" Click="OnCloseClick" ToolTip.Tip="Close">
+                            <TextBlock Text="{x:Static theming:LucideIcons.x}"
+                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                       FontWeight="Normal"/>
+                        </Button>
+                    </Grid>
+
+                    <Grid Grid.Row="1" MinHeight="88">
+                        <Grid IsVisible="{Binding IsGrayscale}" ColumnDefinitions="90,*,48" ColumnSpacing="10" VerticalAlignment="Center">
+                            <TextBlock Classes="row-label" Text="Brightness"/>
+                            <Slider Grid.Column="1" Minimum="0" Maximum="255" Value="{Binding GrayValue}"/>
+                            <TextBlock Grid.Column="2" Text="{Binding GrayValue, StringFormat={}{0:0}}" FontWeight="Normal" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </Grid>
+
+                        <Grid IsVisible="{Binding IsRgb}" ColumnDefinitions="58,*,48,Auto" ColumnSpacing="10" RowDefinitions="Auto,Auto,Auto" RowSpacing="6">
+                            <TextBlock Grid.Row="0" Classes="row-label" Text="Red"/>
+                            <Slider Grid.Row="0" Grid.Column="1" Minimum="0" Maximum="255" Value="{Binding Red}"/>
+                            <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding Red, StringFormat={}{0:0}}" FontWeight="Normal" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Row="1" Classes="row-label" Text="Green"/>
+                            <Slider Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="255" Value="{Binding Green}"/>
+                            <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Green, StringFormat={}{0:0}}" FontWeight="Normal" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Row="2" Classes="row-label" Text="Blue"/>
+                            <Slider Grid.Row="2" Grid.Column="1" Minimum="0" Maximum="255" Value="{Binding Blue}"/>
+                            <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Blue, StringFormat={}{0:0}}" FontWeight="Normal" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <Button Grid.Row="0" Grid.RowSpan="3" Grid.Column="3" Classes="color-button">
+                                <Button.Flyout>
+                                    <Flyout Placement="Bottom">
+                                        <cp:ColorView Width="320" Height="320" Color="{Binding RgbColor, Mode=TwoWay}"/>
+                                    </Flyout>
+                                </Button.Flyout>
+                                <Grid ColumnDefinitions="24,*" ColumnSpacing="8">
+                                    <Border Width="24" Height="24" CornerRadius="4" Background="{Binding RgbBrush}" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding RgbText}" FontWeight="Normal" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+                        </Grid>
+
+                        <Grid IsVisible="{Binding IsGradient}" ColumnDefinitions="90,*,Auto,Auto" ColumnSpacing="10" VerticalAlignment="Center">
+                            <TextBlock Classes="row-label" Text="Direction"/>
+                            <ComboBox Grid.Column="1" ItemsSource="{x:Static vm:MonitorTestViewModel.GradientDirections}" SelectedItem="{Binding GradientDirection}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource EnumDisplayConverter}}" FontWeight="Normal"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <Button Grid.Column="2" Classes="color-button">
+                                <Button.Flyout>
+                                    <Flyout Placement="Bottom">
+                                        <cp:ColorView Width="320" Height="320" Color="{Binding GradientStart, Mode=TwoWay}"/>
+                                    </Flyout>
+                                </Button.Flyout>
+                                <Grid ColumnDefinitions="24,*" ColumnSpacing="8">
+                                    <Border Width="24" Height="24" CornerRadius="4" Background="{Binding GradientStartBrush}" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding GradientStartText}" FontWeight="Normal" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+                            <Button Grid.Column="3" Classes="color-button">
+                                <Button.Flyout>
+                                    <Flyout Placement="Bottom">
+                                        <cp:ColorView Width="320" Height="320" Color="{Binding GradientEnd, Mode=TwoWay}"/>
+                                    </Flyout>
+                                </Button.Flyout>
+                                <Grid ColumnDefinitions="24,*" ColumnSpacing="8">
+                                    <Border Width="24" Height="24" CornerRadius="4" Background="{Binding GradientEndBrush}" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding GradientEndText}" FontWeight="Normal" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+                        </Grid>
+
+                        <Grid IsVisible="{Binding IsPattern}" ColumnDefinitions="90,220,90,*,48" ColumnSpacing="10" VerticalAlignment="Center">
+                            <TextBlock Classes="row-label" Text="Pattern"/>
+                            <ComboBox Grid.Column="1" ItemsSource="{x:Static vm:MonitorTestViewModel.Patterns}" SelectedItem="{Binding SelectedPattern}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource EnumDisplayConverter}}" FontWeight="Normal"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <TextBlock Grid.Column="2" Classes="row-label" Text="Cell size"/>
+                            <Slider Grid.Column="3" Minimum="1" Maximum="100" Value="{Binding PatternSize}"/>
+                            <TextBlock Grid.Column="4" Text="{Binding PatternSize, StringFormat={}{0:0}}" FontWeight="Normal" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </Grid>
+
+                        <Grid IsVisible="{Binding IsMotion}" ColumnDefinitions="90,220,90,*,70" ColumnSpacing="10" VerticalAlignment="Center">
+                            <TextBlock Classes="row-label" Text="Direction"/>
+                            <ComboBox Grid.Column="1" ItemsSource="{x:Static vm:MonitorTestViewModel.MotionDirections}" SelectedItem="{Binding MotionDirection}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource EnumDisplayConverter}}" FontWeight="Normal"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <TextBlock Grid.Column="2" Classes="row-label" Text="Speed"/>
+                            <Slider Grid.Column="3" Minimum="100" Maximum="2000" Value="{Binding MotionSpeed}"/>
+                            <TextBlock Grid.Column="4" Text="{Binding MotionSpeed, StringFormat={}{0:0} px/s}" FontWeight="Normal" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
