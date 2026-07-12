@@ -20,14 +20,11 @@
         <Grid Background="#01000000">
             <controls:RulerOverlayControl x:Name="RulerOverlay"/>
 
-            <Border Classes="tool-panel" Padding="16,10" Margin="16"
+            <Border x:Name="InfoPanel" Classes="tool-panel" Padding="16,10" Margin="16"
                     HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Grid RowDefinitions="Auto,Auto" RowSpacing="3">
                     <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Center">
                         <TextBlock Text="{Binding PositionText}" FontWeight="Normal" VerticalAlignment="Center"/>
-                        <Border Width="1" Height="18" Background="{DynamicResource ShareX.Brush.Border}"/>
-                        <TextBlock Text="{Binding SizeText}" FontSize="17" FontWeight="SemiBold"
-                                   Foreground="{DynamicResource ShareX.Brush.Accent}" VerticalAlignment="Center"/>
                     </StackPanel>
                     <TextBlock Grid.Row="1" Text="{Binding DetailsText}" FontWeight="Normal"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
@@ -35,29 +32,6 @@
                 </Grid>
             </Border>
 
-            <Border Classes="tool-panel" Padding="8" Margin="16"
-                    HorizontalAlignment="Right" VerticalAlignment="Top">
-                <StackPanel Orientation="Horizontal" Spacing="6">
-                    <Button Click="OnResetClick" IsEnabled="{Binding HasMeasurement}" ToolTip.Tip="Reset">
-                        <TextBlock Text="{x:Static theming:LucideIcons.rotate_ccw}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                    </Button>
-                    <Button Click="OnCopyClick" IsEnabled="{Binding HasMeasurement}" ToolTip.Tip="Copy measurements">
-                        <TextBlock Text="{x:Static theming:LucideIcons.copy}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                    </Button>
-                    <Button Click="OnCloseClick" ToolTip.Tip="Close">
-                        <TextBlock Text="{x:Static theming:LucideIcons.x}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                    </Button>
-                </StackPanel>
-            </Border>
-
-            <Border Classes="tool-panel" Padding="12,7" Margin="16"
-                    HorizontalAlignment="Center" VerticalAlignment="Bottom">
-                <TextBlock FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                           Text="Drag to measure  •  Drag inside to move  •  Drag handles to resize  •  Hold Shift for a square  •  Arrow keys nudge  •  Esc closes"/>
-            </Border>
         </Grid>
     </ThemeVariantScope>
 </Window>

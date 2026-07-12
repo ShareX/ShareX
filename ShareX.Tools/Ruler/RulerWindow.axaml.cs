@@ -17,6 +17,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Input.Platform;
 using Avalonia.Interactivity;
+using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.Tools.Controls;
@@ -27,6 +28,9 @@ public partial class RulerWindow : Window
 {
     private readonly RulerViewModel _viewModel = new();
     private RulerOverlayControl? _overlay;
+    private Border? _infoPanel;
+    private Point? _pointerPosition;
+    private Rect _selection;
 
     public RulerWindow()
     {
@@ -34,31 +38,33 @@ public partial class RulerWindow : Window
         AvaloniaXamlLoader.Load(this);
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         _overlay = this.FindControl<RulerOverlayControl>("RulerOverlay");
+        _infoPanel = this.FindControl<Border>("InfoPanel");
         if (_overlay != null)
         {
             _overlay.MeasurementChanged += OnMeasurementChanged;
         }
 
         KeyDown += OnKeyDown;
-        AddHandler(PointerPressedEvent, OnWindowPointerPressed, RoutingStrategies.Tunnel);
+        AddHandler(PointerReleasedEvent, OnWindowPointerReleased, RoutingStrategies.Tunnel);
+        AddHandler(PointerMovedEvent, OnWindowPointerMoved, RoutingStrategies.Tunnel);
         Opened += (_, _) => _overlay?.Focus();
     }
 
     private void OnMeasurementChanged(object? sender, Rect selection)
     {
+        _selection = selection;
         if (selection.Width <= 0 && selection.Height <= 0)
         {
             _viewModel.Clear();
+            UpdateInfoPanelPlacement();
             return;
         }
 
         _viewModel.Update(selection, RenderScaling, Position);
+        UpdateInfoPanelPlacement();
     }
 
-    private void OnResetClick(object? sender, RoutedEventArgs e) => _overlay?.Clear();
-    private void OnCloseClick(object? sender, RoutedEventArgs e) => Close();
-
-    private async void OnCopyClick(object? sender, RoutedEventArgs e)
+    private async Task CopyMeasurementsAsync()
     {
         if (_viewModel.HasMeasurement && Clipboard != null)
         {
@@ -67,13 +73,44 @@ public partial class RulerWindow : Window
         _overlay?.Focus();
     }
 
-    private void OnWindowPointerPressed(object? sender, PointerPressedEventArgs e)
+    private void OnWindowPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
-        if (e.GetCurrentPoint(this).Properties.IsRightButtonPressed)
+        if (e.InitialPressMouseButton == MouseButton.Right)
         {
             Close();
             e.Handled = true;
         }
+    }
+
+    private void OnWindowPointerMoved(object? sender, PointerEventArgs e)
+    {
+        if (_overlay != null)
+        {
+            _pointerPosition = e.GetPosition(_overlay);
+            UpdateInfoPanelPlacement();
+        }
+    }
+
+    private void UpdateInfoPanelPlacement()
+    {
+        if (_overlay == null || _infoPanel == null || _infoPanel.Bounds.Width <= 0)
+        {
+            return;
+        }
+
+        const double margin = 16;
+        Rect topPanelBounds = new(
+            Math.Max(0, (_overlay.Bounds.Width - _infoPanel.Bounds.Width) / 2),
+            margin,
+            _infoPanel.Bounds.Width,
+            _infoPanel.Bounds.Height);
+        Rect collisionBounds = topPanelBounds.Inflate(10);
+        bool pointerIntersects = _pointerPosition is Point pointer && collisionBounds.Contains(pointer);
+        bool rulerIntersects = (_selection.Width > 0 || _selection.Height > 0) && collisionBounds.Intersects(_selection);
+
+        _infoPanel.VerticalAlignment = pointerIntersects || rulerIntersects
+            ? VerticalAlignment.Bottom
+            : VerticalAlignment.Top;
     }
 
     private void OnKeyDown(object? sender, KeyEventArgs e)
@@ -102,7 +139,7 @@ public partial class RulerWindow : Window
                 e.Handled = true;
                 break;
             case Key.C when e.KeyModifiers.HasFlag(KeyModifiers.Control):
-                OnCopyClick(this, new RoutedEventArgs());
+                _ = CopyMeasurementsAsync();
                 e.Handled = true;
                 break;
             case Key.Escape:
