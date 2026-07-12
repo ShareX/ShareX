@@ -18,19 +18,11 @@ using System.Collections.ObjectModel;
 
 namespace ShareX.Tools;
 
-public sealed class BorderlessWindowOptions
-{
-    public bool RememberWindowTitle { get; set; } = true;
-    public string WindowTitle { get; set; } = string.Empty;
-    public bool AutoCloseWindow { get; set; }
-    public bool ExcludeTaskbarArea { get; set; }
-}
-
 public sealed partial class BorderlessWindowViewModel : ViewModelBase, IDisposable
 {
-    private readonly BorderlessWindowOptions _options;
+    private readonly BorderlessWindowSettings _options;
     private readonly Func<string, bool, bool> _toggleWindow;
-    private readonly Action<BorderlessWindowOptions>? _settingsChanged;
+    private readonly Action<BorderlessWindowSettings>? _settingsChanged;
     private readonly Action? _playNotificationSound;
     private bool _updatingWindowList;
     private IntPtr _ignoredWindowHandle;
@@ -61,9 +53,9 @@ public sealed partial class BorderlessWindowViewModel : ViewModelBase, IDisposab
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
 
     public BorderlessWindowViewModel(
-        BorderlessWindowOptions options,
+        BorderlessWindowSettings options,
         Func<string, bool, bool> toggleWindow,
-        Action<BorderlessWindowOptions>? settingsChanged = null,
+        Action<BorderlessWindowSettings>? settingsChanged = null,
         Action? playNotificationSound = null)
     {
         _options = options;

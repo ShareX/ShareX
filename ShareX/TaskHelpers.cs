@@ -1213,34 +1213,10 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             BorderlessWindowSettings settings = taskSettings.ToolsSettingsReference.BorderlessWindowSettings;
-            BorderlessWindowOptions options = new BorderlessWindowOptions
-            {
-                RememberWindowTitle = settings.RememberWindowTitle,
-                WindowTitle = settings.WindowTitle ?? string.Empty,
-                AutoCloseWindow = settings.AutoCloseWindow,
-                ExcludeTaskbarArea = settings.ExcludeTaskbarArea
-            };
 
             ToolsIntegration.ShowBorderlessWindow(
-                options,
-                (windowTitle, excludeTaskbarArea) =>
-                {
-                    IntPtr handle = NativeMethods.SearchWindow(windowTitle);
-                    if (handle == IntPtr.Zero)
-                    {
-                        return false;
-                    }
-
-                    BorderlessWindowManager.ToggleBorderlessWindow(handle, excludeTaskbarArea);
-                    return true;
-                },
-                updatedOptions =>
-                {
-                    settings.RememberWindowTitle = updatedOptions.RememberWindowTitle;
-                    settings.WindowTitle = updatedOptions.WindowTitle;
-                    settings.AutoCloseWindow = updatedOptions.AutoCloseWindow;
-                    settings.ExcludeTaskbarArea = updatedOptions.ExcludeTaskbarArea;
-                },
+                settings,
+                BorderlessWindowManager.ToggleBorderlessWindow,
                 playNotificationSound: () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
         }
 
@@ -2014,27 +1990,12 @@ namespace ShareX
                         using MemoryStream imageStream = new MemoryStream();
                         bmp.Save(imageStream, ImageFormat.Png);
 
-                        OCRWindowOptions windowOptions = new OCRWindowOptions
-                        {
-                            Language = options.Language,
-                            ScaleFactor = options.ScaleFactor,
-                            SingleLine = options.SingleLine,
-                            AutoCopy = options.AutoCopy,
-                            CloseWindowAfterOpeningServiceLink = options.CloseWindowAfterOpeningServiceLink,
-                            SelectedServiceLink = options.SelectedServiceLink,
-                            ServiceLinks = options.ServiceLinks
-                                .Select(x => new OCRServiceLinkOption(x.Name, x.URL))
-                                .ToList()
-                        };
-
-                        OCRLanguageOption[] languages = OCRHelper.AvailableLanguages
-                            .Select(x => new OCRLanguageOption(x.DisplayName, x.LanguageTag))
-                            .ToArray();
+                        OCRLanguageOption[] languages = OCRHelper.AvailableLanguages;
 
                         string result = await ToolsIntegration.ShowOCRWindowAsync(
                             imageStream.ToArray(),
                             languages,
-                            windowOptions,
+                            options,
                             async (imageData, language, scaleFactor, singleLine) =>
                             {
                                 using Bitmap source = ImageHelpers.ByteArrayToBitmap(imageData);
@@ -2052,19 +2013,7 @@ namespace ShareX
                                 region.Save(regionStream, ImageFormat.Png);
                                 return Task.FromResult(regionStream.ToArray());
                             },
-                            updatedOptions =>
-                            {
-                                options.Language = updatedOptions.Language;
-                                options.ScaleFactor = updatedOptions.ScaleFactor;
-                                options.SingleLine = updatedOptions.SingleLine;
-                                options.AutoCopy = updatedOptions.AutoCopy;
-                                options.CloseWindowAfterOpeningServiceLink = updatedOptions.CloseWindowAfterOpeningServiceLink;
-                                options.SelectedServiceLink = updatedOptions.SelectedServiceLink;
-                                options.ServiceLinks = updatedOptions.ServiceLinks
-                                    .Select(x => new ServiceLink(x.Name, x.Url))
-                                    .ToList();
-                            },
-                            () => URLHelpers.OpenURL(Links.DocsOCR));
+                            openHelp: () => URLHelpers.OpenURL(Links.DocsOCR));
 
                         if (!string.IsNullOrEmpty(result) && !string.IsNullOrEmpty(filePath))
                         {

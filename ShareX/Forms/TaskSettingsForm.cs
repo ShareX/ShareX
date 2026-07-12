@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
+using ShareX.Tools;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -358,7 +359,7 @@ namespace ShareX
 
             try
             {
-                OCRLanguage[] languages = OCRHelper.AvailableLanguages.OrderBy(x => x.DisplayName).ToArray();
+                OCRLanguageOption[] languages = OCRHelper.AvailableLanguages.OrderBy(x => x.DisplayName).ToArray();
 
                 if (languages.Length > 0)
                 {
@@ -1390,7 +1391,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                TaskSettings.CaptureSettings.OCROptions.Language = ((OCRLanguage)cbCaptureOCRDefaultLanguage.SelectedItem).LanguageTag;
+                TaskSettings.CaptureSettings.OCROptions.Language = ((OCRLanguageOption)cbCaptureOCRDefaultLanguage.SelectedItem).LanguageTag;
             }
         }
 

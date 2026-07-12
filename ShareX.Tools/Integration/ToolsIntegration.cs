@@ -52,9 +52,9 @@ public static class ToolsIntegration
     }
 
     public static void ShowBorderlessWindow(
-        BorderlessWindowOptions options,
+        BorderlessWindowSettings options,
         Func<string, bool, bool> toggleWindow,
-        Action<BorderlessWindowOptions>? settingsChanged = null,
+        Action<BorderlessWindowSettings>? settingsChanged = null,
         Action? playNotificationSound = null)
     {
         Show(() => new BorderlessWindowWindow(options, toggleWindow, settingsChanged, playNotificationSound));
@@ -101,10 +101,10 @@ public static class ToolsIntegration
     public static Task<string?> ShowOCRWindowAsync(
         byte[] imageData,
         IReadOnlyList<OCRLanguageOption> languages,
-        OCRWindowOptions options,
+        OCROptions options,
         OCRRecognitionHandler recognize,
         OCRRegionCaptureHandler selectRegion,
-        Action<OCRWindowOptions>? optionsChanged = null,
+        Action<OCROptions>? optionsChanged = null,
         Action? openHelp = null)
     {
         AvaloniaBootstrapper.EnsureInitialized();

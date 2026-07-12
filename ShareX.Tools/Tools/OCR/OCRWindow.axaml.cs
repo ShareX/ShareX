@@ -28,17 +28,17 @@ public partial class OCRWindow : Window
     public string Result => _viewModel.Result;
 
     public OCRWindow()
-        : this([], [], new OCRWindowOptions(), (_, _, _, _) => Task.FromResult(string.Empty), () => Task.FromResult<byte[]?>(null))
+        : this([], [], new OCROptions(), (_, _, _, _) => Task.FromResult(string.Empty), () => Task.FromResult<byte[]?>(null))
     {
     }
 
     public OCRWindow(
         byte[] imageData,
         IEnumerable<OCRLanguageOption> languages,
-        OCRWindowOptions options,
+        OCROptions options,
         OCRRecognitionHandler recognize,
         OCRRegionCaptureHandler selectRegion,
-        Action<OCRWindowOptions>? optionsChanged = null,
+        Action<OCROptions>? optionsChanged = null,
         Action? openHelp = null)
     {
         _selectRegion = selectRegion;

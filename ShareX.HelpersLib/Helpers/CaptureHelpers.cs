@@ -42,6 +42,12 @@ namespace ShareX.HelpersLib
             return Screen.AllScreens.Select(x => x.WorkingArea).Combine();
         }
 
+        public static Rectangle GetScreenBounds(IntPtr handle, bool workingArea)
+        {
+            Screen screen = Screen.FromHandle(handle);
+            return workingArea ? screen.WorkingArea : screen.Bounds;
+        }
+
         private static Rectangle GetScreenBounds2()
         {
             Point topLeft = Point.Empty;

@@ -21,7 +21,10 @@ using System.ComponentModel;
 
 namespace ShareX.Tools;
 
-public sealed record OCRLanguageOption(string DisplayName, string LanguageTag);
+public sealed record OCRLanguageOption(string DisplayName, string LanguageTag)
+{
+    public override string ToString() => DisplayName;
+}
 
 public sealed partial class OCRServiceLinkOption : ObservableObject
 {
@@ -30,6 +33,10 @@ public sealed partial class OCRServiceLinkOption : ObservableObject
 
     [ObservableProperty]
     private string _url;
+
+    public OCRServiceLinkOption() : this(string.Empty, string.Empty)
+    {
+    }
 
     public OCRServiceLinkOption(string name, string url)
     {
@@ -50,35 +57,14 @@ public sealed partial class OCRServiceLinkOption : ObservableObject
     public override string ToString() => Name;
 }
 
-public sealed class OCRWindowOptions
-{
-    public string Language { get; set; } = "en";
-    public float ScaleFactor { get; set; } = 2f;
-    public bool SingleLine { get; set; }
-    public bool AutoCopy { get; set; }
-    public bool CloseWindowAfterOpeningServiceLink { get; set; }
-    public int SelectedServiceLink { get; set; }
-    public List<OCRServiceLinkOption> ServiceLinks { get; set; } = CreateDefaultServiceLinks();
-
-    public static List<OCRServiceLinkOption> CreateDefaultServiceLinks() =>
-    [
-        new("Google Translate", "https://translate.google.com/?sl=auto&tl=en&text={0}&op=translate"),
-        new("Google Search", "https://www.google.com/search?q={0}"),
-        new("Google Images", "https://www.google.com/search?q={0}&tbm=isch"),
-        new("Bing", "https://www.bing.com/search?q={0}"),
-        new("DuckDuckGo", "https://duckduckgo.com/?q={0}"),
-        new("DeepL", "https://www.deepl.com/translator#auto/en/{0}")
-    ];
-}
-
 public delegate Task<string> OCRRecognitionHandler(byte[] imageData, string languageTag, float scaleFactor, bool singleLine);
 public delegate Task<byte[]?> OCRRegionCaptureHandler();
 
 public sealed partial class OCRViewModel : ViewModelBase, IDisposable
 {
-    private readonly OCRWindowOptions _options;
+    private readonly OCROptions _options;
     private readonly OCRRecognitionHandler _recognize;
-    private readonly Action<OCRWindowOptions>? _optionsChanged;
+    private readonly Action<OCROptions>? _optionsChanged;
     private readonly Action? _openHelp;
     private byte[] _sourceImageData;
     private bool _loaded;
@@ -143,9 +129,9 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     public OCRViewModel(
         byte[] sourceImageData,
         IEnumerable<OCRLanguageOption> languages,
-        OCRWindowOptions options,
+        OCROptions options,
         OCRRecognitionHandler recognize,
-        Action<OCRWindowOptions>? optionsChanged = null,
+        Action<OCROptions>? optionsChanged = null,
         Action? openHelp = null)
     {
         _sourceImageData = sourceImageData;
@@ -305,7 +291,7 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
             service.PropertyChanged -= OnServicePropertyChanged;
         }
         ServiceLinks.Clear();
-        foreach (OCRServiceLinkOption service in OCRWindowOptions.CreateDefaultServiceLinks())
+        foreach (OCRServiceLinkOption service in OCROptions.DefaultServiceLinks)
         {
             AddService(service);
         }

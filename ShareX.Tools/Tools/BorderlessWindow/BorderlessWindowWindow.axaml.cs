@@ -22,14 +22,14 @@ public partial class BorderlessWindowWindow : Window
 {
     private readonly BorderlessWindowViewModel _viewModel;
 
-    public BorderlessWindowWindow() : this(new BorderlessWindowOptions(), (_, _) => false)
+    public BorderlessWindowWindow() : this(new BorderlessWindowSettings(), (_, _) => false)
     {
     }
 
     public BorderlessWindowWindow(
-        BorderlessWindowOptions options,
+        BorderlessWindowSettings options,
         Func<string, bool, bool> toggleWindow,
-        Action<BorderlessWindowOptions>? settingsChanged = null,
+        Action<BorderlessWindowSettings>? settingsChanged = null,
         Action? playNotificationSound = null)
     {
         _viewModel = new BorderlessWindowViewModel(options, toggleWindow, settingsChanged, playNotificationSound);
