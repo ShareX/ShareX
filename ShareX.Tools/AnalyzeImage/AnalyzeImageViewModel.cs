@@ -131,9 +131,9 @@ public sealed partial class AnalyzeImageViewModel : ViewModelBase, IDisposable
         }
 
         string? filePath = await SelectImageRequested();
-        if (!string.IsNullOrWhiteSpace(filePath))
+        if (!string.IsNullOrWhiteSpace(filePath) && LoadImage(filePath))
         {
-            LoadImage(filePath);
+            await AnalyzeAsync();
         }
     }
 

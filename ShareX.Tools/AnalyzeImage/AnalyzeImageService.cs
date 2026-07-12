@@ -47,7 +47,7 @@ public sealed class AnalyzeImageService
             return new AnalyzeImageConnectionResult(false, error ?? "Unable to create request.");
         }
 
-        using HttpClient client = HttpClientFactory.Create();
+        HttpClient client = HttpClientFactory.Create();
         using HttpResponseMessage response = await client.SendAsync(request);
         string content = await response.Content.ReadAsStringAsync();
 
@@ -78,7 +78,7 @@ public sealed class AnalyzeImageService
             throw new InvalidOperationException(error);
         }
 
-        using HttpClient client = HttpClientFactory.Create();
+        HttpClient client = HttpClientFactory.Create();
         using HttpResponseMessage response = await client.SendAsync(request);
         string content = await response.Content.ReadAsStringAsync();
         response.EnsureSuccessStatusCode();

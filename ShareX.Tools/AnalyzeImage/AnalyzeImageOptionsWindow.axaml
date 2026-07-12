@@ -31,7 +31,7 @@
                 </Border>
 
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                    <StackPanel Spacing="12" Margin="0,0,10,0">
+                    <StackPanel Spacing="12">
                         <Border Classes="tool-panel" IsVisible="{Binding IsOpenAI}">
                             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
                                 <TextBlock Classes="section-heading" Text="OpenAI"/>
