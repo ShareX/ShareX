@@ -23,9 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+#nullable disable
+
 using ShareX.HelpersLib;
 
-namespace ShareX
+namespace ShareX.Tools
 {
     public enum AIProvider
     {
@@ -58,5 +60,49 @@ namespace ShareX
         public bool AutoStartRegion { get; set; } = true;
         public bool AutoStartAnalyze { get; set; } = true;
         public bool AutoCopyResult { get; set; } = false;
+
+        public bool HasAPIKey => Provider switch
+        {
+            AIProvider.OpenAI or AIProvider.OpenAILegacy => !string.IsNullOrWhiteSpace(OpenAIAPIKey),
+            AIProvider.Gemini => !string.IsNullOrWhiteSpace(GeminiAPIKey),
+            AIProvider.OpenRouter => !string.IsNullOrWhiteSpace(OpenRouterAPIKey),
+            _ => false
+        };
+
+        public AIOptions Clone() => new AIOptions
+        {
+            Provider = Provider,
+            OpenAIAPIKey = OpenAIAPIKey,
+            OpenAIModel = OpenAIModel,
+            OpenAICustomURL = OpenAICustomURL,
+            OpenAIReasoningEffort = OpenAIReasoningEffort,
+            OpenAIVerbosity = OpenAIVerbosity,
+            GeminiAPIKey = GeminiAPIKey,
+            GeminiModel = GeminiModel,
+            OpenRouterAPIKey = OpenRouterAPIKey,
+            OpenRouterModel = OpenRouterModel,
+            Input = Input,
+            AutoStartRegion = AutoStartRegion,
+            AutoStartAnalyze = AutoStartAnalyze,
+            AutoCopyResult = AutoCopyResult
+        };
+
+        public void CopyFrom(AIOptions source)
+        {
+            Provider = source.Provider;
+            OpenAIAPIKey = source.OpenAIAPIKey;
+            OpenAIModel = source.OpenAIModel;
+            OpenAICustomURL = source.OpenAICustomURL;
+            OpenAIReasoningEffort = source.OpenAIReasoningEffort;
+            OpenAIVerbosity = source.OpenAIVerbosity;
+            GeminiAPIKey = source.GeminiAPIKey;
+            GeminiModel = source.GeminiModel;
+            OpenRouterAPIKey = source.OpenRouterAPIKey;
+            OpenRouterModel = source.OpenRouterModel;
+            Input = source.Input;
+            AutoStartRegion = source.AutoStartRegion;
+            AutoStartAnalyze = source.AutoStartAnalyze;
+            AutoCopyResult = source.AutoCopyResult;
+        }
     }
 }

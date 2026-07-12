@@ -44,11 +44,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -1288,7 +1285,7 @@ namespace ShareX
                     settings.AutoCloseWindow = updatedOptions.AutoCloseWindow;
                     settings.ExcludeTaskbarArea = updatedOptions.ExcludeTaskbarArea;
                 },
-                () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
+                playNotificationSound: () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
         }
 
         public static void MakeActiveWindowBorderless(TaskSettings taskSettings = null)
@@ -1981,12 +1978,10 @@ namespace ShareX
         private static void ShowAnalyzeImageWindow(string filePath, TaskSettings taskSettings)
         {
             AIOptions options = taskSettings.ToolsSettingsReference.AIOptions;
-            AnalyzeImageOptions windowOptions = CreateAnalyzeImageOptions(options);
 
             ToolsIntegration.ShowAnalyzeImageWindow(
                 filePath,
-                windowOptions,
-                AnalyzeImageWithProviderAsync,
+                options,
                 () =>
                 {
                     using Bitmap region = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions);
@@ -1999,153 +1994,7 @@ namespace ShareX
                     region.Save(stream, ImageFormat.Png);
                     return Task.FromResult(stream.ToArray());
                 },
-                TestAnalyzeImageConnectionAsync,
-                LoadAnalyzeImageModelsAsync,
-                updated => UpdateAnalyzeImageOptions(options, updated),
                 () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
-        }
-
-        private static AnalyzeImageOptions CreateAnalyzeImageOptions(AIOptions options) => new AnalyzeImageOptions
-        {
-            Provider = (AnalyzeImageProvider)options.Provider,
-            OpenAIAPIKey = options.OpenAIAPIKey,
-            OpenAIModel = options.OpenAIModel,
-            OpenAICustomURL = options.OpenAICustomURL,
-            OpenAIReasoningEffort = options.OpenAIReasoningEffort,
-            OpenAIVerbosity = options.OpenAIVerbosity,
-            GeminiAPIKey = options.GeminiAPIKey,
-            GeminiModel = options.GeminiModel,
-            OpenRouterAPIKey = options.OpenRouterAPIKey,
-            OpenRouterModel = options.OpenRouterModel,
-            Input = options.Input,
-            AutoStartRegion = options.AutoStartRegion,
-            AutoStartAnalyze = options.AutoStartAnalyze,
-            AutoCopyResult = options.AutoCopyResult
-        };
-
-        private static void UpdateAnalyzeImageOptions(AIOptions options, AnalyzeImageOptions updated)
-        {
-            options.Provider = (AIProvider)updated.Provider;
-            options.OpenAIAPIKey = updated.OpenAIAPIKey;
-            options.OpenAIModel = updated.OpenAIModel;
-            options.OpenAICustomURL = updated.OpenAICustomURL;
-            options.OpenAIReasoningEffort = updated.OpenAIReasoningEffort;
-            options.OpenAIVerbosity = updated.OpenAIVerbosity;
-            options.GeminiAPIKey = updated.GeminiAPIKey;
-            options.GeminiModel = updated.GeminiModel;
-            options.OpenRouterAPIKey = updated.OpenRouterAPIKey;
-            options.OpenRouterModel = updated.OpenRouterModel;
-            options.Input = updated.Input;
-            options.AutoStartRegion = updated.AutoStartRegion;
-            options.AutoStartAnalyze = updated.AutoStartAnalyze;
-            options.AutoCopyResult = updated.AutoCopyResult;
-        }
-
-        private static async Task<string> AnalyzeImageWithProviderAsync(string imagePath, byte[] imageData, AnalyzeImageOptions options)
-        {
-            AIOptions providerOptions = new AIOptions();
-            UpdateAnalyzeImageOptions(providerOptions, options);
-            IAIProvider provider = AIProviderFactory.GetProvider(providerOptions);
-
-            if (!string.IsNullOrWhiteSpace(imagePath))
-            {
-                return await provider.AnalyzeImage(imagePath, options.Input, options.OpenAIReasoningEffort, options.OpenAIVerbosity);
-            }
-
-            using Bitmap image = ImageHelpers.ByteArrayToBitmap(imageData);
-            return await provider.AnalyzeImage(image, options.Input, options.OpenAIReasoningEffort, options.OpenAIVerbosity);
-        }
-
-        private static async Task<AnalyzeImageConnectionResult> TestAnalyzeImageConnectionAsync(AnalyzeImageOptions options)
-        {
-            using HttpRequestMessage request = CreateAnalyzeImageRequest(options, out string error);
-            if (request == null)
-            {
-                return new AnalyzeImageConnectionResult(false, error);
-            }
-
-            using HttpClient client = HttpClientFactory.Create();
-            using HttpResponseMessage response = await client.SendAsync(request);
-            string content = await response.Content.ReadAsStringAsync();
-
-            if (response.IsSuccessStatusCode)
-            {
-                return new AnalyzeImageConnectionResult(true, "Connection OK.");
-            }
-
-            string summary = string.IsNullOrWhiteSpace(response.ReasonPhrase) ? response.StatusCode.ToString() : response.ReasonPhrase;
-            if (!string.IsNullOrWhiteSpace(content))
-            {
-                summary += ": " + (content.Length > 200 ? content[..200] + "..." : content);
-            }
-            return new AnalyzeImageConnectionResult(false, summary);
-        }
-
-        private static async Task<IReadOnlyList<string>> LoadAnalyzeImageModelsAsync(AnalyzeImageOptions options)
-        {
-            if (options.Provider is not (AnalyzeImageProvider.OpenAI or AnalyzeImageProvider.OpenAILegacy))
-            {
-                return [];
-            }
-
-            using HttpRequestMessage request = CreateAnalyzeImageRequest(options, out string error);
-            if (request == null)
-            {
-                throw new InvalidOperationException(error);
-            }
-
-            using HttpClient client = HttpClientFactory.Create();
-            using HttpResponseMessage response = await client.SendAsync(request);
-            string content = await response.Content.ReadAsStringAsync();
-            response.EnsureSuccessStatusCode();
-
-            using JsonDocument document = JsonDocument.Parse(content);
-            return document.RootElement.GetProperty("data")
-                .EnumerateArray()
-                .Select(x => x.GetProperty("id").GetString())
-                .Where(x => !string.IsNullOrWhiteSpace(x))
-                .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
-                .ToArray();
-        }
-
-        private static HttpRequestMessage CreateAnalyzeImageRequest(AnalyzeImageOptions options, out string error)
-        {
-            error = null;
-
-            switch (options.Provider)
-            {
-                case AnalyzeImageProvider.OpenAI:
-                case AnalyzeImageProvider.OpenAILegacy:
-                    if (string.IsNullOrWhiteSpace(options.OpenAIAPIKey))
-                    {
-                        error = "Missing OpenAI API key.";
-                        return null;
-                    }
-                    string baseURL = string.IsNullOrWhiteSpace(options.OpenAICustomURL) ? "https://api.openai.com" : options.OpenAICustomURL;
-                    HttpRequestMessage openAIRequest = new HttpRequestMessage(System.Net.Http.HttpMethod.Get, URLHelpers.CombineURL(baseURL, "v1/models"));
-                    openAIRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", options.OpenAIAPIKey.Trim());
-                    return openAIRequest;
-                case AnalyzeImageProvider.Gemini:
-                    if (string.IsNullOrWhiteSpace(options.GeminiAPIKey))
-                    {
-                        error = "Missing Gemini API key.";
-                        return null;
-                    }
-                    return new HttpRequestMessage(System.Net.Http.HttpMethod.Get,
-                        "https://generativelanguage.googleapis.com/v1beta/models?key=" + Uri.EscapeDataString(options.GeminiAPIKey.Trim()));
-                case AnalyzeImageProvider.OpenRouter:
-                    if (string.IsNullOrWhiteSpace(options.OpenRouterAPIKey))
-                    {
-                        error = "Missing OpenRouter API key.";
-                        return null;
-                    }
-                    HttpRequestMessage openRouterRequest = new HttpRequestMessage(System.Net.Http.HttpMethod.Get, "https://openrouter.ai/api/v1/models");
-                    openRouterRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", options.OpenRouterAPIKey.Trim());
-                    return openRouterRequest;
-                default:
-                    error = "Select a provider first.";
-                    return null;
-            }
         }
 
         public static async Task OCRImage(TaskSettings taskSettings = null)

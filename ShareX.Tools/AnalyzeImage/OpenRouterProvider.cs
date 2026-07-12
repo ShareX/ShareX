@@ -23,22 +23,25 @@
 
 #endregion License Information (GPL v3)
 
+#nullable disable
+
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShareX
+namespace ShareX.Tools
 {
-    public class GeminiProvider : IAIProvider
+    public class OpenRouterProvider : IAIProvider
     {
         private readonly string apiKey;
         private readonly string model;
 
-        public GeminiProvider(string apiKey, string model)
+        public OpenRouterProvider(string apiKey, string model)
         {
             this.apiKey = apiKey;
             this.model = model;
@@ -60,25 +63,30 @@ namespace ShareX
         {
             using (HttpClient client = new HttpClient())
             {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
                 var payload = new
                 {
-                    contents = new[]
+                    model = this.model,
+                    messages = new[]
                     {
                         new
                         {
-                            parts = new object[]
+                            role = "user",
+                            content = new object[]
                             {
-                                new { text = prompt },
-                                new { inline_data = new { mime_type = "image/png", data = base64Image } }
+                                new { type = "text", text = prompt },
+                                new { type = "image_url", image_url = new { url = $"data:image/png;base64,{base64Image}" } }
                             }
                         }
-                    }
+                    },
+                    max_tokens = 1024
                 };
 
                 string jsonPayload = JsonConvert.SerializeObject(payload);
                 StringContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
-                string url = $"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={apiKey}";
+                const string url = "https://openrouter.ai/api/v1/chat/completions";
 
                 HttpResponseMessage response = await client.PostAsync(url, content);
                 string responseString = await response.Content.ReadAsStringAsync();
@@ -86,11 +94,11 @@ namespace ShareX
                 if (response.IsSuccessStatusCode)
                 {
                     dynamic responseObject = JsonConvert.DeserializeObject(responseString);
-                    return responseObject.candidates[0].content.parts[0].text;
+                    return responseObject.choices[0].message.content;
                 }
                 else
                 {
-                    throw new Exception($"Error from Gemini API: {responseString}");
+                    throw new Exception($"Error from OpenRouter API: {responseString}");
                 }
             }
         }

@@ -23,17 +23,13 @@ public partial class AnalyzeImageOptionsWindow : Window
     private readonly AnalyzeImageOptionsViewModel _viewModel;
 
     public AnalyzeImageOptionsWindow()
-        : this(new AnalyzeImageOptions(), _ => Task.FromResult(new AnalyzeImageConnectionResult(false, string.Empty)),
-            _ => Task.FromResult<IReadOnlyList<string>>([]))
+        : this(new AIOptions(), new AnalyzeImageService())
     {
     }
 
-    public AnalyzeImageOptionsWindow(AnalyzeImageOptions options,
-        AnalyzeImageTestConnectionHandler testConnection,
-        AnalyzeImageLoadModelsHandler loadModels,
-        Action<AnalyzeImageOptions>? optionsChanged = null)
+    public AnalyzeImageOptionsWindow(AIOptions options, AnalyzeImageService service)
     {
-        _viewModel = new AnalyzeImageOptionsViewModel(options, testConnection, loadModels, optionsChanged);
+        _viewModel = new AnalyzeImageOptionsViewModel(options, service);
         DataContext = _viewModel;
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();

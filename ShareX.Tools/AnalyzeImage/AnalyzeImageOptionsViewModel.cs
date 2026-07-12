@@ -21,12 +21,10 @@ namespace ShareX.Tools;
 
 public sealed partial class AnalyzeImageOptionsViewModel : ViewModelBase
 {
-    private readonly AnalyzeImageOptions _target;
-    private readonly AnalyzeImageTestConnectionHandler _testConnection;
-    private readonly AnalyzeImageLoadModelsHandler _loadModels;
-    private readonly Action<AnalyzeImageOptions>? _optionsChanged;
+    private readonly AIOptions _target;
+    private readonly AnalyzeImageService _service;
 
-    public IReadOnlyList<AnalyzeImageProvider> Providers { get; } = Enum.GetValues<AnalyzeImageProvider>();
+    public IReadOnlyList<AIProvider> Providers { get; } = Enum.GetValues<AIProvider>();
     public ObservableCollection<string> OpenAIModels { get; } = ["gpt-5.2", "gpt-5.1", "gpt-5", "gpt-5-mini", "gpt-5-nano"];
     public IReadOnlyList<string> GeminiModels { get; } = ["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-1.5-flash", "gemini-1.5-pro"];
     public IReadOnlyList<string> OpenRouterModels { get; } = ["openai/gpt-4o", "anthropic/claude-3.5-sonnet", "google/gemini-pro-1.5"];
@@ -37,7 +35,7 @@ public sealed partial class AnalyzeImageOptionsViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(IsOpenAI))]
     [NotifyPropertyChangedFor(nameof(IsGemini))]
     [NotifyPropertyChangedFor(nameof(IsOpenRouter))]
-    private AnalyzeImageProvider _provider;
+    private AIProvider _provider;
 
     [ObservableProperty] private string? _openAIAPIKey;
     [ObservableProperty] private string _openAIModel;
@@ -57,22 +55,17 @@ public sealed partial class AnalyzeImageOptionsViewModel : ViewModelBase
 
     public Action<bool>? CloseRequested { get; set; }
 
-    public bool IsOpenAI => Provider is AnalyzeImageProvider.OpenAI or AnalyzeImageProvider.OpenAILegacy;
-    public bool IsGemini => Provider == AnalyzeImageProvider.Gemini;
-    public bool IsOpenRouter => Provider == AnalyzeImageProvider.OpenRouter;
+    public bool IsOpenAI => Provider is AIProvider.OpenAI or AIProvider.OpenAILegacy;
+    public bool IsGemini => Provider == AIProvider.Gemini;
+    public bool IsOpenRouter => Provider == AIProvider.OpenRouter;
     public bool HasStatus => !string.IsNullOrWhiteSpace(StatusText);
 
-    public AnalyzeImageOptionsViewModel(AnalyzeImageOptions target,
-        AnalyzeImageTestConnectionHandler testConnection,
-        AnalyzeImageLoadModelsHandler loadModels,
-        Action<AnalyzeImageOptions>? optionsChanged = null)
+    public AnalyzeImageOptionsViewModel(AIOptions target, AnalyzeImageService service)
     {
         _target = target;
-        _testConnection = testConnection;
-        _loadModels = loadModels;
-        _optionsChanged = optionsChanged;
+        _service = service;
 
-        AnalyzeImageOptions draft = target.Clone();
+        AIOptions draft = target.Clone();
         _provider = draft.Provider;
         _openAIAPIKey = draft.OpenAIAPIKey;
         _openAIModel = draft.OpenAIModel;
@@ -101,7 +94,7 @@ public sealed partial class AnalyzeImageOptionsViewModel : ViewModelBase
 
         try
         {
-            AnalyzeImageConnectionResult result = await _testConnection(CreateOptions());
+            AnalyzeImageConnectionResult result = await _service.TestConnectionAsync(CreateOptions());
             StatusSuccess = result.Success;
             StatusText = result.Message;
         }
@@ -124,7 +117,7 @@ public sealed partial class AnalyzeImageOptionsViewModel : ViewModelBase
 
         try
         {
-            IReadOnlyList<string> models = await _loadModels(CreateOptions());
+            IReadOnlyList<string> models = await _service.LoadModelsAsync(CreateOptions());
             OpenAIModels.Clear();
             foreach (string model in models)
             {
@@ -157,9 +150,9 @@ public sealed partial class AnalyzeImageOptionsViewModel : ViewModelBase
     {
         string url = Provider switch
         {
-            AnalyzeImageProvider.OpenAI or AnalyzeImageProvider.OpenAILegacy => "https://platform.openai.com/api-keys",
-            AnalyzeImageProvider.Gemini => "https://aistudio.google.com/app/apikey",
-            AnalyzeImageProvider.OpenRouter => "https://openrouter.ai/keys",
+            AIProvider.OpenAI or AIProvider.OpenAILegacy => "https://platform.openai.com/api-keys",
+            AIProvider.Gemini => "https://aistudio.google.com/app/apikey",
+            AIProvider.OpenRouter => "https://openrouter.ai/keys",
             _ => string.Empty
         };
 
@@ -172,28 +165,27 @@ public sealed partial class AnalyzeImageOptionsViewModel : ViewModelBase
     [RelayCommand]
     private void Save()
     {
-        AnalyzeImageOptions updated = CreateOptions();
+        AIOptions updated = CreateOptions();
         updated.Input = _target.Input;
         _target.CopyFrom(updated);
-        _optionsChanged?.Invoke(_target);
         CloseRequested?.Invoke(true);
     }
 
     [RelayCommand]
     private void Cancel() => CloseRequested?.Invoke(false);
 
-    private AnalyzeImageOptions CreateOptions() => new()
+    private AIOptions CreateOptions() => new()
     {
         Provider = Provider,
         OpenAIAPIKey = OpenAIAPIKey,
-        OpenAIModel = OpenAIModel,
+        OpenAIModel = OpenAIModel ?? string.Empty,
         OpenAICustomURL = OpenAICustomURL,
-        OpenAIReasoningEffort = OpenAIReasoningEffort,
-        OpenAIVerbosity = OpenAIVerbosity,
+        OpenAIReasoningEffort = OpenAIReasoningEffort ?? "minimal",
+        OpenAIVerbosity = OpenAIVerbosity ?? "medium",
         GeminiAPIKey = GeminiAPIKey,
-        GeminiModel = GeminiModel,
+        GeminiModel = GeminiModel ?? string.Empty,
         OpenRouterAPIKey = OpenRouterAPIKey,
-        OpenRouterModel = OpenRouterModel,
+        OpenRouterModel = OpenRouterModel ?? string.Empty,
         AutoStartRegion = AutoStartRegion,
         AutoStartAnalyze = AutoStartAnalyze,
         AutoCopyResult = AutoCopyResult

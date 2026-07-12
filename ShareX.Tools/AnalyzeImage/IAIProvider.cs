@@ -23,27 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using System;
+using System.Drawing;
+using System.Threading.Tasks;
 
-namespace ShareX
+namespace ShareX.Tools
 {
-    public static class AIProviderFactory
+    public interface IAIProvider
     {
-        public static IAIProvider GetProvider(AIOptions options)
-        {
-            switch (options.Provider)
-            {
-                case AIProvider.OpenAI:
-                    return new OpenAIProvider(options.OpenAIAPIKey, options.OpenAIModel, options.OpenAICustomURL);
-                case AIProvider.OpenAILegacy:
-                    return new OpenAILegacyProvider(options.OpenAIAPIKey, options.OpenAIModel, options.OpenAICustomURL);
-                case AIProvider.Gemini:
-                    return new GeminiProvider(options.GeminiAPIKey, options.GeminiModel);
-                case AIProvider.OpenRouter:
-                    return new OpenRouterProvider(options.OpenRouterAPIKey, options.OpenRouterModel);
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
+        Task<string> AnalyzeImage(Image image, string prompt, string reasoningEffort, string verbosity);
+        Task<string> AnalyzeImage(string imagePath, string prompt, string reasoningEffort, string verbosity);
     }
 }

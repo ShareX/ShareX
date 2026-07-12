@@ -21,9 +21,8 @@ namespace ShareX.Tools;
 
 public sealed partial class AnalyzeImageViewModel : ViewModelBase, IDisposable
 {
-    private readonly AnalyzeImageOptions _options;
-    private readonly AnalyzeImageHandler _analyze;
-    private readonly Action<AnalyzeImageOptions>? _optionsChanged;
+    private readonly AIOptions _options;
+    private readonly AnalyzeImageService _service = new();
     private string? _imagePath;
     private byte[]? _imageData;
 
@@ -84,12 +83,9 @@ public sealed partial class AnalyzeImageViewModel : ViewModelBase, IDisposable
         return !string.IsNullOrWhiteSpace(_imagePath) && File.Exists(_imagePath) ? File.ReadAllBytes(_imagePath) : null;
     }
 
-    public AnalyzeImageViewModel(string? imagePath, AnalyzeImageOptions options, AnalyzeImageHandler analyze,
-        Action<AnalyzeImageOptions>? optionsChanged = null)
+    public AnalyzeImageViewModel(string? imagePath, AIOptions options)
     {
         _options = options;
-        _analyze = analyze;
-        _optionsChanged = optionsChanged;
         _prompt = options.Input;
 
         if (!string.IsNullOrWhiteSpace(imagePath))
@@ -114,7 +110,6 @@ public sealed partial class AnalyzeImageViewModel : ViewModelBase, IDisposable
     partial void OnPromptChanged(string value)
     {
         _options.Input = value;
-        _optionsChanged?.Invoke(_options);
     }
 
     partial void OnSelectedPresetChanged(string? value)
@@ -165,7 +160,7 @@ public sealed partial class AnalyzeImageViewModel : ViewModelBase, IDisposable
 
         try
         {
-            string result = await _analyze(_imagePath, _imageData, _options.Clone());
+            string result = await _service.AnalyzeAsync(_imagePath, _imageData, _options.Clone());
             timer.Stop();
             ResultText = result?.ReplaceLineEndings("\r\n") ?? string.Empty;
             ElapsedText = $"Time: {timer.ElapsedMilliseconds:N0} ms";

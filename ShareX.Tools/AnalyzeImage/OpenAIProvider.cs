@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+#nullable disable
+
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
@@ -34,7 +36,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace ShareX
+namespace ShareX.Tools
 {
     public class ChatGPTRequest
     {

@@ -25,32 +25,21 @@ public partial class AnalyzeImageWindow : Window
 {
     private readonly AnalyzeImageViewModel _viewModel;
     private readonly AnalyzeImageRegionCaptureHandler _captureRegion;
-    private readonly AnalyzeImageTestConnectionHandler _testConnection;
-    private readonly AnalyzeImageLoadModelsHandler _loadModels;
-    private readonly AnalyzeImageOptions _options;
-    private readonly Action<AnalyzeImageOptions>? _optionsChanged;
+    private readonly AnalyzeImageService _service = new();
+    private readonly AIOptions _options;
 
     public AnalyzeImageWindow()
-        : this(null, new AnalyzeImageOptions(), (_, _, _) => Task.FromResult(string.Empty),
-            () => Task.FromResult<byte[]?>(null),
-            _ => Task.FromResult(new AnalyzeImageConnectionResult(false, string.Empty)),
-            _ => Task.FromResult<IReadOnlyList<string>>([]))
+        : this(null, new AIOptions(), () => Task.FromResult<byte[]?>(null))
     {
     }
 
-    public AnalyzeImageWindow(string? imagePath, AnalyzeImageOptions options, AnalyzeImageHandler analyze,
+    public AnalyzeImageWindow(string? imagePath, AIOptions options,
         AnalyzeImageRegionCaptureHandler captureRegion,
-        AnalyzeImageTestConnectionHandler testConnection,
-        AnalyzeImageLoadModelsHandler loadModels,
-        Action<AnalyzeImageOptions>? optionsChanged = null,
         Action? playNotificationSound = null)
     {
         _options = options;
         _captureRegion = captureRegion;
-        _testConnection = testConnection;
-        _loadModels = loadModels;
-        _optionsChanged = optionsChanged;
-        _viewModel = new AnalyzeImageViewModel(imagePath, options, analyze, optionsChanged)
+        _viewModel = new AnalyzeImageViewModel(imagePath, options)
         {
             PlayNotificationSound = playNotificationSound
         };
@@ -109,7 +98,7 @@ public partial class AnalyzeImageWindow : Window
 
     private async Task EditOptionsAsync()
     {
-        AnalyzeImageOptionsWindow window = new(_options, _testConnection, _loadModels, _optionsChanged);
+        AnalyzeImageOptionsWindow window = new(_options, _service);
         await window.ShowDialog<bool>(this);
     }
 
