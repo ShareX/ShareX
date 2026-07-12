@@ -23,12 +23,13 @@
 
 #endregion License Information (GPL v3)
 
+#nullable disable
+
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System.ComponentModel;
-using System.Drawing.Design;
 
-namespace ShareX.IndexerLib
+namespace ShareX.Tools
 {
     public class IndexerSettings
     {
@@ -68,7 +69,7 @@ namespace ShareX.IndexerLib
         [Category("Indexer / HTML"), DefaultValue(false), Description("Limit the display path to the selected root folder. Must have DisplayPath enabled.")]
         public bool DisplayPathLimited { get; set; }
 
-        [Category("Indexer / HTML"), DefaultValue(""), Description("Custom Cascading Style Sheet file path."), Editor(typeof(CssFileNameEditor), typeof(UITypeEditor))]
+        [Category("Indexer / HTML"), DefaultValue(""), Description("Custom Cascading Style Sheet file path.")]
         public string CustomCSSFilePath { get; set; }
 
         [Category("Indexer / XML"), DefaultValue(true), Description("Folder/File information (name, size etc.) will be written as attribute.")]

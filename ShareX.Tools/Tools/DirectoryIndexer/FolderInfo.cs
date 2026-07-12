@@ -23,11 +23,13 @@
 
 #endregion License Information (GPL v3)
 
+#nullable disable
+
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ShareX.IndexerLib
+namespace ShareX.Tools
 {
     public class FolderInfo
     {

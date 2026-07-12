@@ -23,12 +23,14 @@
 
 #endregion License Information (GPL v3)
 
+#nullable disable
+
 using ShareX.HelpersLib;
 using System.IO;
 using System.Text;
 using System.Xml;
 
-namespace ShareX.IndexerLib
+namespace ShareX.Tools
 {
     public class IndexerXml : Indexer
     {

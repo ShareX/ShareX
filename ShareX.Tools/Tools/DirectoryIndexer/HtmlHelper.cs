@@ -23,9 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+#nullable disable
+
 using ShareX.HelpersLib;
 
-namespace ShareX.IndexerLib
+namespace ShareX.Tools
 {
     public static class HtmlHelper
     {

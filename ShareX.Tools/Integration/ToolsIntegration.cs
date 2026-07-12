@@ -31,6 +31,12 @@ namespace ShareX.Tools.Integration;
 
 public static class ToolsIntegration
 {
+    public static void ShowDirectoryIndexerWindow(IndexerSettings settings,
+        Func<string, IndexerOutput, Task>? uploadRequested = null)
+    {
+        Show(() => new DirectoryIndexerWindow(settings, uploadRequested));
+    }
+
     public static void ShowAnalyzeImageWindow(
         string? imagePath,
         AIOptions options,

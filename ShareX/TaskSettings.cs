@@ -27,7 +27,6 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEffectsLib;
-using ShareX.IndexerLib;
 using ShareX.MediaLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.Tools;

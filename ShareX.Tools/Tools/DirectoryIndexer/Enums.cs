@@ -23,9 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+#nullable disable
+
 using System.ComponentModel;
 
-namespace ShareX.IndexerLib
+namespace ShareX.Tools
 {
     public enum IndexerOutput
     {

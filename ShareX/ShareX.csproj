@@ -32,7 +32,6 @@
     </ProjectReference>
     <ProjectReference Include="..\ShareX.ImageEditor\ShareX.ImageEditor.csproj" />
     <ProjectReference Include="..\ShareX.ImageEffectsLib\ShareX.ImageEffectsLib.csproj" />
-    <ProjectReference Include="..\ShareX.IndexerLib\ShareX.IndexerLib.csproj" />
     <ProjectReference Include="..\ShareX.MediaLib\ShareX.MediaLib.csproj" />
     <ProjectReference Include="..\ShareX.NativeMessagingHost\ShareX.NativeMessagingHost.csproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

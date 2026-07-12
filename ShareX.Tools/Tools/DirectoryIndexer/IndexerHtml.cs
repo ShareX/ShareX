@@ -23,13 +23,14 @@
 
 #endregion License Information (GPL v3)
 
+#nullable disable
+
 using ShareX.HelpersLib;
-using ShareX.IndexerLib.Properties;
 using System;
 using System.IO;
 using System.Text;
 
-namespace ShareX.IndexerLib
+namespace ShareX.Tools
 {
     public class IndexerHtml : Indexer
     {
@@ -173,7 +174,9 @@ namespace ShareX.IndexerLib
             }
             else
             {
-                css = Resources.IndexerDefault;
+                using Stream stream = typeof(IndexerHtml).Assembly.GetManifestResourceStream("ShareX.Tools.DirectoryIndexer.IndexerDefault.css");
+                using StreamReader reader = new(stream ?? throw new InvalidOperationException("Default indexer CSS resource was not found."), Encoding.UTF8);
+                css = reader.ReadToEnd();
             }
 
             return $"<style type=\"text/css\">\r\n{css}\r\n</style>";

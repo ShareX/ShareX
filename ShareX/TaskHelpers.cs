@@ -29,7 +29,6 @@ using ShareX.Tools;
 using ShareX.Tools.Integration;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEffectsLib;
-using ShareX.IndexerLib;
 using ShareX.MediaLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
@@ -1009,14 +1008,13 @@ namespace ShareX
 
             IndexerSettings indexerSettings = taskSettings.ToolsSettingsReference.IndexerSettings;
             indexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
-            DirectoryIndexerForm form = new DirectoryIndexerForm(indexerSettings);
-            form.UploadRequested += source =>
+            ToolsIntegration.ShowDirectoryIndexerWindow(indexerSettings, (source, output) =>
             {
                 WorkerTask task = WorkerTask.CreateTextUploaderTask(source, taskSettings);
-                task.Info.FileName = Path.ChangeExtension(task.Info.FileName, indexerSettings.Output.ToString().ToLowerInvariant());
+                task.Info.FileName = Path.ChangeExtension(task.Info.FileName, output.ToString().ToLowerInvariant());
                 TaskManager.Start(task);
-            };
-            form.Show();
+                return Task.CompletedTask;
+            });
         }
 
         public static void OpenImageCombiner(IEnumerable<string> imageFiles = null, TaskSettings taskSettings = null)
