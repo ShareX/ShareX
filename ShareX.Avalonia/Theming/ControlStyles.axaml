@@ -18,6 +18,12 @@
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
     </Style>
 
+    <Style Selector="TextBlock.icon">
+        <Setter Property="FontFamily" Value="{DynamicResource ShareX.FontFamily.Icon}"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
     <!-- Standard buttons -->
     <Style Selector="Button">
         <Setter Property="Height" Value="40"/>

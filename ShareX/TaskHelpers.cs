@@ -961,8 +961,8 @@ namespace ShareX
                 return;
             }
 
-            MetadataForm metadataForm = new MetadataForm(filePath);
-            metadataForm.Show();
+            ToolsIntegration.ShowMetadataWindow(filePath,
+                () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted));
         }
 
         public static bool StripMetadata(TaskSettings taskSettings = null)
@@ -988,7 +988,7 @@ namespace ShareX
 
             try
             {
-                MetadataForm.StripFileMetadata(filePath);
+                MetadataService.StripFileMetadata(filePath);
 
                 PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
             }

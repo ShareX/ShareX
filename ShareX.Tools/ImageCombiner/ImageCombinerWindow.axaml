@@ -24,21 +24,21 @@
                                 <Button Grid.Column="0" Command="{Binding AddCommand}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
                                         <TextBlock Text="{x:Static theming:LucideIcons.plus}"
-                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"/>
+                                                   Classes="icon"/>
                                         <TextBlock Text="Add..."/>
                                     </StackPanel>
                                 </Button>
                                 <Button Grid.Column="1" Command="{Binding RemoveCommand}" IsEnabled="{Binding CanRemove}">
                                     <TextBlock Text="{x:Static theming:LucideIcons.trash_2}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"/>
+                                               Classes="icon"/>
                                 </Button>
                                 <Button Grid.Column="2" Command="{Binding MoveUpCommand}" IsEnabled="{Binding CanMoveUp}">
                                     <TextBlock Text="{x:Static theming:LucideIcons.arrow_up}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"/>
+                                               Classes="icon"/>
                                 </Button>
                                 <Button Grid.Column="3" Command="{Binding MoveDownCommand}" IsEnabled="{Binding CanMoveDown}">
                                     <TextBlock Text="{x:Static theming:LucideIcons.arrow_down}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"/>
+                                               Classes="icon"/>
                                 </Button>
                                 <TextBlock Grid.Column="4"
                                            Text="{Binding ImageCountText}"

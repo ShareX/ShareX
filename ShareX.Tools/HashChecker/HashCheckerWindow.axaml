@@ -100,7 +100,7 @@
                                 IsVisible="{Binding IsIdle}">
                             <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                                 <TextBlock Text="{x:Static theming:LucideIcons.search_check}"
-                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                           Classes="icon"
                                            VerticalAlignment="Center"/>
                                 <TextBlock Text="Check" VerticalAlignment="Center"/>
                             </StackPanel>
@@ -110,7 +110,7 @@
                                 IsVisible="{Binding IsWorking}">
                             <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                                 <TextBlock Text="{x:Static theming:LucideIcons.square_stop}"
-                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                           Classes="icon"
                                            VerticalAlignment="Center"/>
                                 <TextBlock Text="Stop" VerticalAlignment="Center"/>
                             </StackPanel>

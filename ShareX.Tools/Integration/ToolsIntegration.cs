@@ -74,6 +74,11 @@ public static class ToolsIntegration
         Show(() => new MonitorTestWindow());
     }
 
+    public static void ShowMetadataWindow(string? filePath = null, Action? playNotificationSound = null)
+    {
+        Show(() => new MetadataWindow(filePath, playNotificationSound));
+    }
+
     public static void ShowImageSplitterWindow()
     {
         Show(() => new ImageSplitterWindow());

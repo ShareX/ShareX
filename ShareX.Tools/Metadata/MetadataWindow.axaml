@@ -1,0 +1,218 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="650"
+        x:Class="ShareX.Tools.MetadataWindow"
+        x:DataType="vm:MetadataViewModel"
+        Title="{Binding WindowTitle}"
+        Width="900"
+        Height="650"
+        MinWidth="700"
+        MinHeight="500"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="SelectableTextBlock.metadata-value">
+            <Setter Property="FontFamily" Value="{DynamicResource ShareX.FontFamily.Default}"/>
+            <Setter Property="FontSize" Value="{DynamicResource ShareX.FontSize.Default}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="SelectableTextBlock.metadata-value.url-value">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="16" RowDefinitions="Auto,*" RowSpacing="12">
+                <Border Grid.Row="0" Classes="tool-panel">
+                    <Grid RowDefinitions="Auto,Auto" RowSpacing="8">
+                        <Grid Grid.Row="0" ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="10">
+                            <TextBlock Grid.Column="0"
+                                       Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.file_search}"
+                                       FontSize="28"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       VerticalAlignment="Center"/>
+                            <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding FileName}"
+                                           Classes="section-heading"
+                                           TextTrimming="CharacterEllipsis"/>
+                                <TextBlock Text="{Binding FileDescription}"
+                                           Classes="path-text"
+                                           TextTrimming="CharacterEllipsis"/>
+                            </StackPanel>
+                            <Button Grid.Column="2" Command="{Binding BrowseCommand}" IsEnabled="{Binding CanOpen}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.folder_open}"
+                                               Classes="icon"/>
+                                    <TextBlock Text="Open..."/>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="3" Command="{Binding CopyAllCommand}" IsEnabled="{Binding CanCopy}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.copy}"
+                                               Classes="icon"/>
+                                    <TextBlock Text="Copy all"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="4" Command="{Binding RequestStripCommand}" IsEnabled="{Binding CanStrip}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.eraser}"
+                                               Classes="icon"/>
+                                    <TextBlock Text="Strip metadata..."/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                        <ProgressBar Grid.Row="1"
+                                     Height="5"
+                                     IsIndeterminate="True"
+                                     IsVisible="{Binding IsBusy}"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                    <Grid RowDefinitions="Auto,*">
+                        <Grid Grid.Row="0" ColumnDefinitions="*,260,Auto" ColumnSpacing="10" Margin="12">
+                            <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                                <TextBlock Classes="section-heading" Text="Metadata"/>
+                                <TextBlock Text="{Binding MetadataCountText}"
+                                           FontWeight="Normal"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <TextBox Grid.Column="1"
+                                     Text="{Binding SearchText}"
+                                     PlaceholderText="Search metadata"
+                                     IsEnabled="{Binding CanCopy}"/>
+                            <TextBlock Grid.Column="2"
+                                       Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.search}"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       VerticalAlignment="Center"
+                                       Margin="-38,0,12,0"
+                                       IsHitTestVisible="False"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Margin="12,0,12,12">
+                            <ScrollViewer IsVisible="{Binding HasGroups}"
+                                          VerticalScrollBarVisibility="Auto"
+                                          HorizontalScrollBarVisibility="Disabled">
+                                <ItemsControl ItemsSource="{Binding Groups}" Margin="0,0,10,0">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate x:DataType="vm:MetadataGroup">
+                                            <Border BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                                    BorderThickness="1"
+                                                    CornerRadius="4"
+                                                    Margin="0,0,0,7"
+                                                    ClipToBounds="True">
+                                                <Grid RowDefinitions="Auto,Auto">
+                                                    <Border Grid.Row="0"
+                                                            Background="{DynamicResource ShareX.Brush.Control.Background}"
+                                                            Padding="10,7">
+                                                        <Grid ColumnDefinitions="*,Auto">
+                                                            <TextBlock Text="{Binding Name}" Classes="section-heading"/>
+                                                            <TextBlock Grid.Column="1"
+                                                                       Text="{Binding Entries.Count, StringFormat={}{0} tags}"
+                                                                       FontWeight="Normal"
+                                                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                       VerticalAlignment="Center"/>
+                                                        </Grid>
+                                                    </Border>
+                                                    <ItemsControl Grid.Row="1" ItemsSource="{Binding Entries}">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate x:DataType="vm:MetadataEntry">
+                                                                <Grid ColumnDefinitions="190,*"
+                                                                      ColumnSpacing="12"
+                                                                      MinHeight="32"
+                                                                      Margin="10,2">
+                                                                    <TextBlock Grid.Column="0"
+                                                                               Text="{Binding Tag}"
+                                                                               FontWeight="Normal"
+                                                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                               TextWrapping="Wrap"
+                                                                               VerticalAlignment="Center"/>
+                                                                    <Grid Grid.Column="1" VerticalAlignment="Center">
+                                                                        <SelectableTextBlock Classes="metadata-value"
+                                                                                             Text="{Binding Value}"
+                                                                                             IsVisible="{Binding !HasUrl}"/>
+                                                                        <SelectableTextBlock Classes="metadata-value url-value"
+                                                                                             Text="{Binding Value}"
+                                                                                             IsVisible="{Binding HasUrl}"
+                                                                                             PointerPressed="OnUrlPointerPressed"/>
+                                                                    </Grid>
+                                                                </Grid>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+
+                            <StackPanel IsVisible="{Binding !HasGroups}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Spacing="10"
+                                        MaxWidth="420">
+                                <TextBlock Text="{x:Static theming:LucideIcons.tags}"
+                                           Classes="icon"
+                                           FontSize="48"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding EmptyMessage}"
+                                           FontWeight="Normal"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           TextAlignment="Center"
+                                           TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Grid IsVisible="{Binding IsConfirmingStrip}"
+                  Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+                <Border Classes="tool-panel"
+                        Width="470"
+                        Padding="18"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                    <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="14">
+                        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                            <TextBlock Text="{x:Static theming:LucideIcons.triangle_alert}"
+                                       Classes="icon"
+                                       FontSize="24"
+                                       Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
+                            <TextBlock Text="Strip all metadata?" Classes="section-heading" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <TextBlock Grid.Row="1"
+                                   Text="This permanently removes all non-essential metadata from the selected file. This action cannot be undone."
+                                   FontWeight="Normal"
+                                   TextWrapping="Wrap"/>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                            <Button Command="{Binding ConfirmStripCommand}">
+                                <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.eraser}"
+                                               Classes="icon"/>
+                                    <TextBlock Text="Strip metadata" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Content="Cancel" Command="{Binding CancelStripCommand}"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

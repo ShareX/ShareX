@@ -141,7 +141,7 @@
                             Command="{Binding ConvertCommand}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="{x:Static theming:LucideIcons.file_down}"
-                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                       Classes="icon"
                                        VerticalAlignment="Center"/>
                             <TextBlock Text="Convert..." VerticalAlignment="Center"/>
                         </StackPanel>

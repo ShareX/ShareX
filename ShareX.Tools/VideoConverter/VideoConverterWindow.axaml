@@ -132,7 +132,7 @@
                                             Command="{Binding BrowseOutputFolderCommand}"
                                             IsEnabled="{Binding IsIdle}">
                                         <TextBlock Text="{x:Static theming:LucideIcons.folder_open}"
-                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"/>
+                                                   Classes="icon"/>
                                     </Button>
                                 </Grid>
                                 <TextBlock Classes="field-label" Text="File name"/>
@@ -173,7 +173,7 @@
                                 VerticalContentAlignment="Center">
                             <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                                 <TextBlock Text="{x:Static theming:LucideIcons.play}"
-                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                           Classes="icon"
                                            VerticalAlignment="Center"/>
                                 <TextBlock Text="Start encoding" VerticalAlignment="Center"/>
                             </StackPanel>
@@ -183,7 +183,7 @@
                                 IsVisible="{Binding IsEncoding}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <TextBlock Text="{x:Static theming:LucideIcons.square_stop}"
-                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"/>
+                                           Classes="icon"/>
                                 <TextBlock Text="Stop encoding"/>
                             </StackPanel>
                         </Button>
