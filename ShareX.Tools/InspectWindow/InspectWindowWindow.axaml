@@ -133,7 +133,7 @@
                                               OnContent="Always on top"
                                               OffContent="Always on top"
                                               FontWeight="Normal"/>
-                                <Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="6">
+                                <Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="0">
                                     <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
                                         <TextBlock Classes="row-label" Text="Opacity"/>
                                         <TextBlock Grid.Column="1"
