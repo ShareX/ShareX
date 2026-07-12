@@ -83,6 +83,28 @@ public static class ToolsIntegration
         Show(() => new MonitorTestWindow());
     }
 
+    public static Task<string?> ShowOCRWindowAsync(
+        byte[] imageData,
+        IReadOnlyList<OCRLanguageOption> languages,
+        OCRWindowOptions options,
+        OCRRecognitionHandler recognize,
+        OCRRegionCaptureHandler selectRegion,
+        Action<OCRWindowOptions>? optionsChanged = null,
+        Action? openHelp = null)
+    {
+        AvaloniaBootstrapper.EnsureInitialized();
+        TaskCompletionSource<string?> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        Dispatcher.UIThread.Post(() =>
+        {
+            OCRWindow window = new(imageData, languages, options, recognize, selectRegion, optionsChanged, openHelp);
+            window.Closed += (_, _) => completion.TrySetResult(window.Result);
+            window.Show();
+        });
+
+        return completion.Task;
+    }
+
     public static void ShowMetadataWindow(string? filePath = null, Action? playNotificationSound = null)
     {
         Show(() => new MetadataWindow(filePath, playNotificationSound));

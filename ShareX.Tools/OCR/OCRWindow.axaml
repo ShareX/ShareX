@@ -1,0 +1,206 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="940" d:DesignHeight="600"
+        x:Class="ShareX.Tools.OCRWindow"
+        x:DataType="vm:OCRViewModel"
+        Title="ShareX - Optical character recognition"
+        Width="940"
+        Height="600"
+        MinWidth="780"
+        MinHeight="540"
+        WindowStartupLocation="CenterScreen">
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="16" ColumnDefinitions="320,*" ColumnSpacing="12">
+                <Grid Grid.Column="0" RowDefinitions="Auto,Auto,*" RowSpacing="12">
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="8">
+                        <Button Command="{Binding SelectRegionCommand}" IsEnabled="{Binding IsIdle}">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.crop}"/>
+                                <TextBlock Text="Select region..."/>
+                            </StackPanel>
+                        </Button>
+                        <Button Command="{Binding SelectImageCommand}" IsEnabled="{Binding IsIdle}">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}"/>
+                                <TextBlock Text="Select image..."/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+
+                    <Border Grid.Row="1" Classes="tool-panel">
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="9">
+                            <TextBlock Grid.Row="0" Classes="section-heading" Text="Recognition" Margin="0,0,0,1"/>
+                            <Grid Grid.Row="1" ColumnDefinitions="90,*,Auto" ColumnSpacing="8">
+                                <TextBlock Classes="row-label" Text="Language"/>
+                                <ComboBox Grid.Column="1"
+                                          ItemsSource="{Binding Languages}"
+                                          SelectedItem="{Binding SelectedLanguage}"
+                                          IsEnabled="{Binding HasLanguages}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate x:DataType="vm:OCRLanguageOption">
+                                            <TextBlock Text="{Binding DisplayName}" FontWeight="Normal"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                                <Button Grid.Column="2"
+                                        Command="{Binding OpenHelpCommand}"
+                                        ToolTip.Tip="OCR help"
+                                        Padding="10,7">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.circle_help}"/>
+                                </Button>
+                            </Grid>
+                            <Grid Grid.Row="2" ColumnDefinitions="90,*" ColumnSpacing="8">
+                                <TextBlock Classes="row-label" Text="Scale factor"/>
+                                <NumericUpDown Grid.Column="1"
+                                               Minimum="1"
+                                               Maximum="4"
+                                               Increment="0.5"
+                                               FormatString="0.0"
+                                               Value="{Binding ScaleFactor}"/>
+                            </Grid>
+                            <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
+                                <TextBlock Text="Single line" FontWeight="Normal" VerticalAlignment="Center"/>
+                                <ToggleSwitch Grid.Column="1" IsChecked="{Binding SingleLine}" OnContent="" OffContent=""/>
+                            </Grid>
+                            <Grid Grid.Row="4" ColumnDefinitions="*,Auto" MinHeight="30">
+                                <TextBlock Text="Copy recognized text automatically" FontWeight="Normal" VerticalAlignment="Center"/>
+                                <ToggleSwitch Grid.Column="1" IsChecked="{Binding AutoCopy}" OnContent="" OffContent=""/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="2" Classes="tool-panel">
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="9">
+                            <TextBlock Grid.Row="0" Classes="section-heading" Text="Services"/>
+                            <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                <ComboBox ItemsSource="{Binding ServiceLinks}"
+                                          SelectedItem="{Binding SelectedServiceLink}"
+                                          IsEnabled="{Binding HasServices}"/>
+                                <Button Grid.Column="1"
+                                        Command="{Binding EditServicesCommand}"
+                                        ToolTip.Tip="Edit services"
+                                        Padding="10,7">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings}"/>
+                                </Button>
+                            </Grid>
+                            <Grid Grid.Row="2" ColumnDefinitions="*,Auto" MinHeight="30">
+                                <TextBlock Text="Close after opening" FontWeight="Normal" VerticalAlignment="Center"/>
+                                <ToggleSwitch Grid.Column="1" IsChecked="{Binding CloseAfterOpeningService}" OnContent="" OffContent=""/>
+                            </Grid>
+                            <Button Grid.Row="3"
+                                    Command="{Binding OpenServiceCommand}"
+                                    IsEnabled="{Binding CanUseResult}"
+                                    HorizontalAlignment="Stretch">
+                                <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Center">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}"/>
+                                    <TextBlock Text="Open service..."/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <Border Grid.Column="1" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                    <Grid RowDefinitions="Auto,Auto,*">
+                        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="12">
+                            <TextBlock Classes="section-heading" Text="Result" VerticalAlignment="Center"/>
+                            <Button Grid.Column="1" Command="{Binding CopyAllCommand}" IsEnabled="{Binding CanUseResult}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                                    <TextBlock Text="Copy all"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                        <ProgressBar Grid.Row="1" Height="4" IsIndeterminate="True" IsVisible="{Binding IsBusy}"/>
+                        <Grid Grid.Row="2" Margin="12,0,12,12">
+                            <TextBox Text="{Binding ResultText, Mode=TwoWay}"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     VerticalContentAlignment="Top"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                     FontSize="15"
+                                     IsEnabled="{Binding IsIdle}"/>
+                            <StackPanel IsVisible="{Binding HasError}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        MaxWidth="420"
+                                        Spacing="10"
+                                        IsHitTestVisible="False">
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.triangle_alert}"
+                                           FontSize="38"
+                                           Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding ErrorMessage}"
+                                           FontWeight="Normal"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Center"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Grid IsVisible="{Binding IsEditingServices}"
+                  Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+                <Border Classes="tool-panel"
+                        Width="620"
+                        Padding="18"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="12">
+                        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                            <TextBlock Classes="section-heading" Text="Edit services" VerticalAlignment="Center"/>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8">
+                                <Button Command="{Binding NewServiceCommand}">
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
+                                        <TextBlock Text="New"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button Command="{Binding RemoveServiceCommand}" IsEnabled="{Binding HasEditingService}">
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
+                                        <TextBlock Text="Remove"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button Command="{Binding ResetServicesCommand}">
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
+                                        <TextBlock Text="Reset"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                        <ComboBox Grid.Row="1"
+                                  ItemsSource="{Binding ServiceLinks}"
+                                  SelectedItem="{Binding EditingServiceLink}"
+                                  PlaceholderText="Select a service"/>
+                        <Grid Grid.Row="2" RowDefinitions="Auto,Auto" ColumnDefinitions="75,*" RowSpacing="10" ColumnSpacing="10">
+                            <TextBlock Grid.Row="0" Grid.Column="0" Classes="row-label" Text="Name"/>
+                            <TextBox Grid.Row="0" Grid.Column="1"
+                                     Text="{Binding EditingServiceLink.Name, Mode=TwoWay}"
+                                     IsEnabled="{Binding HasEditingService}"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Classes="row-label" Text="URL"/>
+                            <TextBox Grid.Row="1" Grid.Column="1"
+                                     Text="{Binding EditingServiceLink.Url, Mode=TwoWay}"
+                                     IsEnabled="{Binding HasEditingService}"
+                                     PlaceholderText="Use {0} where the recognized text belongs"/>
+                        </Grid>
+                        <Button Grid.Row="3"
+                                Content="Close"
+                                Command="{Binding CloseServiceEditorCommand}"
+                                HorizontalAlignment="Right"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
