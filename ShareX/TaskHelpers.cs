@@ -1312,8 +1312,7 @@ namespace ShareX
 
         public static void OpenClipboardViewer()
         {
-            ClipboardViewerForm clipboardViewerForm = new ClipboardViewerForm();
-            clipboardViewerForm.Show();
+            ToolsIntegration.ShowClipboardViewerWindow();
         }
 
         private static void ShowImageEditorSelector(TaskSettings taskSettings)

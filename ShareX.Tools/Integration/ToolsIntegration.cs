@@ -36,6 +36,11 @@ public static class ToolsIntegration
         Show(() => new BackgroundRemoverWindow(modelsFolder, options));
     }
 
+    public static void ShowClipboardViewerWindow()
+    {
+        Show(() => new ClipboardViewerWindow());
+    }
+
     public static void ShowHashCheckerWindow(HashCalculationHandler handler, Action? playSound = null, string? filePath = null)
     {
         Show(() => new HashCheckerWindow(handler, playSound, filePath));

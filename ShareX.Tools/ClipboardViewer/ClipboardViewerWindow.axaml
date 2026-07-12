@@ -1,0 +1,161 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:controls="using:ShareX.Tools.Controls"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="580"
+        x:Class="ShareX.Tools.ClipboardViewerWindow"
+        x:DataType="vm:ClipboardViewerViewModel"
+        Title="ShareX - Clipboard Viewer"
+        Width="900"
+        Height="580"
+        MinWidth="720"
+        MinHeight="460"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="ListBox.format-list ListBoxItem">
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="TextBox.preview-text">
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="16" ColumnDefinitions="250,*" ColumnSpacing="12">
+                <Border Grid.Column="0" Classes="tool-panel">
+                    <Grid RowDefinitions="Auto,*" RowSpacing="10">
+                        <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+                            <TextBlock Grid.Column="0" Classes="section-heading" Text="Formats"/>
+                            <TextBlock Grid.Column="1"
+                                       Text="{Binding FormatCountText}"
+                                       FontWeight="Normal"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       VerticalAlignment="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <ListBox Classes="format-list"
+                                     ItemsSource="{Binding Formats}"
+                                     SelectedItem="{Binding SelectedFormat}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate x:DataType="x:String">
+                                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                                            <TextBlock Grid.Column="0"
+                                                       Text="{x:Static theming:LucideIcons.file_text}"
+                                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                       FontWeight="Normal"
+                                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                       VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="1"
+                                                       Text="{Binding}"
+                                                       FontWeight="Normal"
+                                                       TextTrimming="CharacterEllipsis"
+                                                       VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+                            <StackPanel IsVisible="{Binding !HasFormats}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Spacing="8"
+                                        IsHitTestVisible="False">
+                                <TextBlock Text="{x:Static theming:LucideIcons.clipboard_x}"
+                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                           FontWeight="Normal"
+                                           FontSize="40"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock Text="No formats"
+                                           FontWeight="Normal"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="1" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                    <Grid RowDefinitions="Auto,*">
+                        <Grid Grid.Row="0" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" Margin="12">
+                            <StackPanel Grid.Column="0" Spacing="2" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding PreviewTitle}"
+                                           Classes="section-heading"
+                                           TextTrimming="CharacterEllipsis"/>
+                                <TextBlock Text="{Binding PreviewDetails}"
+                                           FontWeight="Normal"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                            </StackPanel>
+                            <Button Grid.Column="1" Command="{Binding RefreshCommand}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}"
+                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                               FontWeight="Normal"/>
+                                    <TextBlock Text="Refresh"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="2" Command="{Binding ClearClipboardCommand}" IsEnabled="{Binding HasFormats}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.trash_2}"
+                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                               FontWeight="Normal"/>
+                                    <TextBlock Text="Clear"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+
+                        <Border Grid.Row="1"
+                                Margin="12,0,12,12"
+                                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                BorderThickness="1"
+                                CornerRadius="4"
+                                ClipToBounds="True">
+                            <Grid>
+                                <TextBox Classes="preview-text"
+                                         Text="{Binding PreviewText}"
+                                         IsReadOnly="True"
+                                         IsVisible="{Binding HasText}"
+                                         AcceptsReturn="True"
+                                         TextWrapping="NoWrap"
+                                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                         ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
+                                <controls:ImageComparisonSlider LeftImage="{Binding PreviewImage}"
+                                                                IsVisible="{Binding HasImage}"
+                                                                PointerPressed="OnImagePointerPressed"/>
+
+                                <StackPanel IsVisible="{Binding !HasPreview}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Spacing="10"
+                                            MaxWidth="360"
+                                            IsHitTestVisible="False">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.clipboard_list}"
+                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                               FontWeight="Normal"
+                                               FontSize="48"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                               HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding EmptyMessage}"
+                                               FontWeight="Normal"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                               TextAlignment="Center"
+                                               TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
