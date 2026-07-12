@@ -1,0 +1,136 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="590"
+        x:Class="ShareX.Tools.AnalyzeImageOptionsWindow"
+        x:DataType="vm:AnalyzeImageOptionsViewModel"
+        Title="ShareX - Analyze image options"
+        Width="650"
+        Height="590"
+        MinWidth="580"
+        MinHeight="540"
+        WindowStartupLocation="CenterOwner">
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
+                <Border Grid.Row="0" Classes="tool-panel">
+                    <Grid ColumnDefinitions="100,*,Auto" ColumnSpacing="10">
+                        <TextBlock Classes="row-label" Text="Provider"/>
+                        <ComboBox Grid.Column="1" ItemsSource="{Binding Providers}" SelectedItem="{Binding Provider}"/>
+                        <Button Grid.Column="2" Command="{Binding OpenAPIKeyPageCommand}" ToolTip.Tip="Get API key">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.key_round}"/>
+                                <TextBlock Text="API key page..."/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Spacing="12" Margin="0,0,10,0">
+                        <Border Classes="tool-panel" IsVisible="{Binding IsOpenAI}">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
+                                <TextBlock Classes="section-heading" Text="OpenAI"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="120,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="API key"/>
+                                    <TextBox Grid.Column="1" Text="{Binding OpenAIAPIKey}" PasswordChar="●"/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="120,*,Auto" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Model"/>
+                                    <ComboBox Grid.Column="1"
+                                              ItemsSource="{Binding OpenAIModels}"
+                                              Text="{Binding OpenAIModel}"
+                                              IsEditable="True"/>
+                                    <Button Grid.Column="2" Command="{Binding LoadModelsCommand}" IsEnabled="{Binding !IsBusy}">
+                                        <StackPanel Orientation="Horizontal" Spacing="8">
+                                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.refresh_cw}"/>
+                                            <TextBlock Text="Load models"/>
+                                        </StackPanel>
+                                    </Button>
+                                </Grid>
+                                <Grid Grid.Row="3" ColumnDefinitions="120,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Custom base URL"/>
+                                    <TextBox Grid.Column="1" Text="{Binding OpenAICustomURL}" PlaceholderText="https://api.openai.com"/>
+                                </Grid>
+                                <Grid Grid.Row="4" ColumnDefinitions="120,*,120,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Reasoning"/>
+                                    <ComboBox Grid.Column="1" ItemsSource="{Binding ReasoningEfforts}" SelectedItem="{Binding OpenAIReasoningEffort}"/>
+                                    <TextBlock Grid.Column="2" Classes="row-label" Text="Verbosity"/>
+                                    <ComboBox Grid.Column="3" ItemsSource="{Binding VerbosityLevels}" SelectedItem="{Binding OpenAIVerbosity}"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <Border Classes="tool-panel" IsVisible="{Binding IsGemini}">
+                            <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
+                                <TextBlock Classes="section-heading" Text="Google Gemini"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="120,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="API key"/>
+                                    <TextBox Grid.Column="1" Text="{Binding GeminiAPIKey}" PasswordChar="●"/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="120,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Model"/>
+                                    <ComboBox Grid.Column="1" ItemsSource="{Binding GeminiModels}" Text="{Binding GeminiModel}" IsEditable="True"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <Border Classes="tool-panel" IsVisible="{Binding IsOpenRouter}">
+                            <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
+                                <TextBlock Classes="section-heading" Text="OpenRouter"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="120,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="API key"/>
+                                    <TextBox Grid.Column="1" Text="{Binding OpenRouterAPIKey}" PasswordChar="●"/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="120,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="Model"/>
+                                    <ComboBox Grid.Column="1" ItemsSource="{Binding OpenRouterModels}" Text="{Binding OpenRouterModel}" IsEditable="True"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <Border Classes="tool-panel">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="8">
+                                <TextBlock Classes="section-heading" Text="Behavior"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Capture a region when opened without an image" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding AutoStartRegion}" OnContent="" OffContent=""/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Analyze automatically when opened" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding AutoStartAnalyze}" OnContent="" OffContent=""/>
+                                </Grid>
+                                <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
+                                    <TextBlock Text="Copy result automatically" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding AutoCopyResult}" OnContent="" OffContent=""/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <Grid Grid.Row="2" ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="8">
+                    <Button Grid.Column="0" Command="{Binding TestConnectionCommand}" IsEnabled="{Binding !IsBusy}">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plug_zap}"/>
+                            <TextBlock Text="Test connection"/>
+                        </StackPanel>
+                    </Button>
+                    <TextBlock Grid.Column="1"
+                               Text="{Binding StatusText}"
+                               IsVisible="{Binding HasStatus}"
+                               FontWeight="Normal"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                               TextTrimming="CharacterEllipsis"
+                               VerticalAlignment="Center"/>
+                    <Button Grid.Column="2" Content="Save" Command="{Binding SaveCommand}" IsEnabled="{Binding !IsBusy}"/>
+                    <Button Grid.Column="3" Content="Cancel" Command="{Binding CancelCommand}" IsEnabled="{Binding !IsBusy}"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

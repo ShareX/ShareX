@@ -31,6 +31,20 @@ namespace ShareX.Tools.Integration;
 
 public static class ToolsIntegration
 {
+    public static void ShowAnalyzeImageWindow(
+        string? imagePath,
+        AnalyzeImageOptions options,
+        AnalyzeImageHandler analyze,
+        AnalyzeImageRegionCaptureHandler captureRegion,
+        AnalyzeImageTestConnectionHandler testConnection,
+        AnalyzeImageLoadModelsHandler loadModels,
+        Action<AnalyzeImageOptions>? optionsChanged = null,
+        Action? playNotificationSound = null)
+    {
+        Show(() => new AnalyzeImageWindow(imagePath, options, analyze, captureRegion, testConnection, loadModels,
+            optionsChanged, playNotificationSound));
+    }
+
     public static void ShowBackgroundRemoverWindow(string? modelsFolder, BackgroundRemoverOptions options)
     {
         Show(() => new BackgroundRemoverWindow(modelsFolder, options));

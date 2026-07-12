@@ -1,0 +1,158 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
+        x:Class="ShareX.Tools.AnalyzeImageWindow"
+        x:DataType="vm:AnalyzeImageViewModel"
+        Title="ShareX - Analyze image"
+        Width="1000"
+        Height="650"
+        MinWidth="820"
+        MinHeight="560"
+        WindowStartupLocation="CenterScreen">
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="16" ColumnDefinitions="360,*" ColumnSpacing="12">
+                <Grid Grid.Column="0" RowDefinitions="*,Auto" RowSpacing="12">
+                    <Border Grid.Row="0" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                        <Grid RowDefinitions="Auto,Auto,*">
+                            <Grid Grid.Row="0" ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="12,12,12,8">
+                                <TextBlock Classes="section-heading" Text="Image"/>
+                                <TextBlock Grid.Column="1"
+                                           Text="{Binding ImageDescription}"
+                                           IsVisible="{Binding HasImage}"
+                                           Classes="path-text"
+                                           TextTrimming="CharacterEllipsis"
+                                           VerticalAlignment="Center"/>
+                            </Grid>
+                            <StackPanel Grid.Row="1"
+                                        Orientation="Horizontal"
+                                        Spacing="8"
+                                        Margin="12,0,12,12"
+                                        HorizontalAlignment="Left">
+                                <Button Command="{Binding SelectImageCommand}" IsEnabled="{Binding IsIdle}">
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}"/>
+                                        <TextBlock Text="Select image..."/>
+                                    </StackPanel>
+                                </Button>
+                                <Button Command="{Binding SelectRegionCommand}" IsEnabled="{Binding IsIdle}">
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.crop}"/>
+                                        <TextBlock Text="Region..."/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                            <Border Grid.Row="2"
+                                    Name="PreviewHost"
+                                    Margin="12,0,12,12"
+                                    Background="{DynamicResource ShareX.Brush.Control.Background}"
+                                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                    BorderThickness="1"
+                                    CornerRadius="4"
+                                    ClipToBounds="True"
+                                    PointerPressed="OnPreviewPointerPressed">
+                                <Grid>
+                                    <Image Source="{Binding PreviewImage}" Stretch="Uniform" Margin="8"/>
+                                    <StackPanel IsVisible="{Binding !HasImage}"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Spacing="10"
+                                                IsHitTestVisible="False">
+                                        <TextBlock Classes="icon"
+                                                   Text="{x:Static theming:LucideIcons.image_up}"
+                                                   FontSize="42"
+                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                   HorizontalAlignment="Center"/>
+                                        <TextBlock Text="Select or drop an image"
+                                                   FontWeight="Normal"
+                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="1" Classes="tool-panel">
+                        <Grid RowDefinitions="Auto,Auto,110" RowSpacing="9">
+                            <TextBlock Classes="section-heading" Text="Prompt"/>
+                            <ComboBox Grid.Row="1"
+                                      ItemsSource="{Binding PresetPrompts}"
+                                      SelectedItem="{Binding SelectedPreset}"
+                                      PlaceholderText="Choose a preset prompt"/>
+                            <TextBox Grid.Row="2"
+                                     Text="{Binding Prompt}"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     VerticalContentAlignment="Top"
+                                     ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <Border Grid.Column="1" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                    <Grid RowDefinitions="Auto,Auto,*,Auto">
+                        <Grid Grid.Row="0" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" Margin="12">
+                            <TextBlock Classes="section-heading" Text="Result" VerticalAlignment="Center"/>
+                            <Button Grid.Column="1" Command="{Binding EditOptionsCommand}" IsEnabled="{Binding IsIdle}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings}"/>
+                                    <TextBlock Text="Options..."/>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="2" Command="{Binding CopyResultCommand}" IsEnabled="{Binding HasResult}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                                    <TextBlock Text="Copy all"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                        <ProgressBar Grid.Row="1" Height="4" IsIndeterminate="True" IsVisible="{Binding IsBusy}"/>
+                        <Grid Grid.Row="2" Margin="12,0,12,12">
+                            <TextBox Text="{Binding ResultText}"
+                                     IsReadOnly="True"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     VerticalContentAlignment="Top"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                     FontSize="15"/>
+                            <StackPanel IsVisible="{Binding HasError}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        MaxWidth="430"
+                                        Spacing="10"
+                                        IsHitTestVisible="False">
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.triangle_alert}"
+                                           FontSize="38"
+                                           Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding ErrorMessage}"
+                                           FontWeight="Normal"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Center"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="3" ColumnDefinitions="*,Auto" Margin="12,0,12,12">
+                            <TextBlock Text="{Binding ElapsedText}"
+                                       FontWeight="Normal"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       VerticalAlignment="Center"/>
+                            <Button Grid.Column="1" Command="{Binding AnalyzeCommand}" IsEnabled="{Binding CanAnalyze}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.sparkles}"/>
+                                    <TextBlock Text="Analyze image"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
