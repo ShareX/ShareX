@@ -66,9 +66,9 @@ public static class ToolsIntegration
         Show(() => new ClipboardViewerWindow());
     }
 
-    public static void ShowColorPickerWindow(ColorPickerServices services, ColorPickerOptions options)
+    public static void ShowColorPickerWindow(ColorPickerOptions options)
     {
-        Show(() => new ColorPickerWindow(services, options));
+        Show(() => new ColorPickerWindow(options));
     }
 
     public static void ShowHashCheckerWindow(HashCalculationHandler handler, Action? playSound = null, string? filePath = null)

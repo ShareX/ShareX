@@ -1,6 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        x:Class="ShareX.ImageEditor.Presentation.Views.ScreenColorPickerWindow"
+        x:Class="ShareX.AvaloniaUI.Windows.ScreenColorPickerWindow"
         CanResize="False"
         ShowInTaskbar="False"
         WindowDecorations="None"

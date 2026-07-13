@@ -10,6 +10,9 @@
 
   <ItemGroup>
     <AvaloniaResource Include="Assets\lucide.ttf" />
+    <AvaloniaResource Include="Assets\closedhand.cur" />
+    <AvaloniaResource Include="Assets\Crosshair.cur" />
+    <AvaloniaResource Include="Assets\openhand.cur" />
   </ItemGroup>
 
   <ItemGroup>

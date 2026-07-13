@@ -29,7 +29,7 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
-using ShareX.ImageEditor.Presentation.Views;
+using ShareX.AvaloniaUI.Windows;
 
 namespace ShareX.ImageEditor.Presentation.Controls
 {

@@ -28,22 +28,23 @@ using Avalonia.Input;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using SkiaSharp;
+using ShareX.AvaloniaUI.Imaging;
 using System.Buffers.Binary;
 
-namespace ShareX.ImageEditor.Presentation.Rendering
+namespace ShareX.AvaloniaUI.Input
 {
-    internal static class CursorAssetLoader
+    public static class CursorAssetLoader
     {
-        internal enum CustomCursorKind
+        public enum CustomCursorKind
         {
             ClosedHand,
             Crosshair,
             OpenHand
         }
 
-        private static readonly Uri ClosedHandCursorUri = new("avares://ShareX.ImageEditor/Assets/closedhand.cur");
-        private static readonly Uri CrosshairCursorUri = new("avares://ShareX.ImageEditor/Assets/Crosshair.cur");
-        private static readonly Uri OpenHandCursorUri = new("avares://ShareX.ImageEditor/Assets/openhand.cur");
+        private static readonly Uri ClosedHandCursorUri = new("avares://ShareX.Avalonia/Assets/closedhand.cur");
+        private static readonly Uri CrosshairCursorUri = new("avares://ShareX.Avalonia/Assets/Crosshair.cur");
+        private static readonly Uri OpenHandCursorUri = new("avares://ShareX.Avalonia/Assets/openhand.cur");
         private static readonly Cursor FallbackClosedHandCursor = new(StandardCursorType.SizeAll);
         private static readonly Cursor FallbackCrosshairCursor = new(StandardCursorType.Cross);
         private static readonly Cursor FallbackOpenHandCursor = new(StandardCursorType.Hand);

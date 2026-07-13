@@ -28,11 +28,11 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
-using ShareX.ImageEditor.Presentation.Rendering;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.AvaloniaUI.Input;
 using System.Runtime.InteropServices;
 
-namespace ShareX.ImageEditor.Presentation.Views
+namespace ShareX.AvaloniaUI.Windows
 {
     public partial class ScreenColorPickerWindow : Window
     {

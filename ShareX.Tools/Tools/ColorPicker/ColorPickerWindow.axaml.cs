@@ -14,6 +14,7 @@ using Avalonia.Input;
 using Avalonia.Input.Platform;
 using Avalonia.Interactivity;
 using Avalonia.Media;
+using ShareX.AvaloniaUI.Windows;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Tools.Controls;
@@ -23,20 +24,18 @@ namespace ShareX.Tools;
 
 public partial class ColorPickerWindow : Window
 {
-    private readonly ColorPickerServices _services;
     private readonly ColorPickerOptions _options;
     private DrawingColor _currentColor = DrawingColor.Red;
     private DrawingColor _previousColor = DrawingColor.Red;
     private bool _updatingControls;
     private bool _initialized;
 
-    public ColorPickerWindow() : this(new ColorPickerServices { PickScreenColor = () => null }, new ColorPickerOptions())
+    public ColorPickerWindow() : this(new ColorPickerOptions())
     {
     }
 
-    public ColorPickerWindow(ColorPickerServices services, ColorPickerOptions options)
+    public ColorPickerWindow(ColorPickerOptions options)
     {
-        _services = services;
         _options = options;
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
@@ -163,24 +162,16 @@ public partial class ColorPickerWindow : Window
 
     private async void OnPickScreenClick(object? sender, RoutedEventArgs e)
     {
-        Avalonia.Controls.WindowState oldState = WindowState;
         _previousColor = _currentColor;
-        try
+        ScreenColorPickerWindow picker = new();
+        Avalonia.Media.Color? color = await picker.PickAsync(this);
+
+        if (color.HasValue)
         {
-            WindowState = Avalonia.Controls.WindowState.Minimized;
-            await Task.Delay(250);
-            ColorPickerSample? sample = _services.PickScreenColor();
-            if (sample != null)
-            {
-                SetColor(DrawingColor.FromArgb(sample.Argb));
-                AddRecentColor(_currentColor);
-                RebuildPalette();
-            }
-        }
-        finally
-        {
-            WindowState = oldState;
-            Activate();
+            Avalonia.Media.Color selected = color.Value;
+            SetColor(DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B));
+            AddRecentColor(_currentColor);
+            RebuildPalette();
         }
     }
 
