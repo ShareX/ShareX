@@ -13,8 +13,6 @@
     <Canvas x:Name="PickerSurface"
             Background="Transparent">
         <Border x:Name="PickerPreview"
-            Width="128"
-            Height="52"
             Padding="8"
             CornerRadius="8"
             Background="{DynamicResource ShareX.Brush.Background.Main}"
@@ -22,23 +20,44 @@
             BorderThickness="1"
             BoxShadow="0 8 24 #66000000"
             IsHitTestVisible="False">
-            <Grid ColumnDefinitions="36,*" ColumnSpacing="10">
-                <Border x:Name="ColorPreview"
-                        Width="36"
-                        Height="36"
-                        CornerRadius="5"
-                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                        BorderThickness="1"/>
+            <StackPanel Spacing="8">
+                <Grid x:Name="MagnifierPanel"
+                      Width="136"
+                      Height="136">
+                    <Image x:Name="MagnifierImage"
+                           Width="135"
+                           Height="135"
+                           Stretch="Fill"
+                           RenderOptions.BitmapInterpolationMode="None"/>
+                    <Border Width="11"
+                            Height="11"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            BorderBrush="White"
+                            BorderThickness="1"
+                            BoxShadow="0 0 0 1 #CC000000"/>
+                </Grid>
 
-                <TextBlock x:Name="HexText"
-                           Grid.Column="1"
-                           Text="#000000"
-                           FontFamily="{DynamicResource ShareX.FontFamily.Default}"
-                           FontSize="15"
-                           FontWeight="SemiBold"
-                           Foreground="{DynamicResource ShareX.Brush.Text}"
-                           VerticalAlignment="Center"/>
-            </Grid>
+                <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
+                    <Border x:Name="ColorPreview"
+                            Width="28"
+                            Height="28"
+                            CornerRadius="4"
+                            BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                            BorderThickness="1"/>
+
+                    <TextBlock x:Name="InfoText"
+                               Grid.Column="1"
+                               Text="#000000"
+                               MaxWidth="240"
+                               FontFamily="{DynamicResource ShareX.FontFamily.Default}"
+                               FontSize="14"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ShareX.Brush.Text}"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Center"/>
+                </Grid>
+            </StackPanel>
         </Border>
     </Canvas>
 </Window>

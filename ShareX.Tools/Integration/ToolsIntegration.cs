@@ -25,6 +25,7 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
+using ShareX.AvaloniaUI.Windows;
 using ShareX.HelpersLib;
 using ShareX.Tools;
 
@@ -66,9 +67,30 @@ public static class ToolsIntegration
         Show(() => new ClipboardViewerWindow());
     }
 
-    public static void ShowColorPickerWindow(ColorPickerOptions options)
+    public static void ShowColorPickerWindow(ColorPickerOptions options, ScreenColorPickerOptions screenColorPickerOptions)
     {
-        Show(() => new ColorPickerWindow(options));
+        Show(() => new ColorPickerWindow(options, screenColorPickerOptions));
+    }
+
+    public static Task<ScreenColorPickerResult?> PickScreenColorAsync(ScreenColorPickerOptions options)
+    {
+        AvaloniaBootstrapper.EnsureInitialized();
+        TaskCompletionSource<ScreenColorPickerResult?> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        Dispatcher.UIThread.Post(async () =>
+        {
+            try
+            {
+                ScreenColorPickerWindow picker = new(options);
+                completion.TrySetResult(await picker.PickAsync());
+            }
+            catch (Exception ex)
+            {
+                completion.TrySetException(ex);
+            }
+        });
+
+        return completion.Task;
     }
 
     public static void ShowHashCheckerWindow(HashCalculationHandler handler, Action? playSound = null, string? filePath = null)

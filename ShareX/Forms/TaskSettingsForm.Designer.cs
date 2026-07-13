@@ -284,6 +284,7 @@
             lblToolsScreenColorPickerInfoText = new System.Windows.Forms.Label();
             txtToolsScreenColorPickerFormat = new System.Windows.Forms.TextBox();
             lblToolsScreenColorPickerFormat = new System.Windows.Forms.Label();
+            cbToolsScreenColorPickerShowMagnifier = new System.Windows.Forms.CheckBox();
             cbOverrideToolsSettings = new System.Windows.Forms.CheckBox();
             tpActions = new System.Windows.Forms.TabPage();
             pActions = new System.Windows.Forms.Panel();
@@ -2222,6 +2223,7 @@
             pTools.Controls.Add(lblToolsScreenColorPickerInfoText);
             pTools.Controls.Add(txtToolsScreenColorPickerFormat);
             pTools.Controls.Add(lblToolsScreenColorPickerFormat);
+            pTools.Controls.Add(cbToolsScreenColorPickerShowMagnifier);
             resources.ApplyResources(pTools, "pTools");
             pTools.Name = "pTools";
             // 
@@ -2264,6 +2266,13 @@
             // 
             resources.ApplyResources(lblToolsScreenColorPickerFormat, "lblToolsScreenColorPickerFormat");
             lblToolsScreenColorPickerFormat.Name = "lblToolsScreenColorPickerFormat";
+            // 
+            // cbToolsScreenColorPickerShowMagnifier
+            // 
+            resources.ApplyResources(cbToolsScreenColorPickerShowMagnifier, "cbToolsScreenColorPickerShowMagnifier");
+            cbToolsScreenColorPickerShowMagnifier.Name = "cbToolsScreenColorPickerShowMagnifier";
+            cbToolsScreenColorPickerShowMagnifier.UseVisualStyleBackColor = true;
+            cbToolsScreenColorPickerShowMagnifier.CheckedChanged += cbToolsScreenColorPickerShowMagnifier_CheckedChanged;
             // 
             // cbOverrideToolsSettings
             // 
@@ -2808,6 +2817,7 @@
         private System.Windows.Forms.Label lblToolsScreenColorPickerInfoText;
         private System.Windows.Forms.TextBox txtToolsScreenColorPickerFormatCtrl;
         private System.Windows.Forms.Label lblToolsScreenColorPickerFormatCtrl;
+        private System.Windows.Forms.CheckBox cbToolsScreenColorPickerShowMagnifier;
         private System.Windows.Forms.TabControl tcGeneral;
         private System.Windows.Forms.TabPage tpGeneralMain;
         private System.Windows.Forms.TabPage tpNotifications;

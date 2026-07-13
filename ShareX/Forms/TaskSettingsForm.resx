@@ -6723,6 +6723,33 @@
   <data name="&gt;&gt;lblToolsScreenColorPickerFormat.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="cbToolsScreenColorPickerShowMagnifier.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbToolsScreenColorPickerShowMagnifier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 174</value>
+  </data>
+  <data name="cbToolsScreenColorPickerShowMagnifier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="cbToolsScreenColorPickerShowMagnifier.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cbToolsScreenColorPickerShowMagnifier.Text" xml:space="preserve">
+    <value>Show magnifier</value>
+  </data>
+  <data name="&gt;&gt;cbToolsScreenColorPickerShowMagnifier.Name" xml:space="preserve">
+    <value>cbToolsScreenColorPickerShowMagnifier</value>
+  </data>
+  <data name="&gt;&gt;cbToolsScreenColorPickerShowMagnifier.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbToolsScreenColorPickerShowMagnifier.Parent" xml:space="preserve">
+    <value>pTools</value>
+  </data>
+  <data name="&gt;&gt;cbToolsScreenColorPickerShowMagnifier.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="pTools.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>

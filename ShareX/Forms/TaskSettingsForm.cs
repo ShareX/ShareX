@@ -484,15 +484,17 @@ namespace ShareX
             #region General
 
             cbImageEditorUseLegacyImageEditor.Checked = TaskSettings.ToolsSettings.UseLegacyImageEditor;
+            var screenColorPickerOptions = TaskSettings.ToolsSettings.ScreenColorPickerOptions;
 
             CodeMenu.Create<CodeMenuEntryPixelInfo>(txtToolsScreenColorPickerFormat);
-            txtToolsScreenColorPickerFormat.Text = TaskSettings.ToolsSettings.ScreenColorPickerFormat;
+            txtToolsScreenColorPickerFormat.Text = screenColorPickerOptions.Format;
 
             CodeMenu.Create<CodeMenuEntryPixelInfo>(txtToolsScreenColorPickerFormatCtrl);
-            txtToolsScreenColorPickerFormatCtrl.Text = TaskSettings.ToolsSettings.ScreenColorPickerFormatCtrl;
+            txtToolsScreenColorPickerFormatCtrl.Text = screenColorPickerOptions.FormatCtrl;
 
             CodeMenu.Create<CodeMenuEntryPixelInfo>(txtToolsScreenColorPickerInfoText);
-            txtToolsScreenColorPickerInfoText.Text = TaskSettings.ToolsSettings.ScreenColorPickerInfoText;
+            txtToolsScreenColorPickerInfoText.Text = screenColorPickerOptions.InfoText;
+            cbToolsScreenColorPickerShowMagnifier.Checked = screenColorPickerOptions.ShowMagnifier;
 
             #endregion
 
@@ -1836,17 +1838,22 @@ namespace ShareX
 
         private void txtToolsScreenColorPickerFormat_TextChanged(object sender, EventArgs e)
         {
-            TaskSettings.ToolsSettings.ScreenColorPickerFormat = txtToolsScreenColorPickerFormat.Text;
+            TaskSettings.ToolsSettings.ScreenColorPickerOptions.Format = txtToolsScreenColorPickerFormat.Text;
         }
 
         private void txtToolsScreenColorPickerFormatCtrl_TextChanged(object sender, EventArgs e)
         {
-            TaskSettings.ToolsSettings.ScreenColorPickerFormatCtrl = txtToolsScreenColorPickerFormatCtrl.Text;
+            TaskSettings.ToolsSettings.ScreenColorPickerOptions.FormatCtrl = txtToolsScreenColorPickerFormatCtrl.Text;
         }
 
         private void txtToolsScreenColorPickerInfoText_TextChanged(object sender, EventArgs e)
         {
-            TaskSettings.ToolsSettings.ScreenColorPickerInfoText = txtToolsScreenColorPickerInfoText.Text;
+            TaskSettings.ToolsSettings.ScreenColorPickerOptions.InfoText = txtToolsScreenColorPickerInfoText.Text;
+        }
+
+        private void cbToolsScreenColorPickerShowMagnifier_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ToolsSettings.ScreenColorPickerOptions.ShowMagnifier = cbToolsScreenColorPickerShowMagnifier.Checked;
         }
 
         #endregion

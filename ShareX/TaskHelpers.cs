@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.AvaloniaUI.Windows;
 using ShareX.HistoryLib;
 using ShareX.Tools;
 using ShareX.Tools.Integration;
@@ -886,32 +887,25 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
             ToolsIntegration.ShowColorPickerWindow(
-                taskSettings.CaptureSettingsReference.SurfaceOptions.ColorPickerOptions);
+                taskSettings.CaptureSettingsReference.SurfaceOptions.ColorPickerOptions,
+                taskSettings.ToolsSettingsReference.ScreenColorPickerOptions);
         }
 
-        public static void OpenScreenColorPicker(TaskSettings taskSettings = null)
+        public static async void OpenScreenColorPicker(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-            taskSettings.CaptureSettings.SurfaceOptions.ScreenColorPickerInfoText = taskSettings.ToolsSettings.ScreenColorPickerInfoText;
+            ScreenColorPickerOptions options = taskSettings.ToolsSettingsReference.ScreenColorPickerOptions;
+            ScreenColorPickerResult result = await ToolsIntegration.PickScreenColorAsync(options);
 
-            PointInfo pointInfo = RegionCaptureTasks.GetPointInfo(taskSettings.CaptureSettings.SurfaceOptions);
-
-            if (pointInfo != null)
+            if (result != null)
             {
-                string input;
-
-                if (Control.ModifierKeys == Keys.Control)
-                {
-                    input = taskSettings.ToolsSettings.ScreenColorPickerFormatCtrl;
-                }
-                else
-                {
-                    input = taskSettings.ToolsSettings.ScreenColorPickerFormat;
-                }
+                string input = result.ControlPressed ? options.FormatCtrl : options.Format;
 
                 if (!string.IsNullOrEmpty(input))
                 {
-                    string text = CodeMenuEntryPixelInfo.Parse(input, pointInfo.Color, pointInfo.Position);
+                    Color color = Color.FromArgb(result.Color.A, result.Color.R, result.Color.G, result.Color.B);
+                    Point position = new Point(result.Position.X, result.Position.Y);
+                    string text = CodeMenuEntryPixelInfo.Parse(input, color, position);
                     ClipboardHelpers.CopyText(text);
 
                     PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);

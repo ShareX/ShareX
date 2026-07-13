@@ -25,19 +25,21 @@ namespace ShareX.Tools;
 public partial class ColorPickerWindow : Window
 {
     private readonly ColorPickerOptions _options;
+    private readonly ScreenColorPickerOptions _screenColorPickerOptions;
     private DrawingColor _currentColor = DrawingColor.Red;
     private DrawingColor _previousColor = DrawingColor.Red;
     private bool _hasPreviousColor;
     private bool _updatingControls;
     private bool _initialized;
 
-    public ColorPickerWindow() : this(new ColorPickerOptions())
+    public ColorPickerWindow() : this(new ColorPickerOptions(), new ScreenColorPickerOptions())
     {
     }
 
-    public ColorPickerWindow(ColorPickerOptions options)
+    public ColorPickerWindow(ColorPickerOptions options, ScreenColorPickerOptions screenColorPickerOptions)
     {
         _options = options;
+        _screenColorPickerOptions = screenColorPickerOptions;
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Picker.ColorChanged += OnPickerColorChanged;
@@ -159,14 +161,14 @@ public partial class ColorPickerWindow : Window
 
     private async void OnPickScreenClick(object? sender, RoutedEventArgs e)
     {
-        ScreenColorPickerWindow picker = new();
-        Avalonia.Media.Color? color = await picker.PickAsync(this);
+        ScreenColorPickerWindow picker = new(_screenColorPickerOptions);
+        ScreenColorPickerResult? result = await picker.PickAsync(this);
 
-        if (color.HasValue)
+        if (result != null)
         {
             _previousColor = _currentColor;
             _hasPreviousColor = true;
-            Avalonia.Media.Color selected = color.Value;
+            Avalonia.Media.Color selected = result.Color;
             SetColor(DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B));
             AddRecentColor(_currentColor);
             RebuildPalette();
