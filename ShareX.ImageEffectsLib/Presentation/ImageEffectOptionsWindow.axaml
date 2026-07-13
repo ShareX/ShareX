@@ -6,18 +6,16 @@
         Width="620" Height="680" MinWidth="520" MinHeight="480"
         WindowStartupLocation="CenterOwner">
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
-        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" RowDefinitions="Auto,*,Auto">
-            <Border Margin="16,16,16,0" Classes="tool-panel">
-                <StackPanel Spacing="6">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" RowDefinitions="*,Auto">
+            <Border Margin="16,16,16,12" Classes="tool-panel">
+                <Grid RowDefinitions="Auto,*" RowSpacing="10">
                     <TextBlock x:Name="EffectTitle" Classes="section-heading"/>
-                    <TextBlock Text="Changes are applied to the preview after you save."
-                               FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
-                </StackPanel>
+                    <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel x:Name="EditorPanel" Spacing="8" Margin="0,4,12,4"/>
+                    </ScrollViewer>
+                </Grid>
             </Border>
-            <ScrollViewer Grid.Row="1" Margin="16,12" HorizontalScrollBarVisibility="Disabled">
-                <StackPanel x:Name="EditorPanel" Spacing="8" Margin="0,4,12,4"/>
-            </ScrollViewer>
-            <Grid Grid.Row="2" Margin="16,0,16,16" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+            <Grid Grid.Row="1" Margin="16,0,16,16" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
                 <TextBlock x:Name="ValidationText" FontWeight="Normal"
                            Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}" VerticalAlignment="Center"/>
                 <Button Grid.Column="1" Content="Save" Click="OnSaveClick"/>

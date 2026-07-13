@@ -185,18 +185,61 @@ public partial class ImageEffectOptionsWindow : Window
 
     private Button CreateColorButton(DrawingColor initialColor, Action<DrawingColor> changed)
     {
-        Border swatch = new() { Width = 24, Height = 24, CornerRadius = new CornerRadius(3), BorderThickness = new Thickness(1) };
-        void SetSwatch(DrawingColor color) => swatch.Background = new SolidColorBrush(ToAvalonia(color));
-        SetSwatch(initialColor);
-        Button button = new() { Content = swatch, HorizontalContentAlignment = HorizontalAlignment.Left };
-        Avalonia.Controls.ColorView picker = new() { Width = 300, Height = 300, Color = ToAvalonia(initialColor) };
+        Border swatch = new()
+        {
+            Width = 28,
+            Height = 24,
+            CornerRadius = new CornerRadius(3),
+            BorderBrush = new SolidColorBrush(Avalonia.Media.Color.FromRgb(112, 112, 112)),
+            BorderThickness = new Thickness(1)
+        };
+        TextBlock colorText = new()
+        {
+            FontWeight = FontWeight.Normal,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        StackPanel content = new()
+        {
+            Orientation = Orientation.Horizontal,
+            Spacing = 8
+        };
+        content.Children.Add(swatch);
+        content.Children.Add(colorText);
+
+        void UpdateColorPreview(DrawingColor color)
+        {
+            swatch.Background = new SolidColorBrush(ToAvalonia(color));
+            colorText.Text = color.A == byte.MaxValue
+                ? $"#{color.R:X2}{color.G:X2}{color.B:X2}"
+                : $"#{color.A:X2}{color.R:X2}{color.G:X2}{color.B:X2}";
+        }
+
+        UpdateColorPreview(initialColor);
+        Button button = new() { Content = content, HorizontalContentAlignment = HorizontalAlignment.Left };
+        Avalonia.Controls.ColorView picker = new()
+        {
+            MinWidth = 320,
+            Color = ToAvalonia(initialColor),
+            IsAlphaVisible = true,
+            IsColorPreviewVisible = true
+        };
         Flyout flyout = new() { Content = picker };
-        flyout.Closed += (_, _) =>
+
+        void ApplySelectedColor()
         {
             DrawingColor color = ToDrawing(picker.Color);
-            SetSwatch(color);
+            UpdateColorPreview(color);
             changed(color);
+        }
+
+        picker.PropertyChanged += (_, e) =>
+        {
+            if (e.Property == Avalonia.Controls.ColorView.ColorProperty)
+            {
+                ApplySelectedColor();
+            }
         };
+        flyout.Closed += (_, _) => ApplySelectedColor();
         button.Flyout = flyout;
         return button;
     }
