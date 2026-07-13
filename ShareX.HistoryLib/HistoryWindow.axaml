@@ -285,6 +285,8 @@
                                                Grid.Row="0"
                                                Classes="section-heading"
                                                FontWeight="Normal"
+                                               HorizontalAlignment="Stretch"
+                                               TextAlignment="Center"
                                                TextTrimming="CharacterEllipsis"/>
                                     <Border Grid.Row="1"
                                             Background="{DynamicResource ShareX.Brush.Checkered}"

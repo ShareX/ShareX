@@ -63,11 +63,6 @@ public partial class ImageViewerWindow : Window
         }
     }
 
-    private async void OnOpenClick(object? sender, RoutedEventArgs e)
-    {
-        await SelectImageAsync();
-    }
-
     private async Task<bool> SelectImageAsync()
     {
         _closeOnDeactivate = false;
@@ -88,11 +83,10 @@ public partial class ImageViewerWindow : Window
 
     private void OnPreviousClick(object? sender, RoutedEventArgs e) => _viewModel.Navigate(-1);
     private void OnNextClick(object? sender, RoutedEventArgs e) => _viewModel.Navigate(1);
-    private void OnCloseClick(object? sender, RoutedEventArgs e) => Close();
 
-    private void OnPreviewPointerPressed(object? sender, PointerPressedEventArgs e)
+    private void OnPreviewPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
-        if (e.GetCurrentPoint(this).Properties.IsLeftButtonPressed)
+        if (e.InitialPressMouseButton is MouseButton.Left or MouseButton.Right)
         {
             Close();
             e.Handled = true;

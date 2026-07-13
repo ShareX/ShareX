@@ -16,10 +16,13 @@
 
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Border Background="{DynamicResource ShareX.Brush.Background.Main}"
+                    PointerReleased="OnPreviewPointerReleased"/>
+
             <controls:ImageComparisonSlider LeftImage="{Binding CurrentImage}"
                                             StretchDirection="DownOnly"
                                             CheckerboardBrush="{DynamicResource ShareX.Brush.Checkered}"
-                                            PointerPressed="OnPreviewPointerPressed"
+                                            PointerReleased="OnPreviewPointerReleased"
                                             PointerWheelChanged="OnPreviewPointerWheelChanged"/>
 
             <Border Classes="tool-panel"
@@ -30,21 +33,6 @@
                     IsVisible="{Binding HasImage}">
                 <TextBlock Text="{Binding StatusText}" FontWeight="Normal"/>
             </Border>
-
-            <Button Margin="16" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Click="OnOpenClick">
-                <StackPanel Orientation="Horizontal" Spacing="8">
-                    <TextBlock Text="{x:Static theming:LucideIcons.folder_open}"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                    <TextBlock Text="Open..."/>
-                </StackPanel>
-            </Button>
-
-            <Button Margin="16" HorizontalAlignment="Right" VerticalAlignment="Top"
-                    Click="OnCloseClick">
-                <TextBlock Text="{x:Static theming:LucideIcons.x}"
-                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-            </Button>
 
             <Button Width="72" Height="96" Margin="20"
                     HorizontalAlignment="Left" VerticalAlignment="Center"
