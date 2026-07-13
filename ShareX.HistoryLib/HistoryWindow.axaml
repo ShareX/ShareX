@@ -287,7 +287,7 @@
                                                FontWeight="Normal"
                                                TextTrimming="CharacterEllipsis"/>
                                     <Border Grid.Row="1"
-                                            Classes="checkered-surface"
+                                            Background="{DynamicResource ShareX.Brush.Checkered}"
                                             BorderBrush="{DynamicResource ShareX.Brush.Border}"
                                             BorderThickness="1"
                                             CornerRadius="4"

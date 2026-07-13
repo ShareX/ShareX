@@ -17,6 +17,8 @@
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <controls:ImageComparisonSlider LeftImage="{Binding CurrentImage}"
+                                            StretchDirection="DownOnly"
+                                            CheckerboardBrush="{DynamicResource ShareX.Brush.Checkered}"
                                             PointerPressed="OnPreviewPointerPressed"
                                             PointerWheelChanged="OnPreviewPointerWheelChanged"/>
 

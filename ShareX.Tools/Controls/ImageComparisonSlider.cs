@@ -46,8 +46,14 @@ public class ImageComparisonSlider : Control
     public static readonly StyledProperty<double> SliderPositionProperty =
         AvaloniaProperty.Register<ImageComparisonSlider, double>(nameof(SliderPosition), 0.5);
 
+    public static readonly StyledProperty<StretchDirection> StretchDirectionProperty =
+        AvaloniaProperty.Register<ImageComparisonSlider, StretchDirection>(nameof(StretchDirection), StretchDirection.Both);
+
+    public static readonly StyledProperty<IBrush?> CheckerboardBrushProperty =
+        AvaloniaProperty.Register<ImageComparisonSlider, IBrush?>(nameof(CheckerboardBrush));
+
     private const double RenderCacheHeadroom = 1.25d;
-    private static readonly IBrush CheckerBrush = CreateCheckerBrush();
+    private static readonly IBrush DefaultCheckerboardBrush = CreateCheckerBrush();
     private static readonly IBrush SliderBrush = new SolidColorBrush(Color.FromRgb(255, 255, 255));
     private static readonly IPen SliderPen = new Pen(SliderBrush, 2);
     private static readonly IBrush HandleBrush = new SolidColorBrush(Color.FromArgb(230, 35, 35, 35));
@@ -81,6 +87,18 @@ public class ImageComparisonSlider : Control
         set => SetValue(SliderPositionProperty, Math.Clamp(value, 0d, 1d));
     }
 
+    public StretchDirection StretchDirection
+    {
+        get => GetValue(StretchDirectionProperty);
+        set => SetValue(StretchDirectionProperty, value);
+    }
+
+    public IBrush? CheckerboardBrush
+    {
+        get => GetValue(CheckerboardBrushProperty);
+        set => SetValue(CheckerboardBrushProperty, value);
+    }
+
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
         base.OnPropertyChanged(change);
@@ -92,6 +110,15 @@ public class ImageComparisonSlider : Control
             InvalidateVisual();
         }
         else if (change.Property == SliderPositionProperty)
+        {
+            InvalidateVisual();
+        }
+        else if (change.Property == StretchDirectionProperty)
+        {
+            ClearRenderCache();
+            InvalidateVisual();
+        }
+        else if (change.Property == CheckerboardBrushProperty)
         {
             InvalidateVisual();
         }
@@ -111,7 +138,7 @@ public class ImageComparisonSlider : Control
             return;
         }
 
-        Rect imageBounds = GetImageBounds(bounds, leftImage, rightImage);
+        Rect imageBounds = GetImageBounds(bounds, leftImage, rightImage, StretchDirection);
         EnsureRenderCache(imageBounds);
         DrawTransparencyBackground(context, imageBounds);
 
@@ -177,9 +204,9 @@ public class ImageComparisonSlider : Control
         context.DrawImage(bitmap, source, destination);
     }
 
-    private static void DrawTransparencyBackground(DrawingContext context, Rect bounds)
+    private void DrawTransparencyBackground(DrawingContext context, Rect bounds)
     {
-        context.FillRectangle(CheckerBrush, bounds);
+        context.FillRectangle(CheckerboardBrush ?? DefaultCheckerboardBrush, bounds);
     }
 
     private static unsafe IBrush CreateCheckerBrush()
@@ -217,7 +244,8 @@ public class ImageComparisonSlider : Control
         };
     }
 
-    private static Rect GetImageBounds(Rect bounds, Bitmap? leftImage, Bitmap? rightImage)
+    private static Rect GetImageBounds(Rect bounds, Bitmap? leftImage, Bitmap? rightImage,
+        StretchDirection stretchDirection)
     {
         double imageWidth = Math.Max(leftImage?.PixelSize.Width ?? 0, rightImage?.PixelSize.Width ?? 0);
         double imageHeight = Math.Max(leftImage?.PixelSize.Height ?? 0, rightImage?.PixelSize.Height ?? 0);
@@ -228,6 +256,12 @@ public class ImageComparisonSlider : Control
         }
 
         double scale = Math.Min(bounds.Width / imageWidth, bounds.Height / imageHeight);
+        scale = stretchDirection switch
+        {
+            StretchDirection.DownOnly => Math.Min(1d, scale),
+            StretchDirection.UpOnly => Math.Max(1d, scale),
+            _ => scale
+        };
         double width = imageWidth * scale;
         double height = imageHeight * scale;
         double left = Math.Round(bounds.Left + (bounds.Width - width) / 2d);
@@ -261,7 +295,7 @@ public class ImageComparisonSlider : Control
 
     private void UpdateSliderPosition(Point pointerPosition)
     {
-        Rect imageBounds = GetImageBounds(new Rect(Bounds.Size), LeftImage, RightImage);
+        Rect imageBounds = GetImageBounds(new Rect(Bounds.Size), LeftImage, RightImage, StretchDirection);
         double newPosition = imageBounds.Width <= 0
             ? 0.5
             : Math.Clamp((pointerPosition.X - imageBounds.Left) / imageBounds.Width, 0d, 1d);
