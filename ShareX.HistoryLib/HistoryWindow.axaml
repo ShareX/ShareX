@@ -1,0 +1,448 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:history="using:ShareX.HistoryLib"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        d:DesignWidth="1100"
+        d:DesignHeight="700"
+        x:Class="ShareX.HistoryLib.HistoryWindow"
+        Title="ShareX - History"
+        Width="1100"
+        Height="700"
+        MinWidth="850"
+        MinHeight="560"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <history:HistoryItemIconConverter x:Key="HistoryItemIconConverter"/>
+    </Window.Resources>
+
+    <Window.Styles>
+        <Style Selector="ListBox.history-list">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="ListBox.history-list ListBoxItem">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="MinHeight" Value="34"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="ListBox.history-list ListBoxItem /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="CornerRadius" Value="0"/>
+        </Style>
+        <Style Selector="TextBlock.column-header">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.history-cell">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBox.dialog-multiline">
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="16" RowDefinitions="Auto,*" RowSpacing="12">
+                <Border Grid.Row="0" Classes="tool-panel">
+                    <Grid ColumnDefinitions="250,Auto,Auto,Auto,Auto,Auto,*" ColumnSpacing="8">
+                        <Grid Grid.Column="0">
+                            <TextBox x:Name="SearchTextBox"
+                                     PlaceholderText="Search file names and tags"
+                                     TextChanged="OnSearchTextChanged"
+                                     Padding="12,7,38,7"/>
+                            <TextBlock Text="{x:Static theming:LucideIcons.search}"
+                                       Classes="icon"
+                                       HorizontalAlignment="Right"
+                                       Margin="0,0,12,0"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       IsHitTestVisible="False"/>
+                        </Grid>
+
+                        <Button x:Name="AdvancedButton" Grid.Column="1" Click="OnAdvancedClick">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.filter}"/>
+                                <TextBlock Text="Advanced"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="FavoritesButton" Grid.Column="2" Click="OnFavoritesClick">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.star}"/>
+                                <TextBlock Text="Favorites"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="3" Click="OnStatsClick">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chart_bar}"/>
+                                <TextBlock Text="Stats"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="4" Click="OnImportClick">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_search}"/>
+                                <TextBlock Text="Import..."/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="5" Click="OnSettingsClick">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings}"/>
+                                <TextBlock Text="Settings"/>
+                            </StackPanel>
+                        </Button>
+
+                        <ProgressBar x:Name="BusyProgress"
+                                     Grid.ColumnSpan="7"
+                                     Height="3"
+                                     VerticalAlignment="Bottom"
+                                     Margin="0,0,0,-12"
+                                     IsIndeterminate="True"
+                                     IsVisible="False"/>
+                    </Grid>
+                </Border>
+
+                <Grid x:Name="MainGrid" Grid.Row="1" ColumnDefinitions="*,5,320">
+                    <Border Grid.Column="0" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                        <Grid RowDefinitions="Auto,*">
+                            <Border Grid.Row="0"
+                                    Padding="10,8"
+                                    Background="{DynamicResource ShareX.Brush.Control.Background}"
+                                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                    BorderThickness="0,0,0,1">
+                                <Grid ColumnDefinitions="34,170,0.9*,1.5*" ColumnSpacing="10">
+                                    <TextBlock Grid.Column="0" Text=""/>
+                                    <TextBlock Grid.Column="1" Classes="column-header" Text="Date"/>
+                                    <TextBlock Grid.Column="2" Classes="column-header" Text="File name"/>
+                                    <Grid Grid.Column="3" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                        <TextBlock Classes="column-header" Text="URL"/>
+                                        <TextBlock x:Name="ItemCountText"
+                                                   Grid.Column="1"
+                                                   FontWeight="Normal"
+                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+
+                            <Grid Grid.Row="1">
+                                <ListBox x:Name="HistoryList"
+                                         Classes="history-list"
+                                         SelectionMode="Multiple"
+                                         SelectionChanged="OnHistorySelectionChanged"
+                                         PointerPressed="OnHistoryPointerPressed"
+                                         PointerMoved="OnHistoryPointerMoved"
+                                         PointerReleased="OnHistoryPointerReleased"
+                                         DoubleTapped="OnHistoryDoubleTapped"
+                                         KeyDown="OnHistoryListKeyDown"
+                                         ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <VirtualizingStackPanel/>
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate x:DataType="history:HistoryItem">
+                                            <Grid Height="34"
+                                                  ColumnDefinitions="34,170,0.9*,1.5*"
+                                                  ColumnSpacing="10"
+                                                  Margin="10,0">
+                                                <TextBlock Grid.Column="0"
+                                                           Text="{Binding Converter={StaticResource HistoryItemIconConverter}}"
+                                                           Classes="icon"
+                                                           FontSize="16"
+                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                           HorizontalAlignment="Center"/>
+                                                <TextBlock Grid.Column="1"
+                                                           Classes="history-cell"
+                                                           Text="{Binding DateTime, StringFormat={}{0:g}}"/>
+                                                <TextBlock Grid.Column="2"
+                                                           Classes="history-cell"
+                                                           Text="{Binding FileName}"/>
+                                                <TextBlock Grid.Column="3"
+                                                           Classes="history-cell"
+                                                           Text="{Binding URL}"
+                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                    <ListBox.ContextMenu>
+                                        <ContextMenu Opening="OnHistoryContextMenuOpening">
+                                            <MenuItem x:Name="OpenMenu" Header="Open">
+                                                <MenuItem x:Name="OpenUrlMenu" Header="URL" Click="OnOpenUrlClick" InputGesture="Enter"/>
+                                                <MenuItem x:Name="OpenShortUrlMenu" Header="Shortened URL" Click="OnOpenShortUrlClick"/>
+                                                <MenuItem x:Name="OpenThumbnailUrlMenu" Header="Thumbnail URL" Click="OnOpenThumbnailUrlClick"/>
+                                                <MenuItem x:Name="OpenDeletionUrlMenu" Header="Deletion URL" Click="OnOpenDeletionUrlClick"/>
+                                                <Separator/>
+                                                <MenuItem x:Name="OpenFileMenu" Header="File" Click="OnOpenFileClick" InputGesture="Ctrl+Enter"/>
+                                                <MenuItem x:Name="OpenFolderMenu" Header="Folder" Click="OnOpenFolderClick" InputGesture="Shift+Enter"/>
+                                            </MenuItem>
+                                            <MenuItem x:Name="CopyMenu" Header="Copy">
+                                                <MenuItem x:Name="CopyUrlMenu" Header="URL" Click="OnCopyUrlClick" InputGesture="Ctrl+C"/>
+                                                <MenuItem x:Name="CopyShortUrlMenu" Header="Shortened URL" Click="OnCopyShortUrlClick"/>
+                                                <MenuItem x:Name="CopyThumbnailUrlMenu" Header="Thumbnail URL" Click="OnCopyThumbnailUrlClick"/>
+                                                <MenuItem x:Name="CopyDeletionUrlMenu" Header="Deletion URL" Click="OnCopyDeletionUrlClick"/>
+                                                <Separator/>
+                                                <MenuItem x:Name="CopyFileMenu" Header="File" Click="OnCopyFileClick" InputGesture="Shift+C"/>
+                                                <MenuItem x:Name="CopyImageMenu" Header="Image" Click="OnCopyImageClick" InputGesture="Alt+C"/>
+                                                <MenuItem x:Name="CopyTextMenu" Header="Text" Click="OnCopyTextClick"/>
+                                                <Separator/>
+                                                <MenuItem x:Name="CopyHtmlLinkMenu" Header="HTML link" Click="OnCopyHtmlLinkClick"/>
+                                                <MenuItem x:Name="CopyHtmlImageMenu" Header="HTML image" Click="OnCopyHtmlImageClick"/>
+                                                <MenuItem x:Name="CopyHtmlLinkedImageMenu" Header="HTML linked image" Click="OnCopyHtmlLinkedImageClick"/>
+                                                <Separator/>
+                                                <MenuItem x:Name="CopyForumLinkMenu" Header="Forum (BBCode) link" Click="OnCopyForumLinkClick"/>
+                                                <MenuItem x:Name="CopyForumImageMenu" Header="Forum (BBCode) image" Click="OnCopyForumImageClick"/>
+                                                <MenuItem x:Name="CopyForumLinkedImageMenu" Header="Forum (BBCode) linked image" Click="OnCopyForumLinkedImageClick"/>
+                                                <Separator/>
+                                                <MenuItem x:Name="CopyMarkdownLinkMenu" Header="Markdown link" Click="OnCopyMarkdownLinkClick"/>
+                                                <MenuItem x:Name="CopyMarkdownImageMenu" Header="Markdown image" Click="OnCopyMarkdownImageClick"/>
+                                                <MenuItem x:Name="CopyMarkdownLinkedImageMenu" Header="Markdown linked image" Click="OnCopyMarkdownLinkedImageClick"/>
+                                                <Separator/>
+                                                <MenuItem x:Name="CopyFilePathMenu" Header="File path" Click="OnCopyFilePathClick" InputGesture="Ctrl+Shift+C"/>
+                                                <MenuItem x:Name="CopyFileNameMenu" Header="File name" Click="OnCopyFileNameClick"/>
+                                                <MenuItem x:Name="CopyFileNameExtensionMenu" Header="File name with extension" Click="OnCopyFileNameWithExtensionClick"/>
+                                                <MenuItem x:Name="CopyFolderMenu" Header="Folder" Click="OnCopyFolderClick"/>
+                                            </MenuItem>
+                                            <Separator/>
+                                            <MenuItem x:Name="FavoriteMenu" Header="Favorite" Click="OnToggleFavoriteClick"/>
+                                            <MenuItem x:Name="TagMenu" Header="Edit tag..." Click="OnEditTagClick"/>
+                                            <MenuItem x:Name="EditMenu" Header="Edit item..." Click="OnEditItemClick"/>
+                                            <MenuItem x:Name="RenameMenu" Header="Rename file..." Click="OnRenameFileClick"/>
+                                            <MenuItem Header="Delete from history..." Click="OnDeleteClick" InputGesture="Delete"/>
+                                            <MenuItem Header="Delete file and history item..." Click="OnDeleteFileClick" InputGesture="Shift+Delete"/>
+                                            <Separator/>
+                                            <MenuItem x:Name="PreviewMenu" Header="Show image preview" Click="OnShowPreviewClick"/>
+                                            <MenuItem x:Name="UploadMenu" Header="Upload file" Click="OnUploadFileClick" InputGesture="Ctrl+U"/>
+                                            <MenuItem x:Name="EditImageMenu" Header="Edit image" Click="OnEditImageClick" InputGesture="Ctrl+E"/>
+                                            <MenuItem x:Name="PinMenu" Header="Pin to screen" Click="OnPinToScreenClick" InputGesture="Ctrl+P"/>
+                                            <MenuItem x:Name="AnalyzeMenu" Header="Analyze image..." Click="OnAnalyzeImageClick"/>
+                                        </ContextMenu>
+                                    </ListBox.ContextMenu>
+                                </ListBox>
+
+                                <StackPanel x:Name="EmptyState"
+                                            IsVisible="False"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Spacing="8"
+                                            IsHitTestVisible="False">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.history}"
+                                               Classes="icon"
+                                               FontSize="44"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                               HorizontalAlignment="Center"/>
+                                    <TextBlock x:Name="EmptyStateText"
+                                               Text="No history items"
+                                               FontWeight="Normal"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+                    <GridSplitter Grid.Column="1"
+                                  ResizeDirection="Columns"
+                                  Background="Transparent"/>
+
+                    <Border Grid.Column="2" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                        <Grid RowDefinitions="Auto,*">
+                            <Border x:Name="AdvancedPanel"
+                                    Grid.Row="0"
+                                    IsVisible="False"
+                                    Padding="12"
+                                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                    BorderThickness="0,0,0,1">
+                                <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="8">
+                                    <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+                                        <TextBlock Classes="section-heading" Text="Advanced filters"/>
+                                        <Button Grid.Column="1" Classes="toolbar-button" Height="32" Width="32" Click="OnResetFiltersClick"
+                                                ToolTip.Tip="Reset filters">
+                                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
+                                        </Button>
+                                    </Grid>
+                                    <TextBox x:Name="FilenameFilterTextBox" Grid.Row="1" PlaceholderText="File name" TextChanged="OnAdvancedFilterChanged"/>
+                                    <TextBox x:Name="UrlFilterTextBox" Grid.Row="2" PlaceholderText="URL" TextChanged="OnAdvancedFilterChanged"/>
+                                    <Grid Grid.Row="3" ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                                        <CheckBox x:Name="TypeFilterCheckBox" Content="Type" IsCheckedChanged="OnAdvancedFilterChanged"/>
+                                        <ComboBox x:Name="TypeFilterComboBox" Grid.Column="1" SelectionChanged="OnAdvancedFilterChanged" PlaceholderText="All types"/>
+                                    </Grid>
+                                    <Grid Grid.Row="4" RowDefinitions="Auto,Auto,Auto" RowSpacing="8">
+                                        <Grid Grid.Row="0" ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                                            <CheckBox x:Name="HostFilterCheckBox" Content="Host" IsCheckedChanged="OnAdvancedFilterChanged"/>
+                                            <ComboBox x:Name="HostFilterComboBox" Grid.Column="1" IsEditable="True" SelectionChanged="OnAdvancedFilterChanged" PlaceholderText="All hosts"/>
+                                        </Grid>
+                                        <CheckBox x:Name="DateFilterCheckBox" Grid.Row="1" Content="Date range" IsCheckedChanged="OnAdvancedFilterChanged"/>
+                                        <Grid Grid.Row="2" ColumnDefinitions="*,*" ColumnSpacing="8">
+                                            <DatePicker x:Name="FromDatePicker" SelectedDateChanged="OnDateFilterChanged"/>
+                                            <DatePicker x:Name="ToDatePicker" Grid.Column="1" SelectedDateChanged="OnDateFilterChanged"/>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+
+                            <Grid Grid.Row="1" Margin="12">
+                                <Grid x:Name="PreviewContent" RowDefinitions="Auto,*,Auto" RowSpacing="10" IsVisible="False">
+                                    <StackPanel Grid.Row="0" Spacing="2">
+                                        <TextBlock x:Name="PreviewTitle" Classes="section-heading" TextTrimming="CharacterEllipsis"/>
+                                        <TextBlock x:Name="PreviewSubtitle"
+                                                   FontWeight="Normal"
+                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                   TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+                                    <Border Grid.Row="1"
+                                            BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                            BorderThickness="1"
+                                            CornerRadius="4"
+                                            Background="{DynamicResource ShareX.Brush.Control.Background}"
+                                            ClipToBounds="True"
+                                            PointerPressed="OnPreviewPointerPressed">
+                                        <Grid>
+                                            <Image x:Name="PreviewImage" Stretch="Uniform"/>
+                                            <StackPanel x:Name="PreviewUnavailable"
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center"
+                                                        Spacing="8">
+                                                <TextBlock Text="{x:Static theming:LucideIcons.file}"
+                                                           Classes="icon"
+                                                           FontSize="38"
+                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                           HorizontalAlignment="Center"/>
+                                                <TextBlock Text="No image preview"
+                                                           FontWeight="Normal"
+                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Border>
+                                    <TextBlock x:Name="PreviewDetails"
+                                               Grid.Row="2"
+                                               FontWeight="Normal"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                               TextWrapping="Wrap"
+                                               MaxHeight="58"/>
+                                </Grid>
+
+                                <StackPanel x:Name="NoSelectionState"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Spacing="8">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.mouse_pointer_click}"
+                                               Classes="icon"
+                                               FontSize="40"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                               HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Select an item to preview"
+                                               FontWeight="Normal"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                               TextAlignment="Center"/>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <Grid x:Name="ModalOverlay"
+                  IsVisible="False"
+                  Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+                <Border x:Name="StatsDialog" Classes="tool-panel" Width="640" Height="540" Padding="18"
+                        IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
+                        <TextBlock Classes="section-heading" Text="History statistics"/>
+                        <TextBox x:Name="StatsTextBox" Grid.Row="1" Classes="dialog-multiline" IsReadOnly="True"
+                                 AcceptsReturn="True" TextWrapping="NoWrap"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                        <Button Grid.Row="2" Content="Close" HorizontalAlignment="Right" Click="OnCloseModalClick"/>
+                    </Grid>
+                </Border>
+
+                <Border x:Name="ImportDialog" Classes="tool-panel" Width="540" Padding="18"
+                        IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="12">
+                        <TextBlock Classes="section-heading" Text="Import folder"/>
+                        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                            <TextBox x:Name="ImportFolderTextBox" PlaceholderText="Folder path" TextChanged="OnImportFolderTextChanged"/>
+                            <Button Grid.Column="1" Content="Browse..." Click="OnBrowseImportFolderClick"/>
+                        </Grid>
+                        <StackPanel Grid.Row="2" Spacing="8">
+                            <CheckBox x:Name="ImportImagesOnlyCheckBox" Content="Only import image files"/>
+                            <CheckBox x:Name="ImportSkipDuplicatesCheckBox" Content="Skip duplicate files" IsChecked="True"/>
+                        </StackPanel>
+                        <TextBlock x:Name="ImportStatusText" Grid.Row="3" FontWeight="Normal"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}" TextWrapping="Wrap"/>
+                        <StackPanel Grid.Row="4" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                            <Button x:Name="ImportConfirmButton" Content="Import" Click="OnImportConfirmClick" IsEnabled="False"/>
+                            <Button Content="Cancel" Click="OnCloseModalClick"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Border x:Name="SettingsDialog" Classes="tool-panel" Width="440" Padding="18"
+                        IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="14">
+                        <TextBlock Classes="section-heading" Text="History settings"/>
+                        <ToggleSwitch x:Name="RememberSearchToggle" Grid.Row="1" Content="Remember search text"/>
+                        <ToggleSwitch x:Name="RememberWindowToggle" Grid.Row="2" Content="Remember window size and layout"/>
+                        <Button Grid.Row="3" Content="Done" HorizontalAlignment="Right" Click="OnSaveSettingsClick"/>
+                    </Grid>
+                </Border>
+
+                <Border x:Name="EditDialog" Classes="tool-panel" Width="700" MaxHeight="650" Padding="18"
+                        IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
+                        <TextBlock Classes="section-heading" Text="Edit history item"/>
+                        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                                  ColumnDefinitions="120,*" RowSpacing="8" ColumnSpacing="10" Margin="0,0,8,0">
+                                <TextBlock Grid.Row="0" Classes="row-label" Text="File name"/>
+                                <TextBox x:Name="EditFileNameTextBox" Grid.Row="0" Grid.Column="1"/>
+                                <TextBlock Grid.Row="1" Classes="row-label" Text="File path"/>
+                                <TextBox x:Name="EditFilePathTextBox" Grid.Row="1" Grid.Column="1"/>
+                                <TextBlock Grid.Row="2" Classes="row-label" Text="Date"/>
+                                <TextBox x:Name="EditDateTextBox" Grid.Row="2" Grid.Column="1" IsReadOnly="True"/>
+                                <TextBlock Grid.Row="3" Classes="row-label" Text="Type"/>
+                                <TextBox x:Name="EditTypeTextBox" Grid.Row="3" Grid.Column="1"/>
+                                <TextBlock Grid.Row="4" Classes="row-label" Text="Host"/>
+                                <TextBox x:Name="EditHostTextBox" Grid.Row="4" Grid.Column="1"/>
+                                <TextBlock Grid.Row="5" Classes="row-label" Text="URL"/>
+                                <TextBox x:Name="EditUrlTextBox" Grid.Row="5" Grid.Column="1"/>
+                                <TextBlock Grid.Row="6" Classes="row-label" Text="Thumbnail URL"/>
+                                <TextBox x:Name="EditThumbnailUrlTextBox" Grid.Row="6" Grid.Column="1"/>
+                                <TextBlock Grid.Row="7" Classes="row-label" Text="Deletion URL"/>
+                                <TextBox x:Name="EditDeletionUrlTextBox" Grid.Row="7" Grid.Column="1"/>
+                                <TextBlock Grid.Row="8" Classes="row-label" Text="Shortened URL"/>
+                                <TextBox x:Name="EditShortUrlTextBox" Grid.Row="8" Grid.Column="1"/>
+                                <TextBlock Grid.Row="9" Classes="row-label" Text="Tags" VerticalAlignment="Top" Margin="0,8,0,0"/>
+                                <TextBox x:Name="EditTagsTextBox" Grid.Row="9" Grid.Column="1" Classes="dialog-multiline"
+                                         Height="110" AcceptsReturn="True" TextWrapping="NoWrap" PlaceholderText="One key=value pair per line"/>
+                            </Grid>
+                        </ScrollViewer>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                            <Button Content="Save" Click="OnSaveEditClick"/>
+                            <Button Content="Cancel" Click="OnCloseModalClick"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Border x:Name="PromptDialog" Classes="tool-panel" Width="480" Padding="18"
+                        IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="12">
+                        <TextBlock x:Name="PromptTitle" Classes="section-heading"/>
+                        <TextBlock x:Name="PromptMessage" Grid.Row="1" FontWeight="Normal" TextWrapping="Wrap"/>
+                        <TextBox x:Name="PromptTextBox" Grid.Row="2" IsVisible="False"/>
+                        <StackPanel Grid.Row="3" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                            <Button x:Name="PromptConfirmButton" Content="OK" Click="OnPromptConfirmClick"/>
+                            <Button Content="Cancel" Click="OnCloseModalClick"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

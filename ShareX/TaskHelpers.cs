@@ -848,13 +848,15 @@ namespace ShareX
 
         public static void OpenHistory()
         {
-            HistoryForm historyForm = new HistoryForm(Program.HistoryManager, Program.Settings.HistorySettings,
-                filePath => UploadManager.UploadFile(filePath),
-                filePath => AnnotateImageFromFile(filePath),
-                filePath => PinToScreen(filePath),
-                filePath => AnalyzeImage(filePath));
-
-            historyForm.Show();
+            HistoryIntegration.ShowHistoryWindow(Program.HistoryManager, Program.Settings.HistorySettings,
+                new HistoryWindowServices
+                {
+                    UploadFile = filePath => UploadManager.UploadFile(filePath),
+                    EditImage = filePath => AnnotateImageFromFile(filePath),
+                    PinToScreen = filePath => PinToScreen(filePath),
+                    AnalyzeImage = filePath => AnalyzeImage(filePath),
+                    ShowImage = filePath => OpenImageViewer(filePath)
+                });
         }
 
         public static void OpenImageHistory()
