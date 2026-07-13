@@ -9,7 +9,7 @@
         d:DesignHeight="700"
         x:Class="ShareX.HistoryLib.HistoryWindow"
         Title="ShareX - History"
-        Width="1100"
+        Width="1300"
         Height="700"
         MinWidth="850"
         MinHeight="560"
@@ -98,17 +98,10 @@
                             </StackPanel>
                         </Button>
 
-                        <ProgressBar x:Name="BusyProgress"
-                                     Grid.ColumnSpan="7"
-                                     Height="3"
-                                     VerticalAlignment="Bottom"
-                                     Margin="0,0,0,-12"
-                                     IsIndeterminate="True"
-                                     IsVisible="False"/>
                     </Grid>
                 </Border>
 
-                <Grid x:Name="MainGrid" Grid.Row="1" ColumnDefinitions="*,5,320">
+                <Grid x:Name="MainGrid" Grid.Row="1" ColumnDefinitions="650,5,*">
                     <Border Grid.Column="0" Classes="tool-panel" Padding="0" ClipToBounds="True">
                         <Grid RowDefinitions="Auto,*">
                             <Border Grid.Row="0"
@@ -116,7 +109,7 @@
                                     Background="{DynamicResource ShareX.Brush.Control.Background}"
                                     BorderBrush="{DynamicResource ShareX.Brush.Border}"
                                     BorderThickness="0,0,0,1">
-                                <Grid ColumnDefinitions="34,170,0.9*,1.5*" ColumnSpacing="10">
+                                <Grid ColumnDefinitions="18,105,0.9*,1.5*" ColumnSpacing="8">
                                     <TextBlock Grid.Column="0" Text=""/>
                                     <TextBlock Grid.Column="1" Classes="column-header" Text="Date"/>
                                     <TextBlock Grid.Column="2" Classes="column-header" Text="File name"/>
@@ -149,8 +142,8 @@
                                     <ListBox.ItemTemplate>
                                         <DataTemplate x:DataType="history:HistoryItem">
                                             <Grid Height="34"
-                                                  ColumnDefinitions="34,170,0.9*,1.5*"
-                                                  ColumnSpacing="10"
+                                                  ColumnDefinitions="18,105,0.9*,1.5*"
+                                                  ColumnSpacing="8"
                                                   Margin="10,0">
                                                 <TextBlock Grid.Column="0"
                                                            Text="{Binding Converter={StaticResource HistoryItemIconConverter}}"
@@ -278,32 +271,35 @@
                                             <ComboBox x:Name="HostFilterComboBox" Grid.Column="1" IsEditable="True" SelectionChanged="OnAdvancedFilterChanged" PlaceholderText="All hosts"/>
                                         </Grid>
                                         <CheckBox x:Name="DateFilterCheckBox" Grid.Row="1" Content="Date range" IsCheckedChanged="OnAdvancedFilterChanged"/>
-                                        <Grid Grid.Row="2" ColumnDefinitions="*,*" ColumnSpacing="8">
+                                        <Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="8">
                                             <DatePicker x:Name="FromDatePicker" SelectedDateChanged="OnDateFilterChanged"/>
-                                            <DatePicker x:Name="ToDatePicker" Grid.Column="1" SelectedDateChanged="OnDateFilterChanged"/>
+                                            <DatePicker x:Name="ToDatePicker" Grid.Row="1" SelectedDateChanged="OnDateFilterChanged"/>
                                         </Grid>
                                     </Grid>
                                 </Grid>
                             </Border>
 
                             <Grid Grid.Row="1" Margin="12">
-                                <Grid x:Name="PreviewContent" RowDefinitions="Auto,*,Auto" RowSpacing="10" IsVisible="False">
-                                    <StackPanel Grid.Row="0" Spacing="2">
-                                        <TextBlock x:Name="PreviewTitle" Classes="section-heading" TextTrimming="CharacterEllipsis"/>
-                                        <TextBlock x:Name="PreviewSubtitle"
-                                                   FontWeight="Normal"
-                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                   TextTrimming="CharacterEllipsis"/>
-                                    </StackPanel>
+                                <Grid x:Name="PreviewContent" RowDefinitions="Auto,*" RowSpacing="10" IsVisible="False">
+                                    <TextBlock x:Name="PreviewTitle"
+                                               Grid.Row="0"
+                                               Classes="section-heading"
+                                               FontWeight="Normal"
+                                               TextTrimming="CharacterEllipsis"/>
                                     <Border Grid.Row="1"
+                                            Classes="checkered-surface"
                                             BorderBrush="{DynamicResource ShareX.Brush.Border}"
                                             BorderThickness="1"
                                             CornerRadius="4"
-                                            Background="{DynamicResource ShareX.Brush.Control.Background}"
                                             ClipToBounds="True"
+                                            Cursor="Hand"
                                             PointerPressed="OnPreviewPointerPressed">
                                         <Grid>
-                                            <Image x:Name="PreviewImage" Stretch="Uniform"/>
+                                            <Image x:Name="PreviewImage"
+                                                   Stretch="Uniform"
+                                                   StretchDirection="DownOnly"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"/>
                                             <StackPanel x:Name="PreviewUnavailable"
                                                         HorizontalAlignment="Center"
                                                         VerticalAlignment="Center"
@@ -319,12 +315,6 @@
                                             </StackPanel>
                                         </Grid>
                                     </Border>
-                                    <TextBlock x:Name="PreviewDetails"
-                                               Grid.Row="2"
-                                               FontWeight="Normal"
-                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                               TextWrapping="Wrap"
-                                               MaxHeight="58"/>
                                 </Grid>
 
                                 <StackPanel x:Name="NoSelectionState"

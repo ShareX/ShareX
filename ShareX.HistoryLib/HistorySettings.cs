@@ -40,6 +40,6 @@ namespace ShareX.HistoryLib
         public bool AvaloniaWindowMaximized { get; set; }
         public int? AvaloniaWindowX { get; set; }
         public int? AvaloniaWindowY { get; set; }
-        public double PreviewPanelWidth { get; set; } = 320;
+        public double HistoryListWidth { get; set; } = 720;
     }
 }

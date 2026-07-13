@@ -133,7 +133,7 @@ public partial class HistoryWindow : Window
             }
         }
 
-        MainGrid.ColumnDefinitions[2].Width = new GridLength(Math.Max(260, _settings.PreviewPanelWidth));
+        MainGrid.ColumnDefinitions[0].Width = new GridLength(Math.Max(500, _settings.HistoryListWidth));
         WindowState = _settings.AvaloniaWindowMaximized
             ? Avalonia.Controls.WindowState.Maximized
             : Avalonia.Controls.WindowState.Normal;
@@ -148,10 +148,10 @@ public partial class HistoryWindow : Window
 
         SaveNormalWindowSize();
         _settings.AvaloniaWindowMaximized = WindowState == Avalonia.Controls.WindowState.Maximized;
-        double previewWidth = MainGrid.ColumnDefinitions[2].ActualWidth;
-        if (previewWidth > 0)
+        double historyListWidth = MainGrid.ColumnDefinitions[0].ActualWidth;
+        if (historyListWidth > 0)
         {
-            _settings.PreviewPanelWidth = previewWidth;
+            _settings.HistoryListWidth = historyListWidth;
         }
     }
 
@@ -211,7 +211,6 @@ public partial class HistoryWindow : Window
     private void SetBusy(bool value)
     {
         _isBusy = value;
-        BusyProgress.IsVisible = value;
     }
 
     private void OnSearchTextChanged(object? sender, TextChangedEventArgs e)
@@ -363,8 +362,6 @@ public partial class HistoryWindow : Window
         }
 
         PreviewTitle.Text = item.FileName;
-        PreviewSubtitle.Text = $"{item.DateTime:g} · {item.Type}";
-        PreviewDetails.Text = !string.IsNullOrWhiteSpace(item.FilePath) ? item.FilePath : item.URL;
         PreviewUnavailable.IsVisible = true;
 
         string? imageSource = null;
