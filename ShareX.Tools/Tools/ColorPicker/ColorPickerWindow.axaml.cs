@@ -101,16 +101,16 @@ public partial class ColorPickerWindow : Window
         _updatingControls = false;
     }
 
-    private void OnPickerModeChanged(object? sender, RoutedEventArgs e)
+    private void OnPickerModeChanged(object? sender, SelectionChangedEventArgs e)
     {
-        if (Picker == null || sender is not RadioButton { IsChecked: true } radio) return;
-        Picker.DrawStyle = radio.Name switch
+        if (Picker == null || sender is not ComboBox comboBox) return;
+        Picker.DrawStyle = comboBox.SelectedIndex switch
         {
-            nameof(SaturationMode) => DrawStyle.Saturation,
-            nameof(BrightnessMode) => DrawStyle.Brightness,
-            nameof(RedMode) => DrawStyle.Red,
-            nameof(GreenMode) => DrawStyle.Green,
-            nameof(BlueMode) => DrawStyle.Blue,
+            1 => DrawStyle.Saturation,
+            2 => DrawStyle.Brightness,
+            3 => DrawStyle.Red,
+            4 => DrawStyle.Green,
+            5 => DrawStyle.Blue,
             _ => DrawStyle.Hue
         };
     }

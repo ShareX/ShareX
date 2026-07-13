@@ -15,18 +15,22 @@
                             <controls:AdvancedColorPickerControl x:Name="Picker"
                                                                  Width="342" Height="300"
                                                                  HorizontalAlignment="Center"/>
-                            <UniformGrid Grid.Row="1" Columns="3" Rows="2">
-                                <RadioButton x:Name="HueMode" Content="Hue" GroupName="PickerMode" IsChecked="True" Click="OnPickerModeChanged"/>
-                                <RadioButton x:Name="SaturationMode" Content="Saturation" GroupName="PickerMode" Click="OnPickerModeChanged"/>
-                                <RadioButton x:Name="BrightnessMode" Content="Brightness" GroupName="PickerMode" Click="OnPickerModeChanged"/>
-                                <RadioButton x:Name="RedMode" Content="Red" GroupName="PickerMode" Click="OnPickerModeChanged"/>
-                                <RadioButton x:Name="GreenMode" Content="Green" GroupName="PickerMode" Click="OnPickerModeChanged"/>
-                                <RadioButton x:Name="BlueMode" Content="Blue" GroupName="PickerMode" Click="OnPickerModeChanged"/>
-                            </UniformGrid>
+                            <Grid Grid.Row="1" ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                                <TextBlock Text="Color mode" FontWeight="Normal" VerticalAlignment="Center"/>
+                                <ComboBox x:Name="PickerModeComboBox" Grid.Column="1" SelectedIndex="0"
+                                          SelectionChanged="OnPickerModeChanged">
+                                    <ComboBoxItem Content="Hue"/>
+                                    <ComboBoxItem Content="Saturation"/>
+                                    <ComboBoxItem Content="Brightness"/>
+                                    <ComboBoxItem Content="Red"/>
+                                    <ComboBoxItem Content="Green"/>
+                                    <ComboBoxItem Content="Blue"/>
+                                </ComboBox>
+                            </Grid>
                         </Grid>
                     </Border>
 
-                    <Grid Grid.Column="1" RowDefinitions="Auto,Auto" RowSpacing="12">
+                    <Grid Grid.Column="1">
                         <Border Classes="tool-panel">
                             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="9">
 
@@ -89,27 +93,6 @@
                                 </Grid>
                             </Grid>
                         </Border>
-                        <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
-                            <Button Click="OnPickScreenClick">
-                                <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pipette}"/><TextBlock Text="Pick from screen..."/></StackPanel>
-                            </Button>
-                            <Button Click="OnClipboardClick">
-                                <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}"/><TextBlock Text="From clipboard"/></StackPanel>
-                            </Button>
-                            <Button>
-                                <Button.Flyout>
-                                    <MenuFlyout Placement="BottomEdgeAlignedLeft">
-                                        <MenuItem Header="Copy all details" Click="OnCopyAllClick"/>
-                                        <MenuItem Header="Copy RGB" Click="OnCopyRgbClick"/>
-                                        <MenuItem Header="Copy hexadecimal" Click="OnCopyHexClick"/>
-                                        <MenuItem Header="Copy HSB" Click="OnCopyHsbClick"/>
-                                        <MenuItem Header="Copy CMYK" Click="OnCopyCmykClick"/>
-                                        <MenuItem Header="Copy decimal" Click="OnCopyDecimalClick"/>
-                                    </MenuFlyout>
-                                </Button.Flyout>
-                                <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/><TextBlock Text="Copy"/><TextBlock Classes="icon" FontSize="11" Text="{x:Static theming:LucideIcons.chevron_down}"/></StackPanel>
-                            </Button>
-                        </StackPanel>
                     </Grid>
                 </Grid>
 
@@ -122,6 +105,28 @@
                         <WrapPanel x:Name="PalettePanel" Grid.Row="1" ItemWidth="21" ItemHeight="21"/>
                     </Grid>
                 </Border>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="8"
+                            HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <Button Click="OnPickScreenClick">
+                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pipette}"/><TextBlock Text="Pick from screen..."/></StackPanel>
+                    </Button>
+                    <Button Click="OnClipboardClick">
+                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}"/><TextBlock Text="From clipboard"/></StackPanel>
+                    </Button>
+                    <Button>
+                        <Button.Flyout>
+                            <MenuFlyout Placement="BottomEdgeAlignedLeft">
+                                <MenuItem Header="Copy all details" Click="OnCopyAllClick"/>
+                                <MenuItem Header="Copy RGB" Click="OnCopyRgbClick"/>
+                                <MenuItem Header="Copy hexadecimal" Click="OnCopyHexClick"/>
+                                <MenuItem Header="Copy HSB" Click="OnCopyHsbClick"/>
+                                <MenuItem Header="Copy CMYK" Click="OnCopyCmykClick"/>
+                                <MenuItem Header="Copy decimal" Click="OnCopyDecimalClick"/>
+                            </MenuFlyout>
+                        </Button.Flyout>
+                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/><TextBlock Text="Copy"/><TextBlock Classes="icon" FontSize="11" Text="{x:Static theming:LucideIcons.chevron_down}"/></StackPanel>
+                    </Button>
+                </StackPanel>
             </Grid>
         </Grid>
     </ThemeVariantScope>
