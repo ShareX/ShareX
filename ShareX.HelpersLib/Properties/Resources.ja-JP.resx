@@ -872,6 +872,9 @@
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>自動キャプチャー</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>自動キャプチャを停止</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>描画: 四角形(R)</value>
   </data>
@@ -1085,6 +1088,9 @@
   <data name="EDataType_Text" xml:space="preserve">
     <value>テキスト</value>
   </data>
+  <data name="EDataType_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>最近使用した領域をキャプチャー</value>
   </data>
@@ -1144,6 +1150,9 @@
   </data>
   <data name="HotkeyType_ImageViewer" xml:space="preserve">
     <value>画像ビューア</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>OCR</value>
   </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>ボーダーレスウィンドウ</value>
@@ -1246,15 +1255,6 @@
   </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>メタデータ</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>自動キャプチャを停止</value>
-  </data>
-  <data name="EDataType_URL" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="HotkeyType_OCR" xml:space="preserve">
-    <value>OCR</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>メタデータを削除</value>

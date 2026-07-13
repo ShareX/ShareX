@@ -1470,6 +1470,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Icon converter.
+        /// </summary>
+        internal static string HotkeyType_IconConverter {
+            get {
+                return ResourceManager.GetString("HotkeyType_IconConverter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image beautifier.
         /// </summary>
         internal static string HotkeyType_ImageBeautifier {

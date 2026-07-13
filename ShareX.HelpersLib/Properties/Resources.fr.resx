@@ -460,6 +460,9 @@ Voulez-vous la télécharger ?</value>
   <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
     <value>Nom</value>
   </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Fenêtre</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Règle</value>
   </data>
@@ -869,6 +872,9 @@ Voulez-vous la télécharger et l'installer ?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Capture automatique</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Arrêter la capture automatique</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Dessin : Rectangle</value>
   </data>
@@ -973,15 +979,6 @@ Voulez-vous la télécharger et l'installer ?</value>
   </data>
   <data name="ArrowHeadDirection_Both" xml:space="preserve">
     <value>Les deux</value>
-  </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>Métadonnées</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
-    <value>Fenêtre</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Arrêter la capture automatique</value>
   </data>
   <data name="StepType_LettersLowercase" xml:space="preserve">
     <value>Lettres (minuscules)</value>
@@ -1255,6 +1252,9 @@ Voulez-vous la télécharger et l'installer ?</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>Transparent</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>Métadonnées</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>Supprimer les métadonnées</value>

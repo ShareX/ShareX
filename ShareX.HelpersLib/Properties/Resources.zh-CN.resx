@@ -872,6 +872,9 @@
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>自动截图</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>停止自动捕获</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>绘图：矩形 (R)</value>
   </data>
@@ -1154,35 +1157,32 @@
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>无边框窗口</value>
   </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>元数据</value>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>固定到屏幕</value>
   </data>
-  <data name="CutOutEffectType_Wave" xml:space="preserve">
-    <value>波浪</value>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>固定到屏幕</value>
   </data>
-  <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
-    <value>图片美化工具</value>
+  <data name="ShareXImageViewer" xml:space="preserve">
+    <value>ShareX - 图片浏览器</value>
   </data>
-  <data name="Check" xml:space="preserve">
-    <value>检查</value>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>固定到屏幕</value>
   </data>
-  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
-    <value>下载速度</value>
-  </data>
-  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
-    <value>鼠标箭头</value>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>无效果</value>
   </data>
   <data name="CutOutEffectType_TornEdge" xml:space="preserve">
     <value>撕裂</value>
   </data>
-  <data name="HotkeyType_ActiveWindowBorderless" xml:space="preserve">
-    <value>将目前窗口无边框化</value>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>波浪</value>
   </data>
-  <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
-    <value>美化图片</value>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>锯齿</value>
   </data>
-  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
-    <value>固定到屏幕（从截图）</value>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>剪纸效果（X）</value>
   </data>
   <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
     <value>固定到屏幕（从剪贴板）</value>
@@ -1190,53 +1190,53 @@
   <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
     <value>固定到屏幕（从文件）</value>
   </data>
-  <data name="HotkeyType_PinToScreen" xml:space="preserve">
-    <value>固定到屏幕</value>
-  </data>
-  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
-    <value>固定到屏幕</value>
-  </data>
-  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
-    <value>固定到屏幕</value>
-  </data>
-  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
-    <value>固定到屏幕（关闭所有窗口）</value>
-  </data>
-  <data name="CutOutEffectType_None" xml:space="preserve">
-    <value>无效果</value>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>固定到屏幕（从截图）</value>
   </data>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>暂停屏幕录制</value>
   </data>
-  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
-    <value>进度</value>
+  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
+    <value>鼠标箭头</value>
+  </data>
+  <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
+    <value>图片美化工具</value>
+  </data>
+  <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
+    <value>美化图片</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>检查</value>
   </data>
   <data name="HotkeyType_CustomWindow" xml:space="preserve">
     <value>截图预设的窗口</value>
   </data>
-  <data name="UpdateChannel_PreRelease" xml:space="preserve">
-    <value>预览版</value>
-  </data>
   <data name="UpdateChannel_Dev" xml:space="preserve">
     <value>开发版</value>
+  </data>
+  <data name="UpdateChannel_PreRelease" xml:space="preserve">
+    <value>预览版</value>
   </data>
   <data name="UpdateChannel_Release" xml:space="preserve">
     <value>正式版</value>
   </data>
-  <data name="ShapeType_ToolCutOut" xml:space="preserve">
-    <value>剪纸效果（X）</value>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
+    <value>进度</value>
   </data>
-  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
-    <value>锯齿</value>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
+    <value>下载速度</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
+    <value>文件大小</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowBorderless" xml:space="preserve">
+    <value>将目前窗口无边框化</value>
   </data>
   <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
     <value>将当前窗口置顶</value>
   </data>
-  <data name="ShareXImageViewer" xml:space="preserve">
-    <value>ShareX - 图片浏览器</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>停止自动捕获</value>
+  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
+    <value>固定到屏幕（关闭所有窗口）</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Color" xml:space="preserve">
     <value>颜色</value>
@@ -1244,14 +1244,29 @@
   <data name="ImageBeautifierBackgroundType_Desktop" xml:space="preserve">
     <value>桌面</value>
   </data>
-  <data name="ScrollMethod_MouseWheel" xml:space="preserve">
-    <value>鼠标滚轮</value>
+  <data name="ImageBeautifierBackgroundType_Gradient" xml:space="preserve">
+    <value>梯度</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Image" xml:space="preserve">
+    <value>图片</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>透明</value>
   </data>
-  <data name="PrivateBinFormat_Markdown" xml:space="preserve">
-    <value>Markdown</value>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>元数据</value>
+  </data>
+  <data name="HotkeyType_StripMetadata" xml:space="preserve">
+    <value>移除元数据</value>
+  </data>
+  <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
+    <value>二维码（扫描区域）</value>
+  </data>
+  <data name="ScrollMethod_DownArrow" xml:space="preserve">
+    <value>下箭头</value>
+  </data>
+  <data name="ScrollMethod_MouseWheel" xml:space="preserve">
+    <value>鼠标滚轮</value>
   </data>
   <data name="ScrollMethod_PageDown" xml:space="preserve">
     <value>下一页</value>
@@ -1262,14 +1277,8 @@
   <data name="ToastClickAction_DeleteFile" xml:space="preserve">
     <value>删除本地文件</value>
   </data>
-  <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
-    <value>二维码（扫描区域）</value>
-  </data>
   <data name="AfterCaptureTasks_AnalyzeImage" xml:space="preserve">
     <value>分析图片</value>
-  </data>
-  <data name="HotkeyType_StripMetadata" xml:space="preserve">
-    <value>移除元数据</value>
   </data>
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>分析图片</value>
@@ -1307,20 +1316,11 @@
   <data name="PrivateBinFormat_SyntaxHighlighting" xml:space="preserve">
     <value>语法高亮</value>
   </data>
-  <data name="ScrollMethod_DownArrow" xml:space="preserve">
-    <value>下箭头</value>
-  </data>
-  <data name="ImageBeautifierBackgroundType_Gradient" xml:space="preserve">
-    <value>梯度</value>
-  </data>
-  <data name="ImageBeautifierBackgroundType_Image" xml:space="preserve">
-    <value>图片</value>
+  <data name="PrivateBinFormat_Markdown" xml:space="preserve">
+    <value>Markdown</value>
   </data>
   <data name="AfterCaptureTasks_CopyFolderPathToClipboard" xml:space="preserve">
     <value>复制文件夹路径到剪贴板</value>
-  </data>
-  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
-    <value>文件大小</value>
   </data>
   <data name="HotkeyType_ImageComparer" xml:space="preserve">
     <value>图像比较器</value>

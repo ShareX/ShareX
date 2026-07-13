@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>Freehand gebied</value>
+  </data>
   <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
     <value>Huidige weeknaam (Lokale taal)</value>
   </data>
@@ -141,8 +144,20 @@
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>Selecteer een Cascading Style Sheet...</value>
   </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>Opnieuw</value>
+  </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>Video miniaturen</value>
+  </data>
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
+    <value>Vervagen (B)</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>Weergeven sneltaakmenu</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>URL-verkorter</value>
   </data>
   <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
     <value>Inlognaam gebruiker</value>
@@ -150,11 +165,17 @@
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Afbeeldingseffecten</value>
   </data>
+  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
+    <value>Afbeelding (Scherm)</value>
+  </data>
   <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
     <value>Een nieuwere versie van {0} is beschikbaar</value>
   </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Toon QR code venster</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>Tekstballon (S)</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
     <value>{0} is up-to-date.</value>
@@ -177,8 +198,17 @@
   <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
     <value>Druk afbeelding af</value>
   </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>Recthoek gebied</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>Toggle acties toolbar</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Voer acties uit</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Percentage van canvas</value>
   </data>
   <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
     <value>Datum en tijd</value>
@@ -191,6 +221,9 @@
   </data>
   <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
     <value>Download klaar.</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>Privé</value>
   </data>
   <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
     <value>Deel link</value>
@@ -225,11 +258,23 @@
   <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
     <value>Huidige minuut</value>
   </data>
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
+    <value>Pixeleren (P)</value>
+  </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Huidige dag</value>
   </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 dag</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>Pijl (A)</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Slimme gum</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>Verborgen</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>Update is beschikbaar</value>
@@ -246,6 +291,9 @@
   <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
     <value>Kopieer afbeelding naar klembord</value>
   </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>32 bit</value>
+  </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
     <value>Start schermopname (GIF) met actieve scherm regio</value>
   </data>
@@ -254,6 +302,9 @@
   </data>
   <data name="ImageEditorStartMode_Normal" xml:space="preserve">
     <value>Normaal</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>Starten/Sbovenpen scherm opname (GIF) using pre configured gebied</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Leg aangepaste regio vast</value>
@@ -264,8 +315,17 @@
   <data name="PastebinExpiration_M10" xml:space="preserve">
     <value>10 minuten</value>
   </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>Gereedschapstype wisselen</value>
+  </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Leg rechthoekige regio vast</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>Tekst herkennen (OCR)</value>
+  </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>ShareX afsluiten</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
     <value>Er is een nieuwe versie van {0} beschikbaar.
@@ -274,11 +334,29 @@ Wil je deze downloaden?</value>
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
     <value>Download mislukt:</value>
   </data>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>Tekst (omtrek) (O)</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>Opname active monitor</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>Small miniatuur</value>
+  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Afdrukken</value>
   </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 kleuren</value>
+  </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>Weergeven "After uploaden" venster</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
+    <value>Willekeurig bijvoeglijk naamwoord</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Alles selecteren</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Aangepaste bestandsuploader</value>
@@ -304,6 +382,9 @@ Wil je deze downloaden?</value>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
     <value>Uploaden van klembord met bekijken van inhoud</value>
   </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>Openbaar</value>
+  </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Tint: {0:0.0}°, Verzadiging: {1:0.0}%, Helderheid: {2:0.0}%</value>
   </data>
@@ -322,11 +403,17 @@ Wil je deze downloaden?</value>
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Ja</value>
   </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Afbeelding miniatuurer</value>
+  </data>
   <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
     <value>Huidige naam maand (Lokale taal)</value>
   </data>
   <data name="GIFQuality_Bit8" xml:space="preserve">
     <value>Octree quantizer 256 kleuren (Trage conversie maar betere kwaliteit)</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>Afbeelding (Bestand)</value>
   </data>
   <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
     <value>.NET (Slechte kwaliteit)</value>
@@ -349,11 +436,32 @@ Wil je deze downloaden?</value>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>Voeg nummer toe aan bestandsnaam</value>
   </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>Large miniatuur</value>
+  </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>Huidig jaar (2 cijfers)</value>
   </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>Automatisch detect</value>
+  </data>
+  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
+    <value>Vorige staat</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>Ellipse gebied</value>
+  </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>Schermopname (GIF)</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>Verborgen</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Venster</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Meetlat</value>
@@ -361,14 +469,29 @@ Wil je deze downloaden?</value>
   <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
     <value>URL waar de instellingen van gedownload moeten worden</value>
   </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>Vrije hand (F)</value>
+  </data>
   <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
     <value>Verkrijgt AM/PM</value>
   </data>
   <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
     <value>Selecteer een map...</value>
   </data>
+  <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
+    <value>Achterwaartse diagonaal</value>
+  </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>Cursor</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>Huge miniatuur</value>
+  </data>
   <data name="LinearGradientMode_Horizontal" xml:space="preserve">
     <value>Horizontaal</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>Abort scherm opname</value>
   </data>
   <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
     <value>Huidig jaar</value>
@@ -403,6 +526,9 @@ Wil je deze downloaden?</value>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (Goede kwaliteit)</value>
   </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Don't regrootte</value>
+  </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Stop alle actieve uploads</value>
   </data>
@@ -421,12 +547,18 @@ Wil je deze downloaden?</value>
   <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
     <value>Map bestaat niet:</value>
   </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
+    <value>Huidige versie</value>
+  </data>
   <data name="FileDestination_Email" xml:space="preserve">
     <value>E-mail</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>Een nieuwere versie van {0} is beschikbaar.
 Wil je deze downloaden en installeren?</value>
+  </data>
+  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
+    <value>Browse for a sound bestand...</value>
   </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
     <value>Bestand bestaat niet:</value>
@@ -437,11 +569,35 @@ Wil je deze downloaden en installeren?</value>
   <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
     <value>Importeren mislukt.</value>
   </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
   <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
     <value>Plak</value>
   </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR code (Scherm scannen)</value>
+  </data>
+  <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
+    <value>Voorwaartse diagonaal</value>
+  </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>24 bit</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Week van het jaar</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Absolute grootte</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>Openen afbeelding geschiedenis venster</value>
+  </data>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Incrementeel</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Willekeurige emoji (herhaal met {n})</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
     <value>Sla miniatuur van afbeelding op in bestand</value>
@@ -449,17 +605,32 @@ Wil je deze downloaden en installeren?</value>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
     <value>Downloaden.</value>
   </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>Verwijderen shape or cancel opname</value>
+  </data>
   <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
     <value>Naam gebruiker</value>
   </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>Vergroten</value>
+  </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Sluiten</value>
+  </data>
+  <data name="ShapeType_DrawingSticker" xml:space="preserve">
+    <value>Sticker</value>
   </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>QR code</value>
   </data>
   <data name="PastebinExpiration_W1" xml:space="preserve">
     <value>1 week</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>URL-deelservice</value>
+  </data>
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
+    <value>Markeren (H)</value>
   </data>
   <data name="GIFQuality_Grayscale" xml:space="preserve">
     <value>Grijswaarden op basis van 256 kleuren</value>
@@ -470,8 +641,20 @@ Wil je deze downloaden en installeren?</value>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Willekeurig hexadecimaal karakter. Meerdere met {n}</value>
   </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>Privé (alleen leden)</value>
+  </data>
   <data name="Error" xml:space="preserve">
     <value>Fout</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
+    <value>Willekeurig dier</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>Aangepast URL sharing service</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>Opname fullscherm</value>
   </data>
   <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
     <value>Procesnaam van actief venster</value>
@@ -485,11 +668,23 @@ Wil je deze downloaden en installeren?</value>
   <data name="URLSharingServices_Email" xml:space="preserve">
     <value>E-mail</value>
   </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>Openen geschiedenis venster</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Selecteren en verplaatsen (M)</value>
+  </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>Zelf ophogende sequentie met base {n} (waar n 1 &lt; n &lt; 63)</value>
   </data>
   <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
     <value>Webpagina vastleggen</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>Cancel opname</value>
+  </data>
+  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
+    <value>QR-code scannen</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Leg rechthoekige regio vast (Snel)</value>
@@ -503,6 +698,18 @@ Wil je deze downloaden en installeren?</value>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>Willekeurige GUID</value>
   </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>Lijn (L)</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Kopiëren value</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>Weergeven "Before uploaden" venster</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>Weergeven bestand in explorer</value>
+  </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
     <value>Aangepaste afbeeldingsuploader</value>
   </data>
@@ -514,6 +721,9 @@ Wil je deze downloaden en installeren?</value>
   </data>
   <data name="HotkeyType_ActiveWindow" xml:space="preserve">
     <value>Leg actief venster vast</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>Stap (I)</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
     <value>Zelf ophogend nummer. Voorloopnullen links met {n}</value>
@@ -542,6 +752,9 @@ Wil je deze downloaden en installeren?</value>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
     <value>Bestandsuploader</value>
   </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>Auto grootte</value>
+  </data>
   <data name="HotkeyType_None" xml:space="preserve">
     <value>Geen</value>
   </data>
@@ -560,6 +773,9 @@ Wil je deze downloaden en installeren?</value>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>Start opnemen (GIF) met laatste regio</value>
   </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>Klein vierkant</value>
+  </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>Monitor test</value>
   </data>
@@ -568,6 +784,9 @@ Wil je deze downloaden en installeren?</value>
   </data>
   <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
     <value>Verkort link</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>Random line from a bestand (Use {bestandpath} to determine the bestand)</value>
   </data>
   <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
     <value>Annuleer</value>
@@ -590,6 +809,9 @@ Wil je deze downloaden en installeren?</value>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Bestandsnaam: {0}</value>
   </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>Ellips (E)</value>
+  </data>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Kleurenkiezer</value>
   </data>
@@ -605,11 +827,23 @@ Wil je deze downloaden en installeren?</value>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Willekeurig alfanumeriek karakter. Meerdere met {n}</value>
   </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Waarde</value>
+  </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>Schakel sneltoetsen uit/in.</value>
   </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>Niets doen</value>
+  </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
     <value>Sla afbeelding op als...</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Kopiëren name</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>Verwijderen shape</value>
   </data>
   <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
     <value>Bestandspad</value>
@@ -617,11 +851,17 @@ Wil je deze downloaden en installeren?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatisch</value>
   </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Videoconverter</value>
+  </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>Annuleer</value>
   </data>
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>Selecteer een map</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>Openen main venster</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Kleurenkiezer op het scherm</value>
@@ -631,294 +871,6 @@ Wil je deze downloaden en installeren?</value>
   </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Automatisch vastleggen</value>
-  </data>
-  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
-    <value>Octree quantizer (Matige kwaliteit)</value>
-  </data>
-  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
-    <value>Kies bestand</value>
-  </data>
-  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
-    <value>Afbeeldingshoogte</value>
-  </data>
-  <data name="PastebinExpiration_M1" xml:space="preserve">
-    <value>1 maand</value>
-  </data>
-  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
-    <value>Aangepaste linkverkorter</value>
-  </data>
-  <data name="PastebinPrivacy_Public" xml:space="preserve">
-    <value>Openbaar</value>
-  </data>
-  <data name="FileExistAction_Overwrite" xml:space="preserve">
-    <value>Bestand overschrijven</value>
-  </data>
-  <data name="HotkeyType_ShortenURL" xml:space="preserve">
-    <value>URL verkorten</value>
-  </data>
-  <data name="FileExistAction_Ask" xml:space="preserve">
-    <value>Vraag wat te doen</value>
-  </data>
-  <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
-    <value>Laatste versie</value>
-  </data>
-  <data name="HotkeyType_UploadURL" xml:space="preserve">
-    <value>Upload vanaf URL</value>
-  </data>
-  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
-    <value>Kopieer link naar klembord</value>
-  </data>
-  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
-    <value>Computernaam</value>
-  </data>
-  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
-    <value>Start automatische opname met laatste regio</value>
-  </data>
-  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
-    <value>Kopieer bestand naar klembord</value>
-  </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>Metagegevens</value>
-  </data>
-  <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>Freehand gebied</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>Opnieuw</value>
-  </data>
-  <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Vervagen (B)</value>
-  </data>
-  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
-    <value>Weergeven sneltaakmenu</value>
-  </data>
-  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
-    <value>URL-verkorter</value>
-  </data>
-  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
-    <value>Afbeelding (Scherm)</value>
-  </data>
-  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>Tekstballon (S)</value>
-  </data>
-  <data name="ShapeType_RegionRectangle" xml:space="preserve">
-    <value>Recthoek gebied</value>
-  </data>
-  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
-    <value>Toggle acties toolbar</value>
-  </data>
-  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
-    <value>Percentage van canvas</value>
-  </data>
-  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
-    <value>Privé</value>
-  </data>
-  <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Pixeleren (P)</value>
-  </data>
-  <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>Pijl (A)</value>
-  </data>
-  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
-    <value>Slimme gum</value>
-  </data>
-  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
-    <value>Verborgen</value>
-  </data>
-  <data name="PNGBitDepth_Bit32" xml:space="preserve">
-    <value>32 bit</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
-    <value>Starten/Sbovenpen scherm opname (GIF) using pre configured gebied</value>
-  </data>
-  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
-    <value>Gereedschapstype wisselen</value>
-  </data>
-  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
-    <value>Tekst herkennen (OCR)</value>
-  </data>
-  <data name="HotkeyType_ExitShareX" xml:space="preserve">
-    <value>ShareX afsluiten</value>
-  </data>
-  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Tekst (omtrek) (O)</value>
-  </data>
-  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
-    <value>Opname active monitor</value>
-  </data>
-  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
-    <value>Small miniatuur</value>
-  </data>
-  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
-    <value>Weergeven "After uploaden" venster</value>
-  </data>
-  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
-    <value>Willekeurig bijvoeglijk naamwoord</value>
-  </data>
-  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
-    <value>Alles selecteren</value>
-  </data>
-  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
-    <value>Openbaar</value>
-  </data>
-  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
-    <value>Afbeelding miniatuurer</value>
-  </data>
-  <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Afbeelding (Bestand)</value>
-  </data>
-  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
-    <value>Large miniatuur</value>
-  </data>
-  <data name="PNGBitDepth_Automatic" xml:space="preserve">
-    <value>Automatisch detect</value>
-  </data>
-  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
-    <value>Vorige staat</value>
-  </data>
-  <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>Ellipse gebied</value>
-  </data>
-  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
-    <value>Verborgen</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Naam</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
-    <value>Venster</value>
-  </data>
-  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>Vrije hand (F)</value>
-  </data>
-  <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
-    <value>Achterwaartse diagonaal</value>
-  </data>
-  <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>Cursor</value>
-  </data>
-  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
-    <value>Huge miniatuur</value>
-  </data>
-  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
-    <value>Abort scherm opname</value>
-  </data>
-  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
-    <value>Don't regrootte</value>
-  </data>
-  <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
-    <value>Huidige versie</value>
-  </data>
-  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
-    <value>Browse for a sound bestand...</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
-    <value>Verwijderen</value>
-  </data>
-  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
-    <value>QR code (Scherm scannen)</value>
-  </data>
-  <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
-    <value>Voorwaartse diagonaal</value>
-  </data>
-  <data name="PNGBitDepth_Bit24" xml:space="preserve">
-    <value>24 bit</value>
-  </data>
-  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
-    <value>Week van het jaar</value>
-  </data>
-  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
-    <value>Absolute grootte</value>
-  </data>
-  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
-    <value>Openen afbeelding geschiedenis venster</value>
-  </data>
-  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
-    <value>Willekeurige emoji (herhaal met {n})</value>
-  </data>
-  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
-    <value>Verwijderen shape or cancel opname</value>
-  </data>
-  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
-    <value>Vergroten</value>
-  </data>
-  <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Sticker</value>
-  </data>
-  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
-    <value>URL-deelservice</value>
-  </data>
-  <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Markeren (H)</value>
-  </data>
-  <data name="PastebinPrivacy_Private" xml:space="preserve">
-    <value>Privé (alleen leden)</value>
-  </data>
-  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
-    <value>Willekeurig dier</value>
-  </data>
-  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
-    <value>Aangepast URL sharing service</value>
-  </data>
-  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
-    <value>Opname fullscherm</value>
-  </data>
-  <data name="HotkeyType_OpenHistory" xml:space="preserve">
-    <value>Openen geschiedenis venster</value>
-  </data>
-  <data name="ShapeType_ToolSelect" xml:space="preserve">
-    <value>Selecteren en verplaatsen (M)</value>
-  </data>
-  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
-    <value>Cancel opname</value>
-  </data>
-  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
-    <value>QR-code scannen</value>
-  </data>
-  <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>Lijn (L)</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Kopiëren value</value>
-  </data>
-  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
-    <value>Weergeven "Before uploaden" venster</value>
-  </data>
-  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
-    <value>Weergeven bestand in explorer</value>
-  </data>
-  <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>Stap (I)</value>
-  </data>
-  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
-    <value>Auto grootte</value>
-  </data>
-  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
-    <value>Klein vierkant</value>
-  </data>
-  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
-    <value>Random line from a bestand (Use {bestandpath} to determine the bestand)</value>
-  </data>
-  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>Ellips (E)</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Waarde</value>
-  </data>
-  <data name="RegionCaptureAction_None" xml:space="preserve">
-    <value>Niets doen</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Kopiëren name</value>
-  </data>
-  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
-    <value>Verwijderen shape</value>
-  </data>
-  <data name="HotkeyType_VideoConverter" xml:space="preserve">
-    <value>Videoconverter</value>
-  </data>
-  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
-    <value>Openen main venster</value>
   </data>
   <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
     <value>Sbovenpen auto opname</value>
@@ -932,17 +884,47 @@ Wil je deze downloaden en installeren?</value>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
     <value>Starten/Sbovenpen scherm opname using pre configured gebied</value>
   </data>
+  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
+    <value>Octree quantizer (Matige kwaliteit)</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>Kies bestand</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>Afbeeldingshoogte</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>1 maand</value>
+  </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>Text (Achtergrond) (T)</value>
   </data>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>Willekeurig ondubbelzinnig alfanumeriek teken (herhaal met {n})</value>
   </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>Aangepaste linkverkorter</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>Openbaar</value>
+  </data>
+  <data name="FileExistAction_Overwrite" xml:space="preserve">
+    <value>Bestand overschrijven</value>
+  </data>
   <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
     <value>Percentage of afbeelding</value>
   </data>
+  <data name="HotkeyType_ShortenURL" xml:space="preserve">
+    <value>URL verkorten</value>
+  </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Text uploadener</value>
+  </data>
+  <data name="FileExistAction_Ask" xml:space="preserve">
+    <value>Vraag wat te doen</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
+    <value>Laatste versie</value>
   </data>
   <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
     <value>Weergeven "After opname" venster</value>
@@ -953,14 +935,29 @@ Wil je deze downloaden en installeren?</value>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
     <value>Crop afbeelding (C)</value>
   </data>
+  <data name="HotkeyType_UploadURL" xml:space="preserve">
+    <value>Upload vanaf URL</value>
+  </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>Afbeelding splitter</value>
+  </data>
+  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
+    <value>Kopieer link naar klembord</value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>Computernaam</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
+    <value>Start automatische opname met laatste regio</value>
   </data>
   <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
     <value>Medium miniatuur</value>
   </data>
   <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
     <value>Ongedaan maken</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>Kopieer bestand naar klembord</value>
   </data>
   <data name="ResultOfFirstFile" xml:space="preserve">
     <value>Resultaat of first bestand:</value>
@@ -1255,6 +1252,9 @@ Wil je deze downloaden en installeren?</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>Transparant</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>Metagegevens</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>Metagegevens verwijderen</value>

@@ -872,6 +872,9 @@
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>自動擷取</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>停止自動擷取</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>矩形 (R)</value>
   </data>
@@ -1235,92 +1238,89 @@
   <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
     <value>釘選至螢幕 (關閉所有視窗)</value>
   </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>中繼資料</value>
-  </data>
-  <data name="AfterCaptureTasks_CopyFolderPathToClipboard" xml:space="preserve">
-    <value>複製資料夾路徑到剪貼簿</value>
-  </data>
-  <data name="PrivateBinFormat_Markdown" xml:space="preserve">
-    <value>Markdown</value>
-  </data>
-  <data name="PrivateBinFormat_SyntaxHighlighting" xml:space="preserve">
-    <value>語法醒目提示</value>
-  </data>
-  <data name="PrivateBinFormat_PlainText" xml:space="preserve">
-    <value>純文字</value>
-  </data>
-  <data name="PrivateBinExpiration_N" xml:space="preserve">
-    <value>永不</value>
-  </data>
-  <data name="PrivateBinExpiration_Y1" xml:space="preserve">
-    <value>1 年</value>
-  </data>
-  <data name="PrivateBinExpiration_M1" xml:space="preserve">
-    <value>1 個月</value>
-  </data>
-  <data name="PrivateBinExpiration_W1" xml:space="preserve">
-    <value>1 週</value>
-  </data>
-  <data name="PrivateBinExpiration_D1" xml:space="preserve">
-    <value>1 天</value>
-  </data>
-  <data name="PrivateBinExpiration_H1" xml:space="preserve">
-    <value>1 小時</value>
-  </data>
-  <data name="PrivateBinExpiration_M10" xml:space="preserve">
-    <value>10 分鐘</value>
-  </data>
-  <data name="PrivateBinExpiration_M5" xml:space="preserve">
-    <value>5 分鐘</value>
-  </data>
-  <data name="ShapeType_ToolSpotlight" xml:space="preserve">
-    <value>聚光燈</value>
-  </data>
-  <data name="AfterCaptureTasks_AnalyzeImage" xml:space="preserve">
-    <value>分析圖片</value>
-  </data>
-  <data name="ToastClickAction_DeleteFile" xml:space="preserve">
-    <value>在本機刪除檔案</value>
-  </data>
-  <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
-    <value>捲動訊息</value>
-  </data>
-  <data name="ScrollMethod_PageDown" xml:space="preserve">
-    <value>下一頁</value>
-  </data>
-  <data name="ScrollMethod_MouseWheel" xml:space="preserve">
-    <value>滑鼠滾輪</value>
-  </data>
-  <data name="ScrollMethod_DownArrow" xml:space="preserve">
-    <value>向下箭頭</value>
-  </data>
-  <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
-    <value>QR 碼（掃描區域）</value>
-  </data>
-  <data name="HotkeyType_StripMetadata" xml:space="preserve">
-    <value>移除中繼資料</value>
-  </data>
-  <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
-    <value>分析圖片</value>
-  </data>
-  <data name="ImageBeautifierBackgroundType_Image" xml:space="preserve">
-    <value>圖片</value>
-  </data>
-  <data name="ImageBeautifierBackgroundType_Gradient" xml:space="preserve">
-    <value>漸層</value>
+  <data name="ImageBeautifierBackgroundType_Color" xml:space="preserve">
+    <value>顏色</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Desktop" xml:space="preserve">
     <value>桌面</value>
   </data>
-  <data name="ImageBeautifierBackgroundType_Color" xml:space="preserve">
-    <value>顏色</value>
+  <data name="ImageBeautifierBackgroundType_Gradient" xml:space="preserve">
+    <value>漸層</value>
   </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>停止自動擷取</value>
+  <data name="ImageBeautifierBackgroundType_Image" xml:space="preserve">
+    <value>圖片</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>透明</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>中繼資料</value>
+  </data>
+  <data name="HotkeyType_StripMetadata" xml:space="preserve">
+    <value>移除中繼資料</value>
+  </data>
+  <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
+    <value>QR 碼（掃描區域）</value>
+  </data>
+  <data name="ScrollMethod_DownArrow" xml:space="preserve">
+    <value>向下箭頭</value>
+  </data>
+  <data name="ScrollMethod_MouseWheel" xml:space="preserve">
+    <value>滑鼠滾輪</value>
+  </data>
+  <data name="ScrollMethod_PageDown" xml:space="preserve">
+    <value>下一頁</value>
+  </data>
+  <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
+    <value>捲動訊息</value>
+  </data>
+  <data name="ToastClickAction_DeleteFile" xml:space="preserve">
+    <value>在本機刪除檔案</value>
+  </data>
+  <data name="AfterCaptureTasks_AnalyzeImage" xml:space="preserve">
+    <value>分析圖片</value>
+  </data>
+  <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
+    <value>分析圖片</value>
+  </data>
+  <data name="ShapeType_ToolSpotlight" xml:space="preserve">
+    <value>聚光燈</value>
+  </data>
+  <data name="PrivateBinExpiration_M5" xml:space="preserve">
+    <value>5 分鐘</value>
+  </data>
+  <data name="PrivateBinExpiration_M10" xml:space="preserve">
+    <value>10 分鐘</value>
+  </data>
+  <data name="PrivateBinExpiration_H1" xml:space="preserve">
+    <value>1 小時</value>
+  </data>
+  <data name="PrivateBinExpiration_D1" xml:space="preserve">
+    <value>1 天</value>
+  </data>
+  <data name="PrivateBinExpiration_W1" xml:space="preserve">
+    <value>1 週</value>
+  </data>
+  <data name="PrivateBinExpiration_M1" xml:space="preserve">
+    <value>1 個月</value>
+  </data>
+  <data name="PrivateBinExpiration_Y1" xml:space="preserve">
+    <value>1 年</value>
+  </data>
+  <data name="PrivateBinExpiration_N" xml:space="preserve">
+    <value>永不</value>
+  </data>
+  <data name="PrivateBinFormat_PlainText" xml:space="preserve">
+    <value>純文字</value>
+  </data>
+  <data name="PrivateBinFormat_SyntaxHighlighting" xml:space="preserve">
+    <value>語法醒目提示</value>
+  </data>
+  <data name="PrivateBinFormat_Markdown" xml:space="preserve">
+    <value>Markdown</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFolderPathToClipboard" xml:space="preserve">
+    <value>複製資料夾路徑到剪貼簿</value>
   </data>
   <data name="HotkeyType_ImageComparer" xml:space="preserve">
     <value>圖像比較器</value>

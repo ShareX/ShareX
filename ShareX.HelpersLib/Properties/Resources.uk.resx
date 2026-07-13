@@ -872,6 +872,9 @@
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Автоматичне захоплення</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Зупинити автозахоплення</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Прямокутник (R)</value>
   </data>
@@ -1208,6 +1211,15 @@
   <data name="HotkeyType_CustomWindow" xml:space="preserve">
     <value>Захоплення попередньо налаштованого вікна</value>
   </data>
+  <data name="UpdateChannel_Dev" xml:space="preserve">
+    <value>Dev</value>
+  </data>
+  <data name="UpdateChannel_PreRelease" xml:space="preserve">
+    <value>Попередній випуск</value>
+  </data>
+  <data name="UpdateChannel_Release" xml:space="preserve">
+    <value>Випуск</value>
+  </data>
   <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
     <value>Прогрес</value>
   </data>
@@ -1264,18 +1276,6 @@
   </data>
   <data name="ToastClickAction_DeleteFile" xml:space="preserve">
     <value>Видалити файл локально</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Зупинити автозахоплення</value>
-  </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Dev</value>
-  </data>
-  <data name="UpdateChannel_PreRelease" xml:space="preserve">
-    <value>Попередній випуск</value>
-  </data>
-  <data name="UpdateChannel_Release" xml:space="preserve">
-    <value>Випуск</value>
   </data>
   <data name="AfterCaptureTasks_AnalyzeImage" xml:space="preserve">
     <value>Аналізувати зображення</value>

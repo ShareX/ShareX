@@ -346,6 +346,9 @@
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>طباعة</value>
   </data>
+  <data name="GIFQuality_Bit4" xml:space="preserve">
+    <value>مُكمِّم Octree بـ 16 لونًا</value>
+  </data>
   <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
     <value>عرض نافذة ما بعد الرفع</value>
   </data>
@@ -510,6 +513,9 @@
   </data>
   <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
     <value>مسار الملف مع امتداد اسم الملف الناتج</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Google Lens</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>مفهرس المجلدات</value>
@@ -865,6 +871,9 @@
   </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>التقاط تلقائي</value>
+  </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>إيقاف الالتقاط التلقائي</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>مستطيل (R)</value>
@@ -1229,18 +1238,6 @@
   <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
     <value>تثبيت على الشاشة وإغلاق الكل</value>
   </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>البيانات الوصفية</value>
-  </data>
-  <data name="GIFQuality_Bit4" xml:space="preserve">
-    <value>مُكمِّم Octree بـ 16 لونًا</value>
-  </data>
-  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
-    <value>Google Lens</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>إيقاف الالتقاط التلقائي</value>
-  </data>
   <data name="ImageBeautifierBackgroundType_Color" xml:space="preserve">
     <value>اللون</value>
   </data>
@@ -1255,6 +1252,9 @@
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>شفاف</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>البيانات الوصفية</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>إزالة البيانات الوصفية</value>

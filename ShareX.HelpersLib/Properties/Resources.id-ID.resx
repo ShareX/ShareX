@@ -144,6 +144,9 @@
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>Jelajahi Lembar Gaya Bertingkat...</value>
   </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>Ulangi</value>
+  </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>Pemotret video</value>
   </data>
@@ -204,6 +207,9 @@
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Lakukan tindakan</value>
   </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Persentase kanvas</value>
+  </data>
   <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
     <value>Tanggal dan waktu</value>
   </data>
@@ -263,6 +269,9 @@
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>Menggambar: Panah (A)</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Penghapus pintar</value>
   </data>
   <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
     <value>Tidak terdaftar</value>
@@ -346,6 +355,9 @@ Apakah anda ingin mengunduhnya?</value>
   <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
     <value>Acak kata sifat</value>
   </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Pilih Semua</value>
+  </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Pengunggah file khusus</value>
   </data>
@@ -390,6 +402,9 @@ Apakah anda ingin mengunduhnya?</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Ya</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Pembuat thumbnail gambar</value>
   </data>
   <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
     <value>Nama bulan ini (Bahasa lokal)</value>
@@ -441,6 +456,12 @@ Apakah anda ingin mengunduhnya?</value>
   </data>
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
     <value>Tidak terdaftar</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Jendela</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Penggaris</value>
@@ -505,6 +526,9 @@ Apakah anda ingin mengunduhnya?</value>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (Kualitas bagus)</value>
   </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Jangan ubah ukuran</value>
+  </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Hentikan semua unggahan aktif</value>
   </data>
@@ -545,8 +569,14 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
     <value>Impor gagal.</value>
   </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
   <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
     <value>Tempel</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>Kode QR (Pindai layar)</value>
   </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>Maju diagonal</value>
@@ -554,11 +584,20 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   <data name="PNGBitDepth_Bit24" xml:space="preserve">
     <value>24 bit</value>
   </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Minggu dalam tahun</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Ukuran absolut</value>
+  </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>Buka jendela riwayat gambar</value>
   </data>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Tambahkan</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Emoji acak (ulang menggunakan {n})</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
     <value>Simpan gambar thumbnail ke file</value>
@@ -571,6 +610,9 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   </data>
   <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
     <value>Nama pennguna</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>Perbesar</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Tutup</value>
@@ -629,6 +671,9 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
     <value>Buka jendela riwayat</value>
   </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Pilih dan pindahkan (M)</value>
+  </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>Otomatis tambahkan dengan dasar {n} menggunakan alfanumerik (1 &lt; n &lt; 63)</value>
   </data>
@@ -655,6 +700,9 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
     <value>Menggambar: Garis (L)</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Salin nilai</value>
   </data>
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
     <value>Tampilkan jendela "Sebelum mengunggah"</value>
@@ -779,6 +827,9 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Acak karakter alfanumerik. Ulangi menggunakan {n}</value>
   </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Nilai</value>
+  </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>Nonaktif/Aktifkan tombol cepat</value>
   </data>
@@ -788,6 +839,9 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
     <value>Simpan gambar ke file sebagai...</value>
   </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Salin nama</value>
+  </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>Buang bentuk</value>
   </data>
@@ -796,6 +850,9 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Otomatis</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Pengonversi video</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>Batal</value>
@@ -814,6 +871,9 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Otomatis ambil</value>
+  </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Hentikan tangkapan otomatis</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Menggambar: Persegi panjang (R)</value>
@@ -839,6 +899,9 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>Menggambar: Teks (Latar belakang) (T)</value>
   </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>Karakter alfanumerik acak yang tidak ambigu (ulang menggunakan {n})</value>
+  </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>Penyingkat URL khusus</value>
   </data>
@@ -847,6 +910,9 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   </data>
   <data name="FileExistAction_Overwrite" xml:space="preserve">
     <value>Timpa file</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Persentase gambar</value>
   </data>
   <data name="HotkeyType_ShortenURL" xml:space="preserve">
     <value>Persingkat URL</value>
@@ -872,6 +938,9 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Unggah dari URL</value>
   </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>Pemecah gambar</value>
+  </data>
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
     <value>Salin URL ke papan klip</value>
   </data>
@@ -884,83 +953,11 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
     <value>Thumbnail sedang</value>
   </data>
-  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
-    <value>Salin file ke papan klip</value>
-  </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>Metadata</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>Ulangi</value>
-  </data>
-  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
-    <value>Persentase kanvas</value>
-  </data>
-  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
-    <value>Penghapus pintar</value>
-  </data>
-  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
-    <value>Pilih Semua</value>
-  </data>
-  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
-    <value>Pembuat thumbnail gambar</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Nama</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
-    <value>Jendela</value>
-  </data>
-  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
-    <value>Jangan ubah ukuran</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
-    <value>Hapus</value>
-  </data>
-  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
-    <value>Kode QR (Pindai layar)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
-    <value>Minggu dalam tahun</value>
-  </data>
-  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
-    <value>Ukuran absolut</value>
-  </data>
-  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
-    <value>Emoji acak (ulang menggunakan {n})</value>
-  </data>
-  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
-    <value>Perbesar</value>
-  </data>
-  <data name="ShapeType_ToolSelect" xml:space="preserve">
-    <value>Pilih dan pindahkan (M)</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Salin nilai</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Nilai</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Salin nama</value>
-  </data>
-  <data name="HotkeyType_VideoConverter" xml:space="preserve">
-    <value>Pengonversi video</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Hentikan tangkapan otomatis</value>
-  </data>
-  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
-    <value>Karakter alfanumerik acak yang tidak ambigu (ulang menggunakan {n})</value>
-  </data>
-  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
-    <value>Persentase gambar</value>
-  </data>
-  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
-    <value>Pemecah gambar</value>
-  </data>
   <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
     <value>Urungkan</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>Salin file ke papan klip</value>
   </data>
   <data name="ResultOfFirstFile" xml:space="preserve">
     <value>Hasil file pertama:</value>
@@ -1255,6 +1252,9 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>Transparan</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>Metadata</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>Hapus metadata</value>

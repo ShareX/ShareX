@@ -23,15 +23,15 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using ShareX.AvaloniaUI.Windows;
+using ShareX.HelpersLib;
 using ShareX.HistoryLib;
-using ShareX.Tools;
-using ShareX.Tools.Integration;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEffectsLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
+using ShareX.Tools;
+using ShareX.Tools.Integration;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.SharingServices;
 using SkiaSharp;
@@ -270,6 +270,9 @@ namespace ShareX
                     break;
                 case HotkeyType.ImageComparer:
                     OpenImageComparer();
+                    break;
+                case HotkeyType.IconConverter:
+                    OpenIconConverter();
                     break;
                 case HotkeyType.ImageCombiner:
                     OpenImageCombiner(null, safeTaskSettings);
@@ -2474,6 +2477,7 @@ namespace ShareX
                     case HotkeyType.ImageViewer: return Resources.images_flickr;
                     case HotkeyType.BackgroundRemover: return Resources.wand_magic;
                     case HotkeyType.ImageComparer: return Resources.image_saturation;
+                    case HotkeyType.IconConverter: return Resources.image_cast;
                     case HotkeyType.ImageCombiner: return Resources.document_break;
                     case HotkeyType.ImageSplitter: return Resources.image_split;
                     case HotkeyType.ImageThumbnailer: return Resources.image_resize_actual;

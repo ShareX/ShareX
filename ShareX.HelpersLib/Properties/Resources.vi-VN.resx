@@ -872,6 +872,9 @@ Bạn có muốn tải về và cài đặt không?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Tự động chụp</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Dừng chụp tự động</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Vẽ: Hình chữ nhật (R)</value>
   </data>
@@ -1196,12 +1199,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
     <value>Mũi tên tự do</value>
   </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>Siêu dữ liệu</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Dừng chụp tự động</value>
-  </data>
   <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
     <value>Ảnh beautifier</value>
   </data>
@@ -1255,6 +1252,9 @@ Bạn có muốn tải về và cài đặt không?</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>Trong suốt</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>Siêu dữ liệu</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>Xóa siêu dữ liệu</value>

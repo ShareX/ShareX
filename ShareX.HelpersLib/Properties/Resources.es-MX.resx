@@ -872,6 +872,9 @@
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Captura automática</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Detener captura automática</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Rectángulo (R)</value>
   </data>
@@ -1202,12 +1205,6 @@
   <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
     <value>Embellecer imagen</value>
   </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>Metadatos</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Detener captura automática</value>
-  </data>
   <data name="Check" xml:space="preserve">
     <value>Verificar</value>
   </data>
@@ -1255,6 +1252,9 @@
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>Transparente</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>Metadatos</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>Quitar metadatos</value>

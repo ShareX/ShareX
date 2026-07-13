@@ -872,6 +872,9 @@ Você gostaria de baixar e instalar?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Capturar automaticamente</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Parar captura automática</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Desenho: Retângulo</value>
   </data>
@@ -1196,12 +1199,6 @@ Você gostaria de baixar e instalar?</value>
   <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
     <value>Seta à mão livre</value>
   </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>Metadados</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Parar captura automática</value>
-  </data>
   <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
     <value>Imagem beautifier</value>
   </data>
@@ -1255,6 +1252,9 @@ Você gostaria de baixar e instalar?</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>Transparente</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>Metadados</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>Remover metadados</value>

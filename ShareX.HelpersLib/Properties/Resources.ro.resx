@@ -872,6 +872,9 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Captură automată</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Oprește auto captură</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Dreptunghi (R)</value>
   </data>
@@ -1154,12 +1157,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Fereastră fără margini</value>
   </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>Metadate</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Oprește auto captură</value>
-  </data>
   <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
     <value>Fixează pe ecran</value>
   </data>
@@ -1255,6 +1252,9 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>Transparent</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>Metadate</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>Elimină metadatele</value>

@@ -457,6 +457,9 @@ Soll sie heruntergeladen werden?</value>
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
     <value>Ungelistet</value>
   </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
     <value>Fenster</value>
   </data>
@@ -869,6 +872,9 @@ Soll sie heruntergeladen und installiert werden?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Autoaufnahme</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Automatische Aufnahme stoppen</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Rechteck zeichnen</value>
   </data>
@@ -1079,6 +1085,12 @@ Soll sie heruntergeladen und installiert werden?</value>
   <data name="EDataType_Image" xml:space="preserve">
     <value>Bild</value>
   </data>
+  <data name="EDataType_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="EDataType_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Letzten Bereich aufnehmen</value>
   </data>
@@ -1139,6 +1151,9 @@ Soll sie heruntergeladen und installiert werden?</value>
   <data name="HotkeyType_ImageViewer" xml:space="preserve">
     <value>Bildbetrachter</value>
   </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Randloses Fenster</value>
   </data>
@@ -1196,6 +1211,15 @@ Soll sie heruntergeladen und installiert werden?</value>
   <data name="HotkeyType_CustomWindow" xml:space="preserve">
     <value>Vorkonfiguriertes Fenster aufnehmen</value>
   </data>
+  <data name="UpdateChannel_Dev" xml:space="preserve">
+    <value>Dev</value>
+  </data>
+  <data name="UpdateChannel_PreRelease" xml:space="preserve">
+    <value>Vorabversion</value>
+  </data>
+  <data name="UpdateChannel_Release" xml:space="preserve">
+    <value>Release</value>
+  </data>
   <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
     <value>Fortschritt</value>
   </data>
@@ -1214,57 +1238,6 @@ Soll sie heruntergeladen und installiert werden?</value>
   <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
     <value>An Bildschirm anheften (Alles schließen)</value>
   </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>Metadaten</value>
-  </data>
-  <data name="PrivateBinExpiration_M5" xml:space="preserve">
-    <value>5 Minuten</value>
-  </data>
-  <data name="PrivateBinExpiration_M10" xml:space="preserve">
-    <value>10 Minuten</value>
-  </data>
-  <data name="PrivateBinExpiration_H1" xml:space="preserve">
-    <value>1 Stunde</value>
-  </data>
-  <data name="PrivateBinExpiration_D1" xml:space="preserve">
-    <value>1 Tag</value>
-  </data>
-  <data name="PrivateBinExpiration_W1" xml:space="preserve">
-    <value>1 Woche</value>
-  </data>
-  <data name="PrivateBinExpiration_M1" xml:space="preserve">
-    <value>1 Monat</value>
-  </data>
-  <data name="PrivateBinExpiration_Y1" xml:space="preserve">
-    <value>1 Jahr</value>
-  </data>
-  <data name="PrivateBinExpiration_N" xml:space="preserve">
-    <value>Niemals</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Automatische Aufnahme stoppen</value>
-  </data>
-  <data name="EDataType_Text" xml:space="preserve">
-    <value>Text</value>
-  </data>
-  <data name="EDataType_URL" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="HotkeyType_OCR" xml:space="preserve">
-    <value>OCR</value>
-  </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Dev</value>
-  </data>
-  <data name="UpdateChannel_PreRelease" xml:space="preserve">
-    <value>Vorabversion</value>
-  </data>
-  <data name="UpdateChannel_Release" xml:space="preserve">
-    <value>Release</value>
-  </data>
   <data name="ImageBeautifierBackgroundType_Color" xml:space="preserve">
     <value>Farbe</value>
   </data>
@@ -1279,6 +1252,9 @@ Soll sie heruntergeladen und installiert werden?</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>Transparent</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>Metadaten</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>Metadaten entfernen</value>
@@ -1309,6 +1285,30 @@ Soll sie heruntergeladen und installiert werden?</value>
   </data>
   <data name="ShapeType_ToolSpotlight" xml:space="preserve">
     <value>Spotlight</value>
+  </data>
+  <data name="PrivateBinExpiration_M5" xml:space="preserve">
+    <value>5 Minuten</value>
+  </data>
+  <data name="PrivateBinExpiration_M10" xml:space="preserve">
+    <value>10 Minuten</value>
+  </data>
+  <data name="PrivateBinExpiration_H1" xml:space="preserve">
+    <value>1 Stunde</value>
+  </data>
+  <data name="PrivateBinExpiration_D1" xml:space="preserve">
+    <value>1 Tag</value>
+  </data>
+  <data name="PrivateBinExpiration_W1" xml:space="preserve">
+    <value>1 Woche</value>
+  </data>
+  <data name="PrivateBinExpiration_M1" xml:space="preserve">
+    <value>1 Monat</value>
+  </data>
+  <data name="PrivateBinExpiration_Y1" xml:space="preserve">
+    <value>1 Jahr</value>
+  </data>
+  <data name="PrivateBinExpiration_N" xml:space="preserve">
+    <value>Niemals</value>
   </data>
   <data name="PrivateBinFormat_PlainText" xml:space="preserve">
     <value>Nur Text</value>

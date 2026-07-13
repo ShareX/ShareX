@@ -872,6 +872,9 @@
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Автозахват</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Остановить автозахват</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Прямоугольник (R)</value>
   </data>
@@ -1208,6 +1211,15 @@
   <data name="HotkeyType_CustomWindow" xml:space="preserve">
     <value>Захват подготовленного окна</value>
   </data>
+  <data name="UpdateChannel_Dev" xml:space="preserve">
+    <value>Dev</value>
+  </data>
+  <data name="UpdateChannel_PreRelease" xml:space="preserve">
+    <value>Предварительный выпуск</value>
+  </data>
+  <data name="UpdateChannel_Release" xml:space="preserve">
+    <value>Выпуск</value>
+  </data>
   <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
     <value>Прогресс</value>
   </data>
@@ -1243,18 +1255,6 @@
   </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>Метаданные</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Остановить автозахват</value>
-  </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Dev</value>
-  </data>
-  <data name="UpdateChannel_PreRelease" xml:space="preserve">
-    <value>Предварительный выпуск</value>
-  </data>
-  <data name="UpdateChannel_Release" xml:space="preserve">
-    <value>Выпуск</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>Удалить метаданные</value>

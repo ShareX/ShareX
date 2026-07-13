@@ -1371,4 +1371,7 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ImageComparer" xml:space="preserve">
     <value>Image comparer</value>
   </data>
+  <data name="HotkeyType_IconConverter" xml:space="preserve">
+    <value>Icon converter</value>
+  </data>
 </root>

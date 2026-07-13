@@ -872,6 +872,9 @@
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Otomatik yakala</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Otomatik yakalamayı durdur</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Dikdörtgen (R)</value>
   </data>
@@ -1273,9 +1276,6 @@
   </data>
   <data name="ToastClickAction_DeleteFile" xml:space="preserve">
     <value>Yerel dosyayı sil</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Otomatik yakalamayı durdur</value>
   </data>
   <data name="AfterCaptureTasks_AnalyzeImage" xml:space="preserve">
     <value>Görüntüyü analiz et</value>

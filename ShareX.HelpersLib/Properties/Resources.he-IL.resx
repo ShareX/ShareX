@@ -514,6 +514,9 @@
   <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
     <value>נתיב קובץ עם סיומת קובץ פלט</value>
   </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Google Lens</value>
+  </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>מאנדקס תיקייה</value>
   </data>
@@ -869,6 +872,9 @@
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>צילום מסך אוטומטי</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>עצור לכידה אוטומטית</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>מלבן (R)</value>
   </data>
@@ -1193,15 +1199,6 @@
   <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
     <value>חץ חופשי</value>
   </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>מטא-נתונים</value>
-  </data>
-  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
-    <value>Google Lens</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>עצור לכידה אוטומטית</value>
-  </data>
   <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
     <value>מייפה תמונות</value>
   </data>
@@ -1255,6 +1252,9 @@
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>שקוף</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>מטא-נתונים</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>הסר מטא-נתונים</value>

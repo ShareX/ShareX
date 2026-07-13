@@ -144,6 +144,9 @@
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>Cerca CSS...</value>
   </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>Ripeti</value>
+  </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>Generatore Miniature Video</value>
   </data>
@@ -204,6 +207,9 @@
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Esegui Azioni</value>
   </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Percentuale della tela</value>
+  </data>
   <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
     <value>Data e Ora</value>
   </data>
@@ -215,6 +221,9 @@
   </data>
   <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
     <value>Scaricamento completato.</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>Privato</value>
   </data>
   <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
     <value>Condividi URL</value>
@@ -261,6 +270,9 @@
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>Disegna: Freccia</value>
   </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Gomma intelligente</value>
+  </data>
   <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
     <value>Non in Elenco</value>
   </data>
@@ -287,6 +299,9 @@
   </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Cattura Schermo Intero</value>
+  </data>
+  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
+    <value>Normale</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>Avvia/Ferma Registrazione Schermo (GIF) usando la Regione Pre Configurata</value>
@@ -337,6 +352,12 @@ Vuoi scaricarla ora?</value>
   <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
     <value>Mostra Finestra "Dopo il Caricamento"</value>
   </data>
+  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
+    <value>Aggettivo casuale</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Seleziona tutto</value>
+  </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Servizio Caricamento File Personalizzato</value>
   </data>
@@ -361,6 +382,9 @@ Vuoi scaricarla ora?</value>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
     <value>Carica dagli Appunti Mostrando il Contenuto</value>
   </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>Pubblico</value>
+  </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Tonalità: {0:0.0}°, Saturazione: {1:0.0}%, Luminosità: {2:0.0}%</value>
   </data>
@@ -378,6 +402,9 @@ Vuoi scaricarla ora?</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Sì</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Immagine miniaturaer</value>
   </data>
   <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
     <value>Nome Mese Corrente (Lingua Locale)</value>
@@ -418,11 +445,23 @@ Vuoi scaricarla ora?</value>
   <data name="PNGBitDepth_Automatic" xml:space="preserve">
     <value>Rileva Automaticamente</value>
   </data>
+  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
+    <value>Stato precedente</value>
+  </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Regione: Ellisse</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>Avvia/Ferma Registrazione Schermo (GIF) usando una Regione Personalizzata</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>Non in elenco</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Finestra</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Righello</value>
@@ -460,6 +499,9 @@ Vuoi scaricarla ora?</value>
   <data name="PastebinExpiration_W2" xml:space="preserve">
     <value>2 Settimane</value>
   </data>
+  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
+    <value>Fullschermo</value>
+  </data>
   <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
     <value>Copia Percorso File negli Appunti</value>
   </data>
@@ -483,6 +525,9 @@ Vuoi scaricarla ora?</value>
   </data>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (Qualità Buona)</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Non ridimensionare</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Ferma Tutti i Caricamenti Attivi</value>
@@ -512,6 +557,9 @@ Vuoi scaricarla ora?</value>
     <value>È disponibile una nuova versione di {0}.
 Vuoi scaricarla e installarla ora?</value>
   </data>
+  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
+    <value>Sfoglia per un file audio...</value>
+  </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
     <value>File inesistente:</value>
   </data>
@@ -521,8 +569,14 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
     <value>Importazione fallita.</value>
   </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
   <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
     <value>Incolla</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR code (Scan schermo)</value>
   </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>Diagonale Avanti</value>
@@ -530,11 +584,20 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="PNGBitDepth_Bit24" xml:space="preserve">
     <value>24 bit</value>
   </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Settimana dell'anno</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Dimensione assoluta</value>
+  </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>Apri Finestra Cronologia Immagini</value>
   </data>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Incrementale</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Emoji casuale (ripeti usando {n})</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
     <value>Salva Miniatura Immagine</value>
@@ -548,8 +611,14 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
     <value>Nome Utente</value>
   </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>Ingrandisci</value>
+  </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Chiudi</value>
+  </data>
+  <data name="ShapeType_DrawingSticker" xml:space="preserve">
+    <value>Adesivo</value>
   </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>Codice QR</value>
@@ -578,6 +647,9 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="Error" xml:space="preserve">
     <value>Errore</value>
   </data>
+  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
+    <value>Animale casuale</value>
+  </data>
   <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
     <value>Servizio Condivisione URL Personalizzato</value>
   </data>
@@ -599,6 +671,9 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
     <value>Apri Finestra Cronologia</value>
   </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Seleziona e sposta (M)</value>
+  </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>Auto Incremento Alfanumerico in Base {n} (1 &lt; n &lt; 63)</value>
   </data>
@@ -607,6 +682,9 @@ Vuoi scaricarla e installarla ora?</value>
   </data>
   <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
     <value>Annulla Cattura</value>
+  </data>
+  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
+    <value>Scansiona codice QR</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Cattura Regione (Semplice)</value>
@@ -622,6 +700,9 @@ Vuoi scaricarla e installarla ora?</value>
   </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
     <value>Disegna: Linea</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Copia value</value>
   </data>
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
     <value>Mostra Finestra "Prima del Caricamento"</value>
@@ -671,6 +752,9 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
     <value>Servizio Caricamento File</value>
   </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>Dimensione automatica</value>
+  </data>
   <data name="HotkeyType_None" xml:space="preserve">
     <value>Nessuna</value>
   </data>
@@ -700,6 +784,9 @@ Vuoi scaricarla e installarla ora?</value>
   </data>
   <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
     <value>Accorcia URL</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>Riga casuale da un file (usa {filepath} per determinare il file)</value>
   </data>
   <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
     <value>Annulla</value>
@@ -740,6 +827,9 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Carattere Alfanumerico Casuale. Ripeti usando {n}</value>
   </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Valore</value>
+  </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>Attiva/Disattiva Scorciatoie</value>
   </data>
@@ -749,6 +839,9 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
     <value>Salva Immagine come...</value>
   </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Copia name</value>
+  </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>Rimuovi Forma</value>
   </data>
@@ -757,6 +850,9 @@ Vuoi scaricarla e installarla ora?</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatica</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Convertitore video</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>Annulla</value>
@@ -776,8 +872,14 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Cattura Automatica</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Ferma auto acquisizione</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Disegna: Rettangolo</value>
+  </data>
+  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
+    <value>Massimizzata</value>
   </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
     <value>Avvia/Ferma Registrazione Schermo usando la Regione Pre Configurata</value>
@@ -797,6 +899,9 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>Disegna: Testo (Sfondo)</value>
   </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>Carattere alfanumerico non ambiguo casuale (ripeti usando {n})</value>
+  </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>Servizio Accorciamento URL Personalizzato</value>
   </data>
@@ -805,6 +910,9 @@ Vuoi scaricarla e installarla ora?</value>
   </data>
   <data name="FileExistAction_Overwrite" xml:space="preserve">
     <value>Sovrascrivi File</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Percentage of immagine</value>
   </data>
   <data name="HotkeyType_ShortenURL" xml:space="preserve">
     <value>Accorcia URL</value>
@@ -824,8 +932,14 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>Carica Testo</value>
   </data>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>Crop immagine (C)</value>
+  </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Carica da URL</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>Divisore immagini</value>
   </data>
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
     <value>Copia URL negli Appunti</value>
@@ -839,128 +953,11 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
     <value>Anteprima Media</value>
   </data>
-  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
-    <value>Copia File negli Appunti</value>
-  </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>Metadati</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>Ripeti</value>
-  </data>
-  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
-    <value>Percentuale della tela</value>
-  </data>
-  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
-    <value>Privato</value>
-  </data>
-  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
-    <value>Gomma intelligente</value>
-  </data>
-  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
-    <value>Normale</value>
-  </data>
-  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
-    <value>Aggettivo casuale</value>
-  </data>
-  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
-    <value>Seleziona tutto</value>
-  </data>
-  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
-    <value>Pubblico</value>
-  </data>
-  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
-    <value>Immagine miniaturaer</value>
-  </data>
-  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
-    <value>Stato precedente</value>
-  </data>
-  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
-    <value>Non in elenco</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
-    <value>Finestra</value>
-  </data>
-  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
-    <value>Fullschermo</value>
-  </data>
-  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
-    <value>Non ridimensionare</value>
-  </data>
-  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
-    <value>Sfoglia per un file audio...</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
-    <value>Elimina</value>
-  </data>
-  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
-    <value>QR code (Scan schermo)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
-    <value>Settimana dell'anno</value>
-  </data>
-  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
-    <value>Dimensione assoluta</value>
-  </data>
-  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
-    <value>Emoji casuale (ripeti usando {n})</value>
-  </data>
-  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
-    <value>Ingrandisci</value>
-  </data>
-  <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Adesivo</value>
-  </data>
-  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
-    <value>Animale casuale</value>
-  </data>
-  <data name="ShapeType_ToolSelect" xml:space="preserve">
-    <value>Seleziona e sposta (M)</value>
-  </data>
-  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
-    <value>Scansiona codice QR</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Copia value</value>
-  </data>
-  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
-    <value>Dimensione automatica</value>
-  </data>
-  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
-    <value>Riga casuale da un file (usa {filepath} per determinare il file)</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Valore</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Copia name</value>
-  </data>
-  <data name="HotkeyType_VideoConverter" xml:space="preserve">
-    <value>Convertitore video</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Ferma auto acquisizione</value>
-  </data>
-  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
-    <value>Massimizzata</value>
-  </data>
-  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
-    <value>Carattere alfanumerico non ambiguo casuale (ripeti usando {n})</value>
-  </data>
-  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
-    <value>Percentage of immagine</value>
-  </data>
-  <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Crop immagine (C)</value>
-  </data>
-  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
-    <value>Divisore immagini</value>
-  </data>
   <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
     <value>Annulla</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>Copia File negli Appunti</value>
   </data>
   <data name="ResultOfFirstFile" xml:space="preserve">
     <value>Risultato of first file:</value>
@@ -1255,6 +1252,9 @@ Vuoi scaricarla e installarla ora?</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>Trasparente</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>Metadati</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>Rimuovi metadati</value>

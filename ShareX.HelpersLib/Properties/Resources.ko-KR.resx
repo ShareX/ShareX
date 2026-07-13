@@ -144,6 +144,9 @@
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>CSS 탐색하기...</value>
   </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>다시 실행</value>
+  </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>비디오 섬네일 생성기</value>
   </data>
@@ -204,6 +207,9 @@
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>동작 실행하기</value>
   </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>캔버스 비율</value>
+  </data>
   <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
     <value>날짜 및 시각</value>
   </data>
@@ -263,6 +269,9 @@
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>화살표 그리기</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>스마트 지우개</value>
   </data>
   <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
     <value>비공개</value>
@@ -346,6 +355,9 @@
   <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
     <value>랜덤 형용사</value>
   </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>모두 선택</value>
+  </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>사용자 정의 파일 업로더</value>
   </data>
@@ -390,6 +402,9 @@
   </data>
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>네</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>이미지 썸네일er</value>
   </data>
   <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
     <value>현재 달 이름 (현지 언어)</value>
@@ -441,6 +456,12 @@
   </data>
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
     <value>미공개</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>창</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>측정</value>
@@ -505,6 +526,9 @@
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (좋은 품질)</value>
   </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>크기 조정 안 함</value>
+  </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>현재 진행중인 모든 업로드 중단</value>
   </data>
@@ -545,8 +569,14 @@
   <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
     <value>가져오기 실패.</value>
   </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>삭제</value>
+  </data>
   <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
     <value>붙여넣기</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR code (Scan 화면)</value>
   </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>정방향(／) 대각선</value>
@@ -554,11 +584,20 @@
   <data name="PNGBitDepth_Bit24" xml:space="preserve">
     <value>24비트</value>
   </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>연중 주</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>절대 크기</value>
+  </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>이미지 히스토리 창 열기</value>
   </data>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>자동 증가</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>무작위 이모지({n} 사용 반복)</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
     <value>섬네일 이미지를 파일로 저장하기</value>
@@ -571,6 +610,9 @@
   </data>
   <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
     <value>사용자 이름</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>확대</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>닫기</value>
@@ -629,6 +671,9 @@
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
     <value>히스토리 창 열기</value>
   </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>선택 및 이동(M)</value>
+  </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>자동 증가하는 {n}진법 영숫자 (1 &lt; n &lt; 63)</value>
   </data>
@@ -655,6 +700,9 @@
   </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
     <value>선분 그리기</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>복사 value</value>
   </data>
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
     <value>"업로드 전" 창 띄우기</value>
@@ -737,6 +785,9 @@
   <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
     <value>URL 단축하기</value>
   </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>Random line from a 파일 (Use {filepath} to determine the 파일)</value>
+  </data>
   <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
     <value>취소</value>
   </data>
@@ -788,6 +839,9 @@
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
     <value>이미지를 다른 이름으로 파일로 저장...</value>
   </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>복사 name</value>
+  </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>모양 지우기</value>
   </data>
@@ -796,6 +850,9 @@
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>자동</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>비디오 변환기</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>취소</value>
@@ -814,6 +871,9 @@
   </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>자동 촬영</value>
+  </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>중지 auto 캡처</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>직사각형 그리기</value>
@@ -839,6 +899,9 @@
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>텍스트(칠) 그리기</value>
   </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>모호하지 않은 무작위 영숫자 문자({n} 사용 반복)</value>
+  </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>사용자 정의 URL 단축기</value>
   </data>
@@ -847,6 +910,9 @@
   </data>
   <data name="FileExistAction_Overwrite" xml:space="preserve">
     <value>파일 덮어쓰기</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Percentage of 이미지</value>
   </data>
   <data name="HotkeyType_ShortenURL" xml:space="preserve">
     <value>URL 단축</value>
@@ -872,6 +938,9 @@
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>URL 내용 업로드</value>
   </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>이미지 splitter</value>
+  </data>
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
     <value>URL을 클립보드에 복사하기</value>
   </data>
@@ -884,83 +953,11 @@
   <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
     <value>중간 섬네일</value>
   </data>
-  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
-    <value>파일을 클립보드에 복사하기</value>
-  </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>메타데이터</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>다시 실행</value>
-  </data>
-  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
-    <value>캔버스 비율</value>
-  </data>
-  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
-    <value>스마트 지우개</value>
-  </data>
-  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
-    <value>모두 선택</value>
-  </data>
-  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
-    <value>이미지 썸네일er</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>이름</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
-    <value>창</value>
-  </data>
-  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
-    <value>크기 조정 안 함</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
-    <value>삭제</value>
-  </data>
-  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
-    <value>QR code (Scan 화면)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
-    <value>연중 주</value>
-  </data>
-  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
-    <value>절대 크기</value>
-  </data>
-  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
-    <value>무작위 이모지({n} 사용 반복)</value>
-  </data>
-  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
-    <value>확대</value>
-  </data>
-  <data name="ShapeType_ToolSelect" xml:space="preserve">
-    <value>선택 및 이동(M)</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>복사 value</value>
-  </data>
-  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
-    <value>Random line from a 파일 (Use {filepath} to determine the 파일)</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>복사 name</value>
-  </data>
-  <data name="HotkeyType_VideoConverter" xml:space="preserve">
-    <value>비디오 변환기</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>중지 auto 캡처</value>
-  </data>
-  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
-    <value>모호하지 않은 무작위 영숫자 문자({n} 사용 반복)</value>
-  </data>
-  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
-    <value>Percentage of 이미지</value>
-  </data>
-  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
-    <value>이미지 splitter</value>
-  </data>
   <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
     <value>실행 취소</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>파일을 클립보드에 복사하기</value>
   </data>
   <data name="ResultOfFirstFile" xml:space="preserve">
     <value>결과 of first 파일:</value>
@@ -1255,6 +1252,9 @@
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>투명</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>메타데이터</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>메타데이터 제거</value>

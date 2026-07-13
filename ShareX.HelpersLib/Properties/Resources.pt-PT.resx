@@ -183,6 +183,9 @@
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Gravar ecrã</value>
   </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>1 hora</value>
+  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Captura com botão do meio</value>
   </data>
@@ -203,6 +206,9 @@
   </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Realizar acções</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Percentagem da tela</value>
   </data>
   <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
     <value>Data e hora</value>
@@ -258,6 +264,9 @@
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Dia atual</value>
   </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>1 dia</value>
+  </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>Desenho: Seta</value>
   </data>
@@ -302,6 +311,9 @@
   </data>
   <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
     <value>Imagem</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>10 minutos</value>
   </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Trocar tipo de ferramenta</value>
@@ -448,6 +460,9 @@ Gostaria de transferí-la?</value>
   <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
     <value>Nome</value>
   </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Janela</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Régua</value>
   </data>
@@ -481,6 +496,9 @@ Gostaria de transferí-la?</value>
   <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
     <value>Ano atual</value>
   </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>2 semanas</value>
+  </data>
   <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
     <value>Ecrã inteiro</value>
   </data>
@@ -507,6 +525,9 @@ Gostaria de transferí-la?</value>
   </data>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (qualidade boa)</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Don't retamanho</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Parar todos os envios ativos</value>
@@ -554,6 +575,9 @@ Você gostaria de transferi-la e instalá-la?</value>
   <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
     <value>Colar</value>
   </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR code (Scan ecrã)</value>
+  </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>Diagonal para a frente</value>
   </data>
@@ -562,6 +586,9 @@ Você gostaria de transferi-la e instalá-la?</value>
   </data>
   <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
     <value>Semana atual</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Absolute tamanho</value>
   </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>Abrir janela de histórico de imagens</value>
@@ -595,6 +622,9 @@ Você gostaria de transferi-la e instalá-la?</value>
   </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>Código QR</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>1 semana</value>
   </data>
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>Serviço de partilha de hiperligações</value>
@@ -842,6 +872,9 @@ Você gostaria de transferi-la e instalá-la?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Capturar automáticamente</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Parar auto captura</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Desenho: Rectângulo</value>
   </data>
@@ -860,6 +893,9 @@ Você gostaria de transferi-la e instalá-la?</value>
   <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
     <value>Altura da imagem</value>
   </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>1 mês</value>
+  </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>Texto (Fundo) (T)</value>
   </data>
@@ -874,6 +910,9 @@ Você gostaria de transferi-la e instalá-la?</value>
   </data>
   <data name="FileExistAction_Overwrite" xml:space="preserve">
     <value>Substituir ficheiro</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Percentage of imagem</value>
   </data>
   <data name="HotkeyType_ShortenURL" xml:space="preserve">
     <value>Encurtar hiperligação</value>
@@ -919,48 +958,6 @@ Você gostaria de transferi-la e instalá-la?</value>
   </data>
   <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
     <value>Copiar ficheiro para área de transferência</value>
-  </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>Metadados</value>
-  </data>
-  <data name="PastebinExpiration_H1" xml:space="preserve">
-    <value>1 hora</value>
-  </data>
-  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
-    <value>Percentagem da tela</value>
-  </data>
-  <data name="PastebinExpiration_D1" xml:space="preserve">
-    <value>1 dia</value>
-  </data>
-  <data name="PastebinExpiration_M10" xml:space="preserve">
-    <value>10 minutos</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
-    <value>Janela</value>
-  </data>
-  <data name="PastebinExpiration_W2" xml:space="preserve">
-    <value>2 semanas</value>
-  </data>
-  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
-    <value>Don't retamanho</value>
-  </data>
-  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
-    <value>QR code (Scan ecrã)</value>
-  </data>
-  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
-    <value>Absolute tamanho</value>
-  </data>
-  <data name="PastebinExpiration_W1" xml:space="preserve">
-    <value>1 semana</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Parar auto captura</value>
-  </data>
-  <data name="PastebinExpiration_M1" xml:space="preserve">
-    <value>1 mês</value>
-  </data>
-  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
-    <value>Percentage of imagem</value>
   </data>
   <data name="ResultOfFirstFile" xml:space="preserve">
     <value>Resultado of first ficheiro:</value>
@@ -1255,6 +1252,9 @@ Você gostaria de transferi-la e instalá-la?</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>Transparente</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>Metadados</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>Remover metadados</value>

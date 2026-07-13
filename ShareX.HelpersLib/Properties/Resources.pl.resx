@@ -872,6 +872,9 @@ Czy chcesz ją pobrać i zainstalować?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Automatyczne przechwytywanie</value>
   </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>Zatrzymaj automatyczne przechwytywanie</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Prostokąt (R)</value>
   </data>
@@ -1175,6 +1178,9 @@ Czy chcesz ją pobrać i zainstalować?</value>
   <data name="CutOutEffectType_Wave" xml:space="preserve">
     <value>Fala</value>
   </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>Ząbkowanie</value>
+  </data>
   <data name="ShapeType_ToolCutOut" xml:space="preserve">
     <value>Wycięcie (X)</value>
   </data>
@@ -1198,15 +1204,6 @@ Czy chcesz ją pobrać i zainstalować?</value>
   </data>
   <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
     <value>Upiększ obraz</value>
-  </data>
-  <data name="HotkeyType_Metadata" xml:space="preserve">
-    <value>Metadane</value>
-  </data>
-  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
-    <value>Zatrzymaj automatyczne przechwytywanie</value>
-  </data>
-  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
-    <value>Ząbkowanie</value>
   </data>
   <data name="Check" xml:space="preserve">
     <value>Sprawdź</value>
@@ -1255,6 +1252,9 @@ Czy chcesz ją pobrać i zainstalować?</value>
   </data>
   <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
     <value>Przezroczysty</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>Metadane</value>
   </data>
   <data name="HotkeyType_StripMetadata" xml:space="preserve">
     <value>Usuń metadane</value>
