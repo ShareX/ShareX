@@ -27,6 +27,7 @@ public partial class ColorPickerWindow : Window
     private readonly ColorPickerOptions _options;
     private DrawingColor _currentColor = DrawingColor.Red;
     private DrawingColor _previousColor = DrawingColor.Red;
+    private bool _hasPreviousColor;
     private bool _updatingControls;
     private bool _initialized;
 
@@ -47,7 +48,6 @@ public partial class ColorPickerWindow : Window
         if (_options.RecentColorsSelected) RecentPalette.IsChecked = true;
         else StandardPalette.IsChecked = true;
 
-        _previousColor = _currentColor;
         SetColor(_currentColor);
         _initialized = true;
         RebuildPalette();
@@ -63,6 +63,7 @@ public partial class ColorPickerWindow : Window
             if (ColorHelpers.ParseColor(text ?? string.Empty, out DrawingColor color))
             {
                 _previousColor = _currentColor;
+                _hasPreviousColor = true;
                 SetColor(color);
             }
         }
@@ -94,10 +95,11 @@ public partial class ColorPickerWindow : Window
         YellowValue.Value = (decimal)Math.Round(cmyk.Yellow100);
         KeyValue.Value = (decimal)Math.Round(cmyk.Key100);
         HexValue.Text = "#" + ColorHelpers.ColorToHex(color);
-        DecimalValue.Text = ColorHelpers.ColorToDecimal(color).ToString();
+        DecimalValue.Value = ColorHelpers.ColorToDecimal(color);
         ColorNameText.Text = ColorHelpers.GetColorName(color);
         NewColorPreview.Background = new SolidColorBrush(ToAvalonia(color));
         OldColorPreview.Background = new SolidColorBrush(ToAvalonia(_previousColor));
+        OldColorPreview.IsVisible = _hasPreviousColor;
         _updatingControls = false;
     }
 
@@ -149,25 +151,21 @@ public partial class ColorPickerWindow : Window
         }
     }
 
-    private void OnDecimalTextChanged(object? sender, TextChangedEventArgs e)
+    private void OnDecimalValueChanged(object? sender, NumericUpDownValueChangedEventArgs e)
     {
         if (_updatingControls || !_initialized) return;
-        if (int.TryParse(DecimalValue.Text, out int value)) SetColor(ColorHelpers.DecimalToColor(value));
-    }
-
-    private void OnToggleTransparentClick(object? sender, RoutedEventArgs e)
-    {
-        SetColor(DrawingColor.FromArgb(_currentColor.A == 0 ? 255 : 0, _currentColor.R, _currentColor.G, _currentColor.B));
+        SetColor(ColorHelpers.DecimalToColor(Value(DecimalValue)));
     }
 
     private async void OnPickScreenClick(object? sender, RoutedEventArgs e)
     {
-        _previousColor = _currentColor;
         ScreenColorPickerWindow picker = new();
         Avalonia.Media.Color? color = await picker.PickAsync(this);
 
         if (color.HasValue)
         {
+            _previousColor = _currentColor;
+            _hasPreviousColor = true;
             Avalonia.Media.Color selected = color.Value;
             SetColor(DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B));
             AddRecentColor(_currentColor);
@@ -184,6 +182,7 @@ public partial class ColorPickerWindow : Window
             if (ColorHelpers.ParseColor(text ?? string.Empty, out DrawingColor color))
             {
                 _previousColor = _currentColor;
+                _hasPreviousColor = true;
                 SetColor(color);
             }
         }
@@ -195,7 +194,7 @@ public partial class ColorPickerWindow : Window
 
     private void OnPreviousColorPressed(object? sender, PointerPressedEventArgs e)
     {
-        if (!e.GetCurrentPoint(this).Properties.IsLeftButtonPressed) return;
+        if (!_hasPreviousColor || !e.GetCurrentPoint(this).Properties.IsLeftButtonPressed) return;
         DrawingColor old = _currentColor;
         SetColor(_previousColor);
         _previousColor = old;
@@ -247,6 +246,7 @@ public partial class ColorPickerWindow : Window
         if (sender is Button { Tag: DrawingColor color })
         {
             _previousColor = _currentColor;
+            _hasPreviousColor = true;
             SetColor(color);
         }
     }
