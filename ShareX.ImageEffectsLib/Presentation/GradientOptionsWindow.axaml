@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.ImageEffectsLib.GradientOptionsWindow"
+        Title="ShareX - Gradient"
+        Width="520" Height="560" MinHeight="420"
+        WindowStartupLocation="CenterOwner">
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
+            <Border Classes="tool-panel">
+                <Grid ColumnDefinitions="140,*" ColumnSpacing="10">
+                    <TextBlock Classes="row-label" Text="Direction"/>
+                    <ComboBox x:Name="DirectionComboBox" Grid.Column="1"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Classes="tool-panel">
+                <Grid RowDefinitions="Auto,*" RowSpacing="10">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <TextBlock Classes="section-heading" Text="Color stops"/>
+                        <Button Grid.Column="1" Content="Add stop" Click="OnAddStopClick"/>
+                    </Grid>
+                    <ScrollViewer Grid.Row="1">
+                        <StackPanel x:Name="StopsPanel" Spacing="8"/>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                <TextBlock Text="Stops are rendered from 0% to 100%." FontWeight="Normal"
+                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}" VerticalAlignment="Center"/>
+                <Button Grid.Column="1" Content="Done" Click="OnDoneClick"/>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

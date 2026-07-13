@@ -2348,21 +2348,20 @@ namespace ShareX.ScreenCaptureLib
             UpdateCanvas(bmp);
         }
 
-        private void AddImageEffects()
+        private async void AddImageEffects()
         {
             Form.Pause();
 
-            using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(Form.Canvas, Options.ImageEffectPresets, Options.SelectedImageEffectPreset))
+            try
             {
-                imageEffectsForm.EditorMode();
+                ImageEffectsDialogResult result = await ImageEffectsIntegration.ShowDialogAsync(Form.Canvas,
+                    Options.ImageEffectPresets, Options.SelectedImageEffectPreset, ImageEffectsWindowMode.Editor);
 
-                bool applyEffect = imageEffectsForm.ShowDialog(Form) == DialogResult.OK;
+                Options.SelectedImageEffectPreset = result.SelectedPresetIndex;
 
-                Options.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
-
-                if (applyEffect)
+                if (result.Accepted)
                 {
-                    ImageEffectPreset preset = imageEffectsForm.Presets.ReturnIfValidIndex(Options.SelectedImageEffectPreset);
+                    ImageEffectPreset preset = Options.ImageEffectPresets.ReturnIfValidIndex(Options.SelectedImageEffectPreset);
 
                     if (preset != null)
                     {
@@ -2377,8 +2376,10 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
             }
-
-            Form.Resume();
+            finally
+            {
+                Form.Resume();
+            }
         }
 
         private bool PickColor(Color currentColor, out Color newColor)

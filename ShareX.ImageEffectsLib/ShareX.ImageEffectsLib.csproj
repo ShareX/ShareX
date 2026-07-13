@@ -3,11 +3,19 @@
     <TargetFramework>net9.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
+    <UseSystemDrawing>true</UseSystemDrawing>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>annotations</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.Controls.ColorPicker" />
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="Newtonsoft.Json" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
   </ItemGroup>
 </Project>

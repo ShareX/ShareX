@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.ImageEffectsLib.ImageEffectPackagerWindow"
+        Title="ShareX - Package image effect"
+        Width="680" SizeToContent="Height" CanResize="False"
+        WindowStartupLocation="CenterOwner">
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+        <Grid Margin="16" RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
+            <Border Classes="tool-panel">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
+                    <TextBlock Classes="section-heading" Text="Package preset"/>
+                    <Grid Grid.Row="1" ColumnDefinitions="110,*,Auto" ColumnSpacing="8">
+                        <TextBlock Classes="row-label" Text="Assets folder"/>
+                        <TextBox x:Name="AssetsFolderTextBox" Grid.Column="1"/>
+                        <Button Grid.Column="2" Content="Browse..." Click="OnBrowseAssetsClick"/>
+                    </Grid>
+                    <Grid Grid.Row="2" ColumnDefinitions="110,*,Auto" ColumnSpacing="8">
+                        <TextBlock Classes="row-label" Text="Package file"/>
+                        <TextBox x:Name="PackageFileTextBox" Grid.Column="1"/>
+                        <Button Grid.Column="2" Content="Browse..." Click="OnBrowsePackageClick"/>
+                    </Grid>
+                    <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
+                        <TextBlock Text="Overwrite an existing package" FontWeight="Normal" VerticalAlignment="Center"/>
+                        <ToggleSwitch x:Name="OverwriteToggle" Grid.Column="1" OnContent="" OffContent=""/>
+                    </Grid>
+                </Grid>
+            </Border>
+            <TextBlock x:Name="StatusText" Grid.Row="1" FontWeight="Normal" TextWrapping="Wrap"
+                       Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
+            <Grid Grid.Row="2" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+                <Button Content="Open effects folder" Click="OnOpenFolderClick"/>
+                <Button Grid.Column="1" Content="Create package" Click="OnPackageClick"/>
+                <Button Grid.Column="2" Content="Close" Click="OnCloseClick"/>
+            </Grid>
+        </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

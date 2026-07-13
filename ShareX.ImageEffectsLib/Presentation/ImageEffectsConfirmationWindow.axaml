@@ -1,0 +1,17 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.ImageEffectsLib.ImageEffectsConfirmationWindow"
+        Title="ShareX - Confirmation"
+        Width="460" SizeToContent="Height" CanResize="False"
+        WindowStartupLocation="CenterOwner">
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" Margin="16" RowDefinitions="Auto,Auto" RowSpacing="16">
+            <TextBlock x:Name="MessageText" FontWeight="Normal" TextWrapping="Wrap"/>
+            <Grid Grid.Row="1" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+                <Button Grid.Column="1" Content="Yes" Click="OnYesClick"/>
+                <Button Grid.Column="2" Content="No" Click="OnNoClick"/>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

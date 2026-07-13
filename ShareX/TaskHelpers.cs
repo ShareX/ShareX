@@ -666,12 +666,10 @@ namespace ShareX
 
                 if (taskSettingsImage.ShowImageEffectsWindowAfterCapture)
                 {
-                    using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(bmp, taskSettingsImage.ImageEffectPresets,
-                        taskSettingsImage.SelectedImageEffectPreset))
-                    {
-                        imageEffectsForm.ShowDialog();
-                        taskSettingsImage.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
-                    }
+                    ImageEffectsDialogResult result = ImageEffectsIntegration.ShowDialog(bmp,
+                        taskSettingsImage.ImageEffectPresets, taskSettingsImage.SelectedImageEffectPreset,
+                        ImageEffectsWindowMode.Editor);
+                    taskSettingsImage.SelectedImageEffectPreset = result.SelectedPresetIndex;
                 }
 
                 ImageEffectPreset imageEffect = null;
@@ -1687,37 +1685,47 @@ namespace ShareX
 
                     if (taskSettings == null) taskSettings = Program.DefaultTaskSettings;
 
-                    using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(bmp, taskSettings.ImageSettingsReference.ImageEffectPresets,
-                        taskSettings.ImageSettings.SelectedImageEffectPreset))
+                    using (bmp)
                     {
-                        imageEffectsForm.EnableToolMode(x => UploadManager.RunImageTask(x, taskSettings), filePath);
-                        imageEffectsForm.ShowDialog();
-                        //taskSettings.ImageSettingsReference.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                        ImageEffectsIntegration.ShowToolWindow(bmp,
+                            taskSettings.ImageSettingsReference.ImageEffectPresets,
+                            taskSettings.ImageSettings.SelectedImageEffectPreset,
+                            CreateImageEffectsCallbacks(taskSettings), filePath,
+                            selectedIndex => taskSettings.ImageSettingsReference.SelectedImageEffectPreset = selectedIndex);
                     }
                 }
             }
         }
 
-        public static ImageEffectsForm OpenImageEffectsSingleton(TaskSettings taskSettings = null)
+        public static void OpenImageEffectsSingleton(TaskSettings taskSettings = null, string importJson = null)
         {
             if (taskSettings == null) taskSettings = Program.DefaultTaskSettings;
 
-            bool firstInstance = !ImageEffectsForm.IsInstanceActive;
+            ImageEffectsIntegration.ShowPresetWindow(taskSettings.ImageSettings.ImageEffectPresets,
+                taskSettings.ImageSettings.SelectedImageEffectPreset,
+                selectedIndex => taskSettings.ImageSettings.SelectedImageEffectPreset = selectedIndex,
+                importJson, CreateImageEffectsCallbacks(taskSettings));
+        }
 
-            ImageEffectsForm imageEffectsForm = ImageEffectsForm.GetFormInstance(taskSettings.ImageSettings.ImageEffectPresets,
-                taskSettings.ImageSettings.SelectedImageEffectPreset);
-
-            if (firstInstance)
+        private static ImageEffectsCallbacks CreateImageEffectsCallbacks(TaskSettings taskSettings)
+        {
+            return new ImageEffectsCallbacks
             {
-                imageEffectsForm.FormClosed += (sender, e) => taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
-                imageEffectsForm.Show();
-            }
-            else
-            {
-                imageEffectsForm.ForceActivate();
-            }
-
-            return imageEffectsForm;
+                LoadImageFromFile = () =>
+                {
+                    string path = ImageHelpers.OpenImageFileDialog();
+                    Bitmap image = !string.IsNullOrWhiteSpace(path) ? ImageHelpers.LoadImage(path) : null;
+                    return image != null ? new ImageEffectsSource(image, path) : null;
+                },
+                LoadImageFromClipboard = () =>
+                {
+                    Bitmap image = ClipboardHelpers.GetImage();
+                    return image != null ? new ImageEffectsSource(image) : null;
+                },
+                SaveImage = (image, path) => ImageHelpers.SaveImageFileDialog(image, path),
+                UploadImage = image => UploadManager.RunImageTask(image, taskSettings),
+                OpenImageEffectsPage = () => URLHelpers.OpenURL(Links.ImageEffects)
+            };
         }
 
         public static void OpenImageViewer()
@@ -2647,12 +2655,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(configJson))
             {
-                ImageEffectsForm imageEffectsForm = OpenImageEffectsSingleton(Program.DefaultTaskSettings);
-
-                if (imageEffectsForm != null)
-                {
-                    imageEffectsForm.ImportImageEffect(configJson);
-                }
+                OpenImageEffectsSingleton(Program.DefaultTaskSettings, configJson);
 
                 if (!Program.DefaultTaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects) &&
                     MessageBox.Show(Resources.WouldYouLikeToEnableImageEffects,
