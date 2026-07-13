@@ -13,6 +13,7 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using ShareX.AvaloniaUI.Theming;
 
@@ -39,7 +40,6 @@ public partial class PinToScreenStartupWindow : Window
         AvaloniaXamlLoader.Load(this);
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
 
-        _viewModel.CloseRequested = Close;
         _viewModel.RegionCaptureStarted = Hide;
         _viewModel.RegionCaptureFinished = () =>
         {
@@ -54,5 +54,14 @@ public partial class PinToScreenStartupWindow : Window
             services.ImagePinned?.Invoke();
             Close();
         };
+    }
+
+    private void OnKeyUp(object? sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Escape)
+        {
+            Close();
+            e.Handled = true;
+        }
     }
 }

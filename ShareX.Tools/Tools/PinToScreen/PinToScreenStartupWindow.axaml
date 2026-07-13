@@ -11,11 +11,12 @@
         Width="560"
         SizeToContent="Height"
         CanResize="False"
+        KeyUp="OnKeyUp"
         WindowStartupLocation="CenterScreen">
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid Margin="16" RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
-                <Border Classes="tool-panel">
+            <Grid Margin="16" RowDefinitions="Auto,Auto,Auto">
+                <Border Classes="tool-panel" Margin="0,0,0,12">
                     <StackPanel Spacing="6">
                         <TextBlock Classes="section-heading" Text="Choose an image"/>
                         <TextBlock Text="Pin an image above your other windows for quick reference."
@@ -24,31 +25,32 @@
                     </StackPanel>
                 </Border>
                 <Grid Grid.Row="1" ColumnDefinitions="*,*,*" ColumnSpacing="10">
-                    <Button Command="{Binding CaptureRegionCommand}" IsEnabled="{Binding IsIdle}" Height="72">
-                        <StackPanel Spacing="6">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scan}" HorizontalAlignment="Center"/>
+                    <Button Command="{Binding CaptureRegionCommand}" IsEnabled="{Binding IsIdle}"
+                            Height="88" HorizontalAlignment="Stretch">
+                        <StackPanel Spacing="8" VerticalAlignment="Center">
+                            <TextBlock Classes="icon" FontSize="24" FontWeight="Normal" Text="{x:Static theming:LucideIcons.scan}" HorizontalAlignment="Center"/>
                             <TextBlock Text="Select region..."/>
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="1" Command="{Binding FromClipboardCommand}" IsEnabled="{Binding IsIdle}" Height="72">
-                        <StackPanel Spacing="6">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}" HorizontalAlignment="Center"/>
+                    <Button Grid.Column="1" Command="{Binding FromClipboardCommand}" IsEnabled="{Binding IsIdle}"
+                            Height="88" HorizontalAlignment="Stretch">
+                        <StackPanel Spacing="8" VerticalAlignment="Center">
+                            <TextBlock Classes="icon" FontSize="24" FontWeight="Normal" Text="{x:Static theming:LucideIcons.clipboard_paste}" HorizontalAlignment="Center"/>
                             <TextBlock Text="From clipboard"/>
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="2" Command="{Binding FromFileCommand}" IsEnabled="{Binding IsIdle}" Height="72">
-                        <StackPanel Spacing="6">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}" HorizontalAlignment="Center"/>
+                    <Button Grid.Column="2" Command="{Binding FromFileCommand}" IsEnabled="{Binding IsIdle}"
+                            Height="88" HorizontalAlignment="Stretch">
+                        <StackPanel Spacing="8" VerticalAlignment="Center">
+                            <TextBlock Classes="icon" FontSize="24" FontWeight="Normal" Text="{x:Static theming:LucideIcons.folder_open}" HorizontalAlignment="Center"/>
                             <TextBlock Text="Select image..."/>
                         </StackPanel>
                     </Button>
                 </Grid>
-                <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="12">
-                    <TextBlock Text="{Binding ErrorMessage}" IsVisible="{Binding HasError}"
-                               FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
-                               TextWrapping="Wrap" VerticalAlignment="Center"/>
-                    <Button Grid.Column="1" Content="Cancel" Command="{Binding CancelCommand}"/>
-                </Grid>
+                <TextBlock Grid.Row="2" Text="{Binding ErrorMessage}" IsVisible="{Binding HasError}"
+                           Margin="0,12,0,0"
+                           FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                           TextWrapping="Wrap" VerticalAlignment="Center"/>
             </Grid>
         </Grid>
     </ThemeVariantScope>

@@ -32,7 +32,6 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
     public bool IsIdle => !IsBusy;
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
     public Action<PinToScreenSource>? SourceSelected { get; set; }
-    public Action? CloseRequested { get; set; }
     public Action? RegionCaptureStarted { get; set; }
     public Action? RegionCaptureFinished { get; set; }
 
@@ -60,9 +59,6 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
 
     [RelayCommand]
     private Task FromFileAsync() => SelectAsync(_services.SelectImageFileAsync, "No image was selected.");
-
-    [RelayCommand]
-    private void Cancel() => CloseRequested?.Invoke();
 
     private async Task SelectAsync(Func<Task<PinToScreenSource?>> selector, string emptyMessage)
     {
