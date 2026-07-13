@@ -29,8 +29,6 @@ public partial class ColorPickerWindow : Window
     private DrawingColor _previousColor = DrawingColor.Red;
     private bool _updatingControls;
     private bool _initialized;
-    private int? _cursorX;
-    private int? _cursorY;
 
     public ColorPickerWindow() : this(new ColorPickerServices { PickScreenColor = () => null }, new ColorPickerOptions())
     {
@@ -101,7 +99,6 @@ public partial class ColorPickerWindow : Window
         ColorNameText.Text = ColorHelpers.GetColorName(color);
         NewColorPreview.Background = new SolidColorBrush(ToAvalonia(color));
         OldColorPreview.Background = new SolidColorBrush(ToAvalonia(_previousColor));
-        PositionText.Text = _cursorX.HasValue ? $"Cursor: {_cursorX}, {_cursorY}" : string.Empty;
         _updatingControls = false;
     }
 
@@ -175,8 +172,6 @@ public partial class ColorPickerWindow : Window
             ColorPickerSample? sample = _services.PickScreenColor();
             if (sample != null)
             {
-                _cursorX = sample.X;
-                _cursorY = sample.Y;
                 SetColor(DrawingColor.FromArgb(sample.Argb));
                 AddRecentColor(_currentColor);
                 RebuildPalette();
@@ -236,18 +231,19 @@ public partial class ColorPickerWindow : Window
         {
             Border swatch = new()
             {
+                Width = 19,
+                Height = 19,
                 Background = new SolidColorBrush(ToAvalonia(color)),
-                BorderBrush = new SolidColorBrush(Avalonia.Media.Color.FromRgb(100, 100, 100)),
-                BorderThickness = new Thickness(1),
                 CornerRadius = new CornerRadius(3)
             };
             Button button = new()
             {
                 Content = swatch,
-                Width = 24,
-                Height = 24,
-                Padding = new Thickness(3),
-                Margin = new Thickness(1),
+                Width = 21,
+                Height = 21,
+                Padding = new Thickness(1),
+                BorderThickness = new Thickness(0),
+                Background = Brushes.Transparent,
                 Tag = color
             };
             button.Click += OnPaletteColorClick;
@@ -286,7 +282,6 @@ public partial class ColorPickerWindow : Window
     {
         MyColor color = _currentColor;
         string text = color.ToString();
-        if (_cursorX.HasValue) text += Environment.NewLine + $"Cursor position (X, Y) = {_cursorX}, {_cursorY}";
         await CopyAsync(text);
     }
 
@@ -305,9 +300,6 @@ public partial class ColorPickerWindow : Window
         CMYK cmyk = _currentColor;
         await CopyAsync($"{cmyk.Cyan100:0.0}%, {cmyk.Magenta100:0.0}%, {cmyk.Yellow100:0.0}%, {cmyk.Key100:0.0}%");
     }
-
-    private async void OnCopyPositionClick(object? sender, RoutedEventArgs e) =>
-        await CopyAsync(_cursorX.HasValue ? $"{_cursorX}, {_cursorY}" : string.Empty);
 
     private void OnKeyDown(object? sender, KeyEventArgs e)
     {
