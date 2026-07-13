@@ -25,6 +25,7 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
+using ShareX.HelpersLib;
 using ShareX.Tools;
 
 namespace ShareX.Tools.Integration;
@@ -63,6 +64,11 @@ public static class ToolsIntegration
     public static void ShowClipboardViewerWindow()
     {
         Show(() => new ClipboardViewerWindow());
+    }
+
+    public static void ShowColorPickerWindow(ColorPickerServices services, ColorPickerOptions options)
+    {
+        Show(() => new ColorPickerWindow(services, options));
     }
 
     public static void ShowHashCheckerWindow(HashCalculationHandler handler, Action? playSound = null, string? filePath = null)

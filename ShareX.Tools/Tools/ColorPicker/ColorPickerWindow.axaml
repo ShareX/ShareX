@@ -1,0 +1,128 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:ShareX.Tools.Controls"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.Tools.ColorPickerWindow"
+        Title="ShareX - Color picker"
+        Width="850" Height="680" MinWidth="760" MinHeight="620"
+        WindowStartupLocation="CenterScreen">
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
+                <Border Classes="tool-panel">
+                    <Grid ColumnDefinitions="Auto,Auto,Auto,*" ColumnSpacing="8">
+                        <Button Click="OnPickScreenClick">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pipette}"/>
+                                <TextBlock Text="Pick from screen..."/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="1" Click="OnClipboardClick">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}"/>
+                                <TextBlock Text="From clipboard"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="2">
+                            <Button.Flyout>
+                                <MenuFlyout Placement="BottomEdgeAlignedLeft">
+                                    <MenuItem Header="Copy all details" Click="OnCopyAllClick"/>
+                                    <MenuItem Header="Copy RGB" Click="OnCopyRgbClick"/>
+                                    <MenuItem Header="Copy hexadecimal" Click="OnCopyHexClick"/>
+                                    <MenuItem Header="Copy HSB" Click="OnCopyHsbClick"/>
+                                    <MenuItem Header="Copy CMYK" Click="OnCopyCmykClick"/>
+                                    <MenuItem Header="Copy decimal" Click="OnCopyDecimalClick"/>
+                                    <MenuItem Header="Copy cursor position" Click="OnCopyPositionClick"/>
+                                </MenuFlyout>
+                            </Button.Flyout>
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                                <TextBlock Text="Copy"/>
+                                <TextBlock Classes="icon" FontSize="11" Text="{x:Static theming:LucideIcons.chevron_down}"/>
+                            </StackPanel>
+                        </Button>
+                        <TextBlock x:Name="PositionText" Grid.Column="3" HorizontalAlignment="Right"
+                                   VerticalAlignment="Center" FontWeight="Normal"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="1" ColumnDefinitions="3*,4*" ColumnSpacing="12">
+                    <Border Classes="tool-panel">
+                        <Grid RowDefinitions="*,Auto" RowSpacing="10">
+                            <controls:AdvancedColorPickerControl x:Name="Picker"/>
+                            <UniformGrid Grid.Row="1" Columns="3" Rows="2">
+                                <RadioButton x:Name="HueMode" Content="Hue" GroupName="PickerMode" IsChecked="True" Click="OnPickerModeChanged"/>
+                                <RadioButton x:Name="SaturationMode" Content="Saturation" GroupName="PickerMode" Click="OnPickerModeChanged"/>
+                                <RadioButton x:Name="BrightnessMode" Content="Brightness" GroupName="PickerMode" Click="OnPickerModeChanged"/>
+                                <RadioButton x:Name="RedMode" Content="Red" GroupName="PickerMode" Click="OnPickerModeChanged"/>
+                                <RadioButton x:Name="GreenMode" Content="Green" GroupName="PickerMode" Click="OnPickerModeChanged"/>
+                                <RadioButton x:Name="BlueMode" Content="Blue" GroupName="PickerMode" Click="OnPickerModeChanged"/>
+                            </UniformGrid>
+                        </Grid>
+                    </Border>
+
+                    <Grid Grid.Column="1" RowDefinitions="Auto,*" RowSpacing="12">
+                        <Border Classes="tool-panel">
+                            <Grid ColumnDefinitions="110,110,*" ColumnSpacing="12">
+                                <StackPanel Spacing="5">
+                                    <TextBlock Text="New" Classes="section-heading"/>
+                                    <Border Background="{DynamicResource ShareX.Brush.Checkered.Small}" Height="64" CornerRadius="4" ClipToBounds="True">
+                                        <Border x:Name="NewColorPreview"/>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Spacing="5">
+                                    <TextBlock Text="Previous" Classes="section-heading"/>
+                                    <Border Background="{DynamicResource ShareX.Brush.Checkered.Small}" Height="64" CornerRadius="4" ClipToBounds="True"
+                                            PointerPressed="OnPreviousColorPressed">
+                                        <Border x:Name="OldColorPreview"/>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel Grid.Column="2" Spacing="5" VerticalAlignment="Center">
+                                    <TextBlock Text="Color name" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                    <TextBlock x:Name="ColorNameText" Classes="section-heading" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Row="1" Classes="tool-panel">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
+                                <TextBlock Text="Color values" Classes="section-heading"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="*,*,*,*" ColumnSpacing="8">
+                                    <StackPanel Spacing="4"><TextBlock Text="Red" FontWeight="Normal"/><NumericUpDown x:Name="RedValue" Minimum="0" Maximum="255" ShowButtonSpinner="False" ValueChanged="OnRgbValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="1" Spacing="4"><TextBlock Text="Green" FontWeight="Normal"/><NumericUpDown x:Name="GreenValue" Minimum="0" Maximum="255" ShowButtonSpinner="False" ValueChanged="OnRgbValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="2" Spacing="4"><TextBlock Text="Blue" FontWeight="Normal"/><NumericUpDown x:Name="BlueValue" Minimum="0" Maximum="255" ShowButtonSpinner="False" ValueChanged="OnRgbValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="3" Spacing="4"><TextBlock Text="Alpha" FontWeight="Normal"/><NumericUpDown x:Name="AlphaValue" Minimum="0" Maximum="255" ShowButtonSpinner="False" ValueChanged="OnRgbValueChanged"/></StackPanel>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="*,*,*" ColumnSpacing="8">
+                                    <StackPanel Spacing="4"><TextBlock Text="Hue °" FontWeight="Normal"/><NumericUpDown x:Name="HueValue" Minimum="0" Maximum="360" ShowButtonSpinner="False" ValueChanged="OnHsbValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="1" Spacing="4"><TextBlock Text="Saturation %" FontWeight="Normal"/><NumericUpDown x:Name="SaturationValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnHsbValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="2" Spacing="4"><TextBlock Text="Brightness %" FontWeight="Normal"/><NumericUpDown x:Name="BrightnessValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnHsbValueChanged"/></StackPanel>
+                                </Grid>
+                                <Grid Grid.Row="3" ColumnDefinitions="*,*,*,*" ColumnSpacing="8">
+                                    <StackPanel Spacing="4"><TextBlock Text="Cyan %" FontWeight="Normal"/><NumericUpDown x:Name="CyanValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnCmykValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="1" Spacing="4"><TextBlock Text="Magenta %" FontWeight="Normal"/><NumericUpDown x:Name="MagentaValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnCmykValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="2" Spacing="4"><TextBlock Text="Yellow %" FontWeight="Normal"/><NumericUpDown x:Name="YellowValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnCmykValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="3" Spacing="4"><TextBlock Text="Key %" FontWeight="Normal"/><NumericUpDown x:Name="KeyValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnCmykValueChanged"/></StackPanel>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+
+                <Border Grid.Row="2" Classes="tool-panel">
+                    <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
+                        <Grid ColumnDefinitions="Auto,Auto,*,130,130,Auto" ColumnSpacing="8">
+                            <RadioButton x:Name="RecentPalette" Content="Recent colors" GroupName="PaletteMode" Click="OnPaletteChanged"/>
+                            <RadioButton x:Name="StandardPalette" Grid.Column="1" Content="Standard colors" GroupName="PaletteMode" Click="OnPaletteChanged"/>
+                            <TextBox x:Name="HexValue" Grid.Column="3" PlaceholderText="Hex" TextChanged="OnHexTextChanged"/>
+                            <TextBox x:Name="DecimalValue" Grid.Column="4" PlaceholderText="Decimal" TextChanged="OnDecimalTextChanged"/>
+                            <Button Grid.Column="5" Content="Toggle transparent" Click="OnToggleTransparentClick"/>
+                        </Grid>
+                        <WrapPanel x:Name="PalettePanel" Grid.Row="1" ItemWidth="24" ItemHeight="24"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

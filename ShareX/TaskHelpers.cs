@@ -887,7 +887,18 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
             taskSettings.CaptureSettings.SurfaceOptions.ScreenColorPickerInfoText = taskSettings.ToolsSettings.ScreenColorPickerInfoText;
 
-            RegionCaptureTasks.ShowScreenColorPickerDialog(taskSettings.CaptureSettingsReference.SurfaceOptions);
+            ToolsIntegration.ShowColorPickerWindow(
+                new ColorPickerServices
+                {
+                    PickScreenColor = () =>
+                    {
+                        PointInfo pointInfo = RegionCaptureTasks.GetPointInfo(taskSettings.CaptureSettingsReference.SurfaceOptions);
+                        return pointInfo == null
+                            ? null
+                            : new ColorPickerSample(pointInfo.Color.ToArgb(), pointInfo.Position.X, pointInfo.Position.Y);
+                    }
+                },
+                taskSettings.CaptureSettingsReference.SurfaceOptions.ColorPickerOptions);
         }
 
         public static void OpenScreenColorPicker(TaskSettings taskSettings = null)
