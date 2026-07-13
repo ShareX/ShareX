@@ -46,6 +46,7 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
         RegionCaptureStarted?.Invoke();
         try
         {
+            await Task.Delay(200);
             await SelectAsync(_services.CaptureRegionAsync, "No region was selected.");
         }
         finally
