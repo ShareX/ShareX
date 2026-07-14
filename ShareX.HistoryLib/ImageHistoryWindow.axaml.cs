@@ -55,6 +55,10 @@ public partial class ImageHistoryWindow : Window
     private PointerPressedEventArgs? _dragPointerPressed;
     private Point _dragStart;
     private bool _dragStarted;
+    private bool _windowPlacementApplied;
+
+    private ShareX.HelpersLib.WindowState SavedWindowState =>
+        _settings.WindowState ??= new ShareX.HelpersLib.WindowState();
 
     public ImageHistoryWindow()
     {
@@ -79,19 +83,25 @@ public partial class ImageHistoryWindow : Window
         ApplySavedWindowState();
 
         Opened += OnOpened;
+        Closing += OnClosing;
         Closed += OnClosed;
         Resized += OnResized;
+        PositionChanged += OnPositionChanged;
         KeyDown += OnWindowKeyDown;
     }
 
     private async void OnOpened(object? sender, EventArgs e)
     {
         Opened -= OnOpened;
+        ApplySavedWindowState();
+        _windowPlacementApplied = true;
         Activate();
         SearchTextBox.Focus();
         await Dispatcher.UIThread.InvokeAsync(AttachScrollViewer, DispatcherPriority.Loaded);
         await RefreshHistoryAsync();
     }
+
+    private void OnClosing(object? sender, WindowClosingEventArgs e) => SaveWindowState();
 
     private void AttachScrollViewer()
     {
@@ -105,7 +115,6 @@ public partial class ImageHistoryWindow : Window
 
     private void OnClosed(object? sender, EventArgs e)
     {
-        SaveWindowState();
         _filterTimer.Stop();
         _filterCancellation?.Cancel();
         _filterCancellation?.Dispose();
@@ -118,15 +127,17 @@ public partial class ImageHistoryWindow : Window
     {
         if (!_settings.RememberWindowState) return;
 
-        if (_settings.AvaloniaWindowWidth > 0 && _settings.AvaloniaWindowHeight > 0)
+        ShareX.HelpersLib.WindowState savedState = SavedWindowState;
+
+        if (!savedState.Size.IsEmpty)
         {
-            Width = _settings.AvaloniaWindowWidth;
-            Height = _settings.AvaloniaWindowHeight;
+            Width = savedState.Size.Width;
+            Height = savedState.Size.Height;
         }
 
-        if (_settings.AvaloniaWindowX.HasValue && _settings.AvaloniaWindowY.HasValue)
+        if (!savedState.Location.IsEmpty)
         {
-            PixelPoint position = new(_settings.AvaloniaWindowX.Value, _settings.AvaloniaWindowY.Value);
+            PixelPoint position = new(savedState.Location.X, savedState.Location.Y);
             if (Screens.ScreenFromPoint(position) != null)
             {
                 WindowStartupLocation = WindowStartupLocation.Manual;
@@ -134,28 +145,36 @@ public partial class ImageHistoryWindow : Window
             }
         }
 
-        WindowState = _settings.AvaloniaWindowMaximized
+        WindowState = savedState.IsMaximized
             ? Avalonia.Controls.WindowState.Maximized
             : Avalonia.Controls.WindowState.Normal;
     }
 
-    private void OnResized(object? sender, WindowResizedEventArgs e) => SaveNormalWindowSize();
+    private void OnResized(object? sender, WindowResizedEventArgs e)
+    {
+        if (_windowPlacementApplied) SaveNormalWindowSize();
+    }
+
+    private void OnPositionChanged(object? sender, PixelPointEventArgs e)
+    {
+        if (_windowPlacementApplied) SaveNormalWindowSize();
+    }
 
     private void SaveWindowState()
     {
         if (!_settings.RememberWindowState) return;
         SaveNormalWindowSize();
-        _settings.AvaloniaWindowMaximized = WindowState == Avalonia.Controls.WindowState.Maximized;
+        SavedWindowState.IsMaximized = WindowState == Avalonia.Controls.WindowState.Maximized;
     }
 
     private void SaveNormalWindowSize()
     {
         if (!_settings.RememberWindowState || WindowState != Avalonia.Controls.WindowState.Normal) return;
         if (Bounds.Width <= 0 || Bounds.Height <= 0) return;
-        _settings.AvaloniaWindowWidth = Bounds.Width;
-        _settings.AvaloniaWindowHeight = Bounds.Height;
-        _settings.AvaloniaWindowX = Position.X;
-        _settings.AvaloniaWindowY = Position.Y;
+        SavedWindowState.Size = new System.Drawing.Size(
+            (int)Math.Round(Bounds.Width),
+            (int)Math.Round(Bounds.Height));
+        SavedWindowState.Location = new System.Drawing.Point(Position.X, Position.Y);
     }
 
     private async Task RefreshHistoryAsync()

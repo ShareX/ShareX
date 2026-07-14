@@ -35,11 +35,6 @@ namespace ShareX.HistoryLib
         public bool RememberSearchText { get; set; } = false;
         public string SearchText { get; set; } = "";
         public bool Favorites { get; set; } = false;
-        public double AvaloniaWindowWidth { get; set; } = 1100;
-        public double AvaloniaWindowHeight { get; set; } = 700;
-        public bool AvaloniaWindowMaximized { get; set; }
-        public int? AvaloniaWindowX { get; set; }
-        public int? AvaloniaWindowY { get; set; }
         public double HistoryListWidth { get; set; } = 720;
     }
 }
