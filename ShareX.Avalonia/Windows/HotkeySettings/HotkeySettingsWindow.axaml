@@ -1,0 +1,299 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:windows="using:ShareX.AvaloniaUI.Windows"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        d:DesignWidth="680"
+        d:DesignHeight="600"
+        x:Class="ShareX.AvaloniaUI.Windows.HotkeySettingsWindow"
+        x:DataType="windows:HotkeySettingsViewModel"
+        Title="ShareX - Hotkey settings"
+        Width="680"
+        Height="600"
+        MinWidth="620"
+        MinHeight="480"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.hotkey-item">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Padding" Value="4,3"/>
+        </Style>
+        <Style Selector="Border.hotkey-item.selected">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+        <Style Selector="Border.hotkey-item:pointerover">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+        <Style Selector="ListBoxItem">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="Button.row-icon-button">
+            <Setter Property="Width" Value="34"/>
+            <Setter Property="MinWidth" Value="34"/>
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+        <Style Selector="Button.hotkey-capture">
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="16,4"/>
+        </Style>
+        <Style Selector="Button.task-selector">
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Padding" Value="8,4"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="9,4"/>
+        </Style>
+        <Style Selector="TextBlock.column-heading">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="12" RowDefinitions="Auto,Auto,*" RowSpacing="8">
+                <Border Grid.Row="0" Classes="tool-panel" Padding="8">
+                    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*,Auto" ColumnSpacing="6">
+                        <Button Grid.Column="0" Classes="compact" Click="OnAddClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
+                                <TextBlock Text="Add"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="1" Classes="compact" Click="OnRemoveClick" IsEnabled="{Binding HasSelection}">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
+                                <TextBlock Text="Remove"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="2" Classes="compact" Click="OnEditClick" IsEnabled="{Binding HasSelection}">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings_2}"/>
+                                <TextBlock Text="Edit task..."/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="3" Classes="compact" Click="OnDuplicateClick" IsEnabled="{Binding HasSelection}">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy_plus}"/>
+                                <TextBlock Text="Duplicate"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="4" Classes="toolbar-button" Click="OnMoveUpClick"
+                                Height="34" Width="34" MinWidth="34" Padding="0"
+                                IsEnabled="{Binding CanMove}" ToolTip.Tip="Move up">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_up}" FontSize="16"/>
+                        </Button>
+                        <Button Grid.Column="5" Classes="toolbar-button" Click="OnMoveDownClick"
+                                Height="34" Width="34" MinWidth="34" Padding="0"
+                                IsEnabled="{Binding CanMove}" ToolTip.Tip="Move down">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_down}" FontSize="16"/>
+                        </Button>
+                        <Button Grid.Column="7" Classes="compact" Click="OnResetClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
+                                <TextBlock Text="Reset..."/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1"
+                        IsVisible="{Binding AreHotkeysDisabled}"
+                        Background="{DynamicResource ShareX.Brush.Control.Background}"
+                        BorderBrush="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                        BorderThickness="1"
+                        CornerRadius="4"
+                        Padding="8,6">
+                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="9">
+                        <TextBlock Classes="icon"
+                                   Text="{x:Static theming:LucideIcons.triangle_alert}"
+                                   Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                   FontSize="18"/>
+                        <TextBlock Grid.Column="1"
+                                   Text="Global hotkeys are currently disabled."
+                                   FontWeight="Normal"
+                                   VerticalAlignment="Center"/>
+                        <Button Grid.Column="2" Classes="compact" Click="OnEnableHotkeysClick" Content="Enable hotkeys"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="2" Classes="tool-panel" Padding="8">
+                    <Grid RowDefinitions="Auto,*" RowSpacing="4" Grid.IsSharedSizeScope="True">
+                        <Grid Grid.Row="0" Margin="4,0,4,2" ColumnSpacing="6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="HotkeyGroupWidth"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Classes="column-heading" Text="TASK"/>
+                            <TextBlock Grid.Column="1" Classes="column-heading" Text="HOTKEY"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <ListBox ItemsSource="{Binding Items}"
+                                     SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                     ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate x:DataType="windows:HotkeySettingsItem">
+                                        <Border Classes="hotkey-item"
+                                                Classes.selected="{Binding IsSelected}">
+                                            <Grid ColumnSpacing="4">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto" SharedSizeGroup="HotkeyGroupWidth"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Grid.Column="0" ColumnSpacing="4">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="34"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Button Classes="task-selector"
+                                                            Click="OnTaskClick"
+                                                            HorizontalAlignment="Stretch">
+                                                        <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="7">
+                                                            <TextBlock Text="{Binding SelectedTask.Name}"
+                                                                       FontWeight="Normal"
+                                                                       TextTrimming="CharacterEllipsis"/>
+                                                            <TextBlock Grid.Column="1"
+                                                                       IsVisible="{Binding IsCustomized}"
+                                                                       Text="*"
+                                                                       FontWeight="Normal"
+                                                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                                       VerticalAlignment="Center"
+                                                                       ToolTip.Tip="This task has custom settings"/>
+                                                            <TextBlock Grid.Column="2"
+                                                                       Classes="icon"
+                                                                       Text="{x:Static theming:LucideIcons.chevron_down}"
+                                                                       FontSize="14"/>
+                                                        </Grid>
+                                                    </Button>
+                                                    <Button Grid.Column="1"
+                                                            Classes="row-icon-button"
+                                                            Click="OnEditRowClick"
+                                                            ToolTip.Tip="Edit task settings...">
+                                                        <TextBlock Classes="icon"
+                                                                   Text="{x:Static theming:LucideIcons.pencil}"
+                                                                   FontSize="17"/>
+                                                    </Button>
+                                                </Grid>
+
+                                                <Grid Grid.Column="1" ColumnSpacing="4">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" SharedSizeGroup="HotkeyButtonWidth"/>
+                                                        <ColumnDefinition Width="32"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Button Grid.Column="0"
+                                                            Classes="hotkey-capture"
+                                                            HorizontalAlignment="Stretch"
+                                                            Click="OnHotkeyClick"
+                                                            KeyDown="OnHotkeyKeyDown"
+                                                            KeyUp="OnHotkeyKeyUp"
+                                                            LostFocus="OnHotkeyLostFocus">
+                                                        <TextBlock Text="{Binding DisplayHotkey}"
+                                                                   FontWeight="Normal"
+                                                                   TextAlignment="Center"
+                                                                   HorizontalAlignment="Center"
+                                                                   TextTrimming="CharacterEllipsis"/>
+                                                    </Button>
+
+                                                    <Grid Grid.Column="1"
+                                                          Width="32"
+                                                          Height="34"
+                                                          ToolTip.Tip="{Binding StatusText}">
+                                                        <TextBlock IsVisible="{Binding IsRegistered}"
+                                                                   Classes="icon"
+                                                                   Text="{x:Static theming:LucideIcons.circle_check}"
+                                                                   Foreground="{DynamicResource ShareX.Brush.TaskMode.Continue.Border}"
+                                                                   FontSize="19"
+                                                                   HorizontalAlignment="Center"/>
+                                                        <TextBlock IsVisible="{Binding IsFailed}"
+                                                                   Classes="icon"
+                                                                   Text="{x:Static theming:LucideIcons.circle_x}"
+                                                                   Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                                                   FontSize="19"
+                                                                   HorizontalAlignment="Center"/>
+                                                        <TextBlock IsVisible="{Binding IsNotConfigured}"
+                                                                   Classes="icon"
+                                                                   Text="{x:Static theming:LucideIcons.circle_dashed}"
+                                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                   FontSize="19"
+                                                                   HorizontalAlignment="Center"/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+                            <StackPanel IsVisible="{Binding IsEmpty}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Spacing="8">
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.keyboard}"
+                                           FontSize="42"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock Text="Add a hotkey to create a workflow"
+                                           FontWeight="Normal"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Border ZIndex="10"
+                    IsVisible="{Binding IsResetConfirmationVisible}"
+                    Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+                <Border Classes="tool-panel"
+                        Width="390"
+                        Padding="18"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                    <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.rotate_ccw}"
+                                       FontSize="20"
+                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                            <TextBlock Grid.Column="1"
+                                       Classes="section-heading"
+                                       Text="Reset hotkeys?"/>
+                        </Grid>
+                        <TextBlock Grid.Row="1"
+                                   Text="All hotkeys and their custom task settings will be replaced with the ShareX defaults."
+                                   FontWeight="Normal"
+                                   TextWrapping="Wrap"/>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                            <Button Click="OnCancelResetClick" Content="Cancel"/>
+                            <Button Classes="task-mode-button danger" Click="OnConfirmResetClick" Content="Reset"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Border>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

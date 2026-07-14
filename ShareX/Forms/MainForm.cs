@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.AvaloniaUI.Windows;
 using ShareX.ImageEffectsLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
@@ -1904,16 +1905,17 @@ namespace ShareX
         {
             if (Program.HotkeyManager != null)
             {
-                using (HotkeySettingsForm hotkeySettingsForm = new HotkeySettingsForm(Program.HotkeyManager))
-                {
-                    hotkeySettingsForm.ShowDialog();
-                }
-
-                if (!IsDisposed)
-                {
-                    UpdateWorkflowsMenu();
-                    SettingManager.SaveHotkeysConfigAsync();
-                }
+                HotkeySettingsIntegration.Show(new HotkeySettingsAvaloniaService(
+                    Program.HotkeyManager,
+                    this,
+                    () =>
+                    {
+                        if (!IsDisposed)
+                        {
+                            UpdateWorkflowsMenu();
+                            SettingManager.SaveHotkeysConfigAsync();
+                        }
+                    }));
             }
         }
 
