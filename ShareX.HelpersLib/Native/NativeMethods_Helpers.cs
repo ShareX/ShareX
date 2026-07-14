@@ -558,21 +558,28 @@ namespace ShareX.HelpersLib
         public static Bitmap GetFileThumbnail(string filePath, Size thumbnailSize)
         {
             Guid guid = typeof(IShellItemImageFactory).GUID;
-            SHCreateItemFromParsingName(filePath, IntPtr.Zero, guid, out IShellItemImageFactory imageFactory);
-            SIZE size = new SIZE(thumbnailSize.Width, thumbnailSize.Height);
-            imageFactory.GetImage(size, SIIGBF.SIIGBF_RESIZETOFIT, out IntPtr hbitmap);
-            Bitmap bmp = null;
+            IShellItemImageFactory imageFactory = null;
+            IntPtr hbitmap = IntPtr.Zero;
 
             try
             {
-                bmp = Image.FromHbitmap(hbitmap);
+                SHCreateItemFromParsingName(filePath, IntPtr.Zero, guid, out imageFactory);
+                SIZE size = new SIZE(thumbnailSize.Width, thumbnailSize.Height);
+                imageFactory.GetImage(size, SIIGBF.SIIGBF_RESIZETOFIT, out hbitmap);
+                return hbitmap != IntPtr.Zero ? Image.FromHbitmap(hbitmap) : null;
             }
             finally
             {
-                DeleteObject(hbitmap);
-            }
+                if (hbitmap != IntPtr.Zero)
+                {
+                    DeleteObject(hbitmap);
+                }
 
-            return bmp;
+                if (imageFactory != null && Marshal.IsComObject(imageFactory))
+                {
+                    Marshal.ReleaseComObject(imageFactory);
+                }
+            }
         }
 
         public static float GetScreenScalingFactor()

@@ -167,6 +167,9 @@
                                     <ListBox.ContextMenu>
                                         <ContextMenu Opening="OnHistoryContextMenuOpening">
                                             <MenuItem x:Name="OpenMenu" Header="Open">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}"/>
+                                                </MenuItem.Icon>
                                                 <MenuItem x:Name="OpenUrlMenu" Header="URL" Click="OnOpenUrlClick" InputGesture="Enter"/>
                                                 <MenuItem x:Name="OpenShortUrlMenu" Header="Shortened URL" Click="OnOpenShortUrlClick"/>
                                                 <MenuItem x:Name="OpenThumbnailUrlMenu" Header="Thumbnail URL" Click="OnOpenThumbnailUrlClick"/>
@@ -176,6 +179,9 @@
                                                 <MenuItem x:Name="OpenFolderMenu" Header="Folder" Click="OnOpenFolderClick" InputGesture="Shift+Enter"/>
                                             </MenuItem>
                                             <MenuItem x:Name="CopyMenu" Header="Copy">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                                                </MenuItem.Icon>
                                                 <MenuItem x:Name="CopyUrlMenu" Header="URL" Click="OnCopyUrlClick" InputGesture="Ctrl+C"/>
                                                 <MenuItem x:Name="CopyShortUrlMenu" Header="Shortened URL" Click="OnCopyShortUrlClick"/>
                                                 <MenuItem x:Name="CopyThumbnailUrlMenu" Header="Thumbnail URL" Click="OnCopyThumbnailUrlClick"/>
@@ -203,18 +209,62 @@
                                                 <MenuItem x:Name="CopyFolderMenu" Header="Folder" Click="OnCopyFolderClick"/>
                                             </MenuItem>
                                             <Separator/>
-                                            <MenuItem x:Name="FavoriteMenu" Header="Favorite" Click="OnToggleFavoriteClick"/>
-                                            <MenuItem x:Name="TagMenu" Header="Edit tag..." Click="OnEditTagClick"/>
-                                            <MenuItem x:Name="EditMenu" Header="Edit item..." Click="OnEditItemClick"/>
-                                            <MenuItem x:Name="RenameMenu" Header="Rename file..." Click="OnRenameFileClick"/>
-                                            <MenuItem Header="Delete from history..." Click="OnDeleteClick" InputGesture="Delete"/>
-                                            <MenuItem Header="Delete file and history item..." Click="OnDeleteFileClick" InputGesture="Shift+Delete"/>
+                                            <MenuItem x:Name="FavoriteMenu" Header="Favorite" Click="OnToggleFavoriteClick">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.star}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem x:Name="TagMenu" Header="Edit tag..." Click="OnEditTagClick">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.tag}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem x:Name="EditMenu" Header="Edit item..." Click="OnEditItemClick">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.square_pen}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem x:Name="RenameMenu" Header="Rename file..." Click="OnRenameFileClick">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file_pen_line}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem Header="Delete from history..." Click="OnDeleteClick" InputGesture="Delete">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.list_x}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem Header="Delete file and history item..." Click="OnDeleteFileClick" InputGesture="Shift+Delete">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file_x}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
                                             <Separator/>
-                                            <MenuItem x:Name="PreviewMenu" Header="Show image preview" Click="OnShowPreviewClick"/>
-                                            <MenuItem x:Name="UploadMenu" Header="Upload file" Click="OnUploadFileClick" InputGesture="Ctrl+U"/>
-                                            <MenuItem x:Name="EditImageMenu" Header="Edit image" Click="OnEditImageClick" InputGesture="Ctrl+E"/>
-                                            <MenuItem x:Name="PinMenu" Header="Pin to screen" Click="OnPinToScreenClick" InputGesture="Ctrl+P"/>
-                                            <MenuItem x:Name="AnalyzeMenu" Header="Analyze image..." Click="OnAnalyzeImageClick"/>
+                                            <MenuItem x:Name="PreviewMenu" Header="Show image preview" Click="OnShowPreviewClick">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.eye}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem x:Name="UploadMenu" Header="Upload file" Click="OnUploadFileClick" InputGesture="Ctrl+U">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem x:Name="EditImageMenu" Header="Edit image..." Click="OnEditImageClick" InputGesture="Ctrl+E">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.wand_sparkles}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem x:Name="PinMenu" Header="Pin to screen" Click="OnPinToScreenClick" InputGesture="Ctrl+P">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pin}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem x:Name="AnalyzeMenu" Header="Analyze image..." Click="OnAnalyzeImageClick">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scan_search}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
                                         </ContextMenu>
                                     </ListBox.ContextMenu>
                                 </ListBox>

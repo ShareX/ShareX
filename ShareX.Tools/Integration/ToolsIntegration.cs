@@ -116,6 +116,11 @@ public static class ToolsIntegration
             : new ImageViewerWindow(filePath));
     }
 
+    public static void ShowImageViewerWindow(IReadOnlyList<string> filePaths, int selectedIndex)
+    {
+        Show(() => new ImageViewerWindow(filePaths, selectedIndex));
+    }
+
     public static void ShowInspectWindowWindow()
     {
         Show(() => new InspectWindowWindow());

@@ -12,9 +12,4 @@
     <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="ImageListView">
-      <HintPath>..\Libs\ImageListView.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 </Project>

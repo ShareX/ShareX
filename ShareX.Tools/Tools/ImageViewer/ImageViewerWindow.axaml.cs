@@ -38,6 +38,12 @@ public partial class ImageViewerWindow : Window
         _closeOnDeactivate = _viewModel.LoadFile(filePath);
     }
 
+    public ImageViewerWindow(IReadOnlyList<string> filePaths, int selectedIndex)
+    {
+        Initialize();
+        _closeOnDeactivate = _viewModel.LoadFiles(filePaths, selectedIndex);
+    }
+
     public ImageViewerWindow(byte[] imageData, string? displayName = null)
     {
         Initialize();

@@ -861,13 +861,17 @@ namespace ShareX
 
         public static void OpenImageHistory()
         {
-            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryManager, Program.Settings.ImageHistorySettings,
-                filePath => UploadManager.UploadFile(filePath),
-                filePath => AnnotateImageFromFile(filePath),
-                filePath => PinToScreen(filePath),
-                filePath => AnalyzeImage(filePath));
-
-            imageHistoryForm.Show();
+            HistoryIntegration.ShowImageHistoryWindow(Program.HistoryManager, Program.Settings.ImageHistorySettings,
+                new HistoryWindowServices
+                {
+                    UploadFile = filePath => UploadManager.UploadFile(filePath),
+                    EditImage = filePath => AnnotateImageFromFile(filePath),
+                    PinToScreen = filePath => PinToScreen(filePath),
+                    AnalyzeImage = filePath => AnalyzeImage(filePath),
+                    ShowImage = filePath => OpenImageViewer(filePath),
+                    ShowImages = (filePaths, selectedIndex) =>
+                        ToolsIntegration.ShowImageViewerWindow(filePaths, selectedIndex)
+                });
         }
 
         public static void OpenDebugLog()

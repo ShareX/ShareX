@@ -63,6 +63,18 @@ public sealed partial class ImageViewerViewModel : ViewModelBase, IDisposable
         return LoadCurrentImage();
     }
 
+    public bool LoadFiles(IReadOnlyList<string> filePaths, int selectedIndex)
+    {
+        _images = filePaths.Where(path => File.Exists(path) && FileHelpers.IsImageFile(path)).ToArray();
+        if (_images.Length == 0)
+        {
+            return false;
+        }
+
+        _currentImageIndex = Math.Clamp(selectedIndex, 0, _images.Length - 1);
+        return LoadCurrentImage();
+    }
+
     public bool LoadEncodedImage(byte[] imageData, string? displayName = null)
     {
         if (imageData.Length == 0)

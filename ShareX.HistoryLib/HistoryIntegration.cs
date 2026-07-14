@@ -20,4 +20,11 @@ public static class HistoryIntegration
         AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() => new HistoryWindow(historyManager, settings, services).Show());
     }
+
+    public static void ShowImageHistoryWindow(HistoryManagerSQLite historyManager, ImageHistorySettings settings,
+        HistoryWindowServices services)
+    {
+        AvaloniaBootstrapper.EnsureInitialized();
+        Dispatcher.UIThread.Post(() => new ImageHistoryWindow(historyManager, settings, services).Show());
+    }
 }

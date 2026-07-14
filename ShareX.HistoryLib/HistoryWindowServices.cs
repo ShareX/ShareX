@@ -10,6 +10,7 @@
 #nullable enable
 
 using System;
+using System.Collections.Generic;
 
 namespace ShareX.HistoryLib;
 
@@ -20,4 +21,5 @@ public sealed class HistoryWindowServices
     public Action<string>? PinToScreen { get; init; }
     public Action<string>? AnalyzeImage { get; init; }
     public Action<string>? ShowImage { get; init; }
+    public Action<IReadOnlyList<string>, int>? ShowImages { get; init; }
 }
