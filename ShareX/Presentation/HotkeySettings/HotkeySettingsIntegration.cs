@@ -12,10 +12,12 @@
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 
-namespace ShareX.AvaloniaUI.Windows;
+namespace ShareX;
 
 public static class HotkeySettingsIntegration
 {

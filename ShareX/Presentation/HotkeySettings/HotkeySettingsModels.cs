@@ -12,10 +12,14 @@
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace ShareX.AvaloniaUI.Windows;
+namespace ShareX;
 
 public enum HotkeyRegistrationState
 {

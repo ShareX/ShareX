@@ -12,14 +12,19 @@
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using ShareX.AvaloniaUI.Theming;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace ShareX.AvaloniaUI.Windows;
+namespace ShareX;
 
 public partial class HotkeySettingsWindow : Window
 {

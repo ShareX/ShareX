@@ -12,7 +12,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Windows;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;

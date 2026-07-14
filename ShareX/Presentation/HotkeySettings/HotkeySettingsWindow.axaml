@@ -2,13 +2,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:windows="using:ShareX.AvaloniaUI.Windows"
+        xmlns:local="using:ShareX"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="680"
         d:DesignHeight="600"
-        x:Class="ShareX.AvaloniaUI.Windows.HotkeySettingsWindow"
-        x:DataType="windows:HotkeySettingsViewModel"
+        x:Class="ShareX.HotkeySettingsWindow"
+        x:DataType="local:HotkeySettingsViewModel"
         Title="ShareX - Hotkey settings"
         Width="680"
         Height="600"
@@ -156,7 +156,7 @@
                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                      ScrollViewer.VerticalScrollBarVisibility="Auto">
                                 <ListBox.ItemTemplate>
-                                    <DataTemplate x:DataType="windows:HotkeySettingsItem">
+                                    <DataTemplate x:DataType="local:HotkeySettingsItem">
                                         <Border Classes="hotkey-item"
                                                 Classes.selected="{Binding IsSelected}">
                                             <Grid ColumnSpacing="4">
