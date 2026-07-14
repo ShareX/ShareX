@@ -22,7 +22,7 @@
         </Style>
         <Style Selector="ListBox.thumbnail-rows ListBoxItem">
             <Setter Property="Padding" Value="0"/>
-            <Setter Property="Margin" Value="0,0,0,12"/>
+            <Setter Property="Margin" Value="0,0,0,4"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="Background" Value="Transparent"/>
         </Style>
@@ -31,7 +31,7 @@
             <Setter Property="Background" Value="Transparent"/>
         </Style>
         <Style Selector="Border.thumbnail-card">
-            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Padding" Value="0,0,0,8"/>
             <Setter Property="CornerRadius" Value="5"/>
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
@@ -44,7 +44,7 @@
         <Style Selector="Border.thumbnail-card.selected">
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
             <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="Padding" Value="7"/>
+            <Setter Property="Padding" Value="0,0,0,7"/>
         </Style>
         <Style Selector="TextBox.dialog-multiline">
             <Setter Property="VerticalContentAlignment" Value="Top"/>
@@ -121,7 +121,7 @@
                                     <ItemsControl ItemsSource="{Binding Items}">
                                         <ItemsControl.ItemsPanel>
                                             <ItemsPanelTemplate>
-                                                <StackPanel Orientation="Horizontal" Spacing="12"/>
+                                                <StackPanel Orientation="Horizontal" Spacing="4"/>
                                             </ItemsPanelTemplate>
                                         </ItemsControl.ItemsPanel>
                                         <ItemsControl.ItemTemplate>
@@ -141,7 +141,7 @@
                                                                 Background="{DynamicResource ShareX.Brush.Checkered}"
                                                                 BorderBrush="{DynamicResource ShareX.Brush.Border}"
                                                                 BorderThickness="1"
-                                                                CornerRadius="3"
+                                                                CornerRadius="3,3,0,0"
                                                                 ClipToBounds="True">
                                                             <Grid>
                                                                 <Image Source="{Binding Thumbnail}"

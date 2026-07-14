@@ -46,7 +46,7 @@ public sealed class ImageHistoryEntry : INotifyPropertyChanged, IDisposable
         Item = item;
         ThumbnailWidth = Math.Max(32, thumbnailWidth);
         ThumbnailHeight = Math.Max(32, thumbnailHeight);
-        CardWidth = ThumbnailWidth + 20;
+        CardWidth = ThumbnailWidth + 4;
     }
 
     public HistoryItem Item { get; }
