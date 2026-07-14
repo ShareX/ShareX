@@ -254,7 +254,7 @@ public partial class ImageHistoryWindow : Window
             _filteredHistoryItems = filtered;
             ResetLoadedEntries();
             LoadNextBatch();
-            UpdateTitleAndCount();
+            UpdateCountAndEmptyState();
         }
         catch (OperationCanceledException)
         {
@@ -299,18 +299,17 @@ public partial class ImageHistoryWindow : Window
         }
 
         _nextItemIndex = end;
-        UpdateTitleAndCount();
+        UpdateCountAndEmptyState();
         Dispatcher.UIThread.Post(CheckLoadMoreIfViewportNotFilled, DispatcherPriority.Background);
     }
 
-    private void UpdateTitleAndCount()
+    private void UpdateCountAndEmptyState()
     {
         int loaded = _loadedEntries.Count;
         int filtered = _filteredHistoryItems.Length;
         ItemCountText.Text = loaded == filtered
             ? $"{filtered:N0} items"
             : $"{loaded:N0} shown · {filtered:N0} matched";
-        Title = $"ShareX - Image History ({filtered:N0} of {_allHistoryItems.Count:N0})";
         EmptyState.IsVisible = filtered == 0;
         EmptyStateText.Text = _allHistoryItems.Count == 0 ? "No image history items" : "No items match the current filter";
     }

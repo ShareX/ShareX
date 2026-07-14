@@ -301,7 +301,7 @@ public partial class HistoryWindow : Window
 
         try
         {
-            (HistoryItem[] items, string typeSummary) = await Task.Run(() =>
+            HistoryItem[] items = await Task.Run(() =>
             {
                 IEnumerable<HistoryItem> cancellableSource = source.Where((item, index) =>
                 {
@@ -313,11 +313,7 @@ public partial class HistoryWindow : Window
                 });
                 HistoryItem[] filtered = filter.ApplyFilter(cancellableSource).ToArray();
                 token.ThrowIfCancellationRequested();
-                string summary = string.Join("", filtered
-                    .GroupBy(item => item.Type ?? "Other")
-                    .OrderByDescending(group => group.Count())
-                    .Select(group => $" · {group.Key}: {group.Count():N0}"));
-                return (filtered, summary);
+                return filtered;
             }, token);
 
             if (version != _filterVersion || !IsVisible)
@@ -330,7 +326,6 @@ public partial class HistoryWindow : Window
             ItemCountText.Text = source.Count == items.Length
                 ? $"{items.Length:N0} items"
                 : $"{items.Length:N0} of {source.Count:N0}";
-            Title = $"ShareX - History ({source.Count:N0} total{(source.Count == items.Length ? string.Empty : $" · {items.Length:N0} filtered")}{typeSummary})";
             EmptyState.IsVisible = items.Length == 0;
             EmptyStateText.Text = source.Count == 0 ? "No history items" : "No items match the current filters";
 
