@@ -337,7 +337,7 @@ public partial class ImageHistoryWindow : Window
     private void UpdateColumnCount()
     {
         const double thumbnailSpacing = 4;
-        double cardWidth = Math.Max(36, _settings.ThumbnailSize.Width + 4);
+        double cardWidth = Math.Max(34, _settings.ThumbnailSize.Width + 2);
         int columns = Math.Max(1, (int)Math.Floor(
             Math.Max(1, ThumbnailRows.Bounds.Width + thumbnailSpacing) / (cardWidth + thumbnailSpacing)));
         if (columns == _columns) return;

@@ -136,9 +136,7 @@
                                                         DoubleTapped="OnThumbnailDoubleTapped">
                                                     <Grid RowDefinitions="Auto,Auto" RowSpacing="7">
                                                         <Border Height="{Binding ThumbnailHeight}"
-                                                                Background="{DynamicResource ShareX.Brush.Checkered}"
-                                                                BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                                                                BorderThickness="1"
+                                                                Background="{DynamicResource ShareX.Brush.Background.Main}"
                                                                 CornerRadius="3,3,0,0"
                                                                 ClipToBounds="True">
                                                             <Grid>
