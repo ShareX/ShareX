@@ -101,11 +101,9 @@
                     </Grid>
                 </Border>
 
-                <Border Grid.Row="1" Classes="tool-panel" Padding="0" ClipToBounds="True">
-                    <Grid>
+                <Grid Grid.Row="1" ClipToBounds="True">
                         <ListBox x:Name="ThumbnailRows"
                                  Classes="thumbnail-rows"
-                                 Margin="12"
                                  SelectionMode="Single"
                                  SizeChanged="OnThumbnailRowsSizeChanged"
                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
@@ -136,7 +134,7 @@
                                                         DoubleTapped="OnThumbnailDoubleTapped">
                                                     <Grid RowDefinitions="Auto,Auto" RowSpacing="7">
                                                         <Border Height="{Binding ThumbnailHeight}"
-                                                                Background="{DynamicResource ShareX.Brush.Background.Main}"
+                                                                Background="{DynamicResource ShareX.Brush.Background.Panel}"
                                                                 CornerRadius="3,3,0,0"
                                                                 ClipToBounds="True">
                                                             <Grid>
@@ -302,8 +300,7 @@
                                        FontWeight="Normal"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                         </StackPanel>
-                    </Grid>
-                </Border>
+                </Grid>
             </Grid>
 
             <Grid x:Name="ModalOverlay"
