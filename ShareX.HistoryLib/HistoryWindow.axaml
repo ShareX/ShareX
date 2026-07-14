@@ -430,7 +430,7 @@
                     <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="14">
                         <TextBlock Classes="section-heading" Text="History settings"/>
                         <ToggleSwitch x:Name="RememberSearchToggle" Grid.Row="1" Content="Remember search text"/>
-                        <ToggleSwitch x:Name="RememberWindowToggle" Grid.Row="2" Content="Remember window size and layout"/>
+                        <ToggleSwitch x:Name="RememberWindowToggle" Grid.Row="2" Content="Remember window size and position"/>
                         <Button Grid.Row="3" Content="Done" HorizontalAlignment="Right" Click="OnSaveSettingsClick"/>
                     </Grid>
                 </Border>

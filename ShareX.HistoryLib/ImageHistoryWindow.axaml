@@ -362,7 +362,7 @@
                                 <ToggleSwitch x:Name="ImageOnlyToggle" Grid.Row="5" Grid.ColumnSpan="2" Content="Show image files only"/>
                                 <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Spacing="10">
                                     <ToggleSwitch x:Name="RememberSearchToggle" Content="Remember search text"/>
-                                    <ToggleSwitch x:Name="RememberWindowToggle" Content="Remember window size"/>
+                                    <ToggleSwitch x:Name="RememberWindowToggle" Content="Remember window size and position"/>
                                 </StackPanel>
                             </Grid>
                         </ScrollViewer>
