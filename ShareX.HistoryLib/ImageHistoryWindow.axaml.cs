@@ -12,7 +12,6 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
-using Avalonia.Input.Platform;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
@@ -22,6 +21,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -68,6 +68,8 @@ public partial class ImageHistoryWindow : Window
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         ThumbnailRows.ItemsSource = _rows;
+        ThumbnailRows.AddHandler(PointerWheelChangedEvent, OnThumbnailRowsPointerWheelChanged,
+            RoutingStrategies.Tunnel, true);
         _filterTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(220) };
         _filterTimer.Tick += OnFilterTimerTick;
     }
@@ -319,6 +321,24 @@ public partial class ImageHistoryWindow : Window
         if (!_settings.AutoLoadMoreItems || _scrollViewer == null) return;
         double remaining = _scrollViewer.Extent.Height - _scrollViewer.Viewport.Height - _scrollViewer.Offset.Y;
         if (remaining <= Math.Max(120, _settings.ThumbnailSize.Height)) LoadNextBatch();
+    }
+
+    private void OnThumbnailRowsPointerWheelChanged(object? sender, PointerWheelEventArgs e)
+    {
+        if (_scrollViewer == null || e.Delta.Y == 0) return;
+
+        int lines = System.Windows.Forms.SystemInformation.MouseWheelScrollLines;
+        if (lines == 0)
+        {
+            e.Handled = true;
+            return;
+        }
+
+        double distance = lines < 0 ? _scrollViewer.Viewport.Height : lines * 16.0;
+        double maximum = Math.Max(0, _scrollViewer.Extent.Height - _scrollViewer.Viewport.Height);
+        double offset = Math.Clamp(_scrollViewer.Offset.Y - e.Delta.Y * distance, 0, maximum);
+        _scrollViewer.Offset = new Vector(_scrollViewer.Offset.X, offset);
+        e.Handled = true;
     }
 
     private void CheckLoadMoreIfViewportNotFilled()
