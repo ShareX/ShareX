@@ -120,121 +120,25 @@
   <data name="HistoryItemCounts" xml:space="preserve">
     <value>Jumlah item riwayat:</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>URL thumbnail</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>Jalur file</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>Gambar Forum (BBCode)</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Pratinjau gambar...</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>Total: {0}</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>URL yang dipersingkat</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
-    <value>Tautan Markdown</value>
-  </data>
-  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
-    <value>Terjadi kesalahan saat membaca file riwayat:</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
-    <value>Folder</value>
-  </data>
-  <data name="Total" xml:space="preserve">
-    <value>Total</value>
-  </data>
-  <data name="Filtered" xml:space="preserve">
-    <value>Difilter</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>Nama file</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>Nama file dengan ekstensi</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>Gambar Markdown</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>Unggah file</value>
-  </data>
-  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>Difilter: {0}</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
-    <value>Gambar HTML</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>Salin</value>
-  </data>
-  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
-    <value>Nama file, judul jendela, nama proses, dll.</value>
-  </data>
   <data name="HistoryStats_Hosts" xml:space="preserve">
     <value>Host:</value>
-  </data>
-  <data name="PinToScreen" xml:space="preserve">
-    <value>Sematkan ke layar</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
-    <value>Buka</value>
   </data>
   <data name="HistoryStats_YearlyUsages" xml:space="preserve">
     <value>Penggunaan tahunan:</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>Tautan HTML</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
-    <value>Gambar tertaut HTML</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
-    <value>Edit gambar...</value>
-  </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Kesalahan</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>Gambar tertaut Forum (BBCode)</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>URL penghapusan</value>
-  </data>
-  <data name="ProcessNames" xml:space="preserve">
-    <value>Nama proses:</value>
-  </data>
-  <data name="HistoryStats" xml:space="preserve">
-    <value>Statistik riwayat</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>Teks</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>Gambar</value>
   </data>
   <data name="HistoryStats_FileExtensions" xml:space="preserve">
     <value>Ekstensi file:</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>URL</value>
-  </data>
   <data name="HistoryStats_Total" xml:space="preserve">
     <value>Total:</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>Tautan Forum (BBCode)</value>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Nama proses:</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
-    <value>Gambar tertaut Markdown</value>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Terjadi kesalahan saat membaca file riwayat:</value>
   </data>
 </root>
