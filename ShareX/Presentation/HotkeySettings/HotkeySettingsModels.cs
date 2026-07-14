@@ -35,7 +35,7 @@ public sealed record HotkeyGesture(
     bool Alt,
     bool Win);
 
-public sealed record HotkeyTaskOption(int Value, string Name, string Category);
+public sealed record HotkeyTaskOption(int Value, string Name, string Category, string Icon);
 
 public sealed class HotkeySettingsItem : INotifyPropertyChanged
 {

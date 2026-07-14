@@ -117,11 +117,30 @@ public partial class HotkeySettingsWindow : Window
         MenuItem menuItem = new()
         {
             Header = option.Name,
+            Icon = CreateTaskMenuIcon(option.Icon),
             ToggleType = MenuItemToggleType.Radio,
             IsChecked = item.SelectedTask?.Value == option.Value
         };
         menuItem.Click += (_, _) => _viewModel?.ChangeTask(item, option);
         return menuItem;
+    }
+
+    private static Control? CreateTaskMenuIcon(string icon)
+    {
+        if (string.IsNullOrEmpty(icon))
+        {
+            return null;
+        }
+
+        TextBlock textBlock = new()
+        {
+            Text = icon,
+            FontSize = 16,
+            Width = 18,
+            TextAlignment = Avalonia.Media.TextAlignment.Center
+        };
+        textBlock.Classes.Add("icon");
+        return textBlock;
     }
 
     private void OnHotkeyClick(object? sender, RoutedEventArgs e)

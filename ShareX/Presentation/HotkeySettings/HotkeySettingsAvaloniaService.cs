@@ -42,7 +42,8 @@ internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
             .Select(info => new HotkeyTaskOption(
                 Convert.ToInt32(info.Value),
                 info.Description,
-                info.Category ?? string.Empty))
+                info.Category ?? string.Empty,
+                TaskHelpers.FindMenuLucideIcon((HotkeyType)info.Value)))
             .ToArray();
 
         InvokeOnMainThread(() =>

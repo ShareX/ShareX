@@ -172,18 +172,24 @@
                                                     <Button Classes="task-selector"
                                                             Click="OnTaskClick"
                                                             HorizontalAlignment="Stretch">
-                                                        <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="7">
-                                                            <TextBlock Text="{Binding SelectedTask.Name}"
+                                                        <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="7">
+                                                            <TextBlock Classes="icon"
+                                                                       Text="{Binding SelectedTask.Icon}"
+                                                                       FontSize="16"
+                                                                       Width="18"
+                                                                       TextAlignment="Center"/>
+                                                            <TextBlock Grid.Column="1"
+                                                                       Text="{Binding SelectedTask.Name}"
                                                                        FontWeight="Normal"
                                                                        TextTrimming="CharacterEllipsis"/>
-                                                            <TextBlock Grid.Column="1"
+                                                            <TextBlock Grid.Column="2"
                                                                        IsVisible="{Binding IsCustomized}"
                                                                        Text="*"
                                                                        FontWeight="Normal"
                                                                        Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
                                                                        VerticalAlignment="Center"
                                                                        ToolTip.Tip="This task has custom settings"/>
-                                                            <TextBlock Grid.Column="2"
+                                                            <TextBlock Grid.Column="3"
                                                                        Classes="icon"
                                                                        Text="{x:Static theming:LucideIcons.chevron_down}"
                                                                        FontSize="14"/>

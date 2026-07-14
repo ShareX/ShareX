@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.AvaloniaUI.Theming;
 using ShareX.AvaloniaUI.Windows;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
@@ -2380,6 +2381,101 @@ namespace ShareX
             {
                 form.ForceActivate();
             }
+        }
+
+        public static string FindMenuLucideIcon(HotkeyType hotkeyType)
+        {
+            return hotkeyType switch
+            {
+                HotkeyType.None => LucideIcons.circle_dashed,
+
+                // Upload
+                HotkeyType.FileUpload => LucideIcons.file_up,
+                HotkeyType.FolderUpload => LucideIcons.folder_up,
+                HotkeyType.ClipboardUpload => LucideIcons.clipboard,
+                HotkeyType.ClipboardUploadWithContentViewer => LucideIcons.clipboard_list,
+                HotkeyType.UploadText => LucideIcons.file_text,
+                HotkeyType.UploadURL => LucideIcons.link,
+                HotkeyType.DragDropUpload => LucideIcons.mouse_pointer_2,
+                HotkeyType.ShortenURL => LucideIcons.link_2,
+                HotkeyType.StopUploads => LucideIcons.circle_stop,
+
+                // Screen capture
+                HotkeyType.PrintScreen => LucideIcons.monitor,
+                HotkeyType.ActiveWindow => LucideIcons.app_window,
+                HotkeyType.CustomWindow => LucideIcons.scan,
+                HotkeyType.ActiveMonitor => LucideIcons.monitor,
+                HotkeyType.RectangleRegion => LucideIcons.scan,
+                HotkeyType.RectangleLight => LucideIcons.square,
+                HotkeyType.RectangleTransparent => LucideIcons.square_dashed,
+                HotkeyType.CustomRegion => LucideIcons.scan_line,
+                HotkeyType.LastRegion => LucideIcons.layers,
+                HotkeyType.ScrollingCapture => LucideIcons.scroll_text,
+                HotkeyType.AutoCapture => LucideIcons.clock,
+                HotkeyType.StartAutoCapture => LucideIcons.circle_play,
+                HotkeyType.StopAutoCapture => LucideIcons.timer_off,
+
+                // Screen record
+                HotkeyType.ScreenRecorder => LucideIcons.video,
+                HotkeyType.ScreenRecorderActiveWindow => LucideIcons.app_window,
+                HotkeyType.ScreenRecorderCustomRegion => LucideIcons.crop,
+                HotkeyType.StartScreenRecorder => LucideIcons.circle_play,
+                HotkeyType.ScreenRecorderGIF => LucideIcons.film,
+                HotkeyType.ScreenRecorderGIFActiveWindow => LucideIcons.film,
+                HotkeyType.ScreenRecorderGIFCustomRegion => LucideIcons.crop,
+                HotkeyType.StartScreenRecorderGIF => LucideIcons.circle_play,
+                HotkeyType.StopScreenRecording => LucideIcons.square_stop,
+                HotkeyType.PauseScreenRecording => LucideIcons.circle_pause,
+                HotkeyType.AbortScreenRecording => LucideIcons.circle_x,
+
+                // Tools
+                HotkeyType.ColorPicker => LucideIcons.palette,
+                HotkeyType.ScreenColorPicker => LucideIcons.pipette,
+                HotkeyType.Ruler => LucideIcons.ruler,
+                HotkeyType.PinToScreen => LucideIcons.pin,
+                HotkeyType.PinToScreenFromScreen => LucideIcons.picture_in_picture,
+                HotkeyType.PinToScreenFromClipboard => LucideIcons.clipboard,
+                HotkeyType.PinToScreenFromFile => LucideIcons.file_image,
+                HotkeyType.PinToScreenCloseAll => LucideIcons.pin_off,
+                HotkeyType.ImageEditor => LucideIcons.image,
+                HotkeyType.ImageBeautifier => LucideIcons.sparkles,
+                HotkeyType.ImageEffects => LucideIcons.wand_sparkles,
+                HotkeyType.ImageViewer => LucideIcons.eye,
+                HotkeyType.BackgroundRemover => LucideIcons.eraser,
+                HotkeyType.ImageComparer => LucideIcons.images,
+                HotkeyType.IconConverter => LucideIcons.file_image,
+                HotkeyType.ImageCombiner => LucideIcons.combine,
+                HotkeyType.ImageSplitter => LucideIcons.split,
+                HotkeyType.ImageThumbnailer => LucideIcons.shrink,
+                HotkeyType.VideoConverter => LucideIcons.file_video,
+                HotkeyType.VideoThumbnailer => LucideIcons.clapperboard,
+                HotkeyType.AnalyzeImage => LucideIcons.bot,
+                HotkeyType.OCR => LucideIcons.scan_text,
+                HotkeyType.QRCode => LucideIcons.qr_code,
+                HotkeyType.QRCodeDecodeFromScreen => LucideIcons.scan_eye,
+                HotkeyType.QRCodeScanRegion => LucideIcons.scan_line,
+                HotkeyType.HashCheck => LucideIcons.hash,
+                HotkeyType.Metadata => LucideIcons.tags,
+                HotkeyType.StripMetadata => LucideIcons.file_x,
+                HotkeyType.IndexFolder => LucideIcons.folder_tree,
+                HotkeyType.ClipboardViewer => LucideIcons.clipboard_list,
+                HotkeyType.BorderlessWindow => LucideIcons.frame,
+                HotkeyType.ActiveWindowBorderless => LucideIcons.maximize,
+                HotkeyType.ActiveWindowTopMost => LucideIcons.panel_top,
+                HotkeyType.InspectWindow => LucideIcons.scan_search,
+                HotkeyType.MonitorTest => LucideIcons.test_tube,
+
+                // Other
+                HotkeyType.DisableHotkeys => LucideIcons.keyboard_off,
+                HotkeyType.OpenMainWindow => LucideIcons.panel_top_open,
+                HotkeyType.OpenScreenshotsFolder => LucideIcons.folder_open,
+                HotkeyType.OpenHistory => LucideIcons.history,
+                HotkeyType.OpenImageHistory => LucideIcons.images,
+                HotkeyType.ToggleActionsToolbar => LucideIcons.panel_top,
+                HotkeyType.ToggleTrayMenu => LucideIcons.menu,
+                HotkeyType.ExitShareX => LucideIcons.log_out,
+                _ => LucideIcons.circle
+            };
         }
 
         public static Image FindMenuIcon<T>(T value) where T : Enum
