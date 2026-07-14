@@ -183,6 +183,9 @@
   <data name="HistoryStats_Hosts" xml:space="preserve">
     <value>主机:</value>
   </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>固定到屏幕</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>打开</value>
   </data>
@@ -233,8 +236,5 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
     <value>Markdown 链接的图像</value>
-  </data>
-  <data name="PinToScreen" xml:space="preserve">
-    <value>固定到屏幕</value>
   </data>
 </root>

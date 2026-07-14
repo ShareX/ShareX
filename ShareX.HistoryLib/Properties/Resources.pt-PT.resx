@@ -150,6 +150,12 @@
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>Pasta</value>
   </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Filtrado</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
     <value>Nome do ficheiro</value>
   </data>
@@ -171,8 +177,14 @@
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>Copiar</value>
   </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>Ficheiro name, janela title, process name, etc.</value>
+  </data>
   <data name="HistoryStats_Hosts" xml:space="preserve">
     <value>Hospedagem:</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Fixar no ecrã</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Abrir</value>
@@ -198,6 +210,12 @@
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
     <value>Hiperligação de remoção</value>
   </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Nomes dos processos:</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Estatísticas do histórico</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Texto</value>
   </data>
@@ -218,23 +236,5 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
     <value>Hiperligação de imagem MarkDown</value>
-  </data>
-  <data name="Total" xml:space="preserve">
-    <value>Total</value>
-  </data>
-  <data name="Filtered" xml:space="preserve">
-    <value>Filtrado</value>
-  </data>
-  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
-    <value>Ficheiro name, janela title, process name, etc.</value>
-  </data>
-  <data name="PinToScreen" xml:space="preserve">
-    <value>Fixar no ecrã</value>
-  </data>
-  <data name="ProcessNames" xml:space="preserve">
-    <value>Nomes dos processos:</value>
-  </data>
-  <data name="HistoryStats" xml:space="preserve">
-    <value>Estatísticas do histórico</value>
   </data>
 </root>

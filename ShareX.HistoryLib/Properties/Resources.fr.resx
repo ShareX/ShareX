@@ -150,6 +150,9 @@
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>Dossier</value>
   </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
   <data name="Filtered" xml:space="preserve">
     <value>Filtré</value>
   </data>
@@ -233,8 +236,5 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
     <value>Lien image markdown</value>
-  </data>
-  <data name="Total" xml:space="preserve">
-    <value>Total</value>
   </data>
 </root>

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>Conteggi elementi cronologia:</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
     <value>URL Miniatura</value>
   </data>
@@ -138,14 +141,32 @@
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>URL Accorciato</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
+    <value>Markdown collegamento</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Errore occurred while reading history file:</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>Cartella</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Totale</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Filtrato</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
     <value>Nome File</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>Nome File senza Estensione</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Markdown immagine</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>Carica file</value>
   </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Filtrati: {0}</value>
@@ -156,14 +177,29 @@
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>Copia</value>
   </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>File name, finestra title, process name, etc.</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Fissa allo schermo</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Apri</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>Utilizzi annuali:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
     <value>Collegamento HTML</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
     <value>Immagine Collegata HTML</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>Modifica immagine...</value>
   </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Errore</value>
@@ -174,65 +210,29 @@
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
     <value>Eliminazione URL</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>Testo</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>Immagine</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>Collegamento Forum (BBCode)</value>
-  </data>
-  <data name="HistoryItemCounts" xml:space="preserve">
-    <value>Conteggi elementi cronologia:</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
-    <value>Markdown collegamento</value>
-  </data>
-  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
-    <value>Errore occurred while reading history file:</value>
-  </data>
-  <data name="Total" xml:space="preserve">
-    <value>Totale</value>
-  </data>
-  <data name="Filtered" xml:space="preserve">
-    <value>Filtrato</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>Markdown immagine</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>Carica file</value>
-  </data>
-  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
-    <value>File name, finestra title, process name, etc.</value>
-  </data>
-  <data name="HistoryStats_Hosts" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="PinToScreen" xml:space="preserve">
-    <value>Fissa allo schermo</value>
-  </data>
-  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
-    <value>Utilizzi annuali:</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
-    <value>Modifica immagine...</value>
-  </data>
   <data name="ProcessNames" xml:space="preserve">
     <value>Nomi processi:</value>
   </data>
   <data name="HistoryStats" xml:space="preserve">
     <value>Statistiche cronologia</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>Testo</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>Immagine</value>
+  </data>
   <data name="HistoryStats_FileExtensions" xml:space="preserve">
     <value>Estensioni file:</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
   <data name="HistoryStats_Total" xml:space="preserve">
     <value>Totale:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>Collegamento Forum (BBCode)</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
     <value>Markdown collegamentoed immagine</value>

@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>تعداد موارد تاریخچه:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
+    <value>بندانگشتی URL</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>مسیر فایل</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>تصویر انجمن (BBCode)</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
     <value>پیش نمایش عکس</value>
@@ -132,14 +141,29 @@
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>ادرس کوتاه شده</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
+    <value>پیوند Markdown</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>خطا occurred while reading history فایل:</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>پوشه</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>کل</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>فیلترشده</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
     <value>نام فایل</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>نام فایل با پسوند</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>تصویر Markdown</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
     <value>آپلود فایل</value>
@@ -153,51 +177,6 @@
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>کپی</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
-    <value>بازکردن</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>لینک HTML</value>
-  </data>
-  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
-    <value>خطا</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>آدرس حذف</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>متن</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>عکس</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>آدرس</value>
-  </data>
-  <data name="HistoryItemCounts" xml:space="preserve">
-    <value>تعداد موارد تاریخچه:</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>بندانگشتی URL</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>تصویر انجمن (BBCode)</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
-    <value>پیوند Markdown</value>
-  </data>
-  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
-    <value>خطا occurred while reading history فایل:</value>
-  </data>
-  <data name="Total" xml:space="preserve">
-    <value>کل</value>
-  </data>
-  <data name="Filtered" xml:space="preserve">
-    <value>فیلترشده</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>تصویر Markdown</value>
-  </data>
   <data name="HistoryForm_Search_Watermark" xml:space="preserve">
     <value>فایل name, پنجره title, process name, etc.</value>
   </data>
@@ -207,8 +186,14 @@
   <data name="PinToScreen" xml:space="preserve">
     <value>سنجاق به صفحه</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>بازکردن</value>
+  </data>
   <data name="HistoryStats_YearlyUsages" xml:space="preserve">
     <value>استفاده‌های سالانه:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>لینک HTML</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
     <value>تصویر پیوندشده HTML</value>
@@ -216,8 +201,14 @@
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
     <value>ویرایش تصویر...</value>
   </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
     <value>تصویر پیوندشده انجمن (BBCode)</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>آدرس حذف</value>
   </data>
   <data name="ProcessNames" xml:space="preserve">
     <value>نام‌های فرایند:</value>
@@ -225,8 +216,17 @@
   <data name="HistoryStats" xml:space="preserve">
     <value>آمار تاریخچه</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>عکس</value>
+  </data>
   <data name="HistoryStats_FileExtensions" xml:space="preserve">
     <value>فایل extensions:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>آدرس</value>
   </data>
   <data name="HistoryStats_Total" xml:space="preserve">
     <value>کل:</value>

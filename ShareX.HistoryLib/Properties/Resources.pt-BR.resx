@@ -183,6 +183,9 @@
   <data name="HistoryStats_Hosts" xml:space="preserve">
     <value>Hosts:</value>
   </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Pin to tela</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Abrir</value>
   </data>
@@ -233,8 +236,5 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
     <value>Imagem vinculada de Markdown</value>
-  </data>
-  <data name="PinToScreen" xml:space="preserve">
-    <value>Pin to tela</value>
   </data>
 </root>

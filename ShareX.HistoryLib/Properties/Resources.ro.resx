@@ -183,6 +183,9 @@
   <data name="HistoryStats_Hosts" xml:space="preserve">
     <value>Gazde:</value>
   </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Fixează pe ecran</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Deschideți</value>
   </data>
@@ -233,8 +236,5 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
     <value>Markdown legat de imagine</value>
-  </data>
-  <data name="PinToScreen" xml:space="preserve">
-    <value>Fixează pe ecran</value>
   </data>
 </root>

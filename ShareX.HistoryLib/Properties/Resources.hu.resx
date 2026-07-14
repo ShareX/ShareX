@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>Előzmények item counts:</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
     <value>Előnézet URL</value>
   </data>
@@ -138,14 +141,32 @@
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>Rövidített URL</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
+    <value>Markdown hivatkozás</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Hiba occurred while reading előzmények fájl:</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>Mappa</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Összesen</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Szűrt</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
     <value>Fájlnév</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>Fájlnév kiterjesztéssel</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Markdown kép</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>Feltöltés fájl</value>
   </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Szűrve: {0}</value>
@@ -156,54 +177,6 @@
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>Másolás</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
-    <value>Megnyitás</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>HTML link</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
-    <value>HTML linkelt kép</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>Fórum (BBkód) linkelt kép</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>Törlési URL</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>Szöveg</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>Kép</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>Fórum (BBkód) link</value>
-  </data>
-  <data name="HistoryItemCounts" xml:space="preserve">
-    <value>Előzmények item counts:</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
-    <value>Markdown hivatkozás</value>
-  </data>
-  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
-    <value>Hiba occurred while reading előzmények fájl:</value>
-  </data>
-  <data name="Total" xml:space="preserve">
-    <value>Összesen</value>
-  </data>
-  <data name="Filtered" xml:space="preserve">
-    <value>Szűrt</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
-    <value>Markdown kép</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>Feltöltés fájl</value>
-  </data>
   <data name="HistoryForm_Search_Watermark" xml:space="preserve">
     <value>Fájlnév, ablak title, folyamat név, etc.</value>
   </data>
@@ -213,8 +186,17 @@
   <data name="PinToScreen" xml:space="preserve">
     <value>Pin to képernyő</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>Megnyitás</value>
+  </data>
   <data name="HistoryStats_YearlyUsages" xml:space="preserve">
     <value>Éves használatok:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>HTML link</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
+    <value>HTML linkelt kép</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
     <value>Szerkesztés kép...</value>
@@ -222,17 +204,35 @@
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Hiba</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>Fórum (BBkód) linkelt kép</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>Törlési URL</value>
+  </data>
   <data name="ProcessNames" xml:space="preserve">
     <value>Folyamatnevek:</value>
   </data>
   <data name="HistoryStats" xml:space="preserve">
     <value>Előzmények statisztikák</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>Szöveg</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>Kép</value>
+  </data>
   <data name="HistoryStats_FileExtensions" xml:space="preserve">
     <value>Fájl kiterjesztéss:</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
   <data name="HistoryStats_Total" xml:space="preserve">
     <value>Összesen:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>Fórum (BBkód) link</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
     <value>Markdown hivatkozásed kép</value>
