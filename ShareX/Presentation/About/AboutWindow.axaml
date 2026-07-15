@@ -43,8 +43,13 @@
                                Source="avares://ShareX/Resources/About_Logo.png"
                                Stretch="Uniform"
                                PointerPressed="OnLogoPressed"/>
-                        <local:AboutLogoAnimationControl x:Name="LogoAnimation"
-                                                         IsVisible="False"/>
+                        <Border x:Name="AnimationContainer"
+                                IsVisible="False"
+                                Background="Transparent"
+                                PointerPressed="OnAnimationPressed">
+                            <local:AboutLogoAnimationControl x:Name="LogoAnimation"
+                                                             IsHitTestVisible="False"/>
+                        </Border>
                     </Grid>
 
                     <TextBlock x:Name="ProductNameText"

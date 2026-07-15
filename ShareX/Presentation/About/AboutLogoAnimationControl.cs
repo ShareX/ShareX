@@ -16,7 +16,6 @@
 
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Threading;
 using System;
@@ -42,12 +41,10 @@ public sealed class AboutLogoAnimationControl : Control
         InvalidateVisual();
     }
 
-    protected override void OnPointerPressed(PointerPressedEventArgs e)
+    public void TogglePaused()
     {
-        base.OnPointerPressed(e);
         _isPaused = !_isPaused;
         TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
-        e.Handled = true;
     }
 
     public override void Render(DrawingContext context)

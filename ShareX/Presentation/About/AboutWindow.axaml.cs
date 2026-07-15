@@ -91,9 +91,15 @@ public partial class AboutWindow : Window
     private void OnLogoPressed(object? sender, PointerPressedEventArgs e)
     {
         LogoImage.IsVisible = false;
-        LogoAnimation.IsVisible = true;
+        AnimationContainer.IsVisible = true;
         LogoAnimation.Start();
         TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
+        e.Handled = true;
+    }
+
+    private void OnAnimationPressed(object? sender, PointerPressedEventArgs e)
+    {
+        LogoAnimation.TogglePaused();
         e.Handled = true;
     }
 
