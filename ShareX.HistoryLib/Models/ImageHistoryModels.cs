@@ -41,12 +41,19 @@ public sealed class ImageHistoryEntry : INotifyPropertyChanged, IDisposable
     private bool _isSelected;
     private bool _isLoading;
 
-    public ImageHistoryEntry(HistoryItem item, int thumbnailWidth, int thumbnailHeight)
+    public ImageHistoryEntry(HistoryItem item, int thumbnailWidth, int thumbnailHeight,
+        ImageHistoryThumbnailHeaderPosition headerPosition)
     {
         Item = item;
         ThumbnailWidth = Math.Max(32, thumbnailWidth);
         ThumbnailHeight = Math.Max(32, thumbnailHeight);
         CardWidth = ThumbnailWidth + 2;
+        HeaderPosition = headerPosition switch
+        {
+            ImageHistoryThumbnailHeaderPosition.None => ImageHistoryThumbnailHeaderPosition.None,
+            ImageHistoryThumbnailHeaderPosition.Top => ImageHistoryThumbnailHeaderPosition.Top,
+            _ => ImageHistoryThumbnailHeaderPosition.Bottom
+        };
     }
 
     public HistoryItem Item { get; }
@@ -54,6 +61,15 @@ public sealed class ImageHistoryEntry : INotifyPropertyChanged, IDisposable
     public int ThumbnailWidth { get; }
     public int ThumbnailHeight { get; }
     public double CardWidth { get; }
+    public ImageHistoryThumbnailHeaderPosition HeaderPosition { get; }
+    public bool ShowHeaderTop => HeaderPosition == ImageHistoryThumbnailHeaderPosition.Top;
+    public bool ShowHeaderBottom => HeaderPosition == ImageHistoryThumbnailHeaderPosition.Bottom;
+    public CornerRadius ThumbnailCornerRadius => HeaderPosition switch
+    {
+        ImageHistoryThumbnailHeaderPosition.Top => new CornerRadius(0, 0, 3, 3),
+        ImageHistoryThumbnailHeaderPosition.Bottom => new CornerRadius(3, 3, 0, 0),
+        _ => new CornerRadius(3)
+    };
     public bool IsFavorite => Item.Favorite;
     public bool HasThumbnail => Thumbnail != null;
     public bool ShowPlaceholder => Thumbnail == null;

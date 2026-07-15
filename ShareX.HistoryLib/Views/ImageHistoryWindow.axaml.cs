@@ -289,7 +289,7 @@ public partial class ImageHistoryWindow : Window
         for (int i = _nextItemIndex; i < end; i++)
         {
             ImageHistoryEntry entry = new(_filteredHistoryItems[i], _settings.ThumbnailSize.Width,
-                _settings.ThumbnailSize.Height);
+                _settings.ThumbnailSize.Height, _settings.ThumbnailHeaderPosition);
             _loadedEntries.Add(entry);
             ImageHistoryRow? row = _rows.LastOrDefault();
             if (row == null || row.Items.Count >= _columns)
@@ -356,7 +356,7 @@ public partial class ImageHistoryWindow : Window
 
     private void UpdateColumnCount()
     {
-        const double thumbnailSpacing = 4;
+        const double thumbnailSpacing = 5;
         double cardWidth = Math.Max(34, _settings.ThumbnailSize.Width + 2);
         int columns = Math.Max(1, (int)Math.Floor(
             Math.Max(1, ThumbnailRows.Bounds.Width + thumbnailSpacing) / (cardWidth + thumbnailSpacing)));
@@ -597,6 +597,12 @@ public partial class ImageHistoryWindow : Window
     {
         ThumbnailWidthInput.Value = _settings.ThumbnailSize.Width;
         ThumbnailHeightInput.Value = _settings.ThumbnailSize.Height;
+        ThumbnailHeaderPositionCombo.SelectedIndex = _settings.ThumbnailHeaderPosition switch
+        {
+            ImageHistoryThumbnailHeaderPosition.None => 0,
+            ImageHistoryThumbnailHeaderPosition.Top => 1,
+            _ => 2
+        };
         BatchSizeInput.Value = _settings.MaxItemCount;
         AutoLoadMoreToggle.IsChecked = _settings.AutoLoadMoreItems;
         FilterMissingToggle.IsChecked = _settings.FilterMissingFiles;
@@ -610,6 +616,12 @@ public partial class ImageHistoryWindow : Window
     {
         _settings.ThumbnailSize = new System.Drawing.Size((int)(ThumbnailWidthInput.Value ?? 250),
             (int)(ThumbnailHeightInput.Value ?? 150));
+        _settings.ThumbnailHeaderPosition = ThumbnailHeaderPositionCombo.SelectedIndex switch
+        {
+            0 => ImageHistoryThumbnailHeaderPosition.None,
+            1 => ImageHistoryThumbnailHeaderPosition.Top,
+            _ => ImageHistoryThumbnailHeaderPosition.Bottom
+        };
         _settings.MaxItemCount = (int)(BatchSizeInput.Value ?? 500);
         _settings.AutoLoadMoreItems = AutoLoadMoreToggle.IsChecked == true;
         _settings.FilterMissingFiles = FilterMissingToggle.IsChecked == true;

@@ -31,12 +31,16 @@
             <Setter Property="Background" Value="Transparent"/>
         </Style>
         <Style Selector="Border.thumbnail-card">
-            <Setter Property="Padding" Value="0,0,0,8"/>
+            <Setter Property="Padding" Value="0"/>
             <Setter Property="CornerRadius" Value="5"/>
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style Selector="Border.thumbnail-header">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
+            <Setter Property="Padding" Value="6,5"/>
         </Style>
         <Style Selector="Border.thumbnail-card:pointerover">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
@@ -133,10 +137,21 @@
                                                         PointerMoved="OnThumbnailPointerMoved"
                                                         PointerReleased="OnThumbnailPointerReleased"
                                                         DoubleTapped="OnThumbnailDoubleTapped">
-                                                    <Grid RowDefinitions="Auto,Auto" RowSpacing="7">
-                                                        <Border Height="{Binding ThumbnailHeight}"
+                                                    <Grid RowDefinitions="Auto,Auto,Auto">
+                                                        <Border Grid.Row="0"
+                                                                Classes="thumbnail-header"
+                                                                IsVisible="{Binding ShowHeaderTop}"
+                                                                CornerRadius="3,3,0,0">
+                                                            <TextBlock Text="{Binding FileName}"
+                                                                       FontWeight="Normal"
+                                                                       TextAlignment="Center"
+                                                                       TextTrimming="CharacterEllipsis"
+                                                                       ToolTip.Tip="{Binding Item.FilePath}"/>
+                                                        </Border>
+                                                        <Border Grid.Row="1"
+                                                                Height="{Binding ThumbnailHeight}"
                                                                 Background="{DynamicResource ShareX.Brush.Background.Panel}"
-                                                                CornerRadius="3,3,0,0"
+                                                                CornerRadius="{Binding ThumbnailCornerRadius}"
                                                                 ClipToBounds="True">
                                                             <Grid>
                                                                 <Image Source="{Binding Thumbnail}"
@@ -167,12 +182,16 @@
                                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                                                             </Grid>
                                                         </Border>
-                                                        <TextBlock Grid.Row="1"
-                                                                   Text="{Binding FileName}"
-                                                                   FontWeight="Normal"
-                                                                   TextAlignment="Center"
-                                                                   TextTrimming="CharacterEllipsis"
-                                                                   ToolTip.Tip="{Binding Item.FilePath}"/>
+                                                        <Border Grid.Row="2"
+                                                                Classes="thumbnail-header"
+                                                                IsVisible="{Binding ShowHeaderBottom}"
+                                                                CornerRadius="0,0,3,3">
+                                                            <TextBlock Text="{Binding FileName}"
+                                                                       FontWeight="Normal"
+                                                                       TextAlignment="Center"
+                                                                       TextTrimming="CharacterEllipsis"
+                                                                       ToolTip.Tip="{Binding Item.FilePath}"/>
+                                                        </Border>
                                                     </Grid>
 
                                                     <Border.ContextMenu>
@@ -345,18 +364,24 @@
                     <Grid RowDefinitions="Auto,*,Auto" RowSpacing="14">
                         <TextBlock Classes="section-heading" Text="Image history settings"/>
                         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
                                   ColumnDefinitions="170,*" RowSpacing="10" ColumnSpacing="10" Margin="0,0,8,0">
                                 <TextBlock Classes="row-label" Text="Thumbnail width"/>
                                 <NumericUpDown x:Name="ThumbnailWidthInput" Grid.Column="1" Minimum="32" Maximum="800" Increment="10"/>
                                 <TextBlock Grid.Row="1" Classes="row-label" Text="Thumbnail height"/>
                                 <NumericUpDown x:Name="ThumbnailHeightInput" Grid.Row="1" Grid.Column="1" Minimum="32" Maximum="800" Increment="10"/>
-                                <TextBlock Grid.Row="2" Classes="row-label" Text="Items per batch"/>
-                                <NumericUpDown x:Name="BatchSizeInput" Grid.Row="2" Grid.Column="1" Minimum="0" Maximum="100000" Increment="50"/>
-                                <ToggleSwitch x:Name="AutoLoadMoreToggle" Grid.Row="3" Grid.ColumnSpan="2" Content="Load the next batch near the end"/>
-                                <ToggleSwitch x:Name="FilterMissingToggle" Grid.Row="4" Grid.ColumnSpan="2" Content="Hide missing files"/>
-                                <ToggleSwitch x:Name="ImageOnlyToggle" Grid.Row="5" Grid.ColumnSpan="2" Content="Show image files only"/>
-                                <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Spacing="10">
+                                <TextBlock Grid.Row="2" Classes="row-label" Text="Thumbnail header"/>
+                                <ComboBox x:Name="ThumbnailHeaderPositionCombo" Grid.Row="2" Grid.Column="1">
+                                    <ComboBoxItem Content="None"/>
+                                    <ComboBoxItem Content="Top"/>
+                                    <ComboBoxItem Content="Bottom"/>
+                                </ComboBox>
+                                <TextBlock Grid.Row="3" Classes="row-label" Text="Items per batch"/>
+                                <NumericUpDown x:Name="BatchSizeInput" Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="100000" Increment="50"/>
+                                <ToggleSwitch x:Name="AutoLoadMoreToggle" Grid.Row="4" Grid.ColumnSpan="2" Content="Load the next batch near the end"/>
+                                <ToggleSwitch x:Name="FilterMissingToggle" Grid.Row="5" Grid.ColumnSpan="2" Content="Hide missing files"/>
+                                <ToggleSwitch x:Name="ImageOnlyToggle" Grid.Row="6" Grid.ColumnSpan="2" Content="Show image files only"/>
+                                <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Spacing="10">
                                     <ToggleSwitch x:Name="RememberSearchToggle" Content="Remember search text"/>
                                     <ToggleSwitch x:Name="RememberWindowToggle" Content="Remember window size and position"/>
                                 </StackPanel>

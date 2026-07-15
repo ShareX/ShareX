@@ -28,11 +28,19 @@ using System.Drawing;
 
 namespace ShareX.HistoryLib
 {
+    public enum ImageHistoryThumbnailHeaderPosition
+    {
+        None,
+        Top,
+        Bottom
+    }
+
     public class ImageHistorySettings
     {
         public bool RememberWindowState { get; set; } = true;
         public WindowState WindowState { get; set; } = new WindowState();
         public Size ThumbnailSize { get; set; } = new Size(250, 150);
+        public ImageHistoryThumbnailHeaderPosition ThumbnailHeaderPosition { get; set; } = ImageHistoryThumbnailHeaderPosition.Bottom;
         public int MaxItemCount { get; set; } = 500;
         public bool AutoLoadMoreItems { get; set; } = true;
         public bool FilterMissingFiles { get; set; } = false;
