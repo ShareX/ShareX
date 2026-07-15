@@ -11,12 +11,11 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
-using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
 
-namespace ShareX;
+namespace ShareX.ScreenCaptureLib;
 
 public static class ScrollingCaptureWindowIntegration
 {

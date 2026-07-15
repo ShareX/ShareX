@@ -20,7 +20,6 @@ using Avalonia.Input;
 using Avalonia.Media;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
-using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing.Imaging;
 using System.IO;
@@ -28,7 +27,7 @@ using System.Threading.Tasks;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using DrawingBitmap = System.Drawing.Bitmap;
 
-namespace ShareX;
+namespace ShareX.ScreenCaptureLib;
 
 public partial class ScrollingCaptureWindow : Window
 {

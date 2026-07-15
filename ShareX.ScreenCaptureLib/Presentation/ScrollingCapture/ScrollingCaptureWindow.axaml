@@ -1,7 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
-        x:Class="ShareX.ScrollingCaptureWindow"
+        x:Class="ShareX.ScreenCaptureLib.ScrollingCaptureWindow"
         Title="ShareX - Scrolling capture"
         Width="900"
         Height="650"
