@@ -22,7 +22,7 @@
         </Style>
         <Style Selector="ListBox.thumbnail-rows ListBoxItem">
             <Setter Property="Padding" Value="0"/>
-            <Setter Property="Margin" Value="0,0,0,4"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="Background" Value="Transparent"/>
         </Style>
@@ -51,9 +51,12 @@
 
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid Margin="16" RowDefinitions="Auto,*" RowSpacing="12">
-                <Border Grid.Row="0" Classes="tool-panel">
-                    <Grid ColumnDefinitions="280,Auto,Auto,Auto,Auto,*" ColumnSpacing="8">
+            <Grid Margin="16,0,16,16" RowDefinitions="Auto,*" RowSpacing="12">
+                <Border Grid.Row="0"
+                        Classes="tool-panel"
+                        BorderThickness="1,0,1,1"
+                        CornerRadius="0,0,4,4">
+                    <Grid ColumnDefinitions="280,Auto,Auto,Auto,Auto,*" ColumnSpacing="6">
                         <Grid Grid.Column="0">
                             <TextBox x:Name="SearchTextBox"
                                      PlaceholderText="Search file names and tags"
@@ -117,7 +120,7 @@
                                     <ItemsControl ItemsSource="{Binding Items}">
                                         <ItemsControl.ItemsPanel>
                                             <ItemsPanelTemplate>
-                                                <StackPanel Orientation="Horizontal" Spacing="4"/>
+                                                <StackPanel Orientation="Horizontal" Spacing="5"/>
                                             </ItemsPanelTemplate>
                                         </ItemsControl.ItemsPanel>
                                         <ItemsControl.ItemTemplate>
