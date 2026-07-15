@@ -8,6 +8,16 @@
         <Setter Property="Padding" Value="12"/>
     </Style>
 
+    <Style Selector="Border.docked-top-toolbar">
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="BorderThickness" Value="1,0,1,1"/>
+        <Setter Property="CornerRadius" Value="0,0,4,4"/>
+    </Style>
+
+    <Style Selector="Border.docked-top-toolbar > Grid">
+        <Setter Property="ColumnSpacing" Value="6"/>
+    </Style>
+
     <Style Selector="TextBlock.section-heading">
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>

@@ -53,10 +53,8 @@
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid Margin="16,0,16,16" RowDefinitions="Auto,*" RowSpacing="12">
                 <Border Grid.Row="0"
-                        Classes="tool-panel"
-                        BorderThickness="1,0,1,1"
-                        CornerRadius="0,0,4,4">
-                    <Grid ColumnDefinitions="250,Auto,Auto,Auto,Auto,Auto,*" ColumnSpacing="6">
+                        Classes="tool-panel docked-top-toolbar">
+                    <Grid ColumnDefinitions="250,Auto,Auto,Auto,Auto,Auto,*">
                         <Grid Grid.Column="0">
                             <TextBox x:Name="SearchTextBox"
                                      PlaceholderText="Search file names and tags"
