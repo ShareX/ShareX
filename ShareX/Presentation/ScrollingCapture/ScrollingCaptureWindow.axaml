@@ -1,0 +1,227 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.ScrollingCaptureWindow"
+        Title="ShareX - Scrolling capture"
+        Width="900"
+        Height="650"
+        MinWidth="620"
+        MinHeight="440"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Button.compact">
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="10,4"/>
+        </Style>
+        <Style Selector="TextBlock.option-label">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.option-hint">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="12,0,12,12" RowDefinitions="Auto,*,Auto" RowSpacing="8">
+                <Border Grid.Row="0" Classes="tool-panel docked-top-toolbar">
+                    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,*,Auto" ColumnSpacing="6">
+                        <Button x:Name="CaptureButton"
+                                Grid.Column="0"
+                                Classes="compact"
+                                Click="OnCaptureClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scan_line}"/>
+                                <TextBlock Text="Capture..."/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="UploadButton"
+                                Grid.Column="1"
+                                Classes="compact"
+                                IsEnabled="False"
+                                Click="OnUploadClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}"/>
+                                <TextBlock Text="Upload / Save"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="CopyButton"
+                                Grid.Column="2"
+                                Classes="compact"
+                                IsEnabled="False"
+                                Click="OnCopyClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                                <TextBlock Text="Copy"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="OptionsButton"
+                                Grid.Column="3"
+                                Classes="compact"
+                                Click="OnOptionsClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings_2}"/>
+                                <TextBlock Text="Options..."/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="5"
+                                Width="34"
+                                Height="34"
+                                MinWidth="34"
+                                Padding="0"
+                                Click="OnHelpClick"
+                                ToolTip.Tip="Scrolling screenshot help">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.circle_help}"/>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Classes="tool-panel" Padding="1">
+                    <Grid>
+                        <ScrollViewer x:Name="PreviewScrollViewer"
+                                      HorizontalScrollBarVisibility="Auto"
+                                      VerticalScrollBarVisibility="Auto">
+                            <Image x:Name="PreviewImage"
+                                   Stretch="None"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   PointerPressed="OnPreviewPointerPressed"
+                                   PointerMoved="OnPreviewPointerMoved"
+                                   PointerReleased="OnPreviewPointerReleased"
+                                   PointerCaptureLost="OnPreviewPointerCaptureLost"/>
+                        </ScrollViewer>
+
+                        <StackPanel x:Name="EmptyState"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Spacing="8"
+                                    IsHitTestVisible="False">
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.scroll_text}"
+                                       FontSize="48"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       HorizontalAlignment="Center"/>
+                            <TextBlock Text="Select a scrollable window to begin"
+                                       FontWeight="Normal"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="2" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
+                    <TextBlock x:Name="StatusIcon"
+                               Classes="icon"
+                               Text="{x:Static theming:LucideIcons.circle_dashed}"
+                               FontSize="17"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                    <TextBlock x:Name="StatusText"
+                               Grid.Column="1"
+                               Text="Ready"
+                               FontWeight="Normal"
+                               VerticalAlignment="Center"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                    <TextBlock x:Name="ResultSizeText"
+                               Grid.Column="2"
+                               FontWeight="Normal"
+                               VerticalAlignment="Center"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                </Grid>
+            </Grid>
+
+            <Border x:Name="OptionsOverlay"
+                    ZIndex="10"
+                    IsVisible="False"
+                    Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+                <Border Classes="tool-panel"
+                        Width="500"
+                        MaxHeight="620"
+                        Padding="18"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                                  VerticalScrollBarVisibility="Auto">
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="14">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.settings_2}"
+                                           FontSize="20"
+                                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                <TextBlock Grid.Column="1"
+                                           Classes="section-heading"
+                                           Text="Scrolling capture options"/>
+                            </Grid>
+
+                            <Grid Grid.Row="1"
+                                  ColumnDefinitions="170,*,Auto"
+                                  RowDefinitions="Auto,Auto,Auto,Auto"
+                                  RowSpacing="9"
+                                  ColumnSpacing="8">
+                                <TextBlock Classes="option-label" Text="Start delay:"/>
+                                <NumericUpDown x:Name="StartDelayInput"
+                                               Grid.Column="1"
+                                               Minimum="100"
+                                               Maximum="5000"
+                                               Increment="100"
+                                               FormatString="0"/>
+                                <TextBlock Grid.Column="2" Classes="option-hint" Text="ms"/>
+
+                                <TextBlock Grid.Row="1" Classes="option-label" Text="Scroll delay:"/>
+                                <NumericUpDown x:Name="ScrollDelayInput"
+                                               Grid.Row="1"
+                                               Grid.Column="1"
+                                               Minimum="100"
+                                               Maximum="5000"
+                                               Increment="100"
+                                               FormatString="0"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Classes="option-hint" Text="ms"/>
+
+                                <TextBlock Grid.Row="2" Classes="option-label" Text="Scroll method:"/>
+                                <ComboBox x:Name="ScrollMethodInput"
+                                          Grid.Row="2"
+                                          Grid.Column="1"
+                                          Grid.ColumnSpan="2"
+                                          SelectionChanged="OnScrollMethodChanged"/>
+
+                                <TextBlock x:Name="ScrollAmountLabel"
+                                           Grid.Row="3"
+                                           Classes="option-label"
+                                           Text="Scroll amount:"/>
+                                <NumericUpDown x:Name="ScrollAmountInput"
+                                               Grid.Row="3"
+                                               Grid.Column="1"
+                                               Minimum="1"
+                                               Maximum="6"
+                                               Increment="1"
+                                               FormatString="0"/>
+                                <TextBlock x:Name="ScrollAmountHint"
+                                           Grid.Row="3"
+                                           Grid.Column="2"
+                                           Classes="option-hint"
+                                           Text="times"/>
+                            </Grid>
+
+                            <StackPanel Grid.Row="2" Spacing="8">
+                                <CheckBox x:Name="AutoScrollTopInput" Content="Automatically scroll to top"/>
+                                <CheckBox x:Name="AutoIgnoreBottomEdgeInput" Content="Auto ignore bottom edge"/>
+                                <CheckBox x:Name="ShowRegionInput" Content="Show scrolling capture region"/>
+                                <CheckBox x:Name="AutoUploadInput" Content="Automatically upload / save"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="3"
+                                        Orientation="Horizontal"
+                                        Spacing="8"
+                                        HorizontalAlignment="Right">
+                                <Button Click="OnCancelOptionsClick" Content="Cancel"/>
+                                <Button Click="OnSaveOptionsClick" Content="OK"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </Border>
+            </Border>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
