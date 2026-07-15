@@ -71,8 +71,12 @@
 
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid Margin="12" RowDefinitions="Auto,Auto,*" RowSpacing="8">
-                <Border Grid.Row="0" Classes="tool-panel" Padding="8">
+            <Grid Margin="12,0,12,12" RowDefinitions="Auto,Auto,*" RowSpacing="8">
+                <Border Grid.Row="0"
+                        Classes="tool-panel"
+                        Padding="8"
+                        BorderThickness="1,0,1,1"
+                        CornerRadius="0,0,4,4">
                     <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*,Auto" ColumnSpacing="6">
                         <Button Grid.Column="0" Classes="compact" Click="OnAddClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
