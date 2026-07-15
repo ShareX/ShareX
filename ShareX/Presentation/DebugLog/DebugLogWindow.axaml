@@ -1,0 +1,122 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.DebugLogWindow"
+        Title="ShareX - Debug log"
+        Width="850"
+        Height="600"
+        MinWidth="600"
+        MinHeight="420"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Button.compact">
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="10,4"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="12,0,12,12" RowDefinitions="Auto,*,Auto" RowSpacing="8">
+                <Border Grid.Row="0" Classes="tool-panel docked-top-toolbar">
+                    <Grid ColumnDefinitions="Auto,Auto,Auto,*,Auto" ColumnSpacing="6">
+                        <Button Grid.Column="0" Classes="compact" Click="OnLoadedAssembliesClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.blocks}"/>
+                                <TextBlock Text="Loaded assemblies"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="1" Classes="compact" Click="OnCopyAllClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                                <TextBlock Text="Copy all"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="OpenLogFileButton"
+                                Grid.Column="2"
+                                Classes="compact"
+                                Click="OnOpenLogFileClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file_text}"/>
+                                <TextBlock Text="Open log file..."/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="UploadLogButton"
+                                Grid.Column="4"
+                                Classes="compact"
+                                Click="OnUploadLogClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}"/>
+                                <TextBlock Text="Upload log..."/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Classes="tool-panel" Padding="1">
+                    <TextBox x:Name="LogTextBox"
+                             IsReadOnly="True"
+                             AcceptsReturn="True"
+                             TextWrapping="NoWrap"
+                             FontFamily="Cascadia Mono, Consolas, monospace"
+                             FontSize="12"
+                             BorderThickness="0"
+                             Padding="9"
+                             VerticalContentAlignment="Top"
+                             ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             DoubleTapped="OnLogDoubleTapped"/>
+                </Border>
+
+                <Grid Grid.Row="2" ColumnDefinitions="Auto,*" ColumnSpacing="7">
+                    <TextBlock Text="Startup path:"
+                               FontWeight="Normal"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                               VerticalAlignment="Center"/>
+                    <HyperlinkButton x:Name="RunningFromButton"
+                                     Grid.Column="1"
+                                     HorizontalAlignment="Left"
+                                     HorizontalContentAlignment="Left"
+                                     Padding="0"
+                                     MinHeight="0"
+                                     Click="OnRunningFromClick"/>
+                </Grid>
+            </Grid>
+
+            <Border x:Name="UploadConfirmationOverlay"
+                    ZIndex="10"
+                    IsVisible="False"
+                    Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+                <Border Classes="tool-panel"
+                        Width="440"
+                        Padding="18"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                    <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.triangle_alert}"
+                                       FontSize="20"
+                                       Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
+                            <TextBlock Grid.Column="1"
+                                       Classes="section-heading"
+                                       Text="Upload debug log?"/>
+                        </Grid>
+                        <TextBlock x:Name="UploadWarningText"
+                                   Grid.Row="1"
+                                   FontWeight="Normal"
+                                   TextWrapping="Wrap"/>
+                        <StackPanel Grid.Row="2"
+                                    Orientation="Horizontal"
+                                    Spacing="8"
+                                    HorizontalAlignment="Right">
+                            <Button Click="OnCancelUploadClick" Content="Cancel"/>
+                            <Button Click="OnConfirmUploadClick" Content="Upload"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Border>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

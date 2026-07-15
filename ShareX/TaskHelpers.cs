@@ -877,20 +877,10 @@ namespace ShareX
 
         public static void OpenDebugLog()
         {
-            DebugForm form = DebugForm.GetFormInstance(DebugHelper.Logger);
-
-            if (!form.HasUploadRequested)
-            {
-                form.UploadRequested += text =>
-                {
-                    if (MessageBox.Show(form, Resources.MainForm_UploadDebugLogWarning, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                    {
-                        UploadManager.UploadText(text);
-                    }
-                };
-            }
-
-            form.ForceActivate();
+            DebugLogWindowIntegration.Show(
+                DebugHelper.Logger,
+                text => UploadManager.UploadText(text),
+                Resources.MainForm_UploadDebugLogWarning);
         }
 
         public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null)

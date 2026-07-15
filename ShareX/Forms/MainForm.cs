@@ -1994,10 +1994,7 @@ namespace ShareX
 
         private void tsbAbout_Click(object sender, EventArgs e)
         {
-            using (AboutForm aboutForm = new AboutForm())
-            {
-                aboutForm.ShowDialog();
-            }
+            AboutWindowIntegration.Show();
         }
 
         #endregion Menu events

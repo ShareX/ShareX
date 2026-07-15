@@ -1,0 +1,121 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:ShareX"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.AboutWindow"
+        x:CompileBindings="False"
+        Title="ShareX - About"
+        Width="920"
+        Height="620"
+        MinWidth="650"
+        MinHeight="500"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="TextBlock.about-heading">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,8,0,4"/>
+        </Style>
+        <Style Selector="TextBlock.about-label">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="HyperlinkButton.about-link">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
+              ColumnDefinitions="280,*">
+            <Border Grid.Column="0"
+                    Background="#232323"
+                    Padding="24">
+                <Grid RowDefinitions="Auto,Auto,Auto,*,Auto" RowSpacing="14">
+                    <Grid Width="200" Height="200" HorizontalAlignment="Center">
+                        <Image x:Name="LogoImage"
+                               Source="avares://ShareX/Resources/About_Logo.png"
+                               Stretch="Uniform"
+                               PointerPressed="OnLogoPressed"/>
+                        <local:AboutLogoAnimationControl x:Name="LogoAnimation"
+                                                         IsVisible="False"/>
+                    </Grid>
+
+                    <TextBlock x:Name="ProductNameText"
+                               Grid.Row="1"
+                               FontSize="21"
+                               FontWeight="SemiBold"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <StackPanel Grid.Row="2" Spacing="6" HorizontalAlignment="Center">
+                        <TextBlock x:Name="BuildText"
+                                   IsVisible="False"
+                                   FontWeight="Normal"
+                                   TextAlignment="Center"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                        <StackPanel x:Name="UpdatePanel" IsVisible="False" Spacing="6">
+                            <ProgressBar x:Name="UpdateProgress"
+                                         IsIndeterminate="True"
+                                         Width="180"
+                                         Height="3"/>
+                            <TextBlock x:Name="UpdateStatusText"
+                                       FontWeight="Normal"
+                                       TextAlignment="Center"
+                                       TextWrapping="Wrap"/>
+                            <HyperlinkButton x:Name="UpdateAvailableButton"
+                                             Classes="about-link"
+                                             IsVisible="False"
+                                             HorizontalAlignment="Center"
+                                             Click="OnUpdateAvailableClick"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <TextBlock x:Name="CopyrightText"
+                               Grid.Row="4"
+                               FontSize="12"
+                               FontWeight="Normal"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                </Grid>
+            </Border>
+
+            <ScrollViewer Grid.Column="1"
+                          Margin="22,14,14,14"
+                          HorizontalScrollBarVisibility="Disabled"
+                          VerticalScrollBarVisibility="Auto">
+                <ItemsControl x:Name="SectionsControl">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,8,14">
+                                <TextBlock Classes="about-heading" Text="{Binding Title}"/>
+                                <ItemsControl ItemsSource="{Binding Items}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid ColumnDefinitions="180,*" Margin="0,2">
+                                                <TextBlock Classes="about-label"
+                                                           Text="{Binding Label}"
+                                                           TextWrapping="Wrap"/>
+                                                <HyperlinkButton Grid.Column="1"
+                                                                 Classes="about-link"
+                                                                 Content="{Binding DisplayText}"
+                                                                 NavigateUri="{Binding Uri}"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
