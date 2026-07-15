@@ -807,30 +807,19 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            AutoCaptureForm.Instance.TaskSettings = taskSettings;
-            AutoCaptureForm.Instance.ForceActivate();
+            AutoCaptureWindowIntegration.Show(taskSettings);
         }
 
         public static void StartAutoCapture(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (!AutoCaptureForm.IsRunning)
-            {
-                AutoCaptureForm form = AutoCaptureForm.Instance;
-                form.TaskSettings = taskSettings;
-                form.Show();
-                form.Execute();
-            }
+            AutoCaptureWindowIntegration.Start(taskSettings);
         }
 
         public static void StopAutoCapture()
         {
-            if (AutoCaptureForm.IsRunning)
-            {
-                AutoCaptureForm form = AutoCaptureForm.Instance;
-                form.Execute();
-            }
+            AutoCaptureWindowIntegration.Stop();
         }
 
         public static void OpenScreenshotsFolder()

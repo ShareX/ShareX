@@ -1,0 +1,133 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.AutoCaptureWindow"
+        Title="ShareX - Auto capture"
+        Width="460"
+        Height="430"
+        MinWidth="420"
+        MinHeight="390"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="TextBlock.field-label">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
+              RowDefinitions="*,Auto">
+            <Grid Margin="14" RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
+                <Border Grid.Row="0" Classes="tool-panel" Padding="14">
+                    <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                            <RadioButton x:Name="CustomRegionRadio"
+                                         GroupName="CaptureRegion"
+                                         Content="Custom region"
+                                         IsChecked="True"
+                                         IsCheckedChanged="OnCustomRegionChanged"/>
+                            <RadioButton x:Name="FullscreenRadio"
+                                         Grid.Column="1"
+                                         GroupName="CaptureRegion"
+                                         Content="Fullscreen"
+                                         IsCheckedChanged="OnFullscreenChanged"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                            <Border Background="{DynamicResource ShareX.Brush.Control.Background}"
+                                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                    BorderThickness="1"
+                                    CornerRadius="4"
+                                    Padding="9,7">
+                                <TextBlock x:Name="RegionText"
+                                           Text="No region selected"
+                                           FontWeight="Normal"
+                                           TextTrimming="CharacterEllipsis"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+                            <Button x:Name="SelectRegionButton"
+                                    Grid.Column="1"
+                                    Click="OnSelectRegionClick">
+                                <StackPanel Orientation="Horizontal" Spacing="7">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scan}"/>
+                                    <TextBlock Text="Select region..."/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Classes="tool-panel" Padding="14">
+                    <Grid RowDefinitions="Auto,Auto" RowSpacing="12">
+                        <Grid ColumnDefinitions="Auto,120,Auto" ColumnSpacing="8">
+                            <TextBlock Classes="field-label" Text="Repeat time:"/>
+                            <NumericUpDown x:Name="RepeatTimeInput"
+                                           Grid.Column="1"
+                                           Minimum="1"
+                                           Maximum="86400"
+                                           Increment="0.1"
+                                           FormatString="0.0"
+                                           ValueChanged="OnRepeatTimeChanged"/>
+                            <TextBlock Grid.Column="2" Classes="field-label" Text="seconds"/>
+                        </Grid>
+                        <StackPanel Grid.Row="1" Spacing="8">
+                            <CheckBox x:Name="AutoMinimizeInput"
+                                      Content="Auto minimize to tray"
+                                      IsCheckedChanged="OnAutoMinimizeChanged"/>
+                            <CheckBox x:Name="WaitUploadsInput"
+                                      Content="Wait until tasks complete"
+                                      IsCheckedChanged="OnWaitUploadsChanged"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Button x:Name="ExecuteButton"
+                        Grid.Row="2"
+                        Width="240"
+                        Height="42"
+                        HorizontalAlignment="Center"
+                        IsEnabled="False"
+                        Click="OnExecuteClick">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <TextBlock x:Name="ExecuteIcon"
+                                   Classes="icon"
+                                   Text="{x:Static theming:LucideIcons.play}"/>
+                        <TextBlock x:Name="ExecuteText" Text="Start"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+
+            <Border Grid.Row="1"
+                    Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                    BorderThickness="0,1,0,0"
+                    Padding="12,8">
+                <Grid RowDefinitions="Auto,Auto" RowSpacing="6">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="7">
+                        <TextBlock x:Name="StatusIcon"
+                                   Classes="icon"
+                                   Text="{x:Static theming:LucideIcons.timer}"
+                                   FontSize="16"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                        <TextBlock x:Name="StatusText"
+                                   Grid.Column="1"
+                                   Text="Ready"
+                                   FontWeight="Normal"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                   TextTrimming="CharacterEllipsis"/>
+                    </Grid>
+                    <ProgressBar x:Name="StatusProgress"
+                                 Grid.Row="1"
+                                 Minimum="0"
+                                 Maximum="100"
+                                 Value="0"
+                                 Height="4"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
