@@ -223,12 +223,12 @@ internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
     {
         Keys key = gesture.KeyName switch
         {
-            nameof(Avalonia.Input.Key.LeftCtrl) => Keys.LControlKey,
-            nameof(Avalonia.Input.Key.RightCtrl) => Keys.RControlKey,
-            nameof(Avalonia.Input.Key.LeftShift) => Keys.LShiftKey,
-            nameof(Avalonia.Input.Key.RightShift) => Keys.RShiftKey,
-            nameof(Avalonia.Input.Key.LeftAlt) => Keys.LMenu,
-            nameof(Avalonia.Input.Key.RightAlt) => Keys.RMenu,
+            nameof(Avalonia.Input.Key.LeftCtrl) => Keys.ControlKey,
+            nameof(Avalonia.Input.Key.RightCtrl) => Keys.ControlKey,
+            nameof(Avalonia.Input.Key.LeftShift) => Keys.ShiftKey,
+            nameof(Avalonia.Input.Key.RightShift) => Keys.ShiftKey,
+            nameof(Avalonia.Input.Key.LeftAlt) => Keys.Menu,
+            nameof(Avalonia.Input.Key.RightAlt) => Keys.Menu,
             nameof(Avalonia.Input.Key.Enter) => Keys.Enter,
             nameof(Avalonia.Input.Key.CapsLock) => Keys.CapsLock,
             nameof(Avalonia.Input.Key.PageUp) => Keys.PageUp,
