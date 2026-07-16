@@ -7,6 +7,7 @@
 
     <Styles.Resources>
         <Thickness x:Key="ComboBoxDropdownContentMargin">6</Thickness>
+        <Thickness x:Key="MenuFlyoutPresenterThemePadding">6,2</Thickness>
     </Styles.Resources>
 
     <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
