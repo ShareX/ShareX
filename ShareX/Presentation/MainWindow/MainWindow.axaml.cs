@@ -62,7 +62,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     internal ObservableCollection<ThumbnailItemViewModel> ThumbnailItems { get; } = new();
     internal ObservableCollection<HotkeyTipViewModel> HotkeyTips { get; } = new();
     public bool IsEmpty => ThumbnailItems.Count == 0;
-    public string TaskCountText => ThumbnailItems.Count == 1 ? "1 task" : $"{ThumbnailItems.Count} tasks";
 
     public MainWindow() : this(Program.MainForm)
     {
@@ -197,7 +196,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         {
             if (index is 4 or 7 or 12 or 15)
             {
-                NavigationPanel.Children.Add(new Separator { Margin = new Thickness(6, 5) });
+                NavigationPanel.Children.Add(new Separator { Margin = new Thickness(5, 2) });
             }
 
             MainNavigationSection current = section;
@@ -215,8 +214,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private static Control CreateNavigationContent(MainNavigationSection section)
     {
-        Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("26,*,Auto") };
-        grid.Children.Add(CreateLucideText(section.Icon, 17));
+        Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("23,*,Auto") };
+        grid.Children.Add(CreateLucideText(section.Icon, 16));
 
         TextBlock label = new()
         {
@@ -479,7 +478,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void NotifyTaskCollectionChanged()
     {
         OnPropertyChanged(nameof(IsEmpty));
-        OnPropertyChanged(nameof(TaskCountText));
     }
 
     private void RefreshHotkeyTips()
@@ -538,19 +536,31 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return;
         }
 
-        if (e.KeyModifiers.HasFlag(KeyModifiers.Control))
-        {
-            item.IsSelected = !item.IsSelected;
-            _lastSelectedIndex = index;
-        }
-        else if (e.KeyModifiers.HasFlag(KeyModifiers.Shift) && _lastSelectedIndex >= 0)
+        bool isControlPressed = e.KeyModifiers.HasFlag(KeyModifiers.Control);
+        bool isShiftPressed = e.KeyModifiers.HasFlag(KeyModifiers.Shift);
+
+        if (isShiftPressed && _lastSelectedIndex >= 0)
         {
             int start = Math.Min(_lastSelectedIndex, index);
             int end = Math.Max(_lastSelectedIndex, index);
+
             for (int i = 0; i < ThumbnailItems.Count; i++)
             {
-                ThumbnailItems[i].IsSelected = i >= start && i <= end;
+                if (!isControlPressed)
+                {
+                    ThumbnailItems[i].IsSelected = false;
+                }
+
+                if (i >= start && i <= end)
+                {
+                    ThumbnailItems[i].IsSelected = true;
+                }
             }
+        }
+        else if (isControlPressed)
+        {
+            item.IsSelected = !item.IsSelected;
+            _lastSelectedIndex = index;
         }
         else
         {
@@ -800,8 +810,27 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.RecentManager.Clear();
     }
 
-    private void OnMoreClick(object? sender, RoutedEventArgs e)
+    private void OnMainContentPointerPressed(object? sender, PointerPressedEventArgs e)
     {
+        PointerUpdateKind pointerUpdateKind = e.GetCurrentPoint(this).Properties.PointerUpdateKind;
+
+        if (pointerUpdateKind == PointerUpdateKind.LeftButtonPressed)
+        {
+            foreach (ThumbnailItemViewModel item in ThumbnailItems)
+            {
+                item.IsSelected = false;
+            }
+
+            _lastSelectedIndex = -1;
+            e.Handled = true;
+            return;
+        }
+
+        if (pointerUpdateKind != PointerUpdateKind.RightButtonPressed)
+        {
+            return;
+        }
+
         List<MainMenuEntry> entries = new()
         {
             Item("Refresh thumbnails", LucideIcons.refresh_cw, () =>
@@ -817,8 +846,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (sender is Control control)
         {
             ContextMenu menu = BuildContextMenu(entries);
-            menu.Placement = PlacementMode.BottomEdgeAlignedRight;
+            menu.Placement = PlacementMode.Pointer;
             menu.Open(control);
+            e.Handled = true;
         }
     }
 

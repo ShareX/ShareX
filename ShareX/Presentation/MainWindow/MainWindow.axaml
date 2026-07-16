@@ -16,36 +16,30 @@
 
     <Window.Styles>
         <Style Selector="Button.nav-button">
-            <Setter Property="Height" Value="38"/>
+            <Setter Property="Height" Value="32"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Padding" Value="8,3"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="CornerRadius" Value="4"/>
         </Style>
         <Style Selector="Button.nav-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
-        <Style Selector="ToggleButton.thumbnail-card">
+        <Style Selector="Border.thumbnail-card">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="CornerRadius" Value="6"/>
-            <Setter Property="Padding" Value="5"/>
-            <Setter Property="Margin" Value="6"/>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Margin" Value="4"/>
         </Style>
-        <Style Selector="ToggleButton.thumbnail-card:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Style Selector="Border.thumbnail-card:pointerover">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
         </Style>
-        <Style Selector="ToggleButton.thumbnail-card:checked">
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
-            <Setter Property="BorderThickness" Value="2"/>
-        </Style>
-        <Style Selector="ToggleButton.thumbnail-card:checked /template/ ContentPresenter#PART_ContentPresenter">
+        <Style Selector="Border.thumbnail-card.selected">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
             <Setter Property="BorderThickness" Value="2"/>
@@ -59,49 +53,17 @@
         </Style>
     </Window.Styles>
 
-    <Grid ColumnDefinitions="226,*" Background="{DynamicResource ShareX.Brush.Background.Main}">
+    <Grid ColumnDefinitions="210,*" Background="{DynamicResource ShareX.Brush.Background.Main}">
         <Border Grid.Column="0"
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}"
                 BorderThickness="0,0,1,0">
-            <Grid RowDefinitions="Auto,*">
-                <Grid Margin="15,14,12,10" ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                    <Border Width="34" Height="34" CornerRadius="7" Background="{DynamicResource ShareX.Brush.Accent}">
-                        <TextBlock Classes="icon"
-                                   Text="{x:Static theming:LucideIcons.share_2}"
-                                   FontSize="19"
-                                   Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"/>
-                    </Border>
-                    <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="1">
-                        <TextBlock Text="ShareX" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource ShareX.Brush.Text}"/>
-                        <TextBlock Text="Capture and share" FontSize="11" FontWeight="Normal"/>
-                    </StackPanel>
-                </Grid>
-
-                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                    <StackPanel x:Name="NavigationPanel" Margin="8,2,8,12" Spacing="2"/>
-                </ScrollViewer>
-            </Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                <StackPanel x:Name="NavigationPanel" Margin="6,5,6,8" Spacing="0"/>
+            </ScrollViewer>
         </Border>
 
-        <Grid Grid.Column="1" RowDefinitions="Auto,*">
-            <Border Grid.Row="0"
-                    Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
-                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                    BorderThickness="0,0,0,1"
-                    Padding="18,12">
-                <Grid ColumnDefinitions="*,Auto">
-                    <StackPanel Spacing="2">
-                        <TextBlock Text="Thumbnail View" FontSize="17" FontWeight="SemiBold" Foreground="{DynamicResource ShareX.Brush.Text}"/>
-                        <TextBlock Text="{Binding TaskCountText}" FontSize="11" FontWeight="Normal"/>
-                    </StackPanel>
-                    <Button Grid.Column="1" Classes="toolbar-button" Content="{x:Static theming:LucideIcons.ellipsis}" ToolTip.Tip="More" Click="OnMoreClick"/>
-                </Grid>
-            </Border>
-
-            <Grid Grid.Row="1">
+        <Grid Grid.Column="1" PointerPressed="OnMainContentPointerPressed">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding ThumbnailItems}">
                         <ItemsControl.ItemsPanel>
@@ -111,16 +73,18 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate DataType="local:ThumbnailItemViewModel">
-                                <ToggleButton Classes="thumbnail-card"
-                                              IsChecked="{Binding IsSelected}"
-                                              PointerPressed="OnThumbnailPointerPressed"
-                                              DoubleTapped="OnThumbnailDoubleTapped"
-                                              ToolTip.Tip="{Binding Details}">
-                                    <StackPanel Width="{Binding Width}" Spacing="5">
+                                <Border Classes="thumbnail-card"
+                                        Classes.selected="{Binding IsSelected}"
+                                        PointerPressed="OnThumbnailPointerPressed"
+                                        DoubleTapped="OnThumbnailDoubleTapped"
+                                        ToolTip.Tip="{Binding Details}">
+                                    <StackPanel Width="{Binding Width}" Spacing="3">
                                         <TextBlock Text="{Binding Title}"
                                                    IsVisible="{Binding ShowTitleAbove}"
                                                    Foreground="{DynamicResource ShareX.Brush.Text}"
                                                    FontWeight="Normal"
+                                                   TextAlignment="Center"
+                                                   HorizontalAlignment="Stretch"
                                                    TextTrimming="CharacterEllipsis"
                                                    MaxLines="1"/>
                                         <Border Width="{Binding Width}"
@@ -160,16 +124,12 @@
                                                    IsVisible="{Binding ShowTitleBelow}"
                                                    Foreground="{DynamicResource ShareX.Brush.Text}"
                                                    FontWeight="Normal"
-                                                   TextTrimming="CharacterEllipsis"
-                                                   MaxLines="1"/>
-                                        <TextBlock Text="{Binding Status}"
-                                                   FontSize="10"
-                                                   FontWeight="Normal"
-                                                   Opacity="0.75"
+                                                   TextAlignment="Center"
+                                                   HorizontalAlignment="Stretch"
                                                    TextTrimming="CharacterEllipsis"
                                                    MaxLines="1"/>
                                     </StackPanel>
-                                </ToggleButton>
+                                </Border>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
@@ -219,7 +179,6 @@
                         </Grid>
                     </Border>
                 </Grid>
-            </Grid>
         </Grid>
     </Grid>
 </Window>
