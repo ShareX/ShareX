@@ -8,7 +8,6 @@
         Width="1120"
         Height="720"
         MinWidth="760"
-        MinHeight="500"
         WindowStartupLocation="CenterScreen"
         DragDrop.AllowDrop="True"
         DragDrop.DragOver="OnDragOver"
@@ -39,6 +38,7 @@
         </Style>
         <Style Selector="TextBlock.accent-menu-icon">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
         </Style>
         <Style Selector="Border.thumbnail-card">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>

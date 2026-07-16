@@ -80,8 +80,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         Title = Program.Title;
         Icon = CreateWindowIcon();
 
-        RestoreWindowBounds();
         BuildNavigation();
+        ConfigureWindowHeightFromNavigation();
+        RestoreWindowBounds();
         RefreshHotkeyTips();
 
         foreach (WorkerTask task in TaskManager.Tasks)
@@ -210,6 +211,25 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             button.Click += OnNavigationClick;
             NavigationPanel.Children.Add(button);
             index++;
+        }
+    }
+
+    private void ConfigureWindowHeightFromNavigation()
+    {
+        NavigationPanel.Measure(new Avalonia.Size(210, double.PositiveInfinity));
+        double navigationHeight = Math.Ceiling(NavigationPanel.DesiredSize.Height);
+
+        if (navigationHeight <= 0 || double.IsNaN(navigationHeight) || double.IsInfinity(navigationHeight))
+        {
+            return;
+        }
+
+        MinHeight = navigationHeight;
+
+        DrawingSize savedSize = Program.Settings.MainFormSize;
+        if (!Program.Settings.RememberMainFormSize || savedSize.IsEmpty)
+        {
+            Height = navigationHeight;
         }
     }
 
