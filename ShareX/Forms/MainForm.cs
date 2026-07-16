@@ -248,9 +248,10 @@ namespace ShareX
         {
             IsReady = false;
 
-            // The user-facing tray icon is owned by the Avalonia main window. Keep this
-            // compatibility NotifyIcon alive for legacy callers, but never display it.
-            niTray.Visible = false;
+            // Keep the notification icon as the Windows tray mouse-event bridge. Its
+            // menu is rendered by Avalonia so it shares the main-window menu styling.
+            niTray.ContextMenuStrip = null;
+            niTray.Visible = Program.Settings.ShowTray;
 
             TaskManager.UpdateMainFormTip();
             TaskManager.RecentManager.InitItems();

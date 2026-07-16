@@ -34,13 +34,17 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using AppResources = ShareX.Properties.Resources;
 using DrawingBitmap = System.Drawing.Bitmap;
+using DrawingIcon = System.Drawing.Icon;
 using DrawingPoint = System.Drawing.Point;
 using DrawingSize = System.Drawing.Size;
+using FormsCursor = System.Windows.Forms.Cursor;
 using FormsDataFormats = System.Windows.Forms.DataFormats;
 using FormsDataObject = System.Windows.Forms.DataObject;
 using FormsDialogResult = System.Windows.Forms.DialogResult;
 using FormsMessageBox = System.Windows.Forms.MessageBox;
 using FormsMessageBoxButtons = System.Windows.Forms.MessageBoxButtons;
+using FormsMouseButtons = System.Windows.Forms.MouseButtons;
+using FormsMouseEventArgs = System.Windows.Forms.MouseEventArgs;
 using FormsOrientation = System.Windows.Forms.Orientation;
 
 namespace ShareX;
@@ -51,14 +55,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private readonly MainMenuBuilder _navigationMenuBuilder;
     private readonly MainMenuBuilder _trayMenuBuilder;
     private readonly UploadInfoManager _uploadInfoManager = new();
-    private readonly LucideNativeIconRenderer _nativeIconRenderer = new();
-    private readonly TrayIcon _trayIcon;
     private ContextMenu? _activeContextMenu;
+    private Window? _trayMenuAnchor;
+    private DrawingIcon? _ownedTrayIcon;
     private bool _allowClose;
     private bool _disposed;
     private int _lastSelectedIndex = -1;
-    private int _trayClickCount;
-    private readonly DispatcherTimer _trayClickTimer;
 
     internal ObservableCollection<ThumbnailItemViewModel> ThumbnailItems { get; } = new();
     internal ObservableCollection<HotkeyTipViewModel> HotkeyTips { get; } = new();
@@ -90,21 +92,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             AddTask(task);
         }
 
-        _trayIcon = new TrayIcon
-        {
-            Icon = CreateWindowIcon(),
-            ToolTipText = Program.TitleShort,
-            IsVisible = Program.Settings.ShowTray,
-            Menu = BuildNativeMenu(_trayMenuBuilder.BuildTrayMenu())
-        };
-        _trayIcon.Clicked += OnTrayIconClicked;
-        if (Application.Current != null)
-        {
-            TrayIcon.SetIcons(Application.Current, new TrayIcons { _trayIcon });
-        }
-
-        _trayClickTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(System.Windows.Forms.SystemInformation.DoubleClickTime) };
-        _trayClickTimer.Tick += OnTrayClickTimerTick;
+        _host.niTray.ContextMenuStrip = null;
+        _host.niTray.Text = Program.TitleShort;
+        _host.niTray.Visible = Program.Settings.ShowTray;
+        _host.niTray.MouseUp += OnHostTrayMouseUp;
 
         TaskManager.TaskAdded += OnTaskAdded;
         TaskManager.TaskRemoved += OnTaskRemoved;
@@ -145,22 +136,77 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public void SetTitle(string title)
     {
         Title = title;
-        _trayIcon.ToolTipText = title.Truncate(63);
+        _host.niTray.Text = title.Truncate(63);
     }
 
-    public void SetTrayVisible(bool visible) => _trayIcon.IsVisible = visible;
+    public void SetTrayVisible(bool visible) => _host.niTray.Visible = visible;
 
     public void SetTrayIcon(byte[] iconBytes)
     {
         using MemoryStream stream = new(iconBytes, writable: false);
-        _trayIcon.Icon = new WindowIcon(stream);
+        using DrawingIcon source = new(stream);
+        DrawingIcon replacement = (DrawingIcon)source.Clone();
+        _host.niTray.Icon = replacement;
+        _ownedTrayIcon?.Dispose();
+        _ownedTrayIcon = replacement;
     }
 
     public void ShowTrayMenu()
     {
-        ShowAndActivate();
+        if (_trayMenuAnchor != null)
+        {
+            CloseActiveContextMenu();
+            CloseTrayMenuAnchor();
+            return;
+        }
+
+        CloseActiveContextMenu();
+
+        System.Drawing.Point cursorPosition = FormsCursor.Position;
+        PixelPoint anchorPosition = new(cursorPosition.X, cursorPosition.Y);
+        Window anchor = new()
+        {
+            Width = 1,
+            Height = 1,
+            MinWidth = 1,
+            MinHeight = 1,
+            Position = anchorPosition,
+            WindowStartupLocation = WindowStartupLocation.Manual,
+            WindowDecorations = Avalonia.Controls.WindowDecorations.None,
+            ShowInTaskbar = false,
+            CanResize = false,
+            Topmost = true,
+            Opacity = 0,
+            Background = Brushes.Transparent,
+            RequestedThemeVariant = ThemeManager.GetCurrentTheme()
+        };
+        _trayMenuAnchor = anchor;
+        anchor.Deactivated += OnTrayMenuAnchorDeactivated;
+        anchor.Show();
+        anchor.Position = anchorPosition;
+        anchor.Activate();
+
         ContextMenu menu = BuildContextMenu(_trayMenuBuilder.BuildTrayMenu());
-        TryOpenContextMenu(menu, this, PlacementMode.Pointer);
+        menu.Closed += OnTrayMenuClosed;
+
+        try
+        {
+            if (!TryOpenContextMenu(menu, anchor, PlacementMode.BottomEdgeAlignedLeft))
+            {
+                menu.Closed -= OnTrayMenuClosed;
+                CloseTrayMenuAnchor();
+            }
+            else if (Program.Settings.TrayAutoExpandCaptureMenu && menu.Items.OfType<MenuItem>().FirstOrDefault() is MenuItem captureItem)
+            {
+                Dispatcher.UIThread.Post(captureItem.Open);
+            }
+        }
+        catch
+        {
+            menu.Closed -= OnTrayMenuClosed;
+            CloseTrayMenuAnchor();
+            throw;
+        }
     }
 
     public void RefreshMenus()
@@ -168,7 +214,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         BuildNavigation();
         RefreshHotkeyTips();
-        _trayIcon.Menu = BuildNativeMenu(_trayMenuBuilder.BuildTrayMenu());
 
         foreach (ThumbnailItemViewModel item in ThumbnailItems)
         {
@@ -392,69 +437,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             }
 
             yield return item;
-        }
-    }
-
-    private NativeMenu BuildNativeMenu(IEnumerable<MainMenuEntry> entries)
-    {
-        NativeMenu menu = new();
-        PopulateNativeMenu(menu, entries);
-        menu.NeedsUpdate += (_, _) =>
-        {
-            menu.Items.Clear();
-            PopulateNativeMenu(menu, _trayMenuBuilder.BuildTrayMenu());
-        };
-        menu.Closed += (_, _) => SettingManager.SaveAllSettingsAsync();
-        return menu;
-    }
-
-    private void PopulateNativeMenu(NativeMenu menu, IEnumerable<MainMenuEntry> entries)
-    {
-        foreach (MainMenuEntry entry in entries.Where(x => x.IsVisible))
-        {
-            if (entry.IsSeparator)
-            {
-                menu.Items.Add(new NativeMenuItemSeparator());
-                continue;
-            }
-
-            NativeMenuItem item = new(entry.Header)
-            {
-                Icon = _nativeIconRenderer.Get(entry.Icon),
-                IsEnabled = entry.IsEnabled,
-                IsChecked = entry.IsChecked,
-                ToggleType = entry.ToggleType switch
-                {
-                    MainMenuToggleType.CheckBox => MenuItemToggleType.CheckBox,
-                    MainMenuToggleType.Radio => MenuItemToggleType.Radio,
-                    _ => MenuItemToggleType.None
-                }
-            };
-
-            if (entry.CreateChildren != null)
-            {
-                NativeMenu childMenu = new();
-                PopulateNativeMenu(childMenu, entry.CreateChildren());
-                item.Menu = childMenu;
-            }
-
-            if (entry.ExecuteAsync != null)
-            {
-                item.Click += async (_, _) =>
-                {
-                    try
-                    {
-                        await entry.ExecuteAsync();
-                        RefreshMenus();
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugHelper.WriteException(ex);
-                    }
-                };
-            }
-
-            menu.Items.Add(item);
         }
     }
 
@@ -991,45 +973,53 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         e.Handled = true;
     }
 
-    private void OnTrayIconClicked(object? sender, EventArgs e)
+    private void OnHostTrayMouseUp(object? sender, FormsMouseEventArgs e)
     {
-        if (NativeMethods.GetKeyState((int)System.Windows.Forms.Keys.RButton) < 0)
+        if (e.Button == FormsMouseButtons.Right)
         {
-            return;
-        }
-
-        if (NativeMethods.GetKeyState((int)System.Windows.Forms.Keys.MButton) < 0)
-        {
-            _ = TaskHelpers.ExecuteJob(Program.Settings.TrayMiddleClickAction);
-            return;
-        }
-
-        if (Program.Settings.TrayLeftDoubleClickAction == HotkeyType.None)
-        {
-            _ = TaskHelpers.ExecuteJob(Program.Settings.TrayLeftClickAction);
-            return;
-        }
-
-        _trayClickCount++;
-        if (_trayClickCount == 1)
-        {
-            _trayClickTimer.Start();
-        }
-        else
-        {
-            _trayClickCount = 0;
-            _trayClickTimer.Stop();
-            _ = TaskHelpers.ExecuteJob(Program.Settings.TrayLeftDoubleClickAction);
+            Dispatcher.UIThread.Post(() =>
+            {
+                if (!_disposed)
+                {
+                    ShowTrayMenu();
+                }
+            });
         }
     }
 
-    private void OnTrayClickTimerTick(object? sender, EventArgs e)
+    private void OnTrayMenuClosed(object? sender, RoutedEventArgs e)
     {
-        _trayClickTimer.Stop();
-        if (_trayClickCount == 1)
+        if (sender is ContextMenu menu)
         {
-            _trayClickCount = 0;
-            _ = TaskHelpers.ExecuteJob(Program.Settings.TrayLeftClickAction);
+            menu.Closed -= OnTrayMenuClosed;
+        }
+
+        CloseTrayMenuAnchor();
+        SettingManager.SaveAllSettingsAsync();
+    }
+
+    private void OnTrayMenuAnchorDeactivated(object? sender, EventArgs e)
+    {
+        if (ReferenceEquals(sender, _trayMenuAnchor))
+        {
+            CloseActiveContextMenu();
+            CloseTrayMenuAnchor();
+        }
+    }
+
+    private void CloseTrayMenuAnchor()
+    {
+        Window? anchor = _trayMenuAnchor;
+        _trayMenuAnchor = null;
+
+        if (anchor != null)
+        {
+            anchor.Deactivated -= OnTrayMenuAnchorDeactivated;
+
+            if (anchor.IsVisible)
+            {
+                anchor.Close();
+            }
         }
     }
 
@@ -1076,10 +1066,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.TaskCollectionChanged -= OnTaskCollectionChanged;
         ThemeManager.ThemeChanged -= OnThemeChanged;
         CloseActiveContextMenu();
-        _trayClickTimer.Stop();
-        _trayIcon.Clicked -= OnTrayIconClicked;
-        _trayIcon.Dispose();
-        _nativeIconRenderer.Dispose();
+        CloseTrayMenuAnchor();
+        _host.niTray.MouseUp -= OnHostTrayMouseUp;
+        _host.niTray.Visible = false;
+        _host.niTray.Icon = null;
+        _ownedTrayIcon?.Dispose();
+        _ownedTrayIcon = null;
 
         foreach (ThumbnailItemViewModel item in ThumbnailItems)
         {

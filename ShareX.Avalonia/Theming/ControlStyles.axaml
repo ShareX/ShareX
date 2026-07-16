@@ -899,6 +899,40 @@
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Separator}"/>
     </Style>
 
+    <!-- Shared compact menu treatment used by main-window, thumbnail and tray menus. -->
+    <Style Selector="MenuItem.compact-menu-item">
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="MinHeight" Value="28"/>
+        <Setter Property="Padding" Value="7,2"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+    </Style>
+
+    <Style Selector="MenuItem.compact-menu-item:pointerover /template/ Border#PART_LayoutRoot">
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+    </Style>
+
+    <Style Selector="MenuItem.compact-menu-item:pointerover">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+    </Style>
+
+    <Style Selector="MenuItem.compact-menu-item:pointerover TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+    </Style>
+
+    <Style Selector="MenuItem.compact-menu-item:pointerover TextBlock.accent-menu-icon">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+    </Style>
+
+    <Style Selector="Separator.compact-menu-separator">
+        <Setter Property="Margin" Value="6,2"/>
+    </Style>
+
+    <Style Selector="TextBlock.accent-menu-icon">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+
     <Style Selector="MenuFlyoutPresenter MenuItem">
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
         <Setter Property="FontSize" Value="13"/>
