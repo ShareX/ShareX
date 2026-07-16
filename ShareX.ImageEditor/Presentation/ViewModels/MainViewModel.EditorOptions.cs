@@ -1,5 +1,6 @@
 using Avalonia.Media;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.AvaloniaUI.Theming;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
 {
@@ -17,15 +18,15 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public bool EditorUseSystemTheme
         {
-            get => Options.UseSystemTheme;
+            get => ThemeOptions.UseSystemTheme;
             set
             {
-                if (Options.UseSystemTheme == value)
+                if (ThemeOptions.UseSystemTheme == value)
                 {
                     return;
                 }
 
-                Options.UseSystemTheme = value;
+                ThemeOptions.UseSystemTheme = value;
                 OnPropertyChanged(nameof(EditorUseSystemTheme));
                 OnPropertyChanged(nameof(CanEditEditorTheme));
             }
@@ -35,31 +36,31 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public string EditorTheme
         {
-            get => NormalizeEditorTheme(Options.Theme);
+            get => NormalizeEditorTheme(ThemeOptions.Theme);
             set
             {
                 string normalizedTheme = NormalizeEditorTheme(value);
-                if (string.Equals(Options.Theme, normalizedTheme, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(ThemeOptions.Theme, normalizedTheme, StringComparison.OrdinalIgnoreCase))
                 {
                     return;
                 }
 
-                Options.Theme = normalizedTheme;
+                ThemeOptions.Theme = normalizedTheme;
                 OnPropertyChanged(nameof(EditorTheme));
             }
         }
 
         public bool EditorUseSystemAccentColor
         {
-            get => Options.UseSystemAccentColor;
+            get => ThemeOptions.UseSystemAccentColor;
             set
             {
-                if (Options.UseSystemAccentColor == value)
+                if (ThemeOptions.UseSystemAccentColor == value)
                 {
                     return;
                 }
 
-                Options.UseSystemAccentColor = value;
+                ThemeOptions.UseSystemAccentColor = value;
                 OnPropertyChanged(nameof(EditorUseSystemAccentColor));
                 OnPropertyChanged(nameof(CanEditEditorAccentColor));
             }
@@ -69,21 +70,21 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public Color EditorAccentColor
         {
-            get => Options.AccentColor;
+            get => ThemeOptions.AccentColor;
             set
             {
-                if (Options.AccentColor == value)
+                if (EditorAccentColor == value)
                 {
                     return;
                 }
 
-                Options.AccentColor = value;
+                ThemeOptions.AccentColor = value;
                 OnPropertyChanged(nameof(EditorAccentColor));
                 OnPropertyChanged(nameof(EditorAccentColorHex));
             }
         }
 
-        public string EditorAccentColorHex => Options.AccentColorHex;
+        public string EditorAccentColorHex => ThemeOptions.AccentColorHex;
 
         public bool EditorRememberWindowState
         {

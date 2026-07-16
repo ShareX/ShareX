@@ -23,8 +23,10 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
+using ShareX.ImageEditor.Integration;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -150,6 +152,8 @@ namespace ShareX
             Settings.SettingsSaveFailed += Settings_SettingsSaveFailed;
             DefaultTaskSettings = Settings.DefaultTaskSettings;
             ApplicationConfigBackwardCompatibilityTasks();
+            Settings.ThemeOptions ??= new ApplicationThemeOptions();
+            ThemeManager.Configure(Settings.ThemeOptions);
             MigrateHistoryFile();
             HistoryConnect();
         }
@@ -236,6 +240,8 @@ namespace ShareX
 
         private static void ApplicationConfigBackwardCompatibilityTasks()
         {
+            MigrateImageEditorThemeSettings();
+
             if (SystemOptions.DisableUpload)
             {
                 DefaultTaskSettings.AfterCaptureJob = DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
@@ -292,6 +298,38 @@ namespace ShareX
                 {
                     DefaultTaskSettings.CaptureSettings.SurfaceOptions.BackgroundDimStrength = 0;
                 }
+            }
+        }
+
+        private static void MigrateImageEditorThemeSettings()
+        {
+            ImageEditorOptions legacyOptions = DefaultTaskSettings?.ToolsSettings?.ImageEditorOptions;
+
+            if (legacyOptions == null)
+            {
+                return;
+            }
+
+            Settings.ThemeOptions ??= new ApplicationThemeOptions();
+
+            if (!string.IsNullOrWhiteSpace(legacyOptions.LegacyTheme))
+            {
+                Settings.ThemeOptions.Theme = legacyOptions.LegacyTheme;
+            }
+
+            if (legacyOptions.LegacyUseSystemTheme.HasValue)
+            {
+                Settings.ThemeOptions.UseSystemTheme = legacyOptions.LegacyUseSystemTheme.Value;
+            }
+
+            if (!string.IsNullOrWhiteSpace(legacyOptions.LegacyAccentColorHex))
+            {
+                Settings.ThemeOptions.AccentColorHex = legacyOptions.LegacyAccentColorHex;
+            }
+
+            if (legacyOptions.LegacyUseSystemAccentColor.HasValue)
+            {
+                Settings.ThemeOptions.UseSystemAccentColor = legacyOptions.LegacyUseSystemAccentColor.Value;
             }
         }
 

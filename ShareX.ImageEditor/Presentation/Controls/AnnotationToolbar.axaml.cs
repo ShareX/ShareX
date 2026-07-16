@@ -470,13 +470,13 @@ public partial class AnnotationToolbar : UserControl
 
     private bool ShouldUseSystemAccentColor()
     {
-        return GetOwnerViewModel()?.Options.UseSystemAccentColor ?? true;
+        return GetOwnerViewModel()?.ThemeOptions.UseSystemAccentColor ?? true;
     }
 
     private bool TryGetConfiguredAccentColor(out Color accentColor)
     {
         if (!ShouldUseSystemAccentColor() &&
-            GetOwnerViewModel() is MainViewModel { Options.AccentColorHex: var accentColorHex } &&
+            GetOwnerViewModel() is MainViewModel { ThemeOptions.AccentColorHex: var accentColorHex } &&
             Color.TryParse(accentColorHex, out accentColor) &&
             accentColor.A != 0)
         {

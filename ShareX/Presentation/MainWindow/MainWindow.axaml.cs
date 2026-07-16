@@ -75,7 +75,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         InitializeComponent();
         DataContext = this;
-        RequestedThemeVariant = ShareXResources.IsDarkTheme ? ThemeManager.ShareXDark : ThemeManager.ShareXLight;
+        RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Title = Program.Title;
         Icon = CreateWindowIcon();
 
@@ -109,6 +109,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.TaskChanged += OnTaskChanged;
         TaskManager.TaskImageReady += OnTaskImageReady;
         TaskManager.TaskCollectionChanged += OnTaskCollectionChanged;
+        ThemeManager.ThemeChanged += OnThemeChanged;
 
         Closing += OnClosing;
         PositionChanged += (_, _) => SaveWindowBounds();
@@ -163,7 +164,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     public void RefreshMenus()
     {
-        RequestedThemeVariant = ShareXResources.IsDarkTheme ? ThemeManager.ShareXDark : ThemeManager.ShareXLight;
+        RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         BuildNavigation();
         RefreshHotkeyTips();
         _trayIcon.Menu = BuildNativeMenu(_trayMenuBuilder.BuildTrayMenu());
@@ -484,6 +485,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     }
 
     private void OnTaskCollectionChanged() => Dispatcher.UIThread.Post(NotifyTaskCollectionChanged);
+
+    private void OnThemeChanged(object? sender, Avalonia.Styling.ThemeVariant theme) =>
+        Dispatcher.UIThread.Post(() => RequestedThemeVariant = theme);
 
     private void NotifyTaskCollectionChanged()
     {
@@ -1001,6 +1005,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.TaskChanged -= OnTaskChanged;
         TaskManager.TaskImageReady -= OnTaskImageReady;
         TaskManager.TaskCollectionChanged -= OnTaskCollectionChanged;
+        ThemeManager.ThemeChanged -= OnThemeChanged;
         _trayClickTimer.Stop();
         _trayIcon.Clicked -= OnTrayIconClicked;
         _trayIcon.Dispose();

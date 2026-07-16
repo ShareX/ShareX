@@ -630,12 +630,12 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private bool ShouldUseSystemTheme()
         {
-            return DataContext is MainViewModel { Options.UseSystemTheme: true };
+            return DataContext is MainViewModel { ThemeOptions.UseSystemTheme: true };
         }
 
         private bool ShouldUseSystemAccentColor()
         {
-            return DataContext is MainViewModel { Options.UseSystemAccentColor: true };
+            return DataContext is MainViewModel { ThemeOptions.UseSystemAccentColor: true };
         }
 
         private bool ShouldListenToPlatformColorChanges()
@@ -711,7 +711,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private ThemeVariant MapConfiguredTheme()
         {
-            if (DataContext is MainViewModel { Options.Theme: var configuredTheme })
+            if (DataContext is MainViewModel { ThemeOptions.Theme: var configuredTheme })
             {
                 if (IsLightTheme(configuredTheme))
                 {
@@ -759,7 +759,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private bool TryGetConfiguredAccentColor(out Color accentColor)
         {
-            if (DataContext is MainViewModel { Options.AccentColorHex: var accentColorHex } &&
+            if (DataContext is MainViewModel { ThemeOptions.AccentColorHex: var accentColorHex } &&
                 Color.TryParse(accentColorHex, out accentColor) &&
                 accentColor.A != 0)
             {

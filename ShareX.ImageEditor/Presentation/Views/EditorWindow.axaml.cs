@@ -26,6 +26,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using SkiaSharp;
@@ -41,11 +42,15 @@ namespace ShareX.ImageEditor.Presentation.Views
         private string? _pendingFilePath;
         private bool _allowClose;
 
-        public EditorWindow() : this(null)
+        public EditorWindow() : this(null, null)
         {
         }
 
-        public EditorWindow(ImageEditorOptions? options)
+        public EditorWindow(ImageEditorOptions? options) : this(options, null)
+        {
+        }
+
+        public EditorWindow(ImageEditorOptions? options, ApplicationThemeOptions? themeOptions)
         {
             InitializeComponent();
 
@@ -54,7 +59,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             Resized += OnWindowResized;
 
-            _viewModel = new MainViewModel(options);
+            _viewModel = new MainViewModel(options, themeOptions);
             DataContext = _viewModel;
             _viewModel.WindowTitle = GetWindowTitle(null);
 

@@ -52,12 +52,22 @@ namespace ShareX.ImageEditor.Integration
 
         // Editor
         public EditorTool LastUsedAnnotationTool { get; set; } = EditorTool.Rectangle;
-        public string Theme { get; set; } = "Dark";
-        public bool UseSystemTheme { get; set; } = true;
-        public string AccentColorHex { get; set; } = "#3E83F2";
-        [JsonIgnore]
-        public Color AccentColor { get => HexToColor(AccentColorHex); set => AccentColorHex = ColorToHex(value); }
-        public bool UseSystemAccentColor { get; set; } = true;
+
+        // Temporary JSON migration properties. Theme settings are now stored globally in ApplicationConfig.
+        [JsonProperty("Theme")]
+        public string? LegacyTheme { get; set; }
+        [JsonProperty("UseSystemTheme")]
+        public bool? LegacyUseSystemTheme { get; set; }
+        [JsonProperty("AccentColorHex")]
+        public string? LegacyAccentColorHex { get; set; }
+        [JsonProperty("UseSystemAccentColor")]
+        public bool? LegacyUseSystemAccentColor { get; set; }
+
+        public bool ShouldSerializeLegacyTheme() => false;
+        public bool ShouldSerializeLegacyUseSystemTheme() => false;
+        public bool ShouldSerializeLegacyAccentColorHex() => false;
+        public bool ShouldSerializeLegacyUseSystemAccentColor() => false;
+
         public bool RememberWindowState { get; set; } = true;
         public bool IsWindowMaximized { get; set; } = true;
         public double WindowWidth { get; set; } = 1280;

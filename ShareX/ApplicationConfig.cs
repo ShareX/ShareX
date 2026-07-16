@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.UploadersLib;
@@ -83,6 +84,7 @@ namespace ShareX
 
         public List<ShareXTheme> Themes = ShareXTheme.GetDefaultThemes();
         public int SelectedTheme = 0;
+        public ApplicationThemeOptions ThemeOptions = new ApplicationThemeOptions();
 
         #endregion
 

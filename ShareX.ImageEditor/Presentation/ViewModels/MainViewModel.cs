@@ -67,6 +67,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private readonly ImageEditorOptions _options;
         private readonly ObservableCollection<string> _recentImageFiles;
         public ImageEditorOptions Options => _options;
+        public ApplicationThemeOptions ThemeOptions { get; }
         public IAnnotationToolbarAdapter ToolbarAdapter { get; }
         public ReadOnlyObservableCollection<string> RecentImageFiles { get; }
         public bool HasRecentImageFiles => RecentImageFiles.Count > 0;
@@ -836,9 +837,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public static MainViewModel Current { get; private set; } = null!;
 
-        public MainViewModel(ImageEditorOptions? options = null)
+        public MainViewModel(ImageEditorOptions? options = null, ApplicationThemeOptions? themeOptions = null)
         {
             _options = options ?? new ImageEditorOptions();
+            ThemeOptions = themeOptions ?? new ApplicationThemeOptions();
             _recentImageFiles = new ObservableCollection<string>(_options.RecentImageFiles);
             _recentImageFiles.CollectionChanged += (_, _) => OnPropertyChanged(nameof(HasRecentImageFiles));
             RecentImageFiles = new ReadOnlyObservableCollection<string>(_recentImageFiles);
