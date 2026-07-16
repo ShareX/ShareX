@@ -17,6 +17,7 @@
     <Window.Styles>
         <Style Selector="Button.nav-button">
             <Setter Property="Height" Value="32"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="Padding" Value="8,3"/>
             <Setter Property="Background" Value="Transparent"/>
@@ -26,6 +27,15 @@
         <Style Selector="Button.nav-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
             <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="MenuItem.compact-menu-item">
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="MinHeight" Value="28"/>
+            <Setter Property="Padding" Value="7,2"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+        <Style Selector="Separator.compact-menu-separator">
+            <Setter Property="Margin" Value="6,2"/>
         </Style>
         <Style Selector="Border.thumbnail-card">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
@@ -58,8 +68,13 @@
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}"
                 BorderThickness="0,0,1,0">
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                <StackPanel x:Name="NavigationPanel" Margin="6,5,6,8" Spacing="0"/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Disabled"
+                          HorizontalContentAlignment="Stretch">
+                <StackPanel x:Name="NavigationPanel"
+                            Margin="6,5,6,8"
+                            Spacing="0"
+                            HorizontalAlignment="Stretch"/>
             </ScrollViewer>
         </Border>
 

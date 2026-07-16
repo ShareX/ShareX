@@ -276,7 +276,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         {
             if (entry.IsSeparator)
             {
-                yield return new Separator();
+                Separator separator = new();
+                separator.Classes.Add("compact-menu-separator");
+                yield return separator;
                 continue;
             }
 
@@ -293,6 +295,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                     _ => MenuItemToggleType.None
                 }
             };
+            item.Classes.Add("compact-menu-item");
 
             if (entry.CreateChildren != null)
             {
