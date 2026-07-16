@@ -897,21 +897,16 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return;
         }
 
-        List<MainMenuEntry> entries = new()
+        if (ThumbnailItems.Count == 0)
         {
-            Item("Refresh thumbnails", LucideIcons.refresh_cw, () =>
-            {
-                foreach (ThumbnailItemViewModel item in ThumbnailItems) item.Refresh();
-            }),
-            Item("Clear thumbnail view", LucideIcons.list_x, ClearTasks, ThumbnailItems.Count > 0),
-            MainMenuEntry.Separator(),
-            Item("Thumbnail settings", LucideIcons.sliders_horizontal,
-                () => _host.ExecuteAvaloniaMainFormCommand(MainFormCommand.ApplicationSettings))
-        };
+            return;
+        }
 
         if (sender is Control control)
         {
-            ContextMenu menu = BuildContextMenu(entries);
+            ContextMenu menu = BuildContextMenu([
+                Item("Clear thumbnail view", LucideIcons.list_x, ClearTasks)
+            ]);
             TryOpenContextMenu(menu, control, PlacementMode.Pointer);
             e.Handled = true;
         }
