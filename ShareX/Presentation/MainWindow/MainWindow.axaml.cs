@@ -307,6 +307,19 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
     }
 
+    private void CloseActiveContextMenu()
+    {
+        if (_activeContextMenu == null)
+        {
+            return;
+        }
+
+        ContextMenu menu = _activeContextMenu;
+        _activeContextMenu = null;
+        menu.Closed -= OnActiveContextMenuClosed;
+        menu.Close();
+    }
+
     private IEnumerable<Control> BuildMenuControls(IEnumerable<MainMenuEntry> entries)
     {
         foreach (MainMenuEntry entry in entries.Where(x => x.IsVisible))
@@ -569,11 +582,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         if (point.Properties.PointerUpdateKind == PointerUpdateKind.RightButtonPressed)
         {
-            if (_activeContextMenu != null)
-            {
-                e.Handled = true;
-                return;
-            }
+            CloseActiveContextMenu();
 
             if (!item.IsSelected)
             {
@@ -1046,12 +1055,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.TaskImageReady -= OnTaskImageReady;
         TaskManager.TaskCollectionChanged -= OnTaskCollectionChanged;
         ThemeManager.ThemeChanged -= OnThemeChanged;
-        if (_activeContextMenu != null)
-        {
-            _activeContextMenu.Closed -= OnActiveContextMenuClosed;
-            _activeContextMenu.Close();
-            _activeContextMenu = null;
-        }
+        CloseActiveContextMenu();
         _trayClickTimer.Stop();
         _trayIcon.Clicked -= OnTrayIconClicked;
         _trayIcon.Dispose();
