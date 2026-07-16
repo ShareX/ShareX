@@ -214,8 +214,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private static Control CreateNavigationContent(MainNavigationSection section)
     {
-        Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("23,*,Auto") };
-        grid.Children.Add(CreateLucideText(section.Icon, 16));
+        Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("20,7,*,Auto") };
+        grid.Children.Add(CreateAccentMenuIcon(section.Icon, 16));
 
         TextBlock label = new()
         {
@@ -223,14 +223,14 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             FontWeight = FontWeight.Normal,
             VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
         };
-        Grid.SetColumn(label, 1);
+        Grid.SetColumn(label, 2);
         grid.Children.Add(label);
 
         if (section.CreateChildren != null)
         {
-            TextBlock chevron = CreateLucideText(LucideIcons.chevron_right, 14);
+            TextBlock chevron = CreateAccentMenuIcon(LucideIcons.chevron_right, 14);
             chevron.Opacity = 0.7;
-            Grid.SetColumn(chevron, 2);
+            Grid.SetColumn(chevron, 3);
             grid.Children.Add(chevron);
         }
 
@@ -285,7 +285,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             MenuItem item = new()
             {
                 Header = entry.Header,
-                Icon = CreateLucideText(entry.Icon, 16),
+                Icon = CreateAccentMenuIcon(entry.Icon, 16),
                 IsEnabled = entry.IsEnabled,
                 IsChecked = entry.IsChecked,
                 ToggleType = entry.ToggleType switch
@@ -400,6 +400,13 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         };
         text.Classes.Add("icon");
         return text;
+    }
+
+    private static TextBlock CreateAccentMenuIcon(string glyph, double size)
+    {
+        TextBlock icon = CreateLucideText(glyph, size);
+        icon.Classes.Add("accent-menu-icon");
+        return icon;
     }
 
     private void OnTaskAdded(WorkerTask task) => Dispatcher.UIThread.Post(() => AddTask(task));

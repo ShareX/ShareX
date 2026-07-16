@@ -37,6 +37,9 @@
         <Style Selector="Separator.compact-menu-separator">
             <Setter Property="Margin" Value="6,2"/>
         </Style>
+        <Style Selector="TextBlock.accent-menu-icon">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        </Style>
         <Style Selector="Border.thumbnail-card">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
