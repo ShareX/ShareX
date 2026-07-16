@@ -53,6 +53,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private readonly UploadInfoManager _uploadInfoManager = new();
     private readonly LucideNativeIconRenderer _nativeIconRenderer = new();
     private readonly TrayIcon _trayIcon;
+    private ContextMenu? _activeContextMenu;
     private bool _allowClose;
     private bool _disposed;
     private int _lastSelectedIndex = -1;
@@ -158,8 +159,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         ShowAndActivate();
         ContextMenu menu = BuildContextMenu(_trayMenuBuilder.BuildTrayMenu());
-        menu.Placement = PlacementMode.Pointer;
-        menu.Open(this);
+        TryOpenContextMenu(menu, this, PlacementMode.Pointer);
     }
 
     public void RefreshMenus()
@@ -254,8 +254,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (section.CreateChildren != null)
         {
             ContextMenu menu = BuildContextMenu(section.CreateChildren());
-            menu.Placement = PlacementMode.RightEdgeAlignedTop;
-            menu.Open(button);
+            TryOpenContextMenu(menu, button, PlacementMode.RightEdgeAlignedTop);
         }
     }
 
@@ -269,6 +268,43 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
 
         return menu;
+    }
+
+    private bool TryOpenContextMenu(ContextMenu menu, Control placementTarget, PlacementMode placement)
+    {
+        if (_activeContextMenu != null)
+        {
+            return false;
+        }
+
+        _activeContextMenu = menu;
+        menu.Placement = placement;
+        menu.Closed += OnActiveContextMenuClosed;
+
+        try
+        {
+            menu.Open(placementTarget);
+            return true;
+        }
+        catch
+        {
+            menu.Closed -= OnActiveContextMenuClosed;
+            _activeContextMenu = null;
+            throw;
+        }
+    }
+
+    private void OnActiveContextMenuClosed(object? sender, RoutedEventArgs e)
+    {
+        if (sender is ContextMenu menu)
+        {
+            menu.Closed -= OnActiveContextMenuClosed;
+
+            if (ReferenceEquals(_activeContextMenu, menu))
+            {
+                _activeContextMenu = null;
+            }
+        }
     }
 
     private IEnumerable<Control> BuildMenuControls(IEnumerable<MainMenuEntry> entries)
@@ -533,14 +569,19 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         if (point.Properties.PointerUpdateKind == PointerUpdateKind.RightButtonPressed)
         {
+            if (_activeContextMenu != null)
+            {
+                e.Handled = true;
+                return;
+            }
+
             if (!item.IsSelected)
             {
                 SelectOnly(item);
             }
 
             ContextMenu contextMenu = BuildTaskContextMenu();
-            contextMenu.Placement = PlacementMode.Pointer;
-            contextMenu.Open(control);
+            TryOpenContextMenu(contextMenu, control, PlacementMode.Pointer);
             e.Handled = true;
             return;
         }
@@ -860,8 +901,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (sender is Control control)
         {
             ContextMenu menu = BuildContextMenu(entries);
-            menu.Placement = PlacementMode.Pointer;
-            menu.Open(control);
+            TryOpenContextMenu(menu, control, PlacementMode.Pointer);
             e.Handled = true;
         }
     }
@@ -1006,6 +1046,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.TaskImageReady -= OnTaskImageReady;
         TaskManager.TaskCollectionChanged -= OnTaskCollectionChanged;
         ThemeManager.ThemeChanged -= OnThemeChanged;
+        if (_activeContextMenu != null)
+        {
+            _activeContextMenu.Closed -= OnActiveContextMenuClosed;
+            _activeContextMenu.Close();
+            _activeContextMenu = null;
+        }
         _trayClickTimer.Stop();
         _trayIcon.Clicked -= OnTrayIconClicked;
         _trayIcon.Dispose();
