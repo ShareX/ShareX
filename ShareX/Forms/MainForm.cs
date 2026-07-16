@@ -61,6 +61,14 @@ namespace ShareX
 
             await UpdateControls();
 
+            bool showMainWindow = !(Program.SilentRun || Program.Settings.SilentRun) || !Program.Settings.ShowTray;
+            MainWindowIntegration.Initialize(this, showMainWindow);
+
+            if (showMainWindow)
+            {
+                AfterShownJobs();
+            }
+
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
 
             await Program.CLI.UseCommandLineArgs();
@@ -187,6 +195,7 @@ namespace ShareX
 
             TaskManager.TaskListView = new TaskListView(lvUploads);
             TaskManager.TaskThumbnailView = ucTaskThumbnailView;
+            Program.Settings.TaskViewMode = TaskViewMode.ThumbnailView;
             uim = new UploadInfoManager();
 
             foreach (ToolStripDropDownItem dropDownItem in new ToolStripDropDownItem[]
@@ -239,7 +248,9 @@ namespace ShareX
         {
             IsReady = false;
 
-            niTray.Visible = Program.Settings.ShowTray;
+            // The user-facing tray icon is owned by the Avalonia main window. Keep this
+            // compatibility NotifyIcon alive for legacy callers, but never display it.
+            niTray.Visible = false;
 
             TaskManager.UpdateMainFormTip();
             TaskManager.RecentManager.InitItems();
@@ -351,7 +362,7 @@ namespace ShareX
             }
             else
             {
-                this.ForceActivate();
+                MainWindowIntegration.Activate();
             }
         }
 
@@ -420,6 +431,7 @@ namespace ShareX
             tsmiTrayWorkflows.Visible = tsmiTrayWorkflows.DropDownItems.Count > 0;
 
             UpdateMainFormTip();
+            MainWindowIntegration.RefreshMenus();
         }
 
         private void UpdateMainFormTip()
@@ -879,6 +891,13 @@ namespace ShareX
             pbPreview.UpdateTheme();
             pbPreview.UpdateCheckers(true);
             ucTaskThumbnailView.UpdateTheme();
+
+            using (Icon trayIcon = ShareXResources.Icon)
+            {
+                MainWindowIntegration.SetTrayIcon(trayIcon);
+            }
+
+            MainWindowIntegration.RefreshMenus();
         }
 
         private void CleanCustomClipboardFormats()
@@ -975,6 +994,8 @@ namespace ShareX
             UpdateTaskViewMode();
             UpdateMainWindowLayout();
             UpdateInfoManager();
+            MainWindowIntegration.SetTrayVisible(Program.Settings.ShowTray);
+            MainWindowIntegration.RefreshMenus();
         }
 
         private void ConfigureAutoUpdate()
@@ -1001,6 +1022,7 @@ namespace ShareX
             SetEnumChecked(Program.DefaultTaskSettings.FileDestination, tsmiFileUploaders, tsmiTrayFileUploaders);
             SetEnumChecked(Program.DefaultTaskSettings.URLShortenerDestination, tsmiURLShorteners, tsmiTrayURLShorteners);
             SetEnumChecked(Program.DefaultTaskSettings.URLSharingServiceDestination, tsmiURLSharingServices, tsmiTrayURLSharingServices);
+            MainWindowIntegration.RefreshMenus();
         }
 
         public static void SetTextFileDestinationChecked(TextDestination textDestination, FileDestination textFileDestination, params ToolStripDropDownItem[] lists)
@@ -1117,6 +1139,8 @@ namespace ShareX
                 tsmiTrayToggleHotkeys.Text = Resources.MainForm_UpdateToggleHotkeyButton_Disable_hotkeys;
                 tsmiTrayToggleHotkeys.Image = Resources.keyboard__minus;
             }
+
+            MainWindowIntegration.RefreshMenus();
         }
 
         private void RunPuushTasks()
@@ -1259,7 +1283,67 @@ namespace ShareX
             else
             {
                 forceClose = true;
+                MainWindowIntegration.Close();
                 Close();
+            }
+        }
+
+        public new bool Visible => MainWindowIntegration.IsVisible;
+
+        public new void Hide()
+        {
+            if (MainWindowIntegration.IsInitialized)
+            {
+                MainWindowIntegration.Hide();
+            }
+            else
+            {
+                base.Hide();
+            }
+        }
+
+        public void ForceActivate()
+        {
+            if (MainWindowIntegration.IsInitialized)
+            {
+                MainWindowIntegration.Activate();
+            }
+            else
+            {
+                FormExtensions.ForceActivate(this);
+            }
+        }
+
+        internal void SetAvaloniaScreenshotDelay(decimal delay)
+        {
+            SetScreenshotDelay(delay);
+            MainWindowIntegration.RefreshMenus();
+        }
+
+        internal void ExecuteAvaloniaMainFormCommand(MainFormCommand command)
+        {
+            EventArgs e = EventArgs.Empty;
+
+            switch (command)
+            {
+                case MainFormCommand.ApplicationSettings: tsbApplicationSettings_Click(this, e); break;
+                case MainFormCommand.TaskSettings: tsbTaskSettings_Click(this, e); break;
+                case MainFormCommand.HotkeySettings: tsbHotkeySettings_Click(this, e); break;
+                case MainFormCommand.DestinationSettings: tsbDestinationSettings_Click(this, e); break;
+                case MainFormCommand.CustomUploaderSettings: tsbCustomUploaderSettings_Click(this, e); break;
+                case MainFormCommand.ScreenshotsFolder: tsbScreenshotsFolder_Click(this, e); break;
+                case MainFormCommand.History: tsbHistory_Click(this, e); break;
+                case MainFormCommand.ImageHistory: tsbImageHistory_Click(this, e); break;
+                case MainFormCommand.DebugLog: tsmiShowDebugLog_Click(this, e); break;
+                case MainFormCommand.TestImageUpload: tsmiTestImageUpload_Click(this, e); break;
+                case MainFormCommand.TestTextUpload: tsmiTestTextUpload_Click(this, e); break;
+                case MainFormCommand.TestFileUpload: tsmiTestFileUpload_Click(this, e); break;
+                case MainFormCommand.TestUrlShortener: tsmiTestURLShortener_Click(this, e); break;
+                case MainFormCommand.TestUrlSharing: tsmiTestURLSharing_Click(this, e); break;
+                case MainFormCommand.Donate: tsbDonate_Click(this, e); break;
+                case MainFormCommand.X: tsbX_Click(this, e); break;
+                case MainFormCommand.Discord: tsbDiscord_Click(this, e); break;
+                case MainFormCommand.About: tsbAbout_Click(this, e); break;
             }
         }
 
@@ -1267,13 +1351,14 @@ namespace ShareX
 
         protected override void SetVisibleCore(bool value)
         {
-            if (value && !IsHandleCreated && (Program.SilentRun || Program.Settings.SilentRun) && Program.Settings.ShowTray)
+            if (value && !IsHandleCreated)
             {
                 CreateHandle();
-                value = false;
             }
 
-            base.SetVisibleCore(value);
+            // WinForms remains the process message-loop and global-hotkey host. The
+            // actual main window is Avalonia and is shown after initialization.
+            base.SetVisibleCore(false);
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -1329,6 +1414,7 @@ namespace ShareX
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            MainWindowIntegration.Close();
             TaskManager.StopAllTasks();
         }
 

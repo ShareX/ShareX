@@ -387,7 +387,7 @@ namespace ShareX
 
             if (ready)
             {
-                Program.MainForm.niTray.Visible = Program.Settings.ShowTray;
+                MainWindowIntegration.SetTrayVisible(Program.Settings.ShowTray);
             }
 
             cbSilentRun.Enabled = Program.Settings.ShowTray;

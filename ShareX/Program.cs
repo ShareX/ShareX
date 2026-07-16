@@ -438,11 +438,11 @@ namespace ShareX
         {
             if (args == null || args.Length < 1)
             {
-                if (MainForm.niTray != null && MainForm.niTray.Visible)
+                if (Program.Settings.ShowTray)
                 {
                     // Workaround for Windows startup tray icon bug
-                    MainForm.niTray.Visible = false;
-                    MainForm.niTray.Visible = true;
+                    MainWindowIntegration.SetTrayVisible(false);
+                    MainWindowIntegration.SetTrayVisible(true);
                 }
 
                 MainForm.ForceActivate();

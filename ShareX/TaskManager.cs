@@ -38,6 +38,12 @@ namespace ShareX
 {
     public static class TaskManager
     {
+        public static event Action<WorkerTask> TaskAdded;
+        public static event Action<WorkerTask> TaskRemoved;
+        public static event Action<WorkerTask> TaskChanged;
+        public static event Action<WorkerTask, Bitmap> TaskImageReady;
+        public static event Action TaskCollectionChanged;
+
         public static List<WorkerTask> Tasks { get; } = new List<WorkerTask>();
         public static TaskListView TaskListView { get; set; }
         public static TaskThumbnailView TaskThumbnailView { get; set; }
@@ -68,6 +74,9 @@ namespace ShareX
 
                 TaskThumbnailPanel panel = TaskThumbnailView.AddPanel(task);
 
+                TaskAdded?.Invoke(task);
+                TaskCollectionChanged?.Invoke();
+
                 if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
                 {
                     panel.UpdateThumbnail();
@@ -91,6 +100,9 @@ namespace ShareX
                 TaskListView.RemoveItem(task);
 
                 TaskThumbnailView.RemovePanel(task);
+
+                TaskRemoved?.Invoke(task);
+                TaskCollectionChanged?.Invoke();
 
                 task.Dispose();
             }
@@ -132,6 +144,7 @@ namespace ShareX
         public static void UpdateMainFormTip()
         {
             Program.MainForm.pHotkeys.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
+            TaskCollectionChanged?.Invoke();
         }
 
         private static void Task_StatusChanged(WorkerTask task)
@@ -146,6 +159,7 @@ namespace ShareX
             }
 
             UpdateProgressUI();
+            TaskChanged?.Invoke(task);
         }
 
         private static void Task_ImageReady(WorkerTask task, Bitmap image)
@@ -161,6 +175,9 @@ namespace ShareX
                     panel.UpdateThumbnail(image);
                 }
             }
+
+            TaskChanged?.Invoke(task);
+            TaskImageReady?.Invoke(task, image);
         }
 
         private static void Task_UploadStarted(WorkerTask task)
@@ -187,6 +204,8 @@ namespace ShareX
                 panel.UpdateStatus();
                 panel.ProgressVisible = true;
             }
+
+            TaskChanged?.Invoke(task);
         }
 
         private static void Task_UploadProgressChanged(WorkerTask task)
@@ -220,6 +239,7 @@ namespace ShareX
                 }
 
                 UpdateProgressUI();
+                TaskChanged?.Invoke(task);
             }
         }
 
@@ -250,6 +270,8 @@ namespace ShareX
             {
                 panel.ProgressVisible = false;
             }
+
+            TaskChanged?.Invoke(task);
         }
 
         private static void Task_TaskCompleted(WorkerTask task)
@@ -408,6 +430,8 @@ namespace ShareX
             }
             finally
             {
+                TaskChanged?.Invoke(task);
+
                 if (!IsBusy && Program.CLI.IsCommandExist("AutoClose"))
                 {
                     Application.Exit();
@@ -451,21 +475,24 @@ namespace ShareX
 
             if (isTasksWorking)
             {
-                Program.MainForm.Text = string.Format("{0} - {1:0.0}%", Program.Title, averageProgress);
+                string title = string.Format("{0} - {1:0.0}%", Program.Title, averageProgress);
+                Program.MainForm.Text = title;
+                MainWindowIntegration.SetTitle(title);
                 UpdateTrayIcon((int)averageProgress);
-                TaskbarManager.SetProgressValue(Program.MainForm, (int)averageProgress);
+                TaskbarManager.SetProgressValue((int)averageProgress);
             }
             else
             {
                 Program.MainForm.Text = Program.Title;
+                MainWindowIntegration.SetTitle(Program.Title);
                 UpdateTrayIcon();
-                TaskbarManager.SetProgressState(Program.MainForm, TaskbarProgressBarStatus.NoProgress);
+                TaskbarManager.SetProgressState(TaskbarProgressBarStatus.NoProgress);
             }
         }
 
         public static void UpdateTrayIcon(int progress = -1)
         {
-            if (Program.Settings.TrayIconProgressEnabled && Program.MainForm.niTray.Visible && lastIconStatus != progress)
+            if (Program.Settings.TrayIconProgressEnabled && Program.Settings.ShowTray && lastIconStatus != progress)
             {
                 Icon icon;
 
@@ -488,11 +515,8 @@ namespace ShareX
                     icon = ShareXResources.Icon;
                 }
 
-                using (Icon oldIcon = Program.MainForm.niTray.Icon)
-                {
-                    Program.MainForm.niTray.Icon = icon;
-                    oldIcon.DisposeHandle();
-                }
+                MainWindowIntegration.SetTrayIcon(icon);
+                icon.Dispose();
 
                 lastIconStatus = progress;
             }

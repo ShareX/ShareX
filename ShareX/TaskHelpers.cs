@@ -2980,20 +2980,7 @@ namespace ShareX
 
         public static void ToggleTrayMenu()
         {
-            ContextMenuStrip cmsTray = Program.MainForm.niTray.ContextMenuStrip;
-
-            if (cmsTray != null && !cmsTray.IsDisposed)
-            {
-                if (cmsTray.Visible)
-                {
-                    cmsTray.Close();
-                }
-                else
-                {
-                    NativeMethods.SetForegroundWindow(cmsTray.Handle);
-                    cmsTray.Show(Cursor.Position);
-                }
-            }
+            MainWindowIntegration.ShowTrayMenu();
         }
 
         public static bool IsUploadAllowed()
