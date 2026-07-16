@@ -870,7 +870,7 @@
     </Style>
 
     <Style Selector="ContextMenu">
-        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
+        <Setter Property="Background" Value="{DynamicResource MenuFlyoutPresenterBackground}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="6"/>

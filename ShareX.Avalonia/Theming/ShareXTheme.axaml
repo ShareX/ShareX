@@ -22,6 +22,7 @@
             <Color x:Key="ShareX.Color.Background.Main">#272727</Color>
             <Color x:Key="ShareX.Color.Background.Panel">#242424</Color>
             <Color x:Key="ShareX.Color.Background.Popup">#2E2E2E</Color>
+            <Color x:Key="ShareX.Color.Background.Menu">#2B2B2B</Color>
             <Color x:Key="ShareX.Color.Background.Toolbar">#222222</Color>
 
             <Color x:Key="ShareX.Color.Border">#1F1F1F</Color>
@@ -48,6 +49,8 @@
             <SolidColorBrush x:Key="ShareX.Brush.Background.Main" Color="{StaticResource ShareX.Color.Background.Main}" />
             <SolidColorBrush x:Key="ShareX.Brush.Background.Panel" Color="{StaticResource ShareX.Color.Background.Panel}" />
             <SolidColorBrush x:Key="ShareX.Brush.Background.Popup" Color="{StaticResource ShareX.Color.Background.Popup}" />
+            <SolidColorBrush x:Key="ShareX.Brush.Background.Menu" Color="{StaticResource ShareX.Color.Background.Menu}" />
+            <SolidColorBrush x:Key="MenuFlyoutPresenterBackground" Color="{StaticResource ShareX.Color.Background.Menu}" />
             <SolidColorBrush x:Key="ShareX.Brush.Background.Toolbar" Color="{StaticResource ShareX.Color.Background.Toolbar}" />
 
             <SolidColorBrush x:Key="ShareX.Brush.Border" Color="{StaticResource ShareX.Color.Border}" />
@@ -117,6 +120,7 @@
             <Color x:Key="ShareX.Color.Background.Main">#F5F5F7</Color>
             <Color x:Key="ShareX.Color.Background.Panel">#FDFDFD</Color>
             <Color x:Key="ShareX.Color.Background.Popup">#FDFDFD</Color>
+            <Color x:Key="ShareX.Color.Background.Menu">#F2F2F2</Color>
             <Color x:Key="ShareX.Color.Background.Toolbar">#FDFDFD</Color>
 
             <Color x:Key="ShareX.Color.Border">#E5E5E8</Color>
@@ -143,6 +147,8 @@
             <SolidColorBrush x:Key="ShareX.Brush.Background.Main" Color="{StaticResource ShareX.Color.Background.Main}" />
             <SolidColorBrush x:Key="ShareX.Brush.Background.Panel" Color="{StaticResource ShareX.Color.Background.Panel}" />
             <SolidColorBrush x:Key="ShareX.Brush.Background.Popup" Color="{StaticResource ShareX.Color.Background.Popup}" />
+            <SolidColorBrush x:Key="ShareX.Brush.Background.Menu" Color="{StaticResource ShareX.Color.Background.Menu}" />
+            <SolidColorBrush x:Key="MenuFlyoutPresenterBackground" Color="{StaticResource ShareX.Color.Background.Menu}" />
             <SolidColorBrush x:Key="ShareX.Brush.Background.Toolbar" Color="{StaticResource ShareX.Color.Background.Toolbar}" />
 
             <SolidColorBrush x:Key="ShareX.Brush.Border" Color="{StaticResource ShareX.Color.Border}" />
