@@ -95,6 +95,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         _host.niTray.ContextMenuStrip = null;
         _host.niTray.Text = Program.TitleShort;
         _host.niTray.Visible = Program.Settings.ShowTray;
+        _host.niTray.MouseDown += OnHostTrayMouseDown;
         _host.niTray.MouseUp += OnHostTrayMouseUp;
 
         TaskManager.TaskAdded += OnTaskAdded;
@@ -591,8 +592,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 SelectOnly(item);
             }
 
-            ContextMenu contextMenu = BuildTaskContextMenu();
-            TryOpenContextMenu(contextMenu, control, PlacementMode.Pointer);
             e.Handled = true;
             return;
         }
@@ -639,6 +638,23 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         {
             ExecuteThumbnailClick(item, Program.Settings.ThumbnailClickAction);
         }
+    }
+
+    private void OnThumbnailPointerReleased(object? sender, PointerReleasedEventArgs e)
+    {
+        if (sender is not Control control || control.DataContext is not ThumbnailItemViewModel)
+        {
+            return;
+        }
+
+        if (e.GetCurrentPoint(control).Properties.PointerUpdateKind != PointerUpdateKind.RightButtonReleased)
+        {
+            return;
+        }
+
+        ContextMenu contextMenu = BuildTaskContextMenu();
+        TryOpenContextMenu(contextMenu, control, PlacementMode.Pointer);
+        e.Handled = true;
     }
 
     private void OnThumbnailDoubleTapped(object? sender, TappedEventArgs e)
@@ -897,6 +913,17 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return;
         }
 
+        CloseActiveContextMenu();
+        e.Handled = true;
+    }
+
+    private void OnMainContentPointerReleased(object? sender, PointerReleasedEventArgs e)
+    {
+        if (e.GetCurrentPoint(this).Properties.PointerUpdateKind != PointerUpdateKind.RightButtonReleased)
+        {
+            return;
+        }
+
         if (ThumbnailItems.Count == 0)
         {
             return;
@@ -966,6 +993,21 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         UploadManager.DragDropUpload(dataObject);
         e.Handled = true;
+    }
+
+    private void OnHostTrayMouseDown(object? sender, FormsMouseEventArgs e)
+    {
+        if (e.Button == FormsMouseButtons.Right)
+        {
+            Dispatcher.UIThread.Post(() =>
+            {
+                if (!_disposed)
+                {
+                    CloseActiveContextMenu();
+                    CloseTrayMenuAnchor();
+                }
+            });
+        }
     }
 
     private void OnHostTrayMouseUp(object? sender, FormsMouseEventArgs e)
@@ -1062,6 +1104,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         ThemeManager.ThemeChanged -= OnThemeChanged;
         CloseActiveContextMenu();
         CloseTrayMenuAnchor();
+        _host.niTray.MouseDown -= OnHostTrayMouseDown;
         _host.niTray.MouseUp -= OnHostTrayMouseUp;
         _host.niTray.Visible = false;
         _host.niTray.Icon = null;

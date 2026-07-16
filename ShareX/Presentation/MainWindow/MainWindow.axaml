@@ -68,7 +68,9 @@
             </ScrollViewer>
         </Border>
 
-        <Grid Grid.Column="1" PointerPressed="OnMainContentPointerPressed">
+        <Grid Grid.Column="1"
+              PointerPressed="OnMainContentPointerPressed"
+              PointerReleased="OnMainContentPointerReleased">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding ThumbnailItems}" Margin="6">
                         <ItemsControl.ItemsPanel>
@@ -81,6 +83,7 @@
                                 <Border Classes="thumbnail-card"
                                         Classes.selected="{Binding IsSelected}"
                                         PointerPressed="OnThumbnailPointerPressed"
+                                        PointerReleased="OnThumbnailPointerReleased"
                                         DoubleTapped="OnThumbnailDoubleTapped"
                                         ToolTip.Tip="{Binding Details}">
                                     <StackPanel Width="{Binding Width}" Spacing="3">
