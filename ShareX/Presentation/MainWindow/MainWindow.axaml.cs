@@ -657,6 +657,38 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         e.Handled = true;
     }
 
+    private void OnThumbnailTitlePointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        if (sender is Control control &&
+            e.GetCurrentPoint(control).Properties.PointerUpdateKind == PointerUpdateKind.LeftButtonPressed)
+        {
+            e.Handled = true;
+        }
+    }
+
+    private void OnThumbnailTitlePointerReleased(object? sender, PointerReleasedEventArgs e)
+    {
+        if (sender is not Control { DataContext: ThumbnailItemViewModel item } control ||
+            e.GetCurrentPoint(control).Properties.PointerUpdateKind != PointerUpdateKind.LeftButtonReleased)
+        {
+            return;
+        }
+
+        TaskInfo? info = item.Task.Info;
+        string? url = info?.Result?.ToString();
+
+        if (!string.IsNullOrEmpty(url))
+        {
+            URLHelpers.OpenURL(url);
+        }
+        else if (!string.IsNullOrEmpty(info?.FilePath))
+        {
+            FileHelpers.OpenFile(info.FilePath);
+        }
+
+        e.Handled = true;
+    }
+
     private void OnThumbnailDoubleTapped(object? sender, TappedEventArgs e)
     {
         if (sender is Control { DataContext: ThumbnailItemViewModel item } &&

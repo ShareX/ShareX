@@ -84,17 +84,27 @@
                                         Classes.selected="{Binding IsSelected}"
                                         PointerPressed="OnThumbnailPointerPressed"
                                         PointerReleased="OnThumbnailPointerReleased"
-                                        DoubleTapped="OnThumbnailDoubleTapped"
-                                        ToolTip.Tip="{Binding Details}">
+                                        DoubleTapped="OnThumbnailDoubleTapped">
                                     <StackPanel Width="{Binding Width}" Spacing="3">
-                                        <TextBlock Text="{Binding Title}"
-                                                   IsVisible="{Binding ShowTitleAbove}"
-                                                   Foreground="{DynamicResource ShareX.Brush.Text}"
-                                                   FontWeight="Normal"
-                                                   TextAlignment="Center"
-                                                   HorizontalAlignment="Stretch"
-                                                   TextTrimming="CharacterEllipsis"
-                                                   MaxLines="1"/>
+                                        <Border Width="{Binding Width}"
+                                                IsVisible="{Binding ShowTitleAbove}"
+                                                Background="Transparent"
+                                                Cursor="Hand"
+                                                PointerPressed="OnThumbnailTitlePointerPressed"
+                                                PointerReleased="OnThumbnailTitlePointerReleased">
+                                            <ToolTip.Tip>
+                                                <TextBlock Text="{Binding Details}"
+                                                           FontWeight="Normal"
+                                                           TextWrapping="WrapWithOverflow"/>
+                                            </ToolTip.Tip>
+                                            <TextBlock Text="{Binding Title}"
+                                                       Foreground="{DynamicResource ShareX.Brush.Text}"
+                                                       FontWeight="Normal"
+                                                       TextAlignment="Center"
+                                                       HorizontalAlignment="Stretch"
+                                                       TextTrimming="CharacterEllipsis"
+                                                       MaxLines="1"/>
+                                        </Border>
                                         <Border Width="{Binding Width}"
                                                 Height="{Binding Height}"
                                                 Background="{DynamicResource ShareX.Brush.Background.Panel}"
@@ -128,14 +138,25 @@
                                                              VerticalAlignment="Bottom"/>
                                             </Grid>
                                         </Border>
-                                        <TextBlock Text="{Binding Title}"
-                                                   IsVisible="{Binding ShowTitleBelow}"
-                                                   Foreground="{DynamicResource ShareX.Brush.Text}"
-                                                   FontWeight="Normal"
-                                                   TextAlignment="Center"
-                                                   HorizontalAlignment="Stretch"
-                                                   TextTrimming="CharacterEllipsis"
-                                                   MaxLines="1"/>
+                                        <Border Width="{Binding Width}"
+                                                IsVisible="{Binding ShowTitleBelow}"
+                                                Background="Transparent"
+                                                Cursor="Hand"
+                                                PointerPressed="OnThumbnailTitlePointerPressed"
+                                                PointerReleased="OnThumbnailTitlePointerReleased">
+                                            <ToolTip.Tip>
+                                                <TextBlock Text="{Binding Details}"
+                                                           FontWeight="Normal"
+                                                           TextWrapping="WrapWithOverflow"/>
+                                            </ToolTip.Tip>
+                                            <TextBlock Text="{Binding Title}"
+                                                       Foreground="{DynamicResource ShareX.Brush.Text}"
+                                                       FontWeight="Normal"
+                                                       TextAlignment="Center"
+                                                       HorizontalAlignment="Stretch"
+                                                       TextTrimming="CharacterEllipsis"
+                                                       MaxLines="1"/>
+                                        </Border>
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>
