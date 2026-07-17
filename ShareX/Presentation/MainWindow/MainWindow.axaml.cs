@@ -402,10 +402,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
             if (entry.CreateChildren != null)
             {
-                foreach (Control child in BuildMenuControls(entry.CreateChildren()))
-                {
-                    item.Items.Add(child);
-                }
+                AddLazySubmenu(item, entry.CreateChildren);
             }
 
             if (entry.ExecuteAsync != null)
@@ -426,6 +423,31 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
             yield return item;
         }
+    }
+
+    private void AddLazySubmenu(MenuItem item, Func<IReadOnlyList<MainMenuEntry>> createChildren)
+    {
+        // Keep the submenu indicator without constructing every nested menu before
+        // the root context menu can be displayed.
+        item.Items.Add(new MenuItem { IsVisible = false });
+
+        bool isPopulated = false;
+        item.SubmenuOpened += (_, e) =>
+        {
+            if (isPopulated || !ReferenceEquals(e.Source, item))
+            {
+                return;
+            }
+
+            item.Items.Clear();
+
+            foreach (Control child in BuildMenuControls(createChildren()))
+            {
+                item.Items.Add(child);
+            }
+
+            isPopulated = true;
+        };
     }
 
     private static TextBlock CreateLucideText(string glyph, double size)
