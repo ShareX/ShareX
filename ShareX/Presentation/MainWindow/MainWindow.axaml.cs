@@ -58,6 +58,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private ContextMenu? _activeContextMenu;
     private Window? _trayMenuAnchor;
     private DrawingIcon? _ownedTrayIcon;
+    private PointerPressedEventArgs? _thumbnailDragTrigger;
+    private Task<IStorageFile?>? _thumbnailDragFileTask;
+    private IPointer? _thumbnailDragPointer;
+    private Point _thumbnailDragStart;
+    private bool _thumbnailDragStarted;
+    private int _thumbnailDragVersion;
     private bool _allowClose;
     private bool _disposed;
     private int _lastSelectedIndex = -1;
@@ -633,7 +639,80 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             SelectOnly(item);
         }
 
+        PrepareThumbnailDrag(control, item, e);
         e.Handled = true;
+    }
+
+    private void PrepareThumbnailDrag(Control control, ThumbnailItemViewModel item, PointerPressedEventArgs e)
+    {
+        ResetThumbnailDrag();
+
+        string? filePath = item.Task.Info?.FilePath;
+        if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
+        {
+            return;
+        }
+
+        _thumbnailDragTrigger = e;
+        _thumbnailDragFileTask = StorageProvider.TryGetFileFromPathAsync(filePath);
+        _thumbnailDragPointer = e.Pointer;
+        _thumbnailDragStart = e.GetPosition(control);
+        e.Pointer.Capture(control);
+    }
+
+    private async void OnThumbnailPointerMoved(object? sender, PointerEventArgs e)
+    {
+        if (sender is not Control control ||
+            _thumbnailDragTrigger == null ||
+            _thumbnailDragFileTask == null ||
+            _thumbnailDragStarted ||
+            !e.GetCurrentPoint(control).Properties.IsLeftButtonPressed)
+        {
+            return;
+        }
+
+        Point position = e.GetPosition(control);
+        DrawingSize dragSize = System.Windows.Forms.SystemInformation.DragSize;
+        if (Math.Abs(position.X - _thumbnailDragStart.X) < dragSize.Width / 2d &&
+            Math.Abs(position.Y - _thumbnailDragStart.Y) < dragSize.Height / 2d)
+        {
+            return;
+        }
+
+        _thumbnailDragStarted = true;
+        int version = _thumbnailDragVersion;
+        PointerPressedEventArgs trigger = _thumbnailDragTrigger;
+        Task<IStorageFile?> fileTask = _thumbnailDragFileTask;
+        _thumbnailDragPointer = null;
+        e.Pointer.Capture(null);
+
+        try
+        {
+            IStorageFile? file = await fileTask;
+            if (file == null || version != _thumbnailDragVersion)
+            {
+                return;
+            }
+
+            DataTransfer data = new();
+            data.Add(DataTransferItem.CreateFile(file));
+
+            bool wasDropEnabled = DragDrop.GetAllowDrop(this);
+            DragDrop.SetAllowDrop(this, false);
+
+            try
+            {
+                await DragDrop.DoDragDropAsync(trigger, data, DragDropEffects.Copy);
+            }
+            finally
+            {
+                DragDrop.SetAllowDrop(this, wasDropEnabled);
+            }
+        }
+        catch (Exception ex)
+        {
+            DebugHelper.WriteException(ex);
+        }
     }
 
     private void OnThumbnailPointerReleased(object? sender, PointerReleasedEventArgs e)
@@ -647,7 +726,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         if (pointerUpdateKind == PointerUpdateKind.LeftButtonReleased)
         {
-            if (Program.Settings.ThumbnailClickAction != ThumbnailViewClickAction.Select)
+            bool wasDragging = _thumbnailDragStarted;
+            ResetThumbnailDrag();
+
+            if (!wasDragging && Program.Settings.ThumbnailClickAction != ThumbnailViewClickAction.Select)
             {
                 ExecuteThumbnailClick(item, Program.Settings.ThumbnailClickAction);
             }
@@ -664,6 +746,26 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         ContextMenu contextMenu = BuildTaskContextMenu();
         TryOpenContextMenu(contextMenu, control, PlacementMode.Pointer);
         e.Handled = true;
+    }
+
+    private void OnThumbnailPointerCaptureLost(object? sender, PointerCaptureLostEventArgs e)
+    {
+        if (!_thumbnailDragStarted)
+        {
+            ResetThumbnailDrag();
+        }
+    }
+
+    private void ResetThumbnailDrag()
+    {
+        _thumbnailDragVersion++;
+        _thumbnailDragTrigger = null;
+        _thumbnailDragFileTask = null;
+        _thumbnailDragStarted = false;
+
+        IPointer? pointer = _thumbnailDragPointer;
+        _thumbnailDragPointer = null;
+        pointer?.Capture(null);
     }
 
     private void OnThumbnailTitlePointerPressed(object? sender, PointerPressedEventArgs e)
@@ -1156,6 +1258,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.TaskImageReady -= OnTaskImageReady;
         TaskManager.TaskCollectionChanged -= OnTaskCollectionChanged;
         ThemeManager.ThemeChanged -= OnThemeChanged;
+        ResetThumbnailDrag();
         CloseActiveContextMenu();
         CloseTrayMenuAnchor();
         _host.niTray.MouseDown -= OnHostTrayMouseDown;

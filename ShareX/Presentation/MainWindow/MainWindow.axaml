@@ -5,7 +5,7 @@
         x:Class="ShareX.MainWindow"
         x:CompileBindings="False"
         Title="ShareX"
-        Width="1120"
+        Width="900"
         Height="720"
         MinWidth="760"
         WindowStartupLocation="CenterScreen"
@@ -83,7 +83,9 @@
                                 <Border Classes="thumbnail-card"
                                         Classes.selected="{Binding IsSelected}"
                                         PointerPressed="OnThumbnailPointerPressed"
+                                        PointerMoved="OnThumbnailPointerMoved"
                                         PointerReleased="OnThumbnailPointerReleased"
+                                        PointerCaptureLost="OnThumbnailPointerCaptureLost"
                                         DoubleTapped="OnThumbnailDoubleTapped">
                                     <StackPanel Width="{Binding Width}" Spacing="3">
                                         <Border Width="{Binding Width}"
