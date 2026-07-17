@@ -634,21 +634,29 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
 
         e.Handled = true;
-
-        if (Program.Settings.ThumbnailClickAction != ThumbnailViewClickAction.Select)
-        {
-            ExecuteThumbnailClick(item, Program.Settings.ThumbnailClickAction);
-        }
     }
 
     private void OnThumbnailPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
-        if (sender is not Control control || control.DataContext is not ThumbnailItemViewModel)
+        if (sender is not Control control || control.DataContext is not ThumbnailItemViewModel item)
         {
             return;
         }
 
-        if (e.GetCurrentPoint(control).Properties.PointerUpdateKind != PointerUpdateKind.RightButtonReleased)
+        PointerUpdateKind pointerUpdateKind = e.GetCurrentPoint(control).Properties.PointerUpdateKind;
+
+        if (pointerUpdateKind == PointerUpdateKind.LeftButtonReleased)
+        {
+            if (Program.Settings.ThumbnailClickAction != ThumbnailViewClickAction.Select)
+            {
+                ExecuteThumbnailClick(item, Program.Settings.ThumbnailClickAction);
+            }
+
+            e.Handled = true;
+            return;
+        }
+
+        if (pointerUpdateKind != PointerUpdateKind.RightButtonReleased)
         {
             return;
         }
