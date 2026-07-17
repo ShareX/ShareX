@@ -10,6 +10,8 @@
         MinWidth="760"
         WindowStartupLocation="CenterScreen"
         DragDrop.AllowDrop="True"
+        DragDrop.DragEnter="OnDragEnter"
+        DragDrop.DragLeave="OnDragLeave"
         DragDrop.DragOver="OnDragOver"
         DragDrop.Drop="OnDrop">
 
@@ -211,5 +213,41 @@
                     </Border>
                 </Grid>
         </Grid>
+
+        <Border x:Name="DropOverlay"
+                Grid.ColumnSpan="2"
+                IsVisible="False"
+                IsHitTestVisible="False"
+                Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+            <Border Width="440"
+                    Padding="32"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                    BorderThickness="2"
+                    CornerRadius="12">
+                <StackPanel Spacing="12" HorizontalAlignment="Center">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.upload}"
+                               FontSize="48"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="DropOverlayTitle"
+                               Text="Release to upload files"
+                               FontSize="22"
+                               Foreground="{DynamicResource ShareX.Brush.Text}"
+                               TextAlignment="Center"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="DropOverlayDescription"
+                               Text="Files dropped here will be uploaded by ShareX."
+                               FontWeight="Normal"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </Border>
     </Grid>
 </Window>

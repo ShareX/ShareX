@@ -1121,15 +1121,43 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         e.Handled = true;
     }
 
-    private void OnDragOver(object? sender, DragEventArgs e)
+    private void OnDragEnter(object? sender, DragEventArgs e) => UpdateDropOverlay(e);
+
+    private void OnDragLeave(object? sender, DragEventArgs e)
     {
-        bool supported = e.DataTransfer.TryGetFiles()?.Any() == true || !string.IsNullOrEmpty(e.DataTransfer.TryGetText());
+        DropOverlay.IsVisible = false;
+        e.Handled = true;
+    }
+
+    private void OnDragOver(object? sender, DragEventArgs e) => UpdateDropOverlay(e);
+
+    private void UpdateDropOverlay(DragEventArgs e)
+    {
+        bool hasFiles = e.DataTransfer.TryGetFiles()?.Any() == true;
+        bool hasText = !string.IsNullOrEmpty(e.DataTransfer.TryGetText());
+        bool supported = hasFiles || hasText;
+
         e.DragEffects = supported ? DragDropEffects.Copy : DragDropEffects.None;
+        DropOverlay.IsVisible = supported;
+
+        if (hasFiles)
+        {
+            DropOverlayTitle.Text = "Release to upload files";
+            DropOverlayDescription.Text = "Files dropped here will be uploaded by ShareX.";
+        }
+        else if (hasText)
+        {
+            DropOverlayTitle.Text = "Release to upload text";
+            DropOverlayDescription.Text = "Text dropped here will be uploaded by ShareX.";
+        }
+
         e.Handled = true;
     }
 
     private void OnDrop(object? sender, DragEventArgs e)
     {
+        DropOverlay.IsVisible = false;
+
         FormsDataObject dataObject = new();
         string[] files = e.DataTransfer.TryGetFiles()?
             .Select(x => x.TryGetLocalPath())
