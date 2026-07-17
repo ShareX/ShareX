@@ -27,7 +27,6 @@ namespace ShareX;
 public partial class AboutWindow : Window
 {
     private UpdateChecker? _updateChecker;
-    private bool _checkUpdate;
     private bool _updateChecked;
 
     public AboutWindow()
@@ -48,7 +47,6 @@ public partial class AboutWindow : Window
 #else
         if (!SystemOptions.DisableUpdateCheck)
         {
-            _checkUpdate = true;
             UpdatePanel.IsVisible = true;
             UpdateStatusText.Text = "Checking for updates...";
         }
@@ -61,7 +59,7 @@ public partial class AboutWindow : Window
     {
         Activate();
 
-        if (!_checkUpdate || _updateChecked)
+        if (!UpdatePanel.IsVisible || _updateChecked)
         {
             return;
         }

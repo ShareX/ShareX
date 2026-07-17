@@ -402,6 +402,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             {
                 Header = entry.Header,
                 Icon = CreateAccentMenuIcon(entry.Icon, 16),
+                InputGesture = entry.InputGesture,
                 IsEnabled = entry.IsEnabled,
                 IsChecked = entry.IsChecked,
                 ToggleType = entry.ToggleType switch
@@ -766,22 +767,28 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Submenu("Open", LucideIcons.external_link, () => BuildOpenTaskMenu(selected, statuses), hasSelection),
             Submenu("Copy", LucideIcons.copy, () => BuildCopyTaskMenu(selected, statuses), hasSelection && !isWorking),
             Item("Upload selected file", LucideIcons.file_up, _uploadInfoManager.Upload,
-                !SystemOptions.DisableUpload && hasSelection && !isWorking && selected!.IsFileExist),
+                !SystemOptions.DisableUpload && hasSelection && !isWorking && selected!.IsFileExist,
+                new KeyGesture(Key.U, KeyModifiers.Control)),
             Item("Download selected URL", LucideIcons.download, _uploadInfoManager.Download,
-                hasSelection && !isWorking && selected!.IsFileURL),
+                hasSelection && !isWorking && selected!.IsFileURL,
+                new KeyGesture(Key.D, KeyModifiers.Control)),
             Item("Edit image", LucideIcons.image, _uploadInfoManager.EditImage,
-                hasSelection && !isWorking && selected!.IsImageFile),
+                hasSelection && !isWorking && selected!.IsImageFile,
+                new KeyGesture(Key.E, KeyModifiers.Control)),
             Item("Beautify image", LucideIcons.sparkles, _uploadInfoManager.BeautifyImage,
                 hasSelection && !isWorking && selected!.IsImageFile),
             Item("Add image effects", LucideIcons.wand_sparkles, _uploadInfoManager.AddImageEffects,
                 hasSelection && !isWorking && selected!.IsImageFile),
             Item("Pin to screen", LucideIcons.pin, _uploadInfoManager.PinToScreen,
-                hasSelection && !isWorking && selected!.IsImageFile),
+                hasSelection && !isWorking && selected!.IsImageFile,
+                new KeyGesture(Key.P, KeyModifiers.Control)),
             Submenu("Run action", LucideIcons.play, () => BuildExternalActionsMenu(selected),
                 hasSelection && !isWorking && HasExternalActions(selected!.Info.FilePath)),
-            Item("Delete selected item", LucideIcons.trash_2, RemoveSelectedTasks, hasSelection && !isWorking),
+            Item("Delete selected item", LucideIcons.trash_2, RemoveSelectedTasks, hasSelection && !isWorking,
+                new KeyGesture(Key.Delete)),
             Item("Delete selected file", LucideIcons.file_x, DeleteSelectedFiles,
-                hasSelection && !isWorking && selected!.IsFileExist),
+                hasSelection && !isWorking && selected!.IsFileExist,
+                new KeyGesture(Key.Delete, KeyModifiers.Shift)),
             Submenu("Shorten selected URL", LucideIcons.link_2, BuildUrlShortenerMenu,
                 !SystemOptions.DisableUpload && hasSelection && !isWorking && selected!.IsURLExist),
             Submenu("Share selected URL", LucideIcons.globe_2, BuildUrlSharingMenu,
@@ -811,13 +818,16 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         return new List<MainMenuEntry>
         {
-            Item("URL", LucideIcons.link, _uploadInfoManager.OpenURL, selected?.IsURLExist == true),
+            Item("URL", LucideIcons.link, _uploadInfoManager.OpenURL, selected?.IsURLExist == true,
+                new KeyGesture(Key.Enter)),
             Item("Shortened URL", LucideIcons.link_2, _uploadInfoManager.OpenShortenedURL, selected?.IsShortenedURLExist == true),
             Item("Thumbnail URL", LucideIcons.image, _uploadInfoManager.OpenThumbnailURL, selected?.IsThumbnailURLExist == true),
             Item("Deletion URL", LucideIcons.trash_2, _uploadInfoManager.OpenDeletionURL, selected?.IsDeletionURLExist == true),
             MainMenuEntry.Separator(),
-            Item("File", LucideIcons.file, _uploadInfoManager.OpenFile, selected?.IsFileExist == true),
-            Item("Folder", LucideIcons.folder_open, _uploadInfoManager.OpenFolder, selected?.IsFileExist == true),
+            Item("File", LucideIcons.file, _uploadInfoManager.OpenFile, selected?.IsFileExist == true,
+                new KeyGesture(Key.Enter, KeyModifiers.Control)),
+            Item("Folder", LucideIcons.folder_open, _uploadInfoManager.OpenFolder, selected?.IsFileExist == true,
+                new KeyGesture(Key.Enter, KeyModifiers.Shift)),
             Item("Thumbnail file", LucideIcons.file_image, _uploadInfoManager.OpenThumbnailFile, selected?.IsThumbnailFileExist == true)
         };
     }
@@ -826,13 +836,16 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         List<MainMenuEntry> entries = new()
         {
-            Item("URL", LucideIcons.link, _uploadInfoManager.CopyURL, statuses.Any(x => x.IsURLExist)),
+            Item("URL", LucideIcons.link, _uploadInfoManager.CopyURL, statuses.Any(x => x.IsURLExist),
+                new KeyGesture(Key.C, KeyModifiers.Control)),
             Item("Shortened URL", LucideIcons.link_2, _uploadInfoManager.CopyShortenedURL, statuses.Any(x => x.IsShortenedURLExist)),
             Item("Thumbnail URL", LucideIcons.image, _uploadInfoManager.CopyThumbnailURL, statuses.Any(x => x.IsThumbnailURLExist)),
             Item("Deletion URL", LucideIcons.trash_2, _uploadInfoManager.CopyDeletionURL, statuses.Any(x => x.IsDeletionURLExist)),
             MainMenuEntry.Separator(),
-            Item("File", LucideIcons.file, _uploadInfoManager.CopyFile, selected?.IsFileExist == true),
-            Item("Image", LucideIcons.image, _uploadInfoManager.CopyImage, selected?.IsImageFile == true),
+            Item("File", LucideIcons.file, _uploadInfoManager.CopyFile, selected?.IsFileExist == true,
+                new KeyGesture(Key.C, KeyModifiers.Shift)),
+            Item("Image", LucideIcons.image, _uploadInfoManager.CopyImage, selected?.IsImageFile == true,
+                new KeyGesture(Key.C, KeyModifiers.Alt)),
             Item("Image dimensions", LucideIcons.ruler, _uploadInfoManager.CopyImageDimensions, selected?.IsImageFile == true),
             Item("Text", LucideIcons.file_text, _uploadInfoManager.CopyText, selected?.IsTextFile == true),
             Item("Thumbnail file", LucideIcons.file_image, _uploadInfoManager.CopyThumbnailFile, selected?.IsThumbnailFileExist == true),
@@ -848,7 +861,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Item("Markdown image", LucideIcons.image, _uploadInfoManager.CopyMarkdownImage, statuses.Any(x => x.IsImageURL)),
             Item("Markdown linked image", LucideIcons.images, _uploadInfoManager.CopyMarkdownLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
             MainMenuEntry.Separator(),
-            Item("File path", LucideIcons.route, _uploadInfoManager.CopyFilePath, statuses.Any(x => x.IsFilePathValid)),
+            Item("File path", LucideIcons.route, _uploadInfoManager.CopyFilePath, statuses.Any(x => x.IsFilePathValid),
+                new KeyGesture(Key.C, KeyModifiers.Control | KeyModifiers.Shift)),
             Item("File name", LucideIcons.file, _uploadInfoManager.CopyFileName, statuses.Any(x => x.IsFilePathValid)),
             Item("File name with extension", LucideIcons.files, _uploadInfoManager.CopyFileNameWithExtension, statuses.Any(x => x.IsFilePathValid)),
             Item("Folder", LucideIcons.folder, _uploadInfoManager.CopyFolder, statuses.Any(x => x.IsFilePathValid))
@@ -1190,11 +1204,13 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void OnPropertyChanged([CallerMemberName] string? propertyName = null) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-    private static MainMenuEntry Item(string header, string icon, Action execute, bool visible = true) =>
-        new(header, icon, execute, isVisible: visible);
+    private static MainMenuEntry Item(string header, string icon, Action execute, bool visible = true,
+        KeyGesture? inputGesture = null) =>
+        new(header, icon, execute, isVisible: visible, inputGesture: inputGesture);
 
-    private static MainMenuEntry Item(string header, string icon, Func<Task> execute, bool visible = true) =>
-        new(header, icon, execute, isVisible: visible);
+    private static MainMenuEntry Item(string header, string icon, Func<Task> execute, bool visible = true,
+        KeyGesture? inputGesture = null) =>
+        new(header, icon, execute, isVisible: visible, inputGesture: inputGesture);
 
     private static MainMenuEntry Submenu(string header, string icon, Func<IReadOnlyList<MainMenuEntry>> children, bool visible = true) =>
         new(header, icon, createChildren: children, isVisible: visible);

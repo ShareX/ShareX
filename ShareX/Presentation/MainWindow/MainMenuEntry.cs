@@ -14,6 +14,7 @@
 
 #nullable enable
 
+using Avalonia.Input;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -38,6 +39,7 @@ internal sealed class MainMenuEntry
     public bool IsVisible { get; }
     public bool IsChecked { get; }
     public MainMenuToggleType ToggleType { get; }
+    public KeyGesture? InputGesture { get; }
 
     public MainMenuEntry(
         string header,
@@ -47,7 +49,8 @@ internal sealed class MainMenuEntry
         bool isEnabled = true,
         bool isVisible = true,
         bool isChecked = false,
-        MainMenuToggleType toggleType = MainMenuToggleType.None)
+        MainMenuToggleType toggleType = MainMenuToggleType.None,
+        KeyGesture? inputGesture = null)
     {
         Header = header;
         Icon = icon;
@@ -61,6 +64,7 @@ internal sealed class MainMenuEntry
         IsVisible = isVisible;
         IsChecked = isChecked;
         ToggleType = toggleType;
+        InputGesture = inputGesture;
     }
 
     public MainMenuEntry(
@@ -71,7 +75,8 @@ internal sealed class MainMenuEntry
         bool isEnabled = true,
         bool isVisible = true,
         bool isChecked = false,
-        MainMenuToggleType toggleType = MainMenuToggleType.None)
+        MainMenuToggleType toggleType = MainMenuToggleType.None,
+        KeyGesture? inputGesture = null)
     {
         Header = header;
         Icon = icon;
@@ -81,6 +86,7 @@ internal sealed class MainMenuEntry
         IsVisible = isVisible;
         IsChecked = isChecked;
         ToggleType = toggleType;
+        InputGesture = inputGesture;
     }
 
     private MainMenuEntry()
