@@ -1121,27 +1121,6 @@
   <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
     <value>Выбрать</value>
   </data>
-  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
-    <value>Внизу</value>
-  </data>
-  <data name="ImagePreviewLocation_Side" xml:space="preserve">
-    <value>Сбоку</value>
-  </data>
-  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
-    <value>Автоматически</value>
-  </data>
-  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
-    <value>Скрыть</value>
-  </data>
-  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
-    <value>Показывать</value>
-  </data>
-  <data name="TaskViewMode_ListView" xml:space="preserve">
-    <value>Режим списка</value>
-  </data>
-  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
-    <value>Режим миниатюр</value>
-  </data>
   <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
     <value>Внизу</value>
   </data>

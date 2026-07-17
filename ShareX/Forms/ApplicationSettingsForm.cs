@@ -81,11 +81,8 @@ namespace ShareX
             cbTrayLeftClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
             cbTrayMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
             cbUpdateChannel.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<UpdateChannel>());
-            cbMainWindowTaskViewMode.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<TaskViewMode>());
             cbThumbnailViewTitleLocation.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ThumbnailTitleLocation>());
             cbThumbnailViewThumbnailClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ThumbnailViewClickAction>());
-            cbListViewImagePreviewVisibility.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImagePreviewVisibility>());
-            cbListViewImagePreviewLocation.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImagePreviewLocation>());
 
             eiTheme.ObjectType = typeof(ShareXTheme);
 
@@ -183,16 +180,11 @@ namespace ShareX
             nudCleanupKeepFileCount.SetValue(Program.Settings.CleanupKeepFileCount);
 
             // Main window
-            cbMainWindowShowMenu.Checked = Program.Settings.ShowMenu;
-            cbMainWindowTaskViewMode.SelectedIndex = (int)Program.Settings.TaskViewMode;
             cbThumbnailViewShowTitle.Checked = Program.Settings.ShowThumbnailTitle;
             cbThumbnailViewTitleLocation.SelectedIndex = (int)Program.Settings.ThumbnailTitleLocation;
             nudThumbnailViewThumbnailSizeWidth.SetValue(Program.Settings.ThumbnailSize.Width);
             nudThumbnailViewThumbnailSizeHeight.SetValue(Program.Settings.ThumbnailSize.Height);
             cbThumbnailViewThumbnailClickAction.SelectedIndex = (int)Program.Settings.ThumbnailClickAction;
-            cbListViewShowColumns.Checked = Program.Settings.ShowColumns;
-            cbListViewImagePreviewVisibility.SelectedIndex = (int)Program.Settings.ImagePreview;
-            cbListViewImagePreviewLocation.SelectedIndex = (int)Program.Settings.ImagePreviewLocation;
 
             // Clipboard formats
             lvClipboardFormats.Items.Clear();
@@ -863,16 +855,6 @@ namespace ShareX
 
         #region Main window
 
-        private void cbMainWindowShowMenu_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ShowMenu = cbMainWindowShowMenu.Checked;
-        }
-
-        private void cbMainWindowTaskViewMode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Program.Settings.TaskViewMode = (TaskViewMode)cbMainWindowTaskViewMode.SelectedIndex;
-        }
-
         private void cbThumbnailViewShowTitle_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.ShowThumbnailTitle = cbThumbnailViewShowTitle.Checked;
@@ -902,21 +884,6 @@ namespace ShareX
         private void cbThumbnailViewThumbnailClickAction_SelectedIndexChanged(object sender, EventArgs e)
         {
             Program.Settings.ThumbnailClickAction = (ThumbnailViewClickAction)cbThumbnailViewThumbnailClickAction.SelectedIndex;
-        }
-
-        private void cbListViewShowColumns_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ShowColumns = cbListViewShowColumns.Checked;
-        }
-
-        private void cbListViewImagePreviewVisibility_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ImagePreview = (ImagePreviewVisibility)cbListViewImagePreviewVisibility.SelectedIndex;
-        }
-
-        private void cbListViewImagePreviewLocation_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ImagePreviewLocation = (ImagePreviewLocation)cbListViewImagePreviewLocation.SelectedIndex;
         }
 
         #endregion

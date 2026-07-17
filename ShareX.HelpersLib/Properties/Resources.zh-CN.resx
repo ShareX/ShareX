@@ -1121,27 +1121,6 @@
   <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
     <value>选择</value>
   </data>
-  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
-    <value>底边</value>
-  </data>
-  <data name="ImagePreviewLocation_Side" xml:space="preserve">
-    <value>侧边</value>
-  </data>
-  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
-    <value>自动</value>
-  </data>
-  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
-    <value>隐藏</value>
-  </data>
-  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
-    <value>显示</value>
-  </data>
-  <data name="TaskViewMode_ListView" xml:space="preserve">
-    <value>列表视图</value>
-  </data>
-  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
-    <value>缩略图视图</value>
-  </data>
   <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
     <value>底部</value>
   </data>

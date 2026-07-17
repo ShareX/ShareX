@@ -383,16 +383,6 @@ namespace ShareX
         Cancel
     }
 
-    public enum ImagePreviewVisibility // Localized
-    {
-        Show, Hide, Automatic
-    }
-
-    public enum ImagePreviewLocation // Localized
-    {
-        Side, Bottom
-    }
-
     public enum ThumbnailTitleLocation // Localized
     {
         Top, Bottom
@@ -428,12 +418,6 @@ namespace ShareX
         EnabledByPolicy = StartupTaskState.EnabledByPolicy
     }
 #endif
-
-    public enum TaskViewMode // Localized
-    {
-        ListView,
-        ThumbnailView
-    }
 
     public enum NativeMessagingAction
     {

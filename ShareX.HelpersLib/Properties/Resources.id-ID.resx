@@ -1121,27 +1121,6 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
     <value>Pilih</value>
   </data>
-  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
-    <value>Bawah</value>
-  </data>
-  <data name="ImagePreviewLocation_Side" xml:space="preserve">
-    <value>Sisi</value>
-  </data>
-  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
-    <value>Otomatis</value>
-  </data>
-  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
-    <value>Sembunyikan</value>
-  </data>
-  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
-    <value>Tampilkan</value>
-  </data>
-  <data name="TaskViewMode_ListView" xml:space="preserve">
-    <value>Tampilan daftar</value>
-  </data>
-  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
-    <value>Tampilan thumbnail</value>
-  </data>
   <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
     <value>Bawah</value>
   </data>

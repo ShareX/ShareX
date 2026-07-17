@@ -77,10 +77,7 @@ namespace ShareX
                 TaskAdded?.Invoke(task);
                 TaskCollectionChanged?.Invoke();
 
-                if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
-                {
-                    panel.UpdateThumbnail();
-                }
+                panel.UpdateThumbnail();
 
                 if (task.Status != TaskStatus.History)
                 {
@@ -169,11 +166,7 @@ namespace ShareX
             if (panel != null)
             {
                 panel.UpdateTitle();
-
-                if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
-                {
-                    panel.UpdateThumbnail(image);
-                }
+                panel.UpdateThumbnail(image);
             }
 
             TaskChanged?.Invoke(task);

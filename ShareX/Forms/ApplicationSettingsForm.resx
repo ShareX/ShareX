@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tcSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -136,7 +136,7 @@
     <value>cbUpdateChannel</value>
   </data>
   <data name="&gt;&gt;cbUpdateChannel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbUpdateChannel.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -163,7 +163,7 @@
     <value>lblUpdateChannel</value>
   </data>
   <data name="&gt;&gt;lblUpdateChannel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblUpdateChannel.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -190,7 +190,7 @@
     <value>cbAutoCheckUpdate</value>
   </data>
   <data name="&gt;&gt;cbAutoCheckUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbAutoCheckUpdate.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -220,7 +220,7 @@
     <value>cbUseWhiteShareXIcon</value>
   </data>
   <data name="&gt;&gt;cbUseWhiteShareXIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbUseWhiteShareXIcon.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -247,7 +247,7 @@
     <value>btnCheckDevBuild</value>
   </data>
   <data name="&gt;&gt;btnCheckDevBuild.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnCheckDevBuild.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -268,7 +268,7 @@
     <value>cbTrayMiddleClickAction</value>
   </data>
   <data name="&gt;&gt;cbTrayMiddleClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbTrayMiddleClickAction.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -298,7 +298,7 @@
     <value>lblTrayMiddleClickAction</value>
   </data>
   <data name="&gt;&gt;lblTrayMiddleClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblTrayMiddleClickAction.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -319,7 +319,7 @@
     <value>cbTrayLeftDoubleClickAction</value>
   </data>
   <data name="&gt;&gt;cbTrayLeftDoubleClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbTrayLeftDoubleClickAction.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -349,7 +349,7 @@
     <value>lblTrayLeftDoubleClickAction</value>
   </data>
   <data name="&gt;&gt;lblTrayLeftDoubleClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblTrayLeftDoubleClickAction.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -370,7 +370,7 @@
     <value>cbTrayLeftClickAction</value>
   </data>
   <data name="&gt;&gt;cbTrayLeftClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbTrayLeftClickAction.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -400,7 +400,7 @@
     <value>lblTrayLeftClickAction</value>
   </data>
   <data name="&gt;&gt;lblTrayLeftClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblTrayLeftClickAction.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -427,7 +427,7 @@
     <value>btnEditQuickTaskMenu</value>
   </data>
   <data name="&gt;&gt;btnEditQuickTaskMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnEditQuickTaskMenu.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -457,7 +457,7 @@
     <value>cbShowTray</value>
   </data>
   <data name="&gt;&gt;cbShowTray.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbShowTray.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -487,7 +487,7 @@
     <value>cbTrayIconProgressEnabled</value>
   </data>
   <data name="&gt;&gt;cbTrayIconProgressEnabled.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbTrayIconProgressEnabled.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -514,7 +514,7 @@
     <value>cmsLanguages</value>
   </data>
   <data name="&gt;&gt;cmsLanguages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnLanguages.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 23</value>
@@ -532,7 +532,7 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -562,7 +562,7 @@
     <value>cbRememberMainFormPosition</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormPosition.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -592,7 +592,7 @@
     <value>cbSilentRun</value>
   </data>
   <data name="&gt;&gt;cbSilentRun.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbSilentRun.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -622,7 +622,7 @@
     <value>cbTaskbarProgressEnabled</value>
   </data>
   <data name="&gt;&gt;cbTaskbarProgressEnabled.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbTaskbarProgressEnabled.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -652,7 +652,7 @@
     <value>cbRememberMainFormSize</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormSize.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -682,7 +682,7 @@
     <value>lblLanguage</value>
   </data>
   <data name="&gt;&gt;lblLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblLanguage.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -693,6 +693,7 @@
   <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tpGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
@@ -709,7 +710,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;tpGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpGeneral.Parent" xml:space="preserve">
     <value>tcSettings</value>
@@ -736,7 +737,7 @@
     <value>btnThemeReset</value>
   </data>
   <data name="&gt;&gt;btnThemeReset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnThemeReset.Parent" xml:space="preserve">
     <value>tpTheme</value>
@@ -763,7 +764,7 @@
     <value>btnThemeRemove</value>
   </data>
   <data name="&gt;&gt;btnThemeRemove.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnThemeRemove.Parent" xml:space="preserve">
     <value>tpTheme</value>
@@ -790,7 +791,7 @@
     <value>btnThemeAdd</value>
   </data>
   <data name="&gt;&gt;btnThemeAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnThemeAdd.Parent" xml:space="preserve">
     <value>tpTheme</value>
@@ -811,7 +812,7 @@
     <value>cbThemes</value>
   </data>
   <data name="&gt;&gt;cbThemes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbThemes.Parent" xml:space="preserve">
     <value>tpTheme</value>
@@ -835,7 +836,7 @@
     <value>pgTheme</value>
   </data>
   <data name="&gt;&gt;pgTheme.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pgTheme.Parent" xml:space="preserve">
     <value>tpTheme</value>
@@ -845,6 +846,9 @@
   </data>
   <data name="eiTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 48</value>
+  </data>
+  <data name="eiTheme.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="eiTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 24</value>
@@ -856,7 +860,7 @@
     <value>eiTheme</value>
   </data>
   <data name="&gt;&gt;eiTheme.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiTheme.Parent" xml:space="preserve">
     <value>tpTheme</value>
@@ -883,7 +887,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;tpTheme.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpTheme.Parent" xml:space="preserve">
     <value>tcSettings</value>
@@ -913,7 +917,7 @@
     <value>cbFirefoxAddonSupport</value>
   </data>
   <data name="&gt;&gt;cbFirefoxAddonSupport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbFirefoxAddonSupport.Parent" xml:space="preserve">
     <value>gbFirefox</value>
@@ -940,7 +944,7 @@
     <value>btnFirefoxOpenAddonPage</value>
   </data>
   <data name="&gt;&gt;btnFirefoxOpenAddonPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnFirefoxOpenAddonPage.Parent" xml:space="preserve">
     <value>gbFirefox</value>
@@ -964,7 +968,7 @@
     <value>gbFirefox</value>
   </data>
   <data name="&gt;&gt;gbFirefox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbFirefox.Parent" xml:space="preserve">
     <value>tpIntegration</value>
@@ -994,7 +998,7 @@
     <value>cbSteamShowInApp</value>
   </data>
   <data name="&gt;&gt;cbSteamShowInApp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbSteamShowInApp.Parent" xml:space="preserve">
     <value>gbSteam</value>
@@ -1013,13 +1017,12 @@
   </data>
   <data name="gbSteam.Text" xml:space="preserve">
     <value>Steam</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;gbSteam.Name" xml:space="preserve">
     <value>gbSteam</value>
   </data>
   <data name="&gt;&gt;gbSteam.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbSteam.Parent" xml:space="preserve">
     <value>tpIntegration</value>
@@ -1049,7 +1052,7 @@
     <value>cbChromeExtensionSupport</value>
   </data>
   <data name="&gt;&gt;cbChromeExtensionSupport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbChromeExtensionSupport.Parent" xml:space="preserve">
     <value>gbChrome</value>
@@ -1076,7 +1079,7 @@
     <value>btnChromeOpenExtensionPage</value>
   </data>
   <data name="&gt;&gt;btnChromeOpenExtensionPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnChromeOpenExtensionPage.Parent" xml:space="preserve">
     <value>gbChrome</value>
@@ -1100,7 +1103,7 @@
     <value>gbChrome</value>
   </data>
   <data name="&gt;&gt;gbChrome.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbChrome.Parent" xml:space="preserve">
     <value>tpIntegration</value>
@@ -1130,7 +1133,7 @@
     <value>cbEditWithShareX</value>
   </data>
   <data name="&gt;&gt;cbEditWithShareX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbEditWithShareX.Parent" xml:space="preserve">
     <value>gbWindows</value>
@@ -1157,7 +1160,7 @@
     <value>cbStartWithWindows</value>
   </data>
   <data name="&gt;&gt;cbStartWithWindows.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbStartWithWindows.Parent" xml:space="preserve">
     <value>gbWindows</value>
@@ -1187,7 +1190,7 @@
     <value>cbSendToMenu</value>
   </data>
   <data name="&gt;&gt;cbSendToMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbSendToMenu.Parent" xml:space="preserve">
     <value>gbWindows</value>
@@ -1217,7 +1220,7 @@
     <value>cbShellContextMenu</value>
   </data>
   <data name="&gt;&gt;cbShellContextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbShellContextMenu.Parent" xml:space="preserve">
     <value>gbWindows</value>
@@ -1236,13 +1239,12 @@
   </data>
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Windows</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;gbWindows.Name" xml:space="preserve">
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;gbWindows.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbWindows.Parent" xml:space="preserve">
     <value>tpIntegration</value>
@@ -1269,7 +1271,7 @@
     <value>tpIntegration</value>
   </data>
   <data name="&gt;&gt;tpIntegration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpIntegration.Parent" xml:space="preserve">
     <value>tcSettings</value>
@@ -1290,7 +1292,7 @@
     <value>txtSaveImageSubFolderPatternWindow</value>
   </data>
   <data name="&gt;&gt;txtSaveImageSubFolderPatternWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtSaveImageSubFolderPatternWindow.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1317,7 +1319,7 @@
     <value>lblSaveImageSubFolderPatternWindow</value>
   </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternWindow.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1344,7 +1346,7 @@
     <value>btnPersonalFolderPathApply</value>
   </data>
   <data name="&gt;&gt;btnPersonalFolderPathApply.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnPersonalFolderPathApply.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1371,7 +1373,7 @@
     <value>btnOpenScreenshotsFolder</value>
   </data>
   <data name="&gt;&gt;btnOpenScreenshotsFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnOpenScreenshotsFolder.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1396,13 +1398,12 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
   </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1429,7 +1430,7 @@
     <value>btnBrowsePersonalFolderPath</value>
   </data>
   <data name="&gt;&gt;btnBrowsePersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnBrowsePersonalFolderPath.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1459,7 +1460,7 @@
     <value>lblPersonalFolderPath</value>
   </data>
   <data name="&gt;&gt;lblPersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPersonalFolderPath.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1480,7 +1481,7 @@
     <value>txtPersonalFolderPath</value>
   </data>
   <data name="&gt;&gt;txtPersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPersonalFolderPath.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1507,7 +1508,7 @@
     <value>btnBrowseCustomScreenshotsPath</value>
   </data>
   <data name="&gt;&gt;btnBrowseCustomScreenshotsPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnBrowseCustomScreenshotsPath.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1534,7 +1535,7 @@
     <value>btnOpenPersonalFolderPath</value>
   </data>
   <data name="&gt;&gt;btnOpenPersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnOpenPersonalFolderPath.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1555,7 +1556,7 @@
     <value>txtCustomScreenshotsPath</value>
   </data>
   <data name="&gt;&gt;txtCustomScreenshotsPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtCustomScreenshotsPath.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1585,7 +1586,7 @@
     <value>cbUseCustomScreenshotsPath</value>
   </data>
   <data name="&gt;&gt;cbUseCustomScreenshotsPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbUseCustomScreenshotsPath.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1615,7 +1616,7 @@
     <value>lblSaveImageSubFolderPattern</value>
   </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPattern.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1640,13 +1641,12 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
   </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1667,7 +1667,7 @@
     <value>txtSaveImageSubFolderPattern</value>
   </data>
   <data name="&gt;&gt;txtSaveImageSubFolderPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtSaveImageSubFolderPattern.Parent" xml:space="preserve">
     <value>tpPaths</value>
@@ -1694,7 +1694,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;tpPaths.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpPaths.Parent" xml:space="preserve">
     <value>tcSettings</value>
@@ -1724,7 +1724,7 @@
     <value>cbAutomaticallyCleanupLogFiles</value>
   </data>
   <data name="&gt;&gt;cbAutomaticallyCleanupLogFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbAutomaticallyCleanupLogFiles.Parent" xml:space="preserve">
     <value>tpSettings</value>
@@ -1748,7 +1748,7 @@
     <value>nudCleanupKeepFileCount</value>
   </data>
   <data name="&gt;&gt;nudCleanupKeepFileCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudCleanupKeepFileCount.Parent" xml:space="preserve">
     <value>tpSettings</value>
@@ -1778,7 +1778,7 @@
     <value>lblCleanupKeepFileCount</value>
   </data>
   <data name="&gt;&gt;lblCleanupKeepFileCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblCleanupKeepFileCount.Parent" xml:space="preserve">
     <value>tpSettings</value>
@@ -1808,7 +1808,7 @@
     <value>cbAutomaticallyCleanupBackupFiles</value>
   </data>
   <data name="&gt;&gt;cbAutomaticallyCleanupBackupFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbAutomaticallyCleanupBackupFiles.Parent" xml:space="preserve">
     <value>tpSettings</value>
@@ -1835,7 +1835,7 @@
     <value>pbExportImportNote</value>
   </data>
   <data name="&gt;&gt;pbExportImportNote.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pbExportImportNote.Parent" xml:space="preserve">
     <value>tpSettings</value>
@@ -1865,7 +1865,7 @@
     <value>cbExportHistory</value>
   </data>
   <data name="&gt;&gt;cbExportHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbExportHistory.Parent" xml:space="preserve">
     <value>tpSettings</value>
@@ -1895,7 +1895,7 @@
     <value>cbExportSettings</value>
   </data>
   <data name="&gt;&gt;cbExportSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbExportSettings.Parent" xml:space="preserve">
     <value>tpSettings</value>
@@ -1925,7 +1925,7 @@
     <value>lblExportImportNote</value>
   </data>
   <data name="&gt;&gt;lblExportImportNote.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblExportImportNote.Parent" xml:space="preserve">
     <value>tpSettings</value>
@@ -1952,7 +1952,7 @@
     <value>btnResetSettings</value>
   </data>
   <data name="&gt;&gt;btnResetSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnResetSettings.Parent" xml:space="preserve">
     <value>tpSettings</value>
@@ -1979,7 +1979,7 @@
     <value>pbExportImport</value>
   </data>
   <data name="&gt;&gt;pbExportImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pbExportImport.Parent" xml:space="preserve">
     <value>tpSettings</value>
@@ -2006,7 +2006,7 @@
     <value>btnExport</value>
   </data>
   <data name="&gt;&gt;btnExport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnExport.Parent" xml:space="preserve">
     <value>tpSettings</value>
@@ -2033,7 +2033,7 @@
     <value>btnImport</value>
   </data>
   <data name="&gt;&gt;btnImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnImport.Parent" xml:space="preserve">
     <value>tpSettings</value>
@@ -2060,169 +2060,13 @@
     <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;tpSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpSettings.Parent" xml:space="preserve">
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpSettings.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="cbListViewImagePreviewLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 68</value>
-  </data>
-  <data name="cbListViewImagePreviewLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 21</value>
-  </data>
-  <data name="cbListViewImagePreviewLocation.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;cbListViewImagePreviewLocation.Name" xml:space="preserve">
-    <value>cbListViewImagePreviewLocation</value>
-  </data>
-  <data name="&gt;&gt;cbListViewImagePreviewLocation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbListViewImagePreviewLocation.Parent" xml:space="preserve">
-    <value>gbListView</value>
-  </data>
-  <data name="&gt;&gt;cbListViewImagePreviewLocation.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblListViewImagePreviewLocation.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblListViewImagePreviewLocation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblListViewImagePreviewLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 72</value>
-  </data>
-  <data name="lblListViewImagePreviewLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 13</value>
-  </data>
-  <data name="lblListViewImagePreviewLocation.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
-    <value>Image preview location:</value>
-  </data>
-  <data name="&gt;&gt;lblListViewImagePreviewLocation.Name" xml:space="preserve">
-    <value>lblListViewImagePreviewLocation</value>
-  </data>
-  <data name="&gt;&gt;lblListViewImagePreviewLocation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblListViewImagePreviewLocation.Parent" xml:space="preserve">
-    <value>gbListView</value>
-  </data>
-  <data name="&gt;&gt;lblListViewImagePreviewLocation.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbListViewImagePreviewVisibility.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 44</value>
-  </data>
-  <data name="cbListViewImagePreviewVisibility.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 21</value>
-  </data>
-  <data name="cbListViewImagePreviewVisibility.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbListViewImagePreviewVisibility.Name" xml:space="preserve">
-    <value>cbListViewImagePreviewVisibility</value>
-  </data>
-  <data name="&gt;&gt;cbListViewImagePreviewVisibility.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbListViewImagePreviewVisibility.Parent" xml:space="preserve">
-    <value>gbListView</value>
-  </data>
-  <data name="&gt;&gt;cbListViewImagePreviewVisibility.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblListViewImagePreviewVisibility.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblListViewImagePreviewVisibility.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblListViewImagePreviewVisibility.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 48</value>
-  </data>
-  <data name="lblListViewImagePreviewVisibility.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 13</value>
-  </data>
-  <data name="lblListViewImagePreviewVisibility.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
-    <value>Image preview visibility:</value>
-  </data>
-  <data name="&gt;&gt;lblListViewImagePreviewVisibility.Name" xml:space="preserve">
-    <value>lblListViewImagePreviewVisibility</value>
-  </data>
-  <data name="&gt;&gt;lblListViewImagePreviewVisibility.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblListViewImagePreviewVisibility.Parent" xml:space="preserve">
-    <value>gbListView</value>
-  </data>
-  <data name="&gt;&gt;lblListViewImagePreviewVisibility.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cbListViewShowColumns.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbListViewShowColumns.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbListViewShowColumns.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
-  </data>
-  <data name="cbListViewShowColumns.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 17</value>
-  </data>
-  <data name="cbListViewShowColumns.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbListViewShowColumns.Text" xml:space="preserve">
-    <value>Show columns</value>
-  </data>
-  <data name="&gt;&gt;cbListViewShowColumns.Name" xml:space="preserve">
-    <value>cbListViewShowColumns</value>
-  </data>
-  <data name="&gt;&gt;cbListViewShowColumns.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbListViewShowColumns.Parent" xml:space="preserve">
-    <value>gbListView</value>
-  </data>
-  <data name="&gt;&gt;cbListViewShowColumns.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="gbListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 200</value>
-  </data>
-  <data name="gbListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 104</value>
-  </data>
-  <data name="gbListView.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="gbListView.Text" xml:space="preserve">
-    <value>List view</value>
-  </data>
-  <data name="&gt;&gt;gbListView.Name" xml:space="preserve">
-    <value>gbListView</value>
-  </data>
-  <data name="&gt;&gt;gbListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbListView.Parent" xml:space="preserve">
-    <value>tpMainWindow</value>
-  </data>
-  <data name="&gt;&gt;gbListView.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="btnThumbnailViewThumbnailSizeReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2243,7 +2087,7 @@
     <value>btnThumbnailViewThumbnailSizeReset</value>
   </data>
   <data name="&gt;&gt;btnThumbnailViewThumbnailSizeReset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnThumbnailViewThumbnailSizeReset.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
@@ -2268,13 +2112,12 @@
   </data>
   <data name="lblThumbnailViewThumbnailSizeX.Text" xml:space="preserve">
     <value>x</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblThumbnailViewThumbnailSizeX.Name" xml:space="preserve">
     <value>lblThumbnailViewThumbnailSizeX</value>
   </data>
   <data name="&gt;&gt;lblThumbnailViewThumbnailSizeX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblThumbnailViewThumbnailSizeX.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
@@ -2298,7 +2141,7 @@
     <value>nudThumbnailViewThumbnailSizeHeight</value>
   </data>
   <data name="&gt;&gt;nudThumbnailViewThumbnailSizeHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudThumbnailViewThumbnailSizeHeight.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
@@ -2322,7 +2165,7 @@
     <value>nudThumbnailViewThumbnailSizeWidth</value>
   </data>
   <data name="&gt;&gt;nudThumbnailViewThumbnailSizeWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudThumbnailViewThumbnailSizeWidth.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
@@ -2343,7 +2186,7 @@
     <value>cbThumbnailViewThumbnailClickAction</value>
   </data>
   <data name="&gt;&gt;cbThumbnailViewThumbnailClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbThumbnailViewThumbnailClickAction.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
@@ -2373,7 +2216,7 @@
     <value>lblThumbnailViewThumbnailClickAction</value>
   </data>
   <data name="&gt;&gt;lblThumbnailViewThumbnailClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblThumbnailViewThumbnailClickAction.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
@@ -2403,7 +2246,7 @@
     <value>lblThumbnailViewThumbnailSize</value>
   </data>
   <data name="&gt;&gt;lblThumbnailViewThumbnailSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblThumbnailViewThumbnailSize.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
@@ -2424,7 +2267,7 @@
     <value>cbThumbnailViewTitleLocation</value>
   </data>
   <data name="&gt;&gt;cbThumbnailViewTitleLocation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbThumbnailViewTitleLocation.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
@@ -2454,7 +2297,7 @@
     <value>lblThumbnailViewTitleLocation</value>
   </data>
   <data name="&gt;&gt;lblThumbnailViewTitleLocation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblThumbnailViewTitleLocation.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
@@ -2484,7 +2327,7 @@
     <value>cbThumbnailViewShowTitle</value>
   </data>
   <data name="&gt;&gt;cbThumbnailViewShowTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbThumbnailViewShowTitle.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
@@ -2493,7 +2336,7 @@
     <value>9</value>
   </data>
   <data name="gbThumbnailView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>16, 16</value>
   </data>
   <data name="gbThumbnailView.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 128</value>
@@ -2508,94 +2351,13 @@
     <value>gbThumbnailView</value>
   </data>
   <data name="&gt;&gt;gbThumbnailView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbThumbnailView.Parent" xml:space="preserve">
     <value>tpMainWindow</value>
   </data>
   <data name="&gt;&gt;gbThumbnailView.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbMainWindowShowMenu.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbMainWindowShowMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbMainWindowShowMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="cbMainWindowShowMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 17</value>
-  </data>
-  <data name="cbMainWindowShowMenu.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
-    <value>Show menu</value>
-  </data>
-  <data name="&gt;&gt;cbMainWindowShowMenu.Name" xml:space="preserve">
-    <value>cbMainWindowShowMenu</value>
-  </data>
-  <data name="&gt;&gt;cbMainWindowShowMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbMainWindowShowMenu.Parent" xml:space="preserve">
-    <value>tpMainWindow</value>
-  </data>
-  <data name="&gt;&gt;cbMainWindowShowMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbMainWindowTaskViewMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 36</value>
-  </data>
-  <data name="cbMainWindowTaskViewMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 21</value>
-  </data>
-  <data name="cbMainWindowTaskViewMode.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbMainWindowTaskViewMode.Name" xml:space="preserve">
-    <value>cbMainWindowTaskViewMode</value>
-  </data>
-  <data name="&gt;&gt;cbMainWindowTaskViewMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbMainWindowTaskViewMode.Parent" xml:space="preserve">
-    <value>tpMainWindow</value>
-  </data>
-  <data name="&gt;&gt;cbMainWindowTaskViewMode.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblMainWindowTaskViewMode.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblMainWindowTaskViewMode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblMainWindowTaskViewMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 40</value>
-  </data>
-  <data name="lblMainWindowTaskViewMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 13</value>
-  </data>
-  <data name="lblMainWindowTaskViewMode.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
-    <value>Task view mode:</value>
-  </data>
-  <data name="&gt;&gt;lblMainWindowTaskViewMode.Name" xml:space="preserve">
-    <value>lblMainWindowTaskViewMode</value>
-  </data>
-  <data name="&gt;&gt;lblMainWindowTaskViewMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMainWindowTaskViewMode.Parent" xml:space="preserve">
-    <value>tpMainWindow</value>
-  </data>
-  <data name="&gt;&gt;lblMainWindowTaskViewMode.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="tpMainWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2616,7 +2378,7 @@
     <value>tpMainWindow</value>
   </data>
   <data name="&gt;&gt;tpMainWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpMainWindow.Parent" xml:space="preserve">
     <value>tcSettings</value>
@@ -2643,7 +2405,7 @@
     <value>lblClipboardFormatsTip</value>
   </data>
   <data name="&gt;&gt;lblClipboardFormatsTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblClipboardFormatsTip.Parent" xml:space="preserve">
     <value>tpClipboardFormats</value>
@@ -2670,7 +2432,7 @@
     <value>btnClipboardFormatEdit</value>
   </data>
   <data name="&gt;&gt;btnClipboardFormatEdit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnClipboardFormatEdit.Parent" xml:space="preserve">
     <value>tpClipboardFormats</value>
@@ -2697,7 +2459,7 @@
     <value>btnClipboardFormatRemove</value>
   </data>
   <data name="&gt;&gt;btnClipboardFormatRemove.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnClipboardFormatRemove.Parent" xml:space="preserve">
     <value>tpClipboardFormats</value>
@@ -2724,7 +2486,7 @@
     <value>btnClipboardFormatAdd</value>
   </data>
   <data name="&gt;&gt;btnClipboardFormatAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnClipboardFormatAdd.Parent" xml:space="preserve">
     <value>tpClipboardFormats</value>
@@ -2760,7 +2522,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>tpClipboardFormats</value>
@@ -2787,7 +2549,7 @@
     <value>tpClipboardFormats</value>
   </data>
   <data name="&gt;&gt;tpClipboardFormats.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpClipboardFormats.Parent" xml:space="preserve">
     <value>tcSettings</value>
@@ -2811,7 +2573,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -2838,7 +2600,7 @@
     <value>gbSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;gbSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>tpUpload</value>
@@ -2868,7 +2630,7 @@
     <value>lblUploadLimit</value>
   </data>
   <data name="&gt;&gt;lblUploadLimit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblUploadLimit.Parent" xml:space="preserve">
     <value>tpUpload</value>
@@ -2892,7 +2654,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -2919,7 +2681,7 @@
     <value>gbSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;gbSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>tpUpload</value>
@@ -2943,7 +2705,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -2970,7 +2732,7 @@
     <value>gbSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;gbSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>tpUpload</value>
@@ -2994,7 +2756,7 @@
     <value>nudUploadLimit</value>
   </data>
   <data name="&gt;&gt;nudUploadLimit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudUploadLimit.Parent" xml:space="preserve">
     <value>tpUpload</value>
@@ -3024,7 +2786,7 @@
     <value>cbUseSecondaryUploaders</value>
   </data>
   <data name="&gt;&gt;cbUseSecondaryUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbUseSecondaryUploaders.Parent" xml:space="preserve">
     <value>tpUpload</value>
@@ -3054,7 +2816,7 @@
     <value>lblUploadLimitHint</value>
   </data>
   <data name="&gt;&gt;lblUploadLimitHint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblUploadLimitHint.Parent" xml:space="preserve">
     <value>tpUpload</value>
@@ -3084,7 +2846,7 @@
     <value>cbIfUploadFailRetryOnce</value>
   </data>
   <data name="&gt;&gt;cbIfUploadFailRetryOnce.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbIfUploadFailRetryOnce.Parent" xml:space="preserve">
     <value>tpUpload</value>
@@ -3114,7 +2876,7 @@
     <value>lblBufferSize</value>
   </data>
   <data name="&gt;&gt;lblBufferSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblBufferSize.Parent" xml:space="preserve">
     <value>tpUpload</value>
@@ -3138,7 +2900,7 @@
     <value>nudRetryUpload</value>
   </data>
   <data name="&gt;&gt;nudRetryUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudRetryUpload.Parent" xml:space="preserve">
     <value>tpUpload</value>
@@ -3159,7 +2921,7 @@
     <value>cbBufferSize</value>
   </data>
   <data name="&gt;&gt;cbBufferSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbBufferSize.Parent" xml:space="preserve">
     <value>tpUpload</value>
@@ -3186,7 +2948,7 @@
     <value>tpUpload</value>
   </data>
   <data name="&gt;&gt;tpUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpUpload.Parent" xml:space="preserve">
     <value>tcSettings</value>
@@ -3216,7 +2978,7 @@
     <value>cbHistoryCheckURL</value>
   </data>
   <data name="&gt;&gt;cbHistoryCheckURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbHistoryCheckURL.Parent" xml:space="preserve">
     <value>gbHistory</value>
@@ -3246,7 +3008,7 @@
     <value>cbHistorySaveTasks</value>
   </data>
   <data name="&gt;&gt;cbHistorySaveTasks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbHistorySaveTasks.Parent" xml:space="preserve">
     <value>gbHistory</value>
@@ -3270,7 +3032,7 @@
     <value>gbHistory</value>
   </data>
   <data name="&gt;&gt;gbHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbHistory.Parent" xml:space="preserve">
     <value>tpHistory</value>
@@ -3300,7 +3062,7 @@
     <value>cbRecentTasksTrayMenuMostRecentFirst</value>
   </data>
   <data name="&gt;&gt;cbRecentTasksTrayMenuMostRecentFirst.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbRecentTasksTrayMenuMostRecentFirst.Parent" xml:space="preserve">
     <value>gbRecentLinks</value>
@@ -3330,7 +3092,7 @@
     <value>lblRecentTasksMaxCount</value>
   </data>
   <data name="&gt;&gt;lblRecentTasksMaxCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblRecentTasksMaxCount.Parent" xml:space="preserve">
     <value>gbRecentLinks</value>
@@ -3354,7 +3116,7 @@
     <value>nudRecentTasksMaxCount</value>
   </data>
   <data name="&gt;&gt;nudRecentTasksMaxCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudRecentTasksMaxCount.Parent" xml:space="preserve">
     <value>gbRecentLinks</value>
@@ -3384,7 +3146,7 @@
     <value>cbRecentTasksShowInTrayMenu</value>
   </data>
   <data name="&gt;&gt;cbRecentTasksShowInTrayMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbRecentTasksShowInTrayMenu.Parent" xml:space="preserve">
     <value>gbRecentLinks</value>
@@ -3414,7 +3176,7 @@
     <value>cbRecentTasksShowInMainWindow</value>
   </data>
   <data name="&gt;&gt;cbRecentTasksShowInMainWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbRecentTasksShowInMainWindow.Parent" xml:space="preserve">
     <value>gbRecentLinks</value>
@@ -3444,7 +3206,7 @@
     <value>cbRecentTasksSave</value>
   </data>
   <data name="&gt;&gt;cbRecentTasksSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbRecentTasksSave.Parent" xml:space="preserve">
     <value>gbRecentLinks</value>
@@ -3468,7 +3230,7 @@
     <value>gbRecentLinks</value>
   </data>
   <data name="&gt;&gt;gbRecentLinks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbRecentLinks.Parent" xml:space="preserve">
     <value>tpHistory</value>
@@ -3495,7 +3257,7 @@
     <value>tpHistory</value>
   </data>
   <data name="&gt;&gt;tpHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpHistory.Parent" xml:space="preserve">
     <value>tcSettings</value>
@@ -3528,7 +3290,7 @@
     <value>lblDefaultPrinterOverride</value>
   </data>
   <data name="&gt;&gt;lblDefaultPrinterOverride.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblDefaultPrinterOverride.Parent" xml:space="preserve">
     <value>tpPrint</value>
@@ -3552,7 +3314,7 @@
     <value>txtDefaultPrinterOverride</value>
   </data>
   <data name="&gt;&gt;txtDefaultPrinterOverride.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtDefaultPrinterOverride.Parent" xml:space="preserve">
     <value>tpPrint</value>
@@ -3582,7 +3344,7 @@
     <value>cbPrintDontShowWindowsDialog</value>
   </data>
   <data name="&gt;&gt;cbPrintDontShowWindowsDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbPrintDontShowWindowsDialog.Parent" xml:space="preserve">
     <value>tpPrint</value>
@@ -3612,7 +3374,7 @@
     <value>cbDontShowPrintSettingDialog</value>
   </data>
   <data name="&gt;&gt;cbDontShowPrintSettingDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbDontShowPrintSettingDialog.Parent" xml:space="preserve">
     <value>tpPrint</value>
@@ -3639,7 +3401,7 @@
     <value>btnShowImagePrintSettings</value>
   </data>
   <data name="&gt;&gt;btnShowImagePrintSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnShowImagePrintSettings.Parent" xml:space="preserve">
     <value>tpPrint</value>
@@ -3666,7 +3428,7 @@
     <value>tpPrint</value>
   </data>
   <data name="&gt;&gt;tpPrint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpPrint.Parent" xml:space="preserve">
     <value>tcSettings</value>
@@ -3687,7 +3449,7 @@
     <value>cbProxyMethod</value>
   </data>
   <data name="&gt;&gt;cbProxyMethod.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbProxyMethod.Parent" xml:space="preserve">
     <value>tpProxy</value>
@@ -3717,7 +3479,7 @@
     <value>lblProxyMethod</value>
   </data>
   <data name="&gt;&gt;lblProxyMethod.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblProxyMethod.Parent" xml:space="preserve">
     <value>tpProxy</value>
@@ -3747,7 +3509,7 @@
     <value>lblProxyHost</value>
   </data>
   <data name="&gt;&gt;lblProxyHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblProxyHost.Parent" xml:space="preserve">
     <value>tpProxy</value>
@@ -3768,7 +3530,7 @@
     <value>txtProxyHost</value>
   </data>
   <data name="&gt;&gt;txtProxyHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtProxyHost.Parent" xml:space="preserve">
     <value>tpProxy</value>
@@ -3792,7 +3554,7 @@
     <value>nudProxyPort</value>
   </data>
   <data name="&gt;&gt;nudProxyPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudProxyPort.Parent" xml:space="preserve">
     <value>tpProxy</value>
@@ -3822,7 +3584,7 @@
     <value>lblProxyPort</value>
   </data>
   <data name="&gt;&gt;lblProxyPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblProxyPort.Parent" xml:space="preserve">
     <value>tpProxy</value>
@@ -3852,7 +3614,7 @@
     <value>lblProxyPassword</value>
   </data>
   <data name="&gt;&gt;lblProxyPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblProxyPassword.Parent" xml:space="preserve">
     <value>tpProxy</value>
@@ -3873,7 +3635,7 @@
     <value>txtProxyPassword</value>
   </data>
   <data name="&gt;&gt;txtProxyPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtProxyPassword.Parent" xml:space="preserve">
     <value>tpProxy</value>
@@ -3903,7 +3665,7 @@
     <value>lblProxyUsername</value>
   </data>
   <data name="&gt;&gt;lblProxyUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblProxyUsername.Parent" xml:space="preserve">
     <value>tpProxy</value>
@@ -3924,7 +3686,7 @@
     <value>txtProxyUsername</value>
   </data>
   <data name="&gt;&gt;txtProxyUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtProxyUsername.Parent" xml:space="preserve">
     <value>tpProxy</value>
@@ -3951,7 +3713,7 @@
     <value>tpProxy</value>
   </data>
   <data name="&gt;&gt;tpProxy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpProxy.Parent" xml:space="preserve">
     <value>tcSettings</value>
@@ -3975,7 +3737,7 @@
     <value>pgSettings</value>
   </data>
   <data name="&gt;&gt;pgSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pgSettings.Parent" xml:space="preserve">
     <value>tpAdvanced</value>
@@ -4002,7 +3764,7 @@
     <value>tpAdvanced</value>
   </data>
   <data name="&gt;&gt;tpAdvanced.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tpAdvanced.Parent" xml:space="preserve">
     <value>tcSettings</value>
@@ -4026,7 +3788,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tcSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tcSettings.Parent" xml:space="preserve">
     <value>$this</value>
@@ -4053,7 +3815,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -4083,36 +3845,36 @@
     <value>chDescription</value>
   </data>
   <data name="&gt;&gt;chDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chFormat.Name" xml:space="preserve">
     <value>chFormat</value>
   </data>
   <data name="&gt;&gt;chFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chSecondaryFileUploaders.Name" xml:space="preserve">
     <value>chSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;chSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chSecondaryImageUploaders.Name" xml:space="preserve">
     <value>chSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;chSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chSecondaryTextUploaders.Name" xml:space="preserve">
     <value>chSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;chSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ApplicationSettingsForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

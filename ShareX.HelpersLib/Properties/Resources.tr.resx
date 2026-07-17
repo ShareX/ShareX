@@ -1121,27 +1121,6 @@
   <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
     <value>Seç</value>
   </data>
-  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
-    <value>Alt</value>
-  </data>
-  <data name="ImagePreviewLocation_Side" xml:space="preserve">
-    <value>Kenar</value>
-  </data>
-  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
-    <value>Otomatik</value>
-  </data>
-  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
-    <value>Gizle</value>
-  </data>
-  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
-    <value>Göster</value>
-  </data>
-  <data name="TaskViewMode_ListView" xml:space="preserve">
-    <value>Liste görünümü</value>
-  </data>
-  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
-    <value>Küçük resim görünümü</value>
-  </data>
   <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
     <value>Alt</value>
   </data>

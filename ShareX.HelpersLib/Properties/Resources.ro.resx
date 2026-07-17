@@ -1121,27 +1121,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
     <value>Selectați</value>
   </data>
-  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
-    <value>Partea de jos</value>
-  </data>
-  <data name="ImagePreviewLocation_Side" xml:space="preserve">
-    <value>Lateral</value>
-  </data>
-  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
-    <value>Automat</value>
-  </data>
-  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
-    <value>Ascundeți</value>
-  </data>
-  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
-    <value>Arată</value>
-  </data>
-  <data name="TaskViewMode_ListView" xml:space="preserve">
-    <value>Vizualizare listă</value>
-  </data>
-  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
-    <value>Vizualizare în miniatură</value>
-  </data>
   <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
     <value>Partea de jos</value>
   </data>

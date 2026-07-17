@@ -1121,27 +1121,6 @@
   <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
     <value>בחר</value>
   </data>
-  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
-    <value>תחתון</value>
-  </data>
-  <data name="ImagePreviewLocation_Side" xml:space="preserve">
-    <value>צד</value>
-  </data>
-  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
-    <value>אוטומטי</value>
-  </data>
-  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
-    <value>הסתר</value>
-  </data>
-  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
-    <value>הצג</value>
-  </data>
-  <data name="TaskViewMode_ListView" xml:space="preserve">
-    <value>תצוגת רשימה</value>
-  </data>
-  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
-    <value>תצוגת תמונות ממוזערות</value>
-  </data>
   <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
     <value>למטה</value>
   </data>

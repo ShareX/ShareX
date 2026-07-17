@@ -1121,27 +1121,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
     <value>Chọn</value>
   </data>
-  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
-    <value>Dưới</value>
-  </data>
-  <data name="ImagePreviewLocation_Side" xml:space="preserve">
-    <value>Bên cạnh</value>
-  </data>
-  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
-    <value>Tự Động</value>
-  </data>
-  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
-    <value>Ẩn</value>
-  </data>
-  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
-    <value>Hiện</value>
-  </data>
-  <data name="TaskViewMode_ListView" xml:space="preserve">
-    <value>Chế độ xem danh sách</value>
-  </data>
-  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
-    <value>Chế độ xem hình thu nhỏ</value>
-  </data>
   <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
     <value>Dưới</value>
   </data>

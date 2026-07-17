@@ -1121,27 +1121,6 @@ Voulez-vous la télécharger et l'installer ?</value>
   <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
     <value>Sélectionner</value>
   </data>
-  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
-    <value>Bas</value>
-  </data>
-  <data name="ImagePreviewLocation_Side" xml:space="preserve">
-    <value>Côté</value>
-  </data>
-  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
-    <value>Automatique</value>
-  </data>
-  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
-    <value>Masquer</value>
-  </data>
-  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
-    <value>Afficher</value>
-  </data>
-  <data name="TaskViewMode_ListView" xml:space="preserve">
-    <value>Vue liste</value>
-  </data>
-  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
-    <value>Vue miniatures</value>
-  </data>
   <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
     <value>Bas</value>
   </data>

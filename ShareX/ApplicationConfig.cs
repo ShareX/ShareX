@@ -100,19 +100,10 @@ namespace ShareX
 
         #region Main window
 
-        public bool ShowMenu = true;
-        public TaskViewMode TaskViewMode = TaskViewMode.ThumbnailView;
-
-        // Thumbnail view
         public bool ShowThumbnailTitle = true;
         public ThumbnailTitleLocation ThumbnailTitleLocation = ThumbnailTitleLocation.Top;
         public Size ThumbnailSize = new Size(200, 150);
         public ThumbnailViewClickAction ThumbnailClickAction = ThumbnailViewClickAction.Default;
-
-        // List view
-        public bool ShowColumns = true;
-        public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
-        public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
 
         #endregion Main window
 

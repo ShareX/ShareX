@@ -195,7 +195,6 @@ namespace ShareX
 
             TaskManager.TaskListView = new TaskListView(lvUploads);
             TaskManager.TaskThumbnailView = ucTaskThumbnailView;
-            Program.Settings.TaskViewMode = TaskViewMode.ThumbnailView;
             uim = new UploadInfoManager();
 
             foreach (ToolStripDropDownItem dropDownItem in new ToolStripDropDownItem[]
@@ -660,38 +659,7 @@ namespace ShareX
                 tsmiBeautifyImage.Visible = tsmiAddImageEffects.Visible = tsmiPinSelectedFile.Visible = tsmiRunAction.Visible =
                 tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = false;
 
-            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
-            {
-                pbPreview.Reset();
-                uim.UpdateSelectedItems(lvUploads.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask));
-
-                switch (Program.Settings.ImagePreview)
-                {
-                    case ImagePreviewVisibility.Show:
-                        scMain.Panel2Collapsed = false;
-                        break;
-                    case ImagePreviewVisibility.Hide:
-                        scMain.Panel2Collapsed = true;
-                        break;
-                    case ImagePreviewVisibility.Automatic:
-                        scMain.Panel2Collapsed = !uim.IsItemSelected || (!uim.SelectedItem.IsImageFile && !uim.SelectedItem.IsImageURL);
-                        break;
-                }
-
-                switch (Program.Settings.ImagePreviewLocation)
-                {
-                    case ImagePreviewLocation.Side:
-                        scMain.Orientation = Orientation.Vertical;
-                        break;
-                    case ImagePreviewLocation.Bottom:
-                        scMain.Orientation = Orientation.Horizontal;
-                        break;
-                }
-            }
-            else if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
-            {
-                uim.UpdateSelectedItems(ucTaskThumbnailView.SelectedPanels.Select(x => x.Task));
-            }
+            uim.UpdateSelectedItems(ucTaskThumbnailView.SelectedPanels.Select(x => x.Task));
 
             if (uim.IsItemSelected)
             {
@@ -781,21 +749,6 @@ namespace ShareX
                     tsmiCombineImages.Visible = uim.SelectedItems.Count(x => x.IsImageFile) > 1;
                     tsmiShowResponse.Visible = !string.IsNullOrEmpty(uim.SelectedItem.Info.Result.Response);
                 }
-
-                if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
-                {
-                    if (!scMain.Panel2Collapsed)
-                    {
-                        if (uim.SelectedItem.IsImageFile)
-                        {
-                            pbPreview.LoadImageFromFileAsync(uim.SelectedItem.Info.FilePath);
-                        }
-                        else if (uim.SelectedItem.IsImageURL)
-                        {
-                            pbPreview.LoadImageFromURLAsync(uim.SelectedItem.Info.Result.URL);
-                        }
-                    }
-                }
             }
 
             tsmiClearList.Visible = tssUploadInfo1.Visible = lvUploads.Items.Count > 0;
@@ -807,22 +760,11 @@ namespace ShareX
 
         private void UpdateTaskViewMode()
         {
-            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
-            {
-                tsmiSwitchTaskViewMode.Text = Resources.SwitchToThumbnailView;
-                tsmiSwitchTaskViewMode.Image = Resources.application_icon_large;
-                scMain.Visible = true;
-                ucTaskThumbnailView.Visible = false;
-                scMain.Focus();
-            }
-            else
-            {
-                tsmiSwitchTaskViewMode.Text = Resources.SwitchToListView;
-                tsmiSwitchTaskViewMode.Image = Resources.application_list;
-                ucTaskThumbnailView.Visible = true;
-                scMain.Visible = false;
-                ucTaskThumbnailView.Focus();
-            }
+            tsmiSwitchTaskViewMode.Text = Resources.SwitchToListView;
+            tsmiSwitchTaskViewMode.Image = Resources.application_list;
+            ucTaskThumbnailView.Visible = true;
+            scMain.Visible = false;
+            ucTaskThumbnailView.Focus();
         }
 
         public void UpdateTheme()
@@ -1095,16 +1037,7 @@ namespace ShareX
 
         private void RemoveSelectedItems()
         {
-            IEnumerable<WorkerTask> tasks = null;
-
-            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
-            {
-                tasks = lvUploads.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask);
-            }
-            else if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
-            {
-                tasks = ucTaskThumbnailView.SelectedPanels.Select(x => x.Task);
-            }
+            IEnumerable<WorkerTask> tasks = ucTaskThumbnailView.SelectedPanels.Select(x => x.Task);
 
             RemoveTasks(tasks.ToArray());
         }
@@ -1116,14 +1049,10 @@ namespace ShareX
 
         private void UpdateMainWindowLayout()
         {
-            tsMain.Visible = Program.Settings.ShowMenu;
-
             ucTaskThumbnailView.TitleVisible = Program.Settings.ShowThumbnailTitle;
             ucTaskThumbnailView.TitleLocation = Program.Settings.ThumbnailTitleLocation;
             ucTaskThumbnailView.ThumbnailSize = Program.Settings.ThumbnailSize;
             ucTaskThumbnailView.ClickAction = Program.Settings.ThumbnailClickAction;
-
-            lvUploads.HeaderStyle = Program.Settings.ShowColumns ? ColumnHeaderStyle.Nonclickable : ColumnHeaderStyle.None;
 
             Refresh();
         }
@@ -1447,24 +1376,9 @@ namespace ShareX
 
         private void dgvHotkeys_MouseUp(object sender, MouseEventArgs e)
         {
-            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
+            if (e.Button == MouseButtons.Right)
             {
-                if (e.Button == MouseButtons.Left)
-                {
-                    lvUploads.Focus();
-                }
-                else if (e.Button == MouseButtons.Right)
-                {
-                    UpdateInfoManager();
-                    cmsTaskInfo.Show((Control)sender, e.X + 1, e.Y + 1);
-                }
-            }
-            else if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
-            {
-                if (e.Button == MouseButtons.Right)
-                {
-                    UcTaskView_ContextMenuRequested(sender, e);
-                }
+                UcTaskView_ContextMenuRequested(sender, e);
             }
         }
 
@@ -2511,17 +2425,6 @@ namespace ShareX
         private void TsmiSwitchTaskViewMode_Click(object sender, EventArgs e)
         {
             tsMain.SendToBack();
-
-            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
-            {
-                Program.Settings.TaskViewMode = TaskViewMode.ThumbnailView;
-                ucTaskThumbnailView.UpdateAllThumbnails();
-            }
-            else
-            {
-                Program.Settings.TaskViewMode = TaskViewMode.ListView;
-            }
-
             UpdateTaskViewMode();
             UpdateMainWindowLayout();
             UpdateInfoManager();

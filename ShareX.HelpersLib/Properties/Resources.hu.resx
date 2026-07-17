@@ -1120,27 +1120,6 @@ Would you like to letöltés it?</value>
   <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
     <value>Kijelölés</value>
   </data>
-  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
-    <value>Alsó</value>
-  </data>
-  <data name="ImagePreviewLocation_Side" xml:space="preserve">
-    <value>Oldal</value>
-  </data>
-  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
-    <value>Automatikus</value>
-  </data>
-  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
-    <value>Elrejtés</value>
-  </data>
-  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
-    <value>Megjelenítés</value>
-  </data>
-  <data name="TaskViewMode_ListView" xml:space="preserve">
-    <value>Listanézet</value>
-  </data>
-  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
-    <value>Miniatűr nézet</value>
-  </data>
   <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
     <value>Alsó</value>
   </data>

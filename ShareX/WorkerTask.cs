@@ -1141,7 +1141,7 @@ namespace ShareX
             {
                 Bitmap image = null;
 
-                if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView && Image != null)
+                if (Image != null)
                 {
                     image = (Bitmap)Image.Clone();
                 }
