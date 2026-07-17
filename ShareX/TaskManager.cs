@@ -45,8 +45,6 @@ namespace ShareX
         public static event Action TaskCollectionChanged;
 
         public static List<WorkerTask> Tasks { get; } = new List<WorkerTask>();
-        public static TaskListView TaskListView { get; set; }
-        public static TaskThumbnailView TaskThumbnailView { get; set; }
         public static RecentTaskManager RecentManager { get; } = new RecentTaskManager();
         public static bool IsBusy => Tasks.Count > 0 && Tasks.Any(task => task.IsBusy);
 
@@ -70,14 +68,8 @@ namespace ShareX
                     task.UploadersConfigWindowRequested += Task_UploadersConfigWindowRequested;
                 }
 
-                TaskListView.AddItem(task);
-
-                TaskThumbnailPanel panel = TaskThumbnailView.AddPanel(task);
-
                 TaskAdded?.Invoke(task);
                 TaskCollectionChanged?.Invoke();
-
-                panel.UpdateThumbnail();
 
                 if (task.Status != TaskStatus.History)
                 {
@@ -93,10 +85,6 @@ namespace ShareX
                 task.Stop();
                 Tasks.Remove(task);
                 UpdateMainFormTip();
-
-                TaskListView.RemoveItem(task);
-
-                TaskThumbnailView.RemovePanel(task);
 
                 TaskRemoved?.Invoke(task);
                 TaskCollectionChanged?.Invoke();
@@ -140,7 +128,6 @@ namespace ShareX
 
         public static void UpdateMainFormTip()
         {
-            Program.MainForm.pHotkeys.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
             TaskCollectionChanged?.Invoke();
         }
 
@@ -148,27 +135,12 @@ namespace ShareX
         {
             DebugHelper.WriteLine("Task status: " + task.Status);
 
-            ListViewItem lvi = TaskListView.FindItem(task);
-
-            if (lvi != null)
-            {
-                lvi.SubItems[1].Text = task.Info.Status;
-            }
-
             UpdateProgressUI();
             TaskChanged?.Invoke(task);
         }
 
         private static void Task_ImageReady(WorkerTask task, Bitmap image)
         {
-            TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
-
-            if (panel != null)
-            {
-                panel.UpdateTitle();
-                panel.UpdateThumbnail(image);
-            }
-
             TaskChanged?.Invoke(task);
             TaskImageReady?.Invoke(task, image);
         }
@@ -181,23 +153,6 @@ namespace ShareX
             if (!string.IsNullOrEmpty(info.FilePath)) status += ", File path: " + info.FilePath;
             DebugHelper.WriteLine(status);
 
-            ListViewItem lvi = TaskListView.FindItem(task);
-
-            if (lvi != null)
-            {
-                lvi.Text = info.FileName;
-                lvi.SubItems[1].Text = info.Status;
-                lvi.ImageIndex = 0;
-            }
-
-            TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
-
-            if (panel != null)
-            {
-                panel.UpdateStatus();
-                panel.ProgressVisible = true;
-            }
-
             TaskChanged?.Invoke(task);
         }
 
@@ -205,32 +160,6 @@ namespace ShareX
         {
             if (task.Status == TaskStatus.Working)
             {
-                TaskInfo info = task.Info;
-
-                ListViewItem lvi = TaskListView.FindItem(task);
-
-                if (lvi != null)
-                {
-                    lvi.SubItems[1].Text = string.Format("{0:0.0}%", info.Progress.Percentage);
-                    lvi.SubItems[2].Text = string.Format("{0} / {1}", info.Progress.Position.ToSizeString(Program.Settings.BinaryUnits),
-                        info.Progress.Length.ToSizeString(Program.Settings.BinaryUnits));
-
-                    if (info.Progress.Speed > 0)
-                    {
-                        lvi.SubItems[3].Text = ((long)info.Progress.Speed).ToSizeString(Program.Settings.BinaryUnits) + "/s";
-                    }
-
-                    lvi.SubItems[4].Text = Helpers.ProperTimeSpan(info.Progress.Elapsed);
-                    lvi.SubItems[5].Text = Helpers.ProperTimeSpan(info.Progress.Remaining);
-                }
-
-                TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
-
-                if (panel != null)
-                {
-                    panel.UpdateProgress();
-                }
-
                 UpdateProgressUI();
                 TaskChanged?.Invoke(task);
             }
@@ -257,13 +186,6 @@ namespace ShareX
                 }
             }
 
-            TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
-
-            if (panel != null)
-            {
-                panel.ProgressVisible = false;
-            }
-
             TaskChanged?.Invoke(task);
         }
 
@@ -277,7 +199,7 @@ namespace ShareX
 
                     if (task.RequestSettingUpdate)
                     {
-                        Program.MainForm.UpdateCheckStates();
+                        MainWindowIntegration.RefreshMenus();
                     }
 
                     TaskInfo info = task.Info;
@@ -298,39 +220,15 @@ namespace ShareX
                             RecentManager.Add(task);
                         }
 
-                        TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
-
-                        if (panel != null)
-                        {
-                            panel.UpdateStatus();
-                            panel.ProgressVisible = false;
-                        }
-
-                        ListViewItem lvi = TaskListView.FindItem(task);
-
                         if (task.Status == TaskStatus.Stopped)
                         {
                             DebugHelper.WriteLine($"Task stopped. File name: {info.FileName}");
-
-                            if (lvi != null)
-                            {
-                                lvi.Text = info.FileName;
-                                lvi.SubItems[1].Text = info.Status;
-                                lvi.ImageIndex = 2;
-                            }
                         }
                         else if (task.Status == TaskStatus.Failed)
                         {
                             string errors = info.Result.Errors.ToString();
 
                             DebugHelper.WriteLine($"Task failed. File name: {info.FileName}, Errors:\r\n{errors}");
-
-                            if (lvi != null)
-                            {
-                                lvi.SubItems[1].Text = info.Status;
-                                lvi.SubItems[6].Text = "";
-                                lvi.ImageIndex = 1;
-                            }
 
                             TaskHelpers.PlayNotificationSoundAsync(NotificationSound.Error, info.TaskSettings);
 
@@ -355,18 +253,6 @@ namespace ShareX
                         else
                         {
                             DebugHelper.WriteLine($"Task completed. File name: {info.FileName}, Duration: {(long)info.TaskDuration.TotalMilliseconds} ms");
-
-                            if (lvi != null)
-                            {
-                                lvi.Text = info.FileName;
-                                lvi.SubItems[1].Text = info.Status;
-                                lvi.ImageIndex = 2;
-
-                                if (!string.IsNullOrEmpty(result))
-                                {
-                                    lvi.SubItems[6].Text = result;
-                                }
-                            }
 
                             if (!task.StopRequested && info.Job != TaskJob.ShareURL && !string.IsNullOrEmpty(result))
                             {
@@ -409,15 +295,6 @@ namespace ShareX
                             }
                         }
 
-                        if (lvi != null)
-                        {
-                            lvi.EnsureVisible();
-
-                            if (Program.Settings.AutoSelectLastCompletedTask)
-                            {
-                                TaskListView.ListViewControl.SelectSingle(lvi);
-                            }
-                        }
                     }
                 }
             }
@@ -469,14 +346,12 @@ namespace ShareX
             if (isTasksWorking)
             {
                 string title = string.Format("{0} - {1:0.0}%", Program.Title, averageProgress);
-                Program.MainForm.Text = title;
                 MainWindowIntegration.SetTitle(title);
                 UpdateTrayIcon((int)averageProgress);
                 TaskbarManager.SetProgressValue((int)averageProgress);
             }
             else
             {
-                Program.MainForm.Text = Program.Title;
                 MainWindowIntegration.SetTitle(Program.Title);
                 UpdateTrayIcon();
                 TaskbarManager.SetProgressState(TaskbarProgressBarStatus.NoProgress);
@@ -556,7 +431,7 @@ namespace ShareX
 
         public static void AddRecentTasksToMainWindow()
         {
-            if (TaskListView.ListViewControl.Items.Count == 0)
+            if (Tasks.Count == 0)
             {
                 foreach (RecentTask recentTask in RecentManager.Tasks)
                 {

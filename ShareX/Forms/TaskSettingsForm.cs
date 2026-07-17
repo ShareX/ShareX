@@ -97,7 +97,7 @@ namespace ShareX
                     }
                     else
                     {
-                        MainForm.Uncheck(tsmiImageFileUploaders);
+                        Uncheck(tsmiImageFileUploaders);
                     }
                 }, tsmiImageUploaders);
                 tsmiImageFileUploaders = (ToolStripDropDownItem)tsmiImageUploaders.DropDownItems[tsmiImageUploaders.DropDownItems.Count - 1];
@@ -107,7 +107,7 @@ namespace ShareX
                     tsmiImageFileUploaders.PerformClick();
                 }, tsmiImageFileUploaders);
                 SetEnumChecked(TaskSettings.ImageDestination, tsmiImageUploaders);
-                MainForm.SetImageFileDestinationChecked(TaskSettings.ImageDestination, TaskSettings.ImageFileDestination, tsmiImageFileUploaders);
+                SetImageFileDestinationChecked(TaskSettings.ImageDestination, TaskSettings.ImageFileDestination, tsmiImageFileUploaders);
                 AddEnumItems<TextDestination>(x =>
                 {
                     TaskSettings.TextDestination = x;
@@ -118,7 +118,7 @@ namespace ShareX
                     }
                     else
                     {
-                        MainForm.Uncheck(tsmiTextFileUploaders);
+                        Uncheck(tsmiTextFileUploaders);
                     }
                 }, tsmiTextUploaders);
                 tsmiTextFileUploaders = (ToolStripDropDownItem)tsmiTextUploaders.DropDownItems[tsmiTextUploaders.DropDownItems.Count - 1];
@@ -128,7 +128,7 @@ namespace ShareX
                     tsmiTextFileUploaders.PerformClick();
                 }, tsmiTextFileUploaders);
                 SetEnumChecked(TaskSettings.TextDestination, tsmiTextUploaders);
-                MainForm.SetTextFileDestinationChecked(TaskSettings.TextDestination, TaskSettings.TextFileDestination, tsmiTextFileUploaders);
+                SetTextFileDestinationChecked(TaskSettings.TextDestination, TaskSettings.TextFileDestination, tsmiTextFileUploaders);
                 AddEnumItems<FileDestination>(x => TaskSettings.FileDestination = x, tsmiFileUploaders);
                 SetEnumChecked(TaskSettings.FileDestination, tsmiFileUploaders);
                 AddEnumItems<UrlShortenerType>(x => TaskSettings.URLShortenerDestination = x, tsmiURLShorteners);
@@ -718,6 +718,46 @@ namespace ShareX
             foreach (ToolStripDropDownItem parent in parents)
             {
                 ((ToolStripMenuItem)parent.DropDownItems[index]).Checked = true;
+            }
+        }
+
+        private static void Uncheck(params ToolStripDropDownItem[] parents)
+        {
+            foreach (ToolStripDropDownItem parent in parents)
+            {
+                foreach (ToolStripItem item in parent.DropDownItems)
+                {
+                    if (item is ToolStripMenuItem menuItem)
+                    {
+                        menuItem.Checked = false;
+                    }
+                }
+            }
+        }
+
+        private void SetTextFileDestinationChecked(TextDestination textDestination, FileDestination textFileDestination,
+            params ToolStripDropDownItem[] parents)
+        {
+            if (textDestination == TextDestination.FileUploader)
+            {
+                SetEnumChecked(textFileDestination, parents);
+            }
+            else
+            {
+                Uncheck(parents);
+            }
+        }
+
+        private void SetImageFileDestinationChecked(ImageDestination imageDestination, FileDestination imageFileDestination,
+            params ToolStripDropDownItem[] parents)
+        {
+            if (imageDestination == ImageDestination.FileUploader)
+            {
+                SetEnumChecked(imageFileDestination, parents);
+            }
+            else
+            {
+                Uncheck(parents);
             }
         }
 

@@ -2203,7 +2203,7 @@ namespace ShareX
 
             Program.Settings.DisableHotkeys = disableHotkeys;
             Program.HotkeyManager.ToggleHotkeys(disableHotkeys);
-            Program.MainForm.UpdateToggleHotkeyButton();
+            MainWindowIntegration.RefreshMenus();
 
             PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
 
@@ -2700,8 +2700,7 @@ namespace ShareX
                                 Program.DefaultTaskSettings.URLSharingServiceDestination = URLSharingServices.CustomURLSharingService;
                             }
 
-                            Program.MainForm.UpdateCheckStates();
-                            Program.MainForm.UpdateUploaderMenuNames();
+                            MainWindowIntegration.RefreshMenus();
                         }
 
                         if (CustomUploaderSettingsForm.IsInstanceActive)
@@ -2740,7 +2739,7 @@ namespace ShareX
                     "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Add(AfterCaptureTasks.AddImageEffects);
-                    Program.MainForm.UpdateCheckStates();
+                    MainWindowIntegration.RefreshMenus();
                 }
             }
         }

@@ -46,8 +46,6 @@ namespace ShareX
 
         // Main window
         public bool FirstTimeMinimizeToTray = true;
-        public List<int> TaskListViewColumnWidths = new List<int>();
-        public int PreviewSplitterDistance = 335;
 
         public ApplicationConfig()
         {
@@ -173,18 +171,12 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Automatically expand capture menu when you open the tray menu.")]
         public bool TrayAutoExpandCaptureMenu { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Show tips and hotkeys in main window when task list is empty.")]
-        public bool ShowMainWindowTip { get; set; }
-
         [Category("Application"), DefaultValue(""), Description("URLs will open using this path instead of default browser. Example path: chrome.exe")]
         [Editor(typeof(ExeFileNameEditor), typeof(UITypeEditor))]
         public string BrowserPath { get; set; }
 
         [Category("Application"), DefaultValue(false), Description("Save settings after task completed but only if there are no other active tasks.")]
         public bool SaveSettingsAfterTaskCompleted { get; set; }
-
-        [Category("Application"), DefaultValue(false), Description("In main window when task is completed automatically select it.")]
-        public bool AutoSelectLastCompletedTask { get; set; }
 
         [Category("Application"), DefaultValue(false), Description("")]
         public bool DevMode { get; set; }

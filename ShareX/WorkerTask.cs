@@ -391,7 +391,7 @@ namespace ShareX
                 Status = TaskStatus.Working;
                 Info.Status = Resources.UploadTask_DoUploadJob_Uploading;
 
-                TaskbarManager.SetProgressState(Program.MainForm, TaskbarProgressBarStatus.Normal);
+                TaskbarManager.SetProgressState(TaskbarProgressBarStatus.Normal);
 
                 bool cancelUpload = false;
 
