@@ -26,21 +26,24 @@ using System.Windows.Forms;
 namespace ShareX;
 
 /// <summary>
-/// Hidden WinForms host for the process message loop and global hotkeys.
-/// The visible main window and tray icon are owned by Avalonia.
+/// Hidden WinForms host for the process message loop, global hotkeys, and tray icon lifetime.
+/// The visible main window is owned by Avalonia.
 /// </summary>
 public sealed class MainForm : HotkeyForm
 {
     private bool _forceClose;
 
     public bool IsReady { get; private set; }
+    internal ITrayIconService TrayIconService { get; }
 
     public MainForm()
     {
         ShowInTaskbar = false;
         FormBorderStyle = FormBorderStyle.FixedToolWindow;
         Text = Program.Title;
+        ShareXResources.UseWhiteIcon = Program.Settings.UseWhiteShareXIcon;
         Icon = ShareXResources.Icon;
+        TrayIconService = new WinFormsTrayIconService(Icon, Program.TitleShort, Program.Settings.ShowTray);
 
         HandleCreated += MainForm_HandleCreated;
         FormClosed += MainForm_FormClosed;
@@ -106,6 +109,8 @@ public sealed class MainForm : HotkeyForm
         ShareXResources.UseWhiteIcon = Program.Settings.UseWhiteShareXIcon;
         Icon = ShareXResources.Icon;
         Text = Program.Title;
+        TrayIconService.ToolTipText = Program.TitleShort;
+        TrayIconService.Visible = Program.Settings.ShowTray;
 
         UpdateTheme();
         ConfigureAutoUpdate();
@@ -140,7 +145,7 @@ public sealed class MainForm : HotkeyForm
 #pragma warning restore WFO5001
 
         using Icon trayIcon = ShareXResources.Icon;
-        MainWindowIntegration.SetTrayIcon(trayIcon);
+        TrayIconService.SetIcon(trayIcon);
         MainWindowIntegration.RefreshMenus();
     }
 
@@ -424,9 +429,10 @@ public sealed class MainForm : HotkeyForm
         base.OnFormClosing(e);
     }
 
-    private static void MainForm_FormClosed(object? sender, FormClosedEventArgs e)
+    private void MainForm_FormClosed(object? sender, FormClosedEventArgs e)
     {
         MainWindowIntegration.Close();
+        TrayIconService.Dispose();
         TaskManager.StopAllTasks();
     }
 }

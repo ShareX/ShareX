@@ -74,16 +74,29 @@ public static class MainWindowIntegration
         });
     }
 
-    public static void SetTitle(string title) => RunOnUiThread(() => _window?.SetTitle(title));
+    public static void SetTitle(string title) => RunOnUiThread(() =>
+    {
+        _window?.SetTitle(title);
+        if (Program.MainForm != null)
+        {
+            Program.MainForm.TrayIconService.ToolTipText = title;
+        }
+    });
 
-    public static void SetTrayVisible(bool visible) => RunOnUiThread(() => _window?.SetTrayVisible(visible));
+    public static void SetTrayVisible(bool visible) => RunOnUiThread(() =>
+    {
+        if (Program.MainForm != null)
+        {
+            Program.MainForm.TrayIconService.Visible = visible;
+        }
+    });
 
     public static void SetTrayIcon(System.Drawing.Icon icon)
     {
         using MemoryStream stream = new();
         icon.Save(stream);
         byte[] iconBytes = stream.ToArray();
-        RunOnUiThread(() => _window?.SetTrayIcon(iconBytes));
+        RunOnUiThread(() => Program.MainForm?.TrayIconService.SetIcon(iconBytes));
     }
 
     public static void ShowTrayMenu() => RunOnUiThread(() => _window?.ShowTrayMenu());

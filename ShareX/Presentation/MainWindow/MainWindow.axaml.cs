@@ -52,11 +52,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private readonly MainMenuBuilder _navigationMenuBuilder;
     private readonly MainMenuBuilder _trayMenuBuilder;
     private readonly UploadInfoManager _uploadInfoManager = new();
-    private readonly TrayIcon _trayIcon;
-    private readonly DispatcherTimer _traySingleClickTimer;
     private ContextMenu? _activeContextMenu;
     private Window? _trayMenuAnchor;
-    private WindowIcon? _ownedTrayIcon;
     private PointerPressedEventArgs? _thumbnailDragTrigger;
     private Task<IStorageFile?>? _thumbnailDragFileTask;
     private IPointer? _thumbnailDragPointer;
@@ -65,7 +62,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private int _thumbnailDragVersion;
     private bool _allowClose;
     private bool _disposed;
-    private int _trayClickCount;
     private int _lastSelectedIndex = -1;
 
     internal ObservableCollection<ThumbnailItemViewModel> ThumbnailItems { get; } = new();
@@ -88,24 +84,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         Title = Program.Title;
         Icon = CreateWindowIcon();
 
-        NativeMenu trayMenuBridge = new();
-        trayMenuBridge.Opening += OnTrayIconMenuOpening;
-
-        _trayIcon = new TrayIcon
-        {
-            Icon = CreateWindowIcon(),
-            ToolTipText = Program.TitleShort,
-            IsVisible = Program.Settings.ShowTray,
-            Menu = trayMenuBridge
-        };
-        _trayIcon.Clicked += OnTrayIconClicked;
-        TrayIcon.SetIcons(Application.Current!, new TrayIcons { _trayIcon });
-
-        _traySingleClickTimer = new DispatcherTimer
-        {
-            Interval = TimeSpan.FromMilliseconds(System.Windows.Forms.SystemInformation.DoubleClickTime)
-        };
-        _traySingleClickTimer.Tick += OnTraySingleClickTimerTick;
+        _host.TrayIconService.RightButtonDown += OnTrayIconRightButtonDown;
+        _host.TrayIconService.RightButtonUp += OnTrayIconRightButtonUp;
 
         BuildNavigation();
         ConfigureWindowHeightFromNavigation();
@@ -156,17 +136,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public void SetTitle(string title)
     {
         Title = title;
-        _trayIcon.ToolTipText = title.Truncate(63);
-    }
-
-    public void SetTrayVisible(bool visible) => _trayIcon.IsVisible = visible;
-
-    public void SetTrayIcon(byte[] iconBytes)
-    {
-        using MemoryStream stream = new(iconBytes, writable: false);
-        WindowIcon replacement = new(stream);
-        _trayIcon.Icon = replacement;
-        _ownedTrayIcon = replacement;
     }
 
     public void ShowTrayMenu()
@@ -1190,7 +1159,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         e.Handled = true;
     }
 
-    private void OnTrayIconMenuOpening(object? sender, EventArgs e)
+    private void OnTrayIconRightButtonDown()
     {
         Dispatcher.UIThread.Post(() =>
         {
@@ -1198,42 +1167,19 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             {
                 CloseActiveContextMenu();
                 CloseTrayMenuAnchor();
-                ShowTrayMenu();
             }
         });
     }
 
-    private async void OnTrayIconClicked(object? sender, EventArgs e)
+    private void OnTrayIconRightButtonUp()
     {
-        if (Program.Settings.TrayLeftDoubleClickAction == HotkeyType.None)
+        Dispatcher.UIThread.Post(() =>
         {
-            await TaskHelpers.ExecuteJob(Program.Settings.TrayLeftClickAction);
-            return;
-        }
-
-        _trayClickCount++;
-
-        if (_trayClickCount == 1)
-        {
-            _traySingleClickTimer.Start();
-        }
-        else
-        {
-            _trayClickCount = 0;
-            _traySingleClickTimer.Stop();
-            await TaskHelpers.ExecuteJob(Program.Settings.TrayLeftDoubleClickAction);
-        }
-    }
-
-    private async void OnTraySingleClickTimerTick(object? sender, EventArgs e)
-    {
-        _traySingleClickTimer.Stop();
-
-        if (_trayClickCount == 1)
-        {
-            _trayClickCount = 0;
-            await TaskHelpers.ExecuteJob(Program.Settings.TrayLeftClickAction);
-        }
+            if (!_disposed)
+            {
+                ShowTrayMenu();
+            }
+        });
     }
 
     private void OnTrayMenuClosed(object? sender, RoutedEventArgs e)
@@ -1317,16 +1263,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         ResetThumbnailDrag();
         CloseActiveContextMenu();
         CloseTrayMenuAnchor();
-        _traySingleClickTimer.Stop();
-        _traySingleClickTimer.Tick -= OnTraySingleClickTimerTick;
-        _trayIcon.Clicked -= OnTrayIconClicked;
-        if (_trayIcon.Menu != null)
-        {
-            _trayIcon.Menu.Opening -= OnTrayIconMenuOpening;
-        }
-        _trayIcon.IsVisible = false;
-        TrayIcon.SetIcons(Application.Current!, null);
-        _ownedTrayIcon = null;
+        _host.TrayIconService.RightButtonDown -= OnTrayIconRightButtonDown;
+        _host.TrayIconService.RightButtonUp -= OnTrayIconRightButtonUp;
+        _host.TrayIconService.Visible = false;
 
         foreach (ThumbnailItemViewModel item in ThumbnailItems)
         {
