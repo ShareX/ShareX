@@ -108,6 +108,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         PositionChanged += (_, _) => SaveWindowBounds();
         Resized += (_, _) => SaveWindowBounds();
         KeyDown += OnWindowKeyDown;
+
+        Dispatcher.UIThread.Post(WarmUpTrayMenu, DispatcherPriority.Background);
     }
 
     public void ShowAndActivate()
@@ -151,22 +153,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         System.Drawing.Point cursorPosition = FormsCursor.Position;
         PixelPoint anchorPosition = new(cursorPosition.X, cursorPosition.Y);
-        Window anchor = new()
-        {
-            Width = 1,
-            Height = 1,
-            MinWidth = 1,
-            MinHeight = 1,
-            Position = anchorPosition,
-            WindowStartupLocation = WindowStartupLocation.Manual,
-            WindowDecorations = Avalonia.Controls.WindowDecorations.None,
-            ShowInTaskbar = false,
-            CanResize = false,
-            Topmost = true,
-            Opacity = 0,
-            Background = Brushes.Transparent,
-            RequestedThemeVariant = ThemeManager.GetCurrentTheme()
-        };
+        Window anchor = CreateTrayMenuAnchor(anchorPosition);
         _trayMenuAnchor = anchor;
         anchor.Deactivated += OnTrayMenuAnchorDeactivated;
         anchor.Show();
@@ -195,6 +182,65 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             throw;
         }
     }
+
+    private void WarmUpTrayMenu()
+    {
+        if (_disposed)
+        {
+            return;
+        }
+
+        Window anchor = CreateTrayMenuAnchor(new PixelPoint(-32000, -32000));
+        anchor.ShowActivated = false;
+        anchor.Topmost = false;
+        ContextMenu menu = BuildContextMenu(_trayMenuBuilder.BuildTrayMenu());
+        menu.Opacity = 0;
+        menu.IsHitTestVisible = false;
+
+        try
+        {
+            anchor.Show();
+            menu.Open(anchor);
+
+            // Leave the invisible popup attached for one layout pass so Avalonia
+            // creates its popup host, templates and styles before the first click.
+            Dispatcher.UIThread.Post(() =>
+            {
+                menu.Close();
+
+                if (anchor.IsVisible)
+                {
+                    anchor.Close();
+                }
+            }, DispatcherPriority.Loaded);
+        }
+        catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
+
+            if (anchor.IsVisible)
+            {
+                anchor.Close();
+            }
+        }
+    }
+
+    private static Window CreateTrayMenuAnchor(PixelPoint position) => new()
+    {
+        Width = 1,
+        Height = 1,
+        MinWidth = 1,
+        MinHeight = 1,
+        Position = position,
+        WindowStartupLocation = WindowStartupLocation.Manual,
+        WindowDecorations = Avalonia.Controls.WindowDecorations.None,
+        ShowInTaskbar = false,
+        CanResize = false,
+        Topmost = true,
+        Opacity = 0,
+        Background = Brushes.Transparent,
+        RequestedThemeVariant = ThemeManager.GetCurrentTheme()
+    };
 
     public void RefreshMenus()
     {
