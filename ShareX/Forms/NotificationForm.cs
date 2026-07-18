@@ -62,7 +62,9 @@ public partial class NotificationForm : Window
     private Bitmap? _previewBitmap;
     private bool _durationEnded;
     private bool _pointerInside;
-    private bool _dragStarted;
+    private bool _isCardPressed;
+    private bool _isDragCandidate;
+    private bool _fileDragStarted;
     private Point _dragStart;
     private PointerPressedEventArgs? _dragEvent;
 
@@ -141,7 +143,7 @@ public partial class NotificationForm : Window
         _fadeStopwatch.Reset();
         _durationEnded = false;
         _pointerInside = false;
-        _dragStarted = false;
+        ResetPointerInteraction();
         Opacity = 1;
 
         _previewBitmap?.Dispose();
@@ -408,8 +410,7 @@ public partial class NotificationForm : Window
         }
         else
         {
-            _dragStarted = false;
-            _dragEvent = null;
+            ResetPointerInteraction();
 
             if (_durationEnded)
             {
@@ -428,14 +429,16 @@ public partial class NotificationForm : Window
     private void OnCardPointerPressed(object? sender, PointerPressedEventArgs e)
     {
         PointerPoint point = e.GetCurrentPoint(NotificationCard);
+        _isCardPressed = true;
+        _fileDragStarted = false;
         _dragStart = point.Position;
-        _dragStarted = point.Properties.IsLeftButtonPressed;
-        _dragEvent = _dragStarted ? e : null;
+        _isDragCandidate = point.Properties.IsLeftButtonPressed;
+        _dragEvent = _isDragCandidate ? e : null;
     }
 
     private async void OnCardPointerMoved(object? sender, PointerEventArgs e)
     {
-        if (!_dragStarted || _dragEvent == null || _config == null ||
+        if (!_isDragCandidate || _dragEvent == null || _config == null ||
             string.IsNullOrEmpty(_config.FilePath) || !File.Exists(_config.FilePath))
         {
             return;
@@ -447,26 +450,29 @@ public partial class NotificationForm : Window
             return;
         }
 
-        _dragStarted = false;
+        _isDragCandidate = false;
+        _fileDragStarted = true;
+        PointerPressedEventArgs dragEvent = _dragEvent;
         IStorageFile? file = await StorageProvider.TryGetFileFromPathAsync(_config.FilePath);
         if (file == null)
         {
+            ResetPointerInteraction();
             return;
         }
 
         DataTransfer data = new();
         data.Add(DataTransferItem.CreateFile(file));
-        await DragDrop.DoDragDropAsync(_dragEvent, data, DragDropEffects.Copy | DragDropEffects.Move);
-        _dragEvent = null;
+        await DragDrop.DoDragDropAsync(dragEvent, data, DragDropEffects.Copy | DragDropEffects.Move);
+        ResetPointerInteraction();
     }
 
     private void OnCardPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
-        bool wasDragging = _dragEvent == null && !_dragStarted;
-        _dragStarted = false;
-        _dragEvent = null;
+        bool wasCardPressed = _isCardPressed;
+        bool wasDragging = _fileDragStarted;
+        ResetPointerInteraction();
 
-        if (wasDragging || _config == null)
+        if (!wasCardPressed || wasDragging || _config == null)
         {
             return;
         }
@@ -506,9 +512,16 @@ public partial class NotificationForm : Window
 
     private void OnActionButtonPointerPressed(object? sender, PointerPressedEventArgs e)
     {
-        _dragStarted = false;
-        _dragEvent = null;
+        ResetPointerInteraction();
         e.Handled = true;
+    }
+
+    private void ResetPointerInteraction()
+    {
+        _isCardPressed = false;
+        _isDragCandidate = false;
+        _fileDragStarted = false;
+        _dragEvent = null;
     }
 
     private static void ExecuteAction(ToastClickAction action, NotificationFormConfig config)
