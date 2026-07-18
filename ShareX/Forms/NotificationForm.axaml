@@ -44,18 +44,19 @@
     </Window.Styles>
 
     <Grid Margin="14">
-        <Border x:Name="NotificationCard"
-                MinWidth="1"
-                MinHeight="1"
-                CornerRadius="6"
-                ClipToBounds="True"
-                BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
-                BorderThickness="1"
-                BoxShadow="0 10 28 #73000000"
-                PointerPressed="OnCardPointerPressed"
-                PointerMoved="OnCardPointerMoved"
-                PointerReleased="OnCardPointerReleased">
-            <Grid>
+        <Border Background="#202020"
+                BoxShadow="0 0 15 #80000000">
+            <Border x:Name="NotificationCard"
+                    MinWidth="1"
+                    MinHeight="1"
+                    CornerRadius="0"
+                    ClipToBounds="True"
+                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                    BorderThickness="1"
+                    PointerPressed="OnCardPointerPressed"
+                    PointerMoved="OnCardPointerMoved"
+                    PointerReleased="OnCardPointerReleased">
+                <Grid>
                 <Image x:Name="PreviewImage"
                        Stretch="Uniform"
                        HorizontalAlignment="Center"
@@ -95,7 +96,7 @@
                         Padding="10,7"
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Top"
-                        CornerRadius="5,5,0,0"
+                        CornerRadius="0"
                         Background="#B31B1B1B"
                         IsHitTestVisible="False">
                     <StackPanel Spacing="2">
@@ -118,13 +119,14 @@
                 <Border x:Name="ActionsPanel"
                         Padding="6"
                         VerticalAlignment="Bottom"
-                        Background="#D9212121">
+                        Background="#B31B1B1B">
                     <WrapPanel x:Name="ActionButtons"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"/>
                 </Border>
 
-            </Grid>
+                </Grid>
+            </Border>
         </Border>
     </Grid>
 </Window>
