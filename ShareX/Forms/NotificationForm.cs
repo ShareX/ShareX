@@ -183,6 +183,7 @@ public partial class NotificationForm : Window
         if (source == null)
         {
             PreviewImage.Source = null;
+            PreviewImage.Clip = null;
             PreviewImage.IsVisible = false;
             return;
         }
@@ -199,6 +200,8 @@ public partial class NotificationForm : Window
         double scale = Math.Min(1, Math.Min(maxWidth / source.Width, maxHeight / source.Height));
         PreviewImage.Width = Math.Max(1, Math.Round(source.Width * scale));
         PreviewImage.Height = Math.Max(1, Math.Round(source.Height * scale));
+        PreviewImage.Clip = new RectangleGeometry(
+            new Rect(0, 0, PreviewImage.Width, PreviewImage.Height), 3, 3);
     }
 
     private void ApplyContent(NotificationFormConfig config)
@@ -219,7 +222,9 @@ public partial class NotificationForm : Window
         ImageTitleText.IsVisible = hasTitle;
         ImageBodyText.IsVisible = hasText;
 
-        NotificationCard.Background = new SolidColorBrush(ToAvaloniaColor(config.BackgroundColor));
+        NotificationCard.Background = hasImage
+            ? Brushes.Transparent
+            : new SolidColorBrush(ToAvaloniaColor(config.BackgroundColor));
         TitleText.Foreground = new SolidColorBrush(ToAvaloniaColor(config.TitleColor));
         BodyText.Foreground = new SolidColorBrush(ToAvaloniaColor(config.TextColor));
 

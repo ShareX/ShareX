@@ -44,12 +44,13 @@
     </Window.Styles>
 
     <Grid Margin="14">
-        <Border Background="#202020"
+        <Border Background="Transparent"
+                CornerRadius="4"
                 BoxShadow="0 0 15 #80000000">
             <Border x:Name="NotificationCard"
                     MinWidth="1"
                     MinHeight="1"
-                    CornerRadius="0"
+                    CornerRadius="4"
                     ClipToBounds="True"
                     BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
                     BorderThickness="1"
@@ -96,7 +97,7 @@
                         Padding="10,7"
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Top"
-                        CornerRadius="0"
+                        CornerRadius="3,3,0,0"
                         Background="#B31B1B1B"
                         IsHitTestVisible="False">
                     <StackPanel Spacing="2">
@@ -119,6 +120,7 @@
                 <Border x:Name="ActionsPanel"
                         Padding="6"
                         VerticalAlignment="Bottom"
+                        CornerRadius="0,0,3,3"
                         Background="#B31B1B1B">
                     <WrapPanel x:Name="ActionButtons"
                                HorizontalAlignment="Center"
