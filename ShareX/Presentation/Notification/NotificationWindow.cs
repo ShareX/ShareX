@@ -47,18 +47,18 @@ using AppResources = ShareX.Properties.Resources;
 
 namespace ShareX;
 
-public partial class NotificationForm : Window
+public partial class NotificationWindow : Window
 {
     private const double ShadowMargin = 14;
     private const double MinimumTextWidth = 240;
     private const double MaximumTextWidth = 520;
-    private static NotificationForm? _instance;
+    private static NotificationWindow? _instance;
 
     private readonly DispatcherTimer _durationTimer;
     private readonly DispatcherTimer _fadeTimer;
     private readonly DispatcherTimer _hoverTimer;
     private readonly Stopwatch _fadeStopwatch = new();
-    private NotificationFormConfig? _config;
+    private NotificationWindowConfig? _config;
     private Bitmap? _previewBitmap;
     private bool _durationEnded;
     private bool _pointerInside;
@@ -68,9 +68,9 @@ public partial class NotificationForm : Window
     private Point _dragStart;
     private PointerPressedEventArgs? _dragEvent;
 
-    public NotificationFormConfig? Config => _config;
+    public NotificationWindowConfig? Config => _config;
 
-    public NotificationForm()
+    public NotificationWindow()
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
@@ -86,7 +86,7 @@ public partial class NotificationForm : Window
         Closed += OnClosed;
     }
 
-    public static void Show(NotificationFormConfig config)
+    public static void Show(NotificationWindowConfig config)
     {
         if (config == null || !config.IsValid)
         {
@@ -110,7 +110,7 @@ public partial class NotificationForm : Window
         {
             if (_instance == null)
             {
-                _instance = new NotificationForm();
+                _instance = new NotificationWindow();
                 _instance.LoadConfig(config);
                 _instance.Show();
             }
@@ -126,7 +126,7 @@ public partial class NotificationForm : Window
         });
     }
 
-    public static void CloseActiveForm()
+    public static void CloseActiveWindow()
     {
         if (Application.Current == null)
         {
@@ -136,7 +136,7 @@ public partial class NotificationForm : Window
         Dispatcher.UIThread.Post(() => _instance?.Close());
     }
 
-    public void LoadConfig(NotificationFormConfig config)
+    public void LoadConfig(NotificationWindowConfig config)
     {
         _durationTimer.Stop();
         _fadeTimer.Stop();
@@ -172,7 +172,7 @@ public partial class NotificationForm : Window
         }
     }
 
-    private void LoadPreview(NotificationFormConfig config)
+    private void LoadPreview(NotificationWindowConfig config)
     {
         DrawingBitmap? source = config.Image;
 
@@ -206,7 +206,7 @@ public partial class NotificationForm : Window
             new Rect(0, 0, PreviewImage.Width, PreviewImage.Height), 3, 3);
     }
 
-    private void ApplyContent(NotificationFormConfig config)
+    private void ApplyContent(NotificationWindowConfig config)
     {
         bool hasImage = _previewBitmap != null;
         bool hasTitle = !string.IsNullOrWhiteSpace(config.Title);
@@ -247,7 +247,7 @@ public partial class NotificationForm : Window
         }
     }
 
-    private void BuildActionButtons(NotificationFormConfig config)
+    private void BuildActionButtons(NotificationWindowConfig config)
     {
         ActionButtons.Children.Clear();
 
@@ -486,7 +486,7 @@ public partial class NotificationForm : Window
             _ => ToastClickAction.CloseNotification
         };
 
-        NotificationFormConfig config = _config;
+        NotificationWindowConfig config = _config;
         Close();
         ExecuteAction(action, config);
         e.Handled = true;
@@ -500,7 +500,7 @@ public partial class NotificationForm : Window
         }
 
         e.Handled = true;
-        NotificationFormConfig config = _config;
+        NotificationWindowConfig config = _config;
 
         if (definition.DismissNotification)
         {
@@ -524,7 +524,7 @@ public partial class NotificationForm : Window
         _dragEvent = null;
     }
 
-    private static void ExecuteAction(ToastClickAction action, NotificationFormConfig config)
+    private static void ExecuteAction(ToastClickAction action, NotificationWindowConfig config)
     {
         if (action == ToastClickAction.CloseNotification)
         {
@@ -605,7 +605,7 @@ public partial class NotificationForm : Window
         }
     }
 
-    private static bool CanExecute(ToastClickAction action, NotificationFormConfig config)
+    private static bool CanExecute(ToastClickAction action, NotificationWindowConfig config)
     {
         bool hasFile = !string.IsNullOrWhiteSpace(config.FilePath);
         bool hasImageFile = hasFile && FileHelpers.IsImageFile(config.FilePath);

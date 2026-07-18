@@ -47,7 +47,7 @@ namespace ShareX
 
             if (taskSettings.GeneralSettings.ToastWindowAutoHide)
             {
-                NotificationForm.CloseActiveForm();
+                NotificationWindow.CloseActiveWindow();
             }
 
             if (taskSettings.CaptureSettings.ScreenshotDelay > 0)

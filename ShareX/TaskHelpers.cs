@@ -2961,7 +2961,7 @@ namespace ShareX
                 duration = (int)(Program.DefaultTaskSettings.GeneralSettings.ToastWindowDuration * 1000);
             }
 
-            NotificationFormConfig toastConfig = new NotificationFormConfig()
+            NotificationWindowConfig toastConfig = new NotificationWindowConfig()
             {
                 Duration = duration,
                 FadeDuration = (int)(Program.DefaultTaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
@@ -2974,7 +2974,7 @@ namespace ShareX
 
             Program.MainForm.InvokeSafe(() =>
             {
-                NotificationForm.Show(toastConfig);
+                NotificationWindow.Show(toastConfig);
             });
         }
 

@@ -29,7 +29,7 @@ using System.Drawing;
 
 namespace ShareX
 {
-    public class NotificationFormConfig : IDisposable
+    public class NotificationWindowConfig : IDisposable
     {
         public int Duration { get; set; }
         public int FadeDuration { get; set; }

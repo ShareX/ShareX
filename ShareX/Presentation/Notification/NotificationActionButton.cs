@@ -21,7 +21,7 @@ namespace ShareX;
 
 /// <summary>
 /// Describes an action shown in the notification's hover toolbar. The order of
-/// items in <see cref="NotificationFormConfig.ActionButtons"/> is the display order.
+/// items in <see cref="NotificationWindowConfig.ActionButtons"/> is the display order.
 /// </summary>
 public sealed class NotificationActionButton
 {

@@ -268,7 +268,7 @@ namespace ShareX
                                 {
                                     task.KeepImage = true;
 
-                                    NotificationFormConfig toastConfig = new NotificationFormConfig()
+                                    NotificationWindowConfig toastConfig = new NotificationWindowConfig()
                                     {
                                         Duration = (int)(info.TaskSettings.GeneralSettings.ToastWindowDuration * 1000),
                                         FadeDuration = (int)(info.TaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
@@ -285,7 +285,7 @@ namespace ShareX
                                         URL = info.Result.ToString()
                                     };
 
-                                    NotificationForm.Show(toastConfig);
+                                    NotificationWindow.Show(toastConfig);
 
                                     if (info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShowAfterUploadWindow) && info.IsUploadJob)
                                     {

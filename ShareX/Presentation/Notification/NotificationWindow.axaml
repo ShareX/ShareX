@@ -1,7 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
-        x:Class="ShareX.NotificationForm"
+        x:Class="ShareX.NotificationWindow"
         x:CompileBindings="False"
         CanResize="False"
         ShowActivated="False"
