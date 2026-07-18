@@ -15,8 +15,9 @@
 
     <Window.Styles>
         <Style Selector="Button.notification-action">
+            <Setter Property="Width" Value="34"/>
             <Setter Property="Height" Value="34"/>
-            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="Padding" Value="0"/>
             <Setter Property="Margin" Value="3,0"/>
             <Setter Property="CornerRadius" Value="8"/>
             <Setter Property="Background" Value="#CC383838"/>
@@ -130,7 +131,7 @@
                 </Border>
 
                 <Border x:Name="ActionsPanel"
-                        Padding="8"
+                        Padding="6"
                         VerticalAlignment="Bottom"
                         Background="#D9212121">
                     <WrapPanel x:Name="ActionButtons"

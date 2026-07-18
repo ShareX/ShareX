@@ -50,7 +50,7 @@ namespace ShareX;
 public partial class NotificationForm : Window
 {
     private const double ShadowMargin = 14;
-    private const double MinimumTextWidth = 320;
+    private const double MinimumTextWidth = 240;
     private const double MaximumTextWidth = 520;
     private static NotificationForm? _instance;
 
@@ -257,30 +257,22 @@ public partial class NotificationForm : Window
             {
                 Text = icon,
                 FontFamily = (FontFamily)Application.Current!.FindResource("ShareX.FontFamily.Icon")!,
-                FontSize = 15,
+                FontSize = 16,
+                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
                 VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
             };
-            TextBlock labelText = new()
-            {
-                Text = label,
-                FontSize = 12,
-                FontWeight = FontWeight.SemiBold,
-                VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
-            };
-            StackPanel content = new()
-            {
-                Orientation = Avalonia.Layout.Orientation.Horizontal,
-                Spacing = 7
-            };
-            content.Children.Add(iconText);
-            content.Children.Add(labelText);
 
             Button button = new()
             {
-                Content = content,
+                Content = iconText,
                 Tag = definition,
                 Classes = { "notification-action" }
             };
+            ToolTip.SetTip(button, label);
+            ToolTip.SetPlacement(button, PlacementMode.Top);
+            ToolTip.SetVerticalOffset(button, -4);
+            ToolTip.SetShowDelay(button, 400);
+            ToolTip.SetBetweenShowDelay(button, 100);
             button.PointerPressed += OnActionButtonPointerPressed;
             button.Click += OnActionButtonClick;
             ActionButtons.Children.Add(button);
@@ -288,7 +280,7 @@ public partial class NotificationForm : Window
 
         bool hasActions = ActionButtons.Children.Count > 0;
         ActionsPanel.IsVisible = hasActions;
-        TextContent.Margin = hasActions ? new Thickness(18, 16, 18, 62) : new Thickness(18, 16);
+        TextContent.Margin = hasActions ? new Thickness(18, 16, 18, 54) : new Thickness(18, 16);
     }
 
     private void OnOpened(object? sender, EventArgs e)
