@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -13,465 +13,643 @@
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-
-    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
 */
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Input;
+using Avalonia.Interactivity;
+using Avalonia.Media;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
+using Avalonia.Platform.Storage;
+using Avalonia.Threading;
+using ShareX.AvaloniaUI.Integration;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
-using ShareX.Properties;
 using System;
-using System.Drawing;
+using System.Diagnostics;
+using System.Drawing.Imaging;
 using System.IO;
-using System.Windows.Forms;
+using System.Linq;
+using DrawingBitmap = System.Drawing.Bitmap;
+using DrawingColor = System.Drawing.Color;
+using DrawingContentAlignment = System.Drawing.ContentAlignment;
+using FormsMessageBox = System.Windows.Forms.MessageBox;
+using FormsMessageBoxButtons = System.Windows.Forms.MessageBoxButtons;
+using FormsDialogResult = System.Windows.Forms.DialogResult;
+using FormsCursor = System.Windows.Forms.Cursor;
+using AppResources = ShareX.Properties.Resources;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class NotificationForm : Window
 {
-    public class NotificationForm : LayeredForm
+    private const double ShadowMargin = 14;
+    private const double MinimumTextWidth = 320;
+    private const double MaximumTextWidth = 520;
+    private static NotificationForm? _instance;
+
+    private readonly DispatcherTimer _durationTimer;
+    private readonly DispatcherTimer _fadeTimer;
+    private readonly DispatcherTimer _hoverTimer;
+    private readonly Stopwatch _fadeStopwatch = new();
+    private NotificationFormConfig? _config;
+    private Bitmap? _previewBitmap;
+    private bool _durationEnded;
+    private bool _pointerInside;
+    private bool _dragStarted;
+    private Point _dragStart;
+    private PointerPressedEventArgs? _dragEvent;
+
+    public NotificationFormConfig? Config => _config;
+
+    public NotificationForm()
     {
-        private static NotificationForm instance;
+        InitializeComponent();
+        RequestedThemeVariant = ThemeManager.GetCurrentTheme();
 
-        public NotificationFormConfig Config { get; private set; }
+        _durationTimer = new DispatcherTimer();
+        _durationTimer.Tick += OnDurationElapsed;
+        _fadeTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(16) };
+        _fadeTimer.Tick += OnFadeTick;
+        _hoverTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(40) };
+        _hoverTimer.Tick += OnHoverTick;
 
-        private bool isMouseInside;
-        private bool isDurationEnd;
-        private int fadeInterval = 50;
-        private float opacityDecrement;
-        private int urlPadding = 3;
-        private int titleSpace = 3;
-        private Size titleRenderSize;
-        private Size textRenderSize;
-        private Size totalRenderSize;
-        private bool isMouseDragging;
-        private Point dragStart;
-        private float opacity = 255;
-        private Bitmap buffer;
-        private Graphics gBuffer;
+        Opened += OnOpened;
+        Closed += OnClosed;
+    }
 
-        protected override CreateParams CreateParams
+    public static void Show(NotificationFormConfig config)
+    {
+        if (config == null || !config.IsValid)
         {
-            get
-            {
-                CreateParams createParams = base.CreateParams;
-                createParams.ExStyle |= (int)WindowStyles.WS_EX_TOOLWINDOW;
-                return createParams;
-            }
+            config?.Dispose();
+            return;
         }
 
-        private NotificationForm()
+        if (config.Image == null)
         {
-            InitializeComponent();
+            config.Image = ImageHelpers.LoadImage(config.FilePath);
         }
 
-        public static void Show(NotificationFormConfig config)
+        if (config.Image == null && string.IsNullOrEmpty(config.Text))
         {
-            if (config.IsValid)
-            {
-                if (config.Image == null)
-                {
-                    config.Image = ImageHelpers.LoadImage(config.FilePath);
-                }
-
-                if (config.Image != null || !string.IsNullOrEmpty(config.Text))
-                {
-                    if (instance == null || instance.IsDisposed)
-                    {
-                        instance = new NotificationForm();
-                        instance.LoadConfig(config);
-
-                        NativeMethods.ShowWindow(instance.Handle, (int)WindowShowStyle.ShowNoActivate);
-                    }
-                    else
-                    {
-                        instance.LoadConfig(config);
-                    }
-                }
-            }
+            config.Dispose();
+            return;
         }
 
-        public static void CloseActiveForm()
+        AvaloniaBootstrapper.EnsureInitialized();
+        Dispatcher.UIThread.Post(() =>
         {
-            if (instance != null && !instance.IsDisposed)
+            if (_instance == null)
             {
-                instance.Close();
-            }
-        }
-
-        public void LoadConfig(NotificationFormConfig config)
-        {
-            Config?.Dispose();
-            buffer?.Dispose();
-            gBuffer?.Dispose();
-
-            Config = config;
-            opacityDecrement = (float)fadeInterval / Config.FadeDuration * 255;
-
-            if (Config.Image != null)
-            {
-                Config.Image = ImageHelpers.ResizeImageLimit(Config.Image, Config.Size);
-                Config.Size = new Size(Config.Image.Width + 2, Config.Image.Height + 2);
-            }
-            else if (!string.IsNullOrEmpty(Config.Text))
-            {
-                Size size = Config.Size.Offset(-Config.TextPadding * 2);
-                textRenderSize = TextRenderer.MeasureText(Config.Text, Config.TextFont, size,
-                    TextFormatFlags.WordBreak | TextFormatFlags.TextBoxControl | TextFormatFlags.EndEllipsis);
-                textRenderSize = new Size(textRenderSize.Width, Math.Min(textRenderSize.Height, size.Height));
-                totalRenderSize = textRenderSize;
-
-                if (!string.IsNullOrEmpty(Config.Title))
-                {
-                    titleRenderSize = TextRenderer.MeasureText(Config.Title, Config.TitleFont, Config.Size.Offset(-Config.TextPadding * 2),
-                        TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
-                    totalRenderSize = new Size(Math.Max(textRenderSize.Width, titleRenderSize.Width), titleRenderSize.Height + titleSpace + textRenderSize.Height);
-                }
-
-                Config.Size = new Size(totalRenderSize.Width + (Config.TextPadding * 2), totalRenderSize.Height + (Config.TextPadding * 2) + 2);
-            }
-
-            buffer = new Bitmap(Config.Size.Width, Config.Size.Height);
-            gBuffer = Graphics.FromImage(buffer);
-
-            Point position = Helpers.GetPosition(Config.Placement, Config.Offset, Screen.PrimaryScreen.WorkingArea, Config.Size);
-
-            NativeMethods.SetWindowPos(Handle, (IntPtr)NativeConstants.HWND_TOPMOST, position.X, position.Y, Config.Size.Width, Config.Size.Height,
-                SetWindowPosFlags.SWP_NOACTIVATE);
-
-            tDuration.Stop();
-            tOpacity.Stop();
-
-            opacity = 255;
-            Render(true);
-
-            if (Config.Duration <= 0)
-            {
-                DurationEnd();
+                _instance = new NotificationForm();
+                _instance.LoadConfig(config);
+                _instance.Show();
             }
             else
             {
-                tDuration.Interval = Config.Duration;
-                tDuration.Start();
-            }
-        }
+                _instance.LoadConfig(config);
 
-        private void UpdateBuffer()
-        {
-            Rectangle rect = new Rectangle(0, 0, buffer.Width, buffer.Height);
-
-            gBuffer.Clear(Config.BackgroundColor);
-
-            if (Config.Image != null)
-            {
-                gBuffer.DrawImage(Config.Image, 1, 1, Config.Image.Width, Config.Image.Height);
-
-                if (isMouseInside && !string.IsNullOrEmpty(Config.Text))
+                if (!_instance.IsVisible)
                 {
-                    Rectangle textRect = new Rectangle(0, 0, rect.Width, 40);
-
-                    using (SolidBrush brush = new SolidBrush(Color.FromArgb(100, 0, 0, 0)))
-                    {
-                        gBuffer.FillRectangle(brush, textRect);
-                    }
-
-                    TextRenderer.DrawText(gBuffer, Config.Text, Config.TextFont, textRect.Offset(-urlPadding), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                    _instance.Show();
                 }
             }
-            else if (!string.IsNullOrEmpty(Config.Text))
-            {
-                Rectangle textRect;
+        });
+    }
 
-                if (!string.IsNullOrEmpty(Config.Title))
-                {
-                    Rectangle titleRect = new Rectangle(Config.TextPadding, Config.TextPadding, titleRenderSize.Width + 2, titleRenderSize.Height + 2);
-                    TextRenderer.DrawText(gBuffer, Config.Title, Config.TitleFont, titleRect, Config.TitleColor, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
-                    textRect = new Rectangle(Config.TextPadding, Config.TextPadding + titleRect.Height + titleSpace, textRenderSize.Width + 2, textRenderSize.Height + 2);
-                }
-                else
-                {
-                    textRect = new Rectangle(Config.TextPadding, Config.TextPadding, textRenderSize.Width + 2, textRenderSize.Height + 2);
-                }
-
-                TextRenderer.DrawText(gBuffer, Config.Text, Config.TextFont, textRect, Config.TextColor,
-                    TextFormatFlags.WordBreak | TextFormatFlags.TextBoxControl | TextFormatFlags.EndEllipsis);
-            }
-
-            using (Pen borderPen = new Pen(Config.BorderColor))
-            {
-                gBuffer.DrawRectangleProper(borderPen, rect);
-            }
+    public static void CloseActiveForm()
+    {
+        if (Application.Current == null)
+        {
+            return;
         }
 
-        private void Render(bool updateBuffer)
-        {
-            if (updateBuffer)
-            {
-                UpdateBuffer();
-            }
+        Dispatcher.UIThread.Post(() => _instance?.Close());
+    }
 
-            SelectBitmap(buffer, (int)opacity);
+    public void LoadConfig(NotificationFormConfig config)
+    {
+        _durationTimer.Stop();
+        _fadeTimer.Stop();
+        _fadeStopwatch.Reset();
+        _durationEnded = false;
+        _pointerInside = false;
+        _dragStarted = false;
+        Opacity = 1;
+
+        _previewBitmap?.Dispose();
+        _previewBitmap = null;
+        _config?.Dispose();
+        _config = config;
+
+        LoadPreview(config);
+        ApplyContent(config);
+        BuildActionButtons(config);
+        UpdateHoverState(false);
+
+        if (IsVisible)
+        {
+            Dispatcher.UIThread.Post(PositionWindow, DispatcherPriority.Loaded);
         }
 
-        private void DurationEnd()
+        if (config.Duration <= 0)
         {
-            isDurationEnd = true;
-            tDuration.Stop();
+            EndDuration();
+        }
+        else
+        {
+            _durationTimer.Interval = TimeSpan.FromMilliseconds(config.Duration);
+            _durationTimer.Start();
+        }
+    }
 
-            if (!isMouseInside)
-            {
-                StartFade();
-            }
+    private void LoadPreview(NotificationFormConfig config)
+    {
+        DrawingBitmap? source = config.Image;
+
+        if (source == null && !string.IsNullOrEmpty(config.FilePath))
+        {
+            source = ImageHelpers.LoadImage(config.FilePath);
+            config.Image = source;
         }
 
-        private void StartFade()
+        if (source == null)
         {
-            if (Config.FadeDuration <= 0)
-            {
-                Close();
-            }
-            else
-            {
-                opacity = 255;
-                Render(false);
-
-                tOpacity.Interval = fadeInterval;
-                tOpacity.Start();
-            }
+            PreviewImage.Source = null;
+            PreviewImage.IsVisible = false;
+            return;
         }
 
-        private void tDuration_Tick(object sender, EventArgs e)
-        {
-            DurationEnd();
-        }
+        using MemoryStream stream = new();
+        source.Save(stream, ImageFormat.Png);
+        stream.Position = 0;
+        _previewBitmap = new Bitmap(stream);
+        PreviewImage.Source = _previewBitmap;
+        PreviewImage.IsVisible = true;
 
-        private void tOpacity_Tick(object sender, EventArgs e)
+        double maxWidth = Math.Max(1, config.Size.Width);
+        double maxHeight = Math.Max(1, config.Size.Height);
+        double scale = Math.Min(1, Math.Min(maxWidth / source.Width, maxHeight / source.Height));
+        PreviewImage.Width = Math.Max(1, Math.Round(source.Width * scale));
+        PreviewImage.Height = Math.Max(1, Math.Round(source.Height * scale));
+    }
+
+    private void ApplyContent(NotificationFormConfig config)
+    {
+        bool hasImage = _previewBitmap != null;
+        bool hasTitle = !string.IsNullOrWhiteSpace(config.Title);
+        bool hasText = !string.IsNullOrWhiteSpace(config.Text);
+        bool hasCaption = hasImage && (hasTitle || hasText);
+
+        TextContent.IsVisible = !hasImage;
+        ImageCaption.IsVisible = hasCaption;
+        TitleText.Text = config.Title ?? string.Empty;
+        BodyText.Text = config.Text ?? string.Empty;
+        ImageTitleText.Text = config.Title ?? string.Empty;
+        ImageBodyText.Text = config.Text ?? string.Empty;
+        TitleText.IsVisible = hasTitle;
+        BodyText.IsVisible = hasText;
+        ImageTitleText.IsVisible = hasTitle;
+        ImageBodyText.IsVisible = hasText;
+
+        NotificationCard.Background = new SolidColorBrush(ToAvaloniaColor(config.BackgroundColor));
+        NotificationCard.BorderBrush = new SolidColorBrush(ToAvaloniaColor(config.BorderColor));
+        TitleText.Foreground = new SolidColorBrush(ToAvaloniaColor(config.TitleColor));
+        BodyText.Foreground = new SolidColorBrush(ToAvaloniaColor(config.TextColor));
+
+        if (!hasImage)
         {
-            if (opacity > opacityDecrement)
+            double width = Math.Clamp(config.Size.Width, MinimumTextWidth, MaximumTextWidth);
+            NotificationCard.Width = width;
+            NotificationCard.Height = double.NaN;
+            TextContent.MaxHeight = Math.Max(96, config.Size.Height);
+        }
+        else
+        {
+            NotificationCard.Width = double.NaN;
+            NotificationCard.Height = double.NaN;
+        }
+    }
+
+    private void BuildActionButtons(NotificationFormConfig config)
+    {
+        ActionButtons.Children.Clear();
+
+        foreach (NotificationActionButton definition in config.ActionButtons ?? [])
+        {
+            if (definition == null || !CanExecute(definition.Action, config))
             {
-                opacity -= opacityDecrement;
-                Render(false);
+                continue;
             }
-            else
+
+            (string defaultLabel, string defaultIcon) = GetActionPresentation(definition.Action);
+            string label = string.IsNullOrWhiteSpace(definition.Label) ? defaultLabel : definition.Label;
+            string icon = string.IsNullOrWhiteSpace(definition.Icon) ? defaultIcon : definition.Icon;
+
+            TextBlock iconText = new()
             {
-                Close();
-            }
-        }
-
-        private void NotificationForm_MouseEnter(object sender, EventArgs e)
-        {
-            isMouseInside = true;
-            tOpacity.Stop();
-
-            if (!IsDisposed)
+                Text = icon,
+                FontFamily = (FontFamily)Application.Current!.FindResource("ShareX.FontFamily.Icon")!,
+                FontSize = 15,
+                VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
+            };
+            TextBlock labelText = new()
             {
-                opacity = 255;
-                Render(true);
-            }
-        }
-
-        private void NotificationForm_MouseLeave(object sender, EventArgs e)
-        {
-            isMouseInside = false;
-            isMouseDragging = false;
-            Render(true);
-
-            if (isDurationEnd)
+                Text = label,
+                FontSize = 12,
+                FontWeight = FontWeight.SemiBold,
+                VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
+            };
+            StackPanel content = new()
             {
-                StartFade();
-            }
-        }
+                Orientation = Avalonia.Layout.Orientation.Horizontal,
+                Spacing = 7
+            };
+            content.Children.Add(iconText);
+            content.Children.Add(labelText);
 
-        private void NotificationForm_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
+            Button button = new()
             {
-                dragStart = e.Location;
-                isMouseDragging = true;
-            }
+                Content = content,
+                Tag = definition,
+                Classes = { "notification-action" }
+            };
+            button.PointerPressed += OnActionButtonPointerPressed;
+            button.Click += OnActionButtonClick;
+            ActionButtons.Children.Add(button);
         }
 
-        private void NotificationForm_MouseMove(object sender, MouseEventArgs e)
+        bool hasActions = ActionButtons.Children.Count > 0;
+        ActionsPanel.IsVisible = hasActions;
+        TextContent.Margin = hasActions ? new Thickness(18, 16, 18, 62) : new Thickness(18, 16);
+    }
+
+    private void OnOpened(object? sender, EventArgs e)
+    {
+        _hoverTimer.Start();
+        Dispatcher.UIThread.Post(PositionWindow, DispatcherPriority.Loaded);
+        Dispatcher.UIThread.Post(UpdatePointerInside, DispatcherPriority.Loaded);
+    }
+
+    private void PositionWindow()
+    {
+        if (_config == null || Screens.Primary == null)
         {
-            if (isMouseDragging)
-            {
-                int dragThreshold = 20;
-
-                Rectangle dragThresholdRectangle = new Rectangle(dragStart.X - dragThreshold, dragStart.Y - dragThreshold, dragThreshold * 2, dragThreshold * 2);
-
-                bool isOverThreshold = !dragThresholdRectangle.Contains(e.Location);
-                if (isOverThreshold && !string.IsNullOrEmpty(Config.FilePath) && File.Exists(Config.FilePath))
-                {
-                    IDataObject dataObject = new DataObject(DataFormats.FileDrop, new string[] { Config.FilePath });
-                    DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
-
-                    isMouseDragging = false;
-                }
-            }
+            return;
         }
 
-        private void NotificationForm_MouseUp(object sender, MouseEventArgs e)
+        Screen screen = Screens.Primary;
+        PixelRect area = screen.WorkingArea;
+        PixelSize size = PixelSize.FromSize(Bounds.Size, screen.Scaling);
+        int offset = Math.Max(0, _config.Offset) - (int)Math.Round(ShadowMargin * screen.Scaling);
+        int x = GetHorizontalPosition(_config.Placement, area, size.Width, offset);
+        int y = GetVerticalPosition(_config.Placement, area, size.Height, offset);
+        Position = new PixelPoint(x, y);
+    }
+
+    private static int GetHorizontalPosition(DrawingContentAlignment placement, PixelRect area, int width, int offset) => placement switch
+    {
+        DrawingContentAlignment.TopLeft or DrawingContentAlignment.MiddleLeft or DrawingContentAlignment.BottomLeft => area.X + offset,
+        DrawingContentAlignment.TopCenter or DrawingContentAlignment.MiddleCenter or DrawingContentAlignment.BottomCenter => area.X + (area.Width - width) / 2,
+        _ => area.Right - width - offset
+    };
+
+    private static int GetVerticalPosition(DrawingContentAlignment placement, PixelRect area, int height, int offset) => placement switch
+    {
+        DrawingContentAlignment.TopLeft or DrawingContentAlignment.TopCenter or DrawingContentAlignment.TopRight => area.Y + offset,
+        DrawingContentAlignment.MiddleLeft or DrawingContentAlignment.MiddleCenter or DrawingContentAlignment.MiddleRight => area.Y + (area.Height - height) / 2,
+        _ => area.Bottom - height - offset
+    };
+
+    private void OnDurationElapsed(object? sender, EventArgs e) => EndDuration();
+
+    private void EndDuration()
+    {
+        _durationEnded = true;
+        _durationTimer.Stop();
+
+        if (!_pointerInside)
         {
-            isMouseDragging = false;
+            StartFade();
+        }
+    }
+
+    private void StartFade()
+    {
+        if (_config == null)
+        {
+            return;
         }
 
-        private void NotificationForm_MouseClick(object sender, MouseEventArgs e)
+        if (_config.FadeDuration <= 0)
         {
-            tDuration.Stop();
-
             Close();
-
-            ToastClickAction action = ToastClickAction.CloseNotification;
-
-            if (e.Button == MouseButtons.Left)
-            {
-                action = Config.LeftClickAction;
-            }
-            else if (e.Button == MouseButtons.Right)
-            {
-                action = Config.RightClickAction;
-            }
-            else if (e.Button == MouseButtons.Middle)
-            {
-                action = Config.MiddleClickAction;
-            }
-
-            ExecuteAction(action);
+            return;
         }
 
-        private void ExecuteAction(ToastClickAction action)
+        _fadeStopwatch.Restart();
+        _fadeTimer.Start();
+    }
+
+    private void OnFadeTick(object? sender, EventArgs e)
+    {
+        if (_config == null)
+        {
+            return;
+        }
+
+        double progress = _fadeStopwatch.Elapsed.TotalMilliseconds / _config.FadeDuration;
+
+        if (progress >= 1)
+        {
+            Close();
+        }
+        else
+        {
+            Opacity = 1 - progress;
+        }
+    }
+
+    private void OnHoverTick(object? sender, EventArgs e) => UpdatePointerInside();
+
+    private void UpdatePointerInside()
+    {
+        if (!IsVisible || NotificationCard.Bounds.Width <= 0 || NotificationCard.Bounds.Height <= 0)
+        {
+            return;
+        }
+
+        PixelPoint topLeft = NotificationCard.PointToScreen(default);
+        PixelPoint bottomRight = NotificationCard.PointToScreen(
+            new Point(NotificationCard.Bounds.Width, NotificationCard.Bounds.Height));
+        System.Drawing.Point cursor = FormsCursor.Position;
+        bool isInside = cursor.X >= topLeft.X && cursor.X < bottomRight.X &&
+            cursor.Y >= topLeft.Y && cursor.Y < bottomRight.Y;
+
+        if (isInside == _pointerInside)
+        {
+            return;
+        }
+
+        _pointerInside = isInside;
+        UpdateHoverState(isInside);
+
+        if (isInside)
+        {
+            _fadeTimer.Stop();
+            _fadeStopwatch.Reset();
+            Opacity = 1;
+        }
+        else
+        {
+            _dragStarted = false;
+            _dragEvent = null;
+
+            if (_durationEnded)
+            {
+                StartFade();
+            }
+        }
+    }
+
+    private void UpdateHoverState(bool isHovered)
+    {
+        ActionsPanel.Opacity = isHovered ? 1 : 0;
+        ActionsPanel.IsHitTestVisible = isHovered;
+        CloseButton.Opacity = isHovered ? 1 : 0;
+        CloseButton.IsHitTestVisible = isHovered;
+        ImageCaption.Opacity = isHovered ? 1 : 0;
+    }
+
+    private void OnCardPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        PointerPoint point = e.GetCurrentPoint(NotificationCard);
+        _dragStart = point.Position;
+        _dragStarted = point.Properties.IsLeftButtonPressed;
+        _dragEvent = _dragStarted ? e : null;
+    }
+
+    private async void OnCardPointerMoved(object? sender, PointerEventArgs e)
+    {
+        if (!_dragStarted || _dragEvent == null || _config == null ||
+            string.IsNullOrEmpty(_config.FilePath) || !File.Exists(_config.FilePath))
+        {
+            return;
+        }
+
+        Point current = e.GetPosition(NotificationCard);
+        if (Math.Abs(current.X - _dragStart.X) < 20 && Math.Abs(current.Y - _dragStart.Y) < 20)
+        {
+            return;
+        }
+
+        _dragStarted = false;
+        IStorageFile? file = await StorageProvider.TryGetFileFromPathAsync(_config.FilePath);
+        if (file == null)
+        {
+            return;
+        }
+
+        DataTransfer data = new();
+        data.Add(DataTransferItem.CreateFile(file));
+        await DragDrop.DoDragDropAsync(_dragEvent, data, DragDropEffects.Copy | DragDropEffects.Move);
+        _dragEvent = null;
+    }
+
+    private void OnCardPointerReleased(object? sender, PointerReleasedEventArgs e)
+    {
+        bool wasDragging = _dragEvent == null && !_dragStarted;
+        _dragStarted = false;
+        _dragEvent = null;
+
+        if (wasDragging || _config == null)
+        {
+            return;
+        }
+
+        PointerPoint point = e.GetCurrentPoint(NotificationCard);
+        ToastClickAction action = point.Properties.PointerUpdateKind switch
+        {
+            PointerUpdateKind.LeftButtonReleased => _config.LeftClickAction,
+            PointerUpdateKind.RightButtonReleased => _config.RightClickAction,
+            PointerUpdateKind.MiddleButtonReleased => _config.MiddleClickAction,
+            _ => ToastClickAction.CloseNotification
+        };
+
+        NotificationFormConfig config = _config;
+        Close();
+        ExecuteAction(action, config);
+        e.Handled = true;
+    }
+
+    private void OnActionButtonClick(object? sender, RoutedEventArgs e)
+    {
+        if (sender is not Button { Tag: NotificationActionButton definition } || _config == null)
+        {
+            return;
+        }
+
+        e.Handled = true;
+        NotificationFormConfig config = _config;
+
+        if (definition.DismissNotification)
+        {
+            Close();
+        }
+
+        ExecuteAction(definition.Action, config);
+    }
+
+    private void OnActionButtonPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        _dragStarted = false;
+        _dragEvent = null;
+        e.Handled = true;
+    }
+
+    private void OnCloseButtonClick(object? sender, RoutedEventArgs e)
+    {
+        e.Handled = true;
+        Close();
+    }
+
+    private static void ExecuteAction(ToastClickAction action, NotificationFormConfig config)
+    {
+        if (action == ToastClickAction.CloseNotification)
+        {
+            return;
+        }
+
+        void Execute()
         {
             switch (action)
             {
                 case ToastClickAction.AnnotateImage:
-                    if (!string.IsNullOrEmpty(Config.FilePath) && FileHelpers.IsImageFile(Config.FilePath))
+                    if (!string.IsNullOrEmpty(config.FilePath) && FileHelpers.IsImageFile(config.FilePath))
                     {
-                        TaskHelpers.AnnotateImageFromFile(Config.FilePath);
+                        TaskHelpers.AnnotateImageFromFile(config.FilePath);
                     }
                     break;
                 case ToastClickAction.CopyImageToClipboard:
-                    if (!string.IsNullOrEmpty(Config.FilePath))
+                    if (!string.IsNullOrEmpty(config.FilePath))
                     {
-                        ClipboardHelpers.CopyImageFromFile(Config.FilePath);
+                        ClipboardHelpers.CopyImageFromFile(config.FilePath);
                     }
                     break;
                 case ToastClickAction.CopyFile:
-                    if (!string.IsNullOrEmpty(Config.FilePath))
+                    if (!string.IsNullOrEmpty(config.FilePath))
                     {
-                        ClipboardHelpers.CopyFile(Config.FilePath);
+                        ClipboardHelpers.CopyFile(config.FilePath);
                     }
                     break;
                 case ToastClickAction.CopyFilePath:
-                    if (!string.IsNullOrEmpty(Config.FilePath))
+                    if (!string.IsNullOrEmpty(config.FilePath))
                     {
-                        ClipboardHelpers.CopyText(Config.FilePath);
+                        ClipboardHelpers.CopyText(config.FilePath);
                     }
                     break;
                 case ToastClickAction.CopyUrl:
-                    if (!string.IsNullOrEmpty(Config.URL))
-                    {
-                        ClipboardHelpers.CopyText(Config.URL);
-                    }
-                    else if (!string.IsNullOrEmpty(Config.FilePath))
-                    {
-                        ClipboardHelpers.CopyText(Config.FilePath);
-                    }
+                    ClipboardHelpers.CopyText(!string.IsNullOrEmpty(config.URL) ? config.URL : config.FilePath);
                     break;
                 case ToastClickAction.OpenFile:
-                    if (!string.IsNullOrEmpty(Config.FilePath))
-                    {
-                        FileHelpers.OpenFile(Config.FilePath);
-                    }
+                    FileHelpers.OpenFile(config.FilePath);
                     break;
                 case ToastClickAction.OpenFolder:
-                    if (!string.IsNullOrEmpty(Config.FilePath))
-                    {
-                        FileHelpers.OpenFolderWithFile(Config.FilePath);
-                    }
+                    FileHelpers.OpenFolderWithFile(config.FilePath);
                     break;
                 case ToastClickAction.OpenUrl:
-                    if (!string.IsNullOrEmpty(Config.URL))
+                    if (!string.IsNullOrEmpty(config.URL))
                     {
-                        URLHelpers.OpenURL(Config.URL);
+                        URLHelpers.OpenURL(config.URL);
                     }
-                    else if (!string.IsNullOrEmpty(Config.FilePath))
+                    else
                     {
-                        FileHelpers.OpenFile(Config.FilePath);
+                        FileHelpers.OpenFile(config.FilePath);
                     }
                     break;
                 case ToastClickAction.Upload:
-                    if (!string.IsNullOrEmpty(Config.FilePath))
-                    {
-                        UploadManager.UploadFile(Config.FilePath);
-                    }
+                    UploadManager.UploadFile(config.FilePath);
                     break;
                 case ToastClickAction.PinToScreen:
-                    if (!string.IsNullOrEmpty(Config.FilePath) && FileHelpers.IsImageFile(Config.FilePath))
-                    {
-                        TaskHelpers.PinToScreen(Config.FilePath);
-                    }
+                    TaskHelpers.PinToScreen(config.FilePath);
                     break;
                 case ToastClickAction.DeleteFile:
-                    if (!string.IsNullOrEmpty(Config.FilePath) &&
-                        MessageBox.Show(Resources.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
-                        "ShareX - " + Resources.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (FormsMessageBox.Show(AppResources.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
+                        "ShareX - " + AppResources.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation,
+                        FormsMessageBoxButtons.YesNo) == FormsDialogResult.Yes)
                     {
-                        FileHelpers.DeleteFile(Config.FilePath, true);
+                        FileHelpers.DeleteFile(config.FilePath, true);
                     }
                     break;
             }
         }
 
-        #region Windows Form Designer generated code
-
-        private Timer tDuration;
-        private Timer tOpacity;
-
-        private System.ComponentModel.IContainer components = null;
-
-        protected override void Dispose(bool disposing)
+        if (Program.MainForm != null && Program.MainForm.InvokeRequired)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-
-            Config?.Dispose();
-            buffer?.Dispose();
-            gBuffer?.Dispose();
-
-            base.Dispose(disposing);
+            Program.MainForm.BeginInvoke((Action)Execute);
         }
-
-        private void InitializeComponent()
+        else
         {
-            components = new System.ComponentModel.Container();
-            tDuration = new Timer(components);
-            tOpacity = new Timer(components);
-            SuspendLayout();
-            tDuration.Tick += new EventHandler(tDuration_Tick);
-            tOpacity.Tick += new EventHandler(tOpacity_Tick);
-            AutoScaleDimensions = new SizeF(96F, 96F);
-            AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(400, 300);
-            Cursor = Cursors.Hand;
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "NotificationForm";
-            ShowInTaskbar = false;
-            StartPosition = FormStartPosition.Manual;
-            Text = "NotificationForm";
-            MouseClick += new MouseEventHandler(NotificationForm_MouseClick);
-            MouseEnter += new EventHandler(NotificationForm_MouseEnter);
-            MouseLeave += new EventHandler(NotificationForm_MouseLeave);
-            MouseDown += new MouseEventHandler(NotificationForm_MouseDown);
-            MouseMove += new MouseEventHandler(NotificationForm_MouseMove);
-            MouseUp += new MouseEventHandler(NotificationForm_MouseUp);
-            ResumeLayout(false);
+            Execute();
         }
+    }
 
-        #endregion Windows Form Designer generated code
+    private static bool CanExecute(ToastClickAction action, NotificationFormConfig config)
+    {
+        bool hasFile = !string.IsNullOrWhiteSpace(config.FilePath);
+        bool hasImageFile = hasFile && FileHelpers.IsImageFile(config.FilePath);
+        bool hasTarget = hasFile || !string.IsNullOrWhiteSpace(config.URL);
+
+        return action switch
+        {
+            ToastClickAction.AnnotateImage or ToastClickAction.CopyImageToClipboard or ToastClickAction.PinToScreen => hasImageFile,
+            ToastClickAction.CopyFile or ToastClickAction.CopyFilePath or ToastClickAction.OpenFile or
+                ToastClickAction.OpenFolder or ToastClickAction.Upload or ToastClickAction.DeleteFile => hasFile,
+            ToastClickAction.CopyUrl or ToastClickAction.OpenUrl => hasTarget,
+            ToastClickAction.CloseNotification => true,
+            _ => false
+        };
+    }
+
+    private static (string Label, string Icon) GetActionPresentation(ToastClickAction action) => action switch
+    {
+        ToastClickAction.AnnotateImage => ("Edit", LucideIcons.pen_line),
+        ToastClickAction.CopyImageToClipboard => ("Copy image", LucideIcons.copy),
+        ToastClickAction.CopyFile => ("Copy file", LucideIcons.files),
+        ToastClickAction.CopyFilePath => ("Copy path", LucideIcons.clipboard),
+        ToastClickAction.CopyUrl => ("Copy link", LucideIcons.link),
+        ToastClickAction.OpenFile => ("Open", LucideIcons.external_link),
+        ToastClickAction.OpenFolder => ("Folder", LucideIcons.folder_open),
+        ToastClickAction.OpenUrl => ("Open link", LucideIcons.external_link),
+        ToastClickAction.Upload => ("Upload", LucideIcons.upload),
+        ToastClickAction.PinToScreen => ("Pin", LucideIcons.pin),
+        ToastClickAction.DeleteFile => ("Delete", LucideIcons.trash_2),
+        _ => ("Close", LucideIcons.x)
+    };
+
+    private static Avalonia.Media.Color ToAvaloniaColor(DrawingColor color) =>
+        Avalonia.Media.Color.FromArgb(color.A, color.R, color.G, color.B);
+
+    private void OnClosed(object? sender, EventArgs e)
+    {
+        _durationTimer.Stop();
+        _fadeTimer.Stop();
+        _hoverTimer.Stop();
+        _previewBitmap?.Dispose();
+        _previewBitmap = null;
+        _config?.Dispose();
+        _config = null;
+
+        if (ReferenceEquals(_instance, this))
+        {
+            _instance = null;
+        }
     }
 }

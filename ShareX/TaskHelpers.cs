@@ -2967,6 +2967,7 @@ namespace ShareX
                 FadeDuration = (int)(Program.DefaultTaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
                 Placement = Program.DefaultTaskSettings.GeneralSettings.ToastWindowPlacement,
                 Size = Program.DefaultTaskSettings.GeneralSettings.ToastWindowSize,
+                ActionButtons = NotificationActionButton.CloneButtons(Program.DefaultTaskSettings.GeneralSettings.ToastWindowButtons),
                 Title = title,
                 Text = text
             };

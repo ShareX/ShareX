@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace ShareX
@@ -52,6 +53,7 @@ namespace ShareX
         public ToastClickAction LeftClickAction { get; set; }
         public ToastClickAction RightClickAction { get; set; }
         public ToastClickAction MiddleClickAction { get; set; }
+        public List<NotificationActionButton> ActionButtons { get; set; } = NotificationActionButton.CreateDefaultButtons();
 
         public void Dispose()
         {

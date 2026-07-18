@@ -1,0 +1,155 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.NotificationForm"
+        x:CompileBindings="False"
+        CanResize="False"
+        ShowActivated="False"
+        ShowInTaskbar="False"
+        WindowDecorations="None"
+        Topmost="True"
+        SizeToContent="WidthAndHeight"
+        TransparencyLevelHint="Transparent"
+        Background="Transparent"
+        FontFamily="{DynamicResource ShareX.FontFamily.Default}">
+
+    <Window.Styles>
+        <Style Selector="Button.notification-action">
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="Margin" Value="3,0"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Background" Value="#CC383838"/>
+            <Setter Property="BorderBrush" Value="#33FFFFFF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="#F2FFFFFF"/>
+        </Style>
+        <Style Selector="Button.notification-action /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#CC383838"/>
+            <Setter Property="BorderBrush" Value="#33FFFFFF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style Selector="Button.notification-action:pointerover">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        </Style>
+        <Style Selector="Button.notification-action:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        </Style>
+        <Style Selector="Button.notification-action:pressed">
+            <Setter Property="RenderTransform" Value="scale(0.97)"/>
+        </Style>
+        <Style Selector="Button.notification-close">
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="Background" Value="#B3252525"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Button.notification-close /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#B3252525"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="Button.notification-close:pointerover">
+            <Setter Property="Background" Value="#E2444444"/>
+        </Style>
+        <Style Selector="Button.notification-close:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#E2444444"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid Margin="14">
+        <Border x:Name="NotificationCard"
+                MinWidth="1"
+                MinHeight="1"
+                CornerRadius="13"
+                ClipToBounds="True"
+                BorderThickness="1"
+                BoxShadow="0 10 28 #73000000"
+                PointerPressed="OnCardPointerPressed"
+                PointerMoved="OnCardPointerMoved"
+                PointerReleased="OnCardPointerReleased">
+            <Grid>
+                <Image x:Name="PreviewImage"
+                       Stretch="Uniform"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+
+                <StackPanel x:Name="TextContent"
+                            Spacing="6">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                        <Border Width="34"
+                                Height="34"
+                                CornerRadius="9"
+                                Background="{DynamicResource ShareX.Brush.Accent}">
+                            <TextBlock Text="{x:Static theming:LucideIcons.image}"
+                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                       FontSize="17"
+                                       Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        </Border>
+                        <StackPanel Grid.Column="1" Spacing="3" VerticalAlignment="Center">
+                            <TextBlock x:Name="TitleText"
+                                       FontSize="14"
+                                       FontWeight="SemiBold"
+                                       TextTrimming="CharacterEllipsis"
+                                       MaxLines="1"/>
+                            <TextBlock x:Name="BodyText"
+                                       FontSize="13"
+                                       LineHeight="19"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="WordEllipsis"
+                                       MaxLines="6"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+                <Border x:Name="ImageCaption"
+                        Padding="14,12,48,30"
+                        VerticalAlignment="Top"
+                        Background="#B31B1B1B"
+                        IsHitTestVisible="False">
+                    <StackPanel Spacing="2">
+                        <TextBlock x:Name="ImageTitleText"
+                                   FontSize="13"
+                                   FontWeight="SemiBold"
+                                   Foreground="White"
+                                   TextTrimming="CharacterEllipsis"
+                                   MaxLines="1"/>
+                        <TextBlock x:Name="ImageBodyText"
+                                   FontSize="12"
+                                   Foreground="#D9FFFFFF"
+                                   TextTrimming="CharacterEllipsis"
+                                   MaxLines="1"/>
+                    </StackPanel>
+                </Border>
+
+                <Border x:Name="ActionsPanel"
+                        Padding="8"
+                        VerticalAlignment="Bottom"
+                        Background="#D9212121">
+                    <WrapPanel x:Name="ActionButtons"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+
+                <Button x:Name="CloseButton"
+                        Classes="notification-close"
+                        Margin="8"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        PointerPressed="OnActionButtonPointerPressed"
+                        Click="OnCloseButtonClick">
+                    <TextBlock Text="{x:Static theming:LucideIcons.x}"
+                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                               FontSize="15"/>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

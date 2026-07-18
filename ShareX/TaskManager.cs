@@ -277,6 +277,7 @@ namespace ShareX
                                         LeftClickAction = info.TaskSettings.GeneralSettings.ToastWindowLeftClickAction,
                                         RightClickAction = info.TaskSettings.GeneralSettings.ToastWindowRightClickAction,
                                         MiddleClickAction = info.TaskSettings.GeneralSettings.ToastWindowMiddleClickAction,
+                                        ActionButtons = NotificationActionButton.CloneButtons(info.TaskSettings.GeneralSettings.ToastWindowButtons),
                                         FilePath = info.FilePath,
                                         Image = task.Image,
                                         Title = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed,
