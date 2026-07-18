@@ -41,34 +41,15 @@
         <Style Selector="Button.notification-action:pressed">
             <Setter Property="RenderTransform" Value="scale(0.97)"/>
         </Style>
-        <Style Selector="Button.notification-close">
-            <Setter Property="Width" Value="30"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="CornerRadius" Value="15"/>
-            <Setter Property="Background" Value="#B3252525"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Foreground" Value="White"/>
-        </Style>
-        <Style Selector="Button.notification-close /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Background" Value="#B3252525"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
-        <Style Selector="Button.notification-close:pointerover">
-            <Setter Property="Background" Value="#E2444444"/>
-        </Style>
-        <Style Selector="Button.notification-close:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Background" Value="#E2444444"/>
-        </Style>
     </Window.Styles>
 
     <Grid Margin="14">
         <Border x:Name="NotificationCard"
                 MinWidth="1"
                 MinHeight="1"
-                CornerRadius="13"
+                CornerRadius="6"
                 ClipToBounds="True"
+                BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
                 BorderThickness="1"
                 BoxShadow="0 10 28 #73000000"
                 PointerPressed="OnCardPointerPressed"
@@ -111,8 +92,10 @@
                 </StackPanel>
 
                 <Border x:Name="ImageCaption"
-                        Padding="14,12,48,30"
+                        Padding="10,7"
+                        HorizontalAlignment="Stretch"
                         VerticalAlignment="Top"
+                        CornerRadius="5,5,0,0"
                         Background="#B31B1B1B"
                         IsHitTestVisible="False">
                     <StackPanel Spacing="2">
@@ -120,13 +103,15 @@
                                    FontSize="13"
                                    FontWeight="SemiBold"
                                    Foreground="White"
+                                   TextWrapping="Wrap"
                                    TextTrimming="CharacterEllipsis"
-                                   MaxLines="1"/>
+                                   MaxLines="2"/>
                         <TextBlock x:Name="ImageBodyText"
                                    FontSize="12"
                                    Foreground="#D9FFFFFF"
+                                   TextWrapping="Wrap"
                                    TextTrimming="CharacterEllipsis"
-                                   MaxLines="1"/>
+                                   MaxLines="2"/>
                     </StackPanel>
                 </Border>
 
@@ -139,17 +124,6 @@
                                VerticalAlignment="Center"/>
                 </Border>
 
-                <Button x:Name="CloseButton"
-                        Classes="notification-close"
-                        Margin="8"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Top"
-                        PointerPressed="OnActionButtonPointerPressed"
-                        Click="OnCloseButtonClick">
-                    <TextBlock Text="{x:Static theming:LucideIcons.x}"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontSize="15"/>
-                </Button>
             </Grid>
         </Border>
     </Grid>

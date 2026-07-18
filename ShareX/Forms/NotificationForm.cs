@@ -220,7 +220,6 @@ public partial class NotificationForm : Window
         ImageBodyText.IsVisible = hasText;
 
         NotificationCard.Background = new SolidColorBrush(ToAvaloniaColor(config.BackgroundColor));
-        NotificationCard.BorderBrush = new SolidColorBrush(ToAvaloniaColor(config.BorderColor));
         TitleText.Foreground = new SolidColorBrush(ToAvaloniaColor(config.TitleColor));
         BodyText.Foreground = new SolidColorBrush(ToAvaloniaColor(config.TextColor));
 
@@ -233,7 +232,10 @@ public partial class NotificationForm : Window
         }
         else
         {
-            NotificationCard.Width = double.NaN;
+            // Overlay content must not participate in the notification's desired
+            // width. Keep image notifications anchored to the preview and let the
+            // caption wrap/trim inside that fixed surface.
+            NotificationCard.Width = PreviewImage.Width + 2;
             NotificationCard.Height = double.NaN;
         }
     }
@@ -415,8 +417,6 @@ public partial class NotificationForm : Window
     {
         ActionsPanel.Opacity = isHovered ? 1 : 0;
         ActionsPanel.IsHitTestVisible = isHovered;
-        CloseButton.Opacity = isHovered ? 1 : 0;
-        CloseButton.IsHitTestVisible = isHovered;
         ImageCaption.Opacity = isHovered ? 1 : 0;
     }
 
@@ -504,12 +504,6 @@ public partial class NotificationForm : Window
         _dragStarted = false;
         _dragEvent = null;
         e.Handled = true;
-    }
-
-    private void OnCloseButtonClick(object? sender, RoutedEventArgs e)
-    {
-        e.Handled = true;
-        Close();
     }
 
     private static void ExecuteAction(ToastClickAction action, NotificationFormConfig config)
