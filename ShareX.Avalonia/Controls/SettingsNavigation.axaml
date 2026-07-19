@@ -1,0 +1,66 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="using:ShareX.AvaloniaUI.Controls"
+             xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+             mc:Ignorable="d"
+             d:DesignWidth="230"
+             d:DesignHeight="600"
+             x:Class="ShareX.AvaloniaUI.Controls.SettingsNavigation"
+             x:Name="Root">
+
+    <UserControl.Styles>
+        <Style Selector="TreeView">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="TreeViewItem">
+            <Setter Property="IsVisible" Value="{ReflectionBinding IsVisible}"/>
+            <Setter Property="IsExpanded" Value="{ReflectionBinding IsExpanded, Mode=TwoWay}"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Margin" Value="0,1"/>
+        </Style>
+        <Style Selector="TreeViewItem /template/ ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+    </UserControl.Styles>
+
+    <Grid RowDefinitions="Auto,*" RowSpacing="10">
+        <Grid ColumnDefinitions="Auto,*">
+            <TextBlock Margin="10,0,0,0"
+                       Classes="icon"
+                       Text="{x:Static theming:LucideIcons.search}"
+                       FontSize="16"
+                       IsHitTestVisible="False"
+                       VerticalAlignment="Center"
+                       ZIndex="1"/>
+            <TextBox Grid.ColumnSpan="2"
+                     Padding="34,8,10,8"
+                     PlaceholderText="Search settings"
+                     Text="{Binding SearchText, ElementName=Root, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+
+        <TreeView Grid.Row="1"
+                  ItemsSource="{Binding Items, ElementName=Root}"
+                  SelectedItem="{Binding SelectedItem, ElementName=Root, Mode=TwoWay}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <TreeView.ItemTemplate>
+                <TreeDataTemplate DataType="controls:SettingsNavigationItem"
+                                  ItemsSource="{Binding Children}">
+                    <Grid ColumnDefinitions="22,*" ColumnSpacing="8" Margin="4,3">
+                        <TextBlock Classes="icon"
+                                   Text="{Binding Icon}"
+                                   FontSize="16"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Column="1"
+                                   Text="{Binding Title}"
+                                   Foreground="{DynamicResource ShareX.Brush.Text}"
+                                   FontWeight="Normal"
+                                   TextTrimming="CharacterEllipsis"/>
+                    </Grid>
+                </TreeDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+    </Grid>
+</UserControl>

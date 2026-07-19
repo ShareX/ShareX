@@ -89,7 +89,7 @@ public sealed class MainForm : HotkeyForm
         MainWindowIntegration.RefreshMenus();
     }
 
-    private void ApplyApplicationSettings()
+    internal void ApplyApplicationSettings()
     {
         HotkeyRepeatLimit = Program.Settings.HotkeyRepeatLimit;
 
@@ -338,14 +338,7 @@ public sealed class MainForm : HotkeyForm
 
     private void OpenApplicationSettings()
     {
-        using ApplicationSettingsForm settingsForm = new();
-        settingsForm.ShowDialog();
-
-        if (!IsDisposed)
-        {
-            ApplyApplicationSettings();
-            SettingManager.SaveApplicationConfigAsync();
-        }
+        ApplicationSettingsIntegration.Show();
     }
 
     private void OpenTaskSettings()
