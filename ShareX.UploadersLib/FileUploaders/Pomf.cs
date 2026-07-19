@@ -49,7 +49,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return new Pomf(config.PomfUploader);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPomf;
     }
 
     public class Pomf : FileUploader

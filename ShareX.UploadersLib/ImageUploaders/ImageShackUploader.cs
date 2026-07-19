@@ -50,7 +50,6 @@ namespace ShareX.UploadersLib.ImageUploaders
             return new ImageShackUploader(APIKeys.ImageShackKey, config.ImageShackSettings);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpImageShack;
     }
 
     public sealed class ImageShackUploader : ImageUploader

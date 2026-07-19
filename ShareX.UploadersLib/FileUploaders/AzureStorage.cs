@@ -55,7 +55,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 config.AzureStorageEnvironment, config.AzureStorageCustomDomain, config.AzureStorageUploadPath, config.AzureStorageCacheControl);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpAzureStorage;
     }
 
     public sealed class AzureStorage : FileUploader

@@ -11,7 +11,7 @@
 
 using System.Linq;
 
-namespace ShareX;
+namespace ShareX.UploadersLib;
 
 internal sealed record DestinationPageDefinition(string Id, string Title, string[] Prefixes, params string[] Aliases)
 {

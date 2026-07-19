@@ -50,7 +50,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return new LobFile(config.LithiioSettings);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpLithiio;
     }
 
     public sealed class LobFile : FileUploader

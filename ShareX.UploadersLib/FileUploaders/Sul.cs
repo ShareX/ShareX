@@ -49,7 +49,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return new SulUploader(config.SulAPIKey);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSul;
     }
 
     public sealed class SulUploader : FileUploader

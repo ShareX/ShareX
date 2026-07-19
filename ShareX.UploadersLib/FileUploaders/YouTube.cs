@@ -52,7 +52,6 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpYouTube;
     }
 
     public sealed class YouTube : FileUploader, IOAuth2

@@ -71,7 +71,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return new AmazonS3(config.AmazonS3Settings);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpAmazonS3;
     }
 
     public sealed class AmazonS3 : FileUploader

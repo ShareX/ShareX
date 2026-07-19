@@ -29,7 +29,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace ShareX;
+namespace ShareX.UploadersLib;
 
 internal sealed class DestinationSettingsPageBuilder
 {

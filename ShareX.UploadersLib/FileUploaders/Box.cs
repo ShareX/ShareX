@@ -55,7 +55,6 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpBox;
     }
 
     public sealed class Box : FileUploader, IOAuth2

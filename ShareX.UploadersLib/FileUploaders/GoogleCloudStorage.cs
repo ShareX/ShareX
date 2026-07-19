@@ -57,7 +57,6 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGoogleCloudStorage;
     }
 
     public sealed class GoogleCloudStorage : FileUploader, IOAuth2

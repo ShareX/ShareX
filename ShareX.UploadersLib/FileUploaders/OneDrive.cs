@@ -56,7 +56,6 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpOneDrive;
     }
 
     public sealed class OneDrive : FileUploader, IOAuth2

@@ -67,7 +67,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 customUrl: config.B2CustomUrl);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpBackblazeB2;
     }
 
     /// <summary>

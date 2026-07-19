@@ -58,7 +58,6 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpMediaFire;
     }
 
     public sealed class MediaFire : FileUploader

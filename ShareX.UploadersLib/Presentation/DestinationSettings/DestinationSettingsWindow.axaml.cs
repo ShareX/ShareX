@@ -15,7 +15,7 @@ using ShareX.UploadersLib;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShareX;
+namespace ShareX.UploadersLib;
 
 public partial class DestinationSettingsWindow : Window
 {

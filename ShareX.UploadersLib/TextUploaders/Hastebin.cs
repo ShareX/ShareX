@@ -50,7 +50,6 @@ namespace ShareX.UploadersLib.TextUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpHastebin;
     }
 
     public sealed class Hastebin : TextUploader

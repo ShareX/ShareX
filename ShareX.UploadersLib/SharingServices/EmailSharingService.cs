@@ -42,7 +42,6 @@ namespace ShareX.UploadersLib.SharingServices
             return new EmailSharer(config);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpEmail;
     }
 
     public sealed class EmailSharer : URLSharer

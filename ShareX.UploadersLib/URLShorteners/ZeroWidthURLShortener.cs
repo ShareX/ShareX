@@ -49,7 +49,6 @@ namespace ShareX.UploadersLib.URLShorteners
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpZeroWidthShortener;
     }
 
     public sealed class ZeroWidthURLShortener : URLShortener

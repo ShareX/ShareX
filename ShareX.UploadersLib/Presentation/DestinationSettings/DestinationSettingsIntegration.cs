@@ -11,27 +11,26 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
-using ShareX.UploadersLib;
+using System;
 
-namespace ShareX;
+namespace ShareX.UploadersLib;
 
 public static class DestinationSettingsIntegration
 {
     private static DestinationSettingsWindow? _window;
 
-    public static void Show(IUploaderService? service = null)
+    public static void Show(UploadersConfig config, IUploaderService? service = null, Action? onClosed = null)
     {
-        SettingManager.WaitUploadersConfig();
         AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() =>
         {
             if (_window == null)
             {
-                _window = new DestinationSettingsWindow(Program.UploadersConfig);
+                _window = new DestinationSettingsWindow(config);
                 _window.Closed += (_, _) =>
                 {
                     _window = null;
-                    SettingManager.SaveUploadersConfigAsync();
+                    onClosed?.Invoke();
                 };
                 _window.Show();
             }

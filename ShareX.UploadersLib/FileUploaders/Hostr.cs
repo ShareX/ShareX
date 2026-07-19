@@ -51,7 +51,6 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpHostr;
     }
 
     public sealed class Hostr : FileUploader

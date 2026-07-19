@@ -61,7 +61,6 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSeafile;
     }
 
     public sealed class Seafile : FileUploader

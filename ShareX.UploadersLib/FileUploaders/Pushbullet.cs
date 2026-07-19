@@ -53,7 +53,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return new Pushbullet(config.PushbulletSettings);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPushbullet;
     }
 
     public sealed class Pushbullet : FileUploader

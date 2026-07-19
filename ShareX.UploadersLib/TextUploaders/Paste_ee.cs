@@ -59,7 +59,6 @@ namespace ShareX.UploadersLib.TextUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPaste_ee;
     }
 
     public sealed class Paste_ee : TextUploader

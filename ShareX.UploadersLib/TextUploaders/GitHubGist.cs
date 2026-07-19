@@ -56,7 +56,6 @@ namespace ShareX.UploadersLib.TextUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGist;
     }
 
     public sealed class GitHubGist : TextUploader, IOAuth2Basic

@@ -53,7 +53,6 @@ namespace ShareX.UploadersLib.TextUploaders
             return new PrivateBin(settings);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPrivateBin;
     }
 
     public sealed class PrivateBin(PrivateBinSettings settings) : TextUploader

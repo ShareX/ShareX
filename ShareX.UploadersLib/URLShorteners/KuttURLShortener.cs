@@ -48,7 +48,6 @@ namespace ShareX.UploadersLib.URLShorteners
             return new KuttURLShortener(config.KuttSettings);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpKutt;
     }
 
     public sealed class KuttURLShortener : URLShortener

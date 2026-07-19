@@ -81,7 +81,6 @@ namespace ShareX.UploadersLib.ImageUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpImgur;
     }
 
     public sealed class Imgur : ImageUploader, IOAuth2

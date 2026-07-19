@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace ShareX;
+namespace ShareX.UploadersLib;
 
 internal sealed class DestinationSettingsAccounts
 {
@@ -300,7 +300,7 @@ internal sealed class DestinationSettingsAccounts
             {
                 OAuth2Info info = UploaderOAuthClientFactory.CreateGoogle();
                 using OAuthListenerForm form = new(createOAuth(info));
-                form.ShowDialog(Program.MainForm);
+                form.ShowDialog();
                 setAccount(form.OAuth2Info, form.UserInfo);
                 UpdateStatus();
             }

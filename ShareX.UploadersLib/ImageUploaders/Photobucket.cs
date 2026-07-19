@@ -50,7 +50,6 @@ namespace ShareX.UploadersLib.ImageUploaders
             return new Photobucket(config.PhotobucketOAuthInfo, config.PhotobucketAccountInfo);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPhotobucket;
     }
 
     public sealed class Photobucket : ImageUploader, IOAuth

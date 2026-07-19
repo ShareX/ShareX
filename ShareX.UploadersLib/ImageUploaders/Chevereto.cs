@@ -53,7 +53,6 @@ namespace ShareX.UploadersLib.ImageUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpChevereto;
     }
 
     public sealed class Chevereto : ImageUploader

@@ -70,7 +70,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSharedFolder;
     }
 
     public class SharedFolderUploader : FileUploader

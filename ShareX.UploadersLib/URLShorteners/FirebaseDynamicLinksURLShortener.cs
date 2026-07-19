@@ -53,7 +53,6 @@ namespace ShareX.UploadersLib.URLShorteners
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFirebaseDynamicLinks;
     }
 
     public class FirebaseRequest

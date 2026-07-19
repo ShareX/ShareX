@@ -56,7 +56,6 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpDropbox;
     }
 
     public sealed class Dropbox : FileUploader, IOAuth2Basic

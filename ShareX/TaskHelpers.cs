@@ -2315,7 +2315,9 @@ namespace ShareX
 
         public static void OpenUploadersConfigWindow(IUploaderService uploaderService = null)
         {
-            DestinationSettingsIntegration.Show(uploaderService);
+            SettingManager.WaitUploadersConfig();
+            DestinationSettingsIntegration.Show(Program.UploadersConfig, uploaderService,
+                () => SettingManager.SaveUploadersConfigAsync());
         }
 
         public static void OpenCustomUploaderSettingsWindow()

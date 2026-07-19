@@ -92,7 +92,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFTP;
     }
 
     public sealed class FTP : FileUploader, IDisposable

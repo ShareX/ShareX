@@ -48,7 +48,6 @@ namespace ShareX.UploadersLib.ImageUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpVgyme;
     }
 
     public sealed class VgymeUploader : ImageUploader

@@ -51,7 +51,6 @@ namespace ShareX.UploadersLib.ImageUploaders
             return new FlickrUploader(config.FlickrOAuthInfo, config.FlickrSettings);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFlickr;
     }
 
     public class FlickrUploader : ImageUploader, IOAuth

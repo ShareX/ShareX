@@ -53,7 +53,6 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpStreamable;
     }
 
     public class Streamable : FileUploader

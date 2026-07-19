@@ -46,7 +46,6 @@ namespace ShareX.UploadersLib.SharingServices
             return new PushbulletSharer(config.PushbulletSettings);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPushbullet;
     }
 
     public sealed class PushbulletSharer : URLSharer

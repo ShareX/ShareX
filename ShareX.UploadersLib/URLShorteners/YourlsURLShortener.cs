@@ -54,7 +54,6 @@ namespace ShareX.UploadersLib.URLShorteners
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpYourls;
     }
 
     public sealed class YourlsURLShortener : URLShortener

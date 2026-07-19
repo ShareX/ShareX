@@ -59,7 +59,6 @@ namespace ShareX.UploadersLib.URLShorteners
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpBitly;
     }
 
     public sealed class BitlyURLShortener : URLShortener, IOAuth2Basic

@@ -55,7 +55,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return new Lambda(config.LambdaSettings);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpLambda;
     }
 
     public sealed class Lambda : FileUploader

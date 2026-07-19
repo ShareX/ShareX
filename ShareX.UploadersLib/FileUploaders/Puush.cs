@@ -48,7 +48,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return new Puush(config.PuushAPIKey);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPuush;
     }
 
     public class Puush : FileUploader

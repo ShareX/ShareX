@@ -50,7 +50,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return !string.IsNullOrEmpty(config.PlikSettings.URL) && !string.IsNullOrEmpty(config.PlikSettings.APIKey);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPlik;
 
         public override Icon ServiceIcon => Resources.Plik;
     }

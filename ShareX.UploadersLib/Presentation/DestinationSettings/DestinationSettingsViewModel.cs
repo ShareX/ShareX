@@ -16,7 +16,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 
-namespace ShareX;
+namespace ShareX.UploadersLib;
 
 public sealed class DestinationSettingsViewModel : INotifyPropertyChanged
 {

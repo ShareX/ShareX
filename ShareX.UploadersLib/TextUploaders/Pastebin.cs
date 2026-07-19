@@ -52,7 +52,6 @@ namespace ShareX.UploadersLib.TextUploaders
             return new Pastebin(APIKeys.PastebinKey, settings);
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPastebin;
     }
 
     public sealed class Pastebin : TextUploader
