@@ -43,7 +43,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     private string _personalFolderPath = string.Empty;
     private string _personalFolderPreview = string.Empty;
     private string _screenshotsFolderPreview = string.Empty;
-    private string _settingsSearchText = string.Empty;
     private bool _startWithWindows;
     private bool _startWithWindowsEnabled;
     private string _startWithWindowsText = string.Empty;
@@ -109,12 +108,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public bool IsPrintPage => IsPage("print");
     public bool IsProxyPage => IsPage("proxy");
     public bool IsAdvancedPage => IsPage("advanced");
-
-    public string SettingsSearchText
-    {
-        get => _settingsSearchText;
-        set => SetField(ref _settingsSearchText, value);
-    }
 
     public bool UpdatesVisible
     {

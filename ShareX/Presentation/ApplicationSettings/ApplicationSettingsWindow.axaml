@@ -85,10 +85,9 @@
                     Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                     BorderBrush="{DynamicResource ShareX.Brush.Border}"
                     BorderThickness="0,0,1,0">
-                <controls:SettingsNavigation x:Name="SettingsNav"
-                                             Items="{Binding NavigationItems}"
+                <controls:SettingsNavigation Items="{Binding NavigationItems}"
                                              SelectedItem="{Binding SelectedNavigationItem, Mode=TwoWay}"
-                                             SearchText="{Binding SettingsSearchText, Mode=TwoWay}"/>
+                                             SearchRoot="{Binding #SettingsPages}"/>
             </Border>
 
             <Grid Grid.Column="1" RowDefinitions="Auto,Auto,*">
@@ -121,13 +120,13 @@
                     </Grid>
                 </Border>
 
-                <Grid Grid.Row="2">
+                <Grid x:Name="SettingsPages" Grid.Row="2">
                     <!-- General -->
-                    <ScrollViewer Tag="general" IsVisible="{Binding IsGeneralPage}">
+                    <ScrollViewer controls:SettingsSearch.PageId="general" IsVisible="{Binding IsGeneralPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="760" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" Text="General"/>
+                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="General"/>
 
-                            <Border Classes="section-card search-panel">
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
                                     <TextBlock Classes="section-title" Text="Application"/>
                                     <Grid ColumnDefinitions="190,*" ColumnSpacing="8">
@@ -146,7 +145,7 @@
                                 </StackPanel>
                             </Border>
 
-                            <Border Classes="section-card search-panel">
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <TextBlock Classes="section-title" Text="Tray actions"/>
                                     <Grid ColumnDefinitions="220,*" ColumnSpacing="8">
@@ -165,8 +164,8 @@
                                 </StackPanel>
                             </Border>
 
-                            <StackPanel Classes="search-availability" IsVisible="{Binding UpdatesVisible}">
-                                <Border Classes="section-card search-panel">
+                            <StackPanel controls:SettingsSearch.IsAvailabilityContainer="True" IsVisible="{Binding UpdatesVisible}">
+                                <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="6">
                                         <TextBlock Classes="section-title" Text="Updates"/>
                                         <CheckBox Classes="setting" Content="Automatically check for updates" IsChecked="{Binding AutoCheckUpdate, Mode=TwoWay}"/>
@@ -182,10 +181,10 @@
                     </ScrollViewer>
 
                     <!-- Integration -->
-                    <ScrollViewer Tag="integration" IsVisible="{Binding IsIntegrationPage}">
+                    <ScrollViewer controls:SettingsSearch.PageId="integration" IsVisible="{Binding IsIntegrationPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="760" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" Text="Integration"/>
-                            <Border Classes="section-card search-panel">
+                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Integration"/>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
                                     <TextBlock Classes="section-title" Text="Windows"/>
                                     <CheckBox Classes="setting" Content="{Binding StartWithWindowsText}" IsEnabled="{Binding StartWithWindowsEnabled}" IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
@@ -194,8 +193,8 @@
                                     <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="Show ShareX in &quot;Send to&quot; menu" IsChecked="{Binding SendToMenu, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
-                            <StackPanel Classes="search-availability" IsVisible="{Binding WindowsIntegrationVisible}">
-                                <Border Classes="section-card search-panel">
+                            <StackPanel controls:SettingsSearch.IsAvailabilityContainer="True" IsVisible="{Binding WindowsIntegrationVisible}">
+                                <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
                                         <TextBlock Classes="section-title" Text="Chrome extension"/>
                                         <CheckBox Classes="setting" Content="Enable Chrome extension support" IsChecked="{Binding ChromeExtensionSupport, Mode=TwoWay}"/>
@@ -203,8 +202,8 @@
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
-                            <StackPanel Classes="search-availability" IsVisible="{Binding WindowsIntegrationVisible}">
-                                <Border Classes="section-card search-panel">
+                            <StackPanel controls:SettingsSearch.IsAvailabilityContainer="True" IsVisible="{Binding WindowsIntegrationVisible}">
+                                <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
                                         <TextBlock Classes="section-title" Text="Firefox addon"/>
                                         <CheckBox Classes="setting" Content="Enable Firefox addon support" IsChecked="{Binding FirefoxAddonSupport, Mode=TwoWay}"/>
@@ -212,8 +211,8 @@
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
-                            <StackPanel Classes="search-availability" IsVisible="{Binding SteamIntegrationVisible}">
-                                <Border Classes="section-card search-panel">
+                            <StackPanel controls:SettingsSearch.IsAvailabilityContainer="True" IsVisible="{Binding SteamIntegrationVisible}">
+                                <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
                                         <TextBlock Classes="section-title" Text="Steam"/>
                                         <CheckBox Classes="setting" Content="While ShareX is open, show &quot;In-App&quot; in Steam" IsChecked="{Binding SteamShowInApp, Mode=TwoWay}"/>
@@ -224,10 +223,10 @@
                     </ScrollViewer>
 
                     <!-- Paths -->
-                    <ScrollViewer Tag="paths" IsVisible="{Binding IsPathsPage}">
+                    <ScrollViewer controls:SettingsSearch.PageId="paths" IsVisible="{Binding IsPathsPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="800" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" Text="Paths"/>
-                            <Border Classes="section-card search-panel">
+                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Paths"/>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <TextBlock Classes="section-title" Text="ShareX personal folder"/>
                                     <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
@@ -239,7 +238,7 @@
                                     <TextBlock Classes="hint" Text="Changes to the personal folder are stored immediately and take effect after restart."/>
                                 </StackPanel>
                             </Border>
-                            <Border Classes="section-card search-panel">
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <TextBlock Classes="section-title" Text="Screenshots folder"/>
                                     <CheckBox Classes="setting" Content="Use custom screenshots folder" IsChecked="{Binding UseCustomScreenshotsPath, Mode=TwoWay}"/>
@@ -265,10 +264,10 @@
                     </ScrollViewer>
 
                     <!-- Settings backup and cleanup -->
-                    <ScrollViewer Tag="settings" IsVisible="{Binding IsSettingsPage}">
+                    <ScrollViewer controls:SettingsSearch.PageId="settings" IsVisible="{Binding IsSettingsPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="760" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" Text="Settings"/>
-                            <Border Classes="section-card search-panel">
+                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Settings"/>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <TextBlock Classes="section-title" Text="Export and import"/>
                                     <TextBlock Classes="hint" Text="Do not share an exported backup. It can contain private information such as account details and upload history."/>
@@ -283,7 +282,7 @@
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-                            <Border Classes="section-card search-panel">
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
                                     <TextBlock Classes="section-title" Text="Automatic cleanup"/>
                                     <CheckBox Classes="setting" Content="Automatically cleanup old backup files" IsChecked="{Binding AutoCleanupBackupFiles, Mode=TwoWay}"/>
@@ -298,10 +297,10 @@
                     </ScrollViewer>
 
                     <!-- Main window -->
-                    <ScrollViewer Tag="main-window" IsVisible="{Binding IsMainWindowPage}">
+                    <ScrollViewer controls:SettingsSearch.PageId="main-window" IsVisible="{Binding IsMainWindowPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="720" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" Text="Main window"/>
-                            <Border Classes="section-card search-panel">
+                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Main window"/>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <TextBlock Classes="section-title" Text="Thumbnail view"/>
                                     <CheckBox Classes="setting" Content="Show title" IsChecked="{Binding ShowThumbnailTitle, Mode=TwoWay}"/>
@@ -326,11 +325,11 @@
                     </ScrollViewer>
 
                     <!-- Clipboard formats -->
-                    <ScrollViewer Tag="clipboard-formats" IsVisible="{Binding IsClipboardFormatsPage}">
+                    <ScrollViewer controls:SettingsSearch.PageId="clipboard-formats" IsVisible="{Binding IsClipboardFormatsPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="820" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" Text="Clipboard formats"/>
+                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Clipboard formats"/>
                             <TextBlock Classes="hint" Margin="0,0,0,8" Text="These formats appear under the Copy submenu in the main window context menu."/>
-                            <Grid Classes="search-panel" ColumnDefinitions="280,*" ColumnSpacing="10">
+                            <Grid controls:SettingsSearch.IsPanel="True" ColumnDefinitions="280,*" ColumnSpacing="10">
                                 <StackPanel Spacing="5">
                                     <ListBox Classes="settings-list" ItemsSource="{Binding ClipboardFormats}" SelectedItem="{Binding SelectedClipboardFormat, Mode=TwoWay}">
                                         <ListBox.ItemTemplate>
@@ -362,10 +361,10 @@
                     </ScrollViewer>
 
                     <!-- Upload -->
-                    <ScrollViewer Tag="upload" IsVisible="{Binding IsUploadPage}">
+                    <ScrollViewer controls:SettingsSearch.PageId="upload" IsVisible="{Binding IsUploadPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="900" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" Text="Upload"/>
-                            <Border Classes="section-card search-panel">
+                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Upload"/>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
                                         <TextBlock Text="Simultaneous upload limit:" VerticalAlignment="Center" FontWeight="Normal"/>
@@ -386,7 +385,7 @@
                                 </StackPanel>
                             </Border>
                             <Grid ColumnDefinitions="*,*,*" ColumnSpacing="6">
-                                <Border Classes="section-card search-panel">
+                                <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
                                         <TextBlock Classes="section-title" Text="Secondary image uploaders"/>
                                         <ListBox Classes="settings-list" ItemsSource="{Binding SecondaryImageUploaders}" SelectedItem="{Binding SelectedImageUploader, Mode=TwoWay}"/>
@@ -396,7 +395,7 @@
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
-                                <Border Grid.Column="1" Classes="section-card search-panel">
+                                <Border Grid.Column="1" Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
                                         <TextBlock Classes="section-title" Text="Secondary text uploaders"/>
                                         <ListBox Classes="settings-list" ItemsSource="{Binding SecondaryTextUploaders}" SelectedItem="{Binding SelectedTextUploader, Mode=TwoWay}"/>
@@ -406,7 +405,7 @@
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
-                                <Border Grid.Column="2" Classes="section-card search-panel">
+                                <Border Grid.Column="2" Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
                                         <TextBlock Classes="section-title" Text="Secondary file uploaders"/>
                                         <ListBox Classes="settings-list" ItemsSource="{Binding SecondaryFileUploaders}" SelectedItem="{Binding SelectedFileUploader, Mode=TwoWay}"/>
@@ -421,17 +420,17 @@
                     </ScrollViewer>
 
                     <!-- History -->
-                    <ScrollViewer Tag="history" IsVisible="{Binding IsHistoryPage}">
+                    <ScrollViewer controls:SettingsSearch.PageId="history" IsVisible="{Binding IsHistoryPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="720" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" Text="History"/>
-                            <Border Classes="section-card search-panel">
+                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="History"/>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
                                     <TextBlock Classes="section-title" Text="History"/>
                                     <CheckBox Classes="setting" Content="Save tasks to history" IsChecked="{Binding HistorySaveTasks, Mode=TwoWay}"/>
                                     <CheckBox Classes="setting" Content="Only save if URL is not empty" IsChecked="{Binding HistoryCheckURL, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
-                            <Border Classes="section-card search-panel">
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
                                     <TextBlock Classes="section-title" Text="Recent tasks"/>
                                     <CheckBox Classes="setting" Content="Save recent tasks" IsChecked="{Binding RecentTasksSave, Mode=TwoWay}"/>
@@ -448,10 +447,10 @@
                     </ScrollViewer>
 
                     <!-- Print -->
-                    <ScrollViewer Tag="print" IsVisible="{Binding IsPrintPage}">
+                    <ScrollViewer controls:SettingsSearch.PageId="print" IsVisible="{Binding IsPrintPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="720" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" Text="Print"/>
-                            <Border Classes="section-card search-panel">
+                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Print"/>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <CheckBox Classes="setting" Content="Don't show image print settings dialog" IsChecked="{Binding DontShowPrintSettingsDialog, Mode=TwoWay}"/>
                                     <Button Classes="compact" HorizontalAlignment="Left" Content="Image print settings..." Click="OnImagePrintSettingsClick"/>
@@ -466,10 +465,10 @@
                     </ScrollViewer>
 
                     <!-- Proxy -->
-                    <ScrollViewer Tag="proxy" IsVisible="{Binding IsProxyPage}">
+                    <ScrollViewer controls:SettingsSearch.PageId="proxy" IsVisible="{Binding IsProxyPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="720" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" Text="Proxy"/>
-                            <Border Classes="section-card search-panel">
+                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Proxy"/>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <Grid ColumnDefinitions="170,*" ColumnSpacing="8">
                                         <TextBlock Text="Proxy configuration:" VerticalAlignment="Center" FontWeight="Normal"/>
@@ -497,13 +496,13 @@
                     </ScrollViewer>
 
                     <!-- Advanced -->
-                    <ScrollViewer Tag="advanced" IsVisible="{Binding IsAdvancedPage}">
+                    <ScrollViewer controls:SettingsSearch.PageId="advanced" IsVisible="{Binding IsAdvancedPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="850" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" Text="Advanced"/>
+                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Advanced"/>
                             <ItemsControl ItemsSource="{Binding AdvancedSettingCategories}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate x:DataType="local:AdvancedSettingCategory">
-                                        <Border Classes="section-card search-panel">
+                                        <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                             <StackPanel Spacing="4">
                                                 <TextBlock Classes="section-title" Text="{Binding Title}" Margin="0,0,0,4"/>
                                                 <ItemsControl ItemsSource="{Binding Items}">

@@ -15,6 +15,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
+using Avalonia.Threading;
 
 namespace ShareX.AvaloniaUI.Controls;
 
@@ -34,6 +35,11 @@ public partial class SettingsNavigation : UserControl
             string.Empty,
             defaultBindingMode: BindingMode.TwoWay);
 
+    public static readonly StyledProperty<Control?> SearchRootProperty =
+        AvaloniaProperty.Register<SettingsNavigation, Control?>(nameof(SearchRoot));
+
+    private bool _filterUpdateQueued;
+
     public IEnumerable<SettingsNavigationItem>? Items
     {
         get => GetValue(ItemsProperty);
@@ -52,11 +58,35 @@ public partial class SettingsNavigation : UserControl
         set => SetValue(SearchTextProperty, value);
     }
 
+    public Control? SearchRoot
+    {
+        get => GetValue(SearchRootProperty);
+        set => SetValue(SearchRootProperty, value);
+    }
+
     public SettingsNavigation()
     {
         InitializeComponent();
-        SearchTextProperty.Changed.AddClassHandler<SettingsNavigation>((control, _) => control.ApplyFilter());
-        ItemsProperty.Changed.AddClassHandler<SettingsNavigation>((control, _) => control.ApplyFilter());
+        SearchTextProperty.Changed.AddClassHandler<SettingsNavigation>((control, _) => control.QueueFilterUpdate());
+        ItemsProperty.Changed.AddClassHandler<SettingsNavigation>((control, _) => control.QueueFilterUpdate());
+        SelectedItemProperty.Changed.AddClassHandler<SettingsNavigation>((control, _) => control.QueueFilterUpdate());
+        SearchRootProperty.Changed.AddClassHandler<SettingsNavigation>((control, _) => control.QueueFilterUpdate());
+        AttachedToLogicalTree += (_, _) => QueueFilterUpdate();
+    }
+
+    private void QueueFilterUpdate()
+    {
+        if (_filterUpdateQueued)
+        {
+            return;
+        }
+
+        _filterUpdateQueued = true;
+        Dispatcher.UIThread.Post(() =>
+        {
+            _filterUpdateQueued = false;
+            ApplyFilter();
+        }, DispatcherPriority.Loaded);
     }
 
     private void ApplyFilter()
@@ -64,6 +94,11 @@ public partial class SettingsNavigation : UserControl
         if (Items == null)
         {
             return;
+        }
+
+        if (SearchRoot != null)
+        {
+            SettingsSearch.Apply(SearchRoot, Items, SearchText);
         }
 
         foreach (SettingsNavigationItem item in Items)
@@ -78,7 +113,7 @@ public partial class SettingsNavigation : UserControl
         }
     }
 
-    public void RefreshFilter() => ApplyFilter();
+    public void RefreshFilter() => QueueFilterUpdate();
 
     private static IEnumerable<SettingsNavigationItem> Flatten(IEnumerable<SettingsNavigationItem> items)
     {

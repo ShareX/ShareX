@@ -21,8 +21,8 @@
             <Setter Property="Padding" Value="0"/>
             <Setter Property="Margin" Value="0,1"/>
         </Style>
-        <Style Selector="TreeViewItem /template/ ContentPresenter#PART_HeaderPresenter">
-            <Setter Property="CornerRadius" Value="4"/>
+        <Style Selector="TreeViewItem:selected /template/ ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="CornerRadius" Value="6"/>
         </Style>
     </UserControl.Styles>
 
