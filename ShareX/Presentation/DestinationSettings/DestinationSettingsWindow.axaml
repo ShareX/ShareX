@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:ShareX"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        d:DesignWidth="1100"
+        d:DesignHeight="760"
+        x:Class="ShareX.DestinationSettingsWindow"
+        x:DataType="local:DestinationSettingsViewModel"
+        Title="ShareX - Destination settings"
+        Width="1100"
+        Height="760"
+        MinWidth="880"
+        MinHeight="620"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Grid.page-title"><Setter Property="Margin" Value="0,0,0,14"/></Style>
+        <Style Selector="TextBlock.page-title-text">
+            <Setter Property="FontSize" Value="24"/><Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/><Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.page-title-icon">
+            <Setter Property="FontSize" Value="22"/><Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.section-title">
+            <Setter Property="FontSize" Value="15"/><Setter Property="FontWeight" Value="SemiBold"/><Setter Property="Margin" Value="0,1,0,3"/>
+        </Style>
+        <Style Selector="TextBlock.hint">
+            <Setter Property="FontSize" Value="12"/><Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/><Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style Selector="Border.section-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/><Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/><Setter Property="Padding" Value="12"/><Setter Property="Margin" Value="0,0,0,8"/>
+        </Style>
+        <Style Selector="CheckBox.setting"><Setter Property="Margin" Value="0,1"/><Setter Property="FontWeight" Value="Normal"/></Style>
+        <Style Selector="ComboBox.form-control">
+            <Setter Property="MinWidth" Value="250"/><Setter Property="MinHeight" Value="32"/><Setter Property="Padding" Value="8,4"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style Selector="TextBox.form-control">
+            <Setter Property="MinWidth" Value="300"/><Setter Property="MinHeight" Value="32"/><Setter Property="Padding" Value="8,4"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="NumericUpDown.form-control">
+            <Setter Property="Width" Value="130"/><Setter Property="MinHeight" Value="32"/><Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style Selector="Button.compact"><Setter Property="Height" Value="32"/><Setter Property="Padding" Value="10,4"/></Style>
+        <Style Selector="ListBox.settings-list">
+            <Setter Property="MinHeight" Value="150"/><Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Main}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/><Setter Property="BorderThickness" Value="1"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" ColumnDefinitions="220,*">
+            <Border Grid.Column="0" Padding="8" Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="0,0,1,0">
+                <controls:SettingsNavigation x:Name="Navigation"
+                                             Items="{Binding NavigationItems}"
+                                             SelectedItem="{Binding SelectedNavigationItem, Mode=TwoWay}"
+                                             SearchRoot="{Binding #SettingsPages}"/>
+            </Border>
+            <Grid x:Name="SettingsPages" Grid.Column="1"/>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

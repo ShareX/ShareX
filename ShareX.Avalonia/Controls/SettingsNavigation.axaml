@@ -47,10 +47,12 @@
             <TreeView.ItemTemplate>
                 <TreeDataTemplate DataType="controls:SettingsNavigationItem"
                                   ItemsSource="{Binding Children}">
-                    <Grid ColumnDefinitions="20,*" ColumnSpacing="6" Margin="2,3">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="6" Margin="2,3">
                         <TextBlock Classes="icon"
                                    Text="{Binding Icon}"
+                                   IsVisible="{Binding HasIcon}"
                                    FontSize="16"
+                                   Width="20"
                                    HorizontalAlignment="Center"/>
                         <TextBlock Grid.Column="1"
                                    Text="{Binding Title}"

@@ -2315,32 +2315,7 @@ namespace ShareX
 
         public static void OpenUploadersConfigWindow(IUploaderService uploaderService = null)
         {
-            SettingManager.WaitUploadersConfig();
-
-            bool firstInstance = !UploadersConfigForm.IsInstanceActive;
-
-            UploadersConfigForm form = UploadersConfigForm.GetFormInstance(Program.UploadersConfig);
-
-            if (firstInstance)
-            {
-                form.FormClosed += (sender, e) => SettingManager.SaveUploadersConfigAsync();
-
-                if (uploaderService != null)
-                {
-                    form.NavigateToTabPage(uploaderService.GetUploadersConfigTabPage(form));
-                }
-
-                form.Show();
-            }
-            else
-            {
-                if (uploaderService != null)
-                {
-                    form.NavigateToTabPage(uploaderService.GetUploadersConfigTabPage(form));
-                }
-
-                form.ForceActivate();
-            }
+            DestinationSettingsIntegration.Show(uploaderService);
         }
 
         public static void OpenCustomUploaderSettingsWindow()

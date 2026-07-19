@@ -27,6 +27,7 @@ public sealed class SettingsNavigationItem : INotifyPropertyChanged
     public string Id { get; }
     public string Title { get; }
     public string Icon { get; }
+    public bool HasIcon => !string.IsNullOrEmpty(Icon);
     public string SearchText
     {
         get => _searchText;
