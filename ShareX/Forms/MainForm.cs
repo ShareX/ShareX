@@ -343,14 +343,14 @@ public sealed class MainForm : HotkeyForm
 
     private void OpenTaskSettings()
     {
-        using TaskSettingsForm taskSettingsForm = new(Program.DefaultTaskSettings, true);
-        taskSettingsForm.ShowDialog();
-
-        if (!IsDisposed)
+        TaskSettingsIntegration.Show(Program.DefaultTaskSettings, true, () =>
         {
-            MainWindowIntegration.RefreshMenus();
-            SettingManager.SaveApplicationConfigAsync();
-        }
+            if (!IsDisposed)
+            {
+                MainWindowIntegration.RefreshMenus();
+                SettingManager.SaveApplicationConfigAsync();
+            }
+        });
     }
 
     private void OpenHotkeySettings()

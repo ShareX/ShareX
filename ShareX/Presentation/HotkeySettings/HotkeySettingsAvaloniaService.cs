@@ -126,9 +126,11 @@ internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
         HotkeySettings settings = GetSettings(item);
         InvokeOnMainThread(() =>
         {
-            settings.TaskSettings.SetDefaultSettings();
-            using TaskSettingsForm form = new(settings.TaskSettings);
-            form.ShowDialog(_mainForm);
+            TaskSettingsIntegration.Show(settings.TaskSettings, false, () =>
+            {
+                StateChanged?.Invoke(this, EventArgs.Empty);
+                SettingManager.SaveHotkeysConfigAsync();
+            });
         });
     }
 

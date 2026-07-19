@@ -140,7 +140,7 @@ public sealed class SettingsSearch : AvaloniaObject
         AddDisplayedText(root, values);
         AddItemsSourceText(root, values);
 
-        foreach (Control control in root.GetLogicalDescendants().OfType<Control>().Where(x => x.IsVisible))
+        foreach (Control control in root.GetLogicalDescendants().OfType<Control>().Where(x => IsSearchAvailable(x, root)))
         {
             AddDisplayedText(control, values);
             AddItemsSourceText(control, values);
@@ -183,12 +183,29 @@ public sealed class SettingsSearch : AvaloniaObject
         List<string> values = [];
         AddItemsSourceText(root, values);
 
-        foreach (ItemsControl itemsControl in root.GetLogicalDescendants().OfType<ItemsControl>())
+        foreach (ItemsControl itemsControl in root.GetLogicalDescendants().OfType<ItemsControl>().Where(x => IsSearchAvailable(x, root)))
         {
             AddItemsSourceText(itemsControl, values);
         }
 
         return string.Join(' ', values);
+    }
+
+    private static bool IsSearchAvailable(Control control, Control root)
+    {
+        ILogical? current = control;
+
+        while (current != null && current != root)
+        {
+            if (current is Control candidate && GetIsAvailabilityContainer(candidate) && !candidate.IsVisible)
+            {
+                return false;
+            }
+
+            current = current.GetLogicalParent();
+        }
+
+        return true;
     }
 
     private static void AddItemsSourceText(Control control, List<string> values)
