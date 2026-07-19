@@ -1251,7 +1251,8 @@ internal sealed class TaskSettingsPageBuilder
             return value;
         }
 
-        return System.Text.RegularExpressions.Regex.Replace(value, "(?<!^)([A-Z])", " $1");
+        string result = System.Text.RegularExpressions.Regex.Replace(value, "([A-Z]+)([A-Z][a-z])", "$1 $2");
+        return System.Text.RegularExpressions.Regex.Replace(result, "([a-z0-9])([A-Z])", "$1 $2");
     }
 }
 
