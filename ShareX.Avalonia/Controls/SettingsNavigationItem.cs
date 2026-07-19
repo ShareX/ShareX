@@ -22,11 +22,16 @@ public sealed class SettingsNavigationItem : INotifyPropertyChanged
 {
     private bool _isVisible = true;
     private bool _isExpanded = true;
+    private string _searchText;
 
     public string Id { get; }
     public string Title { get; }
     public string Icon { get; }
-    public string SearchText { get; }
+    public string SearchText
+    {
+        get => _searchText;
+        private set => SetField(ref _searchText, value);
+    }
     public ObservableCollection<SettingsNavigationItem> Children { get; } = [];
 
     public bool IsVisible
@@ -51,7 +56,7 @@ public sealed class SettingsNavigationItem : INotifyPropertyChanged
         Id = id;
         Title = title;
         Icon = icon;
-        SearchText = string.Join(' ', title, searchText ?? string.Empty);
+        _searchText = string.Join(' ', title, searchText ?? string.Empty);
 
         if (children != null)
         {
@@ -62,8 +67,15 @@ public sealed class SettingsNavigationItem : INotifyPropertyChanged
         }
     }
 
+    public void UpdateSearchText(string? searchText)
+    {
+        SearchText = string.Join(' ', Title, searchText ?? string.Empty);
+    }
+
     internal bool ApplyFilter(string query)
     {
+        query ??= string.Empty;
+
         bool childMatches = false;
 
         foreach (SettingsNavigationItem child in Children)
@@ -71,8 +83,9 @@ public sealed class SettingsNavigationItem : INotifyPropertyChanged
             childMatches |= child.ApplyFilter(query);
         }
 
-        bool selfMatches = string.IsNullOrWhiteSpace(query) ||
-            SearchText.Contains(query, StringComparison.CurrentCultureIgnoreCase);
+        string[] terms = query.Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        bool selfMatches = terms.Length == 0 ||
+            terms.All(term => SearchText.Contains(term, StringComparison.CurrentCultureIgnoreCase));
 
         IsVisible = selfMatches || childMatches;
 

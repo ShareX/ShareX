@@ -43,6 +43,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     private string _personalFolderPath = string.Empty;
     private string _personalFolderPreview = string.Empty;
     private string _screenshotsFolderPreview = string.Empty;
+    private string _settingsSearchText = string.Empty;
     private bool _startWithWindows;
     private bool _startWithWindowsEnabled;
     private string _startWithWindowsText = string.Empty;
@@ -108,6 +109,12 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public bool IsPrintPage => IsPage("print");
     public bool IsProxyPage => IsPage("proxy");
     public bool IsAdvancedPage => IsPage("advanced");
+
+    public string SettingsSearchText
+    {
+        get => _settingsSearchText;
+        set => SetField(ref _settingsSearchText, value);
+    }
 
     public bool UpdatesVisible
     {
@@ -772,25 +779,23 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     private ObservableCollection<SettingsNavigationItem> CreateNavigationItems()
     {
-        string advancedSearch = string.Join(' ', AdvancedSettings.SelectMany(x => new[] { x.Name, x.Category, x.Description }));
-
         return
         [
-            Nav("general", "General", LucideIcons.settings, "language tray icon progress taskbar window position size click quick task update channel dev build"),
-            Nav("integration", "Integration", LucideIcons.plug, "start with Windows Explorer context menu edit send to Chrome Firefox extension addon Steam"),
-            Nav("paths", "Paths", LucideIcons.folder, "personal folder screenshots custom path sub folder pattern window"),
-            Nav("settings", "Settings", LucideIcons.database_backup, "backup export import reset cleanup log files keep"),
-            Nav("main-window", "Main window", LucideIcons.monitor, "thumbnail title location size click action"),
-            Nav("clipboard-formats", "Clipboard formats", LucideIcons.clipboard_list, "copy submenu description format variables result URL filename"),
-            Nav("upload", "Upload", LucideIcons.upload, "simultaneous limit buffer retry fail secondary uploaders image text file order"),
-            Nav("history", "History", LucideIcons.history, "save tasks URL recent maximum main window tray menu most recent"),
-            Nav("print", "Print", LucideIcons.printer, "image print settings Windows dialog default printer override"),
-            Nav("proxy", "Proxy", LucideIcons.network, "configuration automatic manual username password host port"),
-            Nav("advanced", "Advanced", LucideIcons.sliders_horizontal, advancedSearch)
+            Nav("general", "General", LucideIcons.settings),
+            Nav("integration", "Integration", LucideIcons.plug),
+            Nav("paths", "Paths", LucideIcons.folder),
+            Nav("settings", "Settings", LucideIcons.database_backup),
+            Nav("main-window", "Main window", LucideIcons.monitor),
+            Nav("clipboard-formats", "Clipboard formats", LucideIcons.clipboard_list),
+            Nav("upload", "Upload", LucideIcons.upload),
+            Nav("history", "History", LucideIcons.history),
+            Nav("print", "Print", LucideIcons.printer),
+            Nav("proxy", "Proxy", LucideIcons.network),
+            Nav("advanced", "Advanced", LucideIcons.sliders_horizontal)
         ];
     }
 
-    private static SettingsNavigationItem Nav(string id, string title, string icon, string keywords) => new(id, title, icon, keywords);
+    private static SettingsNavigationItem Nav(string id, string title, string icon) => new(id, title, icon);
 
     private void RefreshIntegrations()
     {

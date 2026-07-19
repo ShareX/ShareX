@@ -78,6 +78,8 @@ public partial class SettingsNavigation : UserControl
         }
     }
 
+    public void RefreshFilter() => ApplyFilter();
+
     private static IEnumerable<SettingsNavigationItem> Flatten(IEnumerable<SettingsNavigationItem> items)
     {
         foreach (SettingsNavigationItem item in items)
