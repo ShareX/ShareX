@@ -2320,21 +2320,7 @@ namespace ShareX
 
         public static void OpenCustomUploaderSettingsWindow()
         {
-            SettingManager.WaitUploadersConfig();
-
-            bool firstInstance = !CustomUploaderSettingsForm.IsInstanceActive;
-
-            CustomUploaderSettingsForm form = CustomUploaderSettingsForm.GetFormInstance(Program.UploadersConfig);
-
-            if (firstInstance)
-            {
-                form.FormClosed += (sender, e) => SettingManager.SaveUploadersConfigAsync();
-                form.Show();
-            }
-            else
-            {
-                form.ForceActivate();
-            }
+            CustomUploaderSettingsIntegration.Show();
         }
 
         public static string FindMenuLucideIcon(HotkeyType hotkeyType)
@@ -2678,10 +2664,7 @@ namespace ShareX
                             MainWindowIntegration.RefreshMenus();
                         }
 
-                        if (CustomUploaderSettingsForm.IsInstanceActive)
-                        {
-                            CustomUploaderSettingsForm.CustomUploaderUpdateTab();
-                        }
+                        CustomUploaderSettingsIntegration.Refresh(true);
                     }
                 }
                 catch (Exception e)

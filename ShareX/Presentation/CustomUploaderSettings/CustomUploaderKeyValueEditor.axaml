@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="using:ShareX"
+             mc:Ignorable="d"
+             x:Class="ShareX.CustomUploaderKeyValueEditor"
+             x:Name="Root">
+    <Border Background="{DynamicResource ShareX.Brush.Background.Main}"
+            BorderBrush="{DynamicResource ShareX.Brush.Border}"
+            BorderThickness="1"
+            CornerRadius="4"
+            Padding="6">
+        <Grid RowDefinitions="Auto,*" RowSpacing="4">
+            <Grid ColumnDefinitions="*,Auto">
+                <TextBlock Text="{Binding Header, ElementName=Root}"
+                           FontWeight="SemiBold"
+                           VerticalAlignment="Center"/>
+                <Button Grid.Column="1" Classes="key-value-button" Content="Add" Click="OnAddClick"/>
+            </Grid>
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding Rows, ElementName=Root}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="local:CustomUploaderKeyValueRow">
+                            <Grid ColumnDefinitions="0.38*,0.62*,Auto" ColumnSpacing="4" Margin="0,0,0,3">
+                                <TextBox Classes="dense"
+                                         PlaceholderText="Name"
+                                         Text="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                         ToolTip.Tip="{Binding Error}"/>
+                                <TextBox Grid.Column="1"
+                                         Classes="dense syntax-input"
+                                         PlaceholderText="Value"
+                                         Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Button Grid.Column="2"
+                                        Classes="key-value-button danger"
+                                        Content="×"
+                                        ToolTip.Tip="Remove"
+                                        Click="OnRemoveClick"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</UserControl>
