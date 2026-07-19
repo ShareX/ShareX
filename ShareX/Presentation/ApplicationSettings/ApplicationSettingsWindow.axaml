@@ -18,11 +18,19 @@
         WindowStartupLocation="CenterScreen">
 
     <Window.Styles>
-        <Style Selector="TextBlock.page-title">
+        <Style Selector="Grid.page-title">
+            <Setter Property="Margin" Value="0,0,0,14"/>
+        </Style>
+        <Style Selector="TextBlock.page-title-text">
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
-            <Setter Property="Margin" Value="0,0,0,14"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.page-title-icon">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="TextBlock.section-title">
             <Setter Property="FontSize" Value="15"/>
@@ -124,7 +132,10 @@
                     <!-- General -->
                     <ScrollViewer controls:SettingsSearch.PageId="general" IsVisible="{Binding IsGeneralPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="760" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="General"/>
+                            <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.settings}"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="General"/>
+                            </Grid>
 
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
@@ -183,7 +194,10 @@
                     <!-- Integration -->
                     <ScrollViewer controls:SettingsSearch.PageId="integration" IsVisible="{Binding IsIntegrationPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="760" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Integration"/>
+                            <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.plug}"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Integration"/>
+                            </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
                                     <TextBlock Classes="section-title" Text="Windows"/>
@@ -225,7 +239,10 @@
                     <!-- Paths -->
                     <ScrollViewer controls:SettingsSearch.PageId="paths" IsVisible="{Binding IsPathsPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="800" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Paths"/>
+                            <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.folder}"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Paths"/>
+                            </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <TextBlock Classes="section-title" Text="ShareX personal folder"/>
@@ -266,7 +283,10 @@
                     <!-- Settings backup and cleanup -->
                     <ScrollViewer controls:SettingsSearch.PageId="settings" IsVisible="{Binding IsSettingsPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="760" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Settings"/>
+                            <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.database_backup}"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Settings"/>
+                            </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <TextBlock Classes="section-title" Text="Export and import"/>
@@ -299,7 +319,10 @@
                     <!-- Main window -->
                     <ScrollViewer controls:SettingsSearch.PageId="main-window" IsVisible="{Binding IsMainWindowPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="720" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Main window"/>
+                            <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.monitor}"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Main window"/>
+                            </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <TextBlock Classes="section-title" Text="Thumbnail view"/>
@@ -327,7 +350,10 @@
                     <!-- Clipboard formats -->
                     <ScrollViewer controls:SettingsSearch.PageId="clipboard-formats" IsVisible="{Binding IsClipboardFormatsPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="820" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Clipboard formats"/>
+                            <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.clipboard_list}"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Clipboard formats"/>
+                            </Grid>
                             <TextBlock Classes="hint" Margin="0,0,0,8" Text="These formats appear under the Copy submenu in the main window context menu."/>
                             <Grid controls:SettingsSearch.IsPanel="True" ColumnDefinitions="280,*" ColumnSpacing="10">
                                 <StackPanel Spacing="5">
@@ -363,7 +389,10 @@
                     <!-- Upload -->
                     <ScrollViewer controls:SettingsSearch.PageId="upload" IsVisible="{Binding IsUploadPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="900" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Upload"/>
+                            <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.upload}"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Upload"/>
+                            </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
@@ -422,7 +451,10 @@
                     <!-- History -->
                     <ScrollViewer controls:SettingsSearch.PageId="history" IsVisible="{Binding IsHistoryPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="720" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="History"/>
+                            <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.history}"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="History"/>
+                            </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
                                     <TextBlock Classes="section-title" Text="History"/>
@@ -449,7 +481,10 @@
                     <!-- Print -->
                     <ScrollViewer controls:SettingsSearch.PageId="print" IsVisible="{Binding IsPrintPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="720" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Print"/>
+                            <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.printer}"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Print"/>
+                            </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <CheckBox Classes="setting" Content="Don't show image print settings dialog" IsChecked="{Binding DontShowPrintSettingsDialog, Mode=TwoWay}"/>
@@ -467,7 +502,10 @@
                     <!-- Proxy -->
                     <ScrollViewer controls:SettingsSearch.PageId="proxy" IsVisible="{Binding IsProxyPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="720" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Proxy"/>
+                            <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.network}"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Proxy"/>
+                            </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <Grid ColumnDefinitions="170,*" ColumnSpacing="8">
@@ -498,7 +536,10 @@
                     <!-- Advanced -->
                     <ScrollViewer controls:SettingsSearch.PageId="advanced" IsVisible="{Binding IsAdvancedPage}">
                         <StackPanel Margin="28,24,28,32" MaxWidth="850" HorizontalAlignment="Left">
-                            <TextBlock Classes="page-title" controls:SettingsSearch.IsPageTitle="True" Text="Advanced"/>
+                            <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.sliders_horizontal}"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Advanced"/>
+                            </Grid>
                             <ItemsControl ItemsSource="{Binding AdvancedSettingCategories}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate x:DataType="local:AdvancedSettingCategory">
