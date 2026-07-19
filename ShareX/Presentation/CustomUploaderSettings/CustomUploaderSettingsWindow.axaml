@@ -264,17 +264,13 @@
                                 Content="Update folder"
                                 IsVisible="{Binding IsDeveloperMode}"
                                 Click="OnUpdateFolderClick"/>
-                        <TextBlock Text="Drop .sxcu files anywhere to import."
-                                   Classes="description"
-                                   FontSize="11"
-                                   TextAlignment="Center"/>
                     </StackPanel>
                 </Grid>
             </Border>
 
             <!-- Focused editor -->
             <Grid Grid.Column="1" Margin="16,12,16,10" RowDefinitions="Auto,Auto,*,Auto" RowSpacing="10">
-                <Grid IsVisible="{Binding HasSelection}" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="10">
+                <Grid IsVisible="{Binding HasSelection}" ColumnDefinitions="Auto,*" ColumnSpacing="10">
                     <Border Width="42" Height="42" CornerRadius="6" Background="{DynamicResource ShareX.Brush.Background.Panel}">
                         <TextBlock Classes="icon"
                                    Text="{x:Static theming:LucideIcons.braces}"
@@ -291,20 +287,6 @@
                         <TextBlock Text="{Binding SelectedUploader.HostName}"
                                    Classes="field-label"
                                    TextTrimming="CharacterEllipsis"/>
-                    </StackPanel>
-                    <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="5" VerticalAlignment="Center">
-                        <Button Classes="compact" Click="OnDuplicateClick">
-                            <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
-                                <TextBlock Text="Duplicate"/>
-                            </StackPanel>
-                        </Button>
-                        <Button Classes="compact" Click="OnExportClick">
-                            <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}" FontSize="15"/>
-                                <TextBlock Text="Export"/>
-                            </StackPanel>
-                        </Button>
                     </StackPanel>
                 </Grid>
 
