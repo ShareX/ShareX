@@ -178,6 +178,7 @@
                                                                        Text="{Binding SelectedTask.Icon}"
                                                                        FontSize="16"
                                                                        Width="18"
+                                                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
                                                                        TextAlignment="Center"/>
                                                             <TextBlock Grid.Column="1"
                                                                        Text="{Binding SelectedTask.Name}"

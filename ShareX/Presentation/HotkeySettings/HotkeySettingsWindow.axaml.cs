@@ -140,6 +140,7 @@ public partial class HotkeySettingsWindow : Window
             TextAlignment = Avalonia.Media.TextAlignment.Center
         };
         textBlock.Classes.Add("icon");
+        textBlock.Classes.Add("accent-menu-icon");
         return textBlock;
     }
 
