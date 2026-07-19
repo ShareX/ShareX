@@ -170,7 +170,7 @@
 
                 <Grid IsVisible="{Binding IsEmpty}" Margin="28">
                     <Border Classes="hotkey-panel"
-                            Width="620"
+                            Width="530"
                             MaxHeight="430"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
@@ -195,14 +195,24 @@
                                                                Text="{x:Static theming:LucideIcons.circle_check}"
                                                                IsVisible="{Binding IsRegistered}"
                                                                Foreground="#3FA75F"
-                                                               HorizontalAlignment="Center"/>
+                                                               HorizontalAlignment="Center"
+                                                               VerticalAlignment="Center"/>
                                                     <TextBlock Classes="icon"
                                                                Text="{x:Static theming:LucideIcons.circle_x}"
                                                                IsVisible="{Binding !IsRegistered}"
                                                                Foreground="#C95252"
-                                                               HorizontalAlignment="Center"/>
-                                                    <TextBlock Grid.Column="1" Text="{Binding Hotkey}" FontFamily="{DynamicResource ShareX.FontFamily.Monospace}" FontWeight="Normal"/>
-                                                    <TextBlock Grid.Column="2" Text="{Binding Description}" FontWeight="Normal" TextTrimming="CharacterEllipsis"/>
+                                                               HorizontalAlignment="Center"
+                                                               VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Column="1"
+                                                               Text="{Binding Hotkey}"
+                                                               FontFamily="{DynamicResource ShareX.FontFamily.Monospace}"
+                                                               FontWeight="Normal"
+                                                               VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Column="2"
+                                                               Text="{Binding Description}"
+                                                               FontWeight="Normal"
+                                                               TextTrimming="CharacterEllipsis"
+                                                               VerticalAlignment="Center"/>
                                                 </Grid>
                                             </Border>
                                         </DataTemplate>
