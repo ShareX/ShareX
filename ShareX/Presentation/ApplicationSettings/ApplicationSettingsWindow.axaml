@@ -79,9 +79,9 @@
 
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
-              ColumnDefinitions="250,*">
+              ColumnDefinitions="220,*">
             <Border Grid.Column="0"
-                    Padding="14"
+                    Padding="8"
                     Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                     BorderBrush="{DynamicResource ShareX.Brush.Border}"
                     BorderThickness="0,0,1,0">

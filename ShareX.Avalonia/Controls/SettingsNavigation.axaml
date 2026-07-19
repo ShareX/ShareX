@@ -18,7 +18,7 @@
         <Style Selector="TreeViewItem">
             <Setter Property="IsVisible" Value="{ReflectionBinding IsVisible}"/>
             <Setter Property="IsExpanded" Value="{ReflectionBinding IsExpanded, Mode=TwoWay}"/>
-            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Padding" Value="0"/>
             <Setter Property="Margin" Value="0,1"/>
         </Style>
         <Style Selector="TreeViewItem /template/ ContentPresenter#PART_HeaderPresenter">
@@ -28,7 +28,7 @@
 
     <Grid RowDefinitions="Auto,*" RowSpacing="10">
         <Grid ColumnDefinitions="Auto,*">
-            <TextBlock Margin="10,0,0,0"
+            <TextBlock Margin="8,0,0,0"
                        Classes="icon"
                        Text="{x:Static theming:LucideIcons.search}"
                        FontSize="16"
@@ -36,7 +36,7 @@
                        VerticalAlignment="Center"
                        ZIndex="1"/>
             <TextBox Grid.ColumnSpan="2"
-                     Padding="34,8,10,8"
+                     Padding="30,8,8,8"
                      PlaceholderText="Search settings"
                      Text="{Binding SearchText, ElementName=Root, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
@@ -48,7 +48,7 @@
             <TreeView.ItemTemplate>
                 <TreeDataTemplate DataType="controls:SettingsNavigationItem"
                                   ItemsSource="{Binding Children}">
-                    <Grid ColumnDefinitions="22,*" ColumnSpacing="8" Margin="4,3">
+                    <Grid ColumnDefinitions="20,*" ColumnSpacing="6" Margin="2,3">
                         <TextBlock Classes="icon"
                                    Text="{Binding Icon}"
                                    FontSize="16"
