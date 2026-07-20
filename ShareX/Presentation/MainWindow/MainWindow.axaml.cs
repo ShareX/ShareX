@@ -115,6 +115,14 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     public void ShowAndActivate()
     {
+        if (_trayMenuAnchor != null)
+        {
+            CloseActiveContextMenu();
+            CloseTrayMenuAnchor();
+            Dispatcher.UIThread.Post(ShowAndActivate);
+            return;
+        }
+
         if (!IsVisible)
         {
             Show();
