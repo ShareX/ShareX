@@ -1,145 +1,166 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
     Copyright (c) 2007-2026 ShareX Team
-
-    This program is free software; you can redistribute it and/or
-    modify it under the terms of the GNU General Public License
-    as published by the Free Software Foundation; either version 2
-    of the License, or (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-
-    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
 */
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib.Properties;
+#nullable enable
+
+using Avalonia.Controls;
+using Avalonia.Interactivity;
+using Avalonia.Threading;
+using ShareX.AvaloniaUI.Integration;
+using ShareX.AvaloniaUI.Theming;
 using System;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using LocalizedResources = ShareX.HelpersLib.Properties.Resources;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class UpdateMessageBox : Window
 {
-    public partial class UpdateMessageBox : Form
+    private DialogResult _result;
+
+    public static bool IsOpen { get; private set; }
+
+    public bool ActivateWindow { get; }
+    public string MessageText { get; }
+    public bool ShowChangelog { get; }
+    public string DialogTitle => LocalizedResources.UpdateMessageBox_UpdateMessageBox_update_is_available;
+    public string YesText => LocalizedResources.MyMessageBox_MyMessageBox_Yes;
+    public string NoText => LocalizedResources.MyMessageBox_MyMessageBox_No;
+
+    public UpdateMessageBox()
     {
-        public static bool IsOpen { get; private set; }
+        ActivateWindow = true;
+        MessageText = string.Empty;
+        ShowChangelog = true;
+        InitializeWindow();
+    }
 
-        public bool ActivateWindow { get; private set; }
+    private UpdateMessageBox(UpdateChecker updateChecker, bool activateWindow)
+    {
+        ActivateWindow = activateWindow;
+        MessageText = BuildMessage(updateChecker);
+        ShowChangelog = !updateChecker.IsDev;
 
-        protected override bool ShowWithoutActivation => !ActivateWindow;
+        InitializeWindow();
+    }
 
-        public UpdateMessageBox(UpdateChecker updateChecker, bool activateWindow = true)
+    private void InitializeWindow()
+    {
+        InitializeComponent();
+        DataContext = this;
+        Title = DialogTitle;
+        RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        ShowActivated = ActivateWindow;
+
+        Opened += OnOpened;
+        Closing += (_, _) =>
         {
-            ActivateWindow = activateWindow;
+            if (_result == DialogResult.None) _result = DialogResult.No;
+        };
+    }
 
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this);
-
-            if (!ActivateWindow)
-            {
-                WindowState = FormWindowState.Minimized;
-                NativeMethods.FlashWindowEx(this, 10);
-            }
-
-            Text = Resources.UpdateMessageBox_UpdateMessageBox_update_is_available;
-
-            StringBuilder sbText = new StringBuilder();
-
-            if (updateChecker.IsPortable)
-            {
-                sbText.AppendLine(Helpers.SafeStringFormat(Resources.UpdateMessageBox_UpdateMessageBox_Portable, Application.ProductName));
-            }
-            else
-            {
-                sbText.AppendLine(Helpers.SafeStringFormat(Resources.UpdateMessageBox_UpdateMessageBox_, Application.ProductName));
-            }
-
-            sbText.AppendLine();
-            sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_CurrentVersion);
-            sbText.Append(": ");
-            sbText.Append(updateChecker.CurrentVersion);
-            sbText.AppendLine();
-            sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_LatestVersion);
-            sbText.Append(": ");
-            sbText.Append(updateChecker.LatestVersion);
-            if (updateChecker.IsDev) sbText.Append(" Dev");
-            if (updateChecker is GitHubUpdateChecker githubUpdateChecker && githubUpdateChecker.IsPreRelease) sbText.Append(" (Pre-release)");
-
-            lblText.Text = sbText.ToString();
-
-            lblViewChangelog.Visible = !updateChecker.IsDev;
+    public static async Task<DialogResult> StartAsync(UpdateChecker? updateChecker, bool activateWindow = true)
+    {
+        if (updateChecker == null || updateChecker.Status != UpdateStatus.UpdateAvailable)
+        {
+            return DialogResult.None;
         }
 
-        public static DialogResult Start(UpdateChecker updateChecker, bool activateWindow = true)
+        IsOpen = true;
+
+        try
         {
-            DialogResult result = DialogResult.None;
-
-            if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable)
+            DialogResult result = await ShowWindowAsync(updateChecker, activateWindow);
+            if (result == DialogResult.Yes)
             {
-                IsOpen = true;
-
-                try
-                {
-                    using (UpdateMessageBox messageBox = new UpdateMessageBox(updateChecker, activateWindow))
-                    {
-                        result = messageBox.ShowDialog();
-                    }
-
-                    if (result == DialogResult.Yes)
-                    {
-                        updateChecker.DownloadUpdate();
-                    }
-                }
-                finally
-                {
-                    IsOpen = false;
-                }
+                await updateChecker.DownloadUpdateAsync();
             }
 
             return result;
         }
-
-        private void UpdateMessageBox_Shown(object sender, EventArgs e)
+        finally
         {
-            if (ActivateWindow)
+            IsOpen = false;
+        }
+    }
+
+    private static Task<DialogResult> ShowWindowAsync(UpdateChecker updateChecker, bool activateWindow)
+    {
+        AvaloniaBootstrapper.EnsureInitialized();
+        TaskCompletionSource<DialogResult> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        Dispatcher.UIThread.Post(() =>
+        {
+            try
             {
-                this.ForceActivate();
+                UpdateMessageBox window = new(updateChecker, activateWindow);
+                window.Closed += (_, _) => completion.TrySetResult(window._result);
+                window.Show();
             }
-        }
-
-        private void UpdateMessageBox_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (DialogResult == DialogResult.Cancel && e.CloseReason == CloseReason.UserClosing)
+            catch (Exception exception)
             {
-                DialogResult = DialogResult.No;
+                completion.TrySetException(exception);
             }
+        });
+
+        return completion.Task;
+    }
+
+    private static string BuildMessage(UpdateChecker updateChecker)
+    {
+        StringBuilder text = new();
+        string productName = System.Windows.Forms.Application.ProductName ?? "ShareX";
+
+        text.AppendLine(Helpers.SafeStringFormat(
+            updateChecker.IsPortable
+                ? LocalizedResources.UpdateMessageBox_UpdateMessageBox_Portable
+                : LocalizedResources.UpdateMessageBox_UpdateMessageBox_,
+            productName));
+        text.AppendLine();
+        text.Append(LocalizedResources.UpdateMessageBox_UpdateMessageBox_CurrentVersion);
+        text.Append(": ");
+        text.Append(updateChecker.CurrentVersion);
+        text.AppendLine();
+        text.Append(LocalizedResources.UpdateMessageBox_UpdateMessageBox_LatestVersion);
+        text.Append(": ");
+        text.Append(updateChecker.LatestVersion);
+        if (updateChecker.IsDev) text.Append(" Dev");
+        if (updateChecker is GitHubUpdateChecker { IsPreRelease: true }) text.Append(" (Pre-release)");
+        return text.ToString();
+    }
+
+    private void OnOpened(object? sender, EventArgs e)
+    {
+        if (ActivateWindow)
+        {
+            Activate();
+            return;
         }
 
-        private void lblViewChangelog_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.Changelog);
-        }
+        WindowState = Avalonia.Controls.WindowState.Minimized;
+        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+        if (handle != IntPtr.Zero) NativeMethods.FlashWindowEx(handle, 10);
+    }
 
-        private void btnYes_MouseClick(object sender, MouseEventArgs e)
-        {
-            DialogResult = DialogResult.Yes;
-            Close();
-        }
+    private void OnViewChangelogClick(object? sender, RoutedEventArgs e) => URLHelpers.OpenURL(Links.Changelog);
 
-        private void btnNo_MouseClick(object sender, MouseEventArgs e)
-        {
-            DialogResult = DialogResult.No;
-            Close();
-        }
+    private void OnYesClick(object? sender, RoutedEventArgs e)
+    {
+        _result = DialogResult.Yes;
+        Close();
+    }
+
+    private void OnNoClick(object? sender, RoutedEventArgs e)
+    {
+        _result = DialogResult.No;
+        Close();
     }
 }

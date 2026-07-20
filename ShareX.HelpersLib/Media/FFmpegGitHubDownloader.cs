@@ -37,13 +37,13 @@ namespace ShareX.HelpersLib
             FFmpegUpdateChecker updateChecker = new FFmpegUpdateChecker("ShareX", "FFmpeg");
             string url = await updateChecker.GetLatestDownloadURL(true);
 
-            using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.zip"))
+            DownloaderFormResult result = await DownloaderForm.ShowAsync(url, "ffmpeg.zip", form =>
             {
                 form.InstallType = InstallType.Event;
                 form.RunInstallerInBackground = async;
                 form.InstallRequested += installRequested;
-                return form.ShowDialog();
-            }
+            });
+            return result.DialogResult;
         }
 
         public static bool ExtractFFmpeg(string archivePath, string extractPath)

@@ -85,7 +85,7 @@ namespace ShareX.HelpersLib
                 UpdateChecker updateChecker = CreateUpdateChecker();
                 await updateChecker.CheckUpdateAsync();
 
-                if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) == DialogResult.No)
+                if (await UpdateMessageBox.StartAsync(updateChecker, firstUpdateCheck) == DialogResult.No)
                 {
                     AutoUpdateEnabled = false;
                 }

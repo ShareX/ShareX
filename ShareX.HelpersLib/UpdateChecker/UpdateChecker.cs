@@ -84,7 +84,7 @@ namespace ShareX.HelpersLib
 
         public abstract Task CheckUpdateAsync();
 
-        public void DownloadUpdate()
+        public async Task DownloadUpdateAsync()
         {
             DebugHelper.WriteLine("Updating ShareX from version {0} to {1}", CurrentVersion, LatestVersion);
 
@@ -94,14 +94,11 @@ namespace ShareX.HelpersLib
             }
             else
             {
-                using (DownloaderForm updaterForm = new DownloaderForm(this))
-                {
-                    updaterForm.ShowDialog();
+                DownloaderFormResult result = await DownloaderForm.ShowAsync(this);
 
-                    if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
-                    {
-                        Application.Exit();
-                    }
+                if (result.Status == DownloaderFormStatus.InstallStarted)
+                {
+                    Application.Exit();
                 }
             }
         }

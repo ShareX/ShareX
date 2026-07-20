@@ -478,9 +478,14 @@ namespace ShareX.HelpersLib
 
         public static bool FlashWindowEx(Form frm, uint flashCount = uint.MaxValue)
         {
+            return FlashWindowEx(frm.Handle, flashCount);
+        }
+
+        public static bool FlashWindowEx(IntPtr handle, uint flashCount = uint.MaxValue)
+        {
             FLASHWINFO fInfo = new FLASHWINFO();
             fInfo.cbSize = Convert.ToUInt32(Marshal.SizeOf(fInfo));
-            fInfo.hwnd = frm.Handle;
+            fInfo.hwnd = handle;
             fInfo.dwFlags = (uint)FlashWindow.FLASHW_ALL | (uint)FlashWindow.FLASHW_TIMERNOFG;
             fInfo.uCount = flashCount;
             fInfo.dwTimeout = 0;

@@ -1,0 +1,79 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        x:Class="ShareX.HelpersLib.DownloaderForm"
+        Title="ShareX - File downloader"
+        Width="560"
+        Height="310"
+        MinWidth="480"
+        MinHeight="280"
+        CanResize="False"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.download-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="14"/>
+        </Style>
+        <Style Selector="TextBlock.secondary">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style Selector="Button.action">
+            <Setter Property="MinWidth" Value="112"/>
+            <Setter Property="MinHeight" Value="34"/>
+            <Setter Property="Padding" Value="16,5"/>
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
+          RowDefinitions="Auto,*,Auto"
+          RowSpacing="12"
+          Margin="18">
+        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+            <Border Width="42" Height="42" CornerRadius="6" Background="{DynamicResource ShareX.Brush.Background.Panel}">
+                <TextBlock Classes="icon"
+                           Text="{x:Static theming:LucideIcons.download}"
+                           FontSize="21"
+                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Border>
+            <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                <TextBlock Text="File downloader"
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                <TextBlock Text="Download ShareX updates and other required files." Classes="secondary"/>
+            </StackPanel>
+        </Grid>
+
+        <Border Grid.Row="1" Classes="download-card">
+            <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="8">
+                <TextBlock x:Name="FileNameText" TextTrimming="CharacterEllipsis"/>
+                <TextBlock x:Name="StatusText" Grid.Row="1" Classes="secondary"/>
+                <TextBlock x:Name="ProgressText" Grid.Row="2" Classes="secondary" VerticalAlignment="Center"/>
+                <ProgressBar x:Name="DownloadProgress"
+                             Grid.Row="3"
+                             Minimum="0"
+                             Maximum="100"
+                             Height="18"/>
+            </Grid>
+        </Border>
+
+        <Button x:Name="ActionButton"
+                Grid.Row="2"
+                Classes="action"
+                HorizontalAlignment="Right"
+                Click="OnActionClick"/>
+    </Grid>
+</Window>

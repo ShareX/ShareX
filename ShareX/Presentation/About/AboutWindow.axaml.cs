@@ -101,14 +101,14 @@ public partial class AboutWindow : Window
         e.Handled = true;
     }
 
-    private void OnUpdateAvailableClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    private async void OnUpdateAvailableClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         if (_updateChecker == null)
         {
             return;
         }
 
-        Program.MainForm.BeginInvoke((Action)(() => UpdateMessageBox.Start(_updateChecker)));
+        await UpdateMessageBox.StartAsync(_updateChecker);
     }
 
     private static IReadOnlyList<AboutSection> CreateSections()

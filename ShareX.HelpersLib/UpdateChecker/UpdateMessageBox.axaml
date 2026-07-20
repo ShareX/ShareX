@@ -1,0 +1,79 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:ShareX.HelpersLib"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        x:Class="ShareX.HelpersLib.UpdateMessageBox"
+        x:DataType="local:UpdateMessageBox"
+        Width="520"
+        MinWidth="440"
+        SizeToContent="Height"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.message-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="14"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="Padding" Value="14,5"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="Button.link">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
+          RowDefinitions="Auto,Auto,Auto"
+          RowSpacing="14"
+          Margin="18">
+        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+            <Border Width="42" Height="42" CornerRadius="6" Background="{DynamicResource ShareX.Brush.Background.Panel}">
+                <TextBlock Classes="icon"
+                           Text="{x:Static theming:LucideIcons.download}"
+                           FontSize="21"
+                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Border>
+            <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                <TextBlock Text="{Binding DialogTitle}"
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                <TextBlock Text="A newer ShareX version is ready." Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            </StackPanel>
+        </Grid>
+
+        <Border Grid.Row="1" Classes="message-card">
+            <StackPanel Spacing="10">
+                <TextBlock Text="{Binding MessageText}" TextWrapping="Wrap"/>
+                <Button Classes="link"
+                        Content="View changelog"
+                        IsVisible="{Binding ShowChangelog}"
+                        Click="OnViewChangelogClick"/>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="7" HorizontalAlignment="Right">
+            <Button Classes="compact primary" Content="{Binding YesText}" MinWidth="96" Click="OnYesClick"/>
+            <Button Classes="compact" Content="{Binding NoText}" MinWidth="96" Click="OnNoClick"/>
+        </StackPanel>
+    </Grid>
+</Window>

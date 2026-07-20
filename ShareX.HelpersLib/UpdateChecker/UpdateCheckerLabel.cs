@@ -110,9 +110,9 @@ namespace ShareX.HelpersLib
             });
         }
 
-        private void llblUpdateAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private async void llblUpdateAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UpdateMessageBox.Start(updateChecker);
+            await UpdateMessageBox.StartAsync(updateChecker);
         }
     }
 }

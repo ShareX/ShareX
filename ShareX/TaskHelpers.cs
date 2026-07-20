@@ -2821,7 +2821,7 @@ namespace ShareX
 
             if (updateChecker.Status == UpdateStatus.UpdateAvailable)
             {
-                UpdateMessageBox.Start(updateChecker);
+                await UpdateMessageBox.StartAsync(updateChecker);
             }
             else if (updateChecker.Status == UpdateStatus.UpToDate)
             {
@@ -2840,7 +2840,7 @@ namespace ShareX
 
             await updateChecker.CheckUpdateAsync();
 
-            UpdateMessageBox.Start(updateChecker);
+            await UpdateMessageBox.StartAsync(updateChecker);
         }
 
         public static Image GenerateQRCode(string text, int size)
