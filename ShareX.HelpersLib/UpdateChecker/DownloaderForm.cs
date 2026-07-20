@@ -157,7 +157,7 @@ public partial class DownloaderForm : Window
 
         Status = DownloaderFormStatus.DownloadStarted;
         ActionButton.Content = LocalizedResources.DownloaderForm_StartDownload_Cancel;
-        DownloadProgress.IsIndeterminate = true;
+        DownloadProgress.Value = 0;
 
         string folderPath = Path.Combine(Path.GetTempPath(), "ShareX");
         FileHelpers.CreateDirectory(folderPath);
@@ -190,7 +190,6 @@ public partial class DownloaderForm : Window
         }
         catch (Exception exception)
         {
-            DownloadProgress.IsIndeterminate = false;
             ChangeStatus(exception.Message);
         }
     }
@@ -199,7 +198,6 @@ public partial class DownloaderForm : Window
     {
         Dispatcher.UIThread.Post(() =>
         {
-            DownloadProgress.IsIndeterminate = false;
             ChangeStatus(LocalizedResources.DownloaderForm_StartDownload_Downloading_);
             UpdateProgress();
         });

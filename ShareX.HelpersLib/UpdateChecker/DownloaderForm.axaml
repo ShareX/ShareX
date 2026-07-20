@@ -66,6 +66,8 @@
                              Grid.Row="3"
                              Minimum="0"
                              Maximum="100"
+                             Value="0"
+                             IsIndeterminate="False"
                              Height="18"/>
             </Grid>
         </Border>
