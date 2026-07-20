@@ -87,9 +87,13 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
         </Style>
         <Style Selector="Button.key-value-button">
-            <Setter Property="MinHeight" Value="26"/>
-            <Setter Property="MinWidth" Value="28"/>
-            <Setter Property="Padding" Value="7,2"/>
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="MinWidth" Value="30"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
         <Style Selector="CheckBox.destination-type">
             <Setter Property="FontWeight" Value="Normal"/>

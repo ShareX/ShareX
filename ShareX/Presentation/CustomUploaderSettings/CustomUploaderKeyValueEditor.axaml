@@ -3,20 +3,26 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="using:ShareX"
+             xmlns:theming="using:ShareX.AvaloniaUI.Theming"
              mc:Ignorable="d"
              x:Class="ShareX.CustomUploaderKeyValueEditor"
              x:Name="Root">
-    <Border Background="{DynamicResource ShareX.Brush.Background.Main}"
+    <Border Background="{DynamicResource ShareX.Brush.Background.Panel}"
             BorderBrush="{DynamicResource ShareX.Brush.Border}"
             BorderThickness="1"
             CornerRadius="4"
-            Padding="6">
-        <Grid RowDefinitions="Auto,*" RowSpacing="4">
+            Padding="12">
+        <Grid RowDefinitions="Auto,*" RowSpacing="7">
             <Grid ColumnDefinitions="*,Auto">
                 <TextBlock Text="{Binding Header, ElementName=Root}"
                            FontWeight="SemiBold"
                            VerticalAlignment="Center"/>
-                <Button Grid.Column="1" Classes="key-value-button" Content="Add" Click="OnAddClick"/>
+                <Button Grid.Column="1"
+                        Classes="key-value-button"
+                        ToolTip.Tip="Add"
+                        Click="OnAddClick">
+                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}" FontSize="15"/>
+                </Button>
             </Grid>
 
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
@@ -34,9 +40,10 @@
                                          Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 <Button Grid.Column="2"
                                         Classes="key-value-button danger"
-                                        Content="×"
                                         ToolTip.Tip="Remove"
-                                        Click="OnRemoveClick"/>
+                                        Click="OnRemoveClick">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}" FontSize="14"/>
+                                </Button>
                             </Grid>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
