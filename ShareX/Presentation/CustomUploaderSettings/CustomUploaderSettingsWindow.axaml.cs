@@ -149,9 +149,12 @@ public partial class CustomUploaderSettingsWindow : Window
     private void OnSyntaxTestClick(object? sender, RoutedEventArgs e)
     {
         if (_viewModel?.SelectedUploader == null) return;
-        using CustomUploaderSyntaxTestForm form = new(_viewModel.LastResult?.ResponseInfo, _viewModel.SelectedUploader.URL);
-        form.ShowDialog(Program.MainForm);
+        _viewModel.OpenSyntaxTest();
+        SyntaxTestExpressionBox.CaretIndex = SyntaxTestExpressionBox.Text?.Length ?? 0;
+        SyntaxTestExpressionBox.Focus();
     }
+
+    private void OnCloseSyntaxTestClick(object? sender, RoutedEventArgs e) => _viewModel?.CloseSyntaxTest();
 
     private async void OnTestImageClick(object? sender, RoutedEventArgs e) =>
         await RunTestAsync(CustomUploaderDestinationType.ImageUploader, _viewModel?.CustomImageUploaderSelected ?? -1);
@@ -262,7 +265,7 @@ public partial class CustomUploaderSettingsWindow : Window
             AttachSyntaxMenu(textBox, InputTokens);
         }
 
-        foreach (TextBox textBox in new[] { ResultURLBox, ThumbnailURLBox, DeletionURLBox, ErrorMessageBox })
+        foreach (TextBox textBox in new[] { ResultURLBox, ThumbnailURLBox, DeletionURLBox, ErrorMessageBox, SyntaxTestExpressionBox })
         {
             AttachSyntaxMenu(textBox, OutputTokens);
         }

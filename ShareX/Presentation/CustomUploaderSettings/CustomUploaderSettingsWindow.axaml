@@ -665,6 +665,81 @@
                     </Grid>
                 </Border>
             </Grid>
+
+            <Border Grid.ColumnSpan="2"
+                    ZIndex="100"
+                    Background="{DynamicResource ShareX.Brush.Overlay.Modal}"
+                    IsVisible="{Binding IsSyntaxTestVisible}">
+                <Border Classes="card"
+                        Width="720"
+                        MaxHeight="600"
+                        Padding="16"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                    <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="9">
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.test_tube_2}"
+                                       FontSize="21"
+                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                       VerticalAlignment="Center"/>
+                            <StackPanel Grid.Column="1" Spacing="1">
+                                <TextBlock Text="Test URL syntax" FontSize="19" FontWeight="SemiBold"/>
+                                <TextBlock Classes="description" Text="Preview how the response expression will be parsed."/>
+                            </StackPanel>
+                            <Button Grid.Column="2"
+                                    Classes="icon-button"
+                                    ToolTip.Tip="Close"
+                                    Click="OnCloseSyntaxTestClick">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.x}" FontSize="16"/>
+                            </Button>
+                        </Grid>
+
+                        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                            <StackPanel Spacing="10" Margin="0,0,4,0">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Classes="card-title" Text="Response text"/>
+                                    <TextBox Classes="dense syntax-input"
+                                             Height="230"
+                                             AcceptsReturn="True"
+                                             VerticalContentAlignment="Top"
+                                             TextWrapping="NoWrap"
+                                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                             ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                             Text="{Binding SyntaxTestResponseText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                </StackPanel>
+
+                                <StackPanel Spacing="4">
+                                    <TextBlock Classes="card-title" Text="URL syntax"/>
+                                    <TextBox x:Name="SyntaxTestExpressionBox"
+                                             Classes="dense syntax-input"
+                                             Text="{Binding SyntaxTestExpression, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <TextBlock Classes="description" Text="Right-click to insert response tokens."/>
+                                </StackPanel>
+
+                                <StackPanel Spacing="4">
+                                    <TextBlock Classes="card-title" Text="Result"/>
+                                    <TextBox Classes="dense syntax-input"
+                                             Height="90"
+                                             IsReadOnly="True"
+                                             AcceptsReturn="True"
+                                             VerticalContentAlignment="Top"
+                                             TextWrapping="Wrap"
+                                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                             Text="{Binding SyntaxTestResult}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
+
+                        <Button Grid.Row="2"
+                                Classes="compact"
+                                Content="Close"
+                                HorizontalAlignment="Right"
+                                MinWidth="84"
+                                Click="OnCloseSyntaxTestClick"/>
+                    </Grid>
+                </Border>
+            </Border>
         </Grid>
     </ThemeVariantScope>
 </Window>

@@ -35,6 +35,11 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
     private string _searchText = string.Empty;
     private int _selectedSectionIndex;
     private string _statusMessage = "Changes are applied immediately.";
+    private ResponseInfo? _syntaxTestResponseInfo;
+    private bool _isSyntaxTestVisible;
+    private string _syntaxTestResponseText = string.Empty;
+    private string _syntaxTestExpression = string.Empty;
+    private string _syntaxTestResult = string.Empty;
 
     public ObservableCollection<CustomUploaderEditorItem> Uploaders { get; } = [];
     public ObservableCollection<CustomUploaderEditorItem> FilteredUploaders { get; } = [];
@@ -113,6 +118,38 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
     {
         get => _statusMessage;
         set => SetField(ref _statusMessage, value);
+    }
+
+    public bool IsSyntaxTestVisible
+    {
+        get => _isSyntaxTestVisible;
+        private set => SetField(ref _isSyntaxTestVisible, value);
+    }
+
+    public string SyntaxTestResponseText
+    {
+        get => _syntaxTestResponseText;
+        set
+        {
+            if (!SetField(ref _syntaxTestResponseText, value ?? string.Empty)) return;
+            UpdateSyntaxTestResult();
+        }
+    }
+
+    public string SyntaxTestExpression
+    {
+        get => _syntaxTestExpression;
+        set
+        {
+            if (!SetField(ref _syntaxTestExpression, value ?? string.Empty)) return;
+            UpdateSyntaxTestResult();
+        }
+    }
+
+    public string SyntaxTestResult
+    {
+        get => _syntaxTestResult;
+        private set => SetField(ref _syntaxTestResult, value);
     }
 
     public int CustomImageUploaderSelected
@@ -336,6 +373,34 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
         return result;
     }
 
+    public void OpenSyntaxTest()
+    {
+        ResponseInfo? source = LastResult?.ResponseInfo;
+        _syntaxTestResponseInfo = source == null
+            ? new ResponseInfo
+            {
+                ResponseText = "{\r\n    \"status\": 200,\r\n    \"data\": {\r\n        \"link\": \"https:\\/\\/example.com\\/image.png\"\r\n    }\r\n}",
+                ResponseURL = "https://example.com/upload"
+            }
+            : new ResponseInfo
+            {
+                StatusCode = source.StatusCode,
+                StatusDescription = source.StatusDescription,
+                ResponseURL = source.ResponseURL,
+                Headers = source.Headers,
+                ResponseText = source.ResponseText
+            };
+
+        _syntaxTestResponseText = _syntaxTestResponseInfo.ResponseText ?? string.Empty;
+        _syntaxTestExpression = string.IsNullOrEmpty(SelectedUploader?.URL) ? "{json:data.link}" : SelectedUploader.URL;
+        OnPropertyChanged(nameof(SyntaxTestResponseText));
+        OnPropertyChanged(nameof(SyntaxTestExpression));
+        UpdateSyntaxTestResult();
+        IsSyntaxTestVisible = true;
+    }
+
+    public void CloseSyntaxTest() => IsSyntaxTestVisible = false;
+
     private static UploadResult? RunTest(CustomUploaderDestinationType type, CustomUploaderItem item, string? textInput)
     {
         try
@@ -384,6 +449,31 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
             UploadResult result = new();
             result.Errors.Add(exception.Message);
             return result;
+        }
+    }
+
+    private void UpdateSyntaxTestResult()
+    {
+        if (_syntaxTestResponseInfo == null || string.IsNullOrEmpty(SyntaxTestExpression))
+        {
+            SyntaxTestResult = string.Empty;
+            return;
+        }
+
+        try
+        {
+            _syntaxTestResponseInfo.ResponseText = SyntaxTestResponseText;
+            ShareXCustomUploaderSyntaxParser parser = new()
+            {
+                FileName = "example.png",
+                ResponseInfo = _syntaxTestResponseInfo,
+                URLEncode = true
+            };
+            SyntaxTestResult = parser.Parse(SyntaxTestExpression);
+        }
+        catch (Exception exception)
+        {
+            SyntaxTestResult = "Error\r\n" + exception.Message;
         }
     }
 
