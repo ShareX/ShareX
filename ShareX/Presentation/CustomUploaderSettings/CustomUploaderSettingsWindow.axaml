@@ -509,56 +509,44 @@
                                 </Button>
                             </Grid>
 
-                            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="8" RowSpacing="8">
+                            <StackPanel Spacing="8">
                                 <Border Classes="card">
                                     <StackPanel Spacing="5">
                                         <TextBlock Classes="card-title" Text="Result URL"/>
                                         <TextBlock Classes="description" Text="The final URL copied or opened after a successful upload."/>
                                         <TextBox x:Name="ResultURLBox"
                                                  Classes="dense syntax-input"
-                                                 Height="110"
-                                                 AcceptsReturn="True"
-                                                 TextWrapping="Wrap"
                                                  Text="{Binding SelectedUploader.URL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </StackPanel>
                                 </Border>
-                                <Border Grid.Column="1" Classes="card">
+                                <Border Classes="card">
                                     <StackPanel Spacing="5">
                                         <TextBlock Classes="card-title" Text="Thumbnail URL"/>
                                         <TextBlock Classes="description" Text="Optional preview image returned by the service."/>
                                         <TextBox x:Name="ThumbnailURLBox"
                                                  Classes="dense syntax-input"
-                                                 Height="110"
-                                                 AcceptsReturn="True"
-                                                 TextWrapping="Wrap"
                                                  Text="{Binding SelectedUploader.ThumbnailURL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </StackPanel>
                                 </Border>
-                                <Border Grid.Row="1" Classes="card">
+                                <Border Classes="card">
                                     <StackPanel Spacing="5">
                                         <TextBlock Classes="card-title" Text="Deletion URL"/>
                                         <TextBlock Classes="description" Text="Optional URL used to remove the uploaded content."/>
                                         <TextBox x:Name="DeletionURLBox"
                                                  Classes="dense syntax-input"
-                                                 Height="110"
-                                                 AcceptsReturn="True"
-                                                 TextWrapping="Wrap"
                                                  Text="{Binding SelectedUploader.DeletionURL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </StackPanel>
                                 </Border>
-                                <Border Grid.Row="1" Grid.Column="1" Classes="card">
+                                <Border Classes="card">
                                     <StackPanel Spacing="5">
                                         <TextBlock Classes="card-title" Text="Error message"/>
                                         <TextBlock Classes="description" Text="Text extracted when the service reports a failure."/>
                                         <TextBox x:Name="ErrorMessageBox"
                                                  Classes="dense syntax-input"
-                                                 Height="110"
-                                                 AcceptsReturn="True"
-                                                 TextWrapping="Wrap"
                                                  Text="{Binding SelectedUploader.ErrorMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </StackPanel>
                                 </Border>
-                            </Grid>
+                            </StackPanel>
                         </StackPanel>
                     </ScrollViewer>
 
