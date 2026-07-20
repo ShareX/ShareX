@@ -234,7 +234,9 @@ public partial class DownloaderForm : Window
                 RunInstaller();
             })
             {
-                IsBackground = true
+                // Keep the process alive during ShareX shutdown so the delayed
+                // installer launch is not abandoned before Process.Start().
+                IsBackground = false
             };
             thread.Start();
         }

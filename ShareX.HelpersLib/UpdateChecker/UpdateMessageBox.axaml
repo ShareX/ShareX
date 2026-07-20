@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         x:Class="ShareX.HelpersLib.UpdateMessageBox"
         x:DataType="local:UpdateMessageBox"
-        Width="520"
-        MinWidth="440"
+        Width="400"
+        MinWidth="300"
         SizeToContent="Height"
         Background="{DynamicResource ShareX.Brush.Background.Main}"
         CanResize="False"
@@ -52,12 +52,11 @@
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"/>
             </Border>
-            <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
                 <TextBlock Text="{Binding DialogTitle}"
                            FontSize="20"
                            FontWeight="SemiBold"
                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
-                <TextBlock Text="A newer ShareX version is ready." Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
             </StackPanel>
         </Grid>
 
