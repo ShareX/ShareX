@@ -60,6 +60,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private Point _thumbnailDragStart;
     private bool _thumbnailDragStarted;
     private int _thumbnailDragVersion;
+    private bool _suppressThumbnailClickAction;
     private bool _allowClose;
     private bool _disposed;
     private int _lastSelectedIndex = -1;
@@ -658,6 +659,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         bool isControlPressed = e.KeyModifiers.HasFlag(KeyModifiers.Control);
         bool isShiftPressed = e.KeyModifiers.HasFlag(KeyModifiers.Shift);
+        _suppressThumbnailClickAction = isControlPressed || isShiftPressed;
 
         if (isShiftPressed && _lastSelectedIndex >= 0)
         {
@@ -777,7 +779,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             bool wasDragging = _thumbnailDragStarted;
             ResetThumbnailDrag();
 
-            if (!wasDragging && Program.Settings.ThumbnailClickAction != ThumbnailViewClickAction.Select)
+            if (!wasDragging &&
+                !_suppressThumbnailClickAction &&
+                Program.Settings.ThumbnailClickAction != ThumbnailViewClickAction.Select)
             {
                 ExecuteThumbnailClick(item, Program.Settings.ThumbnailClickAction);
             }
@@ -851,6 +855,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void OnThumbnailDoubleTapped(object? sender, TappedEventArgs e)
     {
         if (sender is Control { DataContext: ThumbnailItemViewModel item } &&
+            !_suppressThumbnailClickAction &&
             Program.Settings.ThumbnailClickAction == ThumbnailViewClickAction.Select)
         {
             ExecuteThumbnailClick(item, ThumbnailViewClickAction.OpenFile);
