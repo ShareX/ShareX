@@ -1,0 +1,122 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.ClipboardUploadWindow"
+        x:CompileBindings="False"
+        Width="620"
+        Height="500"
+        MinWidth="480"
+        MinHeight="380"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.preview-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="MinWidth" Value="92"/>
+            <Setter Property="Padding" Value="14,5"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="CheckBox">
+            <Setter Property="FontWeight" Value="Normal"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                Padding="18,12">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                <Border Width="40"
+                        Height="40"
+                        CornerRadius="6"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.clipboard}"
+                               FontSize="20"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+                <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                    <TextBlock x:Name="HeaderTitle"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                    <TextBlock x:Name="ClipboardSummary"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                               TextTrimming="CharacterEllipsis"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1"
+                Classes="preview-card"
+                Margin="18,14">
+            <Grid>
+                <Border x:Name="ImagePreviewContainer"
+                        Classes="checkered-surface"
+                        CornerRadius="5"
+                        Cursor="Hand"
+                        PointerPressed="OnImagePreviewPressed">
+                    <Image x:Name="ImagePreview"
+                           Margin="10"
+                           Stretch="Uniform"/>
+                </Border>
+
+                <TextBox x:Name="TextPreview"
+                         IsReadOnly="True"
+                         AcceptsReturn="True"
+                         TextWrapping="NoWrap"
+                         BorderThickness="0"
+                         Background="Transparent"
+                         Padding="12"
+                         VerticalContentAlignment="Top"
+                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
+                <ListBox x:Name="FilePreview"
+                         BorderThickness="0"
+                         Background="Transparent"
+                         Padding="6"/>
+
+                <TextBlock x:Name="EmptyPreview"
+                           Margin="24"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           TextAlignment="Center"
+                           TextWrapping="Wrap"
+                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*,Auto"
+              Margin="18,0,18,18">
+            <CheckBox x:Name="DontShowAgainCheckBox"
+                      Content="Don't show this window again"
+                      VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal"
+                        Spacing="7">
+                <Button Classes="compact"
+                        Content="Cancel"
+                        IsCancel="True"
+                        Click="OnCancelClick"/>
+                <Button x:Name="UploadButton"
+                        Classes="compact primary"
+                        Content="Upload"
+                        IsDefault="True"
+                        Click="OnUploadClick"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

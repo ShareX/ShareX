@@ -254,10 +254,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (ClipboardUploadForm clipboardUploadForm = new ClipboardUploadForm(taskSettings))
-            {
-                clipboardUploadForm.ShowDialog();
-            }
+            ClipboardUploadWindowIntegration.Show(taskSettings);
         }
 
         public static void ClipboardUploadMainWindow(TaskSettings taskSettings = null)
@@ -266,11 +263,8 @@ namespace ShareX
 
             if (Program.Settings.ShowClipboardContentViewer)
             {
-                using (ClipboardUploadForm clipboardUploadForm = new ClipboardUploadForm(taskSettings, true))
-                {
-                    clipboardUploadForm.ShowDialog();
-                    Program.Settings.ShowClipboardContentViewer = !clipboardUploadForm.DontShowThisWindow;
-                }
+                ClipboardUploadWindowIntegration.Show(taskSettings, true, dontShowAgain =>
+                    Program.Settings.ShowClipboardContentViewer = !dontShowAgain);
             }
             else
             {
