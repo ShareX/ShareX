@@ -768,8 +768,13 @@ namespace ShareX
 
         public static void OpenDropWindow(TaskSettings taskSettings = null)
         {
-            DropForm.GetInstance(Program.Settings.DropSize, Program.Settings.DropOffset, Program.Settings.DropAlignment, Program.Settings.DropOpacity,
-                Program.Settings.DropHoverOpacity, taskSettings).ForceActivate();
+            DragDropUploadWindowIntegration.Show(
+                Program.Settings.DropSize,
+                Program.Settings.DropOffset,
+                Program.Settings.DropAlignment,
+                Program.Settings.DropOpacity,
+                Program.Settings.DropHoverOpacity,
+                taskSettings);
         }
 
         public static void StartScreenRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings = null)

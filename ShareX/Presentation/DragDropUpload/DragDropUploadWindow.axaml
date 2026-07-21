@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.DragDropUploadWindow"
+        x:CompileBindings="False"
+        Title="ShareX - Drag and drop upload"
+        Width="150"
+        Height="150"
+        CanResize="False"
+        ShowInTaskbar="False"
+        WindowDecorations="None"
+        Topmost="True"
+        TransparencyLevelHint="Transparent"
+        Background="Transparent">
+
+    <Window.Styles>
+        <Style Selector="Border.drop-surface">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="#EFFFFFFF"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
+        <Style Selector="Border.drop-surface.drag-over">
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
+    </Window.Styles>
+
+    <Border x:Name="DropSurface"
+            Classes="drop-surface"
+            Cursor="SizeAll"
+            PointerPressed="OnPointerPressed"
+            DragDrop.AllowDrop="True"
+            DragDrop.DragEnter="OnDragEnter"
+            DragDrop.DragOver="OnDragOver"
+            DragDrop.DragLeave="OnDragLeave"
+            DragDrop.Drop="OnDrop">
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Spacing="5"
+                    Margin="6">
+            <TextBlock x:Name="DropIcon"
+                       Classes="icon"
+                       Text="{x:Static theming:LucideIcons.upload}"
+                       Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
+                       HorizontalAlignment="Center"/>
+            <TextBlock x:Name="DropText"
+                       FontWeight="SemiBold"
+                       Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"/>
+        </StackPanel>
+    </Border>
+</Window>
