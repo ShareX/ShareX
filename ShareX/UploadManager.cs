@@ -305,7 +305,7 @@ namespace ShareX
             }
         }
 
-        public static void UploadURL(TaskSettings taskSettings = null)
+        public static async Task UploadURL(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
@@ -318,7 +318,7 @@ namespace ShareX
                 inputText = text;
             }
 
-            string url = InputBox.Show(Resources.UploadManager_UploadURL_URL_to_download_from_and_upload, inputText);
+            string url = await URLUploadWindow.ShowAsync(inputText);
 
             if (!string.IsNullOrEmpty(url))
             {

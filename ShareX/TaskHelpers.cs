@@ -102,7 +102,7 @@ namespace ShareX
                     await UploadManager.ShowTextUploadDialog(safeTaskSettings);
                     break;
                 case HotkeyType.UploadURL:
-                    UploadManager.UploadURL(safeTaskSettings);
+                    await UploadManager.UploadURL(safeTaskSettings);
                     break;
                 case HotkeyType.DragDropUpload:
                     OpenDropWindow(safeTaskSettings);
