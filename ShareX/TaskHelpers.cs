@@ -108,7 +108,7 @@ namespace ShareX
                     OpenDropWindow(safeTaskSettings);
                     break;
                 case HotkeyType.ShortenURL:
-                    UploadManager.ShowShortenURLDialog(safeTaskSettings);
+                    await UploadManager.ShowShortenURLDialog(safeTaskSettings);
                     break;
                 case HotkeyType.StopUploads:
                     TaskManager.StopAllTasks();

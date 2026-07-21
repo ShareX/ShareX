@@ -1,0 +1,91 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.ShortenURLWindow"
+        x:CompileBindings="False"
+        Title="ShareX - Shorten URL"
+        Width="620"
+        SizeToContent="Height"
+        MinWidth="480"
+        CanResize="False"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.input-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="12"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="MinWidth" Value="96"/>
+            <Setter Property="Padding" Value="14,5"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,Auto,Auto">
+        <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                Padding="18,12">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                <Border Width="40"
+                        Height="40"
+                        CornerRadius="6"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.link_2}"
+                               FontSize="20"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="Shorten URL"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1"
+                Classes="input-card"
+                Margin="18,14">
+            <StackPanel Spacing="6">
+                <TextBlock Text="URL" FontWeight="SemiBold"/>
+                <TextBox x:Name="URLTextBox"
+                         MinHeight="32"
+                         Padding="8,5"
+                         PlaceholderText="https://example.com/long-url"
+                         TextChanged="OnURLChanged"/>
+                <TextBlock x:Name="ValidationText"
+                           Text="Enter a valid HTTP, HTTPS, or FTP URL."
+                           FontSize="12"
+                           Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}"
+                           IsVisible="False"/>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="7"
+                    Margin="18,0,18,18">
+            <Button Classes="compact"
+                    Content="Cancel"
+                    IsCancel="True"
+                    Click="OnCancelClick"/>
+            <Button x:Name="ShortenButton"
+                    Classes="compact primary"
+                    Content="Shorten"
+                    IsDefault="True"
+                    Click="OnShortenClick"/>
+        </StackPanel>
+    </Grid>
+</Window>

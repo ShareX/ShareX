@@ -19,20 +19,20 @@ using System.Threading.Tasks;
 
 namespace ShareX;
 
-public partial class URLUploadWindow : Window
+public partial class ShortenURLWindow : Window
 {
     private string? _submittedURL;
     private readonly bool _selectInitialURL;
 
-    public URLUploadWindow() : this(null)
+    public ShortenURLWindow() : this(null)
     {
     }
 
-    public URLUploadWindow(string? initialURL)
+    public ShortenURLWindow(string? initialURL)
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        PromptText.Text = Properties.Resources.UploadManager_UploadURL_URL_to_download_from_and_upload;
+        ShortenButton.Content = Properties.Resources.UploadManager_ShowShortenURLDialog_Shorten;
 
         if (!string.IsNullOrEmpty(initialURL))
         {
@@ -53,7 +53,7 @@ public partial class URLUploadWindow : Window
         {
             try
             {
-                URLUploadWindow window = new(initialURL);
+                ShortenURLWindow window = new(initialURL);
                 window.Closed += (_, _) => completion.TrySetResult(window._submittedURL);
                 window.Show();
             }
@@ -83,11 +83,11 @@ public partial class URLUploadWindow : Window
     {
         string url = URLTextBox.Text?.Trim() ?? string.Empty;
         bool isValid = URLInputValidation.IsSupported(url);
-        UploadButton.IsEnabled = isValid;
+        ShortenButton.IsEnabled = isValid;
         ValidationText.IsVisible = url.Length > 0 && !isValid;
     }
 
-    private void OnUploadClick(object? sender, RoutedEventArgs e)
+    private void OnShortenClick(object? sender, RoutedEventArgs e)
     {
         string url = URLTextBox.Text?.Trim() ?? string.Empty;
         if (!URLInputValidation.IsSupported(url))

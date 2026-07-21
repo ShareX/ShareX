@@ -326,7 +326,7 @@ namespace ShareX
             }
         }
 
-        public static void ShowShortenURLDialog(TaskSettings taskSettings = null)
+        public static async Task ShowShortenURLDialog(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
@@ -339,7 +339,7 @@ namespace ShareX
                 inputText = text;
             }
 
-            string url = InputBox.Show(Resources.UploadManager_ShowShortenURLDialog_ShortenURL, inputText, Resources.UploadManager_ShowShortenURLDialog_Shorten);
+            string url = await ShortenURLWindow.ShowAsync(inputText);
 
             if (!string.IsNullOrEmpty(url))
             {
