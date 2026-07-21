@@ -104,6 +104,40 @@ namespace ShareX.HelpersLib
 
         private static IntPtr mainWindowHandle;
 
+        private static void InvokeTaskbar(Action<ITaskbarList4> action)
+        {
+            lock (syncLock)
+            {
+                try
+                {
+                    action(TaskbarList);
+                }
+                catch (InvalidComObjectException)
+                {
+                    // Upload progress can be reported by different COM apartments.
+                    // Recreate a cached RCW whose creating apartment was torn down.
+                    taskbarList = null;
+
+                    try
+                    {
+                        action(TaskbarList);
+                    }
+                    catch (InvalidComObjectException)
+                    {
+                        taskbarList = null;
+                    }
+                    catch (FileNotFoundException)
+                    {
+                        Enabled = false;
+                    }
+                }
+                catch (FileNotFoundException)
+                {
+                    Enabled = false;
+                }
+            }
+        }
+
         private static IntPtr MainWindowHandle
         {
             get
@@ -142,14 +176,10 @@ namespace ShareX.HelpersLib
             {
                 currentValue = currentValue.Clamp(0, maximumValue);
 
-                try
-                {
-                    TaskbarList.SetProgressValue(hwnd, Convert.ToUInt32(currentValue), Convert.ToUInt32(maximumValue));
-                }
-                catch (FileNotFoundException)
-                {
-                    Enabled = false;
-                }
+                InvokeTaskbar(taskbar => taskbar.SetProgressValue(
+                    hwnd,
+                    Convert.ToUInt32(currentValue),
+                    Convert.ToUInt32(maximumValue)));
             }
         }
 
@@ -167,14 +197,7 @@ namespace ShareX.HelpersLib
         {
             if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)
             {
-                try
-                {
-                    TaskbarList.SetProgressState(hwnd, state);
-                }
-                catch (FileNotFoundException)
-                {
-                    Enabled = false;
-                }
+                InvokeTaskbar(taskbar => taskbar.SetProgressState(hwnd, state));
             }
         }
 
