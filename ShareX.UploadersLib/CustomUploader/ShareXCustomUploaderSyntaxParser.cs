@@ -41,6 +41,8 @@ namespace ShareX.UploadersLib
         public bool UseNameParser { get; set; }
         public NameParserType NameParserType { get; set; } = NameParserType.Text;
 
+        public bool AllowNameParserFileRead { get; set; } = true;
+
         public ShareXCustomUploaderSyntaxParser()
         {
         }
@@ -55,7 +57,10 @@ namespace ShareX.UploadersLib
         {
             if (UseNameParser && !string.IsNullOrEmpty(text))
             {
-                NameParser nameParser = new NameParser(NameParserType);
+                NameParser nameParser = new NameParser(NameParserType)
+                {
+                    AllowFileRead = AllowNameParserFileRead
+                };
                 EscapeHelper escapeHelper = new EscapeHelper();
                 escapeHelper.KeepEscapeCharacter = true;
                 text = escapeHelper.Parse(text, nameParser.Parse);

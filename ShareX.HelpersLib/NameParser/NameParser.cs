@@ -52,6 +52,9 @@ namespace ShareX.HelpersLib
         public string ProcessName { get; set; } // %pn
         public TimeZoneInfo CustomTimeZone { get; set; }
 
+        // %rf reads from the local file system and must only be enabled for trusted patterns.
+        public bool AllowFileRead { get; set; } = true;
+
         // If we're trying to preview via TaskSettings or not
         // Used so that %rf throws "File not found" exceptions and brings up a popup on upload
         // But only returns an error message when previewing to avoid popup spam
@@ -246,6 +249,12 @@ namespace ShareX.HelpersLib
 
             foreach (Tuple<string, string> entry in ListEntryWithArgument(result, CodeMenuEntryFilename.rf.ToPrefixString()))
             {
+                if (!AllowFileRead)
+                {
+                    result = result.Replace(entry.Item1, "");
+                    continue;
+                }
+
                 result = result.ReplaceAll(entry.Item1, () =>
                 {
                     try

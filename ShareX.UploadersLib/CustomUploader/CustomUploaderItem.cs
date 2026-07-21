@@ -156,6 +156,7 @@ namespace ShareX.UploadersLib
             {
                 ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser(input);
                 parser.UseNameParser = true;
+                parser.AllowNameParserFileRead = false;
 
                 foreach (KeyValuePair<string, string> parameter in Parameters)
                 {
@@ -187,7 +188,11 @@ namespace ShareX.UploadersLib
 
         public string GetData(CustomUploaderInput input)
         {
-            NameParser nameParser = new NameParser(NameParserType.Text);
+            NameParser nameParser = new NameParser(NameParserType.Text)
+            {
+                // Custom uploader data can originate from an imported .sxcu file.
+                AllowFileRead = false
+            };
             string result = nameParser.Parse(Data);
 
             Dictionary<string, string> replace = new Dictionary<string, string>();
@@ -233,6 +238,7 @@ namespace ShareX.UploadersLib
             {
                 ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser(input);
                 parser.UseNameParser = true;
+                parser.AllowNameParserFileRead = false;
 
                 foreach (KeyValuePair<string, string> arg in Arguments)
                 {
@@ -251,6 +257,7 @@ namespace ShareX.UploadersLib
 
                 ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser(input);
                 parser.UseNameParser = true;
+                parser.AllowNameParserFileRead = false;
 
                 foreach (KeyValuePair<string, string> header in Headers)
                 {
