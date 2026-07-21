@@ -65,7 +65,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private bool _suppressThumbnailClickAction;
     private bool _allowClose;
     private bool _disposed;
-    private int _lastSelectedIndex = -1;
+    private readonly List<ThumbnailItemViewModel> _selectionOrder = new();
+    private ThumbnailItemViewModel? _selectionAnchor;
 
     internal ObservableCollection<ThumbnailItemViewModel> ThumbnailItems { get; } = new();
     internal ObservableCollection<HotkeyTipViewModel> HotkeyTips { get; } = new();
@@ -548,6 +549,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         ThumbnailItemViewModel? item = ThumbnailItems.FirstOrDefault(x => ReferenceEquals(x.Task, task));
         if (item != null)
         {
+            _selectionOrder.Remove(item);
+            if (ReferenceEquals(_selectionAnchor, item))
+            {
+                _selectionAnchor = null;
+            }
+
             ThumbnailItems.Remove(item);
             item.Dispose();
         }
@@ -627,16 +634,52 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
     }
 
-    private IReadOnlyList<ThumbnailItemViewModel> GetSelectedItems() => ThumbnailItems.Where(x => x.IsSelected).ToArray();
+    private IReadOnlyList<ThumbnailItemViewModel> GetSelectedItems()
+    {
+        _selectionOrder.RemoveAll(item => !item.IsSelected || !ThumbnailItems.Contains(item));
 
-    private void SelectOnly(ThumbnailItemViewModel selected)
+        // Keep the list resilient if selection state is ever changed outside the
+        // pointer handlers. Such items have no interaction order, so append them.
+        foreach (ThumbnailItemViewModel item in ThumbnailItems.Where(item => item.IsSelected && !_selectionOrder.Contains(item)))
+        {
+            _selectionOrder.Add(item);
+        }
+
+        return _selectionOrder.ToArray();
+    }
+
+    private void SetSelected(ThumbnailItemViewModel item, bool selected)
+    {
+        item.IsSelected = selected;
+
+        if (selected)
+        {
+            if (!_selectionOrder.Contains(item))
+            {
+                _selectionOrder.Add(item);
+            }
+        }
+        else
+        {
+            _selectionOrder.Remove(item);
+        }
+    }
+
+    private void ClearSelection()
     {
         foreach (ThumbnailItemViewModel item in ThumbnailItems)
         {
-            item.IsSelected = ReferenceEquals(item, selected);
+            item.IsSelected = false;
         }
 
-        _lastSelectedIndex = ThumbnailItems.IndexOf(selected);
+        _selectionOrder.Clear();
+    }
+
+    private void SelectOnly(ThumbnailItemViewModel selected)
+    {
+        ClearSelection();
+        SetSelected(selected, true);
+        _selectionAnchor = selected;
     }
 
     private void OnThumbnailPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -671,28 +714,26 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         bool isShiftPressed = e.KeyModifiers.HasFlag(KeyModifiers.Shift);
         _suppressThumbnailClickAction = isControlPressed || isShiftPressed;
 
-        if (isShiftPressed && _lastSelectedIndex >= 0)
+        int anchorIndex = _selectionAnchor == null ? -1 : ThumbnailItems.IndexOf(_selectionAnchor);
+
+        if (isShiftPressed && anchorIndex >= 0)
         {
-            int start = Math.Min(_lastSelectedIndex, index);
-            int end = Math.Max(_lastSelectedIndex, index);
-
-            for (int i = 0; i < ThumbnailItems.Count; i++)
+            if (!isControlPressed)
             {
-                if (!isControlPressed)
-                {
-                    ThumbnailItems[i].IsSelected = false;
-                }
+                ClearSelection();
+            }
 
-                if (i >= start && i <= end)
-                {
-                    ThumbnailItems[i].IsSelected = true;
-                }
+            int direction = index >= anchorIndex ? 1 : -1;
+            for (int i = anchorIndex; ; i += direction)
+            {
+                SetSelected(ThumbnailItems[i], true);
+                if (i == index) break;
             }
         }
         else if (isControlPressed)
         {
-            item.IsSelected = !item.IsSelected;
-            _lastSelectedIndex = index;
+            SetSelected(item, !item.IsSelected);
+            _selectionAnchor = item;
         }
         else
         {
@@ -1113,12 +1154,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         if (pointerUpdateKind == PointerUpdateKind.LeftButtonPressed)
         {
-            foreach (ThumbnailItemViewModel item in ThumbnailItems)
-            {
-                item.IsSelected = false;
-            }
-
-            _lastSelectedIndex = -1;
+            ClearSelection();
+            _selectionAnchor = null;
             e.Handled = true;
             return;
         }
@@ -1471,6 +1508,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         {
             item.Dispose();
         }
+
+        _selectionOrder.Clear();
+        _selectionAnchor = null;
     }
 
     private void RestoreWindowBounds()
