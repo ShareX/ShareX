@@ -272,21 +272,15 @@ namespace ShareX
             }
         }
 
-        public static void ShowTextUploadDialog(TaskSettings taskSettings = null)
+        public static async Task ShowTextUploadDialog(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (TextUploadForm form = new TextUploadForm())
-            {
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    string text = form.Content;
+            string content = await TextUploadWindow.ShowAsync();
 
-                    if (!string.IsNullOrEmpty(text))
-                    {
-                        UploadText(text, taskSettings);
-                    }
-                }
+            if (!string.IsNullOrEmpty(content))
+            {
+                UploadText(content, taskSettings);
             }
         }
 

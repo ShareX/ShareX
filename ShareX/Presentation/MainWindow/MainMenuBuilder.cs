@@ -197,7 +197,7 @@ internal sealed class MainMenuBuilder
             Item("Upload file", LucideIcons.file_up, () => UploadManager.UploadFile()),
             Item("Upload folder", LucideIcons.folder_up, () => UploadManager.UploadFolder()),
             Item("Upload clipboard", LucideIcons.clipboard, () => UploadManager.ClipboardUploadMainWindow()),
-            Item("Upload text", LucideIcons.file_text, () => UploadManager.ShowTextUploadDialog()),
+            Item("Upload text", LucideIcons.file_text, async () => await UploadManager.ShowTextUploadDialog()),
             Item("Upload URL", LucideIcons.link, () => UploadManager.UploadURL()),
             Item("Drag and drop upload", LucideIcons.mouse_pointer_2, () => TaskHelpers.OpenDropWindow()),
             Item("Shorten URL", LucideIcons.link_2, () => UploadManager.ShowShortenURLDialog())

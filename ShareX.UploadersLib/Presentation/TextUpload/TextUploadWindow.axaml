@@ -1,0 +1,92 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.UploadersLib.TextUploadWindow"
+        x:CompileBindings="False"
+        Title="ShareX - Text upload"
+        Width="680"
+        Height="560"
+        MinWidth="480"
+        MinHeight="380"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.editor-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="MinWidth" Value="96"/>
+            <Setter Property="Padding" Value="14,5"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                Padding="18,12">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                <Border Width="40"
+                        Height="40"
+                        CornerRadius="6"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.file_text}"
+                               FontSize="20"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+                <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                    <TextBlock Text="Text upload"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                    <TextBlock Text="Enter or paste the text you want to upload."
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1"
+                Classes="editor-card"
+                Margin="18,14">
+            <TextBox x:Name="ContentTextBox"
+                     AcceptsReturn="True"
+                     TextWrapping="NoWrap"
+                     VerticalContentAlignment="Top"
+                     BorderThickness="0"
+                     Background="Transparent"
+                     Padding="12"
+                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     TextChanged="OnContentChanged"/>
+        </Border>
+
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*,Auto"
+              Margin="18,0,18,18">
+            <TextBlock x:Name="CharacterCountText"
+                       VerticalAlignment="Center"
+                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal"
+                        Spacing="7">
+                <Button Classes="compact"
+                        Content="Cancel"
+                        IsCancel="True"
+                        Click="OnCancelClick"/>
+                <Button Classes="compact primary"
+                        Content="Upload"
+                        Click="OnUploadClick"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

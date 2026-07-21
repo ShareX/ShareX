@@ -99,7 +99,7 @@ namespace ShareX
                     UploadManager.ClipboardUploadWithContentViewer(safeTaskSettings);
                     break;
                 case HotkeyType.UploadText:
-                    UploadManager.ShowTextUploadDialog(safeTaskSettings);
+                    await UploadManager.ShowTextUploadDialog(safeTaskSettings);
                     break;
                 case HotkeyType.UploadURL:
                     UploadManager.UploadURL(safeTaskSettings);
