@@ -46,6 +46,12 @@
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
+        <Style Selector="Border.combine-drop-zone">
+            <Setter Property="Background" Value="#CC2B2B2B"/>
+        </Style>
+        <Style Selector="Border.combine-drop-zone.drag-over">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        </Style>
         <Style Selector="Border.hotkey-panel">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
@@ -140,6 +146,68 @@
                                                              Maximum="100"
                                                              Height="5"
                                                              VerticalAlignment="Bottom"/>
+                                                <Border IsVisible="{Binding IsCombineTarget}"
+                                                        Background="#E61B1B1B"
+                                                        CornerRadius="4"
+                                                        Padding="6">
+                                                    <Grid RowDefinitions="Auto,*" RowSpacing="6">
+                                                        <TextBlock Text="Combine images"
+                                                                   Foreground="White"
+                                                                   FontWeight="SemiBold"
+                                                                   TextAlignment="Center"/>
+                                                        <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="6">
+                                                            <Border Classes="combine-drop-zone"
+                                                                    Tag="Horizontal"
+                                                                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                                    BorderThickness="1"
+                                                                    CornerRadius="4"
+                                                                    DragDrop.AllowDrop="True"
+                                                                    DragDrop.DragEnter="OnCombineImagesDragEnter"
+                                                                    DragDrop.DragLeave="OnCombineImagesDragLeave"
+                                                                    DragDrop.DragOver="OnCombineImagesDragOver"
+                                                                    DragDrop.Drop="OnCombineImagesDrop">
+                                                                <StackPanel HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"
+                                                                            Spacing="3">
+                                                                    <TextBlock Classes="icon"
+                                                                               Text="{x:Static theming:LucideIcons.columns_2}"
+                                                                               Foreground="White"
+                                                                               FontSize="20"
+                                                                               HorizontalAlignment="Center"/>
+                                                                    <TextBlock Text="Horizontal"
+                                                                               Foreground="White"
+                                                                               FontSize="11"
+                                                                               TextAlignment="Center"/>
+                                                                </StackPanel>
+                                                            </Border>
+                                                            <Border Grid.Column="1"
+                                                                    Classes="combine-drop-zone"
+                                                                    Tag="Vertical"
+                                                                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                                    BorderThickness="1"
+                                                                    CornerRadius="4"
+                                                                    DragDrop.AllowDrop="True"
+                                                                    DragDrop.DragEnter="OnCombineImagesDragEnter"
+                                                                    DragDrop.DragLeave="OnCombineImagesDragLeave"
+                                                                    DragDrop.DragOver="OnCombineImagesDragOver"
+                                                                    DragDrop.Drop="OnCombineImagesDrop">
+                                                                <StackPanel HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"
+                                                                            Spacing="3">
+                                                                    <TextBlock Classes="icon"
+                                                                               Text="{x:Static theming:LucideIcons.rows_2}"
+                                                                               Foreground="White"
+                                                                               FontSize="20"
+                                                                               HorizontalAlignment="Center"/>
+                                                                    <TextBlock Text="Vertical"
+                                                                               Foreground="White"
+                                                                               FontSize="11"
+                                                                               TextAlignment="Center"/>
+                                                                </StackPanel>
+                                                            </Border>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Border>
                                             </Grid>
                                         </Border>
                                         <Border Width="{Binding Width}"

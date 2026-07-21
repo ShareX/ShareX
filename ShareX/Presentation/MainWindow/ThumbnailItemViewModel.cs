@@ -36,6 +36,7 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     private double _progress;
     private bool _isProgressVisible;
     private bool _isFailed;
+    private bool _isCombineTarget;
 
     public WorkerTask Task { get; }
     public int Width => Math.Max(96, Program.Settings.ThumbnailSize.Width);
@@ -119,6 +120,12 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     {
         get => _isFailed;
         private set => SetField(ref _isFailed, value);
+    }
+
+    public bool IsCombineTarget
+    {
+        get => _isCombineTarget;
+        set => SetField(ref _isCombineTarget, value);
     }
 
     public ThumbnailItemViewModel(WorkerTask task)

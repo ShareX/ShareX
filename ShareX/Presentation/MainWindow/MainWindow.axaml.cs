@@ -60,6 +60,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private Point _thumbnailDragStart;
     private bool _thumbnailDragStarted;
     private int _thumbnailDragVersion;
+    private ThumbnailItemViewModel? _thumbnailDragSource;
+    private ThumbnailItemViewModel? _thumbnailCombineTarget;
     private bool _suppressThumbnailClickAction;
     private bool _allowClose;
     private bool _disposed;
@@ -713,6 +715,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         _thumbnailDragTrigger = e;
         _thumbnailDragFileTask = StorageProvider.TryGetFileFromPathAsync(filePath);
+        _thumbnailDragSource = item;
         _thumbnailDragPointer = e.Pointer;
         _thumbnailDragStart = e.GetPosition(control);
         e.Pointer.Capture(control);
@@ -754,22 +757,15 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
             DataTransfer data = new();
             data.Add(DataTransferItem.CreateFile(file));
-
-            bool wasDropEnabled = DragDrop.GetAllowDrop(this);
-            DragDrop.SetAllowDrop(this, false);
-
-            try
-            {
-                await DragDrop.DoDragDropAsync(trigger, data, DragDropEffects.Copy);
-            }
-            finally
-            {
-                DragDrop.SetAllowDrop(this, wasDropEnabled);
-            }
+            await DragDrop.DoDragDropAsync(trigger, data, DragDropEffects.Copy);
         }
         catch (Exception ex)
         {
             DebugHelper.WriteException(ex);
+        }
+        finally
+        {
+            ResetThumbnailDrag();
         }
     }
 
@@ -822,6 +818,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         _thumbnailDragTrigger = null;
         _thumbnailDragFileTask = null;
         _thumbnailDragStarted = false;
+        _thumbnailDragSource = null;
+        ClearThumbnailCombineTarget();
 
         IPointer? pointer = _thumbnailDragPointer;
         _thumbnailDragPointer = null;
@@ -1186,6 +1184,13 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void OnDragLeave(object? sender, DragEventArgs e)
     {
+        Point position = e.GetPosition(this);
+        if (_thumbnailDragSource != null &&
+            (position.X < 0 || position.Y < 0 || position.X > ClientSize.Width || position.Y > ClientSize.Height))
+        {
+            ClearThumbnailCombineTarget();
+        }
+
         DropOverlay.IsVisible = false;
         e.Handled = true;
     }
@@ -1194,6 +1199,17 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void UpdateDropOverlay(DragEventArgs e)
     {
+        if (_thumbnailDragSource != null)
+        {
+            ThumbnailItemViewModel? target = GetThumbnailItem(e.Source);
+            bool canCombine = CanCombineThumbnails(_thumbnailDragSource, target);
+            SetThumbnailCombineTarget(canCombine ? target : null);
+            DropOverlay.IsVisible = false;
+            e.DragEffects = canCombine ? DragDropEffects.Copy : DragDropEffects.None;
+            e.Handled = true;
+            return;
+        }
+
         bool hasFiles = e.DataTransfer.TryGetFiles()?.Any() == true;
         bool hasText = !string.IsNullOrEmpty(e.DataTransfer.TryGetText());
         bool supported = hasFiles || hasText;
@@ -1219,6 +1235,14 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         DropOverlay.IsVisible = false;
 
+        if (_thumbnailDragSource != null)
+        {
+            ClearThumbnailCombineTarget();
+            e.DragEffects = DragDropEffects.None;
+            e.Handled = true;
+            return;
+        }
+
         FormsDataObject dataObject = new();
         string[] files = e.DataTransfer.TryGetFiles()?
             .Select(x => x.TryGetLocalPath())
@@ -1238,6 +1262,101 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         UploadManager.DragDropUpload(dataObject);
         e.Handled = true;
+    }
+
+    private void OnCombineImagesDragEnter(object? sender, DragEventArgs e) =>
+        UpdateCombineImagesDragZone(sender, e, true);
+
+    private void OnCombineImagesDragOver(object? sender, DragEventArgs e) =>
+        UpdateCombineImagesDragZone(sender, e, true);
+
+    private void OnCombineImagesDragLeave(object? sender, DragEventArgs e) =>
+        UpdateCombineImagesDragZone(sender, e, false);
+
+    private void UpdateCombineImagesDragZone(object? sender, DragEventArgs e, bool isDragOver)
+    {
+        ThumbnailItemViewModel? target = GetThumbnailItem(sender);
+        bool canCombine = CanCombineThumbnails(_thumbnailDragSource, target);
+
+        if (sender is Border border)
+        {
+            border.Classes.Set("drag-over", isDragOver && canCombine);
+        }
+
+        e.DragEffects = canCombine ? DragDropEffects.Copy : DragDropEffects.None;
+        e.Handled = true;
+    }
+
+    private void OnCombineImagesDrop(object? sender, DragEventArgs e)
+    {
+        ThumbnailItemViewModel? source = _thumbnailDragSource;
+        ThumbnailItemViewModel? target = GetThumbnailItem(sender);
+
+        if (sender is Border dropZone)
+        {
+            dropZone.Classes.Set("drag-over", false);
+        }
+
+        if (sender is Border { Tag: string orientationName } &&
+            CanCombineThumbnails(source, target) &&
+            Enum.TryParse(orientationName, out FormsOrientation orientation))
+        {
+            string sourcePath = source!.Task.Info.FilePath;
+            string targetPath = target!.Task.Info.FilePath;
+
+            try
+            {
+                TaskHelpers.CombineImages(new[] { sourcePath, targetPath }, orientation);
+                e.DragEffects = DragDropEffects.Copy;
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+                e.DragEffects = DragDropEffects.None;
+            }
+        }
+        else
+        {
+            e.DragEffects = DragDropEffects.None;
+        }
+
+        ClearThumbnailCombineTarget();
+        e.Handled = true;
+    }
+
+    private static ThumbnailItemViewModel? GetThumbnailItem(object? source) =>
+        source is StyledElement { DataContext: ThumbnailItemViewModel item } ? item : null;
+
+    private static bool CanCombineThumbnails(ThumbnailItemViewModel? source, ThumbnailItemViewModel? target) =>
+        source != null && target != null && !ReferenceEquals(source, target) &&
+        IsExistingImage(source.Task.Info?.FilePath) && IsExistingImage(target.Task.Info?.FilePath);
+
+    private static bool IsExistingImage(string? filePath) =>
+        !string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsImageFile(filePath);
+
+    private void SetThumbnailCombineTarget(ThumbnailItemViewModel? target)
+    {
+        if (ReferenceEquals(_thumbnailCombineTarget, target))
+        {
+            return;
+        }
+
+        ClearThumbnailCombineTarget();
+        _thumbnailCombineTarget = target;
+
+        if (_thumbnailCombineTarget != null)
+        {
+            _thumbnailCombineTarget.IsCombineTarget = true;
+        }
+    }
+
+    private void ClearThumbnailCombineTarget()
+    {
+        if (_thumbnailCombineTarget != null)
+        {
+            _thumbnailCombineTarget.IsCombineTarget = false;
+            _thumbnailCombineTarget = null;
+        }
     }
 
     private void OnTrayIconRightButtonDown()
