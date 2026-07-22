@@ -204,6 +204,18 @@ public partial class AfterCaptureWindow : Window
         AcceptAndClose();
     }
 
+    private void OnSectionSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        if (AfterCaptureOptionsPanel == null || DestinationOptionsPanel == null || AfterUploadOptionsPanel == null)
+        {
+            return;
+        }
+
+        AfterCaptureOptionsPanel.IsVisible = SectionNavigation.SelectedIndex == 0;
+        DestinationOptionsPanel.IsVisible = SectionNavigation.SelectedIndex == 1;
+        AfterUploadOptionsPanel.IsVisible = SectionNavigation.SelectedIndex == 2;
+    }
+
     private void OnCopyClick(object? sender, RoutedEventArgs e)
     {
         TaskSettings.AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard;

@@ -22,8 +22,10 @@
         </Style>
         <Style Selector="CheckBox.task-option, RadioButton.destination-option">
             <Setter Property="FontWeight" Value="Normal"/>
-            <Setter Property="Margin" Value="2,1"/>
-            <Setter Property="Padding" Value="4,3"/>
+            <Setter Property="MinHeight" Value="28"/>
+            <Setter Property="Margin" Value="2,0"/>
+            <Setter Property="Padding" Value="7,1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
         <Style Selector="Button.compact">
             <Setter Property="MinHeight" Value="32"/>
@@ -33,6 +35,52 @@
         <Style Selector="Button.primary">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="Button.icon-button">
+            <Setter Property="Width" Value="32"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="MinWidth" Value="32"/>
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem">
+            <Setter Property="Padding" Value="11,6"/>
+            <Setter Property="Margin" Value="0,0,3,0"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem:selected">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="ListBox.option-list">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="ListBox.option-list > ListBoxItem">
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="ListBox.option-list > ListBoxItem /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
         </Style>
     </Window.Styles>
 
@@ -67,57 +115,91 @@
               ColumnSpacing="14"
               Margin="18,14,18,18">
             <Grid RowDefinitions="*,Auto,Auto" RowSpacing="10">
-                <Border Classes="panel-card">
-                    <TabControl>
-                        <TabItem Header="After capture">
-                            <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                          HorizontalScrollBarVisibility="Disabled"
-                                          Padding="8">
-                                <ItemsControl ItemsSource="{Binding AfterCaptureOptions}">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate DataType="local:AfterCaptureTaskOption">
-                                            <CheckBox Classes="task-option"
-                                                      Content="{Binding Label}"
-                                                      IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </TabItem>
+                <Border Classes="panel-card" Padding="8">
+                    <Grid RowDefinitions="Auto,*" RowSpacing="6">
+                        <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                                CornerRadius="6"
+                                Padding="4">
+                            <ListBox x:Name="SectionNavigation"
+                                     Classes="section-navigation"
+                                     SelectedIndex="0"
+                                     SelectionChanged="OnSectionSelectionChanged">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                                <ListBoxItem>
+                                    <StackPanel Orientation="Horizontal" Spacing="6">
+                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}" FontSize="15"/>
+                                        <TextBlock Text="After capture"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <StackPanel Orientation="Horizontal" Spacing="6">
+                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}" FontSize="15"/>
+                                        <TextBlock Text="Destinations"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <StackPanel Orientation="Horizontal" Spacing="6">
+                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_list}" FontSize="15"/>
+                                        <TextBlock Text="After upload"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+                            </ListBox>
+                        </Border>
 
-                        <TabItem Header="Destinations">
-                            <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                          HorizontalScrollBarVisibility="Disabled"
-                                          Padding="8">
-                                <ItemsControl ItemsSource="{Binding DestinationOptions}">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate DataType="local:AfterCaptureDestinationOption">
-                                            <RadioButton Classes="destination-option"
-                                                         GroupName="CaptureDestination"
-                                                         Content="{Binding Label}"
-                                                         IsChecked="{Binding IsSelected, Mode=TwoWay}"/>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </TabItem>
+                        <Grid Grid.Row="1">
+                            <ListBox x:Name="AfterCaptureOptionsPanel"
+                                     Classes="option-list"
+                                     ItemsSource="{Binding AfterCaptureOptions}"
+                                     Padding="4,2,4,8"
+                                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate DataType="local:AfterCaptureTaskOption">
+                                        <CheckBox Classes="task-option"
+                                                  Content="{Binding Label}"
+                                                  IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
 
-                        <TabItem Header="After upload">
-                            <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                          HorizontalScrollBarVisibility="Disabled"
-                                          Padding="8">
-                                <ItemsControl ItemsSource="{Binding AfterUploadOptions}">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate DataType="local:AfterCaptureTaskOption">
-                                            <CheckBox Classes="task-option"
-                                                      Content="{Binding Label}"
-                                                      IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </TabItem>
-                    </TabControl>
+                            <ListBox x:Name="DestinationOptionsPanel"
+                                     Classes="option-list"
+                                     IsVisible="False"
+                                     ItemsSource="{Binding DestinationOptions}"
+                                     Padding="4,2,4,8"
+                                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate DataType="local:AfterCaptureDestinationOption">
+                                        <RadioButton Classes="destination-option"
+                                                     GroupName="CaptureDestination"
+                                                     Content="{Binding Label}"
+                                                     IsChecked="{Binding IsSelected, Mode=TwoWay}"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+                            <ListBox x:Name="AfterUploadOptionsPanel"
+                                     Classes="option-list"
+                                     IsVisible="False"
+                                     ItemsSource="{Binding AfterUploadOptions}"
+                                     Padding="4,2,4,8"
+                                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate DataType="local:AfterCaptureTaskOption">
+                                        <CheckBox Classes="task-option"
+                                                  Content="{Binding Label}"
+                                                  IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Grid>
+                    </Grid>
                 </Border>
 
                 <Grid Grid.Row="1" RowDefinitions="Auto,Auto" RowSpacing="4">
@@ -130,9 +212,13 @@
 
                 <Grid Grid.Row="2" ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="7">
                     <Button x:Name="CopyButton"
-                            Classes="compact"
-                            Content="Copy image"
-                            Click="OnCopyClick"/>
+                            Classes="compact icon-button"
+                            ToolTip.Tip="Copy image"
+                            Click="OnCopyClick">
+                        <TextBlock Classes="icon"
+                                   Text="{x:Static theming:LucideIcons.copy}"
+                                   FontSize="15"/>
+                    </Button>
                     <Button Grid.Column="2"
                             Classes="compact"
                             Content="Cancel"
