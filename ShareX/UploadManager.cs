@@ -382,15 +382,26 @@ namespace ShareX
                     return;
                 }
 
-                string customFileName = null;
-
-                if (!skipAfterCaptureWindow && !TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, metadata))
+                void StartImageTask(string customFileName)
                 {
+                    WorkerTask task = WorkerTask.CreateImageUploaderTask(metadata, taskSettings, customFileName);
+                    TaskManager.Start(task);
+                }
+
+                if (!skipAfterCaptureWindow)
+                {
+                    TaskHelpers.ShowAfterCaptureWindow(taskSettings, result =>
+                    {
+                        if (result.Accepted)
+                        {
+                            StartImageTask(result.FileName);
+                        }
+                    }, metadata);
+
                     return;
                 }
 
-                WorkerTask task = WorkerTask.CreateImageUploaderTask(metadata, taskSettings, customFileName);
-                TaskManager.Start(task);
+                StartImageTask(null);
             }
         }
 

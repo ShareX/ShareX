@@ -607,41 +607,24 @@ namespace ShareX
             return FileHelpers.GetAbsolutePath(screenshotsFolder);
         }
 
-        public static bool ShowAfterCaptureForm(TaskSettings taskSettings, out string fileName, TaskMetadata metadata = null, string filePath = null)
+        public static void ShowAfterCaptureWindow(TaskSettings taskSettings, Action<AfterCaptureWindowResult> completed,
+            TaskMetadata metadata = null, string filePath = null)
         {
-            fileName = null;
-
-            if (taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowAfterCaptureWindow))
+            if (!taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowAfterCaptureWindow))
             {
-                AfterCaptureForm afterCaptureForm = null;
-
-                try
-                {
-                    if (!string.IsNullOrEmpty(filePath))
-                    {
-                        afterCaptureForm = new AfterCaptureForm(filePath, taskSettings);
-                    }
-                    else
-                    {
-                        afterCaptureForm = new AfterCaptureForm(metadata, taskSettings);
-                    }
-
-                    if (afterCaptureForm.ShowDialog() == DialogResult.Cancel)
-                    {
-                        metadata?.Dispose();
-
-                        return false;
-                    }
-
-                    fileName = afterCaptureForm.FileName;
-                }
-                finally
-                {
-                    afterCaptureForm.Dispose();
-                }
+                completed(new AfterCaptureWindowResult(true, null));
+                return;
             }
 
-            return true;
+            AfterCaptureWindowIntegration.Show(taskSettings, metadata, filePath, result =>
+            {
+                if (!result.Accepted)
+                {
+                    metadata?.Dispose();
+                }
+
+                completed(result);
+            });
         }
 
         public static void PrintImage(Image img)

@@ -1,0 +1,195 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:ShareX"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.AfterCaptureWindow"
+        x:CompileBindings="False"
+        Title="ShareX - After capture"
+        Width="1040"
+        Height="680"
+        MinWidth="820"
+        MinHeight="540"
+        Topmost="True"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.panel-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+        <Style Selector="CheckBox.task-option, RadioButton.destination-option">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Margin" Value="2,1"/>
+            <Setter Property="Padding" Value="4,3"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="MinWidth" Value="96"/>
+            <Setter Property="Padding" Value="14,5"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,*">
+        <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                Padding="18,12">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                <Border Width="40"
+                        Height="40"
+                        CornerRadius="6"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.image}"
+                               FontSize="20"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+                <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                    <TextBlock Text="After capture"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                    <TextBlock Text="Review the captured content and choose what happens next."
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1"
+              ColumnDefinitions="390,*"
+              ColumnSpacing="14"
+              Margin="18,14,18,18">
+            <Grid RowDefinitions="*,Auto,Auto" RowSpacing="10">
+                <Border Classes="panel-card">
+                    <TabControl>
+                        <TabItem Header="After capture">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          Padding="8">
+                                <ItemsControl ItemsSource="{Binding AfterCaptureOptions}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="local:AfterCaptureTaskOption">
+                                            <CheckBox Classes="task-option"
+                                                      Content="{Binding Label}"
+                                                      IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                        </TabItem>
+
+                        <TabItem Header="Destinations">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          Padding="8">
+                                <ItemsControl ItemsSource="{Binding DestinationOptions}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="local:AfterCaptureDestinationOption">
+                                            <RadioButton Classes="destination-option"
+                                                         GroupName="CaptureDestination"
+                                                         Content="{Binding Label}"
+                                                         IsChecked="{Binding IsSelected, Mode=TwoWay}"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                        </TabItem>
+
+                        <TabItem Header="After upload">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          Padding="8">
+                                <ItemsControl ItemsSource="{Binding AfterUploadOptions}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="local:AfterCaptureTaskOption">
+                                            <CheckBox Classes="task-option"
+                                                      Content="{Binding Label}"
+                                                      IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                        </TabItem>
+                    </TabControl>
+                </Border>
+
+                <Grid Grid.Row="1" RowDefinitions="Auto,Auto" RowSpacing="4">
+                    <TextBlock Text="File name" FontWeight="SemiBold"/>
+                    <TextBox x:Name="FileNameTextBox"
+                             Grid.Row="1"
+                             MinHeight="32"
+                             Padding="8,5"/>
+                </Grid>
+
+                <Grid Grid.Row="2" ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="7">
+                    <Button x:Name="CopyButton"
+                            Classes="compact"
+                            Content="Copy image"
+                            Click="OnCopyClick"/>
+                    <Button Grid.Column="2"
+                            Classes="compact"
+                            Content="Cancel"
+                            IsCancel="True"
+                            Click="OnCancelClick"/>
+                    <Button Grid.Column="3"
+                            Classes="compact primary"
+                            Content="Continue"
+                            IsDefault="True"
+                            Click="OnContinueClick"/>
+                </Grid>
+            </Grid>
+
+            <Border x:Name="PreviewSurface"
+                    Grid.Column="1"
+                    Classes="panel-card checkered-surface"
+                    Cursor="Hand"
+                    ClipToBounds="True"
+                    PointerPressed="OnPreviewPointerPressed">
+                <Grid>
+                    <Image x:Name="PreviewImage"
+                           Margin="10"
+                           Stretch="Uniform">
+                        <Image.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Copy preview image" Click="OnCopyPreviewClick"/>
+                            </ContextMenu>
+                        </Image.ContextMenu>
+                    </Image>
+
+                    <StackPanel x:Name="EmptyPreview"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Spacing="8">
+                        <TextBlock Classes="icon"
+                                   Text="{x:Static theming:LucideIcons.file_video}"
+                                   FontSize="48"
+                                   Opacity="0.45"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="EmptyPreviewText"
+                                   MaxWidth="360"
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                    </StackPanel>
+
+                    <Border x:Name="ImageSizeBadge"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Margin="8"
+                            Padding="7,3"
+                            CornerRadius="4"
+                            Background="#CC202020">
+                        <TextBlock x:Name="ImageSizeText" Foreground="White" FontSize="12"/>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

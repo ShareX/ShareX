@@ -339,25 +339,40 @@ namespace ShareX
                 FileHelpers.DeleteFile(tempPath);
             }).ContinueInCurrentContext(() =>
             {
-                if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings, out string customFileName, null, path))
+                void FinishRecording(AfterCaptureWindowResult result)
                 {
-                    if (!string.IsNullOrEmpty(customFileName))
+                    if (result.Accepted)
                     {
-                        string currentFileName = Path.GetFileNameWithoutExtension(path);
-                        string ext = Path.GetExtension(path);
+                        string customFileName = result.FileName;
 
-                        if (!currentFileName.Equals(customFileName, StringComparison.OrdinalIgnoreCase))
+                        if (!string.IsNullOrEmpty(customFileName))
                         {
-                            path = FileHelpers.RenameFile(path, customFileName + ext);
+                            string currentFileName = Path.GetFileNameWithoutExtension(path);
+                            string ext = Path.GetExtension(path);
+
+                            if (!currentFileName.Equals(customFileName, StringComparison.OrdinalIgnoreCase))
+                            {
+                                path = FileHelpers.RenameFile(path, customFileName + ext);
+                            }
                         }
+
+                        WorkerTask task = WorkerTask.CreateFileJobTask(path, metadata, taskSettings, customFileName);
+                        TaskManager.Start(task);
                     }
 
-                    WorkerTask task = WorkerTask.CreateFileJobTask(path, metadata, taskSettings, customFileName);
-                    TaskManager.Start(task);
+                    abortRequested = false;
+                    IsRecording = false;
                 }
 
-                abortRequested = false;
-                IsRecording = false;
+                if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path))
+                {
+                    TaskHelpers.ShowAfterCaptureWindow(taskSettings, FinishRecording, null, path);
+                }
+                else
+                {
+                    abortRequested = false;
+                    IsRecording = false;
+                }
             });
         }
 
