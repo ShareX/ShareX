@@ -1,0 +1,233 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:ShareX"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.AfterUploadWindow"
+        x:CompileBindings="False"
+        Title="ShareX - After upload"
+        Width="940"
+        Height="580"
+        MinWidth="760"
+        MinHeight="460"
+        ShowActivated="False"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.panel-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+        <Style Selector="ListBox.format-list">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="ListBox.format-list > ListBoxItem">
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="Margin" Value="0,1"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="ListBox.format-list > ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="ListBox.format-list > ListBoxItem:selected">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ListBox.format-list > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="MinHeight" Value="40"/>
+            <Setter Property="Padding" Value="12,5"/>
+        </Style>
+        <Style Selector="Button.icon-button">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="MinWidth" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="MinHeight" Value="40"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,*">
+        <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                Padding="18,12">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                <Border Width="40"
+                        Height="40"
+                        CornerRadius="6"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.circle_check}"
+                               FontSize="20"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+                <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                    <TextBlock Text="Upload complete"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                    <TextBlock Text="{Binding ResultText}"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                               TextTrimming="CharacterEllipsis"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1"
+              RowDefinitions="*,Auto"
+              ColumnDefinitions="*,380"
+              ColumnSpacing="14"
+              RowSpacing="10"
+              Margin="18,14,18,18">
+            <Border Classes="panel-card" Padding="8">
+                <Grid RowDefinitions="Auto,*" RowSpacing="6">
+                    <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                            CornerRadius="6"
+                            Padding="10,7">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="7">
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.link}"
+                                       FontSize="16"
+                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                       VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1"
+                                       Text="Clipboard formats"
+                                       FontWeight="SemiBold"
+                                       VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <ListBox x:Name="FormatList"
+                             Grid.Row="1"
+                             Classes="format-list"
+                             ItemsSource="{Binding Formats}"
+                             SelectedIndex="0"
+                             DoubleTapped="OnFormatDoubleTapped"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="local:AfterUploadFormatItem">
+                                <Grid ColumnDefinitions="130,*" ColumnSpacing="10">
+                                    <StackPanel Spacing="1" VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding Group}"
+                                                   FontSize="11"
+                                                   Opacity="0.72"/>
+                                        <TextBlock Text="{Binding Description}"
+                                                   TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="1"
+                                               Text="{Binding Text}"
+                                               ToolTip.Tip="{Binding Text}"
+                                               FontFamily="Cascadia Mono,Consolas"
+                                               FontSize="12"
+                                               TextTrimming="CharacterEllipsis"
+                                               VerticalAlignment="Center"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Border>
+
+            <Border x:Name="PreviewSurface"
+                    Grid.Column="1"
+                    Classes="panel-card checkered-surface"
+                    Cursor="Hand"
+                    ClipToBounds="True"
+                    PointerPressed="OnPreviewPointerPressed">
+                <Grid>
+                    <Image x:Name="PreviewImage"
+                           Margin="10"
+                           Stretch="Uniform">
+                        <Image.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Copy preview image" Click="OnCopyImageClick"/>
+                            </ContextMenu>
+                        </Image.ContextMenu>
+                    </Image>
+
+                    <StackPanel x:Name="EmptyPreview"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Spacing="8">
+                        <TextBlock Classes="icon"
+                                   Text="{x:Static theming:LucideIcons.link}"
+                                   FontSize="48"
+                                   Opacity="0.45"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock Text="No image preview available"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                    </StackPanel>
+
+                    <Border x:Name="ImageSizeBadge"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Margin="8"
+                            Padding="7,3"
+                            CornerRadius="4"
+                            Background="#CC202020">
+                        <TextBlock x:Name="ImageSizeText" Foreground="White" FontSize="12"/>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1"
+                  Grid.ColumnSpan="2"
+                  ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,*,Auto"
+                  ColumnSpacing="6">
+                <Button x:Name="CopyImageButton"
+                        Classes="compact icon-button"
+                        ToolTip.Tip="Copy image"
+                        Click="OnCopyImageClick">
+                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}" FontSize="15"/>
+                </Button>
+                <Button x:Name="CopyLinkButton"
+                        Grid.Column="1"
+                        Classes="compact icon-button"
+                        ToolTip.Tip="Copy selected format"
+                        Click="OnCopyLinkClick">
+                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
+                </Button>
+                <Button x:Name="OpenLinkButton"
+                        Grid.Column="2"
+                        Classes="compact icon-button"
+                        ToolTip.Tip="Open link"
+                        Click="OnOpenLinkClick">
+                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}" FontSize="15"/>
+                </Button>
+                <Button x:Name="OpenFileButton"
+                        Grid.Column="3"
+                        Classes="compact icon-button"
+                        ToolTip.Tip="Open file"
+                        Click="OnOpenFileClick">
+                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file}" FontSize="15"/>
+                </Button>
+                <Button x:Name="OpenFolderButton"
+                        Grid.Column="4"
+                        Classes="compact icon-button"
+                        ToolTip.Tip="Open containing folder"
+                        Click="OnOpenFolderClick">
+                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder}" FontSize="15"/>
+                </Button>
+                <Button Grid.Column="6"
+                        Classes="compact"
+                        MinWidth="96"
+                        Content="Close"
+                        IsCancel="True"
+                        Click="OnCloseClick"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
