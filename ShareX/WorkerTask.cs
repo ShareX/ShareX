@@ -397,10 +397,7 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowBeforeUploadWindow))
                 {
-                    using (BeforeUploadForm form = new BeforeUploadForm(Info))
-                    {
-                        cancelUpload = form.ShowDialog() != DialogResult.OK;
-                    }
+                    cancelUpload = !BeforeUploadWindowIntegration.Show(Info);
                 }
 
                 if (!cancelUpload)

@@ -1,0 +1,189 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:ShareX"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.BeforeUploadWindow"
+        x:CompileBindings="False"
+        Title="ShareX - Before upload"
+        Width="900"
+        Height="560"
+        MinWidth="720"
+        MinHeight="460"
+        Topmost="True"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.panel-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+        <Style Selector="ListBox.destination-list">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="ListBox.destination-list > ListBoxItem">
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="ListBox.destination-list > ListBoxItem /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="RadioButton.destination-option">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="MinHeight" Value="28"/>
+            <Setter Property="Margin" Value="2,0"/>
+            <Setter Property="Padding" Value="7,1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="MinWidth" Value="96"/>
+            <Setter Property="Padding" Value="14,5"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,*">
+        <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                Padding="18,12">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                <Border Width="40"
+                        Height="40"
+                        CornerRadius="6"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.upload}"
+                               FontSize="20"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+                <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                    <TextBlock Text="Before upload"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                    <TextBlock x:Name="PromptText"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1"
+              RowDefinitions="*,Auto"
+              ColumnDefinitions="360,*"
+              ColumnSpacing="14"
+              RowSpacing="10"
+              Margin="18,14,18,18">
+            <Border Classes="panel-card" Padding="8">
+                <Grid RowDefinitions="Auto,*" RowSpacing="6">
+                    <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                            CornerRadius="6"
+                            Padding="10,7">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="7">
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.upload}"
+                                       FontSize="16"
+                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                       VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1"
+                                       Text="Destination"
+                                       FontWeight="SemiBold"
+                                       VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <ListBox x:Name="DestinationList"
+                             Grid.Row="1"
+                             Classes="destination-list"
+                             ItemsSource="{Binding DestinationOptions}"
+                             Padding="4,2,4,8"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="local:BeforeUploadDestinationOption">
+                                <RadioButton Classes="destination-option"
+                                             GroupName="UploadDestination"
+                                             Content="{Binding Label}"
+                                             IsChecked="{Binding IsSelected, Mode=TwoWay}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Border>
+
+            <Border x:Name="PreviewSurface"
+                    Grid.Column="1"
+                    Classes="panel-card checkered-surface"
+                    Cursor="Hand"
+                    ClipToBounds="True"
+                    PointerPressed="OnPreviewPointerPressed">
+                <Grid>
+                    <Image x:Name="PreviewImage"
+                           Margin="10"
+                           Stretch="Uniform">
+                        <Image.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Copy preview image" Click="OnCopyPreviewClick"/>
+                            </ContextMenu>
+                        </Image.ContextMenu>
+                    </Image>
+
+                    <StackPanel x:Name="EmptyPreview"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Spacing="8">
+                        <TextBlock Classes="icon"
+                                   Text="{x:Static theming:LucideIcons.file_text}"
+                                   FontSize="48"
+                                   Opacity="0.45"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="EmptyPreviewText"
+                                   MaxWidth="320"
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                    </StackPanel>
+
+                    <Border x:Name="ImageSizeBadge"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Margin="8"
+                            Padding="7,3"
+                            CornerRadius="4"
+                            Background="#CC202020">
+                        <TextBlock x:Name="ImageSizeText" Foreground="White" FontSize="12"/>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1"
+                  Grid.ColumnSpan="2"
+                  ColumnDefinitions="*,Auto,Auto"
+                  ColumnSpacing="7">
+                <Button Grid.Column="1"
+                        Classes="compact"
+                        Content="Cancel"
+                        IsCancel="True"
+                        Click="OnCancelClick"/>
+                <Button Grid.Column="2"
+                        Classes="compact primary"
+                        Content="Upload"
+                        IsDefault="True"
+                        Click="OnUploadClick"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
