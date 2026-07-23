@@ -47,7 +47,16 @@ public static class ImageEditorSelectorWindowIntegration
         {
             ImageEditorSelectorWindow window = new();
             window.Closed += (_, _) => completed(window.UseLegacyImageEditor);
-            window.Show();
+
+            if (MainWindowIntegration.Instance is { IsVisible: true } owner)
+            {
+                _ = window.ShowDialog(owner);
+            }
+            else
+            {
+                window.WindowStartupLocation = Avalonia.Controls.WindowStartupLocation.CenterScreen;
+                window.Show();
+            }
         }
         catch (Exception exception)
         {

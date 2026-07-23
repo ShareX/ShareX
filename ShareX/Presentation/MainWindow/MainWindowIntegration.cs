@@ -23,6 +23,7 @@ public static class MainWindowIntegration
 
     public static bool IsInitialized => _window != null;
     public static bool IsVisible => _isVisible;
+    internal static MainWindow? Instance => _window;
 
     public static void Initialize(MainForm host, bool show)
     {

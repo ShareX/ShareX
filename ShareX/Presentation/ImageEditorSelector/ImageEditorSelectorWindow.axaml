@@ -7,9 +7,8 @@
         Width="580"
         SizeToContent="Height"
         CanResize="False"
-        ShowInTaskbar="False"
         Background="{DynamicResource ShareX.Brush.Background.Main}"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterOwner">
 
     <Window.Styles>
         <Style Selector="Button.editor-choice">
