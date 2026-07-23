@@ -264,7 +264,7 @@
                         BorderThickness="1"
                         CornerRadius="8">
                     <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
-                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="9">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
                             <TextBlock Classes="icon"
                                        Text="{x:Static theming:LucideIcons.folder_search}"
                                        FontSize="21"
@@ -278,14 +278,6 @@
                                 <TextBlock Text="Upload files when they are created in this folder."
                                            Classes="hint"/>
                             </StackPanel>
-                            <Button Grid.Column="2"
-                                    Classes="icon-button"
-                                    ToolTip.Tip="Close"
-                                    Click="OnCancelWatchFolderEditorClick">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.x}"
-                                           FontSize="16"/>
-                            </Button>
                         </Grid>
 
                         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">

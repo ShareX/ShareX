@@ -607,7 +607,7 @@
                         BorderThickness="1"
                         CornerRadius="8">
                     <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
-                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="9">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
                             <TextBlock Classes="icon"
                                        Text="{x:Static theming:LucideIcons.clipboard_list}"
                                        FontSize="21"
@@ -621,14 +621,6 @@
                                 <TextBlock Classes="hint"
                                            Text="Customize the text copied from completed uploads."/>
                             </StackPanel>
-                            <Button Grid.Column="2"
-                                    Classes="icon-button"
-                                    ToolTip.Tip="Close"
-                                    Click="OnCancelClipboardFormatClick">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.x}"
-                                           FontSize="16"/>
-                            </Button>
                         </Grid>
 
                         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
