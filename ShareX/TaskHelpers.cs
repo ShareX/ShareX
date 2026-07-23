@@ -2778,19 +2778,12 @@ namespace ShareX
 
         public static void OpenActionsToolbar()
         {
-            ActionsToolbarForm.Instance.ForceActivate();
+            ActionsToolbarWindowIntegration.Show();
         }
 
         public static void ToggleActionsToolbar()
         {
-            if (ActionsToolbarForm.IsInstanceActive)
-            {
-                ActionsToolbarForm.Instance.Close();
-            }
-            else
-            {
-                ActionsToolbarForm.Instance.ForceActivate();
-            }
+            ActionsToolbarWindowIntegration.Toggle();
         }
 
         public static async Task DownloadDevBuild()

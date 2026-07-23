@@ -1,0 +1,157 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:ShareX"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        d:DesignWidth="620"
+        d:DesignHeight="570"
+        x:Class="ShareX.ActionsToolbarEditorWindow"
+        Title="ShareX - Edit actions toolbar"
+        Width="620"
+        Height="570"
+        MinWidth="520"
+        MinHeight="430"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterOwner">
+
+    <Window.Styles>
+        <Style Selector="Button.compact">
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="9,4"/>
+        </Style>
+        <Style Selector="Button.square">
+            <Setter Property="Width" Value="34"/>
+            <Setter Property="MinWidth" Value="34"/>
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+        <Style Selector="ListBox.action-list">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Main}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style Selector="ListBox.action-list > ListBoxItem">
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="ListBox.action-list > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="ListBox.action-list > ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="Border.action-row">
+            <Setter Property="MinHeight" Value="36"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="ListBox.action-list > ListBoxItem:selected Border.action-row">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+        <Style Selector="ListBox.action-list > ListBoxItem:pointerover Border.action-row">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+        <Style Selector="TextBlock.hint">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
+              Margin="12,0,12,12"
+              RowDefinitions="Auto,*,Auto"
+              RowSpacing="8">
+            <Border Grid.Row="0" Classes="tool-panel docked-top-toolbar">
+                <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,*">
+                    <Button x:Name="AddButton" Grid.Column="0" Classes="compact" Click="OnAddClick">
+                        <StackPanel Orientation="Horizontal" Spacing="7">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
+                            <TextBlock Text="Add..."/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="RemoveButton" Grid.Column="1" Classes="compact" Click="OnRemoveClick">
+                        <StackPanel Orientation="Horizontal" Spacing="7">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
+                            <TextBlock Text="Remove"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="MoveUpButton"
+                            Grid.Column="2"
+                            Classes="square"
+                            ToolTip.Tip="Move up"
+                            Click="OnMoveUpClick">
+                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_up}" FontSize="16"/>
+                    </Button>
+                    <Button x:Name="MoveDownButton"
+                            Grid.Column="3"
+                            Classes="square"
+                            ToolTip.Tip="Move down"
+                            Click="OnMoveDownClick">
+                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_down}" FontSize="16"/>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <ListBox x:Name="ActionList"
+                     Grid.Row="1"
+                     Classes="action-list"
+                     SelectionChanged="OnSelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:DataType="local:ActionsToolbarItem">
+                        <Border Classes="action-row">
+                            <Grid>
+                                <Grid IsVisible="{Binding !IsSeparator}"
+                                      ColumnDefinitions="24,*"
+                                      ColumnSpacing="7">
+                                    <TextBlock Classes="icon"
+                                               Text="{Binding Icon}"
+                                               FontSize="16"
+                                               Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                               TextAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="1"
+                                               Text="{Binding Title}"
+                                               FontWeight="Normal"
+                                               VerticalAlignment="Center"
+                                               TextTrimming="CharacterEllipsis"/>
+                                </Grid>
+                                <Grid IsVisible="{Binding IsSeparator}"
+                                      ColumnDefinitions="*,Auto,*"
+                                      ColumnSpacing="10"
+                                      VerticalAlignment="Center">
+                                    <Border Height="1"
+                                            Background="{DynamicResource ShareX.Brush.Border}"
+                                            VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="1"
+                                               Classes="hint"
+                                               Text="Separator"/>
+                                    <Border Grid.Column="2"
+                                            Height="1"
+                                            Background="{DynamicResource ShareX.Brush.Border}"
+                                            VerticalAlignment="Center"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                <Button Grid.Column="1"
+                        Width="88"
+                        Height="34"
+                        Content="Close"
+                        Click="OnCloseClick"/>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

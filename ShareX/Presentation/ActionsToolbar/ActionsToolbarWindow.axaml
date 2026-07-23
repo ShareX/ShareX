@@ -1,0 +1,83 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        d:DesignWidth="320"
+        d:DesignHeight="40"
+        x:Class="ShareX.ActionsToolbarWindow"
+        Title="ShareX - Actions toolbar"
+        WindowDecorations="None"
+        CanResize="False"
+        ShowInTaskbar="False"
+        SizeToContent="WidthAndHeight"
+        Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+        DragDrop.AllowDrop="True"
+        DragDrop.DragEnter="OnDragEnter"
+        DragDrop.DragOver="OnDragOver"
+        DragDrop.DragLeave="OnDragLeave"
+        DragDrop.Drop="OnDrop"
+        WindowStartupLocation="Manual">
+
+    <Window.Styles>
+        <Style Selector="Button.toolbar-action">
+            <Setter Property="Width" Value="34"/>
+            <Setter Property="MinWidth" Value="34"/>
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="Border.toolbar-title">
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="8,0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="Border.toolbar-title:pointerover">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Border x:Name="ToolbarFrame"
+                Padding="2"
+                Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                BorderThickness="1"
+                CornerRadius="5">
+            <Grid>
+                <StackPanel x:Name="ToolbarItems"
+                            Orientation="Horizontal"
+                            Spacing="2">
+                    <Border x:Name="TitleHandle"
+                            Classes="toolbar-title"
+                            PointerPressed="OnTitlePointerPressed">
+                        <TextBlock Text="ShareX"
+                                   FontSize="13"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+
+                <Border x:Name="DropOverlay"
+                        IsVisible="False"
+                        Background="{DynamicResource ShareX.Brush.Overlay.Modal}"
+                        CornerRadius="4">
+                    <StackPanel Orientation="Horizontal"
+                                Spacing="7"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <TextBlock Classes="icon"
+                                   Text="{x:Static theming:LucideIcons.upload}"
+                                   Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                   FontSize="16"/>
+                        <TextBlock Text="Drop to upload"
+                                   FontWeight="Normal"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+    </ThemeVariantScope>
+</Window>
