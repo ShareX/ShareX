@@ -1,0 +1,166 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.FileExistWindow"
+        x:CompileBindings="False"
+        Title="ShareX - How to save?"
+        Width="580"
+        SizeToContent="Height"
+        CanResize="False"
+        Topmost="True"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen"
+        KeyDown="OnWindowKeyDown">
+
+    <Window.Styles>
+        <Style Selector="Border.panel-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+        <Style Selector="Button.action-button">
+            <Setter Property="Height" Value="52"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Padding" Value="11,6"/>
+        </Style>
+        <Style Selector="TextBlock.action-title">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        <Style Selector="TextBlock.action-file">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,*">
+        <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                Padding="18,12">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                <Border Width="40"
+                        Height="40"
+                        CornerRadius="6"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.triangle_alert}"
+                               FontSize="20"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+                <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                    <TextBlock Text="A file with this name already exists"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                    <TextBlock Text="Choose a new file name or select how ShareX should continue."
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1"
+              RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+              RowSpacing="8"
+              Margin="18,14,18,18">
+            <Border Classes="panel-card" Padding="10,8">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.file}"
+                               FontSize="16"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               VerticalAlignment="Center"/>
+                    <TextBlock x:Name="ExistingPathText"
+                               Grid.Column="1"
+                               FontFamily="Cascadia Mono,Consolas"
+                               FontWeight="Normal"
+                               TextTrimming="CharacterEllipsis"
+                               VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1" RowDefinitions="Auto,Auto" RowSpacing="4">
+                <TextBlock Text="New file name" FontWeight="SemiBold"/>
+                <TextBox x:Name="NewNameTextBox"
+                         Grid.Row="1"
+                         MinHeight="32"
+                         Padding="8,5"
+                         TextChanged="OnNewNameChanged"/>
+            </Grid>
+
+            <Button x:Name="NewNameButton"
+                    Grid.Row="2"
+                    Classes="action-button"
+                    Click="OnUseNewNameClick">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.pencil}"
+                               FontSize="17"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               VerticalAlignment="Center"/>
+                    <StackPanel Grid.Column="1" Spacing="1">
+                        <TextBlock x:Name="NewNameActionTitle" Classes="action-title"/>
+                        <TextBlock x:Name="NewNameFileText"
+                                   Classes="action-file"
+                                   TextTrimming="CharacterEllipsis"/>
+                    </StackPanel>
+                </Grid>
+            </Button>
+
+            <Button x:Name="OverwriteButton"
+                    Grid.Row="3"
+                    Classes="action-button"
+                    Click="OnOverwriteClick">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.file}"
+                               FontSize="17"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               VerticalAlignment="Center"/>
+                    <StackPanel Grid.Column="1" Spacing="1">
+                        <TextBlock x:Name="OverwriteActionTitle" Classes="action-title"/>
+                        <TextBlock x:Name="OverwriteFileText"
+                                   Classes="action-file"
+                                   TextTrimming="CharacterEllipsis"/>
+                    </StackPanel>
+                </Grid>
+            </Button>
+
+            <Button x:Name="UniqueNameButton"
+                    Grid.Row="4"
+                    Classes="action-button"
+                    Click="OnUseUniqueNameClick">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.copy_plus}"
+                               FontSize="17"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               VerticalAlignment="Center"/>
+                    <StackPanel Grid.Column="1" Spacing="1">
+                        <TextBlock x:Name="UniqueNameActionTitle" Classes="action-title"/>
+                        <TextBlock x:Name="UniqueNameFileText"
+                                   Classes="action-file"
+                                   TextTrimming="CharacterEllipsis"/>
+                    </StackPanel>
+                </Grid>
+            </Button>
+
+            <Button Grid.Row="5"
+                    Classes="action-button"
+                    IsCancel="True"
+                    Click="OnCancelClick">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.x}"
+                               FontSize="17"
+                               VerticalAlignment="Center"/>
+                    <TextBlock x:Name="CancelActionTitle"
+                               Grid.Column="1"
+                               Classes="action-title"
+                               VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
