@@ -15,25 +15,42 @@
 #nullable enable
 
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
+using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace ShareX;
 
 public partial class ApplicationSettingsWindow : Window
 {
     private ApplicationSettingsViewModel ViewModel => (ApplicationSettingsViewModel)DataContext!;
+    private ClipboardFormatItem? _editedClipboardFormat;
+
+    private static readonly string[] ClipboardResultTokens =
+    [
+        "$result", "$url", "$shorturl", "$thumbnailurl", "$deletionurl", "$filepath", "$filename",
+        "$filenamenoext", "$thumbnailfilename", "$thumbnailfilenamenoext", "$folderpath", "$foldername", "$uploadtime"
+    ];
 
     public ApplicationSettingsWindow()
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         DataContext = new ApplicationSettingsViewModel();
+        AttachClipboardFormatMenu();
+        ClipboardFormatSupportedVariablesText.Text = string.Format(
+            Properties.Resources.ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_,
+            string.Join(", ", ClipboardResultTokens),
+            "%y, %mo, %d");
+        KeyDown += OnWindowKeyDown;
         Opened += (_, _) => Activate();
         Closed += (_, _) => ViewModel.Dispose();
     }
@@ -46,7 +63,14 @@ public partial class ApplicationSettingsWindow : Window
     private void OnOpenPersonalFolderClick(object? sender, RoutedEventArgs e) => ViewModel.OpenPersonalFolder();
     private void OnOpenScreenshotsFolderClick(object? sender, RoutedEventArgs e) => ViewModel.OpenScreenshotsFolder();
     private void OnResetThumbnailSizeClick(object? sender, RoutedEventArgs e) => ViewModel.ResetThumbnailSize();
-    private void OnAddClipboardFormatClick(object? sender, RoutedEventArgs e) => ViewModel.AddClipboardFormat();
+    private void OnAddClipboardFormatClick(object? sender, RoutedEventArgs e) => ShowClipboardFormatEditor(null);
+    private void OnEditClipboardFormatClick(object? sender, RoutedEventArgs e)
+    {
+        if (ViewModel.SelectedClipboardFormat is { } format)
+        {
+            ShowClipboardFormatEditor(format);
+        }
+    }
     private void OnRemoveClipboardFormatClick(object? sender, RoutedEventArgs e) => ViewModel.RemoveSelectedClipboardFormat();
     private void OnMoveImageUploaderUpClick(object? sender, RoutedEventArgs e) => ViewModel.MoveSelectedImageUploader(-1);
     private void OnMoveImageUploaderDownClick(object? sender, RoutedEventArgs e) => ViewModel.MoveSelectedImageUploader(1);
@@ -121,5 +145,109 @@ public partial class ApplicationSettingsWindow : Window
         {
             await ViewModel.ImportAsync(path);
         }
+    }
+
+    private void ShowClipboardFormatEditor(ClipboardFormatItem? format)
+    {
+        _editedClipboardFormat = format;
+        ClipboardFormatEditorTitle.Text = format == null ? "Add clipboard format" : "Edit clipboard format";
+        ClipboardFormatDescriptionBox.Text = format?.Description ?? string.Empty;
+        ClipboardFormatTextBox.Text = format?.Format ?? string.Empty;
+        ClipboardFormatEditorOverlay.IsVisible = true;
+
+        Dispatcher.UIThread.Post(() =>
+        {
+            ClipboardFormatDescriptionBox.Focus();
+            ClipboardFormatDescriptionBox.SelectAll();
+        }, DispatcherPriority.Input);
+    }
+
+    private void HideClipboardFormatEditor()
+    {
+        ClipboardFormatEditorOverlay.IsVisible = false;
+        _editedClipboardFormat = null;
+    }
+
+    private void OnSaveClipboardFormatClick(object? sender, RoutedEventArgs e)
+    {
+        string description = ClipboardFormatDescriptionBox.Text ?? string.Empty;
+        string format = ClipboardFormatTextBox.Text ?? string.Empty;
+
+        if (_editedClipboardFormat == null)
+        {
+            ViewModel.AddClipboardFormat(description, format);
+        }
+        else
+        {
+            _editedClipboardFormat.Description = description;
+            _editedClipboardFormat.Format = format;
+        }
+
+        HideClipboardFormatEditor();
+    }
+
+    private void OnCancelClipboardFormatClick(object? sender, RoutedEventArgs e) => HideClipboardFormatEditor();
+
+    private void OnWindowKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Escape && ClipboardFormatEditorOverlay.IsVisible)
+        {
+            HideClipboardFormatEditor();
+            e.Handled = true;
+        }
+    }
+
+    private void AttachClipboardFormatMenu()
+    {
+        List<MenuItem> menuItems = [];
+        menuItems.Add(new MenuItem
+        {
+            Header = "Upload result",
+            ItemsSource = ClipboardResultTokens.Select(CreateClipboardTokenItem).ToList()
+        });
+
+        IEnumerable<CodeMenuEntryFilename> filenameEntries = typeof(CodeMenuEntryFilename)
+            .GetFields(BindingFlags.Public | BindingFlags.Static)
+            .Where(field => field.FieldType == typeof(CodeMenuEntryFilename))
+            .Select(field => field.GetValue(null))
+            .OfType<CodeMenuEntryFilename>();
+
+        foreach (IGrouping<string?, CodeMenuEntryFilename> group in filenameEntries.GroupBy(entry => entry.Category))
+        {
+            List<MenuItem> items = group.Select(entry => CreateClipboardTokenItem(entry.ToPrefixString(), entry.Description)).ToList();
+            if (string.IsNullOrWhiteSpace(group.Key))
+            {
+                menuItems.AddRange(items);
+            }
+            else
+            {
+                menuItems.Add(new MenuItem { Header = group.Key, ItemsSource = items });
+            }
+        }
+
+        ClipboardFormatTextBox.ContextMenu = new ContextMenu { ItemsSource = menuItems };
+    }
+
+    private MenuItem CreateClipboardTokenItem(string token) => CreateClipboardTokenItem(token, null);
+
+    private MenuItem CreateClipboardTokenItem(string token, string? description)
+    {
+        MenuItem item = new() { Header = token };
+        if (!string.IsNullOrEmpty(description))
+        {
+            ToolTip.SetTip(item, description);
+        }
+        item.Click += (_, _) => InsertClipboardToken(token);
+        return item;
+    }
+
+    private void InsertClipboardToken(string token)
+    {
+        string text = ClipboardFormatTextBox.Text ?? string.Empty;
+        int start = Math.Clamp(Math.Min(ClipboardFormatTextBox.SelectionStart, ClipboardFormatTextBox.SelectionEnd), 0, text.Length);
+        int end = Math.Clamp(Math.Max(ClipboardFormatTextBox.SelectionStart, ClipboardFormatTextBox.SelectionEnd), start, text.Length);
+        ClipboardFormatTextBox.Text = text.Remove(start, end - start).Insert(start, token);
+        ClipboardFormatTextBox.CaretIndex = start + token.Length;
+        ClipboardFormatTextBox.Focus();
     }
 }

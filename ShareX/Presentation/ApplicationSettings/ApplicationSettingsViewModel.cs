@@ -553,9 +553,9 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         Reload();
     }
 
-    public void AddClipboardFormat()
+    public void AddClipboardFormat(string description, string value)
     {
-        ClipboardFormat format = new("New format", "$url");
+        ClipboardFormat format = new(description, value);
         Settings.ClipboardContentFormats.Add(format);
         ClipboardFormatItem item = new(format, MarkChanged);
         ClipboardFormats.Add(item);

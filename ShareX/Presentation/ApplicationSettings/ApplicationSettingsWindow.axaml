@@ -355,9 +355,12 @@
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="Clipboard formats"/>
                             </Grid>
                             <TextBlock Classes="hint" Margin="0,0,0,8" Text="These formats appear under the Copy submenu in the main window context menu."/>
-                            <Grid controls:SettingsSearch.IsPanel="True" ColumnDefinitions="280,*" ColumnSpacing="10">
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="5">
-                                    <ListBox Classes="settings-list" ItemsSource="{Binding ClipboardFormats}" SelectedItem="{Binding SelectedClipboardFormat, Mode=TwoWay}">
+                                    <ListBox Classes="settings-list"
+                                             MinHeight="260"
+                                             ItemsSource="{Binding ClipboardFormats}"
+                                             SelectedItem="{Binding SelectedClipboardFormat, Mode=TwoWay}">
                                         <ListBox.ItemTemplate>
                                             <DataTemplate x:DataType="local:ClipboardFormatItem">
                                                 <StackPanel Margin="4,2">
@@ -368,26 +371,12 @@
                                         </ListBox.ItemTemplate>
                                     </ListBox>
                                     <StackPanel Orientation="Horizontal" Spacing="5">
-                                        <Button Classes="compact" Content="Add" Click="OnAddClipboardFormatClick"/>
+                                        <Button Classes="compact" Content="Add..." Click="OnAddClipboardFormatClick"/>
+                                        <Button Classes="compact" Content="Edit..." IsEnabled="{Binding HasSelectedClipboardFormat}" Click="OnEditClipboardFormatClick"/>
                                         <Button Classes="compact" Content="Remove" IsEnabled="{Binding HasSelectedClipboardFormat}" Click="OnRemoveClipboardFormatClick"/>
                                     </StackPanel>
                                 </StackPanel>
-                                <Border Grid.Column="1" Classes="section-card" IsVisible="{Binding HasSelectedClipboardFormat}">
-                                    <StackPanel Spacing="6">
-                                        <TextBlock Classes="section-title" Text="Selected format"/>
-                                        <TextBlock Text="Description" FontWeight="Normal"/>
-                                        <TextBox Classes="form-control" Text="{Binding SelectedClipboardFormat.Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                        <TextBlock Text="Format" FontWeight="Normal"/>
-                                        <TextBox Classes="form-control"
-                                                 AcceptsReturn="True"
-                                                 MinHeight="100"
-                                                 VerticalContentAlignment="Top"
-                                                 TextWrapping="Wrap"
-                                                 Text="{Binding SelectedClipboardFormat.Format, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                        <TextBlock Classes="hint" Text="Supported variables include $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $folderpath and date variables such as %y, %mo and %d."/>
-                                    </StackPanel>
-                                </Border>
-                            </Grid>
+                            </Border>
                         </StackPanel>
                     </ScrollViewer>
 
@@ -602,6 +591,85 @@
                     </ScrollViewer>
                 </Grid>
             </Grid>
+
+            <Border x:Name="ClipboardFormatEditorOverlay"
+                    Grid.ColumnSpan="2"
+                    ZIndex="100"
+                    IsVisible="False"
+                    Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+                <Border Width="640"
+                        MaxHeight="560"
+                        Padding="16"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                    <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="9">
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.clipboard_list}"
+                                       FontSize="21"
+                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                       VerticalAlignment="Center"/>
+                            <StackPanel Grid.Column="1" Spacing="1">
+                                <TextBlock x:Name="ClipboardFormatEditorTitle"
+                                           Text="Add clipboard format"
+                                           FontSize="19"
+                                           FontWeight="SemiBold"/>
+                                <TextBlock Classes="hint"
+                                           Text="Customize the text copied from completed uploads."/>
+                            </StackPanel>
+                            <Button Grid.Column="2"
+                                    Classes="icon-button"
+                                    ToolTip.Tip="Close"
+                                    Click="OnCancelClipboardFormatClick">
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.x}"
+                                           FontSize="16"/>
+                            </Button>
+                        </Grid>
+
+                        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                            <StackPanel Spacing="8" Margin="0,0,4,0">
+                                <StackPanel Spacing="3">
+                                    <TextBlock Text="Description" FontWeight="Normal"/>
+                                    <TextBox x:Name="ClipboardFormatDescriptionBox" Classes="form-control"/>
+                                </StackPanel>
+                                <StackPanel Spacing="3">
+                                    <TextBlock Text="Format" FontWeight="Normal"/>
+                                    <TextBox x:Name="ClipboardFormatTextBox"
+                                             Classes="form-control"
+                                             Height="150"
+                                             AcceptsReturn="True"
+                                             VerticalContentAlignment="Top"
+                                             TextWrapping="Wrap"
+                                             ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                                    <TextBlock Classes="hint" Text="Right-click to insert a variable."/>
+                                </StackPanel>
+                                <TextBlock x:Name="ClipboardFormatSupportedVariablesText"
+                                           Classes="hint"
+                                           TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </ScrollViewer>
+
+                        <StackPanel Grid.Row="2"
+                                    Orientation="Horizontal"
+                                    Spacing="8"
+                                    HorizontalAlignment="Right">
+                            <Button Classes="compact"
+                                    MinWidth="84"
+                                    Content="Save"
+                                    Click="OnSaveClipboardFormatClick"/>
+                            <Button Classes="compact"
+                                    MinWidth="84"
+                                    Content="Cancel"
+                                    Click="OnCancelClipboardFormatClick"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Border>
         </Grid>
     </ThemeVariantScope>
 </Window>
