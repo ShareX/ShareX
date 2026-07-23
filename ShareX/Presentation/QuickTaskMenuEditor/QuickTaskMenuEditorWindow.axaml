@@ -1,0 +1,320 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:ShareX"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        d:DesignWidth="760"
+        d:DesignHeight="640"
+        x:Class="ShareX.QuickTaskMenuEditorWindow"
+        Title="ShareX - Quick task menu editor"
+        Width="760"
+        Height="640"
+        MinWidth="620"
+        MinHeight="500"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Button.compact">
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="9,4"/>
+        </Style>
+        <Style Selector="Button.square">
+            <Setter Property="Width" Value="34"/>
+            <Setter Property="MinWidth" Value="34"/>
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+        <Style Selector="ListBox.quick-task-list">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Main}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style Selector="ListBox.quick-task-list > ListBoxItem">
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="ListBox.quick-task-list > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="ListBox.quick-task-list > ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="Border.quick-task-row">
+            <Setter Property="MinHeight" Value="42"/>
+            <Setter Property="Padding" Value="8,5"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="ListBox.quick-task-list > ListBoxItem:selected Border.quick-task-row">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+        <Style Selector="ListBox.quick-task-list > ListBoxItem:pointerover Border.quick-task-row">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+        <Style Selector="TextBlock.hint">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style Selector="CheckBox.task-option">
+            <Setter Property="Margin" Value="0,1"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+        </Style>
+        <Style Selector="TextBox.form-control">
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="12,0,12,12" RowDefinitions="Auto,*,Auto" RowSpacing="8">
+                <Border Grid.Row="0" Classes="tool-panel docked-top-toolbar">
+                    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,*,Auto">
+                        <Button Grid.Column="0" Classes="compact" Click="OnAddClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
+                                <TextBlock Text="Add..."/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="EditButton" Grid.Column="1" Classes="compact" Click="OnEditClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings_2}"/>
+                                <TextBlock Text="Edit..."/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="RemoveButton" Grid.Column="2" Classes="compact" Click="OnRemoveClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
+                                <TextBlock Text="Remove"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="MoveUpButton"
+                                Grid.Column="3"
+                                Classes="square"
+                                ToolTip.Tip="Move up"
+                                Click="OnMoveUpClick">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_up}" FontSize="16"/>
+                        </Button>
+                        <Button x:Name="MoveDownButton"
+                                Grid.Column="4"
+                                Classes="square"
+                                ToolTip.Tip="Move down"
+                                Click="OnMoveDownClick">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_down}" FontSize="16"/>
+                        </Button>
+                        <Button Grid.Column="6" Classes="compact" Click="OnResetClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
+                                <TextBlock Text="Reset..."/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <ListBox x:Name="TaskList"
+                         Grid.Row="1"
+                         Classes="quick-task-list"
+                         DoubleTapped="OnTaskListDoubleTapped"
+                         SelectionChanged="OnTaskSelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="local:QuickTaskPresetItem">
+                            <Border Classes="quick-task-row">
+                                <Grid>
+                                    <StackPanel IsVisible="{Binding !IsSeparator}" Spacing="1">
+                                        <TextBlock Text="{Binding Title}"
+                                                   FontWeight="Normal"
+                                                   TextTrimming="CharacterEllipsis"/>
+                                        <TextBlock Classes="hint"
+                                                   Text="{Binding Summary}"
+                                                   TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+                                    <Grid IsVisible="{Binding IsSeparator}"
+                                          ColumnDefinitions="*,Auto,*"
+                                          ColumnSpacing="10"
+                                          VerticalAlignment="Center">
+                                        <Border Height="1"
+                                                Background="{DynamicResource ShareX.Brush.Border}"
+                                                VerticalAlignment="Center"/>
+                                        <TextBlock Grid.Column="1"
+                                                   Classes="hint"
+                                                   Text="Separator"
+                                                   VerticalAlignment="Center"/>
+                                        <Border Grid.Column="2"
+                                                Height="1"
+                                                Background="{DynamicResource ShareX.Brush.Border}"
+                                                VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                    <TextBlock Classes="hint"
+                               Text="A task with no after-capture actions appears as a separator in the Quick Task menu."
+                               VerticalAlignment="Center"/>
+                    <Button Grid.Column="1"
+                            Width="88"
+                            Height="34"
+                            Content="Close"
+                            Click="OnCloseClick"/>
+                </Grid>
+            </Grid>
+
+            <Border x:Name="ItemEditorOverlay"
+                    ZIndex="100"
+                    IsVisible="False"
+                    Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+                <Border Width="700"
+                        MaxHeight="600"
+                        Padding="16"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                    <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.list_checks}"
+                                       FontSize="21"
+                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                       VerticalAlignment="Center"/>
+                            <StackPanel Grid.Column="1" Spacing="1">
+                                <TextBlock x:Name="ItemEditorTitle"
+                                           Text="Add quick task"
+                                           FontSize="19"
+                                           FontWeight="SemiBold"/>
+                                <TextBlock Classes="hint"
+                                           Text="Choose the actions that this Quick Task menu item should run."/>
+                            </StackPanel>
+                        </Grid>
+
+                        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                            <StackPanel Spacing="10" Margin="0,0,4,0">
+                                <StackPanel Spacing="3">
+                                    <TextBlock Text="Menu text" FontWeight="Normal"/>
+                                    <TextBox x:Name="TaskNameBox" Classes="form-control"/>
+                                    <TextBlock Classes="hint" Text="Leave empty to generate the menu text from the selected actions."/>
+                                </StackPanel>
+
+                                <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                                    <Border Padding="10"
+                                            Background="{DynamicResource ShareX.Brush.Control.Background}"
+                                            BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                            BorderThickness="1"
+                                            CornerRadius="5">
+                                        <StackPanel Spacing="5">
+                                            <TextBlock Text="After capture tasks"
+                                                       FontSize="14"
+                                                       FontWeight="SemiBold"/>
+                                            <ItemsControl x:Name="AfterCaptureTaskOptions">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate x:DataType="local:QuickTaskFlagItem">
+                                                        <CheckBox Classes="task-option"
+                                                                  Content="{Binding Name}"
+                                                                  IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Grid.Column="1"
+                                            Padding="10"
+                                            Background="{DynamicResource ShareX.Brush.Control.Background}"
+                                            BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                            BorderThickness="1"
+                                            CornerRadius="5">
+                                        <StackPanel Spacing="5">
+                                            <TextBlock Text="After upload tasks"
+                                                       FontSize="14"
+                                                       FontWeight="SemiBold"/>
+                                            <ItemsControl x:Name="AfterUploadTaskOptions">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate x:DataType="local:QuickTaskFlagItem">
+                                                        <CheckBox Classes="task-option"
+                                                                  Content="{Binding Name}"
+                                                                  IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </StackPanel>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </ScrollViewer>
+
+                        <StackPanel Grid.Row="2"
+                                    Orientation="Horizontal"
+                                    Spacing="8"
+                                    HorizontalAlignment="Right">
+                            <Button Classes="compact"
+                                    MinWidth="84"
+                                    Content="Save"
+                                    Click="OnSaveItemClick"/>
+                            <Button Classes="compact"
+                                    MinWidth="84"
+                                    Content="Cancel"
+                                    Click="OnCancelItemClick"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Border>
+
+            <Border x:Name="ResetConfirmationOverlay"
+                    ZIndex="110"
+                    IsVisible="False"
+                    Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+                <Border Width="420"
+                        Padding="18"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                    <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.rotate_ccw}"
+                                       FontSize="20"
+                                       Foreground="{DynamicResource ShareX.Brush.Accent}"/>
+                            <TextBlock Grid.Column="1"
+                                       Text="Reset Quick Tasks?"
+                                       FontSize="18"
+                                       FontWeight="SemiBold"/>
+                        </Grid>
+                        <TextBlock x:Name="ResetConfirmationText"
+                                   Grid.Row="1"
+                                   FontWeight="Normal"
+                                   TextWrapping="Wrap"/>
+                        <StackPanel Grid.Row="2"
+                                    Orientation="Horizontal"
+                                    Spacing="8"
+                                    HorizontalAlignment="Right">
+                            <Button Classes="compact"
+                                    MinWidth="84"
+                                    Content="Reset"
+                                    Click="OnConfirmResetClick"/>
+                            <Button Classes="compact"
+                                    MinWidth="84"
+                                    Content="Cancel"
+                                    Click="OnCancelResetClick"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Border>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

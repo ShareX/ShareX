@@ -589,11 +589,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public void MoveSelectedTextUploader(int offset) => MoveUploader(SecondaryTextUploaders, SelectedTextUploader, offset, list => Settings.SecondaryTextUploaders = list);
     public void MoveSelectedFileUploader(int offset) => MoveUploader(SecondaryFileUploaders, SelectedFileUploader, offset, list => Settings.SecondaryFileUploaders = list);
 
-    public void EditQuickTaskMenu() => InvokeOnMainThread(() =>
-    {
-        using QuickTaskMenuEditorForm form = new();
-        form.ShowDialog(Program.MainForm);
-    });
+    public void EditQuickTaskMenu() => QuickTaskMenuEditorIntegration.Show();
 
     public async Task CheckDevBuildAsync()
     {

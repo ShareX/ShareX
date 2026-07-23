@@ -94,7 +94,7 @@ namespace ShareX
             tsmiEdit.Click += (sender, e) =>
             {
                 cms.Close();
-                new QuickTaskMenuEditorForm().ShowDialog();
+                QuickTaskMenuEditorIntegration.Show();
             };
             cms.Items.Add(tsmiEdit);
 
