@@ -709,7 +709,7 @@ internal sealed class TaskSettingsPageBuilder
         ListBox list = new() { MinHeight = 230 };
         list.Classes.Add("settings-list");
         list.Classes.Add("action-list");
-        Dictionary<CheckBox, ExternalProgram> entries = [];
+        Dictionary<Control, ExternalProgram> entries = [];
 
         void Refresh(ExternalProgram? selected = null)
         {
@@ -717,8 +717,40 @@ internal sealed class TaskSettingsPageBuilder
             entries.Clear();
             foreach (ExternalProgram action in _externalPrograms)
             {
-                CheckBox item = Check($"{action.Name} — {action.Path}", () => action.IsActive, value => action.IsActive = value);
+                CheckBox enabled = Check(string.Empty, () => action.IsActive, value => action.IsActive = value);
+                enabled.Content = null;
+                enabled.Classes.Remove("setting");
+                enabled.Classes.Add("action-list-toggle");
+                ToolTip.SetTip(enabled, "Enable action");
+
+                Grid item = new()
+                {
+                    ColumnDefinitions = new ColumnDefinitions("Auto,Auto,*"),
+                    ColumnSpacing = 6
+                };
                 item.Classes.Add("action-list-item");
+                item.Children.Add(enabled);
+
+                TextBlock name = new()
+                {
+                    Text = action.Name,
+                    VerticalAlignment = VerticalAlignment.Center
+                };
+                Grid.SetColumn(name, 1);
+                item.Children.Add(name);
+
+                TextBlock path = new()
+                {
+                    Text = $"— {action.Path}",
+                    TextTrimming = TextTrimming.CharacterEllipsis,
+                    VerticalAlignment = VerticalAlignment.Center
+                };
+                path.Classes.Add("action-list-path");
+                Grid.SetColumn(path, 2);
+                item.Children.Add(path);
+
+                item.PointerPressed += (_, _) => list.SelectedItem = item;
+                enabled.Click += (_, _) => list.SelectedItem = item;
                 entries.Add(item, action);
                 list.Items.Add(item);
                 if (ReferenceEquals(action, selected))
@@ -728,7 +760,7 @@ internal sealed class TaskSettingsPageBuilder
             }
         }
 
-        ExternalProgram? Selected() => list.SelectedItem is CheckBox item && entries.TryGetValue(item, out ExternalProgram? action) ? action : null;
+        ExternalProgram? Selected() => list.SelectedItem is Control item && entries.TryGetValue(item, out ExternalProgram? action) ? action : null;
         Refresh();
 
         Button add = Button("Add...", () =>

@@ -95,12 +95,20 @@
             <Setter Property="Margin" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         </Style>
-        <Style Selector="CheckBox.action-list-item">
+        <Style Selector="Grid.action-list-item">
             <Setter Property="MinHeight" Value="26"/>
-            <Setter Property="Margin" Value="2,0"/>
-            <Setter Property="Padding" Value="6,1"/>
+            <Setter Property="Margin" Value="6,1"/>
+        </Style>
+        <Style Selector="Grid.action-list-item TextBlock">
             <Setter Property="FontSize" Value="13"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="CheckBox.action-list-toggle">
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.action-list-path">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
         </Style>
         <Style Selector="TextBlock.action-editor-label">
             <Setter Property="FontSize" Value="13"/>
