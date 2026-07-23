@@ -378,7 +378,12 @@
                                         <TextBlock Text="Description" FontWeight="Normal"/>
                                         <TextBox Classes="form-control" Text="{Binding SelectedClipboardFormat.Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                         <TextBlock Text="Format" FontWeight="Normal"/>
-                                        <TextBox Classes="form-control" AcceptsReturn="True" MinHeight="100" TextWrapping="Wrap" Text="{Binding SelectedClipboardFormat.Format, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <TextBox Classes="form-control"
+                                                 AcceptsReturn="True"
+                                                 MinHeight="100"
+                                                 VerticalContentAlignment="Top"
+                                                 TextWrapping="Wrap"
+                                                 Text="{Binding SelectedClipboardFormat.Format, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                         <TextBlock Classes="hint" Text="Supported variables include $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $folderpath and date variables such as %y, %mo and %d."/>
                                     </StackPanel>
                                 </Border>
