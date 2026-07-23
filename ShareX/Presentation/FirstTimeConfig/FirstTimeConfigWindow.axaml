@@ -12,6 +12,7 @@
         Title="ShareX"
         Width="600"
         Height="390"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
         CanResize="False"
         Topmost="True"
         WindowStartupLocation="CenterScreen">
