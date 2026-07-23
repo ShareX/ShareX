@@ -293,10 +293,8 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(errors))
                 {
-                    using (ErrorForm form = new ErrorForm(Resources.UploadInfoManager_ShowErrors_Upload_errors, errors, Program.LogsFilePath, Links.GitHubIssues, false))
-                    {
-                        form.ShowDialog();
-                    }
+                    ErrorWindowIntegration.Show(Resources.UploadInfoManager_ShowErrors_Upload_errors, errors,
+                        Program.LogsFilePath, Links.GitHubIssues, false);
                 }
             }
         }

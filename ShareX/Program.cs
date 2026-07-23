@@ -676,10 +676,7 @@ namespace ShareX
 
         private static void OnError(Exception e)
         {
-            using (ErrorForm errorForm = new ErrorForm(e.Message, $"{e}\r\n\r\n{Title}", LogsFilePath, Links.GitHubIssues))
-            {
-                errorForm.ShowDialog();
-            }
+            ErrorWindowIntegration.Show(e.Message, $"{e}\r\n\r\n{Title}", LogsFilePath, Links.GitHubIssues);
         }
 
         private static bool CheckUninstall()

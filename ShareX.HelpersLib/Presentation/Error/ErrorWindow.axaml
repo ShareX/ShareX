@@ -1,0 +1,114 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.HelpersLib.ErrorWindow"
+        x:CompileBindings="False"
+        Title="ShareX - Error"
+        Width="760"
+        Height="560"
+        MinWidth="620"
+        MinHeight="440"
+        Topmost="True"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.panel-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="MinHeight" Value="36"/>
+            <Setter Property="MinWidth" Value="104"/>
+            <Setter Property="Padding" Value="12,5"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,*">
+        <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                Padding="18,12">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                <Border Width="40"
+                        Height="40"
+                        CornerRadius="6"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}">
+                    <TextBlock Classes="icon"
+                               Text="{x:Static theming:LucideIcons.triangle_alert}"
+                               FontSize="20"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+                <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                    <TextBlock Text="An error occurred"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                    <TextBlock Text="Review the details below or use the available support options."
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1"
+              RowDefinitions="Auto,*,Auto"
+              RowSpacing="10"
+              Margin="18,14,18,18">
+            <Border Classes="panel-card" Padding="11,9">
+                <TextBlock x:Name="ErrorTitleText"
+                           TextWrapping="Wrap"
+                           FontSize="14"/>
+            </Border>
+
+            <TextBox x:Name="ExceptionTextBox"
+                     Grid.Row="1"
+                     IsReadOnly="True"
+                     AcceptsReturn="True"
+                     TextWrapping="NoWrap"
+                     FontFamily="Cascadia Mono,Consolas"
+                     FontSize="12"
+                     Padding="9,7"
+                     VerticalContentAlignment="Top"
+                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
+            <Grid Grid.Row="2"
+                  ColumnDefinitions="Auto,Auto,*,Auto,Auto,Auto"
+                  ColumnSpacing="7">
+                <Button x:Name="BugReportButton"
+                        Classes="compact"
+                        Content="Send bug report"
+                        Click="OnSendBugReportClick"/>
+                <Button x:Name="OpenLogButton"
+                        Grid.Column="1"
+                        Classes="compact"
+                        Content="Open log file"
+                        Click="OnOpenLogClick"/>
+                <Button x:Name="ContinueButton"
+                        Grid.Column="3"
+                        Classes="compact primary"
+                        Content="Continue"
+                        IsDefault="True"
+                        Click="OnContinueClick"/>
+                <Button x:Name="QuitButton"
+                        Grid.Column="4"
+                        Classes="compact"
+                        Content="Quit"
+                        Click="OnQuitClick"/>
+                <Button x:Name="OKButton"
+                        Grid.Column="5"
+                        Classes="compact primary"
+                        Content="OK"
+                        IsDefault="True"
+                        Click="OnOKClick"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
