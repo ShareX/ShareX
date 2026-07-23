@@ -44,6 +44,10 @@ public partial class ActionsToolbarWindow : Window
         Program.Settings.ActionsToolbarList ??= [];
 
         ToolTip.SetTip(TitleHandle, Properties.Resources.ActionsToolbar_Tip);
+        ToolTip.SetPlacement(TitleHandle, PlacementMode.Top);
+        ToolTip.SetVerticalOffset(TitleHandle, -4);
+        ToolTip.SetShowDelay(TitleHandle, 400);
+        ToolTip.SetBetweenShowDelay(TitleHandle, 100);
         TitleHandle.ContextMenu = CreateToolbarMenu();
         UpdateTitleCursor();
         RefreshToolbar();
@@ -80,7 +84,8 @@ public partial class ActionsToolbarWindow : Window
                 Text = TaskHelpers.FindMenuLucideIcon(action),
                 FontSize = 17,
                 TextAlignment = Avalonia.Media.TextAlignment.Center,
-                Foreground = this.FindResource("ShareX.Brush.Accent") as Avalonia.Media.IBrush
+                Foreground = this.FindResource("ShareX.Brush.Accent") as Avalonia.Media.IBrush,
+                IsHitTestVisible = false
             };
             icon.Classes.Add("icon");
 
@@ -91,6 +96,10 @@ public partial class ActionsToolbarWindow : Window
             };
             button.Classes.Add("toolbar-action");
             ToolTip.SetTip(button, action.GetLocalizedDescription());
+            ToolTip.SetPlacement(button, PlacementMode.Top);
+            ToolTip.SetVerticalOffset(button, -4);
+            ToolTip.SetShowDelay(button, 400);
+            ToolTip.SetBetweenShowDelay(button, 100);
             button.Click += OnActionClick;
             ToolbarItems.Children.Add(button);
         }
