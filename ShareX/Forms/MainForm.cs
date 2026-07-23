@@ -61,7 +61,7 @@ public sealed class MainForm : HotkeyForm
 
         if (showMainWindow)
         {
-            AfterShownJobs();
+            await AfterShownJobs();
         }
 
         DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
@@ -208,12 +208,11 @@ public sealed class MainForm : HotkeyForm
         }
     }
 
-    private static void AfterShownJobs()
+    private static async Task AfterShownJobs()
     {
         if (Program.SteamFirstTimeConfig)
         {
-            using FirstTimeConfigForm firstTimeConfigForm = new();
-            firstTimeConfigForm.ShowDialog();
+            await FirstTimeConfigWindowIntegration.ShowAsync();
         }
         else
         {

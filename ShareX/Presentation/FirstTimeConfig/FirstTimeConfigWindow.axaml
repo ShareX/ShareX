@@ -1,0 +1,101 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:ShareX"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        d:DesignWidth="600"
+        d:DesignHeight="390"
+        x:Class="ShareX.FirstTimeConfigWindow"
+        x:DataType="local:FirstTimeConfigViewModel"
+        Title="ShareX"
+        Width="600"
+        Height="390"
+        CanResize="False"
+        Topmost="True"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="CheckBox.integration-option">
+            <Setter Property="Margin" Value="0,2"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+        </Style>
+        <Style Selector="TextBlock.hint">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
+              RowDefinitions="Auto,*,Auto"
+              Margin="22"
+              RowSpacing="14">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="11">
+                <TextBlock Classes="icon"
+                           Text="{x:Static theming:LucideIcons.settings_2}"
+                           FontSize="28"
+                           Foreground="{DynamicResource ShareX.Brush.Accent}"
+                           VerticalAlignment="Center"/>
+                <StackPanel Grid.Column="1" Spacing="2">
+                    <TextBlock Text="ShareX first time config"
+                               FontSize="24"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ShareX.Brush.Accent}"/>
+                    <TextBlock Classes="hint"
+                               Text="Choose how ShareX integrates with Windows."/>
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Grid.Row="1" Spacing="8">
+                <Border Padding="14,12"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                        BorderThickness="1"
+                        CornerRadius="6">
+                    <StackPanel Spacing="7">
+                        <CheckBox Classes="integration-option"
+                                  Content="{Binding StartWithWindowsText}"
+                                  IsEnabled="{Binding StartWithWindowsEnabled}"
+                                  IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
+                        <CheckBox Classes="integration-option"
+                                  Content="Show &quot;Upload with ShareX&quot; button in Windows Explorer context menu"
+                                  IsChecked="{Binding ShellContextMenu, Mode=TwoWay}"/>
+                        <CheckBox Classes="integration-option"
+                                  Content="Show ShareX in &quot;Send to&quot; menu"
+                                  IsChecked="{Binding SendToMenu, Mode=TwoWay}"/>
+                        <CheckBox Classes="integration-option"
+                                  Content="While ShareX is open, show &quot;In-app&quot; in Steam"
+                                  IsVisible="{Binding SteamOptionVisible}"
+                                  IsChecked="{Binding SteamShowInApp, Mode=TwoWay}"/>
+                    </StackPanel>
+                </Border>
+
+                <Border IsVisible="{Binding HasStatusMessage}"
+                        Padding="10,7"
+                        Background="{DynamicResource ShareX.Brush.Control.Background}"
+                        BorderBrush="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                    <TextBlock Text="{Binding StatusMessage}"
+                               FontWeight="Normal"
+                               TextWrapping="Wrap"/>
+                </Border>
+            </StackPanel>
+
+            <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                <TextBlock Classes="hint"
+                           Text="You can change these options later in Application settings → Integration."
+                           VerticalAlignment="Center"/>
+                <Button Grid.Column="1"
+                        Width="92"
+                        Height="36"
+                        Content="OK"
+                        Click="OnOkClick"/>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
