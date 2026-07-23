@@ -1241,17 +1241,12 @@ namespace ShareX
         {
             if (taskSettings.ToolsSettingsReference.ShowImageEditorSelector)
             {
-                using (ImageEditorSelectorForm selectorForm = new ImageEditorSelectorForm())
+                bool? useLegacyImageEditor = ImageEditorSelectorWindowIntegration.Show();
+
+                if (useLegacyImageEditor.HasValue)
                 {
-                    if (selectorForm.ShowDialog() == DialogResult.OK)
-                    {
-                        taskSettings.ToolsSettingsReference.UseLegacyImageEditor = selectorForm.UseLegacyImageEditor;
-                        taskSettings.ToolsSettingsReference.ShowImageEditorSelector = false;
-                    }
-                    else
-                    {
-                        return;
-                    }
+                    taskSettings.ToolsSettingsReference.UseLegacyImageEditor = useLegacyImageEditor.Value;
+                    taskSettings.ToolsSettingsReference.ShowImageEditorSelector = false;
                 }
             }
         }
