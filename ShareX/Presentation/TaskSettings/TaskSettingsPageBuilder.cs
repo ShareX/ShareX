@@ -708,6 +708,7 @@ internal sealed class TaskSettingsPageBuilder
 
         ListBox list = new() { MinHeight = 230 };
         list.Classes.Add("settings-list");
+        list.Classes.Add("action-list");
         Dictionary<CheckBox, ExternalProgram> entries = [];
 
         void Refresh(ExternalProgram? selected = null)
@@ -717,6 +718,7 @@ internal sealed class TaskSettingsPageBuilder
             foreach (ExternalProgram action in _externalPrograms)
             {
                 CheckBox item = Check($"{action.Name} — {action.Path}", () => action.IsActive, value => action.IsActive = value);
+                item.Classes.Add("action-list-item");
                 entries.Add(item, action);
                 list.Items.Add(item);
                 if (ReferenceEquals(action, selected))
@@ -731,24 +733,20 @@ internal sealed class TaskSettingsPageBuilder
 
         Button add = Button("Add...", () =>
         {
-            using ActionsForm form = new();
-            if (form.ShowDialog(Program.MainForm) == WinForms.DialogResult.OK)
+            _window.ShowActionEditor(null, action =>
             {
-                ExternalProgram action = form.FileAction;
-                action.IsActive = true;
                 _externalPrograms.Add(action);
                 Refresh(action);
-            }
+            });
         });
         Button edit = Button("Edit...", () =>
         {
             if (Selected() is { } action)
             {
-                using ActionsForm form = new(action);
-                if (form.ShowDialog(Program.MainForm) == WinForms.DialogResult.OK)
+                _window.ShowActionEditor(action, editedAction =>
                 {
-                    Refresh(action);
-                }
+                    Refresh(editedAction);
+                });
             }
         });
         Button duplicate = Button("Duplicate", () =>
