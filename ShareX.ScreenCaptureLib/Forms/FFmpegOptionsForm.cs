@@ -61,6 +61,10 @@ namespace ShareX.ScreenCaptureLib
             cbOpusBitrate.Items.AddRange(Helpers.Range(32, 512, 32).Cast<object>().ToArray());
             cbVorbisQuality.Items.AddRange(Helpers.Range(0, 10).Cast<object>().ToArray());
             cbMP3Quality.Items.AddRange(Helpers.Range(9, 0).Cast<object>().ToArray());
+
+#if MicrosoftStore
+            btnDownloadRecorderDevices.Visible = false;
+#endif
         }
 
         private async Task LoadSettings()
