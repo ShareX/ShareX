@@ -28,6 +28,8 @@ public partial class TaskSettingsWindow : Window
     private IReadOnlyDictionary<string, Control> _pages = new Dictionary<string, Control>();
     private ExternalProgram? _editedAction;
     private Action<ExternalProgram>? _actionSaved;
+    private WatchFolderSettings? _editedWatchFolder;
+    private Action<WatchFolderSettings>? _watchFolderSaved;
 
     public TaskSettingsWindow()
     {
@@ -169,7 +171,17 @@ public partial class TaskSettingsWindow : Window
 
     private void OnWindowKeyDown(object? sender, KeyEventArgs e)
     {
-        if (e.Key == Key.Escape && ActionEditorOverlay.IsVisible)
+        if (e.Key != Key.Escape)
+        {
+            return;
+        }
+
+        if (WatchFolderEditorOverlay.IsVisible)
+        {
+            HideWatchFolderEditor();
+            e.Handled = true;
+        }
+        else if (ActionEditorOverlay.IsVisible)
         {
             HideActionEditor();
             e.Handled = true;
@@ -200,5 +212,61 @@ public partial class TaskSettingsWindow : Window
         ActionArgumentsBox.Text = text.Remove(start, end - start).Insert(start, token);
         ActionArgumentsBox.CaretIndex = start + token.Length;
         ActionArgumentsBox.Focus();
+    }
+
+    internal void ShowWatchFolderEditor(WatchFolderSettings? folder, Action<WatchFolderSettings> saved)
+    {
+        _editedWatchFolder = folder;
+        _watchFolderSaved = saved;
+
+        WatchFolderEditorTitle.Text = folder == null ? "Add watch folder" : "Edit watch folder";
+        WatchFolderPathBox.Text = folder?.FolderPath ?? string.Empty;
+        WatchFolderFilterBox.Text = folder?.Filter ?? string.Empty;
+        WatchFolderIncludeSubdirectoriesCheckBox.IsChecked = folder?.IncludeSubdirectories ?? false;
+        WatchFolderMoveToScreenshotsCheckBox.IsChecked = folder?.MoveFilesToScreenshotsFolder ?? false;
+        WatchFolderEditorOverlay.IsVisible = true;
+
+        Dispatcher.UIThread.Post(() =>
+        {
+            WatchFolderPathBox.Focus();
+            WatchFolderPathBox.SelectAll();
+        }, DispatcherPriority.Input);
+    }
+
+    private void HideWatchFolderEditor()
+    {
+        WatchFolderEditorOverlay.IsVisible = false;
+        _editedWatchFolder = null;
+        _watchFolderSaved = null;
+    }
+
+    private void OnSaveWatchFolderEditorClick(object? sender, RoutedEventArgs e)
+    {
+        WatchFolderSettings folder = _editedWatchFolder ?? new WatchFolderSettings();
+        folder.FolderPath = WatchFolderPathBox.Text ?? string.Empty;
+        folder.Filter = WatchFolderFilterBox.Text ?? string.Empty;
+        folder.IncludeSubdirectories = WatchFolderIncludeSubdirectoriesCheckBox.IsChecked == true;
+        folder.MoveFilesToScreenshotsFolder = WatchFolderMoveToScreenshotsCheckBox.IsChecked == true;
+
+        Action<WatchFolderSettings>? saved = _watchFolderSaved;
+        HideWatchFolderEditor();
+        saved?.Invoke(folder);
+    }
+
+    private void OnCancelWatchFolderEditorClick(object? sender, RoutedEventArgs e) => HideWatchFolderEditor();
+
+    private async void OnBrowseWatchFolderClick(object? sender, RoutedEventArgs e)
+    {
+        IReadOnlyList<IStorageFolder> folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
+        {
+            Title = "Choose watch folder",
+            AllowMultiple = false
+        });
+
+        string? path = folders.FirstOrDefault()?.TryGetLocalPath();
+        if (!string.IsNullOrEmpty(path))
+        {
+            WatchFolderPathBox.Text = path;
+        }
     }
 }

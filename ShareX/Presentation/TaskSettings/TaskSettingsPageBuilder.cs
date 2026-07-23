@@ -822,17 +822,16 @@ internal sealed class TaskSettingsPageBuilder
 
         Button add = Button("Add...", () =>
         {
-            using WatchFolderForm form = new();
-            if (form.ShowDialog(Program.MainForm) == WinForms.DialogResult.OK && form.WatchFolder != null)
+            _window.ShowWatchFolderEditor(null, folder =>
             {
-                Program.WatchFolderManager?.AddWatchFolder(form.WatchFolder, _settings);
-                if (!_settings.WatchFolderList.Contains(form.WatchFolder))
+                Program.WatchFolderManager?.AddWatchFolder(folder, _settings);
+                if (!_settings.WatchFolderList.Contains(folder))
                 {
-                    _settings.WatchFolderList.Add(form.WatchFolder);
+                    _settings.WatchFolderList.Add(folder);
                 }
-                rows.Add(WatchFolderTitle(form.WatchFolder));
+                rows.Add(WatchFolderTitle(folder));
                 list.SelectedIndex = rows.Count - 1;
-            }
+            });
         });
         Button edit = Button("Edit...", () =>
         {
@@ -840,12 +839,11 @@ internal sealed class TaskSettingsPageBuilder
             if (index >= 0)
             {
                 WatchFolderSettings folder = _settings.WatchFolderList[index];
-                using WatchFolderForm form = new(folder);
-                if (form.ShowDialog(Program.MainForm) == WinForms.DialogResult.OK)
+                _window.ShowWatchFolderEditor(folder, editedFolder =>
                 {
-                    rows[index] = WatchFolderTitle(folder);
-                    UpdateState(folder);
-                }
+                    rows[index] = WatchFolderTitle(editedFolder);
+                    UpdateState(editedFolder);
+                });
             }
         });
         Button remove = Button("Remove", () =>
