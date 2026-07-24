@@ -639,10 +639,10 @@ namespace ShareX
             }
             else
             {
-                using (PrintForm printForm = new PrintForm(img, Program.Settings.PrintSettings))
-                {
-                    printForm.ShowDialog();
-                }
+                PrintWindowIntegration.Show(
+                    img,
+                    Program.Settings.PrintSettings,
+                    owner: MainWindowIntegration.Instance);
             }
         }
 

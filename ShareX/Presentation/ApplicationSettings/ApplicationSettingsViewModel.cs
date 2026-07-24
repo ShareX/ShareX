@@ -609,13 +609,12 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public void OpenPersonalFolder() => FileHelpers.OpenFolder(PersonalFolderPreview);
     public void OpenScreenshotsFolder() => FileHelpers.OpenFolder(ScreenshotsFolderPreview);
 
-    public void ShowImagePrintSettings()
+    public void ShowImagePrintSettings(Avalonia.Controls.Window owner)
     {
         InvokeOnMainThread(() =>
         {
             using Image image = TaskHelpers.GetScreenshot().CaptureActiveMonitor();
-            using PrintForm form = new(image, Settings.PrintSettings, true);
-            form.ShowDialog(Program.MainForm);
+            PrintWindowIntegration.Show(image, Settings.PrintSettings, true, owner);
         });
         MarkChanged();
     }

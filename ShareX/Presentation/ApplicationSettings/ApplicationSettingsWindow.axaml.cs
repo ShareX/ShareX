@@ -78,7 +78,7 @@ public partial class ApplicationSettingsWindow : Window
     private void OnMoveTextUploaderDownClick(object? sender, RoutedEventArgs e) => ViewModel.MoveSelectedTextUploader(1);
     private void OnMoveFileUploaderUpClick(object? sender, RoutedEventArgs e) => ViewModel.MoveSelectedFileUploader(-1);
     private void OnMoveFileUploaderDownClick(object? sender, RoutedEventArgs e) => ViewModel.MoveSelectedFileUploader(1);
-    private void OnImagePrintSettingsClick(object? sender, RoutedEventArgs e) => ViewModel.ShowImagePrintSettings();
+    private void OnImagePrintSettingsClick(object? sender, RoutedEventArgs e) => ViewModel.ShowImagePrintSettings(this);
     private async void OnResetSettingsClick(object? sender, RoutedEventArgs e) => await ViewModel.ResetAsync();
 
     private async void OnBrowsePersonalFolderClick(object? sender, RoutedEventArgs e)
