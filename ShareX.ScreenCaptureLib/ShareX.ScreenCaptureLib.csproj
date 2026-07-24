@@ -9,9 +9,4 @@
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
     <ProjectReference Include="..\ShareX.ImageEffectsLib\ShareX.ImageEffectsLib.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="ImageListView">
-      <HintPath>..\Libs\ImageListView.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 </Project>

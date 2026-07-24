@@ -617,9 +617,6 @@ Você gostaria de transferi-la e instalá-la?</value>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Fechar</value>
   </data>
-  <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Rótulo</value>
-  </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>Código QR</value>
   </data>

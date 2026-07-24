@@ -617,9 +617,6 @@
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Cerrar</value>
   </data>
-  <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Calcomanía</value>
-  </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>Código QR</value>
   </data>

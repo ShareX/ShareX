@@ -1205,9 +1205,6 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingImageScreen:
                     shape = new ImageScreenDrawingShape();
                     break;
-                case ShapeType.DrawingSticker:
-                    shape = new StickerDrawingShape();
-                    break;
                 case ShapeType.DrawingCursor:
                     shape = new CursorDrawingShape();
                     break;
@@ -1324,7 +1321,6 @@ namespace ShareX.ScreenCaptureLib
                         case ShapeType.DrawingSpeechBalloon:
                         case ShapeType.DrawingStep:
                         case ShapeType.DrawingImage:
-                        case ShapeType.DrawingSticker:
                         case ShapeType.DrawingCursor:
                         case ShapeType.ToolSelect:
                             return null;

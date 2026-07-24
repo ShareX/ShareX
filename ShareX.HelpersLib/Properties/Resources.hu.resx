@@ -616,9 +616,6 @@ Would you like to letöltés it?</value>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Bezárás</value>
   </data>
-  <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Matrica</value>
-  </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>QR kód</value>
   </data>

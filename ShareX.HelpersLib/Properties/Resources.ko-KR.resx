@@ -617,9 +617,6 @@
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>닫기</value>
   </data>
-  <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>그리기: 스티커</value>
-  </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>QR코드</value>
   </data>

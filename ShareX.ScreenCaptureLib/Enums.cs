@@ -309,7 +309,6 @@ namespace ShareX.ScreenCaptureLib
         DrawingMagnify,
         DrawingImage,
         DrawingImageScreen,
-        DrawingSticker,
         DrawingCursor,
         DrawingSmartEraser,
         EffectBlur,

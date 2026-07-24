@@ -617,9 +617,6 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Chiudi</value>
   </data>
-  <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Adesivo</value>
-  </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>Codice QR</value>
   </data>

@@ -617,9 +617,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Đóng</value>
   </data>
-  <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Vẽ: Sticker</value>
-  </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>Mã QR</value>
   </data>

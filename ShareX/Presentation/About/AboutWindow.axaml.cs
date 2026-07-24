@@ -169,7 +169,6 @@ public partial class AboutWindow : Window
                 Link("SSH.NET", "https://github.com/sshnet/SSH.NET"),
                 Link("Lucide Icons", "https://lucide.dev"),
                 Link("Fugue Icons", "http://p.yusukekamiyamane.com"),
-                Link("ImageListView", "https://github.com/oozcitak/imagelistview"),
                 Link("FFmpeg", "https://www.ffmpeg.org"),
                 Link("Recorder devices", "https://github.com/rdp/screen-capture-recorder-to-video-windows-free"),
                 Link("FluentFTP", "https://github.com/robinrodricks/FluentFTP"),

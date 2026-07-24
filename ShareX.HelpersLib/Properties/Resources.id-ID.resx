@@ -617,9 +617,6 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Tutup</value>
   </data>
-  <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Menggambar: Stiker</value>
-  </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>Kode QR</value>
   </data>

@@ -3229,15 +3229,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sticker.
-        /// </summary>
-        internal static string ShapeType_DrawingSticker {
-            get {
-                return ResourceManager.GetString("ShapeType_DrawingSticker", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Text (Background) (T).
         /// </summary>
         internal static string ShapeType_DrawingTextBackground {

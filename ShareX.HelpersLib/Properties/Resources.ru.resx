@@ -617,9 +617,6 @@
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Закрыть</value>
   </data>
-  <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Стикер</value>
-  </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>QR-код</value>
   </data>

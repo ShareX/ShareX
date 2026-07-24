@@ -617,9 +617,6 @@
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>關閉</value>
   </data>
-  <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>貼紙</value>
-  </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>二維碼</value>
   </data>

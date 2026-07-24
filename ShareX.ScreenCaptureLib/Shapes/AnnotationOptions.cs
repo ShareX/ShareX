@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Collections.Generic;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
@@ -92,12 +91,6 @@ namespace ShareX.ScreenCaptureLib
 
         // Magnify drawing
         public int MagnifyStrength { get; set; } = 200;
-
-        // Sticker drawing
-        public List<StickerPackInfo> StickerPacks = new List<StickerPackInfo>();
-        public int SelectedStickerPack = 0;
-        public int StickerSize { get; set; } = 64;
-        public string LastStickerPath { get; set; }
 
         // Blur effect
         public int BlurRadius { get; set; } = 35;

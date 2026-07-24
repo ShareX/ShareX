@@ -617,9 +617,6 @@ Soll sie heruntergeladen und installiert werden?</value>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Schließen</value>
   </data>
-  <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Sticker</value>
-  </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>QR-Code</value>
   </data>

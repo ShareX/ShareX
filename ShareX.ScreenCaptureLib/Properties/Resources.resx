@@ -521,9 +521,6 @@
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
     <value>Save image as... (Ctrl + Shift + S)</value>
   </data>
-  <data name="smiley_yell" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\smiley-yell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
     <value>Continue task (Space or right click)</value>
   </data>
@@ -812,9 +809,6 @@ X: {4} Y: {5}</value>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
     <value>Click to start recording.</value>
     <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
-  </data>
-  <data name="smiley_cool" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\smiley-cool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="control_pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\control-pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
