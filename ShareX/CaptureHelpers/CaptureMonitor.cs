@@ -39,7 +39,7 @@ namespace ShareX
         protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
             TaskMetadata metadata = CreateMetadata(MonitorRectangle);
-            metadata.Image = TaskHelpers.GetScreenshot().CaptureRectangle(MonitorRectangle);
+            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(MonitorRectangle);
             return metadata;
         }
     }

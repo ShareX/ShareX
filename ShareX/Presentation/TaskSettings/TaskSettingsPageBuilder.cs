@@ -361,7 +361,8 @@ internal sealed class TaskSettingsPageBuilder
                 Row("Shadow offset:", shadowOffset),
                 Check("Capture client area for window captures", () => capture.CaptureClientArea, value => capture.CaptureClientArea = value),
                 Check("Hide taskbar when it intersects a captured window", () => capture.CaptureAutoHideTaskbar, value => capture.CaptureAutoHideTaskbar = value),
-                Check("Automatically hide desktop icons", () => capture.CaptureAutoHideDesktopIcons, value => capture.CaptureAutoHideDesktopIcons = value)),
+                Check("Automatically hide desktop icons", () => capture.CaptureAutoHideDesktopIcons, value => capture.CaptureAutoHideDesktopIcons = value),
+                Check("HDR screenshot color corrector", () => capture.HDRScreenshotColorCorrection, value => capture.HDRScreenshotColorCorrection = value)),
             EnabledCard(_captureOverride, "Preconfigured region", regionGrid, selectRegion),
             EnabledCard(_captureOverride, "Preconfigured window",
                 Row("Window title:", Text(() => capture.CaptureCustomWindow, value => capture.CaptureCustomWindow = value))));

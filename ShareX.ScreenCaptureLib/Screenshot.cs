@@ -38,6 +38,7 @@ namespace ShareX.ScreenCaptureLib
         public bool CaptureShadow { get; set; } = false;
         public int ShadowOffset { get; set; } = 20;
         public bool AutoHideTaskbar { get; set; } = false;
+        public bool HDRScreenshotColorCorrection { get; set; } = false;
 
         public Bitmap CaptureRectangle(Rectangle rect)
         {
@@ -122,6 +123,40 @@ namespace ShareX.ScreenCaptureLib
                 return null;
             }
 
+            if (HDRScreenshotColorCorrection)
+            {
+                Bitmap bitmap = CaptureRectangleGDI(handle, rect, false);
+
+                try
+                {
+                    HDRScreenCapture.ApplyColorCorrection(bitmap, rect);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e, "HDR screenshot color correction failed.");
+                }
+
+                if (captureCursor)
+                {
+                    try
+                    {
+                        CursorData cursorData = new CursorData();
+                        cursorData.DrawCursor(bitmap, rect.Location);
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e, "Cursor capture failed.");
+                    }
+                }
+
+                return bitmap;
+            }
+
+            return CaptureRectangleGDI(handle, rect, captureCursor);
+        }
+
+        private Bitmap CaptureRectangleGDI(IntPtr handle, Rectangle rect, bool captureCursor)
+        {
             IntPtr hdcSrc = NativeMethods.GetWindowDC(handle);
             IntPtr hdcDest = NativeMethods.CreateCompatibleDC(hdcSrc);
             IntPtr hBitmap = NativeMethods.CreateCompatibleBitmap(hdcSrc, rect.Width, rect.Height);
