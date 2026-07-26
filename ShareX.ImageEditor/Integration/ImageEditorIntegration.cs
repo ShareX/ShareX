@@ -27,7 +27,6 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using ShareX.ImageEditor.Presentation.Views;
 using SkiaSharp;
@@ -72,21 +71,19 @@ namespace ShareX.ImageEditor.Integration
         }
 
         public static SKBitmap? ShowEditorDialog(ImageEditorOptions options, ImageEditorCallbacks? events = null,
-            bool taskMode = false, string? imageFilePath = null, bool openBackgroundPanel = false,
-            ApplicationThemeOptions? themeOptions = null)
+            bool taskMode = false, string? imageFilePath = null, bool openBackgroundPanel = false)
         {
-            return ShowEditorDialog(null, options, events, taskMode, imageFilePath, openBackgroundPanel, themeOptions);
+            return ShowEditorDialog(null, options, events, taskMode, imageFilePath, openBackgroundPanel);
         }
 
         public static SKBitmap? ShowEditorDialog(SKBitmap? imageBitmap, ImageEditorOptions options, ImageEditorCallbacks? events = null,
-            bool taskMode = false, string? imageFilePath = null, bool openBackgroundPanel = false,
-            ApplicationThemeOptions? themeOptions = null)
+            bool taskMode = false, string? imageFilePath = null, bool openBackgroundPanel = false)
         {
-            return ShowEditorDialogCore(imageBitmap, options, events, taskMode, imageFilePath, openBackgroundPanel, themeOptions);
+            return ShowEditorDialogCore(imageBitmap, options, events, taskMode, imageFilePath, openBackgroundPanel);
         }
 
         private static SKBitmap? ShowEditorDialogCore(SKBitmap? imageBitmap, ImageEditorOptions options, ImageEditorCallbacks? events,
-            bool taskMode, string? imageFilePath, bool openBackgroundPanel, ApplicationThemeOptions? themeOptions)
+            bool taskMode, string? imageFilePath, bool openBackgroundPanel)
         {
             Initialize();
 
@@ -94,7 +91,7 @@ namespace ShareX.ImageEditor.Integration
 
             Dispatcher.UIThread.Post(() =>
             {
-                EditorWindow window = new EditorWindow(options, themeOptions);
+                EditorWindow window = new EditorWindow(options);
 
                 if (imageBitmap != null)
                 {

@@ -18,7 +18,7 @@
         </Style>
     </Window.Styles>
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+    <ThemeVariantScope>
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
               RowDefinitions="*,Auto">
             <Grid Margin="14" RowDefinitions="Auto,Auto,Auto" RowSpacing="12">

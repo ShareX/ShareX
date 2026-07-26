@@ -26,6 +26,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using ShareX.ImageEditor.Presentation.Views;
@@ -46,6 +47,8 @@ namespace ShareX.ImageEditor.App
 
         public override void OnFrameworkInitializationCompleted()
         {
+            ThemeManager.Configure(new ApplicationThemeOptions());
+
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 ImageEditorOptions options = new ImageEditorOptions();

@@ -30,28 +30,19 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
-using Avalonia.Platform;
-using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.ImageEditor.Core.Abstractions;
 using ShareX.ImageEditor.Core.Annotations;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Presentation.ViewModels;
-using ShareX.ImageEditor.Presentation.Views;
 using System.ComponentModel;
 
 namespace ShareX.ImageEditor.Presentation.Controls;
 
 public partial class AnnotationToolbar : UserControl
 {
-    private const double AccentForegroundDarkSwitchRatio = 1.75;
-
     public static readonly StyledProperty<bool> ShowEditingActionsProperty =
         AvaloniaProperty.Register<AnnotationToolbar, bool>(nameof(ShowEditingActions), true);
 
-    private readonly SolidColorBrush? _activeBrush;
-    private readonly SolidColorBrush? _activeForegroundBrush;
-    private IPlatformSettings? _platformSettings;
     private IAnnotationToolbarAdapter? _toolbarAdapter;
 
     public event EventHandler<IBrush>? ColorChanged;
@@ -77,8 +68,6 @@ public partial class AnnotationToolbar : UserControl
     public AnnotationToolbar()
     {
         InitializeComponent();
-        _activeBrush = Resources["AnnotationToolbarActiveBrush"] as SolidColorBrush;
-        _activeForegroundBrush = Resources["AnnotationToolbarActiveForegroundBrush"] as SolidColorBrush;
         WireCompatibilityEvents();
         DataContextChanged += OnDataContextChanged;
         Loaded += OnLoaded;
@@ -173,26 +162,17 @@ public partial class AnnotationToolbar : UserControl
 
     private void OnLoaded(object? sender, RoutedEventArgs e)
     {
-        ThemeManager.ThemeChanged += OnThemeChanged;
         SetToolbarAdapter(DataContext as IAnnotationToolbarAdapter);
-        RefreshPlatformColorTracking();
     }
 
     private void OnUnloaded(object? sender, RoutedEventArgs e)
     {
-        ThemeManager.ThemeChanged -= OnThemeChanged;
-        SetPlatformSettings(null);
         SetToolbarAdapter(null);
     }
 
     private void OnDataContextChanged(object? sender, EventArgs e)
     {
         SetToolbarAdapter(DataContext as IAnnotationToolbarAdapter);
-
-        if (IsLoaded)
-        {
-            RefreshPlatformColorTracking();
-        }
     }
 
     private void SetToolbarAdapter(IAnnotationToolbarAdapter? toolbarAdapter)
@@ -225,50 +205,6 @@ public partial class AnnotationToolbar : UserControl
         {
             ShadowSettingsChanged?.Invoke(this, EventArgs.Empty);
         }
-    }
-
-    private void OnThemeChanged(object? sender, Avalonia.Styling.ThemeVariant theme)
-    {
-        Dispatcher.UIThread.Post(() => UpdateAccentBrushes());
-    }
-
-    public void RefreshAccentBrushes()
-    {
-        UpdateAccentBrushes(_platformSettings?.GetColorValues());
-    }
-
-    private void RefreshPlatformColorTracking()
-    {
-        SetPlatformSettings(ShouldUseSystemAccentColor()
-            ? this.GetPlatformSettings() ?? Application.Current?.PlatformSettings
-            : null);
-
-        UpdateAccentBrushes(_platformSettings?.GetColorValues());
-    }
-
-    private void SetPlatformSettings(IPlatformSettings? platformSettings)
-    {
-        if (ReferenceEquals(_platformSettings, platformSettings))
-        {
-            return;
-        }
-
-        if (_platformSettings != null)
-        {
-            _platformSettings.ColorValuesChanged -= OnPlatformColorValuesChanged;
-        }
-
-        _platformSettings = platformSettings;
-
-        if (_platformSettings != null)
-        {
-            _platformSettings.ColorValuesChanged += OnPlatformColorValuesChanged;
-        }
-    }
-
-    private void OnPlatformColorValuesChanged(object? sender, PlatformColorValues colorValues)
-    {
-        Dispatcher.UIThread.Post(() => UpdateAccentBrushes(colorValues));
     }
 
     private void OnSelectToolClick(object? sender, RoutedEventArgs e)
@@ -414,164 +350,4 @@ public partial class AnnotationToolbar : UserControl
         }
     }
 
-    private void UpdateAccentBrushes(PlatformColorValues? colorValues = null)
-    {
-        if (_activeBrush == null || _activeForegroundBrush == null)
-        {
-            return;
-        }
-
-        Color accentColor = ResolveAccentColor(colorValues);
-        if (accentColor.A == 0)
-        {
-            return;
-        }
-
-        _activeBrush.Color = accentColor;
-        _activeForegroundBrush.Color = GetAccentForegroundColor(accentColor);
-    }
-
-    private Color ResolveAccentColor(PlatformColorValues? colorValues)
-    {
-        if (TryGetConfiguredAccentColor(out Color configuredAccentColor))
-        {
-            return configuredAccentColor;
-        }
-
-        Color accentColor = default;
-
-        if (ShouldUseSystemAccentColor())
-        {
-            accentColor = colorValues?.AccentColor1 ?? default;
-            if (accentColor.A == 0 &&
-                Application.Current?.TryGetResource("SystemAccentColor", ActualThemeVariant, out object? resourceValue) == true)
-            {
-                accentColor = resourceValue switch
-                {
-                    Color color => color,
-                    SolidColorBrush brush => brush.Color,
-                    _ => default
-                };
-            }
-
-            if (accentColor.A != 0)
-            {
-                return accentColor;
-            }
-        }
-
-        if (TryGetResourceColor("ShareX.Color.Accent.Start", out Color resourceAccentColor))
-        {
-            return resourceAccentColor;
-        }
-
-        return accentColor;
-    }
-
-    private bool ShouldUseSystemAccentColor()
-    {
-        return GetOwnerViewModel()?.ThemeOptions.UseSystemAccentColor ?? true;
-    }
-
-    private bool TryGetConfiguredAccentColor(out Color accentColor)
-    {
-        if (!ShouldUseSystemAccentColor() &&
-            GetOwnerViewModel() is MainViewModel { ThemeOptions.AccentColorHex: var accentColorHex } &&
-            Color.TryParse(accentColorHex, out accentColor) &&
-            accentColor.A != 0)
-        {
-            return true;
-        }
-
-        accentColor = default;
-        return false;
-    }
-
-    private MainViewModel? GetOwnerViewModel()
-    {
-        return this.FindAncestorOfType<EditorView>()?.DataContext as MainViewModel;
-    }
-
-    private bool TryGetResourceColor(string resourceKey, out Color color)
-    {
-        if (TryGetResource(resourceKey, ActualThemeVariant, out object? resourceValue))
-        {
-            switch (resourceValue)
-            {
-                case Color resourceColor when resourceColor.A != 0:
-                    color = resourceColor;
-                    return true;
-                case SolidColorBrush brush when brush.Color.A != 0:
-                    color = brush.Color;
-                    return true;
-            }
-        }
-
-        color = default;
-        return false;
-    }
-
-    private Color GetAccentForegroundColor(Color accentColor)
-    {
-        Color lightForeground = GetThemeColor(
-            ThemeManager.ShareXDark,
-            "ShareX.Color.Text",
-            Color.Parse("#D8DADB"));
-
-        Color darkForeground = GetThemeColor(
-            ThemeManager.ShareXLight,
-            "ShareX.Color.Text",
-            Color.Parse("#4E4E4E"));
-
-        double lightContrast = GetContrastRatio(lightForeground, accentColor);
-        double darkContrast = GetContrastRatio(darkForeground, accentColor);
-
-        return darkContrast >= lightContrast * AccentForegroundDarkSwitchRatio
-            ? darkForeground
-            : lightForeground;
-    }
-
-    private Color GetThemeColor(Avalonia.Styling.ThemeVariant theme, string resourceKey, Color fallback)
-    {
-        if (!Resources.TryGetResource(resourceKey, theme, out object? resourceValue))
-        {
-            return fallback;
-        }
-
-        return resourceValue switch
-        {
-            Color color => color,
-            SolidColorBrush brush => brush.Color,
-            _ => fallback
-        };
-    }
-
-    private static double GetContrastRatio(Color firstColor, Color secondColor)
-    {
-        double firstLuminance = GetRelativeLuminance(firstColor);
-        double secondLuminance = GetRelativeLuminance(secondColor);
-
-        double lighter = Math.Max(firstLuminance, secondLuminance);
-        double darker = Math.Min(firstLuminance, secondLuminance);
-
-        return (lighter + 0.05) / (darker + 0.05);
-    }
-
-    private static double GetRelativeLuminance(Color color)
-    {
-        double red = LinearizeColorChannel(color.R);
-        double green = LinearizeColorChannel(color.G);
-        double blue = LinearizeColorChannel(color.B);
-
-        return (0.2126 * red) + (0.7152 * green) + (0.0722 * blue);
-    }
-
-    private static double LinearizeColorChannel(byte channel)
-    {
-        double normalized = channel / 255.0;
-
-        return normalized <= 0.03928
-            ? normalized / 12.92
-            : Math.Pow((normalized + 0.055) / 1.055, 2.4);
-    }
 }

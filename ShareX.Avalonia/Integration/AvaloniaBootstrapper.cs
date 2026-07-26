@@ -31,6 +31,8 @@ using Avalonia.Themes.Fluent;
 
 namespace ShareX.AvaloniaUI.Integration;
 
+using ShareX.AvaloniaUI.Theming;
+
 public sealed class ShareXAvaloniaApplication : Application
 {
     public override void Initialize()
@@ -95,6 +97,7 @@ public static class AvaloniaBootstrapper
             }
 
             _initialized = true;
+            ThemeManager.Refresh();
         }
     }
 }

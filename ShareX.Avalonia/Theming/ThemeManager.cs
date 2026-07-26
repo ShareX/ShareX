@@ -25,6 +25,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Media;
 using Avalonia.Platform;
 using Avalonia.Styling;
@@ -69,6 +70,14 @@ namespace ShareX.AvaloniaUI.Theming
             if (target is Application app)
             {
                 app.RequestedThemeVariant = theme;
+
+                if (app.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+                {
+                    foreach (Window window in desktop.Windows)
+                    {
+                        window.RequestedThemeVariant = theme;
+                    }
+                }
             }
             else if (target is Window window)
             {
@@ -85,6 +94,11 @@ namespace ShareX.AvaloniaUI.Theming
         public static ThemeVariant GetCurrentTheme()
         {
             return _currentTheme;
+        }
+
+        public static void Refresh()
+        {
+            RunOnUIThread(ApplyConfiguredSettings);
         }
 
         private static void OnOptionsPropertyChanged(object? sender, PropertyChangedEventArgs e)

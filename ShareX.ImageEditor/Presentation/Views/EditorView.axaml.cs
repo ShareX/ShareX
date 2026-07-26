@@ -31,9 +31,7 @@ using Avalonia.Input.Platform;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
-using Avalonia.Platform;
 using Avalonia.Platform.Storage;
-using Avalonia.Styling;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.ImageEditor.Core.Annotations;
@@ -43,7 +41,6 @@ using ShareX.ImageEditor.Presentation.Controllers;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.Emoji;
 using ShareX.ImageEditor.Presentation.Rendering;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using SkiaSharp;
 using System.ComponentModel;
@@ -84,8 +81,6 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         // Window-level key handler reference (so shortcuts work regardless of focus)
         private Window? _parentWindow;
-        private readonly ThemeVariantScope? _editorThemeScope;
-        private IPlatformSettings? _platformSettings;
 
         // SIP-CLIPBOARD: Internal clipboard for shape deep-cloning
         private static Annotation? _clipboardAnnotation;
@@ -93,7 +88,6 @@ namespace ShareX.ImageEditor.Presentation.Views
         public EditorView()
         {
             InitializeComponent();
-            _editorThemeScope = this.FindControl<ThemeVariantScope>("EditorThemeScope");
 
             _editorCore = new EditorCore();
 
@@ -189,7 +183,6 @@ namespace ShareX.ImageEditor.Presentation.Views
             AddHandler(DragDrop.DropEvent, OnDrop);
             AddHandler(DragDrop.DragOverEvent, OnDragOver);
 
-            DataContextChanged += OnEditorDataContextChanged;
         }
 
         private void OnLayoutUpdated(object? sender, EventArgs e)
@@ -445,8 +438,6 @@ namespace ShareX.ImageEditor.Presentation.Views
         {
             base.OnLoaded(e);
 
-            ThemeManager.ThemeChanged += OnThemeChanged;
-
             // Check clipboard initially
             _ = CheckClipboardStatus();
 
@@ -529,14 +520,11 @@ namespace ShareX.ImageEditor.Presentation.Views
                 vm.IsDirty = false;
             }
 
-            RefreshPlatformColorTracking();
         }
 
         protected override void OnUnloaded(RoutedEventArgs e)
         {
             base.OnUnloaded(e);
-
-            ThemeManager.ThemeChanged -= OnThemeChanged;
 
             if (_parentWindow != null)
             {
@@ -569,362 +557,6 @@ namespace ShareX.ImageEditor.Presentation.Views
             StopEasterEggs();
             _selectionController.RequestUpdateEffect -= OnRequestUpdateEffect;
             ClearEffectPreviewCache();
-            SetPlatformSettings(null);
-        }
-
-        private void OnEditorDataContextChanged(object? sender, EventArgs e)
-        {
-            if (!IsLoaded)
-            {
-                return;
-            }
-
-            RefreshPlatformColorTracking();
-        }
-
-        private void OnThemeChanged(object? sender, ThemeVariant theme)
-        {
-            Dispatcher.UIThread.Post(() =>
-            {
-                if (ShouldUseSystemTheme())
-                {
-                    UpdateTheme();
-                }
-
-                else
-                {
-                    ApplyTheme(theme);
-                }
-
-                QueueAnnotationToolbarAccentRefresh();
-            });
-        }
-
-        private void RefreshPlatformColorTracking()
-        {
-            if (!ShouldListenToPlatformColorChanges())
-            {
-                SetPlatformSettings(null);
-            }
-            else
-            {
-                SetPlatformSettings(this.GetPlatformSettings() ?? Application.Current?.PlatformSettings);
-            }
-
-            PlatformColorValues? colorValues = _platformSettings?.GetColorValues()
-                ?? this.GetPlatformSettings()?.GetColorValues()
-                ?? Application.Current?.PlatformSettings?.GetColorValues();
-
-            UpdateTheme(colorValues);
-            UpdateAccentColor(colorValues);
-            QueueAnnotationToolbarAccentRefresh();
-        }
-
-        private void QueueAnnotationToolbarAccentRefresh()
-        {
-            Dispatcher.UIThread.Post(() =>
-            {
-                this.FindControl<AnnotationToolbar>("AnnotationToolbarControl")?.RefreshAccentBrushes();
-            }, DispatcherPriority.Render);
-        }
-
-        private bool ShouldUseSystemTheme()
-        {
-            return DataContext is MainViewModel { ThemeOptions.UseSystemTheme: true };
-        }
-
-        private bool ShouldUseSystemAccentColor()
-        {
-            return DataContext is MainViewModel { ThemeOptions.UseSystemAccentColor: true };
-        }
-
-        private bool ShouldListenToPlatformColorChanges()
-        {
-            return ShouldUseSystemTheme() || ShouldUseSystemAccentColor();
-        }
-
-        private void SetPlatformSettings(IPlatformSettings? platformSettings)
-        {
-            if (ReferenceEquals(_platformSettings, platformSettings))
-            {
-                return;
-            }
-
-            if (_platformSettings != null)
-            {
-                _platformSettings.ColorValuesChanged -= OnPlatformColorValuesChanged;
-            }
-
-            _platformSettings = platformSettings;
-
-            if (_platformSettings != null)
-            {
-                _platformSettings.ColorValuesChanged += OnPlatformColorValuesChanged;
-            }
-        }
-
-        private void OnPlatformColorValuesChanged(object? sender, PlatformColorValues colorValues)
-        {
-            Dispatcher.UIThread.Post(() =>
-            {
-                UpdateTheme(colorValues);
-                UpdateAccentColor(colorValues);
-            });
-        }
-
-        private void UpdateTheme(PlatformColorValues? colorValues = null)
-        {
-            if (ShouldUseSystemTheme())
-            {
-                ApplyTheme(MapSystemTheme(colorValues));
-                return;
-            }
-
-            ApplyTheme(MapConfiguredTheme());
-        }
-
-        private void ApplyTheme(ThemeVariant theme)
-        {
-            if (_editorThemeScope != null)
-            {
-                _editorThemeScope.RequestedThemeVariant = theme;
-            }
-        }
-
-        private ThemeVariant MapSystemTheme(PlatformColorValues? colorValues)
-        {
-            if (colorValues != null)
-            {
-                return IsLightTheme(colorValues.ThemeVariant.ToString())
-                    ? ThemeManager.ShareXLight
-                    : ThemeManager.ShareXDark;
-            }
-
-            ThemeVariant hostTheme = TopLevel.GetTopLevel(this)?.ActualThemeVariant
-                ?? Application.Current?.ActualThemeVariant
-                ?? ThemeVariant.Default;
-
-            return IsLightTheme(hostTheme.ToString())
-                ? ThemeManager.ShareXLight
-                : ThemeManager.ShareXDark;
-        }
-
-        private ThemeVariant MapConfiguredTheme()
-        {
-            if (DataContext is MainViewModel { ThemeOptions.Theme: var configuredTheme })
-            {
-                if (IsLightTheme(configuredTheme))
-                {
-                    return ThemeManager.ShareXLight;
-                }
-
-                if (!string.IsNullOrWhiteSpace(configuredTheme) &&
-                    configuredTheme.Contains("Dark", StringComparison.OrdinalIgnoreCase))
-                {
-                    return ThemeManager.ShareXDark;
-                }
-            }
-
-            return ThemeManager.GetCurrentTheme();
-        }
-
-        private static bool IsLightTheme(string? themeName)
-        {
-            return !string.IsNullOrWhiteSpace(themeName) &&
-                themeName.Contains("Light", StringComparison.OrdinalIgnoreCase);
-        }
-
-        private void UpdateAccentColor(PlatformColorValues? colorValues = null)
-        {
-            if (ShouldUseSystemAccentColor())
-            {
-                colorValues ??= _platformSettings?.GetColorValues()
-                    ?? this.GetPlatformSettings()?.GetColorValues()
-                    ?? Application.Current?.PlatformSettings?.GetColorValues();
-
-                if (colorValues == null || colorValues.AccentColor1.A == 0)
-                {
-                    return;
-                }
-
-                ApplyAccentColor(colorValues.AccentColor1);
-                return;
-            }
-
-            if (TryGetConfiguredAccentColor(out Color accentColor))
-            {
-                ApplyAccentColor(accentColor);
-            }
-        }
-
-        private bool TryGetConfiguredAccentColor(out Color accentColor)
-        {
-            if (DataContext is MainViewModel { ThemeOptions.AccentColorHex: var accentColorHex } &&
-                Color.TryParse(accentColorHex, out accentColor) &&
-                accentColor.A != 0)
-            {
-                return true;
-            }
-
-            accentColor = default;
-            return false;
-        }
-
-        private void ApplyAccentColor(Color startColor)
-        {
-            Color endColor = DarkenColor(startColor, 0.10);
-            Color foregroundColor = GetAccentForegroundColor(startColor, endColor);
-
-            Resources["ShareX.Color.Accent.Start"] = startColor;
-            Resources["ShareX.Color.Accent.End"] = endColor;
-            Resources["ShareX.Color.Accent.Foreground"] = foregroundColor;
-
-            UpdateAccentBrush(ThemeManager.ShareXDark, startColor, endColor);
-            UpdateAccentBrush(ThemeManager.ShareXLight, startColor, endColor);
-            UpdateAccentForegroundBrush(ThemeManager.ShareXDark, foregroundColor);
-            UpdateAccentForegroundBrush(ThemeManager.ShareXLight, foregroundColor);
-        }
-
-        private void UpdateAccentBrush(Avalonia.Styling.ThemeVariant theme, Color startColor, Color endColor)
-        {
-            if (!Resources.TryGetResource("ShareX.Brush.Accent", theme, out object? accentBrushValue) ||
-                accentBrushValue is not LinearGradientBrush accentBrush)
-            {
-                return;
-            }
-
-            accentBrush.StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative);
-            accentBrush.EndPoint = new RelativePoint(1, 1, RelativeUnit.Relative);
-
-            GradientStops gradientStops = accentBrush.GradientStops;
-
-            while (gradientStops.Count < 2)
-            {
-                gradientStops.Add(new GradientStop());
-            }
-
-            while (gradientStops.Count > 2)
-            {
-                gradientStops.RemoveAt(gradientStops.Count - 1);
-            }
-
-            gradientStops[0].Color = startColor;
-            gradientStops[0].Offset = 0;
-            gradientStops[1].Color = endColor;
-            gradientStops[1].Offset = 1;
-        }
-
-        private void UpdateAccentForegroundBrush(Avalonia.Styling.ThemeVariant theme, Color foregroundColor)
-        {
-            if (!Resources.TryGetResource("ShareX.Brush.Accent.Foreground", theme, out object? accentForegroundBrushValue) ||
-                accentForegroundBrushValue is not SolidColorBrush accentForegroundBrush)
-            {
-                return;
-            }
-
-            accentForegroundBrush.Color = foregroundColor;
-        }
-
-        private Color GetAccentForegroundColor(Color startColor, Color endColor)
-        {
-            Color lightForeground = GetThemeColor(
-                ThemeManager.ShareXDark,
-                "ShareX.Color.Text",
-                Color.Parse("#D8DADB"));
-
-            Color darkForeground = GetThemeColor(
-                ThemeManager.ShareXLight,
-                "ShareX.Color.Text",
-                Color.Parse("#4E4E4E"));
-
-            double darkSwitchRatio = GetResourceDouble(
-                "ShareX.Value.Accent.Foreground.DarkSwitchRatio",
-                1.75);
-
-            double lightContrast = Math.Min(
-                GetContrastRatio(lightForeground, startColor),
-                GetContrastRatio(lightForeground, endColor));
-
-            double darkContrast = Math.Min(
-                GetContrastRatio(darkForeground, startColor),
-                GetContrastRatio(darkForeground, endColor));
-
-            return darkContrast >= lightContrast * darkSwitchRatio
-                ? darkForeground
-                : lightForeground;
-        }
-
-        private Color GetThemeColor(Avalonia.Styling.ThemeVariant theme, string resourceKey, Color fallback)
-        {
-            if (!Resources.TryGetResource(resourceKey, theme, out object? resourceValue))
-            {
-                return fallback;
-            }
-
-            return resourceValue switch
-            {
-                Color color => color,
-                SolidColorBrush brush => brush.Color,
-                _ => fallback
-            };
-        }
-
-        private double GetResourceDouble(string resourceKey, double fallback)
-        {
-            if (!Resources.TryGetResource(resourceKey, ActualThemeVariant, out object? resourceValue))
-            {
-                return fallback;
-            }
-
-            return resourceValue switch
-            {
-                double value => value,
-                float value => value,
-                decimal value => (double)value,
-                int value => value,
-                long value => value,
-                _ => fallback
-            };
-        }
-
-        private static double GetContrastRatio(Color firstColor, Color secondColor)
-        {
-            double firstLuminance = GetRelativeLuminance(firstColor);
-            double secondLuminance = GetRelativeLuminance(secondColor);
-
-            double lighter = Math.Max(firstLuminance, secondLuminance);
-            double darker = Math.Min(firstLuminance, secondLuminance);
-
-            return (lighter + 0.05) / (darker + 0.05);
-        }
-
-        private static double GetRelativeLuminance(Color color)
-        {
-            double red = LinearizeColorChannel(color.R);
-            double green = LinearizeColorChannel(color.G);
-            double blue = LinearizeColorChannel(color.B);
-
-            return (0.2126 * red) + (0.7152 * green) + (0.0722 * blue);
-        }
-
-        private static double LinearizeColorChannel(byte channel)
-        {
-            double normalized = channel / 255.0;
-
-            return normalized <= 0.03928
-                ? normalized / 12.92
-                : Math.Pow((normalized + 0.055) / 1.055, 2.4);
-        }
-
-        private static Color DarkenColor(Color color, double amount)
-        {
-            double factor = Math.Clamp(1 - amount, 0, 1);
-
-            return Color.FromArgb(
-                color.A,
-                (byte)Math.Clamp((int)Math.Round(color.R * factor), 0, byte.MaxValue),
-                (byte)Math.Clamp((int)Math.Round(color.G * factor), 0, byte.MaxValue),
-                (byte)Math.Clamp((int)Math.Round(color.B * factor), 0, byte.MaxValue));
         }
 
         private void OnWindowActivated(object? sender, EventArgs e)
@@ -1032,14 +664,6 @@ namespace ShareX.ImageEditor.Presentation.Views
                 else if (e.PropertyName == nameof(MainViewModel.SelectedStepType))
                 {
                     ApplyStepTypeToAnnotations(vm.SelectedStepType);
-                }
-                else if (e.PropertyName == nameof(MainViewModel.EditorUseSystemTheme) ||
-                    e.PropertyName == nameof(MainViewModel.EditorTheme) ||
-                    e.PropertyName == nameof(MainViewModel.EditorUseSystemAccentColor) ||
-                    e.PropertyName == nameof(MainViewModel.EditorAccentColor) ||
-                    e.PropertyName == nameof(MainViewModel.EditorAccentColorHex))
-                {
-                    RefreshPlatformColorTracking();
                 }
             }
         }

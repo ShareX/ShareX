@@ -57,7 +57,7 @@
         </Style>
     </Window.Styles>
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+    <ThemeVariantScope>
         <Border x:Name="ToolbarFrame"
                 Padding="2"
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"

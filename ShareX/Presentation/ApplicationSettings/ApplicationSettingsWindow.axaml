@@ -5,6 +5,7 @@
         xmlns:local="using:ShareX"
         xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        xmlns:colorPicker="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.ColorPicker"
         mc:Ignorable="d"
         d:DesignWidth="1040"
         d:DesignHeight="720"
@@ -85,7 +86,7 @@
         </Style>
     </Window.Styles>
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+    <ThemeVariantScope>
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
               ColumnDefinitions="220,*">
             <Border Grid.Column="0"
@@ -188,6 +189,72 @@
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <!-- Theme -->
+                    <ScrollViewer controls:SettingsSearch.PageId="theme" IsVisible="{Binding IsThemePage}">
+                        <StackPanel Margin="28,24,28,32" MaxWidth="760" HorizontalAlignment="Left">
+                            <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.palette}"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Theme"/>
+                            </Grid>
+
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="Application theme"/>
+                                    <CheckBox Classes="setting"
+                                              Content="Follow system theme"
+                                              IsChecked="{Binding UseSystemTheme, Mode=TwoWay}"/>
+                                    <Grid ColumnDefinitions="190,*"
+                                          ColumnSpacing="8"
+                                          IsVisible="{Binding CanEditTheme}">
+                                        <TextBlock Text="Theme:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <ComboBox Grid.Column="1"
+                                                  Classes="form-control"
+                                                  ItemsSource="{Binding ThemeOptions}"
+                                                  SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="Accent color"/>
+                                    <CheckBox Classes="setting"
+                                              Content="Follow system accent color"
+                                              IsChecked="{Binding UseSystemAccentColor, Mode=TwoWay}"/>
+                                    <Grid ColumnDefinitions="190,*"
+                                          ColumnSpacing="8"
+                                          IsVisible="{Binding CanEditAccentColor}">
+                                        <TextBlock Text="Accent color:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <Button Grid.Column="1"
+                                                Classes="compact"
+                                                HorizontalAlignment="Left"
+                                                MinWidth="130"
+                                                Background="{DynamicResource ShareX.Brush.Accent}"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}">
+                                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                                <Border Width="18"
+                                                        Height="18"
+                                                        CornerRadius="4"
+                                                        Background="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                        BorderBrush="{DynamicResource ShareX.Brush.Accent.Foreground}"
+                                                        BorderThickness="1"/>
+                                                <TextBlock Text="{Binding AccentColorHex}" VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                            <Button.Flyout>
+                                                <Flyout>
+                                                    <colorPicker:ColorView Color="{Binding AccentColor, Mode=TwoWay}"
+                                                                           IsAlphaVisible="False"
+                                                                           IsColorPreviewVisible="True"
+                                                                           SelectedIndex="1"/>
+                                                </Flyout>
+                                            </Button.Flyout>
+                                        </Button>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
                         </StackPanel>
                     </ScrollViewer>
 

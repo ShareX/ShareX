@@ -1457,12 +1457,12 @@ namespace ShareX
             {
                 using SKBitmap skBitmap = GdiBitmapToSkBitmap(bmp);
                 skBitmapResult = ImageEditorIntegration.ShowEditorDialog(skBitmap, taskSettings.ToolsSettingsReference.ImageEditorOptions,
-                    events, taskMode, filePath, openBackgroundPanel, Program.Settings.ThemeOptions);
+                    events, taskMode, filePath, openBackgroundPanel);
             }
             else
             {
                 skBitmapResult = ImageEditorIntegration.ShowEditorDialog(taskSettings.ToolsSettingsReference.ImageEditorOptions,
-                    events, taskMode, filePath, openBackgroundPanel, Program.Settings.ThemeOptions);
+                    events, taskMode, filePath, openBackgroundPanel);
             }
 
             if (skBitmapResult != null)

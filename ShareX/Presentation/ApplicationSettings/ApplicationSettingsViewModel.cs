@@ -29,6 +29,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AvaloniaColor = Avalonia.Media.Color;
 
 namespace ShareX;
 
@@ -77,6 +78,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public IReadOnlyList<EnumOption<ThumbnailViewClickAction>> ThumbnailClickActionOptions { get; } = CreateEnumOptions<ThumbnailViewClickAction>();
     public IReadOnlyList<EnumOption<ProxyMethod>> ProxyMethodOptions { get; } = CreateEnumOptions<ProxyMethod>();
     public IReadOnlyList<EnumOption<int>> BufferSizeOptions { get; private set; } = [];
+    public IReadOnlyList<string> ThemeOptions { get; } = ["Dark", "Light"];
 
     public SettingsNavigationItem? SelectedNavigationItem
     {
@@ -98,6 +100,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     }
 
     public bool IsGeneralPage => IsPage("general");
+    public bool IsThemePage => IsPage("theme");
     public bool IsIntegrationPage => IsPage("integration");
     public bool IsPathsPage => IsPage("paths");
     public bool IsSettingsPage => IsPage("settings");
@@ -210,6 +213,54 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     public bool RememberMainFormPosition { get => Settings.RememberMainFormPosition; set => SetSetting(Settings.RememberMainFormPosition, value, x => Settings.RememberMainFormPosition = x); }
     public bool RememberMainFormSize { get => Settings.RememberMainFormSize; set => SetSetting(Settings.RememberMainFormSize, value, x => Settings.RememberMainFormSize = x); }
+
+    public bool UseSystemTheme
+    {
+        get => Settings.ThemeOptions.UseSystemTheme;
+        set
+        {
+            if (SetSetting(Settings.ThemeOptions.UseSystemTheme, value, x => Settings.ThemeOptions.UseSystemTheme = x))
+            {
+                OnPropertyChanged(nameof(CanEditTheme));
+            }
+        }
+    }
+
+    public bool CanEditTheme => !UseSystemTheme;
+
+    public string SelectedTheme
+    {
+        get => NormalizeTheme(Settings.ThemeOptions.Theme);
+        set => SetSetting(Settings.ThemeOptions.Theme, NormalizeTheme(value), x => Settings.ThemeOptions.Theme = x);
+    }
+
+    public bool UseSystemAccentColor
+    {
+        get => Settings.ThemeOptions.UseSystemAccentColor;
+        set
+        {
+            if (SetSetting(Settings.ThemeOptions.UseSystemAccentColor, value, x => Settings.ThemeOptions.UseSystemAccentColor = x))
+            {
+                OnPropertyChanged(nameof(CanEditAccentColor));
+            }
+        }
+    }
+
+    public bool CanEditAccentColor => !UseSystemAccentColor;
+
+    public AvaloniaColor AccentColor
+    {
+        get => Settings.ThemeOptions.AccentColor;
+        set
+        {
+            if (SetSetting(Settings.ThemeOptions.AccentColor, value, x => Settings.ThemeOptions.AccentColor = x))
+            {
+                OnPropertyChanged(nameof(AccentColorHex));
+            }
+        }
+    }
+
+    public string AccentColorHex => Settings.ThemeOptions.AccentColorHex;
 
     public EnumOption<HotkeyType>? SelectedTrayLeftDoubleClickAction
     {
@@ -770,6 +821,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         return
         [
             Nav("general", "General", LucideIcons.settings),
+            Nav("theme", "Theme", LucideIcons.palette),
             Nav("integration", "Integration", LucideIcons.plug),
             Nav("paths", "Paths", LucideIcons.folder),
             Nav("settings", "Settings", LucideIcons.database_backup),
@@ -784,6 +836,14 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     }
 
     private static SettingsNavigationItem Nav(string id, string title, string icon) => new(id, title, icon);
+
+    private static string NormalizeTheme(string? theme)
+    {
+        return !string.IsNullOrWhiteSpace(theme) &&
+            theme.Contains("Light", StringComparison.OrdinalIgnoreCase)
+            ? "Light"
+            : "Dark";
+    }
 
     private void RefreshIntegrations()
     {
@@ -908,6 +968,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     private void OnPageChanged()
     {
         OnPropertyChanged(nameof(IsGeneralPage));
+        OnPropertyChanged(nameof(IsThemePage));
         OnPropertyChanged(nameof(IsIntegrationPage));
         OnPropertyChanged(nameof(IsPathsPage));
         OnPropertyChanged(nameof(IsSettingsPage));

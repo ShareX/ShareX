@@ -117,7 +117,7 @@
         </Style>
     </Window.Styles>
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+    <ThemeVariantScope>
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid ColumnDefinitions="220,*">
                 <Border Grid.Column="0"

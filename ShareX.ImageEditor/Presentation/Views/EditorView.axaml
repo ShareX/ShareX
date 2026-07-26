@@ -6,7 +6,6 @@
              xmlns:views="using:ShareX.ImageEditor.Presentation.Views"
              xmlns:models="using:ShareX.ImageEditor.Core.Annotations"
              xmlns:converters="using:ShareX.ImageEditor.Presentation.Converters"
-             xmlns:theming="using:ShareX.AvaloniaUI.Theming"
              xmlns:editorTheming="using:ShareX.ImageEditor.Presentation.Theming"
              xmlns:helpers="using:ShareX.ImageEditor.Presentation.Rendering"
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
@@ -169,9 +168,7 @@
         </ContextMenu>
     </UserControl.Resources>
 
-    <ThemeVariantScope x:Name="EditorThemeScope"
-                       RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
-        <Grid RowDefinitions="*">
+    <Grid RowDefinitions="*">
 
         <!-- Row 0: Main Content Area with Preview and Sidebar (Background Layer) -->
         <Grid Grid.Row="0" ColumnDefinitions="Auto,*,Auto" Background="{DynamicResource ShareX.Brush.Background.Main}">
@@ -818,6 +815,5 @@
                                 VerticalAlignment="Center"/>
             </Grid>
         </Border>
-        </Grid>
-    </ThemeVariantScope>
+    </Grid>
 </UserControl>

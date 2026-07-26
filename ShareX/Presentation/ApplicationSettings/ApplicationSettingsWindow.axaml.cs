@@ -52,7 +52,17 @@ public partial class ApplicationSettingsWindow : Window
             "%y, %mo, %d");
         KeyDown += OnWindowKeyDown;
         Opened += (_, _) => Activate();
-        Closed += (_, _) => ViewModel.Dispose();
+        ThemeManager.ThemeChanged += OnThemeChanged;
+        Closed += OnClosed;
+    }
+
+    private void OnThemeChanged(object? sender, Avalonia.Styling.ThemeVariant theme) =>
+        Dispatcher.UIThread.Post(() => RequestedThemeVariant = theme);
+
+    private void OnClosed(object? sender, EventArgs e)
+    {
+        ThemeManager.ThemeChanged -= OnThemeChanged;
+        ViewModel.Dispose();
     }
 
     private void OnRestartClick(object? sender, RoutedEventArgs e) => ViewModel.Restart();

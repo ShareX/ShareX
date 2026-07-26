@@ -69,7 +69,7 @@
         </Style>
     </Window.Styles>
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
+    <ThemeVariantScope>
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid Margin="12,0,12,12" RowDefinitions="Auto,Auto,*" RowSpacing="8">
                 <Border Grid.Row="0"

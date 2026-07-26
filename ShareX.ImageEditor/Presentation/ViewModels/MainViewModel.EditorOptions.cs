@@ -1,90 +1,10 @@
-using Avalonia.Media;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.AvaloniaUI.Theming;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
 {
     public partial class MainViewModel : ViewModelBase
     {
-        private static readonly IReadOnlyList<string> SupportedEditorThemes = new[]
-        {
-            "Dark",
-            "Light"
-        };
-
         public event EventHandler? OpenOptionsPanelRequested;
-
-        public IReadOnlyList<string> EditorThemeOptions => SupportedEditorThemes;
-
-        public bool EditorUseSystemTheme
-        {
-            get => ThemeOptions.UseSystemTheme;
-            set
-            {
-                if (ThemeOptions.UseSystemTheme == value)
-                {
-                    return;
-                }
-
-                ThemeOptions.UseSystemTheme = value;
-                OnPropertyChanged(nameof(EditorUseSystemTheme));
-                OnPropertyChanged(nameof(CanEditEditorTheme));
-            }
-        }
-
-        public bool CanEditEditorTheme => !EditorUseSystemTheme;
-
-        public string EditorTheme
-        {
-            get => NormalizeEditorTheme(ThemeOptions.Theme);
-            set
-            {
-                string normalizedTheme = NormalizeEditorTheme(value);
-                if (string.Equals(ThemeOptions.Theme, normalizedTheme, StringComparison.OrdinalIgnoreCase))
-                {
-                    return;
-                }
-
-                ThemeOptions.Theme = normalizedTheme;
-                OnPropertyChanged(nameof(EditorTheme));
-            }
-        }
-
-        public bool EditorUseSystemAccentColor
-        {
-            get => ThemeOptions.UseSystemAccentColor;
-            set
-            {
-                if (ThemeOptions.UseSystemAccentColor == value)
-                {
-                    return;
-                }
-
-                ThemeOptions.UseSystemAccentColor = value;
-                OnPropertyChanged(nameof(EditorUseSystemAccentColor));
-                OnPropertyChanged(nameof(CanEditEditorAccentColor));
-            }
-        }
-
-        public bool CanEditEditorAccentColor => !EditorUseSystemAccentColor;
-
-        public Color EditorAccentColor
-        {
-            get => ThemeOptions.AccentColor;
-            set
-            {
-                if (EditorAccentColor == value)
-                {
-                    return;
-                }
-
-                ThemeOptions.AccentColor = value;
-                OnPropertyChanged(nameof(EditorAccentColor));
-                OnPropertyChanged(nameof(EditorAccentColorHex));
-            }
-        }
-
-        public string EditorAccentColorHex => ThemeOptions.AccentColorHex;
 
         public bool EditorRememberWindowState
         {
@@ -217,12 +137,5 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             OpenOptionsPanelRequested?.Invoke(this, EventArgs.Empty);
         }
 
-        private static string NormalizeEditorTheme(string? theme)
-        {
-            return !string.IsNullOrWhiteSpace(theme) &&
-                theme.Contains("Light", StringComparison.OrdinalIgnoreCase)
-                ? "Light"
-                : "Dark";
-        }
     }
 }
