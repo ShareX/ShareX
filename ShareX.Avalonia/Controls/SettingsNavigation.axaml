@@ -23,6 +23,27 @@
             <Setter Property="CornerRadius" Value="4"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
+        <Style Selector="TreeViewItem TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+        </Style>
+        <Style Selector="TreeViewItem:selected">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="TreeViewItem:selected:pointerover">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="TreeViewItem:selected:pressed">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="TreeViewItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
     </UserControl.Styles>
 
     <Grid RowDefinitions="Auto,*" RowSpacing="10">
@@ -56,7 +77,6 @@
                                    HorizontalAlignment="Center"/>
                         <TextBlock Grid.Column="1"
                                    Text="{Binding Title}"
-                                   Foreground="{DynamicResource ShareX.Brush.Text}"
                                    FontWeight="Normal"
                                    TextTrimming="CharacterEllipsis"/>
                     </Grid>

@@ -190,6 +190,7 @@ namespace ShareX.AvaloniaUI.Theming
             Color endColor = DarkenColor(startColor, 0.10);
             Color foregroundColor = GetAccentForegroundColor(startColor, endColor);
 
+            application.Resources["SystemAccentColor"] = startColor;
             application.Resources["ShareX.Color.Accent.Start"] = startColor;
             application.Resources["ShareX.Color.Accent.End"] = endColor;
             application.Resources["ShareX.Color.Accent.Foreground"] = foregroundColor;
