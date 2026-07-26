@@ -251,16 +251,8 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public AvaloniaColor AccentColor
     {
         get => Settings.ThemeOptions.AccentColor;
-        set
-        {
-            if (SetSetting(Settings.ThemeOptions.AccentColor, value, x => Settings.ThemeOptions.AccentColor = x))
-            {
-                OnPropertyChanged(nameof(AccentColorHex));
-            }
-        }
+        set => SetSetting(Settings.ThemeOptions.AccentColor, value, x => Settings.ThemeOptions.AccentColor = x);
     }
-
-    public string AccentColorHex => Settings.ThemeOptions.AccentColorHex;
 
     public EnumOption<HotkeyType>? SelectedTrayLeftDoubleClickAction
     {

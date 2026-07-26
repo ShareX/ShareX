@@ -5,7 +5,7 @@
         xmlns:local="using:ShareX"
         xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
-        xmlns:colorPicker="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.ColorPicker"
+        xmlns:imageEditorControls="using:ShareX.ImageEditor.Presentation.Controls"
         mc:Ignorable="d"
         d:DesignWidth="1040"
         d:DesignHeight="720"
@@ -212,6 +212,8 @@
                                         <TextBlock Text="Theme:" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1"
                                                   Classes="form-control"
+                                                  Width="130"
+                                                  MinWidth="130"
                                                   ItemsSource="{Binding ThemeOptions}"
                                                   SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"/>
                                     </Grid>
@@ -228,30 +230,11 @@
                                           ColumnSpacing="8"
                                           IsVisible="{Binding CanEditAccentColor}">
                                         <TextBlock Text="Accent color:" VerticalAlignment="Center" FontWeight="Normal"/>
-                                        <Button Grid.Column="1"
-                                                Classes="compact"
-                                                HorizontalAlignment="Left"
-                                                MinWidth="130"
-                                                Background="{DynamicResource ShareX.Brush.Accent}"
-                                                Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}">
-                                            <StackPanel Orientation="Horizontal" Spacing="8">
-                                                <Border Width="18"
-                                                        Height="18"
-                                                        CornerRadius="4"
-                                                        Background="{DynamicResource ShareX.Brush.Accent.Start}"
-                                                        BorderBrush="{DynamicResource ShareX.Brush.Accent.Foreground}"
-                                                        BorderThickness="1"/>
-                                                <TextBlock Text="{Binding AccentColorHex}" VerticalAlignment="Center"/>
-                                            </StackPanel>
-                                            <Button.Flyout>
-                                                <Flyout>
-                                                    <colorPicker:ColorView Color="{Binding AccentColor, Mode=TwoWay}"
-                                                                           IsAlphaVisible="False"
-                                                                           IsColorPreviewVisible="True"
-                                                                           SelectedIndex="1"/>
-                                                </Flyout>
-                                            </Button.Flyout>
-                                        </Button>
+                                        <imageEditorControls:ColorPickerDropdown Grid.Column="1"
+                                                                                 SelectedColorValue="{Binding AccentColor, Mode=TwoWay}"
+                                                                                 HorizontalAlignment="Left"
+                                                                                 MinWidth="130"
+                                                                                 VerticalAlignment="Center"/>
                                     </Grid>
                                 </StackPanel>
                             </Border>
