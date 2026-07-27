@@ -65,6 +65,7 @@ namespace ShareX.AvaloniaUI.Theming
 
         public static void SetTheme(ThemeVariant theme, object? target = null)
         {
+            bool themeChanged = !Equals(_currentTheme, theme);
             _currentTheme = theme;
 
             if (target is Application app)
@@ -88,7 +89,10 @@ namespace ShareX.AvaloniaUI.Theming
                 scope.RequestedThemeVariant = theme;
             }
 
-            ThemeChanged?.Invoke(null, theme);
+            if (themeChanged)
+            {
+                ThemeChanged?.Invoke(null, theme);
+            }
         }
 
         public static ThemeVariant GetCurrentTheme()
