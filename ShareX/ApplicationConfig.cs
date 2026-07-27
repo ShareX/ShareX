@@ -80,8 +80,6 @@ namespace ShareX
 
         #region Theme
 
-        public List<ShareXTheme> Themes = ShareXTheme.GetDefaultThemes();
-        public int SelectedTheme = 0;
         public ApplicationThemeOptions ThemeOptions = new ApplicationThemeOptions();
 
         #endregion

@@ -14,6 +14,8 @@
 
 #nullable enable
 
+using Avalonia.Styling;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
@@ -47,6 +49,7 @@ public sealed class MainForm : HotkeyForm
 
         HandleCreated += MainForm_HandleCreated;
         FormClosed += MainForm_FormClosed;
+        ThemeManager.ThemeChanged += ThemeManager_ThemeChanged;
     }
 
     private async void MainForm_HandleCreated(object? sender, EventArgs e)
@@ -122,18 +125,12 @@ public sealed class MainForm : HotkeyForm
 
     public void UpdateTheme()
     {
-        if (Program.Settings.Themes == null || Program.Settings.Themes.Count == 0)
-        {
-            Program.Settings.Themes = ShareXTheme.GetDefaultThemes();
-            Program.Settings.SelectedTheme = 0;
-        }
+        bool isDarkTheme = ThemeManager.IsDarkTheme;
 
-        if (!Program.Settings.Themes.IsValidIndex(Program.Settings.SelectedTheme))
+        if (ShareXResources.IsDarkTheme != isDarkTheme)
         {
-            Program.Settings.SelectedTheme = 0;
+            ShareXResources.Theme = isDarkTheme ? ShareXTheme.DarkTheme : ShareXTheme.LightTheme;
         }
-
-        ShareXResources.Theme = Program.Settings.Themes[Program.Settings.SelectedTheme];
 
         if (IsHandleCreated)
         {
@@ -147,6 +144,23 @@ public sealed class MainForm : HotkeyForm
         using Icon trayIcon = ShareXResources.Icon;
         TrayIconService.SetIcon(trayIcon);
         MainWindowIntegration.RefreshMenus();
+    }
+
+    private void ThemeManager_ThemeChanged(object? sender, ThemeVariant theme)
+    {
+        if (IsDisposed)
+        {
+            return;
+        }
+
+        if (InvokeRequired)
+        {
+            BeginInvoke(UpdateTheme);
+        }
+        else
+        {
+            UpdateTheme();
+        }
     }
 
     private void ConfigureAutoUpdate()
@@ -423,6 +437,7 @@ public sealed class MainForm : HotkeyForm
 
     private void MainForm_FormClosed(object? sender, FormClosedEventArgs e)
     {
+        ThemeManager.ThemeChanged -= ThemeManager_ThemeChanged;
         MainWindowIntegration.Close();
         TrayIconService.Dispose();
         TaskManager.StopAllTasks();

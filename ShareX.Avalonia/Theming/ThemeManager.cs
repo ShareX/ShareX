@@ -96,6 +96,8 @@ namespace ShareX.AvaloniaUI.Theming
             return _currentTheme;
         }
 
+        public static bool IsDarkTheme => !IsLightTheme(_currentTheme.ToString());
+
         public static void Refresh()
         {
             RunOnUIThread(ApplyConfiguredSettings);
