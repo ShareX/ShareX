@@ -306,7 +306,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void ConfigureWindowHeightFromNavigation()
     {
-        NavigationPanel.Measure(new Avalonia.Size(210, double.PositiveInfinity));
+        NavigationPanel.Measure(new Avalonia.Size(double.PositiveInfinity, double.PositiveInfinity));
         double navigationHeight = Math.Ceiling(NavigationPanel.DesiredSize.Height);
 
         if (navigationHeight <= 0 || double.IsNaN(navigationHeight) || double.IsInfinity(navigationHeight))
