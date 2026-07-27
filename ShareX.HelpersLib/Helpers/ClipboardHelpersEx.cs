@@ -127,21 +127,21 @@ namespace ShareX.HelpersLib
         {
             Bitmap clipboardimage = null;
             // Order: try PNG, move on to try 32-bit ARGB DIB, then try the normal Bitmap and Image types.
-            if (retrievedData.GetDataPresent("PNG", false) && retrievedData.GetData("PNG", false) is MemoryStream pngStream)
+            if (retrievedData.TryGetData("PNG", false, out MemoryStream pngStream))
             {
                 using (Bitmap bm = new Bitmap(pngStream))
                 {
                     clipboardimage = CloneImage(bm);
                 }
             }
-            if (clipboardimage == null && retrievedData.GetDataPresent(DataFormats.Dib, false) && retrievedData.GetData(DataFormats.Dib, false) is MemoryStream dib)
+            if (clipboardimage == null && retrievedData.TryGetData(DataFormats.Dib, false, out MemoryStream dib))
             {
                 clipboardimage = ImageFromClipboardDib(dib.ToArray());
             }
-            if (clipboardimage == null && retrievedData.GetDataPresent(DataFormats.Bitmap))
-                clipboardimage = new Bitmap(retrievedData.GetData(DataFormats.Bitmap) as Image);
-            if (clipboardimage == null && retrievedData.GetDataPresent(typeof(Image)))
-                clipboardimage = new Bitmap(retrievedData.GetData(typeof(Image)) as Image);
+            if (clipboardimage == null && retrievedData.TryGetData(DataFormats.Bitmap, out Image bitmap))
+                clipboardimage = new Bitmap(bitmap);
+            if (clipboardimage == null && retrievedData.TryGetData(out Image image))
+                clipboardimage = new Bitmap(image);
             return clipboardimage;
         }
 

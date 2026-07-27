@@ -229,8 +229,8 @@ namespace ShareX.UploadersLib.TextUploaders
 
             private byte[] DeriveKey()
             {
-                using var deriveBytes = new Rfc2898DeriveBytes(pastePasswordBytes, Salt, PrivateBinConstants.CIPHER_ITERATION_COUNT, HashAlgorithmName.SHA256);
-                return deriveBytes.GetBytes(PrivateBinConstants.CIPHER_BLOCK_BITS / 8);
+                return Rfc2898DeriveBytes.Pbkdf2(pastePasswordBytes, Salt, PrivateBinConstants.CIPHER_ITERATION_COUNT,
+                    HashAlgorithmName.SHA256, PrivateBinConstants.CIPHER_BLOCK_BITS / 8);
             }
 
             private string CreateCipherText(string plainText)
