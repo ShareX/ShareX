@@ -1,0 +1,143 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:ShareX.ScreenCaptureLib"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        d:DesignWidth="700"
+        d:DesignHeight="420"
+        x:Class="ShareX.ScreenCaptureLib.ScreenRecordWindow"
+        Title="ShareX - Screen recording"
+        Width="430"
+        Height="180"
+        CanResize="False"
+        ShowInTaskbar="False"
+        ShowActivated="True"
+        Topmost="True"
+        WindowDecorations="None"
+        TransparencyLevelHint="Transparent"
+        Background="Transparent">
+
+    <Window.Styles>
+        <Style Selector="Button.recorder-action">
+            <Setter Property="Width" Value="86"/>
+            <Setter Property="MinWidth" Value="86"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="MinHeight" Value="40"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.action-icon">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.action-label">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope>
+        <Canvas x:Name="WindowCanvas" Background="Transparent">
+            <local:RecordingRegionBorder x:Name="RegionBorder"
+                                         Canvas.Left="0"
+                                         Canvas.Top="0"
+                                         IsHitTestVisible="False"/>
+
+            <Border x:Name="Toolbar"
+                    Canvas.Left="0"
+                    Width="386"
+                    Height="48"
+                    Padding="4"
+                    CornerRadius="7"
+                    Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                    BorderThickness="1">
+                <Grid>
+                    <Grid x:Name="RecorderControls"
+                          ColumnDefinitions="112,*"
+                          ColumnSpacing="2">
+                        <Border x:Name="TimerDragHandle"
+                                Grid.Column="0"
+                                CornerRadius="4"
+                                Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                                Cursor="SizeAll">
+                            <StackPanel Orientation="Horizontal"
+                                        Spacing="8"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center">
+                                <Border x:Name="StatusIndicator"
+                                        Width="8"
+                                        Height="8"
+                                        CornerRadius="4"
+                                        Background="Goldenrod"/>
+                                <TextBlock x:Name="TimerText"
+                                           Text="00:00:00"
+                                           FontFamily="Cascadia Mono,Consolas"
+                                           FontSize="14"
+                                           FontWeight="SemiBold"
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+
+                        <StackPanel Grid.Column="1"
+                                    Orientation="Horizontal"
+                                    Spacing="2">
+                            <Button x:Name="StartButton"
+                                    Classes="recorder-action">
+                                <StackPanel Orientation="Horizontal" Spacing="7">
+                                    <TextBlock x:Name="StartIcon"
+                                               Classes="icon action-icon"
+                                               Text="{x:Static theming:LucideIcons.circle_play}"/>
+                                    <TextBlock x:Name="StartText"
+                                               Classes="action-label"
+                                               Text="Start"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="PauseButton"
+                                    Classes="recorder-action">
+                                <StackPanel Orientation="Horizontal" Spacing="7">
+                                    <TextBlock x:Name="PauseIcon"
+                                               Classes="icon action-icon"
+                                               Text="{x:Static theming:LucideIcons.pause}"/>
+                                    <TextBlock x:Name="PauseText"
+                                               Classes="action-label"
+                                               Text="Pause"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="AbortButton"
+                                    Classes="recorder-action">
+                                <StackPanel Orientation="Horizontal" Spacing="7">
+                                    <TextBlock Classes="icon action-icon"
+                                               Text="{x:Static theming:LucideIcons.x}"/>
+                                    <TextBlock Classes="action-label" Text="Abort"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid x:Name="AbortConfirmation"
+                          ColumnDefinitions="*,Auto,Auto"
+                          ColumnSpacing="8"
+                          IsVisible="False">
+                        <TextBlock Grid.Column="0"
+                                   Margin="10,0"
+                                   Text="Abort this recording?"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center"/>
+                        <Button x:Name="CancelAbortButton"
+                                Grid.Column="1"
+                                Classes="recorder-action"
+                                Content="Cancel"/>
+                        <Button x:Name="ConfirmAbortButton"
+                                Grid.Column="2"
+                                Classes="recorder-action"
+                                Content="Abort"/>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Canvas>
+    </ThemeVariantScope>
+</Window>

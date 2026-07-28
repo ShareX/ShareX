@@ -39,7 +39,7 @@ namespace ShareX
         public static bool IsRecording { get; private set; }
 
         private static ScreenRecorder screenRecorder;
-        private static ScreenRecordForm recordForm;
+        private static ScreenRecordWindow recordForm;
 
         public static void StartStopRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings)
         {
@@ -186,7 +186,7 @@ namespace ShareX
 
             float duration = taskSettings.CaptureSettings.ScreenRecordFixedDuration ? taskSettings.CaptureSettings.ScreenRecordDuration : 0;
 
-            recordForm = new ScreenRecordForm(captureRectangle)
+            recordForm = new ScreenRecordWindow(captureRectangle)
             {
                 ActivateWindow = startMethod == ScreenRecordStartMethod.Region,
                 Duration = duration,
