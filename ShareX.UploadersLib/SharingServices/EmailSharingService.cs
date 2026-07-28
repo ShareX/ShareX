@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.UploadersLib.FileUploaders;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.SharingServices
 {
@@ -74,28 +73,30 @@ namespace ShareX.UploadersLib.SharingServices
             }
             else
             {
-                using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : "", config.EmailDefaultSubject, url))
+                EmailWindowResult emailResult = EmailWindowIntegration.Show(
+                    config.EmailRememberLastTo ? config.EmailLastTo : "",
+                    config.EmailDefaultSubject,
+                    url);
+
+                if (emailResult != null)
                 {
-                    if (emailForm.ShowDialog() == DialogResult.OK)
+                    if (config.EmailRememberLastTo)
                     {
-                        if (config.EmailRememberLastTo)
-                        {
-                            config.EmailLastTo = emailForm.ToEmail;
-                        }
-
-                        Email email = new Email()
-                        {
-                            SmtpServer = config.EmailSmtpServer,
-                            SmtpPort = config.EmailSmtpPort,
-                            FromEmail = config.EmailFrom,
-                            Password = config.EmailPassword,
-                            ToEmail = emailForm.ToEmail,
-                            Subject = emailForm.Subject,
-                            Body = emailForm.Body
-                        };
-
-                        email.Send();
+                        config.EmailLastTo = emailResult.ToEmail;
                     }
+
+                    Email email = new Email()
+                    {
+                        SmtpServer = config.EmailSmtpServer,
+                        SmtpPort = config.EmailSmtpPort,
+                        FromEmail = config.EmailFrom,
+                        Password = config.EmailPassword,
+                        ToEmail = emailResult.ToEmail,
+                        Subject = emailResult.Subject,
+                        Body = emailResult.Body
+                    };
+
+                    email.Send();
                 }
             }
 

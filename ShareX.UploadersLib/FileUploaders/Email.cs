@@ -28,7 +28,6 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -60,30 +59,32 @@ namespace ShareX.UploadersLib.FileUploaders
             }
             else
             {
-                using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : "", config.EmailDefaultSubject, config.EmailDefaultBody))
-                {
-                    if (emailForm.ShowDialog() == DialogResult.OK)
-                    {
-                        if (config.EmailRememberLastTo)
-                        {
-                            config.EmailLastTo = emailForm.ToEmail;
-                        }
+                EmailWindowResult emailResult = EmailWindowIntegration.Show(
+                    config.EmailRememberLastTo ? config.EmailLastTo : "",
+                    config.EmailDefaultSubject,
+                    config.EmailDefaultBody);
 
-                        return new Email()
-                        {
-                            SmtpServer = config.EmailSmtpServer,
-                            SmtpPort = config.EmailSmtpPort,
-                            FromEmail = config.EmailFrom,
-                            Password = config.EmailPassword,
-                            ToEmail = emailForm.ToEmail,
-                            Subject = emailForm.Subject,
-                            Body = emailForm.Body
-                        };
-                    }
-                    else
+                if (emailResult != null)
+                {
+                    if (config.EmailRememberLastTo)
                     {
-                        taskInfo.StopRequested = true;
+                        config.EmailLastTo = emailResult.ToEmail;
                     }
+
+                    return new Email()
+                    {
+                        SmtpServer = config.EmailSmtpServer,
+                        SmtpPort = config.EmailSmtpPort,
+                        FromEmail = config.EmailFrom,
+                        Password = config.EmailPassword,
+                        ToEmail = emailResult.ToEmail,
+                        Subject = emailResult.Subject,
+                        Body = emailResult.Body
+                    };
+                }
+                else
+                {
+                    taskInfo.StopRequested = true;
                 }
             }
 
