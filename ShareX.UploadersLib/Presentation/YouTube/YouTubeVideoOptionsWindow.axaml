@@ -1,11 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        x:Class="ShareX.UploadersLib.EmailWindow"
-        Title="ShareX - Send email"
-        Width="620"
-        Height="480"
-        MinWidth="480"
-        MinHeight="360"
+        x:Class="ShareX.UploadersLib.YouTubeVideoOptionsWindow"
+        Title="ShareX - YouTube video options"
+        Width="600"
+        Height="460"
+        MinWidth="500"
+        MinHeight="380"
         Background="{DynamicResource ShareX.Brush.Background.Main}"
         WindowStartupLocation="CenterScreen">
 
@@ -38,22 +38,16 @@
               Margin="16"
               Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Border Classes="section-card">
-                <Grid RowDefinitions="Auto,Auto,*" RowSpacing="12">
+                <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
                     <StackPanel>
-                        <TextBlock Classes="field-label" Text="To email"/>
-                        <TextBox x:Name="ToEmailTextBox"
-                                 PlaceholderText="name@example.com"/>
+                        <TextBlock Classes="field-label" Text="Title"/>
+                        <TextBox x:Name="TitleTextBox"
+                                 PlaceholderText="Video title"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="1">
-                        <TextBlock Classes="field-label" Text="Subject"/>
-                        <TextBox x:Name="SubjectTextBox"
-                                 PlaceholderText="Email subject"/>
-                    </StackPanel>
-
-                    <Grid Grid.Row="2" RowDefinitions="Auto,*">
-                        <TextBlock Classes="field-label" Text="Message"/>
-                        <TextBox x:Name="MessageTextBox"
+                    <Grid Grid.Row="1" RowDefinitions="Auto,*">
+                        <TextBlock Classes="field-label" Text="Description"/>
+                        <TextBox x:Name="DescriptionTextBox"
                                  Grid.Row="1"
                                  AcceptsReturn="True"
                                  TextWrapping="Wrap"
@@ -62,6 +56,12 @@
                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                  ScrollViewer.VerticalScrollBarVisibility="Auto"/>
                     </Grid>
+
+                    <StackPanel Grid.Row="2">
+                        <TextBlock Classes="field-label" Text="Visibility"/>
+                        <ComboBox x:Name="VisibilityComboBox"
+                                  HorizontalAlignment="Stretch"/>
+                    </StackPanel>
                 </Grid>
             </Border>
 
@@ -70,9 +70,9 @@
                         Spacing="7"
                         HorizontalAlignment="Right">
                 <Button Classes="compact primary"
-                        Content="Send"
+                        Content="OK"
                         IsDefault="True"
-                        Click="OnSendClick"/>
+                        Click="OnConfirmClick"/>
                 <Button Classes="compact"
                         Content="Cancel"
                         IsCancel="True"

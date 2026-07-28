@@ -27,7 +27,6 @@ using Newtonsoft.Json;
 using ShareX.UploadersLib.Properties;
 using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -100,18 +99,18 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (ShowDialog)
             {
-                using (YouTubeVideoOptionsForm form = new YouTubeVideoOptionsForm(title, description, visibility))
+                YouTubeVideoOptionsWindowResult options =
+                    YouTubeVideoOptionsWindowIntegration.Show(title, description, visibility);
+
+                if (options != null)
                 {
-                    if (form.ShowDialog() == DialogResult.OK)
-                    {
-                        title = form.Title;
-                        description = form.Description;
-                        visibility = form.Visibility;
-                    }
-                    else
-                    {
-                        return null;
-                    }
+                    title = options.Title;
+                    description = options.Description;
+                    visibility = options.Visibility;
+                }
+                else
+                {
+                    return null;
                 }
             }
 
