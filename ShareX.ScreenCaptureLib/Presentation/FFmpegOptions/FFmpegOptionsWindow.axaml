@@ -204,11 +204,7 @@
                         <StackPanel Spacing="12" Margin="2">
                             <Border Classes="section-card">
                                 <StackPanel Spacing="14">
-                                    <StackPanel Spacing="3">
-                                        <TextBlock Classes="section-title" Text="FFmpeg executable"/>
-                                        <TextBlock Classes="hint"
-                                                   Text="ShareX uses its bundled FFmpeg by default. Override it only when you need a specific build."/>
-                                    </StackPanel>
+                                    <TextBlock Classes="section-title" Text="FFmpeg executable"/>
                                     <CheckBox x:Name="UseCustomPathCheckBox">
                                         <TextBlock Text="Use a custom FFmpeg path" FontWeight="Normal"/>
                                     </CheckBox>
@@ -231,11 +227,10 @@
                             <Border Classes="section-card">
                                 <StackPanel Spacing="14">
                                     <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
-                                        <StackPanel Grid.Column="0" Spacing="3">
-                                            <TextBlock Classes="section-title" Text="Capture sources"/>
-                                            <TextBlock Classes="hint"
-                                                       Text="Select the desktop, a DirectShow device, or audio only. Device discovery requires a valid FFmpeg executable."/>
-                                        </StackPanel>
+                                        <TextBlock Grid.Column="0"
+                                                   Classes="section-title"
+                                                   Text="Capture sources"
+                                                   VerticalAlignment="Center"/>
                                         <Button x:Name="RefreshDevicesButton"
                                                 Grid.Column="1"
                                                 VerticalAlignment="Center">
@@ -294,11 +289,7 @@
                               Margin="2">
                             <Border Grid.Column="0" Classes="section-card">
                                 <StackPanel Spacing="12">
-                                    <StackPanel Spacing="3">
-                                        <TextBlock Classes="section-title" Text="Video encoder"/>
-                                        <TextBlock Classes="hint"
-                                                   Text="Software encoders favor compatibility. Hardware encoders reduce CPU usage when supported by your GPU."/>
-                                    </StackPanel>
+                                    <TextBlock Classes="section-title" Text="Video encoder"/>
                                     <ComboBox x:Name="VideoCodecComboBox" Classes="field"/>
                                     <Border Classes="info-card">
                                         <StackPanel Spacing="4">
@@ -314,10 +305,7 @@
 
                             <Border Grid.Column="1" Classes="section-card">
                                 <StackPanel Spacing="14">
-                                    <StackPanel Spacing="3">
-                                        <TextBlock Classes="section-title" Text="Encoder settings"/>
-                                        <TextBlock Classes="hint" Text="Only settings supported by the selected encoder are shown."/>
-                                    </StackPanel>
+                                    <TextBlock Classes="section-title" Text="Encoder settings"/>
 
                                     <StackPanel x:Name="X264SettingsPanel" Spacing="12">
                                         <StackPanel>
@@ -487,11 +475,7 @@
                               Margin="2">
                             <Border Grid.Column="0" Classes="section-card">
                                 <StackPanel Spacing="12">
-                                    <StackPanel Spacing="3">
-                                        <TextBlock Classes="section-title" Text="Audio encoder"/>
-                                        <TextBlock Classes="hint"
-                                                   Text="The encoder is used whenever an audio source is selected."/>
-                                    </StackPanel>
+                                    <TextBlock Classes="section-title" Text="Audio encoder"/>
                                     <ComboBox x:Name="AudioCodecComboBox" Classes="field"/>
                                     <Border x:Name="AudioUnavailableBorder"
                                             Classes="info-card"
@@ -510,10 +494,7 @@
 
                             <Border Grid.Column="1" Classes="section-card">
                                 <StackPanel x:Name="AudioSettingsPanel" Spacing="14">
-                                    <StackPanel Spacing="3">
-                                        <TextBlock Classes="section-title" Text="Encoder settings"/>
-                                        <TextBlock Classes="hint" Text="Only settings supported by the selected encoder are shown."/>
-                                    </StackPanel>
+                                    <TextBlock Classes="section-title" Text="Encoder settings"/>
                                     <StackPanel x:Name="AacSettingsPanel">
                                         <TextBlock Classes="field-label" Text="Bitrate (kbps)"/>
                                         <ComboBox x:Name="AacBitrateComboBox" Classes="field"/>
@@ -544,11 +525,7 @@
                         <StackPanel Spacing="12" Margin="2">
                             <Border Classes="section-card">
                                 <StackPanel Spacing="10">
-                                    <StackPanel Spacing="3">
-                                        <TextBlock Classes="section-title" Text="Additional arguments"/>
-                                        <TextBlock Classes="hint"
-                                                   Text="These arguments are inserted after the input arguments and before encoder options."/>
-                                    </StackPanel>
+                                    <TextBlock Classes="section-title" Text="Additional arguments"/>
                                     <TextBox x:Name="UserArgumentsTextBox"
                                              PlaceholderText="Example: -vf scale=1920:-2"/>
                                 </StackPanel>
@@ -557,11 +534,10 @@
                             <Border Classes="section-card">
                                 <Grid RowDefinitions="Auto,Auto,*" RowSpacing="10">
                                     <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="12">
-                                        <StackPanel Grid.Column="0" Spacing="3">
-                                            <TextBlock Classes="section-title" Text="FFmpeg command"/>
-                                            <TextBlock Classes="hint"
-                                                       Text="Review the generated command, or enable custom commands to edit it directly."/>
-                                        </StackPanel>
+                                        <TextBlock Grid.Column="0"
+                                                   Classes="section-title"
+                                                   Text="FFmpeg command"
+                                                   VerticalAlignment="Center"/>
                                         <CheckBox x:Name="UseCustomCommandsCheckBox"
                                                   Grid.Column="1"
                                                   VerticalAlignment="Center">
