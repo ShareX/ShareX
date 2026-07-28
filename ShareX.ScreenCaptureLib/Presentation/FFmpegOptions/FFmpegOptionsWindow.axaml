@@ -66,9 +66,28 @@
             <Setter Property="Width" Value="40"/>
             <Setter Property="Padding" Value="0"/>
         </Style>
-        <Style Selector="TabItem">
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Padding" Value="18,10"/>
+        <Style Selector="ListBox.section-navigation">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem">
+            <Setter Property="Padding" Value="11,6"/>
+            <Setter Property="Margin" Value="0,0,3,0"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem:selected">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="CornerRadius" Value="4"/>
         </Style>
     </Window.Styles>
 
@@ -130,10 +149,59 @@
                 </Grid>
             </Border>
 
-            <TabControl Grid.Row="1" Margin="16">
-                <TabItem Header="Sources">
+            <Grid Grid.Row="1" Margin="16" RowDefinitions="Auto,*">
+                <Border Grid.Row="0"
+                        Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                        CornerRadius="6"
+                        Padding="4"
+                        HorizontalAlignment="Left">
+                    <ListBox x:Name="OptionsTabStrip"
+                             Classes="section-navigation"
+                             SelectedIndex="0">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.monitor}"
+                                           FontSize="15"/>
+                                <TextBlock Text="Sources"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.video}"
+                                           FontSize="15"/>
+                                <TextBlock Text="Video"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.audio_lines}"
+                                           FontSize="15"/>
+                                <TextBlock Text="Audio"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.terminal}"
+                                           FontSize="15"/>
+                                <TextBlock Text="Advanced"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                </Border>
+
+                <Grid Grid.Row="1" Margin="0,8,0,0">
+                <Grid x:Name="SourcesTabContent">
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
-                        <StackPanel Spacing="12" Margin="2,12,2,2">
+                        <StackPanel Spacing="12" Margin="2">
                             <Border Classes="section-card">
                                 <StackPanel Spacing="14">
                                     <StackPanel Spacing="3">
@@ -217,13 +285,13 @@
                             </Border>
                         </StackPanel>
                     </ScrollViewer>
-                </TabItem>
+                </Grid>
 
-                <TabItem Header="Video">
+                <Grid x:Name="VideoTabContent" IsVisible="False">
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
                         <Grid ColumnDefinitions="300,*"
                               ColumnSpacing="12"
-                              Margin="2,12,2,2">
+                              Margin="2">
                             <Border Grid.Column="0" Classes="section-card">
                                 <StackPanel Spacing="12">
                                     <StackPanel Spacing="3">
@@ -410,13 +478,13 @@
                             </Border>
                         </Grid>
                     </ScrollViewer>
-                </TabItem>
+                </Grid>
 
-                <TabItem Header="Audio">
+                <Grid x:Name="AudioTabContent" IsVisible="False">
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
                         <Grid ColumnDefinitions="300,*"
                               ColumnSpacing="12"
-                              Margin="2,12,2,2">
+                              Margin="2">
                             <Border Grid.Column="0" Classes="section-card">
                                 <StackPanel Spacing="12">
                                     <StackPanel Spacing="3">
@@ -469,11 +537,11 @@
                             </Border>
                         </Grid>
                     </ScrollViewer>
-                </TabItem>
+                </Grid>
 
-                <TabItem Header="Advanced">
+                <Grid x:Name="AdvancedTabContent" IsVisible="False">
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
-                        <StackPanel Spacing="12" Margin="2,12,2,2">
+                        <StackPanel Spacing="12" Margin="2">
                             <Border Classes="section-card">
                                 <StackPanel Spacing="10">
                                     <StackPanel Spacing="3">
@@ -518,8 +586,9 @@
                             </Border>
                         </StackPanel>
                     </ScrollViewer>
-                </TabItem>
-            </TabControl>
+                </Grid>
+                </Grid>
+            </Grid>
 
         </Grid>
     </ThemeVariantScope>

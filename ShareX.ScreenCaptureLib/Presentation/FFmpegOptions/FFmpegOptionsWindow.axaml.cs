@@ -95,6 +95,8 @@ public partial class FFmpegOptionsWindow : Window
 
     private void WireEvents()
     {
+        OptionsTabStrip.SelectionChanged += (_, _) => UpdateTabVisibility();
+
         UseCustomPathCheckBox.IsCheckedChanged += (_, _) =>
         {
             if (!_settingsLoaded) return;
@@ -234,6 +236,15 @@ public partial class FFmpegOptionsWindow : Window
         ResetOptionsButton.Click += (_, _) => ShowResetConfirmation(true);
         CancelResetButton.Click += (_, _) => ShowResetConfirmation(false);
         ConfirmResetButton.Click += async (_, _) => await ResetOptionsAsync();
+    }
+
+    private void UpdateTabVisibility()
+    {
+        int selectedIndex = Math.Max(0, OptionsTabStrip.SelectedIndex);
+        SourcesTabContent.IsVisible = selectedIndex == 0;
+        VideoTabContent.IsVisible = selectedIndex == 1;
+        AudioTabContent.IsVisible = selectedIndex == 2;
+        AdvancedTabContent.IsVisible = selectedIndex == 3;
     }
 
     private async void OnOpened(object? sender, EventArgs e)
