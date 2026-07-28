@@ -1,0 +1,256 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.UploadersLib.ResponseWindow"
+        Title="ShareX - Response"
+        Width="820"
+        Height="600"
+        MinWidth="620"
+        MinHeight="440"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="TextBlock.page-title">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+        </Style>
+        <Style Selector="TextBlock.page-description">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style Selector="Border.content-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="Padding" Value="10,4"/>
+        </Style>
+        <Style Selector="TextBox.response-text">
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="FontFamily" Value="Cascadia Mono,Consolas,monospace"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="11"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem">
+            <Setter Property="Padding" Value="11,6"/>
+            <Setter Property="Margin" Value="0,0,3,0"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem:selected">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope>
+        <Grid RowDefinitions="Auto,*"
+              Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                    BorderThickness="0,0,0,1"
+                    Padding="20,18">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                    <Border Width="44"
+                            Height="44"
+                            CornerRadius="10"
+                            Background="{DynamicResource ShareX.Brush.Accent}">
+                        <TextBlock Classes="icon"
+                                   Text="{x:Static theming:LucideIcons.server}"
+                                   FontSize="22"
+                                   Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                    <StackPanel Grid.Column="1" Spacing="3" VerticalAlignment="Center">
+                        <TextBlock Classes="page-title" Text="Upload response"/>
+                        <TextBlock x:Name="ResponseSummaryText"
+                                   Classes="page-description"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1" Margin="16" RowDefinitions="Auto,*">
+                <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                        CornerRadius="6"
+                        Padding="4"
+                        HorizontalAlignment="Left">
+                    <ListBox x:Name="SectionList"
+                             Classes="section-navigation"
+                             SelectionChanged="OnSectionSelectionChanged">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.circle_check}" FontSize="15"/>
+                                <TextBlock Text="Result"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.info}" FontSize="15"/>
+                                <TextBlock Text="Response info"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.code_xml}" FontSize="15"/>
+                                <TextBlock Text="Response text"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                </Border>
+
+                <Grid Grid.Row="1" Margin="0,8,0,0">
+                <Grid x:Name="ResultPanel" RowDefinitions="Auto,*" RowSpacing="8">
+                    <Border Classes="content-card" Padding="8">
+                        <WrapPanel Orientation="Horizontal">
+                            <Button x:Name="CopyShortenedUrlButton"
+                                    Classes="compact"
+                                    Margin="0,0,6,0"
+                                    Click="OnCopyShortenedUrlClick">
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
+                                    <TextBlock Text="Copy shortened URL"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="CopyUrlButton"
+                                    Classes="compact"
+                                    Margin="0,0,6,0"
+                                    Click="OnCopyUrlClick">
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
+                                    <TextBlock Text="Copy URL"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="OpenUrlButton"
+                                    Classes="compact"
+                                    Margin="0,0,6,0"
+                                    Click="OnOpenUrlClick">
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}" FontSize="15"/>
+                                    <TextBlock Text="Open URL"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="CopyThumbnailUrlButton"
+                                    Classes="compact"
+                                    Margin="0,0,6,0"
+                                    Click="OnCopyThumbnailUrlClick">
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
+                                    <TextBlock Text="Copy thumbnail URL"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="CopyDeletionUrlButton"
+                                    Classes="compact"
+                                    Click="OnCopyDeletionUrlClick">
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
+                                    <TextBlock Text="Copy deletion URL"/>
+                                </StackPanel>
+                            </Button>
+                        </WrapPanel>
+                    </Border>
+                    <Border Grid.Row="1" Classes="content-card">
+                        <TextBox x:Name="ResultTextBox" Classes="response-text"/>
+                    </Border>
+                </Grid>
+
+                <Grid x:Name="ResponseInfoPanel"
+                      RowDefinitions="Auto,*"
+                      RowSpacing="8"
+                      IsVisible="False">
+                    <Border Classes="content-card" Padding="8">
+                        <StackPanel Orientation="Horizontal" Spacing="6">
+                            <Button Classes="compact" Click="OnCopyResponseInfoClick">
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
+                                    <TextBlock Text="Copy response info"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="OpenResponseUrlButton"
+                                    Classes="compact"
+                                    Click="OnOpenResponseUrlClick">
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}" FontSize="15"/>
+                                    <TextBlock Text="Open response URL"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="1" Classes="content-card">
+                        <TextBox x:Name="ResponseInfoTextBox" Classes="response-text"/>
+                    </Border>
+                </Grid>
+
+                <Grid x:Name="ResponseTextPanel"
+                      RowDefinitions="Auto,Auto,*"
+                      RowSpacing="8"
+                      IsVisible="False">
+                    <Border Classes="content-card" Padding="8">
+                        <StackPanel Orientation="Horizontal" Spacing="6">
+                            <Button Classes="compact" Click="OnJsonFormatClick">
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file_json}" FontSize="15"/>
+                                    <TextBlock Text="JSON format"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Classes="compact" Click="OnXmlFormatClick">
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.code_xml}" FontSize="15"/>
+                                    <TextBlock Text="XML format"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Classes="compact" Click="OnCopyResponseTextClick">
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
+                                    <TextBlock Text="Copy response"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                    <TextBlock x:Name="FormatStatusText"
+                               Grid.Row="1"
+                               IsVisible="False"
+                               Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                               TextWrapping="Wrap"/>
+                    <Border Grid.Row="2" Classes="content-card">
+                        <TextBox x:Name="ResponseTextBox"
+                                 Classes="response-text"
+                                 IsReadOnly="False"/>
+                    </Border>
+                </Grid>
+            </Grid>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

@@ -178,7 +178,7 @@ public partial class CustomUploaderSettingsWindow : Window
     {
         if (_viewModel == null) return;
         UploadResult? result = await _viewModel.TestAsync(type, index, text);
-        if (result != null) ResponseForm.ShowInstance(result);
+        if (result != null) ResponseWindow.ShowInstance(result);
     }
 
     private async Task<string?> PromptForTextAsync()

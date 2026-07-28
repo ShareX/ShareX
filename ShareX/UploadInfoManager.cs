@@ -470,7 +470,7 @@ namespace ShareX
         {
             if (IsItemSelected && SelectedItem.Info.Result != null)
             {
-                ResponseForm.ShowInstance(SelectedItem.Info.Result);
+                ResponseWindow.ShowInstance(SelectedItem.Info.Result);
             }
         }
 
