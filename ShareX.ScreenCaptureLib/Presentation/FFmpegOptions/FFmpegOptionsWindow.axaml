@@ -1,0 +1,526 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        d:DesignWidth="940"
+        d:DesignHeight="720"
+        x:Class="ShareX.ScreenCaptureLib.FFmpegOptionsWindow"
+        Title="ShareX - Screen recording options"
+        Width="940"
+        Height="720"
+        MinWidth="760"
+        MinHeight="620"
+        WindowStartupLocation="CenterOwner">
+
+    <Window.Styles>
+        <Style Selector="TextBlock.page-title">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+        </Style>
+        <Style Selector="TextBlock.page-description">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style Selector="TextBlock.section-title">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+        </Style>
+        <Style Selector="TextBlock.field-label">
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+        <Style Selector="TextBlock.hint">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style Selector="Border.section-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="16"/>
+        </Style>
+        <Style Selector="Border.info-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Toolbar}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="12"/>
+        </Style>
+        <Style Selector="ComboBox.field">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="MinWidth" Value="220"/>
+        </Style>
+        <Style Selector="NumericUpDown.number">
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style Selector="Button.icon-button">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+        <Style Selector="TabItem">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="18,10"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope>
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
+              RowDefinitions="Auto,*">
+            <Border Grid.Row="0"
+                    Padding="20,18"
+                    Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                    BorderThickness="0,0,0,1">
+                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="14">
+                    <Border Width="44"
+                            Height="44"
+                            CornerRadius="10"
+                            Background="{DynamicResource ShareX.Brush.Accent}">
+                        <TextBlock Text="{x:Static theming:LucideIcons.video}"
+                                   Classes="icon"
+                                   FontSize="22"
+                                   Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                    <StackPanel Grid.Column="1" Spacing="3" VerticalAlignment="Center">
+                        <TextBlock Classes="page-title" Text="Screen recording"/>
+                        <TextBlock Classes="page-description"
+                                   Text="Choose what to capture and how FFmpeg should encode it."/>
+                    </StackPanel>
+                    <Grid Grid.Column="2" VerticalAlignment="Center">
+                        <Grid x:Name="NormalFooterPanel">
+                            <Button x:Name="ResetOptionsButton"
+                                    ToolTip.Tip="Reset encoding options">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Classes="icon"
+                                               Text="{x:Static theming:LucideIcons.rotate_ccw}"
+                                               FontSize="15"/>
+                                    <TextBlock Text="Reset options"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+
+                        <Grid x:Name="ResetConfirmationPanel"
+                              ColumnDefinitions="Auto,Auto,Auto"
+                              ColumnSpacing="8"
+                              IsVisible="False">
+                            <TextBlock Grid.Column="0"
+                                       Text="Reset all options?"
+                                       FontWeight="SemiBold"
+                                       VerticalAlignment="Center"/>
+                            <Button x:Name="CancelResetButton"
+                                    Grid.Column="1"
+                                    Content="Cancel"/>
+                            <Button x:Name="ConfirmResetButton"
+                                    Grid.Column="2"
+                                    Classes="primary"
+                                    Content="Reset"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <TabControl Grid.Row="1" Margin="16">
+                <TabItem Header="Sources">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Spacing="12" Margin="2,12,2,2">
+                            <Border Classes="section-card">
+                                <StackPanel Spacing="14">
+                                    <StackPanel Spacing="3">
+                                        <TextBlock Classes="section-title" Text="FFmpeg executable"/>
+                                        <TextBlock Classes="hint"
+                                                   Text="ShareX uses its bundled FFmpeg by default. Override it only when you need a specific build."/>
+                                    </StackPanel>
+                                    <CheckBox x:Name="UseCustomPathCheckBox">
+                                        <TextBlock Text="Use a custom FFmpeg path" FontWeight="Normal"/>
+                                    </CheckBox>
+                                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                        <TextBox x:Name="FFmpegPathTextBox"
+                                                 Grid.Column="0"
+                                                 PlaceholderText="Path to ffmpeg.exe"/>
+                                        <Button x:Name="BrowseFFmpegButton"
+                                                Grid.Column="1"
+                                                Classes="icon-button"
+                                                ToolTip.Tip="Browse for ffmpeg.exe">
+                                            <TextBlock Classes="icon"
+                                                       Text="{x:Static theming:LucideIcons.folder_open}"
+                                                       FontSize="16"/>
+                                        </Button>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="section-card">
+                                <StackPanel Spacing="14">
+                                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                                        <StackPanel Grid.Column="0" Spacing="3">
+                                            <TextBlock Classes="section-title" Text="Capture sources"/>
+                                            <TextBlock Classes="hint"
+                                                       Text="Select the desktop, a DirectShow device, or audio only. Device discovery requires a valid FFmpeg executable."/>
+                                        </StackPanel>
+                                        <Button x:Name="RefreshDevicesButton"
+                                                Grid.Column="1"
+                                                VerticalAlignment="Center">
+                                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                                <TextBlock Classes="icon"
+                                                           Text="{x:Static theming:LucideIcons.refresh_cw}"
+                                                           FontSize="15"/>
+                                                <TextBlock Text="Refresh devices"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </Grid>
+
+                                    <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                                        <StackPanel Grid.Column="0">
+                                            <TextBlock Classes="field-label" Text="Video source"/>
+                                            <ComboBox x:Name="VideoSourceComboBox"
+                                                      Classes="field"
+                                                      PlaceholderText="Choose a video source"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1">
+                                            <TextBlock Classes="field-label" Text="Audio source"/>
+                                            <ComboBox x:Name="AudioSourceComboBox"
+                                                      Classes="field"
+                                                      PlaceholderText="Choose an audio source"/>
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <Border Classes="info-card">
+                                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="10">
+                                            <TextBlock Grid.Column="0"
+                                                       Classes="icon"
+                                                       Text="{x:Static theming:LucideIcons.info}"
+                                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                       VerticalAlignment="Center"/>
+                                            <TextBlock x:Name="DeviceStatusTextBlock"
+                                                       Grid.Column="1"
+                                                       Classes="hint"
+                                                       Text="Looking for capture devices..."
+                                                       VerticalAlignment="Center"/>
+                                            <Button x:Name="DownloadRecorderDevicesButton"
+                                                    Grid.Column="2"
+                                                    Content="Get recorder devices"
+                                                    VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+
+                <TabItem Header="Video">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <Grid ColumnDefinitions="300,*"
+                              ColumnSpacing="12"
+                              Margin="2,12,2,2">
+                            <Border Grid.Column="0" Classes="section-card">
+                                <StackPanel Spacing="12">
+                                    <StackPanel Spacing="3">
+                                        <TextBlock Classes="section-title" Text="Video encoder"/>
+                                        <TextBlock Classes="hint"
+                                                   Text="Software encoders favor compatibility. Hardware encoders reduce CPU usage when supported by your GPU."/>
+                                    </StackPanel>
+                                    <ComboBox x:Name="VideoCodecComboBox" Classes="field"/>
+                                    <Border Classes="info-card">
+                                        <StackPanel Spacing="4">
+                                            <TextBlock x:Name="VideoCodecSummaryTextBlock"
+                                                       FontWeight="SemiBold"
+                                                       TextWrapping="Wrap"/>
+                                            <TextBlock x:Name="VideoCodecHintTextBlock"
+                                                       Classes="hint"/>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Column="1" Classes="section-card">
+                                <StackPanel Spacing="14">
+                                    <StackPanel Spacing="3">
+                                        <TextBlock Classes="section-title" Text="Encoder settings"/>
+                                        <TextBlock Classes="hint" Text="Only settings supported by the selected encoder are shown."/>
+                                    </StackPanel>
+
+                                    <StackPanel x:Name="X264SettingsPanel" Spacing="12">
+                                        <StackPanel>
+                                            <TextBlock Classes="field-label" Text="Preset"/>
+                                            <ComboBox x:Name="X264PresetComboBox" Classes="field"
+                                                      ToolTip.Tip="Faster presets encode more reliably in real time but produce larger files."/>
+                                        </StackPanel>
+                                        <Border x:Name="X264PresetWarningBorder"
+                                                Classes="info-card"
+                                                BorderBrush="Goldenrod">
+                                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                                                <TextBlock Classes="icon"
+                                                           Text="{x:Static theming:LucideIcons.triangle_alert}"
+                                                           Foreground="Goldenrod"/>
+                                                <TextBlock Grid.Column="1"
+                                                           Classes="hint"
+                                                           Text="Slow presets can cause dropped frames during screen recording. Fast or faster is recommended."/>
+                                            </Grid>
+                                        </Border>
+                                        <CheckBox x:Name="UseX264BitrateCheckBox">
+                                            <TextBlock Text="Use a target bitrate instead of constant quality" FontWeight="Normal"/>
+                                        </CheckBox>
+                                        <StackPanel x:Name="X264QualityPanel">
+                                            <TextBlock Classes="field-label" Text="Constant Rate Factor (CRF)"/>
+                                            <NumericUpDown x:Name="X264CrfNumericUpDown"
+                                                           Classes="number"
+                                                           Minimum="0"
+                                                           Maximum="51"
+                                                           Increment="1"
+                                                           FormatString="0"/>
+                                            <TextBlock Classes="hint"
+                                                       Margin="0,6,0,0"
+                                                       Text="Lower values improve quality and increase file size. 0 is lossless; 28 is the ShareX default."/>
+                                        </StackPanel>
+                                        <StackPanel x:Name="X264BitratePanel">
+                                            <TextBlock Classes="field-label" Text="Target bitrate (kbps)"/>
+                                            <NumericUpDown x:Name="X264BitrateNumericUpDown"
+                                                           Classes="number"
+                                                           Minimum="100"
+                                                           Maximum="100000"
+                                                           Increment="100"
+                                                           FormatString="0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <StackPanel x:Name="VpxSettingsPanel" Spacing="8">
+                                        <TextBlock Classes="field-label" Text="Target bitrate (kbps)"/>
+                                        <NumericUpDown x:Name="VpxBitrateNumericUpDown"
+                                                       Classes="number"
+                                                       Minimum="100"
+                                                       Maximum="100000"
+                                                       Increment="100"
+                                                       FormatString="0"/>
+                                    </StackPanel>
+
+                                    <StackPanel x:Name="XvidSettingsPanel" Spacing="8">
+                                        <TextBlock Classes="field-label" Text="Variable bitrate quality"/>
+                                        <NumericUpDown x:Name="XvidQualityNumericUpDown"
+                                                       Classes="number"
+                                                       Minimum="1"
+                                                       Maximum="31"
+                                                       Increment="1"
+                                                       FormatString="0"/>
+                                        <TextBlock Classes="hint"
+                                                   Text="1 gives the highest quality and largest file; 31 gives the lowest quality and smallest file."/>
+                                    </StackPanel>
+
+                                    <StackPanel x:Name="NvencSettingsPanel" Spacing="12">
+                                        <StackPanel>
+                                            <TextBlock Classes="field-label" Text="Preset"/>
+                                            <ComboBox x:Name="NvencPresetComboBox" Classes="field"/>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Classes="field-label" Text="Tune"/>
+                                            <ComboBox x:Name="NvencTuneComboBox" Classes="field"/>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Classes="field-label" Text="Target bitrate (kbps)"/>
+                                            <NumericUpDown x:Name="NvencBitrateNumericUpDown"
+                                                           Classes="number"
+                                                           Minimum="100"
+                                                           Maximum="100000"
+                                                           Increment="100"
+                                                           FormatString="0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <StackPanel x:Name="GifSettingsPanel" Spacing="12">
+                                        <StackPanel>
+                                            <TextBlock Classes="field-label" Text="Palette mode"/>
+                                            <ComboBox x:Name="GifStatsModeComboBox" Classes="field"/>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Classes="field-label" Text="Dithering mode"/>
+                                            <ComboBox x:Name="GifDitherComboBox" Classes="field"/>
+                                        </StackPanel>
+                                        <StackPanel x:Name="GifBayerScalePanel">
+                                            <TextBlock Classes="field-label" Text="Bayer scale"/>
+                                            <NumericUpDown x:Name="GifBayerScaleNumericUpDown"
+                                                           Classes="number"
+                                                           Minimum="0"
+                                                           Maximum="5"
+                                                           Increment="1"
+                                                           FormatString="0"/>
+                                            <TextBlock Classes="hint"
+                                                       Margin="0,6,0,0"
+                                                       Text="Higher values produce more visible banding. The default is 2."/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <StackPanel x:Name="AmfSettingsPanel" Spacing="12">
+                                        <StackPanel>
+                                            <TextBlock Classes="field-label" Text="Usage"/>
+                                            <ComboBox x:Name="AmfUsageComboBox" Classes="field"/>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Classes="field-label" Text="Quality"/>
+                                            <ComboBox x:Name="AmfQualityComboBox" Classes="field"/>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Classes="field-label" Text="Target bitrate (kbps)"/>
+                                            <NumericUpDown x:Name="AmfBitrateNumericUpDown"
+                                                           Classes="number"
+                                                           Minimum="100"
+                                                           Maximum="100000"
+                                                           Increment="100"
+                                                           FormatString="0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <StackPanel x:Name="QsvSettingsPanel" Spacing="12">
+                                        <StackPanel>
+                                            <TextBlock Classes="field-label" Text="Preset"/>
+                                            <ComboBox x:Name="QsvPresetComboBox" Classes="field"/>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Classes="field-label" Text="Target bitrate (kbps)"/>
+                                            <NumericUpDown x:Name="QsvBitrateNumericUpDown"
+                                                           Classes="number"
+                                                           Minimum="100"
+                                                           Maximum="100000"
+                                                           Increment="100"
+                                                           FormatString="0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <Border x:Name="NoVideoSettingsPanel" Classes="info-card">
+                                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                                            <TextBlock Classes="icon"
+                                                       Text="{x:Static theming:LucideIcons.circle_check}"
+                                                       Foreground="{DynamicResource ShareX.Brush.Accent}"/>
+                                            <TextBlock Grid.Column="1"
+                                                       Classes="hint"
+                                                       Text="This encoder does not require additional settings."/>
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+
+                <TabItem Header="Audio">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <Grid ColumnDefinitions="300,*"
+                              ColumnSpacing="12"
+                              Margin="2,12,2,2">
+                            <Border Grid.Column="0" Classes="section-card">
+                                <StackPanel Spacing="12">
+                                    <StackPanel Spacing="3">
+                                        <TextBlock Classes="section-title" Text="Audio encoder"/>
+                                        <TextBlock Classes="hint"
+                                                   Text="The encoder is used whenever an audio source is selected."/>
+                                    </StackPanel>
+                                    <ComboBox x:Name="AudioCodecComboBox" Classes="field"/>
+                                    <Border x:Name="AudioUnavailableBorder"
+                                            Classes="info-card"
+                                            BorderBrush="Goldenrod">
+                                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                                            <TextBlock Classes="icon"
+                                                       Text="{x:Static theming:LucideIcons.triangle_alert}"
+                                                       Foreground="Goldenrod"/>
+                                            <TextBlock Grid.Column="1"
+                                                       Classes="hint"
+                                                       Text="Animated image formats do not include audio. Choose a video format to enable audio encoding."/>
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Column="1" Classes="section-card">
+                                <StackPanel x:Name="AudioSettingsPanel" Spacing="14">
+                                    <StackPanel Spacing="3">
+                                        <TextBlock Classes="section-title" Text="Encoder settings"/>
+                                        <TextBlock Classes="hint" Text="Only settings supported by the selected encoder are shown."/>
+                                    </StackPanel>
+                                    <StackPanel x:Name="AacSettingsPanel">
+                                        <TextBlock Classes="field-label" Text="Bitrate (kbps)"/>
+                                        <ComboBox x:Name="AacBitrateComboBox" Classes="field"/>
+                                    </StackPanel>
+                                    <StackPanel x:Name="OpusSettingsPanel">
+                                        <TextBlock Classes="field-label" Text="Bitrate (kbps)"/>
+                                        <ComboBox x:Name="OpusBitrateComboBox" Classes="field"/>
+                                    </StackPanel>
+                                    <StackPanel x:Name="VorbisSettingsPanel">
+                                        <TextBlock Classes="field-label" Text="Quality"/>
+                                        <ComboBox x:Name="VorbisQualityComboBox" Classes="field"/>
+                                    </StackPanel>
+                                    <StackPanel x:Name="Mp3SettingsPanel">
+                                        <TextBlock Classes="field-label" Text="Quality"/>
+                                        <ComboBox x:Name="Mp3QualityComboBox" Classes="field"/>
+                                        <TextBlock Classes="hint"
+                                                   Margin="0,6,0,0"
+                                                   Text="Lower values produce higher quality."/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+
+                <TabItem Header="Advanced">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Spacing="12" Margin="2,12,2,2">
+                            <Border Classes="section-card">
+                                <StackPanel Spacing="10">
+                                    <StackPanel Spacing="3">
+                                        <TextBlock Classes="section-title" Text="Additional arguments"/>
+                                        <TextBlock Classes="hint"
+                                                   Text="These arguments are inserted after the input arguments and before encoder options."/>
+                                    </StackPanel>
+                                    <TextBox x:Name="UserArgumentsTextBox"
+                                             PlaceholderText="Example: -vf scale=1920:-2"/>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="section-card">
+                                <Grid RowDefinitions="Auto,Auto,*" RowSpacing="10">
+                                    <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                                        <StackPanel Grid.Column="0" Spacing="3">
+                                            <TextBlock Classes="section-title" Text="FFmpeg command"/>
+                                            <TextBlock Classes="hint"
+                                                       Text="Review the generated command, or enable custom commands to edit it directly."/>
+                                        </StackPanel>
+                                        <CheckBox x:Name="UseCustomCommandsCheckBox"
+                                                  Grid.Column="1"
+                                                  VerticalAlignment="Center">
+                                            <TextBlock Text="Use custom commands" FontWeight="Normal"/>
+                                        </CheckBox>
+                                    </Grid>
+                                    <Border Grid.Row="1"
+                                            Classes="info-card">
+                                        <TextBlock Classes="hint"
+                                                   Text="Custom command placeholders: $fps$, $area_x$, $area_y$, $area_width$, $area_height$, $cursor$, $duration$, and $output$."/>
+                                    </Border>
+                                    <TextBox x:Name="CommandPreviewTextBox"
+                                             Grid.Row="2"
+                                             MinHeight="260"
+                                             AcceptsReturn="True"
+                                             TextWrapping="Wrap"
+                                             VerticalContentAlignment="Top"
+                                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                             FontFamily="Consolas"
+                                             FontSize="13"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+
+        </Grid>
+    </ThemeVariantScope>
+</Window>

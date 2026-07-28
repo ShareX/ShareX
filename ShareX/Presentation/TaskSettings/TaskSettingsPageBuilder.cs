@@ -477,7 +477,7 @@ internal sealed class TaskSettingsPageBuilder
                 Button("Screen recording options...", ShowScreenRecordingOptions)));
     }
 
-    private void ShowScreenRecordingOptions()
+    private async Task ShowScreenRecordingOptions()
     {
         TaskSettingsCapture capture = _settings.CaptureSettings;
         ScreenRecordingOptions options = new()
@@ -491,9 +491,9 @@ internal sealed class TaskSettingsPageBuilder
             DrawCursor = capture.ScreenRecordShowCursor
         };
 
-        using FFmpegOptionsForm form = new(options);
-        form.ShowDialog(Program.MainForm);
-        capture.FFmpegOptions = form.Options.FFmpeg;
+        FFmpegOptionsWindow window = new(options);
+        await window.ShowDialog(_window);
+        capture.FFmpegOptions = window.Options.FFmpeg;
     }
 
     private Control BuildOcrPage()
