@@ -31,7 +31,7 @@ namespace ShareX.HelpersLib
 {
     public static class FFmpegDownloader
     {
-        public static async Task<DialogResult> DownloadFFmpeg(bool async, DownloaderForm.DownloaderInstallEventHandler installRequested)
+        public static async Task<DialogResult> DownloadFFmpeg(bool async, DownloaderWindow.DownloaderInstallEventHandler installRequested)
         {
             string url;
 
@@ -44,11 +44,11 @@ namespace ShareX.HelpersLib
                 url = "https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.zip";
             }
 
-            DownloaderFormResult result = await DownloaderForm.ShowAsync(url, "ffmpeg.zip", form =>
+            DownloaderWindowResult result = await DownloaderWindow.ShowAsync(url, "ffmpeg.zip", window =>
             {
-                form.InstallType = InstallType.Event;
-                form.RunInstallerInBackground = async;
-                form.InstallRequested += installRequested;
+                window.InstallType = InstallType.Event;
+                window.RunInstallerInBackground = async;
+                window.InstallRequested += installRequested;
             });
             return result.DialogResult;
         }

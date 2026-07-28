@@ -80,12 +80,12 @@ namespace ShareX.HelpersLib
 
         private async Task CheckUpdate()
         {
-            if (AutoUpdateEnabled && !UpdateMessageBox.IsOpen)
+            if (AutoUpdateEnabled && !UpdateMessageWindow.IsOpen)
             {
                 UpdateChecker updateChecker = CreateUpdateChecker();
                 await updateChecker.CheckUpdateAsync();
 
-                if (await UpdateMessageBox.StartAsync(updateChecker, firstUpdateCheck) == DialogResult.No)
+                if (await UpdateMessageWindow.StartAsync(updateChecker, firstUpdateCheck) == DialogResult.No)
                 {
                     AutoUpdateEnabled = false;
                 }

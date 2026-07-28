@@ -112,7 +112,7 @@ namespace ShareX.HelpersLib
 
         private async void llblUpdateAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            await UpdateMessageBox.StartAsync(updateChecker);
+            await UpdateMessageWindow.StartAsync(updateChecker);
         }
     }
 }

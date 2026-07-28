@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
-        x:Class="ShareX.HelpersLib.DownloaderForm"
+        x:Class="ShareX.HelpersLib.DownloaderWindow"
         Title="ShareX - File downloader"
         Width="560"
         Height="310"

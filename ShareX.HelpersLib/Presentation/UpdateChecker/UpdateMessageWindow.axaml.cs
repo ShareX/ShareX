@@ -22,7 +22,7 @@ using LocalizedResources = ShareX.HelpersLib.Properties.Resources;
 
 namespace ShareX.HelpersLib;
 
-public partial class UpdateMessageBox : Window
+public partial class UpdateMessageWindow : Window
 {
     private DialogResult _result;
 
@@ -35,7 +35,7 @@ public partial class UpdateMessageBox : Window
     public string YesText => LocalizedResources.MyMessageBox_MyMessageBox_Yes;
     public string NoText => LocalizedResources.MyMessageBox_MyMessageBox_No;
 
-    public UpdateMessageBox()
+    public UpdateMessageWindow()
     {
         ActivateWindow = true;
         MessageText = string.Empty;
@@ -43,7 +43,7 @@ public partial class UpdateMessageBox : Window
         InitializeWindow();
     }
 
-    private UpdateMessageBox(UpdateChecker updateChecker, bool activateWindow)
+    private UpdateMessageWindow(UpdateChecker updateChecker, bool activateWindow)
     {
         ActivateWindow = activateWindow;
         MessageText = BuildMessage(updateChecker);
@@ -101,7 +101,7 @@ public partial class UpdateMessageBox : Window
         {
             try
             {
-                UpdateMessageBox window = new(updateChecker, activateWindow);
+                UpdateMessageWindow window = new(updateChecker, activateWindow);
                 window.Closed += (_, _) => completion.TrySetResult(window._result);
                 window.Show();
             }

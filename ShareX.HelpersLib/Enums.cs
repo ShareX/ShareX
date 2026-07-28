@@ -88,7 +88,7 @@ namespace ShareX.HelpersLib
         Inside
     }
 
-    public enum DownloaderFormStatus
+    public enum DownloaderWindowStatus
     {
         Waiting,
         DownloadStarted,

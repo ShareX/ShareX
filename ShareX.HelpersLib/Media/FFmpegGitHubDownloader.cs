@@ -32,16 +32,16 @@ namespace ShareX.HelpersLib
     public static class FFmpegGitHubDownloader
     {
         public static async Task<DialogResult> DownloadFFmpeg(bool async,
-            DownloaderForm.DownloaderInstallEventHandler installRequested)
+            DownloaderWindow.DownloaderInstallEventHandler installRequested)
         {
             FFmpegUpdateChecker updateChecker = new FFmpegUpdateChecker("ShareX", "FFmpeg");
             string url = await updateChecker.GetLatestDownloadURL(true);
 
-            DownloaderFormResult result = await DownloaderForm.ShowAsync(url, "ffmpeg.zip", form =>
+            DownloaderWindowResult result = await DownloaderWindow.ShowAsync(url, "ffmpeg.zip", window =>
             {
-                form.InstallType = InstallType.Event;
-                form.RunInstallerInBackground = async;
-                form.InstallRequested += installRequested;
+                window.InstallType = InstallType.Event;
+                window.RunInstallerInBackground = async;
+                window.InstallRequested += installRequested;
             });
             return result.DialogResult;
         }

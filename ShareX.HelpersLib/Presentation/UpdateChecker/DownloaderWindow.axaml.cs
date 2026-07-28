@@ -24,9 +24,9 @@ using LocalizedResources = ShareX.HelpersLib.Properties.Resources;
 
 namespace ShareX.HelpersLib;
 
-public readonly record struct DownloaderFormResult(DialogResult DialogResult, DownloaderFormStatus Status);
+public readonly record struct DownloaderWindowResult(DialogResult DialogResult, DownloaderWindowStatus Status);
 
-public partial class DownloaderForm : Window
+public partial class DownloaderWindow : Window
 {
     public delegate void DownloaderInstallEventHandler(string filePath);
     public event DownloaderInstallEventHandler? InstallRequested;
@@ -38,17 +38,17 @@ public partial class DownloaderForm : Window
     public bool AutoStartDownload { get; set; } = true;
     public InstallType InstallType { get; set; } = InstallType.Silent;
     public bool AutoStartInstall { get; set; } = true;
-    public DownloaderFormStatus Status { get; private set; } = DownloaderFormStatus.Waiting;
+    public DownloaderWindowStatus Status { get; private set; } = DownloaderWindowStatus.Waiting;
     public bool RunInstallerInBackground { get; set; } = true;
 
     private FileDownloader? _fileDownloader;
     private DialogResult _result;
 
-    public DownloaderForm() : this(string.Empty, string.Empty)
+    public DownloaderWindow() : this(string.Empty, string.Empty)
     {
     }
 
-    private DownloaderForm(string url, string fileName)
+    private DownloaderWindow(string url, string fileName)
     {
         URL = url;
         FileName = fileName;
@@ -63,39 +63,39 @@ public partial class DownloaderForm : Window
         Closing += OnClosing;
     }
 
-    public static Task<DownloaderFormResult> ShowAsync(
+    public static Task<DownloaderWindowResult> ShowAsync(
         string url,
         string fileName,
-        Action<DownloaderForm>? configure = null)
+        Action<DownloaderWindow>? configure = null)
     {
-        return ShowAsyncCore(() => new DownloaderForm(url, fileName), configure);
+        return ShowAsyncCore(() => new DownloaderWindow(url, fileName), configure);
     }
 
-    public static Task<DownloaderFormResult> ShowAsync(UpdateChecker updateChecker)
+    public static Task<DownloaderWindowResult> ShowAsync(UpdateChecker updateChecker)
     {
-        return ShowAsyncCore(() => new DownloaderForm(updateChecker.DownloadURL, updateChecker.FileName), form =>
+        return ShowAsyncCore(() => new DownloaderWindow(updateChecker.DownloadURL, updateChecker.FileName), window =>
         {
             if (updateChecker is GitHubUpdateChecker)
             {
-                form.AcceptHeader = "application/octet-stream";
+                window.AcceptHeader = "application/octet-stream";
             }
         });
     }
 
-    private static Task<DownloaderFormResult> ShowAsyncCore(
-        Func<DownloaderForm> createWindow,
-        Action<DownloaderForm>? configure)
+    private static Task<DownloaderWindowResult> ShowAsyncCore(
+        Func<DownloaderWindow> createWindow,
+        Action<DownloaderWindow>? configure)
     {
         AvaloniaBootstrapper.EnsureInitialized();
-        TaskCompletionSource<DownloaderFormResult> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        TaskCompletionSource<DownloaderWindowResult> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
 
         Dispatcher.UIThread.Post(() =>
         {
             try
             {
-                DownloaderForm window = createWindow();
+                DownloaderWindow window = createWindow();
                 configure?.Invoke(window);
-                window.Closed += (_, _) => completion.TrySetResult(new DownloaderFormResult(window._result, window.Status));
+                window.Closed += (_, _) => completion.TrySetResult(new DownloaderWindowResult(window._result, window.Status));
                 window.Show();
             }
             catch (Exception exception)
@@ -109,9 +109,9 @@ public partial class DownloaderForm : Window
 
     public void Install()
     {
-        if (Status != DownloaderFormStatus.DownloadCompleted) return;
+        if (Status != DownloaderWindowStatus.DownloadCompleted) return;
 
-        Status = DownloaderFormStatus.InstallStarted;
+        Status = DownloaderWindowStatus.InstallStarted;
         _result = DialogResult.OK;
         ActionButton.IsEnabled = false;
         RunInstallerWithDelay();
@@ -128,11 +128,11 @@ public partial class DownloaderForm : Window
 
     private async void OnActionClick(object? sender, RoutedEventArgs e)
     {
-        if (Status == DownloaderFormStatus.Waiting)
+        if (Status == DownloaderWindowStatus.Waiting)
         {
             await StartDownloadAsync();
         }
-        else if (Status == DownloaderFormStatus.DownloadCompleted)
+        else if (Status == DownloaderWindowStatus.DownloadCompleted)
         {
             Install();
         }
@@ -145,7 +145,7 @@ public partial class DownloaderForm : Window
 
     private void OnClosing(object? sender, WindowClosingEventArgs e)
     {
-        if (Status == DownloaderFormStatus.DownloadStarted)
+        if (Status == DownloaderWindowStatus.DownloadStarted)
         {
             _fileDownloader?.StopDownload();
         }
@@ -153,9 +153,9 @@ public partial class DownloaderForm : Window
 
     private async Task StartDownloadAsync()
     {
-        if (string.IsNullOrEmpty(URL) || Status != DownloaderFormStatus.Waiting) return;
+        if (string.IsNullOrEmpty(URL) || Status != DownloaderWindowStatus.Waiting) return;
 
-        Status = DownloaderFormStatus.DownloadStarted;
+        Status = DownloaderWindowStatus.DownloadStarted;
         ActionButton.Content = LocalizedResources.DownloaderForm_StartDownload_Cancel;
         DownloadProgress.Value = 0;
 
@@ -180,7 +180,7 @@ public partial class DownloaderForm : Window
             if (!completed) return;
 
             ChangeStatus(LocalizedResources.DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_);
-            Status = DownloaderFormStatus.DownloadCompleted;
+            Status = DownloaderWindowStatus.DownloadCompleted;
             ActionButton.Content = LocalizedResources.DownloaderForm_fileDownloader_DownloadCompleted_Install;
 
             if (AutoStartInstall)

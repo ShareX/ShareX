@@ -94,9 +94,9 @@ namespace ShareX.HelpersLib
             }
             else
             {
-                DownloaderFormResult result = await DownloaderForm.ShowAsync(this);
+                DownloaderWindowResult result = await DownloaderWindow.ShowAsync(this);
 
-                if (result.Status == DownloaderFormStatus.InstallStarted)
+                if (result.Status == DownloaderWindowStatus.InstallStarted)
                 {
                     Application.Exit();
                 }

@@ -108,7 +108,7 @@ public partial class AboutWindow : Window
             return;
         }
 
-        await UpdateMessageBox.StartAsync(_updateChecker);
+        await UpdateMessageWindow.StartAsync(_updateChecker);
     }
 
     private static IReadOnlyList<AboutSection> CreateSections()
