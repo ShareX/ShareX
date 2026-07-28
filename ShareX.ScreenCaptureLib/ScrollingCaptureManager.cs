@@ -91,12 +91,12 @@ namespace ShareX.ScreenCaptureLib
                 bestIgnoreBottomOffset = 0;
                 Reset();
 
-                ScrollingCaptureRegionForm regionForm = null;
+                ScrollingCaptureRegionWindow regionWindow = null;
 
                 if (Options.ShowRegion)
                 {
-                    regionForm = new ScrollingCaptureRegionForm(selectedRectangle);
-                    regionForm.Show();
+                    regionWindow = new ScrollingCaptureRegionWindow(selectedRectangle);
+                    regionWindow.Show();
                 }
 
                 try
@@ -192,7 +192,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 finally
                 {
-                    regionForm?.Close();
+                    regionWindow?.Close();
 
                     Reset(true);
                     IsCapturing = false;

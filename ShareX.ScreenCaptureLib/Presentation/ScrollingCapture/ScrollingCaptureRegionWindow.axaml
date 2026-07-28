@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:ShareX.ScreenCaptureLib"
+        mc:Ignorable="d"
+        d:DesignWidth="640"
+        d:DesignHeight="420"
+        x:Class="ShareX.ScreenCaptureLib.ScrollingCaptureRegionWindow"
+        Title="ShareX - Scrolling capture"
+        Width="640"
+        Height="420"
+        CanResize="False"
+        ShowInTaskbar="False"
+        ShowActivated="False"
+        Topmost="True"
+        WindowDecorations="None"
+        TransparencyLevelHint="Transparent"
+        Background="Transparent">
+
+    <local:RecordingRegionBorder x:Name="RegionBorder"
+                                 AccentBrush="Lime"
+                                 IsHitTestVisible="False"/>
+</Window>
