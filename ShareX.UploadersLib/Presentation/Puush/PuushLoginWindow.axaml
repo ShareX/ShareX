@@ -3,9 +3,8 @@
         x:Class="ShareX.UploadersLib.PuushLoginWindow"
         Title="ShareX - puush login"
         Width="440"
-        Height="340"
         MinWidth="400"
-        MinHeight="310"
+        SizeToContent="Height"
         CanResize="False"
         Background="{DynamicResource ShareX.Brush.Background.Main}"
         WindowStartupLocation="CenterScreen">
@@ -37,7 +36,7 @@
     </Window.Styles>
 
     <ThemeVariantScope>
-        <Grid RowDefinitions="*,Auto"
+        <Grid RowDefinitions="Auto,Auto"
               RowSpacing="12"
               Margin="16"
               Background="{DynamicResource ShareX.Brush.Background.Main}">
