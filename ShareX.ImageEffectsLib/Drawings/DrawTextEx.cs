@@ -74,7 +74,6 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(false)]
         public bool UseGradient { get; set; }
 
-        [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
         public GradientInfo Gradient { get; set; }
 
         [DefaultValue(false)]
@@ -89,7 +88,6 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(false)]
         public bool OutlineUseGradient { get; set; }
 
-        [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
         public GradientInfo OutlineGradient { get; set; }
 
         [DefaultValue(false)]
@@ -104,7 +102,6 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(false)]
         public bool ShadowUseGradient { get; set; }
 
-        [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
         public GradientInfo ShadowGradient { get; set; }
 
         public DrawTextEx()

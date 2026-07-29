@@ -39,7 +39,6 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(false)]
         public bool UseGradient { get; set; }
 
-        [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
         public GradientInfo Gradient { get; set; }
 
         public DrawBackground()
