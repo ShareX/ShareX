@@ -40,11 +40,7 @@ namespace ShareX.UploadersLib
 
             if (values.Length > 0)
             {
-                using (ParserSelectForm form = new ParserSelectForm(values))
-                {
-                    form.ShowDialog();
-                    return form.SelectedText;
-                }
+                return ParserSelectWindowIntegration.Show(values);
             }
 
             return null;
