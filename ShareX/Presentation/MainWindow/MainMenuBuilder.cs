@@ -389,7 +389,7 @@ internal sealed class MainMenuBuilder
     {
         return Helpers.GetEnums<ImageDestination>().Select(value => new MainMenuEntry(
             value.GetLocalizedDescription(),
-            value == ImageDestination.FileUploader ? LucideIcons.file_up : LucideIcons.image,
+            string.Empty,
             () => Program.DefaultTaskSettings.ImageDestination = value,
             createChildren: value == ImageDestination.FileUploader
                 ? () => BuildEnumDestinations(Program.DefaultTaskSettings.ImageFileDestination,
@@ -407,7 +407,7 @@ internal sealed class MainMenuBuilder
     {
         return Helpers.GetEnums<TextDestination>().Select(value => new MainMenuEntry(
             value.GetLocalizedDescription(),
-            value == TextDestination.FileUploader ? LucideIcons.file_up : LucideIcons.file_text,
+            string.Empty,
             () => Program.DefaultTaskSettings.TextDestination = value,
             createChildren: value == TextDestination.FileUploader
                 ? () => BuildEnumDestinations(Program.DefaultTaskSettings.TextFileDestination,
@@ -425,7 +425,7 @@ internal sealed class MainMenuBuilder
     {
         return Helpers.GetEnums<T>().Select(value => new MainMenuEntry(
             value.GetLocalizedDescription(),
-            IconForName(value.ToString()),
+            string.Empty,
             () => setValue(value),
             isChecked: EqualityComparer<T>.Default.Equals(selected, value),
             toggleType: MainMenuToggleType.Radio)).ToArray();

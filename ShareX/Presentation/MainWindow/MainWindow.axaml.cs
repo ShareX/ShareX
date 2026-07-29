@@ -445,7 +445,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             MenuItem item = new()
             {
                 Header = entry.Header,
-                Icon = CreateAccentMenuIcon(entry.Icon, 16),
                 InputGesture = entry.InputGesture,
                 IsEnabled = entry.IsEnabled,
                 IsChecked = entry.IsChecked,
@@ -457,6 +456,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 }
             };
             item.Classes.Add("compact-menu-item");
+
+            if (!string.IsNullOrEmpty(entry.Icon))
+            {
+                item.Icon = CreateAccentMenuIcon(entry.Icon, 16);
+            }
 
             if (entry.CreateChildren != null)
             {
