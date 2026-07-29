@@ -68,7 +68,7 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        [DefaultValue(typeof(Color), "235, 235, 235"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "235, 235, 235")]
         public Color Color { get; set; }
 
         [DefaultValue(false)]
@@ -82,7 +82,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(5)]
         public int OutlineSize { get; set; }
 
-        [DefaultValue(typeof(Color), "235, 0, 0"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "235, 0, 0")]
         public Color OutlineColor { get; set; }
 
         [DefaultValue(false)]
@@ -96,7 +96,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Point), "0, 5")]
         public Point ShadowOffset { get; set; }
 
-        [DefaultValue(typeof(Color), "125, 0, 0, 0"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "125, 0, 0, 0")]
         public Color ShadowColor { get; set; }
 
         [DefaultValue(false)]

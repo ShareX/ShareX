@@ -26,7 +26,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
 
 namespace ShareX.HelpersLib
 {
@@ -36,7 +35,6 @@ namespace ShareX.HelpersLib
 
         private Color backgroundColor;
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor
         {
             get
@@ -51,7 +49,6 @@ namespace ShareX.HelpersLib
 
         private Color lightBackgroundColor;
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color LightBackgroundColor
         {
             get
@@ -66,7 +63,6 @@ namespace ShareX.HelpersLib
 
         private Color darkBackgroundColor;
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color DarkBackgroundColor
         {
             get
@@ -81,7 +77,6 @@ namespace ShareX.HelpersLib
 
         private Color textColor;
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color TextColor
         {
             get
@@ -96,7 +91,6 @@ namespace ShareX.HelpersLib
 
         private Color borderColor;
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BorderColor
         {
             get
@@ -109,27 +103,20 @@ namespace ShareX.HelpersLib
             }
         }
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color CheckerColor { get; set; }
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color CheckerColor2 { get; set; }
 
         public int CheckerSize { get; set; } = 15;
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color LinkColor { get; set; }
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color MenuHighlightColor { get; set; }
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color MenuHighlightBorderColor { get; set; }
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color MenuBorderColor { get; set; }
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color MenuCheckBackgroundColor { get; set; }
 
         public Font MenuFont { get; set; } = new Font("Segoe UI", 9.75f);
@@ -141,10 +128,8 @@ namespace ShareX.HelpersLib
         [Browsable(false)]
         public double ContextMenuOpacityDouble => ContextMenuOpacity.Clamp(10, 100) / 100d;
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color SeparatorLightColor { get; set; }
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color SeparatorDarkColor { get; set; }
 
         [Browsable(false)]

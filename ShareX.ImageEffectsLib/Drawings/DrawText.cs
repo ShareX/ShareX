@@ -71,13 +71,13 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(TextRenderingHint.SystemDefault), TypeConverter(typeof(EnumProperNameConverter))]
         public TextRenderingHint TextRenderingMode { get; set; }
 
-        [DefaultValue(typeof(Color), "235, 235, 235"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "235, 235, 235")]
         public Color TextColor { get; set; }
 
         [DefaultValue(true)]
         public bool DrawTextShadow { get; set; }
 
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "Black")]
         public Color TextShadowColor { get; set; }
 
         [DefaultValue(typeof(Point), "-1, -1")]
@@ -104,7 +104,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(true)]
         public bool DrawBorder { get; set; }
 
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "Black")]
         public Color BorderColor { get; set; }
 
         [DefaultValue(1)]
@@ -113,7 +113,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(true)]
         public bool DrawBackground { get; set; }
 
-        [DefaultValue(typeof(Color), "42, 47, 56"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "42, 47, 56")]
         public Color BackgroundColor { get; set; }
 
         [DefaultValue(false)]

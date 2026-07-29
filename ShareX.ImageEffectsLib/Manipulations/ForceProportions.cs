@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -73,7 +72,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(ForceProportionsMethod.Grow)]
         public ForceProportionsMethod Method { get; set; } = ForceProportionsMethod.Grow;
 
-        [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "Transparent")]
         public Color GrowFillColor { get; set; } = Color.Transparent;
 
         public override Bitmap Apply(Bitmap bmp)

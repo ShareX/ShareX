@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 
 namespace ShareX.ImageEffectsLib
@@ -55,7 +54,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(DashStyle.Solid), TypeConverter(typeof(EnumProperNameConverter))]
         public DashStyle DashStyle { get; set; }
 
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "Black")]
         public Color Color { get; set; }
 
         [DefaultValue(false)]
