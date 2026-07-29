@@ -352,18 +352,37 @@ internal sealed class MainMenuBuilder
     {
         return new List<MainMenuEntry>
         {
-            Parent("Image uploader", LucideIcons.image, () => BuildImageDestinations()),
-            Parent("Text uploader", LucideIcons.file_text, () => BuildTextDestinations()),
-            Parent("File uploader", LucideIcons.file_up, () => BuildEnumDestinations(
+            Parent(string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_,
+                GetImageUploaderName()), LucideIcons.image, () => BuildImageDestinations()),
+            Parent(string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_,
+                GetTextUploaderName()), LucideIcons.file_text, () => BuildTextDestinations()),
+            Parent(string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_,
+                Program.DefaultTaskSettings.FileDestination.GetLocalizedDescription()), LucideIcons.file_up, () => BuildEnumDestinations(
                 Program.DefaultTaskSettings.FileDestination,
                 value => Program.DefaultTaskSettings.FileDestination = value)),
-            Parent("URL shortener", LucideIcons.link_2, () => BuildEnumDestinations(
+            Parent(string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_,
+                Program.DefaultTaskSettings.URLShortenerDestination.GetLocalizedDescription()), LucideIcons.link_2, () => BuildEnumDestinations(
                 Program.DefaultTaskSettings.URLShortenerDestination,
                 value => Program.DefaultTaskSettings.URLShortenerDestination = value)),
-            Parent("URL sharing service", LucideIcons.globe_2, () => BuildEnumDestinations(
+            Parent(string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
+                Program.DefaultTaskSettings.URLSharingServiceDestination.GetLocalizedDescription()), LucideIcons.globe_2, () => BuildEnumDestinations(
                 Program.DefaultTaskSettings.URLSharingServiceDestination,
                 value => Program.DefaultTaskSettings.URLSharingServiceDestination = value))
         };
+    }
+
+    private static string GetImageUploaderName()
+    {
+        return Program.DefaultTaskSettings.ImageDestination == ImageDestination.FileUploader
+            ? Program.DefaultTaskSettings.ImageFileDestination.GetLocalizedDescription()
+            : Program.DefaultTaskSettings.ImageDestination.GetLocalizedDescription();
+    }
+
+    private static string GetTextUploaderName()
+    {
+        return Program.DefaultTaskSettings.TextDestination == TextDestination.FileUploader
+            ? Program.DefaultTaskSettings.TextFileDestination.GetLocalizedDescription()
+            : Program.DefaultTaskSettings.TextDestination.GetLocalizedDescription();
     }
 
     private static IReadOnlyList<MainMenuEntry> BuildImageDestinations()
