@@ -299,9 +299,9 @@ internal sealed class DestinationSettingsAccounts
             try
             {
                 OAuth2Info info = UploaderOAuthClientFactory.CreateGoogle();
-                using OAuthListenerForm form = new(createOAuth(info));
-                form.ShowDialog();
-                setAccount(form.OAuth2Info, form.UserInfo);
+                OAuthListenerWindowResult? result =
+                    OAuthListenerWindowIntegration.Show(createOAuth(info));
+                setAccount(result?.OAuth2Info, result?.UserInfo);
                 UpdateStatus();
             }
             catch (Exception exception)

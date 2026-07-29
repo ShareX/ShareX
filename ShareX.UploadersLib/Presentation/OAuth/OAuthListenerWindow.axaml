@@ -1,0 +1,48 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ShareX.UploadersLib.OAuthListenerWindow"
+        Title="ShareX - Authorization"
+        Width="500"
+        MinWidth="420"
+        SizeToContent="Height"
+        CanResize="False"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.section-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="16"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="MinWidth" Value="96"/>
+            <Setter Property="Padding" Value="14,5"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope>
+        <Grid RowDefinitions="Auto,Auto"
+              RowSpacing="12"
+              Margin="16"
+              Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Border Classes="section-card">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="Waiting for authorization in your browser to complete..."
+                               TextWrapping="Wrap"/>
+                    <ProgressBar IsIndeterminate="True" Height="5"/>
+                </StackPanel>
+            </Border>
+
+            <Button Grid.Row="1"
+                    Classes="compact"
+                    Content="Cancel"
+                    IsCancel="True"
+                    HorizontalAlignment="Right"
+                    Click="OnCancelClick"/>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
