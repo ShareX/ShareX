@@ -203,8 +203,8 @@ public sealed class MainForm : HotkeyForm
             return;
         }
 
-        using PuushLoginForm puushLoginForm = new();
-        if (puushLoginForm.ShowDialog() != DialogResult.OK)
+        string? puushApiKey = PuushLoginWindowIntegration.Show();
+        if (string.IsNullOrEmpty(puushApiKey))
         {
             return;
         }
@@ -218,7 +218,7 @@ public sealed class MainForm : HotkeyForm
         SettingManager.WaitUploadersConfig();
         if (Program.UploadersConfig != null)
         {
-            Program.UploadersConfig.PuushAPIKey = puushLoginForm.APIKey;
+            Program.UploadersConfig.PuushAPIKey = puushApiKey;
         }
     }
 

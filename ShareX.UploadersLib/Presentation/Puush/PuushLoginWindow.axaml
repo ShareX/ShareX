@@ -1,0 +1,95 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ShareX.UploadersLib.PuushLoginWindow"
+        Title="ShareX - puush login"
+        Width="440"
+        Height="340"
+        MinWidth="400"
+        MinHeight="310"
+        CanResize="False"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="TextBlock.field-label">
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+        <Style Selector="Border.section-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="16"/>
+        </Style>
+        <Style Selector="TextBox.invalid">
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="MinWidth" Value="96"/>
+            <Setter Property="Padding" Value="14,5"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope>
+        <Grid RowDefinitions="*,Auto"
+              RowSpacing="12"
+              Margin="16"
+              Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Border x:Name="CredentialsCard" Classes="section-card">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="11">
+                    <StackPanel>
+                        <TextBlock Classes="field-label" Text="Email"/>
+                        <TextBox x:Name="EmailTextBox"
+                                 PlaceholderText="name@example.com"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Classes="field-label" Text="Password"/>
+                        <TextBox x:Name="PasswordTextBox"
+                                 PasswordChar="●"/>
+                    </StackPanel>
+
+                    <HyperlinkButton Grid.Row="2"
+                                     Content="Forgotten password?"
+                                     HorizontalAlignment="Left"
+                                     HorizontalContentAlignment="Left"
+                                     MinHeight="0"
+                                     Padding="0"
+                                     Click="OnForgotPasswordClick"/>
+
+                    <StackPanel Grid.Row="3" Spacing="6">
+                        <TextBlock x:Name="StatusText"
+                                   IsVisible="False"
+                                   Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                   TextWrapping="Wrap"/>
+                        <ProgressBar x:Name="LoginProgressBar"
+                                     IsVisible="False"
+                                     IsIndeterminate="True"
+                                     Height="4"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal"
+                        Spacing="7"
+                        HorizontalAlignment="Right">
+                <Button x:Name="LoginButton"
+                        Classes="compact primary"
+                        Content="Login"
+                        IsDefault="True"
+                        Click="OnLoginClick"/>
+                <Button Classes="compact"
+                        Content="Cancel"
+                        IsCancel="True"
+                        Click="OnCancelClick"/>
+            </StackPanel>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
