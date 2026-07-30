@@ -8,16 +8,18 @@
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
-using ShareX.HelpersLib;
+using System;
 using DrawingColor = System.Drawing.Color;
 
-namespace ShareX.Tools.Controls;
+namespace ShareX.HelpersLib;
 
 public sealed class AdvancedColorPickerControl : Control
 {

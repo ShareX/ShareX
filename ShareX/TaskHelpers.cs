@@ -859,7 +859,7 @@ namespace ShareX
         public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-            ToolsIntegration.ShowColorPickerWindow(
+            ColorPickerWindowIntegration.Show(
                 taskSettings.CaptureSettingsReference.SurfaceOptions.ColorPickerOptions,
                 taskSettings.ToolsSettingsReference.ScreenColorPickerOptions);
         }

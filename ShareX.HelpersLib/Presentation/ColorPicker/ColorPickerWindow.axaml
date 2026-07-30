@@ -1,8 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="using:ShareX.Tools.Controls"
+        xmlns:controls="using:ShareX.HelpersLib"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
-        x:Class="ShareX.Tools.ColorPickerWindow"
+        x:Class="ShareX.HelpersLib.ColorPickerWindow"
         Title="ShareX - Color picker"
         Width="790" MinWidth="760" SizeToContent="Height"
         WindowStartupLocation="CenterScreen">
@@ -144,6 +144,17 @@
                     </Button>
                     <Button Click="OnClipboardClick">
                         <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}"/><TextBlock Text="Pick color from clipboard"/></StackPanel>
+                    </Button>
+                    <Button x:Name="AcceptButton"
+                            IsVisible="False"
+                            Click="OnAcceptClick">
+                        <TextBlock Text="OK"/>
+                    </Button>
+                    <Button x:Name="CancelButton"
+                            IsVisible="False"
+                            IsCancel="True"
+                            Click="OnCancelClick">
+                        <TextBlock Text="Cancel"/>
                     </Button>
                 </StackPanel>
             </Grid>

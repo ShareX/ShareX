@@ -8,6 +8,8 @@
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -16,36 +18,77 @@ using Avalonia.Interactivity;
 using Avalonia.Media;
 using ShareX.AvaloniaUI.Windows;
 using ShareX.AvaloniaUI.Theming;
-using ShareX.HelpersLib;
-using ShareX.Tools.Controls;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using DrawingColor = System.Drawing.Color;
 
-namespace ShareX.Tools;
+namespace ShareX.HelpersLib;
 
 public partial class ColorPickerWindow : Window
 {
     private readonly ColorPickerOptions _options;
     private readonly ScreenColorPickerOptions _screenColorPickerOptions;
+    private readonly Func<PointInfo>? _openScreenColorPicker;
+    private readonly bool _selectionMode;
     private DrawingColor _currentColor = DrawingColor.Red;
     private DrawingColor _previousColor = DrawingColor.Red;
     private bool _hasPreviousColor;
     private bool _updatingControls;
     private bool _initialized;
 
+    public DrawingColor? SelectedColor { get; private set; }
+
     public ColorPickerWindow() : this(new ColorPickerOptions(), new ScreenColorPickerOptions())
     {
     }
 
-    public ColorPickerWindow(ColorPickerOptions options, ScreenColorPickerOptions screenColorPickerOptions)
+    public ColorPickerWindow(ColorPickerOptions? options, ScreenColorPickerOptions? screenColorPickerOptions)
+        : this(DrawingColor.Red, options, screenColorPickerOptions, null, false)
     {
-        _options = options;
-        _screenColorPickerOptions = screenColorPickerOptions;
+    }
+
+    internal ColorPickerWindow(
+        DrawingColor currentColor,
+        ColorPickerOptions? options,
+        ScreenColorPickerOptions? screenColorPickerOptions,
+        Func<PointInfo>? openScreenColorPicker)
+        : this(currentColor, options, screenColorPickerOptions, openScreenColorPicker, true)
+    {
+    }
+
+    private ColorPickerWindow(
+        DrawingColor currentColor,
+        ColorPickerOptions? options,
+        ScreenColorPickerOptions? screenColorPickerOptions,
+        Func<PointInfo>? openScreenColorPicker,
+        bool selectionMode)
+    {
+        _options = options ?? new ColorPickerOptions();
+        _screenColorPickerOptions = screenColorPickerOptions ?? new ScreenColorPickerOptions();
+        _openScreenColorPicker = openScreenColorPicker;
+        _selectionMode = selectionMode;
+        _currentColor = currentColor;
+        _previousColor = currentColor;
+        _hasPreviousColor = selectionMode;
+
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        Topmost = selectionMode;
+        ShowInTaskbar = !selectionMode;
+        AcceptButton.IsVisible = selectionMode;
+        CancelButton.IsVisible = selectionMode;
         Picker.ColorChanged += OnPickerColorChanged;
         KeyDown += OnKeyDown;
         Opened += OnOpened;
-        Closed += (_, _) => AddRecentColor(_currentColor);
+        Closed += (_, _) =>
+        {
+            if (!_selectionMode)
+            {
+                AddRecentColor(_currentColor);
+            }
+        };
 
         if (_options.RecentColorsSelected) RecentPalette.IsChecked = true;
         else StandardPalette.IsChecked = true;
@@ -58,6 +101,7 @@ public partial class ColorPickerWindow : Window
     private async void OnOpened(object? sender, EventArgs e)
     {
         Opened -= OnOpened;
+        Activate();
         if (Clipboard == null) return;
         try
         {
@@ -71,7 +115,7 @@ public partial class ColorPickerWindow : Window
         }
         catch (Exception ex)
         {
-            ToolsDiagnostics.ReportWarning(nameof(ColorPickerWindow), "Failed to read a color from the clipboard.", ex);
+            DebugHelper.WriteException(ex, "Failed to read a color from the clipboard.");
         }
     }
 
@@ -161,15 +205,44 @@ public partial class ColorPickerWindow : Window
 
     private async void OnPickScreenClick(object? sender, RoutedEventArgs e)
     {
-        ScreenColorPickerWindow picker = new(_screenColorPickerOptions);
-        ScreenColorPickerResult? result = await picker.PickAsync(this);
+        DrawingColor? selectedColor = null;
 
-        if (result != null)
+        if (_openScreenColorPicker != null)
+        {
+            try
+            {
+                Hide();
+                await Task.Delay(250);
+                PointInfo? pointInfo = _openScreenColorPicker();
+                selectedColor = pointInfo?.Color;
+            }
+            catch (Exception exception)
+            {
+                DebugHelper.WriteException(exception, "Failed to pick a color from the screen.");
+            }
+            finally
+            {
+                Show();
+                Activate();
+            }
+        }
+        else
+        {
+            ScreenColorPickerWindow picker = new(_screenColorPickerOptions);
+            ScreenColorPickerResult? result = await picker.PickAsync(this);
+
+            if (result != null)
+            {
+                Avalonia.Media.Color selected = result.Color;
+                selectedColor = DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B);
+            }
+        }
+
+        if (selectedColor.HasValue)
         {
             _previousColor = _currentColor;
             _hasPreviousColor = true;
-            Avalonia.Media.Color selected = result.Color;
-            SetColor(DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B));
+            SetColor(selectedColor.Value);
             AddRecentColor(_currentColor);
             RebuildPalette();
         }
@@ -190,7 +263,7 @@ public partial class ColorPickerWindow : Window
         }
         catch (Exception ex)
         {
-            ToolsDiagnostics.ReportWarning(nameof(ColorPickerWindow), "Failed to read a color from the clipboard.", ex);
+            DebugHelper.WriteException(ex, "Failed to read a color from the clipboard.");
         }
     }
 
@@ -300,6 +373,15 @@ public partial class ColorPickerWindow : Window
         Close();
         e.Handled = true;
     }
+
+    private void OnAcceptClick(object? sender, RoutedEventArgs e)
+    {
+        SelectedColor = _currentColor;
+        AddRecentColor(_currentColor);
+        Close();
+    }
+
+    private void OnCancelClick(object? sender, RoutedEventArgs e) => Close();
 
     private static int Value(NumericUpDown input) => (int)(input.Value ?? 0);
     private static Avalonia.Media.Color ToAvalonia(DrawingColor color) => Avalonia.Media.Color.FromArgb(color.A, color.R, color.G, color.B);

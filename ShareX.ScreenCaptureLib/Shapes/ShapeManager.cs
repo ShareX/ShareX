@@ -2397,7 +2397,11 @@ namespace ShareX.ScreenCaptureLib
                 openScreenColorPicker = () => RegionCaptureTasks.GetPointInfo(Options);
             }
 
-            return ColorPickerForm.PickColor(currentColor, out newColor, Form, openScreenColorPicker, Options.ColorPickerOptions);
+            return ColorPickerWindowIntegration.PickColor(
+                currentColor,
+                out newColor,
+                Options.ColorPickerOptions,
+                openScreenColorPicker);
         }
 
         public void Dispose()

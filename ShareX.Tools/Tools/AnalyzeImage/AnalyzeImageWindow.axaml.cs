@@ -83,10 +83,10 @@ public partial class AnalyzeImageWindow : Window
 
     private async Task<byte[]?> SelectRegionAsync()
     {
-        WindowState previousState = WindowState;
+        Avalonia.Controls.WindowState previousState = WindowState;
         try
         {
-            WindowState = WindowState.Minimized;
+            WindowState = Avalonia.Controls.WindowState.Minimized;
             await Task.Delay(250);
             return await _captureRegion();
         }

@@ -67,11 +67,6 @@ public static class ToolsIntegration
         Show(() => new ClipboardViewerWindow());
     }
 
-    public static void ShowColorPickerWindow(ColorPickerOptions options, ScreenColorPickerOptions screenColorPickerOptions)
-    {
-        Show(() => new ColorPickerWindow(options, screenColorPickerOptions));
-    }
-
     public static Task<ScreenColorPickerResult?> PickScreenColorAsync(ScreenColorPickerOptions options)
     {
         AvaloniaBootstrapper.EnsureInitialized();

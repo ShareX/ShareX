@@ -167,7 +167,10 @@ namespace ShareX.ScreenCaptureLib
 
         private void tsmiSecondColor_Click(object sender, EventArgs e)
         {
-            ColorPickerForm.PickColor(Options.Color2, out Color newColor, this, null, ColorPickerOptions);
+            ColorPickerWindowIntegration.PickColor(
+                Options.Color2,
+                out Color newColor,
+                ColorPickerOptions);
             Options.Color2 = newColor;
             if (tsmiSecondColor.Image != null) tsmiSecondColor.Image.Dispose();
             tsmiSecondColor.Image = ImageHelpers.CreateColorPickerIcon(Options.Color2, new Rectangle(0, 0, 16, 16));
