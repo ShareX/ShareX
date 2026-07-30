@@ -228,13 +228,29 @@ public partial class ColorPickerWindow : Window
         }
         else
         {
-            ScreenColorPickerWindow picker = new(_screenColorPickerOptions);
-            ScreenColorPickerResult? result = await picker.PickAsync(this);
-
-            if (result != null)
+            Avalonia.Controls.WindowState previousWindowState = WindowState;
+            try
             {
-                Avalonia.Media.Color selected = result.Color;
-                selectedColor = DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B);
+                WindowState = Avalonia.Controls.WindowState.Minimized;
+                await Task.Delay(250);
+
+                ScreenColorPickerWindow picker = new(_screenColorPickerOptions);
+                ScreenColorPickerResult? result = await picker.PickAsync();
+
+                if (result != null)
+                {
+                    Avalonia.Media.Color selected = result.Color;
+                    selectedColor = DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B);
+                }
+            }
+            catch (Exception exception)
+            {
+                DebugHelper.WriteException(exception, "Failed to pick a color from the screen.");
+            }
+            finally
+            {
+                WindowState = previousWindowState;
+                Activate();
             }
         }
 
