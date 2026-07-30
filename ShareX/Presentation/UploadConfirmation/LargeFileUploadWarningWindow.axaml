@@ -1,0 +1,66 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.LargeFileUploadWarningWindow"
+        Title="ShareX - Large file upload"
+        Width="440"
+        MinWidth="360"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMaximize="False"
+        Topmost="True"
+        ShowInTaskbar="False"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Button.compact">
+            <Setter Property="MinWidth" Value="96"/>
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="Padding" Value="14,5"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope>
+        <Grid RowDefinitions="Auto,Auto,Auto"
+              RowSpacing="16"
+              Margin="18"
+              Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                <TextBlock Classes="icon"
+                           Text="{x:Static theming:LucideIcons.triangle_alert}"
+                           FontSize="24"
+                           Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                           VerticalAlignment="Top"/>
+                <TextBlock x:Name="MessageText"
+                           Grid.Column="1"
+                           FontSize="15"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Center"/>
+            </Grid>
+
+            <CheckBox x:Name="DontShowAgainCheckBox"
+                      Grid.Row="1"
+                      Margin="36,0,0,0"
+                      Content="Don't show this message again."/>
+
+            <StackPanel Grid.Row="2"
+                        Orientation="Horizontal"
+                        Spacing="7"
+                        HorizontalAlignment="Right">
+                <Button Classes="compact primary"
+                        Content="Continue"
+                        IsDefault="True"
+                        Click="OnContinueClick"/>
+                <Button Classes="compact"
+                        Content="Cancel"
+                        IsCancel="True"
+                        Click="OnCancelClick"/>
+            </StackPanel>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

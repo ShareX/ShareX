@@ -79,14 +79,9 @@ namespace ShareX
         {
             if (Program.Settings.ShowMultiUploadWarning)
             {
-                using (MyMessageBox msgbox = new MyMessageBox(string.Format(Resources.UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_, length),
-                    "ShareX - " + Resources.UploadManager_IsUploadConfirmed_Upload_files,
-                    MessageBoxButtons.YesNo, Resources.UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_))
-                {
-                    msgbox.ShowDialog();
-                    Program.Settings.ShowMultiUploadWarning = !msgbox.IsChecked;
-                    return msgbox.DialogResult == DialogResult.Yes;
-                }
+                MultiUploadConfirmationResult result = MultiUploadConfirmationWindowIntegration.Show(length);
+                Program.Settings.ShowMultiUploadWarning = !result.DontShowAgain;
+                return result.IsConfirmed;
             }
 
             return true;
