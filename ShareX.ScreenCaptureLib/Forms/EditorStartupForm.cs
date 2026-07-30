@@ -106,7 +106,7 @@ namespace ShareX.ScreenCaptureLib
                 inputText = text;
             }
 
-            string url = InputBox.Show(Resources.ImageURL, inputText);
+            string url = InputBoxWindowIntegration.Show(Resources.ImageURL, inputText);
 
             if (!string.IsNullOrEmpty(url))
             {

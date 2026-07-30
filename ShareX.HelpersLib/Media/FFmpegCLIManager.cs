@@ -92,7 +92,7 @@ namespace ShareX.HelpersLib
             bool result = errorCode == 0;
             if (!result && ShowError)
             {
-                OutputBox.Show(Output.ToString(), "FFmpeg error", true);
+                OutputBoxWindowIntegration.Show(Output.ToString(), "FFmpeg error", true);
             }
             return result;
         }

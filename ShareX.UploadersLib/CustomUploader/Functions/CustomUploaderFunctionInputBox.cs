@@ -51,7 +51,7 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            return InputBox.Show(title, defaultText);
+            return InputBoxWindowIntegration.Show(title, defaultText);
         }
     }
 }

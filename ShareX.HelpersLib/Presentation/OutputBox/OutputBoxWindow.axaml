@@ -1,0 +1,64 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ShareX.HelpersLib.OutputBoxWindow"
+        Width="900"
+        Height="650"
+        MinWidth="520"
+        MinHeight="360"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.output-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="1"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="MinWidth" Value="96"/>
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="Padding" Value="14,5"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope>
+        <Grid RowDefinitions="*,Auto"
+              RowSpacing="10"
+              Margin="12"
+              Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Border Classes="output-card">
+                <TextBox x:Name="OutputTextBox"
+                         IsReadOnly="True"
+                         AcceptsReturn="True"
+                         TextWrapping="NoWrap"
+                         FontFamily="Cascadia Mono, Consolas, monospace"
+                         FontSize="12"
+                         BorderThickness="0"
+                         Padding="10"
+                         VerticalContentAlignment="Top"
+                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+            </Border>
+
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal"
+                        Spacing="7"
+                        HorizontalAlignment="Right">
+                <Button Classes="compact"
+                        Content="Copy all"
+                        Click="OnCopyAllClick"/>
+                <Button Classes="compact primary"
+                        Content="Close"
+                        IsDefault="True"
+                        IsCancel="True"
+                        Click="OnCloseClick"/>
+            </StackPanel>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

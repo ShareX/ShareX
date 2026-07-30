@@ -56,7 +56,7 @@ namespace ShareX.UploadersLib
                     title = "Output";
                 }
 
-                OutputBox.Show(text, title);
+                OutputBoxWindowIntegration.Show(text, title);
             }
 
             return null;

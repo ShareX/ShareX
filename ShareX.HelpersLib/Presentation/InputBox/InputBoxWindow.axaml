@@ -1,0 +1,59 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ShareX.HelpersLib.InputBoxWindow"
+        Width="520"
+        MinWidth="384"
+        MaxWidth="1000"
+        SizeToContent="Height"
+        CanResize="True"
+        Topmost="True"
+        ShowInTaskbar="False"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.input-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="14"/>
+        </Style>
+        <Style Selector="Button.compact">
+            <Setter Property="MinWidth" Value="96"/>
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="Padding" Value="14,5"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope>
+        <Grid RowDefinitions="Auto,Auto"
+              RowSpacing="12"
+              Margin="16"
+              Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Border Classes="input-card">
+                <TextBox x:Name="InputTextBox"
+                         MinHeight="36"
+                         VerticalContentAlignment="Center"/>
+            </Border>
+
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal"
+                        Spacing="7"
+                        HorizontalAlignment="Right">
+                <Button x:Name="OKButton"
+                        Classes="compact primary"
+                        IsDefault="True"
+                        Click="OnOKClick"/>
+                <Button x:Name="CancelButton"
+                        Classes="compact"
+                        IsCancel="True"
+                        Click="OnCancelClick"/>
+            </StackPanel>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
