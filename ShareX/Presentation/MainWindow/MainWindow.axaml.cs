@@ -933,7 +933,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                         string[] images = ThumbnailItems.Select(x => x.Task.Info?.FilePath)
                             .Where(x => !string.IsNullOrEmpty(x) && File.Exists(x) && FileHelpers.IsImageFile(x))
                             .Cast<string>().ToArray();
-                        ImageViewer.ShowImage(images, Math.Max(0, Array.IndexOf(images, filePath)));
+                        ImageViewerWindowIntegration.ShowImage(
+                            images,
+                            Math.Max(0, Array.IndexOf(images, filePath)));
                     }
                     else
                     {
@@ -944,7 +946,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             case ThumbnailViewClickAction.OpenImageViewer:
                 if (File.Exists(filePath) && FileHelpers.IsImageFile(filePath))
                 {
-                    ImageViewer.ShowImage(filePath);
+                    ImageViewerWindowIntegration.ShowImage(filePath);
                 }
                 break;
             case ThumbnailViewClickAction.OpenFile:

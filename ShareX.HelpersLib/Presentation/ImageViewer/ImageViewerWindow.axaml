@@ -2,28 +2,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="using:ShareX.Tools"
-        xmlns:controls="using:ShareX.Tools.Controls"
+        xmlns:vm="using:ShareX.HelpersLib"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
-        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="760"
-        x:Class="ShareX.Tools.ImageViewerWindow"
+        mc:Ignorable="d"
+        d:DesignWidth="1200"
+        d:DesignHeight="760"
+        x:Class="ShareX.HelpersLib.ImageViewerWindow"
         x:DataType="vm:ImageViewerViewModel"
         Title="ShareX - Image Viewer"
         WindowState="FullScreen"
         WindowDecorations="None"
         CanResize="False"
+        CanMaximize="False"
         Topmost="True">
 
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Border Background="{DynamicResource ShareX.Brush.Background.Main}"
-                    PointerReleased="OnPreviewPointerReleased"/>
-
-            <controls:ImageComparisonSlider LeftImage="{Binding CurrentImage}"
-                                            StretchDirection="DownOnly"
-                                            CheckerboardBrush="{DynamicResource ShareX.Brush.Checkered}"
-                                            PointerReleased="OnPreviewPointerReleased"
-                                            PointerWheelChanged="OnPreviewPointerWheelChanged"/>
+            <Border Background="{DynamicResource ShareX.Brush.Checkered}"
+                    PointerReleased="OnPreviewPointerReleased"
+                    PointerWheelChanged="OnPreviewPointerWheelChanged">
+                <Image Source="{Binding CurrentImage}"
+                       Stretch="Uniform"
+                       StretchDirection="DownOnly"/>
+            </Border>
 
             <Border Classes="tool-panel"
                     Padding="10,7"
@@ -34,22 +35,30 @@
                 <TextBlock Text="{Binding StatusText}" FontWeight="Normal"/>
             </Border>
 
-            <Button Width="72" Height="96" Margin="20"
-                    HorizontalAlignment="Left" VerticalAlignment="Center"
+            <Button Width="72"
+                    Height="96"
+                    Margin="20"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
                     IsVisible="{Binding CanNavigateLeft}"
                     Click="OnPreviousClick">
                 <TextBlock Text="{x:Static theming:LucideIcons.chevron_left}"
                            FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                           FontWeight="Normal" FontSize="38"/>
+                           FontWeight="Normal"
+                           FontSize="38"/>
             </Button>
 
-            <Button Width="72" Height="96" Margin="20"
-                    HorizontalAlignment="Right" VerticalAlignment="Center"
+            <Button Width="72"
+                    Height="96"
+                    Margin="20"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
                     IsVisible="{Binding CanNavigateRight}"
                     Click="OnNextClick">
                 <TextBlock Text="{x:Static theming:LucideIcons.chevron_right}"
                            FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                           FontWeight="Normal" FontSize="38"/>
+                           FontWeight="Normal"
+                           FontSize="38"/>
             </Button>
         </Grid>
     </ThemeVariantScope>

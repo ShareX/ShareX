@@ -844,7 +844,7 @@ namespace ShareX
                     AnalyzeImage = filePath => AnalyzeImage(filePath),
                     ShowImage = filePath => OpenImageViewer(filePath),
                     ShowImages = (filePaths, selectedIndex) =>
-                        ToolsIntegration.ShowImageViewerWindow(filePaths, selectedIndex)
+                        ImageViewerWindowIntegration.ShowImage(filePaths, selectedIndex)
                 });
         }
 
@@ -1691,14 +1691,14 @@ namespace ShareX
 
         public static void OpenImageViewer()
         {
-            ToolsIntegration.ShowImageViewerWindow();
+            ImageViewerWindowIntegration.ShowImage();
         }
 
         public static void OpenImageViewer(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
-                ToolsIntegration.ShowImageViewerWindow(filePath);
+                ImageViewerWindowIntegration.ShowImage(filePath);
             }
         }
 

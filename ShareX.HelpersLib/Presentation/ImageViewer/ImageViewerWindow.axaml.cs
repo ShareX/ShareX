@@ -3,14 +3,11 @@
 /*
     ShareX - A program that allows you to take screenshots and share any file type
     Copyright (c) 2007-2026 ShareX Team
-
-    This program is free software; you can redistribute it and/or
-    modify it under the terms of the GNU General Public License
-    as published by the Free Software Foundation; either version 2
-    of the License, or (at your option) any later version.
 */
 
 #endregion License Information (GPL v3)
+
+#nullable enable
 
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -18,8 +15,12 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace ShareX.Tools;
+namespace ShareX.HelpersLib;
 
 public partial class ImageViewerWindow : Window
 {
@@ -55,6 +56,7 @@ public partial class ImageViewerWindow : Window
         DataContext = _viewModel;
         AvaloniaXamlLoader.Load(this);
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        Title = Properties.Resources.ShareXImageViewer;
         KeyDown += OnKeyDown;
         Deactivated += OnDeactivated;
         Closed += (_, _) => _viewModel.Dispose();

@@ -278,7 +278,7 @@ public partial class BeforeUploadWindow : Window
         if (_sourceImage != null &&
             e.GetCurrentPoint(PreviewSurface).Properties.PointerUpdateKind == PointerUpdateKind.LeftButtonPressed)
         {
-            ImageViewer.ShowImage(_sourceImage);
+            ImageViewerWindowIntegration.ShowImage(_sourceImage);
             e.Handled = true;
         }
     }

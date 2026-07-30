@@ -18,6 +18,7 @@ using Avalonia.Input.Platform;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.HelpersLib;
 
 namespace ShareX.Tools;
 
@@ -134,7 +135,7 @@ public partial class AnalyzeImageWindow : Window
             return;
         }
 
-        new ImageViewerWindow(data, _viewModel.ImageDescription).Show(this);
+        ImageViewerWindowIntegration.ShowImage(data, _viewModel.ImageDescription, this);
         e.Handled = true;
     }
 }

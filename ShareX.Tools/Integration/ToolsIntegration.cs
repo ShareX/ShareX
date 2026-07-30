@@ -109,18 +109,6 @@ public static class ToolsIntegration
         Show(() => new ImageComparerWindow());
     }
 
-    public static void ShowImageViewerWindow(string? filePath = null)
-    {
-        Show(() => string.IsNullOrWhiteSpace(filePath)
-            ? new ImageViewerWindow()
-            : new ImageViewerWindow(filePath));
-    }
-
-    public static void ShowImageViewerWindow(IReadOnlyList<string> filePaths, int selectedIndex)
-    {
-        Show(() => new ImageViewerWindow(filePaths, selectedIndex));
-    }
-
     public static void ShowInspectWindowWindow()
     {
         Show(() => new InspectWindowWindow());

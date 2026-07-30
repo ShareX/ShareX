@@ -383,7 +383,7 @@ namespace ShareX.HelpersLib
             if (FullscreenOnClick && e.Button == MouseButtons.Left && IsValidImage)
             {
                 pbMain.Enabled = false;
-                ImageViewer.ShowImage(Image);
+                ImageViewerWindowIntegration.ShowImage(Image);
                 pbMain.Enabled = true;
             }
         }

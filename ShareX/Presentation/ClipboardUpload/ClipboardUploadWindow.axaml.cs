@@ -148,7 +148,7 @@ public partial class ClipboardUploadWindow : Window
         if (e.GetCurrentPoint(ImagePreviewContainer).Properties.PointerUpdateKind == PointerUpdateKind.LeftButtonPressed &&
             _clipboardContent is DrawingBitmap image)
         {
-            ImageViewer.ShowImage(image);
+            ImageViewerWindowIntegration.ShowImage(image);
             e.Handled = true;
         }
     }

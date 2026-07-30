@@ -16,6 +16,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.HelpersLib;
 
 namespace ShareX.Tools;
 
@@ -35,7 +36,7 @@ public partial class ClipboardViewerWindow : Window
     {
         if (e.GetCurrentPoint(this).Properties.IsLeftButtonPressed && _viewModel.PreviewImageData is { Length: > 0 } imageData)
         {
-            new ImageViewerWindow(imageData, _viewModel.SelectedFormat).Show();
+            ImageViewerWindowIntegration.ShowImage(imageData, _viewModel.SelectedFormat);
             e.Handled = true;
         }
     }

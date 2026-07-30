@@ -26,11 +26,10 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
-using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform.Storage;
-using ShareX.Tools;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.HelpersLib;
 
 namespace ShareX.Tools;
 
@@ -163,8 +162,7 @@ public partial class QRCodeWindow : Window
 
         using MemoryStream stream = new MemoryStream();
         _viewModel.PreviewImage.Save(stream, PngBitmapEncoderOptions.Default);
-        ImageViewerWindow viewer = new ImageViewerWindow(stream.ToArray(), "QR Code");
-        viewer.Show(this);
+        ImageViewerWindowIntegration.ShowImage(stream.ToArray(), "QR Code", this);
         e.Handled = true;
     }
 }

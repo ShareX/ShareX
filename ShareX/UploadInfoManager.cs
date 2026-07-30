@@ -342,7 +342,10 @@ namespace ShareX
 
         public void ShowImagePreview()
         {
-            if (IsItemSelected && SelectedItem.IsImageFile) ImageViewer.ShowImage(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsImageFile)
+            {
+                ImageViewerWindowIntegration.ShowImage(SelectedItem.Info.FilePath);
+            }
         }
 
         public void ShowErrors()

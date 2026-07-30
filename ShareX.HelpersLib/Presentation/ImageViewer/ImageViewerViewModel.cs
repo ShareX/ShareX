@@ -3,36 +3,77 @@
 /*
     ShareX - A program that allows you to take screenshots and share any file type
     Copyright (c) 2007-2026 ShareX Team
-
-    This program is free software; you can redistribute it and/or
-    modify it under the terms of the GNU General Public License
-    as published by the Free Software Foundation; either version 2
-    of the License, or (at your option) any later version.
 */
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
 using Avalonia.Media.Imaging;
-using CommunityToolkit.Mvvm.ComponentModel;
-using ShareX.HelpersLib;
-using ShareX.Tools.Infrastructure;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Runtime.CompilerServices;
 
-namespace ShareX.Tools;
+namespace ShareX.HelpersLib;
 
-public sealed partial class ImageViewerViewModel : ViewModelBase, IDisposable
+public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
 {
     private string[] _images = [];
     private int _currentImageIndex;
-
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(HasImage))]
     private Bitmap? _currentImage;
-
-    [ObservableProperty]
     private string? _currentImageFilePath;
-
-    [ObservableProperty]
     private string _statusText = string.Empty;
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    public Bitmap? CurrentImage
+    {
+        get => _currentImage;
+        private set
+        {
+            if (ReferenceEquals(_currentImage, value))
+            {
+                return;
+            }
+
+            _currentImage = value;
+            OnPropertyChanged();
+            OnPropertyChanged(nameof(HasImage));
+        }
+    }
+
+    public string? CurrentImageFilePath
+    {
+        get => _currentImageFilePath;
+        private set
+        {
+            if (_currentImageFilePath == value)
+            {
+                return;
+            }
+
+            _currentImageFilePath = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public string StatusText
+    {
+        get => _statusText;
+        private set
+        {
+            if (_statusText == value)
+            {
+                return;
+            }
+
+            _statusText = value;
+            OnPropertyChanged();
+        }
+    }
 
     public bool SupportWrap { get; set; }
     public bool HasImage => CurrentImage != null;
@@ -65,13 +106,27 @@ public sealed partial class ImageViewerViewModel : ViewModelBase, IDisposable
 
     public bool LoadFiles(IReadOnlyList<string> filePaths, int selectedIndex)
     {
-        _images = filePaths.Where(path => File.Exists(path) && FileHelpers.IsImageFile(path)).ToArray();
+        string? selectedPath = selectedIndex >= 0 && selectedIndex < filePaths.Count
+            ? filePaths[selectedIndex]
+            : null;
+
+        _images = filePaths
+            .Where(path => File.Exists(path) && FileHelpers.IsImageFile(path))
+            .ToArray();
         if (_images.Length == 0)
         {
             return false;
         }
 
-        _currentImageIndex = Math.Clamp(selectedIndex, 0, _images.Length - 1);
+        _currentImageIndex = selectedPath == null
+            ? 0
+            : Array.FindIndex(_images,
+                path => string.Equals(path, selectedPath, StringComparison.OrdinalIgnoreCase));
+        if (_currentImageIndex < 0)
+        {
+            _currentImageIndex = Math.Clamp(selectedIndex, 0, _images.Length - 1);
+        }
+
         return LoadCurrentImage();
     }
 
@@ -85,17 +140,16 @@ public sealed partial class ImageViewerViewModel : ViewModelBase, IDisposable
         try
         {
             using MemoryStream stream = new(imageData, writable: false);
-            Bitmap image = new(stream);
-            ReplaceImage(image);
+            ReplaceImage(new Bitmap(stream));
             _images = [];
             _currentImageIndex = 0;
             CurrentImageFilePath = displayName;
             UpdateStatus();
             return true;
         }
-        catch (Exception ex)
+        catch (Exception exception)
         {
-            ToolsDiagnostics.ReportWarning(nameof(ImageViewerViewModel), "Failed to load encoded image.", ex);
+            DebugHelper.WriteException(exception, "Failed to load image viewer data.");
             return false;
         }
     }
@@ -138,10 +192,10 @@ public sealed partial class ImageViewerViewModel : ViewModelBase, IDisposable
             UpdateStatus();
             return true;
         }
-        catch (Exception ex)
+        catch (Exception exception)
         {
-            ToolsDiagnostics.ReportWarning(nameof(ImageViewerViewModel),
-                $"Failed to load image '{CurrentImageFilePath}'.", ex);
+            DebugHelper.WriteException(exception,
+                $"Failed to load image '{CurrentImageFilePath}'.");
             return false;
         }
     }
@@ -183,8 +237,12 @@ public sealed partial class ImageViewerViewModel : ViewModelBase, IDisposable
         OnPropertyChanged(nameof(CanNavigateRight));
     }
 
+    private void OnPropertyChanged([CallerMemberName] string? propertyName = null) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
     public void Dispose()
     {
         CurrentImage?.Dispose();
+        CurrentImage = null;
     }
 }
