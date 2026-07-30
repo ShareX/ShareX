@@ -15,6 +15,7 @@
         <Border x:Name="PickerPreview"
             Padding="8"
             CornerRadius="8"
+            Opacity="0"
             Background="{DynamicResource ShareX.Brush.Background.Main}"
             BorderBrush="{DynamicResource ShareX.Brush.Border}"
             BorderThickness="1"

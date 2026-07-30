@@ -241,6 +241,7 @@ namespace ShareX.AvaloniaUI.Windows
             }
 
             MovePreviewNextToCursor(clientPoint);
+            _pickerPreview.Opacity = 1;
         }
 
         private void MovePreviewNextToCursor(Point cursorPosition)
