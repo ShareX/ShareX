@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal partial class TextDrawingInputBox : Form
+    public partial class TextDrawingInputBox : Form
     {
         public string InputText { get; private set; }
         public TextDrawingOptions Options { get; private set; }

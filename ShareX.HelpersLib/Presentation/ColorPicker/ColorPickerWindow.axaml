@@ -5,6 +5,8 @@
         x:Class="ShareX.HelpersLib.ColorPickerWindow"
         Title="ShareX - Color picker"
         Width="790" MinWidth="760" SizeToContent="Height"
+        CanResize="False"
+        CanMaximize="False"
         WindowStartupLocation="CenterScreen">
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
@@ -139,23 +141,30 @@
                 </Border>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="8"
                             HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                    <Button Click="OnPickScreenClick">
-                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pipette}"/><TextBlock Text="Pick color from screen..."/></StackPanel>
+                    <Button Width="38"
+                            Padding="8,4"
+                            ToolTip.Tip="Pick color from screen..."
+                            Click="OnPickScreenClick">
+                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pipette}"/>
                     </Button>
-                    <Button Click="OnClipboardClick">
-                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}"/><TextBlock Text="Pick color from clipboard"/></StackPanel>
+                    <Button Width="38"
+                            Padding="8,4"
+                            ToolTip.Tip="Pick color from clipboard"
+                            Click="OnClipboardClick">
+                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}"/>
                     </Button>
                     <Button x:Name="AcceptButton"
+                            Width="96"
+                            Content="OK"
                             IsVisible="False"
-                            Click="OnAcceptClick">
-                        <TextBlock Text="OK"/>
-                    </Button>
+                            IsDefault="True"
+                            Click="OnAcceptClick"/>
                     <Button x:Name="CancelButton"
+                            Width="96"
+                            Content="Cancel"
                             IsVisible="False"
                             IsCancel="True"
-                            Click="OnCancelClick">
-                        <TextBlock Text="Cancel"/>
-                    </Button>
+                            Click="OnCancelClick"/>
                 </StackPanel>
             </Grid>
         </Grid>
