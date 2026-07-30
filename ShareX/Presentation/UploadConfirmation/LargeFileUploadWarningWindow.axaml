@@ -14,6 +14,13 @@
         WindowStartupLocation="CenterScreen">
 
     <Window.Styles>
+        <Style Selector="Border.message-group">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="14"/>
+        </Style>
         <Style Selector="Button.compact">
             <Setter Property="MinWidth" Value="96"/>
             <Setter Property="MinHeight" Value="32"/>
@@ -26,29 +33,37 @@
     </Window.Styles>
 
     <ThemeVariantScope>
-        <Grid RowDefinitions="Auto,Auto,Auto"
-              RowSpacing="16"
+        <Grid RowDefinitions="Auto,Auto"
+              RowSpacing="12"
               Margin="18"
               Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
-                <TextBlock Classes="icon"
-                           Text="{x:Static theming:LucideIcons.triangle_alert}"
-                           FontSize="24"
-                           Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
-                           VerticalAlignment="Top"/>
-                <TextBlock x:Name="MessageText"
-                           Grid.Column="1"
-                           FontSize="15"
-                           TextWrapping="Wrap"
-                           VerticalAlignment="Center"/>
-            </Grid>
+            <Border Classes="message-group">
+                <Grid RowDefinitions="Auto,Auto"
+                      ColumnDefinitions="Auto,*"
+                      RowSpacing="14"
+                      ColumnSpacing="16">
+                    <TextBlock Classes="icon"
+                               Grid.RowSpan="2"
+                               Text="{x:Static theming:LucideIcons.triangle_alert}"
+                               FontSize="32"
+                               Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"/>
+                    <TextBlock x:Name="MessageText"
+                               Grid.Column="1"
+                               FontSize="15"
+                               FontWeight="Normal"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Center"/>
+                    <CheckBox x:Name="DontShowAgainCheckBox"
+                              Grid.Row="1"
+                              Grid.Column="1"
+                              FontWeight="Normal"
+                              Content="Don't show this message again."/>
+                </Grid>
+            </Border>
 
-            <CheckBox x:Name="DontShowAgainCheckBox"
-                      Grid.Row="1"
-                      Margin="36,0,0,0"
-                      Content="Don't show this message again."/>
-
-            <StackPanel Grid.Row="2"
+            <StackPanel Grid.Row="1"
                         Orientation="Horizontal"
                         Spacing="7"
                         HorizontalAlignment="Right">
