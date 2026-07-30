@@ -2,23 +2,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="ShareX.HelpersLib.InputBoxWindow"
         Width="520"
+        Height="120"
         MinWidth="384"
         MaxWidth="1000"
-        SizeToContent="Height"
+        MinHeight="120"
+        MaxHeight="120"
         CanResize="True"
+        CanMaximize="False"
         Topmost="True"
         ShowInTaskbar="False"
         Background="{DynamicResource ShareX.Brush.Background.Main}"
         WindowStartupLocation="CenterScreen">
 
     <Window.Styles>
-        <Style Selector="Border.input-card">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="CornerRadius" Value="8"/>
-            <Setter Property="Padding" Value="14"/>
-        </Style>
         <Style Selector="Button.compact">
             <Setter Property="MinWidth" Value="96"/>
             <Setter Property="MinHeight" Value="32"/>
@@ -35,11 +31,9 @@
               RowSpacing="12"
               Margin="16"
               Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Border Classes="input-card">
-                <TextBox x:Name="InputTextBox"
-                         MinHeight="36"
-                         VerticalContentAlignment="Center"/>
-            </Border>
+            <TextBox x:Name="InputTextBox"
+                     MinHeight="36"
+                     VerticalContentAlignment="Center"/>
 
             <StackPanel Grid.Row="1"
                         Orientation="Horizontal"

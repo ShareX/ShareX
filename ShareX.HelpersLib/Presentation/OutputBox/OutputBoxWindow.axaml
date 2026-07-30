@@ -9,13 +9,6 @@
         WindowStartupLocation="CenterScreen">
 
     <Window.Styles>
-        <Style Selector="Border.output-card">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="CornerRadius" Value="8"/>
-            <Setter Property="Padding" Value="1"/>
-        </Style>
         <Style Selector="Button.compact">
             <Setter Property="MinWidth" Value="96"/>
             <Setter Property="MinHeight" Value="32"/>
@@ -32,33 +25,28 @@
               RowSpacing="10"
               Margin="12"
               Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Border Classes="output-card">
-                <TextBox x:Name="OutputTextBox"
-                         IsReadOnly="True"
-                         AcceptsReturn="True"
-                         TextWrapping="NoWrap"
-                         FontFamily="Cascadia Mono, Consolas, monospace"
-                         FontSize="12"
-                         BorderThickness="0"
-                         Padding="10"
-                         VerticalContentAlignment="Top"
-                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                         ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-            </Border>
+            <TextBox x:Name="OutputTextBox"
+                     IsReadOnly="True"
+                     AcceptsReturn="True"
+                     TextWrapping="NoWrap"
+                     FontFamily="Cascadia Mono, Consolas, monospace"
+                     FontSize="12"
+                     Padding="10"
+                     VerticalContentAlignment="Top"
+                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 
-            <StackPanel Grid.Row="1"
-                        Orientation="Horizontal"
-                        Spacing="7"
-                        HorizontalAlignment="Right">
+            <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto">
                 <Button Classes="compact"
                         Content="Copy all"
                         Click="OnCopyAllClick"/>
                 <Button Classes="compact primary"
+                        Grid.Column="2"
                         Content="Close"
                         IsDefault="True"
                         IsCancel="True"
                         Click="OnCloseClick"/>
-            </StackPanel>
+            </Grid>
         </Grid>
     </ThemeVariantScope>
 </Window>
