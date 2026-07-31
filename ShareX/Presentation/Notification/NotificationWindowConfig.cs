@@ -53,6 +53,7 @@ namespace ShareX
         public ToastClickAction LeftClickAction { get; set; }
         public ToastClickAction RightClickAction { get; set; }
         public ToastClickAction MiddleClickAction { get; set; }
+        public int ActionButtonSize { get; set; } = 40;
         public List<NotificationActionButton> ActionButtons { get; set; } = NotificationActionButton.CreateDefaultButtons();
 
         public void Dispose()

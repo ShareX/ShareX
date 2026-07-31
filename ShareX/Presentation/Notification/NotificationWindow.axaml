@@ -15,8 +15,8 @@
 
     <Window.Styles>
         <Style Selector="Button.notification-action">
-            <Setter Property="Width" Value="34"/>
-            <Setter Property="Height" Value="34"/>
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
             <Setter Property="Padding" Value="0"/>
             <Setter Property="Margin" Value="3"/>
             <Setter Property="CornerRadius" Value="8"/>

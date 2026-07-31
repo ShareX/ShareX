@@ -318,6 +318,7 @@ namespace ShareX
         public ToastClickAction ToastWindowLeftClickAction = ToastClickAction.OpenUrl;
         public ToastClickAction ToastWindowRightClickAction = ToastClickAction.CloseNotification;
         public ToastClickAction ToastWindowMiddleClickAction = ToastClickAction.AnnotateImage;
+        public int ToastWindowButtonSize = 40;
         public List<NotificationActionButton> ToastWindowButtons = NotificationActionButton.CreateDefaultButtons();
         public bool ToastWindowAutoHide = true;
         public bool DisableNotificationsOnFullscreen = false;

@@ -250,6 +250,8 @@ public partial class NotificationWindow : Window
     private void BuildActionButtons(NotificationWindowConfig config)
     {
         ActionButtons.Children.Clear();
+        int buttonSize = Math.Clamp(config.ActionButtonSize, 16, 128);
+        double iconSize = buttonSize / 2d;
 
         foreach (NotificationActionButton definition in config.ActionButtons ?? [])
         {
@@ -269,7 +271,7 @@ public partial class NotificationWindow : Window
             {
                 Text = icon,
                 FontFamily = (FontFamily)Application.Current!.FindResource("ShareX.FontFamily.Icon")!,
-                FontSize = 16,
+                FontSize = iconSize,
                 HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
                 VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
             };
@@ -278,6 +280,9 @@ public partial class NotificationWindow : Window
             {
                 Content = iconText,
                 Tag = definition,
+                Width = buttonSize,
+                Height = buttonSize,
+                CornerRadius = new CornerRadius(Math.Clamp(buttonSize / 4d, 4, 16)),
                 Classes = { "notification-action" }
             };
             ToolTip.SetTip(button, label);
@@ -292,7 +297,9 @@ public partial class NotificationWindow : Window
 
         bool hasActions = ActionButtons.Children.Count > 0;
         ActionsPanel.IsVisible = hasActions;
-        TextContent.Margin = hasActions ? new Thickness(18, 16, 18, 54) : new Thickness(18, 16);
+        TextContent.Margin = hasActions
+            ? new Thickness(18, 16, 18, buttonSize + 20)
+            : new Thickness(18, 16);
     }
 
     private void OnOpened(object? sender, EventArgs e)
