@@ -113,7 +113,7 @@ public partial class ImageEffectOptionsPanel : UserControl
                 IsChecked = value as bool? ?? false,
                 OnContent = string.Empty,
                 OffContent = string.Empty,
-                HorizontalAlignment = HorizontalAlignment.Right
+                HorizontalAlignment = HorizontalAlignment.Left
             };
             toggle.PropertyChanged += (_, e) =>
             {
@@ -175,12 +175,21 @@ public partial class ImageEffectOptionsPanel : UserControl
             button.Click += async (_, _) =>
             {
                 if (_effect == null) return;
-                GradientInfo gradient = property.GetValue(_effect) as GradientInfo ?? new GradientInfo();
-                if (property.GetValue(_effect) == null) Apply(property, gradient);
+                GradientInfo? existingGradient = property.GetValue(_effect) as GradientInfo;
+                GradientInfo gradient = existingGradient ?? new GradientInfo();
                 if (TopLevel.GetTopLevel(this) is Window owner)
                 {
-                    await new GradientOptionsWindow(gradient).ShowDialog(owner);
-                    NotifyChanged();
+                    if (await new GradientOptionsWindow(gradient).ShowDialog<bool>(owner))
+                    {
+                        if (existingGradient == null)
+                        {
+                            Apply(property, gradient);
+                        }
+                        else
+                        {
+                            NotifyChanged();
+                        }
+                    }
                 }
             };
             return button;

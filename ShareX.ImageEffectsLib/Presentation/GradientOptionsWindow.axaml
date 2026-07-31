@@ -25,10 +25,11 @@
                     </ScrollViewer>
                 </Grid>
             </Border>
-            <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+            <Grid Grid.Row="2" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
                 <TextBlock Text="Stops are rendered from 0% to 100%." FontWeight="Normal"
                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}" VerticalAlignment="Center"/>
-                <Button Grid.Column="1" Content="OK" Click="OnDoneClick"/>
+                <Button Grid.Column="1" Content="OK" Click="OnOkClick"/>
+                <Button Grid.Column="2" Content="Cancel" Click="OnCancelClick"/>
             </Grid>
         </Grid>
         </Grid>

@@ -19,6 +19,7 @@ namespace ShareX.ImageEffectsLib;
 
 public partial class GradientOptionsWindow : Window
 {
+    private readonly GradientInfo _target;
     private readonly GradientInfo _gradient;
     private ComboBox _direction = null!;
     private StackPanel _stopsPanel = null!;
@@ -29,7 +30,8 @@ public partial class GradientOptionsWindow : Window
 
     public GradientOptionsWindow(GradientInfo gradient)
     {
-        _gradient = gradient;
+        _target = gradient;
+        _gradient = gradient.Copy();
         AvaloniaXamlLoader.Load(this);
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         _direction = this.FindControl<ComboBox>("DirectionComboBox")!;
@@ -87,11 +89,15 @@ public partial class GradientOptionsWindow : Window
         RebuildStops();
     }
 
-    private void OnDoneClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    private void OnOkClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         _gradient.Sort();
-        Close();
+        _target.Type = _gradient.Type;
+        _target.Colors = _gradient.Colors.Copy();
+        Close(true);
     }
+
+    private void OnCancelClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e) => Close(false);
 
     private static Avalonia.Media.Color ToAvalonia(DrawingColor color) => Avalonia.Media.Color.FromArgb(color.A, color.R, color.G, color.B);
     private static DrawingColor ToDrawing(Avalonia.Media.Color color) => DrawingColor.FromArgb(color.A, color.R, color.G, color.B);
