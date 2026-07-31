@@ -103,6 +103,23 @@ public partial class ImageEffectsWindow : Window
         }
     }
 
+    private void OnPreviewPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        if (sender is Control previewSurface &&
+            e.GetCurrentPoint(previewSurface).Properties.PointerUpdateKind == PointerUpdateKind.LeftButtonPressed)
+        {
+            byte[]? imageData = ViewModel.GetPreviewImageData();
+            if (imageData != null)
+            {
+                string displayName = string.IsNullOrWhiteSpace(ViewModel.FilePath)
+                    ? "Image effects preview"
+                    : Path.GetFileName(ViewModel.FilePath);
+                ImageViewerWindowIntegration.ShowImage(imageData, displayName, this);
+                e.Handled = true;
+            }
+        }
+    }
+
     private void OnWindowKeyDown(object? sender, KeyEventArgs e)
     {
         if (e.Key == Key.Delete && ViewModel.HasSelectedEffect)

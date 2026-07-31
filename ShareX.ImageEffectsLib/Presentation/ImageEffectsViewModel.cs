@@ -63,6 +63,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
     private readonly ISerializationBinder _serializationBinder = new ImageEffectsSerializationBinder();
     private readonly DispatcherTimer _previewTimer;
     private System.Drawing.Bitmap? _sourceImage;
+    private byte[]? _previewImageData;
     private int _previewVersion;
     private bool _disposed;
 
@@ -393,10 +394,12 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
                 if (result == null || version != _previewVersion || _disposed) return;
                 using MemoryStream stream = new();
                 result.Save(stream, ImageFormat.Png);
-                stream.Position = 0;
-                Avalonia.Media.Imaging.Bitmap preview = new(stream);
+                byte[] previewImageData = stream.ToArray();
+                using MemoryStream previewStream = new(previewImageData);
+                Avalonia.Media.Imaging.Bitmap preview = new(previewStream);
                 Preview?.Dispose();
                 Preview = preview;
+                _previewImageData = previewImageData;
                 PreviewInfo = $"{result.Width} × {result.Height}  •  {timer.ElapsedMilliseconds} ms";
             }
         }
@@ -418,6 +421,8 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         ImageEffectPreset preset = SelectedPreset.Preset.Copy();
         return await Task.Run(() => preset.ApplyEffects(source));
     }
+
+    public byte[]? GetPreviewImageData() => _previewImageData == null ? null : (byte[])_previewImageData.Clone();
 
     public void ImportPreset(string json)
     {
@@ -477,5 +482,6 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         _previewTimer.Stop();
         _sourceImage?.Dispose();
         Preview?.Dispose();
+        _previewImageData = null;
     }
 }

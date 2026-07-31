@@ -84,7 +84,8 @@
                         </Grid>
                     </Border>
                     <Border Grid.Row="1" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"
-                            Background="{DynamicResource ShareX.Brush.Checkered.Small}" CornerRadius="4" ClipToBounds="True">
+                            Background="{DynamicResource ShareX.Brush.Checkered.Small}" CornerRadius="4" ClipToBounds="True"
+                            Cursor="Hand" PointerPressed="OnPreviewPointerPressed">
                         <Grid>
                             <Image Source="{Binding Preview}" Stretch="Uniform" Margin="12" RenderOptions.BitmapInterpolationMode="HighQuality"/>
                             <ProgressBar IsIndeterminate="True" Height="4" VerticalAlignment="Top" IsVisible="{Binding IsBusy}"/>
