@@ -72,7 +72,7 @@ public partial class ImageEffectOptionsPanel : UserControl
         if (_effect == null) return;
 
         foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(_effect).Cast<PropertyDescriptor>()
-            .Where(x => x.IsBrowsable && !x.IsReadOnly).OrderBy(x => x.Category).ThenBy(x => x.DisplayName))
+            .Where(x => x.IsBrowsable && !x.IsReadOnly))
         {
             Grid row = new() { ColumnDefinitions = new ColumnDefinitions("140,*"), ColumnSpacing = 10, MinHeight = 36 };
             TextBlock label = new()
