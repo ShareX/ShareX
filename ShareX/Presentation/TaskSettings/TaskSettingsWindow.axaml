@@ -332,6 +332,126 @@
                     </Grid>
                 </Border>
             </Border>
+
+            <Border x:Name="NotificationButtonsEditorOverlay"
+                    ZIndex="100"
+                    IsVisible="False"
+                    Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+                <Border Width="600"
+                        Height="520"
+                        Padding="16"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                    <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="12">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.bell}"
+                                       FontSize="21"
+                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                       VerticalAlignment="Center"/>
+                            <StackPanel Grid.Column="1" Spacing="1">
+                                <TextBlock Text="Notification buttons"
+                                           FontSize="19"
+                                           FontWeight="SemiBold"/>
+                                <TextBlock Text="Choose the actions shown at the bottom of after-capture notifications."
+                                           Classes="hint"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <StackPanel Grid.Row="1"
+                                    Orientation="Horizontal"
+                                    Spacing="6">
+                            <Button x:Name="NotificationButtonAddButton"
+                                    Classes="compact"
+                                    Click="OnAddNotificationButtonClick">
+                                <StackPanel Orientation="Horizontal" Spacing="7">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
+                                    <TextBlock Text="Add..."/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="NotificationButtonRemoveButton"
+                                    Classes="compact"
+                                    Click="OnRemoveNotificationButtonClick">
+                                <StackPanel Orientation="Horizontal" Spacing="7">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
+                                    <TextBlock Text="Remove"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="NotificationButtonMoveUpButton"
+                                    Width="32"
+                                    Height="32"
+                                    Padding="0"
+                                    ToolTip.Tip="Move up"
+                                    Click="OnMoveNotificationButtonUpClick">
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.chevron_up}"
+                                           FontSize="16"/>
+                            </Button>
+                            <Button x:Name="NotificationButtonMoveDownButton"
+                                    Width="32"
+                                    Height="32"
+                                    Padding="0"
+                                    ToolTip.Tip="Move down"
+                                    Click="OnMoveNotificationButtonDownClick">
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.chevron_down}"
+                                           FontSize="16"/>
+                            </Button>
+                        </StackPanel>
+
+                        <Grid Grid.Row="2">
+                            <ListBox x:Name="NotificationButtonList"
+                                     Classes="settings-list action-list"
+                                     SelectionChanged="OnNotificationButtonSelectionChanged">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate x:DataType="local:NotificationActionItem">
+                                        <Grid Classes="action-list-item"
+                                              ColumnDefinitions="26,*"
+                                              ColumnSpacing="7">
+                                            <TextBlock Classes="icon"
+                                                       Text="{Binding Icon}"
+                                                       FontSize="16"
+                                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                       TextAlignment="Center"
+                                                       VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="1"
+                                                       Text="{Binding Title}"
+                                                       FontWeight="Normal"
+                                                       VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            <TextBlock x:Name="NotificationButtonsEmptyText"
+                                       Text="No buttons configured. The notification toolbar will be hidden."
+                                       Classes="hint"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       IsHitTestVisible="False"/>
+                        </Grid>
+
+                        <StackPanel Grid.Row="3"
+                                    Orientation="Horizontal"
+                                    Spacing="8"
+                                    HorizontalAlignment="Right">
+                            <Button Classes="compact"
+                                    MinWidth="84"
+                                    Height="36"
+                                    Content="Save"
+                                    Click="OnSaveNotificationButtonsClick"/>
+                            <Button Classes="compact"
+                                    MinWidth="84"
+                                    Height="36"
+                                    Content="Cancel"
+                                    Click="OnCancelNotificationButtonsClick"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Border>
         </Grid>
     </ThemeVariantScope>
 </Window>

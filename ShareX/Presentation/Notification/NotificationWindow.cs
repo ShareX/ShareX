@@ -258,7 +258,7 @@ public partial class NotificationWindow : Window
                 continue;
             }
 
-            (string defaultLabel, string defaultIcon) = GetActionPresentation(definition.Action);
+            (string defaultLabel, string defaultIcon) = NotificationActionButton.GetDefaultPresentation(definition.Action);
             string label = string.IsNullOrWhiteSpace(definition.Label) ? defaultLabel : definition.Label;
             string icon = string.IsNullOrWhiteSpace(definition.Icon) ? defaultIcon : definition.Icon;
 
@@ -621,22 +621,6 @@ public partial class NotificationWindow : Window
             _ => false
         };
     }
-
-    private static (string Label, string Icon) GetActionPresentation(ToastClickAction action) => action switch
-    {
-        ToastClickAction.AnnotateImage => ("Edit", LucideIcons.pen_line),
-        ToastClickAction.CopyImageToClipboard => ("Copy image", LucideIcons.copy),
-        ToastClickAction.CopyFile => ("Copy file", LucideIcons.files),
-        ToastClickAction.CopyFilePath => ("Copy path", LucideIcons.clipboard),
-        ToastClickAction.CopyUrl => ("Copy link", LucideIcons.link),
-        ToastClickAction.OpenFile => ("Open", LucideIcons.external_link),
-        ToastClickAction.OpenFolder => ("Folder", LucideIcons.folder_open),
-        ToastClickAction.OpenUrl => ("Open link", LucideIcons.external_link),
-        ToastClickAction.Upload => ("Upload", LucideIcons.upload),
-        ToastClickAction.PinToScreen => ("Pin", LucideIcons.pin),
-        ToastClickAction.DeleteFile => ("Delete", LucideIcons.trash_2),
-        _ => ("Close", LucideIcons.x)
-    };
 
     private static Avalonia.Media.Color ToAvaloniaColor(DrawingColor color) =>
         Avalonia.Media.Color.FromArgb(color.A, color.R, color.G, color.B);

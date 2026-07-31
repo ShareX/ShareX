@@ -235,6 +235,8 @@ internal sealed class TaskSettingsPageBuilder
         toastOptions.Children.Add(Row("Left click action:", EnumCombo(() => general.ToastWindowLeftClickAction, value => general.ToastWindowLeftClickAction = value)));
         toastOptions.Children.Add(Row("Right click action:", EnumCombo(() => general.ToastWindowRightClickAction, value => general.ToastWindowRightClickAction = value)));
         toastOptions.Children.Add(Row("Middle click action:", EnumCombo(() => general.ToastWindowMiddleClickAction, value => general.ToastWindowMiddleClickAction = value)));
+        toastOptions.Children.Add(Row("Notification buttons:", Button("Configure...", () =>
+            _window.ShowNotificationButtonsEditor(general.ToastWindowButtons, buttons => general.ToastWindowButtons = buttons))));
         toastOptions.Children.Add(Check("Automatically hide on screen capture", () => general.ToastWindowAutoHide, value => general.ToastWindowAutoHide = value));
         toastOptions.Children.Add(Check("Disable toast notifications on fullscreen", () => general.DisableNotificationsOnFullscreen, value => general.DisableNotificationsOnFullscreen = value));
         BindEnabled(toastOptions, showToast);

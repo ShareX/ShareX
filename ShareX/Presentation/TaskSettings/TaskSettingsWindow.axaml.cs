@@ -14,10 +14,12 @@ using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace ShareX;
@@ -30,12 +32,18 @@ public partial class TaskSettingsWindow : Window
     private Action<ExternalProgram>? _actionSaved;
     private WatchFolderSettings? _editedWatchFolder;
     private Action<WatchFolderSettings>? _watchFolderSaved;
+    private readonly ObservableCollection<NotificationActionItem> _notificationButtonItems = [];
+    private Action<List<NotificationActionButton>>? _notificationButtonsSaved;
+
+    private NotificationActionItem? SelectedNotificationButton =>
+        NotificationButtonList.SelectedItem as NotificationActionItem;
 
     public TaskSettingsWindow()
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         AttachActionArgumentsMenu();
+        NotificationButtonList.ItemsSource = _notificationButtonItems;
         KeyDown += OnWindowKeyDown;
     }
 
@@ -176,7 +184,12 @@ public partial class TaskSettingsWindow : Window
             return;
         }
 
-        if (WatchFolderEditorOverlay.IsVisible)
+        if (NotificationButtonsEditorOverlay.IsVisible)
+        {
+            HideNotificationButtonsEditor();
+            e.Handled = true;
+        }
+        else if (WatchFolderEditorOverlay.IsVisible)
         {
             HideWatchFolderEditor();
             e.Handled = true;
@@ -268,5 +281,155 @@ public partial class TaskSettingsWindow : Window
         {
             WatchFolderPathBox.Text = path;
         }
+    }
+
+    internal void ShowNotificationButtonsEditor(
+        IEnumerable<NotificationActionButton>? buttons,
+        Action<List<NotificationActionButton>> saved)
+    {
+        _notificationButtonItems.Clear();
+        HashSet<ToastClickAction> addedActions = [];
+
+        foreach (NotificationActionButton button in buttons ?? [])
+        {
+            if (button != null && Enum.IsDefined(button.Action) && addedActions.Add(button.Action))
+            {
+                _notificationButtonItems.Add(new NotificationActionItem(button.Clone()));
+            }
+        }
+
+        _notificationButtonsSaved = saved;
+        NotificationButtonList.SelectedItem = _notificationButtonItems.FirstOrDefault();
+        NotificationButtonsEditorOverlay.IsVisible = true;
+        UpdateNotificationButtonSelectionState();
+        Dispatcher.UIThread.Post(() => NotificationButtonList.Focus(), DispatcherPriority.Input);
+    }
+
+    private void HideNotificationButtonsEditor()
+    {
+        NotificationButtonsEditorOverlay.IsVisible = false;
+        _notificationButtonItems.Clear();
+        _notificationButtonsSaved = null;
+    }
+
+    private void OnAddNotificationButtonClick(object? sender, RoutedEventArgs e)
+    {
+        HashSet<ToastClickAction> selectedActions = _notificationButtonItems.Select(item => item.Action).ToHashSet();
+        List<MenuItem> items = [];
+
+        foreach (ToastClickAction action in Helpers.GetEnums<ToastClickAction>().Where(action => !selectedActions.Contains(action)))
+        {
+            (string _, string icon) = NotificationActionButton.GetDefaultPresentation(action);
+            MenuItem item = new()
+            {
+                Header = action.GetLocalizedDescription(),
+                Icon = new TextBlock
+                {
+                    Classes = { "icon" },
+                    Text = icon,
+                    FontSize = 15,
+                    Width = 18,
+                    TextAlignment = Avalonia.Media.TextAlignment.Center
+                }
+            };
+            item.Click += (_, _) => AddNotificationButton(action);
+            items.Add(item);
+        }
+
+        if (items.Count > 0)
+        {
+            ContextMenu menu = new()
+            {
+                ItemsSource = items,
+                Placement = PlacementMode.BottomEdgeAlignedLeft
+            };
+            menu.Open(NotificationButtonAddButton);
+        }
+    }
+
+    private void AddNotificationButton(ToastClickAction action)
+    {
+        NotificationActionItem item = new(new NotificationActionButton(action));
+        _notificationButtonItems.Add(item);
+        NotificationButtonList.SelectedItem = item;
+        UpdateNotificationButtonSelectionState();
+    }
+
+    private void OnRemoveNotificationButtonClick(object? sender, RoutedEventArgs e)
+    {
+        if (SelectedNotificationButton is not { } item)
+        {
+            return;
+        }
+
+        int index = _notificationButtonItems.IndexOf(item);
+        _notificationButtonItems.RemoveAt(index);
+        NotificationButtonList.SelectedItem = _notificationButtonItems.Count == 0
+            ? null
+            : _notificationButtonItems[Math.Min(index, _notificationButtonItems.Count - 1)];
+        UpdateNotificationButtonSelectionState();
+    }
+
+    private void OnMoveNotificationButtonUpClick(object? sender, RoutedEventArgs e) => MoveNotificationButton(-1);
+
+    private void OnMoveNotificationButtonDownClick(object? sender, RoutedEventArgs e) => MoveNotificationButton(1);
+
+    private void MoveNotificationButton(int offset)
+    {
+        if (SelectedNotificationButton is not { } item)
+        {
+            return;
+        }
+
+        int oldIndex = _notificationButtonItems.IndexOf(item);
+        int newIndex = oldIndex + offset;
+        if (newIndex < 0 || newIndex >= _notificationButtonItems.Count)
+        {
+            return;
+        }
+
+        _notificationButtonItems.Move(oldIndex, newIndex);
+        NotificationButtonList.SelectedItem = item;
+        UpdateNotificationButtonSelectionState();
+    }
+
+    private void OnNotificationButtonSelectionChanged(object? sender, SelectionChangedEventArgs e) =>
+        UpdateNotificationButtonSelectionState();
+
+    private void UpdateNotificationButtonSelectionState()
+    {
+        int index = SelectedNotificationButton == null
+            ? -1
+            : _notificationButtonItems.IndexOf(SelectedNotificationButton);
+        NotificationButtonAddButton.IsEnabled = _notificationButtonItems.Count < Enum.GetValues<ToastClickAction>().Length;
+        NotificationButtonRemoveButton.IsEnabled = index >= 0;
+        NotificationButtonMoveUpButton.IsEnabled = index > 0;
+        NotificationButtonMoveDownButton.IsEnabled = index >= 0 && index < _notificationButtonItems.Count - 1;
+        NotificationButtonsEmptyText.IsVisible = _notificationButtonItems.Count == 0;
+    }
+
+    private void OnSaveNotificationButtonsClick(object? sender, RoutedEventArgs e)
+    {
+        List<NotificationActionButton> buttons =
+            _notificationButtonItems.Select(item => item.Definition.Clone()).ToList();
+        Action<List<NotificationActionButton>>? saved = _notificationButtonsSaved;
+        HideNotificationButtonsEditor();
+        saved?.Invoke(buttons);
+    }
+
+    private void OnCancelNotificationButtonsClick(object? sender, RoutedEventArgs e) =>
+        HideNotificationButtonsEditor();
+}
+
+public sealed class NotificationActionItem
+{
+    public NotificationActionButton Definition { get; }
+    public ToastClickAction Action => Definition.Action;
+    public string Title => Action.GetLocalizedDescription();
+    public string Icon => NotificationActionButton.GetDefaultPresentation(Action).Icon;
+
+    public NotificationActionItem(NotificationActionButton definition)
+    {
+        Definition = definition;
     }
 }
