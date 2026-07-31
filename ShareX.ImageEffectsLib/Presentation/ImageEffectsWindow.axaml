@@ -13,8 +13,7 @@
             <Setter Property="MinHeight" Value="32"/>
         </Style>
     </Window.Styles>
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
-        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
         <Grid Margin="16" RowDefinitions="*,Auto" RowSpacing="12">
             <Grid ColumnDefinitions="320,360,*" ColumnSpacing="12">
                 <Grid RowDefinitions="Auto,*" RowSpacing="12">
@@ -112,6 +111,5 @@
                 <Button Grid.Column="4" Command="{Binding CancelCommand}" Content="{Binding CloseButtonText}"/>
             </Grid>
         </Grid>
-        </Grid>
-    </ThemeVariantScope>
+    </Grid>
 </Window>

@@ -1,13 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="using:ShareX.ImageEffectsLib"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.ImageEffectsLib.ImageEffectPickerWindow"
         Title="ShareX - Add effect"
         Width="520" Height="620" MinHeight="420"
         WindowStartupLocation="CenterOwner">
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
-        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
             <TextBox x:Name="SearchBox" PlaceholderText="Search effects" TextChanged="OnSearchChanged"/>
             <ListBox x:Name="EffectsList" Grid.Row="1" DoubleTapped="OnEffectDoubleTapped">
                 <ListBox.ItemTemplate>
@@ -25,6 +23,5 @@
                 <Button Grid.Column="1" Content="Add" Click="OnAddClick"/>
                 <Button Grid.Column="2" Content="Cancel" Click="OnCancelClick"/>
             </Grid>
-        </Grid>
-    </ThemeVariantScope>
+    </Grid>
 </Window>

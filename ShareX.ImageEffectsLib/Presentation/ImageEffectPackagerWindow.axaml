@@ -1,12 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.ImageEffectsLib.ImageEffectPackagerWindow"
         Title="ShareX - Package image effect"
         Width="680" SizeToContent="Height" CanResize="False"
         WindowStartupLocation="CenterOwner">
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
-        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
         <Grid Margin="16" RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
             <Border Classes="tool-panel">
                 <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
@@ -35,6 +33,5 @@
                 <Button Grid.Column="2" Content="Close" Click="OnCloseClick"/>
             </Grid>
         </Grid>
-        </Grid>
-    </ThemeVariantScope>
+    </Grid>
 </Window>
