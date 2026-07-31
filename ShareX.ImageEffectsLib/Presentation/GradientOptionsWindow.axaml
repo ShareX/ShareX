@@ -8,10 +8,11 @@
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
         <Grid Margin="16" RowDefinitions="Auto,Auto,*,Auto" RowSpacing="12">
-            <Border Height="64" CornerRadius="4" ClipToBounds="True"
+            <Border Width="320" Height="64" HorizontalAlignment="Center"
+                    CornerRadius="4" ClipToBounds="True"
                     BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"
                     Background="{DynamicResource ShareX.Brush.Checkered.Small}">
-                <Border x:Name="GradientPreview"/>
+                <Image x:Name="GradientPreview" Stretch="Fill"/>
             </Border>
             <Border Grid.Row="1" Classes="tool-panel">
                 <Grid ColumnDefinitions="140,*" ColumnSpacing="10">

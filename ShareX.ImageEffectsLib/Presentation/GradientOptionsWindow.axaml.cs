@@ -12,6 +12,7 @@ using Avalonia.Media;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using DrawingColor = System.Drawing.Color;
 using HelperGradientStop = ShareX.HelpersLib.GradientStop;
 
@@ -24,7 +25,7 @@ public partial class GradientOptionsWindow : Window
     private readonly GradientInfo _gradient;
     private ComboBox _direction = null!;
     private StackPanel _stopsPanel = null!;
-    private Border _gradientPreview = null!;
+    private Image _gradientPreview = null!;
 
     public GradientOptionsWindow() : this(new GradientInfo())
     {
@@ -38,7 +39,7 @@ public partial class GradientOptionsWindow : Window
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         _direction = this.FindControl<ComboBox>("DirectionComboBox")!;
         _stopsPanel = this.FindControl<StackPanel>("StopsPanel")!;
-        _gradientPreview = this.FindControl<Border>("GradientPreview")!;
+        _gradientPreview = this.FindControl<Image>("GradientPreview")!;
         _direction.ItemsSource = GradientDirections.Select(x => Helpers.GetProperName(x.ToString())).ToArray();
         _direction.SelectedIndex = Array.IndexOf(GradientDirections, _gradient.Type);
         _direction.SelectionChanged += (_, _) =>
@@ -50,6 +51,7 @@ public partial class GradientOptionsWindow : Window
             }
         };
         RebuildStops();
+        Closed += (_, _) => (_gradientPreview.Source as Avalonia.Media.Imaging.Bitmap)?.Dispose();
     }
 
     private void RebuildStops()
@@ -100,35 +102,15 @@ public partial class GradientOptionsWindow : Window
 
     private void UpdateGradientPreview()
     {
-        HelperGradientStop[] stops = _gradient.Colors.OrderBy(x => x.Location).ToArray();
-        if (stops.Length == 0)
-        {
-            _gradientPreview.Background = Brushes.Transparent;
-            return;
-        }
-        if (stops.Length == 1)
-        {
-            _gradientPreview.Background = new SolidColorBrush(ToAvalonia(stops[0].Color));
-            return;
-        }
-
-        (RelativePoint start, RelativePoint end) = _gradient.Type switch
-        {
-            LinearGradientMode.Horizontal => (Relative(0, 0.5), Relative(1, 0.5)),
-            LinearGradientMode.Vertical => (Relative(0.5, 0), Relative(0.5, 1)),
-            LinearGradientMode.ForwardDiagonal => (Relative(0, 0), Relative(1, 1)),
-            LinearGradientMode.BackwardDiagonal => (Relative(1, 0), Relative(0, 1)),
-            _ => (Relative(0.5, 0), Relative(0.5, 1))
-        };
-        Avalonia.Media.LinearGradientBrush brush = new() { StartPoint = start, EndPoint = end };
-        foreach (HelperGradientStop stop in stops)
-        {
-            brush.GradientStops.Add(new Avalonia.Media.GradientStop(ToAvalonia(stop.Color), Math.Clamp(stop.Location / 100, 0, 1)));
-        }
-        _gradientPreview.Background = brush;
+        using System.Drawing.Bitmap drawingPreview = _gradient.CreateGradientPreview(320, 64, checkers: true);
+        using MemoryStream stream = new();
+        drawingPreview.Save(stream, ImageFormat.Png);
+        stream.Position = 0;
+        Avalonia.Media.Imaging.Bitmap preview = new(stream);
+        Avalonia.Media.Imaging.Bitmap? previous = _gradientPreview.Source as Avalonia.Media.Imaging.Bitmap;
+        _gradientPreview.Source = preview;
+        previous?.Dispose();
     }
-
-    private static RelativePoint Relative(double x, double y) => new(x, y, RelativeUnit.Relative);
 
     private void OnAddStopClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
