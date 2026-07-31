@@ -14,9 +14,9 @@
 
 #nullable enable
 
+using ShareX.AvaloniaUI.Theming;
 using System.Collections.Generic;
 using System.Linq;
-using ShareX.AvaloniaUI.Theming;
 
 namespace ShareX;
 
@@ -54,10 +54,10 @@ public sealed class NotificationActionButton
 
     public static List<NotificationActionButton> CreateDefaultButtons() =>
     [
+        new(ToastClickAction.CopyImageToClipboard),
         new(ToastClickAction.AnnotateImage),
-        new(ToastClickAction.Upload),
         new(ToastClickAction.PinToScreen),
-        new(ToastClickAction.CopyImageToClipboard)
+        new(ToastClickAction.Upload)
     ];
 
     public static List<NotificationActionButton> CloneButtons(IEnumerable<NotificationActionButton>? buttons) =>
