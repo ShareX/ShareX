@@ -215,7 +215,12 @@ namespace ShareX.HelpersLib
 
         public static string[] GetEnumNamesProper<T>()
         {
-            string[] names = Enum.GetNames(typeof(T));
+            return GetEnumNamesProper(typeof(T));
+        }
+
+        public static string[] GetEnumNamesProper(Type enumType)
+        {
+            string[] names = Enum.GetNames(enumType);
             string[] newNames = new string[names.Length];
 
             for (int i = 0; i < names.Length; i++)

@@ -7,6 +7,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using Avalonia.Controls.Templates;
 using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
@@ -124,8 +125,23 @@ public partial class ImageEffectOptionsPanel : UserControl
 
         if (type.IsEnum && type.GetCustomAttribute<FlagsAttribute>() == null)
         {
-            ComboBox combo = new() { ItemsSource = Enum.GetValues(type), SelectedItem = value };
-            combo.SelectionChanged += (_, _) => Apply(property, combo.SelectedItem);
+            object[] values = Enum.GetValues(type).Cast<object>().ToArray();
+            ComboBox combo = new()
+            {
+                ItemsSource = Helpers.GetEnumNamesProper(type),
+                SelectedIndex = Array.IndexOf(values, value),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                FontWeight = FontWeight.Normal,
+                ItemTemplate = new FuncDataTemplate<string>((name, _) => new TextBlock
+                {
+                    Text = name,
+                    FontWeight = FontWeight.Normal
+                })
+            };
+            combo.SelectionChanged += (_, _) =>
+            {
+                if (combo.SelectedIndex >= 0) Apply(property, values[combo.SelectedIndex]);
+            };
             return combo;
         }
 
