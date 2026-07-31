@@ -98,7 +98,7 @@
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Top"
                         CornerRadius="3,3,0,0"
-                        Background="#B31B1B1B"
+                        Background="#C01B1B1B"
                         IsHitTestVisible="False">
                     <StackPanel Spacing="2">
                         <TextBlock x:Name="ImageTitleText"
@@ -121,7 +121,7 @@
                         Padding="6"
                         VerticalAlignment="Bottom"
                         CornerRadius="0,0,3,3"
-                        Background="#B31B1B1B">
+                        Background="#C01B1B1B">
                     <WrapPanel x:Name="ActionButtons"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"/>
