@@ -172,26 +172,19 @@ public partial class ImageEffectOptionsPanel : UserControl
         if (type == typeof(GradientInfo))
         {
             Button button = new() { Content = "Edit gradient..." };
-            button.Click += async (_, _) =>
+            GradientInfo? existingGradient = property.GetValue(_effect) as GradientInfo;
+            GradientInfo gradient = existingGradient ?? new GradientInfo();
+            button.Click += (_, _) =>
             {
-                if (_effect == null) return;
-                GradientInfo? existingGradient = property.GetValue(_effect) as GradientInfo;
-                GradientInfo gradient = existingGradient ?? new GradientInfo();
-                if (TopLevel.GetTopLevel(this) is Window owner)
+                if (_effect != null && property.GetValue(_effect) == null)
                 {
-                    if (await new GradientOptionsWindow(gradient).ShowDialog<bool>(owner))
-                    {
-                        if (existingGradient == null)
-                        {
-                            Apply(property, gradient);
-                        }
-                        else
-                        {
-                            NotifyChanged();
-                        }
-                    }
+                    Apply(property, gradient);
                 }
             };
+            Flyout flyout = new() { Content = new GradientOptionsPanel(gradient, NotifyChanged) };
+            flyout.FlyoutPresenterClasses.Add("gradient-options-flyout");
+            flyout.Closed += (_, _) => gradient.Sort();
+            button.Flyout = flyout;
             return button;
         }
 

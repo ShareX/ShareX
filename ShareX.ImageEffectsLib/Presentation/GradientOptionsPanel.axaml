@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="ShareX.ImageEffectsLib.GradientOptionsPanel"
+             MinWidth="380"
+             Background="Transparent">
+    <Border Background="{DynamicResource MenuFlyoutPresenterBackground}"
+            CornerRadius="5" ClipToBounds="True" Padding="12">
+        <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                <TextBlock Classes="row-label" Text="Direction" VerticalAlignment="Center"/>
+                <ComboBox x:Name="DirectionComboBox" Grid.Column="1" HorizontalAlignment="Right"/>
+            </Grid>
+            <Grid Grid.Row="1" ColumnDefinitions="*,Auto">
+                <TextBlock Classes="row-label" Text="Color stops" VerticalAlignment="Center"/>
+                <Button Grid.Column="1" Content="Add stop" Click="OnAddStopClick"/>
+            </Grid>
+            <ScrollViewer Grid.Row="2" MaxHeight="300" HorizontalScrollBarVisibility="Disabled">
+                <StackPanel x:Name="StopsPanel" Spacing="8"/>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</UserControl>

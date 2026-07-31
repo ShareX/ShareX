@@ -252,6 +252,14 @@
     </Style>
 
     <!-- Shared surfaces -->
+    <Style Selector="FlyoutPresenter.gradient-options-flyout">
+        <Setter Property="Background" Value="{DynamicResource MenuFlyoutPresenterBackground}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="6"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
     <Style Selector="Border.popup-border">
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
