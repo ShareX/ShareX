@@ -19,10 +19,12 @@ namespace ShareX.ImageEffectsLib;
 
 public partial class GradientOptionsWindow : Window
 {
+    private static readonly LinearGradientMode[] GradientDirections = Enum.GetValues<LinearGradientMode>();
     private readonly GradientInfo _target;
     private readonly GradientInfo _gradient;
     private ComboBox _direction = null!;
     private StackPanel _stopsPanel = null!;
+    private Border _gradientPreview = null!;
 
     public GradientOptionsWindow() : this(new GradientInfo())
     {
@@ -36,11 +38,16 @@ public partial class GradientOptionsWindow : Window
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         _direction = this.FindControl<ComboBox>("DirectionComboBox")!;
         _stopsPanel = this.FindControl<StackPanel>("StopsPanel")!;
-        _direction.ItemsSource = Enum.GetValues<LinearGradientMode>();
-        _direction.SelectedItem = gradient.Type;
+        _gradientPreview = this.FindControl<Border>("GradientPreview")!;
+        _direction.ItemsSource = GradientDirections.Select(x => Helpers.GetProperName(x.ToString())).ToArray();
+        _direction.SelectedIndex = Array.IndexOf(GradientDirections, _gradient.Type);
         _direction.SelectionChanged += (_, _) =>
         {
-            if (_direction.SelectedItem is LinearGradientMode mode) _gradient.Type = mode;
+            if (_direction.SelectedIndex >= 0)
+            {
+                _gradient.Type = GradientDirections[_direction.SelectedIndex];
+                UpdateGradientPreview();
+            }
         };
         RebuildStops();
     }
@@ -61,16 +68,24 @@ public partial class GradientOptionsWindow : Window
                 IsColorPreviewVisible = true
             };
             Flyout flyout = new() { Content = picker };
-            flyout.Closed += (_, _) =>
+            picker.PropertyChanged += (_, e) =>
             {
-                stop.Color = ToDrawing(picker.Color);
-                swatch.Background = new SolidColorBrush(picker.Color);
+                if (e.Property == Avalonia.Controls.ColorView.ColorProperty)
+                {
+                    stop.Color = ToDrawing(picker.Color);
+                    swatch.Background = new SolidColorBrush(picker.Color);
+                    UpdateGradientPreview();
+                }
             };
             colorButton.Flyout = flyout;
             row.Children.Add(colorButton);
 
             NumericUpDown location = new() { Minimum = 0, Maximum = 100, FormatString = "0'%'", Value = (decimal)stop.Location };
-            location.ValueChanged += (_, _) => stop.Location = (float)(location.Value ?? 0);
+            location.ValueChanged += (_, _) =>
+            {
+                stop.Location = (float)(location.Value ?? 0);
+                UpdateGradientPreview();
+            };
             Grid.SetColumn(location, 1);
             row.Children.Add(location);
 
@@ -80,7 +95,40 @@ public partial class GradientOptionsWindow : Window
             row.Children.Add(remove);
             _stopsPanel.Children.Add(row);
         }
+        UpdateGradientPreview();
     }
+
+    private void UpdateGradientPreview()
+    {
+        HelperGradientStop[] stops = _gradient.Colors.OrderBy(x => x.Location).ToArray();
+        if (stops.Length == 0)
+        {
+            _gradientPreview.Background = Brushes.Transparent;
+            return;
+        }
+        if (stops.Length == 1)
+        {
+            _gradientPreview.Background = new SolidColorBrush(ToAvalonia(stops[0].Color));
+            return;
+        }
+
+        (RelativePoint start, RelativePoint end) = _gradient.Type switch
+        {
+            LinearGradientMode.Horizontal => (Relative(0, 0.5), Relative(1, 0.5)),
+            LinearGradientMode.Vertical => (Relative(0.5, 0), Relative(0.5, 1)),
+            LinearGradientMode.ForwardDiagonal => (Relative(0, 0), Relative(1, 1)),
+            LinearGradientMode.BackwardDiagonal => (Relative(1, 0), Relative(0, 1)),
+            _ => (Relative(0.5, 0), Relative(0.5, 1))
+        };
+        Avalonia.Media.LinearGradientBrush brush = new() { StartPoint = start, EndPoint = end };
+        foreach (HelperGradientStop stop in stops)
+        {
+            brush.GradientStops.Add(new Avalonia.Media.GradientStop(ToAvalonia(stop.Color), Math.Clamp(stop.Location / 100, 0, 1)));
+        }
+        _gradientPreview.Background = brush;
+    }
+
+    private static RelativePoint Relative(double x, double y) => new(x, y, RelativeUnit.Relative);
 
     private void OnAddStopClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {

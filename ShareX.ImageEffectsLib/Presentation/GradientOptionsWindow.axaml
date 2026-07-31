@@ -7,14 +7,19 @@
         WindowStartupLocation="CenterOwner">
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-        <Grid Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
-            <Border Classes="tool-panel">
+        <Grid Margin="16" RowDefinitions="Auto,Auto,*,Auto" RowSpacing="12">
+            <Border Height="64" CornerRadius="4" ClipToBounds="True"
+                    BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"
+                    Background="{DynamicResource ShareX.Brush.Checkered.Small}">
+                <Border x:Name="GradientPreview"/>
+            </Border>
+            <Border Grid.Row="1" Classes="tool-panel">
                 <Grid ColumnDefinitions="140,*" ColumnSpacing="10">
                     <TextBlock Classes="row-label" Text="Direction"/>
                     <ComboBox x:Name="DirectionComboBox" Grid.Column="1"/>
                 </Grid>
             </Border>
-            <Border Grid.Row="1" Classes="tool-panel">
+            <Border Grid.Row="2" Classes="tool-panel">
                 <Grid RowDefinitions="Auto,*" RowSpacing="10">
                     <Grid ColumnDefinitions="*,Auto">
                         <TextBlock Classes="section-heading" Text="Color stops"/>
@@ -25,11 +30,9 @@
                     </ScrollViewer>
                 </Grid>
             </Border>
-            <Grid Grid.Row="2" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
-                <TextBlock Text="Stops are rendered from 0% to 100%." FontWeight="Normal"
-                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}" VerticalAlignment="Center"/>
-                <Button Grid.Column="1" Content="OK" Click="OnOkClick"/>
-                <Button Grid.Column="2" Content="Cancel" Click="OnCancelClick"/>
+            <Grid Grid.Row="3" ColumnDefinitions="*,88,88" ColumnSpacing="8">
+                <Button Grid.Column="1" Width="88" Content="OK" Click="OnOkClick"/>
+                <Button Grid.Column="2" Width="88" Content="Cancel" Click="OnCancelClick"/>
             </Grid>
         </Grid>
         </Grid>
