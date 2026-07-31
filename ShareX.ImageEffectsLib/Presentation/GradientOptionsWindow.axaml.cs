@@ -51,7 +51,13 @@ public partial class GradientOptionsWindow : Window
             Grid row = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto"), ColumnSpacing = 8 };
             Border swatch = new() { Width = 28, Height = 28, CornerRadius = new CornerRadius(3), Background = new SolidColorBrush(ToAvalonia(stop.Color)) };
             Button colorButton = new() { Content = swatch, Width = 42, Padding = new Thickness(4) };
-            Avalonia.Controls.ColorView picker = new() { Width = 280, Height = 280, Color = ToAvalonia(stop.Color) };
+            Avalonia.Controls.ColorView picker = new()
+            {
+                MinWidth = 320,
+                Color = ToAvalonia(stop.Color),
+                IsAlphaVisible = true,
+                IsColorPreviewVisible = true
+            };
             Flyout flyout = new() { Content = picker };
             flyout.Closed += (_, _) =>
             {

@@ -6,7 +6,8 @@
         Width="520" Height="560" MinHeight="420"
         WindowStartupLocation="CenterOwner">
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
-        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+        <Grid Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
             <Border Classes="tool-panel">
                 <Grid ColumnDefinitions="140,*" ColumnSpacing="10">
                     <TextBlock Classes="row-label" Text="Direction"/>
@@ -29,6 +30,7 @@
                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}" VerticalAlignment="Center"/>
                 <Button Grid.Column="1" Content="Done" Click="OnDoneClick"/>
             </Grid>
+        </Grid>
         </Grid>
     </ThemeVariantScope>
 </Window>
