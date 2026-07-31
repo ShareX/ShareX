@@ -5,7 +5,7 @@
         x:Class="ShareX.ImageEffectsLib.ImageEffectsWindow"
         x:DataType="vm:ImageEffectsViewModel"
         Title="ShareX - Image effects"
-        Width="1180" Height="760" MinWidth="940" MinHeight="620"
+        Width="1180" Height="760" MinWidth="1040" MinHeight="620"
         WindowStartupLocation="CenterScreen">
     <Window.Styles>
         <Style Selector="ListBox.compact ListBoxItem">
@@ -16,57 +16,61 @@
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
         <Grid Margin="16" RowDefinitions="*,Auto" RowSpacing="12">
-            <Grid ColumnDefinitions="240,320,*" ColumnSpacing="12">
-                <Border Classes="tool-panel">
-                    <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="10">
-                        <TextBlock Classes="section-heading" Text="Presets"/>
-                        <TextBox Grid.Row="1" Text="{Binding PresetName}" PlaceholderText="Preset name" IsEnabled="{Binding HasSelectedPreset}"/>
-                        <ListBox Grid.Row="2" Classes="compact" ItemsSource="{Binding Presets}" SelectedItem="{Binding SelectedPreset}">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate x:DataType="vm:ImageEffectPresetItemViewModel">
-                                    <TextBlock Text="{Binding DisplayName}" FontWeight="Normal" Margin="0" VerticalAlignment="Center"/>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                        <Grid Grid.Row="3" ColumnDefinitions="*,*,*,*,*" ColumnSpacing="4">
-                            <Button Classes="picker-button" Command="{Binding NewPresetCommand}" ToolTip.Tip="New preset"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/></Button>
-                            <Button Grid.Column="1" Classes="picker-button" Command="{Binding RemovePresetCommand}" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Remove preset"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.minus}"/></Button>
-                            <Button Grid.Column="2" Classes="picker-button" Command="{Binding DuplicatePresetCommand}" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Duplicate preset"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/></Button>
-                            <Button Grid.Column="3" Classes="picker-button" Command="{Binding MovePresetUpCommand}" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Move up"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_up}"/></Button>
-                            <Button Grid.Column="4" Classes="picker-button" Command="{Binding MovePresetDownCommand}" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Move down"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_down}"/></Button>
+            <Grid ColumnDefinitions="320,360,*" ColumnSpacing="12">
+                <Grid RowDefinitions="Auto,*" RowSpacing="12">
+                    <Border Classes="tool-panel">
+                        <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
+                            <Grid ColumnDefinitions="*,Auto,Auto,Auto,Auto,Auto" ColumnSpacing="4">
+                                <TextBlock Classes="section-heading" Text="Presets" VerticalAlignment="Center"/>
+                                <Button Grid.Column="1" Classes="picker-button" Width="32" Command="{Binding NewPresetCommand}" ToolTip.Tip="New preset"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/></Button>
+                                <Button Grid.Column="2" Classes="picker-button" Width="32" Command="{Binding RemovePresetCommand}" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Remove preset"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.minus}"/></Button>
+                                <Button Grid.Column="3" Classes="picker-button" Width="32" Command="{Binding DuplicatePresetCommand}" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Duplicate preset"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/></Button>
+                                <Button Grid.Column="4" Classes="picker-button" Width="32" Command="{Binding MovePresetUpCommand}" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Move up"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_up}"/></Button>
+                                <Button Grid.Column="5" Classes="picker-button" Width="32" Command="{Binding MovePresetDownCommand}" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Move down"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_down}"/></Button>
+                            </Grid>
+                            <ComboBox Grid.Row="1" HorizontalAlignment="Stretch"
+                                      ItemsSource="{Binding Presets}" SelectedItem="{Binding SelectedPreset}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate x:DataType="vm:ImageEffectPresetItemViewModel">
+                                        <TextBlock Text="{Binding DisplayName}" FontWeight="Normal" TextTrimming="CharacterEllipsis"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <TextBox Grid.Row="2" Text="{Binding PresetName}" PlaceholderText="Preset name" IsEnabled="{Binding HasSelectedPreset}"/>
                         </Grid>
-                    </Grid>
-                </Border>
+                    </Border>
+
+                    <Border Grid.Row="1" Classes="tool-panel">
+                        <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="10">
+                            <Grid ColumnDefinitions="*,Auto">
+                                <TextBlock Classes="section-heading" Text="Effects"/>
+                                <Button Grid.Column="1" Classes="picker-button" Width="32" Height="30" Command="{Binding RefreshPreviewCommand}" ToolTip.Tip="Refresh preview"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.refresh_cw}"/></Button>
+                            </Grid>
+                            <TextBox Grid.Row="1" Text="{Binding EffectName}" PlaceholderText="Custom effect name" IsEnabled="{Binding HasSelectedEffect}"/>
+                            <ListBox Grid.Row="2" Classes="compact" ItemsSource="{Binding Effects}" SelectedItem="{Binding SelectedEffect}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate x:DataType="vm:ImageEffectItemViewModel">
+                                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="6" Margin="0">
+                                            <CheckBox IsChecked="{Binding Enabled}" VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding DisplayName}" FontWeight="Normal" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            <Grid Grid.Row="3" ColumnDefinitions="*,*,*,*,*,*" ColumnSpacing="4">
+                                <Button Classes="picker-button" Command="{Binding AddEffectCommand}" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Add effect"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/></Button>
+                                <Button Grid.Column="1" Classes="picker-button" Command="{Binding RemoveEffectCommand}" IsEnabled="{Binding HasSelectedEffect}" ToolTip.Tip="Remove effect"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.minus}"/></Button>
+                                <Button Grid.Column="2" Classes="picker-button" Command="{Binding DuplicateEffectCommand}" IsEnabled="{Binding HasSelectedEffect}" ToolTip.Tip="Duplicate effect"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/></Button>
+                                <Button Grid.Column="3" Classes="picker-button" Command="{Binding MoveEffectUpCommand}" IsEnabled="{Binding HasSelectedEffect}" ToolTip.Tip="Move up"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_up}"/></Button>
+                                <Button Grid.Column="4" Classes="picker-button" Command="{Binding MoveEffectDownCommand}" IsEnabled="{Binding HasSelectedEffect}" ToolTip.Tip="Move down"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_down}"/></Button>
+                                <Button Grid.Column="5" Classes="picker-button" Click="OnClearEffectsClick" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Clear effects"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.eraser}"/></Button>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
 
                 <Border Grid.Column="1" Classes="tool-panel">
-                    <Grid RowDefinitions="Auto,Auto,*,Auto,Auto" RowSpacing="10">
-                        <Grid ColumnDefinitions="*,Auto">
-                            <TextBlock Classes="section-heading" Text="Effects"/>
-                            <Button Grid.Column="1" Classes="picker-button" Width="32" Height="30" Command="{Binding RefreshPreviewCommand}" ToolTip.Tip="Refresh preview"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.refresh_cw}"/></Button>
-                        </Grid>
-                        <TextBox Grid.Row="1" Text="{Binding EffectName}" PlaceholderText="Custom effect name" IsEnabled="{Binding HasSelectedEffect}"/>
-                        <ListBox Grid.Row="2" Classes="compact" ItemsSource="{Binding Effects}" SelectedItem="{Binding SelectedEffect}" DoubleTapped="OnEffectDoubleTapped">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate x:DataType="vm:ImageEffectItemViewModel">
-                                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="6" Margin="0">
-                                        <CheckBox IsChecked="{Binding Enabled}" VerticalAlignment="Center"/>
-                                        <TextBlock Grid.Column="1" Text="{Binding DisplayName}" FontWeight="Normal" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
-                                    </Grid>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                        <Grid Grid.Row="3" ColumnDefinitions="*,*,*,*,*,*" ColumnSpacing="4">
-                            <Button Classes="picker-button" Command="{Binding AddEffectCommand}" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Add effect"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/></Button>
-                            <Button Grid.Column="1" Classes="picker-button" Command="{Binding RemoveEffectCommand}" IsEnabled="{Binding HasSelectedEffect}" ToolTip.Tip="Remove effect"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.minus}"/></Button>
-                            <Button Grid.Column="2" Classes="picker-button" Command="{Binding DuplicateEffectCommand}" IsEnabled="{Binding HasSelectedEffect}" ToolTip.Tip="Duplicate effect"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/></Button>
-                            <Button Grid.Column="3" Classes="picker-button" Command="{Binding MoveEffectUpCommand}" IsEnabled="{Binding HasSelectedEffect}" ToolTip.Tip="Move up"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_up}"/></Button>
-                            <Button Grid.Column="4" Classes="picker-button" Command="{Binding MoveEffectDownCommand}" IsEnabled="{Binding HasSelectedEffect}" ToolTip.Tip="Move down"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_down}"/></Button>
-                            <Button Grid.Column="5" Classes="picker-button" Click="OnClearEffectsClick" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Clear effects"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.eraser}"/></Button>
-                        </Grid>
-                        <Button Grid.Row="4" Command="{Binding EditEffectCommand}" IsEnabled="{Binding HasSelectedEffect}">
-                            <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.sliders_horizontal}"/><TextBlock Text="Edit effect options..."/></StackPanel>
-                        </Button>
-                    </Grid>
+                    <vm:ImageEffectOptionsPanel x:Name="EffectOptionsPanel"/>
                 </Border>
 
                 <Grid Grid.Column="2" RowDefinitions="Auto,*,Auto" RowSpacing="10">

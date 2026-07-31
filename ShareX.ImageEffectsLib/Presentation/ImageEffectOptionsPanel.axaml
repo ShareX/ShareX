@@ -1,0 +1,12 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="ShareX.ImageEffectsLib.ImageEffectOptionsPanel">
+    <Grid RowDefinitions="Auto,*,Auto" RowSpacing="10">
+        <TextBlock x:Name="EffectTitle" Classes="section-heading" Text="Effect options"/>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel x:Name="EditorPanel" Spacing="8" Margin="0,4,12,4"/>
+        </ScrollViewer>
+        <TextBlock x:Name="ValidationText" Grid.Row="2" FontWeight="Normal" TextWrapping="Wrap"
+                   Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
+    </Grid>
+</UserControl>

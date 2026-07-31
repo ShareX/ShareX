@@ -17,6 +17,7 @@ namespace ShareX.ImageEffectsLib;
 public partial class ImageEffectsWindow : Window
 {
     private readonly ISerializationBinder _serializationBinder = new ImageEffectsSerializationBinder();
+    private ImageEffectOptionsPanel _effectOptionsPanel = null!;
     public ImageEffectsViewModel ViewModel { get; }
     public bool Accepted { get; private set; }
 
@@ -31,16 +32,22 @@ public partial class ImageEffectsWindow : Window
         DataContext = ViewModel;
         AvaloniaXamlLoader.Load(this);
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        _effectOptionsPanel = this.FindControl<ImageEffectOptionsPanel>("EffectOptionsPanel")!;
         DragDrop.SetAllowDrop(this, true);
         AddHandler(DragDrop.DragOverEvent, OnDragOver);
         AddHandler(DragDrop.DropEvent, OnDrop);
 
         ViewModel.AddEffectRequested = AddEffectAsync;
-        ViewModel.EditEffectRequested = EditEffectAsync;
         ViewModel.PackagePresetRequested = PackagePresetAsync;
         ViewModel.CloseRequested = accepted => { Accepted = accepted; Close(); };
+        ViewModel.PropertyChanged += OnViewModelPropertyChanged;
+        UpdateEffectOptions();
         Opened += async (_, _) => await ViewModel.InitializeAsync();
-        Closed += (_, _) => ViewModel.Dispose();
+        Closed += (_, _) =>
+        {
+            ViewModel.PropertyChanged -= OnViewModelPropertyChanged;
+            ViewModel.Dispose();
+        };
         KeyDown += OnWindowKeyDown;
     }
 
@@ -55,12 +62,18 @@ public partial class ImageEffectsWindow : Window
         }
     }
 
-    private async void EditEffectAsync(ImageEffectItemViewModel item)
+    private void OnViewModelPropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
-        if (await new ImageEffectOptionsWindow(item.Effect).ShowDialog<bool>(this))
+        if (e.PropertyName == nameof(ImageEffectsViewModel.SelectedEffect))
         {
-            ViewModel.EffectOptionsChanged(item);
+            UpdateEffectOptions();
         }
+    }
+
+    private void UpdateEffectOptions()
+    {
+        ImageEffectItemViewModel? item = ViewModel.SelectedEffect;
+        _effectOptionsPanel.SetEffect(item?.Effect, item == null ? null : () => ViewModel.EffectOptionsChanged(item));
     }
 
     private async void PackagePresetAsync(ImageEffectPreset preset)
@@ -80,11 +93,6 @@ public partial class ImageEffectsWindow : Window
         {
             DebugHelper.WriteException(ex);
         }
-    }
-
-    private void OnEffectDoubleTapped(object? sender, TappedEventArgs e)
-    {
-        if (ViewModel.SelectedEffect != null) EditEffectAsync(ViewModel.SelectedEffect);
     }
 
     private async void OnClearEffectsClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

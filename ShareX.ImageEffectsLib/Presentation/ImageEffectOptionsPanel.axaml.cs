@@ -10,7 +10,6 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
@@ -23,41 +22,65 @@ using FormsPadding = System.Windows.Forms.Padding;
 
 namespace ShareX.ImageEffectsLib;
 
-public partial class ImageEffectOptionsWindow : Window
+public partial class ImageEffectOptionsPanel : UserControl
 {
-    private readonly ImageEffect _target;
-    private readonly ImageEffect _workingCopy;
-    private readonly List<Action> _committers = [];
+    private ImageEffect? _effect;
+    private Action? _changed;
     private StackPanel _editorPanel = null!;
+    private TextBlock _effectTitle = null!;
     private TextBlock _validationText = null!;
 
-    public ImageEffectOptionsWindow() : this(new Grayscale())
+    public ImageEffectOptionsPanel()
     {
+        AvaloniaXamlLoader.Load(this);
+        _editorPanel = this.FindControl<StackPanel>("EditorPanel")!;
+        _effectTitle = this.FindControl<TextBlock>("EffectTitle")!;
+        _validationText = this.FindControl<TextBlock>("ValidationText")!;
+        ShowEmptyState();
     }
 
-    public ImageEffectOptionsWindow(ImageEffect effect)
+    public void SetEffect(ImageEffect? effect, Action? changed)
     {
-        _target = effect;
-        _workingCopy = effect.Copy();
-        AvaloniaXamlLoader.Load(this);
-        RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        _editorPanel = this.FindControl<StackPanel>("EditorPanel")!;
-        _validationText = this.FindControl<TextBlock>("ValidationText")!;
-        this.FindControl<TextBlock>("EffectTitle")!.Text = effect.GetType().GetDescription();
+        _effect = effect;
+        _changed = changed;
+        _validationText.Text = string.Empty;
+        _editorPanel.Children.Clear();
+
+        if (effect == null)
+        {
+            ShowEmptyState();
+            return;
+        }
+
+        _effectTitle.Text = $"{effect.GetType().GetDescription()} options";
         BuildEditors();
+    }
+
+    private void ShowEmptyState()
+    {
+        _effectTitle.Text = "Effect options";
+        _editorPanel.Children.Clear();
+        _editorPanel.Children.Add(new TextBlock
+        {
+            Text = "Select an effect to edit its options.",
+            FontWeight = FontWeight.Normal
+        });
     }
 
     private void BuildEditors()
     {
-        foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(_workingCopy).Cast<PropertyDescriptor>()
+        if (_effect == null) return;
+
+        foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(_effect).Cast<PropertyDescriptor>()
             .Where(x => x.IsBrowsable && !x.IsReadOnly).OrderBy(x => x.Category).ThenBy(x => x.DisplayName))
         {
-            Grid row = new() { ColumnDefinitions = new ColumnDefinitions("170,*"), ColumnSpacing = 10, MinHeight = 36 };
+            Grid row = new() { ColumnDefinitions = new ColumnDefinitions("140,*"), ColumnSpacing = 10, MinHeight = 36 };
             TextBlock label = new()
             {
                 Text = property.DisplayName,
                 FontWeight = FontWeight.Normal,
-                VerticalAlignment = VerticalAlignment.Center
+                VerticalAlignment = VerticalAlignment.Center,
+                TextWrapping = TextWrapping.Wrap
             };
             if (!string.IsNullOrWhiteSpace(property.Description)) ToolTip.SetTip(label, property.Description);
             row.Children.Add(label);
@@ -80,21 +103,29 @@ public partial class ImageEffectOptionsWindow : Window
 
     private Control CreateEditor(PropertyDescriptor property)
     {
-        object? value = property.GetValue(_workingCopy);
+        object? value = property.GetValue(_effect);
         Type type = property.PropertyType;
 
         if (type == typeof(bool))
         {
-            ToggleSwitch toggle = new() { IsChecked = value as bool? ?? false, OnContent = string.Empty, OffContent = string.Empty,
-                HorizontalAlignment = HorizontalAlignment.Right };
-            _committers.Add(() => property.SetValue(_workingCopy, toggle.IsChecked == true));
+            ToggleSwitch toggle = new()
+            {
+                IsChecked = value as bool? ?? false,
+                OnContent = string.Empty,
+                OffContent = string.Empty,
+                HorizontalAlignment = HorizontalAlignment.Right
+            };
+            toggle.PropertyChanged += (_, e) =>
+            {
+                if (e.Property == ToggleButton.IsCheckedProperty) Apply(property, toggle.IsChecked == true);
+            };
             return toggle;
         }
 
         if (type.IsEnum && type.GetCustomAttribute<FlagsAttribute>() == null)
         {
             ComboBox combo = new() { ItemsSource = Enum.GetValues(type), SelectedItem = value };
-            _committers.Add(() => property.SetValue(_workingCopy, combo.SelectedItem));
+            combo.SelectionChanged += (_, _) => Apply(property, combo.SelectedItem);
             return combo;
         }
 
@@ -108,35 +139,34 @@ public partial class ImageEffectOptionsWindow : Window
                 FormatString = IsFloating(type) ? "0.###" : "0",
                 Value = Convert.ToDecimal(value, CultureInfo.InvariantCulture)
             };
-            _committers.Add(() => property.SetValue(_workingCopy,
-                Convert.ChangeType(number.Value ?? 0, Nullable.GetUnderlyingType(type) ?? type, CultureInfo.InvariantCulture)));
+            number.ValueChanged += (_, _) => ApplyConvertedNumber(property, type, number.Value ?? 0);
             return number;
         }
 
         if (type == typeof(DrawingColor))
         {
             DrawingColor color = value is DrawingColor c ? c : DrawingColor.Transparent;
-            Button button = CreateColorButton(color, selected => color = selected);
-            _committers.Add(() => property.SetValue(_workingCopy, color));
-            return button;
+            return CreateColorButton(color, selected => Apply(property, selected));
         }
 
         if (type == typeof(DrawingPoint))
         {
             DrawingPoint point = value is DrawingPoint p ? p : DrawingPoint.Empty;
-            return CreatePairEditor(point.X, point.Y, "X", "Y", (x, y) => property.SetValue(_workingCopy, new DrawingPoint(x, y)));
+            return CreatePairEditor(point.X, point.Y, "X", "Y",
+                (x, y) => Apply(property, new DrawingPoint(x, y)));
         }
 
         if (type == typeof(DrawingSize))
         {
             DrawingSize size = value is DrawingSize s ? s : DrawingSize.Empty;
-            return CreatePairEditor(size.Width, size.Height, "W", "H", (x, y) => property.SetValue(_workingCopy, new DrawingSize(x, y)));
+            return CreatePairEditor(size.Width, size.Height, "W", "H",
+                (x, y) => Apply(property, new DrawingSize(x, y)));
         }
 
         if (type == typeof(FormsPadding))
         {
             FormsPadding padding = value is FormsPadding p ? p : FormsPadding.Empty;
-            return CreatePaddingEditor(padding, result => property.SetValue(_workingCopy, result));
+            return CreatePaddingEditor(padding, result => Apply(property, result));
         }
 
         if (type == typeof(GradientInfo))
@@ -144,42 +174,55 @@ public partial class ImageEffectOptionsWindow : Window
             Button button = new() { Content = "Edit gradient..." };
             button.Click += async (_, _) =>
             {
-                GradientInfo gradient = property.GetValue(_workingCopy) as GradientInfo ?? new GradientInfo();
-                await new GradientOptionsWindow(gradient).ShowDialog(this);
+                if (_effect == null) return;
+                GradientInfo gradient = property.GetValue(_effect) as GradientInfo ?? new GradientInfo();
+                if (property.GetValue(_effect) == null) Apply(property, gradient);
+                if (TopLevel.GetTopLevel(this) is Window owner)
+                {
+                    await new GradientOptionsWindow(gradient).ShowDialog(owner);
+                    NotifyChanged();
+                }
             };
             return button;
         }
 
-        TextBox textBox = new() { Text = ConvertPropertyToString(property, value), VerticalContentAlignment = VerticalAlignment.Center };
+        TextBox textBox = new()
+        {
+            Text = ConvertPropertyToString(property, value),
+            VerticalContentAlignment = VerticalAlignment.Center
+        };
+        textBox.TextChanged += (_, _) => SetFromText(property, textBox.Text);
         string? editorName = property.Attributes.OfType<EditorAttribute>().FirstOrDefault()?.EditorTypeName;
         if (type == typeof(string) && editorName != null &&
-            (editorName.Contains("FileNameEditor", StringComparison.Ordinal) || editorName.Contains("DirectoryNameEditor", StringComparison.Ordinal)))
+            (editorName.Contains("FileNameEditor", StringComparison.Ordinal) ||
+             editorName.Contains("DirectoryNameEditor", StringComparison.Ordinal)))
         {
             Grid browseGrid = new() { ColumnDefinitions = new ColumnDefinitions("*,Auto"), ColumnSpacing = 8 };
             browseGrid.Children.Add(textBox);
             Button browse = new() { Content = "Browse..." };
             browse.Click += async (_, _) =>
             {
+                TopLevel? topLevel = TopLevel.GetTopLevel(this);
+                if (topLevel == null) return;
+
                 if (editorName.Contains("DirectoryNameEditor", StringComparison.Ordinal))
                 {
-                    IReadOnlyList<Avalonia.Platform.Storage.IStorageFolder> folders = await StorageProvider.OpenFolderPickerAsync(
+                    IReadOnlyList<Avalonia.Platform.Storage.IStorageFolder> folders = await topLevel.StorageProvider.OpenFolderPickerAsync(
                         new Avalonia.Platform.Storage.FolderPickerOpenOptions { AllowMultiple = false, Title = $"Select {property.DisplayName}" });
                     if (folders.Count > 0) textBox.Text = folders[0].Path.LocalPath;
                 }
                 else
                 {
-                    IReadOnlyList<Avalonia.Platform.Storage.IStorageFile> files = await StorageProvider.OpenFilePickerAsync(
+                    IReadOnlyList<Avalonia.Platform.Storage.IStorageFile> files = await topLevel.StorageProvider.OpenFilePickerAsync(
                         new Avalonia.Platform.Storage.FilePickerOpenOptions { AllowMultiple = false, Title = $"Select {property.DisplayName}" });
                     if (files.Count > 0) textBox.Text = files[0].Path.LocalPath;
                 }
             };
             Grid.SetColumn(browse, 1);
             browseGrid.Children.Add(browse);
-            _committers.Add(() => SetFromText(property, textBox.Text));
             return browseGrid;
         }
 
-        _committers.Add(() => SetFromText(property, textBox.Text));
         return textBox;
     }
 
@@ -193,16 +236,8 @@ public partial class ImageEffectOptionsWindow : Window
             BorderBrush = new SolidColorBrush(Avalonia.Media.Color.FromRgb(112, 112, 112)),
             BorderThickness = new Thickness(1)
         };
-        TextBlock colorText = new()
-        {
-            FontWeight = FontWeight.Normal,
-            VerticalAlignment = VerticalAlignment.Center
-        };
-        StackPanel content = new()
-        {
-            Orientation = Orientation.Horizontal,
-            Spacing = 8
-        };
+        TextBlock colorText = new() { FontWeight = FontWeight.Normal, VerticalAlignment = VerticalAlignment.Center };
+        StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 8 };
         content.Children.Add(swatch);
         content.Children.Add(colorText);
 
@@ -224,89 +259,84 @@ public partial class ImageEffectOptionsWindow : Window
             IsColorPreviewVisible = true
         };
         Flyout flyout = new() { Content = picker };
-
-        void ApplySelectedColor()
-        {
-            DrawingColor color = ToDrawing(picker.Color);
-            UpdateColorPreview(color);
-            changed(color);
-        }
-
         picker.PropertyChanged += (_, e) =>
         {
             if (e.Property == Avalonia.Controls.ColorView.ColorProperty)
             {
-                ApplySelectedColor();
+                DrawingColor color = ToDrawing(picker.Color);
+                UpdateColorPreview(color);
+                changed(color);
             }
         };
-        flyout.Closed += (_, _) => ApplySelectedColor();
         button.Flyout = flyout;
         return button;
     }
 
-    private Control CreatePairEditor(int first, int second, string firstLabel, string secondLabel, Action<int, int> commit)
+    private Control CreatePairEditor(int first, int second, string firstLabel, string secondLabel, Action<int, int> changed)
     {
         Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto,*"), ColumnSpacing = 6 };
         NumericUpDown a = CreateIntegerInput(first);
         NumericUpDown b = CreateIntegerInput(second);
         grid.Children.Add(new TextBlock { Text = firstLabel, FontWeight = FontWeight.Normal, VerticalAlignment = VerticalAlignment.Center });
-        Grid.SetColumn(a, 1); grid.Children.Add(a);
+        Grid.SetColumn(a, 1);
+        grid.Children.Add(a);
         TextBlock separator = new() { Text = secondLabel, FontWeight = FontWeight.Normal, VerticalAlignment = VerticalAlignment.Center };
-        Grid.SetColumn(separator, 2); grid.Children.Add(separator);
-        Grid.SetColumn(b, 3); grid.Children.Add(b);
-        _committers.Add(() => commit((int)(a.Value ?? 0), (int)(b.Value ?? 0)));
+        Grid.SetColumn(separator, 2);
+        grid.Children.Add(separator);
+        Grid.SetColumn(b, 3);
+        grid.Children.Add(b);
+        a.ValueChanged += (_, _) => changed((int)(a.Value ?? 0), (int)(b.Value ?? 0));
+        b.ValueChanged += (_, _) => changed((int)(a.Value ?? 0), (int)(b.Value ?? 0));
         return grid;
     }
 
-    private Control CreatePaddingEditor(FormsPadding padding, Action<FormsPadding> commit)
+    private Control CreatePaddingEditor(FormsPadding padding, Action<FormsPadding> changed)
     {
         Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("*,*,*,*"), ColumnSpacing = 6 };
         int[] values = [padding.Left, padding.Top, padding.Right, padding.Bottom];
         string[] labels = ["L", "T", "R", "B"];
         NumericUpDown[] inputs = new NumericUpDown[4];
-        for (int i = 0; i < 4; i++)
+
+        void ApplyPadding() => changed(new FormsPadding((int)(inputs[0].Value ?? 0), (int)(inputs[1].Value ?? 0),
+            (int)(inputs[2].Value ?? 0), (int)(inputs[3].Value ?? 0)));
+
+        for (int i = 0; i < inputs.Length; i++)
         {
             StackPanel panel = new() { Spacing = 3 };
-            panel.Children.Add(new TextBlock { Text = labels[i], FontWeight = FontWeight.Normal, HorizontalAlignment = HorizontalAlignment.Center });
+            panel.Children.Add(new TextBlock
+            {
+                Text = labels[i],
+                FontWeight = FontWeight.Normal,
+                HorizontalAlignment = HorizontalAlignment.Center
+            });
             inputs[i] = CreateIntegerInput(values[i]);
+            inputs[i].ValueChanged += (_, _) => ApplyPadding();
             panel.Children.Add(inputs[i]);
             Grid.SetColumn(panel, i);
             grid.Children.Add(panel);
         }
-        _committers.Add(() => commit(new FormsPadding((int)(inputs[0].Value ?? 0), (int)(inputs[1].Value ?? 0),
-            (int)(inputs[2].Value ?? 0), (int)(inputs[3].Value ?? 0))));
         return grid;
     }
 
     private static NumericUpDown CreateIntegerInput(int value) => new()
     {
-        Minimum = -1_000_000, Maximum = 1_000_000, Increment = 1, FormatString = "0", Value = value,
+        Minimum = -1_000_000,
+        Maximum = 1_000_000,
+        Increment = 1,
+        FormatString = "0",
+        Value = value,
         ShowButtonSpinner = false
     };
 
     private void SetFromText(PropertyDescriptor property, string? text)
     {
-        TypeConverter converter = property.Converter;
-        object? value = converter.CanConvertFrom(typeof(string))
-            ? converter.ConvertFromString(null, CultureInfo.CurrentCulture, text ?? string.Empty)
-            : text;
-        property.SetValue(_workingCopy, value);
-    }
-
-    private static string ConvertPropertyToString(PropertyDescriptor property, object? value)
-    {
-        try { return property.Converter.ConvertToString(null, CultureInfo.CurrentCulture, value) ?? string.Empty; }
-        catch { return value?.ToString() ?? string.Empty; }
-    }
-
-    private void OnSaveClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
         try
         {
-            foreach (Action commit in _committers) commit();
-            foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(_workingCopy).Cast<PropertyDescriptor>().Where(x => !x.IsReadOnly))
-                property.SetValue(_target, property.GetValue(_workingCopy));
-            Close(true);
+            TypeConverter converter = property.Converter;
+            object? value = converter.CanConvertFrom(typeof(string))
+                ? converter.ConvertFromString(null, CultureInfo.CurrentCulture, text ?? string.Empty)
+                : text;
+            Apply(property, value);
         }
         catch (Exception ex)
         {
@@ -314,7 +344,41 @@ public partial class ImageEffectOptionsWindow : Window
         }
     }
 
-    private void OnCancelClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e) => Close(false);
+    private void Apply(PropertyDescriptor property, object? value)
+    {
+        if (_effect == null) return;
+
+        try
+        {
+            property.SetValue(_effect, value);
+            _validationText.Text = string.Empty;
+            NotifyChanged();
+        }
+        catch (Exception ex)
+        {
+            _validationText.Text = ex.Message;
+        }
+    }
+
+    private void ApplyConvertedNumber(PropertyDescriptor property, Type type, decimal value)
+    {
+        try
+        {
+            Apply(property, Convert.ChangeType(value, Nullable.GetUnderlyingType(type) ?? type, CultureInfo.InvariantCulture));
+        }
+        catch (Exception ex)
+        {
+            _validationText.Text = ex.Message;
+        }
+    }
+
+    private void NotifyChanged() => _changed?.Invoke();
+
+    private static string ConvertPropertyToString(PropertyDescriptor property, object? value)
+    {
+        try { return property.Converter.ConvertToString(null, CultureInfo.CurrentCulture, value) ?? string.Empty; }
+        catch { return value?.ToString() ?? string.Empty; }
+    }
 
     private static bool IsNumeric(Type type) => Type.GetTypeCode(Nullable.GetUnderlyingType(type) ?? type) is
         TypeCode.Byte or TypeCode.SByte or TypeCode.Int16 or TypeCode.UInt16 or TypeCode.Int32 or TypeCode.UInt32 or

@@ -61,6 +61,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
     private readonly List<ImageEffectPreset> _presets;
     private readonly ImageEffectsCallbacks _callbacks;
     private readonly ISerializationBinder _serializationBinder = new ImageEffectsSerializationBinder();
+    private readonly DispatcherTimer _previewTimer;
     private System.Drawing.Bitmap? _sourceImage;
     private int _previewVersion;
     private bool _disposed;
@@ -105,7 +106,6 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
     public int SelectedPresetIndex => Math.Max(0, SelectedPreset == null ? 0 : Presets.IndexOf(SelectedPreset));
 
     public Action? AddEffectRequested { get; set; }
-    public Action<ImageEffectItemViewModel>? EditEffectRequested { get; set; }
     public Action<ImageEffectPreset>? PackagePresetRequested { get; set; }
     public Action<bool>? CloseRequested { get; set; }
 
@@ -145,6 +145,12 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         _callbacks = callbacks ?? new ImageEffectsCallbacks();
         Mode = mode;
         FilePath = filePath ?? string.Empty;
+        _previewTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(100) };
+        _previewTimer.Tick += async (_, _) =>
+        {
+            _previewTimer.Stop();
+            await UpdatePreviewAsync();
+        };
 
         if (_presets.Count == 0)
         {
@@ -284,12 +290,6 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         QueuePreview();
     }
 
-    [RelayCommand]
-    private void EditEffect()
-    {
-        if (SelectedEffect != null) EditEffectRequested?.Invoke(SelectedEffect);
-    }
-
     [RelayCommand] private void RefreshPreview() => QueuePreview();
 
     [RelayCommand]
@@ -362,15 +362,17 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         QueuePreview();
     }
 
-    public async Task InitializeAsync() => await UpdatePreviewAsync();
+    public async Task InitializeAsync()
+    {
+        _previewTimer.Stop();
+        await UpdatePreviewAsync();
+    }
 
     private void QueuePreview()
     {
-        int version = ++_previewVersion;
-        Dispatcher.UIThread.Post(async () =>
-        {
-            if (version == _previewVersion) await UpdatePreviewAsync();
-        });
+        _previewVersion++;
+        _previewTimer.Stop();
+        _previewTimer.Start();
     }
 
     private async Task UpdatePreviewAsync()
@@ -384,7 +386,8 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         try
         {
             using System.Drawing.Bitmap source = (System.Drawing.Bitmap)_sourceImage.Clone();
-            System.Drawing.Bitmap? result = await Task.Run(() => SelectedPreset.Preset.ApplyEffects(source));
+            ImageEffectPreset preset = SelectedPreset.Preset.Copy();
+            System.Drawing.Bitmap? result = await Task.Run(() => preset.ApplyEffects(source));
             using (result)
             {
                 if (result == null || version != _previewVersion || _disposed) return;
@@ -412,7 +415,8 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
     {
         if (_sourceImage == null || SelectedPreset == null) return null;
         using System.Drawing.Bitmap source = (System.Drawing.Bitmap)_sourceImage.Clone();
-        return await Task.Run(() => SelectedPreset.Preset.ApplyEffects(source));
+        ImageEffectPreset preset = SelectedPreset.Preset.Copy();
+        return await Task.Run(() => preset.ApplyEffects(source));
     }
 
     public void ImportPreset(string json)
@@ -470,6 +474,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
     public void Dispose()
     {
         _disposed = true;
+        _previewTimer.Stop();
         _sourceImage?.Dispose();
         Preview?.Dispose();
     }
