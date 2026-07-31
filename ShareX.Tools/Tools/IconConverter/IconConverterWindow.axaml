@@ -33,7 +33,6 @@
         </Style>
     </Window.Styles>
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid RowDefinitions="Auto,*,Auto" Margin="16" RowSpacing="12">
                 <Border Grid.Row="0" Classes="converter-panel" Padding="12">
@@ -149,5 +148,4 @@
                 </Grid>
             </Grid>
         </Grid>
-    </ThemeVariantScope>
 </Window>

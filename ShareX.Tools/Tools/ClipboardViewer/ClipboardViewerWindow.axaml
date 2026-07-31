@@ -28,7 +28,6 @@
         </Style>
     </Window.Styles>
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid Margin="16" ColumnDefinitions="250,*" ColumnSpacing="12">
                 <Border Grid.Column="0" Classes="tool-panel">
@@ -157,5 +156,4 @@
                 </Border>
             </Grid>
         </Grid>
-    </ThemeVariantScope>
 </Window>

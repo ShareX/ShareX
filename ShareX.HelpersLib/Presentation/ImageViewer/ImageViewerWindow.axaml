@@ -16,7 +16,6 @@
         CanMaximize="False"
         Topmost="True">
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Border Background="{DynamicResource ShareX.Brush.Checkered}"
                     PointerReleased="OnPreviewPointerReleased"
@@ -61,5 +60,4 @@
                            FontSize="38"/>
             </Button>
         </Grid>
-    </ThemeVariantScope>
 </Window>

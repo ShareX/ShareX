@@ -10,7 +10,6 @@
         TransparencyLevelHint="Transparent"
         KeyDown="OnKeyDown"
         PointerWheelChanged="OnPointerWheelChanged">
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid x:Name="Surface"
               Background="Transparent"
               PointerEntered="OnPointerEntered"
@@ -43,5 +42,4 @@
                 </StackPanel>
             </Border>
         </Grid>
-    </ThemeVariantScope>
 </Window>

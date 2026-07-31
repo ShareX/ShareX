@@ -8,7 +8,6 @@
         CanResize="False"
         CanMaximize="False"
         WindowStartupLocation="CenterScreen">
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid Margin="16" RowDefinitions="Auto,Auto" RowSpacing="12">
                 <Grid ColumnDefinitions="370,*" ColumnSpacing="12">
@@ -168,5 +167,4 @@
                 </StackPanel>
             </Grid>
         </Grid>
-    </ThemeVariantScope>
 </Window>

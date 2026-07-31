@@ -13,7 +13,6 @@
         CanResize="False"
         KeyUp="OnKeyUp"
         WindowStartupLocation="CenterScreen">
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid Margin="16" RowDefinitions="Auto,Auto,Auto">
                 <Border Classes="tool-panel" Margin="0,0,0,12">
@@ -53,5 +52,4 @@
                            TextWrapping="Wrap" VerticalAlignment="Center"/>
             </Grid>
         </Grid>
-    </ThemeVariantScope>
 </Window>

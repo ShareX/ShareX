@@ -14,7 +14,6 @@
         MinHeight="560"
         WindowStartupLocation="CenterScreen">
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid Margin="16" ColumnDefinitions="360,*" ColumnSpacing="12">
                 <Grid Grid.Column="0" RowDefinitions="*,Auto" RowSpacing="12">
@@ -154,5 +153,4 @@
                 </Border>
             </Grid>
         </Grid>
-    </ThemeVariantScope>
 </Window>

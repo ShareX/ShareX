@@ -58,7 +58,6 @@
         </Style>
     </Window.Styles>
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" ColumnDefinitions="220,*">
             <Border Grid.Column="0" Padding="8" Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                     BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="0,0,1,0">
@@ -69,5 +68,4 @@
             </Border>
             <Grid x:Name="SettingsPages" Grid.Column="1"/>
         </Grid>
-    </ThemeVariantScope>
 </Window>

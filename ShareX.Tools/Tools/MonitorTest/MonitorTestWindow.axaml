@@ -37,7 +37,6 @@
         </Style>
     </Window.Styles>
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="Black"
               PointerReleased="OnSurfacePointerReleased"
               PointerWheelChanged="OnSurfacePointerWheelChanged">
@@ -252,5 +251,4 @@
                 </Grid>
             </Border>
         </Grid>
-    </ThemeVariantScope>
 </Window>

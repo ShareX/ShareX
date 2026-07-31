@@ -8,7 +8,6 @@
         Topmost="True"
         Background="#19000000"
         TransparencyLevelHint="Transparent">
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="#19000000">
             <Border Classes="tool-panel"
                     Padding="18,12"
@@ -27,5 +26,4 @@
                 </StackPanel>
             </Border>
         </Grid>
-    </ThemeVariantScope>
 </Window>

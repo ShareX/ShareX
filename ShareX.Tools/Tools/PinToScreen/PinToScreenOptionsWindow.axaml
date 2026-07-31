@@ -11,7 +11,6 @@
         Title="ShareX - Pin to Screen options"
         Width="760" Height="560" MinWidth="700" MinHeight="520"
         WindowStartupLocation="CenterOwner">
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid Margin="16" RowDefinitions="*,Auto" RowSpacing="12">
                 <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
@@ -116,5 +115,4 @@
                 </Grid>
             </Grid>
         </Grid>
-    </ThemeVariantScope>
 </Window>

@@ -13,7 +13,6 @@
         SizeToContent="Height"
         WindowStartupLocation="CenterScreen">
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid RowDefinitions="Auto,Auto,Auto,Auto" Margin="16" RowSpacing="12">
                 <Border Grid.Row="0" Classes="tool-panel">
@@ -77,5 +76,4 @@
                 </StackPanel>
             </Grid>
         </Grid>
-    </ThemeVariantScope>
 </Window>

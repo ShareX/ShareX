@@ -16,7 +16,6 @@
         CanResize="False"
         Topmost="True">
 
-    <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="#01000000">
             <controls:RulerOverlayControl x:Name="RulerOverlay"/>
 
@@ -33,5 +32,4 @@
             </Border>
 
         </Grid>
-    </ThemeVariantScope>
 </Window>
