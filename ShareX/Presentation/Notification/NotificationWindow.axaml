@@ -18,7 +18,7 @@
             <Setter Property="Width" Value="34"/>
             <Setter Property="Height" Value="34"/>
             <Setter Property="Padding" Value="0"/>
-            <Setter Property="Margin" Value="3,0"/>
+            <Setter Property="Margin" Value="3"/>
             <Setter Property="CornerRadius" Value="8"/>
             <Setter Property="Background" Value="#CC383838"/>
             <Setter Property="BorderBrush" Value="#33FFFFFF"/>
