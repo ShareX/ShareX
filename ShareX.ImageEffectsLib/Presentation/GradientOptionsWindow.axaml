@@ -3,7 +3,7 @@
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.ImageEffectsLib.GradientOptionsWindow"
         Title="ShareX - Gradient"
-        Width="520" Height="560" MinHeight="420"
+        Width="400" Height="520" MinWidth="400" MinHeight="420"
         WindowStartupLocation="CenterOwner">
     <ThemeVariantScope RequestedThemeVariant="{x:Static theming:ThemeManager.ShareXDark}">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
@@ -17,7 +17,7 @@
             <Border Grid.Row="1" Classes="tool-panel">
                 <Grid ColumnDefinitions="140,*" ColumnSpacing="10">
                     <TextBlock Classes="row-label" Text="Direction"/>
-                    <ComboBox x:Name="DirectionComboBox" Grid.Column="1"/>
+                    <ComboBox x:Name="DirectionComboBox" Grid.Column="1" HorizontalAlignment="Right"/>
                 </Grid>
             </Border>
             <Border Grid.Row="2" Classes="tool-panel">
