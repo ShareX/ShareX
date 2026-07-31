@@ -63,19 +63,19 @@ public sealed class NotificationActionButton
     public static List<NotificationActionButton> CloneButtons(IEnumerable<NotificationActionButton>? buttons) =>
         buttons?.Where(button => button != null).Select(button => button.Clone()).ToList() ?? [];
 
-    public static (string Label, string Icon) GetDefaultPresentation(ToastClickAction action) => action switch
+    public static string GetDefaultIcon(ToastClickAction action) => action switch
     {
-        ToastClickAction.AnnotateImage => ("Edit", LucideIcons.pen_line),
-        ToastClickAction.CopyImageToClipboard => ("Copy image", LucideIcons.copy),
-        ToastClickAction.CopyFile => ("Copy file", LucideIcons.files),
-        ToastClickAction.CopyFilePath => ("Copy path", LucideIcons.clipboard),
-        ToastClickAction.CopyUrl => ("Copy link", LucideIcons.link),
-        ToastClickAction.OpenFile => ("Open", LucideIcons.external_link),
-        ToastClickAction.OpenFolder => ("Folder", LucideIcons.folder_open),
-        ToastClickAction.OpenUrl => ("Open link", LucideIcons.external_link),
-        ToastClickAction.Upload => ("Upload", LucideIcons.upload),
-        ToastClickAction.PinToScreen => ("Pin", LucideIcons.pin),
-        ToastClickAction.DeleteFile => ("Delete", LucideIcons.trash_2),
-        _ => ("Close", LucideIcons.x)
+        ToastClickAction.AnnotateImage => LucideIcons.pen_line,
+        ToastClickAction.CopyImageToClipboard => LucideIcons.copy,
+        ToastClickAction.CopyFile => LucideIcons.files,
+        ToastClickAction.CopyFilePath => LucideIcons.clipboard,
+        ToastClickAction.CopyUrl => LucideIcons.link,
+        ToastClickAction.OpenFile => LucideIcons.external_link,
+        ToastClickAction.OpenFolder => LucideIcons.folder_open,
+        ToastClickAction.OpenUrl => LucideIcons.external_link,
+        ToastClickAction.Upload => LucideIcons.upload,
+        ToastClickAction.PinToScreen => LucideIcons.pin,
+        ToastClickAction.DeleteFile => LucideIcons.trash_2,
+        _ => LucideIcons.x
     };
 }

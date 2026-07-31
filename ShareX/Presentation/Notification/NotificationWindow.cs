@@ -258,9 +258,12 @@ public partial class NotificationWindow : Window
                 continue;
             }
 
-            (string defaultLabel, string defaultIcon) = NotificationActionButton.GetDefaultPresentation(definition.Action);
-            string label = string.IsNullOrWhiteSpace(definition.Label) ? defaultLabel : definition.Label;
-            string icon = string.IsNullOrWhiteSpace(definition.Icon) ? defaultIcon : definition.Icon;
+            string label = string.IsNullOrWhiteSpace(definition.Label)
+                ? definition.Action.GetLocalizedDescription()
+                : definition.Label;
+            string icon = string.IsNullOrWhiteSpace(definition.Icon)
+                ? NotificationActionButton.GetDefaultIcon(definition.Action)
+                : definition.Icon;
 
             TextBlock iconText = new()
             {

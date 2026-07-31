@@ -319,14 +319,13 @@ public partial class TaskSettingsWindow : Window
 
         foreach (ToastClickAction action in Helpers.GetEnums<ToastClickAction>().Where(action => !selectedActions.Contains(action)))
         {
-            (string _, string icon) = NotificationActionButton.GetDefaultPresentation(action);
             MenuItem item = new()
             {
                 Header = action.GetLocalizedDescription(),
                 Icon = new TextBlock
                 {
                     Classes = { "icon" },
-                    Text = icon,
+                    Text = NotificationActionButton.GetDefaultIcon(action),
                     FontSize = 15,
                     Width = 18,
                     TextAlignment = Avalonia.Media.TextAlignment.Center
@@ -426,7 +425,7 @@ public sealed class NotificationActionItem
     public NotificationActionButton Definition { get; }
     public ToastClickAction Action => Definition.Action;
     public string Title => Action.GetLocalizedDescription();
-    public string Icon => NotificationActionButton.GetDefaultPresentation(Action).Icon;
+    public string Icon => NotificationActionButton.GetDefaultIcon(Action);
 
     public NotificationActionItem(NotificationActionButton definition)
     {
