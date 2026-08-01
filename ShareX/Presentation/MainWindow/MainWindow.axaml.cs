@@ -23,6 +23,7 @@ using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Presentation.MainWindow.Localization;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -977,54 +978,54 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         List<MainMenuEntry> entries = new()
         {
-            Item("Show errors...", LucideIcons.triangle_alert, _uploadInfoManager.ShowErrors,
+            Item(MainWindowResources.ShowErrors, LucideIcons.triangle_alert, _uploadInfoManager.ShowErrors,
                 hasSelection && !isWorking && selected!.Info.Result.IsError),
-            Item("Stop upload", LucideIcons.circle_stop, _uploadInfoManager.StopUpload, isWorking),
-            Submenu("Open", LucideIcons.external_link, () => BuildOpenTaskMenu(selected, statuses), hasSelection),
-            Submenu("Copy", LucideIcons.copy, () => BuildCopyTaskMenu(selected, statuses), hasSelection && !isWorking),
-            Item("Upload selected file", LucideIcons.file_up, _uploadInfoManager.Upload,
+            Item(MainWindowResources.StopUpload, LucideIcons.circle_stop, _uploadInfoManager.StopUpload, isWorking),
+            Submenu(MainWindowResources.Open, LucideIcons.external_link, () => BuildOpenTaskMenu(selected, statuses), hasSelection),
+            Submenu(MainWindowResources.Copy, LucideIcons.copy, () => BuildCopyTaskMenu(selected, statuses), hasSelection && !isWorking),
+            Item(MainWindowResources.UploadSelectedFile, LucideIcons.file_up, _uploadInfoManager.Upload,
                 !SystemOptions.DisableUpload && hasSelection && !isWorking && selected!.IsFileExist,
                 new KeyGesture(Key.U, KeyModifiers.Control)),
-            Item("Download selected URL", LucideIcons.download, _uploadInfoManager.Download,
+            Item(MainWindowResources.DownloadSelectedUrl, LucideIcons.download, _uploadInfoManager.Download,
                 hasSelection && !isWorking && selected!.IsFileURL,
                 new KeyGesture(Key.D, KeyModifiers.Control)),
-            Item("Edit image...", LucideIcons.image, _uploadInfoManager.EditImage,
+            Item(MainWindowResources.EditImage, LucideIcons.image, _uploadInfoManager.EditImage,
                 hasSelection && !isWorking && selected!.IsImageFile,
                 new KeyGesture(Key.E, KeyModifiers.Control)),
-            Item("Beautify image...", LucideIcons.sparkles, _uploadInfoManager.BeautifyImage,
+            Item(MainWindowResources.BeautifyImage, LucideIcons.sparkles, _uploadInfoManager.BeautifyImage,
                 hasSelection && !isWorking && selected!.IsImageFile),
-            Item("Add image effects...", LucideIcons.wand_sparkles, _uploadInfoManager.AddImageEffects,
+            Item(MainWindowResources.AddImageEffects, LucideIcons.wand_sparkles, _uploadInfoManager.AddImageEffects,
                 hasSelection && !isWorking && selected!.IsImageFile),
-            Item("Pin to screen", LucideIcons.pin, _uploadInfoManager.PinToScreen,
+            Item(MainWindowResources.PinToScreen, LucideIcons.pin, _uploadInfoManager.PinToScreen,
                 hasSelection && !isWorking && selected!.IsImageFile,
                 new KeyGesture(Key.P, KeyModifiers.Control)),
-            Submenu("Run action", LucideIcons.play, () => BuildExternalActionsMenu(selected),
+            Submenu(MainWindowResources.RunAction, LucideIcons.play, () => BuildExternalActionsMenu(selected),
                 hasSelection && !isWorking && HasExternalActions(selected!.Info.FilePath)),
-            Item("Delete selected item", LucideIcons.trash_2, RemoveSelectedTasks, hasSelection && !isWorking,
+            Item(MainWindowResources.DeleteSelectedItem, LucideIcons.trash_2, RemoveSelectedTasks, hasSelection && !isWorking,
                 new KeyGesture(Key.Delete)),
-            Item("Delete selected file...", LucideIcons.file_x, DeleteSelectedFiles,
+            Item(MainWindowResources.DeleteSelectedFile, LucideIcons.file_x, DeleteSelectedFiles,
                 hasSelection && !isWorking && selected!.IsFileExist,
                 new KeyGesture(Key.Delete, KeyModifiers.Shift)),
-            Submenu("Shorten selected URL", LucideIcons.link_2, BuildUrlShortenerMenu,
+            Submenu(MainWindowResources.ShortenSelectedUrl, LucideIcons.link_2, BuildUrlShortenerMenu,
                 !SystemOptions.DisableUpload && hasSelection && !isWorking && selected!.IsURLExist),
-            Submenu("Share selected URL", LucideIcons.globe_2, BuildUrlSharingMenu,
+            Submenu(MainWindowResources.ShareSelectedUrl, LucideIcons.globe_2, BuildUrlSharingMenu,
                 !SystemOptions.DisableUpload && hasSelection && !isWorking && selected!.IsURLExist),
-            Item("Analyze image...", LucideIcons.bot, _uploadInfoManager.AnalyzeImage,
+            Item(MainWindowResources.AnalyzeImage, LucideIcons.bot, _uploadInfoManager.AnalyzeImage,
                 hasSelection && !isWorking && selected!.IsImageFile),
-            Item("Search with Google Lens...", LucideIcons.search, _uploadInfoManager.SearchImageUsingGoogleLens,
+            Item(MainWindowResources.SearchWithGoogleLens, LucideIcons.search, _uploadInfoManager.SearchImageUsingGoogleLens,
                 hasSelection && !isWorking && selected!.IsURLExist),
-            Item("Search with Bing Visual Search...", LucideIcons.scan_search, _uploadInfoManager.SearchImageUsingBing,
+            Item(MainWindowResources.SearchWithBingVisualSearch, LucideIcons.scan_search, _uploadInfoManager.SearchImageUsingBing,
                 hasSelection && !isWorking && selected!.IsURLExist),
-            Item("Show QR code...", LucideIcons.qr_code, _uploadInfoManager.ShowQRCode,
+            Item(MainWindowResources.ShowQRCode, LucideIcons.qr_code, _uploadInfoManager.ShowQRCode,
                 hasSelection && !isWorking && selected!.IsURLExist),
-            Item("OCR image...", LucideIcons.scan_text, async () => await _uploadInfoManager.OCRImage(),
+            Item(MainWindowResources.OCRImage, LucideIcons.scan_text, async () => await _uploadInfoManager.OCRImage(),
                 hasSelection && !isWorking && selected!.IsImageFile),
-            Submenu("Combine images...", LucideIcons.combine, BuildCombineImagesMenu,
+            Submenu(MainWindowResources.CombineImagesDialog, LucideIcons.combine, BuildCombineImagesMenu,
                 hasSelection && !isWorking && statuses.Count(x => x.IsImageFile) > 1),
-            Item("Show response...", LucideIcons.file_text, _uploadInfoManager.ShowResponse,
+            Item(MainWindowResources.ShowResponse, LucideIcons.file_text, _uploadInfoManager.ShowResponse,
                 hasSelection && !isWorking && !string.IsNullOrEmpty(selected!.Info.Result.Response)),
             MainMenuEntry.Separator(),
-            Item("Clear thumbnail view", LucideIcons.list_x, ClearTasks, ThumbnailItems.Count > 0)
+            Item(MainWindowResources.ClearThumbnailView, LucideIcons.list_x, ClearTasks, ThumbnailItems.Count > 0)
         };
 
         return BuildContextMenu(entries);
@@ -1034,17 +1035,17 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         return new List<MainMenuEntry>
         {
-            Item("URL", LucideIcons.link, _uploadInfoManager.OpenURL, selected?.IsURLExist == true,
+            Item(MainWindowResources.Url, LucideIcons.link, _uploadInfoManager.OpenURL, selected?.IsURLExist == true,
                 new KeyGesture(Key.Enter)),
-            Item("Shortened URL", LucideIcons.link_2, _uploadInfoManager.OpenShortenedURL, selected?.IsShortenedURLExist == true),
-            Item("Thumbnail URL", LucideIcons.image, _uploadInfoManager.OpenThumbnailURL, selected?.IsThumbnailURLExist == true),
-            Item("Deletion URL", LucideIcons.trash_2, _uploadInfoManager.OpenDeletionURL, selected?.IsDeletionURLExist == true),
+            Item(MainWindowResources.ShortenedUrl, LucideIcons.link_2, _uploadInfoManager.OpenShortenedURL, selected?.IsShortenedURLExist == true),
+            Item(MainWindowResources.ThumbnailUrl, LucideIcons.image, _uploadInfoManager.OpenThumbnailURL, selected?.IsThumbnailURLExist == true),
+            Item(MainWindowResources.DeletionUrl, LucideIcons.trash_2, _uploadInfoManager.OpenDeletionURL, selected?.IsDeletionURLExist == true),
             MainMenuEntry.Separator(),
-            Item("File", LucideIcons.file, _uploadInfoManager.OpenFile, selected?.IsFileExist == true,
+            Item(MainWindowResources.File, LucideIcons.file, _uploadInfoManager.OpenFile, selected?.IsFileExist == true,
                 new KeyGesture(Key.Enter, KeyModifiers.Control)),
-            Item("Folder", LucideIcons.folder_open, _uploadInfoManager.OpenFolder, selected?.IsFileExist == true,
+            Item(MainWindowResources.Folder, LucideIcons.folder_open, _uploadInfoManager.OpenFolder, selected?.IsFileExist == true,
                 new KeyGesture(Key.Enter, KeyModifiers.Shift)),
-            Item("Thumbnail file", LucideIcons.file_image, _uploadInfoManager.OpenThumbnailFile, selected?.IsThumbnailFileExist == true)
+            Item(MainWindowResources.ThumbnailFile, LucideIcons.file_image, _uploadInfoManager.OpenThumbnailFile, selected?.IsThumbnailFileExist == true)
         };
     }
 
@@ -1052,36 +1053,36 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         List<MainMenuEntry> entries = new()
         {
-            Item("URL", LucideIcons.link, _uploadInfoManager.CopyURL, statuses.Any(x => x.IsURLExist),
+            Item(MainWindowResources.Url, LucideIcons.link, _uploadInfoManager.CopyURL, statuses.Any(x => x.IsURLExist),
                 new KeyGesture(Key.C, KeyModifiers.Control)),
-            Item("Shortened URL", LucideIcons.link_2, _uploadInfoManager.CopyShortenedURL, statuses.Any(x => x.IsShortenedURLExist)),
-            Item("Thumbnail URL", LucideIcons.image, _uploadInfoManager.CopyThumbnailURL, statuses.Any(x => x.IsThumbnailURLExist)),
-            Item("Deletion URL", LucideIcons.trash_2, _uploadInfoManager.CopyDeletionURL, statuses.Any(x => x.IsDeletionURLExist)),
+            Item(MainWindowResources.ShortenedUrl, LucideIcons.link_2, _uploadInfoManager.CopyShortenedURL, statuses.Any(x => x.IsShortenedURLExist)),
+            Item(MainWindowResources.ThumbnailUrl, LucideIcons.image, _uploadInfoManager.CopyThumbnailURL, statuses.Any(x => x.IsThumbnailURLExist)),
+            Item(MainWindowResources.DeletionUrl, LucideIcons.trash_2, _uploadInfoManager.CopyDeletionURL, statuses.Any(x => x.IsDeletionURLExist)),
             MainMenuEntry.Separator(),
-            Item("File", LucideIcons.file, _uploadInfoManager.CopyFile, selected?.IsFileExist == true,
+            Item(MainWindowResources.File, LucideIcons.file, _uploadInfoManager.CopyFile, selected?.IsFileExist == true,
                 new KeyGesture(Key.C, KeyModifiers.Shift)),
-            Item("Image", LucideIcons.image, _uploadInfoManager.CopyImage, selected?.IsImageFile == true,
+            Item(MainWindowResources.Image, LucideIcons.image, _uploadInfoManager.CopyImage, selected?.IsImageFile == true,
                 new KeyGesture(Key.C, KeyModifiers.Alt)),
-            Item("Image dimensions", LucideIcons.ruler, _uploadInfoManager.CopyImageDimensions, selected?.IsImageFile == true),
-            Item("Text", LucideIcons.file_text, _uploadInfoManager.CopyText, selected?.IsTextFile == true),
-            Item("Thumbnail file", LucideIcons.file_image, _uploadInfoManager.CopyThumbnailFile, selected?.IsThumbnailFileExist == true),
-            Item("Thumbnail image", LucideIcons.images, _uploadInfoManager.CopyThumbnailImage, selected?.IsThumbnailFileExist == true),
+            Item(MainWindowResources.ImageDimensions, LucideIcons.ruler, _uploadInfoManager.CopyImageDimensions, selected?.IsImageFile == true),
+            Item(MainWindowResources.Text, LucideIcons.file_text, _uploadInfoManager.CopyText, selected?.IsTextFile == true),
+            Item(MainWindowResources.ThumbnailFile, LucideIcons.file_image, _uploadInfoManager.CopyThumbnailFile, selected?.IsThumbnailFileExist == true),
+            Item(MainWindowResources.ThumbnailImage, LucideIcons.images, _uploadInfoManager.CopyThumbnailImage, selected?.IsThumbnailFileExist == true),
             MainMenuEntry.Separator(),
-            Item("HTML link", LucideIcons.code, _uploadInfoManager.CopyHTMLLink, statuses.Any(x => x.IsURLExist)),
-            Item("HTML image", LucideIcons.file_code, _uploadInfoManager.CopyHTMLImage, statuses.Any(x => x.IsImageURL)),
-            Item("HTML linked image", LucideIcons.braces, _uploadInfoManager.CopyHTMLLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
-            Item("Forum link", LucideIcons.message_square, _uploadInfoManager.CopyForumLink, statuses.Any(x => x.IsURLExist)),
-            Item("Forum image", LucideIcons.messages_square, _uploadInfoManager.CopyForumImage, statuses.Any(x => x.IsImageURL && x.IsURLExist)),
-            Item("Forum linked image", LucideIcons.message_square_share, _uploadInfoManager.CopyForumLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
-            Item("Markdown link", LucideIcons.link, _uploadInfoManager.CopyMarkdownLink, statuses.Any(x => x.IsURLExist)),
-            Item("Markdown image", LucideIcons.image, _uploadInfoManager.CopyMarkdownImage, statuses.Any(x => x.IsImageURL)),
-            Item("Markdown linked image", LucideIcons.images, _uploadInfoManager.CopyMarkdownLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
+            Item(MainWindowResources.HtmlLink, LucideIcons.code, _uploadInfoManager.CopyHTMLLink, statuses.Any(x => x.IsURLExist)),
+            Item(MainWindowResources.HtmlImage, LucideIcons.file_code, _uploadInfoManager.CopyHTMLImage, statuses.Any(x => x.IsImageURL)),
+            Item(MainWindowResources.HtmlLinkedImage, LucideIcons.braces, _uploadInfoManager.CopyHTMLLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
+            Item(MainWindowResources.ForumLink, LucideIcons.message_square, _uploadInfoManager.CopyForumLink, statuses.Any(x => x.IsURLExist)),
+            Item(MainWindowResources.ForumImage, LucideIcons.messages_square, _uploadInfoManager.CopyForumImage, statuses.Any(x => x.IsImageURL && x.IsURLExist)),
+            Item(MainWindowResources.ForumLinkedImage, LucideIcons.message_square_share, _uploadInfoManager.CopyForumLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
+            Item(MainWindowResources.MarkdownLink, LucideIcons.link, _uploadInfoManager.CopyMarkdownLink, statuses.Any(x => x.IsURLExist)),
+            Item(MainWindowResources.MarkdownImage, LucideIcons.image, _uploadInfoManager.CopyMarkdownImage, statuses.Any(x => x.IsImageURL)),
+            Item(MainWindowResources.MarkdownLinkedImage, LucideIcons.images, _uploadInfoManager.CopyMarkdownLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
             MainMenuEntry.Separator(),
-            Item("File path", LucideIcons.route, _uploadInfoManager.CopyFilePath, statuses.Any(x => x.IsFilePathValid),
+            Item(MainWindowResources.FilePath, LucideIcons.route, _uploadInfoManager.CopyFilePath, statuses.Any(x => x.IsFilePathValid),
                 new KeyGesture(Key.C, KeyModifiers.Control | KeyModifiers.Shift)),
-            Item("File name", LucideIcons.file, _uploadInfoManager.CopyFileName, statuses.Any(x => x.IsFilePathValid)),
-            Item("File name with extension", LucideIcons.files, _uploadInfoManager.CopyFileNameWithExtension, statuses.Any(x => x.IsFilePathValid)),
-            Item("Folder", LucideIcons.folder, _uploadInfoManager.CopyFolder, statuses.Any(x => x.IsFilePathValid))
+            Item(MainWindowResources.FileName, LucideIcons.file, _uploadInfoManager.CopyFileName, statuses.Any(x => x.IsFilePathValid)),
+            Item(MainWindowResources.FileNameWithExtension, LucideIcons.files, _uploadInfoManager.CopyFileNameWithExtension, statuses.Any(x => x.IsFilePathValid)),
+            Item(MainWindowResources.Folder, LucideIcons.folder, _uploadInfoManager.CopyFolder, statuses.Any(x => x.IsFilePathValid))
         };
 
         if (Program.Settings.ClipboardContentFormats?.Count > 0)
@@ -1121,8 +1122,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private IReadOnlyList<MainMenuEntry> BuildCombineImagesMenu() => new List<MainMenuEntry>
     {
-        Item("Horizontally", LucideIcons.rows_2, () => _uploadInfoManager.CombineImages(FormsOrientation.Horizontal)),
-        Item("Vertically", LucideIcons.columns_2, () => _uploadInfoManager.CombineImages(FormsOrientation.Vertical))
+            Item(MainWindowResources.Horizontally, LucideIcons.rows_2, () => _uploadInfoManager.CombineImages(FormsOrientation.Horizontal)),
+            Item(MainWindowResources.Vertically, LucideIcons.columns_2, () => _uploadInfoManager.CombineImages(FormsOrientation.Vertical))
     };
 
     private void RemoveSelectedTasks()
@@ -1190,7 +1191,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (sender is Control control)
         {
             ContextMenu menu = BuildContextMenu([
-                Item("Clear thumbnail view", LucideIcons.list_x, ClearTasks)
+            Item(MainWindowResources.ClearThumbnailView, LucideIcons.list_x, ClearTasks)
             ]);
             TryOpenContextMenu(menu, control, PlacementMode.Pointer);
             e.Handled = true;
@@ -1262,13 +1263,13 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         if (hasFiles)
         {
-            DropOverlayTitle.Text = "Release to upload files";
-            DropOverlayDescription.Text = "Files dropped here will be uploaded by ShareX.";
+            DropOverlayTitle.Text = MainWindowResources.ReleaseToUploadFiles;
+            DropOverlayDescription.Text = MainWindowResources.FilesDroppedUploadDescription;
         }
         else if (hasText)
         {
-            DropOverlayTitle.Text = "Release to upload text";
-            DropOverlayDescription.Text = "Text dropped here will be uploaded by ShareX.";
+            DropOverlayTitle.Text = MainWindowResources.ReleaseToUploadText;
+            DropOverlayDescription.Text = MainWindowResources.TextDroppedUploadDescription;
         }
 
         e.Handled = true;

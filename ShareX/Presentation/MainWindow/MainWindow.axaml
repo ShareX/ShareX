@@ -1,6 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        xmlns:lang="using:ShareX.Presentation.MainWindow.Localization"
         xmlns:local="using:ShareX"
         x:Class="ShareX.MainWindow"
         x:CompileBindings="False"
@@ -152,7 +153,7 @@
                                                         CornerRadius="4"
                                                         Padding="6">
                                                     <Grid RowDefinitions="Auto,*" RowSpacing="6">
-                                                        <TextBlock Text="Combine images"
+                                                        <TextBlock Text="{x:Static lang:MainWindowResources.CombineImages}"
                                                                    Foreground="White"
                                                                    FontWeight="SemiBold"
                                                                    TextAlignment="Center"/>
@@ -175,7 +176,7 @@
                                                                                Foreground="White"
                                                                                FontSize="20"
                                                                                HorizontalAlignment="Center"/>
-                                                                    <TextBlock Text="Horizontal"
+                                                                    <TextBlock Text="{x:Static lang:MainWindowResources.Horizontal}"
                                                                                Foreground="White"
                                                                                FontSize="11"
                                                                                TextAlignment="Center"/>
@@ -200,7 +201,7 @@
                                                                                Foreground="White"
                                                                                FontSize="20"
                                                                                HorizontalAlignment="Center"/>
-                                                                    <TextBlock Text="Vertical"
+                                                                    <TextBlock Text="{x:Static lang:MainWindowResources.Vertical}"
                                                                                Foreground="White"
                                                                                FontSize="11"
                                                                                TextAlignment="Center"/>
@@ -246,10 +247,10 @@
                         <Grid RowDefinitions="Auto,Auto,*" RowSpacing="8">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="9">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.keyboard}" FontSize="22" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
-                                <TextBlock Text="ShareX hotkeys" FontSize="19" FontWeight="SemiBold" Foreground="{DynamicResource ShareX.Brush.Text}"/>
+                                <TextBlock Text="{x:Static lang:MainWindowResources.ShareXHotkeys}" FontSize="19" FontWeight="SemiBold" Foreground="{DynamicResource ShareX.Brush.Text}"/>
                             </StackPanel>
                             <TextBlock Grid.Row="1"
-                                       Text="Use a hotkey to capture or upload. Your results will appear here as thumbnails."
+                                       Text="{x:Static lang:MainWindowResources.HotkeyHint}"
                                        TextAlignment="Center"
                                        FontWeight="Normal"
                                        TextWrapping="Wrap"
@@ -313,13 +314,13 @@
                                Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
                                HorizontalAlignment="Center"/>
                     <TextBlock x:Name="DropOverlayTitle"
-                               Text="Release to upload files"
+                               Text="{x:Static lang:MainWindowResources.ReleaseToUploadFiles}"
                                FontSize="22"
                                Foreground="{DynamicResource ShareX.Brush.Text}"
                                TextAlignment="Center"
                                HorizontalAlignment="Center"/>
                     <TextBlock x:Name="DropOverlayDescription"
-                               Text="Files dropped here will be uploaded by ShareX."
+                               Text="{x:Static lang:MainWindowResources.FilesDroppedUploadDescription}"
                                FontWeight="Normal"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                TextAlignment="Center"
