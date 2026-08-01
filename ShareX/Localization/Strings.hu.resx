@@ -1177,4 +1177,664 @@
   <data name="TaskSettingsWindow_ChooseWatchFolder" xml:space="preserve">
     <value>Figyelt mappa kiválasztása</value>
   </data>
+  <data name="TaskSettingsWindow_ImageUploader" xml:space="preserve">
+    <value>Képfeltöltő:</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageFileUploader" xml:space="preserve">
+    <value>Képfájl-feltöltő:</value>
+  </data>
+  <data name="TaskSettingsWindow_TextUploader" xml:space="preserve">
+    <value>Szövegfeltöltő:</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFileUploader" xml:space="preserve">
+    <value>Szövegfájl-feltöltő:</value>
+  </data>
+  <data name="TaskSettingsWindow_FileUploader" xml:space="preserve">
+    <value>Fájlfeltöltő:</value>
+  </data>
+  <data name="TaskSettingsWindow_URLShortener" xml:space="preserve">
+    <value>URL-rövidítő:</value>
+  </data>
+  <data name="TaskSettingsWindow_URLSharingService" xml:space="preserve">
+    <value>URL-megosztó szolgáltatás:</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDefaultFTPAccount" xml:space="preserve">
+    <value>Alapértelmezett FTP-fiók felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
+    <value>FTP-fiók:</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDefaultCustomUploader" xml:space="preserve">
+    <value>Alapértelmezett egyéni feltöltő felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomUploader" xml:space="preserve">
+    <value>Egyéni feltöltő:</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseScreenshotsFolder" xml:space="preserve">
+    <value>Képernyőképek mappájának kiválasztása</value>
+  </data>
+  <data name="TaskSettingsWindow_Task" xml:space="preserve">
+    <value>Feladat</value>
+  </data>
+  <data name="TaskSettingsWindow_TaskLabel" xml:space="preserve">
+    <value>Feladat:</value>
+  </data>
+  <data name="TaskSettingsWindow_Description" xml:space="preserve">
+    <value>Leírás:</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterCaptureTasks" xml:space="preserve">
+    <value>Rögzítés utáni feladatok</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAfterCaptureTasks" xml:space="preserve">
+    <value>Rögzítés utáni feladatok felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterUploadTasks" xml:space="preserve">
+    <value>Feltöltés utáni feladatok</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAfterUploadTasks" xml:space="preserve">
+    <value>Feltöltés utáni feladatok felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_Destinations" xml:space="preserve">
+    <value>Célhelyek</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDestinations" xml:space="preserve">
+    <value>Célhelyek felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_UploaderAccounts" xml:space="preserve">
+    <value>Feltöltőfiókok</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenshotsFolder" xml:space="preserve">
+    <value>Képernyőképek mappája</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideScreenshotsFolder" xml:space="preserve">
+    <value>Képernyőképek mappájának felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_DurationSeconds" xml:space="preserve">
+    <value>Időtartam (másodperc):</value>
+  </data>
+  <data name="TaskSettingsWindow_FadeDurationSeconds" xml:space="preserve">
+    <value>Elhalványulás időtartama (másodperc):</value>
+  </data>
+  <data name="TaskSettingsWindow_Placement" xml:space="preserve">
+    <value>Elhelyezés:</value>
+  </data>
+  <data name="TaskSettingsWindow_Width" xml:space="preserve">
+    <value>Szélesség:</value>
+  </data>
+  <data name="TaskSettingsWindow_Height" xml:space="preserve">
+    <value>Magasság:</value>
+  </data>
+  <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
+    <value>Bal kattintás művelete:</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
+    <value>Jobb kattintás művelete:</value>
+  </data>
+  <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
+    <value>Középső kattintás művelete:</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtonSize" xml:space="preserve">
+    <value>Értesítési gombok mérete:</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtonsLabel" xml:space="preserve">
+    <value>Értesítési gombok:</value>
+  </data>
+  <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
+    <value>Beállítás...</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
+    <value>Automatikus elrejtés képernyőrögzítéskor</value>
+  </data>
+  <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
+    <value>Értesítések letiltása teljes képernyőn</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterCaptureIsMade" xml:space="preserve">
+    <value>Hang lejátszása rögzítés után</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterTaskIsCompleted" xml:space="preserve">
+    <value>Hang lejátszása a feladat befejezése után</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterActionIsCompleted" xml:space="preserve">
+    <value>Hang lejátszása a művelet befejezése után</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowToastNotificationAfterTaskIsCompleted" xml:space="preserve">
+    <value>Értesítés megjelenítése a feladat befejezése után</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomCaptureSound" xml:space="preserve">
+    <value>Egyéni rögzítési hang használata</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomTaskCompletedSound" xml:space="preserve">
+    <value>Egyéni feladatbefejezési hang használata</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomActionCompletedSound" xml:space="preserve">
+    <value>Egyéni műveletbefejezési hang használata</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomErrorSound" xml:space="preserve">
+    <value>Egyéni hibahang használata</value>
+  </data>
+  <data name="TaskSettingsWindow_AdjustJPEGQualityAutomaticallyToKeepImageSizeNearTheSpecifiedSize" xml:space="preserve">
+    <value>JPEG-minőség automatikus beállítása, hogy a képméret a megadott méret közelében maradjon</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageFormat" xml:space="preserve">
+    <value>Képformátum:</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG bitmélység:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
+    <value>JPEG-minőség:</value>
+  </data>
+  <data name="TaskSettingsWindow_GIFQuality" xml:space="preserve">
+    <value>GIF-minőség:</value>
+  </data>
+  <data name="TaskSettingsWindow_IfFileExists" xml:space="preserve">
+    <value>Ha a fájl létezik:</value>
+  </data>
+  <data name="TaskSettingsWindow_UseJPEGIfImageSizeIsBiggerThanTheSpecifiedSize" xml:space="preserve">
+    <value>JPEG használata, ha a kép nagyobb a megadott méretnél</value>
+  </data>
+  <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
+    <value>Méretkorlát (kB):</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowImageEffectsWindowAfterCapture" xml:space="preserve">
+    <value>Képeffektusok ablakának megjelenítése rögzítés után</value>
+  </data>
+  <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
+    <value>Effektusok alkalmazása csak területrögzítésre</value>
+  </data>
+  <data name="TaskSettingsWindow_UseRandomImageEffect" xml:space="preserve">
+    <value>Véletlenszerű képeffektus használata</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEffectsConfigurationWithEllipsis" xml:space="preserve">
+    <value>Képeffektusok beállítása...</value>
+  </data>
+  <data name="TaskSettingsWindow_YouCanEnableOrDisableImageEffectsFromAfterCaptureTasksAddImageEffects" xml:space="preserve">
+    <value>A képeffektusok a Rögzítés utáni feladatok → Képeffektusok hozzáadása menüben engedélyezhetők vagy tilthatók le.</value>
+  </data>
+  <data name="TaskSettingsWindow_ThumbnailName" xml:space="preserve">
+    <value>Bélyegkép neve:</value>
+  </data>
+  <data name="TaskSettingsWindow_Preview" xml:space="preserve">
+    <value>Előnézet:</value>
+  </data>
+  <data name="TaskSettingsWindow_CreateThumbnailOnlyIfImageIsBiggerThanThumbnailSize" xml:space="preserve">
+    <value>Bélyegkép létrehozása csak akkor, ha a kép nagyobb a bélyegkép méreténél</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureWindowWithShadow" xml:space="preserve">
+    <value>Ablak rögzítése árnyékkal</value>
+  </data>
+  <data name="TaskSettingsWindow_SelectRegionWithEllipsis" xml:space="preserve">
+    <value>Terület kiválasztása...</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCursorInScreenshots" xml:space="preserve">
+    <value>Kurzor megjelenítése a képernyőképeken</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenshotDelaySeconds" xml:space="preserve">
+    <value>Képernyőkép késleltetése (másodperc):</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureWindowWithTransparency" xml:space="preserve">
+    <value>Ablak rögzítése átlátszósággal</value>
+  </data>
+  <data name="TaskSettingsWindow_ShadowOffset" xml:space="preserve">
+    <value>Árnyék eltolása:</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
+    <value>Kliens terület rögzítése ablakrögzítéskor</value>
+  </data>
+  <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
+    <value>Tálca elrejtése, ha metszi a rögzített ablakot</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyHideDesktopIcons" xml:space="preserve">
+    <value>Asztali ikonok automatikus elrejtése</value>
+  </data>
+  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
+    <value>HDR-képernyőkép színkorrekciója</value>
+  </data>
+  <data name="TaskSettingsWindow_WindowTitle" xml:space="preserve">
+    <value>Ablak címe:</value>
+  </data>
+  <data name="TaskSettingsWindow_AlsoDetectControlsInsideWindows" xml:space="preserve">
+    <value>Ablakokon belüli vezérlők észlelése is</value>
+  </data>
+  <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
+    <value>Négyzetes nagyító használata</value>
+  </data>
+  <data name="TaskSettingsWindow_Add" xml:space="preserve">
+    <value>Hozzáadás</value>
+  </data>
+  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
+    <value>Többterületes mód használata</value>
+  </data>
+  <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
+    <value>Ablakterületek észlelése</value>
+  </data>
+  <data name="TaskSettingsWindow_RestrictCaptureAndCursorToTheActiveMonitor" xml:space="preserve">
+    <value>Rögzítés és kurzor korlátozása az aktív monitorra</value>
+  </data>
+  <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
+    <value>Háttér sötétítésének erőssége (%):</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClick" xml:space="preserve">
+    <value>Jobb kattintás:</value>
+  </data>
+  <data name="TaskSettingsWindow_MiddleClick" xml:space="preserve">
+    <value>Középső kattintás:</value>
+  </data>
+  <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
+    <value>4. egérgomb kattintása:</value>
+  </data>
+  <data name="TaskSettingsWindow_Mouse5Click" xml:space="preserve">
+    <value>5. egérgomb kattintása:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
+    <value>Pozíció- és méretadatok megjelenítése</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomInfoText" xml:space="preserve">
+    <value>Egyéni információs szöveg használata</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowMagnifierNearCursor" xml:space="preserve">
+    <value>Nagyító megjelenítése a kurzor közelében</value>
+  </data>
+  <data name="TaskSettingsWindow_MagnifierPixelCount" xml:space="preserve">
+    <value>Nagyító képpontjainak száma:</value>
+  </data>
+  <data name="TaskSettingsWindow_MagnifierPixelSize" xml:space="preserve">
+    <value>Nagyító képpontmérete:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCenterCrosshair" xml:space="preserve">
+    <value>Középső célkereszt megjelenítése</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowScreenWideCrosshair" xml:space="preserve">
+    <value>Teljes képernyős célkereszt megjelenítése</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedSizeRegionMode" xml:space="preserve">
+    <value>Rögzített méretű terület mód</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedWidth" xml:space="preserve">
+    <value>Rögzített szélesség:</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
+    <value>Rögzített magasság:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowFPS" xml:space="preserve">
+    <value>FPS megjelenítése</value>
+  </data>
+  <data name="TaskSettingsWindow_FPSLimit" xml:space="preserve">
+    <value>FPS-korlát:</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
+    <value>Képernyőfelvétel FPS:</value>
+  </data>
+  <data name="TaskSettingsWindow_GIFFPS" xml:space="preserve">
+    <value>GIF FPS:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCursorInRecording" xml:space="preserve">
+    <value>Kurzor megjelenítése a felvételben</value>
+  </data>
+  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
+    <value>Felvétel indítása késleltetés után</value>
+  </data>
+  <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
+    <value>Indítási késleltetés (másodperc):</value>
+  </data>
+  <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
+    <value>Rögzített időtartam használata</value>
+  </data>
+  <data name="TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions" xml:space="preserve">
+    <value>Először veszteségmentes felvétel, majd a kódolási beállítások alkalmazása</value>
+  </data>
+  <data name="TaskSettingsWindow_AskForConfirmationWhenAborting" xml:space="preserve">
+    <value>Megerősítés kérése megszakításkor</value>
+  </data>
+  <data name="TaskSettingsWindow_UseTransparentRegionSelection" xml:space="preserve">
+    <value>Átlátszó területkijelölés használata</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis" xml:space="preserve">
+    <value>Képernyőfelvétel beállításai...</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyCopyResultsToClipboard" xml:space="preserve">
+    <value>Eredmények automatikus másolása a vágólapra</value>
+  </data>
+  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
+    <value>Alapértelmezett nyelv:</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessOCRSilently" xml:space="preserve">
+    <value>OCR feldolgozása csendben</value>
+  </data>
+  <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
+    <value>OCR-ablak bezárása a szolgáltatáshivatkozás megnyitása után</value>
+  </data>
+  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
+    <value>OCR-súgó</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
+    <value>Rögzítés vagy vágólap feltöltése:</value>
+  </data>
+  <data name="TaskSettingsWindow_WindowCapture" xml:space="preserve">
+    <value>Ablakrögzítés:</value>
+  </data>
+  <data name="TaskSettingsWindow_UseNamePatternForFileUploads" xml:space="preserve">
+    <value>Névminta használata fájlfeltöltésekhez</value>
+  </data>
+  <data name="TaskSettingsWindow_ReplaceURLProblematicCharactersWithUnderscores" xml:space="preserve">
+    <value>URL-ben problémás karakterek cseréje aláhúzásjelekre</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
+    <value>Automatikusan növekvő szám:</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
+    <value>Egyéni időzóna használata</value>
+  </data>
+  <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
+    <value>Időzóna:</value>
+  </data>
+  <data name="TaskSettingsWindow_ReplaceResultURLUsingARegularExpression" xml:space="preserve">
+    <value>Eredmény URL-jének cseréje reguláris kifejezéssel</value>
+  </data>
+  <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
+    <value>Minta:</value>
+  </data>
+  <data name="TaskSettingsWindow_Replacement" xml:space="preserve">
+    <value>Csere:</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
+    <value>Ha a vágólap fájl URL-jét tartalmazza, letöltés és feltöltés</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAURLUseURLShortener" xml:space="preserve">
+    <value>Ha a vágólap URL-t tartalmaz, URL-rövidítő használata</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAURLShareItUsingURLSharingService" xml:space="preserve">
+    <value>Ha a vágólap URL-t tartalmaz, megosztás URL-megosztó szolgáltatással</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAFolderPathIndexAndUploadIt" xml:space="preserve">
+    <value>Ha a vágólap mappaútvonalat tartalmaz, indexelés és feltöltés</value>
+  </data>
+  <data name="TaskSettingsWindow_Update" xml:space="preserve">
+    <value>Frissítés</value>
+  </data>
+  <data name="TaskSettingsWindow_Uploader" xml:space="preserve">
+    <value>Feltöltő:</value>
+  </data>
+  <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
+    <value>Kiterjesztések:</value>
+  </data>
+  <data name="TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg" xml:space="preserve">
+    <value>A kiterjesztéseket vesszővel válassza el, például: png, jpg, jpeg</value>
+  </data>
+  <data name="TaskSettingsWindow_UseLegacyImageEditor" xml:space="preserve">
+    <value>Régi képszerkesztő használata</value>
+  </data>
+  <data name="TaskSettingsWindow_Format" xml:space="preserve">
+    <value>Formátum:</value>
+  </data>
+  <data name="TaskSettingsWindow_FormatCtrlPlusClick" xml:space="preserve">
+    <value>Formátum (Ctrl + kattintás):</value>
+  </data>
+  <data name="TaskSettingsWindow_InfoText" xml:space="preserve">
+    <value>Információs szöveg:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowMagnifier" xml:space="preserve">
+    <value>Nagyító megjelenítése</value>
+  </data>
+  <data name="TaskSettingsWindow_EditWithEllipsis" xml:space="preserve">
+    <value>Szerkesztés...</value>
+  </data>
+  <data name="TaskSettingsWindow_Duplicate" xml:space="preserve">
+    <value>Másolat készítése</value>
+  </data>
+  <data name="TaskSettingsWindow_YouCanEnableOrDisableActionsFromAfterCaptureTasksPerformActions" xml:space="preserve">
+    <value>A műveletek a Rögzítés utáni feladatok → Műveletek végrehajtása menüben engedélyezhetők vagy tilthatók le.</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFolders" xml:space="preserve">
+    <value>Figyelt mappák</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFoldersAndUploadNewlyCreatedFiles" xml:space="preserve">
+    <value>Mappák figyelése és újonnan létrehozott fájlok feltöltése</value>
+  </data>
+  <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
+    <value>Hangok</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
+    <value>Értesítés</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomSounds" xml:space="preserve">
+    <value>Egyéni hangok</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideImageSettings" xml:space="preserve">
+    <value>Képbeállítások felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageQuality" xml:space="preserve">
+    <value>Képminőség</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
+    <value>Automatikus JPEG</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEffects" xml:space="preserve">
+    <value>Képeffektusok</value>
+  </data>
+  <data name="TaskSettingsWindow_Thumbnail" xml:space="preserve">
+    <value>Bélyegkép</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideCaptureSettings" xml:space="preserve">
+    <value>Rögzítési beállítások felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_Screenshots" xml:space="preserve">
+    <value>Képernyőképek</value>
+  </data>
+  <data name="TaskSettingsWindow_PreconfiguredRegion" xml:space="preserve">
+    <value>Előre beállított terület</value>
+  </data>
+  <data name="TaskSettingsWindow_PreconfiguredWindow" xml:space="preserve">
+    <value>Előre beállított ablak</value>
+  </data>
+  <data name="TaskSettingsWindow_Selection" xml:space="preserve">
+    <value>Kijelölés</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
+    <value>Egérműveletek</value>
+  </data>
+  <data name="TaskSettingsWindow_InformationAndMagnifier" xml:space="preserve">
+    <value>Információ és nagyító</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedSizeAndPerformance" xml:space="preserve">
+    <value>Rögzített méret és teljesítmény</value>
+  </data>
+  <data name="TaskSettingsWindow_SnapSizes" xml:space="preserve">
+    <value>Illesztési méretek</value>
+  </data>
+  <data name="TaskSettingsWindow_Recording" xml:space="preserve">
+    <value>Felvétel</value>
+  </data>
+  <data name="TaskSettingsWindow_EncodingAndCapture" xml:space="preserve">
+    <value>Kódolás és rögzítés</value>
+  </data>
+  <data name="TaskSettingsWindow_OpticalCharacterRecognition" xml:space="preserve">
+    <value>Optikai karakterfelismerés</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
+    <value>Névminták</value>
+  </data>
+  <data name="TaskSettingsWindow_TimeZone" xml:space="preserve">
+    <value>Időzóna</value>
+  </data>
+  <data name="TaskSettingsWindow_URLReplacement" xml:space="preserve">
+    <value>URL-csere</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardContent" xml:space="preserve">
+    <value>Vágólap tartalma</value>
+  </data>
+  <data name="TaskSettingsWindow_Filters" xml:space="preserve">
+    <value>Szűrők</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideToolsSettings" xml:space="preserve">
+    <value>Eszközbeállítások felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
+    <value>Képszerkesztő</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
+    <value>Képernyő színválasztó</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideActions" xml:space="preserve">
+    <value>Műveletek felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_Actions" xml:space="preserve">
+    <value>Műveletek</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAdvancedSettings" xml:space="preserve">
+    <value>Speciális beállítások felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_General" xml:space="preserve">
+    <value>Általános</value>
+  </data>
+  <data name="TaskSettingsWindow_Upload" xml:space="preserve">
+    <value>Feltöltés</value>
+  </data>
+  <data name="TaskSettingsWindow_Notifications" xml:space="preserve">
+    <value>Értesítések</value>
+  </data>
+  <data name="TaskSettingsWindow_Image" xml:space="preserve">
+    <value>Kép</value>
+  </data>
+  <data name="TaskSettingsWindow_Effects" xml:space="preserve">
+    <value>Effektusok</value>
+  </data>
+  <data name="TaskSettingsWindow_Capture" xml:space="preserve">
+    <value>Rögzítés</value>
+  </data>
+  <data name="TaskSettingsWindow_RegionCapture" xml:space="preserve">
+    <value>Területrögzítés</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecorder" xml:space="preserve">
+    <value>Képernyőrögzítő</value>
+  </data>
+  <data name="TaskSettingsWindow_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="TaskSettingsWindow_FileNaming" xml:space="preserve">
+    <value>Fájlelnevezés</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardUpload" xml:space="preserve">
+    <value>Vágólap feltöltése</value>
+  </data>
+  <data name="TaskSettingsWindow_UploaderFilters" xml:space="preserve">
+    <value>Feltöltőszűrők</value>
+  </data>
+  <data name="TaskSettingsWindow_Tools" xml:space="preserve">
+    <value>Eszközök</value>
+  </data>
+  <data name="TaskSettingsWindow_Advanced" xml:space="preserve">
+    <value>Speciális</value>
+  </data>
+  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
+    <value>Az OCR-nyelvek nem érhetők el</value>
+  </data>
+  <data name="TaskSettingsWindow_SelectTasks" xml:space="preserve">
+    <value>Feladatok kiválasztása</value>
+  </data>
+  <data name="TaskSettingsWindow_X" xml:space="preserve">
+    <value>X:</value>
+  </data>
+  <data name="TaskSettingsWindow_Y" xml:space="preserve">
+    <value>Y:</value>
+  </data>
+  <data name="TaskSettingsWindow_EnableAction" xml:space="preserve">
+    <value>Művelet engedélyezése</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideGeneralSettings" xml:space="preserve">
+    <value>Általános beállítások felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideUploadSettings" xml:space="preserve">
+    <value>Feltöltési beállítások felülbírálása</value>
+  </data>
+  <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
+    <value>Wave hang</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
+    <value>{0} — {1} — Almappákkal együtt: {2}</value>
+  </data>
+  <data name="TaskSettingsWindow_Yes" xml:space="preserve">
+    <value>Igen</value>
+  </data>
+  <data name="TaskSettingsWindow_No" xml:space="preserve">
+    <value>Nem</value>
+  </data>
+  <data name="TaskSettingsWindow_UploadText" xml:space="preserve">
+    <value>Szöveg feltöltése</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterUpload" xml:space="preserve">
+    <value>Feltöltés után</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePattern" xml:space="preserve">
+    <value>Névminta</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringFileUpload" xml:space="preserve">
+    <value>Képek feldolgozása fájlfeltöltés közben</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringClipboardUpload" xml:space="preserve">
+    <value>Képek feldolgozása vágólapfeltöltés közben</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringExtensionUpload" xml:space="preserve">
+    <value>Képek feldolgozása bővítményfeltöltés közben</value>
+  </data>
+  <data name="TaskSettingsWindow_UseAfterCaptureTasksDuringFileUpload" xml:space="preserve">
+    <value>Rögzítés utáni feladatok használata fájlfeltöltés közben</value>
+  </data>
+  <data name="TaskSettingsWindow_TextTaskSaveAsFile" xml:space="preserve">
+    <value>Szöveges feladatok mentése fájlként</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoClearClipboard" xml:space="preserve">
+    <value>Vágólap automatikus törlése</value>
+  </data>
+  <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
+    <value>Területrögzítési jegyzetek letiltása</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageExtensions" xml:space="preserve">
+    <value>Képkiterjesztések</value>
+  </data>
+  <data name="TaskSettingsWindow_TextExtensions" xml:space="preserve">
+    <value>Szövegkiterjesztések</value>
+  </data>
+  <data name="TaskSettingsWindow_EarlyCopyURL" xml:space="preserve">
+    <value>URL másolása feltöltés előtt</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFileExtension" xml:space="preserve">
+    <value>Szövegfájl kiterjesztése</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFormat" xml:space="preserve">
+    <value>Szövegformátum</value>
+  </data>
+  <data name="TaskSettingsWindow_TextCustom" xml:space="preserve">
+    <value>Egyéni szöveg</value>
+  </data>
+  <data name="TaskSettingsWindow_TextCustomEncodeInput" xml:space="preserve">
+    <value>Egyéni szövegbevitel HTML-kódolása</value>
+  </data>
+  <data name="TaskSettingsWindow_ResultForceHTTPS" xml:space="preserve">
+    <value>HTTPS kényszerítése az eredmény URL-jeinél</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardContentFormat" xml:space="preserve">
+    <value>Vágólaptartalom formátuma</value>
+  </data>
+  <data name="TaskSettingsWindow_BalloonTipContentFormat" xml:space="preserve">
+    <value>Értesítéstartalom formátuma</value>
+  </data>
+  <data name="TaskSettingsWindow_OpenURLFormat" xml:space="preserve">
+    <value>URL-megnyitási formátum</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
+    <value>Automatikus URL-rövidítés hossza</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCloseAfterUploadForm" xml:space="preserve">
+    <value>Feltöltés utáni ablak automatikus bezárása</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatternMaxLength" xml:space="preserve">
+    <value>Névminta maximális hossza</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatternMaxTitleLength" xml:space="preserve">
+    <value>Névmintacím maximális hossza</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseAudioFile" xml:space="preserve">
+    <value>Hangfájl kiválasztása</value>
+  </data>
 </root>

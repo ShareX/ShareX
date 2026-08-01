@@ -1177,4 +1177,664 @@
   <data name="TaskSettingsWindow_ChooseWatchFolder" xml:space="preserve">
     <value>Choisir un dossier surveillé</value>
   </data>
+  <data name="TaskSettingsWindow_ImageUploader" xml:space="preserve">
+    <value>Hébergeur d’images :</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageFileUploader" xml:space="preserve">
+    <value>Hébergeur de fichiers image :</value>
+  </data>
+  <data name="TaskSettingsWindow_TextUploader" xml:space="preserve">
+    <value>Hébergeur de texte :</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFileUploader" xml:space="preserve">
+    <value>Hébergeur de fichiers texte :</value>
+  </data>
+  <data name="TaskSettingsWindow_FileUploader" xml:space="preserve">
+    <value>Hébergeur de fichiers :</value>
+  </data>
+  <data name="TaskSettingsWindow_URLShortener" xml:space="preserve">
+    <value>Raccourcisseur d’URL :</value>
+  </data>
+  <data name="TaskSettingsWindow_URLSharingService" xml:space="preserve">
+    <value>Service de partage d’URL :</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDefaultFTPAccount" xml:space="preserve">
+    <value>Remplacer le compte FTP par défaut</value>
+  </data>
+  <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
+    <value>Compte FTP :</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDefaultCustomUploader" xml:space="preserve">
+    <value>Remplacer l’hébergeur personnalisé par défaut</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomUploader" xml:space="preserve">
+    <value>Hébergeur personnalisé :</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseScreenshotsFolder" xml:space="preserve">
+    <value>Choisir le dossier des captures d’écran</value>
+  </data>
+  <data name="TaskSettingsWindow_Task" xml:space="preserve">
+    <value>Tâche</value>
+  </data>
+  <data name="TaskSettingsWindow_TaskLabel" xml:space="preserve">
+    <value>Tâche :</value>
+  </data>
+  <data name="TaskSettingsWindow_Description" xml:space="preserve">
+    <value>Description :</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterCaptureTasks" xml:space="preserve">
+    <value>Tâches après la capture</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAfterCaptureTasks" xml:space="preserve">
+    <value>Remplacer les tâches après la capture</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterUploadTasks" xml:space="preserve">
+    <value>Tâches après l’envoi</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAfterUploadTasks" xml:space="preserve">
+    <value>Remplacer les tâches après l’envoi</value>
+  </data>
+  <data name="TaskSettingsWindow_Destinations" xml:space="preserve">
+    <value>Destinations</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDestinations" xml:space="preserve">
+    <value>Remplacer les destinations</value>
+  </data>
+  <data name="TaskSettingsWindow_UploaderAccounts" xml:space="preserve">
+    <value>Comptes d’hébergement</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenshotsFolder" xml:space="preserve">
+    <value>Dossier des captures d’écran</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideScreenshotsFolder" xml:space="preserve">
+    <value>Remplacer le dossier des captures d’écran</value>
+  </data>
+  <data name="TaskSettingsWindow_DurationSeconds" xml:space="preserve">
+    <value>Durée (secondes) :</value>
+  </data>
+  <data name="TaskSettingsWindow_FadeDurationSeconds" xml:space="preserve">
+    <value>Durée du fondu (secondes) :</value>
+  </data>
+  <data name="TaskSettingsWindow_Placement" xml:space="preserve">
+    <value>Position :</value>
+  </data>
+  <data name="TaskSettingsWindow_Width" xml:space="preserve">
+    <value>Largeur :</value>
+  </data>
+  <data name="TaskSettingsWindow_Height" xml:space="preserve">
+    <value>Hauteur :</value>
+  </data>
+  <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
+    <value>Action du clic gauche :</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
+    <value>Action du clic droit :</value>
+  </data>
+  <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
+    <value>Action du clic central :</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtonSize" xml:space="preserve">
+    <value>Taille des boutons de notification :</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtonsLabel" xml:space="preserve">
+    <value>Boutons de notification :</value>
+  </data>
+  <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
+    <value>Configurer...</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
+    <value>Masquer automatiquement lors d’une capture d’écran</value>
+  </data>
+  <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
+    <value>Désactiver les notifications en plein écran</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterCaptureIsMade" xml:space="preserve">
+    <value>Jouer un son après une capture</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterTaskIsCompleted" xml:space="preserve">
+    <value>Jouer un son après l’exécution d’une tâche</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterActionIsCompleted" xml:space="preserve">
+    <value>Jouer un son après l’exécution d’une action</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowToastNotificationAfterTaskIsCompleted" xml:space="preserve">
+    <value>Afficher une notification après l’exécution d’une tâche</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomCaptureSound" xml:space="preserve">
+    <value>Utiliser un son de capture personnalisé</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomTaskCompletedSound" xml:space="preserve">
+    <value>Utiliser un son personnalisé de tâche terminée</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomActionCompletedSound" xml:space="preserve">
+    <value>Utiliser un son personnalisé d’action terminée</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomErrorSound" xml:space="preserve">
+    <value>Utiliser un son d’erreur personnalisé</value>
+  </data>
+  <data name="TaskSettingsWindow_AdjustJPEGQualityAutomaticallyToKeepImageSizeNearTheSpecifiedSize" xml:space="preserve">
+    <value>Ajuster automatiquement la qualité JPEG pour conserver une taille d’image proche de la taille indiquée</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageFormat" xml:space="preserve">
+    <value>Format de l’image :</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGBitDepth" xml:space="preserve">
+    <value>Profondeur de bits PNG :</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
+    <value>Qualité JPEG :</value>
+  </data>
+  <data name="TaskSettingsWindow_GIFQuality" xml:space="preserve">
+    <value>Qualité GIF :</value>
+  </data>
+  <data name="TaskSettingsWindow_IfFileExists" xml:space="preserve">
+    <value>Si le fichier existe :</value>
+  </data>
+  <data name="TaskSettingsWindow_UseJPEGIfImageSizeIsBiggerThanTheSpecifiedSize" xml:space="preserve">
+    <value>Utiliser JPEG si l’image dépasse la taille indiquée</value>
+  </data>
+  <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
+    <value>Limite de taille (ko) :</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowImageEffectsWindowAfterCapture" xml:space="preserve">
+    <value>Afficher la fenêtre des effets d’image après la capture</value>
+  </data>
+  <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
+    <value>Appliquer les effets uniquement aux captures de région</value>
+  </data>
+  <data name="TaskSettingsWindow_UseRandomImageEffect" xml:space="preserve">
+    <value>Utiliser un effet d’image aléatoire</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEffectsConfigurationWithEllipsis" xml:space="preserve">
+    <value>Configuration des effets d’image...</value>
+  </data>
+  <data name="TaskSettingsWindow_YouCanEnableOrDisableImageEffectsFromAfterCaptureTasksAddImageEffects" xml:space="preserve">
+    <value>Vous pouvez activer ou désactiver les effets d’image dans Tâches après la capture → Ajouter des effets d’image.</value>
+  </data>
+  <data name="TaskSettingsWindow_ThumbnailName" xml:space="preserve">
+    <value>Nom de la miniature :</value>
+  </data>
+  <data name="TaskSettingsWindow_Preview" xml:space="preserve">
+    <value>Aperçu :</value>
+  </data>
+  <data name="TaskSettingsWindow_CreateThumbnailOnlyIfImageIsBiggerThanThumbnailSize" xml:space="preserve">
+    <value>Créer une miniature uniquement si l’image dépasse la taille de la miniature</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureWindowWithShadow" xml:space="preserve">
+    <value>Capturer la fenêtre avec son ombre</value>
+  </data>
+  <data name="TaskSettingsWindow_SelectRegionWithEllipsis" xml:space="preserve">
+    <value>Sélectionner une région...</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCursorInScreenshots" xml:space="preserve">
+    <value>Afficher le curseur dans les captures d’écran</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenshotDelaySeconds" xml:space="preserve">
+    <value>Délai de capture d’écran (secondes) :</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureWindowWithTransparency" xml:space="preserve">
+    <value>Capturer la fenêtre avec transparence</value>
+  </data>
+  <data name="TaskSettingsWindow_ShadowOffset" xml:space="preserve">
+    <value>Décalage de l’ombre :</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
+    <value>Capturer la zone cliente lors des captures de fenêtre</value>
+  </data>
+  <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
+    <value>Masquer la barre des tâches lorsqu’elle chevauche une fenêtre capturée</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyHideDesktopIcons" xml:space="preserve">
+    <value>Masquer automatiquement les icônes du bureau</value>
+  </data>
+  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
+    <value>Correcteur de couleurs des captures HDR</value>
+  </data>
+  <data name="TaskSettingsWindow_WindowTitle" xml:space="preserve">
+    <value>Titre de la fenêtre :</value>
+  </data>
+  <data name="TaskSettingsWindow_AlsoDetectControlsInsideWindows" xml:space="preserve">
+    <value>Détecter également les contrôles dans les fenêtres</value>
+  </data>
+  <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
+    <value>Utiliser une loupe carrée</value>
+  </data>
+  <data name="TaskSettingsWindow_Add" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
+    <value>Utiliser le mode multirégion</value>
+  </data>
+  <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
+    <value>Détecter les régions de fenêtre</value>
+  </data>
+  <data name="TaskSettingsWindow_RestrictCaptureAndCursorToTheActiveMonitor" xml:space="preserve">
+    <value>Limiter la capture et le curseur au moniteur actif</value>
+  </data>
+  <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
+    <value>Intensité d’assombrissement de l’arrière-plan (%) :</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClick" xml:space="preserve">
+    <value>Clic droit :</value>
+  </data>
+  <data name="TaskSettingsWindow_MiddleClick" xml:space="preserve">
+    <value>Clic central :</value>
+  </data>
+  <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
+    <value>Clic du bouton 4 de la souris :</value>
+  </data>
+  <data name="TaskSettingsWindow_Mouse5Click" xml:space="preserve">
+    <value>Clic du bouton 5 de la souris :</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
+    <value>Afficher les informations de position et de taille</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomInfoText" xml:space="preserve">
+    <value>Utiliser un texte d’information personnalisé</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowMagnifierNearCursor" xml:space="preserve">
+    <value>Afficher la loupe près du curseur</value>
+  </data>
+  <data name="TaskSettingsWindow_MagnifierPixelCount" xml:space="preserve">
+    <value>Nombre de pixels de la loupe :</value>
+  </data>
+  <data name="TaskSettingsWindow_MagnifierPixelSize" xml:space="preserve">
+    <value>Taille des pixels de la loupe :</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCenterCrosshair" xml:space="preserve">
+    <value>Afficher le réticule central</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowScreenWideCrosshair" xml:space="preserve">
+    <value>Afficher le réticule sur tout l’écran</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedSizeRegionMode" xml:space="preserve">
+    <value>Mode de région à taille fixe</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedWidth" xml:space="preserve">
+    <value>Largeur fixe :</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
+    <value>Hauteur fixe :</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowFPS" xml:space="preserve">
+    <value>Afficher les FPS</value>
+  </data>
+  <data name="TaskSettingsWindow_FPSLimit" xml:space="preserve">
+    <value>Limite de FPS :</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
+    <value>FPS de l’enregistrement d’écran :</value>
+  </data>
+  <data name="TaskSettingsWindow_GIFFPS" xml:space="preserve">
+    <value>FPS du GIF :</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCursorInRecording" xml:space="preserve">
+    <value>Afficher le curseur dans l’enregistrement</value>
+  </data>
+  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
+    <value>Démarrer l’enregistrement après un délai</value>
+  </data>
+  <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
+    <value>Délai de démarrage (secondes) :</value>
+  </data>
+  <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
+    <value>Utiliser une durée fixe</value>
+  </data>
+  <data name="TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions" xml:space="preserve">
+    <value>Enregistrer d’abord sans perte, puis appliquer les options d’encodage</value>
+  </data>
+  <data name="TaskSettingsWindow_AskForConfirmationWhenAborting" xml:space="preserve">
+    <value>Demander confirmation lors de l’abandon</value>
+  </data>
+  <data name="TaskSettingsWindow_UseTransparentRegionSelection" xml:space="preserve">
+    <value>Utiliser une sélection de région transparente</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis" xml:space="preserve">
+    <value>Options d’enregistrement d’écran...</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyCopyResultsToClipboard" xml:space="preserve">
+    <value>Copier automatiquement les résultats dans le presse-papiers</value>
+  </data>
+  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
+    <value>Langue par défaut :</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessOCRSilently" xml:space="preserve">
+    <value>Traiter l’OCR silencieusement</value>
+  </data>
+  <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
+    <value>Fermer la fenêtre OCR après l’ouverture du lien du service</value>
+  </data>
+  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
+    <value>Aide OCR</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
+    <value>Envoi de capture ou du presse-papiers :</value>
+  </data>
+  <data name="TaskSettingsWindow_WindowCapture" xml:space="preserve">
+    <value>Capture de fenêtre :</value>
+  </data>
+  <data name="TaskSettingsWindow_UseNamePatternForFileUploads" xml:space="preserve">
+    <value>Utiliser un modèle de nom pour l’envoi de fichiers</value>
+  </data>
+  <data name="TaskSettingsWindow_ReplaceURLProblematicCharactersWithUnderscores" xml:space="preserve">
+    <value>Remplacer les caractères problématiques des URL par des traits de soulignement</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
+    <value>Numéro auto-incrémenté :</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
+    <value>Utiliser un fuseau horaire personnalisé</value>
+  </data>
+  <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
+    <value>Fuseau horaire :</value>
+  </data>
+  <data name="TaskSettingsWindow_ReplaceResultURLUsingARegularExpression" xml:space="preserve">
+    <value>Remplacer l’URL résultante à l’aide d’une expression régulière</value>
+  </data>
+  <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
+    <value>Modèle :</value>
+  </data>
+  <data name="TaskSettingsWindow_Replacement" xml:space="preserve">
+    <value>Remplacement :</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
+    <value>Si le presse-papiers contient une URL de fichier, le télécharger et l’envoyer</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAURLUseURLShortener" xml:space="preserve">
+    <value>Si le presse-papiers contient une URL, utiliser le raccourcisseur d’URL</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAURLShareItUsingURLSharingService" xml:space="preserve">
+    <value>Si le presse-papiers contient une URL, la partager avec le service de partage d’URL</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAFolderPathIndexAndUploadIt" xml:space="preserve">
+    <value>Si le presse-papiers contient un chemin de dossier, l’indexer et l’envoyer</value>
+  </data>
+  <data name="TaskSettingsWindow_Update" xml:space="preserve">
+    <value>Mettre à jour</value>
+  </data>
+  <data name="TaskSettingsWindow_Uploader" xml:space="preserve">
+    <value>Hébergeur :</value>
+  </data>
+  <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
+    <value>Extensions :</value>
+  </data>
+  <data name="TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg" xml:space="preserve">
+    <value>Séparez les extensions par des virgules, par exemple : png, jpg, jpeg</value>
+  </data>
+  <data name="TaskSettingsWindow_UseLegacyImageEditor" xml:space="preserve">
+    <value>Utiliser l’ancien éditeur d’images</value>
+  </data>
+  <data name="TaskSettingsWindow_Format" xml:space="preserve">
+    <value>Format :</value>
+  </data>
+  <data name="TaskSettingsWindow_FormatCtrlPlusClick" xml:space="preserve">
+    <value>Format (Ctrl + clic) :</value>
+  </data>
+  <data name="TaskSettingsWindow_InfoText" xml:space="preserve">
+    <value>Texte d’information :</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowMagnifier" xml:space="preserve">
+    <value>Afficher la loupe</value>
+  </data>
+  <data name="TaskSettingsWindow_EditWithEllipsis" xml:space="preserve">
+    <value>Modifier...</value>
+  </data>
+  <data name="TaskSettingsWindow_Duplicate" xml:space="preserve">
+    <value>Dupliquer</value>
+  </data>
+  <data name="TaskSettingsWindow_YouCanEnableOrDisableActionsFromAfterCaptureTasksPerformActions" xml:space="preserve">
+    <value>Vous pouvez activer ou désactiver les actions dans Tâches après la capture → Exécuter des actions.</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFolders" xml:space="preserve">
+    <value>Dossiers surveillés</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFoldersAndUploadNewlyCreatedFiles" xml:space="preserve">
+    <value>Surveiller les dossiers et envoyer les nouveaux fichiers</value>
+  </data>
+  <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
+    <value>Sons</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomSounds" xml:space="preserve">
+    <value>Sons personnalisés</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideImageSettings" xml:space="preserve">
+    <value>Remplacer les paramètres d’image</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageQuality" xml:space="preserve">
+    <value>Qualité d’image</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
+    <value>JPEG automatique</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEffects" xml:space="preserve">
+    <value>Effets d’image</value>
+  </data>
+  <data name="TaskSettingsWindow_Thumbnail" xml:space="preserve">
+    <value>Miniature</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideCaptureSettings" xml:space="preserve">
+    <value>Remplacer les paramètres de capture</value>
+  </data>
+  <data name="TaskSettingsWindow_Screenshots" xml:space="preserve">
+    <value>Captures d’écran</value>
+  </data>
+  <data name="TaskSettingsWindow_PreconfiguredRegion" xml:space="preserve">
+    <value>Région préconfigurée</value>
+  </data>
+  <data name="TaskSettingsWindow_PreconfiguredWindow" xml:space="preserve">
+    <value>Fenêtre préconfigurée</value>
+  </data>
+  <data name="TaskSettingsWindow_Selection" xml:space="preserve">
+    <value>Sélection</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
+    <value>Actions de la souris</value>
+  </data>
+  <data name="TaskSettingsWindow_InformationAndMagnifier" xml:space="preserve">
+    <value>Informations et loupe</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedSizeAndPerformance" xml:space="preserve">
+    <value>Taille fixe et performances</value>
+  </data>
+  <data name="TaskSettingsWindow_SnapSizes" xml:space="preserve">
+    <value>Tailles d’alignement</value>
+  </data>
+  <data name="TaskSettingsWindow_Recording" xml:space="preserve">
+    <value>Enregistrement</value>
+  </data>
+  <data name="TaskSettingsWindow_EncodingAndCapture" xml:space="preserve">
+    <value>Encodage et capture</value>
+  </data>
+  <data name="TaskSettingsWindow_OpticalCharacterRecognition" xml:space="preserve">
+    <value>Reconnaissance optique de caractères</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
+    <value>Modèles de nom</value>
+  </data>
+  <data name="TaskSettingsWindow_TimeZone" xml:space="preserve">
+    <value>Fuseau horaire</value>
+  </data>
+  <data name="TaskSettingsWindow_URLReplacement" xml:space="preserve">
+    <value>Remplacement d’URL</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardContent" xml:space="preserve">
+    <value>Contenu du presse-papiers</value>
+  </data>
+  <data name="TaskSettingsWindow_Filters" xml:space="preserve">
+    <value>Filtres</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideToolsSettings" xml:space="preserve">
+    <value>Remplacer les paramètres des outils</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
+    <value>Éditeur d’images</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
+    <value>Sélecteur de couleur d’écran</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideActions" xml:space="preserve">
+    <value>Remplacer les actions</value>
+  </data>
+  <data name="TaskSettingsWindow_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAdvancedSettings" xml:space="preserve">
+    <value>Remplacer les paramètres avancés</value>
+  </data>
+  <data name="TaskSettingsWindow_General" xml:space="preserve">
+    <value>Général</value>
+  </data>
+  <data name="TaskSettingsWindow_Upload" xml:space="preserve">
+    <value>Envoi</value>
+  </data>
+  <data name="TaskSettingsWindow_Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="TaskSettingsWindow_Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="TaskSettingsWindow_Effects" xml:space="preserve">
+    <value>Effets</value>
+  </data>
+  <data name="TaskSettingsWindow_Capture" xml:space="preserve">
+    <value>Capture</value>
+  </data>
+  <data name="TaskSettingsWindow_RegionCapture" xml:space="preserve">
+    <value>Capture de région</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecorder" xml:space="preserve">
+    <value>Enregistreur d’écran</value>
+  </data>
+  <data name="TaskSettingsWindow_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="TaskSettingsWindow_FileNaming" xml:space="preserve">
+    <value>Nommage des fichiers</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardUpload" xml:space="preserve">
+    <value>Envoi du presse-papiers</value>
+  </data>
+  <data name="TaskSettingsWindow_UploaderFilters" xml:space="preserve">
+    <value>Filtres d’hébergeur</value>
+  </data>
+  <data name="TaskSettingsWindow_Tools" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="TaskSettingsWindow_Advanced" xml:space="preserve">
+    <value>Avancé</value>
+  </data>
+  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
+    <value>Les langues OCR ne sont pas disponibles</value>
+  </data>
+  <data name="TaskSettingsWindow_SelectTasks" xml:space="preserve">
+    <value>Sélectionner les tâches</value>
+  </data>
+  <data name="TaskSettingsWindow_X" xml:space="preserve">
+    <value>X :</value>
+  </data>
+  <data name="TaskSettingsWindow_Y" xml:space="preserve">
+    <value>Y :</value>
+  </data>
+  <data name="TaskSettingsWindow_EnableAction" xml:space="preserve">
+    <value>Activer l’action</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideGeneralSettings" xml:space="preserve">
+    <value>Remplacer les paramètres généraux</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideUploadSettings" xml:space="preserve">
+    <value>Remplacer les paramètres d’envoi</value>
+  </data>
+  <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
+    <value>Audio Wave</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
+    <value>{0} — {1} — Inclure les sous-dossiers : {2}</value>
+  </data>
+  <data name="TaskSettingsWindow_Yes" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="TaskSettingsWindow_No" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="TaskSettingsWindow_UploadText" xml:space="preserve">
+    <value>Envoi de texte</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterUpload" xml:space="preserve">
+    <value>Après l’envoi</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePattern" xml:space="preserve">
+    <value>Modèle de nom</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringFileUpload" xml:space="preserve">
+    <value>Traiter les images pendant l’envoi de fichiers</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringClipboardUpload" xml:space="preserve">
+    <value>Traiter les images pendant l’envoi depuis le presse-papiers</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringExtensionUpload" xml:space="preserve">
+    <value>Traiter les images pendant l’envoi depuis une extension</value>
+  </data>
+  <data name="TaskSettingsWindow_UseAfterCaptureTasksDuringFileUpload" xml:space="preserve">
+    <value>Utiliser les tâches après la capture pendant l’envoi de fichiers</value>
+  </data>
+  <data name="TaskSettingsWindow_TextTaskSaveAsFile" xml:space="preserve">
+    <value>Enregistrer les tâches de texte comme fichiers</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoClearClipboard" xml:space="preserve">
+    <value>Effacer automatiquement le presse-papiers</value>
+  </data>
+  <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
+    <value>Désactiver les annotations de capture de région</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageExtensions" xml:space="preserve">
+    <value>Extensions d’image</value>
+  </data>
+  <data name="TaskSettingsWindow_TextExtensions" xml:space="preserve">
+    <value>Extensions de texte</value>
+  </data>
+  <data name="TaskSettingsWindow_EarlyCopyURL" xml:space="preserve">
+    <value>Copier l’URL avant l’envoi</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFileExtension" xml:space="preserve">
+    <value>Extension de fichier texte</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFormat" xml:space="preserve">
+    <value>Format du texte</value>
+  </data>
+  <data name="TaskSettingsWindow_TextCustom" xml:space="preserve">
+    <value>Texte personnalisé</value>
+  </data>
+  <data name="TaskSettingsWindow_TextCustomEncodeInput" xml:space="preserve">
+    <value>Encoder en HTML la saisie de texte personnalisée</value>
+  </data>
+  <data name="TaskSettingsWindow_ResultForceHTTPS" xml:space="preserve">
+    <value>Forcer HTTPS pour les URL résultantes</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardContentFormat" xml:space="preserve">
+    <value>Format du contenu du presse-papiers</value>
+  </data>
+  <data name="TaskSettingsWindow_BalloonTipContentFormat" xml:space="preserve">
+    <value>Format du contenu de la notification</value>
+  </data>
+  <data name="TaskSettingsWindow_OpenURLFormat" xml:space="preserve">
+    <value>Format d’ouverture d’URL</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
+    <value>Longueur de raccourcissement automatique des URL</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCloseAfterUploadForm" xml:space="preserve">
+    <value>Fermer automatiquement la fenêtre après l’envoi</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatternMaxLength" xml:space="preserve">
+    <value>Longueur maximale du modèle de nom</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatternMaxTitleLength" xml:space="preserve">
+    <value>Longueur maximale du titre du modèle de nom</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseAudioFile" xml:space="preserve">
+    <value>Choisir un fichier audio</value>
+  </data>
 </root>

@@ -1771,134 +1771,68 @@
   <data name="TaskSettingsWindow_ProcessImagesDuringFileUpload" xml:space="preserve">
     <value>Bilder während des Datei-Uploads verarbeiten</value>
   </data>
-  <data name="TaskSettingsWindow_ProcessImagesDuringFileUploadDescription" xml:space="preserve">
-    <value>Aufgaben nach der Aufnahme für Bilddateien zulassen, indem sie als Bitmap geladen werden, wenn Dateien beim Datei-Upload, Zwischenablage-Datei-Upload, Drag-and-drop-Datei-Upload, in überwachten Ordnern und bei anderen Bilddateiaufgaben verarbeitet werden.</value>
-  </data>
   <data name="TaskSettingsWindow_ProcessImagesDuringClipboardUpload" xml:space="preserve">
     <value>Bilder während des Zwischenablage-Uploads verarbeiten</value>
-  </data>
-  <data name="TaskSettingsWindow_ProcessImagesDuringClipboardUploadDescription" xml:space="preserve">
-    <value>Aufgaben nach der Aufnahme für Bild-Uploads aus der Zwischenablage verwenden.</value>
   </data>
   <data name="TaskSettingsWindow_ProcessImagesDuringExtensionUpload" xml:space="preserve">
     <value>Bilder während des Erweiterungs-Uploads verarbeiten</value>
   </data>
-  <data name="TaskSettingsWindow_ProcessImagesDuringExtensionUploadDescription" xml:space="preserve">
-    <value>Aufgaben nach der Aufnahme für Bild-Uploads aus Browsererweiterungen verwenden.</value>
-  </data>
   <data name="TaskSettingsWindow_UseAfterCaptureTasksDuringFileUpload" xml:space="preserve">
     <value>Aufgaben nach der Aufnahme während des Datei-Uploads verwenden</value>
-  </data>
-  <data name="TaskSettingsWindow_UseAfterCaptureTasksDuringFileUploadDescription" xml:space="preserve">
-    <value>Ermöglicht dateibezogene Aufgaben nach der Aufnahme („Aktionen ausführen“, „Datei in die Zwischenablage kopieren“ usw.) beim Hochladen von Dateien.</value>
   </data>
   <data name="TaskSettingsWindow_TextTaskSaveAsFile" xml:space="preserve">
     <value>Textaufgaben als Dateien speichern</value>
   </data>
-  <data name="TaskSettingsWindow_TextTaskSaveAsFileDescription" xml:space="preserve">
-    <value>Text bei Aufgaben wie Zwischenablage-Text-Upload, Drag-and-drop-Text-Upload und Ordnerindizierung als Datei speichern.</value>
-  </data>
   <data name="TaskSettingsWindow_AutoClearClipboard" xml:space="preserve">
     <value>Zwischenablage automatisch leeren</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoClearClipboardDescription" xml:space="preserve">
-    <value>Zwischenablage leeren, wenn eine Aufgabe mit einem Upload-Auftrag gestartet wird.</value>
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Anmerkungen bei Bereichsaufnahmen deaktivieren</value>
   </data>
-  <data name="TaskSettingsWindow_RegionCaptureDisableAnnotationDescription" xml:space="preserve">
-    <value>Unterstützung für Anmerkungen bei Bereichsaufnahmen deaktivieren.</value>
-  </data>
   <data name="TaskSettingsWindow_ImageExtensions" xml:space="preserve">
     <value>Bilderweiterungen</value>
-  </data>
-  <data name="TaskSettingsWindow_ImageExtensionsDescription" xml:space="preserve">
-    <value>Dateien mit diesen Erweiterungen werden mit dem Bild-Uploader hochgeladen.</value>
   </data>
   <data name="TaskSettingsWindow_TextExtensions" xml:space="preserve">
     <value>Texterweiterungen</value>
   </data>
-  <data name="TaskSettingsWindow_TextExtensionsDescription" xml:space="preserve">
-    <value>Dateien mit diesen Erweiterungen werden mit dem Text-Uploader hochgeladen.</value>
-  </data>
   <data name="TaskSettingsWindow_EarlyCopyURL" xml:space="preserve">
     <value>URL vor dem Upload kopieren</value>
-  </data>
-  <data name="TaskSettingsWindow_EarlyCopyURLDescription" xml:space="preserve">
-    <value>URL kopieren, bevor der Upload beginnt. Dies funktioniert nur mit FTP, FTPS, SFTP, Amazon S3, Google Cloud Storage und Azure Storage.</value>
   </data>
   <data name="TaskSettingsWindow_TextFileExtension" xml:space="preserve">
     <value>Textdateierweiterung</value>
   </data>
-  <data name="TaskSettingsWindow_TextFileExtensionDescription" xml:space="preserve">
-    <value>Dateierweiterung zum Speichern von Text auf dem lokalen Datenträger.</value>
-  </data>
   <data name="TaskSettingsWindow_TextFormat" xml:space="preserve">
     <value>Textformat</value>
-  </data>
-  <data name="TaskSettingsWindow_TextFormatDescription" xml:space="preserve">
-    <value>Textformat, zum Beispiel csharp oder cpp.</value>
   </data>
   <data name="TaskSettingsWindow_TextCustom" xml:space="preserve">
     <value>Benutzerdefinierter Text</value>
   </data>
-  <data name="TaskSettingsWindow_TextCustomDescription" xml:space="preserve">
-    <value>Benutzerdefinierte Texteingabe. %input für den Eingabetext verwenden. So kann beispielsweise eine Webseite mit dem Text erstellt werden.</value>
-  </data>
   <data name="TaskSettingsWindow_TextCustomEncodeInput" xml:space="preserve">
     <value>Benutzerdefinierte Texteingabe HTML-kodieren</value>
-  </data>
-  <data name="TaskSettingsWindow_TextCustomEncodeInputDescription" xml:space="preserve">
-    <value>Die benutzerdefinierte Texteingabe HTML-kodieren.</value>
   </data>
   <data name="TaskSettingsWindow_ResultForceHTTPS" xml:space="preserve">
     <value>HTTPS für Ergebnis-URLs erzwingen</value>
   </data>
-  <data name="TaskSettingsWindow_ResultForceHTTPSDescription" xml:space="preserve">
-    <value>„http://“ am Anfang von Ergebnis-URLs durch „https://“ ersetzen.</value>
-  </data>
   <data name="TaskSettingsWindow_ClipboardContentFormat" xml:space="preserve">
     <value>Format des Zwischenablageinhalts</value>
-  </data>
-  <data name="TaskSettingsWindow_ClipboardContentFormatDescription" xml:space="preserve">
-    <value>Format des Zwischenablageinhalts nach dem Upload. Unterstützte Variablen: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime und Datumsvariablen wie %y-%mo-%d.</value>
   </data>
   <data name="TaskSettingsWindow_BalloonTipContentFormat" xml:space="preserve">
     <value>Format des Benachrichtigungsinhalts</value>
   </data>
-  <data name="TaskSettingsWindow_BalloonTipContentFormatDescription" xml:space="preserve">
-    <value>Format des Benachrichtigungsinhalts nach dem Upload. Unterstützte Variablen: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime und Datumsvariablen wie %y-%mo-%d.</value>
-  </data>
   <data name="TaskSettingsWindow_OpenURLFormat" xml:space="preserve">
     <value>Format zum Öffnen von URLs</value>
-  </data>
-  <data name="TaskSettingsWindow_OpenURLFormatDescription" xml:space="preserve">
-    <value>Format der Aufgabe „URL öffnen“ nach dem Upload. Unterstützte Variablen: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime und Datumsvariablen wie %y-%mo-%d.</value>
   </data>
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>Länge für automatische URL-Kürzung</value>
   </data>
-  <data name="TaskSettingsWindow_AutoShortenURLLengthDescription" xml:space="preserve">
-    <value>URLs automatisch kürzen, die länger als diese Zeichenanzahl sind. Auf 0 setzen, um die automatische URL-Kürzung zu deaktivieren.</value>
-  </data>
   <data name="TaskSettingsWindow_AutoCloseAfterUploadForm" xml:space="preserve">
     <value>Fenster nach dem Upload automatisch schließen</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoCloseAfterUploadFormDescription" xml:space="preserve">
-    <value>Fenster nach dem Upload nach 60 Sekunden automatisch schließen.</value>
   </data>
   <data name="TaskSettingsWindow_NamePatternMaxLength" xml:space="preserve">
     <value>Maximale Länge des Namensmusters</value>
   </data>
-  <data name="TaskSettingsWindow_NamePatternMaxLengthDescription" xml:space="preserve">
-    <value>Maximale Länge des für Dateinamen verwendeten Namensmusters.</value>
-  </data>
   <data name="TaskSettingsWindow_NamePatternMaxTitleLength" xml:space="preserve">
     <value>Maximale Titellänge des Namensmusters</value>
-  </data>
-  <data name="TaskSettingsWindow_NamePatternMaxTitleLengthDescription" xml:space="preserve">
-    <value>Maximale Titellänge (%t) in Dateinamensmustern.</value>
   </data>
   <data name="TaskSettingsWindow_ChooseAudioFile" xml:space="preserve">
     <value>Audiodatei auswählen</value>

@@ -1771,134 +1771,68 @@
   <data name="TaskSettingsWindow_ProcessImagesDuringFileUpload" xml:space="preserve">
     <value>Process images during file upload</value>
   </data>
-  <data name="TaskSettingsWindow_ProcessImagesDuringFileUploadDescription" xml:space="preserve">
-    <value>Allow after capture tasks for image files by loading them as bitmap when files are handled during file upload, clipboard file upload, drag and drop file upload, watch folder and other image file tasks.</value>
-  </data>
   <data name="TaskSettingsWindow_ProcessImagesDuringClipboardUpload" xml:space="preserve">
     <value>Process images during clipboard upload</value>
-  </data>
-  <data name="TaskSettingsWindow_ProcessImagesDuringClipboardUploadDescription" xml:space="preserve">
-    <value>Use after capture tasks for clipboard image uploads.</value>
   </data>
   <data name="TaskSettingsWindow_ProcessImagesDuringExtensionUpload" xml:space="preserve">
     <value>Process images during extension upload</value>
   </data>
-  <data name="TaskSettingsWindow_ProcessImagesDuringExtensionUploadDescription" xml:space="preserve">
-    <value>Use after capture tasks for browser extension image uploads.</value>
-  </data>
   <data name="TaskSettingsWindow_UseAfterCaptureTasksDuringFileUpload" xml:space="preserve">
     <value>Use after capture tasks during file upload</value>
-  </data>
-  <data name="TaskSettingsWindow_UseAfterCaptureTasksDuringFileUploadDescription" xml:space="preserve">
-    <value>Allows file-related after capture tasks (&quot;Perform actions&quot;, &quot;Copy file to clipboard&quot;, etc.) to be used when uploading files.</value>
   </data>
   <data name="TaskSettingsWindow_TextTaskSaveAsFile" xml:space="preserve">
     <value>Save text tasks as files</value>
   </data>
-  <data name="TaskSettingsWindow_TextTaskSaveAsFileDescription" xml:space="preserve">
-    <value>Save text as a file for tasks such as clipboard text upload, drag and drop text upload, and folder indexing.</value>
-  </data>
   <data name="TaskSettingsWindow_AutoClearClipboard" xml:space="preserve">
     <value>Automatically clear clipboard</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoClearClipboardDescription" xml:space="preserve">
-    <value>Clear the clipboard when a task containing an upload job starts.</value>
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Disable region capture annotations</value>
   </data>
-  <data name="TaskSettingsWindow_RegionCaptureDisableAnnotationDescription" xml:space="preserve">
-    <value>Disable annotation support in region capture.</value>
-  </data>
   <data name="TaskSettingsWindow_ImageExtensions" xml:space="preserve">
     <value>Image extensions</value>
-  </data>
-  <data name="TaskSettingsWindow_ImageExtensionsDescription" xml:space="preserve">
-    <value>Files with these extensions will be uploaded using the image uploader.</value>
   </data>
   <data name="TaskSettingsWindow_TextExtensions" xml:space="preserve">
     <value>Text extensions</value>
   </data>
-  <data name="TaskSettingsWindow_TextExtensionsDescription" xml:space="preserve">
-    <value>Files with these extensions will be uploaded using the text uploader.</value>
-  </data>
   <data name="TaskSettingsWindow_EarlyCopyURL" xml:space="preserve">
     <value>Copy URL before upload</value>
-  </data>
-  <data name="TaskSettingsWindow_EarlyCopyURLDescription" xml:space="preserve">
-    <value>Copy the URL before uploading starts. This only works with FTP, FTPS, SFTP, Amazon S3, Google Cloud Storage, and Azure Storage.</value>
   </data>
   <data name="TaskSettingsWindow_TextFileExtension" xml:space="preserve">
     <value>Text file extension</value>
   </data>
-  <data name="TaskSettingsWindow_TextFileExtensionDescription" xml:space="preserve">
-    <value>File extension used when saving text to the local disk.</value>
-  </data>
   <data name="TaskSettingsWindow_TextFormat" xml:space="preserve">
     <value>Text format</value>
-  </data>
-  <data name="TaskSettingsWindow_TextFormatDescription" xml:space="preserve">
-    <value>Text format, for example csharp or cpp.</value>
   </data>
   <data name="TaskSettingsWindow_TextCustom" xml:space="preserve">
     <value>Custom text</value>
   </data>
-  <data name="TaskSettingsWindow_TextCustomDescription" xml:space="preserve">
-    <value>Custom text input. Use %input for the input text. For example, you can create a web page containing your text.</value>
-  </data>
   <data name="TaskSettingsWindow_TextCustomEncodeInput" xml:space="preserve">
     <value>HTML encode custom text input</value>
-  </data>
-  <data name="TaskSettingsWindow_TextCustomEncodeInputDescription" xml:space="preserve">
-    <value>HTML encode the custom text input.</value>
   </data>
   <data name="TaskSettingsWindow_ResultForceHTTPS" xml:space="preserve">
     <value>Force HTTPS for result URLs</value>
   </data>
-  <data name="TaskSettingsWindow_ResultForceHTTPSDescription" xml:space="preserve">
-    <value>Replace &quot;http://&quot; with &quot;https://&quot; at the start of result URLs.</value>
-  </data>
   <data name="TaskSettingsWindow_ClipboardContentFormat" xml:space="preserve">
     <value>Clipboard content format</value>
-  </data>
-  <data name="TaskSettingsWindow_ClipboardContentFormatDescription" xml:space="preserve">
-    <value>Clipboard content format after uploading. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime, and date variables such as %y-%mo-%d.</value>
   </data>
   <data name="TaskSettingsWindow_BalloonTipContentFormat" xml:space="preserve">
     <value>Notification content format</value>
   </data>
-  <data name="TaskSettingsWindow_BalloonTipContentFormatDescription" xml:space="preserve">
-    <value>Notification content format after uploading. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime, and date variables such as %y-%mo-%d.</value>
-  </data>
   <data name="TaskSettingsWindow_OpenURLFormat" xml:space="preserve">
     <value>Open URL format</value>
-  </data>
-  <data name="TaskSettingsWindow_OpenURLFormatDescription" xml:space="preserve">
-    <value>Format used by the &quot;Open URL&quot; after-upload task. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime, and date variables such as %y-%mo-%d.</value>
   </data>
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>Automatic URL shortening length</value>
   </data>
-  <data name="TaskSettingsWindow_AutoShortenURLLengthDescription" xml:space="preserve">
-    <value>Automatically shorten URLs longer than this number of characters. Set to 0 to disable automatic URL shortening.</value>
-  </data>
   <data name="TaskSettingsWindow_AutoCloseAfterUploadForm" xml:space="preserve">
     <value>Automatically close after-upload window</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoCloseAfterUploadFormDescription" xml:space="preserve">
-    <value>Automatically close the after-upload window after 60 seconds.</value>
   </data>
   <data name="TaskSettingsWindow_NamePatternMaxLength" xml:space="preserve">
     <value>Maximum name pattern length</value>
   </data>
-  <data name="TaskSettingsWindow_NamePatternMaxLengthDescription" xml:space="preserve">
-    <value>Maximum name pattern length used for file names.</value>
-  </data>
   <data name="TaskSettingsWindow_NamePatternMaxTitleLength" xml:space="preserve">
     <value>Maximum name pattern title length</value>
-  </data>
-  <data name="TaskSettingsWindow_NamePatternMaxTitleLengthDescription" xml:space="preserve">
-    <value>Maximum title (%t) length used in file name patterns.</value>
   </data>
   <data name="TaskSettingsWindow_ChooseAudioFile" xml:space="preserve">
     <value>Choose audio file</value>

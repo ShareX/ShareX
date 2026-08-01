@@ -1771,134 +1771,68 @@
   <data name="TaskSettingsWindow_ProcessImagesDuringFileUpload" xml:space="preserve">
     <value>Dosya yükleme sırasında görselleri işle</value>
   </data>
-  <data name="TaskSettingsWindow_ProcessImagesDuringFileUploadDescription" xml:space="preserve">
-    <value>Dosya yükleme, pano dosyası yükleme, sürükleyip bırakarak dosya yükleme, izlenen klasör ve diğer görsel dosyası görevleri sırasında görselleri bit eşlem olarak yükleyerek yakalama sonrası görevlerin uygulanmasına izin ver.</value>
-  </data>
   <data name="TaskSettingsWindow_ProcessImagesDuringClipboardUpload" xml:space="preserve">
     <value>Pano yükleme sırasında görselleri işle</value>
-  </data>
-  <data name="TaskSettingsWindow_ProcessImagesDuringClipboardUploadDescription" xml:space="preserve">
-    <value>Pano görseli yüklemelerinde yakalama sonrası görevleri kullan.</value>
   </data>
   <data name="TaskSettingsWindow_ProcessImagesDuringExtensionUpload" xml:space="preserve">
     <value>Eklenti yüklemesi sırasında görselleri işle</value>
   </data>
-  <data name="TaskSettingsWindow_ProcessImagesDuringExtensionUploadDescription" xml:space="preserve">
-    <value>Tarayıcı eklentisi görsel yüklemelerinde yakalama sonrası görevleri kullan.</value>
-  </data>
   <data name="TaskSettingsWindow_UseAfterCaptureTasksDuringFileUpload" xml:space="preserve">
     <value>Dosya yükleme sırasında yakalama sonrası görevleri kullan</value>
-  </data>
-  <data name="TaskSettingsWindow_UseAfterCaptureTasksDuringFileUploadDescription" xml:space="preserve">
-    <value>Dosya yüklerken dosyayla ilgili yakalama sonrası görevlerin (&quot;Eylemleri gerçekleştir&quot;, &quot;Dosyayı panoya kopyala&quot; vb.) kullanılmasına izin ver.</value>
   </data>
   <data name="TaskSettingsWindow_TextTaskSaveAsFile" xml:space="preserve">
     <value>Metin görevlerini dosya olarak kaydet</value>
   </data>
-  <data name="TaskSettingsWindow_TextTaskSaveAsFileDescription" xml:space="preserve">
-    <value>Pano metni yükleme, sürükleyip bırakarak metin yükleme ve klasör dizini oluşturma gibi görevlerde metni dosya olarak kaydet.</value>
-  </data>
   <data name="TaskSettingsWindow_AutoClearClipboard" xml:space="preserve">
     <value>Panoyu otomatik olarak temizle</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoClearClipboardDescription" xml:space="preserve">
-    <value>Yükleme işi içeren bir görev başladığında panoyu temizle.</value>
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Bölge yakalama açıklamalarını devre dışı bırak</value>
   </data>
-  <data name="TaskSettingsWindow_RegionCaptureDisableAnnotationDescription" xml:space="preserve">
-    <value>Bölge yakalamada açıklama desteğini devre dışı bırak.</value>
-  </data>
   <data name="TaskSettingsWindow_ImageExtensions" xml:space="preserve">
     <value>Görsel uzantıları</value>
-  </data>
-  <data name="TaskSettingsWindow_ImageExtensionsDescription" xml:space="preserve">
-    <value>Bu uzantılara sahip dosyalar görsel yükleyici kullanılarak yüklenir.</value>
   </data>
   <data name="TaskSettingsWindow_TextExtensions" xml:space="preserve">
     <value>Metin uzantıları</value>
   </data>
-  <data name="TaskSettingsWindow_TextExtensionsDescription" xml:space="preserve">
-    <value>Bu uzantılara sahip dosyalar metin yükleyici kullanılarak yüklenir.</value>
-  </data>
   <data name="TaskSettingsWindow_EarlyCopyURL" xml:space="preserve">
     <value>Yüklemeden önce URL&apos;yi kopyala</value>
-  </data>
-  <data name="TaskSettingsWindow_EarlyCopyURLDescription" xml:space="preserve">
-    <value>Yükleme başlamadan önce URL&apos;yi kopyala. Bu yalnızca FTP, FTPS, SFTP, Amazon S3, Google Cloud Storage ve Azure Storage ile çalışır.</value>
   </data>
   <data name="TaskSettingsWindow_TextFileExtension" xml:space="preserve">
     <value>Metin dosyası uzantısı</value>
   </data>
-  <data name="TaskSettingsWindow_TextFileExtensionDescription" xml:space="preserve">
-    <value>Metni yerel diske kaydederken kullanılan dosya uzantısı.</value>
-  </data>
   <data name="TaskSettingsWindow_TextFormat" xml:space="preserve">
     <value>Metin biçimi</value>
-  </data>
-  <data name="TaskSettingsWindow_TextFormatDescription" xml:space="preserve">
-    <value>Metin biçimi; örneğin csharp veya cpp.</value>
   </data>
   <data name="TaskSettingsWindow_TextCustom" xml:space="preserve">
     <value>Özel metin</value>
   </data>
-  <data name="TaskSettingsWindow_TextCustomDescription" xml:space="preserve">
-    <value>Özel metin girişi. Giriş metni için %input kullanın. Örneğin metninizi içeren bir web sayfası oluşturabilirsiniz.</value>
-  </data>
   <data name="TaskSettingsWindow_TextCustomEncodeInput" xml:space="preserve">
     <value>Özel metin girişini HTML olarak kodla</value>
-  </data>
-  <data name="TaskSettingsWindow_TextCustomEncodeInputDescription" xml:space="preserve">
-    <value>Özel metin girişini HTML olarak kodla.</value>
   </data>
   <data name="TaskSettingsWindow_ResultForceHTTPS" xml:space="preserve">
     <value>Sonuç URL&apos;lerinde HTTPS&apos;yi zorunlu kıl</value>
   </data>
-  <data name="TaskSettingsWindow_ResultForceHTTPSDescription" xml:space="preserve">
-    <value>Sonuç URL&apos;lerinin başındaki &quot;http://&quot; ifadesini &quot;https://&quot; ile değiştir.</value>
-  </data>
   <data name="TaskSettingsWindow_ClipboardContentFormat" xml:space="preserve">
     <value>Pano içeriği biçimi</value>
-  </data>
-  <data name="TaskSettingsWindow_ClipboardContentFormatDescription" xml:space="preserve">
-    <value>Yükleme sonrası pano içeriği biçimi. Desteklenen değişkenler: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime ve %y-%mo-%d gibi tarih değişkenleri.</value>
   </data>
   <data name="TaskSettingsWindow_BalloonTipContentFormat" xml:space="preserve">
     <value>Bildirim içeriği biçimi</value>
   </data>
-  <data name="TaskSettingsWindow_BalloonTipContentFormatDescription" xml:space="preserve">
-    <value>Yükleme sonrası bildirim içeriği biçimi. Desteklenen değişkenler: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime ve %y-%mo-%d gibi tarih değişkenleri.</value>
-  </data>
   <data name="TaskSettingsWindow_OpenURLFormat" xml:space="preserve">
     <value>URL açma biçimi</value>
-  </data>
-  <data name="TaskSettingsWindow_OpenURLFormatDescription" xml:space="preserve">
-    <value>Yükleme sonrası &quot;URL&apos;yi aç&quot; görevinin kullandığı biçim. Desteklenen değişkenler: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime ve %y-%mo-%d gibi tarih değişkenleri.</value>
   </data>
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>Otomatik URL kısaltma uzunluğu</value>
   </data>
-  <data name="TaskSettingsWindow_AutoShortenURLLengthDescription" xml:space="preserve">
-    <value>Bu karakter sayısından uzun URL&apos;leri otomatik olarak kısalt. Otomatik URL kısaltmayı devre dışı bırakmak için 0 olarak ayarlayın.</value>
-  </data>
   <data name="TaskSettingsWindow_AutoCloseAfterUploadForm" xml:space="preserve">
     <value>Yükleme sonrası penceresini otomatik olarak kapat</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoCloseAfterUploadFormDescription" xml:space="preserve">
-    <value>Yükleme sonrası penceresini 60 saniye sonra otomatik olarak kapat.</value>
   </data>
   <data name="TaskSettingsWindow_NamePatternMaxLength" xml:space="preserve">
     <value>En fazla ad deseni uzunluğu</value>
   </data>
-  <data name="TaskSettingsWindow_NamePatternMaxLengthDescription" xml:space="preserve">
-    <value>Dosya adlarında kullanılan en fazla ad deseni uzunluğu.</value>
-  </data>
   <data name="TaskSettingsWindow_NamePatternMaxTitleLength" xml:space="preserve">
     <value>En fazla ad deseni başlığı uzunluğu</value>
-  </data>
-  <data name="TaskSettingsWindow_NamePatternMaxTitleLengthDescription" xml:space="preserve">
-    <value>Dosya adı desenlerinde kullanılan en fazla başlık (%t) uzunluğu.</value>
   </data>
   <data name="TaskSettingsWindow_ChooseAudioFile" xml:space="preserve">
     <value>Ses dosyası seç</value>

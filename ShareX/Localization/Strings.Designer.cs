@@ -3482,19 +3482,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ProcessImagesDuringFileUpload", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_ProcessImagesDuringFileUploadDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_ProcessImagesDuringFileUploadDescription", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_ProcessImagesDuringClipboardUpload {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_ProcessImagesDuringClipboardUpload", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_ProcessImagesDuringClipboardUploadDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_ProcessImagesDuringClipboardUploadDescription", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_ProcessImagesDuringExtensionUpload {
@@ -3502,19 +3492,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ProcessImagesDuringExtensionUpload", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_ProcessImagesDuringExtensionUploadDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_ProcessImagesDuringExtensionUploadDescription", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_UseAfterCaptureTasksDuringFileUpload {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_UseAfterCaptureTasksDuringFileUpload", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_UseAfterCaptureTasksDuringFileUploadDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_UseAfterCaptureTasksDuringFileUploadDescription", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_TextTaskSaveAsFile {
@@ -3522,19 +3502,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_TextTaskSaveAsFile", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_TextTaskSaveAsFileDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_TextTaskSaveAsFileDescription", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_AutoClearClipboard {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_AutoClearClipboard", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_AutoClearClipboardDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_AutoClearClipboardDescription", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_RegionCaptureDisableAnnotation {
@@ -3542,19 +3512,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_RegionCaptureDisableAnnotation", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_RegionCaptureDisableAnnotationDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_RegionCaptureDisableAnnotationDescription", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_ImageExtensions {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_ImageExtensions", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_ImageExtensionsDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_ImageExtensionsDescription", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_TextExtensions {
@@ -3562,19 +3522,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_TextExtensions", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_TextExtensionsDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_TextExtensionsDescription", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_EarlyCopyURL {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_EarlyCopyURL", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_EarlyCopyURLDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_EarlyCopyURLDescription", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_TextFileExtension {
@@ -3582,19 +3532,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_TextFileExtension", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_TextFileExtensionDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_TextFileExtensionDescription", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_TextFormat {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_TextFormat", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_TextFormatDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_TextFormatDescription", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_TextCustom {
@@ -3602,19 +3542,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_TextCustom", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_TextCustomDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_TextCustomDescription", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_TextCustomEncodeInput {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_TextCustomEncodeInput", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_TextCustomEncodeInputDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_TextCustomEncodeInputDescription", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_ResultForceHTTPS {
@@ -3622,19 +3552,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ResultForceHTTPS", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_ResultForceHTTPSDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_ResultForceHTTPSDescription", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_ClipboardContentFormat {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_ClipboardContentFormat", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_ClipboardContentFormatDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_ClipboardContentFormatDescription", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_BalloonTipContentFormat {
@@ -3642,19 +3562,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_BalloonTipContentFormat", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_BalloonTipContentFormatDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_BalloonTipContentFormatDescription", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_OpenURLFormat {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_OpenURLFormat", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_OpenURLFormatDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_OpenURLFormatDescription", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_AutoShortenURLLength {
@@ -3662,19 +3572,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_AutoShortenURLLength", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_AutoShortenURLLengthDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_AutoShortenURLLengthDescription", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_AutoCloseAfterUploadForm {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_AutoCloseAfterUploadForm", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_AutoCloseAfterUploadFormDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_AutoCloseAfterUploadFormDescription", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_NamePatternMaxLength {
@@ -3682,19 +3582,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_NamePatternMaxLength", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_NamePatternMaxLengthDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_NamePatternMaxLengthDescription", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_NamePatternMaxTitleLength {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_NamePatternMaxTitleLength", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_NamePatternMaxTitleLengthDescription {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_NamePatternMaxTitleLengthDescription", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_ChooseAudioFile {

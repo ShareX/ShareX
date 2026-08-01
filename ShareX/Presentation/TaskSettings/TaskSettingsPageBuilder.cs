@@ -905,15 +905,10 @@ internal sealed class TaskSettingsPageBuilder
             {
                 Control editor = AdvancedEditor(property);
                 string title = GetAdvancedSettingTitle(property);
-                string? description = GetAdvancedSettingDescription(property);
 
                 Control row = property.PropertyType == typeof(bool)
                     ? editor
                     : Row(title + ":", editor);
-                if (!string.IsNullOrWhiteSpace(description))
-                {
-                    ToolTip.SetTip(row, description);
-                }
                 settings.Add(row);
             }
 
@@ -994,33 +989,6 @@ internal sealed class TaskSettingsPageBuilder
         nameof(TaskSettingsAdvanced.NamePatternMaxLength) => Strings.TaskSettingsWindow_NamePatternMaxLength,
         nameof(TaskSettingsAdvanced.NamePatternMaxTitleLength) => Strings.TaskSettingsWindow_NamePatternMaxTitleLength,
         _ => property.GetCustomAttribute<DisplayNameAttribute>()?.DisplayName ?? SplitPascalCase(property.Name)
-    };
-
-    private static string? GetAdvancedSettingDescription(PropertyInfo property) => property.Name switch
-    {
-        nameof(TaskSettingsAdvanced.ProcessImagesDuringFileUpload) => Strings.TaskSettingsWindow_ProcessImagesDuringFileUploadDescription,
-        nameof(TaskSettingsAdvanced.ProcessImagesDuringClipboardUpload) => Strings.TaskSettingsWindow_ProcessImagesDuringClipboardUploadDescription,
-        nameof(TaskSettingsAdvanced.ProcessImagesDuringExtensionUpload) => Strings.TaskSettingsWindow_ProcessImagesDuringExtensionUploadDescription,
-        nameof(TaskSettingsAdvanced.UseAfterCaptureTasksDuringFileUpload) => Strings.TaskSettingsWindow_UseAfterCaptureTasksDuringFileUploadDescription,
-        nameof(TaskSettingsAdvanced.TextTaskSaveAsFile) => Strings.TaskSettingsWindow_TextTaskSaveAsFileDescription,
-        nameof(TaskSettingsAdvanced.AutoClearClipboard) => Strings.TaskSettingsWindow_AutoClearClipboardDescription,
-        nameof(TaskSettingsAdvanced.RegionCaptureDisableAnnotation) => Strings.TaskSettingsWindow_RegionCaptureDisableAnnotationDescription,
-        nameof(TaskSettingsAdvanced.ImageExtensions) => Strings.TaskSettingsWindow_ImageExtensionsDescription,
-        nameof(TaskSettingsAdvanced.TextExtensions) => Strings.TaskSettingsWindow_TextExtensionsDescription,
-        nameof(TaskSettingsAdvanced.EarlyCopyURL) => Strings.TaskSettingsWindow_EarlyCopyURLDescription,
-        nameof(TaskSettingsAdvanced.TextFileExtension) => Strings.TaskSettingsWindow_TextFileExtensionDescription,
-        nameof(TaskSettingsAdvanced.TextFormat) => Strings.TaskSettingsWindow_TextFormatDescription,
-        nameof(TaskSettingsAdvanced.TextCustom) => Strings.TaskSettingsWindow_TextCustomDescription,
-        nameof(TaskSettingsAdvanced.TextCustomEncodeInput) => Strings.TaskSettingsWindow_TextCustomEncodeInputDescription,
-        nameof(TaskSettingsAdvanced.ResultForceHTTPS) => Strings.TaskSettingsWindow_ResultForceHTTPSDescription,
-        nameof(TaskSettingsAdvanced.ClipboardContentFormat) => Strings.TaskSettingsWindow_ClipboardContentFormatDescription,
-        nameof(TaskSettingsAdvanced.BalloonTipContentFormat) => Strings.TaskSettingsWindow_BalloonTipContentFormatDescription,
-        nameof(TaskSettingsAdvanced.OpenURLFormat) => Strings.TaskSettingsWindow_OpenURLFormatDescription,
-        nameof(TaskSettingsAdvanced.AutoShortenURLLength) => Strings.TaskSettingsWindow_AutoShortenURLLengthDescription,
-        nameof(TaskSettingsAdvanced.AutoCloseAfterUploadForm) => Strings.TaskSettingsWindow_AutoCloseAfterUploadFormDescription,
-        nameof(TaskSettingsAdvanced.NamePatternMaxLength) => Strings.TaskSettingsWindow_NamePatternMaxLengthDescription,
-        nameof(TaskSettingsAdvanced.NamePatternMaxTitleLength) => Strings.TaskSettingsWindow_NamePatternMaxTitleLengthDescription,
-        _ => property.GetCustomAttribute<DescriptionAttribute>()?.Description
     };
 
     private BoundValue<bool> OverrideValue(Func<bool> getter, Action<bool> setter) =>
