@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MainWindow_CombineImages" xml:space="preserve">
+    <value>Combine images</value>
+  </data>
+  <data name="MainWindow_FilesDroppedUploadDescription" xml:space="preserve">
+    <value>Files dropped here will be uploaded by ShareX.</value>
+  </data>
+  <data name="MainWindow_Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="MainWindow_HotkeyHint" xml:space="preserve">
+    <value>Use a hotkey to capture or upload. Your results will appear here as thumbnails.</value>
+  </data>
+  <data name="MainWindow_ReleaseToUploadFiles" xml:space="preserve">
+    <value>Release to upload files</value>
+  </data>
+  <data name="MainWindow_ReleaseToUploadText" xml:space="preserve">
+    <value>Release to upload text</value>
+  </data>
+  <data name="MainWindow_ShareXHotkeys" xml:space="preserve">
+    <value>ShareX hotkeys</value>
+  </data>
+  <data name="MainWindow_TextDroppedUploadDescription" xml:space="preserve">
+    <value>Text dropped here will be uploaded by ShareX.</value>
+  </data>
+  <data name="MainWindow_Vertical" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="MainMenuBuilder_About" xml:space="preserve">
+    <value>About...</value>
+  </data>
+  <data name="MainMenuBuilder_ActionsToolbar" xml:space="preserve">
+    <value>Actions toolbar</value>
+  </data>
+  <data name="MainWindow_AddImageEffects" xml:space="preserve">
+    <value>Add image effects...</value>
+  </data>
+  <data name="MainMenuBuilder_AddWorkflowsFromHotkeySettings" xml:space="preserve">
+    <value>Add workflows from Hotkey settings...</value>
+  </data>
+  <data name="MainMenuBuilder_AfterCaptureTasks" xml:space="preserve">
+    <value>After capture tasks</value>
+  </data>
+  <data name="MainMenuBuilder_AfterUploadTasks" xml:space="preserve">
+    <value>After upload tasks</value>
+  </data>
+  <data name="MainWindow_AnalyzeImage" xml:space="preserve">
+    <value>Analyze image...</value>
+  </data>
+  <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
+    <value>Application settings...</value>
+  </data>
+  <data name="MainMenuBuilder_AutoCapture" xml:space="preserve">
+    <value>Auto capture...</value>
+  </data>
+  <data name="MainMenuBuilder_BackgroundRemover" xml:space="preserve">
+    <value>Background remover...</value>
+  </data>
+  <data name="MainWindow_BeautifyImage" xml:space="preserve">
+    <value>Beautify image...</value>
+  </data>
+  <data name="MainMenuBuilder_BorderlessWindow" xml:space="preserve">
+    <value>Borderless window...</value>
+  </data>
+  <data name="MainMenuBuilder_Capture" xml:space="preserve">
+    <value>Capture</value>
+  </data>
+  <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
+    <value>Clear thumbnail view</value>
+  </data>
+  <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
+    <value>Clipboard viewer...</value>
+  </data>
+  <data name="MainMenuBuilder_ColorPicker" xml:space="preserve">
+    <value>Color picker...</value>
+  </data>
+  <data name="MainWindow_CombineImagesDialog" xml:space="preserve">
+    <value>Combine images...</value>
+  </data>
+  <data name="MainWindow_Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="MainMenuBuilder_CustomUploaderSettings" xml:space="preserve">
+    <value>Custom uploader settings...</value>
+  </data>
+  <data name="MainMenuBuilder_Debug" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="MainWindow_DeleteSelectedFile" xml:space="preserve">
+    <value>Delete selected file...</value>
+  </data>
+  <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
+    <value>Delete selected item</value>
+  </data>
+  <data name="MainWindow_DeletionUrl" xml:space="preserve">
+    <value>Deletion URL</value>
+  </data>
+  <data name="MainMenuBuilder_DestinationSettings" xml:space="preserve">
+    <value>Destination settings...</value>
+  </data>
+  <data name="MainMenuBuilder_Destinations" xml:space="preserve">
+    <value>Destinations</value>
+  </data>
+  <data name="MainMenuBuilder_DisableHotkeys" xml:space="preserve">
+    <value>Disable hotkeys</value>
+  </data>
+  <data name="MainMenuBuilder_Discord" xml:space="preserve">
+    <value>Discord...</value>
+  </data>
+  <data name="MainMenuBuilder_Donate" xml:space="preserve">
+    <value>Donate...</value>
+  </data>
+  <data name="MainWindow_DownloadSelectedUrl" xml:space="preserve">
+    <value>Download selected URL</value>
+  </data>
+  <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
+    <value>Drag and drop upload...</value>
+  </data>
+  <data name="MainWindow_EditImage" xml:space="preserve">
+    <value>Edit image...</value>
+  </data>
+  <data name="MainMenuBuilder_EnableAddImageEffects" xml:space="preserve">
+    <value>Enable add image effects</value>
+  </data>
+  <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
+    <value>Enable hotkeys</value>
+  </data>
+  <data name="MainMenuBuilder_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="MainWindow_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="MainWindow_FileName" xml:space="preserve">
+    <value>File name</value>
+  </data>
+  <data name="MainWindow_FileNameWithExtension" xml:space="preserve">
+    <value>File name with extension</value>
+  </data>
+  <data name="MainWindow_FilePath" xml:space="preserve">
+    <value>File path</value>
+  </data>
+  <data name="MainWindow_Folder" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
+    <value>Follow ShareX...</value>
+  </data>
+  <data name="MainWindow_ForumImage" xml:space="preserve">
+    <value>Forum image</value>
+  </data>
+  <data name="MainWindow_ForumLink" xml:space="preserve">
+    <value>Forum link</value>
+  </data>
+  <data name="MainWindow_ForumLinkedImage" xml:space="preserve">
+    <value>Forum linked image</value>
+  </data>
+  <data name="MainMenuBuilder_Fullscreen" xml:space="preserve">
+    <value>Fullscreen</value>
+  </data>
+  <data name="MainMenuBuilder_HashChecker" xml:space="preserve">
+    <value>Hash checker...</value>
+  </data>
+  <data name="MainMenuBuilder_History" xml:space="preserve">
+    <value>History...</value>
+  </data>
+  <data name="MainWindow_Horizontally" xml:space="preserve">
+    <value>Horizontally</value>
+  </data>
+  <data name="MainMenuBuilder_HotkeySettings" xml:space="preserve">
+    <value>Hotkey settings...</value>
+  </data>
+  <data name="MainWindow_HtmlImage" xml:space="preserve">
+    <value>HTML image</value>
+  </data>
+  <data name="MainWindow_HtmlLink" xml:space="preserve">
+    <value>HTML link</value>
+  </data>
+  <data name="MainWindow_HtmlLinkedImage" xml:space="preserve">
+    <value>HTML linked image</value>
+  </data>
+  <data name="MainMenuBuilder_IconConverter" xml:space="preserve">
+    <value>Icon converter...</value>
+  </data>
+  <data name="MainWindow_Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="MainMenuBuilder_ImageBeautifier" xml:space="preserve">
+    <value>Image beautifier...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageCombiner" xml:space="preserve">
+    <value>Image combiner...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
+    <value>Image comparer...</value>
+  </data>
+  <data name="MainWindow_ImageDimensions" xml:space="preserve">
+    <value>Image dimensions</value>
+  </data>
+  <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
+    <value>Image editor...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageEffects" xml:space="preserve">
+    <value>Image effects...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
+    <value>Image history...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
+    <value>Image splitter...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageThumbnailer" xml:space="preserve">
+    <value>Image thumbnailer...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
+    <value>Image viewer...</value>
+  </data>
+  <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
+    <value>Index folder...</value>
+  </data>
+  <data name="MainMenuBuilder_InspectWindow" xml:space="preserve">
+    <value>Inspect window...</value>
+  </data>
+  <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
+    <value>Last region</value>
+  </data>
+  <data name="MainWindow_MarkdownImage" xml:space="preserve">
+    <value>Markdown image</value>
+  </data>
+  <data name="MainWindow_MarkdownLink" xml:space="preserve">
+    <value>Markdown link</value>
+  </data>
+  <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
+    <value>Markdown linked image</value>
+  </data>
+  <data name="MainMenuBuilder_Metadata" xml:space="preserve">
+    <value>Metadata...</value>
+  </data>
+  <data name="MainMenuBuilder_Monitor" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
+    <value>Monitor test...</value>
+  </data>
+  <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
+    <value>No image effect presets</value>
+  </data>
+  <data name="MainMenuBuilder_NoWindowsFound" xml:space="preserve">
+    <value>No windows found</value>
+  </data>
+  <data name="MainMenuBuilder_OCR" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="MainWindow_OCRImage" xml:space="preserve">
+    <value>OCR image...</value>
+  </data>
+  <data name="MainWindow_Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="MainWindow_PinToScreen" xml:space="preserve">
+    <value>Pin to screen</value>
+  </data>
+  <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
+    <value>Pin to screen...</value>
+  </data>
+  <data name="MainMenuBuilder_QRCode" xml:space="preserve">
+    <value>QR code...</value>
+  </data>
+  <data name="MainMenuBuilder_RecentItems" xml:space="preserve">
+    <value>Recent items</value>
+  </data>
+  <data name="MainMenuBuilder_Region" xml:space="preserve">
+    <value>Region...</value>
+  </data>
+  <data name="MainMenuBuilder_RegionLight" xml:space="preserve">
+    <value>Region (light)...</value>
+  </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>Region (transparent)...</value>
+  </data>
+  <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
+    <value>Restart as administrator</value>
+  </data>
+  <data name="MainMenuBuilder_Ruler" xml:space="preserve">
+    <value>Ruler...</value>
+  </data>
+  <data name="MainWindow_RunAction" xml:space="preserve">
+    <value>Run action</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
+    <value>Screen color picker...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenRecording" xml:space="preserve">
+    <value>Screen recording...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
+    <value>Screen recording (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
+    <value>Screenshots folder...</value>
+  </data>
+  <data name="MainMenuBuilder_ScrollingCapture" xml:space="preserve">
+    <value>Scrolling capture...</value>
+  </data>
+  <data name="MainWindow_SearchWithBingVisualSearch" xml:space="preserve">
+    <value>Search with Bing Visual Search...</value>
+  </data>
+  <data name="MainWindow_SearchWithGoogleLens" xml:space="preserve">
+    <value>Search with Google Lens...</value>
+  </data>
+  <data name="MainWindow_ShareSelectedUrl" xml:space="preserve">
+    <value>Share selected URL</value>
+  </data>
+  <data name="MainWindow_ShortenSelectedUrl" xml:space="preserve">
+    <value>Shorten selected URL</value>
+  </data>
+  <data name="MainMenuBuilder_ShortenUrl" xml:space="preserve">
+    <value>Shorten URL...</value>
+  </data>
+  <data name="MainWindow_ShortenedUrl" xml:space="preserve">
+    <value>Shortened URL</value>
+  </data>
+  <data name="MainMenuBuilder_ShowCursor" xml:space="preserve">
+    <value>Show cursor</value>
+  </data>
+  <data name="MainMenuBuilder_ShowDebugLog" xml:space="preserve">
+    <value>Show debug log...</value>
+  </data>
+  <data name="MainWindow_ShowErrors" xml:space="preserve">
+    <value>Show errors...</value>
+  </data>
+  <data name="MainWindow_ShowQRCode" xml:space="preserve">
+    <value>Show QR code...</value>
+  </data>
+  <data name="MainWindow_ShowResponse" xml:space="preserve">
+    <value>Show response...</value>
+  </data>
+  <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
+    <value>Show ShareX</value>
+  </data>
+  <data name="MainWindow_StopUpload" xml:space="preserve">
+    <value>Stop upload</value>
+  </data>
+  <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
+    <value>Task settings...</value>
+  </data>
+  <data name="MainMenuBuilder_TestFileUpload" xml:space="preserve">
+    <value>Test file upload</value>
+  </data>
+  <data name="MainMenuBuilder_TestImageUpload" xml:space="preserve">
+    <value>Test image upload</value>
+  </data>
+  <data name="MainMenuBuilder_TestTextUpload" xml:space="preserve">
+    <value>Test text upload</value>
+  </data>
+  <data name="MainMenuBuilder_TestUrlSharing" xml:space="preserve">
+    <value>Test URL sharing</value>
+  </data>
+  <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
+    <value>Test URL shortener</value>
+  </data>
+  <data name="MainWindow_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="MainWindow_ThumbnailFile" xml:space="preserve">
+    <value>Thumbnail file</value>
+  </data>
+  <data name="MainWindow_ThumbnailImage" xml:space="preserve">
+    <value>Thumbnail image</value>
+  </data>
+  <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
+    <value>Thumbnail URL</value>
+  </data>
+  <data name="MainMenuBuilder_Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="ThumbnailItemViewModel_UntitledTask" xml:space="preserve">
+    <value>Untitled task</value>
+  </data>
+  <data name="MainMenuBuilder_Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="MainMenuBuilder_UploadClipboard" xml:space="preserve">
+    <value>Upload clipboard...</value>
+  </data>
+  <data name="MainMenuBuilder_UploadFile" xml:space="preserve">
+    <value>Upload file...</value>
+  </data>
+  <data name="MainMenuBuilder_UploadFolder" xml:space="preserve">
+    <value>Upload folder...</value>
+  </data>
+  <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
+    <value>Upload selected file</value>
+  </data>
+  <data name="MainMenuBuilder_UploadText" xml:space="preserve">
+    <value>Upload text...</value>
+  </data>
+  <data name="MainMenuBuilder_UploadUrl" xml:space="preserve">
+    <value>Upload URL...</value>
+  </data>
+  <data name="MainWindow_Url" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="MainWindow_Vertically" xml:space="preserve">
+    <value>Vertically</value>
+  </data>
+  <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
+    <value>Video converter...</value>
+  </data>
+  <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
+    <value>Video thumbnailer...</value>
+  </data>
+  <data name="MainMenuBuilder_Window" xml:space="preserve">
+    <value>Window</value>
+  </data>
+  <data name="MainMenuBuilder_Workflows" xml:space="preserve">
+    <value>Workflows</value>
+  </data>
+  <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
+    <value>Analyze image...</value>
+  </data>
+  <data name="MainMenuBuilder_Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="MainMenuBuilder_Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+</root>

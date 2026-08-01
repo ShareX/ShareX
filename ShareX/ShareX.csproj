@@ -27,14 +27,15 @@
     <AvaloniaResource Include="Resources\About_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="Presentation\MainWindow\Localization\MainWindowResources.resx">
+    <EmbeddedResource Update="Resources\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>MainWindowResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ShareX.Localization</CustomToolNamespace>
     </EmbeddedResource>
-    <Compile Update="Presentation\MainWindow\Localization\MainWindowResources.Designer.cs">
+    <Compile Update="Resources\Strings.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>MainWindowResources.resx</DependentUpon>
+      <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

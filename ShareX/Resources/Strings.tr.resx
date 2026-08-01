@@ -58,421 +58,430 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CombineImages" xml:space="preserve">
+  <data name="MainWindow_CombineImages" xml:space="preserve">
     <value>Görüntüleri birleştir</value>
   </data>
-  <data name="FilesDroppedUploadDescription" xml:space="preserve">
+  <data name="MainWindow_FilesDroppedUploadDescription" xml:space="preserve">
     <value>Buraya bırakılan dosyalar ShareX tarafından yüklenecektir.</value>
   </data>
-  <data name="Horizontal" xml:space="preserve">
+  <data name="MainWindow_Horizontal" xml:space="preserve">
     <value>Yatay</value>
   </data>
-  <data name="HotkeyHint" xml:space="preserve">
+  <data name="MainWindow_HotkeyHint" xml:space="preserve">
     <value>Yakalamak veya yüklemek için bir klavye kısayolu kullanın. Sonuçlarınız burada küçük resimler olarak görünecektir.</value>
   </data>
-  <data name="ReleaseToUploadFiles" xml:space="preserve">
+  <data name="MainWindow_ReleaseToUploadFiles" xml:space="preserve">
     <value>Dosyaları yüklemek için bırakın</value>
   </data>
-  <data name="ReleaseToUploadText" xml:space="preserve">
+  <data name="MainWindow_ReleaseToUploadText" xml:space="preserve">
     <value>Metni yüklemek için bırakın</value>
   </data>
-  <data name="ShareXHotkeys" xml:space="preserve">
+  <data name="MainWindow_ShareXHotkeys" xml:space="preserve">
     <value>ShareX kısayolları</value>
   </data>
-  <data name="TextDroppedUploadDescription" xml:space="preserve">
+  <data name="MainWindow_TextDroppedUploadDescription" xml:space="preserve">
     <value>Buraya bırakılan metin ShareX tarafından yüklenecektir.</value>
   </data>
-  <data name="Vertical" xml:space="preserve">
+  <data name="MainWindow_Vertical" xml:space="preserve">
     <value>Dikey</value>
   </data>
-  <data name="About" xml:space="preserve">
+  <data name="MainMenuBuilder_About" xml:space="preserve">
     <value>Hakkında...</value>
   </data>
-  <data name="ActionsToolbar" xml:space="preserve">
+  <data name="MainMenuBuilder_ActionsToolbar" xml:space="preserve">
     <value>Eylemler araç çubuğu</value>
   </data>
-  <data name="AddImageEffects" xml:space="preserve">
+  <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Resim efektleri ekle...</value>
   </data>
-  <data name="AddWorkflowsFromHotkeySettings" xml:space="preserve">
+  <data name="MainMenuBuilder_AddWorkflowsFromHotkeySettings" xml:space="preserve">
     <value>Kısayol ayarlarından iş akışları ekle...</value>
   </data>
-  <data name="AfterCaptureTasks" xml:space="preserve">
+  <data name="MainMenuBuilder_AfterCaptureTasks" xml:space="preserve">
     <value>Yakalama sonrası görevler</value>
   </data>
-  <data name="AfterUploadTasks" xml:space="preserve">
+  <data name="MainMenuBuilder_AfterUploadTasks" xml:space="preserve">
     <value>Yükleme sonrası görevler</value>
   </data>
-  <data name="AnalyzeImage" xml:space="preserve">
+  <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Görüntüyü analiz et...</value>
   </data>
-  <data name="ApplicationSettings" xml:space="preserve">
+  <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Uygulama ayarları...</value>
   </data>
-  <data name="AutoCapture" xml:space="preserve">
+  <data name="MainMenuBuilder_AutoCapture" xml:space="preserve">
     <value>Otomatik yakalama...</value>
   </data>
-  <data name="BackgroundRemover" xml:space="preserve">
+  <data name="MainMenuBuilder_BackgroundRemover" xml:space="preserve">
     <value>Arka plan kaldırıcı...</value>
   </data>
-  <data name="BeautifyImage" xml:space="preserve">
+  <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Resmi güzelleştir...</value>
   </data>
-  <data name="BorderlessWindow" xml:space="preserve">
+  <data name="MainMenuBuilder_BorderlessWindow" xml:space="preserve">
     <value>Kenarsız pencere...</value>
   </data>
-  <data name="Capture" xml:space="preserve">
+  <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Yakala</value>
   </data>
-  <data name="ClearThumbnailView" xml:space="preserve">
+  <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Küçük resim görünümünü temizle</value>
   </data>
-  <data name="ClipboardViewer" xml:space="preserve">
+  <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Pano görüntüleyici...</value>
   </data>
-  <data name="ColorPicker" xml:space="preserve">
+  <data name="MainMenuBuilder_ColorPicker" xml:space="preserve">
     <value>Renk seçici...</value>
   </data>
-  <data name="CombineImagesDialog" xml:space="preserve">
+  <data name="MainWindow_CombineImagesDialog" xml:space="preserve">
     <value>Resimleri birleştir...</value>
   </data>
-  <data name="Copy" xml:space="preserve">
+  <data name="MainWindow_Copy" xml:space="preserve">
     <value>Kopyala</value>
   </data>
-  <data name="CustomUploaderSettings" xml:space="preserve">
+  <data name="MainMenuBuilder_CustomUploaderSettings" xml:space="preserve">
     <value>Özel yükleyici ayarları...</value>
   </data>
-  <data name="Debug" xml:space="preserve">
+  <data name="MainMenuBuilder_Debug" xml:space="preserve">
     <value>Hata ayıklama</value>
   </data>
-  <data name="DeleteSelectedFile" xml:space="preserve">
+  <data name="MainWindow_DeleteSelectedFile" xml:space="preserve">
     <value>Seçili dosyayı sil...</value>
   </data>
-  <data name="DeleteSelectedItem" xml:space="preserve">
+  <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
     <value>Seçili öğeyi listeden kaldır</value>
   </data>
-  <data name="DeletionUrl" xml:space="preserve">
+  <data name="MainWindow_DeletionUrl" xml:space="preserve">
     <value>Silme adresi</value>
   </data>
-  <data name="DestinationSettings" xml:space="preserve">
+  <data name="MainMenuBuilder_DestinationSettings" xml:space="preserve">
     <value>Hedef ayarları...</value>
   </data>
-  <data name="Destinations" xml:space="preserve">
+  <data name="MainMenuBuilder_Destinations" xml:space="preserve">
     <value>Hedefler</value>
   </data>
-  <data name="DisableHotkeys" xml:space="preserve">
+  <data name="MainMenuBuilder_DisableHotkeys" xml:space="preserve">
     <value>Kısayolları devre dışı bırak</value>
   </data>
-  <data name="Discord" xml:space="preserve">
+  <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
   </data>
-  <data name="Donate" xml:space="preserve">
+  <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>Bağış yap...</value>
   </data>
-  <data name="DownloadSelectedUrl" xml:space="preserve">
+  <data name="MainWindow_DownloadSelectedUrl" xml:space="preserve">
     <value>Seçili adresi indir</value>
   </data>
-  <data name="DragAndDropUpload" xml:space="preserve">
+  <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>Sürükleyip bırakarak yükle...</value>
   </data>
-  <data name="EditImage" xml:space="preserve">
+  <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Resmi düzenle...</value>
   </data>
-  <data name="EnableAddImageEffects" xml:space="preserve">
+  <data name="MainMenuBuilder_EnableAddImageEffects" xml:space="preserve">
     <value>Resim efektleri eklemeyi etkinleştir</value>
   </data>
-  <data name="EnableHotkeys" xml:space="preserve">
+  <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>Kısayolları etkinleştir</value>
   </data>
-  <data name="Exit" xml:space="preserve">
+  <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>Çıkış</value>
   </data>
-  <data name="File" xml:space="preserve">
+  <data name="MainWindow_File" xml:space="preserve">
     <value>Dosya</value>
   </data>
-  <data name="FileName" xml:space="preserve">
+  <data name="MainWindow_FileName" xml:space="preserve">
     <value>Dosya adı</value>
   </data>
-  <data name="FileNameWithExtension" xml:space="preserve">
+  <data name="MainWindow_FileNameWithExtension" xml:space="preserve">
     <value>Uzantılı dosya adı</value>
   </data>
-  <data name="FilePath" xml:space="preserve">
+  <data name="MainWindow_FilePath" xml:space="preserve">
     <value>Dosya yolu</value>
   </data>
-  <data name="Folder" xml:space="preserve">
+  <data name="MainWindow_Folder" xml:space="preserve">
     <value>Klasör</value>
   </data>
-  <data name="FollowShareX" xml:space="preserve">
+  <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>ShareX'i takip et...</value>
   </data>
-  <data name="ForumImage" xml:space="preserve">
+  <data name="MainWindow_ForumImage" xml:space="preserve">
     <value>Forum resmi</value>
   </data>
-  <data name="ForumLink" xml:space="preserve">
+  <data name="MainWindow_ForumLink" xml:space="preserve">
     <value>Forum bağlantısı</value>
   </data>
-  <data name="ForumLinkedImage" xml:space="preserve">
+  <data name="MainWindow_ForumLinkedImage" xml:space="preserve">
     <value>Forum bağlantılı resmi</value>
   </data>
-  <data name="Fullscreen" xml:space="preserve">
+  <data name="MainMenuBuilder_Fullscreen" xml:space="preserve">
     <value>Tam ekran</value>
   </data>
-  <data name="HashChecker" xml:space="preserve">
+  <data name="MainMenuBuilder_HashChecker" xml:space="preserve">
     <value>Dosya denetleyici...</value>
   </data>
-  <data name="History" xml:space="preserve">
+  <data name="MainMenuBuilder_History" xml:space="preserve">
     <value>Geçmiş...</value>
   </data>
-  <data name="Horizontally" xml:space="preserve">
+  <data name="MainWindow_Horizontally" xml:space="preserve">
     <value>Yatay olarak</value>
   </data>
-  <data name="HotkeySettings" xml:space="preserve">
+  <data name="MainMenuBuilder_HotkeySettings" xml:space="preserve">
     <value>Kısayol ayarları...</value>
   </data>
-  <data name="HtmlImage" xml:space="preserve">
+  <data name="MainWindow_HtmlImage" xml:space="preserve">
     <value>HTML resmi</value>
   </data>
-  <data name="HtmlLink" xml:space="preserve">
+  <data name="MainWindow_HtmlLink" xml:space="preserve">
     <value>HTML bağlantısı</value>
   </data>
-  <data name="HtmlLinkedImage" xml:space="preserve">
+  <data name="MainWindow_HtmlLinkedImage" xml:space="preserve">
     <value>HTML bağlantılı resim</value>
   </data>
-  <data name="IconConverter" xml:space="preserve">
+  <data name="MainMenuBuilder_IconConverter" xml:space="preserve">
     <value>Simge dönüştürücü...</value>
   </data>
-  <data name="Image" xml:space="preserve">
+  <data name="MainWindow_Image" xml:space="preserve">
     <value>Resim</value>
   </data>
-  <data name="ImageBeautifier" xml:space="preserve">
+  <data name="MainMenuBuilder_ImageBeautifier" xml:space="preserve">
     <value>Resim güzelleştirici...</value>
   </data>
-  <data name="ImageCombiner" xml:space="preserve">
+  <data name="MainMenuBuilder_ImageCombiner" xml:space="preserve">
     <value>Resim birleştirici...</value>
   </data>
-  <data name="ImageComparer" xml:space="preserve">
+  <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Görüntü karşılaştırıcı...</value>
   </data>
-  <data name="ImageDimensions" xml:space="preserve">
+  <data name="MainWindow_ImageDimensions" xml:space="preserve">
     <value>Resim boyutları</value>
   </data>
-  <data name="ImageEditor" xml:space="preserve">
+  <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Resim düzenleyici...</value>
   </data>
-  <data name="ImageEffects" xml:space="preserve">
+  <data name="MainMenuBuilder_ImageEffects" xml:space="preserve">
     <value>Resim efektleri...</value>
   </data>
-  <data name="ImageHistory" xml:space="preserve">
+  <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Resim geçmişi...</value>
   </data>
-  <data name="ImageSplitter" xml:space="preserve">
+  <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
     <value>Resim ayırıcı...</value>
   </data>
-  <data name="ImageThumbnailer" xml:space="preserve">
+  <data name="MainMenuBuilder_ImageThumbnailer" xml:space="preserve">
     <value>Küçük resim oluşturucu...</value>
   </data>
-  <data name="ImageViewer" xml:space="preserve">
+  <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Resim görüntüleyici...</value>
   </data>
-  <data name="IndexFolder" xml:space="preserve">
+  <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Dizini indeksle...</value>
   </data>
-  <data name="InspectWindow" xml:space="preserve">
+  <data name="MainMenuBuilder_InspectWindow" xml:space="preserve">
     <value>Pencereyi incele...</value>
   </data>
-  <data name="LastRegion" xml:space="preserve">
+  <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
     <value>Son bölge</value>
   </data>
-  <data name="MarkdownImage" xml:space="preserve">
+  <data name="MainWindow_MarkdownImage" xml:space="preserve">
     <value>Markdown resmi</value>
   </data>
-  <data name="MarkdownLink" xml:space="preserve">
+  <data name="MainWindow_MarkdownLink" xml:space="preserve">
     <value>Markdown bağlantısı</value>
   </data>
-  <data name="MarkdownLinkedImage" xml:space="preserve">
+  <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Markdown bağlantılı resim</value>
   </data>
-  <data name="Metadata" xml:space="preserve">
+  <data name="MainMenuBuilder_Metadata" xml:space="preserve">
     <value>Meta veriler...</value>
   </data>
-  <data name="Monitor" xml:space="preserve">
+  <data name="MainMenuBuilder_Monitor" xml:space="preserve">
     <value>Monitör</value>
   </data>
-  <data name="MonitorTest" xml:space="preserve">
+  <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Monitör testi...</value>
   </data>
-  <data name="NoImageEffectPresets" xml:space="preserve">
+  <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Resim efekti ön ayarı yok</value>
   </data>
-  <data name="NoWindowsFound" xml:space="preserve">
+  <data name="MainMenuBuilder_NoWindowsFound" xml:space="preserve">
     <value>Pencere bulunamadı</value>
   </data>
-  <data name="OCR" xml:space="preserve">
+  <data name="MainMenuBuilder_OCR" xml:space="preserve">
     <value>OCR...</value>
   </data>
-  <data name="OCRImage" xml:space="preserve">
+  <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>Resimden yazı yakala (OCR)...</value>
   </data>
-  <data name="Open" xml:space="preserve">
+  <data name="MainWindow_Open" xml:space="preserve">
     <value>Aç</value>
   </data>
-  <data name="PinToScreen" xml:space="preserve">
+  <data name="MainWindow_PinToScreen" xml:space="preserve">
     <value>Ekrana sabitle</value>
   </data>
-  <data name="PinToScreenDialog" xml:space="preserve">
+  <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Ekrana sabitle...</value>
   </data>
-  <data name="QRCode" xml:space="preserve">
+  <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>QR kod...</value>
   </data>
-  <data name="RecentItems" xml:space="preserve">
+  <data name="MainMenuBuilder_RecentItems" xml:space="preserve">
     <value>Son öğeler</value>
   </data>
-  <data name="Region" xml:space="preserve">
+  <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Bölge...</value>
   </data>
-  <data name="RegionLight" xml:space="preserve">
+  <data name="MainMenuBuilder_RegionLight" xml:space="preserve">
     <value>Bölge (basit)...</value>
   </data>
-  <data name="RegionTransparent" xml:space="preserve">
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
     <value>Bölge (saydam)...</value>
   </data>
-  <data name="RestartAsAdministrator" xml:space="preserve">
+  <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Yönetici olarak yeniden başlat</value>
   </data>
-  <data name="Ruler" xml:space="preserve">
+  <data name="MainMenuBuilder_Ruler" xml:space="preserve">
     <value>Cetvel...</value>
   </data>
-  <data name="RunAction" xml:space="preserve">
+  <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Eylem çalıştır</value>
   </data>
-  <data name="ScreenColorPicker" xml:space="preserve">
+  <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Ekrandan renk seçici...</value>
   </data>
-  <data name="ScreenRecording" xml:space="preserve">
+  <data name="MainMenuBuilder_ScreenRecording" xml:space="preserve">
     <value>Ekran kaydı...</value>
   </data>
-  <data name="ScreenRecordingGif" xml:space="preserve">
+  <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Ekran kaydı (GIF)...</value>
   </data>
-  <data name="ScreenshotsFolder" xml:space="preserve">
+  <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Ekran görüntüsü dizini...</value>
   </data>
-  <data name="ScrollingCapture" xml:space="preserve">
+  <data name="MainMenuBuilder_ScrollingCapture" xml:space="preserve">
     <value>Kaydırarak yakalama...</value>
   </data>
-  <data name="SearchWithBingVisualSearch" xml:space="preserve">
+  <data name="MainWindow_SearchWithBingVisualSearch" xml:space="preserve">
     <value>Bing Görsel Arama ile ara...</value>
   </data>
-  <data name="SearchWithGoogleLens" xml:space="preserve">
+  <data name="MainWindow_SearchWithGoogleLens" xml:space="preserve">
     <value>Google Lens ile ara...</value>
   </data>
-  <data name="ShareSelectedUrl" xml:space="preserve">
+  <data name="MainWindow_ShareSelectedUrl" xml:space="preserve">
     <value>Seçili adresi paylaş</value>
   </data>
-  <data name="ShortenSelectedUrl" xml:space="preserve">
+  <data name="MainWindow_ShortenSelectedUrl" xml:space="preserve">
     <value>Seçili adresi kısalt</value>
   </data>
-  <data name="ShortenUrl" xml:space="preserve">
+  <data name="MainMenuBuilder_ShortenUrl" xml:space="preserve">
     <value>Adresi kısalt...</value>
   </data>
-  <data name="ShortenedUrl" xml:space="preserve">
+  <data name="MainWindow_ShortenedUrl" xml:space="preserve">
     <value>Kısaltılmış adres</value>
   </data>
-  <data name="ShowCursor" xml:space="preserve">
+  <data name="MainMenuBuilder_ShowCursor" xml:space="preserve">
     <value>İmleci göster</value>
   </data>
-  <data name="ShowDebugLog" xml:space="preserve">
+  <data name="MainMenuBuilder_ShowDebugLog" xml:space="preserve">
     <value>Hata ayıklama günlüğünü göster...</value>
   </data>
-  <data name="ShowErrors" xml:space="preserve">
+  <data name="MainWindow_ShowErrors" xml:space="preserve">
     <value>Hataları göster...</value>
   </data>
-  <data name="ShowQRCode" xml:space="preserve">
+  <data name="MainWindow_ShowQRCode" xml:space="preserve">
     <value>QR kodu göster...</value>
   </data>
-  <data name="ShowResponse" xml:space="preserve">
+  <data name="MainWindow_ShowResponse" xml:space="preserve">
     <value>Yanıtı göster...</value>
   </data>
-  <data name="ShowShareX" xml:space="preserve">
+  <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>ShareX'i göster</value>
   </data>
-  <data name="StopUpload" xml:space="preserve">
+  <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Yüklemeyi durdur</value>
   </data>
-  <data name="TaskSettings" xml:space="preserve">
+  <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Görev ayarları...</value>
   </data>
-  <data name="TestFileUpload" xml:space="preserve">
+  <data name="MainMenuBuilder_TestFileUpload" xml:space="preserve">
     <value>Dosya yükleme testi</value>
   </data>
-  <data name="TestImageUpload" xml:space="preserve">
+  <data name="MainMenuBuilder_TestImageUpload" xml:space="preserve">
     <value>Resim yükleme testi</value>
   </data>
-  <data name="TestTextUpload" xml:space="preserve">
+  <data name="MainMenuBuilder_TestTextUpload" xml:space="preserve">
     <value>Metin yükleme testi</value>
   </data>
-  <data name="TestUrlSharing" xml:space="preserve">
+  <data name="MainMenuBuilder_TestUrlSharing" xml:space="preserve">
     <value>Adres paylaşım testi</value>
   </data>
-  <data name="TestUrlShortener" xml:space="preserve">
+  <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>Adres kısaltma testi</value>
   </data>
-  <data name="Text" xml:space="preserve">
+  <data name="MainWindow_Text" xml:space="preserve">
     <value>Metin</value>
   </data>
-  <data name="ThumbnailFile" xml:space="preserve">
+  <data name="MainWindow_ThumbnailFile" xml:space="preserve">
     <value>Küçük resim dosyası</value>
   </data>
-  <data name="ThumbnailImage" xml:space="preserve">
+  <data name="MainWindow_ThumbnailImage" xml:space="preserve">
     <value>Küçük resim</value>
   </data>
-  <data name="ThumbnailUrl" xml:space="preserve">
+  <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Küçük resim adresi</value>
   </data>
-  <data name="Tools" xml:space="preserve">
+  <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>Araçlar</value>
   </data>
-  <data name="UntitledTask" xml:space="preserve">
+  <data name="ThumbnailItemViewModel_UntitledTask" xml:space="preserve">
     <value>Adsız görev</value>
   </data>
-  <data name="Upload" xml:space="preserve">
+  <data name="MainMenuBuilder_Upload" xml:space="preserve">
     <value>Yükle</value>
   </data>
-  <data name="UploadClipboard" xml:space="preserve">
+  <data name="MainMenuBuilder_UploadClipboard" xml:space="preserve">
     <value>Panodan yükle...</value>
   </data>
-  <data name="UploadFile" xml:space="preserve">
+  <data name="MainMenuBuilder_UploadFile" xml:space="preserve">
     <value>Dosya yükle...</value>
   </data>
-  <data name="UploadFolder" xml:space="preserve">
+  <data name="MainMenuBuilder_UploadFolder" xml:space="preserve">
     <value>Klasör yükle...</value>
   </data>
-  <data name="UploadSelectedFile" xml:space="preserve">
+  <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Seçili dosyayı yükle</value>
   </data>
-  <data name="UploadText" xml:space="preserve">
+  <data name="MainMenuBuilder_UploadText" xml:space="preserve">
     <value>Metin yükle...</value>
   </data>
-  <data name="UploadUrl" xml:space="preserve">
+  <data name="MainMenuBuilder_UploadUrl" xml:space="preserve">
     <value>Adresten yükle...</value>
   </data>
-  <data name="Url" xml:space="preserve">
+  <data name="MainWindow_Url" xml:space="preserve">
     <value>Adres</value>
   </data>
-  <data name="Vertically" xml:space="preserve">
+  <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Dikey olarak</value>
   </data>
-  <data name="VideoConverter" xml:space="preserve">
+  <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>Video dönüştürücü...</value>
   </data>
-  <data name="VideoThumbnailer" xml:space="preserve">
+  <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Video küçük resim oluşturucu...</value>
   </data>
-  <data name="Window" xml:space="preserve">
+  <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Pencere</value>
   </data>
-  <data name="Workflows" xml:space="preserve">
+  <data name="MainMenuBuilder_Workflows" xml:space="preserve">
     <value>İş akışları</value>
+  </data>
+  <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
+    <value>Görüntüyü analiz et...</value>
+  </data>
+  <data name="MainMenuBuilder_Copy" xml:space="preserve">
+    <value>Kopyala</value>
+  </data>
+  <data name="MainMenuBuilder_Open" xml:space="preserve">
+    <value>Aç</value>
   </data>
 </root>

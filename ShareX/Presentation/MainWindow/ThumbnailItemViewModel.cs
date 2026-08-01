@@ -13,7 +13,7 @@ using Avalonia.Media.Imaging;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
-using ShareX.Presentation.MainWindow.Localization;
+using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -157,7 +157,7 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     {
         TaskInfo? info = Task.Info;
 
-        Title = !string.IsNullOrEmpty(info?.FileName) ? info.FileName : Path.GetFileName(info?.FilePath) ?? MainWindowResources.UntitledTask;
+        Title = !string.IsNullOrEmpty(info?.FileName) ? info.FileName : Path.GetFileName(info?.FilePath) ?? Strings.ThumbnailItemViewModel_UntitledTask;
         Status = !string.IsNullOrEmpty(info?.Status) ? info.Status : Task.Status.ToString();
         Details = info?.ToString() ?? string.Empty;
         Progress = info?.Progress?.Percentage ?? 0;
