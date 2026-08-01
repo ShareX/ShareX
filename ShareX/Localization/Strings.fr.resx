@@ -484,4 +484,391 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Ouvrir</value>
   </data>
+  <data name="ApplicationSettingsWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - Paramètres de l’application</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RestartShareXToApplyThisChange" xml:space="preserve">
+    <value>Redémarrez ShareX pour appliquer cette modification.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RestartNow" xml:space="preserve">
+    <value>Redémarrer maintenant</value>
+  </data>
+  <data name="ApplicationSettingsWindow_General" xml:space="preserve">
+    <value>Général</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="ApplicationSettingsWindow_LanguageLabel" xml:space="preserve">
+    <value>Langue :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
+    <value>Afficher l’icône de la zone de notification</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MinimizeToTrayOnStart" xml:space="preserve">
+    <value>Réduire dans la zone de notification au démarrage</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowProgressInTrayIcon" xml:space="preserve">
+    <value>Afficher la progression dans l’icône de la zone de notification</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowProgressInTaskbarButton" xml:space="preserve">
+    <value>Afficher la progression dans le bouton de la barre des tâches</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseWhiteShareXIcon" xml:space="preserve">
+    <value>Utiliser l’icône ShareX blanche</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RememberMainWindowPosition" xml:space="preserve">
+    <value>Mémoriser la position de la fenêtre principale</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RememberMainWindowSize" xml:space="preserve">
+    <value>Mémoriser la taille de la fenêtre principale</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TrayActions" xml:space="preserve">
+    <value>Actions de la zone de notification</value>
+  </data>
+  <data name="ApplicationSettingsWindow_OnTrayIconDoubleLeftClickLabel" xml:space="preserve">
+    <value>Lors d’un double-clic gauche sur l’icône :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_OnTrayIconLeftClickLabel" xml:space="preserve">
+    <value>Lors d’un clic gauche sur l’icône :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_OnTrayIconMiddleClickLabel" xml:space="preserve">
+    <value>Lors d’un clic du milieu sur l’icône :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_EditQuickTaskMenu" xml:space="preserve">
+    <value>Modifier le menu des tâches rapides...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Updates" xml:space="preserve">
+    <value>Mises à jour</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AutomaticallyCheckForUpdates" xml:space="preserve">
+    <value>Rechercher automatiquement les mises à jour</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UpdateChannelLabel" xml:space="preserve">
+    <value>Canal de mise à jour :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
+    <value>Installer la version de développement...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
+    <value>Thème</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ApplicationTheme" xml:space="preserve">
+    <value>Thème de l’application</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FollowSystemTheme" xml:space="preserve">
+    <value>Suivre le thème du système</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ThemeLabel" xml:space="preserve">
+    <value>Thème :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AccentColor" xml:space="preserve">
+    <value>Couleur d’accentuation</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FollowSystemAccentColor" xml:space="preserve">
+    <value>Suivre la couleur d’accentuation du système</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AccentColorLabel" xml:space="preserve">
+    <value>Couleur d’accentuation :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Integration" xml:space="preserve">
+    <value>Intégration</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Windows" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Afficher le bouton « Téléverser avec ShareX » dans le menu contextuel de l’Explorateur Windows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Afficher le bouton « Modifier avec ShareX » dans le menu contextuel de l’Explorateur Windows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowShareXInSendToMenu" xml:space="preserve">
+    <value>Afficher ShareX dans le menu « Envoyer vers »</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ChromeExtension" xml:space="preserve">
+    <value>Extension Chrome</value>
+  </data>
+  <data name="ApplicationSettingsWindow_EnableChromeExtensionSupport" xml:space="preserve">
+    <value>Activer la prise en charge de l’extension Chrome</value>
+  </data>
+  <data name="ApplicationSettingsWindow_InstallShareXChromeExtension" xml:space="preserve">
+    <value>Installer l’extension ShareX pour Chrome...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FirefoxAddon" xml:space="preserve">
+    <value>Module Firefox</value>
+  </data>
+  <data name="ApplicationSettingsWindow_EnableFirefoxAddonSupport" xml:space="preserve">
+    <value>Activer la prise en charge du module Firefox</value>
+  </data>
+  <data name="ApplicationSettingsWindow_InstallShareXFirefoxAddon" xml:space="preserve">
+    <value>Installer le module ShareX pour Firefox...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="ApplicationSettingsWindow_WhileShareXIsOpenShowInAppInSteam" xml:space="preserve">
+    <value>Lorsque ShareX est ouvert, afficher « En jeu » dans Steam</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Paths" xml:space="preserve">
+    <value>Chemins</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShareXPersonalFolder" xml:space="preserve">
+    <value>Dossier personnel ShareX</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Browse" xml:space="preserve">
+    <value>Parcourir...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Open" xml:space="preserve">
+    <value>Ouvrir...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ChangesToThePersonalFolderAreStoredImmediatelyAndTakeEffectAfterRestart" xml:space="preserve">
+    <value>Les modifications du dossier personnel sont enregistrées immédiatement et prennent effet après le redémarrage.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ScreenshotsFolder" xml:space="preserve">
+    <value>Dossier des captures d’écran</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseCustomScreenshotsFolder" xml:space="preserve">
+    <value>Utiliser un dossier de captures d’écran personnalisé</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
+    <value>Modèle de sous-dossier :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SubFolderPatternForWindowLabel" xml:space="preserve">
+    <value>Modèle de sous-dossier pour les fenêtres :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Settings" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ExportAndImport" xml:space="preserve">
+    <value>Exporter et importer</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DoNotShareAnExportedBackupItCanContainPrivateInformationSuchAsAccountDetailsAndUploadHistory" xml:space="preserve">
+    <value>Ne partagez pas une sauvegarde exportée. Elle peut contenir des informations privées, notamment les détails des comptes et l’historique des téléversements.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_History" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Export" xml:space="preserve">
+    <value>Exporter...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Import" xml:space="preserve">
+    <value>Importer...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ResetSettings" xml:space="preserve">
+    <value>Réinitialiser les paramètres...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AutomaticCleanup" xml:space="preserve">
+    <value>Nettoyage automatique</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldBackupFiles" xml:space="preserve">
+    <value>Nettoyer automatiquement les anciens fichiers de sauvegarde</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldLogFiles" xml:space="preserve">
+    <value>Nettoyer automatiquement les anciens fichiers journaux</value>
+  </data>
+  <data name="ApplicationSettingsWindow_NumberOfFilesToKeepLabel" xml:space="preserve">
+    <value>Nombre de fichiers à conserver :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
+    <value>Fenêtre principale</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ThumbnailView" xml:space="preserve">
+    <value>Vue des miniatures</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowTitle" xml:space="preserve">
+    <value>Afficher le titre</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TitleLocationLabel" xml:space="preserve">
+    <value>Emplacement du titre :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ThumbnailSizeLabel" xml:space="preserve">
+    <value>Taille des miniatures :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Reset" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ThumbnailClickActionLabel" xml:space="preserve">
+    <value>Action lors d’un clic sur une miniature :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
+    <value>Formats du presse-papiers</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TheseFormatsAppearUnderTheCopySubmenuInTheMainWindowContextMenu" xml:space="preserve">
+    <value>Ces formats apparaissent dans le sous-menu Copier du menu contextuel de la fenêtre principale.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Add" xml:space="preserve">
+    <value>Ajouter...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Edit" xml:space="preserve">
+    <value>Modifier...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Remove" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Upload" xml:space="preserve">
+    <value>Téléverser</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
+    <value>Limite de téléversements simultanés :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ZeroDisablesTheLimit" xml:space="preserve">
+    <value>0 désactive la limite</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BufferSizeLabel" xml:space="preserve">
+    <value>Taille de la mémoire tampon :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel" xml:space="preserve">
+    <value>Nombre de tentatives en cas d’échec du téléversement :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseSecondaryUploadersInOrderOfPreferenceWhenRetrying" xml:space="preserve">
+    <value>Utiliser les services secondaires par ordre de préférence lors d’une nouvelle tentative</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SecondaryImageUploaders" xml:space="preserve">
+    <value>Services secondaires d’hébergement d’images</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MoveUp" xml:space="preserve">
+    <value>Monter</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MoveDown" xml:space="preserve">
+    <value>Descendre</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SecondaryTextUploaders" xml:space="preserve">
+    <value>Services secondaires d’hébergement de texte</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SecondaryFileUploaders" xml:space="preserve">
+    <value>Services secondaires d’hébergement de fichiers</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SaveTasksToHistory" xml:space="preserve">
+    <value>Enregistrer les tâches dans l’historique</value>
+  </data>
+  <data name="ApplicationSettingsWindow_OnlySaveIfUrlIsNotEmpty" xml:space="preserve">
+    <value>Enregistrer uniquement si l’URL n’est pas vide</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RecentTasks" xml:space="preserve">
+    <value>Tâches récentes</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
+    <value>Enregistrer les tâches récentes</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumNumberOfTasksToSaveLabel" xml:space="preserve">
+    <value>Nombre maximal de tâches à enregistrer :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowRecentTasksInMainWindowOnStartup" xml:space="preserve">
+    <value>Afficher les tâches récentes dans la fenêtre principale au démarrage</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowRecentTasksInTrayMenu" xml:space="preserve">
+    <value>Afficher les tâches récentes dans le menu de la zone de notification</value>
+  </data>
+  <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
+    <value>Afficher les tâches les plus récentes en premier dans ce menu</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Print" xml:space="preserve">
+    <value>Imprimer</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DontShowImagePrintSettingsDialog" xml:space="preserve">
+    <value>Ne pas afficher la boîte de dialogue des paramètres d’impression d’image</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
+    <value>Paramètres d’impression d’image...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DontShowWindowsPrintDialog" xml:space="preserve">
+    <value>Ne pas afficher la boîte de dialogue d’impression Windows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DefaultPrinterOverrideLabel" xml:space="preserve">
+    <value>Remplacement de l’imprimante par défaut :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Proxy" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ProxyConfigurationLabel" xml:space="preserve">
+    <value>Configuration du proxy :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UsernameLabel" xml:space="preserve">
+    <value>Nom d’utilisateur :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_PasswordLabel" xml:space="preserve">
+    <value>Mot de passe :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_HostLabel" xml:space="preserve">
+    <value>Hôte :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_PortLabel" xml:space="preserve">
+    <value>Port :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Advanced" xml:space="preserve">
+    <value>Avancé</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AddClipboardFormat" xml:space="preserve">
+    <value>Ajouter un format de presse-papiers</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CustomizeTheTextCopiedFromCompletedUploads" xml:space="preserve">
+    <value>Personnalisez le texte copié depuis les téléversements terminés.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RightClickToInsertAVariable" xml:space="preserve">
+    <value>Cliquez avec le bouton droit pour insérer une variable.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ChooseShareXPersonalFolderPath" xml:space="preserve">
+    <value>Choisir le chemin du dossier personnel ShareX</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ChooseScreenshotsFolderPath" xml:space="preserve">
+    <value>Choisir le chemin du dossier des captures d’écran</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ExportShareXBackup" xml:space="preserve">
+    <value>Exporter la sauvegarde ShareX</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShareXBackup" xml:space="preserve">
+    <value>Sauvegarde ShareX</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImportShareXBackup" xml:space="preserve">
+    <value>Importer la sauvegarde ShareX</value>
+  </data>
+  <data name="ApplicationSettingsWindow_EditClipboardFormat" xml:space="preserve">
+    <value>Modifier le format du presse-papiers</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UploadResult" xml:space="preserve">
+    <value>Résultat du téléversement</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ExportingBackup" xml:space="preserve">
+    <value>Exportation de la sauvegarde...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BackupExportedTo" xml:space="preserve">
+    <value>Sauvegarde exportée vers {0}</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BackupExportFailed" xml:space="preserve">
+    <value>Échec de l’exportation de la sauvegarde.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImportingBackup" xml:space="preserve">
+    <value>Importation de la sauvegarde...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BackupImportedFrom" xml:space="preserve">
+    <value>Sauvegarde importée depuis {0}</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BackupImportFailed" xml:space="preserve">
+    <value>Échec de l’importation de la sauvegarde.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SettingsReset" xml:space="preserve">
+    <value>Paramètres réinitialisés.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ErrorPrefix" xml:space="preserve">
+    <value>Erreur :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Dark" xml:space="preserve">
+    <value>Sombre</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
+    <value>Clair</value>
+  </data>
 </root>

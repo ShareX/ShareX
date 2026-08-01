@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
+        xmlns:res="using:ShareX.Localization"
         xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         xmlns:imageEditorControls="using:ShareX.ImageEditor.Presentation.Controls"
@@ -11,7 +12,7 @@
         d:DesignHeight="720"
         x:Class="ShareX.ApplicationSettingsWindow"
         x:DataType="local:ApplicationSettingsViewModel"
-        Title="ShareX - Application settings"
+        Title="{x:Static res:Strings.ApplicationSettingsWindow_WindowTitle}"
         Width="1040"
         Height="720"
         MinWidth="850"
@@ -110,8 +111,8 @@
                         CornerRadius="5">
                     <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}" FontSize="17"/>
-                        <TextBlock Grid.Column="1" Text="Restart ShareX to apply this change." FontWeight="Normal" VerticalAlignment="Center"/>
-                        <Button Grid.Column="2" Classes="compact" Content="Restart now" Click="OnRestartClick"/>
+                        <TextBlock Grid.Column="1" Text="{x:Static res:Strings.ApplicationSettingsWindow_RestartShareXToApplyThisChange}" FontWeight="Normal" VerticalAlignment="Center"/>
+                        <Button Grid.Column="2" Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_RestartNow}" Click="OnRestartClick"/>
                     </Grid>
                 </Border>
 
@@ -135,57 +136,57 @@
                         <StackPanel Margin="28,24,28,32" MaxWidth="760" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.settings}"/>
-                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="General"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_General}"/>
                             </Grid>
 
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
-                                    <TextBlock Classes="section-title" Text="Application"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_Application}"/>
                                     <Grid ColumnDefinitions="190,*" ColumnSpacing="8">
-                                        <TextBlock Text="Language:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_LanguageLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1" Classes="form-control"
                                                   ItemsSource="{Binding LanguageOptions}"
                                                   SelectedItem="{Binding SelectedLanguage, Mode=TwoWay}"/>
                                     </Grid>
-                                    <CheckBox Classes="setting" Content="Show tray icon" IsChecked="{Binding ShowTray, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" Content="Minimize to tray on start" IsEnabled="{Binding SilentRunEnabled}" IsChecked="{Binding SilentRun, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" Content="Show progress in tray icon" IsChecked="{Binding TrayIconProgressEnabled, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" Content="Show progress in taskbar button" IsEnabled="{Binding TaskbarProgressSupported}" IsChecked="{Binding TaskbarProgressEnabled, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" Content="Use white ShareX icon" IsChecked="{Binding UseWhiteShareXIcon, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" Content="Remember main window position" IsChecked="{Binding RememberMainFormPosition, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" Content="Remember main window size" IsChecked="{Binding RememberMainFormSize, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowTrayIcon}" IsChecked="{Binding ShowTray, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_MinimizeToTrayOnStart}" IsEnabled="{Binding SilentRunEnabled}" IsChecked="{Binding SilentRun, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowProgressInTrayIcon}" IsChecked="{Binding TrayIconProgressEnabled, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowProgressInTaskbarButton}" IsEnabled="{Binding TaskbarProgressSupported}" IsChecked="{Binding TaskbarProgressEnabled, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_UseWhiteShareXIcon}" IsChecked="{Binding UseWhiteShareXIcon, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_RememberMainWindowPosition}" IsChecked="{Binding RememberMainFormPosition, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_RememberMainWindowSize}" IsChecked="{Binding RememberMainFormSize, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
 
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
-                                    <TextBlock Classes="section-title" Text="Tray actions"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_TrayActions}"/>
                                     <Grid ColumnDefinitions="220,*" ColumnSpacing="8">
-                                        <TextBlock Text="On tray icon double left click:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_OnTrayIconDoubleLeftClickLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding HotkeyTypeOptions}" SelectedItem="{Binding SelectedTrayLeftDoubleClickAction, Mode=TwoWay}"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="220,*" ColumnSpacing="8">
-                                        <TextBlock Text="On tray icon left click:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_OnTrayIconLeftClickLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding HotkeyTypeOptions}" SelectedItem="{Binding SelectedTrayLeftClickAction, Mode=TwoWay}"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="220,*" ColumnSpacing="8">
-                                        <TextBlock Text="On tray icon middle click:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_OnTrayIconMiddleClickLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding HotkeyTypeOptions}" SelectedItem="{Binding SelectedTrayMiddleClickAction, Mode=TwoWay}"/>
                                     </Grid>
-                                    <Button Classes="compact" HorizontalAlignment="Left" Content="Edit quick task menu..." Click="OnEditQuickTaskMenuClick"/>
+                                    <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_EditQuickTaskMenu}" Click="OnEditQuickTaskMenuClick"/>
                                 </StackPanel>
                             </Border>
 
                             <StackPanel controls:SettingsSearch.IsAvailabilityContainer="True" IsVisible="{Binding UpdatesVisible}">
                                 <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="6">
-                                        <TextBlock Classes="section-title" Text="Updates"/>
-                                        <CheckBox Classes="setting" Content="Automatically check for updates" IsChecked="{Binding AutoCheckUpdate, Mode=TwoWay}"/>
+                                        <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_Updates}"/>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_AutomaticallyCheckForUpdates}" IsChecked="{Binding AutoCheckUpdate, Mode=TwoWay}"/>
                                         <Grid ColumnDefinitions="190,*" ColumnSpacing="8">
-                                            <TextBlock Text="Update channel:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_UpdateChannelLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                             <ComboBox Grid.Column="1" Classes="form-control" IsEnabled="{Binding UpdateChannelEnabled}" ItemsSource="{Binding UpdateChannelOptions}" SelectedItem="{Binding SelectedUpdateChannel, Mode=TwoWay}"/>
                                         </Grid>
-                                        <Button Classes="compact" HorizontalAlignment="Left" Content="Install dev build..." IsEnabled="{Binding !IsBusy}" Click="OnCheckDevBuildClick"/>
+                                        <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallDevBuild}" IsEnabled="{Binding !IsBusy}" Click="OnCheckDevBuildClick"/>
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
@@ -197,19 +198,19 @@
                         <StackPanel Margin="28,24,28,32" MaxWidth="760" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.palette}"/>
-                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Theme"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Theme}"/>
                             </Grid>
 
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
-                                    <TextBlock Classes="section-title" Text="Application theme"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ApplicationTheme}"/>
                                     <CheckBox Classes="setting"
-                                              Content="Follow system theme"
+                                              Content="{x:Static res:Strings.ApplicationSettingsWindow_FollowSystemTheme}"
                                               IsChecked="{Binding UseSystemTheme, Mode=TwoWay}"/>
                                     <Grid ColumnDefinitions="190,*"
                                           ColumnSpacing="8"
                                           IsVisible="{Binding CanEditTheme}">
-                                        <TextBlock Text="Theme:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_ThemeLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1"
                                                   Classes="form-control"
                                                   Width="130"
@@ -222,14 +223,14 @@
 
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
-                                    <TextBlock Classes="section-title" Text="Accent color"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_AccentColor}"/>
                                     <CheckBox Classes="setting"
-                                              Content="Follow system accent color"
+                                              Content="{x:Static res:Strings.ApplicationSettingsWindow_FollowSystemAccentColor}"
                                               IsChecked="{Binding UseSystemAccentColor, Mode=TwoWay}"/>
                                     <Grid ColumnDefinitions="190,*"
                                           ColumnSpacing="8"
                                           IsVisible="{Binding CanEditAccentColor}">
-                                        <TextBlock Text="Accent color:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_AccentColorLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <imageEditorControls:ColorPickerDropdown Grid.Column="1"
                                                                                  SelectedColorValue="{Binding AccentColor, Mode=TwoWay}"
                                                                                  HorizontalAlignment="Left"
@@ -246,40 +247,40 @@
                         <StackPanel Margin="28,24,28,32" MaxWidth="760" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.plug}"/>
-                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Integration"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Integration}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
-                                    <TextBlock Classes="section-title" Text="Windows"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_Windows}"/>
                                     <CheckBox Classes="setting" Content="{Binding StartWithWindowsText}" IsEnabled="{Binding StartWithWindowsEnabled}" IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="Show &quot;Upload with ShareX&quot; button in Windows Explorer context menu" IsChecked="{Binding ShellContextMenu, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="Show &quot;Edit with ShareX&quot; button in Windows Explorer context menu" IsChecked="{Binding EditWithShareX, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="Show ShareX in &quot;Send to&quot; menu" IsChecked="{Binding SendToMenu, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu}" IsChecked="{Binding ShellContextMenu, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu}" IsChecked="{Binding EditWithShareX, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowShareXInSendToMenu}" IsChecked="{Binding SendToMenu, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
                             <StackPanel controls:SettingsSearch.IsAvailabilityContainer="True" IsVisible="{Binding WindowsIntegrationVisible}">
                                 <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
-                                        <TextBlock Classes="section-title" Text="Chrome extension"/>
-                                        <CheckBox Classes="setting" Content="Enable Chrome extension support" IsChecked="{Binding ChromeExtensionSupport, Mode=TwoWay}"/>
-                                        <Button Classes="compact" HorizontalAlignment="Left" Content="Install ShareX Chrome extension..." IsEnabled="{Binding ChromeExtensionSupport}" Click="OnOpenChromeExtensionClick"/>
+                                        <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ChromeExtension}"/>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_EnableChromeExtensionSupport}" IsChecked="{Binding ChromeExtensionSupport, Mode=TwoWay}"/>
+                                        <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallShareXChromeExtension}" IsEnabled="{Binding ChromeExtensionSupport}" Click="OnOpenChromeExtensionClick"/>
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
                             <StackPanel controls:SettingsSearch.IsAvailabilityContainer="True" IsVisible="{Binding WindowsIntegrationVisible}">
                                 <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
-                                        <TextBlock Classes="section-title" Text="Firefox addon"/>
-                                        <CheckBox Classes="setting" Content="Enable Firefox addon support" IsChecked="{Binding FirefoxAddonSupport, Mode=TwoWay}"/>
-                                        <Button Classes="compact" HorizontalAlignment="Left" Content="Install ShareX Firefox addon..." IsEnabled="{Binding FirefoxAddonSupport}" Click="OnOpenFirefoxAddonClick"/>
+                                        <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_FirefoxAddon}"/>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_EnableFirefoxAddonSupport}" IsChecked="{Binding FirefoxAddonSupport, Mode=TwoWay}"/>
+                                        <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallShareXFirefoxAddon}" IsEnabled="{Binding FirefoxAddonSupport}" Click="OnOpenFirefoxAddonClick"/>
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
                             <StackPanel controls:SettingsSearch.IsAvailabilityContainer="True" IsVisible="{Binding SteamIntegrationVisible}">
                                 <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
-                                        <TextBlock Classes="section-title" Text="Steam"/>
-                                        <CheckBox Classes="setting" Content="While ShareX is open, show &quot;In-App&quot; in Steam" IsChecked="{Binding SteamShowInApp, Mode=TwoWay}"/>
+                                        <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_Steam}"/>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_WhileShareXIsOpenShowInAppInSteam}" IsChecked="{Binding SteamShowInApp, Mode=TwoWay}"/>
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
@@ -291,39 +292,39 @@
                         <StackPanel Margin="28,24,28,32" MaxWidth="800" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.folder}"/>
-                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Paths"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Paths}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
-                                    <TextBlock Classes="section-title" Text="ShareX personal folder"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ShareXPersonalFolder}"/>
                                     <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
                                         <TextBox Classes="form-control" Text="{Binding PersonalFolderPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                        <Button Grid.Column="1" Classes="compact" Content="Browse..." Click="OnBrowsePersonalFolderClick"/>
-                                        <Button Grid.Column="2" Classes="compact" Content="Open..." Click="OnOpenPersonalFolderClick"/>
+                                        <Button Grid.Column="1" Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_Browse}" Click="OnBrowsePersonalFolderClick"/>
+                                        <Button Grid.Column="2" Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_Open}" Click="OnOpenPersonalFolderClick"/>
                                     </Grid>
                                     <TextBlock Classes="hint" Text="{Binding PersonalFolderPreview}"/>
-                                    <TextBlock Classes="hint" Text="Changes to the personal folder are stored immediately and take effect after restart."/>
+                                    <TextBlock Classes="hint" Text="{x:Static res:Strings.ApplicationSettingsWindow_ChangesToThePersonalFolderAreStoredImmediatelyAndTakeEffectAfterRestart}"/>
                                 </StackPanel>
                             </Border>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
-                                    <TextBlock Classes="section-title" Text="Screenshots folder"/>
-                                    <CheckBox Classes="setting" Content="Use custom screenshots folder" IsChecked="{Binding UseCustomScreenshotsPath, Mode=TwoWay}"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ScreenshotsFolder}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_UseCustomScreenshotsFolder}" IsChecked="{Binding UseCustomScreenshotsPath, Mode=TwoWay}"/>
                                     <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
                                         <TextBox Classes="form-control" Text="{Binding CustomScreenshotsPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                        <Button Grid.Column="1" Classes="compact" Content="Browse..." Click="OnBrowseScreenshotsFolderClick"/>
+                                        <Button Grid.Column="1" Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_Browse}" Click="OnBrowseScreenshotsFolderClick"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="210,*" ColumnSpacing="8">
-                                        <TextBlock Text="Sub folder pattern:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SubFolderPatternLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <TextBox Grid.Column="1" Classes="form-control" Text="{Binding SaveImageSubFolderPattern, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="210,*" ColumnSpacing="8">
-                                        <TextBlock Text="Sub folder pattern for window:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SubFolderPatternForWindowLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <TextBox Grid.Column="1" Classes="form-control" Text="{Binding SaveImageSubFolderPatternWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
                                         <TextBlock Classes="hint" Text="{Binding ScreenshotsFolderPreview}" VerticalAlignment="Center"/>
-                                        <Button Grid.Column="1" Classes="compact" Content="Open..." Click="OnOpenScreenshotsFolderClick"/>
+                                        <Button Grid.Column="1" Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_Open}" Click="OnOpenScreenshotsFolderClick"/>
                                     </Grid>
                                 </StackPanel>
                             </Border>
@@ -335,30 +336,30 @@
                         <StackPanel Margin="28,24,28,32" MaxWidth="760" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.database_backup}"/>
-                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Settings"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Settings}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
-                                    <TextBlock Classes="section-title" Text="Export and import"/>
-                                    <TextBlock Classes="hint" Text="Do not share an exported backup. It can contain private information such as account details and upload history."/>
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ExportAndImport}"/>
+                                    <TextBlock Classes="hint" Text="{x:Static res:Strings.ApplicationSettingsWindow_DoNotShareAnExportedBackupItCanContainPrivateInformationSuchAsAccountDetailsAndUploadHistory}"/>
                                     <StackPanel Orientation="Horizontal" Spacing="8">
-                                        <CheckBox Classes="setting" Content="Settings" IsChecked="{Binding ExportSettings, Mode=TwoWay}"/>
-                                        <CheckBox Classes="setting" Content="History" IsChecked="{Binding ExportHistory, Mode=TwoWay}"/>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_Settings}" IsChecked="{Binding ExportSettings, Mode=TwoWay}"/>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_History}" IsChecked="{Binding ExportHistory, Mode=TwoWay}"/>
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal" Spacing="5">
-                                        <Button Classes="compact" Content="Export..." IsEnabled="{Binding CanExport}" Click="OnExportClick"/>
-                                        <Button Classes="compact" Content="Import..." IsEnabled="{Binding !IsBusy}" Click="OnImportClick"/>
-                                        <Button Classes="compact" Content="Reset settings..." IsEnabled="{Binding !IsBusy}" Click="OnResetSettingsClick"/>
+                                        <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_Export}" IsEnabled="{Binding CanExport}" Click="OnExportClick"/>
+                                        <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_Import}" IsEnabled="{Binding !IsBusy}" Click="OnImportClick"/>
+                                        <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_ResetSettings}" IsEnabled="{Binding !IsBusy}" Click="OnResetSettingsClick"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
-                                    <TextBlock Classes="section-title" Text="Automatic cleanup"/>
-                                    <CheckBox Classes="setting" Content="Automatically cleanup old backup files" IsChecked="{Binding AutoCleanupBackupFiles, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" Content="Automatically cleanup old log files" IsChecked="{Binding AutoCleanupLogFiles, Mode=TwoWay}"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_AutomaticCleanup}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_AutomaticallyCleanupOldBackupFiles}" IsChecked="{Binding AutoCleanupBackupFiles, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_AutomaticallyCleanupOldLogFiles}" IsChecked="{Binding AutoCleanupLogFiles, Mode=TwoWay}"/>
                                     <Grid ColumnDefinitions="190,*" ColumnSpacing="8">
-                                        <TextBlock Text="Number of files to keep:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_NumberOfFilesToKeepLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="1" Maximum="10000" Value="{Binding CleanupKeepFileCount, Mode=TwoWay}"/>
                                     </Grid>
                                 </StackPanel>
@@ -371,25 +372,25 @@
                         <StackPanel Margin="28,24,28,32" MaxWidth="720" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.monitor}"/>
-                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Main window"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_MainWindow}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
-                                    <TextBlock Classes="section-title" Text="Thumbnail view"/>
-                                    <CheckBox Classes="setting" Content="Show title" IsChecked="{Binding ShowThumbnailTitle, Mode=TwoWay}"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ThumbnailView}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowTitle}" IsChecked="{Binding ShowThumbnailTitle, Mode=TwoWay}"/>
                                     <Grid ColumnDefinitions="180,*" ColumnSpacing="8">
-                                        <TextBlock Text="Title location:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_TitleLocationLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding ThumbnailTitleLocationOptions}" SelectedItem="{Binding SelectedThumbnailTitleLocation, Mode=TwoWay}"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="180,130,Auto,130,Auto" ColumnSpacing="8">
-                                        <TextBlock Text="Thumbnail size:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_ThumbnailSizeLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="50" Maximum="500" Value="{Binding ThumbnailWidth, Mode=TwoWay}"/>
                                         <TextBlock Grid.Column="2" Text="×" VerticalAlignment="Center"/>
                                         <NumericUpDown Grid.Column="3" Classes="form-control" Minimum="50" Maximum="500" Value="{Binding ThumbnailHeight, Mode=TwoWay}"/>
-                                        <Button Grid.Column="4" Classes="compact" Content="Reset" Click="OnResetThumbnailSizeClick"/>
+                                        <Button Grid.Column="4" Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_Reset}" Click="OnResetThumbnailSizeClick"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="180,*" ColumnSpacing="8">
-                                        <TextBlock Text="Thumbnail click action:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_ThumbnailClickActionLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding ThumbnailClickActionOptions}" SelectedItem="{Binding SelectedThumbnailClickAction, Mode=TwoWay}"/>
                                     </Grid>
                                 </StackPanel>
@@ -402,9 +403,9 @@
                         <StackPanel Margin="28,24,28,32" MaxWidth="820" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.clipboard_list}"/>
-                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Clipboard formats"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_ClipboardFormats}"/>
                             </Grid>
-                            <TextBlock Classes="hint" Margin="0,0,0,8" Text="These formats appear under the Copy submenu in the main window context menu."/>
+                            <TextBlock Classes="hint" Margin="0,0,0,8" Text="{x:Static res:Strings.ApplicationSettingsWindow_TheseFormatsAppearUnderTheCopySubmenuInTheMainWindowContextMenu}"/>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="5">
                                     <ListBox Classes="settings-list"
@@ -421,9 +422,9 @@
                                         </ListBox.ItemTemplate>
                                     </ListBox>
                                     <StackPanel Orientation="Horizontal" Spacing="5">
-                                        <Button Classes="compact" Content="Add..." Click="OnAddClipboardFormatClick"/>
-                                        <Button Classes="compact" Content="Edit..." IsEnabled="{Binding HasSelectedClipboardFormat}" Click="OnEditClipboardFormatClick"/>
-                                        <Button Classes="compact" Content="Remove" IsEnabled="{Binding HasSelectedClipboardFormat}" Click="OnRemoveClipboardFormatClick"/>
+                                        <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_Add}" Click="OnAddClipboardFormatClick"/>
+                                        <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_Edit}" IsEnabled="{Binding HasSelectedClipboardFormat}" Click="OnEditClipboardFormatClick"/>
+                                        <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_Remove}" IsEnabled="{Binding HasSelectedClipboardFormat}" Click="OnRemoveClipboardFormatClick"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
@@ -435,56 +436,56 @@
                         <StackPanel Margin="28,24,28,32" MaxWidth="900" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.upload}"/>
-                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Upload"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Upload}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
-                                        <TextBlock Text="Simultaneous upload limit:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SimultaneousUploadLimitLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="5">
                                             <NumericUpDown Classes="form-control" Minimum="0" Maximum="25" Value="{Binding UploadLimit, Mode=TwoWay}"/>
-                                            <TextBlock Classes="hint" Text="0 disables the limit" VerticalAlignment="Center"/>
+                                            <TextBlock Classes="hint" Text="{x:Static res:Strings.ApplicationSettingsWindow_ZeroDisablesTheLimit}" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </Grid>
                                     <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
-                                        <TextBlock Text="Buffer size:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_BufferSizeLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding BufferSizeOptions}" SelectedItem="{Binding SelectedBufferSize, Mode=TwoWay}"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
-                                        <TextBlock Text="Number of times to retry if upload fails:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="0" Maximum="5" Value="{Binding MaxUploadFailRetry, Mode=TwoWay}"/>
                                     </Grid>
-                                    <CheckBox Classes="setting" Content="Use secondary uploaders in order of preference when retrying" IsChecked="{Binding UseSecondaryUploaders, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_UseSecondaryUploadersInOrderOfPreferenceWhenRetrying}" IsChecked="{Binding UseSecondaryUploaders, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
                             <Grid ColumnDefinitions="*,*,*" ColumnSpacing="6">
                                 <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
-                                        <TextBlock Classes="section-title" Text="Secondary image uploaders"/>
+                                        <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_SecondaryImageUploaders}"/>
                                         <ListBox Classes="settings-list" ItemsSource="{Binding SecondaryImageUploaders}" SelectedItem="{Binding SelectedImageUploader, Mode=TwoWay}"/>
                                         <StackPanel Orientation="Horizontal" Spacing="4">
-                                            <Button Classes="compact" Content="Move up" Click="OnMoveImageUploaderUpClick"/>
-                                            <Button Classes="compact" Content="Move down" Click="OnMoveImageUploaderDownClick"/>
+                                            <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_MoveUp}" Click="OnMoveImageUploaderUpClick"/>
+                                            <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_MoveDown}" Click="OnMoveImageUploaderDownClick"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Column="1" Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
-                                        <TextBlock Classes="section-title" Text="Secondary text uploaders"/>
+                                        <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_SecondaryTextUploaders}"/>
                                         <ListBox Classes="settings-list" ItemsSource="{Binding SecondaryTextUploaders}" SelectedItem="{Binding SelectedTextUploader, Mode=TwoWay}"/>
                                         <StackPanel Orientation="Horizontal" Spacing="4">
-                                            <Button Classes="compact" Content="Move up" Click="OnMoveTextUploaderUpClick"/>
-                                            <Button Classes="compact" Content="Move down" Click="OnMoveTextUploaderDownClick"/>
+                                            <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_MoveUp}" Click="OnMoveTextUploaderUpClick"/>
+                                            <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_MoveDown}" Click="OnMoveTextUploaderDownClick"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Column="2" Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
-                                        <TextBlock Classes="section-title" Text="Secondary file uploaders"/>
+                                        <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_SecondaryFileUploaders}"/>
                                         <ListBox Classes="settings-list" ItemsSource="{Binding SecondaryFileUploaders}" SelectedItem="{Binding SelectedFileUploader, Mode=TwoWay}"/>
                                         <StackPanel Orientation="Horizontal" Spacing="4">
-                                            <Button Classes="compact" Content="Move up" Click="OnMoveFileUploaderUpClick"/>
-                                            <Button Classes="compact" Content="Move down" Click="OnMoveFileUploaderDownClick"/>
+                                            <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_MoveUp}" Click="OnMoveFileUploaderUpClick"/>
+                                            <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_MoveDown}" Click="OnMoveFileUploaderDownClick"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
@@ -497,26 +498,26 @@
                         <StackPanel Margin="28,24,28,32" MaxWidth="720" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.history}"/>
-                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="History"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_History}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
-                                    <TextBlock Classes="section-title" Text="History"/>
-                                    <CheckBox Classes="setting" Content="Save tasks to history" IsChecked="{Binding HistorySaveTasks, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" Content="Only save if URL is not empty" IsChecked="{Binding HistoryCheckURL, Mode=TwoWay}"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_History}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_SaveTasksToHistory}" IsChecked="{Binding HistorySaveTasks, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_OnlySaveIfUrlIsNotEmpty}" IsChecked="{Binding HistoryCheckURL, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
-                                    <TextBlock Classes="section-title" Text="Recent tasks"/>
-                                    <CheckBox Classes="setting" Content="Save recent tasks" IsChecked="{Binding RecentTasksSave, Mode=TwoWay}"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_RecentTasks}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_SaveRecentTasks}" IsChecked="{Binding RecentTasksSave, Mode=TwoWay}"/>
                                     <Grid ColumnDefinitions="230,*" ColumnSpacing="8">
-                                        <TextBlock Text="Maximum number of tasks to save:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_MaximumNumberOfTasksToSaveLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="1" Maximum="10000" Value="{Binding RecentTasksMaxCount, Mode=TwoWay}"/>
                                     </Grid>
-                                    <CheckBox Classes="setting" Content="Show recent tasks in main window on startup" IsChecked="{Binding RecentTasksShowInMainWindow, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" Content="Show recent tasks in tray menu" IsChecked="{Binding RecentTasksShowInTrayMenu, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" Content="In tray menu show most recent tasks first" IsChecked="{Binding RecentTasksTrayMenuMostRecentFirst, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowRecentTasksInMainWindowOnStartup}" IsChecked="{Binding RecentTasksShowInMainWindow, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowRecentTasksInTrayMenu}" IsChecked="{Binding RecentTasksShowInTrayMenu, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst}" IsChecked="{Binding RecentTasksTrayMenuMostRecentFirst, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
                         </StackPanel>
@@ -527,15 +528,15 @@
                         <StackPanel Margin="28,24,28,32" MaxWidth="720" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.printer}"/>
-                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Print"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Print}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
-                                    <CheckBox Classes="setting" Content="Don't show image print settings dialog" IsChecked="{Binding DontShowPrintSettingsDialog, Mode=TwoWay}"/>
-                                    <Button Classes="compact" HorizontalAlignment="Left" Content="Image print settings..." Click="OnImagePrintSettingsClick"/>
-                                    <CheckBox Classes="setting" Content="Don't show Windows print dialog" IsChecked="{Binding DontShowWindowsPrintDialog, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_DontShowImagePrintSettingsDialog}" IsChecked="{Binding DontShowPrintSettingsDialog, Mode=TwoWay}"/>
+                                    <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_ImagePrintSettings}" Click="OnImagePrintSettingsClick"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_DontShowWindowsPrintDialog}" IsChecked="{Binding DontShowWindowsPrintDialog, Mode=TwoWay}"/>
                                     <Grid ColumnDefinitions="190,*" ColumnSpacing="8" IsVisible="{Binding DefaultPrinterOverrideVisible}">
-                                        <TextBlock Text="Default printer override:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_DefaultPrinterOverrideLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <TextBox Grid.Column="1" Classes="form-control" Text="{Binding DefaultPrinterOverride, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </Grid>
                                 </StackPanel>
@@ -548,28 +549,28 @@
                         <StackPanel Margin="28,24,28,32" MaxWidth="720" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.network}"/>
-                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Proxy"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Proxy}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <Grid ColumnDefinitions="170,*" ColumnSpacing="8">
-                                        <TextBlock Text="Proxy configuration:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_ProxyConfigurationLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding ProxyMethodOptions}" SelectedItem="{Binding SelectedProxyMethod, Mode=TwoWay}"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="170,*" ColumnSpacing="8">
-                                        <TextBlock Text="Username:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_UsernameLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <TextBox Grid.Column="1" Classes="form-control" IsEnabled="{Binding ProxyCredentialsEnabled}" Text="{Binding ProxyUsername, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="170,*" ColumnSpacing="8">
-                                        <TextBlock Text="Password:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_PasswordLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <TextBox Grid.Column="1" Classes="form-control" PasswordChar="●" IsEnabled="{Binding ProxyCredentialsEnabled}" Text="{Binding ProxyPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="170,*" ColumnSpacing="8">
-                                        <TextBlock Text="Host:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_HostLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <TextBox Grid.Column="1" Classes="form-control" IsEnabled="{Binding ManualProxyEnabled}" Text="{Binding ProxyHost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="170,*" ColumnSpacing="8">
-                                        <TextBlock Text="Port:" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_PortLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="0" Maximum="65535" IsEnabled="{Binding ManualProxyEnabled}" Value="{Binding ProxyPort, Mode=TwoWay}"/>
                                     </Grid>
                                 </StackPanel>
@@ -582,7 +583,7 @@
                         <StackPanel Margin="28,24,28,32" MaxWidth="850" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.sliders_horizontal}"/>
-                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="Advanced"/>
+                                <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Advanced}"/>
                             </Grid>
                             <ItemsControl ItemsSource="{Binding AdvancedSettingCategories}">
                                 <ItemsControl.ItemTemplate>
@@ -665,22 +666,22 @@
                                        VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="ClipboardFormatEditorTitle"
-                                           Text="Add clipboard format"
+                                           Text="{x:Static res:Strings.ApplicationSettingsWindow_AddClipboardFormat}"
                                            FontSize="19"
                                            FontWeight="SemiBold"/>
                                 <TextBlock Classes="hint"
-                                           Text="Customize the text copied from completed uploads."/>
+                                           Text="{x:Static res:Strings.ApplicationSettingsWindow_CustomizeTheTextCopiedFromCompletedUploads}"/>
                             </StackPanel>
                         </Grid>
 
                         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                             <StackPanel Spacing="8" Margin="0,0,4,0">
                                 <StackPanel Spacing="3">
-                                    <TextBlock Text="Description" FontWeight="Normal"/>
+                                    <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_Description}" FontWeight="Normal"/>
                                     <TextBox x:Name="ClipboardFormatDescriptionBox" Classes="form-control"/>
                                 </StackPanel>
                                 <StackPanel Spacing="3">
-                                    <TextBlock Text="Format" FontWeight="Normal"/>
+                                    <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_Format}" FontWeight="Normal"/>
                                     <TextBox x:Name="ClipboardFormatTextBox"
                                              Classes="form-control"
                                              Height="150"
@@ -688,7 +689,7 @@
                                              VerticalContentAlignment="Top"
                                              TextWrapping="Wrap"
                                              ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-                                    <TextBlock Classes="hint" Text="Right-click to insert a variable."/>
+                                    <TextBlock Classes="hint" Text="{x:Static res:Strings.ApplicationSettingsWindow_RightClickToInsertAVariable}"/>
                                 </StackPanel>
                                 <TextBlock x:Name="ClipboardFormatSupportedVariablesText"
                                            Classes="hint"
@@ -702,11 +703,11 @@
                                     HorizontalAlignment="Right">
                             <Button Classes="compact"
                                     MinWidth="84"
-                                    Content="Save"
+                                    Content="{x:Static res:Strings.ApplicationSettingsWindow_Save}"
                                     Click="OnSaveClipboardFormatClick"/>
                             <Button Classes="compact"
                                     MinWidth="84"
-                                    Content="Cancel"
+                                    Content="{x:Static res:Strings.ApplicationSettingsWindow_Cancel}"
                                     Click="OnCancelClipboardFormatClick"/>
                         </StackPanel>
                     </Grid>

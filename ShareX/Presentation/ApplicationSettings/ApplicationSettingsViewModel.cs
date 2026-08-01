@@ -18,6 +18,7 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
@@ -78,7 +79,11 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public IReadOnlyList<EnumOption<ThumbnailViewClickAction>> ThumbnailClickActionOptions { get; } = CreateEnumOptions<ThumbnailViewClickAction>();
     public IReadOnlyList<EnumOption<ProxyMethod>> ProxyMethodOptions { get; } = CreateEnumOptions<ProxyMethod>();
     public IReadOnlyList<EnumOption<int>> BufferSizeOptions { get; private set; } = [];
-    public IReadOnlyList<string> ThemeOptions { get; } = ["Dark", "Light"];
+    public IReadOnlyList<EnumOption<string>> ThemeOptions { get; } =
+    [
+        new("Dark", Strings.ApplicationSettingsWindow_Dark),
+        new("Light", Strings.ApplicationSettingsWindow_Light)
+    ];
 
     public SettingsNavigationItem? SelectedNavigationItem
     {
@@ -228,10 +233,16 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     public bool CanEditTheme => !UseSystemTheme;
 
-    public string SelectedTheme
+    public EnumOption<string>? SelectedTheme
     {
-        get => NormalizeTheme(Settings.ThemeOptions.Theme);
-        set => SetSetting(Settings.ThemeOptions.Theme, NormalizeTheme(value), x => Settings.ThemeOptions.Theme = x);
+        get => Find(ThemeOptions, NormalizeTheme(Settings.ThemeOptions.Theme));
+        set
+        {
+            if (value != null)
+            {
+                SetSetting(Settings.ThemeOptions.Theme, value.Value, x => Settings.ThemeOptions.Theme = x);
+            }
+        }
     }
 
     public bool UseSystemAccentColor
@@ -665,7 +676,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public async Task ExportAsync(string path)
     {
         IsBusy = true;
-        StatusMessage = "Exporting backup...";
+        StatusMessage = Strings.ApplicationSettingsWindow_ExportingBackup;
 
         try
         {
@@ -676,7 +687,9 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
                 SettingManager.SaveAllSettings();
                 return SettingManager.Export(path, exportSettings, exportHistory);
             });
-            StatusMessage = result ? $"Backup exported to {path}" : "Backup export failed.";
+            StatusMessage = result
+                ? string.Format(Strings.ApplicationSettingsWindow_BackupExportedTo, path)
+                : Strings.ApplicationSettingsWindow_BackupExportFailed;
         }
         catch (Exception e)
         {
@@ -692,7 +705,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public async Task ImportAsync(string path)
     {
         IsBusy = true;
-        StatusMessage = "Importing backup...";
+        StatusMessage = Strings.ApplicationSettingsWindow_ImportingBackup;
         _saveTimer.Stop();
 
         try
@@ -713,11 +726,11 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
                 LanguageHelper.ChangeLanguage(Settings.Language);
                 Reload();
                 await UpdateMainFormAsync();
-                StatusMessage = $"Backup imported from {path}";
+                StatusMessage = string.Format(Strings.ApplicationSettingsWindow_BackupImportedFrom, path);
             }
             else
             {
-                StatusMessage = "Backup import failed.";
+                StatusMessage = Strings.ApplicationSettingsWindow_BackupImportFailed;
             }
         }
         catch (Exception e)
@@ -757,7 +770,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             LanguageHelper.ChangeLanguage(Settings.Language);
             Reload();
             await UpdateMainFormAsync();
-            StatusMessage = "Settings reset.";
+            StatusMessage = Strings.ApplicationSettingsWindow_SettingsReset;
         }
         catch (Exception e)
         {
@@ -812,18 +825,18 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     {
         return
         [
-            Nav("general", "General", LucideIcons.settings),
-            Nav("theme", "Theme", LucideIcons.palette),
-            Nav("integration", "Integration", LucideIcons.plug),
-            Nav("paths", "Paths", LucideIcons.folder),
-            Nav("settings", "Settings", LucideIcons.database_backup),
-            Nav("main-window", "Main window", LucideIcons.monitor),
-            Nav("clipboard-formats", "Clipboard formats", LucideIcons.clipboard_list),
-            Nav("upload", "Upload", LucideIcons.upload),
-            Nav("history", "History", LucideIcons.history),
-            Nav("print", "Print", LucideIcons.printer),
-            Nav("proxy", "Proxy", LucideIcons.network),
-            Nav("advanced", "Advanced", LucideIcons.sliders_horizontal)
+            Nav("general", Strings.ApplicationSettingsWindow_General, LucideIcons.settings),
+            Nav("theme", Strings.ApplicationSettingsWindow_Theme, LucideIcons.palette),
+            Nav("integration", Strings.ApplicationSettingsWindow_Integration, LucideIcons.plug),
+            Nav("paths", Strings.ApplicationSettingsWindow_Paths, LucideIcons.folder),
+            Nav("settings", Strings.ApplicationSettingsWindow_Settings, LucideIcons.database_backup),
+            Nav("main-window", Strings.ApplicationSettingsWindow_MainWindow, LucideIcons.monitor),
+            Nav("clipboard-formats", Strings.ApplicationSettingsWindow_ClipboardFormats, LucideIcons.clipboard_list),
+            Nav("upload", Strings.ApplicationSettingsWindow_Upload, LucideIcons.upload),
+            Nav("history", Strings.ApplicationSettingsWindow_History, LucideIcons.history),
+            Nav("print", Strings.ApplicationSettingsWindow_Print, LucideIcons.printer),
+            Nav("proxy", Strings.ApplicationSettingsWindow_Proxy, LucideIcons.network),
+            Nav("advanced", Strings.ApplicationSettingsWindow_Advanced, LucideIcons.sliders_horizontal)
         ];
     }
 
@@ -904,7 +917,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
         catch (Exception e)
         {
-            PersonalFolderPreview = "Error: " + e.Message;
+            PersonalFolderPreview = Strings.ApplicationSettingsWindow_ErrorPrefix + " " + e.Message;
         }
     }
 
@@ -916,7 +929,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
         catch (Exception e)
         {
-            ScreenshotsFolderPreview = "Error: " + e.Message;
+            ScreenshotsFolderPreview = Strings.ApplicationSettingsWindow_ErrorPrefix + " " + e.Message;
         }
     }
 

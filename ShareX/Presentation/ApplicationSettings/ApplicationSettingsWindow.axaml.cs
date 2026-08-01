@@ -21,6 +21,7 @@ using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -93,7 +94,7 @@ public partial class ApplicationSettingsWindow : Window
 
     private async void OnBrowsePersonalFolderClick(object? sender, RoutedEventArgs e)
     {
-        string? path = await PickFolderAsync("Choose ShareX personal folder path");
+        string? path = await PickFolderAsync(Strings.ApplicationSettingsWindow_ChooseShareXPersonalFolderPath);
         if (!string.IsNullOrEmpty(path))
         {
             ViewModel.PersonalFolderPath = path;
@@ -102,7 +103,7 @@ public partial class ApplicationSettingsWindow : Window
 
     private async void OnBrowseScreenshotsFolderClick(object? sender, RoutedEventArgs e)
     {
-        string? path = await PickFolderAsync("Choose screenshots folder path");
+        string? path = await PickFolderAsync(Strings.ApplicationSettingsWindow_ChooseScreenshotsFolderPath);
         if (!string.IsNullOrEmpty(path))
         {
             ViewModel.CustomScreenshotsPath = path;
@@ -124,12 +125,12 @@ public partial class ApplicationSettingsWindow : Window
         string machineName = FileHelpers.SanitizeFileName(Environment.MachineName.ToLowerInvariant());
         IStorageFile? file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
-            Title = "Export ShareX backup",
+            Title = Strings.ApplicationSettingsWindow_ExportShareXBackup,
             SuggestedFileName = $"ShareX-{Helpers.GetApplicationVersion()}-{machineName}-backup.sxb",
             DefaultExtension = "sxb",
             FileTypeChoices =
             [
-                new FilePickerFileType("ShareX backup") { Patterns = ["*.sxb"] },
+                new FilePickerFileType(Strings.ApplicationSettingsWindow_ShareXBackup) { Patterns = ["*.sxb"] },
                 FilePickerFileTypes.All
             ]
         });
@@ -145,9 +146,9 @@ public partial class ApplicationSettingsWindow : Window
     {
         var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Import ShareX backup",
+            Title = Strings.ApplicationSettingsWindow_ImportShareXBackup,
             AllowMultiple = false,
-            FileTypeFilter = [new FilePickerFileType("ShareX backup") { Patterns = ["*.sxb"] }]
+            FileTypeFilter = [new FilePickerFileType(Strings.ApplicationSettingsWindow_ShareXBackup) { Patterns = ["*.sxb"] }]
         });
 
         string? path = files.FirstOrDefault()?.TryGetLocalPath();
@@ -160,7 +161,9 @@ public partial class ApplicationSettingsWindow : Window
     private void ShowClipboardFormatEditor(ClipboardFormatItem? format)
     {
         _editedClipboardFormat = format;
-        ClipboardFormatEditorTitle.Text = format == null ? "Add clipboard format" : "Edit clipboard format";
+        ClipboardFormatEditorTitle.Text = format == null
+            ? Strings.ApplicationSettingsWindow_AddClipboardFormat
+            : Strings.ApplicationSettingsWindow_EditClipboardFormat;
         ClipboardFormatDescriptionBox.Text = format?.Description ?? string.Empty;
         ClipboardFormatTextBox.Text = format?.Format ?? string.Empty;
         ClipboardFormatEditorOverlay.IsVisible = true;
@@ -212,7 +215,7 @@ public partial class ApplicationSettingsWindow : Window
         List<MenuItem> menuItems = [];
         menuItems.Add(new MenuItem
         {
-            Header = "Upload result",
+            Header = Strings.ApplicationSettingsWindow_UploadResult,
             ItemsSource = ClipboardResultTokens.Select(CreateClipboardTokenItem).ToList()
         });
 
