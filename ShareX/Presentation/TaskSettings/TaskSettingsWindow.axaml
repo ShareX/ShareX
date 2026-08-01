@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
+        xmlns:res="using:ShareX.Localization"
         xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
@@ -156,15 +157,15 @@
                                        VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="ActionEditorTitle"
-                                           Text="Add action"
+                                           Text="{x:Static res:Strings.TaskSettingsWindow_AddAction}"
                                            FontSize="19"
                                            FontWeight="SemiBold"/>
-                                <TextBlock Text="Run an external program as part of a capture workflow."
+                                <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_RunAnExternalProgramAsPartOfACaptureWorkflow}"
                                            Classes="hint"/>
                             </StackPanel>
                             <Button Grid.Column="2"
                                     Classes="icon-button"
-                                    ToolTip.Tip="Close"
+                                    ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_Close}"
                                     Click="OnCancelActionEditorClick">
                                 <TextBlock Classes="icon"
                                            Text="{x:Static theming:LucideIcons.x}"
@@ -175,19 +176,19 @@
                         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                             <StackPanel Spacing="8" Margin="0,0,4,0">
                                 <StackPanel Spacing="3">
-                                    <TextBlock Classes="action-editor-label" Text="Name"/>
+                                    <TextBlock Classes="action-editor-label" Text="{x:Static res:Strings.TaskSettingsWindow_Name}"/>
                                     <TextBox x:Name="ActionNameBox" Classes="form-control"/>
                                 </StackPanel>
 
                                 <StackPanel Spacing="3">
-                                    <TextBlock Classes="action-editor-label" Text="File path"/>
+                                    <TextBlock Classes="action-editor-label" Text="{x:Static res:Strings.TaskSettingsWindow_FilePath}"/>
                                     <Grid ColumnDefinitions="*,32" ColumnSpacing="6">
                                         <TextBox x:Name="ActionPathBox" Classes="form-control"/>
                                         <Button Grid.Column="1"
                                                 Width="32"
                                                 Height="32"
                                                 Padding="0"
-                                                ToolTip.Tip="Browse..."
+                                                ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_BrowseWithEllipsis}"
                                                 Click="OnBrowseActionPathClick">
                                             <TextBlock Classes="icon"
                                                        Text="{x:Static theming:LucideIcons.folder}"
@@ -197,14 +198,14 @@
                                 </StackPanel>
 
                                 <StackPanel Spacing="3">
-                                    <TextBlock Classes="action-editor-label" Text="Arguments"/>
+                                    <TextBlock Classes="action-editor-label" Text="{x:Static res:Strings.TaskSettingsWindow_Arguments}"/>
                                     <TextBox x:Name="ActionArgumentsBox" Classes="form-control"/>
-                                    <TextBlock Classes="hint" Text="Right-click to insert an input or output file token."/>
+                                    <TextBlock Classes="hint" Text="{x:Static res:Strings.TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken}"/>
                                 </StackPanel>
 
                                 <StackPanel Spacing="3">
                                     <TextBlock Classes="action-editor-label"
-                                               Text="Output file name extension (empty uses the same file name)"/>
+                                               Text="{x:Static res:Strings.TaskSettingsWindow_OutputFileNameExtensionEmptyUsesTheSameFileName}"/>
                                     <TextBox x:Name="ActionOutputExtensionBox"
                                              Classes="form-control"
                                              TextChanged="OnActionOutputExtensionTextChanged"/>
@@ -212,17 +213,17 @@
 
                                 <StackPanel Spacing="3">
                                     <TextBlock Classes="action-editor-label"
-                                               Text="Extension filter (example: jpg png mp4)"/>
+                                               Text="{x:Static res:Strings.TaskSettingsWindow_ExtensionFilterExampleJpgPngMp4}"/>
                                     <TextBox x:Name="ActionExtensionsBox" Classes="form-control"/>
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal" Spacing="18">
                                     <CheckBox x:Name="ActionHiddenWindowCheckBox"
                                               Classes="setting"
-                                              Content="Hidden window"/>
+                                              Content="{x:Static res:Strings.TaskSettingsWindow_HiddenWindow}"/>
                                     <CheckBox x:Name="ActionDeleteInputFileCheckBox"
                                               Classes="setting"
-                                              Content="Delete input file"/>
+                                              Content="{x:Static res:Strings.TaskSettingsWindow_DeleteInputFile}"/>
                                 </StackPanel>
 
                                 <TextBlock x:Name="ActionEditorErrorText"
@@ -239,11 +240,11 @@
                                     HorizontalAlignment="Right">
                             <Button Classes="compact"
                                     MinWidth="84"
-                                    Content="Save"
+                                    Content="{x:Static res:Strings.TaskSettingsWindow_Save}"
                                     Click="OnSaveActionEditorClick"/>
                             <Button Classes="compact"
                                     MinWidth="84"
-                                    Content="Cancel"
+                                    Content="{x:Static res:Strings.TaskSettingsWindow_Cancel}"
                                     Click="OnCancelActionEditorClick"/>
                         </StackPanel>
                     </Grid>
@@ -272,10 +273,10 @@
                                        VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="WatchFolderEditorTitle"
-                                           Text="Add watch folder"
+                                           Text="{x:Static res:Strings.TaskSettingsWindow_AddWatchFolder}"
                                            FontSize="19"
                                            FontWeight="SemiBold"/>
-                                <TextBlock Text="Upload files when they are created in this folder."
+                                <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_UploadFilesWhenTheyAreCreatedInThisFolder}"
                                            Classes="hint"/>
                             </StackPanel>
                         </Grid>
@@ -283,14 +284,14 @@
                         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                             <StackPanel Spacing="8" Margin="0,0,4,0">
                                 <StackPanel Spacing="3">
-                                    <TextBlock Classes="action-editor-label" Text="Folder path"/>
+                                    <TextBlock Classes="action-editor-label" Text="{x:Static res:Strings.TaskSettingsWindow_FolderPath}"/>
                                     <Grid ColumnDefinitions="*,32" ColumnSpacing="6">
                                         <TextBox x:Name="WatchFolderPathBox" Classes="form-control"/>
                                         <Button Grid.Column="1"
                                                 Width="32"
                                                 Height="32"
                                                 Padding="0"
-                                                ToolTip.Tip="Browse..."
+                                                ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_BrowseWithEllipsis}"
                                                 Click="OnBrowseWatchFolderClick">
                                             <TextBlock Classes="icon"
                                                        Text="{x:Static theming:LucideIcons.folder}"
@@ -300,18 +301,18 @@
                                 </StackPanel>
 
                                 <StackPanel Spacing="3">
-                                    <TextBlock Classes="action-editor-label" Text="Filter"/>
+                                    <TextBlock Classes="action-editor-label" Text="{x:Static res:Strings.TaskSettingsWindow_Filter}"/>
                                     <TextBox x:Name="WatchFolderFilterBox" Classes="form-control"/>
-                                    <TextBlock Classes="hint" Text="Example: *.png"/>
+                                    <TextBlock Classes="hint" Text="{x:Static res:Strings.TaskSettingsWindow_ExamplePng}"/>
                                 </StackPanel>
 
                                 <StackPanel Spacing="3">
                                     <CheckBox x:Name="WatchFolderIncludeSubdirectoriesCheckBox"
                                               Classes="setting"
-                                              Content="Include subdirectories"/>
+                                              Content="{x:Static res:Strings.TaskSettingsWindow_IncludeSubdirectories}"/>
                                     <CheckBox x:Name="WatchFolderMoveToScreenshotsCheckBox"
                                               Classes="setting"
-                                              Content="Move file to screenshots folder"/>
+                                              Content="{x:Static res:Strings.TaskSettingsWindow_MoveFileToScreenshotsFolder}"/>
                                 </StackPanel>
                             </StackPanel>
                         </ScrollViewer>
@@ -322,11 +323,11 @@
                                     HorizontalAlignment="Right">
                             <Button Classes="compact"
                                     MinWidth="84"
-                                    Content="Save"
+                                    Content="{x:Static res:Strings.TaskSettingsWindow_Save}"
                                     Click="OnSaveWatchFolderEditorClick"/>
                             <Button Classes="compact"
                                     MinWidth="84"
-                                    Content="Cancel"
+                                    Content="{x:Static res:Strings.TaskSettingsWindow_Cancel}"
                                     Click="OnCancelWatchFolderEditorClick"/>
                         </StackPanel>
                     </Grid>
@@ -354,10 +355,10 @@
                                        Foreground="{DynamicResource ShareX.Brush.Accent}"
                                        VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
-                                <TextBlock Text="Notification buttons"
+                                <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_NotificationButtons}"
                                            FontSize="19"
                                            FontWeight="SemiBold"/>
-                                <TextBlock Text="Choose the actions shown at the bottom of after-capture notifications."
+                                <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_ChooseTheActionsShownAtTheBottomOfAfterCaptureNotifications}"
                                            Classes="hint"/>
                             </StackPanel>
                         </Grid>
@@ -370,7 +371,7 @@
                                     Click="OnAddNotificationButtonClick">
                                 <StackPanel Orientation="Horizontal" Spacing="7">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
-                                    <TextBlock Text="Add..."/>
+                                    <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_AddWithEllipsis}"/>
                                 </StackPanel>
                             </Button>
                             <Button x:Name="NotificationButtonRemoveButton"
@@ -378,14 +379,14 @@
                                     Click="OnRemoveNotificationButtonClick">
                                 <StackPanel Orientation="Horizontal" Spacing="7">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
-                                    <TextBlock Text="Remove"/>
+                                    <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_Remove}"/>
                                 </StackPanel>
                             </Button>
                             <Button x:Name="NotificationButtonMoveUpButton"
                                     Width="32"
                                     Height="32"
                                     Padding="0"
-                                    ToolTip.Tip="Move up"
+                                    ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_MoveUp}"
                                     Click="OnMoveNotificationButtonUpClick">
                                 <TextBlock Classes="icon"
                                            Text="{x:Static theming:LucideIcons.chevron_up}"
@@ -395,7 +396,7 @@
                                     Width="32"
                                     Height="32"
                                     Padding="0"
-                                    ToolTip.Tip="Move down"
+                                    ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_MoveDown}"
                                     Click="OnMoveNotificationButtonDownClick">
                                 <TextBlock Classes="icon"
                                            Text="{x:Static theming:LucideIcons.chevron_down}"
@@ -427,7 +428,7 @@
                                 </ListBox.ItemTemplate>
                             </ListBox>
                             <TextBlock x:Name="NotificationButtonsEmptyText"
-                                       Text="No buttons configured. The notification toolbar will be hidden."
+                                       Text="{x:Static res:Strings.TaskSettingsWindow_NoButtonsConfiguredTheNotificationToolbarWillBeHidden}"
                                        Classes="hint"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
@@ -441,12 +442,12 @@
                             <Button Classes="compact"
                                     MinWidth="84"
                                     Height="36"
-                                    Content="Save"
+                                    Content="{x:Static res:Strings.TaskSettingsWindow_Save}"
                                     Click="OnSaveNotificationButtonsClick"/>
                             <Button Classes="compact"
                                     MinWidth="84"
                                     Height="36"
-                                    Content="Cancel"
+                                    Content="{x:Static res:Strings.TaskSettingsWindow_Cancel}"
                                     Click="OnCancelNotificationButtonsClick"/>
                         </StackPanel>
                     </Grid>

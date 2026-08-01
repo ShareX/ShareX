@@ -1075,4 +1075,106 @@
   <data name="HotkeySettingsWindow_NotConfigured" xml:space="preserve">
     <value>Chưa cấu hình</value>
   </data>
+  <data name="TaskSettingsWindow_AddWithEllipsis" xml:space="preserve">
+    <value>Thêm...</value>
+  </data>
+  <data name="TaskSettingsWindow_BrowseWithEllipsis" xml:space="preserve">
+    <value>Duyệt...</value>
+  </data>
+  <data name="TaskSettingsWindow_Remove" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="TaskSettingsWindow_AddAction" xml:space="preserve">
+    <value>Thêm hành động</value>
+  </data>
+  <data name="TaskSettingsWindow_RunAnExternalProgramAsPartOfACaptureWorkflow" xml:space="preserve">
+    <value>Chạy chương trình bên ngoài như một phần của quy trình chụp.</value>
+  </data>
+  <data name="TaskSettingsWindow_Close" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="TaskSettingsWindow_Name" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="TaskSettingsWindow_FilePath" xml:space="preserve">
+    <value>Đường dẫn tệp</value>
+  </data>
+  <data name="TaskSettingsWindow_Arguments" xml:space="preserve">
+    <value>Đối số</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
+    <value>Nhấp chuột phải để chèn mã tệp đầu vào hoặc đầu ra.</value>
+  </data>
+  <data name="TaskSettingsWindow_OutputFileNameExtensionEmptyUsesTheSameFileName" xml:space="preserve">
+    <value>Phần mở rộng tên tệp đầu ra (để trống sẽ dùng cùng tên tệp)</value>
+  </data>
+  <data name="TaskSettingsWindow_ExtensionFilterExampleJpgPngMp4" xml:space="preserve">
+    <value>Bộ lọc phần mở rộng (ví dụ: jpg png mp4)</value>
+  </data>
+  <data name="TaskSettingsWindow_HiddenWindow" xml:space="preserve">
+    <value>Ẩn cửa sổ</value>
+  </data>
+  <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
+    <value>Xóa tệp đầu vào</value>
+  </data>
+  <data name="TaskSettingsWindow_Save" xml:space="preserve">
+    <value>Lưu</value>
+  </data>
+  <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="TaskSettingsWindow_AddWatchFolder" xml:space="preserve">
+    <value>Thêm thư mục theo dõi</value>
+  </data>
+  <data name="TaskSettingsWindow_UploadFilesWhenTheyAreCreatedInThisFolder" xml:space="preserve">
+    <value>Tải tệp lên khi chúng được tạo trong thư mục này.</value>
+  </data>
+  <data name="TaskSettingsWindow_FolderPath" xml:space="preserve">
+    <value>Đường dẫn thư mục</value>
+  </data>
+  <data name="TaskSettingsWindow_Filter" xml:space="preserve">
+    <value>Bộ lọc</value>
+  </data>
+  <data name="TaskSettingsWindow_ExamplePng" xml:space="preserve">
+    <value>Ví dụ: *.png</value>
+  </data>
+  <data name="TaskSettingsWindow_IncludeSubdirectories" xml:space="preserve">
+    <value>Bao gồm thư mục con</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveFileToScreenshotsFolder" xml:space="preserve">
+    <value>Di chuyển tệp vào thư mục ảnh chụp màn hình</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtons" xml:space="preserve">
+    <value>Các nút thông báo</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseTheActionsShownAtTheBottomOfAfterCaptureNotifications" xml:space="preserve">
+    <value>Chọn các hành động hiển thị ở cuối thông báo sau khi chụp.</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
+    <value>Di chuyển lên</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
+    <value>Di chuyển xuống</value>
+  </data>
+  <data name="TaskSettingsWindow_NoButtonsConfiguredTheNotificationToolbarWillBeHidden" xml:space="preserve">
+    <value>Chưa cấu hình nút nào. Thanh công cụ thông báo sẽ bị ẩn.</value>
+  </data>
+  <data name="TaskSettingsWindow_ShareXTaskSettings" xml:space="preserve">
+    <value>ShareX - Cài đặt tác vụ</value>
+  </data>
+  <data name="TaskSettingsWindow_ShareXTaskSettingsFor0" xml:space="preserve">
+    <value>ShareX - Cài đặt tác vụ cho {0}</value>
+  </data>
+  <data name="TaskSettingsWindow_EditAction" xml:space="preserve">
+    <value>Chỉnh sửa hành động</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseProgram" xml:space="preserve">
+    <value>Chọn chương trình</value>
+  </data>
+  <data name="TaskSettingsWindow_EditWatchFolder" xml:space="preserve">
+    <value>Chỉnh sửa thư mục theo dõi</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseWatchFolder" xml:space="preserve">
+    <value>Chọn thư mục theo dõi</value>
+  </data>
 </root>

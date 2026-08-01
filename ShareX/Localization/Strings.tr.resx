@@ -947,7 +947,7 @@
     <value>URL kodlamasında emojileri yok say</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowMultiUploadWarning" xml:space="preserve">
-    <value>10&apos;dan fazla dosya yüklenmeden önce uyar</value>
+    <value>10'dan fazla dosya yüklenmeden önce uyar</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Büyük dosya uyarı eşiği (MB)</value>
@@ -1074,5 +1074,833 @@
   </data>
   <data name="HotkeySettingsWindow_NotConfigured" xml:space="preserve">
     <value>Yapılandırılmadı</value>
+  </data>
+  <data name="TaskSettingsWindow_AddWithEllipsis" xml:space="preserve">
+    <value>Ekle...</value>
+  </data>
+  <data name="TaskSettingsWindow_BrowseWithEllipsis" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="TaskSettingsWindow_Remove" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="TaskSettingsWindow_AddAction" xml:space="preserve">
+    <value>Eylem ekle</value>
+  </data>
+  <data name="TaskSettingsWindow_RunAnExternalProgramAsPartOfACaptureWorkflow" xml:space="preserve">
+    <value>Yakalama iş akışının parçası olarak harici bir program çalıştırın.</value>
+  </data>
+  <data name="TaskSettingsWindow_Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="TaskSettingsWindow_Name" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="TaskSettingsWindow_FilePath" xml:space="preserve">
+    <value>Dosya yolu</value>
+  </data>
+  <data name="TaskSettingsWindow_Arguments" xml:space="preserve">
+    <value>Bağımsız değişkenler</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
+    <value>Giriş veya çıkış dosyası belirteci eklemek için sağ tıklayın.</value>
+  </data>
+  <data name="TaskSettingsWindow_OutputFileNameExtensionEmptyUsesTheSameFileName" xml:space="preserve">
+    <value>Çıkış dosyası adı uzantısı (boş bırakılırsa aynı dosya adı kullanılır)</value>
+  </data>
+  <data name="TaskSettingsWindow_ExtensionFilterExampleJpgPngMp4" xml:space="preserve">
+    <value>Uzantı filtresi (örnek: jpg png mp4)</value>
+  </data>
+  <data name="TaskSettingsWindow_HiddenWindow" xml:space="preserve">
+    <value>Gizli pencere</value>
+  </data>
+  <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
+    <value>Giriş dosyasını sil</value>
+  </data>
+  <data name="TaskSettingsWindow_Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="TaskSettingsWindow_AddWatchFolder" xml:space="preserve">
+    <value>İzleme klasörü ekle</value>
+  </data>
+  <data name="TaskSettingsWindow_UploadFilesWhenTheyAreCreatedInThisFolder" xml:space="preserve">
+    <value>Bu klasörde oluşturulan dosyaları yükleyin.</value>
+  </data>
+  <data name="TaskSettingsWindow_FolderPath" xml:space="preserve">
+    <value>Klasör yolu</value>
+  </data>
+  <data name="TaskSettingsWindow_Filter" xml:space="preserve">
+    <value>Filtre</value>
+  </data>
+  <data name="TaskSettingsWindow_ExamplePng" xml:space="preserve">
+    <value>Örnek: *.png</value>
+  </data>
+  <data name="TaskSettingsWindow_IncludeSubdirectories" xml:space="preserve">
+    <value>Alt klasörleri dahil et</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveFileToScreenshotsFolder" xml:space="preserve">
+    <value>Dosyayı ekran görüntüleri klasörüne taşı</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtons" xml:space="preserve">
+    <value>Bildirim düğmeleri</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseTheActionsShownAtTheBottomOfAfterCaptureNotifications" xml:space="preserve">
+    <value>Yakalama sonrası bildirimlerin altında gösterilecek eylemleri seçin.</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
+    <value>Yukarı taşı</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
+    <value>Aşağı taşı</value>
+  </data>
+  <data name="TaskSettingsWindow_NoButtonsConfiguredTheNotificationToolbarWillBeHidden" xml:space="preserve">
+    <value>Yapılandırılmış düğme yok. Bildirim araç çubuğu gizlenecek.</value>
+  </data>
+  <data name="TaskSettingsWindow_ShareXTaskSettings" xml:space="preserve">
+    <value>ShareX - Görev ayarları</value>
+  </data>
+  <data name="TaskSettingsWindow_ShareXTaskSettingsFor0" xml:space="preserve">
+    <value>ShareX - {0} için görev ayarları</value>
+  </data>
+  <data name="TaskSettingsWindow_EditAction" xml:space="preserve">
+    <value>Eylemi düzenle</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseProgram" xml:space="preserve">
+    <value>Program seç</value>
+  </data>
+  <data name="TaskSettingsWindow_EditWatchFolder" xml:space="preserve">
+    <value>İzleme klasörünü düzenle</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseWatchFolder" xml:space="preserve">
+    <value>İzleme klasörü seç</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageUploader" xml:space="preserve">
+    <value>Görsel yükleyici:</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageFileUploader" xml:space="preserve">
+    <value>Görsel dosyası yükleyici:</value>
+  </data>
+  <data name="TaskSettingsWindow_TextUploader" xml:space="preserve">
+    <value>Metin yükleyici:</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFileUploader" xml:space="preserve">
+    <value>Metin dosyası yükleyici:</value>
+  </data>
+  <data name="TaskSettingsWindow_FileUploader" xml:space="preserve">
+    <value>Dosya yükleyici:</value>
+  </data>
+  <data name="TaskSettingsWindow_URLShortener" xml:space="preserve">
+    <value>URL kısaltıcı:</value>
+  </data>
+  <data name="TaskSettingsWindow_URLSharingService" xml:space="preserve">
+    <value>URL paylaşım hizmeti:</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDefaultFTPAccount" xml:space="preserve">
+    <value>Varsayılan FTP hesabını geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
+    <value>FTP hesabı:</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDefaultCustomUploader" xml:space="preserve">
+    <value>Varsayılan özel yükleyiciyi geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomUploader" xml:space="preserve">
+    <value>Özel yükleyici:</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseScreenshotsFolder" xml:space="preserve">
+    <value>Ekran görüntüleri klasörünü seç</value>
+  </data>
+  <data name="TaskSettingsWindow_Task" xml:space="preserve">
+    <value>Görev</value>
+  </data>
+  <data name="TaskSettingsWindow_TaskLabel" xml:space="preserve">
+    <value>Görev:</value>
+  </data>
+  <data name="TaskSettingsWindow_Description" xml:space="preserve">
+    <value>Açıklama:</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterCaptureTasks" xml:space="preserve">
+    <value>Yakalama sonrası görevler</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAfterCaptureTasks" xml:space="preserve">
+    <value>Yakalama sonrası görevleri geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterUploadTasks" xml:space="preserve">
+    <value>Yükleme sonrası görevler</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAfterUploadTasks" xml:space="preserve">
+    <value>Yükleme sonrası görevleri geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_Destinations" xml:space="preserve">
+    <value>Hedefler</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDestinations" xml:space="preserve">
+    <value>Hedefleri geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_UploaderAccounts" xml:space="preserve">
+    <value>Yükleyici hesapları</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenshotsFolder" xml:space="preserve">
+    <value>Ekran görüntüleri klasörü</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideScreenshotsFolder" xml:space="preserve">
+    <value>Ekran görüntüleri klasörünü geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_DurationSeconds" xml:space="preserve">
+    <value>Süre (saniye):</value>
+  </data>
+  <data name="TaskSettingsWindow_FadeDurationSeconds" xml:space="preserve">
+    <value>Solma süresi (saniye):</value>
+  </data>
+  <data name="TaskSettingsWindow_Placement" xml:space="preserve">
+    <value>Konum:</value>
+  </data>
+  <data name="TaskSettingsWindow_Width" xml:space="preserve">
+    <value>Genişlik:</value>
+  </data>
+  <data name="TaskSettingsWindow_Height" xml:space="preserve">
+    <value>Yükseklik:</value>
+  </data>
+  <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
+    <value>Sol tıklama eylemi:</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
+    <value>Sağ tıklama eylemi:</value>
+  </data>
+  <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
+    <value>Orta tıklama eylemi:</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtonSize" xml:space="preserve">
+    <value>Bildirim düğmesi boyutu:</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtonsLabel" xml:space="preserve">
+    <value>Bildirim düğmeleri:</value>
+  </data>
+  <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
+    <value>Yapılandır...</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
+    <value>Ekran yakalarken otomatik olarak gizle</value>
+  </data>
+  <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
+    <value>Tam ekranda bildirimleri devre dışı bırak</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterCaptureIsMade" xml:space="preserve">
+    <value>Yakalama yapıldıktan sonra ses çal</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterTaskIsCompleted" xml:space="preserve">
+    <value>Görev tamamlandıktan sonra ses çal</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterActionIsCompleted" xml:space="preserve">
+    <value>Eylem tamamlandıktan sonra ses çal</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowToastNotificationAfterTaskIsCompleted" xml:space="preserve">
+    <value>Görev tamamlandıktan sonra bildirim göster</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomCaptureSound" xml:space="preserve">
+    <value>Özel yakalama sesi kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomTaskCompletedSound" xml:space="preserve">
+    <value>Özel görev tamamlanma sesi kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomActionCompletedSound" xml:space="preserve">
+    <value>Özel eylem tamamlanma sesi kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomErrorSound" xml:space="preserve">
+    <value>Özel hata sesi kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_AdjustJPEGQualityAutomaticallyToKeepImageSizeNearTheSpecifiedSize" xml:space="preserve">
+    <value>Görsel boyutunu belirtilen boyuta yakın tutmak için JPEG kalitesini otomatik ayarla</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageFormat" xml:space="preserve">
+    <value>Görsel biçimi:</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG bit derinliği:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
+    <value>JPEG kalitesi:</value>
+  </data>
+  <data name="TaskSettingsWindow_GIFQuality" xml:space="preserve">
+    <value>GIF kalitesi:</value>
+  </data>
+  <data name="TaskSettingsWindow_IfFileExists" xml:space="preserve">
+    <value>Dosya mevcutsa:</value>
+  </data>
+  <data name="TaskSettingsWindow_UseJPEGIfImageSizeIsBiggerThanTheSpecifiedSize" xml:space="preserve">
+    <value>Görsel boyutu belirtilen boyuttan büyükse JPEG kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
+    <value>Boyut sınırı (kB):</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowImageEffectsWindowAfterCapture" xml:space="preserve">
+    <value>Yakalamadan sonra görsel efektleri penceresini göster</value>
+  </data>
+  <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
+    <value>Efektleri yalnızca bölge yakalamaya uygula</value>
+  </data>
+  <data name="TaskSettingsWindow_UseRandomImageEffect" xml:space="preserve">
+    <value>Rastgele görsel efekti kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEffectsConfigurationWithEllipsis" xml:space="preserve">
+    <value>Görsel efektleri yapılandırması...</value>
+  </data>
+  <data name="TaskSettingsWindow_YouCanEnableOrDisableImageEffectsFromAfterCaptureTasksAddImageEffects" xml:space="preserve">
+    <value>Görsel efektlerini Yakalama sonrası görevler → Görsel efektleri ekle bölümünden etkinleştirebilir veya devre dışı bırakabilirsiniz.</value>
+  </data>
+  <data name="TaskSettingsWindow_ThumbnailName" xml:space="preserve">
+    <value>Küçük resim adı:</value>
+  </data>
+  <data name="TaskSettingsWindow_Preview" xml:space="preserve">
+    <value>Ön izleme:</value>
+  </data>
+  <data name="TaskSettingsWindow_CreateThumbnailOnlyIfImageIsBiggerThanThumbnailSize" xml:space="preserve">
+    <value>Yalnızca görsel küçük resim boyutundan büyükse küçük resim oluştur</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureWindowWithShadow" xml:space="preserve">
+    <value>Pencereyi gölgesiyle yakala</value>
+  </data>
+  <data name="TaskSettingsWindow_SelectRegionWithEllipsis" xml:space="preserve">
+    <value>Bölge seç...</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCursorInScreenshots" xml:space="preserve">
+    <value>Ekran görüntülerinde imleci göster</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenshotDelaySeconds" xml:space="preserve">
+    <value>Ekran görüntüsü gecikmesi (saniye):</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureWindowWithTransparency" xml:space="preserve">
+    <value>Pencereyi saydamlıkla yakala</value>
+  </data>
+  <data name="TaskSettingsWindow_ShadowOffset" xml:space="preserve">
+    <value>Gölge uzaklığı:</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
+    <value>Pencere yakalamalarında istemci alanını yakala</value>
+  </data>
+  <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
+    <value>Yakalanan pencereyle kesiştiğinde görev çubuğunu gizle</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyHideDesktopIcons" xml:space="preserve">
+    <value>Masaüstü simgelerini otomatik olarak gizle</value>
+  </data>
+  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
+    <value>HDR ekran görüntüsü renk düzeltici</value>
+  </data>
+  <data name="TaskSettingsWindow_WindowTitle" xml:space="preserve">
+    <value>Pencere başlığı:</value>
+  </data>
+  <data name="TaskSettingsWindow_AlsoDetectControlsInsideWindows" xml:space="preserve">
+    <value>Pencerelerin içindeki denetimleri de algıla</value>
+  </data>
+  <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
+    <value>Kare büyüteç kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_Add" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
+    <value>Çoklu bölge modunu kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
+    <value>Pencere bölgelerini algıla</value>
+  </data>
+  <data name="TaskSettingsWindow_RestrictCaptureAndCursorToTheActiveMonitor" xml:space="preserve">
+    <value>Yakalamayı ve imleci etkin monitörle sınırla</value>
+  </data>
+  <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
+    <value>Arka plan karartma gücü (%):</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClick" xml:space="preserve">
+    <value>Sağ tıklama:</value>
+  </data>
+  <data name="TaskSettingsWindow_MiddleClick" xml:space="preserve">
+    <value>Orta tıklama:</value>
+  </data>
+  <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
+    <value>Fare 4 tıklaması:</value>
+  </data>
+  <data name="TaskSettingsWindow_Mouse5Click" xml:space="preserve">
+    <value>Fare 5 tıklaması:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
+    <value>Konum ve boyut bilgisini göster</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomInfoText" xml:space="preserve">
+    <value>Özel bilgi metni kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowMagnifierNearCursor" xml:space="preserve">
+    <value>İmlecin yakınında büyüteci göster</value>
+  </data>
+  <data name="TaskSettingsWindow_MagnifierPixelCount" xml:space="preserve">
+    <value>Büyüteç piksel sayısı:</value>
+  </data>
+  <data name="TaskSettingsWindow_MagnifierPixelSize" xml:space="preserve">
+    <value>Büyüteç piksel boyutu:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCenterCrosshair" xml:space="preserve">
+    <value>Merkez artı işaretini göster</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowScreenWideCrosshair" xml:space="preserve">
+    <value>Ekran genelinde artı işaretini göster</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedSizeRegionMode" xml:space="preserve">
+    <value>Sabit boyutlu bölge modu</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedWidth" xml:space="preserve">
+    <value>Sabit genişlik:</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
+    <value>Sabit yükseklik:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowFPS" xml:space="preserve">
+    <value>FPS&apos;yi göster</value>
+  </data>
+  <data name="TaskSettingsWindow_FPSLimit" xml:space="preserve">
+    <value>FPS sınırı:</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
+    <value>Ekran kaydı FPS değeri:</value>
+  </data>
+  <data name="TaskSettingsWindow_GIFFPS" xml:space="preserve">
+    <value>GIF FPS değeri:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCursorInRecording" xml:space="preserve">
+    <value>Kayıtta imleci göster</value>
+  </data>
+  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
+    <value>Kaydı gecikmeden sonra başlat</value>
+  </data>
+  <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
+    <value>Başlangıç gecikmesi (saniye):</value>
+  </data>
+  <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
+    <value>Sabit süre kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions" xml:space="preserve">
+    <value>Önce kayıpsız kaydet, ardından kodlama seçeneklerini uygula</value>
+  </data>
+  <data name="TaskSettingsWindow_AskForConfirmationWhenAborting" xml:space="preserve">
+    <value>İptal ederken onay iste</value>
+  </data>
+  <data name="TaskSettingsWindow_UseTransparentRegionSelection" xml:space="preserve">
+    <value>Saydam bölge seçimi kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis" xml:space="preserve">
+    <value>Ekran kaydı seçenekleri...</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyCopyResultsToClipboard" xml:space="preserve">
+    <value>Sonuçları otomatik olarak panoya kopyala</value>
+  </data>
+  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
+    <value>Varsayılan dil:</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessOCRSilently" xml:space="preserve">
+    <value>OCR işlemini sessizce yap</value>
+  </data>
+  <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
+    <value>Hizmet bağlantısını açtıktan sonra OCR penceresini kapat</value>
+  </data>
+  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
+    <value>OCR yardımı</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
+    <value>Yakalama veya pano yüklemesi:</value>
+  </data>
+  <data name="TaskSettingsWindow_WindowCapture" xml:space="preserve">
+    <value>Pencere yakalama:</value>
+  </data>
+  <data name="TaskSettingsWindow_UseNamePatternForFileUploads" xml:space="preserve">
+    <value>Dosya yüklemelerinde ad deseni kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_ReplaceURLProblematicCharactersWithUnderscores" xml:space="preserve">
+    <value>URL için sorunlu karakterleri alt çizgiyle değiştir</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
+    <value>Otomatik artan sayı:</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
+    <value>Özel saat dilimi kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
+    <value>Saat dilimi:</value>
+  </data>
+  <data name="TaskSettingsWindow_ReplaceResultURLUsingARegularExpression" xml:space="preserve">
+    <value>Sonuç URL&apos;sini düzenli ifadeyle değiştir</value>
+  </data>
+  <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
+    <value>Desen:</value>
+  </data>
+  <data name="TaskSettingsWindow_Replacement" xml:space="preserve">
+    <value>Değiştirilen metin:</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
+    <value>Panoda bir dosya URL&apos;si varsa indir ve yükle</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAURLUseURLShortener" xml:space="preserve">
+    <value>Panoda bir URL varsa URL kısaltıcıyı kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAURLShareItUsingURLSharingService" xml:space="preserve">
+    <value>Panoda bir URL varsa URL paylaşım hizmetini kullanarak paylaş</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAFolderPathIndexAndUploadIt" xml:space="preserve">
+    <value>Panoda bir klasör yolu varsa dizinini oluştur ve yükle</value>
+  </data>
+  <data name="TaskSettingsWindow_Update" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="TaskSettingsWindow_Uploader" xml:space="preserve">
+    <value>Yükleyici:</value>
+  </data>
+  <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
+    <value>Uzantılar:</value>
+  </data>
+  <data name="TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg" xml:space="preserve">
+    <value>Uzantıları virgülle ayırın, örneğin: png, jpg, jpeg</value>
+  </data>
+  <data name="TaskSettingsWindow_UseLegacyImageEditor" xml:space="preserve">
+    <value>Eski görsel düzenleyiciyi kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_Format" xml:space="preserve">
+    <value>Biçim:</value>
+  </data>
+  <data name="TaskSettingsWindow_FormatCtrlPlusClick" xml:space="preserve">
+    <value>Biçim (Ctrl + tıklama):</value>
+  </data>
+  <data name="TaskSettingsWindow_InfoText" xml:space="preserve">
+    <value>Bilgi metni:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowMagnifier" xml:space="preserve">
+    <value>Büyüteci göster</value>
+  </data>
+  <data name="TaskSettingsWindow_EditWithEllipsis" xml:space="preserve">
+    <value>Düzenle...</value>
+  </data>
+  <data name="TaskSettingsWindow_Duplicate" xml:space="preserve">
+    <value>Çoğalt</value>
+  </data>
+  <data name="TaskSettingsWindow_YouCanEnableOrDisableActionsFromAfterCaptureTasksPerformActions" xml:space="preserve">
+    <value>Eylemleri Yakalama sonrası görevler → Eylemleri gerçekleştir bölümünden etkinleştirebilir veya devre dışı bırakabilirsiniz.</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFolders" xml:space="preserve">
+    <value>İzlenen klasörler</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFoldersAndUploadNewlyCreatedFiles" xml:space="preserve">
+    <value>Klasörleri izle ve yeni oluşturulan dosyaları yükle</value>
+  </data>
+  <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
+    <value>Sesler</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
+    <value>Bildirim</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomSounds" xml:space="preserve">
+    <value>Özel sesler</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideImageSettings" xml:space="preserve">
+    <value>Görsel ayarlarını geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageQuality" xml:space="preserve">
+    <value>Görsel kalitesi</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
+    <value>Otomatik JPEG</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEffects" xml:space="preserve">
+    <value>Görsel efektleri</value>
+  </data>
+  <data name="TaskSettingsWindow_Thumbnail" xml:space="preserve">
+    <value>Küçük resim</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideCaptureSettings" xml:space="preserve">
+    <value>Yakalama ayarlarını geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_Screenshots" xml:space="preserve">
+    <value>Ekran görüntüleri</value>
+  </data>
+  <data name="TaskSettingsWindow_PreconfiguredRegion" xml:space="preserve">
+    <value>Önceden yapılandırılmış bölge</value>
+  </data>
+  <data name="TaskSettingsWindow_PreconfiguredWindow" xml:space="preserve">
+    <value>Önceden yapılandırılmış pencere</value>
+  </data>
+  <data name="TaskSettingsWindow_Selection" xml:space="preserve">
+    <value>Seçim</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
+    <value>Fare eylemleri</value>
+  </data>
+  <data name="TaskSettingsWindow_InformationAndMagnifier" xml:space="preserve">
+    <value>Bilgi ve büyüteç</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedSizeAndPerformance" xml:space="preserve">
+    <value>Sabit boyut ve performans</value>
+  </data>
+  <data name="TaskSettingsWindow_SnapSizes" xml:space="preserve">
+    <value>Yakalama boyutları</value>
+  </data>
+  <data name="TaskSettingsWindow_Recording" xml:space="preserve">
+    <value>Kayıt</value>
+  </data>
+  <data name="TaskSettingsWindow_EncodingAndCapture" xml:space="preserve">
+    <value>Kodlama ve yakalama</value>
+  </data>
+  <data name="TaskSettingsWindow_OpticalCharacterRecognition" xml:space="preserve">
+    <value>Optik karakter tanıma</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
+    <value>Ad desenleri</value>
+  </data>
+  <data name="TaskSettingsWindow_TimeZone" xml:space="preserve">
+    <value>Saat dilimi</value>
+  </data>
+  <data name="TaskSettingsWindow_URLReplacement" xml:space="preserve">
+    <value>URL değiştirme</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardContent" xml:space="preserve">
+    <value>Pano içeriği</value>
+  </data>
+  <data name="TaskSettingsWindow_Filters" xml:space="preserve">
+    <value>Filtreler</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideToolsSettings" xml:space="preserve">
+    <value>Araç ayarlarını geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
+    <value>Görsel düzenleyici</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
+    <value>Ekran renk seçici</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideActions" xml:space="preserve">
+    <value>Eylemleri geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_Actions" xml:space="preserve">
+    <value>Eylemler</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAdvancedSettings" xml:space="preserve">
+    <value>Gelişmiş ayarları geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_General" xml:space="preserve">
+    <value>Genel</value>
+  </data>
+  <data name="TaskSettingsWindow_Upload" xml:space="preserve">
+    <value>Yükleme</value>
+  </data>
+  <data name="TaskSettingsWindow_Notifications" xml:space="preserve">
+    <value>Bildirimler</value>
+  </data>
+  <data name="TaskSettingsWindow_Image" xml:space="preserve">
+    <value>Görsel</value>
+  </data>
+  <data name="TaskSettingsWindow_Effects" xml:space="preserve">
+    <value>Efektler</value>
+  </data>
+  <data name="TaskSettingsWindow_Capture" xml:space="preserve">
+    <value>Yakalama</value>
+  </data>
+  <data name="TaskSettingsWindow_RegionCapture" xml:space="preserve">
+    <value>Bölge yakalama</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecorder" xml:space="preserve">
+    <value>Ekran kaydedici</value>
+  </data>
+  <data name="TaskSettingsWindow_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="TaskSettingsWindow_FileNaming" xml:space="preserve">
+    <value>Dosya adlandırma</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardUpload" xml:space="preserve">
+    <value>Pano yükleme</value>
+  </data>
+  <data name="TaskSettingsWindow_UploaderFilters" xml:space="preserve">
+    <value>Yükleyici filtreleri</value>
+  </data>
+  <data name="TaskSettingsWindow_Tools" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="TaskSettingsWindow_Advanced" xml:space="preserve">
+    <value>Gelişmiş</value>
+  </data>
+  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
+    <value>OCR dilleri kullanılamıyor</value>
+  </data>
+  <data name="TaskSettingsWindow_SelectTasks" xml:space="preserve">
+    <value>Görevleri seç</value>
+  </data>
+  <data name="TaskSettingsWindow_X" xml:space="preserve">
+    <value>X:</value>
+  </data>
+  <data name="TaskSettingsWindow_Y" xml:space="preserve">
+    <value>Y:</value>
+  </data>
+  <data name="TaskSettingsWindow_EnableAction" xml:space="preserve">
+    <value>Eylemi etkinleştir</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideGeneralSettings" xml:space="preserve">
+    <value>Genel ayarları geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideUploadSettings" xml:space="preserve">
+    <value>Yükleme ayarlarını geçersiz kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
+    <value>Wave ses dosyası</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
+    <value>{0} — {1} — Alt klasörleri dahil et: {2}</value>
+  </data>
+  <data name="TaskSettingsWindow_Yes" xml:space="preserve">
+    <value>Evet</value>
+  </data>
+  <data name="TaskSettingsWindow_No" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="TaskSettingsWindow_UploadText" xml:space="preserve">
+    <value>Metin yükleme</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterUpload" xml:space="preserve">
+    <value>Yükleme sonrası</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePattern" xml:space="preserve">
+    <value>Ad deseni</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringFileUpload" xml:space="preserve">
+    <value>Dosya yükleme sırasında görselleri işle</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringFileUploadDescription" xml:space="preserve">
+    <value>Dosya yükleme, pano dosyası yükleme, sürükleyip bırakarak dosya yükleme, izlenen klasör ve diğer görsel dosyası görevleri sırasında görselleri bit eşlem olarak yükleyerek yakalama sonrası görevlerin uygulanmasına izin ver.</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringClipboardUpload" xml:space="preserve">
+    <value>Pano yükleme sırasında görselleri işle</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringClipboardUploadDescription" xml:space="preserve">
+    <value>Pano görseli yüklemelerinde yakalama sonrası görevleri kullan.</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringExtensionUpload" xml:space="preserve">
+    <value>Eklenti yüklemesi sırasında görselleri işle</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringExtensionUploadDescription" xml:space="preserve">
+    <value>Tarayıcı eklentisi görsel yüklemelerinde yakalama sonrası görevleri kullan.</value>
+  </data>
+  <data name="TaskSettingsWindow_UseAfterCaptureTasksDuringFileUpload" xml:space="preserve">
+    <value>Dosya yükleme sırasında yakalama sonrası görevleri kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_UseAfterCaptureTasksDuringFileUploadDescription" xml:space="preserve">
+    <value>Dosya yüklerken dosyayla ilgili yakalama sonrası görevlerin (&quot;Eylemleri gerçekleştir&quot;, &quot;Dosyayı panoya kopyala&quot; vb.) kullanılmasına izin ver.</value>
+  </data>
+  <data name="TaskSettingsWindow_TextTaskSaveAsFile" xml:space="preserve">
+    <value>Metin görevlerini dosya olarak kaydet</value>
+  </data>
+  <data name="TaskSettingsWindow_TextTaskSaveAsFileDescription" xml:space="preserve">
+    <value>Pano metni yükleme, sürükleyip bırakarak metin yükleme ve klasör dizini oluşturma gibi görevlerde metni dosya olarak kaydet.</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoClearClipboard" xml:space="preserve">
+    <value>Panoyu otomatik olarak temizle</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoClearClipboardDescription" xml:space="preserve">
+    <value>Yükleme işi içeren bir görev başladığında panoyu temizle.</value>
+  </data>
+  <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
+    <value>Bölge yakalama açıklamalarını devre dışı bırak</value>
+  </data>
+  <data name="TaskSettingsWindow_RegionCaptureDisableAnnotationDescription" xml:space="preserve">
+    <value>Bölge yakalamada açıklama desteğini devre dışı bırak.</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageExtensions" xml:space="preserve">
+    <value>Görsel uzantıları</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageExtensionsDescription" xml:space="preserve">
+    <value>Bu uzantılara sahip dosyalar görsel yükleyici kullanılarak yüklenir.</value>
+  </data>
+  <data name="TaskSettingsWindow_TextExtensions" xml:space="preserve">
+    <value>Metin uzantıları</value>
+  </data>
+  <data name="TaskSettingsWindow_TextExtensionsDescription" xml:space="preserve">
+    <value>Bu uzantılara sahip dosyalar metin yükleyici kullanılarak yüklenir.</value>
+  </data>
+  <data name="TaskSettingsWindow_EarlyCopyURL" xml:space="preserve">
+    <value>Yüklemeden önce URL&apos;yi kopyala</value>
+  </data>
+  <data name="TaskSettingsWindow_EarlyCopyURLDescription" xml:space="preserve">
+    <value>Yükleme başlamadan önce URL&apos;yi kopyala. Bu yalnızca FTP, FTPS, SFTP, Amazon S3, Google Cloud Storage ve Azure Storage ile çalışır.</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFileExtension" xml:space="preserve">
+    <value>Metin dosyası uzantısı</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFileExtensionDescription" xml:space="preserve">
+    <value>Metni yerel diske kaydederken kullanılan dosya uzantısı.</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFormat" xml:space="preserve">
+    <value>Metin biçimi</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFormatDescription" xml:space="preserve">
+    <value>Metin biçimi; örneğin csharp veya cpp.</value>
+  </data>
+  <data name="TaskSettingsWindow_TextCustom" xml:space="preserve">
+    <value>Özel metin</value>
+  </data>
+  <data name="TaskSettingsWindow_TextCustomDescription" xml:space="preserve">
+    <value>Özel metin girişi. Giriş metni için %input kullanın. Örneğin metninizi içeren bir web sayfası oluşturabilirsiniz.</value>
+  </data>
+  <data name="TaskSettingsWindow_TextCustomEncodeInput" xml:space="preserve">
+    <value>Özel metin girişini HTML olarak kodla</value>
+  </data>
+  <data name="TaskSettingsWindow_TextCustomEncodeInputDescription" xml:space="preserve">
+    <value>Özel metin girişini HTML olarak kodla.</value>
+  </data>
+  <data name="TaskSettingsWindow_ResultForceHTTPS" xml:space="preserve">
+    <value>Sonuç URL&apos;lerinde HTTPS&apos;yi zorunlu kıl</value>
+  </data>
+  <data name="TaskSettingsWindow_ResultForceHTTPSDescription" xml:space="preserve">
+    <value>Sonuç URL&apos;lerinin başındaki &quot;http://&quot; ifadesini &quot;https://&quot; ile değiştir.</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardContentFormat" xml:space="preserve">
+    <value>Pano içeriği biçimi</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardContentFormatDescription" xml:space="preserve">
+    <value>Yükleme sonrası pano içeriği biçimi. Desteklenen değişkenler: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime ve %y-%mo-%d gibi tarih değişkenleri.</value>
+  </data>
+  <data name="TaskSettingsWindow_BalloonTipContentFormat" xml:space="preserve">
+    <value>Bildirim içeriği biçimi</value>
+  </data>
+  <data name="TaskSettingsWindow_BalloonTipContentFormatDescription" xml:space="preserve">
+    <value>Yükleme sonrası bildirim içeriği biçimi. Desteklenen değişkenler: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime ve %y-%mo-%d gibi tarih değişkenleri.</value>
+  </data>
+  <data name="TaskSettingsWindow_OpenURLFormat" xml:space="preserve">
+    <value>URL açma biçimi</value>
+  </data>
+  <data name="TaskSettingsWindow_OpenURLFormatDescription" xml:space="preserve">
+    <value>Yükleme sonrası &quot;URL&apos;yi aç&quot; görevinin kullandığı biçim. Desteklenen değişkenler: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime ve %y-%mo-%d gibi tarih değişkenleri.</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
+    <value>Otomatik URL kısaltma uzunluğu</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoShortenURLLengthDescription" xml:space="preserve">
+    <value>Bu karakter sayısından uzun URL&apos;leri otomatik olarak kısalt. Otomatik URL kısaltmayı devre dışı bırakmak için 0 olarak ayarlayın.</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCloseAfterUploadForm" xml:space="preserve">
+    <value>Yükleme sonrası penceresini otomatik olarak kapat</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCloseAfterUploadFormDescription" xml:space="preserve">
+    <value>Yükleme sonrası penceresini 60 saniye sonra otomatik olarak kapat.</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatternMaxLength" xml:space="preserve">
+    <value>En fazla ad deseni uzunluğu</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatternMaxLengthDescription" xml:space="preserve">
+    <value>Dosya adlarında kullanılan en fazla ad deseni uzunluğu.</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatternMaxTitleLength" xml:space="preserve">
+    <value>En fazla ad deseni başlığı uzunluğu</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatternMaxTitleLengthDescription" xml:space="preserve">
+    <value>Dosya adı desenlerinde kullanılan en fazla başlık (%t) uzunluğu.</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseAudioFile" xml:space="preserve">
+    <value>Ses dosyası seç</value>
   </data>
 </root>

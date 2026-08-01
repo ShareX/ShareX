@@ -1075,4 +1075,106 @@
   <data name="HotkeySettingsWindow_NotConfigured" xml:space="preserve">
     <value>Nie skonfigurowano</value>
   </data>
+  <data name="TaskSettingsWindow_AddWithEllipsis" xml:space="preserve">
+    <value>Dodaj...</value>
+  </data>
+  <data name="TaskSettingsWindow_BrowseWithEllipsis" xml:space="preserve">
+    <value>Przeglądaj...</value>
+  </data>
+  <data name="TaskSettingsWindow_Remove" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="TaskSettingsWindow_AddAction" xml:space="preserve">
+    <value>Dodaj akcję</value>
+  </data>
+  <data name="TaskSettingsWindow_RunAnExternalProgramAsPartOfACaptureWorkflow" xml:space="preserve">
+    <value>Uruchom program zewnętrzny jako część przepływu przechwytywania.</value>
+  </data>
+  <data name="TaskSettingsWindow_Close" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="TaskSettingsWindow_Name" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="TaskSettingsWindow_FilePath" xml:space="preserve">
+    <value>Ścieżka pliku</value>
+  </data>
+  <data name="TaskSettingsWindow_Arguments" xml:space="preserve">
+    <value>Argumenty</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
+    <value>Kliknij prawym przyciskiem, aby wstawić token pliku wejściowego lub wyjściowego.</value>
+  </data>
+  <data name="TaskSettingsWindow_OutputFileNameExtensionEmptyUsesTheSameFileName" xml:space="preserve">
+    <value>Rozszerzenie pliku wyjściowego (puste używa tej samej nazwy pliku)</value>
+  </data>
+  <data name="TaskSettingsWindow_ExtensionFilterExampleJpgPngMp4" xml:space="preserve">
+    <value>Filtr rozszerzeń (przykład: jpg png mp4)</value>
+  </data>
+  <data name="TaskSettingsWindow_HiddenWindow" xml:space="preserve">
+    <value>Ukryte okno</value>
+  </data>
+  <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
+    <value>Usuń plik wejściowy</value>
+  </data>
+  <data name="TaskSettingsWindow_Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="TaskSettingsWindow_AddWatchFolder" xml:space="preserve">
+    <value>Dodaj obserwowany folder</value>
+  </data>
+  <data name="TaskSettingsWindow_UploadFilesWhenTheyAreCreatedInThisFolder" xml:space="preserve">
+    <value>Przesyłaj pliki tworzone w tym folderze.</value>
+  </data>
+  <data name="TaskSettingsWindow_FolderPath" xml:space="preserve">
+    <value>Ścieżka folderu</value>
+  </data>
+  <data name="TaskSettingsWindow_Filter" xml:space="preserve">
+    <value>Filtr</value>
+  </data>
+  <data name="TaskSettingsWindow_ExamplePng" xml:space="preserve">
+    <value>Przykład: *.png</value>
+  </data>
+  <data name="TaskSettingsWindow_IncludeSubdirectories" xml:space="preserve">
+    <value>Uwzględnij podfoldery</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveFileToScreenshotsFolder" xml:space="preserve">
+    <value>Przenieś plik do folderu zrzutów ekranu</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtons" xml:space="preserve">
+    <value>Przyciski powiadomień</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseTheActionsShownAtTheBottomOfAfterCaptureNotifications" xml:space="preserve">
+    <value>Wybierz akcje wyświetlane na dole powiadomień po przechwyceniu.</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
+    <value>Przenieś w górę</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
+    <value>Przenieś w dół</value>
+  </data>
+  <data name="TaskSettingsWindow_NoButtonsConfiguredTheNotificationToolbarWillBeHidden" xml:space="preserve">
+    <value>Nie skonfigurowano przycisków. Pasek powiadomień zostanie ukryty.</value>
+  </data>
+  <data name="TaskSettingsWindow_ShareXTaskSettings" xml:space="preserve">
+    <value>ShareX - Ustawienia zadań</value>
+  </data>
+  <data name="TaskSettingsWindow_ShareXTaskSettingsFor0" xml:space="preserve">
+    <value>ShareX - Ustawienia zadania {0}</value>
+  </data>
+  <data name="TaskSettingsWindow_EditAction" xml:space="preserve">
+    <value>Edytuj akcję</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseProgram" xml:space="preserve">
+    <value>Wybierz program</value>
+  </data>
+  <data name="TaskSettingsWindow_EditWatchFolder" xml:space="preserve">
+    <value>Edytuj obserwowany folder</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseWatchFolder" xml:space="preserve">
+    <value>Wybierz obserwowany folder</value>
+  </data>
 </root>

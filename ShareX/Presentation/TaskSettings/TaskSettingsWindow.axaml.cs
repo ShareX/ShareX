@@ -17,6 +17,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -50,8 +51,8 @@ public partial class TaskSettingsWindow : Window
     public TaskSettingsWindow(TaskSettings settings, bool isDefault) : this()
     {
         Title = isDefault
-            ? "ShareX - " + Properties.Resources.TaskSettingsForm_UpdateWindowTitle_Task_settings
-            : "ShareX - " + string.Format(Properties.Resources.TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_, settings);
+            ? Strings.TaskSettingsWindow_ShareXTaskSettings
+            : string.Format(Strings.TaskSettingsWindow_ShareXTaskSettingsFor0, settings);
 
         _viewModel = new TaskSettingsViewModel(isDefault);
         DataContext = _viewModel;
@@ -86,7 +87,7 @@ public partial class TaskSettingsWindow : Window
         _actionSaved = saved;
 
         ExternalProgram values = action ?? new ExternalProgram();
-        ActionEditorTitle.Text = action == null ? "Add action" : "Edit action";
+        ActionEditorTitle.Text = action == null ? Strings.TaskSettingsWindow_AddAction : Strings.TaskSettingsWindow_EditAction;
         ActionNameBox.Text = values.Name ?? string.Empty;
         ActionPathBox.Text = values.Path ?? string.Empty;
         ActionArgumentsBox.Text = values.Args ?? string.Empty;
@@ -157,7 +158,7 @@ public partial class TaskSettingsWindow : Window
     {
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Choose program",
+            Title = Strings.TaskSettingsWindow_ChooseProgram,
             AllowMultiple = false,
             FileTypeFilter = [FilePickerFileTypes.All]
         });
@@ -232,7 +233,7 @@ public partial class TaskSettingsWindow : Window
         _editedWatchFolder = folder;
         _watchFolderSaved = saved;
 
-        WatchFolderEditorTitle.Text = folder == null ? "Add watch folder" : "Edit watch folder";
+        WatchFolderEditorTitle.Text = folder == null ? Strings.TaskSettingsWindow_AddWatchFolder : Strings.TaskSettingsWindow_EditWatchFolder;
         WatchFolderPathBox.Text = folder?.FolderPath ?? string.Empty;
         WatchFolderFilterBox.Text = folder?.Filter ?? string.Empty;
         WatchFolderIncludeSubdirectoriesCheckBox.IsChecked = folder?.IncludeSubdirectories ?? false;
@@ -272,7 +273,7 @@ public partial class TaskSettingsWindow : Window
     {
         IReadOnlyList<IStorageFolder> folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
         {
-            Title = "Choose watch folder",
+            Title = Strings.TaskSettingsWindow_ChooseWatchFolder,
             AllowMultiple = false
         });
 
@@ -418,6 +419,7 @@ public partial class TaskSettingsWindow : Window
 
     private void OnCancelNotificationButtonsClick(object? sender, RoutedEventArgs e) =>
         HideNotificationButtonsEditor();
+
 }
 
 public sealed class NotificationActionItem

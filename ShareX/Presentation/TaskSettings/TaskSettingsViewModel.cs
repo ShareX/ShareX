@@ -11,6 +11,7 @@
 
 using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Localization;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -55,26 +56,26 @@ public sealed class TaskSettingsViewModel : INotifyPropertyChanged
 
         if (!isDefault)
         {
-            NavigationItems.Add(new SettingsNavigationItem("task", "Task", LucideIcons.keyboard));
+            NavigationItems.Add(new SettingsNavigationItem("task", Strings.TaskSettingsWindow_Task, LucideIcons.keyboard));
         }
 
-        NavigationItems.Add(Parent("general", "General", LucideIcons.settings,
-            Child("general-notifications", "Notifications", LucideIcons.bell)));
-        NavigationItems.Add(Parent("image", "Image", LucideIcons.image,
-            Child("image-effects", "Effects", LucideIcons.wand_sparkles),
-            Child("image-thumbnail", "Thumbnail", LucideIcons.images)));
-        NavigationItems.Add(Parent("capture", "Capture", LucideIcons.camera,
-            Child("capture-region", "Region capture", LucideIcons.crop),
-            Child("capture-screen-recorder", "Screen recorder", LucideIcons.video),
-            Child("capture-ocr", "OCR", LucideIcons.scan_text)));
-        NavigationItems.Add(Parent("upload", "Upload", LucideIcons.upload,
-            Child("upload-file-naming", "File naming", LucideIcons.file_pen),
-            Child("upload-clipboard", "Clipboard upload", LucideIcons.clipboard),
-            Child("upload-filters", "Uploader filters", LucideIcons.filter)));
-        NavigationItems.Add(Parent("tools", "Tools", LucideIcons.wrench));
-        NavigationItems.Add(Parent("actions", "Actions", LucideIcons.zap));
-        NavigationItems.Add(Parent("watch-folders", "Watch folders", LucideIcons.folder_search));
-        NavigationItems.Add(Parent("advanced", "Advanced", LucideIcons.sliders_horizontal));
+        NavigationItems.Add(Parent("general", Strings.TaskSettingsWindow_General, LucideIcons.settings,
+            Child("general-notifications", Strings.TaskSettingsWindow_Notifications, LucideIcons.bell)));
+        NavigationItems.Add(Parent("image", Strings.TaskSettingsWindow_Image, LucideIcons.image,
+            Child("image-effects", Strings.TaskSettingsWindow_Effects, LucideIcons.wand_sparkles),
+            Child("image-thumbnail", Strings.TaskSettingsWindow_Thumbnail, LucideIcons.images)));
+        NavigationItems.Add(Parent("capture", Strings.TaskSettingsWindow_Capture, LucideIcons.camera,
+            Child("capture-region", Strings.TaskSettingsWindow_RegionCapture, LucideIcons.crop),
+            Child("capture-screen-recorder", Strings.TaskSettingsWindow_ScreenRecorder, LucideIcons.video),
+            Child("capture-ocr", Strings.TaskSettingsWindow_OCR, LucideIcons.scan_text)));
+        NavigationItems.Add(Parent("upload", Strings.TaskSettingsWindow_Upload, LucideIcons.upload,
+            Child("upload-file-naming", Strings.TaskSettingsWindow_FileNaming, LucideIcons.file_pen),
+            Child("upload-clipboard", Strings.TaskSettingsWindow_ClipboardUpload, LucideIcons.clipboard),
+            Child("upload-filters", Strings.TaskSettingsWindow_UploaderFilters, LucideIcons.filter)));
+        NavigationItems.Add(Parent("tools", Strings.TaskSettingsWindow_Tools, LucideIcons.wrench));
+        NavigationItems.Add(Parent("actions", Strings.TaskSettingsWindow_Actions, LucideIcons.zap));
+        NavigationItems.Add(Parent("watch-folders", Strings.TaskSettingsWindow_WatchFolders, LucideIcons.folder_search));
+        NavigationItems.Add(Parent("advanced", Strings.TaskSettingsWindow_Advanced, LucideIcons.sliders_horizontal));
 
         SelectedNavigationItem = isDefault
             ? NavigationItems.SelectMany(x => x.Children).First(x => x.Id == "general-notifications")

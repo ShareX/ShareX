@@ -2322,5 +2322,1385 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("HotkeySettingsWindow_NotConfigured", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_AddWithEllipsis {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AddWithEllipsis", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_BrowseWithEllipsis {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_BrowseWithEllipsis", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Remove {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Remove", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AddAction {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AddAction", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_RunAnExternalProgramAsPartOfACaptureWorkflow {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_RunAnExternalProgramAsPartOfACaptureWorkflow", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Close {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Close", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Name {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Name", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_FilePath {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FilePath", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Arguments {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Arguments", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OutputFileNameExtensionEmptyUsesTheSameFileName {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OutputFileNameExtensionEmptyUsesTheSameFileName", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ExtensionFilterExampleJpgPngMp4 {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ExtensionFilterExampleJpgPngMp4", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_HiddenWindow {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_HiddenWindow", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_DeleteInputFile {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_DeleteInputFile", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Save {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Save", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Cancel {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AddWatchFolder {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AddWatchFolder", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UploadFilesWhenTheyAreCreatedInThisFolder {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UploadFilesWhenTheyAreCreatedInThisFolder", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_FolderPath {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FolderPath", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Filter {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Filter", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ExamplePng {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ExamplePng", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_IncludeSubdirectories {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_IncludeSubdirectories", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_MoveFileToScreenshotsFolder {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_MoveFileToScreenshotsFolder", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_NotificationButtons {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_NotificationButtons", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ChooseTheActionsShownAtTheBottomOfAfterCaptureNotifications {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ChooseTheActionsShownAtTheBottomOfAfterCaptureNotifications", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_MoveUp {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_MoveUp", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_MoveDown {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_MoveDown", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_NoButtonsConfiguredTheNotificationToolbarWillBeHidden {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_NoButtonsConfiguredTheNotificationToolbarWillBeHidden", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShareXTaskSettings {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShareXTaskSettings", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShareXTaskSettingsFor0 {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShareXTaskSettingsFor0", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_EditAction {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_EditAction", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ChooseProgram {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ChooseProgram", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_EditWatchFolder {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_EditWatchFolder", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ChooseWatchFolder {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ChooseWatchFolder", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ImageUploader {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ImageUploader", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ImageFileUploader {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ImageFileUploader", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextUploader {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextUploader", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextFileUploader {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextFileUploader", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_FileUploader {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FileUploader", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_URLShortener {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_URLShortener", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_URLSharingService {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_URLSharingService", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideDefaultFTPAccount {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideDefaultFTPAccount", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_FTPAccount {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FTPAccount", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideDefaultCustomUploader {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideDefaultCustomUploader", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_CustomUploader {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CustomUploader", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ChooseScreenshotsFolder {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ChooseScreenshotsFolder", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Task {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Task", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TaskLabel {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TaskLabel", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Description {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Description", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AfterCaptureTasks {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AfterCaptureTasks", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideAfterCaptureTasks {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideAfterCaptureTasks", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AfterUploadTasks {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AfterUploadTasks", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideAfterUploadTasks {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideAfterUploadTasks", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Destinations {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Destinations", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideDestinations {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideDestinations", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UploaderAccounts {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UploaderAccounts", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ScreenshotsFolder {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ScreenshotsFolder", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideScreenshotsFolder {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideScreenshotsFolder", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_DurationSeconds {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_DurationSeconds", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_FadeDurationSeconds {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FadeDurationSeconds", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Placement {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Placement", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Width {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Width", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Height {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Height", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_LeftClickAction {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_LeftClickAction", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_RightClickAction {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_RightClickAction", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_MiddleClickAction {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_MiddleClickAction", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_NotificationButtonSize {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_NotificationButtonSize", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_NotificationButtonsLabel {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_NotificationButtonsLabel", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ConfigureWithEllipsis {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ConfigureWithEllipsis", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutomaticallyHideOnScreenCapture {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutomaticallyHideOnScreenCapture", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_DisableToastNotificationsOnFullscreen {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_DisableToastNotificationsOnFullscreen", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PlaySoundAfterCaptureIsMade {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PlaySoundAfterCaptureIsMade", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PlaySoundAfterTaskIsCompleted {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PlaySoundAfterTaskIsCompleted", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PlaySoundAfterActionIsCompleted {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PlaySoundAfterActionIsCompleted", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowToastNotificationAfterTaskIsCompleted {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowToastNotificationAfterTaskIsCompleted", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseCustomCaptureSound {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseCustomCaptureSound", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseCustomTaskCompletedSound {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseCustomTaskCompletedSound", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseCustomActionCompletedSound {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseCustomActionCompletedSound", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseCustomErrorSound {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseCustomErrorSound", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AdjustJPEGQualityAutomaticallyToKeepImageSizeNearTheSpecifiedSize {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AdjustJPEGQualityAutomaticallyToKeepImageSizeNearTheSpecifiedSize", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ImageFormat {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ImageFormat", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PNGBitDepth {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PNGBitDepth", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_JPEGQuality {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_JPEGQuality", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_GIFQuality {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_GIFQuality", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_IfFileExists {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_IfFileExists", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseJPEGIfImageSizeIsBiggerThanTheSpecifiedSize {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseJPEGIfImageSizeIsBiggerThanTheSpecifiedSize", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SizeLimitKB {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SizeLimitKB", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowImageEffectsWindowAfterCapture {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowImageEffectsWindowAfterCapture", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OnlyApplyEffectsToRegionCapture {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OnlyApplyEffectsToRegionCapture", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseRandomImageEffect {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseRandomImageEffect", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ImageEffectsConfigurationWithEllipsis {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ImageEffectsConfigurationWithEllipsis", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_YouCanEnableOrDisableImageEffectsFromAfterCaptureTasksAddImageEffects {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_YouCanEnableOrDisableImageEffectsFromAfterCaptureTasksAddImageEffects", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ThumbnailName {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ThumbnailName", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Preview {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Preview", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_CreateThumbnailOnlyIfImageIsBiggerThanThumbnailSize {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CreateThumbnailOnlyIfImageIsBiggerThanThumbnailSize", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_CaptureWindowWithShadow {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CaptureWindowWithShadow", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SelectRegionWithEllipsis {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SelectRegionWithEllipsis", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowCursorInScreenshots {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowCursorInScreenshots", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ScreenshotDelaySeconds {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ScreenshotDelaySeconds", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_CaptureWindowWithTransparency {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CaptureWindowWithTransparency", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShadowOffset {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShadowOffset", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_CaptureClientAreaForWindowCaptures {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CaptureClientAreaForWindowCaptures", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutomaticallyHideDesktopIcons {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutomaticallyHideDesktopIcons", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_HDRScreenshotColorCorrector {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_HDRScreenshotColorCorrector", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_WindowTitle {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WindowTitle", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AlsoDetectControlsInsideWindows {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AlsoDetectControlsInsideWindows", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseSquareMagnifier {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseSquareMagnifier", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Add {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Add", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseMultiRegionMode {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseMultiRegionMode", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_DetectWindowRegions {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_DetectWindowRegions", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_RestrictCaptureAndCursorToTheActiveMonitor {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_RestrictCaptureAndCursorToTheActiveMonitor", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_BackgroundDimStrengthPercent {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_BackgroundDimStrengthPercent", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_RightClick {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_RightClick", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_MiddleClick {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_MiddleClick", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Mouse4Click {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Mouse4Click", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Mouse5Click {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Mouse5Click", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowPositionAndSizeInfo {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowPositionAndSizeInfo", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseCustomInfoText {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseCustomInfoText", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowMagnifierNearCursor {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowMagnifierNearCursor", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_MagnifierPixelCount {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_MagnifierPixelCount", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_MagnifierPixelSize {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_MagnifierPixelSize", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowCenterCrosshair {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowCenterCrosshair", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowScreenWideCrosshair {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowScreenWideCrosshair", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_FixedSizeRegionMode {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FixedSizeRegionMode", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_FixedWidth {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FixedWidth", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_FixedHeight {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FixedHeight", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowFPS {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowFPS", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_FPSLimit {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FPSLimit", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ScreenRecordingFPS {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ScreenRecordingFPS", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_GIFFPS {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_GIFFPS", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowCursorInRecording {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowCursorInRecording", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_StartRecordingAfterADelay {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_StartRecordingAfterADelay", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_StartDelaySeconds {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_StartDelaySeconds", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseFixedDuration {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseFixedDuration", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AskForConfirmationWhenAborting {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AskForConfirmationWhenAborting", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseTransparentRegionSelection {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseTransparentRegionSelection", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutomaticallyCopyResultsToClipboard {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutomaticallyCopyResultsToClipboard", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_DefaultLanguage {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_DefaultLanguage", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ProcessOCRSilently {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ProcessOCRSilently", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OCRHelp {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OCRHelp", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_CaptureOrClipboardUpload {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CaptureOrClipboardUpload", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_WindowCapture {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WindowCapture", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseNamePatternForFileUploads {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseNamePatternForFileUploads", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ReplaceURLProblematicCharactersWithUnderscores {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ReplaceURLProblematicCharactersWithUnderscores", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutoIncrementNumber {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoIncrementNumber", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseCustomTimeZone {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseCustomTimeZone", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TimeZoneLabel {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TimeZoneLabel", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ReplaceResultURLUsingARegularExpression {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ReplaceResultURLUsingARegularExpression", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Pattern {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Pattern", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Replacement {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Replacement", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_IfClipboardContainsAURLUseURLShortener {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_IfClipboardContainsAURLUseURLShortener", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_IfClipboardContainsAURLShareItUsingURLSharingService {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_IfClipboardContainsAURLShareItUsingURLSharingService", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_IfClipboardContainsAFolderPathIndexAndUploadIt {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_IfClipboardContainsAFolderPathIndexAndUploadIt", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Update {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Update", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Uploader {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Uploader", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Extensions {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Extensions", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseLegacyImageEditor {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseLegacyImageEditor", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Format {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Format", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_FormatCtrlPlusClick {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FormatCtrlPlusClick", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_InfoText {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_InfoText", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowMagnifier {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowMagnifier", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_EditWithEllipsis {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_EditWithEllipsis", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Duplicate {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Duplicate", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_YouCanEnableOrDisableActionsFromAfterCaptureTasksPerformActions {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_YouCanEnableOrDisableActionsFromAfterCaptureTasksPerformActions", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_WatchFolders {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WatchFolders", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_WatchFoldersAndUploadNewlyCreatedFiles {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WatchFoldersAndUploadNewlyCreatedFiles", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Sounds {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Sounds", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ToastNotification {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ToastNotification", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_CustomSounds {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CustomSounds", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideImageSettings {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideImageSettings", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ImageQuality {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ImageQuality", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutomaticJPEG {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutomaticJPEG", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ImageEffects {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ImageEffects", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Thumbnail {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Thumbnail", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideCaptureSettings {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideCaptureSettings", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Screenshots {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Screenshots", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PreconfiguredRegion {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PreconfiguredRegion", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PreconfiguredWindow {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PreconfiguredWindow", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Selection {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Selection", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_MouseActions {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_MouseActions", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_InformationAndMagnifier {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_InformationAndMagnifier", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_FixedSizeAndPerformance {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FixedSizeAndPerformance", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SnapSizes {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SnapSizes", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Recording {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Recording", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_EncodingAndCapture {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_EncodingAndCapture", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OpticalCharacterRecognition {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OpticalCharacterRecognition", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_NamePatterns {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_NamePatterns", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TimeZone {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TimeZone", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_URLReplacement {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_URLReplacement", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ClipboardContent {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ClipboardContent", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Filters {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Filters", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideToolsSettings {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideToolsSettings", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ImageEditor {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ImageEditor", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ScreenColorPicker {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ScreenColorPicker", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideActions {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideActions", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Actions {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Actions", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideAdvancedSettings {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideAdvancedSettings", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_General {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_General", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Upload {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Upload", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Notifications {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Notifications", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Image {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Image", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Effects {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Effects", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Capture {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Capture", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_RegionCapture {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_RegionCapture", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ScreenRecorder {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ScreenRecorder", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OCR {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OCR", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_FileNaming {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FileNaming", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ClipboardUpload {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ClipboardUpload", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UploaderFilters {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UploaderFilters", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Tools {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Tools", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Advanced {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Advanced", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OCRLanguagesAreUnavailable {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OCRLanguagesAreUnavailable", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SelectTasks {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SelectTasks", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_X {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_X", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Y {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Y", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_EnableAction {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_EnableAction", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideGeneralSettings {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideGeneralSettings", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OverrideUploadSettings {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OverrideUploadSettings", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_WaveAudio {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WaveAudio", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_WatchFolderSummary {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WatchFolderSummary", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_Yes {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Yes", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_No {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_No", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UploadText {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UploadText", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AfterUpload {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AfterUpload", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_NamePattern {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_NamePattern", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ProcessImagesDuringFileUpload {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ProcessImagesDuringFileUpload", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ProcessImagesDuringFileUploadDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ProcessImagesDuringFileUploadDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ProcessImagesDuringClipboardUpload {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ProcessImagesDuringClipboardUpload", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ProcessImagesDuringClipboardUploadDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ProcessImagesDuringClipboardUploadDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ProcessImagesDuringExtensionUpload {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ProcessImagesDuringExtensionUpload", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ProcessImagesDuringExtensionUploadDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ProcessImagesDuringExtensionUploadDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseAfterCaptureTasksDuringFileUpload {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseAfterCaptureTasksDuringFileUpload", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseAfterCaptureTasksDuringFileUploadDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseAfterCaptureTasksDuringFileUploadDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextTaskSaveAsFile {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextTaskSaveAsFile", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextTaskSaveAsFileDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextTaskSaveAsFileDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutoClearClipboard {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoClearClipboard", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutoClearClipboardDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoClearClipboardDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_RegionCaptureDisableAnnotation {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_RegionCaptureDisableAnnotation", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_RegionCaptureDisableAnnotationDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_RegionCaptureDisableAnnotationDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ImageExtensions {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ImageExtensions", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ImageExtensionsDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ImageExtensionsDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextExtensions {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextExtensions", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextExtensionsDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextExtensionsDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_EarlyCopyURL {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_EarlyCopyURL", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_EarlyCopyURLDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_EarlyCopyURLDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextFileExtension {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextFileExtension", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextFileExtensionDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextFileExtensionDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextFormat {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextFormat", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextFormatDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextFormatDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextCustom {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextCustom", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextCustomDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextCustomDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextCustomEncodeInput {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextCustomEncodeInput", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_TextCustomEncodeInputDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_TextCustomEncodeInputDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ResultForceHTTPS {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ResultForceHTTPS", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ResultForceHTTPSDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ResultForceHTTPSDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ClipboardContentFormat {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ClipboardContentFormat", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ClipboardContentFormatDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ClipboardContentFormatDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_BalloonTipContentFormat {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_BalloonTipContentFormat", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_BalloonTipContentFormatDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_BalloonTipContentFormatDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OpenURLFormat {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OpenURLFormat", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_OpenURLFormatDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_OpenURLFormatDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutoShortenURLLength {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoShortenURLLength", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutoShortenURLLengthDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoShortenURLLengthDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutoCloseAfterUploadForm {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoCloseAfterUploadForm", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutoCloseAfterUploadFormDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoCloseAfterUploadFormDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_NamePatternMaxLength {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_NamePatternMaxLength", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_NamePatternMaxLengthDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_NamePatternMaxLengthDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_NamePatternMaxTitleLength {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_NamePatternMaxTitleLength", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_NamePatternMaxTitleLengthDescription {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_NamePatternMaxTitleLengthDescription", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ChooseAudioFile {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ChooseAudioFile", resourceCulture);
+            }
+        }
     }
 }
