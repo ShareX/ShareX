@@ -1982,5 +1982,230 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("ApplicationSettingsWindow_Light", resourceCulture);
             }
         }
+        public static string ApplicationSettingsWindow_AdvancedApplication {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_AdvancedApplication", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_AdvancedHotkeys {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_AdvancedHotkeys", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_AdvancedClipboard {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_AdvancedClipboard", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_AdvancedImage {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_AdvancedImage", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_AdvancedUpload {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_AdvancedUpload", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_AdvancedPaths {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_AdvancedPaths", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_AdvancedDragAndDropWindow {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_AdvancedDragAndDropWindow", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_BinaryUnits {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_BinaryUnits", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_ShowMostRecentTaskFirst {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ShowMostRecentTaskFirst", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_WorkflowsOnlyShowEdited {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_WorkflowsOnlyShowEdited", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_TrayAutoExpandCaptureMenu {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_TrayAutoExpandCaptureMenu", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_BrowserPath {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_BrowserPath", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_SaveSettingsAfterTaskCompleted {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_SaveSettingsAfterTaskCompleted", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_DevMode {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_DevMode", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_DisableHotkeys {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_DisableHotkeys", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_DisableHotkeysOnFullscreen {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_DisableHotkeysOnFullscreen", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_HotkeyRepeatLimit {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_HotkeyRepeatLimit", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_ShowClipboardContentViewer {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ShowClipboardContentViewer", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_DefaultClipboardCopyImageFillBackground {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_DefaultClipboardCopyImageFillBackground", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_UseAlternativeClipboardCopyImage {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_UseAlternativeClipboardCopyImage", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_UseAlternativeClipboardGetImage {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_UseAlternativeClipboardGetImage", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_RotateImageByExifOrientationData {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_RotateImageByExifOrientationData", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_PNGStripColorSpaceInformation {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_PNGStripColorSpaceInformation", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_DisableUpload {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_DisableUpload", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_URLEncodeIgnoreEmoji {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_URLEncodeIgnoreEmoji", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_ShowMultiUploadWarning {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ShowMultiUploadWarning", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_ShowLargeFileSizeWarning {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ShowLargeFileSizeWarning", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_UseMachineSpecificUploadersConfig {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_UseMachineSpecificUploadersConfig", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_CustomUploadersConfigPath {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_CustomUploadersConfigPath", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_CustomHotkeysConfigPath {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_CustomHotkeysConfigPath", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_CustomScreenshotsPath2 {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_CustomScreenshotsPath2", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_DropSize {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_DropSize", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_DropOffset {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_DropOffset", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_DropAlignment {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_DropAlignment", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_DropOpacity {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_DropOpacity", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_DropHoverOpacity {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_DropHoverOpacity", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_TopLeft {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_TopLeft", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_TopCenter {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_TopCenter", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_TopRight {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_TopRight", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_MiddleLeft {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_MiddleLeft", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_MiddleCenter {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_MiddleCenter", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_MiddleRight {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_MiddleRight", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_BottomLeft {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_BottomLeft", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_BottomCenter {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_BottomCenter", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_BottomRight {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_BottomRight", resourceCulture);
+            }
+        }
     }
 }

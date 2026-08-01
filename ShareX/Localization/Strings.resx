@@ -871,4 +871,139 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Light</value>
   </data>
+  <data name="ApplicationSettingsWindow_AdvancedApplication" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedHotkeys" xml:space="preserve">
+    <value>Hotkeys</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedClipboard" xml:space="preserve">
+    <value>Clipboard</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedPaths" xml:space="preserve">
+    <value>Paths</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedDragAndDropWindow" xml:space="preserve">
+    <value>Drag and drop window</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BinaryUnits" xml:space="preserve">
+    <value>Use binary units</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowMostRecentTaskFirst" xml:space="preserve">
+    <value>Show the most recent task first</value>
+  </data>
+  <data name="ApplicationSettingsWindow_WorkflowsOnlyShowEdited" xml:space="preserve">
+    <value>Show only customized workflows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
+    <value>Automatically expand the capture menu</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BrowserPath" xml:space="preserve">
+    <value>Browser path</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SaveSettingsAfterTaskCompleted" xml:space="preserve">
+    <value>Save settings after a task completes</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DevMode" xml:space="preserve">
+    <value>Developer mode</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DisableHotkeys" xml:space="preserve">
+    <value>Disable hotkeys</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DisableHotkeysOnFullscreen" xml:space="preserve">
+    <value>Disable hotkeys in fullscreen applications</value>
+  </data>
+  <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
+    <value>Hotkey repeat interval (milliseconds)</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
+    <value>Show the clipboard content viewer</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DefaultClipboardCopyImageFillBackground" xml:space="preserve">
+    <value>Fill the image background when copying</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseAlternativeClipboardCopyImage" xml:space="preserve">
+    <value>Use alternative image copying</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseAlternativeClipboardGetImage" xml:space="preserve">
+    <value>Use alternative image retrieval</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
+    <value>Rotate images using EXIF orientation</value>
+  </data>
+  <data name="ApplicationSettingsWindow_PNGStripColorSpaceInformation" xml:space="preserve">
+    <value>Remove PNG color-space information</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DisableUpload" xml:space="preserve">
+    <value>Disable uploads</value>
+  </data>
+  <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
+    <value>Ignore emoji when URL encoding</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowMultiUploadWarning" xml:space="preserve">
+    <value>Warn before uploading more than 10 files</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
+    <value>Large-file warning threshold (MB)</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseMachineSpecificUploadersConfig" xml:space="preserve">
+    <value>Use a machine-specific uploaders configuration</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CustomUploadersConfigPath" xml:space="preserve">
+    <value>Custom uploaders configuration path</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
+    <value>Custom hotkeys configuration path</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CustomScreenshotsPath2" xml:space="preserve">
+    <value>Secondary screenshots path</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropSize" xml:space="preserve">
+    <value>Drop window size</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropOffset" xml:space="preserve">
+    <value>Drop window offset</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropAlignment" xml:space="preserve">
+    <value>Drop window position</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropOpacity" xml:space="preserve">
+    <value>Drop window opacity</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropHoverOpacity" xml:space="preserve">
+    <value>Drop window hover opacity</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TopLeft" xml:space="preserve">
+    <value>Top left</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TopCenter" xml:space="preserve">
+    <value>Top center</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TopRight" xml:space="preserve">
+    <value>Top right</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MiddleLeft" xml:space="preserve">
+    <value>Middle left</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MiddleCenter" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MiddleRight" xml:space="preserve">
+    <value>Middle right</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BottomLeft" xml:space="preserve">
+    <value>Bottom left</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BottomCenter" xml:space="preserve">
+    <value>Bottom center</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BottomRight" xml:space="preserve">
+    <value>Bottom right</value>
+  </data>
 </root>

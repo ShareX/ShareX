@@ -580,64 +580,172 @@
 
                     <!-- Advanced -->
                     <ScrollViewer controls:SettingsSearch.PageId="advanced" IsVisible="{Binding IsAdvancedPage}">
-                        <StackPanel Margin="28,24,28,32" MaxWidth="850" HorizontalAlignment="Left">
+                        <StackPanel Margin="28,24,28,32" MaxWidth="760" HorizontalAlignment="Left">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.sliders_horizontal}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Advanced}"/>
                             </Grid>
-                            <ItemsControl ItemsSource="{Binding AdvancedSettingCategories}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate x:DataType="local:AdvancedSettingCategory">
-                                        <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
-                                            <StackPanel Spacing="4">
-                                                <TextBlock Classes="section-title" Text="{Binding Title}" Margin="0,0,0,4"/>
-                                                <ItemsControl ItemsSource="{Binding Items}">
-                                                    <ItemsControl.ItemTemplate>
-                                                        <DataTemplate x:DataType="local:AdvancedSettingItem">
-                                                            <Grid ColumnDefinitions="*,260"
-                                                                  ColumnSpacing="10"
-                                                                  MinHeight="32"
-                                                                  Margin="0,1"
-                                                                  ToolTip.Tip="{Binding Description}">
-                                                                <CheckBox Grid.ColumnSpan="2"
-                                                                          Classes="setting"
-                                                                          Content="{Binding Name}"
-                                                                          IsVisible="{Binding IsBoolean}"
-                                                                          IsChecked="{Binding BoolValue, Mode=TwoWay}"/>
-                                                                <TextBlock Text="{Binding Name}"
-                                                                           IsVisible="{Binding !IsBoolean}"
-                                                                           FontWeight="Normal"
-                                                                           VerticalAlignment="Center"/>
-                                                                <NumericUpDown Grid.Column="1"
-                                                                               Height="32"
-                                                                               HorizontalAlignment="Stretch"
-                                                                               VerticalAlignment="Center"
-                                                                               IsVisible="{Binding IsInteger}"
-                                                                               Minimum="-2147483648"
-                                                                               Maximum="2147483647"
-                                                                               Value="{Binding NumberValue, Mode=TwoWay}"/>
-                                                                <TextBox Grid.Column="1"
-                                                                         Height="32"
-                                                                         Padding="8,4"
-                                                                         VerticalAlignment="Center"
-                                                                         IsVisible="{Binding IsText}"
-                                                                         Text="{Binding TextValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                                                <ComboBox Grid.Column="1"
-                                                                          Height="32"
-                                                                          Padding="8,3"
-                                                                          VerticalAlignment="Center"
-                                                                          IsVisible="{Binding IsEnum}"
-                                                                          ItemsSource="{Binding EnumOptions}"
-                                                                          SelectedItem="{Binding SelectedEnumOption, Mode=TwoWay}"/>
-                                                            </Grid>
-                                                        </DataTemplate>
-                                                    </ItemsControl.ItemTemplate>
-                                                </ItemsControl>
-                                            </StackPanel>
-                                        </Border>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_AdvancedApplication}"/>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_BinaryUnits}" IsChecked="{Binding BinaryUnits, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowMostRecentTaskFirst}" IsChecked="{Binding ShowMostRecentTaskFirst, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_WorkflowsOnlyShowEdited}" IsChecked="{Binding WorkflowsOnlyShowEdited, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_TrayAutoExpandCaptureMenu}" IsChecked="{Binding TrayAutoExpandCaptureMenu, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_BrowserPath}" FontWeight="Normal"/>
+                                        </StackPanel>
+                                        <TextBox Grid.Column="1" Classes="form-control" Text="{Binding BrowserPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Grid>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_SaveSettingsAfterTaskCompleted}" IsChecked="{Binding SaveSettingsAfterTaskCompleted, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_DevMode}" IsChecked="{Binding DevMode, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_AdvancedHotkeys}"/>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_DisableHotkeys}" IsChecked="{Binding DisableHotkeys, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_DisableHotkeysOnFullscreen}" IsChecked="{Binding DisableHotkeysOnFullscreen, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_HotkeyRepeatLimit}" FontWeight="Normal"/>
+                                        </StackPanel>
+                                        <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="200" Maximum="2147483647" Value="{Binding HotkeyRepeatLimit, Mode=TwoWay}"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_AdvancedClipboard}"/>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowClipboardContentViewer}" IsChecked="{Binding ShowClipboardContentViewer, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_DefaultClipboardCopyImageFillBackground}" IsChecked="{Binding DefaultClipboardCopyImageFillBackground, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_UseAlternativeClipboardCopyImage}" IsChecked="{Binding UseAlternativeClipboardCopyImage, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_UseAlternativeClipboardGetImage}" IsChecked="{Binding UseAlternativeClipboardGetImage, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_AdvancedImage}"/>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_RotateImageByExifOrientationData}" IsChecked="{Binding RotateImageByExifOrientationData, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_PNGStripColorSpaceInformation}" IsChecked="{Binding PNGStripColorSpaceInformation, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_AdvancedUpload}"/>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_DisableUpload}" IsChecked="{Binding DisableUpload, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_URLEncodeIgnoreEmoji}" IsChecked="{Binding URLEncodeIgnoreEmoji, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowMultiUploadWarning}" IsChecked="{Binding ShowMultiUploadWarning, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_ShowLargeFileSizeWarning}" FontWeight="Normal"/>
+                                        </StackPanel>
+                                        <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="0" Maximum="2147483647" Value="{Binding ShowLargeFileSizeWarning, Mode=TwoWay}"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_AdvancedPaths}"/>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_UseMachineSpecificUploadersConfig}" IsChecked="{Binding UseMachineSpecificUploadersConfig, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_CustomUploadersConfigPath}" FontWeight="Normal"/>
+                                        </StackPanel>
+                                        <TextBox Grid.Column="1" Classes="form-control" Text="{Binding CustomUploadersConfigPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_CustomHotkeysConfigPath}" FontWeight="Normal"/>
+                                        </StackPanel>
+                                        <TextBox Grid.Column="1" Classes="form-control" Text="{Binding CustomHotkeysConfigPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_CustomScreenshotsPath2}" FontWeight="Normal"/>
+                                        </StackPanel>
+                                        <TextBox Grid.Column="1" Classes="form-control" Text="{Binding CustomScreenshotsPath2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_AdvancedDragAndDropWindow}"/>
+                                    <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_DropSize}" FontWeight="Normal"/>
+                                        </StackPanel>
+                                        <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="1" Maximum="2147483647" Value="{Binding DropSize, Mode=TwoWay}"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_DropOffset}" FontWeight="Normal"/>
+                                        </StackPanel>
+                                        <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="-2147483648" Maximum="2147483647" Value="{Binding DropOffset, Mode=TwoWay}"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_DropAlignment}" FontWeight="Normal"/>
+                                        </StackPanel>
+                                        <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding DropAlignmentOptions}" SelectedItem="{Binding SelectedDropAlignment, Mode=TwoWay}"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_DropOpacity}" FontWeight="Normal"/>
+                                        </StackPanel>
+                                        <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="0" Maximum="255" Value="{Binding DropOpacity, Mode=TwoWay}"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_DropHoverOpacity}" FontWeight="Normal"/>
+                                        </StackPanel>
+                                        <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="0" Maximum="255" Value="{Binding DropHoverOpacity, Mode=TwoWay}"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>

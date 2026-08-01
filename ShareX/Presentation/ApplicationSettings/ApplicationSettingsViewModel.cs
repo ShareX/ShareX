@@ -69,15 +69,24 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public ObservableCollection<UploaderOption<ImageDestination>> SecondaryImageUploaders { get; private set; } = [];
     public ObservableCollection<UploaderOption<TextDestination>> SecondaryTextUploaders { get; private set; } = [];
     public ObservableCollection<UploaderOption<FileDestination>> SecondaryFileUploaders { get; private set; } = [];
-    public ObservableCollection<AdvancedSettingItem> AdvancedSettings { get; private set; } = [];
-    public ObservableCollection<AdvancedSettingCategory> AdvancedSettingCategories { get; private set; } = [];
-
     public IReadOnlyList<EnumOption<SupportedLanguage>> LanguageOptions { get; } = CreateEnumOptions<SupportedLanguage>();
     public IReadOnlyList<EnumOption<HotkeyType>> HotkeyTypeOptions { get; } = CreateEnumOptions<HotkeyType>();
     public IReadOnlyList<EnumOption<UpdateChannel>> UpdateChannelOptions { get; } = CreateEnumOptions<UpdateChannel>();
     public IReadOnlyList<EnumOption<ThumbnailTitleLocation>> ThumbnailTitleLocationOptions { get; } = CreateEnumOptions<ThumbnailTitleLocation>();
     public IReadOnlyList<EnumOption<ThumbnailViewClickAction>> ThumbnailClickActionOptions { get; } = CreateEnumOptions<ThumbnailViewClickAction>();
     public IReadOnlyList<EnumOption<ProxyMethod>> ProxyMethodOptions { get; } = CreateEnumOptions<ProxyMethod>();
+    public IReadOnlyList<EnumOption<ContentAlignment>> DropAlignmentOptions { get; } =
+    [
+        new(ContentAlignment.TopLeft, Strings.ApplicationSettingsWindow_TopLeft),
+        new(ContentAlignment.TopCenter, Strings.ApplicationSettingsWindow_TopCenter),
+        new(ContentAlignment.TopRight, Strings.ApplicationSettingsWindow_TopRight),
+        new(ContentAlignment.MiddleLeft, Strings.ApplicationSettingsWindow_MiddleLeft),
+        new(ContentAlignment.MiddleCenter, Strings.ApplicationSettingsWindow_MiddleCenter),
+        new(ContentAlignment.MiddleRight, Strings.ApplicationSettingsWindow_MiddleRight),
+        new(ContentAlignment.BottomLeft, Strings.ApplicationSettingsWindow_BottomLeft),
+        new(ContentAlignment.BottomCenter, Strings.ApplicationSettingsWindow_BottomCenter),
+        new(ContentAlignment.BottomRight, Strings.ApplicationSettingsWindow_BottomRight)
+    ];
     public IReadOnlyList<EnumOption<int>> BufferSizeOptions { get; private set; } = [];
     public IReadOnlyList<EnumOption<string>> ThemeOptions { get; } =
     [
@@ -583,6 +592,59 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public string ProxyHost { get => Settings.ProxySettings.Host ?? string.Empty; set => SetSetting(Settings.ProxySettings.Host, value, x => Settings.ProxySettings.Host = x); }
     public decimal ProxyPort { get => Settings.ProxySettings.Port; set => SetSetting(Settings.ProxySettings.Port, decimal.ToInt32(value), x => Settings.ProxySettings.Port = x); }
 
+    public bool BinaryUnits
+    {
+        get => Settings.BinaryUnits;
+        set
+        {
+            if (SetSetting(Settings.BinaryUnits, value, x => Settings.BinaryUnits = x))
+            {
+                RefreshBufferSizeOptions();
+            }
+        }
+    }
+
+    public bool ShowMostRecentTaskFirst { get => Settings.ShowMostRecentTaskFirst; set => SetSetting(Settings.ShowMostRecentTaskFirst, value, x => Settings.ShowMostRecentTaskFirst = x); }
+    public bool WorkflowsOnlyShowEdited { get => Settings.WorkflowsOnlyShowEdited; set => SetSetting(Settings.WorkflowsOnlyShowEdited, value, x => Settings.WorkflowsOnlyShowEdited = x); }
+    public bool TrayAutoExpandCaptureMenu { get => Settings.TrayAutoExpandCaptureMenu; set => SetSetting(Settings.TrayAutoExpandCaptureMenu, value, x => Settings.TrayAutoExpandCaptureMenu = x); }
+    public string BrowserPath { get => Settings.BrowserPath ?? string.Empty; set => SetSetting(Settings.BrowserPath, value, x => Settings.BrowserPath = x); }
+    public bool SaveSettingsAfterTaskCompleted { get => Settings.SaveSettingsAfterTaskCompleted; set => SetSetting(Settings.SaveSettingsAfterTaskCompleted, value, x => Settings.SaveSettingsAfterTaskCompleted = x); }
+    public bool DevMode { get => Settings.DevMode; set => SetSetting(Settings.DevMode, value, x => Settings.DevMode = x); }
+
+    public bool DisableHotkeys { get => Settings.DisableHotkeys; set => SetSetting(Settings.DisableHotkeys, value, x => Settings.DisableHotkeys = x); }
+    public bool DisableHotkeysOnFullscreen { get => Settings.DisableHotkeysOnFullscreen; set => SetSetting(Settings.DisableHotkeysOnFullscreen, value, x => Settings.DisableHotkeysOnFullscreen = x); }
+    public decimal HotkeyRepeatLimit { get => Settings.HotkeyRepeatLimit; set => SetSetting(Settings.HotkeyRepeatLimit, decimal.ToInt32(value), x => Settings.HotkeyRepeatLimit = x); }
+
+    public bool ShowClipboardContentViewer { get => Settings.ShowClipboardContentViewer; set => SetSetting(Settings.ShowClipboardContentViewer, value, x => Settings.ShowClipboardContentViewer = x); }
+    public bool DefaultClipboardCopyImageFillBackground { get => Settings.DefaultClipboardCopyImageFillBackground; set => SetSetting(Settings.DefaultClipboardCopyImageFillBackground, value, x => Settings.DefaultClipboardCopyImageFillBackground = x); }
+    public bool UseAlternativeClipboardCopyImage { get => Settings.UseAlternativeClipboardCopyImage; set => SetSetting(Settings.UseAlternativeClipboardCopyImage, value, x => Settings.UseAlternativeClipboardCopyImage = x); }
+    public bool UseAlternativeClipboardGetImage { get => Settings.UseAlternativeClipboardGetImage; set => SetSetting(Settings.UseAlternativeClipboardGetImage, value, x => Settings.UseAlternativeClipboardGetImage = x); }
+
+    public bool RotateImageByExifOrientationData { get => Settings.RotateImageByExifOrientationData; set => SetSetting(Settings.RotateImageByExifOrientationData, value, x => Settings.RotateImageByExifOrientationData = x); }
+    public bool PNGStripColorSpaceInformation { get => Settings.PNGStripColorSpaceInformation; set => SetSetting(Settings.PNGStripColorSpaceInformation, value, x => Settings.PNGStripColorSpaceInformation = x); }
+
+    public bool DisableUpload { get => Settings.DisableUpload; set => SetSetting(Settings.DisableUpload, value, x => Settings.DisableUpload = x); }
+    public bool URLEncodeIgnoreEmoji { get => Settings.URLEncodeIgnoreEmoji; set => SetSetting(Settings.URLEncodeIgnoreEmoji, value, x => Settings.URLEncodeIgnoreEmoji = x); }
+    public bool ShowMultiUploadWarning { get => Settings.ShowMultiUploadWarning; set => SetSetting(Settings.ShowMultiUploadWarning, value, x => Settings.ShowMultiUploadWarning = x); }
+    public decimal ShowLargeFileSizeWarning { get => Settings.ShowLargeFileSizeWarning; set => SetSetting(Settings.ShowLargeFileSizeWarning, decimal.ToInt32(value), x => Settings.ShowLargeFileSizeWarning = x); }
+
+    public bool UseMachineSpecificUploadersConfig { get => Settings.UseMachineSpecificUploadersConfig; set => SetSetting(Settings.UseMachineSpecificUploadersConfig, value, x => Settings.UseMachineSpecificUploadersConfig = x); }
+    public string CustomUploadersConfigPath { get => Settings.CustomUploadersConfigPath ?? string.Empty; set => SetSetting(Settings.CustomUploadersConfigPath, value, x => Settings.CustomUploadersConfigPath = x); }
+    public string CustomHotkeysConfigPath { get => Settings.CustomHotkeysConfigPath ?? string.Empty; set => SetSetting(Settings.CustomHotkeysConfigPath, value, x => Settings.CustomHotkeysConfigPath = x); }
+    public string CustomScreenshotsPath2 { get => Settings.CustomScreenshotsPath2 ?? string.Empty; set => SetSetting(Settings.CustomScreenshotsPath2, value, x => Settings.CustomScreenshotsPath2 = x); }
+
+    public decimal DropSize { get => Settings.DropSize; set => SetSetting(Settings.DropSize, decimal.ToInt32(value), x => Settings.DropSize = x); }
+    public decimal DropOffset { get => Settings.DropOffset; set => SetSetting(Settings.DropOffset, decimal.ToInt32(value), x => Settings.DropOffset = x); }
+
+    public EnumOption<ContentAlignment>? SelectedDropAlignment
+    {
+        get => Find(DropAlignmentOptions, Settings.DropAlignment);
+        set { if (value != null) SetSetting(Settings.DropAlignment, value.Value, x => Settings.DropAlignment = x); }
+    }
+
+    public decimal DropOpacity { get => Settings.DropOpacity; set => SetSetting(Settings.DropOpacity, decimal.ToInt32(value), x => Settings.DropOpacity = x); }
+    public decimal DropHoverOpacity { get => Settings.DropHoverOpacity; set => SetSetting(Settings.DropHoverOpacity, decimal.ToInt32(value), x => Settings.DropHoverOpacity = x); }
+
     public bool IsBusy
     {
         get => _isBusy;
@@ -802,17 +864,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         SecondaryFileUploaders = CreateUploaderOptions(Settings.SecondaryFileUploaders);
         SyncUploaderSettings();
 
-        AdvancedSettings = new ObservableCollection<AdvancedSettingItem>(
-            TypeDescriptor.GetProperties(Settings).Cast<PropertyDescriptor>()
-                .Where(x => x.IsBrowsable && (x.PropertyType == typeof(bool) || x.PropertyType == typeof(int) || x.PropertyType == typeof(string) || x.PropertyType.IsEnum))
-                .OrderBy(x => x.Category)
-                .ThenBy(x => x.DisplayName)
-                .Select(x => new AdvancedSettingItem(Settings, x, OnAdvancedSettingChanged)));
-
-        AdvancedSettingCategories = new ObservableCollection<AdvancedSettingCategory>(AdvancedSettings
-            .GroupBy(x => x.Category)
-            .Select(group => new AdvancedSettingCategory(group.Key, new ObservableCollection<AdvancedSettingItem>(group))));
-
         RefreshBufferSizeOptions();
 
         NavigationItems = CreateNavigationItems();
@@ -1003,12 +1054,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     {
         _saveTimer.Stop();
         _saveTimer.Start();
-    }
-
-    private void OnAdvancedSettingChanged()
-    {
-        RefreshBufferSizeOptions();
-        MarkChanged();
     }
 
     private void RefreshBufferSizeOptions()
