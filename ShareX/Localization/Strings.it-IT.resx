@@ -1006,4 +1006,73 @@
   <data name="ApplicationSettingsWindow_BottomRight" xml:space="preserve">
     <value>In basso a destra</value>
   </data>
+  <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - Impostazioni delle scorciatoie</value>
+  </data>
+  <data name="HotkeySettingsWindow_Add" xml:space="preserve">
+    <value>Aggiungi</value>
+  </data>
+  <data name="HotkeySettingsWindow_Remove" xml:space="preserve">
+    <value>Rimuovi</value>
+  </data>
+  <data name="HotkeySettingsWindow_EditTask" xml:space="preserve">
+    <value>Modifica attività...</value>
+  </data>
+  <data name="HotkeySettingsWindow_Duplicate" xml:space="preserve">
+    <value>Duplica</value>
+  </data>
+  <data name="HotkeySettingsWindow_MoveUp" xml:space="preserve">
+    <value>Sposta su</value>
+  </data>
+  <data name="HotkeySettingsWindow_MoveDown" xml:space="preserve">
+    <value>Sposta giù</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetWithEllipsis" xml:space="preserve">
+    <value>Ripristina...</value>
+  </data>
+  <data name="HotkeySettingsWindow_GlobalHotkeysAreCurrentlyDisabled" xml:space="preserve">
+    <value>Le scorciatoie globali sono attualmente disattivate.</value>
+  </data>
+  <data name="HotkeySettingsWindow_EnableHotkeys" xml:space="preserve">
+    <value>Attiva scorciatoie</value>
+  </data>
+  <data name="HotkeySettingsWindow_Task" xml:space="preserve">
+    <value>ATTIVITÀ</value>
+  </data>
+  <data name="HotkeySettingsWindow_Hotkey" xml:space="preserve">
+    <value>SCORCIATOIA</value>
+  </data>
+  <data name="HotkeySettingsWindow_ThisTaskHasCustomSettings" xml:space="preserve">
+    <value>Questa attività ha impostazioni personalizzate</value>
+  </data>
+  <data name="HotkeySettingsWindow_EditTaskSettings" xml:space="preserve">
+    <value>Modifica impostazioni attività...</value>
+  </data>
+  <data name="HotkeySettingsWindow_AddAHotkeyToCreateAWorkflow" xml:space="preserve">
+    <value>Aggiungi una scorciatoia per creare un flusso di lavoro</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetHotkeysQuestion" xml:space="preserve">
+    <value>Ripristinare le scorciatoie?</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetHotkeysDescription" xml:space="preserve">
+    <value>Tutte le scorciatoie e le relative impostazioni attività personalizzate verranno sostituite con i valori predefiniti di ShareX.</value>
+  </data>
+  <data name="HotkeySettingsWindow_Cancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="HotkeySettingsWindow_Reset" xml:space="preserve">
+    <value>Ripristina</value>
+  </data>
+  <data name="HotkeySettingsWindow_PressAHotkey" xml:space="preserve">
+    <value>Premi una scorciatoia...</value>
+  </data>
+  <data name="HotkeySettingsWindow_Registered" xml:space="preserve">
+    <value>Registrata</value>
+  </data>
+  <data name="HotkeySettingsWindow_RegistrationFailed" xml:space="preserve">
+    <value>Registrazione non riuscita</value>
+  </data>
+  <data name="HotkeySettingsWindow_NotConfigured" xml:space="preserve">
+    <value>Non configurata</value>
+  </data>
 </root>

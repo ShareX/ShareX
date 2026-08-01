@@ -1006,4 +1006,73 @@
   <data name="ApplicationSettingsWindow_BottomRight" xml:space="preserve">
     <value>أسفل اليمين</value>
   </data>
+  <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - إعدادات اختصارات لوحة المفاتيح</value>
+  </data>
+  <data name="HotkeySettingsWindow_Add" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="HotkeySettingsWindow_Remove" xml:space="preserve">
+    <value>إزالة</value>
+  </data>
+  <data name="HotkeySettingsWindow_EditTask" xml:space="preserve">
+    <value>تحرير المهمة...</value>
+  </data>
+  <data name="HotkeySettingsWindow_Duplicate" xml:space="preserve">
+    <value>تكرار</value>
+  </data>
+  <data name="HotkeySettingsWindow_MoveUp" xml:space="preserve">
+    <value>نقل لأعلى</value>
+  </data>
+  <data name="HotkeySettingsWindow_MoveDown" xml:space="preserve">
+    <value>نقل لأسفل</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetWithEllipsis" xml:space="preserve">
+    <value>إعادة تعيين...</value>
+  </data>
+  <data name="HotkeySettingsWindow_GlobalHotkeysAreCurrentlyDisabled" xml:space="preserve">
+    <value>اختصارات لوحة المفاتيح العامة معطلة حالياً.</value>
+  </data>
+  <data name="HotkeySettingsWindow_EnableHotkeys" xml:space="preserve">
+    <value>تمكين الاختصارات</value>
+  </data>
+  <data name="HotkeySettingsWindow_Task" xml:space="preserve">
+    <value>المهمة</value>
+  </data>
+  <data name="HotkeySettingsWindow_Hotkey" xml:space="preserve">
+    <value>الاختصار</value>
+  </data>
+  <data name="HotkeySettingsWindow_ThisTaskHasCustomSettings" xml:space="preserve">
+    <value>تحتوي هذه المهمة على إعدادات مخصصة</value>
+  </data>
+  <data name="HotkeySettingsWindow_EditTaskSettings" xml:space="preserve">
+    <value>تحرير إعدادات المهمة...</value>
+  </data>
+  <data name="HotkeySettingsWindow_AddAHotkeyToCreateAWorkflow" xml:space="preserve">
+    <value>أضف اختصاراً لإنشاء سير عمل</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetHotkeysQuestion" xml:space="preserve">
+    <value>إعادة تعيين الاختصارات؟</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetHotkeysDescription" xml:space="preserve">
+    <value>سيتم استبدال جميع الاختصارات وإعدادات المهام المخصصة الخاصة بها بإعدادات ShareX الافتراضية.</value>
+  </data>
+  <data name="HotkeySettingsWindow_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="HotkeySettingsWindow_Reset" xml:space="preserve">
+    <value>إعادة تعيين</value>
+  </data>
+  <data name="HotkeySettingsWindow_PressAHotkey" xml:space="preserve">
+    <value>اضغط اختصاراً...</value>
+  </data>
+  <data name="HotkeySettingsWindow_Registered" xml:space="preserve">
+    <value>مسجل</value>
+  </data>
+  <data name="HotkeySettingsWindow_RegistrationFailed" xml:space="preserve">
+    <value>فشل التسجيل</value>
+  </data>
+  <data name="HotkeySettingsWindow_NotConfigured" xml:space="preserve">
+    <value>غير مهيأ</value>
+  </data>
 </root>

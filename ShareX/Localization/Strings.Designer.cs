@@ -2207,5 +2207,120 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("ApplicationSettingsWindow_BottomRight", resourceCulture);
             }
         }
+        public static string HotkeySettingsWindow_WindowTitle {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_WindowTitle", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_Add {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_Add", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_Remove {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_Remove", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_EditTask {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_EditTask", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_Duplicate {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_Duplicate", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_MoveUp {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_MoveUp", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_MoveDown {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_MoveDown", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_ResetWithEllipsis {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_ResetWithEllipsis", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_GlobalHotkeysAreCurrentlyDisabled {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_GlobalHotkeysAreCurrentlyDisabled", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_EnableHotkeys {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_EnableHotkeys", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_Task {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_Task", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_Hotkey {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_Hotkey", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_ThisTaskHasCustomSettings {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_ThisTaskHasCustomSettings", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_EditTaskSettings {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_EditTaskSettings", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_AddAHotkeyToCreateAWorkflow {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_AddAHotkeyToCreateAWorkflow", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_ResetHotkeysQuestion {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_ResetHotkeysQuestion", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_ResetHotkeysDescription {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_ResetHotkeysDescription", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_Cancel {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_Reset {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_Reset", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_PressAHotkey {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_PressAHotkey", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_Registered {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_Registered", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_RegistrationFailed {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_RegistrationFailed", resourceCulture);
+            }
+        }
+        public static string HotkeySettingsWindow_NotConfigured {
+            get {
+                return ResourceManager.GetString("HotkeySettingsWindow_NotConfigured", resourceCulture);
+            }
+        }
     }
 }

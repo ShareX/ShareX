@@ -1006,4 +1006,73 @@
   <data name="ApplicationSettingsWindow_BottomRight" xml:space="preserve">
     <value>پایین راست</value>
   </data>
+  <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - تنظیمات کلیدهای میانبر</value>
+  </data>
+  <data name="HotkeySettingsWindow_Add" xml:space="preserve">
+    <value>افزودن</value>
+  </data>
+  <data name="HotkeySettingsWindow_Remove" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="HotkeySettingsWindow_EditTask" xml:space="preserve">
+    <value>ویرایش وظیفه...</value>
+  </data>
+  <data name="HotkeySettingsWindow_Duplicate" xml:space="preserve">
+    <value>تکثیر</value>
+  </data>
+  <data name="HotkeySettingsWindow_MoveUp" xml:space="preserve">
+    <value>انتقال به بالا</value>
+  </data>
+  <data name="HotkeySettingsWindow_MoveDown" xml:space="preserve">
+    <value>انتقال به پایین</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetWithEllipsis" xml:space="preserve">
+    <value>بازنشانی...</value>
+  </data>
+  <data name="HotkeySettingsWindow_GlobalHotkeysAreCurrentlyDisabled" xml:space="preserve">
+    <value>کلیدهای میانبر سراسری در حال حاضر غیرفعال هستند.</value>
+  </data>
+  <data name="HotkeySettingsWindow_EnableHotkeys" xml:space="preserve">
+    <value>فعال کردن کلیدهای میانبر</value>
+  </data>
+  <data name="HotkeySettingsWindow_Task" xml:space="preserve">
+    <value>وظیفه</value>
+  </data>
+  <data name="HotkeySettingsWindow_Hotkey" xml:space="preserve">
+    <value>کلید میانبر</value>
+  </data>
+  <data name="HotkeySettingsWindow_ThisTaskHasCustomSettings" xml:space="preserve">
+    <value>این وظیفه تنظیمات سفارشی دارد</value>
+  </data>
+  <data name="HotkeySettingsWindow_EditTaskSettings" xml:space="preserve">
+    <value>ویرایش تنظیمات وظیفه...</value>
+  </data>
+  <data name="HotkeySettingsWindow_AddAHotkeyToCreateAWorkflow" xml:space="preserve">
+    <value>برای ایجاد گردش کار یک کلید میانبر اضافه کنید</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetHotkeysQuestion" xml:space="preserve">
+    <value>کلیدهای میانبر بازنشانی شوند؟</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetHotkeysDescription" xml:space="preserve">
+    <value>همه کلیدهای میانبر و تنظیمات سفارشی وظیفه آن‌ها با پیش‌فرض‌های ShareX جایگزین خواهند شد.</value>
+  </data>
+  <data name="HotkeySettingsWindow_Cancel" xml:space="preserve">
+    <value>لغو</value>
+  </data>
+  <data name="HotkeySettingsWindow_Reset" xml:space="preserve">
+    <value>بازنشانی</value>
+  </data>
+  <data name="HotkeySettingsWindow_PressAHotkey" xml:space="preserve">
+    <value>یک کلید میانبر فشار دهید...</value>
+  </data>
+  <data name="HotkeySettingsWindow_Registered" xml:space="preserve">
+    <value>ثبت‌شده</value>
+  </data>
+  <data name="HotkeySettingsWindow_RegistrationFailed" xml:space="preserve">
+    <value>ثبت ناموفق بود</value>
+  </data>
+  <data name="HotkeySettingsWindow_NotConfigured" xml:space="preserve">
+    <value>پیکربندی نشده</value>
+  </data>
 </root>

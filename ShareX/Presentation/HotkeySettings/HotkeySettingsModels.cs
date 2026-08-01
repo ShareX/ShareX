@@ -14,6 +14,7 @@
 
 #nullable enable
 
+using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,7 +68,7 @@ public sealed class HotkeySettingsItem : INotifyPropertyChanged
         }
     }
 
-    public string DisplayHotkey => IsCapturing ? "Press a hotkey..." : HotkeyText;
+    public string DisplayHotkey => IsCapturing ? Strings.HotkeySettingsWindow_PressAHotkey : HotkeyText;
 
     public HotkeyRegistrationState RegistrationState
     {
@@ -90,9 +91,9 @@ public sealed class HotkeySettingsItem : INotifyPropertyChanged
 
     public string StatusText => RegistrationState switch
     {
-        HotkeyRegistrationState.Registered => "Registered",
-        HotkeyRegistrationState.Failed => "Registration failed",
-        _ => "Not configured"
+        HotkeyRegistrationState.Registered => Strings.HotkeySettingsWindow_Registered,
+        HotkeyRegistrationState.Failed => Strings.HotkeySettingsWindow_RegistrationFailed,
+        _ => Strings.HotkeySettingsWindow_NotConfigured
     };
 
     public bool IsCustomized
