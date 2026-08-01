@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MainWindow_CombineImages" xml:space="preserve">
+    <value>Объединить изображения</value>
+  </data>
+  <data name="MainWindow_FilesDroppedUploadDescription" xml:space="preserve">
+    <value>Перетащенные сюда файлы будут загружены с помощью ShareX.</value>
+  </data>
+  <data name="MainWindow_Horizontal" xml:space="preserve">
+    <value>Горизонтальный</value>
+  </data>
+  <data name="MainWindow_HotkeyHint" xml:space="preserve">
+    <value>Используйте горячую клавишу для захвата или загрузки. Результаты появятся здесь в виде миниатюр.</value>
+  </data>
+  <data name="MainWindow_ReleaseToUploadFiles" xml:space="preserve">
+    <value>Отпустите, чтобы загрузить файлы</value>
+  </data>
+  <data name="MainWindow_ReleaseToUploadText" xml:space="preserve">
+    <value>Отпустите, чтобы загрузить текст</value>
+  </data>
+  <data name="MainWindow_ShareXHotkeys" xml:space="preserve">
+    <value>Горячие клавиши ShareX</value>
+  </data>
+  <data name="MainWindow_TextDroppedUploadDescription" xml:space="preserve">
+    <value>Перетащенный сюда текст будет загружен с помощью ShareX.</value>
+  </data>
+  <data name="MainWindow_Vertical" xml:space="preserve">
+    <value>Вертикальный</value>
+  </data>
+  <data name="MainMenuBuilder_About" xml:space="preserve">
+    <value>О программе...</value>
+  </data>
+  <data name="MainMenuBuilder_ActionsToolbar" xml:space="preserve">
+    <value>Панель действий</value>
+  </data>
+  <data name="MainWindow_AddImageEffects" xml:space="preserve">
+    <value>Добавить эффекты изображений...</value>
+  </data>
+  <data name="MainMenuBuilder_AddWorkflowsFromHotkeySettings" xml:space="preserve">
+    <value>Добавить рабочие процессы из настроек горячих клавиш...</value>
+  </data>
+  <data name="MainMenuBuilder_AfterCaptureTasks" xml:space="preserve">
+    <value>Задачи после захвата</value>
+  </data>
+  <data name="MainMenuBuilder_AfterUploadTasks" xml:space="preserve">
+    <value>Задачи после загрузки</value>
+  </data>
+  <data name="MainWindow_AnalyzeImage" xml:space="preserve">
+    <value>Анализировать изображение</value>
+  </data>
+  <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
+    <value>Настройки приложения...</value>
+  </data>
+  <data name="MainMenuBuilder_AutoCapture" xml:space="preserve">
+    <value>Автозахват</value>
+  </data>
+  <data name="MainMenuBuilder_BackgroundRemover" xml:space="preserve">
+    <value>Удаление фона...</value>
+  </data>
+  <data name="MainWindow_BeautifyImage" xml:space="preserve">
+    <value>Украсить изображение</value>
+  </data>
+  <data name="MainMenuBuilder_BorderlessWindow" xml:space="preserve">
+    <value>Безрамочное окно</value>
+  </data>
+  <data name="MainMenuBuilder_Capture" xml:space="preserve">
+    <value>Захват</value>
+  </data>
+  <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
+    <value>Очистить представление миниатюр</value>
+  </data>
+  <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
+    <value>Буфер обмена</value>
+  </data>
+  <data name="MainMenuBuilder_ColorPicker" xml:space="preserve">
+    <value>Палитра</value>
+  </data>
+  <data name="MainWindow_CombineImagesDialog" xml:space="preserve">
+    <value>Объединить изображения...</value>
+  </data>
+  <data name="MainWindow_Copy" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="MainMenuBuilder_CustomUploaderSettings" xml:space="preserve">
+    <value>Настройки пользовательского загрузчика...</value>
+  </data>
+  <data name="MainMenuBuilder_Debug" xml:space="preserve">
+    <value>Отладка</value>
+  </data>
+  <data name="MainWindow_DeleteSelectedFile" xml:space="preserve">
+    <value>Удалить выбранный файл...</value>
+  </data>
+  <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
+    <value>Удалить выбранный элемент</value>
+  </data>
+  <data name="MainWindow_DeletionUrl" xml:space="preserve">
+    <value>Ссылка на удаление</value>
+  </data>
+  <data name="MainMenuBuilder_DestinationSettings" xml:space="preserve">
+    <value>Настройки назначений...</value>
+  </data>
+  <data name="MainMenuBuilder_Destinations" xml:space="preserve">
+    <value>Назначения</value>
+  </data>
+  <data name="MainMenuBuilder_DisableHotkeys" xml:space="preserve">
+    <value>Отключить горячие клавиши</value>
+  </data>
+  <data name="MainMenuBuilder_Discord" xml:space="preserve">
+    <value>Discord...</value>
+  </data>
+  <data name="MainMenuBuilder_Donate" xml:space="preserve">
+    <value>Пожертвовать</value>
+  </data>
+  <data name="MainWindow_DownloadSelectedUrl" xml:space="preserve">
+    <value>Скачать выбранный URL</value>
+  </data>
+  <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
+    <value>Загрузка перетаскиванием</value>
+  </data>
+  <data name="MainWindow_EditImage" xml:space="preserve">
+    <value>Редактировать изображение</value>
+  </data>
+  <data name="MainMenuBuilder_EnableAddImageEffects" xml:space="preserve">
+    <value>Включить добавление эффектов изображения</value>
+  </data>
+  <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
+    <value>Включить горячие клавиши</value>
+  </data>
+  <data name="MainMenuBuilder_Exit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="MainWindow_File" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="MainWindow_FileName" xml:space="preserve">
+    <value>Имя файла</value>
+  </data>
+  <data name="MainWindow_FileNameWithExtension" xml:space="preserve">
+    <value>Имя файла с расширением</value>
+  </data>
+  <data name="MainWindow_FilePath" xml:space="preserve">
+    <value>Путь к файлу</value>
+  </data>
+  <data name="MainWindow_Folder" xml:space="preserve">
+    <value>Папка</value>
+  </data>
+  <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
+    <value>Подписаться на ShareX...</value>
+  </data>
+  <data name="MainWindow_ForumImage" xml:space="preserve">
+    <value>Изображение для форума</value>
+  </data>
+  <data name="MainWindow_ForumLink" xml:space="preserve">
+    <value>Ссылка для форума</value>
+  </data>
+  <data name="MainWindow_ForumLinkedImage" xml:space="preserve">
+    <value>Связанное изображение для форума</value>
+  </data>
+  <data name="MainMenuBuilder_Fullscreen" xml:space="preserve">
+    <value>Полноэкранный</value>
+  </data>
+  <data name="MainMenuBuilder_HashChecker" xml:space="preserve">
+    <value>Проверка хеша</value>
+  </data>
+  <data name="MainMenuBuilder_History" xml:space="preserve">
+    <value>История</value>
+  </data>
+  <data name="MainWindow_Horizontally" xml:space="preserve">
+    <value>Горизонтально</value>
+  </data>
+  <data name="MainMenuBuilder_HotkeySettings" xml:space="preserve">
+    <value>Настройки горячих клавиш...</value>
+  </data>
+  <data name="MainWindow_HtmlImage" xml:space="preserve">
+    <value>HTML-изображение</value>
+  </data>
+  <data name="MainWindow_HtmlLink" xml:space="preserve">
+    <value>HTML-ссылка</value>
+  </data>
+  <data name="MainWindow_HtmlLinkedImage" xml:space="preserve">
+    <value>Связанное HTML-изображение</value>
+  </data>
+  <data name="MainMenuBuilder_IconConverter" xml:space="preserve">
+    <value>Конвертер значков...</value>
+  </data>
+  <data name="MainWindow_Image" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
+  <data name="MainMenuBuilder_ImageBeautifier" xml:space="preserve">
+    <value>Украшатель изображений</value>
+  </data>
+  <data name="MainMenuBuilder_ImageCombiner" xml:space="preserve">
+    <value>Объединитель изображений</value>
+  </data>
+  <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
+    <value>Сравнение изображений</value>
+  </data>
+  <data name="MainWindow_ImageDimensions" xml:space="preserve">
+    <value>Размеры изображения</value>
+  </data>
+  <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
+    <value>Редактор изображений</value>
+  </data>
+  <data name="MainMenuBuilder_ImageEffects" xml:space="preserve">
+    <value>Эффекты изображений</value>
+  </data>
+  <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
+    <value>История изображений...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
+    <value>Разделитель изображений</value>
+  </data>
+  <data name="MainMenuBuilder_ImageThumbnailer" xml:space="preserve">
+    <value>Миниатюры изображений</value>
+  </data>
+  <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
+    <value>Просмотр изображений</value>
+  </data>
+  <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
+    <value>Индексировать папку...</value>
+  </data>
+  <data name="MainMenuBuilder_InspectWindow" xml:space="preserve">
+    <value>Исследовать окно</value>
+  </data>
+  <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
+    <value>Последняя область</value>
+  </data>
+  <data name="MainWindow_MarkdownImage" xml:space="preserve">
+    <value>Изображение Markdown</value>
+  </data>
+  <data name="MainWindow_MarkdownLink" xml:space="preserve">
+    <value>Ссылка Markdown</value>
+  </data>
+  <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
+    <value>Связанное изображение Markdown</value>
+  </data>
+  <data name="MainMenuBuilder_Metadata" xml:space="preserve">
+    <value>Метаданные</value>
+  </data>
+  <data name="MainMenuBuilder_Monitor" xml:space="preserve">
+    <value>Монитор</value>
+  </data>
+  <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
+    <value>Проверка монитора</value>
+  </data>
+  <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
+    <value>Нет предустановок эффектов изображения</value>
+  </data>
+  <data name="MainMenuBuilder_NoWindowsFound" xml:space="preserve">
+    <value>Окна не найдены</value>
+  </data>
+  <data name="MainMenuBuilder_OCR" xml:space="preserve">
+    <value>Распознавание текста (OCR)</value>
+  </data>
+  <data name="MainWindow_OCRImage" xml:space="preserve">
+    <value>OCR изображения...</value>
+  </data>
+  <data name="MainWindow_Open" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="MainWindow_PinToScreen" xml:space="preserve">
+    <value>Закрепить на экране</value>
+  </data>
+  <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
+    <value>Закрепить на экране</value>
+  </data>
+  <data name="MainMenuBuilder_QRCode" xml:space="preserve">
+    <value>QR-код</value>
+  </data>
+  <data name="MainMenuBuilder_RecentItems" xml:space="preserve">
+    <value>Недавние элементы</value>
+  </data>
+  <data name="MainMenuBuilder_Region" xml:space="preserve">
+    <value>Область...</value>
+  </data>
+  <data name="MainMenuBuilder_RegionLight" xml:space="preserve">
+    <value>Область (светлая)...</value>
+  </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>Область (прозрачная)...</value>
+  </data>
+  <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
+    <value>Перезапустить от имени администратора</value>
+  </data>
+  <data name="MainMenuBuilder_Ruler" xml:space="preserve">
+    <value>Линейка</value>
+  </data>
+  <data name="MainWindow_RunAction" xml:space="preserve">
+    <value>Выполнить действие</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
+    <value>Пипетка</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenRecording" xml:space="preserve">
+    <value>Запись экрана...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
+    <value>Запись экрана (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
+    <value>Папка снимков экрана...</value>
+  </data>
+  <data name="MainMenuBuilder_ScrollingCapture" xml:space="preserve">
+    <value>Захват с прокруткой...</value>
+  </data>
+  <data name="MainWindow_SearchWithBingVisualSearch" xml:space="preserve">
+    <value>Искать с помощью визуального поиска Bing...</value>
+  </data>
+  <data name="MainWindow_SearchWithGoogleLens" xml:space="preserve">
+    <value>Искать с помощью Google Lens...</value>
+  </data>
+  <data name="MainWindow_ShareSelectedUrl" xml:space="preserve">
+    <value>Поделиться выбранным URL</value>
+  </data>
+  <data name="MainWindow_ShortenSelectedUrl" xml:space="preserve">
+    <value>Сократить выбранный URL</value>
+  </data>
+  <data name="MainMenuBuilder_ShortenUrl" xml:space="preserve">
+    <value>Сокращение ссылки</value>
+  </data>
+  <data name="MainWindow_ShortenedUrl" xml:space="preserve">
+    <value>Короткая ссылка</value>
+  </data>
+  <data name="MainMenuBuilder_ShowCursor" xml:space="preserve">
+    <value>Показывать курсор</value>
+  </data>
+  <data name="MainMenuBuilder_ShowDebugLog" xml:space="preserve">
+    <value>Показать журнал отладки...</value>
+  </data>
+  <data name="MainWindow_ShowErrors" xml:space="preserve">
+    <value>Показать ошибки...</value>
+  </data>
+  <data name="MainWindow_ShowQRCode" xml:space="preserve">
+    <value>Показать QR-код...</value>
+  </data>
+  <data name="MainWindow_ShowResponse" xml:space="preserve">
+    <value>Показать ответ...</value>
+  </data>
+  <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
+    <value>Показать ShareX</value>
+  </data>
+  <data name="MainWindow_StopUpload" xml:space="preserve">
+    <value>Остановить загрузку</value>
+  </data>
+  <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
+    <value>Настройки задач</value>
+  </data>
+  <data name="MainMenuBuilder_TestFileUpload" xml:space="preserve">
+    <value>Проверить загрузку файла</value>
+  </data>
+  <data name="MainMenuBuilder_TestImageUpload" xml:space="preserve">
+    <value>Проверить загрузку изображения</value>
+  </data>
+  <data name="MainMenuBuilder_TestTextUpload" xml:space="preserve">
+    <value>Проверить загрузку текста</value>
+  </data>
+  <data name="MainMenuBuilder_TestUrlSharing" xml:space="preserve">
+    <value>Проверить общий доступ по URL</value>
+  </data>
+  <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
+    <value>Проверить сокращение URL</value>
+  </data>
+  <data name="MainWindow_Text" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="MainWindow_ThumbnailFile" xml:space="preserve">
+    <value>Файл миниатюры</value>
+  </data>
+  <data name="MainWindow_ThumbnailImage" xml:space="preserve">
+    <value>Миниатюра изображения</value>
+  </data>
+  <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
+    <value>Ссылка на миниатюру</value>
+  </data>
+  <data name="MainMenuBuilder_Tools" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="ThumbnailItemViewModel_UntitledTask" xml:space="preserve">
+    <value>Задача без названия</value>
+  </data>
+  <data name="MainMenuBuilder_Upload" xml:space="preserve">
+    <value>Загрузка</value>
+  </data>
+  <data name="MainMenuBuilder_UploadClipboard" xml:space="preserve">
+    <value>Загрузить буфер обмена...</value>
+  </data>
+  <data name="MainMenuBuilder_UploadFile" xml:space="preserve">
+    <value>Загрузить файл</value>
+  </data>
+  <data name="MainMenuBuilder_UploadFolder" xml:space="preserve">
+    <value>Загрузка папки</value>
+  </data>
+  <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
+    <value>Загрузить выбранный файл</value>
+  </data>
+  <data name="MainMenuBuilder_UploadText" xml:space="preserve">
+    <value>Загрузка текста</value>
+  </data>
+  <data name="MainMenuBuilder_UploadUrl" xml:space="preserve">
+    <value>Загрузить URL...</value>
+  </data>
+  <data name="MainWindow_Url" xml:space="preserve">
+    <value>Ссылка</value>
+  </data>
+  <data name="MainWindow_Vertically" xml:space="preserve">
+    <value>Вертикально</value>
+  </data>
+  <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
+    <value>Конвертер видео</value>
+  </data>
+  <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
+    <value>Миниатюры из видео</value>
+  </data>
+  <data name="MainMenuBuilder_Window" xml:space="preserve">
+    <value>Окно</value>
+  </data>
+  <data name="MainMenuBuilder_Workflows" xml:space="preserve">
+    <value>Рабочие процессы</value>
+  </data>
+  <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
+    <value>Анализировать изображение</value>
+  </data>
+  <data name="MainMenuBuilder_Copy" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="MainMenuBuilder_Open" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+</root>
