@@ -14,6 +14,7 @@
 
 #nullable enable
 
+using Avalonia.Media.Imaging;
 using ShareX.HelpersLib;
 using System;
 using System.ComponentModel;
@@ -22,6 +23,11 @@ using System.Runtime.CompilerServices;
 namespace ShareX;
 
 public sealed record EnumOption<T>(T Value, string DisplayName)
+{
+    public override string ToString() => DisplayName;
+}
+
+public sealed record LanguageOption(SupportedLanguage Value, string DisplayName, Bitmap Icon)
 {
     public override string ToString() => DisplayName;
 }

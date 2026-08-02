@@ -146,7 +146,16 @@
                                         <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_LanguageLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1" Classes="form-control"
                                                   ItemsSource="{Binding LanguageOptions}"
-                                                  SelectedItem="{Binding SelectedLanguage, Mode=TwoWay}"/>
+                                                  SelectedItem="{Binding SelectedLanguage, Mode=TwoWay}">
+                                            <ComboBox.ItemTemplate>
+                                                <DataTemplate x:DataType="local:LanguageOption">
+                                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                                        <Image Width="16" Height="16" Source="{Binding Icon}" Stretch="Uniform"/>
+                                                        <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </ComboBox.ItemTemplate>
+                                        </ComboBox>
                                     </Grid>
                                     <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowTrayIcon}" IsChecked="{Binding ShowTray, Mode=TwoWay}"/>
                                     <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_MinimizeToTrayOnStart}" IsEnabled="{Binding SilentRunEnabled}" IsChecked="{Binding SilentRun, Mode=TwoWay}"/>

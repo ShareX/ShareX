@@ -14,6 +14,7 @@
 
 #nullable enable
 
+using Avalonia.Platform;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
@@ -26,10 +27,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using AvaloniaColor = Avalonia.Media.Color;
 
 namespace ShareX;
@@ -69,7 +72,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public ObservableCollection<UploaderOption<ImageDestination>> SecondaryImageUploaders { get; private set; } = [];
     public ObservableCollection<UploaderOption<TextDestination>> SecondaryTextUploaders { get; private set; } = [];
     public ObservableCollection<UploaderOption<FileDestination>> SecondaryFileUploaders { get; private set; } = [];
-    public IReadOnlyList<EnumOption<SupportedLanguage>> LanguageOptions { get; } = CreateEnumOptions<SupportedLanguage>();
+    public IReadOnlyList<LanguageOption> LanguageOptions { get; } = CreateLanguageOptions();
     public IReadOnlyList<EnumOption<HotkeyType>> HotkeyTypeOptions { get; } = CreateEnumOptions<HotkeyType>();
     public IReadOnlyList<EnumOption<UpdateChannel>> UpdateChannelOptions { get; } = CreateEnumOptions<UpdateChannel>();
     public IReadOnlyList<EnumOption<ThumbnailTitleLocation>> ThumbnailTitleLocationOptions { get; } = CreateEnumOptions<ThumbnailTitleLocation>();
@@ -162,7 +165,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
     }
 
-    public EnumOption<SupportedLanguage>? SelectedLanguage
+    public LanguageOption? SelectedLanguage
     {
         get => Find(LanguageOptions, Settings.Language);
         set
@@ -1106,6 +1109,24 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     private static IReadOnlyList<EnumOption<T>> CreateEnumOptions<T>() where T : struct, Enum =>
         Helpers.GetEnums<T>().Select(x => new EnumOption<T>(x, x.GetLocalizedDescription())).ToArray();
 
+    private static IReadOnlyList<LanguageOption> CreateLanguageOptions() =>
+        Helpers.GetEnums<SupportedLanguage>()
+            .Select(x => new LanguageOption(x, x.GetLocalizedDescription(), LoadLanguageIcon(x)))
+            .ToArray();
+
+    private static AvaloniaBitmap LoadLanguageIcon(SupportedLanguage language)
+    {
+        string resourceName = language == SupportedLanguage.Automatic
+            ? "globe"
+            : LanguageHelper.GetCultureName(language).Split('-')[1].ToLowerInvariant();
+
+        using Stream stream = AssetLoader.Open(new Uri($"avares://ShareX/Resources/{resourceName}.png"));
+        return new AvaloniaBitmap(stream);
+    }
+
+    private static LanguageOption? Find(IReadOnlyList<LanguageOption> options, SupportedLanguage value) =>
+        options.FirstOrDefault(x => x.Value == value);
+
     private static EnumOption<T>? Find<T>(IReadOnlyList<EnumOption<T>> options, T value) =>
         options.FirstOrDefault(x => EqualityComparer<T>.Default.Equals(x.Value, value));
 
@@ -1167,6 +1188,10 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
         _disposed = true;
         _saveTimer.Stop();
+        foreach (LanguageOption language in LanguageOptions)
+        {
+            language.Icon.Dispose();
+        }
         FlushPersonalPath();
         InvokeOnMainThread(Program.MainForm.ApplyApplicationSettings);
         SettingManager.SaveApplicationConfigAsync();

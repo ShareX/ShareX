@@ -25,6 +25,8 @@
   </ItemGroup>
   <ItemGroup>
     <AvaloniaResource Include="Resources\About_Logo.png" />
+    <AvaloniaResource Include="Resources\??.png" />
+    <AvaloniaResource Include="Resources\globe.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Localization\Strings.resx">
