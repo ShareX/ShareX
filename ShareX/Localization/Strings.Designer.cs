@@ -5052,5 +5052,60 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_XPathResponseValue", resourceCulture);
             }
         }
+        public static string TaskHelpers_FileDoesNotExist {
+            get {
+                return ResourceManager.GetString("TaskHelpers_FileDoesNotExist", resourceCulture);
+            }
+        }
+        public static string TaskHelpers_ExifToolDoesNotExist {
+            get {
+                return ResourceManager.GetString("TaskHelpers_ExifToolDoesNotExist", resourceCulture);
+            }
+        }
+        public static string TaskHelpers_ExifToolMissingTitle {
+            get {
+                return ResourceManager.GetString("TaskHelpers_ExifToolMissingTitle", resourceCulture);
+            }
+        }
+        public static string TaskHelpers_AddCustomUploaderConfirmation {
+            get {
+                return ResourceManager.GetString("TaskHelpers_AddCustomUploaderConfirmation", resourceCulture);
+            }
+        }
+        public static string TaskHelpers_SetActiveCustomUploaderConfirmation {
+            get {
+                return ResourceManager.GetString("TaskHelpers_SetActiveCustomUploaderConfirmation", resourceCulture);
+            }
+        }
+        public static string TaskHelpers_CustomUploaderConfirmationTitle {
+            get {
+                return ResourceManager.GetString("TaskHelpers_CustomUploaderConfirmationTitle", resourceCulture);
+            }
+        }
+        public static string SettingManager_ExportBackupError {
+            get {
+                return ResourceManager.GetString("SettingManager_ExportBackupError", resourceCulture);
+            }
+        }
+        public static string SettingManager_ImportBackupError {
+            get {
+                return ResourceManager.GetString("SettingManager_ImportBackupError", resourceCulture);
+            }
+        }
+        public static string SettingManager_ErrorTitle {
+            get {
+                return ResourceManager.GetString("SettingManager_ErrorTitle", resourceCulture);
+            }
+        }
+        public static string WorkerTask_ErrorTitle {
+            get {
+                return ResourceManager.GetString("WorkerTask_ErrorTitle", resourceCulture);
+            }
+        }
+        public static string TaskManager_UploadCompletedURL {
+            get {
+                return ResourceManager.GetString("TaskManager_UploadCompletedURL", resourceCulture);
+            }
+        }
     }
 }

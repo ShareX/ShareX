@@ -2713,4 +2713,41 @@
   <data name="CustomUploaderSettingsWindow_XPathResponseValue" xml:space="preserve">
     <value>Значение ответа XPath</value>
   </data>
+  <data name="TaskHelpers_FileDoesNotExist" xml:space="preserve">
+    <value>Файл не существует:
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
+    <value>ExifTool отсутствует по следующему пути:
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
+    <value>ShareX — ExifTool отсутствует</value>
+  </data>
+  <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
+    <value>Добавить пользовательский загрузчик «{0}»?</value>
+  </data>
+  <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
+    <value>Сделать «{0}» активным пользовательским загрузчиком для {1}?</value>
+  </data>
+  <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
+    <value>ShareX — Подтверждение загрузчика</value>
+  </data>
+  <data name="SettingManager_ExportBackupError" xml:space="preserve">
+    <value>Ошибка при экспорте резервной копии:
+{0}</value>
+  </data>
+  <data name="SettingManager_ImportBackupError" xml:space="preserve">
+    <value>Ошибка при импорте резервной копии:
+{0}</value>
+  </data>
+  <data name="SettingManager_ErrorTitle" xml:space="preserve">
+    <value>ShareX — Ошибка</value>
+  </data>
+  <data name="WorkerTask_ErrorTitle" xml:space="preserve">
+    <value>Ошибка {0}</value>
+  </data>
+  <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
+    <value>Загрузка завершена. URL: {0}</value>
+  </data>
 </root>

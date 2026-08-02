@@ -2713,4 +2713,41 @@
   <data name="CustomUploaderSettingsWindow_XPathResponseValue" xml:space="preserve">
     <value>XPath-válaszérték</value>
   </data>
+  <data name="TaskHelpers_FileDoesNotExist" xml:space="preserve">
+    <value>A fájl nem létezik:
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
+    <value>Az ExifTool nem található a következő útvonalon:
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
+    <value>ShareX – Az ExifTool hiányzik</value>
+  </data>
+  <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
+    <value>Hozzáadja a(z) „{0}” egyéni feltöltőt?</value>
+  </data>
+  <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
+    <value>Beállítja a(z) „{0}” feltöltőt aktívként ehhez: {1}?</value>
+  </data>
+  <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
+    <value>ShareX – Egyéni feltöltő megerősítése</value>
+  </data>
+  <data name="SettingManager_ExportBackupError" xml:space="preserve">
+    <value>Hiba a biztonsági mentés exportálásakor:
+{0}</value>
+  </data>
+  <data name="SettingManager_ImportBackupError" xml:space="preserve">
+    <value>Hiba a biztonsági mentés importálásakor:
+{0}</value>
+  </data>
+  <data name="SettingManager_ErrorTitle" xml:space="preserve">
+    <value>ShareX – Hiba</value>
+  </data>
+  <data name="WorkerTask_ErrorTitle" xml:space="preserve">
+    <value>{0} hiba</value>
+  </data>
+  <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
+    <value>A feltöltés befejeződött. URL: {0}</value>
+  </data>
 </root>

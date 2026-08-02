@@ -2713,4 +2713,41 @@
   <data name="CustomUploaderSettingsWindow_XPathResponseValue" xml:space="preserve">
     <value>XPath 响应值</value>
   </data>
+  <data name="TaskHelpers_FileDoesNotExist" xml:space="preserve">
+    <value>文件不存在：
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
+    <value>以下路径中不存在 ExifTool：
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
+    <value>ShareX - 缺少 ExifTool</value>
+  </data>
+  <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
+    <value>是否添加自定义上传器“{0}”？</value>
+  </data>
+  <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
+    <value>是否将“{0}”设为 {1} 的活动自定义上传器？</value>
+  </data>
+  <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
+    <value>ShareX - 自定义上传器确认</value>
+  </data>
+  <data name="SettingManager_ExportBackupError" xml:space="preserve">
+    <value>导出备份时出错：
+{0}</value>
+  </data>
+  <data name="SettingManager_ImportBackupError" xml:space="preserve">
+    <value>导入备份时出错：
+{0}</value>
+  </data>
+  <data name="SettingManager_ErrorTitle" xml:space="preserve">
+    <value>ShareX - 错误</value>
+  </data>
+  <data name="WorkerTask_ErrorTitle" xml:space="preserve">
+    <value>{0} 错误</value>
+  </data>
+  <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
+    <value>上传完成。URL：{0}</value>
+  </data>
 </root>

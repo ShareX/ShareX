@@ -2713,4 +2713,41 @@
   <data name="CustomUploaderSettingsWindow_XPathResponseValue" xml:space="preserve">
     <value>Valeur de réponse XPath</value>
   </data>
+  <data name="TaskHelpers_FileDoesNotExist" xml:space="preserve">
+    <value>Le fichier n’existe pas :
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
+    <value>ExifTool n’existe pas à l’emplacement suivant :
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
+    <value>ShareX - ExifTool est manquant</value>
+  </data>
+  <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
+    <value>Voulez-vous ajouter le module d’envoi personnalisé « {0} » ?</value>
+  </data>
+  <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
+    <value>Voulez-vous définir « {0} » comme module d’envoi personnalisé actif pour {1} ?</value>
+  </data>
+  <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
+    <value>ShareX - Confirmation du module d’envoi personnalisé</value>
+  </data>
+  <data name="SettingManager_ExportBackupError" xml:space="preserve">
+    <value>Erreur lors de l’exportation de la sauvegarde :
+{0}</value>
+  </data>
+  <data name="SettingManager_ImportBackupError" xml:space="preserve">
+    <value>Erreur lors de l’importation de la sauvegarde :
+{0}</value>
+  </data>
+  <data name="SettingManager_ErrorTitle" xml:space="preserve">
+    <value>ShareX - Erreur</value>
+  </data>
+  <data name="WorkerTask_ErrorTitle" xml:space="preserve">
+    <value>Erreur {0}</value>
+  </data>
+  <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
+    <value>Envoi terminé. URL : {0}</value>
+  </data>
 </root>

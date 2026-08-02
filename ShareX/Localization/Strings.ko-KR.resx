@@ -2713,4 +2713,41 @@
   <data name="CustomUploaderSettingsWindow_XPathResponseValue" xml:space="preserve">
     <value>XPath 응답 값</value>
   </data>
+  <data name="TaskHelpers_FileDoesNotExist" xml:space="preserve">
+    <value>파일이 없습니다:
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
+    <value>다음 경로에 ExifTool이 없습니다:
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
+    <value>ShareX - ExifTool 없음</value>
+  </data>
+  <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
+    <value>사용자 지정 업로더 &quot;{0}&quot;을(를) 추가하시겠습니까?</value>
+  </data>
+  <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
+    <value>&quot;{0}&quot;을(를) {1}의 활성 사용자 지정 업로더로 설정하시겠습니까?</value>
+  </data>
+  <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
+    <value>ShareX - 사용자 지정 업로더 확인</value>
+  </data>
+  <data name="SettingManager_ExportBackupError" xml:space="preserve">
+    <value>백업을 내보내는 중 오류 발생:
+{0}</value>
+  </data>
+  <data name="SettingManager_ImportBackupError" xml:space="preserve">
+    <value>백업을 가져오는 중 오류 발생:
+{0}</value>
+  </data>
+  <data name="SettingManager_ErrorTitle" xml:space="preserve">
+    <value>ShareX - 오류</value>
+  </data>
+  <data name="WorkerTask_ErrorTitle" xml:space="preserve">
+    <value>{0} 오류</value>
+  </data>
+  <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
+    <value>업로드 완료. URL: {0}</value>
+  </data>
 </root>

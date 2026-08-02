@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -29,6 +29,7 @@ using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEffectsLib;
+using ShareX.Localization;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.Tools;
@@ -1285,7 +1286,7 @@ namespace ShareX
             }
             else
             {
-                MessageBox.Show("File does not exist:" + Environment.NewLine + filePath, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(string.Format(Strings.TaskHelpers_FileDoesNotExist, filePath), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -2221,9 +2222,8 @@ namespace ShareX
 
             if (!File.Exists(exifToolPath))
             {
-                // TODO: Translate
-                MessageBox.Show("ExifTool does not exist at the following path:" + "\r\n" + exifToolPath,
-                    "ShareX - " + "ExifTool is missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(string.Format(Strings.TaskHelpers_ExifToolDoesNotExist, exifToolPath),
+                    Strings.TaskHelpers_ExifToolMissingTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return false;
             }
@@ -2574,8 +2574,8 @@ namespace ShareX
 
                         if (cui.DestinationType == CustomUploaderDestinationType.None)
                         {
-                            DialogResult result = MessageBox.Show($"Would you like to add \"{cui}\" custom uploader?",
-                                "ShareX - Custom uploader confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                            DialogResult result = MessageBox.Show(string.Format(Strings.TaskHelpers_AddCustomUploaderConfirmation, cui),
+                                Strings.TaskHelpers_CustomUploaderConfirmationTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
                             if (result == DialogResult.No)
                             {
@@ -2593,8 +2593,8 @@ namespace ShareX
 
                             string destinationsText = string.Join("/", destinations);
 
-                            DialogResult result = MessageBox.Show($"Would you like to set \"{cui}\" as the active custom uploader for {destinationsText}?",
-                                "ShareX - Custom uploader confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                            DialogResult result = MessageBox.Show(string.Format(Strings.TaskHelpers_SetActiveCustomUploaderConfirmation, cui, destinationsText),
+                                Strings.TaskHelpers_CustomUploaderConfirmationTitle, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
                             if (result == DialogResult.Yes)
                             {

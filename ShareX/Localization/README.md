@@ -31,6 +31,7 @@ Avalonia translations use the shared `Strings.resx` resource set in this directo
 | Custom uploader settings | `CustomUploaderSettingsWindow_` | 4 | 112 | Complete |
 | Quick task menu editor | `QuickTaskMenuEditorWindow_` | 2 | 23 | Complete |
 | About | `AboutWindow_` | 2 | 17 | Complete |
+| Core runtime messages | `TaskHelpers_`, `SettingManager_`, `WorkerTask_`, `TaskManager_` | 4 | 11 | Complete |
 
 `Validate.ps1` contains the tracked source-file manifest. It verifies that:
 

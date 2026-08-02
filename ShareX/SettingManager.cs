@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -26,6 +26,7 @@
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
+using ShareX.Localization;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -459,7 +460,7 @@ namespace ShareX
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                MessageBox.Show("Error while exporting backup:\r\n" + e, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format(Strings.SettingManager_ExportBackupError, e), Strings.SettingManager_ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -492,7 +493,7 @@ namespace ShareX
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                MessageBox.Show("Error while importing backup:\r\n" + e, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format(Strings.SettingManager_ImportBackupError, e), Strings.SettingManager_ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

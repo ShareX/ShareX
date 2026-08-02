@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
+using ShareX.Localization;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
@@ -175,7 +176,7 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(url))
                 {
-                    string text = $"Upload completed. URL: {url}";
+                    string text = string.Format(Strings.TaskManager_UploadCompletedURL, url);
 
                     if (info.UploadDuration != null)
                     {

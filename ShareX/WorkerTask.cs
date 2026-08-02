@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
@@ -899,7 +900,7 @@ namespace ShareX
 
             if (uploader != null)
             {
-                uploader.Errors.DefaultTitle = service.ServiceName + " " + "error";
+                uploader.Errors.DefaultTitle = string.Format(Strings.WorkerTask_ErrorTitle, service.ServiceName);
                 uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
                 uploader.ProgressChanged += uploader_ProgressChanged;
 

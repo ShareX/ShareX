@@ -218,6 +218,16 @@ $areas = @(
             'Presentation/About/AboutWindow.axaml.cs'
         )
     }
+    [pscustomobject]@{
+        Name = 'Core runtime messages'
+        ResourcePrefixes = @('TaskHelpers_', 'SettingManager_', 'WorkerTask_', 'TaskManager_')
+        SourceFiles = @(
+            'TaskHelpers.cs'
+            'SettingManager.cs'
+            'WorkerTask.cs'
+            'TaskManager.cs'
+        )
+    }
 )
 
 function Resolve-SourcePath([string]$relativePath)
