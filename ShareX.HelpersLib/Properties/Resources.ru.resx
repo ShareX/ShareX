@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Картинка с экрана</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Доступна новая версия {0}</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Показать окно с QR-кодом</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Сноска (S)</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} в актуальном состоянии</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Запись экрана</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Текущий час</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Проверка обновлений не удалась</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Текущая миллисекунда</value>
@@ -538,9 +529,6 @@
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Открыть в редакторе изображений</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Загрузка изображения...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Захват последней области</value>
   </data>
@@ -817,9 +805,6 @@
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Файловый сервис</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Загрузка изображения: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Случайный алфавитно-цифровой символ. Повторение задается через {n}</value>

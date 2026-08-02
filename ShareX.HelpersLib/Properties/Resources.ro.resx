@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Imagine (ecran)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Este disponibilă o versiune mai nouă a {0}</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Afișați fereastra de cod QR</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Balon de vorbire (S)</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} este la zi</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Înregistrare ecran</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Ora</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Verificarea actualizării a eșuat</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Milisecundă</value>
@@ -538,9 +529,6 @@ Doriți să o descărcați?</value>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Deschideți în editorul de imagini</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Se încarcă imaginea...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Capturarea ultimei regiuni</value>
   </data>
@@ -817,9 +805,6 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Destinație de fișiere</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Se încarcă imaginea: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Caractere alfanumerice aleatorii (se repetă folosind {n})</value>

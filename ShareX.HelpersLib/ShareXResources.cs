@@ -244,14 +244,6 @@ namespace ShareX.HelpersLib
             {
                 ApplyCustomThemeToControl(child);
             }
-
-            switch (control)
-            {
-                case TabToTreeView tttv:
-                    tttv.LeftPanelBackColor = Theme.DarkBackgroundColor;
-                    tttv.SeparatorColor = Theme.SeparatorDarkColor;
-                    break;
-            }
         }
 
         private static void ApplyCustomThemeToComponents(IContainer container)

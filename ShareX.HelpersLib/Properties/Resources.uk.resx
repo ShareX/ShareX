@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Зображення (екран)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Доступна нова версія {0}</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Показати вікно QR-коду</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Текстова хмарка (S)</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} в актуальному стані</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Запис екрану</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>година</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Не вдалось перевірити оновлення</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>мс</value>
@@ -538,9 +529,6 @@
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Відкрити у редакторі зображень</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Завантаження зображення...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Захоплення останньої області</value>
   </data>
@@ -817,9 +805,6 @@
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Вивантажувач файлів</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Завантаження зображення: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Випадковий алфавітно-цифровий символ (Повтор за допомогою {n})</value>

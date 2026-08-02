@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>عکس (اسکرین)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>نسخه جدیدتری از {0} در دسترس است.</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>نمایش پنجره کد QR</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>بالن متن (S)</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} به‌روز است</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>ضبط فیلم صفحه</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>ساعت جاری</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>چک کردن آپدیت با مشکل مواجه شد</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>زمان (بر حسب میلی ثانیه)</value>
@@ -538,9 +529,6 @@
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>بازکردن در ویرایشگر عکس</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>در حال بارگذاری عکس ...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>ضبط آخرین ناحیه</value>
   </data>
@@ -817,9 +805,6 @@
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>آپلود کننده فایل</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>در حال بارگزاری عکس: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>نویسه حرفی‌عددی تصادفی (تکرار با {n})</value>

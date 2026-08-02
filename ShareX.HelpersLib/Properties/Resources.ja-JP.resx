@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>描画: 画像 (スクリーン)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>{0}の最新版があります</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>QR コード ウィンドウを表示</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>描画: 吹き出し(S)</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} は最新です</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>動画キャプチャー</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>時</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>更新の確認に失敗しました</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>ミリ秒</value>
@@ -538,9 +529,6 @@
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>画像エディタで開く</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>画像の読み込み中...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>最近使用した領域をキャプチャー</value>
   </data>
@@ -817,9 +805,6 @@
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>ファイル アップローダー</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>画像の読み込み中: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>ランダムな英数字 {n}でn回繰り返し</value>

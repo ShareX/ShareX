@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Vẽ: Chèn ảnh (từ màn hình)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Phiên bản mới của {0} khả dụng</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Hiện cửa sổ mã QR</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Vẽ: Hộp hội thoại (S)</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} đã được cập nhật</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Ghi lại màn hình</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Giờ hiện tại</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Kiểm tra cập nhật thất bại</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Miligiây hiện tại</value>
@@ -538,9 +529,6 @@ Bạn có muốn tải về không?</value>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Mở trong trình sửa ảnh</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Đang mở ảnh...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Chụp vùng lần trước</value>
   </data>
@@ -817,9 +805,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Dịch vụ tải lên tệp</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Đang mở ảnh: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Kí tự hệ bảng chữ cái &amp; số. Lặp lại dùng {n}</value>

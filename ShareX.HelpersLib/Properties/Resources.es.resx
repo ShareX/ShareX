@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Imagen (Pantalla)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Una nueva versión de {0} está disponible</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Mostrar ventana de QR código</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Globo de diálogo (S)</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} está actualizado</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Pantalla record</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Hora actual</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Actualización de verificación falló</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Milisegundo actual</value>
@@ -538,9 +529,6 @@ Would you like to descarga it?</value>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Abrir en editor de imágenes</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Cargando imagen...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Capturar última región</value>
   </data>
@@ -817,9 +805,6 @@ Would you like to descarga it?</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Cargador de archivos</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Cargando imagen: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Carácter alfanumérico aleatorio</value>

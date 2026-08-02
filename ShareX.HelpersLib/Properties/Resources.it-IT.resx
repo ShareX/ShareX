@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Disegna: Immagine (Schermo)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>È disponibile una nuova versione di {0}</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Mostra Finestra Codice QR</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Disegna: Fumetto</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} è aggiornato</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Registra Schermo</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Ora Corrente</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Controllo aggiornamenti fallito</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Millisecondo Corrente</value>
@@ -538,9 +529,6 @@ Vuoi scaricarla ora?</value>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Annota Immagine</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Caricamento pagina...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Cattura Ultima Regione</value>
   </data>
@@ -817,9 +805,6 @@ Vuoi scaricarla e installarla ora?</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Servizio Caricamento File</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Caricamento immagine: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Carattere Alfanumerico Casuale. Ripeti usando {n}</value>

@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>صورة من الشاشة</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>إصدار جديد من {0} متاح</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>عرض نافذة قارئ QR</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>بالون المحادثة (S)</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} بالفعل تم تحديثها</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>تسجيل الشاشة</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>الساعة</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>خطأ في البحث عن تحديثات</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>ميللي ثانية</value>
@@ -538,9 +529,6 @@
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>فتح في محرّر الصور</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>تحميل الصورة...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>التقاط المنطقة السابقة</value>
   </data>
@@ -817,9 +805,6 @@
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>رافعو الملفات</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>تحميل الصورة: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>حروف وأرقام عشوائية (مكررة بمقدار {n})</value>

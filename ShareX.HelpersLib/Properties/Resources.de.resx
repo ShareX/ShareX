@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Bild (Bildschirm)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Eine neuere Version von {0} ist verfügbar</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>"QR-Code"-Fenster anzeigen</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Sprechblase hinzufügen</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} ist aktuell</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Bildschirmaufzeichnung</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Derzeitige Stunde</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Aktualisierungscheck fehlgeschlagen</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Derzeitige Millisekunde</value>
@@ -538,9 +529,6 @@ Soll sie heruntergeladen werden?</value>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Bild im Editor öffnen</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Lädt Bild...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Letzten Bereich aufnehmen</value>
   </data>
@@ -817,9 +805,6 @@ Soll sie heruntergeladen und installiert werden?</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Dateiuploader</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Lädt Bild: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Zufälliges alphanummerisches Zeichen. Wiederholen mit {n}</value>

@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Imagem (Ecrã)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Uma nova versão do {0} está disponivel</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Mostrar janela de código QR</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Desenho: Balão de voz</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} está actualizado</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Gravar ecrã</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Hora actual</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Falha ao verificar actualizações</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Milisegundo atual</value>
@@ -538,9 +529,6 @@ Gostaria de transferí-la?</value>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Abrir imagem no editor</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Carregando imagem...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Capturar última região</value>
   </data>
@@ -817,9 +805,6 @@ Você gostaria de transferi-la e instalá-la?</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Envio de ficheiros</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Carregando imagem: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Caractére alfanumérico aleatório. Repetir utilizando {n}</value>

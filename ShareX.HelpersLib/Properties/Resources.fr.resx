@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Dessin : Image (Écran)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Une nouvelle version de {0} est disponible</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Afficher la fenêtre code QR</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Dessin : Bulle de dialogue</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} est à jour</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Enregistrer l'écran</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Heure actuelle</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Vérification de mise à jour echouée</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Milliseconde actuelle</value>
@@ -538,9 +529,6 @@ Voulez-vous la télécharger ?</value>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Modifier l'image</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Chargement de l'image...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Capturer la dernière région</value>
   </data>
@@ -817,9 +805,6 @@ Voulez-vous la télécharger et l'installer ?</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Service de mise en ligne de fichiers</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Chargement de l'image : {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Caractère alphanumérique aléatoire. Recommencez à l'aide de {n}</value>

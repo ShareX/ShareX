@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Image (Screen)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>A newer version of {0} is available</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Show QR code window</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Speech balloon (S)</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} is up to date</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Screen record</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Hour</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Update check failed</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Millisecond</value>
@@ -545,12 +536,6 @@ Would you like to download it?</value>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Open in image editor</value>
   </data>
-  <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Loading image...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Capture last region</value>
   </data>
@@ -699,9 +684,6 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Capture region (Light)</value>
   </data>
-  <data name="Loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Loading.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ProxyMethod_Automatic" xml:space="preserve">
     <value>Automatic</value>
   </data>
@@ -761,9 +743,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
     <value>Week name (English)</value>
-  </data>
-  <data name="LoadingSmallWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoadingSmallWhite.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
     <value>Browse for executable...</value>
@@ -843,9 +822,6 @@ Would you like to download and install it?</value>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>File uploader</value>
   </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Loading image: {0}%</value>
-  </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Random alphanumeric char (Repeat using {n})</value>
   </data>
@@ -887,9 +863,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>Select a folder</value>
-  </data>
-  <data name="LoadingSmallBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoadingSmallBlack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
     <value>Open main window</value>

@@ -650,16 +650,6 @@ namespace ShareX.HelpersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cross {
-            get {
-                object obj = ResourceManager.GetObject("cross", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap cross_circle {
             get {
                 object obj = ResourceManager.GetObject("cross-circle", resourceCulture);
@@ -2181,36 +2171,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Loading {
-            get {
-                object obj = ResourceManager.GetObject("Loading", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LoadingSmallBlack {
-            get {
-                object obj = ResourceManager.GetObject("LoadingSmallBlack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LoadingSmallWhite {
-            get {
-                object obj = ResourceManager.GetObject("LoadingSmallWhite", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string MyMessageBox_MyMessageBox_Cancel {
@@ -2243,24 +2203,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string MyMessageBox_MyMessageBox_Yes {
             get {
                 return ResourceManager.GetString("MyMessageBox_MyMessageBox_Yes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Loading image....
-        /// </summary>
-        internal static string MyPictureBox_LoadImageAsync_Loading_image___ {
-            get {
-                return ResourceManager.GetString("MyPictureBox_LoadImageAsync_Loading_image___", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Loading image: {0}%.
-        /// </summary>
-        internal static string MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__ {
-            get {
-                return ResourceManager.GetString("MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__", resourceCulture);
             }
         }
         
@@ -3698,33 +3640,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string UpdateChannel_Release {
             get {
                 return ResourceManager.GetString("UpdateChannel_Release", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A newer version of {0} is available.
-        /// </summary>
-        internal static string UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available {
-            get {
-                return ResourceManager.GetString("UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} is up to date.
-        /// </summary>
-        internal static string UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date {
-            get {
-                return ResourceManager.GetString("UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Update check failed.
-        /// </summary>
-        internal static string UpdateCheckerLabel_UpdateControls_Update_check_failed {
-            get {
-                return ResourceManager.GetString("UpdateCheckerLabel_UpdateControls_Update_check_failed", resourceCulture);
             }
         }
         

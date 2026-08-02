@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Kép (Képernyő)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Egy újabb {0} verzió elérhető</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>QR kód ablak mutatása</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Szövegbuborék (S)</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} az elérhető legfrissebb</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Képernyő record</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Jelenlegi óra</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>A frissítés ellenőrzése nem sikerült</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Jelenlegi milliszekundum</value>
@@ -538,9 +529,6 @@ Would you like to letöltés it?</value>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Megnyitás képszerkesztőben</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Kép betöltése...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Legutóbbi régió képlopás</value>
   </data>
@@ -816,9 +804,6 @@ Would you like to letöltés it?</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Fájl feltöltő</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Kép betöltése: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Véletlenszerű alfanumerikus karakter</value>

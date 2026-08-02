@@ -168,17 +168,11 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Obraz (ekran)</value>
   </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Dostępna jest nowsza wersja {0}</value>
-  </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Pokaż okno kodu QR</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Dymek (S)</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} jest aktualny</value>
   </data>
   <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Nagrywanie ekranu</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Godzina</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Sprawdzanie aktualizacji nie powiodło się</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Milisekunda</value>
@@ -538,9 +529,6 @@ Czy chcesz ją pobrać?</value>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Otwórz w edytorze obrazów</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Ładowanie obrazu...</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Przechwytywanie ostatniego regionu</value>
   </data>
@@ -817,9 +805,6 @@ Czy chcesz ją pobrać i zainstalować?</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Serwis plików</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Ładowanie obrazu: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Losowy znak alfanumeryczny (powtarzaj za pomocą {n})</value>
