@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HistoryWindows_ShareX_History" xml:space="preserve">
+    <value>ShareX - Riwayat</value>
+  </data>
+  <data name="HistoryWindows_Search_file_names_and_tags" xml:space="preserve">
+    <value>Cari nama file dan tag</value>
+  </data>
+  <data name="HistoryWindows_Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="HistoryWindows_Favorites" xml:space="preserve">
+    <value>Favorit</value>
+  </data>
+  <data name="HistoryWindows_Stats" xml:space="preserve">
+    <value>Statistik</value>
+  </data>
+  <data name="HistoryWindows_Import" xml:space="preserve">
+    <value>Impor</value>
+  </data>
+  <data name="HistoryWindows_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="HistoryWindows_Date" xml:space="preserve">
+    <value>Tanggal</value>
+  </data>
+  <data name="HistoryWindows_File_name" xml:space="preserve">
+    <value>Nama file</value>
+  </data>
+  <data name="HistoryWindows_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="HistoryWindows_Open" xml:space="preserve">
+    <value>Buka</value>
+  </data>
+  <data name="HistoryWindows_Shortened_URL" xml:space="preserve">
+    <value>URL yang dipersingkat</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_URL" xml:space="preserve">
+    <value>URL thumbnail</value>
+  </data>
+  <data name="HistoryWindows_Deletion_URL" xml:space="preserve">
+    <value>URL penghapusan</value>
+  </data>
+  <data name="HistoryWindows_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="HistoryWindows_Folder" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="HistoryWindows_Copy" xml:space="preserve">
+    <value>Salin</value>
+  </data>
+  <data name="HistoryWindows_Image" xml:space="preserve">
+    <value>Gambar</value>
+  </data>
+  <data name="HistoryWindows_Text" xml:space="preserve">
+    <value>Teks</value>
+  </data>
+  <data name="HistoryWindows_HTML_link" xml:space="preserve">
+    <value>Tautan HTML</value>
+  </data>
+  <data name="HistoryWindows_HTML_image" xml:space="preserve">
+    <value>Gambar HTML</value>
+  </data>
+  <data name="HistoryWindows_HTML_linked_image" xml:space="preserve">
+    <value>Gambar HTML tertaut</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_link" xml:space="preserve">
+    <value>Tautan forum (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_image" xml:space="preserve">
+    <value>Gambar forum (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_linked_image" xml:space="preserve">
+    <value>Gambar bertaut forum (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Markdown_link" xml:space="preserve">
+    <value>Tautan Markdown</value>
+  </data>
+  <data name="HistoryWindows_Markdown_image" xml:space="preserve">
+    <value>Gambar Markdown</value>
+  </data>
+  <data name="HistoryWindows_Markdown_linked_image" xml:space="preserve">
+    <value>Gambar Markdown tertaut</value>
+  </data>
+  <data name="HistoryWindows_File_path" xml:space="preserve">
+    <value>Jalur file</value>
+  </data>
+  <data name="HistoryWindows_File_name_with_extension" xml:space="preserve">
+    <value>Nama file dengan ekstensi</value>
+  </data>
+  <data name="HistoryWindows_Favorite" xml:space="preserve">
+    <value>Favorit</value>
+  </data>
+  <data name="HistoryWindows_Edit_tag" xml:space="preserve">
+    <value>Edit tag...</value>
+  </data>
+  <data name="HistoryWindows_Edit_item" xml:space="preserve">
+    <value>Edit item...</value>
+  </data>
+  <data name="HistoryWindows_Rename_file" xml:space="preserve">
+    <value>Ganti nama file...</value>
+  </data>
+  <data name="HistoryWindows_Delete_from_history" xml:space="preserve">
+    <value>Hapus dari riwayat...</value>
+  </data>
+  <data name="HistoryWindows_Delete_file_and_history_item" xml:space="preserve">
+    <value>Hapus file dan item riwayat...</value>
+  </data>
+  <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
+    <value>Tampilkan pratinjau gambar</value>
+  </data>
+  <data name="HistoryWindows_Upload_file" xml:space="preserve">
+    <value>Unggah file</value>
+  </data>
+  <data name="HistoryWindows_Edit_image" xml:space="preserve">
+    <value>Edit gambar</value>
+  </data>
+  <data name="HistoryWindows_Pin_to_screen" xml:space="preserve">
+    <value>Sematkan ke layar</value>
+  </data>
+  <data name="HistoryWindows_Analyze_image" xml:space="preserve">
+    <value>Analisis gambar</value>
+  </data>
+  <data name="HistoryWindows_No_history_items" xml:space="preserve">
+    <value>Tidak ada item riwayat</value>
+  </data>
+  <data name="HistoryWindows_Advanced_filters" xml:space="preserve">
+    <value>Filter lanjutan</value>
+  </data>
+  <data name="HistoryWindows_Reset_filters" xml:space="preserve">
+    <value>Atur ulang filter</value>
+  </data>
+  <data name="HistoryWindows_Type" xml:space="preserve">
+    <value>Jenis</value>
+  </data>
+  <data name="HistoryWindows_All_types" xml:space="preserve">
+    <value>Semua jenis</value>
+  </data>
+  <data name="HistoryWindows_Host" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="HistoryWindows_All_hosts" xml:space="preserve">
+    <value>Semua host</value>
+  </data>
+  <data name="HistoryWindows_Date_range" xml:space="preserve">
+    <value>Rentang tanggal</value>
+  </data>
+  <data name="HistoryWindows_No_image_preview" xml:space="preserve">
+    <value>Tidak ada pratinjau gambar</value>
+  </data>
+  <data name="HistoryWindows_Select_an_item_to_preview" xml:space="preserve">
+    <value>Pilih item untuk dipratinjau</value>
+  </data>
+  <data name="HistoryWindows_History_statistics" xml:space="preserve">
+    <value>Statistik riwayat</value>
+  </data>
+  <data name="HistoryWindows_Close" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="HistoryWindows_Import_folder" xml:space="preserve">
+    <value>Impor folder</value>
+  </data>
+  <data name="HistoryWindows_Folder_path" xml:space="preserve">
+    <value>Jalur folder</value>
+  </data>
+  <data name="HistoryWindows_Browse" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
+    <value>Hanya impor file gambar</value>
+  </data>
+  <data name="HistoryWindows_Skip_duplicate_files" xml:space="preserve">
+    <value>Lewati file duplikat</value>
+  </data>
+  <data name="HistoryWindows_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="HistoryWindows_History_settings" xml:space="preserve">
+    <value>Pengaturan riwayat</value>
+  </data>
+  <data name="HistoryWindows_Remember_search_text" xml:space="preserve">
+    <value>Ingat teks pencarian</value>
+  </data>
+  <data name="HistoryWindows_Remember_window_size_and_position" xml:space="preserve">
+    <value>Ingat ukuran dan posisi jendela</value>
+  </data>
+  <data name="HistoryWindows_Done" xml:space="preserve">
+    <value>Selesai</value>
+  </data>
+  <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
+    <value>Edit item riwayat</value>
+  </data>
+  <data name="HistoryWindows_Tags" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="HistoryWindows_One_key_value_pair_per_line" xml:space="preserve">
+    <value>Satu pasangan kunci=nilai per baris</value>
+  </data>
+  <data name="HistoryWindows_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="HistoryWindows_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="HistoryWindows_ShareX_Image_History" xml:space="preserve">
+    <value>ShareX - Riwayat Gambar</value>
+  </data>
+  <data name="HistoryWindows_Loading" xml:space="preserve">
+    <value>Memuat...</value>
+  </data>
+  <data name="HistoryWindows_Open_image" xml:space="preserve">
+    <value>Buka gambar</value>
+  </data>
+  <data name="HistoryWindows_Forum_link" xml:space="preserve">
+    <value>Tautan forum</value>
+  </data>
+  <data name="HistoryWindows_Forum_image" xml:space="preserve">
+    <value>Gambar forum</value>
+  </data>
+  <data name="HistoryWindows_Forum_linked_image" xml:space="preserve">
+    <value>Gambar forum tertaut</value>
+  </data>
+  <data name="HistoryWindows_Toggle_favorite" xml:space="preserve">
+    <value>Alihkan favorit</value>
+  </data>
+  <data name="HistoryWindows_No_image_history_items" xml:space="preserve">
+    <value>Tidak ada item riwayat gambar</value>
+  </data>
+  <data name="HistoryWindows_Image_history_settings" xml:space="preserve">
+    <value>Pengaturan riwayat gambar</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_width" xml:space="preserve">
+    <value>Lebar gambar mini</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_height" xml:space="preserve">
+    <value>Tinggi gambar mini</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_header" xml:space="preserve">
+    <value>Header gambar mini</value>
+  </data>
+  <data name="HistoryWindows_None" xml:space="preserve">
+    <value>Tidak ada</value>
+  </data>
+  <data name="HistoryWindows_Top" xml:space="preserve">
+    <value>Atas</value>
+  </data>
+  <data name="HistoryWindows_Bottom" xml:space="preserve">
+    <value>Bawah</value>
+  </data>
+  <data name="HistoryWindows_Items_per_batch" xml:space="preserve">
+    <value>Item per kelompok</value>
+  </data>
+  <data name="HistoryWindows_Load_the_next_batch_near_the_end" xml:space="preserve">
+    <value>Muat kelompok berikutnya saat mendekati akhir</value>
+  </data>
+  <data name="HistoryWindows_Hide_missing_files" xml:space="preserve">
+    <value>Sembunyikan file yang hilang</value>
+  </data>
+  <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
+    <value>Tampilkan file gambar saja</value>
+  </data>
+  <data name="HistoryHelpers_Empty" xml:space="preserve">
+    <value>(kosong)</value>
+  </data>
+  <data name="HistoryHelpers_HistoryItemCounts" xml:space="preserve">
+    <value>Jumlah item riwayat:</value>
+  </data>
+  <data name="HistoryHelpers_Total" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="HistoryHelpers_YearlyUsages" xml:space="preserve">
+    <value>Penggunaan tahunan:</value>
+  </data>
+  <data name="HistoryHelpers_FileExtensions" xml:space="preserve">
+    <value>Ekstensi file:</value>
+  </data>
+  <data name="HistoryHelpers_Hosts" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="HistoryHelpers_ProcessNames" xml:space="preserve">
+    <value>Nama proses:</value>
+  </data>
+  <data name="HistoryManager_ErrorOccurredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Terjadi kesalahan saat membaca file riwayat:</value>
+  </data>
+  <data name="HistoryManager_Error" xml:space="preserve">
+    <value>Kesalahan</value>
+  </data>
+  <data name="HistoryWindow_ItemsFormat" xml:space="preserve">
+    <value>{0:N0} item</value>
+  </data>
+  <data name="HistoryWindow_ItemsOfFormat" xml:space="preserve">
+    <value>{0:N0} dari {1:N0}</value>
+  </data>
+  <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
+    <value>Tidak ada item yang cocok dengan filter saat ini</value>
+  </data>
+  <data name="HistoryWindow_Unfavorite" xml:space="preserve">
+    <value>Hapus dari favorit</value>
+  </data>
+  <data name="HistoryWindow_CalculatingStatistics" xml:space="preserve">
+    <value>Menghitung statistik...</value>
+  </data>
+  <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
+    <value>Pilih folder yang akan diimpor</value>
+  </data>
+  <data name="HistoryWindow_SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>Folder yang dipilih tidak ada.</value>
+  </data>
+  <data name="HistoryWindow_ImportingFiles" xml:space="preserve">
+    <value>Mengimpor file...</value>
+  </data>
+  <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
+    <value>Berhasil mengimpor {0:N0} file.</value>
+  </data>
+  <data name="HistoryWindow_EditTag" xml:space="preserve">
+    <value>Edit tag</value>
+  </data>
+  <data name="HistoryWindow_EnterTagForHistoryItem" xml:space="preserve">
+    <value>Masukkan tag untuk item riwayat ini.</value>
+  </data>
+  <data name="HistoryWindow_RenameFile" xml:space="preserve">
+    <value>Ganti nama file</value>
+  </data>
+  <data name="HistoryWindow_EnterNewFileName" xml:space="preserve">
+    <value>Masukkan nama file baru.</value>
+  </data>
+  <data name="HistoryWindow_Rename" xml:space="preserve">
+    <value>Ganti nama</value>
+  </data>
+  <data name="HistoryWindow_ThisFile" xml:space="preserve">
+    <value>file ini</value>
+  </data>
+  <data name="HistoryWindow_ThisItem" xml:space="preserve">
+    <value>item ini</value>
+  </data>
+  <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
+    <value>{0:N0} file ini</value>
+  </data>
+  <data name="HistoryWindow_TheseItemsFormat" xml:space="preserve">
+    <value>{0:N0} item ini</value>
+  </data>
+  <data name="HistoryWindow_DeleteFiles" xml:space="preserve">
+    <value>Hapus file?</value>
+  </data>
+  <data name="HistoryWindow_DeleteHistoryItems" xml:space="preserve">
+    <value>Hapus item riwayat?</value>
+  </data>
+  <data name="HistoryWindow_ConfirmDeleteFormat" xml:space="preserve">
+    <value>Yakin ingin menghapus {0}? Tindakan ini tidak dapat dibatalkan.</value>
+  </data>
+  <data name="HistoryWindow_Delete" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="ImageHistoryWindow_ItemsFormat" xml:space="preserve">
+    <value>{0:N0} item</value>
+  </data>
+  <data name="ImageHistoryWindow_ShownMatchedFormat" xml:space="preserve">
+    <value>{0:N0} ditampilkan · {1:N0} cocok</value>
+  </data>
+  <data name="ImageHistoryWindow_NoItemsMatchCurrentFilter" xml:space="preserve">
+    <value>Tidak ada item yang cocok dengan filter saat ini</value>
+  </data>
+  <data name="ImageHistoryWindow_CalculatingStatistics" xml:space="preserve">
+    <value>Menghitung statistik...</value>
+  </data>
+  <data name="ImageHistoryWindow_SelectFolderToImport" xml:space="preserve">
+    <value>Pilih folder yang akan diimpor</value>
+  </data>
+  <data name="ImageHistoryWindow_SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>Folder yang dipilih tidak ada.</value>
+  </data>
+  <data name="ImageHistoryWindow_ImportingFiles" xml:space="preserve">
+    <value>Mengimpor file...</value>
+  </data>
+  <data name="ImageHistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
+    <value>Berhasil mengimpor {0:N0} file.</value>
+  </data>
+  <data name="ImageHistoryWindow_EditTag" xml:space="preserve">
+    <value>Edit tag</value>
+  </data>
+  <data name="ImageHistoryWindow_EnterTagForHistoryItem" xml:space="preserve">
+    <value>Masukkan tag untuk item riwayat ini.</value>
+  </data>
+  <data name="ImageHistoryWindow_RenameFile" xml:space="preserve">
+    <value>Ganti nama file</value>
+  </data>
+  <data name="ImageHistoryWindow_EnterNewFileName" xml:space="preserve">
+    <value>Masukkan nama file baru.</value>
+  </data>
+  <data name="ImageHistoryWindow_Rename" xml:space="preserve">
+    <value>Ganti nama</value>
+  </data>
+  <data name="ImageHistoryWindow_ThisFile" xml:space="preserve">
+    <value>file ini</value>
+  </data>
+  <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
+    <value>item ini</value>
+  </data>
+  <data name="ImageHistoryWindow_TheseFilesFormat" xml:space="preserve">
+    <value>{0:N0} file ini</value>
+  </data>
+  <data name="ImageHistoryWindow_TheseItemsFormat" xml:space="preserve">
+    <value>{0:N0} item ini</value>
+  </data>
+  <data name="ImageHistoryWindow_DeleteFiles" xml:space="preserve">
+    <value>Hapus file?</value>
+  </data>
+  <data name="ImageHistoryWindow_DeleteHistoryItems" xml:space="preserve">
+    <value>Hapus item riwayat?</value>
+  </data>
+  <data name="ImageHistoryWindow_ConfirmDeleteFormat" xml:space="preserve">
+    <value>Yakin ingin menghapus {0}? Tindakan ini tidak dapat dibatalkan.</value>
+  </data>
+  <data name="ImageHistoryWindow_Delete" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="ImageHistoryWindow_OpenFile" xml:space="preserve">
+    <value>Buka file?</value>
+  </data>
+  <data name="ImageHistoryWindow_ConfirmOpenFileFormat" xml:space="preserve">
+    <value>Apakah Anda ingin membuka file ini?
+
+{0}</value>
+  </data>
+</root>
+

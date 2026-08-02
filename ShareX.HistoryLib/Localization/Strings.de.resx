@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HistoryWindows_ShareX_History" xml:space="preserve">
+    <value>ShareX - Verlauf</value>
+  </data>
+  <data name="HistoryWindows_Search_file_names_and_tags" xml:space="preserve">
+    <value>Dateinamen und Tags durchsuchen</value>
+  </data>
+  <data name="HistoryWindows_Advanced" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="HistoryWindows_Favorites" xml:space="preserve">
+    <value>Favoriten</value>
+  </data>
+  <data name="HistoryWindows_Stats" xml:space="preserve">
+    <value>Statistik</value>
+  </data>
+  <data name="HistoryWindows_Import" xml:space="preserve">
+    <value>Importieren</value>
+  </data>
+  <data name="HistoryWindows_Settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="HistoryWindows_Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="HistoryWindows_File_name" xml:space="preserve">
+    <value>Dateiname</value>
+  </data>
+  <data name="HistoryWindows_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="HistoryWindows_Open" xml:space="preserve">
+    <value>Öffnen</value>
+  </data>
+  <data name="HistoryWindows_Shortened_URL" xml:space="preserve">
+    <value>Gekürzte URL</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_URL" xml:space="preserve">
+    <value>Thumbnail-URL</value>
+  </data>
+  <data name="HistoryWindows_Deletion_URL" xml:space="preserve">
+    <value>Löschungs-URL</value>
+  </data>
+  <data name="HistoryWindows_File" xml:space="preserve">
+    <value>Datei</value>
+  </data>
+  <data name="HistoryWindows_Folder" xml:space="preserve">
+    <value>Ordner</value>
+  </data>
+  <data name="HistoryWindows_Copy" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="HistoryWindows_Image" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="HistoryWindows_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="HistoryWindows_HTML_link" xml:space="preserve">
+    <value>HTML-Link</value>
+  </data>
+  <data name="HistoryWindows_HTML_image" xml:space="preserve">
+    <value>HTML-Bild</value>
+  </data>
+  <data name="HistoryWindows_HTML_linked_image" xml:space="preserve">
+    <value>Verknüpftes HTML-Bild</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_link" xml:space="preserve">
+    <value>Forum-Link (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_image" xml:space="preserve">
+    <value>Forum-Bild (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_linked_image" xml:space="preserve">
+    <value>Verlinktes Forum-Bild (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Markdown_link" xml:space="preserve">
+    <value>Markdown-Link</value>
+  </data>
+  <data name="HistoryWindows_Markdown_image" xml:space="preserve">
+    <value>Markdown-Bild</value>
+  </data>
+  <data name="HistoryWindows_Markdown_linked_image" xml:space="preserve">
+    <value>Verknüpftes Markdown-Bild</value>
+  </data>
+  <data name="HistoryWindows_File_path" xml:space="preserve">
+    <value>Dateipfad</value>
+  </data>
+  <data name="HistoryWindows_File_name_with_extension" xml:space="preserve">
+    <value>Dateiname mit Erweiterung</value>
+  </data>
+  <data name="HistoryWindows_Favorite" xml:space="preserve">
+    <value>Favorit</value>
+  </data>
+  <data name="HistoryWindows_Edit_tag" xml:space="preserve">
+    <value>Tag bearbeiten...</value>
+  </data>
+  <data name="HistoryWindows_Edit_item" xml:space="preserve">
+    <value>Element bearbeiten...</value>
+  </data>
+  <data name="HistoryWindows_Rename_file" xml:space="preserve">
+    <value>Datei umbenennen...</value>
+  </data>
+  <data name="HistoryWindows_Delete_from_history" xml:space="preserve">
+    <value>Aus dem Verlauf löschen...</value>
+  </data>
+  <data name="HistoryWindows_Delete_file_and_history_item" xml:space="preserve">
+    <value>Datei und Verlaufselement löschen...</value>
+  </data>
+  <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
+    <value>Bildvorschau anzeigen</value>
+  </data>
+  <data name="HistoryWindows_Upload_file" xml:space="preserve">
+    <value>Datei hochladen</value>
+  </data>
+  <data name="HistoryWindows_Edit_image" xml:space="preserve">
+    <value>Bild bearbeiten</value>
+  </data>
+  <data name="HistoryWindows_Pin_to_screen" xml:space="preserve">
+    <value>An Bildschirm anheften</value>
+  </data>
+  <data name="HistoryWindows_Analyze_image" xml:space="preserve">
+    <value>Bild analysieren</value>
+  </data>
+  <data name="HistoryWindows_No_history_items" xml:space="preserve">
+    <value>Keine Verlaufselemente</value>
+  </data>
+  <data name="HistoryWindows_Advanced_filters" xml:space="preserve">
+    <value>Erweiterte Filter</value>
+  </data>
+  <data name="HistoryWindows_Reset_filters" xml:space="preserve">
+    <value>Filter zurücksetzen</value>
+  </data>
+  <data name="HistoryWindows_Type" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="HistoryWindows_All_types" xml:space="preserve">
+    <value>Alle Typen</value>
+  </data>
+  <data name="HistoryWindows_Host" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="HistoryWindows_All_hosts" xml:space="preserve">
+    <value>Alle Hosts</value>
+  </data>
+  <data name="HistoryWindows_Date_range" xml:space="preserve">
+    <value>Datumsbereich</value>
+  </data>
+  <data name="HistoryWindows_No_image_preview" xml:space="preserve">
+    <value>Keine Bildvorschau</value>
+  </data>
+  <data name="HistoryWindows_Select_an_item_to_preview" xml:space="preserve">
+    <value>Element für die Vorschau auswählen</value>
+  </data>
+  <data name="HistoryWindows_History_statistics" xml:space="preserve">
+    <value>Verlaufsstatistik</value>
+  </data>
+  <data name="HistoryWindows_Close" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="HistoryWindows_Import_folder" xml:space="preserve">
+    <value>Ordner importieren</value>
+  </data>
+  <data name="HistoryWindows_Folder_path" xml:space="preserve">
+    <value>Ordnerpfad</value>
+  </data>
+  <data name="HistoryWindows_Browse" xml:space="preserve">
+    <value>Durchsuchen...</value>
+  </data>
+  <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
+    <value>Nur Bilddateien importieren</value>
+  </data>
+  <data name="HistoryWindows_Skip_duplicate_files" xml:space="preserve">
+    <value>Doppelte Dateien überspringen</value>
+  </data>
+  <data name="HistoryWindows_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="HistoryWindows_History_settings" xml:space="preserve">
+    <value>Verlaufseinstellungen</value>
+  </data>
+  <data name="HistoryWindows_Remember_search_text" xml:space="preserve">
+    <value>Suchtext merken</value>
+  </data>
+  <data name="HistoryWindows_Remember_window_size_and_position" xml:space="preserve">
+    <value>Fenstergröße und -position merken</value>
+  </data>
+  <data name="HistoryWindows_Done" xml:space="preserve">
+    <value>Fertig</value>
+  </data>
+  <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
+    <value>Verlaufselement bearbeiten</value>
+  </data>
+  <data name="HistoryWindows_Tags" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="HistoryWindows_One_key_value_pair_per_line" xml:space="preserve">
+    <value>Ein Schlüssel=Wert-Paar pro Zeile</value>
+  </data>
+  <data name="HistoryWindows_Save" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="HistoryWindows_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="HistoryWindows_ShareX_Image_History" xml:space="preserve">
+    <value>ShareX - Bildverlauf</value>
+  </data>
+  <data name="HistoryWindows_Loading" xml:space="preserve">
+    <value>Wird geladen...</value>
+  </data>
+  <data name="HistoryWindows_Open_image" xml:space="preserve">
+    <value>Bild öffnen</value>
+  </data>
+  <data name="HistoryWindows_Forum_link" xml:space="preserve">
+    <value>Forenlink</value>
+  </data>
+  <data name="HistoryWindows_Forum_image" xml:space="preserve">
+    <value>Forenbild</value>
+  </data>
+  <data name="HistoryWindows_Forum_linked_image" xml:space="preserve">
+    <value>Verknüpftes Forenbild</value>
+  </data>
+  <data name="HistoryWindows_Toggle_favorite" xml:space="preserve">
+    <value>Favoritenstatus umschalten</value>
+  </data>
+  <data name="HistoryWindows_No_image_history_items" xml:space="preserve">
+    <value>Keine Bildverlaufselemente</value>
+  </data>
+  <data name="HistoryWindows_Image_history_settings" xml:space="preserve">
+    <value>Bildverlaufseinstellungen</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_width" xml:space="preserve">
+    <value>Miniaturansichtsbreite</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_height" xml:space="preserve">
+    <value>Miniaturansichtshöhe</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_header" xml:space="preserve">
+    <value>Miniaturansichts-Kopfzeile</value>
+  </data>
+  <data name="HistoryWindows_None" xml:space="preserve">
+    <value>Keine</value>
+  </data>
+  <data name="HistoryWindows_Top" xml:space="preserve">
+    <value>Oben</value>
+  </data>
+  <data name="HistoryWindows_Bottom" xml:space="preserve">
+    <value>Unten</value>
+  </data>
+  <data name="HistoryWindows_Items_per_batch" xml:space="preserve">
+    <value>Elemente pro Stapel</value>
+  </data>
+  <data name="HistoryWindows_Load_the_next_batch_near_the_end" xml:space="preserve">
+    <value>Nächsten Stapel am Ende laden</value>
+  </data>
+  <data name="HistoryWindows_Hide_missing_files" xml:space="preserve">
+    <value>Fehlende Dateien ausblenden</value>
+  </data>
+  <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
+    <value>Nur Bilddateien anzeigen</value>
+  </data>
+  <data name="HistoryHelpers_Empty" xml:space="preserve">
+    <value>(leer)</value>
+  </data>
+  <data name="HistoryHelpers_HistoryItemCounts" xml:space="preserve">
+    <value>Anzahl der Verlaufselemente:</value>
+  </data>
+  <data name="HistoryHelpers_Total" xml:space="preserve">
+    <value>Gesamt:</value>
+  </data>
+  <data name="HistoryHelpers_YearlyUsages" xml:space="preserve">
+    <value>Jährliche Nutzung:</value>
+  </data>
+  <data name="HistoryHelpers_FileExtensions" xml:space="preserve">
+    <value>Dateierweiterungen:</value>
+  </data>
+  <data name="HistoryHelpers_Hosts" xml:space="preserve">
+    <value>Hosts:</value>
+  </data>
+  <data name="HistoryHelpers_ProcessNames" xml:space="preserve">
+    <value>Prozessnamen:</value>
+  </data>
+  <data name="HistoryManager_ErrorOccurredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Fehler beim Lesen der Verlaufsdatei:</value>
+  </data>
+  <data name="HistoryManager_Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="HistoryWindow_ItemsFormat" xml:space="preserve">
+    <value>{0:N0} Elemente</value>
+  </data>
+  <data name="HistoryWindow_ItemsOfFormat" xml:space="preserve">
+    <value>{0:N0} von {1:N0}</value>
+  </data>
+  <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
+    <value>Keine Elemente entsprechen den aktuellen Filtern</value>
+  </data>
+  <data name="HistoryWindow_Unfavorite" xml:space="preserve">
+    <value>Aus Favoriten entfernen</value>
+  </data>
+  <data name="HistoryWindow_CalculatingStatistics" xml:space="preserve">
+    <value>Statistik wird berechnet...</value>
+  </data>
+  <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
+    <value>Zu importierenden Ordner auswählen</value>
+  </data>
+  <data name="HistoryWindow_SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>Der ausgewählte Ordner ist nicht vorhanden.</value>
+  </data>
+  <data name="HistoryWindow_ImportingFiles" xml:space="preserve">
+    <value>Dateien werden importiert...</value>
+  </data>
+  <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
+    <value>{0:N0} Dateien erfolgreich importiert.</value>
+  </data>
+  <data name="HistoryWindow_EditTag" xml:space="preserve">
+    <value>Tag bearbeiten</value>
+  </data>
+  <data name="HistoryWindow_EnterTagForHistoryItem" xml:space="preserve">
+    <value>Geben Sie einen Tag für dieses Verlaufselement ein.</value>
+  </data>
+  <data name="HistoryWindow_RenameFile" xml:space="preserve">
+    <value>Datei umbenennen</value>
+  </data>
+  <data name="HistoryWindow_EnterNewFileName" xml:space="preserve">
+    <value>Geben Sie einen neuen Dateinamen ein.</value>
+  </data>
+  <data name="HistoryWindow_Rename" xml:space="preserve">
+    <value>Umbenennen</value>
+  </data>
+  <data name="HistoryWindow_ThisFile" xml:space="preserve">
+    <value>diese Datei</value>
+  </data>
+  <data name="HistoryWindow_ThisItem" xml:space="preserve">
+    <value>dieses Element</value>
+  </data>
+  <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
+    <value>diese {0:N0} Dateien</value>
+  </data>
+  <data name="HistoryWindow_TheseItemsFormat" xml:space="preserve">
+    <value>diese {0:N0} Elemente</value>
+  </data>
+  <data name="HistoryWindow_DeleteFiles" xml:space="preserve">
+    <value>Dateien löschen?</value>
+  </data>
+  <data name="HistoryWindow_DeleteHistoryItems" xml:space="preserve">
+    <value>Verlaufselemente löschen?</value>
+  </data>
+  <data name="HistoryWindow_ConfirmDeleteFormat" xml:space="preserve">
+    <value>Möchten Sie {0} wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.</value>
+  </data>
+  <data name="HistoryWindow_Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="ImageHistoryWindow_ItemsFormat" xml:space="preserve">
+    <value>{0:N0} Elemente</value>
+  </data>
+  <data name="ImageHistoryWindow_ShownMatchedFormat" xml:space="preserve">
+    <value>{0:N0} angezeigt · {1:N0} Treffer</value>
+  </data>
+  <data name="ImageHistoryWindow_NoItemsMatchCurrentFilter" xml:space="preserve">
+    <value>Keine Elemente entsprechen dem aktuellen Filter</value>
+  </data>
+  <data name="ImageHistoryWindow_CalculatingStatistics" xml:space="preserve">
+    <value>Statistik wird berechnet...</value>
+  </data>
+  <data name="ImageHistoryWindow_SelectFolderToImport" xml:space="preserve">
+    <value>Zu importierenden Ordner auswählen</value>
+  </data>
+  <data name="ImageHistoryWindow_SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>Der ausgewählte Ordner ist nicht vorhanden.</value>
+  </data>
+  <data name="ImageHistoryWindow_ImportingFiles" xml:space="preserve">
+    <value>Dateien werden importiert...</value>
+  </data>
+  <data name="ImageHistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
+    <value>{0:N0} Dateien erfolgreich importiert.</value>
+  </data>
+  <data name="ImageHistoryWindow_EditTag" xml:space="preserve">
+    <value>Tag bearbeiten</value>
+  </data>
+  <data name="ImageHistoryWindow_EnterTagForHistoryItem" xml:space="preserve">
+    <value>Geben Sie einen Tag für dieses Verlaufselement ein.</value>
+  </data>
+  <data name="ImageHistoryWindow_RenameFile" xml:space="preserve">
+    <value>Datei umbenennen</value>
+  </data>
+  <data name="ImageHistoryWindow_EnterNewFileName" xml:space="preserve">
+    <value>Geben Sie einen neuen Dateinamen ein.</value>
+  </data>
+  <data name="ImageHistoryWindow_Rename" xml:space="preserve">
+    <value>Umbenennen</value>
+  </data>
+  <data name="ImageHistoryWindow_ThisFile" xml:space="preserve">
+    <value>diese Datei</value>
+  </data>
+  <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
+    <value>dieses Element</value>
+  </data>
+  <data name="ImageHistoryWindow_TheseFilesFormat" xml:space="preserve">
+    <value>diese {0:N0} Dateien</value>
+  </data>
+  <data name="ImageHistoryWindow_TheseItemsFormat" xml:space="preserve">
+    <value>diese {0:N0} Elemente</value>
+  </data>
+  <data name="ImageHistoryWindow_DeleteFiles" xml:space="preserve">
+    <value>Dateien löschen?</value>
+  </data>
+  <data name="ImageHistoryWindow_DeleteHistoryItems" xml:space="preserve">
+    <value>Verlaufselemente löschen?</value>
+  </data>
+  <data name="ImageHistoryWindow_ConfirmDeleteFormat" xml:space="preserve">
+    <value>Möchten Sie {0} wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.</value>
+  </data>
+  <data name="ImageHistoryWindow_Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="ImageHistoryWindow_OpenFile" xml:space="preserve">
+    <value>Datei öffnen?</value>
+  </data>
+  <data name="ImageHistoryWindow_ConfirmOpenFileFormat" xml:space="preserve">
+    <value>Möchten Sie diese Datei öffnen?
+
+{0}</value>
+  </data>
+</root>
+

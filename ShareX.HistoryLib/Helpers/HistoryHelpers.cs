@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -24,7 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.HistoryLib.Properties;
+using ShareX.HistoryLib.Localization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,12 +36,12 @@ namespace ShareX.HistoryLib
     {
         public static string OutputStats(List<HistoryItem> historyItems)
         {
-            string empty = "(empty)";
+            string empty = Strings.HistoryHelpers_Empty;
 
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine(Resources.HistoryItemCounts);
-            sb.AppendLine(Resources.HistoryStats_Total + " " + historyItems.Count);
+            sb.AppendLine(Strings.HistoryHelpers_HistoryItemCounts);
+            sb.AppendLine(Strings.HistoryHelpers_Total + " " + historyItems.Count);
 
             IEnumerable<string> types = historyItems.
                 GroupBy(x => x.Type).
@@ -51,7 +51,7 @@ namespace ShareX.HistoryLib
             sb.AppendLine(string.Join(Environment.NewLine, types));
 
             sb.AppendLine();
-            sb.AppendLine(Resources.HistoryStats_YearlyUsages);
+            sb.AppendLine(Strings.HistoryHelpers_YearlyUsages);
 
             IEnumerable<string> yearlyUsages = historyItems.
                 GroupBy(x => x.DateTime.Year).
@@ -61,7 +61,7 @@ namespace ShareX.HistoryLib
             sb.AppendLine(string.Join(Environment.NewLine, yearlyUsages));
 
             sb.AppendLine();
-            sb.AppendLine(Resources.HistoryStats_FileExtensions);
+            sb.AppendLine(Strings.HistoryHelpers_FileExtensions);
 
             IEnumerable<string> fileExtensions = historyItems.
                 Where(x => !string.IsNullOrEmpty(x.FileName) && !x.FileName.EndsWith(")")).
@@ -73,7 +73,7 @@ namespace ShareX.HistoryLib
             sb.AppendLine(string.Join(Environment.NewLine, fileExtensions));
 
             sb.AppendLine();
-            sb.AppendLine(Resources.HistoryStats_Hosts);
+            sb.AppendLine(Strings.HistoryHelpers_Hosts);
 
             IEnumerable<string> hosts = historyItems.
                 GroupBy(x => string.IsNullOrWhiteSpace(x.Host) ? empty : x.Host).
@@ -83,7 +83,7 @@ namespace ShareX.HistoryLib
             sb.AppendLine(string.Join(Environment.NewLine, hosts));
 
             sb.AppendLine();
-            sb.AppendLine(Resources.ProcessNames);
+            sb.AppendLine(Strings.HistoryHelpers_ProcessNames);
 
             IEnumerable<string> processNames = historyItems.
                 GroupBy(x => string.IsNullOrWhiteSpace(x.TagsProcessName) ? empty : x.TagsProcessName).

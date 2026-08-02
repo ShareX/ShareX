@@ -25,6 +25,7 @@ using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Localization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -324,10 +325,12 @@ public partial class HistoryWindow : Window
             _filteredHistoryItems = items;
             HistoryList.ItemsSource = items;
             ItemCountText.Text = source.Count == items.Length
-                ? $"{items.Length:N0} items"
-                : $"{items.Length:N0} of {source.Count:N0}";
+                ? string.Format(Strings.HistoryWindow_ItemsFormat, items.Length)
+                : string.Format(Strings.HistoryWindow_ItemsOfFormat, items.Length, source.Count);
             EmptyState.IsVisible = items.Length == 0;
-            EmptyStateText.Text = source.Count == 0 ? "No history items" : "No items match the current filters";
+            EmptyStateText.Text = source.Count == 0
+                ? Strings.HistoryWindows_No_history_items
+                : Strings.HistoryWindow_NoItemsMatchCurrentFilters;
 
             if (items.Length > 0)
             {
@@ -559,7 +562,9 @@ public partial class HistoryWindow : Window
         CopyMarkdownLinkMenu.IsEnabled = CopyHtmlLinkMenu.IsEnabled;
         CopyMarkdownImageMenu.IsEnabled = CopyHtmlImageMenu.IsEnabled;
         CopyMarkdownLinkedImageMenu.IsEnabled = CopyHtmlLinkedImageMenu.IsEnabled;
-        FavoriteMenu.Header = item.Favorite ? "Unfavorite" : "Favorite";
+        FavoriteMenu.Header = item.Favorite
+            ? Strings.HistoryWindow_Unfavorite
+            : Strings.HistoryWindows_Favorite;
         TagMenu.IsEnabled = single;
         EditMenu.IsEnabled = single;
         RenameMenu.IsEnabled = single && validPath;
@@ -604,7 +609,7 @@ public partial class HistoryWindow : Window
     private async void OnStatsClick(object? sender, RoutedEventArgs e)
     {
         ShowModal(StatsDialog);
-        StatsTextBox.Text = "Calculating statistics...";
+        StatsTextBox.Text = Strings.HistoryWindow_CalculatingStatistics;
         StatsTextBox.Text = await Task.Run(() => HistoryHelpers.OutputStats(_allHistoryItems));
     }
 
@@ -619,7 +624,7 @@ public partial class HistoryWindow : Window
     {
         IReadOnlyList<IStorageFolder> folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
         {
-            Title = "Select folder to import",
+            Title = Strings.HistoryWindow_SelectFolderToImport,
             AllowMultiple = false
         });
         ImportFolderTextBox.Text = folders.FirstOrDefault()?.Path.LocalPath ?? ImportFolderTextBox.Text;
@@ -633,13 +638,13 @@ public partial class HistoryWindow : Window
         string folder = ImportFolderTextBox.Text?.Trim() ?? string.Empty;
         if (!Directory.Exists(folder))
         {
-            ImportStatusText.Text = "The selected folder does not exist.";
+            ImportStatusText.Text = Strings.HistoryWindow_SelectedFolderDoesNotExist;
             return;
         }
 
         SetBusy(true);
         ImportConfirmButton.IsEnabled = false;
-        ImportStatusText.Text = "Importing files...";
+        ImportStatusText.Text = Strings.HistoryWindow_ImportingFiles;
 
         try
         {
@@ -651,7 +656,7 @@ public partial class HistoryWindow : Window
                 : [];
 
             int imported = await Task.Run(() => ImportFolder(folder, imagesOnly, existing));
-            ImportStatusText.Text = $"Successfully imported {imported:N0} files.";
+            ImportStatusText.Text = string.Format(Strings.HistoryWindow_SuccessfullyImportedFilesFormat, imported);
             if (imported > 0)
             {
                 await RefreshHistoryAsync();
@@ -777,7 +782,7 @@ public partial class HistoryWindow : Window
     {
         HistoryItem? item = GetPrimaryItem();
         if (item == null) return;
-        ShowPrompt("Edit tag", "Enter a tag for this history item.", "Save", () =>
+        ShowPrompt(Strings.HistoryWindow_EditTag, Strings.HistoryWindow_EnterTagForHistoryItem, Strings.HistoryWindows_Save, () =>
         {
             item.Tag = PromptTextBox.Text;
             _historyManager.Edit(item);
@@ -843,7 +848,7 @@ public partial class HistoryWindow : Window
         HistoryItem? item = GetPrimaryItem();
         if (item == null || string.IsNullOrWhiteSpace(item.FilePath)) return;
         string oldName = Path.GetFileNameWithoutExtension(item.FilePath);
-        ShowPrompt("Rename file", "Enter a new file name.", "Rename", () =>
+        ShowPrompt(Strings.HistoryWindow_RenameFile, Strings.HistoryWindow_EnterNewFileName, Strings.HistoryWindow_Rename, () =>
         {
             string newName = PromptTextBox.Text?.Trim() ?? string.Empty;
             if (!string.IsNullOrWhiteSpace(newName) && !newName.Equals(oldName, StringComparison.OrdinalIgnoreCase))
@@ -865,10 +870,13 @@ public partial class HistoryWindow : Window
     {
         HistoryItem[] items = GetSelectedItems();
         if (items.Length == 0) return;
-        string noun = items.Length == 1 ? (deleteFiles ? "this file" : "this item") :
-            (deleteFiles ? $"these {items.Length:N0} files" : $"these {items.Length:N0} items");
-        ShowPrompt(deleteFiles ? "Delete files?" : "Delete history items?",
-            $"Do you really want to delete {noun}? This action cannot be undone.", "Delete", async () =>
+        string noun = items.Length == 1
+            ? (deleteFiles ? Strings.HistoryWindow_ThisFile : Strings.HistoryWindow_ThisItem)
+            : (deleteFiles
+                ? string.Format(Strings.HistoryWindow_TheseFilesFormat, items.Length)
+                : string.Format(Strings.HistoryWindow_TheseItemsFormat, items.Length));
+        ShowPrompt(deleteFiles ? Strings.HistoryWindow_DeleteFiles : Strings.HistoryWindow_DeleteHistoryItems,
+            string.Format(Strings.HistoryWindow_ConfirmDeleteFormat, noun), Strings.HistoryWindow_Delete, async () =>
             {
                 if (deleteFiles)
                 {

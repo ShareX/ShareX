@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HistoryWindows_ShareX_History" xml:space="preserve">
+    <value>ShareX - 履歴</value>
+  </data>
+  <data name="HistoryWindows_Search_file_names_and_tags" xml:space="preserve">
+    <value>ファイル名とタグを検索</value>
+  </data>
+  <data name="HistoryWindows_Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="HistoryWindows_Favorites" xml:space="preserve">
+    <value>お気に入り</value>
+  </data>
+  <data name="HistoryWindows_Stats" xml:space="preserve">
+    <value>統計</value>
+  </data>
+  <data name="HistoryWindows_Import" xml:space="preserve">
+    <value>インポート</value>
+  </data>
+  <data name="HistoryWindows_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="HistoryWindows_Date" xml:space="preserve">
+    <value>日付</value>
+  </data>
+  <data name="HistoryWindows_File_name" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
+  <data name="HistoryWindows_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="HistoryWindows_Open" xml:space="preserve">
+    <value>開く</value>
+  </data>
+  <data name="HistoryWindows_Shortened_URL" xml:space="preserve">
+    <value>短縮URL</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_URL" xml:space="preserve">
+    <value>サムネイルURL</value>
+  </data>
+  <data name="HistoryWindows_Deletion_URL" xml:space="preserve">
+    <value>削除用URL</value>
+  </data>
+  <data name="HistoryWindows_File" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="HistoryWindows_Folder" xml:space="preserve">
+    <value>フォルダー</value>
+  </data>
+  <data name="HistoryWindows_Copy" xml:space="preserve">
+    <value>コピー</value>
+  </data>
+  <data name="HistoryWindows_Image" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="HistoryWindows_Text" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
+  <data name="HistoryWindows_HTML_link" xml:space="preserve">
+    <value>HTML リンク</value>
+  </data>
+  <data name="HistoryWindows_HTML_image" xml:space="preserve">
+    <value>HTML 画像</value>
+  </data>
+  <data name="HistoryWindows_HTML_linked_image" xml:space="preserve">
+    <value>HTML リンク画像</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_link" xml:space="preserve">
+    <value>フォーラムリンク (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_image" xml:space="preserve">
+    <value>フォーラム画像 (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_linked_image" xml:space="preserve">
+    <value>フォーラムのリンク付き画像 (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Markdown_link" xml:space="preserve">
+    <value>Markdown リンク</value>
+  </data>
+  <data name="HistoryWindows_Markdown_image" xml:space="preserve">
+    <value>Markdown 画像</value>
+  </data>
+  <data name="HistoryWindows_Markdown_linked_image" xml:space="preserve">
+    <value>Markdown リンク画像</value>
+  </data>
+  <data name="HistoryWindows_File_path" xml:space="preserve">
+    <value>ファイルのパス</value>
+  </data>
+  <data name="HistoryWindows_File_name_with_extension" xml:space="preserve">
+    <value>拡張子付きファイル名</value>
+  </data>
+  <data name="HistoryWindows_Favorite" xml:space="preserve">
+    <value>お気に入り</value>
+  </data>
+  <data name="HistoryWindows_Edit_tag" xml:space="preserve">
+    <value>タグを編集...</value>
+  </data>
+  <data name="HistoryWindows_Edit_item" xml:space="preserve">
+    <value>項目を編集...</value>
+  </data>
+  <data name="HistoryWindows_Rename_file" xml:space="preserve">
+    <value>ファイル名を変更...</value>
+  </data>
+  <data name="HistoryWindows_Delete_from_history" xml:space="preserve">
+    <value>履歴から削除...</value>
+  </data>
+  <data name="HistoryWindows_Delete_file_and_history_item" xml:space="preserve">
+    <value>ファイルと履歴項目を削除...</value>
+  </data>
+  <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
+    <value>画像プレビューを表示</value>
+  </data>
+  <data name="HistoryWindows_Upload_file" xml:space="preserve">
+    <value>ファイルをアップロード</value>
+  </data>
+  <data name="HistoryWindows_Edit_image" xml:space="preserve">
+    <value>画像エディタで編集</value>
+  </data>
+  <data name="HistoryWindows_Pin_to_screen" xml:space="preserve">
+    <value>最前面に固定</value>
+  </data>
+  <data name="HistoryWindows_Analyze_image" xml:space="preserve">
+    <value>画像を解析</value>
+  </data>
+  <data name="HistoryWindows_No_history_items" xml:space="preserve">
+    <value>履歴項目がありません</value>
+  </data>
+  <data name="HistoryWindows_Advanced_filters" xml:space="preserve">
+    <value>詳細フィルター</value>
+  </data>
+  <data name="HistoryWindows_Reset_filters" xml:space="preserve">
+    <value>フィルターをリセット</value>
+  </data>
+  <data name="HistoryWindows_Type" xml:space="preserve">
+    <value>種類</value>
+  </data>
+  <data name="HistoryWindows_All_types" xml:space="preserve">
+    <value>すべての種類</value>
+  </data>
+  <data name="HistoryWindows_Host" xml:space="preserve">
+    <value>ホスト</value>
+  </data>
+  <data name="HistoryWindows_All_hosts" xml:space="preserve">
+    <value>すべてのホスト</value>
+  </data>
+  <data name="HistoryWindows_Date_range" xml:space="preserve">
+    <value>日付範囲</value>
+  </data>
+  <data name="HistoryWindows_No_image_preview" xml:space="preserve">
+    <value>画像プレビューがありません</value>
+  </data>
+  <data name="HistoryWindows_Select_an_item_to_preview" xml:space="preserve">
+    <value>プレビューする項目を選択してください</value>
+  </data>
+  <data name="HistoryWindows_History_statistics" xml:space="preserve">
+    <value>履歴統計</value>
+  </data>
+  <data name="HistoryWindows_Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="HistoryWindows_Import_folder" xml:space="preserve">
+    <value>フォルダーをインポート</value>
+  </data>
+  <data name="HistoryWindows_Folder_path" xml:space="preserve">
+    <value>フォルダーのパス</value>
+  </data>
+  <data name="HistoryWindows_Browse" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
+    <value>画像ファイルのみインポート</value>
+  </data>
+  <data name="HistoryWindows_Skip_duplicate_files" xml:space="preserve">
+    <value>重複ファイルをスキップ</value>
+  </data>
+  <data name="HistoryWindows_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="HistoryWindows_History_settings" xml:space="preserve">
+    <value>履歴設定</value>
+  </data>
+  <data name="HistoryWindows_Remember_search_text" xml:space="preserve">
+    <value>検索テキストを記憶</value>
+  </data>
+  <data name="HistoryWindows_Remember_window_size_and_position" xml:space="preserve">
+    <value>ウィンドウのサイズと位置を記憶</value>
+  </data>
+  <data name="HistoryWindows_Done" xml:space="preserve">
+    <value>完了</value>
+  </data>
+  <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
+    <value>履歴項目を編集</value>
+  </data>
+  <data name="HistoryWindows_Tags" xml:space="preserve">
+    <value>タグ</value>
+  </data>
+  <data name="HistoryWindows_One_key_value_pair_per_line" xml:space="preserve">
+    <value>1 行につき 1 つのキー=値ペア</value>
+  </data>
+  <data name="HistoryWindows_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="HistoryWindows_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="HistoryWindows_ShareX_Image_History" xml:space="preserve">
+    <value>ShareX - 画像履歴</value>
+  </data>
+  <data name="HistoryWindows_Loading" xml:space="preserve">
+    <value>読み込み中...</value>
+  </data>
+  <data name="HistoryWindows_Open_image" xml:space="preserve">
+    <value>画像を開く</value>
+  </data>
+  <data name="HistoryWindows_Forum_link" xml:space="preserve">
+    <value>フォーラムリンク</value>
+  </data>
+  <data name="HistoryWindows_Forum_image" xml:space="preserve">
+    <value>フォーラム画像</value>
+  </data>
+  <data name="HistoryWindows_Forum_linked_image" xml:space="preserve">
+    <value>フォーラムのリンク画像</value>
+  </data>
+  <data name="HistoryWindows_Toggle_favorite" xml:space="preserve">
+    <value>お気に入りを切り替え</value>
+  </data>
+  <data name="HistoryWindows_No_image_history_items" xml:space="preserve">
+    <value>画像履歴項目がありません</value>
+  </data>
+  <data name="HistoryWindows_Image_history_settings" xml:space="preserve">
+    <value>画像履歴設定</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_width" xml:space="preserve">
+    <value>サムネイルの幅</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_height" xml:space="preserve">
+    <value>サムネイルの高さ</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_header" xml:space="preserve">
+    <value>サムネイルヘッダー</value>
+  </data>
+  <data name="HistoryWindows_None" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="HistoryWindows_Top" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="HistoryWindows_Bottom" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="HistoryWindows_Items_per_batch" xml:space="preserve">
+    <value>バッチあたりの項目数</value>
+  </data>
+  <data name="HistoryWindows_Load_the_next_batch_near_the_end" xml:space="preserve">
+    <value>末尾付近で次のバッチを読み込む</value>
+  </data>
+  <data name="HistoryWindows_Hide_missing_files" xml:space="preserve">
+    <value>存在しないファイルを非表示</value>
+  </data>
+  <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
+    <value>画像ファイルのみ表示</value>
+  </data>
+  <data name="HistoryHelpers_Empty" xml:space="preserve">
+    <value>(空)</value>
+  </data>
+  <data name="HistoryHelpers_HistoryItemCounts" xml:space="preserve">
+    <value>履歴項目数:</value>
+  </data>
+  <data name="HistoryHelpers_Total" xml:space="preserve">
+    <value>合計:</value>
+  </data>
+  <data name="HistoryHelpers_YearlyUsages" xml:space="preserve">
+    <value>年別使用状況:</value>
+  </data>
+  <data name="HistoryHelpers_FileExtensions" xml:space="preserve">
+    <value>ファイル拡張子:</value>
+  </data>
+  <data name="HistoryHelpers_Hosts" xml:space="preserve">
+    <value>ホスト:</value>
+  </data>
+  <data name="HistoryHelpers_ProcessNames" xml:space="preserve">
+    <value>プロセス名:</value>
+  </data>
+  <data name="HistoryManager_ErrorOccurredWhileReadingHistoryFile" xml:space="preserve">
+    <value>履歴ファイルの読み取り中にエラーが発生しました:</value>
+  </data>
+  <data name="HistoryManager_Error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="HistoryWindow_ItemsFormat" xml:space="preserve">
+    <value>{0:N0} 項目</value>
+  </data>
+  <data name="HistoryWindow_ItemsOfFormat" xml:space="preserve">
+    <value>{1:N0} 件中 {0:N0} 件</value>
+  </data>
+  <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
+    <value>現在のフィルターに一致する項目はありません</value>
+  </data>
+  <data name="HistoryWindow_Unfavorite" xml:space="preserve">
+    <value>お気に入りから削除</value>
+  </data>
+  <data name="HistoryWindow_CalculatingStatistics" xml:space="preserve">
+    <value>統計を計算しています...</value>
+  </data>
+  <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
+    <value>インポートするフォルダーを選択</value>
+  </data>
+  <data name="HistoryWindow_SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>選択したフォルダーは存在しません。</value>
+  </data>
+  <data name="HistoryWindow_ImportingFiles" xml:space="preserve">
+    <value>ファイルをインポートしています...</value>
+  </data>
+  <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
+    <value>{0:N0} 個のファイルをインポートしました。</value>
+  </data>
+  <data name="HistoryWindow_EditTag" xml:space="preserve">
+    <value>タグを編集</value>
+  </data>
+  <data name="HistoryWindow_EnterTagForHistoryItem" xml:space="preserve">
+    <value>この履歴項目のタグを入力してください。</value>
+  </data>
+  <data name="HistoryWindow_RenameFile" xml:space="preserve">
+    <value>ファイル名を変更</value>
+  </data>
+  <data name="HistoryWindow_EnterNewFileName" xml:space="preserve">
+    <value>新しいファイル名を入力してください。</value>
+  </data>
+  <data name="HistoryWindow_Rename" xml:space="preserve">
+    <value>名前を変更</value>
+  </data>
+  <data name="HistoryWindow_ThisFile" xml:space="preserve">
+    <value>このファイル</value>
+  </data>
+  <data name="HistoryWindow_ThisItem" xml:space="preserve">
+    <value>この項目</value>
+  </data>
+  <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
+    <value>これら {0:N0} 個のファイル</value>
+  </data>
+  <data name="HistoryWindow_TheseItemsFormat" xml:space="preserve">
+    <value>これら {0:N0} 個の項目</value>
+  </data>
+  <data name="HistoryWindow_DeleteFiles" xml:space="preserve">
+    <value>ファイルを削除しますか？</value>
+  </data>
+  <data name="HistoryWindow_DeleteHistoryItems" xml:space="preserve">
+    <value>履歴項目を削除しますか？</value>
+  </data>
+  <data name="HistoryWindow_ConfirmDeleteFormat" xml:space="preserve">
+    <value>{0}を削除してもよろしいですか？この操作は元に戻せません。</value>
+  </data>
+  <data name="HistoryWindow_Delete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="ImageHistoryWindow_ItemsFormat" xml:space="preserve">
+    <value>{0:N0} 項目</value>
+  </data>
+  <data name="ImageHistoryWindow_ShownMatchedFormat" xml:space="preserve">
+    <value>{0:N0} 件表示 · {1:N0} 件一致</value>
+  </data>
+  <data name="ImageHistoryWindow_NoItemsMatchCurrentFilter" xml:space="preserve">
+    <value>現在のフィルターに一致する項目はありません</value>
+  </data>
+  <data name="ImageHistoryWindow_CalculatingStatistics" xml:space="preserve">
+    <value>統計を計算しています...</value>
+  </data>
+  <data name="ImageHistoryWindow_SelectFolderToImport" xml:space="preserve">
+    <value>インポートするフォルダーを選択</value>
+  </data>
+  <data name="ImageHistoryWindow_SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>選択したフォルダーは存在しません。</value>
+  </data>
+  <data name="ImageHistoryWindow_ImportingFiles" xml:space="preserve">
+    <value>ファイルをインポートしています...</value>
+  </data>
+  <data name="ImageHistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
+    <value>{0:N0} 個のファイルをインポートしました。</value>
+  </data>
+  <data name="ImageHistoryWindow_EditTag" xml:space="preserve">
+    <value>タグを編集</value>
+  </data>
+  <data name="ImageHistoryWindow_EnterTagForHistoryItem" xml:space="preserve">
+    <value>この履歴項目のタグを入力してください。</value>
+  </data>
+  <data name="ImageHistoryWindow_RenameFile" xml:space="preserve">
+    <value>ファイル名を変更</value>
+  </data>
+  <data name="ImageHistoryWindow_EnterNewFileName" xml:space="preserve">
+    <value>新しいファイル名を入力してください。</value>
+  </data>
+  <data name="ImageHistoryWindow_Rename" xml:space="preserve">
+    <value>名前を変更</value>
+  </data>
+  <data name="ImageHistoryWindow_ThisFile" xml:space="preserve">
+    <value>このファイル</value>
+  </data>
+  <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
+    <value>この項目</value>
+  </data>
+  <data name="ImageHistoryWindow_TheseFilesFormat" xml:space="preserve">
+    <value>これら {0:N0} 個のファイル</value>
+  </data>
+  <data name="ImageHistoryWindow_TheseItemsFormat" xml:space="preserve">
+    <value>これら {0:N0} 個の項目</value>
+  </data>
+  <data name="ImageHistoryWindow_DeleteFiles" xml:space="preserve">
+    <value>ファイルを削除しますか？</value>
+  </data>
+  <data name="ImageHistoryWindow_DeleteHistoryItems" xml:space="preserve">
+    <value>履歴項目を削除しますか？</value>
+  </data>
+  <data name="ImageHistoryWindow_ConfirmDeleteFormat" xml:space="preserve">
+    <value>{0}を削除してもよろしいですか？この操作は元に戻せません。</value>
+  </data>
+  <data name="ImageHistoryWindow_Delete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="ImageHistoryWindow_OpenFile" xml:space="preserve">
+    <value>ファイルを開きますか？</value>
+  </data>
+  <data name="ImageHistoryWindow_ConfirmOpenFileFormat" xml:space="preserve">
+    <value>このファイルを開きますか？
+
+{0}</value>
+  </data>
+</root>
+

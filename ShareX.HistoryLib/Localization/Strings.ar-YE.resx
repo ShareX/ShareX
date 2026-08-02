@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HistoryWindows_ShareX_History" xml:space="preserve">
+    <value>ShareX - السجل</value>
+  </data>
+  <data name="HistoryWindows_Search_file_names_and_tags" xml:space="preserve">
+    <value>البحث في أسماء الملفات والعلامات</value>
+  </data>
+  <data name="HistoryWindows_Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="HistoryWindows_Favorites" xml:space="preserve">
+    <value>المفضلة</value>
+  </data>
+  <data name="HistoryWindows_Stats" xml:space="preserve">
+    <value>الإحصاءات</value>
+  </data>
+  <data name="HistoryWindows_Import" xml:space="preserve">
+    <value>استيراد</value>
+  </data>
+  <data name="HistoryWindows_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="HistoryWindows_Date" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="HistoryWindows_File_name" xml:space="preserve">
+    <value>اسم الملف</value>
+  </data>
+  <data name="HistoryWindows_URL" xml:space="preserve">
+    <value>عنوان URL</value>
+  </data>
+  <data name="HistoryWindows_Open" xml:space="preserve">
+    <value>فتح</value>
+  </data>
+  <data name="HistoryWindows_Shortened_URL" xml:space="preserve">
+    <value>عنوان URL المختصر</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_URL" xml:space="preserve">
+    <value>عنوان URL للصورة المصغرة</value>
+  </data>
+  <data name="HistoryWindows_Deletion_URL" xml:space="preserve">
+    <value>عنوان الحذف</value>
+  </data>
+  <data name="HistoryWindows_File" xml:space="preserve">
+    <value>ملف</value>
+  </data>
+  <data name="HistoryWindows_Folder" xml:space="preserve">
+    <value>المجلد</value>
+  </data>
+  <data name="HistoryWindows_Copy" xml:space="preserve">
+    <value>نسخ</value>
+  </data>
+  <data name="HistoryWindows_Image" xml:space="preserve">
+    <value>الصورة</value>
+  </data>
+  <data name="HistoryWindows_Text" xml:space="preserve">
+    <value>النص</value>
+  </data>
+  <data name="HistoryWindows_HTML_link" xml:space="preserve">
+    <value>رابط HTML</value>
+  </data>
+  <data name="HistoryWindows_HTML_image" xml:space="preserve">
+    <value>صورة HTML</value>
+  </data>
+  <data name="HistoryWindows_HTML_linked_image" xml:space="preserve">
+    <value>صورة HTML مرتبطة</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_link" xml:space="preserve">
+    <value>رابط منتدى (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_image" xml:space="preserve">
+    <value>صورة منتدى (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_linked_image" xml:space="preserve">
+    <value>صورة مرتبطة للمنتدى (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Markdown_link" xml:space="preserve">
+    <value>رابط Markdown</value>
+  </data>
+  <data name="HistoryWindows_Markdown_image" xml:space="preserve">
+    <value>صورة Markdown</value>
+  </data>
+  <data name="HistoryWindows_Markdown_linked_image" xml:space="preserve">
+    <value>صورة Markdown مرتبطة</value>
+  </data>
+  <data name="HistoryWindows_File_path" xml:space="preserve">
+    <value>مسار الملف</value>
+  </data>
+  <data name="HistoryWindows_File_name_with_extension" xml:space="preserve">
+    <value>اسم الملف مع الامتداد</value>
+  </data>
+  <data name="HistoryWindows_Favorite" xml:space="preserve">
+    <value>مفضلة</value>
+  </data>
+  <data name="HistoryWindows_Edit_tag" xml:space="preserve">
+    <value>تحرير العلامة...</value>
+  </data>
+  <data name="HistoryWindows_Edit_item" xml:space="preserve">
+    <value>تحرير العنصر...</value>
+  </data>
+  <data name="HistoryWindows_Rename_file" xml:space="preserve">
+    <value>إعادة تسمية الملف...</value>
+  </data>
+  <data name="HistoryWindows_Delete_from_history" xml:space="preserve">
+    <value>حذف من السجل...</value>
+  </data>
+  <data name="HistoryWindows_Delete_file_and_history_item" xml:space="preserve">
+    <value>حذف الملف وعنصر السجل...</value>
+  </data>
+  <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
+    <value>إظهار معاينة الصورة</value>
+  </data>
+  <data name="HistoryWindows_Upload_file" xml:space="preserve">
+    <value>رفع الملف</value>
+  </data>
+  <data name="HistoryWindows_Edit_image" xml:space="preserve">
+    <value>تعديل الصورة</value>
+  </data>
+  <data name="HistoryWindows_Pin_to_screen" xml:space="preserve">
+    <value>تثيبت على الشاشة</value>
+  </data>
+  <data name="HistoryWindows_Analyze_image" xml:space="preserve">
+    <value>تحليل الصورة</value>
+  </data>
+  <data name="HistoryWindows_No_history_items" xml:space="preserve">
+    <value>لا توجد عناصر في السجل</value>
+  </data>
+  <data name="HistoryWindows_Advanced_filters" xml:space="preserve">
+    <value>عوامل تصفية متقدمة</value>
+  </data>
+  <data name="HistoryWindows_Reset_filters" xml:space="preserve">
+    <value>إعادة تعيين عوامل التصفية</value>
+  </data>
+  <data name="HistoryWindows_Type" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="HistoryWindows_All_types" xml:space="preserve">
+    <value>كل الأنواع</value>
+  </data>
+  <data name="HistoryWindows_Host" xml:space="preserve">
+    <value>المضيف</value>
+  </data>
+  <data name="HistoryWindows_All_hosts" xml:space="preserve">
+    <value>كل المضيفين</value>
+  </data>
+  <data name="HistoryWindows_Date_range" xml:space="preserve">
+    <value>نطاق التاريخ</value>
+  </data>
+  <data name="HistoryWindows_No_image_preview" xml:space="preserve">
+    <value>لا توجد معاينة للصورة</value>
+  </data>
+  <data name="HistoryWindows_Select_an_item_to_preview" xml:space="preserve">
+    <value>حدد عنصرًا لمعاينته</value>
+  </data>
+  <data name="HistoryWindows_History_statistics" xml:space="preserve">
+    <value>إحصاءات السجل</value>
+  </data>
+  <data name="HistoryWindows_Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="HistoryWindows_Import_folder" xml:space="preserve">
+    <value>استيراد مجلد</value>
+  </data>
+  <data name="HistoryWindows_Folder_path" xml:space="preserve">
+    <value>مسار المجلد</value>
+  </data>
+  <data name="HistoryWindows_Browse" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
+    <value>استيراد ملفات الصور فقط</value>
+  </data>
+  <data name="HistoryWindows_Skip_duplicate_files" xml:space="preserve">
+    <value>تخطي الملفات المكررة</value>
+  </data>
+  <data name="HistoryWindows_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="HistoryWindows_History_settings" xml:space="preserve">
+    <value>إعدادات السجل</value>
+  </data>
+  <data name="HistoryWindows_Remember_search_text" xml:space="preserve">
+    <value>تذكر نص البحث</value>
+  </data>
+  <data name="HistoryWindows_Remember_window_size_and_position" xml:space="preserve">
+    <value>تذكر حجم النافذة وموضعها</value>
+  </data>
+  <data name="HistoryWindows_Done" xml:space="preserve">
+    <value>تـم</value>
+  </data>
+  <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
+    <value>تحرير عنصر السجل</value>
+  </data>
+  <data name="HistoryWindows_Tags" xml:space="preserve">
+    <value>العلامات</value>
+  </data>
+  <data name="HistoryWindows_One_key_value_pair_per_line" xml:space="preserve">
+    <value>زوج مفتاح=قيمة واحد لكل سطر</value>
+  </data>
+  <data name="HistoryWindows_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="HistoryWindows_OK" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="HistoryWindows_ShareX_Image_History" xml:space="preserve">
+    <value>ShareX - سجل الصور</value>
+  </data>
+  <data name="HistoryWindows_Loading" xml:space="preserve">
+    <value>جارٍ التحميل...</value>
+  </data>
+  <data name="HistoryWindows_Open_image" xml:space="preserve">
+    <value>فتح صورة</value>
+  </data>
+  <data name="HistoryWindows_Forum_link" xml:space="preserve">
+    <value>رابط المنتدى</value>
+  </data>
+  <data name="HistoryWindows_Forum_image" xml:space="preserve">
+    <value>صورة المنتدى</value>
+  </data>
+  <data name="HistoryWindows_Forum_linked_image" xml:space="preserve">
+    <value>صورة المنتدى المرتبطة</value>
+  </data>
+  <data name="HistoryWindows_Toggle_favorite" xml:space="preserve">
+    <value>تبديل المفضلة</value>
+  </data>
+  <data name="HistoryWindows_No_image_history_items" xml:space="preserve">
+    <value>لا توجد عناصر في سجل الصور</value>
+  </data>
+  <data name="HistoryWindows_Image_history_settings" xml:space="preserve">
+    <value>إعدادات سجل الصور</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_width" xml:space="preserve">
+    <value>عرض الصورة المصغرة</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_height" xml:space="preserve">
+    <value>ارتفاع الصورة المصغرة</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_header" xml:space="preserve">
+    <value>رأس الصورة المصغرة</value>
+  </data>
+  <data name="HistoryWindows_None" xml:space="preserve">
+    <value>بدون</value>
+  </data>
+  <data name="HistoryWindows_Top" xml:space="preserve">
+    <value>أعلى</value>
+  </data>
+  <data name="HistoryWindows_Bottom" xml:space="preserve">
+    <value>أسفل</value>
+  </data>
+  <data name="HistoryWindows_Items_per_batch" xml:space="preserve">
+    <value>العناصر لكل دفعة</value>
+  </data>
+  <data name="HistoryWindows_Load_the_next_batch_near_the_end" xml:space="preserve">
+    <value>تحميل الدفعة التالية قرب النهاية</value>
+  </data>
+  <data name="HistoryWindows_Hide_missing_files" xml:space="preserve">
+    <value>إخفاء الملفات المفقودة</value>
+  </data>
+  <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
+    <value>إظهار ملفات الصور فقط</value>
+  </data>
+  <data name="HistoryHelpers_Empty" xml:space="preserve">
+    <value>(فارغ)</value>
+  </data>
+  <data name="HistoryHelpers_HistoryItemCounts" xml:space="preserve">
+    <value>عدد عناصر السجل:</value>
+  </data>
+  <data name="HistoryHelpers_Total" xml:space="preserve">
+    <value>الإجمالي:</value>
+  </data>
+  <data name="HistoryHelpers_YearlyUsages" xml:space="preserve">
+    <value>الاستخدام السنوي:</value>
+  </data>
+  <data name="HistoryHelpers_FileExtensions" xml:space="preserve">
+    <value>امتدادات الملفات:</value>
+  </data>
+  <data name="HistoryHelpers_Hosts" xml:space="preserve">
+    <value>المضيفون:</value>
+  </data>
+  <data name="HistoryHelpers_ProcessNames" xml:space="preserve">
+    <value>أسماء العمليات:</value>
+  </data>
+  <data name="HistoryManager_ErrorOccurredWhileReadingHistoryFile" xml:space="preserve">
+    <value>حدث خطأ أثناء قراءة ملف السجل:</value>
+  </data>
+  <data name="HistoryManager_Error" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="HistoryWindow_ItemsFormat" xml:space="preserve">
+    <value>{0:N0} عناصر</value>
+  </data>
+  <data name="HistoryWindow_ItemsOfFormat" xml:space="preserve">
+    <value>{0:N0} من {1:N0}</value>
+  </data>
+  <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
+    <value>لا توجد عناصر تطابق عوامل التصفية الحالية</value>
+  </data>
+  <data name="HistoryWindow_Unfavorite" xml:space="preserve">
+    <value>إزالة من المفضلة</value>
+  </data>
+  <data name="HistoryWindow_CalculatingStatistics" xml:space="preserve">
+    <value>جارٍ حساب الإحصاءات...</value>
+  </data>
+  <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
+    <value>حدد المجلد المراد استيراده</value>
+  </data>
+  <data name="HistoryWindow_SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>المجلد المحدد غير موجود.</value>
+  </data>
+  <data name="HistoryWindow_ImportingFiles" xml:space="preserve">
+    <value>جارٍ استيراد الملفات...</value>
+  </data>
+  <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
+    <value>تم استيراد {0:N0} ملفات بنجاح.</value>
+  </data>
+  <data name="HistoryWindow_EditTag" xml:space="preserve">
+    <value>تحرير العلامة</value>
+  </data>
+  <data name="HistoryWindow_EnterTagForHistoryItem" xml:space="preserve">
+    <value>أدخل علامة لعنصر السجل هذا.</value>
+  </data>
+  <data name="HistoryWindow_RenameFile" xml:space="preserve">
+    <value>إعادة تسمية الملف</value>
+  </data>
+  <data name="HistoryWindow_EnterNewFileName" xml:space="preserve">
+    <value>أدخل اسم ملف جديدًا.</value>
+  </data>
+  <data name="HistoryWindow_Rename" xml:space="preserve">
+    <value>إعادة تسمية</value>
+  </data>
+  <data name="HistoryWindow_ThisFile" xml:space="preserve">
+    <value>هذا الملف</value>
+  </data>
+  <data name="HistoryWindow_ThisItem" xml:space="preserve">
+    <value>هذا العنصر</value>
+  </data>
+  <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
+    <value>هذه الملفات وعددها {0:N0}</value>
+  </data>
+  <data name="HistoryWindow_TheseItemsFormat" xml:space="preserve">
+    <value>هذه العناصر وعددها {0:N0}</value>
+  </data>
+  <data name="HistoryWindow_DeleteFiles" xml:space="preserve">
+    <value>حذف الملفات؟</value>
+  </data>
+  <data name="HistoryWindow_DeleteHistoryItems" xml:space="preserve">
+    <value>حذف عناصر السجل؟</value>
+  </data>
+  <data name="HistoryWindow_ConfirmDeleteFormat" xml:space="preserve">
+    <value>هل تريد بالتأكيد حذف {0}؟ لا يمكن التراجع عن هذا الإجراء.</value>
+  </data>
+  <data name="HistoryWindow_Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="ImageHistoryWindow_ItemsFormat" xml:space="preserve">
+    <value>{0:N0} عناصر</value>
+  </data>
+  <data name="ImageHistoryWindow_ShownMatchedFormat" xml:space="preserve">
+    <value>المعروض {0:N0} · المتطابق {1:N0}</value>
+  </data>
+  <data name="ImageHistoryWindow_NoItemsMatchCurrentFilter" xml:space="preserve">
+    <value>لا توجد عناصر تطابق عامل التصفية الحالي</value>
+  </data>
+  <data name="ImageHistoryWindow_CalculatingStatistics" xml:space="preserve">
+    <value>جارٍ حساب الإحصاءات...</value>
+  </data>
+  <data name="ImageHistoryWindow_SelectFolderToImport" xml:space="preserve">
+    <value>حدد المجلد المراد استيراده</value>
+  </data>
+  <data name="ImageHistoryWindow_SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>المجلد المحدد غير موجود.</value>
+  </data>
+  <data name="ImageHistoryWindow_ImportingFiles" xml:space="preserve">
+    <value>جارٍ استيراد الملفات...</value>
+  </data>
+  <data name="ImageHistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
+    <value>تم استيراد {0:N0} ملفات بنجاح.</value>
+  </data>
+  <data name="ImageHistoryWindow_EditTag" xml:space="preserve">
+    <value>تحرير العلامة</value>
+  </data>
+  <data name="ImageHistoryWindow_EnterTagForHistoryItem" xml:space="preserve">
+    <value>أدخل علامة لعنصر السجل هذا.</value>
+  </data>
+  <data name="ImageHistoryWindow_RenameFile" xml:space="preserve">
+    <value>إعادة تسمية الملف</value>
+  </data>
+  <data name="ImageHistoryWindow_EnterNewFileName" xml:space="preserve">
+    <value>أدخل اسم ملف جديدًا.</value>
+  </data>
+  <data name="ImageHistoryWindow_Rename" xml:space="preserve">
+    <value>إعادة تسمية</value>
+  </data>
+  <data name="ImageHistoryWindow_ThisFile" xml:space="preserve">
+    <value>هذا الملف</value>
+  </data>
+  <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
+    <value>هذا العنصر</value>
+  </data>
+  <data name="ImageHistoryWindow_TheseFilesFormat" xml:space="preserve">
+    <value>هذه الملفات وعددها {0:N0}</value>
+  </data>
+  <data name="ImageHistoryWindow_TheseItemsFormat" xml:space="preserve">
+    <value>هذه العناصر وعددها {0:N0}</value>
+  </data>
+  <data name="ImageHistoryWindow_DeleteFiles" xml:space="preserve">
+    <value>حذف الملفات؟</value>
+  </data>
+  <data name="ImageHistoryWindow_DeleteHistoryItems" xml:space="preserve">
+    <value>حذف عناصر السجل؟</value>
+  </data>
+  <data name="ImageHistoryWindow_ConfirmDeleteFormat" xml:space="preserve">
+    <value>هل تريد بالتأكيد حذف {0}؟ لا يمكن التراجع عن هذا الإجراء.</value>
+  </data>
+  <data name="ImageHistoryWindow_Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="ImageHistoryWindow_OpenFile" xml:space="preserve">
+    <value>فتح الملف؟</value>
+  </data>
+  <data name="ImageHistoryWindow_ConfirmOpenFileFormat" xml:space="preserve">
+    <value>هل تريد فتح هذا الملف؟
+
+{0}</value>
+  </data>
+</root>
+

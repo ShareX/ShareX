@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HistoryWindows_ShareX_History" xml:space="preserve">
+    <value>ShareX - تاریخچه</value>
+  </data>
+  <data name="HistoryWindows_Search_file_names_and_tags" xml:space="preserve">
+    <value>جستجو در نام فایل‌ها و برچسب‌ها</value>
+  </data>
+  <data name="HistoryWindows_Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="HistoryWindows_Favorites" xml:space="preserve">
+    <value>موارد دلخواه</value>
+  </data>
+  <data name="HistoryWindows_Stats" xml:space="preserve">
+    <value>آمار</value>
+  </data>
+  <data name="HistoryWindows_Import" xml:space="preserve">
+    <value>درون‌ریزی</value>
+  </data>
+  <data name="HistoryWindows_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="HistoryWindows_Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="HistoryWindows_File_name" xml:space="preserve">
+    <value>نام فایل</value>
+  </data>
+  <data name="HistoryWindows_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="HistoryWindows_Open" xml:space="preserve">
+    <value>باز کردن</value>
+  </data>
+  <data name="HistoryWindows_Shortened_URL" xml:space="preserve">
+    <value>URL کوتاه‌شده</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_URL" xml:space="preserve">
+    <value>بندانگشتی URL</value>
+  </data>
+  <data name="HistoryWindows_Deletion_URL" xml:space="preserve">
+    <value>URL حذف</value>
+  </data>
+  <data name="HistoryWindows_File" xml:space="preserve">
+    <value>فایل</value>
+  </data>
+  <data name="HistoryWindows_Folder" xml:space="preserve">
+    <value>پوشه</value>
+  </data>
+  <data name="HistoryWindows_Copy" xml:space="preserve">
+    <value>کپی</value>
+  </data>
+  <data name="HistoryWindows_Image" xml:space="preserve">
+    <value>عکس</value>
+  </data>
+  <data name="HistoryWindows_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="HistoryWindows_HTML_link" xml:space="preserve">
+    <value>پیوند HTML</value>
+  </data>
+  <data name="HistoryWindows_HTML_image" xml:space="preserve">
+    <value>تصویر HTML</value>
+  </data>
+  <data name="HistoryWindows_HTML_linked_image" xml:space="preserve">
+    <value>تصویر پیوندشده HTML</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_link" xml:space="preserve">
+    <value>پیوند انجمن (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_image" xml:space="preserve">
+    <value>تصویر انجمن (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_linked_image" xml:space="preserve">
+    <value>تصویر پیونددار انجمن (BBCode)</value>
+  </data>
+  <data name="HistoryWindows_Markdown_link" xml:space="preserve">
+    <value>پیوند Markdown</value>
+  </data>
+  <data name="HistoryWindows_Markdown_image" xml:space="preserve">
+    <value>تصویر Markdown</value>
+  </data>
+  <data name="HistoryWindows_Markdown_linked_image" xml:space="preserve">
+    <value>تصویر پیوندشده Markdown</value>
+  </data>
+  <data name="HistoryWindows_File_path" xml:space="preserve">
+    <value>مسیر فایل</value>
+  </data>
+  <data name="HistoryWindows_File_name_with_extension" xml:space="preserve">
+    <value>نام فایل با پسوند</value>
+  </data>
+  <data name="HistoryWindows_Favorite" xml:space="preserve">
+    <value>مورد علاقه</value>
+  </data>
+  <data name="HistoryWindows_Edit_tag" xml:space="preserve">
+    <value>ویرایش برچسب...</value>
+  </data>
+  <data name="HistoryWindows_Edit_item" xml:space="preserve">
+    <value>ویرایش مورد...</value>
+  </data>
+  <data name="HistoryWindows_Rename_file" xml:space="preserve">
+    <value>تغییر نام فایل...</value>
+  </data>
+  <data name="HistoryWindows_Delete_from_history" xml:space="preserve">
+    <value>حذف از تاریخچه...</value>
+  </data>
+  <data name="HistoryWindows_Delete_file_and_history_item" xml:space="preserve">
+    <value>حذف فایل و مورد تاریخچه...</value>
+  </data>
+  <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
+    <value>نمایش پیش‌نمایش تصویر</value>
+  </data>
+  <data name="HistoryWindows_Upload_file" xml:space="preserve">
+    <value>آپلود فایل</value>
+  </data>
+  <data name="HistoryWindows_Edit_image" xml:space="preserve">
+    <value>ویرایش تصویر</value>
+  </data>
+  <data name="HistoryWindows_Pin_to_screen" xml:space="preserve">
+    <value>سنجاق به صفحه</value>
+  </data>
+  <data name="HistoryWindows_Analyze_image" xml:space="preserve">
+    <value>تحلیل تصویر</value>
+  </data>
+  <data name="HistoryWindows_No_history_items" xml:space="preserve">
+    <value>هیچ موردی در تاریخچه نیست</value>
+  </data>
+  <data name="HistoryWindows_Advanced_filters" xml:space="preserve">
+    <value>فیلترهای پیشرفته</value>
+  </data>
+  <data name="HistoryWindows_Reset_filters" xml:space="preserve">
+    <value>بازنشانی فیلترها</value>
+  </data>
+  <data name="HistoryWindows_Type" xml:space="preserve">
+    <value>نوع</value>
+  </data>
+  <data name="HistoryWindows_All_types" xml:space="preserve">
+    <value>همه نوع‌ها</value>
+  </data>
+  <data name="HistoryWindows_Host" xml:space="preserve">
+    <value>میزبان</value>
+  </data>
+  <data name="HistoryWindows_All_hosts" xml:space="preserve">
+    <value>همه میزبان‌ها</value>
+  </data>
+  <data name="HistoryWindows_Date_range" xml:space="preserve">
+    <value>بازه تاریخ</value>
+  </data>
+  <data name="HistoryWindows_No_image_preview" xml:space="preserve">
+    <value>پیش‌نمایش تصویر موجود نیست</value>
+  </data>
+  <data name="HistoryWindows_Select_an_item_to_preview" xml:space="preserve">
+    <value>یک مورد را برای پیش‌نمایش انتخاب کنید</value>
+  </data>
+  <data name="HistoryWindows_History_statistics" xml:space="preserve">
+    <value>آمار تاریخچه</value>
+  </data>
+  <data name="HistoryWindows_Close" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="HistoryWindows_Import_folder" xml:space="preserve">
+    <value>وارد کردن پوشه</value>
+  </data>
+  <data name="HistoryWindows_Folder_path" xml:space="preserve">
+    <value>مسیر پوشه</value>
+  </data>
+  <data name="HistoryWindows_Browse" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
+    <value>فقط فایل‌های تصویری وارد شوند</value>
+  </data>
+  <data name="HistoryWindows_Skip_duplicate_files" xml:space="preserve">
+    <value>نادیده گرفتن فایل‌های تکراری</value>
+  </data>
+  <data name="HistoryWindows_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="HistoryWindows_History_settings" xml:space="preserve">
+    <value>تنظیمات تاریخچه</value>
+  </data>
+  <data name="HistoryWindows_Remember_search_text" xml:space="preserve">
+    <value>به‌خاطر سپردن متن جستجو</value>
+  </data>
+  <data name="HistoryWindows_Remember_window_size_and_position" xml:space="preserve">
+    <value>به‌خاطر سپردن اندازه و موقعیت پنجره</value>
+  </data>
+  <data name="HistoryWindows_Done" xml:space="preserve">
+    <value>انجام شد</value>
+  </data>
+  <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
+    <value>ویرایش مورد تاریخچه</value>
+  </data>
+  <data name="HistoryWindows_Tags" xml:space="preserve">
+    <value>برچسب‌ها</value>
+  </data>
+  <data name="HistoryWindows_One_key_value_pair_per_line" xml:space="preserve">
+    <value>در هر خط یک جفت کلید=مقدار</value>
+  </data>
+  <data name="HistoryWindows_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="HistoryWindows_OK" xml:space="preserve">
+    <value>تأیید</value>
+  </data>
+  <data name="HistoryWindows_ShareX_Image_History" xml:space="preserve">
+    <value>ShareX - تاریخچه تصاویر</value>
+  </data>
+  <data name="HistoryWindows_Loading" xml:space="preserve">
+    <value>در حال بارگیری...</value>
+  </data>
+  <data name="HistoryWindows_Open_image" xml:space="preserve">
+    <value>باز کردن تصویر</value>
+  </data>
+  <data name="HistoryWindows_Forum_link" xml:space="preserve">
+    <value>پیوند انجمن</value>
+  </data>
+  <data name="HistoryWindows_Forum_image" xml:space="preserve">
+    <value>تصویر انجمن</value>
+  </data>
+  <data name="HistoryWindows_Forum_linked_image" xml:space="preserve">
+    <value>تصویر پیوندشده انجمن</value>
+  </data>
+  <data name="HistoryWindows_Toggle_favorite" xml:space="preserve">
+    <value>تغییر وضعیت مورد علاقه</value>
+  </data>
+  <data name="HistoryWindows_No_image_history_items" xml:space="preserve">
+    <value>هیچ موردی در تاریخچه تصاویر نیست</value>
+  </data>
+  <data name="HistoryWindows_Image_history_settings" xml:space="preserve">
+    <value>تنظیمات تاریخچه تصاویر</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_width" xml:space="preserve">
+    <value>عرض تصویر بندانگشتی</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_height" xml:space="preserve">
+    <value>ارتفاع تصویر بندانگشتی</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_header" xml:space="preserve">
+    <value>سرصفحه تصویر بندانگشتی</value>
+  </data>
+  <data name="HistoryWindows_None" xml:space="preserve">
+    <value>هیچ کدام</value>
+  </data>
+  <data name="HistoryWindows_Top" xml:space="preserve">
+    <value>بالا</value>
+  </data>
+  <data name="HistoryWindows_Bottom" xml:space="preserve">
+    <value>پایین</value>
+  </data>
+  <data name="HistoryWindows_Items_per_batch" xml:space="preserve">
+    <value>موارد در هر دسته</value>
+  </data>
+  <data name="HistoryWindows_Load_the_next_batch_near_the_end" xml:space="preserve">
+    <value>بارگیری دسته بعدی نزدیک پایان</value>
+  </data>
+  <data name="HistoryWindows_Hide_missing_files" xml:space="preserve">
+    <value>پنهان کردن فایل‌های مفقود</value>
+  </data>
+  <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
+    <value>فقط فایل‌های تصویری نمایش داده شوند</value>
+  </data>
+  <data name="HistoryHelpers_Empty" xml:space="preserve">
+    <value>(خالی)</value>
+  </data>
+  <data name="HistoryHelpers_HistoryItemCounts" xml:space="preserve">
+    <value>تعداد موارد تاریخچه:</value>
+  </data>
+  <data name="HistoryHelpers_Total" xml:space="preserve">
+    <value>مجموع:</value>
+  </data>
+  <data name="HistoryHelpers_YearlyUsages" xml:space="preserve">
+    <value>استفاده سالانه:</value>
+  </data>
+  <data name="HistoryHelpers_FileExtensions" xml:space="preserve">
+    <value>پسوندهای فایل:</value>
+  </data>
+  <data name="HistoryHelpers_Hosts" xml:space="preserve">
+    <value>میزبان‌ها:</value>
+  </data>
+  <data name="HistoryHelpers_ProcessNames" xml:space="preserve">
+    <value>نام فرایندها:</value>
+  </data>
+  <data name="HistoryManager_ErrorOccurredWhileReadingHistoryFile" xml:space="preserve">
+    <value>هنگام خواندن فایل تاریخچه خطایی رخ داد:</value>
+  </data>
+  <data name="HistoryManager_Error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="HistoryWindow_ItemsFormat" xml:space="preserve">
+    <value>{0:N0} مورد</value>
+  </data>
+  <data name="HistoryWindow_ItemsOfFormat" xml:space="preserve">
+    <value>{0:N0} از {1:N0}</value>
+  </data>
+  <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
+    <value>هیچ موردی با فیلترهای فعلی مطابقت ندارد</value>
+  </data>
+  <data name="HistoryWindow_Unfavorite" xml:space="preserve">
+    <value>حذف از علاقه‌مندی‌ها</value>
+  </data>
+  <data name="HistoryWindow_CalculatingStatistics" xml:space="preserve">
+    <value>در حال محاسبه آمار...</value>
+  </data>
+  <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
+    <value>پوشه موردنظر برای وارد کردن را انتخاب کنید</value>
+  </data>
+  <data name="HistoryWindow_SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>پوشه انتخاب‌شده وجود ندارد.</value>
+  </data>
+  <data name="HistoryWindow_ImportingFiles" xml:space="preserve">
+    <value>در حال وارد کردن فایل‌ها...</value>
+  </data>
+  <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
+    <value>{0:N0} فایل با موفقیت وارد شد.</value>
+  </data>
+  <data name="HistoryWindow_EditTag" xml:space="preserve">
+    <value>ویرایش برچسب</value>
+  </data>
+  <data name="HistoryWindow_EnterTagForHistoryItem" xml:space="preserve">
+    <value>برای این مورد تاریخچه یک برچسب وارد کنید.</value>
+  </data>
+  <data name="HistoryWindow_RenameFile" xml:space="preserve">
+    <value>تغییر نام فایل</value>
+  </data>
+  <data name="HistoryWindow_EnterNewFileName" xml:space="preserve">
+    <value>نام فایل جدید را وارد کنید.</value>
+  </data>
+  <data name="HistoryWindow_Rename" xml:space="preserve">
+    <value>تغییر نام</value>
+  </data>
+  <data name="HistoryWindow_ThisFile" xml:space="preserve">
+    <value>این فایل</value>
+  </data>
+  <data name="HistoryWindow_ThisItem" xml:space="preserve">
+    <value>این مورد</value>
+  </data>
+  <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
+    <value>این {0:N0} فایل</value>
+  </data>
+  <data name="HistoryWindow_TheseItemsFormat" xml:space="preserve">
+    <value>این {0:N0} مورد</value>
+  </data>
+  <data name="HistoryWindow_DeleteFiles" xml:space="preserve">
+    <value>فایل‌ها حذف شوند؟</value>
+  </data>
+  <data name="HistoryWindow_DeleteHistoryItems" xml:space="preserve">
+    <value>موارد تاریخچه حذف شوند؟</value>
+  </data>
+  <data name="HistoryWindow_ConfirmDeleteFormat" xml:space="preserve">
+    <value>آیا واقعاً می‌خواهید {0} را حذف کنید؟ این عمل قابل بازگشت نیست.</value>
+  </data>
+  <data name="HistoryWindow_Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="ImageHistoryWindow_ItemsFormat" xml:space="preserve">
+    <value>{0:N0} مورد</value>
+  </data>
+  <data name="ImageHistoryWindow_ShownMatchedFormat" xml:space="preserve">
+    <value>{0:N0} نمایش داده شد · {1:N0} مطابق</value>
+  </data>
+  <data name="ImageHistoryWindow_NoItemsMatchCurrentFilter" xml:space="preserve">
+    <value>هیچ موردی با فیلتر فعلی مطابقت ندارد</value>
+  </data>
+  <data name="ImageHistoryWindow_CalculatingStatistics" xml:space="preserve">
+    <value>در حال محاسبه آمار...</value>
+  </data>
+  <data name="ImageHistoryWindow_SelectFolderToImport" xml:space="preserve">
+    <value>پوشه موردنظر برای وارد کردن را انتخاب کنید</value>
+  </data>
+  <data name="ImageHistoryWindow_SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>پوشه انتخاب‌شده وجود ندارد.</value>
+  </data>
+  <data name="ImageHistoryWindow_ImportingFiles" xml:space="preserve">
+    <value>در حال وارد کردن فایل‌ها...</value>
+  </data>
+  <data name="ImageHistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
+    <value>{0:N0} فایل با موفقیت وارد شد.</value>
+  </data>
+  <data name="ImageHistoryWindow_EditTag" xml:space="preserve">
+    <value>ویرایش برچسب</value>
+  </data>
+  <data name="ImageHistoryWindow_EnterTagForHistoryItem" xml:space="preserve">
+    <value>برای این مورد تاریخچه یک برچسب وارد کنید.</value>
+  </data>
+  <data name="ImageHistoryWindow_RenameFile" xml:space="preserve">
+    <value>تغییر نام فایل</value>
+  </data>
+  <data name="ImageHistoryWindow_EnterNewFileName" xml:space="preserve">
+    <value>نام فایل جدید را وارد کنید.</value>
+  </data>
+  <data name="ImageHistoryWindow_Rename" xml:space="preserve">
+    <value>تغییر نام</value>
+  </data>
+  <data name="ImageHistoryWindow_ThisFile" xml:space="preserve">
+    <value>این فایل</value>
+  </data>
+  <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
+    <value>این مورد</value>
+  </data>
+  <data name="ImageHistoryWindow_TheseFilesFormat" xml:space="preserve">
+    <value>این {0:N0} فایل</value>
+  </data>
+  <data name="ImageHistoryWindow_TheseItemsFormat" xml:space="preserve">
+    <value>این {0:N0} مورد</value>
+  </data>
+  <data name="ImageHistoryWindow_DeleteFiles" xml:space="preserve">
+    <value>فایل‌ها حذف شوند؟</value>
+  </data>
+  <data name="ImageHistoryWindow_DeleteHistoryItems" xml:space="preserve">
+    <value>موارد تاریخچه حذف شوند؟</value>
+  </data>
+  <data name="ImageHistoryWindow_ConfirmDeleteFormat" xml:space="preserve">
+    <value>آیا واقعاً می‌خواهید {0} را حذف کنید؟ این عمل قابل بازگشت نیست.</value>
+  </data>
+  <data name="ImageHistoryWindow_Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="ImageHistoryWindow_OpenFile" xml:space="preserve">
+    <value>فایل باز شود؟</value>
+  </data>
+  <data name="ImageHistoryWindow_ConfirmOpenFileFormat" xml:space="preserve">
+    <value>آیا می‌خواهید این فایل را باز کنید؟
+
+{0}</value>
+  </data>
+</root>
+

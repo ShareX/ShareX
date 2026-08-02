@@ -18,6 +18,7 @@ using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Localization;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -310,10 +311,12 @@ public partial class ImageHistoryWindow : Window
         int loaded = _loadedEntries.Count;
         int filtered = _filteredHistoryItems.Length;
         ItemCountText.Text = loaded == filtered
-            ? $"{filtered:N0} items"
-            : $"{loaded:N0} shown · {filtered:N0} matched";
+            ? string.Format(Strings.ImageHistoryWindow_ItemsFormat, filtered)
+            : string.Format(Strings.ImageHistoryWindow_ShownMatchedFormat, loaded, filtered);
         EmptyState.IsVisible = filtered == 0;
-        EmptyStateText.Text = _allHistoryItems.Count == 0 ? "No image history items" : "No items match the current filter";
+        EmptyStateText.Text = _allHistoryItems.Count == 0
+            ? Strings.HistoryWindows_No_image_history_items
+            : Strings.ImageHistoryWindow_NoItemsMatchCurrentFilter;
     }
 
     private void OnScrollChanged(object? sender, ScrollChangedEventArgs e)
@@ -514,7 +517,7 @@ public partial class ImageHistoryWindow : Window
     private async void OnStatsClick(object? sender, RoutedEventArgs e)
     {
         ShowModal(StatsDialog);
-        StatsTextBox.Text = "Calculating statistics...";
+        StatsTextBox.Text = Strings.ImageHistoryWindow_CalculatingStatistics;
         StatsTextBox.Text = await Task.Run(() => HistoryHelpers.OutputStats(_allHistoryItems));
     }
 
@@ -529,7 +532,7 @@ public partial class ImageHistoryWindow : Window
     {
         IReadOnlyList<IStorageFolder> folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
         {
-            Title = "Select folder to import",
+            Title = Strings.ImageHistoryWindow_SelectFolderToImport,
             AllowMultiple = false
         });
         ImportFolderTextBox.Text = folders.FirstOrDefault()?.Path.LocalPath ?? ImportFolderTextBox.Text;
@@ -543,13 +546,13 @@ public partial class ImageHistoryWindow : Window
         string folder = ImportFolderTextBox.Text?.Trim() ?? string.Empty;
         if (!Directory.Exists(folder))
         {
-            ImportStatusText.Text = "The selected folder does not exist.";
+            ImportStatusText.Text = Strings.ImageHistoryWindow_SelectedFolderDoesNotExist;
             return;
         }
 
         SetBusy(true);
         ImportConfirmButton.IsEnabled = false;
-        ImportStatusText.Text = "Importing files...";
+        ImportStatusText.Text = Strings.ImageHistoryWindow_ImportingFiles;
         try
         {
             bool imagesOnly = ImportImagesOnlyCheckBox.IsChecked == true;
@@ -558,7 +561,7 @@ public partial class ImageHistoryWindow : Window
                     .Select(item => item.FilePath).ToHashSet(StringComparer.OrdinalIgnoreCase)!
                 : [];
             int imported = await Task.Run(() => ImportFolder(folder, imagesOnly, existing));
-            ImportStatusText.Text = $"Successfully imported {imported:N0} files.";
+            ImportStatusText.Text = string.Format(Strings.ImageHistoryWindow_SuccessfullyImportedFilesFormat, imported);
             if (imported > 0) await RefreshHistoryAsync();
         }
         catch (Exception ex)
@@ -687,7 +690,7 @@ public partial class ImageHistoryWindow : Window
     {
         HistoryItem? item = GetPrimaryItem();
         if (item == null) return;
-        ShowPrompt("Edit tag", "Enter a tag for this history item.", "Save", () =>
+        ShowPrompt(Strings.ImageHistoryWindow_EditTag, Strings.ImageHistoryWindow_EnterTagForHistoryItem, Strings.HistoryWindows_Save, () =>
         {
             item.Tag = PromptTextBox.Text;
             _historyManager.Edit(item);
@@ -755,7 +758,7 @@ public partial class ImageHistoryWindow : Window
         HistoryItem? item = GetPrimaryItem();
         if (item == null || string.IsNullOrWhiteSpace(item.FilePath)) return;
         string oldName = Path.GetFileNameWithoutExtension(item.FilePath);
-        ShowPrompt("Rename file", "Enter a new file name.", "Rename", () =>
+        ShowPrompt(Strings.ImageHistoryWindow_RenameFile, Strings.ImageHistoryWindow_EnterNewFileName, Strings.ImageHistoryWindow_Rename, () =>
         {
             string newName = PromptTextBox.Text?.Trim() ?? string.Empty;
             if (!string.IsNullOrWhiteSpace(newName) && !newName.Equals(oldName, StringComparison.OrdinalIgnoreCase))
@@ -789,10 +792,13 @@ public partial class ImageHistoryWindow : Window
     {
         HistoryItem[] items = GetSelectedItems();
         if (items.Length == 0) return;
-        string noun = items.Length == 1 ? (deleteFiles ? "this file" : "this item") :
-            (deleteFiles ? $"these {items.Length:N0} files" : $"these {items.Length:N0} items");
-        ShowPrompt(deleteFiles ? "Delete files?" : "Delete history items?",
-            $"Do you really want to delete {noun}? This action cannot be undone.", "Delete", async () =>
+        string noun = items.Length == 1
+            ? (deleteFiles ? Strings.ImageHistoryWindow_ThisFile : Strings.ImageHistoryWindow_ThisItem)
+            : (deleteFiles
+                ? string.Format(Strings.ImageHistoryWindow_TheseFilesFormat, items.Length)
+                : string.Format(Strings.ImageHistoryWindow_TheseItemsFormat, items.Length));
+        ShowPrompt(deleteFiles ? Strings.ImageHistoryWindow_DeleteFiles : Strings.ImageHistoryWindow_DeleteHistoryItems,
+            string.Format(Strings.ImageHistoryWindow_ConfirmDeleteFormat, noun), Strings.ImageHistoryWindow_Delete, async () =>
             {
                 if (deleteFiles)
                 {
@@ -824,8 +830,9 @@ public partial class ImageHistoryWindow : Window
         }
         else
         {
-            ShowPrompt("Open file?", $"Would you like to open this file?{Environment.NewLine}{Environment.NewLine}{item.FilePath}",
-                "Open", () =>
+            ShowPrompt(Strings.ImageHistoryWindow_OpenFile,
+                string.Format(Strings.ImageHistoryWindow_ConfirmOpenFileFormat, item.FilePath),
+                Strings.HistoryWindows_Open, () =>
                 {
                     FileHelpers.OpenFile(item.FilePath);
                     return Task.CompletedTask;
