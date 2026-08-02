@@ -70,7 +70,6 @@ namespace ShareX
                     if (taskInfo.IsValid)
                     {
                         ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = taskInfo.ToString().Replace("&", "&&"), Tag = taskInfo };
-                        tsmi.Image = taskInfo.Icon;
                         tsmi.Click += (sender, e) =>
                         {
                             cms.Close();

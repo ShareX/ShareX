@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 
 namespace ShareX
@@ -41,23 +40,6 @@ namespace ShareX
             get
             {
                 return AfterCaptureTasks != AfterCaptureTasks.None;
-            }
-        }
-
-        public Image Icon
-        {
-            get
-            {
-                IEnumerable<AfterCaptureTasks> flags = AfterCaptureTasks.GetFlags();
-
-                if (flags.Count() > 0)
-                {
-                    AfterCaptureTasks last = flags.Last();
-
-                    return TaskHelpers.FindMenuIcon(last);
-                }
-
-                return null;
             }
         }
 
