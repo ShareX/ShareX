@@ -3,12 +3,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="760"
         d:DesignHeight="640"
         x:Class="ShareX.QuickTaskMenuEditorWindow"
-        Title="ShareX - Quick task menu editor"
+        Title="{x:Static res:Strings.QuickTaskMenuEditorWindow_Title}"
         Width="760"
         Height="640"
         MinWidth="620"
@@ -81,39 +82,39 @@
                         <Button Grid.Column="0" Classes="compact" Click="OnAddClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
-                                <TextBlock Text="Add..."/>
+                                <TextBlock Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_Add}"/>
                             </StackPanel>
                         </Button>
                         <Button x:Name="EditButton" Grid.Column="1" Classes="compact" Click="OnEditClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings_2}"/>
-                                <TextBlock Text="Edit..."/>
+                                <TextBlock Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_Edit}"/>
                             </StackPanel>
                         </Button>
                         <Button x:Name="RemoveButton" Grid.Column="2" Classes="compact" Click="OnRemoveClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
-                                <TextBlock Text="Remove"/>
+                                <TextBlock Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_Remove}"/>
                             </StackPanel>
                         </Button>
                         <Button x:Name="MoveUpButton"
                                 Grid.Column="3"
                                 Classes="square"
-                                ToolTip.Tip="Move up"
+                                ToolTip.Tip="{x:Static res:Strings.QuickTaskMenuEditorWindow_MoveUp}"
                                 Click="OnMoveUpClick">
                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_up}" FontSize="16"/>
                         </Button>
                         <Button x:Name="MoveDownButton"
                                 Grid.Column="4"
                                 Classes="square"
-                                ToolTip.Tip="Move down"
+                                ToolTip.Tip="{x:Static res:Strings.QuickTaskMenuEditorWindow_MoveDown}"
                                 Click="OnMoveDownClick">
                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_down}" FontSize="16"/>
                         </Button>
                         <Button Grid.Column="6" Classes="compact" Click="OnResetClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
-                                <TextBlock Text="Reset..."/>
+                                <TextBlock Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_Reset}"/>
                             </StackPanel>
                         </Button>
                     </Grid>
@@ -145,7 +146,7 @@
                                                 VerticalAlignment="Center"/>
                                         <TextBlock Grid.Column="1"
                                                    Classes="hint"
-                                                   Text="Separator"
+                                                   Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_Separator}"
                                                    VerticalAlignment="Center"/>
                                         <Border Grid.Column="2"
                                                 Height="1"
@@ -160,12 +161,12 @@
 
                 <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="10">
                     <TextBlock Classes="hint"
-                               Text="A task with no after-capture actions appears as a separator in the Quick Task menu."
+                               Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_SeparatorHint}"
                                VerticalAlignment="Center"/>
                     <Button Grid.Column="1"
                             Width="88"
                             Height="34"
-                            Content="Close"
+                            Content="{x:Static res:Strings.QuickTaskMenuEditorWindow_Close}"
                             Click="OnCloseClick"/>
                 </Grid>
             </Grid>
@@ -192,20 +193,20 @@
                                        VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="ItemEditorTitle"
-                                           Text="Add quick task"
+                                           Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_AddQuickTask}"
                                            FontSize="19"
                                            FontWeight="SemiBold"/>
                                 <TextBlock Classes="hint"
-                                           Text="Choose the actions that this Quick Task menu item should run."/>
+                                           Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_ChooseActions}"/>
                             </StackPanel>
                         </Grid>
 
                         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                             <StackPanel Spacing="10" Margin="0,0,4,0">
                                 <StackPanel Spacing="3">
-                                    <TextBlock Text="Menu text" FontWeight="Normal"/>
+                                    <TextBlock Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_MenuText}" FontWeight="Normal"/>
                                     <TextBox x:Name="TaskNameBox" Classes="form-control"/>
-                                    <TextBlock Classes="hint" Text="Leave empty to generate the menu text from the selected actions."/>
+                                    <TextBlock Classes="hint" Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_MenuTextHint}"/>
                                 </StackPanel>
 
                                 <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
@@ -215,7 +216,7 @@
                                             BorderThickness="1"
                                             CornerRadius="5">
                                         <StackPanel Spacing="5">
-                                            <TextBlock Text="After capture tasks"
+                                            <TextBlock Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_AfterCaptureTasks}"
                                                        FontSize="14"
                                                        FontWeight="SemiBold"/>
                                             <ItemsControl x:Name="AfterCaptureTaskOptions">
@@ -237,7 +238,7 @@
                                             BorderThickness="1"
                                             CornerRadius="5">
                                         <StackPanel Spacing="5">
-                                            <TextBlock Text="After upload tasks"
+                                            <TextBlock Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_AfterUploadTasks}"
                                                        FontSize="14"
                                                        FontWeight="SemiBold"/>
                                             <ItemsControl x:Name="AfterUploadTaskOptions">
@@ -261,11 +262,11 @@
                                     HorizontalAlignment="Right">
                             <Button Classes="compact"
                                     MinWidth="84"
-                                    Content="Save"
+                                    Content="{x:Static res:Strings.QuickTaskMenuEditorWindow_Save}"
                                     Click="OnSaveItemClick"/>
                             <Button Classes="compact"
                                     MinWidth="84"
-                                    Content="Cancel"
+                                    Content="{x:Static res:Strings.QuickTaskMenuEditorWindow_Cancel}"
                                     Click="OnCancelItemClick"/>
                         </StackPanel>
                     </Grid>
@@ -291,7 +292,7 @@
                                        FontSize="20"
                                        Foreground="{DynamicResource ShareX.Brush.Accent}"/>
                             <TextBlock Grid.Column="1"
-                                       Text="Reset Quick Tasks?"
+                                       Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_ResetPrompt}"
                                        FontSize="18"
                                        FontWeight="SemiBold"/>
                         </Grid>
@@ -305,11 +306,11 @@
                                     HorizontalAlignment="Right">
                             <Button Classes="compact"
                                     MinWidth="84"
-                                    Content="Reset"
+                                    Content="{x:Static res:Strings.QuickTaskMenuEditorWindow_ResetAction}"
                                     Click="OnConfirmResetClick"/>
                             <Button Classes="compact"
                                     MinWidth="84"
-                                    Content="Cancel"
+                                    Content="{x:Static res:Strings.QuickTaskMenuEditorWindow_Cancel}"
                                     Click="OnCancelResetClick"/>
                         </StackPanel>
                     </Grid>

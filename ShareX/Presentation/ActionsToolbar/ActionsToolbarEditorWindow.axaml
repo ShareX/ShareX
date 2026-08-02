@@ -3,12 +3,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="620"
         d:DesignHeight="570"
         x:Class="ShareX.ActionsToolbarEditorWindow"
-        Title="ShareX - Edit actions toolbar"
+        Title="{x:Static res:Strings.ActionsToolbarEditorWindow_Title}"
         Width="620"
         Height="570"
         MinWidth="520"
@@ -75,26 +76,26 @@
                     <Button x:Name="AddButton" Grid.Column="0" Classes="compact" Click="OnAddClick">
                         <StackPanel Orientation="Horizontal" Spacing="7">
                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
-                            <TextBlock Text="Add..."/>
+                            <TextBlock Text="{x:Static res:Strings.ActionsToolbarEditorWindow_Add}"/>
                         </StackPanel>
                     </Button>
                     <Button x:Name="RemoveButton" Grid.Column="1" Classes="compact" Click="OnRemoveClick">
                         <StackPanel Orientation="Horizontal" Spacing="7">
                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
-                            <TextBlock Text="Remove"/>
+                            <TextBlock Text="{x:Static res:Strings.ActionsToolbarEditorWindow_Remove}"/>
                         </StackPanel>
                     </Button>
                     <Button x:Name="MoveUpButton"
                             Grid.Column="2"
                             Classes="square"
-                            ToolTip.Tip="Move up"
+                            ToolTip.Tip="{x:Static res:Strings.ActionsToolbarEditorWindow_MoveUp}"
                             Click="OnMoveUpClick">
                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_up}" FontSize="16"/>
                     </Button>
                     <Button x:Name="MoveDownButton"
                             Grid.Column="3"
                             Classes="square"
-                            ToolTip.Tip="Move down"
+                            ToolTip.Tip="{x:Static res:Strings.ActionsToolbarEditorWindow_MoveDown}"
                             Click="OnMoveDownClick">
                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_down}" FontSize="16"/>
                     </Button>
@@ -133,7 +134,7 @@
                                             VerticalAlignment="Center"/>
                                     <TextBlock Grid.Column="1"
                                                Classes="hint"
-                                               Text="Separator"/>
+                                               Text="{x:Static res:Strings.ActionsToolbarEditorWindow_Separator}"/>
                                     <Border Grid.Column="2"
                                             Height="1"
                                             Background="{DynamicResource ShareX.Brush.Border}"
@@ -149,7 +150,7 @@
                 <Button Grid.Column="1"
                         Width="88"
                         Height="34"
-                        Content="Close"
+                        Content="{x:Static res:Strings.ActionsToolbarEditorWindow_Close}"
                         Click="OnCloseClick"/>
             </Grid>
         </Grid>

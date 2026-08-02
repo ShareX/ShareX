@@ -1,8 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.AutoCaptureWindow"
-        Title="ShareX - Auto capture"
+        Title="{x:Static res:Strings.AutoCaptureWindow_Title}"
         Width="460"
         Height="430"
         MinWidth="420"
@@ -27,13 +28,13 @@
                         <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
                             <RadioButton x:Name="CustomRegionRadio"
                                          GroupName="CaptureRegion"
-                                         Content="Custom region"
+                                         Content="{x:Static res:Strings.AutoCaptureWindow_CustomRegion}"
                                          IsChecked="True"
                                          IsCheckedChanged="OnCustomRegionChanged"/>
                             <RadioButton x:Name="FullscreenRadio"
                                          Grid.Column="1"
                                          GroupName="CaptureRegion"
-                                         Content="Fullscreen"
+                                         Content="{x:Static res:Strings.AutoCaptureWindow_Fullscreen}"
                                          IsCheckedChanged="OnFullscreenChanged"/>
                         </Grid>
 
@@ -44,7 +45,7 @@
                                     CornerRadius="4"
                                     Padding="9,7">
                                 <TextBlock x:Name="RegionText"
-                                           Text="No region selected"
+                                           Text="{x:Static res:Strings.AutoCaptureWindow_NoRegion}"
                                            FontWeight="Normal"
                                            TextTrimming="CharacterEllipsis"
                                            VerticalAlignment="Center"/>
@@ -54,7 +55,7 @@
                                     Click="OnSelectRegionClick">
                                 <StackPanel Orientation="Horizontal" Spacing="7">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scan}"/>
-                                    <TextBlock Text="Select region..."/>
+                                    <TextBlock Text="{x:Static res:Strings.AutoCaptureWindow_SelectRegion}"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -64,7 +65,7 @@
                 <Border Grid.Row="1" Classes="tool-panel" Padding="14">
                     <Grid RowDefinitions="Auto,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,120,Auto" ColumnSpacing="8">
-                            <TextBlock Classes="field-label" Text="Repeat time:"/>
+                            <TextBlock Classes="field-label" Text="{x:Static res:Strings.AutoCaptureWindow_RepeatTime}"/>
                             <NumericUpDown x:Name="RepeatTimeInput"
                                            Grid.Column="1"
                                            Minimum="1"
@@ -72,14 +73,14 @@
                                            Increment="0.1"
                                            FormatString="0.0"
                                            ValueChanged="OnRepeatTimeChanged"/>
-                            <TextBlock Grid.Column="2" Classes="field-label" Text="seconds"/>
+                            <TextBlock Grid.Column="2" Classes="field-label" Text="{x:Static res:Strings.AutoCaptureWindow_Seconds}"/>
                         </Grid>
                         <StackPanel Grid.Row="1" Spacing="8">
                             <CheckBox x:Name="AutoMinimizeInput"
-                                      Content="Auto minimize to tray"
+                                      Content="{x:Static res:Strings.AutoCaptureWindow_AutoMinimize}"
                                       IsCheckedChanged="OnAutoMinimizeChanged"/>
                             <CheckBox x:Name="WaitUploadsInput"
-                                      Content="Wait until tasks complete"
+                                      Content="{x:Static res:Strings.AutoCaptureWindow_WaitTasks}"
                                       IsCheckedChanged="OnWaitUploadsChanged"/>
                         </StackPanel>
                     </Grid>
@@ -96,7 +97,7 @@
                         <TextBlock x:Name="ExecuteIcon"
                                    Classes="icon"
                                    Text="{x:Static theming:LucideIcons.play}"/>
-                        <TextBlock x:Name="ExecuteText" Text="Start"/>
+                        <TextBlock x:Name="ExecuteText" Text="{x:Static res:Strings.AutoCaptureWindow_Start}"/>
                     </StackPanel>
                 </Button>
             </Grid>
@@ -115,7 +116,7 @@
                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                         <TextBlock x:Name="StatusText"
                                    Grid.Column="1"
-                                   Text="Ready"
+                                   Text="{x:Static res:Strings.AutoCaptureWindow_Ready}"
                                    FontWeight="Normal"
                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                    TextTrimming="CharacterEllipsis"/>

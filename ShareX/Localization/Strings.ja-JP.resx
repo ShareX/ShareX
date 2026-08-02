@@ -2077,4 +2077,253 @@
   <data name="BeforeUploadWindow_NoPreview" xml:space="preserve">
     <value>プレビューを利用できません</value>
   </data>
+  <data name="ActionsToolbarEditorWindow_Title" xml:space="preserve">
+    <value>ShareX - アクションツールバーの編集</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Add" xml:space="preserve">
+    <value>追加...</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Remove" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_MoveUp" xml:space="preserve">
+    <value>上へ移動</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_MoveDown" xml:space="preserve">
+    <value>下へ移動</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Separator" xml:space="preserve">
+    <value>区切り</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="ActionsToolbarWindow_Title" xml:space="preserve">
+    <value>ShareX - アクションツールバー</value>
+  </data>
+  <data name="ActionsToolbarWindow_DropToUpload" xml:space="preserve">
+    <value>ドロップしてアップロード</value>
+  </data>
+  <data name="ActionsToolbarWindow_Tip" xml:space="preserve">
+    <value>ドラッグで移動、右クリックでメニューを表示</value>
+  </data>
+  <data name="ActionsToolbarWindow_Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="ActionsToolbarWindow_LockPosition" xml:space="preserve">
+    <value>位置を固定</value>
+  </data>
+  <data name="ActionsToolbarWindow_StayOnTop" xml:space="preserve">
+    <value>常に手前に表示</value>
+  </data>
+  <data name="ActionsToolbarWindow_OpenAtStartup" xml:space="preserve">
+    <value>ShareX の起動時に開く</value>
+  </data>
+  <data name="ActionsToolbarWindow_Edit" xml:space="preserve">
+    <value>編集...</value>
+  </data>
+  <data name="AfterCaptureWindow_Title" xml:space="preserve">
+    <value>ShareX - キャプチャ後</value>
+  </data>
+  <data name="AfterCaptureWindow_Heading" xml:space="preserve">
+    <value>キャプチャ後</value>
+  </data>
+  <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
+    <value>キャプチャした内容を確認し、次の処理を選択してください。</value>
+  </data>
+  <data name="AfterCaptureWindow_Destinations" xml:space="preserve">
+    <value>アップロード先</value>
+  </data>
+  <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
+    <value>アップロード後</value>
+  </data>
+  <data name="AfterCaptureWindow_FileName" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
+  <data name="AfterCaptureWindow_CopyImage" xml:space="preserve">
+    <value>画像をコピー</value>
+  </data>
+  <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="AfterCaptureWindow_Continue" xml:space="preserve">
+    <value>続行</value>
+  </data>
+  <data name="AfterCaptureWindow_CopyPreviewImage" xml:space="preserve">
+    <value>プレビュー画像をコピー</value>
+  </data>
+  <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
+    <value>画像プレビューを利用できません</value>
+  </data>
+  <data name="AfterCaptureWindow_CustomUploader" xml:space="preserve">
+    <value>カスタム [{0}]</value>
+  </data>
+  <data name="AfterUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - アップロード後</value>
+  </data>
+  <data name="AfterUploadWindow_UploadComplete" xml:space="preserve">
+    <value>アップロード完了</value>
+  </data>
+  <data name="AfterUploadWindow_ClipboardFormats" xml:space="preserve">
+    <value>クリップボード形式</value>
+  </data>
+  <data name="AfterUploadWindow_CopyPreviewImage" xml:space="preserve">
+    <value>プレビュー画像をコピー</value>
+  </data>
+  <data name="AfterUploadWindow_NoPreview" xml:space="preserve">
+    <value>画像プレビューを利用できません</value>
+  </data>
+  <data name="AfterUploadWindow_CopyImage" xml:space="preserve">
+    <value>画像をコピー</value>
+  </data>
+  <data name="AfterUploadWindow_CopySelectedFormat" xml:space="preserve">
+    <value>選択した形式をコピー</value>
+  </data>
+  <data name="AfterUploadWindow_OpenLink" xml:space="preserve">
+    <value>リンクを開く</value>
+  </data>
+  <data name="AfterUploadWindow_OpenFile" xml:space="preserve">
+    <value>ファイルを開く</value>
+  </data>
+  <data name="AfterUploadWindow_OpenContainingFolder" xml:space="preserve">
+    <value>保存先フォルダーを開く</value>
+  </data>
+  <data name="AfterUploadWindow_Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="AfterUploadWindow_GroupCustom" xml:space="preserve">
+    <value>カスタム</value>
+  </data>
+  <data name="AfterUploadWindow_GroupForums" xml:space="preserve">
+    <value>フォーラム</value>
+  </data>
+  <data name="AfterUploadWindow_GroupLocal" xml:space="preserve">
+    <value>ローカル</value>
+  </data>
+  <data name="AfterUploadWindow_GroupLinks" xml:space="preserve">
+    <value>リンク</value>
+  </data>
+  <data name="AutoCaptureWindow_Title" xml:space="preserve">
+    <value>ShareX - 自動キャプチャ</value>
+  </data>
+  <data name="AutoCaptureWindow_CustomRegion" xml:space="preserve">
+    <value>カスタム領域</value>
+  </data>
+  <data name="AutoCaptureWindow_Fullscreen" xml:space="preserve">
+    <value>全画面</value>
+  </data>
+  <data name="AutoCaptureWindow_NoRegion" xml:space="preserve">
+    <value>領域が選択されていません</value>
+  </data>
+  <data name="AutoCaptureWindow_SelectRegion" xml:space="preserve">
+    <value>領域を選択...</value>
+  </data>
+  <data name="AutoCaptureWindow_RepeatTime" xml:space="preserve">
+    <value>繰り返し間隔:</value>
+  </data>
+  <data name="AutoCaptureWindow_Seconds" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="AutoCaptureWindow_AutoMinimize" xml:space="preserve">
+    <value>自動的に通知領域へ最小化</value>
+  </data>
+  <data name="AutoCaptureWindow_WaitTasks" xml:space="preserve">
+    <value>タスクが完了するまで待機</value>
+  </data>
+  <data name="AutoCaptureWindow_Start" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="AutoCaptureWindow_Ready" xml:space="preserve">
+    <value>準備完了</value>
+  </data>
+  <data name="AutoCaptureWindow_Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="AutoCaptureWindow_Status" xml:space="preserve">
+    <value>残り時間: {0} 秒 ({1}%) — 合計: {2}</value>
+  </data>
+  <data name="AutoCaptureWindow_Region" xml:space="preserve">
+    <value>X: {0}、Y: {1}、幅: {2}、高さ: {3}</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Add" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Name" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Value" xml:space="preserve">
+    <value>値</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Remove" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Title" xml:space="preserve">
+    <value>ShareX - クイックタスクメニューエディター</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Add" xml:space="preserve">
+    <value>追加...</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Edit" xml:space="preserve">
+    <value>編集...</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Remove" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MoveUp" xml:space="preserve">
+    <value>上へ移動</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MoveDown" xml:space="preserve">
+    <value>下へ移動</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Reset" xml:space="preserve">
+    <value>リセット...</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Separator" xml:space="preserve">
+    <value>区切り</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_SeparatorHint" xml:space="preserve">
+    <value>キャプチャ後のアクションがないタスクは、クイックタスクメニューに区切りとして表示されます。</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AddQuickTask" xml:space="preserve">
+    <value>クイックタスクを追加</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_EditQuickTask" xml:space="preserve">
+    <value>クイックタスクを編集</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ChooseActions" xml:space="preserve">
+    <value>このクイックタスクメニュー項目で実行するアクションを選択してください。</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MenuText" xml:space="preserve">
+    <value>メニューテキスト</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MenuTextHint" xml:space="preserve">
+    <value>空欄にすると、選択したアクションからメニューテキストが生成されます。</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AfterCaptureTasks" xml:space="preserve">
+    <value>キャプチャ後のタスク</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AfterUploadTasks" xml:space="preserve">
+    <value>アップロード後のタスク</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ResetPrompt" xml:space="preserve">
+    <value>クイックタスクをリセットしますか？</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ResetAction" xml:space="preserve">
+    <value>リセット</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ResetConfirmation" xml:space="preserve">
+    <value>すべてのクイックタスクを既定値に戻しますか？この操作は元に戻せません。</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
+    <value>{0}  •  アップロード後: {1}</value>
+  </data>
 </root>

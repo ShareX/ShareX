@@ -2077,4 +2077,253 @@
   <data name="BeforeUploadWindow_NoPreview" xml:space="preserve">
     <value>Pré-visualização indisponível</value>
   </data>
+  <data name="ActionsToolbarEditorWindow_Title" xml:space="preserve">
+    <value>ShareX - Editar barra de ações</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Add" xml:space="preserve">
+    <value>Adicionar...</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Remove" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_MoveUp" xml:space="preserve">
+    <value>Mover para cima</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_MoveDown" xml:space="preserve">
+    <value>Mover para baixo</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Separator" xml:space="preserve">
+    <value>Separador</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="ActionsToolbarWindow_Title" xml:space="preserve">
+    <value>ShareX - Barra de ações</value>
+  </data>
+  <data name="ActionsToolbarWindow_DropToUpload" xml:space="preserve">
+    <value>Largue para carregar</value>
+  </data>
+  <data name="ActionsToolbarWindow_Tip" xml:space="preserve">
+    <value>Arraste para mover; clique com o botão direito para abrir o menu</value>
+  </data>
+  <data name="ActionsToolbarWindow_Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="ActionsToolbarWindow_LockPosition" xml:space="preserve">
+    <value>Bloquear posição</value>
+  </data>
+  <data name="ActionsToolbarWindow_StayOnTop" xml:space="preserve">
+    <value>Manter no topo</value>
+  </data>
+  <data name="ActionsToolbarWindow_OpenAtStartup" xml:space="preserve">
+    <value>Abrir ao iniciar o ShareX</value>
+  </data>
+  <data name="ActionsToolbarWindow_Edit" xml:space="preserve">
+    <value>Editar...</value>
+  </data>
+  <data name="AfterCaptureWindow_Title" xml:space="preserve">
+    <value>ShareX - Após a captura</value>
+  </data>
+  <data name="AfterCaptureWindow_Heading" xml:space="preserve">
+    <value>Após a captura</value>
+  </data>
+  <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
+    <value>Reveja o conteúdo capturado e escolha o que acontece a seguir.</value>
+  </data>
+  <data name="AfterCaptureWindow_Destinations" xml:space="preserve">
+    <value>Destinos</value>
+  </data>
+  <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
+    <value>Após o carregamento</value>
+  </data>
+  <data name="AfterCaptureWindow_FileName" xml:space="preserve">
+    <value>Nome do ficheiro</value>
+  </data>
+  <data name="AfterCaptureWindow_CopyImage" xml:space="preserve">
+    <value>Copiar imagem</value>
+  </data>
+  <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="AfterCaptureWindow_Continue" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="AfterCaptureWindow_CopyPreviewImage" xml:space="preserve">
+    <value>Copiar imagem de pré-visualização</value>
+  </data>
+  <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
+    <value>Pré-visualização da imagem indisponível</value>
+  </data>
+  <data name="AfterCaptureWindow_CustomUploader" xml:space="preserve">
+    <value>Personalizado [{0}]</value>
+  </data>
+  <data name="AfterUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - Após o carregamento</value>
+  </data>
+  <data name="AfterUploadWindow_UploadComplete" xml:space="preserve">
+    <value>Carregamento concluído</value>
+  </data>
+  <data name="AfterUploadWindow_ClipboardFormats" xml:space="preserve">
+    <value>Formatos da área de transferência</value>
+  </data>
+  <data name="AfterUploadWindow_CopyPreviewImage" xml:space="preserve">
+    <value>Copiar imagem de pré-visualização</value>
+  </data>
+  <data name="AfterUploadWindow_NoPreview" xml:space="preserve">
+    <value>Pré-visualização da imagem indisponível</value>
+  </data>
+  <data name="AfterUploadWindow_CopyImage" xml:space="preserve">
+    <value>Copiar imagem</value>
+  </data>
+  <data name="AfterUploadWindow_CopySelectedFormat" xml:space="preserve">
+    <value>Copiar formato selecionado</value>
+  </data>
+  <data name="AfterUploadWindow_OpenLink" xml:space="preserve">
+    <value>Abrir ligação</value>
+  </data>
+  <data name="AfterUploadWindow_OpenFile" xml:space="preserve">
+    <value>Abrir ficheiro</value>
+  </data>
+  <data name="AfterUploadWindow_OpenContainingFolder" xml:space="preserve">
+    <value>Abrir pasta que contém o ficheiro</value>
+  </data>
+  <data name="AfterUploadWindow_Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="AfterUploadWindow_GroupCustom" xml:space="preserve">
+    <value>Personalizado</value>
+  </data>
+  <data name="AfterUploadWindow_GroupForums" xml:space="preserve">
+    <value>Fóruns</value>
+  </data>
+  <data name="AfterUploadWindow_GroupLocal" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="AfterUploadWindow_GroupLinks" xml:space="preserve">
+    <value>Ligações</value>
+  </data>
+  <data name="AutoCaptureWindow_Title" xml:space="preserve">
+    <value>ShareX - Captura automática</value>
+  </data>
+  <data name="AutoCaptureWindow_CustomRegion" xml:space="preserve">
+    <value>Região personalizada</value>
+  </data>
+  <data name="AutoCaptureWindow_Fullscreen" xml:space="preserve">
+    <value>Ecrã inteiro</value>
+  </data>
+  <data name="AutoCaptureWindow_NoRegion" xml:space="preserve">
+    <value>Nenhuma região selecionada</value>
+  </data>
+  <data name="AutoCaptureWindow_SelectRegion" xml:space="preserve">
+    <value>Selecionar região...</value>
+  </data>
+  <data name="AutoCaptureWindow_RepeatTime" xml:space="preserve">
+    <value>Tempo de repetição:</value>
+  </data>
+  <data name="AutoCaptureWindow_Seconds" xml:space="preserve">
+    <value>segundos</value>
+  </data>
+  <data name="AutoCaptureWindow_AutoMinimize" xml:space="preserve">
+    <value>Minimizar automaticamente para a área de notificação</value>
+  </data>
+  <data name="AutoCaptureWindow_WaitTasks" xml:space="preserve">
+    <value>Aguardar a conclusão das tarefas</value>
+  </data>
+  <data name="AutoCaptureWindow_Start" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
+  <data name="AutoCaptureWindow_Ready" xml:space="preserve">
+    <value>Pronto</value>
+  </data>
+  <data name="AutoCaptureWindow_Stop" xml:space="preserve">
+    <value>Parar</value>
+  </data>
+  <data name="AutoCaptureWindow_Status" xml:space="preserve">
+    <value>Tempo restante: {0} s ({1}%) — Total: {2}</value>
+  </data>
+  <data name="AutoCaptureWindow_Region" xml:space="preserve">
+    <value>X: {0}, Y: {1}, largura: {2}, altura: {3}</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Add" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Remove" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Title" xml:space="preserve">
+    <value>ShareX - Editor do menu de tarefas rápidas</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Add" xml:space="preserve">
+    <value>Adicionar...</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Edit" xml:space="preserve">
+    <value>Editar...</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Remove" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MoveUp" xml:space="preserve">
+    <value>Mover para cima</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MoveDown" xml:space="preserve">
+    <value>Mover para baixo</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Reset" xml:space="preserve">
+    <value>Repor...</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Separator" xml:space="preserve">
+    <value>Separador</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_SeparatorHint" xml:space="preserve">
+    <value>Uma tarefa sem ações após a captura aparece como separador no menu Tarefa rápida.</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AddQuickTask" xml:space="preserve">
+    <value>Adicionar tarefa rápida</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_EditQuickTask" xml:space="preserve">
+    <value>Editar tarefa rápida</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ChooseActions" xml:space="preserve">
+    <value>Escolha as ações que este item do menu Tarefa rápida deve executar.</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MenuText" xml:space="preserve">
+    <value>Texto do menu</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MenuTextHint" xml:space="preserve">
+    <value>Deixe vazio para gerar o texto do menu a partir das ações selecionadas.</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AfterCaptureTasks" xml:space="preserve">
+    <value>Tarefas após a captura</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AfterUploadTasks" xml:space="preserve">
+    <value>Tarefas após o carregamento</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ResetPrompt" xml:space="preserve">
+    <value>Repor as Tarefas rápidas?</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ResetAction" xml:space="preserve">
+    <value>Repor</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ResetConfirmation" xml:space="preserve">
+    <value>Repor todas as Tarefas rápidas para os valores predefinidos? Esta ação não pode ser anulada.</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
+    <value>{0}  •  Após o carregamento: {1}</value>
+  </data>
 </root>

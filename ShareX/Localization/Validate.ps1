@@ -144,6 +144,62 @@ $areas = @(
             'Presentation/BeforeUpload/BeforeUploadWindow.axaml.cs'
         )
     }
+    [pscustomobject]@{
+        Name = 'Actions toolbar editor'
+        ResourcePrefixes = @('ActionsToolbarEditorWindow_')
+        SourceFiles = @(
+            'Presentation/ActionsToolbar/ActionsToolbarEditorWindow.axaml'
+            'Presentation/ActionsToolbar/ActionsToolbarEditorWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Actions toolbar'
+        ResourcePrefixes = @('ActionsToolbarWindow_')
+        SourceFiles = @(
+            'Presentation/ActionsToolbar/ActionsToolbarWindow.axaml'
+            'Presentation/ActionsToolbar/ActionsToolbarWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'After capture'
+        ResourcePrefixes = @('AfterCaptureWindow_')
+        SourceFiles = @(
+            'Presentation/AfterCapture/AfterCaptureWindow.axaml'
+            'Presentation/AfterCapture/AfterCaptureWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'After upload'
+        ResourcePrefixes = @('AfterUploadWindow_')
+        SourceFiles = @(
+            'Presentation/AfterUpload/AfterUploadWindow.axaml'
+            'Presentation/AfterUpload/AfterUploadWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Auto capture'
+        ResourcePrefixes = @('AutoCaptureWindow_')
+        SourceFiles = @(
+            'Presentation/AutoCapture/AutoCaptureWindow.axaml'
+            'Presentation/AutoCapture/AutoCaptureWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Custom uploader key/value editor'
+        ResourcePrefixes = @('CustomUploaderKeyValueEditor_')
+        SourceFiles = @(
+            'Presentation/CustomUploaderSettings/CustomUploaderKeyValueEditor.axaml'
+            'Presentation/CustomUploaderSettings/CustomUploaderKeyValueEditor.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Quick task menu editor'
+        ResourcePrefixes = @('QuickTaskMenuEditorWindow_')
+        SourceFiles = @(
+            'Presentation/QuickTaskMenuEditor/QuickTaskMenuEditorWindow.axaml'
+            'Presentation/QuickTaskMenuEditor/QuickTaskMenuEditorWindow.axaml.cs'
+        )
+    }
 )
 
 function Resolve-SourcePath([string]$relativePath)

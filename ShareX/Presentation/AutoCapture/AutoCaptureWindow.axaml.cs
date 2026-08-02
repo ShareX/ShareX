@@ -20,6 +20,7 @@ using Avalonia.Media;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using ShareX.ScreenCaptureLib;
 using System;
 using System.Diagnostics;
@@ -60,7 +61,7 @@ public partial class AutoCaptureWindow : Window
         _trayIcon = new WinFormsNotifyIcon
         {
             Icon = _trayIconImage,
-            Text = "ShareX - Auto capture",
+            Text = Strings.AutoCaptureWindow_Title,
             Visible = false
         };
         _trayIcon.MouseClick += OnTrayIconClick;
@@ -102,7 +103,7 @@ public partial class AutoCaptureWindow : Window
     private void Start()
     {
         IsRunning = true;
-        ExecuteText.Text = AppResources.AutoCaptureForm_Execute_Stop;
+        ExecuteText.Text = Strings.AutoCaptureWindow_Stop;
         ExecuteIcon.Text = LucideIcons.square;
         StatusIcon.Text = LucideIcons.timer;
         _screenshotTimer.Interval = TimeSpan.FromSeconds(1);
@@ -125,10 +126,10 @@ public partial class AutoCaptureWindow : Window
         _statusTimer.Stop();
         _stopwatch.Reset();
         StatusProgress.Value = 0;
-        StatusText.Text = "Ready";
+        StatusText.Text = Strings.AutoCaptureWindow_Ready;
         StatusIcon.Text = LucideIcons.timer;
         StatusIcon.Foreground = Avalonia.Media.Brushes.Gray;
-        ExecuteText.Text = AppResources.AutoCaptureForm_Execute_Start;
+        ExecuteText.Text = Strings.AutoCaptureWindow_Start;
         ExecuteIcon.Text = LucideIcons.play;
     }
 
@@ -186,7 +187,7 @@ public partial class AutoCaptureWindow : Window
         string secondsLeft = (timeLeft / 1000f).ToString("0.0");
         StatusProgress.Value = Math.Clamp(percentage, 0, 100);
         StatusText.Text = string.Format(
-            AppResources.AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_,
+            Strings.AutoCaptureWindow_Status,
             secondsLeft,
             percentage,
             _count);
@@ -208,9 +209,9 @@ public partial class AutoCaptureWindow : Window
         ExecuteButton.IsEnabled = !rectangle.IsEmpty;
 
         RegionText.Text = rectangle.IsEmpty
-            ? "No region selected"
+            ? Strings.AutoCaptureWindow_NoRegion
             : string.Format(
-                AppResources.AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_,
+                Strings.AutoCaptureWindow_Region,
                 rectangle.X,
                 rectangle.Y,
                 rectangle.Width,

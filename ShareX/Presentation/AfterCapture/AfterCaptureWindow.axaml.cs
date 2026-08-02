@@ -15,6 +15,7 @@ using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -98,7 +99,7 @@ public partial class AfterCaptureWindow : Window
         ImageSizeBadge.IsVisible = false;
         EmptyPreview.IsVisible = true;
         EmptyPreviewText.Text = string.IsNullOrEmpty(filePath)
-            ? "No image preview available"
+            ? Strings.AfterCaptureWindow_NoPreview
             : Path.GetFileName(filePath);
     }
 
@@ -182,7 +183,7 @@ public partial class AfterCaptureWindow : Window
         CustomUploaderItem? uploader = Program.UploadersConfig.CustomUploadersList.ReturnIfValidIndex(index);
         return uploader == null
             ? fallback
-            : string.Format("{0} [{1}]", Properties.Resources.BeforeUploadControl_AddDestination_Custom, uploader);
+            : string.Format(Strings.AfterCaptureWindow_CustomUploader, uploader);
     }
 
     private void OnContinueClick(object? sender, RoutedEventArgs e)

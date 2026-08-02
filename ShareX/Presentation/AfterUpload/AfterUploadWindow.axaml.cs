@@ -16,6 +16,7 @@ using Avalonia.Media.Imaging;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -52,7 +53,8 @@ public partial class AfterUploadWindow : Window
         InitializeComponent();
         DataContext = this;
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        Title = "ShareX - " + (!string.IsNullOrEmpty(info.FilePath) && File.Exists(info.FilePath) ? info.FilePath : info.FileName);
+        string displayName = !string.IsNullOrEmpty(info.FilePath) && File.Exists(info.FilePath) ? info.FilePath : info.FileName;
+        Title = $"{Strings.AfterUploadWindow_Title} - {displayName}";
 
         LoadInitialPreview();
         UpdateActionStates();
@@ -83,7 +85,7 @@ public partial class AfterUploadWindow : Window
         {
             foreach (ClipboardFormat format in Program.Settings.ClipboardContentFormats)
             {
-                AddFormat(formats, "Custom", format.Description, _parser.Parse(_info, format.Format));
+                AddFormat(formats, Strings.AfterUploadWindow_GroupCustom, format.Description, _parser.Parse(_info, format.Format));
             }
         }
 
@@ -105,11 +107,11 @@ public partial class AfterUploadWindow : Window
 
     private static string GetFormatGroup(LinkFormatEnum type) => type switch
     {
-        LinkFormatEnum.ForumImage or LinkFormatEnum.ForumLinkedImage => "Forums",
+        LinkFormatEnum.ForumImage or LinkFormatEnum.ForumLinkedImage => Strings.AfterUploadWindow_GroupForums,
         LinkFormatEnum.HTMLImage or LinkFormatEnum.HTMLLinkedImage => "HTML",
         LinkFormatEnum.WikiImage or LinkFormatEnum.WikiLinkedImage => "Wiki",
-        LinkFormatEnum.LocalFilePath or LinkFormatEnum.LocalFilePathUri => "Local",
-        _ => "Links"
+        LinkFormatEnum.LocalFilePath or LinkFormatEnum.LocalFilePathUri => Strings.AfterUploadWindow_GroupLocal,
+        _ => Strings.AfterUploadWindow_GroupLinks
     };
 
     private string GetURLByType(LinkFormatEnum type) => type switch

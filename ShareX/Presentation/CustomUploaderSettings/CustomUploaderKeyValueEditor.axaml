@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="using:ShareX"
+             xmlns:res="using:ShareX.Localization"
              xmlns:theming="using:ShareX.AvaloniaUI.Theming"
              mc:Ignorable="d"
              x:Class="ShareX.CustomUploaderKeyValueEditor"
@@ -19,7 +20,7 @@
                            VerticalAlignment="Center"/>
                 <Button Grid.Column="1"
                         Classes="key-value-button"
-                        ToolTip.Tip="Add"
+                        ToolTip.Tip="{x:Static res:Strings.CustomUploaderKeyValueEditor_Add}"
                         Click="OnAddClick">
                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}" FontSize="15"/>
                 </Button>
@@ -31,16 +32,16 @@
                         <DataTemplate x:DataType="local:CustomUploaderKeyValueRow">
                             <Grid ColumnDefinitions="0.38*,0.62*,Auto" ColumnSpacing="4" Margin="0,0,0,3">
                                 <TextBox Classes="dense"
-                                         PlaceholderText="Name"
+                                         PlaceholderText="{x:Static res:Strings.CustomUploaderKeyValueEditor_Name}"
                                          Text="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                          ToolTip.Tip="{Binding Error}"/>
                                 <TextBox Grid.Column="1"
                                          Classes="dense syntax-input"
-                                         PlaceholderText="Value"
+                                         PlaceholderText="{x:Static res:Strings.CustomUploaderKeyValueEditor_Value}"
                                          Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 <Button Grid.Column="2"
                                         Classes="key-value-button danger"
-                                        ToolTip.Tip="Remove"
+                                        ToolTip.Tip="{x:Static res:Strings.CustomUploaderKeyValueEditor_Remove}"
                                         Click="OnRemoveClick">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}" FontSize="14"/>
                                 </Button>

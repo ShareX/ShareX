@@ -15,7 +15,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
-using ShareX.Properties;
+using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -69,7 +69,7 @@ public partial class ActionsToolbarEditorWindow : Window
         {
             EnumInfo info = new(action);
             string title = action == HotkeyType.None
-                ? Properties.Resources.ActionsToolbarEditForm_Separator
+                ? Strings.ActionsToolbarEditorWindow_Separator
                 : action.GetLocalizedDescription();
 
             MenuItem item = new()
@@ -199,7 +199,7 @@ public sealed class ActionsToolbarItem
 {
     public HotkeyType Action { get; }
     public bool IsSeparator => Action == HotkeyType.None;
-    public string Title => IsSeparator ? Properties.Resources.ActionsToolbarEditForm_Separator : Action.GetLocalizedDescription();
+    public string Title => IsSeparator ? Strings.ActionsToolbarEditorWindow_Separator : Action.GetLocalizedDescription();
     public string Icon => TaskHelpers.FindMenuLucideIcon(Action);
 
     public ActionsToolbarItem(HotkeyType action)

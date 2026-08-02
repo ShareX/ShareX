@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="using:ShareX"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.AfterCaptureWindow"
         x:CompileBindings="False"
-        Title="ShareX - After capture"
+        Title="{x:Static res:Strings.AfterCaptureWindow_Title}"
         Width="1040"
         Height="680"
         MinWidth="820"
@@ -100,11 +101,11 @@
                                VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
-                    <TextBlock Text="After capture"
+                    <TextBlock Text="{x:Static res:Strings.AfterCaptureWindow_Heading}"
                                FontSize="19"
                                FontWeight="SemiBold"
                                Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
-                    <TextBlock Text="Review the captured content and choose what happens next."
+                    <TextBlock Text="{x:Static res:Strings.AfterCaptureWindow_Subtitle}"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                 </StackPanel>
             </Grid>
@@ -132,19 +133,19 @@
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal" Spacing="6">
                                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}" FontSize="15"/>
-                                        <TextBlock Text="After capture"/>
+                                        <TextBlock Text="{x:Static res:Strings.AfterCaptureWindow_Heading}"/>
                                     </StackPanel>
                                 </ListBoxItem>
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal" Spacing="6">
                                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}" FontSize="15"/>
-                                        <TextBlock Text="Destinations"/>
+                                        <TextBlock Text="{x:Static res:Strings.AfterCaptureWindow_Destinations}"/>
                                     </StackPanel>
                                 </ListBoxItem>
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal" Spacing="6">
                                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_list}" FontSize="15"/>
-                                        <TextBlock Text="After upload"/>
+                                        <TextBlock Text="{x:Static res:Strings.AfterCaptureWindow_AfterUpload}"/>
                                     </StackPanel>
                                 </ListBoxItem>
                             </ListBox>
@@ -203,7 +204,7 @@
                 </Border>
 
                 <Grid Grid.Row="1" RowDefinitions="Auto,Auto" RowSpacing="4">
-                    <TextBlock Text="File name" FontWeight="SemiBold"/>
+                    <TextBlock Text="{x:Static res:Strings.AfterCaptureWindow_FileName}" FontWeight="SemiBold"/>
                     <TextBox x:Name="FileNameTextBox"
                              Grid.Row="1"
                              MinHeight="32"
@@ -213,7 +214,7 @@
                 <Grid Grid.Row="2" ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="7">
                     <Button x:Name="CopyButton"
                             Classes="compact icon-button"
-                            ToolTip.Tip="Copy image"
+                            ToolTip.Tip="{x:Static res:Strings.AfterCaptureWindow_CopyImage}"
                             Click="OnCopyClick">
                         <TextBlock Classes="icon"
                                    Text="{x:Static theming:LucideIcons.copy}"
@@ -221,12 +222,12 @@
                     </Button>
                     <Button Grid.Column="2"
                             Classes="compact"
-                            Content="Cancel"
+                            Content="{x:Static res:Strings.AfterCaptureWindow_Cancel}"
                             IsCancel="True"
                             Click="OnCancelClick"/>
                     <Button Grid.Column="3"
                             Classes="compact primary"
-                            Content="Continue"
+                            Content="{x:Static res:Strings.AfterCaptureWindow_Continue}"
                             IsDefault="True"
                             Click="OnContinueClick"/>
                 </Grid>
@@ -244,7 +245,7 @@
                            Stretch="Uniform">
                         <Image.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="Copy preview image" Click="OnCopyPreviewClick"/>
+                                <MenuItem Header="{x:Static res:Strings.AfterCaptureWindow_CopyPreviewImage}" Click="OnCopyPreviewClick"/>
                             </ContextMenu>
                         </Image.ContextMenu>
                     </Image>

@@ -22,6 +22,13 @@ Avalonia translations use the shared `Strings.resx` resource set in this directo
 | Shorten URL | `ShortenURLWindow_` | 2 | 6 | Complete |
 | URL upload | `URLUploadWindow_` | 2 | 7 | Complete |
 | Before upload | `BeforeUploadWindow_` | 2 | 10 | Complete |
+| Actions toolbar editor | `ActionsToolbarEditorWindow_` | 2 | 7 | Complete |
+| Actions toolbar | `ActionsToolbarWindow_` | 2 | 8 | Complete |
+| After capture | `AfterCaptureWindow_` | 2 | 12 | Complete |
+| After upload | `AfterUploadWindow_` | 2 | 15 | Complete |
+| Auto capture | `AutoCaptureWindow_` | 2 | 14 | Complete |
+| Custom uploader key/value editor | `CustomUploaderKeyValueEditor_` | 2 | 4 | Complete |
+| Quick task menu editor | `QuickTaskMenuEditorWindow_` | 2 | 23 | Complete |
 
 `Validate.ps1` contains the tracked source-file manifest. It verifies that:
 

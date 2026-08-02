@@ -15,6 +15,7 @@ using Avalonia.Interactivity;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -39,7 +40,7 @@ public partial class QuickTaskMenuEditorWindow : Window
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
 
         Program.Settings.QuickTaskPresets ??= [];
-        ResetConfirmationText.Text = Properties.Resources.QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation;
+        ResetConfirmationText.Text = Strings.QuickTaskMenuEditorWindow_ResetConfirmation;
         TaskList.ItemsSource = _items;
         ReloadItems();
         UpdateSelectionState();
@@ -151,7 +152,9 @@ public partial class QuickTaskMenuEditorWindow : Window
         _editedItem = item;
         QuickTaskInfo task = item?.Model ?? new QuickTaskInfo();
 
-        ItemEditorTitle.Text = item == null ? "Add quick task" : "Edit quick task";
+        ItemEditorTitle.Text = item == null
+            ? Strings.QuickTaskMenuEditorWindow_AddQuickTask
+            : Strings.QuickTaskMenuEditorWindow_EditQuickTask;
         TaskNameBox.Text = task.Name ?? string.Empty;
         _afterCaptureOptions = CreateFlagOptions(task.AfterCaptureTasks);
         _afterUploadOptions = CreateFlagOptions(task.AfterUploadTasks);
@@ -188,7 +191,9 @@ public partial class QuickTaskMenuEditorWindow : Window
         AfterCaptureTasks afterCapture = ReadFlags<AfterCaptureTasks>(_afterCaptureOptions);
         AfterUploadTasks afterUpload = ReadFlags<AfterUploadTasks>(_afterUploadOptions);
         string generatedName = new QuickTaskInfo(afterCapture, afterUpload).ToString();
-        TaskNameBox.PlaceholderText = string.IsNullOrEmpty(generatedName) ? "Separator" : generatedName;
+        TaskNameBox.PlaceholderText = string.IsNullOrEmpty(generatedName)
+            ? Strings.QuickTaskMenuEditorWindow_Separator
+            : generatedName;
     }
 
     private static T ReadFlags<T>(IEnumerable<QuickTaskFlagItem> items) where T : struct, Enum
@@ -271,7 +276,7 @@ public sealed class QuickTaskPresetItem : INotifyPropertyChanged
 {
     public QuickTaskInfo Model { get; }
     public bool IsSeparator => !Model.IsValid;
-    public string Title => IsSeparator ? "Separator" : Model.ToString();
+    public string Title => IsSeparator ? Strings.QuickTaskMenuEditorWindow_Separator : Model.ToString();
 
     public string Summary
     {
@@ -284,7 +289,9 @@ public sealed class QuickTaskPresetItem : INotifyPropertyChanged
 
             string capture = string.Join(", ", Model.AfterCaptureTasks.GetFlags().Select(value => value.GetLocalizedDescription()));
             string upload = string.Join(", ", Model.AfterUploadTasks.GetFlags().Select(value => value.GetLocalizedDescription()));
-            return string.IsNullOrEmpty(upload) ? capture : $"{capture}  •  After upload: {upload}";
+            return string.IsNullOrEmpty(upload)
+                ? capture
+                : string.Format(Strings.QuickTaskMenuEditorWindow_AfterUploadSummary, capture, upload);
         }
     }
 

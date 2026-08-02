@@ -3992,5 +3992,420 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("BeforeUploadWindow_NoPreview", resourceCulture);
             }
         }
+        public static string ActionsToolbarEditorWindow_Title {
+            get {
+                return ResourceManager.GetString("ActionsToolbarEditorWindow_Title", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarEditorWindow_Add {
+            get {
+                return ResourceManager.GetString("ActionsToolbarEditorWindow_Add", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarEditorWindow_Remove {
+            get {
+                return ResourceManager.GetString("ActionsToolbarEditorWindow_Remove", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarEditorWindow_MoveUp {
+            get {
+                return ResourceManager.GetString("ActionsToolbarEditorWindow_MoveUp", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarEditorWindow_MoveDown {
+            get {
+                return ResourceManager.GetString("ActionsToolbarEditorWindow_MoveDown", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarEditorWindow_Separator {
+            get {
+                return ResourceManager.GetString("ActionsToolbarEditorWindow_Separator", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarEditorWindow_Close {
+            get {
+                return ResourceManager.GetString("ActionsToolbarEditorWindow_Close", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarWindow_Title {
+            get {
+                return ResourceManager.GetString("ActionsToolbarWindow_Title", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarWindow_DropToUpload {
+            get {
+                return ResourceManager.GetString("ActionsToolbarWindow_DropToUpload", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarWindow_Tip {
+            get {
+                return ResourceManager.GetString("ActionsToolbarWindow_Tip", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarWindow_Close {
+            get {
+                return ResourceManager.GetString("ActionsToolbarWindow_Close", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarWindow_LockPosition {
+            get {
+                return ResourceManager.GetString("ActionsToolbarWindow_LockPosition", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarWindow_StayOnTop {
+            get {
+                return ResourceManager.GetString("ActionsToolbarWindow_StayOnTop", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarWindow_OpenAtStartup {
+            get {
+                return ResourceManager.GetString("ActionsToolbarWindow_OpenAtStartup", resourceCulture);
+            }
+        }
+        public static string ActionsToolbarWindow_Edit {
+            get {
+                return ResourceManager.GetString("ActionsToolbarWindow_Edit", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_Title {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_Title", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_Heading {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_Heading", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_Subtitle {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_Subtitle", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_Destinations {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_Destinations", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_AfterUpload {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_AfterUpload", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_FileName {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_FileName", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_CopyImage {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_CopyImage", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_Cancel {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_Continue {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_Continue", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_CopyPreviewImage {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_CopyPreviewImage", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_NoPreview {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_NoPreview", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_CustomUploader {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_CustomUploader", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_Title {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_Title", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_UploadComplete {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_UploadComplete", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_ClipboardFormats {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_ClipboardFormats", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_CopyPreviewImage {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_CopyPreviewImage", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_NoPreview {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_NoPreview", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_CopyImage {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_CopyImage", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_CopySelectedFormat {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_CopySelectedFormat", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_OpenLink {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_OpenLink", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_OpenFile {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_OpenFile", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_OpenContainingFolder {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_OpenContainingFolder", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_Close {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_Close", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_GroupCustom {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_GroupCustom", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_GroupForums {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_GroupForums", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_GroupLocal {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_GroupLocal", resourceCulture);
+            }
+        }
+        public static string AfterUploadWindow_GroupLinks {
+            get {
+                return ResourceManager.GetString("AfterUploadWindow_GroupLinks", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_Title {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_Title", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_CustomRegion {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_CustomRegion", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_Fullscreen {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_Fullscreen", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_NoRegion {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_NoRegion", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_SelectRegion {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_SelectRegion", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_RepeatTime {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_RepeatTime", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_Seconds {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_Seconds", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_AutoMinimize {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_AutoMinimize", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_WaitTasks {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_WaitTasks", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_Start {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_Start", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_Ready {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_Ready", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_Stop {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_Stop", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_Status {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_Status", resourceCulture);
+            }
+        }
+        public static string AutoCaptureWindow_Region {
+            get {
+                return ResourceManager.GetString("AutoCaptureWindow_Region", resourceCulture);
+            }
+        }
+        public static string CustomUploaderKeyValueEditor_Add {
+            get {
+                return ResourceManager.GetString("CustomUploaderKeyValueEditor_Add", resourceCulture);
+            }
+        }
+        public static string CustomUploaderKeyValueEditor_Name {
+            get {
+                return ResourceManager.GetString("CustomUploaderKeyValueEditor_Name", resourceCulture);
+            }
+        }
+        public static string CustomUploaderKeyValueEditor_Value {
+            get {
+                return ResourceManager.GetString("CustomUploaderKeyValueEditor_Value", resourceCulture);
+            }
+        }
+        public static string CustomUploaderKeyValueEditor_Remove {
+            get {
+                return ResourceManager.GetString("CustomUploaderKeyValueEditor_Remove", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_Title {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_Title", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_Add {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_Add", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_Edit {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_Edit", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_Remove {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_Remove", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_MoveUp {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_MoveUp", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_MoveDown {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_MoveDown", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_Reset {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_Reset", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_Separator {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_Separator", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_SeparatorHint {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_SeparatorHint", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_Close {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_Close", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_AddQuickTask {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_AddQuickTask", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_EditQuickTask {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_EditQuickTask", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_ChooseActions {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_ChooseActions", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_MenuText {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_MenuText", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_MenuTextHint {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_MenuTextHint", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_AfterCaptureTasks {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_AfterCaptureTasks", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_AfterUploadTasks {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_AfterUploadTasks", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_Save {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_Save", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_Cancel {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_ResetPrompt {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_ResetPrompt", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_ResetAction {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_ResetAction", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_ResetConfirmation {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_ResetConfirmation", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenuEditorWindow_AfterUploadSummary {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorWindow_AfterUploadSummary", resourceCulture);
+            }
+        }
     }
 }

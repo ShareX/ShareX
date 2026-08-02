@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="using:ShareX"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.AfterUploadWindow"
         x:CompileBindings="False"
-        Title="ShareX - After upload"
+        Title="{x:Static res:Strings.AfterUploadWindow_Title}"
         Width="940"
         Height="580"
         MinWidth="760"
@@ -74,7 +75,7 @@
                                VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
-                    <TextBlock Text="Upload complete"
+                    <TextBlock Text="{x:Static res:Strings.AfterUploadWindow_UploadComplete}"
                                FontSize="19"
                                FontWeight="SemiBold"
                                Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
@@ -103,7 +104,7 @@
                                        Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
                                        VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="1"
-                                       Text="Clipboard formats"
+                                       Text="{x:Static res:Strings.AfterUploadWindow_ClipboardFormats}"
                                        FontWeight="SemiBold"
                                        VerticalAlignment="Center"/>
                         </Grid>
@@ -153,7 +154,7 @@
                            Stretch="Uniform">
                         <Image.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="Copy preview image" Click="OnCopyImageClick"/>
+                                <MenuItem Header="{x:Static res:Strings.AfterUploadWindow_CopyPreviewImage}" Click="OnCopyImageClick"/>
                             </ContextMenu>
                         </Image.ContextMenu>
                     </Image>
@@ -167,7 +168,7 @@
                                    FontSize="48"
                                    Opacity="0.45"
                                    HorizontalAlignment="Center"/>
-                        <TextBlock Text="No image preview available"
+                        <TextBlock Text="{x:Static res:Strings.AfterUploadWindow_NoPreview}"
                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                     </StackPanel>
 
@@ -189,42 +190,42 @@
                   ColumnSpacing="6">
                 <Button x:Name="CopyImageButton"
                         Classes="compact icon-button"
-                        ToolTip.Tip="Copy image"
+                        ToolTip.Tip="{x:Static res:Strings.AfterUploadWindow_CopyImage}"
                         Click="OnCopyImageClick">
                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}" FontSize="15"/>
                 </Button>
                 <Button x:Name="CopyLinkButton"
                         Grid.Column="1"
                         Classes="compact icon-button"
-                        ToolTip.Tip="Copy selected format"
+                        ToolTip.Tip="{x:Static res:Strings.AfterUploadWindow_CopySelectedFormat}"
                         Click="OnCopyLinkClick">
                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
                 </Button>
                 <Button x:Name="OpenLinkButton"
                         Grid.Column="2"
                         Classes="compact icon-button"
-                        ToolTip.Tip="Open link"
+                        ToolTip.Tip="{x:Static res:Strings.AfterUploadWindow_OpenLink}"
                         Click="OnOpenLinkClick">
                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}" FontSize="15"/>
                 </Button>
                 <Button x:Name="OpenFileButton"
                         Grid.Column="3"
                         Classes="compact icon-button"
-                        ToolTip.Tip="Open file"
+                        ToolTip.Tip="{x:Static res:Strings.AfterUploadWindow_OpenFile}"
                         Click="OnOpenFileClick">
                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file}" FontSize="15"/>
                 </Button>
                 <Button x:Name="OpenFolderButton"
                         Grid.Column="4"
                         Classes="compact icon-button"
-                        ToolTip.Tip="Open containing folder"
+                        ToolTip.Tip="{x:Static res:Strings.AfterUploadWindow_OpenContainingFolder}"
                         Click="OnOpenFolderClick">
                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder}" FontSize="15"/>
                 </Button>
                 <Button Grid.Column="6"
                         Classes="compact"
                         MinWidth="96"
-                        Content="Close"
+                        Content="{x:Static res:Strings.AfterUploadWindow_Close}"
                         IsCancel="True"
                         Click="OnCloseClick"/>
             </Grid>

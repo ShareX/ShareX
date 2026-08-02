@@ -20,7 +20,7 @@ using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
-using ShareX.Properties;
+using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +43,7 @@ public partial class ActionsToolbarWindow : Window
         Topmost = Program.Settings.ActionsToolbarStayTopMost;
         Program.Settings.ActionsToolbarList ??= [];
 
-        ToolTip.SetTip(TitleHandle, Properties.Resources.ActionsToolbar_Tip);
+        ToolTip.SetTip(TitleHandle, Strings.ActionsToolbarWindow_Tip);
         ToolTip.SetPlacement(TitleHandle, PlacementMode.Top);
         ToolTip.SetVerticalOffset(TitleHandle, -4);
         ToolTip.SetShowDelay(TitleHandle, 400);
@@ -140,14 +140,14 @@ public partial class ActionsToolbarWindow : Window
             Cursor = new Cursor(StandardCursorType.Arrow)
         };
 
-        MenuItem close = new() { Header = Properties.Resources.ActionsToolbar_Close };
+        MenuItem close = new() { Header = Strings.ActionsToolbarWindow_Close };
         close.Click += (_, _) => Close();
         menu.Items.Add(close);
         menu.Items.Add(new Separator());
 
         MenuItem lockPosition = new()
         {
-            Header = Properties.Resources.ActionsToolbar__LockPosition,
+            Header = Strings.ActionsToolbarWindow_LockPosition,
             ToggleType = MenuItemToggleType.CheckBox,
             IsChecked = Program.Settings.ActionsToolbarLockPosition
         };
@@ -161,7 +161,7 @@ public partial class ActionsToolbarWindow : Window
 
         MenuItem stayTopmost = new()
         {
-            Header = Properties.Resources.ActionsToolbar_StayTopMost,
+            Header = Strings.ActionsToolbarWindow_StayOnTop,
             ToggleType = MenuItemToggleType.CheckBox,
             IsChecked = Program.Settings.ActionsToolbarStayTopMost
         };
@@ -175,7 +175,7 @@ public partial class ActionsToolbarWindow : Window
 
         MenuItem runAtStartup = new()
         {
-            Header = Properties.Resources.ActionsToolbar_OpenAtShareXStartup,
+            Header = Strings.ActionsToolbarWindow_OpenAtStartup,
             ToggleType = MenuItemToggleType.CheckBox,
             IsChecked = Program.Settings.ActionsToolbarRunAtStartup
         };
@@ -187,7 +187,7 @@ public partial class ActionsToolbarWindow : Window
         menu.Items.Add(runAtStartup);
         menu.Items.Add(new Separator());
 
-        MenuItem edit = new() { Header = Properties.Resources.ActionsToolbar_Edit };
+        MenuItem edit = new() { Header = Strings.ActionsToolbarWindow_Edit };
         edit.Click += async (_, _) => await ShowEditorAsync();
         menu.Items.Add(edit);
 
