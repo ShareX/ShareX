@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Localization;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System.Drawing;
@@ -51,7 +52,7 @@ namespace ShareX
                 }
             };
 
-            ToolStripMenuItem tsmiContinue = new ToolStripMenuItem(Resources.QuickTaskMenu_ShowMenu_Continue);
+            ToolStripMenuItem tsmiContinue = new ToolStripMenuItem(Strings.QuickTaskMenu_ShowMenu_Continue);
             tsmiContinue.Image = Resources.control;
             tsmiContinue.Click += (sender, e) =>
             {
@@ -89,7 +90,7 @@ namespace ShareX
                 cms.Items.Add(new ToolStripSeparator());
             }
 
-            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem(Resources.QuickTaskMenu_ShowMenu_Edit_this_menu___);
+            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem(Strings.QuickTaskMenu_ShowMenu_Edit_this_menu___);
             tsmiEdit.Image = Resources.pencil;
             tsmiEdit.Click += (sender, e) =>
             {
@@ -100,7 +101,7 @@ namespace ShareX
 
             cms.Items.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem tsmiCancel = new ToolStripMenuItem(Resources.QuickTaskMenu_ShowMenu_Cancel);
+            ToolStripMenuItem tsmiCancel = new ToolStripMenuItem(Strings.QuickTaskMenu_ShowMenu_Cancel);
             tsmiCancel.Image = Resources.cross;
             tsmiCancel.Click += (sender, e) => cms.Close();
             cms.Items.Add(tsmiCancel);

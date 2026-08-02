@@ -164,7 +164,7 @@ namespace ShareX
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.ShortenURL;
             task.Info.DataType = EDataType.URL;
-            task.Info.FileName = string.Format(Resources.UploadTask_CreateURLShortenerTask_Shorten_URL___0__, taskSettings.URLShortenerDestination.GetLocalizedDescription());
+            task.Info.FileName = string.Format(Strings.UploadTask_CreateURLShortenerTask_Shorten_URL___0__, taskSettings.URLShortenerDestination.GetLocalizedDescription());
             task.Info.Result.URL = url;
             return task;
         }
@@ -174,7 +174,7 @@ namespace ShareX
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.ShareURL;
             task.Info.DataType = EDataType.URL;
-            task.Info.FileName = string.Format(Resources.UploadTask_CreateShareURLTask_Share_URL___0__, taskSettings.URLSharingServiceDestination.GetLocalizedDescription());
+            task.Info.FileName = string.Format(Strings.UploadTask_CreateShareURLTask_Share_URL___0__, taskSettings.URLSharingServiceDestination.GetLocalizedDescription());
             task.Info.Result.URL = url;
             return task;
         }
@@ -257,10 +257,10 @@ namespace ShareX
             {
                 case TaskJob.Job:
                 case TaskJob.TextUpload:
-                    Info.Status = Resources.UploadTask_Prepare_Preparing;
+                    Info.Status = Strings.UploadTask_Prepare_Preparing;
                     break;
                 default:
-                    Info.Status = Resources.UploadTask_Prepare_Starting;
+                    Info.Status = Strings.UploadTask_Prepare_Starting;
                     break;
             }
 
@@ -280,7 +280,7 @@ namespace ShareX
                 case TaskStatus.Working:
                     if (uploader != null) uploader.StopUpload();
                     Status = TaskStatus.Stopping;
-                    Info.Status = Resources.UploadTask_Stop_Stopping;
+                    Info.Status = Strings.UploadTask_Stop_Stopping;
                     OnStatusChanged();
                     break;
             }
@@ -294,7 +294,7 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(errors))
                 {
-                    ErrorWindowIntegration.Show(Resources.UploadInfoManager_ShowErrors_Upload_errors, errors,
+                    ErrorWindowIntegration.Show(Strings.UploadInfoManager_ShowErrors_Upload_errors, errors,
                         Program.LogsFilePath, Links.GitHubIssues, false);
                 }
             }
@@ -344,7 +344,7 @@ namespace ShareX
             {
                 if (string.IsNullOrEmpty(Info.Result.URL))
                 {
-                    AddErrorMessage(Resources.UploadTask_ThreadDoWork_URL_is_empty_);
+                    AddErrorMessage(Strings.UploadTask_ThreadDoWork_URL_is_empty_);
                 }
                 else
                 {
@@ -384,7 +384,7 @@ namespace ShareX
                 SettingManager.WaitUploadersConfig();
 
                 Status = TaskStatus.Working;
-                Info.Status = Resources.UploadTask_DoUploadJob_Uploading;
+                Info.Status = Strings.UploadTask_DoUploadJob_Uploading;
 
                 TaskbarManager.SetProgressState(TaskbarProgressBarStatus.Normal);
 
@@ -661,7 +661,7 @@ namespace ShareX
                             sfd.FileName = Info.FileName;
                             sfd.DefaultExt = Path.GetExtension(Info.FileName).Substring(1);
                             sfd.Filter = string.Format("*{0}|*{0}|{1}|*.*", Path.GetExtension(Info.FileName), Strings.WorkerTask_AllFilesFilter);
-                            sfd.Title = Resources.UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save + " " + Path.GetFileName(Info.FileName);
+                            sfd.Title = Strings.UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save + " " + Path.GetFileName(Info.FileName);
 
                             if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
                             {
@@ -1020,7 +1020,7 @@ namespace ShareX
         {
             UploadResult ur = new UploadResult();
 
-            string message = string.Format(Resources.WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_,
+            string message = string.Format(Strings.WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_,
                 uploaderService.ServiceName);
             DebugHelper.WriteLine(message);
             ur.Errors.Add(message);
@@ -1057,7 +1057,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(Info.FilePath))
             {
-                Info.Status = Resources.UploadTask_DownloadAndUpload_Downloading;
+                Info.Status = Strings.UploadTask_DownloadAndUpload_Downloading;
                 OnStatusChanged();
 
                 try
@@ -1074,7 +1074,7 @@ namespace ShareX
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
-                    MessageBox.Show(string.Format(Resources.UploadManager_DownloadAndUploadFile_Download_failed, e), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(string.Format(Strings.UploadManager_DownloadAndUploadFile_Download_failed, e), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -1179,17 +1179,17 @@ namespace ShareX
             if (StopRequested)
             {
                 Status = TaskStatus.Stopped;
-                Info.Status = Resources.UploadTask_OnUploadCompleted_Stopped;
+                Info.Status = Strings.UploadTask_OnUploadCompleted_Stopped;
             }
             else if (Info.Result.IsError)
             {
                 Status = TaskStatus.Failed;
-                Info.Status = Resources.TaskManager_task_UploadCompleted_Error;
+                Info.Status = Strings.TaskManager_task_UploadCompleted_Error;
             }
             else
             {
                 Status = TaskStatus.Completed;
-                Info.Status = Resources.UploadTask_OnUploadCompleted_Done;
+                Info.Status = Strings.UploadTask_OnUploadCompleted_Done;
             }
 
             TaskCompleted?.Invoke(this);

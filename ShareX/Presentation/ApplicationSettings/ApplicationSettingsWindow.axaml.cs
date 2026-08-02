@@ -48,7 +48,7 @@ public partial class ApplicationSettingsWindow : Window
         DataContext = new ApplicationSettingsViewModel();
         AttachClipboardFormatMenu();
         ClipboardFormatSupportedVariablesText.Text = string.Format(
-            Properties.Resources.ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_,
+            Strings.ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_,
             string.Join(", ", ClipboardResultTokens),
             "%y, %mo, %d");
         KeyDown += OnWindowKeyDown;

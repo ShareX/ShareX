@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Localization;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System.Collections.Generic;
@@ -198,10 +199,10 @@ namespace ShareX
             if (failedHotkeysList.Count > 0)
             {
                 string failedHotkeys = string.Join("\r\n", failedHotkeysList.Select(x => $"[{x.HotkeyInfo}] {x.TaskSettings}"));
-                string hotkeyText = failedHotkeysList.Count > 1 ? Resources.HotkeyManager_ShowFailedHotkeys_hotkeys : Resources.HotkeyManager_ShowFailedHotkeys_hotkey;
-                string text = string.Format(Resources.HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey, hotkeyText, failedHotkeys);
+                string hotkeyText = failedHotkeysList.Count > 1 ? Strings.HotkeyManager_ShowFailedHotkeys_hotkeys : Strings.HotkeyManager_ShowFailedHotkeys_hotkey;
+                string text = string.Format(Strings.HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey, hotkeyText, failedHotkeys);
 
-                MessageBox.Show(text, "ShareX - " + Resources.HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(text, "ShareX - " + Strings.HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

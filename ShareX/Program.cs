@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Localization;
 using Avalonia.Win32.Interoperability;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
@@ -506,7 +507,7 @@ namespace ShareX
                     {
                         StringBuilder sb = new StringBuilder();
 
-                        sb.AppendFormat("{0} \"{1}\"", Resources.Program_Run_Unable_to_create_folder_, PersonalFolder);
+                        sb.AppendFormat("{0} \"{1}\"", Strings.Program_Run_Unable_to_create_folder_, PersonalFolder);
                         sb.AppendLine();
 
                         if (!string.IsNullOrEmpty(PersonalPathDetectionMethod))
@@ -517,7 +518,7 @@ namespace ShareX
                         sb.AppendLine();
                         sb.Append(e);
 
-                        MessageBox.Show(sb.ToString(), "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(sb.ToString(), "ShareX - " + Strings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         CustomPersonalPath = "";
                     }
                 }
@@ -619,7 +620,7 @@ namespace ShareX
                     catch (UnauthorizedAccessException e)
                     {
                         DebugHelper.WriteException(e);
-                        MessageBox.Show(string.Format(Resources.Program_WritePersonalPathConfig_Cant_access_to_file, PersonalPathConfigFilePath),
+                        MessageBox.Show(string.Format(Strings.Program_WritePersonalPathConfig_Cant_access_to_file, PersonalPathConfigFilePath),
                             "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     catch (Exception e)

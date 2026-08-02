@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Localization;
 using ShareX.HelpersLib;
-using ShareX.Properties;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -49,14 +49,14 @@ namespace ShareX
             {
                 DebugHelper.WriteException(e);
 
-                string message = $"{Resources.ImageData_Write_Error_Message}\r\n\"{filePath}\"";
+                string message = $"{Strings.ImageData_Write_Error_Message}\r\n\"{filePath}\"";
 
                 if (e is UnauthorizedAccessException || e is FileNotFoundException)
                 {
-                    message += "\r\n\r\n" + Resources.YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX;
+                    message += "\r\n\r\n" + Strings.YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX;
                 }
 
-                MessageBox.Show(message, "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(message, "ShareX - " + Strings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return false;

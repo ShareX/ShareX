@@ -5117,5 +5117,370 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ImageNameSample", resourceCulture);
             }
         }
+        public static string ShareXIsMinimizedToTheSystemTray {
+            get {
+                return ResourceManager.GetString("ShareXIsMinimizedToTheSystemTray", resourceCulture);
+            }
+        }
+        public static string ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_ {
+            get {
+                return ResourceManager.GetString("ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_", resourceCulture);
+            }
+        }
+        public static string ActionsForm_btnOK_Click_File_path_can_t_be_empty_ {
+            get {
+                return ResourceManager.GetString("ActionsForm_btnOK_Click_File_path_can_t_be_empty_", resourceCulture);
+            }
+        }
+        public static string PinToScreen {
+            get {
+                return ResourceManager.GetString("PinToScreen", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenu_ShowMenu_Cancel {
+            get {
+                return ResourceManager.GetString("QuickTaskMenu_ShowMenu_Cancel", resourceCulture);
+            }
+        }
+        public static string UploadTask_Stop_Stopping {
+            get {
+                return ResourceManager.GetString("UploadTask_Stop_Stopping", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenu_ShowMenu_Edit_this_menu___ {
+            get {
+                return ResourceManager.GetString("QuickTaskMenu_ShowMenu_Edit_this_menu___", resourceCulture);
+            }
+        }
+        public static string ShareXIsUpToDate {
+            get {
+                return ResourceManager.GetString("ShareXIsUpToDate", resourceCulture);
+            }
+        }
+        public static string MainForm_UploadDebugLogWarning {
+            get {
+                return ResourceManager.GetString("MainForm_UploadDebugLogWarning", resourceCulture);
+            }
+        }
+        public static string UploadTask_ThreadDoWork_URL_is_empty_ {
+            get {
+                return ResourceManager.GetString("UploadTask_ThreadDoWork_URL_is_empty_", resourceCulture);
+            }
+        }
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsForm_cbStartWithWindows_Text {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_Text", resourceCulture);
+            }
+        }
+        public static string MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_ {
+            get {
+                return ResourceManager.GetString("MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_", resourceCulture);
+            }
+        }
+        public static string Program_Run_Unable_to_create_folder_ {
+            get {
+                return ResourceManager.GetString("Program_Run_Unable_to_create_folder_", resourceCulture);
+            }
+        }
+        public static string FFmpegOnlySupports64BitOperatingSystems {
+            get {
+                return ResourceManager.GetString("FFmpegOnlySupports64BitOperatingSystems", resourceCulture);
+            }
+        }
+        public static string UploadTask_DoUploadJob_Uploading {
+            get {
+                return ResourceManager.GetString("UploadTask_DoUploadJob_Uploading", resourceCulture);
+            }
+        }
+        public static string UploadTask_CreateShareURLTask_Share_URL___0__ {
+            get {
+                return ResourceManager.GetString("UploadTask_CreateShareURLTask_Share_URL___0__", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_ {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text", resourceCulture);
+            }
+        }
+        public static string FFmpegIsMissing {
+            get {
+                return ResourceManager.GetString("FFmpegIsMissing", resourceCulture);
+            }
+        }
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_", resourceCulture);
+            }
+        }
+        public static string UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save {
+            get {
+                return ResourceManager.GetString("UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save", resourceCulture);
+            }
+        }
+        public static string ActionsForm_btnOK_Click_Name_can_t_be_empty_ {
+            get {
+                return ResourceManager.GetString("ActionsForm_btnOK_Click_Name_can_t_be_empty_", resourceCulture);
+            }
+        }
+        public static string TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_", resourceCulture);
+            }
+        }
+        public static string WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_ {
+            get {
+                return ResourceManager.GetString("WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_", resourceCulture);
+            }
+        }
+        public static string UploadTask_CreateURLShortenerTask_Shorten_URL___0__ {
+            get {
+                return ResourceManager.GetString("UploadTask_CreateURLShortenerTask_Shorten_URL___0__", resourceCulture);
+            }
+        }
+        public static string ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled {
+            get {
+                return ResourceManager.GetString("ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled", resourceCulture);
+            }
+        }
+        public static string MainForm_tsmiTestTextUpload_Click_Text_upload_test {
+            get {
+                return ResourceManager.GetString("MainForm_tsmiTestTextUpload_Click_Text_upload_test", resourceCulture);
+            }
+        }
+        public static string WouldYouLikeToEnableImageEffects {
+            get {
+                return ResourceManager.GetString("WouldYouLikeToEnableImageEffects", resourceCulture);
+            }
+        }
+        public static string IntegrationHelpers_EditWithShareX {
+            get {
+                return ResourceManager.GetString("IntegrationHelpers_EditWithShareX", resourceCulture);
+            }
+        }
+        public static string ClipboardDoesNotContainAnImage {
+            get {
+                return ResourceManager.GetString("ClipboardDoesNotContainAnImage", resourceCulture);
+            }
+        }
+        public static string TaskManager_task_UploadCompleted_Error {
+            get {
+                return ResourceManager.GetString("TaskManager_task_UploadCompleted_Error", resourceCulture);
+            }
+        }
+        public static string YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX {
+            get {
+                return ResourceManager.GetString("YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX", resourceCulture);
+            }
+        }
+        public static string TaskManager_task_UploadCompleted_ShareX___Task_completed {
+            get {
+                return ResourceManager.GetString("TaskManager_task_UploadCompleted_ShareX___Task_completed", resourceCulture);
+            }
+        }
+        public static string HotkeyManager_ShowFailedHotkeys_hotkeys {
+            get {
+                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_hotkeys", resourceCulture);
+            }
+        }
+        public static string QuickTaskMenu_ShowMenu_Continue {
+            get {
+                return ResourceManager.GetString("QuickTaskMenu_ShowMenu_Continue", resourceCulture);
+            }
+        }
+        public static string UploadInfoManager_ShowErrors_Upload_errors {
+            get {
+                return ResourceManager.GetString("UploadInfoManager_ShowErrors_Upload_errors", resourceCulture);
+            }
+        }
+        public static string FFmpeg_FFmpeg_error {
+            get {
+                return ResourceManager.GetString("FFmpeg_FFmpeg_error", resourceCulture);
+            }
+        }
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        public static string ScreenColorPicker {
+            get {
+                return ResourceManager.GetString("ScreenColorPicker", resourceCulture);
+            }
+        }
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_", resourceCulture);
+            }
+        }
+        public static string UploadTask_OnUploadCompleted_Done {
+            get {
+                return ResourceManager.GetString("UploadTask_OnUploadCompleted_Done", resourceCulture);
+            }
+        }
+        public static string MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation {
+            get {
+                return ResourceManager.GetString("MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation", resourceCulture);
+            }
+        }
+        public static string UploadTask_DownloadAndUpload_Downloading {
+            get {
+                return ResourceManager.GetString("UploadTask_DownloadAndUpload_Downloading", resourceCulture);
+            }
+        }
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_", resourceCulture);
+            }
+        }
+        public static string Confirmation {
+            get {
+                return ResourceManager.GetString("Confirmation", resourceCulture);
+            }
+        }
+        public static string UploadTask_OnUploadCompleted_Stopped {
+            get {
+                return ResourceManager.GetString("UploadTask_OnUploadCompleted_Stopped", resourceCulture);
+            }
+        }
+        public static string FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__ {
+            get {
+                return ResourceManager.GetString("FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__", resourceCulture);
+            }
+        }
+        public static string ShareXCannotBeClosedWhileScreenRecordingIsActive {
+            get {
+                return ResourceManager.GetString("ShareXCannotBeClosedWhileScreenRecordingIsActive", resourceCulture);
+            }
+        }
+        public static string IntegrationHelpers_UploadWithShareX {
+            get {
+                return ResourceManager.GetString("IntegrationHelpers_UploadWithShareX", resourceCulture);
+            }
+        }
+        public static string TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_ToggleHotkeys_Hotkeys_disabled_", resourceCulture);
+            }
+        }
+        public static string Program_WritePersonalPathConfig_Cant_access_to_file {
+            get {
+                return ResourceManager.GetString("Program_WritePersonalPathConfig_Cant_access_to_file", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text", resourceCulture);
+            }
+        }
+        public static string WouldYouLikeToRetryClipboardUpload {
+            get {
+                return ResourceManager.GetString("WouldYouLikeToRetryClipboardUpload", resourceCulture);
+            }
+        }
+        public static string UnableToFindAWindowWithSpecifiedWindowTitle {
+            get {
+                return ResourceManager.GetString("UnableToFindAWindowWithSpecifiedWindowTitle", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings", resourceCulture);
+            }
+        }
+        public static string FailedToSaveSettings {
+            get {
+                return ResourceManager.GetString("FailedToSaveSettings", resourceCulture);
+            }
+        }
+        public static string HotkeyManager_ShowFailedHotkeys_hotkey {
+            get {
+                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_hotkey", resourceCulture);
+            }
+        }
+        public static string TaskHelpers_ToggleHotkeys_Hotkeys_enabled_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_ToggleHotkeys_Hotkeys_enabled_", resourceCulture);
+            }
+        }
+        public static string ClipboardUpload {
+            get {
+                return ResourceManager.GetString("ClipboardUpload", resourceCulture);
+            }
+        }
+        public static string FFmpegDoesNotExistAtTheFollowingPath {
+            get {
+                return ResourceManager.GetString("FFmpegDoesNotExistAtTheFollowingPath", resourceCulture);
+            }
+        }
+        public static string UploadManager_UploadFile_File_upload {
+            get {
+                return ResourceManager.GetString("UploadManager_UploadFile_File_upload", resourceCulture);
+            }
+        }
+        public static string HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed {
+            get {
+                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed", resourceCulture);
+            }
+        }
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_", resourceCulture);
+            }
+        }
+        public static string ImageData_Write_Error_Message {
+            get {
+                return ResourceManager.GetString("ImageData_Write_Error_Message", resourceCulture);
+            }
+        }
+        public static string UploadTask_Prepare_Starting {
+            get {
+                return ResourceManager.GetString("UploadTask_Prepare_Starting", resourceCulture);
+            }
+        }
+        public static string HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey {
+            get {
+                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey", resourceCulture);
+            }
+        }
+        public static string ScreenshotDelay0S {
+            get {
+                return ResourceManager.GetString("ScreenshotDelay0S", resourceCulture);
+            }
+        }
+        public static string YourSystemAdminDisabledTheUploadFeature {
+            get {
+                return ResourceManager.GetString("YourSystemAdminDisabledTheUploadFeature", resourceCulture);
+            }
+        }
+        public static string UploadManager_UploadFolder_Folder_upload {
+            get {
+                return ResourceManager.GetString("UploadManager_UploadFolder_Folder_upload", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text", resourceCulture);
+            }
+        }
+        public static string UploadTask_Prepare_Preparing {
+            get {
+                return ResourceManager.GetString("UploadTask_Prepare_Preparing", resourceCulture);
+            }
+        }
+        public static string UploadManager_DownloadAndUploadFile_Download_failed {
+            get {
+                return ResourceManager.GetString("UploadManager_DownloadAndUploadFile_Download_failed", resourceCulture);
+            }
+        }
     }
 }

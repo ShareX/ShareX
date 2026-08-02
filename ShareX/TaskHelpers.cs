@@ -854,7 +854,7 @@ namespace ShareX
             DebugLogWindowIntegration.Show(
                 DebugHelper.Logger,
                 text => UploadManager.UploadText(text),
-                Resources.MainForm_UploadDebugLogWarning);
+                Strings.MainForm_UploadDebugLogWarning);
         }
 
         public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null)
@@ -886,8 +886,8 @@ namespace ShareX
 
                     if (taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
                     {
-                        ShowNotificationTip(string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text),
-                            "ShareX - " + Resources.ScreenColorPicker);
+                        ShowNotificationTip(string.Format(Strings.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text),
+                            "ShareX - " + Strings.ScreenColorPicker);
                     }
                 }
             }
@@ -2114,7 +2114,7 @@ namespace ShareX
             }
             else
             {
-                MessageBox.Show(Resources.ClipboardDoesNotContainAnImage, "ShareX - " + Resources.PinToScreen, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Strings.ClipboardDoesNotContainAnImage, "ShareX - " + Strings.PinToScreen, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -2189,7 +2189,7 @@ namespace ShareX
 
             if (taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
             {
-                ShowNotificationTip(disableHotkeys ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_);
+                ShowNotificationTip(disableHotkeys ? Strings.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Strings.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_);
             }
         }
 
@@ -2197,8 +2197,8 @@ namespace ShareX
         {
             if (!Environment.Is64BitOperatingSystem && !taskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath)
             {
-                MessageBox.Show(Resources.FFmpegOnlySupports64BitOperatingSystems,
-                    "ShareX - " + Resources.FFmpegIsMissing, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Strings.FFmpegOnlySupports64BitOperatingSystems,
+                    "ShareX - " + Strings.FFmpegIsMissing, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return false;
             }
@@ -2207,8 +2207,8 @@ namespace ShareX
 
             if (!File.Exists(ffmpegPath))
             {
-                MessageBox.Show(Resources.FFmpegDoesNotExistAtTheFollowingPath + "\r\n" + ffmpegPath,
-                    "ShareX - " + Resources.FFmpegIsMissing, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Strings.FFmpegDoesNotExistAtTheFollowingPath + "\r\n" + ffmpegPath,
+                    "ShareX - " + Strings.FFmpegIsMissing, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return false;
             }
@@ -2675,7 +2675,7 @@ namespace ShareX
                 OpenImageEffectsSingleton(Program.DefaultTaskSettings, configJson);
 
                 if (!Program.DefaultTaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects) &&
-                    MessageBox.Show(Resources.WouldYouLikeToEnableImageEffects,
+                    MessageBox.Show(Strings.WouldYouLikeToEnableImageEffects,
                     "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Add(AfterCaptureTasks.AddImageEffects);
@@ -2798,7 +2798,7 @@ namespace ShareX
             }
             else if (updateChecker.Status == UpdateStatus.UpToDate)
             {
-                MessageBox.Show(Resources.ShareXIsUpToDate, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Strings.ShareXIsUpToDate, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -2921,14 +2921,14 @@ namespace ShareX
         {
             if (SystemOptions.DisableUpload)
             {
-                MessageBox.Show(Resources.YourSystemAdminDisabledTheUploadFeature, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Strings.YourSystemAdminDisabledTheUploadFeature, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return false;
             }
 
             if (Program.Settings.DisableUpload)
             {
-                MessageBox.Show(Resources.ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Strings.ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return false;
             }

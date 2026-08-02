@@ -14,6 +14,7 @@
 
 #nullable enable
 
+using ShareX.Localization;
 using Avalonia.Styling;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
@@ -238,7 +239,7 @@ public sealed class MainForm : HotkeyForm
     {
         if (ScreenRecordManager.IsRecording)
         {
-            if (MessageBox.Show(Resources.ShareXCannotBeClosedWhileScreenRecordingIsActive, "ShareX",
+            if (MessageBox.Show(Strings.ShareXCannotBeClosedWhileScreenRecordingIsActive, "ShareX",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 ScreenRecordManager.AbortRecording();
@@ -319,7 +320,7 @@ public sealed class MainForm : HotkeyForm
                 UploadManager.UploadImage(ShareXResources.Logo);
                 break;
             case MainFormCommand.TestTextUpload:
-                UploadManager.UploadText(Resources.MainForm_tsmiTestTextUpload_Click_Text_upload_test);
+                UploadManager.UploadText(Strings.MainForm_tsmiTestTextUpload_Click_Text_upload_test);
                 break;
             case MainFormCommand.TestFileUpload:
                 UploadManager.UploadImage(ShareXResources.Logo, ImageDestination.FileUploader, Program.DefaultTaskSettings.FileDestination);

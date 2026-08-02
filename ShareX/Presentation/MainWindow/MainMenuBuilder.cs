@@ -130,7 +130,7 @@ internal sealed class MainMenuBuilder
                 () => Program.DefaultTaskSettings.CaptureSettings.ShowCursor = !Program.DefaultTaskSettings.CaptureSettings.ShowCursor,
                 isChecked: Program.DefaultTaskSettings.CaptureSettings.ShowCursor,
                 toggleType: MainMenuToggleType.CheckBox),
-            Parent(string.Format(Resources.ScreenshotDelay0S, Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay.ToString("0.#")),
+            Parent(string.Format(Strings.ScreenshotDelay0S, Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay.ToString("0.#")),
                 LucideIcons.timer, BuildScreenshotDelayMenu)
         };
     }
@@ -183,7 +183,7 @@ internal sealed class MainMenuBuilder
         decimal current = Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay;
         return Enumerable.Range(0, 6)
             .Select(delay => new MainMenuEntry(
-                string.Format(Resources.ScreenshotDelay0S, delay),
+                string.Format(Strings.ScreenshotDelay0S, delay),
                 delay == 0 ? LucideIcons.timer_off : LucideIcons.timer,
                 () => _host.SetAvaloniaScreenshotDelay(delay),
                 isChecked: Math.Abs(current - delay) < 0.01m,
@@ -353,19 +353,19 @@ internal sealed class MainMenuBuilder
     {
         return new List<MainMenuEntry>
         {
-            Parent(string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_,
+            Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_,
                 GetImageUploaderName()), LucideIcons.image, () => BuildImageDestinations()),
-            Parent(string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_,
+            Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_,
                 GetTextUploaderName()), LucideIcons.file_text, () => BuildTextDestinations()),
-            Parent(string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_,
+            Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_,
                 Program.DefaultTaskSettings.FileDestination.GetLocalizedDescription()), LucideIcons.file_up, () => BuildEnumDestinations(
                 Program.DefaultTaskSettings.FileDestination,
                 value => Program.DefaultTaskSettings.FileDestination = value)),
-            Parent(string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_,
+            Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_,
                 Program.DefaultTaskSettings.URLShortenerDestination.GetLocalizedDescription()), LucideIcons.link_2, () => BuildEnumDestinations(
                 Program.DefaultTaskSettings.URLShortenerDestination,
                 value => Program.DefaultTaskSettings.URLShortenerDestination = value)),
-            Parent(string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
+            Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
                 Program.DefaultTaskSettings.URLSharingServiceDestination.GetLocalizedDescription()), LucideIcons.globe_2, () => BuildEnumDestinations(
                 Program.DefaultTaskSettings.URLSharingServiceDestination,
                 value => Program.DefaultTaskSettings.URLSharingServiceDestination = value))

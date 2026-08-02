@@ -122,13 +122,13 @@ public partial class TaskSettingsWindow : Window
 
         if (string.IsNullOrWhiteSpace(name))
         {
-            ShowActionEditorError(Properties.Resources.ActionsForm_btnOK_Click_Name_can_t_be_empty_, ActionNameBox);
+            ShowActionEditorError(Strings.ActionsForm_btnOK_Click_Name_can_t_be_empty_, ActionNameBox);
             return;
         }
 
         if (string.IsNullOrWhiteSpace(path))
         {
-            ShowActionEditorError(Properties.Resources.ActionsForm_btnOK_Click_File_path_can_t_be_empty_, ActionPathBox);
+            ShowActionEditorError(Strings.ActionsForm_btnOK_Click_File_path_can_t_be_empty_, ActionPathBox);
             return;
         }
 

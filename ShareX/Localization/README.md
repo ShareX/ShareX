@@ -1,6 +1,6 @@
-# Avalonia localization status
+# ShareX localization status
 
-Avalonia translations use the shared `Strings.resx` resource set in this directory. Resource keys are scoped by the source component name, for example `TaskSettingsWindow_Save`.
+All translatable strings in the ShareX project use the shared `Strings.resx` resource set in this directory. New resource keys are scoped by the source component name, for example `TaskSettingsWindow_Save`; migrated runtime keys retain their existing names.
 
 ## Localized areas
 
@@ -31,7 +31,7 @@ Avalonia translations use the shared `Strings.resx` resource set in this directo
 | Custom uploader settings | `CustomUploaderSettingsWindow_` | 4 | 112 | Complete |
 | Quick task menu editor | `QuickTaskMenuEditorWindow_` | 2 | 23 | Complete |
 | About | `AboutWindow_` | 2 | 17 | Complete |
-| Core runtime messages | `TaskHelpers_`, `SettingManager_`, `WorkerTask_`, `TaskManager_` | 4 | 12 | Complete |
+| Core runtime messages | `TaskHelpers_`, `SettingManager_`, `WorkerTask_`, `TaskManager_` | 4 | 18 | Complete |
 
 `Validate.ps1` contains the tracked source-file manifest. It verifies that:
 

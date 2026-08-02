@@ -33,7 +33,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using AppResources = ShareX.Properties.Resources;
 using DrawingBitmap = System.Drawing.Bitmap;
 using DrawingPoint = System.Drawing.Point;
 using DrawingSize = System.Drawing.Size;
@@ -1136,8 +1135,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void DeleteSelectedFiles()
     {
-        if (FormsMessageBox.Show(AppResources.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
-            "ShareX - " + AppResources.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation,
+        if (FormsMessageBox.Show(Strings.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
+            "ShareX - " + Strings.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation,
             FormsMessageBoxButtons.YesNo) == FormsDialogResult.Yes)
         {
             _uploadInfoManager.DeleteFiles();
@@ -1472,7 +1471,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
             if (Program.Settings.FirstTimeMinimizeToTray)
             {
-                TaskHelpers.ShowNotificationTip(AppResources.ShareXIsMinimizedToTheSystemTray, "ShareX", 8000);
+                TaskHelpers.ShowNotificationTip(Strings.ShareXIsMinimizedToTheSystemTray, "ShareX", 8000);
                 Program.Settings.FirstTimeMinimizeToTray = false;
             }
 

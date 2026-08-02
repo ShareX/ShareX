@@ -812,8 +812,8 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public async Task ResetAsync()
     {
         bool confirmed = InvokeOnMainThread(() => MessageBox.Show(
-            Resources.ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings,
-            "ShareX - " + Resources.Confirmation,
+            Strings.ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings,
+            "ShareX - " + Strings.Confirmation,
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Exclamation) == DialogResult.Yes);
 
@@ -920,7 +920,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     private void RefreshStartWithWindows()
     {
-        StartWithWindowsText = Resources.ApplicationSettingsForm_cbStartWithWindows_Text;
+        StartWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
         StartWithWindowsEnabled = false;
 
         try
@@ -931,15 +931,15 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
             if (state == StartupState.DisabledByUser)
             {
-                StartWithWindowsText = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+                StartWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
             }
             else if (state == StartupState.DisabledByPolicy)
             {
-                StartWithWindowsText = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text;
+                StartWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text;
             }
             else if (state == StartupState.EnabledByPolicy)
             {
-                StartWithWindowsText = Resources.ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text;
+                StartWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text;
             }
             else
             {

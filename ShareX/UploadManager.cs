@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Localization;
 using ShareX.HelpersLib;
 using ShareX.Tools;
 using ShareX.Properties;
@@ -91,7 +92,7 @@ namespace ShareX
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Title = "ShareX - " + Resources.UploadManager_UploadFile_File_upload;
+                ofd.Title = "ShareX - " + Strings.UploadManager_UploadFile_File_upload;
 
                 if (!string.IsNullOrEmpty(Program.Settings.FileUploadDefaultDirectory) && Directory.Exists(Program.Settings.FileUploadDefaultDirectory))
                 {
@@ -127,7 +128,7 @@ namespace ShareX
             {
                 initialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             }
-            string selectedPath = FileHelpers.BrowseFolder("ShareX - " + Resources.UploadManager_UploadFolder_Folder_upload, initialDirectory);
+            string selectedPath = FileHelpers.BrowseFolder("ShareX - " + Strings.UploadManager_UploadFolder_Folder_upload, initialDirectory);
 
             if (!string.IsNullOrEmpty(selectedPath))
             {
@@ -233,7 +234,7 @@ namespace ShareX
             {
                 DebugHelper.WriteException(e);
 
-                if (MessageBox.Show("\"" + e.Message + "\"\r\n\r\n" + Resources.WouldYouLikeToRetryClipboardUpload, "ShareX - " + Resources.ClipboardUpload,
+                if (MessageBox.Show("\"" + e.Message + "\"\r\n\r\n" + Strings.WouldYouLikeToRetryClipboardUpload, "ShareX - " + Strings.ClipboardUpload,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     ClipboardUpload(taskSettings);

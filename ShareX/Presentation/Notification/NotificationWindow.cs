@@ -19,6 +19,7 @@
 
 #nullable enable
 
+using ShareX.Localization;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -43,7 +44,6 @@ using FormsMessageBox = System.Windows.Forms.MessageBox;
 using FormsMessageBoxButtons = System.Windows.Forms.MessageBoxButtons;
 using FormsDialogResult = System.Windows.Forms.DialogResult;
 using FormsCursor = System.Windows.Forms.Cursor;
-using AppResources = ShareX.Properties.Resources;
 
 namespace ShareX;
 
@@ -595,8 +595,8 @@ public partial class NotificationWindow : Window
                     TaskHelpers.PinToScreen(config.FilePath);
                     break;
                 case ToastClickAction.DeleteFile:
-                    if (FormsMessageBox.Show(AppResources.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
-                        "ShareX - " + AppResources.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation,
+                    if (FormsMessageBox.Show(Strings.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
+                        "ShareX - " + Strings.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation,
                         FormsMessageBoxButtons.YesNo) == FormsDialogResult.Yes)
                     {
                         FileHelpers.DeleteFile(config.FilePath, true);

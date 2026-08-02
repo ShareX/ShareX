@@ -241,7 +241,7 @@ namespace ShareX
 
                                 if (string.IsNullOrEmpty(title))
                                 {
-                                    title = Resources.TaskManager_task_UploadCompleted_Error;
+                                    title = Strings.TaskManager_task_UploadCompleted_Error;
                                 }
 
                                 if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(error.Text) &&
@@ -282,7 +282,7 @@ namespace ShareX
                                         ActionButtons = NotificationActionButton.CloneButtons(info.TaskSettings.GeneralSettings.ToastWindowButtons),
                                         FilePath = info.FilePath,
                                         Image = task.Image,
-                                        Title = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed,
+                                        Title = "ShareX - " + Strings.TaskManager_task_UploadCompleted_ShareX___Task_completed,
                                         Text = result,
                                         URL = info.Result.ToString()
                                     };
