@@ -109,7 +109,7 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
         GroupOptions.Clear();
         foreach (string group in groups)
         {
-            GroupOptions.Add(new EmojiCatalogGroupOption(group, EmojiCatalogLocalization.GetGroupName(group)));
+            GroupOptions.Add(new EmojiCatalogGroupOption(group, group));
         }
 
         SelectedGroup = GroupOptions.FirstOrDefault();

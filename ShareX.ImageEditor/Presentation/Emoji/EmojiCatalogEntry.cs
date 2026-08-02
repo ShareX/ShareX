@@ -27,7 +27,6 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using ShareX.ImageEditor.Localization;
 
 namespace ShareX.ImageEditor.Presentation.Emoji;
 
@@ -45,10 +44,10 @@ public sealed class EmojiCatalogEntry
     public string Glyph => EmojiCatalogService.ToGlyph(Unicode);
 
     [JsonIgnore]
-    public string DisplayName => EmojiCatalogLocalization.GetName(Unicode, Name);
+    public string DisplayName => Name;
 
     [JsonIgnore]
-    public string DisplayGroup => EmojiCatalogLocalization.GetGroupName(Group);
+    public string DisplayGroup => Group;
 
     [JsonIgnore]
     private string SearchIndex => _searchIndex ??= BuildSearchIndex();
@@ -206,38 +205,5 @@ public static class EmojiCatalogService
         }
 
         return entries;
-    }
-}
-
-public static class EmojiCatalogLocalization
-{
-    public static string GetName(string unicodeSequence, string fallbackName)
-    {
-        string key = $"EmojiCatalog_Name_{NormalizeUnicode(unicodeSequence)}";
-        return Strings.ResourceManager.GetString(key, Strings.Culture) ?? fallbackName;
-    }
-
-    public static string GetGroupName(string groupName)
-    {
-        string? key = groupName switch
-        {
-            "Smileys & Emotion" => "EmojiCatalog_Group_SmileysEmotion",
-            "People & Body" => "EmojiCatalog_Group_PeopleBody",
-            "Animals & Nature" => "EmojiCatalog_Group_AnimalsNature",
-            "Food & Drink" => "EmojiCatalog_Group_FoodDrink",
-            "Travel & Places" => "EmojiCatalog_Group_TravelPlaces",
-            "Activities" => "EmojiCatalog_Group_Activities",
-            "Objects" => "EmojiCatalog_Group_Objects",
-            "Symbols" => "EmojiCatalog_Group_Symbols",
-            "Flags" => "EmojiCatalog_Group_Flags",
-            _ => null
-        };
-
-        return key == null ? groupName : Strings.ResourceManager.GetString(key, Strings.Culture) ?? groupName;
-    }
-
-    private static string NormalizeUnicode(string unicodeSequence)
-    {
-        return unicodeSequence.Replace(' ', '_').Replace('-', '_').ToUpperInvariant();
     }
 }

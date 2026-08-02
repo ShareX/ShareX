@@ -42,16 +42,6 @@ $areas = @(
         )
     }
     [pscustomobject]@{
-        Name = 'Emoji catalog'
-        Prefix = 'EmojiCatalog_'
-        DataDriven = $true
-        Sources = @(
-            'Presentation/Emoji/EmojiCatalogEntry.cs'
-            'Presentation/Views/EmojiPickerDialogView.axaml'
-            'Presentation/ViewModels/EmojiPickerDialogViewModel.cs'
-        )
-    }
-    [pscustomobject]@{
         Name = 'Insert image dialog'
         Prefix = 'InsertImageDialogView_'
         Sources = @(
@@ -178,14 +168,8 @@ if ($cultureFiles.Count -ne 23)
 foreach ($file in $cultureFiles)
 {
     $localized = Read-Resources $file.FullName
-    $isTurkish = $file.Name -eq 'Strings.tr.resx'
     foreach ($key in $default.Keys)
     {
-        $isEmojiCatalogKey = $key.StartsWith('EmojiCatalog_', [StringComparison]::Ordinal)
-        if ($isEmojiCatalogKey -and -not $isTurkish)
-        {
-            continue
-        }
         if (-not $localized.ContainsKey($key))
         {
             $errors.Add("$($file.Name): missing '$key'.")
@@ -207,10 +191,6 @@ foreach ($file in $cultureFiles)
         if (-not $default.ContainsKey($key))
         {
             $errors.Add("$($file.Name): unexpected '$key'.")
-        }
-        elseif (-not $isTurkish -and $key.StartsWith('EmojiCatalog_', [StringComparison]::Ordinal))
-        {
-            $errors.Add("$($file.Name): '$key' must use the default English fallback.")
         }
     }
 }
@@ -239,8 +219,7 @@ $rows = foreach ($area in $areas)
             }
         }
     }
-    $cultureCount = if ($area.Prefix -eq 'EmojiCatalog_') { 1 } else { $cultureFiles.Count }
-    [pscustomobject]@{ Area = $area.Name; Sources = $area.Sources.Count; Keys = $keys.Count; Cultures = $cultureCount }
+    [pscustomobject]@{ Area = $area.Name; Sources = $area.Sources.Count; Keys = $keys.Count; Cultures = $cultureFiles.Count }
 }
 
 $rows | Format-Table -AutoSize

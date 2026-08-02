@@ -12,7 +12,6 @@ Image effect names, descriptions, parameter labels, and options are intentionall
 | New image dialog | `NewImageDialogView_` | 1 | 9 | Complete |
 | Start screen | `StartScreenDialogView_` | 2 | 11 | Complete |
 | Emoji picker | `EmojiPickerDialogView_` | 2 | 9 | Complete |
-| Emoji catalog | `EmojiCatalog_` | 3 | 1604 | Turkish complete; other cultures use English fallback |
 | Insert image dialog | `InsertImageDialogView_` | 2 | 9 | Complete |
 | Annotation toolbar | `AnnotationToolbar_` | 1 | 38 | Complete |
 | Color picker panel | `ColorPickerPanel_` | 1 | 1 | Complete |
@@ -29,9 +28,9 @@ Image effect names, descriptions, parameter labels, and options are intentionall
 | Arrow style names | `ArrowStyleDisplayNameConverter_` | 1 | 5 | Complete |
 | Text alignment names | `TextHorizontalAlignmentHelper_` | 1 | 3 | Complete |
 
-The default Image Editor resource set contains 1862 keys. Turkish contains all 1862 keys, including the complete 1604-key emoji catalog. The other 22 cultures contain all 258 ordinary UI keys and intentionally use the default English fallback for emoji catalog names and categories.
+The default Image Editor resource set contains 258 keys, with matching translations in all 23 localized cultures. Emoji catalog names and categories come directly from the embedded English catalog and are intentionally excluded from localization.
 
-`Validate.ps1` checks source references, the Turkish-only emoji policy, key parity, values, placeholders, strict UTF-8 encoding, the emoji catalog JSON, and reports the remaining untracked AXAML views.
+`Validate.ps1` checks source references, key parity, values, placeholders, strict UTF-8 encoding, the emoji catalog JSON, and reports the remaining untracked AXAML views.
 
 Run from the repository root:
 
