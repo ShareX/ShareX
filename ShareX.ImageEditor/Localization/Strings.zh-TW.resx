@@ -429,4 +429,94 @@
   <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
     <value>我的最愛</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
+    <value>檔案</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Select" xml:space="preserve">
+    <value>選擇</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
+    <value>文字</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Image" xml:space="preserve">
+    <value>圖片</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
+    <value>游標</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
+    <value>高亮</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SmartEraser" xml:space="preserve">
+    <value>智慧擦子</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
+    <value>模糊</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Pixelate" xml:space="preserve">
+    <value>像素化</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Magnify" xml:space="preserve">
+    <value>放大</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Spotlight" xml:space="preserve">
+    <value>聚光燈</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Background" xml:space="preserve">
+    <value>背景</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_ImageEffects" xml:space="preserve">
+    <value>圖片效果</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
+    <value>預設</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
+    <value>實線</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dash" xml:space="preserve">
+    <value>虛線</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dot" xml:space="preserve">
+    <value>點線</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
+    <value>置中</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
+    <value>打開時縮放到適當大小</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>在排程中自動關閉編輯器</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>自動複製圖片到剪貼簿</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
+    <value>漸層</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
+    <value>顏色</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeTransparent" xml:space="preserve">
+    <value>透明</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeImage" xml:space="preserve">
+    <value>圖片</value>
+  </data>
+  <data name="MainViewModel_WindowTitle" xml:space="preserve">
+    <value>ShareX - 圖片編輯器</value>
+  </data>
+  <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
+    <value>執行擷取後的排程 (Enter)</value>
+  </data>
 </root>

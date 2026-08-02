@@ -11,18 +11,18 @@ Image effect names, descriptions, parameter labels, and options are intentionall
 | Confirmation dialog | `ConfirmationDialogView_` | 2 | 5 | Complete |
 | New image dialog | `NewImageDialogView_` | 1 | 9 | Complete |
 | Start screen | `StartScreenDialogView_` | 2 | 11 | Complete |
-| Emoji picker | `EmojiPickerDialogView_` | 2 | 9 | 20 cultures complete; Arabic, Persian, and Hebrew pending |
-| Insert image dialog | `InsertImageDialogView_` | 2 | 9 | 20 cultures complete; Arabic, Persian, and Hebrew pending |
-| Annotation toolbar | `AnnotationToolbar_` | 1 | 38 | 20 cultures complete; Arabic, Persian, and Hebrew pending |
-| Color picker panel | `ColorPickerPanel_` | 1 | 1 | 20 cultures complete; Arabic, Persian, and Hebrew pending |
-| Editor options panel | `EditorOptionsPanel_` | 1 | 3 | 20 cultures complete; Arabic, Persian, and Hebrew pending |
-| Editor view | `EditorView_` | 1 | 33 | 20 cultures complete; Arabic, Persian, and Hebrew pending |
-| Effect browser shell | `EffectBrowserPanel_` | 2 | 6 | 20 cultures complete; effect metadata excluded |
-| Effect dialog shell | `SchemaDrivenEffectDialog_` | 1 | 3 | 20 cultures complete; effect metadata excluded |
-| Toolbar customization dialog | `ToolbarCustomizationDialogView_` | 2 | 10 | 20 cultures complete; Arabic, Persian, and Hebrew pending |
-| Zoom picker | `ZoomPickerDropdown_` | 1 | 1 | 20 cultures complete; Arabic, Persian, and Hebrew pending |
+| Emoji picker | `EmojiPickerDialogView_` | 2 | 9 | Complete |
+| Insert image dialog | `InsertImageDialogView_` | 2 | 9 | Complete |
+| Annotation toolbar | `AnnotationToolbar_` | 1 | 38 | Complete |
+| Color picker panel | `ColorPickerPanel_` | 1 | 1 | Complete |
+| Editor options panel | `EditorOptionsPanel_` | 1 | 3 | Complete |
+| Editor view | `EditorView_` | 1 | 33 | Complete |
+| Effect browser shell | `EffectBrowserPanel_` | 2 | 6 | Complete; effect metadata excluded |
+| Effect dialog shell | `SchemaDrivenEffectDialog_` | 1 | 3 | Complete; effect metadata excluded |
+| Toolbar customization dialog | `ToolbarCustomizationDialogView_` | 2 | 10 | Complete |
+| Zoom picker | `ZoomPickerDropdown_` | 1 | 1 | Complete |
 
-The current Image Editor resource set contains 138 keys. The latest batch added 113 scoped UI keys. Twenty cultures are complete for this batch; Arabic, Persian, and Hebrew retain .NET's default-resource fallback until their translations are completed, rather than duplicating English text into localized files.
+The Image Editor resource set contains 245 keys. The first 138 keys are complete in all 23 cultures. The latest batch adds 107 scoped UI keys; Turkish is complete and exact translations from the current project were propagated to the remaining cultures. Unmatched values retain .NET's default-resource fallback until the next language pass, rather than duplicating English text into localized files.
 
 `Validate.ps1` checks source references, key parity, values, placeholders, and reports the remaining untracked AXAML views.
 

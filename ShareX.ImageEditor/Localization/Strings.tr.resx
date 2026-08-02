@@ -429,4 +429,326 @@ Gölge seçenekleri (Sağ tık)</value>
   <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
     <value>Sık Kullanılanlar</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
+    <value>Dosya</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Select" xml:space="preserve">
+    <value>Seç</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
+    <value>Metin</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Image" xml:space="preserve">
+    <value>Resim</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
+    <value>İmleç</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
+    <value>Vurgula</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SmartEraser" xml:space="preserve">
+    <value>Akıllı silgi</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
+    <value>Bulanıklaştır</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Pixelate" xml:space="preserve">
+    <value>Mozaikle</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Magnify" xml:space="preserve">
+    <value>Büyüt</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Spotlight" xml:space="preserve">
+    <value>Spot ışığı</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Background" xml:space="preserve">
+    <value>Arka plan</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_ImageEffects" xml:space="preserve">
+    <value>Görsel efektleri</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
+    <value>Varsayılan</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_No" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
+    <value>Düz</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dash" xml:space="preserve">
+    <value>Tire</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dot" xml:space="preserve">
+    <value>Nokta</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
+    <value>Sol</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
+    <value>Sağ</value>
+  </data>
+  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Açılışta sığdırmak için yakınlaştır</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Görevden sonra editörü otomatik kapat</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Resmi otomatik olarak panoya kopyala</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
+    <value>Gradyan</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
+    <value>Renk</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeTransparent" xml:space="preserve">
+    <value>Saydam</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeImage" xml:space="preserve">
+    <value>Resim</value>
+  </data>
+  <data name="MainViewModel_WindowTitle" xml:space="preserve">
+    <value>ShareX - Resim düzenleyici</value>
+  </data>
+  <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
+    <value>Yakalama sonrası görevlerini çalıştır (Enter)</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Rectangle" xml:space="preserve">
+    <value>Dikdörtgen</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Ellipse" xml:space="preserve">
+    <value>Elips</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Line" xml:space="preserve">
+    <value>Çizgi</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Freehand" xml:space="preserve">
+    <value>Serbest çizim</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SpeechBalloon" xml:space="preserve">
+    <value>Konuşma balonu</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Step" xml:space="preserve">
+    <value>Adım</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
+    <value>Kırp</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CutOut" xml:space="preserve">
+    <value>Kesip çıkar</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
+    <value>{0}
+Sık kullanılan resim efektleri (Sağ tık)</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_AppStarting" xml:space="preserve">
+    <value>Uygulama başlatılıyor</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Arrow" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Cross" xml:space="preserve">
+    <value>Artı</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Hand" xml:space="preserve">
+    <value>El</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Help" xml:space="preserve">
+    <value>Yardım</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_HSplit" xml:space="preserve">
+    <value>Yatay bölme</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_IBeam" xml:space="preserve">
+    <value>Metin imleci</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMove2D" xml:space="preserve">
+    <value>2B hareket yok</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveHoriz" xml:space="preserve">
+    <value>Yatay hareket yok</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveVert" xml:space="preserve">
+    <value>Dikey hareket yok</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanEast" xml:space="preserve">
+    <value>Doğuya kaydır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNE" xml:space="preserve">
+    <value>Kuzeydoğuya kaydır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNorth" xml:space="preserve">
+    <value>Kuzeye kaydır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNW" xml:space="preserve">
+    <value>Kuzeybatıya kaydır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSE" xml:space="preserve">
+    <value>Güneydoğuya kaydır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSouth" xml:space="preserve">
+    <value>Güneye kaydır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSW" xml:space="preserve">
+    <value>Güneybatıya kaydır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanWest" xml:space="preserve">
+    <value>Batıya kaydır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeAll" xml:space="preserve">
+    <value>Tüm yönlerde boyutlandır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNESW" xml:space="preserve">
+    <value>Kuzeydoğu-güneybatı boyutlandır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNS" xml:space="preserve">
+    <value>Kuzey-güney boyutlandır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNWSE" xml:space="preserve">
+    <value>Kuzeybatı-güneydoğu boyutlandır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeWE" xml:space="preserve">
+    <value>Batı-doğu boyutlandır</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_UpArrow" xml:space="preserve">
+    <value>Yukarı ok</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_VSplit" xml:space="preserve">
+    <value>Dikey bölme</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
+    <value>Bekleme imleci</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDot" xml:space="preserve">
+    <value>Kesik noktalı</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDotDot" xml:space="preserve">
+    <value>Kesik nokta nokta</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Classic" xml:space="preserve">
+    <value>Klasik</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Modern" xml:space="preserve">
+    <value>Modern</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Double" xml:space="preserve">
+    <value>Çift</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Basic" xml:space="preserve">
+    <value>Temel</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
+    <value>Çizgi</value>
+  </data>
+  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
+    <value>Pencere durumunu hatırla</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
+    <value>Çıkış onayını göster</value>
+  </data>
+  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
+    <value>Hızlı kırp</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
+    <value>Resim ekleme iletişim kutusunu göster</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
+    <value>Bildirimleri göster</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
+    <value>Duvar kağıdı</value>
+  </data>
+  <data name="MainViewModel_ImageOpened" xml:space="preserve">
+    <value>Resim açıldı.</value>
+  </data>
+  <data name="MainViewModel_NewImageCreated" xml:space="preserve">
+    <value>Yeni resim oluşturuldu.</value>
+  </data>
+  <data name="MainViewModel_ImageCropped" xml:space="preserve">
+    <value>Resim kırpıldı.</value>
+  </data>
+  <data name="MainViewModel_ImageCutOut" xml:space="preserve">
+    <value>Resim kesilip çıkarıldı.</value>
+  </data>
+  <data name="MainViewModel_ImageInserted" xml:space="preserve">
+    <value>Resim eklendi.</value>
+  </data>
+  <data name="MainViewModel_ImageAutoCropped" xml:space="preserve">
+    <value>Resim otomatik kırpıldı.</value>
+  </data>
+  <data name="MainViewModel_ImageResized" xml:space="preserve">
+    <value>Resim yeniden boyutlandırıldı.</value>
+  </data>
+  <data name="MainViewModel_CanvasResized" xml:space="preserve">
+    <value>Tuval yeniden boyutlandırıldı.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90Clockwise" xml:space="preserve">
+    <value>Resim saat yönünde 90 derece döndürüldü.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90CounterClockwise" xml:space="preserve">
+    <value>Resim saat yönünün tersine 90 derece döndürüldü.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated180" xml:space="preserve">
+    <value>Resim 180 derece döndürüldü.</value>
+  </data>
+  <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
+    <value>Resim {0} derece döndürüldü.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedHorizontally" xml:space="preserve">
+    <value>Resim yatay olarak çevrildi.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedVertically" xml:space="preserve">
+    <value>Resim dikey olarak çevrildi.</value>
+  </data>
+  <data name="MainViewModel_ImageEffectApplied" xml:space="preserve">
+    <value>Resim efekti uygulandı.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
+    <value>Resim dosyaya kaydedildi.</value>
+  </data>
+  <data name="MainViewModel_FilePathFormat" xml:space="preserve">
+    <value>Dosya yolu: {0}</value>
+  </data>
+  <data name="MainViewModel_SizeFormat" xml:space="preserve">
+    <value>Boyut: {0}x{1}</value>
+  </data>
+  <data name="MainViewModel_HideToolbars" xml:space="preserve">
+    <value>Araç çubuklarını gizle</value>
+  </data>
+  <data name="MainViewModel_ShowToolbars" xml:space="preserve">
+    <value>Araç çubuklarını göster</value>
+  </data>
+  <data name="MainViewModel_ContinueEnter" xml:space="preserve">
+    <value>Devam et (Enter)</value>
+  </data>
+  <data name="MainViewModel_NoImage" xml:space="preserve">
+    <value>Resim yok</value>
+  </data>
+  <data name="MainViewModel_ImageCopiedToClipboard" xml:space="preserve">
+    <value>Resim panoya kopyalandı.</value>
+  </data>
+  <data name="MainViewModel_ImagePrinted" xml:space="preserve">
+    <value>Resim yazdırıldı.</value>
+  </data>
+  <data name="MainViewModel_ImagePinnedToScreen" xml:space="preserve">
+    <value>Resim ekrana sabitlendi.</value>
+  </data>
+  <data name="MainViewModel_ImageIsUploading" xml:space="preserve">
+    <value>Resim yükleniyor.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
+    <value>{0} ve {1} aynı kısayolu kullanıyor ({2}).</value>
+  </data>
 </root>

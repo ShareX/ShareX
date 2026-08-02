@@ -42,35 +42,35 @@
             </Button>
         </Grid>
 
-        <controls:LabeledToggleSwitch Label="Remember window state"
+        <controls:LabeledToggleSwitch Label="{x:Static res:Strings.EditorOptionsPanel_RememberWindowState}"
                                       IsChecked="{Binding EditorRememberWindowState, Mode=TwoWay}"
                                       Margin="0,0,0,8"/>
 
-        <controls:LabeledToggleSwitch Label="Show exit confirmation"
+        <controls:LabeledToggleSwitch Label="{x:Static res:Strings.EditorOptionsPanel_ShowExitConfirmation}"
                                       IsChecked="{Binding EditorShowExitConfirmation, Mode=TwoWay}"
                                       Margin="0,0,0,8"/>
 
-        <controls:LabeledToggleSwitch Label="Zoom to fit on open"
+        <controls:LabeledToggleSwitch Label="{x:Static res:Strings.EditorOptionsPanel_ZoomToFitOnOpen}"
                                       IsChecked="{Binding EditorZoomToFitOnOpen, Mode=TwoWay}"
                                       Margin="0,0,0,8"/>
 
-        <controls:LabeledToggleSwitch Label="Quick crop"
+        <controls:LabeledToggleSwitch Label="{x:Static res:Strings.EditorOptionsPanel_QuickCrop}"
                                       IsChecked="{Binding EditorQuickCrop, Mode=TwoWay}"
                                       Margin="0,0,0,8"/>
 
-        <controls:LabeledToggleSwitch Label="Auto close editor on task"
+        <controls:LabeledToggleSwitch Label="{x:Static res:Strings.EditorOptionsPanel_AutoCloseEditorOnTask}"
                                       IsChecked="{Binding EditorAutoCloseEditorOnTask, Mode=TwoWay}"
                                       Margin="0,0,0,8"/>
 
-        <controls:LabeledToggleSwitch Label="Auto copy image to clipboard"
+        <controls:LabeledToggleSwitch Label="{x:Static res:Strings.EditorOptionsPanel_AutoCopyImageToClipboard}"
                                       IsChecked="{Binding EditorAutoCopyImageToClipboard, Mode=TwoWay}"
                                       Margin="0,0,0,8"/>
 
-        <controls:LabeledToggleSwitch Label="Show insert image dialog"
+        <controls:LabeledToggleSwitch Label="{x:Static res:Strings.EditorOptionsPanel_ShowInsertImageDialog}"
                                       IsChecked="{Binding EditorShowInsertImageDialog, Mode=TwoWay}"
                                       Margin="0,0,0,8"/>
 
-        <controls:LabeledToggleSwitch Label="Show notifications"
+        <controls:LabeledToggleSwitch Label="{x:Static res:Strings.EditorOptionsPanel_ShowNotifications}"
                                       IsChecked="{Binding EditorShowNotifications, Mode=TwoWay}"
                                       Margin="0,0,0,8"/>
 

@@ -90,58 +90,58 @@
     <value>أدخل رابط HTTP أو HTTPS صالحًا.</value>
   </data>
   <data name="EmojiPickerDialogView_LoadingEmojis" xml:space="preserve">
-    <value>Loading emojis...</value>
+    <value>جارٍ تحميل الرموز التعبيرية...</value>
   </data>
   <data name="EmojiPickerDialogView_SearchEmojisCount" xml:space="preserve">
-    <value>Search emojis... ({0})</value>
+    <value>البحث عن رموز تعبيرية... ({0})</value>
   </data>
   <data name="EmojiPickerDialogView_BrowseEmojis" xml:space="preserve">
-    <value>Browse emojis</value>
+    <value>استعراض الرموز التعبيرية</value>
   </data>
   <data name="EmojiPickerDialogView_CategorySummary" xml:space="preserve">
-    <value>{0} • {1} emojis</value>
+    <value>{0} • {1} من الرموز التعبيرية</value>
   </data>
   <data name="EmojiPickerDialogView_SearchResults" xml:space="preserve">
-    <value>Search results • {0} matches</value>
+    <value>نتائج البحث • {0} من التطابقات</value>
   </data>
   <data name="EmojiPickerDialogView_NoMatches" xml:space="preserve">
-    <value>No emojis match this search.</value>
+    <value>لا توجد رموز تعبيرية تطابق هذا البحث.</value>
   </data>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
-    <value>Try a different keyword.</value>
+    <value>جرّب كلمة مفتاحية مختلفة.</value>
   </data>
   <data name="EmojiPickerDialogView_Cancel" xml:space="preserve">
     <value>إلغاء</value>
   </data>
   <data name="EmojiPickerDialogView_PreviewsLoading" xml:space="preserve">
-    <value>The picker is ready. Emoji previews are loading in the background.</value>
+    <value>أداة الاختيار جاهزة. يتم تحميل معاينات الرموز التعبيرية في الخلفية.</value>
   </data>
   <data name="InsertImageDialogView_Title" xml:space="preserve">
-    <value>Insert image</value>
+    <value>إدراج صورة</value>
   </data>
   <data name="InsertImageDialogView_Description" xml:space="preserve">
-    <value>Choose how to place the incoming image on the current canvas.</value>
+    <value>اختر كيفية وضع الصورة الواردة على اللوحة الحالية.</value>
   </data>
   <data name="InsertImageDialogView_ImageSummary" xml:space="preserve">
-    <value>Incoming image: {0} x {1}px</value>
+    <value>الصورة الواردة: {0} x {1}px</value>
   </data>
   <data name="InsertImageDialogView_Center" xml:space="preserve">
-    <value>Insert image in the center</value>
+    <value>إدراج الصورة في المنتصف</value>
   </data>
   <data name="InsertImageDialogView_CenterDescription" xml:space="preserve">
-    <value>Keeps the current canvas size.</value>
+    <value>يحافظ على حجم اللوحة الحالي.</value>
   </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
-    <value>Insert image below</value>
+    <value>إدراج الصورة في الأسفل</value>
   </data>
   <data name="InsertImageDialogView_BelowDescription" xml:space="preserve">
-    <value>Expands the canvas downward before adding the image.</value>
+    <value>يوسّع اللوحة إلى الأسفل قبل إضافة الصورة.</value>
   </data>
   <data name="InsertImageDialogView_Right" xml:space="preserve">
-    <value>Insert image on right side</value>
+    <value>إدراج الصورة في الجانب الأيمن</value>
   </data>
   <data name="InsertImageDialogView_RightDescription" xml:space="preserve">
-    <value>Expands the canvas to the right before adding the image.</value>
+    <value>يوسّع اللوحة إلى اليمين قبل إضافة الصورة.</value>
   </data>
   <data name="AnnotationToolbar_Exit" xml:space="preserve">
     <value>خروج</value>
@@ -220,5 +220,303 @@
   </data>
   <data name="EditorView_Undo" xml:space="preserve">
     <value>تراجع</value>
+  </data>
+  <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
+    <value>نمط السهم</value>
+  </data>
+  <data name="AnnotationToolbar_Bluramount" xml:space="preserve">
+    <value>مقدار التمويه</value>
+  </data>
+  <data name="AnnotationToolbar_Bordercolor" xml:space="preserve">
+    <value>لون الحدود</value>
+  </data>
+  <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
+    <value>نمط الحدود</value>
+  </data>
+  <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
+    <value>نصف قطر الزاوية</value>
+  </data>
+  <data name="AnnotationToolbar_Cursortype" xml:space="preserve">
+    <value>نوع المؤشر</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteallShiftDelete" xml:space="preserve">
+    <value>حذف الكل (Shift+Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteDelete" xml:space="preserve">
+    <value>حذف (Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_Effectstrength" xml:space="preserve">
+    <value>قوة التأثير</value>
+  </data>
+  <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
+    <value>لون التعبئة</value>
+  </data>
+  <data name="AnnotationToolbar_Fontfamily" xml:space="preserve">
+    <value>عائلة الخط</value>
+  </data>
+  <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
+    <value>حجم الخط</value>
+  </data>
+  <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
+    <value>المحاذاة الأفقية</value>
+  </data>
+  <data name="AnnotationToolbar_NewEllipsis" xml:space="preserve">
+    <value>جديد...</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetX" xml:space="preserve">
+    <value>إزاحة X</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetY" xml:space="preserve">
+    <value>إزاحة Y</value>
+  </data>
+  <data name="AnnotationToolbar_Opacity" xml:space="preserve">
+    <value>التعتيم</value>
+  </data>
+  <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
+    <value>فتح حديث</value>
+  </data>
+  <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
+    <value>إعادة (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
+    <value>حفظ باسم...</value>
+  </data>
+  <data name="AnnotationToolbar_Shadow" xml:space="preserve">
+    <value>الظل</value>
+  </data>
+  <data name="AnnotationToolbar_Shadowcolor" xml:space="preserve">
+    <value>لون الظل</value>
+  </data>
+  <data name="AnnotationToolbar_Startingnumber" xml:space="preserve">
+    <value>رقم البداية</value>
+  </data>
+  <data name="AnnotationToolbar_Steptype" xml:space="preserve">
+    <value>نوع الخطوة</value>
+  </data>
+  <data name="AnnotationToolbar_Textcolor" xml:space="preserve">
+    <value>لون النص</value>
+  </data>
+  <data name="AnnotationToolbar_Thickness" xml:space="preserve">
+    <value>السُمك</value>
+  </data>
+  <data name="AnnotationToolbar_Togglebold" xml:space="preserve">
+    <value>تبديل الخط العريض</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleellipseshape" xml:space="preserve">
+    <value>تبديل الشكل البيضاوي</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleitalic" xml:space="preserve">
+    <value>تبديل الخط المائل</value>
+  </data>
+  <data name="AnnotationToolbar_ToggleshadowShadowoptionsRightclick" xml:space="preserve">
+    <value>تبديل الظل
+خيارات الظل (النقر بزر الماوس الأيمن)</value>
+  </data>
+  <data name="AnnotationToolbar_Toggletail" xml:space="preserve">
+    <value>تبديل الذيل</value>
+  </data>
+  <data name="AnnotationToolbar_UndoCtrlZ" xml:space="preserve">
+    <value>تراجع (Ctrl+Z)</value>
+  </data>
+  <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
+    <value>اختيار لون من الشاشة</value>
+  </data>
+  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
+    <value>تخصيص شريط الأدوات...</value>
+  </data>
+  <data name="EditorView_Auto" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="EditorView_Background" xml:space="preserve">
+    <value>الخلفية</value>
+  </data>
+  <data name="EditorView_Backgroundimage" xml:space="preserve">
+    <value>صورة الخلفية</value>
+  </data>
+  <data name="EditorView_BrowsebackgroundimageEllipsis" xml:space="preserve">
+    <value>استعراض صورة الخلفية...</value>
+  </data>
+  <data name="EditorView_CancelEsc" xml:space="preserve">
+    <value>إلغاء (Esc)</value>
+  </data>
+  <data name="EditorView_CopyimagetoclipboardCtrlC" xml:space="preserve">
+    <value>نسخ الصورة إلى الحافظة (Ctrl+C)</value>
+  </data>
+  <data name="EditorView_Editbackgroundcolor" xml:space="preserve">
+    <value>تحرير لون الخلفية</value>
+  </data>
+  <data name="EditorView_Editgradientcolor1" xml:space="preserve">
+    <value>تحرير لون التدرج 1</value>
+  </data>
+  <data name="EditorView_Editgradientcolor2" xml:space="preserve">
+    <value>تحرير لون التدرج 2</value>
+  </data>
+  <data name="EditorView_Flatten" xml:space="preserve">
+    <value>تسطيح</value>
+  </data>
+  <data name="EditorView_Margin" xml:space="preserve">
+    <value>الهامش</value>
+  </data>
+  <data name="EditorView_Padding" xml:space="preserve">
+    <value>الحشو</value>
+  </data>
+  <data name="EditorView_PinimagetoscreenCtrlP" xml:space="preserve">
+    <value>تثبيت الصورة على الشاشة (Ctrl+P)</value>
+  </data>
+  <data name="EditorView_PrintimageEllipsisCtrlShiftP" xml:space="preserve">
+    <value>طباعة الصورة... (Ctrl+Shift+P)</value>
+  </data>
+  <data name="EditorView_Ratio" xml:space="preserve">
+    <value>النسبة</value>
+  </data>
+  <data name="EditorView_RoundedCorner" xml:space="preserve">
+    <value>زاوية مستديرة</value>
+  </data>
+  <data name="EditorView_SaveimageasEllipsisCtrlShiftS" xml:space="preserve">
+    <value>حفظ الصورة باسم... (Ctrl+Shift+S)</value>
+  </data>
+  <data name="EditorView_SaveimageCtrlS" xml:space="preserve">
+    <value>حفظ الصورة (Ctrl+S)</value>
+  </data>
+  <data name="EditorView_ShadowRadius" xml:space="preserve">
+    <value>نصف قطر الظل</value>
+  </data>
+  <data name="EditorView_UploadimageCtrlU" xml:space="preserve">
+    <value>رفع الصورة (Ctrl+U)</value>
+  </data>
+  <data name="EditorView_ZoomCtrlWheel" xml:space="preserve">
+    <value>التكبير/التصغير (Ctrl + عجلة الماوس)</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchimageeffectsEllipsis" xml:space="preserve">
+    <value>البحث في تأثيرات الصور...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Apply" xml:space="preserve">
+    <value>تطبيق</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
+    <value>بدء مجموعة</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit" xml:space="preserve">
+    <value>انقر واضغط اختصارًا. يمسحه Backspace أو Delete.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
+    <value>تخصيص شريط الأدوات</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
+    <value>إعادة تعيين شريط الأدوات إلى الافتراضي</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
+    <value>إظهار / إخفاء</value>
+  </data>
+  <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
+    <value>ملاءمة للنافذة</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
+    <value>اختصار غير صالح لـ {0}. استخدم تنسيقات مثل R أو Ctrl+R أو Ctrl+Shift+R.</value>
+  </data>
+  <data name="EffectBrowserPanel_RecentHint" xml:space="preserve">
+    <value>انقر بزر الماوس الأيمن على تأثير لإزالته من العناصر الحديثة.</value>
+  </data>
+  <data name="EffectBrowserPanel_FavoritesHint" xml:space="preserve">
+    <value>انقر بزر الماوس الأيمن على تأثير لإضافته إلى المفضلة أو إزالته منها.</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchCount" xml:space="preserve">
+    <value>البحث في تأثيرات الصور... ({0})</value>
+  </data>
+  <data name="EffectBrowserPanel_Recent" xml:space="preserve">
+    <value>الحديثة</value>
+  </data>
+  <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
+    <value>المفضلة</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
+    <value>ملف</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Select" xml:space="preserve">
+    <value>تحديد</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
+    <value>النص</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Image" xml:space="preserve">
+    <value>الصورة</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
+    <value>المؤشّر</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
+    <value>تمييز</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SmartEraser" xml:space="preserve">
+    <value>المسلحة الذكية</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
+    <value>تشويش</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Pixelate" xml:space="preserve">
+    <value>تشويش</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Magnify" xml:space="preserve">
+    <value>تكبير</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Spotlight" xml:space="preserve">
+    <value>الضوء الكاشف</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Background" xml:space="preserve">
+    <value>الخلفية</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_ImageEffects" xml:space="preserve">
+    <value>تأثيرات الصور</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
+    <value>الافتراضي</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_No" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
+    <value>مصمت</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dash" xml:space="preserve">
+    <value>شَرطة</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dot" xml:space="preserve">
+    <value>نقطة</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
+    <value>يسار</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
+    <value>الوسط</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
+    <value>يمين</value>
+  </data>
+  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
+    <value>تكبير حتى الملائمة عند الفتح</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>إغلاق المحرّر بشكل تلقائي عند بدء مهمة</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>نسخ الصورة تلقائيًا إلى الحافظة</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
+    <value>التدرج</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
+    <value>اللون</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeTransparent" xml:space="preserve">
+    <value>شفاف</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeImage" xml:space="preserve">
+    <value>الصورة</value>
+  </data>
+  <data name="MainViewModel_WindowTitle" xml:space="preserve">
+    <value>ShareX - محرّر الصور</value>
+  </data>
+  <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
+    <value>تشغيل مهام ما بعد الالتقاط (Enter)</value>
   </data>
 </root>

@@ -429,4 +429,91 @@ Opcje cienia (Prawy przycisk)</value>
   <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
     <value>Ulubione</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
+    <value>Plik</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Select" xml:space="preserve">
+    <value>Wybierz</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Image" xml:space="preserve">
+    <value>Obraz</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
+    <value>Kursor</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
+    <value>Podświetl</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SmartEraser" xml:space="preserve">
+    <value>Inteligentna gumka</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
+    <value>Rozmycie</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Pixelate" xml:space="preserve">
+    <value>Pikseluj</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Magnify" xml:space="preserve">
+    <value>Lupa</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Spotlight" xml:space="preserve">
+    <value>Reflektor</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Background" xml:space="preserve">
+    <value>Tło</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_ImageEffects" xml:space="preserve">
+    <value>Efekty obrazu</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
+    <value>Domyślnie</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_No" xml:space="preserve">
+    <value>Nie</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
+    <value>Linia stała</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dash" xml:space="preserve">
+    <value>Linia przerywana</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dot" xml:space="preserve">
+    <value>Kropka</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
+    <value>Lewa</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
+    <value>Środek</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
+    <value>Prawa</value>
+  </data>
+  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Powiększ, aby zmieścić się na otwartym</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Automatycznie zamknij edytor podczas zadania</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Automatycznie kopiuj obraz do schowka</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
+    <value>Kolor</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeTransparent" xml:space="preserve">
+    <value>Przezroczysty</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeImage" xml:space="preserve">
+    <value>Obraz</value>
+  </data>
+  <data name="MainViewModel_WindowTitle" xml:space="preserve">
+    <value>ShareX - Edytor obrazów</value>
+  </data>
+  <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
+    <value>Uruchom zadanie po przechwytywaniu (Enter)</value>
+  </data>
 </root>

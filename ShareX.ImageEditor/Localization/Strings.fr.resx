@@ -429,4 +429,85 @@ Options de l’ombre (Clic droit)</value>
   <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
     <value>Favoris</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
+    <value>Fichier</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Select" xml:space="preserve">
+    <value>Sélectionner</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
+    <value>Texte</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
+    <value>Dessin : Curseur</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
+    <value>Surligner</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SmartEraser" xml:space="preserve">
+    <value>Gomme intelligente</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
+    <value>Flouter</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Pixelate" xml:space="preserve">
+    <value>Pixelliser</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Magnify" xml:space="preserve">
+    <value>Utiliser la loupe</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Spotlight" xml:space="preserve">
+    <value>Projecteur</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Background" xml:space="preserve">
+    <value>Arrière-plan</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_ImageEffects" xml:space="preserve">
+    <value>Effets d’image</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
+    <value>Par défaut</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_No" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
+    <value>Continu</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dash" xml:space="preserve">
+    <value>Tiret</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dot" xml:space="preserve">
+    <value>Point</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
+    <value>Gauche</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
+    <value>Centre</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
+    <value>Droite</value>
+  </data>
+  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Zoomer pour ajuster à l'ouverture</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Fermer automatiquement l'éditeur lors du lancement d'une tâche</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Copier automatiquement l'image du presse-papier</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
+    <value>Dégradé</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
+    <value>Couleur</value>
+  </data>
+  <data name="MainViewModel_WindowTitle" xml:space="preserve">
+    <value>ShareX - Éditeur d'image</value>
+  </data>
+  <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
+    <value>Exécuter après les tâches de capture</value>
+  </data>
 </root>

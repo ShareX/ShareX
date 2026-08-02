@@ -26,10 +26,32 @@
 using Avalonia;
 using Avalonia.Data.Converters;
 using ShareX.ImageEditor.Core.Annotations;
+using ShareX.ImageEditor.Localization;
 using System.Globalization;
 
 namespace ShareX.ImageEditor.Presentation.Converters
 {
+    public class ArrowStyleDisplayNameConverter : IValueConverter
+    {
+        public static readonly ArrowStyleDisplayNameConverter Instance = new();
+
+        public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+        {
+            ArrowStyle style = value is ArrowStyle arrowStyle ? arrowStyle : ArrowStyle.Classic;
+            return style switch
+            {
+                ArrowStyle.Classic => Strings.ArrowStyleDisplayNameConverter_Classic,
+                ArrowStyle.Modern => Strings.ArrowStyleDisplayNameConverter_Modern,
+                ArrowStyle.Double => Strings.ArrowStyleDisplayNameConverter_Double,
+                ArrowStyle.Basic => Strings.ArrowStyleDisplayNameConverter_Basic,
+                ArrowStyle.Line => Strings.ArrowStyleDisplayNameConverter_Line,
+                _ => Strings.ArrowStyleDisplayNameConverter_Classic
+            };
+        }
+
+        public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) => ArrowStyle.Classic;
+    }
+
     public class ArrowStylePreviewGeometryConverter : IValueConverter
     {
         public static readonly ArrowStylePreviewGeometryConverter Instance = new();

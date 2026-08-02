@@ -429,4 +429,326 @@ Shadow options (Right click)</value>
   <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
     <value>Favorites</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Rectangle" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Ellipse" xml:space="preserve">
+    <value>Ellipse</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Line" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
+    <value>Arrow</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Freehand" xml:space="preserve">
+    <value>Freehand</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SpeechBalloon" xml:space="preserve">
+    <value>Speech Balloon</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Step" xml:space="preserve">
+    <value>Step</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
+    <value>Cursor</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
+    <value>Highlight</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SmartEraser" xml:space="preserve">
+    <value>Smart Eraser</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
+    <value>Blur</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Pixelate" xml:space="preserve">
+    <value>Pixelate</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Magnify" xml:space="preserve">
+    <value>Magnify</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Spotlight" xml:space="preserve">
+    <value>Spotlight</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
+    <value>Crop</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CutOut" xml:space="preserve">
+    <value>Cut Out</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Background" xml:space="preserve">
+    <value>Background</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_ImageEffects" xml:space="preserve">
+    <value>Image Effects</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
+    <value>{0}
+Favorite image effects (Right click)</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_AppStarting" xml:space="preserve">
+    <value>App starting</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Arrow" xml:space="preserve">
+    <value>Arrow</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Cross" xml:space="preserve">
+    <value>Cross</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Hand" xml:space="preserve">
+    <value>Hand</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_HSplit" xml:space="preserve">
+    <value>H split</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_IBeam" xml:space="preserve">
+    <value>I-beam</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMove2D" xml:space="preserve">
+    <value>No move 2D</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveHoriz" xml:space="preserve">
+    <value>No move horiz</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveVert" xml:space="preserve">
+    <value>No move vert</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanEast" xml:space="preserve">
+    <value>Pan east</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNE" xml:space="preserve">
+    <value>Pan NE</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNorth" xml:space="preserve">
+    <value>Pan north</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNW" xml:space="preserve">
+    <value>Pan NW</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSE" xml:space="preserve">
+    <value>Pan SE</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSouth" xml:space="preserve">
+    <value>Pan south</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSW" xml:space="preserve">
+    <value>Pan SW</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanWest" xml:space="preserve">
+    <value>Pan west</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeAll" xml:space="preserve">
+    <value>Size all</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNESW" xml:space="preserve">
+    <value>Size NESW</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNS" xml:space="preserve">
+    <value>Size NS</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNWSE" xml:space="preserve">
+    <value>Size NWSE</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeWE" xml:space="preserve">
+    <value>Size WE</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_UpArrow" xml:space="preserve">
+    <value>Up arrow</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_VSplit" xml:space="preserve">
+    <value>V split</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
+    <value>Wait cursor</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
+    <value>Solid</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dash" xml:space="preserve">
+    <value>Dash</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dot" xml:space="preserve">
+    <value>Dot</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDot" xml:space="preserve">
+    <value>Dash Dot</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDotDot" xml:space="preserve">
+    <value>Dash Dot Dot</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Classic" xml:space="preserve">
+    <value>Classic</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Modern" xml:space="preserve">
+    <value>Modern</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Double" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Basic" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
+    <value>Remember window state</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
+    <value>Show exit confirmation</value>
+  </data>
+  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Zoom to fit on open</value>
+  </data>
+  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
+    <value>Quick crop</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Auto close editor on task</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Auto copy image to clipboard</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
+    <value>Show insert image dialog</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
+    <value>Show notifications</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
+    <value>Gradient</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeTransparent" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
+    <value>Wallpaper</value>
+  </data>
+  <data name="MainViewModel_ImageOpened" xml:space="preserve">
+    <value>Image opened.</value>
+  </data>
+  <data name="MainViewModel_NewImageCreated" xml:space="preserve">
+    <value>New image created.</value>
+  </data>
+  <data name="MainViewModel_ImageCropped" xml:space="preserve">
+    <value>Image cropped.</value>
+  </data>
+  <data name="MainViewModel_ImageCutOut" xml:space="preserve">
+    <value>Image cut out.</value>
+  </data>
+  <data name="MainViewModel_ImageInserted" xml:space="preserve">
+    <value>Image inserted.</value>
+  </data>
+  <data name="MainViewModel_ImageAutoCropped" xml:space="preserve">
+    <value>Image auto-cropped.</value>
+  </data>
+  <data name="MainViewModel_ImageResized" xml:space="preserve">
+    <value>Image resized.</value>
+  </data>
+  <data name="MainViewModel_CanvasResized" xml:space="preserve">
+    <value>Canvas resized.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90Clockwise" xml:space="preserve">
+    <value>Image rotated 90 degrees clockwise.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90CounterClockwise" xml:space="preserve">
+    <value>Image rotated 90 degrees counterclockwise.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated180" xml:space="preserve">
+    <value>Image rotated 180 degrees.</value>
+  </data>
+  <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
+    <value>Image rotated by {0} degrees.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedHorizontally" xml:space="preserve">
+    <value>Image flipped horizontally.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedVertically" xml:space="preserve">
+    <value>Image flipped vertically.</value>
+  </data>
+  <data name="MainViewModel_ImageEffectApplied" xml:space="preserve">
+    <value>Image effect applied.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
+    <value>Image saved to file.</value>
+  </data>
+  <data name="MainViewModel_FilePathFormat" xml:space="preserve">
+    <value>File path: {0}</value>
+  </data>
+  <data name="MainViewModel_SizeFormat" xml:space="preserve">
+    <value>Size: {0}x{1}</value>
+  </data>
+  <data name="MainViewModel_WindowTitle" xml:space="preserve">
+    <value>ShareX - Image Editor</value>
+  </data>
+  <data name="MainViewModel_HideToolbars" xml:space="preserve">
+    <value>Hide toolbars</value>
+  </data>
+  <data name="MainViewModel_ShowToolbars" xml:space="preserve">
+    <value>Show toolbars</value>
+  </data>
+  <data name="MainViewModel_ContinueEnter" xml:space="preserve">
+    <value>Continue (Enter)</value>
+  </data>
+  <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
+    <value>Run after capture tasks (Enter)</value>
+  </data>
+  <data name="MainViewModel_NoImage" xml:space="preserve">
+    <value>No image</value>
+  </data>
+  <data name="MainViewModel_ImageCopiedToClipboard" xml:space="preserve">
+    <value>Image copied to clipboard.</value>
+  </data>
+  <data name="MainViewModel_ImagePrinted" xml:space="preserve">
+    <value>Image printed.</value>
+  </data>
+  <data name="MainViewModel_ImagePinnedToScreen" xml:space="preserve">
+    <value>Image pinned to screen.</value>
+  </data>
+  <data name="MainViewModel_ImageIsUploading" xml:space="preserve">
+    <value>Image is uploading.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
+    <value>{0} and {1} use the same hotkey ({2}).</value>
+  </data>
 </root>

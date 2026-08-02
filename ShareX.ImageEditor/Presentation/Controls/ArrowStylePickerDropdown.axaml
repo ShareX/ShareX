@@ -11,6 +11,7 @@
              d:DesignHeight="40">
     <UserControl.Resources>
         <converters:ArrowStylePreviewGeometryConverter x:Key="ArrowStylePreviewGeometry" />
+        <converters:ArrowStyleDisplayNameConverter x:Key="ArrowStyleDisplayName" />
     </UserControl.Resources>
 
     <Grid HorizontalAlignment="Stretch">
@@ -23,7 +24,7 @@
                 HorizontalContentAlignment="Stretch">
                         <Grid ColumnDefinitions="*,Auto,Auto">
                                 <TextBlock Grid.Column="0"
-                           Text="{Binding SelectedArrowStyle, ElementName=ArrowStylePickerDropdownRoot}"
+                           Text="{Binding SelectedArrowStyle, ElementName=ArrowStylePickerDropdownRoot, Converter={StaticResource ArrowStyleDisplayName}}"
                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                            FontSize="12"
                            TextTrimming="CharacterEllipsis"
@@ -78,10 +79,10 @@
                                     CommandParameter="{Binding .}"
                                     HorizontalContentAlignment="Stretch"
                                     VerticalContentAlignment="Center"
-                                    ToolTip.Tip="{Binding .}">
+                                    ToolTip.Tip="{Binding ., Converter={StaticResource ArrowStyleDisplayName}}">
                                 <Grid ColumnDefinitions="*,Auto">
                                     <TextBlock Grid.Column="0"
-                                               Text="{Binding .}"
+                                               Text="{Binding ., Converter={StaticResource ArrowStyleDisplayName}}"
                                                FontSize="14"
                                                Foreground="{DynamicResource ShareX.Brush.Text}"
                                                VerticalAlignment="Center"/>

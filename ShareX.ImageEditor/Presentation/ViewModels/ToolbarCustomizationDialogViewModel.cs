@@ -224,7 +224,7 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
             string normalizedHotkey = ToolbarHotkeyHelper.Normalize(hotkey);
             if (usedHotkeys.TryGetValue(normalizedHotkey, out ToolbarCustomizationItemViewModel? existingItem))
             {
-                ValidationMessage = $"{item.Name} and {existingItem.Name} use the same hotkey ({normalizedHotkey}).";
+                ValidationMessage = string.Format(Strings.ToolbarCustomizationDialogView_DuplicateHotkey, item.Name, existingItem.Name, normalizedHotkey);
                 return;
             }
 

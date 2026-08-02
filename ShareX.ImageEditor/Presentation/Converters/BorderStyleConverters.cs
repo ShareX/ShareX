@@ -25,6 +25,7 @@
 
 using Avalonia.Data.Converters;
 using ShareX.ImageEditor.Core.Annotations;
+using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Helpers;
 using System.Globalization;
 
@@ -38,9 +39,12 @@ namespace ShareX.ImageEditor.Presentation.Converters
 
             return borderStyle switch
             {
-                BorderStyle.DashDot => "Dash Dot",
-                BorderStyle.DashDotDot => "Dash Dot Dot",
-                _ => borderStyle.ToString()
+                BorderStyle.Solid => Strings.BorderStyleDisplayConverter_Solid,
+                BorderStyle.Dash => Strings.BorderStyleDisplayConverter_Dash,
+                BorderStyle.Dot => Strings.BorderStyleDisplayConverter_Dot,
+                BorderStyle.DashDot => Strings.BorderStyleDisplayConverter_DashDot,
+                BorderStyle.DashDotDot => Strings.BorderStyleDisplayConverter_DashDotDot,
+                _ => Strings.BorderStyleDisplayConverter_Solid
             };
         }
 

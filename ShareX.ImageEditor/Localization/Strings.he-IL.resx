@@ -90,58 +90,58 @@
     <value>יש להזין כתובת HTTP או HTTPS תקינה.</value>
   </data>
   <data name="EmojiPickerDialogView_LoadingEmojis" xml:space="preserve">
-    <value>Loading emojis...</value>
+    <value>טוען אמוג׳י...</value>
   </data>
   <data name="EmojiPickerDialogView_SearchEmojisCount" xml:space="preserve">
-    <value>Search emojis... ({0})</value>
+    <value>חיפוש אמוג׳י... ({0})</value>
   </data>
   <data name="EmojiPickerDialogView_BrowseEmojis" xml:space="preserve">
-    <value>Browse emojis</value>
+    <value>עיון באמוג׳י</value>
   </data>
   <data name="EmojiPickerDialogView_CategorySummary" xml:space="preserve">
-    <value>{0} • {1} emojis</value>
+    <value>{0} • {1} אמוג׳י</value>
   </data>
   <data name="EmojiPickerDialogView_SearchResults" xml:space="preserve">
-    <value>Search results • {0} matches</value>
+    <value>תוצאות חיפוש • {0} התאמות</value>
   </data>
   <data name="EmojiPickerDialogView_NoMatches" xml:space="preserve">
-    <value>No emojis match this search.</value>
+    <value>אין אמוג׳י התואמים לחיפוש זה.</value>
   </data>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
-    <value>Try a different keyword.</value>
+    <value>נסה מילת מפתח אחרת.</value>
   </data>
   <data name="EmojiPickerDialogView_Cancel" xml:space="preserve">
     <value>ביטול</value>
   </data>
   <data name="EmojiPickerDialogView_PreviewsLoading" xml:space="preserve">
-    <value>The picker is ready. Emoji previews are loading in the background.</value>
+    <value>הבורר מוכן. תצוגות מקדימות של אמוג׳י נטענות ברקע.</value>
   </data>
   <data name="InsertImageDialogView_Title" xml:space="preserve">
-    <value>Insert image</value>
+    <value>הוספת תמונה</value>
   </data>
   <data name="InsertImageDialogView_Description" xml:space="preserve">
-    <value>Choose how to place the incoming image on the current canvas.</value>
+    <value>בחר כיצד למקם את התמונה הנכנסת על בד הציור הנוכחי.</value>
   </data>
   <data name="InsertImageDialogView_ImageSummary" xml:space="preserve">
-    <value>Incoming image: {0} x {1}px</value>
+    <value>תמונה נכנסת: {0} x {1}px</value>
   </data>
   <data name="InsertImageDialogView_Center" xml:space="preserve">
-    <value>Insert image in the center</value>
+    <value>הוספת תמונה במרכז</value>
   </data>
   <data name="InsertImageDialogView_CenterDescription" xml:space="preserve">
-    <value>Keeps the current canvas size.</value>
+    <value>שומר על הגודל הנוכחי של בד הציור.</value>
   </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
-    <value>Insert image below</value>
+    <value>הוספת תמונה למטה</value>
   </data>
   <data name="InsertImageDialogView_BelowDescription" xml:space="preserve">
-    <value>Expands the canvas downward before adding the image.</value>
+    <value>מרחיב את בד הציור כלפי מטה לפני הוספת התמונה.</value>
   </data>
   <data name="InsertImageDialogView_Right" xml:space="preserve">
-    <value>Insert image on right side</value>
+    <value>הוספת תמונה בצד ימין</value>
   </data>
   <data name="InsertImageDialogView_RightDescription" xml:space="preserve">
-    <value>Expands the canvas to the right before adding the image.</value>
+    <value>מרחיב את בד הציור ימינה לפני הוספת התמונה.</value>
   </data>
   <data name="AnnotationToolbar_Exit" xml:space="preserve">
     <value>יציאה</value>
@@ -220,5 +220,303 @@
   </data>
   <data name="EditorView_Undo" xml:space="preserve">
     <value>בטל</value>
+  </data>
+  <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
+    <value>סגנון חץ</value>
+  </data>
+  <data name="AnnotationToolbar_Bluramount" xml:space="preserve">
+    <value>עוצמת טשטוש</value>
+  </data>
+  <data name="AnnotationToolbar_Bordercolor" xml:space="preserve">
+    <value>צבע גבול</value>
+  </data>
+  <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
+    <value>סגנון גבול</value>
+  </data>
+  <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
+    <value>רדיוס פינה</value>
+  </data>
+  <data name="AnnotationToolbar_Cursortype" xml:space="preserve">
+    <value>סוג סמן</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteallShiftDelete" xml:space="preserve">
+    <value>מחיקת הכול (Shift+Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteDelete" xml:space="preserve">
+    <value>מחיקה (Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_Effectstrength" xml:space="preserve">
+    <value>עוצמת אפקט</value>
+  </data>
+  <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
+    <value>צבע מילוי</value>
+  </data>
+  <data name="AnnotationToolbar_Fontfamily" xml:space="preserve">
+    <value>משפחת גופנים</value>
+  </data>
+  <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
+    <value>גודל גופן</value>
+  </data>
+  <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
+    <value>יישור אופקי</value>
+  </data>
+  <data name="AnnotationToolbar_NewEllipsis" xml:space="preserve">
+    <value>חדש...</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetX" xml:space="preserve">
+    <value>היסט X</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetY" xml:space="preserve">
+    <value>היסט Y</value>
+  </data>
+  <data name="AnnotationToolbar_Opacity" xml:space="preserve">
+    <value>אטימות</value>
+  </data>
+  <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
+    <value>פתיחת פריט אחרון</value>
+  </data>
+  <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
+    <value>ביצוע חוזר (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
+    <value>שמירה בשם...</value>
+  </data>
+  <data name="AnnotationToolbar_Shadow" xml:space="preserve">
+    <value>צל</value>
+  </data>
+  <data name="AnnotationToolbar_Shadowcolor" xml:space="preserve">
+    <value>צבע צל</value>
+  </data>
+  <data name="AnnotationToolbar_Startingnumber" xml:space="preserve">
+    <value>מספר התחלתי</value>
+  </data>
+  <data name="AnnotationToolbar_Steptype" xml:space="preserve">
+    <value>סוג שלב</value>
+  </data>
+  <data name="AnnotationToolbar_Textcolor" xml:space="preserve">
+    <value>צבע טקסט</value>
+  </data>
+  <data name="AnnotationToolbar_Thickness" xml:space="preserve">
+    <value>עובי</value>
+  </data>
+  <data name="AnnotationToolbar_Togglebold" xml:space="preserve">
+    <value>החלפת מצב מודגש</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleellipseshape" xml:space="preserve">
+    <value>החלפת צורת אליפסה</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleitalic" xml:space="preserve">
+    <value>החלפת מצב נטוי</value>
+  </data>
+  <data name="AnnotationToolbar_ToggleshadowShadowoptionsRightclick" xml:space="preserve">
+    <value>החלפת מצב צל
+אפשרויות צל (לחיצה ימנית)</value>
+  </data>
+  <data name="AnnotationToolbar_Toggletail" xml:space="preserve">
+    <value>החלפת מצב זנב</value>
+  </data>
+  <data name="AnnotationToolbar_UndoCtrlZ" xml:space="preserve">
+    <value>ביטול פעולה (Ctrl+Z)</value>
+  </data>
+  <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
+    <value>בחירת צבע מהמסך</value>
+  </data>
+  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
+    <value>התאמה אישית של סרגל הכלים...</value>
+  </data>
+  <data name="EditorView_Auto" xml:space="preserve">
+    <value>אוטומטי</value>
+  </data>
+  <data name="EditorView_Background" xml:space="preserve">
+    <value>רקע</value>
+  </data>
+  <data name="EditorView_Backgroundimage" xml:space="preserve">
+    <value>תמונת רקע</value>
+  </data>
+  <data name="EditorView_BrowsebackgroundimageEllipsis" xml:space="preserve">
+    <value>עיון בתמונת רקע...</value>
+  </data>
+  <data name="EditorView_CancelEsc" xml:space="preserve">
+    <value>ביטול (Esc)</value>
+  </data>
+  <data name="EditorView_CopyimagetoclipboardCtrlC" xml:space="preserve">
+    <value>העתקת התמונה ללוח (Ctrl+C)</value>
+  </data>
+  <data name="EditorView_Editbackgroundcolor" xml:space="preserve">
+    <value>עריכת צבע הרקע</value>
+  </data>
+  <data name="EditorView_Editgradientcolor1" xml:space="preserve">
+    <value>עריכת צבע מעבר 1</value>
+  </data>
+  <data name="EditorView_Editgradientcolor2" xml:space="preserve">
+    <value>עריכת צבע מעבר 2</value>
+  </data>
+  <data name="EditorView_Flatten" xml:space="preserve">
+    <value>שיטוח</value>
+  </data>
+  <data name="EditorView_Margin" xml:space="preserve">
+    <value>שוליים</value>
+  </data>
+  <data name="EditorView_Padding" xml:space="preserve">
+    <value>ריווח פנימי</value>
+  </data>
+  <data name="EditorView_PinimagetoscreenCtrlP" xml:space="preserve">
+    <value>הצמדת התמונה למסך (Ctrl+P)</value>
+  </data>
+  <data name="EditorView_PrintimageEllipsisCtrlShiftP" xml:space="preserve">
+    <value>הדפסת התמונה... (Ctrl+Shift+P)</value>
+  </data>
+  <data name="EditorView_Ratio" xml:space="preserve">
+    <value>יחס</value>
+  </data>
+  <data name="EditorView_RoundedCorner" xml:space="preserve">
+    <value>פינה מעוגלת</value>
+  </data>
+  <data name="EditorView_SaveimageasEllipsisCtrlShiftS" xml:space="preserve">
+    <value>שמירת התמונה בשם... (Ctrl+Shift+S)</value>
+  </data>
+  <data name="EditorView_SaveimageCtrlS" xml:space="preserve">
+    <value>שמירת התמונה (Ctrl+S)</value>
+  </data>
+  <data name="EditorView_ShadowRadius" xml:space="preserve">
+    <value>רדיוס צל</value>
+  </data>
+  <data name="EditorView_UploadimageCtrlU" xml:space="preserve">
+    <value>העלאת התמונה (Ctrl+U)</value>
+  </data>
+  <data name="EditorView_ZoomCtrlWheel" xml:space="preserve">
+    <value>מרחק מתצוגה (Ctrl + גלגלת)</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchimageeffectsEllipsis" xml:space="preserve">
+    <value>חיפוש אפקטים של תמונה...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Apply" xml:space="preserve">
+    <value>החלה</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
+    <value>התחלת קבוצה</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit" xml:space="preserve">
+    <value>לחץ והקש קיצור דרך. Backspace או Delete מנקים אותו.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
+    <value>התאמה אישית של סרגל הכלים</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
+    <value>איפוס סרגל הכלים לברירת המחדל</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
+    <value>הצגה / הסתרה</value>
+  </data>
+  <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
+    <value>התאמה לחלון</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
+    <value>קיצור הדרך עבור {0} אינו חוקי. השתמש בתבניות כגון R, Ctrl+R או Ctrl+Shift+R.</value>
+  </data>
+  <data name="EffectBrowserPanel_RecentHint" xml:space="preserve">
+    <value>לחץ לחיצה ימנית על אפקט כדי להסיר אותו מהפריטים האחרונים.</value>
+  </data>
+  <data name="EffectBrowserPanel_FavoritesHint" xml:space="preserve">
+    <value>לחץ לחיצה ימנית על אפקט כדי להוסיף או להסיר אותו מהמועדפים.</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchCount" xml:space="preserve">
+    <value>חיפוש אפקטים של תמונה... ({0})</value>
+  </data>
+  <data name="EffectBrowserPanel_Recent" xml:space="preserve">
+    <value>אחרונים</value>
+  </data>
+  <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
+    <value>מועדפים</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
+    <value>קובץ</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Select" xml:space="preserve">
+    <value>בחר</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
+    <value>טקסט</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Image" xml:space="preserve">
+    <value>תמונה</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
+    <value>סמן העכבר</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
+    <value>הדגש</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SmartEraser" xml:space="preserve">
+    <value>מחק חכם</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
+    <value>טשטש</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Pixelate" xml:space="preserve">
+    <value>פיקסול</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Magnify" xml:space="preserve">
+    <value>הגדל</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Spotlight" xml:space="preserve">
+    <value>זרקור</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Background" xml:space="preserve">
+    <value>רקע</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_ImageEffects" xml:space="preserve">
+    <value>אפקטי תמונה</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
+    <value>ברירת מחדל</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_No" xml:space="preserve">
+    <value>לא</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
+    <value>מוצק</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dash" xml:space="preserve">
+    <value>מקו</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dot" xml:space="preserve">
+    <value>נקודה</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
+    <value>שמאל</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
+    <value>מרכז</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
+    <value>ימין</value>
+  </data>
+  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
+    <value>התקרב כדי להתאים לפתיחה</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>סגירה אוטומטית של העורך במשימה</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>העתק אוטומטית תמונה ללוח הגזירה</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
+    <value>מדרג</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
+    <value>צבע</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeTransparent" xml:space="preserve">
+    <value>שקוף</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeImage" xml:space="preserve">
+    <value>תמונה</value>
+  </data>
+  <data name="MainViewModel_WindowTitle" xml:space="preserve">
+    <value>ShareX - עורך תמונה</value>
+  </data>
+  <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
+    <value>הרץ משימות לאחר צילום מסך (Enter)</value>
   </data>
 </root>

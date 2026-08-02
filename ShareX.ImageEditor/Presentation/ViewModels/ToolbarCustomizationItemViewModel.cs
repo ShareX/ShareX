@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -25,6 +25,7 @@
 
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
+using ShareX.ImageEditor.Localization;
 using ShareX.AvaloniaUI.Theming;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels;
@@ -47,29 +48,29 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
 
     private static readonly IReadOnlyList<ToolbarItemDefinition> ItemDefinitions = new[]
     {
-        new ToolbarItemDefinition(FileItemId, null, "File", EditorIcons.FileMenu, "", true, false, false),
-        CreateToolDefinition(EditorTool.Select, "Select", EditorIcons.ToolSelect, "V", beginGroupByDefault: true),
-        CreateToolDefinition(EditorTool.Rectangle, "Rectangle", EditorIcons.ToolRectangle, "R"),
-        CreateToolDefinition(EditorTool.Ellipse, "Ellipse", EditorIcons.ToolEllipse, "E"),
-        CreateToolDefinition(EditorTool.Line, "Line", EditorIcons.ToolLine, "L"),
-        CreateToolDefinition(EditorTool.Arrow, "Arrow", EditorIcons.ToolArrow, "A"),
-        CreateToolDefinition(EditorTool.Freehand, "Freehand", EditorIcons.ToolFreehand, "F"),
-        CreateToolDefinition(EditorTool.Text, "Text", EditorIcons.ToolText, "T"),
-        CreateToolDefinition(EditorTool.SpeechBalloon, "Speech Balloon", EditorIcons.ToolSpeechBalloon, "O"),
-        CreateToolDefinition(EditorTool.Step, "Step", EditorIcons.ToolStep, "N"),
-        CreateToolDefinition(EditorTool.Image, "Image", EditorIcons.ToolImage, "I"),
-        CreateToolDefinition(EditorTool.Emoji, "Emoji", EditorIcons.ToolEmoji, "J"),
-        CreateToolDefinition(EditorTool.Cursor, "Cursor", EditorIcons.ToolCursor, "K"),
-        CreateToolDefinition(EditorTool.Highlight, "Highlight", EditorIcons.ToolHighlight, "H"),
-        CreateToolDefinition(EditorTool.SmartEraser, "Smart Eraser", EditorIcons.ToolSmartEraser, "W"),
-        CreateToolDefinition(EditorTool.Blur, "Blur", EditorIcons.ToolBlur, "B"),
-        CreateToolDefinition(EditorTool.Pixelate, "Pixelate", EditorIcons.ToolPixelate, "P"),
-        CreateToolDefinition(EditorTool.Magnify, "Magnify", EditorIcons.ToolMagnify, "M"),
-        CreateToolDefinition(EditorTool.Spotlight, "Spotlight", EditorIcons.ToolSpotlight, "S"),
-        CreateToolDefinition(EditorTool.Crop, "Crop", EditorIcons.ToolCrop, "C", beginGroupByDefault: true),
-        CreateToolDefinition(EditorTool.CutOut, "Cut Out", EditorIcons.ToolCutOut, "U"),
-        new ToolbarItemDefinition(BackgroundItemId, null, "Background", EditorIcons.PanelBackground, "", true, true, false),
-        new ToolbarItemDefinition(ImageEffectsItemId, null, "Image Effects", EditorIcons.PanelEffects, "", true, true, false)
+        new ToolbarItemDefinition(FileItemId, null, Strings.ToolbarCustomizationItemViewModel_File, EditorIcons.FileMenu, "", true, false, false),
+        CreateToolDefinition(EditorTool.Select, Strings.ToolbarCustomizationItemViewModel_Select, EditorIcons.ToolSelect, "V", beginGroupByDefault: true),
+        CreateToolDefinition(EditorTool.Rectangle, Strings.ToolbarCustomizationItemViewModel_Rectangle, EditorIcons.ToolRectangle, "R"),
+        CreateToolDefinition(EditorTool.Ellipse, Strings.ToolbarCustomizationItemViewModel_Ellipse, EditorIcons.ToolEllipse, "E"),
+        CreateToolDefinition(EditorTool.Line, Strings.ToolbarCustomizationItemViewModel_Line, EditorIcons.ToolLine, "L"),
+        CreateToolDefinition(EditorTool.Arrow, Strings.ToolbarCustomizationItemViewModel_Arrow, EditorIcons.ToolArrow, "A"),
+        CreateToolDefinition(EditorTool.Freehand, Strings.ToolbarCustomizationItemViewModel_Freehand, EditorIcons.ToolFreehand, "F"),
+        CreateToolDefinition(EditorTool.Text, Strings.ToolbarCustomizationItemViewModel_Text, EditorIcons.ToolText, "T"),
+        CreateToolDefinition(EditorTool.SpeechBalloon, Strings.ToolbarCustomizationItemViewModel_SpeechBalloon, EditorIcons.ToolSpeechBalloon, "O"),
+        CreateToolDefinition(EditorTool.Step, Strings.ToolbarCustomizationItemViewModel_Step, EditorIcons.ToolStep, "N"),
+        CreateToolDefinition(EditorTool.Image, Strings.ToolbarCustomizationItemViewModel_Image, EditorIcons.ToolImage, "I"),
+        CreateToolDefinition(EditorTool.Emoji, Strings.ToolbarCustomizationItemViewModel_Emoji, EditorIcons.ToolEmoji, "J"),
+        CreateToolDefinition(EditorTool.Cursor, Strings.ToolbarCustomizationItemViewModel_Cursor, EditorIcons.ToolCursor, "K"),
+        CreateToolDefinition(EditorTool.Highlight, Strings.ToolbarCustomizationItemViewModel_Highlight, EditorIcons.ToolHighlight, "H"),
+        CreateToolDefinition(EditorTool.SmartEraser, Strings.ToolbarCustomizationItemViewModel_SmartEraser, EditorIcons.ToolSmartEraser, "W"),
+        CreateToolDefinition(EditorTool.Blur, Strings.ToolbarCustomizationItemViewModel_Blur, EditorIcons.ToolBlur, "B"),
+        CreateToolDefinition(EditorTool.Pixelate, Strings.ToolbarCustomizationItemViewModel_Pixelate, EditorIcons.ToolPixelate, "P"),
+        CreateToolDefinition(EditorTool.Magnify, Strings.ToolbarCustomizationItemViewModel_Magnify, EditorIcons.ToolMagnify, "M"),
+        CreateToolDefinition(EditorTool.Spotlight, Strings.ToolbarCustomizationItemViewModel_Spotlight, EditorIcons.ToolSpotlight, "S"),
+        CreateToolDefinition(EditorTool.Crop, Strings.ToolbarCustomizationItemViewModel_Crop, EditorIcons.ToolCrop, "C", beginGroupByDefault: true),
+        CreateToolDefinition(EditorTool.CutOut, Strings.ToolbarCustomizationItemViewModel_CutOut, EditorIcons.ToolCutOut, "U"),
+        new ToolbarItemDefinition(BackgroundItemId, null, Strings.ToolbarCustomizationItemViewModel_Background, EditorIcons.PanelBackground, "", true, true, false),
+        new ToolbarItemDefinition(ImageEffectsItemId, null, Strings.ToolbarCustomizationItemViewModel_ImageEffects, EditorIcons.PanelEffects, "", true, true, false)
     };
 
     private static readonly IReadOnlyDictionary<string, ToolbarItemDefinition> ItemDefinitionsById =
@@ -182,7 +183,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
             if (Id == ImageEffectsItemId)
             {
                 string header = IsHotkeyEditable && hotkey.Length > 0 ? $"{Name} ({hotkey})" : Name;
-                return $"{header}\nFavorite image effects (Right click)";
+                return string.Format(Strings.ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick, header);
             }
 
             return IsHotkeyEditable && hotkey.Length > 0 ? $"{Name} ({hotkey})" : Name;

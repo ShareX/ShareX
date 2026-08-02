@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -26,6 +26,7 @@
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.ImageEditor.Localization;
 using System.Globalization;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
@@ -105,80 +106,80 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                 return;
             }
 
-            ShowNotification(BuildFilePathNotification("Image opened.", filePath), EditorIcons.FileOpen);
+            ShowNotification(BuildFilePathNotification(Strings.MainViewModel_ImageOpened, filePath), EditorIcons.FileOpen);
         }
 
         public void ShowNewImageNotification(int width = 0, int height = 0)
         {
-            ShowNotification(BuildImageSizeNotification("New image created.", width, height), EditorIcons.FileNew);
+            ShowNotification(BuildImageSizeNotification(Strings.MainViewModel_NewImageCreated, width, height), EditorIcons.FileNew);
         }
 
         public void ShowImageCroppedNotification(int width = 0, int height = 0)
         {
-            ShowNotification(BuildImageSizeNotification("Image cropped.", width, height), EditorIcons.ToolCrop);
+            ShowNotification(BuildImageSizeNotification(Strings.MainViewModel_ImageCropped, width, height), EditorIcons.ToolCrop);
         }
 
         public void ShowImageCutOutNotification(int width = 0, int height = 0)
         {
-            ShowNotification(BuildImageSizeNotification("Image cut out.", width, height), EditorIcons.ToolCutOut);
+            ShowNotification(BuildImageSizeNotification(Strings.MainViewModel_ImageCutOut, width, height), EditorIcons.ToolCutOut);
         }
 
         public void ShowImageInsertedNotification()
         {
-            ShowNotification("Image inserted.", EditorIcons.ToolImage);
+            ShowNotification(Strings.MainViewModel_ImageInserted, EditorIcons.ToolImage);
         }
 
         public void ShowImageAutoCroppedNotification()
         {
-            ShowNotification("Image auto-cropped.", EditorIcons.ToolCrop);
+            ShowNotification(Strings.MainViewModel_ImageAutoCropped, EditorIcons.ToolCrop);
         }
 
         public void ShowImageResizedNotification()
         {
-            ShowNotification("Image resized.", EditorIcons.ToolImage);
+            ShowNotification(Strings.MainViewModel_ImageResized, EditorIcons.ToolImage);
         }
 
         public void ShowCanvasResizedNotification()
         {
-            ShowNotification("Canvas resized.", EditorIcons.PanelBackground);
+            ShowNotification(Strings.MainViewModel_CanvasResized, EditorIcons.PanelBackground);
         }
 
         public void ShowImageRotatedClockwiseNotification()
         {
-            ShowNotification("Image rotated 90 degrees clockwise.", EditorIcons.ActionRotateRight);
+            ShowNotification(Strings.MainViewModel_ImageRotated90Clockwise, EditorIcons.ActionRotateRight);
         }
 
         public void ShowImageRotatedCounterClockwiseNotification()
         {
-            ShowNotification("Image rotated 90 degrees counterclockwise.", EditorIcons.ActionRotateLeft);
+            ShowNotification(Strings.MainViewModel_ImageRotated90CounterClockwise, EditorIcons.ActionRotateLeft);
         }
 
         public void ShowImageRotated180Notification()
         {
-            ShowNotification("Image rotated 180 degrees.", EditorIcons.ActionRotateRight);
+            ShowNotification(Strings.MainViewModel_ImageRotated180, EditorIcons.ActionRotateRight);
         }
 
         public void ShowImageRotatedCustomAngleNotification(float angle)
         {
             string formattedAngle = Math.Round(angle, 2).ToString("0.##", CultureInfo.InvariantCulture);
-            ShowNotification($"Image rotated by {formattedAngle} degrees.", EditorIcons.ActionRotateRight);
+            ShowNotification(string.Format(Strings.MainViewModel_ImageRotatedByDegrees, formattedAngle), EditorIcons.ActionRotateRight);
         }
 
         public void ShowImageFlippedHorizontallyNotification()
         {
-            ShowNotification("Image flipped horizontally.", EditorIcons.PanelEffects);
+            ShowNotification(Strings.MainViewModel_ImageFlippedHorizontally, EditorIcons.PanelEffects);
         }
 
         public void ShowImageFlippedVerticallyNotification()
         {
-            ShowNotification("Image flipped vertically.", EditorIcons.PanelEffects);
+            ShowNotification(Strings.MainViewModel_ImageFlippedVertically, EditorIcons.PanelEffects);
         }
 
         public void ShowEffectAppliedNotification(string? statusMessage)
         {
             if (string.IsNullOrWhiteSpace(statusMessage))
             {
-                ShowNotification("Image effect applied.", EditorIcons.PanelEffects);
+                ShowNotification(Strings.MainViewModel_ImageEffectApplied, EditorIcons.PanelEffects);
                 return;
             }
 
@@ -196,18 +197,18 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                 return;
             }
 
-            ShowTaskActionNotification(BuildFilePathNotification("Image saved to file.", savedPath), icon);
+            ShowTaskActionNotification(BuildFilePathNotification(Strings.MainViewModel_ImageSavedToFile, savedPath), icon);
         }
 
         private static string BuildFilePathNotification(string headline, string filePath)
         {
-            return $"{headline}\nFile path: {filePath}";
+            return $"{headline}\n{string.Format(Strings.MainViewModel_FilePathFormat, filePath)}";
         }
 
         private static string BuildImageSizeNotification(string headline, int width, int height)
         {
             return width > 0 && height > 0
-                ? $"{headline}\nSize: {width}x{height}"
+                ? $"{headline}\n{string.Format(Strings.MainViewModel_SizeFormat, width, height)}"
                 : headline;
         }
 

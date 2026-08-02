@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -32,6 +32,7 @@ using ShareX.ImageEditor.Core.Abstractions;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Core.Editor;
 using ShareX.ImageEditor.Integration;
+using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Emoji;
 using System.Collections.ObjectModel;
 
@@ -79,7 +80,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private bool _zoomToFitOnNextImageLoad;
 
         [ObservableProperty]
-        private string _windowTitle = "ShareX - Image Editor";
+        private string _windowTitle = Strings.MainViewModel_WindowTitle;
 
         [ObservableProperty]
         private bool _showFileMenu;
@@ -103,7 +104,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public bool AreToolbarsHidden => !ShowToolbars;
 
-        public string ToggleToolbarsMenuHeader => ShowToolbars ? "Hide toolbars" : "Show toolbars";
+        public string ToggleToolbarsMenuHeader => ShowToolbars ? Strings.MainViewModel_HideToolbars : Strings.MainViewModel_ShowToolbars;
 
         // Events to signal View to perform canvas operations
         public event EventHandler? UndoRequested;
@@ -133,7 +134,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         [ObservableProperty]
         private bool _useContinueWorkflow;
 
-        public string ContinueButtonTooltip => UseContinueWorkflow ? "Continue (Enter)" : "Run after capture tasks (Enter)";
+        public string ContinueButtonTooltip => UseContinueWorkflow ? Strings.MainViewModel_ContinueEnter : Strings.MainViewModel_RunAfterCaptureTasksEnter;
 
         partial void OnUseContinueWorkflowChanged(bool value)
         {
@@ -601,7 +602,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         public double EffectiveZoom => Zoom / _dpiScale;
 
         [ObservableProperty]
-        private string _imageDimensions = "No image";
+        private string _imageDimensions = Strings.MainViewModel_NoImage;
 
         [ObservableProperty]
         private bool _isPngFormat = true;
@@ -927,7 +928,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         private static string BuildWindowTitle(double width, double height, string? fileName)
         {
-            var sb = new System.Text.StringBuilder("ShareX - Image Editor");
+            var sb = new System.Text.StringBuilder(Strings.MainViewModel_WindowTitle);
 
             if (width > 0 && height > 0)
             {
@@ -1234,7 +1235,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             _originalSourceImage = null;
 
             // HasPreviewImage = false; // Handled by OnPreviewImageChanged
-            ImageDimensions = "No image";
+            ImageDimensions = Strings.MainViewModel_NoImage;
             ResetNumberCounter();
 
             // Clear annotations as well
@@ -1255,7 +1256,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private async Task Copy()
         {
             await RequestCopyToClipboardAsync();
-            ShowTaskActionNotification("Image copied to clipboard.", EditorIcons.ActionCopy);
+            ShowTaskActionNotification(Strings.MainViewModel_ImageCopiedToClipboard, EditorIcons.ActionCopy);
             CloseAfterTaskActionIfEnabled();
         }
 
@@ -1279,7 +1280,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private void Print()
         {
             _printRequested?.Invoke();
-            ShowTaskActionNotification("Image printed.", EditorIcons.ActionPrint);
+            ShowTaskActionNotification(Strings.MainViewModel_ImagePrinted, EditorIcons.ActionPrint);
             CloseAfterTaskActionIfEnabled();
         }
 
@@ -1287,7 +1288,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private void PinToScreen()
         {
             _pinRequested?.Invoke();
-            ShowTaskActionNotification("Image pinned to screen.", EditorIcons.ActionPinToScreen);
+            ShowTaskActionNotification(Strings.MainViewModel_ImagePinnedToScreen, EditorIcons.ActionPinToScreen);
             CloseAfterTaskActionIfEnabled();
         }
 
@@ -1295,7 +1296,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private async Task Upload()
         {
             _uploadRequested?.Invoke();
-            ShowTaskActionNotification("Image is uploading.", EditorIcons.ActionUpload);
+            ShowTaskActionNotification(Strings.MainViewModel_ImageIsUploading, EditorIcons.ActionUpload);
             CloseAfterTaskActionIfEnabled();
         }
 

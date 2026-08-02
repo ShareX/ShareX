@@ -90,58 +90,58 @@
     <value>یک نشانی HTTP یا HTTPS معتبر وارد کنید.</value>
   </data>
   <data name="EmojiPickerDialogView_LoadingEmojis" xml:space="preserve">
-    <value>Loading emojis...</value>
+    <value>در حال بارگذاری ایموجی‌ها...</value>
   </data>
   <data name="EmojiPickerDialogView_SearchEmojisCount" xml:space="preserve">
-    <value>Search emojis... ({0})</value>
+    <value>جستجوی ایموجی... ({0})</value>
   </data>
   <data name="EmojiPickerDialogView_BrowseEmojis" xml:space="preserve">
-    <value>Browse emojis</value>
+    <value>مرور ایموجی‌ها</value>
   </data>
   <data name="EmojiPickerDialogView_CategorySummary" xml:space="preserve">
-    <value>{0} • {1} emojis</value>
+    <value>{0} • {1} ایموجی</value>
   </data>
   <data name="EmojiPickerDialogView_SearchResults" xml:space="preserve">
-    <value>Search results • {0} matches</value>
+    <value>نتایج جستجو • {0} مورد</value>
   </data>
   <data name="EmojiPickerDialogView_NoMatches" xml:space="preserve">
-    <value>No emojis match this search.</value>
+    <value>هیچ ایموجی‌ای با این جستجو مطابقت ندارد.</value>
   </data>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
-    <value>Try a different keyword.</value>
+    <value>کلیدواژه دیگری را امتحان کنید.</value>
   </data>
   <data name="EmojiPickerDialogView_Cancel" xml:space="preserve">
-    <value>انصراف</value>
+    <value>لغو</value>
   </data>
   <data name="EmojiPickerDialogView_PreviewsLoading" xml:space="preserve">
-    <value>The picker is ready. Emoji previews are loading in the background.</value>
+    <value>انتخابگر آماده است. پیش‌نمایش ایموجی‌ها در پس‌زمینه بارگذاری می‌شود.</value>
   </data>
   <data name="InsertImageDialogView_Title" xml:space="preserve">
-    <value>Insert image</value>
+    <value>درج تصویر</value>
   </data>
   <data name="InsertImageDialogView_Description" xml:space="preserve">
-    <value>Choose how to place the incoming image on the current canvas.</value>
+    <value>نحوه قرار دادن تصویر ورودی روی بوم فعلی را انتخاب کنید.</value>
   </data>
   <data name="InsertImageDialogView_ImageSummary" xml:space="preserve">
-    <value>Incoming image: {0} x {1}px</value>
+    <value>تصویر ورودی: {0} x {1}px</value>
   </data>
   <data name="InsertImageDialogView_Center" xml:space="preserve">
-    <value>Insert image in the center</value>
+    <value>درج تصویر در مرکز</value>
   </data>
   <data name="InsertImageDialogView_CenterDescription" xml:space="preserve">
-    <value>Keeps the current canvas size.</value>
+    <value>اندازه فعلی بوم را حفظ می‌کند.</value>
   </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
-    <value>Insert image below</value>
+    <value>درج تصویر در پایین</value>
   </data>
   <data name="InsertImageDialogView_BelowDescription" xml:space="preserve">
-    <value>Expands the canvas downward before adding the image.</value>
+    <value>پیش از افزودن تصویر، بوم را به سمت پایین گسترش می‌دهد.</value>
   </data>
   <data name="InsertImageDialogView_Right" xml:space="preserve">
-    <value>Insert image on right side</value>
+    <value>درج تصویر در سمت راست</value>
   </data>
   <data name="InsertImageDialogView_RightDescription" xml:space="preserve">
-    <value>Expands the canvas to the right before adding the image.</value>
+    <value>پیش از افزودن تصویر، بوم را به سمت راست گسترش می‌دهد.</value>
   </data>
   <data name="AnnotationToolbar_Exit" xml:space="preserve">
     <value>خروج</value>
@@ -220,5 +220,303 @@
   </data>
   <data name="EditorView_Undo" xml:space="preserve">
     <value>برگرداندن</value>
+  </data>
+  <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
+    <value>سبک پیکان</value>
+  </data>
+  <data name="AnnotationToolbar_Bluramount" xml:space="preserve">
+    <value>مقدار تاری</value>
+  </data>
+  <data name="AnnotationToolbar_Bordercolor" xml:space="preserve">
+    <value>رنگ حاشیه</value>
+  </data>
+  <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
+    <value>سبک حاشیه</value>
+  </data>
+  <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
+    <value>شعاع گوشه</value>
+  </data>
+  <data name="AnnotationToolbar_Cursortype" xml:space="preserve">
+    <value>نوع نشانگر</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteallShiftDelete" xml:space="preserve">
+    <value>حذف همه (Shift+Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteDelete" xml:space="preserve">
+    <value>حذف (Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_Effectstrength" xml:space="preserve">
+    <value>شدت جلوه</value>
+  </data>
+  <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
+    <value>رنگ پرکننده</value>
+  </data>
+  <data name="AnnotationToolbar_Fontfamily" xml:space="preserve">
+    <value>خانواده قلم</value>
+  </data>
+  <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
+    <value>اندازه قلم</value>
+  </data>
+  <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
+    <value>تراز افقی</value>
+  </data>
+  <data name="AnnotationToolbar_NewEllipsis" xml:space="preserve">
+    <value>جدید...</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetX" xml:space="preserve">
+    <value>جابجایی X</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetY" xml:space="preserve">
+    <value>جابجایی Y</value>
+  </data>
+  <data name="AnnotationToolbar_Opacity" xml:space="preserve">
+    <value>کدری</value>
+  </data>
+  <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
+    <value>باز کردن مورد اخیر</value>
+  </data>
+  <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
+    <value>انجام مجدد (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
+    <value>ذخیره با نام...</value>
+  </data>
+  <data name="AnnotationToolbar_Shadow" xml:space="preserve">
+    <value>سایه</value>
+  </data>
+  <data name="AnnotationToolbar_Shadowcolor" xml:space="preserve">
+    <value>رنگ سایه</value>
+  </data>
+  <data name="AnnotationToolbar_Startingnumber" xml:space="preserve">
+    <value>شماره آغاز</value>
+  </data>
+  <data name="AnnotationToolbar_Steptype" xml:space="preserve">
+    <value>نوع گام</value>
+  </data>
+  <data name="AnnotationToolbar_Textcolor" xml:space="preserve">
+    <value>رنگ متن</value>
+  </data>
+  <data name="AnnotationToolbar_Thickness" xml:space="preserve">
+    <value>ضخامت</value>
+  </data>
+  <data name="AnnotationToolbar_Togglebold" xml:space="preserve">
+    <value>تغییر حالت پررنگ</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleellipseshape" xml:space="preserve">
+    <value>تغییر حالت شکل بیضی</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleitalic" xml:space="preserve">
+    <value>تغییر حالت ایتالیک</value>
+  </data>
+  <data name="AnnotationToolbar_ToggleshadowShadowoptionsRightclick" xml:space="preserve">
+    <value>تغییر حالت سایه
+گزینه‌های سایه (کلیک راست)</value>
+  </data>
+  <data name="AnnotationToolbar_Toggletail" xml:space="preserve">
+    <value>تغییر حالت دنباله</value>
+  </data>
+  <data name="AnnotationToolbar_UndoCtrlZ" xml:space="preserve">
+    <value>واگرد (Ctrl+Z)</value>
+  </data>
+  <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
+    <value>انتخاب رنگ از صفحه</value>
+  </data>
+  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
+    <value>سفارشی‌سازی نوار ابزار...</value>
+  </data>
+  <data name="EditorView_Auto" xml:space="preserve">
+    <value>خودکار</value>
+  </data>
+  <data name="EditorView_Background" xml:space="preserve">
+    <value>پس‌زمینه</value>
+  </data>
+  <data name="EditorView_Backgroundimage" xml:space="preserve">
+    <value>تصویر پس‌زمینه</value>
+  </data>
+  <data name="EditorView_BrowsebackgroundimageEllipsis" xml:space="preserve">
+    <value>مرور تصویر پس‌زمینه...</value>
+  </data>
+  <data name="EditorView_CancelEsc" xml:space="preserve">
+    <value>لغو (Esc)</value>
+  </data>
+  <data name="EditorView_CopyimagetoclipboardCtrlC" xml:space="preserve">
+    <value>کپی تصویر در کلیپ‌بورد (Ctrl+C)</value>
+  </data>
+  <data name="EditorView_Editbackgroundcolor" xml:space="preserve">
+    <value>ویرایش رنگ پس‌زمینه</value>
+  </data>
+  <data name="EditorView_Editgradientcolor1" xml:space="preserve">
+    <value>ویرایش رنگ گرادیان ۱</value>
+  </data>
+  <data name="EditorView_Editgradientcolor2" xml:space="preserve">
+    <value>ویرایش رنگ گرادیان ۲</value>
+  </data>
+  <data name="EditorView_Flatten" xml:space="preserve">
+    <value>تخت کردن</value>
+  </data>
+  <data name="EditorView_Margin" xml:space="preserve">
+    <value>حاشیه</value>
+  </data>
+  <data name="EditorView_Padding" xml:space="preserve">
+    <value>فاصله داخلی</value>
+  </data>
+  <data name="EditorView_PinimagetoscreenCtrlP" xml:space="preserve">
+    <value>سنجاق کردن تصویر روی صفحه (Ctrl+P)</value>
+  </data>
+  <data name="EditorView_PrintimageEllipsisCtrlShiftP" xml:space="preserve">
+    <value>چاپ تصویر... (Ctrl+Shift+P)</value>
+  </data>
+  <data name="EditorView_Ratio" xml:space="preserve">
+    <value>نسبت</value>
+  </data>
+  <data name="EditorView_RoundedCorner" xml:space="preserve">
+    <value>گوشه گرد</value>
+  </data>
+  <data name="EditorView_SaveimageasEllipsisCtrlShiftS" xml:space="preserve">
+    <value>ذخیره تصویر با نام... (Ctrl+Shift+S)</value>
+  </data>
+  <data name="EditorView_SaveimageCtrlS" xml:space="preserve">
+    <value>ذخیره تصویر (Ctrl+S)</value>
+  </data>
+  <data name="EditorView_ShadowRadius" xml:space="preserve">
+    <value>شعاع سایه</value>
+  </data>
+  <data name="EditorView_UploadimageCtrlU" xml:space="preserve">
+    <value>بارگذاری تصویر (Ctrl+U)</value>
+  </data>
+  <data name="EditorView_ZoomCtrlWheel" xml:space="preserve">
+    <value>بزرگ‌نمایی (Ctrl + چرخ)</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchimageeffectsEllipsis" xml:space="preserve">
+    <value>جستجوی جلوه‌های تصویر...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Apply" xml:space="preserve">
+    <value>اعمال</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
+    <value>آغاز گروه</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit" xml:space="preserve">
+    <value>کلیک کنید و یک میانبر را فشار دهید. Backspace یا Delete آن را پاک می‌کند.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
+    <value>سفارشی‌سازی نوار ابزار</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
+    <value>بازنشانی نوار ابزار به حالت پیش‌فرض</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
+    <value>نمایش / پنهان کردن</value>
+  </data>
+  <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
+    <value>جا دادن در پنجره</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
+    <value>میانبر {0} نامعتبر است. از قالب‌هایی مانند R، Ctrl+R یا Ctrl+Shift+R استفاده کنید.</value>
+  </data>
+  <data name="EffectBrowserPanel_RecentHint" xml:space="preserve">
+    <value>برای حذف یک جلوه از موارد اخیر، روی آن کلیک راست کنید.</value>
+  </data>
+  <data name="EffectBrowserPanel_FavoritesHint" xml:space="preserve">
+    <value>برای افزودن یا حذف یک جلوه از موارد دلخواه، روی آن کلیک راست کنید.</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchCount" xml:space="preserve">
+    <value>جستجوی جلوه‌های تصویر... ({0})</value>
+  </data>
+  <data name="EffectBrowserPanel_Recent" xml:space="preserve">
+    <value>اخیر</value>
+  </data>
+  <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
+    <value>موارد دلخواه</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
+    <value>فایل</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Select" xml:space="preserve">
+    <value>انتخاب</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Image" xml:space="preserve">
+    <value>عکس</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
+    <value>کرسر</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
+    <value>برجسته‌سازی</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SmartEraser" xml:space="preserve">
+    <value>پاک‌کن هوشمند</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
+    <value>محو</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Pixelate" xml:space="preserve">
+    <value>پیکسلی کردن</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Magnify" xml:space="preserve">
+    <value>بزرگ کن</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Spotlight" xml:space="preserve">
+    <value>نورافکن</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Background" xml:space="preserve">
+    <value>پس‌زمینه</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_ImageEffects" xml:space="preserve">
+    <value>جلوه‌های تصویر</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
+    <value>پیش فرض</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_No" xml:space="preserve">
+    <value>خیر</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
+    <value>یکپارچه</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dash" xml:space="preserve">
+    <value>خط‌چین</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dot" xml:space="preserve">
+    <value>نقطه</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
+    <value>چپ</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
+    <value>مرکز</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
+    <value>راست</value>
+  </data>
+  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Zoom to fit on باز کردن</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Auto close ویرایشor on task</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Auto کپی تصویر to کلیپ‌بورد</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
+    <value>گرادیان</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
+    <value>رنگ</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeTransparent" xml:space="preserve">
+    <value>شفاف</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeImage" xml:space="preserve">
+    <value>عکس</value>
+  </data>
+  <data name="MainViewModel_WindowTitle" xml:space="preserve">
+    <value>ShareX - ویرایشگر عکس</value>
+  </data>
+  <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
+    <value>Run after ضبط tasks (Enter)</value>
   </data>
 </root>

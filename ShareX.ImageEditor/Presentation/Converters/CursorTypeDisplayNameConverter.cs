@@ -25,6 +25,7 @@
 
 using Avalonia.Data.Converters;
 using ShareX.ImageEditor.Core.Annotations;
+using ShareX.ImageEditor.Localization;
 using System.Globalization;
 
 namespace ShareX.ImageEditor.Presentation.Converters
@@ -37,34 +38,34 @@ namespace ShareX.ImageEditor.Presentation.Converters
 
             return cursorType switch
             {
-                CursorType.AppStarting => "App starting",
-                CursorType.Arrow => "Arrow",
-                CursorType.Cross => "Cross",
-                CursorType.Default => "Default",
-                CursorType.Hand => "Hand",
-                CursorType.Help => "Help",
-                CursorType.HSplit => "H split",
-                CursorType.IBeam => "I-beam",
-                CursorType.No => "No",
-                CursorType.NoMove2D => "No move 2D",
-                CursorType.NoMoveHoriz => "No move horiz",
-                CursorType.NoMoveVert => "No move vert",
-                CursorType.PanEast => "Pan east",
-                CursorType.PanNE => "Pan NE",
-                CursorType.PanNorth => "Pan north",
-                CursorType.PanNW => "Pan NW",
-                CursorType.PanSE => "Pan SE",
-                CursorType.PanSouth => "Pan south",
-                CursorType.PanSW => "Pan SW",
-                CursorType.PanWest => "Pan west",
-                CursorType.SizeAll => "Size all",
-                CursorType.SizeNESW => "Size NESW",
-                CursorType.SizeNS => "Size NS",
-                CursorType.SizeNWSE => "Size NWSE",
-                CursorType.SizeWE => "Size WE",
-                CursorType.UpArrow => "Up arrow",
-                CursorType.VSplit => "V split",
-                CursorType.WaitCursor => "Wait cursor",
+                CursorType.AppStarting => Strings.CursorTypeDisplayNameConverter_AppStarting,
+                CursorType.Arrow => Strings.CursorTypeDisplayNameConverter_Arrow,
+                CursorType.Cross => Strings.CursorTypeDisplayNameConverter_Cross,
+                CursorType.Default => Strings.CursorTypeDisplayNameConverter_Default,
+                CursorType.Hand => Strings.CursorTypeDisplayNameConverter_Hand,
+                CursorType.Help => Strings.CursorTypeDisplayNameConverter_Help,
+                CursorType.HSplit => Strings.CursorTypeDisplayNameConverter_HSplit,
+                CursorType.IBeam => Strings.CursorTypeDisplayNameConverter_IBeam,
+                CursorType.No => Strings.CursorTypeDisplayNameConverter_No,
+                CursorType.NoMove2D => Strings.CursorTypeDisplayNameConverter_NoMove2D,
+                CursorType.NoMoveHoriz => Strings.CursorTypeDisplayNameConverter_NoMoveHoriz,
+                CursorType.NoMoveVert => Strings.CursorTypeDisplayNameConverter_NoMoveVert,
+                CursorType.PanEast => Strings.CursorTypeDisplayNameConverter_PanEast,
+                CursorType.PanNE => Strings.CursorTypeDisplayNameConverter_PanNE,
+                CursorType.PanNorth => Strings.CursorTypeDisplayNameConverter_PanNorth,
+                CursorType.PanNW => Strings.CursorTypeDisplayNameConverter_PanNW,
+                CursorType.PanSE => Strings.CursorTypeDisplayNameConverter_PanSE,
+                CursorType.PanSouth => Strings.CursorTypeDisplayNameConverter_PanSouth,
+                CursorType.PanSW => Strings.CursorTypeDisplayNameConverter_PanSW,
+                CursorType.PanWest => Strings.CursorTypeDisplayNameConverter_PanWest,
+                CursorType.SizeAll => Strings.CursorTypeDisplayNameConverter_SizeAll,
+                CursorType.SizeNESW => Strings.CursorTypeDisplayNameConverter_SizeNESW,
+                CursorType.SizeNS => Strings.CursorTypeDisplayNameConverter_SizeNS,
+                CursorType.SizeNWSE => Strings.CursorTypeDisplayNameConverter_SizeNWSE,
+                CursorType.SizeWE => Strings.CursorTypeDisplayNameConverter_SizeWE,
+                CursorType.UpArrow => Strings.CursorTypeDisplayNameConverter_UpArrow,
+                CursorType.VSplit => Strings.CursorTypeDisplayNameConverter_VSplit,
+                CursorType.WaitCursor => Strings.CursorTypeDisplayNameConverter_WaitCursor,
                 _ => cursorType.ToString()
             };
         }

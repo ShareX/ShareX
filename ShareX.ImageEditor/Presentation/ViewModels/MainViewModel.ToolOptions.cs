@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -27,6 +27,7 @@ using Avalonia.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
+using ShareX.ImageEditor.Localization;
 using ShareX.AvaloniaUI.Theming;
 using System.Reflection;
 
@@ -1025,27 +1026,27 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
                 return tool switch
                 {
-                    EditorTool.Select => "Select",
-                    EditorTool.Rectangle => "Rectangle",
-                    EditorTool.Ellipse => "Ellipse",
-                    EditorTool.Line => "Line",
-                    EditorTool.Arrow => "Arrow",
-                    EditorTool.Freehand => "Freehand",
-                    EditorTool.Text => "Text",
-                    EditorTool.Cursor => "Cursor",
-                    EditorTool.Emoji => "Emoji",
-                    EditorTool.SpeechBalloon => "Speech Balloon",
-                    EditorTool.Step => "Step",
-                    EditorTool.Blur => "Blur",
-                    EditorTool.Pixelate => "Pixelate",
-                    EditorTool.Magnify => "Magnify",
-                    EditorTool.Spotlight => "Spotlight",
-                    EditorTool.SmartEraser => "Smart Eraser",
-                    EditorTool.Highlight => "Highlight",
-                    EditorTool.Crop => "Crop",
-                    EditorTool.CutOut => "Cut Out",
-                    EditorTool.Image => "Image",
-                    _ => "Select"
+                    EditorTool.Select => Strings.ToolbarCustomizationItemViewModel_Select,
+                    EditorTool.Rectangle => Strings.ToolbarCustomizationItemViewModel_Rectangle,
+                    EditorTool.Ellipse => Strings.ToolbarCustomizationItemViewModel_Ellipse,
+                    EditorTool.Line => Strings.ToolbarCustomizationItemViewModel_Line,
+                    EditorTool.Arrow => Strings.ToolbarCustomizationItemViewModel_Arrow,
+                    EditorTool.Freehand => Strings.ToolbarCustomizationItemViewModel_Freehand,
+                    EditorTool.Text => Strings.ToolbarCustomizationItemViewModel_Text,
+                    EditorTool.Cursor => Strings.ToolbarCustomizationItemViewModel_Cursor,
+                    EditorTool.Emoji => Strings.ToolbarCustomizationItemViewModel_Emoji,
+                    EditorTool.SpeechBalloon => Strings.ToolbarCustomizationItemViewModel_SpeechBalloon,
+                    EditorTool.Step => Strings.ToolbarCustomizationItemViewModel_Step,
+                    EditorTool.Blur => Strings.ToolbarCustomizationItemViewModel_Blur,
+                    EditorTool.Pixelate => Strings.ToolbarCustomizationItemViewModel_Pixelate,
+                    EditorTool.Magnify => Strings.ToolbarCustomizationItemViewModel_Magnify,
+                    EditorTool.Spotlight => Strings.ToolbarCustomizationItemViewModel_Spotlight,
+                    EditorTool.SmartEraser => Strings.ToolbarCustomizationItemViewModel_SmartEraser,
+                    EditorTool.Highlight => Strings.ToolbarCustomizationItemViewModel_Highlight,
+                    EditorTool.Crop => Strings.ToolbarCustomizationItemViewModel_Crop,
+                    EditorTool.CutOut => Strings.ToolbarCustomizationItemViewModel_CutOut,
+                    EditorTool.Image => Strings.ToolbarCustomizationItemViewModel_Image,
+                    _ => Strings.ToolbarCustomizationItemViewModel_Select
                 };
             }
         }
