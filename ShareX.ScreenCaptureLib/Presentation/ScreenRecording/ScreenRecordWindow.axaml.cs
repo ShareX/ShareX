@@ -23,6 +23,7 @@
 
 #nullable enable
 
+using ShareX.ScreenCaptureLib.Localization;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -120,8 +121,8 @@ public partial class ScreenRecordWindow : Window, IDisposable
         _refreshTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(50) };
         _refreshTimer.Tick += (_, _) => UpdateTimer();
 
-        _trayStartItem = new WinForms.ToolStripMenuItem(AppResources.ScreenRecordForm_Start);
-        _trayPauseItem = new WinForms.ToolStripMenuItem(AppResources.Pause);
+        _trayStartItem = new WinForms.ToolStripMenuItem(Strings.ScreenRecordForm_Start);
+        _trayPauseItem = new WinForms.ToolStripMenuItem(Strings.Pause);
         _trayAbortItem = new WinForms.ToolStripMenuItem("Abort");
         _trayStartItem.Click += (_, _) => RunOnUIThread(StartStopRecording);
         _trayPauseItem.Click += (_, _) => RunOnUIThread(PauseResumeRecording);
@@ -245,7 +246,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             switch (state)
             {
                 case ScreenRecordState.Waiting:
-                    SetTrayText("ShareX - " + AppResources.ScreenRecordForm_StartRecording_Waiting___);
+                    SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Waiting___);
                     SetTrayIcon(AppResources.control_record_yellow.ToIcon());
                     _trayMenu.Enabled = false;
                     _trayIcon.Visible = true;
@@ -271,7 +272,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 case ScreenRecordState.Encoding:
                     Hide();
                     _trayMenu.Enabled = false;
-                    SetTrayText("ShareX - " + AppResources.ScreenRecordForm_StartRecording_Encoding___);
+                    SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Encoding___);
                     SetTrayIcon(AppResources.camcorder__pencil.ToIcon());
                     break;
             }
@@ -282,7 +283,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
     {
         InvokeSafe(() =>
         {
-            SetTrayText($"ShareX - {AppResources.ScreenRecordForm_StartRecording_Encoding___} {progress}%");
+            SetTrayText($"ShareX - {Strings.ScreenRecordForm_StartRecording_Encoding___} {progress}%");
 
             if (!_trayIcon.Visible || _lastIconStatus == progress)
             {
@@ -384,11 +385,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
         switch (Status)
         {
             case ScreenRecordingStatus.Working:
-                SetTrayText("ShareX - " + AppResources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_);
+                SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_);
                 SetTrayIcon(AppResources.control_record.ToIcon());
-                StartText.Text = AppResources.ScreenRecordForm_Stop;
+                StartText.Text = Strings.ScreenRecordForm_Stop;
                 StartIcon.Text = LucideIcons.square;
-                _trayStartItem.Text = AppResources.ScreenRecordForm_Stop;
+                _trayStartItem.Text = Strings.ScreenRecordForm_Stop;
                 SetRecordingAccent(Brushes.Goldenrod);
                 break;
 
@@ -396,27 +397,27 @@ public partial class ScreenRecordWindow : Window, IDisposable
             case ScreenRecordingStatus.Paused:
                 bool paused = Status == ScreenRecordingStatus.Paused;
                 SetTrayText("ShareX - " + (paused
-                    ? AppResources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_
-                    : AppResources.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_));
+                    ? Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_
+                    : Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_));
                 SetTrayIcon(AppResources.control_record_yellow.ToIcon());
-                StartText.Text = paused ? AppResources.ScreenRecordForm_Stop : AppResources.ScreenRecordForm_Start;
+                StartText.Text = paused ? Strings.ScreenRecordForm_Stop : Strings.ScreenRecordForm_Start;
                 StartIcon.Text = paused ? LucideIcons.square : LucideIcons.circle_play;
                 _trayStartItem.Text = StartText.Text;
-                PauseText.Text = AppResources.Resume;
+                PauseText.Text = Strings.Resume;
                 PauseIcon.Text = LucideIcons.play;
-                _trayPauseItem.Text = AppResources.Resume;
+                _trayPauseItem.Text = Strings.Resume;
                 TimerDragHandle.Cursor = new Cursor(StandardCursorType.SizeAll);
                 SetRecordingAccent(Brushes.Goldenrod);
                 break;
 
             case ScreenRecordingStatus.Recording:
                 SetTrayIcon(AppResources.control_record.ToIcon());
-                StartText.Text = AppResources.ScreenRecordForm_Stop;
+                StartText.Text = Strings.ScreenRecordForm_Stop;
                 StartIcon.Text = LucideIcons.square;
-                _trayStartItem.Text = AppResources.ScreenRecordForm_Stop;
-                PauseText.Text = AppResources.Pause;
+                _trayStartItem.Text = Strings.ScreenRecordForm_Stop;
+                PauseText.Text = Strings.Pause;
                 PauseIcon.Text = LucideIcons.pause;
-                _trayPauseItem.Text = AppResources.Pause;
+                _trayPauseItem.Text = Strings.Pause;
                 TimerDragHandle.Cursor = Cursor.Default;
                 break;
         }

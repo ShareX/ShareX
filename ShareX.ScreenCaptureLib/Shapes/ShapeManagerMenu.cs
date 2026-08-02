@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ScreenCaptureLib.Localization;
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
@@ -70,7 +71,7 @@ namespace ShareX.ScreenCaptureLib
                 Location = new Point(200, 200),
                 ShowInTaskbar = false,
                 StartPosition = FormStartPosition.Manual,
-                Text = "ShareX - " + Resources.ShapeManager_CreateToolbar_AnnotateMenu,
+                Text = "ShareX - " + Strings.ShapeManager_CreateToolbar_AnnotateMenu,
                 TopMost = Form.IsFullscreen
             };
 
@@ -134,11 +135,11 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Form.Mode == RegionCaptureMode.Editor)
                 {
-                    tsbCompleteEdit.Text = Resources.ShapeManager_CreateToolbar_RunAfterCaptureTasks;
+                    tsbCompleteEdit.Text = Strings.ShapeManager_CreateToolbar_RunAfterCaptureTasks;
                 }
                 else
                 {
-                    tsbCompleteEdit.Text = Resources.ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter;
+                    tsbCompleteEdit.Text = Strings.ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter;
                 }
 
                 tsbCompleteEdit.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -148,13 +149,13 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Form.Mode == RegionCaptureMode.TaskEditor)
                 {
-                    ToolStripButton tsbContinueTask = new ToolStripButton(Resources.ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick);
+                    ToolStripButton tsbContinueTask = new ToolStripButton(Strings.ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick);
                     tsbContinueTask.DisplayStyle = ToolStripItemDisplayStyle.Image;
                     tsbContinueTask.Image = Resources.control;
                     tsbContinueTask.Click += (sender, e) => Form.CloseWindow(RegionResult.AnnotateContinueTask);
                     tsMain.Items.Add(tsbContinueTask);
 
-                    ToolStripButton tsbCancelTask = new ToolStripButton(Resources.ShapeManager_CreateToolbar_CancelTaskEsc);
+                    ToolStripButton tsbCancelTask = new ToolStripButton(Strings.ShapeManager_CreateToolbar_CancelTaskEsc);
                     tsbCancelTask.DisplayStyle = ToolStripItemDisplayStyle.Image;
                     tsbCancelTask.Image = Resources.cross;
                     tsbCancelTask.Click += (sender, e) => Form.CloseWindow(RegionResult.AnnotateCancelTask);
@@ -163,31 +164,31 @@ namespace ShareX.ScreenCaptureLib
                     tsMain.Items.Add(new ToolStripSeparator());
                 }
 
-                tsbSaveImage = new ToolStripButton(Resources.ShapeManager_CreateToolbar_SaveImage);
+                tsbSaveImage = new ToolStripButton(Strings.ShapeManager_CreateToolbar_SaveImage);
                 tsbSaveImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbSaveImage.Image = Resources.disk_black;
                 tsbSaveImage.Click += (sender, e) => Form.OnSaveImageRequested();
                 tsMain.Items.Add(tsbSaveImage);
 
-                ToolStripButton tsbSaveImageAs = new ToolStripButton(Resources.ShapeManager_CreateToolbar_SaveImageAs);
+                ToolStripButton tsbSaveImageAs = new ToolStripButton(Strings.ShapeManager_CreateToolbar_SaveImageAs);
                 tsbSaveImageAs.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbSaveImageAs.Image = Resources.disks_black;
                 tsbSaveImageAs.Click += (sender, e) => Form.OnSaveImageAsRequested();
                 tsMain.Items.Add(tsbSaveImageAs);
 
-                ToolStripButton tsbCopyImage = new ToolStripButton(Resources.ShapeManager_CreateToolbar_CopyImageToClipboard);
+                ToolStripButton tsbCopyImage = new ToolStripButton(Strings.ShapeManager_CreateToolbar_CopyImageToClipboard);
                 tsbCopyImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbCopyImage.Image = Resources.clipboard;
                 tsbCopyImage.Click += (sender, e) => Form.OnCopyImageRequested();
                 tsMain.Items.Add(tsbCopyImage);
 
-                ToolStripButton tsbUploadImage = new ToolStripButton(Resources.ShapeManager_CreateToolbar_UploadImage);
+                ToolStripButton tsbUploadImage = new ToolStripButton(Strings.ShapeManager_CreateToolbar_UploadImage);
                 tsbUploadImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbUploadImage.Image = Resources.drive_globe;
                 tsbUploadImage.Click += (sender, e) => Form.OnUploadImageRequested();
                 tsMain.Items.Add(tsbUploadImage);
 
-                ToolStripButton tsbPrintImage = new ToolStripButton(Resources.ShapeManager_CreateToolbar_PrintImage);
+                ToolStripButton tsbPrintImage = new ToolStripButton(Strings.ShapeManager_CreateToolbar_PrintImage);
                 tsbPrintImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbPrintImage.Image = Resources.printer;
                 tsbPrintImage.Click += (sender, e) => Form.OnPrintImageRequested();
@@ -199,7 +200,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Helpers.IsTabletMode())
             {
-                ToolStripButton tsbClose = new ToolStripButton(Resources.CloseEsc);
+                ToolStripButton tsbClose = new ToolStripButton(Strings.CloseEsc);
                 tsbClose.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbClose.Image = Resources.cross;
                 tsbClose.Click += (sender, e) => Form.CloseWindow();
@@ -331,7 +332,7 @@ namespace ShareX.ScreenCaptureLib
 
             tsMain.Items.Add(new ToolStripSeparator());
 
-            tsbBorderColor = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Border_color___);
+            tsbBorderColor = new ToolStripButton(Strings.ShapeManager_CreateContextMenu_Border_color___);
             tsbBorderColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbBorderColor.Click += (sender, e) =>
             {
@@ -385,7 +386,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsMain.Items.Add(tsbBorderColor);
 
-            tsbFillColor = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Fill_color___);
+            tsbFillColor = new ToolStripButton(Strings.ShapeManager_CreateContextMenu_Fill_color___);
             tsbFillColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbFillColor.Click += (sender, e) =>
             {
@@ -431,7 +432,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsMain.Items.Add(tsbFillColor);
 
-            tsbHighlightColor = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Highlight_color___);
+            tsbHighlightColor = new ToolStripButton(Strings.ShapeManager_CreateContextMenu_Highlight_color___);
             tsbHighlightColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbHighlightColor.Click += (sender, e) =>
             {
@@ -448,12 +449,12 @@ namespace ShareX.ScreenCaptureLib
             };
             tsMain.Items.Add(tsbHighlightColor);
 
-            tsddbShapeOptions = new ToolStripDropDownButton(Resources.ShapeManager_CreateToolbar_ToolOptions);
+            tsddbShapeOptions = new ToolStripDropDownButton(Strings.ShapeManager_CreateToolbar_ToolOptions);
             tsddbShapeOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsddbShapeOptions.Image = Resources.layer__pencil;
             tsMain.Items.Add(tsddbShapeOptions);
 
-            tslnudMagnifyStrength = new ToolStripLabeledNumericUpDown(Resources.MagnifyStrength);
+            tslnudMagnifyStrength = new ToolStripLabeledNumericUpDown(Strings.MagnifyStrength);
             tslnudMagnifyStrength.Content.Text2 = "%";
             tslnudMagnifyStrength.Content.Minimum = 100;
             tslnudMagnifyStrength.Content.Maximum = 1000;
@@ -465,7 +466,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudMagnifyStrength);
 
-            tslnudBorderSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Border_size_);
+            tslnudBorderSize = new ToolStripLabeledNumericUpDown(Strings.ShapeManager_CreateContextMenu_Border_size_);
             tslnudBorderSize.Content.Minimum = 0;
             tslnudBorderSize.Content.Maximum = 20;
             tslnudBorderSize.Content.ValueChanged = (sender, e) =>
@@ -495,7 +496,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudBorderSize);
 
-            tslnudCornerRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Corner_radius_);
+            tslnudCornerRadius = new ToolStripLabeledNumericUpDown(Strings.ShapeManager_CreateContextMenu_Corner_radius_);
             tslnudCornerRadius.Content.Minimum = 0;
             tslnudCornerRadius.Content.Maximum = 150;
             tslnudCornerRadius.Content.ValueChanged = (sender, e) =>
@@ -515,7 +516,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCornerRadius);
 
-            tscbBorderStyle = new ToolStripLabeledComboBox(Resources.ShapeManager_BorderStyle);
+            tscbBorderStyle = new ToolStripLabeledComboBox(Strings.ShapeManager_BorderStyle);
             tscbBorderStyle.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<BorderStyle>());
             tscbBorderStyle.Content.SelectedIndexChanged += (sender, e) =>
             {
@@ -525,7 +526,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tscbBorderStyle);
 
-            tscbImageInterpolationMode = new ToolStripLabeledComboBox(Resources.ShapeManager_CreateToolbar_InterpolationMode);
+            tscbImageInterpolationMode = new ToolStripLabeledComboBox(Strings.ShapeManager_CreateToolbar_InterpolationMode);
             tscbImageInterpolationMode.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageInterpolationMode>());
             tscbImageInterpolationMode.Content.SelectedIndexChanged += (sender, e) =>
             {
@@ -535,7 +536,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tscbImageInterpolationMode);
 
-            tscbCursorTypes = new ToolStripLabeledComboBox(Resources.ShapeManager_CursorType);
+            tscbCursorTypes = new ToolStripLabeledComboBox(Strings.ShapeManager_CursorType);
             CursorConverter cursorConverter = new CursorConverter();
             foreach (Cursor cursor in Helpers.CursorList)
             {
@@ -546,7 +547,7 @@ namespace ShareX.ScreenCaptureLib
             tscbCursorTypes.Content.SelectedIndexChanged += (sender, e) => UpdateCurrentShape();
             tsddbShapeOptions.DropDownItems.Add(tscbCursorTypes);
 
-            tslnudBlurRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Blur_radius_);
+            tslnudBlurRadius = new ToolStripLabeledNumericUpDown(Strings.ShapeManager_CreateContextMenu_Blur_radius_);
             tslnudBlurRadius.Content.Minimum = 3;
             tslnudBlurRadius.Content.Maximum = 199;
             tslnudBlurRadius.Content.Increment = 2;
@@ -557,7 +558,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudBlurRadius);
 
-            tslnudPixelateSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Pixel_size_);
+            tslnudPixelateSize = new ToolStripLabeledNumericUpDown(Strings.ShapeManager_CreateContextMenu_Pixel_size_);
             tslnudPixelateSize.Content.Minimum = 2;
             tslnudPixelateSize.Content.Maximum = 10000;
             tslnudPixelateSize.Content.ValueChanged = (sender, e) =>
@@ -567,7 +568,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudPixelateSize);
 
-            tslnudCenterPoints = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CenterPoints);
+            tslnudCenterPoints = new ToolStripLabeledNumericUpDown(Strings.ShapeManager_CenterPoints);
             tslnudCenterPoints.Content.Minimum = 0;
             tslnudCenterPoints.Content.Maximum = LineDrawingShape.MaximumCenterPointCount;
             tslnudCenterPoints.Content.ValueChanged = (sender, e) =>
@@ -577,7 +578,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCenterPoints);
 
-            tscbArrowHeadDirection = new ToolStripLabeledComboBox(Resources.ShapeManager_ArrowHeadDirection);
+            tscbArrowHeadDirection = new ToolStripLabeledComboBox(Strings.ShapeManager_ArrowHeadDirection);
             tscbArrowHeadDirection.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<ArrowHeadDirection>());
             tscbArrowHeadDirection.Content.SelectedIndexChanged += (sender, e) =>
             {
@@ -587,7 +588,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tscbArrowHeadDirection);
 
-            tslnudFreehandSmoothing = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_FreehandSmoothing);
+            tslnudFreehandSmoothing = new ToolStripLabeledNumericUpDown(Strings.ShapeManager_FreehandSmoothing);
             tslnudFreehandSmoothing.Content.Minimum = 0;
             tslnudFreehandSmoothing.Content.Maximum = 10;
             tslnudFreehandSmoothing.Content.ValueChanged = (sender, e) =>
@@ -597,7 +598,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudFreehandSmoothing);
 
-            tsmiFreehandCurveInterpolation = new ToolStripMenuItem(Resources.ShapeManager_FreehandCurveInterpolation);
+            tsmiFreehandCurveInterpolation = new ToolStripMenuItem(Strings.ShapeManager_FreehandCurveInterpolation);
             tsmiFreehandCurveInterpolation.CheckOnClick = true;
             tsmiFreehandCurveInterpolation.Click += (sender, e) =>
             {
@@ -606,7 +607,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiFreehandCurveInterpolation);
 
-            tslnudStepFontSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateToolbar_FontSize);
+            tslnudStepFontSize = new ToolStripLabeledNumericUpDown(Strings.ShapeManager_CreateToolbar_FontSize);
             tslnudStepFontSize.Content.Minimum = 10;
             tslnudStepFontSize.Content.Maximum = 300;
             tslnudStepFontSize.Content.ValueChanged = (sender, e) =>
@@ -616,7 +617,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudStepFontSize);
 
-            tslnudStartingStepValue = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateToolbar_StartingStepValue);
+            tslnudStartingStepValue = new ToolStripLabeledNumericUpDown(Strings.ShapeManager_CreateToolbar_StartingStepValue);
             tslnudStartingStepValue.Content.Minimum = 0;
             tslnudStartingStepValue.Content.Maximum = 10000;
             tslnudStartingStepValue.Content.ValueChanged = (sender, e) =>
@@ -626,7 +627,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudStartingStepValue);
 
-            tscbStepType = new ToolStripLabeledComboBox(Resources.ShapeManager_CreateToolbar_StepType);
+            tscbStepType = new ToolStripLabeledComboBox(Strings.ShapeManager_CreateToolbar_StepType);
             tscbStepType.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<StepType>());
             tscbStepType.Content.SelectedIndexChanged += (sender, e) =>
             {
@@ -636,7 +637,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tscbStepType);
 
-            tsmiShadow = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DropShadow);
+            tsmiShadow = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_DropShadow);
             tsmiShadow.Checked = true;
             tsmiShadow.CheckOnClick = true;
             tsmiShadow.Click += (sender, e) =>
@@ -646,7 +647,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiShadow);
 
-            tsmiShadowColor = new ToolStripMenuItem(Resources.DropShadowColor);
+            tsmiShadowColor = new ToolStripMenuItem(Strings.DropShadowColor);
             tsmiShadowColor.Click += (sender, e) =>
             {
                 Form.Pause();
@@ -691,7 +692,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiSpotlightEllipse);
 
-            tscbCutOutEffectType = new ToolStripLabeledComboBox(Resources.CutOutEffectType);
+            tscbCutOutEffectType = new ToolStripLabeledComboBox(Strings.CutOutEffectType);
             tscbCutOutEffectType.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<CutOutEffectType>());
             tscbCutOutEffectType.Content.SelectedIndexChanged += (sender, e) =>
             {
@@ -701,7 +702,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tscbCutOutEffectType);
 
-            tslnudCutOutEffectSize = new ToolStripLabeledNumericUpDown(Resources.CutOutEffectSize);
+            tslnudCutOutEffectSize = new ToolStripLabeledNumericUpDown(Strings.CutOutEffectSize);
             tslnudCutOutEffectSize.Content.Minimum = 3;
             tslnudCutOutEffectSize.Content.Maximum = 100;
             tslnudCutOutEffectSize.Content.ValueChanged = (sender, e) =>
@@ -711,7 +712,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCutOutEffectSize);
 
-            tsmiCutOutBackgroundColor = new ToolStripMenuItem(Resources.CutOutBackgroundColor);
+            tsmiCutOutBackgroundColor = new ToolStripMenuItem(Strings.CutOutBackgroundColor);
             tsmiCutOutBackgroundColor.Click += (sender, e) =>
             {
                 Form.Pause();
@@ -734,30 +735,30 @@ namespace ShareX.ScreenCaptureLib
 
             #region Edit
 
-            ToolStripDropDownButton tsddbEdit = new ToolStripDropDownButton(Resources.ShapeManager_CreateToolbar_Edit);
+            ToolStripDropDownButton tsddbEdit = new ToolStripDropDownButton(Strings.ShapeManager_CreateToolbar_Edit);
             tsddbEdit.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsddbEdit.Image = Resources.wrench_screwdriver;
             tsMain.Items.Add(tsddbEdit);
 
-            tsmiUndo = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Undo);
+            tsmiUndo = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_Undo);
             tsmiUndo.Image = Resources.arrow_circle_225_left;
             tsmiUndo.ShortcutKeyDisplayString = "Ctrl+Z";
             tsmiUndo.Click += (sender, e) => history.Undo();
             tsddbEdit.DropDownItems.Add(tsmiUndo);
 
-            tsmiRedo = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Redo);
+            tsmiRedo = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_Redo);
             tsmiRedo.Image = Resources.arrow_circle_315;
             tsmiRedo.ShortcutKeyDisplayString = "Ctrl+Y";
             tsmiRedo.Click += (sender, e) => history.Redo();
             tsddbEdit.DropDownItems.Add(tsmiRedo);
 
-            ToolStripMenuItem tsmiPaste = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_PasteImageText);
+            ToolStripMenuItem tsmiPaste = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_PasteImageText);
             tsmiPaste.Image = Resources.clipboard;
             tsmiPaste.ShortcutKeyDisplayString = "Ctrl+V";
             tsmiPaste.Click += (sender, e) => PasteFromClipboard(false);
             tsddbEdit.DropDownItems.Add(tsmiPaste);
 
-            tsmiDuplicate = new ToolStripMenuItem(Resources.Duplicate);
+            tsmiDuplicate = new ToolStripMenuItem(Strings.Duplicate);
             tsmiDuplicate.Image = Resources.document_copy;
             tsmiDuplicate.ShortcutKeyDisplayString = "Ctrl+D";
             tsmiDuplicate.Click += (sender, e) => DuplicateCurrrentShape(false);
@@ -765,13 +766,13 @@ namespace ShareX.ScreenCaptureLib
 
             tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
 
-            tsmiDelete = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Delete);
+            tsmiDelete = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_Delete);
             tsmiDelete.Image = Resources.layer__minus;
             tsmiDelete.ShortcutKeyDisplayString = "Del";
             tsmiDelete.Click += (sender, e) => DeleteCurrentShape();
             tsddbEdit.DropDownItems.Add(tsmiDelete);
 
-            tsmiDeleteAll = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DeleteAll);
+            tsmiDeleteAll = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_DeleteAll);
             tsmiDeleteAll.Image = Resources.eraser;
             tsmiDeleteAll.ShortcutKeyDisplayString = "Shift+Del";
             tsmiDeleteAll.Click += (sender, e) => DeleteAllShapes(true);
@@ -779,25 +780,25 @@ namespace ShareX.ScreenCaptureLib
 
             tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
 
-            tsmiMoveTop = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_BringToFront);
+            tsmiMoveTop = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_BringToFront);
             tsmiMoveTop.Image = Resources.layers_stack_arrange;
             tsmiMoveTop.ShortcutKeyDisplayString = "Home";
             tsmiMoveTop.Click += (sender, e) => MoveCurrentShapeTop();
             tsddbEdit.DropDownItems.Add(tsmiMoveTop);
 
-            tsmiMoveUp = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_BringForward);
+            tsmiMoveUp = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_BringForward);
             tsmiMoveUp.Image = Resources.layers_arrange;
             tsmiMoveUp.ShortcutKeyDisplayString = "Page up";
             tsmiMoveUp.Click += (sender, e) => MoveCurrentShapeUp();
             tsddbEdit.DropDownItems.Add(tsmiMoveUp);
 
-            tsmiMoveDown = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_SendBackward);
+            tsmiMoveDown = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_SendBackward);
             tsmiMoveDown.Image = Resources.layers_arrange_back;
             tsmiMoveDown.ShortcutKeyDisplayString = "Page down";
             tsmiMoveDown.Click += (sender, e) => MoveCurrentShapeDown();
             tsddbEdit.DropDownItems.Add(tsmiMoveDown);
 
-            tsmiMoveBottom = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_SendToBack);
+            tsmiMoveBottom = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_SendToBack);
             tsmiMoveBottom.Image = Resources.layers_stack_arrange_back;
             tsmiMoveBottom.ShortcutKeyDisplayString = "End";
             tsmiMoveBottom.Click += (sender, e) => MoveCurrentShapeBottom();
@@ -809,85 +810,85 @@ namespace ShareX.ScreenCaptureLib
             {
                 #region Image
 
-                ToolStripDropDownButton tsddbImage = new ToolStripDropDownButton(Resources.ShapeManager_CreateToolbar_Image);
+                ToolStripDropDownButton tsddbImage = new ToolStripDropDownButton(Strings.ShapeManager_CreateToolbar_Image);
                 tsddbImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsddbImage.Image = Resources.image__pencil;
                 tsMain.Items.Add(tsddbImage);
 
-                ToolStripMenuItem tsmiNewImage = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_NewImage);
+                ToolStripMenuItem tsmiNewImage = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_NewImage);
                 tsmiNewImage.Image = Resources.image_empty;
                 tsmiNewImage.Click += (sender, e) => NewImage();
                 tsddbImage.DropDownItems.Add(tsmiNewImage);
 
-                ToolStripMenuItem tsmiOpenImage = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_OpenImageFile);
+                ToolStripMenuItem tsmiOpenImage = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_OpenImageFile);
                 tsmiOpenImage.Image = Resources.folder_open_image;
                 tsmiOpenImage.Click += (sender, e) => OpenImageFile();
                 tsddbImage.DropDownItems.Add(tsmiOpenImage);
 
-                ToolStripMenuItem tsmiInsertImageFile = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_InsertImageFile);
+                ToolStripMenuItem tsmiInsertImageFile = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_InsertImageFile);
                 tsmiInsertImageFile.Image = Resources.image__plus;
                 tsmiInsertImageFile.Click += (sender, e) => InsertImageFile();
                 tsddbImage.DropDownItems.Add(tsmiInsertImageFile);
 
-                ToolStripMenuItem tsmiInsertImageFromScreen = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_InsertImageFromScreen);
+                ToolStripMenuItem tsmiInsertImageFromScreen = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_InsertImageFromScreen);
                 tsmiInsertImageFromScreen.Image = Resources.camera;
                 tsmiInsertImageFromScreen.Click += (sender, e) => InsertImageFromScreen();
                 tsddbImage.DropDownItems.Add(tsmiInsertImageFromScreen);
 
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
 
-                ToolStripMenuItem tsmiImageSize = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_ImageSize);
+                ToolStripMenuItem tsmiImageSize = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_ImageSize);
                 tsmiImageSize.Image = Resources.image_select;
                 tsmiImageSize.Click += (sender, e) => ChangeImageSize();
                 tsddbImage.DropDownItems.Add(tsmiImageSize);
 
-                ToolStripMenuItem tsmiCanvasSize = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_CanvasSize);
+                ToolStripMenuItem tsmiCanvasSize = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_CanvasSize);
                 tsmiCanvasSize.Image = Resources.image_resize;
                 tsmiCanvasSize.Click += (sender, e) => ChangeCanvasSize();
                 tsddbImage.DropDownItems.Add(tsmiCanvasSize);
 
-                ToolStripMenuItem tsmiCropImage = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_CropImage);
+                ToolStripMenuItem tsmiCropImage = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_CropImage);
                 tsmiCropImage.Image = Resources.image_crop;
                 tsmiCropImage.Click += (sender, e) => AddCropTool();
                 tsddbImage.DropDownItems.Add(tsmiCropImage);
 
-                ToolStripMenuItem tsmiAutoCropImage = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_AutoCropImage);
+                ToolStripMenuItem tsmiAutoCropImage = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_AutoCropImage);
                 tsmiAutoCropImage.Image = Resources.image_resize_actual;
                 tsmiAutoCropImage.Click += (sender, e) => AutoCropImage();
                 tsddbImage.DropDownItems.Add(tsmiAutoCropImage);
 
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
 
-                ToolStripMenuItem tsmiRotate90Clockwise = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Rotate90Clockwise);
+                ToolStripMenuItem tsmiRotate90Clockwise = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_Rotate90Clockwise);
                 tsmiRotate90Clockwise.Image = Resources.arrow_circle;
                 tsmiRotate90Clockwise.Click += (sender, e) => RotateImage(RotateFlipType.Rotate90FlipNone);
                 tsddbImage.DropDownItems.Add(tsmiRotate90Clockwise);
 
-                ToolStripMenuItem tsmiRotate90CounterClockwise = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Rotate90CounterClockwise);
+                ToolStripMenuItem tsmiRotate90CounterClockwise = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_Rotate90CounterClockwise);
                 tsmiRotate90CounterClockwise.Image = Resources.arrow_circle_135_left;
                 tsmiRotate90CounterClockwise.Click += (sender, e) => RotateImage(RotateFlipType.Rotate270FlipNone);
                 tsddbImage.DropDownItems.Add(tsmiRotate90CounterClockwise);
 
-                ToolStripMenuItem tsmiRotate180 = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Rotate180);
+                ToolStripMenuItem tsmiRotate180 = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_Rotate180);
                 tsmiRotate180.Image = Resources.arrow_circle_double;
                 tsmiRotate180.Click += (sender, e) => RotateImage(RotateFlipType.Rotate180FlipNone);
                 tsddbImage.DropDownItems.Add(tsmiRotate180);
 
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
 
-                ToolStripMenuItem tsmiFlipHorizontal = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_FlipHorizontal);
+                ToolStripMenuItem tsmiFlipHorizontal = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_FlipHorizontal);
                 tsmiFlipHorizontal.Image = Resources.layer_flip;
                 tsmiFlipHorizontal.Click += (sender, e) => RotateImage(RotateFlipType.RotateNoneFlipX);
                 tsddbImage.DropDownItems.Add(tsmiFlipHorizontal);
 
-                ToolStripMenuItem tsmiFlipVertical = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_FlipVertical);
+                ToolStripMenuItem tsmiFlipVertical = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_FlipVertical);
                 tsmiFlipVertical.Image = Resources.layer_flip_vertical;
                 tsmiFlipVertical.Click += (sender, e) => RotateImage(RotateFlipType.RotateNoneFlipY);
                 tsddbImage.DropDownItems.Add(tsmiFlipVertical);
 
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
 
-                ToolStripMenuItem tsmiAddImageEffects = new ToolStripMenuItem(Resources.ImageEffects);
+                ToolStripMenuItem tsmiAddImageEffects = new ToolStripMenuItem(Strings.ImageEffects);
                 tsmiAddImageEffects.Image = Resources.image_saturation;
                 tsmiAddImageEffects.Click += (sender, e) => AddImageEffects();
                 tsddbImage.DropDownItems.Add(tsmiAddImageEffects);
@@ -901,12 +902,12 @@ namespace ShareX.ScreenCaptureLib
             {
                 #region Capture
 
-                ToolStripDropDownButton tsddbCapture = new ToolStripDropDownButton(Resources.ShapeManager_CreateContextMenu_Capture);
+                ToolStripDropDownButton tsddbCapture = new ToolStripDropDownButton(Strings.ShapeManager_CreateContextMenu_Capture);
                 tsddbCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsddbCapture.Image = Resources.camera;
                 tsMain.Items.Add(tsddbCapture);
 
-                tsmiRegionCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_CaptureRegions);
+                tsmiRegionCapture = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_CaptureRegions);
                 tsmiRegionCapture.Image = Resources.layer;
                 tsmiRegionCapture.ShortcutKeyDisplayString = "Enter";
                 tsmiRegionCapture.Click += (sender, e) =>
@@ -918,25 +919,25 @@ namespace ShareX.ScreenCaptureLib
 
                 if (RegionCaptureForm.LastRegionFillPath != null)
                 {
-                    ToolStripMenuItem tsmiLastRegionCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_LastRegion);
+                    ToolStripMenuItem tsmiLastRegionCapture = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_LastRegion);
                     tsmiLastRegionCapture.Image = Resources.layers;
                     tsmiLastRegionCapture.Click += (sender, e) => Form.CloseWindow(RegionResult.LastRegion);
                     tsddbCapture.DropDownItems.Add(tsmiLastRegionCapture);
                 }
 
-                ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_fullscreen);
+                ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Capture_fullscreen);
                 tsmiFullscreenCapture.Image = Resources.layer_fullscreen;
                 tsmiFullscreenCapture.ShortcutKeyDisplayString = "Space";
                 tsmiFullscreenCapture.Click += (sender, e) => Form.CloseWindow(RegionResult.Fullscreen);
                 tsddbCapture.DropDownItems.Add(tsmiFullscreenCapture);
 
-                ToolStripMenuItem tsmiActiveMonitorCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_active_monitor);
+                ToolStripMenuItem tsmiActiveMonitorCapture = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Capture_active_monitor);
                 tsmiActiveMonitorCapture.Image = Resources.monitor;
                 tsmiActiveMonitorCapture.ShortcutKeyDisplayString = "~";
                 tsmiActiveMonitorCapture.Click += (sender, e) => Form.CloseWindow(RegionResult.ActiveMonitor);
                 tsddbCapture.DropDownItems.Add(tsmiActiveMonitorCapture);
 
-                ToolStripMenuItem tsmiMonitorCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_monitor);
+                ToolStripMenuItem tsmiMonitorCapture = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Capture_monitor);
                 tsmiMonitorCapture.HideImageMargin();
                 tsmiMonitorCapture.Image = Resources.monitor_window;
                 tsddbCapture.DropDownItems.Add(tsmiMonitorCapture);
@@ -962,33 +963,33 @@ namespace ShareX.ScreenCaptureLib
 
             #region Options
 
-            ToolStripDropDownButton tsddbOptions = new ToolStripDropDownButton(Resources.ShapeManager_CreateContextMenu_Options);
+            ToolStripDropDownButton tsddbOptions = new ToolStripDropDownButton(Strings.ShapeManager_CreateContextMenu_Options);
             tsddbOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsddbOptions.Image = Resources.gear;
             tsMain.Items.Add(tsddbOptions);
 
             if (Form.IsEditorMode)
             {
-                ToolStripLabeledComboBox tscbImageEditorStartMode = new ToolStripLabeledComboBox(Resources.ShapeManager_CreateToolbar_EditorStartMode);
+                ToolStripLabeledComboBox tscbImageEditorStartMode = new ToolStripLabeledComboBox(Strings.ShapeManager_CreateToolbar_EditorStartMode);
                 tscbImageEditorStartMode.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageEditorStartMode>());
                 tscbImageEditorStartMode.Content.SelectedIndex = (int)Options.ImageEditorStartMode;
                 tscbImageEditorStartMode.Content.SelectedIndexChanged +=
                     (sender, e) => Options.ImageEditorStartMode = (ImageEditorStartMode)tscbImageEditorStartMode.Content.SelectedIndex;
                 tsddbOptions.DropDownItems.Add(tscbImageEditorStartMode);
 
-                ToolStripMenuItem tsmiZoomToFitOnOpen = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_ZoomToFitOnOpen);
+                ToolStripMenuItem tsmiZoomToFitOnOpen = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_ZoomToFitOnOpen);
                 tsmiZoomToFitOnOpen.Checked = Options.ZoomToFitOnOpen;
                 tsmiZoomToFitOnOpen.CheckOnClick = true;
                 tsmiZoomToFitOnOpen.Click += (sender, e) => Options.ZoomToFitOnOpen = tsmiZoomToFitOnOpen.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiZoomToFitOnOpen);
 
-                ToolStripMenuItem tsmiEditorAutoCopyImage = new ToolStripMenuItem(Resources.AutoCopyImageToClipboard);
+                ToolStripMenuItem tsmiEditorAutoCopyImage = new ToolStripMenuItem(Strings.AutoCopyImageToClipboard);
                 tsmiEditorAutoCopyImage.Checked = Options.EditorAutoCopyImage;
                 tsmiEditorAutoCopyImage.CheckOnClick = true;
                 tsmiEditorAutoCopyImage.Click += (sender, e) => Options.EditorAutoCopyImage = tsmiEditorAutoCopyImage.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiEditorAutoCopyImage);
 
-                ToolStripMenuItem tsmiAutoCloseEditorOnTask = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_AutoCloseEditorOnTask);
+                ToolStripMenuItem tsmiAutoCloseEditorOnTask = new ToolStripMenuItem(Strings.ShapeManager_CreateToolbar_AutoCloseEditorOnTask);
                 tsmiAutoCloseEditorOnTask.Checked = Options.AutoCloseEditorOnTask;
                 tsmiAutoCloseEditorOnTask.CheckOnClick = true;
                 tsmiAutoCloseEditorOnTask.Click += (sender, e) => Options.AutoCloseEditorOnTask = tsmiAutoCloseEditorOnTask.Checked;
@@ -999,32 +1000,32 @@ namespace ShareX.ScreenCaptureLib
 
             if (!Form.IsEditorMode)
             {
-                tsmiQuickCrop = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Multi_region_mode);
+                tsmiQuickCrop = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Multi_region_mode);
                 tsmiQuickCrop.Checked = !Options.QuickCrop;
                 tsmiQuickCrop.CheckOnClick = true;
                 tsmiQuickCrop.Click += (sender, e) => Options.QuickCrop = !tsmiQuickCrop.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiQuickCrop);
             }
 
-            ToolStripMenuItem tsmiShowInfo = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_position_and_size_info);
+            ToolStripMenuItem tsmiShowInfo = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Show_position_and_size_info);
             tsmiShowInfo.Checked = Options.ShowInfo;
             tsmiShowInfo.CheckOnClick = true;
             tsmiShowInfo.Click += (sender, e) => Options.ShowInfo = tsmiShowInfo.Checked;
             tsddbOptions.DropDownItems.Add(tsmiShowInfo);
 
-            tsmiShowMagnifier = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_magnifier);
+            tsmiShowMagnifier = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Show_magnifier);
             tsmiShowMagnifier.Checked = Options.ShowMagnifier;
             tsmiShowMagnifier.CheckOnClick = true;
             tsmiShowMagnifier.Click += (sender, e) => Options.ShowMagnifier = tsmiShowMagnifier.Checked;
             tsddbOptions.DropDownItems.Add(tsmiShowMagnifier);
 
-            ToolStripMenuItem tsmiUseSquareMagnifier = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Square_shape_magnifier);
+            ToolStripMenuItem tsmiUseSquareMagnifier = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Square_shape_magnifier);
             tsmiUseSquareMagnifier.Checked = Options.UseSquareMagnifier;
             tsmiUseSquareMagnifier.CheckOnClick = true;
             tsmiUseSquareMagnifier.Click += (sender, e) => Options.UseSquareMagnifier = tsmiUseSquareMagnifier.Checked;
             tsddbOptions.DropDownItems.Add(tsmiUseSquareMagnifier);
 
-            tslnudMagnifierPixelCount = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Magnifier_pixel_count_);
+            tslnudMagnifierPixelCount = new ToolStripLabeledNumericUpDown(Strings.ShapeManager_CreateContextMenu_Magnifier_pixel_count_);
             tslnudMagnifierPixelCount.Content.Minimum = RegionCaptureOptions.MagnifierPixelCountMinimum;
             tslnudMagnifierPixelCount.Content.Maximum = RegionCaptureOptions.MagnifierPixelCountMaximum;
             tslnudMagnifierPixelCount.Content.Increment = 2;
@@ -1032,32 +1033,32 @@ namespace ShareX.ScreenCaptureLib
             tslnudMagnifierPixelCount.Content.ValueChanged = (sender, e) => Options.MagnifierPixelCount = (int)tslnudMagnifierPixelCount.Content.Value;
             tsddbOptions.DropDownItems.Add(tslnudMagnifierPixelCount);
 
-            ToolStripLabeledNumericUpDown tslnudMagnifierPixelSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Magnifier_pixel_size_);
+            ToolStripLabeledNumericUpDown tslnudMagnifierPixelSize = new ToolStripLabeledNumericUpDown(Strings.ShapeManager_CreateContextMenu_Magnifier_pixel_size_);
             tslnudMagnifierPixelSize.Content.Minimum = RegionCaptureOptions.MagnifierPixelSizeMinimum;
             tslnudMagnifierPixelSize.Content.Maximum = RegionCaptureOptions.MagnifierPixelSizeMaximum;
             tslnudMagnifierPixelSize.Content.Value = Options.MagnifierPixelSize;
             tslnudMagnifierPixelSize.Content.ValueChanged = (sender, e) => Options.MagnifierPixelSize = (int)tslnudMagnifierPixelSize.Content.Value;
             tsddbOptions.DropDownItems.Add(tslnudMagnifierPixelSize);
 
-            ToolStripMenuItem tsmiShowCenterCrosshair = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_center_crosshair);
+            ToolStripMenuItem tsmiShowCenterCrosshair = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Show_center_crosshair);
             tsmiShowCenterCrosshair.Checked = Options.ShowCenterCrosshair;
             tsmiShowCenterCrosshair.CheckOnClick = true;
             tsmiShowCenterCrosshair.Click += (sender, e) => Options.ShowCenterCrosshair = tsmiShowCenterCrosshair.Checked;
             tsddbOptions.DropDownItems.Add(tsmiShowCenterCrosshair);
 
-            ToolStripMenuItem tsmiShowCrosshair = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_screen_wide_crosshair);
+            ToolStripMenuItem tsmiShowCrosshair = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Show_screen_wide_crosshair);
             tsmiShowCrosshair.Checked = Options.ShowCrosshair;
             tsmiShowCrosshair.CheckOnClick = true;
             tsmiShowCrosshair.Click += (sender, e) => Options.ShowCrosshair = tsmiShowCrosshair.Checked;
             tsddbOptions.DropDownItems.Add(tsmiShowCrosshair);
 
-            ToolStripMenuItem tsmiUseLightResizeNodes = new ToolStripMenuItem(Resources.LightResizeNodes);
+            ToolStripMenuItem tsmiUseLightResizeNodes = new ToolStripMenuItem(Strings.LightResizeNodes);
             tsmiUseLightResizeNodes.Checked = Options.UseLightResizeNodes;
             tsmiUseLightResizeNodes.CheckOnClick = true;
             tsmiUseLightResizeNodes.Click += (sender, e) => Options.UseLightResizeNodes = tsmiUseLightResizeNodes.Checked;
             tsddbOptions.DropDownItems.Add(tsmiUseLightResizeNodes);
 
-            ToolStripMenuItem tsmiEnableAnimations = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_EnableAnimations);
+            ToolStripMenuItem tsmiEnableAnimations = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_EnableAnimations);
             tsmiEnableAnimations.Checked = Options.EnableAnimations;
             tsmiEnableAnimations.CheckOnClick = true;
             tsmiEnableAnimations.Click += (sender, e) => Options.EnableAnimations = tsmiEnableAnimations.Checked;
@@ -1065,14 +1066,14 @@ namespace ShareX.ScreenCaptureLib
 
             if (!Form.IsEditorMode)
             {
-                ToolStripMenuItem tsmiFixedSize = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Fixed_size_region_mode);
+                ToolStripMenuItem tsmiFixedSize = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Fixed_size_region_mode);
                 tsmiFixedSize.Checked = Options.IsFixedSize;
                 tsmiFixedSize.CheckOnClick = true;
                 tsmiFixedSize.Click += (sender, e) => Options.IsFixedSize = tsmiFixedSize.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiFixedSize);
 
-                ToolStripDoubleLabeledNumericUpDown tslnudFixedSize = new ToolStripDoubleLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Width_,
-                    Resources.ShapeManager_CreateContextMenu_Height_);
+                ToolStripDoubleLabeledNumericUpDown tslnudFixedSize = new ToolStripDoubleLabeledNumericUpDown(Strings.ShapeManager_CreateContextMenu_Width_,
+                    Strings.ShapeManager_CreateContextMenu_Height_);
                 tslnudFixedSize.Content.Minimum = 10;
                 tslnudFixedSize.Content.Maximum = 10000;
                 tslnudFixedSize.Content.Increment = 10;
@@ -1082,7 +1083,7 @@ namespace ShareX.ScreenCaptureLib
                 tsddbOptions.DropDownItems.Add(tslnudFixedSize);
             }
 
-            ToolStripMenuItem tsmiShowFPS = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_FPS);
+            ToolStripMenuItem tsmiShowFPS = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Show_FPS);
             tsmiShowFPS.Checked = Options.ShowFPS;
             tsmiShowFPS.CheckOnClick = true;
             tsmiShowFPS.Click += (sender, e) =>
@@ -1092,7 +1093,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbOptions.DropDownItems.Add(tsmiShowFPS);
 
-            ToolStripLabeledNumericUpDown tslnudFPSLimit = new ToolStripLabeledNumericUpDown(Resources.FPSLimit);
+            ToolStripLabeledNumericUpDown tslnudFPSLimit = new ToolStripLabeledNumericUpDown(Strings.FPSLimit);
             tslnudFPSLimit.Content.Minimum = 0;
             tslnudFPSLimit.Content.Maximum = 300;
             tslnudFPSLimit.Content.Value = Options.FPSLimit;
@@ -1103,7 +1104,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbOptions.DropDownItems.Add(tslnudFPSLimit);
 
-            ToolStripMenuItem tsmiSwitchToDrawingToolAfterSelection = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection);
+            ToolStripMenuItem tsmiSwitchToDrawingToolAfterSelection = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection);
             tsmiSwitchToDrawingToolAfterSelection.Checked = Options.SwitchToDrawingToolAfterSelection;
             tsmiSwitchToDrawingToolAfterSelection.CheckOnClick = true;
             tsmiSwitchToDrawingToolAfterSelection.Click += (sender, e) =>
@@ -1112,7 +1113,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbOptions.DropDownItems.Add(tsmiSwitchToDrawingToolAfterSelection);
 
-            ToolStripMenuItem tsmiSwitchToSelectionToolAfterDrawing = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing);
+            ToolStripMenuItem tsmiSwitchToSelectionToolAfterDrawing = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing);
             tsmiSwitchToSelectionToolAfterDrawing.Checked = Options.SwitchToSelectionToolAfterDrawing;
             tsmiSwitchToSelectionToolAfterDrawing.CheckOnClick = true;
             tsmiSwitchToSelectionToolAfterDrawing.Click += (sender, e) =>
@@ -1121,7 +1122,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbOptions.DropDownItems.Add(tsmiSwitchToSelectionToolAfterDrawing);
 
-            ToolStripLabeledNumericUpDown tslnudMenuIconSize = new ToolStripLabeledNumericUpDown(Resources.MenuIconSize);
+            ToolStripLabeledNumericUpDown tslnudMenuIconSize = new ToolStripLabeledNumericUpDown(Strings.MenuIconSize);
             tslnudMenuIconSize.Content.Minimum = 16;
             tslnudMenuIconSize.Content.Maximum = 64;
             tslnudMenuIconSize.Content.Increment = 16;
@@ -1140,7 +1141,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (!Form.IsEditorMode)
             {
-                ToolStripMenuItem tsmiLockMenu = new ToolStripMenuItem(Resources.LockMenu);
+                ToolStripMenuItem tsmiLockMenu = new ToolStripMenuItem(Strings.LockMenu);
                 tsmiLockMenu.Checked = Options.MenuLocked;
                 tsmiLockMenu.CheckOnClick = true;
                 tsmiLockMenu.Click += (sender, e) =>
@@ -1152,7 +1153,7 @@ namespace ShareX.ScreenCaptureLib
                 };
                 tsddbOptions.DropDownItems.Add(tsmiLockMenu);
 
-                ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_RememberMenuState);
+                ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_RememberMenuState);
                 tsmiRememberMenuState.Checked = Options.RememberMenuState;
                 tsmiRememberMenuState.CheckOnClick = true;
                 tsmiRememberMenuState.Click += (sender, e) =>
@@ -1165,12 +1166,12 @@ namespace ShareX.ScreenCaptureLib
 
             tsddbOptions.DropDownItems.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem tsmiKeybinds = new ToolStripMenuItem(Resources.OpenKeybindsPage);
+            ToolStripMenuItem tsmiKeybinds = new ToolStripMenuItem(Strings.OpenKeybindsPage);
             tsmiKeybinds.Click += (sender, e) =>
             {
                 if (Form.IsFullscreen)
                 {
-                    if (MessageBox.Show(Form, Resources.ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue,
+                    if (MessageBox.Show(Form, Strings.ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue,
                         "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Form.CloseWindow();

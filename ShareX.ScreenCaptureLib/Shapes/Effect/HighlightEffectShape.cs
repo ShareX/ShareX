@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ScreenCaptureLib.Localization;
 using ShareX.HelpersLib;
-using ShareX.ScreenCaptureLib.Properties;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
@@ -33,7 +33,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.EffectHighlight;
 
-        public override string OverlayText => Resources.Highlight;
+        public override string OverlayText => Strings.Highlight;
 
         public Color HighlightColor { get; set; }
 

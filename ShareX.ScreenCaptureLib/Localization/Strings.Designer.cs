@@ -299,5 +299,398 @@ namespace ShareX.ScreenCaptureLib.Localization {
         public static string ScrollingCaptureWindow_Capture_successful {
             get { return ResourceManager.GetString("ScrollingCaptureWindow_Capture_successful", resourceCulture); }
         }
+        public static string ShapeManager_CreateToolbar_CancelTaskEsc {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_CancelTaskEsc", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_UploadImage {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_UploadImage", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Highlight_color___ {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Highlight_color___", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection", resourceCulture); }
+        }
+        public static string CutOutEffectSize {
+            get { return ResourceManager.GetString("CutOutEffectSize", resourceCulture); }
+        }
+        public static string ImageEffects {
+            get { return ResourceManager.GetString("ImageEffects", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_FlipHorizontal {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_FlipHorizontal", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Multi_region_mode {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Multi_region_mode", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Pixel_size_ {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Pixel_size_", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_ImageSize {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_ImageSize", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_Delete {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_Delete", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter", resourceCulture); }
+        }
+        public static string OpenKeybindsPage {
+            get { return ResourceManager.GetString("OpenKeybindsPage", resourceCulture); }
+        }
+        public static string Duplicate {
+            get { return ResourceManager.GetString("Duplicate", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_Edit {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_Edit", resourceCulture); }
+        }
+        public static string ImageSaved {
+            get { return ResourceManager.GetString("ImageSaved", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_AutoCloseEditorOnTask {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_AutoCloseEditorOnTask", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_Undo {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_Undo", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_Redo {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_Redo", resourceCulture); }
+        }
+        public static string RegionCaptureForm_InitializeComponent_ImageEditor {
+            get { return ResourceManager.GetString("RegionCaptureForm_InitializeComponent_ImageEditor", resourceCulture); }
+        }
+        public static string BaseRegionForm_InitializeComponent_Region_capture {
+            get { return ResourceManager.GetString("BaseRegionForm_InitializeComponent_Region_capture", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Fixed_size_region_mode {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Fixed_size_region_mode", resourceCulture); }
+        }
+        public static string EditorStartupForm_ClipboardDoesNotContainAnImage {
+            get { return ResourceManager.GetString("EditorStartupForm_ClipboardDoesNotContainAnImage", resourceCulture); }
+        }
+        public static string NewLineCtrlEnterOKEnter {
+            get { return ResourceManager.GetString("NewLineCtrlEnterOKEnter", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Capture_monitor {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Capture_monitor", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_SendToBack {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_SendToBack", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Capture_active_monitor {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Capture_active_monitor", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_BringForward {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_BringForward", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_Rotate90CounterClockwise {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_Rotate90CounterClockwise", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_InterpolationMode {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_InterpolationMode", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Width_ {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Width_", resourceCulture); }
+        }
+        public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_ {
+            get { return ResourceManager.GetString("ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_", resourceCulture); }
+        }
+        public static string ShapeManager_CenterPoints {
+            get { return ResourceManager.GetString("ShapeManager_CenterPoints", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Options {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Options", resourceCulture); }
+        }
+        public static string ShapeManager_BorderStyle {
+            get { return ResourceManager.GetString("ShapeManager_BorderStyle", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Capture {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Capture", resourceCulture); }
+        }
+        public static string RectangleRegion_GetAreaText_Area {
+            get { return ResourceManager.GetString("RectangleRegion_GetAreaText_Area", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_OpenImageFile {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_OpenImageFile", resourceCulture); }
+        }
+        public static string Processing {
+            get { return ResourceManager.GetString("Processing", resourceCulture); }
+        }
+        public static string ScreenRecordForm_StartRecording_Waiting___ {
+            get { return ResourceManager.GetString("ScreenRecordForm_StartRecording_Waiting___", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_Rotate90Clockwise {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_Rotate90Clockwise", resourceCulture); }
+        }
+        public static string CloseEsc {
+            get { return ResourceManager.GetString("CloseEsc", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_StartingStepValue {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_StartingStepValue", resourceCulture); }
+        }
+        public static string Highlight {
+            get { return ResourceManager.GetString("Highlight", resourceCulture); }
+        }
+        public static string MagnifyStrength {
+            get { return ResourceManager.GetString("MagnifyStrength", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Corner_radius_ {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Corner_radius_", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_PrintImage {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_PrintImage", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Show_FPS {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_FPS", resourceCulture); }
+        }
+        public static string NewLineEnterOKCtrlEnter {
+            get { return ResourceManager.GetString("NewLineEnterOKCtrlEnter", resourceCulture); }
+        }
+        public static string ShapeManager_CursorType {
+            get { return ResourceManager.GetString("ShapeManager_CursorType", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_DropShadow {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_DropShadow", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Square_shape_magnifier {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Square_shape_magnifier", resourceCulture); }
+        }
+        public static string Resume {
+            get { return ResourceManager.GetString("Resume", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_EditorStartMode {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_EditorStartMode", resourceCulture); }
+        }
+        public static string ImageSavedAs {
+            get { return ResourceManager.GetString("ImageSavedAs", resourceCulture); }
+        }
+        public static string ShapeManager_ArrowHeadDirection {
+            get { return ResourceManager.GetString("ShapeManager_ArrowHeadDirection", resourceCulture); }
+        }
+        public static string ShapeManager_FreehandSmoothing {
+            get { return ResourceManager.GetString("ShapeManager_FreehandSmoothing", resourceCulture); }
+        }
+        public static string ShapeManager_FreehandCurveInterpolation {
+            get { return ResourceManager.GetString("ShapeManager_FreehandCurveInterpolation", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Capture_fullscreen {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Capture_fullscreen", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_CaptureRegions {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_CaptureRegions", resourceCulture); }
+        }
+        public static string RectangleLight_InitializeComponent_Rectangle_capture_light {
+            get { return ResourceManager.GetString("RectangleLight_InitializeComponent_Rectangle_capture_light", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_SaveImage {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_SaveImage", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_NewImage {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_NewImage", resourceCulture); }
+        }
+        public static string Blur {
+            get { return ResourceManager.GetString("Blur", resourceCulture); }
+        }
+        public static string ScreenRecordForm_StartRecording_Encoding___ {
+            get { return ResourceManager.GetString("ScreenRecordForm_StartRecording_Encoding___", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Blur_radius_ {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Blur_radius_", resourceCulture); }
+        }
+        public static string ImageUploading {
+            get { return ResourceManager.GetString("ImageUploading", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_EnableAnimations {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_EnableAnimations", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_SendBackward {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_SendBackward", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Height_ {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Height_", resourceCulture); }
+        }
+        public static string ImageCopied {
+            get { return ResourceManager.GetString("ImageCopied", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Fill_color___ {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Fill_color___", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_SaveImageAs {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_SaveImageAs", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_FontSize {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_FontSize", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_CanvasSize {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_CanvasSize", resourceCulture); }
+        }
+        public static string MenuIconSize {
+            get { return ResourceManager.GetString("MenuIconSize", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_FlipVertical {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_FlipVertical", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_AutoCropImage {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_AutoCropImage", resourceCulture); }
+        }
+        public static string Pixelate {
+            get { return ResourceManager.GetString("Pixelate", resourceCulture); }
+        }
+        public static string LockMenu {
+            get { return ResourceManager.GetString("LockMenu", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_BringToFront {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_BringToFront", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_Rotate180 {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_Rotate180", resourceCulture); }
+        }
+        public static string LightResizeNodes {
+            get { return ResourceManager.GetString("LightResizeNodes", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_LastRegion {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_LastRegion", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_InsertImageFromScreen {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_InsertImageFromScreen", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_DeleteAll {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_DeleteAll", resourceCulture); }
+        }
+        public static string AutoCopyImageToClipboard {
+            get { return ResourceManager.GetString("AutoCopyImageToClipboard", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Border_size_ {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Border_size_", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_AnnotateMenu {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_AnnotateMenu", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_PasteImageText {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_PasteImageText", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_CropImage {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_CropImage", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Border_color___ {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Border_color___", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Show_magnifier {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_magnifier", resourceCulture); }
+        }
+        public static string Pause {
+            get { return ResourceManager.GetString("Pause", resourceCulture); }
+        }
+        public static string RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor {
+            get { return ResourceManager.GetString("RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor", resourceCulture); }
+        }
+        public static string DropShadowColor {
+            get { return ResourceManager.GetString("DropShadowColor", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing", resourceCulture); }
+        }
+        public static string RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent {
+            get { return ResourceManager.GetString("RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Show_position_and_size_info {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_position_and_size_info", resourceCulture); }
+        }
+        public static string ScreenRecordForm_Start {
+            get { return ResourceManager.GetString("ScreenRecordForm_Start", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_StepType {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_StepType", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_CopyImageToClipboard {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_CopyImageToClipboard", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Show_center_crosshair {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_center_crosshair", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Show_screen_wide_crosshair {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_screen_wide_crosshair", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_Image {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_Image", resourceCulture); }
+        }
+        public static string RectangleRegion_GetColorPickerText {
+            get { return ResourceManager.GetString("RectangleRegion_GetColorPickerText", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Magnifier_pixel_count_ {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Magnifier_pixel_count_", resourceCulture); }
+        }
+        public static string ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue {
+            get { return ResourceManager.GetString("ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue", resourceCulture); }
+        }
+        public static string FPSLimit {
+            get { return ResourceManager.GetString("FPSLimit", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_InsertImageFile {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_InsertImageFile", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_ZoomToFitOnOpen {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_ZoomToFitOnOpen", resourceCulture); }
+        }
+        public static string RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging {
+            get { return ResourceManager.GetString("RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_RunAfterCaptureTasks {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_RunAfterCaptureTasks", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_RememberMenuState {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_RememberMenuState", resourceCulture); }
+        }
+        public static string CutOutEffectType {
+            get { return ResourceManager.GetString("CutOutEffectType", resourceCulture); }
+        }
+        public static string ShapeManager_CreateContextMenu_Magnifier_pixel_size_ {
+            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Magnifier_pixel_size_", resourceCulture); }
+        }
+        public static string ShapeManager_CreateToolbar_ToolOptions {
+            get { return ResourceManager.GetString("ShapeManager_CreateToolbar_ToolOptions", resourceCulture); }
+        }
+        public static string ScreenRecordForm_Stop {
+            get { return ResourceManager.GetString("ScreenRecordForm_Stop", resourceCulture); }
+        }
+        public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_ {
+            get { return ResourceManager.GetString("ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_", resourceCulture); }
+        }
+        public static string ImageURL {
+            get { return ResourceManager.GetString("ImageURL", resourceCulture); }
+        }
+        public static string RegionCaptureForm_SaveChangesBeforeClosingEditor {
+            get { return ResourceManager.GetString("RegionCaptureForm_SaveChangesBeforeClosingEditor", resourceCulture); }
+        }
+        public static string CutOutBackgroundColor {
+            get { return ResourceManager.GetString("CutOutBackgroundColor", resourceCulture); }
+        }
+        public static string RulerAngle {
+            get { return ResourceManager.GetString("RulerAngle", resourceCulture); }
+        }
+        public static string RulerPerimeter {
+            get { return ResourceManager.GetString("RulerPerimeter", resourceCulture); }
+        }
+        public static string RulerArea {
+            get { return ResourceManager.GetString("RulerArea", resourceCulture); }
+        }
+        public static string RulerWidth {
+            get { return ResourceManager.GetString("RulerWidth", resourceCulture); }
+        }
+        public static string RulerHeight {
+            get { return ResourceManager.GetString("RulerHeight", resourceCulture); }
+        }
+        public static string RulerDistance {
+            get { return ResourceManager.GetString("RulerDistance", resourceCulture); }
+        }
+        public static string RulerRight {
+            get { return ResourceManager.GetString("RulerRight", resourceCulture); }
+        }
+        public static string RulerBottom {
+            get { return ResourceManager.GetString("RulerBottom", resourceCulture); }
+        }
     }
 }

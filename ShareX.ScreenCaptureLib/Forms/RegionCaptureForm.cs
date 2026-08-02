@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ScreenCaptureLib.Localization;
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
@@ -150,7 +151,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Duration = TimeSpan.FromMilliseconds(5000),
                     FadeOutDuration = TimeSpan.FromMilliseconds(1000),
-                    Text = Resources.RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging
+                    Text = Strings.RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging
                 };
             }
 
@@ -274,7 +275,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsEditorMode)
             {
-                title.AppendFormat("ShareX - {0}", Resources.RegionCaptureForm_InitializeComponent_ImageEditor);
+                title.AppendFormat("ShareX - {0}", Strings.RegionCaptureForm_InitializeComponent_ImageEditor);
 
                 if (Canvas != null)
                 {
@@ -301,7 +302,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                title.AppendFormat("ShareX - {0}", Resources.BaseRegionForm_InitializeComponent_Region_capture);
+                title.AppendFormat("ShareX - {0}", Strings.BaseRegionForm_InitializeComponent_Region_capture);
             }
 
             Text = title.ToString();
@@ -596,8 +597,8 @@ namespace ShareX.ScreenCaptureLib
             if (IsImageModified)
             {
                 Pause();
-                DialogResult dialogResult = MessageBox.Show(this, Resources.RegionCaptureForm_SaveChangesBeforeClosingEditor,
-                    Resources.RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show(this, Strings.RegionCaptureForm_SaveChangesBeforeClosingEditor,
+                    Strings.RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -1223,14 +1224,14 @@ namespace ShareX.ScreenCaptureLib
             else if (Mode == RegionCaptureMode.Ruler)
             {
                 PointF endLocation = new PointF(rect.Right - 1, rect.Bottom - 1);
-                string text = $"X: {rect.X} | Y: {rect.Y} | {Resources.RulerRight}: {endLocation.X} | {Resources.RulerBottom}: {endLocation.Y}\r\n" +
-                    $"{Resources.RulerWidth}: {rect.Width} px | {Resources.RulerHeight}: {rect.Height} px | {Resources.RulerArea}: {rect.Area()} px | {Resources.RulerPerimeter}: {rect.Perimeter()} px\r\n" +
-                    $"{Resources.RulerDistance}: {MathHelpers.Distance(rect.Location, endLocation):0.00} px | {Resources.RulerAngle}: {MathHelpers.LookAtDegree(rect.Location, endLocation):0.00}°";
+                string text = $"X: {rect.X} | Y: {rect.Y} | {Strings.RulerRight}: {endLocation.X} | {Strings.RulerBottom}: {endLocation.Y}\r\n" +
+                    $"{Strings.RulerWidth}: {rect.Width} px | {Strings.RulerHeight}: {rect.Height} px | {Strings.RulerArea}: {rect.Area()} px | {Strings.RulerPerimeter}: {rect.Perimeter()} px\r\n" +
+                    $"{Strings.RulerDistance}: {MathHelpers.Distance(rect.Location, endLocation):0.00} px | {Strings.RulerAngle}: {MathHelpers.LookAtDegree(rect.Location, endLocation):0.00}°";
                 return text;
             }
 
             Rectangle area = rect.Round();
-            return string.Format(Resources.RectangleRegion_GetAreaText_Area, area.X, area.Y, area.Width, area.Height);
+            return string.Format(Strings.RectangleRegion_GetAreaText_Area, area.X, area.Y, area.Width, area.Height);
         }
 
         private string GetInfoText()
@@ -1256,7 +1257,7 @@ namespace ShareX.ScreenCaptureLib
                     return CodeMenuEntryPixelInfo.Parse(Options.CustomInfoText, color, CurrentPosition);
                 }
 
-                return string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color), CurrentPosition.X, CurrentPosition.Y);
+                return string.Format(Strings.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color), CurrentPosition.X, CurrentPosition.Y);
             }
 
             return $"X: {CurrentPosition.X} Y: {CurrentPosition.Y}";
@@ -1640,7 +1641,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     ImageFilePath = imageFilePath;
                     UpdateTitle();
-                    ShapeManager.ShowMenuTooltip(Resources.ImageSaved);
+                    ShapeManager.ShowMenuTooltip(Strings.ImageSaved);
                     ShapeManager.IsImageModified = false;
                 }
             }
@@ -1658,7 +1659,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     ImageFilePath = imageFilePath;
                     UpdateTitle();
-                    ShapeManager.ShowMenuTooltip(Resources.ImageSavedAs);
+                    ShapeManager.ShowMenuTooltip(Strings.ImageSavedAs);
                     ShapeManager.IsImageModified = false;
                 }
             }
@@ -1674,7 +1675,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         CopyImageRequested(bmp);
 
-                        ShapeManager.ShowMenuTooltip(Resources.ImageCopied);
+                        ShapeManager.ShowMenuTooltip(Strings.ImageCopied);
                         ShapeManager.IsImageModified = false;
                     }
                 }
@@ -1696,7 +1697,7 @@ namespace ShareX.ScreenCaptureLib
                 Bitmap bmp = ReceiveImageForTask();
 
                 UploadImageRequested(bmp);
-                ShapeManager.ShowMenuTooltip(Resources.ImageUploading);
+                ShapeManager.ShowMenuTooltip(Strings.ImageUploading);
                 ShapeManager.IsImageModified = false;
             }
         }

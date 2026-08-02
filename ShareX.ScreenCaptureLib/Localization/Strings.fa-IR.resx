@@ -270,4 +270,402 @@
   <data name="ScrollingCaptureWindow_Capture_successful" xml:space="preserve">
     <value>ضبط موفق بود</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
+    <value>انصراف از وظیفه (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
+    <value>آپلود عکس (Ctrl + U)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>Highlight رنگ...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>پس از انتخاب شکل به ابزار ترسیم تغییر کند</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>اندازه جلوه برش:</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>اضافه کردن افکت های عکس...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
+    <value>چرخاندن افقی تصویر</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>Multi ناحیه mode</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>اندازه پیکسل:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>سایز عکس...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
+    <value>تغییرات را اعمال کن و وظیفه را ادامه بده (Enter)</value>
+  </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>باز کردن keybinds web page...</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>تکراری</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>تصویر ذخیرهd</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Auto close ویرایشor on task</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>برگرداندن</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>انجام دوباره</value>
+  </data>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>ویرایشگر عکس</value>
+  </data>
+  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
+    <value>ناحیه ضبط</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>حالت ناحیه با اندازه ثابت</value>
+  </data>
+  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>کلیپ‌بورد does not contain an تصویر.</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>خط جدید: Ctrl + Enter، تأیید: Enter</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>ضبط صفحه نمایش</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>فرستادن به پشت</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
+    <value>ضبط صفحه نمایش جاری</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>آوردن به جلو</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>۹۰ درجه در جهت خلاف عقربه ساعت بچرخان</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+    <value>حالت درون‌یابی:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>پهنا:</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Click to توقف recording.</value>
+  </data>
+  <data name="ShapeManager_CenterPoints" xml:space="preserve">
+    <value>نقاط مرکز:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>سبک حاشیه:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
+    <value>X: {0} Y: {1} W: {2} H: {3}</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
+    <value>بازکردن فایل عکس ...</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>در حال پردازش...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>در انتظار...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>۹۰ درجه در جهت عقربه های ساعت بچرخان</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>بستن (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>مقدار اولین گام:</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>برجسته‌سازی</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>شدت بزرگ‌نمایی:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>شعاع گوشه:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>چاپ عکس ... (Ctrl + P)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>نمایش FPS</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>خط جدید: Enter، تأیید: Ctrl + Enter</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>نوع کرسر:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>حذف سایه عکس</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>ذره‌بین مربعی</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>ادامه</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>ویرایشor شروع mode:</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>تصویر ذخیرهd</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>جهت سر پیکان:</value>
+  </data>
+  <data name="ShapeManager_FreehandSmoothing" xml:space="preserve">
+    <value>هموارسازی:</value>
+  </data>
+  <data name="ShapeManager_FreehandCurveInterpolation" xml:space="preserve">
+    <value>درون‌یابی منحنی</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>ضبط تمام صفحه</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>ناحیه های ضبط</value>
+  </data>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>Rectangle ضبط light</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
+    <value>عکس را ذخیره کن (Ctrl + S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
+    <value>عکس جدید ...</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>محو</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>در حال کدگذاری...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>شدت محوشدگی:</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>تصویر بارگذاریing</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>انیمیشن را فعال کن</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>فرستادن به جلو</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>ارتفاع:</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>تصویر copied</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>پرکردن رنگ ...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
+    <value>عکس را با عنوان ... ذخیره کن (Ctrl + Shift + S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>ادامه دادن وظیفه (کلید space یا راست کلیک)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
+    <value>اندازه فونت:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
+    <value>اندازه بوم...</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>منو icon size:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
+    <value>چرخاندن عمودی تصویر</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
+    <value>عکس را بصورت خودکار برش بده...</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>پیکسلی کردن</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>Lock منو</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>اوردن به جلو</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>۱۸۰ درجه بچرخان</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>استفاده از گره‌های روشن تغییر اندازه</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>ضبط last ناحیه</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
+    <value>وارد کردن عکس از صفحه ...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
+    <value>حذف همه</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Auto کپی تصویر to کلیپ‌بورد</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>اندازه حاشیه:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
+    <value>ویرایشor منو</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
+    <value>چسباندن عکس یا متن</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
+    <value>بریدن عکس ...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>رنگ حاشیه...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>نشان دادن ذره بین</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>مکث</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
+    <value>ShareX - ویرایشگر عکس</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>Drop shadow رنگ...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>پس از ترسیم شکل به ابزار انتخاب تغییر کند</value>
+  </data>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>Rectangle ضبط شفاف</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>اطلاعات اندازه و مکان را نشان بده</value>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>شروع</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>نوع گام:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>کپی کردن تصویر به کلیپ بورد (Ctrl + C)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_center_crosshair" xml:space="preserve">
+    <value>نمایش نشانگر ضربدری مرکز</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>نمایش نشانگر ضربدری کل صفحه</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
+    <value>عکس</value>
+  </data>
+  <data name="RectangleRegion_GetColorPickerText" xml:space="preserve">
+    <value>RGB: {0}, {1}, {2}
+Hex: {3}
+X: {4} Y: {5}</value>
+    <comment>@Invariant</comment>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>تعداد پیکسل ذره‌بین:</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>This پنجره will close before باز کردنing the keybinds web page. Do you want to continue?</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>محدودیت FPS:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
+    <value>فایل عکس را وارد کن....</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Zoom to fit on باز کردن</value>
+  </data>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>Tip: You can pan تصویر by holding mouse middle button and dragging.</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>Run after ضبط tasks (Enter)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>وضعیت منو را به خاطر داشته باش.</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>جلوه برش:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>اندازه پیکسل ذره‌بین:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>گزینه‌های ابزار</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>توقف</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Click to شروع recording.</value>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>تصویر URL</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>There are unذخیرهd changes.
+
+Would you like to ذخیره the changes before closing the ویرایشگر تصویر?</value>
+  </data>
+  <data name="CutOutBackgroundColor" xml:space="preserve">
+    <value>Cut out پس‌زمینه رنگ...</value>
+  </data>
+  <data name="RulerAngle" xml:space="preserve">
+    <value>زاویه</value>
+  </data>
+  <data name="RulerPerimeter" xml:space="preserve">
+    <value>محیط</value>
+  </data>
+  <data name="RulerArea" xml:space="preserve">
+    <value>مساحت</value>
+  </data>
+  <data name="RulerWidth" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="RulerHeight" xml:space="preserve">
+    <value>ارتفاع</value>
+  </data>
+  <data name="RulerDistance" xml:space="preserve">
+    <value>فاصله</value>
+  </data>
+  <data name="RulerRight" xml:space="preserve">
+    <value>راست</value>
+  </data>
+  <data name="RulerBottom" xml:space="preserve">
+    <value>پایین</value>
+  </data>
 </root>

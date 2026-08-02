@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ScreenCaptureLib.Localization;
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
@@ -95,11 +96,11 @@ namespace ShareX.ScreenCaptureLib
             if (!isTransparentBackground)
             {
                 SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-                Text = "ShareX - " + Resources.RectangleLight_InitializeComponent_Rectangle_capture_light;
+                Text = "ShareX - " + Strings.RectangleLight_InitializeComponent_Rectangle_capture_light;
             }
             else
             {
-                Text = "ShareX - " + Resources.RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent;
+                Text = "ShareX - " + Strings.RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent;
             }
             ShowInTaskbar = false;
 #if !DEBUG

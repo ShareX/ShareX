@@ -1,6 +1,6 @@
 # ScreenCaptureLib localization status
 
-ScreenCaptureLib uses the shared `Strings.resx` catalog in this directory for its Avalonia windows. Resource keys are scoped by their owning window.
+ScreenCaptureLib uses the shared `Strings.resx` catalog in this directory for all translatable strings. New resource keys are scoped by their owning view or component; migrated legacy keys retain their existing names.
 
 | Area | Resource prefix | Keys | Status |
 | --- | --- | ---: | --- |
@@ -8,7 +8,7 @@ ScreenCaptureLib uses the shared `Strings.resx` catalog in this directory for it
 | Screen recording toolbar | `ScreenRecordWindow_` | 6 | Complete |
 | Scrolling capture windows | `ScrollingCaptureWindow_` | 27 | Complete |
 
-All 90 keys are translated in all 23 supported cultures. Existing WinForms views retain their form-specific `.resx` catalogs, while the legacy `Properties/Resources.resx` catalog remains responsible for its bitmap/cursor assets and already-localized legacy strings.
+All 221 keys are available in all 23 supported cultures. Existing WinForms views retain their form-specific `.resx` catalogs, while `Properties/Resources.resx` is now limited to bitmap and cursor assets.
 
 Run validation from the repository root:
 

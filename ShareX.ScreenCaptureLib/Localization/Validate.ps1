@@ -79,9 +79,9 @@ function Get-CommandPlaceholders([string]$value)
 $errors = [Collections.Generic.List[string]]::new()
 $default = Read-Resources $defaultPath
 
-if ($default.Count -ne 90)
+if ($default.Count -ne 221)
 {
-    $errors.Add("Expected 90 default keys, found $($default.Count).")
+    $errors.Add("Expected 221 default keys, found $($default.Count).")
 }
 if ($cultureFiles.Count -ne 23)
 {
@@ -121,7 +121,8 @@ foreach ($file in $cultureFiles)
 }
 
 $sourceText = ''
-foreach ($source in Get-ChildItem (Join-Path $projectDirectory 'Presentation') -Recurse -Include '*.axaml','*.cs')
+foreach ($source in Get-ChildItem $projectDirectory -Recurse -File -Include '*.axaml','*.cs' |
+    Where-Object { $_.FullName -notmatch '\\(bin|obj)\\' -and $_.Name -notin @('Resources.Designer.cs', 'Strings.Designer.cs') })
 {
     $sourceText += [IO.File]::ReadAllText($source.FullName)
 }

@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ScreenCaptureLib.Localization;
 using ShareX.HelpersLib;
-using ShareX.ScreenCaptureLib.Properties;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Threading.Tasks;
@@ -65,7 +65,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (drawCache && isEffectCaching)
             {
-                OnDrawOverlay(g, Resources.Processing);
+                OnDrawOverlay(g, Strings.Processing);
             }
             else if (drawCache && cachedEffect != null)
             {
