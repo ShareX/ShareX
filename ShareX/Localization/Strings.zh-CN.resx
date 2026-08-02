@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  上传后: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - 关于</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>版权所有 © 2007–2026 ShareX 团队</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Steam 版本</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Microsoft Store 版本</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>正在检查更新...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>检查更新失败。</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>有更新版本的 ShareX 可用</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX 已是最新版本。</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>链接</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>网站</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>项目页面</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>更新日志</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>隐私政策</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>捐赠</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>团队</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>致谢</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>录制设备</value>
+  </data>
 </root>

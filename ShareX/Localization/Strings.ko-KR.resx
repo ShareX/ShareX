@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  업로드 후: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - 정보</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>저작권 © 2007–2026 ShareX 팀</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Steam 빌드</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Microsoft Store 빌드</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>업데이트 확인 중...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>업데이트 확인에 실패했습니다.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>새 버전의 ShareX를 사용할 수 있습니다</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX가 최신 버전입니다.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>링크</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>웹사이트</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>프로젝트 페이지</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>변경 내역</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>개인정보 처리방침</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>기부</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>팀</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>제작진</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>녹화 장치</value>
+  </data>
 </root>

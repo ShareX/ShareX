@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  Po przesłaniu: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - Informacje</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Copyright © 2007–2026 Zespół ShareX</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Wersja Steam</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Wersja Microsoft Store</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Sprawdzanie aktualizacji...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>Sprawdzanie aktualizacji nie powiodło się.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>Dostępna jest nowsza wersja ShareX</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX jest aktualny.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Odnośniki</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Witryna</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Strona projektu</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Dziennik zmian</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Polityka prywatności</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Darowizna</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Zespół</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>Twórcy</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>Urządzenia nagrywające</value>
+  </data>
 </root>

@@ -200,6 +200,14 @@ $areas = @(
             'Presentation/QuickTaskMenuEditor/QuickTaskMenuEditorWindow.axaml.cs'
         )
     }
+    [pscustomobject]@{
+        Name = 'About'
+        ResourcePrefixes = @('AboutWindow_')
+        SourceFiles = @(
+            'Presentation/About/AboutWindow.axaml'
+            'Presentation/About/AboutWindow.axaml.cs'
+        )
+    }
 )
 
 function Resolve-SourcePath([string]$relativePath)

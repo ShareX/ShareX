@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  Après le téléversement : {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - À propos</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Copyright © 2007–2026 Équipe ShareX</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Version Steam</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Version Microsoft Store</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Recherche de mises à jour...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>Échec de la recherche de mises à jour.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>Une version plus récente de ShareX est disponible</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX est à jour.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Liens</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Site web</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Page du projet</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Journal des modifications</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Politique de confidentialité</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Faire un don</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Équipe</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>Crédits</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>Périphériques d’enregistrement</value>
+  </data>
 </root>

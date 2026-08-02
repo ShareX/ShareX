@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  アップロード後: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - バージョン情報</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Copyright © 2007–2026 ShareX Team</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Steam ビルド</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Microsoft Store ビルド</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>更新を確認しています...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>更新の確認に失敗しました。</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>新しいバージョンの ShareX を利用できます</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX は最新です。</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>リンク</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>ウェブサイト</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>プロジェクトページ</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>変更履歴</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>プライバシーポリシー</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>寄付</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>チーム</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>クレジット</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>録画デバイス</value>
+  </data>
 </root>

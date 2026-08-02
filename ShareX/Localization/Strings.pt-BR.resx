@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  Após o upload: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - Sobre</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Copyright © 2007–2026 Equipe ShareX</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Compilação Steam</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Compilação Microsoft Store</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Verificando atualizações...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>Falha ao verificar atualizações.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>Há uma versão mais recente do ShareX disponível</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>O ShareX está atualizado.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Página do projeto</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Registro de alterações</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Política de privacidade</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Doar</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Equipe</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>Dispositivos de gravação</value>
+  </data>
 </root>

@@ -4407,5 +4407,90 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("QuickTaskMenuEditorWindow_AfterUploadSummary", resourceCulture);
             }
         }
+        public static string AboutWindow_Title {
+            get {
+                return ResourceManager.GetString("AboutWindow_Title", resourceCulture);
+            }
+        }
+        public static string AboutWindow_Copyright {
+            get {
+                return ResourceManager.GetString("AboutWindow_Copyright", resourceCulture);
+            }
+        }
+        public static string AboutWindow_SteamBuild {
+            get {
+                return ResourceManager.GetString("AboutWindow_SteamBuild", resourceCulture);
+            }
+        }
+        public static string AboutWindow_MicrosoftStoreBuild {
+            get {
+                return ResourceManager.GetString("AboutWindow_MicrosoftStoreBuild", resourceCulture);
+            }
+        }
+        public static string AboutWindow_CheckingForUpdates {
+            get {
+                return ResourceManager.GetString("AboutWindow_CheckingForUpdates", resourceCulture);
+            }
+        }
+        public static string AboutWindow_UpdateCheckFailed {
+            get {
+                return ResourceManager.GetString("AboutWindow_UpdateCheckFailed", resourceCulture);
+            }
+        }
+        public static string AboutWindow_NewVersionAvailable {
+            get {
+                return ResourceManager.GetString("AboutWindow_NewVersionAvailable", resourceCulture);
+            }
+        }
+        public static string AboutWindow_UpToDate {
+            get {
+                return ResourceManager.GetString("AboutWindow_UpToDate", resourceCulture);
+            }
+        }
+        public static string AboutWindow_Links {
+            get {
+                return ResourceManager.GetString("AboutWindow_Links", resourceCulture);
+            }
+        }
+        public static string AboutWindow_Website {
+            get {
+                return ResourceManager.GetString("AboutWindow_Website", resourceCulture);
+            }
+        }
+        public static string AboutWindow_ProjectPage {
+            get {
+                return ResourceManager.GetString("AboutWindow_ProjectPage", resourceCulture);
+            }
+        }
+        public static string AboutWindow_Changelog {
+            get {
+                return ResourceManager.GetString("AboutWindow_Changelog", resourceCulture);
+            }
+        }
+        public static string AboutWindow_PrivacyPolicy {
+            get {
+                return ResourceManager.GetString("AboutWindow_PrivacyPolicy", resourceCulture);
+            }
+        }
+        public static string AboutWindow_Donate {
+            get {
+                return ResourceManager.GetString("AboutWindow_Donate", resourceCulture);
+            }
+        }
+        public static string AboutWindow_Team {
+            get {
+                return ResourceManager.GetString("AboutWindow_Team", resourceCulture);
+            }
+        }
+        public static string AboutWindow_Credits {
+            get {
+                return ResourceManager.GetString("AboutWindow_Credits", resourceCulture);
+            }
+        }
+        public static string AboutWindow_RecorderDevices {
+            get {
+                return ResourceManager.GetString("AboutWindow_RecorderDevices", resourceCulture);
+            }
+        }
     }
 }

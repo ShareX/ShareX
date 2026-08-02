@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  Після завантаження: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - Про програму</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Авторські права © 2007–2026 Команда ShareX</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Версія Steam</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Версія Microsoft Store</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Перевірка оновлень...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>Не вдалося перевірити оновлення.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>Доступна новіша версія ShareX</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>Установлено останню версію ShareX.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Посилання</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Вебсайт</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Сторінка проєкту</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Журнал змін</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Політика конфіденційності</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Пожертвувати</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Команда</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>Подяки</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>Пристрої записування</value>
+  </data>
 </root>

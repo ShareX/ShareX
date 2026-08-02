@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  Na het uploaden: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - Info</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Copyright © 2007–2026 ShareX-team</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Steam-versie</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Microsoft Store-versie</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Controleren op updates...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>Controleren op updates is mislukt.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>Er is een nieuwere versie van ShareX beschikbaar</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX is bijgewerkt.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Projectpagina</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Wijzigingslogboek</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Privacybeleid</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Doneren</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>Dankbetuigingen</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>Opnameapparaten</value>
+  </data>
 </root>

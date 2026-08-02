@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  După încărcare: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - Despre</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Drepturi de autor © 2007–2026 Echipa ShareX</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Versiune Steam</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Versiune Microsoft Store</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Se caută actualizări...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>Verificarea actualizărilor a eșuat.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>Este disponibilă o versiune mai nouă de ShareX</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX este actualizat.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Legături</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Site web</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Pagina proiectului</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Jurnal de modificări</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Politica de confidențialitate</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Donează</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Echipă</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>Mulțumiri</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>Dispozitive de înregistrare</value>
+  </data>
 </root>

@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  Feltöltés után: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - Névjegy</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Szerzői jog © 2007–2026 ShareX csapat</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Steam-változat</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Microsoft Store-változat</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Frissítések keresése...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>A frissítések keresése sikertelen.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>A ShareX újabb verziója érhető el</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>A ShareX naprakész.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Hivatkozások</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Webhely</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Projektoldal</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Változásnapló</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Adatvédelmi szabályzat</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Adományozás</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Csapat</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>Közreműködők</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>Rögzítőeszközök</value>
+  </data>
 </root>

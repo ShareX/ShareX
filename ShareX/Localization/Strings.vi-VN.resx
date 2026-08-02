@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  Sau khi tải lên: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - Giới thiệu</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Bản quyền © 2007–2026 Nhóm ShareX</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Bản dựng Steam</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Bản dựng Microsoft Store</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Đang kiểm tra bản cập nhật...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>Kiểm tra bản cập nhật thất bại.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>Có phiên bản ShareX mới hơn</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX đã được cập nhật.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Liên kết</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Trang web</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Trang dự án</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Nhật ký thay đổi</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Chính sách riêng tư</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Quyên góp</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Nhóm</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>Ghi nhận</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>Thiết bị ghi</value>
+  </data>
 </root>

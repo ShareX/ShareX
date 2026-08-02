@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  Setelah mengunggah: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - Tentang</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Hak Cipta © 2007–2026 Tim ShareX</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Versi Steam</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Versi Microsoft Store</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Memeriksa pembaruan...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>Pemeriksaan pembaruan gagal.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>Versi ShareX yang lebih baru tersedia</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX sudah terbaru.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Tautan</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Situs web</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Halaman proyek</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Catatan perubahan</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Kebijakan privasi</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Donasi</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Tim</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>Kredit</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>Perangkat perekam</value>
+  </data>
 </root>

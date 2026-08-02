@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  پس از بارگذاری: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - درباره</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>حق نشر © ۲۰۰۷–۲۰۲۶ تیم ShareX</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>نسخه Steam</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>نسخه Microsoft Store</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>در حال بررسی به‌روزرسانی‌ها...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>بررسی به‌روزرسانی ناموفق بود.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>نسخه جدیدتری از ShareX موجود است</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX به‌روز است.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>پیوندها</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>وب‌سایت</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>صفحه پروژه</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>گزارش تغییرات</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>سیاست حفظ حریم خصوصی</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>اهدا</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>تیم</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>قدردانی</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>دستگاه‌های ضبط</value>
+  </data>
 </root>

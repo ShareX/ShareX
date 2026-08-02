@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  بعد الرفع: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - حول</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>حقوق النشر © 2007–2026 فريق ShareX</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>إصدار Steam</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>إصدار Microsoft Store</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>جارٍ التحقق من التحديثات...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>فشل التحقق من التحديثات.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>يتوفر إصدار أحدث من ShareX</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX محدّث.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>الروابط</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>الموقع الإلكتروني</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>صفحة المشروع</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>سجل التغييرات</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>سياسة الخصوصية</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>تبرع</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>الفريق</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>الشكر والتقدير</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>أجهزة التسجيل</value>
+  </data>
 </root>

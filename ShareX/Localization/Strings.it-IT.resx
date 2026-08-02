@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  Dopo il caricamento: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - Informazioni</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Copyright © 2007–2026 Team ShareX</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Versione Steam</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Versione Microsoft Store</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Ricerca aggiornamenti...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>Controllo degli aggiornamenti non riuscito.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>È disponibile una versione più recente di ShareX</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX è aggiornato.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Collegamenti</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Sito web</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Pagina del progetto</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Registro modifiche</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Informativa sulla privacy</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Dona</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>Riconoscimenti</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>Dispositivi di registrazione</value>
+  </data>
 </root>

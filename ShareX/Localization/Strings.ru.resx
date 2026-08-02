@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  После загрузки: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - О программе</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Авторские права © 2007–2026 Команда ShareX</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Версия Steam</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Версия Microsoft Store</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Проверка обновлений...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>Не удалось проверить обновления.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>Доступна более новая версия ShareX</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>Установлена последняя версия ShareX.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Ссылки</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Веб-сайт</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Страница проекта</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Журнал изменений</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Политика конфиденциальности</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Пожертвовать</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Команда</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>Благодарности</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>Устройства записи</value>
+  </data>
 </root>

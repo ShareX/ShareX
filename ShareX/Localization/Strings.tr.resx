@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  Yüklemeden sonra: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - Hakkında</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Telif hakkı © 2007–2026 ShareX Ekibi</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Steam derlemesi</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Microsoft Store derlemesi</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Güncellemeler denetleniyor...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>Güncelleme denetimi başarısız oldu.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>ShareX&apos;in daha yeni bir sürümü kullanılabilir</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX güncel.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Bağlantılar</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Web sitesi</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Proje sayfası</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Değişiklik günlüğü</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Gizlilik ilkesi</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Bağış yap</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Ekip</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>Katkıda bulunanlar</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>Kayıt aygıtları</value>
+  </data>
 </root>

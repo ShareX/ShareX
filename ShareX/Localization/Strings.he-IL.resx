@@ -2326,4 +2326,55 @@
   <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
     <value>{0}  •  לאחר ההעלאה: {1}</value>
   </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - אודות</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>זכויות יוצרים © 2007–2026 צוות ShareX</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>גרסת Steam</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>גרסת Microsoft Store</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>בודק עדכונים...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>בדיקת העדכונים נכשלה.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>זמינה גרסה חדשה יותר של ShareX</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX מעודכן.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>קישורים</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>אתר אינטרנט</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>דף הפרויקט</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>יומן שינויים</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>מדיניות פרטיות</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>תרומה</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>צוות</value>
+  </data>
+  <data name="AboutWindow_Credits" xml:space="preserve">
+    <value>תודות</value>
+  </data>
+  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
+    <value>התקני הקלטה</value>
+  </data>
 </root>
