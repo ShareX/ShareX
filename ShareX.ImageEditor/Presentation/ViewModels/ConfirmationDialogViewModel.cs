@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -25,6 +25,7 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.ImageEditor.Localization;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
 {
@@ -38,11 +39,11 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         public IRelayCommand CancelCommand { get; }
 
         public ConfirmationDialogViewModel(Action onYes, Action onNo, Action onCancel,
-            string title = "Exit Confirmation",
-            string message = "There are unsaved changes.\n\nWould you like to save the changes before closing the image editor?")
+            string? title = null,
+            string? message = null)
         {
-            Title = title;
-            Message = message;
+            Title = title ?? Strings.ConfirmationDialogView_Title;
+            Message = message ?? Strings.ConfirmationDialogView_Message;
             YesCommand = new RelayCommand(onYes);
             NoCommand = new RelayCommand(onNo);
             CancelCommand = new RelayCommand(onCancel);

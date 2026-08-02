@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>  <data name="ConfirmationDialogView_Title" xml:space="preserve">
+    <value>종료 확인</value>
+  </data>
+  <data name="ConfirmationDialogView_Message" xml:space="preserve">
+    <value>저장하지 않은 변경 사항이 있습니다.
+
+이미지 편집기를 닫기 전에 변경 사항을 저장하시겠습니까?</value>
+  </data>
+  <data name="ConfirmationDialogView_Yes" xml:space="preserve">
+    <value>예</value>
+  </data>
+  <data name="ConfirmationDialogView_No" xml:space="preserve">
+    <value>아니요</value>
+  </data>
+  <data name="ConfirmationDialogView_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="NewImageDialogView_Title" xml:space="preserve">
+    <value>새 이미지</value>
+  </data>
+  <data name="NewImageDialogView_Width" xml:space="preserve">
+    <value>너비:</value>
+  </data>
+  <data name="NewImageDialogView_Pixels" xml:space="preserve">
+    <value>픽셀</value>
+  </data>
+  <data name="NewImageDialogView_Height" xml:space="preserve">
+    <value>높이:</value>
+  </data>
+  <data name="NewImageDialogView_Background" xml:space="preserve">
+    <value>배경:</value>
+  </data>
+  <data name="NewImageDialogView_Transparent" xml:space="preserve">
+    <value>투명</value>
+  </data>
+  <data name="NewImageDialogView_SolidColor" xml:space="preserve">
+    <value>단색</value>
+  </data>
+  <data name="NewImageDialogView_OK" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="NewImageDialogView_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="StartScreenDialogView_Title" xml:space="preserve">
+    <value>시작 화면</value>
+  </data>
+  <data name="StartScreenDialogView_CreateNewImage" xml:space="preserve">
+    <value>새 이미지 만들기...</value>
+  </data>
+  <data name="StartScreenDialogView_OpenImageFile" xml:space="preserve">
+    <value>이미지 파일 열기...</value>
+  </data>
+  <data name="StartScreenDialogView_LoadImageFromClipboard" xml:space="preserve">
+    <value>클립보드에서 이미지 불러오기</value>
+  </data>
+  <data name="StartScreenDialogView_LoadImageFromURL" xml:space="preserve">
+    <value>URL에서 이미지 불러오기...</value>
+  </data>
+  <data name="StartScreenDialogView_Load" xml:space="preserve">
+    <value>불러오기</value>
+  </data>
+  <data name="StartScreenDialogView_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="StartScreenDialogView_Exit" xml:space="preserve">
+    <value>종료</value>
+  </data>
+  <data name="StartScreenDialogView_RecentFiles" xml:space="preserve">
+    <value>최근 파일</value>
+  </data>
+  <data name="StartScreenDialogView_NoRecentImageFiles" xml:space="preserve">
+    <value>최근 이미지 파일이 없습니다.</value>
+  </data>
+  <data name="StartScreenDialogView_InvalidURL" xml:space="preserve">
+    <value>올바른 HTTP 또는 HTTPS URL을 입력하세요.</value>
+  </data>
+</root>

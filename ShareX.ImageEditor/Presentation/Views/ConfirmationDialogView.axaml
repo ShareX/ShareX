@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:ShareX.ImageEditor.Presentation.ViewModels"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="200"
              x:Class="ShareX.ImageEditor.Presentation.Views.ConfirmationDialogView"
              x:DataType="vm:ConfirmationDialogViewModel">
@@ -35,9 +36,9 @@
                     BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="0,1,0,0"
                     Padding="10">
                 <StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right">
-                    <Button x:Name="YesButton" Padding="20,0" Content="Yes" Command="{Binding YesCommand}" HorizontalContentAlignment="Center"/>
-                    <Button Padding="20,0" Content="No" Command="{Binding NoCommand}" HorizontalContentAlignment="Center"/>
-                    <Button Padding="20,0" Content="Cancel" Command="{Binding CancelCommand}" HorizontalContentAlignment="Center"/>
+                    <Button x:Name="YesButton" Padding="20,0" Content="{x:Static res:Strings.ConfirmationDialogView_Yes}" Command="{Binding YesCommand}" HorizontalContentAlignment="Center"/>
+                    <Button Padding="20,0" Content="{x:Static res:Strings.ConfirmationDialogView_No}" Command="{Binding NoCommand}" HorizontalContentAlignment="Center"/>
+                    <Button Padding="20,0" Content="{x:Static res:Strings.ConfirmationDialogView_Cancel}" Command="{Binding CancelCommand}" HorizontalContentAlignment="Center"/>
                 </StackPanel>
             </Border>
         </Grid>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>  <data name="ConfirmationDialogView_Title" xml:space="preserve">
+    <value>Confirmare ieșire</value>
+  </data>
+  <data name="ConfirmationDialogView_Message" xml:space="preserve">
+    <value>Există modificări nesalvate.
+
+Doriți să salvați modificările înainte de a închide editorul de imagini?</value>
+  </data>
+  <data name="ConfirmationDialogView_Yes" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="ConfirmationDialogView_No" xml:space="preserve">
+    <value>Nu</value>
+  </data>
+  <data name="ConfirmationDialogView_Cancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="NewImageDialogView_Title" xml:space="preserve">
+    <value>Imagine nouă</value>
+  </data>
+  <data name="NewImageDialogView_Width" xml:space="preserve">
+    <value>Lățime:</value>
+  </data>
+  <data name="NewImageDialogView_Pixels" xml:space="preserve">
+    <value>pixeli</value>
+  </data>
+  <data name="NewImageDialogView_Height" xml:space="preserve">
+    <value>Înălțime:</value>
+  </data>
+  <data name="NewImageDialogView_Background" xml:space="preserve">
+    <value>Fundal:</value>
+  </data>
+  <data name="NewImageDialogView_Transparent" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="NewImageDialogView_SolidColor" xml:space="preserve">
+    <value>Culoare uniformă</value>
+  </data>
+  <data name="NewImageDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="NewImageDialogView_Cancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="StartScreenDialogView_Title" xml:space="preserve">
+    <value>Ecran de pornire</value>
+  </data>
+  <data name="StartScreenDialogView_CreateNewImage" xml:space="preserve">
+    <value>Creați o imagine nouă...</value>
+  </data>
+  <data name="StartScreenDialogView_OpenImageFile" xml:space="preserve">
+    <value>Deschideți un fișier imagine...</value>
+  </data>
+  <data name="StartScreenDialogView_LoadImageFromClipboard" xml:space="preserve">
+    <value>Încărcați imaginea din clipboard</value>
+  </data>
+  <data name="StartScreenDialogView_LoadImageFromURL" xml:space="preserve">
+    <value>Încărcați imaginea din URL...</value>
+  </data>
+  <data name="StartScreenDialogView_Load" xml:space="preserve">
+    <value>Încărcare</value>
+  </data>
+  <data name="StartScreenDialogView_Cancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="StartScreenDialogView_Exit" xml:space="preserve">
+    <value>Ieșire</value>
+  </data>
+  <data name="StartScreenDialogView_RecentFiles" xml:space="preserve">
+    <value>Fișiere recente</value>
+  </data>
+  <data name="StartScreenDialogView_NoRecentImageFiles" xml:space="preserve">
+    <value>Nu există încă fișiere imagine recente.</value>
+  </data>
+  <data name="StartScreenDialogView_InvalidURL" xml:space="preserve">
+    <value>Introduceți un URL HTTP sau HTTPS valid.</value>
+  </data>
+</root>

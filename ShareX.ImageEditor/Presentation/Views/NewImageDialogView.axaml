@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:ShareX.ImageEditor.Presentation.ViewModels"
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              mc:Ignorable="d" d:DesignWidth="340" d:DesignHeight="300"
              x:Class="ShareX.ImageEditor.Presentation.Views.NewImageDialogView"
              x:DataType="vm:NewImageDialogViewModel">
@@ -20,44 +21,44 @@
             <Border Grid.Row="0" Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                     BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="0,0,0,1"
                     Padding="14,8">
-                <TextBlock Text="New Image" FontSize="15" VerticalAlignment="Center"/>
+                <TextBlock Text="{x:Static res:Strings.NewImageDialogView_Title}" FontSize="15" VerticalAlignment="Center"/>
             </Border>
 
             <!-- Content -->
             <StackPanel Grid.Row="1" Margin="20" Spacing="12">
                 <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto" RowSpacing="8" ColumnSpacing="8">
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Width:" VerticalAlignment="Center" FontWeight="Normal"/>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static res:Strings.NewImageDialogView_Width}" VerticalAlignment="Center" FontWeight="Normal"/>
                     <NumericUpDown Grid.Row="0" Grid.Column="1"
                                    Value="{Binding Width}"
                                    Minimum="1" Maximum="10000"
                                    Increment="1"
                                    FormatString="0"
                                    HorizontalAlignment="Stretch"/>
-                    <TextBlock Grid.Row="0" Grid.Column="2" Text="pixels" VerticalAlignment="Center" FontWeight="Normal"
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="{x:Static res:Strings.NewImageDialogView_Pixels}" VerticalAlignment="Center" FontWeight="Normal"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Height:" VerticalAlignment="Center" FontWeight="Normal"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static res:Strings.NewImageDialogView_Height}" VerticalAlignment="Center" FontWeight="Normal"/>
                     <NumericUpDown Grid.Row="1" Grid.Column="1"
                                    Value="{Binding Height}"
                                    Minimum="1" Maximum="10000"
                                    Increment="1"
                                    FormatString="0"
                                    HorizontalAlignment="Stretch"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="pixels" VerticalAlignment="Center" FontWeight="Normal"
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="{x:Static res:Strings.NewImageDialogView_Pixels}" VerticalAlignment="Center" FontWeight="Normal"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                 </Grid>
 
                 <StackPanel Spacing="8">
-                    <TextBlock Text="Background:" FontWeight="Normal"/>
+                    <TextBlock Text="{x:Static res:Strings.NewImageDialogView_Background}" FontWeight="Normal"/>
                     <StackPanel Orientation="Horizontal" Spacing="16">
                         <RadioButton GroupName="BackgroundMode"
                                      IsChecked="{Binding Transparent, Mode=TwoWay}">
-                            <TextBlock Text="Transparent" FontWeight="Normal"/>
+                            <TextBlock Text="{x:Static res:Strings.NewImageDialogView_Transparent}" FontWeight="Normal"/>
                         </RadioButton>
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <RadioButton GroupName="BackgroundMode"
                                          IsChecked="{Binding IsSolidBackground, Mode=TwoWay}">
-                                <TextBlock Text="Solid color" FontWeight="Normal"/>
+                                <TextBlock Text="{x:Static res:Strings.NewImageDialogView_SolidColor}" FontWeight="Normal"/>
                             </RadioButton>
                             <controls:ColorPickerDropdown x:Name="BackgroundColorPicker"
                                                         SelectedColorValue="{Binding BackgroundColor, Mode=TwoWay}"
@@ -75,8 +76,8 @@
                     BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="0,1,0,0"
                     Padding="10">
                 <StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right">
-                    <Button Padding="20,0" Content="OK" Command="{Binding OkCommand}" HorizontalContentAlignment="Center"/>
-                    <Button Padding="20,0" Content="Cancel" Command="{Binding CancelCommand}" HorizontalContentAlignment="Center"/>
+                    <Button Padding="20,0" Content="{x:Static res:Strings.NewImageDialogView_OK}" Command="{Binding OkCommand}" HorizontalContentAlignment="Center"/>
+                    <Button Padding="20,0" Content="{x:Static res:Strings.NewImageDialogView_Cancel}" Command="{Binding CancelCommand}" HorizontalContentAlignment="Center"/>
                 </StackPanel>
             </Border>
         </Grid>

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:ShareX.ImageEditor.Presentation.ViewModels"
              xmlns:theming="clr-namespace:ShareX.AvaloniaUI.Theming;assembly=ShareX.Avalonia"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              mc:Ignorable="d" d:DesignWidth="750" d:DesignHeight="500"
              x:Class="ShareX.ImageEditor.Presentation.Views.StartScreenDialogView"
              x:DataType="vm:StartScreenDialogViewModel">
@@ -76,7 +77,7 @@
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontSize="18" FontWeight="Normal"
                                        VerticalAlignment="Center"/>
-                            <TextBlock Text="Create new image..." FontWeight="Normal" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static res:Strings.StartScreenDialogView_CreateNewImage}" FontWeight="Normal" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
 
@@ -88,7 +89,7 @@
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontSize="18" FontWeight="Normal"
                                        VerticalAlignment="Center"/>
-                            <TextBlock Text="Open image file..." FontWeight="Normal" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static res:Strings.StartScreenDialogView_OpenImageFile}" FontWeight="Normal" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
 
@@ -100,7 +101,7 @@
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontSize="18" FontWeight="Normal"
                                        VerticalAlignment="Center"/>
-                            <TextBlock Text="Load image from clipboard" FontWeight="Normal" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static res:Strings.StartScreenDialogView_LoadImageFromClipboard}" FontWeight="Normal" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
 
@@ -112,7 +113,7 @@
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontSize="18" FontWeight="Normal"
                                        VerticalAlignment="Center"/>
-                            <TextBlock Text="Load image from URL..." FontWeight="Normal" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static res:Strings.StartScreenDialogView_LoadImageFromURL}" FontWeight="Normal" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
 
@@ -129,11 +130,11 @@
                                          Height="4"/>
                             <StackPanel Orientation="Horizontal" Spacing="6" HorizontalAlignment="Right">
                                 <Button
-                                        Content="Load"
+                                        Content="{x:Static res:Strings.StartScreenDialogView_Load}"
                                         Command="{Binding SubmitUrlCommand}"
                                         Padding="18,0"/>
                                 <Button
-                                        Content="Cancel"
+                                        Content="{x:Static res:Strings.StartScreenDialogView_Cancel}"
                                         Command="{Binding CancelUrlCommand}"
                                         Padding="18,0"/>
                             </StackPanel>
@@ -148,7 +149,7 @@
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontSize="18" FontWeight="Normal"
                                        VerticalAlignment="Center"/>
-                            <TextBlock Text="Exit" FontWeight="Normal" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static res:Strings.StartScreenDialogView_Exit}" FontWeight="Normal" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -166,7 +167,7 @@
                                            FontWeight="Normal"
                                            VerticalAlignment="Center"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
-                                <TextBlock Text="Recent files"
+                                <TextBlock Text="{x:Static res:Strings.StartScreenDialogView_RecentFiles}"
                                            FontSize="12"
                                            FontWeight="Normal"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
@@ -182,7 +183,7 @@
                                         BorderThickness="1"
                                         CornerRadius="4"
                                         Padding="12">
-                                    <TextBlock Text="No recent image files yet."
+                                    <TextBlock Text="{x:Static res:Strings.StartScreenDialogView_NoRecentImageFiles}"
                                                FontWeight="Normal"
                                                TextWrapping="Wrap"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>

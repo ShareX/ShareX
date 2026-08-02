@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -25,13 +25,14 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.ImageEditor.Localization;
 using System.Collections.ObjectModel;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
 {
     public partial class StartScreenDialogViewModel : ObservableObject
     {
-        public string Title => "Start Screen";
+        public string Title => Strings.StartScreenDialogView_Title;
 
         public ObservableCollection<string> RecentFiles { get; }
 
@@ -181,7 +182,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             if (!Uri.TryCreate(trimmedUrl, UriKind.Absolute, out var uri) ||
                 (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
             {
-                ShowStatus("Please enter a valid HTTP or HTTPS URL.");
+                ShowStatus(Strings.StartScreenDialogView_InvalidURL);
                 return;
             }
 
