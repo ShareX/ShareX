@@ -2,12 +2,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:localization="using:ShareX.ScreenCaptureLib.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="940"
         d:DesignHeight="720"
         x:Class="ShareX.ScreenCaptureLib.FFmpegOptionsWindow"
-        Title="ShareX - Screen recording options"
+        Title="{x:Static localization:Strings.FFmpegOptionsWindow_Title}"
         Width="940"
         Height="720"
         MinWidth="760"
@@ -112,19 +113,19 @@
                                    VerticalAlignment="Center"/>
                     </Border>
                     <StackPanel Grid.Column="1" Spacing="3" VerticalAlignment="Center">
-                        <TextBlock Classes="page-title" Text="Screen recording"/>
+                        <TextBlock Classes="page-title" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Screen_recording}"/>
                         <TextBlock Classes="page-description"
-                                   Text="Choose what to capture and how FFmpeg should encode it."/>
+                                   Text="{x:Static localization:Strings.FFmpegOptionsWindow_Description}"/>
                     </StackPanel>
                     <Grid Grid.Column="2" VerticalAlignment="Center">
                         <Grid x:Name="NormalFooterPanel">
                             <Button x:Name="ResetOptionsButton"
-                                    ToolTip.Tip="Reset encoding options">
+                                    ToolTip.Tip="{x:Static localization:Strings.FFmpegOptionsWindow_Reset_encoding_options}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
                                     <TextBlock Classes="icon"
                                                Text="{x:Static theming:LucideIcons.rotate_ccw}"
                                                FontSize="15"/>
-                                    <TextBlock Text="Reset options"/>
+                                    <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Reset_options}"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -134,16 +135,16 @@
                               ColumnSpacing="8"
                               IsVisible="False">
                             <TextBlock Grid.Column="0"
-                                       Text="Reset all options?"
+                                       Text="{x:Static localization:Strings.FFmpegOptionsWindow_Reset_all_options}"
                                        FontWeight="SemiBold"
                                        VerticalAlignment="Center"/>
                             <Button x:Name="CancelResetButton"
                                     Grid.Column="1"
-                                    Content="Cancel"/>
+                                    Content="{x:Static localization:Strings.FFmpegOptionsWindow_Cancel}"/>
                             <Button x:Name="ConfirmResetButton"
                                     Grid.Column="2"
                                     Classes="primary"
-                                    Content="Reset"/>
+                                    Content="{x:Static localization:Strings.FFmpegOptionsWindow_Reset}"/>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -168,7 +169,7 @@
                                 <TextBlock Classes="icon"
                                            Text="{x:Static theming:LucideIcons.monitor}"
                                            FontSize="15"/>
-                                <TextBlock Text="Sources"/>
+                                <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Sources}"/>
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem>
@@ -176,7 +177,7 @@
                                 <TextBlock Classes="icon"
                                            Text="{x:Static theming:LucideIcons.video}"
                                            FontSize="15"/>
-                                <TextBlock Text="Video"/>
+                                <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Video}"/>
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem>
@@ -184,7 +185,7 @@
                                 <TextBlock Classes="icon"
                                            Text="{x:Static theming:LucideIcons.audio_lines}"
                                            FontSize="15"/>
-                                <TextBlock Text="Audio"/>
+                                <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Audio}"/>
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem>
@@ -192,7 +193,7 @@
                                 <TextBlock Classes="icon"
                                            Text="{x:Static theming:LucideIcons.terminal}"
                                            FontSize="15"/>
-                                <TextBlock Text="Advanced"/>
+                                <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Advanced}"/>
                             </StackPanel>
                         </ListBoxItem>
                     </ListBox>
@@ -204,18 +205,18 @@
                         <StackPanel Spacing="12" Margin="2">
                             <Border Classes="section-card">
                                 <StackPanel Spacing="14">
-                                    <TextBlock Classes="section-title" Text="FFmpeg executable"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.FFmpegOptionsWindow_FFmpeg_executable}"/>
                                     <CheckBox x:Name="UseCustomPathCheckBox">
-                                        <TextBlock Text="Use a custom FFmpeg path" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Use_custom_path}" FontWeight="Normal"/>
                                     </CheckBox>
                                     <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
                                         <TextBox x:Name="FFmpegPathTextBox"
                                                  Grid.Column="0"
-                                                 PlaceholderText="Path to ffmpeg.exe"/>
+                                                 PlaceholderText="{x:Static localization:Strings.FFmpegOptionsWindow_Path_to_ffmpeg}"/>
                                         <Button x:Name="BrowseFFmpegButton"
                                                 Grid.Column="1"
                                                 Classes="icon-button"
-                                                ToolTip.Tip="Browse for ffmpeg.exe">
+                                                ToolTip.Tip="{x:Static localization:Strings.FFmpegOptionsWindow_Browse_for_ffmpeg}">
                                             <TextBlock Classes="icon"
                                                        Text="{x:Static theming:LucideIcons.folder_open}"
                                                        FontSize="16"/>
@@ -229,7 +230,7 @@
                                     <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
                                         <TextBlock Grid.Column="0"
                                                    Classes="section-title"
-                                                   Text="Capture sources"
+                                                   Text="{x:Static localization:Strings.FFmpegOptionsWindow_Capture_sources}"
                                                    VerticalAlignment="Center"/>
                                         <Button x:Name="RefreshDevicesButton"
                                                 Grid.Column="1"
@@ -238,23 +239,23 @@
                                                 <TextBlock Classes="icon"
                                                            Text="{x:Static theming:LucideIcons.refresh_cw}"
                                                            FontSize="15"/>
-                                                <TextBlock Text="Refresh devices"/>
+                                                <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Refresh_devices}"/>
                                             </StackPanel>
                                         </Button>
                                     </Grid>
 
                                     <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
                                         <StackPanel Grid.Column="0">
-                                            <TextBlock Classes="field-label" Text="Video source"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Video_source}"/>
                                             <ComboBox x:Name="VideoSourceComboBox"
                                                       Classes="field"
-                                                      PlaceholderText="Choose a video source"/>
+                                                      PlaceholderText="{x:Static localization:Strings.FFmpegOptionsWindow_Choose_video_source}"/>
                                         </StackPanel>
                                         <StackPanel Grid.Column="1">
-                                            <TextBlock Classes="field-label" Text="Audio source"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Audio_source}"/>
                                             <ComboBox x:Name="AudioSourceComboBox"
                                                       Classes="field"
-                                                      PlaceholderText="Choose an audio source"/>
+                                                      PlaceholderText="{x:Static localization:Strings.FFmpegOptionsWindow_Choose_audio_source}"/>
                                         </StackPanel>
                                     </Grid>
 
@@ -268,11 +269,11 @@
                                             <TextBlock x:Name="DeviceStatusTextBlock"
                                                        Grid.Column="1"
                                                        Classes="hint"
-                                                       Text="Looking for capture devices..."
+                                                       Text="{x:Static localization:Strings.FFmpegOptionsWindow_Looking_for_devices}"
                                                        VerticalAlignment="Center"/>
                                             <Button x:Name="DownloadRecorderDevicesButton"
                                                     Grid.Column="2"
-                                                    Content="Get recorder devices"
+                                                    Content="{x:Static localization:Strings.FFmpegOptionsWindow_Get_recorder_devices}"
                                                     VerticalAlignment="Center"/>
                                         </Grid>
                                     </Border>
@@ -289,7 +290,7 @@
                               Margin="2">
                             <Border Grid.Column="0" Classes="section-card">
                                 <StackPanel Spacing="12">
-                                    <TextBlock Classes="section-title" Text="Video encoder"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Video_encoder}"/>
                                     <ComboBox x:Name="VideoCodecComboBox" Classes="field"/>
                                     <Border Classes="info-card">
                                         <StackPanel Spacing="4">
@@ -305,13 +306,13 @@
 
                             <Border Grid.Column="1" Classes="section-card">
                                 <StackPanel Spacing="14">
-                                    <TextBlock Classes="section-title" Text="Encoder settings"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Encoder_settings}"/>
 
                                     <StackPanel x:Name="X264SettingsPanel" Spacing="12">
                                         <StackPanel>
-                                            <TextBlock Classes="field-label" Text="Preset"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Preset}"/>
                                             <ComboBox x:Name="X264PresetComboBox" Classes="field"
-                                                      ToolTip.Tip="Faster presets encode more reliably in real time but produce larger files."/>
+                                                      ToolTip.Tip="{x:Static localization:Strings.FFmpegOptionsWindow_Faster_presets_hint}"/>
                                         </StackPanel>
                                         <Border x:Name="X264PresetWarningBorder"
                                                 Classes="info-card"
@@ -322,14 +323,14 @@
                                                            Foreground="Goldenrod"/>
                                                 <TextBlock Grid.Column="1"
                                                            Classes="hint"
-                                                           Text="Slow presets can cause dropped frames during screen recording. Fast or faster is recommended."/>
+                                                           Text="{x:Static localization:Strings.FFmpegOptionsWindow_Slow_presets_warning}"/>
                                             </Grid>
                                         </Border>
                                         <CheckBox x:Name="UseX264BitrateCheckBox">
-                                            <TextBlock Text="Use a target bitrate instead of constant quality" FontWeight="Normal"/>
+                                            <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Use_target_bitrate}" FontWeight="Normal"/>
                                         </CheckBox>
                                         <StackPanel x:Name="X264QualityPanel">
-                                            <TextBlock Classes="field-label" Text="Constant Rate Factor (CRF)"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Constant_rate_factor}"/>
                                             <NumericUpDown x:Name="X264CrfNumericUpDown"
                                                            Classes="number"
                                                            Minimum="0"
@@ -338,10 +339,10 @@
                                                            FormatString="0"/>
                                             <TextBlock Classes="hint"
                                                        Margin="0,6,0,0"
-                                                       Text="Lower values improve quality and increase file size. 0 is lossless; 28 is the ShareX default."/>
+                                                       Text="{x:Static localization:Strings.FFmpegOptionsWindow_CRF_hint}"/>
                                         </StackPanel>
                                         <StackPanel x:Name="X264BitratePanel">
-                                            <TextBlock Classes="field-label" Text="Target bitrate (kbps)"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Target_bitrate}"/>
                                             <NumericUpDown x:Name="X264BitrateNumericUpDown"
                                                            Classes="number"
                                                            Minimum="100"
@@ -352,7 +353,7 @@
                                     </StackPanel>
 
                                     <StackPanel x:Name="VpxSettingsPanel" Spacing="8">
-                                        <TextBlock Classes="field-label" Text="Target bitrate (kbps)"/>
+                                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Target_bitrate}"/>
                                         <NumericUpDown x:Name="VpxBitrateNumericUpDown"
                                                        Classes="number"
                                                        Minimum="100"
@@ -362,7 +363,7 @@
                                     </StackPanel>
 
                                     <StackPanel x:Name="XvidSettingsPanel" Spacing="8">
-                                        <TextBlock Classes="field-label" Text="Variable bitrate quality"/>
+                                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Variable_bitrate_quality}"/>
                                         <NumericUpDown x:Name="XvidQualityNumericUpDown"
                                                        Classes="number"
                                                        Minimum="1"
@@ -370,20 +371,20 @@
                                                        Increment="1"
                                                        FormatString="0"/>
                                         <TextBlock Classes="hint"
-                                                   Text="1 gives the highest quality and largest file; 31 gives the lowest quality and smallest file."/>
+                                                   Text="{x:Static localization:Strings.FFmpegOptionsWindow_Variable_bitrate_hint}"/>
                                     </StackPanel>
 
                                     <StackPanel x:Name="NvencSettingsPanel" Spacing="12">
                                         <StackPanel>
-                                            <TextBlock Classes="field-label" Text="Preset"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Preset}"/>
                                             <ComboBox x:Name="NvencPresetComboBox" Classes="field"/>
                                         </StackPanel>
                                         <StackPanel>
-                                            <TextBlock Classes="field-label" Text="Tune"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Tune}"/>
                                             <ComboBox x:Name="NvencTuneComboBox" Classes="field"/>
                                         </StackPanel>
                                         <StackPanel>
-                                            <TextBlock Classes="field-label" Text="Target bitrate (kbps)"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Target_bitrate}"/>
                                             <NumericUpDown x:Name="NvencBitrateNumericUpDown"
                                                            Classes="number"
                                                            Minimum="100"
@@ -395,15 +396,15 @@
 
                                     <StackPanel x:Name="GifSettingsPanel" Spacing="12">
                                         <StackPanel>
-                                            <TextBlock Classes="field-label" Text="Palette mode"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Palette_mode}"/>
                                             <ComboBox x:Name="GifStatsModeComboBox" Classes="field"/>
                                         </StackPanel>
                                         <StackPanel>
-                                            <TextBlock Classes="field-label" Text="Dithering mode"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Dithering_mode}"/>
                                             <ComboBox x:Name="GifDitherComboBox" Classes="field"/>
                                         </StackPanel>
                                         <StackPanel x:Name="GifBayerScalePanel">
-                                            <TextBlock Classes="field-label" Text="Bayer scale"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Bayer_scale}"/>
                                             <NumericUpDown x:Name="GifBayerScaleNumericUpDown"
                                                            Classes="number"
                                                            Minimum="0"
@@ -412,21 +413,21 @@
                                                            FormatString="0"/>
                                             <TextBlock Classes="hint"
                                                        Margin="0,6,0,0"
-                                                       Text="Higher values produce more visible banding. The default is 2."/>
+                                                       Text="{x:Static localization:Strings.FFmpegOptionsWindow_Bayer_scale_hint}"/>
                                         </StackPanel>
                                     </StackPanel>
 
                                     <StackPanel x:Name="AmfSettingsPanel" Spacing="12">
                                         <StackPanel>
-                                            <TextBlock Classes="field-label" Text="Usage"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Usage}"/>
                                             <ComboBox x:Name="AmfUsageComboBox" Classes="field"/>
                                         </StackPanel>
                                         <StackPanel>
-                                            <TextBlock Classes="field-label" Text="Quality"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Quality}"/>
                                             <ComboBox x:Name="AmfQualityComboBox" Classes="field"/>
                                         </StackPanel>
                                         <StackPanel>
-                                            <TextBlock Classes="field-label" Text="Target bitrate (kbps)"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Target_bitrate}"/>
                                             <NumericUpDown x:Name="AmfBitrateNumericUpDown"
                                                            Classes="number"
                                                            Minimum="100"
@@ -438,11 +439,11 @@
 
                                     <StackPanel x:Name="QsvSettingsPanel" Spacing="12">
                                         <StackPanel>
-                                            <TextBlock Classes="field-label" Text="Preset"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Preset}"/>
                                             <ComboBox x:Name="QsvPresetComboBox" Classes="field"/>
                                         </StackPanel>
                                         <StackPanel>
-                                            <TextBlock Classes="field-label" Text="Target bitrate (kbps)"/>
+                                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Target_bitrate}"/>
                                             <NumericUpDown x:Name="QsvBitrateNumericUpDown"
                                                            Classes="number"
                                                            Minimum="100"
@@ -459,7 +460,7 @@
                                                        Foreground="{DynamicResource ShareX.Brush.Accent}"/>
                                             <TextBlock Grid.Column="1"
                                                        Classes="hint"
-                                                       Text="This encoder does not require additional settings."/>
+                                                       Text="{x:Static localization:Strings.FFmpegOptionsWindow_No_additional_settings}"/>
                                         </Grid>
                                     </Border>
                                 </StackPanel>
@@ -475,7 +476,7 @@
                               Margin="2">
                             <Border Grid.Column="0" Classes="section-card">
                                 <StackPanel Spacing="12">
-                                    <TextBlock Classes="section-title" Text="Audio encoder"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Audio_encoder}"/>
                                     <ComboBox x:Name="AudioCodecComboBox" Classes="field"/>
                                     <Border x:Name="AudioUnavailableBorder"
                                             Classes="info-card"
@@ -486,7 +487,7 @@
                                                        Foreground="Goldenrod"/>
                                             <TextBlock Grid.Column="1"
                                                        Classes="hint"
-                                                       Text="Animated image formats do not include audio. Choose a video format to enable audio encoding."/>
+                                                       Text="{x:Static localization:Strings.FFmpegOptionsWindow_Animated_formats_no_audio}"/>
                                         </Grid>
                                     </Border>
                                 </StackPanel>
@@ -494,25 +495,25 @@
 
                             <Border Grid.Column="1" Classes="section-card">
                                 <StackPanel x:Name="AudioSettingsPanel" Spacing="14">
-                                    <TextBlock Classes="section-title" Text="Encoder settings"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Encoder_settings}"/>
                                     <StackPanel x:Name="AacSettingsPanel">
-                                        <TextBlock Classes="field-label" Text="Bitrate (kbps)"/>
+                                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Bitrate}"/>
                                         <ComboBox x:Name="AacBitrateComboBox" Classes="field"/>
                                     </StackPanel>
                                     <StackPanel x:Name="OpusSettingsPanel">
-                                        <TextBlock Classes="field-label" Text="Bitrate (kbps)"/>
+                                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Bitrate}"/>
                                         <ComboBox x:Name="OpusBitrateComboBox" Classes="field"/>
                                     </StackPanel>
                                     <StackPanel x:Name="VorbisSettingsPanel">
-                                        <TextBlock Classes="field-label" Text="Quality"/>
+                                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Quality}"/>
                                         <ComboBox x:Name="VorbisQualityComboBox" Classes="field"/>
                                     </StackPanel>
                                     <StackPanel x:Name="Mp3SettingsPanel">
-                                        <TextBlock Classes="field-label" Text="Quality"/>
+                                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Quality}"/>
                                         <ComboBox x:Name="Mp3QualityComboBox" Classes="field"/>
                                         <TextBlock Classes="hint"
                                                    Margin="0,6,0,0"
-                                                   Text="Lower values produce higher quality."/>
+                                                   Text="{x:Static localization:Strings.FFmpegOptionsWindow_Lower_values_higher_quality}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
@@ -525,9 +526,9 @@
                         <StackPanel Spacing="12" Margin="2">
                             <Border Classes="section-card">
                                 <StackPanel Spacing="10">
-                                    <TextBlock Classes="section-title" Text="Additional arguments"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Additional_arguments}"/>
                                     <TextBox x:Name="UserArgumentsTextBox"
-                                             PlaceholderText="Example: -vf scale=1920:-2"/>
+                                             PlaceholderText="{x:Static localization:Strings.FFmpegOptionsWindow_Arguments_example}"/>
                                 </StackPanel>
                             </Border>
 
@@ -536,18 +537,18 @@
                                     <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="12">
                                         <TextBlock Grid.Column="0"
                                                    Classes="section-title"
-                                                   Text="FFmpeg command"
+                                                   Text="{x:Static localization:Strings.FFmpegOptionsWindow_FFmpeg_command}"
                                                    VerticalAlignment="Center"/>
                                         <CheckBox x:Name="UseCustomCommandsCheckBox"
                                                   Grid.Column="1"
                                                   VerticalAlignment="Center">
-                                            <TextBlock Text="Use custom commands" FontWeight="Normal"/>
+                                            <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Use_custom_commands}" FontWeight="Normal"/>
                                         </CheckBox>
                                     </Grid>
                                     <Border Grid.Row="1"
                                             Classes="info-card">
                                         <TextBlock Classes="hint"
-                                                   Text="Custom command placeholders: $fps$, $area_x$, $area_y$, $area_width$, $area_height$, $cursor$, $duration$, and $output$."/>
+                                                   Text="{x:Static localization:Strings.FFmpegOptionsWindow_Custom_command_placeholders}"/>
                                     </Border>
                                     <TextBox x:Name="CommandPreviewTextBox"
                                              Grid.Row="2"

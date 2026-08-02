@@ -3,12 +3,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX.ScreenCaptureLib"
+        xmlns:localization="using:ShareX.ScreenCaptureLib.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="700"
         d:DesignHeight="420"
         x:Class="ShareX.ScreenCaptureLib.ScreenRecordWindow"
-        Title="ShareX - Screen recording"
+        Title="{x:Static localization:Strings.ScreenRecordWindow_Title}"
         Width="430"
         Height="180"
         CanResize="False"
@@ -91,7 +92,7 @@
                                                Text="{x:Static theming:LucideIcons.circle_play}"/>
                                     <TextBlock x:Name="StartText"
                                                Classes="action-label"
-                                               Text="Start"/>
+                                               Text="{x:Static localization:Strings.ScreenRecordWindow_Start}"/>
                                 </StackPanel>
                             </Button>
 
@@ -103,7 +104,7 @@
                                                Text="{x:Static theming:LucideIcons.pause}"/>
                                     <TextBlock x:Name="PauseText"
                                                Classes="action-label"
-                                               Text="Pause"/>
+                                               Text="{x:Static localization:Strings.ScreenRecordWindow_Pause}"/>
                                 </StackPanel>
                             </Button>
 
@@ -112,7 +113,7 @@
                                 <StackPanel Orientation="Horizontal" Spacing="7">
                                     <TextBlock Classes="icon action-icon"
                                                Text="{x:Static theming:LucideIcons.x}"/>
-                                    <TextBlock Classes="action-label" Text="Abort"/>
+                                    <TextBlock Classes="action-label" Text="{x:Static localization:Strings.ScreenRecordWindow_Abort}"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>
@@ -124,17 +125,17 @@
                           IsVisible="False">
                         <TextBlock Grid.Column="0"
                                    Margin="10,0"
-                                   Text="Abort this recording?"
+                                   Text="{x:Static localization:Strings.ScreenRecordWindow_Abort_this_recording}"
                                    FontWeight="SemiBold"
                                    VerticalAlignment="Center"/>
                         <Button x:Name="CancelAbortButton"
                                 Grid.Column="1"
                                 Classes="recorder-action"
-                                Content="Cancel"/>
+                                Content="{x:Static localization:Strings.ScreenRecordWindow_Cancel}"/>
                         <Button x:Name="ConfirmAbortButton"
                                 Grid.Column="2"
                                 Classes="recorder-action"
-                                Content="Abort"/>
+                                Content="{x:Static localization:Strings.ScreenRecordWindow_Abort}"/>
                     </Grid>
                 </Grid>
             </Border>

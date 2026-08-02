@@ -72,7 +72,7 @@ public partial class ScrollingCaptureWindow : Window
     {
         if (_service.IsCapturing)
         {
-            StatusText.Text = "Stopping capture...";
+            StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Stopping_capture;
             _service.StopCapture();
             return;
         }
@@ -93,7 +93,7 @@ public partial class ScrollingCaptureWindow : Window
     {
         if (_service.IsCapturing)
         {
-            StatusText.Text = "Stopping capture...";
+            StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Stopping_capture;
             _service.StopCapture();
         }
     }
@@ -130,7 +130,7 @@ public partial class ScrollingCaptureWindow : Window
             }
             else
             {
-                StatusText.Text = "Window selection cancelled";
+                StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Selection_cancelled;
                 RestoreAndActivate();
             }
         }
@@ -153,7 +153,7 @@ public partial class ScrollingCaptureWindow : Window
         SetCaptureControlsEnabled(false);
         ResultSizeText.Text = string.Empty;
         ResetPreview();
-        StatusText.Text = "Capturing...";
+        StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Capturing;
         StatusIcon.Text = LucideIcons.loader_circle;
         StatusIcon.Foreground = Brushes.DodgerBlue;
 
@@ -203,17 +203,17 @@ public partial class ScrollingCaptureWindow : Window
             case ScrollingCaptureStatus.Failed:
                 StatusIcon.Text = LucideIcons.circle_x;
                 StatusIcon.Foreground = Brushes.IndianRed;
-                StatusText.Text = "Capture failed";
+                StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Capture_failed;
                 break;
             case ScrollingCaptureStatus.PartiallySuccessful:
                 StatusIcon.Text = LucideIcons.triangle_alert;
                 StatusIcon.Foreground = Brushes.Goldenrod;
-                StatusText.Text = "Capture partially successful";
+                StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Capture_partially_successful;
                 break;
             case ScrollingCaptureStatus.Successful:
                 StatusIcon.Text = LucideIcons.circle_check;
                 StatusIcon.Foreground = Brushes.MediumSeaGreen;
-                StatusText.Text = "Capture successful";
+                StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Capture_successful;
                 break;
         }
     }

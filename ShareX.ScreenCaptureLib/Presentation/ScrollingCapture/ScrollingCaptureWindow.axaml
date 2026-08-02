@@ -1,8 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.ScreenCaptureLib.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.ScreenCaptureLib.ScrollingCaptureWindow"
-        Title="ShareX - Scrolling capture"
+        Title="{x:Static localization:Strings.ScrollingCaptureWindow_Title}"
         Width="900"
         Height="650"
         MinWidth="620"
@@ -35,7 +36,7 @@
                                 Click="OnCaptureClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scan_line}"/>
-                                <TextBlock Text="Capture..."/>
+                                <TextBlock Text="{x:Static localization:Strings.ScrollingCaptureWindow_Capture}"/>
                             </StackPanel>
                         </Button>
                         <Button x:Name="UploadButton"
@@ -45,7 +46,7 @@
                                 Click="OnUploadClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}"/>
-                                <TextBlock Text="Upload / Save"/>
+                                <TextBlock Text="{x:Static localization:Strings.ScrollingCaptureWindow_Upload_Save}"/>
                             </StackPanel>
                         </Button>
                         <Button x:Name="CopyButton"
@@ -55,7 +56,7 @@
                                 Click="OnCopyClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
-                                <TextBlock Text="Copy"/>
+                                <TextBlock Text="{x:Static localization:Strings.ScrollingCaptureWindow_Copy}"/>
                             </StackPanel>
                         </Button>
                         <Button x:Name="OptionsButton"
@@ -64,7 +65,7 @@
                                 Click="OnOptionsClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings_2}"/>
-                                <TextBlock Text="Options..."/>
+                                <TextBlock Text="{x:Static localization:Strings.ScrollingCaptureWindow_Options}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="5"
@@ -73,7 +74,7 @@
                                 MinWidth="34"
                                 Padding="0"
                                 Click="OnHelpClick"
-                                ToolTip.Tip="Scrolling screenshot help">
+                                ToolTip.Tip="{x:Static localization:Strings.ScrollingCaptureWindow_Help}">
                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.circle_help}"/>
                         </Button>
                     </Grid>
@@ -104,7 +105,7 @@
                                        FontSize="48"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                        HorizontalAlignment="Center"/>
-                            <TextBlock Text="Select a scrollable window to begin"
+                            <TextBlock Text="{x:Static localization:Strings.ScrollingCaptureWindow_Select_scrollable_window}"
                                        FontWeight="Normal"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                         </StackPanel>
@@ -119,7 +120,7 @@
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                     <TextBlock x:Name="StatusText"
                                Grid.Column="1"
-                               Text="Ready"
+                               Text="{x:Static localization:Strings.ScrollingCaptureWindow_Ready}"
                                FontWeight="Normal"
                                VerticalAlignment="Center"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
@@ -151,7 +152,7 @@
                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                                 <TextBlock Grid.Column="1"
                                            Classes="section-heading"
-                                           Text="Scrolling capture options"/>
+                                           Text="{x:Static localization:Strings.ScrollingCaptureWindow_Options_heading}"/>
                             </Grid>
 
                             <Grid Grid.Row="1"
@@ -159,16 +160,16 @@
                                   RowDefinitions="Auto,Auto,Auto,Auto"
                                   RowSpacing="9"
                                   ColumnSpacing="8">
-                                <TextBlock Classes="option-label" Text="Start delay:"/>
+                                <TextBlock Classes="option-label" Text="{x:Static localization:Strings.ScrollingCaptureWindow_Start_delay}"/>
                                 <NumericUpDown x:Name="StartDelayInput"
                                                Grid.Column="1"
                                                Minimum="100"
                                                Maximum="5000"
                                                Increment="100"
                                                FormatString="0"/>
-                                <TextBlock Grid.Column="2" Classes="option-hint" Text="ms"/>
+                                <TextBlock Grid.Column="2" Classes="option-hint" Text="{x:Static localization:Strings.ScrollingCaptureWindow_Milliseconds}"/>
 
-                                <TextBlock Grid.Row="1" Classes="option-label" Text="Scroll delay:"/>
+                                <TextBlock Grid.Row="1" Classes="option-label" Text="{x:Static localization:Strings.ScrollingCaptureWindow_Scroll_delay}"/>
                                 <NumericUpDown x:Name="ScrollDelayInput"
                                                Grid.Row="1"
                                                Grid.Column="1"
@@ -176,9 +177,9 @@
                                                Maximum="5000"
                                                Increment="100"
                                                FormatString="0"/>
-                                <TextBlock Grid.Row="1" Grid.Column="2" Classes="option-hint" Text="ms"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Classes="option-hint" Text="{x:Static localization:Strings.ScrollingCaptureWindow_Milliseconds}"/>
 
-                                <TextBlock Grid.Row="2" Classes="option-label" Text="Scroll method:"/>
+                                <TextBlock Grid.Row="2" Classes="option-label" Text="{x:Static localization:Strings.ScrollingCaptureWindow_Scroll_method}"/>
                                 <ComboBox x:Name="ScrollMethodInput"
                                           Grid.Row="2"
                                           Grid.Column="1"
@@ -188,7 +189,7 @@
                                 <TextBlock x:Name="ScrollAmountLabel"
                                            Grid.Row="3"
                                            Classes="option-label"
-                                           Text="Scroll amount:"/>
+                                           Text="{x:Static localization:Strings.ScrollingCaptureWindow_Scroll_amount}"/>
                                 <NumericUpDown x:Name="ScrollAmountInput"
                                                Grid.Row="3"
                                                Grid.Column="1"
@@ -200,22 +201,22 @@
                                            Grid.Row="3"
                                            Grid.Column="2"
                                            Classes="option-hint"
-                                           Text="times"/>
+                                           Text="{x:Static localization:Strings.ScrollingCaptureWindow_Times}"/>
                             </Grid>
 
                             <StackPanel Grid.Row="2" Spacing="8">
-                                <CheckBox x:Name="AutoScrollTopInput" Content="Automatically scroll to top"/>
-                                <CheckBox x:Name="AutoIgnoreBottomEdgeInput" Content="Auto ignore bottom edge"/>
-                                <CheckBox x:Name="ShowRegionInput" Content="Show scrolling capture region"/>
-                                <CheckBox x:Name="AutoUploadInput" Content="Automatically upload / save"/>
+                                <CheckBox x:Name="AutoScrollTopInput" Content="{x:Static localization:Strings.ScrollingCaptureWindow_Automatically_scroll_to_top}"/>
+                                <CheckBox x:Name="AutoIgnoreBottomEdgeInput" Content="{x:Static localization:Strings.ScrollingCaptureWindow_Auto_ignore_bottom_edge}"/>
+                                <CheckBox x:Name="ShowRegionInput" Content="{x:Static localization:Strings.ScrollingCaptureWindow_Show_capture_region}"/>
+                                <CheckBox x:Name="AutoUploadInput" Content="{x:Static localization:Strings.ScrollingCaptureWindow_Automatically_upload_save}"/>
                             </StackPanel>
 
                             <StackPanel Grid.Row="3"
                                         Orientation="Horizontal"
                                         Spacing="8"
                                         HorizontalAlignment="Right">
-                                <Button Click="OnCancelOptionsClick" Content="Cancel"/>
-                                <Button Click="OnSaveOptionsClick" Content="OK"/>
+                                <Button Click="OnCancelOptionsClick" Content="{x:Static localization:Strings.ScrollingCaptureWindow_Cancel}"/>
+                                <Button Click="OnSaveOptionsClick" Content="{x:Static localization:Strings.ScrollingCaptureWindow_OK}"/>
                             </StackPanel>
                         </Grid>
                     </ScrollViewer>

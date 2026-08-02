@@ -304,7 +304,7 @@ public partial class FFmpegOptionsWindow : Window
     private async Task RefreshSourcesAsync(bool selectRecorderDevices = false)
     {
         RefreshDevicesButton.IsEnabled = false;
-        DeviceStatusTextBlock.Text = "Looking for capture devices...";
+        DeviceStatusTextBlock.Text = Localization.Strings.FFmpegOptionsWindow_Looking_for_devices;
 
         DirectShowDevices? devices = null;
         Exception? discoveryError = null;
@@ -379,20 +379,23 @@ public partial class FFmpegOptionsWindow : Window
 
         if (!File.Exists(ffmpegPath))
         {
-            DeviceStatusTextBlock.Text = $"FFmpeg was not found at {ffmpegPath}";
+            DeviceStatusTextBlock.Text = string.Format(Localization.Strings.FFmpegOptionsWindow_FFmpeg_not_found, ffmpegPath);
         }
         else if (discoveryError != null)
         {
             DebugHelper.WriteException(discoveryError);
-            DeviceStatusTextBlock.Text = "FFmpeg could not enumerate DirectShow devices. Desktop capture is still available.";
+            DeviceStatusTextBlock.Text = Localization.Strings.FFmpegOptionsWindow_Device_enumeration_failed;
         }
         else
         {
             int deviceCount = Math.Max(0, videoSources.Count - (Helpers.IsWindows10OrGreater() ? 3 : 2)) +
                               Math.Max(0, audioSources.Count - 1);
-            DeviceStatusTextBlock.Text = deviceCount > 0
-                ? $"{deviceCount} DirectShow device{(deviceCount == 1 ? string.Empty : "s")} found."
-                : "No DirectShow devices found. Desktop capture is ready.";
+            DeviceStatusTextBlock.Text = deviceCount switch
+            {
+                0 => Localization.Strings.FFmpegOptionsWindow_No_devices_found,
+                1 => string.Format(Localization.Strings.FFmpegOptionsWindow_One_device_found, deviceCount),
+                _ => string.Format(Localization.Strings.FFmpegOptionsWindow_Multiple_devices_found, deviceCount)
+            };
         }
 
         RefreshDevicesButton.IsEnabled = true;
@@ -416,12 +419,12 @@ public partial class FFmpegOptionsWindow : Window
 
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Browse for ffmpeg.exe",
+            Title = Localization.Strings.FFmpegOptionsWindow_Browse_for_ffmpeg,
             AllowMultiple = false,
             SuggestedStartLocation = startFolder,
             FileTypeFilter =
             [
-                new FilePickerFileType("FFmpeg executable") { Patterns = ["ffmpeg.exe", "*.exe"] },
+                new FilePickerFileType(Localization.Strings.FFmpegOptionsWindow_FFmpeg_executable) { Patterns = ["ffmpeg.exe", "*.exe"] },
                 FilePickerFileTypes.All
             ]
         });
