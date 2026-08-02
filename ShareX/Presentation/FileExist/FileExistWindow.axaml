@@ -1,9 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.FileExistWindow"
         x:CompileBindings="False"
-        Title="ShareX - How to save?"
+        Title="{x:Static res:Strings.FileExistWindow_Title}"
         Width="580"
         SizeToContent="Height"
         CanResize="False"
@@ -50,11 +51,11 @@
                                VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
-                    <TextBlock Text="A file with this name already exists"
+                    <TextBlock Text="{x:Static res:Strings.FileExistWindow_FileAlreadyExists}"
                                FontSize="19"
                                FontWeight="SemiBold"
                                Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
-                    <TextBlock Text="Choose a new file name or select how ShareX should continue."
+                    <TextBlock Text="{x:Static res:Strings.FileExistWindow_Instruction}"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                 </StackPanel>
             </Grid>
@@ -81,7 +82,7 @@
             </Border>
 
             <Grid Grid.Row="1" RowDefinitions="Auto,Auto" RowSpacing="4">
-                <TextBlock Text="New file name" FontWeight="SemiBold"/>
+                <TextBlock Text="{x:Static res:Strings.FileExistWindow_NewFileName}" FontWeight="SemiBold"/>
                 <TextBox x:Name="NewNameTextBox"
                          Grid.Row="1"
                          MinHeight="32"

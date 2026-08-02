@@ -14,6 +14,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using System;
 using System.IO;
 
@@ -42,10 +43,10 @@ public partial class FileExistWindow : Window
         ExistingPathText.Text = filePath;
         ToolTip.SetTip(ExistingPathText, filePath);
         NewNameTextBox.Text = _originalFileName;
-        NewNameActionTitle.Text = Properties.Resources.FileExistForm_txtNewName_TextChanged_Use_new_name__.TrimEnd(' ', ':');
-        OverwriteActionTitle.Text = FileExistAction.Overwrite.GetLocalizedDescription();
-        UniqueNameActionTitle.Text = FileExistAction.UniqueName.GetLocalizedDescription();
-        CancelActionTitle.Text = FileExistAction.Cancel.GetLocalizedDescription();
+        NewNameActionTitle.Text = Strings.FileExistWindow_UseNewName;
+        OverwriteActionTitle.Text = Strings.FileExistWindow_Overwrite;
+        UniqueNameActionTitle.Text = Strings.FileExistWindow_UseUniqueName;
+        CancelActionTitle.Text = Strings.FileExistWindow_Cancel;
         OverwriteFileText.Text = Path.GetFileName(filePath);
         ToolTip.SetTip(OverwriteFileText, filePath);
         UniqueNameFileText.Text = Path.GetFileName(_uniqueFilePath);

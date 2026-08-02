@@ -1837,4 +1837,244 @@
   <data name="TaskSettingsWindow_ChooseAudioFile" xml:space="preserve">
     <value>Вибрати аудіофайл</value>
   </data>
+  <data name="DragDropUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - Завантаження перетягуванням</value>
+  </data>
+  <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
+    <value>Перетягніть сюди</value>
+  </data>
+  <data name="ClipboardUploadWindow_ClipboardUpload" xml:space="preserve">
+    <value>Завантаження з буфера обміну</value>
+  </data>
+  <data name="ClipboardUploadWindow_DontShowAgain" xml:space="preserve">
+    <value>Більше не показувати це вікно</value>
+  </data>
+  <data name="ClipboardUploadWindow_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="ClipboardUploadWindow_Upload" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="ClipboardUploadWindow_ImageSummary" xml:space="preserve">
+    <value>Вміст буфера обміну: зображення, розмір: {0} × {1}</value>
+  </data>
+  <data name="ClipboardUploadWindow_TextSummary" xml:space="preserve">
+    <value>Вміст буфера обміну: текст, довжина: {0}</value>
+  </data>
+  <data name="ClipboardUploadWindow_FileSummary" xml:space="preserve">
+    <value>Вміст буфера обміну: файли, кількість: {0}</value>
+  </data>
+  <data name="ClipboardUploadWindow_Empty" xml:space="preserve">
+    <value>Буфер обміну порожній або містить непідтримувані дані.</value>
+  </data>
+  <data name="FileExistWindow_Title" xml:space="preserve">
+    <value>ShareX - Як зберегти файл?</value>
+  </data>
+  <data name="FileExistWindow_FileAlreadyExists" xml:space="preserve">
+    <value>Файл із таким ім’ям уже існує</value>
+  </data>
+  <data name="FileExistWindow_Instruction" xml:space="preserve">
+    <value>Виберіть нове ім’я файлу або вкажіть, як ShareX має продовжити.</value>
+  </data>
+  <data name="FileExistWindow_NewFileName" xml:space="preserve">
+    <value>Нове ім’я файлу</value>
+  </data>
+  <data name="FileExistWindow_UseNewName" xml:space="preserve">
+    <value>Використати нове ім’я</value>
+  </data>
+  <data name="FileExistWindow_Overwrite" xml:space="preserve">
+    <value>Перезаписати</value>
+  </data>
+  <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
+    <value>Використати унікальне ім’я</value>
+  </data>
+  <data name="FileExistWindow_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Title" xml:space="preserve">
+    <value>ShareX - Завантаження великого файлу</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Message" xml:space="preserve">
+    <value>Ви намагаєтеся завантажити великий файл.</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_DontShowAgain" xml:space="preserve">
+    <value>Більше не показувати це повідомлення.</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Continue" xml:space="preserve">
+    <value>Продовжити</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Title" xml:space="preserve">
+    <value>ShareX - Завантаження файлів</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Message" xml:space="preserve">
+    <value>Завантажити файли ({0})?</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_DontShowAgain" xml:space="preserve">
+    <value>Більше не показувати це повідомлення.</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Upload" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="DebugLogWindow_Title" xml:space="preserve">
+    <value>ShareX - Журнал налагодження</value>
+  </data>
+  <data name="DebugLogWindow_LoadedAssemblies" xml:space="preserve">
+    <value>Завантажені збірки</value>
+  </data>
+  <data name="DebugLogWindow_CopyAll" xml:space="preserve">
+    <value>Копіювати все</value>
+  </data>
+  <data name="DebugLogWindow_OpenLogFile" xml:space="preserve">
+    <value>Відкрити файл журналу...</value>
+  </data>
+  <data name="DebugLogWindow_UploadLog" xml:space="preserve">
+    <value>Завантажити журнал...</value>
+  </data>
+  <data name="DebugLogWindow_StartupPath" xml:space="preserve">
+    <value>Шлях запуску:</value>
+  </data>
+  <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
+    <value>Завантажити журнал налагодження?</value>
+  </data>
+  <data name="DebugLogWindow_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="DebugLogWindow_Upload" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="FirstTimeConfigWindow_Heading" xml:space="preserve">
+    <value>Початкове налаштування ShareX</value>
+  </data>
+  <data name="FirstTimeConfigWindow_Subtitle" xml:space="preserve">
+    <value>Виберіть спосіб інтеграції ShareX із Windows.</value>
+  </data>
+  <data name="FirstTimeConfigWindow_ShellContextMenu" xml:space="preserve">
+    <value>Показувати «Завантажити через ShareX» у контекстному меню Провідника</value>
+  </data>
+  <data name="FirstTimeConfigWindow_SendToMenu" xml:space="preserve">
+    <value>Показувати ShareX у меню «Надіслати»</value>
+  </data>
+  <data name="FirstTimeConfigWindow_SteamInApp" xml:space="preserve">
+    <value>Поки ShareX відкрито, показувати у Steam стан «У програмі»</value>
+  </data>
+  <data name="FirstTimeConfigWindow_OptionsLater" xml:space="preserve">
+    <value>Ці параметри можна змінити пізніше в розділі Налаштування програми → Інтеграція.</value>
+  </data>
+  <data name="FirstTimeConfigWindow_OK" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindows" xml:space="preserve">
+    <value>Запускати ShareX під час запуску Windows</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByUser" xml:space="preserve">
+    <value>Автозапуск вимкнено в Диспетчері завдань</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy" xml:space="preserve">
+    <value>Автозапуск вимкнено вашою організацією</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
+    <value>Автозапуск увімкнено вашою організацією</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Title" xml:space="preserve">
+    <value>ShareX - Вибір редактора зображень</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Heading" xml:space="preserve">
+    <value>Виберіть редактор зображень</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Subtitle" xml:space="preserve">
+    <value>Виберіть редактор, який має відкривати ShareX.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ModernEditor" xml:space="preserve">
+    <value>Сучасний редактор зображень</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Recommended" xml:space="preserve">
+    <value>Рекомендовано</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ModernDescription" xml:space="preserve">
+    <value>Поточний редактор ShareX із найновішими інструментами та вдосконаленнями.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_LegacyEditor" xml:space="preserve">
+    <value>Класичний редактор зображень</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_LegacyDescription" xml:space="preserve">
+    <value>Класичний редактор ShareX для захоплення області.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ChangeLater" xml:space="preserve">
+    <value>Це можна змінити пізніше в розділі Налаштування завдань → Інструменти.</value>
+  </data>
+  <data name="ShortenURLWindow_Title" xml:space="preserve">
+    <value>ShareX - Скорочення URL</value>
+  </data>
+  <data name="ShortenURLWindow_Heading" xml:space="preserve">
+    <value>Скоротити URL</value>
+  </data>
+  <data name="ShortenURLWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ShortenURLWindow_Validation" xml:space="preserve">
+    <value>Введіть припустиму URL-адресу HTTP, HTTPS або FTP.</value>
+  </data>
+  <data name="ShortenURLWindow_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="ShortenURLWindow_Shorten" xml:space="preserve">
+    <value>Скоротити</value>
+  </data>
+  <data name="URLUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - Завантаження URL</value>
+  </data>
+  <data name="URLUploadWindow_Heading" xml:space="preserve">
+    <value>Завантаження URL</value>
+  </data>
+  <data name="URLUploadWindow_Prompt" xml:space="preserve">
+    <value>URL для завантаження й передавання</value>
+  </data>
+  <data name="URLUploadWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="URLUploadWindow_Validation" xml:space="preserve">
+    <value>Введіть припустиму URL-адресу HTTP, HTTPS або FTP.</value>
+  </data>
+  <data name="URLUploadWindow_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="URLUploadWindow_Upload" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="BeforeUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - Перед завантаженням</value>
+  </data>
+  <data name="BeforeUploadWindow_Heading" xml:space="preserve">
+    <value>Перед завантаженням</value>
+  </data>
+  <data name="BeforeUploadWindow_Destination" xml:space="preserve">
+    <value>Призначення</value>
+  </data>
+  <data name="BeforeUploadWindow_CopyPreviewImage" xml:space="preserve">
+    <value>Копіювати зображення попереднього перегляду</value>
+  </data>
+  <data name="BeforeUploadWindow_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="BeforeUploadWindow_Upload" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="BeforeUploadWindow_CustomUploader" xml:space="preserve">
+    <value>Користувацький [{0}]</value>
+  </data>
+  <data name="BeforeUploadWindow_ChooseDestination" xml:space="preserve">
+    <value>Виберіть призначення.</value>
+  </data>
+  <data name="BeforeUploadWindow_UploadPrompt" xml:space="preserve">
+    <value>Файл {0} буде завантажено до {1}. Можна вибрати інше призначення.</value>
+  </data>
+  <data name="BeforeUploadWindow_NoPreview" xml:space="preserve">
+    <value>Попередній перегляд недоступний</value>
+  </data>
 </root>

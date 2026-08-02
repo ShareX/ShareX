@@ -3592,5 +3592,405 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ChooseAudioFile", resourceCulture);
             }
         }
+        public static string DragDropUploadWindow_Title {
+            get {
+                return ResourceManager.GetString("DragDropUploadWindow_Title", resourceCulture);
+            }
+        }
+        public static string DragDropUploadWindow_DropHere {
+            get {
+                return ResourceManager.GetString("DragDropUploadWindow_DropHere", resourceCulture);
+            }
+        }
+        public static string ClipboardUploadWindow_ClipboardUpload {
+            get {
+                return ResourceManager.GetString("ClipboardUploadWindow_ClipboardUpload", resourceCulture);
+            }
+        }
+        public static string ClipboardUploadWindow_DontShowAgain {
+            get {
+                return ResourceManager.GetString("ClipboardUploadWindow_DontShowAgain", resourceCulture);
+            }
+        }
+        public static string ClipboardUploadWindow_Cancel {
+            get {
+                return ResourceManager.GetString("ClipboardUploadWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string ClipboardUploadWindow_Upload {
+            get {
+                return ResourceManager.GetString("ClipboardUploadWindow_Upload", resourceCulture);
+            }
+        }
+        public static string ClipboardUploadWindow_ImageSummary {
+            get {
+                return ResourceManager.GetString("ClipboardUploadWindow_ImageSummary", resourceCulture);
+            }
+        }
+        public static string ClipboardUploadWindow_TextSummary {
+            get {
+                return ResourceManager.GetString("ClipboardUploadWindow_TextSummary", resourceCulture);
+            }
+        }
+        public static string ClipboardUploadWindow_FileSummary {
+            get {
+                return ResourceManager.GetString("ClipboardUploadWindow_FileSummary", resourceCulture);
+            }
+        }
+        public static string ClipboardUploadWindow_Empty {
+            get {
+                return ResourceManager.GetString("ClipboardUploadWindow_Empty", resourceCulture);
+            }
+        }
+        public static string FileExistWindow_Title {
+            get {
+                return ResourceManager.GetString("FileExistWindow_Title", resourceCulture);
+            }
+        }
+        public static string FileExistWindow_FileAlreadyExists {
+            get {
+                return ResourceManager.GetString("FileExistWindow_FileAlreadyExists", resourceCulture);
+            }
+        }
+        public static string FileExistWindow_Instruction {
+            get {
+                return ResourceManager.GetString("FileExistWindow_Instruction", resourceCulture);
+            }
+        }
+        public static string FileExistWindow_NewFileName {
+            get {
+                return ResourceManager.GetString("FileExistWindow_NewFileName", resourceCulture);
+            }
+        }
+        public static string FileExistWindow_UseNewName {
+            get {
+                return ResourceManager.GetString("FileExistWindow_UseNewName", resourceCulture);
+            }
+        }
+        public static string FileExistWindow_Overwrite {
+            get {
+                return ResourceManager.GetString("FileExistWindow_Overwrite", resourceCulture);
+            }
+        }
+        public static string FileExistWindow_UseUniqueName {
+            get {
+                return ResourceManager.GetString("FileExistWindow_UseUniqueName", resourceCulture);
+            }
+        }
+        public static string FileExistWindow_Cancel {
+            get {
+                return ResourceManager.GetString("FileExistWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string LargeFileUploadWarningWindow_Title {
+            get {
+                return ResourceManager.GetString("LargeFileUploadWarningWindow_Title", resourceCulture);
+            }
+        }
+        public static string LargeFileUploadWarningWindow_Message {
+            get {
+                return ResourceManager.GetString("LargeFileUploadWarningWindow_Message", resourceCulture);
+            }
+        }
+        public static string LargeFileUploadWarningWindow_DontShowAgain {
+            get {
+                return ResourceManager.GetString("LargeFileUploadWarningWindow_DontShowAgain", resourceCulture);
+            }
+        }
+        public static string LargeFileUploadWarningWindow_Continue {
+            get {
+                return ResourceManager.GetString("LargeFileUploadWarningWindow_Continue", resourceCulture);
+            }
+        }
+        public static string LargeFileUploadWarningWindow_Cancel {
+            get {
+                return ResourceManager.GetString("LargeFileUploadWarningWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string MultiUploadConfirmationWindow_Title {
+            get {
+                return ResourceManager.GetString("MultiUploadConfirmationWindow_Title", resourceCulture);
+            }
+        }
+        public static string MultiUploadConfirmationWindow_Message {
+            get {
+                return ResourceManager.GetString("MultiUploadConfirmationWindow_Message", resourceCulture);
+            }
+        }
+        public static string MultiUploadConfirmationWindow_DontShowAgain {
+            get {
+                return ResourceManager.GetString("MultiUploadConfirmationWindow_DontShowAgain", resourceCulture);
+            }
+        }
+        public static string MultiUploadConfirmationWindow_Upload {
+            get {
+                return ResourceManager.GetString("MultiUploadConfirmationWindow_Upload", resourceCulture);
+            }
+        }
+        public static string MultiUploadConfirmationWindow_Cancel {
+            get {
+                return ResourceManager.GetString("MultiUploadConfirmationWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string DebugLogWindow_Title {
+            get {
+                return ResourceManager.GetString("DebugLogWindow_Title", resourceCulture);
+            }
+        }
+        public static string DebugLogWindow_LoadedAssemblies {
+            get {
+                return ResourceManager.GetString("DebugLogWindow_LoadedAssemblies", resourceCulture);
+            }
+        }
+        public static string DebugLogWindow_CopyAll {
+            get {
+                return ResourceManager.GetString("DebugLogWindow_CopyAll", resourceCulture);
+            }
+        }
+        public static string DebugLogWindow_OpenLogFile {
+            get {
+                return ResourceManager.GetString("DebugLogWindow_OpenLogFile", resourceCulture);
+            }
+        }
+        public static string DebugLogWindow_UploadLog {
+            get {
+                return ResourceManager.GetString("DebugLogWindow_UploadLog", resourceCulture);
+            }
+        }
+        public static string DebugLogWindow_StartupPath {
+            get {
+                return ResourceManager.GetString("DebugLogWindow_StartupPath", resourceCulture);
+            }
+        }
+        public static string DebugLogWindow_UploadPrompt {
+            get {
+                return ResourceManager.GetString("DebugLogWindow_UploadPrompt", resourceCulture);
+            }
+        }
+        public static string DebugLogWindow_Cancel {
+            get {
+                return ResourceManager.GetString("DebugLogWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string DebugLogWindow_Upload {
+            get {
+                return ResourceManager.GetString("DebugLogWindow_Upload", resourceCulture);
+            }
+        }
+        public static string FirstTimeConfigWindow_Heading {
+            get {
+                return ResourceManager.GetString("FirstTimeConfigWindow_Heading", resourceCulture);
+            }
+        }
+        public static string FirstTimeConfigWindow_Subtitle {
+            get {
+                return ResourceManager.GetString("FirstTimeConfigWindow_Subtitle", resourceCulture);
+            }
+        }
+        public static string FirstTimeConfigWindow_ShellContextMenu {
+            get {
+                return ResourceManager.GetString("FirstTimeConfigWindow_ShellContextMenu", resourceCulture);
+            }
+        }
+        public static string FirstTimeConfigWindow_SendToMenu {
+            get {
+                return ResourceManager.GetString("FirstTimeConfigWindow_SendToMenu", resourceCulture);
+            }
+        }
+        public static string FirstTimeConfigWindow_SteamInApp {
+            get {
+                return ResourceManager.GetString("FirstTimeConfigWindow_SteamInApp", resourceCulture);
+            }
+        }
+        public static string FirstTimeConfigWindow_OptionsLater {
+            get {
+                return ResourceManager.GetString("FirstTimeConfigWindow_OptionsLater", resourceCulture);
+            }
+        }
+        public static string FirstTimeConfigWindow_OK {
+            get {
+                return ResourceManager.GetString("FirstTimeConfigWindow_OK", resourceCulture);
+            }
+        }
+        public static string FirstTimeConfigWindow_StartWithWindows {
+            get {
+                return ResourceManager.GetString("FirstTimeConfigWindow_StartWithWindows", resourceCulture);
+            }
+        }
+        public static string FirstTimeConfigWindow_StartWithWindowsDisabledByUser {
+            get {
+                return ResourceManager.GetString("FirstTimeConfigWindow_StartWithWindowsDisabledByUser", resourceCulture);
+            }
+        }
+        public static string FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy {
+            get {
+                return ResourceManager.GetString("FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy", resourceCulture);
+            }
+        }
+        public static string FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy {
+            get {
+                return ResourceManager.GetString("FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy", resourceCulture);
+            }
+        }
+        public static string ImageEditorSelectorWindow_Title {
+            get {
+                return ResourceManager.GetString("ImageEditorSelectorWindow_Title", resourceCulture);
+            }
+        }
+        public static string ImageEditorSelectorWindow_Heading {
+            get {
+                return ResourceManager.GetString("ImageEditorSelectorWindow_Heading", resourceCulture);
+            }
+        }
+        public static string ImageEditorSelectorWindow_Subtitle {
+            get {
+                return ResourceManager.GetString("ImageEditorSelectorWindow_Subtitle", resourceCulture);
+            }
+        }
+        public static string ImageEditorSelectorWindow_ModernEditor {
+            get {
+                return ResourceManager.GetString("ImageEditorSelectorWindow_ModernEditor", resourceCulture);
+            }
+        }
+        public static string ImageEditorSelectorWindow_Recommended {
+            get {
+                return ResourceManager.GetString("ImageEditorSelectorWindow_Recommended", resourceCulture);
+            }
+        }
+        public static string ImageEditorSelectorWindow_ModernDescription {
+            get {
+                return ResourceManager.GetString("ImageEditorSelectorWindow_ModernDescription", resourceCulture);
+            }
+        }
+        public static string ImageEditorSelectorWindow_LegacyEditor {
+            get {
+                return ResourceManager.GetString("ImageEditorSelectorWindow_LegacyEditor", resourceCulture);
+            }
+        }
+        public static string ImageEditorSelectorWindow_LegacyDescription {
+            get {
+                return ResourceManager.GetString("ImageEditorSelectorWindow_LegacyDescription", resourceCulture);
+            }
+        }
+        public static string ImageEditorSelectorWindow_ChangeLater {
+            get {
+                return ResourceManager.GetString("ImageEditorSelectorWindow_ChangeLater", resourceCulture);
+            }
+        }
+        public static string ShortenURLWindow_Title {
+            get {
+                return ResourceManager.GetString("ShortenURLWindow_Title", resourceCulture);
+            }
+        }
+        public static string ShortenURLWindow_Heading {
+            get {
+                return ResourceManager.GetString("ShortenURLWindow_Heading", resourceCulture);
+            }
+        }
+        public static string ShortenURLWindow_URL {
+            get {
+                return ResourceManager.GetString("ShortenURLWindow_URL", resourceCulture);
+            }
+        }
+        public static string ShortenURLWindow_Validation {
+            get {
+                return ResourceManager.GetString("ShortenURLWindow_Validation", resourceCulture);
+            }
+        }
+        public static string ShortenURLWindow_Cancel {
+            get {
+                return ResourceManager.GetString("ShortenURLWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string ShortenURLWindow_Shorten {
+            get {
+                return ResourceManager.GetString("ShortenURLWindow_Shorten", resourceCulture);
+            }
+        }
+        public static string URLUploadWindow_Title {
+            get {
+                return ResourceManager.GetString("URLUploadWindow_Title", resourceCulture);
+            }
+        }
+        public static string URLUploadWindow_Heading {
+            get {
+                return ResourceManager.GetString("URLUploadWindow_Heading", resourceCulture);
+            }
+        }
+        public static string URLUploadWindow_Prompt {
+            get {
+                return ResourceManager.GetString("URLUploadWindow_Prompt", resourceCulture);
+            }
+        }
+        public static string URLUploadWindow_URL {
+            get {
+                return ResourceManager.GetString("URLUploadWindow_URL", resourceCulture);
+            }
+        }
+        public static string URLUploadWindow_Validation {
+            get {
+                return ResourceManager.GetString("URLUploadWindow_Validation", resourceCulture);
+            }
+        }
+        public static string URLUploadWindow_Cancel {
+            get {
+                return ResourceManager.GetString("URLUploadWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string URLUploadWindow_Upload {
+            get {
+                return ResourceManager.GetString("URLUploadWindow_Upload", resourceCulture);
+            }
+        }
+        public static string BeforeUploadWindow_Title {
+            get {
+                return ResourceManager.GetString("BeforeUploadWindow_Title", resourceCulture);
+            }
+        }
+        public static string BeforeUploadWindow_Heading {
+            get {
+                return ResourceManager.GetString("BeforeUploadWindow_Heading", resourceCulture);
+            }
+        }
+        public static string BeforeUploadWindow_Destination {
+            get {
+                return ResourceManager.GetString("BeforeUploadWindow_Destination", resourceCulture);
+            }
+        }
+        public static string BeforeUploadWindow_CopyPreviewImage {
+            get {
+                return ResourceManager.GetString("BeforeUploadWindow_CopyPreviewImage", resourceCulture);
+            }
+        }
+        public static string BeforeUploadWindow_Cancel {
+            get {
+                return ResourceManager.GetString("BeforeUploadWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string BeforeUploadWindow_Upload {
+            get {
+                return ResourceManager.GetString("BeforeUploadWindow_Upload", resourceCulture);
+            }
+        }
+        public static string BeforeUploadWindow_CustomUploader {
+            get {
+                return ResourceManager.GetString("BeforeUploadWindow_CustomUploader", resourceCulture);
+            }
+        }
+        public static string BeforeUploadWindow_ChooseDestination {
+            get {
+                return ResourceManager.GetString("BeforeUploadWindow_ChooseDestination", resourceCulture);
+            }
+        }
+        public static string BeforeUploadWindow_UploadPrompt {
+            get {
+                return ResourceManager.GetString("BeforeUploadWindow_UploadPrompt", resourceCulture);
+            }
+        }
+        public static string BeforeUploadWindow_NoPreview {
+            get {
+                return ResourceManager.GetString("BeforeUploadWindow_NoPreview", resourceCulture);
+            }
+        }
     }
 }

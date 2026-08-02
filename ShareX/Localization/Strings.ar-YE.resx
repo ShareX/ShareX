@@ -1837,4 +1837,244 @@
   <data name="TaskSettingsWindow_ChooseAudioFile" xml:space="preserve">
     <value>اختيار ملف صوتي</value>
   </data>
+  <data name="DragDropUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - الرفع بالسحب والإفلات</value>
+  </data>
+  <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
+    <value>أفلت هنا</value>
+  </data>
+  <data name="ClipboardUploadWindow_ClipboardUpload" xml:space="preserve">
+    <value>الرفع من الحافظة</value>
+  </data>
+  <data name="ClipboardUploadWindow_DontShowAgain" xml:space="preserve">
+    <value>لا تعرض هذه النافذة مرة أخرى</value>
+  </data>
+  <data name="ClipboardUploadWindow_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="ClipboardUploadWindow_Upload" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="ClipboardUploadWindow_ImageSummary" xml:space="preserve">
+    <value>محتوى الحافظة: صورة، الحجم: {0} × {1}</value>
+  </data>
+  <data name="ClipboardUploadWindow_TextSummary" xml:space="preserve">
+    <value>محتوى الحافظة: نص، الطول: {0}</value>
+  </data>
+  <data name="ClipboardUploadWindow_FileSummary" xml:space="preserve">
+    <value>محتوى الحافظة: ملفات، العدد: {0}</value>
+  </data>
+  <data name="ClipboardUploadWindow_Empty" xml:space="preserve">
+    <value>الحافظة فارغة أو تحتوي على بيانات غير مدعومة.</value>
+  </data>
+  <data name="FileExistWindow_Title" xml:space="preserve">
+    <value>ShareX - كيف يجب حفظ الملف؟</value>
+  </data>
+  <data name="FileExistWindow_FileAlreadyExists" xml:space="preserve">
+    <value>يوجد ملف بهذا الاسم بالفعل</value>
+  </data>
+  <data name="FileExistWindow_Instruction" xml:space="preserve">
+    <value>اختر اسم ملف جديدًا أو حدد كيفية متابعة ShareX.</value>
+  </data>
+  <data name="FileExistWindow_NewFileName" xml:space="preserve">
+    <value>اسم الملف الجديد</value>
+  </data>
+  <data name="FileExistWindow_UseNewName" xml:space="preserve">
+    <value>استخدام الاسم الجديد</value>
+  </data>
+  <data name="FileExistWindow_Overwrite" xml:space="preserve">
+    <value>الكتابة فوقه</value>
+  </data>
+  <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
+    <value>استخدام اسم فريد</value>
+  </data>
+  <data name="FileExistWindow_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Title" xml:space="preserve">
+    <value>ShareX - رفع ملف كبير</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Message" xml:space="preserve">
+    <value>أنت تحاول رفع ملف كبير.</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_DontShowAgain" xml:space="preserve">
+    <value>لا تعرض هذه الرسالة مرة أخرى.</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Continue" xml:space="preserve">
+    <value>متابعة</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Title" xml:space="preserve">
+    <value>ShareX - رفع الملفات</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Message" xml:space="preserve">
+    <value>هل أنت متأكد من رغبتك في رفع {0} ملفات؟</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_DontShowAgain" xml:space="preserve">
+    <value>لا تعرض هذه الرسالة مرة أخرى.</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Upload" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="DebugLogWindow_Title" xml:space="preserve">
+    <value>ShareX - سجل تصحيح الأخطاء</value>
+  </data>
+  <data name="DebugLogWindow_LoadedAssemblies" xml:space="preserve">
+    <value>التجميعات المحملة</value>
+  </data>
+  <data name="DebugLogWindow_CopyAll" xml:space="preserve">
+    <value>نسخ الكل</value>
+  </data>
+  <data name="DebugLogWindow_OpenLogFile" xml:space="preserve">
+    <value>فتح ملف السجل...</value>
+  </data>
+  <data name="DebugLogWindow_UploadLog" xml:space="preserve">
+    <value>رفع السجل...</value>
+  </data>
+  <data name="DebugLogWindow_StartupPath" xml:space="preserve">
+    <value>مسار بدء التشغيل:</value>
+  </data>
+  <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
+    <value>هل تريد رفع سجل تصحيح الأخطاء؟</value>
+  </data>
+  <data name="DebugLogWindow_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="DebugLogWindow_Upload" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="FirstTimeConfigWindow_Heading" xml:space="preserve">
+    <value>إعداد ShareX لأول مرة</value>
+  </data>
+  <data name="FirstTimeConfigWindow_Subtitle" xml:space="preserve">
+    <value>اختر كيفية تكامل ShareX مع Windows.</value>
+  </data>
+  <data name="FirstTimeConfigWindow_ShellContextMenu" xml:space="preserve">
+    <value>إظهار «الرفع باستخدام ShareX» في قائمة سياق مستكشف Windows</value>
+  </data>
+  <data name="FirstTimeConfigWindow_SendToMenu" xml:space="preserve">
+    <value>إظهار ShareX في قائمة «إرسال إلى»</value>
+  </data>
+  <data name="FirstTimeConfigWindow_SteamInApp" xml:space="preserve">
+    <value>أثناء فتح ShareX، إظهار «داخل التطبيق» في Steam</value>
+  </data>
+  <data name="FirstTimeConfigWindow_OptionsLater" xml:space="preserve">
+    <value>يمكنك تغيير هذه الخيارات لاحقًا من إعدادات التطبيق ← التكامل.</value>
+  </data>
+  <data name="FirstTimeConfigWindow_OK" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindows" xml:space="preserve">
+    <value>تشغيل ShareX عند بدء Windows</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByUser" xml:space="preserve">
+    <value>تم تعطيل بدء التشغيل في إدارة المهام</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy" xml:space="preserve">
+    <value>تم تعطيل بدء التشغيل بواسطة مؤسستك</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
+    <value>تم تمكين بدء التشغيل بواسطة مؤسستك</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Title" xml:space="preserve">
+    <value>ShareX - اختيار محرر الصور</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Heading" xml:space="preserve">
+    <value>اختر محرر صور</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Subtitle" xml:space="preserve">
+    <value>حدد المحرر الذي يجب أن يفتحه ShareX.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ModernEditor" xml:space="preserve">
+    <value>محرر الصور الحديث</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Recommended" xml:space="preserve">
+    <value>موصى به</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ModernDescription" xml:space="preserve">
+    <value>محرر ShareX الحالي بأحدث الأدوات والتحسينات.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_LegacyEditor" xml:space="preserve">
+    <value>محرر الصور القديم</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_LegacyDescription" xml:space="preserve">
+    <value>محرر ShareX الكلاسيكي لالتقاط المناطق.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ChangeLater" xml:space="preserve">
+    <value>يمكنك تغيير هذا لاحقًا من إعدادات المهام ← الأدوات.</value>
+  </data>
+  <data name="ShortenURLWindow_Title" xml:space="preserve">
+    <value>ShareX - تقصير عنوان URL</value>
+  </data>
+  <data name="ShortenURLWindow_Heading" xml:space="preserve">
+    <value>تقصير عنوان URL</value>
+  </data>
+  <data name="ShortenURLWindow_URL" xml:space="preserve">
+    <value>عنوان URL</value>
+  </data>
+  <data name="ShortenURLWindow_Validation" xml:space="preserve">
+    <value>أدخل عنوان URL صالحًا من نوع HTTP أو HTTPS أو FTP.</value>
+  </data>
+  <data name="ShortenURLWindow_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="ShortenURLWindow_Shorten" xml:space="preserve">
+    <value>تقصير</value>
+  </data>
+  <data name="URLUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - رفع عنوان URL</value>
+  </data>
+  <data name="URLUploadWindow_Heading" xml:space="preserve">
+    <value>رفع عنوان URL</value>
+  </data>
+  <data name="URLUploadWindow_Prompt" xml:space="preserve">
+    <value>عنوان URL المطلوب تنزيله ورفعه</value>
+  </data>
+  <data name="URLUploadWindow_URL" xml:space="preserve">
+    <value>عنوان URL</value>
+  </data>
+  <data name="URLUploadWindow_Validation" xml:space="preserve">
+    <value>أدخل عنوان URL صالحًا من نوع HTTP أو HTTPS أو FTP.</value>
+  </data>
+  <data name="URLUploadWindow_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="URLUploadWindow_Upload" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="BeforeUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - قبل الرفع</value>
+  </data>
+  <data name="BeforeUploadWindow_Heading" xml:space="preserve">
+    <value>قبل الرفع</value>
+  </data>
+  <data name="BeforeUploadWindow_Destination" xml:space="preserve">
+    <value>الوجهة</value>
+  </data>
+  <data name="BeforeUploadWindow_CopyPreviewImage" xml:space="preserve">
+    <value>نسخ صورة المعاينة</value>
+  </data>
+  <data name="BeforeUploadWindow_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="BeforeUploadWindow_Upload" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="BeforeUploadWindow_CustomUploader" xml:space="preserve">
+    <value>مخصص [{0}]</value>
+  </data>
+  <data name="BeforeUploadWindow_ChooseDestination" xml:space="preserve">
+    <value>يرجى اختيار وجهة.</value>
+  </data>
+  <data name="BeforeUploadWindow_UploadPrompt" xml:space="preserve">
+    <value>سيتم رفع {0} إلى {1}. يمكنك اختيار وجهة مختلفة.</value>
+  </data>
+  <data name="BeforeUploadWindow_NoPreview" xml:space="preserve">
+    <value>لا تتوفر معاينة</value>
+  </data>
 </root>

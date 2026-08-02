@@ -15,6 +15,7 @@ using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -221,7 +222,7 @@ public partial class BeforeUploadWindow : Window
             CustomUploaderItem? uploader = Program.UploadersConfig.CustomUploadersList.ReturnIfValidIndex(customUploaderIndex);
             if (uploader != null)
             {
-                return string.Format("{0} [{1}]", Properties.Resources.BeforeUploadControl_AddDestination_Custom, uploader);
+                return string.Format(Strings.BeforeUploadWindow_CustomUploader, uploader);
             }
         }
 
@@ -236,9 +237,9 @@ public partial class BeforeUploadWindow : Window
         }
 
         PromptText.Text = string.IsNullOrEmpty(destination)
-            ? Properties.Resources.BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_
+            ? Strings.BeforeUploadWindow_ChooseDestination
             : string.Format(
-                Properties.Resources.BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_,
+                Strings.BeforeUploadWindow_UploadPrompt,
                 _info.FileName,
                 destination);
     }
@@ -262,7 +263,7 @@ public partial class BeforeUploadWindow : Window
         PreviewImage.IsVisible = false;
         ImageSizeBadge.IsVisible = false;
         EmptyPreview.IsVisible = true;
-        EmptyPreviewText.Text = string.IsNullOrEmpty(_info.FileName) ? "No preview available" : _info.FileName;
+        EmptyPreviewText.Text = string.IsNullOrEmpty(_info.FileName) ? Strings.BeforeUploadWindow_NoPreview : _info.FileName;
     }
 
     private void OnUploadClick(object? sender, RoutedEventArgs e)

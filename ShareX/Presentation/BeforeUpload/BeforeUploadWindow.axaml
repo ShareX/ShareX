@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="using:ShareX"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.BeforeUploadWindow"
         x:CompileBindings="False"
-        Title="ShareX - Before upload"
+        Title="{x:Static res:Strings.BeforeUploadWindow_Title}"
         Width="900"
         Height="560"
         MinWidth="720"
@@ -70,7 +71,7 @@
                                VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
-                    <TextBlock Text="Before upload"
+                    <TextBlock Text="{x:Static res:Strings.BeforeUploadWindow_Heading}"
                                FontSize="19"
                                FontWeight="SemiBold"
                                Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
@@ -99,7 +100,7 @@
                                        Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
                                        VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="1"
-                                       Text="Destination"
+                                       Text="{x:Static res:Strings.BeforeUploadWindow_Destination}"
                                        FontWeight="SemiBold"
                                        VerticalAlignment="Center"/>
                         </Grid>
@@ -136,7 +137,7 @@
                            Stretch="Uniform">
                         <Image.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="Copy preview image" Click="OnCopyPreviewClick"/>
+                                <MenuItem Header="{x:Static res:Strings.BeforeUploadWindow_CopyPreviewImage}" Click="OnCopyPreviewClick"/>
                             </ContextMenu>
                         </Image.ContextMenu>
                     </Image>
@@ -175,12 +176,12 @@
                   ColumnSpacing="7">
                 <Button Grid.Column="1"
                         Classes="compact"
-                        Content="Cancel"
+                        Content="{x:Static res:Strings.BeforeUploadWindow_Cancel}"
                         IsCancel="True"
                         Click="OnCancelClick"/>
                 <Button Grid.Column="2"
                         Classes="compact primary"
-                        Content="Upload"
+                        Content="{x:Static res:Strings.BeforeUploadWindow_Upload}"
                         IsDefault="True"
                         Click="OnUploadClick"/>
             </Grid>

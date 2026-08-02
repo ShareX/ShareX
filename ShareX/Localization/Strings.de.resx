@@ -1837,4 +1837,244 @@
   <data name="TaskSettingsWindow_ChooseAudioFile" xml:space="preserve">
     <value>Audiodatei auswählen</value>
   </data>
+  <data name="DragDropUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - Hochladen per Drag-and-drop</value>
+  </data>
+  <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
+    <value>Hier ablegen</value>
+  </data>
+  <data name="ClipboardUploadWindow_ClipboardUpload" xml:space="preserve">
+    <value>Zwischenablage hochladen</value>
+  </data>
+  <data name="ClipboardUploadWindow_DontShowAgain" xml:space="preserve">
+    <value>Dieses Fenster nicht mehr anzeigen</value>
+  </data>
+  <data name="ClipboardUploadWindow_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="ClipboardUploadWindow_Upload" xml:space="preserve">
+    <value>Hochladen</value>
+  </data>
+  <data name="ClipboardUploadWindow_ImageSummary" xml:space="preserve">
+    <value>Zwischenablageninhalt: Bild, Größe: {0} × {1}</value>
+  </data>
+  <data name="ClipboardUploadWindow_TextSummary" xml:space="preserve">
+    <value>Zwischenablageninhalt: Text, Länge: {0}</value>
+  </data>
+  <data name="ClipboardUploadWindow_FileSummary" xml:space="preserve">
+    <value>Zwischenablageninhalt: Dateien, Anzahl: {0}</value>
+  </data>
+  <data name="ClipboardUploadWindow_Empty" xml:space="preserve">
+    <value>Die Zwischenablage ist leer oder enthält nicht unterstützte Daten.</value>
+  </data>
+  <data name="FileExistWindow_Title" xml:space="preserve">
+    <value>ShareX - Wie soll die Datei gespeichert werden?</value>
+  </data>
+  <data name="FileExistWindow_FileAlreadyExists" xml:space="preserve">
+    <value>Eine Datei mit diesem Namen ist bereits vorhanden</value>
+  </data>
+  <data name="FileExistWindow_Instruction" xml:space="preserve">
+    <value>Wählen Sie einen neuen Dateinamen oder legen Sie fest, wie ShareX fortfahren soll.</value>
+  </data>
+  <data name="FileExistWindow_NewFileName" xml:space="preserve">
+    <value>Neuer Dateiname</value>
+  </data>
+  <data name="FileExistWindow_UseNewName" xml:space="preserve">
+    <value>Neuen Namen verwenden</value>
+  </data>
+  <data name="FileExistWindow_Overwrite" xml:space="preserve">
+    <value>Überschreiben</value>
+  </data>
+  <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
+    <value>Eindeutigen Namen verwenden</value>
+  </data>
+  <data name="FileExistWindow_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Title" xml:space="preserve">
+    <value>ShareX - Große Datei hochladen</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Message" xml:space="preserve">
+    <value>Sie versuchen, eine große Datei hochzuladen.</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_DontShowAgain" xml:space="preserve">
+    <value>Diese Meldung nicht mehr anzeigen.</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Continue" xml:space="preserve">
+    <value>Fortfahren</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Title" xml:space="preserve">
+    <value>ShareX - Dateien hochladen</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Message" xml:space="preserve">
+    <value>Möchten Sie wirklich {0} Dateien hochladen?</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_DontShowAgain" xml:space="preserve">
+    <value>Diese Meldung nicht mehr anzeigen.</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Upload" xml:space="preserve">
+    <value>Hochladen</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="DebugLogWindow_Title" xml:space="preserve">
+    <value>ShareX - Debugprotokoll</value>
+  </data>
+  <data name="DebugLogWindow_LoadedAssemblies" xml:space="preserve">
+    <value>Geladene Assemblys</value>
+  </data>
+  <data name="DebugLogWindow_CopyAll" xml:space="preserve">
+    <value>Alles kopieren</value>
+  </data>
+  <data name="DebugLogWindow_OpenLogFile" xml:space="preserve">
+    <value>Protokolldatei öffnen...</value>
+  </data>
+  <data name="DebugLogWindow_UploadLog" xml:space="preserve">
+    <value>Protokoll hochladen...</value>
+  </data>
+  <data name="DebugLogWindow_StartupPath" xml:space="preserve">
+    <value>Startpfad:</value>
+  </data>
+  <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
+    <value>Debugprotokoll hochladen?</value>
+  </data>
+  <data name="DebugLogWindow_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="DebugLogWindow_Upload" xml:space="preserve">
+    <value>Hochladen</value>
+  </data>
+  <data name="FirstTimeConfigWindow_Heading" xml:space="preserve">
+    <value>ShareX-Erstkonfiguration</value>
+  </data>
+  <data name="FirstTimeConfigWindow_Subtitle" xml:space="preserve">
+    <value>Wählen Sie aus, wie ShareX in Windows integriert wird.</value>
+  </data>
+  <data name="FirstTimeConfigWindow_ShellContextMenu" xml:space="preserve">
+    <value>„Mit ShareX hochladen“ im Kontextmenü des Windows-Explorers anzeigen</value>
+  </data>
+  <data name="FirstTimeConfigWindow_SendToMenu" xml:space="preserve">
+    <value>ShareX im Menü „Senden an“ anzeigen</value>
+  </data>
+  <data name="FirstTimeConfigWindow_SteamInApp" xml:space="preserve">
+    <value>Während ShareX geöffnet ist, in Steam „Im Spiel“ anzeigen</value>
+  </data>
+  <data name="FirstTimeConfigWindow_OptionsLater" xml:space="preserve">
+    <value>Sie können diese Optionen später unter Anwendungseinstellungen → Integration ändern.</value>
+  </data>
+  <data name="FirstTimeConfigWindow_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindows" xml:space="preserve">
+    <value>ShareX beim Start von Windows ausführen</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByUser" xml:space="preserve">
+    <value>Autostart wurde im Task-Manager deaktiviert</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy" xml:space="preserve">
+    <value>Autostart wurde von Ihrer Organisation deaktiviert</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
+    <value>Autostart wurde von Ihrer Organisation aktiviert</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Title" xml:space="preserve">
+    <value>ShareX - Bildeditor auswählen</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Heading" xml:space="preserve">
+    <value>Bildeditor auswählen</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Subtitle" xml:space="preserve">
+    <value>Wählen Sie aus, welchen Editor ShareX öffnen soll.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ModernEditor" xml:space="preserve">
+    <value>Moderner Bildeditor</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Recommended" xml:space="preserve">
+    <value>Empfohlen</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ModernDescription" xml:space="preserve">
+    <value>Der aktuelle ShareX-Editor mit den neuesten Werkzeugen und Verbesserungen.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_LegacyEditor" xml:space="preserve">
+    <value>Klassischer Bildeditor</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_LegacyDescription" xml:space="preserve">
+    <value>Der klassische ShareX-Editor für Bereichsaufnahmen.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ChangeLater" xml:space="preserve">
+    <value>Sie können dies später unter Aufgabeneinstellungen → Werkzeuge ändern.</value>
+  </data>
+  <data name="ShortenURLWindow_Title" xml:space="preserve">
+    <value>ShareX - URL kürzen</value>
+  </data>
+  <data name="ShortenURLWindow_Heading" xml:space="preserve">
+    <value>URL kürzen</value>
+  </data>
+  <data name="ShortenURLWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ShortenURLWindow_Validation" xml:space="preserve">
+    <value>Geben Sie eine gültige HTTP-, HTTPS- oder FTP-URL ein.</value>
+  </data>
+  <data name="ShortenURLWindow_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="ShortenURLWindow_Shorten" xml:space="preserve">
+    <value>Kürzen</value>
+  </data>
+  <data name="URLUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - URL hochladen</value>
+  </data>
+  <data name="URLUploadWindow_Heading" xml:space="preserve">
+    <value>URL hochladen</value>
+  </data>
+  <data name="URLUploadWindow_Prompt" xml:space="preserve">
+    <value>URL zum Herunterladen und Hochladen</value>
+  </data>
+  <data name="URLUploadWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="URLUploadWindow_Validation" xml:space="preserve">
+    <value>Geben Sie eine gültige HTTP-, HTTPS- oder FTP-URL ein.</value>
+  </data>
+  <data name="URLUploadWindow_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="URLUploadWindow_Upload" xml:space="preserve">
+    <value>Hochladen</value>
+  </data>
+  <data name="BeforeUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - Vor dem Hochladen</value>
+  </data>
+  <data name="BeforeUploadWindow_Heading" xml:space="preserve">
+    <value>Vor dem Hochladen</value>
+  </data>
+  <data name="BeforeUploadWindow_Destination" xml:space="preserve">
+    <value>Ziel</value>
+  </data>
+  <data name="BeforeUploadWindow_CopyPreviewImage" xml:space="preserve">
+    <value>Vorschaubild kopieren</value>
+  </data>
+  <data name="BeforeUploadWindow_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="BeforeUploadWindow_Upload" xml:space="preserve">
+    <value>Hochladen</value>
+  </data>
+  <data name="BeforeUploadWindow_CustomUploader" xml:space="preserve">
+    <value>Benutzerdefiniert [{0}]</value>
+  </data>
+  <data name="BeforeUploadWindow_ChooseDestination" xml:space="preserve">
+    <value>Wählen Sie ein Ziel aus.</value>
+  </data>
+  <data name="BeforeUploadWindow_UploadPrompt" xml:space="preserve">
+    <value>{0} wird gleich zu {1} hochgeladen. Sie können ein anderes Ziel auswählen.</value>
+  </data>
+  <data name="BeforeUploadWindow_NoPreview" xml:space="preserve">
+    <value>Keine Vorschau verfügbar</value>
+  </data>
 </root>

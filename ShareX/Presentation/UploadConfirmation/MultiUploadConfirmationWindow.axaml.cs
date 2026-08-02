@@ -12,8 +12,8 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Localization;
 using System;
-using LocalizedResources = ShareX.Properties.Resources;
 
 namespace ShareX;
 
@@ -31,12 +31,9 @@ public partial class MultiUploadConfirmationWindow : Window
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
 
-        Title = $"ShareX - {LocalizedResources.UploadManager_IsUploadConfirmed_Upload_files}";
         MessageText.Text = string.Format(
-            LocalizedResources.UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_,
+            Strings.MultiUploadConfirmationWindow_Message,
             fileCount);
-        DontShowAgainCheckBox.Content =
-            LocalizedResources.UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_;
 
         Opened += OnOpened;
     }

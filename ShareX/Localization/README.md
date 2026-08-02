@@ -10,6 +10,18 @@ Avalonia translations use the shared `Strings.resx` resource set in this directo
 | Application settings | `ApplicationSettingsWindow_` | 3 | 174 | Complete |
 | Hotkey settings | `HotkeySettingsWindow_` | 3 | 23 | Complete |
 | Task settings | `TaskSettingsWindow_` | 4 | 254 | Complete |
+| Drag and drop upload | `DragDropUploadWindow_` | 2 | 2 | Complete |
+| Clipboard upload | `ClipboardUploadWindow_` | 2 | 8 | Complete |
+| Notification | None (content supplied dynamically) | 4 | 0 | Reviewed |
+| File exists | `FileExistWindow_` | 2 | 8 | Complete |
+| Large file upload warning | `LargeFileUploadWarningWindow_` | 2 | 5 | Complete |
+| Multi-upload confirmation | `MultiUploadConfirmationWindow_` | 2 | 5 | Complete |
+| Debug log | `DebugLogWindow_` | 2 | 9 | Complete |
+| First-time configuration | `FirstTimeConfigWindow_` | 2 | 11 | Complete |
+| Image editor selector | `ImageEditorSelectorWindow_` | 2 | 9 | Complete |
+| Shorten URL | `ShortenURLWindow_` | 2 | 6 | Complete |
+| URL upload | `URLUploadWindow_` | 2 | 7 | Complete |
+| Before upload | `BeforeUploadWindow_` | 2 | 10 | Complete |
 
 `Validate.ps1` contains the tracked source-file manifest. It verifies that:
 

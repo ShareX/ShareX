@@ -32,7 +32,6 @@ public partial class ShortenURLWindow : Window
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        ShortenButton.Content = Properties.Resources.UploadManager_ShowShortenURLDialog_Shorten;
 
         if (!string.IsNullOrEmpty(initialURL))
         {

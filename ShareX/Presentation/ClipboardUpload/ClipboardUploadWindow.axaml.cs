@@ -15,6 +15,7 @@ using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using System;
 using System.Drawing.Imaging;
 using System.IO;
@@ -41,8 +42,8 @@ public partial class ClipboardUploadWindow : Window
 
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        Title = $"ShareX - {Properties.Resources.ClipboardUpload}";
-        HeaderTitle.Text = Properties.Resources.ClipboardUpload;
+        Title = $"ShareX - {Strings.ClipboardUploadWindow_ClipboardUpload}";
+        HeaderTitle.Text = Strings.ClipboardUploadWindow_ClipboardUpload;
         DontShowAgainCheckBox.IsVisible = showDontShowAgain;
 
         UploadButton.IsEnabled = LoadClipboardContent();
@@ -69,7 +70,7 @@ public partial class ClipboardUploadWindow : Window
                 ImagePreview.Source = _previewBitmap;
                 ImagePreviewContainer.IsVisible = true;
                 ClipboardSummary.Text = string.Format(
-                    Properties.Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__,
+                    Strings.ClipboardUploadWindow_ImageSummary,
                     image.Width,
                     image.Height);
                 return true;
@@ -84,7 +85,7 @@ public partial class ClipboardUploadWindow : Window
                 TextPreview.Text = text;
                 TextPreview.IsVisible = true;
                 ClipboardSummary.Text = string.Format(
-                    Properties.Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__,
+                    Strings.ClipboardUploadWindow_TextSummary,
                     text.Length);
                 return true;
             }
@@ -98,13 +99,13 @@ public partial class ClipboardUploadWindow : Window
                 FilePreview.ItemsSource = files;
                 FilePreview.IsVisible = true;
                 ClipboardSummary.Text = string.Format(
-                    Properties.Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__,
+                    Strings.ClipboardUploadWindow_FileSummary,
                     files.Length);
                 return true;
             }
         }
 
-        ClipboardSummary.Text = Properties.Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_;
+        ClipboardSummary.Text = Strings.ClipboardUploadWindow_Empty;
         EmptyPreview.Text = ClipboardSummary.Text;
         EmptyPreview.IsVisible = true;
         return false;

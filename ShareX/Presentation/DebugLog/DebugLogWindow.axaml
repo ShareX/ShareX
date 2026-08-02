@@ -1,8 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.DebugLogWindow"
-        Title="ShareX - Debug log"
+        Title="{x:Static res:Strings.DebugLogWindow_Title}"
         Width="850"
         Height="600"
         MinWidth="600"
@@ -24,13 +25,13 @@
                         <Button Grid.Column="0" Classes="compact" Click="OnLoadedAssembliesClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.blocks}"/>
-                                <TextBlock Text="Loaded assemblies"/>
+                                <TextBlock Text="{x:Static res:Strings.DebugLogWindow_LoadedAssemblies}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="1" Classes="compact" Click="OnCopyAllClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
-                                <TextBlock Text="Copy all"/>
+                                <TextBlock Text="{x:Static res:Strings.DebugLogWindow_CopyAll}"/>
                             </StackPanel>
                         </Button>
                         <Button x:Name="OpenLogFileButton"
@@ -39,7 +40,7 @@
                                 Click="OnOpenLogFileClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file_text}"/>
-                                <TextBlock Text="Open log file..."/>
+                                <TextBlock Text="{x:Static res:Strings.DebugLogWindow_OpenLogFile}"/>
                             </StackPanel>
                         </Button>
                         <Button x:Name="UploadLogButton"
@@ -48,7 +49,7 @@
                                 Click="OnUploadLogClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}"/>
-                                <TextBlock Text="Upload log..."/>
+                                <TextBlock Text="{x:Static res:Strings.DebugLogWindow_UploadLog}"/>
                             </StackPanel>
                         </Button>
                     </Grid>
@@ -70,7 +71,7 @@
                 </Border>
 
                 <Grid Grid.Row="2" ColumnDefinitions="Auto,*" ColumnSpacing="7">
-                    <TextBlock Text="Startup path:"
+                    <TextBlock Text="{x:Static res:Strings.DebugLogWindow_StartupPath}"
                                FontWeight="Normal"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                VerticalAlignment="Center"/>
@@ -101,7 +102,7 @@
                                        Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
                             <TextBlock Grid.Column="1"
                                        Classes="section-heading"
-                                       Text="Upload debug log?"/>
+                                       Text="{x:Static res:Strings.DebugLogWindow_UploadPrompt}"/>
                         </Grid>
                         <TextBlock x:Name="UploadWarningText"
                                    Grid.Row="1"
@@ -111,8 +112,8 @@
                                     Orientation="Horizontal"
                                     Spacing="8"
                                     HorizontalAlignment="Right">
-                            <Button Click="OnCancelUploadClick" Content="Cancel"/>
-                            <Button Click="OnConfirmUploadClick" Content="Upload"/>
+                            <Button Click="OnCancelUploadClick" Content="{x:Static res:Strings.DebugLogWindow_Cancel}"/>
+                            <Button Click="OnConfirmUploadClick" Content="{x:Static res:Strings.DebugLogWindow_Upload}"/>
                         </StackPanel>
                     </Grid>
                 </Border>

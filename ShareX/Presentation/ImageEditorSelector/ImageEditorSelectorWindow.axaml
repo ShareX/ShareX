@@ -1,9 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.ImageEditorSelectorWindow"
         x:CompileBindings="False"
-        Title="ShareX - Image editor selector"
+        Title="{x:Static res:Strings.ImageEditorSelectorWindow_Title}"
         Width="580"
         SizeToContent="Height"
         CanResize="False"
@@ -72,11 +73,11 @@
                 <StackPanel Grid.Column="1"
                             Spacing="1"
                             VerticalAlignment="Center">
-                    <TextBlock Text="Choose an image editor"
+                    <TextBlock Text="{x:Static res:Strings.ImageEditorSelectorWindow_Heading}"
                                FontSize="19"
                                FontWeight="SemiBold"
                                Foreground="{DynamicResource ShareX.Brush.Accent}"/>
-                    <TextBlock Text="Select which editor ShareX should open."
+                    <TextBlock Text="{x:Static res:Strings.ImageEditorSelectorWindow_Subtitle}"
                                FontWeight="Normal"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                 </StackPanel>
@@ -99,11 +100,11 @@
                                VerticalAlignment="Top"/>
                     <StackPanel Grid.Column="1" Spacing="4">
                         <TextBlock Classes="choice-title"
-                                   Text="Modern image editor"/>
+                                   Text="{x:Static res:Strings.ImageEditorSelectorWindow_ModernEditor}"/>
                         <TextBlock Classes="choice-badge"
-                                   Text="Recommended"/>
+                                   Text="{x:Static res:Strings.ImageEditorSelectorWindow_Recommended}"/>
                         <TextBlock Classes="choice-description"
-                                   Text="The current ShareX editor with the latest tools and improvements."/>
+                                   Text="{x:Static res:Strings.ImageEditorSelectorWindow_ModernDescription}"/>
                     </StackPanel>
                 </Grid>
             </Button>
@@ -120,9 +121,9 @@
                                VerticalAlignment="Top"/>
                     <StackPanel Grid.Column="1" Spacing="4">
                         <TextBlock Classes="choice-title"
-                                   Text="Legacy image editor"/>
+                                   Text="{x:Static res:Strings.ImageEditorSelectorWindow_LegacyEditor}"/>
                         <TextBlock Classes="choice-description"
-                                   Text="The classic ShareX region-capture editor."/>
+                                   Text="{x:Static res:Strings.ImageEditorSelectorWindow_LegacyDescription}"/>
                     </StackPanel>
                 </Grid>
             </Button>
@@ -133,7 +134,7 @@
                 Padding="10,8"
                 Background="{DynamicResource ShareX.Brush.Background.Panel}"
                 CornerRadius="5">
-            <TextBlock Text="You can change this later in Task settings → Tools."
+            <TextBlock Text="{x:Static res:Strings.ImageEditorSelectorWindow_ChangeLater}"
                        FontSize="12"
                        FontWeight="Normal"
                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>

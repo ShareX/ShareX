@@ -14,6 +14,7 @@ using Avalonia.Interactivity;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Localization;
 using System;
 using System.Threading.Tasks;
 
@@ -32,7 +33,7 @@ public partial class URLUploadWindow : Window
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        PromptText.Text = Properties.Resources.UploadManager_UploadURL_URL_to_download_from_and_upload;
+        PromptText.Text = Strings.URLUploadWindow_Prompt;
 
         if (!string.IsNullOrEmpty(initialURL))
         {

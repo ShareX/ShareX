@@ -1837,4 +1837,244 @@
   <data name="TaskSettingsWindow_ChooseAudioFile" xml:space="preserve">
     <value>انتخاب فایل صوتی</value>
   </data>
+  <data name="DragDropUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - بارگذاری با کشیدن و رها کردن</value>
+  </data>
+  <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
+    <value>اینجا رها کنید</value>
+  </data>
+  <data name="ClipboardUploadWindow_ClipboardUpload" xml:space="preserve">
+    <value>بارگذاری از کلیپ‌بورد</value>
+  </data>
+  <data name="ClipboardUploadWindow_DontShowAgain" xml:space="preserve">
+    <value>این پنجره را دوباره نشان نده</value>
+  </data>
+  <data name="ClipboardUploadWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="ClipboardUploadWindow_Upload" xml:space="preserve">
+    <value>بارگذاری</value>
+  </data>
+  <data name="ClipboardUploadWindow_ImageSummary" xml:space="preserve">
+    <value>محتوای کلیپ‌بورد: تصویر، اندازه: {0} × {1}</value>
+  </data>
+  <data name="ClipboardUploadWindow_TextSummary" xml:space="preserve">
+    <value>محتوای کلیپ‌بورد: متن، طول: {0}</value>
+  </data>
+  <data name="ClipboardUploadWindow_FileSummary" xml:space="preserve">
+    <value>محتوای کلیپ‌بورد: فایل‌ها، تعداد: {0}</value>
+  </data>
+  <data name="ClipboardUploadWindow_Empty" xml:space="preserve">
+    <value>کلیپ‌بورد خالی است یا حاوی داده‌های پشتیبانی‌نشده است.</value>
+  </data>
+  <data name="FileExistWindow_Title" xml:space="preserve">
+    <value>ShareX - فایل چگونه ذخیره شود؟</value>
+  </data>
+  <data name="FileExistWindow_FileAlreadyExists" xml:space="preserve">
+    <value>فایلی با این نام از قبل وجود دارد</value>
+  </data>
+  <data name="FileExistWindow_Instruction" xml:space="preserve">
+    <value>یک نام فایل جدید انتخاب کنید یا نحوه ادامه کار ShareX را مشخص کنید.</value>
+  </data>
+  <data name="FileExistWindow_NewFileName" xml:space="preserve">
+    <value>نام فایل جدید</value>
+  </data>
+  <data name="FileExistWindow_UseNewName" xml:space="preserve">
+    <value>استفاده از نام جدید</value>
+  </data>
+  <data name="FileExistWindow_Overwrite" xml:space="preserve">
+    <value>بازنویسی</value>
+  </data>
+  <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
+    <value>استفاده از نام یکتا</value>
+  </data>
+  <data name="FileExistWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Title" xml:space="preserve">
+    <value>ShareX - بارگذاری فایل بزرگ</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Message" xml:space="preserve">
+    <value>در حال تلاش برای بارگذاری یک فایل بزرگ هستید.</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_DontShowAgain" xml:space="preserve">
+    <value>این پیام را دوباره نشان نده.</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Continue" xml:space="preserve">
+    <value>ادامه</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Title" xml:space="preserve">
+    <value>ShareX - بارگذاری فایل‌ها</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Message" xml:space="preserve">
+    <value>آیا مطمئن هستید که می‌خواهید {0} فایل را بارگذاری کنید؟</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_DontShowAgain" xml:space="preserve">
+    <value>این پیام را دوباره نشان نده.</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Upload" xml:space="preserve">
+    <value>بارگذاری</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="DebugLogWindow_Title" xml:space="preserve">
+    <value>ShareX - گزارش اشکال‌زدایی</value>
+  </data>
+  <data name="DebugLogWindow_LoadedAssemblies" xml:space="preserve">
+    <value>اسمبلی‌های بارگذاری‌شده</value>
+  </data>
+  <data name="DebugLogWindow_CopyAll" xml:space="preserve">
+    <value>کپی همه</value>
+  </data>
+  <data name="DebugLogWindow_OpenLogFile" xml:space="preserve">
+    <value>باز کردن فایل گزارش...</value>
+  </data>
+  <data name="DebugLogWindow_UploadLog" xml:space="preserve">
+    <value>بارگذاری گزارش...</value>
+  </data>
+  <data name="DebugLogWindow_StartupPath" xml:space="preserve">
+    <value>مسیر راه‌اندازی:</value>
+  </data>
+  <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
+    <value>گزارش اشکال‌زدایی بارگذاری شود؟</value>
+  </data>
+  <data name="DebugLogWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="DebugLogWindow_Upload" xml:space="preserve">
+    <value>بارگذاری</value>
+  </data>
+  <data name="FirstTimeConfigWindow_Heading" xml:space="preserve">
+    <value>پیکربندی اولیه ShareX</value>
+  </data>
+  <data name="FirstTimeConfigWindow_Subtitle" xml:space="preserve">
+    <value>نحوه یکپارچه شدن ShareX با Windows را انتخاب کنید.</value>
+  </data>
+  <data name="FirstTimeConfigWindow_ShellContextMenu" xml:space="preserve">
+    <value>نمایش «بارگذاری با ShareX» در منوی زمینه کاوشگر Windows</value>
+  </data>
+  <data name="FirstTimeConfigWindow_SendToMenu" xml:space="preserve">
+    <value>نمایش ShareX در منوی «ارسال به»</value>
+  </data>
+  <data name="FirstTimeConfigWindow_SteamInApp" xml:space="preserve">
+    <value>هنگام باز بودن ShareX، نمایش «در برنامه» در Steam</value>
+  </data>
+  <data name="FirstTimeConfigWindow_OptionsLater" xml:space="preserve">
+    <value>بعداً می‌توانید این گزینه‌ها را در تنظیمات برنامه ← یکپارچه‌سازی تغییر دهید.</value>
+  </data>
+  <data name="FirstTimeConfigWindow_OK" xml:space="preserve">
+    <value>تأیید</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindows" xml:space="preserve">
+    <value>اجرای ShareX هنگام شروع Windows</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByUser" xml:space="preserve">
+    <value>راه‌اندازی در Task Manager غیرفعال شده است</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy" xml:space="preserve">
+    <value>راه‌اندازی توسط سازمان شما غیرفعال شده است</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
+    <value>راه‌اندازی توسط سازمان شما فعال شده است</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Title" xml:space="preserve">
+    <value>ShareX - انتخاب ویرایشگر تصویر</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Heading" xml:space="preserve">
+    <value>یک ویرایشگر تصویر انتخاب کنید</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Subtitle" xml:space="preserve">
+    <value>مشخص کنید ShareX کدام ویرایشگر را باز کند.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ModernEditor" xml:space="preserve">
+    <value>ویرایشگر تصویر مدرن</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Recommended" xml:space="preserve">
+    <value>پیشنهادشده</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ModernDescription" xml:space="preserve">
+    <value>ویرایشگر فعلی ShareX با جدیدترین ابزارها و بهبودها.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_LegacyEditor" xml:space="preserve">
+    <value>ویرایشگر تصویر قدیمی</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_LegacyDescription" xml:space="preserve">
+    <value>ویرایشگر کلاسیک ShareX برای تصویربرداری از ناحیه.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ChangeLater" xml:space="preserve">
+    <value>بعداً می‌توانید این مورد را در تنظیمات وظیفه ← ابزارها تغییر دهید.</value>
+  </data>
+  <data name="ShortenURLWindow_Title" xml:space="preserve">
+    <value>ShareX - کوتاه کردن نشانی</value>
+  </data>
+  <data name="ShortenURLWindow_Heading" xml:space="preserve">
+    <value>کوتاه کردن نشانی</value>
+  </data>
+  <data name="ShortenURLWindow_URL" xml:space="preserve">
+    <value>نشانی</value>
+  </data>
+  <data name="ShortenURLWindow_Validation" xml:space="preserve">
+    <value>یک نشانی معتبر HTTP،‏ HTTPS یا FTP وارد کنید.</value>
+  </data>
+  <data name="ShortenURLWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="ShortenURLWindow_Shorten" xml:space="preserve">
+    <value>کوتاه کردن</value>
+  </data>
+  <data name="URLUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - بارگذاری نشانی</value>
+  </data>
+  <data name="URLUploadWindow_Heading" xml:space="preserve">
+    <value>بارگذاری نشانی</value>
+  </data>
+  <data name="URLUploadWindow_Prompt" xml:space="preserve">
+    <value>نشانی برای دانلود و بارگذاری</value>
+  </data>
+  <data name="URLUploadWindow_URL" xml:space="preserve">
+    <value>نشانی</value>
+  </data>
+  <data name="URLUploadWindow_Validation" xml:space="preserve">
+    <value>یک نشانی معتبر HTTP،‏ HTTPS یا FTP وارد کنید.</value>
+  </data>
+  <data name="URLUploadWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="URLUploadWindow_Upload" xml:space="preserve">
+    <value>بارگذاری</value>
+  </data>
+  <data name="BeforeUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - پیش از بارگذاری</value>
+  </data>
+  <data name="BeforeUploadWindow_Heading" xml:space="preserve">
+    <value>پیش از بارگذاری</value>
+  </data>
+  <data name="BeforeUploadWindow_Destination" xml:space="preserve">
+    <value>مقصد</value>
+  </data>
+  <data name="BeforeUploadWindow_CopyPreviewImage" xml:space="preserve">
+    <value>کپی تصویر پیش‌نمایش</value>
+  </data>
+  <data name="BeforeUploadWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="BeforeUploadWindow_Upload" xml:space="preserve">
+    <value>بارگذاری</value>
+  </data>
+  <data name="BeforeUploadWindow_CustomUploader" xml:space="preserve">
+    <value>سفارشی [{0}]</value>
+  </data>
+  <data name="BeforeUploadWindow_ChooseDestination" xml:space="preserve">
+    <value>لطفاً یک مقصد انتخاب کنید.</value>
+  </data>
+  <data name="BeforeUploadWindow_UploadPrompt" xml:space="preserve">
+    <value>{0} در آستانه بارگذاری در {1} است. می‌توانید مقصد دیگری انتخاب کنید.</value>
+  </data>
+  <data name="BeforeUploadWindow_NoPreview" xml:space="preserve">
+    <value>پیش‌نمایشی موجود نیست</value>
+  </data>
 </root>

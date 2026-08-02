@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.ClipboardUploadWindow"
         x:CompileBindings="False"
@@ -102,18 +103,18 @@
               ColumnDefinitions="*,Auto"
               Margin="18,0,18,18">
             <CheckBox x:Name="DontShowAgainCheckBox"
-                      Content="Don't show this window again"
+                      Content="{x:Static res:Strings.ClipboardUploadWindow_DontShowAgain}"
                       VerticalAlignment="Center"/>
             <StackPanel Grid.Column="1"
                         Orientation="Horizontal"
                         Spacing="7">
                 <Button Classes="compact"
-                        Content="Cancel"
+                        Content="{x:Static res:Strings.ClipboardUploadWindow_Cancel}"
                         IsCancel="True"
                         Click="OnCancelClick"/>
                 <Button x:Name="UploadButton"
                         Classes="compact primary"
-                        Content="Upload"
+                        Content="{x:Static res:Strings.ClipboardUploadWindow_Upload}"
                         IsDefault="True"
                         Click="OnUploadClick"/>
             </StackPanel>

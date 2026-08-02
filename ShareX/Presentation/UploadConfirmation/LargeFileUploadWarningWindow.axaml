@@ -1,8 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.LargeFileUploadWarningWindow"
-        Title="ShareX - Large file upload"
+        Title="{x:Static res:Strings.LargeFileUploadWarningWindow_Title}"
         Width="440"
         MinWidth="360"
         SizeToContent="Height"
@@ -59,7 +60,7 @@
                               Grid.Row="1"
                               Grid.Column="1"
                               FontWeight="Normal"
-                              Content="Don't show this message again."/>
+                              Content="{x:Static res:Strings.LargeFileUploadWarningWindow_DontShowAgain}"/>
                 </Grid>
             </Border>
 
@@ -68,11 +69,11 @@
                         Spacing="7"
                         HorizontalAlignment="Right">
                 <Button Classes="compact primary"
-                        Content="Continue"
+                        Content="{x:Static res:Strings.LargeFileUploadWarningWindow_Continue}"
                         IsDefault="True"
                         Click="OnContinueClick"/>
                 <Button Classes="compact"
-                        Content="Cancel"
+                        Content="{x:Static res:Strings.LargeFileUploadWarningWindow_Cancel}"
                         IsCancel="True"
                         Click="OnCancelClick"/>
             </StackPanel>

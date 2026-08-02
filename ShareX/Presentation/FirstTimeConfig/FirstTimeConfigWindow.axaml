@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="600"
@@ -42,12 +43,12 @@
                            Foreground="{DynamicResource ShareX.Brush.Accent}"
                            VerticalAlignment="Center"/>
                 <StackPanel Grid.Column="1" Spacing="2">
-                    <TextBlock Text="ShareX first time config"
+                    <TextBlock Text="{x:Static res:Strings.FirstTimeConfigWindow_Heading}"
                                FontSize="24"
                                FontWeight="SemiBold"
                                Foreground="{DynamicResource ShareX.Brush.Accent}"/>
                     <TextBlock Classes="hint"
-                               Text="Choose how ShareX integrates with Windows."/>
+                               Text="{x:Static res:Strings.FirstTimeConfigWindow_Subtitle}"/>
                 </StackPanel>
             </Grid>
 
@@ -63,13 +64,13 @@
                                   IsEnabled="{Binding StartWithWindowsEnabled}"
                                   IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
                         <CheckBox Classes="integration-option"
-                                  Content="Show &quot;Upload with ShareX&quot; button in Windows Explorer context menu"
+                                  Content="{x:Static res:Strings.FirstTimeConfigWindow_ShellContextMenu}"
                                   IsChecked="{Binding ShellContextMenu, Mode=TwoWay}"/>
                         <CheckBox Classes="integration-option"
-                                  Content="Show ShareX in &quot;Send to&quot; menu"
+                                  Content="{x:Static res:Strings.FirstTimeConfigWindow_SendToMenu}"
                                   IsChecked="{Binding SendToMenu, Mode=TwoWay}"/>
                         <CheckBox Classes="integration-option"
-                                  Content="While ShareX is open, show &quot;In-app&quot; in Steam"
+                                  Content="{x:Static res:Strings.FirstTimeConfigWindow_SteamInApp}"
                                   IsVisible="{Binding SteamOptionVisible}"
                                   IsChecked="{Binding SteamShowInApp, Mode=TwoWay}"/>
                     </StackPanel>
@@ -89,12 +90,12 @@
 
             <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="12">
                 <TextBlock Classes="hint"
-                           Text="You can change these options later in Application settings → Integration."
+                           Text="{x:Static res:Strings.FirstTimeConfigWindow_OptionsLater}"
                            VerticalAlignment="Center"/>
                 <Button Grid.Column="1"
                         Width="92"
                         Height="36"
-                        Content="OK"
+                        Content="{x:Static res:Strings.FirstTimeConfigWindow_OK}"
                         Click="OnOkClick"/>
             </Grid>
         </Grid>

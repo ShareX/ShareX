@@ -13,7 +13,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
-using ShareX.Properties;
+using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -148,7 +148,7 @@ public sealed class FirstTimeConfigViewModel : INotifyPropertyChanged
 
     private void RefreshStartupState()
     {
-        StartWithWindowsText = Resources.ApplicationSettingsForm_cbStartWithWindows_Text;
+        StartWithWindowsText = Strings.FirstTimeConfigWindow_StartWithWindows;
         StartWithWindowsEnabled = false;
 
         try
@@ -158,15 +158,15 @@ public sealed class FirstTimeConfigViewModel : INotifyPropertyChanged
 
             if (state == StartupState.DisabledByUser)
             {
-                StartWithWindowsText = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+                StartWithWindowsText = Strings.FirstTimeConfigWindow_StartWithWindowsDisabledByUser;
             }
             else if (state == StartupState.DisabledByPolicy)
             {
-                StartWithWindowsText = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text;
+                StartWithWindowsText = Strings.FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy;
             }
             else if (state == StartupState.EnabledByPolicy)
             {
-                StartWithWindowsText = Resources.ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text;
+                StartWithWindowsText = Strings.FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy;
             }
             else
             {

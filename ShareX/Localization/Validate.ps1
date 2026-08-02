@@ -46,6 +46,104 @@ $areas = @(
             'Presentation/TaskSettings/TaskSettingsViewModel.cs'
         )
     }
+    [pscustomobject]@{
+        Name = 'Drag and drop upload'
+        ResourcePrefixes = @('DragDropUploadWindow_')
+        SourceFiles = @(
+            'Presentation/DragDropUpload/DragDropUploadWindow.axaml'
+            'Presentation/DragDropUpload/DragDropUploadWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Clipboard upload'
+        ResourcePrefixes = @('ClipboardUploadWindow_')
+        SourceFiles = @(
+            'Presentation/ClipboardUpload/ClipboardUploadWindow.axaml'
+            'Presentation/ClipboardUpload/ClipboardUploadWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Notification'
+        ResourcePrefixes = @()
+        SourceFiles = @(
+            'Presentation/Notification/NotificationWindow.axaml'
+            'Presentation/Notification/NotificationWindow.cs'
+            'Presentation/Notification/NotificationActionButton.cs'
+            'Presentation/Notification/NotificationWindowConfig.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'File exists'
+        ResourcePrefixes = @('FileExistWindow_')
+        SourceFiles = @(
+            'Presentation/FileExist/FileExistWindow.axaml'
+            'Presentation/FileExist/FileExistWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Large file upload warning'
+        ResourcePrefixes = @('LargeFileUploadWarningWindow_')
+        SourceFiles = @(
+            'Presentation/UploadConfirmation/LargeFileUploadWarningWindow.axaml'
+            'Presentation/UploadConfirmation/LargeFileUploadWarningWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Multi-upload confirmation'
+        ResourcePrefixes = @('MultiUploadConfirmationWindow_')
+        SourceFiles = @(
+            'Presentation/UploadConfirmation/MultiUploadConfirmationWindow.axaml'
+            'Presentation/UploadConfirmation/MultiUploadConfirmationWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Debug log'
+        ResourcePrefixes = @('DebugLogWindow_')
+        SourceFiles = @(
+            'Presentation/DebugLog/DebugLogWindow.axaml'
+            'Presentation/DebugLog/DebugLogWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'First-time configuration'
+        ResourcePrefixes = @('FirstTimeConfigWindow_')
+        SourceFiles = @(
+            'Presentation/FirstTimeConfig/FirstTimeConfigWindow.axaml'
+            'Presentation/FirstTimeConfig/FirstTimeConfigWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Image editor selector'
+        ResourcePrefixes = @('ImageEditorSelectorWindow_')
+        SourceFiles = @(
+            'Presentation/ImageEditorSelector/ImageEditorSelectorWindow.axaml'
+            'Presentation/ImageEditorSelector/ImageEditorSelectorWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Shorten URL'
+        ResourcePrefixes = @('ShortenURLWindow_')
+        SourceFiles = @(
+            'Presentation/ShortenURL/ShortenURLWindow.axaml'
+            'Presentation/ShortenURL/ShortenURLWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'URL upload'
+        ResourcePrefixes = @('URLUploadWindow_')
+        SourceFiles = @(
+            'Presentation/URLUpload/URLUploadWindow.axaml'
+            'Presentation/URLUpload/URLUploadWindow.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Before upload'
+        ResourcePrefixes = @('BeforeUploadWindow_')
+        SourceFiles = @(
+            'Presentation/BeforeUpload/BeforeUploadWindow.axaml'
+            'Presentation/BeforeUpload/BeforeUploadWindow.axaml.cs'
+        )
+    }
 )
 
 function Resolve-SourcePath([string]$relativePath)

@@ -12,8 +12,8 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Localization;
 using System;
-using LocalizedResources = ShareX.Properties.Resources;
 
 namespace ShareX;
 
@@ -27,9 +27,7 @@ public partial class LargeFileUploadWarningWindow : Window
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
 
-        MessageText.Text = LocalizedResources.UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file;
-        DontShowAgainCheckBox.Content =
-            LocalizedResources.UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_;
+        MessageText.Text = Strings.LargeFileUploadWarningWindow_Message;
 
         Opened += OnOpened;
     }

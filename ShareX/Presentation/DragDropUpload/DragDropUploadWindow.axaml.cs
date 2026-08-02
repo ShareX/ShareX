@@ -17,6 +17,7 @@ using Avalonia.Platform;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Localization;
 using System;
 using System.IO;
 using System.Linq;
@@ -59,7 +60,7 @@ public partial class DragDropUploadWindow : Window
         _hoverOpacity = Math.Clamp(hoverOpacity, 1, 255) / 255d;
         Opacity = _normalOpacity;
 
-        DropText.Text = Properties.Resources.DropForm_DrawDropImage_Drop_here;
+        DropText.Text = Strings.DragDropUploadWindow_DropHere;
         DropText.FontSize = Math.Clamp(dropSize / 7d, 10, 20);
         DropText.IsVisible = dropSize >= 55;
         DropIcon.FontSize = Math.Clamp(dropSize / 3d, 16, 42);

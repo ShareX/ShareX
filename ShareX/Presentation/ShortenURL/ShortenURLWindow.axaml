@@ -1,9 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.ShortenURLWindow"
         x:CompileBindings="False"
-        Title="ShareX - Shorten URL"
+        Title="{x:Static res:Strings.ShortenURLWindow_Title}"
         Width="620"
         SizeToContent="Height"
         MinWidth="480"
@@ -46,7 +47,7 @@
                                VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                    <TextBlock Text="Shorten URL"
+                    <TextBlock Text="{x:Static res:Strings.ShortenURLWindow_Heading}"
                                FontSize="19"
                                FontWeight="SemiBold"
                                Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
@@ -58,14 +59,14 @@
                 Classes="input-card"
                 Margin="18,14">
             <StackPanel Spacing="6">
-                <TextBlock Text="URL" FontWeight="SemiBold"/>
+                <TextBlock Text="{x:Static res:Strings.ShortenURLWindow_URL}" FontWeight="SemiBold"/>
                 <TextBox x:Name="URLTextBox"
                          MinHeight="32"
                          Padding="8,5"
                          PlaceholderText="https://example.com/long-url"
                          TextChanged="OnURLChanged"/>
                 <TextBlock x:Name="ValidationText"
-                           Text="Enter a valid HTTP, HTTPS, or FTP URL."
+                           Text="{x:Static res:Strings.ShortenURLWindow_Validation}"
                            FontSize="12"
                            Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}"
                            IsVisible="False"/>
@@ -78,12 +79,12 @@
                     Spacing="7"
                     Margin="18,0,18,18">
             <Button Classes="compact"
-                    Content="Cancel"
+                    Content="{x:Static res:Strings.ShortenURLWindow_Cancel}"
                     IsCancel="True"
                     Click="OnCancelClick"/>
             <Button x:Name="ShortenButton"
                     Classes="compact primary"
-                    Content="Shorten"
+                    Content="{x:Static res:Strings.ShortenURLWindow_Shorten}"
                     IsDefault="True"
                     Click="OnShortenClick"/>
         </StackPanel>

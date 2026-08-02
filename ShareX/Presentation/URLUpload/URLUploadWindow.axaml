@@ -1,9 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.URLUploadWindow"
         x:CompileBindings="False"
-        Title="ShareX - URL upload"
+        Title="{x:Static res:Strings.URLUploadWindow_Title}"
         Width="620"
         SizeToContent="Height"
         MinWidth="480"
@@ -46,7 +47,7 @@
                                VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
-                    <TextBlock Text="URL upload"
+                    <TextBlock Text="{x:Static res:Strings.URLUploadWindow_Heading}"
                                FontSize="19"
                                FontWeight="SemiBold"
                                Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
@@ -60,14 +61,14 @@
                 Classes="input-card"
                 Margin="18,14">
             <StackPanel Spacing="6">
-                <TextBlock Text="URL" FontWeight="SemiBold"/>
+                <TextBlock Text="{x:Static res:Strings.URLUploadWindow_URL}" FontWeight="SemiBold"/>
                 <TextBox x:Name="URLTextBox"
                          MinHeight="32"
                          Padding="8,5"
                          PlaceholderText="https://example.com/file"
                          TextChanged="OnURLChanged"/>
                 <TextBlock x:Name="ValidationText"
-                           Text="Enter a valid HTTP, HTTPS, or FTP URL."
+                           Text="{x:Static res:Strings.URLUploadWindow_Validation}"
                            FontSize="12"
                            Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}"
                            IsVisible="False"/>
@@ -80,12 +81,12 @@
                     Spacing="7"
                     Margin="18,0,18,18">
             <Button Classes="compact"
-                    Content="Cancel"
+                    Content="{x:Static res:Strings.URLUploadWindow_Cancel}"
                     IsCancel="True"
                     Click="OnCancelClick"/>
             <Button x:Name="UploadButton"
                     Classes="compact primary"
-                    Content="Upload"
+                    Content="{x:Static res:Strings.URLUploadWindow_Upload}"
                     IsDefault="True"
                     Click="OnUploadClick"/>
         </StackPanel>
