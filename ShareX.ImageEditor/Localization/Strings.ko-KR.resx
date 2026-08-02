@@ -442,7 +442,7 @@
     <value>이미지</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
-    <value>커서 그리기</value>
+    <value>커서</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
     <value>강조</value>
@@ -469,10 +469,10 @@
     <value>이미지 효과</value>
   </data>
   <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
-    <value>기본</value>
+    <value>기본값</value>
   </data>
   <data name="CursorTypeDisplayNameConverter_No" xml:space="preserve">
-    <value>아니요</value>
+    <value>금지</value>
   </data>
   <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
     <value>실선</value>
@@ -484,28 +484,28 @@
     <value>점선</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
-    <value>좌측 정렬</value>
+    <value>왼쪽</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
     <value>가운데</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
-    <value>우측 정렬</value>
+    <value>오른쪽</value>
   </data>
   <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Zoom to fit on 열기</value>
+    <value>열 때 창에 맞춤</value>
   </data>
   <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>작업 실행 시 편집기 자동 닫기</value>
+    <value>작업 후 편집기 자동 닫기</value>
   </data>
   <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Auto 복사 이미지 to 클립보드</value>
+    <value>이미지를 클립보드에 자동 복사</value>
   </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>그라데이션</value>
   </data>
   <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
-    <value>색상</value>
+    <value>색</value>
   </data>
   <data name="MainViewModel_BackgroundModeTransparent" xml:space="preserve">
     <value>투명</value>
@@ -517,6 +517,237 @@
     <value>ShareX - 이미지 편집기</value>
   </data>
   <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
-    <value>촬영 뒤 할 일 하기</value>
+    <value>캡처 후 작업 실행 (Enter)</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Rectangle" xml:space="preserve">
+    <value>사각형</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Ellipse" xml:space="preserve">
+    <value>타원</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Line" xml:space="preserve">
+    <value>선</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
+    <value>화살표</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Freehand" xml:space="preserve">
+    <value>자유 그리기</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SpeechBalloon" xml:space="preserve">
+    <value>말풍선</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Step" xml:space="preserve">
+    <value>단계</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Emoji" xml:space="preserve">
+    <value>이모지</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
+    <value>자르기</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CutOut" xml:space="preserve">
+    <value>오려내기</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
+    <value>{0}\n즐겨찾는 이미지 효과 (오른쪽 클릭)</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_AppStarting" xml:space="preserve">
+    <value>앱 시작 중</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Arrow" xml:space="preserve">
+    <value>화살표</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Cross" xml:space="preserve">
+    <value>십자</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Hand" xml:space="preserve">
+    <value>손</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Help" xml:space="preserve">
+    <value>도움말</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_HSplit" xml:space="preserve">
+    <value>가로 분할</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_IBeam" xml:space="preserve">
+    <value>텍스트 커서</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMove2D" xml:space="preserve">
+    <value>2D 이동 없음</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveHoriz" xml:space="preserve">
+    <value>가로 이동 없음</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveVert" xml:space="preserve">
+    <value>세로 이동 없음</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanEast" xml:space="preserve">
+    <value>동쪽으로 이동</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNE" xml:space="preserve">
+    <value>북동쪽으로 이동</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNorth" xml:space="preserve">
+    <value>북쪽으로 이동</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNW" xml:space="preserve">
+    <value>북서쪽으로 이동</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSE" xml:space="preserve">
+    <value>남동쪽으로 이동</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSouth" xml:space="preserve">
+    <value>남쪽으로 이동</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSW" xml:space="preserve">
+    <value>남서쪽으로 이동</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanWest" xml:space="preserve">
+    <value>서쪽으로 이동</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeAll" xml:space="preserve">
+    <value>모든 방향 크기 조정</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNESW" xml:space="preserve">
+    <value>북동-남서 크기 조정</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNS" xml:space="preserve">
+    <value>남북 크기 조정</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNWSE" xml:space="preserve">
+    <value>북서-남동 크기 조정</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeWE" xml:space="preserve">
+    <value>동서 크기 조정</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_UpArrow" xml:space="preserve">
+    <value>위쪽 화살표</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_VSplit" xml:space="preserve">
+    <value>세로 분할</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
+    <value>대기 커서</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDot" xml:space="preserve">
+    <value>일점쇄선</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDotDot" xml:space="preserve">
+    <value>이점쇄선</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Classic" xml:space="preserve">
+    <value>클래식</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Modern" xml:space="preserve">
+    <value>모던</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Double" xml:space="preserve">
+    <value>양방향</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Basic" xml:space="preserve">
+    <value>기본</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
+    <value>선</value>
+  </data>
+  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
+    <value>창 상태 기억</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
+    <value>종료 확인 표시</value>
+  </data>
+  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
+    <value>빠른 자르기</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
+    <value>이미지 삽입 대화 상자 표시</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
+    <value>알림 표시</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
+    <value>배경 화면</value>
+  </data>
+  <data name="MainViewModel_ImageOpened" xml:space="preserve">
+    <value>이미지를 열었습니다.</value>
+  </data>
+  <data name="MainViewModel_NewImageCreated" xml:space="preserve">
+    <value>새 이미지를 만들었습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageCropped" xml:space="preserve">
+    <value>이미지를 잘랐습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageCutOut" xml:space="preserve">
+    <value>이미지를 오려냈습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageInserted" xml:space="preserve">
+    <value>이미지를 삽입했습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageAutoCropped" xml:space="preserve">
+    <value>이미지를 자동으로 잘랐습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageResized" xml:space="preserve">
+    <value>이미지 크기를 조정했습니다.</value>
+  </data>
+  <data name="MainViewModel_CanvasResized" xml:space="preserve">
+    <value>캔버스 크기를 조정했습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90Clockwise" xml:space="preserve">
+    <value>이미지를 시계 방향으로 90도 회전했습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90CounterClockwise" xml:space="preserve">
+    <value>이미지를 시계 반대 방향으로 90도 회전했습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated180" xml:space="preserve">
+    <value>이미지를 180도 회전했습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
+    <value>이미지를 {0}도 회전했습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedHorizontally" xml:space="preserve">
+    <value>이미지를 가로로 뒤집었습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedVertically" xml:space="preserve">
+    <value>이미지를 세로로 뒤집었습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageEffectApplied" xml:space="preserve">
+    <value>이미지 효과를 적용했습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
+    <value>이미지를 파일에 저장했습니다.</value>
+  </data>
+  <data name="MainViewModel_FilePathFormat" xml:space="preserve">
+    <value>파일 경로: {0}</value>
+  </data>
+  <data name="MainViewModel_SizeFormat" xml:space="preserve">
+    <value>크기: {0}x{1}</value>
+  </data>
+  <data name="MainViewModel_HideToolbars" xml:space="preserve">
+    <value>도구 모음 숨기기</value>
+  </data>
+  <data name="MainViewModel_ShowToolbars" xml:space="preserve">
+    <value>도구 모음 표시</value>
+  </data>
+  <data name="MainViewModel_ContinueEnter" xml:space="preserve">
+    <value>계속 (Enter)</value>
+  </data>
+  <data name="MainViewModel_NoImage" xml:space="preserve">
+    <value>이미지 없음</value>
+  </data>
+  <data name="MainViewModel_ImageCopiedToClipboard" xml:space="preserve">
+    <value>이미지를 클립보드에 복사했습니다.</value>
+  </data>
+  <data name="MainViewModel_ImagePrinted" xml:space="preserve">
+    <value>이미지를 인쇄했습니다.</value>
+  </data>
+  <data name="MainViewModel_ImagePinnedToScreen" xml:space="preserve">
+    <value>이미지를 화면에 고정했습니다.</value>
+  </data>
+  <data name="MainViewModel_ImageIsUploading" xml:space="preserve">
+    <value>이미지를 업로드하고 있습니다.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
+    <value>{0}과 {1}이(가) 같은 단축키 ({2})를 사용합니다.</value>
   </data>
 </root>

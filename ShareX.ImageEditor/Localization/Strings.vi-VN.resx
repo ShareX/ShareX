@@ -436,16 +436,16 @@ Tùy chọn bóng đổ (Nhấp phải)</value>
     <value>Chọn</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
-    <value>Chữ</value>
+    <value>Văn bản</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Image" xml:space="preserve">
-    <value>Ảnh</value>
+    <value>Hình ảnh</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
-    <value>Vẽ: Dùng chuột</value>
+    <value>Con trỏ</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
-    <value>Điểm nổi bật</value>
+    <value>Đánh dấu</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_SmartEraser" xml:space="preserve">
     <value>Tẩy thông minh</value>
@@ -454,7 +454,7 @@ Tùy chọn bóng đổ (Nhấp phải)</value>
     <value>Làm mờ</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Magnify" xml:space="preserve">
-    <value>Phóng to</value>
+    <value>Phóng đại</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Spotlight" xml:space="preserve">
     <value>Tiêu điểm</value>
@@ -463,7 +463,7 @@ Tùy chọn bóng đổ (Nhấp phải)</value>
     <value>Nền</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_ImageEffects" xml:space="preserve">
-    <value>Hiệu ứng ảnh</value>
+    <value>Hiệu ứng hình ảnh</value>
   </data>
   <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
     <value>Mặc định</value>
@@ -472,31 +472,31 @@ Tùy chọn bóng đổ (Nhấp phải)</value>
     <value>Không</value>
   </data>
   <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
-    <value>In đậm</value>
+    <value>Liền</value>
   </data>
   <data name="BorderStyleDisplayConverter_Dash" xml:space="preserve">
-    <value>Dấu gạch ngang</value>
+    <value>Nét đứt</value>
   </data>
   <data name="BorderStyleDisplayConverter_Dot" xml:space="preserve">
-    <value>Dấu chấm</value>
+    <value>Chấm</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
     <value>Trái</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
-    <value>Chính giữa</value>
+    <value>Giữa</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Phải</value>
   </data>
   <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Thu phóng để vừa mở</value>
+    <value>Vừa cửa sổ khi mở</value>
   </data>
   <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Tự đóng trình chỉnh sửa khi chạy tác vụ</value>
+    <value>Tự động đóng trình chỉnh sửa sau tác vụ</value>
   </data>
   <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Tự động sao chép hình ảnh vào khay nhớ tạm</value>
+    <value>Tự động sao chép hình ảnh vào bảng tạm</value>
   </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Chuyển sắc</value>
@@ -508,12 +508,246 @@ Tùy chọn bóng đổ (Nhấp phải)</value>
     <value>Trong suốt</value>
   </data>
   <data name="MainViewModel_BackgroundModeImage" xml:space="preserve">
-    <value>Ảnh</value>
+    <value>Hình ảnh</value>
   </data>
   <data name="MainViewModel_WindowTitle" xml:space="preserve">
-    <value>ShareX - Trình chỉnh sửa ảnh</value>
+    <value>ShareX - Trình chỉnh sửa hình ảnh</value>
   </data>
   <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
     <value>Chạy tác vụ sau khi chụp (Enter)</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Rectangle" xml:space="preserve">
+    <value>Hình chữ nhật</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Ellipse" xml:space="preserve">
+    <value>Hình elip</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Line" xml:space="preserve">
+    <value>Đường thẳng</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
+    <value>Mũi tên</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Freehand" xml:space="preserve">
+    <value>Vẽ tự do</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SpeechBalloon" xml:space="preserve">
+    <value>Bong bóng thoại</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Step" xml:space="preserve">
+    <value>Bước</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Pixelate" xml:space="preserve">
+    <value>Điểm ảnh hóa</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
+    <value>Cắt xén</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CutOut" xml:space="preserve">
+    <value>Cắt bỏ</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
+    <value>{0}\nHiệu ứng hình ảnh yêu thích (Nhấp phải)</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_AppStarting" xml:space="preserve">
+    <value>Đang khởi động ứng dụng</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Arrow" xml:space="preserve">
+    <value>Mũi tên</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Cross" xml:space="preserve">
+    <value>Chữ thập</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Hand" xml:space="preserve">
+    <value>Bàn tay</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Help" xml:space="preserve">
+    <value>Trợ giúp</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_HSplit" xml:space="preserve">
+    <value>Chia ngang</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_IBeam" xml:space="preserve">
+    <value>Con trỏ văn bản</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMove2D" xml:space="preserve">
+    <value>Không di chuyển 2D</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveHoriz" xml:space="preserve">
+    <value>Không di chuyển ngang</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveVert" xml:space="preserve">
+    <value>Không di chuyển dọc</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanEast" xml:space="preserve">
+    <value>Cuộn sang đông</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNE" xml:space="preserve">
+    <value>Cuộn sang đông bắc</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNorth" xml:space="preserve">
+    <value>Cuộn lên bắc</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNW" xml:space="preserve">
+    <value>Cuộn sang tây bắc</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSE" xml:space="preserve">
+    <value>Cuộn sang đông nam</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSouth" xml:space="preserve">
+    <value>Cuộn xuống nam</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSW" xml:space="preserve">
+    <value>Cuộn sang tây nam</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanWest" xml:space="preserve">
+    <value>Cuộn sang tây</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeAll" xml:space="preserve">
+    <value>Đổi kích thước mọi hướng</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNESW" xml:space="preserve">
+    <value>Đổi kích thước ĐB-TN</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNS" xml:space="preserve">
+    <value>Đổi kích thước B-N</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNWSE" xml:space="preserve">
+    <value>Đổi kích thước TB-ĐN</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeWE" xml:space="preserve">
+    <value>Đổi kích thước T-Đ</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_UpArrow" xml:space="preserve">
+    <value>Mũi tên lên</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_VSplit" xml:space="preserve">
+    <value>Chia dọc</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
+    <value>Con trỏ chờ</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDot" xml:space="preserve">
+    <value>Gạch-chấm</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDotDot" xml:space="preserve">
+    <value>Gạch-chấm-chấm</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Classic" xml:space="preserve">
+    <value>Cổ điển</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Modern" xml:space="preserve">
+    <value>Hiện đại</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Double" xml:space="preserve">
+    <value>Kép</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Basic" xml:space="preserve">
+    <value>Cơ bản</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
+    <value>Đường thẳng</value>
+  </data>
+  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
+    <value>Ghi nhớ trạng thái cửa sổ</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
+    <value>Hiện xác nhận thoát</value>
+  </data>
+  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
+    <value>Cắt xén nhanh</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
+    <value>Hiện hộp thoại chèn hình ảnh</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
+    <value>Hiện thông báo</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
+    <value>Hình nền</value>
+  </data>
+  <data name="MainViewModel_ImageOpened" xml:space="preserve">
+    <value>Đã mở hình ảnh.</value>
+  </data>
+  <data name="MainViewModel_NewImageCreated" xml:space="preserve">
+    <value>Đã tạo hình ảnh mới.</value>
+  </data>
+  <data name="MainViewModel_ImageCropped" xml:space="preserve">
+    <value>Đã cắt xén hình ảnh.</value>
+  </data>
+  <data name="MainViewModel_ImageCutOut" xml:space="preserve">
+    <value>Đã cắt bỏ hình ảnh.</value>
+  </data>
+  <data name="MainViewModel_ImageInserted" xml:space="preserve">
+    <value>Đã chèn hình ảnh.</value>
+  </data>
+  <data name="MainViewModel_ImageAutoCropped" xml:space="preserve">
+    <value>Đã tự động cắt xén hình ảnh.</value>
+  </data>
+  <data name="MainViewModel_ImageResized" xml:space="preserve">
+    <value>Đã đổi kích thước hình ảnh.</value>
+  </data>
+  <data name="MainViewModel_CanvasResized" xml:space="preserve">
+    <value>Đã đổi kích thước vùng vẽ.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90Clockwise" xml:space="preserve">
+    <value>Đã xoay hình ảnh 90 độ theo chiều kim đồng hồ.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90CounterClockwise" xml:space="preserve">
+    <value>Đã xoay hình ảnh 90 độ ngược chiều kim đồng hồ.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated180" xml:space="preserve">
+    <value>Đã xoay hình ảnh 180 độ.</value>
+  </data>
+  <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
+    <value>Đã xoay hình ảnh {0} độ.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedHorizontally" xml:space="preserve">
+    <value>Đã lật hình ảnh theo chiều ngang.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedVertically" xml:space="preserve">
+    <value>Đã lật hình ảnh theo chiều dọc.</value>
+  </data>
+  <data name="MainViewModel_ImageEffectApplied" xml:space="preserve">
+    <value>Đã áp dụng hiệu ứng hình ảnh.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
+    <value>Đã lưu hình ảnh vào tệp.</value>
+  </data>
+  <data name="MainViewModel_FilePathFormat" xml:space="preserve">
+    <value>Đường dẫn tệp: {0}</value>
+  </data>
+  <data name="MainViewModel_SizeFormat" xml:space="preserve">
+    <value>Kích thước: {0}x{1}</value>
+  </data>
+  <data name="MainViewModel_HideToolbars" xml:space="preserve">
+    <value>Ẩn thanh công cụ</value>
+  </data>
+  <data name="MainViewModel_ShowToolbars" xml:space="preserve">
+    <value>Hiện thanh công cụ</value>
+  </data>
+  <data name="MainViewModel_ContinueEnter" xml:space="preserve">
+    <value>Tiếp tục (Enter)</value>
+  </data>
+  <data name="MainViewModel_NoImage" xml:space="preserve">
+    <value>Không có hình ảnh</value>
+  </data>
+  <data name="MainViewModel_ImageCopiedToClipboard" xml:space="preserve">
+    <value>Đã sao chép hình ảnh vào bảng tạm.</value>
+  </data>
+  <data name="MainViewModel_ImagePrinted" xml:space="preserve">
+    <value>Đã in hình ảnh.</value>
+  </data>
+  <data name="MainViewModel_ImagePinnedToScreen" xml:space="preserve">
+    <value>Đã ghim hình ảnh lên màn hình.</value>
+  </data>
+  <data name="MainViewModel_ImageIsUploading" xml:space="preserve">
+    <value>Đang tải hình ảnh lên.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
+    <value>{0} và {1} sử dụng cùng một phím tắt ({2}).</value>
   </data>
 </root>

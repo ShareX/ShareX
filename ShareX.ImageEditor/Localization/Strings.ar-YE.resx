@@ -436,31 +436,31 @@
     <value>تحديد</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
-    <value>النص</value>
+    <value>نص</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Image" xml:space="preserve">
-    <value>الصورة</value>
+    <value>صورة</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
-    <value>المؤشّر</value>
+    <value>مؤشر</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
     <value>تمييز</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_SmartEraser" xml:space="preserve">
-    <value>المسلحة الذكية</value>
+    <value>ممحاة ذكية</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
-    <value>تشويش</value>
+    <value>تمويه</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Pixelate" xml:space="preserve">
-    <value>تشويش</value>
+    <value>بكسلة</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Magnify" xml:space="preserve">
     <value>تكبير</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Spotlight" xml:space="preserve">
-    <value>الضوء الكاشف</value>
+    <value>تسليط الضوء</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Background" xml:space="preserve">
     <value>الخلفية</value>
@@ -469,54 +469,286 @@
     <value>تأثيرات الصور</value>
   </data>
   <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
-    <value>الافتراضي</value>
+    <value>افتراضي</value>
   </data>
   <data name="CursorTypeDisplayNameConverter_No" xml:space="preserve">
-    <value>لا</value>
+    <value>ممنوع</value>
   </data>
   <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
-    <value>مصمت</value>
+    <value>متصل</value>
   </data>
   <data name="BorderStyleDisplayConverter_Dash" xml:space="preserve">
-    <value>شَرطة</value>
+    <value>متقطع</value>
   </data>
   <data name="BorderStyleDisplayConverter_Dot" xml:space="preserve">
-    <value>نقطة</value>
+    <value>منقط</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
     <value>يسار</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
-    <value>الوسط</value>
+    <value>وسط</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>يمين</value>
   </data>
   <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>تكبير حتى الملائمة عند الفتح</value>
+    <value>الملاءمة للنافذة عند الفتح</value>
   </data>
   <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>إغلاق المحرّر بشكل تلقائي عند بدء مهمة</value>
+    <value>إغلاق المحرر تلقائيًا بعد المهمة</value>
   </data>
   <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
     <value>نسخ الصورة تلقائيًا إلى الحافظة</value>
   </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
-    <value>التدرج</value>
+    <value>تدرج</value>
   </data>
   <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
-    <value>اللون</value>
+    <value>لون</value>
   </data>
   <data name="MainViewModel_BackgroundModeTransparent" xml:space="preserve">
     <value>شفاف</value>
   </data>
   <data name="MainViewModel_BackgroundModeImage" xml:space="preserve">
-    <value>الصورة</value>
+    <value>صورة</value>
   </data>
   <data name="MainViewModel_WindowTitle" xml:space="preserve">
-    <value>ShareX - محرّر الصور</value>
+    <value>ShareX - محرر الصور</value>
   </data>
   <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
     <value>تشغيل مهام ما بعد الالتقاط (Enter)</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Rectangle" xml:space="preserve">
+    <value>مستطيل</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Ellipse" xml:space="preserve">
+    <value>قطع ناقص</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Line" xml:space="preserve">
+    <value>خط</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
+    <value>سهم</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Freehand" xml:space="preserve">
+    <value>رسم حر</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SpeechBalloon" xml:space="preserve">
+    <value>فقاعة كلام</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Step" xml:space="preserve">
+    <value>خطوة</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Emoji" xml:space="preserve">
+    <value>رمز تعبيري</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
+    <value>اقتصاص</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CutOut" xml:space="preserve">
+    <value>اقتطاع</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
+    <value>{0}
+تأثيرات الصور المفضلة (النقر بزر الماوس الأيمن)</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_AppStarting" xml:space="preserve">
+    <value>بدء تشغيل التطبيق</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Arrow" xml:space="preserve">
+    <value>سهم</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Cross" xml:space="preserve">
+    <value>تقاطع</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Hand" xml:space="preserve">
+    <value>يد</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Help" xml:space="preserve">
+    <value>مساعدة</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_HSplit" xml:space="preserve">
+    <value>تقسيم أفقي</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_IBeam" xml:space="preserve">
+    <value>مؤشر نص</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMove2D" xml:space="preserve">
+    <value>بدون حركة ثنائية الأبعاد</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveHoriz" xml:space="preserve">
+    <value>بدون حركة أفقية</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveVert" xml:space="preserve">
+    <value>بدون حركة عمودية</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanEast" xml:space="preserve">
+    <value>تحريك شرقًا</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNE" xml:space="preserve">
+    <value>تحريك شمال شرق</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNorth" xml:space="preserve">
+    <value>تحريك شمالًا</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNW" xml:space="preserve">
+    <value>تحريك شمال غرب</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSE" xml:space="preserve">
+    <value>تحريك جنوب شرق</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSouth" xml:space="preserve">
+    <value>تحريك جنوبًا</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSW" xml:space="preserve">
+    <value>تحريك جنوب غرب</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanWest" xml:space="preserve">
+    <value>تحريك غربًا</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeAll" xml:space="preserve">
+    <value>تغيير الحجم في كل الاتجاهات</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNESW" xml:space="preserve">
+    <value>تغيير الحجم شمال شرق-جنوب غرب</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNS" xml:space="preserve">
+    <value>تغيير الحجم شمال-جنوب</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNWSE" xml:space="preserve">
+    <value>تغيير الحجم شمال غرب-جنوب شرق</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeWE" xml:space="preserve">
+    <value>تغيير الحجم غرب-شرق</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_UpArrow" xml:space="preserve">
+    <value>سهم لأعلى</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_VSplit" xml:space="preserve">
+    <value>تقسيم عمودي</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
+    <value>مؤشر انتظار</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDot" xml:space="preserve">
+    <value>شرطة ونقطة</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDotDot" xml:space="preserve">
+    <value>شرطة ونقطتان</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Classic" xml:space="preserve">
+    <value>كلاسيكي</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Modern" xml:space="preserve">
+    <value>حديث</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Double" xml:space="preserve">
+    <value>مزدوج</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Basic" xml:space="preserve">
+    <value>أساسي</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
+    <value>خط</value>
+  </data>
+  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
+    <value>تذكر حالة النافذة</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
+    <value>إظهار تأكيد الخروج</value>
+  </data>
+  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
+    <value>اقتصاص سريع</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
+    <value>إظهار مربع حوار إدراج الصورة</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
+    <value>إظهار الإشعارات</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
+    <value>خلفية سطح المكتب</value>
+  </data>
+  <data name="MainViewModel_ImageOpened" xml:space="preserve">
+    <value>تم فتح الصورة.</value>
+  </data>
+  <data name="MainViewModel_NewImageCreated" xml:space="preserve">
+    <value>تم إنشاء صورة جديدة.</value>
+  </data>
+  <data name="MainViewModel_ImageCropped" xml:space="preserve">
+    <value>تم اقتصاص الصورة.</value>
+  </data>
+  <data name="MainViewModel_ImageCutOut" xml:space="preserve">
+    <value>تم اقتطاع الصورة.</value>
+  </data>
+  <data name="MainViewModel_ImageInserted" xml:space="preserve">
+    <value>تم إدراج الصورة.</value>
+  </data>
+  <data name="MainViewModel_ImageAutoCropped" xml:space="preserve">
+    <value>تم اقتصاص الصورة تلقائيًا.</value>
+  </data>
+  <data name="MainViewModel_ImageResized" xml:space="preserve">
+    <value>تم تغيير حجم الصورة.</value>
+  </data>
+  <data name="MainViewModel_CanvasResized" xml:space="preserve">
+    <value>تم تغيير حجم اللوحة.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90Clockwise" xml:space="preserve">
+    <value>تم تدوير الصورة 90 درجة باتجاه عقارب الساعة.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90CounterClockwise" xml:space="preserve">
+    <value>تم تدوير الصورة 90 درجة عكس اتجاه عقارب الساعة.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated180" xml:space="preserve">
+    <value>تم تدوير الصورة 180 درجة.</value>
+  </data>
+  <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
+    <value>تم تدوير الصورة بمقدار {0} درجة.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedHorizontally" xml:space="preserve">
+    <value>تم قلب الصورة أفقيًا.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedVertically" xml:space="preserve">
+    <value>تم قلب الصورة عموديًا.</value>
+  </data>
+  <data name="MainViewModel_ImageEffectApplied" xml:space="preserve">
+    <value>تم تطبيق تأثير الصورة.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
+    <value>تم حفظ الصورة في ملف.</value>
+  </data>
+  <data name="MainViewModel_FilePathFormat" xml:space="preserve">
+    <value>مسار الملف: {0}</value>
+  </data>
+  <data name="MainViewModel_SizeFormat" xml:space="preserve">
+    <value>الحجم: {0}x{1}</value>
+  </data>
+  <data name="MainViewModel_HideToolbars" xml:space="preserve">
+    <value>إخفاء أشرطة الأدوات</value>
+  </data>
+  <data name="MainViewModel_ShowToolbars" xml:space="preserve">
+    <value>إظهار أشرطة الأدوات</value>
+  </data>
+  <data name="MainViewModel_ContinueEnter" xml:space="preserve">
+    <value>متابعة (Enter)</value>
+  </data>
+  <data name="MainViewModel_NoImage" xml:space="preserve">
+    <value>لا توجد صورة</value>
+  </data>
+  <data name="MainViewModel_ImageCopiedToClipboard" xml:space="preserve">
+    <value>تم نسخ الصورة إلى الحافظة.</value>
+  </data>
+  <data name="MainViewModel_ImagePrinted" xml:space="preserve">
+    <value>تمت طباعة الصورة.</value>
+  </data>
+  <data name="MainViewModel_ImagePinnedToScreen" xml:space="preserve">
+    <value>تم تثبيت الصورة على الشاشة.</value>
+  </data>
+  <data name="MainViewModel_ImageIsUploading" xml:space="preserve">
+    <value>جارٍ رفع الصورة.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
+    <value>يستخدم {0} و{1} الاختصار نفسه ({2}).</value>
   </data>
 </root>
