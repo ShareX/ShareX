@@ -2377,4 +2377,340 @@
   <data name="AboutWindow_RecorderDevices" xml:space="preserve">
     <value>Dispositivos de grabación</value>
   </data>
+  <data name="CustomUploaderSettingsWindow_Title" xml:space="preserve">
+    <value>ShareX - Configuración de cargadores personalizados</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploaderLibrary" xml:space="preserve">
+    <value>Biblioteca de cargadores</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
+    <value>Guía de cargadores personalizados</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
+    <value>Buscar cargadores</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_New" xml:space="preserve">
+    <value>Nuevo</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
+    <value>Duplicar el cargador seleccionado</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
+    <value>Exportar el cargador seleccionado</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
+    <value>Quitar el cargador seleccionado</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
+    <value>Exportar todo</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
+    <value>Borrar todo</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
+    <value>Actualizar carpeta</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
+    <value>Resumen</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Request" xml:space="preserve">
+    <value>Solicitud</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Body" xml:space="preserve">
+    <value>Cuerpo</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Response" xml:space="preserve">
+    <value>Respuesta</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Test" xml:space="preserve">
+    <value>Prueba</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_OverviewDescription" xml:space="preserve">
+    <value>Asigna un nombre reconocible al cargador y elige dónde puede usarlo ShareX.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Identity" xml:space="preserve">
+    <value>Identidad</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NamePlaceholder" xml:space="preserve">
+    <value>Usa el host de la solicitud si se deja vacío</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NameDescription" xml:space="preserve">
+    <value>Este es el nombre que se muestra en ShareX. Los cambios se guardan de inmediato.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Capabilities" xml:space="preserve">
+    <value>Capacidades</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_CapabilitiesDescription" xml:space="preserve">
+    <value>Activa cada tipo de destino compatible con este punto de conexión.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ImageUploader" xml:space="preserve">
+    <value>Cargador de imágenes</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextUploader" xml:space="preserve">
+    <value>Cargador de texto</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FileUploader" xml:space="preserve">
+    <value>Cargador de archivos</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_URLShortener" xml:space="preserve">
+    <value>Acortador de URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_URLSharingService" xml:space="preserve">
+    <value>Servicio para compartir URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Endpoint" xml:space="preserve">
+    <value>Punto de conexión</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ChangesApplied" xml:space="preserve">
+    <value>Los cambios se aplican de inmediato.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_CreateOrImport" xml:space="preserve">
+    <value>Crea un cargador personalizado o importa un archivo .sxcu.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NoSearchMatches" xml:space="preserve">
+    <value>Ningún cargador coincide con esta búsqueda.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_AllRemoved" xml:space="preserve">
+    <value>Se eliminaron todos los cargadores personalizados.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Arguments" xml:space="preserve">
+    <value>Argumentos</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Base64Encoding" xml:space="preserve">
+    <value>CodificaciÃ³n Base64</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Beautify" xml:space="preserve">
+    <value>Embellecer</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_BodyDescription" xml:space="preserve">
+    <value>Elija cÃ³mo se codifican los datos de la solicitud y los archivos cargados.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
+    <value>Tipo de cuerpo</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ClearConfirmation" xml:space="preserve">
+    <value>Â¿Eliminar todos los cargadores personalizados?</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Close" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ConfirmationTitle" xml:space="preserve">
+    <value>ShareX - ConfirmaciÃ³n</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_CustomUploaderFileType" xml:space="preserve">
+    <value>Cargador personalizado de ShareX</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DeletionURL" xml:space="preserve">
+    <value>URL de eliminaciÃ³n</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DeletionURLDescription" xml:space="preserve">
+    <value>URL opcional utilizada para eliminar el contenido cargado.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DestinationRequired" xml:space="preserve">
+    <value>Antes de exportar se debe seleccionar al menos un tipo de destino.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DisplayOutputText" xml:space="preserve">
+    <value>Mostrar texto de salida</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Duplicated" xml:space="preserve">
+    <value>Se duplicÃ³ el cargador personalizado.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DuplicateNamesNotAllowed" xml:space="preserve">
+    <value>No se permiten nombres duplicados.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ErrorMessage" xml:space="preserve">
+    <value>Mensaje de error</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ErrorMessageDescription" xml:space="preserve">
+    <value>Texto extraÃ­do cuando el servicio informa de un fallo.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportAllDialogTitle" xml:space="preserve">
+    <value>Exportar todos los cargadores personalizados</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportDialogTitle" xml:space="preserve">
+    <value>Exportar cargador personalizado</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportedCount" xml:space="preserve">
+    <value>Se exportaron {0} cargadores personalizados.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportedOne" xml:space="preserve">
+    <value>Se exportÃ³ {0}.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FileFormName" xml:space="preserve">
+    <value>Nombre de formulario del archivo</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FileFormNameDescription" xml:space="preserve">
+    <value>Nombre del campo multipart utilizado para enviar el archivo cargado.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FilteredUploaderCount" xml:space="preserve">
+    <value>{0} de {1}</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Headers" xml:space="preserve">
+    <value>Encabezados</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ImportDialogTitle" xml:space="preserve">
+    <value>Importar cargadores personalizados</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ImportedCount" xml:space="preserve">
+    <value>Se importaron {0} cargadores personalizados.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_InputTokensDescription" xml:space="preserve">
+    <value>Los tokens de entrada estÃ¡n disponibles en el menÃº contextual del editor.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_JSONPathResponseValue" xml:space="preserve">
+    <value>Valor de respuesta JSONPath</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Method" xml:space="preserve">
+    <value>MÃ©todo</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Minify" xml:space="preserve">
+    <value>Minimizar</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NewCreated" xml:space="preserve">
+    <value>Se creÃ³ un nuevo cargador personalizado.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NoAdditionalBodyFields" xml:space="preserve">
+    <value>Este tipo de cuerpo no tiene campos adicionales.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Parameters" xml:space="preserve">
+    <value>ParÃ¡metros</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RandomSelection" xml:space="preserve">
+    <value>SelecciÃ³n aleatoria</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RegularExpressionResult" xml:space="preserve">
+    <value>Resultado de expresiÃ³n regular</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Removed" xml:space="preserve">
+    <value>Se eliminÃ³ el cargador personalizado.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestData" xml:space="preserve">
+    <value>Datos de la solicitud</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestDescription" xml:space="preserve">
+    <value>Configure el punto de conexiÃ³n, los parÃ¡metros de consulta y los encabezados HTTP enviados por ShareX.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestURL" xml:space="preserve">
+    <value>URL de solicitud</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestURLRequired" xml:space="preserve">
+    <value>La URL de solicitud debe configurarse antes de exportar.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseDescription" xml:space="preserve">
+    <value>Extraiga los valores de resultado de ShareX de la respuesta del servicio.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseHeader" xml:space="preserve">
+    <value>Encabezado de respuesta</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseOrRedirectionURL" xml:space="preserve">
+    <value>URL de respuesta o redirecciÃ³n</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseText" xml:space="preserve">
+    <value>Texto de respuesta</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseTokensDescription" xml:space="preserve">
+    <value>Haga clic con el botÃ³n derecho para insertar tokens de respuesta.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Result" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResultURL" xml:space="preserve">
+    <value>URL de resultado</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResultURLDescription" xml:space="preserve">
+    <value>La URL final copiada o abierta despuÃ©s de una carga correcta.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SelectToExport" xml:space="preserve">
+    <value>Seleccione un cargador personalizado para exportar.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SelectUploaderToEdit" xml:space="preserve">
+    <value>Seleccione un cargador para editar</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SelectUploaderToEditDescription" xml:space="preserve">
+    <value>Cree un cargador nuevo, importe un archivo .sxcu o elija uno de la biblioteca.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SyntaxTestDescription" xml:space="preserve">
+    <value>Obtenga una vista previa de cÃ³mo se analizarÃ¡ la expresiÃ³n de respuesta.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestCancelled" xml:space="preserve">
+    <value>Prueba cancelada.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestCompleted" xml:space="preserve">
+    <value>Prueba completada.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestDescription" xml:space="preserve">
+    <value>Elija el cargador personalizado activo para cada destino y ejecute una prueba en vivo.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestFailed" xml:space="preserve">
+    <value>La prueba fallÃ³.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Testing" xml:space="preserve">
+    <value>Probando {0}...</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
+    <value>Probar sintaxis de URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
+    <value>Entrada de texto o URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextToUpload" xml:space="preserve">
+    <value>Texto para cargar:</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextUploadSample" xml:space="preserve">
+    <value>Prueba de carga de texto de ShareX</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextUploadTestTitle" xml:space="preserve">
+    <value>ShareX - Prueba de carga de texto</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
+    <value>URL de miniatura</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ThumbnailURLDescription" xml:space="preserve">
+    <value>Imagen de vista previa opcional devuelta por el servicio.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UpdatedCount" xml:space="preserve">
+    <value>Se actualizaron {0} archivos de cargador personalizado.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UpdateFolderDialogTitle" xml:space="preserve">
+    <value>Actualizar carpeta de cargadores personalizados</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Upload" xml:space="preserve">
+    <value>Cargar</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploadedFile" xml:space="preserve">
+    <value>Archivo cargado</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploadedFileName" xml:space="preserve">
+    <value>Nombre del archivo cargado</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploaderCount" xml:space="preserve">
+    <value>{0} cargador</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploaderCountPlural" xml:space="preserve">
+    <value>{0} cargadores</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_URLSyntax" xml:space="preserve">
+    <value>Sintaxis de URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UserSelection" xml:space="preserve">
+    <value>SelecciÃ³n del usuario</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UserTextInput" xml:space="preserve">
+    <value>Entrada de texto del usuario</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_XPathResponseValue" xml:space="preserve">
+    <value>Valor de respuesta XPath</value>
+  </data>
 </root>

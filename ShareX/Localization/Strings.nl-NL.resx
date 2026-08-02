@@ -2377,4 +2377,340 @@
   <data name="AboutWindow_RecorderDevices" xml:space="preserve">
     <value>Opnameapparaten</value>
   </data>
+  <data name="CustomUploaderSettingsWindow_Title" xml:space="preserve">
+    <value>ShareX - Instellingen voor aangepaste uploaders</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploaderLibrary" xml:space="preserve">
+    <value>Uploaderbibliotheek</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
+    <value>Handleiding voor aangepaste uploaders</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
+    <value>Uploaders zoeken</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_New" xml:space="preserve">
+    <value>Nieuw</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
+    <value>Importeren</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
+    <value>Geselecteerde uploader dupliceren</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
+    <value>Geselecteerde uploader exporteren</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
+    <value>Geselecteerde uploader verwijderen</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
+    <value>Alles exporteren</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
+    <value>Alles wissen</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
+    <value>Map bijwerken</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
+    <value>Overzicht</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Request" xml:space="preserve">
+    <value>Aanvraag</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Body" xml:space="preserve">
+    <value>Inhoud</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Response" xml:space="preserve">
+    <value>Antwoord</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_OverviewDescription" xml:space="preserve">
+    <value>Geef deze uploader een herkenbare naam en kies waar ShareX deze kan gebruiken.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Identity" xml:space="preserve">
+    <value>Identiteit</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Name" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NamePlaceholder" xml:space="preserve">
+    <value>Gebruikt de aanvraaghost indien leeg</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NameDescription" xml:space="preserve">
+    <value>Deze naam wordt overal in ShareX weergegeven. Wijzigingen worden onmiddellijk opgeslagen.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Capabilities" xml:space="preserve">
+    <value>Mogelijkheden</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_CapabilitiesDescription" xml:space="preserve">
+    <value>Schakel elk bestemmingstype in dat door dit eindpunt wordt ondersteund.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ImageUploader" xml:space="preserve">
+    <value>Afbeeldingsuploader</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextUploader" xml:space="preserve">
+    <value>Tekstuploader</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FileUploader" xml:space="preserve">
+    <value>Bestandsuploader</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_URLShortener" xml:space="preserve">
+    <value>URL-verkorter</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_URLSharingService" xml:space="preserve">
+    <value>URL-deelservice</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Endpoint" xml:space="preserve">
+    <value>Eindpunt</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ChangesApplied" xml:space="preserve">
+    <value>Wijzigingen worden onmiddellijk toegepast.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_CreateOrImport" xml:space="preserve">
+    <value>Maak een aangepaste uploader of importeer een .sxcu-bestand.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NoSearchMatches" xml:space="preserve">
+    <value>Geen uploaders komen overeen met deze zoekopdracht.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_AllRemoved" xml:space="preserve">
+    <value>Alle aangepaste uploaders zijn verwijderd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Arguments" xml:space="preserve">
+    <value>Argumenten</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Base64Encoding" xml:space="preserve">
+    <value>Base64-codering</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Beautify" xml:space="preserve">
+    <value>Opmaken</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_BodyDescription" xml:space="preserve">
+    <value>Kies hoe aanvraaggegevens en geüploade bestanden worden gecodeerd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
+    <value>Bodytype</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Cancel" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ClearConfirmation" xml:space="preserve">
+    <value>Alle aangepaste uploaders verwijderen?</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Close" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ConfirmationTitle" xml:space="preserve">
+    <value>ShareX - Bevestiging</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_CustomUploaderFileType" xml:space="preserve">
+    <value>Aangepaste ShareX-uploader</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DeletionURL" xml:space="preserve">
+    <value>Verwijderings-URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DeletionURLDescription" xml:space="preserve">
+    <value>Optionele URL waarmee de geüploade inhoud wordt verwijderd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DestinationRequired" xml:space="preserve">
+    <value>Voor het exporteren moet ten minste één bestemmingstype zijn geselecteerd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DisplayOutputText" xml:space="preserve">
+    <value>Uitvoertekst weergeven</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Duplicated" xml:space="preserve">
+    <value>Aangepaste uploader gedupliceerd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DuplicateNamesNotAllowed" xml:space="preserve">
+    <value>Dubbele namen zijn niet toegestaan.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Error" xml:space="preserve">
+    <value>Fout</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ErrorMessage" xml:space="preserve">
+    <value>Foutmelding</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ErrorMessageDescription" xml:space="preserve">
+    <value>Tekst die wordt opgehaald wanneer de service een fout meldt.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportAllDialogTitle" xml:space="preserve">
+    <value>Alle aangepaste uploaders exporteren</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportDialogTitle" xml:space="preserve">
+    <value>Aangepaste uploader exporteren</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportedCount" xml:space="preserve">
+    <value>{0} aangepaste uploader(s) geëxporteerd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportedOne" xml:space="preserve">
+    <value>{0} geëxporteerd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FileFormName" xml:space="preserve">
+    <value>Formuliernaam van bestand</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FileFormNameDescription" xml:space="preserve">
+    <value>De naam van het multipart-veld waarmee het geüploade bestand wordt verzonden.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FilteredUploaderCount" xml:space="preserve">
+    <value>{0} van {1}</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Headers" xml:space="preserve">
+    <value>Headers</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ImportDialogTitle" xml:space="preserve">
+    <value>Aangepaste uploaders importeren</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ImportedCount" xml:space="preserve">
+    <value>{0} aangepaste uploader(s) geïmporteerd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_InputTokensDescription" xml:space="preserve">
+    <value>Invoertokens zijn beschikbaar via het contextmenu van de editor.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_JSONPathResponseValue" xml:space="preserve">
+    <value>JSONPath-antwoordwaarde</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Method" xml:space="preserve">
+    <value>Methode</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Minify" xml:space="preserve">
+    <value>Minimaliseren</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NewCreated" xml:space="preserve">
+    <value>Nieuwe aangepaste uploader gemaakt.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NoAdditionalBodyFields" xml:space="preserve">
+    <value>Dit bodytype heeft geen extra velden.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Parameters" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RandomSelection" xml:space="preserve">
+    <value>Willekeurige selectie</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RegularExpressionResult" xml:space="preserve">
+    <value>Resultaat van reguliere expressie</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Removed" xml:space="preserve">
+    <value>Aangepaste uploader verwijderd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestData" xml:space="preserve">
+    <value>Aanvraaggegevens</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestDescription" xml:space="preserve">
+    <value>Configureer het eindpunt, de queryparameters en de HTTP-headers die ShareX verzendt.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestURL" xml:space="preserve">
+    <value>Aanvraag-URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestURLRequired" xml:space="preserve">
+    <value>De aanvraag-URL moet vóór het exporteren worden geconfigureerd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseDescription" xml:space="preserve">
+    <value>Haal ShareX-resultaatwaarden op uit het antwoord van de service.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseHeader" xml:space="preserve">
+    <value>Antwoordheader</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseOrRedirectionURL" xml:space="preserve">
+    <value>Antwoord- of omleidings-URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseText" xml:space="preserve">
+    <value>Antwoordtekst</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseTokensDescription" xml:space="preserve">
+    <value>Klik met de rechtermuisknop om antwoordtokens in te voegen.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Result" xml:space="preserve">
+    <value>Resultaat</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResultURL" xml:space="preserve">
+    <value>Resultaat-URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResultURLDescription" xml:space="preserve">
+    <value>De definitieve URL die na een geslaagde upload wordt gekopieerd of geopend.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SelectToExport" xml:space="preserve">
+    <value>Selecteer een aangepaste uploader om te exporteren.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SelectUploaderToEdit" xml:space="preserve">
+    <value>Selecteer een uploader om te bewerken</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SelectUploaderToEditDescription" xml:space="preserve">
+    <value>Maak een nieuwe uploader, importeer een .sxcu-bestand of kies er een uit de bibliotheek.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SyntaxTestDescription" xml:space="preserve">
+    <value>Bekijk hoe de antwoordexpressie wordt geparseerd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestCancelled" xml:space="preserve">
+    <value>Test geannuleerd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestCompleted" xml:space="preserve">
+    <value>Test voltooid.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestDescription" xml:space="preserve">
+    <value>Kies voor elke bestemming de actieve aangepaste uploader en voer een livetest uit.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestFailed" xml:space="preserve">
+    <value>Test mislukt.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Testing" xml:space="preserve">
+    <value>{0} testen...</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
+    <value>URL-syntaxis testen</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
+    <value>Tekst- of URL-invoer</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextToUpload" xml:space="preserve">
+    <value>Te uploaden tekst:</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextUploadSample" xml:space="preserve">
+    <value>ShareX-test voor tekstupload</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextUploadTestTitle" xml:space="preserve">
+    <value>ShareX - Test voor tekstupload</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
+    <value>Miniatuur-URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ThumbnailURLDescription" xml:space="preserve">
+    <value>Optionele voorbeeldafbeelding die door de service wordt geretourneerd.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UpdatedCount" xml:space="preserve">
+    <value>{0} bestand(en) van aangepaste uploaders bijgewerkt.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UpdateFolderDialogTitle" xml:space="preserve">
+    <value>Map met aangepaste uploaders bijwerken</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Upload" xml:space="preserve">
+    <value>Uploaden</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploadedFile" xml:space="preserve">
+    <value>Geüpload bestand</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploadedFileName" xml:space="preserve">
+    <value>Naam van geüpload bestand</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploaderCount" xml:space="preserve">
+    <value>{0} uploader</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploaderCountPlural" xml:space="preserve">
+    <value>{0} uploaders</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_URLSyntax" xml:space="preserve">
+    <value>URL-syntaxis</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UserSelection" xml:space="preserve">
+    <value>Gebruikersselectie</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UserTextInput" xml:space="preserve">
+    <value>Tekstinvoer van gebruiker</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_XPathResponseValue" xml:space="preserve">
+    <value>XPath-antwoordwaarde</value>
+  </data>
 </root>

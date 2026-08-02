@@ -12,6 +12,7 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib;
+using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -71,7 +72,7 @@ public sealed class CustomUploaderKeyValueRow : CustomUploaderNotifyObject
         internal set => SetField(ref _hasDuplicateKey, value);
     }
 
-    public string? Error => HasDuplicateKey ? "Duplicate names are not allowed." : null;
+    public string? Error => HasDuplicateKey ? Strings.CustomUploaderSettingsWindow_DuplicateNamesNotAllowed : null;
 
     public CustomUploaderKeyValueRow(string key = "", string value = "")
     {

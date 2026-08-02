@@ -28,6 +28,7 @@ Avalonia translations use the shared `Strings.resx` resource set in this directo
 | After upload | `AfterUploadWindow_` | 2 | 15 | Complete |
 | Auto capture | `AutoCaptureWindow_` | 2 | 14 | Complete |
 | Custom uploader key/value editor | `CustomUploaderKeyValueEditor_` | 2 | 4 | Complete |
+| Custom uploader settings | `CustomUploaderSettingsWindow_` | 4 | 112 | Complete |
 | Quick task menu editor | `QuickTaskMenuEditorWindow_` | 2 | 23 | Complete |
 | About | `AboutWindow_` | 2 | 17 | Complete |
 

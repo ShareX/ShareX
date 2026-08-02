@@ -193,6 +193,16 @@ $areas = @(
         )
     }
     [pscustomobject]@{
+        Name = 'Custom uploader settings'
+        ResourcePrefixes = @('CustomUploaderSettingsWindow_')
+        SourceFiles = @(
+            'Presentation/CustomUploaderSettings/CustomUploaderSettingsWindow.axaml'
+            'Presentation/CustomUploaderSettings/CustomUploaderSettingsWindow.axaml.cs'
+            'Presentation/CustomUploaderSettings/CustomUploaderSettingsViewModel.cs'
+            'Presentation/CustomUploaderSettings/CustomUploaderSettingsModels.cs'
+        )
+    }
+    [pscustomobject]@{
         Name = 'Quick task menu editor'
         ResourcePrefixes = @('QuickTaskMenuEditorWindow_')
         SourceFiles = @(

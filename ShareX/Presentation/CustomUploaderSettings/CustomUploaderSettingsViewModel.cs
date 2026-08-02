@@ -17,6 +17,7 @@ using ShareX.UploadersLib.SharingServices;
 using ShareX.UploadersLib.TextUploaders;
 using ShareX.UploadersLib.URLShorteners;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -34,7 +35,7 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
     private bool _suppressSelectionUpdates;
     private string _searchText = string.Empty;
     private int _selectedSectionIndex;
-    private string _statusMessage = "Changes are applied immediately.";
+    private string _statusMessage = Strings.CustomUploaderSettingsWindow_ChangesApplied;
     private ResponseInfo? _syntaxTestResponseInfo;
     private bool _isSyntaxTestVisible;
     private string _syntaxTestResponseText = string.Empty;
@@ -45,11 +46,11 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
     public ObservableCollection<CustomUploaderEditorItem> FilteredUploaders { get; } = [];
     public IReadOnlyList<CustomUploaderEditorSection> Sections { get; } =
     [
-        new("Overview", LucideIcons.layout_dashboard),
-        new("Request", LucideIcons.send),
-        new("Body", LucideIcons.braces),
-        new("Response", LucideIcons.reply),
-        new("Test", LucideIcons.flask_conical)
+        new(Strings.CustomUploaderSettingsWindow_Overview, LucideIcons.layout_dashboard),
+        new(Strings.CustomUploaderSettingsWindow_Request, LucideIcons.send),
+        new(Strings.CustomUploaderSettingsWindow_Body, LucideIcons.braces),
+        new(Strings.CustomUploaderSettingsWindow_Response, LucideIcons.reply),
+        new(Strings.CustomUploaderSettingsWindow_Test, LucideIcons.flask_conical)
     ];
     public string[] RequestMethods { get; } = Enum.GetNames<HttpMethod>();
     public string[] BodyTypes { get; } = Enum.GetValues<CustomUploaderBody>().Select(x => x.GetLocalizedDescription()).ToArray();
@@ -80,12 +81,14 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
     }
 
     public string LibraryCountText => string.IsNullOrWhiteSpace(SearchText)
-        ? $"{Uploaders.Count} uploader{(Uploaders.Count == 1 ? string.Empty : "s")}" 
-        : $"{FilteredUploaders.Count} of {Uploaders.Count}";
+        ? string.Format(Uploaders.Count == 1
+            ? Strings.CustomUploaderSettingsWindow_UploaderCount
+            : Strings.CustomUploaderSettingsWindow_UploaderCountPlural, Uploaders.Count)
+        : string.Format(Strings.CustomUploaderSettingsWindow_FilteredUploaderCount, FilteredUploaders.Count, Uploaders.Count);
 
     public string EmptyLibraryMessage => Uploaders.Count == 0
-        ? "Create a custom uploader or import an .sxcu file."
-        : "No uploaders match this search.";
+            ? Strings.CustomUploaderSettingsWindow_CreateOrImport
+            : Strings.CustomUploaderSettingsWindow_NoSearchMatches;
 
     public int SelectedSectionIndex
     {
@@ -220,14 +223,14 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
     public void NewUploader()
     {
         Add(CustomUploaderItem.Init());
-        StatusMessage = "New custom uploader created.";
+        StatusMessage = Strings.CustomUploaderSettingsWindow_NewCreated;
     }
 
     public void DuplicateSelected()
     {
         if (SelectedUploader == null) return;
         Add(SelectedUploader.Model.Copy());
-        StatusMessage = "Custom uploader duplicated.";
+        StatusMessage = Strings.CustomUploaderSettingsWindow_Duplicated;
     }
 
     public void RemoveSelected()
@@ -254,7 +257,7 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
             SelectedUploader = FilteredUploaders.FirstOrDefault();
         }
         NotifySelections();
-        StatusMessage = "Custom uploader removed.";
+        StatusMessage = Strings.CustomUploaderSettingsWindow_Removed;
     }
 
     public void Clear()
@@ -277,7 +280,7 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
         ApplyFilter(false);
         SelectedUploader = null;
         NotifySelections();
-        StatusMessage = "All custom uploaders removed.";
+        StatusMessage = Strings.CustomUploaderSettingsWindow_AllRemoved;
     }
 
     public int ImportFiles(IEnumerable<string> filePaths)
@@ -300,21 +303,21 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
             }
         }
 
-        if (imported > 0) StatusMessage = $"Imported {imported} custom uploader(s).";
+        if (imported > 0) StatusMessage = string.Format(Strings.CustomUploaderSettingsWindow_ImportedCount, imported);
         return imported;
     }
 
     public string? ExportSelected(string filePath)
     {
-        if (SelectedUploader == null) return "Select a custom uploader to export.";
+        if (SelectedUploader == null) return Strings.CustomUploaderSettingsWindow_SelectToExport;
         CustomUploaderItem item = SelectedUploader.Model;
-        if (string.IsNullOrWhiteSpace(item.RequestURL)) return "Request URL must be configured before exporting.";
-        if (item.DestinationType == CustomUploaderDestinationType.None) return "At least one destination type must be selected before exporting.";
+        if (string.IsNullOrWhiteSpace(item.RequestURL)) return Strings.CustomUploaderSettingsWindow_RequestURLRequired;
+        if (item.DestinationType == CustomUploaderDestinationType.None) return Strings.CustomUploaderSettingsWindow_DestinationRequired;
 
         try
         {
             JsonHelpers.SerializeToFile(item, filePath, Newtonsoft.Json.DefaultValueHandling.Ignore, Newtonsoft.Json.NullValueHandling.Ignore);
-            StatusMessage = $"Exported {item}.";
+            StatusMessage = string.Format(Strings.CustomUploaderSettingsWindow_ExportedOne, item);
             return null;
         }
         catch (Exception exception)
@@ -333,7 +336,7 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
             if (ExportItem(editor.Model, filePath)) exported++;
         }
 
-        StatusMessage = $"Exported {exported} custom uploader(s).";
+        StatusMessage = string.Format(Strings.CustomUploaderSettingsWindow_ExportedCount, exported);
         return exported;
     }
 
@@ -355,7 +358,7 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
             }
         }
 
-        StatusMessage = $"Updated {updated} custom uploader file(s).";
+        StatusMessage = string.Format(Strings.CustomUploaderSettingsWindow_UpdatedCount, updated);
         return updated;
     }
 
@@ -364,12 +367,16 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
         if (!_config.CustomUploadersList.IsValidIndex(index) || IsTesting) return null;
         IsTesting = true;
         SelectedUploader = Uploaders[index];
-        StatusMessage = $"Testing {SelectedUploader.Title}...";
+        StatusMessage = string.Format(Strings.CustomUploaderSettingsWindow_Testing, SelectedUploader.Title);
 
         UploadResult? result = await Task.Run(() => RunTest(type, _config.CustomUploadersList[index], textInput));
         LastResult = result;
         IsTesting = false;
-        StatusMessage = result == null ? "Test cancelled." : result.IsError ? "Test failed." : "Test completed.";
+        StatusMessage = result == null
+            ? Strings.CustomUploaderSettingsWindow_TestCancelled
+            : result.IsError
+                ? Strings.CustomUploaderSettingsWindow_TestFailed
+                : Strings.CustomUploaderSettingsWindow_TestCompleted;
         return result;
     }
 
@@ -473,7 +480,7 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
         }
         catch (Exception exception)
         {
-            SyntaxTestResult = "Error\r\n" + exception.Message;
+            SyntaxTestResult = Strings.CustomUploaderSettingsWindow_Error + "\r\n" + exception.Message;
         }
     }
 

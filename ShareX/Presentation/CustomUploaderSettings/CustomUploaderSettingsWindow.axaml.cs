@@ -16,6 +16,7 @@ using Avalonia.LogicalTree;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -32,28 +33,28 @@ public partial class CustomUploaderSettingsWindow : Window
 {
     private static readonly (string Token, string Description)[] InputTokens =
     [
-        ("{input}", "Text or URL input"),
-        ("{filename}", "Uploaded file name"),
-        ("{random:input1|input2}", "Random selection"),
-        ("{select:input1|input2}", "User selection"),
-        ("{inputbox:title|default_value}", "User text input"),
-        ("{base64:input}", "Base64 encoding")
+        ("{input}", Strings.CustomUploaderSettingsWindow_TextOrURLInput),
+        ("{filename}", Strings.CustomUploaderSettingsWindow_UploadedFileName),
+        ("{random:input1|input2}", Strings.CustomUploaderSettingsWindow_RandomSelection),
+        ("{select:input1|input2}", Strings.CustomUploaderSettingsWindow_UserSelection),
+        ("{inputbox:title|default_value}", Strings.CustomUploaderSettingsWindow_UserTextInput),
+        ("{base64:input}", Strings.CustomUploaderSettingsWindow_Base64Encoding)
     ];
 
     private static readonly (string Token, string Description)[] OutputTokens =
     [
-        ("{response}", "Response text"),
-        ("{responseurl}", "Response or redirection URL"),
-        ("{header:header_name}", "Response header"),
-        ("{json:path}", "JSONPath response value"),
-        ("{xml:path}", "XPath response value"),
-        ("{regex:pattern|group}", "Regular expression result"),
-        ("{filename}", "Uploaded file name"),
-        ("{random:input1|input2}", "Random selection"),
-        ("{select:input1|input2}", "User selection"),
-        ("{inputbox:title|default_value}", "User text input"),
-        ("{outputbox:title|text}", "Display output text"),
-        ("{base64:input}", "Base64 encoding")
+        ("{response}", Strings.CustomUploaderSettingsWindow_ResponseText),
+        ("{responseurl}", Strings.CustomUploaderSettingsWindow_ResponseOrRedirectionURL),
+        ("{header:header_name}", Strings.CustomUploaderSettingsWindow_ResponseHeader),
+        ("{json:path}", Strings.CustomUploaderSettingsWindow_JSONPathResponseValue),
+        ("{xml:path}", Strings.CustomUploaderSettingsWindow_XPathResponseValue),
+        ("{regex:pattern|group}", Strings.CustomUploaderSettingsWindow_RegularExpressionResult),
+        ("{filename}", Strings.CustomUploaderSettingsWindow_UploadedFileName),
+        ("{random:input1|input2}", Strings.CustomUploaderSettingsWindow_RandomSelection),
+        ("{select:input1|input2}", Strings.CustomUploaderSettingsWindow_UserSelection),
+        ("{inputbox:title|default_value}", Strings.CustomUploaderSettingsWindow_UserTextInput),
+        ("{outputbox:title|text}", Strings.CustomUploaderSettingsWindow_DisplayOutputText),
+        ("{base64:input}", Strings.CustomUploaderSettingsWindow_Base64Encoding)
     ];
 
     private CustomUploaderSettingsViewModel? _viewModel;
@@ -83,9 +84,9 @@ public partial class CustomUploaderSettingsWindow : Window
     {
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Import custom uploaders",
+            Title = Strings.CustomUploaderSettingsWindow_ImportDialogTitle,
             AllowMultiple = true,
-            FileTypeFilter = [new FilePickerFileType("ShareX custom uploader") { Patterns = ["*.sxcu"] }]
+            FileTypeFilter = [new FilePickerFileType(Strings.CustomUploaderSettingsWindow_CustomUploaderFileType) { Patterns = ["*.sxcu"] }]
         });
         ImportPaths(files.Select(x => x.TryGetLocalPath()).Where(x => !string.IsNullOrEmpty(x)).Cast<string>());
     }
@@ -95,10 +96,10 @@ public partial class CustomUploaderSettingsWindow : Window
         if (_viewModel?.SelectedUploader == null) return;
         IStorageFile? file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
-            Title = "Export custom uploader",
+            Title = Strings.CustomUploaderSettingsWindow_ExportDialogTitle,
             SuggestedFileName = _viewModel.SelectedUploader.Model.GetFileName(),
             DefaultExtension = "sxcu",
-            FileTypeChoices = [new FilePickerFileType("ShareX custom uploader") { Patterns = ["*.sxcu"] }]
+            FileTypeChoices = [new FilePickerFileType(Strings.CustomUploaderSettingsWindow_CustomUploaderFileType) { Patterns = ["*.sxcu"] }]
         });
         string? path = file?.TryGetLocalPath();
         if (string.IsNullOrEmpty(path)) return;
@@ -108,13 +109,13 @@ public partial class CustomUploaderSettingsWindow : Window
 
     private async void OnExportAllClick(object? sender, RoutedEventArgs e)
     {
-        string? folder = await PickFolderAsync("Export all custom uploaders");
+        string? folder = await PickFolderAsync(Strings.CustomUploaderSettingsWindow_ExportAllDialogTitle);
         if (!string.IsNullOrEmpty(folder)) _viewModel?.ExportAll(folder);
     }
 
     private async void OnUpdateFolderClick(object? sender, RoutedEventArgs e)
     {
-        string? folder = await PickFolderAsync("Update custom uploader folder");
+        string? folder = await PickFolderAsync(Strings.CustomUploaderSettingsWindow_UpdateFolderDialogTitle);
         if (!string.IsNullOrEmpty(folder)) _viewModel?.UpdateFolder(folder);
     }
 
@@ -122,8 +123,8 @@ public partial class CustomUploaderSettingsWindow : Window
     {
         if (_viewModel == null) return;
         FormsDialogResult result = FormsMessageBox.Show(
-            "Remove all custom uploaders?",
-            "ShareX - Confirmation",
+            Strings.CustomUploaderSettingsWindow_ClearConfirmation,
+            Strings.CustomUploaderSettingsWindow_ConfirmationTitle,
             FormsMessageBoxButtons.YesNo,
             FormsMessageBoxIcon.Question);
         if (result == FormsDialogResult.Yes) _viewModel.Clear();
@@ -188,11 +189,11 @@ public partial class CustomUploaderSettingsWindow : Window
             AcceptsReturn = true,
             TextWrapping = Avalonia.Media.TextWrapping.Wrap,
             MinHeight = 130,
-            Text = "ShareX text upload test"
+            Text = Strings.CustomUploaderSettingsWindow_TextUploadSample
         };
         Window dialog = new()
         {
-            Title = "ShareX - Text upload test",
+            Title = Strings.CustomUploaderSettingsWindow_TextUploadTestTitle,
             Width = 520,
             Height = 250,
             MinWidth = 420,
@@ -200,8 +201,8 @@ public partial class CustomUploaderSettingsWindow : Window
             WindowStartupLocation = WindowStartupLocation.CenterOwner,
             RequestedThemeVariant = ThemeManager.GetCurrentTheme()
         };
-        Button upload = new() { Content = "Upload", MinWidth = 80 };
-        Button cancel = new() { Content = "Cancel", MinWidth = 80 };
+        Button upload = new() { Content = Strings.CustomUploaderSettingsWindow_Upload, MinWidth = 80 };
+        Button cancel = new() { Content = Strings.CustomUploaderSettingsWindow_Cancel, MinWidth = 80 };
         upload.Click += (_, _) => dialog.Close(input.Text ?? string.Empty);
         cancel.Click += (_, _) => dialog.Close(null);
         dialog.Content = new StackPanel
@@ -210,7 +211,7 @@ public partial class CustomUploaderSettingsWindow : Window
             Spacing = 8,
             Children =
             {
-                new TextBlock { Text = "Text to upload:" },
+                new TextBlock { Text = Strings.CustomUploaderSettingsWindow_TextToUpload },
                 input,
                 new StackPanel
                 {

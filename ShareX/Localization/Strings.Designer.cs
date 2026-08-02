@@ -4492,5 +4492,565 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("AboutWindow_RecorderDevices", resourceCulture);
             }
         }
+        public static string CustomUploaderSettingsWindow_Title {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Title", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_UploaderLibrary {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_UploaderLibrary", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Guide {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Guide", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_SearchUploaders {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_SearchUploaders", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_New {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_New", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Import {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Import", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Duplicate {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Duplicate", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Export {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Export", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Remove {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Remove", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ExportAll {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ExportAll", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ClearAll {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ClearAll", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_UpdateFolder {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_UpdateFolder", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Overview {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Overview", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Request {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Request", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Body {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Body", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Response {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Response", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Test {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Test", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_OverviewDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_OverviewDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Identity {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Identity", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Name {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Name", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_NamePlaceholder {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_NamePlaceholder", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_NameDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_NameDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Capabilities {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Capabilities", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_CapabilitiesDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_CapabilitiesDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ImageUploader {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ImageUploader", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_TextUploader {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_TextUploader", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_FileUploader {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_FileUploader", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_URLShortener {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_URLShortener", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_URLSharingService {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_URLSharingService", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Endpoint {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Endpoint", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ChangesApplied {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ChangesApplied", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_CreateOrImport {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_CreateOrImport", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_NoSearchMatches {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_NoSearchMatches", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_AllRemoved {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_AllRemoved", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Arguments {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Arguments", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Base64Encoding {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Base64Encoding", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Beautify {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Beautify", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_BodyDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_BodyDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_BodyType {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_BodyType", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Cancel {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Cancel", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ClearConfirmation {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ClearConfirmation", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Close {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Close", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ConfirmationTitle {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ConfirmationTitle", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_CustomUploaderFileType {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_CustomUploaderFileType", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_DeletionURL {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_DeletionURL", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_DeletionURLDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_DeletionURLDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_DestinationRequired {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_DestinationRequired", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_DisplayOutputText {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_DisplayOutputText", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Duplicated {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Duplicated", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_DuplicateNamesNotAllowed {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_DuplicateNamesNotAllowed", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Error {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Error", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ErrorMessage {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ErrorMessage", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ErrorMessageDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ErrorMessageDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ExportAllDialogTitle {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ExportAllDialogTitle", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ExportDialogTitle {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ExportDialogTitle", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ExportedCount {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ExportedCount", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ExportedOne {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ExportedOne", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_FileFormName {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_FileFormName", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_FileFormNameDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_FileFormNameDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_FilteredUploaderCount {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_FilteredUploaderCount", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Headers {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Headers", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ImportDialogTitle {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ImportDialogTitle", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ImportedCount {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ImportedCount", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_InputTokensDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_InputTokensDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_JSONPathResponseValue {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_JSONPathResponseValue", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Method {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Method", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Minify {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Minify", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_NewCreated {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_NewCreated", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_NoAdditionalBodyFields {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_NoAdditionalBodyFields", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Parameters {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Parameters", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_RandomSelection {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_RandomSelection", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_RegularExpressionResult {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_RegularExpressionResult", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Removed {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Removed", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_RequestData {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_RequestData", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_RequestDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_RequestDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_RequestURL {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_RequestURL", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_RequestURLRequired {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_RequestURLRequired", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ResponseDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ResponseDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ResponseHeader {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ResponseHeader", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ResponseOrRedirectionURL {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ResponseOrRedirectionURL", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ResponseText {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ResponseText", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ResponseTokensDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ResponseTokensDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Result {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Result", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ResultURL {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ResultURL", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ResultURLDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ResultURLDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_SelectToExport {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_SelectToExport", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_SelectUploaderToEdit {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_SelectUploaderToEdit", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_SelectUploaderToEditDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_SelectUploaderToEditDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_SyntaxTestDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_SyntaxTestDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_TestCancelled {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_TestCancelled", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_TestCompleted {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_TestCompleted", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_TestDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_TestDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_TestFailed {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_TestFailed", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Testing {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Testing", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_TestURLSyntax {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_TestURLSyntax", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_TextOrURLInput {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_TextOrURLInput", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_TextToUpload {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_TextToUpload", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_TextUploadSample {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_TextUploadSample", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_TextUploadTestTitle {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_TextUploadTestTitle", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ThumbnailURL {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ThumbnailURL", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_ThumbnailURLDescription {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_ThumbnailURLDescription", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_UpdatedCount {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_UpdatedCount", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_UpdateFolderDialogTitle {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_UpdateFolderDialogTitle", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_Upload {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_Upload", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_UploadedFile {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_UploadedFile", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_UploadedFileName {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_UploadedFileName", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_UploaderCount {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_UploaderCount", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_UploaderCountPlural {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_UploaderCountPlural", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_URLSyntax {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_URLSyntax", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_UserSelection {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_UserSelection", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_UserTextInput {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_UserTextInput", resourceCulture);
+            }
+        }
+        public static string CustomUploaderSettingsWindow_XPathResponseValue {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_XPathResponseValue", resourceCulture);
+            }
+        }
     }
 }
