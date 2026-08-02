@@ -751,4 +751,4858 @@ Sık kullanılan resim efektleri (Sağ tık)</value>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} ve {1} aynı kısayolu kullanıyor ({2}).</value>
   </data>
+  <data name="EmojiCatalog_Group_SmileysEmotion" xml:space="preserve">
+    <value>Suratlar ve duygu</value>
+  </data>
+  <data name="EmojiCatalog_Group_PeopleBody" xml:space="preserve">
+    <value>İnsanlar ve vücut</value>
+  </data>
+  <data name="EmojiCatalog_Group_AnimalsNature" xml:space="preserve">
+    <value>Hayvanlar ve doğa</value>
+  </data>
+  <data name="EmojiCatalog_Group_FoodDrink" xml:space="preserve">
+    <value>Yiyecek ve içecek</value>
+  </data>
+  <data name="EmojiCatalog_Group_TravelPlaces" xml:space="preserve">
+    <value>Seyahat ve yerler</value>
+  </data>
+  <data name="EmojiCatalog_Group_Activities" xml:space="preserve">
+    <value>Etkinlikler</value>
+  </data>
+  <data name="EmojiCatalog_Group_Objects" xml:space="preserve">
+    <value>Nesneler</value>
+  </data>
+  <data name="EmojiCatalog_Group_Symbols" xml:space="preserve">
+    <value>Semboller</value>
+  </data>
+  <data name="EmojiCatalog_Group_Flags" xml:space="preserve">
+    <value>Bayraklar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F600" xml:space="preserve">
+    <value>sırıtan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F603" xml:space="preserve">
+    <value>büyük gözlerle sırıtan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F604" xml:space="preserve">
+    <value>gülen gözlerle sırıtan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F601" xml:space="preserve">
+    <value>gülen gözlerle ışıldayan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F606" xml:space="preserve">
+    <value>gözlerini kısarak sırıtan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F605" xml:space="preserve">
+    <value>terli sırıtan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F923" xml:space="preserve">
+    <value>gülmekten yerlere yatmak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F602" xml:space="preserve">
+    <value>sevinç gözyaşları döken yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F642" xml:space="preserve">
+    <value>hafifçe gülümseyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F643" xml:space="preserve">
+    <value>baş aşağı yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAE0" xml:space="preserve">
+    <value>eriyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F609" xml:space="preserve">
+    <value>göz kırpan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F60A" xml:space="preserve">
+    <value>gülen gözlerle gülümseyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F607" xml:space="preserve">
+    <value>haleli gülümseyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F970" xml:space="preserve">
+    <value>kalpli gülümseyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F60D" xml:space="preserve">
+    <value>kalp gözlü gülümseyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F929" xml:space="preserve">
+    <value>yıldız gözlü yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F618" xml:space="preserve">
+    <value>öpücük gönderen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F617" xml:space="preserve">
+    <value>öpen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_263A_FE0F" xml:space="preserve">
+    <value>gülümseyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F61A" xml:space="preserve">
+    <value>gözleri kapalı öpen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F619" xml:space="preserve">
+    <value>gülen gözlerle öpen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F972" xml:space="preserve">
+    <value>gözyaşlı gülümseyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F60B" xml:space="preserve">
+    <value>yemekten keyif alan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F61B" xml:space="preserve">
+    <value>dilini çıkaran yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F61C" xml:space="preserve">
+    <value>göz kırpıp dilini çıkaran yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F92A" xml:space="preserve">
+    <value>çılgın yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F61D" xml:space="preserve">
+    <value>gözlerini kısıp dilini çıkaran yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F911" xml:space="preserve">
+    <value>para ağızlı yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F917" xml:space="preserve">
+    <value>sarılmak isteyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F92D" xml:space="preserve">
+    <value>eli ağzında yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAE2" xml:space="preserve">
+    <value>gözleri açık, eli ağzında yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAE3" xml:space="preserve">
+    <value>parmakların arasından bakan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F92B" xml:space="preserve">
+    <value>sessizlik isteyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F914" xml:space="preserve">
+    <value>düşünen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAE1" xml:space="preserve">
+    <value>selam veren yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F910" xml:space="preserve">
+    <value>ağzı fermuarlı yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F928" xml:space="preserve">
+    <value>kaşı kalkık yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F610" xml:space="preserve">
+    <value>ifadesiz yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F611" xml:space="preserve">
+    <value>duygusuz yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F636" xml:space="preserve">
+    <value>ağzı olmayan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAE5" xml:space="preserve">
+    <value>noktalı çizgili yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F636_200D_1F32B_FE0F" xml:space="preserve">
+    <value>bulutlar içindeki yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F60F" xml:space="preserve">
+    <value>kendinden emin gülümseyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F612" xml:space="preserve">
+    <value>memnuniyetsiz yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F644" xml:space="preserve">
+    <value>gözlerini deviren yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F62C" xml:space="preserve">
+    <value>yüzünü buruşturan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F62E_200D_1F4A8" xml:space="preserve">
+    <value>nefes veren yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F925" xml:space="preserve">
+    <value>yalan söyleyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAE8" xml:space="preserve">
+    <value>titreyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F642_200D_2194_FE0F" xml:space="preserve">
+    <value>yatay baş sallama</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F642_200D_2195_FE0F" xml:space="preserve">
+    <value>dikey baş sallama</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F60C" xml:space="preserve">
+    <value>rahatlamış yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F614" xml:space="preserve">
+    <value>düşünceli yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F62A" xml:space="preserve">
+    <value>uykulu yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F924" xml:space="preserve">
+    <value>salya akıtan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F634" xml:space="preserve">
+    <value>uyuyan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F637" xml:space="preserve">
+    <value>tıbbi maskeli yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F912" xml:space="preserve">
+    <value>termometreli yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F915" xml:space="preserve">
+    <value>başı bandajlı yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F922" xml:space="preserve">
+    <value>midesi bulanmış yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F92E" xml:space="preserve">
+    <value>kusan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F927" xml:space="preserve">
+    <value>hapşıran yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F975" xml:space="preserve">
+    <value>sıcaklamış yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F976" xml:space="preserve">
+    <value>üşüyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F974" xml:space="preserve">
+    <value>sersemlemiş yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F635" xml:space="preserve">
+    <value>baygın yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F635_200D_1F4AB" xml:space="preserve">
+    <value>sarmal gözlü yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F92F" xml:space="preserve">
+    <value>patlayan kafa</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F920" xml:space="preserve">
+    <value>kovboy şapkalı yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F973" xml:space="preserve">
+    <value>parti yapan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F978" xml:space="preserve">
+    <value>kılık değiştirmiş yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F60E" xml:space="preserve">
+    <value>güneş gözlüklü gülümseyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F913" xml:space="preserve">
+    <value>inek yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D0" xml:space="preserve">
+    <value>monokllü yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F615" xml:space="preserve">
+    <value>kafası karışmış yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAE4" xml:space="preserve">
+    <value>çapraz ağızlı yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F61F" xml:space="preserve">
+    <value>endişeli yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F641" xml:space="preserve">
+    <value>hafifçe kaşlarını çatan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_2639_FE0F" xml:space="preserve">
+    <value>kaşlarını çatan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F62E" xml:space="preserve">
+    <value>ağzı açık yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F62F" xml:space="preserve">
+    <value>suskun yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F632" xml:space="preserve">
+    <value>şaşkın yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F633" xml:space="preserve">
+    <value>kızarmış yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F97A" xml:space="preserve">
+    <value>yalvaran yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F979" xml:space="preserve">
+    <value>gözyaşlarını tutan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F626" xml:space="preserve">
+    <value>ağzı açık, kaşlarını çatan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F627" xml:space="preserve">
+    <value>ıstıraplı yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F628" xml:space="preserve">
+    <value>korkmuş yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F630" xml:space="preserve">
+    <value>terli endişeli yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F625" xml:space="preserve">
+    <value>üzgün ama rahatlamış yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F622" xml:space="preserve">
+    <value>ağlayan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F62D" xml:space="preserve">
+    <value>hüngür hüngür ağlayan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F631" xml:space="preserve">
+    <value>korkudan çığlık atan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F616" xml:space="preserve">
+    <value>şaşkın yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F623" xml:space="preserve">
+    <value>azmeden yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F61E" xml:space="preserve">
+    <value>hayal kırıklığına uğramış yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F613" xml:space="preserve">
+    <value>terli, üzgün yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F629" xml:space="preserve">
+    <value>bitkin yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F62B" xml:space="preserve">
+    <value>yorgun yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F971" xml:space="preserve">
+    <value>esneyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F624" xml:space="preserve">
+    <value>burnundan buhar çıkan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F621" xml:space="preserve">
+    <value>somurtan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F620" xml:space="preserve">
+    <value>kızgın yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F92C" xml:space="preserve">
+    <value>ağzında semboller olan yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F608" xml:space="preserve">
+    <value>boynuzlu gülümseyen yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F47F" xml:space="preserve">
+    <value>boynuzlu kızgın yüz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F480" xml:space="preserve">
+    <value>kafatası</value>
+  </data>
+  <data name="EmojiCatalog_Name_2620_FE0F" xml:space="preserve">
+    <value>kafatası ve çapraz kemikler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4A9" xml:space="preserve">
+    <value>kaka yığını</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F921" xml:space="preserve">
+    <value>palyaço yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F479" xml:space="preserve">
+    <value>dev</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F47A" xml:space="preserve">
+    <value>goblin</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F47B" xml:space="preserve">
+    <value>hayalet</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F47D" xml:space="preserve">
+    <value>uzaylı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F47E" xml:space="preserve">
+    <value>uzaylı canavar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F916" xml:space="preserve">
+    <value>robot</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F63A" xml:space="preserve">
+    <value>sırıtan kedi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F638" xml:space="preserve">
+    <value>gülen gözlerle sırıtan kedi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F639" xml:space="preserve">
+    <value>sevinç gözyaşları döken kedi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F63B" xml:space="preserve">
+    <value>kalp gözlü gülümseyen kedi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F63C" xml:space="preserve">
+    <value>alaycı gülümseyen kedi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F63D" xml:space="preserve">
+    <value>öpen kedi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F640" xml:space="preserve">
+    <value>bitkin kedi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F63F" xml:space="preserve">
+    <value>ağlayan kedi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F63E" xml:space="preserve">
+    <value>somurtan kedi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F648" xml:space="preserve">
+    <value>kötülüğü görmeyen maymun</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F649" xml:space="preserve">
+    <value>kötülüğü duymayan maymun</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F64A" xml:space="preserve">
+    <value>kötülüğü söylemeyen maymun</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F48C" xml:space="preserve">
+    <value>aşk mektubu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F498" xml:space="preserve">
+    <value>oklu kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F49D" xml:space="preserve">
+    <value>kurdeleli kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F496" xml:space="preserve">
+    <value>parıldayan kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F497" xml:space="preserve">
+    <value>büyüyen kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F493" xml:space="preserve">
+    <value>atan kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F49E" xml:space="preserve">
+    <value>dönen kalpler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F495" xml:space="preserve">
+    <value>iki kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F49F" xml:space="preserve">
+    <value>kalp süsü</value>
+  </data>
+  <data name="EmojiCatalog_Name_2763_FE0F" xml:space="preserve">
+    <value>kalp ünlemi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F494" xml:space="preserve">
+    <value>kırık kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_2764_FE0F_200D_1F525" xml:space="preserve">
+    <value>yanan kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_2764_FE0F_200D_1FA79" xml:space="preserve">
+    <value>iyileşen kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_2764_FE0F" xml:space="preserve">
+    <value>kırmızı kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA77" xml:space="preserve">
+    <value>pembe kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9E1" xml:space="preserve">
+    <value>turuncu kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F49B" xml:space="preserve">
+    <value>sarı kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F49A" xml:space="preserve">
+    <value>yeşil kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F499" xml:space="preserve">
+    <value>mavi kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA75" xml:space="preserve">
+    <value>açık mavi kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F49C" xml:space="preserve">
+    <value>mor kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F90E" xml:space="preserve">
+    <value>kahverengi kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5A4" xml:space="preserve">
+    <value>siyah kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA76" xml:space="preserve">
+    <value>gri kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F90D" xml:space="preserve">
+    <value>beyaz kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F48B" xml:space="preserve">
+    <value>öpücük izi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4AF" xml:space="preserve">
+    <value>yüz puan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4A2" xml:space="preserve">
+    <value>öfke simgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4A5" xml:space="preserve">
+    <value>çarpışma</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4AB" xml:space="preserve">
+    <value>baş dönmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4A6" xml:space="preserve">
+    <value>ter damlaları</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4A8" xml:space="preserve">
+    <value>hızla uzaklaşma</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F573_FE0F" xml:space="preserve">
+    <value>delik</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4AC" xml:space="preserve">
+    <value>konuşma balonu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F441_FE0F_200D_1F5E8_FE0F" xml:space="preserve">
+    <value>konuşma balonunda göz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5E8_FE0F" xml:space="preserve">
+    <value>sol konuşma balonu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5EF_FE0F" xml:space="preserve">
+    <value>sağ öfke balonu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4AD" xml:space="preserve">
+    <value>düşünce balonu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4A4" xml:space="preserve">
+    <value>zzz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F44B" xml:space="preserve">
+    <value>el sallama</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F91A" xml:space="preserve">
+    <value>kaldırılmış elin tersi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F590_FE0F" xml:space="preserve">
+    <value>parmakları açık el</value>
+  </data>
+  <data name="EmojiCatalog_Name_270B" xml:space="preserve">
+    <value>kaldırılmış el</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F596" xml:space="preserve">
+    <value>Vulkan selamı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAF1" xml:space="preserve">
+    <value>sağa dönük el</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAF2" xml:space="preserve">
+    <value>sola dönük el</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAF3" xml:space="preserve">
+    <value>avuç içi aşağı el</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAF4" xml:space="preserve">
+    <value>avuç içi yukarı el</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAF7" xml:space="preserve">
+    <value>sola iten el</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAF8" xml:space="preserve">
+    <value>sağa iten el</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F44C" xml:space="preserve">
+    <value>OK eli</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F90C" xml:space="preserve">
+    <value>birleşik parmaklar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F90F" xml:space="preserve">
+    <value>kıstıran el</value>
+  </data>
+  <data name="EmojiCatalog_Name_270C_FE0F" xml:space="preserve">
+    <value>zafer işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F91E" xml:space="preserve">
+    <value>çapraz parmaklar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAF0" xml:space="preserve">
+    <value>işaret ve başparmağı çapraz el</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F91F" xml:space="preserve">
+    <value>seni seviyorum işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F918" xml:space="preserve">
+    <value>boynuz işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F919" xml:space="preserve">
+    <value>beni ara eli</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F448" xml:space="preserve">
+    <value>solu gösteren elin tersi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F449" xml:space="preserve">
+    <value>sağı gösteren elin tersi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F446" xml:space="preserve">
+    <value>yukarıyı gösteren elin tersi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F595" xml:space="preserve">
+    <value>orta parmak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F447" xml:space="preserve">
+    <value>aşağıyı gösteren elin tersi</value>
+  </data>
+  <data name="EmojiCatalog_Name_261D_FE0F" xml:space="preserve">
+    <value>yukarıyı gösteren işaret parmağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAF5" xml:space="preserve">
+    <value>izleyiciyi gösteren işaret parmağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F44D" xml:space="preserve">
+    <value>başparmak yukarı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F44E" xml:space="preserve">
+    <value>başparmak aşağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_270A" xml:space="preserve">
+    <value>kaldırılmış yumruk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F44A" xml:space="preserve">
+    <value>önden gelen yumruk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F91B" xml:space="preserve">
+    <value>sola dönük yumruk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F91C" xml:space="preserve">
+    <value>sağa dönük yumruk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F44F" xml:space="preserve">
+    <value>alkışlayan eller</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F64C" xml:space="preserve">
+    <value>kaldırılmış eller</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAF6" xml:space="preserve">
+    <value>kalp eller</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F450" xml:space="preserve">
+    <value>açık eller</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F932" xml:space="preserve">
+    <value>avuçlar birlikte yukarı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F91D" xml:space="preserve">
+    <value>tokalaşma</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F64F" xml:space="preserve">
+    <value>birleşik eller</value>
+  </data>
+  <data name="EmojiCatalog_Name_270D_FE0F" xml:space="preserve">
+    <value>yazan el</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F485" xml:space="preserve">
+    <value>oje</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F933" xml:space="preserve">
+    <value>özçekim</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4AA" xml:space="preserve">
+    <value>sıkılmış pazu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9BE" xml:space="preserve">
+    <value>mekanik kol</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9BF" xml:space="preserve">
+    <value>mekanik bacak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9B5" xml:space="preserve">
+    <value>bacak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9B6" xml:space="preserve">
+    <value>ayak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F442" xml:space="preserve">
+    <value>kulak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9BB" xml:space="preserve">
+    <value>işitme cihazlı kulak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F443" xml:space="preserve">
+    <value>burun</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9E0" xml:space="preserve">
+    <value>beyin</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAC0" xml:space="preserve">
+    <value>anatomik kalp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAC1" xml:space="preserve">
+    <value>akciğerler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9B7" xml:space="preserve">
+    <value>diş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9B4" xml:space="preserve">
+    <value>kemik</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F440" xml:space="preserve">
+    <value>gözler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F441_FE0F" xml:space="preserve">
+    <value>göz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F445" xml:space="preserve">
+    <value>dil</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F444" xml:space="preserve">
+    <value>ağız</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAE6" xml:space="preserve">
+    <value>dudak ısırma</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F476" xml:space="preserve">
+    <value>bebek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D2" xml:space="preserve">
+    <value>çocuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F466" xml:space="preserve">
+    <value>erkek çocuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F467" xml:space="preserve">
+    <value>kız çocuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1" xml:space="preserve">
+    <value>kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F471" xml:space="preserve">
+    <value>sarışın kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468" xml:space="preserve">
+    <value>erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D4" xml:space="preserve">
+    <value>sakallı kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D4_200D_2642_FE0F" xml:space="preserve">
+    <value>sakallı erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D4_200D_2640_FE0F" xml:space="preserve">
+    <value>sakallı kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F9B0" xml:space="preserve">
+    <value>kızıl saçlı erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F9B1" xml:space="preserve">
+    <value>kıvırcık saçlı erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F9B3" xml:space="preserve">
+    <value>beyaz saçlı erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F9B2" xml:space="preserve">
+    <value>kel erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469" xml:space="preserve">
+    <value>kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F9B0" xml:space="preserve">
+    <value>kızıl saçlı kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F9B0" xml:space="preserve">
+    <value>kızıl saçlı kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F9B1" xml:space="preserve">
+    <value>kıvırcık saçlı kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F9B1" xml:space="preserve">
+    <value>kıvırcık saçlı kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F9B3" xml:space="preserve">
+    <value>beyaz saçlı kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F9B3" xml:space="preserve">
+    <value>beyaz saçlı kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F9B2" xml:space="preserve">
+    <value>kel kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F9B2" xml:space="preserve">
+    <value>kel kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F471_200D_2640_FE0F" xml:space="preserve">
+    <value>sarışın kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F471_200D_2642_FE0F" xml:space="preserve">
+    <value>sarışın erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D3" xml:space="preserve">
+    <value>yaşlı kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F474" xml:space="preserve">
+    <value>yaşlı erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F475" xml:space="preserve">
+    <value>yaşlı kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F64D" xml:space="preserve">
+    <value>kaşlarını çatan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F64D_200D_2642_FE0F" xml:space="preserve">
+    <value>kaşlarını çatan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F64D_200D_2640_FE0F" xml:space="preserve">
+    <value>kaşlarını çatan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F64E" xml:space="preserve">
+    <value>somurtan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F64E_200D_2642_FE0F" xml:space="preserve">
+    <value>somurtan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F64E_200D_2640_FE0F" xml:space="preserve">
+    <value>somurtan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F645" xml:space="preserve">
+    <value>hayır işareti yapan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F645_200D_2642_FE0F" xml:space="preserve">
+    <value>hayır işareti yapan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F645_200D_2640_FE0F" xml:space="preserve">
+    <value>hayır işareti yapan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F646" xml:space="preserve">
+    <value>OK işareti yapan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F646_200D_2642_FE0F" xml:space="preserve">
+    <value>OK işareti yapan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F646_200D_2640_FE0F" xml:space="preserve">
+    <value>OK işareti yapan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F481" xml:space="preserve">
+    <value>elini yana yatıran kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F481_200D_2642_FE0F" xml:space="preserve">
+    <value>elini yana yatıran erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F481_200D_2640_FE0F" xml:space="preserve">
+    <value>elini yana yatıran kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F64B" xml:space="preserve">
+    <value>el kaldıran kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F64B_200D_2642_FE0F" xml:space="preserve">
+    <value>el kaldıran erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F64B_200D_2640_FE0F" xml:space="preserve">
+    <value>el kaldıran kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CF" xml:space="preserve">
+    <value>sağır kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CF_200D_2642_FE0F" xml:space="preserve">
+    <value>sağır erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CF_200D_2640_FE0F" xml:space="preserve">
+    <value>sağır kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F647" xml:space="preserve">
+    <value>eğilen kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F647_200D_2642_FE0F" xml:space="preserve">
+    <value>eğilen erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F647_200D_2640_FE0F" xml:space="preserve">
+    <value>eğilen kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F926" xml:space="preserve">
+    <value>yüzünü avuçlayan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F926_200D_2642_FE0F" xml:space="preserve">
+    <value>yüzünü avuçlayan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F926_200D_2640_FE0F" xml:space="preserve">
+    <value>yüzünü avuçlayan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F937" xml:space="preserve">
+    <value>omuz silken kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F937_200D_2642_FE0F" xml:space="preserve">
+    <value>omuz silken erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F937_200D_2640_FE0F" xml:space="preserve">
+    <value>omuz silken kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_2695_FE0F" xml:space="preserve">
+    <value>sağlık çalışanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_2695_FE0F" xml:space="preserve">
+    <value>erkek sağlık çalışanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_2695_FE0F" xml:space="preserve">
+    <value>kadın sağlık çalışanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F393" xml:space="preserve">
+    <value>öğrenci</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F393" xml:space="preserve">
+    <value>erkek öğrenci</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F393" xml:space="preserve">
+    <value>kadın öğrenci</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F3EB" xml:space="preserve">
+    <value>öğretmen</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F3EB" xml:space="preserve">
+    <value>erkek öğretmen</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F3EB" xml:space="preserve">
+    <value>kadın öğretmen</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_2696_FE0F" xml:space="preserve">
+    <value>hâkim</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_2696_FE0F" xml:space="preserve">
+    <value>erkek hâkim</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_2696_FE0F" xml:space="preserve">
+    <value>kadın hâkim</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F33E" xml:space="preserve">
+    <value>çiftçi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F33E" xml:space="preserve">
+    <value>erkek çiftçi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F33E" xml:space="preserve">
+    <value>kadın çiftçi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F373" xml:space="preserve">
+    <value>aşçı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F373" xml:space="preserve">
+    <value>erkek aşçı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F373" xml:space="preserve">
+    <value>kadın aşçı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F527" xml:space="preserve">
+    <value>tamirci</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F527" xml:space="preserve">
+    <value>erkek tamirci</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F527" xml:space="preserve">
+    <value>kadın tamirci</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F3ED" xml:space="preserve">
+    <value>fabrika işçisi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F3ED" xml:space="preserve">
+    <value>erkek fabrika işçisi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F3ED" xml:space="preserve">
+    <value>kadın fabrika işçisi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F4BC" xml:space="preserve">
+    <value>ofis çalışanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F4BC" xml:space="preserve">
+    <value>erkek ofis çalışanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F4BC" xml:space="preserve">
+    <value>kadın ofis çalışanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F52C" xml:space="preserve">
+    <value>bilim insanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F52C" xml:space="preserve">
+    <value>erkek bilim insanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F52C" xml:space="preserve">
+    <value>kadın bilim insanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F4BB" xml:space="preserve">
+    <value>teknoloji uzmanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F4BB" xml:space="preserve">
+    <value>erkek teknoloji uzmanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F4BB" xml:space="preserve">
+    <value>kadın teknoloji uzmanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F3A4" xml:space="preserve">
+    <value>şarkıcı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F3A4" xml:space="preserve">
+    <value>erkek şarkıcı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F3A4" xml:space="preserve">
+    <value>kadın şarkıcı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F3A8" xml:space="preserve">
+    <value>sanatçı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F3A8" xml:space="preserve">
+    <value>erkek sanatçı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F3A8" xml:space="preserve">
+    <value>kadın sanatçı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_2708_FE0F" xml:space="preserve">
+    <value>pilot</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_2708_FE0F" xml:space="preserve">
+    <value>erkek pilot</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_2708_FE0F" xml:space="preserve">
+    <value>kadın pilot</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F680" xml:space="preserve">
+    <value>astronot</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F680" xml:space="preserve">
+    <value>erkek astronot</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F680" xml:space="preserve">
+    <value>kadın astronot</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F692" xml:space="preserve">
+    <value>itfaiyeci</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F692" xml:space="preserve">
+    <value>erkek itfaiyeci</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F692" xml:space="preserve">
+    <value>kadın itfaiyeci</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F46E" xml:space="preserve">
+    <value>polis memuru</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F46E_200D_2642_FE0F" xml:space="preserve">
+    <value>erkek polis memuru</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F46E_200D_2640_FE0F" xml:space="preserve">
+    <value>kadın polis memuru</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F575_FE0F" xml:space="preserve">
+    <value>dedektif</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F575_FE0F_200D_2642_FE0F" xml:space="preserve">
+    <value>erkek dedektif</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F575_FE0F_200D_2640_FE0F" xml:space="preserve">
+    <value>kadın dedektif</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F482" xml:space="preserve">
+    <value>muhafız</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F482_200D_2642_FE0F" xml:space="preserve">
+    <value>erkek muhafız</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F482_200D_2640_FE0F" xml:space="preserve">
+    <value>kadın muhafız</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F977" xml:space="preserve">
+    <value>ninja</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F477" xml:space="preserve">
+    <value>inşaat işçisi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F477_200D_2642_FE0F" xml:space="preserve">
+    <value>erkek inşaat işçisi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F477_200D_2640_FE0F" xml:space="preserve">
+    <value>kadın inşaat işçisi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAC5" xml:space="preserve">
+    <value>taçlı kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F934" xml:space="preserve">
+    <value>prens</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F478" xml:space="preserve">
+    <value>prenses</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F473" xml:space="preserve">
+    <value>türbanlı kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F473_200D_2642_FE0F" xml:space="preserve">
+    <value>türbanlı erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F473_200D_2640_FE0F" xml:space="preserve">
+    <value>türbanlı kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F472" xml:space="preserve">
+    <value>takke takan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D5" xml:space="preserve">
+    <value>başörtülü kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F935" xml:space="preserve">
+    <value>smokinli kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F935_200D_2642_FE0F" xml:space="preserve">
+    <value>smokinli erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F935_200D_2640_FE0F" xml:space="preserve">
+    <value>smokinli kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F470" xml:space="preserve">
+    <value>duvaklı kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F470_200D_2642_FE0F" xml:space="preserve">
+    <value>duvaklı erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F470_200D_2640_FE0F" xml:space="preserve">
+    <value>duvaklı kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F930" xml:space="preserve">
+    <value>hamile kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAC3" xml:space="preserve">
+    <value>hamile erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAC4" xml:space="preserve">
+    <value>hamile kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F931" xml:space="preserve">
+    <value>emzirme</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F37C" xml:space="preserve">
+    <value>bebek besleyen kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F37C" xml:space="preserve">
+    <value>bebek besleyen erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F37C" xml:space="preserve">
+    <value>bebek besleyen kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F47C" xml:space="preserve">
+    <value>bebek melek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F385" xml:space="preserve">
+    <value>Noel Baba</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F936" xml:space="preserve">
+    <value>Noel Anne</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F384" xml:space="preserve">
+    <value>Noel kişisi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9B8" xml:space="preserve">
+    <value>süper kahraman</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9B8_200D_2642_FE0F" xml:space="preserve">
+    <value>erkek süper kahraman</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9B8_200D_2640_FE0F" xml:space="preserve">
+    <value>kadın süper kahraman</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9B9" xml:space="preserve">
+    <value>süper kötü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9B9_200D_2642_FE0F" xml:space="preserve">
+    <value>erkek süper kötü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9B9_200D_2640_FE0F" xml:space="preserve">
+    <value>kadın süper kötü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D9" xml:space="preserve">
+    <value>büyücü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D9_200D_2642_FE0F" xml:space="preserve">
+    <value>erkek büyücü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D9_200D_2640_FE0F" xml:space="preserve">
+    <value>kadın büyücü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DA" xml:space="preserve">
+    <value>peri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DA_200D_2642_FE0F" xml:space="preserve">
+    <value>erkek peri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DA_200D_2640_FE0F" xml:space="preserve">
+    <value>kadın peri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DB" xml:space="preserve">
+    <value>vampir</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DB_200D_2642_FE0F" xml:space="preserve">
+    <value>erkek vampir</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DB_200D_2640_FE0F" xml:space="preserve">
+    <value>kadın vampir</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DC" xml:space="preserve">
+    <value>deniz insanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DC_200D_2642_FE0F" xml:space="preserve">
+    <value>deniz adamı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DC_200D_2640_FE0F" xml:space="preserve">
+    <value>deniz kızı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DD" xml:space="preserve">
+    <value>elf</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DD_200D_2642_FE0F" xml:space="preserve">
+    <value>erkek elf</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DD_200D_2640_FE0F" xml:space="preserve">
+    <value>kadın elf</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DE" xml:space="preserve">
+    <value>cin</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DE_200D_2642_FE0F" xml:space="preserve">
+    <value>erkek cin</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DE_200D_2640_FE0F" xml:space="preserve">
+    <value>kadın cin</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DF" xml:space="preserve">
+    <value>zombi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DF_200D_2642_FE0F" xml:space="preserve">
+    <value>erkek zombi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9DF_200D_2640_FE0F" xml:space="preserve">
+    <value>kadın zombi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CC" xml:space="preserve">
+    <value>trol</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F486" xml:space="preserve">
+    <value>masaj yaptıran kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F486_200D_2642_FE0F" xml:space="preserve">
+    <value>masaj yaptıran erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F486_200D_2640_FE0F" xml:space="preserve">
+    <value>masaj yaptıran kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F487" xml:space="preserve">
+    <value>saçını kestiren kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F487_200D_2642_FE0F" xml:space="preserve">
+    <value>saçını kestiren erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F487_200D_2640_FE0F" xml:space="preserve">
+    <value>saçını kestiren kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B6" xml:space="preserve">
+    <value>yürüyen kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B6_200D_2642_FE0F" xml:space="preserve">
+    <value>yürüyen erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B6_200D_2640_FE0F" xml:space="preserve">
+    <value>yürüyen kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B6_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa doğru yürüyen kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B6_200D_2640_FE0F_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa doğru yürüyen kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B6_200D_2642_FE0F_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa doğru yürüyen erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CD" xml:space="preserve">
+    <value>ayakta duran kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CD_200D_2642_FE0F" xml:space="preserve">
+    <value>ayakta duran erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CD_200D_2640_FE0F" xml:space="preserve">
+    <value>ayakta duran kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CE" xml:space="preserve">
+    <value>diz çöken kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CE_200D_2642_FE0F" xml:space="preserve">
+    <value>diz çöken erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CE_200D_2640_FE0F" xml:space="preserve">
+    <value>diz çöken kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CE_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa dönük diz çöken kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CE_200D_2640_FE0F_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa dönük diz çöken kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CE_200D_2642_FE0F_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa dönük diz çöken erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F9AF" xml:space="preserve">
+    <value>beyaz bastonlu kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F9AF_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa dönük beyaz bastonlu kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F9AF" xml:space="preserve">
+    <value>beyaz bastonlu erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F9AF_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa dönük beyaz bastonlu erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F9AF" xml:space="preserve">
+    <value>beyaz bastonlu kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F9AF_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa dönük beyaz bastonlu kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F9BC" xml:space="preserve">
+    <value>motorlu tekerlekli sandalyedeki kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F9BC_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa dönük motorlu tekerlekli sandalyedeki kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F9BC" xml:space="preserve">
+    <value>motorlu tekerlekli sandalyedeki erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F9BC_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa dönük motorlu tekerlekli sandalyedeki erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F9BC" xml:space="preserve">
+    <value>motorlu tekerlekli sandalyedeki kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F9BC_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa dönük motorlu tekerlekli sandalyedeki kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F9BD" xml:space="preserve">
+    <value>manuel tekerlekli sandalyedeki kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D1_200D_1F9BD_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa dönük manuel tekerlekli sandalyedeki kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F9BD" xml:space="preserve">
+    <value>manuel tekerlekli sandalyedeki erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F468_200D_1F9BD_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa dönük manuel tekerlekli sandalyedeki erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F9BD" xml:space="preserve">
+    <value>manuel tekerlekli sandalyedeki kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F469_200D_1F9BD_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa dönük manuel tekerlekli sandalyedeki kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C3" xml:space="preserve">
+    <value>koşan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C3_200D_2642_FE0F" xml:space="preserve">
+    <value>koşan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C3_200D_2640_FE0F" xml:space="preserve">
+    <value>koşan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C3_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa doğru koşan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C3_200D_2640_FE0F_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa doğru koşan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C3_200D_2642_FE0F_200D_27A1_FE0F" xml:space="preserve">
+    <value>sağa doğru koşan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F483" xml:space="preserve">
+    <value>dans eden kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F57A" xml:space="preserve">
+    <value>dans eden erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F574_FE0F" xml:space="preserve">
+    <value>havada duran takım elbiseli kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F46F" xml:space="preserve">
+    <value>tavşan kulaklı kişiler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F46F_200D_2642_FE0F" xml:space="preserve">
+    <value>tavşan kulaklı erkekler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F46F_200D_2640_FE0F" xml:space="preserve">
+    <value>tavşan kulaklı kadınlar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D6" xml:space="preserve">
+    <value>buharlı odadaki kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D6_200D_2642_FE0F" xml:space="preserve">
+    <value>buharlı odadaki erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D6_200D_2640_FE0F" xml:space="preserve">
+    <value>buharlı odadaki kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D7" xml:space="preserve">
+    <value>tırmanan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D7_200D_2642_FE0F" xml:space="preserve">
+    <value>tırmanan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D7_200D_2640_FE0F" xml:space="preserve">
+    <value>tırmanan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F93A" xml:space="preserve">
+    <value>eskrim yapan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C7" xml:space="preserve">
+    <value>at yarışı</value>
+  </data>
+  <data name="EmojiCatalog_Name_26F7_FE0F" xml:space="preserve">
+    <value>kayakçı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C2" xml:space="preserve">
+    <value>snowboardcu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3CC_FE0F" xml:space="preserve">
+    <value>golf oynayan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3CC_FE0F_200D_2642_FE0F" xml:space="preserve">
+    <value>golf oynayan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3CC_FE0F_200D_2640_FE0F" xml:space="preserve">
+    <value>golf oynayan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C4" xml:space="preserve">
+    <value>sörf yapan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C4_200D_2642_FE0F" xml:space="preserve">
+    <value>sörf yapan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C4_200D_2640_FE0F" xml:space="preserve">
+    <value>sörf yapan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6A3" xml:space="preserve">
+    <value>kayık çeken kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6A3_200D_2642_FE0F" xml:space="preserve">
+    <value>kayık çeken erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6A3_200D_2640_FE0F" xml:space="preserve">
+    <value>kayık çeken kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3CA" xml:space="preserve">
+    <value>yüzen kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3CA_200D_2642_FE0F" xml:space="preserve">
+    <value>yüzen erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3CA_200D_2640_FE0F" xml:space="preserve">
+    <value>yüzen kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_26F9_FE0F" xml:space="preserve">
+    <value>top sektiren kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_26F9_FE0F_200D_2642_FE0F" xml:space="preserve">
+    <value>top sektiren erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_26F9_FE0F_200D_2640_FE0F" xml:space="preserve">
+    <value>top sektiren kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3CB_FE0F" xml:space="preserve">
+    <value>ağırlık kaldıran kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3CB_FE0F_200D_2642_FE0F" xml:space="preserve">
+    <value>ağırlık kaldıran erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3CB_FE0F_200D_2640_FE0F" xml:space="preserve">
+    <value>ağırlık kaldıran kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B4" xml:space="preserve">
+    <value>bisiklete binen kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B4_200D_2642_FE0F" xml:space="preserve">
+    <value>bisiklete binen erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B4_200D_2640_FE0F" xml:space="preserve">
+    <value>bisiklete binen kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B5" xml:space="preserve">
+    <value>dağ bisikletine binen kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B5_200D_2642_FE0F" xml:space="preserve">
+    <value>dağ bisikletine binen erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B5_200D_2640_FE0F" xml:space="preserve">
+    <value>dağ bisikletine binen kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F938" xml:space="preserve">
+    <value>takla atan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F938_200D_2642_FE0F" xml:space="preserve">
+    <value>takla atan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F938_200D_2640_FE0F" xml:space="preserve">
+    <value>takla atan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F93C" xml:space="preserve">
+    <value>güreşen kişiler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F93C_200D_2642_FE0F" xml:space="preserve">
+    <value>güreşen erkekler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F93C_200D_2640_FE0F" xml:space="preserve">
+    <value>güreşen kadınlar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F93D" xml:space="preserve">
+    <value>su topu oynayan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F93D_200D_2642_FE0F" xml:space="preserve">
+    <value>su topu oynayan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F93D_200D_2640_FE0F" xml:space="preserve">
+    <value>su topu oynayan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F93E" xml:space="preserve">
+    <value>hentbol oynayan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F93E_200D_2642_FE0F" xml:space="preserve">
+    <value>hentbol oynayan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F93E_200D_2640_FE0F" xml:space="preserve">
+    <value>hentbol oynayan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F939" xml:space="preserve">
+    <value>jonglörlük yapan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F939_200D_2642_FE0F" xml:space="preserve">
+    <value>jonglörlük yapan erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F939_200D_2640_FE0F" xml:space="preserve">
+    <value>jonglörlük yapan kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D8" xml:space="preserve">
+    <value>lotus pozisyonundaki kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D8_200D_2642_FE0F" xml:space="preserve">
+    <value>lotus pozisyonundaki erkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9D8_200D_2640_FE0F" xml:space="preserve">
+    <value>lotus pozisyonundaki kadın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6C0" xml:space="preserve">
+    <value>banyo yapan kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6CC" xml:space="preserve">
+    <value>yataktaki kişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5E3_FE0F" xml:space="preserve">
+    <value>konuşan kafa</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F464" xml:space="preserve">
+    <value>siluet büst</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F465" xml:space="preserve">
+    <value>siluet büstler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAC2" xml:space="preserve">
+    <value>sarılışan kişiler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F463" xml:space="preserve">
+    <value>ayak izleri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F435" xml:space="preserve">
+    <value>maymun yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F412" xml:space="preserve">
+    <value>maymun</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F98D" xml:space="preserve">
+    <value>goril</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9A7" xml:space="preserve">
+    <value>orangutan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F436" xml:space="preserve">
+    <value>köpek yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F415" xml:space="preserve">
+    <value>köpek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9AE" xml:space="preserve">
+    <value>rehber köpek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F415_200D_1F9BA" xml:space="preserve">
+    <value>hizmet köpeği</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F429" xml:space="preserve">
+    <value>kaniş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F43A" xml:space="preserve">
+    <value>kurt</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F98A" xml:space="preserve">
+    <value>tilki</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F99D" xml:space="preserve">
+    <value>rakun</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F431" xml:space="preserve">
+    <value>kedi yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F408" xml:space="preserve">
+    <value>kedi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F408_200D_2B1B" xml:space="preserve">
+    <value>siyah kedi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F981" xml:space="preserve">
+    <value>aslan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F42F" xml:space="preserve">
+    <value>kaplan yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F405" xml:space="preserve">
+    <value>kaplan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F406" xml:space="preserve">
+    <value>leopar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F434" xml:space="preserve">
+    <value>at yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FACE" xml:space="preserve">
+    <value>sığın</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FACF" xml:space="preserve">
+    <value>eşek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F40E" xml:space="preserve">
+    <value>at</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F984" xml:space="preserve">
+    <value>tek boynuzlu at</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F993" xml:space="preserve">
+    <value>zebra</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F98C" xml:space="preserve">
+    <value>geyik</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9AC" xml:space="preserve">
+    <value>bizon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F42E" xml:space="preserve">
+    <value>inek yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F402" xml:space="preserve">
+    <value>öküz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F403" xml:space="preserve">
+    <value>manda</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F404" xml:space="preserve">
+    <value>inek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F437" xml:space="preserve">
+    <value>domuz yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F416" xml:space="preserve">
+    <value>domuz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F417" xml:space="preserve">
+    <value>yaban domuzu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F43D" xml:space="preserve">
+    <value>domuz burnu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F40F" xml:space="preserve">
+    <value>koç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F411" xml:space="preserve">
+    <value>koyun</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F410" xml:space="preserve">
+    <value>keçi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F42A" xml:space="preserve">
+    <value>deve</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F42B" xml:space="preserve">
+    <value>çift hörgüçlü deve</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F999" xml:space="preserve">
+    <value>lama</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F992" xml:space="preserve">
+    <value>zürafa</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F418" xml:space="preserve">
+    <value>fil</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9A3" xml:space="preserve">
+    <value>mamut</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F98F" xml:space="preserve">
+    <value>gergedan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F99B" xml:space="preserve">
+    <value>su aygırı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F42D" xml:space="preserve">
+    <value>fare yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F401" xml:space="preserve">
+    <value>fare</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F400" xml:space="preserve">
+    <value>sıçan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F439" xml:space="preserve">
+    <value>hamster</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F430" xml:space="preserve">
+    <value>tavşan yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F407" xml:space="preserve">
+    <value>tavşan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F43F_FE0F" xml:space="preserve">
+    <value>sincap</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9AB" xml:space="preserve">
+    <value>kunduz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F994" xml:space="preserve">
+    <value>kirpi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F987" xml:space="preserve">
+    <value>yarasa</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F43B" xml:space="preserve">
+    <value>ayı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F43B_200D_2744_FE0F" xml:space="preserve">
+    <value>kutup ayısı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F428" xml:space="preserve">
+    <value>koala</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F43C" xml:space="preserve">
+    <value>panda</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9A5" xml:space="preserve">
+    <value>tembel hayvan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9A6" xml:space="preserve">
+    <value>su samuru</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9A8" xml:space="preserve">
+    <value>kokarca</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F998" xml:space="preserve">
+    <value>kanguru</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9A1" xml:space="preserve">
+    <value>porsuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F43E" xml:space="preserve">
+    <value>pati izleri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F983" xml:space="preserve">
+    <value>hindi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F414" xml:space="preserve">
+    <value>tavuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F413" xml:space="preserve">
+    <value>horoz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F423" xml:space="preserve">
+    <value>yumurtadan çıkan civciv</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F424" xml:space="preserve">
+    <value>civciv</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F425" xml:space="preserve">
+    <value>önden görünen civciv</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F426" xml:space="preserve">
+    <value>kuş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F427" xml:space="preserve">
+    <value>penguen</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F54A_FE0F" xml:space="preserve">
+    <value>güvercin</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F985" xml:space="preserve">
+    <value>kartal</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F986" xml:space="preserve">
+    <value>ördek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9A2" xml:space="preserve">
+    <value>kuğu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F989" xml:space="preserve">
+    <value>baykuş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9A4" xml:space="preserve">
+    <value>dodo</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAB6" xml:space="preserve">
+    <value>tüy</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9A9" xml:space="preserve">
+    <value>flamingo</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F99A" xml:space="preserve">
+    <value>tavus kuşu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F99C" xml:space="preserve">
+    <value>papağan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FABD" xml:space="preserve">
+    <value>kanat</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F426_200D_2B1B" xml:space="preserve">
+    <value>siyah kuş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FABF" xml:space="preserve">
+    <value>kaz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F426_200D_1F525" xml:space="preserve">
+    <value>anka kuşu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F438" xml:space="preserve">
+    <value>kurbağa</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F40A" xml:space="preserve">
+    <value>timsah</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F422" xml:space="preserve">
+    <value>kaplumbağa</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F98E" xml:space="preserve">
+    <value>kertenkele</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F40D" xml:space="preserve">
+    <value>yılan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F432" xml:space="preserve">
+    <value>ejderha yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F409" xml:space="preserve">
+    <value>ejderha</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F995" xml:space="preserve">
+    <value>sauropod</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F996" xml:space="preserve">
+    <value>T-Rex</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F433" xml:space="preserve">
+    <value>su püskürten balina</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F40B" xml:space="preserve">
+    <value>balina</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F42C" xml:space="preserve">
+    <value>yunus</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9AD" xml:space="preserve">
+    <value>fok</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F41F" xml:space="preserve">
+    <value>balık</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F420" xml:space="preserve">
+    <value>tropikal balık</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F421" xml:space="preserve">
+    <value>balon balığı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F988" xml:space="preserve">
+    <value>köpek balığı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F419" xml:space="preserve">
+    <value>ahtapot</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F41A" xml:space="preserve">
+    <value>sarmal deniz kabuğu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAB8" xml:space="preserve">
+    <value>mercan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FABC" xml:space="preserve">
+    <value>denizanası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F980" xml:space="preserve">
+    <value>yengeç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F99E" xml:space="preserve">
+    <value>ıstakoz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F990" xml:space="preserve">
+    <value>karides</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F991" xml:space="preserve">
+    <value>kalamar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9AA" xml:space="preserve">
+    <value>istiridye</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F40C" xml:space="preserve">
+    <value>salyangoz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F98B" xml:space="preserve">
+    <value>kelebek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F41B" xml:space="preserve">
+    <value>böcek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F41C" xml:space="preserve">
+    <value>karınca</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F41D" xml:space="preserve">
+    <value>bal arısı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAB2" xml:space="preserve">
+    <value>kınkanatlı böcek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F41E" xml:space="preserve">
+    <value>uğur böceği</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F997" xml:space="preserve">
+    <value>cırcır böceği</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAB3" xml:space="preserve">
+    <value>hamam böceği</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F577_FE0F" xml:space="preserve">
+    <value>örümcek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F578_FE0F" xml:space="preserve">
+    <value>örümcek ağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F982" xml:space="preserve">
+    <value>akrep</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F99F" xml:space="preserve">
+    <value>sivrisinek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAB0" xml:space="preserve">
+    <value>sinek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAB1" xml:space="preserve">
+    <value>solucan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9A0" xml:space="preserve">
+    <value>mikrop</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F490" xml:space="preserve">
+    <value>buket</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F338" xml:space="preserve">
+    <value>kiraz çiçeği</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4AE" xml:space="preserve">
+    <value>beyaz çiçek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAB7" xml:space="preserve">
+    <value>lotus</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3F5_FE0F" xml:space="preserve">
+    <value>rozet</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F339" xml:space="preserve">
+    <value>gül</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F940" xml:space="preserve">
+    <value>solmuş çiçek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F33A" xml:space="preserve">
+    <value>ebegümeci</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F33B" xml:space="preserve">
+    <value>ayçiçeği</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F33C" xml:space="preserve">
+    <value>çiçek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F337" xml:space="preserve">
+    <value>lale</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FABB" xml:space="preserve">
+    <value>sümbül</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F331" xml:space="preserve">
+    <value>fide</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAB4" xml:space="preserve">
+    <value>saksı bitkisi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F332" xml:space="preserve">
+    <value>yaprak dökmeyen ağaç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F333" xml:space="preserve">
+    <value>yaprak döken ağaç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F334" xml:space="preserve">
+    <value>palmiye</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F335" xml:space="preserve">
+    <value>kaktüs</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F33E" xml:space="preserve">
+    <value>pirinç demeti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F33F" xml:space="preserve">
+    <value>ot</value>
+  </data>
+  <data name="EmojiCatalog_Name_2618_FE0F" xml:space="preserve">
+    <value>yonca</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F340" xml:space="preserve">
+    <value>dört yapraklı yonca</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F341" xml:space="preserve">
+    <value>akçaağaç yaprağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F342" xml:space="preserve">
+    <value>düşmüş yaprak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F343" xml:space="preserve">
+    <value>rüzgârda uçuşan yaprak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAB9" xml:space="preserve">
+    <value>boş yuva</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FABA" xml:space="preserve">
+    <value>yumurtalı yuva</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F344" xml:space="preserve">
+    <value>mantar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F347" xml:space="preserve">
+    <value>üzüm</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F348" xml:space="preserve">
+    <value>kavun</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F349" xml:space="preserve">
+    <value>karpuz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F34A" xml:space="preserve">
+    <value>mandalina</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F34B" xml:space="preserve">
+    <value>limon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F34B_200D_1F7E9" xml:space="preserve">
+    <value>misket limonu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F34C" xml:space="preserve">
+    <value>muz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F34D" xml:space="preserve">
+    <value>ananas</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F96D" xml:space="preserve">
+    <value>mango</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F34E" xml:space="preserve">
+    <value>kırmızı elma</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F34F" xml:space="preserve">
+    <value>yeşil elma</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F350" xml:space="preserve">
+    <value>armut</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F351" xml:space="preserve">
+    <value>şeftali</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F352" xml:space="preserve">
+    <value>kiraz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F353" xml:space="preserve">
+    <value>çilek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAD0" xml:space="preserve">
+    <value>yaban mersini</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F95D" xml:space="preserve">
+    <value>kivi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F345" xml:space="preserve">
+    <value>domates</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAD2" xml:space="preserve">
+    <value>zeytin</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F965" xml:space="preserve">
+    <value>Hindistan cevizi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F951" xml:space="preserve">
+    <value>avokado</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F346" xml:space="preserve">
+    <value>patlıcan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F954" xml:space="preserve">
+    <value>patates</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F955" xml:space="preserve">
+    <value>havuç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F33D" xml:space="preserve">
+    <value>mısır koçanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F336_FE0F" xml:space="preserve">
+    <value>acı biber</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAD1" xml:space="preserve">
+    <value>dolmalık biber</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F952" xml:space="preserve">
+    <value>salatalık</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F96C" xml:space="preserve">
+    <value>yeşil yapraklı sebze</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F966" xml:space="preserve">
+    <value>brokoli</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9C4" xml:space="preserve">
+    <value>sarımsak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9C5" xml:space="preserve">
+    <value>soğan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F95C" xml:space="preserve">
+    <value>yer fıstığı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAD8" xml:space="preserve">
+    <value>fasulye</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F330" xml:space="preserve">
+    <value>kestane</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FADA" xml:space="preserve">
+    <value>zencefil kökü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FADB" xml:space="preserve">
+    <value>bezelye kabuğu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F344_200D_1F7EB" xml:space="preserve">
+    <value>kahverengi mantar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F35E" xml:space="preserve">
+    <value>ekmek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F950" xml:space="preserve">
+    <value>kruvasan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F956" xml:space="preserve">
+    <value>baget ekmek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAD3" xml:space="preserve">
+    <value>yassı ekmek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F968" xml:space="preserve">
+    <value>pretzel</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F96F" xml:space="preserve">
+    <value>simit</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F95E" xml:space="preserve">
+    <value>krep</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9C7" xml:space="preserve">
+    <value>gofret</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9C0" xml:space="preserve">
+    <value>peynir dilimi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F356" xml:space="preserve">
+    <value>kemikli et</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F357" xml:space="preserve">
+    <value>tavuk budu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F969" xml:space="preserve">
+    <value>et dilimi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F953" xml:space="preserve">
+    <value>pastırma</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F354" xml:space="preserve">
+    <value>hamburger</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F35F" xml:space="preserve">
+    <value>patates kızartması</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F355" xml:space="preserve">
+    <value>pizza</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F32D" xml:space="preserve">
+    <value>sosisli sandviç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F96A" xml:space="preserve">
+    <value>sandviç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F32E" xml:space="preserve">
+    <value>tako</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F32F" xml:space="preserve">
+    <value>burrito</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAD4" xml:space="preserve">
+    <value>tamale</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F959" xml:space="preserve">
+    <value>doldurulmuş yassı ekmek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9C6" xml:space="preserve">
+    <value>falafel</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F95A" xml:space="preserve">
+    <value>yumurta</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F373" xml:space="preserve">
+    <value>yemek pişirme</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F958" xml:space="preserve">
+    <value>sığ tavada yemek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F372" xml:space="preserve">
+    <value>tencere yemeği</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAD5" xml:space="preserve">
+    <value>fondü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F963" xml:space="preserve">
+    <value>kaşıklı kâse</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F957" xml:space="preserve">
+    <value>yeşil salata</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F37F" xml:space="preserve">
+    <value>patlamış mısır</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9C8" xml:space="preserve">
+    <value>tereyağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9C2" xml:space="preserve">
+    <value>tuz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F96B" xml:space="preserve">
+    <value>konserve yiyecek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F371" xml:space="preserve">
+    <value>bento kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F358" xml:space="preserve">
+    <value>pirinç krakeri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F359" xml:space="preserve">
+    <value>pirinç topu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F35A" xml:space="preserve">
+    <value>pişmiş pirinç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F35B" xml:space="preserve">
+    <value>körili pilav</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F35C" xml:space="preserve">
+    <value>buharı tüten kâse</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F35D" xml:space="preserve">
+    <value>spagetti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F360" xml:space="preserve">
+    <value>közlenmiş tatlı patates</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F362" xml:space="preserve">
+    <value>oden</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F363" xml:space="preserve">
+    <value>suşi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F364" xml:space="preserve">
+    <value>kızarmış karides</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F365" xml:space="preserve">
+    <value>girdaplı balık keki</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F96E" xml:space="preserve">
+    <value>ay keki</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F361" xml:space="preserve">
+    <value>dango</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F95F" xml:space="preserve">
+    <value>mantı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F960" xml:space="preserve">
+    <value>şans kurabiyesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F961" xml:space="preserve">
+    <value>paket servis kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F366" xml:space="preserve">
+    <value>yumuşak dondurma</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F367" xml:space="preserve">
+    <value>buzlu tatlı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F368" xml:space="preserve">
+    <value>dondurma</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F369" xml:space="preserve">
+    <value>donut</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F36A" xml:space="preserve">
+    <value>kurabiye</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F382" xml:space="preserve">
+    <value>doğum günü pastası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F370" xml:space="preserve">
+    <value>çilekli pasta</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9C1" xml:space="preserve">
+    <value>kapkek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F967" xml:space="preserve">
+    <value>turta</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F36B" xml:space="preserve">
+    <value>çikolata</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F36C" xml:space="preserve">
+    <value>şeker</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F36D" xml:space="preserve">
+    <value>lolipop</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F36E" xml:space="preserve">
+    <value>muhallebi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F36F" xml:space="preserve">
+    <value>bal kavanozu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F37C" xml:space="preserve">
+    <value>biberon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F95B" xml:space="preserve">
+    <value>bir bardak süt</value>
+  </data>
+  <data name="EmojiCatalog_Name_2615" xml:space="preserve">
+    <value>sıcak içecek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAD6" xml:space="preserve">
+    <value>çaydanlık</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F375" xml:space="preserve">
+    <value>kulpsuz çay fincanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F376" xml:space="preserve">
+    <value>sake</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F37E" xml:space="preserve">
+    <value>mantarı fırlayan şişe</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F377" xml:space="preserve">
+    <value>şarap kadehi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F378" xml:space="preserve">
+    <value>kokteyl kadehi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F379" xml:space="preserve">
+    <value>tropikal içecek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F37A" xml:space="preserve">
+    <value>bira kupası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F37B" xml:space="preserve">
+    <value>tokuşan bira kupaları</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F942" xml:space="preserve">
+    <value>tokuşan kadehler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F943" xml:space="preserve">
+    <value>viski bardağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAD7" xml:space="preserve">
+    <value>sıvı dökme</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F964" xml:space="preserve">
+    <value>pipetli bardak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CB" xml:space="preserve">
+    <value>baloncuklu çay</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9C3" xml:space="preserve">
+    <value>içecek kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9C9" xml:space="preserve">
+    <value>mate</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9CA" xml:space="preserve">
+    <value>buz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F962" xml:space="preserve">
+    <value>yemek çubukları</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F37D_FE0F" xml:space="preserve">
+    <value>tabakla çatal ve bıçak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F374" xml:space="preserve">
+    <value>çatal ve bıçak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F944" xml:space="preserve">
+    <value>kaşık</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F52A" xml:space="preserve">
+    <value>mutfak bıçağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAD9" xml:space="preserve">
+    <value>kavanoz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3FA" xml:space="preserve">
+    <value>amfora</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F30D" xml:space="preserve">
+    <value>Avrupa-Afrika gösteren küre</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F30E" xml:space="preserve">
+    <value>Amerika kıtalarını gösteren küre</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F30F" xml:space="preserve">
+    <value>Asya-Avustralya gösteren küre</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F310" xml:space="preserve">
+    <value>meridyenli küre</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5FA_FE0F" xml:space="preserve">
+    <value>dünya haritası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5FE" xml:space="preserve">
+    <value>Japonya haritası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9ED" xml:space="preserve">
+    <value>pusula</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3D4_FE0F" xml:space="preserve">
+    <value>karla kaplı dağ</value>
+  </data>
+  <data name="EmojiCatalog_Name_26F0_FE0F" xml:space="preserve">
+    <value>dağ</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F30B" xml:space="preserve">
+    <value>yanardağ</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5FB" xml:space="preserve">
+    <value>Fuji Dağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3D5_FE0F" xml:space="preserve">
+    <value>kamp</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3D6_FE0F" xml:space="preserve">
+    <value>şemsiyeli plaj</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3DC_FE0F" xml:space="preserve">
+    <value>çöl</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3DD_FE0F" xml:space="preserve">
+    <value>ıssız ada</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3DE_FE0F" xml:space="preserve">
+    <value>millî park</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3DF_FE0F" xml:space="preserve">
+    <value>stadyum</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3DB_FE0F" xml:space="preserve">
+    <value>klasik yapı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3D7_FE0F" xml:space="preserve">
+    <value>bina inşaatı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9F1" xml:space="preserve">
+    <value>tuğla</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAA8" xml:space="preserve">
+    <value>kaya</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAB5" xml:space="preserve">
+    <value>odun</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6D6" xml:space="preserve">
+    <value>kulübe</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3D8_FE0F" xml:space="preserve">
+    <value>evler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3DA_FE0F" xml:space="preserve">
+    <value>terk edilmiş ev</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3E0" xml:space="preserve">
+    <value>ev</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3E1" xml:space="preserve">
+    <value>bahçeli ev</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3E2" xml:space="preserve">
+    <value>ofis binası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3E3" xml:space="preserve">
+    <value>Japon postanesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3E4" xml:space="preserve">
+    <value>postane</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3E5" xml:space="preserve">
+    <value>hastane</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3E6" xml:space="preserve">
+    <value>banka</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3E8" xml:space="preserve">
+    <value>otel</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3E9" xml:space="preserve">
+    <value>aşk oteli</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3EA" xml:space="preserve">
+    <value>market</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3EB" xml:space="preserve">
+    <value>okul</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3EC" xml:space="preserve">
+    <value>büyük mağaza</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3ED" xml:space="preserve">
+    <value>fabrika</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3EF" xml:space="preserve">
+    <value>Japon kalesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3F0" xml:space="preserve">
+    <value>kale</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F492" xml:space="preserve">
+    <value>düğün</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5FC" xml:space="preserve">
+    <value>Tokyo Kulesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5FD" xml:space="preserve">
+    <value>Özgürlük Heykeli</value>
+  </data>
+  <data name="EmojiCatalog_Name_26EA" xml:space="preserve">
+    <value>kilise</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F54C" xml:space="preserve">
+    <value>cami</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6D5" xml:space="preserve">
+    <value>Hindu tapınağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F54D" xml:space="preserve">
+    <value>sinagog</value>
+  </data>
+  <data name="EmojiCatalog_Name_26E9_FE0F" xml:space="preserve">
+    <value>Şinto tapınağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F54B" xml:space="preserve">
+    <value>Kâbe</value>
+  </data>
+  <data name="EmojiCatalog_Name_26F2" xml:space="preserve">
+    <value>çeşme</value>
+  </data>
+  <data name="EmojiCatalog_Name_26FA" xml:space="preserve">
+    <value>çadır</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F301" xml:space="preserve">
+    <value>sisli</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F303" xml:space="preserve">
+    <value>yıldızlı gece</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3D9_FE0F" xml:space="preserve">
+    <value>şehir manzarası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F304" xml:space="preserve">
+    <value>dağların ardında gün doğumu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F305" xml:space="preserve">
+    <value>gün doğumu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F306" xml:space="preserve">
+    <value>alacakaranlıkta şehir</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F307" xml:space="preserve">
+    <value>gün batımı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F309" xml:space="preserve">
+    <value>gece köprüsü</value>
+  </data>
+  <data name="EmojiCatalog_Name_2668_FE0F" xml:space="preserve">
+    <value>kaplıca</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3A0" xml:space="preserve">
+    <value>atlıkarınca atı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6DD" xml:space="preserve">
+    <value>oyun parkı kaydırağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3A1" xml:space="preserve">
+    <value>dönme dolap</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3A2" xml:space="preserve">
+    <value>hız treni</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F488" xml:space="preserve">
+    <value>berber direği</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3AA" xml:space="preserve">
+    <value>sirk çadırı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F682" xml:space="preserve">
+    <value>lokomotif</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F683" xml:space="preserve">
+    <value>tren vagonu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F684" xml:space="preserve">
+    <value>yüksek hızlı tren</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F685" xml:space="preserve">
+    <value>hızlı tren</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F686" xml:space="preserve">
+    <value>tren</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F687" xml:space="preserve">
+    <value>metro</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F688" xml:space="preserve">
+    <value>hafif raylı sistem</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F689" xml:space="preserve">
+    <value>istasyon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F68A" xml:space="preserve">
+    <value>tramvay</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F69D" xml:space="preserve">
+    <value>monoray</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F69E" xml:space="preserve">
+    <value>dağ demiryolu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F68B" xml:space="preserve">
+    <value>tramvay vagonu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F68C" xml:space="preserve">
+    <value>otobüs</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F68D" xml:space="preserve">
+    <value>karşıdan gelen otobüs</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F68E" xml:space="preserve">
+    <value>troleybüs</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F690" xml:space="preserve">
+    <value>minibüs</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F691" xml:space="preserve">
+    <value>ambulans</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F692" xml:space="preserve">
+    <value>itfaiye aracı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F693" xml:space="preserve">
+    <value>polis arabası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F694" xml:space="preserve">
+    <value>karşıdan gelen polis arabası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F695" xml:space="preserve">
+    <value>taksi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F696" xml:space="preserve">
+    <value>karşıdan gelen taksi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F697" xml:space="preserve">
+    <value>otomobil</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F698" xml:space="preserve">
+    <value>karşıdan gelen otomobil</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F699" xml:space="preserve">
+    <value>spor amaçlı araç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6FB" xml:space="preserve">
+    <value>kamyonet</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F69A" xml:space="preserve">
+    <value>teslimat kamyonu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F69B" xml:space="preserve">
+    <value>çekicili kamyon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F69C" xml:space="preserve">
+    <value>traktör</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3CE_FE0F" xml:space="preserve">
+    <value>yarış arabası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3CD_FE0F" xml:space="preserve">
+    <value>motosiklet</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6F5" xml:space="preserve">
+    <value>motorlu scooter</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9BD" xml:space="preserve">
+    <value>manuel tekerlekli sandalye</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9BC" xml:space="preserve">
+    <value>motorlu tekerlekli sandalye</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6FA" xml:space="preserve">
+    <value>otomatik çekçek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B2" xml:space="preserve">
+    <value>bisiklet</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6F4" xml:space="preserve">
+    <value>scooter</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6F9" xml:space="preserve">
+    <value>kaykay</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6FC" xml:space="preserve">
+    <value>tekerlekli paten</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F68F" xml:space="preserve">
+    <value>otobüs durağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6E3_FE0F" xml:space="preserve">
+    <value>otoyol</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6E4_FE0F" xml:space="preserve">
+    <value>demiryolu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6E2_FE0F" xml:space="preserve">
+    <value>petrol varili</value>
+  </data>
+  <data name="EmojiCatalog_Name_26FD" xml:space="preserve">
+    <value>yakıt pompası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6DE" xml:space="preserve">
+    <value>tekerlek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6A8" xml:space="preserve">
+    <value>polis lambası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6A5" xml:space="preserve">
+    <value>yatay trafik ışığı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6A6" xml:space="preserve">
+    <value>dikey trafik ışığı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6D1" xml:space="preserve">
+    <value>dur işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6A7" xml:space="preserve">
+    <value>yol çalışması</value>
+  </data>
+  <data name="EmojiCatalog_Name_2693" xml:space="preserve">
+    <value>çapa</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6DF" xml:space="preserve">
+    <value>can simidi</value>
+  </data>
+  <data name="EmojiCatalog_Name_26F5" xml:space="preserve">
+    <value>yelkenli</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6F6" xml:space="preserve">
+    <value>kano</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6A4" xml:space="preserve">
+    <value>sürat teknesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6F3_FE0F" xml:space="preserve">
+    <value>yolcu gemisi</value>
+  </data>
+  <data name="EmojiCatalog_Name_26F4_FE0F" xml:space="preserve">
+    <value>feribot</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6E5_FE0F" xml:space="preserve">
+    <value>motorlu tekne</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6A2" xml:space="preserve">
+    <value>gemi</value>
+  </data>
+  <data name="EmojiCatalog_Name_2708_FE0F" xml:space="preserve">
+    <value>uçak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6E9_FE0F" xml:space="preserve">
+    <value>küçük uçak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6EB" xml:space="preserve">
+    <value>uçak kalkışı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6EC" xml:space="preserve">
+    <value>uçak inişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA82" xml:space="preserve">
+    <value>paraşüt</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4BA" xml:space="preserve">
+    <value>koltuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F681" xml:space="preserve">
+    <value>helikopter</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F69F" xml:space="preserve">
+    <value>asma demiryolu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6A0" xml:space="preserve">
+    <value>dağ teleferiği</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6A1" xml:space="preserve">
+    <value>hava tramvayı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6F0_FE0F" xml:space="preserve">
+    <value>uydu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F680" xml:space="preserve">
+    <value>roket</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6F8" xml:space="preserve">
+    <value>uçan daire</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6CE_FE0F" xml:space="preserve">
+    <value>resepsiyon zili</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9F3" xml:space="preserve">
+    <value>bagaj</value>
+  </data>
+  <data name="EmojiCatalog_Name_231B" xml:space="preserve">
+    <value>tamamlanmış kum saati</value>
+  </data>
+  <data name="EmojiCatalog_Name_23F3" xml:space="preserve">
+    <value>çalışan kum saati</value>
+  </data>
+  <data name="EmojiCatalog_Name_231A" xml:space="preserve">
+    <value>kol saati</value>
+  </data>
+  <data name="EmojiCatalog_Name_23F0" xml:space="preserve">
+    <value>çalar saat</value>
+  </data>
+  <data name="EmojiCatalog_Name_23F1_FE0F" xml:space="preserve">
+    <value>kronometre</value>
+  </data>
+  <data name="EmojiCatalog_Name_23F2_FE0F" xml:space="preserve">
+    <value>zamanlayıcı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F570_FE0F" xml:space="preserve">
+    <value>şömine saati</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F55B" xml:space="preserve">
+    <value>saat on iki</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F567" xml:space="preserve">
+    <value>on iki buçuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F550" xml:space="preserve">
+    <value>saat bir</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F55C" xml:space="preserve">
+    <value>bir buçuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F551" xml:space="preserve">
+    <value>saat iki</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F55D" xml:space="preserve">
+    <value>iki buçuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F552" xml:space="preserve">
+    <value>saat üç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F55E" xml:space="preserve">
+    <value>üç buçuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F553" xml:space="preserve">
+    <value>saat dört</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F55F" xml:space="preserve">
+    <value>dört buçuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F554" xml:space="preserve">
+    <value>saat beş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F560" xml:space="preserve">
+    <value>beş buçuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F555" xml:space="preserve">
+    <value>saat altı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F561" xml:space="preserve">
+    <value>altı buçuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F556" xml:space="preserve">
+    <value>saat yedi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F562" xml:space="preserve">
+    <value>yedi buçuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F557" xml:space="preserve">
+    <value>saat sekiz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F563" xml:space="preserve">
+    <value>sekiz buçuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F558" xml:space="preserve">
+    <value>saat dokuz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F564" xml:space="preserve">
+    <value>dokuz buçuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F559" xml:space="preserve">
+    <value>saat on</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F565" xml:space="preserve">
+    <value>on buçuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F55A" xml:space="preserve">
+    <value>saat on bir</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F566" xml:space="preserve">
+    <value>on bir buçuk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F311" xml:space="preserve">
+    <value>yeni ay</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F312" xml:space="preserve">
+    <value>büyüyen hilal</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F313" xml:space="preserve">
+    <value>ilk dördün</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F314" xml:space="preserve">
+    <value>büyüyen şişkin ay</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F315" xml:space="preserve">
+    <value>dolunay</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F316" xml:space="preserve">
+    <value>küçülen şişkin ay</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F317" xml:space="preserve">
+    <value>son dördün</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F318" xml:space="preserve">
+    <value>küçülen hilal</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F319" xml:space="preserve">
+    <value>hilal</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F31A" xml:space="preserve">
+    <value>yeni ay yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F31B" xml:space="preserve">
+    <value>ilk dördün yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F31C" xml:space="preserve">
+    <value>son dördün yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F321_FE0F" xml:space="preserve">
+    <value>termometre</value>
+  </data>
+  <data name="EmojiCatalog_Name_2600_FE0F" xml:space="preserve">
+    <value>güneş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F31D" xml:space="preserve">
+    <value>dolunay yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F31E" xml:space="preserve">
+    <value>yüzlü güneş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA90" xml:space="preserve">
+    <value>halkalı gezegen</value>
+  </data>
+  <data name="EmojiCatalog_Name_2B50" xml:space="preserve">
+    <value>yıldız</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F31F" xml:space="preserve">
+    <value>parlayan yıldız</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F320" xml:space="preserve">
+    <value>kayan yıldız</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F30C" xml:space="preserve">
+    <value>Samanyolu</value>
+  </data>
+  <data name="EmojiCatalog_Name_2601_FE0F" xml:space="preserve">
+    <value>bulut</value>
+  </data>
+  <data name="EmojiCatalog_Name_26C5" xml:space="preserve">
+    <value>bulut arkasında güneş</value>
+  </data>
+  <data name="EmojiCatalog_Name_26C8_FE0F" xml:space="preserve">
+    <value>şimşekli ve yağmurlu bulut</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F324_FE0F" xml:space="preserve">
+    <value>küçük bulut arkasında güneş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F325_FE0F" xml:space="preserve">
+    <value>büyük bulut arkasında güneş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F326_FE0F" xml:space="preserve">
+    <value>yağmur bulutu arkasında güneş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F327_FE0F" xml:space="preserve">
+    <value>yağmurlu bulut</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F328_FE0F" xml:space="preserve">
+    <value>karlı bulut</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F329_FE0F" xml:space="preserve">
+    <value>şimşekli bulut</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F32A_FE0F" xml:space="preserve">
+    <value>hortum</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F32B_FE0F" xml:space="preserve">
+    <value>sis</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F32C_FE0F" xml:space="preserve">
+    <value>rüzgâr yüzü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F300" xml:space="preserve">
+    <value>siklon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F308" xml:space="preserve">
+    <value>gökkuşağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F302" xml:space="preserve">
+    <value>kapalı şemsiye</value>
+  </data>
+  <data name="EmojiCatalog_Name_2602_FE0F" xml:space="preserve">
+    <value>şemsiye</value>
+  </data>
+  <data name="EmojiCatalog_Name_2614" xml:space="preserve">
+    <value>yağmur damlalı şemsiye</value>
+  </data>
+  <data name="EmojiCatalog_Name_26F1_FE0F" xml:space="preserve">
+    <value>yerde şemsiye</value>
+  </data>
+  <data name="EmojiCatalog_Name_26A1" xml:space="preserve">
+    <value>yüksek gerilim</value>
+  </data>
+  <data name="EmojiCatalog_Name_2744_FE0F" xml:space="preserve">
+    <value>kar tanesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_2603_FE0F" xml:space="preserve">
+    <value>kardan adam</value>
+  </data>
+  <data name="EmojiCatalog_Name_26C4" xml:space="preserve">
+    <value>karsız kardan adam</value>
+  </data>
+  <data name="EmojiCatalog_Name_2604_FE0F" xml:space="preserve">
+    <value>kuyruklu yıldız</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F525" xml:space="preserve">
+    <value>ateş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4A7" xml:space="preserve">
+    <value>damlacık</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F30A" xml:space="preserve">
+    <value>su dalgası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F383" xml:space="preserve">
+    <value>cadılar bayramı bal kabağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F384" xml:space="preserve">
+    <value>Noel ağacı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F386" xml:space="preserve">
+    <value>havai fişek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F387" xml:space="preserve">
+    <value>maytap</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9E8" xml:space="preserve">
+    <value>çatapat</value>
+  </data>
+  <data name="EmojiCatalog_Name_2728" xml:space="preserve">
+    <value>parıltılar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F388" xml:space="preserve">
+    <value>balon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F389" xml:space="preserve">
+    <value>parti konfetisi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F38A" xml:space="preserve">
+    <value>konfeti topu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F38B" xml:space="preserve">
+    <value>Tanabata ağacı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F38D" xml:space="preserve">
+    <value>çam süsü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F38E" xml:space="preserve">
+    <value>Japon bebekleri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F38F" xml:space="preserve">
+    <value>sazan bayrağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F390" xml:space="preserve">
+    <value>rüzgâr çanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F391" xml:space="preserve">
+    <value>ay izleme töreni</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9E7" xml:space="preserve">
+    <value>kırmızı zarf</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F380" xml:space="preserve">
+    <value>kurdele</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F381" xml:space="preserve">
+    <value>paketlenmiş hediye</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F397_FE0F" xml:space="preserve">
+    <value>hatırlatma kurdelesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F39F_FE0F" xml:space="preserve">
+    <value>giriş biletleri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3AB" xml:space="preserve">
+    <value>bilet</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F396_FE0F" xml:space="preserve">
+    <value>askerî madalya</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C6" xml:space="preserve">
+    <value>kupa</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C5" xml:space="preserve">
+    <value>spor madalyası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F947" xml:space="preserve">
+    <value>birincilik madalyası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F948" xml:space="preserve">
+    <value>ikincilik madalyası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F949" xml:space="preserve">
+    <value>üçüncülük madalyası</value>
+  </data>
+  <data name="EmojiCatalog_Name_26BD" xml:space="preserve">
+    <value>futbol topu</value>
+  </data>
+  <data name="EmojiCatalog_Name_26BE" xml:space="preserve">
+    <value>beyzbol</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F94E" xml:space="preserve">
+    <value>softbol</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C0" xml:space="preserve">
+    <value>basketbol</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3D0" xml:space="preserve">
+    <value>voleybol</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C8" xml:space="preserve">
+    <value>Amerikan futbolu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C9" xml:space="preserve">
+    <value>ragbi topu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3BE" xml:space="preserve">
+    <value>tenis</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F94F" xml:space="preserve">
+    <value>frizbi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3B3" xml:space="preserve">
+    <value>bovling</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3CF" xml:space="preserve">
+    <value>kriket</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3D1" xml:space="preserve">
+    <value>çim hokeyi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3D2" xml:space="preserve">
+    <value>buz hokeyi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F94D" xml:space="preserve">
+    <value>lakros</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3D3" xml:space="preserve">
+    <value>masa tenisi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3F8" xml:space="preserve">
+    <value>badminton</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F94A" xml:space="preserve">
+    <value>boks eldiveni</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F94B" xml:space="preserve">
+    <value>dövüş sanatları üniforması</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F945" xml:space="preserve">
+    <value>kale ağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_26F3" xml:space="preserve">
+    <value>delikte bayrak</value>
+  </data>
+  <data name="EmojiCatalog_Name_26F8_FE0F" xml:space="preserve">
+    <value>buz pateni</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3A3" xml:space="preserve">
+    <value>olta</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F93F" xml:space="preserve">
+    <value>dalış maskesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3BD" xml:space="preserve">
+    <value>koşu forması</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3BF" xml:space="preserve">
+    <value>kayaklar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6F7" xml:space="preserve">
+    <value>kızak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F94C" xml:space="preserve">
+    <value>körling taşı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3AF" xml:space="preserve">
+    <value>hedef tahtası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA80" xml:space="preserve">
+    <value>yo-yo</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA81" xml:space="preserve">
+    <value>uçurtma</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F52B" xml:space="preserve">
+    <value>su tabancası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3B1" xml:space="preserve">
+    <value>bilardo 8 topu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F52E" xml:space="preserve">
+    <value>kristal küre</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA84" xml:space="preserve">
+    <value>sihirli değnek</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3AE" xml:space="preserve">
+    <value>video oyunu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F579_FE0F" xml:space="preserve">
+    <value>oyun çubuğu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3B0" xml:space="preserve">
+    <value>slot makinesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3B2" xml:space="preserve">
+    <value>oyun zarı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9E9" xml:space="preserve">
+    <value>yapboz parçası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9F8" xml:space="preserve">
+    <value>oyuncak ayı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA85" xml:space="preserve">
+    <value>piñata</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAA9" xml:space="preserve">
+    <value>diskotek topu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA86" xml:space="preserve">
+    <value>matruşka bebekleri</value>
+  </data>
+  <data name="EmojiCatalog_Name_2660_FE0F" xml:space="preserve">
+    <value>maça</value>
+  </data>
+  <data name="EmojiCatalog_Name_2665_FE0F" xml:space="preserve">
+    <value>kupa</value>
+  </data>
+  <data name="EmojiCatalog_Name_2666_FE0F" xml:space="preserve">
+    <value>karo</value>
+  </data>
+  <data name="EmojiCatalog_Name_2663_FE0F" xml:space="preserve">
+    <value>sinek</value>
+  </data>
+  <data name="EmojiCatalog_Name_265F_FE0F" xml:space="preserve">
+    <value>satranç piyonu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F0CF" xml:space="preserve">
+    <value>joker</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F004" xml:space="preserve">
+    <value>mahjong kırmızı ejderha</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3B4" xml:space="preserve">
+    <value>çiçek oyun kartları</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3AD" xml:space="preserve">
+    <value>sahne sanatları</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5BC_FE0F" xml:space="preserve">
+    <value>çerçeveli resim</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3A8" xml:space="preserve">
+    <value>ressam paleti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9F5" xml:space="preserve">
+    <value>iplik</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAA1" xml:space="preserve">
+    <value>dikiş iğnesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9F6" xml:space="preserve">
+    <value>yün</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAA2" xml:space="preserve">
+    <value>düğüm</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F453" xml:space="preserve">
+    <value>gözlük</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F576_FE0F" xml:space="preserve">
+    <value>güneş gözlüğü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F97D" xml:space="preserve">
+    <value>koruyucu gözlük</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F97C" xml:space="preserve">
+    <value>laboratuvar önlüğü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9BA" xml:space="preserve">
+    <value>güvenlik yeleği</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F454" xml:space="preserve">
+    <value>kravat</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F455" xml:space="preserve">
+    <value>tişört</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F456" xml:space="preserve">
+    <value>kot pantolon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9E3" xml:space="preserve">
+    <value>atkı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9E4" xml:space="preserve">
+    <value>eldiven</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9E5" xml:space="preserve">
+    <value>palto</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9E6" xml:space="preserve">
+    <value>çorap</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F457" xml:space="preserve">
+    <value>elbise</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F458" xml:space="preserve">
+    <value>kimono</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F97B" xml:space="preserve">
+    <value>sari</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA71" xml:space="preserve">
+    <value>tek parça mayo</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA72" xml:space="preserve">
+    <value>külot</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA73" xml:space="preserve">
+    <value>şort</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F459" xml:space="preserve">
+    <value>bikini</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F45A" xml:space="preserve">
+    <value>kadın kıyafeti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAAD" xml:space="preserve">
+    <value>katlanır yelpaze</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F45B" xml:space="preserve">
+    <value>cüzdan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F45C" xml:space="preserve">
+    <value>el çantası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F45D" xml:space="preserve">
+    <value>portföy çanta</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6CD_FE0F" xml:space="preserve">
+    <value>alışveriş çantaları</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F392" xml:space="preserve">
+    <value>sırt çantası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA74" xml:space="preserve">
+    <value>parmak arası terlik</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F45E" xml:space="preserve">
+    <value>erkek ayakkabısı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F45F" xml:space="preserve">
+    <value>koşu ayakkabısı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F97E" xml:space="preserve">
+    <value>yürüyüş botu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F97F" xml:space="preserve">
+    <value>düz ayakkabı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F460" xml:space="preserve">
+    <value>yüksek topuklu ayakkabı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F461" xml:space="preserve">
+    <value>kadın sandaleti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA70" xml:space="preserve">
+    <value>bale ayakkabıları</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F462" xml:space="preserve">
+    <value>kadın botu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAAE" xml:space="preserve">
+    <value>saç tarağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F451" xml:space="preserve">
+    <value>taç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F452" xml:space="preserve">
+    <value>kadın şapkası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3A9" xml:space="preserve">
+    <value>silindir şapka</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F393" xml:space="preserve">
+    <value>mezuniyet kepi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9E2" xml:space="preserve">
+    <value>siperlikli şapka</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA96" xml:space="preserve">
+    <value>askerî miğfer</value>
+  </data>
+  <data name="EmojiCatalog_Name_26D1_FE0F" xml:space="preserve">
+    <value>kurtarma görevlisi miğferi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4FF" xml:space="preserve">
+    <value>tespih</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F484" xml:space="preserve">
+    <value>ruj</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F48D" xml:space="preserve">
+    <value>yüzük</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F48E" xml:space="preserve">
+    <value>değerli taş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F507" xml:space="preserve">
+    <value>sessize alınmış hoparlör</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F508" xml:space="preserve">
+    <value>düşük sesli hoparlör</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F509" xml:space="preserve">
+    <value>orta sesli hoparlör</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F50A" xml:space="preserve">
+    <value>yüksek sesli hoparlör</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4E2" xml:space="preserve">
+    <value>hoparlör</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4E3" xml:space="preserve">
+    <value>megafon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4EF" xml:space="preserve">
+    <value>posta kornası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F514" xml:space="preserve">
+    <value>çan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F515" xml:space="preserve">
+    <value>üstü çizili çan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3BC" xml:space="preserve">
+    <value>nota çizelgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3B5" xml:space="preserve">
+    <value>müzik notası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3B6" xml:space="preserve">
+    <value>müzik notaları</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F399_FE0F" xml:space="preserve">
+    <value>stüdyo mikrofonu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F39A_FE0F" xml:space="preserve">
+    <value>seviye kaydırıcısı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F39B_FE0F" xml:space="preserve">
+    <value>kontrol düğmeleri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3A4" xml:space="preserve">
+    <value>mikrofon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3A7" xml:space="preserve">
+    <value>kulaklık</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4FB" xml:space="preserve">
+    <value>radyo</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3B7" xml:space="preserve">
+    <value>saksafon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3BA" xml:space="preserve">
+    <value>trompet</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA97" xml:space="preserve">
+    <value>akordeon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3B8" xml:space="preserve">
+    <value>gitar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3B9" xml:space="preserve">
+    <value>müzik klavyesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3BB" xml:space="preserve">
+    <value>keman</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA95" xml:space="preserve">
+    <value>banjo</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F941" xml:space="preserve">
+    <value>davul</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA98" xml:space="preserve">
+    <value>uzun davul</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA87" xml:space="preserve">
+    <value>marakas</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA88" xml:space="preserve">
+    <value>flüt</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4F1" xml:space="preserve">
+    <value>cep telefonu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4F2" xml:space="preserve">
+    <value>oklu cep telefonu</value>
+  </data>
+  <data name="EmojiCatalog_Name_260E_FE0F" xml:space="preserve">
+    <value>telefon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4DE" xml:space="preserve">
+    <value>telefon ahizesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4DF" xml:space="preserve">
+    <value>çağrı cihazı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4E0" xml:space="preserve">
+    <value>faks makinesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F50B" xml:space="preserve">
+    <value>pil</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAAB" xml:space="preserve">
+    <value>düşük pil</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F50C" xml:space="preserve">
+    <value>elektrik fişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4BB" xml:space="preserve">
+    <value>dizüstü bilgisayar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5A5_FE0F" xml:space="preserve">
+    <value>masaüstü bilgisayar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5A8_FE0F" xml:space="preserve">
+    <value>yazıcı</value>
+  </data>
+  <data name="EmojiCatalog_Name_2328_FE0F" xml:space="preserve">
+    <value>klavye</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5B1_FE0F" xml:space="preserve">
+    <value>bilgisayar faresi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5B2_FE0F" xml:space="preserve">
+    <value>iztopu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4BD" xml:space="preserve">
+    <value>bilgisayar diski</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4BE" xml:space="preserve">
+    <value>disket</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4BF" xml:space="preserve">
+    <value>optik disk</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4C0" xml:space="preserve">
+    <value>DVD</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9EE" xml:space="preserve">
+    <value>abaküs</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3A5" xml:space="preserve">
+    <value>sinema kamerası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F39E_FE0F" xml:space="preserve">
+    <value>film kareleri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4FD_FE0F" xml:space="preserve">
+    <value>film projektörü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3AC" xml:space="preserve">
+    <value>klaket</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4FA" xml:space="preserve">
+    <value>televizyon</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4F7" xml:space="preserve">
+    <value>kamera</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4F8" xml:space="preserve">
+    <value>flaşlı kamera</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4F9" xml:space="preserve">
+    <value>video kamera</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4FC" xml:space="preserve">
+    <value>video kaseti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F50D" xml:space="preserve">
+    <value>sola eğik büyüteç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F50E" xml:space="preserve">
+    <value>sağa eğik büyüteç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F56F_FE0F" xml:space="preserve">
+    <value>mum</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4A1" xml:space="preserve">
+    <value>ampul</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F526" xml:space="preserve">
+    <value>el feneri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3EE" xml:space="preserve">
+    <value>kırmızı kâğıt fener</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA94" xml:space="preserve">
+    <value>diya lambası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4D4" xml:space="preserve">
+    <value>süslü kapaklı defter</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4D5" xml:space="preserve">
+    <value>kapalı kitap</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4D6" xml:space="preserve">
+    <value>açık kitap</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4D7" xml:space="preserve">
+    <value>yeşil kitap</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4D8" xml:space="preserve">
+    <value>mavi kitap</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4D9" xml:space="preserve">
+    <value>turuncu kitap</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4DA" xml:space="preserve">
+    <value>kitaplar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4D3" xml:space="preserve">
+    <value>not defteri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4D2" xml:space="preserve">
+    <value>hesap defteri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4C3" xml:space="preserve">
+    <value>kıvrık sayfa</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4DC" xml:space="preserve">
+    <value>parşömen</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4C4" xml:space="preserve">
+    <value>yukarı bakan sayfa</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4F0" xml:space="preserve">
+    <value>gazete</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5DE_FE0F" xml:space="preserve">
+    <value>rulo gazete</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4D1" xml:space="preserve">
+    <value>yer imi sekmeleri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F516" xml:space="preserve">
+    <value>yer imi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3F7_FE0F" xml:space="preserve">
+    <value>etiket</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA99" xml:space="preserve">
+    <value>madeni para</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4B0" xml:space="preserve">
+    <value>para kesesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4B4" xml:space="preserve">
+    <value>yen banknotu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4B5" xml:space="preserve">
+    <value>dolar banknotu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4B6" xml:space="preserve">
+    <value>avro banknotu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4B7" xml:space="preserve">
+    <value>sterlin banknotu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4B8" xml:space="preserve">
+    <value>kanatlı para</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4B3" xml:space="preserve">
+    <value>kredi kartı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9FE" xml:space="preserve">
+    <value>fiş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4B9" xml:space="preserve">
+    <value>yenle yükselen grafik</value>
+  </data>
+  <data name="EmojiCatalog_Name_2709_FE0F" xml:space="preserve">
+    <value>zarf</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4E7" xml:space="preserve">
+    <value>e-posta</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4E8" xml:space="preserve">
+    <value>gelen zarf</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4E9" xml:space="preserve">
+    <value>oklu zarf</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4E4" xml:space="preserve">
+    <value>giden kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4E5" xml:space="preserve">
+    <value>gelen kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4E6" xml:space="preserve">
+    <value>paket</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4EB" xml:space="preserve">
+    <value>bayrağı kalkık kapalı posta kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4EA" xml:space="preserve">
+    <value>bayrağı inik kapalı posta kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4EC" xml:space="preserve">
+    <value>bayrağı kalkık açık posta kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4ED" xml:space="preserve">
+    <value>bayrağı inik açık posta kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4EE" xml:space="preserve">
+    <value>posta kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5F3_FE0F" xml:space="preserve">
+    <value>oy pusulalı sandık</value>
+  </data>
+  <data name="EmojiCatalog_Name_270F_FE0F" xml:space="preserve">
+    <value>kurşun kalem</value>
+  </data>
+  <data name="EmojiCatalog_Name_2712_FE0F" xml:space="preserve">
+    <value>siyah kalem ucu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F58B_FE0F" xml:space="preserve">
+    <value>dolma kalem</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F58A_FE0F" xml:space="preserve">
+    <value>kalem</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F58C_FE0F" xml:space="preserve">
+    <value>boya fırçası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F58D_FE0F" xml:space="preserve">
+    <value>pastel boya</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4DD" xml:space="preserve">
+    <value>not</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4BC" xml:space="preserve">
+    <value>evrak çantası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4C1" xml:space="preserve">
+    <value>dosya klasörü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4C2" xml:space="preserve">
+    <value>açık dosya klasörü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5C2_FE0F" xml:space="preserve">
+    <value>kart dizini ayraçları</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4C5" xml:space="preserve">
+    <value>takvim</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4C6" xml:space="preserve">
+    <value>koparmalı takvim</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5D2_FE0F" xml:space="preserve">
+    <value>spiral not defteri</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5D3_FE0F" xml:space="preserve">
+    <value>spiral takvim</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4C7" xml:space="preserve">
+    <value>kart dizini</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4C8" xml:space="preserve">
+    <value>yükselen grafik</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4C9" xml:space="preserve">
+    <value>düşen grafik</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4CA" xml:space="preserve">
+    <value>çubuk grafik</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4CB" xml:space="preserve">
+    <value>pano</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4CC" xml:space="preserve">
+    <value>raptiye</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4CD" xml:space="preserve">
+    <value>yuvarlak raptiye</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4CE" xml:space="preserve">
+    <value>ataş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F587_FE0F" xml:space="preserve">
+    <value>bağlı ataşlar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4CF" xml:space="preserve">
+    <value>düz cetvel</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4D0" xml:space="preserve">
+    <value>üçgen cetvel</value>
+  </data>
+  <data name="EmojiCatalog_Name_2702_FE0F" xml:space="preserve">
+    <value>makas</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5C3_FE0F" xml:space="preserve">
+    <value>kart dosya kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5C4_FE0F" xml:space="preserve">
+    <value>dosya dolabı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5D1_FE0F" xml:space="preserve">
+    <value>çöp kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F512" xml:space="preserve">
+    <value>kilitli</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F513" xml:space="preserve">
+    <value>kilidi açık</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F50F" xml:space="preserve">
+    <value>kalemle kilitli</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F510" xml:space="preserve">
+    <value>anahtarla kilitli</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F511" xml:space="preserve">
+    <value>anahtar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5DD_FE0F" xml:space="preserve">
+    <value>eski anahtar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F528" xml:space="preserve">
+    <value>çekiç</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA93" xml:space="preserve">
+    <value>balta</value>
+  </data>
+  <data name="EmojiCatalog_Name_26CF_FE0F" xml:space="preserve">
+    <value>kazma</value>
+  </data>
+  <data name="EmojiCatalog_Name_2692_FE0F" xml:space="preserve">
+    <value>çekiç ve kazma</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6E0_FE0F" xml:space="preserve">
+    <value>çekiç ve İngiliz anahtarı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5E1_FE0F" xml:space="preserve">
+    <value>hançer</value>
+  </data>
+  <data name="EmojiCatalog_Name_2694_FE0F" xml:space="preserve">
+    <value>çapraz kılıçlar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4A3" xml:space="preserve">
+    <value>bomba</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA83" xml:space="preserve">
+    <value>bumerang</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3F9" xml:space="preserve">
+    <value>yay ve ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6E1_FE0F" xml:space="preserve">
+    <value>kalkan</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA9A" xml:space="preserve">
+    <value>marangoz testeresi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F527" xml:space="preserve">
+    <value>İngiliz anahtarı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA9B" xml:space="preserve">
+    <value>tornavida</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F529" xml:space="preserve">
+    <value>somun ve cıvata</value>
+  </data>
+  <data name="EmojiCatalog_Name_2699_FE0F" xml:space="preserve">
+    <value>dişli</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5DC_FE0F" xml:space="preserve">
+    <value>mengene</value>
+  </data>
+  <data name="EmojiCatalog_Name_2696_FE0F" xml:space="preserve">
+    <value>terazi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9AF" xml:space="preserve">
+    <value>beyaz baston</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F517" xml:space="preserve">
+    <value>bağlantı</value>
+  </data>
+  <data name="EmojiCatalog_Name_26D3_FE0F_200D_1F4A5" xml:space="preserve">
+    <value>kırık zincir</value>
+  </data>
+  <data name="EmojiCatalog_Name_26D3_FE0F" xml:space="preserve">
+    <value>zincirler</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA9D" xml:space="preserve">
+    <value>kanca</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9F0" xml:space="preserve">
+    <value>alet kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9F2" xml:space="preserve">
+    <value>mıknatıs</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA9C" xml:space="preserve">
+    <value>merdiven</value>
+  </data>
+  <data name="EmojiCatalog_Name_2697_FE0F" xml:space="preserve">
+    <value>imbik</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9EA" xml:space="preserve">
+    <value>deney tüpü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9EB" xml:space="preserve">
+    <value>petri kabı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9EC" xml:space="preserve">
+    <value>DNA</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F52C" xml:space="preserve">
+    <value>mikroskop</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F52D" xml:space="preserve">
+    <value>teleskop</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4E1" xml:space="preserve">
+    <value>uydu anteni</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F489" xml:space="preserve">
+    <value>şırınga</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA78" xml:space="preserve">
+    <value>kan damlası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F48A" xml:space="preserve">
+    <value>hap</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA79" xml:space="preserve">
+    <value>yapışkan bandaj</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA7C" xml:space="preserve">
+    <value>koltuk değneği</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA7A" xml:space="preserve">
+    <value>stetoskop</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA7B" xml:space="preserve">
+    <value>röntgen</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6AA" xml:space="preserve">
+    <value>kapı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6D7" xml:space="preserve">
+    <value>asansör</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA9E" xml:space="preserve">
+    <value>ayna</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA9F" xml:space="preserve">
+    <value>pencere</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6CF_FE0F" xml:space="preserve">
+    <value>yatak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6CB_FE0F" xml:space="preserve">
+    <value>kanepe ve lamba</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA91" xml:space="preserve">
+    <value>sandalye</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6BD" xml:space="preserve">
+    <value>tuvalet</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAA0" xml:space="preserve">
+    <value>pompa</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6BF" xml:space="preserve">
+    <value>duş</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6C1" xml:space="preserve">
+    <value>küvet</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAA4" xml:space="preserve">
+    <value>fare kapanı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FA92" xml:space="preserve">
+    <value>tıraş bıçağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9F4" xml:space="preserve">
+    <value>losyon şişesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9F7" xml:space="preserve">
+    <value>çengelli iğne</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9F9" xml:space="preserve">
+    <value>süpürge</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9FA" xml:space="preserve">
+    <value>sepet</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9FB" xml:space="preserve">
+    <value>kâğıt rulosu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAA3" xml:space="preserve">
+    <value>kova</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9FC" xml:space="preserve">
+    <value>sabun</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAE7" xml:space="preserve">
+    <value>baloncuklar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAA5" xml:space="preserve">
+    <value>diş fırçası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9FD" xml:space="preserve">
+    <value>sünger</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9EF" xml:space="preserve">
+    <value>yangın söndürücü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6D2" xml:space="preserve">
+    <value>alışveriş arabası</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6AC" xml:space="preserve">
+    <value>sigara</value>
+  </data>
+  <data name="EmojiCatalog_Name_26B0_FE0F" xml:space="preserve">
+    <value>tabut</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAA6" xml:space="preserve">
+    <value>mezar taşı</value>
+  </data>
+  <data name="EmojiCatalog_Name_26B1_FE0F" xml:space="preserve">
+    <value>cenaze kül kabı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F9FF" xml:space="preserve">
+    <value>nazar boncuğu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAAC" xml:space="preserve">
+    <value>hamsa</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F5FF" xml:space="preserve">
+    <value>moai</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAA7" xml:space="preserve">
+    <value>pankart</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAAA" xml:space="preserve">
+    <value>kimlik kartı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3E7" xml:space="preserve">
+    <value>ATM işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6AE" xml:space="preserve">
+    <value>çöp kutusu işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B0" xml:space="preserve">
+    <value>içilebilir su</value>
+  </data>
+  <data name="EmojiCatalog_Name_267F" xml:space="preserve">
+    <value>tekerlekli sandalye simgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B9" xml:space="preserve">
+    <value>erkekler tuvaleti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6BA" xml:space="preserve">
+    <value>kadınlar tuvaleti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6BB" xml:space="preserve">
+    <value>tuvalet</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6BC" xml:space="preserve">
+    <value>bebek simgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6BE" xml:space="preserve">
+    <value>WC</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6C2" xml:space="preserve">
+    <value>pasaport kontrolü</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6C3" xml:space="preserve">
+    <value>gümrük</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6C4" xml:space="preserve">
+    <value>bagaj teslimi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6C5" xml:space="preserve">
+    <value>emanet bagaj</value>
+  </data>
+  <data name="EmojiCatalog_Name_26A0_FE0F" xml:space="preserve">
+    <value>uyarı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B8" xml:space="preserve">
+    <value>çocuk geçidi</value>
+  </data>
+  <data name="EmojiCatalog_Name_26D4" xml:space="preserve">
+    <value>giriş yok</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6AB" xml:space="preserve">
+    <value>yasak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B3" xml:space="preserve">
+    <value>bisiklet giremez</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6AD" xml:space="preserve">
+    <value>sigara içilmez</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6AF" xml:space="preserve">
+    <value>çöp atılmaz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B1" xml:space="preserve">
+    <value>içilemez su</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6B7" xml:space="preserve">
+    <value>yaya giremez</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4F5" xml:space="preserve">
+    <value>cep telefonu yasak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F51E" xml:space="preserve">
+    <value>on sekiz yaş altı yasak</value>
+  </data>
+  <data name="EmojiCatalog_Name_2622_FE0F" xml:space="preserve">
+    <value>radyoaktif</value>
+  </data>
+  <data name="EmojiCatalog_Name_2623_FE0F" xml:space="preserve">
+    <value>biyolojik tehlike</value>
+  </data>
+  <data name="EmojiCatalog_Name_2B06_FE0F" xml:space="preserve">
+    <value>yukarı ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_2197_FE0F" xml:space="preserve">
+    <value>sağ üst ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_27A1_FE0F" xml:space="preserve">
+    <value>sağ ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_2198_FE0F" xml:space="preserve">
+    <value>sağ alt ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_2B07_FE0F" xml:space="preserve">
+    <value>aşağı ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_2199_FE0F" xml:space="preserve">
+    <value>sol alt ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_2B05_FE0F" xml:space="preserve">
+    <value>sol ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_2196_FE0F" xml:space="preserve">
+    <value>sol üst ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_2195_FE0F" xml:space="preserve">
+    <value>yukarı-aşağı ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_2194_FE0F" xml:space="preserve">
+    <value>sol-sağ ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_21A9_FE0F" xml:space="preserve">
+    <value>sola kıvrılan sağ ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_21AA_FE0F" xml:space="preserve">
+    <value>sağa kıvrılan sol ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_2934_FE0F" xml:space="preserve">
+    <value>yukarı kıvrılan sağ ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_2935_FE0F" xml:space="preserve">
+    <value>aşağı kıvrılan sağ ok</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F503" xml:space="preserve">
+    <value>saat yönünde dikey oklar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F504" xml:space="preserve">
+    <value>saat yönünün tersine oklar düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F519" xml:space="preserve">
+    <value>GERİ oku</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F51A" xml:space="preserve">
+    <value>SON oku</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F51B" xml:space="preserve">
+    <value>AÇIK! oku</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F51C" xml:space="preserve">
+    <value>YAKINDA oku</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F51D" xml:space="preserve">
+    <value>ÜST oku</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6D0" xml:space="preserve">
+    <value>ibadet yeri</value>
+  </data>
+  <data name="EmojiCatalog_Name_269B_FE0F" xml:space="preserve">
+    <value>atom simgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F549_FE0F" xml:space="preserve">
+    <value>om</value>
+  </data>
+  <data name="EmojiCatalog_Name_2721_FE0F" xml:space="preserve">
+    <value>Davut yıldızı</value>
+  </data>
+  <data name="EmojiCatalog_Name_2638_FE0F" xml:space="preserve">
+    <value>dharma çarkı</value>
+  </data>
+  <data name="EmojiCatalog_Name_262F_FE0F" xml:space="preserve">
+    <value>yin yang</value>
+  </data>
+  <data name="EmojiCatalog_Name_271D_FE0F" xml:space="preserve">
+    <value>Latin haçı</value>
+  </data>
+  <data name="EmojiCatalog_Name_2626_FE0F" xml:space="preserve">
+    <value>Ortodoks haçı</value>
+  </data>
+  <data name="EmojiCatalog_Name_262A_FE0F" xml:space="preserve">
+    <value>yıldız ve hilal</value>
+  </data>
+  <data name="EmojiCatalog_Name_262E_FE0F" xml:space="preserve">
+    <value>barış simgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F54E" xml:space="preserve">
+    <value>menora</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F52F" xml:space="preserve">
+    <value>noktalı altı köşeli yıldız</value>
+  </data>
+  <data name="EmojiCatalog_Name_1FAAF" xml:space="preserve">
+    <value>khanda</value>
+  </data>
+  <data name="EmojiCatalog_Name_2648" xml:space="preserve">
+    <value>Koç</value>
+  </data>
+  <data name="EmojiCatalog_Name_2649" xml:space="preserve">
+    <value>Boğa</value>
+  </data>
+  <data name="EmojiCatalog_Name_264A" xml:space="preserve">
+    <value>İkizler</value>
+  </data>
+  <data name="EmojiCatalog_Name_264B" xml:space="preserve">
+    <value>Yengeç</value>
+  </data>
+  <data name="EmojiCatalog_Name_264C" xml:space="preserve">
+    <value>Aslan</value>
+  </data>
+  <data name="EmojiCatalog_Name_264D" xml:space="preserve">
+    <value>Başak</value>
+  </data>
+  <data name="EmojiCatalog_Name_264E" xml:space="preserve">
+    <value>Terazi</value>
+  </data>
+  <data name="EmojiCatalog_Name_264F" xml:space="preserve">
+    <value>Akrep</value>
+  </data>
+  <data name="EmojiCatalog_Name_2650" xml:space="preserve">
+    <value>Yay</value>
+  </data>
+  <data name="EmojiCatalog_Name_2651" xml:space="preserve">
+    <value>Oğlak</value>
+  </data>
+  <data name="EmojiCatalog_Name_2652" xml:space="preserve">
+    <value>Kova</value>
+  </data>
+  <data name="EmojiCatalog_Name_2653" xml:space="preserve">
+    <value>Balık</value>
+  </data>
+  <data name="EmojiCatalog_Name_26CE" xml:space="preserve">
+    <value>Yılancı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F500" xml:space="preserve">
+    <value>karışık çalma düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F501" xml:space="preserve">
+    <value>tekrarla düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F502" xml:space="preserve">
+    <value>tek parçayı tekrarla düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_25B6_FE0F" xml:space="preserve">
+    <value>oynat düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_23E9" xml:space="preserve">
+    <value>hızlı ileri düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_23ED_FE0F" xml:space="preserve">
+    <value>sonraki parça düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_23EF_FE0F" xml:space="preserve">
+    <value>oynat veya duraklat düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_25C0_FE0F" xml:space="preserve">
+    <value>geri düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_23EA" xml:space="preserve">
+    <value>hızlı geri düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_23EE_FE0F" xml:space="preserve">
+    <value>önceki parça düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F53C" xml:space="preserve">
+    <value>yukarı düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_23EB" xml:space="preserve">
+    <value>hızlı yukarı düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F53D" xml:space="preserve">
+    <value>aşağı düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_23EC" xml:space="preserve">
+    <value>hızlı aşağı düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_23F8_FE0F" xml:space="preserve">
+    <value>duraklat düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_23F9_FE0F" xml:space="preserve">
+    <value>durdur düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_23FA_FE0F" xml:space="preserve">
+    <value>kaydet düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_23CF_FE0F" xml:space="preserve">
+    <value>çıkar düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3A6" xml:space="preserve">
+    <value>sinema</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F505" xml:space="preserve">
+    <value>karart düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F506" xml:space="preserve">
+    <value>parlaklık düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4F6" xml:space="preserve">
+    <value>anten çubukları</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6DC" xml:space="preserve">
+    <value>kablosuz</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4F3" xml:space="preserve">
+    <value>titreşim modu</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4F4" xml:space="preserve">
+    <value>cep telefonu kapalı</value>
+  </data>
+  <data name="EmojiCatalog_Name_2640_FE0F" xml:space="preserve">
+    <value>kadın simgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_2642_FE0F" xml:space="preserve">
+    <value>erkek simgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_26A7_FE0F" xml:space="preserve">
+    <value>trans simgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_2716_FE0F" xml:space="preserve">
+    <value>çarpma</value>
+  </data>
+  <data name="EmojiCatalog_Name_2795" xml:space="preserve">
+    <value>artı</value>
+  </data>
+  <data name="EmojiCatalog_Name_2796" xml:space="preserve">
+    <value>eksi</value>
+  </data>
+  <data name="EmojiCatalog_Name_2797" xml:space="preserve">
+    <value>bölme</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7F0" xml:space="preserve">
+    <value>kalın eşittir işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_267E_FE0F" xml:space="preserve">
+    <value>sonsuzluk</value>
+  </data>
+  <data name="EmojiCatalog_Name_203C_FE0F" xml:space="preserve">
+    <value>çift ünlem işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_2049_FE0F" xml:space="preserve">
+    <value>ünlemli soru işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_2753" xml:space="preserve">
+    <value>kırmızı soru işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_2754" xml:space="preserve">
+    <value>beyaz soru işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_2755" xml:space="preserve">
+    <value>beyaz ünlem işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_2757" xml:space="preserve">
+    <value>kırmızı ünlem işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_3030_FE0F" xml:space="preserve">
+    <value>dalgalı tire</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4B1" xml:space="preserve">
+    <value>döviz bozdurma</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4B2" xml:space="preserve">
+    <value>kalın dolar işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_2695_FE0F" xml:space="preserve">
+    <value>tıp simgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_267B_FE0F" xml:space="preserve">
+    <value>geri dönüşüm simgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_269C_FE0F" xml:space="preserve">
+    <value>zambak simgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F531" xml:space="preserve">
+    <value>üç dişli mızrak amblemi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4DB" xml:space="preserve">
+    <value>isim rozeti</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F530" xml:space="preserve">
+    <value>Japonca acemi simgesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_2B55" xml:space="preserve">
+    <value>içi boş kırmızı daire</value>
+  </data>
+  <data name="EmojiCatalog_Name_2705" xml:space="preserve">
+    <value>onay işareti düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_2611_FE0F" xml:space="preserve">
+    <value>işaretli onay kutusu</value>
+  </data>
+  <data name="EmojiCatalog_Name_2714_FE0F" xml:space="preserve">
+    <value>onay işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_274C" xml:space="preserve">
+    <value>çarpı işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_274E" xml:space="preserve">
+    <value>çarpı işareti düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_27B0" xml:space="preserve">
+    <value>kıvrımlı döngü</value>
+  </data>
+  <data name="EmojiCatalog_Name_27BF" xml:space="preserve">
+    <value>çift kıvrımlı döngü</value>
+  </data>
+  <data name="EmojiCatalog_Name_303D_FE0F" xml:space="preserve">
+    <value>parça değiştirme işareti</value>
+  </data>
+  <data name="EmojiCatalog_Name_2733_FE0F" xml:space="preserve">
+    <value>sekiz kollu yıldız</value>
+  </data>
+  <data name="EmojiCatalog_Name_2734_FE0F" xml:space="preserve">
+    <value>sekiz köşeli yıldız</value>
+  </data>
+  <data name="EmojiCatalog_Name_2747_FE0F" xml:space="preserve">
+    <value>parıltı</value>
+  </data>
+  <data name="EmojiCatalog_Name_00A9_FE0F" xml:space="preserve">
+    <value>telif hakkı</value>
+  </data>
+  <data name="EmojiCatalog_Name_00AE_FE0F" xml:space="preserve">
+    <value>tescilli</value>
+  </data>
+  <data name="EmojiCatalog_Name_2122_FE0F" xml:space="preserve">
+    <value>ticari marka</value>
+  </data>
+  <data name="EmojiCatalog_Name_0023_FE0F_20E3" xml:space="preserve">
+    <value>tuş: kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_002A_FE0F_20E3" xml:space="preserve">
+    <value>tuş: yıldız</value>
+  </data>
+  <data name="EmojiCatalog_Name_0030_FE0F_20E3" xml:space="preserve">
+    <value>tuş: 0</value>
+  </data>
+  <data name="EmojiCatalog_Name_0031_FE0F_20E3" xml:space="preserve">
+    <value>tuş: 1</value>
+  </data>
+  <data name="EmojiCatalog_Name_0032_FE0F_20E3" xml:space="preserve">
+    <value>tuş: 2</value>
+  </data>
+  <data name="EmojiCatalog_Name_0033_FE0F_20E3" xml:space="preserve">
+    <value>tuş: 3</value>
+  </data>
+  <data name="EmojiCatalog_Name_0034_FE0F_20E3" xml:space="preserve">
+    <value>tuş: 4</value>
+  </data>
+  <data name="EmojiCatalog_Name_0035_FE0F_20E3" xml:space="preserve">
+    <value>tuş: 5</value>
+  </data>
+  <data name="EmojiCatalog_Name_0036_FE0F_20E3" xml:space="preserve">
+    <value>tuş: 6</value>
+  </data>
+  <data name="EmojiCatalog_Name_0037_FE0F_20E3" xml:space="preserve">
+    <value>tuş: 7</value>
+  </data>
+  <data name="EmojiCatalog_Name_0038_FE0F_20E3" xml:space="preserve">
+    <value>tuş: 8</value>
+  </data>
+  <data name="EmojiCatalog_Name_0039_FE0F_20E3" xml:space="preserve">
+    <value>tuş: 9</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F51F" xml:space="preserve">
+    <value>tuş: 10</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F520" xml:space="preserve">
+    <value>büyük Latin harfi girişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F521" xml:space="preserve">
+    <value>küçük Latin harfi girişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F522" xml:space="preserve">
+    <value>sayı girişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F523" xml:space="preserve">
+    <value>simge girişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F524" xml:space="preserve">
+    <value>Latin harfi girişi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F170_FE0F" xml:space="preserve">
+    <value>A düğmesi (kan grubu)</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F18E" xml:space="preserve">
+    <value>AB düğmesi (kan grubu)</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F171_FE0F" xml:space="preserve">
+    <value>B düğmesi (kan grubu)</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F191" xml:space="preserve">
+    <value>CL düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F192" xml:space="preserve">
+    <value>HAVALI düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F193" xml:space="preserve">
+    <value>ÜCRETSİZ düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_2139_FE0F" xml:space="preserve">
+    <value>bilgi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F194" xml:space="preserve">
+    <value>KİMLİK düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_24C2_FE0F" xml:space="preserve">
+    <value>daire içindeki M</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F195" xml:space="preserve">
+    <value>YENİ düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F196" xml:space="preserve">
+    <value>NG düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F17E_FE0F" xml:space="preserve">
+    <value>O düğmesi (kan grubu)</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F197" xml:space="preserve">
+    <value>TAMAM düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F17F_FE0F" xml:space="preserve">
+    <value>P düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F198" xml:space="preserve">
+    <value>SOS düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F199" xml:space="preserve">
+    <value>YUKARI! düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F19A" xml:space="preserve">
+    <value>VS düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F201" xml:space="preserve">
+    <value>Japonca “burada” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F202_FE0F" xml:space="preserve">
+    <value>Japonca “hizmet bedeli” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F237_FE0F" xml:space="preserve">
+    <value>Japonca “aylık tutar” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F236" xml:space="preserve">
+    <value>Japonca “ücretli” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F22F" xml:space="preserve">
+    <value>Japonca “ayrılmış” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F250" xml:space="preserve">
+    <value>Japonca “kelepir” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F239" xml:space="preserve">
+    <value>Japonca “indirim” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F21A" xml:space="preserve">
+    <value>Japonca “ücretsiz” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F232" xml:space="preserve">
+    <value>Japonca “yasak” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F251" xml:space="preserve">
+    <value>Japonca “kabul edilebilir” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F238" xml:space="preserve">
+    <value>Japonca “başvuru” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F234" xml:space="preserve">
+    <value>Japonca “geçer not” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F233" xml:space="preserve">
+    <value>Japonca “boş yer” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_3297_FE0F" xml:space="preserve">
+    <value>Japonca “tebrikler” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_3299_FE0F" xml:space="preserve">
+    <value>Japonca “gizli” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F23A" xml:space="preserve">
+    <value>Japonca “işletme açık” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F235" xml:space="preserve">
+    <value>Japonca “boş yer yok” düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F534" xml:space="preserve">
+    <value>kırmızı daire</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7E0" xml:space="preserve">
+    <value>turuncu daire</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7E1" xml:space="preserve">
+    <value>sarı daire</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7E2" xml:space="preserve">
+    <value>yeşil daire</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F535" xml:space="preserve">
+    <value>mavi daire</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7E3" xml:space="preserve">
+    <value>mor daire</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7E4" xml:space="preserve">
+    <value>kahverengi daire</value>
+  </data>
+  <data name="EmojiCatalog_Name_26AB" xml:space="preserve">
+    <value>siyah daire</value>
+  </data>
+  <data name="EmojiCatalog_Name_26AA" xml:space="preserve">
+    <value>beyaz daire</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7E5" xml:space="preserve">
+    <value>kırmızı kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7E7" xml:space="preserve">
+    <value>turuncu kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7E8" xml:space="preserve">
+    <value>sarı kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7E9" xml:space="preserve">
+    <value>yeşil kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7E6" xml:space="preserve">
+    <value>mavi kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7EA" xml:space="preserve">
+    <value>mor kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F7EB" xml:space="preserve">
+    <value>kahverengi kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_2B1B" xml:space="preserve">
+    <value>büyük siyah kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_2B1C" xml:space="preserve">
+    <value>büyük beyaz kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_25FC_FE0F" xml:space="preserve">
+    <value>orta siyah kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_25FB_FE0F" xml:space="preserve">
+    <value>orta beyaz kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_25FE" xml:space="preserve">
+    <value>orta-küçük siyah kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_25FD" xml:space="preserve">
+    <value>orta-küçük beyaz kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_25AA_FE0F" xml:space="preserve">
+    <value>küçük siyah kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_25AB_FE0F" xml:space="preserve">
+    <value>küçük beyaz kare</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F536" xml:space="preserve">
+    <value>büyük turuncu baklava</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F537" xml:space="preserve">
+    <value>büyük mavi baklava</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F538" xml:space="preserve">
+    <value>küçük turuncu baklava</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F539" xml:space="preserve">
+    <value>küçük mavi baklava</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F53A" xml:space="preserve">
+    <value>yukarı bakan kırmızı üçgen</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F53B" xml:space="preserve">
+    <value>aşağı bakan kırmızı üçgen</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F4A0" xml:space="preserve">
+    <value>noktalı baklava</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F518" xml:space="preserve">
+    <value>radyo düğmesi</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F533" xml:space="preserve">
+    <value>beyaz kare düğme</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F532" xml:space="preserve">
+    <value>siyah kare düğme</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3C1" xml:space="preserve">
+    <value>damalı bayrak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F6A9" xml:space="preserve">
+    <value>üçgen bayrak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F38C" xml:space="preserve">
+    <value>çapraz bayraklar</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3F4" xml:space="preserve">
+    <value>siyah bayrak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3F3_FE0F" xml:space="preserve">
+    <value>beyaz bayrak</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3F3_FE0F_200D_1F308" xml:space="preserve">
+    <value>gökkuşağı bayrağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3F3_FE0F_200D_26A7_FE0F" xml:space="preserve">
+    <value>trans bayrağı</value>
+  </data>
+  <data name="EmojiCatalog_Name_1F3F4_200D_2620_FE0F" xml:space="preserve">
+    <value>korsan bayrağı</value>
+  </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Arka plan görüntüsünü seç</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Görüntü aç</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Panodan görüntü yüklenemedi.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Panodan görüntü yüklenemedi.
+Panoda görüntü yok.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>URL geçerli bir görüntüyü işaret etmiyor.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Görüntü indirilemedi: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>Dosya artık mevcut değil.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Görüntü dosyası yüklenemedi.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Görüntüyü farklı kaydet</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Görüntü seç</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Başarımın kilidi açıldı!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Kırp</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Akıllı dolgu</value>
+  </data>
 </root>

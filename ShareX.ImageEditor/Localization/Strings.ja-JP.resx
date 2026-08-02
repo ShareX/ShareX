@@ -750,4 +750,46 @@
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} と {1} は同じショートカット ({2}) を使用しています。</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>背景画像を選択</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>画像を開く</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>クリップボードから画像を読み込めませんでした。</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>クリップボードから画像を読み込めませんでした。
+クリップボードに画像がありません。</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>URL が有効な画像を指していません。</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>画像をダウンロードできませんでした: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>ファイルは存在しません。
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>画像ファイルを読み込めませんでした。
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>名前を付けて画像を保存</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>画像を選択</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>実績を解除しました！</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>トリミング</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>スマート余白</value>
+  </data>
 </root>

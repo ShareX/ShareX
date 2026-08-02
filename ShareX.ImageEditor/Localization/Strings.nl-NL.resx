@@ -750,4 +750,46 @@ Schaduwopties (Rechtsklik)</value>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} en {1} gebruiken dezelfde sneltoets ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Achtergrondafbeelding selecteren</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Afbeelding openen</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Kan afbeelding niet laden vanaf het klembord.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Kan afbeelding niet laden vanaf het klembord.
+Het klembord bevat geen afbeelding.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>De URL verwijst niet naar een geldige afbeelding.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Kan afbeelding niet downloaden: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>Het bestand bestaat niet meer.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Kan het afbeeldingsbestand niet laden.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Afbeelding opslaan als</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Afbeelding selecteren</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Prestatie ontgrendeld!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Bijsnijden</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Slimme opvulling</value>
+  </data>
 </root>

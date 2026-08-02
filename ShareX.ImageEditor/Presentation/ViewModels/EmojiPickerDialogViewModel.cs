@@ -42,7 +42,7 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
     private string _searchText = string.Empty;
 
     [ObservableProperty]
-    private string _selectedGroup = string.Empty;
+    private EmojiCatalogGroupOption? _selectedGroup;
 
     [ObservableProperty]
     private ObservableCollection<EmojiCatalogEntry> _visibleEmojis = [];
@@ -56,7 +56,7 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
     [ObservableProperty]
     private bool _isLoading = true;
 
-    public ObservableCollection<string> GroupOptions { get; } = [];
+    public ObservableCollection<EmojiCatalogGroupOption> GroupOptions { get; } = [];
 
     public bool HasResults => VisibleEmojis.Count > 0;
 
@@ -80,7 +80,7 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
         }
     }
 
-    partial void OnSelectedGroupChanged(string value)
+    partial void OnSelectedGroupChanged(EmojiCatalogGroupOption? value)
     {
         if (_isInitialized)
         {
@@ -109,10 +109,10 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
         GroupOptions.Clear();
         foreach (string group in groups)
         {
-            GroupOptions.Add(group);
+            GroupOptions.Add(new EmojiCatalogGroupOption(group, EmojiCatalogLocalization.GetGroupName(group)));
         }
 
-        SelectedGroup = GroupOptions.FirstOrDefault() ?? string.Empty;
+        SelectedGroup = GroupOptions.FirstOrDefault();
         _isInitialized = true;
 
         await RefreshResultsAsync();
@@ -134,7 +134,7 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
     {
         int version = Interlocked.Increment(ref _refreshVersion);
         string search = SearchText.Trim();
-        string selectedGroup = SelectedGroup;
+        EmojiCatalogGroupOption? selectedGroup = SelectedGroup;
 
         EmojiQueryResult result = await Task.Run(() => BuildQueryResult(search, selectedGroup));
         if (version != _refreshVersion)
@@ -148,11 +148,12 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
         OnPropertyChanged(nameof(HasResults));
     }
 
-    private EmojiQueryResult BuildQueryResult(string search, string selectedGroup)
+    private EmojiQueryResult BuildQueryResult(string search, EmojiCatalogGroupOption? selectedGroup)
     {
+        string selectedGroupName = selectedGroup?.Name ?? string.Empty;
         EmojiCatalogEntry[] categoryEntries =
         [
-            .. _catalog.Where(entry => string.Equals(entry.Group, selectedGroup, StringComparison.Ordinal))
+            .. _catalog.Where(entry => string.Equals(entry.Group, selectedGroupName, StringComparison.Ordinal))
         ];
 
         IEnumerable<EmojiCatalogEntry> query;
@@ -161,9 +162,9 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
         if (string.IsNullOrWhiteSpace(search))
         {
             query = categoryEntries;
-            resultsSummary = string.IsNullOrEmpty(selectedGroup)
+            resultsSummary = selectedGroup == null
                 ? Strings.EmojiPickerDialogView_BrowseEmojis
-                : string.Format(Strings.EmojiPickerDialogView_CategorySummary, selectedGroup, categoryEntries.Length);
+                : string.Format(Strings.EmojiPickerDialogView_CategorySummary, selectedGroup.DisplayName, categoryEntries.Length);
         }
         else
         {

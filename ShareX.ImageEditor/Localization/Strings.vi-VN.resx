@@ -750,4 +750,46 @@ Tùy chọn bóng đổ (Nhấp phải)</value>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} và {1} sử dụng cùng một phím tắt ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Chọn ảnh nền</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Mở ảnh</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Không thể tải ảnh từ bảng nhớ tạm.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Không thể tải ảnh từ bảng nhớ tạm.
+Bảng nhớ tạm không chứa ảnh.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>URL không trỏ đến ảnh hợp lệ.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Không thể tải ảnh xuống: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>Tệp không còn tồn tại.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Không thể tải tệp ảnh.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Lưu ảnh thành</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Chọn ảnh</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Đã mở khóa thành tựu!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Cắt</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Khoảng đệm thông minh</value>
+  </data>
 </root>

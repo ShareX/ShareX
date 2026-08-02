@@ -750,4 +750,46 @@
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} і {1} використовують однакове сполучення клавіш ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Вибрати фонове зображення</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Відкрити зображення</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Не вдалося завантажити зображення з буфера обміну.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Не вдалося завантажити зображення з буфера обміну.
+Буфер обміну не містить зображення.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>URL-адреса не вказує на дійсне зображення.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Не вдалося завантажити зображення: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>Файл більше не існує.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Не вдалося завантажити файл зображення.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Зберегти зображення як</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Вибрати зображення</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Досягнення розблоковано!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Обрізати</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Розумний відступ</value>
+  </data>
 </root>

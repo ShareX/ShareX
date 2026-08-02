@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -35,6 +35,7 @@ using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
+using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.Helpers;
 using ShareX.ImageEditor.Presentation.Rendering;
@@ -1241,7 +1242,7 @@ public class EditorInputController
 
         var button = new Button
         {
-            Content = "Crop",
+            Content = Strings.EditorView_Crop,
             Padding = new Thickness(16, 6),
             Cursor = new Cursor(StandardCursorType.Hand),
             Width = 80,
@@ -1890,7 +1891,7 @@ public class EditorInputController
         {
             var files = await topLevel.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
             {
-                Title = "Select Image",
+                Title = Strings.EditorView_SelectImage,
                 AllowMultiple = false,
                 FileTypeFilter = new[] { FilePickerFileTypes.ImageAll }
             });

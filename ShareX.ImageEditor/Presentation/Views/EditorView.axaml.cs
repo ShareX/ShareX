@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -37,6 +37,7 @@ using Avalonia.VisualTree;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Core.Editor;
 using ShareX.ImageEditor.Integration;
+using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Controllers;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.Emoji;
@@ -1628,7 +1629,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             IReadOnlyList<IStorageFile> files = await topLevel.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
             {
-                Title = "Select background image",
+                Title = Strings.EditorView_SelectBackgroundImage,
                 AllowMultiple = false,
                 FileTypeFilter = [FilePickerFileTypes.ImageAll]
             });
@@ -1743,7 +1744,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             IReadOnlyList<IStorageFile> files = await topLevel.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
             {
-                Title = "Open image",
+                Title = Strings.EditorView_OpenImage,
                 AllowMultiple = false,
                 FileTypeFilter = [FilePickerFileTypes.ImageAll]
             });
@@ -1871,7 +1872,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             var topLevel = TopLevel.GetTopLevel(this);
             if (topLevel?.Clipboard == null)
             {
-                ShowStartScreenStatus(vm, "Failed to load image from clipboard.");
+                ShowStartScreenStatus(vm, Strings.EditorView_FailedToLoadImageFromClipboard);
                 return;
             }
 
@@ -1927,12 +1928,12 @@ namespace ShareX.ImageEditor.Presentation.Views
                     }
                 }
 
-                ShowStartScreenStatus(vm, "Failed to load image from clipboard.\nClipboard does not contain an image.");
+                ShowStartScreenStatus(vm, Strings.EditorView_ClipboardDoesNotContainImage);
             }
             catch (Exception ex)
             {
                 EditorServices.ReportError(nameof(EditorView), "Failed to load image from clipboard.", ex);
-                ShowStartScreenStatus(vm, "Failed to load image from clipboard.");
+                ShowStartScreenStatus(vm, Strings.EditorView_FailedToLoadImageFromClipboard);
             }
         }
 
@@ -1962,7 +1963,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 if (skBitmap == null)
                 {
                     startScreenDialog?.SetUrlLoading(false);
-                    startScreenDialog?.ShowStatus("The URL does not point to a valid image.");
+                    startScreenDialog?.ShowStatus(Strings.EditorView_UrlDoesNotPointToValidImage);
                     return;
                 }
 
@@ -1972,7 +1973,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             catch (Exception ex)
             {
                 startScreenDialog?.SetUrlLoading(false);
-                startScreenDialog?.ShowStatus($"Failed to download image: {ex.Message}");
+                startScreenDialog?.ShowStatus(string.Format(Strings.EditorView_FailedToDownloadImageFormat, ex.Message));
             }
         }
 
@@ -1987,7 +1988,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 {
                     startScreenDialog.RecentFiles.Remove(filePath);
                 }
-                ShowStartScreenStatus(vm, $"The file no longer exists.\n{filePath}");
+                ShowStartScreenStatus(vm, string.Format(Strings.EditorView_FileNoLongerExistsFormat, filePath));
                 return;
             }
 
@@ -1998,7 +1999,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 if (skBitmap == null)
                 {
                     EditorServices.ReportError(nameof(EditorView), $"Failed to decode image file '{filePath}'.");
-                    ShowStartScreenStatus(vm, $"Failed to load image file.\n{filePath}");
+                    ShowStartScreenStatus(vm, string.Format(Strings.EditorView_FailedToLoadImageFileFormat, filePath));
                     return;
                 }
 
@@ -2009,7 +2010,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             catch (Exception ex)
             {
                 EditorServices.ReportError(nameof(EditorView), $"Failed to load image file '{filePath}'.", ex);
-                ShowStartScreenStatus(vm, $"Failed to load image file.\n{filePath}");
+                ShowStartScreenStatus(vm, string.Format(Strings.EditorView_FailedToLoadImageFileFormat, filePath));
             }
         }
 
@@ -2121,7 +2122,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             IStorageFile? file = await topLevel.StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
             {
-                Title = "Save image as",
+                Title = Strings.EditorView_SaveImageAs,
                 SuggestedFileName = !string.IsNullOrEmpty(vm.ImageFilePath)
                     ? System.IO.Path.GetFileName(vm.ImageFilePath)
                     : "image.png",

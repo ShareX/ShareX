@@ -750,4 +750,46 @@
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0}과 {1}이(가) 같은 단축키 ({2})를 사용합니다.</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>배경 이미지 선택</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>이미지 열기</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>클립보드에서 이미지를 불러오지 못했습니다.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>클립보드에서 이미지를 불러오지 못했습니다.
+클립보드에 이미지가 없습니다.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>URL이 올바른 이미지를 가리키지 않습니다.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>이미지를 다운로드하지 못했습니다: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>파일이 더 이상 존재하지 않습니다.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>이미지 파일을 불러오지 못했습니다.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>다른 이름으로 이미지 저장</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>이미지 선택</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>업적 달성!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>자르기</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>스마트 여백</value>
+  </data>
 </root>

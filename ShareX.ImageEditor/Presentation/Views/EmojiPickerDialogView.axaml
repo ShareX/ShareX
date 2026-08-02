@@ -67,7 +67,7 @@
                                 <DataTemplate x:DataType="emoji:EmojiCatalogEntry">
                                     <Button Classes="effect-item emoji-tile"
                                             Click="OnEmojiSelected"
-                                            ToolTip.Tip="{Binding Name}">
+                                            ToolTip.Tip="{Binding DisplayName}">
                                         <controls:EmojiPreviewImage UnicodeSequence="{Binding Unicode}"
                                                                     PreviewSize="48"
                                                                     Width="48"

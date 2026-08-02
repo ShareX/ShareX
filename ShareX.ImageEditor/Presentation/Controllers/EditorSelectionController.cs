@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -366,7 +366,7 @@ public class EditorSelectionController
         vm.ShowEmojiPickerDialog(entry =>
         {
             emojiAnnotation.UnicodeSequence = entry.Unicode;
-            emojiAnnotation.DisplayName = entry.Name;
+            emojiAnnotation.DisplayName = entry.DisplayName;
             emojiAnnotation.ClearImage();
 
             AnnotationVisualFactory.UpdateVisualControl(emojiControl, emojiAnnotation);

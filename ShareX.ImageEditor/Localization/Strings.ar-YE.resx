@@ -751,4 +751,46 @@
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>يستخدم {0} و{1} الاختصار نفسه ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>تحديد صورة الخلفية</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>فتح صورة</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>تعذر تحميل الصورة من الحافظة.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>تعذر تحميل الصورة من الحافظة.
+لا تحتوي الحافظة على صورة.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>لا يشير عنوان URL إلى صورة صالحة.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>تعذر تنزيل الصورة: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>لم يعد الملف موجودًا.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>تعذر تحميل ملف الصورة.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>حفظ الصورة باسم</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>تحديد صورة</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>تم فتح الإنجاز!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>اقتصاص</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>حشو ذكي</value>
+  </data>
 </root>

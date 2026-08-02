@@ -750,4 +750,46 @@
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} и {1} используют одно сочетание клавиш ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Выбрать фоновое изображение</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Открыть изображение</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Не удалось загрузить изображение из буфера обмена.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Не удалось загрузить изображение из буфера обмена.
+Буфер обмена не содержит изображения.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>URL-адрес не указывает на допустимое изображение.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Не удалось скачать изображение: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>Файл больше не существует.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Не удалось загрузить файл изображения.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Сохранить изображение как</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Выбрать изображение</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Достижение разблокировано!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Обрезать</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Умный отступ</value>
+  </data>
 </root>

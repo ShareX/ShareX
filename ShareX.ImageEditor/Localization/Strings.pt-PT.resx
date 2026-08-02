@@ -750,4 +750,46 @@ Opções de sombra (Clique direito)</value>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} e {1} usam o mesmo atalho ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Selecionar imagem de fundo</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Abrir imagem</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Não foi possível carregar a imagem da área de transferência.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Não foi possível carregar a imagem da área de transferência.
+A área de transferência não contém uma imagem.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>O URL não aponta para uma imagem válida.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Não foi possível transferir a imagem: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>O ficheiro já não existe.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Não foi possível carregar o ficheiro de imagem.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Guardar imagem como</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Selecionar imagem</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Conquista desbloqueada!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Recortar</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Preenchimento inteligente</value>
+  </data>
 </root>

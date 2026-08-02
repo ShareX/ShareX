@@ -750,4 +750,46 @@ Opzioni ombra (Clic destro)</value>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} e {1} usano la stessa scorciatoia ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Seleziona immagine di sfondo</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Apri immagine</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Impossibile caricare l’immagine dagli appunti.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Impossibile caricare l’immagine dagli appunti.
+Gli appunti non contengono un’immagine.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>L’URL non punta a un’immagine valida.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Impossibile scaricare l’immagine: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>Il file non esiste più.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Impossibile caricare il file immagine.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Salva immagine con nome</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Seleziona immagine</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Obiettivo sbloccato!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Ritaglia</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Spaziatura interna intelligente</value>
+  </data>
 </root>

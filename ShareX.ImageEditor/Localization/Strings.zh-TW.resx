@@ -750,4 +750,46 @@
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} 和 {1} 使用相同的快速鍵 ({2})。</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>選擇背景影像</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>開啟影像</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>無法從剪貼簿載入影像。</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>無法從剪貼簿載入影像。
+剪貼簿中沒有影像。</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>該 URL 未指向有效的影像。</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>無法下載影像：{0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>檔案已不存在。
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>無法載入影像檔案。
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>影像另存新檔</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>選擇影像</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>成就已解鎖！</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>裁剪</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>智慧型內距</value>
+  </data>
 </root>

@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -27,6 +27,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using ShareX.ImageEditor.Presentation.EasterEggs;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.ViewModels;
 
 namespace ShareX.ImageEditor.Presentation.Views;
@@ -53,7 +54,7 @@ public partial class EditorView
     {
         if (DataContext is MainViewModel vm)
         {
-            vm.ShowNotification("Achievement unlocked!", EditorIcons.Achievement);
+            vm.ShowNotification(Strings.EditorView_AchievementUnlocked, EditorIcons.Achievement);
         }
     }
 

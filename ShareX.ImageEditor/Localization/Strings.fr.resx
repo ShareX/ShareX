@@ -750,4 +750,46 @@ Options de l’ombre (Clic droit)</value>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} et {1} utilisent le même raccourci ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Sélectionner l’image d’arrière-plan</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Ouvrir une image</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Impossible de charger l’image depuis le presse-papiers.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Impossible de charger l’image depuis le presse-papiers.
+Le presse-papiers ne contient aucune image.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>L’URL ne pointe pas vers une image valide.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Impossible de télécharger l’image : {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>Le fichier n’existe plus.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Impossible de charger le fichier image.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Enregistrer l’image sous</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Sélectionner une image</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Succès débloqué !</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Rogner</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Marge intérieure intelligente</value>
+  </data>
 </root>

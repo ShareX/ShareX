@@ -1255,5 +1255,8090 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_DuplicateHotkey", resourceCulture);
             }
         }
+        public static string EmojiCatalog_Group_SmileysEmotion {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Group_SmileysEmotion", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Group_PeopleBody {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Group_PeopleBody", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Group_AnimalsNature {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Group_AnimalsNature", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Group_FoodDrink {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Group_FoodDrink", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Group_TravelPlaces {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Group_TravelPlaces", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Group_Activities {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Group_Activities", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Group_Objects {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Group_Objects", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Group_Symbols {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Group_Symbols", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Group_Flags {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Group_Flags", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F600 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F600", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F603 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F603", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F604 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F604", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F601 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F601", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F606 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F606", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F605 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F605", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F923 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F923", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F602 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F602", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F642 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F642", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F643 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F643", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAE0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAE0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F609 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F609", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F60A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F60A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F607 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F607", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F970 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F970", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F60D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F60D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F929 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F929", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F618 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F618", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F617 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F617", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_263A_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_263A_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F61A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F61A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F619 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F619", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F972 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F972", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F60B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F60B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F61B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F61B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F61C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F61C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F92A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F92A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F61D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F61D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F911 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F911", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F917 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F917", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F92D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F92D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAE2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAE2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAE3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAE3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F92B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F92B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F914 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F914", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAE1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAE1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F910 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F910", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F928 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F928", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F610 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F610", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F611 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F611", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F636 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F636", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAE5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAE5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F636_200D_1F32B_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F636_200D_1F32B_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F60F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F60F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F612 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F612", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F644 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F644", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F62C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F62C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F62E_200D_1F4A8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F62E_200D_1F4A8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F925 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F925", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAE8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAE8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F642_200D_2194_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F642_200D_2194_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F642_200D_2195_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F642_200D_2195_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F60C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F60C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F614 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F614", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F62A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F62A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F924 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F924", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F634 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F634", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F637 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F637", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F912 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F912", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F915 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F915", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F922 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F922", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F92E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F92E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F927 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F927", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F975 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F975", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F976 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F976", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F974 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F974", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F635 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F635", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F635_200D_1F4AB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F635_200D_1F4AB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F92F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F92F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F920 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F920", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F973 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F973", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F978 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F978", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F60E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F60E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F913 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F913", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F615 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F615", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAE4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAE4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F61F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F61F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F641 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F641", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2639_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2639_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F62E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F62E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F62F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F62F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F632 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F632", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F633 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F633", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F97A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F97A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F979 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F979", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F626 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F626", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F627 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F627", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F628 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F628", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F630 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F630", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F625 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F625", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F622 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F622", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F62D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F62D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F631 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F631", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F616 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F616", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F623 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F623", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F61E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F61E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F613 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F613", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F629 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F629", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F62B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F62B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F971 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F971", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F624 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F624", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F621 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F621", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F620 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F620", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F92C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F92C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F608 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F608", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F47F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F47F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F480 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F480", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2620_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2620_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4A9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4A9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F921 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F921", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F479 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F479", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F47A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F47A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F47B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F47B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F47D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F47D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F47E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F47E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F916 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F916", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F63A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F63A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F638 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F638", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F639 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F639", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F63B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F63B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F63C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F63C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F63D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F63D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F640 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F640", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F63F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F63F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F63E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F63E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F648 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F648", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F649 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F649", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F64A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F64A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F48C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F48C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F498 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F498", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F49D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F49D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F496 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F496", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F497 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F497", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F493 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F493", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F49E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F49E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F495 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F495", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F49F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F49F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2763_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2763_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F494 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F494", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2764_FE0F_200D_1F525 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2764_FE0F_200D_1F525", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2764_FE0F_200D_1FA79 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2764_FE0F_200D_1FA79", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2764_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2764_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA77 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA77", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9E1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9E1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F49B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F49B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F49A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F49A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F499 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F499", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA75 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA75", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F49C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F49C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F90E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F90E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5A4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5A4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA76 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA76", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F90D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F90D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F48B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F48B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4AF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4AF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4A2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4A2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4A5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4A5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4AB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4AB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4A6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4A6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4A8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4A8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F573_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F573_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4AC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4AC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F441_FE0F_200D_1F5E8_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F441_FE0F_200D_1F5E8_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5E8_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5E8_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5EF_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5EF_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4AD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4AD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4A4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4A4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F44B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F44B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F91A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F91A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F590_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F590_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_270B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_270B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F596 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F596", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAF1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAF1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAF2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAF2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAF3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAF3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAF4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAF4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAF7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAF7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAF8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAF8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F44C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F44C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F90C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F90C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F90F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F90F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_270C_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_270C_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F91E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F91E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAF0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAF0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F91F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F91F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F918 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F918", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F919 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F919", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F448 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F448", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F449 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F449", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F446 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F446", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F595 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F595", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F447 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F447", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_261D_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_261D_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAF5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAF5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F44D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F44D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F44E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F44E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_270A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_270A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F44A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F44A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F91B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F91B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F91C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F91C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F44F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F44F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F64C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F64C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAF6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAF6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F450 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F450", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F932 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F932", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F91D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F91D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F64F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F64F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_270D_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_270D_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F485 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F485", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F933 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F933", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4AA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4AA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9BE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9BE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9BF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9BF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9B5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9B5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9B6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9B6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F442 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F442", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9BB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9BB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F443 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F443", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9E0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9E0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAC0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAC0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAC1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAC1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9B7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9B7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9B4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9B4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F440 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F440", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F441_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F441_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F445 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F445", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F444 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F444", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAE6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAE6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F476 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F476", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F466 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F466", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F467 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F467", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F471 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F471", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D4_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D4_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D4_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D4_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F9B0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F9B0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F9B1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F9B1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F9B3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F9B3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F9B2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F9B2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F9B0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F9B0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F9B0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F9B0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F9B1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F9B1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F9B1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F9B1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F9B3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F9B3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F9B3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F9B3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F9B2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F9B2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F9B2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F9B2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F471_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F471_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F471_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F471_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F474 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F474", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F475 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F475", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F64D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F64D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F64D_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F64D_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F64D_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F64D_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F64E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F64E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F64E_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F64E_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F64E_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F64E_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F645 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F645", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F645_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F645_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F645_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F645_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F646 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F646", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F646_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F646_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F646_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F646_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F481 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F481", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F481_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F481_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F481_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F481_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F64B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F64B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F64B_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F64B_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F64B_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F64B_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CF_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CF_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CF_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CF_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F647 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F647", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F647_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F647_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F647_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F647_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F926 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F926", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F926_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F926_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F926_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F926_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F937 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F937", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F937_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F937_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F937_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F937_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_2695_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_2695_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_2695_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_2695_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_2695_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_2695_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F393 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F393", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F393 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F393", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F393 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F393", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F3EB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F3EB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F3EB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F3EB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F3EB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F3EB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_2696_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_2696_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_2696_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_2696_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_2696_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_2696_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F33E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F33E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F33E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F33E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F33E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F33E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F373 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F373", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F373 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F373", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F373 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F373", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F527 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F527", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F527 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F527", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F527 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F527", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F3ED {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F3ED", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F3ED {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F3ED", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F3ED {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F3ED", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F4BC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F4BC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F4BC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F4BC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F4BC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F4BC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F52C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F52C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F52C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F52C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F52C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F52C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F4BB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F4BB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F4BB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F4BB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F4BB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F4BB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F3A4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F3A4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F3A4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F3A4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F3A4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F3A4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F3A8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F3A8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F3A8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F3A8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F3A8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F3A8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_2708_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_2708_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_2708_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_2708_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_2708_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_2708_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F680 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F680", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F680 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F680", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F680 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F680", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F692 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F692", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F692 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F692", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F692 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F692", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F46E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F46E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F46E_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F46E_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F46E_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F46E_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F575_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F575_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F575_FE0F_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F575_FE0F_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F575_FE0F_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F575_FE0F_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F482 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F482", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F482_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F482_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F482_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F482_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F977 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F977", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F477 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F477", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F477_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F477_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F477_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F477_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAC5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAC5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F934 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F934", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F478 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F478", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F473 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F473", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F473_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F473_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F473_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F473_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F472 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F472", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F935 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F935", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F935_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F935_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F935_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F935_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F470 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F470", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F470_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F470_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F470_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F470_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F930 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F930", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAC3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAC3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAC4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAC4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F931 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F931", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F37C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F37C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F37C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F37C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F37C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F37C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F47C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F47C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F385 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F385", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F936 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F936", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F384 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F384", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9B8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9B8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9B8_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9B8_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9B8_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9B8_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9B9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9B9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9B9_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9B9_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9B9_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9B9_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D9_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D9_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D9_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D9_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DA_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DA_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DA_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DA_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DB_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DB_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DB_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DB_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DC_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DC_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DC_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DC_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DD_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DD_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DD_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DD_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DE_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DE_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DE_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DE_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DF_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DF_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9DF_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9DF_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F486 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F486", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F486_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F486_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F486_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F486_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F487 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F487", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F487_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F487_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F487_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F487_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B6_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B6_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B6_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B6_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B6_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B6_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B6_200D_2640_FE0F_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B6_200D_2640_FE0F_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B6_200D_2642_FE0F_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B6_200D_2642_FE0F_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CD_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CD_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CD_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CD_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CE_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CE_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CE_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CE_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CE_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CE_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CE_200D_2640_FE0F_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CE_200D_2640_FE0F_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CE_200D_2642_FE0F_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CE_200D_2642_FE0F_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F9AF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F9AF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F9AF_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F9AF_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F9AF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F9AF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F9AF_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F9AF_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F9AF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F9AF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F9AF_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F9AF_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F9BC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F9BC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F9BC_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F9BC_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F9BC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F9BC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F9BC_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F9BC_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F9BC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F9BC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F9BC_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F9BC_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F9BD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F9BD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D1_200D_1F9BD_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D1_200D_1F9BD_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F9BD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F9BD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F468_200D_1F9BD_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F468_200D_1F9BD_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F9BD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F9BD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F469_200D_1F9BD_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F469_200D_1F9BD_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C3_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C3_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C3_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C3_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C3_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C3_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C3_200D_2640_FE0F_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C3_200D_2640_FE0F_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C3_200D_2642_FE0F_200D_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C3_200D_2642_FE0F_200D_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F483 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F483", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F57A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F57A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F574_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F574_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F46F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F46F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F46F_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F46F_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F46F_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F46F_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D6_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D6_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D6_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D6_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D7_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D7_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D7_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D7_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F93A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F93A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26F7_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26F7_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3CC_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3CC_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3CC_FE0F_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3CC_FE0F_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3CC_FE0F_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3CC_FE0F_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C4_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C4_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C4_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C4_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6A3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6A3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6A3_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6A3_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6A3_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6A3_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3CA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3CA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3CA_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3CA_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3CA_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3CA_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26F9_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26F9_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26F9_FE0F_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26F9_FE0F_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26F9_FE0F_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26F9_FE0F_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3CB_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3CB_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3CB_FE0F_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3CB_FE0F_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3CB_FE0F_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3CB_FE0F_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B4_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B4_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B4_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B4_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B5_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B5_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B5_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B5_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F938 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F938", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F938_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F938_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F938_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F938_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F93C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F93C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F93C_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F93C_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F93C_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F93C_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F93D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F93D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F93D_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F93D_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F93D_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F93D_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F93E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F93E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F93E_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F93E_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F93E_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F93E_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F939 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F939", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F939_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F939_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F939_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F939_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D8_200D_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D8_200D_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9D8_200D_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9D8_200D_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6C0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6C0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6CC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6CC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5E3_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5E3_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F464 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F464", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F465 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F465", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAC2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAC2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F463 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F463", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F435 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F435", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F412 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F412", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F98D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F98D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9A7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9A7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F436 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F436", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F415 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F415", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9AE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9AE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F415_200D_1F9BA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F415_200D_1F9BA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F429 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F429", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F43A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F43A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F98A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F98A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F99D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F99D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F431 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F431", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F408 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F408", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F408_200D_2B1B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F408_200D_2B1B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F981 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F981", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F42F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F42F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F405 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F405", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F406 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F406", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F434 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F434", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FACE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FACE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FACF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FACF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F40E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F40E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F984 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F984", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F993 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F993", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F98C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F98C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9AC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9AC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F42E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F42E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F402 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F402", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F403 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F403", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F404 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F404", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F437 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F437", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F416 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F416", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F417 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F417", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F43D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F43D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F40F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F40F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F411 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F411", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F410 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F410", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F42A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F42A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F42B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F42B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F999 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F999", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F992 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F992", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F418 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F418", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9A3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9A3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F98F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F98F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F99B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F99B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F42D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F42D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F401 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F401", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F400 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F400", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F439 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F439", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F430 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F430", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F407 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F407", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F43F_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F43F_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9AB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9AB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F994 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F994", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F987 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F987", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F43B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F43B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F43B_200D_2744_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F43B_200D_2744_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F428 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F428", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F43C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F43C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9A5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9A5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9A6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9A6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9A8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9A8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F998 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F998", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9A1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9A1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F43E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F43E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F983 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F983", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F414 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F414", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F413 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F413", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F423 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F423", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F424 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F424", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F425 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F425", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F426 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F426", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F427 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F427", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F54A_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F54A_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F985 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F985", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F986 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F986", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9A2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9A2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F989 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F989", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9A4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9A4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAB6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAB6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9A9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9A9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F99A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F99A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F99C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F99C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FABD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FABD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F426_200D_2B1B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F426_200D_2B1B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FABF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FABF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F426_200D_1F525 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F426_200D_1F525", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F438 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F438", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F40A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F40A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F422 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F422", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F98E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F98E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F40D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F40D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F432 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F432", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F409 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F409", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F995 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F995", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F996 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F996", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F433 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F433", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F40B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F40B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F42C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F42C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9AD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9AD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F41F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F41F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F420 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F420", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F421 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F421", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F988 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F988", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F419 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F419", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F41A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F41A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAB8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAB8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FABC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FABC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F980 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F980", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F99E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F99E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F990 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F990", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F991 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F991", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9AA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9AA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F40C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F40C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F98B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F98B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F41B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F41B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F41C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F41C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F41D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F41D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAB2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAB2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F41E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F41E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F997 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F997", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAB3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAB3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F577_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F577_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F578_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F578_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F982 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F982", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F99F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F99F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAB0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAB0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAB1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAB1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9A0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9A0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F490 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F490", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F338 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F338", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4AE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4AE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAB7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAB7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3F5_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3F5_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F339 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F339", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F940 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F940", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F33A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F33A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F33B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F33B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F33C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F33C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F337 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F337", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FABB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FABB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F331 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F331", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAB4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAB4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F332 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F332", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F333 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F333", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F334 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F334", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F335 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F335", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F33E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F33E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F33F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F33F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2618_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2618_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F340 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F340", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F341 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F341", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F342 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F342", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F343 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F343", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAB9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAB9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FABA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FABA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F344 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F344", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F347 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F347", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F348 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F348", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F349 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F349", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F34A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F34A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F34B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F34B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F34B_200D_1F7E9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F34B_200D_1F7E9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F34C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F34C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F34D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F34D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F96D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F96D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F34E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F34E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F34F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F34F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F350 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F350", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F351 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F351", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F352 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F352", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F353 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F353", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAD0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAD0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F95D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F95D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F345 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F345", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAD2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAD2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F965 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F965", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F951 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F951", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F346 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F346", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F954 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F954", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F955 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F955", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F33D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F33D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F336_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F336_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAD1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAD1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F952 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F952", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F96C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F96C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F966 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F966", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9C4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9C4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9C5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9C5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F95C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F95C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAD8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAD8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F330 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F330", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FADA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FADA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FADB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FADB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F344_200D_1F7EB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F344_200D_1F7EB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F35E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F35E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F950 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F950", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F956 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F956", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAD3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAD3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F968 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F968", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F96F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F96F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F95E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F95E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9C7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9C7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9C0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9C0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F356 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F356", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F357 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F357", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F969 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F969", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F953 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F953", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F354 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F354", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F35F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F35F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F355 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F355", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F32D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F32D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F96A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F96A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F32E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F32E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F32F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F32F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAD4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAD4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F959 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F959", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9C6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9C6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F95A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F95A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F373 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F373", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F958 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F958", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F372 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F372", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAD5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAD5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F963 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F963", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F957 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F957", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F37F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F37F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9C8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9C8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9C2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9C2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F96B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F96B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F371 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F371", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F358 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F358", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F359 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F359", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F35A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F35A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F35B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F35B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F35C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F35C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F35D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F35D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F360 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F360", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F362 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F362", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F363 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F363", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F364 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F364", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F365 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F365", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F96E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F96E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F361 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F361", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F95F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F95F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F960 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F960", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F961 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F961", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F366 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F366", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F367 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F367", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F368 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F368", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F369 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F369", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F36A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F36A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F382 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F382", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F370 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F370", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9C1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9C1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F967 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F967", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F36B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F36B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F36C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F36C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F36D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F36D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F36E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F36E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F36F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F36F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F37C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F37C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F95B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F95B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2615 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2615", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAD6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAD6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F375 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F375", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F376 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F376", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F37E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F37E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F377 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F377", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F378 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F378", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F379 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F379", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F37A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F37A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F37B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F37B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F942 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F942", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F943 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F943", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAD7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAD7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F964 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F964", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9C3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9C3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9C9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9C9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9CA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9CA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F962 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F962", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F37D_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F37D_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F374 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F374", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F944 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F944", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F52A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F52A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAD9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAD9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3FA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3FA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F30D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F30D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F30E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F30E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F30F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F30F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F310 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F310", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5FA_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5FA_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5FE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5FE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9ED {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9ED", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3D4_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3D4_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26F0_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26F0_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F30B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F30B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5FB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5FB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3D5_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3D5_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3D6_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3D6_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3DC_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3DC_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3DD_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3DD_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3DE_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3DE_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3DF_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3DF_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3DB_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3DB_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3D7_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3D7_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9F1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9F1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAA8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAA8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAB5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAB5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6D6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6D6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3D8_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3D8_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3DA_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3DA_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3E0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3E0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3E1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3E1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3E2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3E2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3E4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3E4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3E5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3E5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3E6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3E6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3E8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3E8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3E9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3E9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3EA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3EA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3EB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3EB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3EC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3EC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3ED {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3ED", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3EF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3EF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3F0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3F0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F492 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F492", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5FC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5FC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5FD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5FD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26EA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26EA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F54C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F54C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6D5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6D5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F54D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F54D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26E9_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26E9_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F54B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F54B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26F2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26F2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26FA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26FA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F301 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F301", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F303 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F303", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3D9_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3D9_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F304 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F304", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F305 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F305", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F306 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F306", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F307 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F307", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F309 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F309", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2668_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2668_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3A0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3A0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6DD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6DD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3A1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3A1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3A2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3A2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F488 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F488", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3AA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3AA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F682 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F682", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F683 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F683", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F684 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F684", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F685 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F685", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F686 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F686", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F687 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F687", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F688 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F688", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F689 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F689", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F68A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F68A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F69D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F69D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F69E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F69E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F68B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F68B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F68C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F68C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F68D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F68D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F68E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F68E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F690 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F690", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F691 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F691", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F692 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F692", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F693 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F693", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F694 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F694", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F695 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F695", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F696 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F696", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F697 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F697", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F698 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F698", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F699 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F699", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6FB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6FB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F69A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F69A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F69B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F69B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F69C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F69C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3CE_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3CE_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3CD_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3CD_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6F5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6F5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9BD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9BD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9BC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9BC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6FA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6FA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6F4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6F4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6F9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6F9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6FC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6FC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F68F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F68F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6E3_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6E3_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6E4_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6E4_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6E2_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6E2_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26FD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26FD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6DE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6DE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6A8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6A8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6A5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6A5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6A6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6A6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6D1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6D1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6A7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6A7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2693 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2693", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6DF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6DF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26F5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26F5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6F6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6F6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6A4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6A4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6F3_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6F3_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26F4_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26F4_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6E5_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6E5_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6A2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6A2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2708_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2708_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6E9_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6E9_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6EB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6EB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6EC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6EC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA82 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA82", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4BA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4BA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F681 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F681", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F69F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F69F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6A0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6A0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6A1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6A1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6F0_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6F0_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F680 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F680", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6F8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6F8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6CE_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6CE_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9F3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9F3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_231B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_231B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23F3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23F3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_231A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_231A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23F0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23F0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23F1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23F1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23F2_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23F2_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F570_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F570_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F55B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F55B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F567 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F567", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F550 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F550", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F55C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F55C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F551 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F551", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F55D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F55D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F552 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F552", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F55E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F55E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F553 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F553", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F55F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F55F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F554 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F554", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F560 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F560", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F555 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F555", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F561 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F561", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F556 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F556", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F562 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F562", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F557 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F557", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F563 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F563", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F558 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F558", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F564 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F564", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F559 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F559", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F565 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F565", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F55A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F55A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F566 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F566", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F311 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F311", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F312 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F312", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F313 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F313", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F314 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F314", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F315 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F315", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F316 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F316", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F317 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F317", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F318 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F318", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F319 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F319", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F31A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F31A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F31B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F31B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F31C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F31C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F321_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F321_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2600_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2600_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F31D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F31D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F31E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F31E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA90 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA90", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2B50 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2B50", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F31F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F31F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F320 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F320", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F30C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F30C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2601_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2601_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26C5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26C5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26C8_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26C8_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F324_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F324_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F325_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F325_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F326_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F326_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F327_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F327_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F328_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F328_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F329_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F329_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F32A_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F32A_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F32B_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F32B_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F32C_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F32C_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F300 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F300", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F308 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F308", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F302 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F302", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2602_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2602_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2614 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2614", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26F1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26F1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26A1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26A1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2744_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2744_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2603_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2603_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26C4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26C4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2604_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2604_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F525 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F525", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4A7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4A7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F30A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F30A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F383 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F383", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F384 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F384", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F386 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F386", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F387 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F387", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9E8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9E8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2728 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2728", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F388 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F388", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F389 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F389", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F38A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F38A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F38B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F38B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F38D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F38D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F38E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F38E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F38F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F38F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F390 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F390", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F391 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F391", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9E7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9E7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F380 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F380", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F381 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F381", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F397_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F397_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F39F_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F39F_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3AB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3AB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F396_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F396_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F947 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F947", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F948 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F948", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F949 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F949", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26BD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26BD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26BE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26BE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F94E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F94E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3D0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3D0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3BE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3BE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F94F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F94F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3B3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3B3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3CF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3CF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3D1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3D1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3D2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3D2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F94D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F94D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3D3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3D3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3F8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3F8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F94A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F94A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F94B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F94B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F945 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F945", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26F3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26F3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26F8_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26F8_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3A3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3A3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F93F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F93F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3BD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3BD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3BF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3BF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6F7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6F7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F94C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F94C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3AF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3AF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA80 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA80", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA81 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA81", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F52B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F52B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3B1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3B1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F52E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F52E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA84 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA84", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3AE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3AE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F579_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F579_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3B0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3B0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3B2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3B2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9E9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9E9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9F8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9F8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA85 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA85", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAA9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAA9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA86 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA86", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2660_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2660_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2665_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2665_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2666_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2666_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2663_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2663_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_265F_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_265F_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F0CF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F0CF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F004 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F004", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3B4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3B4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3AD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3AD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5BC_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5BC_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3A8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3A8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9F5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9F5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAA1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAA1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9F6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9F6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAA2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAA2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F453 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F453", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F576_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F576_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F97D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F97D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F97C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F97C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9BA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9BA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F454 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F454", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F455 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F455", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F456 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F456", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9E4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9E4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9E5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9E5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9E6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9E6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F457 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F457", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F458 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F458", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F97B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F97B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA71 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA71", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA72 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA72", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA73 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA73", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F459 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F459", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F45A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F45A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAAD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAAD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F45B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F45B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F45C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F45C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F45D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F45D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6CD_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6CD_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F392 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F392", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA74 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA74", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F45E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F45E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F45F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F45F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F97E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F97E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F97F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F97F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F460 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F460", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F461 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F461", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA70 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA70", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F462 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F462", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAAE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAAE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F451 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F451", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F452 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F452", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3A9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3A9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F393 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F393", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9E2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9E2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA96 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA96", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26D1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26D1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4FF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4FF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F484 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F484", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F48D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F48D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F48E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F48E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F507 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F507", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F508 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F508", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F509 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F509", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F50A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F50A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4E2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4E2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4EF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4EF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F514 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F514", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F515 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F515", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3BC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3BC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3B5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3B5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3B6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3B6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F399_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F399_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F39A_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F39A_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F39B_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F39B_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3A4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3A4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3A7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3A7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4FB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4FB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3B7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3B7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3BA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3BA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA97 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA97", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3B8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3B8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3B9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3B9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3BB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3BB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA95 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA95", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F941 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F941", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA98 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA98", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA87 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA87", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA88 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA88", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4F1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4F1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4F2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4F2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_260E_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_260E_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4DE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4DE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4DF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4DF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4E0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4E0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F50B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F50B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAAB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAAB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F50C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F50C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4BB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4BB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5A5_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5A5_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5A8_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5A8_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2328_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2328_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5B1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5B1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5B2_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5B2_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4BD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4BD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4BE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4BE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4BF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4BF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4C0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4C0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9EE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9EE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3A5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3A5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F39E_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F39E_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4FD_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4FD_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3AC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3AC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4FA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4FA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4F7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4F7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4F8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4F8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4F9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4F9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4FC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4FC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F50D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F50D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F50E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F50E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F56F_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F56F_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4A1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4A1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F526 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F526", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3EE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3EE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA94 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA94", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4D4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4D4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4D5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4D5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4D6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4D6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4D7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4D7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4D8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4D8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4D9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4D9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4DA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4DA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4D3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4D3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4D2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4D2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4C3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4C3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4DC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4DC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4C4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4C4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4F0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4F0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5DE_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5DE_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4D1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4D1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F516 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F516", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3F7_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3F7_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA99 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA99", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4B0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4B0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4B4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4B4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4B5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4B5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4B6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4B6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4B7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4B7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4B8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4B8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4B3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4B3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9FE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9FE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4B9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4B9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2709_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2709_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4E7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4E7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4E8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4E8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4E9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4E9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4E4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4E4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4E5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4E5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4E6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4E6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4EB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4EB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4EA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4EA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4EC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4EC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4ED {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4ED", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4EE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4EE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5F3_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5F3_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_270F_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_270F_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2712_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2712_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F58B_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F58B_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F58A_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F58A_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F58C_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F58C_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F58D_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F58D_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4DD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4DD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4BC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4BC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4C1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4C1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4C2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4C2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5C2_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5C2_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4C5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4C5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4C6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4C6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5D2_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5D2_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5D3_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5D3_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4C7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4C7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4C8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4C8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4C9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4C9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4CA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4CA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4CB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4CB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4CC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4CC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4CD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4CD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4CE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4CE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F587_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F587_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4CF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4CF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4D0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4D0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2702_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2702_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5C3_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5C3_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5C4_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5C4_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5D1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5D1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F512 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F512", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F513 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F513", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F50F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F50F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F510 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F510", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F511 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F511", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5DD_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5DD_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F528 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F528", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA93 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA93", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26CF_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26CF_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2692_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2692_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6E0_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6E0_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5E1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5E1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2694_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2694_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4A3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4A3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA83 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA83", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3F9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3F9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6E1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6E1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA9A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA9A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F527 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F527", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA9B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA9B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F529 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F529", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2699_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2699_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5DC_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5DC_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2696_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2696_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9AF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9AF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F517 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F517", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26D3_FE0F_200D_1F4A5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26D3_FE0F_200D_1F4A5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26D3_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26D3_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA9D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA9D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9F0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9F0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9F2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9F2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA9C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA9C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2697_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2697_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9EA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9EA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9EB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9EB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9EC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9EC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F52C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F52C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F52D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F52D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4E1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4E1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F489 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F489", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA78 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA78", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F48A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F48A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA79 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA79", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA7C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA7C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA7A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA7A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA7B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA7B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6AA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6AA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6D7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6D7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA9E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA9E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA9F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA9F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6CF_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6CF_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6CB_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6CB_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA91 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA91", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6BD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6BD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAA0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAA0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6BF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6BF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6C1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6C1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAA4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAA4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FA92 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FA92", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9F4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9F4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9F7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9F7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9F9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9F9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9FA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9FA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9FB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9FB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAA3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAA3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9FC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9FC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAE7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAE7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAA5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAA5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9FD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9FD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9EF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9EF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6D2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6D2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6AC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6AC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26B0_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26B0_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAA6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAA6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26B1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26B1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F9FF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F9FF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAAC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAAC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F5FF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F5FF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAA7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAA7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAAA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAAA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3E7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3E7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6AE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6AE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_267F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_267F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6BA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6BA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6BB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6BB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6BC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6BC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6BE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6BE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6C2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6C2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6C3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6C3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6C4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6C4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6C5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6C5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26A0_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26A0_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26D4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26D4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6AB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6AB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6AD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6AD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6AF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6AF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6B7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6B7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4F5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4F5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F51E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F51E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2622_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2622_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2623_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2623_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2B06_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2B06_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2197_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2197_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_27A1_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_27A1_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2198_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2198_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2B07_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2B07_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2199_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2199_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2B05_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2B05_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2196_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2196_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2195_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2195_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2194_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2194_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_21A9_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_21A9_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_21AA_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_21AA_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2934_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2934_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2935_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2935_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F503 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F503", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F504 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F504", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F519 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F519", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F51A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F51A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F51B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F51B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F51C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F51C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F51D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F51D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6D0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6D0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_269B_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_269B_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F549_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F549_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2721_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2721_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2638_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2638_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_262F_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_262F_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_271D_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_271D_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2626_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2626_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_262A_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_262A_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_262E_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_262E_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F54E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F54E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F52F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F52F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1FAAF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1FAAF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2648 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2648", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2649 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2649", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_264A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_264A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_264B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_264B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_264C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_264C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_264D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_264D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_264E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_264E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_264F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_264F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2650 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2650", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2651 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2651", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2652 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2652", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2653 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2653", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26CE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26CE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F500 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F500", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F501 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F501", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F502 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F502", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_25B6_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_25B6_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23E9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23E9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23ED_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23ED_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23EF_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23EF_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_25C0_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_25C0_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23EA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23EA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23EE_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23EE_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F53C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F53C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23EB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23EB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F53D {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F53D", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23EC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23EC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23F8_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23F8_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23F9_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23F9_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23FA_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23FA_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_23CF_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_23CF_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3A6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3A6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F505 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F505", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F506 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F506", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4F6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4F6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6DC {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6DC", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4F3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4F3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4F4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4F4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2640_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2640_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2642_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2642_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26A7_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26A7_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2716_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2716_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2795 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2795", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2796 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2796", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2797 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2797", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7F0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7F0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_267E_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_267E_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_203C_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_203C_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2049_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2049_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2753 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2753", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2754 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2754", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2755 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2755", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2757 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2757", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_3030_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_3030_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4B1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4B1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4B2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4B2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2695_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2695_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_267B_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_267B_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_269C_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_269C_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F531 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F531", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4DB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4DB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F530 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F530", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2B55 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2B55", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2705 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2705", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2611_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2611_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2714_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2714_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_274C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_274C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_274E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_274E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_27B0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_27B0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_27BF {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_27BF", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_303D_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_303D_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2733_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2733_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2734_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2734_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2747_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2747_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_00A9_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_00A9_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_00AE_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_00AE_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2122_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2122_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_0023_FE0F_20E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_0023_FE0F_20E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_002A_FE0F_20E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_002A_FE0F_20E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_0030_FE0F_20E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_0030_FE0F_20E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_0031_FE0F_20E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_0031_FE0F_20E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_0032_FE0F_20E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_0032_FE0F_20E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_0033_FE0F_20E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_0033_FE0F_20E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_0034_FE0F_20E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_0034_FE0F_20E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_0035_FE0F_20E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_0035_FE0F_20E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_0036_FE0F_20E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_0036_FE0F_20E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_0037_FE0F_20E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_0037_FE0F_20E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_0038_FE0F_20E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_0038_FE0F_20E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_0039_FE0F_20E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_0039_FE0F_20E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F51F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F51F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F520 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F520", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F521 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F521", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F522 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F522", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F523 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F523", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F524 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F524", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F170_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F170_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F18E {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F18E", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F171_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F171_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F191 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F191", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F192 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F192", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F193 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F193", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2139_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2139_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F194 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F194", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_24C2_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_24C2_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F195 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F195", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F196 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F196", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F17E_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F17E_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F197 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F197", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F17F_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F17F_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F198 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F198", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F199 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F199", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F19A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F19A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F201 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F201", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F202_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F202_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F237_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F237_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F236 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F236", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F22F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F22F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F250 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F250", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F239 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F239", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F21A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F21A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F232 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F232", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F251 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F251", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F238 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F238", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F234 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F234", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F233 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F233", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_3297_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_3297_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_3299_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_3299_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F23A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F23A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F235 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F235", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F534 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F534", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7E0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7E0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7E1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7E1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7E2 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7E2", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F535 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F535", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7E3 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7E3", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7E4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7E4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26AB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26AB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_26AA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_26AA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7E5 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7E5", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7E7 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7E7", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7E8 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7E8", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7E9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7E9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7E6 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7E6", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7EA {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7EA", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F7EB {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F7EB", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2B1B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2B1B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_2B1C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_2B1C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_25FC_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_25FC_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_25FB_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_25FB_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_25FE {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_25FE", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_25FD {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_25FD", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_25AA_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_25AA_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_25AB_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_25AB_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F536 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F536", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F537 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F537", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F538 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F538", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F539 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F539", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F53A {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F53A", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F53B {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F53B", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F4A0 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F4A0", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F518 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F518", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F533 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F533", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F532 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F532", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3C1 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3C1", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F6A9 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F6A9", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F38C {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F38C", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3F4 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3F4", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3F3_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3F3_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3F3_FE0F_200D_1F308 {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3F3_FE0F_200D_1F308", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3F3_FE0F_200D_26A7_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3F3_FE0F_200D_26A7_FE0F", resourceCulture);
+            }
+        }
+        public static string EmojiCatalog_Name_1F3F4_200D_2620_FE0F {
+            get {
+                return ResourceManager.GetString("EmojiCatalog_Name_1F3F4_200D_2620_FE0F", resourceCulture);
+            }
+        }
+        public static string EditorView_SelectBackgroundImage {
+            get {
+                return ResourceManager.GetString("EditorView_SelectBackgroundImage", resourceCulture);
+            }
+        }
+        public static string EditorView_OpenImage {
+            get {
+                return ResourceManager.GetString("EditorView_OpenImage", resourceCulture);
+            }
+        }
+        public static string EditorView_FailedToLoadImageFromClipboard {
+            get {
+                return ResourceManager.GetString("EditorView_FailedToLoadImageFromClipboard", resourceCulture);
+            }
+        }
+        public static string EditorView_ClipboardDoesNotContainImage {
+            get {
+                return ResourceManager.GetString("EditorView_ClipboardDoesNotContainImage", resourceCulture);
+            }
+        }
+        public static string EditorView_UrlDoesNotPointToValidImage {
+            get {
+                return ResourceManager.GetString("EditorView_UrlDoesNotPointToValidImage", resourceCulture);
+            }
+        }
+        public static string EditorView_FailedToDownloadImageFormat {
+            get {
+                return ResourceManager.GetString("EditorView_FailedToDownloadImageFormat", resourceCulture);
+            }
+        }
+        public static string EditorView_FileNoLongerExistsFormat {
+            get {
+                return ResourceManager.GetString("EditorView_FileNoLongerExistsFormat", resourceCulture);
+            }
+        }
+        public static string EditorView_FailedToLoadImageFileFormat {
+            get {
+                return ResourceManager.GetString("EditorView_FailedToLoadImageFileFormat", resourceCulture);
+            }
+        }
+        public static string EditorView_SaveImageAs {
+            get {
+                return ResourceManager.GetString("EditorView_SaveImageAs", resourceCulture);
+            }
+        }
+        public static string EditorView_SelectImage {
+            get {
+                return ResourceManager.GetString("EditorView_SelectImage", resourceCulture);
+            }
+        }
+        public static string EditorView_AchievementUnlocked {
+            get {
+                return ResourceManager.GetString("EditorView_AchievementUnlocked", resourceCulture);
+            }
+        }
+        public static string EditorView_Crop {
+            get {
+                return ResourceManager.GetString("EditorView_Crop", resourceCulture);
+            }
+        }
+        public static string EditorView_SmartPadding {
+            get {
+                return ResourceManager.GetString("EditorView_SmartPadding", resourceCulture);
+            }
+        }
     }
 }

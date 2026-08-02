@@ -751,4 +751,46 @@
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} و {1} از یک میانبر یکسان استفاده می‌کنند ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>انتخاب تصویر پس‌زمینه</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>باز کردن تصویر</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>بارگیری تصویر از کلیپ‌بورد ناموفق بود.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>بارگیری تصویر از کلیپ‌بورد ناموفق بود.
+کلیپ‌بورد حاوی تصویر نیست.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>نشانی URL به تصویر معتبری اشاره نمی‌کند.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>بارگیری تصویر ناموفق بود: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>فایل دیگر وجود ندارد.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>بارگیری فایل تصویر ناموفق بود.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>ذخیره تصویر به‌عنوان</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>انتخاب تصویر</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>دستاورد باز شد!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>برش</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>فاصله‌گذاری هوشمند</value>
+  </data>
 </root>

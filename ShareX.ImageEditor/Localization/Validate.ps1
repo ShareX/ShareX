@@ -3,6 +3,7 @@ $ErrorActionPreference = 'Stop'
 $localizationDirectory = $PSScriptRoot
 $projectDirectory = Split-Path $localizationDirectory -Parent
 $defaultPath = Join-Path $localizationDirectory 'Strings.resx'
+$emojiCatalogPath = Join-Path $projectDirectory 'Assets\emoji-catalog.json'
 $cultureFiles = @(Get-ChildItem $localizationDirectory -Filter 'Strings.*.resx' | Sort-Object Name)
 $strictUtf8 = [Text.UTF8Encoding]::new($false, $true)
 $legacyEncodings = @(
@@ -41,6 +42,16 @@ $areas = @(
         )
     }
     [pscustomobject]@{
+        Name = 'Emoji catalog'
+        Prefix = 'EmojiCatalog_'
+        DataDriven = $true
+        Sources = @(
+            'Presentation/Emoji/EmojiCatalogEntry.cs'
+            'Presentation/Views/EmojiPickerDialogView.axaml'
+            'Presentation/ViewModels/EmojiPickerDialogViewModel.cs'
+        )
+    }
+    [pscustomobject]@{
         Name = 'Insert image dialog'
         Prefix = 'InsertImageDialogView_'
         Sources = @(
@@ -66,7 +77,13 @@ $areas = @(
     [pscustomobject]@{
         Name = 'Editor view'
         Prefix = 'EditorView_'
-        Sources = @('Presentation/Views/EditorView.axaml')
+        Sources = @(
+            'Presentation/Views/EditorView.axaml'
+            'Presentation/Views/EditorView.axaml.cs'
+            'Presentation/Views/EditorView.EasterEggs.cs'
+            'Presentation/Views/EditorView.ImageInsert.cs'
+            'Presentation/Controllers/EditorInputController.cs'
+        )
     }
     [pscustomobject]@{
         Name = 'Effect browser shell'
@@ -139,6 +156,20 @@ function Get-Placeholders([string]$value)
 $errors = [Collections.Generic.List[string]]::new()
 $default = Read-Resources $defaultPath
 
+$emojiCatalogText = [IO.File]::ReadAllText($emojiCatalogPath, $strictUtf8)
+if ($emojiCatalogText -match '[\u0080-\u009F\u00C2\u00C3\u00E2\uFFFD]')
+{
+    $errors.Add('Emoji catalog contains mojibake or invalid control characters.')
+}
+try
+{
+    $null = $emojiCatalogText | ConvertFrom-Json
+}
+catch
+{
+    $errors.Add("Emoji catalog is not valid JSON: $($_.Exception.Message)")
+}
+
 if ($cultureFiles.Count -ne 23)
 {
     $errors.Add("Expected 23 localized resource files, found $($cultureFiles.Count).")
@@ -147,8 +178,14 @@ if ($cultureFiles.Count -ne 23)
 foreach ($file in $cultureFiles)
 {
     $localized = Read-Resources $file.FullName
+    $isTurkish = $file.Name -eq 'Strings.tr.resx'
     foreach ($key in $default.Keys)
     {
+        $isEmojiCatalogKey = $key.StartsWith('EmojiCatalog_', [StringComparison]::Ordinal)
+        if ($isEmojiCatalogKey -and -not $isTurkish)
+        {
+            continue
+        }
         if (-not $localized.ContainsKey($key))
         {
             $errors.Add("$($file.Name): missing '$key'.")
@@ -171,6 +208,10 @@ foreach ($file in $cultureFiles)
         {
             $errors.Add("$($file.Name): unexpected '$key'.")
         }
+        elseif (-not $isTurkish -and $key.StartsWith('EmojiCatalog_', [StringComparison]::Ordinal))
+        {
+            $errors.Add("$($file.Name): '$key' must use the default English fallback.")
+        }
     }
 }
 
@@ -188,14 +229,18 @@ $rows = foreach ($area in $areas)
         $text += [IO.File]::ReadAllText($path)
     }
     $keys = @($default.Keys | Where-Object { $_.StartsWith($area.Prefix, [StringComparison]::Ordinal) })
-    foreach ($key in $keys)
+    if (-not $area.DataDriven)
     {
-        if ($text -notmatch [regex]::Escape("Strings.$key"))
+        foreach ($key in $keys)
         {
-            $errors.Add("$($area.Name): '$key' is not referenced.")
+            if ($text -notmatch [regex]::Escape("Strings.$key"))
+            {
+                $errors.Add("$($area.Name): '$key' is not referenced.")
+            }
         }
     }
-    [pscustomobject]@{ Area = $area.Name; Sources = $area.Sources.Count; Keys = $keys.Count; Cultures = $cultureFiles.Count }
+    $cultureCount = if ($area.Prefix -eq 'EmojiCatalog_') { 1 } else { $cultureFiles.Count }
+    [pscustomobject]@{ Area = $area.Name; Sources = $area.Sources.Count; Keys = $keys.Count; Cultures = $cultureCount }
 }
 
 $rows | Format-Table -AutoSize

@@ -750,4 +750,46 @@ Opsi bayangan (Klik kanan)</value>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} dan {1} menggunakan pintasan yang sama ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Pilih gambar latar belakang</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Buka gambar</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Gagal memuat gambar dari papan klip.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Gagal memuat gambar dari papan klip.
+Papan klip tidak berisi gambar.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>URL tidak mengarah ke gambar yang valid.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Gagal mengunduh gambar: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>File sudah tidak ada.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Gagal memuat file gambar.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Simpan gambar sebagai</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Pilih gambar</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Pencapaian terbuka!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Pangkas</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Padding pintar</value>
+  </data>
 </root>

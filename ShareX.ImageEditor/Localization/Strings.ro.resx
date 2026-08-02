@@ -750,4 +750,46 @@ Opțiuni umbră (Clic dreapta)</value>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} și {1} folosesc aceeași scurtătură ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Selectează imaginea de fundal</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Deschide imaginea</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Imaginea nu a putut fi încărcată din clipboard.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Imaginea nu a putut fi încărcată din clipboard.
+Clipboardul nu conține nicio imagine.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>Adresa URL nu indică o imagine validă.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Imaginea nu a putut fi descărcată: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>Fișierul nu mai există.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Fișierul imagine nu a putut fi încărcat.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Salvează imaginea ca</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Selectează imaginea</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Realizare deblocată!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Decupează</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Spațiere inteligentă</value>
+  </data>
 </root>

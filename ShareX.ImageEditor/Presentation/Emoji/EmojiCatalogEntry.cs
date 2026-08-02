@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -27,6 +27,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using ShareX.ImageEditor.Localization;
 
 namespace ShareX.ImageEditor.Presentation.Emoji;
 
@@ -44,6 +45,12 @@ public sealed class EmojiCatalogEntry
     public string Glyph => EmojiCatalogService.ToGlyph(Unicode);
 
     [JsonIgnore]
+    public string DisplayName => EmojiCatalogLocalization.GetName(Unicode, Name);
+
+    [JsonIgnore]
+    public string DisplayGroup => EmojiCatalogLocalization.GetGroupName(Group);
+
+    [JsonIgnore]
     private string SearchIndex => _searchIndex ??= BuildSearchIndex();
 
     private string? _searchIndex;
@@ -56,7 +63,7 @@ public sealed class EmojiCatalogEntry
         }
 
         string search = searchText.Trim().ToLowerInvariant();
-        string normalizedName = Name.ToLowerInvariant();
+        string normalizedName = DisplayName.ToLowerInvariant();
 
         if (normalizedName.Equals(search, StringComparison.Ordinal))
         {
@@ -83,7 +90,11 @@ public sealed class EmojiCatalogEntry
 
     private string BuildSearchIndex()
     {
-        var builder = new StringBuilder(Name.Length + Group.Length + 32);
+        var builder = new StringBuilder(Name.Length + Group.Length + DisplayName.Length + DisplayGroup.Length + 32);
+        builder.Append(DisplayName);
+        builder.Append(' ');
+        builder.Append(DisplayGroup);
+        builder.Append(' ');
         builder.Append(Name);
         builder.Append(' ');
         builder.Append(Group);
@@ -96,6 +107,11 @@ public sealed class EmojiCatalogEntry
 
         return builder.ToString().ToLowerInvariant();
     }
+}
+
+public sealed record EmojiCatalogGroupOption(string Name, string DisplayName)
+{
+    public override string ToString() => DisplayName;
 }
 
 public sealed record EmojiSelectionRequest(string UnicodeSequence, string DisplayName);
@@ -190,5 +206,38 @@ public static class EmojiCatalogService
         }
 
         return entries;
+    }
+}
+
+public static class EmojiCatalogLocalization
+{
+    public static string GetName(string unicodeSequence, string fallbackName)
+    {
+        string key = $"EmojiCatalog_Name_{NormalizeUnicode(unicodeSequence)}";
+        return Strings.ResourceManager.GetString(key, Strings.Culture) ?? fallbackName;
+    }
+
+    public static string GetGroupName(string groupName)
+    {
+        string? key = groupName switch
+        {
+            "Smileys & Emotion" => "EmojiCatalog_Group_SmileysEmotion",
+            "People & Body" => "EmojiCatalog_Group_PeopleBody",
+            "Animals & Nature" => "EmojiCatalog_Group_AnimalsNature",
+            "Food & Drink" => "EmojiCatalog_Group_FoodDrink",
+            "Travel & Places" => "EmojiCatalog_Group_TravelPlaces",
+            "Activities" => "EmojiCatalog_Group_Activities",
+            "Objects" => "EmojiCatalog_Group_Objects",
+            "Symbols" => "EmojiCatalog_Group_Symbols",
+            "Flags" => "EmojiCatalog_Group_Flags",
+            _ => null
+        };
+
+        return key == null ? groupName : Strings.ResourceManager.GetString(key, Strings.Culture) ?? groupName;
+    }
+
+    private static string NormalizeUnicode(string unicodeSequence)
+    {
+        return unicodeSequence.Replace(' ', '_').Replace('-', '_').ToUpperInvariant();
     }
 }

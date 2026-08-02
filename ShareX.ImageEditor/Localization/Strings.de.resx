@@ -750,4 +750,46 @@ Schattenoptionen (Rechtsklick)</value>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} und {1} verwenden dieselbe Tastenkombination ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Hintergrundbild auswählen</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Bild öffnen</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Bild konnte nicht aus der Zwischenablage geladen werden.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Bild konnte nicht aus der Zwischenablage geladen werden.
+Die Zwischenablage enthält kein Bild.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>Die URL verweist nicht auf ein gültiges Bild.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Bild konnte nicht heruntergeladen werden: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>Die Datei ist nicht mehr vorhanden.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Bilddatei konnte nicht geladen werden.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Bild speichern unter</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Bild auswählen</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Erfolg freigeschaltet!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Zuschneiden</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Intelligenter Abstand</value>
+  </data>
 </root>

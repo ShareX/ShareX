@@ -750,4 +750,46 @@ Opcje cienia (Prawy przycisk)</value>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} i {1} używają tego samego skrótu ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Wybierz obraz tła</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Otwórz obraz</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Nie udało się wczytać obrazu ze schowka.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Nie udało się wczytać obrazu ze schowka.
+Schowek nie zawiera obrazu.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>Adres URL nie wskazuje prawidłowego obrazu.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Nie udało się pobrać obrazu: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>Plik już nie istnieje.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Nie udało się wczytać pliku obrazu.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Zapisz obraz jako</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Wybierz obraz</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Osiągnięcie odblokowane!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Przytnij</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Inteligentne dopełnienie</value>
+  </data>
 </root>

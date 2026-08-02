@@ -750,4 +750,46 @@ Opciones de sombra (Clic derecho)</value>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} y {1} usan el mismo atajo ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Seleccionar imagen de fondo</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Abrir imagen</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>No se pudo cargar la imagen desde el portapapeles.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>No se pudo cargar la imagen desde el portapapeles.
+El portapapeles no contiene ninguna imagen.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>La URL no apunta a una imagen válida.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>No se pudo descargar la imagen: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>El archivo ya no existe.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>No se pudo cargar el archivo de imagen.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Guardar imagen como</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Seleccionar imagen</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>¡Logro desbloqueado!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Recortar</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Relleno inteligente</value>
+  </data>
 </root>

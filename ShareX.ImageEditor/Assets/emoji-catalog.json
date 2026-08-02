@@ -5963,7 +5963,7 @@
                          "alpaca",
                          "guanaco",
                          "llama",
-                         "vicuÃ±a",
+                         "vicuña",
                          "wool"
                      ]
     },
@@ -7328,7 +7328,7 @@
         "keywords":  [
                          "coconut",
                          "palm",
-                         "piÃ±a colada"
+                         "piña colada"
                      ]
     },
     {
@@ -7592,7 +7592,7 @@
         "unicode":  "1f95e",
         "keywords":  [
                          "breakfast",
-                         "crÃªpe",
+                         "crêpe",
                          "food",
                          "hotcake",
                          "pancake",
@@ -8006,7 +8006,7 @@
                          "autumn",
                          "festival",
                          "moon cake",
-                         "yuÃ¨bÇng"
+                         "yuèbǐng"
                      ]
     },
     {
@@ -8029,7 +8029,7 @@
         "keywords":  [
                          "dumpling",
                          "empanada",
-                         "gyÅza",
+                         "gyōza",
                          "jiaozi",
                          "pierogi",
                          "potsticker"
@@ -9979,7 +9979,7 @@
                      ]
     },
     {
-        "name":  "twelve oâ€™clock",
+        "name":  "twelve o’clock",
         "group":  "Travel \u0026 Places",
         "unicode":  "1f55b",
         "keywords":  [
@@ -9987,7 +9987,7 @@
                          "12",
                          "12:00",
                          "clock",
-                         "oâ€™clock",
+                         "o’clock",
                          "twelve"
                      ]
     },
@@ -10005,7 +10005,7 @@
                      ]
     },
     {
-        "name":  "one oâ€™clock",
+        "name":  "one o’clock",
         "group":  "Travel \u0026 Places",
         "unicode":  "1f550",
         "keywords":  [
@@ -10013,7 +10013,7 @@
                          "1",
                          "1:00",
                          "clock",
-                         "oâ€™clock",
+                         "o’clock",
                          "one"
                      ]
     },
@@ -10031,7 +10031,7 @@
                      ]
     },
     {
-        "name":  "two oâ€™clock",
+        "name":  "two o’clock",
         "group":  "Travel \u0026 Places",
         "unicode":  "1f551",
         "keywords":  [
@@ -10039,7 +10039,7 @@
                          "2",
                          "2:00",
                          "clock",
-                         "oâ€™clock",
+                         "o’clock",
                          "two"
                      ]
     },
@@ -10057,7 +10057,7 @@
                      ]
     },
     {
-        "name":  "three oâ€™clock",
+        "name":  "three o’clock",
         "group":  "Travel \u0026 Places",
         "unicode":  "1f552",
         "keywords":  [
@@ -10065,7 +10065,7 @@
                          "3",
                          "3:00",
                          "clock",
-                         "oâ€™clock",
+                         "o’clock",
                          "three"
                      ]
     },
@@ -10083,7 +10083,7 @@
                      ]
     },
     {
-        "name":  "four oâ€™clock",
+        "name":  "four o’clock",
         "group":  "Travel \u0026 Places",
         "unicode":  "1f553",
         "keywords":  [
@@ -10092,7 +10092,7 @@
                          "4:00",
                          "clock",
                          "four",
-                         "oâ€™clock"
+                         "o’clock"
                      ]
     },
     {
@@ -10109,7 +10109,7 @@
                      ]
     },
     {
-        "name":  "five oâ€™clock",
+        "name":  "five o’clock",
         "group":  "Travel \u0026 Places",
         "unicode":  "1f554",
         "keywords":  [
@@ -10118,7 +10118,7 @@
                          "5:00",
                          "clock",
                          "five",
-                         "oâ€™clock"
+                         "o’clock"
                      ]
     },
     {
@@ -10135,7 +10135,7 @@
                      ]
     },
     {
-        "name":  "six oâ€™clock",
+        "name":  "six o’clock",
         "group":  "Travel \u0026 Places",
         "unicode":  "1f555",
         "keywords":  [
@@ -10143,7 +10143,7 @@
                          "6",
                          "6:00",
                          "clock",
-                         "oâ€™clock",
+                         "o’clock",
                          "six"
                      ]
     },
@@ -10161,7 +10161,7 @@
                      ]
     },
     {
-        "name":  "seven oâ€™clock",
+        "name":  "seven o’clock",
         "group":  "Travel \u0026 Places",
         "unicode":  "1f556",
         "keywords":  [
@@ -10169,7 +10169,7 @@
                          "7",
                          "7:00",
                          "clock",
-                         "oâ€™clock",
+                         "o’clock",
                          "seven"
                      ]
     },
@@ -10187,7 +10187,7 @@
                      ]
     },
     {
-        "name":  "eight oâ€™clock",
+        "name":  "eight o’clock",
         "group":  "Travel \u0026 Places",
         "unicode":  "1f557",
         "keywords":  [
@@ -10196,7 +10196,7 @@
                          "8:00",
                          "clock",
                          "eight",
-                         "oâ€™clock"
+                         "o’clock"
                      ]
     },
     {
@@ -10213,7 +10213,7 @@
                      ]
     },
     {
-        "name":  "nine oâ€™clock",
+        "name":  "nine o’clock",
         "group":  "Travel \u0026 Places",
         "unicode":  "1f558",
         "keywords":  [
@@ -10222,7 +10222,7 @@
                          "9:00",
                          "clock",
                          "nine",
-                         "oâ€™clock"
+                         "o’clock"
                      ]
     },
     {
@@ -10239,7 +10239,7 @@
                      ]
     },
     {
-        "name":  "ten oâ€™clock",
+        "name":  "ten o’clock",
         "group":  "Travel \u0026 Places",
         "unicode":  "1f559",
         "keywords":  [
@@ -10247,7 +10247,7 @@
                          "10",
                          "10:00",
                          "clock",
-                         "oâ€™clock",
+                         "o’clock",
                          "ten"
                      ]
     },
@@ -10265,7 +10265,7 @@
                      ]
     },
     {
-        "name":  "eleven oâ€™clock",
+        "name":  "eleven o’clock",
         "group":  "Travel \u0026 Places",
         "unicode":  "1f55a",
         "keywords":  [
@@ -10274,7 +10274,7 @@
                          "11:00",
                          "clock",
                          "eleven",
-                         "oâ€™clock"
+                         "o’clock"
                      ]
     },
     {
@@ -10943,7 +10943,7 @@
         "keywords":  [
                          "gift",
                          "good luck",
-                         "hÃ³ngbÄo",
+                         "hóngbāo",
                          "lai see",
                          "money",
                          "red envelope"
@@ -11491,13 +11491,13 @@
                      ]
     },
     {
-        "name":  "piÃ±ata",
+        "name":  "piñata",
         "group":  "Activities",
         "unicode":  "1fa85",
         "keywords":  [
                          "celebration",
                          "party",
-                         "piÃ±ata"
+                         "piñata"
                      ]
     },
     {
@@ -11891,13 +11891,13 @@
                      ]
     },
     {
-        "name":  "womanâ€™s clothes",
+        "name":  "woman’s clothes",
         "group":  "Objects",
         "unicode":  "1f45a",
         "keywords":  [
                          "clothing",
                          "woman",
-                         "womanâ€™s clothes"
+                         "woman’s clothes"
                      ]
     },
     {
@@ -11979,17 +11979,17 @@
                          "thong sandal",
                          "thong sandals",
                          "thongs",
-                         "zÅri"
+                         "zōri"
                      ]
     },
     {
-        "name":  "manâ€™s shoe",
+        "name":  "man’s shoe",
         "group":  "Objects",
         "unicode":  "1f45e",
         "keywords":  [
                          "clothing",
                          "man",
-                         "manâ€™s shoe",
+                         "man’s shoe",
                          "shoe"
                      ]
     },
@@ -12040,7 +12040,7 @@
                      ]
     },
     {
-        "name":  "womanâ€™s sandal",
+        "name":  "woman’s sandal",
         "group":  "Objects",
         "unicode":  "1f461",
         "keywords":  [
@@ -12048,7 +12048,7 @@
                          "sandal",
                          "shoe",
                          "woman",
-                         "womanâ€™s sandal"
+                         "woman’s sandal"
                      ]
     },
     {
@@ -12062,7 +12062,7 @@
                      ]
     },
     {
-        "name":  "womanâ€™s boot",
+        "name":  "woman’s boot",
         "group":  "Objects",
         "unicode":  "1f462",
         "keywords":  [
@@ -12070,7 +12070,7 @@
                          "clothing",
                          "shoe",
                          "woman",
-                         "womanâ€™s boot"
+                         "woman’s boot"
                      ]
     },
     {
@@ -12096,14 +12096,14 @@
                      ]
     },
     {
-        "name":  "womanâ€™s hat",
+        "name":  "woman’s hat",
         "group":  "Objects",
         "unicode":  "1f452",
         "keywords":  [
                          "clothing",
                          "hat",
                          "woman",
-                         "womanâ€™s hat"
+                         "woman’s hat"
                      ]
     },
     {
@@ -12151,7 +12151,7 @@
                      ]
     },
     {
-        "name":  "rescue workerâ€™s helmet",
+        "name":  "rescue worker’s helmet",
         "group":  "Objects",
         "unicode":  "26d1 fe0f",
         "keywords":  [
@@ -12160,7 +12160,7 @@
                          "face",
                          "hat",
                          "helmet",
-                         "rescue workerâ€™s helmet"
+                         "rescue worker’s helmet"
                      ]
     },
     {
@@ -14521,19 +14521,19 @@
                      ]
     },
     {
-        "name":  "menâ€™s room",
+        "name":  "men’s room",
         "group":  "Symbols",
         "unicode":  "1f6b9",
         "keywords":  [
                          "lavatory",
                          "man",
-                         "menâ€™s room",
+                         "men’s room",
                          "restroom",
                          "wc"
                      ]
     },
     {
-        "name":  "womenâ€™s room",
+        "name":  "women’s room",
         "group":  "Symbols",
         "unicode":  "1f6ba",
         "keywords":  [
@@ -14541,7 +14541,7 @@
                          "restroom",
                          "wc",
                          "woman",
-                         "womenâ€™s room"
+                         "women’s room"
                      ]
     },
     {
@@ -15579,7 +15579,7 @@
         "group":  "Symbols",
         "unicode":  "2716 fe0f",
         "keywords":  [
-                         "Ã—",
+                         "×",
                          "cancel",
                          "multiplication",
                          "multiply",
@@ -15604,7 +15604,7 @@
         "unicode":  "2796",
         "keywords":  [
                          "-",
-                         "âˆ’",
+                         "−",
                          "math",
                          "minus",
                          "sign"
@@ -15615,7 +15615,7 @@
         "group":  "Symbols",
         "unicode":  "2797",
         "keywords":  [
-                         "Ã·",
+                         "÷",
                          "divide",
                          "division",
                          "math",
@@ -15831,7 +15831,7 @@
         "group":  "Symbols",
         "unicode":  "2705",
         "keywords":  [
-                         "âœ“",
+                         "✓",
                          "button",
                          "check",
                          "mark"
@@ -15842,7 +15842,7 @@
         "group":  "Symbols",
         "unicode":  "2611 fe0f",
         "keywords":  [
-                         "âœ“",
+                         "✓",
                          "box",
                          "check",
                          "check box with check"
@@ -15853,7 +15853,7 @@
         "group":  "Symbols",
         "unicode":  "2714 fe0f",
         "keywords":  [
-                         "âœ“",
+                         "✓",
                          "check",
                          "mark"
                      ]
@@ -15863,7 +15863,7 @@
         "group":  "Symbols",
         "unicode":  "274c",
         "keywords":  [
-                         "Ã—",
+                         "×",
                          "cancel",
                          "cross",
                          "mark",
@@ -15877,7 +15877,7 @@
         "group":  "Symbols",
         "unicode":  "274e",
         "keywords":  [
-                         "Ã—",
+                         "×",
                          "cross mark button",
                          "mark",
                          "square",
@@ -16129,7 +16129,7 @@
         "group":  "Symbols",
         "unicode":  "1f523",
         "keywords":  [
-                         "ã€’â™ª\u0026%",
+                         "〒♪\u0026%",
                          "input",
                          "input symbols"
                      ]
@@ -16309,206 +16309,206 @@
                      ]
     },
     {
-        "name":  "Japanese â€œhereâ€ button",
+        "name":  "Japanese “here” button",
         "group":  "Symbols",
         "unicode":  "1f201",
         "keywords":  [
-                         "â€œhereâ€",
+                         "“here”",
                          "Japanese",
-                         "Japanese â€œhereâ€ button",
+                         "Japanese “here” button",
                          "katakana",
-                         "ã‚³ã‚³"
+                         "ココ"
                      ]
     },
     {
-        "name":  "Japanese â€œservice chargeâ€ button",
+        "name":  "Japanese “service charge” button",
         "group":  "Symbols",
         "unicode":  "1f202 fe0f",
         "keywords":  [
-                         "â€œservice chargeâ€",
+                         "“service charge”",
                          "Japanese",
-                         "Japanese â€œservice chargeâ€ button",
+                         "Japanese “service charge” button",
                          "katakana",
-                         "ã‚µ"
+                         "サ"
                      ]
     },
     {
-        "name":  "Japanese â€œmonthly amountâ€ button",
+        "name":  "Japanese “monthly amount” button",
         "group":  "Symbols",
         "unicode":  "1f237 fe0f",
         "keywords":  [
-                         "â€œmonthly amountâ€",
+                         "“monthly amount”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œmonthly amountâ€ button",
+                         "Japanese “monthly amount” button",
                          "æœˆ"
                      ]
     },
     {
-        "name":  "Japanese â€œnot free of chargeâ€ button",
+        "name":  "Japanese “not free of charge” button",
         "group":  "Symbols",
         "unicode":  "1f236",
         "keywords":  [
-                         "â€œnot free of chargeâ€",
+                         "“not free of charge”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œnot free of chargeâ€ button",
+                         "Japanese “not free of charge” button",
                          "æœ‰"
                      ]
     },
     {
-        "name":  "Japanese â€œreservedâ€ button",
+        "name":  "Japanese “reserved” button",
         "group":  "Symbols",
         "unicode":  "1f22f",
         "keywords":  [
-                         "â€œreservedâ€",
+                         "“reserved”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œreservedâ€ button",
+                         "Japanese “reserved” button",
                          "æŒ‡"
                      ]
     },
     {
-        "name":  "Japanese â€œbargainâ€ button",
+        "name":  "Japanese “bargain” button",
         "group":  "Symbols",
         "unicode":  "1f250",
         "keywords":  [
-                         "â€œbargainâ€",
+                         "“bargain”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œbargainâ€ button",
+                         "Japanese “bargain” button",
                          "å¾—"
                      ]
     },
     {
-        "name":  "Japanese â€œdiscountâ€ button",
+        "name":  "Japanese “discount” button",
         "group":  "Symbols",
         "unicode":  "1f239",
         "keywords":  [
-                         "â€œdiscountâ€",
+                         "“discount”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œdiscountâ€ button",
+                         "Japanese “discount” button",
                          "å‰²"
                      ]
     },
     {
-        "name":  "Japanese â€œfree of chargeâ€ button",
+        "name":  "Japanese “free of charge” button",
         "group":  "Symbols",
         "unicode":  "1f21a",
         "keywords":  [
-                         "â€œfree of chargeâ€",
+                         "“free of charge”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œfree of chargeâ€ button",
+                         "Japanese “free of charge” button",
                          "ç„¡"
                      ]
     },
     {
-        "name":  "Japanese â€œprohibitedâ€ button",
+        "name":  "Japanese “prohibited” button",
         "group":  "Symbols",
         "unicode":  "1f232",
         "keywords":  [
-                         "â€œprohibitedâ€",
+                         "“prohibited”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œprohibitedâ€ button",
-                         "ç¦"
+                         "Japanese “prohibited” button",
+                         "禁"
                      ]
     },
     {
-        "name":  "Japanese â€œacceptableâ€ button",
+        "name":  "Japanese “acceptable” button",
         "group":  "Symbols",
         "unicode":  "1f251",
         "keywords":  [
-                         "â€œacceptableâ€",
+                         "“acceptable”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œacceptableâ€ button",
-                         "å¯"
+                         "Japanese “acceptable” button",
+                         "可"
                      ]
     },
     {
-        "name":  "Japanese â€œapplicationâ€ button",
+        "name":  "Japanese “application” button",
         "group":  "Symbols",
         "unicode":  "1f238",
         "keywords":  [
-                         "â€œapplicationâ€",
+                         "“application”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œapplicationâ€ button",
+                         "Japanese “application” button",
                          "ç”³"
                      ]
     },
     {
-        "name":  "Japanese â€œpassing gradeâ€ button",
+        "name":  "Japanese “passing grade” button",
         "group":  "Symbols",
         "unicode":  "1f234",
         "keywords":  [
-                         "â€œpassing gradeâ€",
+                         "“passing grade”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œpassing gradeâ€ button",
-                         "åˆ"
+                         "Japanese “passing grade” button",
+                         "合"
                      ]
     },
     {
-        "name":  "Japanese â€œvacancyâ€ button",
+        "name":  "Japanese “vacancy” button",
         "group":  "Symbols",
         "unicode":  "1f233",
         "keywords":  [
-                         "â€œvacancyâ€",
+                         "“vacancy”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œvacancyâ€ button",
+                         "Japanese “vacancy” button",
                          "ç©º"
                      ]
     },
     {
-        "name":  "Japanese â€œcongratulationsâ€ button",
+        "name":  "Japanese “congratulations” button",
         "group":  "Symbols",
         "unicode":  "3297 fe0f",
         "keywords":  [
-                         "â€œcongratulationsâ€",
+                         "“congratulations”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œcongratulationsâ€ button",
-                         "ç¥"
+                         "Japanese “congratulations” button",
+                         "祝"
                      ]
     },
     {
-        "name":  "Japanese â€œsecretâ€ button",
+        "name":  "Japanese “secret” button",
         "group":  "Symbols",
         "unicode":  "3299 fe0f",
         "keywords":  [
-                         "â€œsecretâ€",
+                         "“secret”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œsecretâ€ button",
+                         "Japanese “secret” button",
                          "ç§˜"
                      ]
     },
     {
-        "name":  "Japanese â€œopen for businessâ€ button",
+        "name":  "Japanese “open for business” button",
         "group":  "Symbols",
         "unicode":  "1f23a",
         "keywords":  [
-                         "â€œopen for businessâ€",
+                         "“open for business”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œopen for businessâ€ button",
+                         "Japanese “open for business” button",
                          "å–¶"
                      ]
     },
     {
-        "name":  "Japanese â€œno vacancyâ€ button",
+        "name":  "Japanese “no vacancy” button",
         "group":  "Symbols",
         "unicode":  "1f235",
         "keywords":  [
-                         "â€œno vacancyâ€",
+                         "“no vacancy”",
                          "ideograph",
                          "Japanese",
-                         "Japanese â€œno vacancyâ€ button",
+                         "Japanese “no vacancy” button",
                          "æº€"
                      ]
     },

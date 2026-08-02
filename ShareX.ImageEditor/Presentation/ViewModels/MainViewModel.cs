@@ -1138,7 +1138,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     }
                     else
                     {
-                        EmojiInsertionRequested?.Invoke(this, new EmojiSelectionRequest(entry.Unicode, entry.Name));
+                        EmojiInsertionRequested?.Invoke(this, new EmojiSelectionRequest(entry.Unicode, entry.DisplayName));
                     }
                 },
                 onCancel: CloseModal);

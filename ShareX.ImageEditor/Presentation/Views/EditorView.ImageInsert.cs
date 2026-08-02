@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -29,6 +29,7 @@ using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
+using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Rendering;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using SkiaSharp;
@@ -45,7 +46,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 return;
             }
 
-            var pickedImage = await PickImageBitmapAsync("Select image");
+            var pickedImage = await PickImageBitmapAsync(Strings.EditorView_SelectImage);
             if (!pickedImage.HasValue)
             {
                 return;
@@ -58,7 +59,7 @@ namespace ShareX.ImageEditor.Presentation.Views
         {
             try
             {
-                var pickedImage = await PickImageBitmapAsync("Select image");
+                var pickedImage = await PickImageBitmapAsync(Strings.EditorView_SelectImage);
                 if (!pickedImage.HasValue)
                 {
                     return false;

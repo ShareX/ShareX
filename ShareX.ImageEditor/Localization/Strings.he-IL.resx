@@ -751,4 +751,46 @@
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} ו-{1} משתמשים באותו קיצור דרך ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>בחירת תמונת רקע</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>פתיחת תמונה</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>טעינת התמונה מלוח העריכה נכשלה.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>טעינת התמונה מלוח העריכה נכשלה.
+לוח העריכה אינו מכיל תמונה.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>כתובת ה-URL אינה מפנה לתמונה תקינה.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>הורדת התמונה נכשלה: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>הקובץ אינו קיים עוד.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>טעינת קובץ התמונה נכשלה.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>שמירת תמונה בשם</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>בחירת תמונה</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>הישג נפתח!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>חיתוך</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>ריווח חכם</value>
+  </data>
 </root>

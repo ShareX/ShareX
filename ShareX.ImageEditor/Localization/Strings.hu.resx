@@ -750,4 +750,46 @@ Szeretné menteni a módosításokat a képszerkesztő bezárása előtt?</value
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} és {1} ugyanazt a gyorsbillentyűt használja ({2}).</value>
   </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Háttérkép kiválasztása</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Kép megnyitása</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Nem sikerült betölteni a képet a vágólapról.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Nem sikerült betölteni a képet a vágólapról.
+A vágólap nem tartalmaz képet.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>Az URL nem érvényes képre mutat.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Nem sikerült letölteni a képet: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>A fájl már nem létezik.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Nem sikerült betölteni a képfájlt.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Kép mentése másként</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Kép kiválasztása</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Teljesítmény feloldva!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Körülvágás</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Intelligens kitöltés</value>
+  </data>
 </root>

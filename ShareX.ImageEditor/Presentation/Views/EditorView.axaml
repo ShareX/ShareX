@@ -222,7 +222,7 @@
                                     Maximum="200"
                                     Value="{Binding BackgroundPadding}"
                                     Background="{DynamicResource ShareX.Brush.Control.Background.Disabled}"/>
-                            <controls:LabeledToggleSwitch Label="Smart padding"
+                            <controls:LabeledToggleSwitch Label="{x:Static res:Strings.EditorView_SmartPadding}"
                                                           IsChecked="{Binding BackgroundSmartPadding}"
                                                           IsEnabled="{Binding CanUseBackgroundSmartPadding}"
                                                           ToggleForeground="{DynamicResource ShareX.Brush.Text.Secondary}"
