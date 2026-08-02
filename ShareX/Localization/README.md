@@ -9,7 +9,7 @@ Avalonia translations use the shared `Strings.resx` resource set in this directo
 | Main window | `MainWindow_`, `MainMenuBuilder_`, `ThumbnailItemViewModel_` | 4 | 142 | Complete |
 | Application settings | `ApplicationSettingsWindow_` | 3 | 174 | Complete |
 | Hotkey settings | `HotkeySettingsWindow_` | 3 | 23 | Complete |
-| Task settings | `TaskSettingsWindow_` | 4 | 254 | Complete |
+| Task settings | `TaskSettingsWindow_` | 4 | 255 | Complete |
 | Drag and drop upload | `DragDropUploadWindow_` | 2 | 2 | Complete |
 | Clipboard upload | `ClipboardUploadWindow_` | 2 | 8 | Complete |
 | Notification | None (content supplied dynamically) | 4 | 0 | Reviewed |
@@ -31,7 +31,7 @@ Avalonia translations use the shared `Strings.resx` resource set in this directo
 | Custom uploader settings | `CustomUploaderSettingsWindow_` | 4 | 112 | Complete |
 | Quick task menu editor | `QuickTaskMenuEditorWindow_` | 2 | 23 | Complete |
 | About | `AboutWindow_` | 2 | 17 | Complete |
-| Core runtime messages | `TaskHelpers_`, `SettingManager_`, `WorkerTask_`, `TaskManager_` | 4 | 11 | Complete |
+| Core runtime messages | `TaskHelpers_`, `SettingManager_`, `WorkerTask_`, `TaskManager_` | 4 | 12 | Complete |
 
 `Validate.ps1` contains the tracked source-file manifest. It verifies that:
 

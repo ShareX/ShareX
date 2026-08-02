@@ -2750,4 +2750,10 @@
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>A feltöltés befejeződött. URL: {0}</value>
   </data>
+  <data name="WorkerTask_AllFilesFilter" xml:space="preserve">
+    <value>Minden fájl (*.*)</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageNameSample" xml:space="preserve">
+    <value>Képnév</value>
+  </data>
 </root>

@@ -2750,4 +2750,10 @@
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Upload completed. URL: {0}</value>
   </data>
+  <data name="WorkerTask_AllFilesFilter" xml:space="preserve">
+    <value>All files (*.*)</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageNameSample" xml:space="preserve">
+    <value>ImageName</value>
+  </data>
 </root>

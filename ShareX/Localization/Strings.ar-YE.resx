@@ -2750,4 +2750,10 @@
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>اكتمل الرفع. الرابط: {0}</value>
   </data>
+  <data name="WorkerTask_AllFilesFilter" xml:space="preserve">
+    <value>كل الملفات (*.*)</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageNameSample" xml:space="preserve">
+    <value>اسم‌الصورة</value>
+  </data>
 </root>

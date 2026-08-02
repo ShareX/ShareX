@@ -300,8 +300,8 @@ internal sealed class TaskSettingsPageBuilder
     {
         TaskSettingsImage image = _settings.ImageSettings;
         BoundValue<string> name = new(image.ThumbnailName, value => image.ThumbnailName = value);
-        TextBlock preview = Hint("ImageName" + image.ThumbnailName + ".jpg");
-        name.PropertyChanged += (_, _) => preview.Text = "ImageName" + name.Value + ".jpg";
+        TextBlock preview = Hint(Strings.TaskSettingsWindow_ImageNameSample + image.ThumbnailName + ".jpg");
+        name.PropertyChanged += (_, _) => preview.Text = Strings.TaskSettingsWindow_ImageNameSample + name.Value + ".jpg";
 
         return Page("image-thumbnail", Strings.TaskSettingsWindow_Thumbnail, LucideIcons.images,
             EnabledCard(_imageOverride, Strings.TaskSettingsWindow_Thumbnail,

@@ -2750,4 +2750,10 @@
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Tải lên hoàn tất. URL: {0}</value>
   </data>
+  <data name="WorkerTask_AllFilesFilter" xml:space="preserve">
+    <value>Tất cả tệp (*.*)</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageNameSample" xml:space="preserve">
+    <value>TênHìnhẢnh</value>
+  </data>
 </root>

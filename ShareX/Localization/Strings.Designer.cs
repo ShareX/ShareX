@@ -5107,5 +5107,15 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskManager_UploadCompletedURL", resourceCulture);
             }
         }
+        public static string WorkerTask_AllFilesFilter {
+            get {
+                return ResourceManager.GetString("WorkerTask_AllFilesFilter", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ImageNameSample {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ImageNameSample", resourceCulture);
+            }
+        }
     }
 }
