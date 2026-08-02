@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
              xmlns:theming="clr-namespace:ShareX.AvaloniaUI.Theming;assembly=ShareX.Avalonia"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              mc:Ignorable="d" d:DesignWidth="430" d:DesignHeight="310"
              x:Class="ShareX.ImageEditor.Presentation.Views.InsertImageDialogView"
              x:DataType="vm:InsertImageDialogViewModel">
@@ -57,8 +58,8 @@
                                    FontWeight="Normal"
                                    VerticalAlignment="Center"/>
                         <StackPanel Spacing="2" VerticalAlignment="Center">
-                            <TextBlock Text="Insert image in the center" FontWeight="Normal"/>
-                            <TextBlock Text="Keeps the current canvas size."
+                                <TextBlock Text="{x:Static res:Strings.InsertImageDialogView_Center}" FontWeight="Normal"/>
+                                <TextBlock Text="{x:Static res:Strings.InsertImageDialogView_CenterDescription}"
                                        FontSize="11"
                                        FontWeight="Normal"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
@@ -79,8 +80,8 @@
                                    FontWeight="Normal"
                                    VerticalAlignment="Center"/>
                         <StackPanel Spacing="2" VerticalAlignment="Center">
-                            <TextBlock Text="Insert image below" FontWeight="Normal"/>
-                            <TextBlock Text="Expands the canvas downward before adding the image."
+                                <TextBlock Text="{x:Static res:Strings.InsertImageDialogView_Below}" FontWeight="Normal"/>
+                                <TextBlock Text="{x:Static res:Strings.InsertImageDialogView_BelowDescription}"
                                        FontSize="11"
                                        FontWeight="Normal"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
@@ -101,8 +102,8 @@
                                    FontWeight="Normal"
                                    VerticalAlignment="Center"/>
                         <StackPanel Spacing="2" VerticalAlignment="Center">
-                            <TextBlock Text="Insert image on right side" FontWeight="Normal"/>
-                            <TextBlock Text="Expands the canvas to the right before adding the image."
+                                <TextBlock Text="{x:Static res:Strings.InsertImageDialogView_Right}" FontWeight="Normal"/>
+                                <TextBlock Text="{x:Static res:Strings.InsertImageDialogView_RightDescription}"
                                        FontSize="11"
                                        FontWeight="Normal"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>

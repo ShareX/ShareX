@@ -25,6 +25,7 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.ImageEditor.Localization;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
 {
@@ -37,8 +38,8 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
     public partial class InsertImageDialogViewModel : ObservableObject
     {
-        public string Title => "Insert image";
-        public string Description => "Choose how to place the incoming image on the current canvas.";
+        public string Title => Strings.InsertImageDialogView_Title;
+        public string Description => Strings.InsertImageDialogView_Description;
         public string ImageSummary { get; }
 
         public IRelayCommand InsertCenterCommand { get; }
@@ -48,7 +49,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public InsertImageDialogViewModel(int imageWidth, int imageHeight, Action<InsertImagePlacement> onSelect, Action onCancel)
         {
-            ImageSummary = $"Incoming image: {imageWidth} x {imageHeight}px";
+            ImageSummary = string.Format(Strings.InsertImageDialogView_ImageSummary, imageWidth, imageHeight);
 
             InsertCenterCommand = new RelayCommand(() => onSelect(InsertImagePlacement.Center));
             InsertBelowCommand = new RelayCommand(() => onSelect(InsertImagePlacement.CanvasExpandDown));

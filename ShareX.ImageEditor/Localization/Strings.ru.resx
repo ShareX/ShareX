@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
-  <resheader name="version"><value>2.0</value></resheader>
-  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
-  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>  <data name="ConfirmationDialogView_Title" xml:space="preserve">
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConfirmationDialogView_Title" xml:space="preserve">
     <value>Подтверждение выхода</value>
   </data>
   <data name="ConfirmationDialogView_Message" xml:space="preserve">
@@ -79,5 +88,345 @@
   </data>
   <data name="StartScreenDialogView_InvalidURL" xml:space="preserve">
     <value>Введите допустимый URL-адрес HTTP или HTTPS.</value>
+  </data>
+  <data name="EmojiPickerDialogView_LoadingEmojis" xml:space="preserve">
+    <value>Загрузка эмодзи...</value>
+  </data>
+  <data name="EmojiPickerDialogView_SearchEmojisCount" xml:space="preserve">
+    <value>Поиск эмодзи... ({0})</value>
+  </data>
+  <data name="EmojiPickerDialogView_BrowseEmojis" xml:space="preserve">
+    <value>Просмотр эмодзи</value>
+  </data>
+  <data name="EmojiPickerDialogView_CategorySummary" xml:space="preserve">
+    <value>{0} • {1} эмодзи</value>
+  </data>
+  <data name="EmojiPickerDialogView_SearchResults" xml:space="preserve">
+    <value>Результаты поиска • совпадений: {0}</value>
+  </data>
+  <data name="EmojiPickerDialogView_NoMatches" xml:space="preserve">
+    <value>Эмодзи, соответствующие поиску, не найдены.</value>
+  </data>
+  <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
+    <value>Попробуйте другое ключевое слово.</value>
+  </data>
+  <data name="EmojiPickerDialogView_Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="EmojiPickerDialogView_PreviewsLoading" xml:space="preserve">
+    <value>Средство выбора готово. Предпросмотры эмодзи загружаются в фоновом режиме.</value>
+  </data>
+  <data name="InsertImageDialogView_Title" xml:space="preserve">
+    <value>Вставить изображение</value>
+  </data>
+  <data name="InsertImageDialogView_Description" xml:space="preserve">
+    <value>Выберите способ размещения входящего изображения на текущем холсте.</value>
+  </data>
+  <data name="InsertImageDialogView_ImageSummary" xml:space="preserve">
+    <value>Входящее изображение: {0} x {1}px</value>
+  </data>
+  <data name="InsertImageDialogView_Center" xml:space="preserve">
+    <value>Вставить изображение по центру</value>
+  </data>
+  <data name="InsertImageDialogView_CenterDescription" xml:space="preserve">
+    <value>Сохраняет текущий размер холста.</value>
+  </data>
+  <data name="InsertImageDialogView_Below" xml:space="preserve">
+    <value>Вставить изображение снизу</value>
+  </data>
+  <data name="InsertImageDialogView_BelowDescription" xml:space="preserve">
+    <value>Расширяет холст вниз перед добавлением изображения.</value>
+  </data>
+  <data name="InsertImageDialogView_Right" xml:space="preserve">
+    <value>Вставить изображение справа</value>
+  </data>
+  <data name="InsertImageDialogView_RightDescription" xml:space="preserve">
+    <value>Расширяет холст вправо перед добавлением изображения.</value>
+  </data>
+  <data name="AnnotationToolbar_Exit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="AnnotationToolbar_OpenEllipsis" xml:space="preserve">
+    <value>Open...</value>
+  </data>
+  <data name="AnnotationToolbar_Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="EditorOptionsPanel_Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="EditorView_Copy" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="EditorView_Duplicate" xml:space="preserve">
+    <value>Дублировать</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_BrowseEllipsis" xml:space="preserve">
+    <value>Обзор...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
+    <value>Переместить вниз</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
+    <value>Переместить вверх</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="AnnotationToolbar_Blur" xml:space="preserve">
+    <value>Размытие</value>
+  </data>
+  <data name="AnnotationToolbar_Color" xml:space="preserve">
+    <value>Цвет</value>
+  </data>
+  <data name="AnnotationToolbar_Options" xml:space="preserve">
+    <value>Опции</value>
+  </data>
+  <data name="EditorOptionsPanel_Options" xml:space="preserve">
+    <value>Опции</value>
+  </data>
+  <data name="EditorView_Bringforward" xml:space="preserve">
+    <value>Переместить вперед</value>
+  </data>
+  <data name="EditorView_Bringtofront" xml:space="preserve">
+    <value>На передний план</value>
+  </data>
+  <data name="EditorView_Cut" xml:space="preserve">
+    <value>Вырезать</value>
+  </data>
+  <data name="EditorView_Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="EditorView_Deleteall" xml:space="preserve">
+    <value>Удалить все</value>
+  </data>
+  <data name="EditorView_Paste" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="EditorView_Redo" xml:space="preserve">
+    <value>Повторить</value>
+  </data>
+  <data name="EditorView_Sendbackward" xml:space="preserve">
+    <value>Переместить назад</value>
+  </data>
+  <data name="EditorView_Sendtoback" xml:space="preserve">
+    <value>На задний план</value>
+  </data>
+  <data name="EditorView_Undo" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
+    <value>Стиль стрелки</value>
+  </data>
+  <data name="AnnotationToolbar_Bluramount" xml:space="preserve">
+    <value>Степень размытия</value>
+  </data>
+  <data name="AnnotationToolbar_Bordercolor" xml:space="preserve">
+    <value>Цвет границы</value>
+  </data>
+  <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
+    <value>Стиль границы</value>
+  </data>
+  <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
+    <value>Радиус угла</value>
+  </data>
+  <data name="AnnotationToolbar_Cursortype" xml:space="preserve">
+    <value>Тип курсора</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteallShiftDelete" xml:space="preserve">
+    <value>Удалить всё (Shift+Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteDelete" xml:space="preserve">
+    <value>Удалить (Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_Effectstrength" xml:space="preserve">
+    <value>Интенсивность эффекта</value>
+  </data>
+  <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
+    <value>Цвет заливки</value>
+  </data>
+  <data name="AnnotationToolbar_Fontfamily" xml:space="preserve">
+    <value>Семейство шрифтов</value>
+  </data>
+  <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
+    <value>Размер шрифта</value>
+  </data>
+  <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
+    <value>Выравнивание по горизонтали</value>
+  </data>
+  <data name="AnnotationToolbar_NewEllipsis" xml:space="preserve">
+    <value>Создать...</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetX" xml:space="preserve">
+    <value>Смещение X</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetY" xml:space="preserve">
+    <value>Смещение Y</value>
+  </data>
+  <data name="AnnotationToolbar_Opacity" xml:space="preserve">
+    <value>Непрозрачность</value>
+  </data>
+  <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
+    <value>Открыть недавнее</value>
+  </data>
+  <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
+    <value>Повторить (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
+    <value>Сохранить как...</value>
+  </data>
+  <data name="AnnotationToolbar_Shadow" xml:space="preserve">
+    <value>Тень</value>
+  </data>
+  <data name="AnnotationToolbar_Shadowcolor" xml:space="preserve">
+    <value>Цвет тени</value>
+  </data>
+  <data name="AnnotationToolbar_Startingnumber" xml:space="preserve">
+    <value>Начальный номер</value>
+  </data>
+  <data name="AnnotationToolbar_Steptype" xml:space="preserve">
+    <value>Тип шага</value>
+  </data>
+  <data name="AnnotationToolbar_Textcolor" xml:space="preserve">
+    <value>Цвет текста</value>
+  </data>
+  <data name="AnnotationToolbar_Thickness" xml:space="preserve">
+    <value>Толщина</value>
+  </data>
+  <data name="AnnotationToolbar_Togglebold" xml:space="preserve">
+    <value>Переключить полужирный</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleellipseshape" xml:space="preserve">
+    <value>Переключить форму эллипса</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleitalic" xml:space="preserve">
+    <value>Переключить курсив</value>
+  </data>
+  <data name="AnnotationToolbar_ToggleshadowShadowoptionsRightclick" xml:space="preserve">
+    <value>Переключить тень
+Параметры тени (Правая кнопка)</value>
+  </data>
+  <data name="AnnotationToolbar_Toggletail" xml:space="preserve">
+    <value>Переключить хвост</value>
+  </data>
+  <data name="AnnotationToolbar_UndoCtrlZ" xml:space="preserve">
+    <value>Отменить (Ctrl+Z)</value>
+  </data>
+  <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
+    <value>Выбрать цвет с экрана</value>
+  </data>
+  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
+    <value>Настроить панель инструментов...</value>
+  </data>
+  <data name="EditorView_Auto" xml:space="preserve">
+    <value>Автоматически</value>
+  </data>
+  <data name="EditorView_Background" xml:space="preserve">
+    <value>Фон</value>
+  </data>
+  <data name="EditorView_Backgroundimage" xml:space="preserve">
+    <value>Фоновое изображение</value>
+  </data>
+  <data name="EditorView_BrowsebackgroundimageEllipsis" xml:space="preserve">
+    <value>Выбрать фоновое изображение...</value>
+  </data>
+  <data name="EditorView_CancelEsc" xml:space="preserve">
+    <value>Отмена (Esc)</value>
+  </data>
+  <data name="EditorView_CopyimagetoclipboardCtrlC" xml:space="preserve">
+    <value>Копировать изображение в буфер обмена (Ctrl+C)</value>
+  </data>
+  <data name="EditorView_Editbackgroundcolor" xml:space="preserve">
+    <value>Изменить цвет фона</value>
+  </data>
+  <data name="EditorView_Editgradientcolor1" xml:space="preserve">
+    <value>Изменить цвет градиента 1</value>
+  </data>
+  <data name="EditorView_Editgradientcolor2" xml:space="preserve">
+    <value>Изменить цвет градиента 2</value>
+  </data>
+  <data name="EditorView_Flatten" xml:space="preserve">
+    <value>Объединить слои</value>
+  </data>
+  <data name="EditorView_Margin" xml:space="preserve">
+    <value>Поля</value>
+  </data>
+  <data name="EditorView_Padding" xml:space="preserve">
+    <value>Отступы</value>
+  </data>
+  <data name="EditorView_PinimagetoscreenCtrlP" xml:space="preserve">
+    <value>Закрепить изображение на экране (Ctrl+P)</value>
+  </data>
+  <data name="EditorView_PrintimageEllipsisCtrlShiftP" xml:space="preserve">
+    <value>Печать изображения... (Ctrl+Shift+P)</value>
+  </data>
+  <data name="EditorView_Ratio" xml:space="preserve">
+    <value>Соотношение</value>
+  </data>
+  <data name="EditorView_RoundedCorner" xml:space="preserve">
+    <value>Скруглённый угол</value>
+  </data>
+  <data name="EditorView_SaveimageasEllipsisCtrlShiftS" xml:space="preserve">
+    <value>Сохранить изображение как... (Ctrl+Shift+S)</value>
+  </data>
+  <data name="EditorView_SaveimageCtrlS" xml:space="preserve">
+    <value>Сохранить изображение (Ctrl+S)</value>
+  </data>
+  <data name="EditorView_ShadowRadius" xml:space="preserve">
+    <value>Радиус тени</value>
+  </data>
+  <data name="EditorView_UploadimageCtrlU" xml:space="preserve">
+    <value>Загрузить изображение (Ctrl+U)</value>
+  </data>
+  <data name="EditorView_ZoomCtrlWheel" xml:space="preserve">
+    <value>Масштаб (Ctrl + Колесо)</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchimageeffectsEllipsis" xml:space="preserve">
+    <value>Поиск эффектов изображения...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Apply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
+    <value>Начать группу</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit" xml:space="preserve">
+    <value>Щёлкните и нажмите сочетание клавиш. Backspace или Delete очистит его.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
+    <value>Настроить панель инструментов</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
+    <value>Восстановить панель инструментов по умолчанию</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
+    <value>Показать / Скрыть</value>
+  </data>
+  <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
+    <value>Вписать в окно</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
+    <value>Недопустимое сочетание для {0}. Используйте формат R, Ctrl+R или Ctrl+Shift+R.</value>
+  </data>
+  <data name="EffectBrowserPanel_RecentHint" xml:space="preserve">
+    <value>Щёлкните эффект правой кнопкой, чтобы удалить его из недавних.</value>
+  </data>
+  <data name="EffectBrowserPanel_FavoritesHint" xml:space="preserve">
+    <value>Щёлкните эффект правой кнопкой, чтобы добавить его в избранное или удалить оттуда.</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchCount" xml:space="preserve">
+    <value>Поиск эффектов изображения... ({0})</value>
+  </data>
+  <data name="EffectBrowserPanel_Recent" xml:space="preserve">
+    <value>Недавние</value>
+  </data>
+  <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
+    <value>Избранное</value>
   </data>
 </root>

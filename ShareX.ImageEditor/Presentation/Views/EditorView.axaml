@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
@@ -83,12 +84,12 @@
                      CornerRadius="6"
                      Padding="6,2"
                      Cursor="Arrow">
-            <MenuItem Header="Undo" Command="{Binding UndoCommand}" InputGesture="Ctrl+Z">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Undo}" Command="{Binding UndoCommand}" InputGesture="Ctrl+Z">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionUndo}"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Redo" Command="{Binding RedoCommand}" InputGesture="Ctrl+Y">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Redo}" Command="{Binding RedoCommand}" InputGesture="Ctrl+Y">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionRedo}"/>
                 </MenuItem.Icon>
@@ -96,17 +97,17 @@
 
             <Separator/>
 
-            <MenuItem Header="Delete" Command="{Binding DeleteSelectedCommand}" InputGesture="Delete">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Delete}" Command="{Binding DeleteSelectedCommand}" InputGesture="Delete">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionDelete}"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Delete all" Command="{Binding ClearAnnotationsCommand}" InputGesture="Shift+Delete">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Deleteall}" Command="{Binding ClearAnnotationsCommand}" InputGesture="Shift+Delete">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionClearAll}"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Flatten" Command="{Binding FlattenImageCommand}" InputGesture="Ctrl+Shift+F">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Flatten}" Command="{Binding FlattenImageCommand}" InputGesture="Ctrl+Shift+F">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.LayerFlatten}"/>
                 </MenuItem.Icon>
@@ -114,22 +115,22 @@
 
             <Separator/>
 
-            <MenuItem Header="Cut" Command="{Binding CutAnnotationCommand}" InputGesture="Ctrl+X">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Cut}" Command="{Binding CutAnnotationCommand}" InputGesture="Ctrl+X">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ToolCutOut}"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Copy" Command="{Binding CopyAnnotationCommand}" InputGesture="Ctrl+Shift+C">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Copy}" Command="{Binding CopyAnnotationCommand}" InputGesture="Ctrl+Shift+C">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionCopy}"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Paste" Command="{Binding PasteCommand}" InputGesture="Ctrl+V">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Paste}" Command="{Binding PasteCommand}" InputGesture="Ctrl+V">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionPaste}"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Duplicate" Command="{Binding DuplicateSelectedCommand}" InputGesture="Ctrl+D">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Duplicate}" Command="{Binding DuplicateSelectedCommand}" InputGesture="Ctrl+D">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionDuplicate}"/>
                 </MenuItem.Icon>
@@ -137,22 +138,22 @@
 
             <Separator/>
 
-            <MenuItem Header="Bring to front" Command="{Binding BringToFrontCommand}" InputGesture="Home">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Bringtofront}" Command="{Binding BringToFrontCommand}" InputGesture="Home">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionBringToFront}"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Bring forward" Command="{Binding BringForwardCommand}" InputGesture="PageUp">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Bringforward}" Command="{Binding BringForwardCommand}" InputGesture="PageUp">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionBringForward}"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Send backward" Command="{Binding SendBackwardCommand}" InputGesture="PageDown">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Sendbackward}" Command="{Binding SendBackwardCommand}" InputGesture="PageDown">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionSendBackward}"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Send to back" Command="{Binding SendToBackCommand}" InputGesture="End">
+            <MenuItem Header="{x:Static res:Strings.EditorView_Sendtoback}" Command="{Binding SendToBackCommand}" InputGesture="End">
                 <MenuItem.Icon>
                     <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionSendToBack}"/>
                 </MenuItem.Icon>
@@ -189,14 +190,14 @@
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        VerticalAlignment="Center"
                                        Margin="0,2,0,0"/>
-                            <TextBlock Text="Background"
+                            <TextBlock Text="{x:Static res:Strings.EditorView_Background}"
                                        VerticalAlignment="Center"/>
                         </StackPanel>
 
                         <!-- Background Margin -->
                         <StackPanel Spacing="0">
                             <Grid ColumnDefinitions="*,Auto">
-                                <TextBlock Grid.Column="0" Text="Margin"/>
+                                <TextBlock Grid.Column="0" Text="{x:Static res:Strings.EditorView_Margin}"/>
                                 <Border Grid.Column="1" Classes="capsule">
                                     <TextBlock Text="{Binding BackgroundMargin, StringFormat='{}{0:F0} px'}"/>
                                 </Border>
@@ -211,7 +212,7 @@
                         <!-- Background Padding -->
                         <StackPanel Spacing="0">
                             <Grid ColumnDefinitions="*,Auto">
-                                <TextBlock Grid.Column="0" Text="Padding"/>
+                                <TextBlock Grid.Column="0" Text="{x:Static res:Strings.EditorView_Padding}"/>
                                 <Border Grid.Column="1" Classes="capsule">
                                     <TextBlock Text="{Binding BackgroundPadding, StringFormat='{}{0:F0} px'}"/>
                                 </Border>
@@ -231,7 +232,7 @@
                         <!-- Background Rounded Corner -->
                         <StackPanel Spacing="0">
                             <Grid ColumnDefinitions="*,Auto">
-                                <TextBlock Grid.Column="0" Text="Rounded Corner"/>
+                                <TextBlock Grid.Column="0" Text="{x:Static res:Strings.EditorView_RoundedCorner}"/>
                                 <Border Grid.Column="1" Classes="capsule">
                                     <TextBlock Text="{Binding BackgroundRoundedCorner, StringFormat='{}{0:F0} px'}"/>
                                 </Border>
@@ -246,7 +247,7 @@
                         <!-- Background Shadow Radius -->
                         <StackPanel Spacing="0">
                             <Grid ColumnDefinitions="*,Auto">
-                                <TextBlock Grid.Column="0" Text="Shadow Radius"/>
+                                <TextBlock Grid.Column="0" Text="{x:Static res:Strings.EditorView_ShadowRadius}"/>
                                 <Border Grid.Column="1" Classes="capsule">
                                     <TextBlock Text="{Binding BackgroundShadowRadius, StringFormat='{}{0:F0} px'}"/>
                                 </Border>
@@ -260,10 +261,10 @@
 
                         <!-- Ratio -->
                         <StackPanel Spacing="0">
-                            <TextBlock Text="Ratio" Margin="0,0,0,16"/>
+                            <TextBlock Text="{x:Static res:Strings.EditorView_Ratio}" Margin="0,0,0,16"/>
                             <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*,*">
                                 <!-- Row 0 -->
-                                <Button Grid.Row="0" Grid.Column="0" Content="Auto"
+                                <Button Grid.Row="0" Grid.Column="0" Content="{x:Static res:Strings.EditorView_Auto}"
                                         Classes="ratio-button"
                                         Command="{Binding SetOutputRatioCommand}" CommandParameter="Auto"
                                         Classes.active="{Binding SelectedOutputRatio, Converter={StaticResource EqualsConverter}, ConverterParameter=Auto}"
@@ -317,7 +318,7 @@
 
                         <!-- Background -->
                         <StackPanel Spacing="0">
-                            <TextBlock Text="Background" Margin="0,16"/>
+                            <TextBlock Text="{x:Static res:Strings.EditorView_Background}" Margin="0,16"/>
                             <ComboBox x:Name="BackgroundTypeComboBox"
                                       ItemsSource="{Binding BackgroundModeOptions}"
                                       SelectedItem="{Binding SelectedBackgroundModeOption, Mode=TwoWay}"
@@ -343,12 +344,12 @@
                                             <Border Grid.Column="0"
                                                     Classes="gradient-preview-half left"
                                                     Cursor="Hand"
-                                                    ToolTip.Tip="Edit gradient color 1"
+                                                    ToolTip.Tip="{x:Static res:Strings.EditorView_Editgradientcolor1}"
                                                     PointerPressed="OnGradientColor1PreviewPointerPressed"/>
                                             <Border Grid.Column="1"
                                                     Classes="gradient-preview-half right"
                                                     Cursor="Hand"
-                                                    ToolTip.Tip="Edit gradient color 2"
+                                                    ToolTip.Tip="{x:Static res:Strings.EditorView_Editgradientcolor2}"
                                                     PointerPressed="OnGradientColor2PreviewPointerPressed"/>
                                         </Grid>
                                     </Border>
@@ -429,7 +430,7 @@
                                                     Background="{Binding BackgroundColorBrush}"/>
                                             <Border Classes="color-preview-overlay"
                                                     Cursor="Hand"
-                                                    ToolTip.Tip="Edit background color"
+                                                    ToolTip.Tip="{x:Static res:Strings.EditorView_Editbackgroundcolor}"
                                                     PointerPressed="OnBackgroundColorPreviewPointerPressed"/>
                                         </Grid>
                                     </Border>
@@ -455,12 +456,12 @@
 
                             <StackPanel IsVisible="{Binding IsImageBackgroundModeSelected}" Spacing="6">
                                 <Button x:Name="BrowseBackgroundImageButton"
-                                        Content="Browse background image..."
+                                        Content="{x:Static res:Strings.EditorView_BrowsebackgroundimageEllipsis}"
                                         Click="OnBrowseBackgroundImageClick"
                                         HorizontalAlignment="Stretch"/>
 
                                 <StackPanel IsVisible="{Binding HasBackgroundImagePath}" Spacing="2">
-                                    <TextBlock Text="Background image"
+                                    <TextBlock Text="{x:Static res:Strings.EditorView_Backgroundimage}"
                                                FontWeight="Normal"
                                                FontSize="11"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
@@ -651,7 +652,7 @@
                     ZoomChanged="OnZoomChanged"
                     ZoomToFitRequested="OnZoomPickerZoomToFitRequested"
                     Height="40"
-                    ToolTip.Tip="Zoom (Ctrl + Wheel)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"/>
+                    ToolTip.Tip="{x:Static res:Strings.EditorView_ZoomCtrlWheel}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"/>
 
                 <!-- Separator -->
                 <Border Width="1" Height="38" Background="{DynamicResource ShareX.Brush.Separator}" Margin="4,0"
@@ -666,7 +667,7 @@
                             BorderThickness="1"
                             Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right"
                             Width="55" Margin="0,0,0,0" Padding="27,0,10,0" CornerRadius="0,4,4,0"
-                            ToolTip.Tip="Cancel (Esc)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"
+                            ToolTip.Tip="{x:Static res:Strings.EditorView_CancelEsc}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"
                             ZIndex="0">
                         <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionCancel}"
                                    FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
@@ -693,37 +694,37 @@
 
                 <Button Command="{Binding CopyCommand}" Width="40" Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
-                        ToolTip.Tip="Copy image to clipboard (Ctrl+C)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_CopyimagetoclipboardCtrlC}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
                     <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionCopy}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                 </Button>
 
                 <Button Command="{Binding SaveCommand}" Width="40" Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
-                        ToolTip.Tip="Save image (Ctrl+S)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_SaveimageCtrlS}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
                     <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSave}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                 </Button>
 
                 <Button Command="{Binding SaveAsCommand}" Width="40" Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
-                        ToolTip.Tip="Save image as... (Ctrl+Shift+S)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_SaveimageasEllipsisCtrlShiftS}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
                     <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSaveAs}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                 </Button>
 
                 <Button Command="{Binding PinToScreenCommand}" IsEnabled="{Binding HasPreviewImage}" Width="40" Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
-                        ToolTip.Tip="Pin image to screen (Ctrl+P)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_PinimagetoscreenCtrlP}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
                     <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionPinToScreen}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                 </Button>
 
                 <Button Command="{Binding PrintCommand}" IsEnabled="{Binding HasPreviewImage}" Width="40" Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
-                        ToolTip.Tip="Print image... (Ctrl+Shift+P)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_PrintimageEllipsisCtrlShiftP}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
                     <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionPrint}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                 </Button>
 
                 <Button Command="{Binding UploadCommand}" IsEnabled="{Binding HasPreviewImage}" Width="40" Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
-                        ToolTip.Tip="Upload image (Ctrl+U)" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_UploadimageCtrlU}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5">
                     <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionUpload}" FontSize="18" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                 </Button>
             </StackPanel>

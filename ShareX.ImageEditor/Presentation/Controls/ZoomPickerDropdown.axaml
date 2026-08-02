@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:theming="using:ShareX.ImageEditor.Presentation.Theming"
@@ -92,7 +93,7 @@
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Center"
                             Click="OnZoomToFitSelected">
-                        <TextBlock Text="Zoom to Fit"
+                        <TextBlock Text="{x:Static res:Strings.ZoomPickerDropdown_ZoomtoFit}"
                                    FontSize="12"
                                    FontWeight="SemiBold"
                                    HorizontalAlignment="Center"

@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              xmlns:cp="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.ColorPicker"
              xmlns:theming="using:ShareX.ImageEditor.Presentation.Theming"
              x:Class="ShareX.ImageEditor.Presentation.Controls.ColorPickerPanel"
@@ -24,7 +25,7 @@
                            FontWeight="Normal"
                            FontSize="16"
                            VerticalAlignment="Center"/>
-                <TextBlock Text="Pick color from screen"
+                <TextBlock Text="{x:Static res:Strings.ColorPickerPanel_Pickcolorfromscreen}"
                            FontWeight="Normal"
                            FontSize="16"
                            VerticalAlignment="Center"/>

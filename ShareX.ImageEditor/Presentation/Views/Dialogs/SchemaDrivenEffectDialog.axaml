@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
@@ -86,7 +87,7 @@
                         <Grid ColumnDefinitions="*,Auto">
                             <TextBox Text="{Binding Value, Mode=TwoWay}" Margin="0,0,8,0"/>
                             <Button Grid.Column="1"
-                                    Content="Browse..."
+                                    Content="{x:Static res:Strings.SchemaDrivenEffectDialog_BrowseEllipsis}"
                                     Click="OnBrowseFilePathClick"
                                     Tag="{Binding}"/>
                         </Grid>
@@ -97,14 +98,14 @@
 
         <Grid ColumnDefinitions="*,*" Margin="0,16,0,0">
             <Button x:Name="CancelButton"
-                    Content="Cancel"
+                    Content="{x:Static res:Strings.SchemaDrivenEffectDialog_Cancel}"
                     Click="OnCancelClick"
                     Margin="0,0,4,0"
                     HorizontalAlignment="Stretch"/>
             <Button x:Name="ApplyButton"
                     Grid.Column="1"
                     Classes="active"
-                    Content="Apply"
+                    Content="{x:Static res:Strings.SchemaDrivenEffectDialog_Apply}"
                     Click="OnApplyClick"
                     Margin="4,0,0,0"
                     HorizontalAlignment="Stretch"/>

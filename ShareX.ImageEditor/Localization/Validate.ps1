@@ -4,6 +4,11 @@ $localizationDirectory = $PSScriptRoot
 $projectDirectory = Split-Path $localizationDirectory -Parent
 $defaultPath = Join-Path $localizationDirectory 'Strings.resx'
 $cultureFiles = @(Get-ChildItem $localizationDirectory -Filter 'Strings.*.resx' | Sort-Object Name)
+$strictUtf8 = [Text.UTF8Encoding]::new($false, $true)
+$legacyEncodings = @(
+    [Text.Encoding]::GetEncoding(28591, [Text.EncoderExceptionFallback]::new(), [Text.DecoderExceptionFallback]::new())
+    [Text.Encoding]::GetEncoding(1252, [Text.EncoderExceptionFallback]::new(), [Text.DecoderExceptionFallback]::new())
+)
 
 $areas = @(
     [pscustomobject]@{
@@ -27,15 +32,101 @@ $areas = @(
             'Presentation/ViewModels/StartScreenDialogViewModel.cs'
         )
     }
+    [pscustomobject]@{
+        Name = 'Emoji picker'
+        Prefix = 'EmojiPickerDialogView_'
+        Sources = @(
+            'Presentation/Views/EmojiPickerDialogView.axaml'
+            'Presentation/ViewModels/EmojiPickerDialogViewModel.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Insert image dialog'
+        Prefix = 'InsertImageDialogView_'
+        Sources = @(
+            'Presentation/Views/InsertImageDialogView.axaml'
+            'Presentation/ViewModels/InsertImageDialogViewModel.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Annotation toolbar'
+        Prefix = 'AnnotationToolbar_'
+        Sources = @('Presentation/Controls/AnnotationToolbar.axaml')
+    }
+    [pscustomobject]@{
+        Name = 'Color picker panel'
+        Prefix = 'ColorPickerPanel_'
+        Sources = @('Presentation/Controls/ColorPickerPanel.axaml')
+    }
+    [pscustomobject]@{
+        Name = 'Editor options panel'
+        Prefix = 'EditorOptionsPanel_'
+        Sources = @('Presentation/Controls/EditorOptionsPanel.axaml')
+    }
+    [pscustomobject]@{
+        Name = 'Editor view'
+        Prefix = 'EditorView_'
+        Sources = @('Presentation/Views/EditorView.axaml')
+    }
+    [pscustomobject]@{
+        Name = 'Effect browser shell'
+        Prefix = 'EffectBrowserPanel_'
+        Sources = @(
+            'Presentation/Controls/EffectBrowserPanel.axaml'
+            'Presentation/Controls/EffectBrowserPanel.axaml.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Effect dialog shell'
+        Prefix = 'SchemaDrivenEffectDialog_'
+        Sources = @('Presentation/Views/Dialogs/SchemaDrivenEffectDialog.axaml')
+    }
+    [pscustomobject]@{
+        Name = 'Toolbar customization dialog'
+        Prefix = 'ToolbarCustomizationDialogView_'
+        Sources = @(
+            'Presentation/Views/ToolbarCustomizationDialogView.axaml'
+            'Presentation/ViewModels/ToolbarCustomizationDialogViewModel.cs'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'Zoom picker'
+        Prefix = 'ZoomPickerDropdown_'
+        Sources = @('Presentation/Controls/ZoomPickerDropdown.axaml')
+    }
 )
 
 function Read-Resources([string]$path)
 {
-    [xml]$document = Get-Content -LiteralPath $path -Raw
+    $text = [IO.File]::ReadAllText($path, $strictUtf8)
+    if ($text -match '[\u0080-\u009F\uFFFD]')
+    {
+        throw "Resource file contains invalid control or replacement characters: $path"
+    }
+
+    [xml]$document = $text
     $result = @{}
     foreach ($item in $document.root.data)
     {
-        $result[[string]$item.name] = [string]$item.value
+        $value = [string]$item.value
+        foreach ($encoding in $legacyEncodings)
+        {
+            try
+            {
+                $decoded = $strictUtf8.GetString($encoding.GetBytes($value))
+                if ($decoded -ne $value)
+                {
+                    throw "Resource value appears to contain reversible mojibake: $path ($($item.name))"
+                }
+            }
+            catch [Text.EncoderFallbackException]
+            {
+            }
+            catch [Text.DecoderFallbackException]
+            {
+            }
+        }
+        $result[[string]$item.name] = $value
     }
     return $result
 }

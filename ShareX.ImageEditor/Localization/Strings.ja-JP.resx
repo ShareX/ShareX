@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
-  <resheader name="version"><value>2.0</value></resheader>
-  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
-  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>  <data name="ConfirmationDialogView_Title" xml:space="preserve">
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConfirmationDialogView_Title" xml:space="preserve">
     <value>終了の確認</value>
   </data>
   <data name="ConfirmationDialogView_Message" xml:space="preserve">
@@ -79,5 +88,345 @@
   </data>
   <data name="StartScreenDialogView_InvalidURL" xml:space="preserve">
     <value>有効な HTTP または HTTPS URL を入力してください。</value>
+  </data>
+  <data name="EmojiPickerDialogView_LoadingEmojis" xml:space="preserve">
+    <value>絵文字を読み込んでいます...</value>
+  </data>
+  <data name="EmojiPickerDialogView_SearchEmojisCount" xml:space="preserve">
+    <value>絵文字を検索... ({0})</value>
+  </data>
+  <data name="EmojiPickerDialogView_BrowseEmojis" xml:space="preserve">
+    <value>絵文字を参照</value>
+  </data>
+  <data name="EmojiPickerDialogView_CategorySummary" xml:space="preserve">
+    <value>{0} • {1} 個の絵文字</value>
+  </data>
+  <data name="EmojiPickerDialogView_SearchResults" xml:space="preserve">
+    <value>検索結果 • {0} 件</value>
+  </data>
+  <data name="EmojiPickerDialogView_NoMatches" xml:space="preserve">
+    <value>この検索に一致する絵文字はありません。</value>
+  </data>
+  <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
+    <value>別のキーワードを試してください。</value>
+  </data>
+  <data name="EmojiPickerDialogView_Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="EmojiPickerDialogView_PreviewsLoading" xml:space="preserve">
+    <value>ピッカーの準備ができました。絵文字のプレビューをバックグラウンドで読み込んでいます。</value>
+  </data>
+  <data name="InsertImageDialogView_Title" xml:space="preserve">
+    <value>画像を挿入</value>
+  </data>
+  <data name="InsertImageDialogView_Description" xml:space="preserve">
+    <value>受け取った画像を現在のキャンバスに配置する方法を選択します。</value>
+  </data>
+  <data name="InsertImageDialogView_ImageSummary" xml:space="preserve">
+    <value>受け取った画像: {0} x {1}px</value>
+  </data>
+  <data name="InsertImageDialogView_Center" xml:space="preserve">
+    <value>画像を中央に挿入</value>
+  </data>
+  <data name="InsertImageDialogView_CenterDescription" xml:space="preserve">
+    <value>現在のキャンバスサイズを維持します。</value>
+  </data>
+  <data name="InsertImageDialogView_Below" xml:space="preserve">
+    <value>画像を下に挿入</value>
+  </data>
+  <data name="InsertImageDialogView_BelowDescription" xml:space="preserve">
+    <value>画像を追加する前にキャンバスを下方向へ拡張します。</value>
+  </data>
+  <data name="InsertImageDialogView_Right" xml:space="preserve">
+    <value>画像を右側に挿入</value>
+  </data>
+  <data name="InsertImageDialogView_RightDescription" xml:space="preserve">
+    <value>画像を追加する前にキャンバスを右方向へ拡張します。</value>
+  </data>
+  <data name="AnnotationToolbar_Exit" xml:space="preserve">
+    <value>終了</value>
+  </data>
+  <data name="AnnotationToolbar_OpenEllipsis" xml:space="preserve">
+    <value>Open...</value>
+  </data>
+  <data name="AnnotationToolbar_Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="EditorOptionsPanel_Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="EditorView_Copy" xml:space="preserve">
+    <value>コピー</value>
+  </data>
+  <data name="EditorView_Duplicate" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_BrowseEllipsis" xml:space="preserve">
+    <value>参照...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
+    <value>下へ移動</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
+    <value>上へ移動</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="AnnotationToolbar_Blur" xml:space="preserve">
+    <value>ぼかし</value>
+  </data>
+  <data name="AnnotationToolbar_Color" xml:space="preserve">
+    <value>色</value>
+  </data>
+  <data name="AnnotationToolbar_Options" xml:space="preserve">
+    <value>オプション</value>
+  </data>
+  <data name="EditorOptionsPanel_Options" xml:space="preserve">
+    <value>オプション</value>
+  </data>
+  <data name="EditorView_Bringforward" xml:space="preserve">
+    <value>前面へ移動</value>
+  </data>
+  <data name="EditorView_Bringtofront" xml:space="preserve">
+    <value>最前面へ移動</value>
+  </data>
+  <data name="EditorView_Cut" xml:space="preserve">
+    <value>切り取り</value>
+  </data>
+  <data name="EditorView_Delete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="EditorView_Deleteall" xml:space="preserve">
+    <value>すべて削除</value>
+  </data>
+  <data name="EditorView_Paste" xml:space="preserve">
+    <value>貼り付け</value>
+  </data>
+  <data name="EditorView_Redo" xml:space="preserve">
+    <value>やり直し</value>
+  </data>
+  <data name="EditorView_Sendbackward" xml:space="preserve">
+    <value>背面へ移動</value>
+  </data>
+  <data name="EditorView_Sendtoback" xml:space="preserve">
+    <value>最背面へ移動</value>
+  </data>
+  <data name="EditorView_Undo" xml:space="preserve">
+    <value>元に戻す</value>
+  </data>
+  <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
+    <value>矢印のスタイル</value>
+  </data>
+  <data name="AnnotationToolbar_Bluramount" xml:space="preserve">
+    <value>ぼかし量</value>
+  </data>
+  <data name="AnnotationToolbar_Bordercolor" xml:space="preserve">
+    <value>境界線の色</value>
+  </data>
+  <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
+    <value>境界線のスタイル</value>
+  </data>
+  <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
+    <value>角の半径</value>
+  </data>
+  <data name="AnnotationToolbar_Cursortype" xml:space="preserve">
+    <value>カーソルの種類</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteallShiftDelete" xml:space="preserve">
+    <value>すべて削除 (Shift+Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteDelete" xml:space="preserve">
+    <value>削除 (Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_Effectstrength" xml:space="preserve">
+    <value>効果の強さ</value>
+  </data>
+  <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
+    <value>塗りつぶしの色</value>
+  </data>
+  <data name="AnnotationToolbar_Fontfamily" xml:space="preserve">
+    <value>フォントファミリー</value>
+  </data>
+  <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
+    <value>フォントサイズ</value>
+  </data>
+  <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
+    <value>水平配置</value>
+  </data>
+  <data name="AnnotationToolbar_NewEllipsis" xml:space="preserve">
+    <value>新規...</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetX" xml:space="preserve">
+    <value>X オフセット</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetY" xml:space="preserve">
+    <value>Y オフセット</value>
+  </data>
+  <data name="AnnotationToolbar_Opacity" xml:space="preserve">
+    <value>不透明度</value>
+  </data>
+  <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
+    <value>最近使った項目を開く</value>
+  </data>
+  <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
+    <value>やり直し (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
+    <value>名前を付けて保存...</value>
+  </data>
+  <data name="AnnotationToolbar_Shadow" xml:space="preserve">
+    <value>影</value>
+  </data>
+  <data name="AnnotationToolbar_Shadowcolor" xml:space="preserve">
+    <value>影の色</value>
+  </data>
+  <data name="AnnotationToolbar_Startingnumber" xml:space="preserve">
+    <value>開始番号</value>
+  </data>
+  <data name="AnnotationToolbar_Steptype" xml:space="preserve">
+    <value>ステップの種類</value>
+  </data>
+  <data name="AnnotationToolbar_Textcolor" xml:space="preserve">
+    <value>文字色</value>
+  </data>
+  <data name="AnnotationToolbar_Thickness" xml:space="preserve">
+    <value>太さ</value>
+  </data>
+  <data name="AnnotationToolbar_Togglebold" xml:space="preserve">
+    <value>太字を切り替え</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleellipseshape" xml:space="preserve">
+    <value>楕円形を切り替え</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleitalic" xml:space="preserve">
+    <value>斜体を切り替え</value>
+  </data>
+  <data name="AnnotationToolbar_ToggleshadowShadowoptionsRightclick" xml:space="preserve">
+    <value>影を切り替え
+影のオプション (右クリック)</value>
+  </data>
+  <data name="AnnotationToolbar_Toggletail" xml:space="preserve">
+    <value>しっぽを切り替え</value>
+  </data>
+  <data name="AnnotationToolbar_UndoCtrlZ" xml:space="preserve">
+    <value>元に戻す (Ctrl+Z)</value>
+  </data>
+  <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
+    <value>画面から色を取得</value>
+  </data>
+  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
+    <value>ツールバーをカスタマイズ...</value>
+  </data>
+  <data name="EditorView_Auto" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="EditorView_Background" xml:space="preserve">
+    <value>背景</value>
+  </data>
+  <data name="EditorView_Backgroundimage" xml:space="preserve">
+    <value>背景画像</value>
+  </data>
+  <data name="EditorView_BrowsebackgroundimageEllipsis" xml:space="preserve">
+    <value>背景画像を参照...</value>
+  </data>
+  <data name="EditorView_CancelEsc" xml:space="preserve">
+    <value>キャンセル (Esc)</value>
+  </data>
+  <data name="EditorView_CopyimagetoclipboardCtrlC" xml:space="preserve">
+    <value>画像をクリップボードにコピー (Ctrl+C)</value>
+  </data>
+  <data name="EditorView_Editbackgroundcolor" xml:space="preserve">
+    <value>背景色を編集</value>
+  </data>
+  <data name="EditorView_Editgradientcolor1" xml:space="preserve">
+    <value>グラデーション色 1 を編集</value>
+  </data>
+  <data name="EditorView_Editgradientcolor2" xml:space="preserve">
+    <value>グラデーション色 2 を編集</value>
+  </data>
+  <data name="EditorView_Flatten" xml:space="preserve">
+    <value>フラット化</value>
+  </data>
+  <data name="EditorView_Margin" xml:space="preserve">
+    <value>余白</value>
+  </data>
+  <data name="EditorView_Padding" xml:space="preserve">
+    <value>内側の余白</value>
+  </data>
+  <data name="EditorView_PinimagetoscreenCtrlP" xml:space="preserve">
+    <value>画像を画面に固定 (Ctrl+P)</value>
+  </data>
+  <data name="EditorView_PrintimageEllipsisCtrlShiftP" xml:space="preserve">
+    <value>画像を印刷... (Ctrl+Shift+P)</value>
+  </data>
+  <data name="EditorView_Ratio" xml:space="preserve">
+    <value>比率</value>
+  </data>
+  <data name="EditorView_RoundedCorner" xml:space="preserve">
+    <value>角を丸める</value>
+  </data>
+  <data name="EditorView_SaveimageasEllipsisCtrlShiftS" xml:space="preserve">
+    <value>名前を付けて画像を保存... (Ctrl+Shift+S)</value>
+  </data>
+  <data name="EditorView_SaveimageCtrlS" xml:space="preserve">
+    <value>画像を保存 (Ctrl+S)</value>
+  </data>
+  <data name="EditorView_ShadowRadius" xml:space="preserve">
+    <value>影の半径</value>
+  </data>
+  <data name="EditorView_UploadimageCtrlU" xml:space="preserve">
+    <value>画像をアップロード (Ctrl+U)</value>
+  </data>
+  <data name="EditorView_ZoomCtrlWheel" xml:space="preserve">
+    <value>ズーム (Ctrl + ホイール)</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchimageeffectsEllipsis" xml:space="preserve">
+    <value>画像効果を検索...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Apply" xml:space="preserve">
+    <value>適用</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
+    <value>グループを開始</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit" xml:space="preserve">
+    <value>クリックしてショートカットを押します。Backspace または Delete で消去します。</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
+    <value>ツールバーをカスタマイズ</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
+    <value>ツールバーを既定に戻す</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
+    <value>表示 / 非表示</value>
+  </data>
+  <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
+    <value>ウィンドウに合わせる</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
+    <value>{0} のショートカットが無効です。R、Ctrl+R、Ctrl+Shift+R などの形式を使用してください。</value>
+  </data>
+  <data name="EffectBrowserPanel_RecentHint" xml:space="preserve">
+    <value>効果を右クリックすると「最近使った項目」から削除できます。</value>
+  </data>
+  <data name="EffectBrowserPanel_FavoritesHint" xml:space="preserve">
+    <value>効果を右クリックすると「お気に入り」に追加または削除できます。</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchCount" xml:space="preserve">
+    <value>画像効果を検索... ({0})</value>
+  </data>
+  <data name="EffectBrowserPanel_Recent" xml:space="preserve">
+    <value>最近使った項目</value>
+  </data>
+  <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
+    <value>お気に入り</value>
   </data>
 </root>

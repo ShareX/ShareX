@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
-  <resheader name="version"><value>2.0</value></resheader>
-  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
-  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>  <data name="ConfirmationDialogView_Title" xml:space="preserve">
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConfirmationDialogView_Title" xml:space="preserve">
     <value>Confirmar saída</value>
   </data>
   <data name="ConfirmationDialogView_Message" xml:space="preserve">
@@ -79,5 +88,345 @@ Deseja salvar as alterações antes de fechar o editor de imagens?</value>
   </data>
   <data name="StartScreenDialogView_InvalidURL" xml:space="preserve">
     <value>Insira uma URL HTTP ou HTTPS válida.</value>
+  </data>
+  <data name="EmojiPickerDialogView_LoadingEmojis" xml:space="preserve">
+    <value>Carregando emojis...</value>
+  </data>
+  <data name="EmojiPickerDialogView_SearchEmojisCount" xml:space="preserve">
+    <value>Pesquisar emojis... ({0})</value>
+  </data>
+  <data name="EmojiPickerDialogView_BrowseEmojis" xml:space="preserve">
+    <value>Procurar emojis</value>
+  </data>
+  <data name="EmojiPickerDialogView_CategorySummary" xml:space="preserve">
+    <value>{0} • {1} emojis</value>
+  </data>
+  <data name="EmojiPickerDialogView_SearchResults" xml:space="preserve">
+    <value>Resultados da pesquisa • {0} correspondências</value>
+  </data>
+  <data name="EmojiPickerDialogView_NoMatches" xml:space="preserve">
+    <value>Nenhum emoji corresponde a esta pesquisa.</value>
+  </data>
+  <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
+    <value>Tente outra palavra-chave.</value>
+  </data>
+  <data name="EmojiPickerDialogView_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="EmojiPickerDialogView_PreviewsLoading" xml:space="preserve">
+    <value>O seletor está pronto. As prévias dos emojis estão sendo carregadas em segundo plano.</value>
+  </data>
+  <data name="InsertImageDialogView_Title" xml:space="preserve">
+    <value>Inserir imagem</value>
+  </data>
+  <data name="InsertImageDialogView_Description" xml:space="preserve">
+    <value>Escolha como posicionar a imagem recebida na tela atual.</value>
+  </data>
+  <data name="InsertImageDialogView_ImageSummary" xml:space="preserve">
+    <value>Imagem recebida: {0} x {1}px</value>
+  </data>
+  <data name="InsertImageDialogView_Center" xml:space="preserve">
+    <value>Inserir imagem no centro</value>
+  </data>
+  <data name="InsertImageDialogView_CenterDescription" xml:space="preserve">
+    <value>Mantém o tamanho atual da tela.</value>
+  </data>
+  <data name="InsertImageDialogView_Below" xml:space="preserve">
+    <value>Inserir imagem abaixo</value>
+  </data>
+  <data name="InsertImageDialogView_BelowDescription" xml:space="preserve">
+    <value>Expande a tela para baixo antes de adicionar a imagem.</value>
+  </data>
+  <data name="InsertImageDialogView_Right" xml:space="preserve">
+    <value>Inserir imagem à direita</value>
+  </data>
+  <data name="InsertImageDialogView_RightDescription" xml:space="preserve">
+    <value>Expande a tela para a direita antes de adicionar a imagem.</value>
+  </data>
+  <data name="AnnotationToolbar_Exit" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="AnnotationToolbar_OpenEllipsis" xml:space="preserve">
+    <value>Abrir...</value>
+  </data>
+  <data name="AnnotationToolbar_Save" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="EditorOptionsPanel_Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="EditorView_Copy" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="EditorView_Duplicate" xml:space="preserve">
+    <value>Duplicar</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_BrowseEllipsis" xml:space="preserve">
+    <value>Procurar...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
+    <value>Mover para baixo</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
+    <value>Mover para cima</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="AnnotationToolbar_Blur" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="AnnotationToolbar_Color" xml:space="preserve">
+    <value>Cor</value>
+  </data>
+  <data name="AnnotationToolbar_Options" xml:space="preserve">
+    <value>Opções</value>
+  </data>
+  <data name="EditorOptionsPanel_Options" xml:space="preserve">
+    <value>Opções</value>
+  </data>
+  <data name="EditorView_Bringforward" xml:space="preserve">
+    <value>Trazer para frente</value>
+  </data>
+  <data name="EditorView_Bringtofront" xml:space="preserve">
+    <value>Trazer para frente</value>
+  </data>
+  <data name="EditorView_Cut" xml:space="preserve">
+    <value>Recortar</value>
+  </data>
+  <data name="EditorView_Delete" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="EditorView_Deleteall" xml:space="preserve">
+    <value>Apagar tudo</value>
+  </data>
+  <data name="EditorView_Paste" xml:space="preserve">
+    <value>Colar</value>
+  </data>
+  <data name="EditorView_Redo" xml:space="preserve">
+    <value>Refazer</value>
+  </data>
+  <data name="EditorView_Sendbackward" xml:space="preserve">
+    <value>Enviar para trás</value>
+  </data>
+  <data name="EditorView_Sendtoback" xml:space="preserve">
+    <value>Enviar para trás</value>
+  </data>
+  <data name="EditorView_Undo" xml:space="preserve">
+    <value>Desfazer</value>
+  </data>
+  <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
+    <value>Estilo da seta</value>
+  </data>
+  <data name="AnnotationToolbar_Bluramount" xml:space="preserve">
+    <value>Quantidade de desfoque</value>
+  </data>
+  <data name="AnnotationToolbar_Bordercolor" xml:space="preserve">
+    <value>Cor da borda</value>
+  </data>
+  <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
+    <value>Estilo da borda</value>
+  </data>
+  <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
+    <value>Raio dos cantos</value>
+  </data>
+  <data name="AnnotationToolbar_Cursortype" xml:space="preserve">
+    <value>Tipo de cursor</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteallShiftDelete" xml:space="preserve">
+    <value>Excluir tudo (Shift+Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteDelete" xml:space="preserve">
+    <value>Excluir (Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_Effectstrength" xml:space="preserve">
+    <value>Intensidade do efeito</value>
+  </data>
+  <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
+    <value>Cor de preenchimento</value>
+  </data>
+  <data name="AnnotationToolbar_Fontfamily" xml:space="preserve">
+    <value>Família da fonte</value>
+  </data>
+  <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
+    <value>Tamanho da fonte</value>
+  </data>
+  <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
+    <value>Alinhamento horizontal</value>
+  </data>
+  <data name="AnnotationToolbar_NewEllipsis" xml:space="preserve">
+    <value>Novo...</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetX" xml:space="preserve">
+    <value>Deslocamento X</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetY" xml:space="preserve">
+    <value>Deslocamento Y</value>
+  </data>
+  <data name="AnnotationToolbar_Opacity" xml:space="preserve">
+    <value>Opacidade</value>
+  </data>
+  <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
+    <value>Abrir recente</value>
+  </data>
+  <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
+    <value>Refazer (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
+    <value>Salvar como...</value>
+  </data>
+  <data name="AnnotationToolbar_Shadow" xml:space="preserve">
+    <value>Sombra</value>
+  </data>
+  <data name="AnnotationToolbar_Shadowcolor" xml:space="preserve">
+    <value>Cor da sombra</value>
+  </data>
+  <data name="AnnotationToolbar_Startingnumber" xml:space="preserve">
+    <value>Número inicial</value>
+  </data>
+  <data name="AnnotationToolbar_Steptype" xml:space="preserve">
+    <value>Tipo de etapa</value>
+  </data>
+  <data name="AnnotationToolbar_Textcolor" xml:space="preserve">
+    <value>Cor do texto</value>
+  </data>
+  <data name="AnnotationToolbar_Thickness" xml:space="preserve">
+    <value>Espessura</value>
+  </data>
+  <data name="AnnotationToolbar_Togglebold" xml:space="preserve">
+    <value>Alternar negrito</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleellipseshape" xml:space="preserve">
+    <value>Alternar forma elíptica</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleitalic" xml:space="preserve">
+    <value>Alternar itálico</value>
+  </data>
+  <data name="AnnotationToolbar_ToggleshadowShadowoptionsRightclick" xml:space="preserve">
+    <value>Alternar sombra
+Opções de sombra (Clique direito)</value>
+  </data>
+  <data name="AnnotationToolbar_Toggletail" xml:space="preserve">
+    <value>Alternar cauda</value>
+  </data>
+  <data name="AnnotationToolbar_UndoCtrlZ" xml:space="preserve">
+    <value>Desfazer (Ctrl+Z)</value>
+  </data>
+  <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
+    <value>Selecionar cor da tela</value>
+  </data>
+  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
+    <value>Personalizar barra de ferramentas...</value>
+  </data>
+  <data name="EditorView_Auto" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="EditorView_Background" xml:space="preserve">
+    <value>Plano de fundo</value>
+  </data>
+  <data name="EditorView_Backgroundimage" xml:space="preserve">
+    <value>Imagem de fundo</value>
+  </data>
+  <data name="EditorView_BrowsebackgroundimageEllipsis" xml:space="preserve">
+    <value>Procurar imagem de fundo...</value>
+  </data>
+  <data name="EditorView_CancelEsc" xml:space="preserve">
+    <value>Cancelar (Esc)</value>
+  </data>
+  <data name="EditorView_CopyimagetoclipboardCtrlC" xml:space="preserve">
+    <value>Copiar imagem para a área de transferência (Ctrl+C)</value>
+  </data>
+  <data name="EditorView_Editbackgroundcolor" xml:space="preserve">
+    <value>Editar cor de fundo</value>
+  </data>
+  <data name="EditorView_Editgradientcolor1" xml:space="preserve">
+    <value>Editar cor do gradiente 1</value>
+  </data>
+  <data name="EditorView_Editgradientcolor2" xml:space="preserve">
+    <value>Editar cor do gradiente 2</value>
+  </data>
+  <data name="EditorView_Flatten" xml:space="preserve">
+    <value>Achatar</value>
+  </data>
+  <data name="EditorView_Margin" xml:space="preserve">
+    <value>Margem</value>
+  </data>
+  <data name="EditorView_Padding" xml:space="preserve">
+    <value>Preenchimento</value>
+  </data>
+  <data name="EditorView_PinimagetoscreenCtrlP" xml:space="preserve">
+    <value>Fixar imagem na tela (Ctrl+P)</value>
+  </data>
+  <data name="EditorView_PrintimageEllipsisCtrlShiftP" xml:space="preserve">
+    <value>Imprimir imagem... (Ctrl+Shift+P)</value>
+  </data>
+  <data name="EditorView_Ratio" xml:space="preserve">
+    <value>Proporção</value>
+  </data>
+  <data name="EditorView_RoundedCorner" xml:space="preserve">
+    <value>Canto arredondado</value>
+  </data>
+  <data name="EditorView_SaveimageasEllipsisCtrlShiftS" xml:space="preserve">
+    <value>Salvar imagem como... (Ctrl+Shift+S)</value>
+  </data>
+  <data name="EditorView_SaveimageCtrlS" xml:space="preserve">
+    <value>Salvar imagem (Ctrl+S)</value>
+  </data>
+  <data name="EditorView_ShadowRadius" xml:space="preserve">
+    <value>Raio da sombra</value>
+  </data>
+  <data name="EditorView_UploadimageCtrlU" xml:space="preserve">
+    <value>Enviar imagem (Ctrl+U)</value>
+  </data>
+  <data name="EditorView_ZoomCtrlWheel" xml:space="preserve">
+    <value>Zoom (Ctrl + Roda)</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchimageeffectsEllipsis" xml:space="preserve">
+    <value>Pesquisar efeitos de imagem...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Apply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
+    <value>Iniciar grupo</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit" xml:space="preserve">
+    <value>Clique e pressione um atalho. Backspace ou Delete o limpa.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
+    <value>Personalizar barra de ferramentas</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
+    <value>Redefinir barra de ferramentas para o padrão</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
+    <value>Mostrar / Ocultar</value>
+  </data>
+  <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
+    <value>Ajustar à janela</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
+    <value>Atalho inválido para {0}. Use formatos como R, Ctrl+R ou Ctrl+Shift+R.</value>
+  </data>
+  <data name="EffectBrowserPanel_RecentHint" xml:space="preserve">
+    <value>Clique com o botão direito em um efeito para removê-lo dos Recentes.</value>
+  </data>
+  <data name="EffectBrowserPanel_FavoritesHint" xml:space="preserve">
+    <value>Clique com o botão direito em um efeito para adicioná-lo ou removê-lo dos Favoritos.</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchCount" xml:space="preserve">
+    <value>Pesquisar efeitos de imagem... ({0})</value>
+  </data>
+  <data name="EffectBrowserPanel_Recent" xml:space="preserve">
+    <value>Recentes</value>
+  </data>
+  <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
+    <value>Favoritos</value>
   </data>
 </root>

@@ -36,124 +36,826 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("ConfirmationDialogView_Title", resourceCulture);
             }
         }
+
         public static string ConfirmationDialogView_Message {
             get {
                 return ResourceManager.GetString("ConfirmationDialogView_Message", resourceCulture);
             }
         }
+
         public static string ConfirmationDialogView_Yes {
             get {
                 return ResourceManager.GetString("ConfirmationDialogView_Yes", resourceCulture);
             }
         }
+
         public static string ConfirmationDialogView_No {
             get {
                 return ResourceManager.GetString("ConfirmationDialogView_No", resourceCulture);
             }
         }
+
         public static string ConfirmationDialogView_Cancel {
             get {
                 return ResourceManager.GetString("ConfirmationDialogView_Cancel", resourceCulture);
             }
         }
+
         public static string NewImageDialogView_Title {
             get {
                 return ResourceManager.GetString("NewImageDialogView_Title", resourceCulture);
             }
         }
+
         public static string NewImageDialogView_Width {
             get {
                 return ResourceManager.GetString("NewImageDialogView_Width", resourceCulture);
             }
         }
+
         public static string NewImageDialogView_Pixels {
             get {
                 return ResourceManager.GetString("NewImageDialogView_Pixels", resourceCulture);
             }
         }
+
         public static string NewImageDialogView_Height {
             get {
                 return ResourceManager.GetString("NewImageDialogView_Height", resourceCulture);
             }
         }
+
         public static string NewImageDialogView_Background {
             get {
                 return ResourceManager.GetString("NewImageDialogView_Background", resourceCulture);
             }
         }
+
         public static string NewImageDialogView_Transparent {
             get {
                 return ResourceManager.GetString("NewImageDialogView_Transparent", resourceCulture);
             }
         }
+
         public static string NewImageDialogView_SolidColor {
             get {
                 return ResourceManager.GetString("NewImageDialogView_SolidColor", resourceCulture);
             }
         }
+
         public static string NewImageDialogView_OK {
             get {
                 return ResourceManager.GetString("NewImageDialogView_OK", resourceCulture);
             }
         }
+
         public static string NewImageDialogView_Cancel {
             get {
                 return ResourceManager.GetString("NewImageDialogView_Cancel", resourceCulture);
             }
         }
+
         public static string StartScreenDialogView_Title {
             get {
                 return ResourceManager.GetString("StartScreenDialogView_Title", resourceCulture);
             }
         }
+
         public static string StartScreenDialogView_CreateNewImage {
             get {
                 return ResourceManager.GetString("StartScreenDialogView_CreateNewImage", resourceCulture);
             }
         }
+
         public static string StartScreenDialogView_OpenImageFile {
             get {
                 return ResourceManager.GetString("StartScreenDialogView_OpenImageFile", resourceCulture);
             }
         }
+
         public static string StartScreenDialogView_LoadImageFromClipboard {
             get {
                 return ResourceManager.GetString("StartScreenDialogView_LoadImageFromClipboard", resourceCulture);
             }
         }
+
         public static string StartScreenDialogView_LoadImageFromURL {
             get {
                 return ResourceManager.GetString("StartScreenDialogView_LoadImageFromURL", resourceCulture);
             }
         }
+
         public static string StartScreenDialogView_Load {
             get {
                 return ResourceManager.GetString("StartScreenDialogView_Load", resourceCulture);
             }
         }
+
         public static string StartScreenDialogView_Cancel {
             get {
                 return ResourceManager.GetString("StartScreenDialogView_Cancel", resourceCulture);
             }
         }
+
         public static string StartScreenDialogView_Exit {
             get {
                 return ResourceManager.GetString("StartScreenDialogView_Exit", resourceCulture);
             }
         }
+
         public static string StartScreenDialogView_RecentFiles {
             get {
                 return ResourceManager.GetString("StartScreenDialogView_RecentFiles", resourceCulture);
             }
         }
+
         public static string StartScreenDialogView_NoRecentImageFiles {
             get {
                 return ResourceManager.GetString("StartScreenDialogView_NoRecentImageFiles", resourceCulture);
             }
         }
+
         public static string StartScreenDialogView_InvalidURL {
             get {
                 return ResourceManager.GetString("StartScreenDialogView_InvalidURL", resourceCulture);
+            }
+        }
+
+        public static string EmojiPickerDialogView_LoadingEmojis {
+            get {
+                return ResourceManager.GetString("EmojiPickerDialogView_LoadingEmojis", resourceCulture);
+            }
+        }
+
+        public static string EmojiPickerDialogView_SearchEmojisCount {
+            get {
+                return ResourceManager.GetString("EmojiPickerDialogView_SearchEmojisCount", resourceCulture);
+            }
+        }
+
+        public static string EmojiPickerDialogView_BrowseEmojis {
+            get {
+                return ResourceManager.GetString("EmojiPickerDialogView_BrowseEmojis", resourceCulture);
+            }
+        }
+
+        public static string EmojiPickerDialogView_CategorySummary {
+            get {
+                return ResourceManager.GetString("EmojiPickerDialogView_CategorySummary", resourceCulture);
+            }
+        }
+
+        public static string EmojiPickerDialogView_SearchResults {
+            get {
+                return ResourceManager.GetString("EmojiPickerDialogView_SearchResults", resourceCulture);
+            }
+        }
+
+        public static string EmojiPickerDialogView_NoMatches {
+            get {
+                return ResourceManager.GetString("EmojiPickerDialogView_NoMatches", resourceCulture);
+            }
+        }
+
+        public static string EmojiPickerDialogView_TryDifferentKeyword {
+            get {
+                return ResourceManager.GetString("EmojiPickerDialogView_TryDifferentKeyword", resourceCulture);
+            }
+        }
+
+        public static string EmojiPickerDialogView_Cancel {
+            get {
+                return ResourceManager.GetString("EmojiPickerDialogView_Cancel", resourceCulture);
+            }
+        }
+
+        public static string EmojiPickerDialogView_PreviewsLoading {
+            get {
+                return ResourceManager.GetString("EmojiPickerDialogView_PreviewsLoading", resourceCulture);
+            }
+        }
+
+        public static string InsertImageDialogView_Title {
+            get {
+                return ResourceManager.GetString("InsertImageDialogView_Title", resourceCulture);
+            }
+        }
+
+        public static string InsertImageDialogView_Description {
+            get {
+                return ResourceManager.GetString("InsertImageDialogView_Description", resourceCulture);
+            }
+        }
+
+        public static string InsertImageDialogView_ImageSummary {
+            get {
+                return ResourceManager.GetString("InsertImageDialogView_ImageSummary", resourceCulture);
+            }
+        }
+
+        public static string InsertImageDialogView_Center {
+            get {
+                return ResourceManager.GetString("InsertImageDialogView_Center", resourceCulture);
+            }
+        }
+
+        public static string InsertImageDialogView_CenterDescription {
+            get {
+                return ResourceManager.GetString("InsertImageDialogView_CenterDescription", resourceCulture);
+            }
+        }
+
+        public static string InsertImageDialogView_Below {
+            get {
+                return ResourceManager.GetString("InsertImageDialogView_Below", resourceCulture);
+            }
+        }
+
+        public static string InsertImageDialogView_BelowDescription {
+            get {
+                return ResourceManager.GetString("InsertImageDialogView_BelowDescription", resourceCulture);
+            }
+        }
+
+        public static string InsertImageDialogView_Right {
+            get {
+                return ResourceManager.GetString("InsertImageDialogView_Right", resourceCulture);
+            }
+        }
+
+        public static string InsertImageDialogView_RightDescription {
+            get {
+                return ResourceManager.GetString("InsertImageDialogView_RightDescription", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Arrowstyle {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Arrowstyle", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Blur {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Blur", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Bluramount {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Bluramount", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Bordercolor {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Bordercolor", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Borderstyle {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Borderstyle", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Color {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Color", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Cornerradius {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Cornerradius", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Cursortype {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Cursortype", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_DeleteallShiftDelete {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_DeleteallShiftDelete", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_DeleteDelete {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_DeleteDelete", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Effectstrength {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Effectstrength", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Exit {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Exit", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Fillcolor {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Fillcolor", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Fontfamily {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Fontfamily", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Fontsize {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Fontsize", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Horizontalalignment {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Horizontalalignment", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_NewEllipsis {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_NewEllipsis", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_OffsetX {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_OffsetX", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_OffsetY {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_OffsetY", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Opacity {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Opacity", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_OpenEllipsis {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_OpenEllipsis", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Openrecent {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Openrecent", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Options {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Options", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_RedoCtrlY {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_RedoCtrlY", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Save {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Save", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_SaveasEllipsis {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_SaveasEllipsis", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Shadow {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Shadow", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Shadowcolor {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Shadowcolor", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Startingnumber {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Startingnumber", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Steptype {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Steptype", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Textcolor {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Textcolor", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Thickness {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Thickness", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Togglebold {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Togglebold", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Toggleellipseshape {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Toggleellipseshape", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Toggleitalic {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Toggleitalic", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_ToggleshadowShadowoptionsRightclick {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_ToggleshadowShadowoptionsRightclick", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_Toggletail {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Toggletail", resourceCulture);
+            }
+        }
+
+        public static string AnnotationToolbar_UndoCtrlZ {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_UndoCtrlZ", resourceCulture);
+            }
+        }
+
+        public static string ColorPickerPanel_Pickcolorfromscreen {
+            get {
+                return ResourceManager.GetString("ColorPickerPanel_Pickcolorfromscreen", resourceCulture);
+            }
+        }
+
+        public static string EditorOptionsPanel_Close {
+            get {
+                return ResourceManager.GetString("EditorOptionsPanel_Close", resourceCulture);
+            }
+        }
+
+        public static string EditorOptionsPanel_CustomizetoolbarEllipsis {
+            get {
+                return ResourceManager.GetString("EditorOptionsPanel_CustomizetoolbarEllipsis", resourceCulture);
+            }
+        }
+
+        public static string EditorOptionsPanel_Options {
+            get {
+                return ResourceManager.GetString("EditorOptionsPanel_Options", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Auto {
+            get {
+                return ResourceManager.GetString("EditorView_Auto", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Background {
+            get {
+                return ResourceManager.GetString("EditorView_Background", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Backgroundimage {
+            get {
+                return ResourceManager.GetString("EditorView_Backgroundimage", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Bringforward {
+            get {
+                return ResourceManager.GetString("EditorView_Bringforward", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Bringtofront {
+            get {
+                return ResourceManager.GetString("EditorView_Bringtofront", resourceCulture);
+            }
+        }
+
+        public static string EditorView_BrowsebackgroundimageEllipsis {
+            get {
+                return ResourceManager.GetString("EditorView_BrowsebackgroundimageEllipsis", resourceCulture);
+            }
+        }
+
+        public static string EditorView_CancelEsc {
+            get {
+                return ResourceManager.GetString("EditorView_CancelEsc", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Copy {
+            get {
+                return ResourceManager.GetString("EditorView_Copy", resourceCulture);
+            }
+        }
+
+        public static string EditorView_CopyimagetoclipboardCtrlC {
+            get {
+                return ResourceManager.GetString("EditorView_CopyimagetoclipboardCtrlC", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Cut {
+            get {
+                return ResourceManager.GetString("EditorView_Cut", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Delete {
+            get {
+                return ResourceManager.GetString("EditorView_Delete", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Deleteall {
+            get {
+                return ResourceManager.GetString("EditorView_Deleteall", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Duplicate {
+            get {
+                return ResourceManager.GetString("EditorView_Duplicate", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Editbackgroundcolor {
+            get {
+                return ResourceManager.GetString("EditorView_Editbackgroundcolor", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Editgradientcolor1 {
+            get {
+                return ResourceManager.GetString("EditorView_Editgradientcolor1", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Editgradientcolor2 {
+            get {
+                return ResourceManager.GetString("EditorView_Editgradientcolor2", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Flatten {
+            get {
+                return ResourceManager.GetString("EditorView_Flatten", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Margin {
+            get {
+                return ResourceManager.GetString("EditorView_Margin", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Padding {
+            get {
+                return ResourceManager.GetString("EditorView_Padding", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Paste {
+            get {
+                return ResourceManager.GetString("EditorView_Paste", resourceCulture);
+            }
+        }
+
+        public static string EditorView_PinimagetoscreenCtrlP {
+            get {
+                return ResourceManager.GetString("EditorView_PinimagetoscreenCtrlP", resourceCulture);
+            }
+        }
+
+        public static string EditorView_PrintimageEllipsisCtrlShiftP {
+            get {
+                return ResourceManager.GetString("EditorView_PrintimageEllipsisCtrlShiftP", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Ratio {
+            get {
+                return ResourceManager.GetString("EditorView_Ratio", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Redo {
+            get {
+                return ResourceManager.GetString("EditorView_Redo", resourceCulture);
+            }
+        }
+
+        public static string EditorView_RoundedCorner {
+            get {
+                return ResourceManager.GetString("EditorView_RoundedCorner", resourceCulture);
+            }
+        }
+
+        public static string EditorView_SaveimageasEllipsisCtrlShiftS {
+            get {
+                return ResourceManager.GetString("EditorView_SaveimageasEllipsisCtrlShiftS", resourceCulture);
+            }
+        }
+
+        public static string EditorView_SaveimageCtrlS {
+            get {
+                return ResourceManager.GetString("EditorView_SaveimageCtrlS", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Sendbackward {
+            get {
+                return ResourceManager.GetString("EditorView_Sendbackward", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Sendtoback {
+            get {
+                return ResourceManager.GetString("EditorView_Sendtoback", resourceCulture);
+            }
+        }
+
+        public static string EditorView_ShadowRadius {
+            get {
+                return ResourceManager.GetString("EditorView_ShadowRadius", resourceCulture);
+            }
+        }
+
+        public static string EditorView_Undo {
+            get {
+                return ResourceManager.GetString("EditorView_Undo", resourceCulture);
+            }
+        }
+
+        public static string EditorView_UploadimageCtrlU {
+            get {
+                return ResourceManager.GetString("EditorView_UploadimageCtrlU", resourceCulture);
+            }
+        }
+
+        public static string EditorView_ZoomCtrlWheel {
+            get {
+                return ResourceManager.GetString("EditorView_ZoomCtrlWheel", resourceCulture);
+            }
+        }
+
+        public static string EffectBrowserPanel_SearchimageeffectsEllipsis {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_SearchimageeffectsEllipsis", resourceCulture);
+            }
+        }
+
+        public static string SchemaDrivenEffectDialog_Apply {
+            get {
+                return ResourceManager.GetString("SchemaDrivenEffectDialog_Apply", resourceCulture);
+            }
+        }
+
+        public static string SchemaDrivenEffectDialog_BrowseEllipsis {
+            get {
+                return ResourceManager.GetString("SchemaDrivenEffectDialog_BrowseEllipsis", resourceCulture);
+            }
+        }
+
+        public static string SchemaDrivenEffectDialog_Cancel {
+            get {
+                return ResourceManager.GetString("SchemaDrivenEffectDialog_Cancel", resourceCulture);
+            }
+        }
+
+        public static string ToolbarCustomizationDialogView_Begingroup {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Begingroup", resourceCulture);
+            }
+        }
+
+        public static string ToolbarCustomizationDialogView_Cancel {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Cancel", resourceCulture);
+            }
+        }
+
+        public static string ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit", resourceCulture);
+            }
+        }
+
+        public static string ToolbarCustomizationDialogView_CustomizeToolbar {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_CustomizeToolbar", resourceCulture);
+            }
+        }
+
+        public static string ToolbarCustomizationDialogView_Movedown {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Movedown", resourceCulture);
+            }
+        }
+
+        public static string ToolbarCustomizationDialogView_Moveup {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Moveup", resourceCulture);
+            }
+        }
+
+        public static string ToolbarCustomizationDialogView_OK {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_OK", resourceCulture);
+            }
+        }
+
+        public static string ToolbarCustomizationDialogView_Resettoolbartodefault {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Resettoolbartodefault", resourceCulture);
+            }
+        }
+
+        public static string ToolbarCustomizationDialogView_ShowHide {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_ShowHide", resourceCulture);
+            }
+        }
+
+        public static string ZoomPickerDropdown_ZoomtoFit {
+            get {
+                return ResourceManager.GetString("ZoomPickerDropdown_ZoomtoFit", resourceCulture);
+            }
+        }
+
+        public static string ToolbarCustomizationDialogView_InvalidHotkey {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_InvalidHotkey", resourceCulture);
+            }
+        }
+
+        public static string EffectBrowserPanel_RecentHint {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_RecentHint", resourceCulture);
+            }
+        }
+
+        public static string EffectBrowserPanel_FavoritesHint {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_FavoritesHint", resourceCulture);
+            }
+        }
+
+        public static string EffectBrowserPanel_SearchCount {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_SearchCount", resourceCulture);
+            }
+        }
+
+        public static string EffectBrowserPanel_Recent {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Recent", resourceCulture);
+            }
+        }
+
+        public static string EffectBrowserPanel_Favorites {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Favorites", resourceCulture);
             }
         }
     }

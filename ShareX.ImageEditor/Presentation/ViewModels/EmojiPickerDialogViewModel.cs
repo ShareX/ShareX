@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -25,6 +25,7 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Emoji;
 using System.Collections.ObjectModel;
 
@@ -50,7 +51,7 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
     private string _resultsSummary = string.Empty;
 
     [ObservableProperty]
-    private string _searchWatermark = "Loading emojis...";
+    private string _searchWatermark = Strings.EmojiPickerDialogView_LoadingEmojis;
 
     [ObservableProperty]
     private bool _isLoading = true;
@@ -95,8 +96,8 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
         }
 
         IsLoading = true;
-        ResultsSummary = "Loading emojis...";
-        SearchWatermark = "Loading emojis...";
+        ResultsSummary = Strings.EmojiPickerDialogView_LoadingEmojis;
+        SearchWatermark = Strings.EmojiPickerDialogView_LoadingEmojis;
 
         await Task.Yield();
 
@@ -141,7 +142,7 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
             return;
         }
 
-        SearchWatermark = $"Search emojis... ({result.CategoryCount})";
+        SearchWatermark = string.Format(Strings.EmojiPickerDialogView_SearchEmojisCount, result.CategoryCount);
         ResultsSummary = result.ResultsSummary;
         VisibleEmojis = [.. result.Entries];
         OnPropertyChanged(nameof(HasResults));
@@ -161,8 +162,8 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
         {
             query = categoryEntries;
             resultsSummary = string.IsNullOrEmpty(selectedGroup)
-                ? "Browse emojis"
-                : $"{selectedGroup} • {categoryEntries.Length} emojis";
+                ? Strings.EmojiPickerDialogView_BrowseEmojis
+                : string.Format(Strings.EmojiPickerDialogView_CategorySummary, selectedGroup, categoryEntries.Length);
         }
         else
         {
@@ -176,7 +177,7 @@ public partial class EmojiPickerDialogViewModel : ObservableObject
             ];
 
             query = filteredEntries;
-            resultsSummary = $"Search results • {filteredEntries.Length} matches";
+            resultsSummary = string.Format(Strings.EmojiPickerDialogView_SearchResults, filteredEntries.Length);
         }
 
         return new EmojiQueryResult([.. query], resultsSummary, categoryEntries.Length);

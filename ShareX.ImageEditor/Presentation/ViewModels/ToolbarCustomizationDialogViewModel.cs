@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using CommunityToolkit.Mvvm.Input;
+using ShareX.ImageEditor.Localization;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -216,7 +217,7 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
 
             if (!ToolbarHotkeyHelper.TryParse(hotkey, out _, out _))
             {
-                ValidationMessage = $"Invalid hotkey for {item.Name}. Use formats like R, Ctrl+R, or Ctrl+Shift+R.";
+                ValidationMessage = string.Format(Strings.ToolbarCustomizationDialogView_InvalidHotkey, item.Name);
                 return;
             }
 

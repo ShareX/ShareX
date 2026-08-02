@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
@@ -26,13 +27,13 @@
                     BorderThickness="0,0,0,1"
                     Padding="14,8">
                 <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
-                    <TextBlock Text="Customize Toolbar" FontSize="15" VerticalAlignment="Center"/>
+                    <TextBlock Text="{x:Static res:Strings.ToolbarCustomizationDialogView_CustomizeToolbar}" FontSize="15" VerticalAlignment="Center"/>
                     <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="6">
                         <Button
                                 Command="{Binding ResetCommand}"
                                 Height="32"
                                 Padding="10,0"
-                                Content="Reset toolbar to default"/>
+                                Content="{x:Static res:Strings.ToolbarCustomizationDialogView_Resettoolbartodefault}"/>
                     </StackPanel>
                 </Grid>
             </Border>
@@ -59,7 +60,7 @@
                                                      IsReadOnly="True"
                                                      VerticalAlignment="Center"
                                                      VerticalContentAlignment="Center"
-                                                     ToolTip.Tip="Click and press a shortcut. Backspace or Delete clears it."/>
+                                                     ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit}"/>
 
                                             <StackPanel DockPanel.Dock="Left"
                                                         Orientation="Horizontal"
@@ -72,7 +73,7 @@
                                                         Padding="0"
                                                         IsEnabled="{Binding CanMoveUp}"
                                                         Click="OnMoveUpClick"
-                                                        ToolTip.Tip="Move up">
+                                                        ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_Moveup}">
                                                     <TextBlock Text="{x:Static theming:LucideIcons.chevron_up}"
                                                                FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                                FontWeight="Normal"
@@ -86,7 +87,7 @@
                                                         Padding="0"
                                                         IsEnabled="{Binding CanMoveDown}"
                                                         Click="OnMoveDownClick"
-                                                        ToolTip.Tip="Move down">
+                                                        ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_Movedown}">
                                                     <TextBlock Text="{x:Static theming:LucideIcons.chevron_down}"
                                                                FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                                FontWeight="Normal"
@@ -102,7 +103,7 @@
                                                               IsChecked="{Binding BeginGroup, Mode=TwoWay}"
                                                               HorizontalAlignment="Center"
                                                               VerticalAlignment="Center"
-                                                              ToolTip.Tip="Begin group">
+                                                              ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_Begingroup}">
                                                     <TextBlock Text="{x:Static theming:LucideIcons.arrow_right_from_line}"
                                                                FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                                FontWeight="Normal"
@@ -117,7 +118,7 @@
                                                               IsEnabled="{Binding IsVisibilityEditable}"
                                                               HorizontalAlignment="Center"
                                                               VerticalAlignment="Center"
-                                                              ToolTip.Tip="Show / Hide"/>
+                                                              ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_ShowHide}"/>
                                             </StackPanel>
 
                                             <Grid ColumnDefinitions="32,*"
@@ -160,12 +161,12 @@
                     <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right">
                         <Button
                                 Padding="20,0"
-                                Content="OK"
+                                Content="{x:Static res:Strings.ToolbarCustomizationDialogView_OK}"
                                 Command="{Binding OkCommand}"
                                 HorizontalContentAlignment="Center"/>
                         <Button
                                 Padding="20,0"
-                                Content="Cancel"
+                                Content="{x:Static res:Strings.ToolbarCustomizationDialogView_Cancel}"
                                 Command="{Binding CancelCommand}"
                                 HorizontalContentAlignment="Center"/>
                     </StackPanel>

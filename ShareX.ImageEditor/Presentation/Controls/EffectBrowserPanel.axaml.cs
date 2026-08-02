@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -33,6 +33,7 @@ using CommunityToolkit.Mvvm.Input;
 using ShareX.ImageEditor.Core.ImageEffects;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.Effects;
+using ShareX.ImageEditor.Localization;
 using System.Collections.ObjectModel;
 using System.Text;
 
@@ -257,10 +258,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
 
     public partial class EffectBrowserPanel : UserControl
     {
-        private const string RecentHeaderHint = "Right-click an effect item to remove it from Recent.";
-        private const string FavoritesHeaderHint = "Right-click an effect item to add or remove it from Favorites.";
         private const int MaxRecentEffects = 10;
-        private const string SearchWatermarkFormat = "Search image effects... ({0})";
         private static readonly FontFamily IconFontFamily = new("avares://ShareX.Avalonia/Assets#lucide");
 
         private static readonly Dictionary<string, string> EffectAliases = new(StringComparer.OrdinalIgnoreCase)
@@ -280,8 +278,8 @@ namespace ShareX.ImageEditor.Presentation.Controls
 
         public ObservableCollection<EffectCategory> Categories { get; } = new();
 
-        private readonly EffectCategory _recentCategory = new("Recent", headerHint: RecentHeaderHint);
-        private readonly EffectCategory _favoritesCategory = new("Favorites", headerHint: FavoritesHeaderHint);
+        private readonly EffectCategory _recentCategory = new(Strings.EffectBrowserPanel_Recent, headerHint: Strings.EffectBrowserPanel_RecentHint);
+        private readonly EffectCategory _favoritesCategory = new(Strings.EffectBrowserPanel_Favorites, headerHint: Strings.EffectBrowserPanel_FavoritesHint);
         private readonly Dictionary<string, EffectItem> _allEffectsById = new(StringComparer.OrdinalIgnoreCase);
         private readonly List<string> _recentEffectIds = new();
         private readonly HashSet<string> _favoriteEffectIds = new(StringComparer.OrdinalIgnoreCase);
@@ -613,7 +611,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
                 .Where(category => !IsPinnedCategory(category))
                 .Sum(category => category.AllEffects.Count);
 
-            searchBox.PlaceholderText = string.Format(SearchWatermarkFormat, totalEffectCount);
+            searchBox.PlaceholderText = string.Format(Strings.EffectBrowserPanel_SearchCount, totalEffectCount);
         }
 
         private void PersistRecentToOptions()

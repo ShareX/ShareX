@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              xmlns:models="clr-namespace:ShareX.ImageEditor.Core.Annotations;assembly=ShareX.ImageEditor"
              xmlns:abstractions="clr-namespace:ShareX.ImageEditor.Core.Abstractions;assembly=ShareX.ImageEditor"
              xmlns:converters="clr-namespace:ShareX.ImageEditor.Presentation.Converters;assembly=ShareX.ImageEditor"
@@ -66,21 +67,21 @@
                                         </Grid>
                                         <Button.Flyout>
                                             <MenuFlyout Placement="BottomEdgeAlignedLeft" VerticalOffset="4">
-                                                <MenuItem Header="New..."
+                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_NewEllipsis}"
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.NewImageCommand}"
                                                           InputGesture="Ctrl+N">
                                                     <MenuItem.Icon>
                                                         <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.FileNew}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
-                                                <MenuItem Header="Open..."
+                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_OpenEllipsis}"
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.OpenImageCommand}"
                                                           InputGesture="Ctrl+O">
                                                     <MenuItem.Icon>
                                                         <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.FileOpen}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
-                                                <MenuItem Header="Open recent"
+                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Openrecent}"
                                                           IsVisible="{Binding #AnnotationToolbarRoot.DataContext.HasRecentImageFiles}"
                                                           ItemsSource="{Binding #AnnotationToolbarRoot.DataContext.RecentImageMenuItems}">
                                                     <MenuItem.Icon>
@@ -88,14 +89,14 @@
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                                 <Separator/>
-                                                <MenuItem Header="Save"
+                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Save}"
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.SaveCommand}"
                                                           InputGesture="Ctrl+S">
                                                     <MenuItem.Icon>
                                                         <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.FileSave}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
-                                                <MenuItem Header="Save as..."
+                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_SaveasEllipsis}"
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.SaveAsCommand}"
                                                           InputGesture="Ctrl+Shift+S">
                                                     <MenuItem.Icon>
@@ -103,7 +104,7 @@
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                                 <Separator/>
-                                                <MenuItem Header="Options"
+                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Options}"
                                                           IsVisible="{Binding #AnnotationToolbarRoot.DataContext.ShowOptionsButton}"
                                                           Click="OnOpenOptionsClick">
                                                     <MenuItem.Icon>
@@ -111,7 +112,7 @@
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                                 <Separator IsVisible="{Binding #AnnotationToolbarRoot.DataContext.ShowOptionsButton}"/>
-                                                <MenuItem Header="Exit"
+                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Exit}"
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.ExitEditorCommand}"
                                                           InputGesture="Escape">
                                                     <MenuItem.Icon>
@@ -141,22 +142,22 @@
                         <Button Classes="toolbar-button"
                                 IsEnabled="{Binding CanUndo}"
                                 Click="OnUndoClick"
-                                ToolTip.Tip="Undo (Ctrl+Z)"
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_UndoCtrlZ}"
                                 Content="{x:Static theming:EditorIcons.ActionUndo}"/>
                         <Button Classes="toolbar-button"
                                 IsEnabled="{Binding CanRedo}"
                                 Click="OnRedoClick"
-                                ToolTip.Tip="Redo (Ctrl+Y)"
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_RedoCtrlY}"
                                 Content="{x:Static theming:EditorIcons.ActionRedo}"/>
                         <Button Classes="toolbar-button"
                                 IsEnabled="{Binding HasSelection}"
                                 Click="OnDeleteClick"
-                                ToolTip.Tip="Delete (Delete)"
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteDelete}"
                                 Content="{x:Static theming:EditorIcons.ActionDelete}"/>
                         <Button Classes="toolbar-button"
                                 IsEnabled="{Binding HasAnnotations}"
                                 Click="OnClearClick"
-                                ToolTip.Tip="Delete all (Shift+Delete)"
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteallShiftDelete}"
                                 Content="{x:Static theming:EditorIcons.ActionClearAll}"/>
                     </StackPanel>
                 </StackPanel>
@@ -197,26 +198,26 @@
                                                   Height="40"
                                                   IsVisible="{Binding ShowBorderColor}"
                                                   ShowBorderHole="True"
-                                                  ToolTip.Tip="Border color"/>
+                                                  ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Bordercolor}"/>
 
                     <controls:ColorPickerDropdown x:Name="FillColorPicker"
                                                   SelectedColor="{Binding FillColorBrush, Mode=TwoWay}"
                                                   Height="40"
                                                   IsVisible="{Binding ShowFillColor}"
-                                                  ToolTip.Tip="Fill color"/>
+                                                  ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Fillcolor}"/>
 
                     <controls:ColorPickerDropdown x:Name="TextColorPicker"
                                                   SelectedColor="{Binding TextColorBrush, Mode=TwoWay}"
                                                   Height="40"
                                                   IsVisible="{Binding ShowTextColor}"
                                                   ShowTextLabel="True"
-                                                  ToolTip.Tip="Text color"/>
+                                                  ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Textcolor}"/>
 
                     <controls:WidthPickerDropdown x:Name="StrokeWidthPicker"
                                                   SelectedWidth="{Binding StrokeWidth, Mode=TwoWay}"
                                                   Height="40"
                                                   IsVisible="{Binding ShowThickness}"
-                                                  ToolTip.Tip="Thickness"/>
+                                                  ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Thickness}"/>
 
                     <controls:BorderStylePickerDropdown x:Name="BorderStylePicker"
                                                         BorderStyleOptions="{Binding AvailableBorderStyles}"
@@ -225,13 +226,13 @@
                                                         MaxWidth="168"
                                                         Height="40"
                                                         IsVisible="{Binding ShowBorderStyle}"
-                                                        ToolTip.Tip="Border style"/>
+                                                        ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Borderstyle}"/>
 
                     <controls:CornerRadiusPickerDropdown x:Name="CornerRadiusPicker"
                                                          SelectedCornerRadius="{Binding CornerRadius, Mode=TwoWay}"
                                                          Height="40"
                                                          IsVisible="{Binding ShowCornerRadius}"
-                                                         ToolTip.Tip="Corner radius"/>
+                                                         ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Cornerradius}"/>
 
                     <controls:FontFamilyPickerDropdown x:Name="FontFamilyPicker"
                                                        FontFamilyOptions="{Binding AvailableFontFamilies}"
@@ -240,14 +241,14 @@
                                                        MaxWidth="240"
                                                        Height="40"
                                                        IsVisible="{Binding ShowFontFamily}"
-                                                       ToolTip.Tip="Font family"/>
+                                                       ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Fontfamily}"/>
 
                     <controls:TextHorizontalAlignmentPickerDropdown x:Name="TextHorizontalAlignmentPicker"
                                                                     TextHorizontalAlignmentOptions="{Binding AvailableTextHorizontalAlignments}"
                                                                     SelectedTextHorizontalAlignment="{Binding SelectedTextHorizontalAlignment, Mode=TwoWay}"
                                                                     Height="40"
                                                                     IsVisible="{Binding ShowTextHorizontalAlignment}"
-                                                                    ToolTip.Tip="Horizontal alignment"/>
+                                                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Horizontalalignment}"/>
 
                     <controls:ArrowStylePickerDropdown x:Name="ArrowStylePicker"
                                                        ArrowStyleOptions="{Binding AvailableArrowStyles}"
@@ -256,7 +257,7 @@
                                                        MaxWidth="160"
                                                        Height="40"
                                                        IsVisible="{Binding ShowArrowStyle}"
-                                                       ToolTip.Tip="Arrow style"/>
+                                                       ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Arrowstyle}"/>
 
                     <controls:CursorTypePickerDropdown x:Name="CursorTypePicker"
                                                        CursorTypeOptions="{Binding AvailableCursorTypes}"
@@ -265,25 +266,25 @@
                                                        MaxWidth="180"
                                                        Height="40"
                                                        IsVisible="{Binding ShowCursorType}"
-                                                       ToolTip.Tip="Cursor type"/>
+                                                       ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Cursortype}"/>
 
                     <controls:FontSizePickerDropdown x:Name="FontSizePicker"
                                                      SelectedFontSize="{Binding FontSize, Mode=TwoWay}"
                                                      Height="40"
                                                      IsVisible="{Binding ShowFontSize}"
-                                                     ToolTip.Tip="Font size"/>
+                                                     ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Fontsize}"/>
 
                     <Button Classes="toolbar-button"
                             Classes.active="{Binding TextBold}"
                             Click="OnTextBoldClick"
                             IsVisible="{Binding ShowTextStyle}"
-                            ToolTip.Tip="Toggle bold"
+                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Togglebold}"
                             Content="{x:Static theming:EditorIcons.FormatBold}"/>
                     <Button Classes="toolbar-button"
                             Classes.active="{Binding TextItalic}"
                             Click="OnTextItalicClick"
                             IsVisible="{Binding ShowTextItalic}"
-                            ToolTip.Tip="Toggle italic"
+                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggleitalic}"
                             Content="{x:Static theming:EditorIcons.FormatItalic}"/>
 
                     <controls:StepTypePickerDropdown x:Name="StepTypePicker"
@@ -291,20 +292,20 @@
                                                      SelectedStepType="{Binding SelectedStepType, Mode=TwoWay}"
                                                      Height="40"
                                                      IsVisible="{Binding ShowStepType}"
-                                                     ToolTip.Tip="Step type"/>
+                                                     ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Steptype}"/>
 
                     <controls:NumberPickerDropdown x:Name="StepStartPicker"
                                                    NumberOptions="{Binding AvailableStepStartNumbers}"
                                                    SelectedNumber="{Binding StepStartNumber, Mode=TwoWay}"
                                                    Height="40"
                                                    IsVisible="{Binding ShowStepStartNumber}"
-                                                   ToolTip.Tip="Starting number"/>
+                                                   ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Startingnumber}"/>
 
                     <controls:StrengthSlider x:Name="EffectStrengthSlider"
                                              Maximum="{Binding EffectStrengthMaximum}"
                                              SelectedStrength="{Binding EffectStrength, Mode=TwoWay}"
                                              IsVisible="{Binding ShowStrength}"
-                                             ToolTip.Tip="Effect strength"/>
+                                             ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Effectstrength}"/>
 
                     <Border Background="Transparent"
                                     Width="40"
@@ -312,7 +313,7 @@
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Center"
                                     IsVisible="{Binding ShowSpotlightBlur}"
-                                    ToolTip.Tip="Blur amount">
+                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Bluramount}">
                             <TextBlock Text="{x:Static theming:EditorIcons.ToolBlur}"
                                                 FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                 FontSize="18"
@@ -329,19 +330,19 @@
                                              Maximum="{Binding SpotlightBlurMaximum}"
                                              SelectedStrength="{Binding SpotlightBlur, Mode=TwoWay}"
                                              IsVisible="{Binding ShowSpotlightBlur}"
-                                             ToolTip.Tip="Blur amount"/>
+                                             ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Bluramount}"/>
 
                     <Button Classes="toolbar-button"
                             Classes.active="{Binding EffectEllipse}"
                             Click="OnEffectEllipseClick"
                             IsVisible="{Binding ShowEffectEllipse}"
-                            ToolTip.Tip="Toggle ellipse shape"
+                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggleellipseshape}"
                             Content="{x:Static theming:EditorIcons.ToggleEllipseShape}"/>
                     <Button Classes="toolbar-button"
                             Classes.active="{Binding SpeechBalloonTail}"
                             Click="OnSpeechBalloonTailClick"
                             IsVisible="{Binding ShowSpeechBalloonTail}"
-                            ToolTip.Tip="Toggle tail"
+                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggletail}"
                             Content="{x:Static theming:EditorIcons.ToggleSpeechBalloonTail}"/>
                     <Grid IsVisible="{Binding ShowShadow}">
                         <Button x:Name="ShadowToggleButton"
@@ -349,7 +350,7 @@
                                 Classes.active="{Binding ShadowEnabled}"
                                 Click="OnShadowClick"
                                 PointerPressed="OnShadowPointerPressed"
-                                ToolTip.Tip="Toggle shadow&#x0a;Shadow options (Right click)"
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_ToggleshadowShadowoptionsRightclick}"
                                 Content="{x:Static theming:EditorIcons.MenuTheme}"/>
                         <Popup x:Name="ShadowOptionsPopup"
                                PlacementTarget="{Binding #ShadowToggleButton}"
@@ -365,23 +366,23 @@
                                     BorderThickness="1"
                                     MinWidth="240">
                                 <StackPanel Spacing="8">
-                                    <TextBlock Text="Shadow"
+                                    <TextBlock Text="{x:Static res:Strings.AnnotationToolbar_Shadow}"
                                                FontSize="16"
                                                FontWeight="SemiBold"
                                                Foreground="{DynamicResource ShareX.Brush.Accent}"/>
                                     <Grid ColumnDefinitions="90,*" RowDefinitions="Auto" RowSpacing="8" ColumnSpacing="8" Margin="0,0,0,8">
                                         <TextBlock Grid.Row="0" Grid.Column="0"
-                                                   Text="Color"
+                                                   Text="{x:Static res:Strings.AnnotationToolbar_Color}"
                                                    VerticalAlignment="Center"/>
                                         <controls:ColorPickerDropdown Grid.Row="0" Grid.Column="1"
                                                                       SelectedColor="{Binding ShadowColorBrush, Mode=TwoWay}"
                                                                       HorizontalAlignment="Right"
-                                                                      ToolTip.Tip="Shadow color"/>
+                                                                      ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Shadowcolor}"/>
                                     </Grid>
 
                                     <StackPanel Spacing="0">
                                         <Grid ColumnDefinitions="*,Auto">
-                                            <TextBlock Grid.Column="0" Text="Blur"/>
+                                            <TextBlock Grid.Column="0" Text="{x:Static res:Strings.AnnotationToolbar_Blur}"/>
                                             <Border Grid.Column="1" Classes="capsule">
                                                 <TextBlock Text="{Binding ShadowBlurRadius, StringFormat='{}{0:F0} px'}"/>
                                             </Border>
@@ -394,7 +395,7 @@
 
                                     <StackPanel Spacing="0">
                                         <Grid ColumnDefinitions="*,Auto">
-                                            <TextBlock Grid.Column="0" Text="Opacity"/>
+                                            <TextBlock Grid.Column="0" Text="{x:Static res:Strings.AnnotationToolbar_Opacity}"/>
                                             <Border Grid.Column="1" Classes="capsule">
                                                 <TextBlock Text="{Binding ShadowOpacity, StringFormat='{}{0:P0}'}"/>
                                             </Border>
@@ -408,7 +409,7 @@
 
                                     <StackPanel Spacing="0">
                                         <Grid ColumnDefinitions="*,Auto">
-                                            <TextBlock Grid.Column="0" Text="Offset X"/>
+                                            <TextBlock Grid.Column="0" Text="{x:Static res:Strings.AnnotationToolbar_OffsetX}"/>
                                             <Border Grid.Column="1" Classes="capsule">
                                                 <TextBlock Text="{Binding ShadowOffsetX, StringFormat='{}{0:F0} px'}"/>
                                             </Border>
@@ -421,7 +422,7 @@
 
                                     <StackPanel Spacing="0">
                                         <Grid ColumnDefinitions="*,Auto">
-                                            <TextBlock Grid.Column="0" Text="Offset Y"/>
+                                            <TextBlock Grid.Column="0" Text="{x:Static res:Strings.AnnotationToolbar_OffsetY}"/>
                                             <Border Grid.Column="1" Classes="capsule">
                                                 <TextBlock Text="{Binding ShadowOffsetY, StringFormat='{}{0:F0} px'}"/>
                                             </Border>

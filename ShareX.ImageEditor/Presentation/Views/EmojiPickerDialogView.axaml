@@ -5,6 +5,7 @@
              xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
              xmlns:emoji="using:ShareX.ImageEditor.Presentation.Emoji"
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              mc:Ignorable="d" d:DesignWidth="760" d:DesignHeight="640"
              x:Class="ShareX.ImageEditor.Presentation.Views.EmojiPickerDialogView"
              x:Name="Root"
@@ -82,14 +83,14 @@
                                     Spacing="8"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="No emojis match this search."
+                                <TextBlock Text="{x:Static res:Strings.EmojiPickerDialogView_NoMatches}"
                                        HorizontalAlignment="Center"/>
-                            <TextBlock Text="Try a different keyword."
+                                <TextBlock Text="{x:Static res:Strings.EmojiPickerDialogView_TryDifferentKeyword}"
                                        HorizontalAlignment="Center"
                                        FontSize="11"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                             <Button
-                                    Content="Cancel"
+                                Content="{x:Static res:Strings.EmojiPickerDialogView_Cancel}"
                                     Command="{Binding CancelCommand}"
                                     Padding="20,0"
                                     HorizontalAlignment="Center"
@@ -105,9 +106,9 @@
                     <ProgressBar Width="180"
                                  Height="4"
                                  IsIndeterminate="True"/>
-                    <TextBlock Text="Loading emojis..."
+                        <TextBlock Text="{x:Static res:Strings.EmojiPickerDialogView_LoadingEmojis}"
                                HorizontalAlignment="Center"/>
-                    <TextBlock Text="The picker is ready. Emoji previews are loading in the background."
+                        <TextBlock Text="{x:Static res:Strings.EmojiPickerDialogView_PreviewsLoading}"
                                HorizontalAlignment="Center"
                                TextAlignment="Center"
                                MaxWidth="330"

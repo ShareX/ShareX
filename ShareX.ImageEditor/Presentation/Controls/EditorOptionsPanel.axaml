@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
@@ -21,7 +22,7 @@
                            Foreground="{DynamicResource ShareX.Brush.Accent}"
                            VerticalAlignment="Center"
                            Margin="0,2,0,0"/>
-                <TextBlock Text="Options"
+                <TextBlock Text="{x:Static res:Strings.EditorOptionsPanel_Options}"
                            FontSize="20"
                            FontWeight="Normal"
                            Foreground="{DynamicResource ShareX.Brush.Accent}"
@@ -32,7 +33,7 @@
                     Width="32"
                     Height="32"
                     Padding="0"
-                    ToolTip.Tip="Close">
+                    ToolTip.Tip="{x:Static res:Strings.EditorOptionsPanel_Close}">
                 <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionCancel}"
                            FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                            FontWeight="Normal"
@@ -78,6 +79,6 @@
                 HorizontalAlignment="Stretch"
                 HorizontalContentAlignment="Left"
                 Margin="0,0,0,12"
-                Content="Customize toolbar..."/>
+                Content="{x:Static res:Strings.EditorOptionsPanel_CustomizetoolbarEllipsis}"/>
     </StackPanel>
 </UserControl>
