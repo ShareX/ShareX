@@ -11,6 +11,8 @@ UploadersLib uses the shared `Strings.resx` catalog in this directory for all tr
 
 All 493 keys are available in the default English catalog and all 23 supported culture catalogs. Composite-format placeholders are kept in parity across every translation.
 
+`Validate.ps1` checks the supported-culture inventory, key and ordering parity, non-empty values, composite-format placeholders, strict UTF-8 and CRLF formatting, source references, data-driven resource prefixes, remaining AXAML and runtime literals, and accidental use of legacy text resources.
+
 The existing `Properties/Resources.resx` catalog remains responsible for uploader icons, images, and the OAuth callback page asset. Translatable text is stored in this directory.
 
 When adding or changing text:
@@ -21,8 +23,9 @@ When adding or changing text:
 4. Preserve any composite-format placeholders from the English value.
 5. Build `ShareX.UploadersLib` to verify the resources and AXAML.
 
-Run the project build from the repository root:
+Run validation and the project build from the repository root:
 
 ```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File ShareX.UploadersLib/Localization/Validate.ps1
 dotnet build ShareX.UploadersLib/ShareX.UploadersLib.csproj --no-restore
 ```
