@@ -135,6 +135,13 @@ if ($sourceText -match '(?m)\b(?:string|object)\s+L\s*\(') {
     $errors.Add('Source contains an L() localization helper.')
 }
 
+$designerPath = Join-Path $localizationDirectory 'Strings.Designer.cs'
+$designerText = [IO.File]::ReadAllText($designerPath)
+$expectedResourceBaseName = 'ShareX.Tools.Localization.Strings'
+if ($designerText -notmatch [regex]::Escape('new global::System.Resources.ResourceManager("' + $expectedResourceBaseName + '"')) {
+    $errors.Add("Strings.Designer.cs uses an incorrect ResourceManager base name; expected '$expectedResourceBaseName'.")
+}
+
 Write-Host "Default keys: $($default.Count)"
 Write-Host "Localized cultures: $($cultureFiles.Count)"
 if ($errors.Count -gt 0) {
