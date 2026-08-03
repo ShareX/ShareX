@@ -92,7 +92,7 @@ public sealed partial class AnalyzeImageOptionsViewModel : ViewModelBase
     {
         IsBusy = true;
         StatusSuccess = false;
-        StatusText = "Testing...";
+        StatusText = Localization.Strings.AnalyzeImageOptionsViewModel_Testing;
 
         try
         {
@@ -115,7 +115,7 @@ public sealed partial class AnalyzeImageOptionsViewModel : ViewModelBase
     {
         IsBusy = true;
         StatusSuccess = false;
-        StatusText = "Loading models...";
+        StatusText = Localization.Strings.AnalyzeImageOptionsViewModel_Loading_models;
 
         try
         {
@@ -130,11 +130,11 @@ public sealed partial class AnalyzeImageOptionsViewModel : ViewModelBase
             {
                 OpenAIModel = models.Contains(OpenAIModel) ? OpenAIModel : models[0];
                 StatusSuccess = true;
-                StatusText = $"{models.Count} models loaded.";
+                StatusText = string.Format(Localization.Strings.AnalyzeImageOptionsViewModel_Models_loaded, models.Count);
             }
             else
             {
-                StatusText = "No models found.";
+                StatusText = Localization.Strings.AnalyzeImageOptionsViewModel_No_models_found;
             }
         }
         catch (Exception ex)

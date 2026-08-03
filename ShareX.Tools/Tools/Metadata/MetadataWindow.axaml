@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -53,21 +54,21 @@
                                 <StackPanel Orientation="Horizontal" Spacing="8">
                                     <TextBlock Text="{x:Static theming:LucideIcons.folder_open}"
                                                Classes="icon"/>
-                                    <TextBlock Text="Open..."/>
+                                    <TextBlock Text="{x:Static localization:Strings.MetadataWindow_Open}"/>
                                 </StackPanel>
                             </Button>
                             <Button Grid.Column="3" Command="{Binding CopyAllCommand}" IsEnabled="{Binding CanCopy}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
                                     <TextBlock Text="{x:Static theming:LucideIcons.copy}"
                                                Classes="icon"/>
-                                    <TextBlock Text="Copy all"/>
+                                    <TextBlock Text="{x:Static localization:Strings.MetadataWindow_Copy_all}"/>
                                 </StackPanel>
                             </Button>
                             <Button Grid.Column="4" Command="{Binding RequestStripCommand}" IsEnabled="{Binding CanStrip}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
                                     <TextBlock Text="{x:Static theming:LucideIcons.eraser}"
                                                Classes="icon"/>
-                                    <TextBlock Text="Strip metadata..."/>
+                                    <TextBlock Text="{x:Static localization:Strings.MetadataWindow_Strip_metadata}"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -82,7 +83,7 @@
                     <Grid RowDefinitions="Auto,*">
                         <Grid Grid.Row="0" ColumnDefinitions="*,260,Auto" ColumnSpacing="10" Margin="12">
                             <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                                <TextBlock Classes="section-heading" Text="Metadata"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.MetadataWindow_Metadata}"/>
                                 <TextBlock Text="{Binding MetadataCountText}"
                                            FontWeight="Normal"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
@@ -90,7 +91,7 @@
                             </StackPanel>
                             <TextBox Grid.Column="1"
                                      Text="{Binding SearchText}"
-                                     PlaceholderText="Search metadata"
+                                     PlaceholderText="{x:Static localization:Strings.MetadataWindow_Search_metadata}"
                                      IsEnabled="{Binding CanCopy}"/>
                             <TextBlock Grid.Column="2"
                                        Classes="icon"
@@ -193,10 +194,10 @@
                                        Classes="icon"
                                        FontSize="24"
                                        Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
-                            <TextBlock Text="Strip all metadata?" Classes="section-heading" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static localization:Strings.MetadataWindow_Strip_all_metadata}" Classes="section-heading" VerticalAlignment="Center"/>
                         </StackPanel>
                         <TextBlock Grid.Row="1"
-                                   Text="This permanently removes all non-essential metadata from the selected file. This action cannot be undone."
+                                   Text="{x:Static localization:Strings.MetadataWindow_This_permanently_removes_all_non_essential_metadata_from_the_selected_file_This_action_cannot_be_undone}"
                                    FontWeight="Normal"
                                    TextWrapping="Wrap"/>
                         <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
@@ -204,10 +205,10 @@
                                 <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                                     <TextBlock Text="{x:Static theming:LucideIcons.eraser}"
                                                Classes="icon"/>
-                                    <TextBlock Text="Strip metadata" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static localization:Strings.MetadataWindow_Strip_metadata_2}" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
-                            <Button Content="Cancel" Command="{Binding CancelStripCommand}"/>
+                            <Button Content="{x:Static localization:Strings.MetadataWindow_Cancel}" Command="{Binding CancelStripCommand}"/>
                         </StackPanel>
                     </Grid>
                 </Border>

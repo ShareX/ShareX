@@ -21,10 +21,10 @@ namespace ShareX.Tools;
 public sealed partial class RulerViewModel : ViewModelBase
 {
     [ObservableProperty]
-    private string _positionText = "X: 0  Y: 0  |  Right: 0  Bottom: 0  |  Width: 0 px  Height: 0 px";
+    private string _positionText = string.Format(Localization.Strings.RulerViewModel_Position, 0, 0, 0, 0, 0, 0);
 
     [ObservableProperty]
-    private string _detailsText = "Area: 0 px²  |  Perimeter: 0 px  |  Distance: 0 px  |  Angle: 0°";
+    private string _detailsText = string.Format(Localization.Strings.RulerViewModel_Details, 0, 0, 0, 0);
 
     [ObservableProperty]
     private bool _hasMeasurement;
@@ -44,15 +44,15 @@ public sealed partial class RulerViewModel : ViewModelBase
         double distance = Math.Sqrt((double)width * width + (double)height * height);
         double angle = Math.Atan2(height, width) * 180d / Math.PI;
 
-        PositionText = $"X: {x}  Y: {y}  |  Right: {right}  Bottom: {bottom}  |  Width: {width} px  Height: {height} px";
-        DetailsText = $"Area: {area:N0} px²  |  Perimeter: {perimeter:N0} px  |  Distance: {distance:0.00} px  |  Angle: {angle:0.00}°";
+        PositionText = string.Format(Localization.Strings.RulerViewModel_Position, x, y, right, bottom, width, height);
+        DetailsText = string.Format(Localization.Strings.RulerViewModel_Details, area, perimeter, distance, angle);
         HasMeasurement = width > 0 || height > 0;
     }
 
     public void Clear()
     {
-        PositionText = "X: 0  Y: 0  |  Right: 0  Bottom: 0  |  Width: 0 px  Height: 0 px";
-        DetailsText = "Area: 0 px²  |  Perimeter: 0 px  |  Distance: 0 px  |  Angle: 0°";
+        PositionText = string.Format(Localization.Strings.RulerViewModel_Position, 0, 0, 0, 0, 0, 0);
+        DetailsText = string.Format(Localization.Strings.RulerViewModel_Details, 0, 0, 0, 0);
         HasMeasurement = false;
     }
 }

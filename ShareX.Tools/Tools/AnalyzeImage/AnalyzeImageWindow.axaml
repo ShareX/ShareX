@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
         x:Class="ShareX.Tools.AnalyzeImageWindow"
         x:DataType="vm:AnalyzeImageViewModel"
-        Title="ShareX - Analyze image"
+        Title="{x:Static localization:Strings.AnalyzeImageWindow_ShareX_Analyze_image}"
         Width="1000"
         Height="650"
         MinWidth="820"
@@ -20,7 +21,7 @@
                     <Border Grid.Row="0" Classes="tool-panel" Padding="0" ClipToBounds="True">
                         <Grid RowDefinitions="Auto,Auto,*">
                             <Grid Grid.Row="0" ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="12,12,12,8">
-                                <TextBlock Classes="section-heading" Text="Image"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.AnalyzeImageWindow_Image}"/>
                                 <TextBlock Grid.Column="1"
                                            Text="{Binding ImageDescription}"
                                            IsVisible="{Binding HasImage}"
@@ -36,13 +37,13 @@
                                 <Button Command="{Binding SelectRegionCommand}" IsEnabled="{Binding IsIdle}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
                                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.crop}"/>
-                                        <TextBlock Text="Select region..."/>
+                                        <TextBlock Text="{x:Static localization:Strings.AnalyzeImageWindow_Select_region}"/>
                                     </StackPanel>
                                 </Button>
                                 <Button Command="{Binding SelectImageCommand}" IsEnabled="{Binding IsIdle}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
                                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}"/>
-                                        <TextBlock Text="Select image..."/>
+                                        <TextBlock Text="{x:Static localization:Strings.AnalyzeImageWindow_Select_image}"/>
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
@@ -67,7 +68,7 @@
                                                    FontSize="42"
                                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                    HorizontalAlignment="Center"/>
-                                        <TextBlock Text="Select or drop an image"
+                                        <TextBlock Text="{x:Static localization:Strings.AnalyzeImageWindow_Select_or_drop_an_image}"
                                                    FontWeight="Normal"
                                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                                     </StackPanel>
@@ -78,11 +79,11 @@
 
                     <Border Grid.Row="1" Classes="tool-panel">
                         <Grid RowDefinitions="Auto,Auto,110" RowSpacing="9">
-                            <TextBlock Classes="section-heading" Text="Prompt"/>
+                            <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.AnalyzeImageWindow_Prompt}"/>
                             <ComboBox Grid.Row="1"
                                       ItemsSource="{Binding PresetPrompts}"
                                       SelectedItem="{Binding SelectedPreset}"
-                                      PlaceholderText="Choose a preset prompt"/>
+                                      PlaceholderText="{x:Static localization:Strings.AnalyzeImageWindow_Choose_a_preset_prompt}"/>
                             <TextBox Grid.Row="2"
                                      Text="{Binding Prompt}"
                                      AcceptsReturn="True"
@@ -96,17 +97,17 @@
                 <Border Grid.Column="1" Classes="tool-panel" Padding="0" ClipToBounds="True">
                     <Grid RowDefinitions="Auto,Auto,*,Auto">
                         <Grid Grid.Row="0" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" Margin="12">
-                            <TextBlock Classes="section-heading" Text="Result" VerticalAlignment="Center"/>
+                            <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.AnalyzeImageWindow_Result}" VerticalAlignment="Center"/>
                             <Button Grid.Column="1" Command="{Binding EditOptionsCommand}" IsEnabled="{Binding IsIdle}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings}"/>
-                                    <TextBlock Text="Options..."/>
+                                    <TextBlock Text="{x:Static localization:Strings.AnalyzeImageWindow_Options}"/>
                                 </StackPanel>
                             </Button>
                             <Button Grid.Column="2" Command="{Binding CopyResultCommand}" IsEnabled="{Binding HasResult}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
-                                    <TextBlock Text="Copy all"/>
+                                    <TextBlock Text="{x:Static localization:Strings.AnalyzeImageWindow_Copy_all}"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -145,7 +146,7 @@
                             <Button Grid.Column="1" Command="{Binding AnalyzeCommand}" IsEnabled="{Binding CanAnalyze}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.sparkles}"/>
-                                    <TextBlock Text="Analyze image"/>
+                                    <TextBlock Text="{x:Static localization:Strings.AnalyzeImageWindow_Analyze_image}"/>
                                 </StackPanel>
                             </Button>
                         </Grid>

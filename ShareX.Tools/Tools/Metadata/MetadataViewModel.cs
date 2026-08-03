@@ -55,19 +55,19 @@ public sealed partial class MetadataViewModel : ViewModelBase
     private string _searchText = string.Empty;
 
     [ObservableProperty]
-    private string _emptyMessage = "Open or drop a file to inspect its metadata";
+    private string _emptyMessage = Localization.Strings.MetadataViewModel_Open_or_drop;
 
     public Func<Task<string?>>? SelectFileRequested { get; set; }
     public Func<string, Task>? CopyTextRequested { get; set; }
 
-    public string FileName => File.Exists(FilePath) ? Path.GetFileName(FilePath) : "No file selected";
-    public string FileDescription => File.Exists(FilePath) ? FilePath : "Open or drop any supported file";
-    public string WindowTitle => File.Exists(FilePath) ? $"ShareX - Metadata - {FileName}" : "ShareX - Metadata";
+    public string FileName => File.Exists(FilePath) ? Path.GetFileName(FilePath) : Localization.Strings.MetadataViewModel_No_file_selected;
+    public string FileDescription => File.Exists(FilePath) ? FilePath : Localization.Strings.MetadataViewModel_Open_or_drop_supported;
+    public string WindowTitle => File.Exists(FilePath) ? string.Format(Localization.Strings.MetadataViewModel_Window_title_file, FileName) : Localization.Strings.MetadataViewModel_Window_title;
     public bool HasGroups => Groups.Count > 0;
     public bool CanOpen => !IsBusy;
     public bool CanCopy => !IsBusy && _allEntries.Count > 0;
     public bool CanStrip => !IsBusy && File.Exists(FilePath);
-    public string MetadataCountText => _allEntries.Count == 1 ? "1 tag" : $"{_allEntries.Count:N0} tags";
+    public string MetadataCountText => _allEntries.Count == 1 ? Localization.Strings.MetadataViewModel_One_tag : string.Format(Localization.Strings.MetadataViewModel_Tag_count, _allEntries.Count);
 
     public MetadataViewModel(string? filePath = null, Action? playNotificationSound = null)
     {
@@ -119,7 +119,7 @@ public sealed partial class MetadataViewModel : ViewModelBase
         IsBusy = true;
         IsConfirmingStrip = false;
         Groups = [];
-        EmptyMessage = "Reading metadata...";
+        EmptyMessage = Localization.Strings.MetadataViewModel_Reading_metadata;
         _allEntries.Clear();
         NotifyMetadataState();
 
@@ -128,13 +128,13 @@ public sealed partial class MetadataViewModel : ViewModelBase
             string output = await MetadataService.ReadMetadataAsync(FilePath);
             _allEntries.AddRange(ParseMetadata(output));
             EmptyMessage = _allEntries.Count > 0
-                ? "No metadata matches the current search"
-                : "No metadata was found in this file";
+                ? Localization.Strings.MetadataViewModel_No_search_matches
+                : Localization.Strings.MetadataViewModel_No_metadata;
             ApplyFilter();
         }
         catch (Exception ex)
         {
-            EmptyMessage = $"Unable to read metadata\n{ex.Message}";
+            EmptyMessage = string.Format(Localization.Strings.MetadataViewModel_Unable_read, ex.Message);
             ToolsDiagnostics.ReportWarning(nameof(MetadataViewModel), "Failed to read file metadata.", ex);
         }
         finally
@@ -191,7 +191,7 @@ public sealed partial class MetadataViewModel : ViewModelBase
         catch (Exception ex)
         {
             IsBusy = false;
-            EmptyMessage = $"Unable to strip metadata\n{ex.Message}";
+            EmptyMessage = string.Format(Localization.Strings.MetadataViewModel_Unable_strip, ex.Message);
             ToolsDiagnostics.ReportWarning(nameof(MetadataViewModel), "Failed to strip file metadata.", ex);
             return;
         }

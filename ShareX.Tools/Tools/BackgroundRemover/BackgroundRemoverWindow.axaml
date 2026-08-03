@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -8,12 +9,16 @@
         mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="720"
         x:Class="ShareX.Tools.BackgroundRemoverWindow"
         x:DataType="vm:BackgroundRemoverViewModel"
-        Title="ShareX - Background Remover"
+        Title="{x:Static localization:Strings.BackgroundRemoverWindow_ShareX_Background_Remover}"
         Width="1080"
         Height="720"
         MinWidth="760"
         MinHeight="520"
         WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <vm:LocalizedDisplayConverter x:Key="LocalizedDisplayConverter"/>
+    </Window.Resources>
 
     <Window.Styles>
         <Style Selector="Border.remover-panel">
@@ -64,14 +69,14 @@
                               ColumnDefinitions="Auto,*,Auto"
                               ColumnSpacing="12">
                             <TextBlock Grid.Column="0"
-                                       Text="Image"
+                                       Text="{x:Static localization:Strings.BackgroundRemoverWindow_Image}"
                                        VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="1"
                                        Classes="path-text"
                                        Text="{Binding ImagePath, TargetNullValue='No image selected'}"
                                        VerticalAlignment="Center"/>
                             <Button Grid.Column="2"
-                                    Content="Browse..."
+                                    Content="{x:Static localization:Strings.BackgroundRemoverWindow_Browse}"
                                     Command="{Binding BrowseImageCommand}"/>
                         </Grid>
 
@@ -79,7 +84,7 @@
                               ColumnDefinitions="Auto,*,Auto"
                               ColumnSpacing="12">
                             <TextBlock Grid.Column="0"
-                                       Text="Models"
+                                       Text="{x:Static localization:Strings.BackgroundRemoverWindow_Models}"
                                        VerticalAlignment="Center"/>
                             <Grid Grid.Column="1"
                                   ColumnDefinitions="*,Auto,Auto,Auto,Auto,Auto"
@@ -90,13 +95,13 @@
                                           IsEnabled="{Binding !IsProcessing}"
                                           HorizontalAlignment="Stretch"
                                           VerticalAlignment="Center"
-                                          ToolTip.Tip="Background removal model"/>
+                                          ToolTip.Tip="{x:Static localization:Strings.BackgroundRemoverWindow_Background_removal_model}"/>
                                 <Button Grid.Column="1"
                                         MinWidth="0"
                                         Width="{Binding Bounds.Height, RelativeSource={RelativeSource Self}}"
                                         Padding="0"
                                         Command="{Binding RefreshModelsCommand}"
-                                        ToolTip.Tip="Refresh models">
+                                        ToolTip.Tip="{x:Static localization:Strings.BackgroundRemoverWindow_Refresh_models}">
                                     <TextBlock Classes="model-action-icon"
                                                Text="{x:Static theming:LucideIcons.refresh_cw}"
                                                FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
@@ -109,7 +114,7 @@
                                         Width="{Binding Bounds.Height, RelativeSource={RelativeSource Self}}"
                                         Padding="0"
                                         Command="{Binding OpenModelsFolderCommand}"
-                                        ToolTip.Tip="Open models folder">
+                                        ToolTip.Tip="{x:Static localization:Strings.BackgroundRemoverWindow_Open_models_folder}">
                                     <TextBlock Classes="model-action-icon"
                                                Text="{x:Static theming:LucideIcons.folder_open}"
                                                FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
@@ -123,7 +128,7 @@
                                         Width="{Binding Bounds.Height, RelativeSource={RelativeSource Self}}"
                                         Padding="0"
                                         Command="{Binding OpenBackgroundRemoverGuideCommand}"
-                                        ToolTip.Tip="Open guide page...">
+                                        ToolTip.Tip="{x:Static localization:Strings.BackgroundRemoverWindow_Open_guide_page}">
                                     <TextBlock Classes="model-action-icon"
                                                Text="{x:Static theming:LucideIcons.circle_help}"
                                                FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
@@ -132,7 +137,7 @@
                                                VerticalAlignment="Center"/>
                                 </Button>
                                 <TextBlock Grid.Column="4"
-                                           Text="Device"
+                                           Text="{x:Static localization:Strings.BackgroundRemoverWindow_Device}"
                                            Margin="8,0,8,0"
                                            VerticalAlignment="Center"/>
                                 <ComboBox Grid.Column="5"
@@ -141,10 +146,16 @@
                                           IsEnabled="{Binding !IsProcessing}"
                                           MinWidth="88"
                                           VerticalAlignment="Center"
-                                          ToolTip.Tip="Processing device"/>
+                                          ToolTip.Tip="{x:Static localization:Strings.BackgroundRemoverWindow_Processing_device}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Converter={StaticResource LocalizedDisplayConverter}}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
                             </Grid>
                             <Button Grid.Column="2"
-                                    Content="Remove Background"
+                                    Content="{x:Static localization:Strings.BackgroundRemoverWindow_Remove_Background}"
                                     Command="{Binding RemoveBackgroundCommand}"/>
                         </Grid>
                     </Grid>
@@ -152,7 +163,7 @@
 
                 <Border Grid.Row="1" Classes="remover-panel" ClipToBounds="True">
                     <Grid Background="{DynamicResource ShareX.Brush.Background.Panel}">
-                        <TextBlock Text="Select an image to preview it here."
+                        <TextBlock Text="{x:Static localization:Strings.BackgroundRemoverWindow_Select_an_image_to_preview_it_here}"
                                    IsVisible="{Binding !HasImage}"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
@@ -178,7 +189,7 @@
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontWeight="Normal"
                                        VerticalAlignment="Center"/>
-                            <TextBlock Text="Save" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static localization:Strings.BackgroundRemoverWindow_Save}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                     <Button
@@ -188,7 +199,7 @@
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontWeight="Normal"
                                        VerticalAlignment="Center"/>
-                            <TextBlock Text="Save as..." VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static localization:Strings.BackgroundRemoverWindow_Save_as}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>

@@ -1,0 +1,1726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AIOptions_What_is_in_this_image" xml:space="preserve">
+    <value>Cosa c’è in questa immagine?</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_Loading_models" xml:space="preserve">
+    <value>Caricamento dei modelli...</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_Models_loaded" xml:space="preserve">
+    <value>{0} modelli caricati.</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_No_models_found" xml:space="preserve">
+    <value>Nessun modello trovato.</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_Testing" xml:space="preserve">
+    <value>Test in corso...</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Analyze_automatically_when_opened" xml:space="preserve">
+    <value>Analizza automaticamente all’apertura</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_API_key" xml:space="preserve">
+    <value>Chiave API</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_API_key_page" xml:space="preserve">
+    <value>Pagina della chiave API...</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Behavior" xml:space="preserve">
+    <value>Comportamento</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Cancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Capture_a_region_when_opened_without_an_image" xml:space="preserve">
+    <value>Acquisisci una regione all’apertura senza un’immagine</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Copy_result_automatically" xml:space="preserve">
+    <value>Copia automaticamente il risultato</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Custom_base_URL" xml:space="preserve">
+    <value>URL di base personalizzato</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Get_API_key" xml:space="preserve">
+    <value>Ottieni chiave API</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Google_Gemini" xml:space="preserve">
+    <value>Google Gemini</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_https_api_openai_com" xml:space="preserve">
+    <value>https://api.openai.com</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Load_models" xml:space="preserve">
+    <value>Carica modelli</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Model" xml:space="preserve">
+    <value>Modello</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_OpenAI" xml:space="preserve">
+    <value>OpenAI</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_OpenRouter" xml:space="preserve">
+    <value>OpenRouter</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Provider" xml:space="preserve">
+    <value>Fornitore</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Reasoning" xml:space="preserve">
+    <value>Ragionamento</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Save" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_ShareX_Analyze_image_options" xml:space="preserve">
+    <value>ShareX - Opzioni di analisi immagine</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Test_connection" xml:space="preserve">
+    <value>Testa connessione</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Verbosity" xml:space="preserve">
+    <value>Livello di dettaglio</value>
+  </data>
+  <data name="AnalyzeImageService_Connection_OK" xml:space="preserve">
+    <value>Connessione riuscita.</value>
+  </data>
+  <data name="AnalyzeImageService_Missing_Gemini_API_key" xml:space="preserve">
+    <value>Chiave API Gemini mancante.</value>
+  </data>
+  <data name="AnalyzeImageService_Missing_OpenAI_API_key" xml:space="preserve">
+    <value>Chiave API OpenAI mancante.</value>
+  </data>
+  <data name="AnalyzeImageService_Missing_OpenRouter_API_key" xml:space="preserve">
+    <value>Chiave API OpenRouter mancante.</value>
+  </data>
+  <data name="AnalyzeImageService_Select_provider_first" xml:space="preserve">
+    <value>Seleziona prima un fornitore.</value>
+  </data>
+  <data name="AnalyzeImageService_Unable_to_create_request" xml:space="preserve">
+    <value>Impossibile creare la richiesta.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Captured_region" xml:space="preserve">
+    <value>Regione acquisita</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Configure_API_key" xml:space="preserve">
+    <value>Configura una chiave API in Opzioni prima di eseguire l’analisi.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Thinking" xml:space="preserve">
+    <value>Elaborazione...</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Thoroughly_describe_this_image" xml:space="preserve">
+    <value>Descrivi dettagliatamente questa immagine.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Time_ms" xml:space="preserve">
+    <value>Tempo: {0:N0} ms</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Transcribe_image_text" xml:space="preserve">
+    <value>Trascrivi il testo dell’immagine. Non scrivere altro.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Translate_text_into_English" xml:space="preserve">
+    <value>Traduci questo testo in inglese. Non scrivere altro.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_What_is_in_this_image" xml:space="preserve">
+    <value>Cosa c’è in questa immagine?</value>
+  </data>
+  <data name="AnalyzeImageWindow_Analyze_image" xml:space="preserve">
+    <value>Analizza immagine</value>
+  </data>
+  <data name="AnalyzeImageWindow_Choose_a_preset_prompt" xml:space="preserve">
+    <value>Scegli un prompt predefinito</value>
+  </data>
+  <data name="AnalyzeImageWindow_Copy_all" xml:space="preserve">
+    <value>Copia tutto</value>
+  </data>
+  <data name="AnalyzeImageWindow_Image" xml:space="preserve">
+    <value>Immagine</value>
+  </data>
+  <data name="AnalyzeImageWindow_Options" xml:space="preserve">
+    <value>Opzioni...</value>
+  </data>
+  <data name="AnalyzeImageWindow_Prompt" xml:space="preserve">
+    <value>Prompt</value>
+  </data>
+  <data name="AnalyzeImageWindow_Result" xml:space="preserve">
+    <value>Risultato</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_image" xml:space="preserve">
+    <value>Seleziona immagine...</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_image_dialog" xml:space="preserve">
+    <value>Seleziona immagine</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_or_drop_an_image" xml:space="preserve">
+    <value>Seleziona o trascina un’immagine</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_region" xml:space="preserve">
+    <value>Seleziona area...</value>
+  </data>
+  <data name="AnalyzeImageWindow_ShareX_Analyze_image" xml:space="preserve">
+    <value>ShareX - Analizza immagine</value>
+  </data>
+  <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
+    <value>Sfondo rimosso in {0} ms.</value>
+  </data>
+  <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
+    <value>Immagine salvata.
+Percorso file: {0}</value>
+  </data>
+  <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
+    <value>Seleziona immagine</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Background_removal_model" xml:space="preserve">
+    <value>Modello di rimozione dello sfondo</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Browse" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Device" xml:space="preserve">
+    <value>Dispositivo</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Image" xml:space="preserve">
+    <value>Immagine</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Models" xml:space="preserve">
+    <value>Modelli</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Open_guide_page" xml:space="preserve">
+    <value>Apri pagina della guida...</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Open_models_folder" xml:space="preserve">
+    <value>Apri cartella dei modelli</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Processing_device" xml:space="preserve">
+    <value>Dispositivo di elaborazione</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Refresh_models" xml:space="preserve">
+    <value>Aggiorna modelli</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Remove_Background" xml:space="preserve">
+    <value>Rimuovi sfondo</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Save" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Save_as" xml:space="preserve">
+    <value>Salva con nome...</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Save_image_as_dialog" xml:space="preserve">
+    <value>Salva immagine con nome</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Select_an_image_to_preview_it_here" xml:space="preserve">
+    <value>Seleziona un’immagine per visualizzarne qui l’anteprima.</value>
+  </data>
+  <data name="BackgroundRemoverWindow_ShareX_Background_Remover" xml:space="preserve">
+    <value>ShareX - Rimozione sfondo</value>
+  </data>
+  <data name="BorderlessWindowViewModel_Unable_to_toggle" xml:space="preserve">
+    <value>Impossibile commutare la finestra selezionata. {0}</value>
+  </data>
+  <data name="BorderlessWindowViewModel_Window_not_found" xml:space="preserve">
+    <value>Impossibile trovare una finestra con il titolo specificato.</value>
+  </data>
+  <data name="BorderlessWindowWindow_Close_after_toggling" xml:space="preserve">
+    <value>Chiudi dopo la commutazione</value>
+  </data>
+  <data name="BorderlessWindowWindow_Enter_a_window_title_manually" xml:space="preserve">
+    <value>Inserisci manualmente il titolo di una finestra</value>
+  </data>
+  <data name="BorderlessWindowWindow_Keep_taskbar_visible" xml:space="preserve">
+    <value>Mantieni visibile la barra delle applicazioni</value>
+  </data>
+  <data name="BorderlessWindowWindow_Options" xml:space="preserve">
+    <value>Opzioni</value>
+  </data>
+  <data name="BorderlessWindowWindow_Remember_window_title" xml:space="preserve">
+    <value>Ricorda il titolo della finestra</value>
+  </data>
+  <data name="BorderlessWindowWindow_Select_window" xml:space="preserve">
+    <value>Seleziona finestra</value>
+  </data>
+  <data name="BorderlessWindowWindow_ShareX_Borderless_Window" xml:space="preserve">
+    <value>ShareX - Finestra senza bordi</value>
+  </data>
+  <data name="BorderlessWindowWindow_Toggle_again_to_restore_the_original_border_and_window_size" xml:space="preserve">
+    <value>Commuta di nuovo per ripristinare il bordo e le dimensioni originali della finestra.</value>
+  </data>
+  <data name="BorderlessWindowWindow_Toggle_borderless" xml:space="preserve">
+    <value>Commuta modalità senza bordi</value>
+  </data>
+  <data name="BorderlessWindowWindow_Window" xml:space="preserve">
+    <value>Finestra</value>
+  </data>
+  <data name="BorderlessWindowWindow_Window_list" xml:space="preserve">
+    <value>Elenco finestre</value>
+  </data>
+  <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
+    <value>Titolo finestra</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
+    <value>Contenuto degli appunti</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Clipboard_empty" xml:space="preserve">
+    <value>Gli appunti sono vuoti</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Format_count" xml:space="preserve">
+    <value>{0} formati</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Image_details" xml:space="preserve">
+    <value>Immagine  |  {0} × {1} px</value>
+  </data>
+  <data name="ClipboardViewerViewModel_No_previewable_content" xml:space="preserve">
+    <value>Questo formato non contiene contenuti visualizzabili in anteprima</value>
+  </data>
+  <data name="ClipboardViewerViewModel_One_format" xml:space="preserve">
+    <value>1 formato</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
+    <value>Impossibile visualizzare l’anteprima di questo formato degli appunti.
+
+{0}</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
+    <value>Anteprima non disponibile</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Select_format" xml:space="preserve">
+    <value>Seleziona un formato per esaminarne il contenuto</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Text_details" xml:space="preserve">
+    <value>Testo  |  {0:N0} caratteri</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
+    <value>Impossibile leggere gli appunti
+{0}</value>
+  </data>
+  <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
+    <value>Cancella</value>
+  </data>
+  <data name="ClipboardViewerWindow_Formats" xml:space="preserve">
+    <value>Formati</value>
+  </data>
+  <data name="ClipboardViewerWindow_No_formats" xml:space="preserve">
+    <value>Nessun formato</value>
+  </data>
+  <data name="ClipboardViewerWindow_Refresh" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="ClipboardViewerWindow_ShareX_Clipboard_Viewer" xml:space="preserve">
+    <value>ShareX - Visualizzatore appunti</value>
+  </data>
+  <data name="DirectoryIndexerViewModel_Index_for" xml:space="preserve">
+    <value>Indice di {0}</value>
+  </data>
+  <data name="DirectoryIndexerViewModel_Text" xml:space="preserve">
+    <value>Testo</value>
+  </data>
+  <data name="DirectoryIndexerWindow_0_is_unlimited" xml:space="preserve">
+    <value>0 è illimitato</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Add_generated_by_footer" xml:space="preserve">
+    <value>Aggiungi piè di pagina «Generato da»</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Browse" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Choose_a_folder_and_generate_output_Nothing_is_saved_until_you_use_Save_as_or_Upload" xml:space="preserve">
+    <value>Scegli una cartella e genera l’output. Nulla viene salvato finché non usi Salva con nome o Carica.</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Create_parseable_structured_JSON" xml:space="preserve">
+    <value>Crea JSON strutturato analizzabile</value>
+  </data>
+  <data name="DirectoryIndexerWindow_CSS_files" xml:space="preserve">
+    <value>File CSS</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Display_folder_paths" xml:space="preserve">
+    <value>Mostra percorsi delle cartelle</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Empty_line_after_folders" xml:space="preserve">
+    <value>Riga vuota dopo le cartelle</value>
+  </data>
+  <data name="DirectoryIndexerWindow_File_type" xml:space="preserve">
+    <value>File {0}</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Folder" xml:space="preserve">
+    <value>Cartella</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Folders_only" xml:space="preserve">
+    <value>Solo cartelle</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Generate_output" xml:space="preserve">
+    <value>Genera output</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Generated_output" xml:space="preserve">
+    <value>Output generato</value>
+  </data>
+  <data name="DirectoryIndexerWindow_HTML_output" xml:space="preserve">
+    <value>Output HTML</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Indentation" xml:space="preserve">
+    <value>Rientro</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Index_options" xml:space="preserve">
+    <value>Opzioni indice</value>
+  </data>
+  <data name="DirectoryIndexerWindow_JSON_output" xml:space="preserve">
+    <value>Output JSON</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Limit_paths_to_root_folder" xml:space="preserve">
+    <value>Limita i percorsi alla cartella radice</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Maximum_depth" xml:space="preserve">
+    <value>Profondità massima</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Output_format" xml:space="preserve">
+    <value>Formato output</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Ready_to_save_or_upload" xml:space="preserve">
+    <value>Pronto per il salvataggio o il caricamento</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Save_as" xml:space="preserve">
+    <value>Salva con nome...</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Save_directory_index_dialog" xml:space="preserve">
+    <value>Salva indice della directory</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Select_a_CSS_file" xml:space="preserve">
+    <value>Seleziona un file CSS</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Select_CSS_file_dialog" xml:space="preserve">
+    <value>Seleziona file CSS</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Select_folder_to_index_dialog" xml:space="preserve">
+    <value>Seleziona cartella da indicizzare</value>
+  </data>
+  <data name="DirectoryIndexerWindow_ShareX_Directory_Indexer" xml:space="preserve">
+    <value>ShareX - Indicizzatore directory</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Show_sizes" xml:space="preserve">
+    <value>Mostra dimensioni</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Skip_hidden_files" xml:space="preserve">
+    <value>Ignora file nascosti</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Skip_hidden_folders" xml:space="preserve">
+    <value>Ignora cartelle nascoste</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Text_output" xml:space="preserve">
+    <value>Output testo</value>
+  </data>
+  <data name="DirectoryIndexerWindow_The_HTML_index_was_generated_successfully_HTML_preview_is_unavailable_but_the_output_is_ready_to_save_or_upload" xml:space="preserve">
+    <value>L’indice HTML è stato generato correttamente. L’anteprima HTML non è disponibile, ma l’output è pronto per essere salvato o caricato.</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Upload" xml:space="preserve">
+    <value>Carica</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Use_custom_CSS_file" xml:space="preserve">
+    <value>Usa un file CSS personalizzato</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Write_information_as_attributes" xml:space="preserve">
+    <value>Scrivi le informazioni come attributi</value>
+  </data>
+  <data name="DirectoryIndexerWindow_XML_output" xml:space="preserve">
+    <value>Output XML</value>
+  </data>
+  <data name="GeminiProvider_API_error" xml:space="preserve">
+    <value>Errore dell’API Gemini: {0}</value>
+  </data>
+  <data name="HashCheckerViewModel_Calculating_hash" xml:space="preserve">
+    <value>Calcolo hash...</value>
+  </data>
+  <data name="HashCheckerViewModel_Calculating_second_hash" xml:space="preserve">
+    <value>Calcolo dell’hash del secondo file...</value>
+  </data>
+  <data name="HashCheckerViewModel_Files_different_hashes" xml:space="preserve">
+    <value>I file hanno hash diversi.</value>
+  </data>
+  <data name="HashCheckerViewModel_Files_matching_hashes" xml:space="preserve">
+    <value>I file hanno hash corrispondenti.</value>
+  </data>
+  <data name="HashCheckerViewModel_First_file_hash" xml:space="preserve">
+    <value>Hash del primo file</value>
+  </data>
+  <data name="HashCheckerViewModel_Hash_check_stopped" xml:space="preserve">
+    <value>Verifica hash arrestata.</value>
+  </data>
+  <data name="HashCheckerViewModel_Hash_complete" xml:space="preserve">
+    <value>Calcolo hash completato.</value>
+  </data>
+  <data name="HashCheckerViewModel_Hash_failed" xml:space="preserve">
+    <value>Calcolo hash non riuscito: {0}</value>
+  </data>
+  <data name="HashCheckerViewModel_Result" xml:space="preserve">
+    <value>Risultato</value>
+  </data>
+  <data name="HashCheckerViewModel_Second_file_hash" xml:space="preserve">
+    <value>Hash del secondo file</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_existing_file" xml:space="preserve">
+    <value>Seleziona un file esistente.</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_file_dialog" xml:space="preserve">
+    <value>Seleziona file</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_second_file_dialog" xml:space="preserve">
+    <value>Seleziona secondo file</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_two_existing_files" xml:space="preserve">
+    <value>Seleziona due file esistenti.</value>
+  </data>
+  <data name="HashCheckerViewModel_Stopping_hash" xml:space="preserve">
+    <value>Arresto della verifica hash...</value>
+  </data>
+  <data name="HashCheckerViewModel_Target_hash" xml:space="preserve">
+    <value>Hash di destinazione</value>
+  </data>
+  <data name="HashCheckerViewModel_Unable_calculate_file_hash" xml:space="preserve">
+    <value>Impossibile calcolare l’hash del file.</value>
+  </data>
+  <data name="HashCheckerViewModel_Unable_calculate_second_hash" xml:space="preserve">
+    <value>Impossibile calcolare l’hash del secondo file.</value>
+  </data>
+  <data name="HashCheckerWindow_Browse" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="HashCheckerWindow_Calculated_hash_will_appear_here" xml:space="preserve">
+    <value>L’hash calcolato verrà mostrato qui</value>
+  </data>
+  <data name="HashCheckerWindow_Check" xml:space="preserve">
+    <value>Verifica</value>
+  </data>
+  <data name="HashCheckerWindow_Choose_a_file_or_drop_it_here" xml:space="preserve">
+    <value>Scegli un file o trascinalo qui</value>
+  </data>
+  <data name="HashCheckerWindow_Choose_a_second_file_or_drop_it_here" xml:space="preserve">
+    <value>Scegli un secondo file o trascinalo qui</value>
+  </data>
+  <data name="HashCheckerWindow_Compare_two_files" xml:space="preserve">
+    <value>Confronta due file</value>
+  </data>
+  <data name="HashCheckerWindow_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="HashCheckerWindow_Files" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="HashCheckerWindow_Hash_type" xml:space="preserve">
+    <value>Tipo di hash</value>
+  </data>
+  <data name="HashCheckerWindow_Paste_a_hash_to_compare" xml:space="preserve">
+    <value>Incolla un hash da confrontare</value>
+  </data>
+  <data name="HashCheckerWindow_Results" xml:space="preserve">
+    <value>Risultati</value>
+  </data>
+  <data name="HashCheckerWindow_Second_file" xml:space="preserve">
+    <value>Secondo file</value>
+  </data>
+  <data name="HashCheckerWindow_ShareX_Hash_Checker" xml:space="preserve">
+    <value>ShareX - Controllo hash</value>
+  </data>
+  <data name="HashCheckerWindow_Stop" xml:space="preserve">
+    <value>Arresta</value>
+  </data>
+  <data name="IconConverterService_Select_icon_size" xml:space="preserve">
+    <value>Devi selezionare almeno una dimensione dell’icona.</value>
+  </data>
+  <data name="IconConverterService_Source_image_empty" xml:space="preserve">
+    <value>L’immagine sorgente è vuota.</value>
+  </data>
+  <data name="IconConverterService_Unsupported_icon_size" xml:space="preserve">
+    <value>Una o più dimensioni dell’icona non sono supportate.</value>
+  </data>
+  <data name="IconConverterViewModel_Creating_icon" xml:space="preserve">
+    <value>Creazione icona...</value>
+  </data>
+  <data name="IconConverterViewModel_Drop_or_choose" xml:space="preserve">
+    <value>Trascina qui un’immagine o scegli un file.</value>
+  </data>
+  <data name="IconConverterViewModel_Failed_create_icon" xml:space="preserve">
+    <value>Creazione dell’icona non riuscita: {0}</value>
+  </data>
+  <data name="IconConverterViewModel_Failed_load_image" xml:space="preserve">
+    <value>Caricamento dell’immagine non riuscito: {0}</value>
+  </data>
+  <data name="IconConverterViewModel_Icon_saved" xml:space="preserve">
+    <value>Icona salvata in {0}</value>
+  </data>
+  <data name="IconConverterViewModel_Image_dimensions" xml:space="preserve">
+    <value>{0} × {1} pixel</value>
+  </data>
+  <data name="IconConverterViewModel_Image_load_failed" xml:space="preserve">
+    <value>Impossibile caricare il file selezionato come immagine.</value>
+  </data>
+  <data name="IconConverterViewModel_Image_picker_unavailable" xml:space="preserve">
+    <value>Il selettore immagini non è disponibile.</value>
+  </data>
+  <data name="IconConverterViewModel_Save_dialog_unavailable" xml:space="preserve">
+    <value>La finestra di salvataggio dell’icona non è disponibile.</value>
+  </data>
+  <data name="IconConverterViewModel_Select_image_dialog" xml:space="preserve">
+    <value>Seleziona immagine</value>
+  </data>
+  <data name="IconConverterWindow_128_pixels" xml:space="preserve">
+    <value>128 pixel</value>
+  </data>
+  <data name="IconConverterWindow_16_pixels" xml:space="preserve">
+    <value>16 pixel</value>
+  </data>
+  <data name="IconConverterWindow_256_pixels" xml:space="preserve">
+    <value>256 pixel</value>
+  </data>
+  <data name="IconConverterWindow_32_bits_16_7M_colors" xml:space="preserve">
+    <value>32 bit (16,7 M di colori)</value>
+  </data>
+  <data name="IconConverterWindow_32_pixels" xml:space="preserve">
+    <value>32 pixel</value>
+  </data>
+  <data name="IconConverterWindow_48_pixels" xml:space="preserve">
+    <value>48 pixel</value>
+  </data>
+  <data name="IconConverterWindow_64_pixels" xml:space="preserve">
+    <value>64 pixel</value>
+  </data>
+  <data name="IconConverterWindow_8_bits_256_colors" xml:space="preserve">
+    <value>8 bit (256 colori)</value>
+  </data>
+  <data name="IconConverterWindow_Bit_depth" xml:space="preserve">
+    <value>Profondità di bit</value>
+  </data>
+  <data name="IconConverterWindow_Browse" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="IconConverterWindow_Convert" xml:space="preserve">
+    <value>Converti...</value>
+  </data>
+  <data name="IconConverterWindow_Drop_an_image_here" xml:space="preserve">
+    <value>Trascina qui un’immagine</value>
+  </data>
+  <data name="IconConverterWindow_Icon_file" xml:space="preserve">
+    <value>File icona</value>
+  </data>
+  <data name="IconConverterWindow_Image" xml:space="preserve">
+    <value>Immagine</value>
+  </data>
+  <data name="IconConverterWindow_or_use_Browse_to_choose_a_file" xml:space="preserve">
+    <value>oppure usa Sfoglia per scegliere un file</value>
+  </data>
+  <data name="IconConverterWindow_Save_icon_as_dialog" xml:space="preserve">
+    <value>Salva icona con nome</value>
+  </data>
+  <data name="IconConverterWindow_ShareX_Icon_Converter" xml:space="preserve">
+    <value>ShareX - Convertitore icone</value>
+  </data>
+  <data name="IconConverterWindow_Sizes" xml:space="preserve">
+    <value>Dimensioni</value>
+  </data>
+  <data name="ImageCombinerViewModel_Add_two_images" xml:space="preserve">
+    <value>Aggiungi almeno due immagini da combinare.</value>
+  </data>
+  <data name="ImageCombinerViewModel_Bottom" xml:space="preserve">
+    <value>Basso</value>
+  </data>
+  <data name="ImageCombinerViewModel_Center" xml:space="preserve">
+    <value>Centro</value>
+  </data>
+  <data name="ImageCombinerViewModel_Combine_failed" xml:space="preserve">
+    <value>Impossibile combinare le immagini: {0}</value>
+  </data>
+  <data name="ImageCombinerViewModel_Combining_images" xml:space="preserve">
+    <value>Combinazione delle immagini...</value>
+  </data>
+  <data name="ImageCombinerViewModel_Image_count" xml:space="preserve">
+    <value>{0} immagini</value>
+  </data>
+  <data name="ImageCombinerViewModel_Images_combined" xml:space="preserve">
+    <value>Le immagini sono state combinate e inviate al flusso di lavoro post-acquisizione configurato.</value>
+  </data>
+  <data name="ImageCombinerViewModel_Left" xml:space="preserve">
+    <value>Sinistra</value>
+  </data>
+  <data name="ImageCombinerViewModel_One_image" xml:space="preserve">
+    <value>{0} immagine</value>
+  </data>
+  <data name="ImageCombinerViewModel_Preview_failed" xml:space="preserve">
+    <value>Anteprima non riuscita: {0}</value>
+  </data>
+  <data name="ImageCombinerViewModel_Previewing" xml:space="preserve">
+    <value>Anteprima di {0}.</value>
+  </data>
+  <data name="ImageCombinerViewModel_Right" xml:space="preserve">
+    <value>Destra</value>
+  </data>
+  <data name="ImageCombinerViewModel_Top" xml:space="preserve">
+    <value>Alto</value>
+  </data>
+  <data name="ImageCombinerWindow_Add" xml:space="preserve">
+    <value>Aggiungi...</value>
+  </data>
+  <data name="ImageCombinerWindow_Add_at_least_two_images_to_preview" xml:space="preserve">
+    <value>Aggiungi almeno due immagini per visualizzare l’anteprima</value>
+  </data>
+  <data name="ImageCombinerWindow_Add_images_dialog" xml:space="preserve">
+    <value>Aggiungi immagini</value>
+  </data>
+  <data name="ImageCombinerWindow_Alignment" xml:space="preserve">
+    <value>Allineamento</value>
+  </data>
+  <data name="ImageCombinerWindow_Auto_fill_background" xml:space="preserve">
+    <value>Riempi automaticamente lo sfondo</value>
+  </data>
+  <data name="ImageCombinerWindow_Combine_images" xml:space="preserve">
+    <value>Combina immagini</value>
+  </data>
+  <data name="ImageCombinerWindow_Drop_images_here_or_use_the_Add_button" xml:space="preserve">
+    <value>Trascina qui le immagini o usa il pulsante Aggiungi</value>
+  </data>
+  <data name="ImageCombinerWindow_Horizontal" xml:space="preserve">
+    <value>Orizzontale</value>
+  </data>
+  <data name="ImageCombinerWindow_Layout" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="ImageCombinerWindow_Orientation" xml:space="preserve">
+    <value>Orientamento</value>
+  </data>
+  <data name="ImageCombinerWindow_ShareX_Image_Combiner" xml:space="preserve">
+    <value>ShareX - Combinatore immagini</value>
+  </data>
+  <data name="ImageCombinerWindow_Spacing" xml:space="preserve">
+    <value>Spaziatura</value>
+  </data>
+  <data name="ImageCombinerWindow_Vertical" xml:space="preserve">
+    <value>Verticale</value>
+  </data>
+  <data name="ImageCombinerWindow_Wrap_after" xml:space="preserve">
+    <value>A capo dopo</value>
+  </data>
+  <data name="ImageComparerViewModel_Failed_load_image" xml:space="preserve">
+    <value>Caricamento dell’immagine non riuscito: {0}</value>
+  </data>
+  <data name="ImageComparerViewModel_Image_load_failed" xml:space="preserve">
+    <value>Impossibile caricare il file selezionato come immagine.</value>
+  </data>
+  <data name="ImageComparerViewModel_Image_picker_unavailable" xml:space="preserve">
+    <value>Il selettore immagini non è disponibile.</value>
+  </data>
+  <data name="ImageComparerViewModel_Pixels_match" xml:space="preserve">
+    <value>{0:N0} di {1:N0} pixel corrispondono.</value>
+  </data>
+  <data name="ImageComparerViewModel_Select_image_dialog" xml:space="preserve">
+    <value>Seleziona immagine {0}</value>
+  </data>
+  <data name="ImageComparerViewModel_Select_two_images" xml:space="preserve">
+    <value>Seleziona due immagini da confrontare.</value>
+  </data>
+  <data name="ImageComparerViewModel_Similarity_empty" xml:space="preserve">
+    <value>Somiglianza: -</value>
+  </data>
+  <data name="ImageComparerViewModel_Similarity_value" xml:space="preserve">
+    <value>Somiglianza: {0:0.##}%</value>
+  </data>
+  <data name="ImageComparerWindow_Choose" xml:space="preserve">
+    <value>Scegli...</value>
+  </data>
+  <data name="ImageComparerWindow_Diff_View" xml:space="preserve">
+    <value>Vista differenze</value>
+  </data>
+  <data name="ImageComparerWindow_Image_1" xml:space="preserve">
+    <value>Immagine 1</value>
+  </data>
+  <data name="ImageComparerWindow_Image_2" xml:space="preserve">
+    <value>Immagine 2</value>
+  </data>
+  <data name="ImageComparerWindow_Select_Image_1_and_Image_2_to_show_the_comparison_preview" xml:space="preserve">
+    <value>Seleziona Immagine 1 e Immagine 2 per mostrare l’anteprima del confronto.</value>
+  </data>
+  <data name="ImageComparerWindow_ShareX_Image_Comparer" xml:space="preserve">
+    <value>ShareX - Comparatore immagini</value>
+  </data>
+  <data name="ImageComparerWindow_Slider" xml:space="preserve">
+    <value>Cursore</value>
+  </data>
+  <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
+    <value>{0} × {1}</value>
+  </data>
+  <data name="ImageSplitterWindow_Browse" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="ImageSplitterWindow_Choose_image_dialog" xml:space="preserve">
+    <value>Scegli immagine</value>
+  </data>
+  <data name="ImageSplitterWindow_Choose_output_folder_dialog" xml:space="preserve">
+    <value>Scegli cartella di output</value>
+  </data>
+  <data name="ImageSplitterWindow_Columns" xml:space="preserve">
+    <value>Colonne</value>
+  </data>
+  <data name="ImageSplitterWindow_Image" xml:space="preserve">
+    <value>Immagine</value>
+  </data>
+  <data name="ImageSplitterWindow_Output_folder" xml:space="preserve">
+    <value>Cartella di output</value>
+  </data>
+  <data name="ImageSplitterWindow_Rows" xml:space="preserve">
+    <value>Righe</value>
+  </data>
+  <data name="ImageSplitterWindow_ShareX_Image_Splitter" xml:space="preserve">
+    <value>ShareX - Divisore immagini</value>
+  </data>
+  <data name="ImageSplitterWindow_Split_image" xml:space="preserve">
+    <value>Dividi immagine</value>
+  </data>
+  <data name="ImageSplitterWindow_Split_layout" xml:space="preserve">
+    <value>Layout di divisione</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generated_many" xml:space="preserve">
+    <value>Generate {0} miniature.</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generated_one" xml:space="preserve">
+    <value>Generata {0} miniatura.</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generating" xml:space="preserve">
+    <value>Generazione delle miniature...</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generation_failed" xml:space="preserve">
+    <value>Generazione non riuscita: {0}</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Image_count" xml:space="preserve">
+    <value>{0} immagini</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_One_image" xml:space="preserve">
+    <value>{0} immagine</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Add" xml:space="preserve">
+    <value>Aggiungi...</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Add_images_dialog" xml:space="preserve">
+    <value>Aggiungi immagini</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Browse" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Choose_output_folder_dialog" xml:space="preserve">
+    <value>Scegli cartella di output</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Drop_images_here_or_use_the_Add_button" xml:space="preserve">
+    <value>Trascina qui le immagini o usa il pulsante Aggiungi</value>
+  </data>
+  <data name="ImageThumbnailerWindow_File_name_template" xml:space="preserve">
+    <value>Modello nome file</value>
+  </data>
+  <data name="ImageThumbnailerWindow_filename_th" xml:space="preserve">
+    <value>$filename_th</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Generate_thumbnails" xml:space="preserve">
+    <value>Genera miniature</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Height" xml:space="preserve">
+    <value>Altezza</value>
+  </data>
+  <data name="ImageThumbnailerWindow_JPEG_quality" xml:space="preserve">
+    <value>Qualità JPEG</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Output" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="ImageThumbnailerWindow_ShareX_Image_Thumbnailer" xml:space="preserve">
+    <value>ShareX - Generatore miniature</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Thumbnail_size" xml:space="preserve">
+    <value>Dimensione miniature</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Width" xml:space="preserve">
+    <value>Larghezza</value>
+  </data>
+  <data name="IndexerHtml_File_count" xml:space="preserve">
+    <value>{0:n0} file</value>
+  </data>
+  <data name="IndexerHtml_Folder_count" xml:space="preserve">
+    <value>{0:n0} cartelle</value>
+  </data>
+  <data name="IndexerHtml_Generated_by_on" xml:space="preserve">
+    <value>Generato da {0} il {1:yyyy-MM-dd 'at' HH:mm:ss 'UTC'}</value>
+  </data>
+  <data name="IndexerHtml_Index_for" xml:space="preserve">
+    <value>Indice di {0}</value>
+  </data>
+  <data name="IndexerHtml_One_file" xml:space="preserve">
+    <value>{0:n0} file</value>
+  </data>
+  <data name="IndexerHtml_One_folder" xml:space="preserve">
+    <value>{0:n0} cartella</value>
+  </data>
+  <data name="IndexerText_Generated_by" xml:space="preserve">
+    <value>Generato da ShareX Directory Indexer il {0:yyyy-MM-dd 'at' HH:mm:ss 'UTC'}. L’ultima versione può essere scaricata da: {1}</value>
+  </data>
+  <data name="InspectWindowPickerOverlay_Click_control" xml:space="preserve">
+    <value>Fai clic su un controllo per ispezionarlo  |  Esc per annullare</value>
+  </data>
+  <data name="InspectWindowPickerOverlay_Click_window" xml:space="preserve">
+    <value>Fai clic su una finestra per ispezionarla  |  Esc per annullare</value>
+  </data>
+  <data name="InspectWindowViewModel_Class_name" xml:space="preserve">
+    <value>Nome classe</value>
+  </data>
+  <data name="InspectWindowViewModel_Client_rectangle" xml:space="preserve">
+    <value>Rettangolo client</value>
+  </data>
+  <data name="InspectWindowViewModel_Control" xml:space="preserve">
+    <value>Controllo</value>
+  </data>
+  <data name="InspectWindowViewModel_Extended_window_styles" xml:space="preserve">
+    <value>Stili finestra estesi</value>
+  </data>
+  <data name="InspectWindowViewModel_No_target_selected" xml:space="preserve">
+    <value>Nessuna destinazione selezionata</value>
+  </data>
+  <data name="InspectWindowViewModel_Pick_target" xml:space="preserve">
+    <value>Scegli una finestra o un controllo per ispezionarne le proprietà</value>
+  </data>
+  <data name="InspectWindowViewModel_Process_file_name" xml:space="preserve">
+    <value>Nome file processo</value>
+  </data>
+  <data name="InspectWindowViewModel_Process_identifier" xml:space="preserve">
+    <value>Identificatore processo</value>
+  </data>
+  <data name="InspectWindowViewModel_Process_name" xml:space="preserve">
+    <value>Nome processo</value>
+  </data>
+  <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
+    <value>X: {0}  Y: {1}  |  Larghezza: {2}  Altezza: {3}</value>
+  </data>
+  <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
+    <value>Finestra senza titolo</value>
+  </data>
+  <data name="InspectWindowViewModel_Window" xml:space="preserve">
+    <value>Finestra</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_handle" xml:space="preserve">
+    <value>Handle finestra</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_rectangle" xml:space="preserve">
+    <value>Rettangolo finestra</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_styles" xml:space="preserve">
+    <value>Stili finestra</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_title" xml:space="preserve">
+    <value>Titolo finestra</value>
+  </data>
+  <data name="InspectWindowWindow_Always_on_top" xml:space="preserve">
+    <value>Sempre in primo piano</value>
+  </data>
+  <data name="InspectWindowWindow_Copy_all" xml:space="preserve">
+    <value>Copia tutto</value>
+  </data>
+  <data name="InspectWindowWindow_Opacity" xml:space="preserve">
+    <value>Opacità</value>
+  </data>
+  <data name="InspectWindowWindow_Pick_a_target_to_inspect_its_window_properties" xml:space="preserve">
+    <value>Scegli una destinazione per ispezionarne le proprietà della finestra</value>
+  </data>
+  <data name="InspectWindowWindow_Pick_control" xml:space="preserve">
+    <value>Scegli controllo</value>
+  </data>
+  <data name="InspectWindowWindow_Pick_window" xml:space="preserve">
+    <value>Scegli finestra</value>
+  </data>
+  <data name="InspectWindowWindow_Refresh" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="InspectWindowWindow_Select_window" xml:space="preserve">
+    <value>Seleziona finestra</value>
+  </data>
+  <data name="InspectWindowWindow_ShareX_Inspect_Window" xml:space="preserve">
+    <value>ShareX - Ispeziona finestra</value>
+  </data>
+  <data name="InspectWindowWindow_Window_information" xml:space="preserve">
+    <value>Informazioni finestra</value>
+  </data>
+  <data name="InspectWindowWindow_Window_settings" xml:space="preserve">
+    <value>Impostazioni finestra</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Automatic" xml:space="preserve">
+    <value>Automatico</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Backward_diagonal" xml:space="preserve">
+    <value>Diagonale indietro</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Checkerboard" xml:space="preserve">
+    <value>Scacchiera</value>
+  </data>
+  <data name="LocalizedDisplayConverter_CPU" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Forward_diagonal" xml:space="preserve">
+    <value>Diagonale avanti</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Gemini" xml:space="preserve">
+    <value>Gemini</value>
+  </data>
+  <data name="LocalizedDisplayConverter_GPU" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="LocalizedDisplayConverter_High" xml:space="preserve">
+    <value>Alto</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Horizontal" xml:space="preserve">
+    <value>Orizzontale</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Horizontal_bars" xml:space="preserve">
+    <value>Barre orizzontali</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Horizontal_lines" xml:space="preserve">
+    <value>Linee orizzontali</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Low" xml:space="preserve">
+    <value>Basso</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Medium" xml:space="preserve">
+    <value>Medio</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Minimal" xml:space="preserve">
+    <value>Minimo</value>
+  </data>
+  <data name="LocalizedDisplayConverter_OpenAI" xml:space="preserve">
+    <value>OpenAI</value>
+  </data>
+  <data name="LocalizedDisplayConverter_OpenAI_legacy" xml:space="preserve">
+    <value>OpenAI (legacy)</value>
+  </data>
+  <data name="LocalizedDisplayConverter_OpenRouter" xml:space="preserve">
+    <value>OpenRouter</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Vertical" xml:space="preserve">
+    <value>Verticale</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Vertical_bars" xml:space="preserve">
+    <value>Barre verticali</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Vertical_lines" xml:space="preserve">
+    <value>Linee verticali</value>
+  </data>
+  <data name="MetadataService_ExifTool_not_found" xml:space="preserve">
+    <value>ExifTool non è stato trovato.</value>
+  </data>
+  <data name="MetadataService_Exited_with_code" xml:space="preserve">
+    <value>ExifTool è terminato con il codice {0}.</value>
+  </data>
+  <data name="MetadataService_Failed_start_ExifTool" xml:space="preserve">
+    <value>Impossibile avviare ExifTool.</value>
+  </data>
+  <data name="MetadataService_Selected_file_not_found" xml:space="preserve">
+    <value>Impossibile trovare il file selezionato.</value>
+  </data>
+  <data name="MetadataViewModel_No_file_selected" xml:space="preserve">
+    <value>Nessun file selezionato</value>
+  </data>
+  <data name="MetadataViewModel_No_metadata" xml:space="preserve">
+    <value>Nessun metadato trovato in questo file</value>
+  </data>
+  <data name="MetadataViewModel_No_search_matches" xml:space="preserve">
+    <value>Nessun metadato corrisponde alla ricerca corrente</value>
+  </data>
+  <data name="MetadataViewModel_One_tag" xml:space="preserve">
+    <value>1 tag</value>
+  </data>
+  <data name="MetadataViewModel_Open_or_drop" xml:space="preserve">
+    <value>Apri o trascina un file per esaminarne i metadati</value>
+  </data>
+  <data name="MetadataViewModel_Open_or_drop_supported" xml:space="preserve">
+    <value>Apri o trascina qualsiasi file supportato</value>
+  </data>
+  <data name="MetadataViewModel_Reading_metadata" xml:space="preserve">
+    <value>Lettura dei metadati...</value>
+  </data>
+  <data name="MetadataViewModel_Tag_count" xml:space="preserve">
+    <value>{0:N0} tag</value>
+  </data>
+  <data name="MetadataViewModel_Unable_read" xml:space="preserve">
+    <value>Impossibile leggere i metadati
+{0}</value>
+  </data>
+  <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
+    <value>Impossibile rimuovere i metadati
+{0}</value>
+  </data>
+  <data name="MetadataViewModel_Window_title" xml:space="preserve">
+    <value>ShareX - Metadati</value>
+  </data>
+  <data name="MetadataViewModel_Window_title_file" xml:space="preserve">
+    <value>ShareX - Metadati - {0}</value>
+  </data>
+  <data name="MetadataWindow_Cancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="MetadataWindow_Copy_all" xml:space="preserve">
+    <value>Copia tutto</value>
+  </data>
+  <data name="MetadataWindow_Metadata" xml:space="preserve">
+    <value>Metadati</value>
+  </data>
+  <data name="MetadataWindow_Open" xml:space="preserve">
+    <value>Apri...</value>
+  </data>
+  <data name="MetadataWindow_Open_file_dialog" xml:space="preserve">
+    <value>Apri file</value>
+  </data>
+  <data name="MetadataWindow_Search_metadata" xml:space="preserve">
+    <value>Cerca metadati</value>
+  </data>
+  <data name="MetadataWindow_Strip_all_metadata" xml:space="preserve">
+    <value>Rimuovere tutti i metadati?</value>
+  </data>
+  <data name="MetadataWindow_Strip_metadata" xml:space="preserve">
+    <value>Rimuovi metadati...</value>
+  </data>
+  <data name="MetadataWindow_Strip_metadata_2" xml:space="preserve">
+    <value>Rimuovi metadati</value>
+  </data>
+  <data name="MetadataWindow_This_permanently_removes_all_non_essential_metadata_from_the_selected_file_This_action_cannot_be_undone" xml:space="preserve">
+    <value>Questa operazione rimuove definitivamente tutti i metadati non essenziali dal file selezionato. L’azione non può essere annullata.</value>
+  </data>
+  <data name="MonitorTestWindow_Blue" xml:space="preserve">
+    <value>Blu</value>
+  </data>
+  <data name="MonitorTestWindow_Brightness" xml:space="preserve">
+    <value>Luminosità</value>
+  </data>
+  <data name="MonitorTestWindow_Cell_size" xml:space="preserve">
+    <value>Dimensione cella</value>
+  </data>
+  <data name="MonitorTestWindow_Choose_a_test_pattern_and_adjust_its_properties" xml:space="preserve">
+    <value>Scegli un motivo di test e regolane le proprietà</value>
+  </data>
+  <data name="MonitorTestWindow_Close" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="MonitorTestWindow_Color" xml:space="preserve">
+    <value>Colore</value>
+  </data>
+  <data name="MonitorTestWindow_Colors" xml:space="preserve">
+    <value>Colori</value>
+  </data>
+  <data name="MonitorTestWindow_Direction" xml:space="preserve">
+    <value>Direzione</value>
+  </data>
+  <data name="MonitorTestWindow_Gradient" xml:space="preserve">
+    <value>Sfumatura</value>
+  </data>
+  <data name="MonitorTestWindow_Grayscale" xml:space="preserve">
+    <value>Scala di grigi</value>
+  </data>
+  <data name="MonitorTestWindow_Green" xml:space="preserve">
+    <value>Verde</value>
+  </data>
+  <data name="MonitorTestWindow_Monitor_test" xml:space="preserve">
+    <value>Test monitor</value>
+  </data>
+  <data name="MonitorTestWindow_Motion" xml:space="preserve">
+    <value>Movimento</value>
+  </data>
+  <data name="MonitorTestWindow_Pattern" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="MonitorTestWindow_Red" xml:space="preserve">
+    <value>Rosso</value>
+  </data>
+  <data name="MonitorTestWindow_RGB" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="MonitorTestWindow_ShareX_Monitor_Test" xml:space="preserve">
+    <value>ShareX - Test monitor</value>
+  </data>
+  <data name="MonitorTestWindow_Speed" xml:space="preserve">
+    <value>Velocità</value>
+  </data>
+  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
+    <value>La lingua {0} non è disponibile per l’OCR in questo sistema.</value>
+  </data>
+  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
+    <value>Il riconoscimento ottico dei caratteri è disponibile solo con Windows versione {0} o successiva.</value>
+  </data>
+  <data name="OCROptions_Bing" xml:space="preserve">
+    <value>Bing</value>
+  </data>
+  <data name="OCROptions_DeepL" xml:space="preserve">
+    <value>DeepL</value>
+  </data>
+  <data name="OCROptions_DuckDuckGo" xml:space="preserve">
+    <value>DuckDuckGo</value>
+  </data>
+  <data name="OCROptions_Google_Images" xml:space="preserve">
+    <value>Google Immagini</value>
+  </data>
+  <data name="OCROptions_Google_Search" xml:space="preserve">
+    <value>Ricerca Google</value>
+  </data>
+  <data name="OCROptions_Google_Translate" xml:space="preserve">
+    <value>Google Traduttore</value>
+  </data>
+  <data name="OCRViewModel_New_service_name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="OCRWindow_Close" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="OCRWindow_Close_after_opening" xml:space="preserve">
+    <value>Chiudi dopo l’apertura</value>
+  </data>
+  <data name="OCRWindow_Copy_all" xml:space="preserve">
+    <value>Copia tutto</value>
+  </data>
+  <data name="OCRWindow_Copy_recognized_text_automatically" xml:space="preserve">
+    <value>Copia automaticamente il testo riconosciuto</value>
+  </data>
+  <data name="OCRWindow_Edit_services" xml:space="preserve">
+    <value>Modifica servizi</value>
+  </data>
+  <data name="OCRWindow_Language" xml:space="preserve">
+    <value>Lingua</value>
+  </data>
+  <data name="OCRWindow_Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="OCRWindow_New" xml:space="preserve">
+    <value>Nuovo</value>
+  </data>
+  <data name="OCRWindow_OCR_help" xml:space="preserve">
+    <value>Guida OCR</value>
+  </data>
+  <data name="OCRWindow_Open_service" xml:space="preserve">
+    <value>Apri servizio...</value>
+  </data>
+  <data name="OCRWindow_Recognition" xml:space="preserve">
+    <value>Riconoscimento</value>
+  </data>
+  <data name="OCRWindow_Remove" xml:space="preserve">
+    <value>Rimuovi</value>
+  </data>
+  <data name="OCRWindow_Reset" xml:space="preserve">
+    <value>Ripristina</value>
+  </data>
+  <data name="OCRWindow_Result" xml:space="preserve">
+    <value>Risultato</value>
+  </data>
+  <data name="OCRWindow_Scale_factor" xml:space="preserve">
+    <value>Fattore di scala</value>
+  </data>
+  <data name="OCRWindow_Select_a_service" xml:space="preserve">
+    <value>Seleziona un servizio</value>
+  </data>
+  <data name="OCRWindow_Select_image" xml:space="preserve">
+    <value>Seleziona immagine...</value>
+  </data>
+  <data name="OCRWindow_Select_image_dialog" xml:space="preserve">
+    <value>Seleziona immagine</value>
+  </data>
+  <data name="OCRWindow_Select_region" xml:space="preserve">
+    <value>Seleziona area...</value>
+  </data>
+  <data name="OCRWindow_Services" xml:space="preserve">
+    <value>Servizi</value>
+  </data>
+  <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
+    <value>ShareX - Riconoscimento ottico dei caratteri</value>
+  </data>
+  <data name="OCRWindow_Single_line" xml:space="preserve">
+    <value>Riga singola</value>
+  </data>
+  <data name="OCRWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="OCRWindow_Use_0_where_the_recognized_text_belongs" xml:space="preserve">
+    <value>Usa {0} nel punto in cui deve comparire il testo riconosciuto</value>
+  </data>
+  <data name="OpenRouterProvider_API_error" xml:space="preserve">
+    <value>Errore dell’API OpenRouter: {0}</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Bottom_center" xml:space="preserve">
+    <value>In basso al centro</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Bottom_left" xml:space="preserve">
+    <value>In basso a sinistra</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Bottom_right" xml:space="preserve">
+    <value>In basso a destra</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Center" xml:space="preserve">
+    <value>Centro</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Middle_left" xml:space="preserve">
+    <value>Al centro a sinistra</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Middle_right" xml:space="preserve">
+    <value>Al centro a destra</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Top_center" xml:space="preserve">
+    <value>In alto al centro</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Top_left" xml:space="preserve">
+    <value>In alto a sinistra</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Top_right" xml:space="preserve">
+    <value>In alto a destra</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Always_on_top" xml:space="preserve">
+    <value>Sempre in primo piano</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Appearance" xml:space="preserve">
+    <value>Aspetto</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Background_color" xml:space="preserve">
+    <value>Colore di sfondo</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Border_color" xml:space="preserve">
+    <value>Colore bordo</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Border_size" xml:space="preserve">
+    <value>Dimensione bordo</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Cancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Default_position" xml:space="preserve">
+    <value>Posizione predefinita</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_High_quality_scaling" xml:space="preserve">
+    <value>Ridimensionamento di alta qualità</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Image_border" xml:space="preserve">
+    <value>Bordo immagine</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Initial_opacity" xml:space="preserve">
+    <value>Opacità iniziale</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Initial_scale" xml:space="preserve">
+    <value>Scala iniziale</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Keep_center_while_resizing" xml:space="preserve">
+    <value>Mantieni il centro durante il ridimensionamento</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Minimized_preview" xml:space="preserve">
+    <value>Anteprima ridotta</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Mouse_wheel_changes_scale_Ctrl_mouse_wheel_changes_opacity" xml:space="preserve">
+    <value>La rotellina del mouse modifica la scala, Ctrl + rotellina modifica l’opacità.</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Opacity_step" xml:space="preserve">
+    <value>Passo opacità</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Placement" xml:space="preserve">
+    <value>Posizionamento</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Preview_size" xml:space="preserve">
+    <value>Dimensione anteprima</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Save" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Scale_step" xml:space="preserve">
+    <value>Passo scala</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Screen_edge_offset" xml:space="preserve">
+    <value>Scostamento dal bordo dello schermo</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_ShareX_Pin_to_Screen_options" xml:space="preserve">
+    <value>ShareX - Opzioni Fissa su schermo</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Size_and_opacity" xml:space="preserve">
+    <value>Dimensione e opacità</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
+    <value>Ombra finestra</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
+    <value>Gli appunti non contengono un’immagine.</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_No_image_selected" xml:space="preserve">
+    <value>Nessuna immagine selezionata.</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_No_region_selected" xml:space="preserve">
+    <value>Nessuna regione selezionata.</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_Unable_load_image" xml:space="preserve">
+    <value>Impossibile caricare l’immagine. {0}</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Choose_an_image" xml:space="preserve">
+    <value>Scegli un’immagine</value>
+  </data>
+  <data name="PinToScreenStartupWindow_From_clipboard" xml:space="preserve">
+    <value>Dagli appunti</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Pin_an_image_above_your_other_windows_for_quick_reference" xml:space="preserve">
+    <value>Fissa un’immagine sopra le altre finestre per consultarla rapidamente.</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Select_image" xml:space="preserve">
+    <value>Seleziona immagine...</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Select_region" xml:space="preserve">
+    <value>Seleziona area...</value>
+  </data>
+  <data name="PinToScreenStartupWindow_ShareX_Pin_to_Screen" xml:space="preserve">
+    <value>ShareX - Fissa su schermo</value>
+  </data>
+  <data name="PinToScreenWindow_Close" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="PinToScreenWindow_Copy_image" xml:space="preserve">
+    <value>Copia immagine</value>
+  </data>
+  <data name="PinToScreenWindow_Options" xml:space="preserve">
+    <value>Opzioni</value>
+  </data>
+  <data name="PinToScreenWindow_Pinned_image" xml:space="preserve">
+    <value>Immagine fissata</value>
+  </data>
+  <data name="PinToScreenWindow_Reset_scale_and_opacity" xml:space="preserve">
+    <value>Ripristina scala e opacità</value>
+  </data>
+  <data name="QRCodeViewModel_Content_too_large" xml:space="preserve">
+    <value>Il contenuto è troppo grande per un codice QR.</value>
+  </data>
+  <data name="QRCodeViewModel_Decoded_many" xml:space="preserve">
+    <value>Decodificati {0} valori.</value>
+  </data>
+  <data name="QRCodeViewModel_Decoded_one" xml:space="preserve">
+    <value>Decodificato {0} valore.</value>
+  </data>
+  <data name="QRCodeViewModel_Generation_failed" xml:space="preserve">
+    <value>Generazione del codice QR non riuscita: {0}</value>
+  </data>
+  <data name="QRCodeViewModel_No_QR_code" xml:space="preserve">
+    <value>Nessun codice QR trovato.</value>
+  </data>
+  <data name="QRCodeViewModel_QRCode_saved" xml:space="preserve">
+    <value>Codice QR salvato.</value>
+  </data>
+  <data name="QRCodeViewModel_Unable_generate" xml:space="preserve">
+    <value>Impossibile generare un codice QR da questo contenuto.</value>
+  </data>
+  <data name="QRCodeWindow_Bitmap_image" xml:space="preserve">
+    <value>Immagine bitmap</value>
+  </data>
+  <data name="QRCodeWindow_Content" xml:space="preserve">
+    <value>Contenuto</value>
+  </data>
+  <data name="QRCodeWindow_Copy_image" xml:space="preserve">
+    <value>Copia immagine</value>
+  </data>
+  <data name="QRCodeWindow_Enter_content_to_generate_a_QR_code" xml:space="preserve">
+    <value>Inserisci contenuto per generare un codice QR</value>
+  </data>
+  <data name="QRCodeWindow_Enter_text_or_a_URL_to_encode" xml:space="preserve">
+    <value>Inserisci testo o un URL da codificare</value>
+  </data>
+  <data name="QRCodeWindow_Image_viewer_title" xml:space="preserve">
+    <value>Codice QR</value>
+  </data>
+  <data name="QRCodeWindow_JPEG_image" xml:space="preserve">
+    <value>Immagine JPEG</value>
+  </data>
+  <data name="QRCodeWindow_PNG_image" xml:space="preserve">
+    <value>Immagine PNG</value>
+  </data>
+  <data name="QRCodeWindow_px" xml:space="preserve">
+    <value>px</value>
+  </data>
+  <data name="QRCodeWindow_QR_code_size" xml:space="preserve">
+    <value>Dimensione codice QR</value>
+  </data>
+  <data name="QRCodeWindow_Save" xml:space="preserve">
+    <value>Salva...</value>
+  </data>
+  <data name="QRCodeWindow_Save_QR_code_dialog" xml:space="preserve">
+    <value>Salva codice QR</value>
+  </data>
+  <data name="QRCodeWindow_Scan_image" xml:space="preserve">
+    <value>Scansiona immagine...</value>
+  </data>
+  <data name="QRCodeWindow_Scan_region" xml:space="preserve">
+    <value>Scansiona regione...</value>
+  </data>
+  <data name="QRCodeWindow_Scan_screen" xml:space="preserve">
+    <value>Scansiona schermo</value>
+  </data>
+  <data name="QRCodeWindow_Select_image_dialog" xml:space="preserve">
+    <value>Seleziona un’immagine contenente un codice QR</value>
+  </data>
+  <data name="QRCodeWindow_ShareX_QR_Code" xml:space="preserve">
+    <value>ShareX - Codice QR</value>
+  </data>
+  <data name="QRCodeWindow_SVG_image" xml:space="preserve">
+    <value>Immagine SVG</value>
+  </data>
+  <data name="QRCodeWindow_Upload" xml:space="preserve">
+    <value>Carica</value>
+  </data>
+  <data name="RulerViewModel_Details" xml:space="preserve">
+    <value>Area: {0:N0} px²  |  Perimetro: {1:N0} px  |  Distanza: {2:0.00} px  |  Angolo: {3:0.00}°</value>
+  </data>
+  <data name="RulerViewModel_Position" xml:space="preserve">
+    <value>X: {0}  Y: {1}  |  Destra: {2}  Basso: {3}  |  Larghezza: {4} px  Altezza: {5} px</value>
+  </data>
+  <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
+    <value>ShareX - Righello</value>
+  </data>
+  <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
+    <value>Scegli un video per iniziare.</value>
+  </data>
+  <data name="VideoConverterViewModel_Choose_video_or_animation" xml:space="preserve">
+    <value>Scegli un video o un’animazione per iniziare.</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_complete" xml:space="preserve">
+    <value>Conversione completata: {0}</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_failed" xml:space="preserve">
+    <value>Conversione video non riuscita.</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_failed_message" xml:space="preserve">
+    <value>Conversione video non riuscita: {0}</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_stopped" xml:space="preserve">
+    <value>Conversione arrestata.</value>
+  </data>
+  <data name="VideoConverterViewModel_Converting" xml:space="preserve">
+    <value>Conversione del video...</value>
+  </data>
+  <data name="VideoConverterViewModel_Enter_output_name" xml:space="preserve">
+    <value>Inserisci un nome per il file di output.</value>
+  </data>
+  <data name="VideoConverterViewModel_No_file_selected" xml:space="preserve">
+    <value>Nessun file selezionato</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_existing_input" xml:space="preserve">
+    <value>Seleziona un file di input esistente.</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_existing_output" xml:space="preserve">
+    <value>Seleziona una cartella di output esistente.</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_input_dialog" xml:space="preserve">
+    <value>Seleziona video o animazione</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_output_dialog" xml:space="preserve">
+    <value>Seleziona cartella di output</value>
+  </data>
+  <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
+    <value>Arresto della conversione...</value>
+  </data>
+  <data name="VideoConverterWindow_Browse" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="VideoConverterWindow_Choose_an_output_folder" xml:space="preserve">
+    <value>Scegli una cartella di output</value>
+  </data>
+  <data name="VideoConverterWindow_Constant_quality" xml:space="preserve">
+    <value>Qualità costante</value>
+  </data>
+  <data name="VideoConverterWindow_Encoding" xml:space="preserve">
+    <value>Codifica</value>
+  </data>
+  <data name="VideoConverterWindow_FFmpeg_unavailable" xml:space="preserve">
+    <value>FFmpeg non è disponibile.</value>
+  </data>
+  <data name="VideoConverterWindow_File_name" xml:space="preserve">
+    <value>Nome file</value>
+  </data>
+  <data name="VideoConverterWindow_Folder" xml:space="preserve">
+    <value>Cartella</value>
+  </data>
+  <data name="VideoConverterWindow_Higher_quality" xml:space="preserve">
+    <value>Qualità superiore</value>
+  </data>
+  <data name="VideoConverterWindow_Input_file" xml:space="preserve">
+    <value>File di input</value>
+  </data>
+  <data name="VideoConverterWindow_kbps" xml:space="preserve">
+    <value>kbps</value>
+  </data>
+  <data name="VideoConverterWindow_Open_the_output_folder_when_finished" xml:space="preserve">
+    <value>Apri la cartella di output al termine</value>
+  </data>
+  <data name="VideoConverterWindow_Output" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="VideoConverterWindow_Quality" xml:space="preserve">
+    <value>Qualità</value>
+  </data>
+  <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
+    <value>ShareX - Convertitore video</value>
+  </data>
+  <data name="VideoConverterWindow_Smaller_file" xml:space="preserve">
+    <value>File più piccolo</value>
+  </data>
+  <data name="VideoConverterWindow_Start_encoding" xml:space="preserve">
+    <value>Avvia codifica</value>
+  </data>
+  <data name="VideoConverterWindow_Stop_encoding" xml:space="preserve">
+    <value>Interrompi codifica</value>
+  </data>
+  <data name="VideoConverterWindow_Target_bitrate" xml:space="preserve">
+    <value>Bitrate di destinazione</value>
+  </data>
+  <data name="VideoConverterWindow_Use_a_target_bitrate" xml:space="preserve">
+    <value>Usa un bitrate di destinazione</value>
+  </data>
+  <data name="VideoConverterWindow_Video_animation_files" xml:space="preserve">
+    <value>File video e animazione</value>
+  </data>
+  <data name="VideoConverterWindow_Video_encoder" xml:space="preserve">
+    <value>Codificatore video</value>
+  </data>
+  <data name="VideoConverterWindow_video_output" xml:space="preserve">
+    <value>video-output</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
+    <value>Cartella personalizzata</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_Default_screenshots_folder" xml:space="preserve">
+    <value>Cartella screenshot predefinita</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_No_thumbnails" xml:space="preserve">
+    <value>Non è stata creata alcuna miniatura. Verifica che il video sia valido e che FFmpeg possa leggerlo.</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_Same_folder_as_video" xml:space="preserve">
+    <value>Stessa cartella del video</value>
+  </data>
+  <data name="VideoThumbnailerWindow_0_keeps_original_size" xml:space="preserve">
+    <value>0 mantiene le dimensioni originali</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Add_video_information" xml:space="preserve">
+    <value>Aggiungi informazioni sul video</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Browse" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Choose_a_random_frame_for_each_thumbnail" xml:space="preserve">
+    <value>Scegli un fotogramma casuale per ogni miniatura</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Choose_an_output_folder" xml:space="preserve">
+    <value>Scegli una cartella di output</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Columns" xml:space="preserve">
+    <value>Colonne</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Combined_contact_sheet" xml:space="preserve">
+    <value>Provino a contatto combinato</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Count" xml:space="preserve">
+    <value>Conteggio</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Create_thumbnails" xml:space="preserve">
+    <value>Crea miniature</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Draw_thumbnail_borders" xml:space="preserve">
+    <value>Disegna bordi delle miniature</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Draw_thumbnail_shadows" xml:space="preserve">
+    <value>Disegna ombre delle miniature</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Filename_suffix" xml:space="preserve">
+    <value>Suffisso nome file</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Image_format" xml:space="preserve">
+    <value>Formato immagine</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Keep_individual_screenshots" xml:space="preserve">
+    <value>Mantieni i singoli screenshot</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Maximum_width" xml:space="preserve">
+    <value>Larghezza massima</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Open_output_folder_when_finished" xml:space="preserve">
+    <value>Apri la cartella di output al termine</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Outer_padding" xml:space="preserve">
+    <value>Spaziatura esterna</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Output" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Save_to" xml:space="preserve">
+    <value>Salva in</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Select_output_folder_dialog" xml:space="preserve">
+    <value>Seleziona cartella di output</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Select_video_dialog" xml:space="preserve">
+    <value>Seleziona video</value>
+  </data>
+  <data name="VideoThumbnailerWindow_ShareX_Video_Thumbnailer" xml:space="preserve">
+    <value>ShareX - Generatore miniature video</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Show_timestamps" xml:space="preserve">
+    <value>Mostra timestamp</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Thumbnail_spacing" xml:space="preserve">
+    <value>Spaziatura miniature</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Thumbnails" xml:space="preserve">
+    <value>Miniature</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Upload_created_thumbnails" xml:space="preserve">
+    <value>Carica le miniature create</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
+    <value>File video</value>
+  </data>
+</root>

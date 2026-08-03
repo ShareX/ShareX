@@ -95,7 +95,7 @@ public partial class OCRWindow : Window
     {
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Select image",
+            Title = Localization.Strings.OCRWindow_Select_image_dialog,
             AllowMultiple = false,
             FileTypeFilter = [FilePickerFileTypes.ImageAll]
         });

@@ -47,7 +47,7 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
         try
         {
             await Task.Delay(200);
-            await SelectAsync(_services.CaptureRegionAsync, "No region was selected.");
+            await SelectAsync(_services.CaptureRegionAsync, Localization.Strings.PinToScreenStartupViewModel_No_region_selected);
         }
         finally
         {
@@ -56,10 +56,10 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    private Task FromClipboardAsync() => SelectAsync(_services.GetClipboardImageAsync, "The clipboard does not contain an image.");
+    private Task FromClipboardAsync() => SelectAsync(_services.GetClipboardImageAsync, Localization.Strings.PinToScreenStartupViewModel_Clipboard_no_image);
 
     [RelayCommand]
-    private Task FromFileAsync() => SelectAsync(_services.SelectImageFileAsync, "No image was selected.");
+    private Task FromFileAsync() => SelectAsync(_services.SelectImageFileAsync, Localization.Strings.PinToScreenStartupViewModel_No_image_selected);
 
     private async Task SelectAsync(Func<Task<PinToScreenSource?>> selector, string emptyMessage)
     {
@@ -84,7 +84,7 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
         }
         catch (Exception ex)
         {
-            ErrorMessage = $"Unable to load the image. {ex.Message}";
+            ErrorMessage = string.Format(Localization.Strings.PinToScreenStartupViewModel_Unable_load_image, ex.Message);
             ToolsDiagnostics.ReportWarning(nameof(PinToScreenStartupViewModel), "Unable to select an image to pin.", ex);
         }
         finally

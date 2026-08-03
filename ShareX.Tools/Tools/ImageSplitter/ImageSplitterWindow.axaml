@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="680" d:DesignHeight="390"
         x:Class="ShareX.Tools.ImageSplitterWindow"
         x:DataType="vm:ImageSplitterViewModel"
-        Title="ShareX - Image Splitter"
+        Title="{x:Static localization:Strings.ImageSplitterWindow_ShareX_Image_Splitter}"
         Width="680"
         MinWidth="580"
         SizeToContent="Height"
@@ -19,13 +20,13 @@
                     <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                         <TextBlock Grid.Column="0"
                                    Classes="section-heading"
-                                   Text="Image"
+                                   Text="{x:Static localization:Strings.ImageSplitterWindow_Image}"
                                    Margin="0"
                                    VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1" Classes="path-text"
                                    Text="{Binding ImageFilePath, TargetNullValue='Choose an image to split'}"
                                    VerticalAlignment="Center"/>
-                        <Button Grid.Column="2" Command="{Binding BrowseImageCommand}" Content="Browse..."/>
+                        <Button Grid.Column="2" Command="{Binding BrowseImageCommand}" Content="{x:Static localization:Strings.ImageSplitterWindow_Browse}"/>
                     </Grid>
                 </Border>
 
@@ -33,22 +34,22 @@
                     <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                         <TextBlock Grid.Column="0"
                                    Classes="section-heading"
-                                   Text="Output folder"
+                                   Text="{x:Static localization:Strings.ImageSplitterWindow_Output_folder}"
                                    Margin="0"
                                    VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1" Classes="path-text"
                                    Text="{Binding OutputFolderPath, TargetNullValue='Choose an output folder'}"
                                    VerticalAlignment="Center"/>
-                        <Button Grid.Column="2" Command="{Binding BrowseOutputFolderCommand}" Content="Browse..."/>
+                        <Button Grid.Column="2" Command="{Binding BrowseOutputFolderCommand}" Content="{x:Static localization:Strings.ImageSplitterWindow_Browse}"/>
                     </Grid>
                 </Border>
 
                 <Border Grid.Row="2" Classes="tool-panel" Padding="16">
                     <Grid RowDefinitions="Auto,Auto" RowSpacing="14">
-                        <TextBlock Grid.Row="0" Classes="section-heading" Text="Split layout"/>
+                        <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.ImageSplitterWindow_Split_layout}"/>
                         <Grid Grid.Row="1" ColumnDefinitions="*,Auto,*" ColumnSpacing="24" VerticalAlignment="Center">
                             <StackPanel Grid.Column="0" Spacing="6">
-                                <TextBlock Classes="row-label" Text="Columns"/>
+                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageSplitterWindow_Columns}"/>
                                 <NumericUpDown Minimum="1" Maximum="100" FormatString="0"
                                                Value="{Binding ColumnCount}" HorizontalContentAlignment="Center"/>
                             </StackPanel>
@@ -57,7 +58,7 @@
                                        Foreground="{DynamicResource ShareX.Brush.Accent}"
                                        VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="2" Spacing="6">
-                                <TextBlock Classes="row-label" Text="Rows"/>
+                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageSplitterWindow_Rows}"/>
                                 <NumericUpDown Minimum="1" Maximum="100" FormatString="0"
                                                Value="{Binding RowCount}" HorizontalContentAlignment="Center"/>
                             </StackPanel>
@@ -70,7 +71,7 @@
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="{x:Static theming:LucideIcons.grid_2x2}"
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                            <TextBlock Text="Split image"/>
+                            <TextBlock Text="{x:Static localization:Strings.ImageSplitterWindow_Split_image}"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>

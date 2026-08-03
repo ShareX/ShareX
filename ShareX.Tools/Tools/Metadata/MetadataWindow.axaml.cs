@@ -62,7 +62,7 @@ public partial class MetadataWindow : Window
 
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Open file",
+            Title = Localization.Strings.MetadataWindow_Open_file_dialog,
             AllowMultiple = false,
             SuggestedStartLocation = startFolder
         });

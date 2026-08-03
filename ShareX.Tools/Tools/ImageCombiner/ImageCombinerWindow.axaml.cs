@@ -72,7 +72,7 @@ public partial class ImageCombinerWindow : Window
     {
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Add images",
+            Title = Localization.Strings.ImageCombinerWindow_Add_images_dialog,
             AllowMultiple = true,
             FileTypeFilter = [FilePickerFileTypes.ImageAll]
         });

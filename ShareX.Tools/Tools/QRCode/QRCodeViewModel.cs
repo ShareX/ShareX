@@ -119,7 +119,7 @@ public sealed partial class QRCodeViewModel : ViewModelBase, IDisposable
             PreviewImage = null;
             StatusText = string.IsNullOrEmpty(Text) || Encoding.UTF8.GetByteCount(Text) <= MaximumContentBytes
                 ? string.Empty
-                : "The content is too large for a QR code.";
+                : Localization.Strings.QRCodeViewModel_Content_too_large;
             return;
         }
 
@@ -133,7 +133,7 @@ public sealed partial class QRCodeViewModel : ViewModelBase, IDisposable
 
             if (png == null)
             {
-                StatusText = "Unable to generate a QR code from this content.";
+                StatusText = Localization.Strings.QRCodeViewModel_Unable_generate;
                 return;
             }
 
@@ -147,7 +147,7 @@ public sealed partial class QRCodeViewModel : ViewModelBase, IDisposable
         {
             if (version == _generationVersion)
             {
-                StatusText = $"QR code generation failed: {ex.Message}";
+                StatusText = string.Format(Localization.Strings.QRCodeViewModel_Generation_failed, ex.Message);
             }
         }
     }
@@ -166,7 +166,7 @@ public sealed partial class QRCodeViewModel : ViewModelBase, IDisposable
     {
         if (HasValidContent && SaveRequested != null && await SaveRequested(Text, EffectiveSize))
         {
-            StatusText = "QR code saved.";
+            StatusText = Localization.Strings.QRCodeViewModel_QRCode_saved;
         }
     }
 
@@ -241,8 +241,8 @@ public sealed partial class QRCodeViewModel : ViewModelBase, IDisposable
             ? string.Join(Environment.NewLine + Environment.NewLine, results)
             : string.Empty;
         StatusText = results is { Length: > 0 }
-            ? $"Decoded {results.Length} value{(results.Length == 1 ? string.Empty : "s")}."
-            : "No QR code was found.";
+            ? string.Format(results.Length == 1 ? Localization.Strings.QRCodeViewModel_Decoded_one : Localization.Strings.QRCodeViewModel_Decoded_many, results.Length)
+            : Localization.Strings.QRCodeViewModel_No_QR_code;
         _services.PlayNotificationSound?.Invoke();
         return Task.CompletedTask;
     }

@@ -44,7 +44,7 @@ public partial class ImageThumbnailerWindow : Window
     {
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Add images",
+            Title = Localization.Strings.ImageThumbnailerWindow_Add_images_dialog,
             AllowMultiple = true,
             FileTypeFilter = [FilePickerFileTypes.ImageAll]
         });
@@ -55,7 +55,7 @@ public partial class ImageThumbnailerWindow : Window
     {
         IReadOnlyList<IStorageFolder> folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
         {
-            Title = "Choose output folder",
+            Title = Localization.Strings.ImageThumbnailerWindow_Choose_output_folder_dialog,
             AllowMultiple = false,
             SuggestedStartLocation = Directory.Exists(_viewModel.OutputFolderPath)
                 ? await StorageProvider.TryGetFolderFromPathAsync(_viewModel.OutputFolderPath)

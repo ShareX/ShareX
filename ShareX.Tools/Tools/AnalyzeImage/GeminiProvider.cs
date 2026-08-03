@@ -92,7 +92,7 @@ namespace ShareX.Tools
                 }
                 else
                 {
-                    throw new Exception($"Error from Gemini API: {responseString}");
+                    throw new Exception(string.Format(Localization.Strings.GeminiProvider_API_error, responseString));
                 }
             }
         }

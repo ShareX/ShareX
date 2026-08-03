@@ -43,11 +43,11 @@ public static class MetadataService
     {
         if (!File.Exists(ExifToolPath))
         {
-            throw new FileNotFoundException("ExifTool could not be found.", ExifToolPath);
+            throw new FileNotFoundException(Localization.Strings.MetadataService_ExifTool_not_found, ExifToolPath);
         }
         if (!File.Exists(filePath))
         {
-            throw new FileNotFoundException("The selected file could not be found.", filePath);
+            throw new FileNotFoundException(Localization.Strings.MetadataService_Selected_file_not_found, filePath);
         }
 
         ProcessStartInfo startInfo = new()
@@ -65,7 +65,7 @@ public static class MetadataService
         }
 
         using Process process = Process.Start(startInfo)
-            ?? throw new InvalidOperationException("Failed to start ExifTool.");
+            ?? throw new InvalidOperationException(Localization.Strings.MetadataService_Failed_start_ExifTool);
         Task<string> outputTask = process.StandardOutput.ReadToEndAsync(cancellationToken);
         Task<string> errorTask = process.StandardError.ReadToEndAsync(cancellationToken);
         await process.WaitForExitAsync(cancellationToken);
@@ -75,7 +75,7 @@ public static class MetadataService
         if (process.ExitCode != 0)
         {
             throw new InvalidOperationException(string.IsNullOrWhiteSpace(error)
-                ? $"ExifTool exited with code {process.ExitCode}."
+                ? string.Format(Localization.Strings.MetadataService_Exited_with_code, process.ExitCode)
                 : error.Trim());
         }
 

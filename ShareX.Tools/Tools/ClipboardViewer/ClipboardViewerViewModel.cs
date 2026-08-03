@@ -44,17 +44,17 @@ public sealed partial class ClipboardViewerViewModel : ViewModelBase, IDisposabl
     private byte[]? _previewImageData;
 
     [ObservableProperty]
-    private string _previewDetails = "Select a format to inspect its contents";
+    private string _previewDetails = Localization.Strings.ClipboardViewerViewModel_Select_format;
 
     [ObservableProperty]
-    private string _emptyMessage = "The clipboard is empty";
+    private string _emptyMessage = Localization.Strings.ClipboardViewerViewModel_Clipboard_empty;
 
     public bool HasFormats => Formats.Count > 0;
     public bool HasImage => PreviewImage != null;
     public bool HasText => !string.IsNullOrEmpty(PreviewText);
     public bool HasPreview => HasImage || HasText;
-    public string PreviewTitle => SelectedFormat ?? "Clipboard content";
-    public string FormatCountText => Formats.Count == 1 ? "1 format" : $"{Formats.Count} formats";
+    public string PreviewTitle => SelectedFormat ?? Localization.Strings.ClipboardViewerViewModel_Clipboard_content;
+    public string FormatCountText => Formats.Count == 1 ? Localization.Strings.ClipboardViewerViewModel_One_format : string.Format(Localization.Strings.ClipboardViewerViewModel_Format_count, Formats.Count);
 
     public ClipboardViewerViewModel()
     {
@@ -79,7 +79,7 @@ public sealed partial class ClipboardViewerViewModel : ViewModelBase, IDisposabl
 
             OnPropertyChanged(nameof(HasFormats));
             OnPropertyChanged(nameof(FormatCountText));
-            EmptyMessage = "The clipboard is empty";
+            EmptyMessage = Localization.Strings.ClipboardViewerViewModel_Clipboard_empty;
             SelectedFormat = Formats.FirstOrDefault(x => x.Equals(previousSelection, StringComparison.Ordinal))
                 ?? Formats.FirstOrDefault();
         }
@@ -88,7 +88,7 @@ public sealed partial class ClipboardViewerViewModel : ViewModelBase, IDisposabl
             _clipboardData = null;
             Formats.Clear();
             SelectedFormat = null;
-            EmptyMessage = $"Unable to read the clipboard\n{ex.Message}";
+            EmptyMessage = string.Format(Localization.Strings.ClipboardViewerViewModel_Unable_read_clipboard, ex.Message);
             OnPropertyChanged(nameof(HasFormats));
             OnPropertyChanged(nameof(FormatCountText));
             ToolsDiagnostics.ReportWarning(nameof(ClipboardViewerViewModel), "Failed to read clipboard contents.", ex);
@@ -111,7 +111,7 @@ public sealed partial class ClipboardViewerViewModel : ViewModelBase, IDisposabl
             return;
         }
 
-        EmptyMessage = "This format contains no previewable content";
+        EmptyMessage = Localization.Strings.ClipboardViewerViewModel_No_previewable_content;
 
         try
         {
@@ -120,18 +120,18 @@ public sealed partial class ClipboardViewerViewModel : ViewModelBase, IDisposabl
             {
                 PreviewImageData = preview.ImageData;
                 PreviewImage = new Bitmap(new MemoryStream(preview.ImageData, writable: false));
-                PreviewDetails = $"Image  |  {preview.ImageWidth} × {preview.ImageHeight} px";
+                PreviewDetails = string.Format(Localization.Strings.ClipboardViewerViewModel_Image_details, preview.ImageWidth, preview.ImageHeight);
             }
             else
             {
                 PreviewText = preview.Text;
-                PreviewDetails = $"Text  |  {preview.Text.Length:N0} characters";
+                PreviewDetails = string.Format(Localization.Strings.ClipboardViewerViewModel_Text_details, preview.Text.Length);
             }
         }
         catch (Exception ex)
         {
-            PreviewText = $"This clipboard format could not be previewed.\n\n{ex.Message}";
-            PreviewDetails = "Preview unavailable";
+            PreviewText = string.Format(Localization.Strings.ClipboardViewerViewModel_Preview_failed, ex.Message);
+            PreviewDetails = Localization.Strings.ClipboardViewerViewModel_Preview_unavailable;
             ToolsDiagnostics.ReportWarning(nameof(ClipboardViewerViewModel), $"Failed to preview clipboard format '{value}'.", ex);
         }
     }
@@ -142,7 +142,7 @@ public sealed partial class ClipboardViewerViewModel : ViewModelBase, IDisposabl
         PreviewImage = null;
         PreviewImageData = null;
         PreviewText = string.Empty;
-        PreviewDetails = "Select a format to inspect its contents";
+        PreviewDetails = Localization.Strings.ClipboardViewerViewModel_Select_format;
     }
 
     public void Dispose()

@@ -51,11 +51,11 @@ public partial class VideoThumbnailerWindow : Window
     {
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Select video",
+            Title = Localization.Strings.VideoThumbnailerWindow_Select_video_dialog,
             AllowMultiple = false,
             FileTypeFilter =
             [
-                new FilePickerFileType("Video files")
+                new FilePickerFileType(Localization.Strings.VideoThumbnailerWindow_Video_files)
                 {
                     Patterns = ["*.mp4", "*.mkv", "*.webm", "*.avi", "*.mov", "*.wmv", "*.m4v", "*.mpg", "*.mpeg", "*.flv"]
                 },
@@ -76,7 +76,7 @@ public partial class VideoThumbnailerWindow : Window
 
         IReadOnlyList<IStorageFolder> folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
         {
-            Title = "Select output folder",
+            Title = Localization.Strings.VideoThumbnailerWindow_Select_output_folder_dialog,
             AllowMultiple = false,
             SuggestedStartLocation = startFolder
         });

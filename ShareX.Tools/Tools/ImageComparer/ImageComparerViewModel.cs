@@ -79,10 +79,10 @@ public sealed partial class ImageComparerViewModel : ViewModelBase, IDisposable
     private ImageComparerMode _selectedMode;
 
     [ObservableProperty]
-    private string _statusText = "Select two images to compare.";
+    private string _statusText = Localization.Strings.ImageComparerViewModel_Select_two_images;
 
     [ObservableProperty]
-    private string _similarityText = "Similarity: -";
+    private string _similarityText = Localization.Strings.ImageComparerViewModel_Similarity_empty;
 
     [ObservableProperty]
     private IBrush _similarityBrush = Brushes.White;
@@ -145,11 +145,11 @@ public sealed partial class ImageComparerViewModel : ViewModelBase, IDisposable
     {
         if (SelectImageFileRequested == null)
         {
-            StatusText = "Image picker is unavailable.";
+            StatusText = Localization.Strings.ImageComparerViewModel_Image_picker_unavailable;
             return;
         }
 
-        string? filePath = await SelectImageFileRequested($"Select Image {imageNumber}");
+        string? filePath = await SelectImageFileRequested(string.Format(Localization.Strings.ImageComparerViewModel_Select_image_dialog, imageNumber));
         if (string.IsNullOrEmpty(filePath))
         {
             return;
@@ -160,7 +160,7 @@ public sealed partial class ImageComparerViewModel : ViewModelBase, IDisposable
             SKBitmap? bitmap = SKBitmap.Decode(filePath);
             if (bitmap == null)
             {
-                StatusText = "The selected file could not be loaded as an image.";
+                StatusText = Localization.Strings.ImageComparerViewModel_Image_load_failed;
                 return;
             }
 
@@ -169,7 +169,7 @@ public sealed partial class ImageComparerViewModel : ViewModelBase, IDisposable
         }
         catch (Exception ex)
         {
-            StatusText = $"Failed to load image: {ex.Message}";
+            StatusText = string.Format(Localization.Strings.ImageComparerViewModel_Failed_load_image, ex.Message);
         }
     }
 
@@ -205,8 +205,8 @@ public sealed partial class ImageComparerViewModel : ViewModelBase, IDisposable
 
         if (_image1Bitmap == null || _image2Bitmap == null)
         {
-            StatusText = "Select two images to compare.";
-            SimilarityText = "Similarity: -";
+            StatusText = Localization.Strings.ImageComparerViewModel_Select_two_images;
+            SimilarityText = Localization.Strings.ImageComparerViewModel_Similarity_empty;
             SimilarityBrush = Brushes.White;
             RefreshDisplayedImages();
             return;
@@ -216,11 +216,11 @@ public sealed partial class ImageComparerViewModel : ViewModelBase, IDisposable
         DiffPreview = BitmapConversionHelpers.ToAvaloniBitmap(_comparisonResult.DiffBitmap);
 
         double similarity = _comparisonResult.SimilarityPercentage;
-        SimilarityText = string.Create(CultureInfo.InvariantCulture, $"Similarity: {similarity:0.##}%");
+        SimilarityText = string.Format(CultureInfo.CurrentCulture, Localization.Strings.ImageComparerViewModel_Similarity_value, similarity);
         SimilarityBrush = Math.Abs(similarity - 100d) < 0.0001
             ? new SolidColorBrush(Color.FromRgb(16, 185, 129))
             : Brushes.White;
-        StatusText = $"{_comparisonResult.MatchingPixels:N0} of {_comparisonResult.TotalPixels:N0} pixels match.";
+        StatusText = string.Format(Localization.Strings.ImageComparerViewModel_Pixels_match, _comparisonResult.MatchingPixels, _comparisonResult.TotalPixels);
         HasComparison = true;
 
         RefreshDisplayedImages();

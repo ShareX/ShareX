@@ -31,11 +31,11 @@ public sealed partial class PinToScreenOptionsViewModel : ViewModelBase
 
     public ObservableCollection<PinPlacementChoice> Placements { get; } =
     [
-        new("Top left", ContentAlignment.TopLeft), new("Top center", ContentAlignment.TopCenter),
-        new("Top right", ContentAlignment.TopRight), new("Middle left", ContentAlignment.MiddleLeft),
-        new("Center", ContentAlignment.MiddleCenter), new("Middle right", ContentAlignment.MiddleRight),
-        new("Bottom left", ContentAlignment.BottomLeft), new("Bottom center", ContentAlignment.BottomCenter),
-        new("Bottom right", ContentAlignment.BottomRight)
+        new(Localization.Strings.PinToScreenOptionsViewModel_Top_left, ContentAlignment.TopLeft), new(Localization.Strings.PinToScreenOptionsViewModel_Top_center, ContentAlignment.TopCenter),
+        new(Localization.Strings.PinToScreenOptionsViewModel_Top_right, ContentAlignment.TopRight), new(Localization.Strings.PinToScreenOptionsViewModel_Middle_left, ContentAlignment.MiddleLeft),
+        new(Localization.Strings.PinToScreenOptionsViewModel_Center, ContentAlignment.MiddleCenter), new(Localization.Strings.PinToScreenOptionsViewModel_Middle_right, ContentAlignment.MiddleRight),
+        new(Localization.Strings.PinToScreenOptionsViewModel_Bottom_left, ContentAlignment.BottomLeft), new(Localization.Strings.PinToScreenOptionsViewModel_Bottom_center, ContentAlignment.BottomCenter),
+        new(Localization.Strings.PinToScreenOptionsViewModel_Bottom_right, ContentAlignment.BottomRight)
     ];
 
     [ObservableProperty] private decimal _initialScale;

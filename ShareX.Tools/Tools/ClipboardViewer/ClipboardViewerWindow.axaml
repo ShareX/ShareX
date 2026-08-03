@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -8,7 +9,7 @@
         mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="580"
         x:Class="ShareX.Tools.ClipboardViewerWindow"
         x:DataType="vm:ClipboardViewerViewModel"
-        Title="ShareX - Clipboard Viewer"
+        Title="{x:Static localization:Strings.ClipboardViewerWindow_ShareX_Clipboard_Viewer}"
         Width="900"
         Height="580"
         MinWidth="720"
@@ -33,7 +34,7 @@
                 <Border Grid.Column="0" Classes="tool-panel">
                     <Grid RowDefinitions="Auto,*" RowSpacing="10">
                         <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
-                            <TextBlock Grid.Column="0" Classes="section-heading" Text="Formats"/>
+                            <TextBlock Grid.Column="0" Classes="section-heading" Text="{x:Static localization:Strings.ClipboardViewerWindow_Formats}"/>
                             <TextBlock Grid.Column="1"
                                        Text="{Binding FormatCountText}"
                                        FontWeight="Normal"
@@ -75,7 +76,7 @@
                                            FontSize="40"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                            HorizontalAlignment="Center"/>
-                                <TextBlock Text="No formats"
+                                <TextBlock Text="{x:Static localization:Strings.ClipboardViewerWindow_No_formats}"
                                            FontWeight="Normal"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                             </StackPanel>
@@ -99,7 +100,7 @@
                                     <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}"
                                                FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                FontWeight="Normal"/>
-                                    <TextBlock Text="Refresh"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ClipboardViewerWindow_Refresh}"/>
                                 </StackPanel>
                             </Button>
                             <Button Grid.Column="2" Command="{Binding ClearClipboardCommand}" IsEnabled="{Binding HasFormats}">
@@ -107,7 +108,7 @@
                                     <TextBlock Text="{x:Static theming:LucideIcons.trash_2}"
                                                FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                FontWeight="Normal"/>
-                                    <TextBlock Text="Clear"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ClipboardViewerWindow_Clear}"/>
                                 </StackPanel>
                             </Button>
                         </Grid>

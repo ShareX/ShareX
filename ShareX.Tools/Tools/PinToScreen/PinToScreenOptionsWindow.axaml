@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -8,7 +9,7 @@
         mc:Ignorable="d" d:DesignWidth="760" d:DesignHeight="560"
         x:Class="ShareX.Tools.PinToScreenOptionsWindow"
         x:DataType="vm:PinToScreenOptionsViewModel"
-        Title="ShareX - Pin to Screen options"
+        Title="{x:Static localization:Strings.PinToScreenOptionsWindow_ShareX_Pin_to_Screen_options}"
         Width="760" Height="560" MinWidth="700" MinHeight="520"
         WindowStartupLocation="CenterOwner">
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
@@ -17,42 +18,42 @@
                     <StackPanel Spacing="12">
                         <Border Classes="tool-panel">
                             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
-                                <TextBlock Classes="section-heading" Text="Size and opacity"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Size_and_opacity}"/>
                                 <Grid Grid.Row="1" ColumnDefinitions="150,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Initial scale"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Initial_scale}"/>
                                     <NumericUpDown Grid.Column="1" Minimum="20" Maximum="500" FormatString="0'%'" Value="{Binding InitialScale}"/>
                                 </Grid>
                                 <Grid Grid.Row="2" ColumnDefinitions="150,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Scale step"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Scale_step}"/>
                                     <NumericUpDown Grid.Column="1" Minimum="1" Maximum="100" FormatString="0'%'" Value="{Binding ScaleStep}"/>
                                 </Grid>
                                 <Grid Grid.Row="3" ColumnDefinitions="150,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Initial opacity"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Initial_opacity}"/>
                                     <NumericUpDown Grid.Column="1" Minimum="10" Maximum="100" FormatString="0'%'" Value="{Binding InitialOpacity}"/>
                                 </Grid>
                                 <Grid Grid.Row="4" ColumnDefinitions="150,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Opacity step"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Opacity_step}"/>
                                     <NumericUpDown Grid.Column="1" Minimum="1" Maximum="90" FormatString="0'%'" Value="{Binding OpacityStep}"/>
                                 </Grid>
                                 <Grid Grid.Row="5" ColumnDefinitions="*,Auto" MinHeight="30">
-                                    <TextBlock Text="High quality scaling" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static localization:Strings.PinToScreenOptionsWindow_High_quality_scaling}" FontWeight="Normal" VerticalAlignment="Center"/>
                                     <ToggleSwitch Grid.Column="1" IsChecked="{Binding HighQualityScale}" OnContent="" OffContent=""/>
                                 </Grid>
                             </Grid>
                         </Border>
                         <Border Classes="tool-panel">
                             <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
-                                <TextBlock Classes="section-heading" Text="Placement"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Placement}"/>
                                 <Grid Grid.Row="1" ColumnDefinitions="150,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Default position"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Default_position}"/>
                                     <ComboBox Grid.Column="1" ItemsSource="{Binding Placements}" SelectedItem="{Binding SelectedPlacement}"/>
                                 </Grid>
                                 <Grid Grid.Row="2" ColumnDefinitions="150,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Screen edge offset"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Screen_edge_offset}"/>
                                     <NumericUpDown Grid.Column="1" Minimum="0" Maximum="300" FormatString="0' px'" Value="{Binding PlacementOffset}"/>
                                 </Grid>
                                 <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
-                                    <TextBlock Text="Keep center while resizing" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Keep_center_while_resizing}" FontWeight="Normal" VerticalAlignment="Center"/>
                                     <ToggleSwitch Grid.Column="1" IsChecked="{Binding KeepCenterLocation}" OnContent="" OffContent=""/>
                                 </Grid>
                             </Grid>
@@ -61,30 +62,30 @@
                     <StackPanel Grid.Column="1" Spacing="12">
                         <Border Classes="tool-panel">
                             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
-                                <TextBlock Classes="section-heading" Text="Appearance"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Appearance}"/>
                                 <Grid Grid.Row="1" ColumnDefinitions="*,Auto" MinHeight="30">
-                                    <TextBlock Text="Always on top" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Always_on_top}" FontWeight="Normal" VerticalAlignment="Center"/>
                                     <ToggleSwitch Grid.Column="1" IsChecked="{Binding TopMost}" OnContent="" OffContent=""/>
                                 </Grid>
                                 <Grid Grid.Row="2" ColumnDefinitions="*,Auto" MinHeight="30">
-                                    <TextBlock Text="Window shadow" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Window_shadow}" FontWeight="Normal" VerticalAlignment="Center"/>
                                     <ToggleSwitch Grid.Column="1" IsChecked="{Binding Shadow}" OnContent="" OffContent=""/>
                                 </Grid>
                                 <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
-                                    <TextBlock Text="Image border" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Image_border}" FontWeight="Normal" VerticalAlignment="Center"/>
                                     <ToggleSwitch Grid.Column="1" IsChecked="{Binding Border}" OnContent="" OffContent=""/>
                                 </Grid>
                                 <Grid Grid.Row="4" ColumnDefinitions="150,*,Auto" ColumnSpacing="10" IsEnabled="{Binding Border}">
-                                    <TextBlock Classes="row-label" Text="Border size"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Border_size}"/>
                                     <NumericUpDown Grid.Column="1" Minimum="1" Maximum="30" FormatString="0' px'" Value="{Binding BorderSize}"/>
-                                    <Button Grid.Column="2" Width="40" Padding="4" ToolTip.Tip="Border color">
+                                    <Button Grid.Column="2" Width="40" Padding="4" ToolTip.Tip="{x:Static localization:Strings.PinToScreenOptionsWindow_Border_color}">
                                         <Border Width="20" Height="20" CornerRadius="3" Background="{Binding BorderColorBrush}" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"/>
                                         <Button.Flyout><Flyout><cp:ColorView Width="300" Height="300" Color="{Binding BorderColor, Mode=TwoWay}"/></Flyout></Button.Flyout>
                                     </Button>
                                 </Grid>
                                 <Grid Grid.Row="5" ColumnDefinitions="150,*,Auto" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Background color"/>
-                                    <Button Grid.Column="2" Width="40" Padding="4" ToolTip.Tip="Background color">
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Background_color}"/>
+                                    <Button Grid.Column="2" Width="40" Padding="4" ToolTip.Tip="{x:Static localization:Strings.PinToScreenOptionsWindow_Background_color}">
                                         <Border Width="20" Height="20" CornerRadius="3" Background="{Binding BackgroundColorBrush}" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"/>
                                         <Button.Flyout><Flyout><cp:ColorView Width="300" Height="300" Color="{Binding BackgroundColor, Mode=TwoWay}"/></Flyout></Button.Flyout>
                                     </Button>
@@ -93,9 +94,9 @@
                         </Border>
                         <Border Classes="tool-panel">
                             <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
-                                <TextBlock Classes="section-heading" Text="Minimized preview"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Minimized_preview}"/>
                                 <Grid Grid.Row="1" ColumnDefinitions="150,*,Auto,*" ColumnSpacing="8">
-                                    <TextBlock Classes="row-label" Text="Preview size"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Preview_size}"/>
                                     <NumericUpDown Grid.Column="1" Minimum="1" Maximum="1000" FormatString="0"
                                                    ShowButtonSpinner="False" Value="{Binding MinimizeWidth}"/>
                                     <TextBlock Grid.Column="2" Text="×" FontWeight="Normal" VerticalAlignment="Center"/>
@@ -107,11 +108,11 @@
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Row="1" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
-                    <TextBlock Text="Mouse wheel changes scale, Ctrl + mouse wheel changes opacity."
+                    <TextBlock Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Mouse_wheel_changes_scale_Ctrl_mouse_wheel_changes_opacity}"
                                Margin="0,4,0,0"
                                FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Text.Secondary}" VerticalAlignment="Center"/>
-                    <Button Grid.Column="1" Content="Save" Command="{Binding SaveCommand}"/>
-                    <Button Grid.Column="2" Content="Cancel" Command="{Binding CancelCommand}"/>
+                    <Button Grid.Column="1" Content="{x:Static localization:Strings.PinToScreenOptionsWindow_Save}" Command="{Binding SaveCommand}"/>
+                    <Button Grid.Column="2" Content="{x:Static localization:Strings.PinToScreenOptionsWindow_Cancel}" Command="{Binding CancelCommand}"/>
                 </Grid>
             </Grid>
         </Grid>

@@ -49,7 +49,7 @@ public sealed partial class ImageSplitterViewModel : ViewModelBase
     public bool CanProcess => !IsBusy && File.Exists(ImageFilePath) && Directory.Exists(OutputFolderPath) &&
         (RowCount > 1 || ColumnCount > 1);
 
-    public string GridSizeText => $"{(int)ColumnCount} × {(int)RowCount}";
+    public string GridSizeText => string.Format(Localization.Strings.ImageSplitterViewModel_Grid_size, (int)ColumnCount, (int)RowCount);
 
     [RelayCommand]
     private async Task BrowseImageAsync()

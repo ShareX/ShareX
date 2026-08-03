@@ -27,11 +27,11 @@ public sealed class OCROptions
 
     public static List<OCRServiceLinkOption> DefaultServiceLinks =>
     [
-        new("Google Translate", "https://translate.google.com/?sl=auto&tl=en&text={0}&op=translate"),
-        new("Google Search", "https://www.google.com/search?q={0}"),
-        new("Google Images", "https://www.google.com/search?q={0}&tbm=isch"),
-        new("Bing", "https://www.bing.com/search?q={0}"),
-        new("DuckDuckGo", "https://duckduckgo.com/?q={0}"),
-        new("DeepL", "https://www.deepl.com/translator#auto/en/{0}")
+            new(Localization.Strings.OCROptions_Google_Translate, "https://translate.google.com/?sl=auto&tl=en&text={0}&op=translate"),
+            new(Localization.Strings.OCROptions_Google_Search, "https://www.google.com/search?q={0}"),
+            new(Localization.Strings.OCROptions_Google_Images, "https://www.google.com/search?q={0}&tbm=isch"),
+            new(Localization.Strings.OCROptions_Bing, "https://www.bing.com/search?q={0}"),
+            new(Localization.Strings.OCROptions_DuckDuckGo, "https://duckduckgo.com/?q={0}"),
+            new(Localization.Strings.OCROptions_DeepL, "https://www.deepl.com/translator#auto/en/{0}")
     ];
 }

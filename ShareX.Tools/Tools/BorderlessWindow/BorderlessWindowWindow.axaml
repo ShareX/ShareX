@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="580" d:DesignHeight="360"
         x:Class="ShareX.Tools.BorderlessWindowWindow"
         x:DataType="vm:BorderlessWindowViewModel"
-        Title="ShareX - Borderless Window"
+        Title="{x:Static localization:Strings.BorderlessWindowWindow_ShareX_Borderless_Window}"
         Width="580"
         MinWidth="520"
         SizeToContent="Height"
@@ -18,13 +19,13 @@
             <Grid Margin="16" RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
                 <Border Grid.Row="0" Classes="tool-panel">
                     <Grid RowDefinitions="Auto,Auto,Auto,Auto">
-                        <TextBlock Grid.Row="0" Classes="section-heading" Text="Window" Margin="0,0,0,10"/>
+                        <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.BorderlessWindowWindow_Window}" Margin="0,0,0,10"/>
                         <Grid Grid.Row="1" ColumnDefinitions="100,*" ColumnSpacing="10">
-                            <TextBlock Grid.Column="0" Classes="row-label" Text="Window list"/>
+                            <TextBlock Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.BorderlessWindowWindow_Window_list}"/>
                             <ComboBox Grid.Column="1"
                                       ItemsSource="{Binding Windows}"
                                       SelectedItem="{Binding SelectedWindow}"
-                                      PlaceholderText="Select window"
+                                      PlaceholderText="{x:Static localization:Strings.BorderlessWindowWindow_Select_window}"
                                       DropDownOpened="OnWindowListDropDownOpened">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate x:DataType="vm:InspectWindowListItem">
@@ -48,11 +49,11 @@
                             </ComboBox>
                         </Grid>
                         <Grid Grid.Row="2" ColumnDefinitions="100,*" ColumnSpacing="10" Margin="0,10,0,0">
-                            <TextBlock Grid.Column="0" Classes="row-label" Text="Window title"/>
+                            <TextBlock Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.BorderlessWindowWindow_Window_title}"/>
                             <TextBox Grid.Column="1"
                                      Height="44"
                                      Text="{Binding WindowTitle, Mode=TwoWay}"
-                                     PlaceholderText="Enter a window title manually"/>
+                                     PlaceholderText="{x:Static localization:Strings.BorderlessWindowWindow_Enter_a_window_title_manually}"/>
                         </Grid>
                         <TextBlock Grid.Row="3"
                                    Text="{Binding ErrorMessage}"
@@ -66,9 +67,9 @@
 
                 <Border Grid.Row="1" Classes="tool-panel">
                     <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
-                        <TextBlock Grid.Row="0" Classes="section-heading" Text="Options"/>
+                        <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.BorderlessWindowWindow_Options}"/>
                         <Grid Grid.Row="1" ColumnDefinitions="*,Auto" MinHeight="32">
-                            <TextBlock Text="Remember window title" FontWeight="Normal" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static localization:Strings.BorderlessWindowWindow_Remember_window_title}" FontWeight="Normal" VerticalAlignment="Center"/>
                             <ToggleSwitch Grid.Column="1"
                                           IsChecked="{Binding RememberWindowTitle}"
                                           OnContent=""
@@ -76,7 +77,7 @@
                                           VerticalAlignment="Center"/>
                         </Grid>
                         <Grid Grid.Row="2" ColumnDefinitions="*,Auto" MinHeight="32">
-                            <TextBlock Text="Close after toggling" FontWeight="Normal" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static localization:Strings.BorderlessWindowWindow_Close_after_toggling}" FontWeight="Normal" VerticalAlignment="Center"/>
                             <ToggleSwitch Grid.Column="1"
                                           IsChecked="{Binding AutoCloseWindow}"
                                           OnContent=""
@@ -84,7 +85,7 @@
                                           VerticalAlignment="Center"/>
                         </Grid>
                         <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="32">
-                            <TextBlock Text="Keep taskbar visible" FontWeight="Normal" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static localization:Strings.BorderlessWindowWindow_Keep_taskbar_visible}" FontWeight="Normal" VerticalAlignment="Center"/>
                             <ToggleSwitch Grid.Column="1"
                                           IsChecked="{Binding ExcludeTaskbarArea}"
                                           OnContent=""
@@ -95,14 +96,14 @@
                 </Border>
 
                 <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="12">
-                    <TextBlock Text="Toggle again to restore the original border and window size."
+                    <TextBlock Text="{x:Static localization:Strings.BorderlessWindowWindow_Toggle_again_to_restore_the_original_border_and_window_size}"
                                FontWeight="Normal"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                VerticalAlignment="Center"/>
                     <Button Grid.Column="1" Command="{Binding ToggleCommand}" IsEnabled="{Binding CanToggle}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.maximize_2}"/>
-                            <TextBlock Text="Toggle borderless"/>
+                            <TextBlock Text="{x:Static localization:Strings.BorderlessWindowWindow_Toggle_borderless}"/>
                         </StackPanel>
                     </Button>
                 </Grid>

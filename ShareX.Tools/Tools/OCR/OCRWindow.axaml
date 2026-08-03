@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="940" d:DesignHeight="600"
         x:Class="ShareX.Tools.OCRWindow"
         x:DataType="vm:OCRViewModel"
-        Title="ShareX - Optical character recognition"
+        Title="{x:Static localization:Strings.OCRWindow_ShareX_Optical_character_recognition}"
         Width="940"
         Height="600"
         MinWidth="780"
@@ -21,22 +22,22 @@
                         <Button Command="{Binding SelectRegionCommand}" IsEnabled="{Binding IsIdle}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.crop}"/>
-                                <TextBlock Text="Select region..."/>
+                                <TextBlock Text="{x:Static localization:Strings.OCRWindow_Select_region}"/>
                             </StackPanel>
                         </Button>
                         <Button Command="{Binding SelectImageCommand}" IsEnabled="{Binding IsIdle}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}"/>
-                                <TextBlock Text="Select image..."/>
+                                <TextBlock Text="{x:Static localization:Strings.OCRWindow_Select_image}"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>
 
                     <Border Grid.Row="1" Classes="tool-panel">
                         <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="9">
-                            <TextBlock Grid.Row="0" Classes="section-heading" Text="Recognition" Margin="0,0,0,1"/>
+                            <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.OCRWindow_Recognition}" Margin="0,0,0,1"/>
                             <Grid Grid.Row="1" ColumnDefinitions="90,*,Auto" ColumnSpacing="8">
-                                <TextBlock Classes="row-label" Text="Language"/>
+                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.OCRWindow_Language}"/>
                                 <ComboBox Grid.Column="1"
                                           ItemsSource="{Binding Languages}"
                                           SelectedItem="{Binding SelectedLanguage}"
@@ -49,13 +50,13 @@
                                 </ComboBox>
                                 <Button Grid.Column="2"
                                         Command="{Binding OpenHelpCommand}"
-                                        ToolTip.Tip="OCR help"
+                                        ToolTip.Tip="{x:Static localization:Strings.OCRWindow_OCR_help}"
                                         Padding="10,7">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.circle_help}"/>
                                 </Button>
                             </Grid>
                             <Grid Grid.Row="2" ColumnDefinitions="90,*" ColumnSpacing="8">
-                                <TextBlock Classes="row-label" Text="Scale factor"/>
+                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.OCRWindow_Scale_factor}"/>
                                 <NumericUpDown Grid.Column="1"
                                                Minimum="1"
                                                Maximum="4"
@@ -64,11 +65,11 @@
                                                Value="{Binding ScaleFactor}"/>
                             </Grid>
                             <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
-                                <TextBlock Text="Single line" FontWeight="Normal" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.OCRWindow_Single_line}" FontWeight="Normal" VerticalAlignment="Center"/>
                                 <ToggleSwitch Grid.Column="1" IsChecked="{Binding SingleLine}" OnContent="" OffContent=""/>
                             </Grid>
                             <Grid Grid.Row="4" ColumnDefinitions="*,Auto" MinHeight="30">
-                                <TextBlock Text="Copy recognized text automatically" FontWeight="Normal" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.OCRWindow_Copy_recognized_text_automatically}" FontWeight="Normal" VerticalAlignment="Center"/>
                                 <ToggleSwitch Grid.Column="1" IsChecked="{Binding AutoCopy}" OnContent="" OffContent=""/>
                             </Grid>
                         </Grid>
@@ -76,20 +77,20 @@
 
                     <Border Grid.Row="2" Classes="tool-panel">
                         <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="9">
-                            <TextBlock Grid.Row="0" Classes="section-heading" Text="Services"/>
+                            <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.OCRWindow_Services}"/>
                             <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="8">
                                 <ComboBox ItemsSource="{Binding ServiceLinks}"
                                           SelectedItem="{Binding SelectedServiceLink}"
                                           IsEnabled="{Binding HasServices}"/>
                                 <Button Grid.Column="1"
                                         Command="{Binding EditServicesCommand}"
-                                        ToolTip.Tip="Edit services"
+                                        ToolTip.Tip="{x:Static localization:Strings.OCRWindow_Edit_services}"
                                         Padding="10,7">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings}"/>
                                 </Button>
                             </Grid>
                             <Grid Grid.Row="2" ColumnDefinitions="*,Auto" MinHeight="30">
-                                <TextBlock Text="Close after opening" FontWeight="Normal" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.OCRWindow_Close_after_opening}" FontWeight="Normal" VerticalAlignment="Center"/>
                                 <ToggleSwitch Grid.Column="1" IsChecked="{Binding CloseAfterOpeningService}" OnContent="" OffContent=""/>
                             </Grid>
                             <Button Grid.Row="3"
@@ -98,7 +99,7 @@
                                     HorizontalAlignment="Stretch">
                                 <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Center">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}"/>
-                                    <TextBlock Text="Open service..."/>
+                                    <TextBlock Text="{x:Static localization:Strings.OCRWindow_Open_service}"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -108,11 +109,11 @@
                 <Border Grid.Column="1" Classes="tool-panel" Padding="0" ClipToBounds="True">
                     <Grid RowDefinitions="Auto,Auto,*">
                         <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="12">
-                            <TextBlock Classes="section-heading" Text="Result" VerticalAlignment="Center"/>
+                            <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.OCRWindow_Result}" VerticalAlignment="Center"/>
                             <Button Grid.Column="1" Command="{Binding CopyAllCommand}" IsEnabled="{Binding CanUseResult}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
-                                    <TextBlock Text="Copy all"/>
+                                    <TextBlock Text="{x:Static localization:Strings.OCRWindow_Copy_all}"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -156,24 +157,24 @@
                         VerticalAlignment="Center">
                     <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="12">
                         <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="10">
-                            <TextBlock Classes="section-heading" Text="Edit services" VerticalAlignment="Center"/>
+                            <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.OCRWindow_Edit_services}" VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8">
                                 <Button Command="{Binding NewServiceCommand}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
                                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
-                                        <TextBlock Text="New"/>
+                                        <TextBlock Text="{x:Static localization:Strings.OCRWindow_New}"/>
                                     </StackPanel>
                                 </Button>
                                 <Button Command="{Binding RemoveServiceCommand}" IsEnabled="{Binding HasEditingService}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
                                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
-                                        <TextBlock Text="Remove"/>
+                                        <TextBlock Text="{x:Static localization:Strings.OCRWindow_Remove}"/>
                                     </StackPanel>
                                 </Button>
                                 <Button Command="{Binding ResetServicesCommand}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
                                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
-                                        <TextBlock Text="Reset"/>
+                                        <TextBlock Text="{x:Static localization:Strings.OCRWindow_Reset}"/>
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
@@ -181,20 +182,20 @@
                         <ComboBox Grid.Row="1"
                                   ItemsSource="{Binding ServiceLinks}"
                                   SelectedItem="{Binding EditingServiceLink}"
-                                  PlaceholderText="Select a service"/>
+                                  PlaceholderText="{x:Static localization:Strings.OCRWindow_Select_a_service}"/>
                         <Grid Grid.Row="2" RowDefinitions="Auto,Auto" ColumnDefinitions="75,*" RowSpacing="10" ColumnSpacing="10">
-                            <TextBlock Grid.Row="0" Grid.Column="0" Classes="row-label" Text="Name"/>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.OCRWindow_Name}"/>
                             <TextBox Grid.Row="0" Grid.Column="1"
                                      Text="{Binding EditingServiceLink.Name, Mode=TwoWay}"
                                      IsEnabled="{Binding HasEditingService}"/>
-                            <TextBlock Grid.Row="1" Grid.Column="0" Classes="row-label" Text="URL"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.OCRWindow_URL}"/>
                             <TextBox Grid.Row="1" Grid.Column="1"
                                      Text="{Binding EditingServiceLink.Url, Mode=TwoWay}"
                                      IsEnabled="{Binding HasEditingService}"
-                                     PlaceholderText="Use {0} where the recognized text belongs"/>
+                                     PlaceholderText="{x:Static localization:Strings.OCRWindow_Use_0_where_the_recognized_text_belongs}"/>
                         </Grid>
                         <Button Grid.Row="3"
-                                Content="Close"
+                                Content="{x:Static localization:Strings.OCRWindow_Close}"
                                 Command="{Binding CloseServiceEditorCommand}"
                                 HorizontalAlignment="Right"/>
                     </Grid>

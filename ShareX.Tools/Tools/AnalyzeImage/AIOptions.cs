@@ -56,7 +56,7 @@ namespace ShareX.Tools
         public string OpenRouterAPIKey { get; set; }
         public string OpenRouterModel { get; set; } = "google/gemini-flash-1.5";
 
-        public string Input { get; set; } = "What is in this image?";
+        public string Input { get; set; } = Localization.Strings.AIOptions_What_is_in_this_image;
         public bool AutoStartRegion { get; set; } = true;
         public bool AutoStartAnalyze { get; set; } = true;
         public bool AutoCopyResult { get; set; } = false;

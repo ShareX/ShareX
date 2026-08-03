@@ -126,7 +126,7 @@ public sealed partial class BorderlessWindowViewModel : ViewModelBase, IDisposab
         {
             if (!_toggleWindow(title, ExcludeTaskbarArea))
             {
-                ErrorMessage = "Unable to find a window with the specified title.";
+                ErrorMessage = Localization.Strings.BorderlessWindowViewModel_Window_not_found;
                 OnPropertyChanged(nameof(HasError));
                 return;
             }
@@ -144,7 +144,7 @@ public sealed partial class BorderlessWindowViewModel : ViewModelBase, IDisposab
         }
         catch (Exception ex)
         {
-            ErrorMessage = $"Unable to toggle the selected window. {ex.Message}";
+            ErrorMessage = string.Format(Localization.Strings.BorderlessWindowViewModel_Unable_to_toggle, ex.Message);
             OnPropertyChanged(nameof(HasError));
             ToolsDiagnostics.ReportWarning(nameof(BorderlessWindowViewModel), "Failed to toggle borderless window state.", ex);
         }

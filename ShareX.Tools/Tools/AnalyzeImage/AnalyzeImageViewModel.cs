@@ -28,10 +28,10 @@ public sealed partial class AnalyzeImageViewModel : ViewModelBase, IDisposable
 
     public IReadOnlyList<string> PresetPrompts { get; } =
     [
-        "What is in this image?",
-        "Thoroughly describe this image.",
-        "Transcribe the image's text. Do not write anything else.",
-        "Translate this text into English. Do not write anything else."
+        Localization.Strings.AnalyzeImageViewModel_What_is_in_this_image,
+        Localization.Strings.AnalyzeImageViewModel_Thoroughly_describe_this_image,
+        Localization.Strings.AnalyzeImageViewModel_Transcribe_image_text,
+        Localization.Strings.AnalyzeImageViewModel_Translate_text_into_English
     ];
 
     [ObservableProperty]
@@ -71,7 +71,7 @@ public sealed partial class AnalyzeImageViewModel : ViewModelBase, IDisposable
     public bool IsIdle => !IsBusy;
     public bool CanAnalyze => HasImage && _options.HasAPIKey && !IsBusy;
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
-    public string ImageDescription => !string.IsNullOrWhiteSpace(_imagePath) ? Path.GetFileName(_imagePath) : "Captured region";
+    public string ImageDescription => !string.IsNullOrWhiteSpace(_imagePath) ? Path.GetFileName(_imagePath) : Localization.Strings.AnalyzeImageViewModel_Captured_region;
 
     public byte[]? GetImageData()
     {
@@ -147,13 +147,13 @@ public sealed partial class AnalyzeImageViewModel : ViewModelBase, IDisposable
         {
             if (HasImage && !_options.HasAPIKey)
             {
-                ErrorMessage = "Configure an API key in Options before analyzing.";
+                ErrorMessage = Localization.Strings.AnalyzeImageViewModel_Configure_API_key;
             }
             return;
         }
 
         IsBusy = true;
-        ResultText = "Thinking...";
+        ResultText = Localization.Strings.AnalyzeImageViewModel_Thinking;
         ElapsedText = string.Empty;
         ErrorMessage = string.Empty;
         Stopwatch timer = Stopwatch.StartNew();
@@ -163,7 +163,7 @@ public sealed partial class AnalyzeImageViewModel : ViewModelBase, IDisposable
             string result = await _service.AnalyzeAsync(_imagePath, _imageData, _options.Clone());
             timer.Stop();
             ResultText = result?.ReplaceLineEndings("\r\n") ?? string.Empty;
-            ElapsedText = $"Time: {timer.ElapsedMilliseconds:N0} ms";
+            ElapsedText = string.Format(Localization.Strings.AnalyzeImageViewModel_Time_ms, timer.ElapsedMilliseconds);
 
             if (_options.AutoCopyResult && HasResult && CopyTextRequested != null)
             {

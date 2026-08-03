@@ -44,18 +44,18 @@ public static class IconConverterService
 
         if (source.Width <= 0 || source.Height <= 0)
         {
-            throw new ArgumentException("The source image is empty.", nameof(source));
+            throw new ArgumentException(Localization.Strings.IconConverterService_Source_image_empty, nameof(source));
         }
 
         int[] selectedSizes = sizes.Distinct().Order().ToArray();
         if (selectedSizes.Length == 0)
         {
-            throw new ArgumentException("At least one icon size must be selected.", nameof(sizes));
+            throw new ArgumentException(Localization.Strings.IconConverterService_Select_icon_size, nameof(sizes));
         }
 
         if (selectedSizes.Any(size => !SupportedSizes.Contains(size)))
         {
-            throw new ArgumentOutOfRangeException(nameof(sizes), "One or more icon sizes are not supported.");
+            throw new ArgumentOutOfRangeException(nameof(sizes), Localization.Strings.IconConverterService_Unsupported_icon_size);
         }
 
         List<IconEntry> entries = new(selectedSizes.Length);

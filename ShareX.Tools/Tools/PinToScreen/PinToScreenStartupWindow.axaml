@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="560" d:DesignHeight="300"
         x:Class="ShareX.Tools.PinToScreenStartupWindow"
         x:DataType="vm:PinToScreenStartupViewModel"
-        Title="ShareX - Pin to Screen"
+        Title="{x:Static localization:Strings.PinToScreenStartupWindow_ShareX_Pin_to_Screen}"
         Width="560"
         SizeToContent="Height"
         CanResize="False"
@@ -17,8 +18,8 @@
             <Grid Margin="16" RowDefinitions="Auto,Auto,Auto">
                 <Border Classes="tool-panel" Margin="0,0,0,12">
                     <StackPanel Spacing="6">
-                        <TextBlock Classes="section-heading" Text="Choose an image"/>
-                        <TextBlock Text="Pin an image above your other windows for quick reference."
+                        <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.PinToScreenStartupWindow_Choose_an_image}"/>
+                        <TextBlock Text="{x:Static localization:Strings.PinToScreenStartupWindow_Pin_an_image_above_your_other_windows_for_quick_reference}"
                                    FontWeight="Normal"
                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                     </StackPanel>
@@ -28,21 +29,21 @@
                             Height="88" HorizontalAlignment="Stretch">
                         <StackPanel Spacing="8" VerticalAlignment="Center">
                             <TextBlock Classes="icon" FontSize="24" FontWeight="Normal" Text="{x:Static theming:LucideIcons.scan}" HorizontalAlignment="Center"/>
-                            <TextBlock Text="Select region..."/>
+                            <TextBlock Text="{x:Static localization:Strings.PinToScreenStartupWindow_Select_region}"/>
                         </StackPanel>
                     </Button>
                     <Button Grid.Column="1" Command="{Binding FromClipboardCommand}" IsEnabled="{Binding IsIdle}"
                             Height="88" HorizontalAlignment="Stretch">
                         <StackPanel Spacing="8" VerticalAlignment="Center">
                             <TextBlock Classes="icon" FontSize="24" FontWeight="Normal" Text="{x:Static theming:LucideIcons.clipboard_paste}" HorizontalAlignment="Center"/>
-                            <TextBlock Text="From clipboard"/>
+                            <TextBlock Text="{x:Static localization:Strings.PinToScreenStartupWindow_From_clipboard}"/>
                         </StackPanel>
                     </Button>
                     <Button Grid.Column="2" Command="{Binding FromFileCommand}" IsEnabled="{Binding IsIdle}"
                             Height="88" HorizontalAlignment="Stretch">
                         <StackPanel Spacing="8" VerticalAlignment="Center">
                             <TextBlock Classes="icon" FontSize="24" FontWeight="Normal" Text="{x:Static theming:LucideIcons.folder_open}" HorizontalAlignment="Center"/>
-                            <TextBlock Text="Select image..."/>
+                            <TextBlock Text="{x:Static localization:Strings.PinToScreenStartupWindow_Select_image}"/>
                         </StackPanel>
                     </Button>
                 </Grid>

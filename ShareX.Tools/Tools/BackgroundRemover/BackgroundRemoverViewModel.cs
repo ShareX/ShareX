@@ -221,7 +221,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
             return;
         }
 
-        string? filePath = await SelectImageFileRequested("Select image");
+        string? filePath = await SelectImageFileRequested(Localization.Strings.BackgroundRemoverViewModel_Select_image_dialog);
         if (string.IsNullOrEmpty(filePath))
         {
             return;
@@ -291,7 +291,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
 
             SetResultImage(result.Image);
             stopwatch.Stop();
-            ShowNotification($"Background removed in {stopwatch.ElapsedMilliseconds} ms.", LucideIcons.eraser);
+            ShowNotification(string.Format(Localization.Strings.BackgroundRemoverViewModel_Background_removed_ms, stopwatch.ElapsedMilliseconds), LucideIcons.eraser);
             string cacheStatus = result.IsSessionCached ? "cached" : "not cached";
             Debug.WriteLine(
                 $"Background removal (device={selectedDevice}, execution={result.ExecutionDevice}, model={selectedModel.FileName}, {cacheStatus}): " +
@@ -336,7 +336,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
 
             if (!string.IsNullOrWhiteSpace(savedPath))
             {
-                ShowNotification($"Image saved.\nFile path: {savedPath}", notificationIcon);
+                ShowNotification(string.Format(Localization.Strings.BackgroundRemoverViewModel_Image_saved_file_path, savedPath), notificationIcon);
             }
         }
         catch (Exception ex)

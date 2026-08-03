@@ -45,7 +45,7 @@ public sealed partial class IconConverterViewModel : ViewModelBase, IDisposable
     private Bitmap? _previewImage;
 
     [ObservableProperty]
-    private string _imageDetails = "Drop an image here or choose a file.";
+    private string _imageDetails = Localization.Strings.IconConverterViewModel_Drop_or_choose;
 
     [ObservableProperty]
     private string _statusText = string.Empty;
@@ -129,11 +129,11 @@ public sealed partial class IconConverterViewModel : ViewModelBase, IDisposable
     {
         if (SelectImageFileRequested == null)
         {
-            StatusText = "Image picker is unavailable.";
+            StatusText = Localization.Strings.IconConverterViewModel_Image_picker_unavailable;
             return;
         }
 
-        string? filePath = await SelectImageFileRequested("Select image");
+        string? filePath = await SelectImageFileRequested(Localization.Strings.IconConverterViewModel_Select_image_dialog);
         if (!string.IsNullOrWhiteSpace(filePath))
         {
             LoadImage(filePath);
@@ -147,7 +147,7 @@ public sealed partial class IconConverterViewModel : ViewModelBase, IDisposable
             SKBitmap? bitmap = SKBitmap.Decode(filePath);
             if (bitmap == null)
             {
-                StatusText = "The selected file could not be loaded as an image.";
+                StatusText = Localization.Strings.IconConverterViewModel_Image_load_failed;
                 return;
             }
 
@@ -157,12 +157,12 @@ public sealed partial class IconConverterViewModel : ViewModelBase, IDisposable
             _sourceBitmap = bitmap;
             PreviewImage = preview;
             ImagePath = filePath;
-            ImageDetails = $"{bitmap.Width} Ã— {bitmap.Height} pixels";
+            ImageDetails = string.Format(Localization.Strings.IconConverterViewModel_Image_dimensions, bitmap.Width, bitmap.Height);
             StatusText = string.Empty;
         }
         catch (Exception ex)
         {
-            StatusText = $"Failed to load image: {ex.Message}";
+            StatusText = string.Format(Localization.Strings.IconConverterViewModel_Failed_load_image, ex.Message);
         }
     }
 
@@ -173,12 +173,12 @@ public sealed partial class IconConverterViewModel : ViewModelBase, IDisposable
     {
         if (_sourceBitmap == null || SaveIconRequested == null)
         {
-            StatusText = "Icon save dialog is unavailable.";
+            StatusText = Localization.Strings.IconConverterViewModel_Save_dialog_unavailable;
             return;
         }
 
         IsBusy = true;
-        StatusText = "Creating icon...";
+        StatusText = Localization.Strings.IconConverterViewModel_Creating_icon;
 
         try
         {
@@ -189,11 +189,11 @@ public sealed partial class IconConverterViewModel : ViewModelBase, IDisposable
 
             StatusText = string.IsNullOrWhiteSpace(savedPath)
                 ? string.Empty
-                : $"Icon saved to {savedPath}";
+                : string.Format(Localization.Strings.IconConverterViewModel_Icon_saved, savedPath);
         }
         catch (Exception ex)
         {
-            StatusText = $"Failed to create icon: {ex.Message}";
+            StatusText = string.Format(Localization.Strings.IconConverterViewModel_Failed_create_icon, ex.Message);
         }
         finally
         {

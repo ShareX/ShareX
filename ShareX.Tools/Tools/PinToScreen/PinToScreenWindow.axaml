@@ -1,8 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.Tools.PinToScreenWindow"
-        Title="Pinned image"
+        Title="{x:Static localization:Strings.PinToScreenWindow_Pinned_image}"
         WindowDecorations="None"
         ShowInTaskbar="False"
         CanResize="False"
@@ -27,16 +28,16 @@
                     IsVisible="False"
                     PointerPressed="OnToolbarPointerPressed">
                 <StackPanel Orientation="Horizontal" Spacing="2">
-                    <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnCopyClick" ToolTip.Tip="Copy image">
+                    <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnCopyClick" ToolTip.Tip="{x:Static localization:Strings.PinToScreenWindow_Copy_image}">
                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
                     </Button>
-                    <Button Classes="picker-button" Height="32" Padding="8,4" Click="OnResetScaleClick" ToolTip.Tip="Reset scale and opacity">
+                    <Button Classes="picker-button" Height="32" Padding="8,4" Click="OnResetScaleClick" ToolTip.Tip="{x:Static localization:Strings.PinToScreenWindow_Reset_scale_and_opacity}">
                         <TextBlock x:Name="ScaleText" Text="100%" FontWeight="Normal"/>
                     </Button>
-                    <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnOptionsClick" ToolTip.Tip="Options">
+                    <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnOptionsClick" ToolTip.Tip="{x:Static localization:Strings.PinToScreenWindow_Options}">
                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings}"/>
                     </Button>
-                    <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnCloseClick" ToolTip.Tip="Close">
+                    <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnCloseClick" ToolTip.Tip="{x:Static localization:Strings.PinToScreenWindow_Close}">
                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.x}"/>
                     </Button>
                 </StackPanel>

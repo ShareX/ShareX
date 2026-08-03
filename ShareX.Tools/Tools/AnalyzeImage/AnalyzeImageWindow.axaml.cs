@@ -73,7 +73,7 @@ public partial class AnalyzeImageWindow : Window
     {
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Select image",
+            Title = Localization.Strings.AnalyzeImageWindow_Select_image_dialog,
             AllowMultiple = false,
             FileTypeFilter = [FilePickerFileTypes.ImageAll]
         });

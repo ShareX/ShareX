@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="980" d:DesignHeight="680"
         x:Class="ShareX.Tools.DirectoryIndexerWindow"
         x:DataType="vm:DirectoryIndexerViewModel"
-        Title="ShareX - Directory Indexer"
+        Title="{x:Static localization:Strings.DirectoryIndexerWindow_ShareX_Directory_Indexer}"
         Width="980"
         Height="680"
         MinWidth="820"
@@ -18,17 +19,17 @@
             <Grid Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
                 <Border Grid.Row="0" Classes="tool-panel">
                     <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="10">
-                        <TextBlock Classes="section-heading" Text="Folder" Margin="0" VerticalAlignment="Center"/>
+                        <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.DirectoryIndexerWindow_Folder}" Margin="0" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1"
                                    Classes="path-text"
                                    Text="{Binding FolderPath, TargetNullValue='No folder selected'}"
                                    TextTrimming="CharacterEllipsis"
                                    VerticalAlignment="Center"/>
-                        <Button Grid.Column="2" Content="Browse..." Command="{Binding BrowseFolderCommand}" IsEnabled="{Binding IsIdle}"/>
+                        <Button Grid.Column="2" Content="{x:Static localization:Strings.DirectoryIndexerWindow_Browse}" Command="{Binding BrowseFolderCommand}" IsEnabled="{Binding IsIdle}"/>
                         <Button Grid.Column="3" Command="{Binding IndexCommand}" IsEnabled="{Binding CanIndex}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_search}"/>
-                                <TextBlock Text="Generate output"/>
+                                <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Generate_output}"/>
                             </StackPanel>
                         </Button>
                     </Grid>
@@ -41,9 +42,9 @@
                         <StackPanel Spacing="12" Margin="0,0,10,0">
                             <Border Classes="tool-panel">
                                 <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="8">
-                                    <TextBlock Classes="section-heading" Text="Index options"/>
+                                    <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.DirectoryIndexerWindow_Index_options}"/>
                                     <Grid Grid.Row="1" ColumnDefinitions="115,*" ColumnSpacing="10">
-                                        <TextBlock Classes="row-label" Text="Output format"/>
+                                        <TextBlock Classes="row-label" Text="{x:Static localization:Strings.DirectoryIndexerWindow_Output_format}"/>
                                         <ComboBox Grid.Column="1" ItemsSource="{Binding OutputChoices}" SelectedItem="{Binding SelectedOutput}">
                                             <ComboBox.ItemTemplate>
                                                 <DataTemplate x:DataType="vm:IndexerOutputChoice">
@@ -53,33 +54,33 @@
                                         </ComboBox>
                                     </Grid>
                                     <Grid Grid.Row="2" ColumnDefinitions="115,*" ColumnSpacing="10">
-                                        <TextBlock Classes="row-label" Text="Maximum depth"/>
+                                        <TextBlock Classes="row-label" Text="{x:Static localization:Strings.DirectoryIndexerWindow_Maximum_depth}"/>
                                         <NumericUpDown Grid.Column="1"
                                                        Minimum="0"
                                                        Maximum="1000"
                                                        FormatString="0"
                                                        Value="{Binding MaxDepthLevel}"
-                                                       PlaceholderText="0 is unlimited"/>
+                                                       PlaceholderText="{x:Static localization:Strings.DirectoryIndexerWindow_0_is_unlimited}"/>
                                     </Grid>
                                     <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
-                                        <TextBlock Text="Skip hidden folders" FontWeight="Normal" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Skip_hidden_folders}" FontWeight="Normal" VerticalAlignment="Center"/>
                                         <ToggleSwitch Grid.Column="1" IsChecked="{Binding SkipHiddenFolders}" OnContent="" OffContent=""/>
                                     </Grid>
                                     <Grid Grid.Row="4" ColumnDefinitions="*,Auto" MinHeight="30">
-                                        <TextBlock Text="Skip hidden files" FontWeight="Normal" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Skip_hidden_files}" FontWeight="Normal" VerticalAlignment="Center"/>
                                         <ToggleSwitch Grid.Column="1" IsChecked="{Binding SkipHiddenFiles}" OnContent="" OffContent=""/>
                                     </Grid>
                                     <Grid Grid.Row="5" ColumnDefinitions="*,Auto" MinHeight="30">
-                                        <TextBlock Text="Folders only" FontWeight="Normal" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Folders_only}" FontWeight="Normal" VerticalAlignment="Center"/>
                                         <ToggleSwitch Grid.Column="1" IsChecked="{Binding FoldersOnly}" OnContent="" OffContent=""/>
                                     </Grid>
                                     <Grid Grid.Row="6" RowDefinitions="Auto,Auto" RowSpacing="8">
                                         <Grid ColumnDefinitions="*,Auto" MinHeight="30">
-                                            <TextBlock Text="Show sizes" FontWeight="Normal" VerticalAlignment="Center"/>
+                                            <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Show_sizes}" FontWeight="Normal" VerticalAlignment="Center"/>
                                             <ToggleSwitch Grid.Column="1" IsChecked="{Binding ShowSizeInfo}" OnContent="" OffContent=""/>
                                         </Grid>
                                         <Grid Grid.Row="1" ColumnDefinitions="*,Auto" MinHeight="30">
-                                            <TextBlock Text="Add generated-by footer" FontWeight="Normal" VerticalAlignment="Center"/>
+                                            <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Add_generated_by_footer}" FontWeight="Normal" VerticalAlignment="Center"/>
                                             <ToggleSwitch Grid.Column="1" IsChecked="{Binding AddFooter}" OnContent="" OffContent=""/>
                                         </Grid>
                                     </Grid>
@@ -88,13 +89,13 @@
 
                             <Border Classes="tool-panel" IsVisible="{Binding IsText}">
                                 <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
-                                    <TextBlock Classes="section-heading" Text="Text output"/>
+                                    <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.DirectoryIndexerWindow_Text_output}"/>
                                     <Grid Grid.Row="1" ColumnDefinitions="115,*" ColumnSpacing="10">
-                                        <TextBlock Classes="row-label" Text="Indentation"/>
+                                        <TextBlock Classes="row-label" Text="{x:Static localization:Strings.DirectoryIndexerWindow_Indentation}"/>
                                         <TextBox Grid.Column="1" Text="{Binding IndentationText}"/>
                                     </Grid>
                                     <Grid Grid.Row="2" ColumnDefinitions="*,Auto" MinHeight="30">
-                                        <TextBlock Text="Empty line after folders" FontWeight="Normal" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Empty_line_after_folders}" FontWeight="Normal" VerticalAlignment="Center"/>
                                         <ToggleSwitch Grid.Column="1" IsChecked="{Binding AddEmptyLineAfterFolders}" OnContent="" OffContent=""/>
                                     </Grid>
                                 </Grid>
@@ -102,31 +103,31 @@
 
                             <Border Classes="tool-panel" IsVisible="{Binding IsHtml}">
                                 <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="9">
-                                    <TextBlock Classes="section-heading" Text="HTML output"/>
+                                    <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.DirectoryIndexerWindow_HTML_output}"/>
                                     <Grid Grid.Row="1" ColumnDefinitions="*,Auto" MinHeight="30">
-                                        <TextBlock Text="Display folder paths" FontWeight="Normal" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Display_folder_paths}" FontWeight="Normal" VerticalAlignment="Center"/>
                                         <ToggleSwitch Grid.Column="1" IsChecked="{Binding DisplayPath}" OnContent="" OffContent=""/>
                                     </Grid>
                                     <Grid Grid.Row="2" ColumnDefinitions="*,Auto" MinHeight="30" IsEnabled="{Binding CanLimitDisplayPath}">
-                                        <TextBlock Text="Limit paths to root folder" FontWeight="Normal" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Limit_paths_to_root_folder}" FontWeight="Normal" VerticalAlignment="Center"/>
                                         <ToggleSwitch Grid.Column="1" IsChecked="{Binding DisplayPathLimited}" OnContent="" OffContent=""/>
                                     </Grid>
                                     <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
-                                        <TextBlock Text="Use custom CSS file" FontWeight="Normal" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Use_custom_CSS_file}" FontWeight="Normal" VerticalAlignment="Center"/>
                                         <ToggleSwitch Grid.Column="1" IsChecked="{Binding UseCustomCSSFile}" OnContent="" OffContent=""/>
                                     </Grid>
                                     <Grid Grid.Row="4" ColumnDefinitions="*,Auto" ColumnSpacing="8" IsEnabled="{Binding UseCustomCSSFile}">
-                                        <TextBox Text="{Binding CustomCSSFilePath}" PlaceholderText="Select a CSS file"/>
-                                        <Button Grid.Column="1" Content="Browse..." Command="{Binding BrowseCSSCommand}"/>
+                                        <TextBox Text="{Binding CustomCSSFilePath}" PlaceholderText="{x:Static localization:Strings.DirectoryIndexerWindow_Select_a_CSS_file}"/>
+                                        <Button Grid.Column="1" Content="{x:Static localization:Strings.DirectoryIndexerWindow_Browse}" Command="{Binding BrowseCSSCommand}"/>
                                     </Grid>
                                 </Grid>
                             </Border>
 
                             <Border Classes="tool-panel" IsVisible="{Binding IsXml}">
                                 <Grid RowDefinitions="Auto,Auto" RowSpacing="9">
-                                    <TextBlock Classes="section-heading" Text="XML output"/>
+                                    <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.DirectoryIndexerWindow_XML_output}"/>
                                     <Grid Grid.Row="1" ColumnDefinitions="*,Auto" MinHeight="30">
-                                        <TextBlock Text="Write information as attributes" FontWeight="Normal" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Write_information_as_attributes}" FontWeight="Normal" VerticalAlignment="Center"/>
                                         <ToggleSwitch Grid.Column="1" IsChecked="{Binding UseAttribute}" OnContent="" OffContent=""/>
                                     </Grid>
                                 </Grid>
@@ -134,9 +135,9 @@
 
                             <Border Classes="tool-panel" IsVisible="{Binding IsJson}">
                                 <Grid RowDefinitions="Auto,Auto" RowSpacing="9">
-                                    <TextBlock Classes="section-heading" Text="JSON output"/>
+                                    <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.DirectoryIndexerWindow_JSON_output}"/>
                                     <Grid Grid.Row="1" ColumnDefinitions="*,Auto" MinHeight="30">
-                                        <TextBlock Text="Create parseable structured JSON" FontWeight="Normal" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Create_parseable_structured_JSON}" FontWeight="Normal" VerticalAlignment="Center"/>
                                         <ToggleSwitch Grid.Column="1" IsChecked="{Binding CreateParseableJson}" OnContent="" OffContent=""/>
                                     </Grid>
                                 </Grid>
@@ -147,9 +148,9 @@
                     <Border Grid.Column="1" Classes="tool-panel" Padding="0" ClipToBounds="True">
                         <Grid RowDefinitions="Auto,Auto,*">
                             <Grid ColumnDefinitions="*,Auto" Margin="12">
-                                <TextBlock Classes="section-heading" Text="Generated output" Margin="0" VerticalAlignment="Center"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.DirectoryIndexerWindow_Generated_output}" Margin="0" VerticalAlignment="Center"/>
                                 <TextBlock Grid.Column="1"
-                                           Text="Ready to save or upload"
+                                           Text="{x:Static localization:Strings.DirectoryIndexerWindow_Ready_to_save_or_upload}"
                                            IsVisible="{Binding HasSource}"
                                            FontWeight="Normal"
                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
@@ -177,7 +178,7 @@
                                                FontSize="44"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                HorizontalAlignment="Center"/>
-                                    <TextBlock Text="The HTML index was generated successfully. HTML preview is unavailable, but the output is ready to save or upload."
+                                    <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_The_HTML_index_was_generated_successfully_HTML_preview_is_unavailable_but_the_output_is_ready_to_save_or_upload}"
                                                FontWeight="Normal"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                TextAlignment="Center"
@@ -194,7 +195,7 @@
                                                FontSize="44"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                HorizontalAlignment="Center"/>
-                                    <TextBlock Text="Choose a folder and generate output. Nothing is saved until you use Save as or Upload."
+                                    <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Choose_a_folder_and_generate_output_Nothing_is_saved_until_you_use_Save_as_or_Upload}"
                                                FontWeight="Normal"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                TextAlignment="Center"
@@ -215,13 +216,13 @@
                     <Button Grid.Column="1" Command="{Binding SaveAsCommand}" IsEnabled="{Binding HasSource}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.save}"/>
-                            <TextBlock Text="Save as..."/>
+                            <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Save_as}"/>
                         </StackPanel>
                     </Button>
                     <Button Grid.Column="2" Command="{Binding UploadCommand}" IsEnabled="{Binding HasSource}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}"/>
-                            <TextBlock Text="Upload"/>
+                            <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Upload}"/>
                         </StackPanel>
                     </Button>
                 </Grid>

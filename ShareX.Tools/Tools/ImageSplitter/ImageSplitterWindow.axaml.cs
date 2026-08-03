@@ -45,7 +45,7 @@ public partial class ImageSplitterWindow : Window
     {
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Choose image",
+            Title = Localization.Strings.ImageSplitterWindow_Choose_image_dialog,
             AllowMultiple = false,
             FileTypeFilter = [FilePickerFileTypes.ImageAll]
         });
@@ -56,7 +56,7 @@ public partial class ImageSplitterWindow : Window
     {
         IReadOnlyList<IStorageFolder> folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
         {
-            Title = "Choose output folder",
+            Title = Localization.Strings.ImageSplitterWindow_Choose_output_folder_dialog,
             AllowMultiple = false,
             SuggestedStartLocation = Directory.Exists(_viewModel.OutputFolderPath)
                 ? await StorageProvider.TryGetFolderFromPathAsync(_viewModel.OutputFolderPath)

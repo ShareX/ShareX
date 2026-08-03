@@ -26,7 +26,7 @@ public sealed partial class DirectoryIndexerViewModel : ViewModelBase
     public IReadOnlyList<IndexerOutputChoice> OutputChoices { get; } =
     [
         new("HTML", IndexerOutput.Html, "html"),
-        new("Text", IndexerOutput.Txt, "txt"),
+        new(Localization.Strings.DirectoryIndexerViewModel_Text, IndexerOutput.Txt, "txt"),
         new("XML", IndexerOutput.Xml, "xml"),
         new("JSON", IndexerOutput.Json, "json")
     ];
@@ -178,7 +178,7 @@ public sealed partial class DirectoryIndexerViewModel : ViewModelBase
             return;
         }
 
-        string suggestedName = $"Index for {Path.GetFileName(FolderPath.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar))}";
+        string suggestedName = string.Format(Localization.Strings.DirectoryIndexerViewModel_Index_for, Path.GetFileName(FolderPath.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)));
         if (await SaveRequested(Source, suggestedName, SelectedOutput.Extension))
         {
             CloseRequested?.Invoke();

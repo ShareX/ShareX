@@ -110,7 +110,7 @@ public partial class QRCodeWindow : Window
     {
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Select image containing a QR code",
+            Title = Localization.Strings.QRCodeWindow_Select_image_dialog,
             AllowMultiple = false,
             FileTypeFilter = [FilePickerFileTypes.ImageAll]
         });
@@ -125,15 +125,15 @@ public partial class QRCodeWindow : Window
         string suggestedName = GetSuggestedFileName(text);
         IStorageFile? file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
-            Title = "Save QR code",
+            Title = Localization.Strings.QRCodeWindow_Save_QR_code_dialog,
             SuggestedFileName = suggestedName,
             DefaultExtension = "png",
             FileTypeChoices =
             [
-                new FilePickerFileType("PNG image") { Patterns = ["*.png"] },
-                new FilePickerFileType("JPEG image") { Patterns = ["*.jpg", "*.jpeg"] },
-                new FilePickerFileType("Bitmap image") { Patterns = ["*.bmp"] },
-                new FilePickerFileType("SVG image") { Patterns = ["*.svg"] }
+                new FilePickerFileType(Localization.Strings.QRCodeWindow_PNG_image) { Patterns = ["*.png"] },
+                new FilePickerFileType(Localization.Strings.QRCodeWindow_JPEG_image) { Patterns = ["*.jpg", "*.jpeg"] },
+                new FilePickerFileType(Localization.Strings.QRCodeWindow_Bitmap_image) { Patterns = ["*.bmp"] },
+                new FilePickerFileType(Localization.Strings.QRCodeWindow_SVG_image) { Patterns = ["*.svg"] }
             ]
         });
 
@@ -162,7 +162,7 @@ public partial class QRCodeWindow : Window
 
         using MemoryStream stream = new MemoryStream();
         _viewModel.PreviewImage.Save(stream, PngBitmapEncoderOptions.Default);
-        ImageViewerWindowIntegration.ShowImage(stream.ToArray(), "QR Code", this);
+        ImageViewerWindowIntegration.ShowImage(stream.ToArray(), Localization.Strings.QRCodeWindow_Image_viewer_title, this);
         e.Handled = true;
     }
 }

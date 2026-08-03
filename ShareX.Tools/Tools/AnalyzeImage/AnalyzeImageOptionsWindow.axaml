@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,23 +8,33 @@
         mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="590"
         x:Class="ShareX.Tools.AnalyzeImageOptionsWindow"
         x:DataType="vm:AnalyzeImageOptionsViewModel"
-        Title="ShareX - Analyze image options"
+        Title="{x:Static localization:Strings.AnalyzeImageOptionsWindow_ShareX_Analyze_image_options}"
         Width="650"
         Height="590"
         MinWidth="580"
         MinHeight="540"
         WindowStartupLocation="CenterOwner">
 
+        <Window.Resources>
+            <vm:LocalizedDisplayConverter x:Key="LocalizedDisplayConverter"/>
+        </Window.Resources>
+
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Grid Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
                 <Border Grid.Row="0" Classes="tool-panel">
                     <Grid ColumnDefinitions="100,*,Auto" ColumnSpacing="10">
-                        <TextBlock Classes="row-label" Text="Provider"/>
-                        <ComboBox Grid.Column="1" ItemsSource="{Binding Providers}" SelectedItem="{Binding Provider}"/>
-                        <Button Grid.Column="2" Command="{Binding OpenAPIKeyPageCommand}" ToolTip.Tip="Get API key">
+                        <TextBlock Classes="row-label" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Provider}"/>
+                        <ComboBox Grid.Column="1" ItemsSource="{Binding Providers}" SelectedItem="{Binding Provider}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Converter={StaticResource LocalizedDisplayConverter}}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <Button Grid.Column="2" Command="{Binding OpenAPIKeyPageCommand}" ToolTip.Tip="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Get_API_key}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.key_round}"/>
-                                <TextBlock Text="API key page..."/>
+                                <TextBlock Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_API_key_page}"/>
                             </StackPanel>
                         </Button>
                     </Grid>
@@ -33,13 +44,13 @@
                     <StackPanel Spacing="12">
                         <Border Classes="tool-panel" IsVisible="{Binding IsOpenAI}">
                             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
-                                <TextBlock Classes="section-heading" Text="OpenAI"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_OpenAI}"/>
                                 <Grid Grid.Row="1" ColumnDefinitions="120,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="API key"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_API_key}"/>
                                     <TextBox Grid.Column="1" Text="{Binding OpenAIAPIKey}" PasswordChar="●"/>
                                 </Grid>
                                 <Grid Grid.Row="2" ColumnDefinitions="120,*,Auto" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Model"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Model}"/>
                                     <ComboBox Grid.Column="1"
                                               ItemsSource="{Binding OpenAIModels}"
                                               Text="{Binding OpenAIModel, Mode=TwoWay}"
@@ -48,32 +59,44 @@
                                     <Button Grid.Column="2" Command="{Binding LoadModelsCommand}" IsEnabled="{Binding !IsBusy}">
                                         <StackPanel Orientation="Horizontal" Spacing="8">
                                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.refresh_cw}"/>
-                                            <TextBlock Text="Load models"/>
+                                            <TextBlock Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Load_models}"/>
                                         </StackPanel>
                                     </Button>
                                 </Grid>
                                 <Grid Grid.Row="3" ColumnDefinitions="120,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Custom base URL"/>
-                                    <TextBox Grid.Column="1" Text="{Binding OpenAICustomURL}" PlaceholderText="https://api.openai.com"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Custom_base_URL}"/>
+                                    <TextBox Grid.Column="1" Text="{Binding OpenAICustomURL}" PlaceholderText="{x:Static localization:Strings.AnalyzeImageOptionsWindow_https_api_openai_com}"/>
                                 </Grid>
                                 <Grid Grid.Row="4" ColumnDefinitions="120,*,120,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Reasoning"/>
-                                    <ComboBox Grid.Column="1" ItemsSource="{Binding ReasoningEfforts}" SelectedItem="{Binding OpenAIReasoningEffort}"/>
-                                    <TextBlock Grid.Column="2" Classes="row-label" Text="Verbosity"/>
-                                    <ComboBox Grid.Column="3" ItemsSource="{Binding VerbosityLevels}" SelectedItem="{Binding OpenAIVerbosity}"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Reasoning}"/>
+                                    <ComboBox Grid.Column="1" ItemsSource="{Binding ReasoningEfforts}" SelectedItem="{Binding OpenAIReasoningEffort}">
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Converter={StaticResource LocalizedDisplayConverter}}"/>
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
+                                    <TextBlock Grid.Column="2" Classes="row-label" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Verbosity}"/>
+                                    <ComboBox Grid.Column="3" ItemsSource="{Binding VerbosityLevels}" SelectedItem="{Binding OpenAIVerbosity}">
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Converter={StaticResource LocalizedDisplayConverter}}"/>
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
                                 </Grid>
                             </Grid>
                         </Border>
 
                         <Border Classes="tool-panel" IsVisible="{Binding IsGemini}">
                             <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
-                                <TextBlock Classes="section-heading" Text="Google Gemini"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Google_Gemini}"/>
                                 <Grid Grid.Row="1" ColumnDefinitions="120,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="API key"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_API_key}"/>
                                     <TextBox Grid.Column="1" Text="{Binding GeminiAPIKey}" PasswordChar="●"/>
                                 </Grid>
                                 <Grid Grid.Row="2" ColumnDefinitions="120,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Model"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Model}"/>
                                     <ComboBox Grid.Column="1"
                                               ItemsSource="{Binding GeminiModels}"
                                               Text="{Binding GeminiModel, Mode=TwoWay}"
@@ -85,13 +108,13 @@
 
                         <Border Classes="tool-panel" IsVisible="{Binding IsOpenRouter}">
                             <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
-                                <TextBlock Classes="section-heading" Text="OpenRouter"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_OpenRouter}"/>
                                 <Grid Grid.Row="1" ColumnDefinitions="120,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="API key"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_API_key}"/>
                                     <TextBox Grid.Column="1" Text="{Binding OpenRouterAPIKey}" PasswordChar="●"/>
                                 </Grid>
                                 <Grid Grid.Row="2" ColumnDefinitions="120,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Model"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Model}"/>
                                     <ComboBox Grid.Column="1"
                                               ItemsSource="{Binding OpenRouterModels}"
                                               Text="{Binding OpenRouterModel, Mode=TwoWay}"
@@ -103,17 +126,17 @@
 
                         <Border Classes="tool-panel">
                             <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="8">
-                                <TextBlock Classes="section-heading" Text="Behavior"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Behavior}"/>
                                 <Grid Grid.Row="1" ColumnDefinitions="*,Auto" MinHeight="30">
-                                    <TextBlock Text="Capture a region when opened without an image" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Capture_a_region_when_opened_without_an_image}" FontWeight="Normal" VerticalAlignment="Center"/>
                                     <ToggleSwitch Grid.Column="1" IsChecked="{Binding AutoStartRegion}" OnContent="" OffContent=""/>
                                 </Grid>
                                 <Grid Grid.Row="2" ColumnDefinitions="*,Auto" MinHeight="30">
-                                    <TextBlock Text="Analyze automatically when opened" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Analyze_automatically_when_opened}" FontWeight="Normal" VerticalAlignment="Center"/>
                                     <ToggleSwitch Grid.Column="1" IsChecked="{Binding AutoStartAnalyze}" OnContent="" OffContent=""/>
                                 </Grid>
                                 <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
-                                    <TextBlock Text="Copy result automatically" FontWeight="Normal" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Copy_result_automatically}" FontWeight="Normal" VerticalAlignment="Center"/>
                                     <ToggleSwitch Grid.Column="1" IsChecked="{Binding AutoCopyResult}" OnContent="" OffContent=""/>
                                 </Grid>
                             </Grid>
@@ -125,7 +148,7 @@
                     <Button Grid.Column="0" Command="{Binding TestConnectionCommand}" IsEnabled="{Binding !IsBusy}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plug_zap}"/>
-                            <TextBlock Text="Test connection"/>
+                            <TextBlock Text="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Test_connection}"/>
                         </StackPanel>
                     </Button>
                     <TextBlock Grid.Column="1"
@@ -135,8 +158,8 @@
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                TextTrimming="CharacterEllipsis"
                                VerticalAlignment="Center"/>
-                    <Button Grid.Column="2" Content="Save" Command="{Binding SaveCommand}" IsEnabled="{Binding !IsBusy}"/>
-                    <Button Grid.Column="3" Content="Cancel" Command="{Binding CancelCommand}" IsEnabled="{Binding !IsBusy}"/>
+                    <Button Grid.Column="2" Content="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Save}" Command="{Binding SaveCommand}" IsEnabled="{Binding !IsBusy}"/>
+                    <Button Grid.Column="3" Content="{x:Static localization:Strings.AnalyzeImageOptionsWindow_Cancel}" Command="{Binding CancelCommand}" IsEnabled="{Binding !IsBusy}"/>
                 </Grid>
             </Grid>
         </Grid>

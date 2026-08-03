@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="860" d:DesignHeight="570"
         x:Class="ShareX.Tools.IconConverterWindow"
         x:DataType="vm:IconConverterViewModel"
-        Title="ShareX - Icon Converter"
+        Title="{x:Static localization:Strings.IconConverterWindow_ShareX_Icon_Converter}"
         Width="860"
         Height="570"
         MinWidth="720"
@@ -39,7 +40,7 @@
                     <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                         <TextBlock Grid.Column="0"
                                    Classes="section-heading"
-                                   Text="Image"
+                                   Text="{x:Static localization:Strings.IconConverterWindow_Image}"
                                    Margin="0"
                                    VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1"
@@ -47,7 +48,7 @@
                                    Text="{Binding ImagePath, TargetNullValue='No image selected'}"
                                    VerticalAlignment="Center"/>
                         <Button Grid.Column="2"
-                                Content="Browse..."
+                                Content="{x:Static localization:Strings.IconConverterWindow_Browse}"
                                 Command="{Binding BrowseCommand}"/>
                     </Grid>
                 </Border>
@@ -56,39 +57,39 @@
                     <Border Grid.Column="0" Classes="converter-panel" Padding="16">
                         <StackPanel Spacing="20">
                             <StackPanel>
-                                <TextBlock Classes="section-heading" Text="Sizes"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.IconConverterWindow_Sizes}"/>
                                 <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="10" ColumnSpacing="12">
                                     <CheckBox Grid.Row="0" Grid.Column="0" IsChecked="{Binding Is16Selected}">
-                                        <TextBlock Text="16 pixels" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_16_pixels}" FontWeight="Normal"/>
                                     </CheckBox>
                                     <CheckBox Grid.Row="0" Grid.Column="1" IsChecked="{Binding Is32Selected}">
-                                        <TextBlock Text="32 pixels" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_32_pixels}" FontWeight="Normal"/>
                                     </CheckBox>
                                     <CheckBox Grid.Row="1" Grid.Column="0" IsChecked="{Binding Is48Selected}">
-                                        <TextBlock Text="48 pixels" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_48_pixels}" FontWeight="Normal"/>
                                     </CheckBox>
                                     <CheckBox Grid.Row="1" Grid.Column="1" IsChecked="{Binding Is64Selected}">
-                                        <TextBlock Text="64 pixels" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_64_pixels}" FontWeight="Normal"/>
                                     </CheckBox>
                                     <CheckBox Grid.Row="2" Grid.Column="0" IsChecked="{Binding Is128Selected}">
-                                        <TextBlock Text="128 pixels" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_128_pixels}" FontWeight="Normal"/>
                                     </CheckBox>
                                     <CheckBox Grid.Row="2" Grid.Column="1" IsChecked="{Binding Is256Selected}">
-                                        <TextBlock Text="256 pixels" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_256_pixels}" FontWeight="Normal"/>
                                     </CheckBox>
                                 </Grid>
                             </StackPanel>
 
                             <StackPanel>
-                                <TextBlock Classes="section-heading" Text="Bit depth"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.IconConverterWindow_Bit_depth}"/>
                                 <StackPanel Spacing="8">
                                     <RadioButton GroupName="BitDepth"
                                                  IsChecked="{Binding IsPalette8}">
-                                        <TextBlock Text="8 bits (256 colors)" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_8_bits_256_colors}" FontWeight="Normal"/>
                                     </RadioButton>
                                     <RadioButton GroupName="BitDepth"
                                                  IsChecked="{Binding IsTrueColor32}">
-                                        <TextBlock Text="32 bits (16.7M colors)" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_32_bits_16_7M_colors}" FontWeight="Normal"/>
                                     </RadioButton>
                                 </StackPanel>
                             </StackPanel>
@@ -107,11 +108,11 @@
                                            FontSize="46"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                            HorizontalAlignment="Center"/>
-                                <TextBlock Text="Drop an image here"
+                                <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_Drop_an_image_here}"
                                            FontSize="16"
                                            Foreground="{DynamicResource ShareX.Brush.Text}"
                                            HorizontalAlignment="Center"/>
-                                <TextBlock Text="or use Browse to choose a file"
+                                <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_or_use_Browse_to_choose_a_file}"
                                            FontWeight="Normal"
                                            HorizontalAlignment="Center"/>
                             </StackPanel>
@@ -142,7 +143,7 @@
                             <TextBlock Text="{x:Static theming:LucideIcons.file_down}"
                                        Classes="icon"
                                        VerticalAlignment="Center"/>
-                            <TextBlock Text="Convert..." VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_Convert}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                 </Grid>

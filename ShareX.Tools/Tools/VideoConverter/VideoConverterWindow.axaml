@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="575"
         x:Class="ShareX.Tools.VideoConverterWindow"
         x:DataType="vm:VideoConverterViewModel"
-        Title="ShareX - Video Converter"
+        Title="{x:Static localization:Strings.VideoConverterWindow_ShareX_Video_Converter}"
         Width="850"
         Height="475"
         MinWidth="700"
@@ -38,7 +39,7 @@
                     <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                         <TextBlock Grid.Column="0"
                                    Classes="section-heading"
-                                   Text="Input file"
+                                   Text="{x:Static localization:Strings.VideoConverterWindow_Input_file}"
                                    Margin="0"
                                    VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1"
@@ -46,7 +47,7 @@
                                    Text="{Binding InputFileDisplay}"
                                    VerticalAlignment="Center"/>
                         <Button Grid.Column="2"
-                                Content="Browse..."
+                                Content="{x:Static localization:Strings.VideoConverterWindow_Browse}"
                                 Command="{Binding BrowseInputCommand}"
                                 IsEnabled="{Binding IsIdle}"/>
                     </Grid>
@@ -59,8 +60,8 @@
                         <ScrollViewer VerticalScrollBarVisibility="Auto">
                             <StackPanel Spacing="18">
                                 <StackPanel>
-                                    <TextBlock Classes="section-heading" Text="Encoding"/>
-                                    <TextBlock Classes="field-label" Text="Video encoder"/>
+                                    <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.VideoConverterWindow_Encoding}"/>
+                                    <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_Video_encoder}"/>
                                     <ComboBox ItemsSource="{x:Static vm:VideoConverterViewModel.Codecs}"
                                               SelectedItem="{Binding SelectedCodec}"
                                               IsEnabled="{Binding IsIdle}"
@@ -74,17 +75,17 @@
                                 </StackPanel>
 
                                 <StackPanel IsVisible="{Binding ShowsQualityControls}">
-                                    <TextBlock Classes="section-heading" Text="Quality"/>
+                                    <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.VideoConverterWindow_Quality}"/>
                                     <CheckBox IsChecked="{Binding UseBitrate}"
                                               IsVisible="{Binding CanChooseRateControl}"
                                               IsEnabled="{Binding IsIdle}"
                                               Margin="0,0,0,10">
-                                        <TextBlock Text="Use a target bitrate" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.VideoConverterWindow_Use_a_target_bitrate}" FontWeight="Normal"/>
                                     </CheckBox>
 
                                     <StackPanel IsVisible="{Binding ShowsQualitySlider}" Spacing="0">
                                         <Grid ColumnDefinitions="*,Auto">
-                                            <TextBlock Grid.Column="0" Classes="field-label" Text="Constant quality" Margin="0"/>
+                                            <TextBlock Grid.Column="0" Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_Constant_quality}" Margin="0"/>
                                             <TextBlock Grid.Column="1" Text="{Binding VideoQuality, StringFormat={}{0:0}}"/>
                                         </Grid>
                                         <Slider Minimum="{Binding QualityMinimum}"
@@ -94,13 +95,13 @@
                                                 IsSnapToTickEnabled="True"
                                                 IsEnabled="{Binding IsIdle}"/>
                                         <Grid ColumnDefinitions="*,*">
-                                            <TextBlock Grid.Column="0" Text="Higher quality" FontSize="12" FontWeight="Normal"/>
-                                            <TextBlock Grid.Column="1" Text="Smaller file" FontSize="12" FontWeight="Normal" HorizontalAlignment="Right"/>
+                                            <TextBlock Grid.Column="0" Text="{x:Static localization:Strings.VideoConverterWindow_Higher_quality}" FontSize="12" FontWeight="Normal"/>
+                                            <TextBlock Grid.Column="1" Text="{x:Static localization:Strings.VideoConverterWindow_Smaller_file}" FontSize="12" FontWeight="Normal" HorizontalAlignment="Right"/>
                                         </Grid>
                                     </StackPanel>
 
                                     <StackPanel IsVisible="{Binding ShowsBitrate}">
-                                        <TextBlock Classes="field-label" Text="Target bitrate"/>
+                                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_Target_bitrate}"/>
                                         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
                                             <NumericUpDown Grid.Column="0"
                                                            Minimum="100"
@@ -109,7 +110,7 @@
                                                            FormatString="0"
                                                            Value="{Binding VideoBitrate}"
                                                            IsEnabled="{Binding IsIdle}"/>
-                                            <TextBlock Grid.Column="1" Text="kbps" FontWeight="Normal" VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="1" Text="{x:Static localization:Strings.VideoConverterWindow_kbps}" FontWeight="Normal" VerticalAlignment="Center"/>
                                         </Grid>
                                     </StackPanel>
                                 </StackPanel>
@@ -120,12 +121,12 @@
 
                     <Border Grid.Column="1" Classes="tool-panel" Padding="16">
                             <StackPanel>
-                                <TextBlock Classes="section-heading" Text="Output"/>
-                                <TextBlock Classes="field-label" Text="Folder"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.VideoConverterWindow_Output}"/>
+                                <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_Folder}"/>
                                 <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8" Margin="0,0,0,12">
                                     <TextBox Grid.Column="0"
                                              Text="{Binding OutputFolderPath}"
-                                             PlaceholderText="Choose an output folder"
+                                             PlaceholderText="{x:Static localization:Strings.VideoConverterWindow_Choose_an_output_folder}"
                                              IsEnabled="{Binding IsIdle}"/>
                                     <Button Grid.Column="1"
                                             Command="{Binding BrowseOutputFolderCommand}"
@@ -134,16 +135,16 @@
                                                    Classes="icon"/>
                                     </Button>
                                 </Grid>
-                                <TextBlock Classes="field-label" Text="File name"/>
+                                <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_File_name}"/>
                                 <TextBox Text="{Binding OutputFileName}"
-                                         PlaceholderText="video-output"
+                                         PlaceholderText="{x:Static localization:Strings.VideoConverterWindow_video_output}"
                                          IsEnabled="{Binding IsIdle}"
                                          Margin="0,0,0,8"/>
                                 <TextBlock Classes="path-text"
                                            Text="{Binding OutputFilePath}"
                                            Margin="0,0,0,12"/>
                                 <CheckBox IsChecked="{Binding AutoOpenFolder}" IsEnabled="{Binding IsIdle}">
-                                    <TextBlock Text="Open the output folder when finished"
+                                    <TextBlock Text="{x:Static localization:Strings.VideoConverterWindow_Open_the_output_folder_when_finished}"
                                                FontWeight="Normal"
                                                TextWrapping="Wrap"/>
                                 </CheckBox>
@@ -174,7 +175,7 @@
                                 <TextBlock Text="{x:Static theming:LucideIcons.play}"
                                            Classes="icon"
                                            VerticalAlignment="Center"/>
-                                <TextBlock Text="Start encoding" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.VideoConverterWindow_Start_encoding}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="1"
@@ -183,7 +184,7 @@
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <TextBlock Text="{x:Static theming:LucideIcons.square_stop}"
                                            Classes="icon"/>
-                                <TextBlock Text="Stop encoding"/>
+                                <TextBlock Text="{x:Static localization:Strings.VideoConverterWindow_Stop_encoding}"/>
                             </StackPanel>
                         </Button>
                     </Grid>

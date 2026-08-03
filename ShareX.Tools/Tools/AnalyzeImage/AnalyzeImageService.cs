@@ -44,7 +44,7 @@ public sealed class AnalyzeImageService
         using HttpRequestMessage? request = CreateModelsRequest(options, out string? error);
         if (request == null)
         {
-            return new AnalyzeImageConnectionResult(false, error ?? "Unable to create request.");
+            return new AnalyzeImageConnectionResult(false, error ?? Localization.Strings.AnalyzeImageService_Unable_to_create_request);
         }
 
         HttpClient client = HttpClientFactory.Create();
@@ -53,7 +53,7 @@ public sealed class AnalyzeImageService
 
         if (response.IsSuccessStatusCode)
         {
-            return new AnalyzeImageConnectionResult(true, "Connection OK.");
+            return new AnalyzeImageConnectionResult(true, Localization.Strings.AnalyzeImageService_Connection_OK);
         }
 
         string summary = string.IsNullOrWhiteSpace(response.ReasonPhrase) ? response.StatusCode.ToString() : response.ReasonPhrase;
@@ -103,7 +103,7 @@ public sealed class AnalyzeImageService
             case AIProvider.OpenAILegacy:
                 if (string.IsNullOrWhiteSpace(options.OpenAIAPIKey))
                 {
-                    error = "Missing OpenAI API key.";
+                    error = Localization.Strings.AnalyzeImageService_Missing_OpenAI_API_key;
                     return null;
                 }
 
@@ -115,7 +115,7 @@ public sealed class AnalyzeImageService
             case AIProvider.Gemini:
                 if (string.IsNullOrWhiteSpace(options.GeminiAPIKey))
                 {
-                    error = "Missing Gemini API key.";
+                    error = Localization.Strings.AnalyzeImageService_Missing_Gemini_API_key;
                     return null;
                 }
 
@@ -125,7 +125,7 @@ public sealed class AnalyzeImageService
             case AIProvider.OpenRouter:
                 if (string.IsNullOrWhiteSpace(options.OpenRouterAPIKey))
                 {
-                    error = "Missing OpenRouter API key.";
+                    error = Localization.Strings.AnalyzeImageService_Missing_OpenRouter_API_key;
                     return null;
                 }
 
@@ -134,7 +134,7 @@ public sealed class AnalyzeImageService
                 return openRouterRequest;
 
             default:
-                error = "Select a provider first.";
+                error = Localization.Strings.AnalyzeImageService_Select_provider_first;
                 return null;
         }
     }

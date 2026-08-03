@@ -106,7 +106,7 @@ public partial class BackgroundRemoverWindow : Window
 
         IStorageFile? file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
-            Title = "Save image as",
+            Title = Localization.Strings.BackgroundRemoverWindow_Save_image_as_dialog,
             SuggestedFileName = suggestedFileName,
             DefaultExtension = "png",
             FileTypeChoices =

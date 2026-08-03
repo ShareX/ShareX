@@ -43,8 +43,8 @@ public partial class InspectWindowPickerOverlay : Window
         if (instruction != null)
         {
             instruction.Text = selectTopLevelWindow
-                ? "Click a window to inspect  |  Esc to cancel"
-                : "Click a control to inspect  |  Esc to cancel";
+                ? Localization.Strings.InspectWindowPickerOverlay_Click_window
+                : Localization.Strings.InspectWindowPickerOverlay_Click_control;
         }
 
         PointerReleased += OnPointerReleased;

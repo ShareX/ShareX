@@ -61,7 +61,7 @@ public partial class DirectoryIndexerWindow : Window
     {
         IReadOnlyList<IStorageFolder> folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
         {
-            Title = "Select folder to index",
+            Title = Localization.Strings.DirectoryIndexerWindow_Select_folder_to_index_dialog,
             AllowMultiple = false
         });
 
@@ -72,11 +72,11 @@ public partial class DirectoryIndexerWindow : Window
     {
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Select CSS file",
+            Title = Localization.Strings.DirectoryIndexerWindow_Select_CSS_file_dialog,
             AllowMultiple = false,
             FileTypeFilter =
             [
-                new FilePickerFileType("CSS files") { Patterns = ["*.css"] },
+                new FilePickerFileType(Localization.Strings.DirectoryIndexerWindow_CSS_files) { Patterns = ["*.css"] },
                 FilePickerFileTypes.All
             ]
         });
@@ -88,12 +88,12 @@ public partial class DirectoryIndexerWindow : Window
     {
         IStorageFile? file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
-            Title = "Save directory index",
+            Title = Localization.Strings.DirectoryIndexerWindow_Save_directory_index_dialog,
             SuggestedFileName = suggestedName,
             DefaultExtension = extension,
             FileTypeChoices =
             [
-                new FilePickerFileType($"{extension.ToUpperInvariant()} file") { Patterns = [$"*.{extension}"] },
+                new FilePickerFileType(string.Format(Localization.Strings.DirectoryIndexerWindow_File_type, extension.ToUpperInvariant())) { Patterns = [$"*.{extension}"] },
                 FilePickerFileTypes.All
             ]
         });

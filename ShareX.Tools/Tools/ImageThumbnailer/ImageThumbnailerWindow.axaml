@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="590"
         x:Class="ShareX.Tools.ImageThumbnailerWindow"
         x:DataType="vm:ImageThumbnailerViewModel"
-        Title="ShareX - Image Thumbnailer"
+        Title="{x:Static localization:Strings.ImageThumbnailerWindow_ShareX_Image_Thumbnailer}"
         Width="900"
         Height="590"
         MinWidth="760"
@@ -24,7 +25,7 @@
                                     <StackPanel Orientation="Horizontal" Spacing="8">
                                         <TextBlock Text="{x:Static theming:LucideIcons.plus}"
                                                    FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                                        <TextBlock Text="Add..."/>
+                                        <TextBlock Text="{x:Static localization:Strings.ImageThumbnailerWindow_Add}"/>
                                     </StackPanel>
                                 </Button>
                                 <Button Grid.Column="1" Command="{Binding RemoveCommand}" IsEnabled="{Binding CanRemove}">
@@ -64,7 +65,7 @@
                                                FontWeight="Normal" FontSize="42"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                HorizontalAlignment="Center"/>
-                                    <TextBlock Text="Drop images here or use the Add button"
+                                    <TextBlock Text="{x:Static localization:Strings.ImageThumbnailerWindow_Drop_images_here_or_use_the_Add_button}"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                                 </StackPanel>
                             </Grid>
@@ -74,19 +75,19 @@
                     <StackPanel Grid.Column="1" Spacing="12">
                         <Border Classes="tool-panel" Padding="16">
                             <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
-                                <TextBlock Grid.Row="0" Classes="section-heading" Text="Thumbnail size"/>
+                                <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.ImageThumbnailerWindow_Thumbnail_size}"/>
                                 <Grid Grid.Row="1" ColumnDefinitions="90,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Width"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageThumbnailerWindow_Width}"/>
                                     <NumericUpDown Grid.Column="1" Minimum="1" Maximum="10000" FormatString="0"
                                                    Value="{Binding Width}"/>
                                 </Grid>
                                 <Grid Grid.Row="2" ColumnDefinitions="90,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="Height"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageThumbnailerWindow_Height}"/>
                                     <NumericUpDown Grid.Column="1" Minimum="1" Maximum="10000" FormatString="0"
                                                    Value="{Binding Height}"/>
                                 </Grid>
                                 <Grid Grid.Row="3" ColumnDefinitions="90,*,Auto" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="JPEG quality"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageThumbnailerWindow_JPEG_quality}"/>
                                     <Slider Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Quality}"/>
                                     <TextBlock Grid.Column="2" Text="{Binding Quality, StringFormat={}{0:0}%}"
                                                FontWeight="Normal" MinWidth="40"
@@ -97,13 +98,13 @@
 
                         <Border Classes="tool-panel" Padding="16">
                             <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
-                                <TextBlock Grid.Row="0" Classes="section-heading" Text="Output"/>
-                                <TextBlock Grid.Row="1" Classes="row-label" Text="File name template"/>
-                                <TextBox Grid.Row="2" Text="{Binding OutputFileName}" PlaceholderText="$filename_th"/>
+                                <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.ImageThumbnailerWindow_Output}"/>
+                                <TextBlock Grid.Row="1" Classes="row-label" Text="{x:Static localization:Strings.ImageThumbnailerWindow_File_name_template}"/>
+                                <TextBox Grid.Row="2" Text="{Binding OutputFileName}" PlaceholderText="{x:Static localization:Strings.ImageThumbnailerWindow_filename_th}"/>
                                 <Grid Grid.Row="3" ColumnDefinitions="*,Auto" ColumnSpacing="8">
                                     <TextBlock Classes="path-text" Text="{Binding OutputFolderPath}"
                                                VerticalAlignment="Center"/>
-                                    <Button Grid.Column="1" Command="{Binding BrowseOutputFolderCommand}" Content="Browse..."/>
+                                    <Button Grid.Column="1" Command="{Binding BrowseOutputFolderCommand}" Content="{x:Static localization:Strings.ImageThumbnailerWindow_Browse}"/>
                                 </Grid>
                             </Grid>
                         </Border>
@@ -120,7 +121,7 @@
                     <StackPanel Orientation="Horizontal" Spacing="8">
                         <TextBlock Text="{x:Static theming:LucideIcons.images}"
                                    FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                        <TextBlock Text="Generate thumbnails"/>
+                        <TextBlock Text="{x:Static localization:Strings.ImageThumbnailerWindow_Generate_thumbnails}"/>
                     </StackPanel>
                 </Button>
             </Grid>

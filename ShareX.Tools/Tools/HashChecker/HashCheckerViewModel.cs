@@ -101,8 +101,8 @@ public sealed partial class HashCheckerViewModel : ViewModelBase, IDisposable
 
     public bool IsIdle => !IsWorking;
     public bool CanCheck => !IsWorking && File.Exists(FirstFilePath) && (!CompareTwoFiles || File.Exists(SecondFilePath));
-    public string ResultLabel => CompareTwoFiles ? "First file hash" : "Result";
-    public string TargetLabel => CompareTwoFiles ? "Second file hash" : "Target hash";
+    public string ResultLabel => CompareTwoFiles ? Localization.Strings.HashCheckerViewModel_First_file_hash : Localization.Strings.HashCheckerViewModel_Result;
+    public string TargetLabel => CompareTwoFiles ? Localization.Strings.HashCheckerViewModel_Second_file_hash : Localization.Strings.HashCheckerViewModel_Target_hash;
     public bool HasComparison => !string.IsNullOrWhiteSpace(ResultHash) && !string.IsNullOrWhiteSpace(TargetHash);
     public bool HashesMatch => HasComparison && ResultHash.Equals(TargetHash.Trim(), StringComparison.OrdinalIgnoreCase);
     public bool HashesDiffer => HasComparison && !HashesMatch;
@@ -115,7 +115,7 @@ public sealed partial class HashCheckerViewModel : ViewModelBase, IDisposable
             return;
         }
 
-        string? filePath = await SelectFileRequested("Select file", FirstFilePath);
+        string? filePath = await SelectFileRequested(Localization.Strings.HashCheckerViewModel_Select_file_dialog, FirstFilePath);
         if (!string.IsNullOrWhiteSpace(filePath))
         {
             FirstFilePath = filePath;
@@ -130,7 +130,7 @@ public sealed partial class HashCheckerViewModel : ViewModelBase, IDisposable
             return;
         }
 
-        string? filePath = await SelectFileRequested("Select second file", SecondFilePath);
+        string? filePath = await SelectFileRequested(Localization.Strings.HashCheckerViewModel_Select_second_file_dialog, SecondFilePath);
         if (!string.IsNullOrWhiteSpace(filePath))
         {
             SecondFilePath = filePath;
@@ -150,7 +150,7 @@ public sealed partial class HashCheckerViewModel : ViewModelBase, IDisposable
     {
         if (!CanCheck)
         {
-            StatusText = CompareTwoFiles ? "Select two existing files." : "Select an existing file.";
+            StatusText = CompareTwoFiles ? Localization.Strings.HashCheckerViewModel_Select_two_existing_files : Localization.Strings.HashCheckerViewModel_Select_existing_file;
             return;
         }
 
@@ -161,7 +161,7 @@ public sealed partial class HashCheckerViewModel : ViewModelBase, IDisposable
         {
             TargetHash = string.Empty;
         }
-        StatusText = "Calculating hash...";
+        StatusText = Localization.Strings.HashCheckerViewModel_Calculating_hash;
         _cancellationTokenSource = new CancellationTokenSource();
         IProgress<double> progress = new Progress<double>(value => Progress = Math.Clamp(value, 0, 100));
 
@@ -175,7 +175,7 @@ public sealed partial class HashCheckerViewModel : ViewModelBase, IDisposable
 
             if (string.IsNullOrWhiteSpace(result))
             {
-                StatusText = _cancellationTokenSource.IsCancellationRequested ? "Hash check stopped." : "Unable to calculate the file hash.";
+                StatusText = _cancellationTokenSource.IsCancellationRequested ? Localization.Strings.HashCheckerViewModel_Hash_check_stopped : Localization.Strings.HashCheckerViewModel_Unable_calculate_file_hash;
                 return;
             }
 
@@ -184,7 +184,7 @@ public sealed partial class HashCheckerViewModel : ViewModelBase, IDisposable
             if (CompareTwoFiles)
             {
                 Progress = 0;
-                StatusText = "Calculating second file hash...";
+                StatusText = Localization.Strings.HashCheckerViewModel_Calculating_second_hash;
                 string? secondResult = await _hashCalculationHandler(
                     SecondFilePath,
                     SelectedAlgorithm.Algorithm,
@@ -194,8 +194,8 @@ public sealed partial class HashCheckerViewModel : ViewModelBase, IDisposable
                 if (string.IsNullOrWhiteSpace(secondResult))
                 {
                     StatusText = _cancellationTokenSource.IsCancellationRequested
-                        ? "Hash check stopped."
-                        : "Unable to calculate the second file hash.";
+                        ? Localization.Strings.HashCheckerViewModel_Hash_check_stopped
+                        : Localization.Strings.HashCheckerViewModel_Unable_calculate_second_hash;
                     return;
                 }
 
@@ -206,20 +206,20 @@ public sealed partial class HashCheckerViewModel : ViewModelBase, IDisposable
             {
                 Progress = 100;
                 StatusText = CompareTwoFiles
-                    ? (HashesMatch ? "The files have matching hashes." : "The files have different hashes.")
-                    : "Hash calculation complete.";
+                    ? (HashesMatch ? Localization.Strings.HashCheckerViewModel_Files_matching_hashes : Localization.Strings.HashCheckerViewModel_Files_different_hashes)
+                    : Localization.Strings.HashCheckerViewModel_Hash_complete;
                 _playNotificationSound?.Invoke();
             }
         }
         catch (OperationCanceledException)
         {
             Progress = 0;
-            StatusText = "Hash check stopped.";
+            StatusText = Localization.Strings.HashCheckerViewModel_Hash_check_stopped;
         }
         catch (Exception ex)
         {
             Progress = 0;
-            StatusText = $"Hash calculation failed: {ex.Message}";
+            StatusText = string.Format(Localization.Strings.HashCheckerViewModel_Hash_failed, ex.Message);
         }
         finally
         {
@@ -234,7 +234,7 @@ public sealed partial class HashCheckerViewModel : ViewModelBase, IDisposable
     {
         if (IsWorking)
         {
-            StatusText = "Stopping hash check...";
+            StatusText = Localization.Strings.HashCheckerViewModel_Stopping_hash;
             _cancellationTokenSource?.Cancel();
         }
     }

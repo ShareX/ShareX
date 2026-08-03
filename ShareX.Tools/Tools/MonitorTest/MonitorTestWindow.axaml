@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -9,14 +10,14 @@
         mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="760"
         x:Class="ShareX.Tools.MonitorTestWindow"
         x:DataType="vm:MonitorTestViewModel"
-        Title="ShareX - Monitor Test"
+        Title="{x:Static localization:Strings.MonitorTestWindow_ShareX_Monitor_Test}"
         WindowDecorations="None"
         ShowInTaskbar="False"
         CanResize="False"
         Topmost="True">
 
     <Window.Resources>
-        <vm:MonitorTestEnumDisplayConverter x:Key="EnumDisplayConverter"/>
+        <vm:LocalizedDisplayConverter x:Key="EnumDisplayConverter"/>
     </Window.Resources>
 
     <Window.Styles>
@@ -66,12 +67,12 @@
                 <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
                     <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
                         <StackPanel Spacing="2" VerticalAlignment="Center">
-                            <TextBlock Classes="section-heading" Text="Monitor test"/>
-                            <TextBlock Text="Choose a test pattern and adjust its properties"
+                            <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.MonitorTestWindow_Monitor_test}"/>
+                            <TextBlock Text="{x:Static localization:Strings.MonitorTestWindow_Choose_a_test_pattern_and_adjust_its_properties}"
                                        FontWeight="Normal"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                         </StackPanel>
-                        <Button Grid.Column="1" Click="OnCloseClick" ToolTip.Tip="Close">
+                        <Button Grid.Column="1" Click="OnCloseClick" ToolTip.Tip="{x:Static localization:Strings.MonitorTestWindow_Close}">
                             <TextBlock Text="{x:Static theming:LucideIcons.x}"
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontWeight="Normal"/>
@@ -82,31 +83,31 @@
                         <Button Grid.Column="0" Classes="mode-button" Classes.active="{Binding IsGrayscale}" Click="OnGrayscaleClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Text="{x:Static theming:LucideIcons.contrast}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                                <TextBlock Text="Grayscale"/>
+                                <TextBlock Text="{x:Static localization:Strings.MonitorTestWindow_Grayscale}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="1" Classes="mode-button" Classes.active="{Binding IsRgb}" Click="OnRgbClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Text="{x:Static theming:LucideIcons.palette}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                                <TextBlock Text="RGB"/>
+                                <TextBlock Text="{x:Static localization:Strings.MonitorTestWindow_RGB}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="2" Classes="mode-button" Classes.active="{Binding IsGradient}" Click="OnGradientClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Text="{x:Static theming:LucideIcons.blend}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                                <TextBlock Text="Gradient"/>
+                                <TextBlock Text="{x:Static localization:Strings.MonitorTestWindow_Gradient}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="3" Classes="mode-button" Classes.active="{Binding IsPattern}" Click="OnPatternClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Text="{x:Static theming:LucideIcons.grid_2x2}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                                <TextBlock Text="Pattern"/>
+                                <TextBlock Text="{x:Static localization:Strings.MonitorTestWindow_Pattern}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="4" Classes="mode-button" Classes.active="{Binding IsMotion}" Click="OnMotionClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Text="{x:Static theming:LucideIcons.move_horizontal}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                                <TextBlock Text="Motion"/>
+                                <TextBlock Text="{x:Static localization:Strings.MonitorTestWindow_Motion}"/>
                             </StackPanel>
                         </Button>
                     </Grid>
@@ -119,7 +120,7 @@
                             <Grid IsVisible="{Binding IsGrayscale}"
                                   ColumnDefinitions="96,*,52"
                                   ColumnSpacing="12">
-                                <TextBlock Grid.Column="0" Classes="row-label" Text="Brightness"/>
+                                <TextBlock Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.MonitorTestWindow_Brightness}"/>
                                 <Slider Grid.Column="1" Minimum="0" Maximum="255" Value="{Binding GrayValue}"/>
                                 <TextBlock Grid.Column="2" Classes="option-value" Text="{Binding GrayValue, StringFormat={}{0:0}}"/>
                             </Grid>
@@ -129,7 +130,7 @@
                                   ColumnDefinitions="96,*,52"
                                   RowSpacing="8"
                                   ColumnSpacing="12">
-                                <TextBlock Grid.Row="0" Grid.Column="0" Classes="row-label" Text="Color"/>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.MonitorTestWindow_Color}"/>
                                 <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Classes="color-button">
                                     <Button.Flyout>
                                         <Flyout Placement="Bottom">
@@ -145,15 +146,15 @@
                                     </Grid>
                                 </Button>
 
-                                <TextBlock Grid.Row="1" Grid.Column="0" Classes="row-label" Text="Red"/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.MonitorTestWindow_Red}"/>
                                 <Slider Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="255" Value="{Binding Red}"/>
                                 <TextBlock Grid.Row="1" Grid.Column="2" Classes="option-value" Text="{Binding Red, StringFormat={}{0:0}}"/>
 
-                                <TextBlock Grid.Row="2" Grid.Column="0" Classes="row-label" Text="Green"/>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.MonitorTestWindow_Green}"/>
                                 <Slider Grid.Row="2" Grid.Column="1" Minimum="0" Maximum="255" Value="{Binding Green}"/>
                                 <TextBlock Grid.Row="2" Grid.Column="2" Classes="option-value" Text="{Binding Green, StringFormat={}{0:0}}"/>
 
-                                <TextBlock Grid.Row="3" Grid.Column="0" Classes="row-label" Text="Blue"/>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.MonitorTestWindow_Blue}"/>
                                 <Slider Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="255" Value="{Binding Blue}"/>
                                 <TextBlock Grid.Row="3" Grid.Column="2" Classes="option-value" Text="{Binding Blue, StringFormat={}{0:0}}"/>
                             </Grid>
@@ -163,7 +164,7 @@
                                   ColumnDefinitions="96,*"
                                   RowSpacing="8"
                                   ColumnSpacing="12">
-                                <TextBlock Grid.Row="0" Grid.Column="0" Classes="row-label" Text="Direction"/>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.MonitorTestWindow_Direction}"/>
                                 <ComboBox Grid.Row="0" Grid.Column="1"
                                           ItemsSource="{x:Static vm:MonitorTestViewModel.GradientDirections}"
                                           SelectedItem="{Binding GradientDirection}">
@@ -174,7 +175,7 @@
                                     </ComboBox.ItemTemplate>
                                 </ComboBox>
 
-                                <TextBlock Grid.Row="1" Grid.Column="0" Classes="row-label" Text="Colors"/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.MonitorTestWindow_Colors}"/>
                                 <Grid Grid.Row="1" Grid.Column="1" ColumnDefinitions="*,*" ColumnSpacing="8">
                                     <Button Grid.Column="0" Classes="color-button">
                                         <Button.Flyout>
@@ -212,7 +213,7 @@
                                   ColumnDefinitions="96,*,52"
                                   RowSpacing="8"
                                   ColumnSpacing="12">
-                                <TextBlock Grid.Row="0" Grid.Column="0" Classes="row-label" Text="Pattern"/>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.MonitorTestWindow_Pattern}"/>
                                 <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
                                           ItemsSource="{x:Static vm:MonitorTestViewModel.Patterns}"
                                           SelectedItem="{Binding SelectedPattern}">
@@ -222,7 +223,7 @@
                                         </DataTemplate>
                                     </ComboBox.ItemTemplate>
                                 </ComboBox>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Classes="row-label" Text="Cell size"/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.MonitorTestWindow_Cell_size}"/>
                                 <Slider Grid.Row="1" Grid.Column="1" Minimum="1" Maximum="100" Value="{Binding PatternSize}"/>
                                 <TextBlock Grid.Row="1" Grid.Column="2" Classes="option-value" Text="{Binding PatternSize, StringFormat={}{0:0}}"/>
                             </Grid>
@@ -232,7 +233,7 @@
                                   ColumnDefinitions="96,*,76"
                                   RowSpacing="8"
                                   ColumnSpacing="12">
-                                <TextBlock Grid.Row="0" Grid.Column="0" Classes="row-label" Text="Direction"/>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.MonitorTestWindow_Direction}"/>
                                 <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
                                           ItemsSource="{x:Static vm:MonitorTestViewModel.MotionDirections}"
                                           SelectedItem="{Binding MotionDirection}">
@@ -242,7 +243,7 @@
                                         </DataTemplate>
                                     </ComboBox.ItemTemplate>
                                 </ComboBox>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Classes="row-label" Text="Speed"/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.MonitorTestWindow_Speed}"/>
                                 <Slider Grid.Row="1" Grid.Column="1" Minimum="100" Maximum="2000" Value="{Binding MotionSpeed}"/>
                                 <TextBlock Grid.Row="1" Grid.Column="2" Classes="option-value" MinWidth="76" Text="{Binding MotionSpeed, StringFormat={}{0:0} px/s}"/>
                             </Grid>

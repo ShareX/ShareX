@@ -70,7 +70,7 @@ public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
     private bool _isBusy;
 
     [ObservableProperty]
-    private string _statusText = "Add at least two images to combine.";
+    private string _statusText = Localization.Strings.ImageCombinerViewModel_Add_two_images;
 
     public ImageCombinerViewModel(
         ImageCombinerOptions options,
@@ -103,8 +103,8 @@ public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
     }
 
     public IReadOnlyList<string> AlignmentOptions => IsHorizontal
-        ? ["Top", "Center", "Bottom"]
-        : ["Left", "Center", "Right"];
+        ? [Localization.Strings.ImageCombinerViewModel_Top, Localization.Strings.ImageCombinerViewModel_Center, Localization.Strings.ImageCombinerViewModel_Bottom]
+        : [Localization.Strings.ImageCombinerViewModel_Left, Localization.Strings.ImageCombinerViewModel_Center, Localization.Strings.ImageCombinerViewModel_Right];
 
     public bool HasPreview => PreviewImage != null;
     public bool HasImages => Images.Count > 0;
@@ -112,7 +112,7 @@ public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
     public bool CanRemove => _selectedImages.Count > 0 || SelectedImage != null;
     public bool CanMoveUp => SelectedImage != null && Images.IndexOf(SelectedImage) > 0;
     public bool CanMoveDown => SelectedImage != null && Images.IndexOf(SelectedImage) is int index && index >= 0 && index < Images.Count - 1;
-    public string ImageCountText => $"{Images.Count} image{(Images.Count == 1 ? string.Empty : "s")}";
+    public string ImageCountText => string.Format(Images.Count == 1 ? Localization.Strings.ImageCombinerViewModel_One_image : Localization.Strings.ImageCombinerViewModel_Image_count, Images.Count);
 
     [RelayCommand]
     private async Task AddAsync()
@@ -198,15 +198,15 @@ public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
         }
 
         IsBusy = true;
-        StatusText = "Combining images...";
+        StatusText = Localization.Strings.ImageCombinerViewModel_Combining_images;
         try
         {
             await _services.ProcessAsync(CreateRequest());
-            StatusText = "Images combined and sent to the configured after-capture workflow.";
+            StatusText = Localization.Strings.ImageCombinerViewModel_Images_combined;
         }
         catch (Exception ex)
         {
-            StatusText = $"Failed to combine images: {ex.Message}";
+            StatusText = string.Format(Localization.Strings.ImageCombinerViewModel_Combine_failed, ex.Message);
         }
         finally
         {
@@ -275,7 +275,7 @@ public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
         {
             PreviewImage?.Dispose();
             PreviewImage = null;
-            StatusText = "Add at least two images to combine.";
+            StatusText = Localization.Strings.ImageCombinerViewModel_Add_two_images;
             return;
         }
 
@@ -287,13 +287,13 @@ public sealed partial class ImageCombinerViewModel : ViewModelBase, IDisposable
             Bitmap bitmap = new Bitmap(stream);
             PreviewImage?.Dispose();
             PreviewImage = bitmap;
-            StatusText = $"Previewing {ImageCountText}.";
+            StatusText = string.Format(Localization.Strings.ImageCombinerViewModel_Previewing, ImageCountText);
         }
         catch (Exception ex)
         {
             if (version == _previewVersion)
             {
-                StatusText = $"Preview failed: {ex.Message}";
+                StatusText = string.Format(Localization.Strings.ImageCombinerViewModel_Preview_failed, ex.Message);
             }
         }
     }

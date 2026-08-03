@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="940" d:DesignHeight="610"
         x:Class="ShareX.Tools.QRCodeWindow"
         x:DataType="vm:QRCodeViewModel"
-        Title="ShareX - QR Code"
+        Title="{x:Static localization:Strings.QRCodeWindow_ShareX_QR_Code}"
         Width="940"
         Height="610"
         MinWidth="760"
@@ -24,21 +25,21 @@
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <TextBlock Text="{x:Static theming:LucideIcons.scan_qr_code}"
                                            Classes="icon"/>
-                                <TextBlock Text="Scan screen"/>
+                                <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Scan_screen}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="1" Command="{Binding ScanRegionCommand}" IsEnabled="{Binding !IsScanning}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <TextBlock Text="{x:Static theming:LucideIcons.scan_line}"
                                            Classes="icon"/>
-                                <TextBlock Text="Scan region..."/>
+                                <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Scan_region}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="2" Command="{Binding ScanImageFileCommand}" IsEnabled="{Binding !IsScanning}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <TextBlock Text="{x:Static theming:LucideIcons.file_scan}"
                                            Classes="icon"/>
-                                <TextBlock Text="Scan image..."/>
+                                <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Scan_image}"/>
                             </StackPanel>
                         </Button>
                     </Grid>
@@ -46,17 +47,17 @@
                 <Grid Grid.Row="1" ColumnDefinitions="430,*" ColumnSpacing="12">
                     <Border Grid.Column="0" Classes="tool-panel" Padding="16">
                         <Grid RowDefinitions="Auto,*,Auto" RowSpacing="10">
-                            <TextBlock Grid.Row="0" Classes="section-heading" Text="Content"/>
+                            <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.QRCodeWindow_Content}"/>
                             <TextBox Grid.Row="1"
                                      Text="{Binding Text}"
-                                     PlaceholderText="Enter text or a URL to encode"
+                                     PlaceholderText="{x:Static localization:Strings.QRCodeWindow_Enter_text_or_a_URL_to_encode}"
                                      AcceptsReturn="True"
                                      TextWrapping="Wrap"
                                      VerticalContentAlignment="Top"
                                      MaxLength="2952"/>
                             <Grid Grid.Row="2" ColumnDefinitions="Auto,120,Auto" ColumnSpacing="8">
                                 <TextBlock Grid.Column="0"
-                                           Text="QR code size"
+                                           Text="{x:Static localization:Strings.QRCodeWindow_QR_code_size}"
                                            FontWeight="Normal"
                                            VerticalAlignment="Center"/>
                                 <NumericUpDown Grid.Column="1"
@@ -66,7 +67,7 @@
                                                FormatString="0"
                                                Value="{Binding QRCodeSize}"/>
                                 <TextBlock Grid.Column="2"
-                                           Text="px"
+                                           Text="{x:Static localization:Strings.QRCodeWindow_px}"
                                            FontWeight="Normal"
                                            VerticalAlignment="Center"/>
                             </Grid>
@@ -97,7 +98,7 @@
                                            FontSize="48"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                            HorizontalAlignment="Center"/>
-                                <TextBlock Text="Enter content to generate a QR code"
+                                <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Enter_content_to_generate_a_QR_code}"
                                            FontWeight="Normal"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                             </StackPanel>
@@ -110,21 +111,21 @@
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="{x:Static theming:LucideIcons.copy}"
                                        Classes="icon"/>
-                            <TextBlock Text="Copy image"/>
+                            <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Copy_image}"/>
                         </StackPanel>
                     </Button>
                     <Button Grid.Column="1" Command="{Binding SaveImageCommand}" IsEnabled="{Binding HasQRCode}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="{x:Static theming:LucideIcons.save}"
                                        Classes="icon"/>
-                            <TextBlock Text="Save..."/>
+                            <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Save}"/>
                         </StackPanel>
                     </Button>
                     <Button Grid.Column="2" Command="{Binding UploadImageCommand}" IsEnabled="{Binding HasQRCode}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="{x:Static theming:LucideIcons.upload}"
                                        Classes="icon"/>
-                            <TextBlock Text="Upload"/>
+                            <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Upload}"/>
                         </StackPanel>
                     </Button>
                 </Grid>

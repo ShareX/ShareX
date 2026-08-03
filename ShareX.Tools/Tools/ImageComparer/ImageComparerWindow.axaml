@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -8,7 +9,7 @@
         mc:Ignorable="d" d:DesignWidth="1180" d:DesignHeight="760"
         x:Class="ShareX.Tools.ImageComparerWindow"
         x:DataType="vm:ImageComparerViewModel"
-        Title="ShareX - Image Comparer"
+        Title="{x:Static localization:Strings.ImageComparerWindow_ShareX_Image_Comparer}"
         Width="1180"
         Height="760"
         MinWidth="900"
@@ -38,7 +39,7 @@
                     <Border Grid.Column="0" Classes="comparer-panel" Padding="12">
                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                             <TextBlock Grid.Column="0"
-                                       Text="Image 1"
+                                       Text="{x:Static localization:Strings.ImageComparerWindow_Image_1}"
                                        FontSize="16"
                                        Foreground="{DynamicResource ShareX.Brush.Text}"
                                        VerticalAlignment="Center"/>
@@ -46,14 +47,14 @@
                                        Classes="path-text"
                                        VerticalAlignment="Center"
                                        Text="{Binding Image1Path, TargetNullValue='No image selected'}"/>
-                            <Button Grid.Column="2" Content="Choose..." Command="{Binding SelectImage1Command}"/>
+                            <Button Grid.Column="2" Content="{x:Static localization:Strings.ImageComparerWindow_Choose}" Command="{Binding SelectImage1Command}"/>
                         </Grid>
                     </Border>
 
                     <Border Grid.Column="1" Classes="comparer-panel" Padding="12">
                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                             <TextBlock Grid.Column="0"
-                                       Text="Image 2"
+                                       Text="{x:Static localization:Strings.ImageComparerWindow_Image_2}"
                                        FontSize="16"
                                        Foreground="{DynamicResource ShareX.Brush.Text}"
                                        VerticalAlignment="Center"/>
@@ -61,7 +62,7 @@
                                        Classes="path-text"
                                        VerticalAlignment="Center"
                                        Text="{Binding Image2Path, TargetNullValue='No image selected'}"/>
-                            <Button Grid.Column="2" Content="Choose..." Command="{Binding SelectImage2Command}"/>
+                            <Button Grid.Column="2" Content="{x:Static localization:Strings.ImageComparerWindow_Choose}" Command="{Binding SelectImage2Command}"/>
                         </Grid>
                     </Border>
                 </Grid>
@@ -74,9 +75,9 @@
                                 BorderThickness="0,0,0,1"
                                 Padding="16,12">
                             <Grid ColumnDefinitions="Auto,Auto,*" ColumnSpacing="16">
-                                <RadioButton Grid.Column="0" Content="Slider" GroupName="ComparisonMode"
+                                <RadioButton Grid.Column="0" Content="{x:Static localization:Strings.ImageComparerWindow_Slider}" GroupName="ComparisonMode"
                                              IsChecked="{Binding IsSliderMode}"/>
-                                <RadioButton Grid.Column="1" Content="Diff View" GroupName="ComparisonMode"
+                                <RadioButton Grid.Column="1" Content="{x:Static localization:Strings.ImageComparerWindow_Diff_View}" GroupName="ComparisonMode"
                                              IsChecked="{Binding IsDiffViewMode}"/>
                                 <TextBlock Grid.Column="2"
                                            Text="{Binding SimilarityText}"
@@ -89,7 +90,7 @@
                         </Border>
 
                         <Grid Grid.Row="1" Background="{DynamicResource ShareX.Brush.Background.Panel}">
-                            <TextBlock Text="Select Image 1 and Image 2 to show the comparison preview."
+                            <TextBlock Text="{x:Static localization:Strings.ImageComparerWindow_Select_Image_1_and_Image_2_to_show_the_comparison_preview}"
                                        IsVisible="{Binding !CanShowComparison}"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"

@@ -259,7 +259,7 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     [RelayCommand]
     private void NewService()
     {
-        OCRServiceLinkOption service = new("Name", "https://example.com/search?q={0}");
+        OCRServiceLinkOption service = new(Localization.Strings.OCRViewModel_New_service_name, "https://example.com/search?q={0}");
         AddService(service);
         EditingServiceLink = service;
         SelectedServiceLink = service;

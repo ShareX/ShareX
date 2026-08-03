@@ -1,0 +1,1726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AIOptions_What_is_in_this_image" xml:space="preserve">
+    <value>Bu görüntüde ne var?</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_Loading_models" xml:space="preserve">
+    <value>Modeller yükleniyor...</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_Models_loaded" xml:space="preserve">
+    <value>{0} model yüklendi.</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_No_models_found" xml:space="preserve">
+    <value>Model bulunamadı.</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_Testing" xml:space="preserve">
+    <value>Test ediliyor...</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Analyze_automatically_when_opened" xml:space="preserve">
+    <value>Açıldığında otomatik olarak analiz et</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_API_key" xml:space="preserve">
+    <value>API anahtarı</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_API_key_page" xml:space="preserve">
+    <value>API anahtarı sayfası...</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Behavior" xml:space="preserve">
+    <value>Davranış</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Cancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Capture_a_region_when_opened_without_an_image" xml:space="preserve">
+    <value>Görüntü olmadan açıldığında bir bölge yakala</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Copy_result_automatically" xml:space="preserve">
+    <value>Sonucu otomatik olarak kopyala</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Custom_base_URL" xml:space="preserve">
+    <value>Özel temel URL</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Get_API_key" xml:space="preserve">
+    <value>API anahtarı al</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Google_Gemini" xml:space="preserve">
+    <value>Google Gemini</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_https_api_openai_com" xml:space="preserve">
+    <value>https://api.openai.com</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Load_models" xml:space="preserve">
+    <value>Modelleri yükle</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_OpenAI" xml:space="preserve">
+    <value>OpenAI</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_OpenRouter" xml:space="preserve">
+    <value>OpenRouter</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Provider" xml:space="preserve">
+    <value>Sağlayıcı</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Reasoning" xml:space="preserve">
+    <value>Akıl yürütme</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_ShareX_Analyze_image_options" xml:space="preserve">
+    <value>ShareX - Görüntü analizi seçenekleri</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Test_connection" xml:space="preserve">
+    <value>Bağlantıyı test et</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Verbosity" xml:space="preserve">
+    <value>Ayrıntı düzeyi</value>
+  </data>
+  <data name="AnalyzeImageService_Connection_OK" xml:space="preserve">
+    <value>Bağlantı başarılı.</value>
+  </data>
+  <data name="AnalyzeImageService_Missing_Gemini_API_key" xml:space="preserve">
+    <value>Gemini API anahtarı eksik.</value>
+  </data>
+  <data name="AnalyzeImageService_Missing_OpenAI_API_key" xml:space="preserve">
+    <value>OpenAI API anahtarı eksik.</value>
+  </data>
+  <data name="AnalyzeImageService_Missing_OpenRouter_API_key" xml:space="preserve">
+    <value>OpenRouter API anahtarı eksik.</value>
+  </data>
+  <data name="AnalyzeImageService_Select_provider_first" xml:space="preserve">
+    <value>Önce bir sağlayıcı seçin.</value>
+  </data>
+  <data name="AnalyzeImageService_Unable_to_create_request" xml:space="preserve">
+    <value>İstek oluşturulamadı.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Captured_region" xml:space="preserve">
+    <value>Yakalanan bölge</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Configure_API_key" xml:space="preserve">
+    <value>Analiz etmeden önce Seçenekler'de bir API anahtarı yapılandırın.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Thinking" xml:space="preserve">
+    <value>Düşünüyor...</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Thoroughly_describe_this_image" xml:space="preserve">
+    <value>Bu görüntüyü ayrıntılı olarak açıklayın.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Time_ms" xml:space="preserve">
+    <value>Süre: {0:N0} ms</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Transcribe_image_text" xml:space="preserve">
+    <value>Görüntüdeki metni yazıya dökün. Başka hiçbir şey yazmayın.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Translate_text_into_English" xml:space="preserve">
+    <value>Bu metni İngilizceye çevirin. Başka hiçbir şey yazmayın.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_What_is_in_this_image" xml:space="preserve">
+    <value>Bu görüntüde ne var?</value>
+  </data>
+  <data name="AnalyzeImageWindow_Analyze_image" xml:space="preserve">
+    <value>Görüntüyü analiz et</value>
+  </data>
+  <data name="AnalyzeImageWindow_Choose_a_preset_prompt" xml:space="preserve">
+    <value>Hazır bir istem seçin</value>
+  </data>
+  <data name="AnalyzeImageWindow_Copy_all" xml:space="preserve">
+    <value>Tümünü kopyala</value>
+  </data>
+  <data name="AnalyzeImageWindow_Image" xml:space="preserve">
+    <value>Resim</value>
+  </data>
+  <data name="AnalyzeImageWindow_Options" xml:space="preserve">
+    <value>Seçenekler...</value>
+  </data>
+  <data name="AnalyzeImageWindow_Prompt" xml:space="preserve">
+    <value>İstem</value>
+  </data>
+  <data name="AnalyzeImageWindow_Result" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_image" xml:space="preserve">
+    <value>Görüntü seç...</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_image_dialog" xml:space="preserve">
+    <value>Görüntü seç</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_or_drop_an_image" xml:space="preserve">
+    <value>Bir görüntü seçin veya sürükleyip bırakın</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_region" xml:space="preserve">
+    <value>Bölge seç...</value>
+  </data>
+  <data name="AnalyzeImageWindow_ShareX_Analyze_image" xml:space="preserve">
+    <value>ShareX - Görüntüyü analiz et</value>
+  </data>
+  <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
+    <value>Arka plan {0} ms içinde kaldırıldı.</value>
+  </data>
+  <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
+    <value>Görüntü kaydedildi.
+Dosya yolu: {0}</value>
+  </data>
+  <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
+    <value>Görüntü seç</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Background_removal_model" xml:space="preserve">
+    <value>Arka plan kaldırma modeli</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Browse" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Device" xml:space="preserve">
+    <value>Cihaz</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Image" xml:space="preserve">
+    <value>Resim</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Models" xml:space="preserve">
+    <value>Modeller</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Open_guide_page" xml:space="preserve">
+    <value>Kılavuz sayfasını aç...</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Open_models_folder" xml:space="preserve">
+    <value>Modeller klasörünü aç</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Processing_device" xml:space="preserve">
+    <value>İşleme cihazı</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Refresh_models" xml:space="preserve">
+    <value>Modelleri yenile</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Remove_Background" xml:space="preserve">
+    <value>Arka planı kaldır</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Save_as" xml:space="preserve">
+    <value>Farklı kaydet...</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Save_image_as_dialog" xml:space="preserve">
+    <value>Görüntüyü farklı kaydet</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Select_an_image_to_preview_it_here" xml:space="preserve">
+    <value>Önizlemek için burada bir görüntü seçin.</value>
+  </data>
+  <data name="BackgroundRemoverWindow_ShareX_Background_Remover" xml:space="preserve">
+    <value>ShareX - Arka Plan Kaldırıcı</value>
+  </data>
+  <data name="BorderlessWindowViewModel_Unable_to_toggle" xml:space="preserve">
+    <value>Seçilen pencere değiştirilemedi. {0}</value>
+  </data>
+  <data name="BorderlessWindowViewModel_Window_not_found" xml:space="preserve">
+    <value>Belirtilen başlığa sahip bir pencere bulunamadı.</value>
+  </data>
+  <data name="BorderlessWindowWindow_Close_after_toggling" xml:space="preserve">
+    <value>Değiştirdikten sonra kapat</value>
+  </data>
+  <data name="BorderlessWindowWindow_Enter_a_window_title_manually" xml:space="preserve">
+    <value>Pencere başlığını elle girin</value>
+  </data>
+  <data name="BorderlessWindowWindow_Keep_taskbar_visible" xml:space="preserve">
+    <value>Görev çubuğunu görünür tut</value>
+  </data>
+  <data name="BorderlessWindowWindow_Options" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="BorderlessWindowWindow_Remember_window_title" xml:space="preserve">
+    <value>Pencere başlığını hatırla</value>
+  </data>
+  <data name="BorderlessWindowWindow_Select_window" xml:space="preserve">
+    <value>Pencere seç</value>
+  </data>
+  <data name="BorderlessWindowWindow_ShareX_Borderless_Window" xml:space="preserve">
+    <value>ShareX - Kenarlıksız Pencere</value>
+  </data>
+  <data name="BorderlessWindowWindow_Toggle_again_to_restore_the_original_border_and_window_size" xml:space="preserve">
+    <value>Özgün kenarlığı ve pencere boyutunu geri yüklemek için tekrar değiştirin.</value>
+  </data>
+  <data name="BorderlessWindowWindow_Toggle_borderless" xml:space="preserve">
+    <value>Kenarlıksız durumu değiştir</value>
+  </data>
+  <data name="BorderlessWindowWindow_Window" xml:space="preserve">
+    <value>Pencere</value>
+  </data>
+  <data name="BorderlessWindowWindow_Window_list" xml:space="preserve">
+    <value>Pencere listesi</value>
+  </data>
+  <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
+    <value>Pencere başlığı</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
+    <value>Pano içeriği</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Clipboard_empty" xml:space="preserve">
+    <value>Pano boş</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Format_count" xml:space="preserve">
+    <value>{0} biçim</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Image_details" xml:space="preserve">
+    <value>Görüntü  |  {0} × {1} px</value>
+  </data>
+  <data name="ClipboardViewerViewModel_No_previewable_content" xml:space="preserve">
+    <value>Bu biçim önizlenebilir içerik barındırmıyor</value>
+  </data>
+  <data name="ClipboardViewerViewModel_One_format" xml:space="preserve">
+    <value>1 biçim</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
+    <value>Bu pano biçimi önizlenemedi.
+
+{0}</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
+    <value>Önizleme kullanılamıyor</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Select_format" xml:space="preserve">
+    <value>İçeriğini incelemek için bir biçim seçin</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Text_details" xml:space="preserve">
+    <value>Metin  |  {0:N0} karakter</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
+    <value>Pano okunamadı
+{0}</value>
+  </data>
+  <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
+    <value>Temizle</value>
+  </data>
+  <data name="ClipboardViewerWindow_Formats" xml:space="preserve">
+    <value>Biçimler</value>
+  </data>
+  <data name="ClipboardViewerWindow_No_formats" xml:space="preserve">
+    <value>Biçim yok</value>
+  </data>
+  <data name="ClipboardViewerWindow_Refresh" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="ClipboardViewerWindow_ShareX_Clipboard_Viewer" xml:space="preserve">
+    <value>ShareX - Pano Görüntüleyici</value>
+  </data>
+  <data name="DirectoryIndexerViewModel_Index_for" xml:space="preserve">
+    <value>{0} dizini</value>
+  </data>
+  <data name="DirectoryIndexerViewModel_Text" xml:space="preserve">
+    <value>Metin</value>
+  </data>
+  <data name="DirectoryIndexerWindow_0_is_unlimited" xml:space="preserve">
+    <value>0 sınırsızdır</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Add_generated_by_footer" xml:space="preserve">
+    <value>Oluşturan bilgisini altbilgiye ekle</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Browse" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Choose_a_folder_and_generate_output_Nothing_is_saved_until_you_use_Save_as_or_Upload" xml:space="preserve">
+    <value>Bir klasör seçin ve çıktı oluşturun. Farklı kaydet veya Yükle'yi kullanana kadar hiçbir şey kaydedilmez.</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Create_parseable_structured_JSON" xml:space="preserve">
+    <value>Ayrıştırılabilir yapısal JSON oluştur</value>
+  </data>
+  <data name="DirectoryIndexerWindow_CSS_files" xml:space="preserve">
+    <value>CSS dosyaları</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Display_folder_paths" xml:space="preserve">
+    <value>Klasör yollarını göster</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Empty_line_after_folders" xml:space="preserve">
+    <value>Klasörlerden sonra boş satır</value>
+  </data>
+  <data name="DirectoryIndexerWindow_File_type" xml:space="preserve">
+    <value>{0} dosyası</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Folder" xml:space="preserve">
+    <value>Klasör</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Folders_only" xml:space="preserve">
+    <value>Yalnızca klasörler</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Generate_output" xml:space="preserve">
+    <value>Çıktı oluştur</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Generated_output" xml:space="preserve">
+    <value>Oluşturulan çıktı</value>
+  </data>
+  <data name="DirectoryIndexerWindow_HTML_output" xml:space="preserve">
+    <value>HTML çıktısı</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Indentation" xml:space="preserve">
+    <value>Girinti</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Index_options" xml:space="preserve">
+    <value>Dizin seçenekleri</value>
+  </data>
+  <data name="DirectoryIndexerWindow_JSON_output" xml:space="preserve">
+    <value>JSON çıktısı</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Limit_paths_to_root_folder" xml:space="preserve">
+    <value>Yolları kök klasörle sınırla</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Maximum_depth" xml:space="preserve">
+    <value>En fazla derinlik</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Output_format" xml:space="preserve">
+    <value>Çıktı biçimi</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Ready_to_save_or_upload" xml:space="preserve">
+    <value>Kaydetmeye veya yüklemeye hazır</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Save_as" xml:space="preserve">
+    <value>Farklı kaydet...</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Save_directory_index_dialog" xml:space="preserve">
+    <value>Dizin listesini kaydet</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Select_a_CSS_file" xml:space="preserve">
+    <value>Bir CSS dosyası seçin</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Select_CSS_file_dialog" xml:space="preserve">
+    <value>CSS dosyası seç</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Select_folder_to_index_dialog" xml:space="preserve">
+    <value>Dizinlenecek klasörü seç</value>
+  </data>
+  <data name="DirectoryIndexerWindow_ShareX_Directory_Indexer" xml:space="preserve">
+    <value>ShareX - Dizin Oluşturucu</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Show_sizes" xml:space="preserve">
+    <value>Boyutları göster</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Skip_hidden_files" xml:space="preserve">
+    <value>Gizli dosyaları atla</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Skip_hidden_folders" xml:space="preserve">
+    <value>Gizli klasörleri atla</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Text_output" xml:space="preserve">
+    <value>Metin çıktısı</value>
+  </data>
+  <data name="DirectoryIndexerWindow_The_HTML_index_was_generated_successfully_HTML_preview_is_unavailable_but_the_output_is_ready_to_save_or_upload" xml:space="preserve">
+    <value>HTML dizini başarıyla oluşturuldu. HTML önizlemesi kullanılamıyor ancak çıktı kaydetmeye veya yüklemeye hazır.</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Upload" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Use_custom_CSS_file" xml:space="preserve">
+    <value>Özel CSS dosyası kullan</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Write_information_as_attributes" xml:space="preserve">
+    <value>Bilgileri öznitelik olarak yaz</value>
+  </data>
+  <data name="DirectoryIndexerWindow_XML_output" xml:space="preserve">
+    <value>XML çıktısı</value>
+  </data>
+  <data name="GeminiProvider_API_error" xml:space="preserve">
+    <value>Gemini API hatası: {0}</value>
+  </data>
+  <data name="HashCheckerViewModel_Calculating_hash" xml:space="preserve">
+    <value>Karma hesaplanıyor...</value>
+  </data>
+  <data name="HashCheckerViewModel_Calculating_second_hash" xml:space="preserve">
+    <value>İkinci dosyanın karması hesaplanıyor...</value>
+  </data>
+  <data name="HashCheckerViewModel_Files_different_hashes" xml:space="preserve">
+    <value>Dosyaların karmaları farklı.</value>
+  </data>
+  <data name="HashCheckerViewModel_Files_matching_hashes" xml:space="preserve">
+    <value>Dosyaların karmaları eşleşiyor.</value>
+  </data>
+  <data name="HashCheckerViewModel_First_file_hash" xml:space="preserve">
+    <value>İlk dosya karması</value>
+  </data>
+  <data name="HashCheckerViewModel_Hash_check_stopped" xml:space="preserve">
+    <value>Karma denetimi durduruldu.</value>
+  </data>
+  <data name="HashCheckerViewModel_Hash_complete" xml:space="preserve">
+    <value>Karma hesaplaması tamamlandı.</value>
+  </data>
+  <data name="HashCheckerViewModel_Hash_failed" xml:space="preserve">
+    <value>Karma hesaplaması başarısız: {0}</value>
+  </data>
+  <data name="HashCheckerViewModel_Result" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="HashCheckerViewModel_Second_file_hash" xml:space="preserve">
+    <value>İkinci dosya karması</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_existing_file" xml:space="preserve">
+    <value>Var olan bir dosya seçin.</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_file_dialog" xml:space="preserve">
+    <value>Dosya seç</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_second_file_dialog" xml:space="preserve">
+    <value>İkinci dosyayı seç</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_two_existing_files" xml:space="preserve">
+    <value>Var olan iki dosya seçin.</value>
+  </data>
+  <data name="HashCheckerViewModel_Stopping_hash" xml:space="preserve">
+    <value>Karma denetimi durduruluyor...</value>
+  </data>
+  <data name="HashCheckerViewModel_Target_hash" xml:space="preserve">
+    <value>Hedef karma</value>
+  </data>
+  <data name="HashCheckerViewModel_Unable_calculate_file_hash" xml:space="preserve">
+    <value>Dosya karması hesaplanamadı.</value>
+  </data>
+  <data name="HashCheckerViewModel_Unable_calculate_second_hash" xml:space="preserve">
+    <value>İkinci dosyanın karması hesaplanamadı.</value>
+  </data>
+  <data name="HashCheckerWindow_Browse" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="HashCheckerWindow_Calculated_hash_will_appear_here" xml:space="preserve">
+    <value>Hesaplanan karma burada görünecek</value>
+  </data>
+  <data name="HashCheckerWindow_Check" xml:space="preserve">
+    <value>Denetle</value>
+  </data>
+  <data name="HashCheckerWindow_Choose_a_file_or_drop_it_here" xml:space="preserve">
+    <value>Bir dosya seçin veya buraya sürükleyip bırakın</value>
+  </data>
+  <data name="HashCheckerWindow_Choose_a_second_file_or_drop_it_here" xml:space="preserve">
+    <value>İkinci bir dosya seçin veya buraya sürükleyip bırakın</value>
+  </data>
+  <data name="HashCheckerWindow_Compare_two_files" xml:space="preserve">
+    <value>İki dosyayı karşılaştır</value>
+  </data>
+  <data name="HashCheckerWindow_File" xml:space="preserve">
+    <value>Dosya</value>
+  </data>
+  <data name="HashCheckerWindow_Files" xml:space="preserve">
+    <value>Dosyalar</value>
+  </data>
+  <data name="HashCheckerWindow_Hash_type" xml:space="preserve">
+    <value>Karma türü</value>
+  </data>
+  <data name="HashCheckerWindow_Paste_a_hash_to_compare" xml:space="preserve">
+    <value>Karşılaştırmak için bir karma yapıştırın</value>
+  </data>
+  <data name="HashCheckerWindow_Results" xml:space="preserve">
+    <value>Sonuçlar</value>
+  </data>
+  <data name="HashCheckerWindow_Second_file" xml:space="preserve">
+    <value>İkinci dosya</value>
+  </data>
+  <data name="HashCheckerWindow_ShareX_Hash_Checker" xml:space="preserve">
+    <value>ShareX - Karma Denetleyici</value>
+  </data>
+  <data name="HashCheckerWindow_Stop" xml:space="preserve">
+    <value>Durdur</value>
+  </data>
+  <data name="IconConverterService_Select_icon_size" xml:space="preserve">
+    <value>En az bir simge boyutu seçilmelidir.</value>
+  </data>
+  <data name="IconConverterService_Source_image_empty" xml:space="preserve">
+    <value>Kaynak görüntü boş.</value>
+  </data>
+  <data name="IconConverterService_Unsupported_icon_size" xml:space="preserve">
+    <value>Bir veya daha fazla simge boyutu desteklenmiyor.</value>
+  </data>
+  <data name="IconConverterViewModel_Creating_icon" xml:space="preserve">
+    <value>Simge oluşturuluyor...</value>
+  </data>
+  <data name="IconConverterViewModel_Drop_or_choose" xml:space="preserve">
+    <value>Buraya bir görüntü bırakın veya bir dosya seçin.</value>
+  </data>
+  <data name="IconConverterViewModel_Failed_create_icon" xml:space="preserve">
+    <value>Simge oluşturulamadı: {0}</value>
+  </data>
+  <data name="IconConverterViewModel_Failed_load_image" xml:space="preserve">
+    <value>Görüntü yüklenemedi: {0}</value>
+  </data>
+  <data name="IconConverterViewModel_Icon_saved" xml:space="preserve">
+    <value>Simge şuraya kaydedildi: {0}</value>
+  </data>
+  <data name="IconConverterViewModel_Image_dimensions" xml:space="preserve">
+    <value>{0} × {1} piksel</value>
+  </data>
+  <data name="IconConverterViewModel_Image_load_failed" xml:space="preserve">
+    <value>Seçilen dosya görüntü olarak yüklenemedi.</value>
+  </data>
+  <data name="IconConverterViewModel_Image_picker_unavailable" xml:space="preserve">
+    <value>Görüntü seçici kullanılamıyor.</value>
+  </data>
+  <data name="IconConverterViewModel_Save_dialog_unavailable" xml:space="preserve">
+    <value>Simge kaydetme iletişim kutusu kullanılamıyor.</value>
+  </data>
+  <data name="IconConverterViewModel_Select_image_dialog" xml:space="preserve">
+    <value>Görüntü seç</value>
+  </data>
+  <data name="IconConverterWindow_128_pixels" xml:space="preserve">
+    <value>128 piksel</value>
+  </data>
+  <data name="IconConverterWindow_16_pixels" xml:space="preserve">
+    <value>16 piksel</value>
+  </data>
+  <data name="IconConverterWindow_256_pixels" xml:space="preserve">
+    <value>256 piksel</value>
+  </data>
+  <data name="IconConverterWindow_32_bits_16_7M_colors" xml:space="preserve">
+    <value>32 bit (16,7 Mn renk)</value>
+  </data>
+  <data name="IconConverterWindow_32_pixels" xml:space="preserve">
+    <value>32 piksel</value>
+  </data>
+  <data name="IconConverterWindow_48_pixels" xml:space="preserve">
+    <value>48 piksel</value>
+  </data>
+  <data name="IconConverterWindow_64_pixels" xml:space="preserve">
+    <value>64 piksel</value>
+  </data>
+  <data name="IconConverterWindow_8_bits_256_colors" xml:space="preserve">
+    <value>8 bit (256 renk)</value>
+  </data>
+  <data name="IconConverterWindow_Bit_depth" xml:space="preserve">
+    <value>Bit derinliği</value>
+  </data>
+  <data name="IconConverterWindow_Browse" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="IconConverterWindow_Convert" xml:space="preserve">
+    <value>Dönüştür...</value>
+  </data>
+  <data name="IconConverterWindow_Drop_an_image_here" xml:space="preserve">
+    <value>Görüntüyü buraya bırakın</value>
+  </data>
+  <data name="IconConverterWindow_Icon_file" xml:space="preserve">
+    <value>Simge dosyası</value>
+  </data>
+  <data name="IconConverterWindow_Image" xml:space="preserve">
+    <value>Resim</value>
+  </data>
+  <data name="IconConverterWindow_or_use_Browse_to_choose_a_file" xml:space="preserve">
+    <value>veya dosya seçmek için Gözat'ı kullanın</value>
+  </data>
+  <data name="IconConverterWindow_Save_icon_as_dialog" xml:space="preserve">
+    <value>Simgeyi farklı kaydet</value>
+  </data>
+  <data name="IconConverterWindow_ShareX_Icon_Converter" xml:space="preserve">
+    <value>ShareX - Simge Dönüştürücü</value>
+  </data>
+  <data name="IconConverterWindow_Sizes" xml:space="preserve">
+    <value>Boyutlar</value>
+  </data>
+  <data name="ImageCombinerViewModel_Add_two_images" xml:space="preserve">
+    <value>Birleştirmek için en az iki görüntü ekleyin.</value>
+  </data>
+  <data name="ImageCombinerViewModel_Bottom" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="ImageCombinerViewModel_Center" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="ImageCombinerViewModel_Combine_failed" xml:space="preserve">
+    <value>Görüntüler birleştirilemedi: {0}</value>
+  </data>
+  <data name="ImageCombinerViewModel_Combining_images" xml:space="preserve">
+    <value>Görüntüler birleştiriliyor...</value>
+  </data>
+  <data name="ImageCombinerViewModel_Image_count" xml:space="preserve">
+    <value>{0} görüntü</value>
+  </data>
+  <data name="ImageCombinerViewModel_Images_combined" xml:space="preserve">
+    <value>Görüntüler birleştirildi ve yapılandırılmış yakalama sonrası iş akışına gönderildi.</value>
+  </data>
+  <data name="ImageCombinerViewModel_Left" xml:space="preserve">
+    <value>Sol</value>
+  </data>
+  <data name="ImageCombinerViewModel_One_image" xml:space="preserve">
+    <value>{0} görüntü</value>
+  </data>
+  <data name="ImageCombinerViewModel_Preview_failed" xml:space="preserve">
+    <value>Önizleme başarısız: {0}</value>
+  </data>
+  <data name="ImageCombinerViewModel_Previewing" xml:space="preserve">
+    <value>{0} önizleniyor.</value>
+  </data>
+  <data name="ImageCombinerViewModel_Right" xml:space="preserve">
+    <value>Sağ</value>
+  </data>
+  <data name="ImageCombinerViewModel_Top" xml:space="preserve">
+    <value>Üst</value>
+  </data>
+  <data name="ImageCombinerWindow_Add" xml:space="preserve">
+    <value>Ekle...</value>
+  </data>
+  <data name="ImageCombinerWindow_Add_at_least_two_images_to_preview" xml:space="preserve">
+    <value>Önizlemek için en az iki görüntü ekleyin</value>
+  </data>
+  <data name="ImageCombinerWindow_Add_images_dialog" xml:space="preserve">
+    <value>Görüntü ekle</value>
+  </data>
+  <data name="ImageCombinerWindow_Alignment" xml:space="preserve">
+    <value>Hizalama</value>
+  </data>
+  <data name="ImageCombinerWindow_Auto_fill_background" xml:space="preserve">
+    <value>Arka planı otomatik doldur</value>
+  </data>
+  <data name="ImageCombinerWindow_Combine_images" xml:space="preserve">
+    <value>Görüntüleri birleştir</value>
+  </data>
+  <data name="ImageCombinerWindow_Drop_images_here_or_use_the_Add_button" xml:space="preserve">
+    <value>Görüntüleri buraya bırakın veya Ekle düğmesini kullanın</value>
+  </data>
+  <data name="ImageCombinerWindow_Horizontal" xml:space="preserve">
+    <value>Yatay</value>
+  </data>
+  <data name="ImageCombinerWindow_Layout" xml:space="preserve">
+    <value>Düzen</value>
+  </data>
+  <data name="ImageCombinerWindow_Orientation" xml:space="preserve">
+    <value>Yön</value>
+  </data>
+  <data name="ImageCombinerWindow_ShareX_Image_Combiner" xml:space="preserve">
+    <value>ShareX - Görüntü Birleştirici</value>
+  </data>
+  <data name="ImageCombinerWindow_Spacing" xml:space="preserve">
+    <value>Aralık</value>
+  </data>
+  <data name="ImageCombinerWindow_Vertical" xml:space="preserve">
+    <value>Dikey</value>
+  </data>
+  <data name="ImageCombinerWindow_Wrap_after" xml:space="preserve">
+    <value>Şundan sonra yeni satıra geçir</value>
+  </data>
+  <data name="ImageComparerViewModel_Failed_load_image" xml:space="preserve">
+    <value>Görüntü yüklenemedi: {0}</value>
+  </data>
+  <data name="ImageComparerViewModel_Image_load_failed" xml:space="preserve">
+    <value>Seçilen dosya görüntü olarak yüklenemedi.</value>
+  </data>
+  <data name="ImageComparerViewModel_Image_picker_unavailable" xml:space="preserve">
+    <value>Görüntü seçici kullanılamıyor.</value>
+  </data>
+  <data name="ImageComparerViewModel_Pixels_match" xml:space="preserve">
+    <value>{0:N0}/{1:N0} piksel eşleşiyor.</value>
+  </data>
+  <data name="ImageComparerViewModel_Select_image_dialog" xml:space="preserve">
+    <value>{0}. görüntüyü seç</value>
+  </data>
+  <data name="ImageComparerViewModel_Select_two_images" xml:space="preserve">
+    <value>Karşılaştırmak için iki görüntü seçin.</value>
+  </data>
+  <data name="ImageComparerViewModel_Similarity_empty" xml:space="preserve">
+    <value>Benzerlik: -</value>
+  </data>
+  <data name="ImageComparerViewModel_Similarity_value" xml:space="preserve">
+    <value>Benzerlik: %{0:0.##}</value>
+  </data>
+  <data name="ImageComparerWindow_Choose" xml:space="preserve">
+    <value>Seç...</value>
+  </data>
+  <data name="ImageComparerWindow_Diff_View" xml:space="preserve">
+    <value>Fark görünümü</value>
+  </data>
+  <data name="ImageComparerWindow_Image_1" xml:space="preserve">
+    <value>Görüntü 1</value>
+  </data>
+  <data name="ImageComparerWindow_Image_2" xml:space="preserve">
+    <value>Görüntü 2</value>
+  </data>
+  <data name="ImageComparerWindow_Select_Image_1_and_Image_2_to_show_the_comparison_preview" xml:space="preserve">
+    <value>Karşılaştırma önizlemesini göstermek için Görüntü 1 ve Görüntü 2'yi seçin.</value>
+  </data>
+  <data name="ImageComparerWindow_ShareX_Image_Comparer" xml:space="preserve">
+    <value>ShareX - Görüntü Karşılaştırıcı</value>
+  </data>
+  <data name="ImageComparerWindow_Slider" xml:space="preserve">
+    <value>Kaydırıcı</value>
+  </data>
+  <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
+    <value>{0} × {1}</value>
+  </data>
+  <data name="ImageSplitterWindow_Browse" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="ImageSplitterWindow_Choose_image_dialog" xml:space="preserve">
+    <value>Görüntü seç</value>
+  </data>
+  <data name="ImageSplitterWindow_Choose_output_folder_dialog" xml:space="preserve">
+    <value>Çıktı klasörü seç</value>
+  </data>
+  <data name="ImageSplitterWindow_Columns" xml:space="preserve">
+    <value>Sütunlar</value>
+  </data>
+  <data name="ImageSplitterWindow_Image" xml:space="preserve">
+    <value>Resim</value>
+  </data>
+  <data name="ImageSplitterWindow_Output_folder" xml:space="preserve">
+    <value>Çıktı klasörü</value>
+  </data>
+  <data name="ImageSplitterWindow_Rows" xml:space="preserve">
+    <value>Satırlar</value>
+  </data>
+  <data name="ImageSplitterWindow_ShareX_Image_Splitter" xml:space="preserve">
+    <value>ShareX - Görüntü Bölücü</value>
+  </data>
+  <data name="ImageSplitterWindow_Split_image" xml:space="preserve">
+    <value>Görüntüyü böl</value>
+  </data>
+  <data name="ImageSplitterWindow_Split_layout" xml:space="preserve">
+    <value>Bölme düzeni</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generated_many" xml:space="preserve">
+    <value>{0} küçük resim oluşturuldu.</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generated_one" xml:space="preserve">
+    <value>{0} küçük resim oluşturuldu.</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generating" xml:space="preserve">
+    <value>Küçük resimler oluşturuluyor...</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generation_failed" xml:space="preserve">
+    <value>Oluşturma başarısız: {0}</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Image_count" xml:space="preserve">
+    <value>{0} görüntü</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_One_image" xml:space="preserve">
+    <value>{0} görüntü</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Add" xml:space="preserve">
+    <value>Ekle...</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Add_images_dialog" xml:space="preserve">
+    <value>Görüntü ekle</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Browse" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Choose_output_folder_dialog" xml:space="preserve">
+    <value>Çıktı klasörü seç</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Drop_images_here_or_use_the_Add_button" xml:space="preserve">
+    <value>Görüntüleri buraya bırakın veya Ekle düğmesini kullanın</value>
+  </data>
+  <data name="ImageThumbnailerWindow_File_name_template" xml:space="preserve">
+    <value>Dosya adı şablonu</value>
+  </data>
+  <data name="ImageThumbnailerWindow_filename_th" xml:space="preserve">
+    <value>$filename_th</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Generate_thumbnails" xml:space="preserve">
+    <value>Küçük resimler oluştur</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Height" xml:space="preserve">
+    <value>Yükseklik</value>
+  </data>
+  <data name="ImageThumbnailerWindow_JPEG_quality" xml:space="preserve">
+    <value>JPEG kalitesi</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Output" xml:space="preserve">
+    <value>Çıktı</value>
+  </data>
+  <data name="ImageThumbnailerWindow_ShareX_Image_Thumbnailer" xml:space="preserve">
+    <value>ShareX - Görüntü Küçük Resim Oluşturucu</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Thumbnail_size" xml:space="preserve">
+    <value>Küçük resim boyutu</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Width" xml:space="preserve">
+    <value>Genişlik</value>
+  </data>
+  <data name="IndexerHtml_File_count" xml:space="preserve">
+    <value>{0:n0} dosya</value>
+  </data>
+  <data name="IndexerHtml_Folder_count" xml:space="preserve">
+    <value>{0:n0} klasör</value>
+  </data>
+  <data name="IndexerHtml_Generated_by_on" xml:space="preserve">
+    <value>{0} tarafından {1:yyyy-MM-dd 'at' HH:mm:ss 'UTC'} tarihinde oluşturuldu</value>
+  </data>
+  <data name="IndexerHtml_Index_for" xml:space="preserve">
+    <value>{0} dizini</value>
+  </data>
+  <data name="IndexerHtml_One_file" xml:space="preserve">
+    <value>{0:n0} dosya</value>
+  </data>
+  <data name="IndexerHtml_One_folder" xml:space="preserve">
+    <value>{0:n0} klasör</value>
+  </data>
+  <data name="IndexerText_Generated_by" xml:space="preserve">
+    <value>ShareX Dizin Oluşturucu tarafından {0:yyyy-MM-dd 'at' HH:mm:ss 'UTC'} tarihinde oluşturuldu. En son sürüm şuradan indirilebilir: {1}</value>
+  </data>
+  <data name="InspectWindowPickerOverlay_Click_control" xml:space="preserve">
+    <value>İncelemek için bir denetime tıklayın  |  İptal etmek için Esc'ye basın</value>
+  </data>
+  <data name="InspectWindowPickerOverlay_Click_window" xml:space="preserve">
+    <value>İncelemek için bir pencereye tıklayın  |  İptal etmek için Esc'ye basın</value>
+  </data>
+  <data name="InspectWindowViewModel_Class_name" xml:space="preserve">
+    <value>Sınıf adı</value>
+  </data>
+  <data name="InspectWindowViewModel_Client_rectangle" xml:space="preserve">
+    <value>İstemci dikdörtgeni</value>
+  </data>
+  <data name="InspectWindowViewModel_Control" xml:space="preserve">
+    <value>Denetim</value>
+  </data>
+  <data name="InspectWindowViewModel_Extended_window_styles" xml:space="preserve">
+    <value>Genişletilmiş pencere stilleri</value>
+  </data>
+  <data name="InspectWindowViewModel_No_target_selected" xml:space="preserve">
+    <value>Hedef seçilmedi</value>
+  </data>
+  <data name="InspectWindowViewModel_Pick_target" xml:space="preserve">
+    <value>Özelliklerini incelemek için bir pencere veya denetim seçin</value>
+  </data>
+  <data name="InspectWindowViewModel_Process_file_name" xml:space="preserve">
+    <value>İşlem dosyası adı</value>
+  </data>
+  <data name="InspectWindowViewModel_Process_identifier" xml:space="preserve">
+    <value>İşlem tanımlayıcısı</value>
+  </data>
+  <data name="InspectWindowViewModel_Process_name" xml:space="preserve">
+    <value>İşlem adı</value>
+  </data>
+  <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
+    <value>X: {0}  Y: {1}  |  Genişlik: {2}  Yükseklik: {3}</value>
+  </data>
+  <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
+    <value>Başlıksız pencere</value>
+  </data>
+  <data name="InspectWindowViewModel_Window" xml:space="preserve">
+    <value>Pencere</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_handle" xml:space="preserve">
+    <value>Pencere tutamacı</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_rectangle" xml:space="preserve">
+    <value>Pencere dikdörtgeni</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_styles" xml:space="preserve">
+    <value>Pencere stilleri</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_title" xml:space="preserve">
+    <value>Pencere başlığı</value>
+  </data>
+  <data name="InspectWindowWindow_Always_on_top" xml:space="preserve">
+    <value>Her zaman üstte</value>
+  </data>
+  <data name="InspectWindowWindow_Copy_all" xml:space="preserve">
+    <value>Tümünü kopyala</value>
+  </data>
+  <data name="InspectWindowWindow_Opacity" xml:space="preserve">
+    <value>Opaklık</value>
+  </data>
+  <data name="InspectWindowWindow_Pick_a_target_to_inspect_its_window_properties" xml:space="preserve">
+    <value>Pencere özelliklerini incelemek için bir hedef seçin</value>
+  </data>
+  <data name="InspectWindowWindow_Pick_control" xml:space="preserve">
+    <value>Denetim seç</value>
+  </data>
+  <data name="InspectWindowWindow_Pick_window" xml:space="preserve">
+    <value>Pencere seç</value>
+  </data>
+  <data name="InspectWindowWindow_Refresh" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="InspectWindowWindow_Select_window" xml:space="preserve">
+    <value>Pencere seç</value>
+  </data>
+  <data name="InspectWindowWindow_ShareX_Inspect_Window" xml:space="preserve">
+    <value>ShareX - Pencereyi İncele</value>
+  </data>
+  <data name="InspectWindowWindow_Window_information" xml:space="preserve">
+    <value>Pencere bilgileri</value>
+  </data>
+  <data name="InspectWindowWindow_Window_settings" xml:space="preserve">
+    <value>Pencere ayarları</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Automatic" xml:space="preserve">
+    <value>Otomatik</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Backward_diagonal" xml:space="preserve">
+    <value>Geri çapraz</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Checkerboard" xml:space="preserve">
+    <value>Dama tahtası</value>
+  </data>
+  <data name="LocalizedDisplayConverter_CPU" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Forward_diagonal" xml:space="preserve">
+    <value>İleri çapraz</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Gemini" xml:space="preserve">
+    <value>Gemini</value>
+  </data>
+  <data name="LocalizedDisplayConverter_GPU" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="LocalizedDisplayConverter_High" xml:space="preserve">
+    <value>Yüksek</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Horizontal" xml:space="preserve">
+    <value>Yatay</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Horizontal_bars" xml:space="preserve">
+    <value>Yatay çubuklar</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Horizontal_lines" xml:space="preserve">
+    <value>Yatay çizgiler</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Low" xml:space="preserve">
+    <value>Düşük</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Medium" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Minimal" xml:space="preserve">
+    <value>En az</value>
+  </data>
+  <data name="LocalizedDisplayConverter_OpenAI" xml:space="preserve">
+    <value>OpenAI</value>
+  </data>
+  <data name="LocalizedDisplayConverter_OpenAI_legacy" xml:space="preserve">
+    <value>OpenAI (eski)</value>
+  </data>
+  <data name="LocalizedDisplayConverter_OpenRouter" xml:space="preserve">
+    <value>OpenRouter</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Vertical" xml:space="preserve">
+    <value>Dikey</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Vertical_bars" xml:space="preserve">
+    <value>Dikey çubuklar</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Vertical_lines" xml:space="preserve">
+    <value>Dikey çizgiler</value>
+  </data>
+  <data name="MetadataService_ExifTool_not_found" xml:space="preserve">
+    <value>ExifTool bulunamadı.</value>
+  </data>
+  <data name="MetadataService_Exited_with_code" xml:space="preserve">
+    <value>ExifTool {0} koduyla sonlandı.</value>
+  </data>
+  <data name="MetadataService_Failed_start_ExifTool" xml:space="preserve">
+    <value>ExifTool başlatılamadı.</value>
+  </data>
+  <data name="MetadataService_Selected_file_not_found" xml:space="preserve">
+    <value>Seçilen dosya bulunamadı.</value>
+  </data>
+  <data name="MetadataViewModel_No_file_selected" xml:space="preserve">
+    <value>Dosya seçilmedi</value>
+  </data>
+  <data name="MetadataViewModel_No_metadata" xml:space="preserve">
+    <value>Bu dosyada meta veri bulunamadı</value>
+  </data>
+  <data name="MetadataViewModel_No_search_matches" xml:space="preserve">
+    <value>Geçerli aramayla eşleşen meta veri yok</value>
+  </data>
+  <data name="MetadataViewModel_One_tag" xml:space="preserve">
+    <value>1 etiket</value>
+  </data>
+  <data name="MetadataViewModel_Open_or_drop" xml:space="preserve">
+    <value>Meta verilerini incelemek için bir dosya açın veya bırakın</value>
+  </data>
+  <data name="MetadataViewModel_Open_or_drop_supported" xml:space="preserve">
+    <value>Desteklenen herhangi bir dosyayı açın veya bırakın</value>
+  </data>
+  <data name="MetadataViewModel_Reading_metadata" xml:space="preserve">
+    <value>Meta veriler okunuyor...</value>
+  </data>
+  <data name="MetadataViewModel_Tag_count" xml:space="preserve">
+    <value>{0:N0} etiket</value>
+  </data>
+  <data name="MetadataViewModel_Unable_read" xml:space="preserve">
+    <value>Meta veriler okunamadı
+{0}</value>
+  </data>
+  <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
+    <value>Meta veriler kaldırılamadı
+{0}</value>
+  </data>
+  <data name="MetadataViewModel_Window_title" xml:space="preserve">
+    <value>ShareX - Meta Veriler</value>
+  </data>
+  <data name="MetadataViewModel_Window_title_file" xml:space="preserve">
+    <value>ShareX - Meta Veriler - {0}</value>
+  </data>
+  <data name="MetadataWindow_Cancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="MetadataWindow_Copy_all" xml:space="preserve">
+    <value>Tümünü kopyala</value>
+  </data>
+  <data name="MetadataWindow_Metadata" xml:space="preserve">
+    <value>Meta veriler</value>
+  </data>
+  <data name="MetadataWindow_Open" xml:space="preserve">
+    <value>Aç...</value>
+  </data>
+  <data name="MetadataWindow_Open_file_dialog" xml:space="preserve">
+    <value>Dosyayı aç</value>
+  </data>
+  <data name="MetadataWindow_Search_metadata" xml:space="preserve">
+    <value>Meta verilerde ara</value>
+  </data>
+  <data name="MetadataWindow_Strip_all_metadata" xml:space="preserve">
+    <value>Tüm meta veriler kaldırılsın mı?</value>
+  </data>
+  <data name="MetadataWindow_Strip_metadata" xml:space="preserve">
+    <value>Meta verileri kaldır...</value>
+  </data>
+  <data name="MetadataWindow_Strip_metadata_2" xml:space="preserve">
+    <value>Meta verileri kaldır</value>
+  </data>
+  <data name="MetadataWindow_This_permanently_removes_all_non_essential_metadata_from_the_selected_file_This_action_cannot_be_undone" xml:space="preserve">
+    <value>Bu işlem, seçilen dosyadaki gerekli olmayan tüm meta verileri kalıcı olarak kaldırır. Bu işlem geri alınamaz.</value>
+  </data>
+  <data name="MonitorTestWindow_Blue" xml:space="preserve">
+    <value>Mavi</value>
+  </data>
+  <data name="MonitorTestWindow_Brightness" xml:space="preserve">
+    <value>Parlaklık</value>
+  </data>
+  <data name="MonitorTestWindow_Cell_size" xml:space="preserve">
+    <value>Hücre boyutu</value>
+  </data>
+  <data name="MonitorTestWindow_Choose_a_test_pattern_and_adjust_its_properties" xml:space="preserve">
+    <value>Bir test deseni seçin ve özelliklerini ayarlayın</value>
+  </data>
+  <data name="MonitorTestWindow_Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="MonitorTestWindow_Color" xml:space="preserve">
+    <value>Renk</value>
+  </data>
+  <data name="MonitorTestWindow_Colors" xml:space="preserve">
+    <value>Renkler</value>
+  </data>
+  <data name="MonitorTestWindow_Direction" xml:space="preserve">
+    <value>Yön</value>
+  </data>
+  <data name="MonitorTestWindow_Gradient" xml:space="preserve">
+    <value>Gradyan</value>
+  </data>
+  <data name="MonitorTestWindow_Grayscale" xml:space="preserve">
+    <value>Gri tonlama</value>
+  </data>
+  <data name="MonitorTestWindow_Green" xml:space="preserve">
+    <value>Yeşil</value>
+  </data>
+  <data name="MonitorTestWindow_Monitor_test" xml:space="preserve">
+    <value>Monitör testi</value>
+  </data>
+  <data name="MonitorTestWindow_Motion" xml:space="preserve">
+    <value>Hareket</value>
+  </data>
+  <data name="MonitorTestWindow_Pattern" xml:space="preserve">
+    <value>Desen</value>
+  </data>
+  <data name="MonitorTestWindow_Red" xml:space="preserve">
+    <value>Kırmızı</value>
+  </data>
+  <data name="MonitorTestWindow_RGB" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="MonitorTestWindow_ShareX_Monitor_Test" xml:space="preserve">
+    <value>ShareX - Monitör Testi</value>
+  </data>
+  <data name="MonitorTestWindow_Speed" xml:space="preserve">
+    <value>Hız</value>
+  </data>
+  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
+    <value>{0} dili bu sistemde OCR için kullanılamıyor.</value>
+  </data>
+  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
+    <value>Optik karakter tanıma yalnızca Windows {0} veya daha yeni sürümlerde kullanılabilir.</value>
+  </data>
+  <data name="OCROptions_Bing" xml:space="preserve">
+    <value>Bing</value>
+  </data>
+  <data name="OCROptions_DeepL" xml:space="preserve">
+    <value>DeepL</value>
+  </data>
+  <data name="OCROptions_DuckDuckGo" xml:space="preserve">
+    <value>DuckDuckGo</value>
+  </data>
+  <data name="OCROptions_Google_Images" xml:space="preserve">
+    <value>Google Görseller</value>
+  </data>
+  <data name="OCROptions_Google_Search" xml:space="preserve">
+    <value>Google Arama</value>
+  </data>
+  <data name="OCROptions_Google_Translate" xml:space="preserve">
+    <value>Google Çeviri</value>
+  </data>
+  <data name="OCRViewModel_New_service_name" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="OCRWindow_Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="OCRWindow_Close_after_opening" xml:space="preserve">
+    <value>Açtıktan sonra kapat</value>
+  </data>
+  <data name="OCRWindow_Copy_all" xml:space="preserve">
+    <value>Tümünü kopyala</value>
+  </data>
+  <data name="OCRWindow_Copy_recognized_text_automatically" xml:space="preserve">
+    <value>Tanınan metni otomatik kopyala</value>
+  </data>
+  <data name="OCRWindow_Edit_services" xml:space="preserve">
+    <value>Hizmetleri düzenle</value>
+  </data>
+  <data name="OCRWindow_Language" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="OCRWindow_Name" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="OCRWindow_New" xml:space="preserve">
+    <value>Yeni</value>
+  </data>
+  <data name="OCRWindow_OCR_help" xml:space="preserve">
+    <value>OCR yardımı</value>
+  </data>
+  <data name="OCRWindow_Open_service" xml:space="preserve">
+    <value>Hizmeti aç...</value>
+  </data>
+  <data name="OCRWindow_Recognition" xml:space="preserve">
+    <value>Tanıma</value>
+  </data>
+  <data name="OCRWindow_Remove" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="OCRWindow_Reset" xml:space="preserve">
+    <value>Sıfırla</value>
+  </data>
+  <data name="OCRWindow_Result" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="OCRWindow_Scale_factor" xml:space="preserve">
+    <value>Ölçek katsayısı</value>
+  </data>
+  <data name="OCRWindow_Select_a_service" xml:space="preserve">
+    <value>Bir hizmet seçin</value>
+  </data>
+  <data name="OCRWindow_Select_image" xml:space="preserve">
+    <value>Görüntü seç...</value>
+  </data>
+  <data name="OCRWindow_Select_image_dialog" xml:space="preserve">
+    <value>Görüntü seç</value>
+  </data>
+  <data name="OCRWindow_Select_region" xml:space="preserve">
+    <value>Bölge seç...</value>
+  </data>
+  <data name="OCRWindow_Services" xml:space="preserve">
+    <value>Hizmetler</value>
+  </data>
+  <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
+    <value>ShareX - Optik Karakter Tanıma</value>
+  </data>
+  <data name="OCRWindow_Single_line" xml:space="preserve">
+    <value>Tek satır</value>
+  </data>
+  <data name="OCRWindow_URL" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="OCRWindow_Use_0_where_the_recognized_text_belongs" xml:space="preserve">
+    <value>Tanınan metnin geleceği yerde {0} kullanın</value>
+  </data>
+  <data name="OpenRouterProvider_API_error" xml:space="preserve">
+    <value>OpenRouter API hatası: {0}</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Bottom_center" xml:space="preserve">
+    <value>Alt orta</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Bottom_left" xml:space="preserve">
+    <value>Sol alt</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Bottom_right" xml:space="preserve">
+    <value>Sağ alt</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Center" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Middle_left" xml:space="preserve">
+    <value>Sol orta</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Middle_right" xml:space="preserve">
+    <value>Sağ orta</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Top_center" xml:space="preserve">
+    <value>Üst orta</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Top_left" xml:space="preserve">
+    <value>Sol üst</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Top_right" xml:space="preserve">
+    <value>Sağ üst</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Always_on_top" xml:space="preserve">
+    <value>Her zaman üstte</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Appearance" xml:space="preserve">
+    <value>Görünüm</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Background_color" xml:space="preserve">
+    <value>Arka plan rengi</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Border_color" xml:space="preserve">
+    <value>Kenarlık rengi</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Border_size" xml:space="preserve">
+    <value>Kenarlık boyutu</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Cancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Default_position" xml:space="preserve">
+    <value>Varsayılan konum</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_High_quality_scaling" xml:space="preserve">
+    <value>Yüksek kaliteli ölçekleme</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Image_border" xml:space="preserve">
+    <value>Görüntü kenarlığı</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Initial_opacity" xml:space="preserve">
+    <value>Başlangıç opaklığı</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Initial_scale" xml:space="preserve">
+    <value>Başlangıç ölçeği</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Keep_center_while_resizing" xml:space="preserve">
+    <value>Yeniden boyutlandırırken merkezi koru</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Minimized_preview" xml:space="preserve">
+    <value>Simge durumuna küçültülmüş önizleme</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Mouse_wheel_changes_scale_Ctrl_mouse_wheel_changes_opacity" xml:space="preserve">
+    <value>Fare tekerleği ölçeği, Ctrl + fare tekerleği opaklığı değiştirir.</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Opacity_step" xml:space="preserve">
+    <value>Opaklık adımı</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Placement" xml:space="preserve">
+    <value>Yerleşim</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Preview_size" xml:space="preserve">
+    <value>Önizleme boyutu</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Scale_step" xml:space="preserve">
+    <value>Ölçek adımı</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Screen_edge_offset" xml:space="preserve">
+    <value>Ekran kenarı uzaklığı</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_ShareX_Pin_to_Screen_options" xml:space="preserve">
+    <value>ShareX - Ekrana Sabitleme seçenekleri</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Size_and_opacity" xml:space="preserve">
+    <value>Boyut ve opaklık</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
+    <value>Pencere gölgesi</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
+    <value>Panoda görüntü yok.</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_No_image_selected" xml:space="preserve">
+    <value>Görüntü seçilmedi.</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_No_region_selected" xml:space="preserve">
+    <value>Bölge seçilmedi.</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_Unable_load_image" xml:space="preserve">
+    <value>Görüntü yüklenemedi. {0}</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Choose_an_image" xml:space="preserve">
+    <value>Bir görüntü seçin</value>
+  </data>
+  <data name="PinToScreenStartupWindow_From_clipboard" xml:space="preserve">
+    <value>Panodan</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Pin_an_image_above_your_other_windows_for_quick_reference" xml:space="preserve">
+    <value>Hızlı başvuru için bir görüntüyü diğer pencerelerinizin üzerinde sabitleyin.</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Select_image" xml:space="preserve">
+    <value>Görüntü seç...</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Select_region" xml:space="preserve">
+    <value>Bölge seç...</value>
+  </data>
+  <data name="PinToScreenStartupWindow_ShareX_Pin_to_Screen" xml:space="preserve">
+    <value>ShareX - Ekrana Sabitle</value>
+  </data>
+  <data name="PinToScreenWindow_Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="PinToScreenWindow_Copy_image" xml:space="preserve">
+    <value>Görseli kopyala</value>
+  </data>
+  <data name="PinToScreenWindow_Options" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="PinToScreenWindow_Pinned_image" xml:space="preserve">
+    <value>Sabitlenmiş görüntü</value>
+  </data>
+  <data name="PinToScreenWindow_Reset_scale_and_opacity" xml:space="preserve">
+    <value>Ölçeği ve opaklığı sıfırla</value>
+  </data>
+  <data name="QRCodeViewModel_Content_too_large" xml:space="preserve">
+    <value>İçerik bir QR kodu için çok büyük.</value>
+  </data>
+  <data name="QRCodeViewModel_Decoded_many" xml:space="preserve">
+    <value>{0} değer çözüldü.</value>
+  </data>
+  <data name="QRCodeViewModel_Decoded_one" xml:space="preserve">
+    <value>{0} değer çözüldü.</value>
+  </data>
+  <data name="QRCodeViewModel_Generation_failed" xml:space="preserve">
+    <value>QR kodu oluşturulamadı: {0}</value>
+  </data>
+  <data name="QRCodeViewModel_No_QR_code" xml:space="preserve">
+    <value>QR kodu bulunamadı.</value>
+  </data>
+  <data name="QRCodeViewModel_QRCode_saved" xml:space="preserve">
+    <value>QR kodu kaydedildi.</value>
+  </data>
+  <data name="QRCodeViewModel_Unable_generate" xml:space="preserve">
+    <value>Bu içerikten QR kodu oluşturulamadı.</value>
+  </data>
+  <data name="QRCodeWindow_Bitmap_image" xml:space="preserve">
+    <value>Bit eşlem görüntüsü</value>
+  </data>
+  <data name="QRCodeWindow_Content" xml:space="preserve">
+    <value>İçerik</value>
+  </data>
+  <data name="QRCodeWindow_Copy_image" xml:space="preserve">
+    <value>Görseli kopyala</value>
+  </data>
+  <data name="QRCodeWindow_Enter_content_to_generate_a_QR_code" xml:space="preserve">
+    <value>QR kodu oluşturmak için içerik girin</value>
+  </data>
+  <data name="QRCodeWindow_Enter_text_or_a_URL_to_encode" xml:space="preserve">
+    <value>Kodlanacak metni veya URL'yi girin</value>
+  </data>
+  <data name="QRCodeWindow_Image_viewer_title" xml:space="preserve">
+    <value>QR Kodu</value>
+  </data>
+  <data name="QRCodeWindow_JPEG_image" xml:space="preserve">
+    <value>JPEG görüntüsü</value>
+  </data>
+  <data name="QRCodeWindow_PNG_image" xml:space="preserve">
+    <value>PNG görüntüsü</value>
+  </data>
+  <data name="QRCodeWindow_px" xml:space="preserve">
+    <value>px</value>
+  </data>
+  <data name="QRCodeWindow_QR_code_size" xml:space="preserve">
+    <value>QR kodu boyutu</value>
+  </data>
+  <data name="QRCodeWindow_Save" xml:space="preserve">
+    <value>Kaydet...</value>
+  </data>
+  <data name="QRCodeWindow_Save_QR_code_dialog" xml:space="preserve">
+    <value>QR kodunu kaydet</value>
+  </data>
+  <data name="QRCodeWindow_Scan_image" xml:space="preserve">
+    <value>Görüntüyü tara...</value>
+  </data>
+  <data name="QRCodeWindow_Scan_region" xml:space="preserve">
+    <value>Bölgeyi tara...</value>
+  </data>
+  <data name="QRCodeWindow_Scan_screen" xml:space="preserve">
+    <value>Ekranı tara</value>
+  </data>
+  <data name="QRCodeWindow_Select_image_dialog" xml:space="preserve">
+    <value>QR kodu içeren görüntüyü seçin</value>
+  </data>
+  <data name="QRCodeWindow_ShareX_QR_Code" xml:space="preserve">
+    <value>ShareX - QR Kodu</value>
+  </data>
+  <data name="QRCodeWindow_SVG_image" xml:space="preserve">
+    <value>SVG görüntüsü</value>
+  </data>
+  <data name="QRCodeWindow_Upload" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="RulerViewModel_Details" xml:space="preserve">
+    <value>Alan: {0:N0} px²  |  Çevre: {1:N0} px  |  Uzaklık: {2:0.00} px  |  Açı: {3:0.00}°</value>
+  </data>
+  <data name="RulerViewModel_Position" xml:space="preserve">
+    <value>X: {0}  Y: {1}  |  Sağ: {2}  Alt: {3}  |  Genişlik: {4} px  Yükseklik: {5} px</value>
+  </data>
+  <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
+    <value>ShareX - Cetvel</value>
+  </data>
+  <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
+    <value>Başlamak için bir video seçin.</value>
+  </data>
+  <data name="VideoConverterViewModel_Choose_video_or_animation" xml:space="preserve">
+    <value>Başlamak için bir video veya animasyon seçin.</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_complete" xml:space="preserve">
+    <value>Dönüştürme tamamlandı: {0}</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_failed" xml:space="preserve">
+    <value>Video dönüştürme başarısız.</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_failed_message" xml:space="preserve">
+    <value>Video dönüştürme başarısız: {0}</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_stopped" xml:space="preserve">
+    <value>Dönüştürme durduruldu.</value>
+  </data>
+  <data name="VideoConverterViewModel_Converting" xml:space="preserve">
+    <value>Video dönüştürülüyor...</value>
+  </data>
+  <data name="VideoConverterViewModel_Enter_output_name" xml:space="preserve">
+    <value>Bir çıktı dosyası adı girin.</value>
+  </data>
+  <data name="VideoConverterViewModel_No_file_selected" xml:space="preserve">
+    <value>Dosya seçilmedi</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_existing_input" xml:space="preserve">
+    <value>Var olan bir giriş dosyası seçin.</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_existing_output" xml:space="preserve">
+    <value>Var olan bir çıktı klasörü seçin.</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_input_dialog" xml:space="preserve">
+    <value>Video veya animasyon seç</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_output_dialog" xml:space="preserve">
+    <value>Çıktı klasörü seç</value>
+  </data>
+  <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
+    <value>Dönüştürme durduruluyor...</value>
+  </data>
+  <data name="VideoConverterWindow_Browse" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="VideoConverterWindow_Choose_an_output_folder" xml:space="preserve">
+    <value>Bir çıktı klasörü seçin</value>
+  </data>
+  <data name="VideoConverterWindow_Constant_quality" xml:space="preserve">
+    <value>Sabit kalite</value>
+  </data>
+  <data name="VideoConverterWindow_Encoding" xml:space="preserve">
+    <value>Kodlama</value>
+  </data>
+  <data name="VideoConverterWindow_FFmpeg_unavailable" xml:space="preserve">
+    <value>FFmpeg kullanılamıyor.</value>
+  </data>
+  <data name="VideoConverterWindow_File_name" xml:space="preserve">
+    <value>Dosya adı</value>
+  </data>
+  <data name="VideoConverterWindow_Folder" xml:space="preserve">
+    <value>Klasör</value>
+  </data>
+  <data name="VideoConverterWindow_Higher_quality" xml:space="preserve">
+    <value>Daha yüksek kalite</value>
+  </data>
+  <data name="VideoConverterWindow_Input_file" xml:space="preserve">
+    <value>Giriş dosyası</value>
+  </data>
+  <data name="VideoConverterWindow_kbps" xml:space="preserve">
+    <value>kb/sn</value>
+  </data>
+  <data name="VideoConverterWindow_Open_the_output_folder_when_finished" xml:space="preserve">
+    <value>Tamamlandığında çıktı klasörünü aç</value>
+  </data>
+  <data name="VideoConverterWindow_Output" xml:space="preserve">
+    <value>Çıktı</value>
+  </data>
+  <data name="VideoConverterWindow_Quality" xml:space="preserve">
+    <value>Kalite</value>
+  </data>
+  <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
+    <value>ShareX - Video Dönüştürücü</value>
+  </data>
+  <data name="VideoConverterWindow_Smaller_file" xml:space="preserve">
+    <value>Daha küçük dosya</value>
+  </data>
+  <data name="VideoConverterWindow_Start_encoding" xml:space="preserve">
+    <value>Kodlamayı başlat</value>
+  </data>
+  <data name="VideoConverterWindow_Stop_encoding" xml:space="preserve">
+    <value>Kodlamayı durdur</value>
+  </data>
+  <data name="VideoConverterWindow_Target_bitrate" xml:space="preserve">
+    <value>Hedef bit hızı</value>
+  </data>
+  <data name="VideoConverterWindow_Use_a_target_bitrate" xml:space="preserve">
+    <value>Hedef bit hızı kullan</value>
+  </data>
+  <data name="VideoConverterWindow_Video_animation_files" xml:space="preserve">
+    <value>Video ve animasyon dosyaları</value>
+  </data>
+  <data name="VideoConverterWindow_Video_encoder" xml:space="preserve">
+    <value>Video kodlayıcı</value>
+  </data>
+  <data name="VideoConverterWindow_video_output" xml:space="preserve">
+    <value>video-output</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
+    <value>Özel klasör</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_Default_screenshots_folder" xml:space="preserve">
+    <value>Varsayılan ekran görüntüleri klasörü</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_No_thumbnails" xml:space="preserve">
+    <value>Küçük resim oluşturulmadı. Videonun geçerli olduğunu ve FFmpeg'in videoyu okuyabildiğini denetleyin.</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_Same_folder_as_video" xml:space="preserve">
+    <value>Videoyla aynı klasör</value>
+  </data>
+  <data name="VideoThumbnailerWindow_0_keeps_original_size" xml:space="preserve">
+    <value>0 özgün boyutu korur</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Add_video_information" xml:space="preserve">
+    <value>Video bilgilerini ekle</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Browse" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Choose_a_random_frame_for_each_thumbnail" xml:space="preserve">
+    <value>Her küçük resim için rastgele bir kare seç</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Choose_an_output_folder" xml:space="preserve">
+    <value>Bir çıktı klasörü seçin</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Columns" xml:space="preserve">
+    <value>Sütunlar</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Combined_contact_sheet" xml:space="preserve">
+    <value>Birleştirilmiş kontak sayfası</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Count" xml:space="preserve">
+    <value>Sayı</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Create_thumbnails" xml:space="preserve">
+    <value>Küçük resimler oluştur</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Draw_thumbnail_borders" xml:space="preserve">
+    <value>Küçük resim kenarlıklarını çiz</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Draw_thumbnail_shadows" xml:space="preserve">
+    <value>Küçük resim gölgelerini çiz</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Filename_suffix" xml:space="preserve">
+    <value>Dosya adı son eki</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Image_format" xml:space="preserve">
+    <value>Görüntü biçimi</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Keep_individual_screenshots" xml:space="preserve">
+    <value>Ayrı ekran görüntülerini koru</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Maximum_width" xml:space="preserve">
+    <value>En fazla genişlik</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Open_output_folder_when_finished" xml:space="preserve">
+    <value>Tamamlandığında çıktı klasörünü aç</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Outer_padding" xml:space="preserve">
+    <value>Dış dolgu</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Output" xml:space="preserve">
+    <value>Çıktı</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Save_to" xml:space="preserve">
+    <value>Kaydetme konumu</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Select_output_folder_dialog" xml:space="preserve">
+    <value>Çıktı klasörü seç</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Select_video_dialog" xml:space="preserve">
+    <value>Video seç</value>
+  </data>
+  <data name="VideoThumbnailerWindow_ShareX_Video_Thumbnailer" xml:space="preserve">
+    <value>ShareX - Video Küçük Resim Oluşturucu</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Show_timestamps" xml:space="preserve">
+    <value>Zaman damgalarını göster</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Thumbnail_spacing" xml:space="preserve">
+    <value>Küçük resim aralığı</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Thumbnails" xml:space="preserve">
+    <value>Küçük resimler</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Upload_created_thumbnails" xml:space="preserve">
+    <value>Oluşturulan küçük resimleri yükle</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
+    <value>Video dosyaları</value>
+  </data>
+</root>

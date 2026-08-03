@@ -31,4 +31,16 @@
   <ItemGroup>
     <EmbeddedResource Include="Tools\DirectoryIndexer\IndexerDefault.css" LogicalName="ShareX.Tools.DirectoryIndexer.IndexerDefault.css" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Localization\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Localization\Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

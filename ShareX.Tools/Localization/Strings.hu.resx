@@ -1,0 +1,1720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AIOptions_What_is_in_this_image" xml:space="preserve">
+    <value>Mi található ezen a képen?</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_Loading_models" xml:space="preserve">
+    <value>Modellek betöltése...</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_Models_loaded" xml:space="preserve">
+    <value>{0} modell betöltve.</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_No_models_found" xml:space="preserve">
+    <value>Nem találhatók modellek.</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_Testing" xml:space="preserve">
+    <value>Tesztelés...</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Analyze_automatically_when_opened" xml:space="preserve">
+    <value>Automatikus elemzés megnyitáskor</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_API_key" xml:space="preserve">
+    <value>API-kulcs</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_API_key_page" xml:space="preserve">
+    <value>API-kulcs oldala...</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Behavior" xml:space="preserve">
+    <value>Viselkedés</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Cancel" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Capture_a_region_when_opened_without_an_image" xml:space="preserve">
+    <value>Terület rögzítése, ha kép nélkül nyílik meg</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Copy_result_automatically" xml:space="preserve">
+    <value>Eredmény automatikus másolása</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Custom_base_URL" xml:space="preserve">
+    <value>Egyéni alap URL</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Get_API_key" xml:space="preserve">
+    <value>API-kulcs beszerzése</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Google_Gemini" xml:space="preserve">
+    <value>Google Gemini</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_https_api_openai_com" xml:space="preserve">
+    <value>https://api.openai.com</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Load_models" xml:space="preserve">
+    <value>Modellek betöltése</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Model" xml:space="preserve">
+    <value>Modell</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_OpenAI" xml:space="preserve">
+    <value>OpenAI</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_OpenRouter" xml:space="preserve">
+    <value>OpenRouter</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Provider" xml:space="preserve">
+    <value>Szolgáltató</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Reasoning" xml:space="preserve">
+    <value>Érvelés</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Save" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_ShareX_Analyze_image_options" xml:space="preserve">
+    <value>ShareX – Képelemzési beállítások</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Test_connection" xml:space="preserve">
+    <value>Kapcsolat tesztelése</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Verbosity" xml:space="preserve">
+    <value>Részletesség</value>
+  </data>
+  <data name="AnalyzeImageService_Connection_OK" xml:space="preserve">
+    <value>A kapcsolat rendben van.</value>
+  </data>
+  <data name="AnalyzeImageService_Missing_Gemini_API_key" xml:space="preserve">
+    <value>Hiányzik a Gemini API-kulcs.</value>
+  </data>
+  <data name="AnalyzeImageService_Missing_OpenAI_API_key" xml:space="preserve">
+    <value>Hiányzik az OpenAI API-kulcs.</value>
+  </data>
+  <data name="AnalyzeImageService_Missing_OpenRouter_API_key" xml:space="preserve">
+    <value>Hiányzik az OpenRouter API-kulcs.</value>
+  </data>
+  <data name="AnalyzeImageService_Select_provider_first" xml:space="preserve">
+    <value>Először válasszon szolgáltatót.</value>
+  </data>
+  <data name="AnalyzeImageService_Unable_to_create_request" xml:space="preserve">
+    <value>A kérés nem hozható létre.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Captured_region" xml:space="preserve">
+    <value>Rögzített terület</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Configure_API_key" xml:space="preserve">
+    <value>Az elemzés előtt állítson be egy API-kulcsot a Beállításokban.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Thinking" xml:space="preserve">
+    <value>Gondolkodás...</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Thoroughly_describe_this_image" xml:space="preserve">
+    <value>Írja le részletesen ezt a képet.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Time_ms" xml:space="preserve">
+    <value>Idő: {0:N0} ms</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Transcribe_image_text" xml:space="preserve">
+    <value>Írja át a képen lévő szöveget. Semmi mást ne írjon.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Translate_text_into_English" xml:space="preserve">
+    <value>Fordítsa le ezt a szöveget angolra. Semmi mást ne írjon.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_What_is_in_this_image" xml:space="preserve">
+    <value>Mi található ezen a képen?</value>
+  </data>
+  <data name="AnalyzeImageWindow_Analyze_image" xml:space="preserve">
+    <value>Kép elemzése</value>
+  </data>
+  <data name="AnalyzeImageWindow_Choose_a_preset_prompt" xml:space="preserve">
+    <value>Előre beállított utasítás kiválasztása</value>
+  </data>
+  <data name="AnalyzeImageWindow_Copy_all" xml:space="preserve">
+    <value>Összes másolása</value>
+  </data>
+  <data name="AnalyzeImageWindow_Image" xml:space="preserve">
+    <value>Kép</value>
+  </data>
+  <data name="AnalyzeImageWindow_Options" xml:space="preserve">
+    <value>Beállítások...</value>
+  </data>
+  <data name="AnalyzeImageWindow_Prompt" xml:space="preserve">
+    <value>Utasítás</value>
+  </data>
+  <data name="AnalyzeImageWindow_Result" xml:space="preserve">
+    <value>Eredmény</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_image" xml:space="preserve">
+    <value>Kép kiválasztása...</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_image_dialog" xml:space="preserve">
+    <value>Kép kiválasztása</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_or_drop_an_image" xml:space="preserve">
+    <value>Válasszon ki vagy húzzon ide egy képet</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_region" xml:space="preserve">
+    <value>Terület kijelölése...</value>
+  </data>
+  <data name="AnalyzeImageWindow_ShareX_Analyze_image" xml:space="preserve">
+    <value>ShareX – Képelemzés</value>
+  </data>
+  <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
+    <value>A háttér eltávolítása {0} ms alatt megtörtént.</value>
+  </data>
+  <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
+    <value>A kép mentve.\nFájl elérési útja: {0}</value>
+  </data>
+  <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
+    <value>Kép kiválasztása</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Background_removal_model" xml:space="preserve">
+    <value>Háttéreltávolító modell</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Browse" xml:space="preserve">
+    <value>Tallózás...</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Device" xml:space="preserve">
+    <value>Eszköz</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Image" xml:space="preserve">
+    <value>Kép</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Models" xml:space="preserve">
+    <value>Modellek</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Open_guide_page" xml:space="preserve">
+    <value>Útmutató oldal megnyitása...</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Open_models_folder" xml:space="preserve">
+    <value>Modellek mappájának megnyitása</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Processing_device" xml:space="preserve">
+    <value>Feldolgozóeszköz</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Refresh_models" xml:space="preserve">
+    <value>Modellek frissítése</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Remove_Background" xml:space="preserve">
+    <value>Háttér eltávolítása</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Save" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Save_as" xml:space="preserve">
+    <value>Mentés másként...</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Save_image_as_dialog" xml:space="preserve">
+    <value>Kép mentése másként</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Select_an_image_to_preview_it_here" xml:space="preserve">
+    <value>Válasszon ki egy képet az előnézethez.</value>
+  </data>
+  <data name="BackgroundRemoverWindow_ShareX_Background_Remover" xml:space="preserve">
+    <value>ShareX – Háttér eltávolítása</value>
+  </data>
+  <data name="BorderlessWindowViewModel_Unable_to_toggle" xml:space="preserve">
+    <value>A kijelölt ablak nem váltható át. {0}</value>
+  </data>
+  <data name="BorderlessWindowViewModel_Window_not_found" xml:space="preserve">
+    <value>Nem található a megadott című ablak.</value>
+  </data>
+  <data name="BorderlessWindowWindow_Close_after_toggling" xml:space="preserve">
+    <value>Bezárás az átváltás után</value>
+  </data>
+  <data name="BorderlessWindowWindow_Enter_a_window_title_manually" xml:space="preserve">
+    <value>Ablakcím kézi megadása</value>
+  </data>
+  <data name="BorderlessWindowWindow_Keep_taskbar_visible" xml:space="preserve">
+    <value>Tálca láthatóan tartása</value>
+  </data>
+  <data name="BorderlessWindowWindow_Options" xml:space="preserve">
+    <value>Beállítások</value>
+  </data>
+  <data name="BorderlessWindowWindow_Remember_window_title" xml:space="preserve">
+    <value>Ablakcím megjegyzése</value>
+  </data>
+  <data name="BorderlessWindowWindow_Select_window" xml:space="preserve">
+    <value>Ablak kiválasztása</value>
+  </data>
+  <data name="BorderlessWindowWindow_ShareX_Borderless_Window" xml:space="preserve">
+    <value>ShareX – Keret nélküli ablak</value>
+  </data>
+  <data name="BorderlessWindowWindow_Toggle_again_to_restore_the_original_border_and_window_size" xml:space="preserve">
+    <value>Váltson át újra az eredeti keret és ablakméret visszaállításához.</value>
+  </data>
+  <data name="BorderlessWindowWindow_Toggle_borderless" xml:space="preserve">
+    <value>Keret nélküli mód váltása</value>
+  </data>
+  <data name="BorderlessWindowWindow_Window" xml:space="preserve">
+    <value>Ablak</value>
+  </data>
+  <data name="BorderlessWindowWindow_Window_list" xml:space="preserve">
+    <value>Ablaklista</value>
+  </data>
+  <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
+    <value>Ablak címe</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
+    <value>Vágólap tartalma</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Clipboard_empty" xml:space="preserve">
+    <value>A vágólap üres</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Format_count" xml:space="preserve">
+    <value>{0} formátum</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Image_details" xml:space="preserve">
+    <value>Kép  |  {0} × {1} px</value>
+  </data>
+  <data name="ClipboardViewerViewModel_No_previewable_content" xml:space="preserve">
+    <value>Ez a formátum nem tartalmaz előnézetben megjeleníthető tartalmat</value>
+  </data>
+  <data name="ClipboardViewerViewModel_One_format" xml:space="preserve">
+    <value>1 formátum</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
+    <value>Ez a vágólapformátum nem jeleníthető meg előnézetben.\n\n{0}</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
+    <value>Az előnézet nem érhető el</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Select_format" xml:space="preserve">
+    <value>Válasszon formátumot a tartalmának vizsgálatához</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Text_details" xml:space="preserve">
+    <value>Szöveg  |  {0:N0} karakter</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
+    <value>A vágólap nem olvasható\n{0}</value>
+  </data>
+  <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
+  <data name="ClipboardViewerWindow_Formats" xml:space="preserve">
+    <value>Formátumok</value>
+  </data>
+  <data name="ClipboardViewerWindow_No_formats" xml:space="preserve">
+    <value>Nincsenek formátumok</value>
+  </data>
+  <data name="ClipboardViewerWindow_Refresh" xml:space="preserve">
+    <value>Frissítés</value>
+  </data>
+  <data name="ClipboardViewerWindow_ShareX_Clipboard_Viewer" xml:space="preserve">
+    <value>ShareX – Vágólap-megjelenítő</value>
+  </data>
+  <data name="DirectoryIndexerViewModel_Index_for" xml:space="preserve">
+    <value>{0} indexe</value>
+  </data>
+  <data name="DirectoryIndexerViewModel_Text" xml:space="preserve">
+    <value>Szöveg</value>
+  </data>
+  <data name="DirectoryIndexerWindow_0_is_unlimited" xml:space="preserve">
+    <value>0 = korlátlan</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Add_generated_by_footer" xml:space="preserve">
+    <value>Létrehozó lábléc hozzáadása</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Browse" xml:space="preserve">
+    <value>Tallózás...</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Choose_a_folder_and_generate_output_Nothing_is_saved_until_you_use_Save_as_or_Upload" xml:space="preserve">
+    <value>Válasszon mappát, és hozza létre a kimenetet. A Mentés másként vagy Feltöltés használatáig semmi sem lesz mentve.</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Create_parseable_structured_JSON" xml:space="preserve">
+    <value>Elemezhető strukturált JSON létrehozása</value>
+  </data>
+  <data name="DirectoryIndexerWindow_CSS_files" xml:space="preserve">
+    <value>CSS-fájlok</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Display_folder_paths" xml:space="preserve">
+    <value>Mappaútvonalak megjelenítése</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Empty_line_after_folders" xml:space="preserve">
+    <value>Üres sor a mappák után</value>
+  </data>
+  <data name="DirectoryIndexerWindow_File_type" xml:space="preserve">
+    <value>{0} fájl</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Folder" xml:space="preserve">
+    <value>Mappa</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Folders_only" xml:space="preserve">
+    <value>Csak mappák</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Generate_output" xml:space="preserve">
+    <value>Kimenet létrehozása</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Generated_output" xml:space="preserve">
+    <value>Létrehozott kimenet</value>
+  </data>
+  <data name="DirectoryIndexerWindow_HTML_output" xml:space="preserve">
+    <value>HTML-kimenet</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Indentation" xml:space="preserve">
+    <value>Behúzás</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Index_options" xml:space="preserve">
+    <value>Indexbeállítások</value>
+  </data>
+  <data name="DirectoryIndexerWindow_JSON_output" xml:space="preserve">
+    <value>JSON-kimenet</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Limit_paths_to_root_folder" xml:space="preserve">
+    <value>Útvonalak korlátozása a gyökérmappára</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Maximum_depth" xml:space="preserve">
+    <value>Legnagyobb mélység</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Output_format" xml:space="preserve">
+    <value>Kimeneti formátum</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Ready_to_save_or_upload" xml:space="preserve">
+    <value>Mentésre vagy feltöltésre kész</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Save_as" xml:space="preserve">
+    <value>Mentés másként...</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Save_directory_index_dialog" xml:space="preserve">
+    <value>Könyvtárindex mentése</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Select_a_CSS_file" xml:space="preserve">
+    <value>CSS-fájl kiválasztása</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Select_CSS_file_dialog" xml:space="preserve">
+    <value>CSS-fájl kiválasztása</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Select_folder_to_index_dialog" xml:space="preserve">
+    <value>Indexelendő mappa kiválasztása</value>
+  </data>
+  <data name="DirectoryIndexerWindow_ShareX_Directory_Indexer" xml:space="preserve">
+    <value>ShareX – Könyvtárindexelő</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Show_sizes" xml:space="preserve">
+    <value>Méretek megjelenítése</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Skip_hidden_files" xml:space="preserve">
+    <value>Rejtett fájlok kihagyása</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Skip_hidden_folders" xml:space="preserve">
+    <value>Rejtett mappák kihagyása</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Text_output" xml:space="preserve">
+    <value>Szöveges kimenet</value>
+  </data>
+  <data name="DirectoryIndexerWindow_The_HTML_index_was_generated_successfully_HTML_preview_is_unavailable_but_the_output_is_ready_to_save_or_upload" xml:space="preserve">
+    <value>A HTML-index sikeresen elkészült. A HTML-előnézet nem érhető el, de a kimenet mentésre vagy feltöltésre kész.</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Upload" xml:space="preserve">
+    <value>Feltöltés</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Use_custom_CSS_file" xml:space="preserve">
+    <value>Egyéni CSS-fájl használata</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Write_information_as_attributes" xml:space="preserve">
+    <value>Információk írása attribútumként</value>
+  </data>
+  <data name="DirectoryIndexerWindow_XML_output" xml:space="preserve">
+    <value>XML-kimenet</value>
+  </data>
+  <data name="GeminiProvider_API_error" xml:space="preserve">
+    <value>Hiba a Gemini API-tól: {0}</value>
+  </data>
+  <data name="HashCheckerViewModel_Calculating_hash" xml:space="preserve">
+    <value>Kivonat számítása...</value>
+  </data>
+  <data name="HashCheckerViewModel_Calculating_second_hash" xml:space="preserve">
+    <value>Második fájl kivonatának számítása...</value>
+  </data>
+  <data name="HashCheckerViewModel_Files_different_hashes" xml:space="preserve">
+    <value>A fájlok kivonatai eltérnek.</value>
+  </data>
+  <data name="HashCheckerViewModel_Files_matching_hashes" xml:space="preserve">
+    <value>A fájlok kivonatai megegyeznek.</value>
+  </data>
+  <data name="HashCheckerViewModel_First_file_hash" xml:space="preserve">
+    <value>Első fájl kivonata</value>
+  </data>
+  <data name="HashCheckerViewModel_Hash_check_stopped" xml:space="preserve">
+    <value>A kivonatellenőrzés leállt.</value>
+  </data>
+  <data name="HashCheckerViewModel_Hash_complete" xml:space="preserve">
+    <value>A kivonat számítása befejeződött.</value>
+  </data>
+  <data name="HashCheckerViewModel_Hash_failed" xml:space="preserve">
+    <value>A kivonat számítása sikertelen: {0}</value>
+  </data>
+  <data name="HashCheckerViewModel_Result" xml:space="preserve">
+    <value>Eredmény</value>
+  </data>
+  <data name="HashCheckerViewModel_Second_file_hash" xml:space="preserve">
+    <value>Második fájl kivonata</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_existing_file" xml:space="preserve">
+    <value>Válasszon egy létező fájlt.</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_file_dialog" xml:space="preserve">
+    <value>Fájl kiválasztása</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_second_file_dialog" xml:space="preserve">
+    <value>Második fájl kiválasztása</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_two_existing_files" xml:space="preserve">
+    <value>Válasszon két létező fájlt.</value>
+  </data>
+  <data name="HashCheckerViewModel_Stopping_hash" xml:space="preserve">
+    <value>Kivonatellenőrzés leállítása...</value>
+  </data>
+  <data name="HashCheckerViewModel_Target_hash" xml:space="preserve">
+    <value>Célkivonat</value>
+  </data>
+  <data name="HashCheckerViewModel_Unable_calculate_file_hash" xml:space="preserve">
+    <value>A fájl kivonata nem számítható ki.</value>
+  </data>
+  <data name="HashCheckerViewModel_Unable_calculate_second_hash" xml:space="preserve">
+    <value>A második fájl kivonata nem számítható ki.</value>
+  </data>
+  <data name="HashCheckerWindow_Browse" xml:space="preserve">
+    <value>Tallózás...</value>
+  </data>
+  <data name="HashCheckerWindow_Calculated_hash_will_appear_here" xml:space="preserve">
+    <value>A kiszámított kivonat itt jelenik meg</value>
+  </data>
+  <data name="HashCheckerWindow_Check" xml:space="preserve">
+    <value>Ellenőrzés</value>
+  </data>
+  <data name="HashCheckerWindow_Choose_a_file_or_drop_it_here" xml:space="preserve">
+    <value>Válasszon fájlt, vagy húzza ide</value>
+  </data>
+  <data name="HashCheckerWindow_Choose_a_second_file_or_drop_it_here" xml:space="preserve">
+    <value>Válasszon második fájlt, vagy húzza ide</value>
+  </data>
+  <data name="HashCheckerWindow_Compare_two_files" xml:space="preserve">
+    <value>Két fájl összehasonlítása</value>
+  </data>
+  <data name="HashCheckerWindow_File" xml:space="preserve">
+    <value>Fájl</value>
+  </data>
+  <data name="HashCheckerWindow_Files" xml:space="preserve">
+    <value>Fájlok</value>
+  </data>
+  <data name="HashCheckerWindow_Hash_type" xml:space="preserve">
+    <value>Kivonat típusa</value>
+  </data>
+  <data name="HashCheckerWindow_Paste_a_hash_to_compare" xml:space="preserve">
+    <value>Illessze be az összehasonlítandó kivonatot</value>
+  </data>
+  <data name="HashCheckerWindow_Results" xml:space="preserve">
+    <value>Eredmények</value>
+  </data>
+  <data name="HashCheckerWindow_Second_file" xml:space="preserve">
+    <value>Második fájl</value>
+  </data>
+  <data name="HashCheckerWindow_ShareX_Hash_Checker" xml:space="preserve">
+    <value>ShareX – Kivonatellenőrző</value>
+  </data>
+  <data name="HashCheckerWindow_Stop" xml:space="preserve">
+    <value>Leállítás</value>
+  </data>
+  <data name="IconConverterService_Select_icon_size" xml:space="preserve">
+    <value>Legalább egy ikonméretet ki kell választani.</value>
+  </data>
+  <data name="IconConverterService_Source_image_empty" xml:space="preserve">
+    <value>A forráskép üres.</value>
+  </data>
+  <data name="IconConverterService_Unsupported_icon_size" xml:space="preserve">
+    <value>Egy vagy több ikonméret nem támogatott.</value>
+  </data>
+  <data name="IconConverterViewModel_Creating_icon" xml:space="preserve">
+    <value>Ikon létrehozása...</value>
+  </data>
+  <data name="IconConverterViewModel_Drop_or_choose" xml:space="preserve">
+    <value>Húzzon ide egy képet, vagy válasszon fájlt.</value>
+  </data>
+  <data name="IconConverterViewModel_Failed_create_icon" xml:space="preserve">
+    <value>Az ikon létrehozása sikertelen: {0}</value>
+  </data>
+  <data name="IconConverterViewModel_Failed_load_image" xml:space="preserve">
+    <value>A kép betöltése sikertelen: {0}</value>
+  </data>
+  <data name="IconConverterViewModel_Icon_saved" xml:space="preserve">
+    <value>Az ikon mentési helye: {0}</value>
+  </data>
+  <data name="IconConverterViewModel_Image_dimensions" xml:space="preserve">
+    <value>{0} × {1} képpont</value>
+  </data>
+  <data name="IconConverterViewModel_Image_load_failed" xml:space="preserve">
+    <value>A kijelölt fájl nem tölthető be képként.</value>
+  </data>
+  <data name="IconConverterViewModel_Image_picker_unavailable" xml:space="preserve">
+    <value>A képválasztó nem érhető el.</value>
+  </data>
+  <data name="IconConverterViewModel_Save_dialog_unavailable" xml:space="preserve">
+    <value>Az ikonmentési párbeszédpanel nem érhető el.</value>
+  </data>
+  <data name="IconConverterViewModel_Select_image_dialog" xml:space="preserve">
+    <value>Kép kiválasztása</value>
+  </data>
+  <data name="IconConverterWindow_128_pixels" xml:space="preserve">
+    <value>128 képpont</value>
+  </data>
+  <data name="IconConverterWindow_16_pixels" xml:space="preserve">
+    <value>16 képpont</value>
+  </data>
+  <data name="IconConverterWindow_256_pixels" xml:space="preserve">
+    <value>256 képpont</value>
+  </data>
+  <data name="IconConverterWindow_32_bits_16_7M_colors" xml:space="preserve">
+    <value>32 bit (16,7 millió szín)</value>
+  </data>
+  <data name="IconConverterWindow_32_pixels" xml:space="preserve">
+    <value>32 képpont</value>
+  </data>
+  <data name="IconConverterWindow_48_pixels" xml:space="preserve">
+    <value>48 képpont</value>
+  </data>
+  <data name="IconConverterWindow_64_pixels" xml:space="preserve">
+    <value>64 képpont</value>
+  </data>
+  <data name="IconConverterWindow_8_bits_256_colors" xml:space="preserve">
+    <value>8 bit (256 szín)</value>
+  </data>
+  <data name="IconConverterWindow_Bit_depth" xml:space="preserve">
+    <value>Színmélység</value>
+  </data>
+  <data name="IconConverterWindow_Browse" xml:space="preserve">
+    <value>Tallózás...</value>
+  </data>
+  <data name="IconConverterWindow_Convert" xml:space="preserve">
+    <value>Átalakítás...</value>
+  </data>
+  <data name="IconConverterWindow_Drop_an_image_here" xml:space="preserve">
+    <value>Húzzon ide egy képet</value>
+  </data>
+  <data name="IconConverterWindow_Icon_file" xml:space="preserve">
+    <value>Ikonfájl</value>
+  </data>
+  <data name="IconConverterWindow_Image" xml:space="preserve">
+    <value>Kép</value>
+  </data>
+  <data name="IconConverterWindow_or_use_Browse_to_choose_a_file" xml:space="preserve">
+    <value>vagy válasszon fájlt a Tallózás gombbal</value>
+  </data>
+  <data name="IconConverterWindow_Save_icon_as_dialog" xml:space="preserve">
+    <value>Ikon mentése másként</value>
+  </data>
+  <data name="IconConverterWindow_ShareX_Icon_Converter" xml:space="preserve">
+    <value>ShareX – Ikonátalakító</value>
+  </data>
+  <data name="IconConverterWindow_Sizes" xml:space="preserve">
+    <value>Méretek</value>
+  </data>
+  <data name="ImageCombinerViewModel_Add_two_images" xml:space="preserve">
+    <value>Adjon hozzá legalább két képet az egyesítéshez.</value>
+  </data>
+  <data name="ImageCombinerViewModel_Bottom" xml:space="preserve">
+    <value>Alsó</value>
+  </data>
+  <data name="ImageCombinerViewModel_Center" xml:space="preserve">
+    <value>Közép</value>
+  </data>
+  <data name="ImageCombinerViewModel_Combine_failed" xml:space="preserve">
+    <value>A képek egyesítése sikertelen: {0}</value>
+  </data>
+  <data name="ImageCombinerViewModel_Combining_images" xml:space="preserve">
+    <value>Képek egyesítése...</value>
+  </data>
+  <data name="ImageCombinerViewModel_Image_count" xml:space="preserve">
+    <value>{0} kép</value>
+  </data>
+  <data name="ImageCombinerViewModel_Images_combined" xml:space="preserve">
+    <value>A képek egyesítve és elküldve a beállított rögzítés utáni munkafolyamatnak.</value>
+  </data>
+  <data name="ImageCombinerViewModel_Left" xml:space="preserve">
+    <value>Balra</value>
+  </data>
+  <data name="ImageCombinerViewModel_One_image" xml:space="preserve">
+    <value>{0} kép</value>
+  </data>
+  <data name="ImageCombinerViewModel_Preview_failed" xml:space="preserve">
+    <value>Az előnézet sikertelen: {0}</value>
+  </data>
+  <data name="ImageCombinerViewModel_Previewing" xml:space="preserve">
+    <value>{0} előnézete.</value>
+  </data>
+  <data name="ImageCombinerViewModel_Right" xml:space="preserve">
+    <value>Jobbra</value>
+  </data>
+  <data name="ImageCombinerViewModel_Top" xml:space="preserve">
+    <value>Felső</value>
+  </data>
+  <data name="ImageCombinerWindow_Add" xml:space="preserve">
+    <value>Hozzáadás...</value>
+  </data>
+  <data name="ImageCombinerWindow_Add_at_least_two_images_to_preview" xml:space="preserve">
+    <value>Adjon hozzá legalább két képet az előnézethez</value>
+  </data>
+  <data name="ImageCombinerWindow_Add_images_dialog" xml:space="preserve">
+    <value>Képek hozzáadása</value>
+  </data>
+  <data name="ImageCombinerWindow_Alignment" xml:space="preserve">
+    <value>Igazítás</value>
+  </data>
+  <data name="ImageCombinerWindow_Auto_fill_background" xml:space="preserve">
+    <value>Háttér automatikus kitöltése</value>
+  </data>
+  <data name="ImageCombinerWindow_Combine_images" xml:space="preserve">
+    <value>Képek egyesítése</value>
+  </data>
+  <data name="ImageCombinerWindow_Drop_images_here_or_use_the_Add_button" xml:space="preserve">
+    <value>Húzza ide a képeket, vagy használja a Hozzáadás gombot</value>
+  </data>
+  <data name="ImageCombinerWindow_Horizontal" xml:space="preserve">
+    <value>Vízszintes</value>
+  </data>
+  <data name="ImageCombinerWindow_Layout" xml:space="preserve">
+    <value>Elrendezés</value>
+  </data>
+  <data name="ImageCombinerWindow_Orientation" xml:space="preserve">
+    <value>Tájolás</value>
+  </data>
+  <data name="ImageCombinerWindow_ShareX_Image_Combiner" xml:space="preserve">
+    <value>ShareX – Képegyesítő</value>
+  </data>
+  <data name="ImageCombinerWindow_Spacing" xml:space="preserve">
+    <value>Térköz</value>
+  </data>
+  <data name="ImageCombinerWindow_Vertical" xml:space="preserve">
+    <value>Függőleges</value>
+  </data>
+  <data name="ImageCombinerWindow_Wrap_after" xml:space="preserve">
+    <value>Tördelés ennyi után</value>
+  </data>
+  <data name="ImageComparerViewModel_Failed_load_image" xml:space="preserve">
+    <value>A kép betöltése sikertelen: {0}</value>
+  </data>
+  <data name="ImageComparerViewModel_Image_load_failed" xml:space="preserve">
+    <value>A kijelölt fájl nem tölthető be képként.</value>
+  </data>
+  <data name="ImageComparerViewModel_Image_picker_unavailable" xml:space="preserve">
+    <value>A képválasztó nem érhető el.</value>
+  </data>
+  <data name="ImageComparerViewModel_Pixels_match" xml:space="preserve">
+    <value>{0:N0} / {1:N0} képpont egyezik.</value>
+  </data>
+  <data name="ImageComparerViewModel_Select_image_dialog" xml:space="preserve">
+    <value>{0}. kép kiválasztása</value>
+  </data>
+  <data name="ImageComparerViewModel_Select_two_images" xml:space="preserve">
+    <value>Válasszon két képet az összehasonlításhoz.</value>
+  </data>
+  <data name="ImageComparerViewModel_Similarity_empty" xml:space="preserve">
+    <value>Hasonlóság: -</value>
+  </data>
+  <data name="ImageComparerViewModel_Similarity_value" xml:space="preserve">
+    <value>Hasonlóság: {0:0.##}%</value>
+  </data>
+  <data name="ImageComparerWindow_Choose" xml:space="preserve">
+    <value>Kiválasztás...</value>
+  </data>
+  <data name="ImageComparerWindow_Diff_View" xml:space="preserve">
+    <value>Eltérésnézet</value>
+  </data>
+  <data name="ImageComparerWindow_Image_1" xml:space="preserve">
+    <value>1. kép</value>
+  </data>
+  <data name="ImageComparerWindow_Image_2" xml:space="preserve">
+    <value>2. kép</value>
+  </data>
+  <data name="ImageComparerWindow_Select_Image_1_and_Image_2_to_show_the_comparison_preview" xml:space="preserve">
+    <value>Az összehasonlítás előnézetéhez válassza ki az 1. és a 2. képet.</value>
+  </data>
+  <data name="ImageComparerWindow_ShareX_Image_Comparer" xml:space="preserve">
+    <value>ShareX – Kép-összehasonlító</value>
+  </data>
+  <data name="ImageComparerWindow_Slider" xml:space="preserve">
+    <value>Csúszka</value>
+  </data>
+  <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
+    <value>{0} × {1}</value>
+  </data>
+  <data name="ImageSplitterWindow_Browse" xml:space="preserve">
+    <value>Tallózás...</value>
+  </data>
+  <data name="ImageSplitterWindow_Choose_image_dialog" xml:space="preserve">
+    <value>Kép kiválasztása</value>
+  </data>
+  <data name="ImageSplitterWindow_Choose_output_folder_dialog" xml:space="preserve">
+    <value>Kimeneti mappa kiválasztása</value>
+  </data>
+  <data name="ImageSplitterWindow_Columns" xml:space="preserve">
+    <value>Oszlopok</value>
+  </data>
+  <data name="ImageSplitterWindow_Image" xml:space="preserve">
+    <value>Kép</value>
+  </data>
+  <data name="ImageSplitterWindow_Output_folder" xml:space="preserve">
+    <value>Kimeneti mappa</value>
+  </data>
+  <data name="ImageSplitterWindow_Rows" xml:space="preserve">
+    <value>Sorok</value>
+  </data>
+  <data name="ImageSplitterWindow_ShareX_Image_Splitter" xml:space="preserve">
+    <value>ShareX – Képfelosztó</value>
+  </data>
+  <data name="ImageSplitterWindow_Split_image" xml:space="preserve">
+    <value>Kép felosztása</value>
+  </data>
+  <data name="ImageSplitterWindow_Split_layout" xml:space="preserve">
+    <value>Felosztási elrendezés</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generated_many" xml:space="preserve">
+    <value>{0} bélyegkép létrehozva.</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generated_one" xml:space="preserve">
+    <value>{0} bélyegkép létrehozva.</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generating" xml:space="preserve">
+    <value>Bélyegképek létrehozása...</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generation_failed" xml:space="preserve">
+    <value>A létrehozás sikertelen: {0}</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Image_count" xml:space="preserve">
+    <value>{0} kép</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_One_image" xml:space="preserve">
+    <value>{0} kép</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Add" xml:space="preserve">
+    <value>Hozzáadás...</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Add_images_dialog" xml:space="preserve">
+    <value>Képek hozzáadása</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Browse" xml:space="preserve">
+    <value>Tallózás...</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Choose_output_folder_dialog" xml:space="preserve">
+    <value>Kimeneti mappa kiválasztása</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Drop_images_here_or_use_the_Add_button" xml:space="preserve">
+    <value>Húzza ide a képeket, vagy használja a Hozzáadás gombot</value>
+  </data>
+  <data name="ImageThumbnailerWindow_File_name_template" xml:space="preserve">
+    <value>Fájlnévsablon</value>
+  </data>
+  <data name="ImageThumbnailerWindow_filename_th" xml:space="preserve">
+    <value>$filename_th</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Generate_thumbnails" xml:space="preserve">
+    <value>Bélyegképek létrehozása</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Height" xml:space="preserve">
+    <value>Magasság</value>
+  </data>
+  <data name="ImageThumbnailerWindow_JPEG_quality" xml:space="preserve">
+    <value>JPEG-minőség</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Output" xml:space="preserve">
+    <value>Kimenet</value>
+  </data>
+  <data name="ImageThumbnailerWindow_ShareX_Image_Thumbnailer" xml:space="preserve">
+    <value>ShareX – Bélyegkép-készítő</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Thumbnail_size" xml:space="preserve">
+    <value>Bélyegkép mérete</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Width" xml:space="preserve">
+    <value>Szélesség</value>
+  </data>
+  <data name="IndexerHtml_File_count" xml:space="preserve">
+    <value>{0:n0} fájl</value>
+  </data>
+  <data name="IndexerHtml_Folder_count" xml:space="preserve">
+    <value>{0:n0} mappa</value>
+  </data>
+  <data name="IndexerHtml_Generated_by_on" xml:space="preserve">
+    <value>Létrehozta: {0}, ekkor: {1:yyyy-MM-dd 'at' HH:mm:ss 'UTC'}</value>
+  </data>
+  <data name="IndexerHtml_Index_for" xml:space="preserve">
+    <value>{0} indexe</value>
+  </data>
+  <data name="IndexerHtml_One_file" xml:space="preserve">
+    <value>{0:n0} fájl</value>
+  </data>
+  <data name="IndexerHtml_One_folder" xml:space="preserve">
+    <value>{0:n0} mappa</value>
+  </data>
+  <data name="IndexerText_Generated_by" xml:space="preserve">
+    <value>Létrehozta a ShareX Directory Indexer ekkor: {0:yyyy-MM-dd 'at' HH:mm:ss 'UTC'}. A legújabb verzió innen tölthető le: {1}</value>
+  </data>
+  <data name="InspectWindowPickerOverlay_Click_control" xml:space="preserve">
+    <value>Kattintson egy vezérlőre a vizsgálathoz  |  Esc a megszakításhoz</value>
+  </data>
+  <data name="InspectWindowPickerOverlay_Click_window" xml:space="preserve">
+    <value>Kattintson egy ablakra a vizsgálathoz  |  Esc a megszakításhoz</value>
+  </data>
+  <data name="InspectWindowViewModel_Class_name" xml:space="preserve">
+    <value>Osztály neve</value>
+  </data>
+  <data name="InspectWindowViewModel_Client_rectangle" xml:space="preserve">
+    <value>Ügyfélterület téglalapja</value>
+  </data>
+  <data name="InspectWindowViewModel_Control" xml:space="preserve">
+    <value>Vezérlő</value>
+  </data>
+  <data name="InspectWindowViewModel_Extended_window_styles" xml:space="preserve">
+    <value>Kiterjesztett ablakstílusok</value>
+  </data>
+  <data name="InspectWindowViewModel_No_target_selected" xml:space="preserve">
+    <value>Nincs cél kiválasztva</value>
+  </data>
+  <data name="InspectWindowViewModel_Pick_target" xml:space="preserve">
+    <value>Válasszon ablakot vagy vezérlőt a tulajdonságainak vizsgálatához</value>
+  </data>
+  <data name="InspectWindowViewModel_Process_file_name" xml:space="preserve">
+    <value>Folyamat fájlneve</value>
+  </data>
+  <data name="InspectWindowViewModel_Process_identifier" xml:space="preserve">
+    <value>Folyamatazonosító</value>
+  </data>
+  <data name="InspectWindowViewModel_Process_name" xml:space="preserve">
+    <value>Folyamat neve</value>
+  </data>
+  <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
+    <value>X: {0}  Y: {1}  |  Szélesség: {2}  Magasság: {3}</value>
+  </data>
+  <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
+    <value>Névtelen ablak</value>
+  </data>
+  <data name="InspectWindowViewModel_Window" xml:space="preserve">
+    <value>Ablak</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_handle" xml:space="preserve">
+    <value>Ablakfogantyú</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_rectangle" xml:space="preserve">
+    <value>Ablak téglalapja</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_styles" xml:space="preserve">
+    <value>Ablakstílusok</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_title" xml:space="preserve">
+    <value>Ablak címe</value>
+  </data>
+  <data name="InspectWindowWindow_Always_on_top" xml:space="preserve">
+    <value>Mindig felül</value>
+  </data>
+  <data name="InspectWindowWindow_Copy_all" xml:space="preserve">
+    <value>Összes másolása</value>
+  </data>
+  <data name="InspectWindowWindow_Opacity" xml:space="preserve">
+    <value>Átlátszatlanság</value>
+  </data>
+  <data name="InspectWindowWindow_Pick_a_target_to_inspect_its_window_properties" xml:space="preserve">
+    <value>Válasszon célt az ablaktulajdonságok vizsgálatához</value>
+  </data>
+  <data name="InspectWindowWindow_Pick_control" xml:space="preserve">
+    <value>Vezérlő kiválasztása</value>
+  </data>
+  <data name="InspectWindowWindow_Pick_window" xml:space="preserve">
+    <value>Ablak kiválasztása</value>
+  </data>
+  <data name="InspectWindowWindow_Refresh" xml:space="preserve">
+    <value>Frissítés</value>
+  </data>
+  <data name="InspectWindowWindow_Select_window" xml:space="preserve">
+    <value>Ablak kiválasztása</value>
+  </data>
+  <data name="InspectWindowWindow_ShareX_Inspect_Window" xml:space="preserve">
+    <value>ShareX – Ablak vizsgálata</value>
+  </data>
+  <data name="InspectWindowWindow_Window_information" xml:space="preserve">
+    <value>Ablakinformációk</value>
+  </data>
+  <data name="InspectWindowWindow_Window_settings" xml:space="preserve">
+    <value>Ablakbeállítások</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Automatic" xml:space="preserve">
+    <value>Automatikus</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Backward_diagonal" xml:space="preserve">
+    <value>Hátrafelé dőlő átló</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Checkerboard" xml:space="preserve">
+    <value>Sakktábla</value>
+  </data>
+  <data name="LocalizedDisplayConverter_CPU" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Forward_diagonal" xml:space="preserve">
+    <value>Előrefelé dőlő átló</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Gemini" xml:space="preserve">
+    <value>Gemini</value>
+  </data>
+  <data name="LocalizedDisplayConverter_GPU" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="LocalizedDisplayConverter_High" xml:space="preserve">
+    <value>Magas</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Horizontal" xml:space="preserve">
+    <value>Vízszintes</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Horizontal_bars" xml:space="preserve">
+    <value>Vízszintes sávok</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Horizontal_lines" xml:space="preserve">
+    <value>Vízszintes vonalak</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Low" xml:space="preserve">
+    <value>Alacsony</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Medium" xml:space="preserve">
+    <value>Közepes</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Minimal" xml:space="preserve">
+    <value>Minimális</value>
+  </data>
+  <data name="LocalizedDisplayConverter_OpenAI" xml:space="preserve">
+    <value>OpenAI</value>
+  </data>
+  <data name="LocalizedDisplayConverter_OpenAI_legacy" xml:space="preserve">
+    <value>OpenAI (örökölt)</value>
+  </data>
+  <data name="LocalizedDisplayConverter_OpenRouter" xml:space="preserve">
+    <value>OpenRouter</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Vertical" xml:space="preserve">
+    <value>Függőleges</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Vertical_bars" xml:space="preserve">
+    <value>Függőleges sávok</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Vertical_lines" xml:space="preserve">
+    <value>Függőleges vonalak</value>
+  </data>
+  <data name="MetadataService_ExifTool_not_found" xml:space="preserve">
+    <value>Az ExifTool nem található.</value>
+  </data>
+  <data name="MetadataService_Exited_with_code" xml:space="preserve">
+    <value>Az ExifTool {0} kóddal lépett ki.</value>
+  </data>
+  <data name="MetadataService_Failed_start_ExifTool" xml:space="preserve">
+    <value>Az ExifTool nem indítható el.</value>
+  </data>
+  <data name="MetadataService_Selected_file_not_found" xml:space="preserve">
+    <value>A kijelölt fájl nem található.</value>
+  </data>
+  <data name="MetadataViewModel_No_file_selected" xml:space="preserve">
+    <value>Nincs fájl kiválasztva</value>
+  </data>
+  <data name="MetadataViewModel_No_metadata" xml:space="preserve">
+    <value>Ebben a fájlban nem találhatók metaadatok</value>
+  </data>
+  <data name="MetadataViewModel_No_search_matches" xml:space="preserve">
+    <value>Nincs a jelenlegi keresésnek megfelelő metaadat</value>
+  </data>
+  <data name="MetadataViewModel_One_tag" xml:space="preserve">
+    <value>1 címke</value>
+  </data>
+  <data name="MetadataViewModel_Open_or_drop" xml:space="preserve">
+    <value>Nyisson meg vagy húzzon ide egy fájlt a metaadatok vizsgálatához</value>
+  </data>
+  <data name="MetadataViewModel_Open_or_drop_supported" xml:space="preserve">
+    <value>Nyisson meg vagy húzzon ide bármilyen támogatott fájlt</value>
+  </data>
+  <data name="MetadataViewModel_Reading_metadata" xml:space="preserve">
+    <value>Metaadatok olvasása...</value>
+  </data>
+  <data name="MetadataViewModel_Tag_count" xml:space="preserve">
+    <value>{0:N0} címke</value>
+  </data>
+  <data name="MetadataViewModel_Unable_read" xml:space="preserve">
+    <value>A metaadatok nem olvashatók\n{0}</value>
+  </data>
+  <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
+    <value>A metaadatok nem távolíthatók el\n{0}</value>
+  </data>
+  <data name="MetadataViewModel_Window_title" xml:space="preserve">
+    <value>ShareX – Metaadatok</value>
+  </data>
+  <data name="MetadataViewModel_Window_title_file" xml:space="preserve">
+    <value>ShareX – Metaadatok – {0}</value>
+  </data>
+  <data name="MetadataWindow_Cancel" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="MetadataWindow_Copy_all" xml:space="preserve">
+    <value>Összes másolása</value>
+  </data>
+  <data name="MetadataWindow_Metadata" xml:space="preserve">
+    <value>Metaadatok</value>
+  </data>
+  <data name="MetadataWindow_Open" xml:space="preserve">
+    <value>Megnyitás...</value>
+  </data>
+  <data name="MetadataWindow_Open_file_dialog" xml:space="preserve">
+    <value>Fájl megnyitása</value>
+  </data>
+  <data name="MetadataWindow_Search_metadata" xml:space="preserve">
+    <value>Keresés a metaadatokban</value>
+  </data>
+  <data name="MetadataWindow_Strip_all_metadata" xml:space="preserve">
+    <value>Eltávolítja az összes metaadatot?</value>
+  </data>
+  <data name="MetadataWindow_Strip_metadata" xml:space="preserve">
+    <value>Metaadatok eltávolítása...</value>
+  </data>
+  <data name="MetadataWindow_Strip_metadata_2" xml:space="preserve">
+    <value>Metaadatok eltávolítása</value>
+  </data>
+  <data name="MetadataWindow_This_permanently_removes_all_non_essential_metadata_from_the_selected_file_This_action_cannot_be_undone" xml:space="preserve">
+    <value>Ez véglegesen eltávolít minden nem létfontosságú metaadatot a kijelölt fájlból. A művelet nem vonható vissza.</value>
+  </data>
+  <data name="MonitorTestWindow_Blue" xml:space="preserve">
+    <value>Kék</value>
+  </data>
+  <data name="MonitorTestWindow_Brightness" xml:space="preserve">
+    <value>Fényerő</value>
+  </data>
+  <data name="MonitorTestWindow_Cell_size" xml:space="preserve">
+    <value>Cellaméret</value>
+  </data>
+  <data name="MonitorTestWindow_Choose_a_test_pattern_and_adjust_its_properties" xml:space="preserve">
+    <value>Válasszon tesztmintát, és módosítsa a tulajdonságait</value>
+  </data>
+  <data name="MonitorTestWindow_Close" xml:space="preserve">
+    <value>Bezárás</value>
+  </data>
+  <data name="MonitorTestWindow_Color" xml:space="preserve">
+    <value>Szín</value>
+  </data>
+  <data name="MonitorTestWindow_Colors" xml:space="preserve">
+    <value>Színek</value>
+  </data>
+  <data name="MonitorTestWindow_Direction" xml:space="preserve">
+    <value>Irány</value>
+  </data>
+  <data name="MonitorTestWindow_Gradient" xml:space="preserve">
+    <value>Színátmenet</value>
+  </data>
+  <data name="MonitorTestWindow_Grayscale" xml:space="preserve">
+    <value>Szürkeárnyalatos</value>
+  </data>
+  <data name="MonitorTestWindow_Green" xml:space="preserve">
+    <value>Zöld</value>
+  </data>
+  <data name="MonitorTestWindow_Monitor_test" xml:space="preserve">
+    <value>Monitorteszt</value>
+  </data>
+  <data name="MonitorTestWindow_Motion" xml:space="preserve">
+    <value>Mozgás</value>
+  </data>
+  <data name="MonitorTestWindow_Pattern" xml:space="preserve">
+    <value>Minta</value>
+  </data>
+  <data name="MonitorTestWindow_Red" xml:space="preserve">
+    <value>Piros</value>
+  </data>
+  <data name="MonitorTestWindow_RGB" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="MonitorTestWindow_ShareX_Monitor_Test" xml:space="preserve">
+    <value>ShareX – Monitorteszt</value>
+  </data>
+  <data name="MonitorTestWindow_Speed" xml:space="preserve">
+    <value>Sebesség</value>
+  </data>
+  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
+    <value>A(z) {0} nyelv nem érhető el OCR-hez ezen a rendszeren.</value>
+  </data>
+  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
+    <value>Az optikai karakterfelismerés csak a Windows {0} vagy újabb verzióján érhető el.</value>
+  </data>
+  <data name="OCROptions_Bing" xml:space="preserve">
+    <value>Bing</value>
+  </data>
+  <data name="OCROptions_DeepL" xml:space="preserve">
+    <value>DeepL</value>
+  </data>
+  <data name="OCROptions_DuckDuckGo" xml:space="preserve">
+    <value>DuckDuckGo</value>
+  </data>
+  <data name="OCROptions_Google_Images" xml:space="preserve">
+    <value>Google Képek</value>
+  </data>
+  <data name="OCROptions_Google_Search" xml:space="preserve">
+    <value>Google Keresés</value>
+  </data>
+  <data name="OCROptions_Google_Translate" xml:space="preserve">
+    <value>Google Fordító</value>
+  </data>
+  <data name="OCRViewModel_New_service_name" xml:space="preserve">
+    <value>Név</value>
+  </data>
+  <data name="OCRWindow_Close" xml:space="preserve">
+    <value>Bezárás</value>
+  </data>
+  <data name="OCRWindow_Close_after_opening" xml:space="preserve">
+    <value>Bezárás megnyitás után</value>
+  </data>
+  <data name="OCRWindow_Copy_all" xml:space="preserve">
+    <value>Összes másolása</value>
+  </data>
+  <data name="OCRWindow_Copy_recognized_text_automatically" xml:space="preserve">
+    <value>Felismert szöveg automatikus másolása</value>
+  </data>
+  <data name="OCRWindow_Edit_services" xml:space="preserve">
+    <value>Szolgáltatások szerkesztése</value>
+  </data>
+  <data name="OCRWindow_Language" xml:space="preserve">
+    <value>Nyelv</value>
+  </data>
+  <data name="OCRWindow_Name" xml:space="preserve">
+    <value>Név</value>
+  </data>
+  <data name="OCRWindow_New" xml:space="preserve">
+    <value>Új</value>
+  </data>
+  <data name="OCRWindow_OCR_help" xml:space="preserve">
+    <value>OCR-súgó</value>
+  </data>
+  <data name="OCRWindow_Open_service" xml:space="preserve">
+    <value>Szolgáltatás megnyitása...</value>
+  </data>
+  <data name="OCRWindow_Recognition" xml:space="preserve">
+    <value>Felismerés</value>
+  </data>
+  <data name="OCRWindow_Remove" xml:space="preserve">
+    <value>Eltávolítás</value>
+  </data>
+  <data name="OCRWindow_Reset" xml:space="preserve">
+    <value>Visszaállítás</value>
+  </data>
+  <data name="OCRWindow_Result" xml:space="preserve">
+    <value>Eredmény</value>
+  </data>
+  <data name="OCRWindow_Scale_factor" xml:space="preserve">
+    <value>Méretezési tényező</value>
+  </data>
+  <data name="OCRWindow_Select_a_service" xml:space="preserve">
+    <value>Szolgáltatás kiválasztása</value>
+  </data>
+  <data name="OCRWindow_Select_image" xml:space="preserve">
+    <value>Kép kiválasztása...</value>
+  </data>
+  <data name="OCRWindow_Select_image_dialog" xml:space="preserve">
+    <value>Kép kiválasztása</value>
+  </data>
+  <data name="OCRWindow_Select_region" xml:space="preserve">
+    <value>Terület kijelölése...</value>
+  </data>
+  <data name="OCRWindow_Services" xml:space="preserve">
+    <value>Szolgáltatások</value>
+  </data>
+  <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
+    <value>ShareX – Optikai karakterfelismerés</value>
+  </data>
+  <data name="OCRWindow_Single_line" xml:space="preserve">
+    <value>Egy sor</value>
+  </data>
+  <data name="OCRWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="OCRWindow_Use_0_where_the_recognized_text_belongs" xml:space="preserve">
+    <value>Használja a(z) {0} helyőrzőt a felismert szöveg helyén</value>
+  </data>
+  <data name="OpenRouterProvider_API_error" xml:space="preserve">
+    <value>Hiba az OpenRouter API-tól: {0}</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Bottom_center" xml:space="preserve">
+    <value>Alsó közép</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Bottom_left" xml:space="preserve">
+    <value>Bal alsó</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Bottom_right" xml:space="preserve">
+    <value>Jobb alsó</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Center" xml:space="preserve">
+    <value>Közép</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Middle_left" xml:space="preserve">
+    <value>Bal közép</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Middle_right" xml:space="preserve">
+    <value>Jobb közép</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Top_center" xml:space="preserve">
+    <value>Felső közép</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Top_left" xml:space="preserve">
+    <value>Bal felső</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Top_right" xml:space="preserve">
+    <value>Jobb felső</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Always_on_top" xml:space="preserve">
+    <value>Mindig felül</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Appearance" xml:space="preserve">
+    <value>Megjelenés</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Background_color" xml:space="preserve">
+    <value>Háttérszín</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Border_color" xml:space="preserve">
+    <value>Szegélyszín</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Border_size" xml:space="preserve">
+    <value>Keretméret</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Cancel" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Default_position" xml:space="preserve">
+    <value>Alapértelmezett pozíció</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_High_quality_scaling" xml:space="preserve">
+    <value>Kiváló minőségű méretezés</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Image_border" xml:space="preserve">
+    <value>Képkeret</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Initial_opacity" xml:space="preserve">
+    <value>Kezdeti átlátszatlanság</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Initial_scale" xml:space="preserve">
+    <value>Kezdeti méretarány</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Keep_center_while_resizing" xml:space="preserve">
+    <value>Középpont megtartása átméretezéskor</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Minimized_preview" xml:space="preserve">
+    <value>Kis méretű előnézet</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Mouse_wheel_changes_scale_Ctrl_mouse_wheel_changes_opacity" xml:space="preserve">
+    <value>Az egérgörgő módosítja a méretarányt, a Ctrl + egérgörgő pedig az átlátszatlanságot.</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Opacity_step" xml:space="preserve">
+    <value>Átlátszatlanság lépése</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Placement" xml:space="preserve">
+    <value>Elhelyezés</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Preview_size" xml:space="preserve">
+    <value>Előnézet mérete</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Save" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Scale_step" xml:space="preserve">
+    <value>Méretezési lépés</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Screen_edge_offset" xml:space="preserve">
+    <value>Eltolás a képernyő szélétől</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_ShareX_Pin_to_Screen_options" xml:space="preserve">
+    <value>ShareX – Képernyőre rögzítés beállításai</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Size_and_opacity" xml:space="preserve">
+    <value>Méret és átlátszatlanság</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
+    <value>Ablakárnyék</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
+    <value>A vágólap nem tartalmaz képet.</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_No_image_selected" xml:space="preserve">
+    <value>Nincs kép kiválasztva.</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_No_region_selected" xml:space="preserve">
+    <value>Nincs terület kiválasztva.</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_Unable_load_image" xml:space="preserve">
+    <value>A kép nem tölthető be. {0}</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Choose_an_image" xml:space="preserve">
+    <value>Kép kiválasztása</value>
+  </data>
+  <data name="PinToScreenStartupWindow_From_clipboard" xml:space="preserve">
+    <value>A vágólapról</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Pin_an_image_above_your_other_windows_for_quick_reference" xml:space="preserve">
+    <value>Rögzítsen egy képet a többi ablak fölé a gyors megtekintéshez.</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Select_image" xml:space="preserve">
+    <value>Kép kiválasztása...</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Select_region" xml:space="preserve">
+    <value>Terület kijelölése...</value>
+  </data>
+  <data name="PinToScreenStartupWindow_ShareX_Pin_to_Screen" xml:space="preserve">
+    <value>ShareX – Képernyőre rögzítés</value>
+  </data>
+  <data name="PinToScreenWindow_Close" xml:space="preserve">
+    <value>Bezárás</value>
+  </data>
+  <data name="PinToScreenWindow_Copy_image" xml:space="preserve">
+    <value>Kép másolása</value>
+  </data>
+  <data name="PinToScreenWindow_Options" xml:space="preserve">
+    <value>Beállítások</value>
+  </data>
+  <data name="PinToScreenWindow_Pinned_image" xml:space="preserve">
+    <value>Rögzített kép</value>
+  </data>
+  <data name="PinToScreenWindow_Reset_scale_and_opacity" xml:space="preserve">
+    <value>Méretarány és átlátszatlanság visszaállítása</value>
+  </data>
+  <data name="QRCodeViewModel_Content_too_large" xml:space="preserve">
+    <value>A tartalom túl nagy egy QR-kódhoz.</value>
+  </data>
+  <data name="QRCodeViewModel_Decoded_many" xml:space="preserve">
+    <value>{0} érték dekódolva.</value>
+  </data>
+  <data name="QRCodeViewModel_Decoded_one" xml:space="preserve">
+    <value>{0} érték dekódolva.</value>
+  </data>
+  <data name="QRCodeViewModel_Generation_failed" xml:space="preserve">
+    <value>A QR-kód létrehozása sikertelen: {0}</value>
+  </data>
+  <data name="QRCodeViewModel_No_QR_code" xml:space="preserve">
+    <value>Nem található QR-kód.</value>
+  </data>
+  <data name="QRCodeViewModel_QRCode_saved" xml:space="preserve">
+    <value>A QR-kód mentve.</value>
+  </data>
+  <data name="QRCodeViewModel_Unable_generate" xml:space="preserve">
+    <value>Ebből a tartalomból nem hozható létre QR-kód.</value>
+  </data>
+  <data name="QRCodeWindow_Bitmap_image" xml:space="preserve">
+    <value>Bitképes kép</value>
+  </data>
+  <data name="QRCodeWindow_Content" xml:space="preserve">
+    <value>Tartalom</value>
+  </data>
+  <data name="QRCodeWindow_Copy_image" xml:space="preserve">
+    <value>Kép másolása</value>
+  </data>
+  <data name="QRCodeWindow_Enter_content_to_generate_a_QR_code" xml:space="preserve">
+    <value>Adja meg a QR-kód tartalmát</value>
+  </data>
+  <data name="QRCodeWindow_Enter_text_or_a_URL_to_encode" xml:space="preserve">
+    <value>Adja meg a kódolandó szöveget vagy URL-t</value>
+  </data>
+  <data name="QRCodeWindow_Image_viewer_title" xml:space="preserve">
+    <value>QR-kód</value>
+  </data>
+  <data name="QRCodeWindow_JPEG_image" xml:space="preserve">
+    <value>JPEG-kép</value>
+  </data>
+  <data name="QRCodeWindow_PNG_image" xml:space="preserve">
+    <value>PNG-kép</value>
+  </data>
+  <data name="QRCodeWindow_px" xml:space="preserve">
+    <value>px</value>
+  </data>
+  <data name="QRCodeWindow_QR_code_size" xml:space="preserve">
+    <value>QR-kód mérete</value>
+  </data>
+  <data name="QRCodeWindow_Save" xml:space="preserve">
+    <value>Mentés...</value>
+  </data>
+  <data name="QRCodeWindow_Save_QR_code_dialog" xml:space="preserve">
+    <value>QR-kód mentése</value>
+  </data>
+  <data name="QRCodeWindow_Scan_image" xml:space="preserve">
+    <value>Kép beolvasása...</value>
+  </data>
+  <data name="QRCodeWindow_Scan_region" xml:space="preserve">
+    <value>Terület beolvasása...</value>
+  </data>
+  <data name="QRCodeWindow_Scan_screen" xml:space="preserve">
+    <value>Képernyő beolvasása</value>
+  </data>
+  <data name="QRCodeWindow_Select_image_dialog" xml:space="preserve">
+    <value>Válasszon QR-kódot tartalmazó képet</value>
+  </data>
+  <data name="QRCodeWindow_ShareX_QR_Code" xml:space="preserve">
+    <value>ShareX – QR-kód</value>
+  </data>
+  <data name="QRCodeWindow_SVG_image" xml:space="preserve">
+    <value>SVG-kép</value>
+  </data>
+  <data name="QRCodeWindow_Upload" xml:space="preserve">
+    <value>Feltöltés</value>
+  </data>
+  <data name="RulerViewModel_Details" xml:space="preserve">
+    <value>Terület: {0:N0} px²  |  Kerület: {1:N0} px  |  Távolság: {2:0.00} px  |  Szög: {3:0.00}°</value>
+  </data>
+  <data name="RulerViewModel_Position" xml:space="preserve">
+    <value>X: {0}  Y: {1}  |  Jobb: {2}  Alsó: {3}  |  Szélesség: {4} px  Magasság: {5} px</value>
+  </data>
+  <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
+    <value>ShareX – Vonalzó</value>
+  </data>
+  <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
+    <value>A kezdéshez válasszon videót.</value>
+  </data>
+  <data name="VideoConverterViewModel_Choose_video_or_animation" xml:space="preserve">
+    <value>A kezdéshez válasszon videót vagy animációt.</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_complete" xml:space="preserve">
+    <value>Az átalakítás kész: {0}</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_failed" xml:space="preserve">
+    <value>A videó átalakítása sikertelen.</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_failed_message" xml:space="preserve">
+    <value>A videó átalakítása sikertelen: {0}</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_stopped" xml:space="preserve">
+    <value>Az átalakítás leállt.</value>
+  </data>
+  <data name="VideoConverterViewModel_Converting" xml:space="preserve">
+    <value>Videó átalakítása...</value>
+  </data>
+  <data name="VideoConverterViewModel_Enter_output_name" xml:space="preserve">
+    <value>Adjon meg egy kimeneti fájlnevet.</value>
+  </data>
+  <data name="VideoConverterViewModel_No_file_selected" xml:space="preserve">
+    <value>Nincs fájl kiválasztva</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_existing_input" xml:space="preserve">
+    <value>Válasszon egy létező bemeneti fájlt.</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_existing_output" xml:space="preserve">
+    <value>Válasszon egy létező kimeneti mappát.</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_input_dialog" xml:space="preserve">
+    <value>Videó vagy animáció kiválasztása</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_output_dialog" xml:space="preserve">
+    <value>Kimeneti mappa kiválasztása</value>
+  </data>
+  <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
+    <value>Átalakítás leállítása...</value>
+  </data>
+  <data name="VideoConverterWindow_Browse" xml:space="preserve">
+    <value>Tallózás...</value>
+  </data>
+  <data name="VideoConverterWindow_Choose_an_output_folder" xml:space="preserve">
+    <value>Válasszon kimeneti mappát</value>
+  </data>
+  <data name="VideoConverterWindow_Constant_quality" xml:space="preserve">
+    <value>Állandó minőség</value>
+  </data>
+  <data name="VideoConverterWindow_Encoding" xml:space="preserve">
+    <value>Kódolás</value>
+  </data>
+  <data name="VideoConverterWindow_FFmpeg_unavailable" xml:space="preserve">
+    <value>Az FFmpeg nem érhető el.</value>
+  </data>
+  <data name="VideoConverterWindow_File_name" xml:space="preserve">
+    <value>Fájlnév</value>
+  </data>
+  <data name="VideoConverterWindow_Folder" xml:space="preserve">
+    <value>Mappa</value>
+  </data>
+  <data name="VideoConverterWindow_Higher_quality" xml:space="preserve">
+    <value>Jobb minőség</value>
+  </data>
+  <data name="VideoConverterWindow_Input_file" xml:space="preserve">
+    <value>Bemeneti fájl</value>
+  </data>
+  <data name="VideoConverterWindow_kbps" xml:space="preserve">
+    <value>kbps</value>
+  </data>
+  <data name="VideoConverterWindow_Open_the_output_folder_when_finished" xml:space="preserve">
+    <value>Kimeneti mappa megnyitása befejezéskor</value>
+  </data>
+  <data name="VideoConverterWindow_Output" xml:space="preserve">
+    <value>Kimenet</value>
+  </data>
+  <data name="VideoConverterWindow_Quality" xml:space="preserve">
+    <value>Minőség</value>
+  </data>
+  <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
+    <value>ShareX – Videóátalakító</value>
+  </data>
+  <data name="VideoConverterWindow_Smaller_file" xml:space="preserve">
+    <value>Kisebb fájl</value>
+  </data>
+  <data name="VideoConverterWindow_Start_encoding" xml:space="preserve">
+    <value>Kódolás indítása</value>
+  </data>
+  <data name="VideoConverterWindow_Stop_encoding" xml:space="preserve">
+    <value>Kódolás leállítása</value>
+  </data>
+  <data name="VideoConverterWindow_Target_bitrate" xml:space="preserve">
+    <value>Cél bitráta</value>
+  </data>
+  <data name="VideoConverterWindow_Use_a_target_bitrate" xml:space="preserve">
+    <value>Cél bitráta használata</value>
+  </data>
+  <data name="VideoConverterWindow_Video_animation_files" xml:space="preserve">
+    <value>Videó- és animációfájlok</value>
+  </data>
+  <data name="VideoConverterWindow_Video_encoder" xml:space="preserve">
+    <value>Videókódoló</value>
+  </data>
+  <data name="VideoConverterWindow_video_output" xml:space="preserve">
+    <value>video-output</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
+    <value>Egyéni mappa</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_Default_screenshots_folder" xml:space="preserve">
+    <value>Alapértelmezett képernyőkép-mappa</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_No_thumbnails" xml:space="preserve">
+    <value>Nem készültek bélyegképek. Ellenőrizze, hogy a videó érvényes-e, és az FFmpeg be tudja-e olvasni.</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_Same_folder_as_video" xml:space="preserve">
+    <value>A videóval azonos mappa</value>
+  </data>
+  <data name="VideoThumbnailerWindow_0_keeps_original_size" xml:space="preserve">
+    <value>A 0 megtartja az eredeti méretet</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Add_video_information" xml:space="preserve">
+    <value>Videóinformációk hozzáadása</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Browse" xml:space="preserve">
+    <value>Tallózás...</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Choose_a_random_frame_for_each_thumbnail" xml:space="preserve">
+    <value>Véletlenszerű képkocka kiválasztása minden bélyegképhez</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Choose_an_output_folder" xml:space="preserve">
+    <value>Válasszon kimeneti mappát</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Columns" xml:space="preserve">
+    <value>Oszlopok</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Combined_contact_sheet" xml:space="preserve">
+    <value>Egyesített kontaktlap</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Count" xml:space="preserve">
+    <value>Darabszám</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Create_thumbnails" xml:space="preserve">
+    <value>Bélyegképek létrehozása</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Draw_thumbnail_borders" xml:space="preserve">
+    <value>Bélyegképkeretek rajzolása</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Draw_thumbnail_shadows" xml:space="preserve">
+    <value>Bélyegképárnyékok rajzolása</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Filename_suffix" xml:space="preserve">
+    <value>Fájlnév utótagja</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Image_format" xml:space="preserve">
+    <value>Képformátum</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Keep_individual_screenshots" xml:space="preserve">
+    <value>Egyedi képernyőképek megtartása</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Maximum_width" xml:space="preserve">
+    <value>Legnagyobb szélesség</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Open_output_folder_when_finished" xml:space="preserve">
+    <value>Kimeneti mappa megnyitása befejezéskor</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Outer_padding" xml:space="preserve">
+    <value>Külső térköz</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Output" xml:space="preserve">
+    <value>Kimenet</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Save_to" xml:space="preserve">
+    <value>Mentés ide</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Select_output_folder_dialog" xml:space="preserve">
+    <value>Kimeneti mappa kiválasztása</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Select_video_dialog" xml:space="preserve">
+    <value>Videó kiválasztása</value>
+  </data>
+  <data name="VideoThumbnailerWindow_ShareX_Video_Thumbnailer" xml:space="preserve">
+    <value>ShareX – Videóbélyegkép-készítő</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Show_timestamps" xml:space="preserve">
+    <value>Időbélyegek megjelenítése</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Thumbnail_spacing" xml:space="preserve">
+    <value>Bélyegképek térköze</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Thumbnails" xml:space="preserve">
+    <value>Bélyegképek</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Upload_created_thumbnails" xml:space="preserve">
+    <value>Létrehozott bélyegképek feltöltése</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Video" xml:space="preserve">
+    <value>Videó</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
+    <value>Videófájlok</value>
+  </data>
+</root>

@@ -30,9 +30,9 @@ public sealed partial class VideoThumbnailerViewModel : ViewModelBase
 
     public IReadOnlyList<VideoThumbnailOutputChoice> OutputLocations { get; } =
     [
-        new("Default screenshots folder", ThumbnailLocationType.DefaultFolder),
-        new("Same folder as video", ThumbnailLocationType.ParentFolder),
-        new("Custom folder", ThumbnailLocationType.CustomFolder)
+        new(Localization.Strings.VideoThumbnailerViewModel_Default_screenshots_folder, ThumbnailLocationType.DefaultFolder),
+        new(Localization.Strings.VideoThumbnailerViewModel_Same_folder_as_video, ThumbnailLocationType.ParentFolder),
+        new(Localization.Strings.VideoThumbnailerViewModel_Custom_folder, ThumbnailLocationType.CustomFolder)
     ];
 
     public IReadOnlyList<VideoThumbnailFormatChoice> ImageFormats { get; } = Enum.GetValues<EImageFormat>()
@@ -198,7 +198,7 @@ public sealed partial class VideoThumbnailerViewModel : ViewModelBase
             }
             else
             {
-                ErrorMessage = "No thumbnails were created. Check that the video is valid and FFmpeg can read it.";
+                ErrorMessage = Localization.Strings.VideoThumbnailerViewModel_No_thumbnails;
             }
         }
         catch (Exception ex)

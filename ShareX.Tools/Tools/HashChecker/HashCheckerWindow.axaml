@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="780" d:DesignHeight="440"
         x:Class="ShareX.Tools.HashCheckerWindow"
         x:DataType="vm:HashCheckerViewModel"
-        Title="ShareX - Hash Checker"
+        Title="{x:Static localization:Strings.HashCheckerWindow_ShareX_Hash_Checker}"
         Width="700"
         MinWidth="700"
         SizeToContent="Height"
@@ -27,11 +28,11 @@
                 <Border Grid.Row="0" Classes="tool-panel">
                     <Grid RowDefinitions="Auto,Auto,Auto">
                         <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
-                            <TextBlock Grid.Column="0" Classes="section-heading" Text="Files"/>
+                            <TextBlock Grid.Column="0" Classes="section-heading" Text="{x:Static localization:Strings.HashCheckerWindow_Files}"/>
                             <CheckBox Grid.Column="1"
                                       IsChecked="{Binding CompareTwoFiles}"
                                       IsEnabled="{Binding IsIdle}">
-                                <TextBlock Text="Compare two files" FontWeight="Normal"/>
+                                <TextBlock Text="{x:Static localization:Strings.HashCheckerWindow_Compare_two_files}" FontWeight="Normal"/>
                             </CheckBox>
                         </Grid>
 
@@ -39,14 +40,14 @@
                               ColumnDefinitions="100,*,Auto"
                               ColumnSpacing="10"
                               Margin="0,10,0,0">
-                            <TextBlock Grid.Column="0" Classes="row-label" Text="File"/>
+                            <TextBlock Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.HashCheckerWindow_File}"/>
                             <TextBox Grid.Column="1"
                                      Text="{Binding FirstFilePath}"
-                                     PlaceholderText="Choose a file or drop it here"
+                                     PlaceholderText="{x:Static localization:Strings.HashCheckerWindow_Choose_a_file_or_drop_it_here}"
                                      IsEnabled="{Binding IsIdle}"/>
                             <Button Grid.Column="2"
                                     Classes="browse-button"
-                                    Content="Browse..."
+                                    Content="{x:Static localization:Strings.HashCheckerWindow_Browse}"
                                     Command="{Binding BrowseFirstFileCommand}"
                                     IsEnabled="{Binding IsIdle}"/>
                         </Grid>
@@ -57,14 +58,14 @@
                                 Background="Transparent"
                                 Margin="0,10,0,0">
                             <Grid ColumnDefinitions="100,*,Auto" ColumnSpacing="10">
-                                <TextBlock Grid.Column="0" Classes="row-label" Text="Second file"/>
+                                <TextBlock Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.HashCheckerWindow_Second_file}"/>
                                 <TextBox Grid.Column="1"
                                          Text="{Binding SecondFilePath}"
-                                         PlaceholderText="Choose a second file or drop it here"
+                                         PlaceholderText="{x:Static localization:Strings.HashCheckerWindow_Choose_a_second_file_or_drop_it_here}"
                                          IsEnabled="{Binding IsIdle}"/>
                                 <Button Grid.Column="2"
                                         Classes="browse-button"
-                                        Content="Browse..."
+                                        Content="{x:Static localization:Strings.HashCheckerWindow_Browse}"
                                         Command="{Binding BrowseSecondFileCommand}"
                                         IsEnabled="{Binding IsIdle}"/>
                             </Grid>
@@ -75,7 +76,7 @@
 
                 <Border Grid.Row="1" Classes="tool-panel">
                     <Grid ColumnDefinitions="100,180,*,Auto" ColumnSpacing="10">
-                        <TextBlock Grid.Column="0" Classes="row-label" Text="Hash type"/>
+                        <TextBlock Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.HashCheckerWindow_Hash_type}"/>
                         <ComboBox Grid.Column="1"
                                   ItemsSource="{x:Static vm:HashCheckerViewModel.Algorithms}"
                                   SelectedItem="{Binding SelectedAlgorithm}"
@@ -101,7 +102,7 @@
                                 <TextBlock Text="{x:Static theming:LucideIcons.search_check}"
                                            Classes="icon"
                                            VerticalAlignment="Center"/>
-                                <TextBlock Text="Check" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.HashCheckerWindow_Check}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="3"
@@ -111,7 +112,7 @@
                                 <TextBlock Text="{x:Static theming:LucideIcons.square_stop}"
                                            Classes="icon"
                                            VerticalAlignment="Center"/>
-                                <TextBlock Text="Stop" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.HashCheckerWindow_Stop}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
                     </Grid>
@@ -119,7 +120,7 @@
 
                 <Border Grid.Row="2" Classes="tool-panel">
                     <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
-                        <TextBlock Grid.Row="0" Classes="section-heading" Text="Results"/>
+                        <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.HashCheckerWindow_Results}"/>
 
                         <Grid Grid.Row="1" ColumnDefinitions="100,*" ColumnSpacing="10">
                             <TextBlock Grid.Column="0" Classes="row-label" Text="{Binding ResultLabel}"/>
@@ -127,7 +128,7 @@
                                      Classes="hash-value"
                                      Text="{Binding ResultHash}"
                                      IsReadOnly="True"
-                                     PlaceholderText="Calculated hash will appear here"/>
+                                     PlaceholderText="{x:Static localization:Strings.HashCheckerWindow_Calculated_hash_will_appear_here}"/>
                         </Grid>
 
                         <Grid Grid.Row="2" ColumnDefinitions="100,*" ColumnSpacing="10">
@@ -136,7 +137,7 @@
                                      Classes="hash-value"
                                      Text="{Binding TargetHash}"
                                      IsReadOnly="{Binding CompareTwoFiles}"
-                                     PlaceholderText="Paste a hash to compare"/>
+                                     PlaceholderText="{x:Static localization:Strings.HashCheckerWindow_Paste_a_hash_to_compare}"/>
                             <Border Grid.Column="1"
                                     Height="2"
                                     Margin="1,0,1,1"

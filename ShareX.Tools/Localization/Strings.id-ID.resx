@@ -1,0 +1,1720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AIOptions_What_is_in_this_image" xml:space="preserve">
+    <value>Apa yang ada dalam gambar ini?</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_Loading_models" xml:space="preserve">
+    <value>Memuat model...</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_Models_loaded" xml:space="preserve">
+    <value>{0} model dimuat.</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_No_models_found" xml:space="preserve">
+    <value>Tidak ada model yang ditemukan.</value>
+  </data>
+  <data name="AnalyzeImageOptionsViewModel_Testing" xml:space="preserve">
+    <value>Menguji...</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Analyze_automatically_when_opened" xml:space="preserve">
+    <value>Analisis secara otomatis saat dibuka</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_API_key" xml:space="preserve">
+    <value>Kunci API</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_API_key_page" xml:space="preserve">
+    <value>Halaman kunci API...</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Behavior" xml:space="preserve">
+    <value>Perilaku</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Capture_a_region_when_opened_without_an_image" xml:space="preserve">
+    <value>Tangkap wilayah saat dibuka tanpa gambar</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Copy_result_automatically" xml:space="preserve">
+    <value>Salin hasil secara otomatis</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Custom_base_URL" xml:space="preserve">
+    <value>URL dasar kustom</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Get_API_key" xml:space="preserve">
+    <value>Dapatkan kunci API</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Google_Gemini" xml:space="preserve">
+    <value>Google Gemini</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_https_api_openai_com" xml:space="preserve">
+    <value>https://api.openai.com</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Load_models" xml:space="preserve">
+    <value>Muat model</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_OpenAI" xml:space="preserve">
+    <value>OpenAI</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_OpenRouter" xml:space="preserve">
+    <value>OpenRouter</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Provider" xml:space="preserve">
+    <value>Penyedia</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Reasoning" xml:space="preserve">
+    <value>Penalaran</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Save" xml:space="preserve">
+    <value>Simpan</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_ShareX_Analyze_image_options" xml:space="preserve">
+    <value>ShareX - Opsi analisis gambar</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Test_connection" xml:space="preserve">
+    <value>Uji koneksi</value>
+  </data>
+  <data name="AnalyzeImageOptionsWindow_Verbosity" xml:space="preserve">
+    <value>Tingkat rincian</value>
+  </data>
+  <data name="AnalyzeImageService_Connection_OK" xml:space="preserve">
+    <value>Koneksi berhasil.</value>
+  </data>
+  <data name="AnalyzeImageService_Missing_Gemini_API_key" xml:space="preserve">
+    <value>Kunci API Gemini tidak ada.</value>
+  </data>
+  <data name="AnalyzeImageService_Missing_OpenAI_API_key" xml:space="preserve">
+    <value>Kunci API OpenAI tidak ada.</value>
+  </data>
+  <data name="AnalyzeImageService_Missing_OpenRouter_API_key" xml:space="preserve">
+    <value>Kunci API OpenRouter tidak ada.</value>
+  </data>
+  <data name="AnalyzeImageService_Select_provider_first" xml:space="preserve">
+    <value>Pilih penyedia terlebih dahulu.</value>
+  </data>
+  <data name="AnalyzeImageService_Unable_to_create_request" xml:space="preserve">
+    <value>Tidak dapat membuat permintaan.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Captured_region" xml:space="preserve">
+    <value>Wilayah yang ditangkap</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Configure_API_key" xml:space="preserve">
+    <value>Konfigurasikan kunci API di Opsi sebelum menganalisis.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Thinking" xml:space="preserve">
+    <value>Berpikir...</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Thoroughly_describe_this_image" xml:space="preserve">
+    <value>Jelaskan gambar ini secara menyeluruh.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Time_ms" xml:space="preserve">
+    <value>Waktu: {0:N0} md</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Transcribe_image_text" xml:space="preserve">
+    <value>Transkripsikan teks gambar. Jangan tulis apa pun yang lain.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_Translate_text_into_English" xml:space="preserve">
+    <value>Terjemahkan teks ini ke bahasa Inggris. Jangan tulis apa pun yang lain.</value>
+  </data>
+  <data name="AnalyzeImageViewModel_What_is_in_this_image" xml:space="preserve">
+    <value>Apa yang ada dalam gambar ini?</value>
+  </data>
+  <data name="AnalyzeImageWindow_Analyze_image" xml:space="preserve">
+    <value>Analisis gambar</value>
+  </data>
+  <data name="AnalyzeImageWindow_Choose_a_preset_prompt" xml:space="preserve">
+    <value>Pilih perintah siap pakai</value>
+  </data>
+  <data name="AnalyzeImageWindow_Copy_all" xml:space="preserve">
+    <value>Salin semua</value>
+  </data>
+  <data name="AnalyzeImageWindow_Image" xml:space="preserve">
+    <value>Gambar</value>
+  </data>
+  <data name="AnalyzeImageWindow_Options" xml:space="preserve">
+    <value>Opsi...</value>
+  </data>
+  <data name="AnalyzeImageWindow_Prompt" xml:space="preserve">
+    <value>Perintah</value>
+  </data>
+  <data name="AnalyzeImageWindow_Result" xml:space="preserve">
+    <value>Hasil</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_image" xml:space="preserve">
+    <value>Pilih gambar...</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_image_dialog" xml:space="preserve">
+    <value>Pilih gambar</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_or_drop_an_image" xml:space="preserve">
+    <value>Pilih atau jatuhkan gambar</value>
+  </data>
+  <data name="AnalyzeImageWindow_Select_region" xml:space="preserve">
+    <value>Pilih area...</value>
+  </data>
+  <data name="AnalyzeImageWindow_ShareX_Analyze_image" xml:space="preserve">
+    <value>ShareX - Analisis gambar</value>
+  </data>
+  <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
+    <value>Latar belakang dihapus dalam {0} md.</value>
+  </data>
+  <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
+    <value>Gambar disimpan.\nJalur file: {0}</value>
+  </data>
+  <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
+    <value>Pilih gambar</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Background_removal_model" xml:space="preserve">
+    <value>Model penghapus latar belakang</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Browse" xml:space="preserve">
+    <value>Telusuri...</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Device" xml:space="preserve">
+    <value>Perangkat</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Image" xml:space="preserve">
+    <value>Gambar</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Models" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Open_guide_page" xml:space="preserve">
+    <value>Buka halaman panduan...</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Open_models_folder" xml:space="preserve">
+    <value>Buka folder model</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Processing_device" xml:space="preserve">
+    <value>Perangkat pemrosesan</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Refresh_models" xml:space="preserve">
+    <value>Segarkan model</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Remove_Background" xml:space="preserve">
+    <value>Hapus latar belakang</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Save" xml:space="preserve">
+    <value>Simpan</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Save_as" xml:space="preserve">
+    <value>Simpan sebagai...</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Save_image_as_dialog" xml:space="preserve">
+    <value>Simpan gambar sebagai</value>
+  </data>
+  <data name="BackgroundRemoverWindow_Select_an_image_to_preview_it_here" xml:space="preserve">
+    <value>Pilih gambar untuk mempratinjaunya di sini.</value>
+  </data>
+  <data name="BackgroundRemoverWindow_ShareX_Background_Remover" xml:space="preserve">
+    <value>ShareX - Penghapus latar belakang</value>
+  </data>
+  <data name="BorderlessWindowViewModel_Unable_to_toggle" xml:space="preserve">
+    <value>Tidak dapat mengalihkan jendela yang dipilih. {0}</value>
+  </data>
+  <data name="BorderlessWindowViewModel_Window_not_found" xml:space="preserve">
+    <value>Tidak dapat menemukan jendela dengan judul yang ditentukan.</value>
+  </data>
+  <data name="BorderlessWindowWindow_Close_after_toggling" xml:space="preserve">
+    <value>Tutup setelah dialihkan</value>
+  </data>
+  <data name="BorderlessWindowWindow_Enter_a_window_title_manually" xml:space="preserve">
+    <value>Masukkan judul jendela secara manual</value>
+  </data>
+  <data name="BorderlessWindowWindow_Keep_taskbar_visible" xml:space="preserve">
+    <value>Biarkan bilah tugas terlihat</value>
+  </data>
+  <data name="BorderlessWindowWindow_Options" xml:space="preserve">
+    <value>Opsi</value>
+  </data>
+  <data name="BorderlessWindowWindow_Remember_window_title" xml:space="preserve">
+    <value>Ingat judul jendela</value>
+  </data>
+  <data name="BorderlessWindowWindow_Select_window" xml:space="preserve">
+    <value>Pilih jendela</value>
+  </data>
+  <data name="BorderlessWindowWindow_ShareX_Borderless_Window" xml:space="preserve">
+    <value>ShareX - Jendela tanpa bingkai</value>
+  </data>
+  <data name="BorderlessWindowWindow_Toggle_again_to_restore_the_original_border_and_window_size" xml:space="preserve">
+    <value>Alihkan lagi untuk memulihkan bingkai dan ukuran jendela asli.</value>
+  </data>
+  <data name="BorderlessWindowWindow_Toggle_borderless" xml:space="preserve">
+    <value>Alihkan tanpa bingkai</value>
+  </data>
+  <data name="BorderlessWindowWindow_Window" xml:space="preserve">
+    <value>Jendela</value>
+  </data>
+  <data name="BorderlessWindowWindow_Window_list" xml:space="preserve">
+    <value>Daftar jendela</value>
+  </data>
+  <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
+    <value>Judul jendela</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
+    <value>Isi papan klip</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Clipboard_empty" xml:space="preserve">
+    <value>Papan klip kosong</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Format_count" xml:space="preserve">
+    <value>{0} format</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Image_details" xml:space="preserve">
+    <value>Gambar  |  {0} × {1} px</value>
+  </data>
+  <data name="ClipboardViewerViewModel_No_previewable_content" xml:space="preserve">
+    <value>Format ini tidak berisi konten yang dapat dipratinjau</value>
+  </data>
+  <data name="ClipboardViewerViewModel_One_format" xml:space="preserve">
+    <value>1 format</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
+    <value>Format papan klip ini tidak dapat dipratinjau.\n\n{0}</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
+    <value>Pratinjau tidak tersedia</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Select_format" xml:space="preserve">
+    <value>Pilih format untuk memeriksa isinya</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Text_details" xml:space="preserve">
+    <value>Teks  |  {0:N0} karakter</value>
+  </data>
+  <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
+    <value>Tidak dapat membaca papan klip\n{0}</value>
+  </data>
+  <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
+    <value>Bersihkan</value>
+  </data>
+  <data name="ClipboardViewerWindow_Formats" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="ClipboardViewerWindow_No_formats" xml:space="preserve">
+    <value>Tidak ada format</value>
+  </data>
+  <data name="ClipboardViewerWindow_Refresh" xml:space="preserve">
+    <value>Segarkan</value>
+  </data>
+  <data name="ClipboardViewerWindow_ShareX_Clipboard_Viewer" xml:space="preserve">
+    <value>ShareX - Penampil papan klip</value>
+  </data>
+  <data name="DirectoryIndexerViewModel_Index_for" xml:space="preserve">
+    <value>Indeks untuk {0}</value>
+  </data>
+  <data name="DirectoryIndexerViewModel_Text" xml:space="preserve">
+    <value>Teks</value>
+  </data>
+  <data name="DirectoryIndexerWindow_0_is_unlimited" xml:space="preserve">
+    <value>0 berarti tanpa batas</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Add_generated_by_footer" xml:space="preserve">
+    <value>Tambahkan catatan kaki pembuat</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Browse" xml:space="preserve">
+    <value>Telusuri...</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Choose_a_folder_and_generate_output_Nothing_is_saved_until_you_use_Save_as_or_Upload" xml:space="preserve">
+    <value>Pilih folder dan buat keluaran. Tidak ada yang disimpan sampai Anda menggunakan Simpan sebagai atau Unggah.</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Create_parseable_structured_JSON" xml:space="preserve">
+    <value>Buat JSON terstruktur yang dapat diurai</value>
+  </data>
+  <data name="DirectoryIndexerWindow_CSS_files" xml:space="preserve">
+    <value>File CSS</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Display_folder_paths" xml:space="preserve">
+    <value>Tampilkan jalur folder</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Empty_line_after_folders" xml:space="preserve">
+    <value>Baris kosong setelah folder</value>
+  </data>
+  <data name="DirectoryIndexerWindow_File_type" xml:space="preserve">
+    <value>{0} file</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Folder" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Folders_only" xml:space="preserve">
+    <value>Hanya folder</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Generate_output" xml:space="preserve">
+    <value>Buat keluaran</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Generated_output" xml:space="preserve">
+    <value>Keluaran yang dibuat</value>
+  </data>
+  <data name="DirectoryIndexerWindow_HTML_output" xml:space="preserve">
+    <value>Keluaran HTML</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Indentation" xml:space="preserve">
+    <value>Indentasi</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Index_options" xml:space="preserve">
+    <value>Opsi indeks</value>
+  </data>
+  <data name="DirectoryIndexerWindow_JSON_output" xml:space="preserve">
+    <value>Keluaran JSON</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Limit_paths_to_root_folder" xml:space="preserve">
+    <value>Batasi jalur ke folder akar</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Maximum_depth" xml:space="preserve">
+    <value>Kedalaman maksimum</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Output_format" xml:space="preserve">
+    <value>Format keluaran</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Ready_to_save_or_upload" xml:space="preserve">
+    <value>Siap disimpan atau diunggah</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Save_as" xml:space="preserve">
+    <value>Simpan sebagai...</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Save_directory_index_dialog" xml:space="preserve">
+    <value>Simpan indeks direktori</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Select_a_CSS_file" xml:space="preserve">
+    <value>Pilih file CSS</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Select_CSS_file_dialog" xml:space="preserve">
+    <value>Pilih file CSS</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Select_folder_to_index_dialog" xml:space="preserve">
+    <value>Pilih folder untuk diindeks</value>
+  </data>
+  <data name="DirectoryIndexerWindow_ShareX_Directory_Indexer" xml:space="preserve">
+    <value>ShareX - Pengindeks direktori</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Show_sizes" xml:space="preserve">
+    <value>Tampilkan ukuran</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Skip_hidden_files" xml:space="preserve">
+    <value>Lewati file tersembunyi</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Skip_hidden_folders" xml:space="preserve">
+    <value>Lewati folder tersembunyi</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Text_output" xml:space="preserve">
+    <value>Keluaran teks</value>
+  </data>
+  <data name="DirectoryIndexerWindow_The_HTML_index_was_generated_successfully_HTML_preview_is_unavailable_but_the_output_is_ready_to_save_or_upload" xml:space="preserve">
+    <value>Indeks HTML berhasil dibuat. Pratinjau HTML tidak tersedia, tetapi keluaran siap disimpan atau diunggah.</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Upload" xml:space="preserve">
+    <value>Unggah</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Use_custom_CSS_file" xml:space="preserve">
+    <value>Gunakan file CSS kustom</value>
+  </data>
+  <data name="DirectoryIndexerWindow_Write_information_as_attributes" xml:space="preserve">
+    <value>Tulis informasi sebagai atribut</value>
+  </data>
+  <data name="DirectoryIndexerWindow_XML_output" xml:space="preserve">
+    <value>Keluaran XML</value>
+  </data>
+  <data name="GeminiProvider_API_error" xml:space="preserve">
+    <value>Kesalahan dari API Gemini: {0}</value>
+  </data>
+  <data name="HashCheckerViewModel_Calculating_hash" xml:space="preserve">
+    <value>Menghitung hash...</value>
+  </data>
+  <data name="HashCheckerViewModel_Calculating_second_hash" xml:space="preserve">
+    <value>Menghitung hash file kedua...</value>
+  </data>
+  <data name="HashCheckerViewModel_Files_different_hashes" xml:space="preserve">
+    <value>Hash kedua file berbeda.</value>
+  </data>
+  <data name="HashCheckerViewModel_Files_matching_hashes" xml:space="preserve">
+    <value>Hash kedua file cocok.</value>
+  </data>
+  <data name="HashCheckerViewModel_First_file_hash" xml:space="preserve">
+    <value>Hash file pertama</value>
+  </data>
+  <data name="HashCheckerViewModel_Hash_check_stopped" xml:space="preserve">
+    <value>Pemeriksaan hash dihentikan.</value>
+  </data>
+  <data name="HashCheckerViewModel_Hash_complete" xml:space="preserve">
+    <value>Penghitungan hash selesai.</value>
+  </data>
+  <data name="HashCheckerViewModel_Hash_failed" xml:space="preserve">
+    <value>Penghitungan hash gagal: {0}</value>
+  </data>
+  <data name="HashCheckerViewModel_Result" xml:space="preserve">
+    <value>Hasil</value>
+  </data>
+  <data name="HashCheckerViewModel_Second_file_hash" xml:space="preserve">
+    <value>Hash file kedua</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_existing_file" xml:space="preserve">
+    <value>Pilih file yang ada.</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_file_dialog" xml:space="preserve">
+    <value>Pilih file</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_second_file_dialog" xml:space="preserve">
+    <value>Pilih file kedua</value>
+  </data>
+  <data name="HashCheckerViewModel_Select_two_existing_files" xml:space="preserve">
+    <value>Pilih dua file yang ada.</value>
+  </data>
+  <data name="HashCheckerViewModel_Stopping_hash" xml:space="preserve">
+    <value>Menghentikan pemeriksaan hash...</value>
+  </data>
+  <data name="HashCheckerViewModel_Target_hash" xml:space="preserve">
+    <value>Hash target</value>
+  </data>
+  <data name="HashCheckerViewModel_Unable_calculate_file_hash" xml:space="preserve">
+    <value>Tidak dapat menghitung hash file.</value>
+  </data>
+  <data name="HashCheckerViewModel_Unable_calculate_second_hash" xml:space="preserve">
+    <value>Tidak dapat menghitung hash file kedua.</value>
+  </data>
+  <data name="HashCheckerWindow_Browse" xml:space="preserve">
+    <value>Telusuri...</value>
+  </data>
+  <data name="HashCheckerWindow_Calculated_hash_will_appear_here" xml:space="preserve">
+    <value>Hash yang dihitung akan muncul di sini</value>
+  </data>
+  <data name="HashCheckerWindow_Check" xml:space="preserve">
+    <value>Periksa</value>
+  </data>
+  <data name="HashCheckerWindow_Choose_a_file_or_drop_it_here" xml:space="preserve">
+    <value>Pilih file atau jatuhkan di sini</value>
+  </data>
+  <data name="HashCheckerWindow_Choose_a_second_file_or_drop_it_here" xml:space="preserve">
+    <value>Pilih file kedua atau jatuhkan di sini</value>
+  </data>
+  <data name="HashCheckerWindow_Compare_two_files" xml:space="preserve">
+    <value>Bandingkan dua file</value>
+  </data>
+  <data name="HashCheckerWindow_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="HashCheckerWindow_Files" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="HashCheckerWindow_Hash_type" xml:space="preserve">
+    <value>Jenis hash</value>
+  </data>
+  <data name="HashCheckerWindow_Paste_a_hash_to_compare" xml:space="preserve">
+    <value>Tempel hash untuk dibandingkan</value>
+  </data>
+  <data name="HashCheckerWindow_Results" xml:space="preserve">
+    <value>Hasil</value>
+  </data>
+  <data name="HashCheckerWindow_Second_file" xml:space="preserve">
+    <value>File kedua</value>
+  </data>
+  <data name="HashCheckerWindow_ShareX_Hash_Checker" xml:space="preserve">
+    <value>ShareX - Pemeriksa hash</value>
+  </data>
+  <data name="HashCheckerWindow_Stop" xml:space="preserve">
+    <value>Berhenti</value>
+  </data>
+  <data name="IconConverterService_Select_icon_size" xml:space="preserve">
+    <value>Setidaknya satu ukuran ikon harus dipilih.</value>
+  </data>
+  <data name="IconConverterService_Source_image_empty" xml:space="preserve">
+    <value>Gambar sumber kosong.</value>
+  </data>
+  <data name="IconConverterService_Unsupported_icon_size" xml:space="preserve">
+    <value>Satu atau beberapa ukuran ikon tidak didukung.</value>
+  </data>
+  <data name="IconConverterViewModel_Creating_icon" xml:space="preserve">
+    <value>Membuat ikon...</value>
+  </data>
+  <data name="IconConverterViewModel_Drop_or_choose" xml:space="preserve">
+    <value>Jatuhkan gambar di sini atau pilih file.</value>
+  </data>
+  <data name="IconConverterViewModel_Failed_create_icon" xml:space="preserve">
+    <value>Gagal membuat ikon: {0}</value>
+  </data>
+  <data name="IconConverterViewModel_Failed_load_image" xml:space="preserve">
+    <value>Gagal memuat gambar: {0}</value>
+  </data>
+  <data name="IconConverterViewModel_Icon_saved" xml:space="preserve">
+    <value>Ikon disimpan ke {0}</value>
+  </data>
+  <data name="IconConverterViewModel_Image_dimensions" xml:space="preserve">
+    <value>{0} × {1} piksel</value>
+  </data>
+  <data name="IconConverterViewModel_Image_load_failed" xml:space="preserve">
+    <value>File yang dipilih tidak dapat dimuat sebagai gambar.</value>
+  </data>
+  <data name="IconConverterViewModel_Image_picker_unavailable" xml:space="preserve">
+    <value>Pemilih gambar tidak tersedia.</value>
+  </data>
+  <data name="IconConverterViewModel_Save_dialog_unavailable" xml:space="preserve">
+    <value>Dialog penyimpanan ikon tidak tersedia.</value>
+  </data>
+  <data name="IconConverterViewModel_Select_image_dialog" xml:space="preserve">
+    <value>Pilih gambar</value>
+  </data>
+  <data name="IconConverterWindow_128_pixels" xml:space="preserve">
+    <value>128 piksel</value>
+  </data>
+  <data name="IconConverterWindow_16_pixels" xml:space="preserve">
+    <value>16 piksel</value>
+  </data>
+  <data name="IconConverterWindow_256_pixels" xml:space="preserve">
+    <value>256 piksel</value>
+  </data>
+  <data name="IconConverterWindow_32_bits_16_7M_colors" xml:space="preserve">
+    <value>32 bit (16,7 juta warna)</value>
+  </data>
+  <data name="IconConverterWindow_32_pixels" xml:space="preserve">
+    <value>32 piksel</value>
+  </data>
+  <data name="IconConverterWindow_48_pixels" xml:space="preserve">
+    <value>48 piksel</value>
+  </data>
+  <data name="IconConverterWindow_64_pixels" xml:space="preserve">
+    <value>64 piksel</value>
+  </data>
+  <data name="IconConverterWindow_8_bits_256_colors" xml:space="preserve">
+    <value>8 bit (256 warna)</value>
+  </data>
+  <data name="IconConverterWindow_Bit_depth" xml:space="preserve">
+    <value>Kedalaman bit</value>
+  </data>
+  <data name="IconConverterWindow_Browse" xml:space="preserve">
+    <value>Telusuri...</value>
+  </data>
+  <data name="IconConverterWindow_Convert" xml:space="preserve">
+    <value>Konversi...</value>
+  </data>
+  <data name="IconConverterWindow_Drop_an_image_here" xml:space="preserve">
+    <value>Jatuhkan gambar di sini</value>
+  </data>
+  <data name="IconConverterWindow_Icon_file" xml:space="preserve">
+    <value>File ikon</value>
+  </data>
+  <data name="IconConverterWindow_Image" xml:space="preserve">
+    <value>Gambar</value>
+  </data>
+  <data name="IconConverterWindow_or_use_Browse_to_choose_a_file" xml:space="preserve">
+    <value>atau gunakan Telusuri untuk memilih file</value>
+  </data>
+  <data name="IconConverterWindow_Save_icon_as_dialog" xml:space="preserve">
+    <value>Simpan ikon sebagai</value>
+  </data>
+  <data name="IconConverterWindow_ShareX_Icon_Converter" xml:space="preserve">
+    <value>ShareX - Pengonversi ikon</value>
+  </data>
+  <data name="IconConverterWindow_Sizes" xml:space="preserve">
+    <value>Ukuran</value>
+  </data>
+  <data name="ImageCombinerViewModel_Add_two_images" xml:space="preserve">
+    <value>Tambahkan setidaknya dua gambar untuk digabungkan.</value>
+  </data>
+  <data name="ImageCombinerViewModel_Bottom" xml:space="preserve">
+    <value>Bawah</value>
+  </data>
+  <data name="ImageCombinerViewModel_Center" xml:space="preserve">
+    <value>Tengah</value>
+  </data>
+  <data name="ImageCombinerViewModel_Combine_failed" xml:space="preserve">
+    <value>Gagal menggabungkan gambar: {0}</value>
+  </data>
+  <data name="ImageCombinerViewModel_Combining_images" xml:space="preserve">
+    <value>Menggabungkan gambar...</value>
+  </data>
+  <data name="ImageCombinerViewModel_Image_count" xml:space="preserve">
+    <value>{0} gambar</value>
+  </data>
+  <data name="ImageCombinerViewModel_Images_combined" xml:space="preserve">
+    <value>Gambar digabungkan dan dikirim ke alur kerja setelah penangkapan yang dikonfigurasi.</value>
+  </data>
+  <data name="ImageCombinerViewModel_Left" xml:space="preserve">
+    <value>Kiri</value>
+  </data>
+  <data name="ImageCombinerViewModel_One_image" xml:space="preserve">
+    <value>{0} gambar</value>
+  </data>
+  <data name="ImageCombinerViewModel_Preview_failed" xml:space="preserve">
+    <value>Pratinjau gagal: {0}</value>
+  </data>
+  <data name="ImageCombinerViewModel_Previewing" xml:space="preserve">
+    <value>Mempratinjau {0}.</value>
+  </data>
+  <data name="ImageCombinerViewModel_Right" xml:space="preserve">
+    <value>Kanan</value>
+  </data>
+  <data name="ImageCombinerViewModel_Top" xml:space="preserve">
+    <value>Atas</value>
+  </data>
+  <data name="ImageCombinerWindow_Add" xml:space="preserve">
+    <value>Tambah...</value>
+  </data>
+  <data name="ImageCombinerWindow_Add_at_least_two_images_to_preview" xml:space="preserve">
+    <value>Tambahkan setidaknya dua gambar untuk dipratinjau</value>
+  </data>
+  <data name="ImageCombinerWindow_Add_images_dialog" xml:space="preserve">
+    <value>Tambahkan gambar</value>
+  </data>
+  <data name="ImageCombinerWindow_Alignment" xml:space="preserve">
+    <value>Perataan</value>
+  </data>
+  <data name="ImageCombinerWindow_Auto_fill_background" xml:space="preserve">
+    <value>Isi latar belakang otomatis</value>
+  </data>
+  <data name="ImageCombinerWindow_Combine_images" xml:space="preserve">
+    <value>Gabungkan gambar</value>
+  </data>
+  <data name="ImageCombinerWindow_Drop_images_here_or_use_the_Add_button" xml:space="preserve">
+    <value>Jatuhkan gambar di sini atau gunakan tombol Tambah</value>
+  </data>
+  <data name="ImageCombinerWindow_Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="ImageCombinerWindow_Layout" xml:space="preserve">
+    <value>Tata letak</value>
+  </data>
+  <data name="ImageCombinerWindow_Orientation" xml:space="preserve">
+    <value>Orientasi</value>
+  </data>
+  <data name="ImageCombinerWindow_ShareX_Image_Combiner" xml:space="preserve">
+    <value>ShareX - Penggabung gambar</value>
+  </data>
+  <data name="ImageCombinerWindow_Spacing" xml:space="preserve">
+    <value>Jarak</value>
+  </data>
+  <data name="ImageCombinerWindow_Vertical" xml:space="preserve">
+    <value>Vertikal</value>
+  </data>
+  <data name="ImageCombinerWindow_Wrap_after" xml:space="preserve">
+    <value>Bungkus setelah</value>
+  </data>
+  <data name="ImageComparerViewModel_Failed_load_image" xml:space="preserve">
+    <value>Gagal memuat gambar: {0}</value>
+  </data>
+  <data name="ImageComparerViewModel_Image_load_failed" xml:space="preserve">
+    <value>File yang dipilih tidak dapat dimuat sebagai gambar.</value>
+  </data>
+  <data name="ImageComparerViewModel_Image_picker_unavailable" xml:space="preserve">
+    <value>Pemilih gambar tidak tersedia.</value>
+  </data>
+  <data name="ImageComparerViewModel_Pixels_match" xml:space="preserve">
+    <value>{0:N0} dari {1:N0} piksel cocok.</value>
+  </data>
+  <data name="ImageComparerViewModel_Select_image_dialog" xml:space="preserve">
+    <value>Pilih gambar {0}</value>
+  </data>
+  <data name="ImageComparerViewModel_Select_two_images" xml:space="preserve">
+    <value>Pilih dua gambar untuk dibandingkan.</value>
+  </data>
+  <data name="ImageComparerViewModel_Similarity_empty" xml:space="preserve">
+    <value>Kemiripan: -</value>
+  </data>
+  <data name="ImageComparerViewModel_Similarity_value" xml:space="preserve">
+    <value>Kemiripan: {0:0.##}%</value>
+  </data>
+  <data name="ImageComparerWindow_Choose" xml:space="preserve">
+    <value>Pilih...</value>
+  </data>
+  <data name="ImageComparerWindow_Diff_View" xml:space="preserve">
+    <value>Tampilan perbedaan</value>
+  </data>
+  <data name="ImageComparerWindow_Image_1" xml:space="preserve">
+    <value>Gambar 1</value>
+  </data>
+  <data name="ImageComparerWindow_Image_2" xml:space="preserve">
+    <value>Gambar 2</value>
+  </data>
+  <data name="ImageComparerWindow_Select_Image_1_and_Image_2_to_show_the_comparison_preview" xml:space="preserve">
+    <value>Pilih Gambar 1 dan Gambar 2 untuk menampilkan pratinjau perbandingan.</value>
+  </data>
+  <data name="ImageComparerWindow_ShareX_Image_Comparer" xml:space="preserve">
+    <value>ShareX - Pembanding gambar</value>
+  </data>
+  <data name="ImageComparerWindow_Slider" xml:space="preserve">
+    <value>Penggeser</value>
+  </data>
+  <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
+    <value>{0} × {1}</value>
+  </data>
+  <data name="ImageSplitterWindow_Browse" xml:space="preserve">
+    <value>Telusuri...</value>
+  </data>
+  <data name="ImageSplitterWindow_Choose_image_dialog" xml:space="preserve">
+    <value>Pilih gambar</value>
+  </data>
+  <data name="ImageSplitterWindow_Choose_output_folder_dialog" xml:space="preserve">
+    <value>Pilih folder keluaran</value>
+  </data>
+  <data name="ImageSplitterWindow_Columns" xml:space="preserve">
+    <value>Kolom</value>
+  </data>
+  <data name="ImageSplitterWindow_Image" xml:space="preserve">
+    <value>Gambar</value>
+  </data>
+  <data name="ImageSplitterWindow_Output_folder" xml:space="preserve">
+    <value>Folder keluaran</value>
+  </data>
+  <data name="ImageSplitterWindow_Rows" xml:space="preserve">
+    <value>Baris</value>
+  </data>
+  <data name="ImageSplitterWindow_ShareX_Image_Splitter" xml:space="preserve">
+    <value>ShareX - Pemisah gambar</value>
+  </data>
+  <data name="ImageSplitterWindow_Split_image" xml:space="preserve">
+    <value>Pisahkan gambar</value>
+  </data>
+  <data name="ImageSplitterWindow_Split_layout" xml:space="preserve">
+    <value>Tata letak pemisahan</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generated_many" xml:space="preserve">
+    <value>Membuat {0} gambar mini.</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generated_one" xml:space="preserve">
+    <value>Membuat {0} gambar mini.</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generating" xml:space="preserve">
+    <value>Membuat gambar mini...</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Generation_failed" xml:space="preserve">
+    <value>Pembuatan gagal: {0}</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_Image_count" xml:space="preserve">
+    <value>{0} gambar</value>
+  </data>
+  <data name="ImageThumbnailerViewModel_One_image" xml:space="preserve">
+    <value>{0} gambar</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Add" xml:space="preserve">
+    <value>Tambah...</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Add_images_dialog" xml:space="preserve">
+    <value>Tambahkan gambar</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Browse" xml:space="preserve">
+    <value>Telusuri...</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Choose_output_folder_dialog" xml:space="preserve">
+    <value>Pilih folder keluaran</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Drop_images_here_or_use_the_Add_button" xml:space="preserve">
+    <value>Jatuhkan gambar di sini atau gunakan tombol Tambah</value>
+  </data>
+  <data name="ImageThumbnailerWindow_File_name_template" xml:space="preserve">
+    <value>Templat nama file</value>
+  </data>
+  <data name="ImageThumbnailerWindow_filename_th" xml:space="preserve">
+    <value>$filename_th</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Generate_thumbnails" xml:space="preserve">
+    <value>Buat gambar mini</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Height" xml:space="preserve">
+    <value>Tinggi</value>
+  </data>
+  <data name="ImageThumbnailerWindow_JPEG_quality" xml:space="preserve">
+    <value>Kualitas JPEG</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Output" xml:space="preserve">
+    <value>Keluaran</value>
+  </data>
+  <data name="ImageThumbnailerWindow_ShareX_Image_Thumbnailer" xml:space="preserve">
+    <value>ShareX - Pembuat gambar mini</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Thumbnail_size" xml:space="preserve">
+    <value>Ukuran gambar mini</value>
+  </data>
+  <data name="ImageThumbnailerWindow_Width" xml:space="preserve">
+    <value>Lebar</value>
+  </data>
+  <data name="IndexerHtml_File_count" xml:space="preserve">
+    <value>{0:n0} file</value>
+  </data>
+  <data name="IndexerHtml_Folder_count" xml:space="preserve">
+    <value>{0:n0} folder</value>
+  </data>
+  <data name="IndexerHtml_Generated_by_on" xml:space="preserve">
+    <value>Dibuat oleh {0} pada {1:yyyy-MM-dd 'at' HH:mm:ss 'UTC'}</value>
+  </data>
+  <data name="IndexerHtml_Index_for" xml:space="preserve">
+    <value>Indeks untuk {0}</value>
+  </data>
+  <data name="IndexerHtml_One_file" xml:space="preserve">
+    <value>{0:n0} file</value>
+  </data>
+  <data name="IndexerHtml_One_folder" xml:space="preserve">
+    <value>{0:n0} folder</value>
+  </data>
+  <data name="IndexerText_Generated_by" xml:space="preserve">
+    <value>Dibuat oleh ShareX Directory Indexer pada {0:yyyy-MM-dd 'at' HH:mm:ss 'UTC'}. Versi terbaru dapat diunduh dari: {1}</value>
+  </data>
+  <data name="InspectWindowPickerOverlay_Click_control" xml:space="preserve">
+    <value>Klik kontrol untuk memeriksa  |  Esc untuk membatalkan</value>
+  </data>
+  <data name="InspectWindowPickerOverlay_Click_window" xml:space="preserve">
+    <value>Klik jendela untuk memeriksa  |  Esc untuk membatalkan</value>
+  </data>
+  <data name="InspectWindowViewModel_Class_name" xml:space="preserve">
+    <value>Nama kelas</value>
+  </data>
+  <data name="InspectWindowViewModel_Client_rectangle" xml:space="preserve">
+    <value>Persegi panjang klien</value>
+  </data>
+  <data name="InspectWindowViewModel_Control" xml:space="preserve">
+    <value>Kontrol</value>
+  </data>
+  <data name="InspectWindowViewModel_Extended_window_styles" xml:space="preserve">
+    <value>Gaya jendela lanjutan</value>
+  </data>
+  <data name="InspectWindowViewModel_No_target_selected" xml:space="preserve">
+    <value>Tidak ada target yang dipilih</value>
+  </data>
+  <data name="InspectWindowViewModel_Pick_target" xml:space="preserve">
+    <value>Pilih jendela atau kontrol untuk memeriksa propertinya</value>
+  </data>
+  <data name="InspectWindowViewModel_Process_file_name" xml:space="preserve">
+    <value>Nama file proses</value>
+  </data>
+  <data name="InspectWindowViewModel_Process_identifier" xml:space="preserve">
+    <value>Pengenal proses</value>
+  </data>
+  <data name="InspectWindowViewModel_Process_name" xml:space="preserve">
+    <value>Nama proses</value>
+  </data>
+  <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
+    <value>X: {0}  Y: {1}  |  Lebar: {2}  Tinggi: {3}</value>
+  </data>
+  <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
+    <value>Jendela tanpa judul</value>
+  </data>
+  <data name="InspectWindowViewModel_Window" xml:space="preserve">
+    <value>Jendela</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_handle" xml:space="preserve">
+    <value>Handel jendela</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_rectangle" xml:space="preserve">
+    <value>Persegi panjang jendela</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_styles" xml:space="preserve">
+    <value>Gaya jendela</value>
+  </data>
+  <data name="InspectWindowViewModel_Window_title" xml:space="preserve">
+    <value>Judul jendela</value>
+  </data>
+  <data name="InspectWindowWindow_Always_on_top" xml:space="preserve">
+    <value>Selalu di atas</value>
+  </data>
+  <data name="InspectWindowWindow_Copy_all" xml:space="preserve">
+    <value>Salin semua</value>
+  </data>
+  <data name="InspectWindowWindow_Opacity" xml:space="preserve">
+    <value>Opasitas</value>
+  </data>
+  <data name="InspectWindowWindow_Pick_a_target_to_inspect_its_window_properties" xml:space="preserve">
+    <value>Pilih target untuk memeriksa properti jendelanya</value>
+  </data>
+  <data name="InspectWindowWindow_Pick_control" xml:space="preserve">
+    <value>Pilih kontrol</value>
+  </data>
+  <data name="InspectWindowWindow_Pick_window" xml:space="preserve">
+    <value>Pilih jendela</value>
+  </data>
+  <data name="InspectWindowWindow_Refresh" xml:space="preserve">
+    <value>Segarkan</value>
+  </data>
+  <data name="InspectWindowWindow_Select_window" xml:space="preserve">
+    <value>Pilih jendela</value>
+  </data>
+  <data name="InspectWindowWindow_ShareX_Inspect_Window" xml:space="preserve">
+    <value>ShareX - Periksa jendela</value>
+  </data>
+  <data name="InspectWindowWindow_Window_information" xml:space="preserve">
+    <value>Informasi jendela</value>
+  </data>
+  <data name="InspectWindowWindow_Window_settings" xml:space="preserve">
+    <value>Pengaturan jendela</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Automatic" xml:space="preserve">
+    <value>Otomatis</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Backward_diagonal" xml:space="preserve">
+    <value>Diagonal mundur</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Checkerboard" xml:space="preserve">
+    <value>Papan catur</value>
+  </data>
+  <data name="LocalizedDisplayConverter_CPU" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Forward_diagonal" xml:space="preserve">
+    <value>Diagonal maju</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Gemini" xml:space="preserve">
+    <value>Gemini</value>
+  </data>
+  <data name="LocalizedDisplayConverter_GPU" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="LocalizedDisplayConverter_High" xml:space="preserve">
+    <value>Tinggi</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Horizontal_bars" xml:space="preserve">
+    <value>Bilah horizontal</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Horizontal_lines" xml:space="preserve">
+    <value>Garis horizontal</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Low" xml:space="preserve">
+    <value>Rendah</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Medium" xml:space="preserve">
+    <value>Sedang</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Minimal" xml:space="preserve">
+    <value>Minimal</value>
+  </data>
+  <data name="LocalizedDisplayConverter_OpenAI" xml:space="preserve">
+    <value>OpenAI</value>
+  </data>
+  <data name="LocalizedDisplayConverter_OpenAI_legacy" xml:space="preserve">
+    <value>OpenAI (lama)</value>
+  </data>
+  <data name="LocalizedDisplayConverter_OpenRouter" xml:space="preserve">
+    <value>OpenRouter</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Vertical" xml:space="preserve">
+    <value>Vertikal</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Vertical_bars" xml:space="preserve">
+    <value>Bilah vertikal</value>
+  </data>
+  <data name="LocalizedDisplayConverter_Vertical_lines" xml:space="preserve">
+    <value>Garis vertikal</value>
+  </data>
+  <data name="MetadataService_ExifTool_not_found" xml:space="preserve">
+    <value>ExifTool tidak dapat ditemukan.</value>
+  </data>
+  <data name="MetadataService_Exited_with_code" xml:space="preserve">
+    <value>ExifTool keluar dengan kode {0}.</value>
+  </data>
+  <data name="MetadataService_Failed_start_ExifTool" xml:space="preserve">
+    <value>Gagal memulai ExifTool.</value>
+  </data>
+  <data name="MetadataService_Selected_file_not_found" xml:space="preserve">
+    <value>File yang dipilih tidak dapat ditemukan.</value>
+  </data>
+  <data name="MetadataViewModel_No_file_selected" xml:space="preserve">
+    <value>Tidak ada file yang dipilih</value>
+  </data>
+  <data name="MetadataViewModel_No_metadata" xml:space="preserve">
+    <value>Tidak ada metadata yang ditemukan dalam file ini</value>
+  </data>
+  <data name="MetadataViewModel_No_search_matches" xml:space="preserve">
+    <value>Tidak ada metadata yang cocok dengan pencarian saat ini</value>
+  </data>
+  <data name="MetadataViewModel_One_tag" xml:space="preserve">
+    <value>1 tag</value>
+  </data>
+  <data name="MetadataViewModel_Open_or_drop" xml:space="preserve">
+    <value>Buka atau jatuhkan file untuk memeriksa metadatanya</value>
+  </data>
+  <data name="MetadataViewModel_Open_or_drop_supported" xml:space="preserve">
+    <value>Buka atau jatuhkan file apa pun yang didukung</value>
+  </data>
+  <data name="MetadataViewModel_Reading_metadata" xml:space="preserve">
+    <value>Membaca metadata...</value>
+  </data>
+  <data name="MetadataViewModel_Tag_count" xml:space="preserve">
+    <value>{0:N0} tag</value>
+  </data>
+  <data name="MetadataViewModel_Unable_read" xml:space="preserve">
+    <value>Tidak dapat membaca metadata\n{0}</value>
+  </data>
+  <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
+    <value>Tidak dapat menghapus metadata\n{0}</value>
+  </data>
+  <data name="MetadataViewModel_Window_title" xml:space="preserve">
+    <value>ShareX - Metadata</value>
+  </data>
+  <data name="MetadataViewModel_Window_title_file" xml:space="preserve">
+    <value>ShareX - Metadata - {0}</value>
+  </data>
+  <data name="MetadataWindow_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="MetadataWindow_Copy_all" xml:space="preserve">
+    <value>Salin semua</value>
+  </data>
+  <data name="MetadataWindow_Metadata" xml:space="preserve">
+    <value>Metadata</value>
+  </data>
+  <data name="MetadataWindow_Open" xml:space="preserve">
+    <value>Buka...</value>
+  </data>
+  <data name="MetadataWindow_Open_file_dialog" xml:space="preserve">
+    <value>Buka file</value>
+  </data>
+  <data name="MetadataWindow_Search_metadata" xml:space="preserve">
+    <value>Cari metadata</value>
+  </data>
+  <data name="MetadataWindow_Strip_all_metadata" xml:space="preserve">
+    <value>Hapus semua metadata?</value>
+  </data>
+  <data name="MetadataWindow_Strip_metadata" xml:space="preserve">
+    <value>Hapus metadata...</value>
+  </data>
+  <data name="MetadataWindow_Strip_metadata_2" xml:space="preserve">
+    <value>Hapus metadata</value>
+  </data>
+  <data name="MetadataWindow_This_permanently_removes_all_non_essential_metadata_from_the_selected_file_This_action_cannot_be_undone" xml:space="preserve">
+    <value>Ini menghapus secara permanen semua metadata yang tidak penting dari file yang dipilih. Tindakan ini tidak dapat dibatalkan.</value>
+  </data>
+  <data name="MonitorTestWindow_Blue" xml:space="preserve">
+    <value>Biru</value>
+  </data>
+  <data name="MonitorTestWindow_Brightness" xml:space="preserve">
+    <value>Kecerahan</value>
+  </data>
+  <data name="MonitorTestWindow_Cell_size" xml:space="preserve">
+    <value>Ukuran sel</value>
+  </data>
+  <data name="MonitorTestWindow_Choose_a_test_pattern_and_adjust_its_properties" xml:space="preserve">
+    <value>Pilih pola pengujian dan sesuaikan propertinya</value>
+  </data>
+  <data name="MonitorTestWindow_Close" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="MonitorTestWindow_Color" xml:space="preserve">
+    <value>Warna</value>
+  </data>
+  <data name="MonitorTestWindow_Colors" xml:space="preserve">
+    <value>Warna</value>
+  </data>
+  <data name="MonitorTestWindow_Direction" xml:space="preserve">
+    <value>Arah</value>
+  </data>
+  <data name="MonitorTestWindow_Gradient" xml:space="preserve">
+    <value>Gradien</value>
+  </data>
+  <data name="MonitorTestWindow_Grayscale" xml:space="preserve">
+    <value>Skala abu-abu</value>
+  </data>
+  <data name="MonitorTestWindow_Green" xml:space="preserve">
+    <value>Hijau</value>
+  </data>
+  <data name="MonitorTestWindow_Monitor_test" xml:space="preserve">
+    <value>Uji monitor</value>
+  </data>
+  <data name="MonitorTestWindow_Motion" xml:space="preserve">
+    <value>Gerakan</value>
+  </data>
+  <data name="MonitorTestWindow_Pattern" xml:space="preserve">
+    <value>Pola</value>
+  </data>
+  <data name="MonitorTestWindow_Red" xml:space="preserve">
+    <value>Merah</value>
+  </data>
+  <data name="MonitorTestWindow_RGB" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="MonitorTestWindow_ShareX_Monitor_Test" xml:space="preserve">
+    <value>ShareX - Uji monitor</value>
+  </data>
+  <data name="MonitorTestWindow_Speed" xml:space="preserve">
+    <value>Kecepatan</value>
+  </data>
+  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
+    <value>Bahasa {0} tidak tersedia di sistem ini untuk OCR.</value>
+  </data>
+  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
+    <value>Pengenalan karakter optik hanya tersedia dengan Windows versi {0} atau lebih baru.</value>
+  </data>
+  <data name="OCROptions_Bing" xml:space="preserve">
+    <value>Bing</value>
+  </data>
+  <data name="OCROptions_DeepL" xml:space="preserve">
+    <value>DeepL</value>
+  </data>
+  <data name="OCROptions_DuckDuckGo" xml:space="preserve">
+    <value>DuckDuckGo</value>
+  </data>
+  <data name="OCROptions_Google_Images" xml:space="preserve">
+    <value>Google Gambar</value>
+  </data>
+  <data name="OCROptions_Google_Search" xml:space="preserve">
+    <value>Google Penelusuran</value>
+  </data>
+  <data name="OCROptions_Google_Translate" xml:space="preserve">
+    <value>Google Terjemahan</value>
+  </data>
+  <data name="OCRViewModel_New_service_name" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="OCRWindow_Close" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="OCRWindow_Close_after_opening" xml:space="preserve">
+    <value>Tutup setelah membuka</value>
+  </data>
+  <data name="OCRWindow_Copy_all" xml:space="preserve">
+    <value>Salin semua</value>
+  </data>
+  <data name="OCRWindow_Copy_recognized_text_automatically" xml:space="preserve">
+    <value>Salin teks yang dikenali secara otomatis</value>
+  </data>
+  <data name="OCRWindow_Edit_services" xml:space="preserve">
+    <value>Edit layanan</value>
+  </data>
+  <data name="OCRWindow_Language" xml:space="preserve">
+    <value>Bahasa</value>
+  </data>
+  <data name="OCRWindow_Name" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="OCRWindow_New" xml:space="preserve">
+    <value>Baru</value>
+  </data>
+  <data name="OCRWindow_OCR_help" xml:space="preserve">
+    <value>Bantuan OCR</value>
+  </data>
+  <data name="OCRWindow_Open_service" xml:space="preserve">
+    <value>Buka layanan...</value>
+  </data>
+  <data name="OCRWindow_Recognition" xml:space="preserve">
+    <value>Pengenalan</value>
+  </data>
+  <data name="OCRWindow_Remove" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="OCRWindow_Reset" xml:space="preserve">
+    <value>Atur ulang</value>
+  </data>
+  <data name="OCRWindow_Result" xml:space="preserve">
+    <value>Hasil</value>
+  </data>
+  <data name="OCRWindow_Scale_factor" xml:space="preserve">
+    <value>Faktor skala</value>
+  </data>
+  <data name="OCRWindow_Select_a_service" xml:space="preserve">
+    <value>Pilih layanan</value>
+  </data>
+  <data name="OCRWindow_Select_image" xml:space="preserve">
+    <value>Pilih gambar...</value>
+  </data>
+  <data name="OCRWindow_Select_image_dialog" xml:space="preserve">
+    <value>Pilih gambar</value>
+  </data>
+  <data name="OCRWindow_Select_region" xml:space="preserve">
+    <value>Pilih area...</value>
+  </data>
+  <data name="OCRWindow_Services" xml:space="preserve">
+    <value>Layanan</value>
+  </data>
+  <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
+    <value>ShareX - Pengenalan karakter optik</value>
+  </data>
+  <data name="OCRWindow_Single_line" xml:space="preserve">
+    <value>Satu baris</value>
+  </data>
+  <data name="OCRWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="OCRWindow_Use_0_where_the_recognized_text_belongs" xml:space="preserve">
+    <value>Gunakan {0} di tempat teks yang dikenali berada</value>
+  </data>
+  <data name="OpenRouterProvider_API_error" xml:space="preserve">
+    <value>Kesalahan dari API OpenRouter: {0}</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Bottom_center" xml:space="preserve">
+    <value>Tengah bawah</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Bottom_left" xml:space="preserve">
+    <value>Kiri bawah</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Bottom_right" xml:space="preserve">
+    <value>Kanan bawah</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Center" xml:space="preserve">
+    <value>Tengah</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Middle_left" xml:space="preserve">
+    <value>Kiri tengah</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Middle_right" xml:space="preserve">
+    <value>Kanan tengah</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Top_center" xml:space="preserve">
+    <value>Tengah atas</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Top_left" xml:space="preserve">
+    <value>Kiri atas</value>
+  </data>
+  <data name="PinToScreenOptionsViewModel_Top_right" xml:space="preserve">
+    <value>Kanan atas</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Always_on_top" xml:space="preserve">
+    <value>Selalu di atas</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Appearance" xml:space="preserve">
+    <value>Tampilan</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Background_color" xml:space="preserve">
+    <value>Warna latar belakang</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Border_color" xml:space="preserve">
+    <value>Warna batas</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Border_size" xml:space="preserve">
+    <value>Ukuran bingkai</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Default_position" xml:space="preserve">
+    <value>Posisi default</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_High_quality_scaling" xml:space="preserve">
+    <value>Penskalaan kualitas tinggi</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Image_border" xml:space="preserve">
+    <value>Bingkai gambar</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Initial_opacity" xml:space="preserve">
+    <value>Opasitas awal</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Initial_scale" xml:space="preserve">
+    <value>Skala awal</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Keep_center_while_resizing" xml:space="preserve">
+    <value>Pertahankan pusat saat mengubah ukuran</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Minimized_preview" xml:space="preserve">
+    <value>Pratinjau diminimalkan</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Mouse_wheel_changes_scale_Ctrl_mouse_wheel_changes_opacity" xml:space="preserve">
+    <value>Roda tetikus mengubah skala, Ctrl + roda tetikus mengubah opasitas.</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Opacity_step" xml:space="preserve">
+    <value>Langkah opasitas</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Placement" xml:space="preserve">
+    <value>Penempatan</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Preview_size" xml:space="preserve">
+    <value>Ukuran pratinjau</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Save" xml:space="preserve">
+    <value>Simpan</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Scale_step" xml:space="preserve">
+    <value>Langkah skala</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Screen_edge_offset" xml:space="preserve">
+    <value>Ofset tepi layar</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_ShareX_Pin_to_Screen_options" xml:space="preserve">
+    <value>ShareX - Opsi sematkan ke layar</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Size_and_opacity" xml:space="preserve">
+    <value>Ukuran dan opasitas</value>
+  </data>
+  <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
+    <value>Bayangan jendela</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
+    <value>Papan klip tidak berisi gambar.</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_No_image_selected" xml:space="preserve">
+    <value>Tidak ada gambar yang dipilih.</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_No_region_selected" xml:space="preserve">
+    <value>Tidak ada wilayah yang dipilih.</value>
+  </data>
+  <data name="PinToScreenStartupViewModel_Unable_load_image" xml:space="preserve">
+    <value>Tidak dapat memuat gambar. {0}</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Choose_an_image" xml:space="preserve">
+    <value>Pilih gambar</value>
+  </data>
+  <data name="PinToScreenStartupWindow_From_clipboard" xml:space="preserve">
+    <value>Dari papan klip</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Pin_an_image_above_your_other_windows_for_quick_reference" xml:space="preserve">
+    <value>Sematkan gambar di atas jendela lain untuk rujukan cepat.</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Select_image" xml:space="preserve">
+    <value>Pilih gambar...</value>
+  </data>
+  <data name="PinToScreenStartupWindow_Select_region" xml:space="preserve">
+    <value>Pilih area...</value>
+  </data>
+  <data name="PinToScreenStartupWindow_ShareX_Pin_to_Screen" xml:space="preserve">
+    <value>ShareX - Sematkan ke layar</value>
+  </data>
+  <data name="PinToScreenWindow_Close" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="PinToScreenWindow_Copy_image" xml:space="preserve">
+    <value>Salin gambar</value>
+  </data>
+  <data name="PinToScreenWindow_Options" xml:space="preserve">
+    <value>Opsi</value>
+  </data>
+  <data name="PinToScreenWindow_Pinned_image" xml:space="preserve">
+    <value>Gambar yang disematkan</value>
+  </data>
+  <data name="PinToScreenWindow_Reset_scale_and_opacity" xml:space="preserve">
+    <value>Atur ulang skala dan opasitas</value>
+  </data>
+  <data name="QRCodeViewModel_Content_too_large" xml:space="preserve">
+    <value>Konten terlalu besar untuk kode QR.</value>
+  </data>
+  <data name="QRCodeViewModel_Decoded_many" xml:space="preserve">
+    <value>Mendekode {0} nilai.</value>
+  </data>
+  <data name="QRCodeViewModel_Decoded_one" xml:space="preserve">
+    <value>Mendekode {0} nilai.</value>
+  </data>
+  <data name="QRCodeViewModel_Generation_failed" xml:space="preserve">
+    <value>Pembuatan kode QR gagal: {0}</value>
+  </data>
+  <data name="QRCodeViewModel_No_QR_code" xml:space="preserve">
+    <value>Tidak ada kode QR yang ditemukan.</value>
+  </data>
+  <data name="QRCodeViewModel_QRCode_saved" xml:space="preserve">
+    <value>Kode QR disimpan.</value>
+  </data>
+  <data name="QRCodeViewModel_Unable_generate" xml:space="preserve">
+    <value>Tidak dapat membuat kode QR dari konten ini.</value>
+  </data>
+  <data name="QRCodeWindow_Bitmap_image" xml:space="preserve">
+    <value>Gambar bitmap</value>
+  </data>
+  <data name="QRCodeWindow_Content" xml:space="preserve">
+    <value>Konten</value>
+  </data>
+  <data name="QRCodeWindow_Copy_image" xml:space="preserve">
+    <value>Salin gambar</value>
+  </data>
+  <data name="QRCodeWindow_Enter_content_to_generate_a_QR_code" xml:space="preserve">
+    <value>Masukkan konten untuk membuat kode QR</value>
+  </data>
+  <data name="QRCodeWindow_Enter_text_or_a_URL_to_encode" xml:space="preserve">
+    <value>Masukkan teks atau URL untuk dienkode</value>
+  </data>
+  <data name="QRCodeWindow_Image_viewer_title" xml:space="preserve">
+    <value>Kode QR</value>
+  </data>
+  <data name="QRCodeWindow_JPEG_image" xml:space="preserve">
+    <value>Gambar JPEG</value>
+  </data>
+  <data name="QRCodeWindow_PNG_image" xml:space="preserve">
+    <value>Gambar PNG</value>
+  </data>
+  <data name="QRCodeWindow_px" xml:space="preserve">
+    <value>px</value>
+  </data>
+  <data name="QRCodeWindow_QR_code_size" xml:space="preserve">
+    <value>Ukuran kode QR</value>
+  </data>
+  <data name="QRCodeWindow_Save" xml:space="preserve">
+    <value>Simpan...</value>
+  </data>
+  <data name="QRCodeWindow_Save_QR_code_dialog" xml:space="preserve">
+    <value>Simpan kode QR</value>
+  </data>
+  <data name="QRCodeWindow_Scan_image" xml:space="preserve">
+    <value>Pindai gambar...</value>
+  </data>
+  <data name="QRCodeWindow_Scan_region" xml:space="preserve">
+    <value>Pindai wilayah...</value>
+  </data>
+  <data name="QRCodeWindow_Scan_screen" xml:space="preserve">
+    <value>Pindai layar</value>
+  </data>
+  <data name="QRCodeWindow_Select_image_dialog" xml:space="preserve">
+    <value>Pilih gambar yang berisi kode QR</value>
+  </data>
+  <data name="QRCodeWindow_ShareX_QR_Code" xml:space="preserve">
+    <value>ShareX - Kode QR</value>
+  </data>
+  <data name="QRCodeWindow_SVG_image" xml:space="preserve">
+    <value>Gambar SVG</value>
+  </data>
+  <data name="QRCodeWindow_Upload" xml:space="preserve">
+    <value>Unggah</value>
+  </data>
+  <data name="RulerViewModel_Details" xml:space="preserve">
+    <value>Luas: {0:N0} px²  |  Keliling: {1:N0} px  |  Jarak: {2:0.00} px  |  Sudut: {3:0.00}°</value>
+  </data>
+  <data name="RulerViewModel_Position" xml:space="preserve">
+    <value>X: {0}  Y: {1}  |  Kanan: {2}  Bawah: {3}  |  Lebar: {4} px  Tinggi: {5} px</value>
+  </data>
+  <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
+    <value>ShareX - Penggaris</value>
+  </data>
+  <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
+    <value>Pilih video untuk memulai.</value>
+  </data>
+  <data name="VideoConverterViewModel_Choose_video_or_animation" xml:space="preserve">
+    <value>Pilih video atau animasi untuk memulai.</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_complete" xml:space="preserve">
+    <value>Konversi selesai: {0}</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_failed" xml:space="preserve">
+    <value>Konversi video gagal.</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_failed_message" xml:space="preserve">
+    <value>Konversi video gagal: {0}</value>
+  </data>
+  <data name="VideoConverterViewModel_Conversion_stopped" xml:space="preserve">
+    <value>Konversi dihentikan.</value>
+  </data>
+  <data name="VideoConverterViewModel_Converting" xml:space="preserve">
+    <value>Mengonversi video...</value>
+  </data>
+  <data name="VideoConverterViewModel_Enter_output_name" xml:space="preserve">
+    <value>Masukkan nama file keluaran.</value>
+  </data>
+  <data name="VideoConverterViewModel_No_file_selected" xml:space="preserve">
+    <value>Tidak ada file yang dipilih</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_existing_input" xml:space="preserve">
+    <value>Pilih file masukan yang ada.</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_existing_output" xml:space="preserve">
+    <value>Pilih folder keluaran yang ada.</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_input_dialog" xml:space="preserve">
+    <value>Pilih video atau animasi</value>
+  </data>
+  <data name="VideoConverterViewModel_Select_output_dialog" xml:space="preserve">
+    <value>Pilih folder keluaran</value>
+  </data>
+  <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
+    <value>Menghentikan konversi...</value>
+  </data>
+  <data name="VideoConverterWindow_Browse" xml:space="preserve">
+    <value>Telusuri...</value>
+  </data>
+  <data name="VideoConverterWindow_Choose_an_output_folder" xml:space="preserve">
+    <value>Pilih folder keluaran</value>
+  </data>
+  <data name="VideoConverterWindow_Constant_quality" xml:space="preserve">
+    <value>Kualitas konstan</value>
+  </data>
+  <data name="VideoConverterWindow_Encoding" xml:space="preserve">
+    <value>Pengodean</value>
+  </data>
+  <data name="VideoConverterWindow_FFmpeg_unavailable" xml:space="preserve">
+    <value>FFmpeg tidak tersedia.</value>
+  </data>
+  <data name="VideoConverterWindow_File_name" xml:space="preserve">
+    <value>Nama file</value>
+  </data>
+  <data name="VideoConverterWindow_Folder" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="VideoConverterWindow_Higher_quality" xml:space="preserve">
+    <value>Kualitas lebih tinggi</value>
+  </data>
+  <data name="VideoConverterWindow_Input_file" xml:space="preserve">
+    <value>File masukan</value>
+  </data>
+  <data name="VideoConverterWindow_kbps" xml:space="preserve">
+    <value>kbps</value>
+  </data>
+  <data name="VideoConverterWindow_Open_the_output_folder_when_finished" xml:space="preserve">
+    <value>Buka folder keluaran setelah selesai</value>
+  </data>
+  <data name="VideoConverterWindow_Output" xml:space="preserve">
+    <value>Keluaran</value>
+  </data>
+  <data name="VideoConverterWindow_Quality" xml:space="preserve">
+    <value>Kualitas</value>
+  </data>
+  <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
+    <value>ShareX - Pengonversi video</value>
+  </data>
+  <data name="VideoConverterWindow_Smaller_file" xml:space="preserve">
+    <value>File lebih kecil</value>
+  </data>
+  <data name="VideoConverterWindow_Start_encoding" xml:space="preserve">
+    <value>Mulai pengodean</value>
+  </data>
+  <data name="VideoConverterWindow_Stop_encoding" xml:space="preserve">
+    <value>Hentikan pengodean</value>
+  </data>
+  <data name="VideoConverterWindow_Target_bitrate" xml:space="preserve">
+    <value>Laju bit target</value>
+  </data>
+  <data name="VideoConverterWindow_Use_a_target_bitrate" xml:space="preserve">
+    <value>Gunakan laju bit target</value>
+  </data>
+  <data name="VideoConverterWindow_Video_animation_files" xml:space="preserve">
+    <value>File video dan animasi</value>
+  </data>
+  <data name="VideoConverterWindow_Video_encoder" xml:space="preserve">
+    <value>Pengode video</value>
+  </data>
+  <data name="VideoConverterWindow_video_output" xml:space="preserve">
+    <value>video-output</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
+    <value>Folder kustom</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_Default_screenshots_folder" xml:space="preserve">
+    <value>Folder tangkapan layar default</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_No_thumbnails" xml:space="preserve">
+    <value>Tidak ada gambar mini yang dibuat. Pastikan video valid dan FFmpeg dapat membacanya.</value>
+  </data>
+  <data name="VideoThumbnailerViewModel_Same_folder_as_video" xml:space="preserve">
+    <value>Folder yang sama dengan video</value>
+  </data>
+  <data name="VideoThumbnailerWindow_0_keeps_original_size" xml:space="preserve">
+    <value>0 mempertahankan ukuran asli</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Add_video_information" xml:space="preserve">
+    <value>Tambahkan informasi video</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Browse" xml:space="preserve">
+    <value>Telusuri...</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Choose_a_random_frame_for_each_thumbnail" xml:space="preserve">
+    <value>Pilih bingkai acak untuk setiap gambar mini</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Choose_an_output_folder" xml:space="preserve">
+    <value>Pilih folder keluaran</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Columns" xml:space="preserve">
+    <value>Kolom</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Combined_contact_sheet" xml:space="preserve">
+    <value>Lembar kontak gabungan</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Count" xml:space="preserve">
+    <value>Jumlah</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Create_thumbnails" xml:space="preserve">
+    <value>Buat gambar mini</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Draw_thumbnail_borders" xml:space="preserve">
+    <value>Gambar bingkai gambar mini</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Draw_thumbnail_shadows" xml:space="preserve">
+    <value>Gambar bayangan gambar mini</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Filename_suffix" xml:space="preserve">
+    <value>Akhiran nama file</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Image_format" xml:space="preserve">
+    <value>Format gambar</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Keep_individual_screenshots" xml:space="preserve">
+    <value>Pertahankan tangkapan layar individual</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Maximum_width" xml:space="preserve">
+    <value>Lebar maksimum</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Open_output_folder_when_finished" xml:space="preserve">
+    <value>Buka folder keluaran setelah selesai</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Outer_padding" xml:space="preserve">
+    <value>Lapisan luar</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Output" xml:space="preserve">
+    <value>Keluaran</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Save_to" xml:space="preserve">
+    <value>Simpan ke</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Select_output_folder_dialog" xml:space="preserve">
+    <value>Pilih folder keluaran</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Select_video_dialog" xml:space="preserve">
+    <value>Pilih video</value>
+  </data>
+  <data name="VideoThumbnailerWindow_ShareX_Video_Thumbnailer" xml:space="preserve">
+    <value>ShareX - Pembuat gambar mini video</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Show_timestamps" xml:space="preserve">
+    <value>Tampilkan stempel waktu</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Thumbnail_spacing" xml:space="preserve">
+    <value>Jarak gambar mini</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Thumbnails" xml:space="preserve">
+    <value>Gambar mini</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Upload_created_thumbnails" xml:space="preserve">
+    <value>Unggah gambar mini yang dibuat</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
+    <value>File video</value>
+  </data>
+</root>

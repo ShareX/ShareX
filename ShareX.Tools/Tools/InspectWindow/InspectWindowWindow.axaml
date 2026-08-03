@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="940" d:DesignHeight="650"
         x:Class="ShareX.Tools.InspectWindowWindow"
         x:DataType="vm:InspectWindowViewModel"
-        Title="ShareX - Inspect Window"
+        Title="{x:Static localization:Strings.InspectWindowWindow_ShareX_Inspect_Window}"
         Width="940"
         Height="650"
         MinWidth="800"
@@ -35,7 +36,7 @@
                                     <TextBlock Text="{x:Static theming:LucideIcons.scan}"
                                                FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                FontWeight="Normal"/>
-                                    <TextBlock Text="Pick window"/>
+                                    <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Pick_window}"/>
                                 </StackPanel>
                             </Button>
                             <Button Grid.Column="1" Click="OnPickControlClick">
@@ -43,13 +44,13 @@
                                     <TextBlock Text="{x:Static theming:LucideIcons.mouse_pointer_2}"
                                                FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                FontWeight="Normal"/>
-                                    <TextBlock Text="Pick control"/>
+                                    <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Pick_control}"/>
                                 </StackPanel>
                             </Button>
                             <ComboBox Grid.Column="2"
                                       ItemsSource="{Binding Windows}"
                                       SelectedItem="{Binding SelectedListItem}"
-                                      PlaceholderText="Select window"
+                                      PlaceholderText="{x:Static localization:Strings.InspectWindowWindow_Select_window}"
                                       FontWeight="Normal"
                                       DropDownOpened="OnWindowListDropDownOpened">
                                 <ComboBox.ItemTemplate>
@@ -126,15 +127,15 @@
 
                         <Border Classes="tool-panel" Padding="16" IsVisible="{Binding IsTopLevelWindow}">
                             <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
-                                <TextBlock Grid.Row="0" Classes="section-heading" Text="Window settings"/>
+                                <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.InspectWindowWindow_Window_settings}"/>
                                 <ToggleSwitch Grid.Row="1"
                                               IsChecked="{Binding IsTopMost}"
-                                              OnContent="Always on top"
-                                              OffContent="Always on top"
+                                              OnContent="{x:Static localization:Strings.InspectWindowWindow_Always_on_top}"
+                                              OffContent="{x:Static localization:Strings.InspectWindowWindow_Always_on_top}"
                                               FontWeight="Normal"/>
                                 <Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="0">
                                     <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
-                                        <TextBlock Classes="row-label" Text="Opacity"/>
+                                        <TextBlock Classes="row-label" Text="{x:Static localization:Strings.InspectWindowWindow_Opacity}"/>
                                         <TextBlock Grid.Column="1"
                                                    Text="{Binding Opacity, StringFormat={}{0:0}%}"
                                                    FontWeight="Normal"/>
@@ -153,13 +154,13 @@
                     <Border Grid.Column="1" Classes="tool-panel" Padding="0" ClipToBounds="True">
                         <Grid RowDefinitions="Auto,*">
                             <Grid Grid.Row="0" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" Margin="12">
-                                <TextBlock Classes="section-heading" Text="Window information"/>
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.InspectWindowWindow_Window_information}"/>
                                 <Button Grid.Column="1" Click="OnCopyClick" IsEnabled="{Binding HasSelection}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
                                         <TextBlock Text="{x:Static theming:LucideIcons.copy}"
                                                    FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                    FontWeight="Normal"/>
-                                        <TextBlock Text="Copy all"/>
+                                        <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Copy_all}"/>
                                     </StackPanel>
                                 </Button>
                                 <Button Grid.Column="2" Command="{Binding RefreshCommand}" IsEnabled="{Binding CanRefresh}">
@@ -167,7 +168,7 @@
                                         <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}"
                                                    FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                    FontWeight="Normal"/>
-                                        <TextBlock Text="Refresh"/>
+                                        <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Refresh}"/>
                                     </StackPanel>
                                 </Button>
                             </Grid>
@@ -207,7 +208,7 @@
                                                FontSize="48"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                HorizontalAlignment="Center"/>
-                                    <TextBlock Text="Pick a target to inspect its window properties"
+                                    <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Pick_a_target_to_inspect_its_window_properties}"
                                                FontWeight="Normal"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                                 </StackPanel>

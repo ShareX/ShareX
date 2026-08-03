@@ -98,7 +98,7 @@ namespace ShareX.Tools
                 }
                 else
                 {
-                    throw new Exception($"Error from OpenRouter API: {responseString}");
+                    throw new Exception(string.Format(Localization.Strings.OpenRouterProvider_API_error, responseString));
                 }
             }
         }

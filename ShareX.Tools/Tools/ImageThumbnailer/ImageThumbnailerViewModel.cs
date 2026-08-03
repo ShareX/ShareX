@@ -60,7 +60,7 @@ public sealed partial class ImageThumbnailerViewModel : ViewModelBase
     public bool CanRemove => _selectedImages.Count > 0 || SelectedImage != null;
     public bool CanGenerate => !IsBusy && HasImages && Width > 0 && Height > 0 &&
         Directory.Exists(OutputFolderPath) && !string.IsNullOrWhiteSpace(OutputFileName);
-    public string ImageCountText => $"{Images.Count} image{(Images.Count == 1 ? string.Empty : "s")}";
+    public string ImageCountText => string.Format(Images.Count == 1 ? Localization.Strings.ImageThumbnailerViewModel_One_image : Localization.Strings.ImageThumbnailerViewModel_Image_count, Images.Count);
 
     [RelayCommand]
     private async Task AddAsync()
@@ -141,11 +141,11 @@ public sealed partial class ImageThumbnailerViewModel : ViewModelBase
         }
 
         IsBusy = true;
-        Message = "Generating thumbnails...";
+        Message = Localization.Strings.ImageThumbnailerViewModel_Generating;
         try
         {
             List<string> outputFiles = await Task.Run(GenerateThumbnails);
-            Message = $"Generated {outputFiles.Count} thumbnail{(outputFiles.Count == 1 ? string.Empty : "s")}.";
+            Message = string.Format(outputFiles.Count == 1 ? Localization.Strings.ImageThumbnailerViewModel_Generated_one : Localization.Strings.ImageThumbnailerViewModel_Generated_many, outputFiles.Count);
             if (outputFiles.Count > 0)
             {
                 FileHelpers.OpenFolderWithFile(outputFiles[0]);
@@ -154,7 +154,7 @@ public sealed partial class ImageThumbnailerViewModel : ViewModelBase
         catch (Exception ex)
         {
             ToolsDiagnostics.ReportWarning(nameof(ImageThumbnailerViewModel), "Failed to generate thumbnails.", ex);
-            Message = $"Generation failed: {ex.Message}";
+            Message = string.Format(Localization.Strings.ImageThumbnailerViewModel_Generation_failed, ex.Message);
         }
         finally
         {

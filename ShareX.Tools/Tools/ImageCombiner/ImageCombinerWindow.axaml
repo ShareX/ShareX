@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
@@ -7,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="980" d:DesignHeight="650"
         x:Class="ShareX.Tools.ImageCombinerWindow"
         x:DataType="vm:ImageCombinerViewModel"
-        Title="ShareX - Image Combiner"
+        Title="{x:Static localization:Strings.ImageCombinerWindow_ShareX_Image_Combiner}"
         Width="980"
         Height="650"
         MinWidth="820"
@@ -24,7 +25,7 @@
                                     <StackPanel Orientation="Horizontal" Spacing="8">
                                         <TextBlock Text="{x:Static theming:LucideIcons.plus}"
                                                    Classes="icon"/>
-                                        <TextBlock Text="Add..."/>
+                                        <TextBlock Text="{x:Static localization:Strings.ImageCombinerWindow_Add}"/>
                                     </StackPanel>
                                 </Button>
                                 <Button Grid.Column="1" Command="{Binding RemoveCommand}" IsEnabled="{Binding CanRemove}">
@@ -82,7 +83,7 @@
                                                FontSize="42"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                HorizontalAlignment="Center"/>
-                                    <TextBlock Text="Drop images here or use the Add button"
+                                    <TextBlock Text="{x:Static localization:Strings.ImageCombinerWindow_Drop_images_here_or_use_the_Add_button}"
                                                FontWeight="Normal"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                                 </StackPanel>
@@ -93,24 +94,24 @@
                     <Grid Grid.Column="1" RowDefinitions="Auto,*" RowSpacing="12">
                         <Border Grid.Row="0" Classes="tool-panel" Padding="16">
                             <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
-                                <TextBlock Grid.Row="0" Classes="section-heading" Text="Layout"/>
+                                <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.ImageCombinerWindow_Layout}"/>
                                 <Grid Grid.Row="1" ColumnDefinitions="120,*" ColumnSpacing="10">
-                                    <TextBlock Grid.Column="0" Classes="row-label" Text="Orientation"/>
+                                    <TextBlock Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.ImageCombinerWindow_Orientation}"/>
                                     <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="16">
                                         <RadioButton GroupName="Orientation" IsChecked="{Binding IsHorizontal}">
-                                            <TextBlock Text="Horizontal" FontWeight="Normal"/>
+                                            <TextBlock Text="{x:Static localization:Strings.ImageCombinerWindow_Horizontal}" FontWeight="Normal"/>
                                         </RadioButton>
                                         <RadioButton GroupName="Orientation" IsChecked="{Binding IsVertical}">
-                                            <TextBlock Text="Vertical" FontWeight="Normal"/>
+                                            <TextBlock Text="{x:Static localization:Strings.ImageCombinerWindow_Vertical}" FontWeight="Normal"/>
                                         </RadioButton>
                                     </StackPanel>
                                 </Grid>
                                 <Grid Grid.Row="2" ColumnDefinitions="120,*,120,*" ColumnSpacing="10">
-                                    <TextBlock Grid.Column="0" Classes="row-label" Text="Alignment"/>
+                                    <TextBlock Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.ImageCombinerWindow_Alignment}"/>
                                     <ComboBox Grid.Column="1"
                                               ItemsSource="{Binding AlignmentOptions}"
                                               SelectedIndex="{Binding SelectedAlignmentIndex}"/>
-                                    <TextBlock Grid.Column="2" Classes="row-label" Text="Spacing"/>
+                                    <TextBlock Grid.Column="2" Classes="row-label" Text="{x:Static localization:Strings.ImageCombinerWindow_Spacing}"/>
                                     <NumericUpDown Grid.Column="3"
                                                    Minimum="0"
                                                    Maximum="1000"
@@ -118,7 +119,7 @@
                                                    Value="{Binding Space}"/>
                                 </Grid>
                                 <Grid Grid.Row="3" ColumnDefinitions="120,*,120,*" ColumnSpacing="10">
-                                    <TextBlock Grid.Column="0" Classes="row-label" Text="Wrap after"/>
+                                    <TextBlock Grid.Column="0" Classes="row-label" Text="{x:Static localization:Strings.ImageCombinerWindow_Wrap_after}"/>
                                     <NumericUpDown Grid.Column="1"
                                                    Minimum="0"
                                                    Maximum="1000"
@@ -127,7 +128,7 @@
                                     <CheckBox Grid.Column="2" Grid.ColumnSpan="2"
                                               IsChecked="{Binding AutoFillBackground}"
                                               VerticalAlignment="Center">
-                                        <TextBlock Text="Auto fill background" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.ImageCombinerWindow_Auto_fill_background}" FontWeight="Normal"/>
                                     </CheckBox>
                                 </Grid>
                             </Grid>
@@ -148,7 +149,7 @@
                                                FontSize="46"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                HorizontalAlignment="Center"/>
-                                    <TextBlock Text="Add at least two images to preview"
+                                    <TextBlock Text="{x:Static localization:Strings.ImageCombinerWindow_Add_at_least_two_images_to_preview}"
                                                FontWeight="Normal"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                                 </StackPanel>
@@ -165,7 +166,7 @@
                             <TextBlock Text="{x:Static theming:LucideIcons.combine}"
                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                        FontWeight="Normal"/>
-                            <TextBlock Text="Combine images"/>
+                            <TextBlock Text="{x:Static localization:Strings.ImageCombinerWindow_Combine_images}"/>
                         </StackPanel>
                     </Button>
                 </Grid>

@@ -123,7 +123,7 @@ namespace ShareX.Tools
 
             if (string.IsNullOrEmpty(input))
             {
-                input = "What is in this image?";
+                input = Localization.Strings.AnalyzeImageViewModel_What_is_in_this_image;
             }
 
             ChatGPTLegacyRequest request = new ChatGPTLegacyRequest()

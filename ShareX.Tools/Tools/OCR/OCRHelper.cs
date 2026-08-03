@@ -44,7 +44,7 @@ public static class OCRHelper
         if (!IsSupported)
         {
             throw new InvalidOperationException(
-                $"Optical character recognition is only available with Windows version {SupportedVersion} or newer.");
+                string.Format(Localization.Strings.OCRHelper_Requires_Windows_version, SupportedVersion));
         }
     }
 
@@ -66,7 +66,7 @@ public static class OCRHelper
         Language language = new(languageTag);
         if (!OcrEngine.IsLanguageSupported(language))
         {
-            throw new InvalidOperationException($"{language.DisplayName} language is not available in this system for OCR.");
+            throw new InvalidOperationException(string.Format(Localization.Strings.OCRHelper_Language_unavailable, language.DisplayName));
         }
 
         OcrEngine engine = OcrEngine.TryCreateFromLanguage(language);
