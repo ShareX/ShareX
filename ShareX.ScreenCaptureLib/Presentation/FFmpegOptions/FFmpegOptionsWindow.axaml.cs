@@ -78,14 +78,63 @@ public partial class FFmpegOptionsWindow : Window
     {
         VideoCodecComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegVideoCodec>();
         AudioCodecComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegAudioCodec>();
-        X264PresetComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegPreset>();
+        X264PresetComboBox.ItemsSource = new[]
+        {
+            Localization.Strings.FFmpegOptionsWindow_Preset_ultra_fast,
+            Localization.Strings.FFmpegOptionsWindow_Preset_super_fast,
+            Localization.Strings.FFmpegOptionsWindow_Preset_very_fast,
+            Localization.Strings.FFmpegOptionsWindow_Preset_faster,
+            Localization.Strings.FFmpegOptionsWindow_Preset_fast,
+            Localization.Strings.FFmpegOptionsWindow_Preset_medium,
+            Localization.Strings.FFmpegOptionsWindow_Preset_slow,
+            Localization.Strings.FFmpegOptionsWindow_Preset_slower,
+            Localization.Strings.FFmpegOptionsWindow_Preset_very_slow,
+            Localization.Strings.FFmpegOptionsWindow_Preset_placebo
+        };
         GifStatsModeComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegPaletteGenStatsMode>();
-        NvencPresetComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegNVENCPreset>();
-        NvencTuneComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegNVENCTune>();
+        NvencPresetComboBox.ItemsSource = new[]
+        {
+            Localization.Strings.FFmpegOptionsWindow_NVENC_fastest_lowest_quality,
+            Localization.Strings.FFmpegOptionsWindow_NVENC_faster_lower_quality,
+            Localization.Strings.FFmpegOptionsWindow_NVENC_fast_low_quality,
+            Localization.Strings.FFmpegOptionsWindow_NVENC_medium_medium_quality,
+            Localization.Strings.FFmpegOptionsWindow_NVENC_slow_good_quality,
+            Localization.Strings.FFmpegOptionsWindow_NVENC_slower_better_quality,
+            Localization.Strings.FFmpegOptionsWindow_NVENC_slowest_best_quality
+        };
+        NvencTuneComboBox.ItemsSource = new[]
+        {
+            Localization.Strings.FFmpegOptionsWindow_NVENC_high_quality,
+            Localization.Strings.FFmpegOptionsWindow_NVENC_low_latency,
+            Localization.Strings.FFmpegOptionsWindow_NVENC_ultra_low_latency,
+            Localization.Strings.FFmpegOptionsWindow_NVENC_lossless
+        };
         GifDitherComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegPaletteUseDither>();
-        AmfUsageComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegAMFUsage>();
-        AmfQualityComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegAMFQuality>();
-        QsvPresetComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegQSVPreset>();
+        AmfUsageComboBox.ItemsSource = new[]
+        {
+            Localization.Strings.FFmpegOptionsWindow_AMF_generic_transcoding,
+            Localization.Strings.FFmpegOptionsWindow_AMF_ultra_low_latency_transcoding,
+            Localization.Strings.FFmpegOptionsWindow_AMF_low_latency_transcoding,
+            Localization.Strings.FFmpegOptionsWindow_AMF_webcam,
+            Localization.Strings.FFmpegOptionsWindow_AMF_high_quality_transcoding,
+            Localization.Strings.FFmpegOptionsWindow_AMF_low_latency_high_quality_transcoding
+        };
+        AmfQualityComboBox.ItemsSource = new[]
+        {
+            Localization.Strings.FFmpegOptionsWindow_AMF_prefer_speed,
+            Localization.Strings.FFmpegOptionsWindow_AMF_balanced,
+            Localization.Strings.FFmpegOptionsWindow_AMF_prefer_quality
+        };
+        QsvPresetComboBox.ItemsSource = new[]
+        {
+            Localization.Strings.FFmpegOptionsWindow_Preset_very_fast,
+            Localization.Strings.FFmpegOptionsWindow_Preset_faster,
+            Localization.Strings.FFmpegOptionsWindow_Preset_fast,
+            Localization.Strings.FFmpegOptionsWindow_Preset_medium,
+            Localization.Strings.FFmpegOptionsWindow_Preset_slow,
+            Localization.Strings.FFmpegOptionsWindow_Preset_slower,
+            Localization.Strings.FFmpegOptionsWindow_Preset_very_slow
+        };
 
         AacBitrateComboBox.ItemsSource = Enumerable.Range(2, 9).Select(x => x * 32).ToArray();
         OpusBitrateComboBox.ItemsSource = Enumerable.Range(1, 16).Select(x => x * 32).ToArray();
@@ -551,21 +600,21 @@ public partial class FFmpegOptionsWindow : Window
     {
         return codec switch
         {
-            FFmpegVideoCodec.libx264 => ("H.264 software encoding", "The best default for broad playback compatibility."),
-            FFmpegVideoCodec.libx265 => ("H.265 software encoding", "Smaller files than H.264, with slower encoding and less playback support."),
-            FFmpegVideoCodec.libvpx => ("VP8 software encoding", "Creates WebM files for web-focused workflows."),
-            FFmpegVideoCodec.libvpx_vp9 => ("VP9 software encoding", "Efficient WebM output with higher CPU usage."),
-            FFmpegVideoCodec.libxvid => ("MPEG-4 / Xvid", "A legacy encoder for AVI compatibility."),
-            FFmpegVideoCodec.h264_nvenc => ("H.264 NVIDIA encoding", "Uses a supported NVIDIA GPU to reduce CPU usage."),
-            FFmpegVideoCodec.hevc_nvenc => ("HEVC NVIDIA encoding", "Efficient GPU encoding with more limited playback compatibility."),
-            FFmpegVideoCodec.h264_amf => ("H.264 AMD encoding", "Uses a supported AMD GPU to reduce CPU usage."),
-            FFmpegVideoCodec.hevc_amf => ("HEVC AMD encoding", "Efficient GPU encoding with more limited playback compatibility."),
-            FFmpegVideoCodec.h264_qsv => ("H.264 Intel Quick Sync", "Uses supported Intel graphics hardware to reduce CPU usage."),
-            FFmpegVideoCodec.hevc_qsv => ("HEVC Intel Quick Sync", "Efficient Intel hardware encoding with more limited playback compatibility."),
-            FFmpegVideoCodec.gif => ("Animated GIF", "Widely supported, but produces larger files and does not include audio."),
-            FFmpegVideoCodec.libwebp => ("Animated WebP", "Compact animated images with no audio track."),
-            FFmpegVideoCodec.apng => ("Animated PNG", "High-quality animation with large files and no audio track."),
-            _ => ("Video encoding", string.Empty)
+            FFmpegVideoCodec.libx264 => (Localization.Strings.FFmpegOptionsWindow_Codec_H264_software, Localization.Strings.FFmpegOptionsWindow_Codec_H264_software_hint),
+            FFmpegVideoCodec.libx265 => (Localization.Strings.FFmpegOptionsWindow_Codec_H265_software, Localization.Strings.FFmpegOptionsWindow_Codec_H265_software_hint),
+            FFmpegVideoCodec.libvpx => (Localization.Strings.FFmpegOptionsWindow_Codec_VP8_software, Localization.Strings.FFmpegOptionsWindow_Codec_VP8_software_hint),
+            FFmpegVideoCodec.libvpx_vp9 => (Localization.Strings.FFmpegOptionsWindow_Codec_VP9_software, Localization.Strings.FFmpegOptionsWindow_Codec_VP9_software_hint),
+            FFmpegVideoCodec.libxvid => (Localization.Strings.FFmpegOptionsWindow_Codec_MPEG4_Xvid, Localization.Strings.FFmpegOptionsWindow_Codec_MPEG4_Xvid_hint),
+            FFmpegVideoCodec.h264_nvenc => (Localization.Strings.FFmpegOptionsWindow_Codec_H264_NVIDIA, Localization.Strings.FFmpegOptionsWindow_Codec_H264_NVIDIA_hint),
+            FFmpegVideoCodec.hevc_nvenc => (Localization.Strings.FFmpegOptionsWindow_Codec_HEVC_NVIDIA, Localization.Strings.FFmpegOptionsWindow_Codec_HEVC_NVIDIA_hint),
+            FFmpegVideoCodec.h264_amf => (Localization.Strings.FFmpegOptionsWindow_Codec_H264_AMD, Localization.Strings.FFmpegOptionsWindow_Codec_H264_AMD_hint),
+            FFmpegVideoCodec.hevc_amf => (Localization.Strings.FFmpegOptionsWindow_Codec_HEVC_AMD, Localization.Strings.FFmpegOptionsWindow_Codec_HEVC_AMD_hint),
+            FFmpegVideoCodec.h264_qsv => (Localization.Strings.FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync, Localization.Strings.FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync_hint),
+            FFmpegVideoCodec.hevc_qsv => (Localization.Strings.FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync, Localization.Strings.FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync_hint),
+            FFmpegVideoCodec.gif => (Localization.Strings.FFmpegOptionsWindow_Codec_animated_GIF, Localization.Strings.FFmpegOptionsWindow_Codec_animated_GIF_hint),
+            FFmpegVideoCodec.libwebp => (Localization.Strings.FFmpegOptionsWindow_Codec_animated_WebP, Localization.Strings.FFmpegOptionsWindow_Codec_animated_WebP_hint),
+            FFmpegVideoCodec.apng => (Localization.Strings.FFmpegOptionsWindow_Codec_animated_PNG, Localization.Strings.FFmpegOptionsWindow_Codec_animated_PNG_hint),
+            _ => (Localization.Strings.FFmpegOptionsWindow_Codec_video_encoding, string.Empty)
         };
     }
 }

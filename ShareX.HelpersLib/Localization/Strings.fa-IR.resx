@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="ColorPickerWindow_Title" xml:space="preserve">
+    <value>ShareX - انتخابگر رنگ</value>
+  </data>
+  <data name="ColorPickerWindow_Color_mode" xml:space="preserve">
+    <value>حالت رنگ</value>
+  </data>
+  <data name="ColorPickerWindow_Hue" xml:space="preserve">
+    <value>فام</value>
+  </data>
+  <data name="ColorPickerWindow_Saturation" xml:space="preserve">
+    <value>اشباع</value>
+  </data>
+  <data name="ColorPickerWindow_Brightness" xml:space="preserve">
+    <value>روشنایی</value>
+  </data>
+  <data name="ColorPickerWindow_Red" xml:space="preserve">
+    <value>قرمز</value>
+  </data>
+  <data name="ColorPickerWindow_Green" xml:space="preserve">
+    <value>سبز</value>
+  </data>
+  <data name="ColorPickerWindow_Blue" xml:space="preserve">
+    <value>آبی</value>
+  </data>
+  <data name="ColorPickerWindow_Color_name" xml:space="preserve">
+    <value>نام رنگ</value>
+  </data>
+  <data name="ColorPickerWindow_Hex" xml:space="preserve">
+    <value>شانزده‌شانزدهی</value>
+  </data>
+  <data name="ColorPickerWindow_Decimal" xml:space="preserve">
+    <value>ده‌دهی</value>
+  </data>
+  <data name="ColorPickerWindow_Alpha" xml:space="preserve">
+    <value>آلفا</value>
+  </data>
+  <data name="ColorPickerWindow_Hue_degrees" xml:space="preserve">
+    <value>فام °</value>
+  </data>
+  <data name="ColorPickerWindow_Saturation_percent" xml:space="preserve">
+    <value>اشباع %</value>
+  </data>
+  <data name="ColorPickerWindow_Brightness_percent" xml:space="preserve">
+    <value>روشنایی %</value>
+  </data>
+  <data name="ColorPickerWindow_Cyan_percent" xml:space="preserve">
+    <value>فیروزه‌ای %</value>
+  </data>
+  <data name="ColorPickerWindow_Magenta_percent" xml:space="preserve">
+    <value>سرخابی %</value>
+  </data>
+  <data name="ColorPickerWindow_Yellow_percent" xml:space="preserve">
+    <value>زرد %</value>
+  </data>
+  <data name="ColorPickerWindow_Key_percent" xml:space="preserve">
+    <value>سیاه %</value>
+  </data>
+  <data name="ColorPickerWindow_Current" xml:space="preserve">
+    <value>فعلی</value>
+  </data>
+  <data name="ColorPickerWindow_Previous" xml:space="preserve">
+    <value>قبلی</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_all_details" xml:space="preserve">
+    <value>کپی همه جزئیات</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_RGB" xml:space="preserve">
+    <value>کپی RGB</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_hexadecimal" xml:space="preserve">
+    <value>کپی مقدار شانزده‌شانزدهی</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_HSB" xml:space="preserve">
+    <value>کپی HSB</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_CMYK" xml:space="preserve">
+    <value>کپی CMYK</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_decimal" xml:space="preserve">
+    <value>کپی مقدار ده‌دهی</value>
+  </data>
+  <data name="ColorPickerWindow_Copy" xml:space="preserve">
+    <value>کپی</value>
+  </data>
+  <data name="ColorPickerWindow_Recent_colors" xml:space="preserve">
+    <value>رنگ‌های اخیر</value>
+  </data>
+  <data name="ColorPickerWindow_Standard_colors" xml:space="preserve">
+    <value>رنگ‌های استاندارد</value>
+  </data>
+  <data name="ColorPickerWindow_Pick_from_screen" xml:space="preserve">
+    <value>انتخاب رنگ از صفحه...</value>
+  </data>
+  <data name="ColorPickerWindow_Pick_from_clipboard" xml:space="preserve">
+    <value>انتخاب رنگ از کلیپ‌بورد</value>
+  </data>
+  <data name="ColorPickerWindow_OK" xml:space="preserve">
+    <value>تأیید</value>
+  </data>
+  <data name="ColorPickerWindow_Cancel" xml:space="preserve">
+    <value>لغو</value>
+  </data>
+  <data name="ErrorWindow_Title" xml:space="preserve">
+    <value>ShareX - خطا</value>
+  </data>
+  <data name="ErrorWindow_Heading" xml:space="preserve">
+    <value>خطایی رخ داد</value>
+  </data>
+  <data name="ErrorWindow_Description" xml:space="preserve">
+    <value>جزئیات زیر را بررسی کنید یا از گزینه‌های پشتیبانی موجود استفاده کنید.</value>
+  </data>
+  <data name="ErrorWindow_Send_bug_report" xml:space="preserve">
+    <value>ارسال گزارش خطا</value>
+  </data>
+  <data name="ErrorWindow_Open_log_file" xml:space="preserve">
+    <value>باز کردن فایل گزارش</value>
+  </data>
+  <data name="ErrorWindow_Continue" xml:space="preserve">
+    <value>ادامه</value>
+  </data>
+  <data name="ErrorWindow_Quit" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="ErrorWindow_OK" xml:space="preserve">
+    <value>تأیید</value>
+  </data>
+  <data name="ErrorWindow_Default_title" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
+    <value>خطای غیرمنتظره‌ای رخ داد.</value>
+  </data>
+  <data name="ImageViewerWindow_Title" xml:space="preserve">
+    <value>ShareX - نمایشگر تصویر</value>
+  </data>
+  <data name="ImageViewerWindow_Open_image" xml:space="preserve">
+    <value>باز کردن تصویر</value>
+  </data>
+  <data name="InputBoxWindow_Default_title" xml:space="preserve">
+    <value>ورودی</value>
+  </data>
+  <data name="InputBoxWindow_Title" xml:space="preserve">
+    <value>ShareX - {0}</value>
+  </data>
+  <data name="OutputBoxWindow_Default_title" xml:space="preserve">
+    <value>خروجی</value>
+  </data>
+  <data name="OutputBoxWindow_Title" xml:space="preserve">
+    <value>ShareX - {0}</value>
+  </data>
+  <data name="OutputBoxWindow_Copy_all" xml:space="preserve">
+    <value>کپی همه</value>
+  </data>
+  <data name="OutputBoxWindow_Close" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="PrintWindow_Title" xml:space="preserve">
+    <value>ShareX - گزینه‌های چاپ</value>
+  </data>
+  <data name="PrintWindow_Heading" xml:space="preserve">
+    <value>گزینه‌های چاپ</value>
+  </data>
+  <data name="PrintWindow_Description" xml:space="preserve">
+    <value>موقعیت و مقیاس تصویر را پیکربندی کنید.</value>
+  </data>
+  <data name="PrintWindow_Margin" xml:space="preserve">
+    <value>حاشیه:</value>
+  </data>
+  <data name="PrintWindow_Pixels" xml:space="preserve">
+    <value>پیکسل</value>
+  </data>
+  <data name="PrintWindow_Auto_rotate_image" xml:space="preserve">
+    <value>چرخش خودکار تصویر</value>
+  </data>
+  <data name="PrintWindow_Auto_scale_image" xml:space="preserve">
+    <value>مقیاس‌بندی خودکار تصویر</value>
+  </data>
+  <data name="PrintWindow_Allow_image_to_enlarge" xml:space="preserve">
+    <value>اجازه بزرگ‌نمایی تصویر</value>
+  </data>
+  <data name="PrintWindow_Center_image_position" xml:space="preserve">
+    <value>وسط‌چین کردن موقعیت تصویر</value>
+  </data>
+  <data name="PrintWindow_Preview" xml:space="preserve">
+    <value>پیش‌نمایش...</value>
+  </data>
+  <data name="DownloaderWindow_Title" xml:space="preserve">
+    <value>ShareX - بارگیری فایل</value>
+  </data>
+  <data name="DownloaderWindow_Heading" xml:space="preserve">
+    <value>بارگیری فایل</value>
+  </data>
+  <data name="DownloaderWindow_Description" xml:space="preserve">
+    <value>به‌روزرسانی‌های ShareX و سایر فایل‌های لازم را بارگیری کنید.</value>
+  </data>
+  <data name="DownloaderWindow_Download" xml:space="preserve">
+    <value>بارگیری</value>
+  </data>
+  <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
+    <value>مشاهده فهرست تغییرات</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
+    <value>رنگ قرمز (0-255)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_255" xml:space="preserve">
+    <value>رنگ سبز (0-255)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_255" xml:space="preserve">
+    <value>رنگ آبی (0-255)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_normalized" xml:space="preserve">
+    <value>رنگ قرمز (0-1). دقت اعشار را با {n} مشخص کنید؛ مقدار پیش‌فرض 3 است.</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_normalized" xml:space="preserve">
+    <value>رنگ سبز (0-1). دقت اعشار را با {n} مشخص کنید؛ مقدار پیش‌فرض 3 است.</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_normalized" xml:space="preserve">
+    <value>رنگ آبی (0-1). دقت اعشار را با {n} مشخص کنید؛ مقدار پیش‌فرض 3 است.</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Hex_lowercase" xml:space="preserve">
+    <value>مقدار شانزده‌شانزدهی رنگ (حروف کوچک)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_hex_lowercase" xml:space="preserve">
+    <value>مقدار شانزده‌شانزدهی قرمز (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_hex_lowercase" xml:space="preserve">
+    <value>مقدار شانزده‌شانزدهی سبز (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_hex_lowercase" xml:space="preserve">
+    <value>مقدار شانزده‌شانزدهی آبی (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Hex_uppercase" xml:space="preserve">
+    <value>مقدار شانزده‌شانزدهی رنگ (حروف بزرگ)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_hex_uppercase" xml:space="preserve">
+    <value>مقدار شانزده‌شانزدهی قرمز (00-FF)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_hex_uppercase" xml:space="preserve">
+    <value>مقدار شانزده‌شانزدهی سبز (00-FF)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_hex_uppercase" xml:space="preserve">
+    <value>مقدار شانزده‌شانزدهی آبی (00-FF)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Cyan_100" xml:space="preserve">
+    <value>رنگ فیروزه‌ای (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Magenta_100" xml:space="preserve">
+    <value>رنگ سرخابی (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Yellow_100" xml:space="preserve">
+    <value>رنگ زرد (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Key_100" xml:space="preserve">
+    <value>رنگ سیاه (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Color_name" xml:space="preserve">
+    <value>نام رنگ</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_X_position" xml:space="preserve">
+    <value>موقعیت X</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Y_position" xml:space="preserve">
+    <value>موقعیت Y</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_New_line" xml:space="preserve">
+    <value>خط جدید</value>
+  </data>
+  <data name="HotkeyInfo_Ctrl" xml:space="preserve">
+    <value>Ctrl</value>
+  </data>
+  <data name="HotkeyInfo_Shift" xml:space="preserve">
+    <value>Shift</value>
+  </data>
+  <data name="HotkeyInfo_Alt" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="HotkeyInfo_Win" xml:space="preserve">
+    <value>Win</value>
+  </data>
+  <data name="HotkeyInfo_Backspace" xml:space="preserve">
+    <value>Backspace</value>
+  </data>
+  <data name="HotkeyInfo_Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="HotkeyInfo_Caps_lock" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="HotkeyInfo_Page_down" xml:space="preserve">
+    <value>Page Down</value>
+  </data>
+  <data name="HotkeyInfo_Scroll_lock" xml:space="preserve">
+    <value>Scroll Lock</value>
+  </data>
+  <data name="HotkeyInfo_Numpad" xml:space="preserve">
+    <value>صفحه‌کلید عددی</value>
+  </data>
+  <data name="FFmpegCLIManager_Error_title" xml:space="preserve">
+    <value>خطای FFmpeg</value>
+  </data>
+  <data name="Translator_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="Translator_Binary" xml:space="preserve">
+    <value>دودویی</value>
+  </data>
+  <data name="Translator_Hexadecimal" xml:space="preserve">
+    <value>هگزادسیمال</value>
+  </data>
+  <data name="Translator_ASCII" xml:space="preserve">
+    <value>ASCII</value>
+  </data>
+  <data name="Translator_Base64" xml:space="preserve">
+    <value>Base64</value>
+  </data>
+  <data name="PingResult_Reply_from" xml:space="preserve">
+    <value>پاسخ از {0}: بایت={1} زمان={2} میلی‌ثانیه TTL={3}</value>
+  </data>
+  <data name="PingResult_Request_timed_out" xml:space="preserve">
+    <value>مهلت درخواست به پایان رسید.</value>
+  </data>
+  <data name="PingResult_Ping_failed" xml:space="preserve">
+    <value>پینگ ناموفق بود: {0}</value>
+  </data>
+  <data name="PingResult_Statistics" xml:space="preserve">
+    <value>کمینه = {0} میلی‌ثانیه، بیشینه = {1} میلی‌ثانیه، میانگین = {2} میلی‌ثانیه</value>
+  </data>
+  <data name="PrintHelper_Invalid_printer_message" xml:space="preserve">
+    <value>چاپگر «{0}» وجود ندارد. کار با چاپگر پیش‌فرض Windows ادامه می‌یابد. می‌توانید چاپگر پیش‌فرض جایگزین را در تنظیمات برنامه تعیین کنید.</value>
+  </data>
+  <data name="PrintHelper_Invalid_printer_name" xml:space="preserve">
+    <value>نام چاپگر نامعتبر است</value>
+  </data>
+  <data name="VideoInfo_Summary" xml:space="preserve">
+    <value>نام فایل: {0}، مدت: {1}، نرخ بیت: {2} کیلوبیت/ثانیه</value>
+  </data>
+  <data name="VideoInfo_Video_details" xml:space="preserve">
+    <value>، کدک ویدئو: {0}، وضوح: {1}x{2}، فریم‌برثانیه: {3}</value>
+  </data>
+  <data name="VideoInfo_Audio_details" xml:space="preserve">
+    <value>، کدک صدا: {0}</value>
+  </data>
+  <data name="FileHelpers_Rename_file_error" xml:space="preserve">
+    <value>خطای تغییر نام فایل:</value>
+  </data>
+  <data name="NameParser_Valid_text_file_required" xml:space="preserve">
+    <value>یک مسیر معتبر برای فایل متنی لازم است.</value>
+  </data>
+  <data name="URLHelpers_Invalid_URL" xml:space="preserve">
+    <value>نشانی اینترنتی نامعتبر است.</value>
+  </data>
+  <data name="ZipManager_Archive_too_large" xml:space="preserve">
+    <value>اندازهٔ فشرده‌نشدهٔ این بایگانی از بیشترین اندازهٔ مجاز فایل بیشتر است.</value>
+  </data>
+  <data name="ZipManager_Archive_uncompressed_file_size" xml:space="preserve">
+    <value>اندازهٔ فشرده‌نشدهٔ بایگانی: {0}</value>
+  </data>
+  <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
+    <value>بیشترین اندازهٔ مجاز فایل: {0}</value>
+  </data>
+  <data name="Helpers_Timeout" xml:space="preserve">
+    <value>پایان مهلت</value>
+  </data>
+  <data name="ImageHelpers_Image_files" xml:space="preserve">
+    <value>فایل‌های تصویری</value>
+  </data>
+  <data name="CssFileNameEditor_Cascading_Style_Sheets" xml:space="preserve">
+    <value>شیوه‌نامه‌های آبشاری</value>
+  </data>
+  <data name="JsonFileNameEditor_JavaScript_Object_Notation_files" xml:space="preserve">
+    <value>فایل‌های نشانه‌گذاری شیء جاوااسکریپت</value>
+  </data>
+  <data name="WavFileNameEditor_Sound_file" xml:space="preserve">
+    <value>فایل صوتی</value>
+  </data>
+  <data name="ExeFileNameEditor_Applications" xml:space="preserve">
+    <value>برنامه‌ها</value>
+  </data>
+  <data name="AppVeyorUpdateChecker_Latest_build_unsuccessful" xml:space="preserve">
+    <value>آخرین ساخت پروژه موفق نبود.</value>
+  </data>
+  <data name="AppVeyorUpdateChecker_Release_build_not_found" xml:space="preserve">
+    <value>ساخت انتشار موفقی پیدا نشد.</value>
+  </data>
+  <data name="AppVeyorUpdateChecker_Deployment_file_not_found" xml:space="preserve">
+    <value>فایل «{0}» پیدا نشد.</value>
+  </data>
+</root>

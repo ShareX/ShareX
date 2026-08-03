@@ -668,4 +668,190 @@ Czy chcesz zapisać zmiany przed zamknięciem edytora obrazów?</value>
   <data name="RulerBottom" xml:space="preserve">
     <value>Dół</value>
   </data>
+  <data name="FFmpegOptionsWindow_Preset_ultra_fast" xml:space="preserve">
+    <value>Ultraszybko</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_super_fast" xml:space="preserve">
+    <value>Superszybko</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_very_fast" xml:space="preserve">
+    <value>Bardzo szybko</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_faster" xml:space="preserve">
+    <value>Szybciej</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_fast" xml:space="preserve">
+    <value>Szybko</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_medium" xml:space="preserve">
+    <value>Średnio</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_slow" xml:space="preserve">
+    <value>Wolno</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_slower" xml:space="preserve">
+    <value>Wolniej</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_very_slow" xml:space="preserve">
+    <value>Bardzo wolno</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_placebo" xml:space="preserve">
+    <value>Placebo</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_fastest_lowest_quality" xml:space="preserve">
+    <value>Najszybciej (najniższa jakość)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_faster_lower_quality" xml:space="preserve">
+    <value>Szybciej (niższa jakość)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_fast_low_quality" xml:space="preserve">
+    <value>Szybko (niska jakość)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_medium_medium_quality" xml:space="preserve">
+    <value>Średnio (średnia jakość)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_slow_good_quality" xml:space="preserve">
+    <value>Wolno (dobra jakość)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_slower_better_quality" xml:space="preserve">
+    <value>Wolniej (lepsza jakość)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_slowest_best_quality" xml:space="preserve">
+    <value>Najwolniej (najlepsza jakość)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_high_quality" xml:space="preserve">
+    <value>Wysoka jakość</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_low_latency" xml:space="preserve">
+    <value>Małe opóźnienie</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_ultra_low_latency" xml:space="preserve">
+    <value>Bardzo małe opóźnienie</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_lossless" xml:space="preserve">
+    <value>Bezstratnie</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_generic_transcoding" xml:space="preserve">
+    <value>Ogólne transkodowanie</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_ultra_low_latency_transcoding" xml:space="preserve">
+    <value>Transkodowanie z bardzo małym opóźnieniem</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_low_latency_transcoding" xml:space="preserve">
+    <value>Transkodowanie z małym opóźnieniem</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_webcam" xml:space="preserve">
+    <value>Kamera internetowa</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_high_quality_transcoding" xml:space="preserve">
+    <value>Transkodowanie w wysokiej jakości</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_low_latency_high_quality_transcoding" xml:space="preserve">
+    <value>Transkodowanie z małym opóźnieniem i wysoką jakością</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_prefer_speed" xml:space="preserve">
+    <value>Preferuj szybkość</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_balanced" xml:space="preserve">
+    <value>Zrównoważone</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_prefer_quality" xml:space="preserve">
+    <value>Preferuj jakość</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_software" xml:space="preserve">
+    <value>Programowe kodowanie H.264</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_software_hint" xml:space="preserve">
+    <value>Najlepsze ustawienie domyślne zapewniające szeroką zgodność odtwarzania.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H265_software" xml:space="preserve">
+    <value>Programowe kodowanie H.265</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H265_software_hint" xml:space="preserve">
+    <value>Mniejsze pliki niż H.264, ale wolniejsze kodowanie i mniejsza zgodność odtwarzania.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP8_software" xml:space="preserve">
+    <value>Programowe kodowanie VP8</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP8_software_hint" xml:space="preserve">
+    <value>Tworzy pliki WebM do zastosowań internetowych.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP9_software" xml:space="preserve">
+    <value>Programowe kodowanie VP9</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP9_software_hint" xml:space="preserve">
+    <value>Wydajne wyjście WebM przy większym użyciu procesora.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_MPEG4_Xvid" xml:space="preserve">
+    <value>MPEG-4 / Xvid</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_MPEG4_Xvid_hint" xml:space="preserve">
+    <value>Starszy koder zapewniający zgodność z AVI.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_NVIDIA" xml:space="preserve">
+    <value>Kodowanie H.264 NVIDIA</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_NVIDIA_hint" xml:space="preserve">
+    <value>Używa obsługiwanego procesora graficznego NVIDIA, aby zmniejszyć użycie procesora.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_NVIDIA" xml:space="preserve">
+    <value>Kodowanie HEVC NVIDIA</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_NVIDIA_hint" xml:space="preserve">
+    <value>Wydajne kodowanie GPU z bardziej ograniczoną zgodnością odtwarzania.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_AMD" xml:space="preserve">
+    <value>Kodowanie H.264 AMD</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_AMD_hint" xml:space="preserve">
+    <value>Używa obsługiwanego procesora graficznego AMD, aby zmniejszyć użycie procesora.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_AMD" xml:space="preserve">
+    <value>Kodowanie HEVC AMD</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_AMD_hint" xml:space="preserve">
+    <value>Wydajne kodowanie GPU z bardziej ograniczoną zgodnością odtwarzania.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync" xml:space="preserve">
+    <value>H.264 Intel Quick Sync</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync_hint" xml:space="preserve">
+    <value>Używa obsługiwanego układu graficznego Intel, aby zmniejszyć użycie procesora.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync" xml:space="preserve">
+    <value>HEVC Intel Quick Sync</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync_hint" xml:space="preserve">
+    <value>Wydajne kodowanie sprzętowe Intel z bardziej ograniczoną zgodnością odtwarzania.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_GIF" xml:space="preserve">
+    <value>Animowany GIF</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_GIF_hint" xml:space="preserve">
+    <value>Szeroko obsługiwany, ale tworzy większe pliki i nie zawiera dźwięku.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_WebP" xml:space="preserve">
+    <value>Animowany WebP</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_WebP_hint" xml:space="preserve">
+    <value>Kompaktowe animowane obrazy bez ścieżki dźwiękowej.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_PNG" xml:space="preserve">
+    <value>Animowany PNG</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_PNG_hint" xml:space="preserve">
+    <value>Animacja wysokiej jakości z dużymi plikami i bez ścieżki dźwiękowej.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_video_encoding" xml:space="preserve">
+    <value>Kodowanie wideo</value>
+  </data>
+  <data name="ShapeManager_Spotlight_dim" xml:space="preserve">
+    <value>Przyciemnienie:</value>
+  </data>
+  <data name="ShapeManager_Spotlight_blur" xml:space="preserve">
+    <value>Rozmycie:</value>
+  </data>
+  <data name="ShapeManager_Spotlight_ellipse_shape" xml:space="preserve">
+    <value>Kształt elipsy</value>
+  </data>
 </root>

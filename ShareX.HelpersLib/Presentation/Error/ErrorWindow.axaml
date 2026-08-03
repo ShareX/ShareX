@@ -1,9 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.HelpersLib.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.HelpersLib.ErrorWindow"
         x:CompileBindings="False"
-        Title="ShareX - Error"
+        Title="{x:Static localization:Strings.ErrorWindow_Title}"
         Width="760"
         Height="560"
         MinWidth="620"
@@ -47,11 +48,11 @@
                                VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
-                    <TextBlock Text="An error occurred"
+                    <TextBlock Text="{x:Static localization:Strings.ErrorWindow_Heading}"
                                FontSize="19"
                                FontWeight="SemiBold"
                                Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
-                    <TextBlock Text="Review the details below or use the available support options."
+                    <TextBlock Text="{x:Static localization:Strings.ErrorWindow_Description}"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                 </StackPanel>
             </Grid>
@@ -84,28 +85,28 @@
                   ColumnSpacing="7">
                 <Button x:Name="BugReportButton"
                         Classes="compact"
-                        Content="Send bug report"
+                        Content="{x:Static localization:Strings.ErrorWindow_Send_bug_report}"
                         Click="OnSendBugReportClick"/>
                 <Button x:Name="OpenLogButton"
                         Grid.Column="1"
                         Classes="compact"
-                        Content="Open log file"
+                        Content="{x:Static localization:Strings.ErrorWindow_Open_log_file}"
                         Click="OnOpenLogClick"/>
                 <Button x:Name="ContinueButton"
                         Grid.Column="3"
                         Classes="compact primary"
-                        Content="Continue"
+                        Content="{x:Static localization:Strings.ErrorWindow_Continue}"
                         IsDefault="True"
                         Click="OnContinueClick"/>
                 <Button x:Name="QuitButton"
                         Grid.Column="4"
                         Classes="compact"
-                        Content="Quit"
+                        Content="{x:Static localization:Strings.ErrorWindow_Quit}"
                         Click="OnQuitClick"/>
                 <Button x:Name="OKButton"
                         Grid.Column="5"
                         Classes="compact primary"
-                        Content="OK"
+                        Content="{x:Static localization:Strings.ErrorWindow_OK}"
                         IsDefault="True"
                         Click="OnOKClick"/>
             </Grid>

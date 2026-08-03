@@ -1,9 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.HelpersLib.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.HelpersLib.PrintWindow"
         x:CompileBindings="False"
-        Title="ShareX - Print options"
+        Title="{x:Static localization:Strings.PrintWindow_Title}"
         Width="470"
         SizeToContent="Height"
         CanResize="False"
@@ -52,11 +53,11 @@
                 <StackPanel Grid.Column="1"
                             Spacing="1"
                             VerticalAlignment="Center">
-                    <TextBlock Text="Print options"
+                    <TextBlock Text="{x:Static localization:Strings.PrintWindow_Heading}"
                                FontSize="19"
                                FontWeight="SemiBold"
                                Foreground="{DynamicResource ShareX.Brush.Accent}"/>
-                    <TextBlock Text="Configure image placement and scaling."
+                    <TextBlock Text="{x:Static localization:Strings.PrintWindow_Description}"
                                FontWeight="Normal"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                 </StackPanel>
@@ -71,7 +72,7 @@
                       ColumnSpacing="8"
                       Margin="0,0,0,3">
                     <TextBlock x:Name="MarginLabel"
-                               Text="Margin:"
+                               Text="{x:Static localization:Strings.PrintWindow_Margin}"
                                FontWeight="Normal"
                                VerticalAlignment="Center"/>
                     <NumericUpDown x:Name="MarginInput"
@@ -84,7 +85,7 @@
                                    HorizontalContentAlignment="Center"
                                    ValueChanged="OnMarginChanged"/>
                     <TextBlock Grid.Column="2"
-                               Text="px"
+                               Text="{x:Static localization:Strings.PrintWindow_Pixels}"
                                FontWeight="Normal"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                VerticalAlignment="Center"/>
@@ -92,21 +93,21 @@
 
                 <CheckBox x:Name="AutoRotateCheckBox"
                           Classes="print-option"
-                          Content="Auto rotate image"
+                          Content="{x:Static localization:Strings.PrintWindow_Auto_rotate_image}"
                           IsCheckedChanged="OnAutoRotateChanged"/>
                 <CheckBox x:Name="AutoScaleCheckBox"
                           Classes="print-option"
-                          Content="Auto scale image"
+                          Content="{x:Static localization:Strings.PrintWindow_Auto_scale_image}"
                           IsCheckedChanged="OnAutoScaleChanged"/>
                 <CheckBox x:Name="AllowEnlargeCheckBox"
                           Classes="print-option"
                           Margin="24,1,0,1"
-                          Content="Allow image to enlarge"
+                          Content="{x:Static localization:Strings.PrintWindow_Allow_image_to_enlarge}"
                           IsCheckedChanged="OnAllowEnlargeChanged"/>
                 <CheckBox x:Name="CenterImageCheckBox"
                           Classes="print-option"
                           Margin="24,1,0,1"
-                          Content="Center image position"
+                          Content="{x:Static localization:Strings.PrintWindow_Center_image_position}"
                           IsCheckedChanged="OnCenterImageChanged"/>
             </StackPanel>
         </Border>
@@ -117,7 +118,7 @@
               Margin="18,0,18,18">
             <Button x:Name="PreviewButton"
                     Classes="compact"
-                    Content="Preview..."
+                    Content="{x:Static localization:Strings.PrintWindow_Preview}"
                     Click="OnPreviewClick"/>
             <Button x:Name="PrintButton"
                     Grid.Column="2"

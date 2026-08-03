@@ -40,7 +40,7 @@ namespace ShareX.HelpersLib
             }
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                dlg.Filter = "JavaScript Object Notation files (*.json)|*.json";
+                dlg.Filter = $"{Localization.Strings.JsonFileNameEditor_JavaScript_Object_Notation_files} (*.json)|*.json";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     value = dlg.FileName;

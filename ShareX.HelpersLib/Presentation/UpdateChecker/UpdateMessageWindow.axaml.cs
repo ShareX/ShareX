@@ -18,7 +18,6 @@ using System;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LocalizedResources = ShareX.HelpersLib.Properties.Resources;
 
 namespace ShareX.HelpersLib;
 
@@ -31,9 +30,9 @@ public partial class UpdateMessageWindow : Window
     public bool ActivateWindow { get; }
     public string MessageText { get; }
     public bool ShowChangelog { get; }
-    public string DialogTitle => LocalizedResources.UpdateMessageBox_UpdateMessageBox_update_is_available;
-    public string YesText => LocalizedResources.MyMessageBox_MyMessageBox_Yes;
-    public string NoText => LocalizedResources.MyMessageBox_MyMessageBox_No;
+    public string DialogTitle => Properties.Resources.UpdateMessageBox_UpdateMessageBox_update_is_available;
+    public string YesText => Properties.Resources.MyMessageBox_MyMessageBox_Yes;
+    public string NoText => Properties.Resources.MyMessageBox_MyMessageBox_No;
 
     public UpdateMessageWindow()
     {
@@ -121,19 +120,20 @@ public partial class UpdateMessageWindow : Window
 
         text.AppendLine(Helpers.SafeStringFormat(
             updateChecker.IsPortable
-                ? LocalizedResources.UpdateMessageBox_UpdateMessageBox_Portable
-                : LocalizedResources.UpdateMessageBox_UpdateMessageBox_,
+                ? Properties.Resources.UpdateMessageBox_UpdateMessageBox_Portable
+                : Properties.Resources.UpdateMessageBox_UpdateMessageBox_,
             productName));
         text.AppendLine();
-        text.Append(LocalizedResources.UpdateMessageBox_UpdateMessageBox_CurrentVersion);
+        text.Append(Properties.Resources.UpdateMessageBox_UpdateMessageBox_CurrentVersion);
         text.Append(": ");
         text.Append(updateChecker.CurrentVersion);
         text.AppendLine();
-        text.Append(LocalizedResources.UpdateMessageBox_UpdateMessageBox_LatestVersion);
+        text.Append(Properties.Resources.UpdateMessageBox_UpdateMessageBox_LatestVersion);
         text.Append(": ");
         text.Append(updateChecker.LatestVersion);
         if (updateChecker.IsDev) text.Append(" Dev");
-        if (updateChecker is GitHubUpdateChecker { IsPreRelease: true }) text.Append(" (Pre-release)");
+        if (updateChecker is GitHubUpdateChecker { IsPreRelease: true })
+            text.Append($" ({Properties.Resources.UpdateChannel_PreRelease})");
         return text.ToString();
     }
 

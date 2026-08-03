@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -48,17 +48,17 @@ namespace ShareX.HelpersLib
 
         public override string ToString()
         {
-            string text = string.Format("Filename: {0}, Duration: {1}, Bitrate: {2} kb/s", Path.GetFileName(FilePath), Duration.ToString(@"hh\:mm\:s"), Bitrate);
+            string text = string.Format(Localization.Strings.VideoInfo_Summary, Path.GetFileName(FilePath), Duration.ToString(@"hh\:mm\:s"), Bitrate);
 
             if (!string.IsNullOrEmpty(VideoCodec))
             {
-                text += string.Format(", Video codec: {0}, Resolution: {1}x{2}, FPS: {3}", VideoCodec, VideoResolution.Width, VideoResolution.Height,
+                text += string.Format(Localization.Strings.VideoInfo_Video_details, VideoCodec, VideoResolution.Width, VideoResolution.Height,
                     VideoFPS.ToString("0.##", CultureInfo.InvariantCulture));
             }
 
             if (!string.IsNullOrEmpty(AudioCodec))
             {
-                text += string.Format(", Audio codec: {0}", AudioCodec);
+                text += string.Format(Localization.Strings.VideoInfo_Audio_details, AudioCodec);
             }
 
             return text;

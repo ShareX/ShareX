@@ -43,7 +43,7 @@ namespace ShareX.HelpersLib
             {
                 dlg.FileName = "Default.css";
                 dlg.Title = Resources.CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___;
-                dlg.Filter = "Cascading Style Sheets (*.css)|*.css";
+                dlg.Filter = $"{Localization.Strings.CssFileNameEditor_Cascading_Style_Sheets} (*.css)|*.css";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     value = dlg.FileName;

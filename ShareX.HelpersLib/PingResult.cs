@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -74,13 +74,13 @@ namespace ShareX.HelpersLib
                     switch (pingReply.Status)
                     {
                         case IPStatus.Success:
-                            sb.AppendLine(string.Format("Reply from {0}: bytes={1} time={2}ms TTL={3}", pingReply.Address, pingReply.Buffer.Length, pingReply.RoundtripTime, pingReply.Options.Ttl));
+                            sb.AppendLine(string.Format(Localization.Strings.PingResult_Reply_from, pingReply.Address, pingReply.Buffer.Length, pingReply.RoundtripTime, pingReply.Options.Ttl));
                             break;
                         case IPStatus.TimedOut:
-                            sb.AppendLine("Request timed out.");
+                            sb.AppendLine(Localization.Strings.PingResult_Request_timed_out);
                             break;
                         default:
-                            sb.AppendLine(string.Format("Ping failed: {0}", pingReply.Status.ToString()));
+                            sb.AppendLine(string.Format(Localization.Strings.PingResult_Ping_failed, pingReply.Status.ToString()));
                             break;
                     }
                 }
@@ -88,7 +88,7 @@ namespace ShareX.HelpersLib
 
             if (PingReplyList.Any(x => x.Status == IPStatus.Success))
             {
-                sb.AppendLine(string.Format("Minimum = {0}ms, Maximum = {1}ms, Average = {2}ms", Min, Max, Average));
+                sb.AppendLine(string.Format(Localization.Strings.PingResult_Statistics, Min, Max, Average));
             }
 
             return sb.ToString().Trim();

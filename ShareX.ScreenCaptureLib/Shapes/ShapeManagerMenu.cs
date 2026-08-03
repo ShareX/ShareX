@@ -663,8 +663,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiShadowColor);
 
-            // TODO: Translate
-            tslnudSpotlightDim = new ToolStripLabeledNumericUpDown("Dim:");
+            tslnudSpotlightDim = new ToolStripLabeledNumericUpDown(Strings.ShapeManager_Spotlight_dim);
             tslnudSpotlightDim.Content.Minimum = 0;
             tslnudSpotlightDim.Content.Maximum = 100;
             tslnudSpotlightDim.Content.ValueChanged = (sender, e) =>
@@ -673,8 +672,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudSpotlightDim);
 
-            // TODO: Translate
-            tslnudSpotlightBlur = new ToolStripLabeledNumericUpDown("Blur:");
+            tslnudSpotlightBlur = new ToolStripLabeledNumericUpDown(Strings.ShapeManager_Spotlight_blur);
             tslnudSpotlightBlur.Content.Minimum = 0;
             tslnudSpotlightBlur.Content.Maximum = 100;
             tslnudSpotlightBlur.Content.ValueChanged = (sender, e) =>
@@ -683,8 +681,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudSpotlightBlur);
 
-            // TODO: Translate
-            tsmiSpotlightEllipse = new ToolStripMenuItem("Ellipse shape");
+            tsmiSpotlightEllipse = new ToolStripMenuItem(Strings.ShapeManager_Spotlight_ellipse_shape);
             tsmiSpotlightEllipse.CheckOnClick = true;
             tsmiSpotlightEllipse.Click += (sender, e) =>
             {

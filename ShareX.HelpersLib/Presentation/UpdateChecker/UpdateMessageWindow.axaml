@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX.HelpersLib"
+        xmlns:localization="using:ShareX.HelpersLib.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         x:Class="ShareX.HelpersLib.UpdateMessageWindow"
@@ -64,7 +65,7 @@
             <StackPanel Spacing="10">
                 <TextBlock Text="{Binding MessageText}" TextWrapping="Wrap"/>
                 <Button Classes="link"
-                        Content="View changelog"
+                        Content="{x:Static localization:Strings.UpdateMessageWindow_View_changelog}"
                         IsVisible="{Binding ShowChangelog}"
                         Click="OnViewChangelogClick"/>
             </StackPanel>

@@ -23,7 +23,8 @@ public partial class ErrorWindow : Window
     public string? LogFilePath { get; }
     public string? BugReportPath { get; }
 
-    public ErrorWindow() : this("Error", "An unexpected error occurred.", null, null, false)
+    public ErrorWindow() : this(Localization.Strings.ErrorWindow_Default_title,
+        Localization.Strings.ErrorWindow_Unexpected_error, null, null, false)
     {
     }
 

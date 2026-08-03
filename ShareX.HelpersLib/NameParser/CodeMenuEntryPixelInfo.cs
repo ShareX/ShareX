@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -34,32 +34,32 @@ namespace ShareX.HelpersLib
         protected override string Prefix { get; } = "$";
 
         // This shouldn't show up in the list of options, but will continue to work for backwards compatibility's sake.
-        private static readonly CodeMenuEntryPixelInfo r = new CodeMenuEntryPixelInfo("r", "Red color (0-255)");
-        private static readonly CodeMenuEntryPixelInfo g = new CodeMenuEntryPixelInfo("g", "Green color (0-255)");
-        private static readonly CodeMenuEntryPixelInfo b = new CodeMenuEntryPixelInfo("b", "Blue color (0-255)");
+        private static readonly CodeMenuEntryPixelInfo r = new CodeMenuEntryPixelInfo("r", Localization.Strings.CodeMenuEntryPixelInfo_Red_255);
+        private static readonly CodeMenuEntryPixelInfo g = new CodeMenuEntryPixelInfo("g", Localization.Strings.CodeMenuEntryPixelInfo_Green_255);
+        private static readonly CodeMenuEntryPixelInfo b = new CodeMenuEntryPixelInfo("b", Localization.Strings.CodeMenuEntryPixelInfo_Blue_255);
 
-        public static readonly CodeMenuEntryPixelInfo r255 = new CodeMenuEntryPixelInfo("r255", "Red color (0-255)");
-        public static readonly CodeMenuEntryPixelInfo g255 = new CodeMenuEntryPixelInfo("g255", "Green color (0-255)");
-        public static readonly CodeMenuEntryPixelInfo b255 = new CodeMenuEntryPixelInfo("b255", "Blue color (0-255)");
-        public static readonly CodeMenuEntryPixelInfo r1 = new CodeMenuEntryPixelInfo("r1", "Red color (0-1). Specify decimal precision with {n}, defaults to 3.");
-        public static readonly CodeMenuEntryPixelInfo g1 = new CodeMenuEntryPixelInfo("g1", "Green color (0-1). Specify decimal precision with {n}, defaults to 3.");
-        public static readonly CodeMenuEntryPixelInfo b1 = new CodeMenuEntryPixelInfo("b1", "Blue color (0-1). Specify decimal precision with {n}, defaults to 3.");
-        public static readonly CodeMenuEntryPixelInfo hex = new CodeMenuEntryPixelInfo("hex", "Hex color value (Lowercase)");
-        public static readonly CodeMenuEntryPixelInfo rhex = new CodeMenuEntryPixelInfo("rhex", "Red hex color value (00-ff)");
-        public static readonly CodeMenuEntryPixelInfo ghex = new CodeMenuEntryPixelInfo("ghex", "Green hex color value (00-ff)");
-        public static readonly CodeMenuEntryPixelInfo bhex = new CodeMenuEntryPixelInfo("bhex", "Blue hex color value (00-ff)");
-        public static readonly CodeMenuEntryPixelInfo HEX = new CodeMenuEntryPixelInfo("HEX", "Hex color value (Uppercase)");
-        public static readonly CodeMenuEntryPixelInfo rHEX = new CodeMenuEntryPixelInfo("rHEX", "Red hex color value (00-FF)");
-        public static readonly CodeMenuEntryPixelInfo gHEX = new CodeMenuEntryPixelInfo("gHEX", "Green hex color value (00-FF)");
-        public static readonly CodeMenuEntryPixelInfo bHEX = new CodeMenuEntryPixelInfo("bHEX", "Blue hex color value (00-FF)");
-        public static readonly CodeMenuEntryPixelInfo c100 = new CodeMenuEntryPixelInfo("c100", "Cyan color (0-100)");
-        public static readonly CodeMenuEntryPixelInfo m100 = new CodeMenuEntryPixelInfo("m100", "Magenta color (0-100)");
-        public static readonly CodeMenuEntryPixelInfo y100 = new CodeMenuEntryPixelInfo("y100", "Yellow color (0-100)");
-        public static readonly CodeMenuEntryPixelInfo k100 = new CodeMenuEntryPixelInfo("k100", "Key color (0-100)");
-        public static readonly CodeMenuEntryPixelInfo name = new CodeMenuEntryPixelInfo("name", "Color name");
-        public static readonly CodeMenuEntryPixelInfo x = new CodeMenuEntryPixelInfo("x", "X position");
-        public static readonly CodeMenuEntryPixelInfo y = new CodeMenuEntryPixelInfo("y", "Y position");
-        public static readonly CodeMenuEntryPixelInfo n = new CodeMenuEntryPixelInfo("n", "New line");
+        public static readonly CodeMenuEntryPixelInfo r255 = new CodeMenuEntryPixelInfo("r255", Localization.Strings.CodeMenuEntryPixelInfo_Red_255);
+        public static readonly CodeMenuEntryPixelInfo g255 = new CodeMenuEntryPixelInfo("g255", Localization.Strings.CodeMenuEntryPixelInfo_Green_255);
+        public static readonly CodeMenuEntryPixelInfo b255 = new CodeMenuEntryPixelInfo("b255", Localization.Strings.CodeMenuEntryPixelInfo_Blue_255);
+        public static readonly CodeMenuEntryPixelInfo r1 = new CodeMenuEntryPixelInfo("r1", Localization.Strings.CodeMenuEntryPixelInfo_Red_normalized);
+        public static readonly CodeMenuEntryPixelInfo g1 = new CodeMenuEntryPixelInfo("g1", Localization.Strings.CodeMenuEntryPixelInfo_Green_normalized);
+        public static readonly CodeMenuEntryPixelInfo b1 = new CodeMenuEntryPixelInfo("b1", Localization.Strings.CodeMenuEntryPixelInfo_Blue_normalized);
+        public static readonly CodeMenuEntryPixelInfo hex = new CodeMenuEntryPixelInfo("hex", Localization.Strings.CodeMenuEntryPixelInfo_Hex_lowercase);
+        public static readonly CodeMenuEntryPixelInfo rhex = new CodeMenuEntryPixelInfo("rhex", Localization.Strings.CodeMenuEntryPixelInfo_Red_hex_lowercase);
+        public static readonly CodeMenuEntryPixelInfo ghex = new CodeMenuEntryPixelInfo("ghex", Localization.Strings.CodeMenuEntryPixelInfo_Green_hex_lowercase);
+        public static readonly CodeMenuEntryPixelInfo bhex = new CodeMenuEntryPixelInfo("bhex", Localization.Strings.CodeMenuEntryPixelInfo_Blue_hex_lowercase);
+        public static readonly CodeMenuEntryPixelInfo HEX = new CodeMenuEntryPixelInfo("HEX", Localization.Strings.CodeMenuEntryPixelInfo_Hex_uppercase);
+        public static readonly CodeMenuEntryPixelInfo rHEX = new CodeMenuEntryPixelInfo("rHEX", Localization.Strings.CodeMenuEntryPixelInfo_Red_hex_uppercase);
+        public static readonly CodeMenuEntryPixelInfo gHEX = new CodeMenuEntryPixelInfo("gHEX", Localization.Strings.CodeMenuEntryPixelInfo_Green_hex_uppercase);
+        public static readonly CodeMenuEntryPixelInfo bHEX = new CodeMenuEntryPixelInfo("bHEX", Localization.Strings.CodeMenuEntryPixelInfo_Blue_hex_uppercase);
+        public static readonly CodeMenuEntryPixelInfo c100 = new CodeMenuEntryPixelInfo("c100", Localization.Strings.CodeMenuEntryPixelInfo_Cyan_100);
+        public static readonly CodeMenuEntryPixelInfo m100 = new CodeMenuEntryPixelInfo("m100", Localization.Strings.CodeMenuEntryPixelInfo_Magenta_100);
+        public static readonly CodeMenuEntryPixelInfo y100 = new CodeMenuEntryPixelInfo("y100", Localization.Strings.CodeMenuEntryPixelInfo_Yellow_100);
+        public static readonly CodeMenuEntryPixelInfo k100 = new CodeMenuEntryPixelInfo("k100", Localization.Strings.CodeMenuEntryPixelInfo_Key_100);
+        public static readonly CodeMenuEntryPixelInfo name = new CodeMenuEntryPixelInfo("name", Localization.Strings.CodeMenuEntryPixelInfo_Color_name);
+        public static readonly CodeMenuEntryPixelInfo x = new CodeMenuEntryPixelInfo("x", Localization.Strings.CodeMenuEntryPixelInfo_X_position);
+        public static readonly CodeMenuEntryPixelInfo y = new CodeMenuEntryPixelInfo("y", Localization.Strings.CodeMenuEntryPixelInfo_Y_position);
+        public static readonly CodeMenuEntryPixelInfo n = new CodeMenuEntryPixelInfo("n", Localization.Strings.CodeMenuEntryPixelInfo_New_line);
 
         public CodeMenuEntryPixelInfo(string value, string description) : base(value, description)
         {

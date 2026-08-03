@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -209,11 +209,11 @@ namespace ShareX.HelpersLib
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Text: {Text}");
-            sb.AppendLine($"Binary: {BinaryText}");
-            sb.AppendLine($"Hexadecimal: {HexadecimalText}");
-            sb.AppendLine($"ASCII: {ASCIIText}");
-            sb.AppendLine($"Base64: {Base64}");
+            sb.AppendLine($"{Localization.Strings.Translator_Text}: {Text}");
+            sb.AppendLine($"{Localization.Strings.Translator_Binary}: {BinaryText}");
+            sb.AppendLine($"{Localization.Strings.Translator_Hexadecimal}: {HexadecimalText}");
+            sb.AppendLine($"{Localization.Strings.Translator_ASCII}: {ASCIIText}");
+            sb.AppendLine($"{Localization.Strings.Translator_Base64}: {Base64}");
             sb.Append(HashToString());
             return sb.ToString();
         }

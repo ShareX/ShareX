@@ -22,7 +22,7 @@ public partial class OutputBoxWindow : Window
 {
     private readonly bool _scrollToEnd;
 
-    public OutputBoxWindow() : this(string.Empty, "Output")
+    public OutputBoxWindow() : this(string.Empty, Localization.Strings.OutputBoxWindow_Default_title)
     {
     }
 
@@ -33,7 +33,7 @@ public partial class OutputBoxWindow : Window
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
 
-        Title = $"ShareX - {title}";
+        Title = string.Format(Localization.Strings.OutputBoxWindow_Title, title);
         OutputTextBox.Text = text;
 
         Opened += OnOpened;

@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -91,22 +91,22 @@ namespace ShareX.HelpersLib
 
             if (Control)
             {
-                text += "Ctrl + ";
+                text += Localization.Strings.HotkeyInfo_Ctrl + " + ";
             }
 
             if (Shift)
             {
-                text += "Shift + ";
+                text += Localization.Strings.HotkeyInfo_Shift + " + ";
             }
 
             if (Alt)
             {
-                text += "Alt + ";
+                text += Localization.Strings.HotkeyInfo_Alt + " + ";
             }
 
             if (Win)
             {
-                text += "Win + ";
+                text += Localization.Strings.HotkeyInfo_Win + " + ";
             }
 
             if (IsOnlyModifiers)
@@ -115,23 +115,23 @@ namespace ShareX.HelpersLib
             }
             else if (KeyCode == Keys.Back)
             {
-                text += "Backspace";
+                text += Localization.Strings.HotkeyInfo_Backspace;
             }
             else if (KeyCode == Keys.Return)
             {
-                text += "Enter";
+                text += Localization.Strings.HotkeyInfo_Enter;
             }
             else if (KeyCode == Keys.Capital)
             {
-                text += "Caps Lock";
+                text += Localization.Strings.HotkeyInfo_Caps_lock;
             }
             else if (KeyCode == Keys.Next)
             {
-                text += "Page Down";
+                text += Localization.Strings.HotkeyInfo_Page_down;
             }
             else if (KeyCode == Keys.Scroll)
             {
-                text += "Scroll Lock";
+                text += Localization.Strings.HotkeyInfo_Scroll_lock;
             }
             else if (KeyCode >= Keys.D0 && KeyCode <= Keys.D9)
             {
@@ -139,7 +139,7 @@ namespace ShareX.HelpersLib
             }
             else if (KeyCode >= Keys.NumPad0 && KeyCode <= Keys.NumPad9)
             {
-                text += "Numpad " + (KeyCode - Keys.NumPad0).ToString();
+                text += Localization.Strings.HotkeyInfo_Numpad + " " + (KeyCode - Keys.NumPad0).ToString();
             }
             else
             {

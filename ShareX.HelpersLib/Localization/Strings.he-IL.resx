@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="ColorPickerWindow_Title" xml:space="preserve">
+    <value>ShareX - בורר צבעים</value>
+  </data>
+  <data name="ColorPickerWindow_Color_mode" xml:space="preserve">
+    <value>מצב צבע</value>
+  </data>
+  <data name="ColorPickerWindow_Hue" xml:space="preserve">
+    <value>גוון</value>
+  </data>
+  <data name="ColorPickerWindow_Saturation" xml:space="preserve">
+    <value>רוויה</value>
+  </data>
+  <data name="ColorPickerWindow_Brightness" xml:space="preserve">
+    <value>בהירות</value>
+  </data>
+  <data name="ColorPickerWindow_Red" xml:space="preserve">
+    <value>אדום</value>
+  </data>
+  <data name="ColorPickerWindow_Green" xml:space="preserve">
+    <value>ירוק</value>
+  </data>
+  <data name="ColorPickerWindow_Blue" xml:space="preserve">
+    <value>כחול</value>
+  </data>
+  <data name="ColorPickerWindow_Color_name" xml:space="preserve">
+    <value>שם הצבע</value>
+  </data>
+  <data name="ColorPickerWindow_Hex" xml:space="preserve">
+    <value>הקסדצימלי</value>
+  </data>
+  <data name="ColorPickerWindow_Decimal" xml:space="preserve">
+    <value>עשרוני</value>
+  </data>
+  <data name="ColorPickerWindow_Alpha" xml:space="preserve">
+    <value>אלפא</value>
+  </data>
+  <data name="ColorPickerWindow_Hue_degrees" xml:space="preserve">
+    <value>גוון °</value>
+  </data>
+  <data name="ColorPickerWindow_Saturation_percent" xml:space="preserve">
+    <value>רוויה %</value>
+  </data>
+  <data name="ColorPickerWindow_Brightness_percent" xml:space="preserve">
+    <value>בהירות %</value>
+  </data>
+  <data name="ColorPickerWindow_Cyan_percent" xml:space="preserve">
+    <value>ציאן %</value>
+  </data>
+  <data name="ColorPickerWindow_Magenta_percent" xml:space="preserve">
+    <value>מג'נטה %</value>
+  </data>
+  <data name="ColorPickerWindow_Yellow_percent" xml:space="preserve">
+    <value>צהוב %</value>
+  </data>
+  <data name="ColorPickerWindow_Key_percent" xml:space="preserve">
+    <value>שחור %</value>
+  </data>
+  <data name="ColorPickerWindow_Current" xml:space="preserve">
+    <value>נוכחי</value>
+  </data>
+  <data name="ColorPickerWindow_Previous" xml:space="preserve">
+    <value>קודם</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_all_details" xml:space="preserve">
+    <value>העתקת כל הפרטים</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_RGB" xml:space="preserve">
+    <value>העתקת RGB</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_hexadecimal" xml:space="preserve">
+    <value>העתקת ערך הקסדצימלי</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_HSB" xml:space="preserve">
+    <value>העתקת HSB</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_CMYK" xml:space="preserve">
+    <value>העתקת CMYK</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_decimal" xml:space="preserve">
+    <value>העתקת ערך עשרוני</value>
+  </data>
+  <data name="ColorPickerWindow_Copy" xml:space="preserve">
+    <value>העתקה</value>
+  </data>
+  <data name="ColorPickerWindow_Recent_colors" xml:space="preserve">
+    <value>צבעים אחרונים</value>
+  </data>
+  <data name="ColorPickerWindow_Standard_colors" xml:space="preserve">
+    <value>צבעים רגילים</value>
+  </data>
+  <data name="ColorPickerWindow_Pick_from_screen" xml:space="preserve">
+    <value>בחירת צבע מהמסך...</value>
+  </data>
+  <data name="ColorPickerWindow_Pick_from_clipboard" xml:space="preserve">
+    <value>בחירת צבע מהלוח</value>
+  </data>
+  <data name="ColorPickerWindow_OK" xml:space="preserve">
+    <value>אישור</value>
+  </data>
+  <data name="ColorPickerWindow_Cancel" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="ErrorWindow_Title" xml:space="preserve">
+    <value>ShareX - שגיאה</value>
+  </data>
+  <data name="ErrorWindow_Heading" xml:space="preserve">
+    <value>אירעה שגיאה</value>
+  </data>
+  <data name="ErrorWindow_Description" xml:space="preserve">
+    <value>עיין בפרטים הבאים או השתמש באפשרויות התמיכה הזמינות.</value>
+  </data>
+  <data name="ErrorWindow_Send_bug_report" xml:space="preserve">
+    <value>שליחת דוח באגים</value>
+  </data>
+  <data name="ErrorWindow_Open_log_file" xml:space="preserve">
+    <value>פתיחת קובץ יומן</value>
+  </data>
+  <data name="ErrorWindow_Continue" xml:space="preserve">
+    <value>המשך</value>
+  </data>
+  <data name="ErrorWindow_Quit" xml:space="preserve">
+    <value>יציאה</value>
+  </data>
+  <data name="ErrorWindow_OK" xml:space="preserve">
+    <value>אישור</value>
+  </data>
+  <data name="ErrorWindow_Default_title" xml:space="preserve">
+    <value>שגיאה</value>
+  </data>
+  <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
+    <value>אירעה שגיאה בלתי צפויה.</value>
+  </data>
+  <data name="ImageViewerWindow_Title" xml:space="preserve">
+    <value>ShareX - מציג תמונות</value>
+  </data>
+  <data name="ImageViewerWindow_Open_image" xml:space="preserve">
+    <value>פתיחת תמונה</value>
+  </data>
+  <data name="InputBoxWindow_Default_title" xml:space="preserve">
+    <value>קלט</value>
+  </data>
+  <data name="InputBoxWindow_Title" xml:space="preserve">
+    <value>ShareX - {0}</value>
+  </data>
+  <data name="OutputBoxWindow_Default_title" xml:space="preserve">
+    <value>פלט</value>
+  </data>
+  <data name="OutputBoxWindow_Title" xml:space="preserve">
+    <value>ShareX - {0}</value>
+  </data>
+  <data name="OutputBoxWindow_Copy_all" xml:space="preserve">
+    <value>העתקת הכול</value>
+  </data>
+  <data name="OutputBoxWindow_Close" xml:space="preserve">
+    <value>סגירה</value>
+  </data>
+  <data name="PrintWindow_Title" xml:space="preserve">
+    <value>ShareX - אפשרויות הדפסה</value>
+  </data>
+  <data name="PrintWindow_Heading" xml:space="preserve">
+    <value>אפשרויות הדפסה</value>
+  </data>
+  <data name="PrintWindow_Description" xml:space="preserve">
+    <value>הגדר את מיקום התמונה ואת קנה המידה שלה.</value>
+  </data>
+  <data name="PrintWindow_Margin" xml:space="preserve">
+    <value>שוליים:</value>
+  </data>
+  <data name="PrintWindow_Pixels" xml:space="preserve">
+    <value>פיקסלים</value>
+  </data>
+  <data name="PrintWindow_Auto_rotate_image" xml:space="preserve">
+    <value>סיבוב אוטומטי של התמונה</value>
+  </data>
+  <data name="PrintWindow_Auto_scale_image" xml:space="preserve">
+    <value>שינוי קנה מידה אוטומטי של התמונה</value>
+  </data>
+  <data name="PrintWindow_Allow_image_to_enlarge" xml:space="preserve">
+    <value>אפשר הגדלת תמונה</value>
+  </data>
+  <data name="PrintWindow_Center_image_position" xml:space="preserve">
+    <value>מרכוז מיקום התמונה</value>
+  </data>
+  <data name="PrintWindow_Preview" xml:space="preserve">
+    <value>תצוגה מקדימה...</value>
+  </data>
+  <data name="DownloaderWindow_Title" xml:space="preserve">
+    <value>ShareX - הורדת קבצים</value>
+  </data>
+  <data name="DownloaderWindow_Heading" xml:space="preserve">
+    <value>הורדת קבצים</value>
+  </data>
+  <data name="DownloaderWindow_Description" xml:space="preserve">
+    <value>הורד עדכוני ShareX וקבצים נדרשים אחרים.</value>
+  </data>
+  <data name="DownloaderWindow_Download" xml:space="preserve">
+    <value>הורדה</value>
+  </data>
+  <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
+    <value>הצגת יומן שינויים</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
+    <value>צבע אדום (0-255)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_255" xml:space="preserve">
+    <value>צבע ירוק (0-255)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_255" xml:space="preserve">
+    <value>צבע כחול (0-255)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_normalized" xml:space="preserve">
+    <value>צבע אדום (0-1). ציין דיוק עשרוני באמצעות {n}, ברירת המחדל היא 3.</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_normalized" xml:space="preserve">
+    <value>צבע ירוק (0-1). ציין דיוק עשרוני באמצעות {n}, ברירת המחדל היא 3.</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_normalized" xml:space="preserve">
+    <value>צבע כחול (0-1). ציין דיוק עשרוני באמצעות {n}, ברירת המחדל היא 3.</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Hex_lowercase" xml:space="preserve">
+    <value>ערך צבע הקסדצימלי (אותיות קטנות)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_hex_lowercase" xml:space="preserve">
+    <value>ערך אדום הקסדצימלי (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_hex_lowercase" xml:space="preserve">
+    <value>ערך ירוק הקסדצימלי (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_hex_lowercase" xml:space="preserve">
+    <value>ערך כחול הקסדצימלי (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Hex_uppercase" xml:space="preserve">
+    <value>ערך צבע הקסדצימלי (אותיות גדולות)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_hex_uppercase" xml:space="preserve">
+    <value>ערך אדום הקסדצימלי (00-FF)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_hex_uppercase" xml:space="preserve">
+    <value>ערך ירוק הקסדצימלי (00-FF)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_hex_uppercase" xml:space="preserve">
+    <value>ערך כחול הקסדצימלי (00-FF)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Cyan_100" xml:space="preserve">
+    <value>צבע ציאן (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Magenta_100" xml:space="preserve">
+    <value>צבע מג'נטה (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Yellow_100" xml:space="preserve">
+    <value>צבע צהוב (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Key_100" xml:space="preserve">
+    <value>צבע שחור (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Color_name" xml:space="preserve">
+    <value>שם הצבע</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_X_position" xml:space="preserve">
+    <value>מיקום X</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Y_position" xml:space="preserve">
+    <value>מיקום Y</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_New_line" xml:space="preserve">
+    <value>שורה חדשה</value>
+  </data>
+  <data name="HotkeyInfo_Ctrl" xml:space="preserve">
+    <value>Ctrl</value>
+  </data>
+  <data name="HotkeyInfo_Shift" xml:space="preserve">
+    <value>Shift</value>
+  </data>
+  <data name="HotkeyInfo_Alt" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="HotkeyInfo_Win" xml:space="preserve">
+    <value>Win</value>
+  </data>
+  <data name="HotkeyInfo_Backspace" xml:space="preserve">
+    <value>Backspace</value>
+  </data>
+  <data name="HotkeyInfo_Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="HotkeyInfo_Caps_lock" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="HotkeyInfo_Page_down" xml:space="preserve">
+    <value>Page Down</value>
+  </data>
+  <data name="HotkeyInfo_Scroll_lock" xml:space="preserve">
+    <value>Scroll Lock</value>
+  </data>
+  <data name="HotkeyInfo_Numpad" xml:space="preserve">
+    <value>לוח מקשים מספרי</value>
+  </data>
+  <data name="FFmpegCLIManager_Error_title" xml:space="preserve">
+    <value>שגיאת FFmpeg</value>
+  </data>
+  <data name="Translator_Text" xml:space="preserve">
+    <value>טקסט</value>
+  </data>
+  <data name="Translator_Binary" xml:space="preserve">
+    <value>בינארי</value>
+  </data>
+  <data name="Translator_Hexadecimal" xml:space="preserve">
+    <value>הקסדצימלי</value>
+  </data>
+  <data name="Translator_ASCII" xml:space="preserve">
+    <value>ASCII</value>
+  </data>
+  <data name="Translator_Base64" xml:space="preserve">
+    <value>Base64</value>
+  </data>
+  <data name="PingResult_Reply_from" xml:space="preserve">
+    <value>תשובה מ-{0}: בתים={1} זמן={2} אלפיות שנייה TTL={3}</value>
+  </data>
+  <data name="PingResult_Request_timed_out" xml:space="preserve">
+    <value>תם הזמן הקצוב לבקשה.</value>
+  </data>
+  <data name="PingResult_Ping_failed" xml:space="preserve">
+    <value>הפינג נכשל: {0}</value>
+  </data>
+  <data name="PingResult_Statistics" xml:space="preserve">
+    <value>מינימום = {0} אלפיות שנייה, מקסימום = {1} אלפיות שנייה, ממוצע = {2} אלפיות שנייה</value>
+  </data>
+  <data name="PrintHelper_Invalid_printer_message" xml:space="preserve">
+    <value>המדפסת «{0}» אינה קיימת. הפעולה תימשך עם מדפסת ברירת המחדל של Windows. ניתן להגדיר מדפסת ברירת מחדל חלופית בהגדרות היישום.</value>
+  </data>
+  <data name="PrintHelper_Invalid_printer_name" xml:space="preserve">
+    <value>שם מדפסת לא חוקי</value>
+  </data>
+  <data name="VideoInfo_Summary" xml:space="preserve">
+    <value>שם קובץ: {0}, משך: {1}, קצב סיביות: {2} ק״ס/שנייה</value>
+  </data>
+  <data name="VideoInfo_Video_details" xml:space="preserve">
+    <value>, מקודד וידאו: {0}, רזולוציה: {1}x{2}, FPS: {3}</value>
+  </data>
+  <data name="VideoInfo_Audio_details" xml:space="preserve">
+    <value>, מקודד שמע: {0}</value>
+  </data>
+  <data name="FileHelpers_Rename_file_error" xml:space="preserve">
+    <value>שגיאה בשינוי שם הקובץ:</value>
+  </data>
+  <data name="NameParser_Valid_text_file_required" xml:space="preserve">
+    <value>נדרש נתיב חוקי לקובץ טקסט.</value>
+  </data>
+  <data name="URLHelpers_Invalid_URL" xml:space="preserve">
+    <value>כתובת URL לא חוקית.</value>
+  </data>
+  <data name="ZipManager_Archive_too_large" xml:space="preserve">
+    <value>הגודל הלא דחוס של ארכיון זה חורג מגודל הקובץ המרבי המותר.</value>
+  </data>
+  <data name="ZipManager_Archive_uncompressed_file_size" xml:space="preserve">
+    <value>הגודל הלא דחוס של הארכיון: {0}</value>
+  </data>
+  <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
+    <value>גודל הקובץ המרבי המותר: {0}</value>
+  </data>
+  <data name="Helpers_Timeout" xml:space="preserve">
+    <value>תם הזמן הקצוב</value>
+  </data>
+  <data name="ImageHelpers_Image_files" xml:space="preserve">
+    <value>קובצי תמונה</value>
+  </data>
+  <data name="CssFileNameEditor_Cascading_Style_Sheets" xml:space="preserve">
+    <value>גיליונות סגנון מדורגים</value>
+  </data>
+  <data name="JsonFileNameEditor_JavaScript_Object_Notation_files" xml:space="preserve">
+    <value>קובצי JavaScript Object Notation</value>
+  </data>
+  <data name="WavFileNameEditor_Sound_file" xml:space="preserve">
+    <value>קובץ שמע</value>
+  </data>
+  <data name="ExeFileNameEditor_Applications" xml:space="preserve">
+    <value>יישומים</value>
+  </data>
+  <data name="AppVeyorUpdateChecker_Latest_build_unsuccessful" xml:space="preserve">
+    <value>בניית הפרויקט האחרונה לא הצליחה.</value>
+  </data>
+  <data name="AppVeyorUpdateChecker_Release_build_not_found" xml:space="preserve">
+    <value>לא נמצאה בניית הפצה מוצלחת.</value>
+  </data>
+  <data name="AppVeyorUpdateChecker_Deployment_file_not_found" xml:space="preserve">
+    <value>הקובץ «{0}» לא נמצא.</value>
+  </data>
+</root>

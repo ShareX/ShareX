@@ -2,10 +2,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:localization="using:ShareX.HelpersLib.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         x:Class="ShareX.HelpersLib.DownloaderWindow"
-        Title="ShareX - File downloader"
+        Title="{x:Static localization:Strings.DownloaderWindow_Title}"
         Width="560"
         Height="310"
         MinWidth="480"
@@ -49,11 +50,11 @@
                            VerticalAlignment="Center"/>
             </Border>
             <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
-                <TextBlock Text="File downloader"
+                <TextBlock Text="{x:Static localization:Strings.DownloaderWindow_Heading}"
                            FontSize="20"
                            FontWeight="SemiBold"
                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
-                <TextBlock Text="Download ShareX updates and other required files." Classes="secondary"/>
+                <TextBlock Text="{x:Static localization:Strings.DownloaderWindow_Description}" Classes="secondary"/>
             </StackPanel>
         </Grid>
 

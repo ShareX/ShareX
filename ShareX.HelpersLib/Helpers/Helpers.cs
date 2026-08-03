@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -553,7 +553,7 @@ namespace ShareX.HelpersLib
                     }
                     else
                     {
-                        status[i] = "Timeout";
+                        status[i] = Localization.Strings.Helpers_Timeout;
                     }
                     Thread.Sleep(100);
                 }

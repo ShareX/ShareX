@@ -42,7 +42,7 @@ namespace ShareX.HelpersLib
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
                 dlg.Title = Resources.ExeFileNameEditor_EditValue_Browse_for_executable___;
-                dlg.Filter = "Applications (*.exe)|*.exe";
+                dlg.Filter = $"{Localization.Strings.ExeFileNameEditor_Applications} (*.exe)|*.exe";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     value = dlg.FileName;

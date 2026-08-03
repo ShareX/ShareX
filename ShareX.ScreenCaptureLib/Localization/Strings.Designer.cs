@@ -692,5 +692,191 @@ namespace ShareX.ScreenCaptureLib.Localization {
         public static string RulerBottom {
             get { return ResourceManager.GetString("RulerBottom", resourceCulture); }
         }
+        public static string FFmpegOptionsWindow_Preset_ultra_fast {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Preset_ultra_fast", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Preset_super_fast {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Preset_super_fast", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Preset_very_fast {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Preset_very_fast", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Preset_faster {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Preset_faster", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Preset_fast {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Preset_fast", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Preset_medium {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Preset_medium", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Preset_slow {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Preset_slow", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Preset_slower {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Preset_slower", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Preset_very_slow {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Preset_very_slow", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Preset_placebo {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Preset_placebo", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_NVENC_fastest_lowest_quality {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_NVENC_fastest_lowest_quality", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_NVENC_faster_lower_quality {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_NVENC_faster_lower_quality", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_NVENC_fast_low_quality {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_NVENC_fast_low_quality", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_NVENC_medium_medium_quality {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_NVENC_medium_medium_quality", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_NVENC_slow_good_quality {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_NVENC_slow_good_quality", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_NVENC_slower_better_quality {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_NVENC_slower_better_quality", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_NVENC_slowest_best_quality {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_NVENC_slowest_best_quality", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_NVENC_high_quality {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_NVENC_high_quality", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_NVENC_low_latency {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_NVENC_low_latency", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_NVENC_ultra_low_latency {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_NVENC_ultra_low_latency", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_NVENC_lossless {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_NVENC_lossless", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_AMF_generic_transcoding {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_AMF_generic_transcoding", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_AMF_ultra_low_latency_transcoding {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_AMF_ultra_low_latency_transcoding", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_AMF_low_latency_transcoding {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_AMF_low_latency_transcoding", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_AMF_webcam {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_AMF_webcam", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_AMF_high_quality_transcoding {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_AMF_high_quality_transcoding", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_AMF_low_latency_high_quality_transcoding {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_AMF_low_latency_high_quality_transcoding", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_AMF_prefer_speed {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_AMF_prefer_speed", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_AMF_balanced {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_AMF_balanced", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_AMF_prefer_quality {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_AMF_prefer_quality", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_H264_software {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_H264_software", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_H264_software_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_H264_software_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_H265_software {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_H265_software", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_H265_software_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_H265_software_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_VP8_software {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_VP8_software", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_VP8_software_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_VP8_software_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_VP9_software {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_VP9_software", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_VP9_software_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_VP9_software_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_MPEG4_Xvid {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_MPEG4_Xvid", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_MPEG4_Xvid_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_MPEG4_Xvid_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_H264_NVIDIA {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_H264_NVIDIA", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_H264_NVIDIA_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_H264_NVIDIA_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_HEVC_NVIDIA {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_HEVC_NVIDIA", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_HEVC_NVIDIA_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_HEVC_NVIDIA_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_H264_AMD {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_H264_AMD", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_H264_AMD_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_H264_AMD_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_HEVC_AMD {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_HEVC_AMD", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_HEVC_AMD_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_HEVC_AMD_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_animated_GIF {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_animated_GIF", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_animated_GIF_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_animated_GIF_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_animated_WebP {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_animated_WebP", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_animated_WebP_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_animated_WebP_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_animated_PNG {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_animated_PNG", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_animated_PNG_hint {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_animated_PNG_hint", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Codec_video_encoding {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_video_encoding", resourceCulture); }
+        }
+        public static string ShapeManager_Spotlight_dim {
+            get { return ResourceManager.GetString("ShapeManager_Spotlight_dim", resourceCulture); }
+        }
+        public static string ShapeManager_Spotlight_blur {
+            get { return ResourceManager.GetString("ShapeManager_Spotlight_blur", resourceCulture); }
+        }
+        public static string ShapeManager_Spotlight_ellipse_shape {
+            get { return ResourceManager.GetString("ShapeManager_Spotlight_ellipse_shape", resourceCulture); }
+        }
     }
 }

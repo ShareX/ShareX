@@ -1,9 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:ShareX.HelpersLib"
+        xmlns:localization="using:ShareX.HelpersLib.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.HelpersLib.ColorPickerWindow"
-        Title="ShareX - Color picker"
+        Title="{x:Static localization:Strings.ColorPickerWindow_Title}"
         Width="790" MinWidth="760" SizeToContent="Height"
         CanResize="False"
         CanMaximize="False"
@@ -17,15 +18,15 @@
                                                                  Width="342" Height="300"
                                                                  HorizontalAlignment="Center"/>
                             <Grid Grid.Row="1" ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                                <TextBlock Text="Color mode" FontWeight="Normal" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Color_mode}" FontWeight="Normal" VerticalAlignment="Center"/>
                                 <ComboBox x:Name="PickerModeComboBox" Grid.Column="1" SelectedIndex="0"
                                           SelectionChanged="OnPickerModeChanged">
-                                    <ComboBoxItem Content="Hue"/>
-                                    <ComboBoxItem Content="Saturation"/>
-                                    <ComboBoxItem Content="Brightness"/>
-                                    <ComboBoxItem Content="Red"/>
-                                    <ComboBoxItem Content="Green"/>
-                                    <ComboBoxItem Content="Blue"/>
+                                    <ComboBoxItem Content="{x:Static localization:Strings.ColorPickerWindow_Hue}"/>
+                                    <ComboBoxItem Content="{x:Static localization:Strings.ColorPickerWindow_Saturation}"/>
+                                    <ComboBoxItem Content="{x:Static localization:Strings.ColorPickerWindow_Brightness}"/>
+                                    <ComboBoxItem Content="{x:Static localization:Strings.ColorPickerWindow_Red}"/>
+                                    <ComboBoxItem Content="{x:Static localization:Strings.ColorPickerWindow_Green}"/>
+                                    <ComboBoxItem Content="{x:Static localization:Strings.ColorPickerWindow_Blue}"/>
                                 </ComboBox>
                             </Grid>
                         </Grid>
@@ -53,15 +54,15 @@
 
                                 <Grid ColumnDefinitions="*,*,*" ColumnSpacing="8">
                                     <StackPanel Spacing="4">
-                                        <TextBlock Text="Color name" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Color_name}" FontWeight="Normal"/>
                                         <TextBox x:Name="ColorNameText" IsReadOnly="True" IsTabStop="False"/>
                                     </StackPanel>
                                     <StackPanel Grid.Column="1" Spacing="4">
-                                        <TextBlock Text="Hex" FontWeight="Normal" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Hex}" FontWeight="Normal" HorizontalAlignment="Center"/>
                                         <TextBox x:Name="HexValue" TextAlignment="Center" TextChanged="OnHexTextChanged"/>
                                     </StackPanel>
                                     <StackPanel Grid.Column="2" Spacing="4">
-                                        <TextBlock Text="Decimal" FontWeight="Normal" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Decimal}" FontWeight="Normal" HorizontalAlignment="Center"/>
                                         <NumericUpDown x:Name="DecimalValue" Minimum="0" Maximum="16777215"
                                                        FormatString="0" ShowButtonSpinner="False"
                                                        HorizontalContentAlignment="Center"
@@ -70,31 +71,31 @@
                                 </Grid>
 
                                 <Grid Grid.Row="1" ColumnDefinitions="*,*,*,*" ColumnSpacing="8">
-                                    <StackPanel Spacing="4"><TextBlock Text="Red" FontWeight="Normal"/><NumericUpDown x:Name="RedValue" Minimum="0" Maximum="255" ShowButtonSpinner="False" ValueChanged="OnRgbValueChanged"/></StackPanel>
-                                    <StackPanel Grid.Column="1" Spacing="4"><TextBlock Text="Green" FontWeight="Normal"/><NumericUpDown x:Name="GreenValue" Minimum="0" Maximum="255" ShowButtonSpinner="False" ValueChanged="OnRgbValueChanged"/></StackPanel>
-                                    <StackPanel Grid.Column="2" Spacing="4"><TextBlock Text="Blue" FontWeight="Normal"/><NumericUpDown x:Name="BlueValue" Minimum="0" Maximum="255" ShowButtonSpinner="False" ValueChanged="OnRgbValueChanged"/></StackPanel>
+                                    <StackPanel Spacing="4"><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Red}" FontWeight="Normal"/><NumericUpDown x:Name="RedValue" Minimum="0" Maximum="255" ShowButtonSpinner="False" ValueChanged="OnRgbValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="1" Spacing="4"><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Green}" FontWeight="Normal"/><NumericUpDown x:Name="GreenValue" Minimum="0" Maximum="255" ShowButtonSpinner="False" ValueChanged="OnRgbValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="2" Spacing="4"><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Blue}" FontWeight="Normal"/><NumericUpDown x:Name="BlueValue" Minimum="0" Maximum="255" ShowButtonSpinner="False" ValueChanged="OnRgbValueChanged"/></StackPanel>
                                     <StackPanel Grid.Column="3" Spacing="4">
-                                        <TextBlock Text="Alpha" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Alpha}" FontWeight="Normal"/>
                                         <NumericUpDown x:Name="AlphaValue" Minimum="0" Maximum="255" ShowButtonSpinner="False" ValueChanged="OnRgbValueChanged"/>
                                     </StackPanel>
                                 </Grid>
 
                                 <Grid Grid.Row="3" ColumnDefinitions="*,*,*" ColumnSpacing="8">
-                                    <StackPanel Spacing="4"><TextBlock Text="Hue °" FontWeight="Normal"/><NumericUpDown x:Name="HueValue" Minimum="0" Maximum="360" ShowButtonSpinner="False" ValueChanged="OnHsbValueChanged"/></StackPanel>
-                                    <StackPanel Grid.Column="1" Spacing="4"><TextBlock Text="Saturation %" FontWeight="Normal"/><NumericUpDown x:Name="SaturationValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnHsbValueChanged"/></StackPanel>
-                                    <StackPanel Grid.Column="2" Spacing="4"><TextBlock Text="Brightness %" FontWeight="Normal"/><NumericUpDown x:Name="BrightnessValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnHsbValueChanged"/></StackPanel>
+                                    <StackPanel Spacing="4"><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Hue_degrees}" FontWeight="Normal"/><NumericUpDown x:Name="HueValue" Minimum="0" Maximum="360" ShowButtonSpinner="False" ValueChanged="OnHsbValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="1" Spacing="4"><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Saturation_percent}" FontWeight="Normal"/><NumericUpDown x:Name="SaturationValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnHsbValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="2" Spacing="4"><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Brightness_percent}" FontWeight="Normal"/><NumericUpDown x:Name="BrightnessValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnHsbValueChanged"/></StackPanel>
                                 </Grid>
 
                                 <Grid Grid.Row="2" ColumnDefinitions="*,*,*,*" ColumnSpacing="8">
-                                    <StackPanel Spacing="4"><TextBlock Text="Cyan %" FontWeight="Normal"/><NumericUpDown x:Name="CyanValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnCmykValueChanged"/></StackPanel>
-                                    <StackPanel Grid.Column="1" Spacing="4"><TextBlock Text="Magenta %" FontWeight="Normal"/><NumericUpDown x:Name="MagentaValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnCmykValueChanged"/></StackPanel>
-                                    <StackPanel Grid.Column="2" Spacing="4"><TextBlock Text="Yellow %" FontWeight="Normal"/><NumericUpDown x:Name="YellowValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnCmykValueChanged"/></StackPanel>
-                                    <StackPanel Grid.Column="3" Spacing="4"><TextBlock Text="Key %" FontWeight="Normal"/><NumericUpDown x:Name="KeyValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnCmykValueChanged"/></StackPanel>
+                                    <StackPanel Spacing="4"><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Cyan_percent}" FontWeight="Normal"/><NumericUpDown x:Name="CyanValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnCmykValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="1" Spacing="4"><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Magenta_percent}" FontWeight="Normal"/><NumericUpDown x:Name="MagentaValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnCmykValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="2" Spacing="4"><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Yellow_percent}" FontWeight="Normal"/><NumericUpDown x:Name="YellowValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnCmykValueChanged"/></StackPanel>
+                                    <StackPanel Grid.Column="3" Spacing="4"><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Key_percent}" FontWeight="Normal"/><NumericUpDown x:Name="KeyValue" Minimum="0" Maximum="100" ShowButtonSpinner="False" ValueChanged="OnCmykValueChanged"/></StackPanel>
                                 </Grid>
 
                                 <Grid Grid.Row="4" ColumnDefinitions="*,*,*" ColumnSpacing="8">
                                     <StackPanel Spacing="4">
-                                        <TextBlock Text="Current" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Current}" FontWeight="Normal"/>
                                         <Border Height="40" Background="{DynamicResource ShareX.Brush.Checkered.Small}"
                                                 BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"
                                                 CornerRadius="4" ClipToBounds="True">
@@ -102,7 +103,7 @@
                                         </Border>
                                     </StackPanel>
                                     <StackPanel Grid.Column="1" Spacing="4">
-                                        <TextBlock Text="Previous" FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Previous}" FontWeight="Normal"/>
                                         <Border Height="40" Background="{DynamicResource ShareX.Brush.Checkered.Small}"
                                                 BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"
                                                 CornerRadius="4" ClipToBounds="True"
@@ -113,15 +114,15 @@
                                     <Button Grid.Column="2" Height="40" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
                                         <Button.Flyout>
                                             <MenuFlyout Placement="BottomEdgeAlignedRight">
-                                                <MenuItem Header="Copy all details" Click="OnCopyAllClick"/>
-                                                <MenuItem Header="Copy RGB" Click="OnCopyRgbClick"/>
-                                                <MenuItem Header="Copy hexadecimal" Click="OnCopyHexClick"/>
-                                                <MenuItem Header="Copy HSB" Click="OnCopyHsbClick"/>
-                                                <MenuItem Header="Copy CMYK" Click="OnCopyCmykClick"/>
-                                                <MenuItem Header="Copy decimal" Click="OnCopyDecimalClick"/>
+                                                <MenuItem Header="{x:Static localization:Strings.ColorPickerWindow_Copy_all_details}" Click="OnCopyAllClick"/>
+                                                <MenuItem Header="{x:Static localization:Strings.ColorPickerWindow_Copy_RGB}" Click="OnCopyRgbClick"/>
+                                                <MenuItem Header="{x:Static localization:Strings.ColorPickerWindow_Copy_hexadecimal}" Click="OnCopyHexClick"/>
+                                                <MenuItem Header="{x:Static localization:Strings.ColorPickerWindow_Copy_HSB}" Click="OnCopyHsbClick"/>
+                                                <MenuItem Header="{x:Static localization:Strings.ColorPickerWindow_Copy_CMYK}" Click="OnCopyCmykClick"/>
+                                                <MenuItem Header="{x:Static localization:Strings.ColorPickerWindow_Copy_decimal}" Click="OnCopyDecimalClick"/>
                                             </MenuFlyout>
                                         </Button.Flyout>
-                                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/><TextBlock Text="Copy"/><TextBlock Classes="icon" FontSize="11" Text="{x:Static theming:LucideIcons.chevron_down}"/></StackPanel>
+                                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Copy}"/><TextBlock Classes="icon" FontSize="11" Text="{x:Static theming:LucideIcons.chevron_down}"/></StackPanel>
                                     </Button>
                                 </Grid>
                             </Grid>
@@ -132,8 +133,8 @@
                 <Border Grid.Row="1" Classes="tool-panel" Width="370" HorizontalAlignment="Left">
                     <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <RadioButton x:Name="RecentPalette" Content="Recent colors" GroupName="PaletteMode" Click="OnPaletteChanged"/>
-                            <RadioButton x:Name="StandardPalette" Content="Standard colors" GroupName="PaletteMode" Click="OnPaletteChanged"/>
+                            <RadioButton x:Name="RecentPalette" Content="{x:Static localization:Strings.ColorPickerWindow_Recent_colors}" GroupName="PaletteMode" Click="OnPaletteChanged"/>
+                            <RadioButton x:Name="StandardPalette" Content="{x:Static localization:Strings.ColorPickerWindow_Standard_colors}" GroupName="PaletteMode" Click="OnPaletteChanged"/>
                         </StackPanel>
                         <WrapPanel x:Name="PalettePanel" Grid.Row="1" ItemWidth="21" ItemHeight="21"/>
                     </Grid>
@@ -142,25 +143,25 @@
                             HorizontalAlignment="Right" VerticalAlignment="Bottom">
                     <Button Width="38"
                             Padding="8,4"
-                            ToolTip.Tip="Pick color from screen..."
+                            ToolTip.Tip="{x:Static localization:Strings.ColorPickerWindow_Pick_from_screen}"
                             Click="OnPickScreenClick">
                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pipette}"/>
                     </Button>
                     <Button Width="38"
                             Padding="8,4"
-                            ToolTip.Tip="Pick color from clipboard"
+                            ToolTip.Tip="{x:Static localization:Strings.ColorPickerWindow_Pick_from_clipboard}"
                             Click="OnClipboardClick">
                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}"/>
                     </Button>
                     <Button x:Name="AcceptButton"
                             Width="96"
-                            Content="OK"
+                            Content="{x:Static localization:Strings.ColorPickerWindow_OK}"
                             IsVisible="False"
                             IsDefault="True"
                             Click="OnAcceptClick"/>
                     <Button x:Name="CancelButton"
                             Width="96"
-                            Content="Cancel"
+                            Content="{x:Static localization:Strings.ColorPickerWindow_Cancel}"
                             IsVisible="False"
                             IsCancel="True"
                             Click="OnCancelClick"/>

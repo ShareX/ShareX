@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.HelpersLib.Localization"
         x:Class="ShareX.HelpersLib.OutputBoxWindow"
         Width="900"
         Height="650"
@@ -38,11 +39,11 @@
 
             <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto">
                 <Button Classes="compact"
-                        Content="Copy all"
+                        Content="{x:Static localization:Strings.OutputBoxWindow_Copy_all}"
                         Click="OnCopyAllClick"/>
                 <Button Classes="compact primary"
                         Grid.Column="2"
-                        Content="Close"
+                        Content="{x:Static localization:Strings.OutputBoxWindow_Close}"
                         IsDefault="True"
                         IsCancel="True"
                         Click="OnCloseClick"/>

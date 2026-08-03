@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -267,7 +267,7 @@ namespace ShareX.HelpersLib
                         }
                         else
                         {
-                            throw new Exception("Valid text file path is required.");
+                            throw new Exception(Localization.Strings.NameParser_Valid_text_file_required);
                         }
                     }
                     catch (Exception e) when (IsPreviewMode)

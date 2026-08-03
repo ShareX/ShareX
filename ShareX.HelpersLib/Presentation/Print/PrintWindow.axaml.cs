@@ -14,7 +14,6 @@ using Avalonia.Interactivity;
 using ShareX.AvaloniaUI.Theming;
 using System;
 using DrawingImage = System.Drawing.Image;
-using LocalizedResources = ShareX.HelpersLib.Properties.Resources;
 
 namespace ShareX.HelpersLib;
 
@@ -28,8 +27,8 @@ public partial class PrintWindow : Window
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         PrintButton.IsEnabled = false;
-        PrintButton.Content = LocalizedResources.PrintForm_LoadSettings_Print;
-        CancelButton.Content = LocalizedResources.MyMessageBox_MyMessageBox_Cancel;
+        PrintButton.Content = Properties.Resources.PrintForm_LoadSettings_Print;
+        CancelButton.Content = Properties.Resources.MyMessageBox_MyMessageBox_Cancel;
 
         Opened += (_, _) => Activate();
         Closed += (_, _) => _printHelper?.Dispose();
@@ -51,9 +50,9 @@ public partial class PrintWindow : Window
         CenterImageCheckBox.IsChecked = settings.CenterImage;
 
         PrintButton.IsEnabled = !previewOnly;
-        PrintButton.Content = LocalizedResources.PrintForm_LoadSettings_Print +
+        PrintButton.Content = Properties.Resources.PrintForm_LoadSettings_Print +
             (settings.ShowPrintDialog ? "..." : string.Empty);
-        CancelButton.Content = LocalizedResources.MyMessageBox_MyMessageBox_Cancel;
+        CancelButton.Content = Properties.Resources.MyMessageBox_MyMessageBox_Cancel;
         UpdateScaleDependentOptions();
     }
 

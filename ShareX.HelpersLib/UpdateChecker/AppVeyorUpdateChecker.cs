@@ -48,7 +48,7 @@ namespace ShareX.HelpersLib
                 if (!project.build.status.Equals("success", StringComparison.OrdinalIgnoreCase) &&
                     !project.build.status.Equals("running", StringComparison.OrdinalIgnoreCase))
                 {
-                    throw new Exception("Latest project build is not successful.");
+                    throw new Exception(Localization.Strings.AppVeyorUpdateChecker_Latest_build_unsuccessful);
                 }
 
                 AppVeyorProjectJob job = project.build.jobs.FirstOrDefault(x =>
@@ -58,7 +58,7 @@ namespace ShareX.HelpersLib
 
                 if (job == null)
                 {
-                    throw new Exception("Unable to find successful release build.");
+                    throw new Exception(Localization.Strings.AppVeyorUpdateChecker_Release_build_not_found);
                 }
 
                 AppVeyorProjectArtifact[] artifacts = await appveyor.GetArtifacts(job.jobId);
@@ -78,7 +78,7 @@ namespace ShareX.HelpersLib
 
                 if (artifact == null)
                 {
-                    throw new Exception($"Unable to find \"{deploymentName}\" file.");
+                    throw new Exception(string.Format(Localization.Strings.AppVeyorUpdateChecker_Deployment_file_not_found, deploymentName));
                 }
 
                 FileName = artifact.fileName;

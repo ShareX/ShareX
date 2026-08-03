@@ -79,9 +79,9 @@ function Get-CommandPlaceholders([string]$value)
 $errors = [Collections.Generic.List[string]]::new()
 $default = Read-Resources $defaultPath
 
-if ($default.Count -ne 221)
+if ($default.Count -ne 283)
 {
-    $errors.Add("Expected 221 default keys, found $($default.Count).")
+    $errors.Add("Expected 283 default keys, found $($default.Count).")
 }
 if ($cultureFiles.Count -ne 23)
 {
@@ -147,6 +147,58 @@ foreach ($view in Get-ChildItem (Join-Path $projectDirectory 'Presentation') -Re
         {
             $errors.Add("$($view.Name): contains user-visible literal '$value'.")
         }
+    }
+}
+
+$formDirectory = Join-Path $projectDirectory 'Forms'
+$defaultFormFiles = @(Get-ChildItem $formDirectory -Filter '*.resx' |
+    Where-Object { $_.BaseName -notmatch '\.' })
+foreach ($formFile in $defaultFormFiles)
+{
+    $formDocument = [xml][IO.File]::ReadAllText($formFile.FullName)
+    $localizableKeys = @($formDocument.root.data |
+        Where-Object { $_.name -match '(\.Text|\.ToolTip)$' } |
+        ForEach-Object { [string]$_.name })
+
+    foreach ($cultureFile in $cultureFiles)
+    {
+        $culture = $cultureFile.BaseName.Substring('Strings.'.Length)
+        $localizedFormPath = Join-Path $formDirectory "$($formFile.BaseName).$culture.resx"
+        if (-not (Test-Path $localizedFormPath))
+        {
+            $errors.Add("$($formFile.BaseName): missing '$culture' form resource.")
+            continue
+        }
+
+        $localizedFormDocument = [xml][IO.File]::ReadAllText($localizedFormPath)
+        $localizedFormKeys = @($localizedFormDocument.root.data | ForEach-Object { [string]$_.name })
+        foreach ($key in $localizableKeys)
+        {
+            if ($key -notin $localizedFormKeys)
+            {
+                $errors.Add("$($formFile.BaseName).$culture.resx: missing '$key'.")
+            }
+        }
+    }
+}
+
+$ffmpegOptionsCode = [IO.File]::ReadAllText((Join-Path $projectDirectory 'Presentation\FFmpegOptions\FFmpegOptionsWindow.axaml.cs'))
+foreach ($literal in @('H.264 software encoding', 'The best default for broad playback compatibility.', 'Video encoding'))
+{
+    if ($ffmpegOptionsCode.Contains('"' + $literal + '"'))
+    {
+        $errors.Add("FFmpegOptionsWindow.axaml.cs contains user-visible literal '$literal'.")
+    }
+}
+
+$sourceFiles = @(Get-ChildItem $projectDirectory -Recurse -File -Include '*.cs' |
+    Where-Object { $_.FullName -notmatch '\\(bin|obj|Localization)\\' })
+foreach ($source in $sourceFiles)
+{
+    $text = [IO.File]::ReadAllText($source.FullName)
+    if ($text.Contains('TODO: Translate'))
+    {
+        $errors.Add("$($source.Name): contains an unresolved translation TODO.")
     }
 }
 

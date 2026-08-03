@@ -56,7 +56,7 @@ public partial class ImageViewerWindow : Window
         DataContext = _viewModel;
         AvaloniaXamlLoader.Load(this);
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        Title = Properties.Resources.ShareXImageViewer;
+        Title = Localization.Strings.ImageViewerWindow_Title;
         KeyDown += OnKeyDown;
         Deactivated += OnDeactivated;
         Closed += (_, _) => _viewModel.Dispose();
@@ -76,7 +76,7 @@ public partial class ImageViewerWindow : Window
         _closeOnDeactivate = false;
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Open image",
+            Title = Localization.Strings.ImageViewerWindow_Open_image,
             AllowMultiple = false,
             FileTypeFilter = [FilePickerFileTypes.ImageAll]
         });

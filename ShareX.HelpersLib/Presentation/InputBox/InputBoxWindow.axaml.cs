@@ -13,7 +13,6 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using ShareX.AvaloniaUI.Theming;
 using System;
-using LocalizedResources = ShareX.HelpersLib.Properties.Resources;
 
 namespace ShareX.HelpersLib;
 
@@ -21,7 +20,7 @@ public partial class InputBoxWindow : Window
 {
     public string? SubmittedText { get; private set; }
 
-    public InputBoxWindow() : this("Input")
+    public InputBoxWindow() : this(Localization.Strings.InputBoxWindow_Default_title)
     {
     }
 
@@ -34,13 +33,13 @@ public partial class InputBoxWindow : Window
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
 
-        Title = $"ShareX - {title}";
+        Title = string.Format(Localization.Strings.InputBoxWindow_Title, title);
         InputTextBox.Text = inputText ?? string.Empty;
         OKButton.Content = string.IsNullOrEmpty(okText)
-            ? LocalizedResources.MyMessageBox_MyMessageBox_OK
+            ? Properties.Resources.MyMessageBox_MyMessageBox_OK
             : okText;
         CancelButton.Content = string.IsNullOrEmpty(cancelText)
-            ? LocalizedResources.MyMessageBox_MyMessageBox_Cancel
+            ? Properties.Resources.MyMessageBox_MyMessageBox_Cancel
             : cancelText;
 
         Opened += OnOpened;
