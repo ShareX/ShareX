@@ -1,0 +1,1543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountType_Anonymous" xml:space="preserve">
+    <value>Anonim</value>
+  </data>
+  <data name="AccountType_User" xml:space="preserve">
+    <value>Pengguna</value>
+  </data>
+  <data name="AmazonS3_Upload_failed" xml:space="preserve">
+    <value>Pengunggahan ke Amazon S3 gagal.</value>
+  </data>
+  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
+    <value>Amazon S3 Intelligent-Tiering</value>
+  </data>
+  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
+    <value>Amazon S3 One Zone-Infrequent Access</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
+    <value>Amazon S3 Standard</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
+    <value>Amazon S3 Standard-Infrequent Access</value>
+  </data>
+  <data name="AzureStorage_Access_key_must_not_be_empty" xml:space="preserve">
+    <value>“Kunci akses” tidak boleh kosong.</value>
+  </data>
+  <data name="AzureStorage_Account_name_must_not_be_empty" xml:space="preserve">
+    <value>“Nama akun” tidak boleh kosong.</value>
+  </data>
+  <data name="AzureStorage_Container_must_not_be_empty" xml:space="preserve">
+    <value>“Kontainer” tidak boleh kosong.</value>
+  </data>
+  <data name="BackblazeB2_Could_not_authenticate" xml:space="preserve">
+    <value>Tidak dapat mengautentikasi dengan B2: {0}</value>
+  </data>
+  <data name="BackblazeB2_Could_not_get_upload_URL" xml:space="preserve">
+    <value>Tidak dapat memperoleh URL unggahan B2: {0}</value>
+  </data>
+  <data name="BackblazeB2_Unknown_upload_error" xml:space="preserve">
+    <value>Pengunggah B2: terjadi kesalahan yang tidak diketahui saat memanggil b2_upload_file().</value>
+  </data>
+  <data name="BackblazeB2_Upload_failed_after_attempts" xml:space="preserve">
+    <value>Pengunggahan B2 gagal: file tidak dapat diunggah setelah {0} percobaan.</value>
+  </data>
+  <data name="BackblazeB2_Upload_failed_with_error" xml:space="preserve">
+    <value>Pengunggahan B2 gagal: {0}</value>
+  </data>
+  <data name="Base58Converter_Invalid_character" xml:space="preserve">
+    <value>Karakter Base58 tidak valid `{0}` pada posisi {1}.</value>
+  </data>
+  <data name="BoxShareAccessLevel_Collaborators" xml:space="preserve">
+    <value>Kolaborator — Hanya orang yang diundang</value>
+  </data>
+  <data name="BoxShareAccessLevel_Company" xml:space="preserve">
+    <value>Perusahaan — Orang di perusahaan Anda</value>
+  </data>
+  <data name="BoxShareAccessLevel_Open" xml:space="preserve">
+    <value>Publik — Orang yang memiliki tautan</value>
+  </data>
+  <data name="BrowserProtocol_file" xml:space="preserve">
+    <value>file://</value>
+  </data>
+  <data name="BrowserProtocol_ftp" xml:space="preserve">
+    <value>ftp://</value>
+  </data>
+  <data name="BrowserProtocol_ftps" xml:space="preserve">
+    <value>ftps://</value>
+  </data>
+  <data name="BrowserProtocol_http" xml:space="preserve">
+    <value>http://</value>
+  </data>
+  <data name="BrowserProtocol_https" xml:space="preserve">
+    <value>https://</value>
+  </data>
+  <data name="BrowserProtocol_sftp" xml:space="preserve">
+    <value>sftp://</value>
+  </data>
+  <data name="CertFileNameEditor_Browse_for_certificate_file" xml:space="preserve">
+    <value>Jelajahi file sertifikat...</value>
+  </data>
+  <data name="Common_API_key_is_missing" xml:space="preserve">
+    <value>Kunci API tidak ada.</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>Kesalahan</value>
+  </data>
+  <data name="Common_Unknown_error" xml:space="preserve">
+    <value>Kesalahan tidak diketahui</value>
+  </data>
+  <data name="CustomUploader_Unsupported_request_format" xml:space="preserve">
+    <value>Format permintaan tidak didukung: {0}</value>
+  </data>
+  <data name="CustomUploaderBody_Binary" xml:space="preserve">
+    <value>Biner</value>
+  </data>
+  <data name="CustomUploaderBody_FormURLEncoded" xml:space="preserve">
+    <value>Formulir berkode URL (application/x-www-form-urlencoded)</value>
+  </data>
+  <data name="CustomUploaderBody_JSON" xml:space="preserve">
+    <value>JSON (application/json)</value>
+  </data>
+  <data name="CustomUploaderBody_MultipartFormData" xml:space="preserve">
+    <value>Data formulir (multipart/form-data)</value>
+  </data>
+  <data name="CustomUploaderBody_None" xml:space="preserve">
+    <value>Tanpa isi</value>
+  </data>
+  <data name="CustomUploaderBody_XML" xml:space="preserve">
+    <value>XML (application/xml)</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>Pengunggah file</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>Pengunggah gambar</value>
+  </data>
+  <data name="CustomUploaderDestinationType_None" xml:space="preserve">
+    <value>Tidak ada</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>Pengunggah teks</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>Layanan berbagi URL</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>Penyingkat URL</value>
+  </data>
+  <data name="CustomUploaderItem_File_form_name_must_be_configured" xml:space="preserve">
+    <value>"Nama formulir file" harus dikonfigurasi.</value>
+  </data>
+  <data name="CustomUploaderItem_Invalid_JSON_response" xml:space="preserve">
+    <value>Host ({0}) mengembalikan isi respons yang tidak valid; seharusnya JSON.</value>
+  </data>
+  <data name="CustomUploaderItem_Request_URL_must_be_configured" xml:space="preserve">
+    <value>"Permintaan URL" harus dikonfigurasi.</value>
+  </data>
+  <data name="CustomUploaderItem_Unable_to_parse_response" xml:space="preserve">
+    <value>Tidak dapat menguraikan isi respons yang dikembalikan oleh host ({0}).</value>
+  </data>
+  <data name="CustomUploaderItem_Unsupported_custom_uploader" xml:space="preserve">
+    <value>Pengunggah khusus tidak didukung</value>
+  </data>
+  <data name="CustomUploaderParser_Function_name_cannot_be_empty" xml:space="preserve">
+    <value>Nama fungsi tidak boleh kosong.</value>
+  </data>
+  <data name="CustomUploaderParser_Invalid_function_name" xml:space="preserve">
+    <value>Nama fungsi tidak valid: {0}</value>
+  </data>
+  <data name="CustomUploaderParser_Minimum_parameter_count" xml:space="preserve">
+    <value>Jumlah parameter minimum untuk fungsi “{0}” adalah {1}.</value>
+  </data>
+  <data name="DestinationSettings_Account" xml:space="preserve">
+    <value>Akun</value>
+  </data>
+  <data name="DestinationSettings_Account_and_devices" xml:space="preserve">
+    <value>Akun dan perangkat</value>
+  </data>
+  <data name="DestinationSettings_Accounts" xml:space="preserve">
+    <value>Akun</value>
+  </data>
+  <data name="DestinationSettings_Add" xml:space="preserve">
+    <value>Tambah</value>
+  </data>
+  <data name="DestinationSettings_Add_path" xml:space="preserve">
+    <value>Tambahkan jalur</value>
+  </data>
+  <data name="DestinationSettings_Album_count_loaded_plural" xml:space="preserve">
+    <value>{0} album dimuat</value>
+  </data>
+  <data name="DestinationSettings_Album_count_loaded_singular" xml:space="preserve">
+    <value>{0} album dimuat</value>
+  </data>
+  <data name="DestinationSettings_Album_count_plural" xml:space="preserve">
+    <value>{0} album</value>
+  </data>
+  <data name="DestinationSettings_Album_count_singular" xml:space="preserve">
+    <value>{0} album</value>
+  </data>
+  <data name="DestinationSettings_Album_path" xml:space="preserve">
+    <value>Jalur album:</value>
+  </data>
+  <data name="DestinationSettings_Albums" xml:space="preserve">
+    <value>Album</value>
+  </data>
+  <data name="DestinationSettings_API_key" xml:space="preserve">
+    <value>Kunci API:</value>
+  </data>
+  <data name="DestinationSettings_API_key_retrieved" xml:space="preserve">
+    <value>Kunci API diperoleh</value>
+  </data>
+  <data name="DestinationSettings_Authorization_code" xml:space="preserve">
+    <value>Kode otorisasi:</value>
+  </data>
+  <data name="DestinationSettings_Authorization_failed" xml:space="preserve">
+    <value>Otorisasi gagal</value>
+  </data>
+  <data name="DestinationSettings_Authorization_page_opened" xml:space="preserve">
+    <value>Halaman otorisasi dibuka</value>
+  </data>
+  <data name="DestinationSettings_Back" xml:space="preserve">
+    <value>Kembali</value>
+  </data>
+  <data name="DestinationSettings_Browser_status" xml:space="preserve">
+    <value>Status browser:</value>
+  </data>
+  <data name="DestinationSettings_Category_File_uploaders" xml:space="preserve">
+    <value>Pengunggah file</value>
+  </data>
+  <data name="DestinationSettings_Category_Image_uploaders" xml:space="preserve">
+    <value>Pengunggah gambar</value>
+  </data>
+  <data name="DestinationSettings_Category_Text_uploaders" xml:space="preserve">
+    <value>Pengunggah teks</value>
+  </data>
+  <data name="DestinationSettings_Category_URL_shorteners" xml:space="preserve">
+    <value>Penyingkat URL</value>
+  </data>
+  <data name="DestinationSettings_Complete_authorization" xml:space="preserve">
+    <value>Selesaikan otorisasi</value>
+  </data>
+  <data name="DestinationSettings_Connect_account" xml:space="preserve">
+    <value>Hubungkan akun</value>
+  </data>
+  <data name="DestinationSettings_Connect_Imgur_account_first" xml:space="preserve">
+    <value>Hubungkan akun Imgur terlebih dahulu</value>
+  </data>
+  <data name="DestinationSettings_Connect_Photobucket_account_first" xml:space="preserve">
+    <value>Hubungkan akun Photobucket terlebih dahulu</value>
+  </data>
+  <data name="DestinationSettings_Connected" xml:space="preserve">
+    <value>Tersambung!</value>
+  </data>
+  <data name="DestinationSettings_Connected_as" xml:space="preserve">
+    <value>Terhubung sebagai {0}</value>
+  </data>
+  <data name="DestinationSettings_Device" xml:space="preserve">
+    <value>Perangkat:</value>
+  </data>
+  <data name="DestinationSettings_Device_count_plural" xml:space="preserve">
+    <value>{0} perangkat dimuat</value>
+  </data>
+  <data name="DestinationSettings_Device_count_singular" xml:space="preserve">
+    <value>{0} perangkat dimuat</value>
+  </data>
+  <data name="DestinationSettings_Disconnect" xml:space="preserve">
+    <value>Putuskan sambungan</value>
+  </data>
+  <data name="DestinationSettings_Duplicate" xml:space="preserve">
+    <value>Duplikat</value>
+  </data>
+  <data name="DestinationSettings_Edit_item" xml:space="preserve">
+    <value>Sunting {0}</value>
+  </data>
+  <data name="DestinationSettings_Email_or_username" xml:space="preserve">
+    <value>Email / nama pengguna:</value>
+  </data>
+  <data name="DestinationSettings_Enter_credentials_to_retrieve_API_key" xml:space="preserve">
+    <value>Masukkan kredensial akun untuk memperoleh kunci API</value>
+  </data>
+  <data name="DestinationSettings_Field_81_Compatibility" xml:space="preserve">
+    <value>Kompatibilitas 8.1</value>
+  </data>
+  <data name="DestinationSettings_Field_Acc_Info_Email" xml:space="preserve">
+    <value>Email info akun</value>
+  </data>
+  <data name="DestinationSettings_Field_Acc_Info_Usage" xml:space="preserve">
+    <value>Penggunaan info akun</value>
+  </data>
+  <data name="DestinationSettings_Field_Access_Key_ID" xml:space="preserve">
+    <value>ID kunci akses</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Access_Key" xml:space="preserve">
+    <value>Kunci akses akun</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_List" xml:space="preserve">
+    <value>Daftar akun</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Name" xml:space="preserve">
+    <value>Nama akun</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Type" xml:space="preserve">
+    <value>Jenis akun</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Hostname" xml:space="preserve">
+    <value>Nama host API</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Key" xml:space="preserve">
+    <value>Kunci API</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Username" xml:space="preserve">
+    <value>Nama pengguna API</value>
+  </data>
+  <data name="DestinationSettings_Field_APIURL" xml:space="preserve">
+    <value>URL API</value>
+  </data>
+  <data name="DestinationSettings_Field_Append_File_Name_To_URL" xml:space="preserve">
+    <value>Tambahkan nama file ke URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Application_Key" xml:space="preserve">
+    <value>Kunci aplikasi</value>
+  </data>
+  <data name="DestinationSettings_Field_Application_Key_Id" xml:space="preserve">
+    <value>ID kunci aplikasi</value>
+  </data>
+  <data name="DestinationSettings_Field_Auth_Token" xml:space="preserve">
+    <value>Token autentikasi</value>
+  </data>
+  <data name="DestinationSettings_Field_Auto_Create_Shareable_Link" xml:space="preserve">
+    <value>Buat tautan yang dapat dibagikan secara otomatis</value>
+  </data>
+  <data name="DestinationSettings_Field_Auto_Expire" xml:space="preserve">
+    <value>Kedaluwarsa otomatis</value>
+  </data>
+  <data name="DestinationSettings_Field_Automatic_Send" xml:space="preserve">
+    <value>Kirim otomatis</value>
+  </data>
+  <data name="DestinationSettings_Field_Automatic_Send_To" xml:space="preserve">
+    <value>Kirim otomatis ke</value>
+  </data>
+  <data name="DestinationSettings_Field_Bucket" xml:space="preserve">
+    <value>Bucket</value>
+  </data>
+  <data name="DestinationSettings_Field_Bucket_Name" xml:space="preserve">
+    <value>Nama bucket</value>
+  </data>
+  <data name="DestinationSettings_Field_Burn_After_Reading" xml:space="preserve">
+    <value>Hapus setelah dibaca</value>
+  </data>
+  <data name="DestinationSettings_Field_Cache_Control" xml:space="preserve">
+    <value>Kontrol cache</value>
+  </data>
+  <data name="DestinationSettings_Field_Capacity" xml:space="preserve">
+    <value>Kapasitas</value>
+  </data>
+  <data name="DestinationSettings_Field_Comment" xml:space="preserve">
+    <value>Komentar</value>
+  </data>
+  <data name="DestinationSettings_Field_Container" xml:space="preserve">
+    <value>Kontainer</value>
+  </data>
+  <data name="DestinationSettings_Field_Content_Type" xml:space="preserve">
+    <value>Jenis isi</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Share" xml:space="preserve">
+    <value>Buat berbagi</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Shareable_URL" xml:space="preserve">
+    <value>Buat URL yang dapat dibagikan</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Shareable_URL_Raw" xml:space="preserve">
+    <value>Buat URL mentah yang dapat dibagikan</value>
+  </data>
+  <data name="DestinationSettings_Field_Custom_Domain" xml:space="preserve">
+    <value>Domain khusus</value>
+  </data>
+  <data name="DestinationSettings_Field_Custom_URL" xml:space="preserve">
+    <value>URL khusus</value>
+  </data>
+  <data name="DestinationSettings_Field_Default_Body" xml:space="preserve">
+    <value>Isi default</value>
+  </data>
+  <data name="DestinationSettings_Field_Default_Subject" xml:space="preserve">
+    <value>Subjek default</value>
+  </data>
+  <data name="DestinationSettings_Field_Description" xml:space="preserve">
+    <value>Deskripsi</value>
+  </data>
+  <data name="DestinationSettings_Field_Direct_Link" xml:space="preserve">
+    <value>Tautan langsung</value>
+  </data>
+  <data name="DestinationSettings_Field_Direct_URL" xml:space="preserve">
+    <value>URL langsung</value>
+  </data>
+  <data name="DestinationSettings_Field_Domain" xml:space="preserve">
+    <value>Domain</value>
+  </data>
+  <data name="DestinationSettings_Field_Dynamic_Link_Domain" xml:space="preserve">
+    <value>Domain tautan dinamis</value>
+  </data>
+  <data name="DestinationSettings_Field_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="DestinationSettings_Field_Encrypt_Paste" xml:space="preserve">
+    <value>Enkripsi tempelan</value>
+  </data>
+  <data name="DestinationSettings_Field_Encrypted_Library_Password" xml:space="preserve">
+    <value>Kata sandi pustaka terenkripsi</value>
+  </data>
+  <data name="DestinationSettings_Field_Endpoint" xml:space="preserve">
+    <value>Titik akhir</value>
+  </data>
+  <data name="DestinationSettings_Field_Environment" xml:space="preserve">
+    <value>Lingkungan</value>
+  </data>
+  <data name="DestinationSettings_Field_Expiration" xml:space="preserve">
+    <value>Kedaluwarsa</value>
+  </data>
+  <data name="DestinationSettings_Field_Expiry_Time" xml:space="preserve">
+    <value>Waktu kedaluwarsa</value>
+  </data>
+  <data name="DestinationSettings_Field_Exposure" xml:space="preserve">
+    <value>Visibilitas</value>
+  </data>
+  <data name="DestinationSettings_Field_Files" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="DestinationSettings_Field_Folder_ID" xml:space="preserve">
+    <value>ID folder</value>
+  </data>
+  <data name="DestinationSettings_Field_Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="DestinationSettings_Field_From" xml:space="preserve">
+    <value>Dari</value>
+  </data>
+  <data name="DestinationSettings_Field_Has_Comment" xml:space="preserve">
+    <value>Memiliki komentar</value>
+  </data>
+  <data name="DestinationSettings_Field_Hidden" xml:space="preserve">
+    <value>Tersembunyi</value>
+  </data>
+  <data name="DestinationSettings_Field_Host" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="DestinationSettings_Field_id" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="DestinationSettings_Field_Images" xml:space="preserve">
+    <value>Gambar</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Family" xml:space="preserve">
+    <value>Keluarga</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Friend" xml:space="preserve">
+    <value>Teman</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Library_Encrypted" xml:space="preserve">
+    <value>Pustaka terenkripsi</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Public" xml:space="preserve">
+    <value>Publik</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Secret" xml:space="preserve">
+    <value>Rahasia</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Secured" xml:space="preserve">
+    <value>Aman</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Short" xml:space="preserve">
+    <value>Pendek</value>
+  </data>
+  <data name="DestinationSettings_Field_Last_To" xml:space="preserve">
+    <value>Penerima terakhir</value>
+  </data>
+  <data name="DestinationSettings_Field_List" xml:space="preserve">
+    <value>Daftar</value>
+  </data>
+  <data name="DestinationSettings_Field_Login" xml:space="preserve">
+    <value>Masuk</value>
+  </data>
+  <data name="DestinationSettings_Field_name" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="DestinationSettings_Field_Object_Prefix" xml:space="preserve">
+    <value>Awalan objek</value>
+  </data>
+  <data name="DestinationSettings_Field_One_Shot" xml:space="preserve">
+    <value>Sekali pakai</value>
+  </data>
+  <data name="DestinationSettings_Field_Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="DestinationSettings_Field_Paste_Password" xml:space="preserve">
+    <value>Kata sandi tempelan</value>
+  </data>
+  <data name="DestinationSettings_Field_Path" xml:space="preserve">
+    <value>Jalur</value>
+  </data>
+  <data name="DestinationSettings_Field_Privacy_Type" xml:space="preserve">
+    <value>Jenis privasi</value>
+  </data>
+  <data name="DestinationSettings_Field_Publish_Public" xml:space="preserve">
+    <value>Publikasikan secara publik</value>
+  </data>
+  <data name="DestinationSettings_Field_Raw_URL" xml:space="preserve">
+    <value>URL mentah</value>
+  </data>
+  <data name="DestinationSettings_Field_Region" xml:space="preserve">
+    <value>Wilayah...</value>
+  </data>
+  <data name="DestinationSettings_Field_Remember_Last_To" xml:space="preserve">
+    <value>Ingat penerima terakhir</value>
+  </data>
+  <data name="DestinationSettings_Field_Removable" xml:space="preserve">
+    <value>Dapat dihapus</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Image" xml:space="preserve">
+    <value>Hapus ekstensi gambar</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Text" xml:space="preserve">
+    <value>Hapus ekstensi teks</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Video" xml:space="preserve">
+    <value>Hapus ekstensi video</value>
+  </data>
+  <data name="DestinationSettings_Field_Repo_ID" xml:space="preserve">
+    <value>ID repositori</value>
+  </data>
+  <data name="DestinationSettings_Field_Result_URL" xml:space="preserve">
+    <value>URL hasil</value>
+  </data>
+  <data name="DestinationSettings_Field_Reuse" xml:space="preserve">
+    <value>Gunakan kembali</value>
+  </data>
+  <data name="DestinationSettings_Field_Safety_Level" xml:space="preserve">
+    <value>Tingkat keamanan</value>
+  </data>
+  <data name="DestinationSettings_Field_Secret_Access_Key" xml:space="preserve">
+    <value>Kunci akses rahasia</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Drive" xml:space="preserve">
+    <value>Drive terpilih</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_File" xml:space="preserve">
+    <value>File terpilih</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Image" xml:space="preserve">
+    <value>Gambar terpilih</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Text" xml:space="preserve">
+    <value>Teks terpilih</value>
+  </data>
+  <data name="DestinationSettings_Field_Set_Public_ACL" xml:space="preserve">
+    <value>Atur ACL publik</value>
+  </data>
+  <data name="DestinationSettings_Field_Settings" xml:space="preserve">
+    <value>Pengaturan</value>
+  </data>
+  <data name="DestinationSettings_Field_Share" xml:space="preserve">
+    <value>Bagikan</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Access_Level" xml:space="preserve">
+    <value>Tingkat akses berbagi</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Days_To_Expire" xml:space="preserve">
+    <value>Hari hingga berbagi kedaluwarsa</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Password" xml:space="preserve">
+    <value>Kata sandi berbagi</value>
+  </data>
+  <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
+    <value>Tampilkan dialog</value>
+  </data>
+  <data name="DestinationSettings_Field_Signature" xml:space="preserve">
+    <value>Tanda tangan</value>
+  </data>
+  <data name="DestinationSettings_Field_Signed_Payload" xml:space="preserve">
+    <value>Payload bertanda tangan</value>
+  </data>
+  <data name="DestinationSettings_Field_Smtp_Port" xml:space="preserve">
+    <value>Port SMTP</value>
+  </data>
+  <data name="DestinationSettings_Field_Smtp_Server" xml:space="preserve">
+    <value>Server SMTP</value>
+  </data>
+  <data name="DestinationSettings_Field_Storage_Class" xml:space="preserve">
+    <value>Kelas penyimpanan</value>
+  </data>
+  <data name="DestinationSettings_Field_Syntax_Highlighting" xml:space="preserve">
+    <value>Penyorotan Sintaks</value>
+  </data>
+  <data name="DestinationSettings_Field_Tags" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="DestinationSettings_Field_Text" xml:space="preserve">
+    <value>Teks</value>
+  </data>
+  <data name="DestinationSettings_Field_Text_Format" xml:space="preserve">
+    <value>Format teks</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Height" xml:space="preserve">
+    <value>Tinggi gambar mini</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Type" xml:space="preserve">
+    <value>Jenis gambar mini</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Width" xml:space="preserve">
+    <value>Lebar gambar mini</value>
+  </data>
+  <data name="DestinationSettings_Field_Title" xml:space="preserve">
+    <value>Judul</value>
+  </data>
+  <data name="DestinationSettings_Field_Token" xml:space="preserve">
+    <value>Token</value>
+  </data>
+  <data name="DestinationSettings_Field_TTL" xml:space="preserve">
+    <value>Masa aktif</value>
+  </data>
+  <data name="DestinationSettings_Field_TTL_Unit" xml:space="preserve">
+    <value>Satuan masa aktif</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_Path" xml:space="preserve">
+    <value>Jalur unggahan</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_Selected_Album" xml:space="preserve">
+    <value>Unggah ke album terpilih</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_URL" xml:space="preserve">
+    <value>Unggah URL...</value>
+  </data>
+  <data name="DestinationSettings_Field_Uploader" xml:space="preserve">
+    <value>Pengunggah:</value>
+  </data>
+  <data name="DestinationSettings_Field_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_AP_Iv1" xml:space="preserve">
+    <value>Gunakan API v1</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Custom_CNAME" xml:space="preserve">
+    <value>Gunakan CNAME khusus</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Custom_Url" xml:space="preserve">
+    <value>Gunakan URL khusus</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Direct_Link" xml:space="preserve">
+    <value>Gunakan tautan langsung</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Direct_URL" xml:space="preserve">
+    <value>Gunakan URL langsung</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_File_Extension" xml:space="preserve">
+    <value>Gunakan ekstensi file</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Folder" xml:space="preserve">
+    <value>Gunakan folder</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_GIFV" xml:space="preserve">
+    <value>Gunakan GIFV</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Long_Link" xml:space="preserve">
+    <value>Gunakan tautan panjang</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Path_Style" xml:space="preserve">
+    <value>Gunakan gaya jalur</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Preview_Links" xml:space="preserve">
+    <value>Gunakan tautan pratinjau</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Shortened_Link" xml:space="preserve">
+    <value>Gunakan tautan pendek</value>
+  </data>
+  <data name="DestinationSettings_Field_User_API_Key" xml:space="preserve">
+    <value>Kunci API pengguna</value>
+  </data>
+  <data name="DestinationSettings_Field_User_Key" xml:space="preserve">
+    <value>Kunci pengguna</value>
+  </data>
+  <data name="DestinationSettings_Field_Username" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="DestinationSettings_Field_Web_API_Key" xml:space="preserve">
+    <value>Kunci API Web</value>
+  </data>
+  <data name="DestinationSettings_Folder_count_plural" xml:space="preserve">
+    <value>{0} folder</value>
+  </data>
+  <data name="DestinationSettings_Folder_count_singular" xml:space="preserve">
+    <value>{0} folder</value>
+  </data>
+  <data name="DestinationSettings_Get_user_key" xml:space="preserve">
+    <value>Dapatkan kunci pengguna</value>
+  </data>
+  <data name="DestinationSettings_Log_in" xml:space="preserve">
+    <value>Masuk</value>
+  </data>
+  <data name="DestinationSettings_Login_failed" xml:space="preserve">
+    <value>Login gagal.</value>
+  </data>
+  <data name="DestinationSettings_My_images" xml:space="preserve">
+    <value>Gambar saya</value>
+  </data>
+  <data name="DestinationSettings_No_additional_configuration_required" xml:space="preserve">
+    <value>Tujuan ini tidak memerlukan konfigurasi tambahan.</value>
+  </data>
+  <data name="DestinationSettings_No_albums_loaded" xml:space="preserve">
+    <value>Tidak ada album yang dimuat</value>
+  </data>
+  <data name="DestinationSettings_No_albums_saved" xml:space="preserve">
+    <value>Tidak ada album yang disimpan</value>
+  </data>
+  <data name="DestinationSettings_No_child_folders" xml:space="preserve">
+    <value>Tidak ada subfolder</value>
+  </data>
+  <data name="DestinationSettings_No_devices_loaded" xml:space="preserve">
+    <value>Tidak ada perangkat yang dimuat</value>
+  </data>
+  <data name="DestinationSettings_Not_configured" xml:space="preserve">
+    <value>Belum dikonfigurasi</value>
+  </data>
+  <data name="DestinationSettings_Not_connected" xml:space="preserve">
+    <value>Tidak terhubung</value>
+  </data>
+  <data name="DestinationSettings_Open_authorization_page" xml:space="preserve">
+    <value>Buka halaman otorisasi</value>
+  </data>
+  <data name="DestinationSettings_Open_folder" xml:space="preserve">
+    <value>Buka folder</value>
+  </data>
+  <data name="DestinationSettings_Page_Shared_folder" xml:space="preserve">
+    <value>Folder bersama</value>
+  </data>
+  <data name="DestinationSettings_Password" xml:space="preserve">
+    <value>Kata sandi:</value>
+  </data>
+  <data name="DestinationSettings_Public_profile" xml:space="preserve">
+    <value>Profil publik</value>
+  </data>
+  <data name="DestinationSettings_Refresh" xml:space="preserve">
+    <value>Segarkan</value>
+  </data>
+  <data name="DestinationSettings_Refresh_albums" xml:space="preserve">
+    <value>Segarkan album</value>
+  </data>
+  <data name="DestinationSettings_Refresh_devices" xml:space="preserve">
+    <value>Segarkan perangkat</value>
+  </data>
+  <data name="DestinationSettings_Refresh_token" xml:space="preserve">
+    <value>Segarkan token</value>
+  </data>
+  <data name="DestinationSettings_Register" xml:space="preserve">
+    <value>Daftar</value>
+  </data>
+  <data name="DestinationSettings_Remove" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="DestinationSettings_Root" xml:space="preserve">
+    <value>Akar</value>
+  </data>
+  <data name="DestinationSettings_Root_folder" xml:space="preserve">
+    <value>Folder akar</value>
+  </data>
+  <data name="DestinationSettings_Select_Refresh_to_load_folders" xml:space="preserve">
+    <value>Pilih Segarkan untuk memuat folder</value>
+  </data>
+  <data name="DestinationSettings_Selected_folder" xml:space="preserve">
+    <value>Folder terpilih:</value>
+  </data>
+  <data name="DestinationSettings_Service_account" xml:space="preserve">
+    <value>Akun {0}</value>
+  </data>
+  <data name="DestinationSettings_Settings" xml:space="preserve">
+    <value>Pengaturan</value>
+  </data>
+  <data name="DestinationSettings_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="DestinationSettings_Token_refresh_failed" xml:space="preserve">
+    <value>Penyegaran token gagal</value>
+  </data>
+  <data name="DestinationSettings_Unnamed_device" xml:space="preserve">
+    <value>Perangkat tanpa nama</value>
+  </data>
+  <data name="DestinationSettings_Unnamed_folder" xml:space="preserve">
+    <value>Folder tanpa nama</value>
+  </data>
+  <data name="DestinationSettings_Upload_folder" xml:space="preserve">
+    <value>Unggah folder</value>
+  </data>
+  <data name="DestinationSettings_Upload_to_album" xml:space="preserve">
+    <value>Unggah ke album:</value>
+  </data>
+  <data name="DestinationSettings_Verification_code" xml:space="preserve">
+    <value>Kode verifikasi:</value>
+  </data>
+  <data name="DestinationSettingsWindow_ShareX_Destination_settings" xml:space="preserve">
+    <value>ShareX — Pengaturan tujuan</value>
+  </data>
+  <data name="Dropbox_API_upload_limit" xml:space="preserve">
+    <value>Unggahan melalui API dibatasi hingga 150 MB.</value>
+  </data>
+  <data name="EmailWindow_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="EmailWindow_Email_subject" xml:space="preserve">
+    <value>Subjek email</value>
+  </data>
+  <data name="EmailWindow_Message" xml:space="preserve">
+    <value>Pesan</value>
+  </data>
+  <data name="EmailWindow_name_example_com" xml:space="preserve">
+    <value>name@example.com</value>
+  </data>
+  <data name="EmailWindow_Send" xml:space="preserve">
+    <value>Kirim</value>
+  </data>
+  <data name="EmailWindow_ShareX_Send_email" xml:space="preserve">
+    <value>ShareX — Kirim email</value>
+  </data>
+  <data name="EmailWindow_Subject" xml:space="preserve">
+    <value>Subjek</value>
+  </data>
+  <data name="EmailWindow_To_email" xml:space="preserve">
+    <value>Email penerima</value>
+  </data>
+  <data name="FileDestination_AmazonS3" xml:space="preserve">
+    <value>Amazon S3</value>
+  </data>
+  <data name="FileDestination_AzureStorage" xml:space="preserve">
+    <value>Azure Storage</value>
+  </data>
+  <data name="FileDestination_BackblazeB2" xml:space="preserve">
+    <value>Backblaze B2</value>
+  </data>
+  <data name="FileDestination_Box" xml:space="preserve">
+    <value>Box</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>Pengunggah file khusus</value>
+  </data>
+  <data name="FileDestination_Dropbox" xml:space="preserve">
+    <value>Dropbox</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="FileDestination_FTP" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="FileDestination_GoogleCloudStorage" xml:space="preserve">
+    <value>Google Cloud Storage</value>
+  </data>
+  <data name="FileDestination_GoogleDrive" xml:space="preserve">
+    <value>Google Drive</value>
+  </data>
+  <data name="FileDestination_Lambda" xml:space="preserve">
+    <value>Lambda</value>
+  </data>
+  <data name="FileDestination_Lithiio" xml:space="preserve">
+    <value>LobFile</value>
+  </data>
+  <data name="FileDestination_Localhostr" xml:space="preserve">
+    <value>Hostr</value>
+  </data>
+  <data name="FileDestination_MediaFire" xml:space="preserve">
+    <value>MediaFire</value>
+  </data>
+  <data name="FileDestination_OneDrive" xml:space="preserve">
+    <value>OneDrive</value>
+  </data>
+  <data name="FileDestination_OwnCloud" xml:space="preserve">
+    <value>ownCloud / Nextcloud</value>
+  </data>
+  <data name="FileDestination_Plik" xml:space="preserve">
+    <value>Plik</value>
+  </data>
+  <data name="FileDestination_Pomf" xml:space="preserve">
+    <value>Pomf</value>
+  </data>
+  <data name="FileDestination_Pushbullet" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="FileDestination_Puush" xml:space="preserve">
+    <value>puush</value>
+  </data>
+  <data name="FileDestination_Seafile" xml:space="preserve">
+    <value>Seafile</value>
+  </data>
+  <data name="FileDestination_SendSpace" xml:space="preserve">
+    <value>SendSpace</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>Folder bersama</value>
+  </data>
+  <data name="FileDestination_Streamable" xml:space="preserve">
+    <value>Streamable</value>
+  </data>
+  <data name="FileDestination_Sul" xml:space="preserve">
+    <value>s-ul</value>
+  </data>
+  <data name="FileDestination_Transfersh" xml:space="preserve">
+    <value>transfer.sh</value>
+  </data>
+  <data name="FileDestination_Uguu" xml:space="preserve">
+    <value>Uguu</value>
+  </data>
+  <data name="FileDestination_Vault_ooo" xml:space="preserve">
+    <value>Vault.ooo</value>
+  </data>
+  <data name="FileDestination_YouTube" xml:space="preserve">
+    <value>YouTube</value>
+  </data>
+  <data name="FileSonic_Get_upload_URL_failed" xml:space="preserve">
+    <value>Tidak dapat memperoleh URL unggahan.</value>
+  </data>
+  <data name="FTPProtocol_FTP" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="FTPProtocol_FTPS" xml:space="preserve">
+    <value>FTPS (FTP melalui SSL)</value>
+  </data>
+  <data name="FTPProtocol_SFTP" xml:space="preserve">
+    <value>SFTP (SSH FTP)</value>
+  </data>
+  <data name="GoogleDrive_My_drive" xml:space="preserve">
+    <value>Drive saya</value>
+  </data>
+  <data name="ImageDestination_Chevereto" xml:space="preserve">
+    <value>Chevereto</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>Pengunggah gambar khusus</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>Pengunggah file</value>
+  </data>
+  <data name="ImageDestination_Flickr" xml:space="preserve">
+    <value>Flickr</value>
+  </data>
+  <data name="ImageDestination_ImageShack" xml:space="preserve">
+    <value>ImageShack</value>
+  </data>
+  <data name="ImageDestination_Imgur" xml:space="preserve">
+    <value>Imgur</value>
+  </data>
+  <data name="ImageDestination_Photobucket" xml:space="preserve">
+    <value>Photobucket</value>
+  </data>
+  <data name="ImageDestination_Vgyme" xml:space="preserve">
+    <value>vgy.me</value>
+  </data>
+  <data name="Imgur_Error_details" xml:space="preserve">
+    <value>Status: {0}, Permintaan: {1}, Kesalahan: {2}</value>
+  </data>
+  <data name="Imgur_Upload_failed" xml:space="preserve">
+    <value>Pengunggahan Imgur gagal: ({0}) {1}</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>Persegi besar</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>Thumbnail lebih besar</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>Thumbnail besar</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>Thumbnail sedang</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>Kotak kecil</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>Thumbnail kecil</value>
+  </data>
+  <data name="KeyFileNameEditor_Browse_for_key_file" xml:space="preserve">
+    <value>Jelajahi file kunci...</value>
+  </data>
+  <data name="Lambda_Upload_failed_check_API_key" xml:space="preserve">
+    <value>Pengunggahan gagal karena alasan yang tidak diketahui. Periksa kunci API Anda.</value>
+  </data>
+  <data name="LinkFormatEnum_ForumImage" xml:space="preserve">
+    <value>Gambar penuh untuk forum</value>
+  </data>
+  <data name="LinkFormatEnum_ForumLinkedImage" xml:space="preserve">
+    <value>Gambar mini tertaut untuk forum</value>
+  </data>
+  <data name="LinkFormatEnum_HTMLImage" xml:space="preserve">
+    <value>Gambar penuh sebagai HTML</value>
+  </data>
+  <data name="LinkFormatEnum_HTMLLinkedImage" xml:space="preserve">
+    <value>Gambar mini tertaut sebagai HTML</value>
+  </data>
+  <data name="LinkFormatEnum_LocalFilePath" xml:space="preserve">
+    <value>Jalur file lokal</value>
+  </data>
+  <data name="LinkFormatEnum_LocalFilePathUri" xml:space="preserve">
+    <value>Jalur file lokal sebagai URI</value>
+  </data>
+  <data name="LinkFormatEnum_ShortenedURL" xml:space="preserve">
+    <value>URL yang dipersingkat</value>
+  </data>
+  <data name="LinkFormatEnum_ThumbnailURL" xml:space="preserve">
+    <value>Gambar mini</value>
+  </data>
+  <data name="LinkFormatEnum_URL" xml:space="preserve">
+    <value>URL lengkap</value>
+  </data>
+  <data name="LinkFormatEnum_WikiImage" xml:space="preserve">
+    <value>Gambar penuh untuk Wiki</value>
+  </data>
+  <data name="LinkFormatEnum_WikiLinkedImage" xml:space="preserve">
+    <value>Gambar mini tertaut untuk Wiki</value>
+  </data>
+  <data name="MediaFire_Could_not_upload_file" xml:space="preserve">
+    <value>Tidak dapat mengunggah file: {0}</value>
+  </data>
+  <data name="MediaFire_Invalid_response" xml:space="preserve">
+    <value>Respons tidak valid</value>
+  </data>
+  <data name="OAuthInfo_New_account" xml:space="preserve">
+    <value>Akun baru</value>
+  </data>
+  <data name="OAuthListener_Authorization_completed_successfully" xml:space="preserve">
+    <value>Otorisasi berhasil diselesaikan.</value>
+  </data>
+  <data name="OAuthListener_Authorization_did_not_succeed" xml:space="preserve">
+    <value>Otorisasi tidak berhasil.</value>
+  </data>
+  <data name="OAuthListener_Invalid_state_parameter" xml:space="preserve">
+    <value>Parameter status tidak valid.</value>
+  </data>
+  <data name="OAuthListenerWindow_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="OAuthListenerWindow_ShareX_Authorization" xml:space="preserve">
+    <value>ShareX — Otorisasi</value>
+  </data>
+  <data name="OAuthListenerWindow_Waiting_for_authorization_in_your_browser_to_complete" xml:space="preserve">
+    <value>Menunggu otorisasi di browser Anda selesai...</value>
+  </data>
+  <data name="OAuthManager_Consumer_credentials_are_empty" xml:space="preserve">
+    <value>Kunci, rahasia, atau kunci privat konsumen kosong.</value>
+  </data>
+  <data name="OAuthManager_Unsupported_signature_method" xml:space="preserve">
+    <value>Metode tanda tangan tidak didukung</value>
+  </data>
+  <data name="OneDrive_Root_folder" xml:space="preserve">
+    <value>Folder akar</value>
+  </data>
+  <data name="OwnCloud_Auto_expire_time_is_invalid" xml:space="preserve">
+    <value>Waktu kedaluwarsa otomatis ownCloud tidak valid.</value>
+  </data>
+  <data name="OwnCloud_Credentials_are_empty" xml:space="preserve">
+    <value>Nama pengguna atau kata sandi ownCloud kosong.</value>
+  </data>
+  <data name="OwnCloud_Error_details" xml:space="preserve">
+    <value>Status: {0}
+Kode status: {1}
+Pesan: {2}</value>
+  </data>
+  <data name="OwnCloud_Host_is_empty" xml:space="preserve">
+    <value>Host ownCloud kosong.</value>
+  </data>
+  <data name="ParserSelectWindow_ShareX_Select" xml:space="preserve">
+    <value>ShareX — Pilih</value>
+  </data>
+  <data name="Pastebin_Login_failed" xml:space="preserve">
+    <value>Gagal masuk ke Pastebin.</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>D1</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>H1</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>M1</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>M10</value>
+  </data>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>W1</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>W2</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>Pribadi</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>Publik</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>Tidak terdaftar</value>
+  </data>
+  <data name="Plik_Host_is_empty" xml:space="preserve">
+    <value>Host Plik kosong.</value>
+  </data>
+  <data name="PrivateBin_Server_requires_authorization" xml:space="preserve">
+    <value>Server memerlukan otorisasi.</value>
+  </data>
+  <data name="PrivateBinExpiration_D1" xml:space="preserve">
+    <value>1 hari</value>
+  </data>
+  <data name="PrivateBinExpiration_H1" xml:space="preserve">
+    <value>1 jam</value>
+  </data>
+  <data name="PrivateBinExpiration_M1" xml:space="preserve">
+    <value>1 bulan</value>
+  </data>
+  <data name="PrivateBinExpiration_M10" xml:space="preserve">
+    <value>10 menit</value>
+  </data>
+  <data name="PrivateBinExpiration_M5" xml:space="preserve">
+    <value>5 menit</value>
+  </data>
+  <data name="PrivateBinExpiration_N" xml:space="preserve">
+    <value>Jangan pernah</value>
+  </data>
+  <data name="PrivateBinExpiration_W1" xml:space="preserve">
+    <value>1 minggu</value>
+  </data>
+  <data name="PrivateBinExpiration_Y1" xml:space="preserve">
+    <value>1 tahun</value>
+  </data>
+  <data name="PrivateBinFormat_Markdown" xml:space="preserve">
+    <value>Markdown</value>
+  </data>
+  <data name="PrivateBinFormat_PlainText" xml:space="preserve">
+    <value>teks biasa</value>
+  </data>
+  <data name="PrivateBinFormat_SyntaxHighlighting" xml:space="preserve">
+    <value>penyorotan sintaks</value>
+  </data>
+  <data name="Pushbullet_Device_key_is_missing" xml:space="preserve">
+    <value>Kunci perangkat tidak ada.</value>
+  </data>
+  <data name="Pushbullet_No_device_selected" xml:space="preserve">
+    <value>Tidak ada perangkat yang dipilih untuk pengiriman.</value>
+  </data>
+  <data name="Puush_Authentication_failure" xml:space="preserve">
+    <value>Autentikasi gagal.</value>
+  </data>
+  <data name="Puush_Checksum_error" xml:space="preserve">
+    <value>Kesalahan checksum.</value>
+  </data>
+  <data name="Puush_Connection_error" xml:space="preserve">
+    <value>Kesalahan koneksi.</value>
+  </data>
+  <data name="Puush_Insufficient_account_storage" xml:space="preserve">
+    <value>Akun tidak memiliki cukup ruang penyimpanan tersisa.</value>
+  </data>
+  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="PuushLoginWindow_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
+    <value>Masukkan email dan kata sandi Anda.</value>
+  </data>
+  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
+    <value>Lupa kata sandi?</value>
+  </data>
+  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
+    <value>Sedang masuk...</value>
+  </data>
+  <data name="PuushLoginWindow_Login" xml:space="preserve">
+    <value>Masuk</value>
+  </data>
+  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
+    <value>Login gagal.</value>
+  </data>
+  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
+    <value>name@example.com</value>
+  </data>
+  <data name="PuushLoginWindow_Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
+    <value>ShareX — Masuk ke puush</value>
+  </data>
+  <data name="ResponseWindow_Copy_deletion_URL" xml:space="preserve">
+    <value>Salin URL penghapusan</value>
+  </data>
+  <data name="ResponseWindow_Copy_response" xml:space="preserve">
+    <value>Salin respons</value>
+  </data>
+  <data name="ResponseWindow_Copy_response_info" xml:space="preserve">
+    <value>Salin info respons</value>
+  </data>
+  <data name="ResponseWindow_Copy_shortened_URL" xml:space="preserve">
+    <value>Salin URL pendek</value>
+  </data>
+  <data name="ResponseWindow_Copy_thumbnail_URL" xml:space="preserve">
+    <value>Salin URL gambar mini</value>
+  </data>
+  <data name="ResponseWindow_Copy_URL" xml:space="preserve">
+    <value>Salin URL</value>
+  </data>
+  <data name="ResponseWindow_Deletion_URL" xml:space="preserve">
+    <value>URL penghapusan</value>
+  </data>
+  <data name="ResponseWindow_Headers" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="ResponseWindow_Inspect_the_URLs_and_response_returned_by_the_destination" xml:space="preserve">
+    <value>Periksa URL dan respons yang dikembalikan oleh tujuan.</value>
+  </data>
+  <data name="ResponseWindow_JSON_format" xml:space="preserve">
+    <value>Format JSON</value>
+  </data>
+  <data name="ResponseWindow_JSON_formatting_failed" xml:space="preserve">
+    <value>Pemformatan gagal.</value>
+  </data>
+  <data name="ResponseWindow_No_response_information_is_available" xml:space="preserve">
+    <value>Tidak ada informasi respons yang tersedia.</value>
+  </data>
+  <data name="ResponseWindow_No_result_details_are_available" xml:space="preserve">
+    <value>Tidak ada detail hasil yang tersedia.</value>
+  </data>
+  <data name="ResponseWindow_Open_response_URL" xml:space="preserve">
+    <value>Buka URL respons</value>
+  </data>
+  <data name="ResponseWindow_Open_URL" xml:space="preserve">
+    <value>Buka URL</value>
+  </data>
+  <data name="ResponseWindow_Response_info" xml:space="preserve">
+    <value>Info respons</value>
+  </data>
+  <data name="ResponseWindow_Response_text" xml:space="preserve">
+    <value>Teks respons</value>
+  </data>
+  <data name="ResponseWindow_Response_URL" xml:space="preserve">
+    <value>URL respons</value>
+  </data>
+  <data name="ResponseWindow_Result" xml:space="preserve">
+    <value>Hasil</value>
+  </data>
+  <data name="ResponseWindow_ShareX_Response" xml:space="preserve">
+    <value>ShareX — Respons</value>
+  </data>
+  <data name="ResponseWindow_Shortened_URL" xml:space="preserve">
+    <value>URL yang dipersingkat</value>
+  </data>
+  <data name="ResponseWindow_Status_code" xml:space="preserve">
+    <value>Kode status</value>
+  </data>
+  <data name="ResponseWindow_The_upload_completed_with_an_error" xml:space="preserve">
+    <value>Pengunggahan selesai dengan kesalahan.</value>
+  </data>
+  <data name="ResponseWindow_Thumbnail_URL" xml:space="preserve">
+    <value>URL thumbnail</value>
+  </data>
+  <data name="ResponseWindow_Upload_response" xml:space="preserve">
+    <value>Respons unggahan</value>
+  </data>
+  <data name="ResponseWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ResponseWindow_XML_format" xml:space="preserve">
+    <value>Format XML</value>
+  </data>
+  <data name="ResponseWindow_XML_formatting_failed" xml:space="preserve">
+    <value>Pemformatan gagal.</value>
+  </data>
+  <data name="Seafile_API_URL_is_empty" xml:space="preserve">
+    <value>URL API Seafile kosong.</value>
+  </data>
+  <data name="Seafile_Authentication_token_is_empty" xml:space="preserve">
+    <value>Token autentikasi Seafile kosong.</value>
+  </data>
+  <data name="SendSpace_Error_details" xml:space="preserve">
+    <value>Kode: {0}, Metode: {1}
+Teks: {2}</value>
+  </data>
+  <data name="SendSpace_Session_key_is_missing" xml:space="preserve">
+    <value>Kunci sesi tidak ada.</value>
+  </data>
+  <data name="SendSpace_Token_is_missing" xml:space="preserve">
+    <value>Token tidak ada.</value>
+  </data>
+  <data name="SendSpace_Upload_information_is_missing" xml:space="preserve">
+    <value>Informasi unggahan tidak ada.</value>
+  </data>
+  <data name="SFTP_Key_file_not_found" xml:space="preserve">
+    <value>File kunci tidak ada.</value>
+  </data>
+  <data name="Streamable_Could_not_create_video" xml:space="preserve">
+    <value>Tidak dapat membuat video.</value>
+  </data>
+  <data name="Sul_Generic_error_contact_support" xml:space="preserve">
+    <value>Terjadi kesalahan umum. Hubungi support@s-ul.eu.</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>Pengunggah teks khusus</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>Pengunggah file</value>
+  </data>
+  <data name="TextDestination_Gist" xml:space="preserve">
+    <value>GitHub Gist</value>
+  </data>
+  <data name="TextDestination_Hastebin" xml:space="preserve">
+    <value>Hastebin</value>
+  </data>
+  <data name="TextDestination_OneTimeSecret" xml:space="preserve">
+    <value>OneTimeSecret</value>
+  </data>
+  <data name="TextDestination_Paste_ee" xml:space="preserve">
+    <value>Paste.ee</value>
+  </data>
+  <data name="TextDestination_Paste2" xml:space="preserve">
+    <value>Paste2</value>
+  </data>
+  <data name="TextDestination_Pastebin" xml:space="preserve">
+    <value>Pastebin</value>
+  </data>
+  <data name="TextDestination_Pastie" xml:space="preserve">
+    <value>Pastie</value>
+  </data>
+  <data name="TextDestination_PrivateBin" xml:space="preserve">
+    <value>PrivateBin</value>
+  </data>
+  <data name="TextDestination_Slexy" xml:space="preserve">
+    <value>Slexy</value>
+  </data>
+  <data name="TextDestination_Upaste" xml:space="preserve">
+    <value>uPaste</value>
+  </data>
+  <data name="TextUploadWindow_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="TextUploadWindow_Character_count_plural" xml:space="preserve">
+    <value>{0:N0} karakter</value>
+  </data>
+  <data name="TextUploadWindow_Character_count_singular" xml:space="preserve">
+    <value>{0:N0} karakter</value>
+  </data>
+  <data name="TextUploadWindow_Enter_or_paste_the_text_you_want_to_upload" xml:space="preserve">
+    <value>Masukkan atau tempel teks yang ingin Anda unggah.</value>
+  </data>
+  <data name="TextUploadWindow_ShareX_Text_upload" xml:space="preserve">
+    <value>ShareX — Unggah teks</value>
+  </data>
+  <data name="TextUploadWindow_Text_upload" xml:space="preserve">
+    <value>Unggah teks</value>
+  </data>
+  <data name="TextUploadWindow_Upload" xml:space="preserve">
+    <value>Unggah</value>
+  </data>
+  <data name="Uploader_Authorization_information_missing" xml:space="preserve">
+    <value>Informasi otorisasi tidak ada. Buka URL otorisasi terlebih dahulu.</value>
+  </data>
+  <data name="Uploader_Error_message" xml:space="preserve">
+    <value>Pesan kesalahan:</value>
+  </data>
+  <data name="Uploader_Request_URL" xml:space="preserve">
+    <value>URL permintaan:</value>
+  </data>
+  <data name="Uploader_Stack_trace" xml:space="preserve">
+    <value>Jejak tumpukan:</value>
+  </data>
+  <data name="UploaderErrors_Login_is_required" xml:space="preserve">
+    <value>Anda harus masuk.</value>
+  </data>
+  <data name="UploaderErrors_Refresh_access_token_failed" xml:space="preserve">
+    <value>Penyegaran token akses gagal.</value>
+  </data>
+  <data name="UploaderErrors_Service_login_is_required" xml:space="preserve">
+    <value>Anda harus masuk ke {0}.</value>
+  </data>
+  <data name="UploaderErrors_Upload_failed" xml:space="preserve">
+    <value>Pengunggahan gagal.</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Pencarian visual Bing</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>Layanan berbagi URL khusus</value>
+  </data>
+  <data name="URLSharingServices_Delicious" xml:space="preserve">
+    <value>Delicious</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="URLSharingServices_Facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Penelusuran Gambar Google</value>
+  </data>
+  <data name="URLSharingServices_LinkedIn" xml:space="preserve">
+    <value>LinkedIn</value>
+  </data>
+  <data name="URLSharingServices_Pinterest" xml:space="preserve">
+    <value>Pinterest</value>
+  </data>
+  <data name="URLSharingServices_Pushbullet" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="URLSharingServices_Reddit" xml:space="preserve">
+    <value>Reddit</value>
+  </data>
+  <data name="URLSharingServices_StumbleUpon" xml:space="preserve">
+    <value>StumbleUpon</value>
+  </data>
+  <data name="URLSharingServices_Tumblr" xml:space="preserve">
+    <value>Tumblr</value>
+  </data>
+  <data name="URLSharingServices_VK" xml:space="preserve">
+    <value>VK</value>
+  </data>
+  <data name="UrlShortenerType_BITLY" xml:space="preserve">
+    <value>bit.ly</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>Penyingkat URL khusus</value>
+  </data>
+  <data name="UrlShortenerType_FirebaseDynamicLinks" xml:space="preserve">
+    <value>Tautan Dinamis Firebase</value>
+  </data>
+  <data name="UrlShortenerType_ISGD" xml:space="preserve">
+    <value>is.gd</value>
+  </data>
+  <data name="UrlShortenerType_Kutt" xml:space="preserve">
+    <value>Kutt</value>
+  </data>
+  <data name="UrlShortenerType_Polr" xml:space="preserve">
+    <value>Polr</value>
+  </data>
+  <data name="UrlShortenerType_QRnet" xml:space="preserve">
+    <value>qr.net</value>
+  </data>
+  <data name="UrlShortenerType_TINYURL" xml:space="preserve">
+    <value>tinyurl.com</value>
+  </data>
+  <data name="UrlShortenerType_TURL" xml:space="preserve">
+    <value>turl.ca</value>
+  </data>
+  <data name="UrlShortenerType_TwoGP" xml:space="preserve">
+    <value>2.gp</value>
+  </data>
+  <data name="UrlShortenerType_VGD" xml:space="preserve">
+    <value>v.gd</value>
+  </data>
+  <data name="UrlShortenerType_VURL" xml:space="preserve">
+    <value>vurl.com</value>
+  </data>
+  <data name="UrlShortenerType_YOURLS" xml:space="preserve">
+    <value>yourls.org</value>
+  </data>
+  <data name="UrlShortenerType_ZeroWidthShortener" xml:space="preserve">
+    <value>Penyingkat dengan karakter tak terlihat</value>
+  </data>
+  <data name="Vault_No_valid_metadata_returned" xml:space="preserve">
+    <value>Tidak ada metadata valid yang dikembalikan.</value>
+  </data>
+  <data name="Yourls_Credentials_missing" xml:space="preserve">
+    <value>Tanda tangan atau nama pengguna/kata sandi tidak ada.</value>
+  </data>
+  <data name="YouTube_Upload_failed" xml:space="preserve">
+    <value>Pengunggahan gagal: {0}</value>
+  </data>
+  <data name="YouTube_Upload_rejected" xml:space="preserve">
+    <value>Pengunggahan ditolak: {0}</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Description" xml:space="preserve">
+    <value>Deskripsi</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_ShareX_YouTube_video_options" xml:space="preserve">
+    <value>ShareX — Opsi video YouTube</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Title" xml:space="preserve">
+    <value>Judul</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Video_title" xml:space="preserve">
+    <value>Judul video</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Visibility" xml:space="preserve">
+    <value>Visibilitas</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>Pribadi</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>Publik</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>Tidak terdaftar</value>
+  </data>
+</root>

@@ -1,0 +1,1543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountType_Anonymous" xml:space="preserve">
+    <value>Anonim</value>
+  </data>
+  <data name="AccountType_User" xml:space="preserve">
+    <value>Utilizator</value>
+  </data>
+  <data name="AmazonS3_Upload_failed" xml:space="preserve">
+    <value>Încărcarea în Amazon S3 a eșuat.</value>
+  </data>
+  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
+    <value>Amazon S3 Intelligent-Tiering</value>
+  </data>
+  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
+    <value>Amazon S3 One Zone-Infrequent Access</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
+    <value>Amazon S3 Standard</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
+    <value>Amazon S3 Standard-Infrequent Access</value>
+  </data>
+  <data name="AzureStorage_Access_key_must_not_be_empty" xml:space="preserve">
+    <value>„Cheia de acces” nu poate fi goală.</value>
+  </data>
+  <data name="AzureStorage_Account_name_must_not_be_empty" xml:space="preserve">
+    <value>„Numele contului” nu poate fi gol.</value>
+  </data>
+  <data name="AzureStorage_Container_must_not_be_empty" xml:space="preserve">
+    <value>„Containerul” nu poate fi gol.</value>
+  </data>
+  <data name="BackblazeB2_Could_not_authenticate" xml:space="preserve">
+    <value>Autentificarea la B2 nu a reușit: {0}</value>
+  </data>
+  <data name="BackblazeB2_Could_not_get_upload_URL" xml:space="preserve">
+    <value>Nu s-a putut obține adresa URL de încărcare B2: {0}</value>
+  </data>
+  <data name="BackblazeB2_Unknown_upload_error" xml:space="preserve">
+    <value>Program de încărcare B2: a apărut o eroare necunoscută la apelarea b2_upload_file().</value>
+  </data>
+  <data name="BackblazeB2_Upload_failed_after_attempts" xml:space="preserve">
+    <value>Încărcarea B2 a eșuat: fișierul nu a putut fi încărcat după {0} încercări.</value>
+  </data>
+  <data name="BackblazeB2_Upload_failed_with_error" xml:space="preserve">
+    <value>Încărcarea B2 a eșuat: {0}</value>
+  </data>
+  <data name="Base58Converter_Invalid_character" xml:space="preserve">
+    <value>Caracter Base58 nevalid „{0}” la poziția {1}.</value>
+  </data>
+  <data name="BoxShareAccessLevel_Collaborators" xml:space="preserve">
+    <value>Colaboratori — Numai persoanele invitate</value>
+  </data>
+  <data name="BoxShareAccessLevel_Company" xml:space="preserve">
+    <value>Companie — Persoanele din compania dvs.</value>
+  </data>
+  <data name="BoxShareAccessLevel_Open" xml:space="preserve">
+    <value>Public — Persoanele care au linkul</value>
+  </data>
+  <data name="BrowserProtocol_file" xml:space="preserve">
+    <value>file://</value>
+  </data>
+  <data name="BrowserProtocol_ftp" xml:space="preserve">
+    <value>ftp://</value>
+  </data>
+  <data name="BrowserProtocol_ftps" xml:space="preserve">
+    <value>ftps://</value>
+  </data>
+  <data name="BrowserProtocol_http" xml:space="preserve">
+    <value>http://</value>
+  </data>
+  <data name="BrowserProtocol_https" xml:space="preserve">
+    <value>https://</value>
+  </data>
+  <data name="BrowserProtocol_sftp" xml:space="preserve">
+    <value>sftp://</value>
+  </data>
+  <data name="CertFileNameEditor_Browse_for_certificate_file" xml:space="preserve">
+    <value>Răsfoiți un fișier de certificat...</value>
+  </data>
+  <data name="Common_API_key_is_missing" xml:space="preserve">
+    <value>Cheia API lipsește.</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>Eroare</value>
+  </data>
+  <data name="Common_Unknown_error" xml:space="preserve">
+    <value>Eroare necunoscută</value>
+  </data>
+  <data name="CustomUploader_Unsupported_request_format" xml:space="preserve">
+    <value>Format de solicitare neacceptat: {0}</value>
+  </data>
+  <data name="CustomUploaderBody_Binary" xml:space="preserve">
+    <value>Binar</value>
+  </data>
+  <data name="CustomUploaderBody_FormURLEncoded" xml:space="preserve">
+    <value>Formular codificat URL (application/x-www-form-urlencoded)</value>
+  </data>
+  <data name="CustomUploaderBody_JSON" xml:space="preserve">
+    <value>JSON (application/json)</value>
+  </data>
+  <data name="CustomUploaderBody_MultipartFormData" xml:space="preserve">
+    <value>Date formular (multipart/form-data)</value>
+  </data>
+  <data name="CustomUploaderBody_None" xml:space="preserve">
+    <value>Fără corp</value>
+  </data>
+  <data name="CustomUploaderBody_XML" xml:space="preserve">
+    <value>XML (application/xml)</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>Destinație de fișiere</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>Destinație de imagini</value>
+  </data>
+  <data name="CustomUploaderDestinationType_None" xml:space="preserve">
+    <value>Nici unul</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>Destinație de text</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>Serviciu de partajare URL</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>Scurtător URL</value>
+  </data>
+  <data name="CustomUploaderItem_File_form_name_must_be_configured" xml:space="preserve">
+    <value>"Numele formei fișierului" trebuie să fie configurat.</value>
+  </data>
+  <data name="CustomUploaderItem_Invalid_JSON_response" xml:space="preserve">
+    <value>Gazda ({0}) a returnat conținut de răspuns nevalid; era așteptat JSON.</value>
+  </data>
+  <data name="CustomUploaderItem_Request_URL_must_be_configured" xml:space="preserve">
+    <value>"URL cerere" trebuie să fie configurat.</value>
+  </data>
+  <data name="CustomUploaderItem_Unable_to_parse_response" xml:space="preserve">
+    <value>Conținutul răspunsului returnat de gazda ({0}) nu a putut fi analizat.</value>
+  </data>
+  <data name="CustomUploaderItem_Unsupported_custom_uploader" xml:space="preserve">
+    <value>Program de încărcare particularizat neacceptat</value>
+  </data>
+  <data name="CustomUploaderParser_Function_name_cannot_be_empty" xml:space="preserve">
+    <value>Numele funcției nu poate fi gol.</value>
+  </data>
+  <data name="CustomUploaderParser_Invalid_function_name" xml:space="preserve">
+    <value>Nume de funcție nevalid: {0}</value>
+  </data>
+  <data name="CustomUploaderParser_Minimum_parameter_count" xml:space="preserve">
+    <value>Numărul minim de parametri pentru funcția „{0}” este {1}.</value>
+  </data>
+  <data name="DestinationSettings_Account" xml:space="preserve">
+    <value>Cont</value>
+  </data>
+  <data name="DestinationSettings_Account_and_devices" xml:space="preserve">
+    <value>Cont și dispozitive</value>
+  </data>
+  <data name="DestinationSettings_Accounts" xml:space="preserve">
+    <value>Conturi</value>
+  </data>
+  <data name="DestinationSettings_Add" xml:space="preserve">
+    <value>Adaugă</value>
+  </data>
+  <data name="DestinationSettings_Add_path" xml:space="preserve">
+    <value>Adaugă cale</value>
+  </data>
+  <data name="DestinationSettings_Album_count_loaded_plural" xml:space="preserve">
+    <value>{0} albume încărcate</value>
+  </data>
+  <data name="DestinationSettings_Album_count_loaded_singular" xml:space="preserve">
+    <value>{0} album încărcat</value>
+  </data>
+  <data name="DestinationSettings_Album_count_plural" xml:space="preserve">
+    <value>{0} albume</value>
+  </data>
+  <data name="DestinationSettings_Album_count_singular" xml:space="preserve">
+    <value>{0} album</value>
+  </data>
+  <data name="DestinationSettings_Album_path" xml:space="preserve">
+    <value>Calea albumului:</value>
+  </data>
+  <data name="DestinationSettings_Albums" xml:space="preserve">
+    <value>Albume</value>
+  </data>
+  <data name="DestinationSettings_API_key" xml:space="preserve">
+    <value>Cheie API:</value>
+  </data>
+  <data name="DestinationSettings_API_key_retrieved" xml:space="preserve">
+    <value>Cheia API a fost obținută</value>
+  </data>
+  <data name="DestinationSettings_Authorization_code" xml:space="preserve">
+    <value>Cod de autorizare:</value>
+  </data>
+  <data name="DestinationSettings_Authorization_failed" xml:space="preserve">
+    <value>Autorizarea a eșuat</value>
+  </data>
+  <data name="DestinationSettings_Authorization_page_opened" xml:space="preserve">
+    <value>Pagina de autorizare a fost deschisă</value>
+  </data>
+  <data name="DestinationSettings_Back" xml:space="preserve">
+    <value>Înapoi</value>
+  </data>
+  <data name="DestinationSettings_Browser_status" xml:space="preserve">
+    <value>Starea browserului:</value>
+  </data>
+  <data name="DestinationSettings_Category_File_uploaders" xml:space="preserve">
+    <value>Programe de încărcare a fișierelor</value>
+  </data>
+  <data name="DestinationSettings_Category_Image_uploaders" xml:space="preserve">
+    <value>Programe de încărcare a imaginilor</value>
+  </data>
+  <data name="DestinationSettings_Category_Text_uploaders" xml:space="preserve">
+    <value>Programe de încărcare a textului</value>
+  </data>
+  <data name="DestinationSettings_Category_URL_shorteners" xml:space="preserve">
+    <value>Servicii de scurtare URL</value>
+  </data>
+  <data name="DestinationSettings_Complete_authorization" xml:space="preserve">
+    <value>Finalizează autorizarea</value>
+  </data>
+  <data name="DestinationSettings_Connect_account" xml:space="preserve">
+    <value>Conectează contul</value>
+  </data>
+  <data name="DestinationSettings_Connect_Imgur_account_first" xml:space="preserve">
+    <value>Conectați mai întâi un cont Imgur</value>
+  </data>
+  <data name="DestinationSettings_Connect_Photobucket_account_first" xml:space="preserve">
+    <value>Conectați mai întâi un cont Photobucket</value>
+  </data>
+  <data name="DestinationSettings_Connected" xml:space="preserve">
+    <value>Conectat!</value>
+  </data>
+  <data name="DestinationSettings_Connected_as" xml:space="preserve">
+    <value>Conectat ca {0}</value>
+  </data>
+  <data name="DestinationSettings_Device" xml:space="preserve">
+    <value>Dispozitiv:</value>
+  </data>
+  <data name="DestinationSettings_Device_count_plural" xml:space="preserve">
+    <value>{0} dispozitive încărcate</value>
+  </data>
+  <data name="DestinationSettings_Device_count_singular" xml:space="preserve">
+    <value>{0} dispozitiv încărcat</value>
+  </data>
+  <data name="DestinationSettings_Disconnect" xml:space="preserve">
+    <value>Deconectare</value>
+  </data>
+  <data name="DestinationSettings_Duplicate" xml:space="preserve">
+    <value>Duplică</value>
+  </data>
+  <data name="DestinationSettings_Edit_item" xml:space="preserve">
+    <value>Editează {0}</value>
+  </data>
+  <data name="DestinationSettings_Email_or_username" xml:space="preserve">
+    <value>E-mail / nume de utilizator:</value>
+  </data>
+  <data name="DestinationSettings_Enter_credentials_to_retrieve_API_key" xml:space="preserve">
+    <value>Introduceți datele contului pentru a obține cheia API</value>
+  </data>
+  <data name="DestinationSettings_Field_81_Compatibility" xml:space="preserve">
+    <value>Compatibilitate cu 8.1</value>
+  </data>
+  <data name="DestinationSettings_Field_Acc_Info_Email" xml:space="preserve">
+    <value>E-mail informații cont</value>
+  </data>
+  <data name="DestinationSettings_Field_Acc_Info_Usage" xml:space="preserve">
+    <value>Utilizare informații cont</value>
+  </data>
+  <data name="DestinationSettings_Field_Access_Key_ID" xml:space="preserve">
+    <value>ID cheie de acces</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Access_Key" xml:space="preserve">
+    <value>Cheie de acces cont</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_List" xml:space="preserve">
+    <value>Listă de conturi</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Name" xml:space="preserve">
+    <value>Nume cont</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Type" xml:space="preserve">
+    <value>Tip cont</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Hostname" xml:space="preserve">
+    <value>Nume gazdă API</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Key" xml:space="preserve">
+    <value>Cheie API</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Username" xml:space="preserve">
+    <value>Nume de utilizator API</value>
+  </data>
+  <data name="DestinationSettings_Field_APIURL" xml:space="preserve">
+    <value>URL API</value>
+  </data>
+  <data name="DestinationSettings_Field_Append_File_Name_To_URL" xml:space="preserve">
+    <value>Adaugă numele fișierului la URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Application_Key" xml:space="preserve">
+    <value>Cheie aplicație</value>
+  </data>
+  <data name="DestinationSettings_Field_Application_Key_Id" xml:space="preserve">
+    <value>ID cheie aplicație</value>
+  </data>
+  <data name="DestinationSettings_Field_Auth_Token" xml:space="preserve">
+    <value>Token de autentificare</value>
+  </data>
+  <data name="DestinationSettings_Field_Auto_Create_Shareable_Link" xml:space="preserve">
+    <value>Creează automat un link partajabil</value>
+  </data>
+  <data name="DestinationSettings_Field_Auto_Expire" xml:space="preserve">
+    <value>Expirare automată</value>
+  </data>
+  <data name="DestinationSettings_Field_Automatic_Send" xml:space="preserve">
+    <value>Trimitere automată</value>
+  </data>
+  <data name="DestinationSettings_Field_Automatic_Send_To" xml:space="preserve">
+    <value>Trimite automat către</value>
+  </data>
+  <data name="DestinationSettings_Field_Bucket" xml:space="preserve">
+    <value>Compartiment</value>
+  </data>
+  <data name="DestinationSettings_Field_Bucket_Name" xml:space="preserve">
+    <value>Nume compartiment</value>
+  </data>
+  <data name="DestinationSettings_Field_Burn_After_Reading" xml:space="preserve">
+    <value>Șterge după citire</value>
+  </data>
+  <data name="DestinationSettings_Field_Cache_Control" xml:space="preserve">
+    <value>Control cache</value>
+  </data>
+  <data name="DestinationSettings_Field_Capacity" xml:space="preserve">
+    <value>Capacitate</value>
+  </data>
+  <data name="DestinationSettings_Field_Comment" xml:space="preserve">
+    <value>Comentariu</value>
+  </data>
+  <data name="DestinationSettings_Field_Container" xml:space="preserve">
+    <value>Container</value>
+  </data>
+  <data name="DestinationSettings_Field_Content_Type" xml:space="preserve">
+    <value>Tip conținut</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Share" xml:space="preserve">
+    <value>Creează partajare</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Shareable_URL" xml:space="preserve">
+    <value>Creează URL partajabil</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Shareable_URL_Raw" xml:space="preserve">
+    <value>Creează URL brut partajabil</value>
+  </data>
+  <data name="DestinationSettings_Field_Custom_Domain" xml:space="preserve">
+    <value>Domeniu particularizat</value>
+  </data>
+  <data name="DestinationSettings_Field_Custom_URL" xml:space="preserve">
+    <value>URL particularizat</value>
+  </data>
+  <data name="DestinationSettings_Field_Default_Body" xml:space="preserve">
+    <value>Corp implicit</value>
+  </data>
+  <data name="DestinationSettings_Field_Default_Subject" xml:space="preserve">
+    <value>Subiect implicit</value>
+  </data>
+  <data name="DestinationSettings_Field_Description" xml:space="preserve">
+    <value>Descriere</value>
+  </data>
+  <data name="DestinationSettings_Field_Direct_Link" xml:space="preserve">
+    <value>Link direct</value>
+  </data>
+  <data name="DestinationSettings_Field_Direct_URL" xml:space="preserve">
+    <value>URL direct</value>
+  </data>
+  <data name="DestinationSettings_Field_Domain" xml:space="preserve">
+    <value>Domeniu</value>
+  </data>
+  <data name="DestinationSettings_Field_Dynamic_Link_Domain" xml:space="preserve">
+    <value>Domeniu link dinamic</value>
+  </data>
+  <data name="DestinationSettings_Field_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="DestinationSettings_Field_Encrypt_Paste" xml:space="preserve">
+    <value>Criptează textul lipit</value>
+  </data>
+  <data name="DestinationSettings_Field_Encrypted_Library_Password" xml:space="preserve">
+    <value>Parolă bibliotecă criptată</value>
+  </data>
+  <data name="DestinationSettings_Field_Endpoint" xml:space="preserve">
+    <value>Punct final</value>
+  </data>
+  <data name="DestinationSettings_Field_Environment" xml:space="preserve">
+    <value>Mediu</value>
+  </data>
+  <data name="DestinationSettings_Field_Expiration" xml:space="preserve">
+    <value>Expirare</value>
+  </data>
+  <data name="DestinationSettings_Field_Expiry_Time" xml:space="preserve">
+    <value>Timp de expirare</value>
+  </data>
+  <data name="DestinationSettings_Field_Exposure" xml:space="preserve">
+    <value>Vizibilitate</value>
+  </data>
+  <data name="DestinationSettings_Field_Files" xml:space="preserve">
+    <value>Fișiere</value>
+  </data>
+  <data name="DestinationSettings_Field_Folder_ID" xml:space="preserve">
+    <value>ID dosar</value>
+  </data>
+  <data name="DestinationSettings_Field_Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="DestinationSettings_Field_From" xml:space="preserve">
+    <value>De la</value>
+  </data>
+  <data name="DestinationSettings_Field_Has_Comment" xml:space="preserve">
+    <value>Are comentariu</value>
+  </data>
+  <data name="DestinationSettings_Field_Hidden" xml:space="preserve">
+    <value>Ascuns</value>
+  </data>
+  <data name="DestinationSettings_Field_Host" xml:space="preserve">
+    <value>Gazdă</value>
+  </data>
+  <data name="DestinationSettings_Field_id" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="DestinationSettings_Field_Images" xml:space="preserve">
+    <value>Imagini</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Family" xml:space="preserve">
+    <value>Este familie</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Friend" xml:space="preserve">
+    <value>Este prieten</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Library_Encrypted" xml:space="preserve">
+    <value>Biblioteca este criptată</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Public" xml:space="preserve">
+    <value>Este public</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Secret" xml:space="preserve">
+    <value>Este secret</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Secured" xml:space="preserve">
+    <value>Este securizat</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Short" xml:space="preserve">
+    <value>Este scurt</value>
+  </data>
+  <data name="DestinationSettings_Field_Last_To" xml:space="preserve">
+    <value>Ultimul destinatar</value>
+  </data>
+  <data name="DestinationSettings_Field_List" xml:space="preserve">
+    <value>Listă</value>
+  </data>
+  <data name="DestinationSettings_Field_Login" xml:space="preserve">
+    <value>Autentificare</value>
+  </data>
+  <data name="DestinationSettings_Field_name" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="DestinationSettings_Field_Object_Prefix" xml:space="preserve">
+    <value>Prefix obiect</value>
+  </data>
+  <data name="DestinationSettings_Field_One_Shot" xml:space="preserve">
+    <value>O singură utilizare</value>
+  </data>
+  <data name="DestinationSettings_Field_Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="DestinationSettings_Field_Paste_Password" xml:space="preserve">
+    <value>Parolă text lipit</value>
+  </data>
+  <data name="DestinationSettings_Field_Path" xml:space="preserve">
+    <value>Cale</value>
+  </data>
+  <data name="DestinationSettings_Field_Privacy_Type" xml:space="preserve">
+    <value>Tip confidențialitate</value>
+  </data>
+  <data name="DestinationSettings_Field_Publish_Public" xml:space="preserve">
+    <value>Publică public</value>
+  </data>
+  <data name="DestinationSettings_Field_Raw_URL" xml:space="preserve">
+    <value>URL brut</value>
+  </data>
+  <data name="DestinationSettings_Field_Region" xml:space="preserve">
+    <value>Regiune...</value>
+  </data>
+  <data name="DestinationSettings_Field_Remember_Last_To" xml:space="preserve">
+    <value>Reține ultimul destinatar</value>
+  </data>
+  <data name="DestinationSettings_Field_Removable" xml:space="preserve">
+    <value>Se poate elimina</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Image" xml:space="preserve">
+    <value>Elimină extensia imaginii</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Text" xml:space="preserve">
+    <value>Elimină extensia textului</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Video" xml:space="preserve">
+    <value>Elimină extensia videoclipului</value>
+  </data>
+  <data name="DestinationSettings_Field_Repo_ID" xml:space="preserve">
+    <value>ID depozit</value>
+  </data>
+  <data name="DestinationSettings_Field_Result_URL" xml:space="preserve">
+    <value>URL rezultat</value>
+  </data>
+  <data name="DestinationSettings_Field_Reuse" xml:space="preserve">
+    <value>Reutilizează</value>
+  </data>
+  <data name="DestinationSettings_Field_Safety_Level" xml:space="preserve">
+    <value>Nivel de siguranță</value>
+  </data>
+  <data name="DestinationSettings_Field_Secret_Access_Key" xml:space="preserve">
+    <value>Cheie de acces secretă</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Drive" xml:space="preserve">
+    <value>Unitate selectată</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_File" xml:space="preserve">
+    <value>Fișier selectat</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Image" xml:space="preserve">
+    <value>Imagine selectată</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Text" xml:space="preserve">
+    <value>Text selectat</value>
+  </data>
+  <data name="DestinationSettings_Field_Set_Public_ACL" xml:space="preserve">
+    <value>Setează ACL public</value>
+  </data>
+  <data name="DestinationSettings_Field_Settings" xml:space="preserve">
+    <value>Setări</value>
+  </data>
+  <data name="DestinationSettings_Field_Share" xml:space="preserve">
+    <value>Partajează</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Access_Level" xml:space="preserve">
+    <value>Nivel acces partajare</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Days_To_Expire" xml:space="preserve">
+    <value>Zile până la expirarea partajării</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Password" xml:space="preserve">
+    <value>Parolă partajare</value>
+  </data>
+  <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
+    <value>Afișează dialogul</value>
+  </data>
+  <data name="DestinationSettings_Field_Signature" xml:space="preserve">
+    <value>Semnătură</value>
+  </data>
+  <data name="DestinationSettings_Field_Signed_Payload" xml:space="preserve">
+    <value>Conținut semnat</value>
+  </data>
+  <data name="DestinationSettings_Field_Smtp_Port" xml:space="preserve">
+    <value>Port SMTP</value>
+  </data>
+  <data name="DestinationSettings_Field_Smtp_Server" xml:space="preserve">
+    <value>Server SMTP</value>
+  </data>
+  <data name="DestinationSettings_Field_Storage_Class" xml:space="preserve">
+    <value>Clasă de stocare</value>
+  </data>
+  <data name="DestinationSettings_Field_Syntax_Highlighting" xml:space="preserve">
+    <value>Evidențiere sintaxă</value>
+  </data>
+  <data name="DestinationSettings_Field_Tags" xml:space="preserve">
+    <value>Etichete</value>
+  </data>
+  <data name="DestinationSettings_Field_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="DestinationSettings_Field_Text_Format" xml:space="preserve">
+    <value>Format text</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Height" xml:space="preserve">
+    <value>Înălțime miniatură</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Type" xml:space="preserve">
+    <value>Tip miniatură</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Width" xml:space="preserve">
+    <value>Lățime miniatură</value>
+  </data>
+  <data name="DestinationSettings_Field_Title" xml:space="preserve">
+    <value>Titlu</value>
+  </data>
+  <data name="DestinationSettings_Field_Token" xml:space="preserve">
+    <value>Token</value>
+  </data>
+  <data name="DestinationSettings_Field_TTL" xml:space="preserve">
+    <value>Durată de viață</value>
+  </data>
+  <data name="DestinationSettings_Field_TTL_Unit" xml:space="preserve">
+    <value>Unitate durată de viață</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_Path" xml:space="preserve">
+    <value>Cale de încărcare</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_Selected_Album" xml:space="preserve">
+    <value>Încarcă în albumul selectat</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_URL" xml:space="preserve">
+    <value>Încarcă URL-ul...</value>
+  </data>
+  <data name="DestinationSettings_Field_Uploader" xml:space="preserve">
+    <value>Serviciu de încărcare:</value>
+  </data>
+  <data name="DestinationSettings_Field_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_AP_Iv1" xml:space="preserve">
+    <value>Utilizează API v1</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Custom_CNAME" xml:space="preserve">
+    <value>Utilizează CNAME particularizat</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Custom_Url" xml:space="preserve">
+    <value>Utilizează URL particularizat</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Direct_Link" xml:space="preserve">
+    <value>Utilizează link direct</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Direct_URL" xml:space="preserve">
+    <value>Utilizează URL direct</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_File_Extension" xml:space="preserve">
+    <value>Utilizează extensia fișierului</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Folder" xml:space="preserve">
+    <value>Utilizează dosar</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_GIFV" xml:space="preserve">
+    <value>Utilizează GIFV</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Long_Link" xml:space="preserve">
+    <value>Utilizează link lung</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Path_Style" xml:space="preserve">
+    <value>Utilizează stil cale</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Preview_Links" xml:space="preserve">
+    <value>Utilizează linkuri de previzualizare</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Shortened_Link" xml:space="preserve">
+    <value>Utilizează link scurtat</value>
+  </data>
+  <data name="DestinationSettings_Field_User_API_Key" xml:space="preserve">
+    <value>Cheie API utilizator</value>
+  </data>
+  <data name="DestinationSettings_Field_User_Key" xml:space="preserve">
+    <value>Cheie utilizator</value>
+  </data>
+  <data name="DestinationSettings_Field_Username" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="DestinationSettings_Field_Web_API_Key" xml:space="preserve">
+    <value>Cheie API Web</value>
+  </data>
+  <data name="DestinationSettings_Folder_count_plural" xml:space="preserve">
+    <value>{0} dosare</value>
+  </data>
+  <data name="DestinationSettings_Folder_count_singular" xml:space="preserve">
+    <value>{0} dosar</value>
+  </data>
+  <data name="DestinationSettings_Get_user_key" xml:space="preserve">
+    <value>Obține cheia utilizatorului</value>
+  </data>
+  <data name="DestinationSettings_Log_in" xml:space="preserve">
+    <value>Autentificare</value>
+  </data>
+  <data name="DestinationSettings_Login_failed" xml:space="preserve">
+    <value>Autentificarea a eșuat.</value>
+  </data>
+  <data name="DestinationSettings_My_images" xml:space="preserve">
+    <value>Imaginile mele</value>
+  </data>
+  <data name="DestinationSettings_No_additional_configuration_required" xml:space="preserve">
+    <value>Această destinație nu necesită configurare suplimentară.</value>
+  </data>
+  <data name="DestinationSettings_No_albums_loaded" xml:space="preserve">
+    <value>Niciun album încărcat</value>
+  </data>
+  <data name="DestinationSettings_No_albums_saved" xml:space="preserve">
+    <value>Niciun album salvat</value>
+  </data>
+  <data name="DestinationSettings_No_child_folders" xml:space="preserve">
+    <value>Niciun subdosar</value>
+  </data>
+  <data name="DestinationSettings_No_devices_loaded" xml:space="preserve">
+    <value>Niciun dispozitiv încărcat</value>
+  </data>
+  <data name="DestinationSettings_Not_configured" xml:space="preserve">
+    <value>Neconfigurată</value>
+  </data>
+  <data name="DestinationSettings_Not_connected" xml:space="preserve">
+    <value>Neconectat</value>
+  </data>
+  <data name="DestinationSettings_Open_authorization_page" xml:space="preserve">
+    <value>Deschide pagina de autorizare</value>
+  </data>
+  <data name="DestinationSettings_Open_folder" xml:space="preserve">
+    <value>Deschideți folderul</value>
+  </data>
+  <data name="DestinationSettings_Page_Shared_folder" xml:space="preserve">
+    <value>Folder partajat</value>
+  </data>
+  <data name="DestinationSettings_Password" xml:space="preserve">
+    <value>Parolă:</value>
+  </data>
+  <data name="DestinationSettings_Public_profile" xml:space="preserve">
+    <value>Profil public</value>
+  </data>
+  <data name="DestinationSettings_Refresh" xml:space="preserve">
+    <value>Reîmprospătează</value>
+  </data>
+  <data name="DestinationSettings_Refresh_albums" xml:space="preserve">
+    <value>Reîmprospătează albumele</value>
+  </data>
+  <data name="DestinationSettings_Refresh_devices" xml:space="preserve">
+    <value>Reîmprospătați dispozitivele</value>
+  </data>
+  <data name="DestinationSettings_Refresh_token" xml:space="preserve">
+    <value>Reîmprospătează tokenul</value>
+  </data>
+  <data name="DestinationSettings_Register" xml:space="preserve">
+    <value>Înregistrare</value>
+  </data>
+  <data name="DestinationSettings_Remove" xml:space="preserve">
+    <value>Elimină</value>
+  </data>
+  <data name="DestinationSettings_Root" xml:space="preserve">
+    <value>Rădăcină</value>
+  </data>
+  <data name="DestinationSettings_Root_folder" xml:space="preserve">
+    <value>Folder rădăcină</value>
+  </data>
+  <data name="DestinationSettings_Select_Refresh_to_load_folders" xml:space="preserve">
+    <value>Selectați Reîmprospătare pentru a încărca dosarele</value>
+  </data>
+  <data name="DestinationSettings_Selected_folder" xml:space="preserve">
+    <value>Folder selectat:</value>
+  </data>
+  <data name="DestinationSettings_Service_account" xml:space="preserve">
+    <value>Cont {0}</value>
+  </data>
+  <data name="DestinationSettings_Settings" xml:space="preserve">
+    <value>Setări</value>
+  </data>
+  <data name="DestinationSettings_Status" xml:space="preserve">
+    <value>Stare:</value>
+  </data>
+  <data name="DestinationSettings_Token_refresh_failed" xml:space="preserve">
+    <value>Reîmprospătarea tokenului a eșuat</value>
+  </data>
+  <data name="DestinationSettings_Unnamed_device" xml:space="preserve">
+    <value>Dispozitiv fără nume</value>
+  </data>
+  <data name="DestinationSettings_Unnamed_folder" xml:space="preserve">
+    <value>Dosar fără nume</value>
+  </data>
+  <data name="DestinationSettings_Upload_folder" xml:space="preserve">
+    <value>Încărcați folderul</value>
+  </data>
+  <data name="DestinationSettings_Upload_to_album" xml:space="preserve">
+    <value>Încarcă în album:</value>
+  </data>
+  <data name="DestinationSettings_Verification_code" xml:space="preserve">
+    <value>Cod de verificare:</value>
+  </data>
+  <data name="DestinationSettingsWindow_ShareX_Destination_settings" xml:space="preserve">
+    <value>ShareX — Setări destinații</value>
+  </data>
+  <data name="Dropbox_API_upload_limit" xml:space="preserve">
+    <value>Încărcările prin API au o limită de 150 MB.</value>
+  </data>
+  <data name="EmailWindow_Cancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="EmailWindow_Email_subject" xml:space="preserve">
+    <value>Subiect e-mail</value>
+  </data>
+  <data name="EmailWindow_Message" xml:space="preserve">
+    <value>Mesaj</value>
+  </data>
+  <data name="EmailWindow_name_example_com" xml:space="preserve">
+    <value>name@example.com</value>
+  </data>
+  <data name="EmailWindow_Send" xml:space="preserve">
+    <value>Trimite</value>
+  </data>
+  <data name="EmailWindow_ShareX_Send_email" xml:space="preserve">
+    <value>ShareX — Trimite e-mail</value>
+  </data>
+  <data name="EmailWindow_Subject" xml:space="preserve">
+    <value>Subiect</value>
+  </data>
+  <data name="EmailWindow_To_email" xml:space="preserve">
+    <value>E-mail destinatar</value>
+  </data>
+  <data name="FileDestination_AmazonS3" xml:space="preserve">
+    <value>Amazon S3</value>
+  </data>
+  <data name="FileDestination_AzureStorage" xml:space="preserve">
+    <value>Azure Storage</value>
+  </data>
+  <data name="FileDestination_BackblazeB2" xml:space="preserve">
+    <value>Backblaze B2</value>
+  </data>
+  <data name="FileDestination_Box" xml:space="preserve">
+    <value>Box</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>Destinație de fișiere personalizată</value>
+  </data>
+  <data name="FileDestination_Dropbox" xml:space="preserve">
+    <value>Dropbox</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="FileDestination_FTP" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="FileDestination_GoogleCloudStorage" xml:space="preserve">
+    <value>Google Cloud Storage</value>
+  </data>
+  <data name="FileDestination_GoogleDrive" xml:space="preserve">
+    <value>Google Drive</value>
+  </data>
+  <data name="FileDestination_Lambda" xml:space="preserve">
+    <value>Lambda</value>
+  </data>
+  <data name="FileDestination_Lithiio" xml:space="preserve">
+    <value>LobFile</value>
+  </data>
+  <data name="FileDestination_Localhostr" xml:space="preserve">
+    <value>Hostr</value>
+  </data>
+  <data name="FileDestination_MediaFire" xml:space="preserve">
+    <value>MediaFire</value>
+  </data>
+  <data name="FileDestination_OneDrive" xml:space="preserve">
+    <value>OneDrive</value>
+  </data>
+  <data name="FileDestination_OwnCloud" xml:space="preserve">
+    <value>ownCloud / Nextcloud</value>
+  </data>
+  <data name="FileDestination_Plik" xml:space="preserve">
+    <value>Plik</value>
+  </data>
+  <data name="FileDestination_Pomf" xml:space="preserve">
+    <value>Pomf</value>
+  </data>
+  <data name="FileDestination_Pushbullet" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="FileDestination_Puush" xml:space="preserve">
+    <value>puush</value>
+  </data>
+  <data name="FileDestination_Seafile" xml:space="preserve">
+    <value>Seafile</value>
+  </data>
+  <data name="FileDestination_SendSpace" xml:space="preserve">
+    <value>SendSpace</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>Folder partajat</value>
+  </data>
+  <data name="FileDestination_Streamable" xml:space="preserve">
+    <value>Streamable</value>
+  </data>
+  <data name="FileDestination_Sul" xml:space="preserve">
+    <value>s-ul</value>
+  </data>
+  <data name="FileDestination_Transfersh" xml:space="preserve">
+    <value>transfer.sh</value>
+  </data>
+  <data name="FileDestination_Uguu" xml:space="preserve">
+    <value>Uguu</value>
+  </data>
+  <data name="FileDestination_Vault_ooo" xml:space="preserve">
+    <value>Vault.ooo</value>
+  </data>
+  <data name="FileDestination_YouTube" xml:space="preserve">
+    <value>YouTube</value>
+  </data>
+  <data name="FileSonic_Get_upload_URL_failed" xml:space="preserve">
+    <value>Nu s-a putut obține adresa URL de încărcare.</value>
+  </data>
+  <data name="FTPProtocol_FTP" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="FTPProtocol_FTPS" xml:space="preserve">
+    <value>FTPS (FTP prin SSL)</value>
+  </data>
+  <data name="FTPProtocol_SFTP" xml:space="preserve">
+    <value>SFTP (SSH FTP)</value>
+  </data>
+  <data name="GoogleDrive_My_drive" xml:space="preserve">
+    <value>Drive-ul meu</value>
+  </data>
+  <data name="ImageDestination_Chevereto" xml:space="preserve">
+    <value>Chevereto</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>Destinație de imagini personalizată</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>Destinație de fișiere</value>
+  </data>
+  <data name="ImageDestination_Flickr" xml:space="preserve">
+    <value>Flickr</value>
+  </data>
+  <data name="ImageDestination_ImageShack" xml:space="preserve">
+    <value>ImageShack</value>
+  </data>
+  <data name="ImageDestination_Imgur" xml:space="preserve">
+    <value>Imgur</value>
+  </data>
+  <data name="ImageDestination_Photobucket" xml:space="preserve">
+    <value>Photobucket</value>
+  </data>
+  <data name="ImageDestination_Vgyme" xml:space="preserve">
+    <value>vgy.me</value>
+  </data>
+  <data name="Imgur_Error_details" xml:space="preserve">
+    <value>Stare: {0}, Solicitare: {1}, Eroare: {2}</value>
+  </data>
+  <data name="Imgur_Upload_failed" xml:space="preserve">
+    <value>Încărcarea Imgur a eșuat: ({0}) {1}</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>Pătrat mare</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>Miniatură uriașă</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>Miniatură mare</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>Miniatură medie</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>Pătrat mic</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>Miniatură mică</value>
+  </data>
+  <data name="KeyFileNameEditor_Browse_for_key_file" xml:space="preserve">
+    <value>Răsfoiți un fișier cheie...</value>
+  </data>
+  <data name="Lambda_Upload_failed_check_API_key" xml:space="preserve">
+    <value>Încărcarea a eșuat dintr-un motiv necunoscut. Verificați cheia API.</value>
+  </data>
+  <data name="LinkFormatEnum_ForumImage" xml:space="preserve">
+    <value>Imagine completă pentru forumuri</value>
+  </data>
+  <data name="LinkFormatEnum_ForumLinkedImage" xml:space="preserve">
+    <value>Miniatură cu link pentru forumuri</value>
+  </data>
+  <data name="LinkFormatEnum_HTMLImage" xml:space="preserve">
+    <value>Imagine completă ca HTML</value>
+  </data>
+  <data name="LinkFormatEnum_HTMLLinkedImage" xml:space="preserve">
+    <value>Miniatură cu link ca HTML</value>
+  </data>
+  <data name="LinkFormatEnum_LocalFilePath" xml:space="preserve">
+    <value>Cale fișier local</value>
+  </data>
+  <data name="LinkFormatEnum_LocalFilePathUri" xml:space="preserve">
+    <value>Cale fișier local ca URI</value>
+  </data>
+  <data name="LinkFormatEnum_ShortenedURL" xml:space="preserve">
+    <value>URL scurtat</value>
+  </data>
+  <data name="LinkFormatEnum_ThumbnailURL" xml:space="preserve">
+    <value>Miniatură</value>
+  </data>
+  <data name="LinkFormatEnum_URL" xml:space="preserve">
+    <value>URL complet</value>
+  </data>
+  <data name="LinkFormatEnum_WikiImage" xml:space="preserve">
+    <value>Imagine completă pentru Wiki</value>
+  </data>
+  <data name="LinkFormatEnum_WikiLinkedImage" xml:space="preserve">
+    <value>Miniatură cu link pentru Wiki</value>
+  </data>
+  <data name="MediaFire_Could_not_upload_file" xml:space="preserve">
+    <value>Fișierul nu a putut fi încărcat: {0}</value>
+  </data>
+  <data name="MediaFire_Invalid_response" xml:space="preserve">
+    <value>Răspuns nevalid</value>
+  </data>
+  <data name="OAuthInfo_New_account" xml:space="preserve">
+    <value>Cont nou</value>
+  </data>
+  <data name="OAuthListener_Authorization_completed_successfully" xml:space="preserve">
+    <value>Autorizarea s-a finalizat cu succes.</value>
+  </data>
+  <data name="OAuthListener_Authorization_did_not_succeed" xml:space="preserve">
+    <value>Autorizarea nu a reușit.</value>
+  </data>
+  <data name="OAuthListener_Invalid_state_parameter" xml:space="preserve">
+    <value>Parametru de stare nevalid.</value>
+  </data>
+  <data name="OAuthListenerWindow_Cancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="OAuthListenerWindow_ShareX_Authorization" xml:space="preserve">
+    <value>ShareX — Autorizare</value>
+  </data>
+  <data name="OAuthListenerWindow_Waiting_for_authorization_in_your_browser_to_complete" xml:space="preserve">
+    <value>Se așteaptă finalizarea autorizării în browser...</value>
+  </data>
+  <data name="OAuthManager_Consumer_credentials_are_empty" xml:space="preserve">
+    <value>Cheia, secretul sau cheia privată a consumatorului este goală.</value>
+  </data>
+  <data name="OAuthManager_Unsupported_signature_method" xml:space="preserve">
+    <value>Metodă de semnare neacceptată</value>
+  </data>
+  <data name="OneDrive_Root_folder" xml:space="preserve">
+    <value>Folder rădăcină</value>
+  </data>
+  <data name="OwnCloud_Auto_expire_time_is_invalid" xml:space="preserve">
+    <value>Timpul de expirare automată ownCloud nu este valid.</value>
+  </data>
+  <data name="OwnCloud_Credentials_are_empty" xml:space="preserve">
+    <value>Numele de utilizator sau parola ownCloud este goală.</value>
+  </data>
+  <data name="OwnCloud_Error_details" xml:space="preserve">
+    <value>Stare: {0}
+Cod de stare: {1}
+Mesaj: {2}</value>
+  </data>
+  <data name="OwnCloud_Host_is_empty" xml:space="preserve">
+    <value>Gazda ownCloud este goală.</value>
+  </data>
+  <data name="ParserSelectWindow_ShareX_Select" xml:space="preserve">
+    <value>ShareX — Selectare</value>
+  </data>
+  <data name="Pastebin_Login_failed" xml:space="preserve">
+    <value>Autentificarea la Pastebin a eșuat.</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>D1</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>H1</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>M1</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>M10</value>
+  </data>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>W1</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>W2</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>Privat</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>Fără listă</value>
+  </data>
+  <data name="Plik_Host_is_empty" xml:space="preserve">
+    <value>Gazda Plik este goală.</value>
+  </data>
+  <data name="PrivateBin_Server_requires_authorization" xml:space="preserve">
+    <value>Serverul necesită autorizare.</value>
+  </data>
+  <data name="PrivateBinExpiration_D1" xml:space="preserve">
+    <value>1 zi</value>
+  </data>
+  <data name="PrivateBinExpiration_H1" xml:space="preserve">
+    <value>1 oră</value>
+  </data>
+  <data name="PrivateBinExpiration_M1" xml:space="preserve">
+    <value>1 lună</value>
+  </data>
+  <data name="PrivateBinExpiration_M10" xml:space="preserve">
+    <value>10 min</value>
+  </data>
+  <data name="PrivateBinExpiration_M5" xml:space="preserve">
+    <value>5 min</value>
+  </data>
+  <data name="PrivateBinExpiration_N" xml:space="preserve">
+    <value>Niciodată</value>
+  </data>
+  <data name="PrivateBinExpiration_W1" xml:space="preserve">
+    <value>1 săptămână</value>
+  </data>
+  <data name="PrivateBinExpiration_Y1" xml:space="preserve">
+    <value>1 an</value>
+  </data>
+  <data name="PrivateBinFormat_Markdown" xml:space="preserve">
+    <value>Markdown</value>
+  </data>
+  <data name="PrivateBinFormat_PlainText" xml:space="preserve">
+    <value>text simplu</value>
+  </data>
+  <data name="PrivateBinFormat_SyntaxHighlighting" xml:space="preserve">
+    <value>evidențiere sintaxă</value>
+  </data>
+  <data name="Pushbullet_Device_key_is_missing" xml:space="preserve">
+    <value>Cheia dispozitivului lipsește.</value>
+  </data>
+  <data name="Pushbullet_No_device_selected" xml:space="preserve">
+    <value>Niciun dispozitiv nu este selectat pentru trimitere.</value>
+  </data>
+  <data name="Puush_Authentication_failure" xml:space="preserve">
+    <value>Autentificarea a eșuat.</value>
+  </data>
+  <data name="Puush_Checksum_error" xml:space="preserve">
+    <value>Eroare sumă de control.</value>
+  </data>
+  <data name="Puush_Connection_error" xml:space="preserve">
+    <value>Eroare de conexiune.</value>
+  </data>
+  <data name="Puush_Insufficient_account_storage" xml:space="preserve">
+    <value>Contul nu mai are suficient spațiu de stocare.</value>
+  </data>
+  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="PuushLoginWindow_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
+    <value>Introduceți adresa de e-mail și parola.</value>
+  </data>
+  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
+    <value>Ați uitat parola?</value>
+  </data>
+  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
+    <value>Se autentifică...</value>
+  </data>
+  <data name="PuushLoginWindow_Login" xml:space="preserve">
+    <value>Autentificare</value>
+  </data>
+  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
+    <value>Autentificarea a eșuat.</value>
+  </data>
+  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
+    <value>name@example.com</value>
+  </data>
+  <data name="PuushLoginWindow_Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
+    <value>ShareX — Autentificare puush</value>
+  </data>
+  <data name="ResponseWindow_Copy_deletion_URL" xml:space="preserve">
+    <value>Copiază URL-ul de ștergere</value>
+  </data>
+  <data name="ResponseWindow_Copy_response" xml:space="preserve">
+    <value>Copiază răspunsul</value>
+  </data>
+  <data name="ResponseWindow_Copy_response_info" xml:space="preserve">
+    <value>Copiază informațiile răspunsului</value>
+  </data>
+  <data name="ResponseWindow_Copy_shortened_URL" xml:space="preserve">
+    <value>Copiază URL-ul scurtat</value>
+  </data>
+  <data name="ResponseWindow_Copy_thumbnail_URL" xml:space="preserve">
+    <value>Copiază URL-ul miniaturii</value>
+  </data>
+  <data name="ResponseWindow_Copy_URL" xml:space="preserve">
+    <value>Copiază URL-ul</value>
+  </data>
+  <data name="ResponseWindow_Deletion_URL" xml:space="preserve">
+    <value>URL de ștergere</value>
+  </data>
+  <data name="ResponseWindow_Headers" xml:space="preserve">
+    <value>Antete</value>
+  </data>
+  <data name="ResponseWindow_Inspect_the_URLs_and_response_returned_by_the_destination" xml:space="preserve">
+    <value>Inspectați URL-urile și răspunsul returnate de destinație.</value>
+  </data>
+  <data name="ResponseWindow_JSON_format" xml:space="preserve">
+    <value>Formatează JSON</value>
+  </data>
+  <data name="ResponseWindow_JSON_formatting_failed" xml:space="preserve">
+    <value>Formatarea a eșuat.</value>
+  </data>
+  <data name="ResponseWindow_No_response_information_is_available" xml:space="preserve">
+    <value>Nu sunt disponibile informații despre răspuns.</value>
+  </data>
+  <data name="ResponseWindow_No_result_details_are_available" xml:space="preserve">
+    <value>Nu sunt disponibile detalii despre rezultat.</value>
+  </data>
+  <data name="ResponseWindow_Open_response_URL" xml:space="preserve">
+    <value>Deschide URL-ul răspunsului</value>
+  </data>
+  <data name="ResponseWindow_Open_URL" xml:space="preserve">
+    <value>Deschideți URL-ul</value>
+  </data>
+  <data name="ResponseWindow_Response_info" xml:space="preserve">
+    <value>Informații răspuns</value>
+  </data>
+  <data name="ResponseWindow_Response_text" xml:space="preserve">
+    <value>Text de răspuns</value>
+  </data>
+  <data name="ResponseWindow_Response_URL" xml:space="preserve">
+    <value>URL de răspuns</value>
+  </data>
+  <data name="ResponseWindow_Result" xml:space="preserve">
+    <value>Rezultat</value>
+  </data>
+  <data name="ResponseWindow_ShareX_Response" xml:space="preserve">
+    <value>ShareX — Răspuns</value>
+  </data>
+  <data name="ResponseWindow_Shortened_URL" xml:space="preserve">
+    <value>URL scurtat</value>
+  </data>
+  <data name="ResponseWindow_Status_code" xml:space="preserve">
+    <value>Cod de stare</value>
+  </data>
+  <data name="ResponseWindow_The_upload_completed_with_an_error" xml:space="preserve">
+    <value>Încărcarea s-a finalizat cu o eroare.</value>
+  </data>
+  <data name="ResponseWindow_Thumbnail_URL" xml:space="preserve">
+    <value>URL miniatură</value>
+  </data>
+  <data name="ResponseWindow_Upload_response" xml:space="preserve">
+    <value>Răspuns încărcare</value>
+  </data>
+  <data name="ResponseWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ResponseWindow_XML_format" xml:space="preserve">
+    <value>Formatează XML</value>
+  </data>
+  <data name="ResponseWindow_XML_formatting_failed" xml:space="preserve">
+    <value>Formatarea a eșuat.</value>
+  </data>
+  <data name="Seafile_API_URL_is_empty" xml:space="preserve">
+    <value>Adresa URL API Seafile este goală.</value>
+  </data>
+  <data name="Seafile_Authentication_token_is_empty" xml:space="preserve">
+    <value>Tokenul de autentificare Seafile este gol.</value>
+  </data>
+  <data name="SendSpace_Error_details" xml:space="preserve">
+    <value>Cod: {0}, Metodă: {1}
+Text: {2}</value>
+  </data>
+  <data name="SendSpace_Session_key_is_missing" xml:space="preserve">
+    <value>Cheia de sesiune lipsește.</value>
+  </data>
+  <data name="SendSpace_Token_is_missing" xml:space="preserve">
+    <value>Tokenul lipsește.</value>
+  </data>
+  <data name="SendSpace_Upload_information_is_missing" xml:space="preserve">
+    <value>Informațiile de încărcare lipsesc.</value>
+  </data>
+  <data name="SFTP_Key_file_not_found" xml:space="preserve">
+    <value>Fișierul cheie nu există.</value>
+  </data>
+  <data name="Streamable_Could_not_create_video" xml:space="preserve">
+    <value>Videoclipul nu a putut fi creat.</value>
+  </data>
+  <data name="Sul_Generic_error_contact_support" xml:space="preserve">
+    <value>A apărut o eroare generică. Contactați support@s-ul.eu.</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>Destinație de text personalizat</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>Destinație de fișiere</value>
+  </data>
+  <data name="TextDestination_Gist" xml:space="preserve">
+    <value>GitHub Gist</value>
+  </data>
+  <data name="TextDestination_Hastebin" xml:space="preserve">
+    <value>Hastebin</value>
+  </data>
+  <data name="TextDestination_OneTimeSecret" xml:space="preserve">
+    <value>OneTimeSecret</value>
+  </data>
+  <data name="TextDestination_Paste_ee" xml:space="preserve">
+    <value>Paste.ee</value>
+  </data>
+  <data name="TextDestination_Paste2" xml:space="preserve">
+    <value>Paste2</value>
+  </data>
+  <data name="TextDestination_Pastebin" xml:space="preserve">
+    <value>Pastebin</value>
+  </data>
+  <data name="TextDestination_Pastie" xml:space="preserve">
+    <value>Pastie</value>
+  </data>
+  <data name="TextDestination_PrivateBin" xml:space="preserve">
+    <value>PrivateBin</value>
+  </data>
+  <data name="TextDestination_Slexy" xml:space="preserve">
+    <value>Slexy</value>
+  </data>
+  <data name="TextDestination_Upaste" xml:space="preserve">
+    <value>uPaste</value>
+  </data>
+  <data name="TextUploadWindow_Cancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="TextUploadWindow_Character_count_plural" xml:space="preserve">
+    <value>{0:N0} caractere</value>
+  </data>
+  <data name="TextUploadWindow_Character_count_singular" xml:space="preserve">
+    <value>{0:N0} caracter</value>
+  </data>
+  <data name="TextUploadWindow_Enter_or_paste_the_text_you_want_to_upload" xml:space="preserve">
+    <value>Introduceți sau lipiți textul pe care doriți să-l încărcați.</value>
+  </data>
+  <data name="TextUploadWindow_ShareX_Text_upload" xml:space="preserve">
+    <value>ShareX — Încărcare text</value>
+  </data>
+  <data name="TextUploadWindow_Text_upload" xml:space="preserve">
+    <value>Încărcare text</value>
+  </data>
+  <data name="TextUploadWindow_Upload" xml:space="preserve">
+    <value>Încarcă</value>
+  </data>
+  <data name="Uploader_Authorization_information_missing" xml:space="preserve">
+    <value>Informațiile de autorizare lipsesc. Deschideți mai întâi URL-ul de autorizare.</value>
+  </data>
+  <data name="Uploader_Error_message" xml:space="preserve">
+    <value>Mesaj de eroare:</value>
+  </data>
+  <data name="Uploader_Request_URL" xml:space="preserve">
+    <value>URL solicitare:</value>
+  </data>
+  <data name="Uploader_Stack_trace" xml:space="preserve">
+    <value>Urmărire stivă:</value>
+  </data>
+  <data name="UploaderErrors_Login_is_required" xml:space="preserve">
+    <value>Este necesară autentificarea.</value>
+  </data>
+  <data name="UploaderErrors_Refresh_access_token_failed" xml:space="preserve">
+    <value>Reîmprospătarea tokenului de acces a eșuat.</value>
+  </data>
+  <data name="UploaderErrors_Service_login_is_required" xml:space="preserve">
+    <value>Este necesară autentificarea la {0}.</value>
+  </data>
+  <data name="UploaderErrors_Upload_failed" xml:space="preserve">
+    <value>Încărcarea a eșuat.</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Căutarea vizuală Bing</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>Serviciu personalizat de partajare a URL-urilor</value>
+  </data>
+  <data name="URLSharingServices_Delicious" xml:space="preserve">
+    <value>Delicious</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="URLSharingServices_Facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Căutare de imagini Google</value>
+  </data>
+  <data name="URLSharingServices_LinkedIn" xml:space="preserve">
+    <value>LinkedIn</value>
+  </data>
+  <data name="URLSharingServices_Pinterest" xml:space="preserve">
+    <value>Pinterest</value>
+  </data>
+  <data name="URLSharingServices_Pushbullet" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="URLSharingServices_Reddit" xml:space="preserve">
+    <value>Reddit</value>
+  </data>
+  <data name="URLSharingServices_StumbleUpon" xml:space="preserve">
+    <value>StumbleUpon</value>
+  </data>
+  <data name="URLSharingServices_Tumblr" xml:space="preserve">
+    <value>Tumblr</value>
+  </data>
+  <data name="URLSharingServices_VK" xml:space="preserve">
+    <value>VK</value>
+  </data>
+  <data name="UrlShortenerType_BITLY" xml:space="preserve">
+    <value>bit.ly</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>Scurtător URL personalizat</value>
+  </data>
+  <data name="UrlShortenerType_FirebaseDynamicLinks" xml:space="preserve">
+    <value>Linkuri dinamice Firebase</value>
+  </data>
+  <data name="UrlShortenerType_ISGD" xml:space="preserve">
+    <value>is.gd</value>
+  </data>
+  <data name="UrlShortenerType_Kutt" xml:space="preserve">
+    <value>Kutt</value>
+  </data>
+  <data name="UrlShortenerType_Polr" xml:space="preserve">
+    <value>Polr</value>
+  </data>
+  <data name="UrlShortenerType_QRnet" xml:space="preserve">
+    <value>qr.net</value>
+  </data>
+  <data name="UrlShortenerType_TINYURL" xml:space="preserve">
+    <value>tinyurl.com</value>
+  </data>
+  <data name="UrlShortenerType_TURL" xml:space="preserve">
+    <value>turl.ca</value>
+  </data>
+  <data name="UrlShortenerType_TwoGP" xml:space="preserve">
+    <value>2.gp</value>
+  </data>
+  <data name="UrlShortenerType_VGD" xml:space="preserve">
+    <value>v.gd</value>
+  </data>
+  <data name="UrlShortenerType_VURL" xml:space="preserve">
+    <value>vurl.com</value>
+  </data>
+  <data name="UrlShortenerType_YOURLS" xml:space="preserve">
+    <value>yourls.org</value>
+  </data>
+  <data name="UrlShortenerType_ZeroWidthShortener" xml:space="preserve">
+    <value>Serviciu de scurtare cu lățime zero</value>
+  </data>
+  <data name="Vault_No_valid_metadata_returned" xml:space="preserve">
+    <value>Nu au fost returnate metadate valide.</value>
+  </data>
+  <data name="Yourls_Credentials_missing" xml:space="preserve">
+    <value>Semnătura sau numele de utilizator/parola lipsește.</value>
+  </data>
+  <data name="YouTube_Upload_failed" xml:space="preserve">
+    <value>Încărcarea a eșuat: {0}</value>
+  </data>
+  <data name="YouTube_Upload_rejected" xml:space="preserve">
+    <value>Încărcarea a fost respinsă: {0}</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Cancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Description" xml:space="preserve">
+    <value>Descriere</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_ShareX_YouTube_video_options" xml:space="preserve">
+    <value>ShareX — Opțiuni video YouTube</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Title" xml:space="preserve">
+    <value>Titlu</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Video_title" xml:space="preserve">
+    <value>Titlu videoclip</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Visibility" xml:space="preserve">
+    <value>Vizibilitate</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>Privat</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>Fără listă</value>
+  </data>
+</root>

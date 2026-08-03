@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib
             }
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                dlg.Title = Resources.KeyFileNameEditor_EditValue_Browse_for_a_key_file___;
+                dlg.Title = Localization.Strings.KeyFileNameEditor_Browse_for_key_file;
                 dlg.Filter = "Key file (*.*)|*.*";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {

@@ -82,7 +82,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 }
                 else
                 {
-                    throw new Exception("Signature or Username/Password is missing.");
+                    throw new Exception(Localization.Strings.Yourls_Credentials_missing);
                 }
 
                 arguments.Add("action", "shorturl");

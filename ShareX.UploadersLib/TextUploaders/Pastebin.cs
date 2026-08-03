@@ -92,7 +92,7 @@ namespace ShareX.UploadersLib.TextUploaders
             }
 
             Settings.UserKey = null;
-            Errors.Add("Pastebin login failed.");
+            Errors.Add(Localization.Strings.Pastebin_Login_failed);
             return false;
         }
 

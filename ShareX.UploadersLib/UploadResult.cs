@@ -111,10 +111,10 @@ namespace ShareX.UploadersLib
         public string ToSummaryString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("URL: " + URL);
-            sb.AppendLine("Thumbnail URL: " + ThumbnailURL);
-            sb.AppendLine("Shortened URL: " + ShortenedURL);
-            sb.AppendLine("Deletion URL: " + DeletionURL);
+            sb.AppendLine(Localization.Strings.ResponseWindow_URL + ": " + URL);
+            sb.AppendLine(Localization.Strings.ResponseWindow_Thumbnail_URL + ": " + ThumbnailURL);
+            sb.AppendLine(Localization.Strings.ResponseWindow_Shortened_URL + ": " + ShortenedURL);
+            sb.AppendLine(Localization.Strings.ResponseWindow_Deletion_URL + ": " + DeletionURL);
             return sb.ToString();
         }
     }

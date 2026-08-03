@@ -95,7 +95,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     if (string.IsNullOrEmpty(error))
                     {
-                        Errors.Add("Generic error occurred, please contact support@s-ul.eu");
+                        Errors.Add(Localization.Strings.Sul_Generic_error_contact_support);
                     }
                     else
                     {

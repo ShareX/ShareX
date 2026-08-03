@@ -89,12 +89,12 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (string.IsNullOrEmpty(Host))
             {
-                throw new Exception("ownCloud Host is empty.");
+                throw new Exception(Localization.Strings.OwnCloud_Host_is_empty);
             }
 
             if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
             {
-                throw new Exception("ownCloud Username or Password is empty.");
+                throw new Exception(Localization.Strings.OwnCloud_Credentials_are_empty);
             }
 
             if (string.IsNullOrEmpty(Path))
@@ -148,7 +148,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (AutoExpireTime == 0)
                 {
-                    throw new Exception("ownCloud Auto Epxire Time is not valid.");
+                    throw new Exception(Localization.Strings.OwnCloud_Auto_expire_time_is_invalid);
                 }
                 else
                 {
@@ -159,7 +159,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                     catch
                     {
-                        throw new Exception("ownCloud Auto Expire time is invalid");
+                        throw new Exception(Localization.Strings.OwnCloud_Auto_expire_time_is_invalid);
                     }
                 }
             }
@@ -208,7 +208,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                     else
                     {
-                        Errors.Add(string.Format("Status: {0}\r\nStatus code: {1}\r\nMessage: {2}", result.ocs.meta.status, result.ocs.meta.statuscode, result.ocs.meta.message));
+                        Errors.Add(string.Format(Localization.Strings.OwnCloud_Error_details,
+                            result.ocs.meta.status, result.ocs.meta.statuscode, result.ocs.meta.message));
                     }
                 }
             }

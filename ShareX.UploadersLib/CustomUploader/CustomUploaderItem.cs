@@ -25,7 +25,6 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -135,7 +134,7 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(RequestURL))
             {
-                throw new Exception(Resources.CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured);
+                throw new Exception(Localization.Strings.CustomUploaderItem_Request_URL_must_be_configured);
             }
 
             ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser(input);
@@ -224,7 +223,7 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(FileFormName))
             {
-                throw new Exception(Resources.CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured);
+                throw new Exception(Localization.Strings.CustomUploaderItem_File_form_name_must_be_configured);
             }
 
             return FileFormName;
@@ -342,13 +341,13 @@ namespace ShareX.UploadersLib
             catch (JsonReaderException e)
             {
                 string hostName = URLHelpers.GetHostName(RequestURL);
-                errors.AddFirst($"Invalid response content is returned from host ({hostName}), expected response content is JSON." +
+                errors.AddFirst(string.Format(Localization.Strings.CustomUploaderItem_Invalid_JSON_response, hostName) +
                     Environment.NewLine + Environment.NewLine + e);
             }
             catch (Exception e)
             {
                 string hostName = URLHelpers.GetHostName(RequestURL);
-                errors.AddFirst($"Unable to parse response content returned from host ({hostName})." +
+                errors.AddFirst(string.Format(Localization.Strings.CustomUploaderItem_Unable_to_parse_response, hostName) +
                     Environment.NewLine + Environment.NewLine + e);
             }
         }
@@ -357,7 +356,7 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(Version) || Helpers.CompareVersion(Version, "12.3.1") <= 0)
             {
-                throw new Exception("Unsupported custom uploader" + ": " + ToString());
+                throw new Exception(Localization.Strings.CustomUploaderItem_Unsupported_custom_uploader + ": " + ToString());
             }
 
             CheckRequestURL();

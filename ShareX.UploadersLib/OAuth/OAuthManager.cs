@@ -63,7 +63,7 @@ namespace ShareX.UploadersLib
                 (oauth.SignatureMethod == OAuthInfo.OAuthInfoSignatureMethod.HMAC_SHA1 && string.IsNullOrEmpty(oauth.ConsumerSecret)) ||
                 (oauth.SignatureMethod == OAuthInfo.OAuthInfoSignatureMethod.RSA_SHA1 && string.IsNullOrEmpty(oauth.ConsumerPrivateKey)))
             {
-                throw new Exception("ConsumerKey or ConsumerSecret or ConsumerPrivateKey empty.");
+                throw new Exception(Localization.Strings.OAuthManager_Consumer_credentials_are_empty);
             }
 
             parameters = new Dictionary<string, string>();
@@ -80,7 +80,7 @@ namespace ShareX.UploadersLib
                     parameters.Add(ParameterSignatureMethod, RSASHA1SignatureType);
                     break;
                 default:
-                    throw new NotImplementedException("Unsupported signature method");
+                    throw new NotImplementedException(Localization.Strings.OAuthManager_Unsupported_signature_method);
             }
 
             string secret = null;
@@ -122,7 +122,7 @@ namespace ShareX.UploadersLib
                     signatureData = GenerateSignatureRSASHA1(signatureBase, oauth.ConsumerPrivateKey);
                     break;
                 default:
-                    throw new NotImplementedException("Unsupported signature method");
+                    throw new NotImplementedException(Localization.Strings.OAuthManager_Unsupported_signature_method);
             }
 
             string signature = Convert.ToBase64String(signatureData);

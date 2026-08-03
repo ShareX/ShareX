@@ -130,7 +130,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!OAuthInfo.CheckOAuth(AuthInfo))
             {
-                Errors.Add("Copy login is required.");
+                Errors.Add(string.Format(Localization.Strings.UploaderErrors_Service_login_is_required, "Copy"));
                 return null;
             }
 

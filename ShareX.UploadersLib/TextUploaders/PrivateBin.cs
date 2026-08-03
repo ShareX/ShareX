@@ -113,7 +113,7 @@ namespace ShareX.UploadersLib.TextUploaders
                     Errors.Add(response.Message);
             }
             else if (LastResponseInfo.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-                Errors.Add("Server require authorization");
+                Errors.Add(Localization.Strings.PrivateBin_Server_requires_authorization);
 
             return result;
         }

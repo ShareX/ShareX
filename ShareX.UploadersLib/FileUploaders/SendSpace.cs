@@ -131,7 +131,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 packet.ErrorCode = error.Attribute("code").Value;
                 packet.ErrorText = error.Attribute("text").Value;
 
-                Errors.Add(string.Format("Code: {0}, Method: {1}\r\nText: {2}", packet.ErrorCode, packet.Method, packet.ErrorText));
+                Errors.Add(string.Format(Localization.Strings.SendSpace_Error_details,
+                    packet.ErrorCode, packet.Method, packet.ErrorText));
             }
 
             return packet;

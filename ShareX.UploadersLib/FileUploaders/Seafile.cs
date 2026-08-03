@@ -277,12 +277,12 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (string.IsNullOrEmpty(APIURL))
             {
-                throw new Exception("Seafile API URL is empty.");
+                throw new Exception(Localization.Strings.Seafile_API_URL_is_empty);
             }
 
             if (string.IsNullOrEmpty(AuthToken))
             {
-                throw new Exception("Seafile Authentication Token is empty.");
+                throw new Exception(Localization.Strings.Seafile_Authentication_token_is_empty);
             }
 
             if (string.IsNullOrEmpty(Path))

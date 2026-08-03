@@ -133,7 +133,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
             else
             {
-                Errors.Add("Could not create video");
+                Errors.Add(Localization.Strings.Streamable_Could_not_create_video);
                 result.IsSuccess = false;
             }
         }

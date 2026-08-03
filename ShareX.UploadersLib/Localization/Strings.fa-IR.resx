@@ -1,0 +1,1543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountType_Anonymous" xml:space="preserve">
+    <value>ناشناس</value>
+  </data>
+  <data name="AccountType_User" xml:space="preserve">
+    <value>کاربر</value>
+  </data>
+  <data name="AmazonS3_Upload_failed" xml:space="preserve">
+    <value>بارگذاری در Amazon S3 ناموفق بود.</value>
+  </data>
+  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
+    <value>Amazon S3 Intelligent-Tiering</value>
+  </data>
+  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
+    <value>Amazon S3 One Zone-Infrequent Access</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
+    <value>Amazon S3 Standard</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
+    <value>Amazon S3 Standard-Infrequent Access</value>
+  </data>
+  <data name="AzureStorage_Access_key_must_not_be_empty" xml:space="preserve">
+    <value>«کلید دسترسی» نباید خالی باشد.</value>
+  </data>
+  <data name="AzureStorage_Account_name_must_not_be_empty" xml:space="preserve">
+    <value>«نام حساب» نباید خالی باشد.</value>
+  </data>
+  <data name="AzureStorage_Container_must_not_be_empty" xml:space="preserve">
+    <value>«محفظه» نباید خالی باشد.</value>
+  </data>
+  <data name="BackblazeB2_Could_not_authenticate" xml:space="preserve">
+    <value>احراز هویت با B2 ممکن نشد: {0}</value>
+  </data>
+  <data name="BackblazeB2_Could_not_get_upload_URL" xml:space="preserve">
+    <value>دریافت نشانی بارگذاری B2 ممکن نشد: {0}</value>
+  </data>
+  <data name="BackblazeB2_Unknown_upload_error" xml:space="preserve">
+    <value>بارگذار B2: هنگام فراخوانی b2_upload_file() خطای ناشناخته‌ای رخ داد.</value>
+  </data>
+  <data name="BackblazeB2_Upload_failed_after_attempts" xml:space="preserve">
+    <value>بارگذاری B2 ناموفق بود: فایل پس از {0} تلاش بارگذاری نشد.</value>
+  </data>
+  <data name="BackblazeB2_Upload_failed_with_error" xml:space="preserve">
+    <value>بارگذاری B2 ناموفق بود: {0}</value>
+  </data>
+  <data name="Base58Converter_Invalid_character" xml:space="preserve">
+    <value>نویسهٔ نامعتبر Base58 یعنی «{0}» در موقعیت {1}.</value>
+  </data>
+  <data name="BoxShareAccessLevel_Collaborators" xml:space="preserve">
+    <value>همکاران - فقط افراد دعوت‌شده</value>
+  </data>
+  <data name="BoxShareAccessLevel_Company" xml:space="preserve">
+    <value>شرکت - افراد شرکت شما</value>
+  </data>
+  <data name="BoxShareAccessLevel_Open" xml:space="preserve">
+    <value>عمومی - افراد دارای پیوند</value>
+  </data>
+  <data name="BrowserProtocol_file" xml:space="preserve">
+    <value>file://</value>
+  </data>
+  <data name="BrowserProtocol_ftp" xml:space="preserve">
+    <value>ftp://</value>
+  </data>
+  <data name="BrowserProtocol_ftps" xml:space="preserve">
+    <value>ftps://</value>
+  </data>
+  <data name="BrowserProtocol_http" xml:space="preserve">
+    <value>http://</value>
+  </data>
+  <data name="BrowserProtocol_https" xml:space="preserve">
+    <value>https://</value>
+  </data>
+  <data name="BrowserProtocol_sftp" xml:space="preserve">
+    <value>sftp://</value>
+  </data>
+  <data name="CertFileNameEditor_Browse_for_certificate_file" xml:space="preserve">
+    <value>جستجو برای فایل مجوز ...</value>
+  </data>
+  <data name="Common_API_key_is_missing" xml:space="preserve">
+    <value>کلید API موجود نیست.</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="Common_Unknown_error" xml:space="preserve">
+    <value>خطای ناشناخته</value>
+  </data>
+  <data name="CustomUploader_Unsupported_request_format" xml:space="preserve">
+    <value>قالب درخواست پشتیبانی نمی‌شود: {0}</value>
+  </data>
+  <data name="CustomUploaderBody_Binary" xml:space="preserve">
+    <value>دودویی</value>
+  </data>
+  <data name="CustomUploaderBody_FormURLEncoded" xml:space="preserve">
+    <value>فرم کدگذاری‌شده با URL ‏(application/x-www-form-urlencoded)</value>
+  </data>
+  <data name="CustomUploaderBody_JSON" xml:space="preserve">
+    <value>JSON (application/json)</value>
+  </data>
+  <data name="CustomUploaderBody_MultipartFormData" xml:space="preserve">
+    <value>داده‌های فرم (multipart/form-data)</value>
+  </data>
+  <data name="CustomUploaderBody_None" xml:space="preserve">
+    <value>بدون بدنه</value>
+  </data>
+  <data name="CustomUploaderBody_XML" xml:space="preserve">
+    <value>XML (application/xml)</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>آپلود کننده فایل</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>آپلود کننده عکس</value>
+  </data>
+  <data name="CustomUploaderDestinationType_None" xml:space="preserve">
+    <value>هیچ کدام</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>آپلود کننده های متن</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>سرویس اشتراک گذاری لینک</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>کوتاه کننده لینک</value>
+  </data>
+  <data name="CustomUploaderItem_File_form_name_must_be_configured" xml:space="preserve">
+    <value>نام فایل باید مشخص شده باشد.</value>
+  </data>
+  <data name="CustomUploaderItem_Invalid_JSON_response" xml:space="preserve">
+    <value>میزبان ({0}) محتوای پاسخ نامعتبری برگرداند؛ JSON انتظار می‌رفت.</value>
+  </data>
+  <data name="CustomUploaderItem_Request_URL_must_be_configured" xml:space="preserve">
+    <value>آدرس درخواست باید تنظیم شده باشد.</value>
+  </data>
+  <data name="CustomUploaderItem_Unable_to_parse_response" xml:space="preserve">
+    <value>تجزیهٔ محتوای پاسخ میزبان ({0}) ممکن نشد.</value>
+  </data>
+  <data name="CustomUploaderItem_Unsupported_custom_uploader" xml:space="preserve">
+    <value>بارگذار سفارشی پشتیبانی‌نشده</value>
+  </data>
+  <data name="CustomUploaderParser_Function_name_cannot_be_empty" xml:space="preserve">
+    <value>نام تابع نمی‌تواند خالی باشد.</value>
+  </data>
+  <data name="CustomUploaderParser_Invalid_function_name" xml:space="preserve">
+    <value>نام تابع نامعتبر: {0}</value>
+  </data>
+  <data name="CustomUploaderParser_Minimum_parameter_count" xml:space="preserve">
+    <value>حداقل تعداد پارامترهای تابع «{0}»، {1} است.</value>
+  </data>
+  <data name="DestinationSettings_Account" xml:space="preserve">
+    <value>حساب</value>
+  </data>
+  <data name="DestinationSettings_Account_and_devices" xml:space="preserve">
+    <value>حساب و دستگاه‌ها</value>
+  </data>
+  <data name="DestinationSettings_Accounts" xml:space="preserve">
+    <value>حساب‌ها</value>
+  </data>
+  <data name="DestinationSettings_Add" xml:space="preserve">
+    <value>افزودن</value>
+  </data>
+  <data name="DestinationSettings_Add_path" xml:space="preserve">
+    <value>افزودن مسیر</value>
+  </data>
+  <data name="DestinationSettings_Album_count_loaded_plural" xml:space="preserve">
+    <value>{0} آلبوم بارگیری شد</value>
+  </data>
+  <data name="DestinationSettings_Album_count_loaded_singular" xml:space="preserve">
+    <value>{0} آلبوم بارگیری شد</value>
+  </data>
+  <data name="DestinationSettings_Album_count_plural" xml:space="preserve">
+    <value>{0} آلبوم</value>
+  </data>
+  <data name="DestinationSettings_Album_count_singular" xml:space="preserve">
+    <value>{0} آلبوم</value>
+  </data>
+  <data name="DestinationSettings_Album_path" xml:space="preserve">
+    <value>مسیر آلبوم:</value>
+  </data>
+  <data name="DestinationSettings_Albums" xml:space="preserve">
+    <value>آلبوم‌ها</value>
+  </data>
+  <data name="DestinationSettings_API_key" xml:space="preserve">
+    <value>کلید API:</value>
+  </data>
+  <data name="DestinationSettings_API_key_retrieved" xml:space="preserve">
+    <value>کلید API دریافت شد</value>
+  </data>
+  <data name="DestinationSettings_Authorization_code" xml:space="preserve">
+    <value>کد مجوز:</value>
+  </data>
+  <data name="DestinationSettings_Authorization_failed" xml:space="preserve">
+    <value>صدور مجوز ناموفق بود</value>
+  </data>
+  <data name="DestinationSettings_Authorization_page_opened" xml:space="preserve">
+    <value>صفحهٔ مجوز باز شد</value>
+  </data>
+  <data name="DestinationSettings_Back" xml:space="preserve">
+    <value>بازگشت</value>
+  </data>
+  <data name="DestinationSettings_Browser_status" xml:space="preserve">
+    <value>وضعیت مرورگر:</value>
+  </data>
+  <data name="DestinationSettings_Category_File_uploaders" xml:space="preserve">
+    <value>بارگذارهای فایل</value>
+  </data>
+  <data name="DestinationSettings_Category_Image_uploaders" xml:space="preserve">
+    <value>بارگذارهای تصویر</value>
+  </data>
+  <data name="DestinationSettings_Category_Text_uploaders" xml:space="preserve">
+    <value>بارگذارهای متن</value>
+  </data>
+  <data name="DestinationSettings_Category_URL_shorteners" xml:space="preserve">
+    <value>کوتاه‌کننده‌های نشانی</value>
+  </data>
+  <data name="DestinationSettings_Complete_authorization" xml:space="preserve">
+    <value>تکمیل مجوز</value>
+  </data>
+  <data name="DestinationSettings_Connect_account" xml:space="preserve">
+    <value>اتصال حساب</value>
+  </data>
+  <data name="DestinationSettings_Connect_Imgur_account_first" xml:space="preserve">
+    <value>ابتدا یک حساب Imgur متصل کنید</value>
+  </data>
+  <data name="DestinationSettings_Connect_Photobucket_account_first" xml:space="preserve">
+    <value>ابتدا یک حساب Photobucket متصل کنید</value>
+  </data>
+  <data name="DestinationSettings_Connected" xml:space="preserve">
+    <value>متصل شد!</value>
+  </data>
+  <data name="DestinationSettings_Connected_as" xml:space="preserve">
+    <value>متصل به‌عنوان {0}</value>
+  </data>
+  <data name="DestinationSettings_Device" xml:space="preserve">
+    <value>دستگاه:</value>
+  </data>
+  <data name="DestinationSettings_Device_count_plural" xml:space="preserve">
+    <value>{0} دستگاه بارگیری شد</value>
+  </data>
+  <data name="DestinationSettings_Device_count_singular" xml:space="preserve">
+    <value>{0} دستگاه بارگیری شد</value>
+  </data>
+  <data name="DestinationSettings_Disconnect" xml:space="preserve">
+    <value>قطع اتصال</value>
+  </data>
+  <data name="DestinationSettings_Duplicate" xml:space="preserve">
+    <value>تکثیر</value>
+  </data>
+  <data name="DestinationSettings_Edit_item" xml:space="preserve">
+    <value>ویرایش {0}</value>
+  </data>
+  <data name="DestinationSettings_Email_or_username" xml:space="preserve">
+    <value>ایمیل / نام کاربری:</value>
+  </data>
+  <data name="DestinationSettings_Enter_credentials_to_retrieve_API_key" xml:space="preserve">
+    <value>برای دریافت کلید API اطلاعات حساب را وارد کنید</value>
+  </data>
+  <data name="DestinationSettings_Field_81_Compatibility" xml:space="preserve">
+    <value>سازگاری 81</value>
+  </data>
+  <data name="DestinationSettings_Field_Acc_Info_Email" xml:space="preserve">
+    <value>ایمیل اطلاعات حساب</value>
+  </data>
+  <data name="DestinationSettings_Field_Acc_Info_Usage" xml:space="preserve">
+    <value>مصرف اطلاعات حساب</value>
+  </data>
+  <data name="DestinationSettings_Field_Access_Key_ID" xml:space="preserve">
+    <value>شناسهٔ کلید دسترسی</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Access_Key" xml:space="preserve">
+    <value>کلید دسترسی حساب</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_List" xml:space="preserve">
+    <value>فهرست حساب‌ها</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Name" xml:space="preserve">
+    <value>نام حساب</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Type" xml:space="preserve">
+    <value>نوع حساب</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Hostname" xml:space="preserve">
+    <value>نام میزبان API</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Key" xml:space="preserve">
+    <value>کلید API</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Username" xml:space="preserve">
+    <value>نام کاربری API</value>
+  </data>
+  <data name="DestinationSettings_Field_APIURL" xml:space="preserve">
+    <value>نشانی API</value>
+  </data>
+  <data name="DestinationSettings_Field_Append_File_Name_To_URL" xml:space="preserve">
+    <value>افزودن نام فایل به نشانی</value>
+  </data>
+  <data name="DestinationSettings_Field_Application_Key" xml:space="preserve">
+    <value>کلید برنامه</value>
+  </data>
+  <data name="DestinationSettings_Field_Application_Key_Id" xml:space="preserve">
+    <value>شناسهٔ کلید برنامه</value>
+  </data>
+  <data name="DestinationSettings_Field_Auth_Token" xml:space="preserve">
+    <value>توکن احراز هویت</value>
+  </data>
+  <data name="DestinationSettings_Field_Auto_Create_Shareable_Link" xml:space="preserve">
+    <value>ساخت خودکار پیوند اشتراک‌پذیر</value>
+  </data>
+  <data name="DestinationSettings_Field_Auto_Expire" xml:space="preserve">
+    <value>انقضای خودکار</value>
+  </data>
+  <data name="DestinationSettings_Field_Automatic_Send" xml:space="preserve">
+    <value>ارسال خودکار</value>
+  </data>
+  <data name="DestinationSettings_Field_Automatic_Send_To" xml:space="preserve">
+    <value>ارسال خودکار به</value>
+  </data>
+  <data name="DestinationSettings_Field_Bucket" xml:space="preserve">
+    <value>سطل</value>
+  </data>
+  <data name="DestinationSettings_Field_Bucket_Name" xml:space="preserve">
+    <value>نام سطل</value>
+  </data>
+  <data name="DestinationSettings_Field_Burn_After_Reading" xml:space="preserve">
+    <value>حذف پس از خواندن</value>
+  </data>
+  <data name="DestinationSettings_Field_Cache_Control" xml:space="preserve">
+    <value>کنترل حافظهٔ نهان</value>
+  </data>
+  <data name="DestinationSettings_Field_Capacity" xml:space="preserve">
+    <value>ظرفیت</value>
+  </data>
+  <data name="DestinationSettings_Field_Comment" xml:space="preserve">
+    <value>نظر</value>
+  </data>
+  <data name="DestinationSettings_Field_Container" xml:space="preserve">
+    <value>محفظه</value>
+  </data>
+  <data name="DestinationSettings_Field_Content_Type" xml:space="preserve">
+    <value>نوع محتوا</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Share" xml:space="preserve">
+    <value>ایجاد اشتراک</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Shareable_URL" xml:space="preserve">
+    <value>ایجاد نشانی اشتراک‌پذیر</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Shareable_URL_Raw" xml:space="preserve">
+    <value>ایجاد نشانی خام اشتراک‌پذیر</value>
+  </data>
+  <data name="DestinationSettings_Field_Custom_Domain" xml:space="preserve">
+    <value>دامنهٔ سفارشی</value>
+  </data>
+  <data name="DestinationSettings_Field_Custom_URL" xml:space="preserve">
+    <value>نشانی سفارشی</value>
+  </data>
+  <data name="DestinationSettings_Field_Default_Body" xml:space="preserve">
+    <value>بدنهٔ پیش‌فرض</value>
+  </data>
+  <data name="DestinationSettings_Field_Default_Subject" xml:space="preserve">
+    <value>موضوع پیش‌فرض</value>
+  </data>
+  <data name="DestinationSettings_Field_Description" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="DestinationSettings_Field_Direct_Link" xml:space="preserve">
+    <value>پیوند مستقیم</value>
+  </data>
+  <data name="DestinationSettings_Field_Direct_URL" xml:space="preserve">
+    <value>نشانی مستقیم</value>
+  </data>
+  <data name="DestinationSettings_Field_Domain" xml:space="preserve">
+    <value>دامنه</value>
+  </data>
+  <data name="DestinationSettings_Field_Dynamic_Link_Domain" xml:space="preserve">
+    <value>دامنهٔ پیوند پویا</value>
+  </data>
+  <data name="DestinationSettings_Field_Email" xml:space="preserve">
+    <value>ایمیل:</value>
+  </data>
+  <data name="DestinationSettings_Field_Encrypt_Paste" xml:space="preserve">
+    <value>رمزگذاری متن چسبانده‌شده</value>
+  </data>
+  <data name="DestinationSettings_Field_Encrypted_Library_Password" xml:space="preserve">
+    <value>گذرواژهٔ کتابخانهٔ رمزگذاری‌شده</value>
+  </data>
+  <data name="DestinationSettings_Field_Endpoint" xml:space="preserve">
+    <value>نقطه پایانی</value>
+  </data>
+  <data name="DestinationSettings_Field_Environment" xml:space="preserve">
+    <value>محیط</value>
+  </data>
+  <data name="DestinationSettings_Field_Expiration" xml:space="preserve">
+    <value>انقضا</value>
+  </data>
+  <data name="DestinationSettings_Field_Expiry_Time" xml:space="preserve">
+    <value>زمان انقضا</value>
+  </data>
+  <data name="DestinationSettings_Field_Exposure" xml:space="preserve">
+    <value>نمایانی</value>
+  </data>
+  <data name="DestinationSettings_Field_Files" xml:space="preserve">
+    <value>فایل‌ها</value>
+  </data>
+  <data name="DestinationSettings_Field_Folder_ID" xml:space="preserve">
+    <value>شناسهٔ پوشه</value>
+  </data>
+  <data name="DestinationSettings_Field_Format" xml:space="preserve">
+    <value>قالب</value>
+  </data>
+  <data name="DestinationSettings_Field_From" xml:space="preserve">
+    <value>از</value>
+  </data>
+  <data name="DestinationSettings_Field_Has_Comment" xml:space="preserve">
+    <value>دارای نظر</value>
+  </data>
+  <data name="DestinationSettings_Field_Hidden" xml:space="preserve">
+    <value>پنهان</value>
+  </data>
+  <data name="DestinationSettings_Field_Host" xml:space="preserve">
+    <value>میزبان</value>
+  </data>
+  <data name="DestinationSettings_Field_id" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="DestinationSettings_Field_Images" xml:space="preserve">
+    <value>تصاویر</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Family" xml:space="preserve">
+    <value>خانوادگی</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Friend" xml:space="preserve">
+    <value>دوستانه</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Library_Encrypted" xml:space="preserve">
+    <value>کتابخانه رمزگذاری شده است</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Public" xml:space="preserve">
+    <value>عمومی</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Secret" xml:space="preserve">
+    <value>محرمانه</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Secured" xml:space="preserve">
+    <value>امن</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Short" xml:space="preserve">
+    <value>کوتاه</value>
+  </data>
+  <data name="DestinationSettings_Field_Last_To" xml:space="preserve">
+    <value>آخرین گیرنده</value>
+  </data>
+  <data name="DestinationSettings_Field_List" xml:space="preserve">
+    <value>فهرست</value>
+  </data>
+  <data name="DestinationSettings_Field_Login" xml:space="preserve">
+    <value>ورود</value>
+  </data>
+  <data name="DestinationSettings_Field_name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="DestinationSettings_Field_Object_Prefix" xml:space="preserve">
+    <value>پیشوند شیء</value>
+  </data>
+  <data name="DestinationSettings_Field_One_Shot" xml:space="preserve">
+    <value>یک‌بار مصرف</value>
+  </data>
+  <data name="DestinationSettings_Field_Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="DestinationSettings_Field_Paste_Password" xml:space="preserve">
+    <value>گذرواژهٔ متن</value>
+  </data>
+  <data name="DestinationSettings_Field_Path" xml:space="preserve">
+    <value>مسیر</value>
+  </data>
+  <data name="DestinationSettings_Field_Privacy_Type" xml:space="preserve">
+    <value>نوع حریم خصوصی</value>
+  </data>
+  <data name="DestinationSettings_Field_Publish_Public" xml:space="preserve">
+    <value>انتشار عمومی</value>
+  </data>
+  <data name="DestinationSettings_Field_Raw_URL" xml:space="preserve">
+    <value>نشانی خام</value>
+  </data>
+  <data name="DestinationSettings_Field_Region" xml:space="preserve">
+    <value>ناحیه...</value>
+  </data>
+  <data name="DestinationSettings_Field_Remember_Last_To" xml:space="preserve">
+    <value>به‌خاطر سپردن آخرین گیرنده</value>
+  </data>
+  <data name="DestinationSettings_Field_Removable" xml:space="preserve">
+    <value>حذف‌شدنی</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Image" xml:space="preserve">
+    <value>حذف پسوند تصویر</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Text" xml:space="preserve">
+    <value>حذف پسوند متن</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Video" xml:space="preserve">
+    <value>حذف پسوند ویدیو</value>
+  </data>
+  <data name="DestinationSettings_Field_Repo_ID" xml:space="preserve">
+    <value>شناسهٔ مخزن</value>
+  </data>
+  <data name="DestinationSettings_Field_Result_URL" xml:space="preserve">
+    <value>نشانی نتیجه</value>
+  </data>
+  <data name="DestinationSettings_Field_Reuse" xml:space="preserve">
+    <value>استفادهٔ دوباره</value>
+  </data>
+  <data name="DestinationSettings_Field_Safety_Level" xml:space="preserve">
+    <value>سطح ایمنی</value>
+  </data>
+  <data name="DestinationSettings_Field_Secret_Access_Key" xml:space="preserve">
+    <value>کلید دسترسی محرمانه</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Drive" xml:space="preserve">
+    <value>درایو انتخاب‌شده</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_File" xml:space="preserve">
+    <value>فایل انتخاب‌شده</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Image" xml:space="preserve">
+    <value>تصویر انتخاب‌شده</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Text" xml:space="preserve">
+    <value>متن انتخاب‌شده</value>
+  </data>
+  <data name="DestinationSettings_Field_Set_Public_ACL" xml:space="preserve">
+    <value>تنظیم ACL عمومی</value>
+  </data>
+  <data name="DestinationSettings_Field_Settings" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="DestinationSettings_Field_Share" xml:space="preserve">
+    <value>اشتراک‌گذاری</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Access_Level" xml:space="preserve">
+    <value>سطح دسترسی اشتراک</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Days_To_Expire" xml:space="preserve">
+    <value>روزهای انقضای اشتراک</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Password" xml:space="preserve">
+    <value>گذرواژهٔ اشتراک</value>
+  </data>
+  <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
+    <value>نمایش پنجره</value>
+  </data>
+  <data name="DestinationSettings_Field_Signature" xml:space="preserve">
+    <value>امضا</value>
+  </data>
+  <data name="DestinationSettings_Field_Signed_Payload" xml:space="preserve">
+    <value>بار امضاشده</value>
+  </data>
+  <data name="DestinationSettings_Field_Smtp_Port" xml:space="preserve">
+    <value>درگاه SMTP</value>
+  </data>
+  <data name="DestinationSettings_Field_Smtp_Server" xml:space="preserve">
+    <value>سرور SMTP</value>
+  </data>
+  <data name="DestinationSettings_Field_Storage_Class" xml:space="preserve">
+    <value>ردهٔ ذخیره‌سازی</value>
+  </data>
+  <data name="DestinationSettings_Field_Syntax_Highlighting" xml:space="preserve">
+    <value>برجسته‌سازی نحو</value>
+  </data>
+  <data name="DestinationSettings_Field_Tags" xml:space="preserve">
+    <value>برچسب‌ها</value>
+  </data>
+  <data name="DestinationSettings_Field_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="DestinationSettings_Field_Text_Format" xml:space="preserve">
+    <value>قالب متن</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Height" xml:space="preserve">
+    <value>ارتفاع تصویر بندانگشتی</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Type" xml:space="preserve">
+    <value>نوع تصویر بندانگشتی</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Width" xml:space="preserve">
+    <value>عرض تصویر بندانگشتی</value>
+  </data>
+  <data name="DestinationSettings_Field_Title" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="DestinationSettings_Field_Token" xml:space="preserve">
+    <value>توکن</value>
+  </data>
+  <data name="DestinationSettings_Field_TTL" xml:space="preserve">
+    <value>TTL</value>
+  </data>
+  <data name="DestinationSettings_Field_TTL_Unit" xml:space="preserve">
+    <value>واحد TTL</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_Path" xml:space="preserve">
+    <value>مسیر بارگذاری</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_Selected_Album" xml:space="preserve">
+    <value>بارگذاری در آلبوم انتخاب‌شده</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_URL" xml:space="preserve">
+    <value>بارگذاری URL...</value>
+  </data>
+  <data name="DestinationSettings_Field_Uploader" xml:space="preserve">
+    <value>بارگذار:</value>
+  </data>
+  <data name="DestinationSettings_Field_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_AP_Iv1" xml:space="preserve">
+    <value>استفاده از API v1</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Custom_CNAME" xml:space="preserve">
+    <value>استفاده از CNAME سفارشی</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Custom_Url" xml:space="preserve">
+    <value>استفاده از نشانی سفارشی</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Direct_Link" xml:space="preserve">
+    <value>استفاده از پیوند مستقیم</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Direct_URL" xml:space="preserve">
+    <value>استفاده از نشانی مستقیم</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_File_Extension" xml:space="preserve">
+    <value>استفاده از پسوند فایل</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Folder" xml:space="preserve">
+    <value>استفاده از پوشه</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_GIFV" xml:space="preserve">
+    <value>استفاده از GIFV</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Long_Link" xml:space="preserve">
+    <value>استفاده از پیوند بلند</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Path_Style" xml:space="preserve">
+    <value>استفاده از سبک مسیر</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Preview_Links" xml:space="preserve">
+    <value>استفاده از پیوندهای پیش‌نمایش</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Shortened_Link" xml:space="preserve">
+    <value>استفاده از پیوند کوتاه‌شده</value>
+  </data>
+  <data name="DestinationSettings_Field_User_API_Key" xml:space="preserve">
+    <value>کلید API کاربر</value>
+  </data>
+  <data name="DestinationSettings_Field_User_Key" xml:space="preserve">
+    <value>کلید کاربر</value>
+  </data>
+  <data name="DestinationSettings_Field_Username" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="DestinationSettings_Field_Web_API_Key" xml:space="preserve">
+    <value>کلید Web API</value>
+  </data>
+  <data name="DestinationSettings_Folder_count_plural" xml:space="preserve">
+    <value>{0} پوشه</value>
+  </data>
+  <data name="DestinationSettings_Folder_count_singular" xml:space="preserve">
+    <value>{0} پوشه</value>
+  </data>
+  <data name="DestinationSettings_Get_user_key" xml:space="preserve">
+    <value>دریافت کلید کاربر</value>
+  </data>
+  <data name="DestinationSettings_Log_in" xml:space="preserve">
+    <value>ورود</value>
+  </data>
+  <data name="DestinationSettings_Login_failed" xml:space="preserve">
+    <value>لاگین با مشکل مواجه شد.</value>
+  </data>
+  <data name="DestinationSettings_My_images" xml:space="preserve">
+    <value>تصاویر من</value>
+  </data>
+  <data name="DestinationSettings_No_additional_configuration_required" xml:space="preserve">
+    <value>این مقصد به پیکربندی بیشتری نیاز ندارد.</value>
+  </data>
+  <data name="DestinationSettings_No_albums_loaded" xml:space="preserve">
+    <value>هیچ آلبومی بارگیری نشده است</value>
+  </data>
+  <data name="DestinationSettings_No_albums_saved" xml:space="preserve">
+    <value>هیچ آلبومی ذخیره نشده است</value>
+  </data>
+  <data name="DestinationSettings_No_child_folders" xml:space="preserve">
+    <value>پوشهٔ فرعی وجود ندارد</value>
+  </data>
+  <data name="DestinationSettings_No_devices_loaded" xml:space="preserve">
+    <value>هیچ دستگاهی بارگیری نشده است</value>
+  </data>
+  <data name="DestinationSettings_Not_configured" xml:space="preserve">
+    <value>پیکربندی نشده</value>
+  </data>
+  <data name="DestinationSettings_Not_connected" xml:space="preserve">
+    <value>متصل نیست</value>
+  </data>
+  <data name="DestinationSettings_Open_authorization_page" xml:space="preserve">
+    <value>باز کردن صفحهٔ مجوز</value>
+  </data>
+  <data name="DestinationSettings_Open_folder" xml:space="preserve">
+    <value>باز کردن پوشه</value>
+  </data>
+  <data name="DestinationSettings_Page_Shared_folder" xml:space="preserve">
+    <value>پوشه به اشتراک گذاری شده</value>
+  </data>
+  <data name="DestinationSettings_Password" xml:space="preserve">
+    <value>گذرواژه:</value>
+  </data>
+  <data name="DestinationSettings_Public_profile" xml:space="preserve">
+    <value>نمایهٔ عمومی</value>
+  </data>
+  <data name="DestinationSettings_Refresh" xml:space="preserve">
+    <value>تازه‌سازی</value>
+  </data>
+  <data name="DestinationSettings_Refresh_albums" xml:space="preserve">
+    <value>تازه‌سازی آلبوم‌ها</value>
+  </data>
+  <data name="DestinationSettings_Refresh_devices" xml:space="preserve">
+    <value>تازه‌سازی دستگاه‌ها</value>
+  </data>
+  <data name="DestinationSettings_Refresh_token" xml:space="preserve">
+    <value>تازه‌سازی توکن</value>
+  </data>
+  <data name="DestinationSettings_Register" xml:space="preserve">
+    <value>ثبت‌نام</value>
+  </data>
+  <data name="DestinationSettings_Remove" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="DestinationSettings_Root" xml:space="preserve">
+    <value>ریشه</value>
+  </data>
+  <data name="DestinationSettings_Root_folder" xml:space="preserve">
+    <value>پوشه اصلی</value>
+  </data>
+  <data name="DestinationSettings_Select_Refresh_to_load_folders" xml:space="preserve">
+    <value>برای بارگیری پوشه‌ها «تازه‌سازی» را انتخاب کنید</value>
+  </data>
+  <data name="DestinationSettings_Selected_folder" xml:space="preserve">
+    <value>پوشه انتخاب شده:</value>
+  </data>
+  <data name="DestinationSettings_Service_account" xml:space="preserve">
+    <value>حساب {0}</value>
+  </data>
+  <data name="DestinationSettings_Settings" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="DestinationSettings_Status" xml:space="preserve">
+    <value>وضعیت:</value>
+  </data>
+  <data name="DestinationSettings_Token_refresh_failed" xml:space="preserve">
+    <value>تازه‌سازی توکن ناموفق بود</value>
+  </data>
+  <data name="DestinationSettings_Unnamed_device" xml:space="preserve">
+    <value>دستگاه بی‌نام</value>
+  </data>
+  <data name="DestinationSettings_Unnamed_folder" xml:space="preserve">
+    <value>پوشهٔ بی‌نام</value>
+  </data>
+  <data name="DestinationSettings_Upload_folder" xml:space="preserve">
+    <value>آپلود پوشه</value>
+  </data>
+  <data name="DestinationSettings_Upload_to_album" xml:space="preserve">
+    <value>بارگذاری در آلبوم:</value>
+  </data>
+  <data name="DestinationSettings_Verification_code" xml:space="preserve">
+    <value>کد تأیید:</value>
+  </data>
+  <data name="DestinationSettingsWindow_ShareX_Destination_settings" xml:space="preserve">
+    <value>ShareX - تنظیمات مقصد</value>
+  </data>
+  <data name="Dropbox_API_upload_limit" xml:space="preserve">
+    <value>بارگذاری از طریق API به 150 مگابایت محدود است.</value>
+  </data>
+  <data name="EmailWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="EmailWindow_Email_subject" xml:space="preserve">
+    <value>موضوع ایمیل</value>
+  </data>
+  <data name="EmailWindow_Message" xml:space="preserve">
+    <value>پیام</value>
+  </data>
+  <data name="EmailWindow_name_example_com" xml:space="preserve">
+    <value>name@example.com</value>
+  </data>
+  <data name="EmailWindow_Send" xml:space="preserve">
+    <value>ارسال</value>
+  </data>
+  <data name="EmailWindow_ShareX_Send_email" xml:space="preserve">
+    <value>ShareX - ارسال ایمیل</value>
+  </data>
+  <data name="EmailWindow_Subject" xml:space="preserve">
+    <value>موضوع</value>
+  </data>
+  <data name="EmailWindow_To_email" xml:space="preserve">
+    <value>ایمیل گیرنده</value>
+  </data>
+  <data name="FileDestination_AmazonS3" xml:space="preserve">
+    <value>Amazon S3</value>
+  </data>
+  <data name="FileDestination_AzureStorage" xml:space="preserve">
+    <value>Azure Storage</value>
+  </data>
+  <data name="FileDestination_BackblazeB2" xml:space="preserve">
+    <value>Backblaze B2</value>
+  </data>
+  <data name="FileDestination_Box" xml:space="preserve">
+    <value>Box</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>سفارشی فایل بارگذاریer</value>
+  </data>
+  <data name="FileDestination_Dropbox" xml:space="preserve">
+    <value>Dropbox</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>ایمیل:</value>
+  </data>
+  <data name="FileDestination_FTP" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="FileDestination_GoogleCloudStorage" xml:space="preserve">
+    <value>Google Cloud Storage</value>
+  </data>
+  <data name="FileDestination_GoogleDrive" xml:space="preserve">
+    <value>Google Drive</value>
+  </data>
+  <data name="FileDestination_Lambda" xml:space="preserve">
+    <value>Lambda</value>
+  </data>
+  <data name="FileDestination_Lithiio" xml:space="preserve">
+    <value>LobFile</value>
+  </data>
+  <data name="FileDestination_Localhostr" xml:space="preserve">
+    <value>Hostr</value>
+  </data>
+  <data name="FileDestination_MediaFire" xml:space="preserve">
+    <value>MediaFire</value>
+  </data>
+  <data name="FileDestination_OneDrive" xml:space="preserve">
+    <value>OneDrive</value>
+  </data>
+  <data name="FileDestination_OwnCloud" xml:space="preserve">
+    <value>ownCloud / Nextcloud</value>
+  </data>
+  <data name="FileDestination_Plik" xml:space="preserve">
+    <value>Plik</value>
+  </data>
+  <data name="FileDestination_Pomf" xml:space="preserve">
+    <value>Pomf</value>
+  </data>
+  <data name="FileDestination_Pushbullet" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="FileDestination_Puush" xml:space="preserve">
+    <value>puush</value>
+  </data>
+  <data name="FileDestination_Seafile" xml:space="preserve">
+    <value>Seafile</value>
+  </data>
+  <data name="FileDestination_SendSpace" xml:space="preserve">
+    <value>SendSpace</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>پوشه به اشتراک گذاری شده</value>
+  </data>
+  <data name="FileDestination_Streamable" xml:space="preserve">
+    <value>Streamable</value>
+  </data>
+  <data name="FileDestination_Sul" xml:space="preserve">
+    <value>s-ul</value>
+  </data>
+  <data name="FileDestination_Transfersh" xml:space="preserve">
+    <value>transfer.sh</value>
+  </data>
+  <data name="FileDestination_Uguu" xml:space="preserve">
+    <value>Uguu</value>
+  </data>
+  <data name="FileDestination_Vault_ooo" xml:space="preserve">
+    <value>Vault.ooo</value>
+  </data>
+  <data name="FileDestination_YouTube" xml:space="preserve">
+    <value>YouTube</value>
+  </data>
+  <data name="FileSonic_Get_upload_URL_failed" xml:space="preserve">
+    <value>دریافت نشانی بارگذاری ناموفق بود.</value>
+  </data>
+  <data name="FTPProtocol_FTP" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="FTPProtocol_FTPS" xml:space="preserve">
+    <value>FTPS ‏(FTP روی SSL)</value>
+  </data>
+  <data name="FTPProtocol_SFTP" xml:space="preserve">
+    <value>SFTP (SSH FTP)</value>
+  </data>
+  <data name="GoogleDrive_My_drive" xml:space="preserve">
+    <value>درایو من</value>
+  </data>
+  <data name="ImageDestination_Chevereto" xml:space="preserve">
+    <value>Chevereto</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>آپلود کننده عکس سفارشی</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>آپلود کننده فایل</value>
+  </data>
+  <data name="ImageDestination_Flickr" xml:space="preserve">
+    <value>Flickr</value>
+  </data>
+  <data name="ImageDestination_ImageShack" xml:space="preserve">
+    <value>ImageShack</value>
+  </data>
+  <data name="ImageDestination_Imgur" xml:space="preserve">
+    <value>Imgur</value>
+  </data>
+  <data name="ImageDestination_Photobucket" xml:space="preserve">
+    <value>Photobucket</value>
+  </data>
+  <data name="ImageDestination_Vgyme" xml:space="preserve">
+    <value>vgy.me</value>
+  </data>
+  <data name="Imgur_Error_details" xml:space="preserve">
+    <value>وضعیت: {0}، درخواست: {1}، خطا: {2}</value>
+  </data>
+  <data name="Imgur_Upload_failed" xml:space="preserve">
+    <value>بارگذاری Imgur ناموفق بود: ({0}) {1}</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>مربع بزرگ</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>Huge بندانگشتی</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>Large بندانگشتی</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>Medium بندانگشتی</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>مربع کوچک</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>Small بندانگشتی</value>
+  </data>
+  <data name="KeyFileNameEditor_Browse_for_key_file" xml:space="preserve">
+    <value>Browse for a key فایل...</value>
+  </data>
+  <data name="Lambda_Upload_failed_check_API_key" xml:space="preserve">
+    <value>بارگذاری به دلیل نامعلومی ناموفق بود. کلید API را بررسی کنید.</value>
+  </data>
+  <data name="LinkFormatEnum_ForumImage" xml:space="preserve">
+    <value>تصویر کامل برای انجمن‌ها</value>
+  </data>
+  <data name="LinkFormatEnum_ForumLinkedImage" xml:space="preserve">
+    <value>تصویر بندانگشتی پیونددار برای انجمن‌ها</value>
+  </data>
+  <data name="LinkFormatEnum_HTMLImage" xml:space="preserve">
+    <value>تصویر کامل به‌صورت HTML</value>
+  </data>
+  <data name="LinkFormatEnum_HTMLLinkedImage" xml:space="preserve">
+    <value>تصویر بندانگشتی پیونددار به‌صورت HTML</value>
+  </data>
+  <data name="LinkFormatEnum_LocalFilePath" xml:space="preserve">
+    <value>مسیر فایل محلی</value>
+  </data>
+  <data name="LinkFormatEnum_LocalFilePathUri" xml:space="preserve">
+    <value>مسیر فایل محلی به‌صورت URI</value>
+  </data>
+  <data name="LinkFormatEnum_ShortenedURL" xml:space="preserve">
+    <value>URL کوتاه‌شده</value>
+  </data>
+  <data name="LinkFormatEnum_ThumbnailURL" xml:space="preserve">
+    <value>تصویر بندانگشتی</value>
+  </data>
+  <data name="LinkFormatEnum_URL" xml:space="preserve">
+    <value>نشانی کامل</value>
+  </data>
+  <data name="LinkFormatEnum_WikiImage" xml:space="preserve">
+    <value>تصویر کامل برای ویکی</value>
+  </data>
+  <data name="LinkFormatEnum_WikiLinkedImage" xml:space="preserve">
+    <value>تصویر بندانگشتی پیونددار برای ویکی</value>
+  </data>
+  <data name="MediaFire_Could_not_upload_file" xml:space="preserve">
+    <value>بارگذاری فایل ممکن نشد: {0}</value>
+  </data>
+  <data name="MediaFire_Invalid_response" xml:space="preserve">
+    <value>پاسخ نامعتبر</value>
+  </data>
+  <data name="OAuthInfo_New_account" xml:space="preserve">
+    <value>اکانت جدید</value>
+  </data>
+  <data name="OAuthListener_Authorization_completed_successfully" xml:space="preserve">
+    <value>صدور مجوز با موفقیت انجام شد.</value>
+  </data>
+  <data name="OAuthListener_Authorization_did_not_succeed" xml:space="preserve">
+    <value>صدور مجوز موفق نبود.</value>
+  </data>
+  <data name="OAuthListener_Invalid_state_parameter" xml:space="preserve">
+    <value>پارامتر وضعیت نامعتبر است.</value>
+  </data>
+  <data name="OAuthListenerWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="OAuthListenerWindow_ShareX_Authorization" xml:space="preserve">
+    <value>ShareX - مجوز</value>
+  </data>
+  <data name="OAuthListenerWindow_Waiting_for_authorization_in_your_browser_to_complete" xml:space="preserve">
+    <value>در انتظار تکمیل مجوز در مرورگر شما...</value>
+  </data>
+  <data name="OAuthManager_Consumer_credentials_are_empty" xml:space="preserve">
+    <value>کلید، رمز یا کلید خصوصی مصرف‌کننده خالی است.</value>
+  </data>
+  <data name="OAuthManager_Unsupported_signature_method" xml:space="preserve">
+    <value>روش امضای پشتیبانی‌نشده</value>
+  </data>
+  <data name="OneDrive_Root_folder" xml:space="preserve">
+    <value>پوشه اصلی</value>
+  </data>
+  <data name="OwnCloud_Auto_expire_time_is_invalid" xml:space="preserve">
+    <value>زمان انقضای خودکار ownCloud نامعتبر است.</value>
+  </data>
+  <data name="OwnCloud_Credentials_are_empty" xml:space="preserve">
+    <value>نام کاربری یا گذرواژهٔ ownCloud خالی است.</value>
+  </data>
+  <data name="OwnCloud_Error_details" xml:space="preserve">
+    <value>وضعیت: {0}
+کد وضعیت: {1}
+پیام: {2}</value>
+  </data>
+  <data name="OwnCloud_Host_is_empty" xml:space="preserve">
+    <value>میزبان ownCloud خالی است.</value>
+  </data>
+  <data name="ParserSelectWindow_ShareX_Select" xml:space="preserve">
+    <value>ShareX - انتخاب</value>
+  </data>
+  <data name="Pastebin_Login_failed" xml:space="preserve">
+    <value>ورود به Pastebin ناموفق بود.</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>D1</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>H1</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>M1</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>M10</value>
+  </data>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>W1</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>W2</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>شخصی</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>عمومی</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>لیست نشده</value>
+  </data>
+  <data name="Plik_Host_is_empty" xml:space="preserve">
+    <value>میزبان Plik خالی است.</value>
+  </data>
+  <data name="PrivateBin_Server_requires_authorization" xml:space="preserve">
+    <value>سرور به مجوز نیاز دارد.</value>
+  </data>
+  <data name="PrivateBinExpiration_D1" xml:space="preserve">
+    <value>۱ روز</value>
+  </data>
+  <data name="PrivateBinExpiration_H1" xml:space="preserve">
+    <value>۱ ساعت</value>
+  </data>
+  <data name="PrivateBinExpiration_M1" xml:space="preserve">
+    <value>۱ ماه</value>
+  </data>
+  <data name="PrivateBinExpiration_M10" xml:space="preserve">
+    <value>۱۰ دقیقه</value>
+  </data>
+  <data name="PrivateBinExpiration_M5" xml:space="preserve">
+    <value>۵ دقیقه</value>
+  </data>
+  <data name="PrivateBinExpiration_N" xml:space="preserve">
+    <value>هرگز</value>
+  </data>
+  <data name="PrivateBinExpiration_W1" xml:space="preserve">
+    <value>۱ هفته</value>
+  </data>
+  <data name="PrivateBinExpiration_Y1" xml:space="preserve">
+    <value>۱ سال</value>
+  </data>
+  <data name="PrivateBinFormat_Markdown" xml:space="preserve">
+    <value>Markdown</value>
+  </data>
+  <data name="PrivateBinFormat_PlainText" xml:space="preserve">
+    <value>متن ساده</value>
+  </data>
+  <data name="PrivateBinFormat_SyntaxHighlighting" xml:space="preserve">
+    <value>برجسته‌سازی نحو</value>
+  </data>
+  <data name="Pushbullet_Device_key_is_missing" xml:space="preserve">
+    <value>کلید دستگاه موجود نیست.</value>
+  </data>
+  <data name="Pushbullet_No_device_selected" xml:space="preserve">
+    <value>دستگاهی برای ارسال انتخاب نشده است.</value>
+  </data>
+  <data name="Puush_Authentication_failure" xml:space="preserve">
+    <value>احراز هویت ناموفق بود.</value>
+  </data>
+  <data name="Puush_Checksum_error" xml:space="preserve">
+    <value>خطای مجموع مقابله‌ای.</value>
+  </data>
+  <data name="Puush_Connection_error" xml:space="preserve">
+    <value>خطای اتصال.</value>
+  </data>
+  <data name="Puush_Insufficient_account_storage" xml:space="preserve">
+    <value>فضای ذخیره‌سازی باقی‌ماندهٔ حساب کافی نیست.</value>
+  </data>
+  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="PuushLoginWindow_Email" xml:space="preserve">
+    <value>ایمیل:</value>
+  </data>
+  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
+    <value>ایمیل و گذرواژهٔ خود را وارد کنید.</value>
+  </data>
+  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
+    <value>گذرواژه را فراموش کرده‌اید؟</value>
+  </data>
+  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
+    <value>در حال ورود...</value>
+  </data>
+  <data name="PuushLoginWindow_Login" xml:space="preserve">
+    <value>ورود</value>
+  </data>
+  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
+    <value>لاگین با مشکل مواجه شد.</value>
+  </data>
+  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
+    <value>name@example.com</value>
+  </data>
+  <data name="PuushLoginWindow_Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
+    <value>ShareX - ورود به puush</value>
+  </data>
+  <data name="ResponseWindow_Copy_deletion_URL" xml:space="preserve">
+    <value>کپی نشانی حذف</value>
+  </data>
+  <data name="ResponseWindow_Copy_response" xml:space="preserve">
+    <value>کپی پاسخ</value>
+  </data>
+  <data name="ResponseWindow_Copy_response_info" xml:space="preserve">
+    <value>کپی اطلاعات پاسخ</value>
+  </data>
+  <data name="ResponseWindow_Copy_shortened_URL" xml:space="preserve">
+    <value>کپی نشانی کوتاه‌شده</value>
+  </data>
+  <data name="ResponseWindow_Copy_thumbnail_URL" xml:space="preserve">
+    <value>کپی نشانی تصویر بندانگشتی</value>
+  </data>
+  <data name="ResponseWindow_Copy_URL" xml:space="preserve">
+    <value>کپی نشانی</value>
+  </data>
+  <data name="ResponseWindow_Deletion_URL" xml:space="preserve">
+    <value>URL حذف</value>
+  </data>
+  <data name="ResponseWindow_Headers" xml:space="preserve">
+    <value>سرآیندها</value>
+  </data>
+  <data name="ResponseWindow_Inspect_the_URLs_and_response_returned_by_the_destination" xml:space="preserve">
+    <value>نشانی‌ها و پاسخ بازگشتی مقصد را بررسی کنید.</value>
+  </data>
+  <data name="ResponseWindow_JSON_format" xml:space="preserve">
+    <value>قالب JSON</value>
+  </data>
+  <data name="ResponseWindow_JSON_formatting_failed" xml:space="preserve">
+    <value>قالب‌بندی ناموفق بود.</value>
+  </data>
+  <data name="ResponseWindow_No_response_information_is_available" xml:space="preserve">
+    <value>اطلاعات پاسخی موجود نیست.</value>
+  </data>
+  <data name="ResponseWindow_No_result_details_are_available" xml:space="preserve">
+    <value>جزئیات نتیجه موجود نیست.</value>
+  </data>
+  <data name="ResponseWindow_Open_response_URL" xml:space="preserve">
+    <value>باز کردن نشانی پاسخ</value>
+  </data>
+  <data name="ResponseWindow_Open_URL" xml:space="preserve">
+    <value>باز کردن URL</value>
+  </data>
+  <data name="ResponseWindow_Response_info" xml:space="preserve">
+    <value>اطلاعات پاسخ</value>
+  </data>
+  <data name="ResponseWindow_Response_text" xml:space="preserve">
+    <value>متن پاسخ</value>
+  </data>
+  <data name="ResponseWindow_Response_URL" xml:space="preserve">
+    <value>URL پاسخ</value>
+  </data>
+  <data name="ResponseWindow_Result" xml:space="preserve">
+    <value>نتیجه</value>
+  </data>
+  <data name="ResponseWindow_ShareX_Response" xml:space="preserve">
+    <value>ShareX - پاسخ</value>
+  </data>
+  <data name="ResponseWindow_Shortened_URL" xml:space="preserve">
+    <value>URL کوتاه‌شده</value>
+  </data>
+  <data name="ResponseWindow_Status_code" xml:space="preserve">
+    <value>وضعیت code</value>
+  </data>
+  <data name="ResponseWindow_The_upload_completed_with_an_error" xml:space="preserve">
+    <value>بارگذاری با یک خطا تکمیل شد.</value>
+  </data>
+  <data name="ResponseWindow_Thumbnail_URL" xml:space="preserve">
+    <value>بندانگشتی URL</value>
+  </data>
+  <data name="ResponseWindow_Upload_response" xml:space="preserve">
+    <value>پاسخ بارگذاری</value>
+  </data>
+  <data name="ResponseWindow_URL" xml:space="preserve">
+    <value>نشانی</value>
+  </data>
+  <data name="ResponseWindow_XML_format" xml:space="preserve">
+    <value>قالب XML</value>
+  </data>
+  <data name="ResponseWindow_XML_formatting_failed" xml:space="preserve">
+    <value>قالب‌بندی ناموفق بود.</value>
+  </data>
+  <data name="Seafile_API_URL_is_empty" xml:space="preserve">
+    <value>نشانی API سرویس Seafile خالی است.</value>
+  </data>
+  <data name="Seafile_Authentication_token_is_empty" xml:space="preserve">
+    <value>توکن احراز هویت Seafile خالی است.</value>
+  </data>
+  <data name="SendSpace_Error_details" xml:space="preserve">
+    <value>کد: {0}، روش: {1}
+متن: {2}</value>
+  </data>
+  <data name="SendSpace_Session_key_is_missing" xml:space="preserve">
+    <value>کلید نشست موجود نیست.</value>
+  </data>
+  <data name="SendSpace_Token_is_missing" xml:space="preserve">
+    <value>توکن موجود نیست.</value>
+  </data>
+  <data name="SendSpace_Upload_information_is_missing" xml:space="preserve">
+    <value>اطلاعات بارگذاری موجود نیست.</value>
+  </data>
+  <data name="SFTP_Key_file_not_found" xml:space="preserve">
+    <value>فایل کلید وجود ندارد.</value>
+  </data>
+  <data name="Streamable_Could_not_create_video" xml:space="preserve">
+    <value>ایجاد ویدیو ممکن نشد.</value>
+  </data>
+  <data name="Sul_Generic_error_contact_support" xml:space="preserve">
+    <value>خطایی عمومی رخ داد. با support@s-ul.eu تماس بگیرید.</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>آپلود کننده متن سفارشی</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>آپلود کننده فایل</value>
+  </data>
+  <data name="TextDestination_Gist" xml:space="preserve">
+    <value>GitHub Gist</value>
+  </data>
+  <data name="TextDestination_Hastebin" xml:space="preserve">
+    <value>Hastebin</value>
+  </data>
+  <data name="TextDestination_OneTimeSecret" xml:space="preserve">
+    <value>OneTimeSecret</value>
+  </data>
+  <data name="TextDestination_Paste_ee" xml:space="preserve">
+    <value>Paste.ee</value>
+  </data>
+  <data name="TextDestination_Paste2" xml:space="preserve">
+    <value>Paste2</value>
+  </data>
+  <data name="TextDestination_Pastebin" xml:space="preserve">
+    <value>Pastebin</value>
+  </data>
+  <data name="TextDestination_Pastie" xml:space="preserve">
+    <value>Pastie</value>
+  </data>
+  <data name="TextDestination_PrivateBin" xml:space="preserve">
+    <value>PrivateBin</value>
+  </data>
+  <data name="TextDestination_Slexy" xml:space="preserve">
+    <value>Slexy</value>
+  </data>
+  <data name="TextDestination_Upaste" xml:space="preserve">
+    <value>uPaste</value>
+  </data>
+  <data name="TextUploadWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="TextUploadWindow_Character_count_plural" xml:space="preserve">
+    <value>{0:N0} نویسه</value>
+  </data>
+  <data name="TextUploadWindow_Character_count_singular" xml:space="preserve">
+    <value>{0:N0} نویسه</value>
+  </data>
+  <data name="TextUploadWindow_Enter_or_paste_the_text_you_want_to_upload" xml:space="preserve">
+    <value>متن موردنظر برای بارگذاری را وارد یا جای‌گذاری کنید.</value>
+  </data>
+  <data name="TextUploadWindow_ShareX_Text_upload" xml:space="preserve">
+    <value>ShareX - بارگذاری متن</value>
+  </data>
+  <data name="TextUploadWindow_Text_upload" xml:space="preserve">
+    <value>بارگذاری متن</value>
+  </data>
+  <data name="TextUploadWindow_Upload" xml:space="preserve">
+    <value>بارگذاری</value>
+  </data>
+  <data name="Uploader_Authorization_information_missing" xml:space="preserve">
+    <value>اطلاعات مجوز موجود نیست. ابتدا نشانی مجوز را باز کنید.</value>
+  </data>
+  <data name="Uploader_Error_message" xml:space="preserve">
+    <value>پیام خطا:</value>
+  </data>
+  <data name="Uploader_Request_URL" xml:space="preserve">
+    <value>نشانی درخواست:</value>
+  </data>
+  <data name="Uploader_Stack_trace" xml:space="preserve">
+    <value>ردیابی پشته:</value>
+  </data>
+  <data name="UploaderErrors_Login_is_required" xml:space="preserve">
+    <value>ورود لازم است.</value>
+  </data>
+  <data name="UploaderErrors_Refresh_access_token_failed" xml:space="preserve">
+    <value>تازه‌سازی توکن دسترسی ناموفق بود.</value>
+  </data>
+  <data name="UploaderErrors_Service_login_is_required" xml:space="preserve">
+    <value>ورود به {0} لازم است.</value>
+  </data>
+  <data name="UploaderErrors_Upload_failed" xml:space="preserve">
+    <value>بارگذاری ناموفق بود.</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>جستجوی تصویری Bing</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>سفارشی URL sharing سرویس</value>
+  </data>
+  <data name="URLSharingServices_Delicious" xml:space="preserve">
+    <value>Delicious</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>ایمیل:</value>
+  </data>
+  <data name="URLSharingServices_Facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>جستجوی تصویر Google</value>
+  </data>
+  <data name="URLSharingServices_LinkedIn" xml:space="preserve">
+    <value>LinkedIn</value>
+  </data>
+  <data name="URLSharingServices_Pinterest" xml:space="preserve">
+    <value>Pinterest</value>
+  </data>
+  <data name="URLSharingServices_Pushbullet" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="URLSharingServices_Reddit" xml:space="preserve">
+    <value>Reddit</value>
+  </data>
+  <data name="URLSharingServices_StumbleUpon" xml:space="preserve">
+    <value>StumbleUpon</value>
+  </data>
+  <data name="URLSharingServices_Tumblr" xml:space="preserve">
+    <value>Tumblr</value>
+  </data>
+  <data name="URLSharingServices_VK" xml:space="preserve">
+    <value>VK</value>
+  </data>
+  <data name="UrlShortenerType_BITLY" xml:space="preserve">
+    <value>bit.ly</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>سفارشی URL shortener</value>
+  </data>
+  <data name="UrlShortenerType_FirebaseDynamicLinks" xml:space="preserve">
+    <value>پیوندهای پویای Firebase</value>
+  </data>
+  <data name="UrlShortenerType_ISGD" xml:space="preserve">
+    <value>is.gd</value>
+  </data>
+  <data name="UrlShortenerType_Kutt" xml:space="preserve">
+    <value>Kutt</value>
+  </data>
+  <data name="UrlShortenerType_Polr" xml:space="preserve">
+    <value>Polr</value>
+  </data>
+  <data name="UrlShortenerType_QRnet" xml:space="preserve">
+    <value>qr.net</value>
+  </data>
+  <data name="UrlShortenerType_TINYURL" xml:space="preserve">
+    <value>tinyurl.com</value>
+  </data>
+  <data name="UrlShortenerType_TURL" xml:space="preserve">
+    <value>turl.ca</value>
+  </data>
+  <data name="UrlShortenerType_TwoGP" xml:space="preserve">
+    <value>2.gp</value>
+  </data>
+  <data name="UrlShortenerType_VGD" xml:space="preserve">
+    <value>v.gd</value>
+  </data>
+  <data name="UrlShortenerType_VURL" xml:space="preserve">
+    <value>vurl.com</value>
+  </data>
+  <data name="UrlShortenerType_YOURLS" xml:space="preserve">
+    <value>yourls.org</value>
+  </data>
+  <data name="UrlShortenerType_ZeroWidthShortener" xml:space="preserve">
+    <value>کوتاه‌کنندهٔ عرض صفر</value>
+  </data>
+  <data name="Vault_No_valid_metadata_returned" xml:space="preserve">
+    <value>فرادادهٔ معتبری برگردانده نشد.</value>
+  </data>
+  <data name="Yourls_Credentials_missing" xml:space="preserve">
+    <value>امضا یا نام کاربری/گذرواژه موجود نیست.</value>
+  </data>
+  <data name="YouTube_Upload_failed" xml:space="preserve">
+    <value>بارگذاری ناموفق بود: {0}</value>
+  </data>
+  <data name="YouTube_Upload_rejected" xml:space="preserve">
+    <value>بارگذاری رد شد: {0}</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Description" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_OK" xml:space="preserve">
+    <value>تأیید</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_ShareX_YouTube_video_options" xml:space="preserve">
+    <value>ShareX - گزینه‌های ویدیوی YouTube</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Title" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Video_title" xml:space="preserve">
+    <value>عنوان ویدیو</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Visibility" xml:space="preserve">
+    <value>نمایانی</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>شخصی</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>عمومی</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>لیست نشده</value>
+  </data>
+</root>

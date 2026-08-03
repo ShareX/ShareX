@@ -1,0 +1,1540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountType_Anonymous" xml:space="preserve">
+    <value>Anónimo</value>
+  </data>
+  <data name="AccountType_User" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="AmazonS3_Upload_failed" xml:space="preserve">
+    <value>Error al cargar en Amazon S3.</value>
+  </data>
+  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
+    <value>Amazon S3 Intelligent-Tiering</value>
+  </data>
+  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
+    <value>Amazon S3 One Zone-Infrequent Access</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
+    <value>Amazon S3 Standard</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
+    <value>Amazon S3 Standard-Infrequent Access</value>
+  </data>
+  <data name="AzureStorage_Access_key_must_not_be_empty" xml:space="preserve">
+    <value>'Clave de acceso' no puede estar vacía.</value>
+  </data>
+  <data name="AzureStorage_Account_name_must_not_be_empty" xml:space="preserve">
+    <value>'Nombre de cuenta' no puede estar vacío.</value>
+  </data>
+  <data name="AzureStorage_Container_must_not_be_empty" xml:space="preserve">
+    <value>'Contenedor' no puede estar vacío.</value>
+  </data>
+  <data name="BackblazeB2_Could_not_authenticate" xml:space="preserve">
+    <value>No se pudo autenticar con B2: {0}</value>
+  </data>
+  <data name="BackblazeB2_Could_not_get_upload_URL" xml:space="preserve">
+    <value>No se pudo obtener la URL de carga de B2: {0}</value>
+  </data>
+  <data name="BackblazeB2_Unknown_upload_error" xml:space="preserve">
+    <value>Cargador B2: se produjo un error desconocido al llamar a b2_upload_file().</value>
+  </data>
+  <data name="BackblazeB2_Upload_failed_after_attempts" xml:space="preserve">
+    <value>Error de carga de B2: no se pudo cargar el archivo tras {0} intentos.</value>
+  </data>
+  <data name="BackblazeB2_Upload_failed_with_error" xml:space="preserve">
+    <value>Error de carga de B2: {0}</value>
+  </data>
+  <data name="Base58Converter_Invalid_character" xml:space="preserve">
+    <value>Carácter Base58 no válido `{0}` en la posición {1}.</value>
+  </data>
+  <data name="BoxShareAccessLevel_Collaborators" xml:space="preserve">
+    <value>Colaboradores - Solo personas invitadas</value>
+  </data>
+  <data name="BoxShareAccessLevel_Company" xml:space="preserve">
+    <value>Empresa - Personas de tu empresa</value>
+  </data>
+  <data name="BoxShareAccessLevel_Open" xml:space="preserve">
+    <value>Público - Personas con el enlace</value>
+  </data>
+  <data name="BrowserProtocol_file" xml:space="preserve">
+    <value>file://</value>
+  </data>
+  <data name="BrowserProtocol_ftp" xml:space="preserve">
+    <value>ftp://</value>
+  </data>
+  <data name="BrowserProtocol_ftps" xml:space="preserve">
+    <value>ftps://</value>
+  </data>
+  <data name="BrowserProtocol_http" xml:space="preserve">
+    <value>http://</value>
+  </data>
+  <data name="BrowserProtocol_https" xml:space="preserve">
+    <value>https://</value>
+  </data>
+  <data name="BrowserProtocol_sftp" xml:space="preserve">
+    <value>sftp://</value>
+  </data>
+  <data name="CertFileNameEditor_Browse_for_certificate_file" xml:space="preserve">
+    <value>Buscar un archivo de certificado...</value>
+  </data>
+  <data name="Common_API_key_is_missing" xml:space="preserve">
+    <value>Falta la clave de API.</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Common_Unknown_error" xml:space="preserve">
+    <value>Error desconocido</value>
+  </data>
+  <data name="CustomUploader_Unsupported_request_format" xml:space="preserve">
+    <value>Formato de solicitud no compatible: {0}</value>
+  </data>
+  <data name="CustomUploaderBody_Binary" xml:space="preserve">
+    <value>Binario</value>
+  </data>
+  <data name="CustomUploaderBody_FormURLEncoded" xml:space="preserve">
+    <value>Formulario codificado como URL (application/x-www-form-urlencoded)</value>
+  </data>
+  <data name="CustomUploaderBody_JSON" xml:space="preserve">
+    <value>JSON (application/json)</value>
+  </data>
+  <data name="CustomUploaderBody_MultipartFormData" xml:space="preserve">
+    <value>Datos de formulario (multipart/form-data)</value>
+  </data>
+  <data name="CustomUploaderBody_None" xml:space="preserve">
+    <value>Sin cuerpo</value>
+  </data>
+  <data name="CustomUploaderBody_XML" xml:space="preserve">
+    <value>XML (application/xml)</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>Cargador de archivos</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>Cargador de imágenes</value>
+  </data>
+  <data name="CustomUploaderDestinationType_None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>Cargador de texto</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>Servicio para compartir URL</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>Acortador de URL</value>
+  </data>
+  <data name="CustomUploaderItem_File_form_name_must_be_configured" xml:space="preserve">
+    <value>"Archivo form name" must be configured.</value>
+  </data>
+  <data name="CustomUploaderItem_Invalid_JSON_response" xml:space="preserve">
+    <value>El servidor ({0}) devolvió contenido de respuesta no válido; se esperaba JSON.</value>
+  </data>
+  <data name="CustomUploaderItem_Request_URL_must_be_configured" xml:space="preserve">
+    <value>Debe configurarse "URL de solicitud".</value>
+  </data>
+  <data name="CustomUploaderItem_Unable_to_parse_response" xml:space="preserve">
+    <value>No se pudo analizar el contenido de respuesta devuelto por el servidor ({0}).</value>
+  </data>
+  <data name="CustomUploaderItem_Unsupported_custom_uploader" xml:space="preserve">
+    <value>Cargador personalizado no compatible</value>
+  </data>
+  <data name="CustomUploaderParser_Function_name_cannot_be_empty" xml:space="preserve">
+    <value>El nombre de la función no puede estar vacío.</value>
+  </data>
+  <data name="CustomUploaderParser_Invalid_function_name" xml:space="preserve">
+    <value>Nombre de función no válido: {0}</value>
+  </data>
+  <data name="CustomUploaderParser_Minimum_parameter_count" xml:space="preserve">
+    <value>El número mínimo de parámetros para la función "{0}" es {1}.</value>
+  </data>
+  <data name="DestinationSettings_Account" xml:space="preserve">
+    <value>Cuenta</value>
+  </data>
+  <data name="DestinationSettings_Account_and_devices" xml:space="preserve">
+    <value>Cuenta y dispositivos</value>
+  </data>
+  <data name="DestinationSettings_Accounts" xml:space="preserve">
+    <value>Cuentas</value>
+  </data>
+  <data name="DestinationSettings_Add" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="DestinationSettings_Add_path" xml:space="preserve">
+    <value>Añadir ruta</value>
+  </data>
+  <data name="DestinationSettings_Album_count_loaded_plural" xml:space="preserve">
+    <value>{0} álbumes cargados</value>
+  </data>
+  <data name="DestinationSettings_Album_count_loaded_singular" xml:space="preserve">
+    <value>{0} álbum cargado</value>
+  </data>
+  <data name="DestinationSettings_Album_count_plural" xml:space="preserve">
+    <value>{0} álbumes</value>
+  </data>
+  <data name="DestinationSettings_Album_count_singular" xml:space="preserve">
+    <value>{0} álbum</value>
+  </data>
+  <data name="DestinationSettings_Album_path" xml:space="preserve">
+    <value>Ruta del álbum:</value>
+  </data>
+  <data name="DestinationSettings_Albums" xml:space="preserve">
+    <value>Álbumes</value>
+  </data>
+  <data name="DestinationSettings_API_key" xml:space="preserve">
+    <value>Clave de API:</value>
+  </data>
+  <data name="DestinationSettings_API_key_retrieved" xml:space="preserve">
+    <value>Clave de API obtenida</value>
+  </data>
+  <data name="DestinationSettings_Authorization_code" xml:space="preserve">
+    <value>Código de autorización:</value>
+  </data>
+  <data name="DestinationSettings_Authorization_failed" xml:space="preserve">
+    <value>Error de autorización</value>
+  </data>
+  <data name="DestinationSettings_Authorization_page_opened" xml:space="preserve">
+    <value>Página de autorización abierta</value>
+  </data>
+  <data name="DestinationSettings_Back" xml:space="preserve">
+    <value>Atrás</value>
+  </data>
+  <data name="DestinationSettings_Browser_status" xml:space="preserve">
+    <value>Estado del navegador:</value>
+  </data>
+  <data name="DestinationSettings_Category_File_uploaders" xml:space="preserve">
+    <value>Cargadores de archivos</value>
+  </data>
+  <data name="DestinationSettings_Category_Image_uploaders" xml:space="preserve">
+    <value>Cargadores de imágenes</value>
+  </data>
+  <data name="DestinationSettings_Category_Text_uploaders" xml:space="preserve">
+    <value>Cargadores de texto</value>
+  </data>
+  <data name="DestinationSettings_Category_URL_shorteners" xml:space="preserve">
+    <value>Acortadores de URL</value>
+  </data>
+  <data name="DestinationSettings_Complete_authorization" xml:space="preserve">
+    <value>Completar autorización</value>
+  </data>
+  <data name="DestinationSettings_Connect_account" xml:space="preserve">
+    <value>Conectar cuenta</value>
+  </data>
+  <data name="DestinationSettings_Connect_Imgur_account_first" xml:space="preserve">
+    <value>Conecta primero una cuenta de Imgur</value>
+  </data>
+  <data name="DestinationSettings_Connect_Photobucket_account_first" xml:space="preserve">
+    <value>Conecta primero una cuenta de Photobucket</value>
+  </data>
+  <data name="DestinationSettings_Connected" xml:space="preserve">
+    <value>Conectado</value>
+  </data>
+  <data name="DestinationSettings_Connected_as" xml:space="preserve">
+    <value>Conectado como {0}</value>
+  </data>
+  <data name="DestinationSettings_Device" xml:space="preserve">
+    <value>Dispositivo:</value>
+  </data>
+  <data name="DestinationSettings_Device_count_plural" xml:space="preserve">
+    <value>{0} dispositivos cargados</value>
+  </data>
+  <data name="DestinationSettings_Device_count_singular" xml:space="preserve">
+    <value>{0} dispositivo cargado</value>
+  </data>
+  <data name="DestinationSettings_Disconnect" xml:space="preserve">
+    <value>Desconectar</value>
+  </data>
+  <data name="DestinationSettings_Duplicate" xml:space="preserve">
+    <value>Duplicar</value>
+  </data>
+  <data name="DestinationSettings_Edit_item" xml:space="preserve">
+    <value>Editar {0}</value>
+  </data>
+  <data name="DestinationSettings_Email_or_username" xml:space="preserve">
+    <value>Correo / nombre de usuario:</value>
+  </data>
+  <data name="DestinationSettings_Enter_credentials_to_retrieve_API_key" xml:space="preserve">
+    <value>Introduce las credenciales de la cuenta para obtener la clave de API</value>
+  </data>
+  <data name="DestinationSettings_Field_81_Compatibility" xml:space="preserve">
+    <value>Compatibilidad con 8.1</value>
+  </data>
+  <data name="DestinationSettings_Field_Acc_Info_Email" xml:space="preserve">
+    <value>Correo de información de la cuenta</value>
+  </data>
+  <data name="DestinationSettings_Field_Acc_Info_Usage" xml:space="preserve">
+    <value>Uso de información de la cuenta</value>
+  </data>
+  <data name="DestinationSettings_Field_Access_Key_ID" xml:space="preserve">
+    <value>Id. de clave de acceso</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Access_Key" xml:space="preserve">
+    <value>Clave de acceso de la cuenta</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_List" xml:space="preserve">
+    <value>Lista de cuentas</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Name" xml:space="preserve">
+    <value>Nombre de cuenta</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Type" xml:space="preserve">
+    <value>Tipo de cuenta</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Hostname" xml:space="preserve">
+    <value>Nombre de host de la API</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Key" xml:space="preserve">
+    <value>Clave de API</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Username" xml:space="preserve">
+    <value>Usuario de la API</value>
+  </data>
+  <data name="DestinationSettings_Field_APIURL" xml:space="preserve">
+    <value>URL de la API</value>
+  </data>
+  <data name="DestinationSettings_Field_Append_File_Name_To_URL" xml:space="preserve">
+    <value>Añadir el nombre de archivo a la URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Application_Key" xml:space="preserve">
+    <value>Clave de aplicación</value>
+  </data>
+  <data name="DestinationSettings_Field_Application_Key_Id" xml:space="preserve">
+    <value>Id. de clave de aplicación</value>
+  </data>
+  <data name="DestinationSettings_Field_Auth_Token" xml:space="preserve">
+    <value>Token de autenticación</value>
+  </data>
+  <data name="DestinationSettings_Field_Auto_Create_Shareable_Link" xml:space="preserve">
+    <value>Crear automáticamente un enlace compartible</value>
+  </data>
+  <data name="DestinationSettings_Field_Auto_Expire" xml:space="preserve">
+    <value>Caducar automáticamente</value>
+  </data>
+  <data name="DestinationSettings_Field_Automatic_Send" xml:space="preserve">
+    <value>Envío automático</value>
+  </data>
+  <data name="DestinationSettings_Field_Automatic_Send_To" xml:space="preserve">
+    <value>Enviar automáticamente a</value>
+  </data>
+  <data name="DestinationSettings_Field_Bucket" xml:space="preserve">
+    <value>Depósito</value>
+  </data>
+  <data name="DestinationSettings_Field_Bucket_Name" xml:space="preserve">
+    <value>Nombre del depósito</value>
+  </data>
+  <data name="DestinationSettings_Field_Burn_After_Reading" xml:space="preserve">
+    <value>Destruir después de leer</value>
+  </data>
+  <data name="DestinationSettings_Field_Cache_Control" xml:space="preserve">
+    <value>Control de caché</value>
+  </data>
+  <data name="DestinationSettings_Field_Capacity" xml:space="preserve">
+    <value>Capacidad</value>
+  </data>
+  <data name="DestinationSettings_Field_Comment" xml:space="preserve">
+    <value>Comentario</value>
+  </data>
+  <data name="DestinationSettings_Field_Container" xml:space="preserve">
+    <value>Contenedor</value>
+  </data>
+  <data name="DestinationSettings_Field_Content_Type" xml:space="preserve">
+    <value>Tipo de contenido</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Share" xml:space="preserve">
+    <value>Crear recurso compartido</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Shareable_URL" xml:space="preserve">
+    <value>Crear URL compartible</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Shareable_URL_Raw" xml:space="preserve">
+    <value>Crear URL compartible sin procesar</value>
+  </data>
+  <data name="DestinationSettings_Field_Custom_Domain" xml:space="preserve">
+    <value>Dominio personalizado</value>
+  </data>
+  <data name="DestinationSettings_Field_Custom_URL" xml:space="preserve">
+    <value>URL personalizada</value>
+  </data>
+  <data name="DestinationSettings_Field_Default_Body" xml:space="preserve">
+    <value>Cuerpo predeterminado</value>
+  </data>
+  <data name="DestinationSettings_Field_Default_Subject" xml:space="preserve">
+    <value>Asunto predeterminado</value>
+  </data>
+  <data name="DestinationSettings_Field_Description" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="DestinationSettings_Field_Direct_Link" xml:space="preserve">
+    <value>Enlace directo</value>
+  </data>
+  <data name="DestinationSettings_Field_Direct_URL" xml:space="preserve">
+    <value>URL directa</value>
+  </data>
+  <data name="DestinationSettings_Field_Domain" xml:space="preserve">
+    <value>Dominio</value>
+  </data>
+  <data name="DestinationSettings_Field_Dynamic_Link_Domain" xml:space="preserve">
+    <value>Dominio de enlace dinámico</value>
+  </data>
+  <data name="DestinationSettings_Field_Email" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="DestinationSettings_Field_Encrypt_Paste" xml:space="preserve">
+    <value>Cifrar pegado</value>
+  </data>
+  <data name="DestinationSettings_Field_Encrypted_Library_Password" xml:space="preserve">
+    <value>Contraseña de la biblioteca cifrada</value>
+  </data>
+  <data name="DestinationSettings_Field_Endpoint" xml:space="preserve">
+    <value>Punto de conexión</value>
+  </data>
+  <data name="DestinationSettings_Field_Environment" xml:space="preserve">
+    <value>Entorno</value>
+  </data>
+  <data name="DestinationSettings_Field_Expiration" xml:space="preserve">
+    <value>Caducidad</value>
+  </data>
+  <data name="DestinationSettings_Field_Expiry_Time" xml:space="preserve">
+    <value>Tiempo de caducidad</value>
+  </data>
+  <data name="DestinationSettings_Field_Exposure" xml:space="preserve">
+    <value>Visibilidad</value>
+  </data>
+  <data name="DestinationSettings_Field_Files" xml:space="preserve">
+    <value>Archivos</value>
+  </data>
+  <data name="DestinationSettings_Field_Folder_ID" xml:space="preserve">
+    <value>Id. de carpeta</value>
+  </data>
+  <data name="DestinationSettings_Field_Format" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="DestinationSettings_Field_From" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="DestinationSettings_Field_Has_Comment" xml:space="preserve">
+    <value>Tiene comentario</value>
+  </data>
+  <data name="DestinationSettings_Field_Hidden" xml:space="preserve">
+    <value>Oculto</value>
+  </data>
+  <data name="DestinationSettings_Field_Host" xml:space="preserve">
+    <value>Servidor</value>
+  </data>
+  <data name="DestinationSettings_Field_id" xml:space="preserve">
+    <value>Id.</value>
+  </data>
+  <data name="DestinationSettings_Field_Images" xml:space="preserve">
+    <value>Imágenes</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Family" xml:space="preserve">
+    <value>Es familiar</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Friend" xml:space="preserve">
+    <value>Es amigo</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Library_Encrypted" xml:space="preserve">
+    <value>La biblioteca está cifrada</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Public" xml:space="preserve">
+    <value>Es público</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Secret" xml:space="preserve">
+    <value>Es secreto</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Secured" xml:space="preserve">
+    <value>Está protegido</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Short" xml:space="preserve">
+    <value>Es corto</value>
+  </data>
+  <data name="DestinationSettings_Field_Last_To" xml:space="preserve">
+    <value>Último destinatario</value>
+  </data>
+  <data name="DestinationSettings_Field_List" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="DestinationSettings_Field_Login" xml:space="preserve">
+    <value>Inicio de sesión</value>
+  </data>
+  <data name="DestinationSettings_Field_name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="DestinationSettings_Field_Object_Prefix" xml:space="preserve">
+    <value>Prefijo del objeto</value>
+  </data>
+  <data name="DestinationSettings_Field_One_Shot" xml:space="preserve">
+    <value>Un solo uso</value>
+  </data>
+  <data name="DestinationSettings_Field_Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="DestinationSettings_Field_Paste_Password" xml:space="preserve">
+    <value>Contraseña del pegado</value>
+  </data>
+  <data name="DestinationSettings_Field_Path" xml:space="preserve">
+    <value>Ruta</value>
+  </data>
+  <data name="DestinationSettings_Field_Privacy_Type" xml:space="preserve">
+    <value>Tipo de privacidad</value>
+  </data>
+  <data name="DestinationSettings_Field_Publish_Public" xml:space="preserve">
+    <value>Publicar públicamente</value>
+  </data>
+  <data name="DestinationSettings_Field_Raw_URL" xml:space="preserve">
+    <value>URL sin procesar</value>
+  </data>
+  <data name="DestinationSettings_Field_Region" xml:space="preserve">
+    <value>Región</value>
+  </data>
+  <data name="DestinationSettings_Field_Remember_Last_To" xml:space="preserve">
+    <value>Recordar último destinatario</value>
+  </data>
+  <data name="DestinationSettings_Field_Removable" xml:space="preserve">
+    <value>Eliminable</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Image" xml:space="preserve">
+    <value>Quitar extensión de imagen</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Text" xml:space="preserve">
+    <value>Quitar extensión de texto</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Video" xml:space="preserve">
+    <value>Quitar extensión de vídeo</value>
+  </data>
+  <data name="DestinationSettings_Field_Repo_ID" xml:space="preserve">
+    <value>Id. del repositorio</value>
+  </data>
+  <data name="DestinationSettings_Field_Result_URL" xml:space="preserve">
+    <value>URL de resultado</value>
+  </data>
+  <data name="DestinationSettings_Field_Reuse" xml:space="preserve">
+    <value>Reutilizar</value>
+  </data>
+  <data name="DestinationSettings_Field_Safety_Level" xml:space="preserve">
+    <value>Nivel de seguridad</value>
+  </data>
+  <data name="DestinationSettings_Field_Secret_Access_Key" xml:space="preserve">
+    <value>Clave de acceso secreta</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Drive" xml:space="preserve">
+    <value>Unidad seleccionada</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_File" xml:space="preserve">
+    <value>Archivo seleccionado</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Image" xml:space="preserve">
+    <value>Imagen seleccionada</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Text" xml:space="preserve">
+    <value>Texto seleccionado</value>
+  </data>
+  <data name="DestinationSettings_Field_Set_Public_ACL" xml:space="preserve">
+    <value>Establecer ACL pública</value>
+  </data>
+  <data name="DestinationSettings_Field_Settings" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="DestinationSettings_Field_Share" xml:space="preserve">
+    <value>Compartir</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Access_Level" xml:space="preserve">
+    <value>Nivel de acceso compartido</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Days_To_Expire" xml:space="preserve">
+    <value>Días hasta que caduque el recurso compartido</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Password" xml:space="preserve">
+    <value>Contraseña del recurso compartido</value>
+  </data>
+  <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
+    <value>Mostrar diálogo</value>
+  </data>
+  <data name="DestinationSettings_Field_Signature" xml:space="preserve">
+    <value>Firma</value>
+  </data>
+  <data name="DestinationSettings_Field_Signed_Payload" xml:space="preserve">
+    <value>Carga útil firmada</value>
+  </data>
+  <data name="DestinationSettings_Field_Smtp_Port" xml:space="preserve">
+    <value>Puerto SMTP</value>
+  </data>
+  <data name="DestinationSettings_Field_Smtp_Server" xml:space="preserve">
+    <value>Servidor SMTP</value>
+  </data>
+  <data name="DestinationSettings_Field_Storage_Class" xml:space="preserve">
+    <value>Clase de almacenamiento</value>
+  </data>
+  <data name="DestinationSettings_Field_Syntax_Highlighting" xml:space="preserve">
+    <value>Resaltado de sintaxis</value>
+  </data>
+  <data name="DestinationSettings_Field_Tags" xml:space="preserve">
+    <value>Etiquetas</value>
+  </data>
+  <data name="DestinationSettings_Field_Text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="DestinationSettings_Field_Text_Format" xml:space="preserve">
+    <value>Formato de texto</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Height" xml:space="preserve">
+    <value>Altura de miniatura</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Type" xml:space="preserve">
+    <value>Tipo de miniatura</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Width" xml:space="preserve">
+    <value>Anchura de miniatura</value>
+  </data>
+  <data name="DestinationSettings_Field_Title" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="DestinationSettings_Field_Token" xml:space="preserve">
+    <value>Token</value>
+  </data>
+  <data name="DestinationSettings_Field_TTL" xml:space="preserve">
+    <value>TTL</value>
+  </data>
+  <data name="DestinationSettings_Field_TTL_Unit" xml:space="preserve">
+    <value>Unidad de TTL</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_Path" xml:space="preserve">
+    <value>Ruta de carga</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_Selected_Album" xml:space="preserve">
+    <value>Cargar en el álbum seleccionado</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_URL" xml:space="preserve">
+    <value>Subir URL...</value>
+  </data>
+  <data name="DestinationSettings_Field_Uploader" xml:space="preserve">
+    <value>Cargador</value>
+  </data>
+  <data name="DestinationSettings_Field_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_AP_Iv1" xml:space="preserve">
+    <value>Usar API v1</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Custom_CNAME" xml:space="preserve">
+    <value>Usar CNAME personalizado</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Custom_Url" xml:space="preserve">
+    <value>Usar URL personalizada</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Direct_Link" xml:space="preserve">
+    <value>Usar enlace directo</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Direct_URL" xml:space="preserve">
+    <value>Usar URL directa</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_File_Extension" xml:space="preserve">
+    <value>Usar extensión de archivo</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Folder" xml:space="preserve">
+    <value>Usar carpeta</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_GIFV" xml:space="preserve">
+    <value>Usar GIFV</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Long_Link" xml:space="preserve">
+    <value>Usar enlace largo</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Path_Style" xml:space="preserve">
+    <value>Usar estilo de ruta</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Preview_Links" xml:space="preserve">
+    <value>Usar enlaces de vista previa</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Shortened_Link" xml:space="preserve">
+    <value>Usar enlace acortado</value>
+  </data>
+  <data name="DestinationSettings_Field_User_API_Key" xml:space="preserve">
+    <value>Clave de API del usuario</value>
+  </data>
+  <data name="DestinationSettings_Field_User_Key" xml:space="preserve">
+    <value>Clave de usuario</value>
+  </data>
+  <data name="DestinationSettings_Field_Username" xml:space="preserve">
+    <value>Nombre de usuario</value>
+  </data>
+  <data name="DestinationSettings_Field_Web_API_Key" xml:space="preserve">
+    <value>Clave de API web</value>
+  </data>
+  <data name="DestinationSettings_Folder_count_plural" xml:space="preserve">
+    <value>{0} carpetas</value>
+  </data>
+  <data name="DestinationSettings_Folder_count_singular" xml:space="preserve">
+    <value>{0} carpeta</value>
+  </data>
+  <data name="DestinationSettings_Get_user_key" xml:space="preserve">
+    <value>Obtener clave de usuario</value>
+  </data>
+  <data name="DestinationSettings_Log_in" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="DestinationSettings_Login_failed" xml:space="preserve">
+    <value>Error al iniciar sesión</value>
+  </data>
+  <data name="DestinationSettings_My_images" xml:space="preserve">
+    <value>Mis imágenes</value>
+  </data>
+  <data name="DestinationSettings_No_additional_configuration_required" xml:space="preserve">
+    <value>Este destino no requiere configuración adicional.</value>
+  </data>
+  <data name="DestinationSettings_No_albums_loaded" xml:space="preserve">
+    <value>No hay álbumes cargados</value>
+  </data>
+  <data name="DestinationSettings_No_albums_saved" xml:space="preserve">
+    <value>No hay álbumes guardados</value>
+  </data>
+  <data name="DestinationSettings_No_child_folders" xml:space="preserve">
+    <value>No hay subcarpetas</value>
+  </data>
+  <data name="DestinationSettings_No_devices_loaded" xml:space="preserve">
+    <value>No hay dispositivos cargados</value>
+  </data>
+  <data name="DestinationSettings_Not_configured" xml:space="preserve">
+    <value>Sin configurar</value>
+  </data>
+  <data name="DestinationSettings_Not_connected" xml:space="preserve">
+    <value>No conectado</value>
+  </data>
+  <data name="DestinationSettings_Open_authorization_page" xml:space="preserve">
+    <value>Abrir página de autorización</value>
+  </data>
+  <data name="DestinationSettings_Open_folder" xml:space="preserve">
+    <value>Abrir carpeta</value>
+  </data>
+  <data name="DestinationSettings_Page_Shared_folder" xml:space="preserve">
+    <value>Carpeta compartida</value>
+  </data>
+  <data name="DestinationSettings_Password" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="DestinationSettings_Public_profile" xml:space="preserve">
+    <value>Perfil público</value>
+  </data>
+  <data name="DestinationSettings_Refresh" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="DestinationSettings_Refresh_albums" xml:space="preserve">
+    <value>Actualizar álbumes</value>
+  </data>
+  <data name="DestinationSettings_Refresh_devices" xml:space="preserve">
+    <value>Actualizar dispositivos</value>
+  </data>
+  <data name="DestinationSettings_Refresh_token" xml:space="preserve">
+    <value>Actualizar token</value>
+  </data>
+  <data name="DestinationSettings_Register" xml:space="preserve">
+    <value>Registrarse</value>
+  </data>
+  <data name="DestinationSettings_Remove" xml:space="preserve">
+    <value>Quitar</value>
+  </data>
+  <data name="DestinationSettings_Root" xml:space="preserve">
+    <value>Raíz</value>
+  </data>
+  <data name="DestinationSettings_Root_folder" xml:space="preserve">
+    <value>Carpeta raíz</value>
+  </data>
+  <data name="DestinationSettings_Select_Refresh_to_load_folders" xml:space="preserve">
+    <value>Selecciona Actualizar para cargar las carpetas</value>
+  </data>
+  <data name="DestinationSettings_Selected_folder" xml:space="preserve">
+    <value>Carpeta seleccionada:</value>
+  </data>
+  <data name="DestinationSettings_Service_account" xml:space="preserve">
+    <value>Cuenta de {0}</value>
+  </data>
+  <data name="DestinationSettings_Settings" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="DestinationSettings_Status" xml:space="preserve">
+    <value>Estado:</value>
+  </data>
+  <data name="DestinationSettings_Token_refresh_failed" xml:space="preserve">
+    <value>No se pudo actualizar el token</value>
+  </data>
+  <data name="DestinationSettings_Unnamed_device" xml:space="preserve">
+    <value>Dispositivo sin nombre</value>
+  </data>
+  <data name="DestinationSettings_Unnamed_folder" xml:space="preserve">
+    <value>Carpeta sin nombre</value>
+  </data>
+  <data name="DestinationSettings_Upload_folder" xml:space="preserve">
+    <value>Carpeta de subir</value>
+  </data>
+  <data name="DestinationSettings_Upload_to_album" xml:space="preserve">
+    <value>Cargar en el álbum:</value>
+  </data>
+  <data name="DestinationSettings_Verification_code" xml:space="preserve">
+    <value>Código de verificación:</value>
+  </data>
+  <data name="DestinationSettingsWindow_ShareX_Destination_settings" xml:space="preserve">
+    <value>ShareX - Configuración de destinos</value>
+  </data>
+  <data name="Dropbox_API_upload_limit" xml:space="preserve">
+    <value>Las cargas mediante la API tienen un límite de 150 MB.</value>
+  </data>
+  <data name="EmailWindow_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="EmailWindow_Email_subject" xml:space="preserve">
+    <value>Asunto del correo</value>
+  </data>
+  <data name="EmailWindow_Message" xml:space="preserve">
+    <value>Mensaje</value>
+  </data>
+  <data name="EmailWindow_name_example_com" xml:space="preserve">
+    <value>name@example.com</value>
+  </data>
+  <data name="EmailWindow_Send" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="EmailWindow_ShareX_Send_email" xml:space="preserve">
+    <value>ShareX - Enviar correo</value>
+  </data>
+  <data name="EmailWindow_Subject" xml:space="preserve">
+    <value>Asunto</value>
+  </data>
+  <data name="EmailWindow_To_email" xml:space="preserve">
+    <value>Correo del destinatario</value>
+  </data>
+  <data name="FileDestination_AmazonS3" xml:space="preserve">
+    <value>Amazon S3</value>
+  </data>
+  <data name="FileDestination_AzureStorage" xml:space="preserve">
+    <value>Azure Storage</value>
+  </data>
+  <data name="FileDestination_BackblazeB2" xml:space="preserve">
+    <value>Backblaze B2</value>
+  </data>
+  <data name="FileDestination_Box" xml:space="preserve">
+    <value>Box</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>Cargador de archivos personalizado</value>
+  </data>
+  <data name="FileDestination_Dropbox" xml:space="preserve">
+    <value>Dropbox</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="FileDestination_FTP" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="FileDestination_GoogleCloudStorage" xml:space="preserve">
+    <value>Google Cloud Storage</value>
+  </data>
+  <data name="FileDestination_GoogleDrive" xml:space="preserve">
+    <value>Google Drive</value>
+  </data>
+  <data name="FileDestination_Lambda" xml:space="preserve">
+    <value>Lambda</value>
+  </data>
+  <data name="FileDestination_Lithiio" xml:space="preserve">
+    <value>LobFile</value>
+  </data>
+  <data name="FileDestination_Localhostr" xml:space="preserve">
+    <value>Hostr</value>
+  </data>
+  <data name="FileDestination_MediaFire" xml:space="preserve">
+    <value>MediaFire</value>
+  </data>
+  <data name="FileDestination_OneDrive" xml:space="preserve">
+    <value>OneDrive</value>
+  </data>
+  <data name="FileDestination_OwnCloud" xml:space="preserve">
+    <value>ownCloud / Nextcloud</value>
+  </data>
+  <data name="FileDestination_Plik" xml:space="preserve">
+    <value>Plik</value>
+  </data>
+  <data name="FileDestination_Pomf" xml:space="preserve">
+    <value>Pomf</value>
+  </data>
+  <data name="FileDestination_Pushbullet" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="FileDestination_Puush" xml:space="preserve">
+    <value>puush</value>
+  </data>
+  <data name="FileDestination_Seafile" xml:space="preserve">
+    <value>Seafile</value>
+  </data>
+  <data name="FileDestination_SendSpace" xml:space="preserve">
+    <value>SendSpace</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>Carpeta compartida</value>
+  </data>
+  <data name="FileDestination_Streamable" xml:space="preserve">
+    <value>Streamable</value>
+  </data>
+  <data name="FileDestination_Sul" xml:space="preserve">
+    <value>s-ul</value>
+  </data>
+  <data name="FileDestination_Transfersh" xml:space="preserve">
+    <value>transfer.sh</value>
+  </data>
+  <data name="FileDestination_Uguu" xml:space="preserve">
+    <value>Uguu</value>
+  </data>
+  <data name="FileDestination_Vault_ooo" xml:space="preserve">
+    <value>Vault.ooo</value>
+  </data>
+  <data name="FileDestination_YouTube" xml:space="preserve">
+    <value>YouTube</value>
+  </data>
+  <data name="FileSonic_Get_upload_URL_failed" xml:space="preserve">
+    <value>No se pudo obtener la URL de carga.</value>
+  </data>
+  <data name="FTPProtocol_FTP" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="FTPProtocol_FTPS" xml:space="preserve">
+    <value>FTPS (FTP sobre SSL)</value>
+  </data>
+  <data name="FTPProtocol_SFTP" xml:space="preserve">
+    <value>SFTP (SSH FTP)</value>
+  </data>
+  <data name="GoogleDrive_My_drive" xml:space="preserve">
+    <value>Mi unidad</value>
+  </data>
+  <data name="ImageDestination_Chevereto" xml:space="preserve">
+    <value>Chevereto</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>Cargador de imágenes personalizados</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>Cargador de archivos</value>
+  </data>
+  <data name="ImageDestination_Flickr" xml:space="preserve">
+    <value>Flickr</value>
+  </data>
+  <data name="ImageDestination_ImageShack" xml:space="preserve">
+    <value>ImageShack</value>
+  </data>
+  <data name="ImageDestination_Imgur" xml:space="preserve">
+    <value>Imgur</value>
+  </data>
+  <data name="ImageDestination_Photobucket" xml:space="preserve">
+    <value>Photobucket</value>
+  </data>
+  <data name="ImageDestination_Vgyme" xml:space="preserve">
+    <value>vgy.me</value>
+  </data>
+  <data name="Imgur_Error_details" xml:space="preserve">
+    <value>Estado: {0}, Solicitud: {1}, Error: {2}</value>
+  </data>
+  <data name="Imgur_Upload_failed" xml:space="preserve">
+    <value>Error de carga de Imgur: ({0}) {1}</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>Cuadrado grande</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>Huge miniatura</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>Large miniatura</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>Medium miniatura</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>Cuadrado pequeño</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>Small miniatura</value>
+  </data>
+  <data name="KeyFileNameEditor_Browse_for_key_file" xml:space="preserve">
+    <value>Buscar un archivo de clave...</value>
+  </data>
+  <data name="Lambda_Upload_failed_check_API_key" xml:space="preserve">
+    <value>La carga falló por un motivo desconocido. Comprueba la clave de API.</value>
+  </data>
+  <data name="LinkFormatEnum_ForumImage" xml:space="preserve">
+    <value>Imagen completa para foros</value>
+  </data>
+  <data name="LinkFormatEnum_ForumLinkedImage" xml:space="preserve">
+    <value>Miniatura enlazada para foros</value>
+  </data>
+  <data name="LinkFormatEnum_HTMLImage" xml:space="preserve">
+    <value>Imagen completa como HTML</value>
+  </data>
+  <data name="LinkFormatEnum_HTMLLinkedImage" xml:space="preserve">
+    <value>Miniatura enlazada como HTML</value>
+  </data>
+  <data name="LinkFormatEnum_LocalFilePath" xml:space="preserve">
+    <value>Ruta de archivo local</value>
+  </data>
+  <data name="LinkFormatEnum_LocalFilePathUri" xml:space="preserve">
+    <value>Ruta de archivo local como URI</value>
+  </data>
+  <data name="LinkFormatEnum_ShortenedURL" xml:space="preserve">
+    <value>URL acortada</value>
+  </data>
+  <data name="LinkFormatEnum_ThumbnailURL" xml:space="preserve">
+    <value>Miniatura</value>
+  </data>
+  <data name="LinkFormatEnum_URL" xml:space="preserve">
+    <value>URL completa</value>
+  </data>
+  <data name="LinkFormatEnum_WikiImage" xml:space="preserve">
+    <value>Imagen completa para wiki</value>
+  </data>
+  <data name="LinkFormatEnum_WikiLinkedImage" xml:space="preserve">
+    <value>Miniatura enlazada para wiki</value>
+  </data>
+  <data name="MediaFire_Could_not_upload_file" xml:space="preserve">
+    <value>No se pudo cargar el archivo: {0}</value>
+  </data>
+  <data name="MediaFire_Invalid_response" xml:space="preserve">
+    <value>Respuesta no válida</value>
+  </data>
+  <data name="OAuthInfo_New_account" xml:space="preserve">
+    <value>Nueva cuenta</value>
+  </data>
+  <data name="OAuthListener_Authorization_completed_successfully" xml:space="preserve">
+    <value>Autorización completada correctamente.</value>
+  </data>
+  <data name="OAuthListener_Authorization_did_not_succeed" xml:space="preserve">
+    <value>La autorización no se completó.</value>
+  </data>
+  <data name="OAuthListener_Invalid_state_parameter" xml:space="preserve">
+    <value>Parámetro de estado no válido.</value>
+  </data>
+  <data name="OAuthListenerWindow_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="OAuthListenerWindow_ShareX_Authorization" xml:space="preserve">
+    <value>ShareX - Autorización</value>
+  </data>
+  <data name="OAuthListenerWindow_Waiting_for_authorization_in_your_browser_to_complete" xml:space="preserve">
+    <value>Esperando a que se complete la autorización en el navegador...</value>
+  </data>
+  <data name="OAuthManager_Consumer_credentials_are_empty" xml:space="preserve">
+    <value>La clave, el secreto o la clave privada del consumidor están vacíos.</value>
+  </data>
+  <data name="OAuthManager_Unsupported_signature_method" xml:space="preserve">
+    <value>Método de firma no compatible</value>
+  </data>
+  <data name="OneDrive_Root_folder" xml:space="preserve">
+    <value>Carpeta raíz</value>
+  </data>
+  <data name="OwnCloud_Auto_expire_time_is_invalid" xml:space="preserve">
+    <value>El tiempo de caducidad automática de ownCloud no es válido.</value>
+  </data>
+  <data name="OwnCloud_Credentials_are_empty" xml:space="preserve">
+    <value>El nombre de usuario o la contraseña de ownCloud están vacíos.</value>
+  </data>
+  <data name="OwnCloud_Error_details" xml:space="preserve">
+    <value>Estado: {0}\r\nCódigo de estado: {1}\r\nMensaje: {2}</value>
+  </data>
+  <data name="OwnCloud_Host_is_empty" xml:space="preserve">
+    <value>El servidor de ownCloud está vacío.</value>
+  </data>
+  <data name="ParserSelectWindow_ShareX_Select" xml:space="preserve">
+    <value>ShareX - Seleccionar</value>
+  </data>
+  <data name="Pastebin_Login_failed" xml:space="preserve">
+    <value>Error al iniciar sesión en Pastebin.</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>D1</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>H1</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>M1</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>M10</value>
+  </data>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>W1</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>W2</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>Privado</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>Público</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>No listado</value>
+  </data>
+  <data name="Plik_Host_is_empty" xml:space="preserve">
+    <value>El servidor de Plik está vacío.</value>
+  </data>
+  <data name="PrivateBin_Server_requires_authorization" xml:space="preserve">
+    <value>El servidor requiere autorización.</value>
+  </data>
+  <data name="PrivateBinExpiration_D1" xml:space="preserve">
+    <value>1 día</value>
+  </data>
+  <data name="PrivateBinExpiration_H1" xml:space="preserve">
+    <value>1 hora</value>
+  </data>
+  <data name="PrivateBinExpiration_M1" xml:space="preserve">
+    <value>1 mes</value>
+  </data>
+  <data name="PrivateBinExpiration_M10" xml:space="preserve">
+    <value>10 min</value>
+  </data>
+  <data name="PrivateBinExpiration_M5" xml:space="preserve">
+    <value>5 min</value>
+  </data>
+  <data name="PrivateBinExpiration_N" xml:space="preserve">
+    <value>Nunca</value>
+  </data>
+  <data name="PrivateBinExpiration_W1" xml:space="preserve">
+    <value>1 semana</value>
+  </data>
+  <data name="PrivateBinExpiration_Y1" xml:space="preserve">
+    <value>1 año</value>
+  </data>
+  <data name="PrivateBinFormat_Markdown" xml:space="preserve">
+    <value>Markdown</value>
+  </data>
+  <data name="PrivateBinFormat_PlainText" xml:space="preserve">
+    <value>texto sin formato</value>
+  </data>
+  <data name="PrivateBinFormat_SyntaxHighlighting" xml:space="preserve">
+    <value>resaltado de sintaxis</value>
+  </data>
+  <data name="Pushbullet_Device_key_is_missing" xml:space="preserve">
+    <value>Falta la clave del dispositivo.</value>
+  </data>
+  <data name="Pushbullet_No_device_selected" xml:space="preserve">
+    <value>No se ha seleccionado ningún dispositivo para el envío.</value>
+  </data>
+  <data name="Puush_Authentication_failure" xml:space="preserve">
+    <value>Error de autenticación.</value>
+  </data>
+  <data name="Puush_Checksum_error" xml:space="preserve">
+    <value>Error de suma de comprobación.</value>
+  </data>
+  <data name="Puush_Connection_error" xml:space="preserve">
+    <value>Error de conexión.</value>
+  </data>
+  <data name="Puush_Insufficient_account_storage" xml:space="preserve">
+    <value>La cuenta no tiene suficiente espacio de almacenamiento disponible.</value>
+  </data>
+  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="PuushLoginWindow_Email" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
+    <value>Introduce el correo electrónico y la contraseña.</value>
+  </data>
+  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
+    <value>¿Olvidaste la contraseña?</value>
+  </data>
+  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
+    <value>Iniciando sesión...</value>
+  </data>
+  <data name="PuushLoginWindow_Login" xml:space="preserve">
+    <value>Inicio de sesión</value>
+  </data>
+  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
+    <value>Error de inicio de sesión.</value>
+  </data>
+  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
+    <value>name@example.com</value>
+  </data>
+  <data name="PuushLoginWindow_Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
+    <value>ShareX - Inicio de sesión de puush</value>
+  </data>
+  <data name="ResponseWindow_Copy_deletion_URL" xml:space="preserve">
+    <value>Copiar URL de eliminación</value>
+  </data>
+  <data name="ResponseWindow_Copy_response" xml:space="preserve">
+    <value>Copiar respuesta</value>
+  </data>
+  <data name="ResponseWindow_Copy_response_info" xml:space="preserve">
+    <value>Copiar información de respuesta</value>
+  </data>
+  <data name="ResponseWindow_Copy_shortened_URL" xml:space="preserve">
+    <value>Copiar URL acortada</value>
+  </data>
+  <data name="ResponseWindow_Copy_thumbnail_URL" xml:space="preserve">
+    <value>Copiar URL de miniatura</value>
+  </data>
+  <data name="ResponseWindow_Copy_URL" xml:space="preserve">
+    <value>Copiar URL</value>
+  </data>
+  <data name="ResponseWindow_Deletion_URL" xml:space="preserve">
+    <value>URL de eliminación</value>
+  </data>
+  <data name="ResponseWindow_Headers" xml:space="preserve">
+    <value>Encabezados</value>
+  </data>
+  <data name="ResponseWindow_Inspect_the_URLs_and_response_returned_by_the_destination" xml:space="preserve">
+    <value>Revisa las URL y la respuesta devueltas por el destino.</value>
+  </data>
+  <data name="ResponseWindow_JSON_format" xml:space="preserve">
+    <value>Formatear JSON</value>
+  </data>
+  <data name="ResponseWindow_JSON_formatting_failed" xml:space="preserve">
+    <value>Error de formato.</value>
+  </data>
+  <data name="ResponseWindow_No_response_information_is_available" xml:space="preserve">
+    <value>No hay información de respuesta disponible.</value>
+  </data>
+  <data name="ResponseWindow_No_result_details_are_available" xml:space="preserve">
+    <value>No hay detalles del resultado disponibles.</value>
+  </data>
+  <data name="ResponseWindow_Open_response_URL" xml:space="preserve">
+    <value>Abrir URL de respuesta</value>
+  </data>
+  <data name="ResponseWindow_Open_URL" xml:space="preserve">
+    <value>Abrir URL</value>
+  </data>
+  <data name="ResponseWindow_Response_info" xml:space="preserve">
+    <value>Información de respuesta</value>
+  </data>
+  <data name="ResponseWindow_Response_text" xml:space="preserve">
+    <value>Texto de respuesta</value>
+  </data>
+  <data name="ResponseWindow_Response_URL" xml:space="preserve">
+    <value>URL de respuesta</value>
+  </data>
+  <data name="ResponseWindow_Result" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="ResponseWindow_ShareX_Response" xml:space="preserve">
+    <value>ShareX - Respuesta</value>
+  </data>
+  <data name="ResponseWindow_Shortened_URL" xml:space="preserve">
+    <value>URL acortada</value>
+  </data>
+  <data name="ResponseWindow_Status_code" xml:space="preserve">
+    <value>Estado code</value>
+  </data>
+  <data name="ResponseWindow_The_upload_completed_with_an_error" xml:space="preserve">
+    <value>La carga se completó con un error.</value>
+  </data>
+  <data name="ResponseWindow_Thumbnail_URL" xml:space="preserve">
+    <value>Miniatura URL</value>
+  </data>
+  <data name="ResponseWindow_Upload_response" xml:space="preserve">
+    <value>Respuesta de carga</value>
+  </data>
+  <data name="ResponseWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ResponseWindow_XML_format" xml:space="preserve">
+    <value>Formatear XML</value>
+  </data>
+  <data name="ResponseWindow_XML_formatting_failed" xml:space="preserve">
+    <value>Error de formato.</value>
+  </data>
+  <data name="Seafile_API_URL_is_empty" xml:space="preserve">
+    <value>La URL de la API de Seafile está vacía.</value>
+  </data>
+  <data name="Seafile_Authentication_token_is_empty" xml:space="preserve">
+    <value>El token de autenticación de Seafile está vacío.</value>
+  </data>
+  <data name="SendSpace_Error_details" xml:space="preserve">
+    <value>Código: {0}, Método: {1}\r\nTexto: {2}</value>
+  </data>
+  <data name="SendSpace_Session_key_is_missing" xml:space="preserve">
+    <value>Falta la clave de sesión.</value>
+  </data>
+  <data name="SendSpace_Token_is_missing" xml:space="preserve">
+    <value>Falta el token.</value>
+  </data>
+  <data name="SendSpace_Upload_information_is_missing" xml:space="preserve">
+    <value>Falta información de carga.</value>
+  </data>
+  <data name="SFTP_Key_file_not_found" xml:space="preserve">
+    <value>Key archivo does not exist.</value>
+  </data>
+  <data name="Streamable_Could_not_create_video" xml:space="preserve">
+    <value>No se pudo crear el vídeo.</value>
+  </data>
+  <data name="Sul_Generic_error_contact_support" xml:space="preserve">
+    <value>Se produjo un error genérico. Contacta con support@s-ul.eu.</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>Cargador de texto personalizado</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>Cargador de archivos</value>
+  </data>
+  <data name="TextDestination_Gist" xml:space="preserve">
+    <value>GitHub Gist</value>
+  </data>
+  <data name="TextDestination_Hastebin" xml:space="preserve">
+    <value>Hastebin</value>
+  </data>
+  <data name="TextDestination_OneTimeSecret" xml:space="preserve">
+    <value>OneTimeSecret</value>
+  </data>
+  <data name="TextDestination_Paste_ee" xml:space="preserve">
+    <value>Paste.ee</value>
+  </data>
+  <data name="TextDestination_Paste2" xml:space="preserve">
+    <value>Paste2</value>
+  </data>
+  <data name="TextDestination_Pastebin" xml:space="preserve">
+    <value>Pastebin</value>
+  </data>
+  <data name="TextDestination_Pastie" xml:space="preserve">
+    <value>Pastie</value>
+  </data>
+  <data name="TextDestination_PrivateBin" xml:space="preserve">
+    <value>PrivateBin</value>
+  </data>
+  <data name="TextDestination_Slexy" xml:space="preserve">
+    <value>Slexy</value>
+  </data>
+  <data name="TextDestination_Upaste" xml:space="preserve">
+    <value>uPaste</value>
+  </data>
+  <data name="TextUploadWindow_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="TextUploadWindow_Character_count_plural" xml:space="preserve">
+    <value>{0:N0} caracteres</value>
+  </data>
+  <data name="TextUploadWindow_Character_count_singular" xml:space="preserve">
+    <value>{0:N0} carácter</value>
+  </data>
+  <data name="TextUploadWindow_Enter_or_paste_the_text_you_want_to_upload" xml:space="preserve">
+    <value>Introduce o pega el texto que quieres cargar.</value>
+  </data>
+  <data name="TextUploadWindow_ShareX_Text_upload" xml:space="preserve">
+    <value>ShareX - Carga de texto</value>
+  </data>
+  <data name="TextUploadWindow_Text_upload" xml:space="preserve">
+    <value>Carga de texto</value>
+  </data>
+  <data name="TextUploadWindow_Upload" xml:space="preserve">
+    <value>Subir</value>
+  </data>
+  <data name="Uploader_Authorization_information_missing" xml:space="preserve">
+    <value>Falta información de autorización. Abre primero la URL de autorización.</value>
+  </data>
+  <data name="Uploader_Error_message" xml:space="preserve">
+    <value>Mensaje de error:</value>
+  </data>
+  <data name="Uploader_Request_URL" xml:space="preserve">
+    <value>URL de solicitud:</value>
+  </data>
+  <data name="Uploader_Stack_trace" xml:space="preserve">
+    <value>Seguimiento de pila:</value>
+  </data>
+  <data name="UploaderErrors_Login_is_required" xml:space="preserve">
+    <value>Es necesario iniciar sesión.</value>
+  </data>
+  <data name="UploaderErrors_Refresh_access_token_failed" xml:space="preserve">
+    <value>No se pudo actualizar el token de acceso.</value>
+  </data>
+  <data name="UploaderErrors_Service_login_is_required" xml:space="preserve">
+    <value>Es necesario iniciar sesión en {0}.</value>
+  </data>
+  <data name="UploaderErrors_Upload_failed" xml:space="preserve">
+    <value>Error de carga.</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Búsqueda visual de Bing</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>Personalizado URL sharing servicio</value>
+  </data>
+  <data name="URLSharingServices_Delicious" xml:space="preserve">
+    <value>Delicious</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="URLSharingServices_Facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Búsqueda de imágenes de Google</value>
+  </data>
+  <data name="URLSharingServices_LinkedIn" xml:space="preserve">
+    <value>LinkedIn</value>
+  </data>
+  <data name="URLSharingServices_Pinterest" xml:space="preserve">
+    <value>Pinterest</value>
+  </data>
+  <data name="URLSharingServices_Pushbullet" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="URLSharingServices_Reddit" xml:space="preserve">
+    <value>Reddit</value>
+  </data>
+  <data name="URLSharingServices_StumbleUpon" xml:space="preserve">
+    <value>StumbleUpon</value>
+  </data>
+  <data name="URLSharingServices_Tumblr" xml:space="preserve">
+    <value>Tumblr</value>
+  </data>
+  <data name="URLSharingServices_VK" xml:space="preserve">
+    <value>VK</value>
+  </data>
+  <data name="UrlShortenerType_BITLY" xml:space="preserve">
+    <value>bit.ly</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>Acortador de URL personalizado</value>
+  </data>
+  <data name="UrlShortenerType_FirebaseDynamicLinks" xml:space="preserve">
+    <value>Enlaces dinámicos de Firebase</value>
+  </data>
+  <data name="UrlShortenerType_ISGD" xml:space="preserve">
+    <value>is.gd</value>
+  </data>
+  <data name="UrlShortenerType_Kutt" xml:space="preserve">
+    <value>Kutt</value>
+  </data>
+  <data name="UrlShortenerType_Polr" xml:space="preserve">
+    <value>Polr</value>
+  </data>
+  <data name="UrlShortenerType_QRnet" xml:space="preserve">
+    <value>qr.net</value>
+  </data>
+  <data name="UrlShortenerType_TINYURL" xml:space="preserve">
+    <value>tinyurl.com</value>
+  </data>
+  <data name="UrlShortenerType_TURL" xml:space="preserve">
+    <value>turl.ca</value>
+  </data>
+  <data name="UrlShortenerType_TwoGP" xml:space="preserve">
+    <value>2.gp</value>
+  </data>
+  <data name="UrlShortenerType_VGD" xml:space="preserve">
+    <value>v.gd</value>
+  </data>
+  <data name="UrlShortenerType_VURL" xml:space="preserve">
+    <value>vurl.com</value>
+  </data>
+  <data name="UrlShortenerType_YOURLS" xml:space="preserve">
+    <value>yourls.org</value>
+  </data>
+  <data name="UrlShortenerType_ZeroWidthShortener" xml:space="preserve">
+    <value>Acortador de ancho cero</value>
+  </data>
+  <data name="Vault_No_valid_metadata_returned" xml:space="preserve">
+    <value>No se devolvieron metadatos válidos.</value>
+  </data>
+  <data name="Yourls_Credentials_missing" xml:space="preserve">
+    <value>Falta la firma o el nombre de usuario/contraseña.</value>
+  </data>
+  <data name="YouTube_Upload_failed" xml:space="preserve">
+    <value>Error de carga: {0}</value>
+  </data>
+  <data name="YouTube_Upload_rejected" xml:space="preserve">
+    <value>Carga rechazada: {0}</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Description" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_OK" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_ShareX_YouTube_video_options" xml:space="preserve">
+    <value>ShareX - Opciones de vídeo de YouTube</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Title" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Video_title" xml:space="preserve">
+    <value>Título del vídeo</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Visibility" xml:space="preserve">
+    <value>Visibilidad</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>Privado</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>Público</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>No listado</value>
+  </data>
+</root>

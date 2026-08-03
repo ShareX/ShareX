@@ -83,9 +83,9 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (string.IsNullOrEmpty(AzureStorageAccountName)) Errors.Add("'Account Name' must not be empty");
-            if (string.IsNullOrEmpty(AzureStorageAccountAccessKey)) Errors.Add("'Access key' must not be empty");
-            if (string.IsNullOrEmpty(AzureStorageContainer)) Errors.Add("'Container' must not be empty");
+            if (string.IsNullOrEmpty(AzureStorageAccountName)) Errors.Add(Localization.Strings.AzureStorage_Account_name_must_not_be_empty);
+            if (string.IsNullOrEmpty(AzureStorageAccountAccessKey)) Errors.Add(Localization.Strings.AzureStorage_Access_key_must_not_be_empty);
+            if (string.IsNullOrEmpty(AzureStorageContainer)) Errors.Add(Localization.Strings.AzureStorage_Container_must_not_be_empty);
 
             if (IsError)
             {
@@ -131,7 +131,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 };
             }
 
-            Errors.Add("Upload failed.");
+            Errors.Add(Localization.Strings.UploaderErrors_Upload_failed);
             return null;
         }
 

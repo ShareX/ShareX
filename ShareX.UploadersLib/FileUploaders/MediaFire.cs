@@ -107,7 +107,7 @@ namespace ShareX.UploadersLib.FileUploaders
             GetSessionTokenResponse resp = DeserializeResponse<GetSessionTokenResponse>(respStr);
             EnsureSuccess(resp);
             if (resp.session_token == null || resp.time == null || resp.secret_key == null)
-                throw new IOException("Invalid response");
+                throw new IOException(Localization.Strings.MediaFire_Invalid_response);
             sessionToken = resp.session_token;
             signatureTime = resp.time;
             signatureKey = (int)resp.secret_key;
@@ -125,7 +125,7 @@ namespace ShareX.UploadersLib.FileUploaders
             if (!res.IsSuccess) throw new IOException(res.ErrorsToString());
             SimpleUploadResponse resp = DeserializeResponse<SimpleUploadResponse>(res.Response);
             EnsureSuccess(resp);
-            if (resp.doupload.result != 0 || resp.doupload.key == null) throw new IOException("Invalid response");
+            if (resp.doupload.result != 0 || resp.doupload.key == null) throw new IOException(Localization.Strings.MediaFire_Invalid_response);
             return resp.doupload.key;
         }
 
@@ -140,14 +140,15 @@ namespace ShareX.UploadersLib.FileUploaders
             string respStr = SendRequestMultiPart(apiUrl + "upload/poll_upload.php", args);
             PollUploadResponse resp = DeserializeResponse<PollUploadResponse>(respStr);
             EnsureSuccess(resp);
-            if (resp.doupload.result == null || resp.doupload.status == null) throw new IOException("Invalid response");
+            if (resp.doupload.result == null || resp.doupload.status == null) throw new IOException(Localization.Strings.MediaFire_Invalid_response);
             if (resp.doupload.result != 0 || resp.doupload.fileerror != null)
             {
-                throw new IOException(string.Format("Couldn't upload the file: {0}", resp.doupload.description ?? "Unknown error"));
+                throw new IOException(string.Format(Localization.Strings.MediaFire_Could_not_upload_file,
+                    resp.doupload.description ?? Localization.Strings.Common_Unknown_error));
             }
             if (resp.doupload.status == 99)
             {
-                if (resp.doupload.quickkey == null) throw new IOException("Invalid response");
+                if (resp.doupload.quickkey == null) throw new IOException(Localization.Strings.MediaFire_Invalid_response);
 
                 string url = URLHelpers.CombineURL("http://www.mediafire.com/view", resp.doupload.quickkey);
                 if (UseLongLink) url = URLHelpers.CombineURL(url, URLHelpers.URLEncode(resp.doupload.filename));
@@ -159,7 +160,8 @@ namespace ShareX.UploadersLib.FileUploaders
         private void EnsureSuccess(MFResponse resp)
         {
             if (resp.result != "Success")
-                throw new IOException(string.Format("Couldn't upload the file: {0}", resp.message ?? "Unknown error"));
+                throw new IOException(string.Format(Localization.Strings.MediaFire_Could_not_upload_file,
+                    resp.message ?? Localization.Strings.Common_Unknown_error));
             if (resp.new_key == "yes") NextSignatureKey();
         }
 

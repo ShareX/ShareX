@@ -74,7 +74,7 @@ namespace ShareX.UploadersLib
 
         public OAuthInfo()
         {
-            Description = Resources.OAuthInfo_OAuthInfo_New_account;
+            Description = Localization.Strings.OAuthInfo_New_account;
             OAuthVersion = "1.0";
         }
 

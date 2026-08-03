@@ -67,7 +67,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (string.IsNullOrEmpty(Settings.URL))
             {
-                throw new Exception("Plik Host is empty.");
+                throw new Exception(Localization.Strings.Plik_Host_is_empty);
             }
             NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["X-PlikToken"] = Settings.APIKey;

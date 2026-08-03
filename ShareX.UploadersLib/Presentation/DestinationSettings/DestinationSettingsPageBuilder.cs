@@ -113,19 +113,22 @@ internal sealed class DestinationSettingsPageBuilder
                 Control[] nested = GetEditableMembers(value.GetType()).Select(x => EditorRow(value, x, FormatLabel(x.Name))).ToArray();
                 if (nested.Length > 0)
                 {
-                    cards.Add(Card(label is "Settings" or "Uploader" ? "Settings" : label, nested));
+                    cards.Add(Card(label is "Settings" or "Uploader"
+                        ? Localization.Strings.DestinationSettings_Settings
+                        : label, nested));
                 }
             }
         }
 
         if (simpleEditors.Count > 0)
         {
-            cards.Add(Card("Settings", simpleEditors.ToArray()));
+            cards.Add(Card(Localization.Strings.DestinationSettings_Settings, simpleEditors.ToArray()));
         }
 
         if (cards.Count == 0)
         {
-            cards.Add(Card("Settings", Hint("This destination does not require additional configuration.")));
+            cards.Add(Card(Localization.Strings.DestinationSettings_Settings,
+                Hint(Localization.Strings.DestinationSettings_No_additional_configuration_required)));
         }
 
         return Page(definition.Id, definition.Title, icon, cards.ToArray());
@@ -153,17 +156,21 @@ internal sealed class DestinationSettingsPageBuilder
             DestinationChoice? selected = albums.FirstOrDefault(x => x.Value is ImgurAlbumData candidate && candidate.id == selectedId);
             album.SelectedItem = selected;
             _config.ImgurSelectedAlbum = selected?.Value as ImgurAlbumData;
-            status.Text = albums.Count == 0 ? "No albums loaded" : $"{albums.Count} album(s) loaded";
+            status.Text = albums.Count == 0
+                ? Localization.Strings.DestinationSettings_No_albums_loaded
+                : string.Format(albums.Count == 1
+                    ? Localization.Strings.DestinationSettings_Album_count_loaded_singular
+                    : Localization.Strings.DestinationSettings_Album_count_loaded_plural, albums.Count);
         }
 
         album.SelectionChanged += (_, _) => _config.ImgurSelectedAlbum = (album.SelectedItem as DestinationChoice)?.Value as ImgurAlbumData;
-        Button refresh = Button("Refresh albums", () =>
+        Button refresh = Button(Localization.Strings.DestinationSettings_Refresh_albums, () =>
         {
             try
             {
                 if (!OAuth2Info.CheckOAuth(_config.ImgurOAuth2Info))
                 {
-                    status.Text = "Connect an Imgur account first";
+                    status.Text = Localization.Strings.DestinationSettings_Connect_Imgur_account_first;
                     return;
                 }
 
@@ -179,7 +186,9 @@ internal sealed class DestinationSettingsPageBuilder
 
         LoadAlbums(_config.ImgurAlbumList);
         album.SelectedItem = GetSelectedChoice();
-        return Card("Albums", Row("Upload to album:", album), Row("Status:", status), ButtonRow(refresh));
+        return Card(Localization.Strings.DestinationSettings_Albums,
+            Row(Localization.Strings.DestinationSettings_Upload_to_album, album),
+            Row(Localization.Strings.DestinationSettings_Status, status), ButtonRow(refresh));
     }
 
     private Control BuildPhotobucketAlbumsCard()
@@ -198,14 +207,18 @@ internal sealed class DestinationSettingsPageBuilder
             albums.Clear();
             if (_config.PhotobucketAccountInfo == null)
             {
-                status.Text = "Connect a Photobucket account first";
+                status.Text = Localization.Strings.DestinationSettings_Connect_Photobucket_account_first;
                 return;
             }
 
             ((DestinationValue<string>)albumPath.DataContext!).Value = _config.PhotobucketAccountInfo.AlbumID ?? string.Empty;
             foreach (string item in _config.PhotobucketAccountInfo.AlbumList) albums.Add(item);
             list.SelectedIndex = _config.PhotobucketAccountInfo.ActiveAlbumID.BetweenOrDefault(0, Math.Max(0, albums.Count - 1));
-            status.Text = albums.Count == 0 ? "No albums saved" : $"{albums.Count} album(s)";
+            status.Text = albums.Count == 0
+                ? Localization.Strings.DestinationSettings_No_albums_saved
+                : string.Format(albums.Count == 1
+                    ? Localization.Strings.DestinationSettings_Album_count_singular
+                    : Localization.Strings.DestinationSettings_Album_count_plural, albums.Count);
         }
 
         list.SelectionChanged += (_, _) =>
@@ -215,7 +228,7 @@ internal sealed class DestinationSettingsPageBuilder
                 _config.PhotobucketAccountInfo.ActiveAlbumID = list.SelectedIndex;
             }
         };
-        Button add = Button("Add path", () =>
+        Button add = Button(Localization.Strings.DestinationSettings_Add_path, () =>
         {
             PhotobucketAccountInfo? account = _config.PhotobucketAccountInfo;
             string path = albumPath.Text ?? string.Empty;
@@ -224,7 +237,7 @@ internal sealed class DestinationSettingsPageBuilder
             Reload();
             list.SelectedIndex = albums.Count - 1;
         });
-        Button remove = Button("Remove", () =>
+        Button remove = Button(Localization.Strings.DestinationSettings_Remove, () =>
         {
             PhotobucketAccountInfo? account = _config.PhotobucketAccountInfo;
             if (account == null || account.AlbumList.Count <= 1 || list.SelectedIndex < 0) return;
@@ -232,9 +245,11 @@ internal sealed class DestinationSettingsPageBuilder
             account.ActiveAlbumID = Math.Min(account.ActiveAlbumID, account.AlbumList.Count - 1);
             Reload();
         });
-        Button refresh = Button("Refresh", Reload);
+        Button refresh = Button(Localization.Strings.DestinationSettings_Refresh, Reload);
         Reload();
-        return Card("Albums", Row("Album path:", albumPath), list, ButtonRow(add, remove, refresh), Row("Status:", status));
+        return Card(Localization.Strings.DestinationSettings_Albums,
+            Row(Localization.Strings.DestinationSettings_Album_path, albumPath), list,
+            ButtonRow(add, remove, refresh), Row(Localization.Strings.DestinationSettings_Status, status));
     }
 
     private Control BuildOneDriveFolderCard() => BuildRemoteFolderCard(
@@ -261,8 +276,8 @@ internal sealed class DestinationSettingsPageBuilder
         ObservableCollection<DestinationChoice> folders = new();
         ListBox list = new() { ItemsSource = folders, MinHeight = 130, MaxHeight = 220 };
         list.Classes.Add("settings-list");
-        TextBlock selectedStatus = Hint(getName(getSelected()) ?? "Root folder");
-        TextBlock browseStatus = Hint("Select Refresh to load folders");
+        TextBlock selectedStatus = Hint(getName(getSelected()) ?? Localization.Strings.DestinationSettings_Root_folder);
+        TextBlock browseStatus = Hint(Localization.Strings.DestinationSettings_Select_Refresh_to_load_folders);
         Stack<T> history = new();
         T currentFolder = root;
 
@@ -273,10 +288,14 @@ internal sealed class DestinationSettingsPageBuilder
                 folders.Clear();
                 foreach (T child in getChildren(folder) ?? [])
                 {
-                    folders.Add(new DestinationChoice(child, getName(child) ?? "Unnamed folder"));
+                    folders.Add(new DestinationChoice(child, getName(child) ?? Localization.Strings.DestinationSettings_Unnamed_folder));
                 }
 
-                browseStatus.Text = folders.Count == 0 ? "No child folders" : $"{folders.Count} folder(s)";
+                browseStatus.Text = folders.Count == 0
+                    ? Localization.Strings.DestinationSettings_No_child_folders
+                    : string.Format(folders.Count == 1
+                        ? Localization.Strings.DestinationSettings_Folder_count_singular
+                        : Localization.Strings.DestinationSettings_Folder_count_plural, folders.Count);
             }
             catch (Exception exception)
             {
@@ -290,12 +309,12 @@ internal sealed class DestinationSettingsPageBuilder
             if ((list.SelectedItem as DestinationChoice)?.Value is T selected)
             {
                 setSelected(selected);
-                selectedStatus.Text = getName(selected) ?? "Unnamed folder";
+                selectedStatus.Text = getName(selected) ?? Localization.Strings.DestinationSettings_Unnamed_folder;
             }
         };
 
-        Button refresh = Button("Refresh", () => Load(currentFolder));
-        Button open = Button("Open folder", () =>
+        Button refresh = Button(Localization.Strings.DestinationSettings_Refresh, () => Load(currentFolder));
+        Button open = Button(Localization.Strings.DestinationSettings_Open_folder, () =>
         {
             if ((list.SelectedItem as DestinationChoice)?.Value is T selected)
             {
@@ -304,7 +323,7 @@ internal sealed class DestinationSettingsPageBuilder
                 Load(currentFolder);
             }
         });
-        Button back = Button("Back", () =>
+        Button back = Button(Localization.Strings.DestinationSettings_Back, () =>
         {
             if (history.Count > 0)
             {
@@ -312,17 +331,19 @@ internal sealed class DestinationSettingsPageBuilder
                 Load(currentFolder);
             }
         });
-        Button rootButton = Button("Root", () =>
+        Button rootButton = Button(Localization.Strings.DestinationSettings_Root, () =>
         {
             history.Clear();
             currentFolder = root;
             setSelected(root);
-            selectedStatus.Text = getName(root) ?? "Root folder";
+            selectedStatus.Text = getName(root) ?? Localization.Strings.DestinationSettings_Root_folder;
             Load(root);
         });
 
-        return Card("Upload folder", Row("Selected folder:", selectedStatus), list,
-            ButtonRow(refresh, open, back, rootButton), Row("Browser status:", browseStatus));
+        return Card(Localization.Strings.DestinationSettings_Upload_folder,
+            Row(Localization.Strings.DestinationSettings_Selected_folder, selectedStatus), list,
+            ButtonRow(refresh, open, back, rootButton),
+            Row(Localization.Strings.DestinationSettings_Browser_status, browseStatus));
     }
 
     private Control EditorRow(object owner, DestinationMember member, string label)
@@ -385,7 +406,11 @@ internal sealed class DestinationSettingsPageBuilder
         object? nested = member.GetValue(owner);
         if (nested != null)
         {
-            Expander expander = new() { Header = "Edit " + label, IsExpanded = false };
+            Expander expander = new()
+            {
+                Header = string.Format(Localization.Strings.DestinationSettings_Edit_item, label),
+                IsExpanded = false
+            };
             StackPanel panel = new() { Spacing = 4 };
             foreach (DestinationMember child in GetEditableMembers(nested.GetType()))
             {
@@ -395,7 +420,7 @@ internal sealed class DestinationSettingsPageBuilder
             return expander;
         }
 
-        return Hint("Not configured");
+        return Hint(Localization.Strings.DestinationSettings_Not_configured);
     }
 
     private bool TryCreateSelectionEditor(object owner, DestinationMember member, out ComboBox editor)
@@ -413,7 +438,8 @@ internal sealed class DestinationSettingsPageBuilder
         else if (ReferenceEquals(owner, _config.PushbulletSettings) && member.Name == nameof(_config.PushbulletSettings.SelectedDevice))
         {
             items = new ArrayList(_config.PushbulletSettings.DeviceList
-                .Select(device => new DestinationChoice(device, device.Name ?? "Unnamed device"))
+                .Select(device => new DestinationChoice(device,
+                    device.Name ?? Localization.Strings.DestinationSettings_Unnamed_device))
                 .ToArray());
         }
 
@@ -473,7 +499,7 @@ internal sealed class DestinationSettingsPageBuilder
 
         listBox.SelectionChanged += (_, _) => ShowSelected();
 
-        Button add = Button("Add", () =>
+        Button add = Button(Localization.Strings.DestinationSettings_Add, () =>
         {
             object? item = Activator.CreateInstance(itemType);
             if (item == null) return;
@@ -481,7 +507,7 @@ internal sealed class DestinationSettingsPageBuilder
             items.Add(item);
             listBox.SelectedItem = item;
         });
-        Button duplicate = Button("Duplicate", () =>
+        Button duplicate = Button(Localization.Strings.DestinationSettings_Duplicate, () =>
         {
             if (listBox.SelectedItem is not { } selected) return;
             object? copy = CloneObject(selected);
@@ -490,7 +516,7 @@ internal sealed class DestinationSettingsPageBuilder
             items.Add(copy);
             listBox.SelectedItem = copy;
         });
-        Button remove = Button("Remove", () =>
+        Button remove = Button(Localization.Strings.DestinationSettings_Remove, () =>
         {
             if (listBox.SelectedItem is not { } selected) return;
             list.Remove(selected);
@@ -603,11 +629,11 @@ internal sealed class DestinationSettingsPageBuilder
 
     private static string GetTopLevelLabel(string name, IEnumerable<string> prefixes)
     {
-        if (name == nameof(UploadersConfig.LocalhostAccountList)) return "Accounts";
+        if (name == nameof(UploadersConfig.LocalhostAccountList)) return Localization.Strings.DestinationSettings_Accounts;
 
         string? prefix = prefixes.OrderByDescending(x => x.Length).FirstOrDefault(x => name.StartsWith(x, StringComparison.OrdinalIgnoreCase));
         string remainder = prefix == null ? name : name[prefix.Length..];
-        return string.IsNullOrEmpty(remainder) ? "Settings" : FormatLabel(remainder);
+        return string.IsNullOrEmpty(remainder) ? Localization.Strings.DestinationSettings_Settings : FormatLabel(remainder);
     }
 
     private static string FormatLabel(string value)
@@ -615,7 +641,9 @@ internal sealed class DestinationSettingsPageBuilder
         value = value.Replace('_', ' ');
         string result = Regex.Replace(value, "([A-Z]+)([A-Z][a-z])", "$1 $2");
         result = Regex.Replace(result, "([a-z0-9])([A-Z])", "$1 $2");
-        return result.Trim();
+        result = result.Trim();
+        string resourceName = "DestinationSettings_Field_" + Regex.Replace(result, "[^A-Za-z0-9]+", "_");
+        return Localization.Strings.ResourceManager.GetString(resourceName) ?? result;
     }
 
     private ScrollViewer Page(string id, string title, string icon, params Control[] controls)
@@ -692,7 +720,8 @@ internal sealed class DestinationSettingsPageBuilder
     private static ComboBox EnumCombo(Type enumType, object? current, Action<object> setter)
     {
         DestinationChoice[] choices = Enum.GetValues(enumType).Cast<Enum>()
-            .Select(value => new DestinationChoice(value, value.GetLocalizedDescription())).ToArray();
+            .Select(value => new DestinationChoice(value,
+                value.GetLocalizedDescription(Localization.Strings.ResourceManager))).ToArray();
         DestinationChoice selected = choices.FirstOrDefault(x => Equals(x.Value, current)) ?? choices[0];
         DestinationValue<DestinationChoice> binding = new(selected, value => setter(value.Value));
         ComboBox combo = new() { ItemsSource = choices, DataContext = binding }; combo.Classes.Add("form-control");

@@ -150,10 +150,10 @@ namespace ShareX.UploadersLib.FileUploaders
                     switch (responseVideo.status.uploadStatus)
                     {
                         case YouTubeVideoStatus.UploadFailed:
-                            Errors.Add("Upload failed: " + responseVideo.status.failureReason);
+                            Errors.Add(string.Format(Localization.Strings.YouTube_Upload_failed, responseVideo.status.failureReason));
                             break;
                         case YouTubeVideoStatus.UploadRejected:
-                            Errors.Add("Upload rejected: " + responseVideo.status.rejectionReason);
+                            Errors.Add(string.Format(Localization.Strings.YouTube_Upload_rejected, responseVideo.status.rejectionReason));
                             break;
                     }
                 }

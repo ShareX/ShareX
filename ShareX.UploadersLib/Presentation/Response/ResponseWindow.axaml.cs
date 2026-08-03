@@ -19,7 +19,6 @@ using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using System;
 using System.Text;
-using LocalizedResources = ShareX.UploadersLib.Properties.Resources;
 
 namespace ShareX.UploadersLib;
 
@@ -99,7 +98,7 @@ public partial class ResponseWindow : Window
         ResponseInfo? responseInfo = result.ResponseInfo;
         ResponseInfoTextBox.Text = responseInfo != null
             ? BuildResponseInfoText(responseInfo)
-            : "No response information is available.";
+            : Localization.Strings.ResponseWindow_No_response_information_is_available;
         ResponseInfoTextBox.CaretIndex = 0;
 
         ResponseTextBox.Text = responseInfo?.ResponseText ?? result.Response ?? string.Empty;
@@ -118,8 +117,8 @@ public partial class ResponseWindow : Window
         OpenResponseUrlButton.IsVisible = !string.IsNullOrEmpty(responseInfo?.ResponseURL);
 
         ResponseSummaryText.Text = result.IsError
-            ? "The upload completed with an error."
-            : "Inspect the URLs and response returned by the destination.";
+            ? Localization.Strings.ResponseWindow_The_upload_completed_with_an_error
+            : Localization.Strings.ResponseWindow_Inspect_the_URLs_and_response_returned_by_the_destination;
 
         FormatStatusText.IsVisible = false;
     }
@@ -127,33 +126,35 @@ public partial class ResponseWindow : Window
     private static string BuildResultText(UploadResult result)
     {
         StringBuilder text = new();
-        AppendInfo(text, LocalizedResources.ShortenedURL, result.ShortenedURL);
-        AppendInfo(text, LocalizedResources.URL, result.URL);
-        AppendInfo(text, LocalizedResources.ThumbnailURL, result.ThumbnailURL);
-        AppendInfo(text, LocalizedResources.DeletionURL, result.DeletionURL);
+        AppendInfo(text, Localization.Strings.ResponseWindow_Shortened_URL, result.ShortenedURL);
+        AppendInfo(text, Localization.Strings.ResponseWindow_URL, result.URL);
+        AppendInfo(text, Localization.Strings.ResponseWindow_Thumbnail_URL, result.ThumbnailURL);
+        AppendInfo(text, Localization.Strings.ResponseWindow_Deletion_URL, result.DeletionURL);
 
         if (result.IsError)
         {
-            AppendInfo(text, LocalizedResources.Error, result.ErrorsToString());
+            AppendInfo(text, Localization.Strings.Common_Error, result.ErrorsToString());
         }
 
-        return text.Length > 0 ? text.ToString() : "No result details are available.";
+        return text.Length > 0
+            ? text.ToString()
+            : Localization.Strings.ResponseWindow_No_result_details_are_available;
     }
 
     private static string BuildResponseInfoText(ResponseInfo responseInfo)
     {
         StringBuilder text = new();
-        AppendInfo(text, LocalizedResources.StatusCode,
+        AppendInfo(text, Localization.Strings.ResponseWindow_Status_code,
             $"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
-        AppendInfo(text, LocalizedResources.ResponseURL, responseInfo.ResponseURL);
+        AppendInfo(text, Localization.Strings.ResponseWindow_Response_URL, responseInfo.ResponseURL);
 
         if (responseInfo.Headers is { Count: > 0 })
         {
-            AppendInfo(text, LocalizedResources.Headers,
+            AppendInfo(text, Localization.Strings.ResponseWindow_Headers,
                 responseInfo.Headers.ToString().TrimEnd('\r', '\n'));
         }
 
-        AppendInfo(text, LocalizedResources.ResponseText, responseInfo.ResponseText);
+        AppendInfo(text, Localization.Strings.ResponseWindow_Response_text, responseInfo.ResponseText);
         return text.ToString();
     }
 
@@ -226,12 +227,12 @@ public partial class ResponseWindow : Window
     {
         FormatResponse(
             response => Helpers.JSONFormat(response, Formatting.Indented),
-            LocalizedResources.FormattingFailed_JSON);
+            Localization.Strings.ResponseWindow_JSON_formatting_failed);
     }
 
     private void OnXmlFormatClick(object? sender, RoutedEventArgs e)
     {
-        FormatResponse(Helpers.XMLFormat, LocalizedResources.FormattingFailed_XML);
+        FormatResponse(Helpers.XMLFormat, Localization.Strings.ResponseWindow_XML_formatting_failed);
     }
 
     private void FormatResponse(Func<string, string> formatter, string failureMessage)

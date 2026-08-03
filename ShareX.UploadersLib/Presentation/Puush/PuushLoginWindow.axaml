@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.UploadersLib.Localization"
         x:Class="ShareX.UploadersLib.PuushLoginWindow"
-        Title="ShareX - puush login"
+        Title="{x:Static localization:Strings.PuushLoginWindow_ShareX_puush_login}"
         Width="440"
         MinWidth="400"
         SizeToContent="Height"
@@ -43,19 +44,19 @@
             <Border x:Name="CredentialsCard" Classes="section-card">
                 <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="11">
                     <StackPanel>
-                        <TextBlock Classes="field-label" Text="Email"/>
+                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.PuushLoginWindow_Email}"/>
                         <TextBox x:Name="EmailTextBox"
-                                 PlaceholderText="name@example.com"/>
+                                 PlaceholderText="{x:Static localization:Strings.PuushLoginWindow_name_example_com}"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="1">
-                        <TextBlock Classes="field-label" Text="Password"/>
+                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.PuushLoginWindow_Password}"/>
                         <TextBox x:Name="PasswordTextBox"
                                  PasswordChar="●"/>
                     </StackPanel>
 
                     <HyperlinkButton Grid.Row="2"
-                                     Content="Forgotten password?"
+                                     Content="{x:Static localization:Strings.PuushLoginWindow_Forgotten_password}"
                                      HorizontalAlignment="Left"
                                      HorizontalContentAlignment="Left"
                                      MinHeight="0"
@@ -81,11 +82,11 @@
                         HorizontalAlignment="Right">
                 <Button x:Name="LoginButton"
                         Classes="compact primary"
-                        Content="Login"
+                        Content="{x:Static localization:Strings.PuushLoginWindow_Login}"
                         IsDefault="True"
                         Click="OnLoginClick"/>
                 <Button Classes="compact"
-                        Content="Cancel"
+                        Content="{x:Static localization:Strings.PuushLoginWindow_Cancel}"
                         IsCancel="True"
                         Click="OnCancelClick"/>
             </StackPanel>

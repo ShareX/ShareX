@@ -78,7 +78,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (result.Response == null)
             {
-                Errors.Add("Upload failed for unknown reason. Check your API key.");
+                Errors.Add(Localization.Strings.Lambda_Upload_failed_check_API_key);
                 return result;
             }
 

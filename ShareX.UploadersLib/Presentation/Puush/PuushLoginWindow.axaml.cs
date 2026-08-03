@@ -59,7 +59,7 @@ public partial class PuushLoginWindow : Window
                 return;
             }
 
-            ShowError("Login failed.");
+            ShowError(Localization.Strings.PuushLoginWindow_Login_failed);
         }
         catch (Exception exception)
         {
@@ -82,7 +82,7 @@ public partial class PuushLoginWindow : Window
 
         if (!hasEmail || !hasPassword)
         {
-            ShowError("Enter both your email and password.");
+            ShowError(Localization.Strings.PuushLoginWindow_Enter_both_your_email_and_password);
             return false;
         }
 
@@ -95,7 +95,9 @@ public partial class PuushLoginWindow : Window
         _isLoggingIn = isLoggingIn;
         CredentialsCard.IsEnabled = !isLoggingIn;
         LoginButton.IsEnabled = !isLoggingIn;
-        LoginButton.Content = isLoggingIn ? "Logging in..." : "Login";
+        LoginButton.Content = isLoggingIn
+            ? Localization.Strings.PuushLoginWindow_Logging_in
+            : Localization.Strings.PuushLoginWindow_Login;
         LoginProgressBar.IsVisible = isLoggingIn;
     }
 

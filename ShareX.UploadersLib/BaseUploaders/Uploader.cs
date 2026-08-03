@@ -406,13 +406,13 @@ namespace ShareX.UploadersLib
             if (e != null)
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Error message:");
+                sb.AppendLine(Localization.Strings.Uploader_Error_message);
                 sb.AppendLine(e.Message);
 
                 if (!string.IsNullOrEmpty(requestURL))
                 {
                     sb.AppendLine();
-                    sb.AppendLine("Request URL:");
+                    sb.AppendLine(Localization.Strings.Uploader_Request_URL);
                     sb.AppendLine(requestURL);
                 }
 
@@ -429,25 +429,25 @@ namespace ShareX.UploadersLib
                                 responseText = responseInfo.ResponseText;
 
                                 sb.AppendLine();
-                                sb.AppendLine("Status code:");
+                                sb.AppendLine(Localization.Strings.ResponseWindow_Status_code + ":");
                                 sb.AppendLine($"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
 
                                 if (!string.IsNullOrEmpty(requestURL) && !requestURL.Equals(responseInfo.ResponseURL))
                                 {
                                     sb.AppendLine();
-                                    sb.AppendLine("Response URL:");
+                                    sb.AppendLine(Localization.Strings.ResponseWindow_Response_URL + ":");
                                     sb.AppendLine(responseInfo.ResponseURL);
                                 }
 
                                 if (responseInfo.Headers != null)
                                 {
                                     sb.AppendLine();
-                                    sb.AppendLine("Headers:");
+                                    sb.AppendLine(Localization.Strings.ResponseWindow_Headers + ":");
                                     sb.AppendLine(responseInfo.Headers.ToString().TrimEnd());
                                 }
 
                                 sb.AppendLine();
-                                sb.AppendLine("Response text:");
+                                sb.AppendLine(Localization.Strings.ResponseWindow_Response_text + ":");
                                 sb.AppendLine(responseInfo.ResponseText);
                             }
                         }
@@ -459,7 +459,7 @@ namespace ShareX.UploadersLib
                 }
 
                 sb.AppendLine();
-                sb.AppendLine("Stack trace:");
+                sb.AppendLine(Localization.Strings.Uploader_Stack_trace);
                 sb.Append(e.StackTrace);
 
                 string errorText = sb.ToString();
@@ -549,7 +549,7 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(authInfo.AuthToken) || string.IsNullOrEmpty(authInfo.AuthSecret))
             {
-                throw new Exception("Auth infos missing. Open Authorization URL first.");
+                throw new Exception(Localization.Strings.Uploader_Authorization_information_missing);
             }
 
             string url = OAuthManager.GenerateQuery(accessTokenURL, null, httpMethod, authInfo);

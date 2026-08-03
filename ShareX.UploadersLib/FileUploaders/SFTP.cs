@@ -104,7 +104,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     if (!File.Exists(Account.Keypath))
                     {
-                        throw new FileNotFoundException(Resources.UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found, Account.Keypath);
+                        throw new FileNotFoundException(Localization.Strings.SFTP_Key_file_not_found, Account.Keypath);
                     }
 
                     PrivateKeyFile keyFile;

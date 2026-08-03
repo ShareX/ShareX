@@ -87,7 +87,11 @@ public partial class TextUploadWindow : Window
     private void UpdateCharacterCount()
     {
         int length = ContentTextBox.Text?.Length ?? 0;
-        CharacterCountText.Text = $"{length:N0} {(length == 1 ? "character" : "characters")}";
+        CharacterCountText.Text = string.Format(
+            length == 1
+                ? Localization.Strings.TextUploadWindow_Character_count_singular
+                : Localization.Strings.TextUploadWindow_Character_count_plural,
+            length);
     }
 
     private void OnUploadClick(object? sender, RoutedEventArgs e)

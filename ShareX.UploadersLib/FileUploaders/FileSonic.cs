@@ -61,7 +61,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
             else
             {
-                Errors.Add("GetUploadURL failed.");
+                Errors.Add(Localization.Strings.FileSonic_Get_upload_URL_failed);
             }
 
             return result;

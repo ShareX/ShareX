@@ -64,8 +64,8 @@ internal sealed class DestinationSettingsAccounts
         "photobucket" => PhotobucketOAuth(),
         "imageshack" => ImageShackAccount(),
         "pastebin" => PastebinAccount(),
-        "paste-ee" => DestinationSettingsPageBuilder.Card("Account",
-            DestinationSettingsPageBuilder.ButtonRow(DestinationSettingsPageBuilder.Button("Get user key", () =>
+        "paste-ee" => DestinationSettingsPageBuilder.Card(Localization.Strings.DestinationSettings_Account,
+            DestinationSettingsPageBuilder.ButtonRow(DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Get_user_key, () =>
                 URLHelpers.OpenURL(UploaderConfigurationClient.GetPasteEeAuthorizationURL())))),
         "puush" => UserPasswordLogin("puush", () => _config.PuushAPIKey,
             (username, password) => new Puush().Login(username, password),
@@ -80,14 +80,16 @@ internal sealed class DestinationSettingsAccounts
     private Control ImageShackAccount()
     {
         TextBlock status = DestinationSettingsPageBuilder.Hint(
-            string.IsNullOrEmpty(_config.ImageShackSettings.Auth_token) ? "Not connected" : "Connected");
-        Button login = DestinationSettingsPageBuilder.Button("Log in", () =>
+            string.IsNullOrEmpty(_config.ImageShackSettings.Auth_token)
+                ? Localization.Strings.DestinationSettings_Not_connected
+                : Localization.Strings.DestinationSettings_Connected);
+        Button login = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Log_in, () =>
         {
             try
             {
                 status.Text = UploaderConfigurationClient.LoginImageShack(_config.ImageShackSettings)
-                    ? "Connected"
-                    : "Login failed";
+                    ? Localization.Strings.DestinationSettings_Connected
+                    : Localization.Strings.DestinationSettings_Login_failed;
             }
             catch (Exception exception)
             {
@@ -95,27 +97,31 @@ internal sealed class DestinationSettingsAccounts
                 status.Text = exception.Message;
             }
         });
-        Button profile = DestinationSettingsPageBuilder.Button("Public profile", () =>
+        Button profile = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Public_profile, () =>
         {
             if (!string.IsNullOrWhiteSpace(_config.ImageShackSettings.Username))
                 URLHelpers.OpenURL("https://imageshack.com/user/" + _config.ImageShackSettings.Username);
         });
-        Button images = DestinationSettingsPageBuilder.Button("My images", () => URLHelpers.OpenURL("https://imageshack.com/my/images"));
-        return DestinationSettingsPageBuilder.Card("Account", DestinationSettingsPageBuilder.Row("Status:", status),
+        Button images = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_My_images,
+            () => URLHelpers.OpenURL("https://imageshack.com/my/images"));
+        return DestinationSettingsPageBuilder.Card(Localization.Strings.DestinationSettings_Account,
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Status, status),
             DestinationSettingsPageBuilder.ButtonRow(login, profile, images));
     }
 
     private Control PastebinAccount()
     {
         TextBlock status = DestinationSettingsPageBuilder.Hint(
-            string.IsNullOrEmpty(_config.PastebinSettings.UserKey) ? "Not connected" : "Connected");
-        Button login = DestinationSettingsPageBuilder.Button("Log in", () =>
+            string.IsNullOrEmpty(_config.PastebinSettings.UserKey)
+                ? Localization.Strings.DestinationSettings_Not_connected
+                : Localization.Strings.DestinationSettings_Connected);
+        Button login = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Log_in, () =>
         {
             try
             {
                 status.Text = UploaderConfigurationClient.LoginPastebin(_config.PastebinSettings)
-                    ? "Connected"
-                    : "Login failed";
+                    ? Localization.Strings.DestinationSettings_Connected
+                    : Localization.Strings.DestinationSettings_Login_failed;
             }
             catch (Exception exception)
             {
@@ -123,8 +129,10 @@ internal sealed class DestinationSettingsAccounts
                 status.Text = exception.Message;
             }
         });
-        Button register = DestinationSettingsPageBuilder.Button("Register", () => URLHelpers.OpenURL("https://pastebin.com/signup"));
-        return DestinationSettingsPageBuilder.Card("Account", DestinationSettingsPageBuilder.Row("Status:", status),
+        Button register = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Register,
+            () => URLHelpers.OpenURL("https://pastebin.com/signup"));
+        return DestinationSettingsPageBuilder.Card(Localization.Strings.DestinationSettings_Account,
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Status, status),
             DestinationSettingsPageBuilder.ButtonRow(login, register));
     }
 
@@ -135,8 +143,8 @@ internal sealed class DestinationSettingsAccounts
         password.PasswordChar = '●';
         TextBox apiKey = DestinationSettingsPageBuilder.Text(getKey, saveKey);
         apiKey.PasswordChar = '●';
-        TextBlock status = DestinationSettingsPageBuilder.Hint("Enter account credentials to retrieve the API key");
-        Button connect = DestinationSettingsPageBuilder.Button("Log in", () =>
+        TextBlock status = DestinationSettingsPageBuilder.Hint(Localization.Strings.DestinationSettings_Enter_credentials_to_retrieve_API_key);
+        Button connect = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Log_in, () =>
         {
             try
             {
@@ -144,12 +152,12 @@ internal sealed class DestinationSettingsAccounts
                 if (!string.IsNullOrWhiteSpace(key))
                 {
                     ((DestinationValue<string>)apiKey.DataContext!).Value = key;
-                    status.Text = "API key retrieved";
+                    status.Text = Localization.Strings.DestinationSettings_API_key_retrieved;
                     password.Text = string.Empty;
                 }
                 else
                 {
-                    status.Text = "Login failed";
+                    status.Text = Localization.Strings.DestinationSettings_Login_failed;
                 }
             }
             catch (Exception exception)
@@ -158,11 +166,12 @@ internal sealed class DestinationSettingsAccounts
                 status.Text = exception.Message;
             }
         });
-        return DestinationSettingsPageBuilder.Card(serviceName + " account",
-            DestinationSettingsPageBuilder.Row("Email / username:", username),
-            DestinationSettingsPageBuilder.Row("Password:", password),
-            DestinationSettingsPageBuilder.Row("API key:", apiKey),
-            DestinationSettingsPageBuilder.ButtonRow(connect), DestinationSettingsPageBuilder.Row("Status:", status));
+        return DestinationSettingsPageBuilder.Card(string.Format(Localization.Strings.DestinationSettings_Service_account, serviceName),
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Email_or_username, username),
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Password, password),
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_API_key, apiKey),
+            DestinationSettingsPageBuilder.ButtonRow(connect),
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Status, status));
     }
 
     private Control PushbulletAccount()
@@ -181,17 +190,21 @@ internal sealed class DestinationSettingsAccounts
             devices.Clear();
             foreach (PushbulletDevice item in _config.PushbulletSettings.DeviceList ?? [])
             {
-                devices.Add(new DestinationChoice(item, item.Name ?? "Unnamed device"));
+                devices.Add(new DestinationChoice(item, item.Name ?? Localization.Strings.DestinationSettings_Unnamed_device));
             }
 
             int index = devices.Count == 0 ? -1 : previousIndex.BetweenOrDefault(0, devices.Count - 1);
             device.SelectedIndex = index;
             _config.PushbulletSettings.SelectedDevice = index;
-            status.Text = devices.Count == 0 ? "No devices loaded" : $"{devices.Count} device(s) loaded";
+            status.Text = devices.Count == 0
+                ? Localization.Strings.DestinationSettings_No_devices_loaded
+                : string.Format(devices.Count == 1
+                    ? Localization.Strings.DestinationSettings_Device_count_singular
+                    : Localization.Strings.DestinationSettings_Device_count_plural, devices.Count);
         }
 
         device.SelectionChanged += (_, _) => _config.PushbulletSettings.SelectedDevice = device.SelectedIndex;
-        Button refresh = DestinationSettingsPageBuilder.Button("Refresh devices", () =>
+        Button refresh = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Refresh_devices, () =>
         {
             try
             {
@@ -205,9 +218,11 @@ internal sealed class DestinationSettingsAccounts
             }
         });
         Reload();
-        return DestinationSettingsPageBuilder.Card("Account and devices", DestinationSettingsPageBuilder.Row("API key:", apiKey),
-            DestinationSettingsPageBuilder.Row("Device:", device), DestinationSettingsPageBuilder.ButtonRow(refresh),
-            DestinationSettingsPageBuilder.Row("Status:", status));
+        return DestinationSettingsPageBuilder.Card(Localization.Strings.DestinationSettings_Account_and_devices,
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_API_key, apiKey),
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Device, device),
+            DestinationSettingsPageBuilder.ButtonRow(refresh),
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Status, status));
     }
 
     private Control BasicOAuth2(
@@ -222,10 +237,12 @@ internal sealed class DestinationSettingsAccounts
 
         void UpdateStatus(string? message = null)
         {
-            status.Text = message ?? (OAuth2Info.CheckOAuth(getInfo()) ? "Connected" : "Not connected");
+            status.Text = message ?? (OAuth2Info.CheckOAuth(getInfo())
+                ? Localization.Strings.DestinationSettings_Connected
+                : Localization.Strings.DestinationSettings_Not_connected);
         }
 
-        Button open = DestinationSettingsPageBuilder.Button("Open authorization page", () =>
+        Button open = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Open_authorization_page, () =>
         {
             try
             {
@@ -234,7 +251,7 @@ internal sealed class DestinationSettingsAccounts
                 string url = uploader.GetAuthorizationURL();
                 setInfo(string.IsNullOrEmpty(url) ? null : uploader.AuthInfo);
                 if (!string.IsNullOrEmpty(url)) URLHelpers.OpenURL(url);
-                UpdateStatus("Authorization page opened");
+                UpdateStatus(Localization.Strings.DestinationSettings_Authorization_page_opened);
             }
             catch (Exception exception)
             {
@@ -242,14 +259,16 @@ internal sealed class DestinationSettingsAccounts
                 UpdateStatus(exception.Message);
             }
         });
-        Button complete = DestinationSettingsPageBuilder.Button("Complete authorization", () =>
+        Button complete = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Complete_authorization, () =>
         {
             try
             {
                 OAuth2Info? info = getInfo();
                 string authorizationCode = code.Text ?? string.Empty;
                 bool result = info != null && !string.IsNullOrWhiteSpace(authorizationCode) && createUploader(info).GetAccessToken(authorizationCode);
-                UpdateStatus(result ? "Connected" : "Authorization failed");
+                UpdateStatus(result
+                    ? Localization.Strings.DestinationSettings_Connected
+                    : Localization.Strings.DestinationSettings_Authorization_failed);
             }
             catch (Exception exception)
             {
@@ -257,12 +276,14 @@ internal sealed class DestinationSettingsAccounts
                 UpdateStatus(exception.Message);
             }
         });
-        Button refresh = DestinationSettingsPageBuilder.Button("Refresh token", () =>
+        Button refresh = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Refresh_token, () =>
         {
             try
             {
                 bool result = getInfo() is { } info && createUploader(info) is IOAuth2 oauth && oauth.RefreshAccessToken();
-                UpdateStatus(result ? "Connected" : "Token refresh failed");
+                UpdateStatus(result
+                    ? Localization.Strings.DestinationSettings_Connected
+                    : Localization.Strings.DestinationSettings_Token_refresh_failed);
             }
             catch (Exception exception)
             {
@@ -270,17 +291,18 @@ internal sealed class DestinationSettingsAccounts
                 UpdateStatus(exception.Message);
             }
         });
-        Button clear = DestinationSettingsPageBuilder.Button("Disconnect", () => { setInfo(null); UpdateStatus(); });
+        Button clear = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Disconnect,
+            () => { setInfo(null); UpdateStatus(); });
 
         List<Control> controls =
         [
-            DestinationSettingsPageBuilder.Row("Status:", status),
-            DestinationSettingsPageBuilder.Row("Authorization code:", code),
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Status, status),
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Authorization_code, code),
             DestinationSettingsPageBuilder.ButtonRow(open, complete, refresh, clear)
         ];
         controls.AddRange(extras);
         UpdateStatus();
-        return DestinationSettingsPageBuilder.Card("Account", controls.ToArray());
+        return DestinationSettingsPageBuilder.Card(Localization.Strings.DestinationSettings_Account, controls.ToArray());
     }
 
     private Control LoopbackOAuth(
@@ -291,10 +313,12 @@ internal sealed class DestinationSettingsAccounts
     {
         TextBlock status = DestinationSettingsPageBuilder.Hint(string.Empty);
         void UpdateStatus() => status.Text = OAuth2Info.CheckOAuth(getInfo())
-            ? "Connected" + (string.IsNullOrWhiteSpace(getUser()?.name) ? string.Empty : " as " + getUser()!.name)
-            : "Not connected";
+            ? (string.IsNullOrWhiteSpace(getUser()?.name)
+                ? Localization.Strings.DestinationSettings_Connected
+                : string.Format(Localization.Strings.DestinationSettings_Connected_as, getUser()!.name))
+            : Localization.Strings.DestinationSettings_Not_connected;
 
-        Button connect = DestinationSettingsPageBuilder.Button("Connect account", () =>
+        Button connect = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Connect_account, () =>
         {
             try
             {
@@ -310,10 +334,11 @@ internal sealed class DestinationSettingsAccounts
                 status.Text = exception.Message;
             }
         });
-        Button disconnect = DestinationSettingsPageBuilder.Button("Disconnect", () => { setAccount(null, null); UpdateStatus(); });
+        Button disconnect = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Disconnect,
+            () => { setAccount(null, null); UpdateStatus(); });
         UpdateStatus();
-        return DestinationSettingsPageBuilder.Card("Account",
-            DestinationSettingsPageBuilder.Row("Status:", status),
+        return DestinationSettingsPageBuilder.Card(Localization.Strings.DestinationSettings_Account,
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Status, status),
             DestinationSettingsPageBuilder.ButtonRow(connect, disconnect));
     }
 
@@ -321,16 +346,18 @@ internal sealed class DestinationSettingsAccounts
     {
         TextBlock status = DestinationSettingsPageBuilder.Hint(string.Empty);
         TextBox code = DestinationSettingsPageBuilder.Text(() => string.Empty, _ => { });
-        void UpdateStatus(string? text = null) => status.Text = text ?? (OAuthInfo.CheckOAuth(_config.FlickrOAuthInfo) ? "Connected" : "Not connected");
+        void UpdateStatus(string? text = null) => status.Text = text ?? (OAuthInfo.CheckOAuth(_config.FlickrOAuthInfo)
+            ? Localization.Strings.DestinationSettings_Connected
+            : Localization.Strings.DestinationSettings_Not_connected);
 
-        Button open = DestinationSettingsPageBuilder.Button("Open authorization page", () =>
+        Button open = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Open_authorization_page, () =>
         {
             try
             {
                 OAuthInfo info = UploaderOAuthClientFactory.CreateFlickr();
                 string url = new FlickrUploader(info).GetAuthorizationURL();
                 if (!string.IsNullOrEmpty(url)) { _config.FlickrOAuthInfo = info; URLHelpers.OpenURL(url); }
-                UpdateStatus("Authorization page opened");
+                UpdateStatus(Localization.Strings.DestinationSettings_Authorization_page_opened);
             }
             catch (Exception exception)
             {
@@ -338,12 +365,14 @@ internal sealed class DestinationSettingsAccounts
                 UpdateStatus(exception.Message);
             }
         });
-        Button complete = DestinationSettingsPageBuilder.Button("Complete authorization", () =>
+        Button complete = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Complete_authorization, () =>
         {
             try
             {
                 bool result = _config.FlickrOAuthInfo != null && new FlickrUploader(_config.FlickrOAuthInfo).GetAccessToken(code.Text ?? string.Empty);
-                UpdateStatus(result ? "Connected" : "Authorization failed");
+                UpdateStatus(result
+                    ? Localization.Strings.DestinationSettings_Connected
+                    : Localization.Strings.DestinationSettings_Authorization_failed);
             }
             catch (Exception exception)
             {
@@ -351,26 +380,31 @@ internal sealed class DestinationSettingsAccounts
                 UpdateStatus(exception.Message);
             }
         });
-        Button clear = DestinationSettingsPageBuilder.Button("Disconnect", () => { _config.FlickrOAuthInfo = null; UpdateStatus(); });
+        Button clear = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Disconnect,
+            () => { _config.FlickrOAuthInfo = null; UpdateStatus(); });
         UpdateStatus();
-        return DestinationSettingsPageBuilder.Card("Account", DestinationSettingsPageBuilder.Row("Status:", status),
-            DestinationSettingsPageBuilder.Row("Verification code:", code), DestinationSettingsPageBuilder.ButtonRow(open, complete, clear));
+        return DestinationSettingsPageBuilder.Card(Localization.Strings.DestinationSettings_Account,
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Status, status),
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Verification_code, code),
+            DestinationSettingsPageBuilder.ButtonRow(open, complete, clear));
     }
 
     private Control PhotobucketOAuth()
     {
         TextBlock status = DestinationSettingsPageBuilder.Hint(string.Empty);
         TextBox code = DestinationSettingsPageBuilder.Text(() => string.Empty, _ => { });
-        void UpdateStatus(string? text = null) => status.Text = text ?? (OAuthInfo.CheckOAuth(_config.PhotobucketOAuthInfo) ? "Connected" : "Not connected");
+        void UpdateStatus(string? text = null) => status.Text = text ?? (OAuthInfo.CheckOAuth(_config.PhotobucketOAuthInfo)
+            ? Localization.Strings.DestinationSettings_Connected
+            : Localization.Strings.DestinationSettings_Not_connected);
 
-        Button open = DestinationSettingsPageBuilder.Button("Open authorization page", () =>
+        Button open = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Open_authorization_page, () =>
         {
             try
             {
                 OAuthInfo info = UploaderOAuthClientFactory.CreatePhotobucket();
                 string url = new Photobucket(info).GetAuthorizationURL();
                 if (!string.IsNullOrEmpty(url)) { _config.PhotobucketOAuthInfo = info; URLHelpers.OpenURL(url); }
-                UpdateStatus("Authorization page opened");
+                UpdateStatus(Localization.Strings.DestinationSettings_Authorization_page_opened);
             }
             catch (Exception exception)
             {
@@ -378,7 +412,7 @@ internal sealed class DestinationSettingsAccounts
                 UpdateStatus(exception.Message);
             }
         });
-        Button complete = DestinationSettingsPageBuilder.Button("Complete authorization", () =>
+        Button complete = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Complete_authorization, () =>
         {
             try
             {
@@ -386,7 +420,9 @@ internal sealed class DestinationSettingsAccounts
                 Photobucket uploader = new(_config.PhotobucketOAuthInfo);
                 bool result = uploader.GetAccessToken(code.Text ?? string.Empty);
                 if (result) _config.PhotobucketAccountInfo = uploader.GetAccountInfo();
-                UpdateStatus(result ? "Connected" : "Authorization failed");
+                UpdateStatus(result
+                    ? Localization.Strings.DestinationSettings_Connected
+                    : Localization.Strings.DestinationSettings_Authorization_failed);
             }
             catch (Exception exception)
             {
@@ -394,13 +430,15 @@ internal sealed class DestinationSettingsAccounts
                 UpdateStatus(exception.Message);
             }
         });
-        Button clear = DestinationSettingsPageBuilder.Button("Disconnect", () =>
+        Button clear = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Disconnect, () =>
         {
             _config.PhotobucketOAuthInfo = null; _config.PhotobucketAccountInfo = null; UpdateStatus();
         });
         UpdateStatus();
-        return DestinationSettingsPageBuilder.Card("Account", DestinationSettingsPageBuilder.Row("Status:", status),
-            DestinationSettingsPageBuilder.Row("Verification code:", code), DestinationSettingsPageBuilder.ButtonRow(open, complete, clear));
+        return DestinationSettingsPageBuilder.Card(Localization.Strings.DestinationSettings_Account,
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Status, status),
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Verification_code, code),
+            DestinationSettingsPageBuilder.ButtonRow(open, complete, clear));
     }
 
     private OAuth2Info CreateOneDriveInfo()

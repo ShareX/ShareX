@@ -81,7 +81,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public static GoogleDriveSharedDrive MyDrive = new GoogleDriveSharedDrive
         {
             id = "", // empty defaults to user drive
-            name = Resources.GoogleDrive_MyDrive_My_drive
+            name = Localization.Strings.GoogleDrive_My_drive
         };
 
         public GoogleDrive(OAuth2Info oauth)

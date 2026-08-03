@@ -58,7 +58,8 @@ namespace ShareX.UploadersLib
                 var digit = HelpersLib.Helpers.Base58.IndexOf(data[i]);
 
                 if (digit < 0)
-                    throw new FormatException(string.Format("Invalid Base58 character `{0}` at position {1}", data[i], i));
+                    throw new FormatException(string.Format(Localization.Strings.Base58Converter_Invalid_character,
+                        data[i], i));
 
                 intData = intData * 58 + digit;
             }

@@ -110,7 +110,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Vault_oooMetaInfo metaInfo = JsonConvert.DeserializeObject<Vault_oooMetaInfo>(postResult);
 
             if (string.IsNullOrEmpty(metaInfo.UrlPathName))
-                throw new InvalidOperationException("No correct metaInfo returned");
+                throw new InvalidOperationException(Localization.Strings.Vault_No_valid_metadata_returned);
 
             #region Upload in chunks
 

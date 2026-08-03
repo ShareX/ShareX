@@ -172,13 +172,13 @@ namespace ShareX.UploadersLib.ImageUploaders
             {
                 if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
                 {
-                    Errors.Add("Refresh access token failed.");
+                    Errors.Add(Localization.Strings.UploaderErrors_Refresh_access_token_failed);
                     return false;
                 }
             }
             else
             {
-                Errors.Add("Imgur login is required.");
+                Errors.Add(string.Format(Localization.Strings.UploaderErrors_Service_login_is_required, "Imgur"));
                 return false;
             }
 
@@ -380,7 +380,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 return InternalUpload(stream, fileName, false);
                             }
 
-                            Errors.AddFirst($"Imgur upload failed: ({imgurResponse.status}) {errorData.error}");
+                            Errors.AddFirst(string.Format(Localization.Strings.Imgur_Upload_failed,
+                                imgurResponse.status, errorData.error));
                         }
                     }
                 }
@@ -395,7 +396,8 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             if (errorData != null)
             {
-                Errors.Add($"Status: {response.status}, Request: {errorData.request}, Error: {errorData.error}");
+                Errors.Add(string.Format(Localization.Strings.Imgur_Error_details,
+                    response.status, errorData.request, errorData.error));
             }
         }
 

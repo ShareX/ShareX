@@ -1,8 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.UploadersLib.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.UploadersLib.ResponseWindow"
-        Title="ShareX - Response"
+        Title="{x:Static localization:Strings.ResponseWindow_ShareX_Response}"
         Width="820"
         Height="600"
         MinWidth="620"
@@ -89,7 +90,7 @@
                                    VerticalAlignment="Center"/>
                     </Border>
                     <StackPanel Grid.Column="1" Spacing="3" VerticalAlignment="Center">
-                        <TextBlock Classes="page-title" Text="Upload response"/>
+                        <TextBlock Classes="page-title" Text="{x:Static localization:Strings.ResponseWindow_Upload_response}"/>
                         <TextBlock x:Name="ResponseSummaryText"
                                    Classes="page-description"/>
                     </StackPanel>
@@ -112,19 +113,19 @@
                         <ListBoxItem>
                             <StackPanel Orientation="Horizontal" Spacing="6">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.circle_check}" FontSize="15"/>
-                                <TextBlock Text="Result"/>
+                                <TextBlock Text="{x:Static localization:Strings.ResponseWindow_Result}"/>
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem>
                             <StackPanel Orientation="Horizontal" Spacing="6">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.info}" FontSize="15"/>
-                                <TextBlock Text="Response info"/>
+                                <TextBlock Text="{x:Static localization:Strings.ResponseWindow_Response_info}"/>
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem>
                             <StackPanel Orientation="Horizontal" Spacing="6">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.code_xml}" FontSize="15"/>
-                                <TextBlock Text="Response text"/>
+                                <TextBlock Text="{x:Static localization:Strings.ResponseWindow_Response_text}"/>
                             </StackPanel>
                         </ListBoxItem>
                     </ListBox>
@@ -140,7 +141,7 @@
                                     Click="OnCopyShortenedUrlClick">
                                 <StackPanel Orientation="Horizontal" Spacing="6">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
-                                    <TextBlock Text="Copy shortened URL"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ResponseWindow_Copy_shortened_URL}"/>
                                 </StackPanel>
                             </Button>
                             <Button x:Name="CopyUrlButton"
@@ -149,7 +150,7 @@
                                     Click="OnCopyUrlClick">
                                 <StackPanel Orientation="Horizontal" Spacing="6">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
-                                    <TextBlock Text="Copy URL"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ResponseWindow_Copy_URL}"/>
                                 </StackPanel>
                             </Button>
                             <Button x:Name="OpenUrlButton"
@@ -158,7 +159,7 @@
                                     Click="OnOpenUrlClick">
                                 <StackPanel Orientation="Horizontal" Spacing="6">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}" FontSize="15"/>
-                                    <TextBlock Text="Open URL"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ResponseWindow_Open_URL}"/>
                                 </StackPanel>
                             </Button>
                             <Button x:Name="CopyThumbnailUrlButton"
@@ -167,7 +168,7 @@
                                     Click="OnCopyThumbnailUrlClick">
                                 <StackPanel Orientation="Horizontal" Spacing="6">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
-                                    <TextBlock Text="Copy thumbnail URL"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ResponseWindow_Copy_thumbnail_URL}"/>
                                 </StackPanel>
                             </Button>
                             <Button x:Name="CopyDeletionUrlButton"
@@ -175,7 +176,7 @@
                                     Click="OnCopyDeletionUrlClick">
                                 <StackPanel Orientation="Horizontal" Spacing="6">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
-                                    <TextBlock Text="Copy deletion URL"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ResponseWindow_Copy_deletion_URL}"/>
                                 </StackPanel>
                             </Button>
                         </WrapPanel>
@@ -194,7 +195,7 @@
                             <Button Classes="compact" Click="OnCopyResponseInfoClick">
                                 <StackPanel Orientation="Horizontal" Spacing="6">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
-                                    <TextBlock Text="Copy response info"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ResponseWindow_Copy_response_info}"/>
                                 </StackPanel>
                             </Button>
                             <Button x:Name="OpenResponseUrlButton"
@@ -202,7 +203,7 @@
                                     Click="OnOpenResponseUrlClick">
                                 <StackPanel Orientation="Horizontal" Spacing="6">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}" FontSize="15"/>
-                                    <TextBlock Text="Open response URL"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ResponseWindow_Open_response_URL}"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>
@@ -221,19 +222,19 @@
                             <Button Classes="compact" Click="OnJsonFormatClick">
                                 <StackPanel Orientation="Horizontal" Spacing="6">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file_json}" FontSize="15"/>
-                                    <TextBlock Text="JSON format"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ResponseWindow_JSON_format}"/>
                                 </StackPanel>
                             </Button>
                             <Button Classes="compact" Click="OnXmlFormatClick">
                                 <StackPanel Orientation="Horizontal" Spacing="6">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.code_xml}" FontSize="15"/>
-                                    <TextBlock Text="XML format"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ResponseWindow_XML_format}"/>
                                 </StackPanel>
                             </Button>
                             <Button Classes="compact" Click="OnCopyResponseTextClick">
                                 <StackPanel Orientation="Horizontal" Spacing="6">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
-                                    <TextBlock Text="Copy response"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ResponseWindow_Copy_response}"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>

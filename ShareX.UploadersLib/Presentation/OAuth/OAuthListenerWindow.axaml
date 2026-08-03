@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.UploadersLib.Localization"
         x:Class="ShareX.UploadersLib.OAuthListenerWindow"
-        Title="ShareX - Authorization"
+        Title="{x:Static localization:Strings.OAuthListenerWindow_ShareX_Authorization}"
         Width="500"
         MinWidth="420"
         SizeToContent="Height"
@@ -31,7 +32,7 @@
               Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Border Classes="section-card">
                 <StackPanel Spacing="12">
-                    <TextBlock Text="Waiting for authorization in your browser to complete..."
+                    <TextBlock Text="{x:Static localization:Strings.OAuthListenerWindow_Waiting_for_authorization_in_your_browser_to_complete}"
                                TextWrapping="Wrap"/>
                     <ProgressBar IsIndeterminate="True" Height="5"/>
                 </StackPanel>
@@ -39,7 +40,7 @@
 
             <Button Grid.Row="1"
                     Classes="compact"
-                    Content="Cancel"
+                    Content="{x:Static localization:Strings.OAuthListenerWindow_Cancel}"
                     IsCancel="True"
                     HorizontalAlignment="Right"
                     Click="OnCancelClick"/>

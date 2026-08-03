@@ -162,9 +162,9 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (string.IsNullOrEmpty(Config.UserAPIKey)) throw new Exception("Missing API key.");
-            if (Config.CurrentDevice == null) throw new Exception("No device set to push to.");
-            if (string.IsNullOrEmpty(Config.CurrentDevice.Key)) throw new Exception("Missing device key.");
+            if (string.IsNullOrEmpty(Config.UserAPIKey)) throw new Exception(Localization.Strings.Common_API_key_is_missing);
+            if (Config.CurrentDevice == null) throw new Exception(Localization.Strings.Pushbullet_No_device_selected);
+            if (string.IsNullOrEmpty(Config.CurrentDevice.Key)) throw new Exception(Localization.Strings.Pushbullet_Device_key_is_missing);
 
             return PushFile(stream, fileName);
         }

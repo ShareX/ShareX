@@ -154,13 +154,13 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
                 {
-                    Errors.Add("Refresh access token failed.");
+                    Errors.Add(Localization.Strings.UploaderErrors_Refresh_access_token_failed);
                     return false;
                 }
             }
             else
             {
-                Errors.Add("Box login is required.");
+                Errors.Add(string.Format(Localization.Strings.UploaderErrors_Service_login_is_required, "Box"));
                 return false;
             }
 

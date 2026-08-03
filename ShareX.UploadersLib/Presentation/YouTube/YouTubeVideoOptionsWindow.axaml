@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.UploadersLib.Localization"
         x:Class="ShareX.UploadersLib.YouTubeVideoOptionsWindow"
-        Title="ShareX - YouTube video options"
+        Title="{x:Static localization:Strings.YouTubeVideoOptionsWindow_ShareX_YouTube_video_options}"
         Width="600"
         Height="460"
         MinWidth="500"
@@ -40,13 +41,13 @@
             <Border Classes="section-card">
                 <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
                     <StackPanel>
-                        <TextBlock Classes="field-label" Text="Title"/>
+                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.YouTubeVideoOptionsWindow_Title}"/>
                         <TextBox x:Name="TitleTextBox"
-                                 PlaceholderText="Video title"/>
+                                 PlaceholderText="{x:Static localization:Strings.YouTubeVideoOptionsWindow_Video_title}"/>
                     </StackPanel>
 
                     <Grid Grid.Row="1" RowDefinitions="Auto,*">
-                        <TextBlock Classes="field-label" Text="Description"/>
+                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.YouTubeVideoOptionsWindow_Description}"/>
                         <TextBox x:Name="DescriptionTextBox"
                                  Grid.Row="1"
                                  AcceptsReturn="True"
@@ -58,7 +59,7 @@
                     </Grid>
 
                     <StackPanel Grid.Row="2">
-                        <TextBlock Classes="field-label" Text="Visibility"/>
+                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.YouTubeVideoOptionsWindow_Visibility}"/>
                         <ComboBox x:Name="VisibilityComboBox"
                                   HorizontalAlignment="Stretch"/>
                     </StackPanel>
@@ -70,11 +71,11 @@
                         Spacing="7"
                         HorizontalAlignment="Right">
                 <Button Classes="compact primary"
-                        Content="OK"
+                        Content="{x:Static localization:Strings.YouTubeVideoOptionsWindow_OK}"
                         IsDefault="True"
                         Click="OnConfirmClick"/>
                 <Button Classes="compact"
-                        Content="Cancel"
+                        Content="{x:Static localization:Strings.YouTubeVideoOptionsWindow_Cancel}"
                         IsCancel="True"
                         Click="OnCancelClick"/>
             </StackPanel>

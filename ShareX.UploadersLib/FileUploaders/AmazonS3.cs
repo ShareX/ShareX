@@ -219,7 +219,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 };
             }
 
-            Errors.Add("Upload to Amazon S3 failed.");
+            Errors.Add(Localization.Strings.AmazonS3_Upload_failed);
             return null;
         }
 

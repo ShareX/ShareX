@@ -24,16 +24,16 @@ public sealed class DestinationSettingsViewModel : INotifyPropertyChanged
 
     internal static DestinationCategoryDefinition[] Categories { get; } =
     [
-        Category("image-uploaders", "Image uploaders", LucideIcons.image,
+        Category("image-uploaders", Localization.Strings.DestinationSettings_Category_Image_uploaders, LucideIcons.image,
             Page("imgur", "Imgur", "Imgur"), Page("imageshack", "ImageShack", "ImageShack"),
             Page("flickr", "Flickr", "Flickr"), Page("photobucket", "Photobucket", "Photobucket"),
             Page("chevereto", "Chevereto", "Chevereto"), Page("vgyme", "vgy.me", "Vgyme", "vgyme")),
-        Category("text-uploaders", "Text uploaders", LucideIcons.file_text,
+        Category("text-uploaders", Localization.Strings.DestinationSettings_Category_Text_uploaders, LucideIcons.file_text,
             Page("pastebin", "Pastebin", "Pastebin"), Page("paste-ee", "Paste.ee", "Paste_ee", "Pasteee"),
             Page("gist", "GitHub Gist", "Gist", "GitHubGist"), Page("upaste", "uPaste", "Upaste"),
             Page("hastebin", "Hastebin", "Hastebin"), Page("one-time-secret", "OneTimeSecret", "OneTimeSecret"),
             Page("pastie", "Pastie", "Pastie"), Page("privatebin", "PrivateBin", "PrivateBin")),
-        Category("file-uploaders", "File uploaders", LucideIcons.file_up,
+        Category("file-uploaders", Localization.Strings.DestinationSettings_Category_File_uploaders, LucideIcons.file_up,
             Page("ftp", "FTP / FTPS / SFTP", "FTP", "FTP", "FTPS", "SFTP"),
             Page("dropbox", "Dropbox", "Dropbox"), Page("onedrive", "OneDrive", "OneDrive"),
             Page("google-drive", "Google Drive", "GoogleDrive"), Page("puush", "puush", "Puush"),
@@ -47,9 +47,10 @@ public sealed class DestinationSettingsViewModel : INotifyPropertyChanged
             Page("pomf", "Pomf", "Pomf"), Page("seafile", "Seafile", "Seafile"), Page("sul", "s-ul", "Sul", "sul"),
             Page("streamable", "Streamable", "Streamable"), Page("plik", "Plik", "Plik"),
             Page("youtube", "YouTube", "YouTube"),
-            new DestinationPageDefinition("shared-folder", "Shared folder", ["LocalhostAccount", "LocalhostSelected"], "SharedFolder"),
+            new DestinationPageDefinition("shared-folder", Localization.Strings.DestinationSettings_Page_Shared_folder,
+                ["LocalhostAccount", "LocalhostSelected"], "SharedFolder"),
             Page("email", "Email", "Email")),
-        Category("url-shorteners", "URL shorteners", LucideIcons.link_2,
+        Category("url-shorteners", Localization.Strings.DestinationSettings_Category_URL_shorteners, LucideIcons.link_2,
             Page("bitly", "bit.ly", "Bitly", "Bitly"), Page("yourls", "YOURLS", "Yourls"),
             Page("polr", "Polr", "Polr"), Page("firebase", "Firebase Dynamic Links", "Firebase"),
             Page("kutt", "Kutt", "Kutt"), Page("zero-width", "Zero Width Shortener", "ZeroWidthShortener"))

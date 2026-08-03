@@ -72,7 +72,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public static OneDriveFileInfo RootFolder = new OneDriveFileInfo
         {
             id = "", // empty defaults to root
-            name = Resources.OneDrive_RootFolder_Root_folder
+            name = Localization.Strings.OneDrive_Root_folder
         };
 
         public OneDrive(OAuth2Info authInfo)
@@ -162,13 +162,13 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
                 {
-                    Errors.Add("Refresh access token failed.");
+                    Errors.Add(Localization.Strings.UploaderErrors_Refresh_access_token_failed);
                     return false;
                 }
             }
             else
             {
-                Errors.Add("Login is required.");
+                Errors.Add(Localization.Strings.UploaderErrors_Login_is_required);
                 return false;
             }
 

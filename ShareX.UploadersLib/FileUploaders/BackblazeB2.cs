@@ -113,7 +113,7 @@ namespace ShareX.UploadersLib.FileUploaders
             if (authError != null)
             {
                 DebugHelper.WriteLine("B2 uploader: Failed to authorize.");
-                Errors.Add($"Could not authenticate with B2: {authError}");
+                Errors.Add(string.Format(Localization.Strings.BackblazeB2_Could_not_authenticate, authError));
                 return null;
             }
 
@@ -140,7 +140,7 @@ namespace ShareX.UploadersLib.FileUploaders
             if (!authCheckOk)
             {
                 DebugHelper.WriteLine("B2 uploader: Key is not suitable for this upload.");
-                Errors.Add($"B2 upload failed: {authCheckError}");
+                Errors.Add(string.Format(Localization.Strings.BackblazeB2_Upload_failed_with_error, authCheckError));
                 return null;
             }
 
@@ -171,7 +171,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         // this is guaranteed to be unrecoverable, so bail out
                         DebugHelper.WriteLine("B2 uploader: Got error trying to get upload URL.");
-                        Errors.Add("Could not get B2 upload URL: " + getUrlError);
+                        Errors.Add(string.Format(Localization.Strings.BackblazeB2_Could_not_get_upload_URL, getUrlError));
                         return null;
                     }
                 }
@@ -216,7 +216,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     // something else happened that wasn't a success, so bail out
                     DebugHelper.WriteLine("B2 uploader: Unknown error, upload failure.");
-                    Errors.Add("B2 uploader: Unknown error occurred while calling b2_upload_file().");
+                    Errors.Add(Localization.Strings.BackblazeB2_Unknown_upload_error);
                     return null;
                 }
 
@@ -248,7 +248,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             DebugHelper.WriteLine("B2 uploader: Ran out of attempts, aborting.");
-            Errors.Add($"B2 upload failed: Could not upload file after {maxTries} attempts.");
+            Errors.Add(string.Format(Localization.Strings.BackblazeB2_Upload_failed_after_attempts, maxTries));
             return null;
         }
 

@@ -36,7 +36,7 @@ namespace ShareX.UploadersLib
         // Unique identifier
         public string ServiceIdentifier => EnumValue.ToString();
 
-        public string ServiceName => ((Enum)(object)EnumValue).GetLocalizedDescription();
+        public string ServiceName => ((Enum)(object)EnumValue).GetLocalizedDescription(Localization.Strings.ResourceManager);
 
         public virtual Icon ServiceIcon { get; }
 

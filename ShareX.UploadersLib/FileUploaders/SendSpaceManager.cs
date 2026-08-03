@@ -49,7 +49,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     AccountType = AccountType.Anonymous;
 
                     UploadInfo = sendSpace.AnonymousUploadGetInfo();
-                    if (UploadInfo == null) throw new Exception("UploadInfo is null.");
+                    if (UploadInfo == null) throw new Exception(Localization.Strings.SendSpace_Upload_information_is_missing);
                 }
                 else
                 {
@@ -60,16 +60,16 @@ namespace ShareX.UploadersLib.FileUploaders
                     if (string.IsNullOrEmpty(Token))
                     {
                         Token = sendSpace.AuthCreateToken();
-                        if (string.IsNullOrEmpty(Token)) throw new Exception("Token is null or empty.");
+                        if (string.IsNullOrEmpty(Token)) throw new Exception(Localization.Strings.SendSpace_Token_is_missing);
                     }
                     if (string.IsNullOrEmpty(SessionKey) || (DateTime.Now - LastSessionKey).TotalMinutes > 30)
                     {
                         SessionKey = sendSpace.AuthLogin(Token, username, password).SessionKey;
-                        if (string.IsNullOrEmpty(SessionKey)) throw new Exception("SessionKey is null or empty.");
+                        if (string.IsNullOrEmpty(SessionKey)) throw new Exception(Localization.Strings.SendSpace_Session_key_is_missing);
                         LastSessionKey = DateTime.Now;
                     }
                     UploadInfo = sendSpace.UploadGetInfo(SessionKey);
-                    if (UploadInfo == null) throw new Exception("UploadInfo is null.");
+                    if (UploadInfo == null) throw new Exception(Localization.Strings.SendSpace_Upload_information_is_missing);
                 }
             }
             catch (Exception e)

@@ -148,17 +148,17 @@ namespace ShareX.UploadersLib.FileUploaders
                         switch (status)
                         {
                             case -1:
-                                Errors.Add("Authentication failure.");
+                                Errors.Add(Localization.Strings.Puush_Authentication_failure);
                                 break;
                             default:
                             case -2:
-                                Errors.Add("Connection error.");
+                                Errors.Add(Localization.Strings.Puush_Connection_error);
                                 break;
                             case -3:
-                                Errors.Add("Checksum error.");
+                                Errors.Add(Localization.Strings.Puush_Checksum_error);
                                 break;
                             case -4:
-                                Errors.Add("Insufficient account storage remaining.");
+                                Errors.Add(Localization.Strings.Puush_Insufficient_account_storage);
                                 break;
                         }
                     }

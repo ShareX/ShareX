@@ -36,7 +36,7 @@ namespace ShareX.UploadersLib
 
         public int Count => Errors.Count;
 
-        public string DefaultTitle { get; set; } = Resources.Error;
+        public string DefaultTitle { get; set; } = Localization.Strings.Common_Error;
 
         public UploaderErrorManager()
         {

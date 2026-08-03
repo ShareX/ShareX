@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.UploadersLib.Localization"
         x:Class="ShareX.UploadersLib.EmailWindow"
-        Title="ShareX - Send email"
+        Title="{x:Static localization:Strings.EmailWindow_ShareX_Send_email}"
         Width="620"
         Height="480"
         MinWidth="480"
@@ -40,19 +41,19 @@
             <Border Classes="section-card">
                 <Grid RowDefinitions="Auto,Auto,*" RowSpacing="12">
                     <StackPanel>
-                        <TextBlock Classes="field-label" Text="To email"/>
+                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.EmailWindow_To_email}"/>
                         <TextBox x:Name="ToEmailTextBox"
-                                 PlaceholderText="name@example.com"/>
+                                 PlaceholderText="{x:Static localization:Strings.EmailWindow_name_example_com}"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="1">
-                        <TextBlock Classes="field-label" Text="Subject"/>
+                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.EmailWindow_Subject}"/>
                         <TextBox x:Name="SubjectTextBox"
-                                 PlaceholderText="Email subject"/>
+                                 PlaceholderText="{x:Static localization:Strings.EmailWindow_Email_subject}"/>
                     </StackPanel>
 
                     <Grid Grid.Row="2" RowDefinitions="Auto,*">
-                        <TextBlock Classes="field-label" Text="Message"/>
+                        <TextBlock Classes="field-label" Text="{x:Static localization:Strings.EmailWindow_Message}"/>
                         <TextBox x:Name="MessageTextBox"
                                  Grid.Row="1"
                                  AcceptsReturn="True"
@@ -70,11 +71,11 @@
                         Spacing="7"
                         HorizontalAlignment="Right">
                 <Button Classes="compact primary"
-                        Content="Send"
+                        Content="{x:Static localization:Strings.EmailWindow_Send}"
                         IsDefault="True"
                         Click="OnSendClick"/>
                 <Button Classes="compact"
-                        Content="Cancel"
+                        Content="{x:Static localization:Strings.EmailWindow_Cancel}"
                         IsCancel="True"
                         Click="OnCancelClick"/>
             </StackPanel>

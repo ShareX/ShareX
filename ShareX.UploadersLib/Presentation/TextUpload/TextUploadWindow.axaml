@@ -1,9 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.UploadersLib.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.UploadersLib.TextUploadWindow"
         x:CompileBindings="False"
-        Title="ShareX - Text upload"
+        Title="{x:Static localization:Strings.TextUploadWindow_ShareX_Text_upload}"
         Width="680"
         Height="560"
         MinWidth="480"
@@ -45,11 +46,11 @@
                                VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
-                    <TextBlock Text="Text upload"
+                    <TextBlock Text="{x:Static localization:Strings.TextUploadWindow_Text_upload}"
                                FontSize="19"
                                FontWeight="SemiBold"
                                Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
-                    <TextBlock Text="Enter or paste the text you want to upload."
+                    <TextBlock Text="{x:Static localization:Strings.TextUploadWindow_Enter_or_paste_the_text_you_want_to_upload}"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                 </StackPanel>
             </Grid>
@@ -80,11 +81,11 @@
                         Orientation="Horizontal"
                         Spacing="7">
                 <Button Classes="compact"
-                        Content="Cancel"
+                        Content="{x:Static localization:Strings.TextUploadWindow_Cancel}"
                         IsCancel="True"
                         Click="OnCancelClick"/>
                 <Button Classes="compact primary"
-                        Content="Upload"
+                        Content="{x:Static localization:Strings.TextUploadWindow_Upload}"
                         Click="OnUploadClick"/>
             </StackPanel>
         </Grid>

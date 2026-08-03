@@ -199,7 +199,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (stream.Length > 150000000)
             {
-                Errors.Add("There's a 150MB limit to uploads through the API.");
+                Errors.Add(Localization.Strings.Dropbox_API_upload_limit);
                 return null;
             }
 

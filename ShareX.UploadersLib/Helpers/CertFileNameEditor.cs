@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib
             }
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                dlg.Title = Resources.CertFileNameEditor_EditValue_Browse_for_a_certificate_file___;
+                dlg.Title = Localization.Strings.CertFileNameEditor_Browse_for_certificate_file;
                 dlg.Filter = "Certificate file (*.cer)|*.cer";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {

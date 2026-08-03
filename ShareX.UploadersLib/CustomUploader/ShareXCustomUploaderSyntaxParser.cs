@@ -73,7 +73,7 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(functionName))
             {
-                throw new Exception("Function name cannot be empty.");
+                throw new Exception(Localization.Strings.CustomUploaderParser_Function_name_cannot_be_empty);
             }
 
             foreach (CustomUploaderFunction function in Functions)
@@ -83,14 +83,15 @@ namespace ShareX.UploadersLib
                 {
                     if (function.MinParameterCount > 0 && (parameters == null || parameters.Length < function.MinParameterCount))
                     {
-                        throw new Exception($"Minimum parameter count for function \"{function.Name}\" is {function.MinParameterCount}.");
+                        throw new Exception(string.Format(Localization.Strings.CustomUploaderParser_Minimum_parameter_count,
+                            function.Name, function.MinParameterCount));
                     }
 
                     return function.Call(this, parameters);
                 }
             }
 
-            throw new Exception("Invalid function name: " + functionName);
+            throw new Exception(string.Format(Localization.Strings.CustomUploaderParser_Invalid_function_name, functionName));
         }
     }
 }

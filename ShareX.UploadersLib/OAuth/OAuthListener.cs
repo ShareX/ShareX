@@ -96,15 +96,15 @@ namespace ShareX.UploadersLib
 
                     if (queryState != state)
                     {
-                        status = "Invalid state parameter.";
+                        status = Localization.Strings.OAuthListener_Invalid_state_parameter;
                     }
                     else if (!string.IsNullOrEmpty(queryCode))
                     {
-                        status = "Authorization completed successfully.";
+                        status = Localization.Strings.OAuthListener_Authorization_completed_successfully;
                     }
                     else
                     {
-                        status = "Authorization did not succeed.";
+                        status = Localization.Strings.OAuthListener_Authorization_did_not_succeed;
                     }
 
                     string responseText = Resources.OAuthCallbackPage.Replace("{0}", status);

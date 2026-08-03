@@ -75,7 +75,7 @@ namespace ShareX.UploadersLib.TextUploaders
         {
             if (string.IsNullOrEmpty(APIKey))
             {
-                throw new Exception("API key is missing.");
+                throw new Exception(Localization.Strings.Common_API_key_is_missing);
             }
 
             UploadResult ur = new UploadResult();

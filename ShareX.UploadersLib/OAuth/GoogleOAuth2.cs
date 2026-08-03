@@ -122,13 +122,13 @@ namespace ShareX.UploadersLib
             {
                 if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
                 {
-                    GoogleUploader.Errors.Add("Refresh access token failed.");
+                    GoogleUploader.Errors.Add(Localization.Strings.UploaderErrors_Refresh_access_token_failed);
                     return false;
                 }
             }
             else
             {
-                GoogleUploader.Errors.Add("Login is required.");
+                GoogleUploader.Errors.Add(Localization.Strings.UploaderErrors_Login_is_required);
                 return false;
             }
 
