@@ -4,7 +4,7 @@
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Avalonia.Win32.Interoperability" Version="12.1.0" />
+    <PackageVersion Include="Avalonia.Win32.Interoperability" Version="12.1.1" />
     <PackageVersion Include="FluentFTP" Version="54.2.0" />
     <PackageVersion Include="Microsoft.Data.Sqlite" Version="11.0.0-preview.6.26359.118" />
     <PackageVersion Include="Microsoft.Data.Sqlite.Core" Version="11.0.0-preview.6.26359.118" />
@@ -14,11 +14,11 @@
     <PackageVersion Include="SSH.NET" Version="2025.1.0" />
     <PackageVersion Include="ZXing.Net" Version="0.16.11" />
     <PackageVersion Include="ZXing.Net.Bindings.Windows.Compatibility" Version="0.16.14" />
-    <PackageVersion Include="Avalonia" Version="12.1.0" />
-    <PackageVersion Include="Avalonia.Controls.ColorPicker" Version="12.1.0" />
-    <PackageVersion Include="Avalonia.Desktop" Version="12.1.0" />
-    <PackageVersion Include="Avalonia.Fonts.Inter" Version="12.1.0" />
-    <PackageVersion Include="Avalonia.Themes.Fluent" Version="12.1.0" />
+    <PackageVersion Include="Avalonia" Version="12.1.1" />
+    <PackageVersion Include="Avalonia.Controls.ColorPicker" Version="12.1.1" />
+    <PackageVersion Include="Avalonia.Desktop" Version="12.1.1" />
+    <PackageVersion Include="Avalonia.Fonts.Inter" Version="12.1.1" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="12.1.1" />
     <PackageVersion Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.3" />
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.2" />
     <PackageVersion Include="SkiaSharp" Version="3.119.4" />
