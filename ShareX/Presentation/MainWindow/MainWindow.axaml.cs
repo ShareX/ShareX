@@ -372,7 +372,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         ContextMenu menu = new();
 
-        foreach (Control item in BuildMenuControls(entries))
+        foreach (Control item in BuildMenuControls(entries, menu))
         {
             menu.Items.Add(item);
         }
@@ -430,7 +430,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         menu.Close();
     }
 
-    private IEnumerable<Control> BuildMenuControls(IEnumerable<MainMenuEntry> entries)
+    private IEnumerable<Control> BuildMenuControls(IEnumerable<MainMenuEntry> entries, ContextMenu menu)
     {
         foreach (MainMenuEntry entry in entries.Where(x => x.IsVisible))
         {
@@ -464,22 +464,29 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
             if (entry.CreateChildren != null)
             {
-                AddLazySubmenu(item, entry.CreateChildren);
+                AddLazySubmenu(item, entry.CreateChildren, menu);
             }
 
             if (entry.ExecuteAsync != null)
             {
-                item.Click += async (_, _) =>
+                item.Click += (_, _) =>
                 {
-                    try
+                    // Modal WinForms dialogs and capture overlays cannot be opened while
+                    // the Avalonia popup is still processing its click event. Dismiss the
+                    // entire menu first, then run the command on the next dispatcher turn.
+                    menu.Close();
+                    Dispatcher.UIThread.Post(async () =>
                     {
-                        await entry.ExecuteAsync();
-                        RefreshMenus();
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugHelper.WriteException(ex);
-                    }
+                        try
+                        {
+                            await entry.ExecuteAsync();
+                            RefreshMenus();
+                        }
+                        catch (Exception ex)
+                        {
+                            DebugHelper.WriteException(ex);
+                        }
+                    }, DispatcherPriority.Background);
                 };
             }
 
@@ -487,7 +494,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
     }
 
-    private void AddLazySubmenu(MenuItem item, Func<IReadOnlyList<MainMenuEntry>> createChildren)
+    private void AddLazySubmenu(MenuItem item, Func<IReadOnlyList<MainMenuEntry>> createChildren, ContextMenu menu)
     {
         // Keep the submenu indicator without constructing every nested menu before
         // the root context menu can be displayed.
@@ -503,7 +510,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
             item.Items.Clear();
 
-            foreach (Control child in BuildMenuControls(createChildren()))
+            foreach (Control child in BuildMenuControls(createChildren(), menu))
             {
                 item.Items.Add(child);
             }
