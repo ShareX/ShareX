@@ -86,6 +86,11 @@ namespace ShareX.HelpersLib
 
         protected bool Run(string path, string args)
         {
+            if (!string.Equals(Path.GetExtension(path), ".exe", StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
             StopRequested = false;
             int errorCode = Open(path, args);
             IsEncoding = false;
