@@ -308,7 +308,8 @@ internal sealed class MainMenuBuilder
             () => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(option.Task),
             createChildren: option.Task == AfterCaptureTasks.AddImageEffects ? BuildImageEffectPresetMenu : null,
             isChecked: value.HasFlag(option.Task),
-            toggleType: MainMenuToggleType.CheckBox)).ToArray();
+            toggleType: MainMenuToggleType.CheckBox,
+            staysOpenOnClick: true)).ToArray();
     }
 
     internal static IReadOnlyList<(AfterCaptureTasks Task, string Header, string Icon)> GetAfterCaptureTaskMenuOptions(bool includeUploadTasks = true)
@@ -330,7 +331,8 @@ internal sealed class MainMenuBuilder
                 () => Program.DefaultTaskSettings.AfterCaptureJob =
                     Program.DefaultTaskSettings.AfterCaptureJob.Swap(AfterCaptureTasks.AddImageEffects),
                 isChecked: Program.DefaultTaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects),
-                toggleType: MainMenuToggleType.CheckBox),
+                toggleType: MainMenuToggleType.CheckBox,
+                staysOpenOnClick: true),
             MainMenuEntry.Separator()
         };
         List<ImageEffectsLib.ImageEffectPreset>? presets = Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets;
@@ -359,7 +361,7 @@ internal sealed class MainMenuBuilder
         return items;
     }
 
-    private static IReadOnlyList<MainMenuEntry> BuildAfterUploadMenu()
+    private IReadOnlyList<MainMenuEntry> BuildAfterUploadMenu()
     {
         AfterUploadTasks value = Program.DefaultTaskSettings.AfterUploadJob;
         return GetAfterUploadTaskMenuOptions().Select(option => new MainMenuEntry(
@@ -367,7 +369,8 @@ internal sealed class MainMenuBuilder
             option.Icon,
             () => Program.DefaultTaskSettings.AfterUploadJob = Program.DefaultTaskSettings.AfterUploadJob.Swap(option.Task),
             isChecked: value.HasFlag(option.Task),
-            toggleType: MainMenuToggleType.CheckBox)).ToArray();
+            toggleType: MainMenuToggleType.CheckBox,
+            staysOpenOnClick: true)).ToArray();
     }
 
     internal static IReadOnlyList<(AfterUploadTasks Task, string Header, string Icon)> GetAfterUploadTaskMenuOptions() =>

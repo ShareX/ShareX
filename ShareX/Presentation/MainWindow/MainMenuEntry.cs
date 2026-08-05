@@ -40,6 +40,7 @@ internal sealed class MainMenuEntry
     public bool IsVisible { get; }
     public bool IsChecked { get; }
     public MainMenuToggleType ToggleType { get; }
+    public bool StaysOpenOnClick { get; }
     public KeyGesture? InputGesture { get; }
 
     public MainMenuEntry(
@@ -51,6 +52,7 @@ internal sealed class MainMenuEntry
         bool isVisible = true,
         bool isChecked = false,
         MainMenuToggleType toggleType = MainMenuToggleType.None,
+        bool staysOpenOnClick = false,
         KeyGesture? inputGesture = null,
         byte[]? bitmapIcon = null)
     {
@@ -67,6 +69,7 @@ internal sealed class MainMenuEntry
         IsVisible = isVisible;
         IsChecked = isChecked;
         ToggleType = toggleType;
+        StaysOpenOnClick = staysOpenOnClick;
         InputGesture = inputGesture;
     }
 
@@ -79,6 +82,7 @@ internal sealed class MainMenuEntry
         bool isVisible = true,
         bool isChecked = false,
         MainMenuToggleType toggleType = MainMenuToggleType.None,
+        bool staysOpenOnClick = false,
         KeyGesture? inputGesture = null,
         byte[]? bitmapIcon = null)
     {
@@ -91,6 +95,7 @@ internal sealed class MainMenuEntry
         IsVisible = isVisible;
         IsChecked = isChecked;
         ToggleType = toggleType;
+        StaysOpenOnClick = staysOpenOnClick;
         InputGesture = inputGesture;
     }
 

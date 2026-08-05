@@ -449,6 +449,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 InputGesture = entry.InputGesture,
                 IsEnabled = entry.IsEnabled,
                 IsChecked = entry.IsChecked,
+                StaysOpenOnClick = entry.StaysOpenOnClick,
                 ToggleType = entry.ToggleType switch
                 {
                     MainMenuToggleType.CheckBox => MenuItemToggleType.CheckBox,
@@ -476,16 +477,23 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             {
                 item.Click += (_, _) =>
                 {
-                    // Modal WinForms dialogs and capture overlays cannot be opened while
-                    // the Avalonia popup is still processing its click event. Dismiss the
-                    // entire menu first, then run the command on the next dispatcher turn.
-                    menu.Close();
+                    if (!entry.StaysOpenOnClick)
+                    {
+                        // Modal WinForms dialogs and capture overlays cannot be opened while
+                        // the Avalonia popup is still processing its click event. Dismiss the
+                        // entire menu first, then run the command on the next dispatcher turn.
+                        menu.Close();
+                    }
+
                     Dispatcher.UIThread.Post(async () =>
                     {
                         try
                         {
                             await entry.ExecuteAsync();
-                            RefreshMenus();
+                            if (!entry.StaysOpenOnClick)
+                            {
+                                RefreshMenus();
+                            }
                         }
                         catch (Exception ex)
                         {
