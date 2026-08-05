@@ -150,15 +150,18 @@ internal sealed class TaskSettingsPageBuilder
             () => !_settings.UseDefaultDestinations,
             value => _settings.UseDefaultDestinations = !value);
 
-        Control afterCapture = AfterCaptureTaskMenu(
+        Control afterCapture = TaskFlagsMenu(
             () => _settings.AfterCaptureJob,
-            value => _settings.AfterCaptureJob = value);
+            value => _settings.AfterCaptureJob = value,
+            MainMenuBuilder.GetAfterCaptureTaskMenuOptions(),
+            LucideIcons.image_up);
         BindEnabled(afterCapture, afterCaptureOverride);
 
-        Control afterUpload = FlagsEditor(
+        Control afterUpload = TaskFlagsMenu(
             () => _settings.AfterUploadJob,
             value => _settings.AfterUploadJob = value,
-            Enum.GetValues<AfterUploadTasks>().Where(x => x != AfterUploadTasks.None));
+            MainMenuBuilder.GetAfterUploadTaskMenuOptions(),
+            LucideIcons.cloud_upload);
         BindEnabled(afterUpload, afterUploadOverride);
 
         StackPanel destinations = new() { Spacing = 4 };
@@ -1248,13 +1251,16 @@ internal sealed class TaskSettingsPageBuilder
         return button;
     }
 
-    private static Button AfterCaptureTaskMenu(Func<AfterCaptureTasks> getter, Action<AfterCaptureTasks> setter)
+    private static Button TaskFlagsMenu<T>(
+        Func<T> getter,
+        Action<T> setter,
+        IReadOnlyList<(T Task, string Header, string Icon)> options,
+        string emptyIcon) where T : struct, Enum
     {
-        IReadOnlyDictionary<AfterCaptureTasks, (string Header, string Icon)> taskOptions = MainMenuBuilder
-            .GetAfterCaptureTaskMenuOptions()
+        IReadOnlyDictionary<T, (string Header, string Icon)> taskOptions = options
             .ToDictionary(option => option.Task, option => (option.Header, option.Icon));
-        TextBlock selectedIcon = CreateAccentMenuIcon(LucideIcons.image_up);
-        AfterCaptureTasks lastSelectedTask = taskOptions.Keys.LastOrDefault(task => getter().HasFlag(task));
+        TextBlock selectedIcon = CreateAccentMenuIcon(emptyIcon);
+        T lastSelectedTask = taskOptions.Keys.LastOrDefault(task => HasFlag(getter(), task));
         TextBlock selectedTasks = new()
         {
             FontWeight = FontWeight.Normal,
@@ -1292,47 +1298,47 @@ internal sealed class TaskSettingsPageBuilder
 
         void UpdateSelectedTasks()
         {
-            AfterCaptureTasks selected = getter();
-            if (lastSelectedTask != AfterCaptureTasks.None && !selected.HasFlag(lastSelectedTask))
+            T selected = getter();
+            if (!EqualityComparer<T>.Default.Equals(lastSelectedTask, default) && !HasFlag(selected, lastSelectedTask))
             {
-                lastSelectedTask = taskOptions.Keys.LastOrDefault(task => selected.HasFlag(task));
+                lastSelectedTask = taskOptions.Keys.LastOrDefault(task => HasFlag(selected, task));
             }
 
-            selectedIcon.Text = lastSelectedTask == AfterCaptureTasks.None
-                ? LucideIcons.image_up
+            selectedIcon.Text = EqualityComparer<T>.Default.Equals(lastSelectedTask, default)
+                ? emptyIcon
                 : taskOptions[lastSelectedTask].Icon;
 
             string[] titles = taskOptions
-                .Where(option => selected.HasFlag(option.Key))
+                .Where(option => HasFlag(selected, option.Key))
                 .Select(option => option.Value.Header)
                 .ToArray();
             selectedTasks.Text = titles.Length > 0
                 ? string.Join(", ", titles)
-                : AfterCaptureTasks.None.GetLocalizedDescription();
+                : ((Enum)(object)default(T)).GetLocalizedDescription();
         }
 
         UpdateSelectedTasks();
 
         button.Click += (_, _) =>
         {
-            AfterCaptureTasks selected = getter();
+            T selected = getter();
             List<MenuItem> items = [];
 
-            foreach ((AfterCaptureTasks task, (string header, string icon)) in taskOptions)
+            foreach ((T task, (string header, string icon)) in taskOptions)
             {
                 MenuItem item = new()
                 {
                     Header = header,
                     Icon = CreateAccentMenuIcon(icon),
                     ToggleType = MenuItemToggleType.CheckBox,
-                    IsChecked = selected.HasFlag(task)
+                    IsChecked = HasFlag(selected, task)
                 };
                 item.Classes.Add("compact-menu-item");
                 item.Click += (_, _) =>
                 {
-                    AfterCaptureTasks updated = getter().Swap(task);
+                    T updated = ToggleFlag(getter(), task);
                     setter(updated);
-                    if (updated.HasFlag(task))
+                    if (HasFlag(updated, task))
                     {
                         lastSelectedTask = task;
                     }
@@ -1352,6 +1358,12 @@ internal sealed class TaskSettingsPageBuilder
 
         return button;
     }
+
+    private static bool HasFlag<T>(T value, T flag) where T : struct, Enum =>
+        (Convert.ToUInt64(value) & Convert.ToUInt64(flag)) == Convert.ToUInt64(flag);
+
+    private static T ToggleFlag<T>(T value, T flag) where T : struct, Enum =>
+        (T)Enum.ToObject(typeof(T), Convert.ToUInt64(value) ^ Convert.ToUInt64(flag));
 
     private static MenuItem CreateTaskMenuItem(HotkeyType task, HotkeyType selectedTask, Action<HotkeyType> selectTask)
     {
@@ -1402,33 +1414,6 @@ internal sealed class TaskSettingsPageBuilder
             Mode = BindingMode.TwoWay
         });
         return comboBox;
-    }
-
-    private static Control FlagsEditor<T>(Func<T> getter, Action<T> setter, IEnumerable<T> values) where T : struct, Enum
-    {
-        WrapPanel flags = new() { Orientation = Orientation.Horizontal };
-        foreach (T value in values)
-        {
-            ulong mask = Convert.ToUInt64(value);
-            BoundValue<bool> selected = new(
-                (Convert.ToUInt64(getter()) & mask) == mask,
-                isChecked =>
-                {
-                    ulong current = Convert.ToUInt64(getter());
-                    ulong updated = isChecked ? current | mask : current & ~mask;
-                    setter((T)Enum.ToObject(typeof(T), updated));
-                });
-            CheckBox checkBox = Check(((Enum)(object)value).GetLocalizedDescription(), selected);
-            checkBox.Margin = new Thickness(0, 1, 12, 1);
-            flags.Children.Add(checkBox);
-        }
-
-        return new Expander
-        {
-            Header = Strings.TaskSettingsWindow_SelectTasks,
-            Content = flags,
-            IsExpanded = false
-        };
     }
 
     private Control SoundPath(string title, Func<bool> enabledGetter, Action<bool> enabledSetter, Func<string> pathGetter, Action<string> pathSetter)

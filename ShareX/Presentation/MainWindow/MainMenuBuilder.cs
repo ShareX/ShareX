@@ -345,13 +345,18 @@ internal sealed class MainMenuBuilder
     private static IReadOnlyList<MainMenuEntry> BuildAfterUploadMenu()
     {
         AfterUploadTasks value = Program.DefaultTaskSettings.AfterUploadJob;
-        return Helpers.GetEnums<AfterUploadTasks>().Skip(1).Select(task => new MainMenuEntry(
-            task.GetLocalizedDescription(),
-            IconForName(task.ToString()),
-            () => Program.DefaultTaskSettings.AfterUploadJob = Program.DefaultTaskSettings.AfterUploadJob.Swap(task),
-            isChecked: value.HasFlag(task),
+        return GetAfterUploadTaskMenuOptions().Select(option => new MainMenuEntry(
+            option.Header,
+            option.Icon,
+            () => Program.DefaultTaskSettings.AfterUploadJob = Program.DefaultTaskSettings.AfterUploadJob.Swap(option.Task),
+            isChecked: value.HasFlag(option.Task),
             toggleType: MainMenuToggleType.CheckBox)).ToArray();
     }
+
+    internal static IReadOnlyList<(AfterUploadTasks Task, string Header, string Icon)> GetAfterUploadTaskMenuOptions() =>
+        Helpers.GetEnums<AfterUploadTasks>().Skip(1)
+            .Select(task => (task, task.GetLocalizedDescription(), IconForName(task.ToString())))
+            .ToArray();
 
     private static IReadOnlyList<MainMenuEntry> BuildDestinationsMenu()
     {
