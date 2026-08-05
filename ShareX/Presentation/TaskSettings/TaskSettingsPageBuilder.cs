@@ -213,7 +213,7 @@ internal sealed class TaskSettingsPageBuilder
         Grid folderRow = InputWithButton(folderText, browseFolder);
 
         return Page("task", Strings.TaskSettingsWindow_Task, LucideIcons.keyboard,
-            Card(Strings.TaskSettingsWindow_Task, Row(Strings.TaskSettingsWindow_TaskLabel, EnumCombo(() => _settings.Job, value => _settings.Job = value)),
+            Card(Strings.TaskSettingsWindow_Task, Row(Strings.TaskSettingsWindow_TaskLabel, TaskMenu(() => _settings.Job, value => _settings.Job = value)),
                 Row(Strings.TaskSettingsWindow_Description, Text(() => _settings.Description, value => _settings.Description = value))),
             Card(Strings.TaskSettingsWindow_AfterCaptureTasks, Check(Strings.TaskSettingsWindow_OverrideAfterCaptureTasks, afterCaptureOverride), afterCapture),
             Card(Strings.TaskSettingsWindow_AfterUploadTasks, Check(Strings.TaskSettingsWindow_OverrideAfterUploadTasks, afterUploadOverride), afterUpload),
@@ -1166,6 +1166,116 @@ internal sealed class TaskSettingsPageBuilder
 
     private static ComboBox EnumCombo<T>(Func<T> getter, Action<T> setter) where T : struct, Enum =>
         ObjectCombo(Enum.GetValues<T>(), getter, setter, value => ((Enum)(object)value).GetLocalizedDescription());
+
+    private static Button TaskMenu(Func<HotkeyType> getter, Action<HotkeyType> setter)
+    {
+        TextBlock selectedIcon = CreateTaskMenuIcon(getter());
+        TextBlock selectedTitle = new()
+        {
+            FontWeight = FontWeight.Normal,
+            TextTrimming = TextTrimming.CharacterEllipsis,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        TextBlock chevron = new()
+        {
+            Text = LucideIcons.chevron_down,
+            FontSize = 14,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        chevron.Classes.Add("icon");
+
+        Grid content = new()
+        {
+            ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto"),
+            ColumnSpacing = 7
+        };
+        Grid.SetColumn(selectedTitle, 1);
+        Grid.SetColumn(chevron, 2);
+        content.Children.Add(selectedIcon);
+        content.Children.Add(selectedTitle);
+        content.Children.Add(chevron);
+
+        Button button = new()
+        {
+            Content = content,
+            MinWidth = 250,
+            MinHeight = 32,
+            Padding = new Thickness(8, 4),
+            HorizontalAlignment = HorizontalAlignment.Left,
+            HorizontalContentAlignment = HorizontalAlignment.Stretch
+        };
+
+        void UpdateSelectedTask(HotkeyType task)
+        {
+            selectedIcon.Text = TaskHelpers.FindMenuLucideIcon(task);
+            selectedTitle.Text = task.GetLocalizedDescription();
+        }
+
+        void SelectTask(HotkeyType task)
+        {
+            setter(task);
+            UpdateSelectedTask(task);
+        }
+
+        UpdateSelectedTask(getter());
+
+        button.Click += (_, _) =>
+        {
+            List<HotkeyType> tasks = Helpers.GetEnums<HotkeyType>().ToList();
+            List<MenuItem> rootItems = [CreateTaskMenuItem(HotkeyType.None, getter(), SelectTask)];
+
+            foreach (IGrouping<string, HotkeyType> category in tasks
+                .Where(task => task != HotkeyType.None)
+                .Select(task => (Task: task, Category: new EnumInfo(task).Category ?? string.Empty))
+                .Where(item => !string.IsNullOrWhiteSpace(item.Category))
+                .GroupBy(item => item.Category, item => item.Task))
+            {
+                rootItems.Add(new MenuItem
+                {
+                    Header = category.Key,
+                    ItemsSource = category.Select(task => CreateTaskMenuItem(task, getter(), SelectTask)).ToList()
+                });
+            }
+
+            ContextMenu menu = new()
+            {
+                Placement = PlacementMode.BottomEdgeAlignedLeft,
+                PlacementTarget = button,
+                ItemsSource = rootItems
+            };
+            menu.Open(button);
+        };
+
+        return button;
+    }
+
+    private static MenuItem CreateTaskMenuItem(HotkeyType task, HotkeyType selectedTask, Action<HotkeyType> selectTask)
+    {
+        MenuItem item = new()
+        {
+            Header = task.GetLocalizedDescription(),
+            Icon = CreateTaskMenuIcon(task),
+            ToggleType = MenuItemToggleType.Radio,
+            IsChecked = task == selectedTask
+        };
+        item.Click += (_, _) => selectTask(task);
+        return item;
+    }
+
+    private static TextBlock CreateTaskMenuIcon(HotkeyType task)
+    {
+        TextBlock icon = new()
+        {
+            Text = TaskHelpers.FindMenuLucideIcon(task),
+            FontSize = 16,
+            Width = 18,
+            TextAlignment = TextAlignment.Center,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        icon.Classes.Add("icon");
+        icon.Classes.Add("accent-menu-icon");
+        return icon;
+    }
 
     private static ComboBox ObjectCombo<T>(IEnumerable<T> values, Func<T> getter, Action<T> setter, Func<T, string>? title = null)
     {
