@@ -80,14 +80,14 @@
                                     <NumericUpDown Grid.Column="1" Minimum="1" Maximum="30" FormatString="0' px'" Value="{Binding BorderSize}"/>
                                     <Button Grid.Column="2" Width="40" Padding="4" ToolTip.Tip="{x:Static localization:Strings.PinToScreenOptionsWindow_Border_color}">
                                         <Border Width="20" Height="20" CornerRadius="3" Background="{Binding BorderColorBrush}" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"/>
-                                        <Button.Flyout><Flyout><cp:ColorView Width="300" Height="300" Color="{Binding BorderColor, Mode=TwoWay}"/></Flyout></Button.Flyout>
+                                        <Button.Flyout><Flyout><cp:ColorView Color="{Binding BorderColor, Mode=TwoWay}"/></Flyout></Button.Flyout>
                                     </Button>
                                 </Grid>
                                 <Grid Grid.Row="5" ColumnDefinitions="150,*,Auto" ColumnSpacing="10">
                                     <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Background_color}"/>
                                     <Button Grid.Column="2" Width="40" Padding="4" ToolTip.Tip="{x:Static localization:Strings.PinToScreenOptionsWindow_Background_color}">
                                         <Border Width="20" Height="20" CornerRadius="3" Background="{Binding BackgroundColorBrush}" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"/>
-                                        <Button.Flyout><Flyout><cp:ColorView Width="300" Height="300" Color="{Binding BackgroundColor, Mode=TwoWay}"/></Flyout></Button.Flyout>
+                                        <Button.Flyout><Flyout><cp:ColorView Color="{Binding BackgroundColor, Mode=TwoWay}"/></Flyout></Button.Flyout>
                                     </Button>
                                 </Grid>
                             </Grid>
