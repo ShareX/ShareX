@@ -7,7 +7,6 @@
 
 #endregion License Information (GPL v3)
 
-using Avalonia.Media.Imaging;
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -58,6 +57,7 @@ public sealed partial class ImageEffectPresetItemViewModel : ObservableObject
 
 public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposable
 {
+    private const string WindowTitlePrefix = "ShareX - Image effects";
     private readonly List<ImageEffectPreset> _presets;
     private readonly ImageEffectsCallbacks _callbacks;
     private readonly ISerializationBinder _serializationBinder = new ImageEffectsSerializationBinder();
@@ -82,7 +82,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
     private Avalonia.Media.Imaging.Bitmap? _preview;
 
     [ObservableProperty]
-    private string _previewInfo = "Preparing preview...";
+    private string _windowTitle = WindowTitlePrefix;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsIdle))]
@@ -400,7 +400,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
                 Preview?.Dispose();
                 Preview = preview;
                 _previewImageData = previewImageData;
-                PreviewInfo = $"{result.Width} × {result.Height}  •  {timer.ElapsedMilliseconds} ms";
+                WindowTitle = $"{WindowTitlePrefix} - {result.Width} × {result.Height} - {timer.ElapsedMilliseconds} ms";
             }
         }
         catch (Exception ex)
