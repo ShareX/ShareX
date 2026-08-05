@@ -43,6 +43,7 @@ using FormsDialogResult = System.Windows.Forms.DialogResult;
 using FormsMessageBox = System.Windows.Forms.MessageBox;
 using FormsMessageBoxButtons = System.Windows.Forms.MessageBoxButtons;
 using FormsOrientation = System.Windows.Forms.Orientation;
+using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 
 namespace ShareX;
 
@@ -457,7 +458,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             };
             item.Classes.Add("compact-menu-item");
 
-            if (!string.IsNullOrEmpty(entry.Icon))
+            if (entry.BitmapIcon is { Length: > 0 })
+            {
+                item.Icon = CreateBitmapMenuIcon(entry.BitmapIcon, menu);
+            }
+            else if (!string.IsNullOrEmpty(entry.Icon))
             {
                 item.Icon = CreateAccentMenuIcon(entry.Icon, 16);
             }
@@ -538,6 +543,21 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TextBlock icon = CreateLucideText(glyph, size);
         icon.Classes.Add("accent-menu-icon");
         return icon;
+    }
+
+    private static Image CreateBitmapMenuIcon(byte[] data, ContextMenu menu)
+    {
+        using MemoryStream stream = new(data, writable: false);
+        AvaloniaBitmap bitmap = new(stream);
+        menu.Closed += (_, _) => bitmap.Dispose();
+
+        return new Image
+        {
+            Source = bitmap,
+            Width = 16,
+            Height = 16,
+            Stretch = Stretch.Uniform
+        };
     }
 
     private void OnTaskAdded(WorkerTask task) => Dispatcher.UIThread.Post(() => AddTask(task));

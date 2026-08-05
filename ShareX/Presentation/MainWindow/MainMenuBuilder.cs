@@ -22,6 +22,8 @@ using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -145,8 +147,9 @@ internal sealed class MainMenuBuilder
             {
                 WindowInfo selectedWindow = window;
                 string title = selectedWindow.Text.Truncate(50, "...");
-                items.Add(Item(title, LucideIcons.app_window,
-                    () => new CaptureWindow(selectedWindow.Handle).Capture(!_trayMenu)));
+                items.Add(Item(title, string.Empty,
+                    () => new CaptureWindow(selectedWindow.Handle).Capture(!_trayMenu),
+                    bitmapIcon: GetWindowIcon(selectedWindow)));
             }
         }
         catch (Exception e)
@@ -160,6 +163,20 @@ internal sealed class MainMenuBuilder
         }
 
         return items;
+    }
+
+    private static byte[]? GetWindowIcon(WindowInfo window)
+    {
+        using Icon? icon = window.Icon;
+        if (icon == null)
+        {
+            return null;
+        }
+
+        using Bitmap bitmap = icon.ToBitmap();
+        using MemoryStream stream = new();
+        bitmap.Save(stream, ImageFormat.Png);
+        return stream.ToArray();
     }
 
     private IReadOnlyList<MainMenuEntry> BuildMonitorMenu()
@@ -519,8 +536,8 @@ internal sealed class MainMenuBuilder
 
     private void Run(MainFormCommand command) => _host.ExecuteAvaloniaMainFormCommand(command);
 
-    private static MainMenuEntry Item(string header, string icon, Action execute, bool isVisible = true) =>
-        new(header, icon, execute, isVisible: isVisible);
+    private static MainMenuEntry Item(string header, string icon, Action execute, bool isVisible = true, byte[]? bitmapIcon = null) =>
+        new(header, icon, execute, isVisible: isVisible, bitmapIcon: bitmapIcon);
 
     private static MainMenuEntry Item(string header, string icon, Func<Task> execute, bool isVisible = true) =>
         new(header, icon, execute, isVisible: isVisible);

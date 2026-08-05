@@ -32,6 +32,7 @@ internal sealed class MainMenuEntry
 {
     public string Header { get; }
     public string Icon { get; }
+    public byte[]? BitmapIcon { get; }
     public Func<Task>? ExecuteAsync { get; }
     public Func<IReadOnlyList<MainMenuEntry>>? CreateChildren { get; }
     public bool IsSeparator { get; }
@@ -50,10 +51,12 @@ internal sealed class MainMenuEntry
         bool isVisible = true,
         bool isChecked = false,
         MainMenuToggleType toggleType = MainMenuToggleType.None,
-        KeyGesture? inputGesture = null)
+        KeyGesture? inputGesture = null,
+        byte[]? bitmapIcon = null)
     {
         Header = header;
         Icon = icon;
+        BitmapIcon = bitmapIcon;
         ExecuteAsync = execute == null ? null : () =>
         {
             execute();
@@ -76,10 +79,12 @@ internal sealed class MainMenuEntry
         bool isVisible = true,
         bool isChecked = false,
         MainMenuToggleType toggleType = MainMenuToggleType.None,
-        KeyGesture? inputGesture = null)
+        KeyGesture? inputGesture = null,
+        byte[]? bitmapIcon = null)
     {
         Header = header;
         Icon = icon;
+        BitmapIcon = bitmapIcon;
         ExecuteAsync = executeAsync;
         CreateChildren = createChildren;
         IsEnabled = isEnabled;
