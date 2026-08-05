@@ -56,6 +56,7 @@ public partial class ImageHistoryWindow : Window
     private PointerPressedEventArgs? _dragPointerPressed;
     private Point _dragStart;
     private bool _dragStarted;
+    private bool _suppressThumbnailClickAction;
     private bool _windowPlacementApplied;
 
     private ShareX.HelpersLib.WindowState SavedWindowState =>
@@ -427,6 +428,8 @@ public partial class ImageHistoryWindow : Window
 
         if (!point.Properties.IsLeftButtonPressed) return;
         int index = _loadedEntries.IndexOf(entry);
+        _suppressThumbnailClickAction = e.KeyModifiers.HasFlag(KeyModifiers.Control) ||
+            e.KeyModifiers.HasFlag(KeyModifiers.Shift);
         if (e.KeyModifiers.HasFlag(KeyModifiers.Shift) && _selectionAnchor >= 0)
         {
             SelectRange(_selectionAnchor, index);
@@ -499,7 +502,14 @@ public partial class ImageHistoryWindow : Window
 
     private void OnThumbnailPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
-        if (!_dragStarted) _dragPointerPressed = null;
+        if (sender is not Control control ||
+            e.GetCurrentPoint(control).Properties.PointerUpdateKind != PointerUpdateKind.LeftButtonReleased) return;
+
+        bool wasPressed = _dragPointerPressed != null;
+        bool wasDragging = _dragStarted;
+        _dragPointerPressed = null;
+
+        if (wasPressed && !wasDragging && !_suppressThumbnailClickAction) ShowSelectedImage();
     }
 
     private void OnThumbnailDoubleTapped(object? sender, TappedEventArgs e) => OpenSelectedItem();
