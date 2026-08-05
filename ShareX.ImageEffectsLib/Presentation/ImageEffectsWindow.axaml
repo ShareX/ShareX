@@ -80,21 +80,21 @@
                     <vm:ImageEffectOptionsPanel x:Name="EffectOptionsPanel"/>
                 </Border>
 
-                <Grid Grid.Column="2" RowDefinitions="*,Auto" RowSpacing="10">
-                    <Border BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"
-                            Background="{DynamicResource ShareX.Brush.Checkered}" CornerRadius="4" ClipToBounds="True"
-                            Cursor="Hand" PointerPressed="OnPreviewPointerPressed">
-                        <Grid>
-                            <Image Source="{Binding Preview}" Stretch="Uniform" StretchDirection="DownOnly"
-                                   RenderOptions.BitmapInterpolationMode="HighQuality"/>
-                            <ProgressBar IsIndeterminate="True" Height="4" VerticalAlignment="Top" IsVisible="{Binding IsBusy}"/>
-                        </Grid>
-                    </Border>
-                    <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="8">
-                        <TextBlock Grid.Column="1" Text="{Binding ErrorMessage}" IsVisible="{Binding HasError}" FontWeight="Normal"
-                                   Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}" VerticalAlignment="Center"/>
+                <Border Grid.Column="2" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"
+                        Background="{DynamicResource ShareX.Brush.Checkered}" CornerRadius="4" ClipToBounds="True"
+                        Cursor="Hand" PointerPressed="OnPreviewPointerPressed">
+                    <Grid>
+                        <Image Source="{Binding Preview}" Stretch="Uniform" StretchDirection="DownOnly"
+                               RenderOptions.BitmapInterpolationMode="HighQuality"/>
+                        <ProgressBar IsIndeterminate="True" Height="4" VerticalAlignment="Top" IsVisible="{Binding IsBusy}"/>
+                        <Border Padding="8,4" Margin="8" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                                Background="{DynamicResource ShareX.Brush.Background.Panel}" CornerRadius="4"
+                                IsVisible="{Binding HasError}">
+                            <TextBlock Text="{Binding ErrorMessage}" FontWeight="Normal"
+                                       Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
+                        </Border>
                     </Grid>
-                </Grid>
+                </Border>
             </Grid>
 
             <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="8">
