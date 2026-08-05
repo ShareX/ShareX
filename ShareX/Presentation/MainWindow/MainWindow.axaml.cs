@@ -1034,7 +1034,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 new KeyGesture(Key.Delete, KeyModifiers.Shift)),
             Submenu(Strings.MainWindow_ShortenSelectedUrl, LucideIcons.link_2, BuildUrlShortenerMenu,
                 !SystemOptions.DisableUpload && hasSelection && !isWorking && selected!.IsURLExist),
-            Submenu(Strings.MainWindow_ShareSelectedUrl, LucideIcons.globe_2, BuildUrlSharingMenu,
+            Submenu(Strings.MainWindow_ShareSelectedUrl, LucideIcons.share_2, BuildUrlSharingMenu,
                 !SystemOptions.DisableUpload && hasSelection && !isWorking && selected!.IsURLExist),
             Item(Strings.MainWindow_AnalyzeImage, LucideIcons.bot, _uploadInfoManager.AnalyzeImage,
                 hasSelection && !isWorking && selected!.IsImageFile),
@@ -1143,7 +1143,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             () => _uploadInfoManager.ShortenURL(value))).ToArray();
 
     private IReadOnlyList<MainMenuEntry> BuildUrlSharingMenu() =>
-        Helpers.GetEnums<URLSharingServices>().Select(value => Item(value.GetLocalizedDescription(), LucideIcons.globe_2,
+        Helpers.GetEnums<URLSharingServices>().Select(value => Item(value.GetLocalizedDescription(), LucideIcons.share_2,
             () => _uploadInfoManager.ShareURL(value))).ToArray();
 
     private IReadOnlyList<MainMenuEntry> BuildCombineImagesMenu() => new List<MainMenuEntry>

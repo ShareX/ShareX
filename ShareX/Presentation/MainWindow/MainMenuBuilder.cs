@@ -433,7 +433,7 @@ internal sealed class MainMenuBuilder
                 settings.URLShortenerDestination,
                 value => settings.URLShortenerDestination = value)),
             Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
-                settings.URLSharingServiceDestination.GetLocalizedDescription()), LucideIcons.globe_2, () => BuildEnumDestinations(
+                settings.URLSharingServiceDestination.GetLocalizedDescription()), LucideIcons.share_2, () => BuildEnumDestinations(
                 settings.URLSharingServiceDestination,
                 value => settings.URLSharingServiceDestination = value))
         };
@@ -509,7 +509,7 @@ internal sealed class MainMenuBuilder
             Item(Strings.MainMenuBuilder_TestTextUpload, LucideIcons.file_up, () => Run(MainFormCommand.TestTextUpload), uploadsEnabled),
             Item(Strings.MainMenuBuilder_TestFileUpload, LucideIcons.upload, () => Run(MainFormCommand.TestFileUpload), uploadsEnabled),
             Item(Strings.MainMenuBuilder_TestUrlShortener, LucideIcons.link_2, () => Run(MainFormCommand.TestUrlShortener), uploadsEnabled),
-            Item(Strings.MainMenuBuilder_TestUrlSharing, LucideIcons.globe_2, () => Run(MainFormCommand.TestUrlSharing), uploadsEnabled)
+            Item(Strings.MainMenuBuilder_TestUrlSharing, LucideIcons.share_2, () => Run(MainFormCommand.TestUrlSharing), uploadsEnabled)
         };
     }
 
