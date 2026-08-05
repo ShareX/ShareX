@@ -56,6 +56,7 @@ internal sealed class TaskSettingsPageBuilder
     private readonly BoundValue<bool> _toolsOverride;
     private readonly BoundValue<bool> _actionsOverride;
     private readonly BoundValue<bool> _advancedOverride;
+    private ContextMenu? _activeNamePatternMenu;
 
     public TaskSettingsPageBuilder(TaskSettingsWindow window, TaskSettings settings, bool isDefault)
     {
@@ -553,6 +554,8 @@ internal sealed class TaskSettingsPageBuilder
 
         BoundValue<string> capturePattern = new(upload.NameFormatPattern, value => { upload.NameFormatPattern = value; UpdatePreviews(); });
         BoundValue<string> windowPattern = new(upload.NameFormatPatternActiveWindow, value => { upload.NameFormatPatternActiveWindow = value; UpdatePreviews(); });
+        TextBox capturePatternTextBox = NamePatternText(capturePattern, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
+        TextBox windowPatternTextBox = NamePatternText(windowPattern, CodeMenuEntryFilename.n);
         BoundValue<bool> customTimeZone = new(upload.UseCustomTimeZone, value => { upload.UseCustomTimeZone = value; UpdatePreviews(); });
         TimeZoneInfo[] timeZones = TimeZoneInfo.GetSystemTimeZones().ToArray();
         ComboBox timeZone = ObjectCombo(timeZones, () => upload.CustomTimeZone, value => { upload.CustomTimeZone = value; UpdatePreviews(); }, value => value.DisplayName);
@@ -574,8 +577,8 @@ internal sealed class TaskSettingsPageBuilder
 
         return Page("upload-file-naming", Strings.TaskSettingsWindow_FileNaming, LucideIcons.file_pen,
             EnabledCard(_uploadOverride, Strings.TaskSettingsWindow_NamePatterns,
-                Row(Strings.TaskSettingsWindow_CaptureOrClipboardUpload, Text(capturePattern)), Row(Strings.TaskSettingsWindow_Preview, capturePreview),
-                Row(Strings.TaskSettingsWindow_WindowCapture, Text(windowPattern)), Row(Strings.TaskSettingsWindow_Preview, windowPreview),
+                Row(Strings.TaskSettingsWindow_CaptureOrClipboardUpload, capturePatternTextBox), Row(Strings.TaskSettingsWindow_Preview, capturePreview),
+                Row(Strings.TaskSettingsWindow_WindowCapture, windowPatternTextBox), Row(Strings.TaskSettingsWindow_Preview, windowPreview),
                 Check(Strings.TaskSettingsWindow_UseNamePatternForFileUploads, () => upload.FileUploadUseNamePattern, value => upload.FileUploadUseNamePattern = value),
                 Check(Strings.TaskSettingsWindow_ReplaceURLProblematicCharactersWithUnderscores, () => upload.FileUploadReplaceProblematicCharacters, value => upload.FileUploadReplaceProblematicCharacters = value),
                 Row(Strings.TaskSettingsWindow_AutoIncrementNumber, autoIncrement)),
@@ -1131,6 +1134,88 @@ internal sealed class TaskSettingsPageBuilder
             UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
         });
         return textBox;
+    }
+
+    private TextBox NamePatternText(BoundValue<string> value, params CodeMenuEntryFilename[] ignoredEntries)
+    {
+        TextBox textBox = Text(value);
+        HashSet<CodeMenuEntryFilename> ignored = ignoredEntries.ToHashSet();
+        IEnumerable<CodeMenuEntryFilename> entries = typeof(CodeMenuEntryFilename)
+            .GetFields(BindingFlags.Public | BindingFlags.Static)
+            .Where(field => field.FieldType == typeof(CodeMenuEntryFilename))
+            .Select(field => field.GetValue(null))
+            .OfType<CodeMenuEntryFilename>()
+            .Where(entry => !ignored.Contains(entry));
+
+        List<MenuItem> rootItems = [];
+
+        foreach (IGrouping<string?, CodeMenuEntryFilename> group in entries.GroupBy(entry => entry.Category))
+        {
+            List<MenuItem> items = group.Select(entry =>
+            {
+                string pattern = entry.ToPrefixString();
+                MenuItem item = new()
+                {
+                    Header = $"{pattern} - {entry.Description}",
+                    Focusable = false
+                };
+                item.Click += (_, _) => InsertText(textBox, pattern);
+                return item;
+            }).ToList();
+
+            if (string.IsNullOrWhiteSpace(group.Key))
+            {
+                rootItems.AddRange(items);
+            }
+            else
+            {
+                rootItems.Add(new MenuItem { Header = group.Key, ItemsSource = items, Focusable = false });
+            }
+        }
+
+        ContextMenu menu = new()
+        {
+            Focusable = false,
+            Placement = PlacementMode.RightEdgeAlignedTop,
+            PlacementTarget = textBox,
+            ItemsSource = rootItems
+        };
+        textBox.ContextMenu = menu;
+
+        void OpenMenu()
+        {
+            if (_activeNamePatternMenu != null && !ReferenceEquals(_activeNamePatternMenu, menu))
+            {
+                _activeNamePatternMenu.Close();
+            }
+
+            if (!menu.IsOpen)
+            {
+                _activeNamePatternMenu = menu;
+                menu.Open(textBox);
+            }
+        }
+
+        menu.Closed += (_, _) =>
+        {
+            if (ReferenceEquals(_activeNamePatternMenu, menu))
+            {
+                _activeNamePatternMenu = null;
+            }
+        };
+        textBox.GotFocus += (_, _) => OpenMenu();
+        textBox.PointerReleased += (_, _) => OpenMenu();
+
+        return textBox;
+    }
+
+    private static void InsertText(TextBox textBox, string textToInsert)
+    {
+        string text = textBox.Text ?? string.Empty;
+        int start = Math.Clamp(Math.Min(textBox.SelectionStart, textBox.SelectionEnd), 0, text.Length);
+        textBox.Text = text.Insert(start, textToInsert);
+        textBox.CaretIndex = start + textToInsert.Length;
+        textBox.Focus();
     }
 
     private static NumericUpDown Number(Func<decimal> getter, Action<decimal> setter, decimal minimum, decimal maximum, decimal increment = 1) =>
