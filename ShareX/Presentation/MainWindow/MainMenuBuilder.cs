@@ -145,7 +145,7 @@ internal sealed class MainMenuBuilder
             {
                 WindowInfo selectedWindow = window;
                 string title = selectedWindow.Text.Truncate(50, "...");
-                items.Add(Item(title, IconForName(title),
+                items.Add(Item(title, LucideIcons.app_window,
                     () => new CaptureWindow(selectedWindow.Handle).Capture(!_trayMenu)));
             }
         }
@@ -302,7 +302,7 @@ internal sealed class MainMenuBuilder
             tasks = tasks.Except(new[] { AfterCaptureTasks.ShowBeforeUploadWindow, AfterCaptureTasks.UploadImageToHost });
         }
 
-        return tasks.Select(task => (task, task.GetLocalizedDescription(), IconForName(task.ToString()))).ToArray();
+        return tasks.Select(task => (task, task.GetLocalizedDescription(), GetAfterCaptureTaskIcon(task))).ToArray();
     }
 
     private IReadOnlyList<MainMenuEntry> BuildImageEffectPresetMenu()
@@ -355,8 +355,46 @@ internal sealed class MainMenuBuilder
 
     internal static IReadOnlyList<(AfterUploadTasks Task, string Header, string Icon)> GetAfterUploadTaskMenuOptions() =>
         Helpers.GetEnums<AfterUploadTasks>().Skip(1)
-            .Select(task => (task, task.GetLocalizedDescription(), IconForName(task.ToString())))
+            .Select(task => (task, task.GetLocalizedDescription(), GetAfterUploadTaskIcon(task)))
             .ToArray();
+
+    private static string GetAfterCaptureTaskIcon(AfterCaptureTasks task) => task switch
+    {
+        AfterCaptureTasks.ShowQuickTaskMenu => LucideIcons.menu,
+        AfterCaptureTasks.ShowAfterCaptureWindow => LucideIcons.app_window,
+        AfterCaptureTasks.BeautifyImage => LucideIcons.sparkles,
+        AfterCaptureTasks.AddImageEffects => LucideIcons.wand_sparkles,
+        AfterCaptureTasks.AnnotateImage => LucideIcons.pen_line,
+        AfterCaptureTasks.CopyImageToClipboard => LucideIcons.clipboard_copy,
+        AfterCaptureTasks.PinToScreen => LucideIcons.pin,
+        AfterCaptureTasks.SendImageToPrinter => LucideIcons.printer,
+        AfterCaptureTasks.SaveImageToFile => LucideIcons.save,
+        AfterCaptureTasks.SaveImageToFileWithDialog => LucideIcons.save_pen,
+        AfterCaptureTasks.SaveThumbnailImageToFile => LucideIcons.image_down,
+        AfterCaptureTasks.PerformActions => LucideIcons.terminal,
+        AfterCaptureTasks.CopyFileToClipboard => LucideIcons.clipboard_copy,
+        AfterCaptureTasks.CopyFilePathToClipboard => LucideIcons.clipboard_list,
+        AfterCaptureTasks.CopyFolderPathToClipboard => LucideIcons.folder_bookmark,
+        AfterCaptureTasks.ShowInExplorer => LucideIcons.folder_open,
+        AfterCaptureTasks.AnalyzeImage => LucideIcons.bot,
+        AfterCaptureTasks.ScanQRCode => LucideIcons.qr_code,
+        AfterCaptureTasks.DoOCR => LucideIcons.scan_text,
+        AfterCaptureTasks.ShowBeforeUploadWindow => LucideIcons.app_window,
+        AfterCaptureTasks.UploadImageToHost => LucideIcons.upload_cloud,
+        AfterCaptureTasks.DeleteFile => LucideIcons.trash_2,
+        _ => LucideIcons.circle
+    };
+
+    private static string GetAfterUploadTaskIcon(AfterUploadTasks task) => task switch
+    {
+        AfterUploadTasks.ShowAfterUploadWindow => LucideIcons.app_window,
+        AfterUploadTasks.UseURLShortener => LucideIcons.link_2,
+        AfterUploadTasks.ShareURL => LucideIcons.share_2,
+        AfterUploadTasks.CopyURLToClipboard => LucideIcons.clipboard_copy,
+        AfterUploadTasks.OpenURL => LucideIcons.external_link,
+        AfterUploadTasks.ShowQRCode => LucideIcons.qr_code,
+        _ => LucideIcons.circle
+    };
 
     private static IReadOnlyList<MainMenuEntry> BuildDestinationsMenu()
     {
@@ -463,11 +501,20 @@ internal sealed class MainMenuBuilder
             tasks = tasks.Reverse();
         }
 
-        return tasks.Select(task => Parent(task.TrayMenuText, IconForName(task.TrayMenuText), () => new List<MainMenuEntry>
+        return tasks.Select(task => Parent(task.TrayMenuText, GetRecentTaskIcon(task), () => new List<MainMenuEntry>
         {
             Item(Strings.MainMenuBuilder_Copy, LucideIcons.copy, task.Copy),
             Item(Strings.MainMenuBuilder_Open, LucideIcons.external_link, task.Open)
         })).ToArray();
+    }
+
+    private static string GetRecentTaskIcon(RecentTask task)
+    {
+        if (!string.IsNullOrEmpty(task.ShortenedURL) || !string.IsNullOrEmpty(task.URL)) return LucideIcons.link;
+        if (FileHelpers.IsVideoFile(task.FilePath)) return LucideIcons.file_video;
+        if (FileHelpers.IsTextFile(task.FilePath)) return LucideIcons.file_text;
+        if (FileHelpers.IsImageFile(task.FilePath)) return LucideIcons.file_image;
+        return LucideIcons.file;
     }
 
     private void Run(MainFormCommand command) => _host.ExecuteAvaloniaMainFormCommand(command);
@@ -481,15 +528,4 @@ internal sealed class MainMenuBuilder
     private static MainMenuEntry Parent(string header, string icon, Func<IReadOnlyList<MainMenuEntry>> children, bool isVisible = true) =>
         new(header, icon, createChildren: children, isVisible: isVisible);
 
-    private static string IconForName(string name)
-    {
-        int hash = StringComparer.Ordinal.GetHashCode(name) & int.MaxValue;
-        string[] icons =
-        {
-            LucideIcons.circle_check, LucideIcons.copy, LucideIcons.file, LucideIcons.folder,
-            LucideIcons.image, LucideIcons.link, LucideIcons.cloud, LucideIcons.sparkles,
-            LucideIcons.clipboard, LucideIcons.database, LucideIcons.external_link, LucideIcons.settings_2
-        };
-        return icons[hash % icons.Length];
-    }
 }
