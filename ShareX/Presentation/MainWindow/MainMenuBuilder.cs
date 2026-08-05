@@ -413,76 +413,79 @@ internal sealed class MainMenuBuilder
         _ => LucideIcons.circle
     };
 
-    private static IReadOnlyList<MainMenuEntry> BuildDestinationsMenu()
+    private static IReadOnlyList<MainMenuEntry> BuildDestinationsMenu() =>
+        BuildDestinationsMenu(Program.DefaultTaskSettings);
+
+    internal static IReadOnlyList<MainMenuEntry> BuildDestinationsMenu(TaskSettings settings)
     {
         return new List<MainMenuEntry>
         {
             Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_,
-                GetImageUploaderName()), LucideIcons.image, () => BuildImageDestinations()),
+                GetImageUploaderName(settings)), LucideIcons.image, () => BuildImageDestinations(settings)),
             Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_,
-                GetTextUploaderName()), LucideIcons.file_text, () => BuildTextDestinations()),
+                GetTextUploaderName(settings)), LucideIcons.file_text, () => BuildTextDestinations(settings)),
             Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_,
-                Program.DefaultTaskSettings.FileDestination.GetLocalizedDescription()), LucideIcons.file_up, () => BuildEnumDestinations(
-                Program.DefaultTaskSettings.FileDestination,
-                value => Program.DefaultTaskSettings.FileDestination = value)),
+                settings.FileDestination.GetLocalizedDescription()), LucideIcons.file_up, () => BuildEnumDestinations(
+                settings.FileDestination,
+                value => settings.FileDestination = value)),
             Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_,
-                Program.DefaultTaskSettings.URLShortenerDestination.GetLocalizedDescription()), LucideIcons.link_2, () => BuildEnumDestinations(
-                Program.DefaultTaskSettings.URLShortenerDestination,
-                value => Program.DefaultTaskSettings.URLShortenerDestination = value)),
+                settings.URLShortenerDestination.GetLocalizedDescription()), LucideIcons.link_2, () => BuildEnumDestinations(
+                settings.URLShortenerDestination,
+                value => settings.URLShortenerDestination = value)),
             Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
-                Program.DefaultTaskSettings.URLSharingServiceDestination.GetLocalizedDescription()), LucideIcons.globe_2, () => BuildEnumDestinations(
-                Program.DefaultTaskSettings.URLSharingServiceDestination,
-                value => Program.DefaultTaskSettings.URLSharingServiceDestination = value))
+                settings.URLSharingServiceDestination.GetLocalizedDescription()), LucideIcons.globe_2, () => BuildEnumDestinations(
+                settings.URLSharingServiceDestination,
+                value => settings.URLSharingServiceDestination = value))
         };
     }
 
-    private static string GetImageUploaderName()
+    private static string GetImageUploaderName(TaskSettings settings)
     {
-        return Program.DefaultTaskSettings.ImageDestination == ImageDestination.FileUploader
-            ? Program.DefaultTaskSettings.ImageFileDestination.GetLocalizedDescription()
-            : Program.DefaultTaskSettings.ImageDestination.GetLocalizedDescription();
+        return settings.ImageDestination == ImageDestination.FileUploader
+            ? settings.ImageFileDestination.GetLocalizedDescription()
+            : settings.ImageDestination.GetLocalizedDescription();
     }
 
-    private static string GetTextUploaderName()
+    private static string GetTextUploaderName(TaskSettings settings)
     {
-        return Program.DefaultTaskSettings.TextDestination == TextDestination.FileUploader
-            ? Program.DefaultTaskSettings.TextFileDestination.GetLocalizedDescription()
-            : Program.DefaultTaskSettings.TextDestination.GetLocalizedDescription();
+        return settings.TextDestination == TextDestination.FileUploader
+            ? settings.TextFileDestination.GetLocalizedDescription()
+            : settings.TextDestination.GetLocalizedDescription();
     }
 
-    private static IReadOnlyList<MainMenuEntry> BuildImageDestinations()
+    private static IReadOnlyList<MainMenuEntry> BuildImageDestinations(TaskSettings settings)
     {
         return Helpers.GetEnums<ImageDestination>().Select(value => new MainMenuEntry(
             value.GetLocalizedDescription(),
             string.Empty,
-            () => Program.DefaultTaskSettings.ImageDestination = value,
+            () => settings.ImageDestination = value,
             createChildren: value == ImageDestination.FileUploader
-                ? () => BuildEnumDestinations(Program.DefaultTaskSettings.ImageFileDestination,
+                ? () => BuildEnumDestinations(settings.ImageFileDestination,
                     selected =>
                     {
-                        Program.DefaultTaskSettings.ImageDestination = ImageDestination.FileUploader;
-                        Program.DefaultTaskSettings.ImageFileDestination = selected;
+                        settings.ImageDestination = ImageDestination.FileUploader;
+                        settings.ImageFileDestination = selected;
                     })
                 : null,
-            isChecked: Program.DefaultTaskSettings.ImageDestination == value,
+            isChecked: settings.ImageDestination == value,
             toggleType: MainMenuToggleType.Radio)).ToArray();
     }
 
-    private static IReadOnlyList<MainMenuEntry> BuildTextDestinations()
+    private static IReadOnlyList<MainMenuEntry> BuildTextDestinations(TaskSettings settings)
     {
         return Helpers.GetEnums<TextDestination>().Select(value => new MainMenuEntry(
             value.GetLocalizedDescription(),
             string.Empty,
-            () => Program.DefaultTaskSettings.TextDestination = value,
+            () => settings.TextDestination = value,
             createChildren: value == TextDestination.FileUploader
-                ? () => BuildEnumDestinations(Program.DefaultTaskSettings.TextFileDestination,
+                ? () => BuildEnumDestinations(settings.TextFileDestination,
                     selected =>
                     {
-                        Program.DefaultTaskSettings.TextDestination = TextDestination.FileUploader;
-                        Program.DefaultTaskSettings.TextFileDestination = selected;
+                        settings.TextDestination = TextDestination.FileUploader;
+                        settings.TextFileDestination = selected;
                     })
                 : null,
-            isChecked: Program.DefaultTaskSettings.TextDestination == value,
+            isChecked: settings.TextDestination == value,
             toggleType: MainMenuToggleType.Radio)).ToArray();
     }
 

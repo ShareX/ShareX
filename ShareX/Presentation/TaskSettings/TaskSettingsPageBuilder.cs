@@ -164,14 +164,7 @@ internal sealed class TaskSettingsPageBuilder
             LucideIcons.cloud_upload);
         BindEnabled(afterUpload, afterUploadOverride);
 
-        StackPanel destinations = new() { Spacing = 4 };
-        destinations.Children.Add(Row(Strings.TaskSettingsWindow_ImageUploader, EnumCombo(() => _settings.ImageDestination, value => _settings.ImageDestination = value)));
-        destinations.Children.Add(Row(Strings.TaskSettingsWindow_ImageFileUploader, EnumCombo(() => _settings.ImageFileDestination, value => _settings.ImageFileDestination = value)));
-        destinations.Children.Add(Row(Strings.TaskSettingsWindow_TextUploader, EnumCombo(() => _settings.TextDestination, value => _settings.TextDestination = value)));
-        destinations.Children.Add(Row(Strings.TaskSettingsWindow_TextFileUploader, EnumCombo(() => _settings.TextFileDestination, value => _settings.TextFileDestination = value)));
-        destinations.Children.Add(Row(Strings.TaskSettingsWindow_FileUploader, EnumCombo(() => _settings.FileDestination, value => _settings.FileDestination = value)));
-        destinations.Children.Add(Row(Strings.TaskSettingsWindow_URLShortener, EnumCombo(() => _settings.URLShortenerDestination, value => _settings.URLShortenerDestination = value)));
-        destinations.Children.Add(Row(Strings.TaskSettingsWindow_URLSharingService, EnumCombo(() => _settings.URLSharingServiceDestination, value => _settings.URLSharingServiceDestination = value)));
+        Control destinations = DestinationMenu(_settings);
         BindEnabled(destinations, destinationsOverride);
 
         List<Control> accountControls = [];
@@ -1357,6 +1350,93 @@ internal sealed class TaskSettingsPageBuilder
         };
 
         return button;
+    }
+
+    private static Button DestinationMenu(TaskSettings settings)
+    {
+        TextBlock icon = CreateAccentMenuIcon(LucideIcons.server);
+        TextBlock title = new()
+        {
+            Text = Strings.TaskSettingsWindow_Destinations + "...",
+            FontWeight = FontWeight.Normal,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        TextBlock chevron = new()
+        {
+            Text = LucideIcons.chevron_down,
+            FontSize = 14,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        chevron.Classes.Add("icon");
+
+        Grid content = new()
+        {
+            ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto"),
+            ColumnSpacing = 7
+        };
+        Grid.SetColumn(title, 1);
+        Grid.SetColumn(chevron, 2);
+        content.Children.Add(icon);
+        content.Children.Add(title);
+        content.Children.Add(chevron);
+
+        Button button = new()
+        {
+            Content = content,
+            MinWidth = 300,
+            MinHeight = 32,
+            Padding = new Thickness(8, 4),
+            HorizontalAlignment = HorizontalAlignment.Stretch,
+            HorizontalContentAlignment = HorizontalAlignment.Stretch
+        };
+
+        button.Click += (_, _) =>
+        {
+            ContextMenu menu = new()
+            {
+                Placement = PlacementMode.BottomEdgeAlignedLeft,
+                PlacementTarget = button,
+                ItemsSource = MainMenuBuilder.BuildDestinationsMenu(settings)
+                    .Select(CreateDestinationMenuItem)
+                    .ToList()
+            };
+            menu.Open(button);
+        };
+
+        return button;
+    }
+
+    private static MenuItem CreateDestinationMenuItem(MainMenuEntry entry)
+    {
+        MenuItem item = new()
+        {
+            Header = entry.Header,
+            IsChecked = entry.IsChecked,
+            ToggleType = entry.ToggleType switch
+            {
+                MainMenuToggleType.CheckBox => MenuItemToggleType.CheckBox,
+                MainMenuToggleType.Radio => MenuItemToggleType.Radio,
+                _ => MenuItemToggleType.None
+            }
+        };
+        item.Classes.Add("compact-menu-item");
+
+        if (!string.IsNullOrEmpty(entry.Icon))
+        {
+            item.Icon = CreateAccentMenuIcon(entry.Icon);
+        }
+
+        if (entry.CreateChildren != null)
+        {
+            item.ItemsSource = entry.CreateChildren().Select(CreateDestinationMenuItem).ToList();
+        }
+
+        if (entry.ExecuteAsync != null)
+        {
+            item.Click += async (_, _) => await entry.ExecuteAsync();
+        }
+
+        return item;
     }
 
     private static bool HasFlag<T>(T value, T flag) where T : struct, Enum =>
