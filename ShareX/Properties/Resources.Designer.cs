@@ -89,41 +89,11 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap control {
-            get {
-                object obj = ResourceManager.GetObject("control", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cross {
-            get {
-                object obj = ResourceManager.GetObject("cross", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream ErrorSound {
             get {
                 return ResourceManager.GetStream("ErrorSound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pencil {
-            get {
-                object obj = ResourceManager.GetObject("pencil", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

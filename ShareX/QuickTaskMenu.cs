@@ -23,99 +23,161 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.Localization;
+#nullable enable
+
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
+using Avalonia.Layout;
+using Avalonia.Media;
+using Avalonia.Threading;
+using ShareX.AvaloniaUI.Integration;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
-using ShareX.Properties;
-using System.Drawing;
-using System.Windows.Forms;
+using ShareX.Localization;
+using System;
 
-namespace ShareX
+namespace ShareX;
+
+public sealed class QuickTaskMenu
 {
-    public class QuickTaskMenu
+    public delegate void TaskInfoSelectedEventHandler(QuickTaskInfo? taskInfo);
+    public event TaskInfoSelectedEventHandler? TaskInfoSelected;
+
+    private ContextMenu? _menu;
+    private Window? _placementWindow;
+
+    public void ShowMenu()
     {
-        public delegate void TaskInfoSelectedEventHandler(QuickTaskInfo taskInfo);
-        public TaskInfoSelectedEventHandler TaskInfoSelected;
+        AvaloniaBootstrapper.EnsureInitialized();
+        Dispatcher.UIThread.Post(ShowMenuCore);
+    }
 
-        public void ShowMenu()
+    private void ShowMenuCore()
+    {
+        CloseMenu();
+
+        ContextMenu menu = new();
+        MenuItem continueItem = CreateActionItem(menu, Strings.QuickTaskMenu_ShowMenu_Continue,
+            LucideIcons.circle_play, () => OnTaskInfoSelected(null));
+        menu.Items.Add(continueItem);
+        menu.Items.Add(new Separator());
+
+        if (Program.Settings?.QuickTaskPresets is { Count: > 0 } presets)
         {
-            ContextMenuStrip cms = new ContextMenuStrip()
+            foreach (QuickTaskInfo taskInfo in presets)
             {
-                Font = new Font("Arial", 10f),
-                AutoClose = false
-            };
-
-            cms.KeyUp += (sender, e) =>
-            {
-                if (e.KeyCode == Keys.Escape)
+                if (taskInfo.IsValid)
                 {
-                    cms.Close();
+                    MenuItem item = CreateActionItem(menu, taskInfo.ToString(), null,
+                        () => OnTaskInfoSelected(taskInfo));
+                    menu.Items.Add(item);
                 }
-            };
-
-            ToolStripMenuItem tsmiContinue = new ToolStripMenuItem(Strings.QuickTaskMenu_ShowMenu_Continue);
-            tsmiContinue.Image = Resources.control;
-            tsmiContinue.Click += (sender, e) =>
-            {
-                cms.Close();
-                OnTaskInfoSelected(null);
-            };
-            cms.Items.Add(tsmiContinue);
-
-            cms.Items.Add(new ToolStripSeparator());
-
-            if (Program.Settings != null && Program.Settings.QuickTaskPresets != null && Program.Settings.QuickTaskPresets.Count > 0)
-            {
-                foreach (QuickTaskInfo taskInfo in Program.Settings.QuickTaskPresets)
+                else
                 {
-                    if (taskInfo.IsValid)
-                    {
-                        ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = taskInfo.ToString().Replace("&", "&&"), Tag = taskInfo };
-                        tsmi.Click += (sender, e) =>
-                        {
-                            cms.Close();
-                            QuickTaskInfo selectedTaskInfo = ((ToolStripMenuItem)sender).Tag as QuickTaskInfo;
-                            OnTaskInfoSelected(selectedTaskInfo);
-                        };
-                        cms.Items.Add(tsmi);
-                    }
-                    else
-                    {
-                        cms.Items.Add(new ToolStripSeparator());
-                    }
+                    menu.Items.Add(new Separator());
                 }
-
-                cms.Items[0].Select();
-
-                cms.Items.Add(new ToolStripSeparator());
             }
 
-            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem(Strings.QuickTaskMenu_ShowMenu_Edit_this_menu___);
-            tsmiEdit.Image = Resources.pencil;
-            tsmiEdit.Click += (sender, e) =>
-            {
-                cms.Close();
-                QuickTaskMenuEditorIntegration.Show();
-            };
-            cms.Items.Add(tsmiEdit);
-
-            cms.Items.Add(new ToolStripSeparator());
-
-            ToolStripMenuItem tsmiCancel = new ToolStripMenuItem(Strings.QuickTaskMenu_ShowMenu_Cancel);
-            tsmiCancel.Image = Resources.cross;
-            tsmiCancel.Click += (sender, e) => cms.Close();
-            cms.Items.Add(tsmiCancel);
-
-            ShareXResources.ApplyCustomThemeToContextMenuStrip(cms);
-
-            Point cursorPosition = CaptureHelpers.GetCursorPosition();
-            cursorPosition.Offset(-10, -10);
-            cms.Show(cursorPosition);
-            cms.Focus();
+            menu.Items.Add(new Separator());
         }
 
-        protected void OnTaskInfoSelected(QuickTaskInfo taskInfo)
+        menu.Items.Add(CreateActionItem(menu, Strings.QuickTaskMenu_ShowMenu_Edit_this_menu___,
+            LucideIcons.pencil, QuickTaskMenuEditorIntegration.Show));
+        menu.Items.Add(new Separator());
+        menu.Items.Add(CreateActionItem(menu, Strings.QuickTaskMenu_ShowMenu_Cancel,
+            LucideIcons.x, null));
+
+        System.Drawing.Point cursorPosition = CaptureHelpers.GetCursorPosition();
+        PixelPoint placementPosition = new(cursorPosition.X - 10, cursorPosition.Y - 10);
+        Window placementWindow = new()
         {
-            TaskInfoSelected?.Invoke(taskInfo);
+            Width = 1,
+            Height = 1,
+            MinWidth = 1,
+            MinHeight = 1,
+            CanResize = false,
+            ShowInTaskbar = false,
+            WindowDecorations = WindowDecorations.None,
+            Background = Brushes.Transparent,
+            Opacity = 0,
+            Topmost = true,
+            WindowStartupLocation = WindowStartupLocation.Manual,
+            Position = placementPosition,
+            RequestedThemeVariant = ThemeManager.GetCurrentTheme()
+        };
+
+        _menu = menu;
+        _placementWindow = placementWindow;
+
+        menu.Placement = PlacementMode.BottomEdgeAlignedLeft;
+        menu.PlacementTarget = placementWindow;
+        menu.Closed += (_, _) => ClosePlacementWindow(menu, placementWindow);
+        placementWindow.Closed += (_, _) => CloseContextMenu(menu, placementWindow);
+        placementWindow.Show();
+        placementWindow.Position = placementPosition;
+        placementWindow.Activate();
+        menu.Open(placementWindow);
+        Dispatcher.UIThread.Post(() => continueItem.Focus(), DispatcherPriority.Input);
+    }
+
+    private static MenuItem CreateActionItem(ContextMenu menu, string header, string? icon, Action? action)
+    {
+        MenuItem item = new() { Header = header };
+
+        if (!string.IsNullOrEmpty(icon))
+        {
+            TextBlock iconText = new()
+            {
+                Text = icon,
+                FontSize = 16,
+                FontWeight = FontWeight.Normal,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center
+            };
+            iconText.Classes.Add("icon");
+            iconText.Classes.Add("accent-menu-icon");
+            item.Icon = iconText;
+        }
+
+        item.Click += (_, _) =>
+        {
+            menu.Close();
+            if (action != null)
+            {
+                Dispatcher.UIThread.Post(action, DispatcherPriority.Background);
+            }
+        };
+
+        return item;
+    }
+
+    private void CloseMenu()
+    {
+        ContextMenu? menu = _menu;
+        Window? placementWindow = _placementWindow;
+        _menu = null;
+        _placementWindow = null;
+        menu?.Close();
+        placementWindow?.Close();
+    }
+
+    private void ClosePlacementWindow(ContextMenu menu, Window placementWindow)
+    {
+        if (ReferenceEquals(_menu, menu)) _menu = null;
+        if (ReferenceEquals(_placementWindow, placementWindow)) _placementWindow = null;
+        if (placementWindow.IsVisible) placementWindow.Close();
+    }
+
+    private void CloseContextMenu(ContextMenu menu, Window placementWindow)
+    {
+        if (ReferenceEquals(_placementWindow, placementWindow)) _placementWindow = null;
+        if (ReferenceEquals(_menu, menu))
+        {
+            _menu = null;
+            menu.Close();
         }
     }
+
+    private void OnTaskInfoSelected(QuickTaskInfo? taskInfo) => TaskInfoSelected?.Invoke(taskInfo);
 }
