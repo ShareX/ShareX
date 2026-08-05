@@ -7,10 +7,13 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json.Serialization;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -464,16 +467,81 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         System.Drawing.Bitmap bitmap = new(720, 480);
         using Graphics graphics = Graphics.FromImage(bitmap);
         graphics.SmoothingMode = SmoothingMode.HighQuality;
-        using LinearGradientBrush background = new(new Rectangle(0, 0, bitmap.Width, bitmap.Height),
-            System.Drawing.Color.FromArgb(37, 44, 58), System.Drawing.Color.FromArgb(77, 107, 164), 35f);
+
+        System.Drawing.Color backgroundMain = GetThemeColor("ShareX.Color.Background.Main", System.Drawing.Color.FromArgb(39, 39, 39));
+        System.Drawing.Color backgroundPanel = GetThemeColor("ShareX.Color.Background.Panel", System.Drawing.Color.FromArgb(36, 36, 36));
+        System.Drawing.Color accentStart = GetThemeColor("ShareX.Color.Accent.Start", System.Drawing.Color.FromArgb(62, 131, 242));
+        System.Drawing.Color accentEnd = GetThemeColor("ShareX.Color.Accent.End", System.Drawing.Color.FromArgb(57, 117, 213));
+        System.Drawing.Color accentForeground = GetThemeColor("ShareX.Color.Accent.Foreground", System.Drawing.Color.FromArgb(216, 218, 219));
+
+        using LinearGradientBrush background = new(new Rectangle(0, 0, bitmap.Width, bitmap.Height), backgroundMain, backgroundPanel, 35f);
         graphics.FillRectangle(background, 0, 0, bitmap.Width, bitmap.Height);
-        using SolidBrush accent = new(System.Drawing.Color.FromArgb(220, 82, 160, 255));
-        graphics.FillEllipse(accent, 90, 90, 220, 220);
-        using Font font = new("Segoe UI", 42, FontStyle.Bold);
-        graphics.DrawString("ShareX", font, Brushes.White, 350, 175);
-        using Font caption = new("Segoe UI", 16);
-        graphics.DrawString("Image effects preview", caption, Brushes.White, 354, 235);
+
+        const float shapeSize = 200f;
+        RectangleF shapeBounds = new(
+            (bitmap.Width - shapeSize) / 2f,
+            (bitmap.Height - shapeSize) / 2f,
+            shapeSize,
+            shapeSize);
+        PointF[] outerHexagon = CreateHexagon(shapeBounds, 0f);
+        float shapeCenterX = shapeBounds.Left + shapeBounds.Width / 2f;
+        float shapeCenterY = shapeBounds.Top + shapeBounds.Height / 2f;
+        PointF shapeCenter = new(shapeCenterX, shapeCenterY);
+        PointF[] topFace = [outerHexagon[0], outerHexagon[1], shapeCenter, outerHexagon[5]];
+        PointF[] leftFace = [outerHexagon[5], shapeCenter, outerHexagon[3], outerHexagon[4]];
+        PointF[] rightFace = [outerHexagon[1], outerHexagon[2], outerHexagon[3], shapeCenter];
+        using SolidBrush topFaceBrush = new(BlendColors(accentStart, accentForeground, 0.16f));
+        using SolidBrush leftFaceBrush = new(accentStart);
+        using SolidBrush rightFaceBrush = new(accentEnd);
+        using Pen faceOutline = new(System.Drawing.Color.FromArgb(100, accentForeground), 2f);
+        graphics.FillPolygon(topFaceBrush, topFace);
+        graphics.FillPolygon(leftFaceBrush, leftFace);
+        graphics.FillPolygon(rightFaceBrush, rightFace);
+        graphics.DrawPolygon(faceOutline, outerHexagon);
+        graphics.DrawLine(faceOutline, outerHexagon[3], shapeCenter);
+        graphics.DrawLine(faceOutline, outerHexagon[1], shapeCenter);
+        graphics.DrawLine(faceOutline, outerHexagon[5], shapeCenter);
+
         return bitmap;
+    }
+
+    private static System.Drawing.Color BlendColors(System.Drawing.Color first, System.Drawing.Color second, float amount)
+    {
+        amount = Math.Clamp(amount, 0f, 1f);
+        float inverse = 1f - amount;
+        return System.Drawing.Color.FromArgb(
+            (int)(first.A * inverse + second.A * amount),
+            (int)(first.R * inverse + second.R * amount),
+            (int)(first.G * inverse + second.G * amount),
+            (int)(first.B * inverse + second.B * amount));
+    }
+
+    private static PointF[] CreateHexagon(RectangleF bounds, float inset)
+    {
+        bounds.Inflate(-inset, -inset);
+        float quarterHeight = bounds.Height / 4f;
+        float centerX = bounds.Left + bounds.Width / 2f;
+
+        return
+        [
+            new(centerX, bounds.Top),
+            new(bounds.Right, bounds.Top + quarterHeight),
+            new(bounds.Right, bounds.Bottom - quarterHeight),
+            new(centerX, bounds.Bottom),
+            new(bounds.Left, bounds.Bottom - quarterHeight),
+            new(bounds.Left, bounds.Top + quarterHeight)
+        ];
+    }
+
+    private static System.Drawing.Color GetThemeColor(string resourceKey, System.Drawing.Color fallback)
+    {
+        if (Application.Current?.TryFindResource(resourceKey, ThemeManager.GetCurrentTheme(), out object? resource) == true &&
+            resource is Avalonia.Media.Color color)
+        {
+            return System.Drawing.Color.FromArgb(color.A, color.R, color.G, color.B);
+        }
+
+        return fallback;
     }
 
     public void Dispose()
