@@ -150,10 +150,9 @@ internal sealed class TaskSettingsPageBuilder
             () => !_settings.UseDefaultDestinations,
             value => _settings.UseDefaultDestinations = !value);
 
-        Control afterCapture = FlagsEditor(
+        Control afterCapture = AfterCaptureTaskMenu(
             () => _settings.AfterCaptureJob,
-            value => _settings.AfterCaptureJob = value,
-            Enum.GetValues<AfterCaptureTasks>().Where(x => x != AfterCaptureTasks.None));
+            value => _settings.AfterCaptureJob = value);
         BindEnabled(afterCapture, afterCaptureOverride);
 
         Control afterUpload = FlagsEditor(
@@ -1249,6 +1248,111 @@ internal sealed class TaskSettingsPageBuilder
         return button;
     }
 
+    private static Button AfterCaptureTaskMenu(Func<AfterCaptureTasks> getter, Action<AfterCaptureTasks> setter)
+    {
+        IReadOnlyDictionary<AfterCaptureTasks, (string Header, string Icon)> taskOptions = MainMenuBuilder
+            .GetAfterCaptureTaskMenuOptions()
+            .ToDictionary(option => option.Task, option => (option.Header, option.Icon));
+        TextBlock selectedIcon = CreateAccentMenuIcon(LucideIcons.image_up);
+        AfterCaptureTasks lastSelectedTask = taskOptions.Keys.LastOrDefault(task => getter().HasFlag(task));
+        TextBlock selectedTasks = new()
+        {
+            FontWeight = FontWeight.Normal,
+            TextTrimming = TextTrimming.CharacterEllipsis,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        TextBlock chevron = new()
+        {
+            Text = LucideIcons.chevron_down,
+            FontSize = 14,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        chevron.Classes.Add("icon");
+
+        Grid content = new()
+        {
+            ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto"),
+            ColumnSpacing = 7
+        };
+        Grid.SetColumn(selectedTasks, 1);
+        Grid.SetColumn(chevron, 2);
+        content.Children.Add(selectedIcon);
+        content.Children.Add(selectedTasks);
+        content.Children.Add(chevron);
+
+        Button button = new()
+        {
+            Content = content,
+            MinWidth = 300,
+            MinHeight = 32,
+            Padding = new Thickness(8, 4),
+            HorizontalAlignment = HorizontalAlignment.Stretch,
+            HorizontalContentAlignment = HorizontalAlignment.Stretch
+        };
+
+        void UpdateSelectedTasks()
+        {
+            AfterCaptureTasks selected = getter();
+            if (lastSelectedTask != AfterCaptureTasks.None && !selected.HasFlag(lastSelectedTask))
+            {
+                lastSelectedTask = taskOptions.Keys.LastOrDefault(task => selected.HasFlag(task));
+            }
+
+            selectedIcon.Text = lastSelectedTask == AfterCaptureTasks.None
+                ? LucideIcons.image_up
+                : taskOptions[lastSelectedTask].Icon;
+
+            string[] titles = taskOptions
+                .Where(option => selected.HasFlag(option.Key))
+                .Select(option => option.Value.Header)
+                .ToArray();
+            selectedTasks.Text = titles.Length > 0
+                ? string.Join(", ", titles)
+                : AfterCaptureTasks.None.GetLocalizedDescription();
+        }
+
+        UpdateSelectedTasks();
+
+        button.Click += (_, _) =>
+        {
+            AfterCaptureTasks selected = getter();
+            List<MenuItem> items = [];
+
+            foreach ((AfterCaptureTasks task, (string header, string icon)) in taskOptions)
+            {
+                MenuItem item = new()
+                {
+                    Header = header,
+                    Icon = CreateAccentMenuIcon(icon),
+                    ToggleType = MenuItemToggleType.CheckBox,
+                    IsChecked = selected.HasFlag(task)
+                };
+                item.Classes.Add("compact-menu-item");
+                item.Click += (_, _) =>
+                {
+                    AfterCaptureTasks updated = getter().Swap(task);
+                    setter(updated);
+                    if (updated.HasFlag(task))
+                    {
+                        lastSelectedTask = task;
+                    }
+                    UpdateSelectedTasks();
+                };
+                items.Add(item);
+            }
+
+            ContextMenu menu = new()
+            {
+                Placement = PlacementMode.BottomEdgeAlignedLeft,
+                PlacementTarget = button,
+                ItemsSource = items
+            };
+            menu.Open(button);
+        };
+
+        return button;
+    }
+
     private static MenuItem CreateTaskMenuItem(HotkeyType task, HotkeyType selectedTask, Action<HotkeyType> selectTask)
     {
         MenuItem item = new()
@@ -1263,10 +1367,13 @@ internal sealed class TaskSettingsPageBuilder
     }
 
     private static TextBlock CreateTaskMenuIcon(HotkeyType task)
+        => CreateAccentMenuIcon(TaskHelpers.FindMenuLucideIcon(task));
+
+    private static TextBlock CreateAccentMenuIcon(string glyph)
     {
         TextBlock icon = new()
         {
-            Text = TaskHelpers.FindMenuLucideIcon(task),
+            Text = glyph,
             FontSize = 16,
             Width = 18,
             TextAlignment = TextAlignment.Center,

@@ -285,20 +285,24 @@ internal sealed class MainMenuBuilder
     private IReadOnlyList<MainMenuEntry> BuildAfterCaptureMenu()
     {
         AfterCaptureTasks value = Program.DefaultTaskSettings.AfterCaptureJob;
-        IEnumerable<AfterCaptureTasks> values = Helpers.GetEnums<AfterCaptureTasks>().Skip(1);
+        return GetAfterCaptureTaskMenuOptions(!SystemOptions.DisableUpload).Select(option => new MainMenuEntry(
+            option.Header,
+            option.Icon,
+            () => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(option.Task),
+            createChildren: option.Task == AfterCaptureTasks.AddImageEffects ? BuildImageEffectPresetMenu : null,
+            isChecked: value.HasFlag(option.Task),
+            toggleType: MainMenuToggleType.CheckBox)).ToArray();
+    }
 
-        if (SystemOptions.DisableUpload)
+    internal static IReadOnlyList<(AfterCaptureTasks Task, string Header, string Icon)> GetAfterCaptureTaskMenuOptions(bool includeUploadTasks = true)
+    {
+        IEnumerable<AfterCaptureTasks> tasks = Helpers.GetEnums<AfterCaptureTasks>().Skip(1);
+        if (!includeUploadTasks)
         {
-            values = values.Except(new[] { AfterCaptureTasks.ShowBeforeUploadWindow, AfterCaptureTasks.UploadImageToHost });
+            tasks = tasks.Except(new[] { AfterCaptureTasks.ShowBeforeUploadWindow, AfterCaptureTasks.UploadImageToHost });
         }
 
-        return values.Select(task => new MainMenuEntry(
-            task.GetLocalizedDescription(),
-            IconForName(task.ToString()),
-            () => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(task),
-            createChildren: task == AfterCaptureTasks.AddImageEffects ? BuildImageEffectPresetMenu : null,
-            isChecked: value.HasFlag(task),
-            toggleType: MainMenuToggleType.CheckBox)).ToArray();
+        return tasks.Select(task => (task, task.GetLocalizedDescription(), IconForName(task.ToString()))).ToArray();
     }
 
     private IReadOnlyList<MainMenuEntry> BuildImageEffectPresetMenu()
