@@ -2371,12 +2371,6 @@
   <data name="AboutWindow_Team" xml:space="preserve">
     <value>團隊</value>
   </data>
-  <data name="AboutWindow_Credits" xml:space="preserve">
-    <value>致謝</value>
-  </data>
-  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
-    <value>錄製裝置</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Title" xml:space="preserve">
     <value>ShareX - 自訂上傳器設定</value>
   </data>

@@ -115,6 +115,11 @@ public partial class AboutWindow : Window
     {
         return
         [
+            new AboutSection(Strings.AboutWindow_Team,
+            [
+                Link("Jaex", Links.Jaex),
+                Link("McoreD", Links.McoreD)
+            ]),
             new AboutSection(Strings.AboutWindow_Links,
             [
                 Link(Strings.AboutWindow_Website, Links.Website),
@@ -127,24 +132,6 @@ public partial class AboutWindow : Window
                 Link("Reddit", Links.Reddit),
                 Link("Steam", Links.Steam),
                 Link("Microsoft Store", Links.MicrosoftStore)
-            ]),
-            new AboutSection(Strings.AboutWindow_Team,
-            [
-                Link("Jaex", Links.Jaex),
-                Link("McoreD", Links.McoreD)
-            ]),
-            new AboutSection(Strings.AboutWindow_Credits,
-            [
-                Link("Avalonia UI", "https://avaloniaui.net"),
-                Link("Json.NET", "https://github.com/JamesNK/Newtonsoft.Json"),
-                Link("SSH.NET", "https://github.com/sshnet/SSH.NET"),
-                Link("Lucide Icons", "https://lucide.dev"),
-                Link("Fugue Icons", "http://p.yusukekamiyamane.com"),
-                Link("FFmpeg", "https://www.ffmpeg.org"),
-                Link(Strings.AboutWindow_RecorderDevices, "https://github.com/rdp/screen-capture-recorder-to-video-windows-free"),
-                Link("FluentFTP", "https://github.com/robinrodricks/FluentFTP"),
-                Link("ZXing.Net", "https://github.com/micjahn/ZXing.Net"),
-                Link("ExifTool", "https://exiftool.org")
             ])
         ];
     }

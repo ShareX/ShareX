@@ -2371,12 +2371,6 @@
   <data name="AboutWindow_Team" xml:space="preserve">
     <value>Team</value>
   </data>
-  <data name="AboutWindow_Credits" xml:space="preserve">
-    <value>Danksagungen</value>
-  </data>
-  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
-    <value>Aufnahmegeräte</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Title" xml:space="preserve">
     <value>ShareX - Einstellungen für benutzerdefinierte Uploader</value>
   </data>

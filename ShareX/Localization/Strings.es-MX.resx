@@ -2371,12 +2371,6 @@
   <data name="AboutWindow_Team" xml:space="preserve">
     <value>Equipo</value>
   </data>
-  <data name="AboutWindow_Credits" xml:space="preserve">
-    <value>Créditos</value>
-  </data>
-  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
-    <value>Dispositivos de grabación</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Title" xml:space="preserve">
     <value>ShareX - Configuración de cargadores personalizados</value>
   </data>

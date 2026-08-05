@@ -2371,12 +2371,6 @@
   <data name="AboutWindow_Team" xml:space="preserve">
     <value>Команда</value>
   </data>
-  <data name="AboutWindow_Credits" xml:space="preserve">
-    <value>Подяки</value>
-  </data>
-  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
-    <value>Пристрої записування</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Title" xml:space="preserve">
     <value>ShareX - Налаштування користувацьких завантажувачів</value>
   </data>

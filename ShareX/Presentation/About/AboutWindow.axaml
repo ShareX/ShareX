@@ -7,7 +7,7 @@
         x:CompileBindings="False"
         Title="{x:Static res:Strings.AboutWindow_Title}"
         Width="920"
-        Height="620"
+        Height="540"
         MinWidth="650"
         MinHeight="500"
         WindowStartupLocation="CenterScreen">
@@ -34,12 +34,12 @@
 
     <ThemeVariantScope>
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
-              ColumnDefinitions="280,*">
+              ColumnDefinitions="300,*">
             <Border Grid.Column="0"
                     Background="#232323"
                     Padding="24">
                 <Grid RowDefinitions="Auto,Auto,Auto,*,Auto" RowSpacing="14">
-                    <Grid Width="200" Height="200" HorizontalAlignment="Center">
+                    <Grid Width="240" Height="330" HorizontalAlignment="Center">
                         <Image x:Name="LogoImage"
                                Source="avares://ShareX/Resources/About_Logo.png"
                                Stretch="Uniform"
@@ -95,9 +95,13 @@
 
             <ScrollViewer Grid.Column="1"
                           Margin="22,14,14,14"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center"
                           HorizontalScrollBarVisibility="Disabled"
                           VerticalScrollBarVisibility="Auto">
-                <ItemsControl x:Name="SectionsControl">
+                <ItemsControl x:Name="SectionsControl"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,8,14">

@@ -2371,12 +2371,6 @@
   <data name="AboutWindow_Team" xml:space="preserve">
     <value>Csapat</value>
   </data>
-  <data name="AboutWindow_Credits" xml:space="preserve">
-    <value>Közreműködők</value>
-  </data>
-  <data name="AboutWindow_RecorderDevices" xml:space="preserve">
-    <value>Rögzítőeszközök</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Title" xml:space="preserve">
     <value>ShareX - Egyéni feltöltők beállításai</value>
   </data>

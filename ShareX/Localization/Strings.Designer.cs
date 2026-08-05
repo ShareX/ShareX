@@ -4482,16 +4482,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("AboutWindow_Team", resourceCulture);
             }
         }
-        public static string AboutWindow_Credits {
-            get {
-                return ResourceManager.GetString("AboutWindow_Credits", resourceCulture);
-            }
-        }
-        public static string AboutWindow_RecorderDevices {
-            get {
-                return ResourceManager.GetString("AboutWindow_RecorderDevices", resourceCulture);
-            }
-        }
         public static string CustomUploaderSettingsWindow_Title {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_Title", resourceCulture);
