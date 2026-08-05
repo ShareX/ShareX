@@ -58,6 +58,7 @@ public partial class ImageHistoryWindow : Window
     private bool _dragStarted;
     private bool _suppressThumbnailClickAction;
     private bool _windowPlacementApplied;
+    private bool _virtualListLayoutRefreshPending;
 
     private ShareX.HelpersLib.WindowState SavedWindowState =>
         _settings.WindowState ??= new ShareX.HelpersLib.WindowState();
@@ -97,12 +98,12 @@ public partial class ImageHistoryWindow : Window
     private async void OnOpened(object? sender, EventArgs e)
     {
         Opened -= OnOpened;
-        ApplySavedWindowState();
         _windowPlacementApplied = true;
         Activate();
         SearchTextBox.Focus();
         await Dispatcher.UIThread.InvokeAsync(AttachScrollViewer, DispatcherPriority.Loaded);
         await RefreshHistoryAsync();
+        QueueVirtualListLayoutRefresh();
     }
 
     private void OnClosing(object? sender, WindowClosingEventArgs e) => SaveWindowState();
@@ -157,6 +158,30 @@ public partial class ImageHistoryWindow : Window
     private void OnResized(object? sender, WindowResizedEventArgs e)
     {
         if (_windowPlacementApplied) SaveNormalWindowSize();
+        QueueVirtualListLayoutRefresh();
+    }
+
+    private void QueueVirtualListLayoutRefresh()
+    {
+        if (_virtualListLayoutRefreshPending) return;
+
+        _virtualListLayoutRefreshPending = true;
+        Dispatcher.UIThread.Post(() =>
+        {
+            _virtualListLayoutRefreshPending = false;
+            if (!IsVisible) return;
+
+            ThumbnailRows.InvalidateMeasure();
+            ThumbnailRows.InvalidateArrange();
+
+            VirtualizingStackPanel? panel = ThumbnailRows.GetVisualDescendants()
+                .OfType<VirtualizingStackPanel>()
+                .FirstOrDefault();
+            panel?.InvalidateMeasure();
+            panel?.InvalidateArrange();
+
+            Dispatcher.UIThread.Post(CheckLoadMoreIfViewportNotFilled, DispatcherPriority.Background);
+        }, DispatcherPriority.Background);
     }
 
     private void OnPositionChanged(object? sender, PixelPointEventArgs e)

@@ -59,6 +59,7 @@ public partial class HistoryWindow : Window
     private Point _dragStart;
     private bool _dragStarted;
     private bool _windowPlacementApplied;
+    private bool _virtualListLayoutRefreshPending;
 
     private ShareX.HelpersLib.WindowState SavedWindowState =>
         _settings.WindowState ??= new ShareX.HelpersLib.WindowState();
@@ -99,11 +100,11 @@ public partial class HistoryWindow : Window
     private async void OnOpened(object? sender, EventArgs e)
     {
         Opened -= OnOpened;
-        ApplySavedWindowState();
         _windowPlacementApplied = true;
         Activate();
         Focus();
         await RefreshHistoryAsync();
+        QueueVirtualListLayoutRefresh();
     }
 
     private void OnClosing(object? sender, WindowClosingEventArgs e) => SaveWindowState();
@@ -121,6 +122,28 @@ public partial class HistoryWindow : Window
     private void OnResized(object? sender, WindowResizedEventArgs e)
     {
         if (_windowPlacementApplied) SaveNormalWindowSize();
+        QueueVirtualListLayoutRefresh();
+    }
+
+    private void QueueVirtualListLayoutRefresh()
+    {
+        if (_virtualListLayoutRefreshPending) return;
+
+        _virtualListLayoutRefreshPending = true;
+        Dispatcher.UIThread.Post(() =>
+        {
+            _virtualListLayoutRefreshPending = false;
+            if (!IsVisible) return;
+
+            HistoryList.InvalidateMeasure();
+            HistoryList.InvalidateArrange();
+
+            VirtualizingStackPanel? panel = HistoryList.GetVisualDescendants()
+                .OfType<VirtualizingStackPanel>()
+                .FirstOrDefault();
+            panel?.InvalidateMeasure();
+            panel?.InvalidateArrange();
+        }, DispatcherPriority.Background);
     }
 
     private void OnPositionChanged(object? sender, PixelPointEventArgs e)
