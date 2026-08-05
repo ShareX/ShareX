@@ -186,8 +186,10 @@
                                                                        FontWeight="Normal"
                                                                        TextTrimming="CharacterEllipsis"/>
                                                             <TextBlock Grid.Column="2"
+                                                                       Classes="icon"
                                                                        IsVisible="{Binding IsCustomized}"
-                                                                       Text="*"
+                                                                       Text="{x:Static theming:LucideIcons.pencil}"
+                                                                       FontSize="14"
                                                                        FontWeight="Normal"
                                                                        Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
                                                                        VerticalAlignment="Center"
