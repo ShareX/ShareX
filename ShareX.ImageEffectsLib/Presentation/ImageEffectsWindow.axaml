@@ -99,10 +99,14 @@
 
             <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="8">
                 <StackPanel Orientation="Horizontal" Spacing="8">
-                    <Button Classes="picker-button" Command="{Binding LoadFileCommand}" IsVisible="{Binding IsToolMode}" ToolTip.Tip="Open image..."><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/></Button>
-                    <Button Classes="picker-button" Command="{Binding LoadClipboardCommand}" IsVisible="{Binding IsToolMode}" ToolTip.Tip="Load from clipboard"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}"/></Button>
-                    <Button Classes="picker-button" Command="{Binding PackagePresetCommand}" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Package preset..."><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.package}"/></Button>
-                    <Button Classes="picker-button" Command="{Binding OpenHelpCommand}" ToolTip.Tip="Image effects page..."><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}"/></Button>
+                    <Button Classes="picker-button" Command="{Binding LoadFileCommand}" IsVisible="{Binding IsToolMode}"
+                            ToolTip.Tip="Open image..." ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/></Button>
+                    <Button Classes="picker-button" Command="{Binding LoadClipboardCommand}" IsVisible="{Binding IsToolMode}"
+                            ToolTip.Tip="Load from clipboard" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}"/></Button>
+                    <Button Classes="picker-button" Command="{Binding PackagePresetCommand}" IsEnabled="{Binding HasSelectedPreset}"
+                            ToolTip.Tip="Package preset..." ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.package}"/></Button>
+                    <Button Classes="picker-button" Command="{Binding OpenHelpCommand}"
+                            ToolTip.Tip="Image effects page..." ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}"/></Button>
                 </StackPanel>
                 <Button Grid.Column="2" Command="{Binding SaveCommand}" IsVisible="{Binding IsToolMode}">
                     <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.save}"/><TextBlock Text="Save image..."/></StackPanel>
