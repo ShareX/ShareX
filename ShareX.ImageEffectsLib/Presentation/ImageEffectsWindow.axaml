@@ -82,10 +82,11 @@
 
                 <Grid Grid.Column="2" RowDefinitions="*,Auto" RowSpacing="10">
                     <Border BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1"
-                            Background="{DynamicResource ShareX.Brush.Checkered.Small}" CornerRadius="4" ClipToBounds="True"
+                            Background="{DynamicResource ShareX.Brush.Checkered}" CornerRadius="4" ClipToBounds="True"
                             Cursor="Hand" PointerPressed="OnPreviewPointerPressed">
                         <Grid>
-                            <Image Source="{Binding Preview}" Stretch="Uniform" Margin="12" RenderOptions.BitmapInterpolationMode="HighQuality"/>
+                            <Image Source="{Binding Preview}" Stretch="Uniform" StretchDirection="DownOnly"
+                                   RenderOptions.BitmapInterpolationMode="HighQuality"/>
                             <ProgressBar IsIndeterminate="True" Height="4" VerticalAlignment="Top" IsVisible="{Binding IsBusy}"/>
                         </Grid>
                     </Border>
