@@ -42,6 +42,7 @@
             <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="0,4"/>
         </Style>
         <Style Selector="Border.section-card">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
@@ -83,6 +84,7 @@
         <Style Selector="Button.compact">
             <Setter Property="Height" Value="32"/>
             <Setter Property="Padding" Value="10,4"/>
+            <Setter Property="Margin" Value="0,4"/>
         </Style>
         <Style Selector="ListBox.settings-list">
             <Setter Property="MinHeight" Value="150"/>

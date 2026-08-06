@@ -1505,7 +1505,7 @@
     <value>Închide fereastra OCR după deschiderea legăturii serviciului</value>
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Ajutor OCR</value>
+    <value>Ajutor OCR...</value>
   </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Încărcare captură sau clipboard:</value>

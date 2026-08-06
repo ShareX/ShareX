@@ -1505,7 +1505,7 @@
     <value>OCR-Fenster nach dem Öffnen des Dienstlinks schließen</value>
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR-Hilfe</value>
+    <value>OCR-Hilfe...</value>
   </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Aufnahme- oder Zwischenablage-Upload:</value>

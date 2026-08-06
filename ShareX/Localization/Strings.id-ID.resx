@@ -1505,7 +1505,7 @@
     <value>Tutup jendela OCR setelah membuka tautan layanan</value>
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Bantuan OCR</value>
+    <value>Bantuan OCR...</value>
   </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Unggahan tangkapan atau papan klip:</value>

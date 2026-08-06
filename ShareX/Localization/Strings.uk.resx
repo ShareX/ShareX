@@ -1505,7 +1505,7 @@
     <value>Закривати вікно OCR після відкриття посилання служби</value>
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Довідка OCR</value>
+    <value>Довідка OCR...</value>
   </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Завантаження захоплення або буфера обміну:</value>

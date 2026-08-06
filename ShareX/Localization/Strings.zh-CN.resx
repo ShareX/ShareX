@@ -1505,7 +1505,7 @@
     <value>打开服务链接后关闭 OCR 窗口</value>
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR 帮助</value>
+    <value>OCR 帮助...</value>
   </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>捕获或剪贴板上传：</value>

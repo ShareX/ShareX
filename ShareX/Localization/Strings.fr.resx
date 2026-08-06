@@ -1505,7 +1505,7 @@
     <value>Fermer la fenêtre OCR après l’ouverture du lien du service</value>
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Aide OCR</value>
+    <value>Aide OCR...</value>
   </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Envoi de capture ou du presse-papiers :</value>

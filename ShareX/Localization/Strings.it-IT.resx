@@ -1505,7 +1505,7 @@
     <value>Chiudi finestra OCR dopo l&apos;apertura del collegamento al servizio</value>
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Guida OCR</value>
+    <value>Guida OCR...</value>
   </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Caricamento acquisizione o appunti:</value>

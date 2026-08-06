@@ -1505,7 +1505,7 @@
     <value>إغلاق نافذة OCR بعد فتح رابط الخدمة</value>
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>مساعدة OCR</value>
+    <value>مساعدة OCR...</value>
   </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>رفع الالتقاط أو الحافظة:</value>

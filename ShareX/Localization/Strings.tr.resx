@@ -1505,7 +1505,7 @@
     <value>Hizmet bağlantısını açtıktan sonra OCR penceresini kapat</value>
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR yardımı</value>
+    <value>OCR yardımı...</value>
   </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Yakalama veya pano yüklemesi:</value>
