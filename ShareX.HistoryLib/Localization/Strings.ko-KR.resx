@@ -303,9 +303,6 @@
   <data name="HistoryWindow_ItemsFormat" xml:space="preserve">
     <value>항목 {0:N0}개</value>
   </data>
-  <data name="HistoryWindow_ItemsOfFormat" xml:space="preserve">
-    <value>{1:N0}개 중 {0:N0}개</value>
-  </data>
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>현재 필터와 일치하는 항목이 없습니다</value>
   </data>
@@ -368,9 +365,6 @@
   </data>
   <data name="ImageHistoryWindow_ItemsFormat" xml:space="preserve">
     <value>항목 {0:N0}개</value>
-  </data>
-  <data name="ImageHistoryWindow_ShownMatchedFormat" xml:space="preserve">
-    <value>{0:N0}개 표시 · {1:N0}개 일치</value>
   </data>
   <data name="ImageHistoryWindow_NoItemsMatchCurrentFilter" xml:space="preserve">
     <value>현재 필터와 일치하는 항목이 없습니다</value>

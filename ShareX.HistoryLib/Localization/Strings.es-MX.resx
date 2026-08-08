@@ -303,9 +303,6 @@
   <data name="HistoryWindow_ItemsFormat" xml:space="preserve">
     <value>{0:N0} elementos</value>
   </data>
-  <data name="HistoryWindow_ItemsOfFormat" xml:space="preserve">
-    <value>{0:N0} de {1:N0}</value>
-  </data>
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>Ningún elemento coincide con los filtros actuales</value>
   </data>
@@ -368,9 +365,6 @@
   </data>
   <data name="ImageHistoryWindow_ItemsFormat" xml:space="preserve">
     <value>{0:N0} elementos</value>
-  </data>
-  <data name="ImageHistoryWindow_ShownMatchedFormat" xml:space="preserve">
-    <value>{0:N0} mostrados · {1:N0} coincidentes</value>
   </data>
   <data name="ImageHistoryWindow_NoItemsMatchCurrentFilter" xml:space="preserve">
     <value>Ningún elemento coincide con el filtro actual</value>

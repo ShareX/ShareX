@@ -114,13 +114,7 @@
                                     <TextBlock Grid.Column="0" Text=""/>
                                     <TextBlock Grid.Column="1" Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_Date}"/>
                                     <TextBlock Grid.Column="2" Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_File_name}"/>
-                                    <Grid Grid.Column="3" ColumnDefinitions="*,Auto" ColumnSpacing="8">
-                                        <TextBlock Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_URL}"/>
-                                        <TextBlock x:Name="ItemCountText"
-                                                   Grid.Column="1"
-                                                   FontWeight="Normal"
-                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
-                                    </Grid>
+                                    <TextBlock Grid.Column="3" Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_URL}"/>
                                 </Grid>
                             </Border>
 

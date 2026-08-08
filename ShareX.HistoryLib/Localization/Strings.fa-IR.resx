@@ -303,9 +303,6 @@
   <data name="HistoryWindow_ItemsFormat" xml:space="preserve">
     <value>{0:N0} مورد</value>
   </data>
-  <data name="HistoryWindow_ItemsOfFormat" xml:space="preserve">
-    <value>{0:N0} از {1:N0}</value>
-  </data>
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>هیچ موردی با فیلترهای فعلی مطابقت ندارد</value>
   </data>
@@ -368,9 +365,6 @@
   </data>
   <data name="ImageHistoryWindow_ItemsFormat" xml:space="preserve">
     <value>{0:N0} مورد</value>
-  </data>
-  <data name="ImageHistoryWindow_ShownMatchedFormat" xml:space="preserve">
-    <value>{0:N0} نمایش داده شد · {1:N0} مطابق</value>
   </data>
   <data name="ImageHistoryWindow_NoItemsMatchCurrentFilter" xml:space="preserve">
     <value>هیچ موردی با فیلتر فعلی مطابقت ندارد</value>

@@ -303,9 +303,6 @@
   <data name="HistoryWindow_ItemsFormat" xml:space="preserve">
     <value>{0:N0} öğe</value>
   </data>
-  <data name="HistoryWindow_ItemsOfFormat" xml:space="preserve">
-    <value>{1:N0} öğeden {0:N0} tanesi</value>
-  </data>
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>Geçerli filtrelerle eşleşen öğe yok</value>
   </data>
@@ -368,9 +365,6 @@
   </data>
   <data name="ImageHistoryWindow_ItemsFormat" xml:space="preserve">
     <value>{0:N0} öğe</value>
-  </data>
-  <data name="ImageHistoryWindow_ShownMatchedFormat" xml:space="preserve">
-    <value>{0:N0} gösteriliyor · {1:N0} eşleşti</value>
   </data>
   <data name="ImageHistoryWindow_NoItemsMatchCurrentFilter" xml:space="preserve">
     <value>Geçerli filtreyle eşleşen öğe yok</value>

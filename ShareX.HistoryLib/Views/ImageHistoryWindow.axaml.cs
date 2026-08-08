@@ -334,11 +334,7 @@ public partial class ImageHistoryWindow : Window
 
     private void UpdateCountAndEmptyState()
     {
-        int loaded = _loadedEntries.Count;
         int filtered = _filteredHistoryItems.Length;
-        ItemCountText.Text = loaded == filtered
-            ? string.Format(Strings.ImageHistoryWindow_ItemsFormat, filtered)
-            : string.Format(Strings.ImageHistoryWindow_ShownMatchedFormat, loaded, filtered);
         Title = $"{Strings.HistoryWindows_ShareX_Image_History} ({string.Format(Strings.ImageHistoryWindow_ItemsFormat, filtered)})";
         EmptyState.IsVisible = filtered == 0;
         EmptyStateText.Text = _allHistoryItems.Count == 0

@@ -5,12 +5,12 @@ HistoryLib uses the shared `Strings.resx` catalog in this directory. Resource ke
 | Area | Resource prefix | Keys | Status |
 | --- | --- | ---: | --- |
 | Shared history-window UI | `HistoryWindows_` | 87 | Complete |
-| History window runtime messages | `HistoryWindow_` | 22 | Complete |
-| Image-history runtime messages | `ImageHistoryWindow_` | 23 | Complete |
+| History window runtime messages | `HistoryWindow_` | 21 | Complete |
+| Image-history runtime messages | `ImageHistoryWindow_` | 22 | Complete |
 | Statistics output | `HistoryHelpers_` | 7 | Complete |
 | History manager errors | `HistoryManager_` | 2 | Complete |
 
-All 141 keys are translated in all 23 supported cultures. The former `Properties/Resources` catalog was consolidated here.
+All 139 keys are translated in all 23 supported cultures. The former `Properties/Resources` catalog was consolidated here.
 
 Run validation from the repository root:
 

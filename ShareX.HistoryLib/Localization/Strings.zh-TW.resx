@@ -303,9 +303,6 @@
   <data name="HistoryWindow_ItemsFormat" xml:space="preserve">
     <value>{0:N0} 個項目</value>
   </data>
-  <data name="HistoryWindow_ItemsOfFormat" xml:space="preserve">
-    <value>{1:N0} 個中的 {0:N0} 個</value>
-  </data>
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>沒有項目符合目前的篩選器</value>
   </data>
@@ -368,9 +365,6 @@
   </data>
   <data name="ImageHistoryWindow_ItemsFormat" xml:space="preserve">
     <value>{0:N0} 個項目</value>
-  </data>
-  <data name="ImageHistoryWindow_ShownMatchedFormat" xml:space="preserve">
-    <value>已顯示 {0:N0} 個 · 符合 {1:N0} 個</value>
   </data>
   <data name="ImageHistoryWindow_NoItemsMatchCurrentFilter" xml:space="preserve">
     <value>沒有項目符合目前的篩選器</value>

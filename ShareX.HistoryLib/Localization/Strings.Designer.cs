@@ -515,11 +515,6 @@ namespace ShareX.HistoryLib.Localization {
                 return ResourceManager.GetString("HistoryWindow_ItemsFormat", resourceCulture);
             }
         }
-        public static string HistoryWindow_ItemsOfFormat {
-            get {
-                return ResourceManager.GetString("HistoryWindow_ItemsOfFormat", resourceCulture);
-            }
-        }
         public static string HistoryWindow_NoItemsMatchCurrentFilters {
             get {
                 return ResourceManager.GetString("HistoryWindow_NoItemsMatchCurrentFilters", resourceCulture);
@@ -623,11 +618,6 @@ namespace ShareX.HistoryLib.Localization {
         public static string ImageHistoryWindow_ItemsFormat {
             get {
                 return ResourceManager.GetString("ImageHistoryWindow_ItemsFormat", resourceCulture);
-            }
-        }
-        public static string ImageHistoryWindow_ShownMatchedFormat {
-            get {
-                return ResourceManager.GetString("ImageHistoryWindow_ShownMatchedFormat", resourceCulture);
             }
         }
         public static string ImageHistoryWindow_NoItemsMatchCurrentFilter {

@@ -96,13 +96,6 @@
                                 <TextBlock Text="{x:Static localization:Strings.HistoryWindows_Settings}"/>
                             </StackPanel>
                         </Button>
-
-                        <TextBlock x:Name="ItemCountText"
-                                   Grid.Column="5"
-                                   HorizontalAlignment="Right"
-                                   VerticalAlignment="Center"
-                                   FontWeight="Normal"
-                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                     </Grid>
                 </Border>
 
