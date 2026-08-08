@@ -111,6 +111,7 @@
                                  Classes="thumbnail-rows"
                                  SelectionMode="Single"
                                  SizeChanged="OnThumbnailRowsSizeChanged"
+                                 ScrollViewer.BringIntoViewOnFocusChange="False"
                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                             <ListBox.ItemsPanel>
                                 <ItemsPanelTemplate>
