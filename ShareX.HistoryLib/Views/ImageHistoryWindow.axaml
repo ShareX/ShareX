@@ -23,7 +23,7 @@
         </Style>
         <Style Selector="ListBox.thumbnail-rows ListBoxItem">
             <Setter Property="Padding" Value="0"/>
-            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="Margin" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="Background" Value="Transparent"/>
         </Style>
@@ -32,26 +32,21 @@
             <Setter Property="Background" Value="Transparent"/>
         </Style>
         <Style Selector="Border.thumbnail-card">
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="CornerRadius" Value="5"/>
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Cursor" Value="Hand"/>
-        </Style>
-        <Style Selector="Border.thumbnail-header">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
-            <Setter Property="Padding" Value="6,5"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Margin" Value="4"/>
         </Style>
         <Style Selector="Border.thumbnail-card:pointerover">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
         </Style>
-        <Style Selector="Border.thumbnail-card:pointerover Border.thumbnail-header">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
-        </Style>
         <Style Selector="Border.thumbnail-card.selected">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="BorderThickness" Value="1"/>
         </Style>
         <Style Selector="TextBox.dialog-multiline">
             <Setter Property="VerticalContentAlignment" Value="Top"/>
@@ -59,8 +54,9 @@
     </Window.Styles>
 
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid Margin="16,0,16,16" RowDefinitions="Auto,*" RowSpacing="12">
+            <Grid RowDefinitions="Auto,*">
                 <Border Grid.Row="0"
+                        Margin="10,0"
                         Classes="tool-panel docked-top-toolbar">
                     <Grid ColumnDefinitions="280,Auto,Auto,Auto,Auto,*">
                         <Grid Grid.Column="0">
@@ -110,7 +106,7 @@
                     </Grid>
                 </Border>
 
-                <Grid Grid.Row="1" ClipToBounds="True">
+                <Grid Grid.Row="1" Margin="6" ClipToBounds="True">
                         <ListBox x:Name="ThumbnailRows"
                                  Classes="thumbnail-rows"
                                  SelectionMode="Single"
@@ -127,14 +123,13 @@
                                     <ItemsControl ItemsSource="{Binding Items}">
                                         <ItemsControl.ItemsPanel>
                                             <ItemsPanelTemplate>
-                                                <StackPanel Orientation="Horizontal" Spacing="5"/>
+                                                <StackPanel Orientation="Horizontal"/>
                                             </ItemsPanelTemplate>
                                         </ItemsControl.ItemsPanel>
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate x:DataType="history:ImageHistoryEntry">
                                                 <Border Classes="thumbnail-card"
                                                         Classes.selected="{Binding IsSelected}"
-                                                        Width="{Binding CardWidth}"
                                                         AttachedToVisualTree="OnThumbnailAttached"
                                                         DetachedFromVisualTree="OnThumbnailDetached"
                                                         DataContextChanged="OnThumbnailDataContextChanged"
@@ -142,21 +137,24 @@
                                                         PointerMoved="OnThumbnailPointerMoved"
                                                         PointerReleased="OnThumbnailPointerReleased"
                                                         DoubleTapped="OnThumbnailDoubleTapped">
-                                                    <Grid RowDefinitions="Auto,Auto,Auto">
-                                                        <Border Grid.Row="0"
-                                                                Classes="thumbnail-header"
+                                                    <StackPanel Width="{Binding ThumbnailWidth}" Spacing="3">
+                                                        <Border Width="{Binding ThumbnailWidth}"
                                                                 IsVisible="{Binding ShowHeaderTop}"
-                                                                CornerRadius="3,3,0,0">
+                                                                Background="Transparent"
+                                                                Cursor="Hand">
                                                             <TextBlock Text="{Binding FileName}"
+                                                                       Foreground="{DynamicResource ShareX.Brush.Text}"
                                                                        FontWeight="Normal"
                                                                        TextAlignment="Center"
+                                                                       HorizontalAlignment="Stretch"
                                                                        TextTrimming="CharacterEllipsis"
+                                                                       MaxLines="1"
                                                                        ToolTip.Tip="{Binding Item.FilePath}"/>
                                                         </Border>
-                                                        <Border Grid.Row="1"
+                                                        <Border Width="{Binding ThumbnailWidth}"
                                                                 Height="{Binding ThumbnailHeight}"
                                                                 Background="{DynamicResource ShareX.Brush.Background.Panel}"
-                                                                CornerRadius="{Binding ThumbnailCornerRadius}"
+                                                                CornerRadius="4"
                                                                 ClipToBounds="True">
                                                             <Grid>
                                                                 <Image Source="{Binding Thumbnail}"
@@ -187,17 +185,20 @@
                                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                                                             </Grid>
                                                         </Border>
-                                                        <Border Grid.Row="2"
-                                                                Classes="thumbnail-header"
+                                                        <Border Width="{Binding ThumbnailWidth}"
                                                                 IsVisible="{Binding ShowHeaderBottom}"
-                                                                CornerRadius="0,0,3,3">
+                                                                Background="Transparent"
+                                                                Cursor="Hand">
                                                             <TextBlock Text="{Binding FileName}"
+                                                                       Foreground="{DynamicResource ShareX.Brush.Text}"
                                                                        FontWeight="Normal"
                                                                        TextAlignment="Center"
+                                                                       HorizontalAlignment="Stretch"
                                                                        TextTrimming="CharacterEllipsis"
+                                                                       MaxLines="1"
                                                                        ToolTip.Tip="{Binding Item.FilePath}"/>
                                                         </Border>
-                                                    </Grid>
+                                                    </StackPanel>
 
                                                     <Border.ContextMenu>
                                                         <ContextMenu>

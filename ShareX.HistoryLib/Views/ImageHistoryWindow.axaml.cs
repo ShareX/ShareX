@@ -385,10 +385,10 @@ public partial class ImageHistoryWindow : Window
 
     private void UpdateColumnCount()
     {
-        const double thumbnailSpacing = 5;
-        double cardWidth = Math.Max(34, _settings.ThumbnailSize.Width + 2);
+        const double cardChrome = 18; // 4px margins, 1px borders and 4px padding on both sides.
+        double cardWidth = Math.Max(50, _settings.ThumbnailSize.Width + cardChrome);
         int columns = Math.Max(1, (int)Math.Floor(
-            Math.Max(1, ThumbnailRows.Bounds.Width + thumbnailSpacing) / (cardWidth + thumbnailSpacing)));
+            Math.Max(1, ThumbnailRows.Bounds.Width) / cardWidth));
         if (columns == _columns) return;
         _columns = columns;
         RebuildRows();
