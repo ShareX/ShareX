@@ -137,12 +137,3 @@ For the safest download options, use the official links below.
 * Google Cloud Storage guide: https://getsharex.com/docs/google-cloud-storage
 * Cloudflare R2 guide: https://getsharex.com/docs/cloudflare-r2
 * Brand assets: https://getsharex.com/brand-assets
-
-## Star History
-<a href="https://www.star-history.com/?repos=ShareX%2FShareX&type=date&legend=bottom-right">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=ShareX/ShareX&type=date&theme=dark&legend=bottom-right" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=ShareX/ShareX&type=date&legend=bottom-right" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=ShareX/ShareX&type=date&legend=bottom-right" />
- </picture>
-</a>
