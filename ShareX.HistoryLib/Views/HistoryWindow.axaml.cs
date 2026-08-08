@@ -58,6 +58,7 @@ public partial class HistoryWindow : Window
     private PointerPressedEventArgs? _dragPointerPressed;
     private Point _dragStart;
     private bool _dragStarted;
+    private bool _historyLoaded;
     private bool _windowPlacementApplied;
     private bool _virtualListLayoutRefreshPending;
 
@@ -216,6 +217,8 @@ public partial class HistoryWindow : Window
 
     private async Task RefreshHistoryAsync()
     {
+        LoadingState.IsVisible = true;
+        EmptyState.IsVisible = false;
         SetBusy(true);
 
         try
@@ -239,6 +242,7 @@ public partial class HistoryWindow : Window
             });
 
             _allHistoryItems = items;
+            _historyLoaded = true;
             _suppressFilterChanges = true;
             TypeFilterComboBox.ItemsSource = types;
             HostFilterComboBox.ItemsSource = hosts;
@@ -272,7 +276,7 @@ public partial class HistoryWindow : Window
 
     private void ScheduleFilter()
     {
-        if (_suppressFilterChanges)
+        if (_suppressFilterChanges || !_historyLoaded)
         {
             return;
         }
@@ -314,6 +318,8 @@ public partial class HistoryWindow : Window
 
     private async Task ApplyFilterAsync()
     {
+        if (!_historyLoaded) return;
+
         int version = Interlocked.Increment(ref _filterVersion);
         HistoryFilter filter = CreateCurrentFilter();
         List<HistoryItem> source = _allHistoryItems;
@@ -348,6 +354,7 @@ public partial class HistoryWindow : Window
             _filteredHistoryItems = items;
             HistoryList.ItemsSource = items;
             Title = $"{Strings.HistoryWindows_ShareX_History} ({string.Format(Strings.HistoryWindow_ItemsFormat, items.Length)})";
+            LoadingState.IsVisible = false;
             EmptyState.IsVisible = items.Length == 0;
             EmptyStateText.Text = source.Count == 0
                 ? Strings.HistoryWindows_No_history_items

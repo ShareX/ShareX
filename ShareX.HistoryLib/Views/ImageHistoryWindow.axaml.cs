@@ -57,6 +57,7 @@ public partial class ImageHistoryWindow : Window
     private Point _dragStart;
     private bool _dragStarted;
     private bool _suppressThumbnailClickAction;
+    private bool _historyLoaded;
     private bool _windowPlacementApplied;
     private bool _virtualListLayoutRefreshPending;
 
@@ -208,12 +209,15 @@ public partial class ImageHistoryWindow : Window
 
     private async Task RefreshHistoryAsync()
     {
+        LoadingState.IsVisible = true;
+        EmptyState.IsVisible = false;
         SetBusy(true);
         try
         {
             List<HistoryItem> items = await _historyManager.GetHistoryItemsAsync();
             items.Reverse();
             _allHistoryItems = items;
+            _historyLoaded = true;
             await ApplyFilterAsync();
         }
         finally
@@ -227,6 +231,7 @@ public partial class ImageHistoryWindow : Window
     private void OnSearchTextChanged(object? sender, TextChangedEventArgs e)
     {
         if (_settings.RememberSearchText) _settings.SearchText = SearchTextBox.Text ?? string.Empty;
+        if (!_historyLoaded) return;
         _filterTimer.Stop();
         _filterTimer.Start();
     }
@@ -239,6 +244,8 @@ public partial class ImageHistoryWindow : Window
 
     private async Task ApplyFilterAsync()
     {
+        if (!_historyLoaded) return;
+
         int version = Interlocked.Increment(ref _filterVersion);
         string search = SearchTextBox.Text?.Trim() ?? string.Empty;
         bool favorites = _settings.Favorites;
@@ -336,6 +343,7 @@ public partial class ImageHistoryWindow : Window
     {
         int filtered = _filteredHistoryItems.Length;
         Title = $"{Strings.HistoryWindows_ShareX_Image_History} ({string.Format(Strings.ImageHistoryWindow_ItemsFormat, filtered)})";
+        LoadingState.IsVisible = false;
         EmptyState.IsVisible = filtered == 0;
         EmptyStateText.Text = _allHistoryItems.Count == 0
             ? Strings.HistoryWindows_No_image_history_items

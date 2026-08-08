@@ -48,6 +48,19 @@
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
+        <Style Selector="TextBlock.loading-icon">
+            <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
+            <Style.Animations>
+                <Animation Duration="0:0:1" IterationCount="Infinite">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="RotateTransform.Angle" Value="0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="RotateTransform.Angle" Value="360"/>
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
         <Style Selector="TextBox.dialog-multiline">
             <Setter Property="VerticalContentAlignment" Value="Top"/>
         </Style>
@@ -302,6 +315,25 @@
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
+
+                        <StackPanel x:Name="LoadingState"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Spacing="8"
+                                    IsHitTestVisible="False">
+                            <TextBlock Text="{x:Static theming:LucideIcons.loader_circle}"
+                                       Classes="icon loading-icon"
+                                       FontSize="44"
+                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                       HorizontalAlignment="Center">
+                                <TextBlock.RenderTransform>
+                                    <RotateTransform Angle="0"/>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
+                            <TextBlock Text="{x:Static localization:Strings.HistoryWindows_Loading}"
+                                       FontWeight="Normal"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                        </StackPanel>
 
                         <StackPanel x:Name="EmptyState"
                                     HorizontalAlignment="Center"
