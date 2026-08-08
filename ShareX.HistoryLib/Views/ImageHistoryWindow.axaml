@@ -45,6 +45,10 @@
         </Style>
         <Style Selector="Border.thumbnail-card:pointerover">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        </Style>
+        <Style Selector="Border.thumbnail-card:pointerover Border.thumbnail-header">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
         </Style>
         <Style Selector="Border.thumbnail-card.selected">
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
