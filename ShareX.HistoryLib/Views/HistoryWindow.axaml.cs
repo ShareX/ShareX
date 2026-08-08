@@ -350,6 +350,7 @@ public partial class HistoryWindow : Window
             ItemCountText.Text = source.Count == items.Length
                 ? string.Format(Strings.HistoryWindow_ItemsFormat, items.Length)
                 : string.Format(Strings.HistoryWindow_ItemsOfFormat, items.Length, source.Count);
+            Title = $"{Strings.HistoryWindows_ShareX_History} ({string.Format(Strings.HistoryWindow_ItemsFormat, items.Length)})";
             EmptyState.IsVisible = items.Length == 0;
             EmptyStateText.Text = source.Count == 0
                 ? Strings.HistoryWindows_No_history_items
