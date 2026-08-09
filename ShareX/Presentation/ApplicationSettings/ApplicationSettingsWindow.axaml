@@ -105,7 +105,7 @@
                         IsVisible="{Binding RestartRequired}"
                         Margin="20,14,20,0"
                         Padding="12,8"
-                        Background="{DynamicResource ShareX.Brush.Control.Background}"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}"
                         BorderBrush="{DynamicResource ShareX.Brush.Accent}"
                         BorderThickness="1"
                         CornerRadius="5">
