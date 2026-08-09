@@ -398,7 +398,7 @@ if ($errors.Count -gt 0)
     Write-Host
     foreach ($errorMessage in $errors)
     {
-        Write-Error $errorMessage
+        Write-Error $errorMessage -ErrorAction Continue
     }
 
     throw "Localization validation failed with $($errors.Count) error(s)."

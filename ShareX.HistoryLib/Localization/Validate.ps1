@@ -133,7 +133,11 @@ Write-Host "Localized cultures: $($cultureFiles.Count)"
 
 if ($errors.Count -gt 0)
 {
-    $errors | ForEach-Object { Write-Error $_ }
+    foreach ($errorMessage in $errors)
+    {
+        Write-Error $errorMessage -ErrorAction Continue
+    }
+
     exit 1
 }
 

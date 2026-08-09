@@ -281,7 +281,11 @@ Write-Host "Data-driven keys: $($default.Keys.Count - $referencedKeys.Count)"
 
 if ($errors.Count -gt 0)
 {
-    $errors | ForEach-Object { Write-Error $_ }
+    foreach ($errorMessage in $errors)
+    {
+        Write-Error $errorMessage -ErrorAction Continue
+    }
+
     exit 1
 }
 
