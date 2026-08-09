@@ -74,6 +74,9 @@ namespace ShareX
                 case SupportedLanguage.Arabic:
                     cultureName = "ar-YE";
                     break;
+                case SupportedLanguage.Czech:
+                    cultureName = "cs-CZ";
+                    break;
                 case SupportedLanguage.Dutch:
                     cultureName = "nl-NL";
                     break;

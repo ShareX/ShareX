@@ -15,6 +15,7 @@ $errors = [Collections.Generic.List[string]]::new()
 # .NET resource fallback supports them. English is supplied by the default Strings.resx.
 $languageCatalogMap = [ordered]@{
     'ar-YE' = 'ar-YE'
+    'cs-CZ' = 'cs'
     'de-DE' = 'de'
     'es-ES' = 'es'
     'es-MX' = 'es-MX'
