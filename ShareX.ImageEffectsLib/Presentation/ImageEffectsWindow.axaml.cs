@@ -5,6 +5,7 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
@@ -37,7 +38,6 @@ public partial class ImageEffectsWindow : Window
         AddHandler(DragDrop.DragOverEvent, OnDragOver);
         AddHandler(DragDrop.DropEvent, OnDrop);
 
-        ViewModel.AddEffectRequested = AddEffectAsync;
         ViewModel.PackagePresetRequested = PackagePresetAsync;
         ViewModel.CloseRequested = accepted => { Accepted = accepted; Close(); };
         ViewModel.PropertyChanged += OnViewModelPropertyChanged;
@@ -53,13 +53,35 @@ public partial class ImageEffectsWindow : Window
 
     public void ImportPreset(string json) => ViewModel.ImportPreset(json);
 
-    private async void AddEffectAsync()
+    private void OnAddEffectClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        ImageEffectPickerWindow picker = new();
-        if (await picker.ShowDialog<bool>(this) && picker.SelectedDefinition != null)
+        if (sender is not Control button)
         {
-            ViewModel.AddEffect(picker.SelectedDefinition.Create());
+            return;
         }
+
+        List<MenuItem> categories = ImageEffectCatalog.All
+            .GroupBy(x => x.Category)
+            .Select(group => new MenuItem
+            {
+                Header = group.Key,
+                ItemsSource = group.Select(CreateEffectMenuItem).ToList()
+            })
+            .ToList();
+
+        ContextMenu menu = new()
+        {
+            Placement = PlacementMode.BottomEdgeAlignedLeft,
+            ItemsSource = categories
+        };
+        menu.Open(button);
+    }
+
+    private MenuItem CreateEffectMenuItem(ImageEffectDefinition definition)
+    {
+        MenuItem item = new() { Header = definition.Name };
+        item.Click += (_, _) => ViewModel.AddEffect(definition.Create());
+        return item;
     }
 
     private void OnViewModelPropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)

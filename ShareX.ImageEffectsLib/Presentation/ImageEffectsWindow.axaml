@@ -65,7 +65,7 @@
                                 </ListBox.ItemTemplate>
                             </ListBox>
                             <Grid Grid.Row="3" ColumnDefinitions="*,*,*,*,*,*" ColumnSpacing="4">
-                                <Button Classes="picker-button" Command="{Binding AddEffectCommand}" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Add effect"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/></Button>
+                                <Button Classes="picker-button" Click="OnAddEffectClick" IsEnabled="{Binding HasSelectedPreset}" ToolTip.Tip="Add effect"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/></Button>
                                 <Button Grid.Column="1" Classes="picker-button" Command="{Binding RemoveEffectCommand}" IsEnabled="{Binding HasSelectedEffect}" ToolTip.Tip="Remove effect"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.minus}"/></Button>
                                 <Button Grid.Column="2" Classes="picker-button" Command="{Binding DuplicateEffectCommand}" IsEnabled="{Binding HasSelectedEffect}" ToolTip.Tip="Duplicate effect"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/></Button>
                                 <Button Grid.Column="3" Classes="picker-button" Command="{Binding MoveEffectUpCommand}" IsEnabled="{Binding HasSelectedEffect}" ToolTip.Tip="Move up"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_up}"/></Button>

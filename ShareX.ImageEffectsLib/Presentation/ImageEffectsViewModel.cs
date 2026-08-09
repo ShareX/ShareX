@@ -109,7 +109,6 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
     public string CloseButtonText => IsEditorMode ? "Cancel" : "Close";
     public int SelectedPresetIndex => Math.Max(0, SelectedPreset == null ? 0 : Presets.IndexOf(SelectedPreset));
 
-    public Action? AddEffectRequested { get; set; }
     public Action<ImageEffectPreset>? PackagePresetRequested { get; set; }
     public Action<bool>? CloseRequested { get; set; }
 
@@ -239,8 +238,6 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         Presets.Move(oldIndex, newIndex);
         _presets.Move(oldIndex, newIndex);
     }
-
-    [RelayCommand] private void AddEffect() => AddEffectRequested?.Invoke();
 
     public void AddEffect(ImageEffect effect)
     {

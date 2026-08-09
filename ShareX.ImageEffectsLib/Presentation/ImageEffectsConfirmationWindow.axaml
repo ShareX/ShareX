@@ -3,12 +3,13 @@
         x:Class="ShareX.ImageEffectsLib.ImageEffectsConfirmationWindow"
         Title="ShareX - Confirmation"
         Width="460" SizeToContent="Height" CanResize="False"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
         WindowStartupLocation="CenterOwner">
-    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" Margin="16" RowDefinitions="Auto,Auto" RowSpacing="16">
-            <TextBlock x:Name="MessageText" FontWeight="Normal" TextWrapping="Wrap"/>
-            <Grid Grid.Row="1" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
-                <Button Grid.Column="1" Content="Yes" Click="OnYesClick"/>
-                <Button Grid.Column="2" Content="No" Click="OnNoClick"/>
-            </Grid>
+    <Grid Margin="16" RowDefinitions="Auto,Auto" RowSpacing="16">
+        <TextBlock x:Name="MessageText" FontSize="16" FontWeight="Normal" TextWrapping="Wrap"/>
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+            <Button Grid.Column="1" Content="Yes" Click="OnYesClick"/>
+            <Button Grid.Column="2" Content="No" Click="OnNoClick"/>
+        </Grid>
     </Grid>
 </Window>
