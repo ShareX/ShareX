@@ -66,6 +66,8 @@ namespace ShareX
         German,
         [Description("עִברִית (Hebrew)")]
         Hebrew,
+        [Description("हिन्दी (Hindi)")]
+        Hindi,
         [Description("Magyar (Hungarian)")]
         Hungarian,
         [Description("Bahasa Indonesia (Indonesian)")]

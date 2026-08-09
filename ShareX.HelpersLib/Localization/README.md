@@ -15,7 +15,7 @@ HelpersLib uses the shared `Strings.resx` catalog in this directory for its Aval
 | Pixel information code menu | `CodeMenuEntryPixelInfo_` | 22 | Complete |
 | Runtime and helper messages | Component-scoped prefixes | 40 | Complete |
 
-All 129 keys are translated in all 25 supported cultures. The existing `Properties/Resources.resx` catalog remains responsible for its 390 already-translated legacy strings and 11 bitmap/icon resources. The `Controls` and `Colors` directories are intentionally excluded from this localization catalog.
+All 129 keys are translated in all 26 supported cultures. The existing `Properties/Resources.resx` catalog remains responsible for its 390 already-translated legacy strings and 11 bitmap/icon resources. The `Controls` and `Colors` directories are intentionally excluded from this localization catalog.
 
 Run validation from the repository root:
 

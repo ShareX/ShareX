@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ColorPickerWindow_Title" xml:space="preserve">
+    <value>ShareX - रंग चयनकर्ता</value>
+  </data>
+  <data name="ColorPickerWindow_Color_mode" xml:space="preserve">
+    <value>रंग मोड</value>
+  </data>
+  <data name="ColorPickerWindow_Hue" xml:space="preserve">
+    <value>वर्ण</value>
+  </data>
+  <data name="ColorPickerWindow_Saturation" xml:space="preserve">
+    <value>संतृप्ति</value>
+  </data>
+  <data name="ColorPickerWindow_Brightness" xml:space="preserve">
+    <value>चमक</value>
+  </data>
+  <data name="ColorPickerWindow_Red" xml:space="preserve">
+    <value>लाल</value>
+  </data>
+  <data name="ColorPickerWindow_Green" xml:space="preserve">
+    <value>हरा</value>
+  </data>
+  <data name="ColorPickerWindow_Blue" xml:space="preserve">
+    <value>नीला</value>
+  </data>
+  <data name="ColorPickerWindow_Color_name" xml:space="preserve">
+    <value>रंग का नाम</value>
+  </data>
+  <data name="ColorPickerWindow_Hex" xml:space="preserve">
+    <value>हेक्स</value>
+  </data>
+  <data name="ColorPickerWindow_Decimal" xml:space="preserve">
+    <value>दशमलव</value>
+  </data>
+  <data name="ColorPickerWindow_Alpha" xml:space="preserve">
+    <value>अल्फ़ा</value>
+  </data>
+  <data name="ColorPickerWindow_Hue_degrees" xml:space="preserve">
+    <value>वर्ण °</value>
+  </data>
+  <data name="ColorPickerWindow_Saturation_percent" xml:space="preserve">
+    <value>संतृप्ति %</value>
+  </data>
+  <data name="ColorPickerWindow_Brightness_percent" xml:space="preserve">
+    <value>चमक %</value>
+  </data>
+  <data name="ColorPickerWindow_Cyan_percent" xml:space="preserve">
+    <value>सियान %</value>
+  </data>
+  <data name="ColorPickerWindow_Magenta_percent" xml:space="preserve">
+    <value>मैजेंटा %</value>
+  </data>
+  <data name="ColorPickerWindow_Yellow_percent" xml:space="preserve">
+    <value>पीला %</value>
+  </data>
+  <data name="ColorPickerWindow_Key_percent" xml:space="preserve">
+    <value>काला %</value>
+  </data>
+  <data name="ColorPickerWindow_Current" xml:space="preserve">
+    <value>वर्तमान</value>
+  </data>
+  <data name="ColorPickerWindow_Previous" xml:space="preserve">
+    <value>पिछला</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_all_details" xml:space="preserve">
+    <value>सभी विवरण कॉपी करें</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_RGB" xml:space="preserve">
+    <value>RGB कॉपी करें</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_hexadecimal" xml:space="preserve">
+    <value>हेक्साडेसिमल कॉपी करें</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_HSB" xml:space="preserve">
+    <value>HSB कॉपी करें</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_CMYK" xml:space="preserve">
+    <value>CMYK कॉपी करें</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_decimal" xml:space="preserve">
+    <value>दशमलव कॉपी करें</value>
+  </data>
+  <data name="ColorPickerWindow_Copy" xml:space="preserve">
+    <value>कॉपी करें</value>
+  </data>
+  <data name="ColorPickerWindow_Recent_colors" xml:space="preserve">
+    <value>हाल के रंग</value>
+  </data>
+  <data name="ColorPickerWindow_Standard_colors" xml:space="preserve">
+    <value>मानक रंग</value>
+  </data>
+  <data name="ColorPickerWindow_Pick_from_screen" xml:space="preserve">
+    <value>स्क्रीन से रंग चुनें...</value>
+  </data>
+  <data name="ColorPickerWindow_Pick_from_clipboard" xml:space="preserve">
+    <value>क्लिपबोर्ड से रंग चुनें</value>
+  </data>
+  <data name="ColorPickerWindow_OK" xml:space="preserve">
+    <value>ठीक है</value>
+  </data>
+  <data name="ColorPickerWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="ErrorWindow_Title" xml:space="preserve">
+    <value>ShareX - त्रुटि</value>
+  </data>
+  <data name="ErrorWindow_Heading" xml:space="preserve">
+    <value>एक त्रुटि हुई</value>
+  </data>
+  <data name="ErrorWindow_Description" xml:space="preserve">
+    <value>नीचे दिए गए विवरण की समीक्षा करें या उपलब्ध सहायता विकल्पों का उपयोग करें।</value>
+  </data>
+  <data name="ErrorWindow_Send_bug_report" xml:space="preserve">
+    <value>बग रिपोर्ट भेजें</value>
+  </data>
+  <data name="ErrorWindow_Open_log_file" xml:space="preserve">
+    <value>लॉग फ़ाइल खोलें</value>
+  </data>
+  <data name="ErrorWindow_Continue" xml:space="preserve">
+    <value>जारी रखें</value>
+  </data>
+  <data name="ErrorWindow_Quit" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="ErrorWindow_OK" xml:space="preserve">
+    <value>ठीक है</value>
+  </data>
+  <data name="ErrorWindow_Default_title" xml:space="preserve">
+    <value>त्रुटि</value>
+  </data>
+  <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
+    <value>एक अनपेक्षित त्रुटि हुई।</value>
+  </data>
+  <data name="ImageViewerWindow_Title" xml:space="preserve">
+    <value>ShareX - छवि दर्शक</value>
+  </data>
+  <data name="ImageViewerWindow_Open_image" xml:space="preserve">
+    <value>छवि खोलें</value>
+  </data>
+  <data name="InputBoxWindow_Default_title" xml:space="preserve">
+    <value>इनपुट</value>
+  </data>
+  <data name="InputBoxWindow_Title" xml:space="preserve">
+    <value>ShareX - {0}</value>
+  </data>
+  <data name="OutputBoxWindow_Default_title" xml:space="preserve">
+    <value>आउटपुट</value>
+  </data>
+  <data name="OutputBoxWindow_Title" xml:space="preserve">
+    <value>ShareX - {0}</value>
+  </data>
+  <data name="OutputBoxWindow_Copy_all" xml:space="preserve">
+    <value>सभी कॉपी करें</value>
+  </data>
+  <data name="OutputBoxWindow_Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="PrintWindow_Title" xml:space="preserve">
+    <value>ShareX - मुद्रण विकल्प</value>
+  </data>
+  <data name="PrintWindow_Heading" xml:space="preserve">
+    <value>मुद्रण विकल्प</value>
+  </data>
+  <data name="PrintWindow_Description" xml:space="preserve">
+    <value>छवि का स्थान और मापक्रम कॉन्फ़िगर करें।</value>
+  </data>
+  <data name="PrintWindow_Margin" xml:space="preserve">
+    <value>हाशिया:</value>
+  </data>
+  <data name="PrintWindow_Pixels" xml:space="preserve">
+    <value>px</value>
+  </data>
+  <data name="PrintWindow_Auto_rotate_image" xml:space="preserve">
+    <value>छवि को स्वतः घुमाएँ</value>
+  </data>
+  <data name="PrintWindow_Auto_scale_image" xml:space="preserve">
+    <value>छवि का मापक्रम स्वतः बदलें</value>
+  </data>
+  <data name="PrintWindow_Allow_image_to_enlarge" xml:space="preserve">
+    <value>छवि को बड़ा करने दें</value>
+  </data>
+  <data name="PrintWindow_Center_image_position" xml:space="preserve">
+    <value>छवि की स्थिति केंद्र में रखें</value>
+  </data>
+  <data name="PrintWindow_Preview" xml:space="preserve">
+    <value>पूर्वावलोकन...</value>
+  </data>
+  <data name="DownloaderWindow_Title" xml:space="preserve">
+    <value>ShareX - फ़ाइल डाउनलोडर</value>
+  </data>
+  <data name="DownloaderWindow_Heading" xml:space="preserve">
+    <value>फ़ाइल डाउनलोडर</value>
+  </data>
+  <data name="DownloaderWindow_Description" xml:space="preserve">
+    <value>ShareX अपडेट और अन्य आवश्यक फ़ाइलें डाउनलोड करें।</value>
+  </data>
+  <data name="DownloaderWindow_Download" xml:space="preserve">
+    <value>डाउनलोड करें</value>
+  </data>
+  <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
+    <value>परिवर्तन सूची देखें</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
+    <value>लाल रंग (0-255)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_255" xml:space="preserve">
+    <value>हरा रंग (0-255)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_255" xml:space="preserve">
+    <value>नीला रंग (0-255)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_normalized" xml:space="preserve">
+    <value>लाल रंग (0-1)। दशमलव परिशुद्धता {n} से निर्दिष्ट करें, डिफ़ॉल्ट 3 है।</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_normalized" xml:space="preserve">
+    <value>हरा रंग (0-1)। दशमलव परिशुद्धता {n} से निर्दिष्ट करें, डिफ़ॉल्ट 3 है।</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_normalized" xml:space="preserve">
+    <value>नीला रंग (0-1)। दशमलव परिशुद्धता {n} से निर्दिष्ट करें, डिफ़ॉल्ट 3 है।</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Hex_lowercase" xml:space="preserve">
+    <value>हेक्स रंग मान (छोटे अक्षर)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_hex_lowercase" xml:space="preserve">
+    <value>लाल हेक्स रंग मान (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_hex_lowercase" xml:space="preserve">
+    <value>हरा हेक्स रंग मान (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_hex_lowercase" xml:space="preserve">
+    <value>नीला हेक्स रंग मान (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Hex_uppercase" xml:space="preserve">
+    <value>हेक्स रंग मान (बड़े अक्षर)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_hex_uppercase" xml:space="preserve">
+    <value>लाल हेक्स रंग मान (00-FF)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_hex_uppercase" xml:space="preserve">
+    <value>हरा हेक्स रंग मान (00-FF)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_hex_uppercase" xml:space="preserve">
+    <value>नीला हेक्स रंग मान (00-FF)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Cyan_100" xml:space="preserve">
+    <value>सियान रंग (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Magenta_100" xml:space="preserve">
+    <value>मैजेंटा रंग (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Yellow_100" xml:space="preserve">
+    <value>पीला रंग (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Key_100" xml:space="preserve">
+    <value>काला रंग (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Color_name" xml:space="preserve">
+    <value>रंग का नाम</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_X_position" xml:space="preserve">
+    <value>X स्थिति</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Y_position" xml:space="preserve">
+    <value>Y स्थिति</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_New_line" xml:space="preserve">
+    <value>नई पंक्ति</value>
+  </data>
+  <data name="HotkeyInfo_Ctrl" xml:space="preserve">
+    <value>Ctrl</value>
+  </data>
+  <data name="HotkeyInfo_Shift" xml:space="preserve">
+    <value>Shift</value>
+  </data>
+  <data name="HotkeyInfo_Alt" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="HotkeyInfo_Win" xml:space="preserve">
+    <value>Win</value>
+  </data>
+  <data name="HotkeyInfo_Backspace" xml:space="preserve">
+    <value>Backspace</value>
+  </data>
+  <data name="HotkeyInfo_Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="HotkeyInfo_Caps_lock" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="HotkeyInfo_Page_down" xml:space="preserve">
+    <value>Page Down</value>
+  </data>
+  <data name="HotkeyInfo_Scroll_lock" xml:space="preserve">
+    <value>Scroll Lock</value>
+  </data>
+  <data name="HotkeyInfo_Numpad" xml:space="preserve">
+    <value>Numpad</value>
+  </data>
+  <data name="FFmpegCLIManager_Error_title" xml:space="preserve">
+    <value>FFmpeg त्रुटि</value>
+  </data>
+  <data name="Translator_Text" xml:space="preserve">
+    <value>पाठ</value>
+  </data>
+  <data name="Translator_Binary" xml:space="preserve">
+    <value>बाइनरी</value>
+  </data>
+  <data name="Translator_Hexadecimal" xml:space="preserve">
+    <value>हेक्साडेसिमल</value>
+  </data>
+  <data name="Translator_ASCII" xml:space="preserve">
+    <value>ASCII</value>
+  </data>
+  <data name="Translator_Base64" xml:space="preserve">
+    <value>Base64</value>
+  </data>
+  <data name="PingResult_Reply_from" xml:space="preserve">
+    <value>{0} से उत्तर: बाइट={1} समय={2}ms TTL={3}</value>
+  </data>
+  <data name="PingResult_Request_timed_out" xml:space="preserve">
+    <value>अनुरोध का समय समाप्त हो गया।</value>
+  </data>
+  <data name="PingResult_Ping_failed" xml:space="preserve">
+    <value>पिंग विफल: {0}</value>
+  </data>
+  <data name="PingResult_Statistics" xml:space="preserve">
+    <value>न्यूनतम = {0}ms, अधिकतम = {1}ms, औसत = {2}ms</value>
+  </data>
+  <data name="PrintHelper_Invalid_printer_message" xml:space="preserve">
+    <value>प्रिंटर "{0}" मौजूद नहीं है। Windows के डिफ़ॉल्ट प्रिंटर के साथ जारी रखा जा रहा है। आप अनुप्रयोग सेटिंग में डिफ़ॉल्ट प्रिंटर बदल सकते हैं।</value>
+  </data>
+  <data name="PrintHelper_Invalid_printer_name" xml:space="preserve">
+    <value>अमान्य प्रिंटर नाम</value>
+  </data>
+  <data name="VideoInfo_Summary" xml:space="preserve">
+    <value>फ़ाइलनाम: {0}, अवधि: {1}, बिटरेट: {2} kb/s</value>
+  </data>
+  <data name="VideoInfo_Video_details" xml:space="preserve">
+    <value>, वीडियो कोडेक: {0}, रिज़ॉल्यूशन: {1}x{2}, FPS: {3}</value>
+  </data>
+  <data name="VideoInfo_Audio_details" xml:space="preserve">
+    <value>, ऑडियो कोडेक: {0}</value>
+  </data>
+  <data name="FileHelpers_Rename_file_error" xml:space="preserve">
+    <value>फ़ाइल का नाम बदलने में त्रुटि:</value>
+  </data>
+  <data name="NameParser_Valid_text_file_required" xml:space="preserve">
+    <value>एक मान्य पाठ फ़ाइल पथ आवश्यक है।</value>
+  </data>
+  <data name="URLHelpers_Invalid_URL" xml:space="preserve">
+    <value>अमान्य URL।</value>
+  </data>
+  <data name="ZipManager_Archive_too_large" xml:space="preserve">
+    <value>इस संग्रह का असंपीड़ित आकार अधिकतम अनुमत फ़ाइल आकार से अधिक है।</value>
+  </data>
+  <data name="ZipManager_Archive_uncompressed_file_size" xml:space="preserve">
+    <value>संग्रह का असंपीड़ित फ़ाइल आकार: {0}</value>
+  </data>
+  <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
+    <value>अधिकतम अनुमत फ़ाइल आकार: {0}</value>
+  </data>
+  <data name="Helpers_Timeout" xml:space="preserve">
+    <value>समय-सीमा</value>
+  </data>
+  <data name="ImageHelpers_Image_files" xml:space="preserve">
+    <value>छवि फ़ाइलें</value>
+  </data>
+  <data name="CssFileNameEditor_Cascading_Style_Sheets" xml:space="preserve">
+    <value>कैस्केडिंग स्टाइल शीट</value>
+  </data>
+  <data name="JsonFileNameEditor_JavaScript_Object_Notation_files" xml:space="preserve">
+    <value>JavaScript ऑब्जेक्ट नोटेशन फ़ाइलें</value>
+  </data>
+  <data name="WavFileNameEditor_Sound_file" xml:space="preserve">
+    <value>ध्वनि फ़ाइल</value>
+  </data>
+  <data name="ExeFileNameEditor_Applications" xml:space="preserve">
+    <value>अनुप्रयोग</value>
+  </data>
+  <data name="AppVeyorUpdateChecker_Latest_build_unsuccessful" xml:space="preserve">
+    <value>नवीनतम प्रोजेक्ट बिल्ड सफल नहीं था।</value>
+  </data>
+  <data name="AppVeyorUpdateChecker_Release_build_not_found" xml:space="preserve">
+    <value>सफल रिलीज़ बिल्ड नहीं मिला।</value>
+  </data>
+  <data name="AppVeyorUpdateChecker_Deployment_file_not_found" xml:space="preserve">
+    <value>फ़ाइल "{0}" नहीं मिली।</value>
+  </data>
+</root>

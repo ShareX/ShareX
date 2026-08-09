@@ -93,6 +93,9 @@ namespace ShareX
                 case SupportedLanguage.Hebrew:
                     cultureName = "he-IL";
                     break;
+                case SupportedLanguage.Hindi:
+                    cultureName = "hi-IN";
+                    break;
                 case SupportedLanguage.Hungarian:
                     cultureName = "hu-HU";
                     break;

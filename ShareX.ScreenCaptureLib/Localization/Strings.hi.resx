@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="FFmpegOptionsWindow_Title" xml:space="preserve">
+    <value>ShareX - स्क्रीन रिकॉर्डिंग विकल्प</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Screen_recording" xml:space="preserve">
+    <value>स्क्रीन रिकॉर्डिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Description" xml:space="preserve">
+    <value>चुनें कि क्या कैप्चर करना है और FFmpeg उसे कैसे एन्कोड करे।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Reset_encoding_options" xml:space="preserve">
+    <value>एन्कोडिंग विकल्प रीसेट करें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Reset_options" xml:space="preserve">
+    <value>विकल्प रीसेट करें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Reset_all_options" xml:space="preserve">
+    <value>सभी विकल्प रीसेट करें?</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Reset" xml:space="preserve">
+    <value>रीसेट करें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Sources" xml:space="preserve">
+    <value>स्रोत</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Video" xml:space="preserve">
+    <value>वीडियो</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Audio" xml:space="preserve">
+    <value>ऑडियो</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Advanced" xml:space="preserve">
+    <value>उन्नत</value>
+  </data>
+  <data name="FFmpegOptionsWindow_FFmpeg_executable" xml:space="preserve">
+    <value>FFmpeg निष्पादन योग्य फ़ाइल</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Use_custom_path" xml:space="preserve">
+    <value>अनुकूलित FFmpeg पथ उपयोग करें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Path_to_ffmpeg" xml:space="preserve">
+    <value>ffmpeg.exe का पथ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Browse_for_ffmpeg" xml:space="preserve">
+    <value>ffmpeg.exe ब्राउज़ करें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Capture_sources" xml:space="preserve">
+    <value>कैप्चर स्रोत</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Refresh_devices" xml:space="preserve">
+    <value>उपकरण ताज़ा करें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Video_source" xml:space="preserve">
+    <value>वीडियो स्रोत</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Choose_video_source" xml:space="preserve">
+    <value>वीडियो स्रोत चुनें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Audio_source" xml:space="preserve">
+    <value>ऑडियो स्रोत</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Choose_audio_source" xml:space="preserve">
+    <value>ऑडियो स्रोत चुनें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Looking_for_devices" xml:space="preserve">
+    <value>कैप्चर उपकरण खोजे जा रहे हैं...</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Get_recorder_devices" xml:space="preserve">
+    <value>रिकॉर्डर उपकरण प्राप्त करें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Video_encoder" xml:space="preserve">
+    <value>वीडियो एन्कोडर</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Encoder_settings" xml:space="preserve">
+    <value>एन्कोडर सेटिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset" xml:space="preserve">
+    <value>प्रीसेट</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Faster_presets_hint" xml:space="preserve">
+    <value>तेज़ प्रीसेट रीयल टाइम में अधिक विश्वसनीयता से एन्कोड करते हैं, पर बड़ी फ़ाइलें बनाते हैं।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Slow_presets_warning" xml:space="preserve">
+    <value>धीमे प्रीसेट स्क्रीन रिकॉर्डिंग में फ़्रेम छूटने का कारण बन सकते हैं। तेज़ या अधिक तेज़ अनुशंसित है।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Use_target_bitrate" xml:space="preserve">
+    <value>स्थिर गुणवत्ता के बजाय लक्ष्य बिटरेट उपयोग करें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Constant_rate_factor" xml:space="preserve">
+    <value>स्थिर दर गुणक (CRF)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_CRF_hint" xml:space="preserve">
+    <value>कम मान गुणवत्ता बढ़ाते और फ़ाइल आकार बड़ा करते हैं। 0 दोषरहित है; ShareX का डिफ़ॉल्ट 28 है।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Target_bitrate" xml:space="preserve">
+    <value>लक्ष्य बिटरेट (kbps)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Variable_bitrate_quality" xml:space="preserve">
+    <value>परिवर्ती बिटरेट गुणवत्ता</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Variable_bitrate_hint" xml:space="preserve">
+    <value>1 सर्वोच्च गुणवत्ता और सबसे बड़ी फ़ाइल देता है; 31 न्यूनतम गुणवत्ता और सबसे छोटी फ़ाइल देता है।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Tune" xml:space="preserve">
+    <value>ट्यून</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_mode" xml:space="preserve">
+    <value>पैलेट मोड</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Dithering_mode" xml:space="preserve">
+    <value>डिथरिंग मोड</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Bayer_scale" xml:space="preserve">
+    <value>बेयर मापक्रम</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Bayer_scale_hint" xml:space="preserve">
+    <value>अधिक मान अधिक स्पष्ट रंग पट्टियाँ बनाते हैं। डिफ़ॉल्ट 2 है।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Usage" xml:space="preserve">
+    <value>उपयोग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Quality" xml:space="preserve">
+    <value>गुणवत्ता</value>
+  </data>
+  <data name="FFmpegOptionsWindow_No_additional_settings" xml:space="preserve">
+    <value>इस एन्कोडर को अतिरिक्त सेटिंग की आवश्यकता नहीं है।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Audio_encoder" xml:space="preserve">
+    <value>ऑडियो एन्कोडर</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Animated_formats_no_audio" xml:space="preserve">
+    <value>एनिमेटेड छवि प्रारूपों में ऑडियो नहीं होता। ऑडियो एन्कोडिंग सक्षम करने के लिए वीडियो प्रारूप चुनें।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Bitrate" xml:space="preserve">
+    <value>बिटरेट (kbps)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Lower_values_higher_quality" xml:space="preserve">
+    <value>कम मान उच्च गुणवत्ता देते हैं।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Additional_arguments" xml:space="preserve">
+    <value>अतिरिक्त तर्क</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Arguments_example" xml:space="preserve">
+    <value>उदाहरण: -vf scale=1920:-2</value>
+  </data>
+  <data name="FFmpegOptionsWindow_FFmpeg_command" xml:space="preserve">
+    <value>FFmpeg कमांड</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Use_custom_commands" xml:space="preserve">
+    <value>अनुकूलित कमांड उपयोग करें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Custom_command_placeholders" xml:space="preserve">
+    <value>अनुकूलित कमांड प्लेसहोल्डर: $fps$, $area_x$, $area_y$, $area_width$, $area_height$, $cursor$, $duration$ और $output$।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_FFmpeg_not_found" xml:space="preserve">
+    <value>FFmpeg {0} पर नहीं मिला</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Device_enumeration_failed" xml:space="preserve">
+    <value>FFmpeg DirectShow उपकरणों की सूची नहीं बना सका। डेस्कटॉप कैप्चर अभी भी उपलब्ध है।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_One_device_found" xml:space="preserve">
+    <value>{0} DirectShow उपकरण मिला।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Multiple_devices_found" xml:space="preserve">
+    <value>{0} DirectShow उपकरण मिले।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_No_devices_found" xml:space="preserve">
+    <value>कोई DirectShow उपकरण नहीं मिला। डेस्कटॉप कैप्चर तैयार है।</value>
+  </data>
+  <data name="ScreenRecordWindow_Title" xml:space="preserve">
+    <value>ShareX - स्क्रीन रिकॉर्डिंग</value>
+  </data>
+  <data name="ScreenRecordWindow_Start" xml:space="preserve">
+    <value>आरंभ करें</value>
+  </data>
+  <data name="ScreenRecordWindow_Pause" xml:space="preserve">
+    <value>रोकें</value>
+  </data>
+  <data name="ScreenRecordWindow_Abort" xml:space="preserve">
+    <value>निरस्त करें</value>
+  </data>
+  <data name="ScreenRecordWindow_Abort_this_recording" xml:space="preserve">
+    <value>यह रिकॉर्डिंग निरस्त करें?</value>
+  </data>
+  <data name="ScreenRecordWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
+    <value>ShareX - स्क्रॉलिंग कैप्चर</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capture" xml:space="preserve">
+    <value>कैप्चर करें...</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
+    <value>अपलोड / सहेजें</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Copy" xml:space="preserve">
+    <value>कॉपी करें</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Options" xml:space="preserve">
+    <value>विकल्प...</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Help" xml:space="preserve">
+    <value>स्क्रॉलिंग स्क्रीनशॉट सहायता</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Select_scrollable_window" xml:space="preserve">
+    <value>आरंभ करने के लिए स्क्रॉल करने योग्य विंडो चुनें</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Ready" xml:space="preserve">
+    <value>तैयार</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Options_heading" xml:space="preserve">
+    <value>स्क्रॉलिंग कैप्चर विकल्प</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Start_delay" xml:space="preserve">
+    <value>आरंभ विलंब:</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Milliseconds" xml:space="preserve">
+    <value>ms</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Scroll_delay" xml:space="preserve">
+    <value>स्क्रॉल विलंब:</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Scroll_method" xml:space="preserve">
+    <value>स्क्रॉल विधि:</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Scroll_amount" xml:space="preserve">
+    <value>स्क्रॉल मात्रा:</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Times" xml:space="preserve">
+    <value>बार</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Automatically_scroll_to_top" xml:space="preserve">
+    <value>स्वतः ऊपर तक स्क्रॉल करें</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Auto_ignore_bottom_edge" xml:space="preserve">
+    <value>निचला किनारा स्वतः अनदेखा करें</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Show_capture_region" xml:space="preserve">
+    <value>स्क्रॉलिंग कैप्चर क्षेत्र दिखाएँ</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Automatically_upload_save" xml:space="preserve">
+    <value>स्वतः अपलोड / सहेजें</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="ScrollingCaptureWindow_OK" xml:space="preserve">
+    <value>ठीक है</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Stopping_capture" xml:space="preserve">
+    <value>कैप्चर रोका जा रहा है...</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Selection_cancelled" xml:space="preserve">
+    <value>विंडो चयन रद्द किया गया</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capturing" xml:space="preserve">
+    <value>कैप्चर हो रहा है...</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capture_failed" xml:space="preserve">
+    <value>कैप्चर विफल</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capture_partially_successful" xml:space="preserve">
+    <value>कैप्चर आंशिक रूप से सफल</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capture_successful" xml:space="preserve">
+    <value>कैप्चर सफल</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
+    <value>कार्य रद्द करें (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
+    <value>छवि अपलोड करें (Ctrl + U)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>हाइलाइट रंग...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>आकार चयन के बाद आरेखण टूल पर जाएँ</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>काटने के प्रभाव का आकार:</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>छवि प्रभाव जोड़ें...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
+    <value>क्षैतिज पलटें</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>बहु-क्षेत्र मोड</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>पिक्सेल आकार:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>छवि आकार...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
+    <value>हटाएँ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
+    <value>परिवर्तन लागू करें और कार्य जारी रखें (Enter)</value>
+  </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>कीबाइंड वेब पृष्ठ खोलें...</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>प्रतिलिपि बनाएँ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
+    <value>संपादित करें</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>छवि सहेजी गई</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>कार्य होने पर संपादक स्वतः बंद करें</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>पूर्ववत करें</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>फिर से करें</value>
+  </data>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>छवि संपादक</value>
+  </data>
+  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
+    <value>क्षेत्र कैप्चर</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>निश्चित आकार क्षेत्र मोड</value>
+  </data>
+  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>क्लिपबोर्ड में कोई छवि नहीं है।</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>नई पंक्ति: Ctrl + Enter, ठीक है: Enter</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>मॉनिटर कैप्चर करें</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>सबसे पीछे भेजें</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
+    <value>सक्रिय मॉनिटर कैप्चर करें</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>आगे लाएँ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>90° वामावर्त घुमाएँ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+    <value>इंटरपोलेशन मोड:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>चौड़ाई:</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>रिकॉर्डिंग रोकने के लिए क्लिक करें।</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ShapeManager_CenterPoints" xml:space="preserve">
+    <value>केंद्र बिंदु:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>विकल्प</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>किनारे की शैली:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>कैप्चर करें</value>
+  </data>
+  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
+    <value>X: {0} Y: {1} चौ: {2} ऊँ: {3}</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
+    <value>छवि फ़ाइल खोलें...</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>प्रक्रिया जारी है...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>प्रतीक्षा हो रही है...</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>90° दक्षिणावर्त घुमाएँ</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>बंद करें (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>पहले चरण का मान:</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>हाइलाइट</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>आवर्धन तीव्रता:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>कोने की त्रिज्या:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>छवि प्रिंट करें... (Ctrl + P)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>FPS दिखाएँ</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>नई पंक्ति: Enter, ठीक है: Ctrl + Enter</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>कर्सर प्रकार:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>ड्रॉप शैडो</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>वर्गाकार आवर्धक</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>जारी रखें</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>संपादक आरंभ मोड:</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>छवि सहेजी गई</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>तीर शीर्ष दिशा:</value>
+  </data>
+  <data name="ShapeManager_FreehandSmoothing" xml:space="preserve">
+    <value>मुक्तहस्त चिकनापन:</value>
+  </data>
+  <data name="ShapeManager_FreehandCurveInterpolation" xml:space="preserve">
+    <value>वक्र इंटरपोलेशन</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>पूर्ण स्क्रीन कैप्चर करें</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>क्षेत्र कैप्चर करें</value>
+  </data>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>हल्का आयत कैप्चर</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
+    <value>छवि सहेजें (Ctrl + S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
+    <value>नई छवि...</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>धुंधला</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>एन्कोडिंग हो रही है...</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>धुंधलापन तीव्रता:</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>छवि अपलोड हो रही है</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>एनिमेशन सक्षम करें</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>पीछे भेजें</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>ऊँचाई:</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>छवि कॉपी की गई</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>भराव रंग...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
+    <value>छवि इस रूप में सहेजें... (Ctrl + Shift + S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>कार्य जारी रखें (Space या दायाँ क्लिक)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
+    <value>फ़ॉन्ट आकार:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
+    <value>कैनवास आकार...</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>मेनू आइकन आकार:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
+    <value>लंबवत पलटें</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
+    <value>छवि स्वतः काटें...</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>पिक्सेलेट</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>मेनू लॉक करें</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>सबसे आगे लाएँ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>180° घुमाएँ</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>हल्के आकार बदलने वाले नोड उपयोग करें</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>पिछला क्षेत्र कैप्चर करें</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
+    <value>स्क्रीन से छवि सम्मिलित करें...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
+    <value>सभी हटाएँ</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>छवि को क्लिपबोर्ड पर स्वतः कॉपी करें</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>किनारे का आकार:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
+    <value>संपादक मेनू</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
+    <value>छवि/पाठ चिपकाएँ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
+    <value>छवि काटें...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>किनारे का रंग...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>आवर्धक दिखाएँ</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>रोकें</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
+    <value>ShareX - छवि संपादक</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>ड्रॉप शैडो रंग...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>आकार बनाने के बाद चयन टूल पर जाएँ</value>
+  </data>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>पारदर्शी आयत कैप्चर</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>स्थिति और आकार जानकारी दिखाएँ</value>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>आरंभ करें</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>चरण प्रकार:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>छवि को क्लिपबोर्ड पर कॉपी करें (Ctrl + C)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_center_crosshair" xml:space="preserve">
+    <value>केंद्र क्रॉसहेयर दिखाएँ</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>पूरी स्क्रीन का क्रॉसहेयर दिखाएँ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
+    <value>छवि</value>
+  </data>
+  <data name="RectangleRegion_GetColorPickerText" xml:space="preserve">
+    <value>RGB: {0}, {1}, {2}
+हेक्स: {3}
+X: {4} Y: {5}</value>
+    <comment>@Invariant</comment>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>आवर्धक पिक्सेल संख्या:</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>कीबाइंड वेब पृष्ठ खोलने से पहले यह विंडो बंद हो जाएगी। क्या आप जारी रखना चाहते हैं?</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>FPS सीमा:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
+    <value>छवि फ़ाइल सम्मिलित करें...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>खोलते समय फ़िट करने के लिए ज़ूम करें</value>
+  </data>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>सुझाव: मध्य माउस बटन दबाकर खींचते हुए छवि को पैन कर सकते हैं।</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>चित्र लेने के बाद के कार्य चलाएँ (Enter)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>मेनू स्थिति याद रखें</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>काटने का प्रभाव:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>आवर्धक पिक्सेल आकार:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>टूल विकल्प</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>रोकें</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>रिकॉर्डिंग आरंभ करने के लिए क्लिक करें।</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>छवि URL</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>कुछ परिवर्तन सहेजे नहीं गए हैं।
+
+क्या आप छवि संपादक बंद करने से पहले परिवर्तन सहेजना चाहते हैं?</value>
+  </data>
+  <data name="CutOutBackgroundColor" xml:space="preserve">
+    <value>कटी हुई पृष्ठभूमि का रंग...</value>
+  </data>
+  <data name="RulerAngle" xml:space="preserve">
+    <value>कोण</value>
+  </data>
+  <data name="RulerPerimeter" xml:space="preserve">
+    <value>परिमाप</value>
+  </data>
+  <data name="RulerArea" xml:space="preserve">
+    <value>क्षेत्रफल</value>
+  </data>
+  <data name="RulerWidth" xml:space="preserve">
+    <value>चौड़ाई</value>
+  </data>
+  <data name="RulerHeight" xml:space="preserve">
+    <value>ऊँचाई</value>
+  </data>
+  <data name="RulerDistance" xml:space="preserve">
+    <value>दूरी</value>
+  </data>
+  <data name="RulerRight" xml:space="preserve">
+    <value>दायाँ</value>
+  </data>
+  <data name="RulerBottom" xml:space="preserve">
+    <value>नीचे</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_ultra_fast" xml:space="preserve">
+    <value>अति तेज़</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_super_fast" xml:space="preserve">
+    <value>सर्वाधिक तेज़</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_very_fast" xml:space="preserve">
+    <value>बहुत तेज़</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_faster" xml:space="preserve">
+    <value>अधिक तेज़</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_fast" xml:space="preserve">
+    <value>तेज़</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_medium" xml:space="preserve">
+    <value>मध्यम</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_slow" xml:space="preserve">
+    <value>धीमा</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_slower" xml:space="preserve">
+    <value>अधिक धीमा</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_very_slow" xml:space="preserve">
+    <value>बहुत धीमा</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_placebo" xml:space="preserve">
+    <value>प्लेसिबो</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_fastest_lowest_quality" xml:space="preserve">
+    <value>सर्वाधिक तेज़ (न्यूनतम गुणवत्ता)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_faster_lower_quality" xml:space="preserve">
+    <value>अधिक तेज़ (कम गुणवत्ता)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_fast_low_quality" xml:space="preserve">
+    <value>तेज़ (कम गुणवत्ता)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_medium_medium_quality" xml:space="preserve">
+    <value>मध्यम (मध्यम गुणवत्ता)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_slow_good_quality" xml:space="preserve">
+    <value>धीमा (अच्छी गुणवत्ता)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_slower_better_quality" xml:space="preserve">
+    <value>अधिक धीमा (बेहतर गुणवत्ता)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_slowest_best_quality" xml:space="preserve">
+    <value>सर्वाधिक धीमा (सर्वोत्तम गुणवत्ता)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_high_quality" xml:space="preserve">
+    <value>उच्च गुणवत्ता</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_low_latency" xml:space="preserve">
+    <value>कम विलंबता</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_ultra_low_latency" xml:space="preserve">
+    <value>अति कम विलंबता</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_lossless" xml:space="preserve">
+    <value>दोषरहित</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_generic_transcoding" xml:space="preserve">
+    <value>सामान्य ट्रांसकोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_ultra_low_latency_transcoding" xml:space="preserve">
+    <value>अति कम विलंबता ट्रांसकोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_low_latency_transcoding" xml:space="preserve">
+    <value>कम विलंबता ट्रांसकोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_webcam" xml:space="preserve">
+    <value>वेबकैम</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_high_quality_transcoding" xml:space="preserve">
+    <value>उच्च गुणवत्ता ट्रांसकोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_low_latency_high_quality_transcoding" xml:space="preserve">
+    <value>कम विलंबता, उच्च गुणवत्ता ट्रांसकोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_prefer_speed" xml:space="preserve">
+    <value>गति को प्राथमिकता दें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_balanced" xml:space="preserve">
+    <value>संतुलित</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_prefer_quality" xml:space="preserve">
+    <value>गुणवत्ता को प्राथमिकता दें</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_software" xml:space="preserve">
+    <value>H.264 सॉफ़्टवेयर एन्कोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_software_hint" xml:space="preserve">
+    <value>व्यापक प्लेबैक संगतता के लिए सर्वोत्तम डिफ़ॉल्ट।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H265_software" xml:space="preserve">
+    <value>H.265 सॉफ़्टवेयर एन्कोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H265_software_hint" xml:space="preserve">
+    <value>H.264 से छोटी फ़ाइलें, पर धीमी एन्कोडिंग और कम प्लेबैक समर्थन।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP8_software" xml:space="preserve">
+    <value>VP8 सॉफ़्टवेयर एन्कोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP8_software_hint" xml:space="preserve">
+    <value>वेब-केंद्रित कार्यप्रवाह के लिए WebM फ़ाइलें बनाता है।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP9_software" xml:space="preserve">
+    <value>VP9 सॉफ़्टवेयर एन्कोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP9_software_hint" xml:space="preserve">
+    <value>अधिक CPU उपयोग के साथ कुशल WebM आउटपुट।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_MPEG4_Xvid" xml:space="preserve">
+    <value>MPEG-4 / Xvid</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_MPEG4_Xvid_hint" xml:space="preserve">
+    <value>AVI संगतता के लिए एक पुराना एन्कोडर।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_NVIDIA" xml:space="preserve">
+    <value>H.264 NVIDIA एन्कोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_NVIDIA_hint" xml:space="preserve">
+    <value>CPU उपयोग घटाने के लिए समर्थित NVIDIA GPU का उपयोग करता है।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_NVIDIA" xml:space="preserve">
+    <value>HEVC NVIDIA एन्कोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_NVIDIA_hint" xml:space="preserve">
+    <value>अधिक सीमित प्लेबैक संगतता के साथ कुशल GPU एन्कोडिंग।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_AMD" xml:space="preserve">
+    <value>H.264 AMD एन्कोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_AMD_hint" xml:space="preserve">
+    <value>CPU उपयोग घटाने के लिए समर्थित AMD GPU का उपयोग करता है।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_AMD" xml:space="preserve">
+    <value>HEVC AMD एन्कोडिंग</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_AMD_hint" xml:space="preserve">
+    <value>अधिक सीमित प्लेबैक संगतता के साथ कुशल GPU एन्कोडिंग।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync" xml:space="preserve">
+    <value>H.264 Intel Quick Sync</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync_hint" xml:space="preserve">
+    <value>CPU उपयोग घटाने के लिए समर्थित Intel ग्राफ़िक्स हार्डवेयर का उपयोग करता है।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync" xml:space="preserve">
+    <value>HEVC Intel Quick Sync</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync_hint" xml:space="preserve">
+    <value>अधिक सीमित प्लेबैक संगतता के साथ कुशल Intel हार्डवेयर एन्कोडिंग।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_GIF" xml:space="preserve">
+    <value>एनिमेटेड GIF</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_GIF_hint" xml:space="preserve">
+    <value>व्यापक रूप से समर्थित, लेकिन बड़ी फ़ाइलें बनाता है और इसमें ऑडियो नहीं होता।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_WebP" xml:space="preserve">
+    <value>एनिमेटेड WebP</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_WebP_hint" xml:space="preserve">
+    <value>ऑडियो ट्रैक के बिना संक्षिप्त एनिमेटेड छवियाँ।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_PNG" xml:space="preserve">
+    <value>एनिमेटेड PNG</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_PNG_hint" xml:space="preserve">
+    <value>बड़ी फ़ाइलों और बिना ऑडियो ट्रैक वाला उच्च गुणवत्ता एनिमेशन।</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_video_encoding" xml:space="preserve">
+    <value>वीडियो एन्कोडिंग</value>
+  </data>
+  <data name="ShapeManager_Spotlight_dim" xml:space="preserve">
+    <value>धुंधलापन:</value>
+  </data>
+  <data name="ShapeManager_Spotlight_blur" xml:space="preserve">
+    <value>धुंधला:</value>
+  </data>
+  <data name="ShapeManager_Spotlight_ellipse_shape" xml:space="preserve">
+    <value>दीर्घवृत्त आकार</value>
+  </data>
+</root>

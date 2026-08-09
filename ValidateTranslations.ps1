@@ -22,6 +22,7 @@ $languageCatalogMap = [ordered]@{
     'fa-IR' = 'fa-IR'
     'fr-FR' = 'fr'
     'he-IL' = 'he-IL'
+    'hi-IN' = 'hi'
     'hu-HU' = 'hu'
     'id-ID' = 'id-ID'
     'it-IT' = 'it-IT'

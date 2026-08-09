@@ -1,0 +1,2958 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MainWindow_CombineImages" xml:space="preserve">
+    <value>छवियाँ जोड़ें</value>
+  </data>
+  <data name="MainWindow_FilesDroppedUploadDescription" xml:space="preserve">
+    <value>यहाँ छोड़ी गई फ़ाइलें ShareX द्वारा अपलोड की जाएँगी।</value>
+  </data>
+  <data name="MainWindow_Horizontal" xml:space="preserve">
+    <value>क्षैतिज</value>
+  </data>
+  <data name="MainWindow_HotkeyHint" xml:space="preserve">
+    <value>कैप्चर या अपलोड के लिए हॉटकी उपयोग करें। आपके परिणाम यहाँ थंबनेल के रूप में दिखाई देंगे।</value>
+  </data>
+  <data name="MainWindow_ReleaseToUploadFiles" xml:space="preserve">
+    <value>फ़ाइलें अपलोड करने के लिए छोड़ें</value>
+  </data>
+  <data name="MainWindow_ReleaseToUploadText" xml:space="preserve">
+    <value>पाठ अपलोड करने के लिए छोड़ें</value>
+  </data>
+  <data name="MainWindow_ShareXHotkeys" xml:space="preserve">
+    <value>ShareX हॉटकी</value>
+  </data>
+  <data name="MainWindow_TextDroppedUploadDescription" xml:space="preserve">
+    <value>यहाँ छोड़ा गया पाठ ShareX द्वारा अपलोड किया जाएगा।</value>
+  </data>
+  <data name="MainWindow_Vertical" xml:space="preserve">
+    <value>लंबवत</value>
+  </data>
+  <data name="MainMenuBuilder_About" xml:space="preserve">
+    <value>परिचय...</value>
+  </data>
+  <data name="MainMenuBuilder_ActionsToolbar" xml:space="preserve">
+    <value>क्रिया टूलबार</value>
+  </data>
+  <data name="MainWindow_AddImageEffects" xml:space="preserve">
+    <value>छवि प्रभाव जोड़ें...</value>
+  </data>
+  <data name="MainMenuBuilder_AddWorkflowsFromHotkeySettings" xml:space="preserve">
+    <value>हॉटकी सेटिंग से कार्यप्रवाह जोड़ें...</value>
+  </data>
+  <data name="MainMenuBuilder_AfterCaptureTasks" xml:space="preserve">
+    <value>चित्र लेने के बाद के कार्य</value>
+  </data>
+  <data name="MainMenuBuilder_AfterUploadTasks" xml:space="preserve">
+    <value>अपलोड के बाद के कार्य</value>
+  </data>
+  <data name="MainWindow_AnalyzeImage" xml:space="preserve">
+    <value>छवि का विश्लेषण करें...</value>
+  </data>
+  <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
+    <value>अनुप्रयोग सेटिंग...</value>
+  </data>
+  <data name="MainMenuBuilder_AutoCapture" xml:space="preserve">
+    <value>स्वचालित कैप्चर...</value>
+  </data>
+  <data name="MainMenuBuilder_BackgroundRemover" xml:space="preserve">
+    <value>पृष्ठभूमि हटाने वाला...</value>
+  </data>
+  <data name="MainWindow_BeautifyImage" xml:space="preserve">
+    <value>छवि सुंदर बनाएँ...</value>
+  </data>
+  <data name="MainMenuBuilder_BorderlessWindow" xml:space="preserve">
+    <value>किनारारहित विंडो...</value>
+  </data>
+  <data name="MainMenuBuilder_Capture" xml:space="preserve">
+    <value>कैप्चर करें</value>
+  </data>
+  <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
+    <value>थंबनेल दृश्य साफ़ करें</value>
+  </data>
+  <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
+    <value>क्लिपबोर्ड दर्शक...</value>
+  </data>
+  <data name="MainMenuBuilder_ColorPicker" xml:space="preserve">
+    <value>रंग चयनकर्ता...</value>
+  </data>
+  <data name="MainWindow_CombineImagesDialog" xml:space="preserve">
+    <value>छवियाँ जोड़ें...</value>
+  </data>
+  <data name="MainWindow_Copy" xml:space="preserve">
+    <value>कॉपी करें</value>
+  </data>
+  <data name="MainMenuBuilder_CustomUploaderSettings" xml:space="preserve">
+    <value>अनुकूलित अपलोडर सेटिंग...</value>
+  </data>
+  <data name="MainMenuBuilder_Debug" xml:space="preserve">
+    <value>डीबग</value>
+  </data>
+  <data name="MainWindow_DeleteSelectedFile" xml:space="preserve">
+    <value>चुनी गई फ़ाइल हटाएँ...</value>
+  </data>
+  <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
+    <value>चुना गया आइटम हटाएँ</value>
+  </data>
+  <data name="MainWindow_DeletionUrl" xml:space="preserve">
+    <value>हटाने का URL</value>
+  </data>
+  <data name="MainMenuBuilder_DestinationSettings" xml:space="preserve">
+    <value>गंतव्य सेटिंग...</value>
+  </data>
+  <data name="MainMenuBuilder_Destinations" xml:space="preserve">
+    <value>गंतव्य</value>
+  </data>
+  <data name="MainMenuBuilder_DisableHotkeys" xml:space="preserve">
+    <value>हॉटकी अक्षम करें</value>
+  </data>
+  <data name="MainMenuBuilder_Discord" xml:space="preserve">
+    <value>Discord...</value>
+  </data>
+  <data name="MainMenuBuilder_Donate" xml:space="preserve">
+    <value>दान करें...</value>
+  </data>
+  <data name="MainWindow_DownloadSelectedUrl" xml:space="preserve">
+    <value>चुना गया URL डाउनलोड करें</value>
+  </data>
+  <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
+    <value>खींचकर छोड़ने वाला अपलोड...</value>
+  </data>
+  <data name="MainWindow_EditImage" xml:space="preserve">
+    <value>छवि संपादित करें...</value>
+  </data>
+  <data name="MainMenuBuilder_EnableAddImageEffects" xml:space="preserve">
+    <value>छवि प्रभाव जोड़ना सक्षम करें</value>
+  </data>
+  <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
+    <value>हॉटकी सक्षम करें</value>
+  </data>
+  <data name="MainMenuBuilder_Exit" xml:space="preserve">
+    <value>बाहर निकलें</value>
+  </data>
+  <data name="MainWindow_File" xml:space="preserve">
+    <value>फ़ाइल</value>
+  </data>
+  <data name="MainWindow_FileName" xml:space="preserve">
+    <value>फ़ाइल नाम</value>
+  </data>
+  <data name="MainWindow_FileNameWithExtension" xml:space="preserve">
+    <value>एक्सटेंशन सहित फ़ाइल नाम</value>
+  </data>
+  <data name="MainWindow_FilePath" xml:space="preserve">
+    <value>फ़ाइल पथ</value>
+  </data>
+  <data name="MainWindow_Folder" xml:space="preserve">
+    <value>फ़ोल्डर</value>
+  </data>
+  <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
+    <value>ShareX को फ़ॉलो करें...</value>
+  </data>
+  <data name="MainWindow_ForumImage" xml:space="preserve">
+    <value>फ़ोरम छवि</value>
+  </data>
+  <data name="MainWindow_ForumLink" xml:space="preserve">
+    <value>फ़ोरम लिंक</value>
+  </data>
+  <data name="MainWindow_ForumLinkedImage" xml:space="preserve">
+    <value>फ़ोरम लिंक की गई छवि</value>
+  </data>
+  <data name="MainMenuBuilder_Fullscreen" xml:space="preserve">
+    <value>पूर्ण स्क्रीन</value>
+  </data>
+  <data name="MainMenuBuilder_HashChecker" xml:space="preserve">
+    <value>हैश जाँचकर्ता...</value>
+  </data>
+  <data name="MainMenuBuilder_History" xml:space="preserve">
+    <value>इतिहास...</value>
+  </data>
+  <data name="MainWindow_Horizontally" xml:space="preserve">
+    <value>क्षैतिज रूप से</value>
+  </data>
+  <data name="MainMenuBuilder_HotkeySettings" xml:space="preserve">
+    <value>हॉटकी सेटिंग...</value>
+  </data>
+  <data name="MainWindow_HtmlImage" xml:space="preserve">
+    <value>HTML छवि</value>
+  </data>
+  <data name="MainWindow_HtmlLink" xml:space="preserve">
+    <value>HTML लिंक</value>
+  </data>
+  <data name="MainWindow_HtmlLinkedImage" xml:space="preserve">
+    <value>HTML लिंक की गई छवि</value>
+  </data>
+  <data name="MainMenuBuilder_IconConverter" xml:space="preserve">
+    <value>आइकन रूपांतरक...</value>
+  </data>
+  <data name="MainWindow_Image" xml:space="preserve">
+    <value>छवि</value>
+  </data>
+  <data name="MainMenuBuilder_ImageBeautifier" xml:space="preserve">
+    <value>छवि सुंदरकर्ता...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageCombiner" xml:space="preserve">
+    <value>छवि संयोजक...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
+    <value>छवि तुलनाकर्ता...</value>
+  </data>
+  <data name="MainWindow_ImageDimensions" xml:space="preserve">
+    <value>छवि आयाम</value>
+  </data>
+  <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
+    <value>छवि संपादक...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageEffects" xml:space="preserve">
+    <value>छवि प्रभाव...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
+    <value>छवि इतिहास...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
+    <value>छवि विभाजक...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageThumbnailer" xml:space="preserve">
+    <value>छवि थंबनेल निर्माता...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
+    <value>छवि दर्शक...</value>
+  </data>
+  <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
+    <value>फ़ोल्डर अनुक्रमित करें...</value>
+  </data>
+  <data name="MainMenuBuilder_InspectWindow" xml:space="preserve">
+    <value>विंडो जाँचें...</value>
+  </data>
+  <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
+    <value>पिछला क्षेत्र</value>
+  </data>
+  <data name="MainWindow_MarkdownImage" xml:space="preserve">
+    <value>Markdown छवि</value>
+  </data>
+  <data name="MainWindow_MarkdownLink" xml:space="preserve">
+    <value>Markdown लिंक</value>
+  </data>
+  <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
+    <value>Markdown लिंक की गई छवि</value>
+  </data>
+  <data name="MainMenuBuilder_Metadata" xml:space="preserve">
+    <value>मेटाडेटा...</value>
+  </data>
+  <data name="MainMenuBuilder_Monitor" xml:space="preserve">
+    <value>मॉनिटर</value>
+  </data>
+  <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
+    <value>मॉनिटर परीक्षण...</value>
+  </data>
+  <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
+    <value>कोई छवि प्रभाव प्रीसेट नहीं</value>
+  </data>
+  <data name="MainMenuBuilder_NoWindowsFound" xml:space="preserve">
+    <value>कोई विंडो नहीं मिली</value>
+  </data>
+  <data name="MainMenuBuilder_OCR" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="MainWindow_OCRImage" xml:space="preserve">
+    <value>छवि पर OCR करें...</value>
+  </data>
+  <data name="MainWindow_Open" xml:space="preserve">
+    <value>खोलें</value>
+  </data>
+  <data name="MainWindow_PinToScreen" xml:space="preserve">
+    <value>स्क्रीन पर पिन करें</value>
+  </data>
+  <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
+    <value>स्क्रीन पर पिन करें...</value>
+  </data>
+  <data name="MainMenuBuilder_QRCode" xml:space="preserve">
+    <value>QR कोड...</value>
+  </data>
+  <data name="MainMenuBuilder_RecentItems" xml:space="preserve">
+    <value>हाल के आइटम</value>
+  </data>
+  <data name="MainMenuBuilder_Region" xml:space="preserve">
+    <value>क्षेत्र...</value>
+  </data>
+  <data name="MainMenuBuilder_RegionLight" xml:space="preserve">
+    <value>क्षेत्र (हल्का)...</value>
+  </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>क्षेत्र (पारदर्शी)...</value>
+  </data>
+  <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
+    <value>व्यवस्थापक के रूप में पुनः आरंभ करें</value>
+  </data>
+  <data name="MainMenuBuilder_Ruler" xml:space="preserve">
+    <value>मापनी...</value>
+  </data>
+  <data name="MainWindow_RunAction" xml:space="preserve">
+    <value>क्रिया चलाएँ</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
+    <value>स्क्रीन रंग चयनकर्ता...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenRecording" xml:space="preserve">
+    <value>स्क्रीन रिकॉर्डिंग...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
+    <value>स्क्रीन रिकॉर्डिंग (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
+    <value>स्क्रीनशॉट फ़ोल्डर...</value>
+  </data>
+  <data name="MainMenuBuilder_ScrollingCapture" xml:space="preserve">
+    <value>स्क्रॉलिंग कैप्चर...</value>
+  </data>
+  <data name="MainWindow_SearchWithBingVisualSearch" xml:space="preserve">
+    <value>Bing दृश्य खोज से खोजें...</value>
+  </data>
+  <data name="MainWindow_SearchWithGoogleLens" xml:space="preserve">
+    <value>Google Lens से खोजें...</value>
+  </data>
+  <data name="MainWindow_ShareSelectedUrl" xml:space="preserve">
+    <value>चुना गया URL साझा करें</value>
+  </data>
+  <data name="MainWindow_ShortenSelectedUrl" xml:space="preserve">
+    <value>चुना गया URL संक्षिप्त करें</value>
+  </data>
+  <data name="MainMenuBuilder_ShortenUrl" xml:space="preserve">
+    <value>URL संक्षिप्त करें...</value>
+  </data>
+  <data name="MainWindow_ShortenedUrl" xml:space="preserve">
+    <value>संक्षिप्त URL</value>
+  </data>
+  <data name="MainMenuBuilder_ShowCursor" xml:space="preserve">
+    <value>कर्सर दिखाएँ</value>
+  </data>
+  <data name="MainMenuBuilder_ShowDebugLog" xml:space="preserve">
+    <value>डीबग लॉग दिखाएँ...</value>
+  </data>
+  <data name="MainWindow_ShowErrors" xml:space="preserve">
+    <value>त्रुटियाँ दिखाएँ...</value>
+  </data>
+  <data name="MainWindow_ShowQRCode" xml:space="preserve">
+    <value>QR कोड दिखाएँ...</value>
+  </data>
+  <data name="MainWindow_ShowResponse" xml:space="preserve">
+    <value>प्रतिक्रिया दिखाएँ...</value>
+  </data>
+  <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
+    <value>ShareX दिखाएँ</value>
+  </data>
+  <data name="MainWindow_StopUpload" xml:space="preserve">
+    <value>अपलोड रोकें</value>
+  </data>
+  <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
+    <value>कार्य सेटिंग...</value>
+  </data>
+  <data name="MainMenuBuilder_TestFileUpload" xml:space="preserve">
+    <value>फ़ाइल अपलोड जाँचें</value>
+  </data>
+  <data name="MainMenuBuilder_TestImageUpload" xml:space="preserve">
+    <value>छवि अपलोड जाँचें</value>
+  </data>
+  <data name="MainMenuBuilder_TestTextUpload" xml:space="preserve">
+    <value>पाठ अपलोड जाँचें</value>
+  </data>
+  <data name="MainMenuBuilder_TestUrlSharing" xml:space="preserve">
+    <value>URL साझाकरण जाँचें</value>
+  </data>
+  <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
+    <value>URL संक्षिप्तकर्ता जाँचें</value>
+  </data>
+  <data name="MainWindow_Text" xml:space="preserve">
+    <value>पाठ</value>
+  </data>
+  <data name="MainWindow_ThumbnailFile" xml:space="preserve">
+    <value>थंबनेल फ़ाइल</value>
+  </data>
+  <data name="MainWindow_ThumbnailImage" xml:space="preserve">
+    <value>थंबनेल छवि</value>
+  </data>
+  <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
+    <value>थंबनेल URL</value>
+  </data>
+  <data name="MainMenuBuilder_Tools" xml:space="preserve">
+    <value>उपकरण</value>
+  </data>
+  <data name="ThumbnailItemViewModel_UntitledTask" xml:space="preserve">
+    <value>शीर्षकहीन कार्य</value>
+  </data>
+  <data name="MainMenuBuilder_Upload" xml:space="preserve">
+    <value>अपलोड करें</value>
+  </data>
+  <data name="MainMenuBuilder_UploadClipboard" xml:space="preserve">
+    <value>क्लिपबोर्ड अपलोड करें...</value>
+  </data>
+  <data name="MainMenuBuilder_UploadFile" xml:space="preserve">
+    <value>फ़ाइल अपलोड करें...</value>
+  </data>
+  <data name="MainMenuBuilder_UploadFolder" xml:space="preserve">
+    <value>फ़ोल्डर अपलोड करें...</value>
+  </data>
+  <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
+    <value>चुनी गई फ़ाइल अपलोड करें</value>
+  </data>
+  <data name="MainMenuBuilder_UploadText" xml:space="preserve">
+    <value>पाठ अपलोड करें...</value>
+  </data>
+  <data name="MainMenuBuilder_UploadUrl" xml:space="preserve">
+    <value>URL अपलोड करें...</value>
+  </data>
+  <data name="MainWindow_Url" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="MainWindow_Vertically" xml:space="preserve">
+    <value>लंबवत रूप से</value>
+  </data>
+  <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
+    <value>वीडियो रूपांतरक...</value>
+  </data>
+  <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
+    <value>वीडियो थंबनेल निर्माता...</value>
+  </data>
+  <data name="MainMenuBuilder_Window" xml:space="preserve">
+    <value>विंडो</value>
+  </data>
+  <data name="MainMenuBuilder_Workflows" xml:space="preserve">
+    <value>कार्यप्रवाह</value>
+  </data>
+  <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
+    <value>छवि का विश्लेषण करें...</value>
+  </data>
+  <data name="MainMenuBuilder_Copy" xml:space="preserve">
+    <value>कॉपी करें</value>
+  </data>
+  <data name="MainMenuBuilder_Open" xml:space="preserve">
+    <value>खोलें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - अनुप्रयोग सेटिंग</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RestartShareXToApplyThisChange" xml:space="preserve">
+    <value>यह परिवर्तन लागू करने के लिए ShareX पुनः आरंभ करें।</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RestartNow" xml:space="preserve">
+    <value>अभी पुनः आरंभ करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_General" xml:space="preserve">
+    <value>सामान्य</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
+    <value>अनुप्रयोग</value>
+  </data>
+  <data name="ApplicationSettingsWindow_LanguageLabel" xml:space="preserve">
+    <value>भाषा:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
+    <value>ट्रे आइकन दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MinimizeToTrayOnStart" xml:space="preserve">
+    <value>आरंभ में ट्रे में छोटा करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowProgressInTrayIcon" xml:space="preserve">
+    <value>ट्रे आइकन में प्रगति दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowProgressInTaskbarButton" xml:space="preserve">
+    <value>टास्कबार बटन में प्रगति दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseWhiteShareXIcon" xml:space="preserve">
+    <value>सफ़ेद ShareX आइकन उपयोग करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RememberMainWindowPosition" xml:space="preserve">
+    <value>मुख्य विंडो की स्थिति याद रखें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RememberMainWindowSize" xml:space="preserve">
+    <value>मुख्य विंडो का आकार याद रखें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TrayActions" xml:space="preserve">
+    <value>ट्रे क्रियाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_OnTrayIconDoubleLeftClickLabel" xml:space="preserve">
+    <value>ट्रे आइकन पर बायाँ डबल-क्लिक:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_OnTrayIconLeftClickLabel" xml:space="preserve">
+    <value>ट्रे आइकन पर बायाँ क्लिक:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_OnTrayIconMiddleClickLabel" xml:space="preserve">
+    <value>ट्रे आइकन पर मध्य क्लिक:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_EditQuickTaskMenu" xml:space="preserve">
+    <value>त्वरित कार्य मेनू संपादित करें...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Updates" xml:space="preserve">
+    <value>अपडेट</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AutomaticallyCheckForUpdates" xml:space="preserve">
+    <value>अपडेट के लिए स्वतः जाँचें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UpdateChannelLabel" xml:space="preserve">
+    <value>अपडेट चैनल:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
+    <value>डेवलपमेंट बिल्ड स्थापित करें...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
+    <value>थीम</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ApplicationTheme" xml:space="preserve">
+    <value>अनुप्रयोग थीम</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FollowSystemTheme" xml:space="preserve">
+    <value>सिस्टम थीम का अनुसरण करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ThemeLabel" xml:space="preserve">
+    <value>थीम:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AccentColor" xml:space="preserve">
+    <value>एक्सेंट रंग</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FollowSystemAccentColor" xml:space="preserve">
+    <value>सिस्टम एक्सेंट रंग का अनुसरण करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AccentColorLabel" xml:space="preserve">
+    <value>एक्सेंट रंग:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Integration" xml:space="preserve">
+    <value>एकीकरण</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Windows" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Windows Explorer संदर्भ मेनू में "ShareX से अपलोड करें" बटन दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Windows Explorer संदर्भ मेनू में "ShareX से संपादित करें" बटन दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowShareXInSendToMenu" xml:space="preserve">
+    <value>"यहाँ भेजें" मेनू में ShareX दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ChromeExtension" xml:space="preserve">
+    <value>Chrome एक्सटेंशन</value>
+  </data>
+  <data name="ApplicationSettingsWindow_EnableChromeExtensionSupport" xml:space="preserve">
+    <value>Chrome एक्सटेंशन समर्थन सक्षम करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_InstallShareXChromeExtension" xml:space="preserve">
+    <value>ShareX Chrome एक्सटेंशन स्थापित करें...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FirefoxAddon" xml:space="preserve">
+    <value>Firefox ऐड-ऑन</value>
+  </data>
+  <data name="ApplicationSettingsWindow_EnableFirefoxAddonSupport" xml:space="preserve">
+    <value>Firefox ऐड-ऑन समर्थन सक्षम करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_InstallShareXFirefoxAddon" xml:space="preserve">
+    <value>ShareX Firefox ऐड-ऑन स्थापित करें...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="ApplicationSettingsWindow_WhileShareXIsOpenShowInAppInSteam" xml:space="preserve">
+    <value>ShareX खुला होने पर Steam में "In-App" दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Paths" xml:space="preserve">
+    <value>पथ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShareXPersonalFolder" xml:space="preserve">
+    <value>ShareX व्यक्तिगत फ़ोल्डर</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Browse" xml:space="preserve">
+    <value>ब्राउज़ करें...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Open" xml:space="preserve">
+    <value>खोलें...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ChangesToThePersonalFolderAreStoredImmediatelyAndTakeEffectAfterRestart" xml:space="preserve">
+    <value>व्यक्तिगत फ़ोल्डर के परिवर्तन तुरंत संग्रहीत होते हैं और पुनः आरंभ के बाद प्रभावी होते हैं।</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ScreenshotsFolder" xml:space="preserve">
+    <value>स्क्रीनशॉट फ़ोल्डर</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseCustomScreenshotsFolder" xml:space="preserve">
+    <value>अनुकूलित स्क्रीनशॉट फ़ोल्डर उपयोग करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
+    <value>उपफ़ोल्डर पैटर्न:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SubFolderPatternForWindowLabel" xml:space="preserve">
+    <value>विंडो के लिए उपफ़ोल्डर पैटर्न:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Settings" xml:space="preserve">
+    <value>सेटिंग</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ExportAndImport" xml:space="preserve">
+    <value>निर्यात और आयात</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DoNotShareAnExportedBackupItCanContainPrivateInformationSuchAsAccountDetailsAndUploadHistory" xml:space="preserve">
+    <value>निर्यात की गई बैकअप फ़ाइल साझा न करें। इसमें खाता विवरण और अपलोड इतिहास जैसी निजी जानकारी हो सकती है।</value>
+  </data>
+  <data name="ApplicationSettingsWindow_History" xml:space="preserve">
+    <value>इतिहास</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Export" xml:space="preserve">
+    <value>निर्यात करें...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Import" xml:space="preserve">
+    <value>आयात करें...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ResetSettings" xml:space="preserve">
+    <value>सेटिंग रीसेट करें...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AutomaticCleanup" xml:space="preserve">
+    <value>स्वचालित सफ़ाई</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldBackupFiles" xml:space="preserve">
+    <value>पुरानी बैकअप फ़ाइलें स्वतः साफ़ करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldLogFiles" xml:space="preserve">
+    <value>पुरानी लॉग फ़ाइलें स्वतः साफ़ करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_NumberOfFilesToKeepLabel" xml:space="preserve">
+    <value>रखी जाने वाली फ़ाइलों की संख्या:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
+    <value>मुख्य विंडो</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ThumbnailView" xml:space="preserve">
+    <value>थंबनेल दृश्य</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowTitle" xml:space="preserve">
+    <value>शीर्षक दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TitleLocationLabel" xml:space="preserve">
+    <value>शीर्षक स्थान:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ThumbnailSizeLabel" xml:space="preserve">
+    <value>थंबनेल आकार:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Reset" xml:space="preserve">
+    <value>रीसेट करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ThumbnailClickActionLabel" xml:space="preserve">
+    <value>थंबनेल क्लिक क्रिया:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
+    <value>क्लिपबोर्ड प्रारूप</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TheseFormatsAppearUnderTheCopySubmenuInTheMainWindowContextMenu" xml:space="preserve">
+    <value>ये प्रारूप मुख्य विंडो के संदर्भ मेनू में कॉपी उपमेनू के अंतर्गत दिखाई देते हैं।</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Add" xml:space="preserve">
+    <value>जोड़ें...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Edit" xml:space="preserve">
+    <value>संपादित करें...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Remove" xml:space="preserve">
+    <value>हटाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Upload" xml:space="preserve">
+    <value>अपलोड करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
+    <value>एक साथ अपलोड सीमा:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ZeroDisablesTheLimit" xml:space="preserve">
+    <value>0 सीमा को अक्षम करता है</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BufferSizeLabel" xml:space="preserve">
+    <value>बफ़र आकार:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel" xml:space="preserve">
+    <value>अपलोड विफल होने पर पुनः प्रयासों की संख्या:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseSecondaryUploadersInOrderOfPreferenceWhenRetrying" xml:space="preserve">
+    <value>पुनः प्रयास में प्राथमिकता क्रम से द्वितीयक अपलोडर उपयोग करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SecondaryImageUploaders" xml:space="preserve">
+    <value>द्वितीयक छवि अपलोडर</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MoveUp" xml:space="preserve">
+    <value>ऊपर ले जाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MoveDown" xml:space="preserve">
+    <value>नीचे ले जाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SecondaryTextUploaders" xml:space="preserve">
+    <value>द्वितीयक पाठ अपलोडर</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SecondaryFileUploaders" xml:space="preserve">
+    <value>द्वितीयक फ़ाइल अपलोडर</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SaveTasksToHistory" xml:space="preserve">
+    <value>कार्य इतिहास में सहेजें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_OnlySaveIfUrlIsNotEmpty" xml:space="preserve">
+    <value>URL खाली न हो तभी सहेजें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RecentTasks" xml:space="preserve">
+    <value>हाल के कार्य</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
+    <value>हाल के कार्य सहेजें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumNumberOfTasksToSaveLabel" xml:space="preserve">
+    <value>सहेजे जाने वाले कार्यों की अधिकतम संख्या:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowRecentTasksInMainWindowOnStartup" xml:space="preserve">
+    <value>आरंभ में मुख्य विंडो में हाल के कार्य दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowRecentTasksInTrayMenu" xml:space="preserve">
+    <value>ट्रे मेनू में हाल के कार्य दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
+    <value>ट्रे मेनू में नवीनतम कार्य पहले दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Print" xml:space="preserve">
+    <value>प्रिंट</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DontShowImagePrintSettingsDialog" xml:space="preserve">
+    <value>छवि मुद्रण सेटिंग संवाद न दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
+    <value>छवि मुद्रण सेटिंग...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DontShowWindowsPrintDialog" xml:space="preserve">
+    <value>Windows मुद्रण संवाद न दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DefaultPrinterOverrideLabel" xml:space="preserve">
+    <value>डिफ़ॉल्ट प्रिंटर ओवरराइड:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Proxy" xml:space="preserve">
+    <value>प्रॉक्सी</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ProxyConfigurationLabel" xml:space="preserve">
+    <value>प्रॉक्सी कॉन्फ़िगरेशन:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UsernameLabel" xml:space="preserve">
+    <value>उपयोगकर्ता नाम:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_PasswordLabel" xml:space="preserve">
+    <value>पासवर्ड:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_HostLabel" xml:space="preserve">
+    <value>होस्ट:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_PortLabel" xml:space="preserve">
+    <value>पोर्ट:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Advanced" xml:space="preserve">
+    <value>उन्नत</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AddClipboardFormat" xml:space="preserve">
+    <value>क्लिपबोर्ड प्रारूप जोड़ें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CustomizeTheTextCopiedFromCompletedUploads" xml:space="preserve">
+    <value>पूर्ण अपलोड से कॉपी होने वाले पाठ को अनुकूलित करें।</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
+    <value>विवरण</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
+    <value>प्रारूप</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RightClickToInsertAVariable" xml:space="preserve">
+    <value>चर सम्मिलित करने के लिए दायाँ-क्लिक करें।</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
+    <value>सहेजें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ChooseShareXPersonalFolderPath" xml:space="preserve">
+    <value>ShareX व्यक्तिगत फ़ोल्डर पथ चुनें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ChooseScreenshotsFolderPath" xml:space="preserve">
+    <value>स्क्रीनशॉट फ़ोल्डर पथ चुनें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ExportShareXBackup" xml:space="preserve">
+    <value>ShareX बैकअप निर्यात करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShareXBackup" xml:space="preserve">
+    <value>ShareX बैकअप</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImportShareXBackup" xml:space="preserve">
+    <value>ShareX बैकअप आयात करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_EditClipboardFormat" xml:space="preserve">
+    <value>क्लिपबोर्ड प्रारूप संपादित करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UploadResult" xml:space="preserve">
+    <value>अपलोड परिणाम</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ExportingBackup" xml:space="preserve">
+    <value>बैकअप निर्यात हो रहा है...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BackupExportedTo" xml:space="preserve">
+    <value>बैकअप {0} में निर्यात किया गया</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BackupExportFailed" xml:space="preserve">
+    <value>बैकअप निर्यात विफल।</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImportingBackup" xml:space="preserve">
+    <value>बैकअप आयात हो रहा है...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BackupImportedFrom" xml:space="preserve">
+    <value>बैकअप {0} से आयात किया गया</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BackupImportFailed" xml:space="preserve">
+    <value>बैकअप आयात विफल।</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SettingsReset" xml:space="preserve">
+    <value>सेटिंग रीसेट की गईं।</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ErrorPrefix" xml:space="preserve">
+    <value>त्रुटि:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Dark" xml:space="preserve">
+    <value>गहरा</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
+    <value>हल्का</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedApplication" xml:space="preserve">
+    <value>अनुप्रयोग</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedHotkeys" xml:space="preserve">
+    <value>हॉटकी</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedClipboard" xml:space="preserve">
+    <value>क्लिपबोर्ड</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedImage" xml:space="preserve">
+    <value>छवि</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
+    <value>अपलोड करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedPaths" xml:space="preserve">
+    <value>पथ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedDragAndDropWindow" xml:space="preserve">
+    <value>खींचें और छोड़ें विंडो</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BinaryUnits" xml:space="preserve">
+    <value>बाइनरी इकाइयाँ उपयोग करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowMostRecentTaskFirst" xml:space="preserve">
+    <value>सबसे हाल का कार्य पहले दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_WorkflowsOnlyShowEdited" xml:space="preserve">
+    <value>केवल अनुकूलित कार्यप्रवाह दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
+    <value>कैप्चर मेनू स्वतः विस्तृत करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BrowserPath" xml:space="preserve">
+    <value>ब्राउज़र पथ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SaveSettingsAfterTaskCompleted" xml:space="preserve">
+    <value>कार्य पूरा होने के बाद सेटिंग सहेजें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DevMode" xml:space="preserve">
+    <value>डेवलपर मोड</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DisableHotkeys" xml:space="preserve">
+    <value>हॉटकी अक्षम करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DisableHotkeysOnFullscreen" xml:space="preserve">
+    <value>पूर्ण स्क्रीन अनुप्रयोगों में हॉटकी अक्षम करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
+    <value>हॉटकी पुनरावृत्ति अंतराल (मिलीसेकंड)</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
+    <value>क्लिपबोर्ड सामग्री दर्शक दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DefaultClipboardCopyImageFillBackground" xml:space="preserve">
+    <value>कॉपी करते समय छवि की पृष्ठभूमि भरें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseAlternativeClipboardCopyImage" xml:space="preserve">
+    <value>वैकल्पिक छवि कॉपी विधि उपयोग करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseAlternativeClipboardGetImage" xml:space="preserve">
+    <value>वैकल्पिक छवि प्राप्ति विधि उपयोग करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
+    <value>EXIF अभिविन्यास से छवियाँ घुमाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_PNGStripColorSpaceInformation" xml:space="preserve">
+    <value>PNG रंग-स्थान जानकारी हटाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DisableUpload" xml:space="preserve">
+    <value>अपलोड अक्षम करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
+    <value>URL एन्कोडिंग में इमोजी अनदेखा करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowMultiUploadWarning" xml:space="preserve">
+    <value>10 से अधिक फ़ाइलें अपलोड करने से पहले चेतावनी दें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
+    <value>बड़ी फ़ाइल चेतावनी सीमा (MB)</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseMachineSpecificUploadersConfig" xml:space="preserve">
+    <value>मशीन-विशिष्ट अपलोडर कॉन्फ़िगरेशन उपयोग करें</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CustomUploadersConfigPath" xml:space="preserve">
+    <value>अनुकूलित अपलोडर कॉन्फ़िगरेशन पथ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
+    <value>अनुकूलित हॉटकी कॉन्फ़िगरेशन पथ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CustomScreenshotsPath2" xml:space="preserve">
+    <value>द्वितीयक स्क्रीनशॉट पथ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropSize" xml:space="preserve">
+    <value>ड्रॉप विंडो आकार</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropOffset" xml:space="preserve">
+    <value>ड्रॉप विंडो ऑफ़सेट</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropAlignment" xml:space="preserve">
+    <value>ड्रॉप विंडो स्थिति</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropOpacity" xml:space="preserve">
+    <value>ड्रॉप विंडो अपारदर्शिता</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropHoverOpacity" xml:space="preserve">
+    <value>ड्रॉप विंडो होवर अपारदर्शिता</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TopLeft" xml:space="preserve">
+    <value>ऊपर बायाँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TopCenter" xml:space="preserve">
+    <value>ऊपर केंद्र</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TopRight" xml:space="preserve">
+    <value>ऊपर दायाँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MiddleLeft" xml:space="preserve">
+    <value>मध्य बायाँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MiddleCenter" xml:space="preserve">
+    <value>केंद्र</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MiddleRight" xml:space="preserve">
+    <value>मध्य दायाँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BottomLeft" xml:space="preserve">
+    <value>नीचे बायाँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BottomCenter" xml:space="preserve">
+    <value>नीचे केंद्र</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BottomRight" xml:space="preserve">
+    <value>नीचे दायाँ</value>
+  </data>
+  <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - हॉटकी सेटिंग</value>
+  </data>
+  <data name="HotkeySettingsWindow_Add" xml:space="preserve">
+    <value>जोड़ें</value>
+  </data>
+  <data name="HotkeySettingsWindow_Remove" xml:space="preserve">
+    <value>हटाएँ</value>
+  </data>
+  <data name="HotkeySettingsWindow_EditTask" xml:space="preserve">
+    <value>कार्य संपादित करें...</value>
+  </data>
+  <data name="HotkeySettingsWindow_Duplicate" xml:space="preserve">
+    <value>प्रतिलिपि बनाएँ</value>
+  </data>
+  <data name="HotkeySettingsWindow_MoveUp" xml:space="preserve">
+    <value>ऊपर ले जाएँ</value>
+  </data>
+  <data name="HotkeySettingsWindow_MoveDown" xml:space="preserve">
+    <value>नीचे ले जाएँ</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetWithEllipsis" xml:space="preserve">
+    <value>रीसेट करें...</value>
+  </data>
+  <data name="HotkeySettingsWindow_GlobalHotkeysAreCurrentlyDisabled" xml:space="preserve">
+    <value>वैश्विक हॉटकी अभी अक्षम हैं।</value>
+  </data>
+  <data name="HotkeySettingsWindow_EnableHotkeys" xml:space="preserve">
+    <value>हॉटकी सक्षम करें</value>
+  </data>
+  <data name="HotkeySettingsWindow_Task" xml:space="preserve">
+    <value>कार्य</value>
+  </data>
+  <data name="HotkeySettingsWindow_Hotkey" xml:space="preserve">
+    <value>हॉटकी</value>
+  </data>
+  <data name="HotkeySettingsWindow_ThisTaskHasCustomSettings" xml:space="preserve">
+    <value>इस कार्य में अनुकूलित सेटिंग हैं</value>
+  </data>
+  <data name="HotkeySettingsWindow_EditTaskSettings" xml:space="preserve">
+    <value>कार्य सेटिंग संपादित करें...</value>
+  </data>
+  <data name="HotkeySettingsWindow_AddAHotkeyToCreateAWorkflow" xml:space="preserve">
+    <value>कार्यप्रवाह बनाने के लिए हॉटकी जोड़ें</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetHotkeysQuestion" xml:space="preserve">
+    <value>हॉटकी रीसेट करें?</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetHotkeysDescription" xml:space="preserve">
+    <value>सभी हॉटकी और उनकी अनुकूलित कार्य सेटिंग ShareX डिफ़ॉल्ट से बदल दी जाएँगी।</value>
+  </data>
+  <data name="HotkeySettingsWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="HotkeySettingsWindow_Reset" xml:space="preserve">
+    <value>रीसेट करें</value>
+  </data>
+  <data name="HotkeySettingsWindow_PressAHotkey" xml:space="preserve">
+    <value>हॉटकी दबाएँ...</value>
+  </data>
+  <data name="HotkeySettingsWindow_Registered" xml:space="preserve">
+    <value>पंजीकृत</value>
+  </data>
+  <data name="HotkeySettingsWindow_RegistrationFailed" xml:space="preserve">
+    <value>पंजीकरण विफल</value>
+  </data>
+  <data name="HotkeySettingsWindow_NotConfigured" xml:space="preserve">
+    <value>कॉन्फ़िगर नहीं किया गया</value>
+  </data>
+  <data name="TaskSettingsWindow_AddWithEllipsis" xml:space="preserve">
+    <value>जोड़ें...</value>
+  </data>
+  <data name="TaskSettingsWindow_BrowseWithEllipsis" xml:space="preserve">
+    <value>ब्राउज़ करें...</value>
+  </data>
+  <data name="TaskSettingsWindow_Remove" xml:space="preserve">
+    <value>हटाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_AddAction" xml:space="preserve">
+    <value>क्रिया जोड़ें</value>
+  </data>
+  <data name="TaskSettingsWindow_RunAnExternalProgramAsPartOfACaptureWorkflow" xml:space="preserve">
+    <value>कैप्चर कार्यप्रवाह के भाग के रूप में बाहरी प्रोग्राम चलाएँ।</value>
+  </data>
+  <data name="TaskSettingsWindow_Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="TaskSettingsWindow_Name" xml:space="preserve">
+    <value>नाम</value>
+  </data>
+  <data name="TaskSettingsWindow_FilePath" xml:space="preserve">
+    <value>फ़ाइल पथ</value>
+  </data>
+  <data name="TaskSettingsWindow_Arguments" xml:space="preserve">
+    <value>तर्क</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
+    <value>इनपुट या आउटपुट फ़ाइल टोकन सम्मिलित करने के लिए दायाँ-क्लिक करें।</value>
+  </data>
+  <data name="TaskSettingsWindow_OutputFileNameExtensionEmptyUsesTheSameFileName" xml:space="preserve">
+    <value>आउटपुट फ़ाइल नाम एक्सटेंशन (खाली रहने पर वही फ़ाइल नाम)</value>
+  </data>
+  <data name="TaskSettingsWindow_ExtensionFilterExampleJpgPngMp4" xml:space="preserve">
+    <value>एक्सटेंशन फ़िल्टर (उदाहरण: jpg png mp4)</value>
+  </data>
+  <data name="TaskSettingsWindow_HiddenWindow" xml:space="preserve">
+    <value>छिपी विंडो</value>
+  </data>
+  <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
+    <value>इनपुट फ़ाइल हटाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_Save" xml:space="preserve">
+    <value>सहेजें</value>
+  </data>
+  <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="TaskSettingsWindow_AddWatchFolder" xml:space="preserve">
+    <value>निगरानी फ़ोल्डर जोड़ें</value>
+  </data>
+  <data name="TaskSettingsWindow_UploadFilesWhenTheyAreCreatedInThisFolder" xml:space="preserve">
+    <value>इस फ़ोल्डर में फ़ाइलें बनते ही अपलोड करें।</value>
+  </data>
+  <data name="TaskSettingsWindow_FolderPath" xml:space="preserve">
+    <value>फ़ोल्डर पथ</value>
+  </data>
+  <data name="TaskSettingsWindow_Filter" xml:space="preserve">
+    <value>फ़िल्टर</value>
+  </data>
+  <data name="TaskSettingsWindow_ExamplePng" xml:space="preserve">
+    <value>उदाहरण: *.png</value>
+  </data>
+  <data name="TaskSettingsWindow_IncludeSubdirectories" xml:space="preserve">
+    <value>उपनिर्देशिकाएँ शामिल करें</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveFileToScreenshotsFolder" xml:space="preserve">
+    <value>फ़ाइल को स्क्रीनशॉट फ़ोल्डर में ले जाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtons" xml:space="preserve">
+    <value>सूचना बटन</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseTheActionsShownAtTheBottomOfAfterCaptureNotifications" xml:space="preserve">
+    <value>चित्र लेने के बाद की सूचनाओं के नीचे दिखाई देने वाली क्रियाएँ चुनें।</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
+    <value>ऊपर ले जाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
+    <value>नीचे ले जाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_NoButtonsConfiguredTheNotificationToolbarWillBeHidden" xml:space="preserve">
+    <value>कोई बटन कॉन्फ़िगर नहीं है। सूचना टूलबार छिपा रहेगा।</value>
+  </data>
+  <data name="TaskSettingsWindow_ShareXTaskSettings" xml:space="preserve">
+    <value>ShareX - कार्य सेटिंग</value>
+  </data>
+  <data name="TaskSettingsWindow_ShareXTaskSettingsFor0" xml:space="preserve">
+    <value>ShareX - {0} के लिए कार्य सेटिंग</value>
+  </data>
+  <data name="TaskSettingsWindow_EditAction" xml:space="preserve">
+    <value>क्रिया संपादित करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseProgram" xml:space="preserve">
+    <value>प्रोग्राम चुनें</value>
+  </data>
+  <data name="TaskSettingsWindow_EditWatchFolder" xml:space="preserve">
+    <value>निगरानी फ़ोल्डर संपादित करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseWatchFolder" xml:space="preserve">
+    <value>निगरानी फ़ोल्डर चुनें</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDefaultFTPAccount" xml:space="preserve">
+    <value>डिफ़ॉल्ट FTP खाता ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
+    <value>FTP खाता:</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDefaultCustomUploader" xml:space="preserve">
+    <value>डिफ़ॉल्ट अनुकूलित अपलोडर ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomUploader" xml:space="preserve">
+    <value>अनुकूलित अपलोडर:</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseScreenshotsFolder" xml:space="preserve">
+    <value>स्क्रीनशॉट फ़ोल्डर चुनें</value>
+  </data>
+  <data name="TaskSettingsWindow_Task" xml:space="preserve">
+    <value>कार्य</value>
+  </data>
+  <data name="TaskSettingsWindow_TaskLabel" xml:space="preserve">
+    <value>कार्य:</value>
+  </data>
+  <data name="TaskSettingsWindow_Description" xml:space="preserve">
+    <value>विवरण:</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterCaptureTasks" xml:space="preserve">
+    <value>चित्र लेने के बाद के कार्य</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAfterCaptureTasks" xml:space="preserve">
+    <value>चित्र लेने के बाद के कार्य ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterUploadTasks" xml:space="preserve">
+    <value>अपलोड के बाद के कार्य</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAfterUploadTasks" xml:space="preserve">
+    <value>अपलोड के बाद के कार्य ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_Destinations" xml:space="preserve">
+    <value>गंतव्य</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDestinations" xml:space="preserve">
+    <value>गंतव्य ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_UploaderAccounts" xml:space="preserve">
+    <value>अपलोडर खाते</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenshotsFolder" xml:space="preserve">
+    <value>स्क्रीनशॉट फ़ोल्डर</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideScreenshotsFolder" xml:space="preserve">
+    <value>स्क्रीनशॉट फ़ोल्डर ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_DurationSeconds" xml:space="preserve">
+    <value>अवधि (सेकंड):</value>
+  </data>
+  <data name="TaskSettingsWindow_FadeDurationSeconds" xml:space="preserve">
+    <value>फ़ेड अवधि (सेकंड):</value>
+  </data>
+  <data name="TaskSettingsWindow_Placement" xml:space="preserve">
+    <value>स्थान:</value>
+  </data>
+  <data name="TaskSettingsWindow_Width" xml:space="preserve">
+    <value>चौड़ाई:</value>
+  </data>
+  <data name="TaskSettingsWindow_Height" xml:space="preserve">
+    <value>ऊँचाई:</value>
+  </data>
+  <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
+    <value>बायाँ क्लिक क्रिया:</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
+    <value>दायाँ क्लिक क्रिया:</value>
+  </data>
+  <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
+    <value>मध्य क्लिक क्रिया:</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtonSize" xml:space="preserve">
+    <value>सूचना बटन आकार:</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtonsLabel" xml:space="preserve">
+    <value>सूचना बटन:</value>
+  </data>
+  <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
+    <value>कॉन्फ़िगर करें...</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
+    <value>स्क्रीन कैप्चर पर स्वतः छिपाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
+    <value>पूर्ण स्क्रीन में टोस्ट सूचनाएँ अक्षम करें</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterCaptureIsMade" xml:space="preserve">
+    <value>चित्र लेने के बाद ध्वनि बजाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterTaskIsCompleted" xml:space="preserve">
+    <value>कार्य पूरा होने के बाद ध्वनि बजाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterActionIsCompleted" xml:space="preserve">
+    <value>क्रिया पूरी होने के बाद ध्वनि बजाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowToastNotificationAfterTaskIsCompleted" xml:space="preserve">
+    <value>कार्य पूरा होने के बाद टोस्ट सूचना दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomCaptureSound" xml:space="preserve">
+    <value>अनुकूलित कैप्चर ध्वनि उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomTaskCompletedSound" xml:space="preserve">
+    <value>अनुकूलित कार्य-पूर्ण ध्वनि उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomActionCompletedSound" xml:space="preserve">
+    <value>अनुकूलित क्रिया-पूर्ण ध्वनि उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomErrorSound" xml:space="preserve">
+    <value>अनुकूलित त्रुटि ध्वनि उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_AdjustJPEGQualityAutomaticallyToKeepImageSizeNearTheSpecifiedSize" xml:space="preserve">
+    <value>छवि आकार को निर्दिष्ट आकार के पास रखने के लिए JPEG गुणवत्ता स्वतः समायोजित करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageFormat" xml:space="preserve">
+    <value>छवि प्रारूप:</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG बिट गहराई:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
+    <value>JPEG गुणवत्ता:</value>
+  </data>
+  <data name="TaskSettingsWindow_GIFQuality" xml:space="preserve">
+    <value>GIF गुणवत्ता:</value>
+  </data>
+  <data name="TaskSettingsWindow_IfFileExists" xml:space="preserve">
+    <value>यदि फ़ाइल मौजूद हो:</value>
+  </data>
+  <data name="TaskSettingsWindow_UseJPEGIfImageSizeIsBiggerThanTheSpecifiedSize" xml:space="preserve">
+    <value>छवि निर्दिष्ट आकार से बड़ी हो तो JPEG उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
+    <value>आकार सीमा (kB):</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowImageEffectsWindowAfterCapture" xml:space="preserve">
+    <value>चित्र लेने के बाद छवि प्रभाव विंडो दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
+    <value>केवल क्षेत्र कैप्चर पर प्रभाव लागू करें</value>
+  </data>
+  <data name="TaskSettingsWindow_UseRandomImageEffect" xml:space="preserve">
+    <value>यादृच्छिक छवि प्रभाव उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEffectsConfigurationWithEllipsis" xml:space="preserve">
+    <value>छवि प्रभाव कॉन्फ़िगरेशन...</value>
+  </data>
+  <data name="TaskSettingsWindow_YouCanEnableOrDisableImageEffectsFromAfterCaptureTasksAddImageEffects" xml:space="preserve">
+    <value>आप चित्र लेने के बाद के कार्य &gt; छवि प्रभाव जोड़ें से छवि प्रभाव सक्षम या अक्षम कर सकते हैं।</value>
+  </data>
+  <data name="TaskSettingsWindow_ThumbnailName" xml:space="preserve">
+    <value>थंबनेल नाम:</value>
+  </data>
+  <data name="TaskSettingsWindow_Preview" xml:space="preserve">
+    <value>पूर्वावलोकन:</value>
+  </data>
+  <data name="TaskSettingsWindow_CreateThumbnailOnlyIfImageIsBiggerThanThumbnailSize" xml:space="preserve">
+    <value>छवि थंबनेल आकार से बड़ी हो तभी थंबनेल बनाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureWindowWithShadow" xml:space="preserve">
+    <value>छाया सहित विंडो कैप्चर करें</value>
+  </data>
+  <data name="TaskSettingsWindow_SelectRegionWithEllipsis" xml:space="preserve">
+    <value>क्षेत्र चुनें...</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCursorInScreenshots" xml:space="preserve">
+    <value>स्क्रीनशॉट में कर्सर दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenshotDelaySeconds" xml:space="preserve">
+    <value>स्क्रीनशॉट विलंब (सेकंड):</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureWindowWithTransparency" xml:space="preserve">
+    <value>पारदर्शिता सहित विंडो कैप्चर करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ShadowOffset" xml:space="preserve">
+    <value>छाया ऑफ़सेट:</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
+    <value>विंडो कैप्चर में क्लाइंट क्षेत्र कैप्चर करें</value>
+  </data>
+  <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
+    <value>कैप्चर की गई विंडो से टास्कबार टकराए तो उसे छिपाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyHideDesktopIcons" xml:space="preserve">
+    <value>डेस्कटॉप आइकन स्वतः छिपाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
+    <value>HDR स्क्रीनशॉट रंग सुधारक</value>
+  </data>
+  <data name="TaskSettingsWindow_WindowTitle" xml:space="preserve">
+    <value>विंडो शीर्षक:</value>
+  </data>
+  <data name="TaskSettingsWindow_AlsoDetectControlsInsideWindows" xml:space="preserve">
+    <value>विंडो के अंदर नियंत्रण भी पहचानें</value>
+  </data>
+  <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
+    <value>वर्गाकार आवर्धक उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_Add" xml:space="preserve">
+    <value>जोड़ें</value>
+  </data>
+  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
+    <value>बहु-क्षेत्र मोड उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
+    <value>विंडो क्षेत्र पहचानें</value>
+  </data>
+  <data name="TaskSettingsWindow_RestrictCaptureAndCursorToTheActiveMonitor" xml:space="preserve">
+    <value>कैप्चर और कर्सर को सक्रिय मॉनिटर तक सीमित करें</value>
+  </data>
+  <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
+    <value>पृष्ठभूमि मंदता तीव्रता (%):</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClick" xml:space="preserve">
+    <value>दायाँ क्लिक:</value>
+  </data>
+  <data name="TaskSettingsWindow_MiddleClick" xml:space="preserve">
+    <value>मध्य क्लिक:</value>
+  </data>
+  <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
+    <value>माउस 4 क्लिक:</value>
+  </data>
+  <data name="TaskSettingsWindow_Mouse5Click" xml:space="preserve">
+    <value>माउस 5 क्लिक:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
+    <value>स्थिति और आकार जानकारी दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomInfoText" xml:space="preserve">
+    <value>अनुकूलित जानकारी पाठ उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowMagnifierNearCursor" xml:space="preserve">
+    <value>कर्सर के पास आवर्धक दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_MagnifierPixelCount" xml:space="preserve">
+    <value>आवर्धक पिक्सेल संख्या:</value>
+  </data>
+  <data name="TaskSettingsWindow_MagnifierPixelSize" xml:space="preserve">
+    <value>आवर्धक पिक्सेल आकार:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCenterCrosshair" xml:space="preserve">
+    <value>केंद्र क्रॉसहेयर दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowScreenWideCrosshair" xml:space="preserve">
+    <value>पूरी स्क्रीन का क्रॉसहेयर दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedSizeRegionMode" xml:space="preserve">
+    <value>निश्चित आकार क्षेत्र मोड</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedWidth" xml:space="preserve">
+    <value>निश्चित चौड़ाई:</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
+    <value>निश्चित ऊँचाई:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowFPS" xml:space="preserve">
+    <value>FPS दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_FPSLimit" xml:space="preserve">
+    <value>FPS सीमा:</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
+    <value>स्क्रीन रिकॉर्डिंग FPS:</value>
+  </data>
+  <data name="TaskSettingsWindow_GIFFPS" xml:space="preserve">
+    <value>GIF FPS:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCursorInRecording" xml:space="preserve">
+    <value>रिकॉर्डिंग में कर्सर दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
+    <value>विलंब के बाद रिकॉर्डिंग आरंभ करें</value>
+  </data>
+  <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
+    <value>आरंभ विलंब (सेकंड):</value>
+  </data>
+  <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
+    <value>निश्चित अवधि उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions" xml:space="preserve">
+    <value>पहले दोषरहित रिकॉर्ड करें, फिर एन्कोडिंग विकल्प लागू करें</value>
+  </data>
+  <data name="TaskSettingsWindow_AskForConfirmationWhenAborting" xml:space="preserve">
+    <value>निरस्त करते समय पुष्टि माँगें</value>
+  </data>
+  <data name="TaskSettingsWindow_UseTransparentRegionSelection" xml:space="preserve">
+    <value>पारदर्शी क्षेत्र चयन उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis" xml:space="preserve">
+    <value>स्क्रीन रिकॉर्डिंग विकल्प...</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyCopyResultsToClipboard" xml:space="preserve">
+    <value>परिणाम क्लिपबोर्ड पर स्वतः कॉपी करें</value>
+  </data>
+  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
+    <value>डिफ़ॉल्ट भाषा:</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessOCRSilently" xml:space="preserve">
+    <value>OCR चुपचाप संसाधित करें</value>
+  </data>
+  <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
+    <value>सेवा लिंक खोलने के बाद OCR विंडो बंद करें</value>
+  </data>
+  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
+    <value>OCR सहायता...</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
+    <value>कैप्चर या क्लिपबोर्ड अपलोड:</value>
+  </data>
+  <data name="TaskSettingsWindow_WindowCapture" xml:space="preserve">
+    <value>विंडो कैप्चर:</value>
+  </data>
+  <data name="TaskSettingsWindow_UseNamePatternForFileUploads" xml:space="preserve">
+    <value>फ़ाइल अपलोड में नाम पैटर्न उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ReplaceURLProblematicCharactersWithUnderscores" xml:space="preserve">
+    <value>URL में समस्या पैदा करने वाले वर्णों को अंडरस्कोर से बदलें</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
+    <value>स्वतः बढ़ने वाली संख्या:</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
+    <value>अनुकूलित समय क्षेत्र उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
+    <value>समय क्षेत्र:</value>
+  </data>
+  <data name="TaskSettingsWindow_ReplaceResultURLUsingARegularExpression" xml:space="preserve">
+    <value>नियमित अभिव्यक्ति से परिणाम URL बदलें</value>
+  </data>
+  <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
+    <value>पैटर्न:</value>
+  </data>
+  <data name="TaskSettingsWindow_Replacement" xml:space="preserve">
+    <value>प्रतिस्थापन:</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
+    <value>क्लिपबोर्ड में फ़ाइल URL हो तो उसे डाउनलोड और अपलोड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAURLUseURLShortener" xml:space="preserve">
+    <value>क्लिपबोर्ड में URL हो तो URL संक्षिप्तकर्ता उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAURLShareItUsingURLSharingService" xml:space="preserve">
+    <value>क्लिपबोर्ड में URL हो तो URL साझाकरण सेवा से साझा करें</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAFolderPathIndexAndUploadIt" xml:space="preserve">
+    <value>क्लिपबोर्ड में फ़ोल्डर पथ हो तो उसे अनुक्रमित और अपलोड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_Update" xml:space="preserve">
+    <value>अपडेट करें</value>
+  </data>
+  <data name="TaskSettingsWindow_Uploader" xml:space="preserve">
+    <value>अपलोडर:</value>
+  </data>
+  <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
+    <value>एक्सटेंशन:</value>
+  </data>
+  <data name="TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg" xml:space="preserve">
+    <value>एक्सटेंशन को अल्पविराम से अलग करें, उदाहरण: png, jpg, jpeg</value>
+  </data>
+  <data name="TaskSettingsWindow_UseLegacyImageEditor" xml:space="preserve">
+    <value>पुराना छवि संपादक उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_Format" xml:space="preserve">
+    <value>प्रारूप:</value>
+  </data>
+  <data name="TaskSettingsWindow_FormatCtrlPlusClick" xml:space="preserve">
+    <value>प्रारूप (Ctrl + क्लिक):</value>
+  </data>
+  <data name="TaskSettingsWindow_InfoText" xml:space="preserve">
+    <value>जानकारी पाठ:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowMagnifier" xml:space="preserve">
+    <value>आवर्धक दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_EditWithEllipsis" xml:space="preserve">
+    <value>संपादित करें...</value>
+  </data>
+  <data name="TaskSettingsWindow_Duplicate" xml:space="preserve">
+    <value>प्रतिलिपि बनाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_YouCanEnableOrDisableActionsFromAfterCaptureTasksPerformActions" xml:space="preserve">
+    <value>आप चित्र लेने के बाद के कार्य &gt; क्रियाएँ निष्पादित करें से क्रियाएँ सक्षम या अक्षम कर सकते हैं।</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFolders" xml:space="preserve">
+    <value>निगरानी फ़ोल्डर</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFoldersAndUploadNewlyCreatedFiles" xml:space="preserve">
+    <value>फ़ोल्डर की निगरानी करें और नई बनी फ़ाइलें अपलोड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
+    <value>ध्वनियाँ</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
+    <value>टोस्ट सूचना</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomSounds" xml:space="preserve">
+    <value>अनुकूलित ध्वनियाँ</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideImageSettings" xml:space="preserve">
+    <value>छवि सेटिंग ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageQuality" xml:space="preserve">
+    <value>छवि गुणवत्ता</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
+    <value>स्वचालित JPEG</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEffects" xml:space="preserve">
+    <value>छवि प्रभाव</value>
+  </data>
+  <data name="TaskSettingsWindow_Thumbnail" xml:space="preserve">
+    <value>थंबनेल</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideCaptureSettings" xml:space="preserve">
+    <value>कैप्चर सेटिंग ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_Screenshots" xml:space="preserve">
+    <value>स्क्रीनशॉट</value>
+  </data>
+  <data name="TaskSettingsWindow_PreconfiguredRegion" xml:space="preserve">
+    <value>पूर्वकॉन्फ़िगर क्षेत्र</value>
+  </data>
+  <data name="TaskSettingsWindow_PreconfiguredWindow" xml:space="preserve">
+    <value>पूर्वकॉन्फ़िगर विंडो</value>
+  </data>
+  <data name="TaskSettingsWindow_Selection" xml:space="preserve">
+    <value>चयन</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
+    <value>माउस क्रियाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_InformationAndMagnifier" xml:space="preserve">
+    <value>जानकारी और आवर्धक</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedSizeAndPerformance" xml:space="preserve">
+    <value>निश्चित आकार और प्रदर्शन</value>
+  </data>
+  <data name="TaskSettingsWindow_SnapSizes" xml:space="preserve">
+    <value>स्नैप आकार</value>
+  </data>
+  <data name="TaskSettingsWindow_Recording" xml:space="preserve">
+    <value>रिकॉर्डिंग</value>
+  </data>
+  <data name="TaskSettingsWindow_EncodingAndCapture" xml:space="preserve">
+    <value>एन्कोडिंग और कैप्चर</value>
+  </data>
+  <data name="TaskSettingsWindow_OpticalCharacterRecognition" xml:space="preserve">
+    <value>ऑप्टिकल वर्ण पहचान</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
+    <value>नाम पैटर्न</value>
+  </data>
+  <data name="TaskSettingsWindow_TimeZone" xml:space="preserve">
+    <value>समय क्षेत्र</value>
+  </data>
+  <data name="TaskSettingsWindow_URLReplacement" xml:space="preserve">
+    <value>URL प्रतिस्थापन</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardContent" xml:space="preserve">
+    <value>क्लिपबोर्ड सामग्री</value>
+  </data>
+  <data name="TaskSettingsWindow_Filters" xml:space="preserve">
+    <value>फ़िल्टर</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideToolsSettings" xml:space="preserve">
+    <value>उपकरण सेटिंग ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
+    <value>छवि संपादक</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
+    <value>स्क्रीन रंग चयनकर्ता</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideActions" xml:space="preserve">
+    <value>क्रियाएँ ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_Actions" xml:space="preserve">
+    <value>क्रियाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAdvancedSettings" xml:space="preserve">
+    <value>उन्नत सेटिंग ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_General" xml:space="preserve">
+    <value>सामान्य</value>
+  </data>
+  <data name="TaskSettingsWindow_Upload" xml:space="preserve">
+    <value>अपलोड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_Notifications" xml:space="preserve">
+    <value>सूचनाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_Image" xml:space="preserve">
+    <value>छवि</value>
+  </data>
+  <data name="TaskSettingsWindow_Effects" xml:space="preserve">
+    <value>प्रभाव</value>
+  </data>
+  <data name="TaskSettingsWindow_Capture" xml:space="preserve">
+    <value>कैप्चर करें</value>
+  </data>
+  <data name="TaskSettingsWindow_RegionCapture" xml:space="preserve">
+    <value>क्षेत्र कैप्चर</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecorder" xml:space="preserve">
+    <value>स्क्रीन रिकॉर्डर</value>
+  </data>
+  <data name="TaskSettingsWindow_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="TaskSettingsWindow_FileNaming" xml:space="preserve">
+    <value>फ़ाइल नामकरण</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardUpload" xml:space="preserve">
+    <value>क्लिपबोर्ड अपलोड</value>
+  </data>
+  <data name="TaskSettingsWindow_UploaderFilters" xml:space="preserve">
+    <value>अपलोडर फ़िल्टर</value>
+  </data>
+  <data name="TaskSettingsWindow_Tools" xml:space="preserve">
+    <value>उपकरण</value>
+  </data>
+  <data name="TaskSettingsWindow_Advanced" xml:space="preserve">
+    <value>उन्नत</value>
+  </data>
+  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
+    <value>OCR भाषाएँ अनुपलब्ध हैं</value>
+  </data>
+  <data name="TaskSettingsWindow_X" xml:space="preserve">
+    <value>X:</value>
+  </data>
+  <data name="TaskSettingsWindow_Y" xml:space="preserve">
+    <value>Y:</value>
+  </data>
+  <data name="TaskSettingsWindow_EnableAction" xml:space="preserve">
+    <value>क्रिया सक्षम करें</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideGeneralSettings" xml:space="preserve">
+    <value>सामान्य सेटिंग ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideUploadSettings" xml:space="preserve">
+    <value>अपलोड सेटिंग ओवरराइड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
+    <value>वेव ऑडियो</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
+    <value>{0} - {1} - उपफ़ोल्डर शामिल करें: {2}</value>
+  </data>
+  <data name="TaskSettingsWindow_Yes" xml:space="preserve">
+    <value>हाँ</value>
+  </data>
+  <data name="TaskSettingsWindow_No" xml:space="preserve">
+    <value>नहीं</value>
+  </data>
+  <data name="TaskSettingsWindow_UploadText" xml:space="preserve">
+    <value>पाठ अपलोड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterUpload" xml:space="preserve">
+    <value>अपलोड के बाद</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePattern" xml:space="preserve">
+    <value>नाम पैटर्न</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringFileUpload" xml:space="preserve">
+    <value>फ़ाइल अपलोड के दौरान छवियाँ संसाधित करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringClipboardUpload" xml:space="preserve">
+    <value>क्लिपबोर्ड अपलोड के दौरान छवियाँ संसाधित करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringExtensionUpload" xml:space="preserve">
+    <value>एक्सटेंशन अपलोड के दौरान छवियाँ संसाधित करें</value>
+  </data>
+  <data name="TaskSettingsWindow_UseAfterCaptureTasksDuringFileUpload" xml:space="preserve">
+    <value>फ़ाइल अपलोड में चित्र लेने के बाद के कार्य उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_TextTaskSaveAsFile" xml:space="preserve">
+    <value>पाठ कार्य फ़ाइलों के रूप में सहेजें</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoClearClipboard" xml:space="preserve">
+    <value>क्लिपबोर्ड स्वतः साफ़ करें</value>
+  </data>
+  <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
+    <value>क्षेत्र कैप्चर टिप्पणी अक्षम करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageExtensions" xml:space="preserve">
+    <value>छवि एक्सटेंशन</value>
+  </data>
+  <data name="TaskSettingsWindow_TextExtensions" xml:space="preserve">
+    <value>पाठ एक्सटेंशन</value>
+  </data>
+  <data name="TaskSettingsWindow_EarlyCopyURL" xml:space="preserve">
+    <value>अपलोड से पहले URL कॉपी करें</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFileExtension" xml:space="preserve">
+    <value>पाठ फ़ाइल एक्सटेंशन</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFormat" xml:space="preserve">
+    <value>पाठ प्रारूप</value>
+  </data>
+  <data name="TaskSettingsWindow_TextCustom" xml:space="preserve">
+    <value>अनुकूलित पाठ</value>
+  </data>
+  <data name="TaskSettingsWindow_TextCustomEncodeInput" xml:space="preserve">
+    <value>अनुकूलित पाठ इनपुट को HTML एन्कोड करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ResultForceHTTPS" xml:space="preserve">
+    <value>परिणाम URL के लिए HTTPS बाध्य करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardContentFormat" xml:space="preserve">
+    <value>क्लिपबोर्ड सामग्री प्रारूप</value>
+  </data>
+  <data name="TaskSettingsWindow_BalloonTipContentFormat" xml:space="preserve">
+    <value>सूचना सामग्री प्रारूप</value>
+  </data>
+  <data name="TaskSettingsWindow_OpenURLFormat" xml:space="preserve">
+    <value>URL खोलने का प्रारूप</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
+    <value>स्वचालित URL संक्षिप्तीकरण लंबाई</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCloseAfterUploadForm" xml:space="preserve">
+    <value>अपलोड-पश्चात विंडो स्वतः बंद करें</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatternMaxLength" xml:space="preserve">
+    <value>नाम पैटर्न की अधिकतम लंबाई</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatternMaxTitleLength" xml:space="preserve">
+    <value>नाम पैटर्न शीर्षक की अधिकतम लंबाई</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseAudioFile" xml:space="preserve">
+    <value>ऑडियो फ़ाइल चुनें</value>
+  </data>
+  <data name="DragDropUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - खींचकर छोड़ने वाला अपलोड</value>
+  </data>
+  <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
+    <value>यहाँ छोड़ें</value>
+  </data>
+  <data name="ClipboardUploadWindow_ClipboardUpload" xml:space="preserve">
+    <value>क्लिपबोर्ड अपलोड</value>
+  </data>
+  <data name="ClipboardUploadWindow_DontShowAgain" xml:space="preserve">
+    <value>यह विंडो फिर न दिखाएँ</value>
+  </data>
+  <data name="ClipboardUploadWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="ClipboardUploadWindow_Upload" xml:space="preserve">
+    <value>अपलोड करें</value>
+  </data>
+  <data name="ClipboardUploadWindow_ImageSummary" xml:space="preserve">
+    <value>क्लिपबोर्ड सामग्री: छवि, आकार: {0} × {1}</value>
+  </data>
+  <data name="ClipboardUploadWindow_TextSummary" xml:space="preserve">
+    <value>क्लिपबोर्ड सामग्री: पाठ, लंबाई: {0}</value>
+  </data>
+  <data name="ClipboardUploadWindow_FileSummary" xml:space="preserve">
+    <value>क्लिपबोर्ड सामग्री: फ़ाइलें, संख्या: {0}</value>
+  </data>
+  <data name="ClipboardUploadWindow_Empty" xml:space="preserve">
+    <value>क्लिपबोर्ड खाली है या उसमें असमर्थित डेटा है।</value>
+  </data>
+  <data name="FileExistWindow_Title" xml:space="preserve">
+    <value>ShareX - फ़ाइल कैसे सहेजी जाए?</value>
+  </data>
+  <data name="FileExistWindow_FileAlreadyExists" xml:space="preserve">
+    <value>इस नाम की फ़ाइल पहले से मौजूद है</value>
+  </data>
+  <data name="FileExistWindow_Instruction" xml:space="preserve">
+    <value>नया फ़ाइल नाम चुनें या चुनें कि ShareX कैसे जारी रखे।</value>
+  </data>
+  <data name="FileExistWindow_NewFileName" xml:space="preserve">
+    <value>नया फ़ाइल नाम</value>
+  </data>
+  <data name="FileExistWindow_UseNewName" xml:space="preserve">
+    <value>नया नाम उपयोग करें</value>
+  </data>
+  <data name="FileExistWindow_Overwrite" xml:space="preserve">
+    <value>अधिलेखित करें</value>
+  </data>
+  <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
+    <value>अद्वितीय नाम उपयोग करें</value>
+  </data>
+  <data name="FileExistWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Title" xml:space="preserve">
+    <value>ShareX - बड़ी फ़ाइल अपलोड</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Message" xml:space="preserve">
+    <value>आप एक बड़ी फ़ाइल अपलोड करने वाले हैं।</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_DontShowAgain" xml:space="preserve">
+    <value>यह संदेश फिर न दिखाएँ।</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Continue" xml:space="preserve">
+    <value>जारी रखें</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Title" xml:space="preserve">
+    <value>ShareX - फ़ाइलें अपलोड करें</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Message" xml:space="preserve">
+    <value>क्या आप वास्तव में {0} फ़ाइलें अपलोड करना चाहते हैं?</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_DontShowAgain" xml:space="preserve">
+    <value>यह संदेश फिर न दिखाएँ।</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Upload" xml:space="preserve">
+    <value>अपलोड करें</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="DebugLogWindow_Title" xml:space="preserve">
+    <value>ShareX - डीबग लॉग</value>
+  </data>
+  <data name="DebugLogWindow_LoadedAssemblies" xml:space="preserve">
+    <value>लोड की गई असेंबली</value>
+  </data>
+  <data name="DebugLogWindow_CopyAll" xml:space="preserve">
+    <value>सभी कॉपी करें</value>
+  </data>
+  <data name="DebugLogWindow_OpenLogFile" xml:space="preserve">
+    <value>लॉग फ़ाइल खोलें...</value>
+  </data>
+  <data name="DebugLogWindow_UploadLog" xml:space="preserve">
+    <value>लॉग अपलोड करें...</value>
+  </data>
+  <data name="DebugLogWindow_StartupPath" xml:space="preserve">
+    <value>आरंभ पथ:</value>
+  </data>
+  <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
+    <value>डीबग लॉग अपलोड करें?</value>
+  </data>
+  <data name="DebugLogWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="DebugLogWindow_Upload" xml:space="preserve">
+    <value>अपलोड करें</value>
+  </data>
+  <data name="FirstTimeConfigWindow_Heading" xml:space="preserve">
+    <value>ShareX प्रथम-बार कॉन्फ़िगरेशन</value>
+  </data>
+  <data name="FirstTimeConfigWindow_Subtitle" xml:space="preserve">
+    <value>चुनें कि ShareX Windows से कैसे एकीकृत हो।</value>
+  </data>
+  <data name="FirstTimeConfigWindow_ShellContextMenu" xml:space="preserve">
+    <value>Windows Explorer संदर्भ मेनू में "ShareX से अपलोड करें" दिखाएँ</value>
+  </data>
+  <data name="FirstTimeConfigWindow_SendToMenu" xml:space="preserve">
+    <value>"यहाँ भेजें" मेनू में ShareX दिखाएँ</value>
+  </data>
+  <data name="FirstTimeConfigWindow_SteamInApp" xml:space="preserve">
+    <value>ShareX खुला होने पर Steam में "In-app" दिखाएँ</value>
+  </data>
+  <data name="FirstTimeConfigWindow_OptionsLater" xml:space="preserve">
+    <value>आप ये विकल्प बाद में अनुप्रयोग सेटिंग &gt; एकीकरण में बदल सकते हैं।</value>
+  </data>
+  <data name="FirstTimeConfigWindow_OK" xml:space="preserve">
+    <value>ठीक है</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindows" xml:space="preserve">
+    <value>Windows आरंभ होने पर ShareX चलाएँ</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByUser" xml:space="preserve">
+    <value>टास्क मैनेजर में स्टार्टअप अक्षम किया गया है</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy" xml:space="preserve">
+    <value>आपके संगठन ने स्टार्टअप अक्षम किया है</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
+    <value>आपके संगठन ने स्टार्टअप सक्षम किया है</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Title" xml:space="preserve">
+    <value>ShareX - छवि संपादक चयनकर्ता</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Heading" xml:space="preserve">
+    <value>छवि संपादक चुनें</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Subtitle" xml:space="preserve">
+    <value>चुनें कि ShareX कौन-सा संपादक खोले।</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ModernEditor" xml:space="preserve">
+    <value>आधुनिक छवि संपादक</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Recommended" xml:space="preserve">
+    <value>अनुशंसित</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ModernDescription" xml:space="preserve">
+    <value>नवीनतम उपकरण और सुधारों वाला वर्तमान ShareX संपादक।</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_LegacyEditor" xml:space="preserve">
+    <value>पुराना छवि संपादक</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_LegacyDescription" xml:space="preserve">
+    <value>क्लासिक ShareX क्षेत्र-कैप्चर संपादक।</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ChangeLater" xml:space="preserve">
+    <value>आप इसे बाद में कार्य सेटिंग &gt; उपकरण में बदल सकते हैं।</value>
+  </data>
+  <data name="ShortenURLWindow_Title" xml:space="preserve">
+    <value>ShareX - URL संक्षिप्त करें</value>
+  </data>
+  <data name="ShortenURLWindow_Heading" xml:space="preserve">
+    <value>URL संक्षिप्त करें</value>
+  </data>
+  <data name="ShortenURLWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ShortenURLWindow_Validation" xml:space="preserve">
+    <value>मान्य HTTP, HTTPS या FTP URL दर्ज करें।</value>
+  </data>
+  <data name="ShortenURLWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="ShortenURLWindow_Shorten" xml:space="preserve">
+    <value>संक्षिप्त करें</value>
+  </data>
+  <data name="URLUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - URL अपलोड</value>
+  </data>
+  <data name="URLUploadWindow_Heading" xml:space="preserve">
+    <value>URL अपलोड</value>
+  </data>
+  <data name="URLUploadWindow_Prompt" xml:space="preserve">
+    <value>डाउनलोड और अपलोड करने का URL</value>
+  </data>
+  <data name="URLUploadWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="URLUploadWindow_Validation" xml:space="preserve">
+    <value>मान्य HTTP, HTTPS या FTP URL दर्ज करें।</value>
+  </data>
+  <data name="URLUploadWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="URLUploadWindow_Upload" xml:space="preserve">
+    <value>अपलोड करें</value>
+  </data>
+  <data name="BeforeUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - अपलोड से पहले</value>
+  </data>
+  <data name="BeforeUploadWindow_Heading" xml:space="preserve">
+    <value>अपलोड से पहले</value>
+  </data>
+  <data name="BeforeUploadWindow_Destination" xml:space="preserve">
+    <value>गंतव्य</value>
+  </data>
+  <data name="BeforeUploadWindow_CopyPreviewImage" xml:space="preserve">
+    <value>पूर्वावलोकन छवि कॉपी करें</value>
+  </data>
+  <data name="BeforeUploadWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="BeforeUploadWindow_Upload" xml:space="preserve">
+    <value>अपलोड करें</value>
+  </data>
+  <data name="BeforeUploadWindow_CustomUploader" xml:space="preserve">
+    <value>अनुकूलित [{0}]</value>
+  </data>
+  <data name="BeforeUploadWindow_ChooseDestination" xml:space="preserve">
+    <value>कृपया गंतव्य चुनें।</value>
+  </data>
+  <data name="BeforeUploadWindow_UploadPrompt" xml:space="preserve">
+    <value>{0} को {1} पर अपलोड किया जाने वाला है। आप कोई अन्य गंतव्य चुन सकते हैं।</value>
+  </data>
+  <data name="BeforeUploadWindow_NoPreview" xml:space="preserve">
+    <value>कोई पूर्वावलोकन उपलब्ध नहीं</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Title" xml:space="preserve">
+    <value>ShareX - क्रिया टूलबार संपादित करें</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Add" xml:space="preserve">
+    <value>जोड़ें...</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Remove" xml:space="preserve">
+    <value>हटाएँ</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_MoveUp" xml:space="preserve">
+    <value>ऊपर ले जाएँ</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_MoveDown" xml:space="preserve">
+    <value>नीचे ले जाएँ</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Separator" xml:space="preserve">
+    <value>विभाजक</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="ActionsToolbarWindow_Title" xml:space="preserve">
+    <value>ShareX - क्रिया टूलबार</value>
+  </data>
+  <data name="ActionsToolbarWindow_DropToUpload" xml:space="preserve">
+    <value>अपलोड करने के लिए छोड़ें</value>
+  </data>
+  <data name="ActionsToolbarWindow_Tip" xml:space="preserve">
+    <value>स्थानांतरित करने के लिए खींचें; मेनू के लिए दायाँ-क्लिक करें</value>
+  </data>
+  <data name="ActionsToolbarWindow_Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="ActionsToolbarWindow_LockPosition" xml:space="preserve">
+    <value>स्थिति लॉक करें</value>
+  </data>
+  <data name="ActionsToolbarWindow_StayOnTop" xml:space="preserve">
+    <value>हमेशा ऊपर रखें</value>
+  </data>
+  <data name="ActionsToolbarWindow_OpenAtStartup" xml:space="preserve">
+    <value>ShareX आरंभ में खोलें</value>
+  </data>
+  <data name="ActionsToolbarWindow_Edit" xml:space="preserve">
+    <value>संपादित करें...</value>
+  </data>
+  <data name="AfterCaptureWindow_Title" xml:space="preserve">
+    <value>ShareX - चित्र लेने के बाद</value>
+  </data>
+  <data name="AfterCaptureWindow_Heading" xml:space="preserve">
+    <value>चित्र लेने के बाद</value>
+  </data>
+  <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
+    <value>कैप्चर की गई सामग्री की समीक्षा करें और आगे क्या हो चुनें।</value>
+  </data>
+  <data name="AfterCaptureWindow_Destinations" xml:space="preserve">
+    <value>गंतव्य</value>
+  </data>
+  <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
+    <value>अपलोड के बाद</value>
+  </data>
+  <data name="AfterCaptureWindow_FileName" xml:space="preserve">
+    <value>फ़ाइल नाम</value>
+  </data>
+  <data name="AfterCaptureWindow_CopyImage" xml:space="preserve">
+    <value>छवि कॉपी करें</value>
+  </data>
+  <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="AfterCaptureWindow_Continue" xml:space="preserve">
+    <value>जारी रखें</value>
+  </data>
+  <data name="AfterCaptureWindow_CopyPreviewImage" xml:space="preserve">
+    <value>पूर्वावलोकन छवि कॉपी करें</value>
+  </data>
+  <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
+    <value>कोई छवि पूर्वावलोकन उपलब्ध नहीं</value>
+  </data>
+  <data name="AfterCaptureWindow_CustomUploader" xml:space="preserve">
+    <value>अनुकूलित [{0}]</value>
+  </data>
+  <data name="AfterUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - अपलोड के बाद</value>
+  </data>
+  <data name="AfterUploadWindow_UploadComplete" xml:space="preserve">
+    <value>अपलोड पूरा हुआ</value>
+  </data>
+  <data name="AfterUploadWindow_ClipboardFormats" xml:space="preserve">
+    <value>क्लिपबोर्ड प्रारूप</value>
+  </data>
+  <data name="AfterUploadWindow_CopyPreviewImage" xml:space="preserve">
+    <value>पूर्वावलोकन छवि कॉपी करें</value>
+  </data>
+  <data name="AfterUploadWindow_NoPreview" xml:space="preserve">
+    <value>कोई छवि पूर्वावलोकन उपलब्ध नहीं</value>
+  </data>
+  <data name="AfterUploadWindow_CopyImage" xml:space="preserve">
+    <value>छवि कॉपी करें</value>
+  </data>
+  <data name="AfterUploadWindow_CopySelectedFormat" xml:space="preserve">
+    <value>चुना गया प्रारूप कॉपी करें</value>
+  </data>
+  <data name="AfterUploadWindow_OpenLink" xml:space="preserve">
+    <value>लिंक खोलें</value>
+  </data>
+  <data name="AfterUploadWindow_OpenFile" xml:space="preserve">
+    <value>फ़ाइल खोलें</value>
+  </data>
+  <data name="AfterUploadWindow_OpenContainingFolder" xml:space="preserve">
+    <value>युक्त फ़ोल्डर खोलें</value>
+  </data>
+  <data name="AfterUploadWindow_Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="AfterUploadWindow_GroupCustom" xml:space="preserve">
+    <value>अनुकूलित</value>
+  </data>
+  <data name="AfterUploadWindow_GroupForums" xml:space="preserve">
+    <value>फ़ोरम</value>
+  </data>
+  <data name="AfterUploadWindow_GroupLocal" xml:space="preserve">
+    <value>स्थानीय</value>
+  </data>
+  <data name="AfterUploadWindow_GroupLinks" xml:space="preserve">
+    <value>लिंक</value>
+  </data>
+  <data name="AutoCaptureWindow_Title" xml:space="preserve">
+    <value>ShareX - स्वचालित कैप्चर</value>
+  </data>
+  <data name="AutoCaptureWindow_CustomRegion" xml:space="preserve">
+    <value>अनुकूलित क्षेत्र</value>
+  </data>
+  <data name="AutoCaptureWindow_Fullscreen" xml:space="preserve">
+    <value>पूर्ण स्क्रीन</value>
+  </data>
+  <data name="AutoCaptureWindow_NoRegion" xml:space="preserve">
+    <value>कोई क्षेत्र चयनित नहीं</value>
+  </data>
+  <data name="AutoCaptureWindow_SelectRegion" xml:space="preserve">
+    <value>क्षेत्र चुनें...</value>
+  </data>
+  <data name="AutoCaptureWindow_RepeatTime" xml:space="preserve">
+    <value>दोहराव समय:</value>
+  </data>
+  <data name="AutoCaptureWindow_Seconds" xml:space="preserve">
+    <value>सेकंड</value>
+  </data>
+  <data name="AutoCaptureWindow_AutoMinimize" xml:space="preserve">
+    <value>ट्रे में स्वतः छोटा करें</value>
+  </data>
+  <data name="AutoCaptureWindow_WaitTasks" xml:space="preserve">
+    <value>कार्य पूरे होने तक प्रतीक्षा करें</value>
+  </data>
+  <data name="AutoCaptureWindow_Start" xml:space="preserve">
+    <value>आरंभ करें</value>
+  </data>
+  <data name="AutoCaptureWindow_Ready" xml:space="preserve">
+    <value>तैयार</value>
+  </data>
+  <data name="AutoCaptureWindow_Stop" xml:space="preserve">
+    <value>रोकें</value>
+  </data>
+  <data name="AutoCaptureWindow_Status" xml:space="preserve">
+    <value>शेष समय: {0} सेकंड ({1}%) - कुल: {2}</value>
+  </data>
+  <data name="AutoCaptureWindow_Region" xml:space="preserve">
+    <value>X: {0}, Y: {1}, चौड़ाई: {2}, ऊँचाई: {3}</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Add" xml:space="preserve">
+    <value>जोड़ें</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Name" xml:space="preserve">
+    <value>नाम</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Value" xml:space="preserve">
+    <value>मान</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Remove" xml:space="preserve">
+    <value>हटाएँ</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Title" xml:space="preserve">
+    <value>ShareX - त्वरित कार्य मेनू संपादक</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Add" xml:space="preserve">
+    <value>जोड़ें...</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Edit" xml:space="preserve">
+    <value>संपादित करें...</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Remove" xml:space="preserve">
+    <value>हटाएँ</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MoveUp" xml:space="preserve">
+    <value>ऊपर ले जाएँ</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MoveDown" xml:space="preserve">
+    <value>नीचे ले जाएँ</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Reset" xml:space="preserve">
+    <value>रीसेट करें...</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Separator" xml:space="preserve">
+    <value>विभाजक</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_SeparatorHint" xml:space="preserve">
+    <value>चित्र लेने के बाद की क्रियाओं के बिना कार्य त्वरित कार्य मेनू में विभाजक के रूप में दिखाई देता है।</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AddQuickTask" xml:space="preserve">
+    <value>त्वरित कार्य जोड़ें</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_EditQuickTask" xml:space="preserve">
+    <value>त्वरित कार्य संपादित करें</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ChooseActions" xml:space="preserve">
+    <value>वे क्रियाएँ चुनें जिन्हें यह त्वरित कार्य मेनू आइटम चलाए।</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MenuText" xml:space="preserve">
+    <value>मेनू पाठ</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MenuTextHint" xml:space="preserve">
+    <value>चुनी गई क्रियाओं से मेनू पाठ बनाने के लिए खाली छोड़ें।</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AfterCaptureTasks" xml:space="preserve">
+    <value>चित्र लेने के बाद के कार्य</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AfterUploadTasks" xml:space="preserve">
+    <value>अपलोड के बाद के कार्य</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Save" xml:space="preserve">
+    <value>सहेजें</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ResetPrompt" xml:space="preserve">
+    <value>त्वरित कार्य रीसेट करें?</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ResetAction" xml:space="preserve">
+    <value>रीसेट करें</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ResetConfirmation" xml:space="preserve">
+    <value>सभी त्वरित कार्यों को डिफ़ॉल्ट पर रीसेट करें? इसे पूर्ववत नहीं किया जा सकता।</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
+    <value>{0}  -  अपलोड के बाद: {1}</value>
+  </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - परिचय</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>कॉपीराइट © 2007-2026 ShareX टीम</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Steam बिल्ड</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Microsoft Store बिल्ड</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>अपडेट की जाँच हो रही है...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>अपडेट जाँच विफल।</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>ShareX का नया संस्करण उपलब्ध है</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX अद्यतन है।</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>लिंक</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>वेबसाइट</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>प्रोजेक्ट पृष्ठ</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>परिवर्तन सूची</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>गोपनीयता नीति</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>दान करें</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>टीम</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Title" xml:space="preserve">
+    <value>ShareX - अनुकूलित अपलोडर सेटिंग</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploaderLibrary" xml:space="preserve">
+    <value>अपलोडर लाइब्रेरी</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
+    <value>अनुकूलित अपलोडर मार्गदर्शिका</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
+    <value>अपलोडर खोजें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_New" xml:space="preserve">
+    <value>नया</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
+    <value>आयात करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
+    <value>चुने गए अपलोडर की प्रतिलिपि बनाएँ</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
+    <value>चुना गया अपलोडर निर्यात करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
+    <value>चुना गया अपलोडर हटाएँ</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
+    <value>सभी निर्यात करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
+    <value>सभी साफ़ करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
+    <value>फ़ोल्डर अपडेट करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
+    <value>अवलोकन</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Request" xml:space="preserve">
+    <value>अनुरोध</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Body" xml:space="preserve">
+    <value>बॉडी</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Response" xml:space="preserve">
+    <value>प्रतिक्रिया</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Test" xml:space="preserve">
+    <value>परीक्षण</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_OverviewDescription" xml:space="preserve">
+    <value>इस अपलोडर को पहचानने योग्य नाम दें और चुनें कि ShareX इसे कहाँ उपयोग कर सकता है।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Identity" xml:space="preserve">
+    <value>पहचान</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Name" xml:space="preserve">
+    <value>नाम</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NamePlaceholder" xml:space="preserve">
+    <value>खाली छोड़ने पर अनुरोध होस्ट उपयोग होता है</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NameDescription" xml:space="preserve">
+    <value>यह नाम पूरे ShareX में दिखाई देता है। परिवर्तन तुरंत सहेजे जाते हैं।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Capabilities" xml:space="preserve">
+    <value>क्षमताएँ</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_CapabilitiesDescription" xml:space="preserve">
+    <value>इस एंडपॉइंट द्वारा समर्थित हर गंतव्य प्रकार सक्षम करें।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ImageUploader" xml:space="preserve">
+    <value>छवि अपलोडर</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextUploader" xml:space="preserve">
+    <value>पाठ अपलोडर</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FileUploader" xml:space="preserve">
+    <value>फ़ाइल अपलोडर</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_URLShortener" xml:space="preserve">
+    <value>URL संक्षिप्तकर्ता</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_URLSharingService" xml:space="preserve">
+    <value>URL साझाकरण सेवा</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Endpoint" xml:space="preserve">
+    <value>एंडपॉइंट</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ChangesApplied" xml:space="preserve">
+    <value>परिवर्तन तुरंत लागू होते हैं।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_CreateOrImport" xml:space="preserve">
+    <value>अनुकूलित अपलोडर बनाएँ या .sxcu फ़ाइल आयात करें।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NoSearchMatches" xml:space="preserve">
+    <value>कोई अपलोडर इस खोज से मेल नहीं खाता।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_AllRemoved" xml:space="preserve">
+    <value>सभी अनुकूलित अपलोडर हटा दिए गए।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Arguments" xml:space="preserve">
+    <value>तर्क</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Base64Encoding" xml:space="preserve">
+    <value>Base64 एन्कोडिंग</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Beautify" xml:space="preserve">
+    <value>सुंदर बनाएँ</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_BodyDescription" xml:space="preserve">
+    <value>चुनें कि अनुरोध डेटा और अपलोड की गई फ़ाइलें कैसे एन्कोड हों।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
+    <value>बॉडी प्रकार</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ClearConfirmation" xml:space="preserve">
+    <value>सभी अनुकूलित अपलोडर हटाएँ?</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ConfirmationTitle" xml:space="preserve">
+    <value>ShareX - पुष्टि</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_CustomUploaderFileType" xml:space="preserve">
+    <value>ShareX अनुकूलित अपलोडर</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DeletionURL" xml:space="preserve">
+    <value>हटाने का URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DeletionURLDescription" xml:space="preserve">
+    <value>अपलोड की गई सामग्री हटाने के लिए वैकल्पिक URL।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DestinationRequired" xml:space="preserve">
+    <value>निर्यात से पहले कम से कम एक गंतव्य प्रकार चुनना आवश्यक है।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DisplayOutputText" xml:space="preserve">
+    <value>आउटपुट पाठ दिखाएँ</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Duplicated" xml:space="preserve">
+    <value>अनुकूलित अपलोडर की प्रतिलिपि बनाई गई।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DuplicateNamesNotAllowed" xml:space="preserve">
+    <value>डुप्लिकेट नाम अनुमत नहीं हैं।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Error" xml:space="preserve">
+    <value>त्रुटि</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ErrorMessage" xml:space="preserve">
+    <value>त्रुटि संदेश</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ErrorMessageDescription" xml:space="preserve">
+    <value>सेवा द्वारा विफलता बताने पर निकाला गया पाठ।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportAllDialogTitle" xml:space="preserve">
+    <value>सभी अनुकूलित अपलोडर निर्यात करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportDialogTitle" xml:space="preserve">
+    <value>अनुकूलित अपलोडर निर्यात करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportedCount" xml:space="preserve">
+    <value>{0} अनुकूलित अपलोडर निर्यात किए गए।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportedOne" xml:space="preserve">
+    <value>{0} निर्यात किया गया।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FileFormName" xml:space="preserve">
+    <value>फ़ाइल फ़ॉर्म नाम</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FileFormNameDescription" xml:space="preserve">
+    <value>अपलोड की गई फ़ाइल भेजने के लिए उपयोग होने वाला multipart फ़ील्ड नाम।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FilteredUploaderCount" xml:space="preserve">
+    <value>{1} में से {0}</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Headers" xml:space="preserve">
+    <value>हेडर</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ImportDialogTitle" xml:space="preserve">
+    <value>अनुकूलित अपलोडर आयात करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ImportedCount" xml:space="preserve">
+    <value>{0} अनुकूलित अपलोडर आयात किए गए।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_InputTokensDescription" xml:space="preserve">
+    <value>इनपुट टोकन संपादक के संदर्भ मेनू में उपलब्ध हैं।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_JSONPathResponseValue" xml:space="preserve">
+    <value>JSONPath प्रतिक्रिया मान</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Method" xml:space="preserve">
+    <value>विधि</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Minify" xml:space="preserve">
+    <value>संक्षिप्त करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NewCreated" xml:space="preserve">
+    <value>नया अनुकूलित अपलोडर बनाया गया।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NoAdditionalBodyFields" xml:space="preserve">
+    <value>इस बॉडी प्रकार में अतिरिक्त फ़ील्ड नहीं हैं।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Parameters" xml:space="preserve">
+    <value>पैरामीटर</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RandomSelection" xml:space="preserve">
+    <value>यादृच्छिक चयन</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RegularExpressionResult" xml:space="preserve">
+    <value>नियमित अभिव्यक्ति परिणाम</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Removed" xml:space="preserve">
+    <value>अनुकूलित अपलोडर हटा दिया गया।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestData" xml:space="preserve">
+    <value>अनुरोध डेटा</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestDescription" xml:space="preserve">
+    <value>ShareX द्वारा भेजे गए एंडपॉइंट, क्वेरी पैरामीटर और HTTP हेडर कॉन्फ़िगर करें।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestURL" xml:space="preserve">
+    <value>अनुरोध URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestURLRequired" xml:space="preserve">
+    <value>निर्यात से पहले अनुरोध URL कॉन्फ़िगर होना चाहिए।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseDescription" xml:space="preserve">
+    <value>सेवा प्रतिक्रिया से ShareX परिणाम मान निकालें।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseHeader" xml:space="preserve">
+    <value>प्रतिक्रिया हेडर</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseOrRedirectionURL" xml:space="preserve">
+    <value>प्रतिक्रिया या पुनर्निर्देशन URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseText" xml:space="preserve">
+    <value>प्रतिक्रिया पाठ</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseTokensDescription" xml:space="preserve">
+    <value>प्रतिक्रिया टोकन सम्मिलित करने के लिए दायाँ-क्लिक करें।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Result" xml:space="preserve">
+    <value>परिणाम</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResultURL" xml:space="preserve">
+    <value>परिणाम URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResultURLDescription" xml:space="preserve">
+    <value>सफल अपलोड के बाद कॉपी या खोला जाने वाला अंतिम URL।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SelectToExport" xml:space="preserve">
+    <value>निर्यात करने के लिए अनुकूलित अपलोडर चुनें।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SelectUploaderToEdit" xml:space="preserve">
+    <value>संपादित करने के लिए अपलोडर चुनें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SelectUploaderToEditDescription" xml:space="preserve">
+    <value>नया अपलोडर बनाएँ, .sxcu फ़ाइल आयात करें या लाइब्रेरी से चुनें।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SyntaxTestDescription" xml:space="preserve">
+    <value>पूर्वावलोकन करें कि प्रतिक्रिया अभिव्यक्ति कैसे पार्स होगी।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestCancelled" xml:space="preserve">
+    <value>परीक्षण रद्द किया गया।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestCompleted" xml:space="preserve">
+    <value>परीक्षण पूरा हुआ।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestDescription" xml:space="preserve">
+    <value>प्रत्येक गंतव्य के लिए सक्रिय अनुकूलित अपलोडर चुनें और लाइव परीक्षण चलाएँ।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestFailed" xml:space="preserve">
+    <value>परीक्षण विफल।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Testing" xml:space="preserve">
+    <value>{0} का परीक्षण हो रहा है...</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
+    <value>URL सिंटैक्स जाँचें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
+    <value>पाठ या URL इनपुट</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextToUpload" xml:space="preserve">
+    <value>अपलोड करने का पाठ:</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextUploadSample" xml:space="preserve">
+    <value>ShareX पाठ अपलोड परीक्षण</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextUploadTestTitle" xml:space="preserve">
+    <value>ShareX - पाठ अपलोड परीक्षण</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
+    <value>थंबनेल URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ThumbnailURLDescription" xml:space="preserve">
+    <value>सेवा द्वारा लौटाई गई वैकल्पिक पूर्वावलोकन छवि।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UpdatedCount" xml:space="preserve">
+    <value>{0} अनुकूलित अपलोडर फ़ाइलें अपडेट की गईं।</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UpdateFolderDialogTitle" xml:space="preserve">
+    <value>अनुकूलित अपलोडर फ़ोल्डर अपडेट करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Upload" xml:space="preserve">
+    <value>अपलोड करें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploadedFile" xml:space="preserve">
+    <value>अपलोड की गई फ़ाइल</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploadedFileName" xml:space="preserve">
+    <value>अपलोड की गई फ़ाइल का नाम</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploaderCount" xml:space="preserve">
+    <value>{0} अपलोडर</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploaderCountPlural" xml:space="preserve">
+    <value>{0} अपलोडर</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_URLSyntax" xml:space="preserve">
+    <value>URL सिंटैक्स</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UserSelection" xml:space="preserve">
+    <value>उपयोगकर्ता चयन</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UserTextInput" xml:space="preserve">
+    <value>उपयोगकर्ता पाठ इनपुट</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_XPathResponseValue" xml:space="preserve">
+    <value>XPath प्रतिक्रिया मान</value>
+  </data>
+  <data name="TaskHelpers_FileDoesNotExist" xml:space="preserve">
+    <value>फ़ाइल मौजूद नहीं है:
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
+    <value>ExifTool निम्न पथ पर मौजूद नहीं है:
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
+    <value>ShareX - ExifTool मौजूद नहीं है</value>
+  </data>
+  <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
+    <value>क्या आप "{0}" अनुकूलित अपलोडर जोड़ना चाहते हैं?</value>
+  </data>
+  <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
+    <value>क्या आप "{0}" को {1} के लिए सक्रिय अनुकूलित अपलोडर बनाना चाहते हैं?</value>
+  </data>
+  <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
+    <value>ShareX - अनुकूलित अपलोडर पुष्टि</value>
+  </data>
+  <data name="SettingManager_ExportBackupError" xml:space="preserve">
+    <value>बैकअप निर्यात करते समय त्रुटि:
+{0}</value>
+  </data>
+  <data name="SettingManager_ImportBackupError" xml:space="preserve">
+    <value>बैकअप आयात करते समय त्रुटि:
+{0}</value>
+  </data>
+  <data name="SettingManager_ErrorTitle" xml:space="preserve">
+    <value>ShareX - त्रुटि</value>
+  </data>
+  <data name="WorkerTask_ErrorTitle" xml:space="preserve">
+    <value>{0} त्रुटि</value>
+  </data>
+  <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
+    <value>अपलोड पूरा हुआ। URL: {0}</value>
+  </data>
+  <data name="WorkerTask_AllFilesFilter" xml:space="preserve">
+    <value>सभी फ़ाइलें (*.*)</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageNameSample" xml:space="preserve">
+    <value>छविनाम</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX सिस्टम ट्रे में छोटा किया गया है।</value>
+  </data>
+  <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
+    <value>समर्थित चर: {0} और {1} जैसे अन्य चर।</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
+    <value>फ़ाइल पथ खाली नहीं हो सकता।</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>स्क्रीन पर पिन करें</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="UploadTask_Stop_Stopping" xml:space="preserve">
+    <value>रोका जा रहा है</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
+    <value>यह मेनू संपादित करें...</value>
+  </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>ShareX अद्यतन है!</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>डीबग लॉग में संवेदनशील जानकारी हो सकती है। क्या आप वास्तव में जारी रखना चाहते हैं?</value>
+  </data>
+  <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
+    <value>URL खाली है।</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
+    <value>URL संक्षिप्तकर्ता: {0}</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Windows आरंभ होने पर ShareX चलाएँ</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
+    <value>क्या आप वास्तव में यह फ़ाइल हटाना चाहते हैं?</value>
+  </data>
+  <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
+    <value>फ़ोल्डर नहीं बनाया जा सका:</value>
+  </data>
+  <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
+    <value>ShareX के साथ आने वाला FFmpeg केवल 64-बिट ऑपरेटिंग सिस्टम का समर्थन करता है।</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
+    <value>अपलोड हो रहा है</value>
+  </data>
+  <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
+    <value>URL साझा करें ({0})</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
+    <value>सेटिंग प्रभावी करने के लिए ShareX को Steam से फिर खोलना होगा।</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>आपके संगठन ने स्टार्टअप अक्षम किया है</value>
+  </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>FFmpeg मौजूद नहीं है</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
+    <value>फ़ाइल अपलोडर: {0}</value>
+  </data>
+  <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
+    <value>सहेजने के लिए फ़ोल्डर चुनें</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
+    <value>नाम खाली नहीं हो सकता।</value>
+  </data>
+  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
+    <value>क्लिपबोर्ड पर कॉपी किया गया: {0}</value>
+  </data>
+  <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
+    <value>{0} कॉन्फ़िगरेशन अमान्य है या मौजूद नहीं है। इसे कॉन्फ़िगर करने के लिए "गंतव्य सेटिंग" विंडो जाँचें।</value>
+  </data>
+  <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
+    <value>URL संक्षिप्त करें ({0})</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>"DisableUpload" विकल्प सक्षम होने पर यह सुविधा काम नहीं करेगी!</value>
+  </data>
+  <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
+    <value>पाठ अपलोड परीक्षण</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>क्या आप छवि प्रभाव सक्षम करना चाहते हैं?
+
+आप बाद में "चित्र लेने के बाद के कार्य" मेनू से इन्हें अक्षम कर सकते हैं।</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>ShareX से संपादित करें</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>क्लिपबोर्ड में कोई छवि नहीं है।</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
+    <value>त्रुटि</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
+    <value>आपका एंटीवायरस सॉफ़्टवेयर या Windows की नियंत्रित फ़ोल्डर पहुँच सुविधा ShareX को रोक सकती है।</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
+    <value>कार्य पूरा हुआ</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
+    <value>हॉटकी</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
+    <value>जारी रखें</value>
+  </data>
+  <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
+    <value>अपलोड त्रुटियाँ</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+    <value>FFmpeg त्रुटि</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>त्रुटि</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>स्क्रीन रंग चयनकर्ता</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
+    <value>पाठ अपलोडर: {0}</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
+    <value>पूर्ण</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
+    <value>फ़ाइल हटाने की पुष्टि</value>
+  </data>
+  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>डाउनलोड हो रहा है</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
+    <value>URL साझाकरण सेवा: {0}</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>पुष्टि</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
+    <value>रोका गया</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>FFmpeg वीडियो और ऑडियो स्रोत दोनों "कोई नहीं" नहीं हो सकते।</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>स्क्रीन रिकॉर्डिंग सक्रिय होने पर ShareX बंद नहीं किया जा सकता।
+
+क्या आप सक्रिय स्क्रीन रिकॉर्डिंग निरस्त करना चाहते हैं?</value>
+  </data>
+  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>ShareX से अपलोड करें</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
+    <value>हॉटकी अक्षम हैं।</value>
+  </data>
+  <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
+    <value>फ़ाइल "{0}" तक पहुँच नहीं है।
+व्यक्तिगत फ़ोल्डर पथ बदलने के लिए ShareX को व्यवस्थापक के रूप में चलाएँ।</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>टास्क मैनेजर में स्टार्टअप अक्षम किया गया है</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>क्या आप क्लिपबोर्ड अपलोड फिर आज़माना चाहते हैं?</value>
+  </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>निर्दिष्ट विंडो शीर्षक वाली विंडो नहीं मिली।</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>क्या आप ShareX सेटिंग रीसेट करना चाहते हैं?</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>सेटिंग सहेजने में विफल</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
+    <value>हॉटकी</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
+    <value>हॉटकी सक्षम हैं।</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>क्लिपबोर्ड अपलोड</value>
+  </data>
+  <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
+    <value>FFmpeg निम्न पथ पर मौजूद नहीं है:</value>
+  </data>
+  <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
+    <value>फ़ाइल अपलोड</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
+    <value>हॉटकी पंजीकरण विफल</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
+    <value>छवि अपलोडर: {0}</value>
+  </data>
+  <data name="ImageData_Write_Error_Message" xml:space="preserve">
+    <value>इस पथ पर छवि नहीं लिखी जा सकी:</value>
+  </data>
+  <data name="UploadTask_Prepare_Starting" xml:space="preserve">
+    <value>आरंभ हो रहा है</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
+    <value>{0} पंजीकृत नहीं किया जा सका:
+
+{1}
+
+कृपया कोई अन्य हॉटकी चुनें या टकराव वाले अनुप्रयोग को बंद करके ShareX फिर खोलें।</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>स्क्रीनशॉट विलंब: {0} सेकंड</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>आपके सिस्टम व्यवस्थापक ने अपलोड सुविधा अक्षम की है।</value>
+  </data>
+  <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
+    <value>फ़ोल्डर अपलोड</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>आपके संगठन ने स्टार्टअप सक्षम किया है</value>
+  </data>
+  <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
+    <value>तैयारी हो रही है</value>
+  </data>
+  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
+    <value>डाउनलोड विफल:
+{0}</value>
+  </data>
+</root>
