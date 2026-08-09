@@ -1177,27 +1177,6 @@
   <data name="TaskSettingsWindow_ChooseWatchFolder" xml:space="preserve">
     <value>Alege folderul monitorizat</value>
   </data>
-  <data name="TaskSettingsWindow_ImageUploader" xml:space="preserve">
-    <value>Serviciu de încărcare imagini:</value>
-  </data>
-  <data name="TaskSettingsWindow_ImageFileUploader" xml:space="preserve">
-    <value>Serviciu de încărcare fișiere imagine:</value>
-  </data>
-  <data name="TaskSettingsWindow_TextUploader" xml:space="preserve">
-    <value>Serviciu de încărcare text:</value>
-  </data>
-  <data name="TaskSettingsWindow_TextFileUploader" xml:space="preserve">
-    <value>Serviciu de încărcare fișiere text:</value>
-  </data>
-  <data name="TaskSettingsWindow_FileUploader" xml:space="preserve">
-    <value>Serviciu de încărcare fișiere:</value>
-  </data>
-  <data name="TaskSettingsWindow_URLShortener" xml:space="preserve">
-    <value>Serviciu de scurtare URL:</value>
-  </data>
-  <data name="TaskSettingsWindow_URLSharingService" xml:space="preserve">
-    <value>Serviciu de partajare URL:</value>
-  </data>
   <data name="TaskSettingsWindow_OverrideDefaultFTPAccount" xml:space="preserve">
     <value>Suprascrie contul FTP implicit</value>
   </data>
@@ -1728,9 +1707,6 @@
   </data>
   <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
     <value>Limbile OCR nu sunt disponibile</value>
-  </data>
-  <data name="TaskSettingsWindow_SelectTasks" xml:space="preserve">
-    <value>Selectează sarcinile</value>
   </data>
   <data name="TaskSettingsWindow_X" xml:space="preserve">
     <value>X:</value>

@@ -1177,27 +1177,6 @@
   <data name="TaskSettingsWindow_ChooseWatchFolder" xml:space="preserve">
     <value>Escolher pasta monitorizada</value>
   </data>
-  <data name="TaskSettingsWindow_ImageUploader" xml:space="preserve">
-    <value>Carregador de imagens:</value>
-  </data>
-  <data name="TaskSettingsWindow_ImageFileUploader" xml:space="preserve">
-    <value>Carregador de arquivos de imagem:</value>
-  </data>
-  <data name="TaskSettingsWindow_TextUploader" xml:space="preserve">
-    <value>Carregador de texto:</value>
-  </data>
-  <data name="TaskSettingsWindow_TextFileUploader" xml:space="preserve">
-    <value>Carregador de arquivos de texto:</value>
-  </data>
-  <data name="TaskSettingsWindow_FileUploader" xml:space="preserve">
-    <value>Carregador de arquivos:</value>
-  </data>
-  <data name="TaskSettingsWindow_URLShortener" xml:space="preserve">
-    <value>Encurtador de URL:</value>
-  </data>
-  <data name="TaskSettingsWindow_URLSharingService" xml:space="preserve">
-    <value>Serviço de compartilhamento de URL:</value>
-  </data>
   <data name="TaskSettingsWindow_OverrideDefaultFTPAccount" xml:space="preserve">
     <value>Substituir conta FTP padrão</value>
   </data>
@@ -1728,9 +1707,6 @@
   </data>
   <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
     <value>Os idiomas de OCR não estão disponíveis</value>
-  </data>
-  <data name="TaskSettingsWindow_SelectTasks" xml:space="preserve">
-    <value>Selecionar tarefas</value>
   </data>
   <data name="TaskSettingsWindow_X" xml:space="preserve">
     <value>X:</value>

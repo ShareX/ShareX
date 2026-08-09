@@ -1177,27 +1177,6 @@
   <data name="TaskSettingsWindow_ChooseWatchFolder" xml:space="preserve">
     <value>اختيار مجلد المراقبة</value>
   </data>
-  <data name="TaskSettingsWindow_ImageUploader" xml:space="preserve">
-    <value>رافع الصور:</value>
-  </data>
-  <data name="TaskSettingsWindow_ImageFileUploader" xml:space="preserve">
-    <value>رافع ملفات الصور:</value>
-  </data>
-  <data name="TaskSettingsWindow_TextUploader" xml:space="preserve">
-    <value>رافع النصوص:</value>
-  </data>
-  <data name="TaskSettingsWindow_TextFileUploader" xml:space="preserve">
-    <value>رافع الملفات النصية:</value>
-  </data>
-  <data name="TaskSettingsWindow_FileUploader" xml:space="preserve">
-    <value>رافع الملفات:</value>
-  </data>
-  <data name="TaskSettingsWindow_URLShortener" xml:space="preserve">
-    <value>مختصر عناوين URL:</value>
-  </data>
-  <data name="TaskSettingsWindow_URLSharingService" xml:space="preserve">
-    <value>خدمة مشاركة عناوين URL:</value>
-  </data>
   <data name="TaskSettingsWindow_OverrideDefaultFTPAccount" xml:space="preserve">
     <value>تجاوز حساب FTP الافتراضي</value>
   </data>
@@ -1728,9 +1707,6 @@
   </data>
   <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
     <value>لغات OCR غير متاحة</value>
-  </data>
-  <data name="TaskSettingsWindow_SelectTasks" xml:space="preserve">
-    <value>اختيار المهام</value>
   </data>
   <data name="TaskSettingsWindow_X" xml:space="preserve">
     <value>X:</value>

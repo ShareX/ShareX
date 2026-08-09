@@ -1177,27 +1177,6 @@
   <data name="TaskSettingsWindow_ChooseWatchFolder" xml:space="preserve">
     <value>Bewakingsmap kiezen</value>
   </data>
-  <data name="TaskSettingsWindow_ImageUploader" xml:space="preserve">
-    <value>Afbeeldingsuploader:</value>
-  </data>
-  <data name="TaskSettingsWindow_ImageFileUploader" xml:space="preserve">
-    <value>Afbeeldingsbestandsuploader:</value>
-  </data>
-  <data name="TaskSettingsWindow_TextUploader" xml:space="preserve">
-    <value>Tekstuploader:</value>
-  </data>
-  <data name="TaskSettingsWindow_TextFileUploader" xml:space="preserve">
-    <value>Tekstbestandsuploader:</value>
-  </data>
-  <data name="TaskSettingsWindow_FileUploader" xml:space="preserve">
-    <value>Bestandsuploader:</value>
-  </data>
-  <data name="TaskSettingsWindow_URLShortener" xml:space="preserve">
-    <value>URL-verkorter:</value>
-  </data>
-  <data name="TaskSettingsWindow_URLSharingService" xml:space="preserve">
-    <value>URL-deelservice:</value>
-  </data>
   <data name="TaskSettingsWindow_OverrideDefaultFTPAccount" xml:space="preserve">
     <value>Standaard FTP-account overschrijven</value>
   </data>
@@ -1728,9 +1707,6 @@
   </data>
   <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
     <value>OCR-talen zijn niet beschikbaar</value>
-  </data>
-  <data name="TaskSettingsWindow_SelectTasks" xml:space="preserve">
-    <value>Taken selecteren</value>
   </data>
   <data name="TaskSettingsWindow_X" xml:space="preserve">
     <value>X:</value>

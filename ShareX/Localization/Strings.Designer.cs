@@ -2492,41 +2492,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ChooseWatchFolder", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_ImageUploader {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_ImageUploader", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_ImageFileUploader {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_ImageFileUploader", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_TextUploader {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_TextUploader", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_TextFileUploader {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_TextFileUploader", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_FileUploader {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_FileUploader", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_URLShortener {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_URLShortener", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_URLSharingService {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_URLSharingService", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_OverrideDefaultFTPAccount {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_OverrideDefaultFTPAccount", resourceCulture);
@@ -3410,11 +3375,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_OCRLanguagesAreUnavailable {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_OCRLanguagesAreUnavailable", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_SelectTasks {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_SelectTasks", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_X {

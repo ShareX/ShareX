@@ -1177,27 +1177,6 @@
   <data name="TaskSettingsWindow_ChooseWatchFolder" xml:space="preserve">
     <value>Figyelt mappa kiválasztása</value>
   </data>
-  <data name="TaskSettingsWindow_ImageUploader" xml:space="preserve">
-    <value>Képfeltöltő:</value>
-  </data>
-  <data name="TaskSettingsWindow_ImageFileUploader" xml:space="preserve">
-    <value>Képfájl-feltöltő:</value>
-  </data>
-  <data name="TaskSettingsWindow_TextUploader" xml:space="preserve">
-    <value>Szövegfeltöltő:</value>
-  </data>
-  <data name="TaskSettingsWindow_TextFileUploader" xml:space="preserve">
-    <value>Szövegfájl-feltöltő:</value>
-  </data>
-  <data name="TaskSettingsWindow_FileUploader" xml:space="preserve">
-    <value>Fájlfeltöltő:</value>
-  </data>
-  <data name="TaskSettingsWindow_URLShortener" xml:space="preserve">
-    <value>URL-rövidítő:</value>
-  </data>
-  <data name="TaskSettingsWindow_URLSharingService" xml:space="preserve">
-    <value>URL-megosztó szolgáltatás:</value>
-  </data>
   <data name="TaskSettingsWindow_OverrideDefaultFTPAccount" xml:space="preserve">
     <value>Alapértelmezett FTP-fiók felülbírálása</value>
   </data>
@@ -1728,9 +1707,6 @@
   </data>
   <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
     <value>Az OCR-nyelvek nem érhetők el</value>
-  </data>
-  <data name="TaskSettingsWindow_SelectTasks" xml:space="preserve">
-    <value>Feladatok kiválasztása</value>
   </data>
   <data name="TaskSettingsWindow_X" xml:space="preserve">
     <value>X:</value>
