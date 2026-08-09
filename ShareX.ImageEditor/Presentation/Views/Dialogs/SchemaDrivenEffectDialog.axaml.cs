@@ -32,6 +32,7 @@ using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.ImageEditor.Integration;
+using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Effects;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -52,7 +53,7 @@ public partial class SchemaDrivenEffectDialog : UserControl, IEffectDialog
 
     public ObservableCollection<EffectParameterState> ParameterStates { get; }
 
-    public string Title => Definition.Name;
+    public string Title => EffectBrowserLocalization.GetEffectName(Definition.Id, Definition.Name);
 
     public event EventHandler<EffectEventArgs>? ApplyRequested;
 

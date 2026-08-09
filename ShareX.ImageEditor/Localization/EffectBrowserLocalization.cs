@@ -19,8 +19,13 @@ internal static class EffectBrowserLocalization
     {
         bool opensDialog = fallbackBrowserLabel.EndsWith(DialogSuffix, StringComparison.Ordinal);
         string fallbackName = opensDialog ? fallbackBrowserLabel[..^DialogSuffix.Length] : fallbackBrowserLabel;
-        string localizedName = Strings.ResourceManager.GetString(EffectPrefix + effectId, Strings.Culture) ?? fallbackName;
+        string localizedName = GetEffectName(effectId, fallbackName);
 
         return opensDialog ? localizedName + DialogSuffix : localizedName;
+    }
+
+    public static string GetEffectName(string effectId, string fallbackName)
+    {
+        return Strings.ResourceManager.GetString(EffectPrefix + effectId, Strings.Culture) ?? fallbackName;
     }
 }
