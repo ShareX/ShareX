@@ -9,7 +9,7 @@ All translatable strings in the ShareX project use the shared `Strings.resx` res
 | Main window | `MainWindow_`, `MainMenuBuilder_`, `ThumbnailItemViewModel_` | 4 | 142 | Complete |
 | Application settings | `ApplicationSettingsWindow_` | 3 | 174 | Complete |
 | Hotkey settings | `HotkeySettingsWindow_` | 3 | 23 | Complete |
-| Task settings | `TaskSettingsWindow_` | 4 | 255 | Complete |
+| Task settings | `TaskSettingsWindow_` | 4 | 247 | Complete |
 | Drag and drop upload | `DragDropUploadWindow_` | 2 | 2 | Complete |
 | Clipboard upload | `ClipboardUploadWindow_` | 2 | 8 | Complete |
 | Notification | None (content supplied dynamically) | 4 | 0 | Reviewed |
@@ -30,22 +30,22 @@ All translatable strings in the ShareX project use the shared `Strings.resx` res
 | Custom uploader key/value editor | `CustomUploaderKeyValueEditor_` | 2 | 4 | Complete |
 | Custom uploader settings | `CustomUploaderSettingsWindow_` | 4 | 112 | Complete |
 | Quick task menu editor | `QuickTaskMenuEditorWindow_` | 2 | 23 | Complete |
-| About | `AboutWindow_` | 2 | 17 | Complete |
+| About | `AboutWindow_` | 2 | 15 | Complete |
 | Core runtime messages | `TaskHelpers_`, `SettingManager_`, `WorkerTask_`, `TaskManager_` | 4 | 18 | Complete |
 
-`Validate.ps1` contains the tracked source-file manifest. It verifies that:
+The repository-level `ValidateTranslations.ps1` verifies that:
 
-- every tracked source file exists;
-- every direct `Strings` reference has a default resource;
-- every tracked resource key is referenced by its owning area;
-- every localized `.resx` file has the same keys as `Strings.resx`;
-- values are non-empty and composite-format placeholders match the default value;
-- untracked Avalonia `.axaml` views are reported as the remaining localization work.
+- every supported language has a catalog in every localized project;
+- every localized catalog has the same entry count and keys as `Strings.resx`;
+- values are non-empty and format placeholders match the default value;
+- catalogs use valid UTF-8 and CRLF formatting without mojibake;
+- generated designers and source references agree with the catalogs;
+- Avalonia views contain no remaining user-visible literal text.
 
 Run it from the repository root:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ShareX/Localization/Validate.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File ValidateTranslations.ps1
 ```
 
 ## Localizing another area
@@ -53,5 +53,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ShareX/Localization/Validate
 1. Add directly scoped keys to `Strings.resx`, such as `AboutWindow_Title`.
 2. Add translated values to every `Strings.<culture>.resx` file.
 3. Use direct `Strings.<key>` references in AXAML and C#.
-4. Add the area, resource prefixes, and participating source files to `$areas` in `Validate.ps1`.
-5. Run the validator and build ShareX.
+4. Run `ValidateTranslations.ps1` and build ShareX.

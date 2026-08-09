@@ -9,10 +9,10 @@ ShareX.Avalonia uses the shared `Strings.resx` catalog in this directory for its
 
 All 9 keys are translated in all 23 supported cultures. Theme identifiers, asset URIs, font names, format tokens such as `$HEX`, and framework known-color names are stable technical data and are intentionally excluded.
 
-`Validate.ps1` checks the supported-culture inventory, key and ordering parity, non-empty values, composite-format placeholders, strict UTF-8 and CRLF formatting, unintended English fallbacks, source references, and remaining literal Avalonia UI text.
+The repository-level `ValidateTranslations.ps1` checks the supported-culture inventory, entry counts, key parity, non-empty values, format placeholders, UTF-8 and CRLF formatting, generated designers, source references, and remaining literal Avalonia UI text across every localized project.
 
 Run validation from the repository root:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ShareX.Avalonia/Localization/Validate.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File ValidateTranslations.ps1
 ```

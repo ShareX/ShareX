@@ -2453,13 +2453,13 @@
     <value>Argumentos</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Base64Encoding" xml:space="preserve">
-    <value>CodificaciÃ³n Base64</value>
+    <value>Codificación Base64</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Beautify" xml:space="preserve">
     <value>Embellecer</value>
   </data>
   <data name="CustomUploaderSettingsWindow_BodyDescription" xml:space="preserve">
-    <value>Elija cÃ³mo se codifican los datos de la solicitud y los archivos cargados.</value>
+    <value>Elija cómo se codifican los datos de la solicitud y los archivos cargados.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
     <value>Tipo de cuerpo</value>
@@ -2468,19 +2468,19 @@
     <value>Cancelar</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearConfirmation" xml:space="preserve">
-    <value>Â¿Eliminar todos los cargadores personalizados?</value>
+    <value>¿Eliminar todos los cargadores personalizados?</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Close" xml:space="preserve">
     <value>Cerrar</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ConfirmationTitle" xml:space="preserve">
-    <value>ShareX - ConfirmaciÃ³n</value>
+    <value>ShareX - Confirmación</value>
   </data>
   <data name="CustomUploaderSettingsWindow_CustomUploaderFileType" xml:space="preserve">
     <value>Cargador personalizado de ShareX</value>
   </data>
   <data name="CustomUploaderSettingsWindow_DeletionURL" xml:space="preserve">
-    <value>URL de eliminaciÃ³n</value>
+    <value>URL de eliminación</value>
   </data>
   <data name="CustomUploaderSettingsWindow_DeletionURLDescription" xml:space="preserve">
     <value>URL opcional utilizada para eliminar el contenido cargado.</value>
@@ -2492,7 +2492,7 @@
     <value>Mostrar texto de salida</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicated" xml:space="preserve">
-    <value>Se duplicÃ³ el cargador personalizado.</value>
+    <value>Se duplicó el cargador personalizado.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_DuplicateNamesNotAllowed" xml:space="preserve">
     <value>No se permiten nombres duplicados.</value>
@@ -2504,7 +2504,7 @@
     <value>Mensaje de error</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ErrorMessageDescription" xml:space="preserve">
-    <value>Texto extraÃ­do cuando el servicio informa de un fallo.</value>
+    <value>Texto extraído cuando el servicio informa de un fallo.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAllDialogTitle" xml:space="preserve">
     <value>Exportar todos los cargadores personalizados</value>
@@ -2516,7 +2516,7 @@
     <value>Se exportaron {0} cargadores personalizados.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportedOne" xml:space="preserve">
-    <value>Se exportÃ³ {0}.</value>
+    <value>Se exportó {0}.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_FileFormName" xml:space="preserve">
     <value>Nombre de formulario del archivo</value>
@@ -2537,40 +2537,40 @@
     <value>Se importaron {0} cargadores personalizados.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_InputTokensDescription" xml:space="preserve">
-    <value>Los tokens de entrada estÃ¡n disponibles en el menÃº contextual del editor.</value>
+    <value>Los tokens de entrada están disponibles en el menú contextual del editor.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_JSONPathResponseValue" xml:space="preserve">
     <value>Valor de respuesta JSONPath</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Method" xml:space="preserve">
-    <value>MÃ©todo</value>
+    <value>Método</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Minify" xml:space="preserve">
     <value>Minimizar</value>
   </data>
   <data name="CustomUploaderSettingsWindow_NewCreated" xml:space="preserve">
-    <value>Se creÃ³ un nuevo cargador personalizado.</value>
+    <value>Se creó un nuevo cargador personalizado.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_NoAdditionalBodyFields" xml:space="preserve">
     <value>Este tipo de cuerpo no tiene campos adicionales.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Parameters" xml:space="preserve">
-    <value>ParÃ¡metros</value>
+    <value>Parámetros</value>
   </data>
   <data name="CustomUploaderSettingsWindow_RandomSelection" xml:space="preserve">
-    <value>SelecciÃ³n aleatoria</value>
+    <value>Selección aleatoria</value>
   </data>
   <data name="CustomUploaderSettingsWindow_RegularExpressionResult" xml:space="preserve">
-    <value>Resultado de expresiÃ³n regular</value>
+    <value>Resultado de expresión regular</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Removed" xml:space="preserve">
-    <value>Se eliminÃ³ el cargador personalizado.</value>
+    <value>Se eliminó el cargador personalizado.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_RequestData" xml:space="preserve">
     <value>Datos de la solicitud</value>
   </data>
   <data name="CustomUploaderSettingsWindow_RequestDescription" xml:space="preserve">
-    <value>Configure el punto de conexiÃ³n, los parÃ¡metros de consulta y los encabezados HTTP enviados por ShareX.</value>
+    <value>Configure el punto de conexión, los parámetros de consulta y los encabezados HTTP enviados por ShareX.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_RequestURL" xml:space="preserve">
     <value>URL de solicitud</value>
@@ -2585,13 +2585,13 @@
     <value>Encabezado de respuesta</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResponseOrRedirectionURL" xml:space="preserve">
-    <value>URL de respuesta o redirecciÃ³n</value>
+    <value>URL de respuesta o redirección</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResponseText" xml:space="preserve">
     <value>Texto de respuesta</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResponseTokensDescription" xml:space="preserve">
-    <value>Haga clic con el botÃ³n derecho para insertar tokens de respuesta.</value>
+    <value>Haga clic con el botón derecho para insertar tokens de respuesta.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Result" xml:space="preserve">
     <value>Resultado</value>
@@ -2600,7 +2600,7 @@
     <value>URL de resultado</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResultURLDescription" xml:space="preserve">
-    <value>La URL final copiada o abierta despuÃ©s de una carga correcta.</value>
+    <value>La URL final copiada o abierta después de una carga correcta.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SelectToExport" xml:space="preserve">
     <value>Seleccione un cargador personalizado para exportar.</value>
@@ -2612,7 +2612,7 @@
     <value>Cree un cargador nuevo, importe un archivo .sxcu o elija uno de la biblioteca.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SyntaxTestDescription" xml:space="preserve">
-    <value>Obtenga una vista previa de cÃ³mo se analizarÃ¡ la expresiÃ³n de respuesta.</value>
+    <value>Obtenga una vista previa de cómo se analizará la expresión de respuesta.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestCancelled" xml:space="preserve">
     <value>Prueba cancelada.</value>
@@ -2624,7 +2624,7 @@
     <value>Elija el cargador personalizado activo para cada destino y ejecute una prueba en vivo.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestFailed" xml:space="preserve">
-    <value>La prueba fallÃ³.</value>
+    <value>La prueba falló.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Testing" xml:space="preserve">
     <value>Probando {0}...</value>
@@ -2675,7 +2675,7 @@
     <value>Sintaxis de URL</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UserSelection" xml:space="preserve">
-    <value>SelecciÃ³n del usuario</value>
+    <value>Selección del usuario</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UserTextInput" xml:space="preserve">
     <value>Entrada de texto del usuario</value>

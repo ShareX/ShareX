@@ -14,5 +14,5 @@ All 283 keys are available in all 23 supported cultures. Existing WinForms views
 Run validation from the repository root:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ShareX.ScreenCaptureLib/Localization/Validate.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File ValidateTranslations.ps1
 ```

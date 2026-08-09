@@ -20,10 +20,10 @@ Image Effects translations use the shared `Strings.resx` resource set in this di
 
 The default resource set contains 347 keys, with matching catalogs for all 23 supported cultures. Runtime metadata localization is handled by `ImageEffectsLocalization`: it maps reflected effect types, property descriptors, descriptions, and enum values to the scoped keys above while retaining the original metadata as a safe fallback.
 
-`Validate.ps1` checks the supported-culture inventory, key and ordering parity, non-empty values, composite-format placeholders, strict UTF-8 and CRLF formatting, source integration, and unintended English fallback values. The 20 color-matrix channel identifiers remain unchanged in every culture by design; additional identical words are explicitly allowlisted only where they are valid terms in that language.
+The repository-level `ValidateTranslations.ps1` checks supported languages, entry counts, key parity, non-empty values, format placeholders, UTF-8 and CRLF formatting, generated designers, source integration, and remaining literal Avalonia UI text across every localized project.
 
 Run the validator from the repository root:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ShareX.ImageEffectsLib/Localization/Validate.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File ValidateTranslations.ps1
 ```

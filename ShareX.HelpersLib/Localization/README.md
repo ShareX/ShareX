@@ -20,5 +20,5 @@ All 129 keys are translated in all 23 supported cultures. The existing `Properti
 Run validation from the repository root:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ShareX.HelpersLib/Localization/Validate.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File ValidateTranslations.ps1
 ```
