@@ -27,12 +27,6 @@ using System.ComponentModel;
 
 namespace ShareX.ImageEffectsLib
 {
-    public enum WatermarkType
-    {
-        Text,
-        Image
-    }
-
     public enum ResizeMode
     {
         [Description("Resizes all images to the specified size.")]
