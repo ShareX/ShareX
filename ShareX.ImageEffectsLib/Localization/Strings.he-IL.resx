@@ -62,7 +62,7 @@
     <value>כיוון</value>
   </data>
   <data name="GradientOptionsPanel_Color_stops" xml:space="preserve">
-    <value>Color stops</value>
+    <value>נקודות עצירה של צבע</value>
   </data>
   <data name="GradientOptionsPanel_Add_stop" xml:space="preserve">
     <value>הוסף עצור</value>
@@ -71,43 +71,43 @@
     <value>הסר</value>
   </data>
   <data name="ImageEffectOptionsPanel_Effect_options" xml:space="preserve">
-    <value>Effect options</value>
+    <value>אפשרויות אפקט</value>
   </data>
   <data name="ImageEffectOptionsPanel_Effect_options_format" xml:space="preserve">
-    <value>{0} options</value>
+    <value>אפשרויות של {0}</value>
   </data>
   <data name="ImageEffectOptionsPanel_Select_an_effect" xml:space="preserve">
-    <value>Select an effect to edit its options.</value>
+    <value>בחר אפקט כדי לערוך את האפשרויות שלו.</value>
   </data>
   <data name="ImageEffectOptionsPanel_No_configurable_properties" xml:space="preserve">
-    <value>This effect has no configurable properties.</value>
+    <value>לאפקט זה אין מאפיינים הניתנים להגדרה.</value>
   </data>
   <data name="ImageEffectOptionsPanel_Edit_gradient" xml:space="preserve">
-    <value>Edit gradient...</value>
+    <value>עריכת מעבר צבע...</value>
   </data>
   <data name="ImageEffectOptionsPanel_Browse" xml:space="preserve">
     <value>עיון...</value>
   </data>
   <data name="ImageEffectOptionsPanel_Select_property" xml:space="preserve">
-    <value>Select {0}</value>
+    <value>בחירת {0}</value>
   </data>
   <data name="ImageEffectOptionsPanel_Left_short" xml:space="preserve">
-    <value>L</value>
+    <value>שמאל</value>
   </data>
   <data name="ImageEffectOptionsPanel_Top_short" xml:space="preserve">
-    <value>T</value>
+    <value>למעלה</value>
   </data>
   <data name="ImageEffectOptionsPanel_Right_short" xml:space="preserve">
-    <value>R</value>
+    <value>ימין</value>
   </data>
   <data name="ImageEffectOptionsPanel_Bottom_short" xml:space="preserve">
-    <value>B</value>
+    <value>למטה</value>
   </data>
   <data name="ImageEffectOptionsPanel_Width_short" xml:space="preserve">
-    <value>W</value>
+    <value>רוחב</value>
   </data>
   <data name="ImageEffectOptionsPanel_Height_short" xml:space="preserve">
-    <value>H</value>
+    <value>גובה</value>
   </data>
   <data name="ImageEffectOptionsPanel_X_short" xml:space="preserve">
     <value>X:</value>
@@ -116,52 +116,52 @@
     <value>Y:</value>
   </data>
   <data name="ImageEffectPackagerWindow_Title" xml:space="preserve">
-    <value>ShareX - Package image effect</value>
+    <value>ShareX - אריזת אפקט תמונה</value>
   </data>
   <data name="ImageEffectPackagerWindow_Package_preset" xml:space="preserve">
-    <value>Package preset</value>
+    <value>אריזת הגדרה קבועה מראש</value>
   </data>
   <data name="ImageEffectPackagerWindow_Assets_folder" xml:space="preserve">
-    <value>Assets folder</value>
+    <value>תיקיית משאבים</value>
   </data>
   <data name="ImageEffectPackagerWindow_Package_file" xml:space="preserve">
-    <value>Package file</value>
+    <value>קובץ חבילה</value>
   </data>
   <data name="ImageEffectPackagerWindow_Browse" xml:space="preserve">
     <value>עיון...</value>
   </data>
   <data name="ImageEffectPackagerWindow_Overwrite_existing" xml:space="preserve">
-    <value>Overwrite an existing package</value>
+    <value>דריסת חבילה קיימת</value>
   </data>
   <data name="ImageEffectPackagerWindow_Open_effects_folder" xml:space="preserve">
     <value>פתח אפקטים תיקייה</value>
   </data>
   <data name="ImageEffectPackagerWindow_Create_package" xml:space="preserve">
-    <value>Create package</value>
+    <value>יצירת חבילה</value>
   </data>
   <data name="ImageEffectPackagerWindow_Close" xml:space="preserve">
     <value>סגור</value>
   </data>
   <data name="ImageEffectPackagerWindow_Select_assets_folder" xml:space="preserve">
-    <value>Select effect assets folder</value>
+    <value>בחירת תיקיית משאבי האפקט</value>
   </data>
   <data name="ImageEffectPackagerWindow_Save_package" xml:space="preserve">
-    <value>Save image effect package</value>
+    <value>שמירת חבילת אפקט תמונה</value>
   </data>
   <data name="ImageEffectPackagerWindow_File_type" xml:space="preserve">
-    <value>ShareX image effect</value>
+    <value>אפקט תמונה של ShareX</value>
   </data>
   <data name="ImageEffectPackagerWindow_Assets_must_be_inside" xml:space="preserve">
-    <value>The assets folder must be inside the ShareX image effects folder.</value>
+    <value>תיקיית המשאבים חייבת להיות בתוך תיקיית אפקטי התמונות של ShareX.</value>
   </data>
   <data name="ImageEffectPackagerWindow_Choose_package_path" xml:space="preserve">
-    <value>Choose a package file path.</value>
+    <value>בחר נתיב לקובץ החבילה.</value>
   </data>
   <data name="ImageEffectPackagerWindow_Already_exists" xml:space="preserve">
-    <value>A package already exists at this path. Enable overwrite to replace it.</value>
+    <value>כבר קיימת חבילה בנתיב זה. הפעל דריסה כדי להחליף אותה.</value>
   </data>
   <data name="ImageEffectPackagerWindow_Created_successfully" xml:space="preserve">
-    <value>Package created successfully.</value>
+    <value>החבילה נוצרה בהצלחה.</value>
   </data>
   <data name="ImageEffectsConfirmationWindow_Title" xml:space="preserve">
     <value>ShareX - אישור</value>
@@ -176,13 +176,13 @@
     <value>לא</value>
   </data>
   <data name="ImageEffectsWindow_Title" xml:space="preserve">
-    <value>ShareX - Image effects</value>
+    <value>ShareX - אפקטי תמונה</value>
   </data>
   <data name="ImageEffectsWindow_Title_with_preview" xml:space="preserve">
-    <value>{0} - {1} × {2} - {3} ms</value>
+    <value>{0} - {1} × {2} - {3} אלפיות השנייה</value>
   </data>
   <data name="ImageEffectsWindow_Presets" xml:space="preserve">
-    <value>Presets</value>
+    <value>הגדרות קבועות מראש</value>
   </data>
   <data name="ImageEffectsWindow_New_preset" xml:space="preserve">
     <value>חדש הגדרה קבועה מראש</value>
@@ -209,16 +209,16 @@
     <value>רענן תצוגה מקדימה...</value>
   </data>
   <data name="ImageEffectsWindow_Custom_effect_name" xml:space="preserve">
-    <value>Custom effect name</value>
+    <value>שם אפקט מותאם אישית</value>
   </data>
   <data name="ImageEffectsWindow_Add_effect" xml:space="preserve">
-    <value>Add effect</value>
+    <value>הוספת אפקט</value>
   </data>
   <data name="ImageEffectsWindow_Remove_effect" xml:space="preserve">
-    <value>Remove effect</value>
+    <value>הסרת אפקט</value>
   </data>
   <data name="ImageEffectsWindow_Duplicate_effect" xml:space="preserve">
-    <value>Duplicate effect</value>
+    <value>שכפול אפקט</value>
   </data>
   <data name="ImageEffectsWindow_Clear_effects" xml:space="preserve">
     <value>נקה אפקטים</value>
@@ -230,13 +230,13 @@
     <value>טעינה מהלוח</value>
   </data>
   <data name="ImageEffectsWindow_Package_preset" xml:space="preserve">
-    <value>Package preset...</value>
+    <value>אריזת הגדרה קבועה מראש...</value>
   </data>
   <data name="ImageEffectsWindow_Image_effects_page" xml:space="preserve">
-    <value>Image effects page...</value>
+    <value>דף אפקטי תמונה...</value>
   </data>
   <data name="ImageEffectsWindow_Save_image" xml:space="preserve">
-    <value>Save image...</value>
+    <value>שמירת תמונה...</value>
   </data>
   <data name="ImageEffectsWindow_Upload_image" xml:space="preserve">
     <value>העלאה תמונה</value>
@@ -251,25 +251,25 @@
     <value>סגור</value>
   </data>
   <data name="ImageEffectsWindow_Unnamed_preset" xml:space="preserve">
-    <value>Unnamed preset</value>
+    <value>הגדרה קבועה מראש ללא שם</value>
   </data>
   <data name="ImageEffectsWindow_Enter_preset_name" xml:space="preserve">
-    <value>Enter a preset name before creating a package.</value>
+    <value>הזן שם להגדרה הקבועה מראש לפני יצירת חבילה.</value>
   </data>
   <data name="ImageEffectsWindow_Clear_confirmation" xml:space="preserve">
-    <value>Clear all effects from the selected preset?</value>
+    <value>לנקות את כל האפקטים מההגדרה הקבועה מראש שנבחרה?</value>
   </data>
   <data name="ImageEffectsWindow_Preview_name" xml:space="preserve">
     <value>אפקטים לתמונה תצוגה מקדימה...</value>
   </data>
   <data name="ImageEffectCategory_Drawings" xml:space="preserve">
-    <value>Drawings</value>
+    <value>ציור</value>
   </data>
   <data name="ImageEffectCategory_Manipulations" xml:space="preserve">
-    <value>Manipulations</value>
+    <value>עיבודים</value>
   </data>
   <data name="ImageEffectCategory_Adjustments" xml:space="preserve">
-    <value>Adjustments</value>
+    <value>התאמות</value>
   </data>
   <data name="ImageEffectCategory_Filters" xml:space="preserve">
     <value>מסננים</value>
@@ -278,24 +278,24 @@
     <value>טקסט</value>
   </data>
   <data name="ImageEffectDefault_Text_watermark" xml:space="preserve">
-    <value>Text watermark</value>
+    <value>סימן מים טקסטואלי</value>
   </data>
   <data name="ImageEffect_Alpha" xml:space="preserve">
     <value>אלפא</value>
   </data>
   <data name="ImageEffectPropertyDescription_Alpha_Value" xml:space="preserve">
-    <value>Pixel alpha = Pixel alpha * Value
-Example 0.5 will decrease alpha of pixel 50%</value>
+    <value>אלפא של פיקסל = אלפא של פיקסל * ערך
+דוגמה: 0.5 יקטין את האלפא של הפיקסל ב-50%</value>
   </data>
   <data name="ImageEffectPropertyDescription_Alpha_Addition" xml:space="preserve">
-    <value>Pixel alpha = Pixel alpha + Addition
-Example 0.5 will increase alpha of pixel 127.5</value>
+    <value>אלפא של פיקסל = אלפא של פיקסל + תוספת
+דוגמה: 0.5 יגדיל את האלפא של הפיקסל ב-127.5</value>
   </data>
   <data name="ImageEffect_AutoCrop" xml:space="preserve">
     <value>אוטומטי חיתוך</value>
   </data>
   <data name="ImageEffect_BlackWhite" xml:space="preserve">
-    <value>Black &amp; white</value>
+    <value>שחור ולבן</value>
   </data>
   <data name="ImageEffect_Blur" xml:space="preserve">
     <value>טשטש</value>
@@ -304,27 +304,27 @@ Example 0.5 will increase alpha of pixel 127.5</value>
     <value>בהירות</value>
   </data>
   <data name="ImageEffectPropertyDescription_Brightness_Value" xml:space="preserve">
-    <value>Pixel color = Pixel color + Value
-Example 0.5 will increase color of pixel 127.5</value>
+    <value>צבע הפיקסל = צבע הפיקסל + ערך
+דוגמה: 0.5 יגדיל את צבע הפיקסל ב-127.5</value>
   </data>
   <data name="ImageEffect_Canvas" xml:space="preserve">
-    <value>Canvas</value>
+    <value>בד ציור</value>
   </data>
   <data name="ImageEffectPropertyDescription_Canvas_MarginMode" xml:space="preserve">
-    <value>How the margin around the canvas will be calculated.</value>
+    <value>אופן חישוב השוליים סביב בד הציור.</value>
   </data>
   <data name="ImageEffect_ColorDepth" xml:space="preserve">
-    <value>Color depth</value>
+    <value>עומק צבע</value>
   </data>
   <data name="ImageEffect_Colorize" xml:space="preserve">
-    <value>Colorize</value>
+    <value>צביעה</value>
   </data>
   <data name="ImageEffect_Contrast" xml:space="preserve">
-    <value>Contrast</value>
+    <value>ניגודיות</value>
   </data>
   <data name="ImageEffectPropertyDescription_Contrast_Value" xml:space="preserve">
-    <value>Pixel color = Pixel color * Value
-Example 1.5 will increase color of pixel 50%</value>
+    <value>צבע הפיקסל = צבע הפיקסל * ערך
+דוגמה: 1.5 יגדיל את צבע הפיקסל ב-50%</value>
   </data>
   <data name="ImageEffect_Crop" xml:space="preserve">
     <value>חיתוך</value>
@@ -336,7 +336,7 @@ Example 1.5 will increase color of pixel 50%</value>
     <value>תמונת רקע</value>
   </data>
   <data name="ImageEffect_DrawBorder" xml:space="preserve">
-    <value>Border</value>
+    <value>מסגרת</value>
   </data>
   <data name="ImageEffect_DrawCheckerboard" xml:space="preserve">
     <value>לוח שחמט</value>
@@ -345,49 +345,49 @@ Example 1.5 will increase color of pixel 50%</value>
     <value>תמונה</value>
   </data>
   <data name="ImageEffectPropertyDescription_DrawImage_SizeMode" xml:space="preserve">
-    <value>How the image watermark should be rescaled, if at all.</value>
+    <value>אופן שינוי הגודל של סימן המים של התמונה, אם נדרש.</value>
   </data>
   <data name="ImageEffectPropertyDescription_DrawImage_AutoHide" xml:space="preserve">
-    <value>If image watermark size bigger than source image then don't draw it.</value>
+    <value>אם סימן המים של התמונה גדול מתמונת המקור, אין לצייר אותו.</value>
   </data>
   <data name="ImageEffect_DrawParticles" xml:space="preserve">
-    <value>Particles</value>
+    <value>חלקיקים</value>
   </data>
   <data name="ImageEffect_DrawText" xml:space="preserve">
-    <value>Text watermark</value>
+    <value>סימן מים טקסטואלי</value>
   </data>
   <data name="ImageEffectPropertyDescription_DrawText_AutoHide" xml:space="preserve">
-    <value>If text watermark size bigger than source image then don't draw it.</value>
+    <value>אם סימן המים הטקסטואלי גדול מתמונת המקור, אין לצייר אותו.</value>
   </data>
   <data name="ImageEffect_DrawTextEx" xml:space="preserve">
     <value>טקסט</value>
   </data>
   <data name="ImageEffectPropertyDescription_DrawTextEx_AutoHide" xml:space="preserve">
-    <value>If text size bigger than source image then don't draw it.</value>
+    <value>אם הטקסט גדול מתמונת המקור, אין לצייר אותו.</value>
   </data>
   <data name="ImageEffect_EdgeDetect" xml:space="preserve">
-    <value>Edge detect</value>
+    <value>זיהוי קצוות</value>
   </data>
   <data name="ImageEffect_Emboss" xml:space="preserve">
-    <value>Emboss</value>
+    <value>תבליט</value>
   </data>
   <data name="ImageEffect_Flip" xml:space="preserve">
-    <value>Flip</value>
+    <value>היפוך</value>
   </data>
   <data name="ImageEffect_ForceProportions" xml:space="preserve">
-    <value>Force proportions</value>
+    <value>אילוץ יחסי ממדים</value>
   </data>
   <data name="ImageEffect_Gamma" xml:space="preserve">
-    <value>Gamma</value>
+    <value>גאמה</value>
   </data>
   <data name="ImageEffectPropertyDescription_Gamma_Value" xml:space="preserve">
-    <value>Min 0.1, Max 5.0</value>
+    <value>מינימום 0.1, מקסימום 5.0</value>
   </data>
   <data name="ImageEffect_GaussianBlur" xml:space="preserve">
-    <value>Gaussian blur</value>
+    <value>טשטוש גאוסי</value>
   </data>
   <data name="ImageEffect_Glow" xml:space="preserve">
-    <value>Glow</value>
+    <value>זוהר</value>
   </data>
   <data name="ImageEffect_Grayscale" xml:space="preserve">
     <value>גווני אפור</value>
@@ -396,133 +396,133 @@ Example 1.5 will increase color of pixel 50%</value>
     <value>גוון</value>
   </data>
   <data name="ImageEffectPropertyDescription_Hue_Angle" xml:space="preserve">
-    <value>From 0 to 360</value>
+    <value>מ-0 עד 360</value>
   </data>
   <data name="ImageEffect_Inverse" xml:space="preserve">
-    <value>Inverse</value>
+    <value>היפוך צבעים</value>
   </data>
   <data name="ImageEffect_MatrixColor" xml:space="preserve">
-    <value>Color matrix</value>
+    <value>מטריצת צבע</value>
   </data>
   <data name="ImageEffectPropertyDescription_MatrixColor_Rr" xml:space="preserve">
-    <value>Red = (Red * Rr) + (Green * Rg) + (Blue * Rb) + (Alpha * Ra) + Ro</value>
+    <value>אדום = (אדום * Rr) + (ירוק * Rg) + (כחול * Rb) + (אלפא * Ra) + Ro</value>
   </data>
   <data name="ImageEffect_MatrixConvolution" xml:space="preserve">
-    <value>Convolution matrix</value>
+    <value>מטריצת קונבולוציה</value>
   </data>
   <data name="ImageEffect_MeanRemoval" xml:space="preserve">
-    <value>Mean removal</value>
+    <value>הסרת ממוצע</value>
   </data>
   <data name="ImageEffect_Outline" xml:space="preserve">
-    <value>Outline</value>
+    <value>קו מתאר</value>
   </data>
   <data name="ImageEffect_Pixelate" xml:space="preserve">
     <value>פיקסול</value>
   </data>
   <data name="ImageEffect_Polaroid" xml:space="preserve">
-    <value>Polaroid</value>
+    <value>פולארויד</value>
   </data>
   <data name="ImageEffect_Reflection" xml:space="preserve">
-    <value>Reflection</value>
+    <value>השתקפות</value>
   </data>
   <data name="ImageEffectPropertyDescription_Reflection_Percentage" xml:space="preserve">
-    <value>Reflection height size relative to screenshot height.
-Value need to be between 1 to 100.</value>
+    <value>גובה ההשתקפות ביחס לגובה צילום המסך.
+הערך חייב להיות בין 1 ל-100.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Reflection_MaxAlpha" xml:space="preserve">
-    <value>Reflection transparency start from this value to MinAlpha.
-Value need to be between 0 to 255.</value>
+    <value>שקיפות ההשתקפות משתנה מערך זה עד MinAlpha.
+הערך חייב להיות בין 0 ל-255.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Reflection_MinAlpha" xml:space="preserve">
-    <value>Reflection transparency start from MaxAlpha to this value.
-Value need to be between 0 to 255.</value>
+    <value>שקיפות ההשתקפות משתנה מ-MaxAlpha עד ערך זה.
+הערך חייב להיות בין 0 ל-255.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Reflection_Offset" xml:space="preserve">
-    <value>Reflection start position will be: Screenshot height + Offset</value>
+    <value>מיקום תחילת ההשתקפות: גובה צילום המסך + היסט</value>
   </data>
   <data name="ImageEffectPropertyDescription_Reflection_Skew" xml:space="preserve">
-    <value>Adding skew to reflection from bottom left to bottom right.</value>
+    <value>הוספת הטיה להשתקפות משמאל למטה לימין למטה.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Reflection_SkewSize" xml:space="preserve">
-    <value>How much pixel skew left to right.</value>
+    <value>מידת הטיית הפיקסלים משמאל לימין.</value>
   </data>
   <data name="ImageEffect_ReplaceColor" xml:space="preserve">
-    <value>Replace color</value>
+    <value>החלפת צבע</value>
   </data>
   <data name="ImageEffect_Resize" xml:space="preserve">
-    <value>Resize</value>
+    <value>שינוי גודל</value>
   </data>
   <data name="ImageEffectPropertyDescription_Resize_Width" xml:space="preserve">
-    <value>Use width as 0 to automatically adjust width to maintain aspect ratio.</value>
+    <value>הגדר את הרוחב ל-0 כדי להתאים אותו אוטומטית תוך שמירה על יחס הממדים.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Resize_Height" xml:space="preserve">
-    <value>Use height as 0 to automatically adjust height to maintain aspect ratio.</value>
+    <value>הגדר את הגובה ל-0 כדי להתאים אותו אוטומטית תוך שמירה על יחס הממדים.</value>
   </data>
   <data name="ImageEffect_RGBSplit" xml:space="preserve">
-    <value>RGB split</value>
+    <value>פיצול RGB</value>
   </data>
   <data name="ImageEffect_Rotate" xml:space="preserve">
-    <value>Rotate</value>
+    <value>סיבוב</value>
   </data>
   <data name="ImageEffectPropertyDescription_Rotate_Angle" xml:space="preserve">
-    <value>Choose a value between -360 and 360.</value>
+    <value>בחר ערך בין -360 ל-360.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Rotate_Upsize" xml:space="preserve">
-    <value>If true, output image will be larger than the input and no clipping will occur.</value>
+    <value>כאשר אפשרות זו פעילה, תמונת הפלט תהיה גדולה מתמונת הקלט ולא יתבצע חיתוך.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Rotate_Clip" xml:space="preserve">
-    <value>Upsize must be false for this setting to work. If true, clipping will occur or else image size will be reduced.</value>
+    <value>יש להשבית את ההגדלה כדי שהגדרה זו תפעל. כשהיא פעילה התמונה תיחתך, אחרת גודל התמונה יוקטן.</value>
   </data>
   <data name="ImageEffect_RoundedCorners" xml:space="preserve">
-    <value>Rounded corners</value>
+    <value>פינות מעוגלות</value>
   </data>
   <data name="ImageEffect_Saturation" xml:space="preserve">
     <value>רוויה</value>
   </data>
   <data name="ImageEffect_Scale" xml:space="preserve">
-    <value>Scale</value>
+    <value>שינוי קנה מידה</value>
   </data>
   <data name="ImageEffectPropertyDescription_Scale_WidthPercentage" xml:space="preserve">
-    <value>Use width percentage as 0 to maintain aspect ratio by automatically adjusting width.</value>
+    <value>הגדר את אחוז הרוחב ל-0 כדי להתאים את הרוחב אוטומטית תוך שמירה על יחס הממדים.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Scale_HeightPercentage" xml:space="preserve">
-    <value>Use height percentage as 0 to maintain aspect ratio by automatically adjusting height.</value>
+    <value>הגדר את אחוז הגובה ל-0 כדי להתאים את הגובה אוטומטית תוך שמירה על יחס הממדים.</value>
   </data>
   <data name="ImageEffect_SelectiveColor" xml:space="preserve">
-    <value>Selective color</value>
+    <value>צבע סלקטיבי</value>
   </data>
   <data name="ImageEffect_Sepia" xml:space="preserve">
-    <value>Sepia</value>
+    <value>ספיה</value>
   </data>
   <data name="ImageEffect_Shadow" xml:space="preserve">
     <value>צל</value>
   </data>
   <data name="ImageEffectPropertyDescription_Shadow_Opacity" xml:space="preserve">
-    <value>Choose a value between 0.1 and 1.0</value>
+    <value>בחר ערך בין 0.1 ל-1.0</value>
   </data>
   <data name="ImageEffect_Sharpen" xml:space="preserve">
-    <value>Sharpen</value>
+    <value>חידוד</value>
   </data>
   <data name="ImageEffect_Skew" xml:space="preserve">
-    <value>Skew</value>
+    <value>הטיה</value>
   </data>
   <data name="ImageEffectPropertyDescription_Skew_Horizontally" xml:space="preserve">
-    <value>How much pixel skew left to right.</value>
+    <value>מידת הטיית הפיקסלים משמאל לימין.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Skew_Vertically" xml:space="preserve">
-    <value>How much pixel skew top to bottom.</value>
+    <value>מידת הטיית הפיקסלים מלמעלה למטה.</value>
   </data>
   <data name="ImageEffect_Slice" xml:space="preserve">
-    <value>Slice</value>
+    <value>חיתוך לרצועות</value>
   </data>
   <data name="ImageEffect_Smooth" xml:space="preserve">
-    <value>Smooth</value>
+    <value>החלקה</value>
   </data>
   <data name="ImageEffect_TornEdge" xml:space="preserve">
-    <value>Torn edge</value>
+    <value>קצה קרוע</value>
   </data>
   <data name="ImageEffect_WaveEdge" xml:space="preserve">
-    <value>Wave edge</value>
+    <value>קצה גלי</value>
   </data>
   <data name="ImageEffectProperty_Aa" xml:space="preserve">
     <value>Aa</value>
@@ -531,7 +531,7 @@ Value need to be between 0 to 255.</value>
     <value>Ab</value>
   </data>
   <data name="ImageEffectProperty_Addition" xml:space="preserve">
-    <value>Addition</value>
+    <value>תוספת</value>
   </data>
   <data name="ImageEffectProperty_Ag" xml:space="preserve">
     <value>Ag</value>
@@ -546,13 +546,13 @@ Value need to be between 0 to 255.</value>
     <value>Ar</value>
   </data>
   <data name="ImageEffectProperty_AutoHide" xml:space="preserve">
-    <value>Auto hide</value>
+    <value>הסתרה אוטומטית</value>
   </data>
   <data name="ImageEffectProperty_AutoResize" xml:space="preserve">
-    <value>Auto resize</value>
+    <value>שינוי גודל אוטומטי</value>
   </data>
   <data name="ImageEffectProperty_AutoSourceColor" xml:space="preserve">
-    <value>Auto source color</value>
+    <value>צבע מקור אוטומטי</value>
   </data>
   <data name="ImageEffectProperty_Ba" xml:space="preserve">
     <value>Ba</value>
@@ -570,7 +570,7 @@ Value need to be between 0 to 255.</value>
     <value>Bg</value>
   </data>
   <data name="ImageEffectProperty_BitsPerChannel" xml:space="preserve">
-    <value>Bits per channel</value>
+    <value>סיביות לערוץ</value>
   </data>
   <data name="ImageEffectProperty_Bo" xml:space="preserve">
     <value>Bo</value>
@@ -588,49 +588,49 @@ Value need to be between 0 to 255.</value>
     <value>מרכז</value>
   </data>
   <data name="ImageEffectProperty_Clip" xml:space="preserve">
-    <value>Clip</value>
+    <value>חיתוך</value>
   </data>
   <data name="ImageEffectProperty_Color" xml:space="preserve">
     <value>צבע</value>
   </data>
   <data name="ImageEffectProperty_Color2" xml:space="preserve">
-    <value>Color 2</value>
+    <value>צבע 2</value>
   </data>
   <data name="ImageEffectProperty_CompositingMode" xml:space="preserve">
-    <value>Compositing mode</value>
+    <value>מצב הרכבה</value>
   </data>
   <data name="ImageEffectProperty_CornerRadius" xml:space="preserve">
     <value>רדיוס פינה</value>
   </data>
   <data name="ImageEffectProperty_CurvedEdges" xml:space="preserve">
-    <value>Curved edges</value>
+    <value>קצוות מעוקלים</value>
   </data>
   <data name="ImageEffectProperty_DarkColor" xml:space="preserve">
     <value>Dark צבע</value>
   </data>
   <data name="ImageEffectProperty_Darkness" xml:space="preserve">
-    <value>Darkness</value>
+    <value>כהות</value>
   </data>
   <data name="ImageEffectProperty_DashStyle" xml:space="preserve">
-    <value>Dash style</value>
+    <value>סגנון מקווקו</value>
   </data>
   <data name="ImageEffectProperty_Depth" xml:space="preserve">
-    <value>Depth</value>
+    <value>עומק</value>
   </data>
   <data name="ImageEffectProperty_DrawBackground" xml:space="preserve">
-    <value>Draw background</value>
+    <value>ציור רקע</value>
   </data>
   <data name="ImageEffectProperty_DrawBorder" xml:space="preserve">
-    <value>Draw border</value>
+    <value>ציור מסגרת</value>
   </data>
   <data name="ImageEffectProperty_DrawTextShadow" xml:space="preserve">
-    <value>Draw text shadow</value>
+    <value>ציור צל טקסט</value>
   </data>
   <data name="ImageEffectProperty_EdgeOverlap" xml:space="preserve">
-    <value>Edge overlap</value>
+    <value>חפיפת קצוות</value>
   </data>
   <data name="ImageEffectProperty_Factor" xml:space="preserve">
-    <value>Factor</value>
+    <value>מקדם</value>
   </data>
   <data name="ImageEffectProperty_Font" xml:space="preserve">
     <value>גופן:</value>
@@ -654,13 +654,13 @@ Value need to be between 0 to 255.</value>
     <value>מעבר צבע</value>
   </data>
   <data name="ImageEffectProperty_GrowFillColor" xml:space="preserve">
-    <value>Grow fill color</value>
+    <value>צבע מילוי ההרחבה</value>
   </data>
   <data name="ImageEffectProperty_Height" xml:space="preserve">
     <value>גובה</value>
   </data>
   <data name="ImageEffectProperty_HeightPercentage" xml:space="preserve">
-    <value>Height percentage</value>
+    <value>אחוז גובה</value>
   </data>
   <data name="ImageEffectProperty_Horizontally" xml:space="preserve">
     <value>אופקית</value>
@@ -675,7 +675,7 @@ Value need to be between 0 to 255.</value>
     <value>תמונה תיקייה</value>
   </data>
   <data name="ImageEffectProperty_ImageLocation" xml:space="preserve">
-    <value>Image location</value>
+    <value>מיקום התמונה</value>
   </data>
   <data name="ImageEffectProperty_InterpolationMode" xml:space="preserve">
     <value>מצב אינטרפולציה:</value>
@@ -687,124 +687,124 @@ Value need to be between 0 to 255.</value>
     <value>שוליים</value>
   </data>
   <data name="ImageEffectProperty_MarginMode" xml:space="preserve">
-    <value>Margin mode</value>
+    <value>מצב שוליים</value>
   </data>
   <data name="ImageEffectProperty_MaxAlpha" xml:space="preserve">
-    <value>Max alpha</value>
+    <value>אלפא מרבית</value>
   </data>
   <data name="ImageEffectProperty_MaxSliceHeight" xml:space="preserve">
-    <value>Max slice height</value>
+    <value>גובה רצועה מרבי</value>
   </data>
   <data name="ImageEffectProperty_MaxSliceShift" xml:space="preserve">
-    <value>Max slice shift</value>
+    <value>היסט רצועה מרבי</value>
   </data>
   <data name="ImageEffectProperty_Method" xml:space="preserve">
     <value>שיטה</value>
   </data>
   <data name="ImageEffectProperty_MinAlpha" xml:space="preserve">
-    <value>Min alpha</value>
+    <value>אלפא מזערית</value>
   </data>
   <data name="ImageEffectProperty_MinSliceHeight" xml:space="preserve">
-    <value>Min slice height</value>
+    <value>גובה רצועה מזערי</value>
   </data>
   <data name="ImageEffectProperty_MinSliceShift" xml:space="preserve">
-    <value>Min slice shift</value>
+    <value>היסט רצועה מזערי</value>
   </data>
   <data name="ImageEffectProperty_Mode" xml:space="preserve">
-    <value>Mode</value>
+    <value>מצב</value>
   </data>
   <data name="ImageEffectProperty_NoOverlap" xml:space="preserve">
-    <value>No overlap</value>
+    <value>ללא חפיפה</value>
   </data>
   <data name="ImageEffectProperty_NoOverlapOffset" xml:space="preserve">
-    <value>No overlap offset</value>
+    <value>היסט ללא חפיפה</value>
   </data>
   <data name="ImageEffectProperty_Offset" xml:space="preserve">
-    <value>Offset</value>
+    <value>היסט</value>
   </data>
   <data name="ImageEffectProperty_OffsetBlue" xml:space="preserve">
-    <value>Offset blue</value>
+    <value>היסט כחול</value>
   </data>
   <data name="ImageEffectProperty_OffsetGreen" xml:space="preserve">
-    <value>Offset green</value>
+    <value>היסט ירוק</value>
   </data>
   <data name="ImageEffectProperty_OffsetRed" xml:space="preserve">
-    <value>Offset red</value>
+    <value>היסט אדום</value>
   </data>
   <data name="ImageEffectProperty_Opacity" xml:space="preserve">
     <value>אטימות</value>
   </data>
   <data name="ImageEffectProperty_Outline" xml:space="preserve">
-    <value>Outline</value>
+    <value>קו מתאר</value>
   </data>
   <data name="ImageEffectProperty_OutlineColor" xml:space="preserve">
-    <value>Outline color</value>
+    <value>צבע קו המתאר</value>
   </data>
   <data name="ImageEffectProperty_OutlineGradient" xml:space="preserve">
-    <value>Outline gradient</value>
+    <value>מעבר צבע של קו המתאר</value>
   </data>
   <data name="ImageEffectProperty_OutlineOnly" xml:space="preserve">
-    <value>Outline only</value>
+    <value>קו מתאר בלבד</value>
   </data>
   <data name="ImageEffectProperty_OutlineSize" xml:space="preserve">
-    <value>Outline size</value>
+    <value>גודל קו המתאר</value>
   </data>
   <data name="ImageEffectProperty_OutlineUseGradient" xml:space="preserve">
-    <value>Outline use gradient</value>
+    <value>שימוש במעבר צבע לקו המתאר</value>
   </data>
   <data name="ImageEffectProperty_Padding" xml:space="preserve">
     <value>ריווח פנימי</value>
   </data>
   <data name="ImageEffectProperty_PaletteSize" xml:space="preserve">
-    <value>Palette size</value>
+    <value>גודל לוח הצבעים</value>
   </data>
   <data name="ImageEffectProperty_Percentage" xml:space="preserve">
-    <value>Percentage</value>
+    <value>אחוז</value>
   </data>
   <data name="ImageEffectProperty_Placement" xml:space="preserve">
     <value>מיקום</value>
   </data>
   <data name="ImageEffectProperty_ProportionalHeight" xml:space="preserve">
-    <value>Proportional height</value>
+    <value>גובה יחסי</value>
   </data>
   <data name="ImageEffectProperty_ProportionalWidth" xml:space="preserve">
-    <value>Proportional width</value>
+    <value>רוחב יחסי</value>
   </data>
   <data name="ImageEffectProperty_Ra" xml:space="preserve">
     <value>Ra</value>
   </data>
   <data name="ImageEffectProperty_Radius" xml:space="preserve">
-    <value>Radius</value>
+    <value>רדיוס</value>
   </data>
   <data name="ImageEffectProperty_RandomAngle" xml:space="preserve">
     <value>אקראי זווית</value>
   </data>
   <data name="ImageEffectProperty_RandomAngleMax" xml:space="preserve">
-    <value>Random angle max</value>
+    <value>זווית אקראית מרבית</value>
   </data>
   <data name="ImageEffectProperty_RandomAngleMin" xml:space="preserve">
-    <value>Random angle min</value>
+    <value>זווית אקראית מזערית</value>
   </data>
   <data name="ImageEffectProperty_RandomOpacity" xml:space="preserve">
     <value>אקראי אטימות</value>
   </data>
   <data name="ImageEffectProperty_RandomOpacityMax" xml:space="preserve">
-    <value>Random opacity max</value>
+    <value>אטימות אקראית מרבית</value>
   </data>
   <data name="ImageEffectProperty_RandomOpacityMin" xml:space="preserve">
-    <value>Random opacity min</value>
+    <value>אטימות אקראית מזערית</value>
   </data>
   <data name="ImageEffectProperty_RandomSize" xml:space="preserve">
     <value>אקראי גודל:</value>
   </data>
   <data name="ImageEffectProperty_RandomSizeMax" xml:space="preserve">
-    <value>Random size max</value>
+    <value>גודל אקראי מרבי</value>
   </data>
   <data name="ImageEffectProperty_RandomSizeMin" xml:space="preserve">
-    <value>Random size min</value>
+    <value>גודל אקראי מזערי</value>
   </data>
   <data name="ImageEffectProperty_Range" xml:space="preserve">
-    <value>Range</value>
+    <value>טווח</value>
   </data>
   <data name="ImageEffectProperty_Rb" xml:space="preserve">
     <value>Rb</value>
@@ -816,7 +816,7 @@ Value need to be between 0 to 255.</value>
     <value>Ro</value>
   </data>
   <data name="ImageEffectProperty_RotateFlip" xml:space="preserve">
-    <value>Rotate flip</value>
+    <value>סיבוב והיפוך</value>
   </data>
   <data name="ImageEffectProperty_Rr" xml:space="preserve">
     <value>Rr</value>
@@ -834,28 +834,28 @@ Value need to be between 0 to 255.</value>
     <value>היסט צל:</value>
   </data>
   <data name="ImageEffectProperty_ShadowUseGradient" xml:space="preserve">
-    <value>Shadow use gradient</value>
+    <value>שימוש במעבר צבע לצל</value>
   </data>
   <data name="ImageEffectProperty_Sides" xml:space="preserve">
-    <value>Sides</value>
+    <value>צלעות</value>
   </data>
   <data name="ImageEffectProperty_Size" xml:space="preserve">
     <value>גודל:</value>
   </data>
   <data name="ImageEffectProperty_SizeMode" xml:space="preserve">
-    <value>Size mode</value>
+    <value>מצב גודל</value>
   </data>
   <data name="ImageEffectProperty_Skew" xml:space="preserve">
-    <value>Skew</value>
+    <value>הטיה</value>
   </data>
   <data name="ImageEffectProperty_SkewSize" xml:space="preserve">
-    <value>Skew size</value>
+    <value>מידת ההטיה</value>
   </data>
   <data name="ImageEffectProperty_SourceColor" xml:space="preserve">
-    <value>Source color</value>
+    <value>צבע מקור</value>
   </data>
   <data name="ImageEffectProperty_Strength" xml:space="preserve">
-    <value>Strength</value>
+    <value>עוצמה</value>
   </data>
   <data name="ImageEffectProperty_TargetColor" xml:space="preserve">
     <value>מטרה: צבע</value>
@@ -870,7 +870,7 @@ Value need to be between 0 to 255.</value>
     <value>טקסט גופן:</value>
   </data>
   <data name="ImageEffectProperty_TextRenderingMode" xml:space="preserve">
-    <value>Text rendering mode</value>
+    <value>מצב עיבוד טקסט</value>
   </data>
   <data name="ImageEffectProperty_TextShadowColor" xml:space="preserve">
     <value>טקסט צבע צל</value>
@@ -879,19 +879,19 @@ Value need to be between 0 to 255.</value>
     <value>טקסט היסט צל:</value>
   </data>
   <data name="ImageEffectProperty_Threshold" xml:space="preserve">
-    <value>Threshold</value>
+    <value>סף</value>
   </data>
   <data name="ImageEffectProperty_Tile" xml:space="preserve">
-    <value>Tile</value>
+    <value>פריסה באריחים</value>
   </data>
   <data name="ImageEffectProperty_Type" xml:space="preserve">
     <value>סוג</value>
   </data>
   <data name="ImageEffectProperty_Upsize" xml:space="preserve">
-    <value>Upsize</value>
+    <value>הגדלה</value>
   </data>
   <data name="ImageEffectProperty_UseGradient" xml:space="preserve">
-    <value>Use gradient</value>
+    <value>שימוש במעבר צבע</value>
   </data>
   <data name="ImageEffectProperty_Value" xml:space="preserve">
     <value>ערך</value>
@@ -903,55 +903,55 @@ Value need to be between 0 to 255.</value>
     <value>רוחב</value>
   </data>
   <data name="ImageEffectProperty_WidthPercentage" xml:space="preserve">
-    <value>Width percentage</value>
+    <value>אחוז רוחב</value>
   </data>
   <data name="ImageEffectProperty_X0Y0" xml:space="preserve">
-    <value>X 0 y 0</value>
+    <value>X 0 Y 0</value>
   </data>
   <data name="ImageEffectProperty_X0Y1" xml:space="preserve">
-    <value>X 0 y 1</value>
+    <value>X 0 Y 1</value>
   </data>
   <data name="ImageEffectProperty_X0Y2" xml:space="preserve">
-    <value>X 0 y 2</value>
+    <value>X 0 Y 2</value>
   </data>
   <data name="ImageEffectProperty_X1Y0" xml:space="preserve">
-    <value>X 1 y 0</value>
+    <value>X 1 Y 0</value>
   </data>
   <data name="ImageEffectProperty_X1Y1" xml:space="preserve">
-    <value>X 1 y 1</value>
+    <value>X 1 Y 1</value>
   </data>
   <data name="ImageEffectProperty_X1Y2" xml:space="preserve">
-    <value>X 1 y 2</value>
+    <value>X 1 Y 2</value>
   </data>
   <data name="ImageEffectProperty_X2Y0" xml:space="preserve">
-    <value>X 2 y 0</value>
+    <value>X 2 Y 0</value>
   </data>
   <data name="ImageEffectProperty_X2Y1" xml:space="preserve">
-    <value>X 2 y 1</value>
+    <value>X 2 Y 1</value>
   </data>
   <data name="ImageEffectProperty_X2Y2" xml:space="preserve">
-    <value>X 2 y 2</value>
+    <value>X 2 Y 2</value>
   </data>
   <data name="ImageEffectEnum_BorderType_Outside" xml:space="preserve">
-    <value>Outside</value>
+    <value>חיצוני</value>
   </data>
   <data name="ImageEffectEnum_BorderType_Inside" xml:space="preserve">
-    <value>Inside</value>
+    <value>פנימי</value>
   </data>
   <data name="ImageEffectEnum_ImageInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>High quality bicubic</value>
+    <value>דו-קובי באיכות גבוהה</value>
   </data>
   <data name="ImageEffectEnum_ImageInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Bicubic</value>
+    <value>דו-קובי</value>
   </data>
   <data name="ImageEffectEnum_ImageInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>High quality bilinear</value>
+    <value>דו-ליניארי באיכות גבוהה</value>
   </data>
   <data name="ImageEffectEnum_ImageInterpolationMode_Bilinear" xml:space="preserve">
-    <value>Bilinear</value>
+    <value>דו-ליניארי</value>
   </data>
   <data name="ImageEffectEnum_ImageInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Nearest neighbor</value>
+    <value>השכן הקרוב ביותר</value>
   </data>
   <data name="ImageEffectEnum_CanvasMarginMode_AbsoluteSize" xml:space="preserve">
     <value>גודל מוחלט</value>
@@ -966,13 +966,13 @@ Value need to be between 0 to 255.</value>
     <value>גודל מוחלט</value>
   </data>
   <data name="ImageEffectEnum_DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
-    <value>Percentage of watermark</value>
+    <value>אחוז מסימן המים</value>
   </data>
   <data name="ImageEffectEnum_DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
     <value>אחוז הקנבס</value>
   </data>
   <data name="ImageEffectEnum_ForceProportionsMethod_Grow" xml:space="preserve">
-    <value>Grow</value>
+    <value>הגדלה</value>
   </data>
   <data name="ImageEffectEnum_ForceProportionsMethod_Crop" xml:space="preserve">
     <value>חיתוך</value>
@@ -981,34 +981,34 @@ Value need to be between 0 to 255.</value>
     <value>ללא</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_Rotate90" xml:space="preserve">
-    <value>Rotate 90</value>
+    <value>סיבוב ב-90°</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_Rotate180" xml:space="preserve">
     <value>סובב 180°</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_Rotate270" xml:space="preserve">
-    <value>Rotate 270</value>
+    <value>סיבוב ב-270°</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_FlipX" xml:space="preserve">
-    <value>Flip x</value>
+    <value>היפוך אופקי</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_Rotate90FlipX" xml:space="preserve">
-    <value>Rotate 90 flip x</value>
+    <value>סיבוב ב-90° והיפוך אופקי</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_FlipY" xml:space="preserve">
-    <value>Flip y</value>
+    <value>היפוך אנכי</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_Rotate90FlipY" xml:space="preserve">
-    <value>Rotate 90 flip y</value>
+    <value>סיבוב ב-90° והיפוך אנכי</value>
   </data>
   <data name="ImageEffectEnum_ResizeMode_ResizeAll" xml:space="preserve">
-    <value>Resizes all images to the specified size.</value>
+    <value>שינוי גודל כל התמונות לגודל שצוין.</value>
   </data>
   <data name="ImageEffectEnum_ResizeMode_ResizeIfBigger" xml:space="preserve">
-    <value>Only resize image if it is bigger than specified size.</value>
+    <value>שינוי גודל התמונה רק אם היא גדולה מהגודל שצוין.</value>
   </data>
   <data name="ImageEffectEnum_ResizeMode_ResizeIfSmaller" xml:space="preserve">
-    <value>Only resize image if it is smaller than specified size.</value>
+    <value>שינוי גודל התמונה רק אם היא קטנה מהגודל שצוין.</value>
   </data>
   <data name="ImageEffectEnum_ContentAlignment_TopLeft" xml:space="preserve">
     <value>שמאל למעלה</value>
@@ -1038,10 +1038,10 @@ Value need to be between 0 to 255.</value>
     <value>ימין למטה</value>
   </data>
   <data name="ImageEffectEnum_CompositingMode_SourceOver" xml:space="preserve">
-    <value>Source over</value>
+    <value>מקור מעל</value>
   </data>
   <data name="ImageEffectEnum_CompositingMode_SourceCopy" xml:space="preserve">
-    <value>Source copy</value>
+    <value>העתקת מקור</value>
   </data>
   <data name="ImageEffectEnum_DashStyle_Solid" xml:space="preserve">
     <value>מוצק</value>
@@ -1074,22 +1074,22 @@ Value need to be between 0 to 255.</value>
     <value>אלכסון אחורה</value>
   </data>
   <data name="ImageEffectEnum_TextRenderingHint_SystemDefault" xml:space="preserve">
-    <value>System default</value>
+    <value>ברירת המחדל של המערכת</value>
   </data>
   <data name="ImageEffectEnum_TextRenderingHint_SingleBitPerPixelGridFit" xml:space="preserve">
-    <value>Single bit per pixel grid fit</value>
+    <value>סיבית אחת לפיקסל עם התאמה לרשת</value>
   </data>
   <data name="ImageEffectEnum_TextRenderingHint_SingleBitPerPixel" xml:space="preserve">
-    <value>Single bit per pixel</value>
+    <value>סיבית אחת לפיקסל</value>
   </data>
   <data name="ImageEffectEnum_TextRenderingHint_AntiAliasGridFit" xml:space="preserve">
-    <value>Anti alias grid fit</value>
+    <value>החלקת קצוות עם התאמה לרשת</value>
   </data>
   <data name="ImageEffectEnum_TextRenderingHint_AntiAlias" xml:space="preserve">
-    <value>Anti alias</value>
+    <value>החלקת קצוות</value>
   </data>
   <data name="ImageEffectEnum_TextRenderingHint_ClearTypeGridFit" xml:space="preserve">
-    <value>Clear type grid fit</value>
+    <value>ClearType עם התאמה לרשת</value>
   </data>
   <data name="ImageEffectEnum_AnchorStyles_None" xml:space="preserve">
     <value>ללא</value>

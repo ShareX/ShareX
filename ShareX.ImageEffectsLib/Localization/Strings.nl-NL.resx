@@ -62,7 +62,7 @@
     <value>Richting</value>
   </data>
   <data name="GradientOptionsPanel_Color_stops" xml:space="preserve">
-    <value>Color stops</value>
+    <value>Kleurstops</value>
   </data>
   <data name="GradientOptionsPanel_Add_stop" xml:space="preserve">
     <value>Toevoegen... Stoppen</value>
@@ -71,40 +71,40 @@
     <value>Verwijderen</value>
   </data>
   <data name="ImageEffectOptionsPanel_Effect_options" xml:space="preserve">
-    <value>Effect options</value>
+    <value>Effectopties</value>
   </data>
   <data name="ImageEffectOptionsPanel_Effect_options_format" xml:space="preserve">
-    <value>{0} options</value>
+    <value>Opties voor {0}</value>
   </data>
   <data name="ImageEffectOptionsPanel_Select_an_effect" xml:space="preserve">
-    <value>Select an effect to edit its options.</value>
+    <value>Selecteer een effect om de opties ervan te bewerken.</value>
   </data>
   <data name="ImageEffectOptionsPanel_No_configurable_properties" xml:space="preserve">
-    <value>This effect has no configurable properties.</value>
+    <value>Dit effect heeft geen configureerbare eigenschappen.</value>
   </data>
   <data name="ImageEffectOptionsPanel_Edit_gradient" xml:space="preserve">
-    <value>Edit gradient...</value>
+    <value>Kleurverloop bewerken...</value>
   </data>
   <data name="ImageEffectOptionsPanel_Browse" xml:space="preserve">
     <value>Bladeren...</value>
   </data>
   <data name="ImageEffectOptionsPanel_Select_property" xml:space="preserve">
-    <value>Select {0}</value>
+    <value>{0} selecteren</value>
   </data>
   <data name="ImageEffectOptionsPanel_Left_short" xml:space="preserve">
     <value>L</value>
   </data>
   <data name="ImageEffectOptionsPanel_Top_short" xml:space="preserve">
-    <value>T</value>
+    <value>B</value>
   </data>
   <data name="ImageEffectOptionsPanel_Right_short" xml:space="preserve">
     <value>R</value>
   </data>
   <data name="ImageEffectOptionsPanel_Bottom_short" xml:space="preserve">
-    <value>B</value>
+    <value>O</value>
   </data>
   <data name="ImageEffectOptionsPanel_Width_short" xml:space="preserve">
-    <value>W</value>
+    <value>B</value>
   </data>
   <data name="ImageEffectOptionsPanel_Height_short" xml:space="preserve">
     <value>H</value>
@@ -116,52 +116,52 @@
     <value>Y:</value>
   </data>
   <data name="ImageEffectPackagerWindow_Title" xml:space="preserve">
-    <value>ShareX - Package image effect</value>
+    <value>ShareX - Afbeeldingseffect verpakken</value>
   </data>
   <data name="ImageEffectPackagerWindow_Package_preset" xml:space="preserve">
-    <value>Package preset</value>
+    <value>Voorinstelling verpakken</value>
   </data>
   <data name="ImageEffectPackagerWindow_Assets_folder" xml:space="preserve">
-    <value>Assets folder</value>
+    <value>Bronbestandenmap</value>
   </data>
   <data name="ImageEffectPackagerWindow_Package_file" xml:space="preserve">
-    <value>Package file</value>
+    <value>Pakketbestand</value>
   </data>
   <data name="ImageEffectPackagerWindow_Browse" xml:space="preserve">
     <value>Bladeren...</value>
   </data>
   <data name="ImageEffectPackagerWindow_Overwrite_existing" xml:space="preserve">
-    <value>Overwrite an existing package</value>
+    <value>Bestaand pakket overschrijven</value>
   </data>
   <data name="ImageEffectPackagerWindow_Open_effects_folder" xml:space="preserve">
     <value>Openen Effecten Map</value>
   </data>
   <data name="ImageEffectPackagerWindow_Create_package" xml:space="preserve">
-    <value>Create package</value>
+    <value>Pakket maken</value>
   </data>
   <data name="ImageEffectPackagerWindow_Close" xml:space="preserve">
     <value>Sluiten</value>
   </data>
   <data name="ImageEffectPackagerWindow_Select_assets_folder" xml:space="preserve">
-    <value>Select effect assets folder</value>
+    <value>Map met effectbronnen selecteren</value>
   </data>
   <data name="ImageEffectPackagerWindow_Save_package" xml:space="preserve">
-    <value>Save image effect package</value>
+    <value>Pakket met afbeeldingseffecten opslaan</value>
   </data>
   <data name="ImageEffectPackagerWindow_File_type" xml:space="preserve">
-    <value>ShareX image effect</value>
+    <value>ShareX-afbeeldingseffect</value>
   </data>
   <data name="ImageEffectPackagerWindow_Assets_must_be_inside" xml:space="preserve">
-    <value>The assets folder must be inside the ShareX image effects folder.</value>
+    <value>De bronbestandenmap moet zich in de ShareX-map met afbeeldingseffecten bevinden.</value>
   </data>
   <data name="ImageEffectPackagerWindow_Choose_package_path" xml:space="preserve">
-    <value>Choose a package file path.</value>
+    <value>Kies een pad voor het pakketbestand.</value>
   </data>
   <data name="ImageEffectPackagerWindow_Already_exists" xml:space="preserve">
-    <value>A package already exists at this path. Enable overwrite to replace it.</value>
+    <value>Er bestaat al een pakket op dit pad. Schakel overschrijven in om het te vervangen.</value>
   </data>
   <data name="ImageEffectPackagerWindow_Created_successfully" xml:space="preserve">
-    <value>Package created successfully.</value>
+    <value>Pakket is gemaakt.</value>
   </data>
   <data name="ImageEffectsConfirmationWindow_Title" xml:space="preserve">
     <value>ShareX - Bevestiging</value>
@@ -176,13 +176,13 @@
     <value>Nee</value>
   </data>
   <data name="ImageEffectsWindow_Title" xml:space="preserve">
-    <value>ShareX - Image effects</value>
+    <value>ShareX - Afbeeldingseffecten</value>
   </data>
   <data name="ImageEffectsWindow_Title_with_preview" xml:space="preserve">
     <value>{0} - {1} × {2} - {3} ms</value>
   </data>
   <data name="ImageEffectsWindow_Presets" xml:space="preserve">
-    <value>Presets</value>
+    <value>Voorinstellingen</value>
   </data>
   <data name="ImageEffectsWindow_New_preset" xml:space="preserve">
     <value>Nieuw Voorinstelling</value>
@@ -209,16 +209,16 @@
     <value>Vernieuwen Voorbeeld...</value>
   </data>
   <data name="ImageEffectsWindow_Custom_effect_name" xml:space="preserve">
-    <value>Custom effect name</value>
+    <value>Aangepaste effectnaam</value>
   </data>
   <data name="ImageEffectsWindow_Add_effect" xml:space="preserve">
-    <value>Add effect</value>
+    <value>Effect toevoegen</value>
   </data>
   <data name="ImageEffectsWindow_Remove_effect" xml:space="preserve">
-    <value>Remove effect</value>
+    <value>Effect verwijderen</value>
   </data>
   <data name="ImageEffectsWindow_Duplicate_effect" xml:space="preserve">
-    <value>Duplicate effect</value>
+    <value>Effect dupliceren</value>
   </data>
   <data name="ImageEffectsWindow_Clear_effects" xml:space="preserve">
     <value>Wissen Effecten</value>
@@ -230,13 +230,13 @@
     <value>Laden Van het klembord</value>
   </data>
   <data name="ImageEffectsWindow_Package_preset" xml:space="preserve">
-    <value>Package preset...</value>
+    <value>Voorinstelling verpakken...</value>
   </data>
   <data name="ImageEffectsWindow_Image_effects_page" xml:space="preserve">
-    <value>Image effects page...</value>
+    <value>Pagina met afbeeldingseffecten...</value>
   </data>
   <data name="ImageEffectsWindow_Save_image" xml:space="preserve">
-    <value>Save image...</value>
+    <value>Afbeelding opslaan...</value>
   </data>
   <data name="ImageEffectsWindow_Upload_image" xml:space="preserve">
     <value>Uploaden Afbeelding</value>
@@ -251,25 +251,25 @@
     <value>Sluiten</value>
   </data>
   <data name="ImageEffectsWindow_Unnamed_preset" xml:space="preserve">
-    <value>Unnamed preset</value>
+    <value>Naamloze voorinstelling</value>
   </data>
   <data name="ImageEffectsWindow_Enter_preset_name" xml:space="preserve">
-    <value>Enter a preset name before creating a package.</value>
+    <value>Voer een naam voor de voorinstelling in voordat u een pakket maakt.</value>
   </data>
   <data name="ImageEffectsWindow_Clear_confirmation" xml:space="preserve">
-    <value>Clear all effects from the selected preset?</value>
+    <value>Alle effecten uit de geselecteerde voorinstelling wissen?</value>
   </data>
   <data name="ImageEffectsWindow_Preview_name" xml:space="preserve">
     <value>Afbeeldingseffecten Voorbeeld...</value>
   </data>
   <data name="ImageEffectCategory_Drawings" xml:space="preserve">
-    <value>Drawings</value>
+    <value>Tekeningen</value>
   </data>
   <data name="ImageEffectCategory_Manipulations" xml:space="preserve">
-    <value>Manipulations</value>
+    <value>Manipulaties</value>
   </data>
   <data name="ImageEffectCategory_Adjustments" xml:space="preserve">
-    <value>Adjustments</value>
+    <value>Aanpassingen</value>
   </data>
   <data name="ImageEffectCategory_Filters" xml:space="preserve">
     <value>Filters</value>
@@ -278,24 +278,24 @@
     <value>Tekst</value>
   </data>
   <data name="ImageEffectDefault_Text_watermark" xml:space="preserve">
-    <value>Text watermark</value>
+    <value>Tekstwatermerk</value>
   </data>
   <data name="ImageEffect_Alpha" xml:space="preserve">
     <value>Alfa</value>
   </data>
   <data name="ImageEffectPropertyDescription_Alpha_Value" xml:space="preserve">
-    <value>Pixel alpha = Pixel alpha * Value
-Example 0.5 will decrease alpha of pixel 50%</value>
+    <value>Pixelalpha = Pixelalpha * Waarde
+Voorbeeld: 0,5 verlaagt de alpha van de pixel met 50%</value>
   </data>
   <data name="ImageEffectPropertyDescription_Alpha_Addition" xml:space="preserve">
-    <value>Pixel alpha = Pixel alpha + Addition
-Example 0.5 will increase alpha of pixel 127.5</value>
+    <value>Pixelalpha = Pixelalpha + Optelling
+Voorbeeld: 0,5 verhoogt de alpha van de pixel met 127,5</value>
   </data>
   <data name="ImageEffect_AutoCrop" xml:space="preserve">
     <value>Automatisch Bijsnijden</value>
   </data>
   <data name="ImageEffect_BlackWhite" xml:space="preserve">
-    <value>Black &amp; white</value>
+    <value>Zwart-wit</value>
   </data>
   <data name="ImageEffect_Blur" xml:space="preserve">
     <value>Vervagen</value>
@@ -304,27 +304,27 @@ Example 0.5 will increase alpha of pixel 127.5</value>
     <value>Helderheid</value>
   </data>
   <data name="ImageEffectPropertyDescription_Brightness_Value" xml:space="preserve">
-    <value>Pixel color = Pixel color + Value
-Example 0.5 will increase color of pixel 127.5</value>
+    <value>Pixelkleur = Pixelkleur + Waarde
+Voorbeeld: 0,5 verhoogt de kleur van de pixel met 127,5</value>
   </data>
   <data name="ImageEffect_Canvas" xml:space="preserve">
     <value>Canvas</value>
   </data>
   <data name="ImageEffectPropertyDescription_Canvas_MarginMode" xml:space="preserve">
-    <value>How the margin around the canvas will be calculated.</value>
+    <value>Bepaalt hoe de marge rond het canvas wordt berekend.</value>
   </data>
   <data name="ImageEffect_ColorDepth" xml:space="preserve">
-    <value>Color depth</value>
+    <value>Kleurdiepte</value>
   </data>
   <data name="ImageEffect_Colorize" xml:space="preserve">
-    <value>Colorize</value>
+    <value>Inkleuren</value>
   </data>
   <data name="ImageEffect_Contrast" xml:space="preserve">
     <value>Contrast</value>
   </data>
   <data name="ImageEffectPropertyDescription_Contrast_Value" xml:space="preserve">
-    <value>Pixel color = Pixel color * Value
-Example 1.5 will increase color of pixel 50%</value>
+    <value>Pixelkleur = Pixelkleur * Waarde
+Voorbeeld: 1,5 verhoogt de kleur van de pixel met 50%</value>
   </data>
   <data name="ImageEffect_Crop" xml:space="preserve">
     <value>Bijsnijden</value>
@@ -336,7 +336,7 @@ Example 1.5 will increase color of pixel 50%</value>
     <value>Achtergrondafbeelding</value>
   </data>
   <data name="ImageEffect_DrawBorder" xml:space="preserve">
-    <value>Border</value>
+    <value>Rand</value>
   </data>
   <data name="ImageEffect_DrawCheckerboard" xml:space="preserve">
     <value>Dambord</value>
@@ -345,49 +345,49 @@ Example 1.5 will increase color of pixel 50%</value>
     <value>Afbeelding</value>
   </data>
   <data name="ImageEffectPropertyDescription_DrawImage_SizeMode" xml:space="preserve">
-    <value>How the image watermark should be rescaled, if at all.</value>
+    <value>Bepaalt hoe het afbeeldingswatermerk zo nodig wordt geschaald.</value>
   </data>
   <data name="ImageEffectPropertyDescription_DrawImage_AutoHide" xml:space="preserve">
-    <value>If image watermark size bigger than source image then don't draw it.</value>
+    <value>Teken het afbeeldingswatermerk niet als het groter is dan de bronafbeelding.</value>
   </data>
   <data name="ImageEffect_DrawParticles" xml:space="preserve">
-    <value>Particles</value>
+    <value>Deeltjes</value>
   </data>
   <data name="ImageEffect_DrawText" xml:space="preserve">
-    <value>Text watermark</value>
+    <value>Tekstwatermerk</value>
   </data>
   <data name="ImageEffectPropertyDescription_DrawText_AutoHide" xml:space="preserve">
-    <value>If text watermark size bigger than source image then don't draw it.</value>
+    <value>Teken het tekstwatermerk niet als het groter is dan de bronafbeelding.</value>
   </data>
   <data name="ImageEffect_DrawTextEx" xml:space="preserve">
     <value>Tekst</value>
   </data>
   <data name="ImageEffectPropertyDescription_DrawTextEx_AutoHide" xml:space="preserve">
-    <value>If text size bigger than source image then don't draw it.</value>
+    <value>Teken de tekst niet als deze groter is dan de bronafbeelding.</value>
   </data>
   <data name="ImageEffect_EdgeDetect" xml:space="preserve">
-    <value>Edge detect</value>
+    <value>Randdetectie</value>
   </data>
   <data name="ImageEffect_Emboss" xml:space="preserve">
-    <value>Emboss</value>
+    <value>Reliëf</value>
   </data>
   <data name="ImageEffect_Flip" xml:space="preserve">
-    <value>Flip</value>
+    <value>Spiegelen</value>
   </data>
   <data name="ImageEffect_ForceProportions" xml:space="preserve">
-    <value>Force proportions</value>
+    <value>Verhoudingen afdwingen</value>
   </data>
   <data name="ImageEffect_Gamma" xml:space="preserve">
     <value>Gamma</value>
   </data>
   <data name="ImageEffectPropertyDescription_Gamma_Value" xml:space="preserve">
-    <value>Min 0.1, Max 5.0</value>
+    <value>Minimum 0,1, maximum 5,0</value>
   </data>
   <data name="ImageEffect_GaussianBlur" xml:space="preserve">
-    <value>Gaussian blur</value>
+    <value>Gaussiaans vervagen</value>
   </data>
   <data name="ImageEffect_Glow" xml:space="preserve">
-    <value>Glow</value>
+    <value>Gloed</value>
   </data>
   <data name="ImageEffect_Grayscale" xml:space="preserve">
     <value>Grijswaarden</value>
@@ -396,25 +396,25 @@ Example 1.5 will increase color of pixel 50%</value>
     <value>Tint</value>
   </data>
   <data name="ImageEffectPropertyDescription_Hue_Angle" xml:space="preserve">
-    <value>From 0 to 360</value>
+    <value>Van 0 tot 360</value>
   </data>
   <data name="ImageEffect_Inverse" xml:space="preserve">
-    <value>Inverse</value>
+    <value>Omkeren</value>
   </data>
   <data name="ImageEffect_MatrixColor" xml:space="preserve">
-    <value>Color matrix</value>
+    <value>Kleurmatrix</value>
   </data>
   <data name="ImageEffectPropertyDescription_MatrixColor_Rr" xml:space="preserve">
-    <value>Red = (Red * Rr) + (Green * Rg) + (Blue * Rb) + (Alpha * Ra) + Ro</value>
+    <value>Rood = (Rood * Rr) + (Groen * Rg) + (Blauw * Rb) + (Alpha * Ra) + Ro</value>
   </data>
   <data name="ImageEffect_MatrixConvolution" xml:space="preserve">
-    <value>Convolution matrix</value>
+    <value>Convolutiematrix</value>
   </data>
   <data name="ImageEffect_MeanRemoval" xml:space="preserve">
-    <value>Mean removal</value>
+    <value>Gemiddelde verwijderen</value>
   </data>
   <data name="ImageEffect_Outline" xml:space="preserve">
-    <value>Outline</value>
+    <value>Omtrek</value>
   </data>
   <data name="ImageEffect_Pixelate" xml:space="preserve">
     <value>Pixeliseren</value>
@@ -423,73 +423,73 @@ Example 1.5 will increase color of pixel 50%</value>
     <value>Polaroid</value>
   </data>
   <data name="ImageEffect_Reflection" xml:space="preserve">
-    <value>Reflection</value>
+    <value>Reflectie</value>
   </data>
   <data name="ImageEffectPropertyDescription_Reflection_Percentage" xml:space="preserve">
-    <value>Reflection height size relative to screenshot height.
-Value need to be between 1 to 100.</value>
+    <value>Hoogte van de reflectie ten opzichte van de hoogte van de schermafbeelding.
+De waarde moet tussen 1 en 100 liggen.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Reflection_MaxAlpha" xml:space="preserve">
-    <value>Reflection transparency start from this value to MinAlpha.
-Value need to be between 0 to 255.</value>
+    <value>De transparantie van de reflectie loopt van deze waarde naar MinAlpha.
+De waarde moet tussen 0 en 255 liggen.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Reflection_MinAlpha" xml:space="preserve">
-    <value>Reflection transparency start from MaxAlpha to this value.
-Value need to be between 0 to 255.</value>
+    <value>De transparantie van de reflectie loopt van MaxAlpha naar deze waarde.
+De waarde moet tussen 0 en 255 liggen.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Reflection_Offset" xml:space="preserve">
-    <value>Reflection start position will be: Screenshot height + Offset</value>
+    <value>Beginpositie van de reflectie: hoogte van schermafbeelding + verschuiving</value>
   </data>
   <data name="ImageEffectPropertyDescription_Reflection_Skew" xml:space="preserve">
-    <value>Adding skew to reflection from bottom left to bottom right.</value>
+    <value>Voegt een scheeftrekking aan de reflectie toe van linksonder naar rechtsonder.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Reflection_SkewSize" xml:space="preserve">
-    <value>How much pixel skew left to right.</value>
+    <value>Hoeveelheid pixelscheeftrekking van links naar rechts.</value>
   </data>
   <data name="ImageEffect_ReplaceColor" xml:space="preserve">
-    <value>Replace color</value>
+    <value>Kleur vervangen</value>
   </data>
   <data name="ImageEffect_Resize" xml:space="preserve">
-    <value>Resize</value>
+    <value>Formaat wijzigen</value>
   </data>
   <data name="ImageEffectPropertyDescription_Resize_Width" xml:space="preserve">
-    <value>Use width as 0 to automatically adjust width to maintain aspect ratio.</value>
+    <value>Gebruik breedte 0 om de breedte automatisch aan te passen met behoud van de hoogte-breedteverhouding.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Resize_Height" xml:space="preserve">
-    <value>Use height as 0 to automatically adjust height to maintain aspect ratio.</value>
+    <value>Gebruik hoogte 0 om de hoogte automatisch aan te passen met behoud van de hoogte-breedteverhouding.</value>
   </data>
   <data name="ImageEffect_RGBSplit" xml:space="preserve">
-    <value>RGB split</value>
+    <value>RGB-splitsing</value>
   </data>
   <data name="ImageEffect_Rotate" xml:space="preserve">
-    <value>Rotate</value>
+    <value>Draaien</value>
   </data>
   <data name="ImageEffectPropertyDescription_Rotate_Angle" xml:space="preserve">
-    <value>Choose a value between -360 and 360.</value>
+    <value>Kies een waarde tussen -360 en 360.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Rotate_Upsize" xml:space="preserve">
-    <value>If true, output image will be larger than the input and no clipping will occur.</value>
+    <value>Indien ingeschakeld, wordt de uitvoerafbeelding groter dan de invoer en wordt deze niet bijgesneden.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Rotate_Clip" xml:space="preserve">
-    <value>Upsize must be false for this setting to work. If true, clipping will occur or else image size will be reduced.</value>
+    <value>‘Vergroten’ moet uitgeschakeld zijn om deze instelling te laten werken. Indien ingeschakeld, wordt de afbeelding bijgesneden; anders wordt het afbeeldingsformaat verkleind.</value>
   </data>
   <data name="ImageEffect_RoundedCorners" xml:space="preserve">
-    <value>Rounded corners</value>
+    <value>Afgeronde hoeken</value>
   </data>
   <data name="ImageEffect_Saturation" xml:space="preserve">
     <value>Verzadiging</value>
   </data>
   <data name="ImageEffect_Scale" xml:space="preserve">
-    <value>Scale</value>
+    <value>Schalen</value>
   </data>
   <data name="ImageEffectPropertyDescription_Scale_WidthPercentage" xml:space="preserve">
-    <value>Use width percentage as 0 to maintain aspect ratio by automatically adjusting width.</value>
+    <value>Gebruik breedtepercentage 0 om de hoogte-breedteverhouding te behouden door de breedte automatisch aan te passen.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Scale_HeightPercentage" xml:space="preserve">
-    <value>Use height percentage as 0 to maintain aspect ratio by automatically adjusting height.</value>
+    <value>Gebruik hoogtepercentage 0 om de hoogte-breedteverhouding te behouden door de hoogte automatisch aan te passen.</value>
   </data>
   <data name="ImageEffect_SelectiveColor" xml:space="preserve">
-    <value>Selective color</value>
+    <value>Selectieve kleur</value>
   </data>
   <data name="ImageEffect_Sepia" xml:space="preserve">
     <value>Sepia</value>
@@ -498,31 +498,31 @@ Value need to be between 0 to 255.</value>
     <value>Schaduw</value>
   </data>
   <data name="ImageEffectPropertyDescription_Shadow_Opacity" xml:space="preserve">
-    <value>Choose a value between 0.1 and 1.0</value>
+    <value>Kies een waarde tussen 0,1 en 1,0</value>
   </data>
   <data name="ImageEffect_Sharpen" xml:space="preserve">
-    <value>Sharpen</value>
+    <value>Verscherpen</value>
   </data>
   <data name="ImageEffect_Skew" xml:space="preserve">
-    <value>Skew</value>
+    <value>Scheeftrekken</value>
   </data>
   <data name="ImageEffectPropertyDescription_Skew_Horizontally" xml:space="preserve">
-    <value>How much pixel skew left to right.</value>
+    <value>Hoeveelheid pixelscheeftrekking van links naar rechts.</value>
   </data>
   <data name="ImageEffectPropertyDescription_Skew_Vertically" xml:space="preserve">
-    <value>How much pixel skew top to bottom.</value>
+    <value>Hoeveelheid pixelscheeftrekking van boven naar beneden.</value>
   </data>
   <data name="ImageEffect_Slice" xml:space="preserve">
-    <value>Slice</value>
+    <value>Segmenteren</value>
   </data>
   <data name="ImageEffect_Smooth" xml:space="preserve">
-    <value>Smooth</value>
+    <value>Vloeiend maken</value>
   </data>
   <data name="ImageEffect_TornEdge" xml:space="preserve">
-    <value>Torn edge</value>
+    <value>Gescheurde rand</value>
   </data>
   <data name="ImageEffect_WaveEdge" xml:space="preserve">
-    <value>Wave edge</value>
+    <value>Golvende rand</value>
   </data>
   <data name="ImageEffectProperty_Aa" xml:space="preserve">
     <value>Aa</value>
@@ -531,7 +531,7 @@ Value need to be between 0 to 255.</value>
     <value>Ab</value>
   </data>
   <data name="ImageEffectProperty_Addition" xml:space="preserve">
-    <value>Addition</value>
+    <value>Optelling</value>
   </data>
   <data name="ImageEffectProperty_Ag" xml:space="preserve">
     <value>Ag</value>
@@ -546,13 +546,13 @@ Value need to be between 0 to 255.</value>
     <value>Ar</value>
   </data>
   <data name="ImageEffectProperty_AutoHide" xml:space="preserve">
-    <value>Auto hide</value>
+    <value>Automatisch verbergen</value>
   </data>
   <data name="ImageEffectProperty_AutoResize" xml:space="preserve">
-    <value>Auto resize</value>
+    <value>Automatisch schalen</value>
   </data>
   <data name="ImageEffectProperty_AutoSourceColor" xml:space="preserve">
-    <value>Auto source color</value>
+    <value>Automatische bronkleur</value>
   </data>
   <data name="ImageEffectProperty_Ba" xml:space="preserve">
     <value>Ba</value>
@@ -570,7 +570,7 @@ Value need to be between 0 to 255.</value>
     <value>Bg</value>
   </data>
   <data name="ImageEffectProperty_BitsPerChannel" xml:space="preserve">
-    <value>Bits per channel</value>
+    <value>Bits per kanaal</value>
   </data>
   <data name="ImageEffectProperty_Bo" xml:space="preserve">
     <value>Bo</value>
@@ -588,46 +588,46 @@ Value need to be between 0 to 255.</value>
     <value>Midden</value>
   </data>
   <data name="ImageEffectProperty_Clip" xml:space="preserve">
-    <value>Clip</value>
+    <value>Bijsnijden</value>
   </data>
   <data name="ImageEffectProperty_Color" xml:space="preserve">
     <value>Kleur</value>
   </data>
   <data name="ImageEffectProperty_Color2" xml:space="preserve">
-    <value>Color 2</value>
+    <value>Kleur 2</value>
   </data>
   <data name="ImageEffectProperty_CompositingMode" xml:space="preserve">
-    <value>Compositing mode</value>
+    <value>Compositiemodus</value>
   </data>
   <data name="ImageEffectProperty_CornerRadius" xml:space="preserve">
     <value>Hoekstraal</value>
   </data>
   <data name="ImageEffectProperty_CurvedEdges" xml:space="preserve">
-    <value>Curved edges</value>
+    <value>Gebogen randen</value>
   </data>
   <data name="ImageEffectProperty_DarkColor" xml:space="preserve">
     <value>Donker Kleur</value>
   </data>
   <data name="ImageEffectProperty_Darkness" xml:space="preserve">
-    <value>Darkness</value>
+    <value>Donkerte</value>
   </data>
   <data name="ImageEffectProperty_DashStyle" xml:space="preserve">
-    <value>Dash style</value>
+    <value>Streepstijl</value>
   </data>
   <data name="ImageEffectProperty_Depth" xml:space="preserve">
-    <value>Depth</value>
+    <value>Diepte</value>
   </data>
   <data name="ImageEffectProperty_DrawBackground" xml:space="preserve">
-    <value>Draw background</value>
+    <value>Achtergrond tekenen</value>
   </data>
   <data name="ImageEffectProperty_DrawBorder" xml:space="preserve">
-    <value>Draw border</value>
+    <value>Rand tekenen</value>
   </data>
   <data name="ImageEffectProperty_DrawTextShadow" xml:space="preserve">
-    <value>Draw text shadow</value>
+    <value>Tekstschaduw tekenen</value>
   </data>
   <data name="ImageEffectProperty_EdgeOverlap" xml:space="preserve">
-    <value>Edge overlap</value>
+    <value>Randoverlap</value>
   </data>
   <data name="ImageEffectProperty_Factor" xml:space="preserve">
     <value>Factor</value>
@@ -654,13 +654,13 @@ Value need to be between 0 to 255.</value>
     <value>Verloop</value>
   </data>
   <data name="ImageEffectProperty_GrowFillColor" xml:space="preserve">
-    <value>Grow fill color</value>
+    <value>Opvulkleur bij vergroten</value>
   </data>
   <data name="ImageEffectProperty_Height" xml:space="preserve">
     <value>Hoogte</value>
   </data>
   <data name="ImageEffectProperty_HeightPercentage" xml:space="preserve">
-    <value>Height percentage</value>
+    <value>Hoogtepercentage</value>
   </data>
   <data name="ImageEffectProperty_Horizontally" xml:space="preserve">
     <value>Horizontaal</value>
@@ -675,7 +675,7 @@ Value need to be between 0 to 255.</value>
     <value>Afbeelding Map</value>
   </data>
   <data name="ImageEffectProperty_ImageLocation" xml:space="preserve">
-    <value>Image location</value>
+    <value>Afbeeldingspositie</value>
   </data>
   <data name="ImageEffectProperty_InterpolationMode" xml:space="preserve">
     <value>Interpolation modus:</value>
@@ -687,76 +687,76 @@ Value need to be between 0 to 255.</value>
     <value>Marge</value>
   </data>
   <data name="ImageEffectProperty_MarginMode" xml:space="preserve">
-    <value>Margin mode</value>
+    <value>Margemodus</value>
   </data>
   <data name="ImageEffectProperty_MaxAlpha" xml:space="preserve">
-    <value>Max alpha</value>
+    <value>Maximale alpha</value>
   </data>
   <data name="ImageEffectProperty_MaxSliceHeight" xml:space="preserve">
-    <value>Max slice height</value>
+    <value>Maximale segmenthoogte</value>
   </data>
   <data name="ImageEffectProperty_MaxSliceShift" xml:space="preserve">
-    <value>Max slice shift</value>
+    <value>Maximale segmentverschuiving</value>
   </data>
   <data name="ImageEffectProperty_Method" xml:space="preserve">
     <value>Methode</value>
   </data>
   <data name="ImageEffectProperty_MinAlpha" xml:space="preserve">
-    <value>Min alpha</value>
+    <value>Minimale alpha</value>
   </data>
   <data name="ImageEffectProperty_MinSliceHeight" xml:space="preserve">
-    <value>Min slice height</value>
+    <value>Minimale segmenthoogte</value>
   </data>
   <data name="ImageEffectProperty_MinSliceShift" xml:space="preserve">
-    <value>Min slice shift</value>
+    <value>Minimale segmentverschuiving</value>
   </data>
   <data name="ImageEffectProperty_Mode" xml:space="preserve">
-    <value>Mode</value>
+    <value>Modus</value>
   </data>
   <data name="ImageEffectProperty_NoOverlap" xml:space="preserve">
-    <value>No overlap</value>
+    <value>Geen overlap</value>
   </data>
   <data name="ImageEffectProperty_NoOverlapOffset" xml:space="preserve">
-    <value>No overlap offset</value>
+    <value>Verschuiving zonder overlap</value>
   </data>
   <data name="ImageEffectProperty_Offset" xml:space="preserve">
-    <value>Offset</value>
+    <value>Verschuiving</value>
   </data>
   <data name="ImageEffectProperty_OffsetBlue" xml:space="preserve">
-    <value>Offset blue</value>
+    <value>Blauwverschuiving</value>
   </data>
   <data name="ImageEffectProperty_OffsetGreen" xml:space="preserve">
-    <value>Offset green</value>
+    <value>Groenverschuiving</value>
   </data>
   <data name="ImageEffectProperty_OffsetRed" xml:space="preserve">
-    <value>Offset red</value>
+    <value>Roodverschuiving</value>
   </data>
   <data name="ImageEffectProperty_Opacity" xml:space="preserve">
     <value>Dekking</value>
   </data>
   <data name="ImageEffectProperty_Outline" xml:space="preserve">
-    <value>Outline</value>
+    <value>Omtrek</value>
   </data>
   <data name="ImageEffectProperty_OutlineColor" xml:space="preserve">
-    <value>Outline color</value>
+    <value>Omtrekkleur</value>
   </data>
   <data name="ImageEffectProperty_OutlineGradient" xml:space="preserve">
-    <value>Outline gradient</value>
+    <value>Omtrekverloop</value>
   </data>
   <data name="ImageEffectProperty_OutlineOnly" xml:space="preserve">
-    <value>Outline only</value>
+    <value>Alleen omtrek</value>
   </data>
   <data name="ImageEffectProperty_OutlineSize" xml:space="preserve">
-    <value>Outline size</value>
+    <value>Omtrekgrootte</value>
   </data>
   <data name="ImageEffectProperty_OutlineUseGradient" xml:space="preserve">
-    <value>Outline use gradient</value>
+    <value>Kleurverloop voor omtrek gebruiken</value>
   </data>
   <data name="ImageEffectProperty_Padding" xml:space="preserve">
     <value>Opvulling</value>
   </data>
   <data name="ImageEffectProperty_PaletteSize" xml:space="preserve">
-    <value>Palette size</value>
+    <value>Paletgrootte</value>
   </data>
   <data name="ImageEffectProperty_Percentage" xml:space="preserve">
     <value>Percentage</value>
@@ -765,46 +765,46 @@ Value need to be between 0 to 255.</value>
     <value>Plaatsing</value>
   </data>
   <data name="ImageEffectProperty_ProportionalHeight" xml:space="preserve">
-    <value>Proportional height</value>
+    <value>Proportionele hoogte</value>
   </data>
   <data name="ImageEffectProperty_ProportionalWidth" xml:space="preserve">
-    <value>Proportional width</value>
+    <value>Proportionele breedte</value>
   </data>
   <data name="ImageEffectProperty_Ra" xml:space="preserve">
     <value>Ra</value>
   </data>
   <data name="ImageEffectProperty_Radius" xml:space="preserve">
-    <value>Radius</value>
+    <value>Straal</value>
   </data>
   <data name="ImageEffectProperty_RandomAngle" xml:space="preserve">
     <value>Willekeurig Hoek</value>
   </data>
   <data name="ImageEffectProperty_RandomAngleMax" xml:space="preserve">
-    <value>Random angle max</value>
+    <value>Maximale willekeurige hoek</value>
   </data>
   <data name="ImageEffectProperty_RandomAngleMin" xml:space="preserve">
-    <value>Random angle min</value>
+    <value>Minimale willekeurige hoek</value>
   </data>
   <data name="ImageEffectProperty_RandomOpacity" xml:space="preserve">
     <value>Willekeurig Dekking</value>
   </data>
   <data name="ImageEffectProperty_RandomOpacityMax" xml:space="preserve">
-    <value>Random opacity max</value>
+    <value>Maximale willekeurige dekking</value>
   </data>
   <data name="ImageEffectProperty_RandomOpacityMin" xml:space="preserve">
-    <value>Random opacity min</value>
+    <value>Minimale willekeurige dekking</value>
   </data>
   <data name="ImageEffectProperty_RandomSize" xml:space="preserve">
     <value>Willekeurig Grootte:</value>
   </data>
   <data name="ImageEffectProperty_RandomSizeMax" xml:space="preserve">
-    <value>Random size max</value>
+    <value>Maximale willekeurige grootte</value>
   </data>
   <data name="ImageEffectProperty_RandomSizeMin" xml:space="preserve">
-    <value>Random size min</value>
+    <value>Minimale willekeurige grootte</value>
   </data>
   <data name="ImageEffectProperty_Range" xml:space="preserve">
-    <value>Range</value>
+    <value>Bereik</value>
   </data>
   <data name="ImageEffectProperty_Rb" xml:space="preserve">
     <value>Rb</value>
@@ -816,7 +816,7 @@ Value need to be between 0 to 255.</value>
     <value>Ro</value>
   </data>
   <data name="ImageEffectProperty_RotateFlip" xml:space="preserve">
-    <value>Rotate flip</value>
+    <value>Draaien en spiegelen</value>
   </data>
   <data name="ImageEffectProperty_Rr" xml:space="preserve">
     <value>Rr</value>
@@ -834,28 +834,28 @@ Value need to be between 0 to 255.</value>
     <value>Schaduwverschuiving:</value>
   </data>
   <data name="ImageEffectProperty_ShadowUseGradient" xml:space="preserve">
-    <value>Shadow use gradient</value>
+    <value>Kleurverloop voor schaduw gebruiken</value>
   </data>
   <data name="ImageEffectProperty_Sides" xml:space="preserve">
-    <value>Sides</value>
+    <value>Zijden</value>
   </data>
   <data name="ImageEffectProperty_Size" xml:space="preserve">
     <value>Grootte:</value>
   </data>
   <data name="ImageEffectProperty_SizeMode" xml:space="preserve">
-    <value>Size mode</value>
+    <value>Groottemodus</value>
   </data>
   <data name="ImageEffectProperty_Skew" xml:space="preserve">
-    <value>Skew</value>
+    <value>Scheeftrekking</value>
   </data>
   <data name="ImageEffectProperty_SkewSize" xml:space="preserve">
-    <value>Skew size</value>
+    <value>Grootte van scheeftrekking</value>
   </data>
   <data name="ImageEffectProperty_SourceColor" xml:space="preserve">
-    <value>Source color</value>
+    <value>Bronkleur</value>
   </data>
   <data name="ImageEffectProperty_Strength" xml:space="preserve">
-    <value>Strength</value>
+    <value>Sterkte</value>
   </data>
   <data name="ImageEffectProperty_TargetColor" xml:space="preserve">
     <value>Doel: Kleur</value>
@@ -870,7 +870,7 @@ Value need to be between 0 to 255.</value>
     <value>Tekst Font:</value>
   </data>
   <data name="ImageEffectProperty_TextRenderingMode" xml:space="preserve">
-    <value>Text rendering mode</value>
+    <value>Tekstweergavemodus</value>
   </data>
   <data name="ImageEffectProperty_TextShadowColor" xml:space="preserve">
     <value>Tekst Schaduwkleur</value>
@@ -879,19 +879,19 @@ Value need to be between 0 to 255.</value>
     <value>Tekst Schaduwverschuiving:</value>
   </data>
   <data name="ImageEffectProperty_Threshold" xml:space="preserve">
-    <value>Threshold</value>
+    <value>Drempelwaarde</value>
   </data>
   <data name="ImageEffectProperty_Tile" xml:space="preserve">
-    <value>Tile</value>
+    <value>Tegelen</value>
   </data>
   <data name="ImageEffectProperty_Type" xml:space="preserve">
     <value>Type</value>
   </data>
   <data name="ImageEffectProperty_Upsize" xml:space="preserve">
-    <value>Upsize</value>
+    <value>Vergroten</value>
   </data>
   <data name="ImageEffectProperty_UseGradient" xml:space="preserve">
-    <value>Use gradient</value>
+    <value>Kleurverloop gebruiken</value>
   </data>
   <data name="ImageEffectProperty_Value" xml:space="preserve">
     <value>Waarde</value>
@@ -903,55 +903,55 @@ Value need to be between 0 to 255.</value>
     <value>Breedte</value>
   </data>
   <data name="ImageEffectProperty_WidthPercentage" xml:space="preserve">
-    <value>Width percentage</value>
+    <value>Breedtepercentage</value>
   </data>
   <data name="ImageEffectProperty_X0Y0" xml:space="preserve">
-    <value>X 0 y 0</value>
+    <value>X 0 Y 0</value>
   </data>
   <data name="ImageEffectProperty_X0Y1" xml:space="preserve">
-    <value>X 0 y 1</value>
+    <value>X 0 Y 1</value>
   </data>
   <data name="ImageEffectProperty_X0Y2" xml:space="preserve">
-    <value>X 0 y 2</value>
+    <value>X 0 Y 2</value>
   </data>
   <data name="ImageEffectProperty_X1Y0" xml:space="preserve">
-    <value>X 1 y 0</value>
+    <value>X 1 Y 0</value>
   </data>
   <data name="ImageEffectProperty_X1Y1" xml:space="preserve">
-    <value>X 1 y 1</value>
+    <value>X 1 Y 1</value>
   </data>
   <data name="ImageEffectProperty_X1Y2" xml:space="preserve">
-    <value>X 1 y 2</value>
+    <value>X 1 Y 2</value>
   </data>
   <data name="ImageEffectProperty_X2Y0" xml:space="preserve">
-    <value>X 2 y 0</value>
+    <value>X 2 Y 0</value>
   </data>
   <data name="ImageEffectProperty_X2Y1" xml:space="preserve">
-    <value>X 2 y 1</value>
+    <value>X 2 Y 1</value>
   </data>
   <data name="ImageEffectProperty_X2Y2" xml:space="preserve">
-    <value>X 2 y 2</value>
+    <value>X 2 Y 2</value>
   </data>
   <data name="ImageEffectEnum_BorderType_Outside" xml:space="preserve">
-    <value>Outside</value>
+    <value>Buiten</value>
   </data>
   <data name="ImageEffectEnum_BorderType_Inside" xml:space="preserve">
-    <value>Inside</value>
+    <value>Binnen</value>
   </data>
   <data name="ImageEffectEnum_ImageInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>High quality bicubic</value>
+    <value>Bicubisch van hoge kwaliteit</value>
   </data>
   <data name="ImageEffectEnum_ImageInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Bicubic</value>
+    <value>Bicubisch</value>
   </data>
   <data name="ImageEffectEnum_ImageInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>High quality bilinear</value>
+    <value>Bilineair van hoge kwaliteit</value>
   </data>
   <data name="ImageEffectEnum_ImageInterpolationMode_Bilinear" xml:space="preserve">
     <value>Bilinear</value>
   </data>
   <data name="ImageEffectEnum_ImageInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Nearest neighbor</value>
+    <value>Dichtstbijzijnde buur</value>
   </data>
   <data name="ImageEffectEnum_CanvasMarginMode_AbsoluteSize" xml:space="preserve">
     <value>Absolute grootte</value>
@@ -966,13 +966,13 @@ Value need to be between 0 to 255.</value>
     <value>Absolute grootte</value>
   </data>
   <data name="ImageEffectEnum_DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
-    <value>Percentage of watermark</value>
+    <value>Percentage van watermerk</value>
   </data>
   <data name="ImageEffectEnum_DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
     <value>Percentage van canvas</value>
   </data>
   <data name="ImageEffectEnum_ForceProportionsMethod_Grow" xml:space="preserve">
-    <value>Grow</value>
+    <value>Vergroten</value>
   </data>
   <data name="ImageEffectEnum_ForceProportionsMethod_Crop" xml:space="preserve">
     <value>Bijsnijden</value>
@@ -981,34 +981,34 @@ Value need to be between 0 to 255.</value>
     <value>Geen</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_Rotate90" xml:space="preserve">
-    <value>Rotate 90</value>
+    <value>90° draaien</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_Rotate180" xml:space="preserve">
     <value>Rotate 180°</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_Rotate270" xml:space="preserve">
-    <value>Rotate 270</value>
+    <value>270° draaien</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_FlipX" xml:space="preserve">
-    <value>Flip x</value>
+    <value>Horizontaal spiegelen</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_Rotate90FlipX" xml:space="preserve">
-    <value>Rotate 90 flip x</value>
+    <value>90° draaien en horizontaal spiegelen</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_FlipY" xml:space="preserve">
-    <value>Flip y</value>
+    <value>Verticaal spiegelen</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_Rotate90FlipY" xml:space="preserve">
-    <value>Rotate 90 flip y</value>
+    <value>90° draaien en verticaal spiegelen</value>
   </data>
   <data name="ImageEffectEnum_ResizeMode_ResizeAll" xml:space="preserve">
-    <value>Resizes all images to the specified size.</value>
+    <value>Wijzigt alle afbeeldingen naar het opgegeven formaat.</value>
   </data>
   <data name="ImageEffectEnum_ResizeMode_ResizeIfBigger" xml:space="preserve">
-    <value>Only resize image if it is bigger than specified size.</value>
+    <value>Wijzigt het afbeeldingsformaat alleen als de afbeelding groter is dan het opgegeven formaat.</value>
   </data>
   <data name="ImageEffectEnum_ResizeMode_ResizeIfSmaller" xml:space="preserve">
-    <value>Only resize image if it is smaller than specified size.</value>
+    <value>Wijzigt het afbeeldingsformaat alleen als de afbeelding kleiner is dan het opgegeven formaat.</value>
   </data>
   <data name="ImageEffectEnum_ContentAlignment_TopLeft" xml:space="preserve">
     <value>Linksboven</value>
@@ -1038,10 +1038,10 @@ Value need to be between 0 to 255.</value>
     <value>Rechtsonder</value>
   </data>
   <data name="ImageEffectEnum_CompositingMode_SourceOver" xml:space="preserve">
-    <value>Source over</value>
+    <value>Bron erboven</value>
   </data>
   <data name="ImageEffectEnum_CompositingMode_SourceCopy" xml:space="preserve">
-    <value>Source copy</value>
+    <value>Bron kopiëren</value>
   </data>
   <data name="ImageEffectEnum_DashStyle_Solid" xml:space="preserve">
     <value>Doorgetrokken</value>
@@ -1074,22 +1074,22 @@ Value need to be between 0 to 255.</value>
     <value>Achterwaartse diagonaal</value>
   </data>
   <data name="ImageEffectEnum_TextRenderingHint_SystemDefault" xml:space="preserve">
-    <value>System default</value>
+    <value>Systeemstandaard</value>
   </data>
   <data name="ImageEffectEnum_TextRenderingHint_SingleBitPerPixelGridFit" xml:space="preserve">
-    <value>Single bit per pixel grid fit</value>
+    <value>Eén bit per pixel met rasteraanpassing</value>
   </data>
   <data name="ImageEffectEnum_TextRenderingHint_SingleBitPerPixel" xml:space="preserve">
-    <value>Single bit per pixel</value>
+    <value>Eén bit per pixel</value>
   </data>
   <data name="ImageEffectEnum_TextRenderingHint_AntiAliasGridFit" xml:space="preserve">
-    <value>Anti alias grid fit</value>
+    <value>Anti-aliasing met rasteraanpassing</value>
   </data>
   <data name="ImageEffectEnum_TextRenderingHint_AntiAlias" xml:space="preserve">
-    <value>Anti alias</value>
+    <value>Anti-aliasing</value>
   </data>
   <data name="ImageEffectEnum_TextRenderingHint_ClearTypeGridFit" xml:space="preserve">
-    <value>Clear type grid fit</value>
+    <value>ClearType met rasteraanpassing</value>
   </data>
   <data name="ImageEffectEnum_AnchorStyles_None" xml:space="preserve">
     <value>Geen</value>

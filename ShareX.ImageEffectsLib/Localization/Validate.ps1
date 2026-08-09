@@ -30,9 +30,9 @@ function Read-Resources([string]$path)
     {
         throw "Resource file contains bare LF newlines: $path"
     }
-    if ($text -match '[\u0080-\u009F\uFFFD]')
+    if ($text -match '[\u0080-\u009F\u200E\u200F\u202A-\u202E\u2066-\u2069\uFFFD]')
     {
-        throw "Resource file contains invalid control or replacement characters: $path"
+        throw "Resource file contains invalid control, direction-control, or replacement characters: $path"
     }
 
     [xml]$document = $text
@@ -66,6 +66,88 @@ function Read-Resources([string]$path)
 function Get-Placeholders([string]$value)
 {
     return @([regex]::Matches($value, '(?<!\{)\{\d+(?:[^}]*)\}(?!\})') | ForEach-Object Value | Sort-Object -Unique)
+}
+
+$matrixIdentifierKeys = @(
+    'ImageEffectProperty_Aa', 'ImageEffectProperty_Ab', 'ImageEffectProperty_Ag', 'ImageEffectProperty_Ao',
+    'ImageEffectProperty_Ar', 'ImageEffectProperty_Ba', 'ImageEffectProperty_Bb', 'ImageEffectProperty_Bg',
+    'ImageEffectProperty_Bo', 'ImageEffectProperty_Br', 'ImageEffectProperty_Ga', 'ImageEffectProperty_Gb',
+    'ImageEffectProperty_Gg', 'ImageEffectProperty_Go', 'ImageEffectProperty_Gr', 'ImageEffectProperty_Ra',
+    'ImageEffectProperty_Rb', 'ImageEffectProperty_Rg', 'ImageEffectProperty_Ro', 'ImageEffectProperty_Rr'
+)
+$allowedDefaultValueKeys = @{
+    'de' = @(
+        'ImageEffectOptionsPanel_Left_short', 'ImageEffectOptionsPanel_Right_short',
+        'ImageEffectOptionsPanel_Height_short', 'ImageEffectsWindow_Title_with_preview',
+        'ImageEffectDefault_Text', 'ImageEffect_Alpha', 'ImageEffect_DrawTextEx', 'ImageEffect_Gamma',
+        'ImageEffect_Polaroid', 'ImageEffect_Sepia', 'ImageEffectProperty_Addition',
+        'ImageEffectProperty_Radius', 'ImageEffectProperty_Text',
+        'ImageEffectEnum_ImageInterpolationMode_Bilinear', 'ImageEffectEnum_LinearGradientMode_Horizontal'
+    )
+    'es' = @(
+        'ImageEffectsConfirmationWindow_No', 'ImageEffectsWindow_Title_with_preview', 'ImageEffect_Gamma',
+        'ImageEffect_Polaroid', 'ImageEffect_Sepia', 'ImageEffectProperty_Color', 'ImageEffectProperty_Color2',
+        'ImageEffectProperty_Factor', 'ImageEffectEnum_ImageInterpolationMode_Bilinear',
+        'ImageEffectEnum_LinearGradientMode_Horizontal', 'ImageEffectEnum_LinearGradientMode_Vertical'
+    )
+    'es-MX' = @(
+        'ImageEffectsConfirmationWindow_No', 'ImageEffectsWindow_Title_with_preview', 'ImageEffect_Gamma',
+        'ImageEffect_Polaroid', 'ImageEffect_Sepia', 'ImageEffectProperty_Color', 'ImageEffectProperty_Color2',
+        'ImageEffectProperty_Factor', 'ImageEffectEnum_ImageInterpolationMode_Bilinear',
+        'ImageEffectEnum_LinearGradientMode_Horizontal', 'ImageEffectEnum_LinearGradientMode_Vertical'
+    )
+    'fr' = @(
+        'GradientOptionsPanel_Direction', 'ImageEffectOptionsPanel_Bottom_short',
+        'ImageEffectOptionsPanel_Height_short', 'ImageEffectsConfirmationWindow_Title',
+        'ImageEffectsWindow_Title_with_preview', 'ImageEffect_Alpha', 'ImageEffect_DrawImage',
+        'ImageEffect_Gamma', 'ImageEffect_Polaroid', 'ImageEffect_Saturation', 'ImageEffect_Sepia',
+        'ImageEffectProperty_Angle', 'ImageEffectProperty_Mode', 'ImageEffectProperty_Placement',
+        'ImageEffectProperty_Type', 'ImageEffectEnum_LinearGradientMode_Horizontal'
+    )
+    'hu' = @(
+        'ImageEffectsWindow_Title_with_preview', 'ImageEffect_Gamma', 'ImageEffect_Polaroid', 'ImageEffect_Sepia'
+    )
+    'id-ID' = @(
+        'ImageEffectOptionsPanel_Bottom_short', 'ImageEffect_Gamma', 'ImageEffect_Polaroid', 'ImageEffect_Sepia',
+        'ImageEffectProperty_Margin', 'ImageEffectProperty_Mode', 'ImageEffectProperty_Padding',
+        'ImageEffectProperty_Radius', 'ImageEffectEnum_ImageInterpolationMode_Bilinear',
+        'ImageEffectEnum_DashStyle_Solid'
+    )
+    'it-IT' = @(
+        'ImageEffectOptionsPanel_Bottom_short', 'ImageEffectOptionsPanel_Height_short',
+        'ImageEffectsConfirmationWindow_No', 'ImageEffectsWindow_Title_with_preview', 'ImageEffect_Gamma',
+        'ImageEffect_Polaroid', 'ImageEffect_Sepia', 'ImageEffectEnum_ImageInterpolationMode_Bilinear'
+    )
+    'nl-NL' = @(
+        'ImageEffectOptionsPanel_Left_short', 'ImageEffectOptionsPanel_Right_short',
+        'ImageEffectOptionsPanel_Height_short', 'ImageEffectsWindow_Title_with_preview',
+        'ImageEffectCategory_Filters', 'ImageEffect_Canvas', 'ImageEffect_Contrast', 'ImageEffect_Gamma',
+        'ImageEffect_Polaroid', 'ImageEffect_Sepia', 'ImageEffectProperty_Factor',
+        'ImageEffectProperty_Percentage', 'ImageEffectProperty_Type',
+        'ImageEffectEnum_ImageInterpolationMode_Bilinear'
+    )
+    'pl' = @(
+        'ImageEffectOptionsPanel_Left_short', 'ImageEffectsWindow_Title_with_preview', 'ImageEffect_Gamma',
+        'ImageEffect_Polaroid', 'ImageEffect_Sepia', 'ImageEffectProperty_Gradient'
+    )
+    'pt-BR' = @(
+        'ImageEffectOptionsPanel_Bottom_short', 'ImageEffectsWindow_Title_with_preview', 'ImageEffect_Gamma',
+        'ImageEffect_Polaroid', 'ImageEffect_Sepia', 'ImageEffectEnum_ImageInterpolationMode_Bilinear',
+        'ImageEffectEnum_LinearGradientMode_Horizontal', 'ImageEffectEnum_LinearGradientMode_Vertical'
+    )
+    'pt-PT' = @(
+        'ImageEffectOptionsPanel_Bottom_short', 'ImageEffectsWindow_Title_with_preview', 'ImageEffect_Gamma',
+        'ImageEffect_Polaroid', 'ImageEffect_Sepia', 'ImageEffectEnum_ImageInterpolationMode_Bilinear',
+        'ImageEffectEnum_LinearGradientMode_Horizontal', 'ImageEffectEnum_LinearGradientMode_Vertical'
+    )
+    'ro' = @(
+        'ImageEffectsWindow_Title_with_preview', 'ImageEffectDefault_Text', 'ImageEffect_Contrast',
+        'ImageEffect_DrawTextEx', 'ImageEffect_Gamma', 'ImageEffect_Polaroid', 'ImageEffect_Sepia',
+        'ImageEffectProperty_Factor', 'ImageEffectProperty_Gradient', 'ImageEffectProperty_Text',
+        'ImageEffectEnum_LinearGradientMode_Vertical'
+    )
+    'tr' = @('ImageEffectsWindow_Title_with_preview', 'ImageEffect_Polaroid')
+    'vi-VN' = @('ImageEffect_Alpha', 'ImageEffect_Gamma', 'ImageEffect_Polaroid', 'ImageEffect_Sepia')
 }
 
 $default = Read-Resources $defaultPath
@@ -132,6 +214,25 @@ foreach ($culture in $cultures)
         if (((Get-Placeholders $default[$key]) -join '|') -ne ((Get-Placeholders $localized[$key]) -join '|'))
         {
             $errors.Add("Strings.$culture.resx: '$key' has different format placeholders.")
+        }
+    }
+    foreach ($key in $matrixIdentifierKeys)
+    {
+        if ($localized[$key] -cne $default[$key])
+        {
+            $errors.Add("Strings.$culture.resx: matrix identifier '$key' must remain unchanged.")
+        }
+    }
+    $allowedDefaultValues = @($matrixIdentifierKeys)
+    if ($allowedDefaultValueKeys.ContainsKey($culture))
+    {
+        $allowedDefaultValues += $allowedDefaultValueKeys[$culture]
+    }
+    foreach ($key in $default.Keys)
+    {
+        if ($localized[$key] -ceq $default[$key] -and $key -notin $allowedDefaultValues)
+        {
+            $errors.Add("Strings.$culture.resx: '$key' unexpectedly retains the default English value.")
         }
     }
 }
