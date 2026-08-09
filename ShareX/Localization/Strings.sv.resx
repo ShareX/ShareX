@@ -1,0 +1,2958 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MainWindow_CombineImages" xml:space="preserve">
+    <value>Kombinera bilder</value>
+  </data>
+  <data name="MainWindow_FilesDroppedUploadDescription" xml:space="preserve">
+    <value>Filer som släpps här laddas upp av ShareX.</value>
+  </data>
+  <data name="MainWindow_Horizontal" xml:space="preserve">
+    <value>Vågrät</value>
+  </data>
+  <data name="MainWindow_HotkeyHint" xml:space="preserve">
+    <value>Använd en snabbtangent för att ta en bild eller ladda upp. Resultaten visas här som miniatyrer.</value>
+  </data>
+  <data name="MainWindow_ReleaseToUploadFiles" xml:space="preserve">
+    <value>Släpp för att ladda upp filer</value>
+  </data>
+  <data name="MainWindow_ReleaseToUploadText" xml:space="preserve">
+    <value>Släpp för att ladda upp text</value>
+  </data>
+  <data name="MainWindow_ShareXHotkeys" xml:space="preserve">
+    <value>ShareX-snabbtangenter</value>
+  </data>
+  <data name="MainWindow_TextDroppedUploadDescription" xml:space="preserve">
+    <value>Text som släpps här laddas upp av ShareX.</value>
+  </data>
+  <data name="MainWindow_Vertical" xml:space="preserve">
+    <value>Lodrät</value>
+  </data>
+  <data name="MainMenuBuilder_About" xml:space="preserve">
+    <value>Om...</value>
+  </data>
+  <data name="MainMenuBuilder_ActionsToolbar" xml:space="preserve">
+    <value>Åtgärdsverktygsfält</value>
+  </data>
+  <data name="MainWindow_AddImageEffects" xml:space="preserve">
+    <value>Lägg till bildeffekter...</value>
+  </data>
+  <data name="MainMenuBuilder_AddWorkflowsFromHotkeySettings" xml:space="preserve">
+    <value>Lägg till arbetsflöden från snabbtangentsinställningarna...</value>
+  </data>
+  <data name="MainMenuBuilder_AfterCaptureTasks" xml:space="preserve">
+    <value>Uppgifter efter bildtagning</value>
+  </data>
+  <data name="MainMenuBuilder_AfterUploadTasks" xml:space="preserve">
+    <value>Uppgifter efter uppladdning</value>
+  </data>
+  <data name="MainWindow_AnalyzeImage" xml:space="preserve">
+    <value>Analysera bild...</value>
+  </data>
+  <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
+    <value>Programinställningar...</value>
+  </data>
+  <data name="MainMenuBuilder_AutoCapture" xml:space="preserve">
+    <value>Automatisk bildtagning...</value>
+  </data>
+  <data name="MainMenuBuilder_BackgroundRemover" xml:space="preserve">
+    <value>Bakgrundsborttagning...</value>
+  </data>
+  <data name="MainWindow_BeautifyImage" xml:space="preserve">
+    <value>Försköna bild...</value>
+  </data>
+  <data name="MainMenuBuilder_BorderlessWindow" xml:space="preserve">
+    <value>Kantlöst fönster...</value>
+  </data>
+  <data name="MainMenuBuilder_Capture" xml:space="preserve">
+    <value>Ta bild</value>
+  </data>
+  <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
+    <value>Rensa miniatyrvyn</value>
+  </data>
+  <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
+    <value>Urklippsvisare...</value>
+  </data>
+  <data name="MainMenuBuilder_ColorPicker" xml:space="preserve">
+    <value>Färgväljare...</value>
+  </data>
+  <data name="MainWindow_CombineImagesDialog" xml:space="preserve">
+    <value>Kombinera bilder...</value>
+  </data>
+  <data name="MainWindow_Copy" xml:space="preserve">
+    <value>Kopiera</value>
+  </data>
+  <data name="MainMenuBuilder_CustomUploaderSettings" xml:space="preserve">
+    <value>Inställningar för anpassad uppladdare...</value>
+  </data>
+  <data name="MainMenuBuilder_Debug" xml:space="preserve">
+    <value>Felsökning</value>
+  </data>
+  <data name="MainWindow_DeleteSelectedFile" xml:space="preserve">
+    <value>Ta bort vald fil...</value>
+  </data>
+  <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
+    <value>Ta bort valt objekt</value>
+  </data>
+  <data name="MainWindow_DeletionUrl" xml:space="preserve">
+    <value>Raderings-URL</value>
+  </data>
+  <data name="MainMenuBuilder_DestinationSettings" xml:space="preserve">
+    <value>Målinställningar...</value>
+  </data>
+  <data name="MainMenuBuilder_Destinations" xml:space="preserve">
+    <value>Mål</value>
+  </data>
+  <data name="MainMenuBuilder_DisableHotkeys" xml:space="preserve">
+    <value>Inaktivera snabbtangenter</value>
+  </data>
+  <data name="MainMenuBuilder_Discord" xml:space="preserve">
+    <value>Discord...</value>
+  </data>
+  <data name="MainMenuBuilder_Donate" xml:space="preserve">
+    <value>Donera...</value>
+  </data>
+  <data name="MainWindow_DownloadSelectedUrl" xml:space="preserve">
+    <value>Hämta vald URL</value>
+  </data>
+  <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
+    <value>Uppladdning med dra och släpp...</value>
+  </data>
+  <data name="MainWindow_EditImage" xml:space="preserve">
+    <value>Redigera bild...</value>
+  </data>
+  <data name="MainMenuBuilder_EnableAddImageEffects" xml:space="preserve">
+    <value>Aktivera Lägg till bildeffekter</value>
+  </data>
+  <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
+    <value>Aktivera snabbtangenter</value>
+  </data>
+  <data name="MainMenuBuilder_Exit" xml:space="preserve">
+    <value>Avsluta</value>
+  </data>
+  <data name="MainWindow_File" xml:space="preserve">
+    <value>Fil</value>
+  </data>
+  <data name="MainWindow_FileName" xml:space="preserve">
+    <value>Filnamn</value>
+  </data>
+  <data name="MainWindow_FileNameWithExtension" xml:space="preserve">
+    <value>Filnamn med filnamnstillägg</value>
+  </data>
+  <data name="MainWindow_FilePath" xml:space="preserve">
+    <value>Filsökväg</value>
+  </data>
+  <data name="MainWindow_Folder" xml:space="preserve">
+    <value>Mapp</value>
+  </data>
+  <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
+    <value>Följ ShareX...</value>
+  </data>
+  <data name="MainWindow_ForumImage" xml:space="preserve">
+    <value>Forumbild</value>
+  </data>
+  <data name="MainWindow_ForumLink" xml:space="preserve">
+    <value>Forumlänk</value>
+  </data>
+  <data name="MainWindow_ForumLinkedImage" xml:space="preserve">
+    <value>Länkad forumbild</value>
+  </data>
+  <data name="MainMenuBuilder_Fullscreen" xml:space="preserve">
+    <value>Helskärm</value>
+  </data>
+  <data name="MainMenuBuilder_HashChecker" xml:space="preserve">
+    <value>Kontrollsummekontroll...</value>
+  </data>
+  <data name="MainMenuBuilder_History" xml:space="preserve">
+    <value>Historik...</value>
+  </data>
+  <data name="MainWindow_Horizontally" xml:space="preserve">
+    <value>Vågrätt</value>
+  </data>
+  <data name="MainMenuBuilder_HotkeySettings" xml:space="preserve">
+    <value>Snabbtangentsinställningar...</value>
+  </data>
+  <data name="MainWindow_HtmlImage" xml:space="preserve">
+    <value>HTML-bild</value>
+  </data>
+  <data name="MainWindow_HtmlLink" xml:space="preserve">
+    <value>HTML-länk</value>
+  </data>
+  <data name="MainWindow_HtmlLinkedImage" xml:space="preserve">
+    <value>Länkad HTML-bild</value>
+  </data>
+  <data name="MainMenuBuilder_IconConverter" xml:space="preserve">
+    <value>Ikonkonverterare...</value>
+  </data>
+  <data name="MainWindow_Image" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="MainMenuBuilder_ImageBeautifier" xml:space="preserve">
+    <value>Bildförskönare...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageCombiner" xml:space="preserve">
+    <value>Bildkombinerare...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
+    <value>Bildjämförelse...</value>
+  </data>
+  <data name="MainWindow_ImageDimensions" xml:space="preserve">
+    <value>Bildmått</value>
+  </data>
+  <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
+    <value>Bildredigerare...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageEffects" xml:space="preserve">
+    <value>Bildeffekter...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
+    <value>Bildhistorik...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
+    <value>Bilddelare...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageThumbnailer" xml:space="preserve">
+    <value>Bildminiatyrskapare...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
+    <value>Bildvisare...</value>
+  </data>
+  <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
+    <value>Indexera mapp...</value>
+  </data>
+  <data name="MainMenuBuilder_InspectWindow" xml:space="preserve">
+    <value>Granska fönster...</value>
+  </data>
+  <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
+    <value>Senaste området</value>
+  </data>
+  <data name="MainWindow_MarkdownImage" xml:space="preserve">
+    <value>Markdown-bild</value>
+  </data>
+  <data name="MainWindow_MarkdownLink" xml:space="preserve">
+    <value>Markdown-länk</value>
+  </data>
+  <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
+    <value>Länkad Markdown-bild</value>
+  </data>
+  <data name="MainMenuBuilder_Metadata" xml:space="preserve">
+    <value>Metadata...</value>
+  </data>
+  <data name="MainMenuBuilder_Monitor" xml:space="preserve">
+    <value>Bildskärm</value>
+  </data>
+  <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
+    <value>Bildskärmstest...</value>
+  </data>
+  <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
+    <value>Inga förinställningar för bildeffekter</value>
+  </data>
+  <data name="MainMenuBuilder_NoWindowsFound" xml:space="preserve">
+    <value>Inga fönster hittades</value>
+  </data>
+  <data name="MainMenuBuilder_OCR" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="MainWindow_OCRImage" xml:space="preserve">
+    <value>OCR av bild...</value>
+  </data>
+  <data name="MainWindow_Open" xml:space="preserve">
+    <value>Öppna</value>
+  </data>
+  <data name="MainWindow_PinToScreen" xml:space="preserve">
+    <value>Fäst på skärmen</value>
+  </data>
+  <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
+    <value>Fäst på skärmen...</value>
+  </data>
+  <data name="MainMenuBuilder_QRCode" xml:space="preserve">
+    <value>QR-kod...</value>
+  </data>
+  <data name="MainMenuBuilder_RecentItems" xml:space="preserve">
+    <value>Senaste objekt</value>
+  </data>
+  <data name="MainMenuBuilder_Region" xml:space="preserve">
+    <value>Område...</value>
+  </data>
+  <data name="MainMenuBuilder_RegionLight" xml:space="preserve">
+    <value>Område (ljust)...</value>
+  </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>Område (genomskinligt)...</value>
+  </data>
+  <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
+    <value>Starta om som administratör</value>
+  </data>
+  <data name="MainMenuBuilder_Ruler" xml:space="preserve">
+    <value>Linjal...</value>
+  </data>
+  <data name="MainWindow_RunAction" xml:space="preserve">
+    <value>Kör åtgärd</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
+    <value>Skärmfärgväljare...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenRecording" xml:space="preserve">
+    <value>Skärminspelning...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
+    <value>Skärminspelning (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
+    <value>Skärmbildsmapp...</value>
+  </data>
+  <data name="MainMenuBuilder_ScrollingCapture" xml:space="preserve">
+    <value>Rullande bildtagning...</value>
+  </data>
+  <data name="MainWindow_SearchWithBingVisualSearch" xml:space="preserve">
+    <value>Sök med Bing visuell sökning...</value>
+  </data>
+  <data name="MainWindow_SearchWithGoogleLens" xml:space="preserve">
+    <value>Sök med Google Lens...</value>
+  </data>
+  <data name="MainWindow_ShareSelectedUrl" xml:space="preserve">
+    <value>Dela vald URL</value>
+  </data>
+  <data name="MainWindow_ShortenSelectedUrl" xml:space="preserve">
+    <value>Förkorta vald URL</value>
+  </data>
+  <data name="MainMenuBuilder_ShortenUrl" xml:space="preserve">
+    <value>Förkorta URL...</value>
+  </data>
+  <data name="MainWindow_ShortenedUrl" xml:space="preserve">
+    <value>Förkortad URL</value>
+  </data>
+  <data name="MainMenuBuilder_ShowCursor" xml:space="preserve">
+    <value>Visa markör</value>
+  </data>
+  <data name="MainMenuBuilder_ShowDebugLog" xml:space="preserve">
+    <value>Visa felsökningslogg...</value>
+  </data>
+  <data name="MainWindow_ShowErrors" xml:space="preserve">
+    <value>Visa fel...</value>
+  </data>
+  <data name="MainWindow_ShowQRCode" xml:space="preserve">
+    <value>Visa QR-kod...</value>
+  </data>
+  <data name="MainWindow_ShowResponse" xml:space="preserve">
+    <value>Visa svar...</value>
+  </data>
+  <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
+    <value>Visa ShareX</value>
+  </data>
+  <data name="MainWindow_StopUpload" xml:space="preserve">
+    <value>Stoppa uppladdning</value>
+  </data>
+  <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
+    <value>Uppgiftsinställningar...</value>
+  </data>
+  <data name="MainMenuBuilder_TestFileUpload" xml:space="preserve">
+    <value>Testa filuppladdning</value>
+  </data>
+  <data name="MainMenuBuilder_TestImageUpload" xml:space="preserve">
+    <value>Testa bilduppladdning</value>
+  </data>
+  <data name="MainMenuBuilder_TestTextUpload" xml:space="preserve">
+    <value>Testa textuppladdning</value>
+  </data>
+  <data name="MainMenuBuilder_TestUrlSharing" xml:space="preserve">
+    <value>Testa URL-delning</value>
+  </data>
+  <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
+    <value>Testa URL-förkortare</value>
+  </data>
+  <data name="MainWindow_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="MainWindow_ThumbnailFile" xml:space="preserve">
+    <value>Miniatyrfil</value>
+  </data>
+  <data name="MainWindow_ThumbnailImage" xml:space="preserve">
+    <value>Miniatyrbild</value>
+  </data>
+  <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
+    <value>Miniatyr-URL</value>
+  </data>
+  <data name="MainMenuBuilder_Tools" xml:space="preserve">
+    <value>Verktyg</value>
+  </data>
+  <data name="ThumbnailItemViewModel_UntitledTask" xml:space="preserve">
+    <value>Namnlös uppgift</value>
+  </data>
+  <data name="MainMenuBuilder_Upload" xml:space="preserve">
+    <value>Ladda upp</value>
+  </data>
+  <data name="MainMenuBuilder_UploadClipboard" xml:space="preserve">
+    <value>Ladda upp Urklipp...</value>
+  </data>
+  <data name="MainMenuBuilder_UploadFile" xml:space="preserve">
+    <value>Ladda upp fil...</value>
+  </data>
+  <data name="MainMenuBuilder_UploadFolder" xml:space="preserve">
+    <value>Ladda upp mapp...</value>
+  </data>
+  <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
+    <value>Ladda upp vald fil</value>
+  </data>
+  <data name="MainMenuBuilder_UploadText" xml:space="preserve">
+    <value>Ladda upp text...</value>
+  </data>
+  <data name="MainMenuBuilder_UploadUrl" xml:space="preserve">
+    <value>Ladda upp URL...</value>
+  </data>
+  <data name="MainWindow_Url" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="MainWindow_Vertically" xml:space="preserve">
+    <value>Lodrätt</value>
+  </data>
+  <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
+    <value>Videokonverterare...</value>
+  </data>
+  <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
+    <value>Videominiatyrskapare...</value>
+  </data>
+  <data name="MainMenuBuilder_Window" xml:space="preserve">
+    <value>Fönster</value>
+  </data>
+  <data name="MainMenuBuilder_Workflows" xml:space="preserve">
+    <value>Arbetsflöden</value>
+  </data>
+  <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
+    <value>Analysera bild...</value>
+  </data>
+  <data name="MainMenuBuilder_Copy" xml:space="preserve">
+    <value>Kopiera</value>
+  </data>
+  <data name="MainMenuBuilder_Open" xml:space="preserve">
+    <value>Öppna</value>
+  </data>
+  <data name="ApplicationSettingsWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX – Programinställningar</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RestartShareXToApplyThisChange" xml:space="preserve">
+    <value>Starta om ShareX för att tillämpa ändringen.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RestartNow" xml:space="preserve">
+    <value>Starta om nu</value>
+  </data>
+  <data name="ApplicationSettingsWindow_General" xml:space="preserve">
+    <value>Allmänt</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
+    <value>Program</value>
+  </data>
+  <data name="ApplicationSettingsWindow_LanguageLabel" xml:space="preserve">
+    <value>Språk:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
+    <value>Visa ikon i meddelandefältet</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MinimizeToTrayOnStart" xml:space="preserve">
+    <value>Minimera till meddelandefältet vid start</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowProgressInTrayIcon" xml:space="preserve">
+    <value>Visa förlopp i meddelandefältsikonen</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowProgressInTaskbarButton" xml:space="preserve">
+    <value>Visa förlopp i Aktivitetsfältets knapp</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseWhiteShareXIcon" xml:space="preserve">
+    <value>Använd vit ShareX-ikon</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RememberMainWindowPosition" xml:space="preserve">
+    <value>Kom ihåg huvudfönstrets position</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RememberMainWindowSize" xml:space="preserve">
+    <value>Kom ihåg huvudfönstrets storlek</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TrayActions" xml:space="preserve">
+    <value>Åtgärder i meddelandefältet</value>
+  </data>
+  <data name="ApplicationSettingsWindow_OnTrayIconDoubleLeftClickLabel" xml:space="preserve">
+    <value>Vid dubbelklick med vänster musknapp på meddelandefältsikonen:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_OnTrayIconLeftClickLabel" xml:space="preserve">
+    <value>Vid klick med vänster musknapp på meddelandefältsikonen:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_OnTrayIconMiddleClickLabel" xml:space="preserve">
+    <value>Vid klick med mellersta musknappen på meddelandefältsikonen:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_EditQuickTaskMenu" xml:space="preserve">
+    <value>Redigera snabbuppgiftsmeny...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Updates" xml:space="preserve">
+    <value>Uppdateringar</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AutomaticallyCheckForUpdates" xml:space="preserve">
+    <value>Sök automatiskt efter uppdateringar</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UpdateChannelLabel" xml:space="preserve">
+    <value>Uppdateringskanal:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
+    <value>Installera utvecklingsversion...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ApplicationTheme" xml:space="preserve">
+    <value>Programtema</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FollowSystemTheme" xml:space="preserve">
+    <value>Följ systemtemat</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ThemeLabel" xml:space="preserve">
+    <value>Tema:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AccentColor" xml:space="preserve">
+    <value>Accentfärg</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FollowSystemAccentColor" xml:space="preserve">
+    <value>Följ systemets accentfärg</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AccentColorLabel" xml:space="preserve">
+    <value>Accentfärg:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Integration" xml:space="preserve">
+    <value>Integrering</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Windows" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Visa knappen ”Ladda upp med ShareX” i Utforskarens snabbmeny</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Visa knappen ”Redigera med ShareX” i Utforskarens snabbmeny</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowShareXInSendToMenu" xml:space="preserve">
+    <value>Visa ShareX på menyn ”Skicka till”</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ChromeExtension" xml:space="preserve">
+    <value>Chrome-tillägg</value>
+  </data>
+  <data name="ApplicationSettingsWindow_EnableChromeExtensionSupport" xml:space="preserve">
+    <value>Aktivera stöd för Chrome-tillägg</value>
+  </data>
+  <data name="ApplicationSettingsWindow_InstallShareXChromeExtension" xml:space="preserve">
+    <value>Installera ShareX-tillägget för Chrome...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FirefoxAddon" xml:space="preserve">
+    <value>Firefox-tillägg</value>
+  </data>
+  <data name="ApplicationSettingsWindow_EnableFirefoxAddonSupport" xml:space="preserve">
+    <value>Aktivera stöd för Firefox-tillägg</value>
+  </data>
+  <data name="ApplicationSettingsWindow_InstallShareXFirefoxAddon" xml:space="preserve">
+    <value>Installera ShareX-tillägget för Firefox...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="ApplicationSettingsWindow_WhileShareXIsOpenShowInAppInSteam" xml:space="preserve">
+    <value>Visa ”I appen” i Steam medan ShareX är öppet</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Paths" xml:space="preserve">
+    <value>Sökvägar</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShareXPersonalFolder" xml:space="preserve">
+    <value>Personlig ShareX-mapp</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Browse" xml:space="preserve">
+    <value>Bläddra...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Open" xml:space="preserve">
+    <value>Öppna...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ChangesToThePersonalFolderAreStoredImmediatelyAndTakeEffectAfterRestart" xml:space="preserve">
+    <value>Ändringar i den personliga mappen sparas omedelbart och börjar gälla efter omstart.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ScreenshotsFolder" xml:space="preserve">
+    <value>Skärmbildsmapp</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseCustomScreenshotsFolder" xml:space="preserve">
+    <value>Använd anpassad skärmbildsmapp</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
+    <value>Mönster för undermapp:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SubFolderPatternForWindowLabel" xml:space="preserve">
+    <value>Mönster för undermapp per fönster:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Settings" xml:space="preserve">
+    <value>Inställningar</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ExportAndImport" xml:space="preserve">
+    <value>Exportera och importera</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DoNotShareAnExportedBackupItCanContainPrivateInformationSuchAsAccountDetailsAndUploadHistory" xml:space="preserve">
+    <value>Dela inte en exporterad säkerhetskopia. Den kan innehålla privat information som kontouppgifter och uppladdningshistorik.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_History" xml:space="preserve">
+    <value>Historik</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Export" xml:space="preserve">
+    <value>Exportera...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Import" xml:space="preserve">
+    <value>Importera...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ResetSettings" xml:space="preserve">
+    <value>Återställ inställningar...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AutomaticCleanup" xml:space="preserve">
+    <value>Automatisk rensning</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldBackupFiles" xml:space="preserve">
+    <value>Rensa gamla säkerhetskopior automatiskt</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldLogFiles" xml:space="preserve">
+    <value>Rensa gamla loggfiler automatiskt</value>
+  </data>
+  <data name="ApplicationSettingsWindow_NumberOfFilesToKeepLabel" xml:space="preserve">
+    <value>Antal filer att behålla:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
+    <value>Huvudfönster</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ThumbnailView" xml:space="preserve">
+    <value>Miniatyrvy</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowTitle" xml:space="preserve">
+    <value>Visa titel</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TitleLocationLabel" xml:space="preserve">
+    <value>Titelplacering:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ThumbnailSizeLabel" xml:space="preserve">
+    <value>Miniatyrstorlek:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Reset" xml:space="preserve">
+    <value>Återställ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ThumbnailClickActionLabel" xml:space="preserve">
+    <value>Åtgärd vid klick på miniatyr:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
+    <value>Urklippsformat</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TheseFormatsAppearUnderTheCopySubmenuInTheMainWindowContextMenu" xml:space="preserve">
+    <value>Dessa format visas på undermenyn Kopiera i huvudfönstrets snabbmeny.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Add" xml:space="preserve">
+    <value>Lägg till...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Edit" xml:space="preserve">
+    <value>Redigera...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Remove" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Upload" xml:space="preserve">
+    <value>Uppladdning</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
+    <value>Gräns för samtidiga uppladdningar:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ZeroDisablesTheLimit" xml:space="preserve">
+    <value>0 inaktiverar gränsen</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BufferSizeLabel" xml:space="preserve">
+    <value>Buffertstorlek:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel" xml:space="preserve">
+    <value>Antal nya försök om uppladdningen misslyckas:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseSecondaryUploadersInOrderOfPreferenceWhenRetrying" xml:space="preserve">
+    <value>Använd sekundära uppladdare i prioritetsordning vid nya försök</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SecondaryImageUploaders" xml:space="preserve">
+    <value>Sekundära bilduppladdare</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MoveUp" xml:space="preserve">
+    <value>Flytta upp</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MoveDown" xml:space="preserve">
+    <value>Flytta ned</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SecondaryTextUploaders" xml:space="preserve">
+    <value>Sekundära textuppladdare</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SecondaryFileUploaders" xml:space="preserve">
+    <value>Sekundära filuppladdare</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SaveTasksToHistory" xml:space="preserve">
+    <value>Spara uppgifter i historiken</value>
+  </data>
+  <data name="ApplicationSettingsWindow_OnlySaveIfUrlIsNotEmpty" xml:space="preserve">
+    <value>Spara endast om URL:en inte är tom</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RecentTasks" xml:space="preserve">
+    <value>Senaste uppgifter</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
+    <value>Spara senaste uppgifter</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumNumberOfTasksToSaveLabel" xml:space="preserve">
+    <value>Högsta antal uppgifter att spara:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowRecentTasksInMainWindowOnStartup" xml:space="preserve">
+    <value>Visa senaste uppgifter i huvudfönstret vid start</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowRecentTasksInTrayMenu" xml:space="preserve">
+    <value>Visa senaste uppgifter i meddelandefältsmenyn</value>
+  </data>
+  <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
+    <value>Visa de senaste uppgifterna först i meddelandefältsmenyn</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Print" xml:space="preserve">
+    <value>Skriv ut</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DontShowImagePrintSettingsDialog" xml:space="preserve">
+    <value>Visa inte dialogrutan med bildutskriftsinställningar</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
+    <value>Bildutskriftsinställningar...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DontShowWindowsPrintDialog" xml:space="preserve">
+    <value>Visa inte Windows utskriftsdialogruta</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DefaultPrinterOverrideLabel" xml:space="preserve">
+    <value>Åsidosätt standardskrivare:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Proxy" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ProxyConfigurationLabel" xml:space="preserve">
+    <value>Proxykonfiguration:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UsernameLabel" xml:space="preserve">
+    <value>Användarnamn:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_PasswordLabel" xml:space="preserve">
+    <value>Lösenord:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_HostLabel" xml:space="preserve">
+    <value>Värd:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_PortLabel" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Advanced" xml:space="preserve">
+    <value>Avancerat</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AddClipboardFormat" xml:space="preserve">
+    <value>Lägg till Urklippsformat</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CustomizeTheTextCopiedFromCompletedUploads" xml:space="preserve">
+    <value>Anpassa texten som kopieras från slutförda uppladdningar.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
+    <value>Beskrivning</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RightClickToInsertAVariable" xml:space="preserve">
+    <value>Högerklicka för att infoga en variabel.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
+    <value>Spara</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ChooseShareXPersonalFolderPath" xml:space="preserve">
+    <value>Välj sökväg till personlig ShareX-mapp</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ChooseScreenshotsFolderPath" xml:space="preserve">
+    <value>Välj sökväg till skärmbildsmapp</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ExportShareXBackup" xml:space="preserve">
+    <value>Exportera ShareX-säkerhetskopia</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShareXBackup" xml:space="preserve">
+    <value>ShareX-säkerhetskopia</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImportShareXBackup" xml:space="preserve">
+    <value>Importera ShareX-säkerhetskopia</value>
+  </data>
+  <data name="ApplicationSettingsWindow_EditClipboardFormat" xml:space="preserve">
+    <value>Redigera Urklippsformat</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UploadResult" xml:space="preserve">
+    <value>Uppladdningsresultat</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ExportingBackup" xml:space="preserve">
+    <value>Exporterar säkerhetskopia...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BackupExportedTo" xml:space="preserve">
+    <value>Säkerhetskopian exporterades till {0}</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BackupExportFailed" xml:space="preserve">
+    <value>Det gick inte att exportera säkerhetskopian.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImportingBackup" xml:space="preserve">
+    <value>Importerar säkerhetskopia...</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BackupImportedFrom" xml:space="preserve">
+    <value>Säkerhetskopian importerades från {0}</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BackupImportFailed" xml:space="preserve">
+    <value>Det gick inte att importera säkerhetskopian.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SettingsReset" xml:space="preserve">
+    <value>Inställningarna återställdes.</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ErrorPrefix" xml:space="preserve">
+    <value>Fel:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Dark" xml:space="preserve">
+    <value>Mörkt</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
+    <value>Ljust</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedApplication" xml:space="preserve">
+    <value>Program</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedHotkeys" xml:space="preserve">
+    <value>Snabbtangenter</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedClipboard" xml:space="preserve">
+    <value>Urklipp</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedImage" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
+    <value>Uppladdning</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedPaths" xml:space="preserve">
+    <value>Sökvägar</value>
+  </data>
+  <data name="ApplicationSettingsWindow_AdvancedDragAndDropWindow" xml:space="preserve">
+    <value>Fönster för dra och släpp</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BinaryUnits" xml:space="preserve">
+    <value>Använd binära enheter</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowMostRecentTaskFirst" xml:space="preserve">
+    <value>Visa den senaste uppgiften först</value>
+  </data>
+  <data name="ApplicationSettingsWindow_WorkflowsOnlyShowEdited" xml:space="preserve">
+    <value>Visa endast anpassade arbetsflöden</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
+    <value>Expandera bildtagningsmenyn automatiskt</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BrowserPath" xml:space="preserve">
+    <value>Webbläsarsökväg</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SaveSettingsAfterTaskCompleted" xml:space="preserve">
+    <value>Spara inställningar när en uppgift slutförs</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DevMode" xml:space="preserve">
+    <value>Utvecklarläge</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DisableHotkeys" xml:space="preserve">
+    <value>Inaktivera snabbtangenter</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DisableHotkeysOnFullscreen" xml:space="preserve">
+    <value>Inaktivera snabbtangenter i helskärmsprogram</value>
+  </data>
+  <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
+    <value>Intervall för upprepning av snabbtangent (millisekunder)</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
+    <value>Visa Urklippsvisaren</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DefaultClipboardCopyImageFillBackground" xml:space="preserve">
+    <value>Fyll bildens bakgrund vid kopiering</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseAlternativeClipboardCopyImage" xml:space="preserve">
+    <value>Använd alternativ bildkopiering</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseAlternativeClipboardGetImage" xml:space="preserve">
+    <value>Använd alternativ bildhämtning</value>
+  </data>
+  <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
+    <value>Rotera bilder med hjälp av EXIF-orientering</value>
+  </data>
+  <data name="ApplicationSettingsWindow_PNGStripColorSpaceInformation" xml:space="preserve">
+    <value>Ta bort färgrymdsinformation från PNG</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DisableUpload" xml:space="preserve">
+    <value>Inaktivera uppladdningar</value>
+  </data>
+  <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
+    <value>Ignorera emojier vid URL-kodning</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowMultiUploadWarning" xml:space="preserve">
+    <value>Varna innan fler än 10 filer laddas upp</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
+    <value>Tröskelvärde för varning om stor fil (MB)</value>
+  </data>
+  <data name="ApplicationSettingsWindow_UseMachineSpecificUploadersConfig" xml:space="preserve">
+    <value>Använd en datorspecifik uppladdarkonfiguration</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CustomUploadersConfigPath" xml:space="preserve">
+    <value>Anpassad sökväg till uppladdarkonfiguration</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
+    <value>Anpassad sökväg till snabbtangentskonfiguration</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CustomScreenshotsPath2" xml:space="preserve">
+    <value>Sekundär sökväg för skärmbilder</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropSize" xml:space="preserve">
+    <value>Storlek på släppfönster</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropOffset" xml:space="preserve">
+    <value>Förskjutning av släppfönster</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropAlignment" xml:space="preserve">
+    <value>Släppfönstrets position</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropOpacity" xml:space="preserve">
+    <value>Släppfönstrets opacitet</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DropHoverOpacity" xml:space="preserve">
+    <value>Släppfönstrets opacitet vid hovring</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TopLeft" xml:space="preserve">
+    <value>Överst till vänster</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TopCenter" xml:space="preserve">
+    <value>Överst i mitten</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TopRight" xml:space="preserve">
+    <value>Överst till höger</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MiddleLeft" xml:space="preserve">
+    <value>Mitten till vänster</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MiddleCenter" xml:space="preserve">
+    <value>Centrerad</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MiddleRight" xml:space="preserve">
+    <value>Mitten till höger</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BottomLeft" xml:space="preserve">
+    <value>Nederst till vänster</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BottomCenter" xml:space="preserve">
+    <value>Nederst i mitten</value>
+  </data>
+  <data name="ApplicationSettingsWindow_BottomRight" xml:space="preserve">
+    <value>Nederst till höger</value>
+  </data>
+  <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX – Snabbtangentsinställningar</value>
+  </data>
+  <data name="HotkeySettingsWindow_Add" xml:space="preserve">
+    <value>Lägg till</value>
+  </data>
+  <data name="HotkeySettingsWindow_Remove" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="HotkeySettingsWindow_EditTask" xml:space="preserve">
+    <value>Redigera uppgift...</value>
+  </data>
+  <data name="HotkeySettingsWindow_Duplicate" xml:space="preserve">
+    <value>Duplicera</value>
+  </data>
+  <data name="HotkeySettingsWindow_MoveUp" xml:space="preserve">
+    <value>Flytta upp</value>
+  </data>
+  <data name="HotkeySettingsWindow_MoveDown" xml:space="preserve">
+    <value>Flytta ned</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetWithEllipsis" xml:space="preserve">
+    <value>Återställ...</value>
+  </data>
+  <data name="HotkeySettingsWindow_GlobalHotkeysAreCurrentlyDisabled" xml:space="preserve">
+    <value>Globala snabbtangenter är för närvarande inaktiverade.</value>
+  </data>
+  <data name="HotkeySettingsWindow_EnableHotkeys" xml:space="preserve">
+    <value>Aktivera snabbtangenter</value>
+  </data>
+  <data name="HotkeySettingsWindow_Task" xml:space="preserve">
+    <value>UPPGIFT</value>
+  </data>
+  <data name="HotkeySettingsWindow_Hotkey" xml:space="preserve">
+    <value>SNABBTANGENT</value>
+  </data>
+  <data name="HotkeySettingsWindow_ThisTaskHasCustomSettings" xml:space="preserve">
+    <value>Uppgiften har anpassade inställningar</value>
+  </data>
+  <data name="HotkeySettingsWindow_EditTaskSettings" xml:space="preserve">
+    <value>Redigera uppgiftsinställningar...</value>
+  </data>
+  <data name="HotkeySettingsWindow_AddAHotkeyToCreateAWorkflow" xml:space="preserve">
+    <value>Lägg till en snabbtangent för att skapa ett arbetsflöde</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetHotkeysQuestion" xml:space="preserve">
+    <value>Återställa snabbtangenter?</value>
+  </data>
+  <data name="HotkeySettingsWindow_ResetHotkeysDescription" xml:space="preserve">
+    <value>Alla snabbtangenter och deras anpassade uppgiftsinställningar ersätts med ShareX standardvärden.</value>
+  </data>
+  <data name="HotkeySettingsWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="HotkeySettingsWindow_Reset" xml:space="preserve">
+    <value>Återställ</value>
+  </data>
+  <data name="HotkeySettingsWindow_PressAHotkey" xml:space="preserve">
+    <value>Tryck på en snabbtangent...</value>
+  </data>
+  <data name="HotkeySettingsWindow_Registered" xml:space="preserve">
+    <value>Registrerad</value>
+  </data>
+  <data name="HotkeySettingsWindow_RegistrationFailed" xml:space="preserve">
+    <value>Registreringen misslyckades</value>
+  </data>
+  <data name="HotkeySettingsWindow_NotConfigured" xml:space="preserve">
+    <value>Inte konfigurerad</value>
+  </data>
+  <data name="TaskSettingsWindow_AddWithEllipsis" xml:space="preserve">
+    <value>Lägg till...</value>
+  </data>
+  <data name="TaskSettingsWindow_BrowseWithEllipsis" xml:space="preserve">
+    <value>Bläddra...</value>
+  </data>
+  <data name="TaskSettingsWindow_Remove" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="TaskSettingsWindow_AddAction" xml:space="preserve">
+    <value>Lägg till åtgärd</value>
+  </data>
+  <data name="TaskSettingsWindow_RunAnExternalProgramAsPartOfACaptureWorkflow" xml:space="preserve">
+    <value>Kör ett externt program som en del av ett arbetsflöde för bildtagning.</value>
+  </data>
+  <data name="TaskSettingsWindow_Close" xml:space="preserve">
+    <value>Stäng</value>
+  </data>
+  <data name="TaskSettingsWindow_Name" xml:space="preserve">
+    <value>Namn</value>
+  </data>
+  <data name="TaskSettingsWindow_FilePath" xml:space="preserve">
+    <value>Filsökväg</value>
+  </data>
+  <data name="TaskSettingsWindow_Arguments" xml:space="preserve">
+    <value>Argument</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
+    <value>Högerklicka för att infoga en token för in- eller utdatafil.</value>
+  </data>
+  <data name="TaskSettingsWindow_OutputFileNameExtensionEmptyUsesTheSameFileName" xml:space="preserve">
+    <value>Filnamnstillägg för utdata (tomt använder samma filnamn)</value>
+  </data>
+  <data name="TaskSettingsWindow_ExtensionFilterExampleJpgPngMp4" xml:space="preserve">
+    <value>Filnamnstilläggsfilter (exempel: jpg png mp4)</value>
+  </data>
+  <data name="TaskSettingsWindow_HiddenWindow" xml:space="preserve">
+    <value>Dolt fönster</value>
+  </data>
+  <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
+    <value>Ta bort indatafil</value>
+  </data>
+  <data name="TaskSettingsWindow_Save" xml:space="preserve">
+    <value>Spara</value>
+  </data>
+  <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="TaskSettingsWindow_AddWatchFolder" xml:space="preserve">
+    <value>Lägg till bevakad mapp</value>
+  </data>
+  <data name="TaskSettingsWindow_UploadFilesWhenTheyAreCreatedInThisFolder" xml:space="preserve">
+    <value>Ladda upp filer när de skapas i den här mappen.</value>
+  </data>
+  <data name="TaskSettingsWindow_FolderPath" xml:space="preserve">
+    <value>Mappsökväg</value>
+  </data>
+  <data name="TaskSettingsWindow_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="TaskSettingsWindow_ExamplePng" xml:space="preserve">
+    <value>Exempel: *.png</value>
+  </data>
+  <data name="TaskSettingsWindow_IncludeSubdirectories" xml:space="preserve">
+    <value>Inkludera undermappar</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveFileToScreenshotsFolder" xml:space="preserve">
+    <value>Flytta filen till skärmbildsmappen</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtons" xml:space="preserve">
+    <value>Aviseringsknappar</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseTheActionsShownAtTheBottomOfAfterCaptureNotifications" xml:space="preserve">
+    <value>Välj de åtgärder som visas längst ned i aviseringar efter bildtagning.</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
+    <value>Flytta upp</value>
+  </data>
+  <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
+    <value>Flytta ned</value>
+  </data>
+  <data name="TaskSettingsWindow_NoButtonsConfiguredTheNotificationToolbarWillBeHidden" xml:space="preserve">
+    <value>Inga knappar är konfigurerade. Aviseringsverktygsfältet döljs.</value>
+  </data>
+  <data name="TaskSettingsWindow_ShareXTaskSettings" xml:space="preserve">
+    <value>ShareX – Uppgiftsinställningar</value>
+  </data>
+  <data name="TaskSettingsWindow_ShareXTaskSettingsFor0" xml:space="preserve">
+    <value>ShareX – Uppgiftsinställningar för {0}</value>
+  </data>
+  <data name="TaskSettingsWindow_EditAction" xml:space="preserve">
+    <value>Redigera åtgärd</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseProgram" xml:space="preserve">
+    <value>Välj program</value>
+  </data>
+  <data name="TaskSettingsWindow_EditWatchFolder" xml:space="preserve">
+    <value>Redigera bevakad mapp</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseWatchFolder" xml:space="preserve">
+    <value>Välj bevakad mapp</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDefaultFTPAccount" xml:space="preserve">
+    <value>Åsidosätt standard-FTP-kontot</value>
+  </data>
+  <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
+    <value>FTP-konto:</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDefaultCustomUploader" xml:space="preserve">
+    <value>Åsidosätt standardanpassad uppladdare</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomUploader" xml:space="preserve">
+    <value>Anpassad uppladdare:</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseScreenshotsFolder" xml:space="preserve">
+    <value>Välj skärmbildsmapp</value>
+  </data>
+  <data name="TaskSettingsWindow_Task" xml:space="preserve">
+    <value>Uppgift</value>
+  </data>
+  <data name="TaskSettingsWindow_TaskLabel" xml:space="preserve">
+    <value>Uppgift:</value>
+  </data>
+  <data name="TaskSettingsWindow_Description" xml:space="preserve">
+    <value>Beskrivning:</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterCaptureTasks" xml:space="preserve">
+    <value>Uppgifter efter bildtagning</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAfterCaptureTasks" xml:space="preserve">
+    <value>Åsidosätt uppgifter efter bildtagning</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterUploadTasks" xml:space="preserve">
+    <value>Uppgifter efter uppladdning</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAfterUploadTasks" xml:space="preserve">
+    <value>Åsidosätt uppgifter efter uppladdning</value>
+  </data>
+  <data name="TaskSettingsWindow_Destinations" xml:space="preserve">
+    <value>Mål</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideDestinations" xml:space="preserve">
+    <value>Åsidosätt mål</value>
+  </data>
+  <data name="TaskSettingsWindow_UploaderAccounts" xml:space="preserve">
+    <value>Uppladdarkonton</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenshotsFolder" xml:space="preserve">
+    <value>Skärmbildsmapp</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideScreenshotsFolder" xml:space="preserve">
+    <value>Åsidosätt skärmbildsmapp</value>
+  </data>
+  <data name="TaskSettingsWindow_DurationSeconds" xml:space="preserve">
+    <value>Varaktighet (sekunder):</value>
+  </data>
+  <data name="TaskSettingsWindow_FadeDurationSeconds" xml:space="preserve">
+    <value>Toningslängd (sekunder):</value>
+  </data>
+  <data name="TaskSettingsWindow_Placement" xml:space="preserve">
+    <value>Placering:</value>
+  </data>
+  <data name="TaskSettingsWindow_Width" xml:space="preserve">
+    <value>Bredd:</value>
+  </data>
+  <data name="TaskSettingsWindow_Height" xml:space="preserve">
+    <value>Höjd:</value>
+  </data>
+  <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
+    <value>Åtgärd vid vänsterklick:</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
+    <value>Åtgärd vid högerklick:</value>
+  </data>
+  <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
+    <value>Åtgärd vid mittenklick:</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtonSize" xml:space="preserve">
+    <value>Aviseringsknappens storlek:</value>
+  </data>
+  <data name="TaskSettingsWindow_NotificationButtonsLabel" xml:space="preserve">
+    <value>Aviseringsknappar:</value>
+  </data>
+  <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
+    <value>Konfigurera...</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
+    <value>Dölj automatiskt vid skärmbildstagning</value>
+  </data>
+  <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
+    <value>Inaktivera popupaviseringar i helskärmsläge</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterCaptureIsMade" xml:space="preserve">
+    <value>Spela upp ett ljud efter bildtagning</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterTaskIsCompleted" xml:space="preserve">
+    <value>Spela upp ett ljud när uppgiften är slutförd</value>
+  </data>
+  <data name="TaskSettingsWindow_PlaySoundAfterActionIsCompleted" xml:space="preserve">
+    <value>Spela upp ett ljud när åtgärden är slutförd</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowToastNotificationAfterTaskIsCompleted" xml:space="preserve">
+    <value>Visa en popupavisering när uppgiften är slutförd</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomCaptureSound" xml:space="preserve">
+    <value>Använd anpassat bildtagningsljud</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomTaskCompletedSound" xml:space="preserve">
+    <value>Använd anpassat ljud för slutförd uppgift</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomActionCompletedSound" xml:space="preserve">
+    <value>Använd anpassat ljud för slutförd åtgärd</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomErrorSound" xml:space="preserve">
+    <value>Använd anpassat felljud</value>
+  </data>
+  <data name="TaskSettingsWindow_AdjustJPEGQualityAutomaticallyToKeepImageSizeNearTheSpecifiedSize" xml:space="preserve">
+    <value>Justera JPEG-kvaliteten automatiskt så att bildstorleken ligger nära den angivna storleken</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageFormat" xml:space="preserve">
+    <value>Bildformat:</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG-bitdjup:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
+    <value>JPEG-kvalitet:</value>
+  </data>
+  <data name="TaskSettingsWindow_GIFQuality" xml:space="preserve">
+    <value>GIF-kvalitet:</value>
+  </data>
+  <data name="TaskSettingsWindow_IfFileExists" xml:space="preserve">
+    <value>Om filen finns:</value>
+  </data>
+  <data name="TaskSettingsWindow_UseJPEGIfImageSizeIsBiggerThanTheSpecifiedSize" xml:space="preserve">
+    <value>Använd JPEG om bilden är större än den angivna storleken</value>
+  </data>
+  <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
+    <value>Storleksgräns (kB):</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowImageEffectsWindowAfterCapture" xml:space="preserve">
+    <value>Visa fönstret Bildeffekter efter bildtagning</value>
+  </data>
+  <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
+    <value>Tillämpa endast effekter vid områdesbildtagning</value>
+  </data>
+  <data name="TaskSettingsWindow_UseRandomImageEffect" xml:space="preserve">
+    <value>Använd slumpmässig bildeffekt</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEffectsConfigurationWithEllipsis" xml:space="preserve">
+    <value>Konfiguration av bildeffekter...</value>
+  </data>
+  <data name="TaskSettingsWindow_YouCanEnableOrDisableImageEffectsFromAfterCaptureTasksAddImageEffects" xml:space="preserve">
+    <value>Du kan aktivera eller inaktivera bildeffekter under Uppgifter efter bildtagning &gt; Lägg till bildeffekter.</value>
+  </data>
+  <data name="TaskSettingsWindow_ThumbnailName" xml:space="preserve">
+    <value>Miniatyrnamn:</value>
+  </data>
+  <data name="TaskSettingsWindow_Preview" xml:space="preserve">
+    <value>Förhandsgranskning:</value>
+  </data>
+  <data name="TaskSettingsWindow_CreateThumbnailOnlyIfImageIsBiggerThanThumbnailSize" xml:space="preserve">
+    <value>Skapa endast en miniatyr om bilden är större än miniatyrstorleken</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureWindowWithShadow" xml:space="preserve">
+    <value>Ta bild av fönstret med skugga</value>
+  </data>
+  <data name="TaskSettingsWindow_SelectRegionWithEllipsis" xml:space="preserve">
+    <value>Välj område...</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCursorInScreenshots" xml:space="preserve">
+    <value>Visa markören i skärmbilder</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenshotDelaySeconds" xml:space="preserve">
+    <value>Skärmbildsfördröjning (sekunder):</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureWindowWithTransparency" xml:space="preserve">
+    <value>Ta bild av fönstret med genomskinlighet</value>
+  </data>
+  <data name="TaskSettingsWindow_ShadowOffset" xml:space="preserve">
+    <value>Skuggförskjutning:</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
+    <value>Ta bild av klientområdet vid fönsterbildtagning</value>
+  </data>
+  <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
+    <value>Dölj Aktivitetsfältet när det överlappar ett avbildat fönster</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyHideDesktopIcons" xml:space="preserve">
+    <value>Dölj skrivbordsikoner automatiskt</value>
+  </data>
+  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
+    <value>Färgkorrigering för HDR-skärmbilder</value>
+  </data>
+  <data name="TaskSettingsWindow_WindowTitle" xml:space="preserve">
+    <value>Fönstertitel:</value>
+  </data>
+  <data name="TaskSettingsWindow_AlsoDetectControlsInsideWindows" xml:space="preserve">
+    <value>Identifiera även kontroller inuti fönster</value>
+  </data>
+  <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
+    <value>Använd fyrkantigt förstoringsglas</value>
+  </data>
+  <data name="TaskSettingsWindow_Add" xml:space="preserve">
+    <value>Lägg till</value>
+  </data>
+  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
+    <value>Använd läge med flera områden</value>
+  </data>
+  <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
+    <value>Identifiera fönsterområden</value>
+  </data>
+  <data name="TaskSettingsWindow_RestrictCaptureAndCursorToTheActiveMonitor" xml:space="preserve">
+    <value>Begränsa bildtagning och markör till den aktiva bildskärmen</value>
+  </data>
+  <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
+    <value>Styrka för nedtoning av bakgrund (%):</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClick" xml:space="preserve">
+    <value>Högerklick:</value>
+  </data>
+  <data name="TaskSettingsWindow_MiddleClick" xml:space="preserve">
+    <value>Mittenklick:</value>
+  </data>
+  <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
+    <value>Musklick 4:</value>
+  </data>
+  <data name="TaskSettingsWindow_Mouse5Click" xml:space="preserve">
+    <value>Musklick 5:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
+    <value>Visa information om position och storlek</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomInfoText" xml:space="preserve">
+    <value>Använd anpassad informationstext</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowMagnifierNearCursor" xml:space="preserve">
+    <value>Visa förstoringsglas nära markören</value>
+  </data>
+  <data name="TaskSettingsWindow_MagnifierPixelCount" xml:space="preserve">
+    <value>Antal bildpunkter i förstoringsglaset:</value>
+  </data>
+  <data name="TaskSettingsWindow_MagnifierPixelSize" xml:space="preserve">
+    <value>Bildpunktsstorlek i förstoringsglaset:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCenterCrosshair" xml:space="preserve">
+    <value>Visa hårkors i mitten</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowScreenWideCrosshair" xml:space="preserve">
+    <value>Visa hårkors över hela skärmen</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedSizeRegionMode" xml:space="preserve">
+    <value>Område med fast storlek</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedWidth" xml:space="preserve">
+    <value>Fast bredd:</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
+    <value>Fast höjd:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowFPS" xml:space="preserve">
+    <value>Visa FPS</value>
+  </data>
+  <data name="TaskSettingsWindow_FPSLimit" xml:space="preserve">
+    <value>FPS-gräns:</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
+    <value>FPS för skärminspelning:</value>
+  </data>
+  <data name="TaskSettingsWindow_GIFFPS" xml:space="preserve">
+    <value>FPS för GIF:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowCursorInRecording" xml:space="preserve">
+    <value>Visa markören i inspelningen</value>
+  </data>
+  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
+    <value>Starta inspelningen efter en fördröjning</value>
+  </data>
+  <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
+    <value>Startfördröjning (sekunder):</value>
+  </data>
+  <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
+    <value>Använd fast varaktighet</value>
+  </data>
+  <data name="TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions" xml:space="preserve">
+    <value>Spela först in förlustfritt och tillämpa sedan kodningsalternativen</value>
+  </data>
+  <data name="TaskSettingsWindow_AskForConfirmationWhenAborting" xml:space="preserve">
+    <value>Be om bekräftelse vid avbrott</value>
+  </data>
+  <data name="TaskSettingsWindow_UseTransparentRegionSelection" xml:space="preserve">
+    <value>Använd genomskinligt områdesval</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis" xml:space="preserve">
+    <value>Alternativ för skärminspelning...</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticallyCopyResultsToClipboard" xml:space="preserve">
+    <value>Kopiera resultaten automatiskt till Urklipp</value>
+  </data>
+  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
+    <value>Standardspråk:</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessOCRSilently" xml:space="preserve">
+    <value>Bearbeta OCR utan att visa fönstret</value>
+  </data>
+  <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
+    <value>Stäng OCR-fönstret efter att en tjänstlänk har öppnats</value>
+  </data>
+  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
+    <value>OCR-hjälp...</value>
+  </data>
+  <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
+    <value>Bildtagning eller uppladdning av Urklipp:</value>
+  </data>
+  <data name="TaskSettingsWindow_WindowCapture" xml:space="preserve">
+    <value>Fönsterbildtagning:</value>
+  </data>
+  <data name="TaskSettingsWindow_UseNamePatternForFileUploads" xml:space="preserve">
+    <value>Använd namnmönster för filuppladdningar</value>
+  </data>
+  <data name="TaskSettingsWindow_ReplaceURLProblematicCharactersWithUnderscores" xml:space="preserve">
+    <value>Ersätt URL-problematiska tecken med understreck</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
+    <value>Öka nummer automatiskt:</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
+    <value>Använd anpassad tidszon</value>
+  </data>
+  <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
+    <value>Tidszon:</value>
+  </data>
+  <data name="TaskSettingsWindow_ReplaceResultURLUsingARegularExpression" xml:space="preserve">
+    <value>Ersätt resultat-URL med ett reguljärt uttryck</value>
+  </data>
+  <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
+    <value>Mönster:</value>
+  </data>
+  <data name="TaskSettingsWindow_Replacement" xml:space="preserve">
+    <value>Ersättning:</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
+    <value>Om Urklipp innehåller en fil-URL, hämta och ladda upp den</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAURLUseURLShortener" xml:space="preserve">
+    <value>Om Urklipp innehåller en URL, använd URL-förkortaren</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAURLShareItUsingURLSharingService" xml:space="preserve">
+    <value>Om Urklipp innehåller en URL, dela den med URL-delningstjänsten</value>
+  </data>
+  <data name="TaskSettingsWindow_IfClipboardContainsAFolderPathIndexAndUploadIt" xml:space="preserve">
+    <value>Om Urklipp innehåller en mappsökväg, indexera och ladda upp den</value>
+  </data>
+  <data name="TaskSettingsWindow_Update" xml:space="preserve">
+    <value>Uppdatera</value>
+  </data>
+  <data name="TaskSettingsWindow_Uploader" xml:space="preserve">
+    <value>Uppladdare:</value>
+  </data>
+  <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
+    <value>Filnamnstillägg:</value>
+  </data>
+  <data name="TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg" xml:space="preserve">
+    <value>Avgränsa filnamnstillägg med kommatecken, till exempel: png, jpg, jpeg</value>
+  </data>
+  <data name="TaskSettingsWindow_UseLegacyImageEditor" xml:space="preserve">
+    <value>Använd äldre bildredigerare</value>
+  </data>
+  <data name="TaskSettingsWindow_Format" xml:space="preserve">
+    <value>Format:</value>
+  </data>
+  <data name="TaskSettingsWindow_FormatCtrlPlusClick" xml:space="preserve">
+    <value>Format (Ctrl + klick):</value>
+  </data>
+  <data name="TaskSettingsWindow_InfoText" xml:space="preserve">
+    <value>Informationstext:</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowMagnifier" xml:space="preserve">
+    <value>Visa förstoringsglas</value>
+  </data>
+  <data name="TaskSettingsWindow_EditWithEllipsis" xml:space="preserve">
+    <value>Redigera...</value>
+  </data>
+  <data name="TaskSettingsWindow_Duplicate" xml:space="preserve">
+    <value>Duplicera</value>
+  </data>
+  <data name="TaskSettingsWindow_YouCanEnableOrDisableActionsFromAfterCaptureTasksPerformActions" xml:space="preserve">
+    <value>Du kan aktivera eller inaktivera åtgärder under Uppgifter efter bildtagning &gt; Utför åtgärder.</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFolders" xml:space="preserve">
+    <value>Bevakade mappar</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFoldersAndUploadNewlyCreatedFiles" xml:space="preserve">
+    <value>Bevaka mappar och ladda upp nyskapade filer</value>
+  </data>
+  <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
+    <value>Ljud</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
+    <value>Popupavisering</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomSounds" xml:space="preserve">
+    <value>Anpassade ljud</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideImageSettings" xml:space="preserve">
+    <value>Åsidosätt bildinställningar</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageQuality" xml:space="preserve">
+    <value>Bildkvalitet</value>
+  </data>
+  <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
+    <value>Automatisk JPEG</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEffects" xml:space="preserve">
+    <value>Bildeffekter</value>
+  </data>
+  <data name="TaskSettingsWindow_Thumbnail" xml:space="preserve">
+    <value>Miniatyr</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideCaptureSettings" xml:space="preserve">
+    <value>Åsidosätt bildtagningsinställningar</value>
+  </data>
+  <data name="TaskSettingsWindow_Screenshots" xml:space="preserve">
+    <value>Skärmbilder</value>
+  </data>
+  <data name="TaskSettingsWindow_PreconfiguredRegion" xml:space="preserve">
+    <value>Förkonfigurerat område</value>
+  </data>
+  <data name="TaskSettingsWindow_PreconfiguredWindow" xml:space="preserve">
+    <value>Förkonfigurerat fönster</value>
+  </data>
+  <data name="TaskSettingsWindow_Selection" xml:space="preserve">
+    <value>Markering</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
+    <value>Musåtgärder</value>
+  </data>
+  <data name="TaskSettingsWindow_InformationAndMagnifier" xml:space="preserve">
+    <value>Information och förstoringsglas</value>
+  </data>
+  <data name="TaskSettingsWindow_FixedSizeAndPerformance" xml:space="preserve">
+    <value>Fast storlek och prestanda</value>
+  </data>
+  <data name="TaskSettingsWindow_SnapSizes" xml:space="preserve">
+    <value>Fäststorlekar</value>
+  </data>
+  <data name="TaskSettingsWindow_Recording" xml:space="preserve">
+    <value>Inspelning</value>
+  </data>
+  <data name="TaskSettingsWindow_EncodingAndCapture" xml:space="preserve">
+    <value>Kodning och bildtagning</value>
+  </data>
+  <data name="TaskSettingsWindow_OpticalCharacterRecognition" xml:space="preserve">
+    <value>Optisk teckenigenkänning</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
+    <value>Namnmönster</value>
+  </data>
+  <data name="TaskSettingsWindow_TimeZone" xml:space="preserve">
+    <value>Tidszon</value>
+  </data>
+  <data name="TaskSettingsWindow_URLReplacement" xml:space="preserve">
+    <value>URL-ersättning</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardContent" xml:space="preserve">
+    <value>Innehåll i Urklipp</value>
+  </data>
+  <data name="TaskSettingsWindow_Filters" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideToolsSettings" xml:space="preserve">
+    <value>Åsidosätt verktygsinställningar</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
+    <value>Bildredigerare</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
+    <value>Skärmfärgväljare</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideActions" xml:space="preserve">
+    <value>Åsidosätt åtgärder</value>
+  </data>
+  <data name="TaskSettingsWindow_Actions" xml:space="preserve">
+    <value>Åtgärder</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideAdvancedSettings" xml:space="preserve">
+    <value>Åsidosätt avancerade inställningar</value>
+  </data>
+  <data name="TaskSettingsWindow_General" xml:space="preserve">
+    <value>Allmänt</value>
+  </data>
+  <data name="TaskSettingsWindow_Upload" xml:space="preserve">
+    <value>Uppladdning</value>
+  </data>
+  <data name="TaskSettingsWindow_Notifications" xml:space="preserve">
+    <value>Aviseringar</value>
+  </data>
+  <data name="TaskSettingsWindow_Image" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="TaskSettingsWindow_Effects" xml:space="preserve">
+    <value>Effekter</value>
+  </data>
+  <data name="TaskSettingsWindow_Capture" xml:space="preserve">
+    <value>Bildtagning</value>
+  </data>
+  <data name="TaskSettingsWindow_RegionCapture" xml:space="preserve">
+    <value>Områdesbildtagning</value>
+  </data>
+  <data name="TaskSettingsWindow_ScreenRecorder" xml:space="preserve">
+    <value>Skärminspelare</value>
+  </data>
+  <data name="TaskSettingsWindow_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="TaskSettingsWindow_FileNaming" xml:space="preserve">
+    <value>Filnamn</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardUpload" xml:space="preserve">
+    <value>Uppladdning av Urklipp</value>
+  </data>
+  <data name="TaskSettingsWindow_UploaderFilters" xml:space="preserve">
+    <value>Uppladdarfilter</value>
+  </data>
+  <data name="TaskSettingsWindow_Tools" xml:space="preserve">
+    <value>Verktyg</value>
+  </data>
+  <data name="TaskSettingsWindow_Advanced" xml:space="preserve">
+    <value>Avancerat</value>
+  </data>
+  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
+    <value>OCR-språk är inte tillgängliga</value>
+  </data>
+  <data name="TaskSettingsWindow_X" xml:space="preserve">
+    <value>X:</value>
+  </data>
+  <data name="TaskSettingsWindow_Y" xml:space="preserve">
+    <value>Y:</value>
+  </data>
+  <data name="TaskSettingsWindow_EnableAction" xml:space="preserve">
+    <value>Aktivera åtgärd</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideGeneralSettings" xml:space="preserve">
+    <value>Åsidosätt allmänna inställningar</value>
+  </data>
+  <data name="TaskSettingsWindow_OverrideUploadSettings" xml:space="preserve">
+    <value>Åsidosätt uppladdningsinställningar</value>
+  </data>
+  <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
+    <value>Wave-ljud</value>
+  </data>
+  <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
+    <value>{0} — {1} — Inkludera undermappar: {2}</value>
+  </data>
+  <data name="TaskSettingsWindow_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="TaskSettingsWindow_No" xml:space="preserve">
+    <value>Nej</value>
+  </data>
+  <data name="TaskSettingsWindow_UploadText" xml:space="preserve">
+    <value>Ladda upp text</value>
+  </data>
+  <data name="TaskSettingsWindow_AfterUpload" xml:space="preserve">
+    <value>Efter uppladdning</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePattern" xml:space="preserve">
+    <value>Namnmönster</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringFileUpload" xml:space="preserve">
+    <value>Bearbeta bilder vid filuppladdning</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringClipboardUpload" xml:space="preserve">
+    <value>Bearbeta bilder vid uppladdning av Urklipp</value>
+  </data>
+  <data name="TaskSettingsWindow_ProcessImagesDuringExtensionUpload" xml:space="preserve">
+    <value>Bearbeta bilder vid uppladdning av filnamnstillägg</value>
+  </data>
+  <data name="TaskSettingsWindow_UseAfterCaptureTasksDuringFileUpload" xml:space="preserve">
+    <value>Använd uppgifter efter bildtagning vid filuppladdning</value>
+  </data>
+  <data name="TaskSettingsWindow_TextTaskSaveAsFile" xml:space="preserve">
+    <value>Spara textuppgifter som filer</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoClearClipboard" xml:space="preserve">
+    <value>Rensa Urklipp automatiskt</value>
+  </data>
+  <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
+    <value>Inaktivera anteckningar vid områdesbildtagning</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageExtensions" xml:space="preserve">
+    <value>Bildfilnamnstillägg</value>
+  </data>
+  <data name="TaskSettingsWindow_TextExtensions" xml:space="preserve">
+    <value>Textfilnamnstillägg</value>
+  </data>
+  <data name="TaskSettingsWindow_EarlyCopyURL" xml:space="preserve">
+    <value>Kopiera URL före uppladdning</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFileExtension" xml:space="preserve">
+    <value>Textfilens filnamnstillägg</value>
+  </data>
+  <data name="TaskSettingsWindow_TextFormat" xml:space="preserve">
+    <value>Textformat</value>
+  </data>
+  <data name="TaskSettingsWindow_TextCustom" xml:space="preserve">
+    <value>Anpassad text</value>
+  </data>
+  <data name="TaskSettingsWindow_TextCustomEncodeInput" xml:space="preserve">
+    <value>HTML-koda anpassad textindata</value>
+  </data>
+  <data name="TaskSettingsWindow_ResultForceHTTPS" xml:space="preserve">
+    <value>Tvinga HTTPS för resultat-URL:er</value>
+  </data>
+  <data name="TaskSettingsWindow_ClipboardContentFormat" xml:space="preserve">
+    <value>Format för Urklippsinnehåll</value>
+  </data>
+  <data name="TaskSettingsWindow_BalloonTipContentFormat" xml:space="preserve">
+    <value>Format för aviseringsinnehåll</value>
+  </data>
+  <data name="TaskSettingsWindow_OpenURLFormat" xml:space="preserve">
+    <value>Format för Öppna URL</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
+    <value>Längd för automatisk URL-förkortning</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCloseAfterUploadForm" xml:space="preserve">
+    <value>Stäng fönstret Efter uppladdning automatiskt</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatternMaxLength" xml:space="preserve">
+    <value>Maximal längd på namnmönster</value>
+  </data>
+  <data name="TaskSettingsWindow_NamePatternMaxTitleLength" xml:space="preserve">
+    <value>Maximal titellängd i namnmönster</value>
+  </data>
+  <data name="TaskSettingsWindow_ChooseAudioFile" xml:space="preserve">
+    <value>Välj ljudfil</value>
+  </data>
+  <data name="DragDropUploadWindow_Title" xml:space="preserve">
+    <value>ShareX – Uppladdning med dra och släpp</value>
+  </data>
+  <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
+    <value>Släpp här</value>
+  </data>
+  <data name="ClipboardUploadWindow_ClipboardUpload" xml:space="preserve">
+    <value>Uppladdning av Urklipp</value>
+  </data>
+  <data name="ClipboardUploadWindow_DontShowAgain" xml:space="preserve">
+    <value>Visa inte det här fönstret igen</value>
+  </data>
+  <data name="ClipboardUploadWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="ClipboardUploadWindow_Upload" xml:space="preserve">
+    <value>Ladda upp</value>
+  </data>
+  <data name="ClipboardUploadWindow_ImageSummary" xml:space="preserve">
+    <value>Innehåll i Urklipp: Bild, storlek: {0} × {1}</value>
+  </data>
+  <data name="ClipboardUploadWindow_TextSummary" xml:space="preserve">
+    <value>Innehåll i Urklipp: Text, längd: {0}</value>
+  </data>
+  <data name="ClipboardUploadWindow_FileSummary" xml:space="preserve">
+    <value>Innehåll i Urklipp: Filer, antal: {0}</value>
+  </data>
+  <data name="ClipboardUploadWindow_Empty" xml:space="preserve">
+    <value>Urklipp är tomt eller innehåller data som inte stöds.</value>
+  </data>
+  <data name="FileExistWindow_Title" xml:space="preserve">
+    <value>ShareX – Hur ska filen sparas?</value>
+  </data>
+  <data name="FileExistWindow_FileAlreadyExists" xml:space="preserve">
+    <value>En fil med det här namnet finns redan</value>
+  </data>
+  <data name="FileExistWindow_Instruction" xml:space="preserve">
+    <value>Välj ett nytt filnamn eller hur ShareX ska fortsätta.</value>
+  </data>
+  <data name="FileExistWindow_NewFileName" xml:space="preserve">
+    <value>Nytt filnamn</value>
+  </data>
+  <data name="FileExistWindow_UseNewName" xml:space="preserve">
+    <value>Använd nytt namn</value>
+  </data>
+  <data name="FileExistWindow_Overwrite" xml:space="preserve">
+    <value>Skriv över</value>
+  </data>
+  <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
+    <value>Använd unikt namn</value>
+  </data>
+  <data name="FileExistWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Title" xml:space="preserve">
+    <value>ShareX - Uppladdning av stor fil</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Message" xml:space="preserve">
+    <value>Du försöker ladda upp en stor fil.</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_DontShowAgain" xml:space="preserve">
+    <value>Visa inte det här meddelandet igen.</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Continue" xml:space="preserve">
+    <value>Fortsätt</value>
+  </data>
+  <data name="LargeFileUploadWarningWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Title" xml:space="preserve">
+    <value>ShareX - Ladda upp filer</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Message" xml:space="preserve">
+    <value>Vill du verkligen ladda upp {0} filer?</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_DontShowAgain" xml:space="preserve">
+    <value>Visa inte det här meddelandet igen.</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Upload" xml:space="preserve">
+    <value>Ladda upp</value>
+  </data>
+  <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="DebugLogWindow_Title" xml:space="preserve">
+    <value>ShareX - Felsökningslogg</value>
+  </data>
+  <data name="DebugLogWindow_LoadedAssemblies" xml:space="preserve">
+    <value>Inlästa sammansättningar</value>
+  </data>
+  <data name="DebugLogWindow_CopyAll" xml:space="preserve">
+    <value>Kopiera allt</value>
+  </data>
+  <data name="DebugLogWindow_OpenLogFile" xml:space="preserve">
+    <value>Öppna loggfil...</value>
+  </data>
+  <data name="DebugLogWindow_UploadLog" xml:space="preserve">
+    <value>Ladda upp logg...</value>
+  </data>
+  <data name="DebugLogWindow_StartupPath" xml:space="preserve">
+    <value>Startsökväg:</value>
+  </data>
+  <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
+    <value>Ladda upp felsökningsloggen?</value>
+  </data>
+  <data name="DebugLogWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="DebugLogWindow_Upload" xml:space="preserve">
+    <value>Ladda upp</value>
+  </data>
+  <data name="FirstTimeConfigWindow_Heading" xml:space="preserve">
+    <value>Förstagångskonfiguration av ShareX</value>
+  </data>
+  <data name="FirstTimeConfigWindow_Subtitle" xml:space="preserve">
+    <value>Välj hur ShareX integreras med Windows.</value>
+  </data>
+  <data name="FirstTimeConfigWindow_ShellContextMenu" xml:space="preserve">
+    <value>Visa "Ladda upp med ShareX" i Utforskarens snabbmeny</value>
+  </data>
+  <data name="FirstTimeConfigWindow_SendToMenu" xml:space="preserve">
+    <value>Visa ShareX i menyn "Skicka till"</value>
+  </data>
+  <data name="FirstTimeConfigWindow_SteamInApp" xml:space="preserve">
+    <value>Visa "I spelet" i Steam medan ShareX är öppet</value>
+  </data>
+  <data name="FirstTimeConfigWindow_OptionsLater" xml:space="preserve">
+    <value>Du kan ändra dessa alternativ senare under Programinställningar &gt; Integration.</value>
+  </data>
+  <data name="FirstTimeConfigWindow_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindows" xml:space="preserve">
+    <value>Kör ShareX när Windows startar</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByUser" xml:space="preserve">
+    <value>Autostart har inaktiverats i Aktivitetshanteraren</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy" xml:space="preserve">
+    <value>Autostart har inaktiverats av din organisation</value>
+  </data>
+  <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
+    <value>Autostart har aktiverats av din organisation</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Title" xml:space="preserve">
+    <value>ShareX - Val av bildredigerare</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Heading" xml:space="preserve">
+    <value>Välj en bildredigerare</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Subtitle" xml:space="preserve">
+    <value>Välj vilken redigerare ShareX ska öppna.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ModernEditor" xml:space="preserve">
+    <value>Modern bildredigerare</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_Recommended" xml:space="preserve">
+    <value>Rekommenderas</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ModernDescription" xml:space="preserve">
+    <value>Den nuvarande ShareX-redigeraren med de senaste verktygen och förbättringarna.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_LegacyEditor" xml:space="preserve">
+    <value>Äldre bildredigerare</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_LegacyDescription" xml:space="preserve">
+    <value>Den klassiska ShareX-redigeraren för områdesbildtagning.</value>
+  </data>
+  <data name="ImageEditorSelectorWindow_ChangeLater" xml:space="preserve">
+    <value>Du kan ändra detta senare under Uppgiftsinställningar &gt; Verktyg.</value>
+  </data>
+  <data name="ShortenURLWindow_Title" xml:space="preserve">
+    <value>ShareX - Förkorta URL</value>
+  </data>
+  <data name="ShortenURLWindow_Heading" xml:space="preserve">
+    <value>Förkorta URL</value>
+  </data>
+  <data name="ShortenURLWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ShortenURLWindow_Validation" xml:space="preserve">
+    <value>Ange en giltig HTTP-, HTTPS- eller FTP-URL.</value>
+  </data>
+  <data name="ShortenURLWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="ShortenURLWindow_Shorten" xml:space="preserve">
+    <value>Förkorta</value>
+  </data>
+  <data name="URLUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - URL-uppladdning</value>
+  </data>
+  <data name="URLUploadWindow_Heading" xml:space="preserve">
+    <value>URL-uppladdning</value>
+  </data>
+  <data name="URLUploadWindow_Prompt" xml:space="preserve">
+    <value>URL att hämta och ladda upp</value>
+  </data>
+  <data name="URLUploadWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="URLUploadWindow_Validation" xml:space="preserve">
+    <value>Ange en giltig HTTP-, HTTPS- eller FTP-URL.</value>
+  </data>
+  <data name="URLUploadWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="URLUploadWindow_Upload" xml:space="preserve">
+    <value>Ladda upp</value>
+  </data>
+  <data name="BeforeUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - Före uppladdning</value>
+  </data>
+  <data name="BeforeUploadWindow_Heading" xml:space="preserve">
+    <value>Före uppladdning</value>
+  </data>
+  <data name="BeforeUploadWindow_Destination" xml:space="preserve">
+    <value>Mål</value>
+  </data>
+  <data name="BeforeUploadWindow_CopyPreviewImage" xml:space="preserve">
+    <value>Kopiera förhandsvisningsbild</value>
+  </data>
+  <data name="BeforeUploadWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="BeforeUploadWindow_Upload" xml:space="preserve">
+    <value>Ladda upp</value>
+  </data>
+  <data name="BeforeUploadWindow_CustomUploader" xml:space="preserve">
+    <value>Anpassad [{0}]</value>
+  </data>
+  <data name="BeforeUploadWindow_ChooseDestination" xml:space="preserve">
+    <value>Välj ett mål.</value>
+  </data>
+  <data name="BeforeUploadWindow_UploadPrompt" xml:space="preserve">
+    <value>{0} kommer att laddas upp till {1}. Du kan välja ett annat mål.</value>
+  </data>
+  <data name="BeforeUploadWindow_NoPreview" xml:space="preserve">
+    <value>Ingen förhandsvisning tillgänglig</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Title" xml:space="preserve">
+    <value>ShareX - Redigera åtgärdsverktygsfält</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Add" xml:space="preserve">
+    <value>Lägg till...</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Remove" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_MoveUp" xml:space="preserve">
+    <value>Flytta upp</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_MoveDown" xml:space="preserve">
+    <value>Flytta ned</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Separator" xml:space="preserve">
+    <value>Avgränsare</value>
+  </data>
+  <data name="ActionsToolbarEditorWindow_Close" xml:space="preserve">
+    <value>Stäng</value>
+  </data>
+  <data name="ActionsToolbarWindow_Title" xml:space="preserve">
+    <value>ShareX - Åtgärdsverktygsfält</value>
+  </data>
+  <data name="ActionsToolbarWindow_DropToUpload" xml:space="preserve">
+    <value>Släpp för att ladda upp</value>
+  </data>
+  <data name="ActionsToolbarWindow_Tip" xml:space="preserve">
+    <value>Dra för att flytta; högerklicka för menyn</value>
+  </data>
+  <data name="ActionsToolbarWindow_Close" xml:space="preserve">
+    <value>Stäng</value>
+  </data>
+  <data name="ActionsToolbarWindow_LockPosition" xml:space="preserve">
+    <value>Lås position</value>
+  </data>
+  <data name="ActionsToolbarWindow_StayOnTop" xml:space="preserve">
+    <value>Alltid överst</value>
+  </data>
+  <data name="ActionsToolbarWindow_OpenAtStartup" xml:space="preserve">
+    <value>Öppna vid start av ShareX</value>
+  </data>
+  <data name="ActionsToolbarWindow_Edit" xml:space="preserve">
+    <value>Redigera...</value>
+  </data>
+  <data name="AfterCaptureWindow_Title" xml:space="preserve">
+    <value>ShareX - Efter bildtagning</value>
+  </data>
+  <data name="AfterCaptureWindow_Heading" xml:space="preserve">
+    <value>Efter bildtagning</value>
+  </data>
+  <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
+    <value>Granska det tagna innehållet och välj vad som ska hända härnäst.</value>
+  </data>
+  <data name="AfterCaptureWindow_Destinations" xml:space="preserve">
+    <value>Mål</value>
+  </data>
+  <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
+    <value>Efter uppladdning</value>
+  </data>
+  <data name="AfterCaptureWindow_FileName" xml:space="preserve">
+    <value>Filnamn</value>
+  </data>
+  <data name="AfterCaptureWindow_CopyImage" xml:space="preserve">
+    <value>Kopiera bild</value>
+  </data>
+  <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="AfterCaptureWindow_Continue" xml:space="preserve">
+    <value>Fortsätt</value>
+  </data>
+  <data name="AfterCaptureWindow_CopyPreviewImage" xml:space="preserve">
+    <value>Kopiera förhandsvisningsbild</value>
+  </data>
+  <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
+    <value>Ingen bildförhandsvisning tillgänglig</value>
+  </data>
+  <data name="AfterCaptureWindow_CustomUploader" xml:space="preserve">
+    <value>Anpassad [{0}]</value>
+  </data>
+  <data name="AfterUploadWindow_Title" xml:space="preserve">
+    <value>ShareX - Efter uppladdning</value>
+  </data>
+  <data name="AfterUploadWindow_UploadComplete" xml:space="preserve">
+    <value>Uppladdningen är klar</value>
+  </data>
+  <data name="AfterUploadWindow_ClipboardFormats" xml:space="preserve">
+    <value>Urklippsformat</value>
+  </data>
+  <data name="AfterUploadWindow_CopyPreviewImage" xml:space="preserve">
+    <value>Kopiera förhandsvisningsbild</value>
+  </data>
+  <data name="AfterUploadWindow_NoPreview" xml:space="preserve">
+    <value>Ingen bildförhandsvisning tillgänglig</value>
+  </data>
+  <data name="AfterUploadWindow_CopyImage" xml:space="preserve">
+    <value>Kopiera bild</value>
+  </data>
+  <data name="AfterUploadWindow_CopySelectedFormat" xml:space="preserve">
+    <value>Kopiera valt format</value>
+  </data>
+  <data name="AfterUploadWindow_OpenLink" xml:space="preserve">
+    <value>Öppna länk</value>
+  </data>
+  <data name="AfterUploadWindow_OpenFile" xml:space="preserve">
+    <value>Öppna fil</value>
+  </data>
+  <data name="AfterUploadWindow_OpenContainingFolder" xml:space="preserve">
+    <value>Öppna överordnad mapp</value>
+  </data>
+  <data name="AfterUploadWindow_Close" xml:space="preserve">
+    <value>Stäng</value>
+  </data>
+  <data name="AfterUploadWindow_GroupCustom" xml:space="preserve">
+    <value>Anpassat</value>
+  </data>
+  <data name="AfterUploadWindow_GroupForums" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+  <data name="AfterUploadWindow_GroupLocal" xml:space="preserve">
+    <value>Lokalt</value>
+  </data>
+  <data name="AfterUploadWindow_GroupLinks" xml:space="preserve">
+    <value>Länkar</value>
+  </data>
+  <data name="AutoCaptureWindow_Title" xml:space="preserve">
+    <value>ShareX - Automatisk bildtagning</value>
+  </data>
+  <data name="AutoCaptureWindow_CustomRegion" xml:space="preserve">
+    <value>Anpassat område</value>
+  </data>
+  <data name="AutoCaptureWindow_Fullscreen" xml:space="preserve">
+    <value>Helskärm</value>
+  </data>
+  <data name="AutoCaptureWindow_NoRegion" xml:space="preserve">
+    <value>Inget område valt</value>
+  </data>
+  <data name="AutoCaptureWindow_SelectRegion" xml:space="preserve">
+    <value>Välj område...</value>
+  </data>
+  <data name="AutoCaptureWindow_RepeatTime" xml:space="preserve">
+    <value>Upprepningstid:</value>
+  </data>
+  <data name="AutoCaptureWindow_Seconds" xml:space="preserve">
+    <value>sekunder</value>
+  </data>
+  <data name="AutoCaptureWindow_AutoMinimize" xml:space="preserve">
+    <value>Minimera automatiskt till meddelandefältet</value>
+  </data>
+  <data name="AutoCaptureWindow_WaitTasks" xml:space="preserve">
+    <value>Vänta tills uppgifterna är klara</value>
+  </data>
+  <data name="AutoCaptureWindow_Start" xml:space="preserve">
+    <value>Starta</value>
+  </data>
+  <data name="AutoCaptureWindow_Ready" xml:space="preserve">
+    <value>Klar</value>
+  </data>
+  <data name="AutoCaptureWindow_Stop" xml:space="preserve">
+    <value>Stoppa</value>
+  </data>
+  <data name="AutoCaptureWindow_Status" xml:space="preserve">
+    <value>Återstående tid: {0} s ({1} %) - Totalt: {2}</value>
+  </data>
+  <data name="AutoCaptureWindow_Region" xml:space="preserve">
+    <value>X: {0}, Y: {1}, bredd: {2}, höjd: {3}</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Add" xml:space="preserve">
+    <value>Lägg till</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Name" xml:space="preserve">
+    <value>Namn</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Value" xml:space="preserve">
+    <value>Värde</value>
+  </data>
+  <data name="CustomUploaderKeyValueEditor_Remove" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Title" xml:space="preserve">
+    <value>ShareX - Redigerare för snabbuppgiftsmeny</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Add" xml:space="preserve">
+    <value>Lägg till...</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Edit" xml:space="preserve">
+    <value>Redigera...</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Remove" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MoveUp" xml:space="preserve">
+    <value>Flytta upp</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MoveDown" xml:space="preserve">
+    <value>Flytta ned</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Reset" xml:space="preserve">
+    <value>Återställ...</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Separator" xml:space="preserve">
+    <value>Avgränsare</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_SeparatorHint" xml:space="preserve">
+    <value>En uppgift utan åtgärder efter bildtagning visas som en avgränsare i snabbuppgiftsmenyn.</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Close" xml:space="preserve">
+    <value>Stäng</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AddQuickTask" xml:space="preserve">
+    <value>Lägg till snabbuppgift</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_EditQuickTask" xml:space="preserve">
+    <value>Redigera snabbuppgift</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ChooseActions" xml:space="preserve">
+    <value>Välj vilka åtgärder det här objektet i snabbuppgiftsmenyn ska köra.</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MenuText" xml:space="preserve">
+    <value>Menytext</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_MenuTextHint" xml:space="preserve">
+    <value>Lämna tomt för att skapa menytexten från de valda åtgärderna.</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AfterCaptureTasks" xml:space="preserve">
+    <value>Uppgifter efter bildtagning</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AfterUploadTasks" xml:space="preserve">
+    <value>Uppgifter efter uppladdning</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Save" xml:space="preserve">
+    <value>Spara</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ResetPrompt" xml:space="preserve">
+    <value>Återställ snabbuppgifter?</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ResetAction" xml:space="preserve">
+    <value>Återställ</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_ResetConfirmation" xml:space="preserve">
+    <value>Återställa alla snabbuppgifter till standardvärdena? Detta går inte att ångra.</value>
+  </data>
+  <data name="QuickTaskMenuEditorWindow_AfterUploadSummary" xml:space="preserve">
+    <value>{0}  -  Efter uppladdning: {1}</value>
+  </data>
+  <data name="AboutWindow_Title" xml:space="preserve">
+    <value>ShareX - Om</value>
+  </data>
+  <data name="AboutWindow_Copyright" xml:space="preserve">
+    <value>Copyright © 2007-2026 ShareX Team</value>
+  </data>
+  <data name="AboutWindow_SteamBuild" xml:space="preserve">
+    <value>Steam-version</value>
+  </data>
+  <data name="AboutWindow_MicrosoftStoreBuild" xml:space="preserve">
+    <value>Microsoft Store-version</value>
+  </data>
+  <data name="AboutWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Söker efter uppdateringar...</value>
+  </data>
+  <data name="AboutWindow_UpdateCheckFailed" xml:space="preserve">
+    <value>Det gick inte att söka efter uppdateringar.</value>
+  </data>
+  <data name="AboutWindow_NewVersionAvailable" xml:space="preserve">
+    <value>En nyare version av ShareX finns tillgänglig</value>
+  </data>
+  <data name="AboutWindow_UpToDate" xml:space="preserve">
+    <value>ShareX är uppdaterat.</value>
+  </data>
+  <data name="AboutWindow_Links" xml:space="preserve">
+    <value>Länkar</value>
+  </data>
+  <data name="AboutWindow_Website" xml:space="preserve">
+    <value>Webbplats</value>
+  </data>
+  <data name="AboutWindow_ProjectPage" xml:space="preserve">
+    <value>Projektsida</value>
+  </data>
+  <data name="AboutWindow_Changelog" xml:space="preserve">
+    <value>Ändringslogg</value>
+  </data>
+  <data name="AboutWindow_PrivacyPolicy" xml:space="preserve">
+    <value>Integritetspolicy</value>
+  </data>
+  <data name="AboutWindow_Donate" xml:space="preserve">
+    <value>Donera</value>
+  </data>
+  <data name="AboutWindow_Team" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Title" xml:space="preserve">
+    <value>ShareX - Inställningar för anpassad uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploaderLibrary" xml:space="preserve">
+    <value>Uppladdarbibliotek</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
+    <value>Guide för anpassade uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
+    <value>Sök uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_New" xml:space="preserve">
+    <value>Ny</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
+    <value>Importera</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
+    <value>Duplicera vald uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
+    <value>Exportera vald uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
+    <value>Ta bort vald uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
+    <value>Exportera alla</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
+    <value>Rensa alla</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
+    <value>Uppdatera mapp</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
+    <value>Översikt</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Request" xml:space="preserve">
+    <value>Begäran</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Body" xml:space="preserve">
+    <value>Innehåll</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Response" xml:space="preserve">
+    <value>Svar</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_OverviewDescription" xml:space="preserve">
+    <value>Ge uppladdaren ett igenkännligt namn och välj var ShareX kan använda den.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Identity" xml:space="preserve">
+    <value>Identitet</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Name" xml:space="preserve">
+    <value>Namn</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NamePlaceholder" xml:space="preserve">
+    <value>Använder värden för begärans värd om fältet lämnas tomt</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NameDescription" xml:space="preserve">
+    <value>Det här namnet visas i hela ShareX. Ändringar sparas omedelbart.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Capabilities" xml:space="preserve">
+    <value>Funktioner</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_CapabilitiesDescription" xml:space="preserve">
+    <value>Aktivera varje måltyp som stöds av den här slutpunkten.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ImageUploader" xml:space="preserve">
+    <value>Bilduppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextUploader" xml:space="preserve">
+    <value>Textuppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FileUploader" xml:space="preserve">
+    <value>Filuppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_URLShortener" xml:space="preserve">
+    <value>URL-förkortare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_URLSharingService" xml:space="preserve">
+    <value>URL-delningstjänst</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Endpoint" xml:space="preserve">
+    <value>Slutpunkt</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ChangesApplied" xml:space="preserve">
+    <value>Ändringar tillämpas omedelbart.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_CreateOrImport" xml:space="preserve">
+    <value>Skapa en anpassad uppladdare eller importera en .sxcu-fil.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NoSearchMatches" xml:space="preserve">
+    <value>Inga uppladdare matchar sökningen.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_AllRemoved" xml:space="preserve">
+    <value>Alla anpassade uppladdare har tagits bort.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Arguments" xml:space="preserve">
+    <value>Argument</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Base64Encoding" xml:space="preserve">
+    <value>Base64-kodning</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Beautify" xml:space="preserve">
+    <value>Formatera snyggt</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_BodyDescription" xml:space="preserve">
+    <value>Välj hur begärandedata och uppladdade filer kodas.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
+    <value>Innehållstyp</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ClearConfirmation" xml:space="preserve">
+    <value>Ta bort alla anpassade uppladdare?</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Close" xml:space="preserve">
+    <value>Stäng</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ConfirmationTitle" xml:space="preserve">
+    <value>ShareX - Bekräftelse</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_CustomUploaderFileType" xml:space="preserve">
+    <value>Anpassad ShareX-uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DeletionURL" xml:space="preserve">
+    <value>Borttagnings-URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DeletionURLDescription" xml:space="preserve">
+    <value>Valfri URL som används för att ta bort det uppladdade innehållet.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DestinationRequired" xml:space="preserve">
+    <value>Minst en måltyp måste väljas före export.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DisplayOutputText" xml:space="preserve">
+    <value>Visa utdatatext</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Duplicated" xml:space="preserve">
+    <value>Den anpassade uppladdaren har duplicerats.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_DuplicateNamesNotAllowed" xml:space="preserve">
+    <value>Dubblettnamn är inte tillåtna.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Error" xml:space="preserve">
+    <value>Fel</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ErrorMessage" xml:space="preserve">
+    <value>Felmeddelande</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ErrorMessageDescription" xml:space="preserve">
+    <value>Text som extraheras när tjänsten rapporterar ett fel.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportAllDialogTitle" xml:space="preserve">
+    <value>Exportera alla anpassade uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportDialogTitle" xml:space="preserve">
+    <value>Exportera anpassad uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportedCount" xml:space="preserve">
+    <value>Exporterade {0} anpassade uppladdare.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ExportedOne" xml:space="preserve">
+    <value>Exporterade {0}.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FileFormName" xml:space="preserve">
+    <value>Formulärnamn för fil</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FileFormNameDescription" xml:space="preserve">
+    <value>Namnet på multipart-fältet som används för att skicka den uppladdade filen.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_FilteredUploaderCount" xml:space="preserve">
+    <value>{0} av {1}</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Headers" xml:space="preserve">
+    <value>Rubriker</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ImportDialogTitle" xml:space="preserve">
+    <value>Importera anpassade uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ImportedCount" xml:space="preserve">
+    <value>Importerade {0} anpassade uppladdare.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_InputTokensDescription" xml:space="preserve">
+    <value>Indatatokens är tillgängliga via redigerarens snabbmeny.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_JSONPathResponseValue" xml:space="preserve">
+    <value>JSONPath-svarsvärde</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Method" xml:space="preserve">
+    <value>Metod</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Minify" xml:space="preserve">
+    <value>Minimera</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NewCreated" xml:space="preserve">
+    <value>En ny anpassad uppladdare har skapats.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_NoAdditionalBodyFields" xml:space="preserve">
+    <value>Den här innehållstypen har inga ytterligare fält.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Parameters" xml:space="preserve">
+    <value>Parametrar</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RandomSelection" xml:space="preserve">
+    <value>Slumpmässigt val</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RegularExpressionResult" xml:space="preserve">
+    <value>Resultat av reguljärt uttryck</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Removed" xml:space="preserve">
+    <value>Den anpassade uppladdaren har tagits bort.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestData" xml:space="preserve">
+    <value>Begärandedata</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestDescription" xml:space="preserve">
+    <value>Konfigurera slutpunkten, frågeparametrarna och HTTP-rubrikerna som skickas av ShareX.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestURL" xml:space="preserve">
+    <value>Begärans-URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_RequestURLRequired" xml:space="preserve">
+    <value>Begärans-URL måste konfigureras före export.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseDescription" xml:space="preserve">
+    <value>Extrahera ShareX-resultatvärden från tjänstens svar.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseHeader" xml:space="preserve">
+    <value>Svarsrubrik</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseOrRedirectionURL" xml:space="preserve">
+    <value>Svars- eller omdirigerings-URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseText" xml:space="preserve">
+    <value>Svarstext</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResponseTokensDescription" xml:space="preserve">
+    <value>Högerklicka för att infoga svarstokens.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Result" xml:space="preserve">
+    <value>Resultat</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResultURL" xml:space="preserve">
+    <value>Resultat-URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ResultURLDescription" xml:space="preserve">
+    <value>Den slutliga URL:en som kopieras eller öppnas efter en lyckad uppladdning.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SelectToExport" xml:space="preserve">
+    <value>Välj en anpassad uppladdare att exportera.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SelectUploaderToEdit" xml:space="preserve">
+    <value>Välj en uppladdare att redigera</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SelectUploaderToEditDescription" xml:space="preserve">
+    <value>Skapa en ny uppladdare, importera en .sxcu-fil eller välj en från biblioteket.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_SyntaxTestDescription" xml:space="preserve">
+    <value>Förhandsvisa hur svarsuttrycket kommer att tolkas.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestCancelled" xml:space="preserve">
+    <value>Testet avbröts.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestCompleted" xml:space="preserve">
+    <value>Testet slutfördes.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestDescription" xml:space="preserve">
+    <value>Välj den aktiva anpassade uppladdaren för varje mål och kör ett direkttest.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestFailed" xml:space="preserve">
+    <value>Testet misslyckades.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Testing" xml:space="preserve">
+    <value>Testar {0}...</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
+    <value>Testa URL-syntax</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
+    <value>Text- eller URL-indata</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextToUpload" xml:space="preserve">
+    <value>Text att ladda upp:</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextUploadSample" xml:space="preserve">
+    <value>Test av textuppladdning i ShareX</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TextUploadTestTitle" xml:space="preserve">
+    <value>ShareX - Test av textuppladdning</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
+    <value>Miniatyr-URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_ThumbnailURLDescription" xml:space="preserve">
+    <value>Valfri förhandsvisningsbild som returneras av tjänsten.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UpdatedCount" xml:space="preserve">
+    <value>Uppdaterade {0} filer för anpassade uppladdare.</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UpdateFolderDialogTitle" xml:space="preserve">
+    <value>Uppdatera mapp för anpassade uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_Upload" xml:space="preserve">
+    <value>Ladda upp</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploadedFile" xml:space="preserve">
+    <value>Uppladdad fil</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploadedFileName" xml:space="preserve">
+    <value>Namn på uppladdad fil</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploaderCount" xml:space="preserve">
+    <value>{0} uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UploaderCountPlural" xml:space="preserve">
+    <value>{0} uppladdare</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_URLSyntax" xml:space="preserve">
+    <value>URL-syntax</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UserSelection" xml:space="preserve">
+    <value>Användarval</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_UserTextInput" xml:space="preserve">
+    <value>Användarens textinmatning</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_XPathResponseValue" xml:space="preserve">
+    <value>XPath-svarsvärde</value>
+  </data>
+  <data name="TaskHelpers_FileDoesNotExist" xml:space="preserve">
+    <value>Filen finns inte:
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
+    <value>ExifTool finns inte på följande sökväg:
+{0}</value>
+  </data>
+  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
+    <value>ShareX - ExifTool saknas</value>
+  </data>
+  <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
+    <value>Vill du lägga till den anpassade uppladdaren "{0}"?</value>
+  </data>
+  <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
+    <value>Vill du ange "{0}" som aktiv anpassad uppladdare för {1}?</value>
+  </data>
+  <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
+    <value>ShareX - Bekräftelse av anpassad uppladdare</value>
+  </data>
+  <data name="SettingManager_ExportBackupError" xml:space="preserve">
+    <value>Fel vid export av säkerhetskopian:
+{0}</value>
+  </data>
+  <data name="SettingManager_ImportBackupError" xml:space="preserve">
+    <value>Fel vid import av säkerhetskopian:
+{0}</value>
+  </data>
+  <data name="SettingManager_ErrorTitle" xml:space="preserve">
+    <value>ShareX - Fel</value>
+  </data>
+  <data name="WorkerTask_ErrorTitle" xml:space="preserve">
+    <value>{0}-fel</value>
+  </data>
+  <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
+    <value>Uppladdningen slutfördes. URL: {0}</value>
+  </data>
+  <data name="WorkerTask_AllFilesFilter" xml:space="preserve">
+    <value>Alla filer (*.*)</value>
+  </data>
+  <data name="TaskSettingsWindow_ImageNameSample" xml:space="preserve">
+    <value>Bildnamn</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX är minimerat till meddelandefältet.</value>
+  </data>
+  <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
+    <value>Variabler som stöds: {0} och andra variabler som {1} osv.</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
+    <value>Filsökvägen får inte vara tom.</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Fäst på skärmen</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="UploadTask_Stop_Stopping" xml:space="preserve">
+    <value>Stoppar</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
+    <value>Redigera den här menyn...</value>
+  </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>ShareX är uppdaterat!</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>Felsökningsloggen kan innehålla känslig information. Vill du verkligen fortsätta?</value>
+  </data>
+  <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
+    <value>URL:en är tom.</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
+    <value>URL-förkortare: {0}</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Kör ShareX när Windows startar</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
+    <value>Vill du verkligen ta bort den här filen?</value>
+  </data>
+  <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
+    <value>Det går inte att skapa mappen:</value>
+  </data>
+  <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
+    <value>Den FFmpeg-version som medföljer ShareX stöder endast 64-bitars operativsystem.</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
+    <value>Laddar upp</value>
+  </data>
+  <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
+    <value>Dela URL ({0})</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
+    <value>ShareX måste öppnas igen från Steam för att inställningarna ska börja gälla.</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>Autostart har inaktiverats av din organisation</value>
+  </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>FFmpeg saknas</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
+    <value>Filuppladdare: {0}</value>
+  </data>
+  <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
+    <value>Välj en mapp att spara i</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
+    <value>Namnet får inte vara tomt.</value>
+  </data>
+  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
+    <value>Kopierat till urklipp: {0}</value>
+  </data>
+  <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
+    <value>Konfigurationen för {0} är ogiltig eller saknas. Kontrollera den i fönstret "Målinställningar".</value>
+  </data>
+  <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
+    <value>Förkorta URL ({0})</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>Den här funktionen fungerar inte när alternativet "DisableUpload" är aktiverat!</value>
+  </data>
+  <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
+    <value>Test av textuppladdning</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>Vill du aktivera bildeffekter?
+
+Du kan inaktivera dem senare från menyn "Uppgifter efter bildtagning".</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>Redigera med ShareX</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Urklipp innehåller ingen bild.</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
+    <value>Fel</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
+    <value>Ditt antivirusprogram eller funktionen Kontrollerad mappåtkomst i Windows kan blockera ShareX.</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
+    <value>Uppgiften slutfördes</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
+    <value>snabbtangenter</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
+    <value>Fortsätt</value>
+  </data>
+  <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
+    <value>Uppladdningsfel</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+    <value>FFmpeg-fel</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fel</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>Skärmfärgväljare</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
+    <value>Textuppladdare: {0}</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
+    <value>Klar</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
+    <value>Bekräftelse av filborttagning</value>
+  </data>
+  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>Hämtar</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
+    <value>URL-delningstjänst: {0}</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Bekräftelse</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
+    <value>Stoppad</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>Video- och ljudkällan i FFmpeg kan inte båda vara "Ingen".</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>ShareX kan inte stängas medan en skärminspelning pågår.
+
+Vill du avbryta den aktiva skärminspelningen?</value>
+  </data>
+  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>Ladda upp med ShareX</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
+    <value>Snabbtangenter har inaktiverats.</value>
+  </data>
+  <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
+    <value>Det går inte att komma åt filen "{0}".
+Kör ShareX som administratör för att ändra sökvägen till den personliga mappen.</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>Autostart har inaktiverats i Aktivitetshanteraren</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>Vill du försöka ladda upp från urklipp igen?</value>
+  </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>Det går inte att hitta ett fönster med den angivna fönsterrubriken.</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>Vill du återställa ShareX-inställningarna?</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>Det gick inte att spara inställningarna</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
+    <value>snabbtangent</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
+    <value>Snabbtangenter har aktiverats.</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>Urklippsuppladdning</value>
+  </data>
+  <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
+    <value>FFmpeg finns inte på följande sökväg:</value>
+  </data>
+  <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
+    <value>Filuppladdning</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
+    <value>Registreringen av snabbtangenten misslyckades</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
+    <value>Bilduppladdare: {0}</value>
+  </data>
+  <data name="ImageData_Write_Error_Message" xml:space="preserve">
+    <value>Det gick inte att skriva bilden till sökvägen:</value>
+  </data>
+  <data name="UploadTask_Prepare_Starting" xml:space="preserve">
+    <value>Startar</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
+    <value>Det går inte att registrera {0}:
+
+{1}
+
+Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och öppna ShareX igen.</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>Fördröjning av skärmbild: {0} s</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>Din systemadministratör har inaktiverat uppladdningsfunktionen.</value>
+  </data>
+  <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
+    <value>Mappuppladdning</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>Autostart har aktiverats av din organisation</value>
+  </data>
+  <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
+    <value>Förbereder</value>
+  </data>
+  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
+    <value>Hämtningen misslyckades:
+{0}</value>
+  </data>
+</root>

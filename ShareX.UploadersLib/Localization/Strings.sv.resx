@@ -1,0 +1,1543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountType_Anonymous" xml:space="preserve">
+    <value>Anonym</value>
+  </data>
+  <data name="AccountType_User" xml:space="preserve">
+    <value>Användare</value>
+  </data>
+  <data name="AmazonS3_Upload_failed" xml:space="preserve">
+    <value>Uppladdningen till Amazon S3 misslyckades.</value>
+  </data>
+  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
+    <value>Amazon S3 Intelligent-Tiering</value>
+  </data>
+  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
+    <value>Amazon S3 One Zone-Infrequent Access</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
+    <value>Amazon S3 Standard</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
+    <value>Amazon S3 Standard-Infrequent Access</value>
+  </data>
+  <data name="AzureStorage_Access_key_must_not_be_empty" xml:space="preserve">
+    <value>”Åtkomstnyckel” får inte vara tom.</value>
+  </data>
+  <data name="AzureStorage_Account_name_must_not_be_empty" xml:space="preserve">
+    <value>”Kontonamn” får inte vara tomt.</value>
+  </data>
+  <data name="AzureStorage_Container_must_not_be_empty" xml:space="preserve">
+    <value>”Behållare” får inte vara tom.</value>
+  </data>
+  <data name="BackblazeB2_Could_not_authenticate" xml:space="preserve">
+    <value>Det gick inte att autentisera med B2: {0}</value>
+  </data>
+  <data name="BackblazeB2_Could_not_get_upload_URL" xml:space="preserve">
+    <value>Det gick inte att hämta B2-uppladdnings-URL: {0}</value>
+  </data>
+  <data name="BackblazeB2_Unknown_upload_error" xml:space="preserve">
+    <value>B2-uppladdare: Ett okänt fel inträffade vid anrop till b2_upload_file().</value>
+  </data>
+  <data name="BackblazeB2_Upload_failed_after_attempts" xml:space="preserve">
+    <value>B2-uppladdningen misslyckades: Filen kunde inte laddas upp efter {0} försök.</value>
+  </data>
+  <data name="BackblazeB2_Upload_failed_with_error" xml:space="preserve">
+    <value>B2-uppladdningen misslyckades: {0}</value>
+  </data>
+  <data name="Base58Converter_Invalid_character" xml:space="preserve">
+    <value>Ogiltigt Base58-tecken ”{0}” på position {1}.</value>
+  </data>
+  <data name="BoxShareAccessLevel_Collaborators" xml:space="preserve">
+    <value>Medarbetare – Endast inbjudna personer</value>
+  </data>
+  <data name="BoxShareAccessLevel_Company" xml:space="preserve">
+    <value>Företag – Personer i ditt företag</value>
+  </data>
+  <data name="BoxShareAccessLevel_Open" xml:space="preserve">
+    <value>Offentlig – Personer med länken</value>
+  </data>
+  <data name="BrowserProtocol_file" xml:space="preserve">
+    <value>file://</value>
+  </data>
+  <data name="BrowserProtocol_ftp" xml:space="preserve">
+    <value>ftp://</value>
+  </data>
+  <data name="BrowserProtocol_ftps" xml:space="preserve">
+    <value>ftps://</value>
+  </data>
+  <data name="BrowserProtocol_http" xml:space="preserve">
+    <value>http://</value>
+  </data>
+  <data name="BrowserProtocol_https" xml:space="preserve">
+    <value>https://</value>
+  </data>
+  <data name="BrowserProtocol_sftp" xml:space="preserve">
+    <value>sftp://</value>
+  </data>
+  <data name="CertFileNameEditor_Browse_for_certificate_file" xml:space="preserve">
+    <value>Bläddra efter en certifikatfil...</value>
+  </data>
+  <data name="Common_API_key_is_missing" xml:space="preserve">
+    <value>API-nyckel saknas.</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>Fel</value>
+  </data>
+  <data name="Common_Unknown_error" xml:space="preserve">
+    <value>Okänt fel</value>
+  </data>
+  <data name="CustomUploader_Unsupported_request_format" xml:space="preserve">
+    <value>Begärandeformatet stöds inte: {0}</value>
+  </data>
+  <data name="CustomUploaderBody_Binary" xml:space="preserve">
+    <value>Binärt</value>
+  </data>
+  <data name="CustomUploaderBody_FormURLEncoded" xml:space="preserve">
+    <value>URL-kodat formulär (application/x-www-form-urlencoded)</value>
+  </data>
+  <data name="CustomUploaderBody_JSON" xml:space="preserve">
+    <value>JSON (application/json)</value>
+  </data>
+  <data name="CustomUploaderBody_MultipartFormData" xml:space="preserve">
+    <value>Formulärdata (multipart/form-data)</value>
+  </data>
+  <data name="CustomUploaderBody_None" xml:space="preserve">
+    <value>Ingen brödtext</value>
+  </data>
+  <data name="CustomUploaderBody_XML" xml:space="preserve">
+    <value>XML (application/xml)</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>Filuppladdare</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>Bilduppladdare</value>
+  </data>
+  <data name="CustomUploaderDestinationType_None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>Textuppladdare</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>URL-delningstjänst</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>URL-förkortare</value>
+  </data>
+  <data name="CustomUploaderItem_File_form_name_must_be_configured" xml:space="preserve">
+    <value>”Filformulärnamn” måste konfigureras.</value>
+  </data>
+  <data name="CustomUploaderItem_Invalid_JSON_response" xml:space="preserve">
+    <value>Värden ({0}) returnerade ogiltigt svarsinnehåll; JSON förväntades.</value>
+  </data>
+  <data name="CustomUploaderItem_Request_URL_must_be_configured" xml:space="preserve">
+    <value>”Begärande-URL” måste konfigureras.</value>
+  </data>
+  <data name="CustomUploaderItem_Unable_to_parse_response" xml:space="preserve">
+    <value>Det gick inte att parsa svarsinnehållet från värden ({0}).</value>
+  </data>
+  <data name="CustomUploaderItem_Unsupported_custom_uploader" xml:space="preserve">
+    <value>Anpassad uppladdare stöds inte</value>
+  </data>
+  <data name="CustomUploaderParser_Function_name_cannot_be_empty" xml:space="preserve">
+    <value>Funktionsnamnet får inte vara tomt.</value>
+  </data>
+  <data name="CustomUploaderParser_Invalid_function_name" xml:space="preserve">
+    <value>Ogiltigt funktionsnamn: {0}</value>
+  </data>
+  <data name="CustomUploaderParser_Minimum_parameter_count" xml:space="preserve">
+    <value>Det minsta antalet parametrar för funktionen ”{0}” är {1}.</value>
+  </data>
+  <data name="DestinationSettings_Account" xml:space="preserve">
+    <value>Konto</value>
+  </data>
+  <data name="DestinationSettings_Account_and_devices" xml:space="preserve">
+    <value>Konto och enheter</value>
+  </data>
+  <data name="DestinationSettings_Accounts" xml:space="preserve">
+    <value>Konton</value>
+  </data>
+  <data name="DestinationSettings_Add" xml:space="preserve">
+    <value>Lägg till</value>
+  </data>
+  <data name="DestinationSettings_Add_path" xml:space="preserve">
+    <value>Lägg till sökväg</value>
+  </data>
+  <data name="DestinationSettings_Album_count_loaded_plural" xml:space="preserve">
+    <value>{0} album lästes in</value>
+  </data>
+  <data name="DestinationSettings_Album_count_loaded_singular" xml:space="preserve">
+    <value>{0} album lästes in</value>
+  </data>
+  <data name="DestinationSettings_Album_count_plural" xml:space="preserve">
+    <value>{0} album</value>
+  </data>
+  <data name="DestinationSettings_Album_count_singular" xml:space="preserve">
+    <value>{0} album</value>
+  </data>
+  <data name="DestinationSettings_Album_path" xml:space="preserve">
+    <value>Albumsökväg:</value>
+  </data>
+  <data name="DestinationSettings_Albums" xml:space="preserve">
+    <value>Album</value>
+  </data>
+  <data name="DestinationSettings_API_key" xml:space="preserve">
+    <value>API-nyckel:</value>
+  </data>
+  <data name="DestinationSettings_API_key_retrieved" xml:space="preserve">
+    <value>API-nyckeln hämtades</value>
+  </data>
+  <data name="DestinationSettings_Authorization_code" xml:space="preserve">
+    <value>Auktoriseringskod:</value>
+  </data>
+  <data name="DestinationSettings_Authorization_failed" xml:space="preserve">
+    <value>Auktoriseringen misslyckades</value>
+  </data>
+  <data name="DestinationSettings_Authorization_page_opened" xml:space="preserve">
+    <value>Auktoriseringssidan öppnades</value>
+  </data>
+  <data name="DestinationSettings_Back" xml:space="preserve">
+    <value>Tillbaka</value>
+  </data>
+  <data name="DestinationSettings_Browser_status" xml:space="preserve">
+    <value>Webbläsarstatus:</value>
+  </data>
+  <data name="DestinationSettings_Category_File_uploaders" xml:space="preserve">
+    <value>Filuppladdare</value>
+  </data>
+  <data name="DestinationSettings_Category_Image_uploaders" xml:space="preserve">
+    <value>Bilduppladdare</value>
+  </data>
+  <data name="DestinationSettings_Category_Text_uploaders" xml:space="preserve">
+    <value>Textuppladdare</value>
+  </data>
+  <data name="DestinationSettings_Category_URL_shorteners" xml:space="preserve">
+    <value>URL-förkortare</value>
+  </data>
+  <data name="DestinationSettings_Complete_authorization" xml:space="preserve">
+    <value>Slutför auktorisering</value>
+  </data>
+  <data name="DestinationSettings_Connect_account" xml:space="preserve">
+    <value>Anslut konto</value>
+  </data>
+  <data name="DestinationSettings_Connect_Imgur_account_first" xml:space="preserve">
+    <value>Anslut först ett Imgur-konto</value>
+  </data>
+  <data name="DestinationSettings_Connect_Photobucket_account_first" xml:space="preserve">
+    <value>Anslut först ett Photobucket-konto</value>
+  </data>
+  <data name="DestinationSettings_Connected" xml:space="preserve">
+    <value>Ansluten</value>
+  </data>
+  <data name="DestinationSettings_Connected_as" xml:space="preserve">
+    <value>Ansluten som {0}</value>
+  </data>
+  <data name="DestinationSettings_Device" xml:space="preserve">
+    <value>Enhet:</value>
+  </data>
+  <data name="DestinationSettings_Device_count_plural" xml:space="preserve">
+    <value>{0} enheter lästes in</value>
+  </data>
+  <data name="DestinationSettings_Device_count_singular" xml:space="preserve">
+    <value>{0} enhet lästes in</value>
+  </data>
+  <data name="DestinationSettings_Disconnect" xml:space="preserve">
+    <value>Koppla från</value>
+  </data>
+  <data name="DestinationSettings_Duplicate" xml:space="preserve">
+    <value>Duplicera</value>
+  </data>
+  <data name="DestinationSettings_Edit_item" xml:space="preserve">
+    <value>Redigera {0}</value>
+  </data>
+  <data name="DestinationSettings_Email_or_username" xml:space="preserve">
+    <value>E-post/användarnamn:</value>
+  </data>
+  <data name="DestinationSettings_Enter_credentials_to_retrieve_API_key" xml:space="preserve">
+    <value>Ange kontouppgifter för att hämta API-nyckeln</value>
+  </data>
+  <data name="DestinationSettings_Field_81_Compatibility" xml:space="preserve">
+    <value>81-kompatibilitet</value>
+  </data>
+  <data name="DestinationSettings_Field_Acc_Info_Email" xml:space="preserve">
+    <value>E-post för kontoinformation</value>
+  </data>
+  <data name="DestinationSettings_Field_Acc_Info_Usage" xml:space="preserve">
+    <value>Kontoanvändning</value>
+  </data>
+  <data name="DestinationSettings_Field_Access_Key_ID" xml:space="preserve">
+    <value>Åtkomstnyckel-ID</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Access_Key" xml:space="preserve">
+    <value>Kontoåtkomstnyckel</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_List" xml:space="preserve">
+    <value>Kontolista</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Name" xml:space="preserve">
+    <value>Kontonamn</value>
+  </data>
+  <data name="DestinationSettings_Field_Account_Type" xml:space="preserve">
+    <value>Kontotyp</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Hostname" xml:space="preserve">
+    <value>API-värdnamn</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Key" xml:space="preserve">
+    <value>API-nyckel</value>
+  </data>
+  <data name="DestinationSettings_Field_API_Username" xml:space="preserve">
+    <value>API-användarnamn</value>
+  </data>
+  <data name="DestinationSettings_Field_APIURL" xml:space="preserve">
+    <value>API-URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Append_File_Name_To_URL" xml:space="preserve">
+    <value>Lägg till filnamnet i URL:en</value>
+  </data>
+  <data name="DestinationSettings_Field_Application_Key" xml:space="preserve">
+    <value>Programnyckel</value>
+  </data>
+  <data name="DestinationSettings_Field_Application_Key_Id" xml:space="preserve">
+    <value>Programnyckel-ID</value>
+  </data>
+  <data name="DestinationSettings_Field_Auth_Token" xml:space="preserve">
+    <value>Autentiseringstoken</value>
+  </data>
+  <data name="DestinationSettings_Field_Auto_Create_Shareable_Link" xml:space="preserve">
+    <value>Skapa delbar länk automatiskt</value>
+  </data>
+  <data name="DestinationSettings_Field_Auto_Expire" xml:space="preserve">
+    <value>Upphör automatiskt</value>
+  </data>
+  <data name="DestinationSettings_Field_Automatic_Send" xml:space="preserve">
+    <value>Skicka automatiskt</value>
+  </data>
+  <data name="DestinationSettings_Field_Automatic_Send_To" xml:space="preserve">
+    <value>Skicka automatiskt till</value>
+  </data>
+  <data name="DestinationSettings_Field_Bucket" xml:space="preserve">
+    <value>Bucket</value>
+  </data>
+  <data name="DestinationSettings_Field_Bucket_Name" xml:space="preserve">
+    <value>Bucketnamn</value>
+  </data>
+  <data name="DestinationSettings_Field_Burn_After_Reading" xml:space="preserve">
+    <value>Förstör efter läsning</value>
+  </data>
+  <data name="DestinationSettings_Field_Cache_Control" xml:space="preserve">
+    <value>Cachekontroll</value>
+  </data>
+  <data name="DestinationSettings_Field_Capacity" xml:space="preserve">
+    <value>Kapacitet</value>
+  </data>
+  <data name="DestinationSettings_Field_Comment" xml:space="preserve">
+    <value>Kommentar</value>
+  </data>
+  <data name="DestinationSettings_Field_Container" xml:space="preserve">
+    <value>Behållare</value>
+  </data>
+  <data name="DestinationSettings_Field_Content_Type" xml:space="preserve">
+    <value>Innehållstyp</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Share" xml:space="preserve">
+    <value>Skapa delning</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Shareable_URL" xml:space="preserve">
+    <value>Skapa delbar URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Create_Shareable_URL_Raw" xml:space="preserve">
+    <value>Skapa oformaterad delbar URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Custom_Domain" xml:space="preserve">
+    <value>Anpassad domän</value>
+  </data>
+  <data name="DestinationSettings_Field_Custom_URL" xml:space="preserve">
+    <value>Anpassad URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Default_Body" xml:space="preserve">
+    <value>Standardbrödtext</value>
+  </data>
+  <data name="DestinationSettings_Field_Default_Subject" xml:space="preserve">
+    <value>Standardämne</value>
+  </data>
+  <data name="DestinationSettings_Field_Description" xml:space="preserve">
+    <value>Beskrivning</value>
+  </data>
+  <data name="DestinationSettings_Field_Direct_Link" xml:space="preserve">
+    <value>Direktlänk</value>
+  </data>
+  <data name="DestinationSettings_Field_Direct_URL" xml:space="preserve">
+    <value>Direkt-URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Domain" xml:space="preserve">
+    <value>Domän</value>
+  </data>
+  <data name="DestinationSettings_Field_Dynamic_Link_Domain" xml:space="preserve">
+    <value>Dynamisk länkdomän</value>
+  </data>
+  <data name="DestinationSettings_Field_Email" xml:space="preserve">
+    <value>E-post</value>
+  </data>
+  <data name="DestinationSettings_Field_Encrypt_Paste" xml:space="preserve">
+    <value>Kryptera inklistring</value>
+  </data>
+  <data name="DestinationSettings_Field_Encrypted_Library_Password" xml:space="preserve">
+    <value>Lösenord för krypterat bibliotek</value>
+  </data>
+  <data name="DestinationSettings_Field_Endpoint" xml:space="preserve">
+    <value>Slutpunkt</value>
+  </data>
+  <data name="DestinationSettings_Field_Environment" xml:space="preserve">
+    <value>Miljö</value>
+  </data>
+  <data name="DestinationSettings_Field_Expiration" xml:space="preserve">
+    <value>Förfallodatum</value>
+  </data>
+  <data name="DestinationSettings_Field_Expiry_Time" xml:space="preserve">
+    <value>Giltighetstid</value>
+  </data>
+  <data name="DestinationSettings_Field_Exposure" xml:space="preserve">
+    <value>Exponering</value>
+  </data>
+  <data name="DestinationSettings_Field_Files" xml:space="preserve">
+    <value>Filer</value>
+  </data>
+  <data name="DestinationSettings_Field_Folder_ID" xml:space="preserve">
+    <value>Mapp-ID</value>
+  </data>
+  <data name="DestinationSettings_Field_Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="DestinationSettings_Field_From" xml:space="preserve">
+    <value>Från</value>
+  </data>
+  <data name="DestinationSettings_Field_Has_Comment" xml:space="preserve">
+    <value>Har kommentar</value>
+  </data>
+  <data name="DestinationSettings_Field_Hidden" xml:space="preserve">
+    <value>Dold</value>
+  </data>
+  <data name="DestinationSettings_Field_Host" xml:space="preserve">
+    <value>Värd</value>
+  </data>
+  <data name="DestinationSettings_Field_id" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="DestinationSettings_Field_Images" xml:space="preserve">
+    <value>Bilder</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Family" xml:space="preserve">
+    <value>Är familj</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Friend" xml:space="preserve">
+    <value>Är vän</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Library_Encrypted" xml:space="preserve">
+    <value>Är biblioteket krypterat</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Public" xml:space="preserve">
+    <value>Är offentlig</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Secret" xml:space="preserve">
+    <value>Är hemlig</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Secured" xml:space="preserve">
+    <value>Är skyddad</value>
+  </data>
+  <data name="DestinationSettings_Field_Is_Short" xml:space="preserve">
+    <value>Är kort</value>
+  </data>
+  <data name="DestinationSettings_Field_Last_To" xml:space="preserve">
+    <value>Senaste mottagare</value>
+  </data>
+  <data name="DestinationSettings_Field_List" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="DestinationSettings_Field_Login" xml:space="preserve">
+    <value>Inloggning</value>
+  </data>
+  <data name="DestinationSettings_Field_name" xml:space="preserve">
+    <value>Namn</value>
+  </data>
+  <data name="DestinationSettings_Field_Object_Prefix" xml:space="preserve">
+    <value>Objektprefix</value>
+  </data>
+  <data name="DestinationSettings_Field_One_Shot" xml:space="preserve">
+    <value>Engångs</value>
+  </data>
+  <data name="DestinationSettings_Field_Password" xml:space="preserve">
+    <value>Lösenord</value>
+  </data>
+  <data name="DestinationSettings_Field_Paste_Password" xml:space="preserve">
+    <value>Inklistringslösenord</value>
+  </data>
+  <data name="DestinationSettings_Field_Path" xml:space="preserve">
+    <value>Sökväg</value>
+  </data>
+  <data name="DestinationSettings_Field_Privacy_Type" xml:space="preserve">
+    <value>Sekretesstyp</value>
+  </data>
+  <data name="DestinationSettings_Field_Publish_Public" xml:space="preserve">
+    <value>Publicera offentligt</value>
+  </data>
+  <data name="DestinationSettings_Field_Raw_URL" xml:space="preserve">
+    <value>Oformaterad URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Region" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="DestinationSettings_Field_Remember_Last_To" xml:space="preserve">
+    <value>Kom ihåg senaste mottagare</value>
+  </data>
+  <data name="DestinationSettings_Field_Removable" xml:space="preserve">
+    <value>Flyttbar</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Image" xml:space="preserve">
+    <value>Ta bort bildens filnamnstillägg</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Text" xml:space="preserve">
+    <value>Ta bort textens filnamnstillägg</value>
+  </data>
+  <data name="DestinationSettings_Field_Remove_Extension_Video" xml:space="preserve">
+    <value>Ta bort videons filnamnstillägg</value>
+  </data>
+  <data name="DestinationSettings_Field_Repo_ID" xml:space="preserve">
+    <value>Lagringsplats-ID</value>
+  </data>
+  <data name="DestinationSettings_Field_Result_URL" xml:space="preserve">
+    <value>Resultat-URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Reuse" xml:space="preserve">
+    <value>Återanvänd</value>
+  </data>
+  <data name="DestinationSettings_Field_Safety_Level" xml:space="preserve">
+    <value>Säkerhetsnivå</value>
+  </data>
+  <data name="DestinationSettings_Field_Secret_Access_Key" xml:space="preserve">
+    <value>Hemlig åtkomstnyckel</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Drive" xml:space="preserve">
+    <value>Vald enhet</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_File" xml:space="preserve">
+    <value>Vald fil</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Image" xml:space="preserve">
+    <value>Vald bild</value>
+  </data>
+  <data name="DestinationSettings_Field_Selected_Text" xml:space="preserve">
+    <value>Vald text</value>
+  </data>
+  <data name="DestinationSettings_Field_Set_Public_ACL" xml:space="preserve">
+    <value>Ange offentlig ACL</value>
+  </data>
+  <data name="DestinationSettings_Field_Settings" xml:space="preserve">
+    <value>Inställningar</value>
+  </data>
+  <data name="DestinationSettings_Field_Share" xml:space="preserve">
+    <value>Dela</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Access_Level" xml:space="preserve">
+    <value>Åtkomstnivå för delning</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Days_To_Expire" xml:space="preserve">
+    <value>Dagar tills delning upphör</value>
+  </data>
+  <data name="DestinationSettings_Field_Share_Password" xml:space="preserve">
+    <value>Delningslösenord</value>
+  </data>
+  <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
+    <value>Visa dialogruta</value>
+  </data>
+  <data name="DestinationSettings_Field_Signature" xml:space="preserve">
+    <value>Signatur</value>
+  </data>
+  <data name="DestinationSettings_Field_Signed_Payload" xml:space="preserve">
+    <value>Signerad nyttolast</value>
+  </data>
+  <data name="DestinationSettings_Field_Smtp_Port" xml:space="preserve">
+    <value>SMTP-port</value>
+  </data>
+  <data name="DestinationSettings_Field_Smtp_Server" xml:space="preserve">
+    <value>SMTP-server</value>
+  </data>
+  <data name="DestinationSettings_Field_Storage_Class" xml:space="preserve">
+    <value>Lagringsklass</value>
+  </data>
+  <data name="DestinationSettings_Field_Syntax_Highlighting" xml:space="preserve">
+    <value>Syntaxmarkering</value>
+  </data>
+  <data name="DestinationSettings_Field_Tags" xml:space="preserve">
+    <value>Taggar</value>
+  </data>
+  <data name="DestinationSettings_Field_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="DestinationSettings_Field_Text_Format" xml:space="preserve">
+    <value>Textformat</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Height" xml:space="preserve">
+    <value>Miniatyrhöjd</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Type" xml:space="preserve">
+    <value>Miniatyrtyp</value>
+  </data>
+  <data name="DestinationSettings_Field_Thumbnail_Width" xml:space="preserve">
+    <value>Miniatyrbredd</value>
+  </data>
+  <data name="DestinationSettings_Field_Title" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="DestinationSettings_Field_Token" xml:space="preserve">
+    <value>Token</value>
+  </data>
+  <data name="DestinationSettings_Field_TTL" xml:space="preserve">
+    <value>TTL</value>
+  </data>
+  <data name="DestinationSettings_Field_TTL_Unit" xml:space="preserve">
+    <value>TTL-enhet</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_Path" xml:space="preserve">
+    <value>Uppladdningssökväg</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_Selected_Album" xml:space="preserve">
+    <value>Ladda upp valt album</value>
+  </data>
+  <data name="DestinationSettings_Field_Upload_URL" xml:space="preserve">
+    <value>Uppladdnings-URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Uploader" xml:space="preserve">
+    <value>Uppladdare</value>
+  </data>
+  <data name="DestinationSettings_Field_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_AP_Iv1" xml:space="preserve">
+    <value>Använd API v1</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Custom_CNAME" xml:space="preserve">
+    <value>Använd anpassad CNAME</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Custom_Url" xml:space="preserve">
+    <value>Använd anpassad URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Direct_Link" xml:space="preserve">
+    <value>Använd direktlänk</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Direct_URL" xml:space="preserve">
+    <value>Använd direkt-URL</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_File_Extension" xml:space="preserve">
+    <value>Använd filnamnstillägg</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Folder" xml:space="preserve">
+    <value>Använd mapp</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_GIFV" xml:space="preserve">
+    <value>Använd GIFV</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Long_Link" xml:space="preserve">
+    <value>Använd lång länk</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Path_Style" xml:space="preserve">
+    <value>Använd sökvägsstil</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Preview_Links" xml:space="preserve">
+    <value>Använd förhandsgranskningslänkar</value>
+  </data>
+  <data name="DestinationSettings_Field_Use_Shortened_Link" xml:space="preserve">
+    <value>Använd förkortad länk</value>
+  </data>
+  <data name="DestinationSettings_Field_User_API_Key" xml:space="preserve">
+    <value>Användarens API-nyckel</value>
+  </data>
+  <data name="DestinationSettings_Field_User_Key" xml:space="preserve">
+    <value>Användarnyckel</value>
+  </data>
+  <data name="DestinationSettings_Field_Username" xml:space="preserve">
+    <value>Användarnamn</value>
+  </data>
+  <data name="DestinationSettings_Field_Web_API_Key" xml:space="preserve">
+    <value>Webb-API-nyckel</value>
+  </data>
+  <data name="DestinationSettings_Folder_count_plural" xml:space="preserve">
+    <value>{0} mappar</value>
+  </data>
+  <data name="DestinationSettings_Folder_count_singular" xml:space="preserve">
+    <value>{0} mapp</value>
+  </data>
+  <data name="DestinationSettings_Get_user_key" xml:space="preserve">
+    <value>Hämta användarnyckel</value>
+  </data>
+  <data name="DestinationSettings_Log_in" xml:space="preserve">
+    <value>Logga in</value>
+  </data>
+  <data name="DestinationSettings_Login_failed" xml:space="preserve">
+    <value>Inloggningen misslyckades</value>
+  </data>
+  <data name="DestinationSettings_My_images" xml:space="preserve">
+    <value>Mina bilder</value>
+  </data>
+  <data name="DestinationSettings_No_additional_configuration_required" xml:space="preserve">
+    <value>Målet kräver ingen ytterligare konfiguration.</value>
+  </data>
+  <data name="DestinationSettings_No_albums_loaded" xml:space="preserve">
+    <value>Inga album har lästs in</value>
+  </data>
+  <data name="DestinationSettings_No_albums_saved" xml:space="preserve">
+    <value>Inga album har sparats</value>
+  </data>
+  <data name="DestinationSettings_No_child_folders" xml:space="preserve">
+    <value>Inga undermappar</value>
+  </data>
+  <data name="DestinationSettings_No_devices_loaded" xml:space="preserve">
+    <value>Inga enheter har lästs in</value>
+  </data>
+  <data name="DestinationSettings_Not_configured" xml:space="preserve">
+    <value>Inte konfigurerad</value>
+  </data>
+  <data name="DestinationSettings_Not_connected" xml:space="preserve">
+    <value>Inte ansluten</value>
+  </data>
+  <data name="DestinationSettings_Open_authorization_page" xml:space="preserve">
+    <value>Öppna auktoriseringssidan</value>
+  </data>
+  <data name="DestinationSettings_Open_folder" xml:space="preserve">
+    <value>Öppna mapp</value>
+  </data>
+  <data name="DestinationSettings_Page_Shared_folder" xml:space="preserve">
+    <value>Delad mapp</value>
+  </data>
+  <data name="DestinationSettings_Password" xml:space="preserve">
+    <value>Lösenord:</value>
+  </data>
+  <data name="DestinationSettings_Public_profile" xml:space="preserve">
+    <value>Offentlig profil</value>
+  </data>
+  <data name="DestinationSettings_Refresh" xml:space="preserve">
+    <value>Uppdatera</value>
+  </data>
+  <data name="DestinationSettings_Refresh_albums" xml:space="preserve">
+    <value>Uppdatera album</value>
+  </data>
+  <data name="DestinationSettings_Refresh_devices" xml:space="preserve">
+    <value>Uppdatera enheter</value>
+  </data>
+  <data name="DestinationSettings_Refresh_token" xml:space="preserve">
+    <value>Uppdateringstoken</value>
+  </data>
+  <data name="DestinationSettings_Register" xml:space="preserve">
+    <value>Registrera</value>
+  </data>
+  <data name="DestinationSettings_Remove" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="DestinationSettings_Root" xml:space="preserve">
+    <value>Rot</value>
+  </data>
+  <data name="DestinationSettings_Root_folder" xml:space="preserve">
+    <value>Rotmapp</value>
+  </data>
+  <data name="DestinationSettings_Select_Refresh_to_load_folders" xml:space="preserve">
+    <value>Välj Uppdatera för att läsa in mappar</value>
+  </data>
+  <data name="DestinationSettings_Selected_folder" xml:space="preserve">
+    <value>Vald mapp:</value>
+  </data>
+  <data name="DestinationSettings_Service_account" xml:space="preserve">
+    <value>{0}-konto</value>
+  </data>
+  <data name="DestinationSettings_Settings" xml:space="preserve">
+    <value>Inställningar</value>
+  </data>
+  <data name="DestinationSettings_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="DestinationSettings_Token_refresh_failed" xml:space="preserve">
+    <value>Det gick inte att uppdatera token</value>
+  </data>
+  <data name="DestinationSettings_Unnamed_device" xml:space="preserve">
+    <value>Namnlös enhet</value>
+  </data>
+  <data name="DestinationSettings_Unnamed_folder" xml:space="preserve">
+    <value>Namnlös mapp</value>
+  </data>
+  <data name="DestinationSettings_Upload_folder" xml:space="preserve">
+    <value>Uppladdningsmapp</value>
+  </data>
+  <data name="DestinationSettings_Upload_to_album" xml:space="preserve">
+    <value>Ladda upp till album:</value>
+  </data>
+  <data name="DestinationSettings_Verification_code" xml:space="preserve">
+    <value>Verifieringskod:</value>
+  </data>
+  <data name="DestinationSettingsWindow_ShareX_Destination_settings" xml:space="preserve">
+    <value>ShareX – Målinställningar</value>
+  </data>
+  <data name="Dropbox_API_upload_limit" xml:space="preserve">
+    <value>Uppladdningar via API har en gräns på 150 MB.</value>
+  </data>
+  <data name="EmailWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="EmailWindow_Email_subject" xml:space="preserve">
+    <value>E-postämne</value>
+  </data>
+  <data name="EmailWindow_Message" xml:space="preserve">
+    <value>Meddelande</value>
+  </data>
+  <data name="EmailWindow_name_example_com" xml:space="preserve">
+    <value>namn@example.com</value>
+  </data>
+  <data name="EmailWindow_Send" xml:space="preserve">
+    <value>Skicka</value>
+  </data>
+  <data name="EmailWindow_ShareX_Send_email" xml:space="preserve">
+    <value>ShareX – Skicka e-post</value>
+  </data>
+  <data name="EmailWindow_Subject" xml:space="preserve">
+    <value>Ämne</value>
+  </data>
+  <data name="EmailWindow_To_email" xml:space="preserve">
+    <value>E-post till</value>
+  </data>
+  <data name="FileDestination_AmazonS3" xml:space="preserve">
+    <value>Amazon S3</value>
+  </data>
+  <data name="FileDestination_AzureStorage" xml:space="preserve">
+    <value>Azure Storage</value>
+  </data>
+  <data name="FileDestination_BackblazeB2" xml:space="preserve">
+    <value>Backblaze B2</value>
+  </data>
+  <data name="FileDestination_Box" xml:space="preserve">
+    <value>Box</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>Anpassad filuppladdare</value>
+  </data>
+  <data name="FileDestination_Dropbox" xml:space="preserve">
+    <value>Dropbox</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>E-post</value>
+  </data>
+  <data name="FileDestination_FTP" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="FileDestination_GoogleCloudStorage" xml:space="preserve">
+    <value>Google Cloud Storage</value>
+  </data>
+  <data name="FileDestination_GoogleDrive" xml:space="preserve">
+    <value>Google Drive</value>
+  </data>
+  <data name="FileDestination_Lambda" xml:space="preserve">
+    <value>Lambda</value>
+  </data>
+  <data name="FileDestination_Lithiio" xml:space="preserve">
+    <value>LobFile</value>
+  </data>
+  <data name="FileDestination_Localhostr" xml:space="preserve">
+    <value>Hostr</value>
+  </data>
+  <data name="FileDestination_MediaFire" xml:space="preserve">
+    <value>MediaFire</value>
+  </data>
+  <data name="FileDestination_OneDrive" xml:space="preserve">
+    <value>OneDrive</value>
+  </data>
+  <data name="FileDestination_OwnCloud" xml:space="preserve">
+    <value>ownCloud/Nextcloud</value>
+  </data>
+  <data name="FileDestination_Plik" xml:space="preserve">
+    <value>Plik</value>
+  </data>
+  <data name="FileDestination_Pomf" xml:space="preserve">
+    <value>Pomf</value>
+  </data>
+  <data name="FileDestination_Pushbullet" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="FileDestination_Puush" xml:space="preserve">
+    <value>puush</value>
+  </data>
+  <data name="FileDestination_Seafile" xml:space="preserve">
+    <value>Seafile</value>
+  </data>
+  <data name="FileDestination_SendSpace" xml:space="preserve">
+    <value>SendSpace</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>Delad mapp</value>
+  </data>
+  <data name="FileDestination_Streamable" xml:space="preserve">
+    <value>Streamable</value>
+  </data>
+  <data name="FileDestination_Sul" xml:space="preserve">
+    <value>s-ul</value>
+  </data>
+  <data name="FileDestination_Transfersh" xml:space="preserve">
+    <value>transfer.sh</value>
+  </data>
+  <data name="FileDestination_Uguu" xml:space="preserve">
+    <value>Uguu</value>
+  </data>
+  <data name="FileDestination_Vault_ooo" xml:space="preserve">
+    <value>Vault.ooo</value>
+  </data>
+  <data name="FileDestination_YouTube" xml:space="preserve">
+    <value>YouTube</value>
+  </data>
+  <data name="FileSonic_Get_upload_URL_failed" xml:space="preserve">
+    <value>Det gick inte att hämta uppladdnings-URL:en.</value>
+  </data>
+  <data name="FTPProtocol_FTP" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="FTPProtocol_FTPS" xml:space="preserve">
+    <value>FTPS (FTP över SSL)</value>
+  </data>
+  <data name="FTPProtocol_SFTP" xml:space="preserve">
+    <value>SFTP (SSH FTP)</value>
+  </data>
+  <data name="GoogleDrive_My_drive" xml:space="preserve">
+    <value>Min enhet</value>
+  </data>
+  <data name="ImageDestination_Chevereto" xml:space="preserve">
+    <value>Chevereto</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>Anpassad bilduppladdare</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>Filuppladdare</value>
+  </data>
+  <data name="ImageDestination_Flickr" xml:space="preserve">
+    <value>Flickr</value>
+  </data>
+  <data name="ImageDestination_ImageShack" xml:space="preserve">
+    <value>ImageShack</value>
+  </data>
+  <data name="ImageDestination_Imgur" xml:space="preserve">
+    <value>Imgur</value>
+  </data>
+  <data name="ImageDestination_Photobucket" xml:space="preserve">
+    <value>Photobucket</value>
+  </data>
+  <data name="ImageDestination_Vgyme" xml:space="preserve">
+    <value>vgy.me</value>
+  </data>
+  <data name="Imgur_Error_details" xml:space="preserve">
+    <value>Status: {0}, begäran: {1}, fel: {2}</value>
+  </data>
+  <data name="Imgur_Upload_failed" xml:space="preserve">
+    <value>Imgur-uppladdningen misslyckades: ({0}) {1}</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>Stor kvadrat</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>Enorm miniatyr</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>Stor miniatyr</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>Medelstor miniatyr</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>Liten kvadrat</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>Liten miniatyr</value>
+  </data>
+  <data name="KeyFileNameEditor_Browse_for_key_file" xml:space="preserve">
+    <value>Bläddra efter en nyckelfil...</value>
+  </data>
+  <data name="Lambda_Upload_failed_check_API_key" xml:space="preserve">
+    <value>Uppladdningen misslyckades av okänd anledning. Kontrollera API-nyckeln.</value>
+  </data>
+  <data name="LinkFormatEnum_ForumImage" xml:space="preserve">
+    <value>Hel bild för forum</value>
+  </data>
+  <data name="LinkFormatEnum_ForumLinkedImage" xml:space="preserve">
+    <value>Länkad miniatyr för forum</value>
+  </data>
+  <data name="LinkFormatEnum_HTMLImage" xml:space="preserve">
+    <value>Hel bild som HTML</value>
+  </data>
+  <data name="LinkFormatEnum_HTMLLinkedImage" xml:space="preserve">
+    <value>Länkad miniatyr som HTML</value>
+  </data>
+  <data name="LinkFormatEnum_LocalFilePath" xml:space="preserve">
+    <value>Lokal filsökväg</value>
+  </data>
+  <data name="LinkFormatEnum_LocalFilePathUri" xml:space="preserve">
+    <value>Lokal filsökväg som URI</value>
+  </data>
+  <data name="LinkFormatEnum_ShortenedURL" xml:space="preserve">
+    <value>Förkortad URL</value>
+  </data>
+  <data name="LinkFormatEnum_ThumbnailURL" xml:space="preserve">
+    <value>Miniatyr</value>
+  </data>
+  <data name="LinkFormatEnum_URL" xml:space="preserve">
+    <value>Fullständig URL</value>
+  </data>
+  <data name="LinkFormatEnum_WikiImage" xml:space="preserve">
+    <value>Hel bild för Wiki</value>
+  </data>
+  <data name="LinkFormatEnum_WikiLinkedImage" xml:space="preserve">
+    <value>Länkad miniatyr för Wiki</value>
+  </data>
+  <data name="MediaFire_Could_not_upload_file" xml:space="preserve">
+    <value>Det gick inte att ladda upp filen: {0}</value>
+  </data>
+  <data name="MediaFire_Invalid_response" xml:space="preserve">
+    <value>Ogiltigt svar</value>
+  </data>
+  <data name="OAuthInfo_New_account" xml:space="preserve">
+    <value>Nytt konto</value>
+  </data>
+  <data name="OAuthListener_Authorization_completed_successfully" xml:space="preserve">
+    <value>Auktoriseringen slutfördes.</value>
+  </data>
+  <data name="OAuthListener_Authorization_did_not_succeed" xml:space="preserve">
+    <value>Auktoriseringen misslyckades.</value>
+  </data>
+  <data name="OAuthListener_Invalid_state_parameter" xml:space="preserve">
+    <value>Ogiltig tillståndsparameter.</value>
+  </data>
+  <data name="OAuthListenerWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="OAuthListenerWindow_ShareX_Authorization" xml:space="preserve">
+    <value>ShareX – Auktorisering</value>
+  </data>
+  <data name="OAuthListenerWindow_Waiting_for_authorization_in_your_browser_to_complete" xml:space="preserve">
+    <value>Väntar på att auktoriseringen ska slutföras i webbläsaren...</value>
+  </data>
+  <data name="OAuthManager_Consumer_credentials_are_empty" xml:space="preserve">
+    <value>Konsumentnyckeln, konsumenthemligheten eller konsumentens privata nyckel är tom.</value>
+  </data>
+  <data name="OAuthManager_Unsupported_signature_method" xml:space="preserve">
+    <value>Signaturmetoden stöds inte</value>
+  </data>
+  <data name="OneDrive_Root_folder" xml:space="preserve">
+    <value>Rotmapp</value>
+  </data>
+  <data name="OwnCloud_Auto_expire_time_is_invalid" xml:space="preserve">
+    <value>Den automatiska giltighetstiden för ownCloud är ogiltig.</value>
+  </data>
+  <data name="OwnCloud_Credentials_are_empty" xml:space="preserve">
+    <value>Användarnamnet eller lösenordet för ownCloud är tomt.</value>
+  </data>
+  <data name="OwnCloud_Error_details" xml:space="preserve">
+    <value>Status: {0}
+Statuskod: {1}
+Meddelande: {2}</value>
+  </data>
+  <data name="OwnCloud_Host_is_empty" xml:space="preserve">
+    <value>ownCloud-värden är tom.</value>
+  </data>
+  <data name="ParserSelectWindow_ShareX_Select" xml:space="preserve">
+    <value>ShareX – Välj</value>
+  </data>
+  <data name="Pastebin_Login_failed" xml:space="preserve">
+    <value>Inloggningen till Pastebin misslyckades.</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>D1</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>H1</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>M1</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>M10</value>
+  </data>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>W1</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>W2</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>Privat</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>Offentlig</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>Olistad</value>
+  </data>
+  <data name="Plik_Host_is_empty" xml:space="preserve">
+    <value>Plik-värden är tom.</value>
+  </data>
+  <data name="PrivateBin_Server_requires_authorization" xml:space="preserve">
+    <value>Servern kräver auktorisering.</value>
+  </data>
+  <data name="PrivateBinExpiration_D1" xml:space="preserve">
+    <value>1dag</value>
+  </data>
+  <data name="PrivateBinExpiration_H1" xml:space="preserve">
+    <value>1timme</value>
+  </data>
+  <data name="PrivateBinExpiration_M1" xml:space="preserve">
+    <value>1månad</value>
+  </data>
+  <data name="PrivateBinExpiration_M10" xml:space="preserve">
+    <value>10min</value>
+  </data>
+  <data name="PrivateBinExpiration_M5" xml:space="preserve">
+    <value>5min</value>
+  </data>
+  <data name="PrivateBinExpiration_N" xml:space="preserve">
+    <value>aldrig</value>
+  </data>
+  <data name="PrivateBinExpiration_W1" xml:space="preserve">
+    <value>1vecka</value>
+  </data>
+  <data name="PrivateBinExpiration_Y1" xml:space="preserve">
+    <value>1år</value>
+  </data>
+  <data name="PrivateBinFormat_Markdown" xml:space="preserve">
+    <value>markdown</value>
+  </data>
+  <data name="PrivateBinFormat_PlainText" xml:space="preserve">
+    <value>oformateradtext</value>
+  </data>
+  <data name="PrivateBinFormat_SyntaxHighlighting" xml:space="preserve">
+    <value>syntaxmarkering</value>
+  </data>
+  <data name="Pushbullet_Device_key_is_missing" xml:space="preserve">
+    <value>Enhetsnyckeln saknas.</value>
+  </data>
+  <data name="Pushbullet_No_device_selected" xml:space="preserve">
+    <value>Ingen enhet har valts för push-meddelandet.</value>
+  </data>
+  <data name="Puush_Authentication_failure" xml:space="preserve">
+    <value>Autentiseringen misslyckades.</value>
+  </data>
+  <data name="Puush_Checksum_error" xml:space="preserve">
+    <value>Kontrollsummefel.</value>
+  </data>
+  <data name="Puush_Connection_error" xml:space="preserve">
+    <value>Anslutningsfel.</value>
+  </data>
+  <data name="Puush_Insufficient_account_storage" xml:space="preserve">
+    <value>Kontot har inte tillräckligt med lagringsutrymme kvar.</value>
+  </data>
+  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="PuushLoginWindow_Email" xml:space="preserve">
+    <value>E-post</value>
+  </data>
+  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
+    <value>Ange både e-postadress och lösenord.</value>
+  </data>
+  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
+    <value>Glömt lösenordet?</value>
+  </data>
+  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
+    <value>Loggar in...</value>
+  </data>
+  <data name="PuushLoginWindow_Login" xml:space="preserve">
+    <value>Logga in</value>
+  </data>
+  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
+    <value>Inloggningen misslyckades.</value>
+  </data>
+  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
+    <value>namn@example.com</value>
+  </data>
+  <data name="PuushLoginWindow_Password" xml:space="preserve">
+    <value>Lösenord</value>
+  </data>
+  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
+    <value>ShareX – puush-inloggning</value>
+  </data>
+  <data name="ResponseWindow_Copy_deletion_URL" xml:space="preserve">
+    <value>Kopiera raderings-URL</value>
+  </data>
+  <data name="ResponseWindow_Copy_response" xml:space="preserve">
+    <value>Kopiera svar</value>
+  </data>
+  <data name="ResponseWindow_Copy_response_info" xml:space="preserve">
+    <value>Kopiera svarsinformation</value>
+  </data>
+  <data name="ResponseWindow_Copy_shortened_URL" xml:space="preserve">
+    <value>Kopiera förkortad URL</value>
+  </data>
+  <data name="ResponseWindow_Copy_thumbnail_URL" xml:space="preserve">
+    <value>Kopiera miniatyr-URL</value>
+  </data>
+  <data name="ResponseWindow_Copy_URL" xml:space="preserve">
+    <value>Kopiera URL</value>
+  </data>
+  <data name="ResponseWindow_Deletion_URL" xml:space="preserve">
+    <value>Raderings-URL</value>
+  </data>
+  <data name="ResponseWindow_Headers" xml:space="preserve">
+    <value>Sidhuvuden</value>
+  </data>
+  <data name="ResponseWindow_Inspect_the_URLs_and_response_returned_by_the_destination" xml:space="preserve">
+    <value>Granska de URL:er och svar som målet returnerade.</value>
+  </data>
+  <data name="ResponseWindow_JSON_format" xml:space="preserve">
+    <value>JSON-format</value>
+  </data>
+  <data name="ResponseWindow_JSON_formatting_failed" xml:space="preserve">
+    <value>Formateringen misslyckades.</value>
+  </data>
+  <data name="ResponseWindow_No_response_information_is_available" xml:space="preserve">
+    <value>Ingen svarsinformation är tillgänglig.</value>
+  </data>
+  <data name="ResponseWindow_No_result_details_are_available" xml:space="preserve">
+    <value>Ingen resultatinformation är tillgänglig.</value>
+  </data>
+  <data name="ResponseWindow_Open_response_URL" xml:space="preserve">
+    <value>Öppna svars-URL</value>
+  </data>
+  <data name="ResponseWindow_Open_URL" xml:space="preserve">
+    <value>Öppna URL</value>
+  </data>
+  <data name="ResponseWindow_Response_info" xml:space="preserve">
+    <value>Svarsinformation</value>
+  </data>
+  <data name="ResponseWindow_Response_text" xml:space="preserve">
+    <value>Svarstext</value>
+  </data>
+  <data name="ResponseWindow_Response_URL" xml:space="preserve">
+    <value>Svars-URL</value>
+  </data>
+  <data name="ResponseWindow_Result" xml:space="preserve">
+    <value>Resultat</value>
+  </data>
+  <data name="ResponseWindow_ShareX_Response" xml:space="preserve">
+    <value>ShareX – Svar</value>
+  </data>
+  <data name="ResponseWindow_Shortened_URL" xml:space="preserve">
+    <value>Förkortad URL</value>
+  </data>
+  <data name="ResponseWindow_Status_code" xml:space="preserve">
+    <value>Statuskod</value>
+  </data>
+  <data name="ResponseWindow_The_upload_completed_with_an_error" xml:space="preserve">
+    <value>Uppladdningen slutfördes med ett fel.</value>
+  </data>
+  <data name="ResponseWindow_Thumbnail_URL" xml:space="preserve">
+    <value>Miniatyr-URL</value>
+  </data>
+  <data name="ResponseWindow_Upload_response" xml:space="preserve">
+    <value>Uppladdningssvar</value>
+  </data>
+  <data name="ResponseWindow_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ResponseWindow_XML_format" xml:space="preserve">
+    <value>XML-format</value>
+  </data>
+  <data name="ResponseWindow_XML_formatting_failed" xml:space="preserve">
+    <value>Formateringen misslyckades.</value>
+  </data>
+  <data name="Seafile_API_URL_is_empty" xml:space="preserve">
+    <value>Seafile API-URL är tom.</value>
+  </data>
+  <data name="Seafile_Authentication_token_is_empty" xml:space="preserve">
+    <value>Seafile-autentiseringstoken är tom.</value>
+  </data>
+  <data name="SendSpace_Error_details" xml:space="preserve">
+    <value>Kod: {0}, metod: {1}
+Text: {2}</value>
+  </data>
+  <data name="SendSpace_Session_key_is_missing" xml:space="preserve">
+    <value>Sessionsnyckeln saknas.</value>
+  </data>
+  <data name="SendSpace_Token_is_missing" xml:space="preserve">
+    <value>Token saknas.</value>
+  </data>
+  <data name="SendSpace_Upload_information_is_missing" xml:space="preserve">
+    <value>Uppladdningsinformation saknas.</value>
+  </data>
+  <data name="SFTP_Key_file_not_found" xml:space="preserve">
+    <value>Nyckelfilen finns inte.</value>
+  </data>
+  <data name="Streamable_Could_not_create_video" xml:space="preserve">
+    <value>Det gick inte att skapa videon.</value>
+  </data>
+  <data name="Sul_Generic_error_contact_support" xml:space="preserve">
+    <value>Ett allmänt fel inträffade. Kontakta support@s-ul.eu.</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>Anpassad textuppladdare</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>Filuppladdare</value>
+  </data>
+  <data name="TextDestination_Gist" xml:space="preserve">
+    <value>GitHub Gist</value>
+  </data>
+  <data name="TextDestination_Hastebin" xml:space="preserve">
+    <value>Hastebin</value>
+  </data>
+  <data name="TextDestination_OneTimeSecret" xml:space="preserve">
+    <value>OneTimeSecret</value>
+  </data>
+  <data name="TextDestination_Paste_ee" xml:space="preserve">
+    <value>Paste.ee</value>
+  </data>
+  <data name="TextDestination_Paste2" xml:space="preserve">
+    <value>Paste2</value>
+  </data>
+  <data name="TextDestination_Pastebin" xml:space="preserve">
+    <value>Pastebin</value>
+  </data>
+  <data name="TextDestination_Pastie" xml:space="preserve">
+    <value>Pastie</value>
+  </data>
+  <data name="TextDestination_PrivateBin" xml:space="preserve">
+    <value>PrivateBin</value>
+  </data>
+  <data name="TextDestination_Slexy" xml:space="preserve">
+    <value>Slexy</value>
+  </data>
+  <data name="TextDestination_Upaste" xml:space="preserve">
+    <value>uPaste</value>
+  </data>
+  <data name="TextUploadWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="TextUploadWindow_Character_count_plural" xml:space="preserve">
+    <value>{0:N0} tecken</value>
+  </data>
+  <data name="TextUploadWindow_Character_count_singular" xml:space="preserve">
+    <value>{0:N0} tecken</value>
+  </data>
+  <data name="TextUploadWindow_Enter_or_paste_the_text_you_want_to_upload" xml:space="preserve">
+    <value>Ange eller klistra in texten som ska laddas upp.</value>
+  </data>
+  <data name="TextUploadWindow_ShareX_Text_upload" xml:space="preserve">
+    <value>ShareX – Textuppladdning</value>
+  </data>
+  <data name="TextUploadWindow_Text_upload" xml:space="preserve">
+    <value>Textuppladdning</value>
+  </data>
+  <data name="TextUploadWindow_Upload" xml:space="preserve">
+    <value>Ladda upp</value>
+  </data>
+  <data name="Uploader_Authorization_information_missing" xml:space="preserve">
+    <value>Auktoriseringsinformation saknas. Öppna först auktoriserings-URL:en.</value>
+  </data>
+  <data name="Uploader_Error_message" xml:space="preserve">
+    <value>Felmeddelande:</value>
+  </data>
+  <data name="Uploader_Request_URL" xml:space="preserve">
+    <value>Begärande-URL:</value>
+  </data>
+  <data name="Uploader_Stack_trace" xml:space="preserve">
+    <value>Stackspårning:</value>
+  </data>
+  <data name="UploaderErrors_Login_is_required" xml:space="preserve">
+    <value>Inloggning krävs.</value>
+  </data>
+  <data name="UploaderErrors_Refresh_access_token_failed" xml:space="preserve">
+    <value>Det gick inte att uppdatera åtkomsttoken.</value>
+  </data>
+  <data name="UploaderErrors_Service_login_is_required" xml:space="preserve">
+    <value>Inloggning till {0} krävs.</value>
+  </data>
+  <data name="UploaderErrors_Upload_failed" xml:space="preserve">
+    <value>Uppladdningen misslyckades.</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Bing visuell sökning</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>Anpassad URL-delningstjänst</value>
+  </data>
+  <data name="URLSharingServices_Delicious" xml:space="preserve">
+    <value>Delicious</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>E-post</value>
+  </data>
+  <data name="URLSharingServices_Facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Google bildsökning</value>
+  </data>
+  <data name="URLSharingServices_LinkedIn" xml:space="preserve">
+    <value>LinkedIn</value>
+  </data>
+  <data name="URLSharingServices_Pinterest" xml:space="preserve">
+    <value>Pinterest</value>
+  </data>
+  <data name="URLSharingServices_Pushbullet" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="URLSharingServices_Reddit" xml:space="preserve">
+    <value>Reddit</value>
+  </data>
+  <data name="URLSharingServices_StumbleUpon" xml:space="preserve">
+    <value>StumbleUpon</value>
+  </data>
+  <data name="URLSharingServices_Tumblr" xml:space="preserve">
+    <value>Tumblr</value>
+  </data>
+  <data name="URLSharingServices_VK" xml:space="preserve">
+    <value>VK</value>
+  </data>
+  <data name="UrlShortenerType_BITLY" xml:space="preserve">
+    <value>bit.ly</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>Anpassad URL-förkortare</value>
+  </data>
+  <data name="UrlShortenerType_FirebaseDynamicLinks" xml:space="preserve">
+    <value>Dynamiska Firebase-länkar</value>
+  </data>
+  <data name="UrlShortenerType_ISGD" xml:space="preserve">
+    <value>is.gd</value>
+  </data>
+  <data name="UrlShortenerType_Kutt" xml:space="preserve">
+    <value>Kutt</value>
+  </data>
+  <data name="UrlShortenerType_Polr" xml:space="preserve">
+    <value>Polr</value>
+  </data>
+  <data name="UrlShortenerType_QRnet" xml:space="preserve">
+    <value>qr.net</value>
+  </data>
+  <data name="UrlShortenerType_TINYURL" xml:space="preserve">
+    <value>tinyurl.com</value>
+  </data>
+  <data name="UrlShortenerType_TURL" xml:space="preserve">
+    <value>turl.ca</value>
+  </data>
+  <data name="UrlShortenerType_TwoGP" xml:space="preserve">
+    <value>2.gp</value>
+  </data>
+  <data name="UrlShortenerType_VGD" xml:space="preserve">
+    <value>v.gd</value>
+  </data>
+  <data name="UrlShortenerType_VURL" xml:space="preserve">
+    <value>vurl.com</value>
+  </data>
+  <data name="UrlShortenerType_YOURLS" xml:space="preserve">
+    <value>yourls.org</value>
+  </data>
+  <data name="UrlShortenerType_ZeroWidthShortener" xml:space="preserve">
+    <value>Förkortare med nollbredd</value>
+  </data>
+  <data name="Vault_No_valid_metadata_returned" xml:space="preserve">
+    <value>Inga giltiga metadata returnerades.</value>
+  </data>
+  <data name="Yourls_Credentials_missing" xml:space="preserve">
+    <value>Signaturen eller användarnamnet/lösenordet saknas.</value>
+  </data>
+  <data name="YouTube_Upload_failed" xml:space="preserve">
+    <value>Uppladdningen misslyckades: {0}</value>
+  </data>
+  <data name="YouTube_Upload_rejected" xml:space="preserve">
+    <value>Uppladdningen avvisades: {0}</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Description" xml:space="preserve">
+    <value>Beskrivning</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_ShareX_YouTube_video_options" xml:space="preserve">
+    <value>ShareX – YouTube-videoalternativ</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Title" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Video_title" xml:space="preserve">
+    <value>Videotitel</value>
+  </data>
+  <data name="YouTubeVideoOptionsWindow_Visibility" xml:space="preserve">
+    <value>Synlighet</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>Privat</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>Offentlig</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>Olistad</value>
+  </data>
+</root>

@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -94,6 +94,8 @@ namespace ShareX
         SimplifiedChinese,
         [Description("Español (Spanish)")]
         Spanish,
+        [Description("Svenska (Swedish)")]
+        Swedish,
         [Description("繁體中文 (Traditional Chinese)")]
         TraditionalChinese,
         [Description("Türkçe (Turkish)")]

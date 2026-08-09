@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConfirmationDialogView_Title" xml:space="preserve">
+    <value>Bekräfta avslut</value>
+  </data>
+  <data name="ConfirmationDialogView_Message" xml:space="preserve">
+    <value>Det finns osparade ändringar.
+
+Vill du spara ändringarna innan bildredigeraren stängs?</value>
+  </data>
+  <data name="ConfirmationDialogView_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="ConfirmationDialogView_No" xml:space="preserve">
+    <value>Nej</value>
+  </data>
+  <data name="ConfirmationDialogView_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="NewImageDialogView_Title" xml:space="preserve">
+    <value>Ny bild</value>
+  </data>
+  <data name="NewImageDialogView_Width" xml:space="preserve">
+    <value>Bredd:</value>
+  </data>
+  <data name="NewImageDialogView_Pixels" xml:space="preserve">
+    <value>bildpunkter</value>
+  </data>
+  <data name="NewImageDialogView_Height" xml:space="preserve">
+    <value>Höjd:</value>
+  </data>
+  <data name="NewImageDialogView_Background" xml:space="preserve">
+    <value>Bakgrund:</value>
+  </data>
+  <data name="NewImageDialogView_Transparent" xml:space="preserve">
+    <value>Genomskinlig</value>
+  </data>
+  <data name="NewImageDialogView_SolidColor" xml:space="preserve">
+    <value>Enfärgad</value>
+  </data>
+  <data name="NewImageDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="NewImageDialogView_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="StartScreenDialogView_Title" xml:space="preserve">
+    <value>Startskärm</value>
+  </data>
+  <data name="StartScreenDialogView_CreateNewImage" xml:space="preserve">
+    <value>Skapa ny bild...</value>
+  </data>
+  <data name="StartScreenDialogView_OpenImageFile" xml:space="preserve">
+    <value>Öppna bildfil...</value>
+  </data>
+  <data name="StartScreenDialogView_LoadImageFromClipboard" xml:space="preserve">
+    <value>Läs in bild från Urklipp</value>
+  </data>
+  <data name="StartScreenDialogView_LoadImageFromURL" xml:space="preserve">
+    <value>Läs in bild från URL...</value>
+  </data>
+  <data name="StartScreenDialogView_Load" xml:space="preserve">
+    <value>Läs in</value>
+  </data>
+  <data name="StartScreenDialogView_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="StartScreenDialogView_Exit" xml:space="preserve">
+    <value>Avsluta</value>
+  </data>
+  <data name="StartScreenDialogView_RecentFiles" xml:space="preserve">
+    <value>Senaste filer</value>
+  </data>
+  <data name="StartScreenDialogView_NoRecentImageFiles" xml:space="preserve">
+    <value>Det finns inga senaste bildfiler än.</value>
+  </data>
+  <data name="StartScreenDialogView_InvalidURL" xml:space="preserve">
+    <value>Ange en giltig HTTP- eller HTTPS-URL.</value>
+  </data>
+  <data name="EmojiPickerDialogView_LoadingEmojis" xml:space="preserve">
+    <value>Läser in emojier...</value>
+  </data>
+  <data name="EmojiPickerDialogView_SearchEmojisCount" xml:space="preserve">
+    <value>Sök efter emojier... ({0})</value>
+  </data>
+  <data name="EmojiPickerDialogView_BrowseEmojis" xml:space="preserve">
+    <value>Bläddra bland emojier</value>
+  </data>
+  <data name="EmojiPickerDialogView_CategorySummary" xml:space="preserve">
+    <value>{0} • {1} emojier</value>
+  </data>
+  <data name="EmojiPickerDialogView_SearchResults" xml:space="preserve">
+    <value>Sökresultat • {0} träffar</value>
+  </data>
+  <data name="EmojiPickerDialogView_NoMatches" xml:space="preserve">
+    <value>Inga emojier matchar sökningen.</value>
+  </data>
+  <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
+    <value>Prova ett annat sökord.</value>
+  </data>
+  <data name="EmojiPickerDialogView_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="EmojiPickerDialogView_PreviewsLoading" xml:space="preserve">
+    <value>Väljaren är klar. Förhandsgranskningar av emojier läses in i bakgrunden.</value>
+  </data>
+  <data name="InsertImageDialogView_Title" xml:space="preserve">
+    <value>Infoga bild</value>
+  </data>
+  <data name="InsertImageDialogView_Description" xml:space="preserve">
+    <value>Välj hur den inkommande bilden ska placeras på den aktuella arbetsytan.</value>
+  </data>
+  <data name="InsertImageDialogView_ImageSummary" xml:space="preserve">
+    <value>Inkommande bild: {0} × {1} px</value>
+  </data>
+  <data name="InsertImageDialogView_Center" xml:space="preserve">
+    <value>Infoga bilden i mitten</value>
+  </data>
+  <data name="InsertImageDialogView_CenterDescription" xml:space="preserve">
+    <value>Behåller arbetsytans aktuella storlek.</value>
+  </data>
+  <data name="InsertImageDialogView_Below" xml:space="preserve">
+    <value>Infoga bilden nedanför</value>
+  </data>
+  <data name="InsertImageDialogView_BelowDescription" xml:space="preserve">
+    <value>Utökar arbetsytan nedåt innan bilden läggs till.</value>
+  </data>
+  <data name="InsertImageDialogView_Right" xml:space="preserve">
+    <value>Infoga bilden till höger</value>
+  </data>
+  <data name="InsertImageDialogView_RightDescription" xml:space="preserve">
+    <value>Utökar arbetsytan åt höger innan bilden läggs till.</value>
+  </data>
+  <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
+    <value>Pilstil</value>
+  </data>
+  <data name="AnnotationToolbar_Blur" xml:space="preserve">
+    <value>Oskärpa</value>
+  </data>
+  <data name="AnnotationToolbar_Bluramount" xml:space="preserve">
+    <value>Mängd oskärpa</value>
+  </data>
+  <data name="AnnotationToolbar_Bordercolor" xml:space="preserve">
+    <value>Kantfärg</value>
+  </data>
+  <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
+    <value>Kantstil</value>
+  </data>
+  <data name="AnnotationToolbar_Color" xml:space="preserve">
+    <value>Färg</value>
+  </data>
+  <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
+    <value>Hörnradie</value>
+  </data>
+  <data name="AnnotationToolbar_Cursortype" xml:space="preserve">
+    <value>Markörtyp</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteallShiftDelete" xml:space="preserve">
+    <value>Ta bort alla (Skift+Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteDelete" xml:space="preserve">
+    <value>Ta bort (Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_Effectstrength" xml:space="preserve">
+    <value>Effektstyrka</value>
+  </data>
+  <data name="AnnotationToolbar_Exit" xml:space="preserve">
+    <value>Avsluta</value>
+  </data>
+  <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
+    <value>Fyllningsfärg</value>
+  </data>
+  <data name="AnnotationToolbar_Fontfamily" xml:space="preserve">
+    <value>Teckensnittsfamilj</value>
+  </data>
+  <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
+    <value>Teckenstorlek</value>
+  </data>
+  <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
+    <value>Vågrät justering</value>
+  </data>
+  <data name="AnnotationToolbar_NewEllipsis" xml:space="preserve">
+    <value>Ny...</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetX" xml:space="preserve">
+    <value>X-förskjutning</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetY" xml:space="preserve">
+    <value>Y-förskjutning</value>
+  </data>
+  <data name="AnnotationToolbar_Opacity" xml:space="preserve">
+    <value>Opacitet</value>
+  </data>
+  <data name="AnnotationToolbar_OpenEllipsis" xml:space="preserve">
+    <value>Öppna...</value>
+  </data>
+  <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
+    <value>Öppna senaste</value>
+  </data>
+  <data name="AnnotationToolbar_Options" xml:space="preserve">
+    <value>Alternativ</value>
+  </data>
+  <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
+    <value>Gör om (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Save" xml:space="preserve">
+    <value>Spara</value>
+  </data>
+  <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
+    <value>Spara som...</value>
+  </data>
+  <data name="AnnotationToolbar_Shadow" xml:space="preserve">
+    <value>Skugga</value>
+  </data>
+  <data name="AnnotationToolbar_Shadowcolor" xml:space="preserve">
+    <value>Skuggfärg</value>
+  </data>
+  <data name="AnnotationToolbar_Startingnumber" xml:space="preserve">
+    <value>Startnummer</value>
+  </data>
+  <data name="AnnotationToolbar_Steptype" xml:space="preserve">
+    <value>Stegtyp</value>
+  </data>
+  <data name="AnnotationToolbar_Textcolor" xml:space="preserve">
+    <value>Textfärg</value>
+  </data>
+  <data name="AnnotationToolbar_Thickness" xml:space="preserve">
+    <value>Tjocklek</value>
+  </data>
+  <data name="AnnotationToolbar_Togglebold" xml:space="preserve">
+    <value>Växla fetstil</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleellipseshape" xml:space="preserve">
+    <value>Växla ellipsform</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleitalic" xml:space="preserve">
+    <value>Växla kursiv stil</value>
+  </data>
+  <data name="AnnotationToolbar_ToggleshadowShadowoptionsRightclick" xml:space="preserve">
+    <value>Växla skugga
+Skuggalternativ (högerklick)</value>
+  </data>
+  <data name="AnnotationToolbar_Toggletail" xml:space="preserve">
+    <value>Växla svans</value>
+  </data>
+  <data name="AnnotationToolbar_UndoCtrlZ" xml:space="preserve">
+    <value>Ångra (Ctrl+Z)</value>
+  </data>
+  <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
+    <value>Välj färg från skärmen</value>
+  </data>
+  <data name="EditorOptionsPanel_Close" xml:space="preserve">
+    <value>Stäng</value>
+  </data>
+  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
+    <value>Anpassa verktygsfält...</value>
+  </data>
+  <data name="EditorOptionsPanel_Options" xml:space="preserve">
+    <value>Alternativ</value>
+  </data>
+  <data name="EditorView_Auto" xml:space="preserve">
+    <value>Automatiskt</value>
+  </data>
+  <data name="EditorView_Background" xml:space="preserve">
+    <value>Bakgrund</value>
+  </data>
+  <data name="EditorView_Backgroundimage" xml:space="preserve">
+    <value>Bakgrundsbild</value>
+  </data>
+  <data name="EditorView_Bringforward" xml:space="preserve">
+    <value>Flytta framåt</value>
+  </data>
+  <data name="EditorView_Bringtofront" xml:space="preserve">
+    <value>Flytta längst fram</value>
+  </data>
+  <data name="EditorView_BrowsebackgroundimageEllipsis" xml:space="preserve">
+    <value>Bläddra efter bakgrundsbild...</value>
+  </data>
+  <data name="EditorView_CancelEsc" xml:space="preserve">
+    <value>Avbryt (Esc)</value>
+  </data>
+  <data name="EditorView_Copy" xml:space="preserve">
+    <value>Kopiera</value>
+  </data>
+  <data name="EditorView_CopyimagetoclipboardCtrlC" xml:space="preserve">
+    <value>Kopiera bild till Urklipp (Ctrl+C)</value>
+  </data>
+  <data name="EditorView_Cut" xml:space="preserve">
+    <value>Klipp ut</value>
+  </data>
+  <data name="EditorView_Delete" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="EditorView_Deleteall" xml:space="preserve">
+    <value>Ta bort alla</value>
+  </data>
+  <data name="EditorView_Duplicate" xml:space="preserve">
+    <value>Duplicera</value>
+  </data>
+  <data name="EditorView_Editbackgroundcolor" xml:space="preserve">
+    <value>Redigera bakgrundsfärg</value>
+  </data>
+  <data name="EditorView_Editgradientcolor1" xml:space="preserve">
+    <value>Redigera övertoningsfärg 1</value>
+  </data>
+  <data name="EditorView_Editgradientcolor2" xml:space="preserve">
+    <value>Redigera övertoningsfärg 2</value>
+  </data>
+  <data name="EditorView_Flatten" xml:space="preserve">
+    <value>Platta ut</value>
+  </data>
+  <data name="EditorView_Margin" xml:space="preserve">
+    <value>Marginal</value>
+  </data>
+  <data name="EditorView_Padding" xml:space="preserve">
+    <value>Utfyllnad</value>
+  </data>
+  <data name="EditorView_Paste" xml:space="preserve">
+    <value>Klistra in</value>
+  </data>
+  <data name="EditorView_PinimagetoscreenCtrlP" xml:space="preserve">
+    <value>Fäst bild på skärmen (Ctrl+P)</value>
+  </data>
+  <data name="EditorView_PrintimageEllipsisCtrlShiftP" xml:space="preserve">
+    <value>Skriv ut bild... (Ctrl+Skift+P)</value>
+  </data>
+  <data name="EditorView_Ratio" xml:space="preserve">
+    <value>Proportion</value>
+  </data>
+  <data name="EditorView_Redo" xml:space="preserve">
+    <value>Gör om</value>
+  </data>
+  <data name="EditorView_RoundedCorner" xml:space="preserve">
+    <value>Rundat hörn</value>
+  </data>
+  <data name="EditorView_SaveimageasEllipsisCtrlShiftS" xml:space="preserve">
+    <value>Spara bild som... (Ctrl+Skift+S)</value>
+  </data>
+  <data name="EditorView_SaveimageCtrlS" xml:space="preserve">
+    <value>Spara bild (Ctrl+S)</value>
+  </data>
+  <data name="EditorView_Sendbackward" xml:space="preserve">
+    <value>Flytta bakåt</value>
+  </data>
+  <data name="EditorView_Sendtoback" xml:space="preserve">
+    <value>Flytta längst bak</value>
+  </data>
+  <data name="EditorView_ShadowRadius" xml:space="preserve">
+    <value>Skuggradie</value>
+  </data>
+  <data name="EditorView_Undo" xml:space="preserve">
+    <value>Ångra</value>
+  </data>
+  <data name="EditorView_UploadimageCtrlU" xml:space="preserve">
+    <value>Ladda upp bild (Ctrl+U)</value>
+  </data>
+  <data name="EditorView_ZoomCtrlWheel" xml:space="preserve">
+    <value>Zooma (Ctrl + hjul)</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchimageeffectsEllipsis" xml:space="preserve">
+    <value>Sök efter bildeffekter...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Apply" xml:space="preserve">
+    <value>Tillämpa</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_BrowseEllipsis" xml:space="preserve">
+    <value>Bläddra...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
+    <value>Börja grupp</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit" xml:space="preserve">
+    <value>Klicka och tryck på en genväg. Backsteg eller Delete rensar den.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
+    <value>Anpassa verktygsfält</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
+    <value>Flytta ned</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
+    <value>Flytta upp</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
+    <value>Återställ verktygsfältet till standard</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
+    <value>Visa/dölj</value>
+  </data>
+  <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
+    <value>Anpassa till fönster</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
+    <value>Ogiltigt snabbtangent för {0}. Använd format som R, Ctrl+R eller Ctrl+Skift+R.</value>
+  </data>
+  <data name="EffectBrowserPanel_RecentHint" xml:space="preserve">
+    <value>Högerklicka på en effekt för att ta bort den från Senaste.</value>
+  </data>
+  <data name="EffectBrowserPanel_FavoritesHint" xml:space="preserve">
+    <value>Högerklicka på en effekt för att lägga till eller ta bort den från Favoriter.</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchCount" xml:space="preserve">
+    <value>Sök efter bildeffekter... ({0})</value>
+  </data>
+  <data name="EffectBrowserPanel_Recent" xml:space="preserve">
+    <value>Senaste</value>
+  </data>
+  <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
+    <value>Favoriter</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
+    <value>Arkiv</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Select" xml:space="preserve">
+    <value>Markera</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Rectangle" xml:space="preserve">
+    <value>Rektangel</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Ellipse" xml:space="preserve">
+    <value>Ellips</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Line" xml:space="preserve">
+    <value>Linje</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
+    <value>Pil</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Freehand" xml:space="preserve">
+    <value>Frihand</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SpeechBalloon" xml:space="preserve">
+    <value>Pratbubbla</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Step" xml:space="preserve">
+    <value>Steg</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Image" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
+    <value>Markör</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
+    <value>Markera</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SmartEraser" xml:space="preserve">
+    <value>Smart suddgummi</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
+    <value>Oskärpa</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Pixelate" xml:space="preserve">
+    <value>Pixelisera</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Magnify" xml:space="preserve">
+    <value>Förstora</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Spotlight" xml:space="preserve">
+    <value>Strålkastare</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
+    <value>Beskär</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CutOut" xml:space="preserve">
+    <value>Klipp ut</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Background" xml:space="preserve">
+    <value>Bakgrund</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_ImageEffects" xml:space="preserve">
+    <value>Bildeffekter</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
+    <value>{0}
+Favoritbildeffekter (högerklick)</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_AppStarting" xml:space="preserve">
+    <value>Programmet startar</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Arrow" xml:space="preserve">
+    <value>Pil</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Cross" xml:space="preserve">
+    <value>Kors</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Hand" xml:space="preserve">
+    <value>Hand</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Help" xml:space="preserve">
+    <value>Hjälp</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_HSplit" xml:space="preserve">
+    <value>Vågrät delning</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_IBeam" xml:space="preserve">
+    <value>I-balk</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_No" xml:space="preserve">
+    <value>Inte tillåtet</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMove2D" xml:space="preserve">
+    <value>Ingen 2D-flyttning</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveHoriz" xml:space="preserve">
+    <value>Ingen vågrät flyttning</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveVert" xml:space="preserve">
+    <value>Ingen lodrät flyttning</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanEast" xml:space="preserve">
+    <value>Panorera österut</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNE" xml:space="preserve">
+    <value>Panorera nordost</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNorth" xml:space="preserve">
+    <value>Panorera norrut</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNW" xml:space="preserve">
+    <value>Panorera nordväst</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSE" xml:space="preserve">
+    <value>Panorera sydost</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSouth" xml:space="preserve">
+    <value>Panorera söderut</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSW" xml:space="preserve">
+    <value>Panorera sydväst</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanWest" xml:space="preserve">
+    <value>Panorera västerut</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeAll" xml:space="preserve">
+    <value>Ändra storlek åt alla håll</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNESW" xml:space="preserve">
+    <value>Ändra storlek nordost–sydväst</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNS" xml:space="preserve">
+    <value>Ändra storlek nord–syd</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNWSE" xml:space="preserve">
+    <value>Ändra storlek nordväst–sydost</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeWE" xml:space="preserve">
+    <value>Ändra storlek väst–öst</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_UpArrow" xml:space="preserve">
+    <value>Uppåtpil</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_VSplit" xml:space="preserve">
+    <value>Lodrät delning</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
+    <value>Väntemarkör</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
+    <value>Heldragen</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dash" xml:space="preserve">
+    <value>Streckad</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dot" xml:space="preserve">
+    <value>Prickad</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDot" xml:space="preserve">
+    <value>Streck punkt</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDotDot" xml:space="preserve">
+    <value>Streck punkt punkt</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Classic" xml:space="preserve">
+    <value>Klassisk</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Modern" xml:space="preserve">
+    <value>Modern</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Double" xml:space="preserve">
+    <value>Dubbel</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Basic" xml:space="preserve">
+    <value>Grundläggande</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
+    <value>Linje</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
+    <value>Vänster</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
+    <value>Centrerad</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
+    <value>Höger</value>
+  </data>
+  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
+    <value>Kom ihåg fönstrets tillstånd</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
+    <value>Visa bekräftelse vid avslut</value>
+  </data>
+  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Anpassa zoom vid öppning</value>
+  </data>
+  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
+    <value>Snabb beskärning</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Stäng redigeraren automatiskt vid uppgift</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Kopiera bilden automatiskt till Urklipp</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
+    <value>Visa dialogrutan Infoga bild</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
+    <value>Visa aviseringar</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
+    <value>Övertoning</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
+    <value>Färg</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeTransparent" xml:space="preserve">
+    <value>Genomskinlig</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeImage" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
+    <value>Skrivbordsunderlägg</value>
+  </data>
+  <data name="MainViewModel_ImageOpened" xml:space="preserve">
+    <value>Bilden öppnades.</value>
+  </data>
+  <data name="MainViewModel_NewImageCreated" xml:space="preserve">
+    <value>En ny bild skapades.</value>
+  </data>
+  <data name="MainViewModel_ImageCropped" xml:space="preserve">
+    <value>Bilden beskars.</value>
+  </data>
+  <data name="MainViewModel_ImageCutOut" xml:space="preserve">
+    <value>Bilden klipptes ut.</value>
+  </data>
+  <data name="MainViewModel_ImageInserted" xml:space="preserve">
+    <value>Bilden infogades.</value>
+  </data>
+  <data name="MainViewModel_ImageAutoCropped" xml:space="preserve">
+    <value>Bilden beskars automatiskt.</value>
+  </data>
+  <data name="MainViewModel_ImageResized" xml:space="preserve">
+    <value>Bildens storlek ändrades.</value>
+  </data>
+  <data name="MainViewModel_CanvasResized" xml:space="preserve">
+    <value>Arbetsytans storlek ändrades.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90Clockwise" xml:space="preserve">
+    <value>Bilden roterades 90 grader medurs.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90CounterClockwise" xml:space="preserve">
+    <value>Bilden roterades 90 grader moturs.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated180" xml:space="preserve">
+    <value>Bilden roterades 180 grader.</value>
+  </data>
+  <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
+    <value>Bilden roterades {0} grader.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedHorizontally" xml:space="preserve">
+    <value>Bilden vändes vågrätt.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedVertically" xml:space="preserve">
+    <value>Bilden vändes lodrätt.</value>
+  </data>
+  <data name="MainViewModel_ImageEffectApplied" xml:space="preserve">
+    <value>Bildeffekten tillämpades.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
+    <value>Bilden sparades till en fil.</value>
+  </data>
+  <data name="MainViewModel_FilePathFormat" xml:space="preserve">
+    <value>Filsökväg: {0}</value>
+  </data>
+  <data name="MainViewModel_SizeFormat" xml:space="preserve">
+    <value>Storlek: {0} × {1}</value>
+  </data>
+  <data name="MainViewModel_WindowTitle" xml:space="preserve">
+    <value>ShareX – Bildredigerare</value>
+  </data>
+  <data name="MainViewModel_HideToolbars" xml:space="preserve">
+    <value>Dölj verktygsfält</value>
+  </data>
+  <data name="MainViewModel_ShowToolbars" xml:space="preserve">
+    <value>Visa verktygsfält</value>
+  </data>
+  <data name="MainViewModel_ContinueEnter" xml:space="preserve">
+    <value>Fortsätt (Retur)</value>
+  </data>
+  <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
+    <value>Kör uppgifter efter bildtagning (Retur)</value>
+  </data>
+  <data name="MainViewModel_NoImage" xml:space="preserve">
+    <value>Ingen bild</value>
+  </data>
+  <data name="MainViewModel_ImageCopiedToClipboard" xml:space="preserve">
+    <value>Bilden kopierades till Urklipp.</value>
+  </data>
+  <data name="MainViewModel_ImagePrinted" xml:space="preserve">
+    <value>Bilden skrevs ut.</value>
+  </data>
+  <data name="MainViewModel_ImagePinnedToScreen" xml:space="preserve">
+    <value>Bilden fästes på skärmen.</value>
+  </data>
+  <data name="MainViewModel_ImageIsUploading" xml:space="preserve">
+    <value>Bilden laddas upp.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
+    <value>{0} och {1} använder samma snabbtangent ({2}).</value>
+  </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Välj bakgrundsbild</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Öppna bild</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Det gick inte att läsa in bilden från Urklipp.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Det gick inte att läsa in bilden från Urklipp.
+Urklipp innehåller ingen bild.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>URL:en pekar inte på en giltig bild.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Det gick inte att hämta bilden: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>Filen finns inte längre.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Det gick inte att läsa in bildfilen.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Spara bild som</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Välj bild</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Prestation upplåst!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Beskär</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Smart utfyllnad</value>
+  </data>
+</root>

@@ -33,6 +33,7 @@ $languageCatalogMap = [ordered]@{
     'pt-PT' = 'pt-PT'
     'ro-RO' = 'ro'
     'ru-RU' = 'ru'
+    'sv-SE' = 'sv'
     'tr-TR' = 'tr'
     'uk-UA' = 'uk'
     'vi-VN' = 'vi-VN'
