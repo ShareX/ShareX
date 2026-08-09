@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -28,6 +28,7 @@ using Avalonia.Input;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using SkiaSharp;
+using ShareX.AvaloniaUI.Localization;
 using ShareX.AvaloniaUI.Imaging;
 using System.Buffers.Binary;
 
@@ -188,7 +189,7 @@ namespace ShareX.AvaloniaUI.Input
 
             if (scaledBitmap == null)
             {
-                throw new InvalidOperationException("Failed to resize cursor bitmap.");
+                throw new InvalidOperationException(Strings.CursorAssetLoader_Failed_to_resize_cursor_bitmap);
             }
 
             return BitmapConversionHelpers.ToAvaloniBitmap(scaledBitmap);
@@ -198,7 +199,7 @@ namespace ShareX.AvaloniaUI.Input
         {
             if (data.Length < 22)
             {
-                throw new InvalidDataException("Cursor asset is too small.");
+                throw new InvalidDataException(Strings.CursorAssetLoader_Cursor_asset_is_too_small);
             }
 
             ushort type = ReadUInt16(data, 2);
@@ -206,12 +207,12 @@ namespace ShareX.AvaloniaUI.Input
 
             if (type != 2)
             {
-                throw new NotSupportedException("Only .cur cursor assets are supported.");
+                throw new NotSupportedException(Strings.CursorAssetLoader_Only_cur_cursor_assets_are_supported);
             }
 
             if (count == 0)
             {
-                throw new InvalidDataException("Cursor asset does not contain any images.");
+                throw new InvalidDataException(Strings.CursorAssetLoader_Cursor_asset_does_not_contain_any_images);
             }
 
             int width = data[6] == 0 ? 256 : data[6];
@@ -223,7 +224,7 @@ namespace ShareX.AvaloniaUI.Input
 
             if (imageOffset < 0 || imageLength <= 0 || imageOffset + imageLength > data.Length)
             {
-                throw new InvalidDataException("Cursor image payload is out of range.");
+                throw new InvalidDataException(Strings.CursorAssetLoader_Cursor_image_payload_is_out_of_range);
             }
 
             return new CursorDirectoryEntry(width, height, hotSpotX, hotSpotY, imageLength, imageOffset);
@@ -253,12 +254,12 @@ namespace ShareX.AvaloniaUI.Input
 
             if (headerSize < 40)
             {
-                throw new NotSupportedException("Unsupported cursor bitmap header.");
+                throw new NotSupportedException(Strings.CursorAssetLoader_Unsupported_cursor_bitmap_header);
             }
 
             if (compression != 0)
             {
-                throw new NotSupportedException("Compressed cursor bitmaps are not supported.");
+                throw new NotSupportedException(Strings.CursorAssetLoader_Compressed_cursor_bitmaps_are_not_supported);
             }
 
             int width = Math.Abs(rawWidth);
@@ -269,7 +270,7 @@ namespace ShareX.AvaloniaUI.Input
             {
                 1 => LoadMonochromeCursorBitmap(data, imageOffset, headerSize, width, height, bottomUp, colorsUsed),
                 32 => LoadArgbCursorBitmap(data, imageOffset, headerSize, width, height, bottomUp),
-                _ => throw new NotSupportedException($"Unsupported cursor bit depth: {bitsPerPixel}.")
+                _ => throw new NotSupportedException(string.Format(Strings.CursorAssetLoader_Unsupported_cursor_bit_depth, bitsPerPixel))
             };
         }
 

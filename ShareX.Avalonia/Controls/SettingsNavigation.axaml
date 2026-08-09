@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="using:ShareX.AvaloniaUI.Controls"
+             xmlns:localization="using:ShareX.AvaloniaUI.Localization"
              xmlns:theming="using:ShareX.AvaloniaUI.Theming"
              mc:Ignorable="d"
              d:DesignWidth="230"
@@ -57,7 +58,7 @@
                        ZIndex="1"/>
             <TextBox Grid.ColumnSpan="2"
                      Padding="30,8,8,8"
-                     PlaceholderText="Search settings"
+                     PlaceholderText="{x:Static localization:Strings.SettingsNavigation_Search_settings}"
                      Text="{Binding SearchText, ElementName=Root, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
 

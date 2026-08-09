@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SettingsNavigation_Search_settings" xml:space="preserve">
+    <value>Cerca nelle impostazioni</value>
+  </data>
+  <data name="CursorAssetLoader_Failed_to_resize_cursor_bitmap" xml:space="preserve">
+    <value>Impossibile ridimensionare la bitmap del cursore.</value>
+  </data>
+  <data name="CursorAssetLoader_Cursor_asset_is_too_small" xml:space="preserve">
+    <value>La risorsa del cursore è troppo piccola.</value>
+  </data>
+  <data name="CursorAssetLoader_Only_cur_cursor_assets_are_supported" xml:space="preserve">
+    <value>Sono supportate solo le risorse cursore .cur.</value>
+  </data>
+  <data name="CursorAssetLoader_Cursor_asset_does_not_contain_any_images" xml:space="preserve">
+    <value>La risorsa del cursore non contiene immagini.</value>
+  </data>
+  <data name="CursorAssetLoader_Cursor_image_payload_is_out_of_range" xml:space="preserve">
+    <value>I dati dell'immagine del cursore non rientrano nell'intervallo valido.</value>
+  </data>
+  <data name="CursorAssetLoader_Unsupported_cursor_bitmap_header" xml:space="preserve">
+    <value>Intestazione bitmap del cursore non supportata.</value>
+  </data>
+  <data name="CursorAssetLoader_Compressed_cursor_bitmaps_are_not_supported" xml:space="preserve">
+    <value>Le bitmap del cursore compresse non sono supportate.</value>
+  </data>
+  <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
+    <value>Profondità di bit del cursore non supportata: {0}.</value>
+  </data>
+</root>
