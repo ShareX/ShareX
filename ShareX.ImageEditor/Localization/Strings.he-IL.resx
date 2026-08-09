@@ -793,4 +793,709 @@
   <data name="EditorView_SmartPadding" xml:space="preserve">
     <value>ריווח חכם</value>
   </data>
+  <data name="EffectBrowserPanel_Category_Manipulations" xml:space="preserve">
+    <value>עיבודים</value>
+  </data>
+  <data name="EffectBrowserPanel_Category_Adjustments" xml:space="preserve">
+    <value>התאמות</value>
+  </data>
+  <data name="EffectBrowserPanel_Category_Filters" xml:space="preserve">
+    <value>מסננים</value>
+  </data>
+  <data name="EffectBrowserPanel_Category_Drawings" xml:space="preserve">
+    <value>ציור</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_alpha" xml:space="preserve">
+    <value>אלפא</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_auto_contrast" xml:space="preserve">
+    <value>ניגודיות אוטומטית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_black_and_white" xml:space="preserve">
+    <value>שחור ולבן</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_brightness" xml:space="preserve">
+    <value>בהירות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_channel_swap" xml:space="preserve">
+    <value>החלפת ערוצים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_clarity" xml:space="preserve">
+    <value>בהירות פרטים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_color_balance" xml:space="preserve">
+    <value>איזון צבעים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_colorize" xml:space="preserve">
+    <value>צביעה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_color_matrix" xml:space="preserve">
+    <value>מטריצת צבע</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_contrast" xml:space="preserve">
+    <value>ניגודיות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_cross_process" xml:space="preserve">
+    <value>עיבוד מוצלב</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_dehaze" xml:space="preserve">
+    <value>הסרת אובך</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_duotone_gradient_map" xml:space="preserve">
+    <value>שני גוונים / מפת מעבר צבע</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_exposure" xml:space="preserve">
+    <value>חשיפה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_film_emulation" xml:space="preserve">
+    <value>הדמיית סרט צילום</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_gamma" xml:space="preserve">
+    <value>גאמה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_grayscale" xml:space="preserve">
+    <value>גווני אפור</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_hue" xml:space="preserve">
+    <value>גוון</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_invert" xml:space="preserve">
+    <value>היפוך צבעים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_levels" xml:space="preserve">
+    <value>רמות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_lomo" xml:space="preserve">
+    <value>לומו</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_polaroid" xml:space="preserve">
+    <value>פולארויד</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_posterize" xml:space="preserve">
+    <value>הפרדת גוונים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_replace_color" xml:space="preserve">
+    <value>החלפת צבע</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_saturation" xml:space="preserve">
+    <value>רוויה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_sepia" xml:space="preserve">
+    <value>ספיה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_shadows_highlights" xml:space="preserve">
+    <value>צללים / אזורים בהירים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_solarize" xml:space="preserve">
+    <value>סולריזציה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_split_toning" xml:space="preserve">
+    <value>פיצול גוונים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_temperature_tint" xml:space="preserve">
+    <value>טמפרטורה / גוון</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_threshold" xml:space="preserve">
+    <value>סף</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_vibrance" xml:space="preserve">
+    <value>חיוניות צבע</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_confetti" xml:space="preserve">
+    <value>קונפטי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_background" xml:space="preserve">
+    <value>רקע</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_background_image" xml:space="preserve">
+    <value>תמונת רקע</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_checkerboard" xml:space="preserve">
+    <value>לוח שחמט</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_image" xml:space="preserve">
+    <value>תמונה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_line" xml:space="preserve">
+    <value>קו</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_particles" xml:space="preserve">
+    <value>חלקיקים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_shape" xml:space="preserve">
+    <value>צורה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_text" xml:space="preserve">
+    <value>טקסט</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_fake_cursor" xml:space="preserve">
+    <value>סמן מזויף</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_gradient_overlay" xml:space="preserve">
+    <value>שכבת מעבר צבע</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_snowflakes" xml:space="preserve">
+    <value>פתיתי שלג</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_text_watermark" xml:space="preserve">
+    <value>סימן מים טקסטואלי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_add_noise" xml:space="preserve">
+    <value>הוספת רעש</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_anaglyph_3d" xml:space="preserve">
+    <value>אנאגליף תלת־ממדי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_anamorphic_lens_flare" xml:space="preserve">
+    <value>הבהק עדשה אנמורפי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_anime_speed_lines" xml:space="preserve">
+    <value>קווי מהירות של אנימה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_art_deco_border" xml:space="preserve">
+    <value>מסגרת אר דקו</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_ascii_art" xml:space="preserve">
+    <value>אמנות ASCII</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_bevel" xml:space="preserve">
+    <value>שיפוע קצה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_block_glitch" xml:space="preserve">
+    <value>תקלה בבלוקים / כיפוף נתונים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_blood_splash" xml:space="preserve">
+    <value>התזת דם</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_bloom" xml:space="preserve">
+    <value>זוהר מפוזר</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_blueprint_drawing" xml:space="preserve">
+    <value>שרטוט תכנית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_blur" xml:space="preserve">
+    <value>טשטש</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_border" xml:space="preserve">
+    <value>מסגרת</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_brick_wall_border" xml:space="preserve">
+    <value>מסגרת קיר לבנים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_candy_cane_border" xml:space="preserve">
+    <value>מסגרת מקל סוכרייה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_cartoon_sticker_cutout" xml:space="preserve">
+    <value>חיתוך מדבקה מצוירת</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_celtic_knot_border" xml:space="preserve">
+    <value>מסגרת קשר קלטי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_chain_link_border" xml:space="preserve">
+    <value>מסגרת חוליות שרשרת</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_chalk_drawing" xml:space="preserve">
+    <value>ציור בגיר</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_chromatic_aberration" xml:space="preserve">
+    <value>סטייה כרומטית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_chrome_metallic_border" xml:space="preserve">
+    <value>מסגרת מתכת כרום</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_circuit_board_border" xml:space="preserve">
+    <value>מסגרת מעגל מודפס</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_claymation_texture" xml:space="preserve">
+    <value>מרקם הנפשת חימר</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_clouds" xml:space="preserve">
+    <value>עננים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_color_depth" xml:space="preserve">
+    <value>עומק צבע</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_color_halftone" xml:space="preserve">
+    <value>חצי־טון צבעוני</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_color_splash" xml:space="preserve">
+    <value>התזת צבע</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_convolution_matrix" xml:space="preserve">
+    <value>מטריצת קונבולוציה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_crimson_border" xml:space="preserve">
+    <value>מסגרת ארגמן</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_crosshatch" xml:space="preserve">
+    <value>הצלבה בקווים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_crt" xml:space="preserve">
+    <value>שפופרת קרן קתודית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_crystalize_shards" xml:space="preserve">
+    <value>שברי גביש</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_crystal_prism" xml:space="preserve">
+    <value>מנסרת בדולח</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_cyanotype" xml:space="preserve">
+    <value>ציאנוטייפ</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_datamosh_smear" xml:space="preserve">
+    <value>מריחת Datamosh</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_diamond_pixelate" xml:space="preserve">
+    <value>פיקסול בצורת מעוין</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_disposable_camera" xml:space="preserve">
+    <value>מצלמה חד־פעמית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_dithering" xml:space="preserve">
+    <value>ריצוד צבעים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_dot_matrix" xml:space="preserve">
+    <value>מטריצת נקודות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_double_exposure" xml:space="preserve">
+    <value>חשיפה כפולה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_dream_glow" xml:space="preserve">
+    <value>זוהר חלומי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_edge_detect" xml:space="preserve">
+    <value>זיהוי קצוות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_edge_feather" xml:space="preserve">
+    <value>ריכוך קצוות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_emboss" xml:space="preserve">
+    <value>תבליט</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_embroidery" xml:space="preserve">
+    <value>רקמה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_engraving" xml:space="preserve">
+    <value>חריטה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_etched_glass" xml:space="preserve">
+    <value>זכוכית חרוטה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_fake_hair" xml:space="preserve">
+    <value>שיער מלאכותי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_film_grain" xml:space="preserve">
+    <value>גרעיניות סרט</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_film_strip_frame" xml:space="preserve">
+    <value>מסגרת רצועת סרט</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_frosted_glass_ice_edges" xml:space="preserve">
+    <value>זכוכית חלבית + קצוות קרח</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_frosted_glass" xml:space="preserve">
+    <value>זכוכית חלבית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_frost_ice_border" xml:space="preserve">
+    <value>מסגרת כפור וקרח</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_gaussian_blur" xml:space="preserve">
+    <value>טשטוש גאוסי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_ghost_trail" xml:space="preserve">
+    <value>שובל רפאים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_glare" xml:space="preserve">
+    <value>סנוור</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_glitch_shift" xml:space="preserve">
+    <value>הזחת תקלה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_glow" xml:space="preserve">
+    <value>זוהר</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_golden_border" xml:space="preserve">
+    <value>מסגרת זהב</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_gradient_fade_border" xml:space="preserve">
+    <value>מסגרת מעבר צבע דועכת</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_halation" xml:space="preserve">
+    <value>הילה אורית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_halftone" xml:space="preserve">
+    <value>חצי־טון</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_heat_haze_refraction" xml:space="preserve">
+    <value>שבירת אובך חום</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_heat_map" xml:space="preserve">
+    <value>מפת חום</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_hexagonal_pixelate" xml:space="preserve">
+    <value>פיקסול משושה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_hologram_scan" xml:space="preserve">
+    <value>סריקת הולוגרמה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_holographic_foil_shimmer" xml:space="preserve">
+    <value>נצנוץ רדיד הולוגרפי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_infrared_false_color" xml:space="preserve">
+    <value>צבע מדומה באינפרה־אדום</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_ink_splatter_drips" xml:space="preserve">
+    <value>התזת דיו + טיפות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_inner_shadow" xml:space="preserve">
+    <value>צל פנימי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_jpeg_artifact" xml:space="preserve">
+    <value>עיוות JPEG</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_lava_molten_border" xml:space="preserve">
+    <value>מסגרת לבה מותכת</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_lens_blur" xml:space="preserve">
+    <value>טשטוש עדשה (בוקה)</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_light_leak" xml:space="preserve">
+    <value>דליפת אור</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_liquid_glass" xml:space="preserve">
+    <value>זכוכית נוזלית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_liquid_mercury" xml:space="preserve">
+    <value>כספית נוזלית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_luminance_contour_lines" xml:space="preserve">
+    <value>קווי גובה של בהיקות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_macos_window" xml:space="preserve">
+    <value>macOS</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_marble_border" xml:space="preserve">
+    <value>מסגרת שיש</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_matrix_digital_rain" xml:space="preserve">
+    <value>הגשם הדיגיטלי של Matrix</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_mean_removal" xml:space="preserve">
+    <value>הסרת ממוצע</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_median_filter" xml:space="preserve">
+    <value>מסנן חציון</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_minecraft_grass" xml:space="preserve">
+    <value>דשא של Minecraft</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_miniature" xml:space="preserve">
+    <value>מיניאטורה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_mosaic_polygon" xml:space="preserve">
+    <value>מצולע פסיפס</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_mosaic_tile_border" xml:space="preserve">
+    <value>מסגרת אריחי פסיפס</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_motion_blur" xml:space="preserve">
+    <value>טשטוש תנועה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_nebula_starfield" xml:space="preserve">
+    <value>שדה כוכבים ערפילי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_neon_edge_glow" xml:space="preserve">
+    <value>זוהר ניאון בקצוות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_neon_glow_border" xml:space="preserve">
+    <value>מסגרת ניאון זוהרת</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_night_vision" xml:space="preserve">
+    <value>ראיית לילה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_oil_paint" xml:space="preserve">
+    <value>ציור שמן</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_oil_slick_interference" xml:space="preserve">
+    <value>התאבכות שכבת שמן</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_old_camera_flash_burn" xml:space="preserve">
+    <value>צריבת מבזק של מצלמה ישנה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_ornate_scroll_border" xml:space="preserve">
+    <value>מסגרת מגילות מעוטרת</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_outline" xml:space="preserve">
+    <value>קו מתאר</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_palette_map" xml:space="preserve">
+    <value>מפת לוח צבעים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_paper_stencil_mask" xml:space="preserve">
+    <value>מסכת שבלונת נייר</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_pencil_sketch" xml:space="preserve">
+    <value>רישום בעיפרון</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_perlin_noise" xml:space="preserve">
+    <value>רעש פרלין</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_pixelate" xml:space="preserve">
+    <value>פיקסול</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_pixel_sorting" xml:space="preserve">
+    <value>מיון פיקסלים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_plasma_energy_arcs" xml:space="preserve">
+    <value>קשתות אנרגיית פלזמה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_pointillism" xml:space="preserve">
+    <value>פוינטיליזם</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_polaroid_frame" xml:space="preserve">
+    <value>מסגרת Polaroid</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_pop_art_grid" xml:space="preserve">
+    <value>רשת פופ ארט</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_radial_rainbow" xml:space="preserve">
+    <value>קשת רדיאלית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rainbow_border" xml:space="preserve">
+    <value>מסגרת קשת בענן</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rainy_window" xml:space="preserve">
+    <value>חלון גשום</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_reflection" xml:space="preserve">
+    <value>השתקפות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_remove_background" xml:space="preserve">
+    <value>הסרת רקע</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_retro_sunset" xml:space="preserve">
+    <value>שקיעה בסגנון רטרו</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rgb_split" xml:space="preserve">
+    <value>פיצול RGB</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_riso_print" xml:space="preserve">
+    <value>הדפסת ריזו</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rope_border" xml:space="preserve">
+    <value>מסגרת חבל</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rust_corrosion" xml:space="preserve">
+    <value>חלודה / קורוזיה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_scanline" xml:space="preserve">
+    <value>קווי סריקה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_shadow" xml:space="preserve">
+    <value>צל</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_sharpen" xml:space="preserve">
+    <value>חידוד</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_slice" xml:space="preserve">
+    <value>חיתוך לרצועות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_smoke_overlay" xml:space="preserve">
+    <value>שכבת עשן</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_smooth" xml:space="preserve">
+    <value>החלקה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_snowfall_depth_fog" xml:space="preserve">
+    <value>שלג יורד + ערפל עומק</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_sobel_edge" xml:space="preserve">
+    <value>קצה סובל</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_soft_diffusion" xml:space="preserve">
+    <value>פיזור רך</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_spin_blur" xml:space="preserve">
+    <value>טשטוש סיבובי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_stained_glass_border" xml:space="preserve">
+    <value>מסגרת ויטראז׳</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_stained_glass" xml:space="preserve">
+    <value>ויטראז׳</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_starfield_border" xml:space="preserve">
+    <value>מסגרת שדה כוכבים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_star_filter" xml:space="preserve">
+    <value>מסנן כוכבים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_stripe_overlay" xml:space="preserve">
+    <value>שכבת פסים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_surface_blur" xml:space="preserve">
+    <value>טשטוש משטח</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_thermal_vision" xml:space="preserve">
+    <value>ראייה תרמית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_tilt_shift" xml:space="preserve">
+    <value>אפקט מיניאטורה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_torn_edge" xml:space="preserve">
+    <value>קצה קרוע</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_triangle_pixelate" xml:space="preserve">
+    <value>פיקסול משולש</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_tv_static" xml:space="preserve">
+    <value>רעש טלוויזיה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_unsharp_mask" xml:space="preserve">
+    <value>מסכת חידוד</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_vhs_tape_damage" xml:space="preserve">
+    <value>נזק לקלטת VHS</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_vignette" xml:space="preserve">
+    <value>הכהיית קצוות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_vintage_print_damage" xml:space="preserve">
+    <value>נזק הדפסה ישנה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_voronoi_mosaic" xml:space="preserve">
+    <value>פסיפס וורונוי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_watercolor_border" xml:space="preserve">
+    <value>מסגרת צבעי מים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_watercolor_kuwahara" xml:space="preserve">
+    <value>צבעי מים / Kuwahara</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_wave_edge" xml:space="preserve">
+    <value>קצה גלי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_wet_plate_collodion" xml:space="preserve">
+    <value>קולודיון לוח רטוב</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_windows11_window" xml:space="preserve">
+    <value>Windows 11</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_wind_streaks" xml:space="preserve">
+    <value>פסי רוח</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_woodcut_print" xml:space="preserve">
+    <value>הדפס חיתוך עץ</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_wooden_frame" xml:space="preserve">
+    <value>מסגרת עץ</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_x_ray_scan" xml:space="preserve">
+    <value>סריקת רנטגן</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_zigzag_border" xml:space="preserve">
+    <value>מסגרת זיגזג</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_zoom_blur" xml:space="preserve">
+    <value>טשטוש זום</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_auto_crop_image" xml:space="preserve">
+    <value>חיתוך אוטומטי של התמונה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_crop_image" xml:space="preserve">
+    <value>חיתוך תמונה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_cylinder_wrap" xml:space="preserve">
+    <value>עטיפה גלילית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_displacement_map" xml:space="preserve">
+    <value>מפת הזחה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_fisheye_lens" xml:space="preserve">
+    <value>עדשת עין הדג</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_flip_horizontal" xml:space="preserve">
+    <value>היפוך אופקי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_flip_vertical" xml:space="preserve">
+    <value>היפוך אנכי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_fold_crease_warp" xml:space="preserve">
+    <value>עיוות קפל</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_glass_sphere" xml:space="preserve">
+    <value>כדור זכוכית</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_kaleidoscope" xml:space="preserve">
+    <value>קליידוסקופ</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_liquify_push_smudge" xml:space="preserve">
+    <value>הנזלה: דחיפה / מריחה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_mirror_tiles" xml:space="preserve">
+    <value>אריחי מראה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_page_curl" xml:space="preserve">
+    <value>סלסול דף</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_perspective_warp" xml:space="preserve">
+    <value>עיוות פרספקטיבה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_pinch_bulge" xml:space="preserve">
+    <value>צביטה / בליטה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_polar_warp" xml:space="preserve">
+    <value>עיוות קוטבי</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_resize_canvas" xml:space="preserve">
+    <value>שינוי גודל בד הציור</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_resize_image" xml:space="preserve">
+    <value>שינוי גודל התמונה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_ripple_refraction" xml:space="preserve">
+    <value>שבירת אדוות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rotate_180" xml:space="preserve">
+    <value>סיבוב ב־180°</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rotate_3d_box" xml:space="preserve">
+    <value>תיבה תלת־ממדית / שיחול</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rotate_3d" xml:space="preserve">
+    <value>סיבוב בתלת־ממד</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rotate_90_counter_clockwise" xml:space="preserve">
+    <value>סיבוב 90° נגד כיוון השעון</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rotate_90_clockwise" xml:space="preserve">
+    <value>סיבוב 90° עם כיוון השעון</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rotate_custom_angle" xml:space="preserve">
+    <value>סיבוב</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rounded_corners" xml:space="preserve">
+    <value>פינות מעוגלות</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_scale" xml:space="preserve">
+    <value>שינוי קנה מידה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_skew" xml:space="preserve">
+    <value>הטיה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_symmetry" xml:space="preserve">
+    <value>סימטריה</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_tile_repeat" xml:space="preserve">
+    <value>חזרה על אריחים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_tile_shuffle" xml:space="preserve">
+    <value>ערבוב אריחים</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_twirl" xml:space="preserve">
+    <value>מערבולת</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_wave_distortion" xml:space="preserve">
+    <value>עיוות גלים</value>
+  </data>
 </root>

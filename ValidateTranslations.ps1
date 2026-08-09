@@ -68,7 +68,10 @@ $projects = @(
     [pscustomobject]@{
         Name = 'ShareX.ImageEditor'
         ResourceBaseName = 'ShareX.ImageEditor.Localization.Strings'
-        DynamicPrefixes = @()
+        DynamicPrefixes = @(
+            'EffectBrowserPanel_Category_'
+            'EffectBrowserPanel_Effect_'
+        )
     }
     [pscustomobject]@{
         Name = 'ShareX.ImageEffectsLib'
@@ -447,7 +450,58 @@ foreach ($project in $projects)
             Add-ValidationError "$($project.Name): source contains an L() localization helper."
         }
 
-        if ($project.Name -eq 'ShareX.ImageEffectsLib')
+        if ($project.Name -eq 'ShareX.ImageEditor')
+        {
+            foreach ($prefix in $project.DynamicPrefixes)
+            {
+                if (-not $sourceText.Contains($prefix))
+                {
+                    Add-ValidationError "$($project.Name): data-driven localization prefix '$prefix' is not used by source."
+                }
+            }
+            if (-not $sourceText.Contains('Strings.ResourceManager.GetString(EffectPrefix + effectId'))
+            {
+                Add-ValidationError "$($project.Name): data-driven effect-browser localization lookup is missing."
+            }
+
+            $effectIds = @(
+                Get-ChildItem -LiteralPath (Join-Path $projectDirectory 'Core\ImageEffects') -Recurse -Filter '*.cs' -File |
+                    ForEach-Object {
+                        $effectSource = [IO.File]::ReadAllText($_.FullName)
+                        $idMatch = [regex]::Match($effectSource, 'public\s+override\s+string\s+Id\s*=>\s*"([^"]+)"')
+                        $nameMatch = [regex]::Match($effectSource, 'public\s+override\s+string\s+Name\s*=>\s*"([^"]+)"')
+                        if ($idMatch.Success -and $nameMatch.Success)
+                        {
+                            $idMatch.Groups[1].Value
+                        }
+                    } |
+                    Sort-Object -Unique
+            )
+            $expectedEffectBrowserKeys = @(
+                @(
+                    'EffectBrowserPanel_Category_Manipulations'
+                    'EffectBrowserPanel_Category_Adjustments'
+                    'EffectBrowserPanel_Category_Filters'
+                    'EffectBrowserPanel_Category_Drawings'
+                ) + @($effectIds | ForEach-Object { "EffectBrowserPanel_Effect_$_" }) |
+                    Sort-Object -Unique
+            )
+            $actualEffectBrowserKeys = @(
+                $default.Keys |
+                    Where-Object {
+                        $_.StartsWith('EffectBrowserPanel_Category_', [StringComparison]::Ordinal) -or
+                        $_.StartsWith('EffectBrowserPanel_Effect_', [StringComparison]::Ordinal)
+                    } |
+                    Sort-Object -Unique
+            )
+            if (-not (Test-SequenceEqual $expectedEffectBrowserKeys $actualEffectBrowserKeys))
+            {
+                $missingKeys = @($expectedEffectBrowserKeys | Where-Object { $_ -notin $actualEffectBrowserKeys })
+                $unexpectedKeys = @($actualEffectBrowserKeys | Where-Object { $_ -notin $expectedEffectBrowserKeys })
+                Add-ValidationError "$($project.Name): effect-browser resources differ from the discovered effect catalog. Missing: $($missingKeys -join ', '); unexpected: $($unexpectedKeys -join ', ')."
+            }
+        }
+        elseif ($project.Name -eq 'ShareX.ImageEffectsLib')
         {
             foreach ($prefix in $project.DynamicPrefixes)
             {

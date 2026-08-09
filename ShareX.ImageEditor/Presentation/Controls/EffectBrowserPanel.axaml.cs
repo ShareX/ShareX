@@ -644,7 +644,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
 
             foreach (ImageEffectCategory categoryEnum in Enum.GetValues<ImageEffectCategory>())
             {
-                var category = new EffectCategory(categoryEnum.ToString());
+                var category = new EffectCategory(EffectBrowserLocalization.GetCategoryName(categoryEnum));
                 AddCatalogDrivenEffects(category, categoryEnum);
                 AddEditorOperations(category, categoryEnum);
                 Categories.Add(category);
@@ -656,7 +656,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
             foreach (EditorOperationDefinition operation in EditorOperationCatalog.GetByCategory(targetCategory))
             {
                 category.AddEffect(
-                    operation.BrowserLabel,
+                    EffectBrowserLocalization.GetEffectBrowserLabel(operation.Id, operation.BrowserLabel),
                     operation.Icon,
                     operation.Description,
                     () => RaiseDialog(operation.Id),
@@ -675,7 +675,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
                 }
 
                 category.AddEffect(
-                    definition.BrowserLabel,
+                    EffectBrowserLocalization.GetEffectBrowserLabel(definition.Id, definition.BrowserLabel),
                     definition.Icon,
                     definition.Description,
                     () => RaiseDialog(definition.Id),

@@ -1320,5 +1320,1180 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("EditorView_SmartPadding", resourceCulture);
             }
         }
+        public static string EffectBrowserPanel_Category_Manipulations {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Category_Manipulations", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Category_Adjustments {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Category_Adjustments", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Category_Filters {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Category_Filters", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Category_Drawings {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Category_Drawings", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_alpha {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_alpha", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_auto_contrast {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_auto_contrast", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_black_and_white {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_black_and_white", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_brightness {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_brightness", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_channel_swap {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_channel_swap", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_clarity {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_clarity", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_color_balance {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_color_balance", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_colorize {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_colorize", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_color_matrix {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_color_matrix", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_contrast {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_contrast", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_cross_process {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_cross_process", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_dehaze {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_dehaze", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_duotone_gradient_map {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_duotone_gradient_map", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_exposure {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_exposure", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_film_emulation {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_film_emulation", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_gamma {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_gamma", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_grayscale {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_grayscale", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_hue {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_hue", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_invert {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_invert", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_levels {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_levels", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_lomo {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_lomo", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_polaroid {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_polaroid", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_posterize {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_posterize", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_replace_color {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_replace_color", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_saturation {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_saturation", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_sepia {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_sepia", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_shadows_highlights {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_shadows_highlights", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_solarize {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_solarize", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_split_toning {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_split_toning", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_temperature_tint {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_temperature_tint", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_threshold {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_threshold", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_vibrance {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_vibrance", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_confetti {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_confetti", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_draw_background {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_draw_background", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_draw_background_image {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_draw_background_image", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_draw_checkerboard {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_draw_checkerboard", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_draw_image {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_draw_image", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_draw_line {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_draw_line", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_draw_particles {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_draw_particles", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_draw_shape {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_draw_shape", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_draw_text {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_draw_text", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_fake_cursor {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_fake_cursor", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_gradient_overlay {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_gradient_overlay", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_snowflakes {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_snowflakes", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_text_watermark {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_text_watermark", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_add_noise {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_add_noise", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_anaglyph_3d {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_anaglyph_3d", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_anamorphic_lens_flare {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_anamorphic_lens_flare", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_anime_speed_lines {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_anime_speed_lines", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_art_deco_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_art_deco_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_ascii_art {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_ascii_art", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_bevel {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_bevel", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_block_glitch {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_block_glitch", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_blood_splash {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_blood_splash", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_bloom {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_bloom", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_blueprint_drawing {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_blueprint_drawing", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_blur {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_blur", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_brick_wall_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_brick_wall_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_candy_cane_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_candy_cane_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_cartoon_sticker_cutout {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_cartoon_sticker_cutout", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_celtic_knot_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_celtic_knot_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_chain_link_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_chain_link_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_chalk_drawing {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_chalk_drawing", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_chromatic_aberration {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_chromatic_aberration", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_chrome_metallic_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_chrome_metallic_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_circuit_board_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_circuit_board_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_claymation_texture {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_claymation_texture", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_clouds {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_clouds", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_color_depth {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_color_depth", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_color_halftone {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_color_halftone", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_color_splash {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_color_splash", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_convolution_matrix {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_convolution_matrix", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_crimson_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_crimson_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_crosshatch {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_crosshatch", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_crt {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_crt", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_crystalize_shards {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_crystalize_shards", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_crystal_prism {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_crystal_prism", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_cyanotype {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_cyanotype", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_datamosh_smear {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_datamosh_smear", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_diamond_pixelate {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_diamond_pixelate", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_disposable_camera {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_disposable_camera", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_dithering {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_dithering", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_dot_matrix {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_dot_matrix", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_double_exposure {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_double_exposure", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_dream_glow {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_dream_glow", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_edge_detect {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_edge_detect", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_edge_feather {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_edge_feather", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_emboss {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_emboss", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_embroidery {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_embroidery", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_engraving {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_engraving", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_etched_glass {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_etched_glass", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_fake_hair {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_fake_hair", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_film_grain {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_film_grain", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_film_strip_frame {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_film_strip_frame", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_frosted_glass_ice_edges {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_frosted_glass_ice_edges", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_frosted_glass {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_frosted_glass", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_frost_ice_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_frost_ice_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_gaussian_blur {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_gaussian_blur", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_ghost_trail {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_ghost_trail", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_glare {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_glare", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_glitch_shift {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_glitch_shift", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_glow {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_glow", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_golden_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_golden_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_gradient_fade_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_gradient_fade_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_halation {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_halation", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_halftone {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_halftone", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_heat_haze_refraction {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_heat_haze_refraction", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_heat_map {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_heat_map", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_hexagonal_pixelate {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_hexagonal_pixelate", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_hologram_scan {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_hologram_scan", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_holographic_foil_shimmer {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_holographic_foil_shimmer", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_infrared_false_color {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_infrared_false_color", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_ink_splatter_drips {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_ink_splatter_drips", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_inner_shadow {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_inner_shadow", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_jpeg_artifact {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_jpeg_artifact", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_lava_molten_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_lava_molten_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_lens_blur {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_lens_blur", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_light_leak {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_light_leak", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_liquid_glass {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_liquid_glass", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_liquid_mercury {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_liquid_mercury", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_luminance_contour_lines {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_luminance_contour_lines", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_macos_window {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_macos_window", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_marble_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_marble_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_matrix_digital_rain {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_matrix_digital_rain", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_mean_removal {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_mean_removal", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_median_filter {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_median_filter", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_minecraft_grass {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_minecraft_grass", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_miniature {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_miniature", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_mosaic_polygon {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_mosaic_polygon", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_mosaic_tile_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_mosaic_tile_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_motion_blur {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_motion_blur", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_nebula_starfield {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_nebula_starfield", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_neon_edge_glow {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_neon_edge_glow", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_neon_glow_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_neon_glow_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_night_vision {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_night_vision", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_oil_paint {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_oil_paint", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_oil_slick_interference {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_oil_slick_interference", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_old_camera_flash_burn {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_old_camera_flash_burn", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_ornate_scroll_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_ornate_scroll_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_outline {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_outline", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_palette_map {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_palette_map", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_paper_stencil_mask {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_paper_stencil_mask", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_pencil_sketch {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_pencil_sketch", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_perlin_noise {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_perlin_noise", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_pixelate {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_pixelate", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_pixel_sorting {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_pixel_sorting", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_plasma_energy_arcs {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_plasma_energy_arcs", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_pointillism {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_pointillism", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_polaroid_frame {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_polaroid_frame", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_pop_art_grid {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_pop_art_grid", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_radial_rainbow {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_radial_rainbow", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_rainbow_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_rainbow_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_rainy_window {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_rainy_window", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_reflection {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_reflection", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_remove_background {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_remove_background", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_retro_sunset {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_retro_sunset", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_rgb_split {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_rgb_split", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_riso_print {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_riso_print", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_rope_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_rope_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_rust_corrosion {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_rust_corrosion", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_scanline {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_scanline", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_shadow {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_shadow", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_sharpen {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_sharpen", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_slice {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_slice", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_smoke_overlay {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_smoke_overlay", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_smooth {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_smooth", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_snowfall_depth_fog {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_snowfall_depth_fog", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_sobel_edge {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_sobel_edge", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_soft_diffusion {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_soft_diffusion", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_spin_blur {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_spin_blur", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_stained_glass_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_stained_glass_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_stained_glass {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_stained_glass", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_starfield_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_starfield_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_star_filter {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_star_filter", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_stripe_overlay {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_stripe_overlay", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_surface_blur {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_surface_blur", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_thermal_vision {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_thermal_vision", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_tilt_shift {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_tilt_shift", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_torn_edge {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_torn_edge", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_triangle_pixelate {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_triangle_pixelate", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_tv_static {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_tv_static", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_unsharp_mask {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_unsharp_mask", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_vhs_tape_damage {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_vhs_tape_damage", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_vignette {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_vignette", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_vintage_print_damage {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_vintage_print_damage", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_voronoi_mosaic {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_voronoi_mosaic", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_watercolor_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_watercolor_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_watercolor_kuwahara {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_watercolor_kuwahara", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_wave_edge {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_wave_edge", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_wet_plate_collodion {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_wet_plate_collodion", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_windows11_window {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_windows11_window", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_wind_streaks {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_wind_streaks", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_woodcut_print {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_woodcut_print", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_wooden_frame {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_wooden_frame", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_x_ray_scan {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_x_ray_scan", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_zigzag_border {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_zigzag_border", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_zoom_blur {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_zoom_blur", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_auto_crop_image {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_auto_crop_image", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_crop_image {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_crop_image", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_cylinder_wrap {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_cylinder_wrap", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_displacement_map {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_displacement_map", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_fisheye_lens {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_fisheye_lens", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_flip_horizontal {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_flip_horizontal", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_flip_vertical {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_flip_vertical", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_fold_crease_warp {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_fold_crease_warp", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_glass_sphere {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_glass_sphere", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_kaleidoscope {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_kaleidoscope", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_liquify_push_smudge {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_liquify_push_smudge", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_mirror_tiles {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_mirror_tiles", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_page_curl {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_page_curl", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_perspective_warp {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_perspective_warp", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_pinch_bulge {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_pinch_bulge", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_polar_warp {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_polar_warp", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_resize_canvas {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_resize_canvas", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_resize_image {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_resize_image", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_ripple_refraction {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_ripple_refraction", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_rotate_180 {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_rotate_180", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_rotate_3d_box {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_rotate_3d_box", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_rotate_3d {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_rotate_3d", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_rotate_90_counter_clockwise {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_rotate_90_counter_clockwise", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_rotate_90_clockwise {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_rotate_90_clockwise", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_rotate_custom_angle {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_rotate_custom_angle", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_rounded_corners {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_rounded_corners", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_scale {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_scale", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_skew {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_skew", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_symmetry {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_symmetry", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_tile_repeat {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_tile_repeat", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_tile_shuffle {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_tile_shuffle", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_twirl {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_twirl", resourceCulture);
+            }
+        }
+        public static string EffectBrowserPanel_Effect_wave_distortion {
+            get {
+                return ResourceManager.GetString("EffectBrowserPanel_Effect_wave_distortion", resourceCulture);
+            }
+        }
     }
 }
