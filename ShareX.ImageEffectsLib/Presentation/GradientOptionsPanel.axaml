@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:localization="using:ShareX.ImageEffectsLib.Localization"
              x:Class="ShareX.ImageEffectsLib.GradientOptionsPanel"
              MinWidth="380"
              Background="Transparent">
@@ -7,12 +8,12 @@
             CornerRadius="5" ClipToBounds="True" Padding="12">
         <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
             <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
-                <TextBlock Classes="row-label" Text="Direction" VerticalAlignment="Center"/>
+                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.GradientOptionsPanel_Direction}" VerticalAlignment="Center"/>
                 <ComboBox x:Name="DirectionComboBox" Grid.Column="1" HorizontalAlignment="Right"/>
             </Grid>
             <Grid Grid.Row="1" ColumnDefinitions="*,Auto">
-                <TextBlock Classes="row-label" Text="Color stops" VerticalAlignment="Center"/>
-                <Button Grid.Column="1" Content="Add stop" Click="OnAddStopClick"/>
+                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.GradientOptionsPanel_Color_stops}" VerticalAlignment="Center"/>
+                <Button Grid.Column="1" Content="{x:Static localization:Strings.GradientOptionsPanel_Add_stop}" Click="OnAddStopClick"/>
             </Grid>
             <ScrollViewer Grid.Row="2" MaxHeight="300" HorizontalScrollBarVisibility="Disabled">
                 <StackPanel x:Name="StopsPanel" Spacing="8"/>

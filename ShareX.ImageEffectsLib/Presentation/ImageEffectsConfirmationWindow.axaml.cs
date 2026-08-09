@@ -12,7 +12,7 @@ namespace ShareX.ImageEffectsLib;
 
 public partial class ImageEffectsConfirmationWindow : Window
 {
-    public ImageEffectsConfirmationWindow() : this("Continue?")
+    public ImageEffectsConfirmationWindow() : this(Localization.Strings.ImageEffectsConfirmationWindow_Continue)
     {
     }
 

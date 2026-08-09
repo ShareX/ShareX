@@ -9,6 +9,7 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib.Localization;
 using System.Drawing.Drawing2D;
 using DrawingColor = System.Drawing.Color;
 using HelperGradientStop = ShareX.HelpersLib.GradientStop;
@@ -35,7 +36,7 @@ public partial class GradientOptionsPanel : UserControl
         AvaloniaXamlLoader.Load(this);
         _direction = this.FindControl<ComboBox>("DirectionComboBox")!;
         _stopsPanel = this.FindControl<StackPanel>("StopsPanel")!;
-        _direction.ItemsSource = GradientDirections.Select(x => Helpers.GetProperName(x.ToString())).ToArray();
+        _direction.ItemsSource = GradientDirections.Select(x => ImageEffectsLocalization.GetEnumValue(typeof(LinearGradientMode), x)).ToArray();
         _direction.SelectedIndex = Array.IndexOf(GradientDirections, _gradient.Type);
         _direction.SelectionChanged += (_, _) =>
         {
@@ -98,7 +99,7 @@ public partial class GradientOptionsPanel : UserControl
             Grid.SetColumn(location, 1);
             row.Children.Add(location);
 
-            Button remove = new() { Content = "Remove" };
+            Button remove = new() { Content = Localization.Strings.GradientOptionsPanel_Remove };
             remove.Click += (_, _) =>
             {
                 _gradient.Colors.Remove(stop);

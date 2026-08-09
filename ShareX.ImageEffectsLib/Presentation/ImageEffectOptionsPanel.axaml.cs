@@ -12,6 +12,7 @@ using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib.Localization;
 using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
@@ -53,17 +54,18 @@ public partial class ImageEffectOptionsPanel : UserControl
             return;
         }
 
-        _effectTitle.Text = $"{effect.GetType().GetDescription()} options";
+        _effectTitle.Text = string.Format(Localization.Strings.ImageEffectOptionsPanel_Effect_options_format,
+            ImageEffectsLocalization.GetEffectName(effect.GetType()));
         BuildEditors();
     }
 
     private void ShowEmptyState()
     {
-        _effectTitle.Text = "Effect options";
+        _effectTitle.Text = Localization.Strings.ImageEffectOptionsPanel_Effect_options;
         _editorPanel.Children.Clear();
         _editorPanel.Children.Add(new TextBlock
         {
-            Text = "Select an effect to edit its options.",
+            Text = Localization.Strings.ImageEffectOptionsPanel_Select_an_effect,
             FontWeight = FontWeight.Normal
         });
     }
@@ -78,12 +80,13 @@ public partial class ImageEffectOptionsPanel : UserControl
             Grid row = new() { ColumnDefinitions = new ColumnDefinitions("140,*"), ColumnSpacing = 10, MinHeight = 36 };
             TextBlock label = new()
             {
-                Text = property.DisplayName,
+                Text = ImageEffectsLocalization.GetPropertyName(property),
                 FontWeight = FontWeight.Normal,
                 VerticalAlignment = VerticalAlignment.Center,
                 TextWrapping = TextWrapping.Wrap
             };
-            if (!string.IsNullOrWhiteSpace(property.Description)) ToolTip.SetTip(label, property.Description);
+            string description = ImageEffectsLocalization.GetPropertyDescription(_effect.GetType(), property);
+            if (!string.IsNullOrWhiteSpace(description)) ToolTip.SetTip(label, description);
             row.Children.Add(label);
 
             Control editor = CreateEditor(property);
@@ -96,7 +99,7 @@ public partial class ImageEffectOptionsPanel : UserControl
         {
             _editorPanel.Children.Add(new TextBlock
             {
-                Text = "This effect has no configurable properties.",
+                Text = Localization.Strings.ImageEffectOptionsPanel_No_configurable_properties,
                 FontWeight = FontWeight.Normal
             });
         }
@@ -128,7 +131,7 @@ public partial class ImageEffectOptionsPanel : UserControl
             object[] values = Enum.GetValues(type).Cast<object>().ToArray();
             ComboBox combo = new()
             {
-                ItemsSource = Helpers.GetEnumNamesProper(type),
+                ItemsSource = values.Select(enumValue => ImageEffectsLocalization.GetEnumValue(type, enumValue)).ToArray(),
                 SelectedIndex = Array.IndexOf(values, value),
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 FontWeight = FontWeight.Normal,
@@ -168,14 +171,16 @@ public partial class ImageEffectOptionsPanel : UserControl
         if (type == typeof(DrawingPoint))
         {
             DrawingPoint point = value is DrawingPoint p ? p : DrawingPoint.Empty;
-            return CreatePairEditor(point.X, point.Y, "X", "Y",
+            return CreatePairEditor(point.X, point.Y, Localization.Strings.ImageEffectOptionsPanel_X_short,
+                Localization.Strings.ImageEffectOptionsPanel_Y_short,
                 (x, y) => Apply(property, new DrawingPoint(x, y)));
         }
 
         if (type == typeof(DrawingSize))
         {
             DrawingSize size = value is DrawingSize s ? s : DrawingSize.Empty;
-            return CreatePairEditor(size.Width, size.Height, "W", "H",
+            return CreatePairEditor(size.Width, size.Height, Localization.Strings.ImageEffectOptionsPanel_Width_short,
+                Localization.Strings.ImageEffectOptionsPanel_Height_short,
                 (x, y) => Apply(property, new DrawingSize(x, y)));
         }
 
@@ -187,7 +192,7 @@ public partial class ImageEffectOptionsPanel : UserControl
 
         if (type == typeof(GradientInfo))
         {
-            Button button = new() { Content = "Edit gradient..." };
+            Button button = new() { Content = Localization.Strings.ImageEffectOptionsPanel_Edit_gradient };
             GradientInfo? existingGradient = property.GetValue(_effect) as GradientInfo;
             GradientInfo gradient = existingGradient ?? new GradientInfo();
             button.Click += (_, _) =>
@@ -217,7 +222,7 @@ public partial class ImageEffectOptionsPanel : UserControl
         {
             Grid browseGrid = new() { ColumnDefinitions = new ColumnDefinitions("*,Auto"), ColumnSpacing = 8 };
             browseGrid.Children.Add(textBox);
-            Button browse = new() { Content = "Browse..." };
+            Button browse = new() { Content = Localization.Strings.ImageEffectOptionsPanel_Browse };
             browse.Click += async (_, _) =>
             {
                 TopLevel? topLevel = TopLevel.GetTopLevel(this);
@@ -226,13 +231,23 @@ public partial class ImageEffectOptionsPanel : UserControl
                 if (editorName.Contains("DirectoryNameEditor", StringComparison.Ordinal))
                 {
                     IReadOnlyList<Avalonia.Platform.Storage.IStorageFolder> folders = await topLevel.StorageProvider.OpenFolderPickerAsync(
-                        new Avalonia.Platform.Storage.FolderPickerOpenOptions { AllowMultiple = false, Title = $"Select {property.DisplayName}" });
+                        new Avalonia.Platform.Storage.FolderPickerOpenOptions
+                        {
+                            AllowMultiple = false,
+                            Title = string.Format(Localization.Strings.ImageEffectOptionsPanel_Select_property,
+                                ImageEffectsLocalization.GetPropertyName(property))
+                        });
                     if (folders.Count > 0) textBox.Text = folders[0].Path.LocalPath;
                 }
                 else
                 {
                     IReadOnlyList<Avalonia.Platform.Storage.IStorageFile> files = await topLevel.StorageProvider.OpenFilePickerAsync(
-                        new Avalonia.Platform.Storage.FilePickerOpenOptions { AllowMultiple = false, Title = $"Select {property.DisplayName}" });
+                        new Avalonia.Platform.Storage.FilePickerOpenOptions
+                        {
+                            AllowMultiple = false,
+                            Title = string.Format(Localization.Strings.ImageEffectOptionsPanel_Select_property,
+                                ImageEffectsLocalization.GetPropertyName(property))
+                        });
                     if (files.Count > 0) textBox.Text = files[0].Path.LocalPath;
                 }
             };
@@ -312,7 +327,13 @@ public partial class ImageEffectOptionsPanel : UserControl
     {
         Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("*,*,*,*"), ColumnSpacing = 6 };
         int[] values = [padding.Left, padding.Top, padding.Right, padding.Bottom];
-        string[] labels = ["L", "T", "R", "B"];
+        string[] labels =
+        [
+            Localization.Strings.ImageEffectOptionsPanel_Left_short,
+            Localization.Strings.ImageEffectOptionsPanel_Top_short,
+            Localization.Strings.ImageEffectOptionsPanel_Right_short,
+            Localization.Strings.ImageEffectOptionsPanel_Bottom_short
+        ];
         NumericUpDown[] inputs = new NumericUpDown[4];
 
         void ApplyPadding() => changed(new FormsPadding((int)(inputs[0].Value ?? 0), (int)(inputs[1].Value ?? 0),

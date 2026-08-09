@@ -124,6 +124,7 @@ namespace ShareX.ImageEffectsLib
         public DrawText()
         {
             this.ApplyDefaultPropertyValues();
+            Text = Localization.Strings.ImageEffectDefault_Text_watermark;
             AddDefaultGradient();
         }
 

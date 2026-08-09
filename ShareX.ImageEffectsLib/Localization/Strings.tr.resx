@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GradientOptionsPanel_Direction" xml:space="preserve">
+    <value>Yön</value>
+  </data>
+  <data name="GradientOptionsPanel_Color_stops" xml:space="preserve">
+    <value>Renk durakları</value>
+  </data>
+  <data name="GradientOptionsPanel_Add_stop" xml:space="preserve">
+    <value>Ekle... Durdur</value>
+  </data>
+  <data name="GradientOptionsPanel_Remove" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Effect_options" xml:space="preserve">
+    <value>Efekt seçenekleri</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Effect_options_format" xml:space="preserve">
+    <value>{0} seçenekleri</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Select_an_effect" xml:space="preserve">
+    <value>Seçeneklerini düzenlemek için bir efekt seçin.</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_No_configurable_properties" xml:space="preserve">
+    <value>Bu efektin yapılandırılabilir özelliği yok.</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Edit_gradient" xml:space="preserve">
+    <value>Gradyanı düzenle...</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Browse" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Select_property" xml:space="preserve">
+    <value>{0} seç</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Left_short" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Top_short" xml:space="preserve">
+    <value>Ü</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Right_short" xml:space="preserve">
+    <value>Sa</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Bottom_short" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Width_short" xml:space="preserve">
+    <value>G</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Height_short" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_X_short" xml:space="preserve">
+    <value>X:</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Y_short" xml:space="preserve">
+    <value>Y:</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Title" xml:space="preserve">
+    <value>ShareX - Görüntü efektini paketle</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Package_preset" xml:space="preserve">
+    <value>Ön ayarı paketle</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Assets_folder" xml:space="preserve">
+    <value>Varlık klasörü</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Package_file" xml:space="preserve">
+    <value>Paket dosyası</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Browse" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Overwrite_existing" xml:space="preserve">
+    <value>Mevcut paketin üzerine yaz</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Open_effects_folder" xml:space="preserve">
+    <value>Aç Efektler Klasör</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Create_package" xml:space="preserve">
+    <value>Paket oluştur</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Select_assets_folder" xml:space="preserve">
+    <value>Efekt varlıkları klasörünü seç</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Save_package" xml:space="preserve">
+    <value>Görüntü efekti paketini kaydet</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_File_type" xml:space="preserve">
+    <value>ShareX görüntü efekti</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Assets_must_be_inside" xml:space="preserve">
+    <value>Varlık klasörü, ShareX görüntü efektleri klasörünün içinde olmalıdır.</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Choose_package_path" xml:space="preserve">
+    <value>Bir paket dosyası yolu seçin.</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Already_exists" xml:space="preserve">
+    <value>Bu yolda zaten bir paket var. Değiştirmek için üzerine yazmayı etkinleştirin.</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Created_successfully" xml:space="preserve">
+    <value>Paket başarıyla oluşturuldu.</value>
+  </data>
+  <data name="ImageEffectsConfirmationWindow_Title" xml:space="preserve">
+    <value>ShareX - Onay</value>
+  </data>
+  <data name="ImageEffectsConfirmationWindow_Continue" xml:space="preserve">
+    <value>Devam et</value>
+  </data>
+  <data name="ImageEffectsConfirmationWindow_Yes" xml:space="preserve">
+    <value>Evet</value>
+  </data>
+  <data name="ImageEffectsConfirmationWindow_No" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="ImageEffectsWindow_Title" xml:space="preserve">
+    <value>ShareX - Görüntü efektleri</value>
+  </data>
+  <data name="ImageEffectsWindow_Title_with_preview" xml:space="preserve">
+    <value>{0} - {1} × {2} - {3} ms</value>
+  </data>
+  <data name="ImageEffectsWindow_Presets" xml:space="preserve">
+    <value>Ön ayarlar</value>
+  </data>
+  <data name="ImageEffectsWindow_New_preset" xml:space="preserve">
+    <value>Yeni Ön ayar</value>
+  </data>
+  <data name="ImageEffectsWindow_Remove_preset" xml:space="preserve">
+    <value>Kaldır Ön ayar</value>
+  </data>
+  <data name="ImageEffectsWindow_Duplicate_preset" xml:space="preserve">
+    <value>Çoğalt Ön ayar</value>
+  </data>
+  <data name="ImageEffectsWindow_Move_up" xml:space="preserve">
+    <value>Yukarı taşı</value>
+  </data>
+  <data name="ImageEffectsWindow_Move_down" xml:space="preserve">
+    <value>Aşağı taşı</value>
+  </data>
+  <data name="ImageEffectsWindow_Preset_name" xml:space="preserve">
+    <value>Ön ayar İsim</value>
+  </data>
+  <data name="ImageEffectsWindow_Effects" xml:space="preserve">
+    <value>Efektler</value>
+  </data>
+  <data name="ImageEffectsWindow_Refresh_preview" xml:space="preserve">
+    <value>Yenile Ön izleme:</value>
+  </data>
+  <data name="ImageEffectsWindow_Custom_effect_name" xml:space="preserve">
+    <value>Özel efekt adı</value>
+  </data>
+  <data name="ImageEffectsWindow_Add_effect" xml:space="preserve">
+    <value>Efekt ekle</value>
+  </data>
+  <data name="ImageEffectsWindow_Remove_effect" xml:space="preserve">
+    <value>Efekti kaldır</value>
+  </data>
+  <data name="ImageEffectsWindow_Duplicate_effect" xml:space="preserve">
+    <value>Efekti çoğalt</value>
+  </data>
+  <data name="ImageEffectsWindow_Clear_effects" xml:space="preserve">
+    <value>Temizle Efektler</value>
+  </data>
+  <data name="ImageEffectsWindow_Open_image" xml:space="preserve">
+    <value>Görüntü aç</value>
+  </data>
+  <data name="ImageEffectsWindow_Load_from_clipboard" xml:space="preserve">
+    <value>Yükle Panodan</value>
+  </data>
+  <data name="ImageEffectsWindow_Package_preset" xml:space="preserve">
+    <value>Ön ayarı paketle...</value>
+  </data>
+  <data name="ImageEffectsWindow_Image_effects_page" xml:space="preserve">
+    <value>Görüntü efektleri sayfası...</value>
+  </data>
+  <data name="ImageEffectsWindow_Save_image" xml:space="preserve">
+    <value>Görüntüyü kaydet...</value>
+  </data>
+  <data name="ImageEffectsWindow_Upload_image" xml:space="preserve">
+    <value>Yükle Görsel</value>
+  </data>
+  <data name="ImageEffectsWindow_Continue" xml:space="preserve">
+    <value>Devam et</value>
+  </data>
+  <data name="ImageEffectsWindow_Cancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="ImageEffectsWindow_Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="ImageEffectsWindow_Unnamed_preset" xml:space="preserve">
+    <value>Adsız ön ayar</value>
+  </data>
+  <data name="ImageEffectsWindow_Enter_preset_name" xml:space="preserve">
+    <value>Paket oluşturmadan önce bir ön ayar adı girin.</value>
+  </data>
+  <data name="ImageEffectsWindow_Clear_confirmation" xml:space="preserve">
+    <value>Seçili ön ayardaki tüm efektler temizlensin mi?</value>
+  </data>
+  <data name="ImageEffectsWindow_Preview_name" xml:space="preserve">
+    <value>Görsel efektleri Ön izleme:</value>
+  </data>
+  <data name="ImageEffectCategory_Drawings" xml:space="preserve">
+    <value>Çizimler</value>
+  </data>
+  <data name="ImageEffectCategory_Manipulations" xml:space="preserve">
+    <value>Dönüştürmeler</value>
+  </data>
+  <data name="ImageEffectCategory_Adjustments" xml:space="preserve">
+    <value>Ayarlamalar</value>
+  </data>
+  <data name="ImageEffectCategory_Filters" xml:space="preserve">
+    <value>Filtreler</value>
+  </data>
+  <data name="ImageEffectDefault_Text" xml:space="preserve">
+    <value>Metin</value>
+  </data>
+  <data name="ImageEffectDefault_Text_watermark" xml:space="preserve">
+    <value>Metin filigranı</value>
+  </data>
+  <data name="ImageEffect_Alpha" xml:space="preserve">
+    <value>Alfa</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Alpha_Value" xml:space="preserve">
+    <value>Piksel alfası = Piksel alfası * Değer
+Örneğin 0,5 değeri piksel alfasını %50 azaltır</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Alpha_Addition" xml:space="preserve">
+    <value>Piksel alfası = Piksel alfası + Ekleme
+Örneğin 0,5 değeri piksel alfasını 127,5 artırır</value>
+  </data>
+  <data name="ImageEffect_AutoCrop" xml:space="preserve">
+    <value>Otomatik Kırp</value>
+  </data>
+  <data name="ImageEffect_BlackWhite" xml:space="preserve">
+    <value>Siyah beyaz</value>
+  </data>
+  <data name="ImageEffect_Blur" xml:space="preserve">
+    <value>Bulanıklaştır</value>
+  </data>
+  <data name="ImageEffect_Brightness" xml:space="preserve">
+    <value>Parlaklık</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Brightness_Value" xml:space="preserve">
+    <value>Piksel rengi = Piksel rengi + Değer
+Örneğin 0,5 değeri piksel rengini 127,5 artırır</value>
+  </data>
+  <data name="ImageEffect_Canvas" xml:space="preserve">
+    <value>Tuval</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Canvas_MarginMode" xml:space="preserve">
+    <value>Tuvalin çevresindeki kenar boşluğunun nasıl hesaplanacağı.</value>
+  </data>
+  <data name="ImageEffect_ColorDepth" xml:space="preserve">
+    <value>Renk derinliği</value>
+  </data>
+  <data name="ImageEffect_Colorize" xml:space="preserve">
+    <value>Renklendir</value>
+  </data>
+  <data name="ImageEffect_Contrast" xml:space="preserve">
+    <value>Karşıtlık</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Contrast_Value" xml:space="preserve">
+    <value>Piksel rengi = Piksel rengi * Değer
+Örneğin 1,5 değeri piksel rengini %50 artırır</value>
+  </data>
+  <data name="ImageEffect_Crop" xml:space="preserve">
+    <value>Kırp</value>
+  </data>
+  <data name="ImageEffect_DrawBackground" xml:space="preserve">
+    <value>Arka plan</value>
+  </data>
+  <data name="ImageEffect_DrawBackgroundImage" xml:space="preserve">
+    <value>Arka plan resmi</value>
+  </data>
+  <data name="ImageEffect_DrawBorder" xml:space="preserve">
+    <value>Kenarlık</value>
+  </data>
+  <data name="ImageEffect_DrawCheckerboard" xml:space="preserve">
+    <value>Dama tahtası</value>
+  </data>
+  <data name="ImageEffect_DrawImage" xml:space="preserve">
+    <value>Resim</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_DrawImage_SizeMode" xml:space="preserve">
+    <value>Görüntü filigranının gerekirse nasıl yeniden ölçeklendirileceği.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_DrawImage_AutoHide" xml:space="preserve">
+    <value>Görüntü filigranı kaynak görüntüden büyükse çizme.</value>
+  </data>
+  <data name="ImageEffect_DrawParticles" xml:space="preserve">
+    <value>Parçacıklar</value>
+  </data>
+  <data name="ImageEffect_DrawText" xml:space="preserve">
+    <value>Metin filigranı</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_DrawText_AutoHide" xml:space="preserve">
+    <value>Metin filigranı kaynak görüntüden büyükse çizme.</value>
+  </data>
+  <data name="ImageEffect_DrawTextEx" xml:space="preserve">
+    <value>Metin</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_DrawTextEx_AutoHide" xml:space="preserve">
+    <value>Metin kaynak görüntüden büyükse çizme.</value>
+  </data>
+  <data name="ImageEffect_EdgeDetect" xml:space="preserve">
+    <value>Kenar algılama</value>
+  </data>
+  <data name="ImageEffect_Emboss" xml:space="preserve">
+    <value>Kabartma</value>
+  </data>
+  <data name="ImageEffect_Flip" xml:space="preserve">
+    <value>Ters çevir</value>
+  </data>
+  <data name="ImageEffect_ForceProportions" xml:space="preserve">
+    <value>Oranları zorla</value>
+  </data>
+  <data name="ImageEffect_Gamma" xml:space="preserve">
+    <value>Gama</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Gamma_Value" xml:space="preserve">
+    <value>En az 0,1, en çok 5,0</value>
+  </data>
+  <data name="ImageEffect_GaussianBlur" xml:space="preserve">
+    <value>Gauss bulanıklığı</value>
+  </data>
+  <data name="ImageEffect_Glow" xml:space="preserve">
+    <value>Parlama</value>
+  </data>
+  <data name="ImageEffect_Grayscale" xml:space="preserve">
+    <value>Gri tonlama</value>
+  </data>
+  <data name="ImageEffect_Hue" xml:space="preserve">
+    <value>Ton</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Hue_Angle" xml:space="preserve">
+    <value>0 ile 360 arası</value>
+  </data>
+  <data name="ImageEffect_Inverse" xml:space="preserve">
+    <value>Tersine çevir</value>
+  </data>
+  <data name="ImageEffect_MatrixColor" xml:space="preserve">
+    <value>Renk matrisi</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_MatrixColor_Rr" xml:space="preserve">
+    <value>Kırmızı = (Kırmızı * Rr) + (Yeşil * Rg) + (Mavi * Rb) + (Alfa * Ra) + Ro</value>
+  </data>
+  <data name="ImageEffect_MatrixConvolution" xml:space="preserve">
+    <value>Evrişim matrisi</value>
+  </data>
+  <data name="ImageEffect_MeanRemoval" xml:space="preserve">
+    <value>Ortalama kaldırma</value>
+  </data>
+  <data name="ImageEffect_Outline" xml:space="preserve">
+    <value>Dış çizgi</value>
+  </data>
+  <data name="ImageEffect_Pixelate" xml:space="preserve">
+    <value>Mozaikle</value>
+  </data>
+  <data name="ImageEffect_Polaroid" xml:space="preserve">
+    <value>Polaroid</value>
+  </data>
+  <data name="ImageEffect_Reflection" xml:space="preserve">
+    <value>Yansıma</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Reflection_Percentage" xml:space="preserve">
+    <value>Yansıma yüksekliğinin ekran görüntüsü yüksekliğine oranı.
+Değer 1 ile 100 arasında olmalıdır.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Reflection_MaxAlpha" xml:space="preserve">
+    <value>Yansıma saydamlığı bu değerden MinAlpha değerine doğru değişir.
+Değer 0 ile 255 arasında olmalıdır.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Reflection_MinAlpha" xml:space="preserve">
+    <value>Yansıma saydamlığı MaxAlpha değerinden bu değere doğru değişir.
+Değer 0 ile 255 arasında olmalıdır.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Reflection_Offset" xml:space="preserve">
+    <value>Yansımanın başlangıç konumu: Ekran görüntüsü yüksekliği + Uzaklık</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Reflection_Skew" xml:space="preserve">
+    <value>Yansımaya sol alttan sağ alta doğru eğiklik ekler.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Reflection_SkewSize" xml:space="preserve">
+    <value>Soldan sağa uygulanacak piksel eğikliği miktarı.</value>
+  </data>
+  <data name="ImageEffect_ReplaceColor" xml:space="preserve">
+    <value>Rengi değiştir</value>
+  </data>
+  <data name="ImageEffect_Resize" xml:space="preserve">
+    <value>Yeniden boyutlandır</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Resize_Width" xml:space="preserve">
+    <value>En boy oranını koruyarak genişliği otomatik ayarlamak için genişliği 0 yapın.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Resize_Height" xml:space="preserve">
+    <value>En boy oranını koruyarak yüksekliği otomatik ayarlamak için yüksekliği 0 yapın.</value>
+  </data>
+  <data name="ImageEffect_RGBSplit" xml:space="preserve">
+    <value>RGB ayırma</value>
+  </data>
+  <data name="ImageEffect_Rotate" xml:space="preserve">
+    <value>Döndür</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Rotate_Angle" xml:space="preserve">
+    <value>-360 ile 360 arasında bir değer seçin.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Rotate_Upsize" xml:space="preserve">
+    <value>Etkinse çıktı görüntüsü girdiden daha büyük olur ve kırpma yapılmaz.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Rotate_Clip" xml:space="preserve">
+    <value>Bu ayarın çalışması için büyütme kapalı olmalıdır. Etkinse kırpma yapılır; değilse görüntü boyutu küçültülür.</value>
+  </data>
+  <data name="ImageEffect_RoundedCorners" xml:space="preserve">
+    <value>Yuvarlatılmış köşeler</value>
+  </data>
+  <data name="ImageEffect_Saturation" xml:space="preserve">
+    <value>Doygunluk</value>
+  </data>
+  <data name="ImageEffect_Scale" xml:space="preserve">
+    <value>Ölçekle</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Scale_WidthPercentage" xml:space="preserve">
+    <value>En boy oranını koruyarak genişliği otomatik ayarlamak için genişlik yüzdesini 0 yapın.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Scale_HeightPercentage" xml:space="preserve">
+    <value>En boy oranını koruyarak yüksekliği otomatik ayarlamak için yükseklik yüzdesini 0 yapın.</value>
+  </data>
+  <data name="ImageEffect_SelectiveColor" xml:space="preserve">
+    <value>Seçici renk</value>
+  </data>
+  <data name="ImageEffect_Sepia" xml:space="preserve">
+    <value>Sepya</value>
+  </data>
+  <data name="ImageEffect_Shadow" xml:space="preserve">
+    <value>Gölge</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Shadow_Opacity" xml:space="preserve">
+    <value>0,1 ile 1,0 arasında bir değer seçin</value>
+  </data>
+  <data name="ImageEffect_Sharpen" xml:space="preserve">
+    <value>Keskinleştir</value>
+  </data>
+  <data name="ImageEffect_Skew" xml:space="preserve">
+    <value>Eğ</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Skew_Horizontally" xml:space="preserve">
+    <value>Soldan sağa uygulanacak piksel eğikliği miktarı.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Skew_Vertically" xml:space="preserve">
+    <value>Yukarıdan aşağıya uygulanacak piksel eğikliği miktarı.</value>
+  </data>
+  <data name="ImageEffect_Slice" xml:space="preserve">
+    <value>Dilimle</value>
+  </data>
+  <data name="ImageEffect_Smooth" xml:space="preserve">
+    <value>Yumuşat</value>
+  </data>
+  <data name="ImageEffect_TornEdge" xml:space="preserve">
+    <value>Yırtık kenar</value>
+  </data>
+  <data name="ImageEffect_WaveEdge" xml:space="preserve">
+    <value>Dalgalı kenar</value>
+  </data>
+  <data name="ImageEffectProperty_Aa" xml:space="preserve">
+    <value>Aa</value>
+  </data>
+  <data name="ImageEffectProperty_Ab" xml:space="preserve">
+    <value>Ab</value>
+  </data>
+  <data name="ImageEffectProperty_Addition" xml:space="preserve">
+    <value>Ekleme</value>
+  </data>
+  <data name="ImageEffectProperty_Ag" xml:space="preserve">
+    <value>Ag</value>
+  </data>
+  <data name="ImageEffectProperty_Angle" xml:space="preserve">
+    <value>Açı</value>
+  </data>
+  <data name="ImageEffectProperty_Ao" xml:space="preserve">
+    <value>Ao</value>
+  </data>
+  <data name="ImageEffectProperty_Ar" xml:space="preserve">
+    <value>Ar</value>
+  </data>
+  <data name="ImageEffectProperty_AutoHide" xml:space="preserve">
+    <value>Otomatik gizle</value>
+  </data>
+  <data name="ImageEffectProperty_AutoResize" xml:space="preserve">
+    <value>Otomatik boyutlandır</value>
+  </data>
+  <data name="ImageEffectProperty_AutoSourceColor" xml:space="preserve">
+    <value>Otomatik kaynak rengi</value>
+  </data>
+  <data name="ImageEffectProperty_Ba" xml:space="preserve">
+    <value>Ba</value>
+  </data>
+  <data name="ImageEffectProperty_Background" xml:space="preserve">
+    <value>Arka plan</value>
+  </data>
+  <data name="ImageEffectProperty_BackgroundColor" xml:space="preserve">
+    <value>Arka plan rengi</value>
+  </data>
+  <data name="ImageEffectProperty_Bb" xml:space="preserve">
+    <value>Bb</value>
+  </data>
+  <data name="ImageEffectProperty_Bg" xml:space="preserve">
+    <value>Bg</value>
+  </data>
+  <data name="ImageEffectProperty_BitsPerChannel" xml:space="preserve">
+    <value>Kanal başına bit</value>
+  </data>
+  <data name="ImageEffectProperty_Bo" xml:space="preserve">
+    <value>Bo</value>
+  </data>
+  <data name="ImageEffectProperty_BorderColor" xml:space="preserve">
+    <value>Kenarlık rengi</value>
+  </data>
+  <data name="ImageEffectProperty_BorderSize" xml:space="preserve">
+    <value>Kenarlık boyutu</value>
+  </data>
+  <data name="ImageEffectProperty_Br" xml:space="preserve">
+    <value>Br</value>
+  </data>
+  <data name="ImageEffectProperty_Center" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="ImageEffectProperty_Clip" xml:space="preserve">
+    <value>Kırp</value>
+  </data>
+  <data name="ImageEffectProperty_Color" xml:space="preserve">
+    <value>Renk</value>
+  </data>
+  <data name="ImageEffectProperty_Color2" xml:space="preserve">
+    <value>Renk 2</value>
+  </data>
+  <data name="ImageEffectProperty_CompositingMode" xml:space="preserve">
+    <value>Birleştirme modu</value>
+  </data>
+  <data name="ImageEffectProperty_CornerRadius" xml:space="preserve">
+    <value>Köşe yarıçapı</value>
+  </data>
+  <data name="ImageEffectProperty_CurvedEdges" xml:space="preserve">
+    <value>Kavisli kenarlar</value>
+  </data>
+  <data name="ImageEffectProperty_DarkColor" xml:space="preserve">
+    <value>Koyu Renk</value>
+  </data>
+  <data name="ImageEffectProperty_Darkness" xml:space="preserve">
+    <value>Koyuluk</value>
+  </data>
+  <data name="ImageEffectProperty_DashStyle" xml:space="preserve">
+    <value>Çizgi stili</value>
+  </data>
+  <data name="ImageEffectProperty_Depth" xml:space="preserve">
+    <value>Derinlik</value>
+  </data>
+  <data name="ImageEffectProperty_DrawBackground" xml:space="preserve">
+    <value>Arka planı çiz</value>
+  </data>
+  <data name="ImageEffectProperty_DrawBorder" xml:space="preserve">
+    <value>Kenarlığı çiz</value>
+  </data>
+  <data name="ImageEffectProperty_DrawTextShadow" xml:space="preserve">
+    <value>Metin gölgesini çiz</value>
+  </data>
+  <data name="ImageEffectProperty_EdgeOverlap" xml:space="preserve">
+    <value>Kenar örtüşmesi</value>
+  </data>
+  <data name="ImageEffectProperty_Factor" xml:space="preserve">
+    <value>Çarpan</value>
+  </data>
+  <data name="ImageEffectProperty_Font" xml:space="preserve">
+    <value>Yazı tipi:</value>
+  </data>
+  <data name="ImageEffectProperty_Ga" xml:space="preserve">
+    <value>Ga</value>
+  </data>
+  <data name="ImageEffectProperty_Gb" xml:space="preserve">
+    <value>Gb</value>
+  </data>
+  <data name="ImageEffectProperty_Gg" xml:space="preserve">
+    <value>Gg</value>
+  </data>
+  <data name="ImageEffectProperty_Go" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="ImageEffectProperty_Gr" xml:space="preserve">
+    <value>Gr</value>
+  </data>
+  <data name="ImageEffectProperty_Gradient" xml:space="preserve">
+    <value>Gradyan</value>
+  </data>
+  <data name="ImageEffectProperty_GrowFillColor" xml:space="preserve">
+    <value>Büyütme dolgu rengi</value>
+  </data>
+  <data name="ImageEffectProperty_Height" xml:space="preserve">
+    <value>Yükseklik</value>
+  </data>
+  <data name="ImageEffectProperty_HeightPercentage" xml:space="preserve">
+    <value>Yükseklik yüzdesi</value>
+  </data>
+  <data name="ImageEffectProperty_Horizontally" xml:space="preserve">
+    <value>Yatay olarak</value>
+  </data>
+  <data name="ImageEffectProperty_ImageCount" xml:space="preserve">
+    <value>Görsel Sayı</value>
+  </data>
+  <data name="ImageEffectProperty_ImageFilePath" xml:space="preserve">
+    <value>Resim (Dosya) Yol</value>
+  </data>
+  <data name="ImageEffectProperty_ImageFolder" xml:space="preserve">
+    <value>Görsel Klasör</value>
+  </data>
+  <data name="ImageEffectProperty_ImageLocation" xml:space="preserve">
+    <value>Görüntü konumu</value>
+  </data>
+  <data name="ImageEffectProperty_InterpolationMode" xml:space="preserve">
+    <value>Aradeğerleme modu:</value>
+  </data>
+  <data name="ImageEffectProperty_LightColor" xml:space="preserve">
+    <value>Açık Renk</value>
+  </data>
+  <data name="ImageEffectProperty_Margin" xml:space="preserve">
+    <value>Kenar boşluğu</value>
+  </data>
+  <data name="ImageEffectProperty_MarginMode" xml:space="preserve">
+    <value>Kenar boşluğu modu</value>
+  </data>
+  <data name="ImageEffectProperty_MaxAlpha" xml:space="preserve">
+    <value>En yüksek alfa</value>
+  </data>
+  <data name="ImageEffectProperty_MaxSliceHeight" xml:space="preserve">
+    <value>En büyük dilim yüksekliği</value>
+  </data>
+  <data name="ImageEffectProperty_MaxSliceShift" xml:space="preserve">
+    <value>En büyük dilim kayması</value>
+  </data>
+  <data name="ImageEffectProperty_Method" xml:space="preserve">
+    <value>Yöntem</value>
+  </data>
+  <data name="ImageEffectProperty_MinAlpha" xml:space="preserve">
+    <value>En düşük alfa</value>
+  </data>
+  <data name="ImageEffectProperty_MinSliceHeight" xml:space="preserve">
+    <value>En küçük dilim yüksekliği</value>
+  </data>
+  <data name="ImageEffectProperty_MinSliceShift" xml:space="preserve">
+    <value>En küçük dilim kayması</value>
+  </data>
+  <data name="ImageEffectProperty_Mode" xml:space="preserve">
+    <value>Mod</value>
+  </data>
+  <data name="ImageEffectProperty_NoOverlap" xml:space="preserve">
+    <value>Örtüşme yok</value>
+  </data>
+  <data name="ImageEffectProperty_NoOverlapOffset" xml:space="preserve">
+    <value>Örtüşmeme uzaklığı</value>
+  </data>
+  <data name="ImageEffectProperty_Offset" xml:space="preserve">
+    <value>Uzaklık</value>
+  </data>
+  <data name="ImageEffectProperty_OffsetBlue" xml:space="preserve">
+    <value>Mavi uzaklığı</value>
+  </data>
+  <data name="ImageEffectProperty_OffsetGreen" xml:space="preserve">
+    <value>Yeşil uzaklığı</value>
+  </data>
+  <data name="ImageEffectProperty_OffsetRed" xml:space="preserve">
+    <value>Kırmızı uzaklığı</value>
+  </data>
+  <data name="ImageEffectProperty_Opacity" xml:space="preserve">
+    <value>Opaklık</value>
+  </data>
+  <data name="ImageEffectProperty_Outline" xml:space="preserve">
+    <value>Dış çizgi</value>
+  </data>
+  <data name="ImageEffectProperty_OutlineColor" xml:space="preserve">
+    <value>Dış çizgi rengi</value>
+  </data>
+  <data name="ImageEffectProperty_OutlineGradient" xml:space="preserve">
+    <value>Dış çizgi gradyanı</value>
+  </data>
+  <data name="ImageEffectProperty_OutlineOnly" xml:space="preserve">
+    <value>Yalnızca dış çizgi</value>
+  </data>
+  <data name="ImageEffectProperty_OutlineSize" xml:space="preserve">
+    <value>Dış çizgi boyutu</value>
+  </data>
+  <data name="ImageEffectProperty_OutlineUseGradient" xml:space="preserve">
+    <value>Dış çizgide gradyan kullan</value>
+  </data>
+  <data name="ImageEffectProperty_Padding" xml:space="preserve">
+    <value>İç boşluk</value>
+  </data>
+  <data name="ImageEffectProperty_PaletteSize" xml:space="preserve">
+    <value>Palet boyutu</value>
+  </data>
+  <data name="ImageEffectProperty_Percentage" xml:space="preserve">
+    <value>Yüzde</value>
+  </data>
+  <data name="ImageEffectProperty_Placement" xml:space="preserve">
+    <value>Yerleşim</value>
+  </data>
+  <data name="ImageEffectProperty_ProportionalHeight" xml:space="preserve">
+    <value>Orantılı yükseklik</value>
+  </data>
+  <data name="ImageEffectProperty_ProportionalWidth" xml:space="preserve">
+    <value>Orantılı genişlik</value>
+  </data>
+  <data name="ImageEffectProperty_Ra" xml:space="preserve">
+    <value>Ra</value>
+  </data>
+  <data name="ImageEffectProperty_Radius" xml:space="preserve">
+    <value>Yarıçap</value>
+  </data>
+  <data name="ImageEffectProperty_RandomAngle" xml:space="preserve">
+    <value>Rastgele Açı</value>
+  </data>
+  <data name="ImageEffectProperty_RandomAngleMax" xml:space="preserve">
+    <value>En büyük rastgele açı</value>
+  </data>
+  <data name="ImageEffectProperty_RandomAngleMin" xml:space="preserve">
+    <value>En küçük rastgele açı</value>
+  </data>
+  <data name="ImageEffectProperty_RandomOpacity" xml:space="preserve">
+    <value>Rastgele Opaklık</value>
+  </data>
+  <data name="ImageEffectProperty_RandomOpacityMax" xml:space="preserve">
+    <value>En yüksek rastgele opaklık</value>
+  </data>
+  <data name="ImageEffectProperty_RandomOpacityMin" xml:space="preserve">
+    <value>En düşük rastgele opaklık</value>
+  </data>
+  <data name="ImageEffectProperty_RandomSize" xml:space="preserve">
+    <value>Rastgele Boyut:</value>
+  </data>
+  <data name="ImageEffectProperty_RandomSizeMax" xml:space="preserve">
+    <value>En büyük rastgele boyut</value>
+  </data>
+  <data name="ImageEffectProperty_RandomSizeMin" xml:space="preserve">
+    <value>En küçük rastgele boyut</value>
+  </data>
+  <data name="ImageEffectProperty_Range" xml:space="preserve">
+    <value>Aralık</value>
+  </data>
+  <data name="ImageEffectProperty_Rb" xml:space="preserve">
+    <value>Rb</value>
+  </data>
+  <data name="ImageEffectProperty_Rg" xml:space="preserve">
+    <value>Rg</value>
+  </data>
+  <data name="ImageEffectProperty_Ro" xml:space="preserve">
+    <value>Ro</value>
+  </data>
+  <data name="ImageEffectProperty_RotateFlip" xml:space="preserve">
+    <value>Döndür ve ters çevir</value>
+  </data>
+  <data name="ImageEffectProperty_Rr" xml:space="preserve">
+    <value>Rr</value>
+  </data>
+  <data name="ImageEffectProperty_Shadow" xml:space="preserve">
+    <value>Gölge</value>
+  </data>
+  <data name="ImageEffectProperty_ShadowColor" xml:space="preserve">
+    <value>Gölge rengi</value>
+  </data>
+  <data name="ImageEffectProperty_ShadowGradient" xml:space="preserve">
+    <value>Gölge Gradyan</value>
+  </data>
+  <data name="ImageEffectProperty_ShadowOffset" xml:space="preserve">
+    <value>Gölge uzaklığı:</value>
+  </data>
+  <data name="ImageEffectProperty_ShadowUseGradient" xml:space="preserve">
+    <value>Gölgede gradyan kullan</value>
+  </data>
+  <data name="ImageEffectProperty_Sides" xml:space="preserve">
+    <value>Kenarlar</value>
+  </data>
+  <data name="ImageEffectProperty_Size" xml:space="preserve">
+    <value>Boyut:</value>
+  </data>
+  <data name="ImageEffectProperty_SizeMode" xml:space="preserve">
+    <value>Boyut modu</value>
+  </data>
+  <data name="ImageEffectProperty_Skew" xml:space="preserve">
+    <value>Eğiklik</value>
+  </data>
+  <data name="ImageEffectProperty_SkewSize" xml:space="preserve">
+    <value>Eğiklik boyutu</value>
+  </data>
+  <data name="ImageEffectProperty_SourceColor" xml:space="preserve">
+    <value>Kaynak rengi</value>
+  </data>
+  <data name="ImageEffectProperty_Strength" xml:space="preserve">
+    <value>Güç</value>
+  </data>
+  <data name="ImageEffectProperty_TargetColor" xml:space="preserve">
+    <value>Hedef: Renk</value>
+  </data>
+  <data name="ImageEffectProperty_Text" xml:space="preserve">
+    <value>Metin</value>
+  </data>
+  <data name="ImageEffectProperty_TextColor" xml:space="preserve">
+    <value>Metin rengi</value>
+  </data>
+  <data name="ImageEffectProperty_TextFont" xml:space="preserve">
+    <value>Yazı Yazı tipi:</value>
+  </data>
+  <data name="ImageEffectProperty_TextRenderingMode" xml:space="preserve">
+    <value>Metin işleme modu</value>
+  </data>
+  <data name="ImageEffectProperty_TextShadowColor" xml:space="preserve">
+    <value>Yazı Gölge rengi</value>
+  </data>
+  <data name="ImageEffectProperty_TextShadowOffset" xml:space="preserve">
+    <value>Yazı Gölge uzaklığı:</value>
+  </data>
+  <data name="ImageEffectProperty_Threshold" xml:space="preserve">
+    <value>Eşik</value>
+  </data>
+  <data name="ImageEffectProperty_Tile" xml:space="preserve">
+    <value>Döşe</value>
+  </data>
+  <data name="ImageEffectProperty_Type" xml:space="preserve">
+    <value>Tür</value>
+  </data>
+  <data name="ImageEffectProperty_Upsize" xml:space="preserve">
+    <value>Büyüt</value>
+  </data>
+  <data name="ImageEffectProperty_UseGradient" xml:space="preserve">
+    <value>Gradyan kullan</value>
+  </data>
+  <data name="ImageEffectProperty_Value" xml:space="preserve">
+    <value>Değer</value>
+  </data>
+  <data name="ImageEffectProperty_Vertically" xml:space="preserve">
+    <value>Dikey olarak</value>
+  </data>
+  <data name="ImageEffectProperty_Width" xml:space="preserve">
+    <value>Genişlik</value>
+  </data>
+  <data name="ImageEffectProperty_WidthPercentage" xml:space="preserve">
+    <value>Genişlik yüzdesi</value>
+  </data>
+  <data name="ImageEffectProperty_X0Y0" xml:space="preserve">
+    <value>X 0 Y 0</value>
+  </data>
+  <data name="ImageEffectProperty_X0Y1" xml:space="preserve">
+    <value>X 0 Y 1</value>
+  </data>
+  <data name="ImageEffectProperty_X0Y2" xml:space="preserve">
+    <value>X 0 Y 2</value>
+  </data>
+  <data name="ImageEffectProperty_X1Y0" xml:space="preserve">
+    <value>X 1 Y 0</value>
+  </data>
+  <data name="ImageEffectProperty_X1Y1" xml:space="preserve">
+    <value>X 1 Y 1</value>
+  </data>
+  <data name="ImageEffectProperty_X1Y2" xml:space="preserve">
+    <value>X 1 Y 2</value>
+  </data>
+  <data name="ImageEffectProperty_X2Y0" xml:space="preserve">
+    <value>X 2 Y 0</value>
+  </data>
+  <data name="ImageEffectProperty_X2Y1" xml:space="preserve">
+    <value>X 2 Y 1</value>
+  </data>
+  <data name="ImageEffectProperty_X2Y2" xml:space="preserve">
+    <value>X 2 Y 2</value>
+  </data>
+  <data name="ImageEffectEnum_BorderType_Outside" xml:space="preserve">
+    <value>Dışarıda</value>
+  </data>
+  <data name="ImageEffectEnum_BorderType_Inside" xml:space="preserve">
+    <value>İçeride</value>
+  </data>
+  <data name="ImageEffectEnum_ImageInterpolationMode_HighQualityBicubic" xml:space="preserve">
+    <value>Yüksek kaliteli bikübik</value>
+  </data>
+  <data name="ImageEffectEnum_ImageInterpolationMode_Bicubic" xml:space="preserve">
+    <value>Bikübik</value>
+  </data>
+  <data name="ImageEffectEnum_ImageInterpolationMode_HighQualityBilinear" xml:space="preserve">
+    <value>Yüksek kaliteli bilineer</value>
+  </data>
+  <data name="ImageEffectEnum_ImageInterpolationMode_Bilinear" xml:space="preserve">
+    <value>Bilineer</value>
+  </data>
+  <data name="ImageEffectEnum_ImageInterpolationMode_NearestNeighbor" xml:space="preserve">
+    <value>En yakın komşu</value>
+  </data>
+  <data name="ImageEffectEnum_CanvasMarginMode_AbsoluteSize" xml:space="preserve">
+    <value>Mutlak boyut</value>
+  </data>
+  <data name="ImageEffectEnum_CanvasMarginMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Tuval yüzdesi</value>
+  </data>
+  <data name="ImageEffectEnum_DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Yeniden boyutlandırma</value>
+  </data>
+  <data name="ImageEffectEnum_DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Mutlak boyut</value>
+  </data>
+  <data name="ImageEffectEnum_DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Filigran yüzdesi</value>
+  </data>
+  <data name="ImageEffectEnum_DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Tuval yüzdesi</value>
+  </data>
+  <data name="ImageEffectEnum_ForceProportionsMethod_Grow" xml:space="preserve">
+    <value>Büyüt</value>
+  </data>
+  <data name="ImageEffectEnum_ForceProportionsMethod_Crop" xml:space="preserve">
+    <value>Kırp</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_None" xml:space="preserve">
+    <value>Hiçbiri</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_Rotate90" xml:space="preserve">
+    <value>90° döndür</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_Rotate180" xml:space="preserve">
+    <value>180° döndür</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_Rotate270" xml:space="preserve">
+    <value>270° döndür</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_FlipX" xml:space="preserve">
+    <value>X ekseninde ters çevir</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_Rotate90FlipX" xml:space="preserve">
+    <value>90° döndür ve X ekseninde ters çevir</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_FlipY" xml:space="preserve">
+    <value>Y ekseninde ters çevir</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_Rotate90FlipY" xml:space="preserve">
+    <value>90° döndür ve Y ekseninde ters çevir</value>
+  </data>
+  <data name="ImageEffectEnum_ResizeMode_ResizeAll" xml:space="preserve">
+    <value>Tüm görüntüleri belirtilen boyuta getirir.</value>
+  </data>
+  <data name="ImageEffectEnum_ResizeMode_ResizeIfBigger" xml:space="preserve">
+    <value>Görüntüyü yalnızca belirtilen boyuttan büyükse yeniden boyutlandırır.</value>
+  </data>
+  <data name="ImageEffectEnum_ResizeMode_ResizeIfSmaller" xml:space="preserve">
+    <value>Görüntüyü yalnızca belirtilen boyuttan küçükse yeniden boyutlandırır.</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_TopLeft" xml:space="preserve">
+    <value>Sol üst</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_TopCenter" xml:space="preserve">
+    <value>Üst orta</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_TopRight" xml:space="preserve">
+    <value>Sağ üst</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_MiddleLeft" xml:space="preserve">
+    <value>Sol orta</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_MiddleCenter" xml:space="preserve">
+    <value>Orta merkez</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_MiddleRight" xml:space="preserve">
+    <value>Sağ orta</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_BottomLeft" xml:space="preserve">
+    <value>Sol alt</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_BottomCenter" xml:space="preserve">
+    <value>Alt orta</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_BottomRight" xml:space="preserve">
+    <value>Sağ alt</value>
+  </data>
+  <data name="ImageEffectEnum_CompositingMode_SourceOver" xml:space="preserve">
+    <value>Kaynak üstte</value>
+  </data>
+  <data name="ImageEffectEnum_CompositingMode_SourceCopy" xml:space="preserve">
+    <value>Kaynağı kopyala</value>
+  </data>
+  <data name="ImageEffectEnum_DashStyle_Solid" xml:space="preserve">
+    <value>Düz</value>
+  </data>
+  <data name="ImageEffectEnum_DashStyle_Dash" xml:space="preserve">
+    <value>Tire</value>
+  </data>
+  <data name="ImageEffectEnum_DashStyle_Dot" xml:space="preserve">
+    <value>Nokta</value>
+  </data>
+  <data name="ImageEffectEnum_DashStyle_DashDot" xml:space="preserve">
+    <value>Kesik noktalı</value>
+  </data>
+  <data name="ImageEffectEnum_DashStyle_DashDotDot" xml:space="preserve">
+    <value>Kesik nokta nokta</value>
+  </data>
+  <data name="ImageEffectEnum_DashStyle_Custom" xml:space="preserve">
+    <value>Özel</value>
+  </data>
+  <data name="ImageEffectEnum_LinearGradientMode_Horizontal" xml:space="preserve">
+    <value>Yatay</value>
+  </data>
+  <data name="ImageEffectEnum_LinearGradientMode_Vertical" xml:space="preserve">
+    <value>Dikey</value>
+  </data>
+  <data name="ImageEffectEnum_LinearGradientMode_ForwardDiagonal" xml:space="preserve">
+    <value>İleri çapraz</value>
+  </data>
+  <data name="ImageEffectEnum_LinearGradientMode_BackwardDiagonal" xml:space="preserve">
+    <value>Geriye çapraz</value>
+  </data>
+  <data name="ImageEffectEnum_TextRenderingHint_SystemDefault" xml:space="preserve">
+    <value>Sistem varsayılanı</value>
+  </data>
+  <data name="ImageEffectEnum_TextRenderingHint_SingleBitPerPixelGridFit" xml:space="preserve">
+    <value>Izgaraya uydurulmuş piksel başına tek bit</value>
+  </data>
+  <data name="ImageEffectEnum_TextRenderingHint_SingleBitPerPixel" xml:space="preserve">
+    <value>Piksel başına tek bit</value>
+  </data>
+  <data name="ImageEffectEnum_TextRenderingHint_AntiAliasGridFit" xml:space="preserve">
+    <value>Izgaraya uydurulmuş kenar yumuşatma</value>
+  </data>
+  <data name="ImageEffectEnum_TextRenderingHint_AntiAlias" xml:space="preserve">
+    <value>Kenar yumuşatma</value>
+  </data>
+  <data name="ImageEffectEnum_TextRenderingHint_ClearTypeGridFit" xml:space="preserve">
+    <value>Izgaraya uydurulmuş ClearType</value>
+  </data>
+  <data name="ImageEffectEnum_AnchorStyles_None" xml:space="preserve">
+    <value>Hiçbiri</value>
+  </data>
+  <data name="ImageEffectEnum_AnchorStyles_Top" xml:space="preserve">
+    <value>Üst</value>
+  </data>
+  <data name="ImageEffectEnum_AnchorStyles_Bottom" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="ImageEffectEnum_AnchorStyles_Left" xml:space="preserve">
+    <value>Sol</value>
+  </data>
+  <data name="ImageEffectEnum_AnchorStyles_Right" xml:space="preserve">
+    <value>Sağ</value>
+  </data>
+</root>

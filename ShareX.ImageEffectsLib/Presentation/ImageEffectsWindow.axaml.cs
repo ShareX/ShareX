@@ -119,7 +119,7 @@ public partial class ImageEffectsWindow : Window
 
     private async void OnClearEffectsClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        if (await new ImageEffectsConfirmationWindow("Clear all effects from the selected preset?").ShowDialog<bool>(this))
+            if (await new ImageEffectsConfirmationWindow(Localization.Strings.ImageEffectsWindow_Clear_confirmation).ShowDialog<bool>(this))
         {
             ViewModel.ClearEffectsCommand.Execute(null);
         }
@@ -134,7 +134,7 @@ public partial class ImageEffectsWindow : Window
             if (imageData != null)
             {
                 string displayName = string.IsNullOrWhiteSpace(ViewModel.FilePath)
-                    ? "Image effects preview"
+                    ? Localization.Strings.ImageEffectsWindow_Preview_name
                     : Path.GetFileName(ViewModel.FilePath);
                 ImageViewerWindowIntegration.ShowImage(imageData, displayName, this);
                 e.Handled = true;

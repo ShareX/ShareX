@@ -25,6 +25,7 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib.Localization;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -58,7 +59,7 @@ namespace ShareX.ImageEffectsLib
                 return Name;
             }
 
-            string name = GetType().GetDescription();
+            string name = ImageEffectsLocalization.GetEffectName(GetType());
             string summary = GetSummary();
 
             if (!string.IsNullOrEmpty(summary))

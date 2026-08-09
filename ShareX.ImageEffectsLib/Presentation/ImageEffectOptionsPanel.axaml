@@ -1,8 +1,9 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:localization="using:ShareX.ImageEffectsLib.Localization"
              x:Class="ShareX.ImageEffectsLib.ImageEffectOptionsPanel">
     <Grid RowDefinitions="Auto,*,Auto" RowSpacing="10">
-        <TextBlock x:Name="EffectTitle" Classes="section-heading" Text="Effect options"/>
+        <TextBlock x:Name="EffectTitle" Classes="section-heading" Text="{x:Static localization:Strings.ImageEffectOptionsPanel_Effect_options}"/>
         <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled">
             <StackPanel x:Name="EditorPanel" Spacing="8" Margin="0,4,12,4"/>
         </ScrollViewer>

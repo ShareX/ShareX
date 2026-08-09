@@ -107,6 +107,7 @@ namespace ShareX.ImageEffectsLib
         public DrawTextEx()
         {
             this.ApplyDefaultPropertyValues();
+            Text = Localization.Strings.ImageEffectDefault_Text;
             Gradient = AddDefaultGradient();
             OutlineGradient = AddDefaultGradient();
             ShadowGradient = AddDefaultGradient();

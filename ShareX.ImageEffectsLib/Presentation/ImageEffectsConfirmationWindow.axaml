@@ -1,15 +1,16 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.ImageEffectsLib.Localization"
         x:Class="ShareX.ImageEffectsLib.ImageEffectsConfirmationWindow"
-        Title="ShareX - Confirmation"
+        Title="{x:Static localization:Strings.ImageEffectsConfirmationWindow_Title}"
         Width="460" SizeToContent="Height" CanResize="False"
         Background="{DynamicResource ShareX.Brush.Background.Main}"
         WindowStartupLocation="CenterOwner">
     <Grid Margin="16" RowDefinitions="Auto,Auto" RowSpacing="16">
         <TextBlock x:Name="MessageText" FontSize="16" FontWeight="Normal" TextWrapping="Wrap"/>
         <Grid Grid.Row="1" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
-            <Button Grid.Column="1" Content="Yes" Click="OnYesClick"/>
-            <Button Grid.Column="2" Content="No" Click="OnNoClick"/>
+            <Button Grid.Column="1" Content="{x:Static localization:Strings.ImageEffectsConfirmationWindow_Yes}" Click="OnYesClick"/>
+            <Button Grid.Column="2" Content="{x:Static localization:Strings.ImageEffectsConfirmationWindow_No}" Click="OnNoClick"/>
         </Grid>
     </Grid>
 </Window>

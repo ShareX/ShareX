@@ -15,6 +15,7 @@ using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json.Serialization;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib.Localization;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -52,7 +53,7 @@ public sealed partial class ImageEffectItemViewModel : ObservableObject
 public sealed partial class ImageEffectPresetItemViewModel : ObservableObject
 {
     public ImageEffectPreset Preset { get; }
-    public string DisplayName => string.IsNullOrWhiteSpace(Preset.Name) ? "Unnamed preset" : Preset.Name;
+    public string DisplayName => string.IsNullOrWhiteSpace(Preset.Name) ? Localization.Strings.ImageEffectsWindow_Unnamed_preset : Preset.Name;
 
     public ImageEffectPresetItemViewModel(ImageEffectPreset preset) => Preset = preset;
     public void RefreshName() => OnPropertyChanged(nameof(DisplayName));
@@ -60,7 +61,6 @@ public sealed partial class ImageEffectPresetItemViewModel : ObservableObject
 
 public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposable
 {
-    private const string WindowTitlePrefix = "ShareX - Image effects";
     private readonly List<ImageEffectPreset> _presets;
     private readonly ImageEffectsCallbacks _callbacks;
     private readonly ISerializationBinder _serializationBinder = new ImageEffectsSerializationBinder();
@@ -85,7 +85,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
     private Avalonia.Media.Imaging.Bitmap? _preview;
 
     [ObservableProperty]
-    private string _windowTitle = WindowTitlePrefix;
+    private string _windowTitle = Localization.Strings.ImageEffectsWindow_Title;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsIdle))]
@@ -106,7 +106,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
     public bool HasSelectedEffect => SelectedEffect != null;
     public bool IsIdle => !IsBusy;
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
-    public string CloseButtonText => IsEditorMode ? "Cancel" : "Close";
+    public string CloseButtonText => IsEditorMode ? Localization.Strings.ImageEffectsWindow_Cancel : Localization.Strings.ImageEffectsWindow_Close;
     public int SelectedPresetIndex => Math.Max(0, SelectedPreset == null ? 0 : Presets.IndexOf(SelectedPreset));
 
     public Action<ImageEffectPreset>? PackagePresetRequested { get; set; }
@@ -346,7 +346,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         if (SelectedPreset == null) return;
         if (string.IsNullOrWhiteSpace(SelectedPreset.Preset.Name))
         {
-            ErrorMessage = "Enter a preset name before creating a package.";
+            ErrorMessage = Localization.Strings.ImageEffectsWindow_Enter_preset_name;
             return;
         }
         ErrorMessage = string.Empty;
@@ -400,7 +400,8 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
                 Preview?.Dispose();
                 Preview = preview;
                 _previewImageData = previewImageData;
-                WindowTitle = $"{WindowTitlePrefix} - {result.Width} × {result.Height} - {timer.ElapsedMilliseconds} ms";
+                WindowTitle = string.Format(Localization.Strings.ImageEffectsWindow_Title_with_preview,
+                    Localization.Strings.ImageEffectsWindow_Title, result.Width, result.Height, timer.ElapsedMilliseconds);
             }
         }
         catch (Exception ex)
