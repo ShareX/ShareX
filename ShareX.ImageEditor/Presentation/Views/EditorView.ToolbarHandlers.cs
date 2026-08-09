@@ -935,6 +935,5 @@ namespace ShareX.ImageEditor.Presentation.Views
             textBox.FontWeight = isBold ? FontWeight.Bold : FontWeight.Normal;
             textBox.FontStyle = isItalic ? FontStyle.Italic : FontStyle.Normal;
         }
-
     }
 }

@@ -24,23 +24,18 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Specialized;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class AzureStorageUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.AzureStorage;
-
-        public override Image ServiceImage => Resources.AzureStorage;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -54,7 +49,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return new AzureStorage(config.AzureStorageAccountName, config.AzureStorageAccountAccessKey, config.AzureStorageContainer,
                 config.AzureStorageEnvironment, config.AzureStorageCustomDomain, config.AzureStorageUploadPath, config.AzureStorageCacheControl);
         }
-
     }
 
     public sealed class AzureStorage : FileUploader

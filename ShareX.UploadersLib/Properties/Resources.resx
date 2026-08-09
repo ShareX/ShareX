@@ -120,39 +120,14 @@
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>New account</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Streamable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Streamable.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>Selected folder:</value>
-  </data>
-  <data name="OneTimeSecret" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\OneTimeSecret.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
     <value>Login failed.</value>
   </data>
-  <data name="GitHub" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\GitHub.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
     <value>Parent album path, for example:</value>
-  </data>
-  <data name="Pastebin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Pastebin.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PrivateBin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\PrivateBin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OwnCloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\OwnCloud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hostr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Hostr.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Sul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
     <value>Error: Result is empty.</value>
@@ -160,35 +135,11 @@
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="MediaFire" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\MediaFire.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
     <value>Connected!</value>
   </data>
-  <data name="Gett" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Gett.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bitly" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Bitly.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hastebin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Hastebin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lambda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Lambda.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Flickr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Flickr.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Upaste" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Upaste.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
     <value>{0} successfully created.</value>
-  </data>
-  <data name="AmazonS3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\AmazonS3.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
     <value>Connected!
@@ -197,14 +148,8 @@ Created folders:</value>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Browse for a certificate file...</value>
   </data>
-  <data name="Yourls" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Yourls.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Querying folders...</value>
-  </data>
-  <data name="Photobucket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Photobucket.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
     <value>SendSpace registration</value>
@@ -218,38 +163,8 @@ Created folders:</value>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Browse for a key file...</value>
   </data>
-  <data name="ImageShack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\ImageShack.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Box" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Box.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Vgyme" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Vgyme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Unable to find valid FTP account.</value>
-  </data>
-  <data name="SendSpace" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\SendSpace.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Seafile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Seafile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Polr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Polr.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pushbullet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Pushbullet.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pomf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Pomf.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="puush" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\puush.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Chevereto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Chevereto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Tweet error</value>
@@ -257,47 +172,14 @@ Created folders:</value>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Invalid device name</value>
   </data>
-  <data name="GoogleDrive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\GoogleDrive.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Box refresh folders list failed</value>
-  </data>
-  <data name="OneDrive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\OneDrive.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Root folder</value>
   </data>
-  <data name="Imgur" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Imgur.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>Remove all custom uploaders?</value>
-  </data>
-  <data name="document" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="folder_network" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder-network.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="globe_network" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\globe-network.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="server_network" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\server-network.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pastie" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Pastie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AzureStorage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\AzureStorage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Plik" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Plik.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Paste verification code here</value>
@@ -332,29 +214,11 @@ Created folders:</value>
   <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
     <value>Login failed.</value>
   </data>
-  <data name="Firebase" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Firebase.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GoogleCloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\GoogleCloud.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BackblazeB2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\BackblazeB2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Kutt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Kutt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="txtB2BucketWatermark" xml:space="preserve">
     <value>(Optional) Only used if you didn't set a bucket when you made the key</value>
   </data>
-  <data name="Dropbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Dropbox.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="DuplicateNameNotAllowed" xml:space="preserve">
     <value>Duplicate name not allowed.</value>
-  </data>
-  <data name="navigation_270_button_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\navigation-270-button-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
     <value>My drive</value>
@@ -364,9 +228,6 @@ Created folders:</value>
   </data>
   <data name="LoggedInAs0" xml:space="preserve">
     <value>Logged in as {0}.</value>
-  </data>
-  <data name="ZeroWidthShortener" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\favicons\zerowidthshortener.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FormattingFailed_JSON" xml:space="preserve">
     <value>Formatting failed.</value>
@@ -401,9 +262,7 @@ Created folders:</value>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="LobFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\LobFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="OAuthCallbackPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\oauthcallbackpage.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
@@ -412,8 +271,5 @@ Created folders:</value>
   </data>
   <data name="Connect" xml:space="preserve">
     <value>Connect...</value>
-  </data>
-  <data name="YouTube" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\YouTube.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

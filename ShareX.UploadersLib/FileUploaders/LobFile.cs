@@ -25,20 +25,15 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class LobFileFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Lithiio;
-
-        public override Image ServiceImage => Resources.LobFile;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -49,7 +44,6 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new LobFile(config.LithiioSettings);
         }
-
     }
 
     public sealed class LobFile : FileUploader

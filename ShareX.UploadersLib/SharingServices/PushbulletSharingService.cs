@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.SharingServices
 {
@@ -45,7 +44,6 @@ namespace ShareX.UploadersLib.SharingServices
         {
             return new PushbulletSharer(config.PushbulletSettings);
         }
-
     }
 
     public sealed class PushbulletSharer : URLSharer

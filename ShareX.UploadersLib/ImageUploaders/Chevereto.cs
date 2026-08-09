@@ -25,19 +25,14 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
     public class CheveretoImageUploaderService : ImageUploaderService
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Chevereto;
-
-        public override Image ServiceImage => Resources.Chevereto;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -52,7 +47,6 @@ namespace ShareX.UploadersLib.ImageUploaders
                 DirectURL = config.CheveretoDirectURL
             };
         }
-
     }
 
     public sealed class Chevereto : ImageUploader

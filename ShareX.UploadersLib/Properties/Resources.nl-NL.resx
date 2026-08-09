@@ -178,11 +178,11 @@ Aangemaakte mappen:</value>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Root map</value>
   </data>
-  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
-    <value>Plak verificatie code hier</value>
-  </data>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>Verwijderen all aangepast uploadeners?</value>
+  </data>
+  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
+    <value>Plak verificatie code hier</value>
   </data>
   <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
     <value>Key bestand does not exist.</value>

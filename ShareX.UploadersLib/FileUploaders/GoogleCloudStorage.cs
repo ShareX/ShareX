@@ -25,18 +25,13 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
-using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class GoogleCloudStorageNewFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.GoogleCloudStorage;
-
-        public override Icon ServiceIcon => Resources.GoogleCloud;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -56,7 +51,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 SetPublicACL = config.GoogleCloudStorageSetPublicACL
             };
         }
-
     }
 
     public sealed class GoogleCloudStorage : FileUploader, IOAuth2

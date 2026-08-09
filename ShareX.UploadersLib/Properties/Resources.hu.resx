@@ -163,6 +163,9 @@ Létrehozott mappák:</value>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Kulcsfájl tallózása...</value>
   </data>
+  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
+    <value>Unable to find valid FTP fiók.</value>
+  </data>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Tweet hiba</value>
   </data>
@@ -174,9 +177,6 @@ Létrehozott mappák:</value>
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Gyökér könyvtár</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Unable to find valid FTP fiók.</value>
   </data>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>Eltávolítás all egyéni feltöltős?</value>

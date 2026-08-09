@@ -214,14 +214,14 @@
   <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
     <value>로그인 실패.</value>
   </data>
-  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
-    <value>내 드라이브</value>
-  </data>
   <data name="txtB2BucketWatermark" xml:space="preserve">
     <value>(선택 사항) 키를 만들 때 버킷을 설정하지 않은 경우에만 사용됩니다</value>
   </data>
   <data name="DuplicateNameNotAllowed" xml:space="preserve">
     <value>중복 이름은 허용되지 않습니다.</value>
+  </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>내 드라이브</value>
   </data>
   <data name="ExportFailed" xml:space="preserve">
     <value>내보내기 failed.</value>

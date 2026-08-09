@@ -24,8 +24,6 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.UploadersLib.Properties;
-using System.Drawing;
 using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -33,8 +31,6 @@ namespace ShareX.UploadersLib.FileUploaders
     public class YouTubeFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.YouTube;
-
-        public override Image ServiceImage => Resources.YouTube;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -50,7 +46,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 ShowDialog = config.YouTubeShowDialog
             };
         }
-
     }
 
     public sealed class YouTube : FileUploader, IOAuth2

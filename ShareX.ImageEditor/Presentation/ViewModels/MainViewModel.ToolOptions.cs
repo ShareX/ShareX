@@ -28,7 +28,6 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Localization;
-using ShareX.AvaloniaUI.Theming;
 using System.Reflection;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
@@ -1406,6 +1405,5 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         {
             return Enum.IsDefined(stepType) ? stepType : StepType.Numeric;
         }
-
     }
 }

@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.UploadersLib.Properties;
-using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
@@ -34,8 +32,6 @@ namespace ShareX.UploadersLib.FileUploaders
     public class EmailFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Email;
-
-        public override Image ServiceImage => Resources.mail;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -90,7 +86,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
             return null;
         }
-
     }
 
     public class Email : FileUploader

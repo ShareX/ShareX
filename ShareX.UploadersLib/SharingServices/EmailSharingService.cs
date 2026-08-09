@@ -40,7 +40,6 @@ namespace ShareX.UploadersLib.SharingServices
         {
             return new EmailSharer(config);
         }
-
     }
 
     public sealed class EmailSharer : URLSharer

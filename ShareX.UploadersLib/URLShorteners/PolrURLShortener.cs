@@ -24,18 +24,13 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
     public class PolrURLShortenerService : URLShortenerService
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Polr;
-
-        public override Icon ServiceIcon => Resources.Polr;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -52,7 +47,6 @@ namespace ShareX.UploadersLib.URLShorteners
                 UseAPIv1 = config.PolrUseAPIv1
             };
         }
-
     }
 
     public sealed class PolrURLShortener : URLShortener

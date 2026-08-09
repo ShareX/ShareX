@@ -25,22 +25,17 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class PushbulletFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Pushbullet;
-
-        public override Icon ServiceIcon => Resources.Pushbullet;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -52,7 +47,6 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new Pushbullet(config.PushbulletSettings);
         }
-
     }
 
     public sealed class Pushbullet : FileUploader

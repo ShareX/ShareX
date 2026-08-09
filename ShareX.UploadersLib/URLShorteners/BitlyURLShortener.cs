@@ -25,21 +25,16 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Drawing;
 using System.Web;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
     public class BitlyURLShortenerService : URLShortenerService
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.BITLY;
-
-        public override Icon ServiceIcon => Resources.Bitly;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -58,7 +53,6 @@ namespace ShareX.UploadersLib.URLShorteners
                 Domain = config.BitlyDomain
             };
         }
-
     }
 
     public sealed class BitlyURLShortener : URLShortener, IOAuth2Basic

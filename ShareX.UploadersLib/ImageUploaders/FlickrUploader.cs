@@ -25,12 +25,9 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
@@ -38,8 +35,6 @@ namespace ShareX.UploadersLib.ImageUploaders
     public class FlickrImageUploaderService : ImageUploaderService
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Flickr;
-
-        public override Icon ServiceIcon => Resources.Flickr;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -50,7 +45,6 @@ namespace ShareX.UploadersLib.ImageUploaders
         {
             return new FlickrUploader(config.FlickrOAuthInfo, config.FlickrSettings);
         }
-
     }
 
     public class FlickrUploader : ImageUploader, IOAuth

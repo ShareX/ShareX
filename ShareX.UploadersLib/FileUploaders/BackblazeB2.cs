@@ -26,12 +26,10 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -39,7 +37,6 @@ using System.Net.Mime;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -49,8 +46,6 @@ namespace ShareX.UploadersLib.FileUploaders
     public class BackblazeB2UploaderService : FileUploaderService
     {
         public override FileDestination EnumValue => FileDestination.BackblazeB2;
-
-        public override Icon ServiceIcon => Resources.BackblazeB2;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -66,7 +61,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 useCustomUrl: config.B2UseCustomUrl,
                 customUrl: config.B2CustomUrl);
         }
-
     }
 
     /// <summary>

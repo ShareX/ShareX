@@ -61,71 +61,11 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon AmazonS3 {
-            get {
-                object obj = ResourceManager.GetObject("AmazonS3", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap AzureStorage {
-            get {
-                object obj = ResourceManager.GetObject("AzureStorage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon BackblazeB2 {
-            get {
-                object obj = ResourceManager.GetObject("BackblazeB2", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Bitly {
-            get {
-                object obj = ResourceManager.GetObject("Bitly", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Box {
-            get {
-                object obj = ResourceManager.GetObject("Box", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Browse for a certificate file....
         /// </summary>
         internal static string CertFileNameEditor_EditValue_Browse_for_a_certificate_file___ {
             get {
                 return ResourceManager.GetString("CertFileNameEditor_EditValue_Browse_for_a_certificate_file___", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Chevereto {
-            get {
-                object obj = ResourceManager.GetObject("Chevereto", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -175,26 +115,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap document {
-            get {
-                object obj = ResourceManager.GetObject("document", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Dropbox {
-            get {
-                object obj = ResourceManager.GetObject("Dropbox", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Duplicate name not allowed..
         /// </summary>
         internal static string DuplicateNameNotAllowed {
@@ -222,36 +142,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Firebase {
-            get {
-                object obj = ResourceManager.GetObject("Firebase", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Flickr {
-            get {
-                object obj = ResourceManager.GetObject("Flickr", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap folder_network {
-            get {
-                object obj = ResourceManager.GetObject("folder_network", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Formatting failed..
         /// </summary>
         internal static string FormattingFailed_JSON {
@@ -270,71 +160,11 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Gett {
-            get {
-                object obj = ResourceManager.GetObject("Gett", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon GitHub {
-            get {
-                object obj = ResourceManager.GetObject("GitHub", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap globe_network {
-            get {
-                object obj = ResourceManager.GetObject("globe_network", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon GoogleCloud {
-            get {
-                object obj = ResourceManager.GetObject("GoogleCloud", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon GoogleDrive {
-            get {
-                object obj = ResourceManager.GetObject("GoogleDrive", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to My drive.
         /// </summary>
         internal static string GoogleDrive_MyDrive_My_drive {
             get {
                 return ResourceManager.GetString("GoogleDrive_MyDrive_My_drive", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hastebin {
-            get {
-                object obj = ResourceManager.GetObject("Hastebin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -348,36 +178,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Hostr {
-            get {
-                object obj = ResourceManager.GetObject("Hostr", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon ImageShack {
-            get {
-                object obj = ResourceManager.GetObject("ImageShack", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Imgur {
-            get {
-                object obj = ResourceManager.GetObject("Imgur", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Browse for a key file....
         /// </summary>
         internal static string KeyFileNameEditor_EditValue_Browse_for_a_key_file___ {
@@ -387,71 +187,11 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Kutt {
-            get {
-                object obj = ResourceManager.GetObject("Kutt", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Lambda {
-            get {
-                object obj = ResourceManager.GetObject("Lambda", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LobFile {
-            get {
-                object obj = ResourceManager.GetObject("LobFile", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Logged in as {0}..
         /// </summary>
         internal static string LoggedInAs0 {
             get {
                 return ResourceManager.GetString("LoggedInAs0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap mail {
-            get {
-                object obj = ResourceManager.GetObject("mail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon MediaFire {
-            get {
-                object obj = ResourceManager.GetObject("MediaFire", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap navigation_270_button_white {
-            get {
-                object obj = ResourceManager.GetObject("navigation_270_button_white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -529,131 +269,11 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon OneDrive {
-            get {
-                object obj = ResourceManager.GetObject("OneDrive", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Root folder.
         /// </summary>
         internal static string OneDrive_RootFolder_Root_folder {
             get {
                 return ResourceManager.GetString("OneDrive_RootFolder_Root_folder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon OneTimeSecret {
-            get {
-                object obj = ResourceManager.GetObject("OneTimeSecret", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OwnCloud {
-            get {
-                object obj = ResourceManager.GetObject("OwnCloud", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Pastebin {
-            get {
-                object obj = ResourceManager.GetObject("Pastebin", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Pastie {
-            get {
-                object obj = ResourceManager.GetObject("Pastie", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Photobucket {
-            get {
-                object obj = ResourceManager.GetObject("Photobucket", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Plik {
-            get {
-                object obj = ResourceManager.GetObject("Plik", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Polr {
-            get {
-                object obj = ResourceManager.GetObject("Polr", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Pomf {
-            get {
-                object obj = ResourceManager.GetObject("Pomf", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PrivateBin {
-            get {
-                object obj = ResourceManager.GetObject("PrivateBin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Pushbullet {
-            get {
-                object obj = ResourceManager.GetObject("Pushbullet", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon puush {
-            get {
-                object obj = ResourceManager.GetObject("puush", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -676,36 +296,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Seafile {
-            get {
-                object obj = ResourceManager.GetObject("Seafile", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon SendSpace {
-            get {
-                object obj = ResourceManager.GetObject("SendSpace", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap server_network {
-            get {
-                object obj = ResourceManager.GetObject("server_network", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Shortened URL.
         /// </summary>
         internal static string ShortenedURL {
@@ -720,26 +310,6 @@ namespace ShareX.UploadersLib.Properties {
         internal static string StatusCode {
             get {
                 return ResourceManager.GetString("StatusCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Streamable {
-            get {
-                object obj = ResourceManager.GetObject("Streamable", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Sul {
-            get {
-                object obj = ResourceManager.GetObject("Sul", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -767,16 +337,6 @@ namespace ShareX.UploadersLib.Properties {
         internal static string txtB2BucketWatermark {
             get {
                 return ResourceManager.GetString("txtB2BucketWatermark", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Upaste {
-            get {
-                object obj = ResourceManager.GetObject("Upaste", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -977,46 +537,6 @@ namespace ShareX.UploadersLib.Properties {
         internal static string URL {
             get {
                 return ResourceManager.GetString("URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Vgyme {
-            get {
-                object obj = ResourceManager.GetObject("Vgyme", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Yourls {
-            get {
-                object obj = ResourceManager.GetObject("Yourls", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap YouTube {
-            get {
-                object obj = ResourceManager.GetObject("YouTube", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ZeroWidthShortener {
-            get {
-                object obj = ResourceManager.GetObject("ZeroWidthShortener", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

@@ -24,16 +24,13 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -57,8 +54,6 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.AmazonS3;
 
-        public override Icon ServiceIcon => Resources.AmazonS3;
-
         public override bool CheckConfig(UploadersConfig config)
         {
             return config.AmazonS3Settings != null && !string.IsNullOrEmpty(config.AmazonS3Settings.AccessKeyID) &&
@@ -70,7 +65,6 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new AmazonS3(config.AmazonS3Settings);
         }
-
     }
 
     public sealed class AmazonS3 : FileUploader

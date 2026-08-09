@@ -160,6 +160,5 @@ namespace ShareX.ImageEditor.Presentation.Controls
                 popup.IsOpen = !popup.IsOpen;
             }
         }
-
     }
 }

@@ -25,21 +25,16 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Drawing;
 using System.Linq;
 using System.Net;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
     public class GitHubGistTextUploaderService : TextUploaderService
     {
         public override TextDestination EnumValue { get; } = TextDestination.Gist;
-
-        public override Icon ServiceIcon => Resources.GitHub;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -55,7 +50,6 @@ namespace ShareX.UploadersLib.TextUploaders
                 CustomURLAPI = config.GistCustomURL
             };
         }
-
     }
 
     public sealed class GitHubGist : TextUploader, IOAuth2Basic

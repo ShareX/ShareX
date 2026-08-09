@@ -25,11 +25,9 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -49,9 +47,6 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return !string.IsNullOrEmpty(config.PlikSettings.URL) && !string.IsNullOrEmpty(config.PlikSettings.APIKey);
         }
-
-
-        public override Icon ServiceIcon => Resources.Plik;
     }
 
     public sealed class Plik : FileUploader

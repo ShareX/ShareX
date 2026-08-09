@@ -25,19 +25,14 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class PomfFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Pomf;
-
-        public override Icon ServiceIcon => Resources.Pomf;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -48,7 +43,6 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new Pomf(config.PomfUploader);
         }
-
     }
 
     public class Pomf : FileUploader

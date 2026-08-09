@@ -24,15 +24,12 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -40,8 +37,6 @@ namespace ShareX.UploadersLib.FileUploaders
     public class SendSpaceFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.SendSpace;
-
-        public override Icon ServiceIcon => Resources.SendSpace;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -58,7 +53,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 Password = config.SendSpacePassword
             };
         }
-
     }
 
     public sealed class SendSpace : FileUploader

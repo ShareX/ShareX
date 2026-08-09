@@ -23,10 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
@@ -36,8 +33,6 @@ namespace ShareX.UploadersLib.TextUploaders
 
         public override bool CheckConfig(UploadersConfig config) => true;
 
-        public override Image ServiceImage => Resources.Pastie;
-
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new Pastie()
@@ -45,7 +40,6 @@ namespace ShareX.UploadersLib.TextUploaders
                 IsPublic = config.PastieIsPublic
             };
         }
-
     }
 
     public sealed class Pastie : TextUploader

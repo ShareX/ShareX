@@ -25,25 +25,20 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
     public class PrivateBinUploaderService : TextUploaderService
     {
         public override TextDestination EnumValue { get; } = TextDestination.PrivateBin;
-
-        public override Image ServiceImage => Resources.PrivateBin;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 
@@ -52,7 +47,6 @@ namespace ShareX.UploadersLib.TextUploaders
             var settings = config.PrivateBinSettings;
             return new PrivateBin(settings);
         }
-
     }
 
     public sealed class PrivateBin(PrivateBinSettings settings) : TextUploader

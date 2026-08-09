@@ -2200,6 +2200,5 @@ namespace ShareX.ImageEditor.Presentation.Views
                 menu.Open(target);
             }
         }
-
     }
 }

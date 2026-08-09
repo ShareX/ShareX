@@ -238,6 +238,9 @@ Hergestellte Ordner:</value>
   <data name="ShortenedURL" xml:space="preserve">
     <value>Gekürzte URL</value>
   </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
   <data name="ThumbnailURL" xml:space="preserve">
     <value>Thumbnail-URL</value>
   </data>
@@ -253,6 +256,9 @@ Hergestellte Ordner:</value>
   <data name="ResponseText" xml:space="preserve">
     <value>Antworttext</value>
   </data>
+  <data name="Headers" xml:space="preserve">
+    <value>Header</value>
+  </data>
   <data name="Error" xml:space="preserve">
     <value>Fehler</value>
   </data>
@@ -261,11 +267,5 @@ Hergestellte Ordner:</value>
   </data>
   <data name="Connect" xml:space="preserve">
     <value>Verbinden...</value>
-  </data>
-  <data name="URL" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="Headers" xml:space="preserve">
-    <value>Header</value>
   </data>
 </root>

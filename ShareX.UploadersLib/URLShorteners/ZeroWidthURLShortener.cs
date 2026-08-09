@@ -25,18 +25,13 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System.Collections.Specialized;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
     public class ZeroWidthURLShortenerService : URLShortenerService
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.ZeroWidthShortener;
-
-        public override Image ServiceImage => Resources.ZeroWidthShortener;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 
@@ -48,7 +43,6 @@ namespace ShareX.UploadersLib.URLShorteners
                 Token = config.ZeroWidthShortenerToken
             };
         }
-
     }
 
     public sealed class ZeroWidthURLShortener : URLShortener

@@ -24,19 +24,14 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Specialized;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
     public class Paste_eeTextUploaderService : TextUploaderService
     {
         public override TextDestination EnumValue { get; } = TextDestination.Paste_ee;
-
-        public override Image ServiceImage => Resources.document;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 
@@ -58,7 +53,6 @@ namespace ShareX.UploadersLib.TextUploaders
                 EncryptPaste = config.Paste_eeEncryptPaste
             };
         }
-
     }
 
     public sealed class Paste_ee : TextUploader

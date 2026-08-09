@@ -25,18 +25,13 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
     public class FirebaseDynamicLinksURLShortenerService : URLShortenerService
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.FirebaseDynamicLinks;
-
-        public override Icon ServiceIcon => Resources.Firebase;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -52,7 +47,6 @@ namespace ShareX.UploadersLib.URLShorteners
                 IsShort = config.FirebaseIsShort
             };
         }
-
     }
 
     public class FirebaseRequest

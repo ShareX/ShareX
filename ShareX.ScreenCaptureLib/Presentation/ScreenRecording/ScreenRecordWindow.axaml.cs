@@ -23,7 +23,6 @@
 
 #nullable enable
 
-using ShareX.ScreenCaptureLib.Localization;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -31,6 +30,7 @@ using Avalonia.Media;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Localization;
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
@@ -420,7 +420,6 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 TimerDragHandle.Cursor = Cursor.Default;
                 break;
         }
-
     }
 
     private void RequestAbortRecording()

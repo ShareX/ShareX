@@ -24,9 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
-using System.Drawing;
 using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -34,8 +32,6 @@ namespace ShareX.UploadersLib.FileUploaders
     public class CustomFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.CustomFileUploader;
-
-        public override Image ServiceImage => Resources.globe_network;
 
         public override bool CheckConfig(UploadersConfig config)
         {

@@ -26,7 +26,6 @@
 using FluentFTP;
 using FluentFTP.Exceptions;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -35,15 +34,12 @@ using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class FTPFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.FTP;
-
-        public override Image ServiceImage => Resources.folder_network;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -91,7 +87,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
             return null;
         }
-
     }
 
     public sealed class FTP : FileUploader, IDisposable

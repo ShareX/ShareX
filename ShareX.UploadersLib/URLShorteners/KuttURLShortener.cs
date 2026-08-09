@@ -25,18 +25,13 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System.Collections.Specialized;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
     public class KuttURLShortenerService : URLShortenerService
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Kutt;
-
-        public override Image ServiceImage => Resources.Kutt;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -47,7 +42,6 @@ namespace ShareX.UploadersLib.URLShorteners
         {
             return new KuttURLShortener(config.KuttSettings);
         }
-
     }
 
     public sealed class KuttURLShortener : URLShortener

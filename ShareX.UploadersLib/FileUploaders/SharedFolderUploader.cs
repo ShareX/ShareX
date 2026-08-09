@@ -24,18 +24,13 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
-using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class SharedFolderFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.SharedFolder;
-
-        public override Image ServiceImage => Resources.server_network;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -69,7 +64,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
             return null;
         }
-
     }
 
     public class SharedFolderUploader : FileUploader

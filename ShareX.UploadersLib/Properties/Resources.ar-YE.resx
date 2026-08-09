@@ -138,6 +138,9 @@
   <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
     <value>تم الاتصال!</value>
   </data>
+  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
+    <value>تم إنشاء {0} بنجاح.</value>
+  </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
     <value>تم الاتصال!
 المجلد الذي تم إنشاءه:</value>
@@ -217,6 +220,9 @@
   <data name="DuplicateNameNotAllowed" xml:space="preserve">
     <value>لا يٌسمح بتكرار الاسم.</value>
   </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>قرصي</value>
+  </data>
   <data name="ExportFailed" xml:space="preserve">
     <value>خطأ في تصدير البيانات.</value>
   </data>
@@ -261,11 +267,5 @@
   </data>
   <data name="Connect" xml:space="preserve">
     <value>اتصال...</value>
-  </data>
-  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
-    <value>تم إنشاء {0} بنجاح.</value>
-  </data>
-  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
-    <value>قرصي</value>
   </data>
 </root>

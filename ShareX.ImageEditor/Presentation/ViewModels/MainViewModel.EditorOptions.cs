@@ -136,6 +136,5 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         {
             OpenOptionsPanelRequested?.Invoke(this, EventArgs.Empty);
         }
-
     }
 }
