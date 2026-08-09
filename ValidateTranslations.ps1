@@ -16,6 +16,7 @@ $errors = [Collections.Generic.List[string]]::new()
 $languageCatalogMap = [ordered]@{
     'ar-YE' = 'ar-YE'
     'cs-CZ' = 'cs'
+    'da-DK' = 'da'
     'de-DE' = 'de'
     'es-ES' = 'es'
     'es-MX' = 'es-MX'

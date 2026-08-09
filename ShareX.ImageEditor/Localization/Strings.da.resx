@@ -1,0 +1,1501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConfirmationDialogView_Title" xml:space="preserve">
+    <value>Bekræft avslut</value>
+  </data>
+  <data name="ConfirmationDialogView_Message" xml:space="preserve">
+    <value>Der er ikke-gemte ændringer.
+
+Vil du gemme ændringerne, før billededitoren lukkes?</value>
+  </data>
+  <data name="ConfirmationDialogView_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="ConfirmationDialogView_No" xml:space="preserve">
+    <value>Nej</value>
+  </data>
+  <data name="ConfirmationDialogView_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="NewImageDialogView_Title" xml:space="preserve">
+    <value>Ny billede</value>
+  </data>
+  <data name="NewImageDialogView_Width" xml:space="preserve">
+    <value>Bredde:</value>
+  </data>
+  <data name="NewImageDialogView_Pixels" xml:space="preserve">
+    <value>pixels</value>
+  </data>
+  <data name="NewImageDialogView_Height" xml:space="preserve">
+    <value>Højde:</value>
+  </data>
+  <data name="NewImageDialogView_Background" xml:space="preserve">
+    <value>Baggrund:</value>
+  </data>
+  <data name="NewImageDialogView_Transparent" xml:space="preserve">
+    <value>Gennemsigtig</value>
+  </data>
+  <data name="NewImageDialogView_SolidColor" xml:space="preserve">
+    <value>Ensfarvet</value>
+  </data>
+  <data name="NewImageDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="NewImageDialogView_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="StartScreenDialogView_Title" xml:space="preserve">
+    <value>Startskærm</value>
+  </data>
+  <data name="StartScreenDialogView_CreateNewImage" xml:space="preserve">
+    <value>Opret ny billede...</value>
+  </data>
+  <data name="StartScreenDialogView_OpenImageFile" xml:space="preserve">
+    <value>Åbn billedfil...</value>
+  </data>
+  <data name="StartScreenDialogView_LoadImageFromClipboard" xml:space="preserve">
+    <value>Læs in billede fra Udklipsholder</value>
+  </data>
+  <data name="StartScreenDialogView_LoadImageFromURL" xml:space="preserve">
+    <value>Læs in billede fra URL...</value>
+  </data>
+  <data name="StartScreenDialogView_Load" xml:space="preserve">
+    <value>Læs in</value>
+  </data>
+  <data name="StartScreenDialogView_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="StartScreenDialogView_Exit" xml:space="preserve">
+    <value>Afslut</value>
+  </data>
+  <data name="StartScreenDialogView_RecentFiles" xml:space="preserve">
+    <value>Seneste filer</value>
+  </data>
+  <data name="StartScreenDialogView_NoRecentImageFiles" xml:space="preserve">
+    <value>Det findes ingen seneste billedfiler end.</value>
+  </data>
+  <data name="StartScreenDialogView_InvalidURL" xml:space="preserve">
+    <value>Angiv en gyldig HTTP- eller HTTPS-URL.</value>
+  </data>
+  <data name="EmojiPickerDialogView_LoadingEmojis" xml:space="preserve">
+    <value>Indlæser emojier...</value>
+  </data>
+  <data name="EmojiPickerDialogView_SearchEmojisCount" xml:space="preserve">
+    <value>Søg efter emojier... ({0})</value>
+  </data>
+  <data name="EmojiPickerDialogView_BrowseEmojis" xml:space="preserve">
+    <value>Gennemse blandt emojier</value>
+  </data>
+  <data name="EmojiPickerDialogView_CategorySummary" xml:space="preserve">
+    <value>{0} • {1} emojier</value>
+  </data>
+  <data name="EmojiPickerDialogView_SearchResults" xml:space="preserve">
+    <value>Søgeresultater • {0} resultater</value>
+  </data>
+  <data name="EmojiPickerDialogView_NoMatches" xml:space="preserve">
+    <value>Ingen emojier matcher søgningen.</value>
+  </data>
+  <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
+    <value>Prøv et andet søgeord.</value>
+  </data>
+  <data name="EmojiPickerDialogView_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="EmojiPickerDialogView_PreviewsLoading" xml:space="preserve">
+    <value>Vælgeren er klar. Forhåndsvisninger af emojier indlæses i baggrunden.</value>
+  </data>
+  <data name="InsertImageDialogView_Title" xml:space="preserve">
+    <value>Indsæt billede</value>
+  </data>
+  <data name="InsertImageDialogView_Description" xml:space="preserve">
+    <value>Vælg, hvordan det indgående billede skal placeres på det aktuelle lærred.</value>
+  </data>
+  <data name="InsertImageDialogView_ImageSummary" xml:space="preserve">
+    <value>Indgående billede: {0} × {1} px</value>
+  </data>
+  <data name="InsertImageDialogView_Center" xml:space="preserve">
+    <value>Indsæt billedet i midten</value>
+  </data>
+  <data name="InsertImageDialogView_CenterDescription" xml:space="preserve">
+    <value>Beholder arbejdsområdets aktuelle størrelse.</value>
+  </data>
+  <data name="InsertImageDialogView_Below" xml:space="preserve">
+    <value>Indsæt billedet nedenfor</value>
+  </data>
+  <data name="InsertImageDialogView_BelowDescription" xml:space="preserve">
+    <value>Udvider lærredet nedad, før billedet tilføjes.</value>
+  </data>
+  <data name="InsertImageDialogView_Right" xml:space="preserve">
+    <value>Indsæt billedet til højre</value>
+  </data>
+  <data name="InsertImageDialogView_RightDescription" xml:space="preserve">
+    <value>Udvider lærredet mod højre, før billedet tilføjes.</value>
+  </data>
+  <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
+    <value>Piltype</value>
+  </data>
+  <data name="AnnotationToolbar_Blur" xml:space="preserve">
+    <value>Sløring</value>
+  </data>
+  <data name="AnnotationToolbar_Bluramount" xml:space="preserve">
+    <value>Mængde sløring</value>
+  </data>
+  <data name="AnnotationToolbar_Bordercolor" xml:space="preserve">
+    <value>Kantfarve</value>
+  </data>
+  <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
+    <value>Kantstil</value>
+  </data>
+  <data name="AnnotationToolbar_Color" xml:space="preserve">
+    <value>Farve</value>
+  </data>
+  <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
+    <value>Hjørneradius</value>
+  </data>
+  <data name="AnnotationToolbar_Cursortype" xml:space="preserve">
+    <value>Markørtype</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteallShiftDelete" xml:space="preserve">
+    <value>Fjern alle (Skift+Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_DeleteDelete" xml:space="preserve">
+    <value>Fjern (Delete)</value>
+  </data>
+  <data name="AnnotationToolbar_Effectstrength" xml:space="preserve">
+    <value>Effektstyrke</value>
+  </data>
+  <data name="AnnotationToolbar_Exit" xml:space="preserve">
+    <value>Afslut</value>
+  </data>
+  <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
+    <value>Fyldfarve</value>
+  </data>
+  <data name="AnnotationToolbar_Fontfamily" xml:space="preserve">
+    <value>Skrifttypefamilie</value>
+  </data>
+  <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
+    <value>Skriftstørrelse</value>
+  </data>
+  <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
+    <value>Vandret justering</value>
+  </data>
+  <data name="AnnotationToolbar_NewEllipsis" xml:space="preserve">
+    <value>Ny...</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetX" xml:space="preserve">
+    <value>X-forskydning</value>
+  </data>
+  <data name="AnnotationToolbar_OffsetY" xml:space="preserve">
+    <value>Y-forskydning</value>
+  </data>
+  <data name="AnnotationToolbar_Opacity" xml:space="preserve">
+    <value>Uigennemsigtighed</value>
+  </data>
+  <data name="AnnotationToolbar_OpenEllipsis" xml:space="preserve">
+    <value>Åbn...</value>
+  </data>
+  <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
+    <value>Åbn seneste</value>
+  </data>
+  <data name="AnnotationToolbar_Options" xml:space="preserve">
+    <value>Indstilling</value>
+  </data>
+  <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
+    <value>Annuller fortryd (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Save" xml:space="preserve">
+    <value>Gem</value>
+  </data>
+  <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
+    <value>Gem som...</value>
+  </data>
+  <data name="AnnotationToolbar_Shadow" xml:space="preserve">
+    <value>Skygge</value>
+  </data>
+  <data name="AnnotationToolbar_Shadowcolor" xml:space="preserve">
+    <value>Skyggefarve</value>
+  </data>
+  <data name="AnnotationToolbar_Startingnumber" xml:space="preserve">
+    <value>Startnummer</value>
+  </data>
+  <data name="AnnotationToolbar_Steptype" xml:space="preserve">
+    <value>Trintype</value>
+  </data>
+  <data name="AnnotationToolbar_Textcolor" xml:space="preserve">
+    <value>Tekstfarve</value>
+  </data>
+  <data name="AnnotationToolbar_Thickness" xml:space="preserve">
+    <value>Tykkelse</value>
+  </data>
+  <data name="AnnotationToolbar_Togglebold" xml:space="preserve">
+    <value>Skift fed</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleellipseshape" xml:space="preserve">
+    <value>Skift ellipsform</value>
+  </data>
+  <data name="AnnotationToolbar_Toggleitalic" xml:space="preserve">
+    <value>Skift kursiv stil</value>
+  </data>
+  <data name="AnnotationToolbar_ToggleshadowShadowoptionsRightclick" xml:space="preserve">
+    <value>Skift skygge
+Skyggeindstillinger (højreklik)</value>
+  </data>
+  <data name="AnnotationToolbar_Toggletail" xml:space="preserve">
+    <value>Skift hale</value>
+  </data>
+  <data name="AnnotationToolbar_UndoCtrlZ" xml:space="preserve">
+    <value>Fortryd (Ctrl+Z)</value>
+  </data>
+  <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
+    <value>Vælg farve fra skærmen</value>
+  </data>
+  <data name="EditorOptionsPanel_Close" xml:space="preserve">
+    <value>Luk</value>
+  </data>
+  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
+    <value>Tilpas værktøjslinje...</value>
+  </data>
+  <data name="EditorOptionsPanel_Options" xml:space="preserve">
+    <value>Indstilling</value>
+  </data>
+  <data name="EditorView_Auto" xml:space="preserve">
+    <value>Automatisk</value>
+  </data>
+  <data name="EditorView_Background" xml:space="preserve">
+    <value>Baggrund</value>
+  </data>
+  <data name="EditorView_Backgroundimage" xml:space="preserve">
+    <value>Baggrundsbillede</value>
+  </data>
+  <data name="EditorView_Bringforward" xml:space="preserve">
+    <value>Flyt frem</value>
+  </data>
+  <data name="EditorView_Bringtofront" xml:space="preserve">
+    <value>Flyt længst frem</value>
+  </data>
+  <data name="EditorView_BrowsebackgroundimageEllipsis" xml:space="preserve">
+    <value>Gennemse efter baggrundsbillede...</value>
+  </data>
+  <data name="EditorView_CancelEsc" xml:space="preserve">
+    <value>Annuller (Esc)</value>
+  </data>
+  <data name="EditorView_Copy" xml:space="preserve">
+    <value>Kopiér</value>
+  </data>
+  <data name="EditorView_CopyimagetoclipboardCtrlC" xml:space="preserve">
+    <value>Kopiér billede til Udklipsholder (Ctrl+C)</value>
+  </data>
+  <data name="EditorView_Cut" xml:space="preserve">
+    <value>Klip</value>
+  </data>
+  <data name="EditorView_Delete" xml:space="preserve">
+    <value>Fjern</value>
+  </data>
+  <data name="EditorView_Deleteall" xml:space="preserve">
+    <value>Fjern alle</value>
+  </data>
+  <data name="EditorView_Duplicate" xml:space="preserve">
+    <value>Duplikér</value>
+  </data>
+  <data name="EditorView_Editbackgroundcolor" xml:space="preserve">
+    <value>Rediger baggrundsfarve</value>
+  </data>
+  <data name="EditorView_Editgradientcolor1" xml:space="preserve">
+    <value>Rediger overgangsfarve 1</value>
+  </data>
+  <data name="EditorView_Editgradientcolor2" xml:space="preserve">
+    <value>Rediger overgangsfarve 2</value>
+  </data>
+  <data name="EditorView_Flatten" xml:space="preserve">
+    <value>Platta ut</value>
+  </data>
+  <data name="EditorView_Margin" xml:space="preserve">
+    <value>Marginal</value>
+  </data>
+  <data name="EditorView_Padding" xml:space="preserve">
+    <value>Polstring</value>
+  </data>
+  <data name="EditorView_Paste" xml:space="preserve">
+    <value>Indsæt</value>
+  </data>
+  <data name="EditorView_PinimagetoscreenCtrlP" xml:space="preserve">
+    <value>Fastgør billede på skærmen (Ctrl+P)</value>
+  </data>
+  <data name="EditorView_PrintimageEllipsisCtrlShiftP" xml:space="preserve">
+    <value>Udskriv billede... (Ctrl+Skift+P)</value>
+  </data>
+  <data name="EditorView_Ratio" xml:space="preserve">
+    <value>Proportion</value>
+  </data>
+  <data name="EditorView_Redo" xml:space="preserve">
+    <value>Annuller fortryd</value>
+  </data>
+  <data name="EditorView_RoundedCorner" xml:space="preserve">
+    <value>Afrundet hjørner</value>
+  </data>
+  <data name="EditorView_SaveimageasEllipsisCtrlShiftS" xml:space="preserve">
+    <value>Gem billede som... (Ctrl+Skift+S)</value>
+  </data>
+  <data name="EditorView_SaveimageCtrlS" xml:space="preserve">
+    <value>Gem billede (Ctrl+S)</value>
+  </data>
+  <data name="EditorView_Sendbackward" xml:space="preserve">
+    <value>Flyt tilbage</value>
+  </data>
+  <data name="EditorView_Sendtoback" xml:space="preserve">
+    <value>Flyt længst bak</value>
+  </data>
+  <data name="EditorView_ShadowRadius" xml:space="preserve">
+    <value>Skyggeradius</value>
+  </data>
+  <data name="EditorView_Undo" xml:space="preserve">
+    <value>Fortryd</value>
+  </data>
+  <data name="EditorView_UploadimageCtrlU" xml:space="preserve">
+    <value>Upload billede (Ctrl+U)</value>
+  </data>
+  <data name="EditorView_ZoomCtrlWheel" xml:space="preserve">
+    <value>Zoom (Ctrl + hjul)</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchimageeffectsEllipsis" xml:space="preserve">
+    <value>Søg efter billedeffekter...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Apply" xml:space="preserve">
+    <value>Anvend</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_BrowseEllipsis" xml:space="preserve">
+    <value>Gennemse...</value>
+  </data>
+  <data name="SchemaDrivenEffectDialog_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
+    <value>Begynd grupp</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit" xml:space="preserve">
+    <value>Klik, og tryk på en genvej. Tilbage eller Delete rydder den.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
+    <value>Tilpas værktøjslinje</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
+    <value>Flyt ned</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
+    <value>Flyt op</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
+    <value>Nulstil værktøjslinjen til standard</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
+    <value>Vis/skjul</value>
+  </data>
+  <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
+    <value>Tilpas til vindue</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
+    <value>Ugyldig genvejstast for {0}. Brug formater som R, Ctrl+R eller Ctrl+Skift+R.</value>
+  </data>
+  <data name="EffectBrowserPanel_RecentHint" xml:space="preserve">
+    <value>Højreklik på en effekt for at fjerne den fra Seneste.</value>
+  </data>
+  <data name="EffectBrowserPanel_FavoritesHint" xml:space="preserve">
+    <value>Højreklik på en effekt for at føje den til eller fjerne den fra Favoritter.</value>
+  </data>
+  <data name="EffectBrowserPanel_SearchCount" xml:space="preserve">
+    <value>Søg efter billedeffekter... ({0})</value>
+  </data>
+  <data name="EffectBrowserPanel_Recent" xml:space="preserve">
+    <value>Seneste</value>
+  </data>
+  <data name="EffectBrowserPanel_Favorites" xml:space="preserve">
+    <value>Favoritter</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
+    <value>Arkiv</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Select" xml:space="preserve">
+    <value>Markér</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Rectangle" xml:space="preserve">
+    <value>Rektangel</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Ellipse" xml:space="preserve">
+    <value>Ellips</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Line" xml:space="preserve">
+    <value>Linje</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
+    <value>Pil</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Freehand" xml:space="preserve">
+    <value>Frihånd</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SpeechBalloon" xml:space="preserve">
+    <value>Taleboble</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Step" xml:space="preserve">
+    <value>Trin</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Image" xml:space="preserve">
+    <value>Billede</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Cursor" xml:space="preserve">
+    <value>Markør</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Highlight" xml:space="preserve">
+    <value>Markér</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_SmartEraser" xml:space="preserve">
+    <value>Smart viskelæder</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
+    <value>Sløring</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Pixelate" xml:space="preserve">
+    <value>Pixelér</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Magnify" xml:space="preserve">
+    <value>Forstør</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Spotlight" xml:space="preserve">
+    <value>Projektør</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
+    <value>Beskær</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CutOut" xml:space="preserve">
+    <value>Klip</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Background" xml:space="preserve">
+    <value>Baggrund</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_ImageEffects" xml:space="preserve">
+    <value>Billedeffekter</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
+    <value>{0}
+Favoritbilledeffekter (højreklik)</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_AppStarting" xml:space="preserve">
+    <value>Programmet starter</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Arrow" xml:space="preserve">
+    <value>Pil</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Cross" xml:space="preserve">
+    <value>Kors</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Default" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Hand" xml:space="preserve">
+    <value>Hand</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_Help" xml:space="preserve">
+    <value>Hjælp</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_HSplit" xml:space="preserve">
+    <value>Vandret deling</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_IBeam" xml:space="preserve">
+    <value>I-bjælke</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_No" xml:space="preserve">
+    <value>Ikke tilladt</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMove2D" xml:space="preserve">
+    <value>Ingen 2D-flytning</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveHoriz" xml:space="preserve">
+    <value>Ingen vandret flytning</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_NoMoveVert" xml:space="preserve">
+    <value>Ingen lodret flytning</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanEast" xml:space="preserve">
+    <value>Panorere mod øst</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNE" xml:space="preserve">
+    <value>Panorere nordost</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNorth" xml:space="preserve">
+    <value>Panorere nord</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanNW" xml:space="preserve">
+    <value>Panorere nordvest</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSE" xml:space="preserve">
+    <value>Panorere sydost</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSouth" xml:space="preserve">
+    <value>Panorere mod syd</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanSW" xml:space="preserve">
+    <value>Panorere sydvest</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_PanWest" xml:space="preserve">
+    <value>Panorere mod vest</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeAll" xml:space="preserve">
+    <value>Skift størrelse åt alle hold</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNESW" xml:space="preserve">
+    <value>Skift størrelse nordost–sydvest</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNS" xml:space="preserve">
+    <value>Skift størrelse nord–syd</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeNWSE" xml:space="preserve">
+    <value>Skift størrelse nordvest–sydost</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_SizeWE" xml:space="preserve">
+    <value>Skift størrelse vest–øst</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_UpArrow" xml:space="preserve">
+    <value>Pil op</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_VSplit" xml:space="preserve">
+    <value>Lodret deling</value>
+  </data>
+  <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
+    <value>Ventemarkør</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Solid" xml:space="preserve">
+    <value>Heltrukken</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dash" xml:space="preserve">
+    <value>Stiplet</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_Dot" xml:space="preserve">
+    <value>Prikket</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDot" xml:space="preserve">
+    <value>Streg punkt</value>
+  </data>
+  <data name="BorderStyleDisplayConverter_DashDotDot" xml:space="preserve">
+    <value>Streg punkt punkt</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Classic" xml:space="preserve">
+    <value>Klassisk</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Modern" xml:space="preserve">
+    <value>Modern</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Double" xml:space="preserve">
+    <value>Dubbel</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Basic" xml:space="preserve">
+    <value>Grundlæggende</value>
+  </data>
+  <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
+    <value>Linje</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Left" xml:space="preserve">
+    <value>Venstre</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Center" xml:space="preserve">
+    <value>Centreret</value>
+  </data>
+  <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
+    <value>Højre</value>
+  </data>
+  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
+    <value>Husk vinduets tilstand</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
+    <value>Vis bekræftelse ved avslut</value>
+  </data>
+  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Tilpas zoom ved åbning</value>
+  </data>
+  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
+    <value>Hurtig beskæring</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Luk editoren automatisk ved opgave</value>
+  </data>
+  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Kopiér billedet automatisk til Udklipsholder</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
+    <value>Vis dialogboksen Indsæt billede</value>
+  </data>
+  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
+    <value>Vis meddelelser</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
+    <value>Farveovergang</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
+    <value>Farve</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeTransparent" xml:space="preserve">
+    <value>Gennemsigtig</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeImage" xml:space="preserve">
+    <value>Billede</value>
+  </data>
+  <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
+    <value>Skrivebordsbaggrund</value>
+  </data>
+  <data name="MainViewModel_ImageOpened" xml:space="preserve">
+    <value>Billedet blev åbnet.</value>
+  </data>
+  <data name="MainViewModel_NewImageCreated" xml:space="preserve">
+    <value>En ny billede blev oprettet.</value>
+  </data>
+  <data name="MainViewModel_ImageCropped" xml:space="preserve">
+    <value>Billedet blev beskåret.</value>
+  </data>
+  <data name="MainViewModel_ImageCutOut" xml:space="preserve">
+    <value>Billedet blev beskåret ut.</value>
+  </data>
+  <data name="MainViewModel_ImageInserted" xml:space="preserve">
+    <value>Billedet blev indsat.</value>
+  </data>
+  <data name="MainViewModel_ImageAutoCropped" xml:space="preserve">
+    <value>Billedet blev beskåret automatisk.</value>
+  </data>
+  <data name="MainViewModel_ImageResized" xml:space="preserve">
+    <value>Billedets størrelse blev ændret.</value>
+  </data>
+  <data name="MainViewModel_CanvasResized" xml:space="preserve">
+    <value>Arbejdsområdets størrelse blev ændret.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90Clockwise" xml:space="preserve">
+    <value>Billedet blev roteret 90 grader med uret.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated90CounterClockwise" xml:space="preserve">
+    <value>Billedet blev roteret 90 grader mod uret.</value>
+  </data>
+  <data name="MainViewModel_ImageRotated180" xml:space="preserve">
+    <value>Billedet blev roteret 180 grader.</value>
+  </data>
+  <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
+    <value>Billedet blev roteret {0} grader.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedHorizontally" xml:space="preserve">
+    <value>Billedet blev vendt vandret.</value>
+  </data>
+  <data name="MainViewModel_ImageFlippedVertically" xml:space="preserve">
+    <value>Billedet blev vendt lodret.</value>
+  </data>
+  <data name="MainViewModel_ImageEffectApplied" xml:space="preserve">
+    <value>Billedeffekten blev anvendt.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
+    <value>Billedet blev gemt til en fil.</value>
+  </data>
+  <data name="MainViewModel_FilePathFormat" xml:space="preserve">
+    <value>Filsti: {0}</value>
+  </data>
+  <data name="MainViewModel_SizeFormat" xml:space="preserve">
+    <value>Størrelse: {0} × {1}</value>
+  </data>
+  <data name="MainViewModel_WindowTitle" xml:space="preserve">
+    <value>ShareX – Billedredigering</value>
+  </data>
+  <data name="MainViewModel_HideToolbars" xml:space="preserve">
+    <value>Skjul værktøjslinje</value>
+  </data>
+  <data name="MainViewModel_ShowToolbars" xml:space="preserve">
+    <value>Vis værktøjslinje</value>
+  </data>
+  <data name="MainViewModel_ContinueEnter" xml:space="preserve">
+    <value>Fortsæt (Retur)</value>
+  </data>
+  <data name="MainViewModel_RunAfterCaptureTasksEnter" xml:space="preserve">
+    <value>Kør opgaver efter optagelse (Retur)</value>
+  </data>
+  <data name="MainViewModel_NoImage" xml:space="preserve">
+    <value>Intet billede</value>
+  </data>
+  <data name="MainViewModel_ImageCopiedToClipboard" xml:space="preserve">
+    <value>Billedet blev kopieret til Udklipsholder.</value>
+  </data>
+  <data name="MainViewModel_ImagePrinted" xml:space="preserve">
+    <value>Billedet blev skrevet ut.</value>
+  </data>
+  <data name="MainViewModel_ImagePinnedToScreen" xml:space="preserve">
+    <value>Billedet blev fastgjort på skærmen.</value>
+  </data>
+  <data name="MainViewModel_ImageIsUploading" xml:space="preserve">
+    <value>Billedet uploades.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
+    <value>{0} og {1} bruger samme genvejstast ({2}).</value>
+  </data>
+  <data name="EditorView_SelectBackgroundImage" xml:space="preserve">
+    <value>Vælg baggrundsbillede</value>
+  </data>
+  <data name="EditorView_OpenImage" xml:space="preserve">
+    <value>Åbn billede</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFromClipboard" xml:space="preserve">
+    <value>Det var ikke muligt at indlæse billedet fra Udklipsholder.</value>
+  </data>
+  <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
+    <value>Det var ikke muligt at indlæse billedet fra Udklipsholder.
+Udklipsholder indeholder intet billede.</value>
+  </data>
+  <data name="EditorView_UrlDoesNotPointToValidImage" xml:space="preserve">
+    <value>URL'en peger ikke på en gyldig billede.</value>
+  </data>
+  <data name="EditorView_FailedToDownloadImageFormat" xml:space="preserve">
+    <value>Det var ikke muligt at hente billedet: {0}</value>
+  </data>
+  <data name="EditorView_FileNoLongerExistsFormat" xml:space="preserve">
+    <value>Filen findes ikke længere.
+{0}</value>
+  </data>
+  <data name="EditorView_FailedToLoadImageFileFormat" xml:space="preserve">
+    <value>Det var ikke muligt at indlæse billedfilen.
+{0}</value>
+  </data>
+  <data name="EditorView_SaveImageAs" xml:space="preserve">
+    <value>Gem billede som</value>
+  </data>
+  <data name="EditorView_SelectImage" xml:space="preserve">
+    <value>Vælg billede</value>
+  </data>
+  <data name="EditorView_AchievementUnlocked" xml:space="preserve">
+    <value>Præstation låst op!</value>
+  </data>
+  <data name="EditorView_Crop" xml:space="preserve">
+    <value>Beskær</value>
+  </data>
+  <data name="EditorView_SmartPadding" xml:space="preserve">
+    <value>Smart polstring</value>
+  </data>
+  <data name="EffectBrowserPanel_Category_Manipulations" xml:space="preserve">
+    <value>Transformationer</value>
+  </data>
+  <data name="EffectBrowserPanel_Category_Adjustments" xml:space="preserve">
+    <value>Justeringer</value>
+  </data>
+  <data name="EffectBrowserPanel_Category_Filters" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="EffectBrowserPanel_Category_Drawings" xml:space="preserve">
+    <value>Tegninger</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_alpha" xml:space="preserve">
+    <value>Alfa</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_auto_contrast" xml:space="preserve">
+    <value>Automatisk kontrast</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_black_and_white" xml:space="preserve">
+    <value>Sort-hvid</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_brightness" xml:space="preserve">
+    <value>Lysstyrke</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_channel_swap" xml:space="preserve">
+    <value>Skift kanaler</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_clarity" xml:space="preserve">
+    <value>Klarhed</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_color_balance" xml:space="preserve">
+    <value>Farvebalance</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_colorize" xml:space="preserve">
+    <value>Farvelæg</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_color_matrix" xml:space="preserve">
+    <value>Farvematrix</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_contrast" xml:space="preserve">
+    <value>Kontrast</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_cross_process" xml:space="preserve">
+    <value>Krydsfremkaldelse</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_dehaze" xml:space="preserve">
+    <value>Fjern dis</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_duotone_gradient_map" xml:space="preserve">
+    <value>Duoton / Overgangskort</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_exposure" xml:space="preserve">
+    <value>Eksponering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_film_emulation" xml:space="preserve">
+    <value>Filmemulering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_gamma" xml:space="preserve">
+    <value>Gamma</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_grayscale" xml:space="preserve">
+    <value>Gråtoner</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_hue" xml:space="preserve">
+    <value>Nuance</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_invert" xml:space="preserve">
+    <value>Invertér</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_levels" xml:space="preserve">
+    <value>Nivåer</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_lomo" xml:space="preserve">
+    <value>Lomo</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_polaroid" xml:space="preserve">
+    <value>Polaroid</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_posterize" xml:space="preserve">
+    <value>Posteriser</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_replace_color" xml:space="preserve">
+    <value>Erstat farve</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_saturation" xml:space="preserve">
+    <value>Mætning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_sepia" xml:space="preserve">
+    <value>Sepia</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_shadows_highlights" xml:space="preserve">
+    <value>Skygger / Højlys</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_solarize" xml:space="preserve">
+    <value>Solarisering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_split_toning" xml:space="preserve">
+    <value>Delad toning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_temperature_tint" xml:space="preserve">
+    <value>Temperatur / Farvetone</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_threshold" xml:space="preserve">
+    <value>Tærskelværdi</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_vibrance" xml:space="preserve">
+    <value>Lyster</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_confetti" xml:space="preserve">
+    <value>Konfetti</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_background" xml:space="preserve">
+    <value>Baggrund</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_background_image" xml:space="preserve">
+    <value>Baggrundsbillede</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_checkerboard" xml:space="preserve">
+    <value>Skakmønster</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_image" xml:space="preserve">
+    <value>Billede</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_line" xml:space="preserve">
+    <value>Linje</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_particles" xml:space="preserve">
+    <value>Partikler</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_shape" xml:space="preserve">
+    <value>Form</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_draw_text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_fake_cursor" xml:space="preserve">
+    <value>Falsk markør</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_gradient_overlay" xml:space="preserve">
+    <value>Overgangsoverlejring</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_snowflakes" xml:space="preserve">
+    <value>Snefnug</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_text_watermark" xml:space="preserve">
+    <value>Tekstvandmærke</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_add_noise" xml:space="preserve">
+    <value>Tilføj brus</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_anaglyph_3d" xml:space="preserve">
+    <value>Anaglyf 3D</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_anamorphic_lens_flare" xml:space="preserve">
+    <value>Anamorfisk linseoverstråling</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_anime_speed_lines" xml:space="preserve">
+    <value>Anime-hastighedslinjer</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_art_deco_border" xml:space="preserve">
+    <value>Art déco-ramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_ascii_art" xml:space="preserve">
+    <value>ASCII-kunst</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_bevel" xml:space="preserve">
+    <value>Fasning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_block_glitch" xml:space="preserve">
+    <value>Blokforstyrrelse / Databending</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_blood_splash" xml:space="preserve">
+    <value>Blodstænk</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_bloom" xml:space="preserve">
+    <value>Lysspredning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_blueprint_drawing" xml:space="preserve">
+    <value>Tegneskitse</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_blur" xml:space="preserve">
+    <value>Sløring</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_border" xml:space="preserve">
+    <value>Kant</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_brick_wall_border" xml:space="preserve">
+    <value>Murstenramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_candy_cane_border" xml:space="preserve">
+    <value>Bolsjestangsramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_cartoon_sticker_cutout" xml:space="preserve">
+    <value>Beskåret tegnet dekal</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_celtic_knot_border" xml:space="preserve">
+    <value>Keltisk knutram</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_chain_link_border" xml:space="preserve">
+    <value>Kædeledsramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_chalk_drawing" xml:space="preserve">
+    <value>Kridtstreger</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_chromatic_aberration" xml:space="preserve">
+    <value>Kromatisk aberration</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_chrome_metallic_border" xml:space="preserve">
+    <value>Kromad metallram</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_circuit_board_border" xml:space="preserve">
+    <value>Printkortramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_claymation_texture" xml:space="preserve">
+    <value>Leranimationstextur</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_clouds" xml:space="preserve">
+    <value>Skyer</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_color_depth" xml:space="preserve">
+    <value>Farvedybde</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_color_halftone" xml:space="preserve">
+    <value>Farveraster</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_color_splash" xml:space="preserve">
+    <value>Farvestænk</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_convolution_matrix" xml:space="preserve">
+    <value>Konvolutionsmatrix</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_crimson_border" xml:space="preserve">
+    <value>Karmosinrød ramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_crosshatch" xml:space="preserve">
+    <value>Krydsskravering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_crt" xml:space="preserve">
+    <value>CRT</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_crystalize_shards" xml:space="preserve">
+    <value>Krystalliserede skår</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_crystal_prism" xml:space="preserve">
+    <value>Kristallprisma</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_cyanotype" xml:space="preserve">
+    <value>Cyanotypi</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_datamosh_smear" xml:space="preserve">
+    <value>Datamosh-udtværing</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_diamond_pixelate" xml:space="preserve">
+    <value>Rombepixelering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_disposable_camera" xml:space="preserve">
+    <value>Engangskamera</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_dithering" xml:space="preserve">
+    <value>Rasterisering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_dot_matrix" xml:space="preserve">
+    <value>Punktmatrix</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_double_exposure" xml:space="preserve">
+    <value>Dobbelteksponering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_dream_glow" xml:space="preserve">
+    <value>Drømmende glød</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_edge_detect" xml:space="preserve">
+    <value>Kantregistrering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_edge_feather" xml:space="preserve">
+    <value>Blødgør op kanter</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_emboss" xml:space="preserve">
+    <value>Relief</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_embroidery" xml:space="preserve">
+    <value>Broderi</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_engraving" xml:space="preserve">
+    <value>Gravyr</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_etched_glass" xml:space="preserve">
+    <value>Ætset glas</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_fake_hair" xml:space="preserve">
+    <value>Falsk hår</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_film_grain" xml:space="preserve">
+    <value>Filmkorn</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_film_strip_frame" xml:space="preserve">
+    <value>Filmstrimmelramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_frosted_glass_ice_edges" xml:space="preserve">
+    <value>Frostet glas + Iskanter</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_frosted_glass" xml:space="preserve">
+    <value>Frostet glas</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_frost_ice_border" xml:space="preserve">
+    <value>Frost- og isram</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_gaussian_blur" xml:space="preserve">
+    <value>Gaussisk sløring</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_ghost_trail" xml:space="preserve">
+    <value>Spøgelsesspor</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_glare" xml:space="preserve">
+    <value>Blænding</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_glitch_shift" xml:space="preserve">
+    <value>Forstyrrelsesforskydning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_glow" xml:space="preserve">
+    <value>Glød</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_golden_border" xml:space="preserve">
+    <value>Guldram</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_gradient_fade_border" xml:space="preserve">
+    <value>Tonet overgangsramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_halation" xml:space="preserve">
+    <value>Lysstråler</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_halftone" xml:space="preserve">
+    <value>Halvton</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_heat_haze_refraction" xml:space="preserve">
+    <value>Brydning i varmedis</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_heat_map" xml:space="preserve">
+    <value>Varmekort</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_hexagonal_pixelate" xml:space="preserve">
+    <value>Sekskantet pixelering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_hologram_scan" xml:space="preserve">
+    <value>Hologramskanning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_holographic_foil_shimmer" xml:space="preserve">
+    <value>Holografisk folieskær</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_infrared_false_color" xml:space="preserve">
+    <value>Infrarød falsk farve</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_ink_splatter_drips" xml:space="preserve">
+    <value>Blækstænk + Dråber</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_inner_shadow" xml:space="preserve">
+    <value>Indre skygge</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_jpeg_artifact" xml:space="preserve">
+    <value>JPEG-artefakt</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_lava_molten_border" xml:space="preserve">
+    <value>Smeltet lavakant</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_lens_blur" xml:space="preserve">
+    <value>Objektivsløring (bokeh)</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_light_leak" xml:space="preserve">
+    <value>Lysudslip</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_liquid_glass" xml:space="preserve">
+    <value>Flydende glas</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_liquid_mercury" xml:space="preserve">
+    <value>Flydende kvicksilver</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_luminance_contour_lines" xml:space="preserve">
+    <value>Luminanskonturlinjer</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_macos_window" xml:space="preserve">
+    <value>macOS</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_marble_border" xml:space="preserve">
+    <value>Marmorram</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_matrix_digital_rain" xml:space="preserve">
+    <value>Digitalt Matrix-regn</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_mean_removal" xml:space="preserve">
+    <value>Fjern gennemsnit</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_median_filter" xml:space="preserve">
+    <value>Medianfilter</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_minecraft_grass" xml:space="preserve">
+    <value>Minecraft-græs</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_miniature" xml:space="preserve">
+    <value>Miniature</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_mosaic_polygon" xml:space="preserve">
+    <value>Mosaikpolygon</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_mosaic_tile_border" xml:space="preserve">
+    <value>Mosaikfliseramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_motion_blur" xml:space="preserve">
+    <value>Bevægelsessløring</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_nebula_starfield" xml:space="preserve">
+    <value>Stjernetågefelt</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_neon_edge_glow" xml:space="preserve">
+    <value>Neonkantglød</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_neon_glow_border" xml:space="preserve">
+    <value>Glødende neonram</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_night_vision" xml:space="preserve">
+    <value>Nattesyn</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_oil_paint" xml:space="preserve">
+    <value>Oljemålning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_oil_slick_interference" xml:space="preserve">
+    <value>Oliefilmsinterferens</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_old_camera_flash_burn" xml:space="preserve">
+    <value>Gammel kamerablitzskade</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_ornate_scroll_border" xml:space="preserve">
+    <value>Udsmykket slyngeramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_outline" xml:space="preserve">
+    <value>Kontur</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_palette_map" xml:space="preserve">
+    <value>Paletkort</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_paper_stencil_mask" xml:space="preserve">
+    <value>Papirskabelonmaske</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_pencil_sketch" xml:space="preserve">
+    <value>Blyantskitse</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_perlin_noise" xml:space="preserve">
+    <value>Perlin-brus</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_pixelate" xml:space="preserve">
+    <value>Pixelér</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_pixel_sorting" xml:space="preserve">
+    <value>Pixelsortering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_plasma_energy_arcs" xml:space="preserve">
+    <value>Plasmaenergibågar</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_pointillism" xml:space="preserve">
+    <value>Pointillism</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_polaroid_frame" xml:space="preserve">
+    <value>Polaroid-ramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_pop_art_grid" xml:space="preserve">
+    <value>Popkunst-gitter</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_radial_rainbow" xml:space="preserve">
+    <value>Radiell regnbåge</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rainbow_border" xml:space="preserve">
+    <value>Regnbueramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rainy_window" xml:space="preserve">
+    <value>Regnfuldt vindue</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_reflection" xml:space="preserve">
+    <value>Refleksion</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_remove_background" xml:space="preserve">
+    <value>Fjern baggrund</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_retro_sunset" xml:space="preserve">
+    <value>Retro-solnedgang</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rgb_split" xml:space="preserve">
+    <value>RGB-deling</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_riso_print" xml:space="preserve">
+    <value>Riso-tryk</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rope_border" xml:space="preserve">
+    <value>Repram</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rust_corrosion" xml:space="preserve">
+    <value>Rust / Korrosion</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_scanline" xml:space="preserve">
+    <value>Scanningslinjer</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_shadow" xml:space="preserve">
+    <value>Skygge</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_sharpen" xml:space="preserve">
+    <value>Skarphed</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_slice" xml:space="preserve">
+    <value>Skive</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_smoke_overlay" xml:space="preserve">
+    <value>Røgoverlejring</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_smooth" xml:space="preserve">
+    <value>Udjævn</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_snowfall_depth_fog" xml:space="preserve">
+    <value>Snefald + Dyb tåge</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_sobel_edge" xml:space="preserve">
+    <value>Sobel-kant</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_soft_diffusion" xml:space="preserve">
+    <value>Blød diffusion</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_spin_blur" xml:space="preserve">
+    <value>Rotationssløring</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_stained_glass_border" xml:space="preserve">
+    <value>Ramme af blyindfattet glas</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_stained_glass" xml:space="preserve">
+    <value>Blyindfattet glas</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_starfield_border" xml:space="preserve">
+    <value>Stjernefeltramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_star_filter" xml:space="preserve">
+    <value>Stjernefilter</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_stripe_overlay" xml:space="preserve">
+    <value>Stribeoverlejring</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_surface_blur" xml:space="preserve">
+    <value>Overfladesløring</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_thermal_vision" xml:space="preserve">
+    <value>Varmekamera</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_tilt_shift" xml:space="preserve">
+    <value>Miniatureeffekt</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_torn_edge" xml:space="preserve">
+    <value>Flænset kant</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_triangle_pixelate" xml:space="preserve">
+    <value>Trekantpixelering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_tv_static" xml:space="preserve">
+    <value>TV-brus</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_unsharp_mask" xml:space="preserve">
+    <value>Sløret mask</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_vhs_tape_damage" xml:space="preserve">
+    <value>VHS-bandskada</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_vignette" xml:space="preserve">
+    <value>Vinjettering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_vintage_print_damage" xml:space="preserve">
+    <value>Ældre trykskade</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_voronoi_mosaic" xml:space="preserve">
+    <value>Voronoi-mosaik</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_watercolor_border" xml:space="preserve">
+    <value>Akvarellram</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_watercolor_kuwahara" xml:space="preserve">
+    <value>Akvarell / Kuwahara</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_wave_edge" xml:space="preserve">
+    <value>Bølgekant</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_wet_plate_collodion" xml:space="preserve">
+    <value>Vådpladekollodium</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_windows11_window" xml:space="preserve">
+    <value>Windows 11</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_wind_streaks" xml:space="preserve">
+    <value>Vindstrøg</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_woodcut_print" xml:space="preserve">
+    <value>Træsnit</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_wooden_frame" xml:space="preserve">
+    <value>Træramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_x_ray_scan" xml:space="preserve">
+    <value>Røntgenscanning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_zigzag_border" xml:space="preserve">
+    <value>Zigzagramme</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_zoom_blur" xml:space="preserve">
+    <value>Zoomsløring</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_auto_crop_image" xml:space="preserve">
+    <value>Beskær billede automatisk</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_crop_image" xml:space="preserve">
+    <value>Beskær billede</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_cylinder_wrap" xml:space="preserve">
+    <value>Cylinderombrydning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_displacement_map" xml:space="preserve">
+    <value>Forskydningskort</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_fisheye_lens" xml:space="preserve">
+    <value>Fisheye-objektiv</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_flip_horizontal" xml:space="preserve">
+    <value>Vend vandret</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_flip_vertical" xml:space="preserve">
+    <value>Vend lodret</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_fold_crease_warp" xml:space="preserve">
+    <value>Veckdeformering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_glass_sphere" xml:space="preserve">
+    <value>Glaskula</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_kaleidoscope" xml:space="preserve">
+    <value>Kalejdoskop</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_liquify_push_smudge" xml:space="preserve">
+    <value>Gør flydende: skjut / Udtvær</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_mirror_tiles" xml:space="preserve">
+    <value>Spejlfliser</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_page_curl" xml:space="preserve">
+    <value>Sidekrumning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_perspective_warp" xml:space="preserve">
+    <value>Perspektivforvrængning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_pinch_bulge" xml:space="preserve">
+    <value>Indsnævring / udbuling</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_polar_warp" xml:space="preserve">
+    <value>Polær deformering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_resize_canvas" xml:space="preserve">
+    <value>Skift størrelse på arbejdsområde</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_resize_image" xml:space="preserve">
+    <value>Skift billedstørrelse</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_ripple_refraction" xml:space="preserve">
+    <value>Vågbrytning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rotate_180" xml:space="preserve">
+    <value>Rotér 180°</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rotate_3d_box" xml:space="preserve">
+    <value>3D-boks / Extrudering</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rotate_3d" xml:space="preserve">
+    <value>Rotér i 3D</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rotate_90_counter_clockwise" xml:space="preserve">
+    <value>Rotér 90° mod uret</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rotate_90_clockwise" xml:space="preserve">
+    <value>Rotér 90° med uret</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rotate_custom_angle" xml:space="preserve">
+    <value>Rotér</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_rounded_corners" xml:space="preserve">
+    <value>Afrundede hjørner</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_scale" xml:space="preserve">
+    <value>Skalér</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_skew" xml:space="preserve">
+    <value>Forskydning</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_symmetry" xml:space="preserve">
+    <value>Symmetri</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_tile_repeat" xml:space="preserve">
+    <value>Gentag fliser</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_tile_shuffle" xml:space="preserve">
+    <value>Blandt fliser</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_twirl" xml:space="preserve">
+    <value>Virvel</value>
+  </data>
+  <data name="EffectBrowserPanel_Effect_wave_distortion" xml:space="preserve">
+    <value>Bølgeforvrængning</value>
+  </data>
+</root>

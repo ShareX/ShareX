@@ -56,6 +56,8 @@ namespace ShareX
         Arabic,
         [Description("Čeština (Czech)")]
         Czech,
+        [Description("Dansk (Danish)")]
+        Danish,
         [Description("Nederlands (Dutch)")]
         Dutch,
         [Description("English")]

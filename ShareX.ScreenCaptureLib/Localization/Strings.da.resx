@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="FFmpegOptionsWindow_Title" xml:space="preserve">
+    <value>ShareX – Indstillinger for skærmoptagelse</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Screen_recording" xml:space="preserve">
+    <value>Skærmoptagelse</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Description" xml:space="preserve">
+    <value>Vælg, hvad der skal optages, og hvordan FFmpeg skal kode det.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Reset_encoding_options" xml:space="preserve">
+    <value>Nulstil kodningsindstillinger</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Reset_options" xml:space="preserve">
+    <value>Nulstil indstillinger</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Reset_all_options" xml:space="preserve">
+    <value>Nulstil alle indstillinger?</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Reset" xml:space="preserve">
+    <value>Nulstil</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Sources" xml:space="preserve">
+    <value>Kilder</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Audio" xml:space="preserve">
+    <value>Lyd</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Advanced" xml:space="preserve">
+    <value>Avanceret</value>
+  </data>
+  <data name="FFmpegOptionsWindow_FFmpeg_executable" xml:space="preserve">
+    <value>Eksekverbar FFmpeg-fil</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Use_custom_path" xml:space="preserve">
+    <value>Brug en brugerdefineret FFmpeg-sti</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Path_to_ffmpeg" xml:space="preserve">
+    <value>Sti til ffmpeg.exe</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Browse_for_ffmpeg" xml:space="preserve">
+    <value>Gennemse efter ffmpeg.exe</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Capture_sources" xml:space="preserve">
+    <value>Optagelseskilder</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Refresh_devices" xml:space="preserve">
+    <value>Opdater enheder</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Video_source" xml:space="preserve">
+    <value>Videokilde</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Choose_video_source" xml:space="preserve">
+    <value>Vælg en videokilde</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Audio_source" xml:space="preserve">
+    <value>Lydkilde</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Choose_audio_source" xml:space="preserve">
+    <value>Vælg en lydkilde</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Looking_for_devices" xml:space="preserve">
+    <value>Søger efter optagelsesenheder...</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Get_recorder_devices" xml:space="preserve">
+    <value>Hent optagelsesenheder</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Video_encoder" xml:space="preserve">
+    <value>Videoencoder</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Encoder_settings" xml:space="preserve">
+    <value>Encoderindstillinger</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset" xml:space="preserve">
+    <value>Forudindstilling</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Faster_presets_hint" xml:space="preserve">
+    <value>Hurtigere forudindstillinger koder mere pålideligt i realtid men opretter større filer.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Slow_presets_warning" xml:space="preserve">
+    <value>Langsomme forudindstillinger kan føre til mistede billedrammer under skærmoptagelse. Hurtig eller hurtigere anbefales.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Use_target_bitrate" xml:space="preserve">
+    <value>Brug en målbithastighed i stedet for konstant kvalitet</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Constant_rate_factor" xml:space="preserve">
+    <value>Konstant kvalitetsfaktor (CRF)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_CRF_hint" xml:space="preserve">
+    <value>Lavere værdier giver højere kvalitet og større filer. 0 er tabsfrit; ShareX standardværdi er 28.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Target_bitrate" xml:space="preserve">
+    <value>Målbithastighed (kbit/s)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Variable_bitrate_quality" xml:space="preserve">
+    <value>Kvalitet for variabel bithastighed</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Variable_bitrate_hint" xml:space="preserve">
+    <value>1 giver højeste kvalitet og størst fil; 31 giver laveste kvalitet og mindst fil.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Tune" xml:space="preserve">
+    <value>Finjustering</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_mode" xml:space="preserve">
+    <value>Palettilstand</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Dithering_mode" xml:space="preserve">
+    <value>Rastertilstand</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Bayer_scale" xml:space="preserve">
+    <value>Bayer-skala</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Bayer_scale_hint" xml:space="preserve">
+    <value>Højere værdier giver tydeligere farvebånd. Standardværdien er 2.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Usage" xml:space="preserve">
+    <value>Brug</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Quality" xml:space="preserve">
+    <value>Kvalitet</value>
+  </data>
+  <data name="FFmpegOptionsWindow_No_additional_settings" xml:space="preserve">
+    <value>Encoderen kræver ingen yderligere indstillinger.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Audio_encoder" xml:space="preserve">
+    <value>Lydencoder</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Animated_formats_no_audio" xml:space="preserve">
+    <value>Animerede billedformater indeholder ikke lyd. Vælg et videoformat for at aktivere lydkodning.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Bitrate" xml:space="preserve">
+    <value>Bithastighed (kbit/s)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Lower_values_higher_quality" xml:space="preserve">
+    <value>Lavere værdier giver højere kvalitet.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Additional_arguments" xml:space="preserve">
+    <value>Yderligere argumenter</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Arguments_example" xml:space="preserve">
+    <value>Eksempel: -vf scale=1920:-2</value>
+  </data>
+  <data name="FFmpegOptionsWindow_FFmpeg_command" xml:space="preserve">
+    <value>FFmpeg-kommando</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Use_custom_commands" xml:space="preserve">
+    <value>Brug brugerdefinerede kommandoer</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Custom_command_placeholders" xml:space="preserve">
+    <value>Pladsholdere til brugerdefinerede kommandoer: $fps$, $area_x$, $area_y$, $area_width$, $area_height$, $cursor$, $duration$ og $output$.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_FFmpeg_not_found" xml:space="preserve">
+    <value>FFmpeg blev ikke fundet på {0}</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Device_enumeration_failed" xml:space="preserve">
+    <value>FFmpeg kunne ikke registrere DirectShow-enheder. Skrivebordsoptagelse er stadig tilgængelig.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_One_device_found" xml:space="preserve">
+    <value>{0} DirectShow-enhed blev fundet.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Multiple_devices_found" xml:space="preserve">
+    <value>{0} DirectShow-enheder blev fundet.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_No_devices_found" xml:space="preserve">
+    <value>Der blev ikke fundet nogen DirectShow-enheder. Skrivebordsoptagelse er klar.</value>
+  </data>
+  <data name="ScreenRecordWindow_Title" xml:space="preserve">
+    <value>ShareX – Skærmoptagelse</value>
+  </data>
+  <data name="ScreenRecordWindow_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ScreenRecordWindow_Pause" xml:space="preserve">
+    <value>Sæt på pause</value>
+  </data>
+  <data name="ScreenRecordWindow_Abort" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="ScreenRecordWindow_Abort_this_recording" xml:space="preserve">
+    <value>Afbryd denne optagelse?</value>
+  </data>
+  <data name="ScreenRecordWindow_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
+    <value>ShareX – Rullende optagelse</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capture" xml:space="preserve">
+    <value>Tag billede...</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
+    <value>Upload/gem</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Copy" xml:space="preserve">
+    <value>Kopiér</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Options" xml:space="preserve">
+    <value>Indstillinger...</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Help" xml:space="preserve">
+    <value>Hjælp for rullende skærmbilleder</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Select_scrollable_window" xml:space="preserve">
+    <value>Vælg et rulbart vindue for at begynde</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Ready" xml:space="preserve">
+    <value>Klar</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Options_heading" xml:space="preserve">
+    <value>Indstillinger for rullende optagelse</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Start_delay" xml:space="preserve">
+    <value>Startforsinkelse:</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Milliseconds" xml:space="preserve">
+    <value>ms</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Scroll_delay" xml:space="preserve">
+    <value>Rulleforsinkelse:</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Scroll_method" xml:space="preserve">
+    <value>Rullemetode:</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Scroll_amount" xml:space="preserve">
+    <value>Rullemængde:</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Times" xml:space="preserve">
+    <value>gange</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Automatically_scroll_to_top" xml:space="preserve">
+    <value>Rul automatisk længst op</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Auto_ignore_bottom_edge" xml:space="preserve">
+    <value>Ignorér nederste kant automatisk</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Show_capture_region" xml:space="preserve">
+    <value>Vis område for rullende optagelse</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Automatically_upload_save" xml:space="preserve">
+    <value>Upload/gem automatisk</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="ScrollingCaptureWindow_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Stopping_capture" xml:space="preserve">
+    <value>Stopper optagelse...</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Selection_cancelled" xml:space="preserve">
+    <value>Valg af vindue blev annulleret</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capturing" xml:space="preserve">
+    <value>Tager billede...</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capture_failed" xml:space="preserve">
+    <value>Optagelsen mislykkedes</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capture_partially_successful" xml:space="preserve">
+    <value>Optagelsen lykkedes delvis</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capture_successful" xml:space="preserve">
+    <value>Optagelsen lykkedes</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
+    <value>Annuller opgave (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
+    <value>Upload billede (Ctrl + U)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>Markeringsfarve...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>Skift til tegneværktøjet, når en form er markeret</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Størrelse på beskæringseffekt:</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>Tilføj billedeffekter...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
+    <value>Vend vandret</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>Tilstand med flere områder</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>Pixelstørrelse:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>Billedstørrelse...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
+    <value>Fjern</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
+    <value>Anvend ændringer og fortsæt opgaven (Retur)</value>
+  </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>Åbn websiden for genvejstaster...</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>Duplikér</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
+    <value>Rediger</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Billedet blev gemt</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Luk editoren automatisk ved opgave</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>Fortryd</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>Annuller fortryd</value>
+  </data>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>Billedredigering</value>
+  </data>
+  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
+    <value>Områdeoptagelse</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>Område med fast størrelse</value>
+  </data>
+  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Udklipsholder indeholder intet billede.</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>Ny linje: Ctrl + Retur, OK: Retur</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>Tag billede af skærm</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>Flyt bagerst</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
+    <value>Tag billede af aktiv skærm</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>Flyt frem</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Rotér 90° mod uret</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+    <value>Interpolationstilstand:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>Bredde:</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Klik for at stoppe optagelsen.</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ShapeManager_CenterPoints" xml:space="preserve">
+    <value>Midtpunkter:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>Indstillinger</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>Kantstil:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>Tag billede</value>
+  </data>
+  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
+    <value>X: {0} Y: {1} B: {2} H: {3}</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
+    <value>Åbn billedfil...</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Behandler...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>Venter...</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>Rotér 90° med uret</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>Luk (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>Værdi for første trin:</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Markér</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>Forstørrelsesstyrke:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>Hjørneradius:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>Udskriv billede... (Ctrl + P)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>Vis FPS</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>Ny linje: Retur, OK: Ctrl + Retur</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>Markørtype:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>Skygge</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>Kvadratisk forstørrelsesglas</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Fortsæt</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>Redigeringens starttilstand:</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>Billedet blev gemt</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>Pilespidsens retning:</value>
+  </data>
+  <data name="ShapeManager_FreehandSmoothing" xml:space="preserve">
+    <value>Udjævning:</value>
+  </data>
+  <data name="ShapeManager_FreehandCurveInterpolation" xml:space="preserve">
+    <value>Kurveinterpolation</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>Tag billede af hele skærmen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>Tag billeder af områder</value>
+  </data>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>Lys rektangeloptagelse</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
+    <value>Gem billede (Ctrl + S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
+    <value>Nyt billede...</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>Sløring</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>Koder...</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>Sløringsstyrke:</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>Billedet uploades</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>Aktivér animationer</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>Flyt tilbage</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>Højde:</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>Billedet blev kopieret</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>Fyldfarve...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
+    <value>Gem billede som... (Ctrl + Skift + S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>Fortsæt opgaven (mellemrum eller højreklik)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
+    <value>Skriftstørrelse:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
+    <value>Arbejdsområdets størrelse...</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>Menuikonstørrelse:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
+    <value>Vend lodret</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
+    <value>Beskær billede automatisk...</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>Pixelér</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>Lås menu</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>Flyt længst frem</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>Rotér 180°</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Brug lyse størrelseshåndtag</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>Tag billede af Seneste område</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
+    <value>Indsæt billede fra skærmen...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
+    <value>Fjern alle</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Kopiér billedet automatisk til Udklipsholder</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>Kantstørrelse:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
+    <value>Redigeringsmenu</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
+    <value>Indsæt billede/tekst</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
+    <value>Beskær billede...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>Kantfarve...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>Vis forstørrelsesglas</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Sæt på pause</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
+    <value>ShareX – Billedredigering</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>Skyggefarve...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>Skift til markeringsværktøjet, når formen er tegnet</value>
+  </data>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>Gennemsigtig rektangeloptagelse</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>Vis oplysninger om position og størrelse</value>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>Trintype:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>Kopiér billede til Udklipsholder (Ctrl + C)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_center_crosshair" xml:space="preserve">
+    <value>Vis trådkors i midten</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>Vis trådkors over hele skærmen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
+    <value>Billede</value>
+  </data>
+  <data name="RectangleRegion_GetColorPickerText" xml:space="preserve">
+    <value>RGB: {0}, {1}, {2}
+Hex: {3}
+X: {4} Y: {5}</value>
+    <comment>@Invariant</comment>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>Antal pixels i forstørrelsesglasset:</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>Vinduet lukkes før websiden for genvejstaster åbnes. Vil du fortsætte?</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>FPS-grænse:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
+    <value>Indsæt billedfil...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Tilpas zoom ved åbning</value>
+  </data>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>Tip: Du kan panorere billedet ved at holde den midterste museknap nede og trække.</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>Kør opgaver efter optagelse (Retur)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>Husk menutilstand</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Beskæringseffekt:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>Pixelstørrelse i forstørrelsesglasset:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>Værktøjsindstillinger</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Klik for at starte optagelsen.</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>Billedets URL</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>Der er ikke-gemte ændringer.
+
+Vil du gemme ændringerne, før billededitoren lukkes?</value>
+  </data>
+  <data name="CutOutBackgroundColor" xml:space="preserve">
+    <value>Baggrundsfarve for beskæring...</value>
+  </data>
+  <data name="RulerAngle" xml:space="preserve">
+    <value>Vinkel</value>
+  </data>
+  <data name="RulerPerimeter" xml:space="preserve">
+    <value>Omkreds</value>
+  </data>
+  <data name="RulerArea" xml:space="preserve">
+    <value>Areal</value>
+  </data>
+  <data name="RulerWidth" xml:space="preserve">
+    <value>Bredde</value>
+  </data>
+  <data name="RulerHeight" xml:space="preserve">
+    <value>Højde</value>
+  </data>
+  <data name="RulerDistance" xml:space="preserve">
+    <value>Afstand</value>
+  </data>
+  <data name="RulerRight" xml:space="preserve">
+    <value>Højre</value>
+  </data>
+  <data name="RulerBottom" xml:space="preserve">
+    <value>Nederste kant</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_ultra_fast" xml:space="preserve">
+    <value>Ultrahurtig</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_super_fast" xml:space="preserve">
+    <value>Superhurtig</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_very_fast" xml:space="preserve">
+    <value>Meget hurtig</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_faster" xml:space="preserve">
+    <value>Hurtigere</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_fast" xml:space="preserve">
+    <value>Hurtig</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_medium" xml:space="preserve">
+    <value>Mellem</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_slow" xml:space="preserve">
+    <value>Langsom</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_slower" xml:space="preserve">
+    <value>Langsommere</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_very_slow" xml:space="preserve">
+    <value>Meget langsom</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_placebo" xml:space="preserve">
+    <value>Placebo</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_fastest_lowest_quality" xml:space="preserve">
+    <value>Hurtigst (lavest kvalitet)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_faster_lower_quality" xml:space="preserve">
+    <value>Hurtigere (lavere kvalitet)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_fast_low_quality" xml:space="preserve">
+    <value>Hurtig (lav kvalitet)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_medium_medium_quality" xml:space="preserve">
+    <value>Mellem (mellem kvalitet)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_slow_good_quality" xml:space="preserve">
+    <value>Langsom (god kvalitet)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_slower_better_quality" xml:space="preserve">
+    <value>Langsommere (bedre kvalitet)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_slowest_best_quality" xml:space="preserve">
+    <value>Langsomst (bedst kvalitet)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_high_quality" xml:space="preserve">
+    <value>Høj kvalitet</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_low_latency" xml:space="preserve">
+    <value>Lav latens</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_ultra_low_latency" xml:space="preserve">
+    <value>Ultralav latens</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_lossless" xml:space="preserve">
+    <value>Tabsfri</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_generic_transcoding" xml:space="preserve">
+    <value>Generel omkodning</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_ultra_low_latency_transcoding" xml:space="preserve">
+    <value>Omkodning med ultralav latens</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_low_latency_transcoding" xml:space="preserve">
+    <value>Omkodning med lav latens</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_webcam" xml:space="preserve">
+    <value>Webkamera</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_high_quality_transcoding" xml:space="preserve">
+    <value>Omkodning med høj kvalitet</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_low_latency_high_quality_transcoding" xml:space="preserve">
+    <value>Omkodning med lav latens og høj kvalitet</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_prefer_speed" xml:space="preserve">
+    <value>Prioritér hastighed</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_balanced" xml:space="preserve">
+    <value>Balanceret</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_prefer_quality" xml:space="preserve">
+    <value>Prioritér kvalitet</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_software" xml:space="preserve">
+    <value>Softwarekodning med H.264</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_software_hint" xml:space="preserve">
+    <value>Det bedste standardvalg for bred afspilningskompatibilitet.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H265_software" xml:space="preserve">
+    <value>Softwarekodning med H.265</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H265_software_hint" xml:space="preserve">
+    <value>Mindre filer end H.264, med langsommere kodning og mindre afspilningsunderstøttelse.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP8_software" xml:space="preserve">
+    <value>Softwarekodning med VP8</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP8_software_hint" xml:space="preserve">
+    <value>Opretter WebM-filer for weboptimerede arbejdsforløb.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP9_software" xml:space="preserve">
+    <value>Softwarekodning med VP9</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP9_software_hint" xml:space="preserve">
+    <value>Effektiv WebM-output med højere processorforbrug.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_MPEG4_Xvid" xml:space="preserve">
+    <value>MPEG-4/Xvid</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_MPEG4_Xvid_hint" xml:space="preserve">
+    <value>En ældre encoder for AVI-kompatibilitet.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_NVIDIA" xml:space="preserve">
+    <value>NVIDIA-kodning med H.264</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_NVIDIA_hint" xml:space="preserve">
+    <value>Bruger en understøttet NVIDIA-grafikprocessor til at reducere processorforbruget.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_NVIDIA" xml:space="preserve">
+    <value>NVIDIA-kodning med HEVC</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_NVIDIA_hint" xml:space="preserve">
+    <value>Effektiv GPU-kodning med mere begrænset afspilningskompatibilitet.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_AMD" xml:space="preserve">
+    <value>AMD-kodning med H.264</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_AMD_hint" xml:space="preserve">
+    <value>Bruger en understøttet AMD-grafikprocessor til at reducere processorforbruget.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_AMD" xml:space="preserve">
+    <value>AMD-kodning med HEVC</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_AMD_hint" xml:space="preserve">
+    <value>Effektiv GPU-kodning med mere begrænset afspilningskompatibilitet.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync" xml:space="preserve">
+    <value>H.264 Intel Quick Sync</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync_hint" xml:space="preserve">
+    <value>Bruger understøttet Intel-grafikhardware til at reducere processorforbruget.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync" xml:space="preserve">
+    <value>HEVC Intel Quick Sync</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync_hint" xml:space="preserve">
+    <value>Effektiv Intel-hardwarekodning med mere begrænset afspilningskompatibilitet.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_GIF" xml:space="preserve">
+    <value>Animeret GIF</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_GIF_hint" xml:space="preserve">
+    <value>Bredt understøttet, men opretter større filer og indeholder ingen lyd.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_WebP" xml:space="preserve">
+    <value>Animeret WebP</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_WebP_hint" xml:space="preserve">
+    <value>Kompakte animerede billeder uden lydspor.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_PNG" xml:space="preserve">
+    <value>Animeret PNG</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_PNG_hint" xml:space="preserve">
+    <value>Animation i høj kvalitet med store filer og uden lydspor.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_video_encoding" xml:space="preserve">
+    <value>Videokodning</value>
+  </data>
+  <data name="ShapeManager_Spotlight_dim" xml:space="preserve">
+    <value>Nedtoning:</value>
+  </data>
+  <data name="ShapeManager_Spotlight_blur" xml:space="preserve">
+    <value>Sløring:</value>
+  </data>
+  <data name="ShapeManager_Spotlight_ellipse_shape" xml:space="preserve">
+    <value>Ellipsform</value>
+  </data>
+</root>

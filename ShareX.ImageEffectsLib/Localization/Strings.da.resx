@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GradientOptionsPanel_Direction" xml:space="preserve">
+    <value>Retning</value>
+  </data>
+  <data name="GradientOptionsPanel_Color_stops" xml:space="preserve">
+    <value>Farvestop</value>
+  </data>
+  <data name="GradientOptionsPanel_Add_stop" xml:space="preserve">
+    <value>Tilføj stopp</value>
+  </data>
+  <data name="GradientOptionsPanel_Remove" xml:space="preserve">
+    <value>Fjern</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Effect_options" xml:space="preserve">
+    <value>Effektindstillinger</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Effect_options_format" xml:space="preserve">
+    <value>Indstilling for {0}</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Select_an_effect" xml:space="preserve">
+    <value>Vælg en effekt for at redigere dens indstillinger.</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_No_configurable_properties" xml:space="preserve">
+    <value>Effekten har ingen konfigurerbare egenskaber.</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Edit_gradient" xml:space="preserve">
+    <value>Rediger farveovergang...</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Browse" xml:space="preserve">
+    <value>Gennemse...</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Select_property" xml:space="preserve">
+    <value>Vælg {0}</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Left_short" xml:space="preserve">
+    <value>V</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Top_short" xml:space="preserve">
+    <value>Ø</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Right_short" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Bottom_short" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Width_short" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Height_short" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_X_short" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="ImageEffectOptionsPanel_Y_short" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Title" xml:space="preserve">
+    <value>ShareX – Pak billedeffekt</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Package_preset" xml:space="preserve">
+    <value>Pak forudindstilling</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Assets_folder" xml:space="preserve">
+    <value>Ressourcemappe</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Package_file" xml:space="preserve">
+    <value>Pakkefil</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Browse" xml:space="preserve">
+    <value>Gennemse...</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Overwrite_existing" xml:space="preserve">
+    <value>Skriv over et eksisterende paket</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Open_effects_folder" xml:space="preserve">
+    <value>Åbn effektmappen</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Create_package" xml:space="preserve">
+    <value>Opret paket</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Close" xml:space="preserve">
+    <value>Luk</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Select_assets_folder" xml:space="preserve">
+    <value>Vælg mappe for effektressourcer</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Save_package" xml:space="preserve">
+    <value>Gem billedeffektpakke</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_File_type" xml:space="preserve">
+    <value>ShareX-billedeffekt</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Assets_must_be_inside" xml:space="preserve">
+    <value>Ressourcemappen skal ligge i ShareX-mappen med billedeffekter.</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Choose_package_path" xml:space="preserve">
+    <value>Vælg en filsti for paketet.</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Already_exists" xml:space="preserve">
+    <value>Der findes allerede en pakke på denne sti. Aktivér overskrivning for at erstatte den.</value>
+  </data>
+  <data name="ImageEffectPackagerWindow_Created_successfully" xml:space="preserve">
+    <value>Paketet blev oprettet.</value>
+  </data>
+  <data name="ImageEffectsConfirmationWindow_Title" xml:space="preserve">
+    <value>ShareX – Bekræftelse</value>
+  </data>
+  <data name="ImageEffectsConfirmationWindow_Continue" xml:space="preserve">
+    <value>Fortsætte?</value>
+  </data>
+  <data name="ImageEffectsConfirmationWindow_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="ImageEffectsConfirmationWindow_No" xml:space="preserve">
+    <value>Nej</value>
+  </data>
+  <data name="ImageEffectsWindow_Title" xml:space="preserve">
+    <value>ShareX – Billedeffekter</value>
+  </data>
+  <data name="ImageEffectsWindow_Title_with_preview" xml:space="preserve">
+    <value>{0} - {1} × {2} - {3} ms</value>
+  </data>
+  <data name="ImageEffectsWindow_Presets" xml:space="preserve">
+    <value>Forudindstillinger</value>
+  </data>
+  <data name="ImageEffectsWindow_New_preset" xml:space="preserve">
+    <value>Ny forudindstilling</value>
+  </data>
+  <data name="ImageEffectsWindow_Remove_preset" xml:space="preserve">
+    <value>Fjern forudindstilling</value>
+  </data>
+  <data name="ImageEffectsWindow_Duplicate_preset" xml:space="preserve">
+    <value>Duplikér forudindstilling</value>
+  </data>
+  <data name="ImageEffectsWindow_Move_up" xml:space="preserve">
+    <value>Flyt op</value>
+  </data>
+  <data name="ImageEffectsWindow_Move_down" xml:space="preserve">
+    <value>Flyt ned</value>
+  </data>
+  <data name="ImageEffectsWindow_Preset_name" xml:space="preserve">
+    <value>Navn på forudindstilling</value>
+  </data>
+  <data name="ImageEffectsWindow_Effects" xml:space="preserve">
+    <value>Effekter</value>
+  </data>
+  <data name="ImageEffectsWindow_Refresh_preview" xml:space="preserve">
+    <value>Opdater eksempelvisning</value>
+  </data>
+  <data name="ImageEffectsWindow_Custom_effect_name" xml:space="preserve">
+    <value>Brugerdefineret effektnavn</value>
+  </data>
+  <data name="ImageEffectsWindow_Add_effect" xml:space="preserve">
+    <value>Tilføj effekt</value>
+  </data>
+  <data name="ImageEffectsWindow_Remove_effect" xml:space="preserve">
+    <value>Fjern effekt</value>
+  </data>
+  <data name="ImageEffectsWindow_Duplicate_effect" xml:space="preserve">
+    <value>Duplikér effekt</value>
+  </data>
+  <data name="ImageEffectsWindow_Clear_effects" xml:space="preserve">
+    <value>Ryd effekter</value>
+  </data>
+  <data name="ImageEffectsWindow_Open_image" xml:space="preserve">
+    <value>Åbn billede...</value>
+  </data>
+  <data name="ImageEffectsWindow_Load_from_clipboard" xml:space="preserve">
+    <value>Læs in fra Udklipsholder</value>
+  </data>
+  <data name="ImageEffectsWindow_Package_preset" xml:space="preserve">
+    <value>Pak forudindstilling...</value>
+  </data>
+  <data name="ImageEffectsWindow_Image_effects_page" xml:space="preserve">
+    <value>Side for billedeffekter...</value>
+  </data>
+  <data name="ImageEffectsWindow_Save_image" xml:space="preserve">
+    <value>Gem billede...</value>
+  </data>
+  <data name="ImageEffectsWindow_Upload_image" xml:space="preserve">
+    <value>Upload billede</value>
+  </data>
+  <data name="ImageEffectsWindow_Continue" xml:space="preserve">
+    <value>Fortsæt</value>
+  </data>
+  <data name="ImageEffectsWindow_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="ImageEffectsWindow_Close" xml:space="preserve">
+    <value>Luk</value>
+  </data>
+  <data name="ImageEffectsWindow_Unnamed_preset" xml:space="preserve">
+    <value>Unavngiven forudindstilling</value>
+  </data>
+  <data name="ImageEffectsWindow_Enter_preset_name" xml:space="preserve">
+    <value>Angiv et navn på forudindstillingen, før du opretter en pakke.</value>
+  </data>
+  <data name="ImageEffectsWindow_Clear_confirmation" xml:space="preserve">
+    <value>Ryd alle effekter fra den valgte forudindstilling?</value>
+  </data>
+  <data name="ImageEffectsWindow_Preview_name" xml:space="preserve">
+    <value>Eksempelvisning af billedeffekter</value>
+  </data>
+  <data name="ImageEffectCategory_Drawings" xml:space="preserve">
+    <value>Tegninger</value>
+  </data>
+  <data name="ImageEffectCategory_Manipulations" xml:space="preserve">
+    <value>Transformationer</value>
+  </data>
+  <data name="ImageEffectCategory_Adjustments" xml:space="preserve">
+    <value>Justeringer</value>
+  </data>
+  <data name="ImageEffectCategory_Filters" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="ImageEffectDefault_Text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="ImageEffectDefault_Text_watermark" xml:space="preserve">
+    <value>Tekstvandmærke</value>
+  </data>
+  <data name="ImageEffect_Alpha" xml:space="preserve">
+    <value>Alfa</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Alpha_Value" xml:space="preserve">
+    <value>Pixlens alfa = Pixlens alfa * Værdi
+Eksempel: 0,5 reducerer pixlens alfa med 50 %</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Alpha_Addition" xml:space="preserve">
+    <value>Pixelalfa = Pixelalfa + tillæg
+Eksempel: 0,5 øger pixlens alfa med 127,5</value>
+  </data>
+  <data name="ImageEffect_AutoCrop" xml:space="preserve">
+    <value>Beskær automatisk</value>
+  </data>
+  <data name="ImageEffect_BlackWhite" xml:space="preserve">
+    <value>Sort-hvid</value>
+  </data>
+  <data name="ImageEffect_Blur" xml:space="preserve">
+    <value>Sløring</value>
+  </data>
+  <data name="ImageEffect_Brightness" xml:space="preserve">
+    <value>Lysstyrke</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Brightness_Value" xml:space="preserve">
+    <value>Pixelfarve = Pixelfarve + Værdi
+Eksempel: 0,5 forøger pixlens farve med 127,5</value>
+  </data>
+  <data name="ImageEffect_Canvas" xml:space="preserve">
+    <value>Arbejdsområde</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Canvas_MarginMode" xml:space="preserve">
+    <value>Hvordan margenen omkring lærredet beregnes.</value>
+  </data>
+  <data name="ImageEffect_ColorDepth" xml:space="preserve">
+    <value>Farvedybde</value>
+  </data>
+  <data name="ImageEffect_Colorize" xml:space="preserve">
+    <value>Farvelæg</value>
+  </data>
+  <data name="ImageEffect_Contrast" xml:space="preserve">
+    <value>Kontrast</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Contrast_Value" xml:space="preserve">
+    <value>Pixelfarve = Pixelfarve * Værdi
+Eksempel: 1,5 forøger pixlens farve med 50 %</value>
+  </data>
+  <data name="ImageEffect_Crop" xml:space="preserve">
+    <value>Beskær</value>
+  </data>
+  <data name="ImageEffect_DrawBackground" xml:space="preserve">
+    <value>Baggrund</value>
+  </data>
+  <data name="ImageEffect_DrawBackgroundImage" xml:space="preserve">
+    <value>Baggrundsbillede</value>
+  </data>
+  <data name="ImageEffect_DrawBorder" xml:space="preserve">
+    <value>Kant</value>
+  </data>
+  <data name="ImageEffect_DrawCheckerboard" xml:space="preserve">
+    <value>Skakmønster</value>
+  </data>
+  <data name="ImageEffect_DrawImage" xml:space="preserve">
+    <value>Billede</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_DrawImage_SizeMode" xml:space="preserve">
+    <value>Hvordan billedvandmærket skal skaleres, hvis det overhovedet skal skaleres.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_DrawImage_AutoHide" xml:space="preserve">
+    <value>Tegn ikke billedvandmærket, hvis det er større end kildebilledet.</value>
+  </data>
+  <data name="ImageEffect_DrawParticles" xml:space="preserve">
+    <value>Partikler</value>
+  </data>
+  <data name="ImageEffect_DrawText" xml:space="preserve">
+    <value>Tekstvandmærke</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_DrawText_AutoHide" xml:space="preserve">
+    <value>Tegn ikke tekstvandmærket, hvis det er større end kildebilledet.</value>
+  </data>
+  <data name="ImageEffect_DrawTextEx" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_DrawTextEx_AutoHide" xml:space="preserve">
+    <value>Tegn ikke teksten, hvis den er større end kildebilledet.</value>
+  </data>
+  <data name="ImageEffect_EdgeDetect" xml:space="preserve">
+    <value>Kantregistrering</value>
+  </data>
+  <data name="ImageEffect_Emboss" xml:space="preserve">
+    <value>Relief</value>
+  </data>
+  <data name="ImageEffect_Flip" xml:space="preserve">
+    <value>Vend</value>
+  </data>
+  <data name="ImageEffect_ForceProportions" xml:space="preserve">
+    <value>Gennemtving proportioner</value>
+  </data>
+  <data name="ImageEffect_Gamma" xml:space="preserve">
+    <value>Gamma</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Gamma_Value" xml:space="preserve">
+    <value>Min 0,1, max 5,0</value>
+  </data>
+  <data name="ImageEffect_GaussianBlur" xml:space="preserve">
+    <value>Gaussisk sløring</value>
+  </data>
+  <data name="ImageEffect_Glow" xml:space="preserve">
+    <value>Glød</value>
+  </data>
+  <data name="ImageEffect_Grayscale" xml:space="preserve">
+    <value>Gråtoner</value>
+  </data>
+  <data name="ImageEffect_Hue" xml:space="preserve">
+    <value>Nuance</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Hue_Angle" xml:space="preserve">
+    <value>Fra 0 til 360</value>
+  </data>
+  <data name="ImageEffect_Inverse" xml:space="preserve">
+    <value>Invertér</value>
+  </data>
+  <data name="ImageEffect_MatrixColor" xml:space="preserve">
+    <value>Farvematrix</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_MatrixColor_Rr" xml:space="preserve">
+    <value>Rød = (Rød * Rr) + (Grøn * Rg) + (Blå * Rb) + (Alfa * Ra) + Ro</value>
+  </data>
+  <data name="ImageEffect_MatrixConvolution" xml:space="preserve">
+    <value>Konvolutionsmatrix</value>
+  </data>
+  <data name="ImageEffect_MeanRemoval" xml:space="preserve">
+    <value>Fjern gennemsnit</value>
+  </data>
+  <data name="ImageEffect_Outline" xml:space="preserve">
+    <value>Kontur</value>
+  </data>
+  <data name="ImageEffect_Pixelate" xml:space="preserve">
+    <value>Pixelér</value>
+  </data>
+  <data name="ImageEffect_Polaroid" xml:space="preserve">
+    <value>Polaroid</value>
+  </data>
+  <data name="ImageEffect_Reflection" xml:space="preserve">
+    <value>Refleksion</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Reflection_Percentage" xml:space="preserve">
+    <value>Refleksionens højde i forhold til skærmbilledets højde.
+Værdien skal være mellem 1 og 100.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Reflection_MaxAlpha" xml:space="preserve">
+    <value>Refleksionens gennemsigtighed begynder ved denne værdi og går til Min. alfa.
+Værdien skal være mellem 0 og 255.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Reflection_MinAlpha" xml:space="preserve">
+    <value>Refleksionens gennemsigtighed begynder ved Maks. alfa og går til denne værdi.
+Værdien skal være mellem 0 og 255.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Reflection_Offset" xml:space="preserve">
+    <value>Refleksionens startposition bliver: Skærmbilledets højde + Forskydning</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Reflection_Skew" xml:space="preserve">
+    <value>Føjer skævhed til refleksionen fra nederste venstre mod nederste højre.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Reflection_SkewSize" xml:space="preserve">
+    <value>Antal pixels forskydning fra venstre mod højre.</value>
+  </data>
+  <data name="ImageEffect_ReplaceColor" xml:space="preserve">
+    <value>Erstat farve</value>
+  </data>
+  <data name="ImageEffect_Resize" xml:space="preserve">
+    <value>Skift størrelse</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Resize_Width" xml:space="preserve">
+    <value>Brug bredden 0 for automatisk at justere den, så højde-bredde-forholdet bevares.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Resize_Height" xml:space="preserve">
+    <value>Brug højden 0 for automatisk at justere den, så højde-bredde-forholdet bevares.</value>
+  </data>
+  <data name="ImageEffect_RGBSplit" xml:space="preserve">
+    <value>RGB-deling</value>
+  </data>
+  <data name="ImageEffect_Rotate" xml:space="preserve">
+    <value>Rotér</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Rotate_Angle" xml:space="preserve">
+    <value>Vælg et værdi mellem -360 og 360.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Rotate_Upsize" xml:space="preserve">
+    <value>Hvis værdien er sand, bliver outputbilledet større end inputbilledet, og der sker ingen beskæring.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Rotate_Clip" xml:space="preserve">
+    <value>Forstør skal være falsk, før indstillingen virker. Hvis værdien er sand, beskæres billedet; ellers reduceres billedstørrelsen.</value>
+  </data>
+  <data name="ImageEffect_RoundedCorners" xml:space="preserve">
+    <value>Afrundede hjørner</value>
+  </data>
+  <data name="ImageEffect_Saturation" xml:space="preserve">
+    <value>Mætning</value>
+  </data>
+  <data name="ImageEffect_Scale" xml:space="preserve">
+    <value>Skalér</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Scale_WidthPercentage" xml:space="preserve">
+    <value>Brug breddeprocenten 0 for at bevare højde-bredde-forholdet ved automatisk at justere bredden.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Scale_HeightPercentage" xml:space="preserve">
+    <value>Brug højdeprocenten 0 for at bevare højde-bredde-forholdet ved automatisk at justere højden.</value>
+  </data>
+  <data name="ImageEffect_SelectiveColor" xml:space="preserve">
+    <value>Selektiv farve</value>
+  </data>
+  <data name="ImageEffect_Sepia" xml:space="preserve">
+    <value>Sepia</value>
+  </data>
+  <data name="ImageEffect_Shadow" xml:space="preserve">
+    <value>Skygge</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Shadow_Opacity" xml:space="preserve">
+    <value>Vælg et værdi mellem 0,1 og 1,0</value>
+  </data>
+  <data name="ImageEffect_Sharpen" xml:space="preserve">
+    <value>Skarphed</value>
+  </data>
+  <data name="ImageEffect_Skew" xml:space="preserve">
+    <value>Forskydning</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Skew_Horizontally" xml:space="preserve">
+    <value>Antal pixels forskydning fra venstre mod højre.</value>
+  </data>
+  <data name="ImageEffectPropertyDescription_Skew_Vertically" xml:space="preserve">
+    <value>Antal pixels forskydning ovenfra og ned.</value>
+  </data>
+  <data name="ImageEffect_Slice" xml:space="preserve">
+    <value>Skive</value>
+  </data>
+  <data name="ImageEffect_Smooth" xml:space="preserve">
+    <value>Udjævn</value>
+  </data>
+  <data name="ImageEffect_TornEdge" xml:space="preserve">
+    <value>Flænset kant</value>
+  </data>
+  <data name="ImageEffect_WaveEdge" xml:space="preserve">
+    <value>Bølgekant</value>
+  </data>
+  <data name="ImageEffectProperty_Aa" xml:space="preserve">
+    <value>Aa</value>
+  </data>
+  <data name="ImageEffectProperty_Ab" xml:space="preserve">
+    <value>Ab</value>
+  </data>
+  <data name="ImageEffectProperty_Addition" xml:space="preserve">
+    <value>Udvidelser</value>
+  </data>
+  <data name="ImageEffectProperty_Ag" xml:space="preserve">
+    <value>Ag</value>
+  </data>
+  <data name="ImageEffectProperty_Angle" xml:space="preserve">
+    <value>Vinkel</value>
+  </data>
+  <data name="ImageEffectProperty_Ao" xml:space="preserve">
+    <value>Ao</value>
+  </data>
+  <data name="ImageEffectProperty_Ar" xml:space="preserve">
+    <value>Ar</value>
+  </data>
+  <data name="ImageEffectProperty_AutoHide" xml:space="preserve">
+    <value>Skjul automatisk</value>
+  </data>
+  <data name="ImageEffectProperty_AutoResize" xml:space="preserve">
+    <value>Skift størrelse automatisk</value>
+  </data>
+  <data name="ImageEffectProperty_AutoSourceColor" xml:space="preserve">
+    <value>Automatisk kildefarve</value>
+  </data>
+  <data name="ImageEffectProperty_Ba" xml:space="preserve">
+    <value>Ba</value>
+  </data>
+  <data name="ImageEffectProperty_Background" xml:space="preserve">
+    <value>Baggrund</value>
+  </data>
+  <data name="ImageEffectProperty_BackgroundColor" xml:space="preserve">
+    <value>Baggrundsfarve</value>
+  </data>
+  <data name="ImageEffectProperty_Bb" xml:space="preserve">
+    <value>Bb</value>
+  </data>
+  <data name="ImageEffectProperty_Bg" xml:space="preserve">
+    <value>Bg</value>
+  </data>
+  <data name="ImageEffectProperty_BitsPerChannel" xml:space="preserve">
+    <value>Bit per kanal</value>
+  </data>
+  <data name="ImageEffectProperty_Bo" xml:space="preserve">
+    <value>Bo</value>
+  </data>
+  <data name="ImageEffectProperty_BorderColor" xml:space="preserve">
+    <value>Kantfarve</value>
+  </data>
+  <data name="ImageEffectProperty_BorderSize" xml:space="preserve">
+    <value>Kantstørrelse</value>
+  </data>
+  <data name="ImageEffectProperty_Br" xml:space="preserve">
+    <value>Br</value>
+  </data>
+  <data name="ImageEffectProperty_Center" xml:space="preserve">
+    <value>Centrér</value>
+  </data>
+  <data name="ImageEffectProperty_Clip" xml:space="preserve">
+    <value>Klipp</value>
+  </data>
+  <data name="ImageEffectProperty_Color" xml:space="preserve">
+    <value>Farve</value>
+  </data>
+  <data name="ImageEffectProperty_Color2" xml:space="preserve">
+    <value>Farve 2</value>
+  </data>
+  <data name="ImageEffectProperty_CompositingMode" xml:space="preserve">
+    <value>Kompositionstilstand</value>
+  </data>
+  <data name="ImageEffectProperty_CornerRadius" xml:space="preserve">
+    <value>Hjørneradius</value>
+  </data>
+  <data name="ImageEffectProperty_CurvedEdges" xml:space="preserve">
+    <value>Buede kanter</value>
+  </data>
+  <data name="ImageEffectProperty_DarkColor" xml:space="preserve">
+    <value>Mørk farve</value>
+  </data>
+  <data name="ImageEffectProperty_Darkness" xml:space="preserve">
+    <value>Mørkhed</value>
+  </data>
+  <data name="ImageEffectProperty_DashStyle" xml:space="preserve">
+    <value>Linjetype</value>
+  </data>
+  <data name="ImageEffectProperty_Depth" xml:space="preserve">
+    <value>Dybde</value>
+  </data>
+  <data name="ImageEffectProperty_DrawBackground" xml:space="preserve">
+    <value>Tegn baggrund</value>
+  </data>
+  <data name="ImageEffectProperty_DrawBorder" xml:space="preserve">
+    <value>Tegn kant</value>
+  </data>
+  <data name="ImageEffectProperty_DrawTextShadow" xml:space="preserve">
+    <value>Tegn tekstskygge</value>
+  </data>
+  <data name="ImageEffectProperty_EdgeOverlap" xml:space="preserve">
+    <value>Kantoverlapning</value>
+  </data>
+  <data name="ImageEffectProperty_Factor" xml:space="preserve">
+    <value>Faktor</value>
+  </data>
+  <data name="ImageEffectProperty_Font" xml:space="preserve">
+    <value>Skrifttype</value>
+  </data>
+  <data name="ImageEffectProperty_Ga" xml:space="preserve">
+    <value>Ga</value>
+  </data>
+  <data name="ImageEffectProperty_Gb" xml:space="preserve">
+    <value>Gb</value>
+  </data>
+  <data name="ImageEffectProperty_Gg" xml:space="preserve">
+    <value>Gg</value>
+  </data>
+  <data name="ImageEffectProperty_Go" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="ImageEffectProperty_Gr" xml:space="preserve">
+    <value>Gr</value>
+  </data>
+  <data name="ImageEffectProperty_Gradient" xml:space="preserve">
+    <value>Farveovergang</value>
+  </data>
+  <data name="ImageEffectProperty_GrowFillColor" xml:space="preserve">
+    <value>Fyldfarve ved forstørrelse</value>
+  </data>
+  <data name="ImageEffectProperty_Height" xml:space="preserve">
+    <value>Højde</value>
+  </data>
+  <data name="ImageEffectProperty_HeightPercentage" xml:space="preserve">
+    <value>Højdeprocent</value>
+  </data>
+  <data name="ImageEffectProperty_Horizontally" xml:space="preserve">
+    <value>Vandret</value>
+  </data>
+  <data name="ImageEffectProperty_ImageCount" xml:space="preserve">
+    <value>Antal billeder</value>
+  </data>
+  <data name="ImageEffectProperty_ImageFilePath" xml:space="preserve">
+    <value>Bildfilens sti</value>
+  </data>
+  <data name="ImageEffectProperty_ImageFolder" xml:space="preserve">
+    <value>Billedmappe</value>
+  </data>
+  <data name="ImageEffectProperty_ImageLocation" xml:space="preserve">
+    <value>Billedplacering</value>
+  </data>
+  <data name="ImageEffectProperty_InterpolationMode" xml:space="preserve">
+    <value>Interpolationstilstand</value>
+  </data>
+  <data name="ImageEffectProperty_LightColor" xml:space="preserve">
+    <value>Lys farve</value>
+  </data>
+  <data name="ImageEffectProperty_Margin" xml:space="preserve">
+    <value>Marginal</value>
+  </data>
+  <data name="ImageEffectProperty_MarginMode" xml:space="preserve">
+    <value>Margentilstand</value>
+  </data>
+  <data name="ImageEffectProperty_MaxAlpha" xml:space="preserve">
+    <value>Max alfa</value>
+  </data>
+  <data name="ImageEffectProperty_MaxSliceHeight" xml:space="preserve">
+    <value>Maksimal skivehøjde</value>
+  </data>
+  <data name="ImageEffectProperty_MaxSliceShift" xml:space="preserve">
+    <value>Maksimal skiveforskydning</value>
+  </data>
+  <data name="ImageEffectProperty_Method" xml:space="preserve">
+    <value>Metod</value>
+  </data>
+  <data name="ImageEffectProperty_MinAlpha" xml:space="preserve">
+    <value>Min alfa</value>
+  </data>
+  <data name="ImageEffectProperty_MinSliceHeight" xml:space="preserve">
+    <value>Minimal skivehøjde</value>
+  </data>
+  <data name="ImageEffectProperty_MinSliceShift" xml:space="preserve">
+    <value>Minimal skiveforskydning</value>
+  </data>
+  <data name="ImageEffectProperty_Mode" xml:space="preserve">
+    <value>Tilstand</value>
+  </data>
+  <data name="ImageEffectProperty_NoOverlap" xml:space="preserve">
+    <value>Ingen overlapning</value>
+  </data>
+  <data name="ImageEffectProperty_NoOverlapOffset" xml:space="preserve">
+    <value>Forskydning uden overlapning</value>
+  </data>
+  <data name="ImageEffectProperty_Offset" xml:space="preserve">
+    <value>Forskydning</value>
+  </data>
+  <data name="ImageEffectProperty_OffsetBlue" xml:space="preserve">
+    <value>Blå forskydning</value>
+  </data>
+  <data name="ImageEffectProperty_OffsetGreen" xml:space="preserve">
+    <value>Grøn forskydning</value>
+  </data>
+  <data name="ImageEffectProperty_OffsetRed" xml:space="preserve">
+    <value>Rød forskydning</value>
+  </data>
+  <data name="ImageEffectProperty_Opacity" xml:space="preserve">
+    <value>Uigennemsigtighed</value>
+  </data>
+  <data name="ImageEffectProperty_Outline" xml:space="preserve">
+    <value>Kontur</value>
+  </data>
+  <data name="ImageEffectProperty_OutlineColor" xml:space="preserve">
+    <value>Konturfarve</value>
+  </data>
+  <data name="ImageEffectProperty_OutlineGradient" xml:space="preserve">
+    <value>Konturovergang</value>
+  </data>
+  <data name="ImageEffectProperty_OutlineOnly" xml:space="preserve">
+    <value>Kun kontur</value>
+  </data>
+  <data name="ImageEffectProperty_OutlineSize" xml:space="preserve">
+    <value>Konturstørrelse</value>
+  </data>
+  <data name="ImageEffectProperty_OutlineUseGradient" xml:space="preserve">
+    <value>Brug farveovergang for kontur</value>
+  </data>
+  <data name="ImageEffectProperty_Padding" xml:space="preserve">
+    <value>Polstring</value>
+  </data>
+  <data name="ImageEffectProperty_PaletteSize" xml:space="preserve">
+    <value>Paletstørrelse</value>
+  </data>
+  <data name="ImageEffectProperty_Percentage" xml:space="preserve">
+    <value>Procent</value>
+  </data>
+  <data name="ImageEffectProperty_Placement" xml:space="preserve">
+    <value>Placering</value>
+  </data>
+  <data name="ImageEffectProperty_ProportionalHeight" xml:space="preserve">
+    <value>Proportionell højde</value>
+  </data>
+  <data name="ImageEffectProperty_ProportionalWidth" xml:space="preserve">
+    <value>Proportionell bredde</value>
+  </data>
+  <data name="ImageEffectProperty_Ra" xml:space="preserve">
+    <value>Ra</value>
+  </data>
+  <data name="ImageEffectProperty_Radius" xml:space="preserve">
+    <value>Radius</value>
+  </data>
+  <data name="ImageEffectProperty_RandomAngle" xml:space="preserve">
+    <value>Tilfældig vinkel</value>
+  </data>
+  <data name="ImageEffectProperty_RandomAngleMax" xml:space="preserve">
+    <value>Maksimal tilfældig vinkel</value>
+  </data>
+  <data name="ImageEffectProperty_RandomAngleMin" xml:space="preserve">
+    <value>Minimal tilfældig vinkel</value>
+  </data>
+  <data name="ImageEffectProperty_RandomOpacity" xml:space="preserve">
+    <value>Tilfældig uigennemsigtighed</value>
+  </data>
+  <data name="ImageEffectProperty_RandomOpacityMax" xml:space="preserve">
+    <value>Maksimal tilfældig uigennemsigtighed</value>
+  </data>
+  <data name="ImageEffectProperty_RandomOpacityMin" xml:space="preserve">
+    <value>Minimal tilfældig uigennemsigtighed</value>
+  </data>
+  <data name="ImageEffectProperty_RandomSize" xml:space="preserve">
+    <value>Tilfældig størrelse</value>
+  </data>
+  <data name="ImageEffectProperty_RandomSizeMax" xml:space="preserve">
+    <value>Maksimal tilfældig størrelse</value>
+  </data>
+  <data name="ImageEffectProperty_RandomSizeMin" xml:space="preserve">
+    <value>Minimal tilfældig størrelse</value>
+  </data>
+  <data name="ImageEffectProperty_Range" xml:space="preserve">
+    <value>Interval</value>
+  </data>
+  <data name="ImageEffectProperty_Rb" xml:space="preserve">
+    <value>Rb</value>
+  </data>
+  <data name="ImageEffectProperty_Rg" xml:space="preserve">
+    <value>Rg</value>
+  </data>
+  <data name="ImageEffectProperty_Ro" xml:space="preserve">
+    <value>Ro</value>
+  </data>
+  <data name="ImageEffectProperty_RotateFlip" xml:space="preserve">
+    <value>Rotér/vend</value>
+  </data>
+  <data name="ImageEffectProperty_Rr" xml:space="preserve">
+    <value>Rr</value>
+  </data>
+  <data name="ImageEffectProperty_Shadow" xml:space="preserve">
+    <value>Skygge</value>
+  </data>
+  <data name="ImageEffectProperty_ShadowColor" xml:space="preserve">
+    <value>Skyggefarve</value>
+  </data>
+  <data name="ImageEffectProperty_ShadowGradient" xml:space="preserve">
+    <value>Skyggeovergang</value>
+  </data>
+  <data name="ImageEffectProperty_ShadowOffset" xml:space="preserve">
+    <value>Skyggeforskydning</value>
+  </data>
+  <data name="ImageEffectProperty_ShadowUseGradient" xml:space="preserve">
+    <value>Brug farveovergang for skygge</value>
+  </data>
+  <data name="ImageEffectProperty_Sides" xml:space="preserve">
+    <value>Sider</value>
+  </data>
+  <data name="ImageEffectProperty_Size" xml:space="preserve">
+    <value>Størrelse</value>
+  </data>
+  <data name="ImageEffectProperty_SizeMode" xml:space="preserve">
+    <value>Størrelsestilstand</value>
+  </data>
+  <data name="ImageEffectProperty_Skew" xml:space="preserve">
+    <value>Forskydning</value>
+  </data>
+  <data name="ImageEffectProperty_SkewSize" xml:space="preserve">
+    <value>Skævhedsstørrelse</value>
+  </data>
+  <data name="ImageEffectProperty_SourceColor" xml:space="preserve">
+    <value>Kildefarve</value>
+  </data>
+  <data name="ImageEffectProperty_Strength" xml:space="preserve">
+    <value>Styrke</value>
+  </data>
+  <data name="ImageEffectProperty_TargetColor" xml:space="preserve">
+    <value>Målfarve</value>
+  </data>
+  <data name="ImageEffectProperty_Text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="ImageEffectProperty_TextColor" xml:space="preserve">
+    <value>Tekstfarve</value>
+  </data>
+  <data name="ImageEffectProperty_TextFont" xml:space="preserve">
+    <value>Tekstskrifttype</value>
+  </data>
+  <data name="ImageEffectProperty_TextRenderingMode" xml:space="preserve">
+    <value>Tekstgengivelsestilstand</value>
+  </data>
+  <data name="ImageEffectProperty_TextShadowColor" xml:space="preserve">
+    <value>Tekstskyggefarve</value>
+  </data>
+  <data name="ImageEffectProperty_TextShadowOffset" xml:space="preserve">
+    <value>Tekstskyggeforskydning</value>
+  </data>
+  <data name="ImageEffectProperty_Threshold" xml:space="preserve">
+    <value>Tærskelværdi</value>
+  </data>
+  <data name="ImageEffectProperty_Tile" xml:space="preserve">
+    <value>Side ved side</value>
+  </data>
+  <data name="ImageEffectProperty_Type" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="ImageEffectProperty_Upsize" xml:space="preserve">
+    <value>Forstør</value>
+  </data>
+  <data name="ImageEffectProperty_UseGradient" xml:space="preserve">
+    <value>Brug farveovergang</value>
+  </data>
+  <data name="ImageEffectProperty_Value" xml:space="preserve">
+    <value>Værdi</value>
+  </data>
+  <data name="ImageEffectProperty_Vertically" xml:space="preserve">
+    <value>Lodret</value>
+  </data>
+  <data name="ImageEffectProperty_Width" xml:space="preserve">
+    <value>Bredde</value>
+  </data>
+  <data name="ImageEffectProperty_WidthPercentage" xml:space="preserve">
+    <value>Breddeprocent</value>
+  </data>
+  <data name="ImageEffectProperty_X0Y0" xml:space="preserve">
+    <value>X 0 y 0</value>
+  </data>
+  <data name="ImageEffectProperty_X0Y1" xml:space="preserve">
+    <value>X 0 y 1</value>
+  </data>
+  <data name="ImageEffectProperty_X0Y2" xml:space="preserve">
+    <value>X 0 y 2</value>
+  </data>
+  <data name="ImageEffectProperty_X1Y0" xml:space="preserve">
+    <value>X 1 y 0</value>
+  </data>
+  <data name="ImageEffectProperty_X1Y1" xml:space="preserve">
+    <value>X 1 y 1</value>
+  </data>
+  <data name="ImageEffectProperty_X1Y2" xml:space="preserve">
+    <value>X 1 y 2</value>
+  </data>
+  <data name="ImageEffectProperty_X2Y0" xml:space="preserve">
+    <value>X 2 y 0</value>
+  </data>
+  <data name="ImageEffectProperty_X2Y1" xml:space="preserve">
+    <value>X 2 y 1</value>
+  </data>
+  <data name="ImageEffectProperty_X2Y2" xml:space="preserve">
+    <value>X 2 y 2</value>
+  </data>
+  <data name="ImageEffectEnum_BorderType_Outside" xml:space="preserve">
+    <value>Uden for</value>
+  </data>
+  <data name="ImageEffectEnum_BorderType_Inside" xml:space="preserve">
+    <value>Inde i</value>
+  </data>
+  <data name="ImageEffectEnum_ImageInterpolationMode_HighQualityBicubic" xml:space="preserve">
+    <value>Bikubisk med høj kvalitet</value>
+  </data>
+  <data name="ImageEffectEnum_ImageInterpolationMode_Bicubic" xml:space="preserve">
+    <value>Bikubisk</value>
+  </data>
+  <data name="ImageEffectEnum_ImageInterpolationMode_HighQualityBilinear" xml:space="preserve">
+    <value>Bilineær med høj kvalitet</value>
+  </data>
+  <data name="ImageEffectEnum_ImageInterpolationMode_Bilinear" xml:space="preserve">
+    <value>Bilineær</value>
+  </data>
+  <data name="ImageEffectEnum_ImageInterpolationMode_NearestNeighbor" xml:space="preserve">
+    <value>Nærmeste nabo</value>
+  </data>
+  <data name="ImageEffectEnum_CanvasMarginMode_AbsoluteSize" xml:space="preserve">
+    <value>Absolut størrelse</value>
+  </data>
+  <data name="ImageEffectEnum_CanvasMarginMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Procent af arbejdsområdet</value>
+  </data>
+  <data name="ImageEffectEnum_DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Skift ikke størrelse</value>
+  </data>
+  <data name="ImageEffectEnum_DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Absolut størrelse</value>
+  </data>
+  <data name="ImageEffectEnum_DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Procent af vandmærket</value>
+  </data>
+  <data name="ImageEffectEnum_DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Procent af arbejdsområdet</value>
+  </data>
+  <data name="ImageEffectEnum_ForceProportionsMethod_Grow" xml:space="preserve">
+    <value>Forstør</value>
+  </data>
+  <data name="ImageEffectEnum_ForceProportionsMethod_Crop" xml:space="preserve">
+    <value>Beskær</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_Rotate90" xml:space="preserve">
+    <value>Rotér 90</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_Rotate180" xml:space="preserve">
+    <value>Rotér 180</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_Rotate270" xml:space="preserve">
+    <value>Rotér 270</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_FlipX" xml:space="preserve">
+    <value>Vend x</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_Rotate90FlipX" xml:space="preserve">
+    <value>Rotér 90 og vend x</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_FlipY" xml:space="preserve">
+    <value>Vend y</value>
+  </data>
+  <data name="ImageEffectEnum_ImageRotateFlipType_Rotate90FlipY" xml:space="preserve">
+    <value>Rotér 90 og vend y</value>
+  </data>
+  <data name="ImageEffectEnum_ResizeMode_ResizeAll" xml:space="preserve">
+    <value>Ændrer størrelse på alle billeder til den angivne størrelse.</value>
+  </data>
+  <data name="ImageEffectEnum_ResizeMode_ResizeIfBigger" xml:space="preserve">
+    <value>Skift kun størrelse, hvis billedet er større end den angivne størrelse.</value>
+  </data>
+  <data name="ImageEffectEnum_ResizeMode_ResizeIfSmaller" xml:space="preserve">
+    <value>Skift kun størrelse, hvis billedet er mindre end den angivne størrelse.</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_TopLeft" xml:space="preserve">
+    <value>Øverst til venstre</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_TopCenter" xml:space="preserve">
+    <value>Øverst i midten</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_TopRight" xml:space="preserve">
+    <value>Øverst til højre</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_MiddleLeft" xml:space="preserve">
+    <value>Midten til venstre</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_MiddleCenter" xml:space="preserve">
+    <value>Centreret</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_MiddleRight" xml:space="preserve">
+    <value>Midten til højre</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_BottomLeft" xml:space="preserve">
+    <value>Nederst til venstre</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_BottomCenter" xml:space="preserve">
+    <value>Nederst i midten</value>
+  </data>
+  <data name="ImageEffectEnum_ContentAlignment_BottomRight" xml:space="preserve">
+    <value>Nederst til højre</value>
+  </data>
+  <data name="ImageEffectEnum_CompositingMode_SourceOver" xml:space="preserve">
+    <value>Kilde over</value>
+  </data>
+  <data name="ImageEffectEnum_CompositingMode_SourceCopy" xml:space="preserve">
+    <value>Kildekopi</value>
+  </data>
+  <data name="ImageEffectEnum_DashStyle_Solid" xml:space="preserve">
+    <value>Heltrukken</value>
+  </data>
+  <data name="ImageEffectEnum_DashStyle_Dash" xml:space="preserve">
+    <value>Stiplet</value>
+  </data>
+  <data name="ImageEffectEnum_DashStyle_Dot" xml:space="preserve">
+    <value>Prikket</value>
+  </data>
+  <data name="ImageEffectEnum_DashStyle_DashDot" xml:space="preserve">
+    <value>Streg punkt</value>
+  </data>
+  <data name="ImageEffectEnum_DashStyle_DashDotDot" xml:space="preserve">
+    <value>Streg punkt punkt</value>
+  </data>
+  <data name="ImageEffectEnum_DashStyle_Custom" xml:space="preserve">
+    <value>Brugerdefineret</value>
+  </data>
+  <data name="ImageEffectEnum_LinearGradientMode_Horizontal" xml:space="preserve">
+    <value>Vandret</value>
+  </data>
+  <data name="ImageEffectEnum_LinearGradientMode_Vertical" xml:space="preserve">
+    <value>Lodret</value>
+  </data>
+  <data name="ImageEffectEnum_LinearGradientMode_ForwardDiagonal" xml:space="preserve">
+    <value>Diagonal frem</value>
+  </data>
+  <data name="ImageEffectEnum_LinearGradientMode_BackwardDiagonal" xml:space="preserve">
+    <value>Diagonal tilbage</value>
+  </data>
+  <data name="ImageEffectEnum_TextRenderingHint_SystemDefault" xml:space="preserve">
+    <value>Systemstandard</value>
+  </data>
+  <data name="ImageEffectEnum_TextRenderingHint_SingleBitPerPixelGridFit" xml:space="preserve">
+    <value>En bit per pixel, gittertilpasset</value>
+  </data>
+  <data name="ImageEffectEnum_TextRenderingHint_SingleBitPerPixel" xml:space="preserve">
+    <value>En bit per pixel</value>
+  </data>
+  <data name="ImageEffectEnum_TextRenderingHint_AntiAliasGridFit" xml:space="preserve">
+    <value>Kantudjævning, gittertilpasset</value>
+  </data>
+  <data name="ImageEffectEnum_TextRenderingHint_AntiAlias" xml:space="preserve">
+    <value>Kantudjævning</value>
+  </data>
+  <data name="ImageEffectEnum_TextRenderingHint_ClearTypeGridFit" xml:space="preserve">
+    <value>ClearType, gittertilpasset</value>
+  </data>
+  <data name="ImageEffectEnum_AnchorStyles_None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
+  <data name="ImageEffectEnum_AnchorStyles_Top" xml:space="preserve">
+    <value>Øverst</value>
+  </data>
+  <data name="ImageEffectEnum_AnchorStyles_Bottom" xml:space="preserve">
+    <value>Nederst</value>
+  </data>
+  <data name="ImageEffectEnum_AnchorStyles_Left" xml:space="preserve">
+    <value>Venstre</value>
+  </data>
+  <data name="ImageEffectEnum_AnchorStyles_Right" xml:space="preserve">
+    <value>Højre</value>
+  </data>
+</root>

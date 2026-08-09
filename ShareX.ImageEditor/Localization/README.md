@@ -28,7 +28,7 @@ Image effect names and browser categories are localized. Effect descriptions, pa
 | Arrow style names | `ArrowStyleDisplayNameConverter_` | 1 | 5 | Complete |
 | Text alignment names | `TextHorizontalAlignmentHelper_` | 1 | 3 | Complete |
 
-The default Image Editor resource set contains 493 keys, with matching translations in all 27 localized cultures. Emoji catalog names and categories come directly from the embedded English catalog and are intentionally excluded from localization.
+The default Image Editor resource set contains 493 keys, with matching translations in all 28 localized cultures. Emoji catalog names and categories come directly from the embedded English catalog and are intentionally excluded from localization.
 
 The repository-level `ValidateTranslations.ps1` checks supported languages, entry counts, key parity, values, placeholders, UTF-8 and CRLF formatting, generated designers, source references, and remaining literal Avalonia UI text across every localized project.
 
