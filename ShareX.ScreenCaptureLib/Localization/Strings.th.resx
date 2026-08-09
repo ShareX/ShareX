@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="FFmpegOptionsWindow_Title" xml:space="preserve">
+    <value>ShareX - บันทึกหน้าจอ ตัวเลือก</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Screen_recording" xml:space="preserve">
+    <value>บันทึกหน้าจอ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Description" xml:space="preserve">
+    <value>เลือกสิ่งที่จะจับภาพและวิธีที่ FFmpeg ควรเข้ารหัส</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Reset_encoding_options" xml:space="preserve">
+    <value>รีเซ็ต การเข้ารหัส ตัวเลือก</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Reset_options" xml:space="preserve">
+    <value>รีเซ็ต ตัวเลือก</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Reset_all_options" xml:space="preserve">
+    <value>รีเซ็ต ทั้งหมด ตัวเลือก?</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Reset" xml:space="preserve">
+    <value>รีเซ็ต</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Sources" xml:space="preserve">
+    <value>แหล่งที่มา</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Video" xml:space="preserve">
+    <value>วิดีโอ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Audio" xml:space="preserve">
+    <value>เสียง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Advanced" xml:space="preserve">
+    <value>ขั้นสูง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_FFmpeg_executable" xml:space="preserve">
+    <value>FFmpeg ไฟล์ปฏิบัติการ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Use_custom_path" xml:space="preserve">
+    <value>ใช้เส้นทาง FFmpeg กำหนดเอง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Path_to_ffmpeg" xml:space="preserve">
+    <value>เส้นทาง เพื่อ ffmpeg.exe</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Browse_for_ffmpeg" xml:space="preserve">
+    <value>เรียกดู สำหรับ ffmpeg.exe</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Capture_sources" xml:space="preserve">
+    <value>จับภาพ แหล่งที่มา</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Refresh_devices" xml:space="preserve">
+    <value>รีเฟรช อุปกรณ์</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Video_source" xml:space="preserve">
+    <value>วิดีโอ แหล่งที่มา</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Choose_video_source" xml:space="preserve">
+    <value>เลือก วิดีโอ แหล่งที่มา</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Audio_source" xml:space="preserve">
+    <value>เสียง แหล่งที่มา</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Choose_audio_source" xml:space="preserve">
+    <value>เลือก เสียง แหล่งที่มา</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Looking_for_devices" xml:space="preserve">
+    <value>กำลังค้นหา สำหรับ จับภาพ อุปกรณ์...</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Get_recorder_devices" xml:space="preserve">
+    <value>รับ ตัวบันทึก อุปกรณ์</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Video_encoder" xml:space="preserve">
+    <value>ตัวเข้ารหัสวิดีโอ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Encoder_settings" xml:space="preserve">
+    <value>ตัวเข้ารหัส การตั้งค่า</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset" xml:space="preserve">
+    <value>ค่าที่ตั้งไว้</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Faster_presets_hint" xml:space="preserve">
+    <value>ค่าที่ตั้งไว้แบบเร็วเข้ารหัสตามเวลาจริงได้เชื่อถือกว่า แต่สร้างไฟล์ใหญ่กว่า</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Slow_presets_warning" xml:space="preserve">
+    <value>ค่าที่ตั้งไว้แบบช้าอาจทำให้เฟรมตกขณะบันทึกหน้าจอ แนะนำให้ใช้แบบเร็วหรือเร็วกว่า</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Use_target_bitrate" xml:space="preserve">
+    <value>ใช้อัตราบิตเป้าหมายแทนคุณภาพคงที่</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Constant_rate_factor" xml:space="preserve">
+    <value>ปัจจัยอัตราคงที่ (CRF)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_CRF_hint" xml:space="preserve">
+    <value>ค่าที่ต่ำกว่าจะเพิ่มคุณภาพและขนาดไฟล์ ค่า 0 ไม่สูญเสียคุณภาพ และ 28 คือค่าเริ่มต้นของ ShareX</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Target_bitrate" xml:space="preserve">
+    <value>เป้าหมาย อัตราบิต (kbps)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Variable_bitrate_quality" xml:space="preserve">
+    <value>ตัวแปร อัตราบิต คุณภาพ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Variable_bitrate_hint" xml:space="preserve">
+    <value>1 ให้คุณภาพสูงสุดและไฟล์ใหญ่ที่สุด ส่วน 31 ให้คุณภาพต่ำสุดและไฟล์เล็กที่สุด</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Tune" xml:space="preserve">
+    <value>ปรับแต่ง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_mode" xml:space="preserve">
+    <value>โหมดจานสี</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Dithering_mode" xml:space="preserve">
+    <value>การกระจายสี โหมด</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Bayer_scale" xml:space="preserve">
+    <value>Bayer มาตราส่วน</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Bayer_scale_hint" xml:space="preserve">
+    <value>ค่าที่สูงกว่าจะทำให้เห็นแถบสีชัดขึ้น ค่าเริ่มต้นคือ 2</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Usage" xml:space="preserve">
+    <value>การใช้งาน</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Quality" xml:space="preserve">
+    <value>คุณภาพ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_No_additional_settings" xml:space="preserve">
+    <value>ตัวเข้ารหัสนี้ไม่ต้องการการตั้งค่าเพิ่มเติม</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Audio_encoder" xml:space="preserve">
+    <value>เสียง ตัวเข้ารหัส</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Animated_formats_no_audio" xml:space="preserve">
+    <value>รูปแบบภาพเคลื่อนไหวไม่มีเสียง เลือกรูปแบบวิดีโอเพื่อเปิดใช้การเข้ารหัสเสียง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Bitrate" xml:space="preserve">
+    <value>อัตราบิต (kbps)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Lower_values_higher_quality" xml:space="preserve">
+    <value>ค่าที่ต่ำกว่าจะให้คุณภาพสูงกว่า</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Additional_arguments" xml:space="preserve">
+    <value>อาร์กิวเมนต์เพิ่มเติม</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Arguments_example" xml:space="preserve">
+    <value>ตัวอย่าง: -vf มาตราส่วน=1920:-2</value>
+  </data>
+  <data name="FFmpegOptionsWindow_FFmpeg_command" xml:space="preserve">
+    <value>FFmpeg คำสั่ง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Use_custom_commands" xml:space="preserve">
+    <value>ใช้ กำหนดเอง คำสั่ง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Custom_command_placeholders" xml:space="preserve">
+    <value>ตัวแทนค่าสำหรับคำสั่งกำหนดเอง: $fps$, $area_x$, $area_y$, $area_width$, $area_height$, $cursor$, $duration$ และ $output$</value>
+  </data>
+  <data name="FFmpegOptionsWindow_FFmpeg_not_found" xml:space="preserve">
+    <value>ไม่พบ FFmpeg ที่ {0}</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Device_enumeration_failed" xml:space="preserve">
+    <value>FFmpeg ไม่สามารถแจกแจงอุปกรณ์ DirectShow ได้ แต่ยังจับภาพเดสก์ท็อปได้</value>
+  </data>
+  <data name="FFmpegOptionsWindow_One_device_found" xml:space="preserve">
+    <value>พบอุปกรณ์ DirectShow {0} รายการ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Multiple_devices_found" xml:space="preserve">
+    <value>พบอุปกรณ์ DirectShow {0} รายการ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_No_devices_found" xml:space="preserve">
+    <value>ไม่พบอุปกรณ์ DirectShow การจับภาพเดสก์ท็อปพร้อมใช้งาน</value>
+  </data>
+  <data name="ScreenRecordWindow_Title" xml:space="preserve">
+    <value>ShareX - บันทึกหน้าจอ</value>
+  </data>
+  <data name="ScreenRecordWindow_Start" xml:space="preserve">
+    <value>เริ่ม</value>
+  </data>
+  <data name="ScreenRecordWindow_Pause" xml:space="preserve">
+    <value>หยุดชั่วคราว</value>
+  </data>
+  <data name="ScreenRecordWindow_Abort" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="ScreenRecordWindow_Abort_this_recording" xml:space="preserve">
+    <value>ยกเลิก นี้ การบันทึก?</value>
+  </data>
+  <data name="ScreenRecordWindow_Cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
+    <value>ShareX - จับภาพแบบเลื่อน</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capture" xml:space="preserve">
+    <value>จับภาพ...</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
+    <value>อัปโหลด / บันทึก</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Copy" xml:space="preserve">
+    <value>คัดลอก</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Options" xml:space="preserve">
+    <value>ตัวเลือก...</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Help" xml:space="preserve">
+    <value>การเลื่อน ภาพหน้าจอ วิธีใช้</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Select_scrollable_window" xml:space="preserve">
+    <value>เลือกหน้าต่างที่เลื่อนได้เพื่อเริ่ม</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Ready" xml:space="preserve">
+    <value>พร้อม</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Options_heading" xml:space="preserve">
+    <value>การเลื่อน จับภาพ ตัวเลือก</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Start_delay" xml:space="preserve">
+    <value>เริ่ม หน่วงเวลา:</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Milliseconds" xml:space="preserve">
+    <value>ms</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Scroll_delay" xml:space="preserve">
+    <value>เลื่อน หน่วงเวลา:</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Scroll_method" xml:space="preserve">
+    <value>เลื่อน วิธี:</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Scroll_amount" xml:space="preserve">
+    <value>เลื่อน ปริมาณ:</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Times" xml:space="preserve">
+    <value>ครั้ง</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Automatically_scroll_to_top" xml:space="preserve">
+    <value>เลื่อนไปด้านบนโดยอัตโนมัติ</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Auto_ignore_bottom_edge" xml:space="preserve">
+    <value>ละเว้นขอบล่างอัตโนมัติ</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Show_capture_region" xml:space="preserve">
+    <value>แสดงพื้นที่จับภาพแบบเลื่อน</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Automatically_upload_save" xml:space="preserve">
+    <value>อัปโหลด / บันทึกโดยอัตโนมัติ</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="ScrollingCaptureWindow_OK" xml:space="preserve">
+    <value>ตกลง</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Stopping_capture" xml:space="preserve">
+    <value>กำลังหยุด จับภาพ...</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Selection_cancelled" xml:space="preserve">
+    <value>หน้าต่าง การเลือก ยกเลิกแล้ว</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capturing" xml:space="preserve">
+    <value>กำลังจับภาพ...</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capture_failed" xml:space="preserve">
+    <value>การจับภาพล้มเหลว</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capture_partially_successful" xml:space="preserve">
+    <value>จับภาพ บางส่วน สำเร็จ</value>
+  </data>
+  <data name="ScrollingCaptureWindow_Capture_successful" xml:space="preserve">
+    <value>จับภาพ สำเร็จ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
+    <value>ยกเลิก งาน (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
+    <value>อัปโหลดรูปภาพ (Ctrl + U)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>เน้น สี...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>สลับไปยังเครื่องมือวาดหลังเลือกรูปร่าง</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>ตัดออก เอฟเฟกต์ ขนาด:</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>เพิ่มเอฟเฟกต์รูปภาพ...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
+    <value>พลิกแนวนอน</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>โหมดหลายพื้นที่</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>พิกเซล ขนาด:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>ขนาดรูปภาพ...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
+    <value>ลบ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
+    <value>นำการเปลี่ยนแปลงไปใช้และทำงานต่อ (Enter)</value>
+  </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>เปิดหน้าเว็บการผูกปุ่ม...</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>ทำสำเนา</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
+    <value>แก้ไข</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>รูปภาพ บันทึกแล้ว</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>ปิดตัวแก้ไขอัตโนมัติเมื่อทำงาน</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>เลิกทำ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>ทำซ้ำ</value>
+  </data>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>ตัวแก้ไขรูปภาพ</value>
+  </data>
+  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
+    <value>การจับภาพพื้นที่</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>โหมดพื้นที่ขนาดคงที่</value>
+  </data>
+  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>คลิปบอร์ด ไม่ มี รูปภาพ.</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>บรรทัดใหม่: Ctrl + Enter, ตกลง: Enter</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>จับภาพ จอภาพ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>ส่ง เพื่อ ย้อนกลับ</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
+    <value>จับภาพ จอภาพที่ใช้งานอยู่</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>นำมาด้านหน้า</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>หมุนทวนเข็มนาฬิกา 90°</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+    <value>โหมดการประมาณค่า:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>ความกว้าง:</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>คลิกเพื่อ หยุด การบันทึก.</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ShapeManager_CenterPoints" xml:space="preserve">
+    <value>กึ่งกลาง จุด:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>ตัวเลือก</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>เส้นขอบ ลักษณะ:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>จับภาพ</value>
+  </data>
+  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
+    <value>X: {0} Y: {1} W: {2} H: {3}</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
+    <value>เปิดรูปภาพ ไฟล์...</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>กำลังประมวลผล...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>กำลังรอ...</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>หมุนตามเข็มนาฬิกา 90°</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>ปิด (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>ค่าของขั้นตอนแรก:</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>เน้น</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>ความแรงการขยาย:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>มุม รัศมี:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>พิมพ์รูปภาพ... (Ctrl + P)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>แสดง FPS</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>บรรทัดใหม่: Enter, ตกลง: Ctrl + Enter</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>เคอร์เซอร์ ชนิด:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>เงาตกกระทบ</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>สี่เหลี่ยมจัตุรัส รูปร่าง แว่นขยาย</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>ทำต่อ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>โหมดเริ่มตัวแก้ไข:</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>รูปภาพ บันทึกแล้ว</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>ลูกศร หัว ทิศทาง:</value>
+  </data>
+  <data name="ShapeManager_FreehandSmoothing" xml:space="preserve">
+    <value>การทำให้เรียบ:</value>
+  </data>
+  <data name="ShapeManager_FreehandCurveInterpolation" xml:space="preserve">
+    <value>เส้นโค้ง การประมาณค่า</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>จับภาพ เต็มหน้าจอ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>จับภาพ พื้นที่</value>
+  </data>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>จับภาพสี่เหลี่ยมแบบสว่าง</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
+    <value>บันทึกรูปภาพ (Ctrl + S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
+    <value>ใหม่ รูปภาพ...</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>เบลอ</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>การเข้ารหัส...</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>ความแรงการเบลอ:</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>การอัปโหลดรูปภาพing</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>เปิดใช้งานภาพเคลื่อนไหว</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>ส่งไปด้านหลัง</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>ความสูง:</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>รูปภาพ คัดลอกแล้ว</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>เติม สี...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
+    <value>บันทึกรูปภาพเป็น... (Ctrl + Shift + S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>ทำงานต่อ (Space หรือคลิกขวา)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
+    <value>ขนาดแบบอักษร:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
+    <value>ขนาดผืนผ้าใบ...</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>ขนาดไอคอนเมนู:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
+    <value>พลิกแนวตั้ง</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
+    <value>อัตโนมัติ ครอบตัด รูปภาพ...</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>ทำเป็นพิกเซล</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>ล็อก เมนู</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>นำ เพื่อ ด้านหน้า</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>หมุน 180°</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>ใช้จุดจับปรับขนาดแบบสว่าง</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>จับภาพ ล่าสุด พื้นที่</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
+    <value>แทรกรูปภาพจากหน้าจอ...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
+    <value>ลบ ทั้งหมด</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>อัตโนมัติ คัดลอกรูปภาพ ไปยังคลิปบอร์ด</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>ขนาดเส้นขอบ:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
+    <value>ตัวแก้ไข เมนู</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
+    <value>วาง รูปภาพ/ข้อความ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
+    <value>ครอบตัด รูปภาพ...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>สีเส้นขอบ...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>แสดง แว่นขยาย</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>หยุดชั่วคราว</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
+    <value>ShareX - ตัวแก้ไขรูปภาพ</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>เงาตกกระทบ สี...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>สลับไปยังเครื่องมือเลือกหลังวาดรูปร่าง</value>
+  </data>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>สี่เหลี่ยมผืนผ้า จับภาพ โปร่งใส</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>แสดงข้อมูลตำแหน่งและขนาด</value>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>เริ่ม</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>ขั้นตอน ชนิด:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>คัดลอกรูปภาพไปยังคลิปบอร์ด (Ctrl + C)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_center_crosshair" xml:space="preserve">
+    <value>แสดง กึ่งกลาง เป้าเล็ง</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>แสดงเป้าเล็งทั่วหน้าจอ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
+    <value>รูปภาพ</value>
+  </data>
+  <data name="RectangleRegion_GetColorPickerText" xml:space="preserve">
+    <value>RGB: {0}, {1}, {2}
+เลขฐานสิบหก: {3}
+X: {4} Y: {5}</value>
+    <comment>@Invariant</comment>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>พิกเซลแว่นขยาย จำนวน:</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>หน้าต่างนี้จะปิดก่อนเปิดหน้าเว็บการผูกปุ่ม ต้องการดำเนินการต่อหรือไม่</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>FPS ขีดจำกัด:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
+    <value>แทรก ไฟล์รูปภาพ...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>ซูมให้พอดีเมื่อเปิด</value>
+  </data>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>เคล็ดลับ: เลื่อนรูปภาพได้โดยกดปุ่มกลางของเมาส์ค้างไว้แล้วลาก</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>เรียกใช้ หลังจับภาพ งาน (ป้อน)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>จดจำ เมนู สถานะ</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>ตัดออก เอฟเฟกต์:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>พิกเซลแว่นขยาย ขนาด:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>ตัวเลือกเครื่องมือ</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>หยุด</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>คลิกเพื่อ เริ่ม การบันทึก.</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>รูปภาพ URL</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>มีการเปลี่ยนแปลงที่ยังไม่ได้บันทึก
+
+ต้องการบันทึกการเปลี่ยนแปลงก่อนปิดตัวแก้ไขรูปภาพหรือไม่</value>
+  </data>
+  <data name="CutOutBackgroundColor" xml:space="preserve">
+    <value>ตัดสีพื้นหลังออก...</value>
+  </data>
+  <data name="RulerAngle" xml:space="preserve">
+    <value>มุม</value>
+  </data>
+  <data name="RulerPerimeter" xml:space="preserve">
+    <value>เส้นรอบรูป</value>
+  </data>
+  <data name="RulerArea" xml:space="preserve">
+    <value>พื้นที่</value>
+  </data>
+  <data name="RulerWidth" xml:space="preserve">
+    <value>ความกว้าง</value>
+  </data>
+  <data name="RulerHeight" xml:space="preserve">
+    <value>ความสูง</value>
+  </data>
+  <data name="RulerDistance" xml:space="preserve">
+    <value>ระยะห่าง</value>
+  </data>
+  <data name="RulerRight" xml:space="preserve">
+    <value>ขวา</value>
+  </data>
+  <data name="RulerBottom" xml:space="preserve">
+    <value>ด้านล่าง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_ultra_fast" xml:space="preserve">
+    <value>พิเศษ เร็ว</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_super_fast" xml:space="preserve">
+    <value>พิเศษ เร็ว</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_very_fast" xml:space="preserve">
+    <value>มาก เร็ว</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_faster" xml:space="preserve">
+    <value>เร็วขึ้น</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_fast" xml:space="preserve">
+    <value>เร็ว</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_medium" xml:space="preserve">
+    <value>ปานกลาง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_slow" xml:space="preserve">
+    <value>ช้า</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_slower" xml:space="preserve">
+    <value>ช้าลง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_very_slow" xml:space="preserve">
+    <value>มาก ช้า</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Preset_placebo" xml:space="preserve">
+    <value>เพลซีโบ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_fastest_lowest_quality" xml:space="preserve">
+    <value>เร็วที่สุด (ต่ำสุด คุณภาพ)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_faster_lower_quality" xml:space="preserve">
+    <value>เร็วขึ้น (ต่ำกว่า คุณภาพ)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_fast_low_quality" xml:space="preserve">
+    <value>เร็ว (ต่ำ คุณภาพ)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_medium_medium_quality" xml:space="preserve">
+    <value>ปานกลาง (ปานกลาง คุณภาพ)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_slow_good_quality" xml:space="preserve">
+    <value>ช้า (ดี คุณภาพ)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_slower_better_quality" xml:space="preserve">
+    <value>ช้าลง (ดีกว่า คุณภาพ)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_slowest_best_quality" xml:space="preserve">
+    <value>ช้าที่สุด (ดีที่สุด คุณภาพ)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_high_quality" xml:space="preserve">
+    <value>คุณภาพสูง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_low_latency" xml:space="preserve">
+    <value>เวลาแฝงต่ำ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_ultra_low_latency" xml:space="preserve">
+    <value>เวลาแฝงต่ำมาก</value>
+  </data>
+  <data name="FFmpegOptionsWindow_NVENC_lossless" xml:space="preserve">
+    <value>ไม่สูญเสียคุณภาพ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_generic_transcoding" xml:space="preserve">
+    <value>การแปลงรหัสทั่วไป</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_ultra_low_latency_transcoding" xml:space="preserve">
+    <value>เวลาแฝงต่ำมาก การแปลงรหัส</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_low_latency_transcoding" xml:space="preserve">
+    <value>เวลาแฝงต่ำ การแปลงรหัส</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_webcam" xml:space="preserve">
+    <value>เว็บแคม</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_high_quality_transcoding" xml:space="preserve">
+    <value>การแปลงรหัสคุณภาพสูง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_low_latency_high_quality_transcoding" xml:space="preserve">
+    <value>เวลาแฝงต่ำ, คุณภาพสูง การแปลงรหัส</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_prefer_speed" xml:space="preserve">
+    <value>ต้องการมากกว่า ความเร็ว</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_balanced" xml:space="preserve">
+    <value>สมดุล</value>
+  </data>
+  <data name="FFmpegOptionsWindow_AMF_prefer_quality" xml:space="preserve">
+    <value>ต้องการมากกว่า คุณภาพ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_software" xml:space="preserve">
+    <value>H.264 การเข้ารหัสด้วยซอฟต์แวร์</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_software_hint" xml:space="preserve">
+    <value>ค่าเริ่มต้นที่ดีที่สุดสำหรับความเข้ากันได้ในการเล่นอย่างกว้างขวาง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H265_software" xml:space="preserve">
+    <value>H.265 การเข้ารหัสด้วยซอฟต์แวร์</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H265_software_hint" xml:space="preserve">
+    <value>ไฟล์เล็กกว่า H.264 แต่เข้ารหัสช้ากว่าและรองรับการเล่นน้อยกว่า</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP8_software" xml:space="preserve">
+    <value>VP8 การเข้ารหัสด้วยซอฟต์แวร์</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP8_software_hint" xml:space="preserve">
+    <value>สร้างไฟล์ WebM สำหรับเวิร์กโฟลว์บนเว็บ</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP9_software" xml:space="preserve">
+    <value>VP9 การเข้ารหัสด้วยซอฟต์แวร์</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_VP9_software_hint" xml:space="preserve">
+    <value>ผลลัพธ์ WebM ที่มีประสิทธิภาพแต่ใช้ CPU มากขึ้น</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_MPEG4_Xvid" xml:space="preserve">
+    <value>MPEG-4 / Xvid</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_MPEG4_Xvid_hint" xml:space="preserve">
+    <value>ตัวเข้ารหัสรุ่นเก่าสำหรับความเข้ากันได้กับ AVI</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_NVIDIA" xml:space="preserve">
+    <value>H.264 NVIDIA การเข้ารหัส</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_NVIDIA_hint" xml:space="preserve">
+    <value>ใช้ GPU NVIDIA ที่รองรับเพื่อลดการใช้ CPU</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_NVIDIA" xml:space="preserve">
+    <value>HEVC NVIDIA การเข้ารหัส</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_NVIDIA_hint" xml:space="preserve">
+    <value>เข้ารหัสด้วย GPU อย่างมีประสิทธิภาพ แต่ความเข้ากันได้ในการเล่นจำกัดกว่า</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_AMD" xml:space="preserve">
+    <value>H.264 AMD การเข้ารหัส</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_AMD_hint" xml:space="preserve">
+    <value>ใช้ GPU AMD ที่รองรับเพื่อลดการใช้ CPU</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_AMD" xml:space="preserve">
+    <value>HEVC AMD การเข้ารหัส</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_AMD_hint" xml:space="preserve">
+    <value>เข้ารหัสด้วย GPU อย่างมีประสิทธิภาพ แต่ความเข้ากันได้ในการเล่นจำกัดกว่า</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync" xml:space="preserve">
+    <value>H.264 Intel Quick Sync</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync_hint" xml:space="preserve">
+    <value>ใช้ฮาร์ดแวร์กราฟิก Intel ที่รองรับเพื่อลดการใช้ CPU</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync" xml:space="preserve">
+    <value>HEVC Intel Quick Sync</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_HEVC_Intel_Quick_Sync_hint" xml:space="preserve">
+    <value>เข้ารหัสด้วยฮาร์ดแวร์ Intel อย่างมีประสิทธิภาพ แต่ความเข้ากันได้ในการเล่นจำกัดกว่า</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_GIF" xml:space="preserve">
+    <value>GIF แบบเคลื่อนไหว</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_GIF_hint" xml:space="preserve">
+    <value>รองรับอย่างแพร่หลาย แต่สร้างไฟล์ใหญ่กว่าและไม่มีเสียง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_WebP" xml:space="preserve">
+    <value>WebP แบบเคลื่อนไหว</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_WebP_hint" xml:space="preserve">
+    <value>ภาพเคลื่อนไหวขนาดกะทัดรัดที่ไม่มีแทร็กเสียง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_PNG" xml:space="preserve">
+    <value>PNG แบบเคลื่อนไหว</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_animated_PNG_hint" xml:space="preserve">
+    <value>ภาพเคลื่อนไหวคุณภาพสูงที่มีไฟล์ใหญ่และไม่มีแทร็กเสียง</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Codec_video_encoding" xml:space="preserve">
+    <value>วิดีโอ การเข้ารหัส</value>
+  </data>
+  <data name="ShapeManager_Spotlight_dim" xml:space="preserve">
+    <value>หรี่:</value>
+  </data>
+  <data name="ShapeManager_Spotlight_blur" xml:space="preserve">
+    <value>เบลอ:</value>
+  </data>
+  <data name="ShapeManager_Spotlight_ellipse_shape" xml:space="preserve">
+    <value>วงรี รูปร่าง</value>
+  </data>
+</root>

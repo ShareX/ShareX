@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ColorPickerWindow_Title" xml:space="preserve">
+    <value>ShareX - ตัวเลือกสี</value>
+  </data>
+  <data name="ColorPickerWindow_Color_mode" xml:space="preserve">
+    <value>สี โหมด</value>
+  </data>
+  <data name="ColorPickerWindow_Hue" xml:space="preserve">
+    <value>เฉดสี</value>
+  </data>
+  <data name="ColorPickerWindow_Saturation" xml:space="preserve">
+    <value>ความอิ่มตัวของสี</value>
+  </data>
+  <data name="ColorPickerWindow_Brightness" xml:space="preserve">
+    <value>ความสว่าง</value>
+  </data>
+  <data name="ColorPickerWindow_Red" xml:space="preserve">
+    <value>แดง</value>
+  </data>
+  <data name="ColorPickerWindow_Green" xml:space="preserve">
+    <value>เขียว</value>
+  </data>
+  <data name="ColorPickerWindow_Blue" xml:space="preserve">
+    <value>น้ำเงิน</value>
+  </data>
+  <data name="ColorPickerWindow_Color_name" xml:space="preserve">
+    <value>สี ชื่อ</value>
+  </data>
+  <data name="ColorPickerWindow_Hex" xml:space="preserve">
+    <value>เลขฐานสิบหก</value>
+  </data>
+  <data name="ColorPickerWindow_Decimal" xml:space="preserve">
+    <value>ทศนิยม</value>
+  </data>
+  <data name="ColorPickerWindow_Alpha" xml:space="preserve">
+    <value>อัลฟา</value>
+  </data>
+  <data name="ColorPickerWindow_Hue_degrees" xml:space="preserve">
+    <value>เฉดสี °</value>
+  </data>
+  <data name="ColorPickerWindow_Saturation_percent" xml:space="preserve">
+    <value>ความอิ่มตัวของสี %</value>
+  </data>
+  <data name="ColorPickerWindow_Brightness_percent" xml:space="preserve">
+    <value>ความสว่าง %</value>
+  </data>
+  <data name="ColorPickerWindow_Cyan_percent" xml:space="preserve">
+    <value>ฟ้าอมเขียว %</value>
+  </data>
+  <data name="ColorPickerWindow_Magenta_percent" xml:space="preserve">
+    <value>ม่วงแดง %</value>
+  </data>
+  <data name="ColorPickerWindow_Yellow_percent" xml:space="preserve">
+    <value>เหลือง %</value>
+  </data>
+  <data name="ColorPickerWindow_Key_percent" xml:space="preserve">
+    <value>คีย์ %</value>
+  </data>
+  <data name="ColorPickerWindow_Current" xml:space="preserve">
+    <value>ปัจจุบัน</value>
+  </data>
+  <data name="ColorPickerWindow_Previous" xml:space="preserve">
+    <value>ก่อนหน้า</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_all_details" xml:space="preserve">
+    <value>คัดลอกทั้งหมด รายละเอียด</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_RGB" xml:space="preserve">
+    <value>คัดลอก RGB</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_hexadecimal" xml:space="preserve">
+    <value>คัดลอก เลขฐานสิบหก</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_HSB" xml:space="preserve">
+    <value>คัดลอก HSB</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_CMYK" xml:space="preserve">
+    <value>คัดลอก CMYK</value>
+  </data>
+  <data name="ColorPickerWindow_Copy_decimal" xml:space="preserve">
+    <value>คัดลอก ทศนิยม</value>
+  </data>
+  <data name="ColorPickerWindow_Copy" xml:space="preserve">
+    <value>คัดลอก</value>
+  </data>
+  <data name="ColorPickerWindow_Recent_colors" xml:space="preserve">
+    <value>ล่าสุด สี</value>
+  </data>
+  <data name="ColorPickerWindow_Standard_colors" xml:space="preserve">
+    <value>มาตรฐาน สี</value>
+  </data>
+  <data name="ColorPickerWindow_Pick_from_screen" xml:space="preserve">
+    <value>เลือกสีจากหน้าจอ...</value>
+  </data>
+  <data name="ColorPickerWindow_Pick_from_clipboard" xml:space="preserve">
+    <value>เลือก สี จากคลิปบอร์ด</value>
+  </data>
+  <data name="ColorPickerWindow_OK" xml:space="preserve">
+    <value>ตกลง</value>
+  </data>
+  <data name="ColorPickerWindow_Cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="ErrorWindow_Title" xml:space="preserve">
+    <value>ShareX - ข้อผิดพลาด</value>
+  </data>
+  <data name="ErrorWindow_Heading" xml:space="preserve">
+    <value>เกิดข้อผิดพลาด</value>
+  </data>
+  <data name="ErrorWindow_Description" xml:space="preserve">
+    <value>ตรวจสอบรายละเอียดด้านล่างหรือใช้ตัวเลือกการสนับสนุนที่มีอยู่</value>
+  </data>
+  <data name="ErrorWindow_Send_bug_report" xml:space="preserve">
+    <value>ส่ง ข้อบกพร่อง รายงาน</value>
+  </data>
+  <data name="ErrorWindow_Open_log_file" xml:space="preserve">
+    <value>เปิด ไฟล์บันทึก</value>
+  </data>
+  <data name="ErrorWindow_Continue" xml:space="preserve">
+    <value>ดำเนินการต่อ</value>
+  </data>
+  <data name="ErrorWindow_Quit" xml:space="preserve">
+    <value>ออก</value>
+  </data>
+  <data name="ErrorWindow_OK" xml:space="preserve">
+    <value>ตกลง</value>
+  </data>
+  <data name="ErrorWindow_Default_title" xml:space="preserve">
+    <value>ข้อผิดพลาด</value>
+  </data>
+  <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
+    <value>ไม่คาดคิด เกิดข้อผิดพลาด.</value>
+  </data>
+  <data name="ImageViewerWindow_Title" xml:space="preserve">
+    <value>ShareX - ตัวแสดงรูปภาพ</value>
+  </data>
+  <data name="ImageViewerWindow_Open_image" xml:space="preserve">
+    <value>เปิดรูปภาพ</value>
+  </data>
+  <data name="InputBoxWindow_Default_title" xml:space="preserve">
+    <value>อินพุต</value>
+  </data>
+  <data name="InputBoxWindow_Title" xml:space="preserve">
+    <value>ShareX - {0}</value>
+  </data>
+  <data name="OutputBoxWindow_Default_title" xml:space="preserve">
+    <value>ผลลัพธ์</value>
+  </data>
+  <data name="OutputBoxWindow_Title" xml:space="preserve">
+    <value>ShareX - {0}</value>
+  </data>
+  <data name="OutputBoxWindow_Copy_all" xml:space="preserve">
+    <value>คัดลอกทั้งหมด</value>
+  </data>
+  <data name="OutputBoxWindow_Close" xml:space="preserve">
+    <value>ปิด</value>
+  </data>
+  <data name="PrintWindow_Title" xml:space="preserve">
+    <value>ShareX - ตัวเลือกการพิมพ์</value>
+  </data>
+  <data name="PrintWindow_Heading" xml:space="preserve">
+    <value>ตัวเลือกการพิมพ์</value>
+  </data>
+  <data name="PrintWindow_Description" xml:space="preserve">
+    <value>กำหนดค่าการจัดวางและมาตราส่วนรูปภาพ</value>
+  </data>
+  <data name="PrintWindow_Margin" xml:space="preserve">
+    <value>ระยะขอบ:</value>
+  </data>
+  <data name="PrintWindow_Pixels" xml:space="preserve">
+    <value>px</value>
+  </data>
+  <data name="PrintWindow_Auto_rotate_image" xml:space="preserve">
+    <value>อัตโนมัติ หมุน รูปภาพ</value>
+  </data>
+  <data name="PrintWindow_Auto_scale_image" xml:space="preserve">
+    <value>อัตโนมัติ มาตราส่วน รูปภาพ</value>
+  </data>
+  <data name="PrintWindow_Allow_image_to_enlarge" xml:space="preserve">
+    <value>อนุญาตให้ขยายรูปภาพ</value>
+  </data>
+  <data name="PrintWindow_Center_image_position" xml:space="preserve">
+    <value>กึ่งกลาง รูปภาพ ตำแหน่ง</value>
+  </data>
+  <data name="PrintWindow_Preview" xml:space="preserve">
+    <value>ตัวอย่าง...</value>
+  </data>
+  <data name="DownloaderWindow_Title" xml:space="preserve">
+    <value>ShareX - ตัวดาวน์โหลดไฟล์</value>
+  </data>
+  <data name="DownloaderWindow_Heading" xml:space="preserve">
+    <value>ไฟล์ ตัวดาวน์โหลด</value>
+  </data>
+  <data name="DownloaderWindow_Description" xml:space="preserve">
+    <value>ดาวน์โหลดการอัปเดต ShareX และไฟล์ที่จำเป็นอื่นๆ</value>
+  </data>
+  <data name="DownloaderWindow_Download" xml:space="preserve">
+    <value>ดาวน์โหลด</value>
+  </data>
+  <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
+    <value>มุมมอง บันทึกการเปลี่ยนแปลง</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
+    <value>สีแดง (0-255)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_255" xml:space="preserve">
+    <value>สีเขียว (0-255)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_255" xml:space="preserve">
+    <value>สีน้ำเงิน (0-255)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_normalized" xml:space="preserve">
+    <value>สีแดง (0-1) ระบุความแม่นยำทศนิยมด้วย {n} ค่าเริ่มต้นคือ 3</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_normalized" xml:space="preserve">
+    <value>สีเขียว (0-1) ระบุความแม่นยำทศนิยมด้วย {n} ค่าเริ่มต้นคือ 3</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_normalized" xml:space="preserve">
+    <value>สีน้ำเงิน (0-1) ระบุความแม่นยำทศนิยมด้วย {n} ค่าเริ่มต้นคือ 3</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Hex_lowercase" xml:space="preserve">
+    <value>สีฐานสิบหก ค่า (ตัวพิมพ์เล็ก)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_hex_lowercase" xml:space="preserve">
+    <value>ค่าสีแดงฐานสิบหก (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_hex_lowercase" xml:space="preserve">
+    <value>ค่าสีเขียวฐานสิบหก (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_hex_lowercase" xml:space="preserve">
+    <value>ค่าสีน้ำเงินฐานสิบหก (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Hex_uppercase" xml:space="preserve">
+    <value>สีฐานสิบหก ค่า (ตัวพิมพ์ใหญ่)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Red_hex_uppercase" xml:space="preserve">
+    <value>ค่าสีแดงฐานสิบหก (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Green_hex_uppercase" xml:space="preserve">
+    <value>ค่าสีเขียวฐานสิบหก (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Blue_hex_uppercase" xml:space="preserve">
+    <value>ค่าสีน้ำเงินฐานสิบหก (00-ff)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Cyan_100" xml:space="preserve">
+    <value>ฟ้าอมเขียว สี (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Magenta_100" xml:space="preserve">
+    <value>ม่วงแดง สี (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Yellow_100" xml:space="preserve">
+    <value>เหลือง สี (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Key_100" xml:space="preserve">
+    <value>คีย์ สี (0-100)</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Color_name" xml:space="preserve">
+    <value>สี ชื่อ</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_X_position" xml:space="preserve">
+    <value>X ตำแหน่ง</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_Y_position" xml:space="preserve">
+    <value>Y ตำแหน่ง</value>
+  </data>
+  <data name="CodeMenuEntryPixelInfo_New_line" xml:space="preserve">
+    <value>บรรทัดใหม่</value>
+  </data>
+  <data name="HotkeyInfo_Ctrl" xml:space="preserve">
+    <value>Ctrl</value>
+  </data>
+  <data name="HotkeyInfo_Shift" xml:space="preserve">
+    <value>Shift</value>
+  </data>
+  <data name="HotkeyInfo_Alt" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="HotkeyInfo_Win" xml:space="preserve">
+    <value>Win</value>
+  </data>
+  <data name="HotkeyInfo_Backspace" xml:space="preserve">
+    <value>Backspace</value>
+  </data>
+  <data name="HotkeyInfo_Enter" xml:space="preserve">
+    <value>ป้อน</value>
+  </data>
+  <data name="HotkeyInfo_Caps_lock" xml:space="preserve">
+    <value>Caps ล็อก</value>
+  </data>
+  <data name="HotkeyInfo_Page_down" xml:space="preserve">
+    <value>หน้า ลง</value>
+  </data>
+  <data name="HotkeyInfo_Scroll_lock" xml:space="preserve">
+    <value>เลื่อน ล็อก</value>
+  </data>
+  <data name="HotkeyInfo_Numpad" xml:space="preserve">
+    <value>Numpad</value>
+  </data>
+  <data name="FFmpegCLIManager_Error_title" xml:space="preserve">
+    <value>FFmpeg ข้อผิดพลาด</value>
+  </data>
+  <data name="Translator_Text" xml:space="preserve">
+    <value>ข้อความ</value>
+  </data>
+  <data name="Translator_Binary" xml:space="preserve">
+    <value>ไบนารี</value>
+  </data>
+  <data name="Translator_Hexadecimal" xml:space="preserve">
+    <value>เลขฐานสิบหก</value>
+  </data>
+  <data name="Translator_ASCII" xml:space="preserve">
+    <value>ASCII</value>
+  </data>
+  <data name="Translator_Base64" xml:space="preserve">
+    <value>ฐาน64</value>
+  </data>
+  <data name="PingResult_Reply_from" xml:space="preserve">
+    <value>ตอบกลับจาก {0}: ไบต์={1} เวลา={2}ms TTL={3}</value>
+  </data>
+  <data name="PingResult_Request_timed_out" xml:space="preserve">
+    <value>คำขอ จับเวลา ออก.</value>
+  </data>
+  <data name="PingResult_Ping_failed" xml:space="preserve">
+    <value>Ping ล้มเหลว: {0}</value>
+  </data>
+  <data name="PingResult_Statistics" xml:space="preserve">
+    <value>ต่ำสุด = {0}ms, สูงสุด = {1}ms, เฉลี่ย = {2}ms</value>
+  </data>
+  <data name="PrintHelper_Invalid_printer_message" xml:space="preserve">
+    <value>ไม่มีเครื่องพิมพ์ "{0}" จึงใช้เครื่องพิมพ์เริ่มต้นของ Windows ต่อไป คุณสามารถแทนที่เครื่องพิมพ์เริ่มต้นได้ในการตั้งค่าแอปพลิเคชัน</value>
+  </data>
+  <data name="PrintHelper_Invalid_printer_name" xml:space="preserve">
+    <value>ไม่ถูกต้อง เครื่องพิมพ์ ชื่อ</value>
+  </data>
+  <data name="VideoInfo_Summary" xml:space="preserve">
+    <value>ชื่อไฟล์: {0}, ระยะเวลา: {1}, อัตราบิต: {2} kb/s</value>
+  </data>
+  <data name="VideoInfo_Video_details" xml:space="preserve">
+    <value>, ตัวแปลงสัญญาณวิดีโอ: {0}, ความละเอียด: {1}x{2}, FPS: {3}</value>
+  </data>
+  <data name="VideoInfo_Audio_details" xml:space="preserve">
+    <value>, ตัวแปลงสัญญาณเสียง: {0}</value>
+  </data>
+  <data name="FileHelpers_Rename_file_error" xml:space="preserve">
+    <value>เปลี่ยนชื่อ ไฟล์ ข้อผิดพลาด:</value>
+  </data>
+  <data name="NameParser_Valid_text_file_required" xml:space="preserve">
+    <value>ถูกต้อง ข้อความ เส้นทางไฟล์ จำเป็น.</value>
+  </data>
+  <data name="URLHelpers_Invalid_URL" xml:space="preserve">
+    <value>ไม่ถูกต้อง URL.</value>
+  </data>
+  <data name="ZipManager_Archive_too_large" xml:space="preserve">
+    <value>ขนาดที่ไม่บีบอัดของไฟล์เก็บถาวรนี้เกินขนาดไฟล์สูงสุดที่อนุญาต</value>
+  </data>
+  <data name="ZipManager_Archive_uncompressed_file_size" xml:space="preserve">
+    <value>ขนาดไฟล์เก็บถาวรที่ไม่บีบอัด: {0}</value>
+  </data>
+  <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
+    <value>ขนาดไฟล์สูงสุดที่อนุญาต: {0}</value>
+  </data>
+  <data name="Helpers_Timeout" xml:space="preserve">
+    <value>หมดเวลา</value>
+  </data>
+  <data name="ImageHelpers_Image_files" xml:space="preserve">
+    <value>ไฟล์รูปภาพ</value>
+  </data>
+  <data name="CssFileNameEditor_Cascading_Style_Sheets" xml:space="preserve">
+    <value>แบบซ้อน ลักษณะ แผ่น</value>
+  </data>
+  <data name="JsonFileNameEditor_JavaScript_Object_Notation_files" xml:space="preserve">
+    <value>JavaScript วัตถุ สัญกรณ์ ไฟล์</value>
+  </data>
+  <data name="WavFileNameEditor_Sound_file" xml:space="preserve">
+    <value>เสียง ไฟล์</value>
+  </data>
+  <data name="ExeFileNameEditor_Applications" xml:space="preserve">
+    <value>แอปพลิเคชัน</value>
+  </data>
+  <data name="AppVeyorUpdateChecker_Latest_build_unsuccessful" xml:space="preserve">
+    <value>การสร้างโครงการล่าสุดไม่สำเร็จ</value>
+  </data>
+  <data name="AppVeyorUpdateChecker_Release_build_not_found" xml:space="preserve">
+    <value>ไม่พบรุ่นเผยแพร่ที่สร้างสำเร็จ</value>
+  </data>
+  <data name="AppVeyorUpdateChecker_Deployment_file_not_found" xml:space="preserve">
+    <value>ไม่สามารถ ค้นหา "{0}" ไฟล์.</value>
+  </data>
+</root>

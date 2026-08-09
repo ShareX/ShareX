@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HistoryWindows_ShareX_History" xml:space="preserve">
+    <value>ShareX - ประวัติ</value>
+  </data>
+  <data name="HistoryWindows_Search_file_names_and_tags" xml:space="preserve">
+    <value>ค้นหาชื่อไฟล์และแท็ก</value>
+  </data>
+  <data name="HistoryWindows_Advanced" xml:space="preserve">
+    <value>ขั้นสูง</value>
+  </data>
+  <data name="HistoryWindows_Favorites" xml:space="preserve">
+    <value>รายการโปรด</value>
+  </data>
+  <data name="HistoryWindows_Stats" xml:space="preserve">
+    <value>สถิติ</value>
+  </data>
+  <data name="HistoryWindows_Import" xml:space="preserve">
+    <value>นำเข้า</value>
+  </data>
+  <data name="HistoryWindows_Settings" xml:space="preserve">
+    <value>การตั้งค่า</value>
+  </data>
+  <data name="HistoryWindows_Date" xml:space="preserve">
+    <value>วันที่</value>
+  </data>
+  <data name="HistoryWindows_File_name" xml:space="preserve">
+    <value>ชื่อไฟล์</value>
+  </data>
+  <data name="HistoryWindows_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="HistoryWindows_Open" xml:space="preserve">
+    <value>เปิด</value>
+  </data>
+  <data name="HistoryWindows_Shortened_URL" xml:space="preserve">
+    <value>URL แบบย่อ</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_URL" xml:space="preserve">
+    <value>URL ภาพขนาดย่อ</value>
+  </data>
+  <data name="HistoryWindows_Deletion_URL" xml:space="preserve">
+    <value>URL สำหรับลบ</value>
+  </data>
+  <data name="HistoryWindows_File" xml:space="preserve">
+    <value>ไฟล์</value>
+  </data>
+  <data name="HistoryWindows_Folder" xml:space="preserve">
+    <value>โฟลเดอร์</value>
+  </data>
+  <data name="HistoryWindows_Copy" xml:space="preserve">
+    <value>คัดลอก</value>
+  </data>
+  <data name="HistoryWindows_Image" xml:space="preserve">
+    <value>รูปภาพ</value>
+  </data>
+  <data name="HistoryWindows_Text" xml:space="preserve">
+    <value>ข้อความ</value>
+  </data>
+  <data name="HistoryWindows_HTML_link" xml:space="preserve">
+    <value>HTML ลิงก์</value>
+  </data>
+  <data name="HistoryWindows_HTML_image" xml:space="preserve">
+    <value>HTML รูปภาพ</value>
+  </data>
+  <data name="HistoryWindows_HTML_linked_image" xml:space="preserve">
+    <value>รูปภาพเชื่อมโยง HTML</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_link" xml:space="preserve">
+    <value>Forum (BBCode) ลิงก์</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_image" xml:space="preserve">
+    <value>Forum (BBCode) รูปภาพ</value>
+  </data>
+  <data name="HistoryWindows_Forum_BBCode_linked_image" xml:space="preserve">
+    <value>Forum (BBCode) รูปภาพเชื่อมโยง</value>
+  </data>
+  <data name="HistoryWindows_Markdown_link" xml:space="preserve">
+    <value>มาร์กดาวน์ ลิงก์</value>
+  </data>
+  <data name="HistoryWindows_Markdown_image" xml:space="preserve">
+    <value>มาร์กดาวน์ รูปภาพ</value>
+  </data>
+  <data name="HistoryWindows_Markdown_linked_image" xml:space="preserve">
+    <value>มาร์กดาวน์ รูปภาพเชื่อมโยง</value>
+  </data>
+  <data name="HistoryWindows_File_path" xml:space="preserve">
+    <value>เส้นทางไฟล์</value>
+  </data>
+  <data name="HistoryWindows_File_name_with_extension" xml:space="preserve">
+    <value>ชื่อไฟล์พร้อมนามสกุล</value>
+  </data>
+  <data name="HistoryWindows_Favorite" xml:space="preserve">
+    <value>รายการโปรด</value>
+  </data>
+  <data name="HistoryWindows_Edit_tag" xml:space="preserve">
+    <value>แก้ไข แท็ก...</value>
+  </data>
+  <data name="HistoryWindows_Edit_item" xml:space="preserve">
+    <value>แก้ไข รายการ...</value>
+  </data>
+  <data name="HistoryWindows_Rename_file" xml:space="preserve">
+    <value>เปลี่ยนชื่อ ไฟล์...</value>
+  </data>
+  <data name="HistoryWindows_Delete_from_history" xml:space="preserve">
+    <value>ลบ จาก ประวัติ...</value>
+  </data>
+  <data name="HistoryWindows_Delete_file_and_history_item" xml:space="preserve">
+    <value>ลบไฟล์และรายการประวัติ...</value>
+  </data>
+  <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
+    <value>แสดง ตัวอย่างรูปภาพ</value>
+  </data>
+  <data name="HistoryWindows_Upload_file" xml:space="preserve">
+    <value>อัปโหลด ไฟล์</value>
+  </data>
+  <data name="HistoryWindows_Edit_image" xml:space="preserve">
+    <value>แก้ไข รูปภาพ...</value>
+  </data>
+  <data name="HistoryWindows_Pin_to_screen" xml:space="preserve">
+    <value>ปักหมุดบนหน้าจอ</value>
+  </data>
+  <data name="HistoryWindows_Analyze_image" xml:space="preserve">
+    <value>วิเคราะห์รูปภาพ...</value>
+  </data>
+  <data name="HistoryWindows_No_history_items" xml:space="preserve">
+    <value>ไม่มี รายการประวัติ</value>
+  </data>
+  <data name="HistoryWindows_Advanced_filters" xml:space="preserve">
+    <value>ตัวกรองขั้นสูง</value>
+  </data>
+  <data name="HistoryWindows_Reset_filters" xml:space="preserve">
+    <value>รีเซ็ต ตัวกรอง</value>
+  </data>
+  <data name="HistoryWindows_Type" xml:space="preserve">
+    <value>ชนิด</value>
+  </data>
+  <data name="HistoryWindows_All_types" xml:space="preserve">
+    <value>ทั้งหมด ชนิด</value>
+  </data>
+  <data name="HistoryWindows_Host" xml:space="preserve">
+    <value>โฮสต์</value>
+  </data>
+  <data name="HistoryWindows_All_hosts" xml:space="preserve">
+    <value>ทั้งหมด โฮสต์</value>
+  </data>
+  <data name="HistoryWindows_Date_range" xml:space="preserve">
+    <value>วันที่ ช่วง</value>
+  </data>
+  <data name="HistoryWindows_No_image_preview" xml:space="preserve">
+    <value>ไม่มี ตัวอย่างรูปภาพ</value>
+  </data>
+  <data name="HistoryWindows_Select_an_item_to_preview" xml:space="preserve">
+    <value>เลือกรายการเพื่อแสดงตัวอย่าง</value>
+  </data>
+  <data name="HistoryWindows_History_statistics" xml:space="preserve">
+    <value>สถิติประวัติ</value>
+  </data>
+  <data name="HistoryWindows_Close" xml:space="preserve">
+    <value>ปิด</value>
+  </data>
+  <data name="HistoryWindows_Import_folder" xml:space="preserve">
+    <value>นำเข้า โฟลเดอร์</value>
+  </data>
+  <data name="HistoryWindows_Folder_path" xml:space="preserve">
+    <value>เส้นทางโฟลเดอร์</value>
+  </data>
+  <data name="HistoryWindows_Browse" xml:space="preserve">
+    <value>เรียกดู...</value>
+  </data>
+  <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
+    <value>เท่านั้น นำเข้า ไฟล์รูปภาพ</value>
+  </data>
+  <data name="HistoryWindows_Skip_duplicate_files" xml:space="preserve">
+    <value>ข้าม ทำสำเนา ไฟล์</value>
+  </data>
+  <data name="HistoryWindows_Cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="HistoryWindows_History_settings" xml:space="preserve">
+    <value>ประวัติ การตั้งค่า</value>
+  </data>
+  <data name="HistoryWindows_Remember_search_text" xml:space="preserve">
+    <value>จดจำ ค้นหา ข้อความ</value>
+  </data>
+  <data name="HistoryWindows_Remember_window_size_and_position" xml:space="preserve">
+    <value>จดจำขนาดและตำแหน่งหน้าต่าง</value>
+  </data>
+  <data name="HistoryWindows_Done" xml:space="preserve">
+    <value>เสร็จแล้ว</value>
+  </data>
+  <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
+    <value>แก้ไข รายการประวัติ</value>
+  </data>
+  <data name="HistoryWindows_Tags" xml:space="preserve">
+    <value>แท็ก</value>
+  </data>
+  <data name="HistoryWindows_One_key_value_pair_per_line" xml:space="preserve">
+    <value>หนึ่งคู่ key=value ต่อบรรทัด</value>
+  </data>
+  <data name="HistoryWindows_Save" xml:space="preserve">
+    <value>บันทึก</value>
+  </data>
+  <data name="HistoryWindows_OK" xml:space="preserve">
+    <value>ตกลง</value>
+  </data>
+  <data name="HistoryWindows_ShareX_Image_History" xml:space="preserve">
+    <value>ShareX - ประวัติรูปภาพ</value>
+  </data>
+  <data name="HistoryWindows_Loading" xml:space="preserve">
+    <value>กำลังโหลด...</value>
+  </data>
+  <data name="HistoryWindows_Open_image" xml:space="preserve">
+    <value>เปิดรูปภาพ</value>
+  </data>
+  <data name="HistoryWindows_Forum_link" xml:space="preserve">
+    <value>Forum ลิงก์</value>
+  </data>
+  <data name="HistoryWindows_Forum_image" xml:space="preserve">
+    <value>Forum รูปภาพ</value>
+  </data>
+  <data name="HistoryWindows_Forum_linked_image" xml:space="preserve">
+    <value>รูปภาพเชื่อมโยงสำหรับฟอรัม</value>
+  </data>
+  <data name="HistoryWindows_Toggle_favorite" xml:space="preserve">
+    <value>สลับ รายการโปรด</value>
+  </data>
+  <data name="HistoryWindows_No_image_history_items" xml:space="preserve">
+    <value>ไม่มีรายการประวัติรูปภาพ</value>
+  </data>
+  <data name="HistoryWindows_Image_history_settings" xml:space="preserve">
+    <value>รูปภาพ ประวัติ การตั้งค่า</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_width" xml:space="preserve">
+    <value>ภาพขนาดย่อ ความกว้าง</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_height" xml:space="preserve">
+    <value>ความสูงภาพขนาดย่อ</value>
+  </data>
+  <data name="HistoryWindows_Thumbnail_header" xml:space="preserve">
+    <value>ภาพขนาดย่อ ส่วนหัว</value>
+  </data>
+  <data name="HistoryWindows_None" xml:space="preserve">
+    <value>ไม่มี</value>
+  </data>
+  <data name="HistoryWindows_Top" xml:space="preserve">
+    <value>ด้านบน</value>
+  </data>
+  <data name="HistoryWindows_Bottom" xml:space="preserve">
+    <value>ด้านล่าง</value>
+  </data>
+  <data name="HistoryWindows_Items_per_batch" xml:space="preserve">
+    <value>รายการ ต่อ ชุด</value>
+  </data>
+  <data name="HistoryWindows_Load_the_next_batch_near_the_end" xml:space="preserve">
+    <value>โหลดชุดถัดไปเมื่อใกล้ถึงส่วนท้าย</value>
+  </data>
+  <data name="HistoryWindows_Hide_missing_files" xml:space="preserve">
+    <value>ซ่อน หายไป ไฟล์</value>
+  </data>
+  <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
+    <value>แสดง ไฟล์รูปภาพ เท่านั้น</value>
+  </data>
+  <data name="HistoryHelpers_Empty" xml:space="preserve">
+    <value>(ว่าง)</value>
+  </data>
+  <data name="HistoryHelpers_HistoryItemCounts" xml:space="preserve">
+    <value>รายการประวัติ จำนวน:</value>
+  </data>
+  <data name="HistoryHelpers_Total" xml:space="preserve">
+    <value>รวม:</value>
+  </data>
+  <data name="HistoryHelpers_YearlyUsages" xml:space="preserve">
+    <value>การใช้งานรายปี:</value>
+  </data>
+  <data name="HistoryHelpers_FileExtensions" xml:space="preserve">
+    <value>นามสกุลไฟล์s:</value>
+  </data>
+  <data name="HistoryHelpers_Hosts" xml:space="preserve">
+    <value>โฮสต์:</value>
+  </data>
+  <data name="HistoryHelpers_ProcessNames" xml:space="preserve">
+    <value>ประมวลผล ชื่อ:</value>
+  </data>
+  <data name="HistoryManager_ErrorOccurredWhileReadingHistoryFile" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขณะอ่านไฟล์ประวัติ:</value>
+  </data>
+  <data name="HistoryManager_Error" xml:space="preserve">
+    <value>ข้อผิดพลาด</value>
+  </data>
+  <data name="HistoryWindow_ItemsFormat" xml:space="preserve">
+    <value>{0:N0} รายการ</value>
+  </data>
+  <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
+    <value>ไม่มีรายการที่ตรงกับตัวกรองปัจจุบัน</value>
+  </data>
+  <data name="HistoryWindow_Unfavorite" xml:space="preserve">
+    <value>เอาออกจากรายการโปรด</value>
+  </data>
+  <data name="HistoryWindow_CalculatingStatistics" xml:space="preserve">
+    <value>กำลังคำนวณสถิติ...</value>
+  </data>
+  <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
+    <value>เลือกโฟลเดอร์ที่จะนำเข้า</value>
+  </data>
+  <data name="HistoryWindow_SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>โฟลเดอร์ที่เลือก ไม่ มีอยู่.</value>
+  </data>
+  <data name="HistoryWindow_ImportingFiles" xml:space="preserve">
+    <value>กำลังนำเข้า ไฟล์...</value>
+  </data>
+  <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
+    <value>สำเร็จ นำเข้าแล้ว {0:N0} ไฟล์.</value>
+  </data>
+  <data name="HistoryWindow_EditTag" xml:space="preserve">
+    <value>แก้ไขแท็ก</value>
+  </data>
+  <data name="HistoryWindow_EnterTagForHistoryItem" xml:space="preserve">
+    <value>ป้อนแท็กสำหรับรายการประวัตินี้</value>
+  </data>
+  <data name="HistoryWindow_RenameFile" xml:space="preserve">
+    <value>เปลี่ยนชื่อ ไฟล์</value>
+  </data>
+  <data name="HistoryWindow_EnterNewFileName" xml:space="preserve">
+    <value>ป้อน ใหม่ ชื่อไฟล์.</value>
+  </data>
+  <data name="HistoryWindow_Rename" xml:space="preserve">
+    <value>เปลี่ยนชื่อ</value>
+  </data>
+  <data name="HistoryWindow_ThisFile" xml:space="preserve">
+    <value>นี้ ไฟล์</value>
+  </data>
+  <data name="HistoryWindow_ThisItem" xml:space="preserve">
+    <value>รายการนี้</value>
+  </data>
+  <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
+    <value>ไฟล์ {0:N0} รายการนี้</value>
+  </data>
+  <data name="HistoryWindow_TheseItemsFormat" xml:space="preserve">
+    <value>เหล่านี้ {0:N0} รายการ</value>
+  </data>
+  <data name="HistoryWindow_DeleteFiles" xml:space="preserve">
+    <value>ลบ ไฟล์?</value>
+  </data>
+  <data name="HistoryWindow_DeleteHistoryItems" xml:space="preserve">
+    <value>ลบรายการประวัติหรือไม่</value>
+  </data>
+  <data name="HistoryWindow_ConfirmDeleteFormat" xml:space="preserve">
+    <value>คุณต้องการลบ {0} จริงหรือไม่ การดำเนินการนี้ไม่สามารถเลิกทำได้</value>
+  </data>
+  <data name="HistoryWindow_Delete" xml:space="preserve">
+    <value>ลบ</value>
+  </data>
+  <data name="ImageHistoryWindow_ItemsFormat" xml:space="preserve">
+    <value>{0:N0} รายการ</value>
+  </data>
+  <data name="ImageHistoryWindow_NoItemsMatchCurrentFilter" xml:space="preserve">
+    <value>ไม่มีรายการที่ตรงกับตัวกรองปัจจุบัน</value>
+  </data>
+  <data name="ImageHistoryWindow_CalculatingStatistics" xml:space="preserve">
+    <value>กำลังคำนวณสถิติ...</value>
+  </data>
+  <data name="ImageHistoryWindow_SelectFolderToImport" xml:space="preserve">
+    <value>เลือกโฟลเดอร์ที่จะนำเข้า</value>
+  </data>
+  <data name="ImageHistoryWindow_SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>โฟลเดอร์ที่เลือก ไม่ มีอยู่.</value>
+  </data>
+  <data name="ImageHistoryWindow_ImportingFiles" xml:space="preserve">
+    <value>กำลังนำเข้า ไฟล์...</value>
+  </data>
+  <data name="ImageHistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
+    <value>สำเร็จ นำเข้าแล้ว {0:N0} ไฟล์.</value>
+  </data>
+  <data name="ImageHistoryWindow_EditTag" xml:space="preserve">
+    <value>แก้ไขแท็ก</value>
+  </data>
+  <data name="ImageHistoryWindow_EnterTagForHistoryItem" xml:space="preserve">
+    <value>ป้อนแท็กสำหรับรายการประวัตินี้</value>
+  </data>
+  <data name="ImageHistoryWindow_RenameFile" xml:space="preserve">
+    <value>เปลี่ยนชื่อ ไฟล์</value>
+  </data>
+  <data name="ImageHistoryWindow_EnterNewFileName" xml:space="preserve">
+    <value>ป้อน ใหม่ ชื่อไฟล์.</value>
+  </data>
+  <data name="ImageHistoryWindow_Rename" xml:space="preserve">
+    <value>เปลี่ยนชื่อ</value>
+  </data>
+  <data name="ImageHistoryWindow_ThisFile" xml:space="preserve">
+    <value>นี้ ไฟล์</value>
+  </data>
+  <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
+    <value>รายการนี้</value>
+  </data>
+  <data name="ImageHistoryWindow_TheseFilesFormat" xml:space="preserve">
+    <value>ไฟล์ {0:N0} รายการนี้</value>
+  </data>
+  <data name="ImageHistoryWindow_TheseItemsFormat" xml:space="preserve">
+    <value>เหล่านี้ {0:N0} รายการ</value>
+  </data>
+  <data name="ImageHistoryWindow_DeleteFiles" xml:space="preserve">
+    <value>ลบ ไฟล์?</value>
+  </data>
+  <data name="ImageHistoryWindow_DeleteHistoryItems" xml:space="preserve">
+    <value>ลบรายการประวัติหรือไม่</value>
+  </data>
+  <data name="ImageHistoryWindow_ConfirmDeleteFormat" xml:space="preserve">
+    <value>คุณต้องการลบ {0} จริงหรือไม่ การดำเนินการนี้ไม่สามารถเลิกทำได้</value>
+  </data>
+  <data name="ImageHistoryWindow_Delete" xml:space="preserve">
+    <value>ลบ</value>
+  </data>
+  <data name="ImageHistoryWindow_OpenFile" xml:space="preserve">
+    <value>เปิดไฟล์หรือไม่</value>
+  </data>
+  <data name="ImageHistoryWindow_ConfirmOpenFileFormat" xml:space="preserve">
+    <value>คุณต้องการ เปิด นี้ ไฟล์?
+
+{0}</value>
+  </data>
+</root>

@@ -10,7 +10,7 @@ HistoryLib uses the shared `Strings.resx` catalog in this directory. Resource ke
 | Statistics output | `HistoryHelpers_` | 7 | Complete |
 | History manager errors | `HistoryManager_` | 2 | Complete |
 
-All 139 keys are translated in all 26 supported cultures. The former `Properties/Resources` catalog was consolidated here.
+All 139 keys are translated in all 27 supported cultures. The former `Properties/Resources` catalog was consolidated here.
 
 Run validation from the repository root:
 

@@ -98,6 +98,8 @@ namespace ShareX
         Spanish,
         [Description("Svenska (Swedish)")]
         Swedish,
+        [Description("ไทย (Thai)")]
+        Thai,
         [Description("繁體中文 (Traditional Chinese)")]
         TraditionalChinese,
         [Description("Türkçe (Turkish)")]

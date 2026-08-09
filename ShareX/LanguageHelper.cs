@@ -141,6 +141,9 @@ namespace ShareX
                 case SupportedLanguage.Swedish:
                     cultureName = "sv-SE";
                     break;
+                case SupportedLanguage.Thai:
+                    cultureName = "th-TH";
+                    break;
                 case SupportedLanguage.TraditionalChinese:
                     cultureName = "zh-TW";
                     break;
