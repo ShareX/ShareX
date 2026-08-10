@@ -1510,12 +1510,6 @@
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>上传</value>
   </data>
-  <data name="RulerViewModel_Details" xml:space="preserve">
-    <value>面积：{0:N0} 像素²  |  周长：{1:N0} 像素  |  距离：{2:0.00} 像素  |  角度：{3:0.00}°</value>
-  </data>
-  <data name="RulerViewModel_Position" xml:space="preserve">
-    <value>X：{0}  Y：{1}  |  右：{2}  下：{3}  |  宽度：{4} 像素  高度：{5} 像素</value>
-  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - 标尺</value>
   </data>

@@ -1510,12 +1510,6 @@ Cesta k souboru: {0}</value>
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>Nahrát</value>
   </data>
-  <data name="RulerViewModel_Details" xml:space="preserve">
-    <value>Plocha: {0:N0} px²  |  Obvod: {1:N0} px  |  Vzdálenost: {2:0.00} px  |  Úhel: {3:0.00}°</value>
-  </data>
-  <data name="RulerViewModel_Position" xml:space="preserve">
-    <value>X: {0}  Y: {1}  |  Vpravo: {2}  Dole: {3}  |  Šířka: {4} px  Výška: {5} px</value>
-  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX – Pravítko</value>
   </data>

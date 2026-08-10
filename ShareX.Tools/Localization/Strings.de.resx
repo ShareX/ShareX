@@ -1510,12 +1510,6 @@ Dateipfad: {0}</value>
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>Hochladen</value>
   </data>
-  <data name="RulerViewModel_Details" xml:space="preserve">
-    <value>Fläche: {0:N0} px²  |  Umfang: {1:N0} px  |  Entfernung: {2:0.00} px  |  Winkel: {3:0.00}°</value>
-  </data>
-  <data name="RulerViewModel_Position" xml:space="preserve">
-    <value>X: {0}  Y: {1}  |  Rechts: {2}  Unten: {3}  |  Breite: {4} px  Höhe: {5} px</value>
-  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - Lineal</value>
   </data>

@@ -1510,12 +1510,6 @@ Caminho do arquivo: {0}</value>
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>Enviar</value>
   </data>
-  <data name="RulerViewModel_Details" xml:space="preserve">
-    <value>Área: {0:N0} px²  |  Perímetro: {1:N0} px  |  Distância: {2:0.00} px  |  Ângulo: {3:0.00}°</value>
-  </data>
-  <data name="RulerViewModel_Position" xml:space="preserve">
-    <value>X: {0}  Y: {1}  |  Direita: {2}  Inferior: {3}  |  Largura: {4} px  Altura: {5} px</value>
-  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - Régua</value>
   </data>

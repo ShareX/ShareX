@@ -4405,24 +4405,6 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Area: {0:N0} px²  |  Perimeter: {1:N0} px  |  Distance: {2:0.00} px  |  Angle: {3:0.00}°.
-        /// </summary>
-        public static string RulerViewModel_Details {
-            get {
-                return ResourceManager.GetString("RulerViewModel_Details", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to X: {0}  Y: {1}  |  Right: {2}  Bottom: {3}  |  Width: {4} px  Height: {5} px.
-        /// </summary>
-        public static string RulerViewModel_Position {
-            get {
-                return ResourceManager.GetString("RulerViewModel_Position", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to ShareX - Ruler.
         /// </summary>
         public static string RulerWindow_ShareX_Ruler {

@@ -1504,12 +1504,6 @@
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>بارگذاری</value>
   </data>
-  <data name="RulerViewModel_Details" xml:space="preserve">
-    <value>مساحت: {0:N0} پیکسل²  |  محیط: {1:N0} پیکسل  |  فاصله: {2:0.00} پیکسل  |  زاویه: {3:0.00}°</value>
-  </data>
-  <data name="RulerViewModel_Position" xml:space="preserve">
-    <value>X: {0}  Y: {1}  |  راست: {2}  پایین: {3}  |  عرض: {4} پیکسل  ارتفاع: {5} پیکسل</value>
-  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - خط‌کش</value>
   </data>

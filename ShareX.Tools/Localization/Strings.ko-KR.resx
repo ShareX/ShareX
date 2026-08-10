@@ -1504,12 +1504,6 @@
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>업로드</value>
   </data>
-  <data name="RulerViewModel_Details" xml:space="preserve">
-    <value>면적: {0:N0}px²  |  둘레: {1:N0}px  |  거리: {2:0.00}px  |  각도: {3:0.00}°</value>
-  </data>
-  <data name="RulerViewModel_Position" xml:space="preserve">
-    <value>X: {0}  Y: {1}  |  오른쪽: {2}  아래쪽: {3}  |  너비: {4}px  높이: {5}px</value>
-  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - 눈금자</value>
   </data>

@@ -1504,12 +1504,6 @@
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>Завантажити</value>
   </data>
-  <data name="RulerViewModel_Details" xml:space="preserve">
-    <value>Площа: {0:N0} пкс²  |  Периметр: {1:N0} пкс  |  Відстань: {2:0.00} пкс  |  Кут: {3:0.00}°</value>
-  </data>
-  <data name="RulerViewModel_Position" xml:space="preserve">
-    <value>X: {0}  Y: {1}  |  Праворуч: {2}  Знизу: {3}  |  Ширина: {4} пкс  Висота: {5} пкс</value>
-  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX — лінійка</value>
   </data>
