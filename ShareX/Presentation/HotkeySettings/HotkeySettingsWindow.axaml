@@ -72,7 +72,7 @@
 
     <ThemeVariantScope>
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid Margin="12,0,12,12" RowDefinitions="Auto,Auto,*" RowSpacing="8">
+            <Grid Margin="10,0,10,10" RowDefinitions="Auto,Auto,*" RowSpacing="5">
                 <Border Grid.Row="0"
                         Classes="tool-panel docked-top-toolbar">
                     <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*,Auto">
