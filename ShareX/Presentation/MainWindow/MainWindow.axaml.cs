@@ -341,6 +341,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (section.CreateChildren != null)
         {
             TextBlock chevron = CreateAccentMenuIcon(LucideIcons.chevron_right, 14);
+            chevron.Margin = new Thickness(5, 0, 0, 0);
             chevron.Opacity = 0.7;
             Grid.SetColumn(chevron, 3);
             grid.Children.Add(chevron);
