@@ -146,7 +146,7 @@ public sealed class RulerOverlayControl : Control
         PixelPoint screenPoint = ToScreen(pointer.Position);
         _pointerScreenPoint = screenPoint;
 
-        if (pointer.Properties.IsRightButtonPressed)
+        if (pointer.Properties.IsMiddleButtonPressed)
         {
             ToggleAxis(screenPoint);
             e.Handled = true;

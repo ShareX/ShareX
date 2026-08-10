@@ -16,6 +16,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Input.Platform;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform;
 using ShareX.AvaloniaUI.Theming;
@@ -37,11 +38,21 @@ public partial class RulerWindow : Window
         ConfigureOverlayAndCaptureScreen();
 
         KeyDown += OnKeyDown;
+        AddHandler(PointerReleasedEvent, OnWindowPointerReleased, RoutingStrategies.Tunnel);
         Opened += (_, _) =>
         {
             Activate();
             _overlay.Focus();
         };
+    }
+
+    private void OnWindowPointerReleased(object? sender, PointerReleasedEventArgs e)
+    {
+        if (e.InitialPressMouseButton == MouseButton.Right)
+        {
+            Close();
+            e.Handled = true;
+        }
     }
 
     private void ConfigureOverlayAndCaptureScreen()

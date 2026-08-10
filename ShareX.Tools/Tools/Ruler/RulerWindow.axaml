@@ -7,7 +7,6 @@
         CanResize="False"
         ShowInTaskbar="False"
         WindowDecorations="None"
-        Topmost="True"
         TransparencyLevelHint="Transparent"
         Background="Transparent"
         FontFamily="{DynamicResource ShareX.FontFamily.Default}">
