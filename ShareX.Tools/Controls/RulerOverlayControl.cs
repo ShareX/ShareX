@@ -16,87 +16,153 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
+using Avalonia.Threading;
+using ShareX.Tools.Ruler;
+using System.Globalization;
+using DrawingRectangle = System.Drawing.Rectangle;
 
 namespace ShareX.Tools.Controls;
 
 public sealed class RulerOverlayControl : Control
 {
-    private enum DragMode { None, Create, Move, Resize }
-    private enum ResizeHandle { None, TopLeft, Top, TopRight, Right, BottomRight, Bottom, BottomLeft, Left }
+    private enum Axis
+    {
+        Horizontal,
+        Vertical
+    }
 
-    private static readonly IBrush FillBrush = new SolidColorBrush(Color.FromArgb(42, 0, 120, 212));
+    private enum MeasurementKind
+    {
+        Line,
+        Rectangle
+    }
+
+    private readonly record struct Measurement(
+        MeasurementKind Kind,
+        DrawingRectangle Bounds,
+        Axis Axis,
+        PixelPoint SamplePoint);
+
+    public static readonly StyledProperty<Color> AccentColorProperty =
+        AvaloniaProperty.Register<RulerOverlayControl, Color>(nameof(AccentColor), Color.Parse("#3E83F2"));
+
     private static readonly IBrush HitTestBrush = new SolidColorBrush(Color.FromArgb(1, 0, 0, 0));
-    private static readonly IBrush EdgeBrush = new SolidColorBrush(Color.FromArgb(245, 255, 255, 255));
-    private static readonly IBrush AccentBrush = new SolidColorBrush(Color.FromRgb(0, 120, 212));
-    private static readonly IPen OuterPen = new Pen(new SolidColorBrush(Color.FromArgb(190, 0, 0, 0)), 3);
-    private static readonly IPen EdgePen = new Pen(EdgeBrush, 1);
-    private static readonly IPen DiagonalPen = new Pen(new SolidColorBrush(Color.FromArgb(180, 255, 255, 255)), 1,
-        new DashStyle([5, 4], 0));
+    private static readonly IPen ShadowPen = new Pen(new SolidColorBrush(Color.FromArgb(125, 0, 0, 0)), 4);
+    private static readonly Typeface LabelTypeface = new(FontFamily.Default, FontStyle.Normal, FontWeight.SemiBold);
+    private static readonly DashStyle DragDashStyle = new([5, 4], 0);
 
-    private const double HandleSize = 9;
-    private Rect _selection;
-    private Rect _originalSelection;
-    private Point _anchor;
-    private Point _lastPoint;
-    private DragMode _dragMode;
-    private ResizeHandle _resizeHandle;
+    private const int DragThreshold = 4;
+    private const int ToleranceStep = 3;
+    private const int MaximumTolerance = 255;
+    private const double EndCapSize = 10;
+    private const double LabelFontSize = 13;
+    private const double LabelHorizontalPadding = 10;
+    private const double LabelVerticalPadding = 5;
 
-    public event EventHandler<Rect>? MeasurementChanged;
+    private readonly DispatcherTimer _statusTimer;
+    private ScreenPixelBuffer? _screen;
+    private Axis _axis = Axis.Horizontal;
+    private int _tolerance;
+    private PixelPoint? _pointerScreenPoint;
+    private PixelPoint _pressScreenPoint;
+    private DrawingRectangle _sourceSelection;
+    private DrawingRectangle _dragSelection;
+    private Measurement? _hoverMeasurement;
+    private Measurement? _measurement;
+    private bool _leftButtonPressed;
+    private bool _isDragging;
+    private string? _statusText;
 
-    public Rect Selection => _selection;
+    public Color AccentColor
+    {
+        get => GetValue(AccentColorProperty);
+        set => SetValue(AccentColorProperty, value);
+    }
+
+    public string? MeasurementText => _measurement is Measurement measurement
+        ? GetMeasurementText(measurement)
+        : null;
 
     public RulerOverlayControl()
     {
         Focusable = true;
         Cursor = new Cursor(StandardCursorType.Cross);
+
+        _statusTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(1400) };
+        _statusTimer.Tick += (_, _) =>
+        {
+            _statusTimer.Stop();
+            _statusText = null;
+            InvalidateVisual();
+        };
+    }
+
+    internal void SetScreenPixelBuffer(ScreenPixelBuffer screen)
+    {
+        _screen = screen;
     }
 
     public override void Render(DrawingContext context)
     {
         base.Render(context);
         context.FillRectangle(HitTestBrush, new Rect(Bounds.Size));
-        if (_selection.Width <= 0 && _selection.Height <= 0)
+
+        Color accentColor = AccentColor;
+        IBrush accentBrush = new SolidColorBrush(accentColor);
+        IPen accentPen = new Pen(accentBrush, 2);
+
+        if (_isDragging && !_dragSelection.IsEmpty)
         {
-            return;
+            DrawDragSelection(context, accentColor, accentBrush);
+        }
+        else if (_measurement is Measurement measurement)
+        {
+            DrawMeasurement(context, measurement, accentBrush, accentPen);
+        }
+        else if (_hoverMeasurement is Measurement hover)
+        {
+            DrawMeasurement(context, hover, accentBrush, accentPen);
         }
 
-        context.FillRectangle(FillBrush, _selection);
-        context.DrawRectangle(null, OuterPen, _selection);
-        context.DrawRectangle(null, EdgePen, _selection);
-        context.DrawLine(DiagonalPen, _selection.TopLeft, _selection.BottomRight);
-        DrawTicks(context);
-        DrawHandles(context);
+        if (!string.IsNullOrEmpty(_statusText))
+        {
+            DrawStatus(context, _statusText, accentBrush);
+        }
+    }
+
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+    {
+        base.OnPropertyChanged(change);
+        if (change.Property == AccentColorProperty)
+        {
+            InvalidateVisual();
+        }
     }
 
     protected override void OnPointerPressed(PointerPressedEventArgs e)
     {
         base.OnPointerPressed(e);
-        if (!e.GetCurrentPoint(this).Properties.IsLeftButtonPressed)
+        PointerPoint pointer = e.GetCurrentPoint(this);
+        PixelPoint screenPoint = ToScreen(pointer.Position);
+        _pointerScreenPoint = screenPoint;
+
+        if (pointer.Properties.IsRightButtonPressed)
+        {
+            ToggleAxis(screenPoint);
+            e.Handled = true;
+            return;
+        }
+
+        if (!pointer.Properties.IsLeftButtonPressed || _screen == null)
         {
             return;
         }
 
         Focus();
-        Point point = e.GetPosition(this);
-        _originalSelection = _selection;
-        _anchor = point;
-        _lastPoint = point;
-        _resizeHandle = HitTestHandle(point);
-
-        if (_resizeHandle != ResizeHandle.None)
-        {
-            _dragMode = DragMode.Resize;
-        }
-        else if (_selection.Contains(point))
-        {
-            _dragMode = DragMode.Move;
-        }
-        else
-        {
-            _dragMode = DragMode.Create;
-            _selection = new Rect(point, point);
-        }
-
+        _leftButtonPressed = true;
+        _isDragging = false;
+        _pressScreenPoint = screenPoint;
+        _dragSelection = default;
         e.Pointer.Capture(this);
         e.Handled = true;
     }
@@ -104,167 +170,370 @@ public sealed class RulerOverlayControl : Control
     protected override void OnPointerMoved(PointerEventArgs e)
     {
         base.OnPointerMoved(e);
-        Point point = e.GetPosition(this);
-        if (_dragMode == DragMode.None)
+        PixelPoint screenPoint = ToScreen(e.GetPosition(this));
+        _pointerScreenPoint = screenPoint;
+
+        if (_screen == null)
         {
-            UpdateCursor(point);
             return;
         }
 
-        switch (_dragMode)
+        if (_leftButtonPressed)
         {
-            case DragMode.Create:
-                _selection = CreateRect(_anchor, point, e.KeyModifiers.HasFlag(KeyModifiers.Shift));
-                break;
-            case DragMode.Move:
-                Vector delta = point - _lastPoint;
-                _selection = Clamp(new Rect(_selection.Position + delta, _selection.Size));
-                _lastPoint = point;
-                break;
-            case DragMode.Resize:
-                _selection = Resize(_originalSelection, point, _resizeHandle);
-                break;
+            int deltaX = Math.Abs(screenPoint.X - _pressScreenPoint.X);
+            int deltaY = Math.Abs(screenPoint.Y - _pressScreenPoint.Y);
+            _isDragging |= deltaX >= DragThreshold || deltaY >= DragThreshold;
+
+            if (_isDragging)
+            {
+                _dragSelection = _screen.Clamp(CreateRectangle(_pressScreenPoint, screenPoint));
+                InvalidateVisual();
+            }
+
+            e.Handled = true;
+            return;
         }
 
-        RaiseChanged();
-        e.Handled = true;
+        if (_measurement == null)
+        {
+            _hoverMeasurement = CreateLineMeasurement(screenPoint);
+            InvalidateVisual();
+        }
     }
 
     protected override void OnPointerReleased(PointerReleasedEventArgs e)
     {
         base.OnPointerReleased(e);
-        if (_dragMode != DragMode.None)
-        {
-            _dragMode = DragMode.None;
-            e.Pointer.Capture(null);
-            RaiseChanged();
-            e.Handled = true;
-        }
-    }
-
-    public void Clear()
-    {
-        _selection = default;
-        RaiseChanged();
-    }
-
-    public void Nudge(double x, double y)
-    {
-        if (_selection.Width <= 0 && _selection.Height <= 0)
+        if (!_leftButtonPressed || e.InitialPressMouseButton != MouseButton.Left || _screen == null)
         {
             return;
         }
 
-        _selection = Clamp(new Rect(_selection.X + x, _selection.Y + y, _selection.Width, _selection.Height));
-        RaiseChanged();
-    }
+        PixelPoint screenPoint = ToScreen(e.GetPosition(this));
+        _pointerScreenPoint = screenPoint;
 
-    private void RaiseChanged()
-    {
+        if (_isDragging)
+        {
+            _sourceSelection = _screen.Clamp(CreateRectangle(_pressScreenPoint, screenPoint));
+            DrawingRectangle snapped = _screen.FindContentBounds(_sourceSelection, _tolerance);
+            _measurement = new Measurement(MeasurementKind.Rectangle, snapped, _axis, screenPoint);
+        }
+        else
+        {
+            _sourceSelection = default;
+            _measurement = CreateLineMeasurement(screenPoint);
+        }
+
+        _hoverMeasurement = null;
+        _dragSelection = default;
+        _leftButtonPressed = false;
+        _isDragging = false;
+        e.Pointer.Capture(null);
         InvalidateVisual();
-        MeasurementChanged?.Invoke(this, _selection);
+        e.Handled = true;
     }
 
-    private Rect Clamp(Rect rect)
+    protected override void OnPointerCaptureLost(PointerCaptureLostEventArgs e)
     {
-        double x = Math.Clamp(rect.X, 0, Math.Max(0, Bounds.Width - rect.Width));
-        double y = Math.Clamp(rect.Y, 0, Math.Max(0, Bounds.Height - rect.Height));
-        return new Rect(x, y, Math.Min(rect.Width, Bounds.Width), Math.Min(rect.Height, Bounds.Height));
+        base.OnPointerCaptureLost(e);
+        _leftButtonPressed = false;
+        _isDragging = false;
+        _dragSelection = default;
+        InvalidateVisual();
     }
 
-    private Rect Resize(Rect original, Point point, ResizeHandle handle)
+    protected override void OnPointerWheelChanged(PointerWheelEventArgs e)
     {
-        double left = original.Left;
-        double top = original.Top;
-        double right = original.Right;
-        double bottom = original.Bottom;
-
-        if (handle is ResizeHandle.TopLeft or ResizeHandle.Left or ResizeHandle.BottomLeft) left = point.X;
-        if (handle is ResizeHandle.TopLeft or ResizeHandle.Top or ResizeHandle.TopRight) top = point.Y;
-        if (handle is ResizeHandle.TopRight or ResizeHandle.Right or ResizeHandle.BottomRight) right = point.X;
-        if (handle is ResizeHandle.BottomLeft or ResizeHandle.Bottom or ResizeHandle.BottomRight) bottom = point.Y;
-
-        return Clamp(CreateRect(new Point(left, top), new Point(right, bottom), false));
-    }
-
-    private static Rect CreateRect(Point start, Point end, bool constrainSquare)
-    {
-        Vector delta = end - start;
-        if (constrainSquare)
+        base.OnPointerWheelChanged(e);
+        if (_screen == null || e.Delta.Y == 0)
         {
-            double size = Math.Max(Math.Abs(delta.X), Math.Abs(delta.Y));
-            end = new Point(start.X + Math.CopySign(size, delta.X == 0 ? 1 : delta.X),
-                start.Y + Math.CopySign(size, delta.Y == 0 ? 1 : delta.Y));
+            return;
         }
 
-        return new Rect(Math.Min(start.X, end.X), Math.Min(start.Y, end.Y),
-            Math.Abs(end.X - start.X), Math.Abs(end.Y - start.Y));
+        int step = e.KeyModifiers.HasFlag(KeyModifiers.Shift) ? ToleranceStep * 5 : ToleranceStep;
+        _tolerance = Math.Clamp(_tolerance + Math.Sign(e.Delta.Y) * step, 0, MaximumTolerance);
+        RecalculateMeasurement();
+        ShowStatus();
+        e.Handled = true;
     }
 
-    private ResizeHandle HitTestHandle(Point point)
+    public void Clear()
     {
-        if (_selection.Width <= 0 && _selection.Height <= 0) return ResizeHandle.None;
-        Point[] points = GetHandlePoints();
-        for (int i = 0; i < points.Length; i++)
+        _measurement = null;
+        _sourceSelection = default;
+        if (_pointerScreenPoint is PixelPoint point)
         {
-            if (new Rect(points[i].X - HandleSize, points[i].Y - HandleSize, HandleSize * 2, HandleSize * 2).Contains(point))
-            {
-                return (ResizeHandle)(i + 1);
-            }
+            _hoverMeasurement = CreateLineMeasurement(point);
         }
-        return ResizeHandle.None;
+        InvalidateVisual();
     }
 
-    private Point[] GetHandlePoints() =>
-    [
-        _selection.TopLeft,
-        new Point(_selection.Center.X, _selection.Top),
-        _selection.TopRight,
-        new Point(_selection.Right, _selection.Center.Y),
-        _selection.BottomRight,
-        new Point(_selection.Center.X, _selection.Bottom),
-        _selection.BottomLeft,
-        new Point(_selection.Left, _selection.Center.Y)
-    ];
-
-    private void DrawHandles(DrawingContext context)
+    public void Nudge(int x, int y)
     {
-        foreach (Point point in GetHandlePoints())
+        if (_screen == null || _measurement == null)
         {
-            Rect handle = new(point.X - HandleSize / 2, point.Y - HandleSize / 2, HandleSize, HandleSize);
-            context.FillRectangle(AccentBrush, handle);
-            context.DrawRectangle(null, EdgePen, handle);
+            return;
+        }
+
+        if (_measurement.Value.Kind == MeasurementKind.Line)
+        {
+            PixelPoint point = _measurement.Value.SamplePoint;
+            point = _screen.Clamp(new PixelPoint(point.X + x, point.Y + y));
+            _measurement = CreateLineMeasurement(point);
+        }
+        else
+        {
+            _sourceSelection.Offset(x, y);
+            _sourceSelection = _screen.ClampPreservingSize(_sourceSelection);
+            DrawingRectangle snapped = _screen.FindContentBounds(_sourceSelection, _tolerance);
+            _measurement = _measurement.Value with { Bounds = snapped };
+        }
+
+        InvalidateVisual();
+    }
+
+    public void SetHorizontal() => SetAxis(Axis.Horizontal);
+
+    public void SetVertical() => SetAxis(Axis.Vertical);
+
+    public void ToggleAxis() => ToggleAxis(_pointerScreenPoint);
+
+    private void ToggleAxis(PixelPoint? point)
+    {
+        SetAxis(_axis == Axis.Horizontal ? Axis.Vertical : Axis.Horizontal, point);
+    }
+
+    private void SetAxis(Axis axis, PixelPoint? point = null)
+    {
+        _axis = axis;
+        PixelPoint? samplePoint = point ?? _pointerScreenPoint;
+
+        if (_measurement is { Kind: MeasurementKind.Line } measurement)
+        {
+            _measurement = CreateLineMeasurement(samplePoint ?? measurement.SamplePoint);
+        }
+        else if (_measurement == null && samplePoint is PixelPoint hoverPoint)
+        {
+            _hoverMeasurement = CreateLineMeasurement(hoverPoint);
+        }
+
+        ShowStatus();
+    }
+
+    private Measurement? CreateLineMeasurement(PixelPoint point)
+    {
+        if (_screen == null || !_screen.Bounds.Contains(point))
+        {
+            return null;
+        }
+
+        DrawingRectangle bounds = _screen.FindColorRun(point, _axis == Axis.Horizontal, _tolerance);
+        return bounds.IsEmpty ? null : new Measurement(MeasurementKind.Line, bounds, _axis, point);
+    }
+
+    private void RecalculateMeasurement()
+    {
+        if (_screen == null)
+        {
+            return;
+        }
+
+        if (_measurement is { Kind: MeasurementKind.Line } line)
+        {
+            _measurement = CreateLineMeasurement(line.SamplePoint);
+        }
+        else if (_measurement is { Kind: MeasurementKind.Rectangle } rectangle && !_sourceSelection.IsEmpty)
+        {
+            DrawingRectangle snapped = _screen.FindContentBounds(_sourceSelection, _tolerance);
+            _measurement = rectangle with { Bounds = snapped };
+        }
+        else if (_hoverMeasurement is Measurement hover)
+        {
+            _hoverMeasurement = CreateLineMeasurement(hover.SamplePoint);
+        }
+
+        InvalidateVisual();
+    }
+
+    private void ShowStatus()
+    {
+        _statusText = $"{(_axis == Axis.Horizontal ? "H" : "V")}  ·  T {_tolerance}";
+        _statusTimer.Stop();
+        _statusTimer.Start();
+        InvalidateVisual();
+    }
+
+    private void DrawMeasurement(DrawingContext context, Measurement measurement, IBrush accentBrush, IPen accentPen)
+    {
+        if (measurement.Kind == MeasurementKind.Line)
+        {
+            DrawLineMeasurement(context, measurement, accentBrush, accentPen);
+        }
+        else
+        {
+            DrawRectangleMeasurement(context, measurement, accentBrush, accentPen);
         }
     }
 
-    private void DrawTicks(DrawingContext context)
+    private void DrawLineMeasurement(DrawingContext context, Measurement measurement, IBrush accentBrush, IPen accentPen)
     {
-        for (double x = 10; x < _selection.Width; x += 10)
+        DrawingRectangle bounds = measurement.Bounds;
+        Point start;
+        Point end;
+
+        if (measurement.Axis == Axis.Horizontal)
         {
-            double length = x % 100 == 0 ? 15 : x % 50 == 0 ? 10 : 5;
-            context.DrawLine(EdgePen, new Point(_selection.Left + x, _selection.Top), new Point(_selection.Left + x, _selection.Top + length));
-            context.DrawLine(EdgePen, new Point(_selection.Left + x, _selection.Bottom), new Point(_selection.Left + x, _selection.Bottom - length));
+            start = ToClient(bounds.Left, measurement.SamplePoint.Y);
+            end = ToClient(bounds.Right, measurement.SamplePoint.Y);
+        }
+        else
+        {
+            start = ToClient(measurement.SamplePoint.X, bounds.Top);
+            end = ToClient(measurement.SamplePoint.X, bounds.Bottom);
         }
 
-        for (double y = 10; y < _selection.Height; y += 10)
+        context.DrawLine(ShadowPen, start, end);
+        context.DrawLine(accentPen, start, end);
+        DrawEndCap(context, start, measurement.Axis, accentPen);
+        DrawEndCap(context, end, measurement.Axis, accentPen);
+        DrawLabel(context, GetMeasurementText(measurement), Midpoint(start, end), accentBrush);
+    }
+
+    private void DrawRectangleMeasurement(DrawingContext context, Measurement measurement, IBrush accentBrush, IPen accentPen)
+    {
+        Rect rect = ToClient(measurement.Bounds);
+        IBrush fill = new SolidColorBrush(Color.FromArgb(28, AccentColor.R, AccentColor.G, AccentColor.B));
+        context.DrawRectangle(fill, ShadowPen, rect);
+        context.DrawRectangle(null, accentPen, rect);
+
+        double halfCap = EndCapSize / 2;
+        context.DrawLine(accentPen, new Point(rect.Center.X, rect.Top - halfCap), new Point(rect.Center.X, rect.Top + halfCap));
+        context.DrawLine(accentPen, new Point(rect.Center.X, rect.Bottom - halfCap), new Point(rect.Center.X, rect.Bottom + halfCap));
+        context.DrawLine(accentPen, new Point(rect.Left - halfCap, rect.Center.Y), new Point(rect.Left + halfCap, rect.Center.Y));
+        context.DrawLine(accentPen, new Point(rect.Right - halfCap, rect.Center.Y), new Point(rect.Right + halfCap, rect.Center.Y));
+
+        FormattedText text = CreateText(GetMeasurementText(measurement), GetContrastingTextBrush());
+        double labelHeight = text.Height + LabelVerticalPadding * 2;
+        double y = rect.Bottom + 10 + labelHeight <= Bounds.Height
+            ? rect.Bottom + 10 + labelHeight / 2
+            : rect.Top - 10 - labelHeight / 2;
+        DrawLabel(context, GetMeasurementText(measurement), new Point(rect.Center.X, y), accentBrush);
+    }
+
+    private void DrawDragSelection(DrawingContext context, Color accentColor, IBrush accentBrush)
+    {
+        Rect rect = ToClient(_dragSelection);
+        IBrush fill = new SolidColorBrush(Color.FromArgb(22, accentColor.R, accentColor.G, accentColor.B));
+        IPen pen = new Pen(accentBrush, 1, DragDashStyle);
+        context.DrawRectangle(fill, pen, rect);
+    }
+
+    private void DrawStatus(DrawingContext context, string text, IBrush accentBrush)
+    {
+        DrawLabel(context, text, new Point(Bounds.Width / 2, 28), accentBrush);
+    }
+
+    private void DrawLabel(DrawingContext context, string text, Point center, IBrush accentBrush)
+    {
+        IBrush textBrush = GetContrastingTextBrush();
+        FormattedText formattedText = CreateText(text, textBrush);
+        Size size = new(formattedText.Width + LabelHorizontalPadding * 2,
+            formattedText.Height + LabelVerticalPadding * 2);
+        Rect capsule = new(center.X - size.Width / 2, center.Y - size.Height / 2, size.Width, size.Height);
+        capsule = KeepInside(capsule, new Rect(Bounds.Size), 6);
+
+        context.DrawRectangle(accentBrush, null, capsule, capsule.Height / 2, capsule.Height / 2);
+        context.DrawText(formattedText, new Point(
+            capsule.X + (capsule.Width - formattedText.Width) / 2,
+            capsule.Y + (capsule.Height - formattedText.Height) / 2));
+    }
+
+    private IBrush GetContrastingTextBrush()
+    {
+        double luminance = GetRelativeLuminance(AccentColor);
+        double whiteContrast = 1.05 / (luminance + 0.05);
+        double blackContrast = (luminance + 0.05) / 0.05;
+        return whiteContrast >= blackContrast ? Brushes.White : Brushes.Black;
+    }
+
+    private static FormattedText CreateText(string text, IBrush brush) => new(
+        text,
+        CultureInfo.CurrentUICulture,
+        FlowDirection.LeftToRight,
+        LabelTypeface,
+        LabelFontSize,
+        brush);
+
+    private PixelPoint ToScreen(Point point)
+    {
+        TopLevel? topLevel = TopLevel.GetTopLevel(this);
+        return topLevel?.PointToScreen(point) ?? default;
+    }
+
+    private Point ToClient(int x, int y)
+    {
+        TopLevel? topLevel = TopLevel.GetTopLevel(this);
+        return topLevel?.PointToClient(new PixelPoint(x, y)) ?? default;
+    }
+
+    private Rect ToClient(DrawingRectangle rectangle)
+    {
+        Point topLeft = ToClient(rectangle.Left, rectangle.Top);
+        Point bottomRight = ToClient(rectangle.Right, rectangle.Bottom);
+        return new Rect(topLeft, bottomRight);
+    }
+
+    private static DrawingRectangle CreateRectangle(PixelPoint start, PixelPoint end)
+    {
+        int left = Math.Min(start.X, end.X);
+        int top = Math.Min(start.Y, end.Y);
+        return new DrawingRectangle(left, top,
+            Math.Abs(end.X - start.X) + 1,
+            Math.Abs(end.Y - start.Y) + 1);
+    }
+
+    private static string GetMeasurementText(Measurement measurement) => measurement.Kind switch
+    {
+        MeasurementKind.Rectangle => $"{measurement.Bounds.Width} × {measurement.Bounds.Height} px",
+        _ when measurement.Axis == Axis.Horizontal => $"{measurement.Bounds.Width} px",
+        _ => $"{measurement.Bounds.Height} px"
+    };
+
+    private static void DrawEndCap(DrawingContext context, Point point, Axis axis, IPen pen)
+    {
+        double half = EndCapSize / 2;
+        if (axis == Axis.Horizontal)
         {
-            double length = y % 100 == 0 ? 15 : y % 50 == 0 ? 10 : 5;
-            context.DrawLine(EdgePen, new Point(_selection.Left, _selection.Top + y), new Point(_selection.Left + length, _selection.Top + y));
-            context.DrawLine(EdgePen, new Point(_selection.Right, _selection.Top + y), new Point(_selection.Right - length, _selection.Top + y));
+            context.DrawLine(pen, new Point(point.X, point.Y - half), new Point(point.X, point.Y + half));
+        }
+        else
+        {
+            context.DrawLine(pen, new Point(point.X - half, point.Y), new Point(point.X + half, point.Y));
         }
     }
 
-    private void UpdateCursor(Point point)
+    private static Point Midpoint(Point first, Point second) =>
+        new((first.X + second.X) / 2, (first.Y + second.Y) / 2);
+
+    private static Rect KeepInside(Rect rect, Rect container, double margin)
     {
-        ResizeHandle handle = HitTestHandle(point);
-        Cursor = handle switch
+        double x = Math.Clamp(rect.X, container.Left + margin,
+            Math.Max(container.Left + margin, container.Right - margin - rect.Width));
+        double y = Math.Clamp(rect.Y, container.Top + margin,
+            Math.Max(container.Top + margin, container.Bottom - margin - rect.Height));
+        return rect.WithX(x).WithY(y);
+    }
+
+    private static double GetRelativeLuminance(Color color)
+    {
+        static double Linearize(byte channel)
         {
-            ResizeHandle.TopLeft or ResizeHandle.BottomRight => new Cursor(StandardCursorType.TopLeftCorner),
-            ResizeHandle.TopRight or ResizeHandle.BottomLeft => new Cursor(StandardCursorType.TopRightCorner),
-            ResizeHandle.Top or ResizeHandle.Bottom => new Cursor(StandardCursorType.SizeNorthSouth),
-            ResizeHandle.Left or ResizeHandle.Right => new Cursor(StandardCursorType.SizeWestEast),
-            _ when _selection.Contains(point) => new Cursor(StandardCursorType.SizeAll),
-            _ => new Cursor(StandardCursorType.Cross)
-        };
+            double value = channel / 255d;
+            return value <= 0.03928 ? value / 12.92 : Math.Pow((value + 0.055) / 1.055, 2.4);
+        }
+
+        return (0.2126 * Linearize(color.R)) +
+            (0.7152 * Linearize(color.G)) +
+            (0.0722 * Linearize(color.B));
     }
 }

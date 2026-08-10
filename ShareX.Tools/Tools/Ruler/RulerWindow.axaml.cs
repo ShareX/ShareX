@@ -16,130 +16,108 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Input.Platform;
-using Avalonia.Interactivity;
-using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
+using Avalonia.Platform;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.Tools.Controls;
+using ShareX.Tools.Ruler;
 
 namespace ShareX.Tools;
 
 public partial class RulerWindow : Window
 {
-    private readonly RulerViewModel _viewModel = new();
-    private RulerOverlayControl? _overlay;
-    private Border? _infoPanel;
-    private Point? _pointerPosition;
-    private Rect _selection;
+    private RulerOverlayControl _overlay = null!;
 
     public RulerWindow()
     {
-        DataContext = _viewModel;
         AvaloniaXamlLoader.Load(this);
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        _overlay = this.FindControl<RulerOverlayControl>("RulerOverlay");
-        _infoPanel = this.FindControl<Border>("InfoPanel");
-        if (_overlay != null)
-        {
-            _overlay.MeasurementChanged += OnMeasurementChanged;
-        }
+        _overlay = this.FindControl<RulerOverlayControl>("RulerOverlay")!;
+
+        ConfigureOverlayAndCaptureScreen();
 
         KeyDown += OnKeyDown;
-        AddHandler(PointerReleasedEvent, OnWindowPointerReleased, RoutingStrategies.Tunnel);
-        AddHandler(PointerMovedEvent, OnWindowPointerMoved, RoutingStrategies.Tunnel);
-        Opened += (_, _) => _overlay?.Focus();
-    }
-
-    private void OnMeasurementChanged(object? sender, Rect selection)
-    {
-        _selection = selection;
-        if (selection.Width <= 0 && selection.Height <= 0)
+        Opened += (_, _) =>
         {
-            _viewModel.Clear();
-            UpdateInfoPanelPlacement();
-            return;
-        }
-
-        _viewModel.Update(selection, RenderScaling, Position);
-        UpdateInfoPanelPlacement();
+            Activate();
+            _overlay.Focus();
+        };
     }
 
-    private async Task CopyMeasurementsAsync()
+    private void ConfigureOverlayAndCaptureScreen()
     {
-        if (_viewModel.HasMeasurement && Clipboard != null)
-        {
-            await Clipboard.SetTextAsync(_viewModel.ClipboardText);
-        }
-        _overlay?.Focus();
-    }
-
-    private void OnWindowPointerReleased(object? sender, PointerReleasedEventArgs e)
-    {
-        if (e.InitialPressMouseButton == MouseButton.Right)
-        {
-            Close();
-            e.Handled = true;
-        }
-    }
-
-    private void OnWindowPointerMoved(object? sender, PointerEventArgs e)
-    {
-        if (_overlay != null)
-        {
-            _pointerPosition = e.GetPosition(_overlay);
-            UpdateInfoPanelPlacement();
-        }
-    }
-
-    private void UpdateInfoPanelPlacement()
-    {
-        if (_overlay == null || _infoPanel == null || _infoPanel.Bounds.Width <= 0)
+        IReadOnlyList<Screen> screens = Screens.All;
+        if (screens.Count == 0)
         {
             return;
         }
 
-        const double margin = 16;
-        Rect topPanelBounds = new(
-            Math.Max(0, (_overlay.Bounds.Width - _infoPanel.Bounds.Width) / 2),
-            margin,
-            _infoPanel.Bounds.Width,
-            _infoPanel.Bounds.Height);
-        Rect collisionBounds = topPanelBounds.Inflate(10);
-        bool pointerIntersects = _pointerPosition is Point pointer && collisionBounds.Contains(pointer);
-        bool rulerIntersects = (_selection.Width > 0 || _selection.Height > 0) && collisionBounds.Intersects(_selection);
+        int left = screens.Min(screen => screen.Bounds.X);
+        int top = screens.Min(screen => screen.Bounds.Y);
+        int right = screens.Max(screen => screen.Bounds.Right);
+        int bottom = screens.Max(screen => screen.Bounds.Bottom);
+        PixelRect bounds = new(left, top, right - left, bottom - top);
+        double scaling = Screens.ScreenFromPoint(bounds.Position)?.Scaling ?? screens[0].Scaling;
 
-        _infoPanel.VerticalAlignment = pointerIntersects || rulerIntersects
-            ? VerticalAlignment.Bottom
-            : VerticalAlignment.Top;
+        ScreenPixelBuffer screenPixelBuffer = ScreenPixelBuffer.Capture(bounds);
+        _overlay.SetScreenPixelBuffer(screenPixelBuffer);
+
+        Position = bounds.Position;
+        Width = bounds.Width / scaling;
+        Height = bounds.Height / scaling;
+    }
+
+    private async Task CopyMeasurementAsync()
+    {
+        string? text = _overlay.MeasurementText;
+        if (!string.IsNullOrEmpty(text) && Clipboard != null)
+        {
+            await Clipboard.SetTextAsync(text);
+        }
+
+        _overlay.Focus();
     }
 
     private void OnKeyDown(object? sender, KeyEventArgs e)
     {
-        double amount = e.KeyModifiers.HasFlag(KeyModifiers.Shift) ? 10 : 1;
+        int amount = e.KeyModifiers.HasFlag(KeyModifiers.Shift) ? 10 : 1;
+
         switch (e.Key)
         {
             case Key.Left:
-                _overlay?.Nudge(-amount, 0);
+                _overlay.Nudge(-amount, 0);
                 e.Handled = true;
                 break;
             case Key.Right:
-                _overlay?.Nudge(amount, 0);
+                _overlay.Nudge(amount, 0);
                 e.Handled = true;
                 break;
             case Key.Up:
-                _overlay?.Nudge(0, -amount);
+                _overlay.Nudge(0, -amount);
                 e.Handled = true;
                 break;
             case Key.Down:
-                _overlay?.Nudge(0, amount);
+                _overlay.Nudge(0, amount);
+                e.Handled = true;
+                break;
+            case Key.H:
+                _overlay.SetHorizontal();
+                e.Handled = true;
+                break;
+            case Key.V:
+                _overlay.SetVertical();
+                e.Handled = true;
+                break;
+            case Key.Space:
+                _overlay.ToggleAxis();
                 e.Handled = true;
                 break;
             case Key.Delete:
-                _overlay?.Clear();
+                _overlay.Clear();
                 e.Handled = true;
                 break;
             case Key.C when e.KeyModifiers.HasFlag(KeyModifiers.Control):
-                _ = CopyMeasurementsAsync();
+                _ = CopyMeasurementAsync();
                 e.Handled = true;
                 break;
             case Key.Escape:
