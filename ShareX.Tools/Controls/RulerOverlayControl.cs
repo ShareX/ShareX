@@ -41,7 +41,8 @@ public sealed class RulerOverlayControl : Control
         MeasurementKind Kind,
         DrawingRectangle Bounds,
         Axis Axis,
-        PixelPoint SamplePoint);
+        PixelPoint SamplePoint,
+        DrawingRectangle SourceBounds);
 
     public static readonly StyledProperty<Color> AccentColorProperty =
         AvaloniaProperty.Register<RulerOverlayControl, Color>(nameof(AccentColor), Color.Parse("#3E83F2"));
@@ -60,15 +61,14 @@ public sealed class RulerOverlayControl : Control
     private const double LabelVerticalPadding = 5;
 
     private readonly DispatcherTimer _statusTimer;
+    private readonly List<Measurement> _measurements = [];
     private ScreenPixelBuffer? _screen;
     private Axis _axis = Axis.Horizontal;
     private int _tolerance;
     private PixelPoint? _pointerScreenPoint;
     private PixelPoint _pressScreenPoint;
-    private DrawingRectangle _sourceSelection;
     private DrawingRectangle _dragSelection;
     private Measurement? _hoverMeasurement;
-    private Measurement? _measurement;
     private bool _leftButtonPressed;
     private bool _isDragging;
     private string? _statusText;
@@ -79,8 +79,8 @@ public sealed class RulerOverlayControl : Control
         set => SetValue(AccentColorProperty, value);
     }
 
-    public string? MeasurementText => _measurement is Measurement measurement
-        ? GetMeasurementText(measurement)
+    public string? MeasurementText => _measurements.Count > 0
+        ? GetMeasurementText(_measurements[^1])
         : null;
 
     public RulerOverlayControl()
@@ -111,13 +111,14 @@ public sealed class RulerOverlayControl : Control
         IBrush accentBrush = new SolidColorBrush(accentColor);
         IPen accentPen = new Pen(accentBrush, 2);
 
+        foreach (Measurement measurement in _measurements)
+        {
+            DrawMeasurement(context, measurement, accentBrush, accentPen);
+        }
+
         if (_isDragging && !_dragSelection.IsEmpty)
         {
             DrawDragSelection(context, accentColor, accentBrush);
-        }
-        else if (_measurement is Measurement measurement)
-        {
-            DrawMeasurement(context, measurement, accentBrush, accentPen);
         }
         else if (_hoverMeasurement is Measurement hover)
         {
@@ -171,6 +172,7 @@ public sealed class RulerOverlayControl : Control
     {
         base.OnPointerMoved(e);
         PixelPoint screenPoint = ToScreen(e.GetPosition(this));
+        bool pointerMoved = _pointerScreenPoint is not PixelPoint previousPoint || previousPoint != screenPoint;
         _pointerScreenPoint = screenPoint;
 
         if (_screen == null)
@@ -194,7 +196,7 @@ public sealed class RulerOverlayControl : Control
             return;
         }
 
-        if (_measurement == null)
+        if (pointerMoved)
         {
             _hoverMeasurement = CreateLineMeasurement(screenPoint);
             InvalidateVisual();
@@ -214,14 +216,20 @@ public sealed class RulerOverlayControl : Control
 
         if (_isDragging)
         {
-            _sourceSelection = _screen.Clamp(CreateRectangle(_pressScreenPoint, screenPoint));
-            DrawingRectangle snapped = _screen.FindContentBounds(_sourceSelection, _tolerance);
-            _measurement = new Measurement(MeasurementKind.Rectangle, snapped, _axis, screenPoint);
+            DrawingRectangle sourceSelection = _screen.Clamp(CreateRectangle(_pressScreenPoint, screenPoint));
+            DrawingRectangle snapped = _screen.FindContentBounds(sourceSelection, _tolerance);
+            if (!snapped.IsEmpty)
+            {
+                _measurements.Add(new Measurement(MeasurementKind.Rectangle, snapped, _axis, screenPoint, sourceSelection));
+            }
         }
         else
         {
-            _sourceSelection = default;
-            _measurement = CreateLineMeasurement(screenPoint);
+            Measurement? line = CreateLineMeasurement(screenPoint);
+            if (line is Measurement measurement)
+            {
+                _measurements.Add(measurement);
+            }
         }
 
         _hoverMeasurement = null;
@@ -252,15 +260,14 @@ public sealed class RulerOverlayControl : Control
 
         int step = e.KeyModifiers.HasFlag(KeyModifiers.Shift) ? ToleranceStep * 5 : ToleranceStep;
         _tolerance = Math.Clamp(_tolerance + Math.Sign(e.Delta.Y) * step, 0, MaximumTolerance);
-        RecalculateMeasurement();
+        RecalculateHoverMeasurement();
         ShowStatus();
         e.Handled = true;
     }
 
     public void Clear()
     {
-        _measurement = null;
-        _sourceSelection = default;
+        _measurements.Clear();
         if (_pointerScreenPoint is PixelPoint point)
         {
             _hoverMeasurement = CreateLineMeasurement(point);
@@ -270,23 +277,31 @@ public sealed class RulerOverlayControl : Control
 
     public void Nudge(int x, int y)
     {
-        if (_screen == null || _measurement == null)
+        if (_screen == null || _measurements.Count == 0)
         {
             return;
         }
 
-        if (_measurement.Value.Kind == MeasurementKind.Line)
+        int index = _measurements.Count - 1;
+        Measurement measurement = _measurements[index];
+
+        if (measurement.Kind == MeasurementKind.Line)
         {
-            PixelPoint point = _measurement.Value.SamplePoint;
+            PixelPoint point = measurement.SamplePoint;
             point = _screen.Clamp(new PixelPoint(point.X + x, point.Y + y));
-            _measurement = CreateLineMeasurement(point);
+            Measurement? movedLine = CreateLineMeasurement(point, measurement.Axis);
+            if (movedLine is Measurement line)
+            {
+                _measurements[index] = line;
+            }
         }
         else
         {
-            _sourceSelection.Offset(x, y);
-            _sourceSelection = _screen.ClampPreservingSize(_sourceSelection);
-            DrawingRectangle snapped = _screen.FindContentBounds(_sourceSelection, _tolerance);
-            _measurement = _measurement.Value with { Bounds = snapped };
+            DrawingRectangle sourceSelection = measurement.SourceBounds;
+            sourceSelection.Offset(x, y);
+            sourceSelection = _screen.ClampPreservingSize(sourceSelection);
+            DrawingRectangle snapped = _screen.FindContentBounds(sourceSelection, _tolerance);
+            _measurements[index] = measurement with { Bounds = snapped, SourceBounds = sourceSelection };
         }
 
         InvalidateVisual();
@@ -308,48 +323,40 @@ public sealed class RulerOverlayControl : Control
         _axis = axis;
         PixelPoint? samplePoint = point ?? _pointerScreenPoint;
 
-        if (_measurement is { Kind: MeasurementKind.Line } measurement)
-        {
-            _measurement = CreateLineMeasurement(samplePoint ?? measurement.SamplePoint);
-        }
-        else if (_measurement == null && samplePoint is PixelPoint hoverPoint)
+        if (samplePoint is PixelPoint hoverPoint)
         {
             _hoverMeasurement = CreateLineMeasurement(hoverPoint);
         }
 
-        ShowStatus();
+        InvalidateVisual();
     }
 
-    private Measurement? CreateLineMeasurement(PixelPoint point)
+    private Measurement? CreateLineMeasurement(PixelPoint point, Axis? axis = null)
     {
         if (_screen == null || !_screen.Bounds.Contains(point))
         {
             return null;
         }
 
-        DrawingRectangle bounds = _screen.FindColorRun(point, _axis == Axis.Horizontal, _tolerance);
-        return bounds.IsEmpty ? null : new Measurement(MeasurementKind.Line, bounds, _axis, point);
+        Axis measurementAxis = axis ?? _axis;
+        DrawingRectangle bounds = _screen.FindColorRun(point, measurementAxis == Axis.Horizontal, _tolerance);
+        return bounds.IsEmpty ? null : new Measurement(MeasurementKind.Line, bounds, measurementAxis, point, default);
     }
 
-    private void RecalculateMeasurement()
+    private void RecalculateHoverMeasurement()
     {
         if (_screen == null)
         {
             return;
         }
 
-        if (_measurement is { Kind: MeasurementKind.Line } line)
-        {
-            _measurement = CreateLineMeasurement(line.SamplePoint);
-        }
-        else if (_measurement is { Kind: MeasurementKind.Rectangle } rectangle && !_sourceSelection.IsEmpty)
-        {
-            DrawingRectangle snapped = _screen.FindContentBounds(_sourceSelection, _tolerance);
-            _measurement = rectangle with { Bounds = snapped };
-        }
-        else if (_hoverMeasurement is Measurement hover)
+        if (_hoverMeasurement is Measurement hover)
         {
             _hoverMeasurement = CreateLineMeasurement(hover.SamplePoint);
+        }
+        else if (_pointerScreenPoint is PixelPoint point)
+        {
+            _hoverMeasurement = CreateLineMeasurement(point);
         }
 
         InvalidateVisual();
