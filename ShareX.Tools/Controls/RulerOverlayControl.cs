@@ -53,6 +53,7 @@ public sealed class RulerOverlayControl : Control
     private static readonly DashStyle DragDashStyle = new([5, 4], 0);
 
     private const int DragThreshold = 4;
+    private const int MinimumLineLength = 2;
     private const int ToleranceStep = 3;
     private const int MaximumTolerance = 255;
     private const double EndCapSize = 10;
@@ -340,7 +341,10 @@ public sealed class RulerOverlayControl : Control
 
         Axis measurementAxis = axis ?? _axis;
         DrawingRectangle bounds = _screen.FindColorRun(point, measurementAxis == Axis.Horizontal, _tolerance);
-        return bounds.IsEmpty ? null : new Measurement(MeasurementKind.Line, bounds, measurementAxis, point, default);
+        int length = measurementAxis == Axis.Horizontal ? bounds.Width : bounds.Height;
+        return length < MinimumLineLength
+            ? null
+            : new Measurement(MeasurementKind.Line, bounds, measurementAxis, point, default);
     }
 
     private void RecalculateHoverMeasurement()
@@ -403,7 +407,10 @@ public sealed class RulerOverlayControl : Control
         context.DrawLine(accentPen, start, end);
         DrawEndCap(context, start, measurement.Axis, accentPen);
         DrawEndCap(context, end, measurement.Axis, accentPen);
-        DrawLabel(context, GetMeasurementText(measurement), Midpoint(start, end), accentBrush);
+
+        string label = GetMeasurementText(measurement);
+        Point labelCenter = GetLineLabelCenter(label, start, end, measurement.Axis);
+        DrawLabel(context, label, labelCenter, accentBrush);
     }
 
     private void DrawRectangleMeasurement(DrawingContext context, Measurement measurement, IBrush accentBrush, IPen accentPen)
@@ -453,6 +460,49 @@ public sealed class RulerOverlayControl : Control
         context.DrawText(formattedText, new Point(
             capsule.X + (capsule.Width - formattedText.Width) / 2,
             capsule.Y + (capsule.Height - formattedText.Height) / 2));
+    }
+
+    private Point GetLineLabelCenter(string text, Point start, Point end, Axis axis)
+    {
+        Point center = Midpoint(start, end);
+        Size labelSize = MeasureLabel(text);
+        double lineLength = axis == Axis.Horizontal
+            ? Math.Abs(end.X - start.X)
+            : Math.Abs(end.Y - start.Y);
+        double coveredLength = axis == Axis.Horizontal ? labelSize.Width : labelSize.Height;
+
+        if (lineLength >= coveredLength)
+        {
+            return center;
+        }
+
+        const double gap = 8;
+
+        if (axis == Axis.Horizontal)
+        {
+            double offset = EndCapSize / 2 + gap + labelSize.Height / 2;
+            double below = center.Y + offset;
+            double above = center.Y - offset;
+            center = center.WithY(below + labelSize.Height / 2 <= Bounds.Height - 6 ? below : above);
+        }
+        else
+        {
+            double offset = gap + labelSize.Height / 2;
+            double bottom = Math.Max(start.Y, end.Y);
+            double top = Math.Min(start.Y, end.Y);
+            double below = bottom + offset;
+            double above = top - offset;
+            center = center.WithY(below + labelSize.Height / 2 <= Bounds.Height - 6 ? below : above);
+        }
+
+        return center;
+    }
+
+    private static Size MeasureLabel(string text)
+    {
+        FormattedText formattedText = CreateText(text, Brushes.White);
+        return new Size(formattedText.Width + LabelHorizontalPadding * 2,
+            formattedText.Height + LabelVerticalPadding * 2);
     }
 
     private IBrush GetContrastingTextBrush()
