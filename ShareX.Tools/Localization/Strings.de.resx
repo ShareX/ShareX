@@ -1510,6 +1510,9 @@ Dateipfad: {0}</value>
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>Hochladen</value>
   </data>
+  <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
+    <value>Toleranz: {0}%</value>
+  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - Lineal</value>
   </data>

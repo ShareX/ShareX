@@ -54,8 +54,7 @@ public sealed class RulerOverlayControl : Control
 
     private const int DragThreshold = 4;
     private const int MinimumLineLength = 2;
-    private const int ToleranceStep = 3;
-    private const int MaximumTolerance = 255;
+    private const int MaximumColorTolerance = 255;
     private const double EndCapSize = 10;
     private const double LabelFontSize = 13;
     private const double LabelHorizontalPadding = 10;
@@ -65,7 +64,7 @@ public sealed class RulerOverlayControl : Control
     private readonly List<Measurement> _measurements = [];
     private ScreenPixelBuffer? _screen;
     private Axis _axis = Axis.Horizontal;
-    private int _tolerance;
+    private int _tolerancePercentage;
     private PixelPoint? _pointerScreenPoint;
     private PixelPoint _pressScreenPoint;
     private DrawingRectangle _dragSelection;
@@ -218,7 +217,7 @@ public sealed class RulerOverlayControl : Control
         if (_isDragging)
         {
             DrawingRectangle sourceSelection = _screen.Clamp(CreateRectangle(_pressScreenPoint, screenPoint));
-            DrawingRectangle snapped = _screen.FindContentBounds(sourceSelection, _tolerance);
+            DrawingRectangle snapped = _screen.FindContentBounds(sourceSelection, ColorTolerance);
             if (!snapped.IsEmpty)
             {
                 _measurements.Add(new Measurement(MeasurementKind.Rectangle, snapped, _axis, screenPoint, sourceSelection));
@@ -259,8 +258,11 @@ public sealed class RulerOverlayControl : Control
             return;
         }
 
-        int step = e.KeyModifiers.HasFlag(KeyModifiers.Shift) ? ToleranceStep * 5 : ToleranceStep;
-        _tolerance = Math.Clamp(_tolerance + Math.Sign(e.Delta.Y) * step, 0, MaximumTolerance);
+        PixelPoint screenPoint = ToScreen(e.GetPosition(this));
+        _pointerScreenPoint = screenPoint;
+        _hoverMeasurement = CreateLineMeasurement(screenPoint);
+
+        _tolerancePercentage = Math.Clamp(_tolerancePercentage + Math.Sign(e.Delta.Y), 0, 100);
         RecalculateHoverMeasurement();
         ShowStatus();
         e.Handled = true;
@@ -301,7 +303,7 @@ public sealed class RulerOverlayControl : Control
             DrawingRectangle sourceSelection = measurement.SourceBounds;
             sourceSelection.Offset(x, y);
             sourceSelection = _screen.ClampPreservingSize(sourceSelection);
-            DrawingRectangle snapped = _screen.FindContentBounds(sourceSelection, _tolerance);
+            DrawingRectangle snapped = _screen.FindContentBounds(sourceSelection, ColorTolerance);
             _measurements[index] = measurement with { Bounds = snapped, SourceBounds = sourceSelection };
         }
 
@@ -340,7 +342,7 @@ public sealed class RulerOverlayControl : Control
         }
 
         Axis measurementAxis = axis ?? _axis;
-        DrawingRectangle bounds = _screen.FindColorRun(point, measurementAxis == Axis.Horizontal, _tolerance);
+        DrawingRectangle bounds = _screen.FindColorRun(point, measurementAxis == Axis.Horizontal, ColorTolerance);
         int length = measurementAxis == Axis.Horizontal ? bounds.Width : bounds.Height;
         return length < MinimumLineLength
             ? null
@@ -368,11 +370,14 @@ public sealed class RulerOverlayControl : Control
 
     private void ShowStatus()
     {
-        _statusText = $"{(_axis == Axis.Horizontal ? "H" : "V")}  ·  T {_tolerance}";
+        _statusText = string.Format(Localization.Strings.RulerOverlayControl_Tolerance, _tolerancePercentage);
         _statusTimer.Stop();
         _statusTimer.Start();
         InvalidateVisual();
     }
+
+    private int ColorTolerance =>
+        (int)Math.Round(_tolerancePercentage * MaximumColorTolerance / 100d);
 
     private void DrawMeasurement(DrawingContext context, Measurement measurement, IBrush accentBrush, IPen accentPen)
     {
@@ -444,7 +449,29 @@ public sealed class RulerOverlayControl : Control
 
     private void DrawStatus(DrawingContext context, string text, IBrush accentBrush)
     {
-        DrawLabel(context, text, new Point(Bounds.Width / 2, 28), accentBrush);
+        if (_pointerScreenPoint is not PixelPoint screenPoint)
+        {
+            return;
+        }
+
+        const double offset = 16;
+        const double margin = 6;
+        Point pointer = ToClient(screenPoint.X, screenPoint.Y);
+        Size labelSize = MeasureLabel(text);
+        double x = pointer.X + offset + labelSize.Width / 2;
+        double y = pointer.Y + offset + labelSize.Height / 2;
+
+        if (x + labelSize.Width / 2 > Bounds.Width - margin)
+        {
+            x = pointer.X - offset - labelSize.Width / 2;
+        }
+
+        if (y + labelSize.Height / 2 > Bounds.Height - margin)
+        {
+            y = pointer.Y - offset - labelSize.Height / 2;
+        }
+
+        DrawLabel(context, text, new Point(x, y), accentBrush);
     }
 
     private void DrawLabel(DrawingContext context, string text, Point center, IBrush accentBrush)

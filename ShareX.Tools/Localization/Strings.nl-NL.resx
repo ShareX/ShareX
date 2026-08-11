@@ -1510,6 +1510,9 @@ Bestandspad: {0}</value>
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>Uploaden</value>
   </data>
+  <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
+    <value>Tolerantie: {0}%</value>
+  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - Liniaal</value>
   </data>

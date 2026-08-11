@@ -1510,6 +1510,9 @@ Dosya yolu: {0}</value>
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>Yükle</value>
   </data>
+  <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
+    <value>Tolerans: {0}%</value>
+  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - Cetvel</value>
   </data>

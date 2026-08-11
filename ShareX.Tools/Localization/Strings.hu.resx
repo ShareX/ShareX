@@ -1504,6 +1504,9 @@
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>Feltöltés</value>
   </data>
+  <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
+    <value>Tűrés: {0}%</value>
+  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX – Vonalzó</value>
   </data>

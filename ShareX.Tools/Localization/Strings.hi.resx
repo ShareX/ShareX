@@ -1510,6 +1510,9 @@
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>अपलोड करें</value>
   </data>
+  <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
+    <value>सहनशीलता: {0}%</value>
+  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - मापनी</value>
   </data>

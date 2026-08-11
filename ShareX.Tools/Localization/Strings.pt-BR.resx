@@ -1510,6 +1510,9 @@ Caminho do arquivo: {0}</value>
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>Enviar</value>
   </data>
+  <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
+    <value>Tolerância: {0}%</value>
+  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - Régua</value>
   </data>

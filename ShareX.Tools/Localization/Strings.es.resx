@@ -1510,6 +1510,9 @@ Ruta del archivo: {0}</value>
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>Cargar</value>
   </data>
+  <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
+    <value>Tolerancia: {0}%</value>
+  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - Regla</value>
   </data>

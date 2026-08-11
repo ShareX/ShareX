@@ -4405,6 +4405,15 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tolerance: {0}%.
+        /// </summary>
+        public static string RulerOverlayControl_Tolerance {
+            get {
+                return ResourceManager.GetString("RulerOverlayControl_Tolerance", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to ShareX - Ruler.
         /// </summary>
         public static string RulerWindow_ShareX_Ruler {

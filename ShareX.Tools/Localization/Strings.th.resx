@@ -1504,6 +1504,9 @@
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>อัปโหลด</value>
   </data>
+  <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
+    <value>ค่าความคลาดเคลื่อน: {0}%</value>
+  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - ไม้บรรทัด</value>
   </data>

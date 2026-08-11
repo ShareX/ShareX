@@ -1510,6 +1510,9 @@
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>上传</value>
   </data>
+  <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
+    <value>容差：{0}%</value>
+  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - 标尺</value>
   </data>

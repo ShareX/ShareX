@@ -1510,6 +1510,9 @@ Percorso file: {0}</value>
   <data name="QRCodeWindow_Upload" xml:space="preserve">
     <value>Carica</value>
   </data>
+  <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
+    <value>Tolleranza: {0}%</value>
+  </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
     <value>ShareX - Righello</value>
   </data>
