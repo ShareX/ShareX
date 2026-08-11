@@ -745,14 +745,6 @@ public class EditorCore : IDisposable
 
         _startPoint = point;
 
-        string? sampledSmartEraserColor = null;
-
-        // Sample rendered color for Smart Eraser to mirror Avalonia behavior
-        if (ActiveTool == EditorTool.SmartEraser)
-        {
-            sampledSmartEraserColor = SampleCanvasColor(point);
-        }
-
         // Interact with currently selected annotation first so users can resize/move immediately after drawing
         if (_selectedAnnotation != null)
         {
@@ -803,15 +795,9 @@ public class EditorCore : IDisposable
             if (_currentAnnotation is SmartEraserAnnotation smartEraser)
             {
                 smartEraser.StrokeWidth = 0;
-                if (!string.IsNullOrEmpty(sampledSmartEraserColor))
+                if (SourceImage != null)
                 {
-                    smartEraser.StrokeColor = sampledSmartEraserColor;
-                    smartEraser.FillColor = sampledSmartEraserColor;
-                }
-                else
-                {
-                    smartEraser.StrokeColor = "#80FF0000";
-                    smartEraser.FillColor = "#80FF0000";
+                    smartEraser.ConfigureFill(SourceImage);
                 }
             }
             else if (_currentAnnotation is FreehandAnnotation freehand)
@@ -925,6 +911,10 @@ public class EditorCore : IDisposable
         if (_currentAnnotation is SpotlightAnnotation spotlight)
         {
             spotlight.CanvasSize = CanvasSize;
+        }
+        else if (_currentAnnotation is SmartEraserAnnotation smartEraser && SourceImage != null)
+        {
+            smartEraser.ConfigureFill(SourceImage);
         }
 
         UpdateAnnotationState(_currentAnnotation);

@@ -70,12 +70,49 @@ public class EditorInputController
             Math.Clamp(point.X, 0, canvas.Bounds.Width),
             Math.Clamp(point.Y, 0, canvas.Bounds.Height));
 
+    private static void ClampSmartEraserBoundsToCanvas(
+        global::Avalonia.Controls.Shapes.Rectangle rectangle,
+        SmartEraserAnnotation annotation,
+        Canvas canvas)
+    {
+        double left = Canvas.GetLeft(rectangle);
+        double top = Canvas.GetTop(rectangle);
+        double right = left + rectangle.Width;
+        double bottom = top + rectangle.Height;
+
+        double clippedLeft = Math.Clamp(left, 0, canvas.Bounds.Width);
+        double clippedTop = Math.Clamp(top, 0, canvas.Bounds.Height);
+        double clippedRight = Math.Clamp(right, 0, canvas.Bounds.Width);
+        double clippedBottom = Math.Clamp(bottom, 0, canvas.Bounds.Height);
+
+        Canvas.SetLeft(rectangle, clippedLeft);
+        Canvas.SetTop(rectangle, clippedTop);
+        rectangle.Width = Math.Max(0, clippedRight - clippedLeft);
+        rectangle.Height = Math.Max(0, clippedBottom - clippedTop);
+        annotation.StartPoint = ToSKPoint(new Point(clippedLeft, clippedTop));
+        annotation.EndPoint = ToSKPoint(new Point(clippedRight, clippedBottom));
+    }
+
+    private void UpdateSmartEraserFill(
+        global::Avalonia.Controls.Shapes.Rectangle rectangle,
+        SmartEraserAnnotation annotation,
+        Canvas canvas)
+    {
+        ClampSmartEraserBoundsToCanvas(rectangle, annotation, canvas);
+
+        var sourceImage = _view.EditorCore.SourceImage;
+        if (sourceImage != null)
+        {
+            annotation.ConfigureFill(sourceImage);
+            annotation.ApplyFill(rectangle);
+        }
+    }
+
     // Track cut-out direction (null = not determined yet, true = vertical, false = horizontal)
     private bool? _cutOutDirection;
 
     // Cached SKBitmap for effect updates
     private SKBitmap? _cachedSkBitmap;
-    private SKBitmap? _smartEraserSourceBitmap;
 
     // Crop handle state: after drawing the crop rect, before confirming
     private bool _cropActive;
@@ -266,7 +303,7 @@ public class EditorInputController
         // ISSUE-019 fix: Dead code removed - redo stack cleared by EditorCore
 
         var point = e.GetPosition(canvas);
-        if (vm.ActiveTool == EditorTool.Crop || vm.ActiveTool == EditorTool.CutOut)
+        if (vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut or EditorTool.SmartEraser)
         {
             point = ClampPointToCanvasBounds(canvas, point);
         }
@@ -464,26 +501,16 @@ public class EditorInputController
                 // Legacy said: "Keep _isDrawing true so it goes through OnCanvasPointerReleased for auto-selection"
                 break;
             case EditorTool.SmartEraser:
-                _smartEraserSourceBitmap?.Dispose();
-                _smartEraserSourceBitmap = _view.GetSnapshot();
                 var smartEraser = new SmartEraserAnnotation
                 {
                     StrokeWidth = 0,
                     StartPoint = ToSKPoint(_startPoint),
                     EndPoint = ToSKPoint(_startPoint)
                 };
-                if (_smartEraserSourceBitmap != null)
+                var sourceImage = _view.EditorCore.SourceImage;
+                if (sourceImage != null)
                 {
-                    smartEraser.ConfigureFill(_smartEraserSourceBitmap);
-                }
-                else
-                {
-                    var sampledColor = _view.EditorCore.SampleCanvasColor(ToSKPoint(_startPoint));
-                    if (!string.IsNullOrEmpty(sampledColor))
-                    {
-                        smartEraser.StrokeColor = sampledColor;
-                        smartEraser.FillColor = sampledColor;
-                    }
+                    smartEraser.ConfigureFill(sourceImage);
                 }
                 _currentShape = smartEraser.CreateVisual();
                 _currentShape.IsHitTestVisible = false;
@@ -605,23 +632,23 @@ public class EditorInputController
 
         var currentPoint = e.GetPosition(canvas);
 
-        // Clamp current point to canvas bounds for crop and cut-out tools
+        // Region-based tools cannot operate outside the image bitmap.
         var vm = ViewModel;
-        if (vm != null && (vm.ActiveTool == EditorTool.Crop || vm.ActiveTool == EditorTool.CutOut))
+        if (vm != null && vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut or EditorTool.SmartEraser)
         {
-            // Allow cancelling selection by right-clicking while holding left button
-            var props = e.GetCurrentPoint(canvas).Properties;
-            if (props.IsRightButtonPressed)
+            if (vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut)
             {
-                CancelActiveRegionDrawing(canvas);
-                e.Pointer.Capture(null);
-                return;
+                // Allow cancelling selection by right-clicking while holding left button
+                var props = e.GetCurrentPoint(canvas).Properties;
+                if (props.IsRightButtonPressed)
+                {
+                    CancelActiveRegionDrawing(canvas);
+                    e.Pointer.Capture(null);
+                    return;
+                }
             }
 
-            currentPoint = new Point(
-                Math.Max(0, Math.Min(currentPoint.X, canvas.Bounds.Width)),
-                Math.Max(0, Math.Min(currentPoint.Y, canvas.Bounds.Height))
-            );
+            currentPoint = ClampPointToCanvasBounds(canvas, currentPoint);
         }
 
         if (vm == null) return;
@@ -759,6 +786,12 @@ public class EditorInputController
             if (_currentShape.Tag is RectangleAnnotation rectAnn) { rectAnn.StartPoint = ToSKPoint(new Point(left, top)); rectAnn.EndPoint = ToSKPoint(new Point(left + width, top + height)); }
             else if (_currentShape.Tag is EllipseAnnotation ellAnn) { ellAnn.StartPoint = ToSKPoint(new Point(left, top)); ellAnn.EndPoint = ToSKPoint(new Point(left + width, top + height)); }
             else if (_currentShape.Tag is BaseEffectAnnotation effectAnn) { effectAnn.StartPoint = ToSKPoint(new Point(left, top)); effectAnn.EndPoint = ToSKPoint(new Point(left + width, top + height)); }
+
+            if (_currentShape is global::Avalonia.Controls.Shapes.Rectangle smartEraserRectangle &&
+                smartEraserRectangle.Tag is SmartEraserAnnotation smartEraserAnnotation)
+            {
+                UpdateSmartEraserFill(smartEraserRectangle, smartEraserAnnotation, canvas);
+            }
         }
         else if (_currentShape is global::Avalonia.Controls.Shapes.Path linePath && linePath.Tag is LineAnnotation lineAnn)
         {
@@ -901,6 +934,12 @@ public class EditorInputController
                 }
                 else if (_currentShape != null)
                 {
+                    if (_currentShape is global::Avalonia.Controls.Shapes.Rectangle smartEraserRectangle &&
+                        smartEraserRectangle.Tag is SmartEraserAnnotation smartEraserAnnotation)
+                    {
+                        UpdateSmartEraserFill(smartEraserRectangle, smartEraserAnnotation, canvas);
+                    }
+
                     // Check MinSize for shapes that support size validation
                     // Skip check for Number (single-click), Pen, and Text.
                     bool isSizeBased = vm.ActiveTool != EditorTool.Step
@@ -912,8 +951,12 @@ public class EditorInputController
                     {
                         // Calculate size based on pointer position difference (most reliable method)
                         var releasePoint = e.GetPosition(canvas);
-                        double shapeWidth = Math.Abs(releasePoint.X - _startPoint.X);
-                        double shapeHeight = Math.Abs(releasePoint.Y - _startPoint.Y);
+                        double shapeWidth = _currentShape.Tag is SmartEraserAnnotation
+                            ? _currentShape.Width
+                            : Math.Abs(releasePoint.X - _startPoint.X);
+                        double shapeHeight = _currentShape.Tag is SmartEraserAnnotation
+                            ? _currentShape.Height
+                            : Math.Abs(releasePoint.Y - _startPoint.Y);
 
                         // Discard shape if too small (prevents accidental clicks creating tiny shapes)
                         if (shapeWidth < MinShapeSize && shapeHeight < MinShapeSize)
@@ -926,8 +969,6 @@ public class EditorInputController
                             _currentShape = null;
                             _cachedSkBitmap?.Dispose();
                             _cachedSkBitmap = null;
-                            _smartEraserSourceBitmap?.Dispose();
-                            _smartEraserSourceBitmap = null;
                             _isCreatingEffect = false;
                             if (wasSpotlight)
                             {
@@ -944,14 +985,6 @@ public class EditorInputController
                     // handle logic.
                     if (!(_currentShape is global::Avalonia.Controls.Shapes.Path && _currentShape.Tag is FreehandAnnotation))
                     {
-                        if (_currentShape is global::Avalonia.Controls.Shapes.Rectangle smartEraserRectangle &&
-                            smartEraserRectangle.Tag is SmartEraserAnnotation smartEraserAnnotation &&
-                            _smartEraserSourceBitmap != null)
-                        {
-                            smartEraserAnnotation.ConfigureFill(_smartEraserSourceBitmap);
-                            smartEraserAnnotation.ApplyFill(smartEraserRectangle);
-                        }
-
                         // Apply final effect for effect tools
                         if (_currentShape.Tag is BaseEffectAnnotation)
                         {
@@ -982,8 +1015,6 @@ public class EditorInputController
             _currentShape = null;
             _cachedSkBitmap?.Dispose();
             _cachedSkBitmap = null;
-            _smartEraserSourceBitmap?.Dispose();
-            _smartEraserSourceBitmap = null;
             _isCreatingEffect = false;
             _view.ClearInteractiveEffectPreviewCache();
         }

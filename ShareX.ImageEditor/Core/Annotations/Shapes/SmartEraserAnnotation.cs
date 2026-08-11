@@ -60,9 +60,9 @@ public partial class SmartEraserAnnotation : RectangleAnnotation
     }
 
     /// <summary>
-    /// Chooses the best fill for the current bounds from a snapshot taken before
-    /// the eraser was added. Matching left/right columns are preferred, followed
-    /// by matching top/bottom rows and finally the top-left pixel color.
+    /// Chooses the best fill for the current bounds from the source image.
+    /// Matching left/right columns are preferred, followed by matching top/bottom
+    /// rows and finally the top-left pixel color.
     /// </summary>
     public void ConfigureFill(SKBitmap source)
     {
