@@ -75,6 +75,7 @@ public class EditorInputController
 
     // Cached SKBitmap for effect updates
     private SKBitmap? _cachedSkBitmap;
+    private SKBitmap? _smartEraserSourceBitmap;
 
     // Crop handle state: after drawing the crop rect, before confirming
     private bool _cropActive;
@@ -463,15 +464,27 @@ public class EditorInputController
                 // Legacy said: "Keep _isDrawing true so it goes through OnCanvasPointerReleased for auto-selection"
                 break;
             case EditorTool.SmartEraser:
-                var sampledColor = _view.EditorCore.SampleCanvasColor(ToSKPoint(_startPoint)) ?? "#80FF0000";
+                _smartEraserSourceBitmap?.Dispose();
+                _smartEraserSourceBitmap = _view.GetSnapshot();
                 var smartEraser = new SmartEraserAnnotation
                 {
-                    StrokeColor = sampledColor,
-                    FillColor = sampledColor,
                     StrokeWidth = 0,
                     StartPoint = ToSKPoint(_startPoint),
                     EndPoint = ToSKPoint(_startPoint)
                 };
+                if (_smartEraserSourceBitmap != null)
+                {
+                    smartEraser.ConfigureFill(_smartEraserSourceBitmap);
+                }
+                else
+                {
+                    var sampledColor = _view.EditorCore.SampleCanvasColor(ToSKPoint(_startPoint));
+                    if (!string.IsNullOrEmpty(sampledColor))
+                    {
+                        smartEraser.StrokeColor = sampledColor;
+                        smartEraser.FillColor = sampledColor;
+                    }
+                }
                 _currentShape = smartEraser.CreateVisual();
                 _currentShape.IsHitTestVisible = false;
                 break;
@@ -913,6 +926,8 @@ public class EditorInputController
                             _currentShape = null;
                             _cachedSkBitmap?.Dispose();
                             _cachedSkBitmap = null;
+                            _smartEraserSourceBitmap?.Dispose();
+                            _smartEraserSourceBitmap = null;
                             _isCreatingEffect = false;
                             if (wasSpotlight)
                             {
@@ -929,6 +944,14 @@ public class EditorInputController
                     // handle logic.
                     if (!(_currentShape is global::Avalonia.Controls.Shapes.Path && _currentShape.Tag is FreehandAnnotation))
                     {
+                        if (_currentShape is global::Avalonia.Controls.Shapes.Rectangle smartEraserRectangle &&
+                            smartEraserRectangle.Tag is SmartEraserAnnotation smartEraserAnnotation &&
+                            _smartEraserSourceBitmap != null)
+                        {
+                            smartEraserAnnotation.ConfigureFill(_smartEraserSourceBitmap);
+                            smartEraserAnnotation.ApplyFill(smartEraserRectangle);
+                        }
+
                         // Apply final effect for effect tools
                         if (_currentShape.Tag is BaseEffectAnnotation)
                         {
@@ -959,6 +982,8 @@ public class EditorInputController
             _currentShape = null;
             _cachedSkBitmap?.Dispose();
             _cachedSkBitmap = null;
+            _smartEraserSourceBitmap?.Dispose();
+            _smartEraserSourceBitmap = null;
             _isCreatingEffect = false;
             _view.ClearInteractiveEffectPreviewCache();
         }

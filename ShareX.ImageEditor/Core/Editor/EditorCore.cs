@@ -957,6 +957,11 @@ public class EditorCore : IDisposable
         // Finalize annotation
         _currentAnnotation.EndPoint = point;
 
+        if (_currentAnnotation is SmartEraserAnnotation smartEraser && SourceImage != null)
+        {
+            smartEraser.ConfigureFill(SourceImage);
+        }
+
         // Crop executes immediately like the Avalonia master behavior
         if (_currentAnnotation is CropAnnotation)
         {

@@ -23,15 +23,31 @@
 
 #endregion License Information (GPL v3)
 
+using SkiaSharp;
+
 namespace ShareX.ImageEditor.Core.Annotations;
 
-/// <summary>
-/// Smart Eraser annotation - samples pixel color from the rendered canvas (including other annotations)
-/// at click point and uses it for drawing to hide sensitive information by covering it with the
-/// sampled color from the visual output
-/// </summary>
-public class SmartEraserAnnotation : RectangleAnnotation
+public enum SmartEraserFillMode
 {
+    SolidColor,
+    StretchHorizontally,
+    StretchVertically
+}
+
+/// <summary>
+/// Smart Eraser annotation - hides content by stretching a matching pair of opposing edges,
+/// or by using the selection's top-left pixel when neither edge pair matches.
+/// </summary>
+public partial class SmartEraserAnnotation : RectangleAnnotation
+{
+    public SmartEraserFillMode FillMode { get; set; }
+
+    /// <summary>
+    /// Packed ARGB pixels for the matching edge. A horizontal stretch stores a
+    /// top-to-bottom column; a vertical stretch stores a left-to-right row.
+    /// </summary>
+    public uint[]? EdgePixels { get; set; }
+
     public SmartEraserAnnotation()
     {
         ToolType = EditorTool.SmartEraser;
@@ -43,8 +59,95 @@ public class SmartEraserAnnotation : RectangleAnnotation
         ShadowEnabled = false;
     }
 
-    // StrokeColor/FillColor will be set to the sampled pixel color from the RENDERED canvas
-    // (including all annotations) when the user first clicks with the Smart Eraser tool.
-    // This allows users to cover sensitive information with colors that match
-    // existing annotations or the background, effectively hiding it seamlessly.
+    /// <summary>
+    /// Chooses the best fill for the current bounds from a snapshot taken before
+    /// the eraser was added. Matching left/right columns are preferred, followed
+    /// by matching top/bottom rows and finally the top-left pixel color.
+    /// </summary>
+    public void ConfigureFill(SKBitmap source)
+    {
+        ArgumentNullException.ThrowIfNull(source);
+
+        if (source.Width <= 0 || source.Height <= 0)
+        {
+            return;
+        }
+
+        var bounds = GetBounds();
+        int left = Math.Clamp((int)Math.Floor(bounds.Left), 0, source.Width - 1);
+        int top = Math.Clamp((int)Math.Floor(bounds.Top), 0, source.Height - 1);
+        int right = Math.Clamp(Math.Max(left, (int)Math.Ceiling(bounds.Right) - 1), 0, source.Width - 1);
+        int bottom = Math.Clamp(Math.Max(top, (int)Math.Ceiling(bounds.Bottom) - 1), 0, source.Height - 1);
+
+        SKColor fallbackColor = source.GetPixel(left, top);
+        string fallbackColorHex = ToColorHex(fallbackColor);
+        StrokeColor = fallbackColorHex;
+        FillColor = fallbackColorHex;
+        FillMode = SmartEraserFillMode.SolidColor;
+        EdgePixels = null;
+
+        bool columnsMatch = true;
+        for (int y = top; y <= bottom; y++)
+        {
+            if (source.GetPixel(left, y) != source.GetPixel(right, y))
+            {
+                columnsMatch = false;
+                break;
+            }
+        }
+
+        if (columnsMatch)
+        {
+            FillMode = SmartEraserFillMode.StretchHorizontally;
+            EdgePixels = new uint[bottom - top + 1];
+            for (int y = top; y <= bottom; y++)
+            {
+                EdgePixels[y - top] = PackColor(source.GetPixel(left, y));
+            }
+            return;
+        }
+
+        bool rowsMatch = true;
+        for (int x = left; x <= right; x++)
+        {
+            if (source.GetPixel(x, top) != source.GetPixel(x, bottom))
+            {
+                rowsMatch = false;
+                break;
+            }
+        }
+
+        if (rowsMatch)
+        {
+            FillMode = SmartEraserFillMode.StretchVertically;
+            EdgePixels = new uint[right - left + 1];
+            for (int x = left; x <= right; x++)
+            {
+                EdgePixels[x - left] = PackColor(source.GetPixel(x, top));
+            }
+        }
+    }
+
+    internal static SKColor UnpackColor(uint color) => new(
+        red: (byte)(color >> 16),
+        green: (byte)(color >> 8),
+        blue: (byte)color,
+        alpha: (byte)(color >> 24));
+
+    private static uint PackColor(SKColor color) =>
+        ((uint)color.Alpha << 24) |
+        ((uint)color.Red << 16) |
+        ((uint)color.Green << 8) |
+        color.Blue;
+
+    private static string ToColorHex(SKColor color) => color.Alpha == byte.MaxValue
+        ? $"#{color.Red:X2}{color.Green:X2}{color.Blue:X2}"
+        : $"#{color.Alpha:X2}{color.Red:X2}{color.Green:X2}{color.Blue:X2}";
+
+    public override Annotation Clone()
+    {
+        var clone = (SmartEraserAnnotation)base.Clone();
+        clone.EdgePixels = EdgePixels?.ToArray();
+        return clone;
+    }
 }
