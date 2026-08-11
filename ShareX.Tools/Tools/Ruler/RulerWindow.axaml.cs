@@ -16,7 +16,6 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Input.Platform;
-using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform;
 using ShareX.AvaloniaUI.Theming;
@@ -38,7 +37,7 @@ public partial class RulerWindow : Window
         ConfigureOverlayAndCaptureScreen();
 
         KeyDown += OnKeyDown;
-        AddHandler(PointerReleasedEvent, OnWindowPointerReleased, RoutingStrategies.Tunnel);
+        AddHandler(PointerReleasedEvent, OnWindowPointerReleased);
         Opened += (_, _) =>
         {
             Activate();

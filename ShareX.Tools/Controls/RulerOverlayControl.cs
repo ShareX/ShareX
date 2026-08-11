@@ -53,6 +53,7 @@ public sealed class RulerOverlayControl : Control
     private static readonly DashStyle DragDashStyle = new([5, 4], 0);
 
     private const int DragThreshold = 4;
+    private const int MeasurementHitTestPadding = 6;
     private const int MinimumLineLength = 2;
     private const int MaximumColorTolerance = 255;
     private const double EndCapSize = 10;
@@ -206,6 +207,21 @@ public sealed class RulerOverlayControl : Control
     protected override void OnPointerReleased(PointerReleasedEventArgs e)
     {
         base.OnPointerReleased(e);
+
+        if (e.InitialPressMouseButton == MouseButton.Right)
+        {
+            int measurementIndex = HitTestMeasurement(e.GetPosition(this));
+
+            if (measurementIndex >= 0)
+            {
+                _measurements.RemoveAt(measurementIndex);
+                InvalidateVisual();
+                e.Handled = true;
+            }
+
+            return;
+        }
+
         if (!_leftButtonPressed || e.InitialPressMouseButton != MouseButton.Left || _screen == null)
         {
             return;
@@ -391,22 +407,51 @@ public sealed class RulerOverlayControl : Control
         }
     }
 
+    private int HitTestMeasurement(Point point)
+    {
+        for (int i = _measurements.Count - 1; i >= 0; i--)
+        {
+            Measurement measurement = _measurements[i];
+            Rect shapeBounds;
+
+            if (measurement.Kind == MeasurementKind.Rectangle)
+            {
+                shapeBounds = ToClient(measurement.Bounds);
+            }
+            else
+            {
+                GetLineEndpoints(measurement, out Point start, out Point end);
+                shapeBounds = new Rect(
+                    Math.Min(start.X, end.X),
+                    Math.Min(start.Y, end.Y),
+                    Math.Abs(end.X - start.X),
+                    Math.Abs(end.Y - start.Y));
+            }
+
+            Rect hitBounds = Union(shapeBounds, GetMeasurementLabelBounds(measurement))
+                .Inflate(MeasurementHitTestPadding);
+
+            if (hitBounds.Contains(point))
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    private static Rect Union(Rect first, Rect second)
+    {
+        double left = Math.Min(first.Left, second.Left);
+        double top = Math.Min(first.Top, second.Top);
+        double right = Math.Max(first.Right, second.Right);
+        double bottom = Math.Max(first.Bottom, second.Bottom);
+        return new Rect(left, top, right - left, bottom - top);
+    }
+
     private void DrawLineMeasurement(DrawingContext context, Measurement measurement, IBrush accentBrush, IPen accentPen)
     {
-        DrawingRectangle bounds = measurement.Bounds;
-        Point start;
-        Point end;
-
-        if (measurement.Axis == Axis.Horizontal)
-        {
-            start = ToClient(bounds.Left, measurement.SamplePoint.Y);
-            end = ToClient(bounds.Right, measurement.SamplePoint.Y);
-        }
-        else
-        {
-            start = ToClient(measurement.SamplePoint.X, bounds.Top);
-            end = ToClient(measurement.SamplePoint.X, bounds.Bottom);
-        }
+        GetLineEndpoints(measurement, out Point start, out Point end);
 
         context.DrawLine(ShadowPen, start, end);
         context.DrawLine(accentPen, start, end);
@@ -431,12 +476,8 @@ public sealed class RulerOverlayControl : Control
         context.DrawLine(accentPen, new Point(rect.Left - halfCap, rect.Center.Y), new Point(rect.Left + halfCap, rect.Center.Y));
         context.DrawLine(accentPen, new Point(rect.Right - halfCap, rect.Center.Y), new Point(rect.Right + halfCap, rect.Center.Y));
 
-        FormattedText text = CreateText(GetMeasurementText(measurement), GetContrastingTextBrush());
-        double labelHeight = text.Height + LabelVerticalPadding * 2;
-        double y = rect.Bottom + 10 + labelHeight <= Bounds.Height
-            ? rect.Bottom + 10 + labelHeight / 2
-            : rect.Top - 10 - labelHeight / 2;
-        DrawLabel(context, GetMeasurementText(measurement), new Point(rect.Center.X, y), accentBrush);
+        string label = GetMeasurementText(measurement);
+        DrawLabel(context, label, GetRectangleLabelCenter(measurement, label), accentBrush);
     }
 
     private void DrawDragSelection(DrawingContext context, Color accentColor, IBrush accentBrush)
@@ -478,15 +519,63 @@ public sealed class RulerOverlayControl : Control
     {
         IBrush textBrush = GetContrastingTextBrush();
         FormattedText formattedText = CreateText(text, textBrush);
-        Size size = new(formattedText.Width + LabelHorizontalPadding * 2,
-            formattedText.Height + LabelVerticalPadding * 2);
-        Rect capsule = new(center.X - size.Width / 2, center.Y - size.Height / 2, size.Width, size.Height);
-        capsule = KeepInside(capsule, new Rect(Bounds.Size), 6);
+        Rect capsule = GetLabelBounds(text, center);
 
         context.DrawRectangle(accentBrush, null, capsule, capsule.Height / 2, capsule.Height / 2);
         context.DrawText(formattedText, new Point(
             capsule.X + (capsule.Width - formattedText.Width) / 2,
             capsule.Y + (capsule.Height - formattedText.Height) / 2));
+    }
+
+    private Rect GetMeasurementLabelBounds(Measurement measurement)
+    {
+        string text = GetMeasurementText(measurement);
+        Point center;
+
+        if (measurement.Kind == MeasurementKind.Line)
+        {
+            GetLineEndpoints(measurement, out Point start, out Point end);
+            center = GetLineLabelCenter(text, start, end, measurement.Axis);
+        }
+        else
+        {
+            center = GetRectangleLabelCenter(measurement, text);
+        }
+
+        return GetLabelBounds(text, center);
+    }
+
+    private Rect GetLabelBounds(string text, Point center)
+    {
+        Size size = MeasureLabel(text);
+        Rect capsule = new(center.X - size.Width / 2, center.Y - size.Height / 2, size.Width, size.Height);
+        return KeepInside(capsule, new Rect(Bounds.Size), 6);
+    }
+
+    private Point GetRectangleLabelCenter(Measurement measurement, string text)
+    {
+        Rect rect = ToClient(measurement.Bounds);
+        double labelHeight = MeasureLabel(text).Height;
+        double y = rect.Bottom + 10 + labelHeight <= Bounds.Height
+            ? rect.Bottom + 10 + labelHeight / 2
+            : rect.Top - 10 - labelHeight / 2;
+        return new Point(rect.Center.X, y);
+    }
+
+    private void GetLineEndpoints(Measurement measurement, out Point start, out Point end)
+    {
+        DrawingRectangle bounds = measurement.Bounds;
+
+        if (measurement.Axis == Axis.Horizontal)
+        {
+            start = ToClient(bounds.Left, measurement.SamplePoint.Y);
+            end = ToClient(bounds.Right, measurement.SamplePoint.Y);
+        }
+        else
+        {
+            start = ToClient(measurement.SamplePoint.X, bounds.Top);
+            end = ToClient(measurement.SamplePoint.X, bounds.Bottom);
+        }
     }
 
     private Point GetLineLabelCenter(string text, Point start, Point end, Axis axis)
