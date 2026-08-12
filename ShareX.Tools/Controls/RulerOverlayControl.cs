@@ -57,6 +57,7 @@ public sealed class RulerOverlayControl : Control
     private const int MinimumLineLength = 2;
     private const int MaximumColorTolerance = 255;
     private const double EndCapSize = 10;
+    private const double RectangleCrossSize = 20;
     private const double LabelFontSize = 13;
     private const double LabelHorizontalPadding = 10;
     private const double LabelVerticalPadding = 5;
@@ -470,11 +471,13 @@ public sealed class RulerOverlayControl : Control
         context.DrawRectangle(fill, ShadowPen, rect);
         context.DrawRectangle(null, accentPen, rect);
 
-        double halfCap = EndCapSize / 2;
-        context.DrawLine(accentPen, new Point(rect.Center.X, rect.Top - halfCap), new Point(rect.Center.X, rect.Top + halfCap));
-        context.DrawLine(accentPen, new Point(rect.Center.X, rect.Bottom - halfCap), new Point(rect.Center.X, rect.Bottom + halfCap));
-        context.DrawLine(accentPen, new Point(rect.Left - halfCap, rect.Center.Y), new Point(rect.Left + halfCap, rect.Center.Y));
-        context.DrawLine(accentPen, new Point(rect.Right - halfCap, rect.Center.Y), new Point(rect.Right + halfCap, rect.Center.Y));
+        double halfCross = RectangleCrossSize / 2;
+        context.DrawLine(accentPen,
+            new Point(rect.Center.X - halfCross, rect.Center.Y),
+            new Point(rect.Center.X + halfCross, rect.Center.Y));
+        context.DrawLine(accentPen,
+            new Point(rect.Center.X, rect.Center.Y - halfCross),
+            new Point(rect.Center.X, rect.Center.Y + halfCross));
 
         string label = GetMeasurementText(measurement);
         DrawLabel(context, label, GetRectangleLabelCenter(measurement, label), accentBrush);
