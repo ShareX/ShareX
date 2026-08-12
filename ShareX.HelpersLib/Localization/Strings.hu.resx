@@ -1475,7 +1475,8 @@
     <value>Kiadás</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Egy újabb verzió {0} elérhető.</value>
+    <value>Elérhető egy újabb verzió.
+Szeretné letölteni és telepíteni?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Jelenlegi verzió</value>
@@ -1484,11 +1485,11 @@
     <value>Legújabb verzió</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>A newer version of {0} is available.
-Would you like to letöltés it?</value>
+    <value>Elérhető egy újabb verzió.
+Szeretné letölteni?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
-    <value>Frissítés elérhető</value>
+    <value>Frissítés érhető el</value>
   </data>
   <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
     <value>Bing vizuális keresés</value>

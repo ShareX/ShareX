@@ -1475,21 +1475,21 @@
     <value>انتشار</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>نسخه جدیدتری از {0} در دسترس است.
-آیا مایلید آن را دانلود و نصب کنید؟</value>
+    <value>نسخه جدیدتری در دسترس است.
+آیا می‌خواهید آن را دانلود و نصب کنید؟</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
-    <value>ورژن جاری</value>
+    <value>نسخه فعلی</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
     <value>آخرین نسخه</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>نسخه جدیدتری از {0} در دسترس است.
-آیا مایلید آن را دانلود و نصب کنید؟</value>
+    <value>نسخه جدیدتری در دسترس است.
+آیا می‌خواهید آن را دانلود کنید؟</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
-    <value>نسخه به روز موجود است</value>
+    <value>یک به‌روزرسانی در دسترس است</value>
   </data>
   <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
     <value>جستجوی تصویری Bing</value>

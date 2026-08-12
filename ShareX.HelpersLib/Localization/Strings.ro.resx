@@ -1475,7 +1475,7 @@
     <value>Lansare</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Este disponibilă o versiune mai nouă a {0}.
+    <value>Este disponibilă o versiune mai nouă.
 Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
@@ -1485,7 +1485,7 @@ Doriți să o descărcați și să o instalați?</value>
     <value>Cea mai recentă versiune</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>Este disponibilă o versiune mai nouă a {0}.
+    <value>Este disponibilă o versiune mai nouă.
 Doriți să o descărcați?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">

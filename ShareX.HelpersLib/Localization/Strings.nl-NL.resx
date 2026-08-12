@@ -1475,7 +1475,7 @@
     <value>Release</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Een nieuwere versie van {0} is beschikbaar.
+    <value>Er is een nieuwere versie beschikbaar.
 Wil je deze downloaden en installeren?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
@@ -1485,7 +1485,7 @@ Wil je deze downloaden en installeren?</value>
     <value>Laatste versie</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>Er is een nieuwe versie van {0} beschikbaar.
+    <value>Er is een nieuwere versie beschikbaar.
 Wil je deze downloaden?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">

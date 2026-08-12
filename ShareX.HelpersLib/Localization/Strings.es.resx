@@ -1475,8 +1475,8 @@
     <value>Release</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Una nueva versión de {0} está disponible.
-¿Quieres descargar e instalarlo?</value>
+    <value>Hay disponible una versión más reciente.
+¿Quieres descargarla e instalarla?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Versión actual</value>
@@ -1485,11 +1485,11 @@
     <value>Última versión</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>A newer version of {0} is available.
-Would you like to descarga it?</value>
+    <value>Hay disponible una versión más reciente.
+¿Quieres descargarla?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
-    <value>Actualización está disponible</value>
+    <value>Hay una actualización disponible</value>
   </data>
   <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
     <value>Búsqueda visual de Bing</value>

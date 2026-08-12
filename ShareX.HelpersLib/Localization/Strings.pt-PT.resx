@@ -1475,7 +1475,7 @@
     <value>Lançamento</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Uma nova versão do {0} está disponível.
+    <value>Está disponível uma versão mais recente.
 Você gostaria de transferi-la e instalá-la?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
@@ -1485,7 +1485,7 @@ Você gostaria de transferi-la e instalá-la?</value>
     <value>Última versão</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>Uma nova versão de {0} está disponível.
+    <value>Está disponível uma versão mais recente.
 Gostaria de transferí-la?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">

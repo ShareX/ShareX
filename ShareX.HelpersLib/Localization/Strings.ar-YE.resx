@@ -1475,7 +1475,7 @@
     <value>الإصدار المستقر - Release</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>إصدار جديد من {0} متاح.
+    <value>يتوفر إصدار أحدث.
 هل تريد تنزيله وتثبيته؟</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
@@ -1485,7 +1485,7 @@
     <value>الإصدار الأخير</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>إصدار جديد من {0} متاح.
+    <value>يتوفر إصدار أحدث.
 هل تريد تنزيله؟</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">

@@ -116,13 +116,9 @@ public partial class UpdateMessageWindow : Window
     private static string BuildMessage(UpdateChecker updateChecker)
     {
         StringBuilder text = new();
-        string productName = System.Windows.Forms.Application.ProductName ?? "ShareX";
-
-        text.AppendLine(Helpers.SafeStringFormat(
-            updateChecker.IsPortable
-                ? Localization.Strings.UpdateMessageBox_UpdateMessageBox_Portable
-                : Localization.Strings.UpdateMessageBox_UpdateMessageBox_,
-            productName));
+        text.AppendLine(updateChecker.IsPortable
+            ? Localization.Strings.UpdateMessageBox_UpdateMessageBox_Portable
+            : Localization.Strings.UpdateMessageBox_UpdateMessageBox_);
         text.AppendLine();
         text.Append(Localization.Strings.UpdateMessageBox_UpdateMessageBox_CurrentVersion);
         text.Append(": ");

@@ -1475,8 +1475,8 @@
     <value>正式版</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>有一个新版本 {0} 可用.
-你要下载安装吗?</value>
+    <value>有新版本可用。
+是否要下载并安装？</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>当前版本</value>
@@ -1485,7 +1485,7 @@
     <value>最新版本</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>新版本 {0} 可用。
+    <value>有新版本可用。
 要下载吗？</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">

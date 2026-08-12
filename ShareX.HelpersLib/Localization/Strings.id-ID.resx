@@ -1475,7 +1475,7 @@
     <value>Rilis</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Versi terbaru dari {0} tersedia
+    <value>Versi yang lebih baru tersedia.
 Apakah anda ingin mengunduh dan menginstalnya?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
@@ -1485,7 +1485,7 @@ Apakah anda ingin mengunduh dan menginstalnya?</value>
     <value>Versi terbaru</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>Versi terbaru dari {0} tersedia
+    <value>Versi yang lebih baru tersedia.
 Apakah anda ingin mengunduhnya?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">

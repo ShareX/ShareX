@@ -1475,7 +1475,7 @@
     <value>Stabil version</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>En nyere version af {0} er tilgængelig.
+    <value>En nyere version er tilgængelig.
 Vil du hente og installere den?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
@@ -1485,7 +1485,7 @@ Vil du hente og installere den?</value>
     <value>Seneste version</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>En nyere version af {0} findes tilgængelig.
+    <value>En nyere version er tilgængelig.
 Vil du hente den?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">

@@ -1475,7 +1475,7 @@
     <value>Vydaná verze</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Je dostupná novější verze aplikace {0}.
+    <value>Je dostupná novější verze.
 Chcete ji stáhnout a nainstalovat?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
@@ -1485,7 +1485,7 @@ Chcete ji stáhnout a nainstalovat?</value>
     <value>Nejnovější verze</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>Je dostupná novější verze aplikace {0}.
+    <value>Je dostupná novější verze.
 Chcete ji stáhnout?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">

@@ -1475,7 +1475,7 @@
     <value>रिलीज़</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>{0} का नया संस्करण उपलब्ध है।
+    <value>एक नया संस्करण उपलब्ध है।
 क्या आप इसे डाउनलोड और स्थापित करना चाहते हैं?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
@@ -1485,7 +1485,7 @@
     <value>नवीनतम संस्करण</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>{0} का नया संस्करण उपलब्ध है।
+    <value>एक नया संस्करण उपलब्ध है।
 क्या आप इसे डाउनलोड करना चाहते हैं?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
