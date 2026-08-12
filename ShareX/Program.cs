@@ -24,7 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.Localization;
-using Avalonia.Win32.Interoperability;
+using ShareX.AvaloniaUI.Integration;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.ImageEditor.Integration;
@@ -299,7 +299,7 @@ namespace ShareX
 
                     using (TimerResolutionManager timerResolutionManager = new TimerResolutionManager())
                     {
-                        Run();
+                        Run(args);
                     }
 
                     if (restartRequested)
@@ -321,7 +321,7 @@ namespace ShareX
             DebugHelper.Flush();
         }
 
-        private static void Run()
+        private static void Run(string[] args)
         {
             ApplicationConfiguration.Initialize();
 
@@ -354,24 +354,34 @@ namespace ShareX
             CheckPuushMode();
             DebugWriteFlags();
 
-            DebugHelper.WriteLine("Avalonia init started.");
-            Application.AddMessageFilter(new WinFormsAvaloniaMessageFilter());
-            ImageEditorIntegration.Initialize();
-            DebugHelper.WriteLine("Avalonia init finished.");
-
             SettingManager.LoadInitialSettings();
 
             UpdateManager = new ShareXUpdateManager();
             LanguageHelper.ChangeLanguage(Settings.Language);
             CleanupManager.CleanupAsync();
 
-            DebugHelper.WriteLine("MainForm init started.");
-            MainForm = new MainForm();
-            DebugHelper.WriteLine("MainForm init finished.");
-
-            Application.Run(MainForm);
+            DebugHelper.WriteLine("Avalonia application starting.");
+            AvaloniaBootstrapper.Run(args, StartApplication, StopApplication);
 
             CloseSequence();
+        }
+
+        private static async Task StartApplication()
+        {
+            ImageEditorIntegration.Initialize();
+
+            DebugHelper.WriteLine("MainForm host init started.");
+            MainForm = new MainForm();
+            await MainForm.InitializeAsync();
+            DebugHelper.WriteLine("MainForm host init finished.");
+        }
+
+        private static void StopApplication()
+        {
+            if (MainForm is { IsDisposed: false })
+            {
+                MainForm.ExitApplication();
+            }
         }
 
         public static void CloseSequence()
@@ -394,7 +404,19 @@ namespace ShareX
         {
             restartRequested = true;
             restartAsAdmin = asAdmin;
-            Application.Exit();
+            Exit();
+        }
+
+        public static void Exit()
+        {
+            if (MainForm is { IsDisposed: false } mainForm)
+            {
+                mainForm.InvokeSafe(mainForm.ExitApplication);
+            }
+            else
+            {
+                AvaloniaBootstrapper.Shutdown();
+            }
         }
 
         private static void SingleInstanceManager_ArgumentsReceived(string[] arguments)

@@ -10,7 +10,6 @@
 #nullable enable
 
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 
 namespace ShareX;
 
@@ -20,7 +19,6 @@ public static class QuickTaskMenuEditorIntegration
 
     public static void Show()
     {
-        AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() =>
         {
             if (_window == null)

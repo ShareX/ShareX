@@ -10,7 +10,6 @@
 #nullable enable
 
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 using ShareX.HelpersLib;
 using System;
 using System.Threading.Tasks;
@@ -21,7 +20,6 @@ public static class FileExistWindowIntegration
 {
     public static string Show(string filePath)
     {
-        AvaloniaBootstrapper.EnsureInitialized();
 
         if (Dispatcher.UIThread.CheckAccess())
         {

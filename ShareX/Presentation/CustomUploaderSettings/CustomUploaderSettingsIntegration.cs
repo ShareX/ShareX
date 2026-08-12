@@ -10,7 +10,6 @@
 #nullable enable
 
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 
 namespace ShareX;
 
@@ -21,7 +20,6 @@ public static class CustomUploaderSettingsIntegration
     public static void Show()
     {
         SettingManager.WaitUploadersConfig();
-        AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() =>
         {
             if (_window == null)

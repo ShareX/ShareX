@@ -10,7 +10,6 @@
 #nullable enable
 
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 using ShareX.HelpersLib;
 using System;
 using System.Threading.Tasks;
@@ -23,7 +22,6 @@ internal static class MultiUploadConfirmationWindowIntegration
 {
     public static MultiUploadConfirmationResult Show(int fileCount)
     {
-        AvaloniaBootstrapper.EnsureInitialized();
 
         if (Dispatcher.UIThread.CheckAccess())
         {

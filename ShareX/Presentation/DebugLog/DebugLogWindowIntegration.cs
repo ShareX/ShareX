@@ -10,7 +10,6 @@
 #nullable enable
 
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 using ShareX.HelpersLib;
 using System;
 
@@ -22,7 +21,6 @@ public static class DebugLogWindowIntegration
 
     public static void Show(Logger logger, Action<string>? uploadRequested, string uploadWarning)
     {
-        AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() =>
         {
             if (_window != null)

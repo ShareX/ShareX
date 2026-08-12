@@ -10,7 +10,6 @@
 #nullable enable
 
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 using ShareX.HelpersLib;
 using System;
 
@@ -24,7 +23,6 @@ public static class AfterCaptureWindowIntegration
         string? filePath,
         Action<AfterCaptureWindowResult> completed)
     {
-        AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() =>
         {
             try

@@ -10,7 +10,6 @@
 #nullable enable
 
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 using ShareX.HelpersLib;
 using System;
 
@@ -20,7 +19,6 @@ public static class AfterUploadWindowIntegration
 {
     public static void Show(TaskInfo info)
     {
-        AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() =>
         {
             try

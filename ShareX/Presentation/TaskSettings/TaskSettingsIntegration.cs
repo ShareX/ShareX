@@ -10,7 +10,6 @@
 #nullable enable
 
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 using System;
 
 namespace ShareX;
@@ -21,7 +20,6 @@ public static class TaskSettingsIntegration
 
     public static void Show(TaskSettings settings, bool isDefault, Action? closed = null)
     {
-        AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() =>
         {
             if (_window != null)

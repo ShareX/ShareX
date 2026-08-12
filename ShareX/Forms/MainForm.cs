@@ -16,6 +16,7 @@
 
 using ShareX.Localization;
 using Avalonia.Styling;
+using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Properties;
@@ -29,8 +30,8 @@ using System.Windows.Forms;
 namespace ShareX;
 
 /// <summary>
-/// Hidden WinForms host for the process message loop, global hotkeys, and tray icon lifetime.
-/// The visible main window is owned by Avalonia.
+/// Hidden WinForms host for global hotkeys and the tray icon.
+/// Avalonia owns the application lifetime, message loop, and visible windows.
 /// </summary>
 public sealed class MainForm : HotkeyForm
 {
@@ -48,13 +49,14 @@ public sealed class MainForm : HotkeyForm
         Icon = ShareXResources.Icon;
         TrayIconService = new WinFormsTrayIconService(Icon, Program.TitleShort, Program.Settings.ShowTray);
 
-        HandleCreated += MainForm_HandleCreated;
         FormClosed += MainForm_FormClosed;
         ThemeManager.ThemeChanged += ThemeManager_ThemeChanged;
     }
 
-    private async void MainForm_HandleCreated(object? sender, EventArgs e)
+    internal async Task InitializeAsync()
     {
+        Show();
+
         RunPuushTasks();
         NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.IsDarkTheme);
 
@@ -248,6 +250,11 @@ public sealed class MainForm : HotkeyForm
             return;
         }
 
+        ExitApplication();
+    }
+
+    internal void ExitApplication()
+    {
         _forceClose = true;
         MainWindowIntegration.Close();
         Close();
@@ -442,5 +449,6 @@ public sealed class MainForm : HotkeyForm
         MainWindowIntegration.Close();
         TrayIconService.Dispose();
         TaskManager.StopAllTasks();
+        AvaloniaBootstrapper.Shutdown();
     }
 }

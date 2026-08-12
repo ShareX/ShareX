@@ -10,7 +10,6 @@
 #nullable enable
 
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 
 namespace ShareX;
 
@@ -44,7 +43,6 @@ public static class AutoCaptureWindowIntegration
 
     public static void Stop()
     {
-        AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() =>
         {
             if (_window?.IsRunning == true)
@@ -56,7 +54,6 @@ public static class AutoCaptureWindowIntegration
 
     private static void Dispatch(System.Action<AutoCaptureWindow> action)
     {
-        AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() => action(GetOrCreateWindow()));
     }
 

@@ -10,7 +10,6 @@
 #nullable enable
 
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 using ShareX.HelpersLib;
 using System;
 using System.Threading.Tasks;
@@ -21,7 +20,6 @@ public static class BeforeUploadWindowIntegration
 {
     public static bool Show(TaskInfo info)
     {
-        AvaloniaBootstrapper.EnsureInitialized();
         TaskCompletionSource<bool> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
 
         Dispatcher.UIThread.Post(() =>

@@ -4,7 +4,6 @@
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Avalonia.Win32.Interoperability" Version="12.1.1" />
     <PackageVersion Include="FluentFTP" Version="54.2.0" />
     <PackageVersion Include="Microsoft.Data.Sqlite" Version="11.0.0-preview.6.26359.118" />
     <PackageVersion Include="Microsoft.Data.Sqlite.Core" Version="11.0.0-preview.6.26359.118" />

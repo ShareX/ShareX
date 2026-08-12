@@ -9,8 +9,9 @@
 
 #nullable enable
 
+using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 using System;
 using System.IO;
 
@@ -27,14 +28,26 @@ public static class MainWindowIntegration
 
     public static void Initialize(MainForm host, bool show)
     {
-        AvaloniaBootstrapper.EnsureInitialized();
         RunOnUiThread(() =>
         {
             if (_window == null)
             {
-                _window = new MainWindow(host);
-                _window.Closed += (_, _) =>
+                MainWindow window = new MainWindow(host);
+                _window = window;
+
+                if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
                 {
+                    desktop.MainWindow = window;
+                }
+
+                window.Closed += (_, _) =>
+                {
+                    if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime lifetime &&
+                        ReferenceEquals(lifetime.MainWindow, window))
+                    {
+                        lifetime.MainWindow = null;
+                    }
+
                     _window = null;
                     _isVisible = false;
                 };

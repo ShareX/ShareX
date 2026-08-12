@@ -12,7 +12,6 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
 using System;
 using System.Threading.Tasks;
@@ -45,7 +44,6 @@ public partial class ShortenURLWindow : Window
 
     public static Task<string?> ShowAsync(string? initialURL = null)
     {
-        AvaloniaBootstrapper.EnsureInitialized();
         TaskCompletionSource<string?> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
 
         Dispatcher.UIThread.Post(() =>

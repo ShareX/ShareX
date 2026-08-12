@@ -33,7 +33,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ShareX
 {
@@ -306,7 +305,7 @@ namespace ShareX
 
                 if (!IsBusy && Program.CLI.IsCommandExist("AutoClose"))
                 {
-                    Application.Exit();
+                    Program.Exit();
                 }
                 else
                 {

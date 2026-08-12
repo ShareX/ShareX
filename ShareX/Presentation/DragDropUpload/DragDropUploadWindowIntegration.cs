@@ -10,7 +10,6 @@
 #nullable enable
 
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
 using System.Drawing;
 
 namespace ShareX;
@@ -27,7 +26,6 @@ public static class DragDropUploadWindowIntegration
         int hoverOpacity,
         TaskSettings? taskSettings = null)
     {
-        AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() =>
         {
             if (_window == null)
