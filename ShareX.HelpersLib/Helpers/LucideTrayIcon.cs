@@ -25,12 +25,12 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace ShareX;
+namespace ShareX.HelpersLib;
 
 /// <summary>
 /// Creates DPI-friendly tray icons from the bundled Lucide font.
 /// </summary>
-internal static class LucideTrayIcon
+public static class LucideTrayIcon
 {
     private const string PersonalizeRegistryPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize";
     private const string SystemUsesLightThemeRegistryValue = "SystemUsesLightTheme";
@@ -60,13 +60,25 @@ internal static class LucideTrayIcon
     /// </summary>
     public static Icon Create(string glyph)
     {
+        System.Drawing.Color color = IsLightTaskbarTheme() ?
+            System.Drawing.Color.Black :
+            System.Drawing.Color.White;
+
+        return Create(glyph, color);
+    }
+
+    /// <summary>
+    /// Creates a multi-resolution icon using a specific glyph color.
+    /// </summary>
+    public static Icon Create(string glyph, System.Drawing.Color color)
+    {
         if (string.IsNullOrEmpty(glyph))
         {
             throw new ArgumentException("A Lucide glyph is required.", nameof(glyph));
         }
 
-        SKColor color = IsLightTaskbarTheme() ? SKColors.Black : SKColors.White;
-        byte[] iconData = CreateIconData(glyph, color);
+        SKColor skColor = new(color.R, color.G, color.B, color.A);
+        byte[] iconData = CreateIconData(glyph, skColor);
 
         using MemoryStream stream = new(iconData, writable: false);
         using Icon icon = new(stream, SystemInformation.SmallIconSize);
