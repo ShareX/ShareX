@@ -16,7 +16,6 @@
 
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Media;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
@@ -25,8 +24,8 @@ using ShareX.ScreenCaptureLib;
 using System;
 using System.Diagnostics;
 using System.Drawing;
-using WinFormsNotifyIcon = System.Windows.Forms.NotifyIcon;
 using WinFormsMouseEventArgs = System.Windows.Forms.MouseEventArgs;
+using WinFormsNotifyIcon = System.Windows.Forms.NotifyIcon;
 
 namespace ShareX;
 
