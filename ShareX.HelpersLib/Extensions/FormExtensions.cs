@@ -157,35 +157,35 @@ namespace ShareX.HelpersLib
                     ShowImageMargin = false
                 };
 
-                ToolStripMenuItem tsmiUndo = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Undo);
+                ToolStripMenuItem tsmiUndo = new ToolStripMenuItem(Localization.Strings.Extensions_AddContextMenu_Undo);
                 tsmiUndo.Click += (sender, e) => rtb.Undo();
                 cms.Items.Add(tsmiUndo);
 
-                ToolStripMenuItem tsmiRedo = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Redo);
+                ToolStripMenuItem tsmiRedo = new ToolStripMenuItem(Localization.Strings.Extensions_AddContextMenu_Redo);
                 tsmiRedo.Click += (sender, e) => rtb.Redo();
                 cms.Items.Add(tsmiRedo);
 
                 cms.Items.Add(new ToolStripSeparator());
 
-                ToolStripMenuItem tsmiCut = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Cut);
+                ToolStripMenuItem tsmiCut = new ToolStripMenuItem(Localization.Strings.Extensions_AddContextMenu_Cut);
                 tsmiCut.Click += (sender, e) => rtb.Cut();
                 cms.Items.Add(tsmiCut);
 
-                ToolStripMenuItem tsmiCopy = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Copy);
+                ToolStripMenuItem tsmiCopy = new ToolStripMenuItem(Localization.Strings.Extensions_AddContextMenu_Copy);
                 tsmiCopy.Click += (sender, e) => rtb.Copy();
                 cms.Items.Add(tsmiCopy);
 
-                ToolStripMenuItem tsmiPaste = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Paste);
+                ToolStripMenuItem tsmiPaste = new ToolStripMenuItem(Localization.Strings.Extensions_AddContextMenu_Paste);
                 tsmiPaste.Click += (sender, e) => rtb.Paste();
                 cms.Items.Add(tsmiPaste);
 
-                ToolStripMenuItem tsmiDelete = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Delete);
+                ToolStripMenuItem tsmiDelete = new ToolStripMenuItem(Localization.Strings.Extensions_AddContextMenu_Delete);
                 tsmiDelete.Click += (sender, e) => rtb.SelectedText = "";
                 cms.Items.Add(tsmiDelete);
 
                 cms.Items.Add(new ToolStripSeparator());
 
-                ToolStripMenuItem tsmiSelectAll = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_SelectAll);
+                ToolStripMenuItem tsmiSelectAll = new ToolStripMenuItem(Localization.Strings.Extensions_AddContextMenu_SelectAll);
                 tsmiSelectAll.Click += (sender, e) => rtb.SelectAll();
                 cms.Items.Add(tsmiSelectAll);
 

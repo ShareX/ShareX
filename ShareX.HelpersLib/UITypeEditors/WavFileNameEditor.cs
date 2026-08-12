@@ -41,7 +41,7 @@ namespace ShareX.HelpersLib
             }
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                dlg.Title = Resources.WavFileNameEditor_EditValue_Browse_for_a_sound_file___;
+                dlg.Title = Localization.Strings.WavFileNameEditor_EditValue_Browse_for_a_sound_file___;
                 dlg.Filter = $"{Localization.Strings.WavFileNameEditor_Sound_file} (*.wav)|*.wav";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {

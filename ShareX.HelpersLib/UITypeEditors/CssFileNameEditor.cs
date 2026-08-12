@@ -42,7 +42,7 @@ namespace ShareX.HelpersLib
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
                 dlg.FileName = "Default.css";
-                dlg.Title = Resources.CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___;
+                dlg.Title = Localization.Strings.CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___;
                 dlg.Filter = $"{Localization.Strings.CssFileNameEditor_Cascading_Style_Sheets} (*.css)|*.css";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {

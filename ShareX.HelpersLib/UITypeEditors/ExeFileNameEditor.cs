@@ -41,7 +41,7 @@ namespace ShareX.HelpersLib
             }
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                dlg.Title = Resources.ExeFileNameEditor_EditValue_Browse_for_executable___;
+                dlg.Title = Localization.Strings.ExeFileNameEditor_EditValue_Browse_for_executable___;
                 dlg.Filter = $"{Localization.Strings.ExeFileNameEditor_Applications} (*.exe)|*.exe";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {

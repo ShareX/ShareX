@@ -54,9 +54,9 @@ public partial class DownloaderWindow : Window
 
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        FileNameText.Text = Helpers.SafeStringFormat(Properties.Resources.DownloaderForm_DownloaderForm_Filename___0_, FileName);
+        FileNameText.Text = Helpers.SafeStringFormat(Localization.Strings.DownloaderForm_DownloaderForm_Filename___0_, FileName);
         ActionButton.Content = Localization.Strings.DownloaderWindow_Download;
-        ChangeStatus(Properties.Resources.DownloaderForm_DownloaderForm_Waiting_);
+        ChangeStatus(Localization.Strings.DownloaderForm_DownloaderForm_Waiting_);
 
         Opened += OnOpened;
         Closing += OnClosing;
@@ -155,7 +155,7 @@ public partial class DownloaderWindow : Window
         if (string.IsNullOrEmpty(URL) || Status != DownloaderWindowStatus.Waiting) return;
 
         Status = DownloaderWindowStatus.DownloadStarted;
-        ActionButton.Content = Properties.Resources.DownloaderForm_StartDownload_Cancel;
+        ActionButton.Content = Localization.Strings.DownloaderForm_StartDownload_Cancel;
         DownloadProgress.Value = 0;
 
         string folderPath = Path.Combine(Path.GetTempPath(), "ShareX");
@@ -171,16 +171,16 @@ public partial class DownloaderWindow : Window
         _fileDownloader.FileSizeReceived += OnFileSizeReceived;
         _fileDownloader.ProgressChanged += OnProgressChanged;
 
-        ChangeStatus(Properties.Resources.DownloaderForm_StartDownload_Getting_file_size_);
+        ChangeStatus(Localization.Strings.DownloaderForm_StartDownload_Getting_file_size_);
 
         try
         {
             bool completed = await _fileDownloader.StartDownload();
             if (!completed) return;
 
-            ChangeStatus(Properties.Resources.DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_);
+            ChangeStatus(Localization.Strings.DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_);
             Status = DownloaderWindowStatus.DownloadCompleted;
-            ActionButton.Content = Properties.Resources.DownloaderForm_fileDownloader_DownloadCompleted_Install;
+            ActionButton.Content = Localization.Strings.DownloaderForm_fileDownloader_DownloadCompleted_Install;
 
             if (AutoStartInstall)
             {
@@ -197,7 +197,7 @@ public partial class DownloaderWindow : Window
     {
         Dispatcher.UIThread.Post(() =>
         {
-            ChangeStatus(Properties.Resources.DownloaderForm_StartDownload_Downloading_);
+            ChangeStatus(Localization.Strings.DownloaderForm_StartDownload_Downloading_);
             UpdateProgress();
         });
     }
@@ -209,14 +209,14 @@ public partial class DownloaderWindow : Window
         if (_fileDownloader == null) return;
 
         DownloadProgress.Value = _fileDownloader.DownloadPercentage;
-        ProgressText.Text = $@"{Properties.Resources.DownloaderForm_FileDownloader_ProgressChanged_Progress}: {_fileDownloader.DownloadPercentage:0.0}%
-{Properties.Resources.DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed}: {((long)_fileDownloader.DownloadSpeed).ToSizeString()}/s
-{Properties.Resources.DownloaderForm_FileDownloader_ProgressChanged_FileSize}: {_fileDownloader.DownloadedSize.ToSizeString()} / {_fileDownloader.FileSize.ToSizeString()}";
+        ProgressText.Text = $@"{Localization.Strings.DownloaderForm_FileDownloader_ProgressChanged_Progress}: {_fileDownloader.DownloadPercentage:0.0}%
+{Localization.Strings.DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed}: {((long)_fileDownloader.DownloadSpeed).ToSizeString()}/s
+{Localization.Strings.DownloaderForm_FileDownloader_ProgressChanged_FileSize}: {_fileDownloader.DownloadedSize.ToSizeString()} / {_fileDownloader.FileSize.ToSizeString()}";
     }
 
     private void ChangeStatus(string status)
     {
-        void Update() => StatusText.Text = Helpers.SafeStringFormat(Properties.Resources.DownloaderForm_ChangeStatus_Status___0_, status);
+        void Update() => StatusText.Text = Helpers.SafeStringFormat(Localization.Strings.DownloaderForm_ChangeStatus_Status___0_, status);
         if (Dispatcher.UIThread.CheckAccess()) Update();
         else Dispatcher.UIThread.Post(Update);
     }

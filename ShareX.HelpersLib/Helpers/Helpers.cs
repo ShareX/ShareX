@@ -195,7 +195,7 @@ namespace ShareX.HelpersLib
 
         public static string[] GetLocalizedEnumDescriptions<T>()
         {
-            return GetLocalizedEnumDescriptions<T>(Resources.ResourceManager);
+            return GetLocalizedEnumDescriptions<T>(Localization.Strings.ResourceManager);
         }
 
         public static string[] GetLocalizedEnumDescriptions<T>(ResourceManager resourceManager)

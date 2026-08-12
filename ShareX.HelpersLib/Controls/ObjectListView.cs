@@ -62,13 +62,13 @@ namespace ShareX.HelpersLib
         {
             SetObjectType = ObjectType.Properties;
             MultiSelect = false;
-            Columns.Add(Resources.ObjectListView_ObjectListView_Name, 125);
-            Columns.Add(Resources.ObjectListView_ObjectListView_Value, 300);
+            Columns.Add(Localization.Strings.ObjectListView_ObjectListView_Name, 125);
+            Columns.Add(Localization.Strings.ObjectListView_ObjectListView_Value, 300);
 
             ContextMenuStrip cms = new ContextMenuStrip();
             cms.ShowImageMargin = false;
-            cms.Items.Add(Resources.ObjectListView_ObjectListView_Copy_name).Click += PropertyListView_Click_Name;
-            cms.Items.Add(Resources.ObjectListView_ObjectListView_Copy_value).Click += PropertyListView_Click_Value;
+            cms.Items.Add(Localization.Strings.ObjectListView_ObjectListView_Copy_name).Click += PropertyListView_Click_Name;
+            cms.Items.Add(Localization.Strings.ObjectListView_ObjectListView_Copy_value).Click += PropertyListView_Click_Value;
             ContextMenuStrip = cms;
         }
 

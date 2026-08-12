@@ -416,5 +416,1076 @@ namespace ShareX.HelpersLib.Localization {
         public static string AppVeyorUpdateChecker_Deployment_file_not_found {
             get { return ResourceManager.GetString("AppVeyorUpdateChecker_Deployment_file_not_found", resourceCulture); }
         }
+        public static string ActionsCodeMenuEntry_FilePath_File_path {
+            get { return ResourceManager.GetString("ActionsCodeMenuEntry_FilePath_File_path", resourceCulture); }
+        }
+        public static string ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_ {
+            get { return ResourceManager.GetString("ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_AddImageEffects {
+            get { return ResourceManager.GetString("AfterCaptureTasks_AddImageEffects", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_AnalyzeImage {
+            get { return ResourceManager.GetString("AfterCaptureTasks_AnalyzeImage", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_AnnotateImage {
+            get { return ResourceManager.GetString("AfterCaptureTasks_AnnotateImage", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_BeautifyImage {
+            get { return ResourceManager.GetString("AfterCaptureTasks_BeautifyImage", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_CopyFilePathToClipboard {
+            get { return ResourceManager.GetString("AfterCaptureTasks_CopyFilePathToClipboard", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_CopyFileToClipboard {
+            get { return ResourceManager.GetString("AfterCaptureTasks_CopyFileToClipboard", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_CopyFolderPathToClipboard {
+            get { return ResourceManager.GetString("AfterCaptureTasks_CopyFolderPathToClipboard", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_CopyImageToClipboard {
+            get { return ResourceManager.GetString("AfterCaptureTasks_CopyImageToClipboard", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_DeleteFile {
+            get { return ResourceManager.GetString("AfterCaptureTasks_DeleteFile", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_DoOCR {
+            get { return ResourceManager.GetString("AfterCaptureTasks_DoOCR", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_PerformActions {
+            get { return ResourceManager.GetString("AfterCaptureTasks_PerformActions", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_PinToScreen {
+            get { return ResourceManager.GetString("AfterCaptureTasks_PinToScreen", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_SaveImageToFile {
+            get { return ResourceManager.GetString("AfterCaptureTasks_SaveImageToFile", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_SaveImageToFileWithDialog {
+            get { return ResourceManager.GetString("AfterCaptureTasks_SaveImageToFileWithDialog", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_SaveThumbnailImageToFile {
+            get { return ResourceManager.GetString("AfterCaptureTasks_SaveThumbnailImageToFile", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_ScanQRCode {
+            get { return ResourceManager.GetString("AfterCaptureTasks_ScanQRCode", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_SendImageToPrinter {
+            get { return ResourceManager.GetString("AfterCaptureTasks_SendImageToPrinter", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_ShowAfterCaptureWindow {
+            get { return ResourceManager.GetString("AfterCaptureTasks_ShowAfterCaptureWindow", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_ShowBeforeUploadWindow {
+            get { return ResourceManager.GetString("AfterCaptureTasks_ShowBeforeUploadWindow", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_ShowInExplorer {
+            get { return ResourceManager.GetString("AfterCaptureTasks_ShowInExplorer", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_ShowQuickTaskMenu {
+            get { return ResourceManager.GetString("AfterCaptureTasks_ShowQuickTaskMenu", resourceCulture); }
+        }
+        public static string AfterCaptureTasks_UploadImageToHost {
+            get { return ResourceManager.GetString("AfterCaptureTasks_UploadImageToHost", resourceCulture); }
+        }
+        public static string AfterUploadTasks_CopyURLToClipboard {
+            get { return ResourceManager.GetString("AfterUploadTasks_CopyURLToClipboard", resourceCulture); }
+        }
+        public static string AfterUploadTasks_OpenURL {
+            get { return ResourceManager.GetString("AfterUploadTasks_OpenURL", resourceCulture); }
+        }
+        public static string AfterUploadTasks_ShareURL {
+            get { return ResourceManager.GetString("AfterUploadTasks_ShareURL", resourceCulture); }
+        }
+        public static string AfterUploadTasks_ShowAfterUploadWindow {
+            get { return ResourceManager.GetString("AfterUploadTasks_ShowAfterUploadWindow", resourceCulture); }
+        }
+        public static string AfterUploadTasks_ShowQRCode {
+            get { return ResourceManager.GetString("AfterUploadTasks_ShowQRCode", resourceCulture); }
+        }
+        public static string AfterUploadTasks_UseURLShortener {
+            get { return ResourceManager.GetString("AfterUploadTasks_UseURLShortener", resourceCulture); }
+        }
+        public static string ArrowHeadDirection_Both {
+            get { return ResourceManager.GetString("ArrowHeadDirection_Both", resourceCulture); }
+        }
+        public static string ArrowHeadDirection_End {
+            get { return ResourceManager.GetString("ArrowHeadDirection_End", resourceCulture); }
+        }
+        public static string ArrowHeadDirection_Start {
+            get { return ResourceManager.GetString("ArrowHeadDirection_Start", resourceCulture); }
+        }
+        public static string BorderStyle_Dash {
+            get { return ResourceManager.GetString("BorderStyle_Dash", resourceCulture); }
+        }
+        public static string BorderStyle_DashDot {
+            get { return ResourceManager.GetString("BorderStyle_DashDot", resourceCulture); }
+        }
+        public static string BorderStyle_DashDotDot {
+            get { return ResourceManager.GetString("BorderStyle_DashDotDot", resourceCulture); }
+        }
+        public static string BorderStyle_Dot {
+            get { return ResourceManager.GetString("BorderStyle_Dot", resourceCulture); }
+        }
+        public static string BorderStyle_Solid {
+            get { return ResourceManager.GetString("BorderStyle_Solid", resourceCulture); }
+        }
+        public static string CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__ {
+            get { return ResourceManager.GetString("CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__", resourceCulture); }
+        }
+        public static string CodeMenu_Create_Close {
+            get { return ResourceManager.GetString("CodeMenu_Create_Close", resourceCulture); }
+        }
+        public static string CodeMenuEntryFilename_RandomAdjective {
+            get { return ResourceManager.GetString("CodeMenuEntryFilename_RandomAdjective", resourceCulture); }
+        }
+        public static string CodeMenuEntryFilename_RandomAnimal {
+            get { return ResourceManager.GetString("CodeMenuEntryFilename_RandomAnimal", resourceCulture); }
+        }
+        public static string CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___ {
+            get { return ResourceManager.GetString("CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___", resourceCulture); }
+        }
+        public static string CustomUploaderDestinationType_FileUploader {
+            get { return ResourceManager.GetString("CustomUploaderDestinationType_FileUploader", resourceCulture); }
+        }
+        public static string CustomUploaderDestinationType_ImageUploader {
+            get { return ResourceManager.GetString("CustomUploaderDestinationType_ImageUploader", resourceCulture); }
+        }
+        public static string CustomUploaderDestinationType_TextUploader {
+            get { return ResourceManager.GetString("CustomUploaderDestinationType_TextUploader", resourceCulture); }
+        }
+        public static string CustomUploaderDestinationType_URLSharingService {
+            get { return ResourceManager.GetString("CustomUploaderDestinationType_URLSharingService", resourceCulture); }
+        }
+        public static string CustomUploaderDestinationType_URLShortener {
+            get { return ResourceManager.GetString("CustomUploaderDestinationType_URLShortener", resourceCulture); }
+        }
+        public static string CutOutEffectType_None {
+            get { return ResourceManager.GetString("CutOutEffectType_None", resourceCulture); }
+        }
+        public static string CutOutEffectType_TornEdge {
+            get { return ResourceManager.GetString("CutOutEffectType_TornEdge", resourceCulture); }
+        }
+        public static string CutOutEffectType_Wave {
+            get { return ResourceManager.GetString("CutOutEffectType_Wave", resourceCulture); }
+        }
+        public static string CutOutEffectType_ZigZag {
+            get { return ResourceManager.GetString("CutOutEffectType_ZigZag", resourceCulture); }
+        }
+        public static string DirectoryNameEditor_EditValue_Browse_for_a_folder___ {
+            get { return ResourceManager.GetString("DirectoryNameEditor_EditValue_Browse_for_a_folder___", resourceCulture); }
+        }
+        public static string DownloaderForm_ChangeStatus_Status___0_ {
+            get { return ResourceManager.GetString("DownloaderForm_ChangeStatus_Status___0_", resourceCulture); }
+        }
+        public static string DownloaderForm_DownloaderForm_Filename___0_ {
+            get { return ResourceManager.GetString("DownloaderForm_DownloaderForm_Filename___0_", resourceCulture); }
+        }
+        public static string DownloaderForm_DownloaderForm_Waiting_ {
+            get { return ResourceManager.GetString("DownloaderForm_DownloaderForm_Waiting_", resourceCulture); }
+        }
+        public static string DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_ {
+            get { return ResourceManager.GetString("DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_", resourceCulture); }
+        }
+        public static string DownloaderForm_fileDownloader_DownloadCompleted_Install {
+            get { return ResourceManager.GetString("DownloaderForm_fileDownloader_DownloadCompleted_Install", resourceCulture); }
+        }
+        public static string DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed {
+            get { return ResourceManager.GetString("DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed", resourceCulture); }
+        }
+        public static string DownloaderForm_FileDownloader_ProgressChanged_FileSize {
+            get { return ResourceManager.GetString("DownloaderForm_FileDownloader_ProgressChanged_FileSize", resourceCulture); }
+        }
+        public static string DownloaderForm_FileDownloader_ProgressChanged_Progress {
+            get { return ResourceManager.GetString("DownloaderForm_FileDownloader_ProgressChanged_Progress", resourceCulture); }
+        }
+        public static string DownloaderForm_StartDownload_Cancel {
+            get { return ResourceManager.GetString("DownloaderForm_StartDownload_Cancel", resourceCulture); }
+        }
+        public static string DownloaderForm_StartDownload_Downloading_ {
+            get { return ResourceManager.GetString("DownloaderForm_StartDownload_Downloading_", resourceCulture); }
+        }
+        public static string DownloaderForm_StartDownload_Getting_file_size_ {
+            get { return ResourceManager.GetString("DownloaderForm_StartDownload_Getting_file_size_", resourceCulture); }
+        }
+        public static string DrawImageSizeMode_AbsoluteSize {
+            get { return ResourceManager.GetString("DrawImageSizeMode_AbsoluteSize", resourceCulture); }
+        }
+        public static string DrawImageSizeMode_DontResize {
+            get { return ResourceManager.GetString("DrawImageSizeMode_DontResize", resourceCulture); }
+        }
+        public static string DrawImageSizeMode_PercentageOfCanvas {
+            get { return ResourceManager.GetString("DrawImageSizeMode_PercentageOfCanvas", resourceCulture); }
+        }
+        public static string DrawImageSizeMode_PercentageOfWatermark {
+            get { return ResourceManager.GetString("DrawImageSizeMode_PercentageOfWatermark", resourceCulture); }
+        }
+        public static string EDataType_Default {
+            get { return ResourceManager.GetString("EDataType_Default", resourceCulture); }
+        }
+        public static string EDataType_File {
+            get { return ResourceManager.GetString("EDataType_File", resourceCulture); }
+        }
+        public static string EDataType_Image {
+            get { return ResourceManager.GetString("EDataType_Image", resourceCulture); }
+        }
+        public static string EDataType_Text {
+            get { return ResourceManager.GetString("EDataType_Text", resourceCulture); }
+        }
+        public static string EDataType_URL {
+            get { return ResourceManager.GetString("EDataType_URL", resourceCulture); }
+        }
+        public static string Error {
+            get { return ResourceManager.GetString("Error", resourceCulture); }
+        }
+        public static string ExeFileNameEditor_EditValue_Browse_for_executable___ {
+            get { return ResourceManager.GetString("ExeFileNameEditor_EditValue_Browse_for_executable___", resourceCulture); }
+        }
+        public static string Extensions_AddContextMenu_Copy {
+            get { return ResourceManager.GetString("Extensions_AddContextMenu_Copy", resourceCulture); }
+        }
+        public static string Extensions_AddContextMenu_Cut {
+            get { return ResourceManager.GetString("Extensions_AddContextMenu_Cut", resourceCulture); }
+        }
+        public static string Extensions_AddContextMenu_Delete {
+            get { return ResourceManager.GetString("Extensions_AddContextMenu_Delete", resourceCulture); }
+        }
+        public static string Extensions_AddContextMenu_Paste {
+            get { return ResourceManager.GetString("Extensions_AddContextMenu_Paste", resourceCulture); }
+        }
+        public static string Extensions_AddContextMenu_Redo {
+            get { return ResourceManager.GetString("Extensions_AddContextMenu_Redo", resourceCulture); }
+        }
+        public static string Extensions_AddContextMenu_SelectAll {
+            get { return ResourceManager.GetString("Extensions_AddContextMenu_SelectAll", resourceCulture); }
+        }
+        public static string Extensions_AddContextMenu_Undo {
+            get { return ResourceManager.GetString("Extensions_AddContextMenu_Undo", resourceCulture); }
+        }
+        public static string FileDestination_CustomFileUploader {
+            get { return ResourceManager.GetString("FileDestination_CustomFileUploader", resourceCulture); }
+        }
+        public static string FileDestination_Email {
+            get { return ResourceManager.GetString("FileDestination_Email", resourceCulture); }
+        }
+        public static string FileDestination_SharedFolder {
+            get { return ResourceManager.GetString("FileDestination_SharedFolder", resourceCulture); }
+        }
+        public static string FileExistAction_Ask {
+            get { return ResourceManager.GetString("FileExistAction_Ask", resourceCulture); }
+        }
+        public static string FileExistAction_Cancel {
+            get { return ResourceManager.GetString("FileExistAction_Cancel", resourceCulture); }
+        }
+        public static string FileExistAction_Overwrite {
+            get { return ResourceManager.GetString("FileExistAction_Overwrite", resourceCulture); }
+        }
+        public static string FileExistAction_UniqueName {
+            get { return ResourceManager.GetString("FileExistAction_UniqueName", resourceCulture); }
+        }
+        public static string GIFQuality_Bit4 {
+            get { return ResourceManager.GetString("GIFQuality_Bit4", resourceCulture); }
+        }
+        public static string GIFQuality_Bit8 {
+            get { return ResourceManager.GetString("GIFQuality_Bit8", resourceCulture); }
+        }
+        public static string GIFQuality_Default {
+            get { return ResourceManager.GetString("GIFQuality_Default", resourceCulture); }
+        }
+        public static string GIFQuality_Grayscale {
+            get { return ResourceManager.GetString("GIFQuality_Grayscale", resourceCulture); }
+        }
+        public static string Helpers_BrowseFile_Choose_file {
+            get { return ResourceManager.GetString("Helpers_BrowseFile_Choose_file", resourceCulture); }
+        }
+        public static string Helpers_BrowseFolder_Choose_folder {
+            get { return ResourceManager.GetString("Helpers_BrowseFolder_Choose_folder", resourceCulture); }
+        }
+        public static string Helpers_CreateDirectoryIfNotExist_Create_failed_ {
+            get { return ResourceManager.GetString("Helpers_CreateDirectoryIfNotExist_Create_failed_", resourceCulture); }
+        }
+        public static string Helpers_OpenFile_File_not_exist_ {
+            get { return ResourceManager.GetString("Helpers_OpenFile_File_not_exist_", resourceCulture); }
+        }
+        public static string Helpers_OpenFolder_Folder_not_exist_ {
+            get { return ResourceManager.GetString("Helpers_OpenFolder_Folder_not_exist_", resourceCulture); }
+        }
+        public static string HotkeyType_AbortScreenRecording {
+            get { return ResourceManager.GetString("HotkeyType_AbortScreenRecording", resourceCulture); }
+        }
+        public static string HotkeyType_ActiveMonitor {
+            get { return ResourceManager.GetString("HotkeyType_ActiveMonitor", resourceCulture); }
+        }
+        public static string HotkeyType_ActiveWindow {
+            get { return ResourceManager.GetString("HotkeyType_ActiveWindow", resourceCulture); }
+        }
+        public static string HotkeyType_ActiveWindowBorderless {
+            get { return ResourceManager.GetString("HotkeyType_ActiveWindowBorderless", resourceCulture); }
+        }
+        public static string HotkeyType_ActiveWindowTopMost {
+            get { return ResourceManager.GetString("HotkeyType_ActiveWindowTopMost", resourceCulture); }
+        }
+        public static string HotkeyType_AnalyzeImage {
+            get { return ResourceManager.GetString("HotkeyType_AnalyzeImage", resourceCulture); }
+        }
+        public static string HotkeyType_AutoCapture {
+            get { return ResourceManager.GetString("HotkeyType_AutoCapture", resourceCulture); }
+        }
+        public static string HotkeyType_BorderlessWindow {
+            get { return ResourceManager.GetString("HotkeyType_BorderlessWindow", resourceCulture); }
+        }
+        public static string HotkeyType_Category_Other {
+            get { return ResourceManager.GetString("HotkeyType_Category_Other", resourceCulture); }
+        }
+        public static string HotkeyType_Category_ScreenCapture {
+            get { return ResourceManager.GetString("HotkeyType_Category_ScreenCapture", resourceCulture); }
+        }
+        public static string HotkeyType_Category_ScreenRecord {
+            get { return ResourceManager.GetString("HotkeyType_Category_ScreenRecord", resourceCulture); }
+        }
+        public static string HotkeyType_Category_Tools {
+            get { return ResourceManager.GetString("HotkeyType_Category_Tools", resourceCulture); }
+        }
+        public static string HotkeyType_Category_Upload {
+            get { return ResourceManager.GetString("HotkeyType_Category_Upload", resourceCulture); }
+        }
+        public static string HotkeyType_ClipboardUpload {
+            get { return ResourceManager.GetString("HotkeyType_ClipboardUpload", resourceCulture); }
+        }
+        public static string HotkeyType_ClipboardUploadWithContentViewer {
+            get { return ResourceManager.GetString("HotkeyType_ClipboardUploadWithContentViewer", resourceCulture); }
+        }
+        public static string HotkeyType_ClipboardViewer {
+            get { return ResourceManager.GetString("HotkeyType_ClipboardViewer", resourceCulture); }
+        }
+        public static string HotkeyType_ColorPicker {
+            get { return ResourceManager.GetString("HotkeyType_ColorPicker", resourceCulture); }
+        }
+        public static string HotkeyType_CustomRegion {
+            get { return ResourceManager.GetString("HotkeyType_CustomRegion", resourceCulture); }
+        }
+        public static string HotkeyType_CustomWindow {
+            get { return ResourceManager.GetString("HotkeyType_CustomWindow", resourceCulture); }
+        }
+        public static string HotkeyType_DisableHotkeys {
+            get { return ResourceManager.GetString("HotkeyType_DisableHotkeys", resourceCulture); }
+        }
+        public static string HotkeyType_DragDropUpload {
+            get { return ResourceManager.GetString("HotkeyType_DragDropUpload", resourceCulture); }
+        }
+        public static string HotkeyType_ExitShareX {
+            get { return ResourceManager.GetString("HotkeyType_ExitShareX", resourceCulture); }
+        }
+        public static string HotkeyType_FileUpload {
+            get { return ResourceManager.GetString("HotkeyType_FileUpload", resourceCulture); }
+        }
+        public static string HotkeyType_FolderUpload {
+            get { return ResourceManager.GetString("HotkeyType_FolderUpload", resourceCulture); }
+        }
+        public static string HotkeyType_HashCheck {
+            get { return ResourceManager.GetString("HotkeyType_HashCheck", resourceCulture); }
+        }
+        public static string HotkeyType_IconConverter {
+            get { return ResourceManager.GetString("HotkeyType_IconConverter", resourceCulture); }
+        }
+        public static string HotkeyType_ImageBeautifier {
+            get { return ResourceManager.GetString("HotkeyType_ImageBeautifier", resourceCulture); }
+        }
+        public static string HotkeyType_ImageCombiner {
+            get { return ResourceManager.GetString("HotkeyType_ImageCombiner", resourceCulture); }
+        }
+        public static string HotkeyType_ImageComparer {
+            get { return ResourceManager.GetString("HotkeyType_ImageComparer", resourceCulture); }
+        }
+        public static string HotkeyType_ImageEditor {
+            get { return ResourceManager.GetString("HotkeyType_ImageEditor", resourceCulture); }
+        }
+        public static string HotkeyType_ImageEffects {
+            get { return ResourceManager.GetString("HotkeyType_ImageEffects", resourceCulture); }
+        }
+        public static string HotkeyType_ImageSplitter {
+            get { return ResourceManager.GetString("HotkeyType_ImageSplitter", resourceCulture); }
+        }
+        public static string HotkeyType_ImageThumbnailer {
+            get { return ResourceManager.GetString("HotkeyType_ImageThumbnailer", resourceCulture); }
+        }
+        public static string HotkeyType_ImageViewer {
+            get { return ResourceManager.GetString("HotkeyType_ImageViewer", resourceCulture); }
+        }
+        public static string HotkeyType_IndexFolder {
+            get { return ResourceManager.GetString("HotkeyType_IndexFolder", resourceCulture); }
+        }
+        public static string HotkeyType_InspectWindow {
+            get { return ResourceManager.GetString("HotkeyType_InspectWindow", resourceCulture); }
+        }
+        public static string HotkeyType_LastRegion {
+            get { return ResourceManager.GetString("HotkeyType_LastRegion", resourceCulture); }
+        }
+        public static string HotkeyType_Metadata {
+            get { return ResourceManager.GetString("HotkeyType_Metadata", resourceCulture); }
+        }
+        public static string HotkeyType_MonitorTest {
+            get { return ResourceManager.GetString("HotkeyType_MonitorTest", resourceCulture); }
+        }
+        public static string HotkeyType_None {
+            get { return ResourceManager.GetString("HotkeyType_None", resourceCulture); }
+        }
+        public static string HotkeyType_OCR {
+            get { return ResourceManager.GetString("HotkeyType_OCR", resourceCulture); }
+        }
+        public static string HotkeyType_OpenHistory {
+            get { return ResourceManager.GetString("HotkeyType_OpenHistory", resourceCulture); }
+        }
+        public static string HotkeyType_OpenImageHistory {
+            get { return ResourceManager.GetString("HotkeyType_OpenImageHistory", resourceCulture); }
+        }
+        public static string HotkeyType_OpenMainWindow {
+            get { return ResourceManager.GetString("HotkeyType_OpenMainWindow", resourceCulture); }
+        }
+        public static string HotkeyType_OpenScreenshotsFolder {
+            get { return ResourceManager.GetString("HotkeyType_OpenScreenshotsFolder", resourceCulture); }
+        }
+        public static string HotkeyType_PauseScreenRecording {
+            get { return ResourceManager.GetString("HotkeyType_PauseScreenRecording", resourceCulture); }
+        }
+        public static string HotkeyType_PinToScreen {
+            get { return ResourceManager.GetString("HotkeyType_PinToScreen", resourceCulture); }
+        }
+        public static string HotkeyType_PinToScreenCloseAll {
+            get { return ResourceManager.GetString("HotkeyType_PinToScreenCloseAll", resourceCulture); }
+        }
+        public static string HotkeyType_PinToScreenFromClipboard {
+            get { return ResourceManager.GetString("HotkeyType_PinToScreenFromClipboard", resourceCulture); }
+        }
+        public static string HotkeyType_PinToScreenFromFile {
+            get { return ResourceManager.GetString("HotkeyType_PinToScreenFromFile", resourceCulture); }
+        }
+        public static string HotkeyType_PinToScreenFromScreen {
+            get { return ResourceManager.GetString("HotkeyType_PinToScreenFromScreen", resourceCulture); }
+        }
+        public static string HotkeyType_PrintScreen {
+            get { return ResourceManager.GetString("HotkeyType_PrintScreen", resourceCulture); }
+        }
+        public static string HotkeyType_QRCode {
+            get { return ResourceManager.GetString("HotkeyType_QRCode", resourceCulture); }
+        }
+        public static string HotkeyType_QRCodeDecodeFromScreen {
+            get { return ResourceManager.GetString("HotkeyType_QRCodeDecodeFromScreen", resourceCulture); }
+        }
+        public static string HotkeyType_QRCodeScanRegion {
+            get { return ResourceManager.GetString("HotkeyType_QRCodeScanRegion", resourceCulture); }
+        }
+        public static string HotkeyType_RectangleLight {
+            get { return ResourceManager.GetString("HotkeyType_RectangleLight", resourceCulture); }
+        }
+        public static string HotkeyType_RectangleRegion {
+            get { return ResourceManager.GetString("HotkeyType_RectangleRegion", resourceCulture); }
+        }
+        public static string HotkeyType_RectangleTransparent {
+            get { return ResourceManager.GetString("HotkeyType_RectangleTransparent", resourceCulture); }
+        }
+        public static string HotkeyType_Ruler {
+            get { return ResourceManager.GetString("HotkeyType_Ruler", resourceCulture); }
+        }
+        public static string HotkeyType_ScreenColorPicker {
+            get { return ResourceManager.GetString("HotkeyType_ScreenColorPicker", resourceCulture); }
+        }
+        public static string HotkeyType_ScreenRecorder {
+            get { return ResourceManager.GetString("HotkeyType_ScreenRecorder", resourceCulture); }
+        }
+        public static string HotkeyType_ScreenRecorderActiveWindow {
+            get { return ResourceManager.GetString("HotkeyType_ScreenRecorderActiveWindow", resourceCulture); }
+        }
+        public static string HotkeyType_ScreenRecorderCustomRegion {
+            get { return ResourceManager.GetString("HotkeyType_ScreenRecorderCustomRegion", resourceCulture); }
+        }
+        public static string HotkeyType_ScreenRecorderGIF {
+            get { return ResourceManager.GetString("HotkeyType_ScreenRecorderGIF", resourceCulture); }
+        }
+        public static string HotkeyType_ScreenRecorderGIFActiveWindow {
+            get { return ResourceManager.GetString("HotkeyType_ScreenRecorderGIFActiveWindow", resourceCulture); }
+        }
+        public static string HotkeyType_ScreenRecorderGIFCustomRegion {
+            get { return ResourceManager.GetString("HotkeyType_ScreenRecorderGIFCustomRegion", resourceCulture); }
+        }
+        public static string HotkeyType_ScrollingCapture {
+            get { return ResourceManager.GetString("HotkeyType_ScrollingCapture", resourceCulture); }
+        }
+        public static string HotkeyType_ShortenURL {
+            get { return ResourceManager.GetString("HotkeyType_ShortenURL", resourceCulture); }
+        }
+        public static string HotkeyType_StartAutoCapture {
+            get { return ResourceManager.GetString("HotkeyType_StartAutoCapture", resourceCulture); }
+        }
+        public static string HotkeyType_StartScreenRecorder {
+            get { return ResourceManager.GetString("HotkeyType_StartScreenRecorder", resourceCulture); }
+        }
+        public static string HotkeyType_StartScreenRecorderGIF {
+            get { return ResourceManager.GetString("HotkeyType_StartScreenRecorderGIF", resourceCulture); }
+        }
+        public static string HotkeyType_StopAutoCapture {
+            get { return ResourceManager.GetString("HotkeyType_StopAutoCapture", resourceCulture); }
+        }
+        public static string HotkeyType_StopScreenRecording {
+            get { return ResourceManager.GetString("HotkeyType_StopScreenRecording", resourceCulture); }
+        }
+        public static string HotkeyType_StopUploads {
+            get { return ResourceManager.GetString("HotkeyType_StopUploads", resourceCulture); }
+        }
+        public static string HotkeyType_StripMetadata {
+            get { return ResourceManager.GetString("HotkeyType_StripMetadata", resourceCulture); }
+        }
+        public static string HotkeyType_ToggleActionsToolbar {
+            get { return ResourceManager.GetString("HotkeyType_ToggleActionsToolbar", resourceCulture); }
+        }
+        public static string HotkeyType_ToggleTrayMenu {
+            get { return ResourceManager.GetString("HotkeyType_ToggleTrayMenu", resourceCulture); }
+        }
+        public static string HotkeyType_UploadText {
+            get { return ResourceManager.GetString("HotkeyType_UploadText", resourceCulture); }
+        }
+        public static string HotkeyType_UploadURL {
+            get { return ResourceManager.GetString("HotkeyType_UploadURL", resourceCulture); }
+        }
+        public static string HotkeyType_VideoConverter {
+            get { return ResourceManager.GetString("HotkeyType_VideoConverter", resourceCulture); }
+        }
+        public static string HotkeyType_VideoThumbnailer {
+            get { return ResourceManager.GetString("HotkeyType_VideoThumbnailer", resourceCulture); }
+        }
+        public static string HSB_ToString_ {
+            get { return ResourceManager.GetString("HSB_ToString_", resourceCulture); }
+        }
+        public static string ImageDestination_CustomImageUploader {
+            get { return ResourceManager.GetString("ImageDestination_CustomImageUploader", resourceCulture); }
+        }
+        public static string ImageDestination_FileUploader {
+            get { return ResourceManager.GetString("ImageDestination_FileUploader", resourceCulture); }
+        }
+        public static string ImageEditorStartMode_AutoSize {
+            get { return ResourceManager.GetString("ImageEditorStartMode_AutoSize", resourceCulture); }
+        }
+        public static string ImageEditorStartMode_Fullscreen {
+            get { return ResourceManager.GetString("ImageEditorStartMode_Fullscreen", resourceCulture); }
+        }
+        public static string ImageEditorStartMode_Maximized {
+            get { return ResourceManager.GetString("ImageEditorStartMode_Maximized", resourceCulture); }
+        }
+        public static string ImageEditorStartMode_Normal {
+            get { return ResourceManager.GetString("ImageEditorStartMode_Normal", resourceCulture); }
+        }
+        public static string ImageEditorStartMode_PreviousState {
+            get { return ResourceManager.GetString("ImageEditorStartMode_PreviousState", resourceCulture); }
+        }
+        public static string ImgurThumbnailType_Big_Square {
+            get { return ResourceManager.GetString("ImgurThumbnailType_Big_Square", resourceCulture); }
+        }
+        public static string ImgurThumbnailType_Huge_Thumbnail {
+            get { return ResourceManager.GetString("ImgurThumbnailType_Huge_Thumbnail", resourceCulture); }
+        }
+        public static string ImgurThumbnailType_Large_Thumbnail {
+            get { return ResourceManager.GetString("ImgurThumbnailType_Large_Thumbnail", resourceCulture); }
+        }
+        public static string ImgurThumbnailType_Medium_Thumbnail {
+            get { return ResourceManager.GetString("ImgurThumbnailType_Medium_Thumbnail", resourceCulture); }
+        }
+        public static string ImgurThumbnailType_Small_Square {
+            get { return ResourceManager.GetString("ImgurThumbnailType_Small_Square", resourceCulture); }
+        }
+        public static string ImgurThumbnailType_Small_Thumbnail {
+            get { return ResourceManager.GetString("ImgurThumbnailType_Small_Thumbnail", resourceCulture); }
+        }
+        public static string MyMessageBox_MyMessageBox_Cancel {
+            get { return ResourceManager.GetString("MyMessageBox_MyMessageBox_Cancel", resourceCulture); }
+        }
+        public static string MyMessageBox_MyMessageBox_No {
+            get { return ResourceManager.GetString("MyMessageBox_MyMessageBox_No", resourceCulture); }
+        }
+        public static string MyMessageBox_MyMessageBox_OK {
+            get { return ResourceManager.GetString("MyMessageBox_MyMessageBox_OK", resourceCulture); }
+        }
+        public static string MyMessageBox_MyMessageBox_Yes {
+            get { return ResourceManager.GetString("MyMessageBox_MyMessageBox_Yes", resourceCulture); }
+        }
+        public static string ObjectListView_ObjectListView_Copy_name {
+            get { return ResourceManager.GetString("ObjectListView_ObjectListView_Copy_name", resourceCulture); }
+        }
+        public static string ObjectListView_ObjectListView_Copy_value {
+            get { return ResourceManager.GetString("ObjectListView_ObjectListView_Copy_value", resourceCulture); }
+        }
+        public static string ObjectListView_ObjectListView_Name {
+            get { return ResourceManager.GetString("ObjectListView_ObjectListView_Name", resourceCulture); }
+        }
+        public static string ObjectListView_ObjectListView_Value {
+            get { return ResourceManager.GetString("ObjectListView_ObjectListView_Value", resourceCulture); }
+        }
+        public static string PastebinExpiration_D1 {
+            get { return ResourceManager.GetString("PastebinExpiration_D1", resourceCulture); }
+        }
+        public static string PastebinExpiration_H1 {
+            get { return ResourceManager.GetString("PastebinExpiration_H1", resourceCulture); }
+        }
+        public static string PastebinExpiration_M1 {
+            get { return ResourceManager.GetString("PastebinExpiration_M1", resourceCulture); }
+        }
+        public static string PastebinExpiration_M10 {
+            get { return ResourceManager.GetString("PastebinExpiration_M10", resourceCulture); }
+        }
+        public static string PastebinExpiration_N {
+            get { return ResourceManager.GetString("PastebinExpiration_N", resourceCulture); }
+        }
+        public static string PastebinExpiration_W1 {
+            get { return ResourceManager.GetString("PastebinExpiration_W1", resourceCulture); }
+        }
+        public static string PastebinExpiration_W2 {
+            get { return ResourceManager.GetString("PastebinExpiration_W2", resourceCulture); }
+        }
+        public static string PastebinPrivacy_Private {
+            get { return ResourceManager.GetString("PastebinPrivacy_Private", resourceCulture); }
+        }
+        public static string PastebinPrivacy_Public {
+            get { return ResourceManager.GetString("PastebinPrivacy_Public", resourceCulture); }
+        }
+        public static string PastebinPrivacy_Unlisted {
+            get { return ResourceManager.GetString("PastebinPrivacy_Unlisted", resourceCulture); }
+        }
+        public static string PNGBitDepth_Automatic {
+            get { return ResourceManager.GetString("PNGBitDepth_Automatic", resourceCulture); }
+        }
+        public static string PNGBitDepth_Bit24 {
+            get { return ResourceManager.GetString("PNGBitDepth_Bit24", resourceCulture); }
+        }
+        public static string PNGBitDepth_Bit32 {
+            get { return ResourceManager.GetString("PNGBitDepth_Bit32", resourceCulture); }
+        }
+        public static string PNGBitDepth_Default {
+            get { return ResourceManager.GetString("PNGBitDepth_Default", resourceCulture); }
+        }
+        public static string PrintForm_LoadSettings_Print {
+            get { return ResourceManager.GetString("PrintForm_LoadSettings_Print", resourceCulture); }
+        }
+        public static string PrivateBinExpiration_D1 {
+            get { return ResourceManager.GetString("PrivateBinExpiration_D1", resourceCulture); }
+        }
+        public static string PrivateBinExpiration_H1 {
+            get { return ResourceManager.GetString("PrivateBinExpiration_H1", resourceCulture); }
+        }
+        public static string PrivateBinExpiration_M1 {
+            get { return ResourceManager.GetString("PrivateBinExpiration_M1", resourceCulture); }
+        }
+        public static string PrivateBinExpiration_M10 {
+            get { return ResourceManager.GetString("PrivateBinExpiration_M10", resourceCulture); }
+        }
+        public static string PrivateBinExpiration_M5 {
+            get { return ResourceManager.GetString("PrivateBinExpiration_M5", resourceCulture); }
+        }
+        public static string PrivateBinExpiration_N {
+            get { return ResourceManager.GetString("PrivateBinExpiration_N", resourceCulture); }
+        }
+        public static string PrivateBinExpiration_W1 {
+            get { return ResourceManager.GetString("PrivateBinExpiration_W1", resourceCulture); }
+        }
+        public static string PrivateBinExpiration_Y1 {
+            get { return ResourceManager.GetString("PrivateBinExpiration_Y1", resourceCulture); }
+        }
+        public static string PrivateBinFormat_Markdown {
+            get { return ResourceManager.GetString("PrivateBinFormat_Markdown", resourceCulture); }
+        }
+        public static string PrivateBinFormat_PlainText {
+            get { return ResourceManager.GetString("PrivateBinFormat_PlainText", resourceCulture); }
+        }
+        public static string PrivateBinFormat_SyntaxHighlighting {
+            get { return ResourceManager.GetString("PrivateBinFormat_SyntaxHighlighting", resourceCulture); }
+        }
+        public static string ProxyMethod_Automatic {
+            get { return ResourceManager.GetString("ProxyMethod_Automatic", resourceCulture); }
+        }
+        public static string ProxyMethod_Manual {
+            get { return ResourceManager.GetString("ProxyMethod_Manual", resourceCulture); }
+        }
+        public static string ProxyMethod_None {
+            get { return ResourceManager.GetString("ProxyMethod_None", resourceCulture); }
+        }
+        public static string RandomEmojiRepeatUsingN {
+            get { return ResourceManager.GetString("RandomEmojiRepeatUsingN", resourceCulture); }
+        }
+        public static string RandomNonAmbiguousAlphanumericCharRepeatUsingN {
+            get { return ResourceManager.GetString("RandomNonAmbiguousAlphanumericCharRepeatUsingN", resourceCulture); }
+        }
+        public static string RegionCaptureAction_CancelCapture {
+            get { return ResourceManager.GetString("RegionCaptureAction_CancelCapture", resourceCulture); }
+        }
+        public static string RegionCaptureAction_CaptureActiveMonitor {
+            get { return ResourceManager.GetString("RegionCaptureAction_CaptureActiveMonitor", resourceCulture); }
+        }
+        public static string RegionCaptureAction_CaptureFullscreen {
+            get { return ResourceManager.GetString("RegionCaptureAction_CaptureFullscreen", resourceCulture); }
+        }
+        public static string RegionCaptureAction_CaptureLastRegion {
+            get { return ResourceManager.GetString("RegionCaptureAction_CaptureLastRegion", resourceCulture); }
+        }
+        public static string RegionCaptureAction_None {
+            get { return ResourceManager.GetString("RegionCaptureAction_None", resourceCulture); }
+        }
+        public static string RegionCaptureAction_RemoveShape {
+            get { return ResourceManager.GetString("RegionCaptureAction_RemoveShape", resourceCulture); }
+        }
+        public static string RegionCaptureAction_RemoveShapeCancelCapture {
+            get { return ResourceManager.GetString("RegionCaptureAction_RemoveShapeCancelCapture", resourceCulture); }
+        }
+        public static string RegionCaptureAction_SwapToolType {
+            get { return ResourceManager.GetString("RegionCaptureAction_SwapToolType", resourceCulture); }
+        }
+        public static string ReplCodeMenuCategory_Computer {
+            get { return ResourceManager.GetString("ReplCodeMenuCategory_Computer", resourceCulture); }
+        }
+        public static string ReplCodeMenuCategory_Date_and_Time {
+            get { return ResourceManager.GetString("ReplCodeMenuCategory_Date_and_Time", resourceCulture); }
+        }
+        public static string ReplCodeMenuCategory_Image {
+            get { return ResourceManager.GetString("ReplCodeMenuCategory_Image", resourceCulture); }
+        }
+        public static string ReplCodeMenuCategory_Incremental {
+            get { return ResourceManager.GetString("ReplCodeMenuCategory_Incremental", resourceCulture); }
+        }
+        public static string ReplCodeMenuCategory_Random {
+            get { return ResourceManager.GetString("ReplCodeMenuCategory_Random", resourceCulture); }
+        }
+        public static string ReplCodeMenuCategory_Window {
+            get { return ResourceManager.GetString("ReplCodeMenuCategory_Window", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_cn_Computer_name {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_cn_Computer_name", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_d_Current_day {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_d_Current_day", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_guid_Random_guid {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_guid_Random_guid", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_h_Current_hour {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_h_Current_hour", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_height_Gets_image_height {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_height_Gets_image_height", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_i_Auto_increment_number {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_i_Auto_increment_number", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_ia_Auto_increment_alphanumeric {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_ia_Auto_increment_alphanumeric", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_ix_Auto_increment_hexadecimal {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_ix_Auto_increment_hexadecimal", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_mi_Current_minute {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_mi_Current_minute", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_mo_Current_month {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_mo_Current_month", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_mon_Current_month_name__Local_language_ {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_mon_Current_month_name__Local_language_", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_mon2_Current_month_name__English_ {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_mon2_Current_month_name__English_", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_ms_Current_millisecond {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_ms_Current_millisecond", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_n_New_line {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_n_New_line", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_pm_Gets_AM_PM {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_pm_Gets_AM_PM", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_pn_Process_name_of_active_window {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_pn_Process_name_of_active_window", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_ra_Random_alphanumeric_char {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_ra_Random_alphanumeric_char", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_rf_Random_line_from_file {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_rf_Random_line_from_file", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_rn_Random_number_0_to_9 {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_rn_Random_number_0_to_9", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_rx_Random_hexadecimal {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_rx_Random_hexadecimal", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_s_Current_second {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_s_Current_second", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_t_Title_of_active_window {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_t_Title_of_active_window", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_uln_User_login_name {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_uln_User_login_name", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_un_User_name {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_un_User_name", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_unix_Unix_timestamp {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_unix_Unix_timestamp", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_w_Current_week_name__Local_language_ {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_w_Current_week_name__Local_language_", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_w2_Current_week_name__English_ {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_w2_Current_week_name__English_", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_width_Gets_image_width {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_width_Gets_image_width", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_wy_Week_of_year {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_wy_Week_of_year", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_y_Current_year {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_y_Current_year", resourceCulture); }
+        }
+        public static string ReplCodeMenuEntry_yy_Current_year__2_digits_ {
+            get { return ResourceManager.GetString("ReplCodeMenuEntry_yy_Current_year__2_digits_", resourceCulture); }
+        }
+        public static string ScreenRecordGIFEncoding_FFmpeg {
+            get { return ResourceManager.GetString("ScreenRecordGIFEncoding_FFmpeg", resourceCulture); }
+        }
+        public static string ScreenRecordGIFEncoding_NET {
+            get { return ResourceManager.GetString("ScreenRecordGIFEncoding_NET", resourceCulture); }
+        }
+        public static string ScreenRecordGIFEncoding_OctreeQuantizer {
+            get { return ResourceManager.GetString("ScreenRecordGIFEncoding_OctreeQuantizer", resourceCulture); }
+        }
+        public static string ScrollMethod_DownArrow {
+            get { return ResourceManager.GetString("ScrollMethod_DownArrow", resourceCulture); }
+        }
+        public static string ScrollMethod_MouseWheel {
+            get { return ResourceManager.GetString("ScrollMethod_MouseWheel", resourceCulture); }
+        }
+        public static string ScrollMethod_PageDown {
+            get { return ResourceManager.GetString("ScrollMethod_PageDown", resourceCulture); }
+        }
+        public static string ScrollMethod_ScrollMessage {
+            get { return ResourceManager.GetString("ScrollMethod_ScrollMessage", resourceCulture); }
+        }
+        public static string ShapeType_DrawingArrow {
+            get { return ResourceManager.GetString("ShapeType_DrawingArrow", resourceCulture); }
+        }
+        public static string ShapeType_DrawingCursor {
+            get { return ResourceManager.GetString("ShapeType_DrawingCursor", resourceCulture); }
+        }
+        public static string ShapeType_DrawingEllipse {
+            get { return ResourceManager.GetString("ShapeType_DrawingEllipse", resourceCulture); }
+        }
+        public static string ShapeType_DrawingFreehand {
+            get { return ResourceManager.GetString("ShapeType_DrawingFreehand", resourceCulture); }
+        }
+        public static string ShapeType_DrawingFreehandArrow {
+            get { return ResourceManager.GetString("ShapeType_DrawingFreehandArrow", resourceCulture); }
+        }
+        public static string ShapeType_DrawingImage {
+            get { return ResourceManager.GetString("ShapeType_DrawingImage", resourceCulture); }
+        }
+        public static string ShapeType_DrawingImageScreen {
+            get { return ResourceManager.GetString("ShapeType_DrawingImageScreen", resourceCulture); }
+        }
+        public static string ShapeType_DrawingLine {
+            get { return ResourceManager.GetString("ShapeType_DrawingLine", resourceCulture); }
+        }
+        public static string ShapeType_DrawingMagnify {
+            get { return ResourceManager.GetString("ShapeType_DrawingMagnify", resourceCulture); }
+        }
+        public static string ShapeType_DrawingRectangle {
+            get { return ResourceManager.GetString("ShapeType_DrawingRectangle", resourceCulture); }
+        }
+        public static string ShapeType_DrawingSmartEraser {
+            get { return ResourceManager.GetString("ShapeType_DrawingSmartEraser", resourceCulture); }
+        }
+        public static string ShapeType_DrawingSpeechBalloon {
+            get { return ResourceManager.GetString("ShapeType_DrawingSpeechBalloon", resourceCulture); }
+        }
+        public static string ShapeType_DrawingStep {
+            get { return ResourceManager.GetString("ShapeType_DrawingStep", resourceCulture); }
+        }
+        public static string ShapeType_DrawingTextBackground {
+            get { return ResourceManager.GetString("ShapeType_DrawingTextBackground", resourceCulture); }
+        }
+        public static string ShapeType_DrawingTextOutline {
+            get { return ResourceManager.GetString("ShapeType_DrawingTextOutline", resourceCulture); }
+        }
+        public static string ShapeType_EffectBlur {
+            get { return ResourceManager.GetString("ShapeType_EffectBlur", resourceCulture); }
+        }
+        public static string ShapeType_EffectHighlight {
+            get { return ResourceManager.GetString("ShapeType_EffectHighlight", resourceCulture); }
+        }
+        public static string ShapeType_EffectPixelate {
+            get { return ResourceManager.GetString("ShapeType_EffectPixelate", resourceCulture); }
+        }
+        public static string ShapeType_RegionEllipse {
+            get { return ResourceManager.GetString("ShapeType_RegionEllipse", resourceCulture); }
+        }
+        public static string ShapeType_RegionFreehand {
+            get { return ResourceManager.GetString("ShapeType_RegionFreehand", resourceCulture); }
+        }
+        public static string ShapeType_RegionRectangle {
+            get { return ResourceManager.GetString("ShapeType_RegionRectangle", resourceCulture); }
+        }
+        public static string ShapeType_ToolCrop {
+            get { return ResourceManager.GetString("ShapeType_ToolCrop", resourceCulture); }
+        }
+        public static string ShapeType_ToolCutOut {
+            get { return ResourceManager.GetString("ShapeType_ToolCutOut", resourceCulture); }
+        }
+        public static string ShapeType_ToolSelect {
+            get { return ResourceManager.GetString("ShapeType_ToolSelect", resourceCulture); }
+        }
+        public static string ShapeType_ToolSpotlight {
+            get { return ResourceManager.GetString("ShapeType_ToolSpotlight", resourceCulture); }
+        }
+        public static string StepType_LettersLowercase {
+            get { return ResourceManager.GetString("StepType_LettersLowercase", resourceCulture); }
+        }
+        public static string StepType_LettersUppercase {
+            get { return ResourceManager.GetString("StepType_LettersUppercase", resourceCulture); }
+        }
+        public static string StepType_Numbers {
+            get { return ResourceManager.GetString("StepType_Numbers", resourceCulture); }
+        }
+        public static string StepType_RomanNumeralsLowercase {
+            get { return ResourceManager.GetString("StepType_RomanNumeralsLowercase", resourceCulture); }
+        }
+        public static string StepType_RomanNumeralsUppercase {
+            get { return ResourceManager.GetString("StepType_RomanNumeralsUppercase", resourceCulture); }
+        }
+        public static string SupportedLanguage_Automatic {
+            get { return ResourceManager.GetString("SupportedLanguage_Automatic", resourceCulture); }
+        }
+        public static string TextDestination_CustomTextUploader {
+            get { return ResourceManager.GetString("TextDestination_CustomTextUploader", resourceCulture); }
+        }
+        public static string TextDestination_FileUploader {
+            get { return ResourceManager.GetString("TextDestination_FileUploader", resourceCulture); }
+        }
+        public static string ThumbnailTitleLocation_Bottom {
+            get { return ResourceManager.GetString("ThumbnailTitleLocation_Bottom", resourceCulture); }
+        }
+        public static string ThumbnailTitleLocation_Top {
+            get { return ResourceManager.GetString("ThumbnailTitleLocation_Top", resourceCulture); }
+        }
+        public static string ThumbnailViewClickAction_Default {
+            get { return ResourceManager.GetString("ThumbnailViewClickAction_Default", resourceCulture); }
+        }
+        public static string ThumbnailViewClickAction_EditImage {
+            get { return ResourceManager.GetString("ThumbnailViewClickAction_EditImage", resourceCulture); }
+        }
+        public static string ThumbnailViewClickAction_OpenFile {
+            get { return ResourceManager.GetString("ThumbnailViewClickAction_OpenFile", resourceCulture); }
+        }
+        public static string ThumbnailViewClickAction_OpenFolder {
+            get { return ResourceManager.GetString("ThumbnailViewClickAction_OpenFolder", resourceCulture); }
+        }
+        public static string ThumbnailViewClickAction_OpenImageViewer {
+            get { return ResourceManager.GetString("ThumbnailViewClickAction_OpenImageViewer", resourceCulture); }
+        }
+        public static string ThumbnailViewClickAction_OpenURL {
+            get { return ResourceManager.GetString("ThumbnailViewClickAction_OpenURL", resourceCulture); }
+        }
+        public static string ThumbnailViewClickAction_Select {
+            get { return ResourceManager.GetString("ThumbnailViewClickAction_Select", resourceCulture); }
+        }
+        public static string ToastClickAction_AnnotateImage {
+            get { return ResourceManager.GetString("ToastClickAction_AnnotateImage", resourceCulture); }
+        }
+        public static string ToastClickAction_CloseNotification {
+            get { return ResourceManager.GetString("ToastClickAction_CloseNotification", resourceCulture); }
+        }
+        public static string ToastClickAction_CopyFile {
+            get { return ResourceManager.GetString("ToastClickAction_CopyFile", resourceCulture); }
+        }
+        public static string ToastClickAction_CopyFilePath {
+            get { return ResourceManager.GetString("ToastClickAction_CopyFilePath", resourceCulture); }
+        }
+        public static string ToastClickAction_CopyImageToClipboard {
+            get { return ResourceManager.GetString("ToastClickAction_CopyImageToClipboard", resourceCulture); }
+        }
+        public static string ToastClickAction_CopyUrl {
+            get { return ResourceManager.GetString("ToastClickAction_CopyUrl", resourceCulture); }
+        }
+        public static string ToastClickAction_DeleteFile {
+            get { return ResourceManager.GetString("ToastClickAction_DeleteFile", resourceCulture); }
+        }
+        public static string ToastClickAction_OpenFile {
+            get { return ResourceManager.GetString("ToastClickAction_OpenFile", resourceCulture); }
+        }
+        public static string ToastClickAction_OpenFolder {
+            get { return ResourceManager.GetString("ToastClickAction_OpenFolder", resourceCulture); }
+        }
+        public static string ToastClickAction_OpenUrl {
+            get { return ResourceManager.GetString("ToastClickAction_OpenUrl", resourceCulture); }
+        }
+        public static string ToastClickAction_PinToScreen {
+            get { return ResourceManager.GetString("ToastClickAction_PinToScreen", resourceCulture); }
+        }
+        public static string ToastClickAction_Upload {
+            get { return ResourceManager.GetString("ToastClickAction_Upload", resourceCulture); }
+        }
+        public static string UpdateChannel_Dev {
+            get { return ResourceManager.GetString("UpdateChannel_Dev", resourceCulture); }
+        }
+        public static string UpdateChannel_PreRelease {
+            get { return ResourceManager.GetString("UpdateChannel_PreRelease", resourceCulture); }
+        }
+        public static string UpdateChannel_Release {
+            get { return ResourceManager.GetString("UpdateChannel_Release", resourceCulture); }
+        }
+        public static string UpdateMessageBox_UpdateMessageBox_ {
+            get { return ResourceManager.GetString("UpdateMessageBox_UpdateMessageBox_", resourceCulture); }
+        }
+        public static string UpdateMessageBox_UpdateMessageBox_CurrentVersion {
+            get { return ResourceManager.GetString("UpdateMessageBox_UpdateMessageBox_CurrentVersion", resourceCulture); }
+        }
+        public static string UpdateMessageBox_UpdateMessageBox_LatestVersion {
+            get { return ResourceManager.GetString("UpdateMessageBox_UpdateMessageBox_LatestVersion", resourceCulture); }
+        }
+        public static string UpdateMessageBox_UpdateMessageBox_Portable {
+            get { return ResourceManager.GetString("UpdateMessageBox_UpdateMessageBox_Portable", resourceCulture); }
+        }
+        public static string UpdateMessageBox_UpdateMessageBox_update_is_available {
+            get { return ResourceManager.GetString("UpdateMessageBox_UpdateMessageBox_update_is_available", resourceCulture); }
+        }
+        public static string URLSharingServices_BingVisualSearch {
+            get { return ResourceManager.GetString("URLSharingServices_BingVisualSearch", resourceCulture); }
+        }
+        public static string URLSharingServices_CustomURLSharingService {
+            get { return ResourceManager.GetString("URLSharingServices_CustomURLSharingService", resourceCulture); }
+        }
+        public static string URLSharingServices_Email {
+            get { return ResourceManager.GetString("URLSharingServices_Email", resourceCulture); }
+        }
+        public static string URLSharingServices_GoogleImageSearch {
+            get { return ResourceManager.GetString("URLSharingServices_GoogleImageSearch", resourceCulture); }
+        }
+        public static string UrlShortenerType_CustomURLShortener {
+            get { return ResourceManager.GetString("UrlShortenerType_CustomURLShortener", resourceCulture); }
+        }
+        public static string WavFileNameEditor_EditValue_Browse_for_a_sound_file___ {
+            get { return ResourceManager.GetString("WavFileNameEditor_EditValue_Browse_for_a_sound_file___", resourceCulture); }
+        }
+        public static string YouTubeVideoPrivacy_Private {
+            get { return ResourceManager.GetString("YouTubeVideoPrivacy_Private", resourceCulture); }
+        }
+        public static string YouTubeVideoPrivacy_Public {
+            get { return ResourceManager.GetString("YouTubeVideoPrivacy_Public", resourceCulture); }
+        }
+        public static string YouTubeVideoPrivacy_Unlisted {
+            get { return ResourceManager.GetString("YouTubeVideoPrivacy_Unlisted", resourceCulture); }
+        }
     }
 }

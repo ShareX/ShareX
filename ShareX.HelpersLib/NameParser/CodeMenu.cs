@@ -101,7 +101,7 @@ namespace ShareX.HelpersLib
 
             Items.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem tsmiClose = new ToolStripMenuItem(Resources.CodeMenu_Create_Close);
+            ToolStripMenuItem tsmiClose = new ToolStripMenuItem(Localization.Strings.CodeMenu_Create_Close);
             tsmiClose.Click += (sender, e) => Close();
             Items.Add(tsmiClose);
 

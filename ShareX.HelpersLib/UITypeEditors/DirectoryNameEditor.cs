@@ -39,7 +39,7 @@ namespace ShareX.HelpersLib
                 return base.EditValue(context, provider, value);
             }
 
-            string selectedPath = FileHelpers.BrowseFolder(Resources.DirectoryNameEditor_EditValue_Browse_for_a_folder___);
+            string selectedPath = FileHelpers.BrowseFolder(Localization.Strings.DirectoryNameEditor_EditValue_Browse_for_a_folder___);
 
             if (!string.IsNullOrEmpty(selectedPath))
             {

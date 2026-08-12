@@ -59,7 +59,43 @@ $projects = @(
     [pscustomobject]@{
         Name = 'ShareX.HelpersLib'
         ResourceBaseName = 'ShareX.HelpersLib.Localization.Strings'
-        DynamicPrefixes = @()
+        DynamicPrefixes = @(
+            'AfterCaptureTasks_'
+            'AfterUploadTasks_'
+            'ArrowHeadDirection_'
+            'BorderStyle_'
+            'CustomUploaderDestinationType_'
+            'CutOutEffectType_'
+            'DrawImageSizeMode_'
+            'EDataType_'
+            'FileDestination_'
+            'FileExistAction_'
+            'GIFQuality_'
+            'HotkeyType_'
+            'ImageDestination_'
+            'ImageEditorStartMode_'
+            'ImgurThumbnailType_'
+            'PastebinExpiration_'
+            'PastebinPrivacy_'
+            'PNGBitDepth_'
+            'PrivateBinExpiration_'
+            'PrivateBinFormat_'
+            'ProxyMethod_'
+            'RegionCaptureAction_'
+            'ScreenRecordGIFEncoding_'
+            'ScrollMethod_'
+            'ShapeType_'
+            'StepType_'
+            'SupportedLanguage_'
+            'TextDestination_'
+            'ThumbnailTitleLocation_'
+            'ThumbnailViewClickAction_'
+            'ToastClickAction_'
+            'UpdateChannel_'
+            'URLSharingServices_'
+            'UrlShortenerType_'
+            'YouTubeVideoPrivacy_'
+        )
     }
     [pscustomobject]@{
         Name = 'ShareX.HistoryLib'
@@ -516,6 +552,14 @@ foreach ($project in $projects)
                 Add-ValidationError "$($project.Name): data-driven image-effect resource lookup is missing."
             }
         }
+        elseif ($project.Name -eq 'ShareX.HelpersLib')
+        {
+            if (-not $sourceText.Contains('GetLocalizedDescription(Localization.Strings.ResourceManager)') -or
+                -not $sourceText.Contains('GetLocalizedCategory(Localization.Strings.ResourceManager)'))
+            {
+                Add-ValidationError "$($project.Name): data-driven enum localization lookup is missing."
+            }
+        }
         elseif ($project.Name -eq 'ShareX.UploadersLib')
         {
             if (-not $sourceText.Contains('GetLocalizedDescription(Localization.Strings.ResourceManager)'))
@@ -551,22 +595,7 @@ foreach ($project in $projects)
             }
         }
 
-        if ($project.Name -eq 'ShareX.HelpersLib')
-        {
-            foreach ($excludedDirectoryName in @('Controls', 'Colors'))
-            {
-                $excludedDirectory = Join-Path $projectDirectory $excludedDirectoryName
-                foreach ($source in Get-ChildItem -LiteralPath $excludedDirectory -Recurse -File -Filter '*.cs')
-                {
-                    $text = [IO.File]::ReadAllText($source.FullName)
-                    if ($text.Contains('Localization.Strings.') -or $text.Contains('using ShareX.HelpersLib.Localization'))
-                    {
-                        Add-ValidationError "$($project.Name)/$excludedDirectoryName/$($source.Name): excluded directory references the localization catalog."
-                    }
-                }
-            }
-        }
-        elseif ($project.Name -eq 'ShareX.ScreenCaptureLib')
+        if ($project.Name -eq 'ShareX.ScreenCaptureLib')
         {
             $formDirectory = Join-Path $projectDirectory 'Forms'
             $defaultFormFiles = @(

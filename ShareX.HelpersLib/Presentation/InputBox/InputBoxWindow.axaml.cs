@@ -36,10 +36,10 @@ public partial class InputBoxWindow : Window
         Title = string.Format(Localization.Strings.InputBoxWindow_Title, title);
         InputTextBox.Text = inputText ?? string.Empty;
         OKButton.Content = string.IsNullOrEmpty(okText)
-            ? Properties.Resources.MyMessageBox_MyMessageBox_OK
+            ? Localization.Strings.MyMessageBox_MyMessageBox_OK
             : okText;
         CancelButton.Content = string.IsNullOrEmpty(cancelText)
-            ? Properties.Resources.MyMessageBox_MyMessageBox_Cancel
+            ? Localization.Strings.MyMessageBox_MyMessageBox_Cancel
             : cancelText;
 
         Opened += OnOpened;

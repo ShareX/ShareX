@@ -387,4 +387,1077 @@
   <data name="AppVeyorUpdateChecker_Deployment_file_not_found" xml:space="preserve">
     <value>فایل «{0}» پیدا نشد.</value>
   </data>
+  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
+    <value>مسیر فایل</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
+    <value>فایل مسیر with output فایل name extension</value>
+  </data>
+  <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
+    <value>اضافه کردن افکت های عکس / واترمارک</value>
+  </data>
+  <data name="AfterCaptureTasks_AnalyzeImage" xml:space="preserve">
+    <value>تحلیل تصویر</value>
+  </data>
+  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
+    <value>بازکردن در ویرایشگر عکس</value>
+  </data>
+  <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
+    <value>زیباسازی تصویر</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
+    <value>کپی کردن مسیر فایل به کلیپ بورد</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>فایل را به کلیپ بورد کپی کن</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFolderPathToClipboard" xml:space="preserve">
+    <value>کپی پوشه مسیر to کلیپ‌بورد</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
+    <value>عکس را به کلیپ بورد کپی کن</value>
+  </data>
+  <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
+    <value>حذف فایل بصورت محلی</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>متن را تشخیص بده (OCR)</value>
+  </data>
+  <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
+    <value>انجام اعمال</value>
+  </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>سنجاق به صفحه</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
+    <value>عکس را در فایل ذخیره کن</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
+    <value>عکس را در فایل ذخیره کن با عنوان ...</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
+    <value>ذخیره بندانگشتی تصویر to فایل</value>
+  </data>
+  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
+    <value>اسکن کد QR</value>
+  </data>
+  <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
+    <value>چاپ عکس</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>نشان دادن پنجره &quot;بعد از ضبط&quot;</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>نشان دادن پنجره &quot;قبل آپلود&quot;</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>نشان دادن فایل در Explorer</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>نمایش منوی وظایف سریع</value>
+  </data>
+  <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
+    <value>آپلودکردن عکس به هاست</value>
+  </data>
+  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
+    <value>کپی کردن آدرس به کلیپ بورد</value>
+  </data>
+  <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
+    <value>بازکردن آدرس</value>
+  </data>
+  <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
+    <value>اشتراک گذاری آدرس</value>
+  </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>نشان دادن پنجره &quot;بعد آپلود&quot;</value>
+  </data>
+  <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
+    <value>نمایش پنجره کد QR</value>
+  </data>
+  <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
+    <value>کوتاه کردن آدرس</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>هر دو</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>پایان</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>شروع</value>
+  </data>
+  <data name="BorderStyle_Dash" xml:space="preserve">
+    <value>خط‌چین</value>
+  </data>
+  <data name="BorderStyle_DashDot" xml:space="preserve">
+    <value>خط‌نقطه</value>
+  </data>
+  <data name="BorderStyle_DashDotDot" xml:space="preserve">
+    <value>خط‌نقطه‌نقطه</value>
+  </data>
+  <data name="BorderStyle_Dot" xml:space="preserve">
+    <value>نقطه</value>
+  </data>
+  <data name="BorderStyle_Solid" xml:space="preserve">
+    <value>یکپارچه</value>
+  </data>
+  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
+    <value>فیروزه‌ای: {0:0.0}٪، سرخابی: {1:0.0}٪، زرد: {2:0.0}٪، کلید: {3:0.0}٪</value>
+  </data>
+  <data name="CodeMenu_Create_Close" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
+    <value>صفت تصادفی</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
+    <value>حیوان تصادفی</value>
+  </data>
+  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
+    <value>مرور برای برگه سبک آبشاری...</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>آپلود کننده فایل</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>آپلود کننده عکس</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>آپلود کننده های متن</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>سرویس اشتراک گذاری لینک</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>کوتاه کننده لینک</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>بدون جلوه</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>لبه‌های پاره</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>موج</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>دندانه‌اره‌ای</value>
+  </data>
+  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
+    <value>Browse for a پوشه...</value>
+  </data>
+  <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
+    <value>وضعیت: {0}</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
+    <value>فایلname: {0}</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
+    <value>لطفا صبر کنید .</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
+    <value>دانلود تکمیل شد.</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
+    <value>نصب</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
+    <value>سرعت دانلود</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
+    <value>اندازه فایل</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
+    <value>پیشرفت</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
+    <value>در حال دانلود.</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
+    <value>در حال گرفتن اندازه فایل.</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>اندازه مطلق</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>تغییر اندازه نده</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>درصد بوم</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Percentage of تصویر</value>
+  </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>پیش‌فرض</value>
+  </data>
+  <data name="EDataType_File" xml:space="preserve">
+    <value>فایل</value>
+  </data>
+  <data name="EDataType_Image" xml:space="preserve">
+    <value>تصویر</value>
+  </data>
+  <data name="EDataType_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="EDataType_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
+    <value>مرور برای فایل اجرایی...</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
+    <value>کپی</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
+    <value>برداشتن</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
+    <value>چسباندن</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>انجام دوباره</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>انتخاب همه</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>واگرد</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>سفارشی فایل بارگذاریer</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>ایمیل:</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>پوشه به اشتراک گذاری شده</value>
+  </data>
+  <data name="FileExistAction_Ask" xml:space="preserve">
+    <value>پرسیدن اینکه چه کاری انجام شود</value>
+  </data>
+  <data name="FileExistAction_Cancel" xml:space="preserve">
+    <value>ذخیره نکن</value>
+  </data>
+  <data name="FileExistAction_Overwrite" xml:space="preserve">
+    <value>Overwrite فایل</value>
+  </data>
+  <data name="FileExistAction_UniqueName" xml:space="preserve">
+    <value>Append number to the فایلname</value>
+  </data>
+  <data name="GIFQuality_Bit4" xml:space="preserve">
+    <value>Octree quantizer 16 رنگs</value>
+  </data>
+  <data name="GIFQuality_Bit8" xml:space="preserve">
+    <value>Octree quantizer 256 رنگs (Slow encoding but better quality)</value>
+  </data>
+  <data name="GIFQuality_Default" xml:space="preserve">
+    <value>کدگذاری پیش‌فرض .NET (کدگذاری سریع اما با کیفیت متوسط)</value>
+  </data>
+  <data name="GIFQuality_Grayscale" xml:space="preserve">
+    <value>Palette quantizer grayscale 256 رنگs</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>انتخاب فایل</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>پوشه را انتخاب کن</value>
+  </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>ایحاد پوشه با مشکل مواجه شد.</value>
+  </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>فایل وجود ندارد:</value>
+  </data>
+  <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
+    <value>پوشه does not exist:</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>انصراف از ضبط فیلم صفحه</value>
+  </data>
+  <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
+    <value>ضبط active monitor</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow" xml:space="preserve">
+    <value>ضبط پنجره جاری</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowBorderless" xml:space="preserve">
+    <value>Make active پنجره borderless</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
+    <value>Make active پنجره بالا most</value>
+  </data>
+  <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
+    <value>تحلیل تصویر</value>
+  </data>
+  <data name="HotkeyType_AutoCapture" xml:space="preserve">
+    <value>ضبط خودکار</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>پنجره بدون حاشیه</value>
+  </data>
+  <data name="HotkeyType_Category_Other" xml:space="preserve">
+    <value>دیگر</value>
+  </data>
+  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
+    <value>ضبط فیلم صفحه</value>
+  </data>
+  <data name="HotkeyType_Category_Tools" xml:space="preserve">
+    <value>ابزار</value>
+  </data>
+  <data name="HotkeyType_Category_Upload" xml:space="preserve">
+    <value>آپلود</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
+    <value>آپلود از کلیپ بورد</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
+    <value>بارگذاری from کلیپ‌بورد with content viewer</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
+    <value>نمایشگر کلیپ‌بورد</value>
+  </data>
+  <data name="HotkeyType_ColorPicker" xml:space="preserve">
+    <value>انتخاب کننده رنگ</value>
+  </data>
+  <data name="HotkeyType_CustomRegion" xml:space="preserve">
+    <value>ضبط pre configured ناحیه</value>
+  </data>
+  <data name="HotkeyType_CustomWindow" xml:space="preserve">
+    <value>ضبط pre configured پنجره</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>غیرفعال/فعال کردن کلیدهای میانبر</value>
+  </data>
+  <data name="HotkeyType_DragDropUpload" xml:space="preserve">
+    <value>آپلود با کشیدن و رهاکردن</value>
+  </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>خروج از برنامه</value>
+  </data>
+  <data name="HotkeyType_FileUpload" xml:space="preserve">
+    <value>آپلود فایل</value>
+  </data>
+  <data name="HotkeyType_FolderUpload" xml:space="preserve">
+    <value>آپلود پوشه</value>
+  </data>
+  <data name="HotkeyType_HashCheck" xml:space="preserve">
+    <value>چک کردن Hash</value>
+  </data>
+  <data name="HotkeyType_IconConverter" xml:space="preserve">
+    <value>تبدیل‌کننده نماد</value>
+  </data>
+  <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
+    <value>زیباساز تصویر</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
+    <value>ترکیب کننده عکس</value>
+  </data>
+  <data name="HotkeyType_ImageComparer" xml:space="preserve">
+    <value>مقایسه‌گر تصویر</value>
+  </data>
+  <data name="HotkeyType_ImageEditor" xml:space="preserve">
+    <value>ویرایشگر عکس</value>
+  </data>
+  <data name="HotkeyType_ImageEffects" xml:space="preserve">
+    <value>افکت های تصویر</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>تقسیم‌کننده تصویر</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>تصویر بندانگشتیer</value>
+  </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>نمایشگر تصویر</value>
+  </data>
+  <data name="HotkeyType_IndexFolder" xml:space="preserve">
+    <value>پوشه ایندکس</value>
+  </data>
+  <data name="HotkeyType_InspectWindow" xml:space="preserve">
+    <value>بازرسی پنجره</value>
+  </data>
+  <data name="HotkeyType_LastRegion" xml:space="preserve">
+    <value>ضبط آخرین ناحیه</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>فراداده</value>
+  </data>
+  <data name="HotkeyType_MonitorTest" xml:space="preserve">
+    <value>تست صفحه نمایش ...</value>
+  </data>
+  <data name="HotkeyType_None" xml:space="preserve">
+    <value>هیچ کدام</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>بازکردن پنجره تاریخچه</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>بازکردن پنجره تاریخچه عکس</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>بازکردن پنجره اصلی</value>
+  </data>
+  <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
+    <value>باز کردن اسکرین‌شاتs پوشه</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
+    <value>Pause ضبط صفحه</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>سنجاق به صفحه</value>
+  </data>
+  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
+    <value>Pin to صفحه (Close all)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>Pin to صفحه (From کلیپ‌بورد)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>Pin to صفحه (From فایل)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>Pin to صفحه (From صفحه)</value>
+  </data>
+  <data name="HotkeyType_PrintScreen" xml:space="preserve">
+    <value>ضبط صفحه بصورت کامل</value>
+  </data>
+  <data name="HotkeyType_QRCode" xml:space="preserve">
+    <value>کد QR</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR code (Scan صفحه)</value>
+  </data>
+  <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
+    <value>QR code (Scan ناحیه)</value>
+  </data>
+  <data name="HotkeyType_RectangleLight" xml:space="preserve">
+    <value>ضبط ناحیه (روشن)</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion" xml:space="preserve">
+    <value>ضبط ناحیه</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>ضبط ناحیه (شفاف)</value>
+  </data>
+  <data name="HotkeyType_Ruler" xml:space="preserve">
+    <value>خط کش</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
+    <value>انتخاب گر رنگ صفحه</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه از ناحیه سفارشی</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه از پنجره جاری</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه با ناحیه از پیش تنظیم شده</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه (GIF) از ناحیه سفارشی</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه (GIF) از پنجره جاری</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه (GIF) با ناحیه از پیش تنظیم شده</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
+    <value>ضبط تصویر با اسکرول...</value>
+  </data>
+  <data name="HotkeyType_ShortenURL" xml:space="preserve">
+    <value>کوتاه کردن آدرس</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
+    <value>شروع auto ضبط using last ناحیه</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه با آخرین ناحیه</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه (GIF) با آخرین ناحیه</value>
+  </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>توقف auto ضبط</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>توقف ضبط صفحه</value>
+  </data>
+  <data name="HotkeyType_StopUploads" xml:space="preserve">
+    <value>توقف تمام آپلودهای جاری</value>
+  </data>
+  <data name="HotkeyType_StripMetadata" xml:space="preserve">
+    <value>حذف فراداده</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>تغییر وضعیت نوار ابزار اعمال</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>Toggle tray منو</value>
+  </data>
+  <data name="HotkeyType_UploadText" xml:space="preserve">
+    <value>آپلود متن</value>
+  </data>
+  <data name="HotkeyType_UploadURL" xml:space="preserve">
+    <value>بارگذاری from URL</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>مبدل ویدئو</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
+    <value>خلاصه کننده ویدئو</value>
+  </data>
+  <data name="HSB_ToString_" xml:space="preserve">
+    <value>Hue: {0:0.0}°, Saturation: {1:0.0}%, Bراستness: {2:0.0}%</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>آپلود کننده عکس سفارشی</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>آپلودکننده فایل</value>
+  </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>اندازه خودکار</value>
+  </data>
+  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
+    <value>تمام صفحه</value>
+  </data>
+  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
+    <value>بیشینه‌شده</value>
+  </data>
+  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
+    <value>عادی</value>
+  </data>
+  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
+    <value>حالت قبلی</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>مربع بزرگ</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>Huge بندانگشتی</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>Large بندانگشتی</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>Medium بندانگشتی</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>مربع کوچک</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>Small بندانگشتی</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
+    <value>خیر</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
+    <value>تایید</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
+    <value>بله</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>کپی name</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>کپی value</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>۱ روز</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>۱ ساعت</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>۱ ماه</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>۱۰ دقیقه</value>
+  </data>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>هرگز</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>۱ هفته</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>۲ هفته</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>خصوصی (فقط اعضا)</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>عمومی</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>لیست نشده</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>تشخیص خودکار</value>
+  </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>۲۴ بیت</value>
+  </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>۳۲ بیت</value>
+  </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>پیش فرض</value>
+  </data>
+  <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
+    <value>چاپ</value>
+  </data>
+  <data name="PrivateBinExpiration_D1" xml:space="preserve">
+    <value>۱ روز</value>
+  </data>
+  <data name="PrivateBinExpiration_H1" xml:space="preserve">
+    <value>۱ ساعت</value>
+  </data>
+  <data name="PrivateBinExpiration_M1" xml:space="preserve">
+    <value>۱ ماه</value>
+  </data>
+  <data name="PrivateBinExpiration_M10" xml:space="preserve">
+    <value>۱۰ دقیقه</value>
+  </data>
+  <data name="PrivateBinExpiration_M5" xml:space="preserve">
+    <value>۵ دقیقه</value>
+  </data>
+  <data name="PrivateBinExpiration_N" xml:space="preserve">
+    <value>هرگز</value>
+  </data>
+  <data name="PrivateBinExpiration_W1" xml:space="preserve">
+    <value>۱ هفته</value>
+  </data>
+  <data name="PrivateBinExpiration_Y1" xml:space="preserve">
+    <value>۱ سال</value>
+  </data>
+  <data name="PrivateBinFormat_Markdown" xml:space="preserve">
+    <value>Markdown</value>
+  </data>
+  <data name="PrivateBinFormat_PlainText" xml:space="preserve">
+    <value>متن ساده</value>
+  </data>
+  <data name="PrivateBinFormat_SyntaxHighlighting" xml:space="preserve">
+    <value>برجسته‌سازی نحو</value>
+  </data>
+  <data name="ProxyMethod_Automatic" xml:space="preserve">
+    <value>خودکار</value>
+  </data>
+  <data name="ProxyMethod_Manual" xml:space="preserve">
+    <value>دستی</value>
+  </data>
+  <data name="ProxyMethod_None" xml:space="preserve">
+    <value>هیچ کدام</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>ایموجی تصادفی (تکرار با {n})</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>نویسه حرفی‌عددی تصادفی بدون ابهام (تکرار با {n})</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>انصراف از ضبط</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>ضبط صفحه جاری</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>ضبط تمام صفحه</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
+    <value>ضبط last ناحیه</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>هیچ کاری انجام نده</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>پاک کردن شکل</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>حذف shape or cancel ضبط</value>
+  </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>تعویض نوع ابزار</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
+    <value>کامیپوتر</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
+    <value>تاریخ و زمان</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
+    <value>عکس</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
+    <value>افزایشی</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
+    <value>تصادفی</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>پنجره</value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>نام کامیپوتر</value>
+  </data>
+  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
+    <value>روز جاری</value>
+  </data>
+  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
+    <value>GUID تصادفی</value>
+  </data>
+  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
+    <value>ساعت جاری</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>ارتفاع تصویر</value>
+  </data>
+  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
+    <value>Auto increment number (0 pad چپ using {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>Auto increment alphanumeric case-insensitive (0 pad چپ using {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>Auto increment alphanumeric case-sensitive (0 pad چپ using {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>افزایش خودکار با مبنای {n} با استفاده از حروف و اعداد (1 &lt; n &lt; 63)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>Auto increment hexadecimal (0 pad چپ using {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
+    <value>دقیقه جاری</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
+    <value>ماه جاری</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
+    <value>ماه جاری (زبان محلی)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
+    <value>ماه جاری (انگلیسی)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
+    <value>زمان (بر حسب میلی ثانیه)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
+    <value>خط جدید</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
+    <value>قبل‌ازظهر/بعدازظهر</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>نام پنجره را پردازش کن</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>نویسه حرفی‌عددی تصادفی (تکرار با {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>Random line from a فایل (Use {filepath} to determine the فایل)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
+    <value>عدد تصادفی ۰ تا ۹ (تکرار با {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>نویسه هگزادسیمال تصادفی (تکرار با {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
+    <value>ثانیه جاری</value>
+  </data>
+  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
+    <value>عنوان پنجره</value>
+  </data>
+  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
+    <value>نام کاربر وارد شده</value>
+  </data>
+  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
+    <value>نام کاربری:</value>
+  </data>
+  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
+    <value>برچسب زمانی Unix</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>نام هفته جاری (زبان محلی)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>نام هفته جاری (انگلیسی)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
+    <value>عرض تصویر</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>هفته سال</value>
+  </data>
+  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
+    <value>سال جاری</value>
+  </data>
+  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
+    <value>سال جاری (۲ رقم)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
+    <value>FFmpeg (کیفیت خوب)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
+    <value>.NET (کیفیت بد)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
+    <value>کوانتیزه‌کننده Octree (کیفیت متوسط)</value>
+  </data>
+  <data name="ScrollMethod_DownArrow" xml:space="preserve">
+    <value>پیکان پایین</value>
+  </data>
+  <data name="ScrollMethod_MouseWheel" xml:space="preserve">
+    <value>چرخ ماوس</value>
+  </data>
+  <data name="ScrollMethod_PageDown" xml:space="preserve">
+    <value>Page Down</value>
+  </data>
+  <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
+    <value>پیام پیمایش</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>جهت نما (A)</value>
+  </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>کرسر</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>بیضی (E)</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>دست‌آزاد (F)</value>
+  </data>
+  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
+    <value>پیکان آزاد</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>عکس (فایل)</value>
+  </data>
+  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
+    <value>عکس (اسکرین)</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>خط (L)</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>بزرگ کن</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>مستطیل (R)</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>پاک‌کن هوشمند</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>بالن متن (S)</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>گام (I)</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>متن (پس زمینه) (T)</value>
+  </data>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>متن (دورخط) (O)</value>
+  </data>
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
+    <value>محو (B)</value>
+  </data>
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
+    <value>برجسته‌سازی (H)</value>
+  </data>
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
+    <value>پیکسلی کردن (P)</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>ناحیه بیضی</value>
+  </data>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>Freehand ناحیه</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>ناحیه مستطیلی</value>
+  </data>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>بریدن عکس (C)</value>
+  </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>برش (X)</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>انتخاب کردن و حرکت دادن (M)</value>
+  </data>
+  <data name="ShapeType_ToolSpotlight" xml:space="preserve">
+    <value>نورافکن</value>
+  </data>
+  <data name="StepType_LettersLowercase" xml:space="preserve">
+    <value>حروف (کوچک)</value>
+  </data>
+  <data name="StepType_LettersUppercase" xml:space="preserve">
+    <value>حروف (بزرگ)</value>
+  </data>
+  <data name="StepType_Numbers" xml:space="preserve">
+    <value>اعداد</value>
+  </data>
+  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
+    <value>اعداد رومی (کوچک)</value>
+  </data>
+  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
+    <value>اعداد رومی (بزرگ)</value>
+  </data>
+  <data name="SupportedLanguage_Automatic" xml:space="preserve">
+    <value>خودکار</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>آپلود کننده متن سفارشی</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>آپلود کننده فایل</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
+    <value>پایین</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
+    <value>بالا</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>پیش‌فرض</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>ویرایش تصویر</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>باز کردن فایل</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>باز کردن پوشه</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>باز کردن تصویر viewer</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>باز کردن URL</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>انتخاب</value>
+  </data>
+  <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
+    <value>ویرایش تصویر</value>
+  </data>
+  <data name="ToastClickAction_CloseNotification" xml:space="preserve">
+    <value>بستن اعلان</value>
+  </data>
+  <data name="ToastClickAction_CopyFile" xml:space="preserve">
+    <value>کپی فایل</value>
+  </data>
+  <data name="ToastClickAction_CopyFilePath" xml:space="preserve">
+    <value>کپی فایل مسیر</value>
+  </data>
+  <data name="ToastClickAction_CopyImageToClipboard" xml:space="preserve">
+    <value>کپی تصویر</value>
+  </data>
+  <data name="ToastClickAction_CopyUrl" xml:space="preserve">
+    <value>کپی پیوند</value>
+  </data>
+  <data name="ToastClickAction_DeleteFile" xml:space="preserve">
+    <value>حذف فایل locally</value>
+  </data>
+  <data name="ToastClickAction_OpenFile" xml:space="preserve">
+    <value>باز کردن فایل</value>
+  </data>
+  <data name="ToastClickAction_OpenFolder" xml:space="preserve">
+    <value>باز کردن پوشه</value>
+  </data>
+  <data name="ToastClickAction_OpenUrl" xml:space="preserve">
+    <value>باز کردن پیوند</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>سنجاق به صفحه</value>
+  </data>
+  <data name="ToastClickAction_Upload" xml:space="preserve">
+    <value>بارگذاری فایل</value>
+  </data>
+  <data name="UpdateChannel_Dev" xml:space="preserve">
+    <value>توسعه</value>
+  </data>
+  <data name="UpdateChannel_PreRelease" xml:space="preserve">
+    <value>پیش‌انتشار</value>
+  </data>
+  <data name="UpdateChannel_Release" xml:space="preserve">
+    <value>انتشار</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>نسخه جدیدتری از {0} در دسترس است.
+آیا مایلید آن را دانلود و نصب کنید؟</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
+    <value>ورژن جاری</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
+    <value>آخرین نسخه</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>نسخه جدیدتری از {0} در دسترس است.
+آیا مایلید آن را دانلود و نصب کنید؟</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>نسخه به روز موجود است</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>جستجوی تصویری Bing</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>سفارشی URL sharing سرویس</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>ایمیل:</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Google Lens</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>سفارشی URL shortener</value>
+  </data>
+  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
+    <value>Browse for a sound فایل...</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>شخصی</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>عمومی</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>لیست نشده</value>
+  </data>
 </root>

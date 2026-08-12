@@ -172,7 +172,7 @@ namespace ShareX.HelpersLib
 
         public override string ToString()
         {
-            return string.Format(Resources.HSB_ToString_, Hue360, Saturation100, Brightness100);
+            return string.Format(Localization.Strings.HSB_ToString_, Hue360, Saturation100, Brightness100);
         }
 
         public Color ToColor()

@@ -30,9 +30,9 @@ public partial class UpdateMessageWindow : Window
     public bool ActivateWindow { get; }
     public string MessageText { get; }
     public bool ShowChangelog { get; }
-    public string DialogTitle => Properties.Resources.UpdateMessageBox_UpdateMessageBox_update_is_available;
-    public string YesText => Properties.Resources.MyMessageBox_MyMessageBox_Yes;
-    public string NoText => Properties.Resources.MyMessageBox_MyMessageBox_No;
+    public string DialogTitle => Localization.Strings.UpdateMessageBox_UpdateMessageBox_update_is_available;
+    public string YesText => Localization.Strings.MyMessageBox_MyMessageBox_Yes;
+    public string NoText => Localization.Strings.MyMessageBox_MyMessageBox_No;
 
     public UpdateMessageWindow()
     {
@@ -120,20 +120,20 @@ public partial class UpdateMessageWindow : Window
 
         text.AppendLine(Helpers.SafeStringFormat(
             updateChecker.IsPortable
-                ? Properties.Resources.UpdateMessageBox_UpdateMessageBox_Portable
-                : Properties.Resources.UpdateMessageBox_UpdateMessageBox_,
+                ? Localization.Strings.UpdateMessageBox_UpdateMessageBox_Portable
+                : Localization.Strings.UpdateMessageBox_UpdateMessageBox_,
             productName));
         text.AppendLine();
-        text.Append(Properties.Resources.UpdateMessageBox_UpdateMessageBox_CurrentVersion);
+        text.Append(Localization.Strings.UpdateMessageBox_UpdateMessageBox_CurrentVersion);
         text.Append(": ");
         text.Append(updateChecker.CurrentVersion);
         text.AppendLine();
-        text.Append(Properties.Resources.UpdateMessageBox_UpdateMessageBox_LatestVersion);
+        text.Append(Localization.Strings.UpdateMessageBox_UpdateMessageBox_LatestVersion);
         text.Append(": ");
         text.Append(updateChecker.LatestVersion);
         if (updateChecker.IsDev) text.Append(" Dev");
         if (updateChecker is GitHubUpdateChecker { IsPreRelease: true })
-            text.Append($" ({Properties.Resources.UpdateChannel_PreRelease})");
+            text.Append($" ({Localization.Strings.UpdateChannel_PreRelease})");
         return text.ToString();
     }
 

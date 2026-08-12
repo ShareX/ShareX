@@ -387,4 +387,1077 @@
   <data name="AppVeyorUpdateChecker_Deployment_file_not_found" xml:space="preserve">
     <value>«{0}» 파일을 찾을 수 없습니다.</value>
   </data>
+  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
+    <value>파일 경로</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
+    <value>확장자 없는 파일 경로 + &quot;출력 파일 이름 확장자&quot;</value>
+  </data>
+  <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
+    <value>이미지 효과 및 워터마크 추가하기</value>
+  </data>
+  <data name="AfterCaptureTasks_AnalyzeImage" xml:space="preserve">
+    <value>이미지 분석</value>
+  </data>
+  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
+    <value>이미지 편집기에서 열기</value>
+  </data>
+  <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
+    <value>이미지 꾸미기</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
+    <value>파일 경로를 클립보드에 복사하기</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>파일을 클립보드에 복사하기</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFolderPathToClipboard" xml:space="preserve">
+    <value>복사 폴더 경로 to 클립보드</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
+    <value>이미지를 클립보드에 복사하기</value>
+  </data>
+  <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
+    <value>로컬 파일 삭제하기</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>텍스트 인식하기 (OCR)</value>
+  </data>
+  <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
+    <value>동작 실행하기</value>
+  </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>화면에 고정</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
+    <value>이미지를 파일로 저장하기</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
+    <value>이미지를 다른 이름으로 파일로 저장...</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
+    <value>섬네일 이미지를 파일로 저장하기</value>
+  </data>
+  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
+    <value>QR코드 스캔</value>
+  </data>
+  <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
+    <value>이미지 인쇄하기</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>&quot;촬영 뒤&quot; 창 띄우기</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>&quot;업로드 전&quot; 창 띄우기</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>탐색기 창에서 파일 보여주기</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>간편 작업 메뉴 보이기</value>
+  </data>
+  <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
+    <value>이미지를 업로드하기</value>
+  </data>
+  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
+    <value>URL을 클립보드에 복사하기</value>
+  </data>
+  <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
+    <value>URL 열기</value>
+  </data>
+  <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
+    <value>URL 공유하기</value>
+  </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>&quot;업로드 뒤&quot; 창 띄우기</value>
+  </data>
+  <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
+    <value>QR코드 창 띄우기</value>
+  </data>
+  <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
+    <value>URL 단축하기</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>둘 다</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>끝</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="BorderStyle_Dash" xml:space="preserve">
+    <value>파선</value>
+  </data>
+  <data name="BorderStyle_DashDot" xml:space="preserve">
+    <value>파선-점</value>
+  </data>
+  <data name="BorderStyle_DashDotDot" xml:space="preserve">
+    <value>파선-점-점</value>
+  </data>
+  <data name="BorderStyle_Dot" xml:space="preserve">
+    <value>점선</value>
+  </data>
+  <data name="BorderStyle_Solid" xml:space="preserve">
+    <value>실선</value>
+  </data>
+  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
+    <value>청록: {0:0.0}%, 마젠타: {1:0.0}%, 노랑: {2:0.0}%, 검정: {3:0.0}%</value>
+  </data>
+  <data name="CodeMenu_Create_Close" xml:space="preserve">
+    <value>닫기</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
+    <value>랜덤 형용사</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
+    <value>랜덤 동물</value>
+  </data>
+  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
+    <value>CSS 탐색하기...</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>파일 업로더</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>이미지 업로더</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>텍스트 업로더</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>URL 공유 서비스</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>URL 단축기</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>효과 없음</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>찢어진 가장자리</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>물결</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>톱니</value>
+  </data>
+  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
+    <value>폴더 탐색하기...</value>
+  </data>
+  <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
+    <value>상태: {0}</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
+    <value>파일명: {0}</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
+    <value>대기중.</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
+    <value>다운로드 완료.</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
+    <value>설치</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
+    <value>다운로드 속도</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
+    <value>파일 크기</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
+    <value>진행률</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
+    <value>다운로드 중.</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
+    <value>파일 크기 가져오는 중.</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>절대 크기</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>크기 조정 안 함</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>캔버스 비율</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Percentage of 이미지</value>
+  </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>기본값</value>
+  </data>
+  <data name="EDataType_File" xml:space="preserve">
+    <value>파일</value>
+  </data>
+  <data name="EDataType_Image" xml:space="preserve">
+    <value>이미지</value>
+  </data>
+  <data name="EDataType_Text" xml:space="preserve">
+    <value>텍스트</value>
+  </data>
+  <data name="EDataType_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
+    <value>실행 파일 탐색하기...</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
+    <value>복사</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
+    <value>잘라내기</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
+    <value>붙여넣기</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>다시 실행</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>모두 선택</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>실행 취소</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>사용자 정의 파일 업로더</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>이메일</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>공유된 폴더</value>
+  </data>
+  <data name="FileExistAction_Ask" xml:space="preserve">
+    <value>어떻게 할지 물어보기</value>
+  </data>
+  <data name="FileExistAction_Cancel" xml:space="preserve">
+    <value>저장하지 않기</value>
+  </data>
+  <data name="FileExistAction_Overwrite" xml:space="preserve">
+    <value>파일 덮어쓰기</value>
+  </data>
+  <data name="FileExistAction_UniqueName" xml:space="preserve">
+    <value>파일 이름에 숫자 덧붙이기</value>
+  </data>
+  <data name="GIFQuality_Bit4" xml:space="preserve">
+    <value>16색 팔진트리 양자화</value>
+  </data>
+  <data name="GIFQuality_Bit8" xml:space="preserve">
+    <value>256색 팔진트리 양자화 (느리지만 더 나은 품질)</value>
+  </data>
+  <data name="GIFQuality_Default" xml:space="preserve">
+    <value>기본 .NET 인코딩 (빠르지만 그럭저럭인 품질)</value>
+  </data>
+  <data name="GIFQuality_Grayscale" xml:space="preserve">
+    <value>회색조 256색 팔레트 양자화</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>파일 고르기</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>폴더 고르기</value>
+  </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>폴더를 추가할 수 없습니다. 경로 설정을 확인해 주세요.</value>
+  </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>다음 파일이 존재하지 않습니다:</value>
+  </data>
+  <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
+    <value>다음 폴더가 존재하지 않습니다:</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>화면 녹화 중단</value>
+  </data>
+  <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
+    <value>현재 모니터 촬영</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow" xml:space="preserve">
+    <value>현재 창 촬영</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowBorderless" xml:space="preserve">
+    <value>Make active 창 borderless</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
+    <value>Make active 창 위쪽 most</value>
+  </data>
+  <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
+    <value>이미지 분석</value>
+  </data>
+  <data name="HotkeyType_AutoCapture" xml:space="preserve">
+    <value>자동 촬영</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>테두리 없는 창</value>
+  </data>
+  <data name="HotkeyType_Category_Other" xml:space="preserve">
+    <value>기타</value>
+  </data>
+  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
+    <value>화면 촬영</value>
+  </data>
+  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
+    <value>화면 녹화</value>
+  </data>
+  <data name="HotkeyType_Category_Tools" xml:space="preserve">
+    <value>도구</value>
+  </data>
+  <data name="HotkeyType_Category_Upload" xml:space="preserve">
+    <value>업로드</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
+    <value>클립보드 내용 업로드</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
+    <value>클립보드 내용을 뷰어로 보고 업로드</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
+    <value>클립보드 뷰어</value>
+  </data>
+  <data name="HotkeyType_ColorPicker" xml:space="preserve">
+    <value>색상 선택기</value>
+  </data>
+  <data name="HotkeyType_CustomRegion" xml:space="preserve">
+    <value>미리 지정된 영역 촬영</value>
+  </data>
+  <data name="HotkeyType_CustomWindow" xml:space="preserve">
+    <value>캡처 pre configured 창</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>단축키 활성화/비활성화</value>
+  </data>
+  <data name="HotkeyType_DragDropUpload" xml:space="preserve">
+    <value>끌어서 업로드</value>
+  </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>ShareX 종료</value>
+  </data>
+  <data name="HotkeyType_FileUpload" xml:space="preserve">
+    <value>파일 업로드</value>
+  </data>
+  <data name="HotkeyType_FolderUpload" xml:space="preserve">
+    <value>폴더 업로드</value>
+  </data>
+  <data name="HotkeyType_HashCheck" xml:space="preserve">
+    <value>해시 검사</value>
+  </data>
+  <data name="HotkeyType_IconConverter" xml:space="preserve">
+    <value>아이콘 변환기</value>
+  </data>
+  <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
+    <value>이미지 꾸미기</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
+    <value>이미지 취합기</value>
+  </data>
+  <data name="HotkeyType_ImageComparer" xml:space="preserve">
+    <value>이미지 비교기</value>
+  </data>
+  <data name="HotkeyType_ImageEditor" xml:space="preserve">
+    <value>이미지 편집기</value>
+  </data>
+  <data name="HotkeyType_ImageEffects" xml:space="preserve">
+    <value>이미지 효과</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>이미지 splitter</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>이미지 썸네일er</value>
+  </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>이미지 뷰어</value>
+  </data>
+  <data name="HotkeyType_IndexFolder" xml:space="preserve">
+    <value>폴더 색인 만들기</value>
+  </data>
+  <data name="HotkeyType_InspectWindow" xml:space="preserve">
+    <value>창 검사</value>
+  </data>
+  <data name="HotkeyType_LastRegion" xml:space="preserve">
+    <value>마지막 영역 촬영</value>
+  </data>
+  <data name="HotkeyType_Metadata" xml:space="preserve">
+    <value>메타데이터</value>
+  </data>
+  <data name="HotkeyType_MonitorTest" xml:space="preserve">
+    <value>모니터 테스트</value>
+  </data>
+  <data name="HotkeyType_None" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>히스토리 창 열기</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>이미지 히스토리 창 열기</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>메인 창 띄우기</value>
+  </data>
+  <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
+    <value>스크린샷 폴더 열기</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
+    <value>Pause 화면 녹화</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>화면에 고정</value>
+  </data>
+  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
+    <value>Pin to 화면 (Close all)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>Pin to 화면 (From 클립보드)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>Pin to 화면 (From 파일)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>Pin to 화면 (From 화면)</value>
+  </data>
+  <data name="HotkeyType_PrintScreen" xml:space="preserve">
+    <value>전체 화면 촬영</value>
+  </data>
+  <data name="HotkeyType_QRCode" xml:space="preserve">
+    <value>QR코드</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR code (Scan 화면)</value>
+  </data>
+  <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
+    <value>QR code (Scan 영역)</value>
+  </data>
+  <data name="HotkeyType_RectangleLight" xml:space="preserve">
+    <value>직사각형 영역 촬영 (어둡지 않게)</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion" xml:space="preserve">
+    <value>직사각형 영역 촬영</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>직사각형 영역 촬영 (투명하게)</value>
+  </data>
+  <data name="HotkeyType_Ruler" xml:space="preserve">
+    <value>측정</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
+    <value>화면 색상 선택기</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
+    <value>화면 녹화 (FFmpeg)</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
+    <value>활성화 된 창 영역에서 화면 녹화 시작/중단</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>미리 지정된 영역에서 화면 녹화 시작/중단</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
+    <value>화면 녹화 (GIF)</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
+    <value>활성화 된 창 영역에서 화면 녹화 (GIF) 시작/중단</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>미리 지정된 영역에서 화면 녹화 (GIF) 시작/중단</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
+    <value>스크롤 촬영</value>
+  </data>
+  <data name="HotkeyType_ShortenURL" xml:space="preserve">
+    <value>URL 단축</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
+    <value>마지막 영역으로 자동 촬영</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
+    <value>마지막 영역으로 화면 녹화 (FFmpeg)</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
+    <value>마지막 영역으로 화면 녹화 (GIF)</value>
+  </data>
+  <data name="HotkeyType_StopAutoCapture" xml:space="preserve">
+    <value>중지 auto 캡처</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>중지 화면 녹화</value>
+  </data>
+  <data name="HotkeyType_StopUploads" xml:space="preserve">
+    <value>현재 진행중인 모든 업로드 중단</value>
+  </data>
+  <data name="HotkeyType_StripMetadata" xml:space="preserve">
+    <value>메타데이터 제거</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>액션 도구상자 토글</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>Toggle tray 메뉴</value>
+  </data>
+  <data name="HotkeyType_UploadText" xml:space="preserve">
+    <value>텍스트 업로드</value>
+  </data>
+  <data name="HotkeyType_UploadURL" xml:space="preserve">
+    <value>URL 내용 업로드</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>비디오 변환기</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
+    <value>비디오 섬네일 생성기</value>
+  </data>
+  <data name="HSB_ToString_" xml:space="preserve">
+    <value>색상: {0:0.0}°, 채도: {1:0.0}%, 밝기: {2:0.0}%</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>사용자 정의 이미지 업로더</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>파일 업로더</value>
+  </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>자동 조정</value>
+  </data>
+  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
+    <value>전체화면</value>
+  </data>
+  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
+    <value>최대화</value>
+  </data>
+  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
+    <value>기본</value>
+  </data>
+  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
+    <value>이전 상태</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>큰 정사각형</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>더 큰 섬네일</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>큰 섬네일</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>중간 섬네일</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>작은 정사각형</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>작은 섬네일</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
+    <value>아니요</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
+    <value>네</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>복사 name</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>복사 value</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>값</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>1일</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>1시간</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>1달</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>10분</value>
+  </data>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>만료되지 않음</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>1주</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>2주</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>비밀 (회원 전용)</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>공개</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>비공개</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>자동 감지</value>
+  </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>24비트</value>
+  </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>32비트</value>
+  </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>기본</value>
+  </data>
+  <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
+    <value>인쇄</value>
+  </data>
+  <data name="PrivateBinExpiration_D1" xml:space="preserve">
+    <value>1일</value>
+  </data>
+  <data name="PrivateBinExpiration_H1" xml:space="preserve">
+    <value>1시간</value>
+  </data>
+  <data name="PrivateBinExpiration_M1" xml:space="preserve">
+    <value>1개월</value>
+  </data>
+  <data name="PrivateBinExpiration_M10" xml:space="preserve">
+    <value>10분</value>
+  </data>
+  <data name="PrivateBinExpiration_M5" xml:space="preserve">
+    <value>5분</value>
+  </data>
+  <data name="PrivateBinExpiration_N" xml:space="preserve">
+    <value>사용 안 함</value>
+  </data>
+  <data name="PrivateBinExpiration_W1" xml:space="preserve">
+    <value>1주</value>
+  </data>
+  <data name="PrivateBinExpiration_Y1" xml:space="preserve">
+    <value>1년</value>
+  </data>
+  <data name="PrivateBinFormat_Markdown" xml:space="preserve">
+    <value>Markdown</value>
+  </data>
+  <data name="PrivateBinFormat_PlainText" xml:space="preserve">
+    <value>일반 텍스트</value>
+  </data>
+  <data name="PrivateBinFormat_SyntaxHighlighting" xml:space="preserve">
+    <value>구문 강조</value>
+  </data>
+  <data name="ProxyMethod_Automatic" xml:space="preserve">
+    <value>자동</value>
+  </data>
+  <data name="ProxyMethod_Manual" xml:space="preserve">
+    <value>직접 입력</value>
+  </data>
+  <data name="ProxyMethod_None" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>무작위 이모지({n} 사용 반복)</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>모호하지 않은 무작위 영숫자 문자({n} 사용 반복)</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>촬영 취소</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>활성화 된 모니터 촬영</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>전체 화면 촬영</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
+    <value>캡처 last 영역</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>아무것도 하지 않기</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>모양 지우기</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>모양 지우기 또는 촬영 취소</value>
+  </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>도구 타입 교체</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
+    <value>컴퓨터</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
+    <value>날짜 및 시각</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
+    <value>이미지</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
+    <value>자동 증가</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
+    <value>랜덤</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>창</value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>컴퓨터 이름</value>
+  </data>
+  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
+    <value>현재 일</value>
+  </data>
+  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
+    <value>임의의 GUID</value>
+  </data>
+  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
+    <value>현재 시</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>이미지 높이</value>
+  </data>
+  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
+    <value>자동 증가 숫자({n}을 사용하여 왼쪽을 0으로 채움)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>자동 증가하는 소문자 영숫자 (대소문자 미구분). 0으로 {n}만큼 패딩</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>자동 증가하는 소문자 영숫자 (대소문자 구분). 0으로 {n}만큼 패딩</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>자동 증가하는 {n}진법 영숫자 (1 &lt; n &lt; 63)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>자동 증가하는 16진법 숫자. 0으로 {n}만큼 패딩</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
+    <value>현재 분</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
+    <value>현재 달</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
+    <value>현재 달 이름 (현지 언어)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
+    <value>현재 달 이름 (영어)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
+    <value>현재 밀리초</value>
+  </data>
+  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
+    <value>줄바꿈</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>현재 창의 프로세스명</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>임의의 영숫자 문자({n}을 사용하여 반복)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>Random line from a 파일 (Use {filepath} to determine the 파일)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
+    <value>0~9의 임의 숫자({n}을 사용하여 반복)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>임의의 16진법 숫자. {n}만큼 반복</value>
+  </data>
+  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
+    <value>현재 초</value>
+  </data>
+  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
+    <value>현재 창의 이름</value>
+  </data>
+  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
+    <value>사용자 아이디</value>
+  </data>
+  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
+    <value>사용자 이름</value>
+  </data>
+  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
+    <value>유닉스 타임스탬프</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>현재 요일 (현지 언어)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>현재 요일 (영어)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
+    <value>이미지 너비</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>연중 주</value>
+  </data>
+  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
+    <value>현재 년도</value>
+  </data>
+  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
+    <value>현재 년도 (2자리)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
+    <value>FFmpeg (좋은 품질)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
+    <value>.NET (나쁜 품질)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
+    <value>팔진트리 양자화 (보통 품질)</value>
+  </data>
+  <data name="ScrollMethod_DownArrow" xml:space="preserve">
+    <value>아래쪽 화살표</value>
+  </data>
+  <data name="ScrollMethod_MouseWheel" xml:space="preserve">
+    <value>마우스 휠</value>
+  </data>
+  <data name="ScrollMethod_PageDown" xml:space="preserve">
+    <value>Page Down</value>
+  </data>
+  <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
+    <value>스크롤 메시지</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>화살표 그리기</value>
+  </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>커서 그리기</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>타원 그리기</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>자유롭게 그리기</value>
+  </data>
+  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
+    <value>자유형 화살표</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>이미지 파일 그리기</value>
+  </data>
+  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
+    <value>스크린 화면을 그리기</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>선분 그리기</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>확대</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>직사각형 그리기</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>스마트 지우개</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>말풍선 그리기</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>단계 그리기</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>텍스트(칠) 그리기</value>
+  </data>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>텍스트(획) 그리기</value>
+  </data>
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
+    <value>흐림 효과</value>
+  </data>
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
+    <value>강조 효과</value>
+  </data>
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
+    <value>모자이크 효과</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>타원 영역</value>
+  </data>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>자유형 영역</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>직사각형 영역</value>
+  </data>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>이미지 자르기(C)</value>
+  </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>잘라내기(X)</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>선택 및 이동(M)</value>
+  </data>
+  <data name="ShapeType_ToolSpotlight" xml:space="preserve">
+    <value>스포트라이트</value>
+  </data>
+  <data name="StepType_LettersLowercase" xml:space="preserve">
+    <value>문자(소문자)</value>
+  </data>
+  <data name="StepType_LettersUppercase" xml:space="preserve">
+    <value>문자(대문자)</value>
+  </data>
+  <data name="StepType_Numbers" xml:space="preserve">
+    <value>숫자</value>
+  </data>
+  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
+    <value>로마 숫자(소문자)</value>
+  </data>
+  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
+    <value>로마 숫자(대문자)</value>
+  </data>
+  <data name="SupportedLanguage_Automatic" xml:space="preserve">
+    <value>자동</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>사용자 정의 텍스트 업로더</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>파일 업로더</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
+    <value>아래쪽</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
+    <value>위쪽</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>기본값</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>편집 이미지</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>열기 파일</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>열기 폴더</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>열기 이미지 viewer</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>열기 URL</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>선택</value>
+  </data>
+  <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
+    <value>편집 이미지</value>
+  </data>
+  <data name="ToastClickAction_CloseNotification" xml:space="preserve">
+    <value>알림 닫기</value>
+  </data>
+  <data name="ToastClickAction_CopyFile" xml:space="preserve">
+    <value>복사 파일</value>
+  </data>
+  <data name="ToastClickAction_CopyFilePath" xml:space="preserve">
+    <value>복사 파일 경로</value>
+  </data>
+  <data name="ToastClickAction_CopyImageToClipboard" xml:space="preserve">
+    <value>이미지 복사</value>
+  </data>
+  <data name="ToastClickAction_CopyUrl" xml:space="preserve">
+    <value>복사 링크</value>
+  </data>
+  <data name="ToastClickAction_DeleteFile" xml:space="preserve">
+    <value>삭제 파일 locally</value>
+  </data>
+  <data name="ToastClickAction_OpenFile" xml:space="preserve">
+    <value>열기 파일</value>
+  </data>
+  <data name="ToastClickAction_OpenFolder" xml:space="preserve">
+    <value>열기 폴더</value>
+  </data>
+  <data name="ToastClickAction_OpenUrl" xml:space="preserve">
+    <value>열기 링크</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>화면에 고정</value>
+  </data>
+  <data name="ToastClickAction_Upload" xml:space="preserve">
+    <value>업로드 파일</value>
+  </data>
+  <data name="UpdateChannel_Dev" xml:space="preserve">
+    <value>개발</value>
+  </data>
+  <data name="UpdateChannel_PreRelease" xml:space="preserve">
+    <value>사전 릴리스</value>
+  </data>
+  <data name="UpdateChannel_Release" xml:space="preserve">
+    <value>릴리스</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>{0}의 새 버전을 사용할 수 있습니다.
+업데이트 파일을 내려받은 뒤 설치할까요?</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
+    <value>현재 버전</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
+    <value>최신 버전</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>{0}의 새 버전을 사용할 수 있습니다.
+업데이트 파일을 내려받을까요?</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>업데이트 가능</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Bing 시각적 검색</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>사용자 정의 URL 공유 서비스</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>이메일</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>구글 이미지 검색</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>사용자 정의 URL 단축기</value>
+  </data>
+  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
+    <value>사운드 파일 탐색...</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>비공개</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>공개</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>미공개</value>
+  </data>
 </root>
