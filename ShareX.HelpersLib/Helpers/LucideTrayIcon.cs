@@ -148,7 +148,7 @@ public static class LucideTrayIcon
     {
         using SKBitmap bitmap = new(new SKImageInfo(size, size, SKColorType.Bgra8888, SKAlphaType.Premul));
         using SKCanvas canvas = new(bitmap);
-        using SKFont font = new(LucideTypeface.Value, size * 0.875f);
+        using SKFont font = new(LucideTypeface.Value, size);
         using SKPaint paint = new()
         {
             Color = color,
