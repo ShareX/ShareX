@@ -27,7 +27,6 @@ using System.Diagnostics;
 using System.Drawing;
 using WinFormsNotifyIcon = System.Windows.Forms.NotifyIcon;
 using WinFormsMouseEventArgs = System.Windows.Forms.MouseEventArgs;
-using AppResources = ShareX.Properties.Resources;
 
 namespace ShareX;
 
@@ -37,7 +36,7 @@ public partial class AutoCaptureWindow : Window
     private readonly DispatcherTimer _statusTimer;
     private readonly Stopwatch _stopwatch = new();
     private readonly WinFormsNotifyIcon _trayIcon;
-    private readonly Icon _trayIconImage;
+    private readonly IDisposable _trayIconBinding;
     private bool _isLoaded;
     private int _delay;
     private int _count;
@@ -57,13 +56,12 @@ public partial class AutoCaptureWindow : Window
         _statusTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(250) };
         _statusTimer.Tick += (_, _) => UpdateStatus();
 
-        _trayIconImage = AppResources.clock.ToIcon();
         _trayIcon = new WinFormsNotifyIcon
         {
-            Icon = _trayIconImage,
             Text = Strings.AutoCaptureWindow_Title,
             Visible = false
         };
+        _trayIconBinding = LucideTrayIcon.Bind(_trayIcon, LucideIcons.clock);
         _trayIcon.MouseClick += OnTrayIconClick;
 
         _customRegion = Program.Settings.AutoCaptureRegion;
@@ -299,7 +297,7 @@ public partial class AutoCaptureWindow : Window
         Stop();
         _trayIcon.Visible = false;
         _trayIcon.MouseClick -= OnTrayIconClick;
+        _trayIconBinding.Dispose();
         _trayIcon.Dispose();
-        _trayIconImage.Dispose();
     }
 }
