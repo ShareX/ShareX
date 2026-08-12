@@ -43,7 +43,7 @@
         </Style>
     </Window.Styles>
 
-    <Grid Margin="14">
+    <Grid x:Name="NotificationRoot" Margin="14">
         <Border Background="Transparent"
                 CornerRadius="4"
                 BoxShadow="0 0 15 #80000000">
@@ -54,6 +54,8 @@
                     ClipToBounds="True"
                     BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
                     BorderThickness="1"
+                    PointerEntered="OnCardPointerEntered"
+                    PointerExited="OnCardPointerExited"
                     PointerPressed="OnCardPointerPressed"
                     PointerMoved="OnCardPointerMoved"
                     PointerReleased="OnCardPointerReleased">

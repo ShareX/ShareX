@@ -28,14 +28,17 @@ using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Platform.Storage;
+using Avalonia.Rendering.Composition;
+using Avalonia.Rendering.Composition.Animations;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using System;
-using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using DrawingBitmap = System.Drawing.Bitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingContentAlignment = System.Drawing.ContentAlignment;
@@ -54,9 +57,8 @@ public partial class NotificationWindow : Window
     private static NotificationWindow? _instance;
 
     private readonly DispatcherTimer _durationTimer;
-    private readonly DispatcherTimer _fadeTimer;
-    private readonly DispatcherTimer _hoverTimer;
-    private readonly Stopwatch _fadeStopwatch = new();
+    private CancellationTokenSource? _fadeCancellation;
+    private CompositionVisual? _fadeVisual;
     private NotificationWindowConfig? _config;
     private Bitmap? _previewBitmap;
     private bool _durationEnded;
@@ -74,12 +76,8 @@ public partial class NotificationWindow : Window
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
 
-        _durationTimer = new DispatcherTimer();
+        _durationTimer = new DispatcherTimer(DispatcherPriority.Normal);
         _durationTimer.Tick += OnDurationElapsed;
-        _fadeTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(16) };
-        _fadeTimer.Tick += OnFadeTick;
-        _hoverTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(40) };
-        _hoverTimer.Tick += OnHoverTick;
 
         Opened += OnOpened;
         Closed += OnClosed;
@@ -137,12 +135,10 @@ public partial class NotificationWindow : Window
     public void LoadConfig(NotificationWindowConfig config)
     {
         _durationTimer.Stop();
-        _fadeTimer.Stop();
-        _fadeStopwatch.Reset();
+        CancelFade();
         _durationEnded = false;
         _pointerInside = false;
         ResetPointerInteraction();
-        Opacity = 1;
 
         _previewBitmap?.Dispose();
         _previewBitmap = null;
@@ -302,7 +298,6 @@ public partial class NotificationWindow : Window
 
     private void OnOpened(object? sender, EventArgs e)
     {
-        _hoverTimer.Start();
         Dispatcher.UIThread.Post(PositionWindow, DispatcherPriority.Loaded);
         Dispatcher.UIThread.Post(UpdatePointerInside, DispatcherPriority.Loaded);
     }
@@ -350,43 +345,84 @@ public partial class NotificationWindow : Window
         }
     }
 
-    private void StartFade()
+    private async void StartFade()
     {
-        if (_config == null)
+        if (_config == null || _fadeCancellation != null)
         {
             return;
         }
 
-        if (_config.FadeDuration <= 0)
+        int fadeDuration = _config.FadeDuration;
+
+        if (fadeDuration <= 0)
         {
             Close();
             return;
         }
 
-        _fadeStopwatch.Restart();
-        _fadeTimer.Start();
-    }
+        CancellationTokenSource cancellation = new();
+        _fadeCancellation = cancellation;
 
-    private void OnFadeTick(object? sender, EventArgs e)
-    {
-        if (_config == null)
+        CompositionVisual? visual = ElementComposition.GetElementVisual(NotificationRoot);
+        if (visual == null)
         {
+            _fadeCancellation = null;
+            cancellation.Dispose();
+            Close();
             return;
         }
 
-        double progress = _fadeStopwatch.Elapsed.TotalMilliseconds / _config.FadeDuration;
+        _fadeVisual = visual;
+        ScalarKeyFrameAnimation animation = visual.Compositor.CreateScalarKeyFrameAnimation();
+        animation.Duration = TimeSpan.FromMilliseconds(fadeDuration);
+        animation.StopBehavior = AnimationStopBehavior.SetToFinalValue;
+        animation.InsertKeyFrame(0f, 1f);
+        animation.InsertKeyFrame(1f, 0f);
+        visual.StartAnimation("Opacity", animation);
 
-        if (progress >= 1)
+        try
         {
-            Close();
+            await Task.Delay(fadeDuration, cancellation.Token);
+
+            if (!cancellation.IsCancellationRequested)
+            {
+                Close();
+            }
         }
-        else
+        catch (OperationCanceledException) when (cancellation.IsCancellationRequested)
         {
-            Opacity = 1 - progress;
+        }
+        finally
+        {
+            if (ReferenceEquals(_fadeCancellation, cancellation))
+            {
+                _fadeCancellation = null;
+                _fadeVisual = null;
+            }
+
+            cancellation.Dispose();
         }
     }
 
-    private void OnHoverTick(object? sender, EventArgs e) => UpdatePointerInside();
+    private void CancelFade(bool resetOpacity = true)
+    {
+        CancellationTokenSource? cancellation = _fadeCancellation;
+        CompositionVisual? visual = _fadeVisual;
+        _fadeCancellation = null;
+        _fadeVisual = null;
+        cancellation?.Cancel();
+        visual?.StopAnimation("Opacity");
+
+        if (resetOpacity && visual != null)
+        {
+            ScalarKeyFrameAnimation resetAnimation = visual.Compositor.CreateScalarKeyFrameAnimation();
+            resetAnimation.Duration = TimeSpan.FromMilliseconds(1);
+            resetAnimation.StopBehavior = AnimationStopBehavior.SetToFinalValue;
+            resetAnimation.InsertKeyFrame(0f, 1f);
+            resetAnimation.InsertKeyFrame(1f, 1f);
+            visual.StartAnimation("Opacity", resetAnimation);
+        }
+    }
 
     private void UpdatePointerInside()
     {
@@ -402,6 +438,15 @@ public partial class NotificationWindow : Window
         bool isInside = cursor.X >= topLeft.X && cursor.X < bottomRight.X &&
             cursor.Y >= topLeft.Y && cursor.Y < bottomRight.Y;
 
+        SetPointerInside(isInside);
+    }
+
+    private void OnCardPointerEntered(object? sender, PointerEventArgs e) => SetPointerInside(true);
+
+    private void OnCardPointerExited(object? sender, PointerEventArgs e) => SetPointerInside(false);
+
+    private void SetPointerInside(bool isInside)
+    {
         if (isInside == _pointerInside)
         {
             return;
@@ -412,9 +457,7 @@ public partial class NotificationWindow : Window
 
         if (isInside)
         {
-            _fadeTimer.Stop();
-            _fadeStopwatch.Reset();
-            Opacity = 1;
+            CancelFade();
         }
         else
         {
@@ -636,8 +679,7 @@ public partial class NotificationWindow : Window
     private void OnClosed(object? sender, EventArgs e)
     {
         _durationTimer.Stop();
-        _fadeTimer.Stop();
-        _hoverTimer.Stop();
+        CancelFade(resetOpacity: false);
         _previewBitmap?.Dispose();
         _previewBitmap = null;
         _config?.Dispose();
