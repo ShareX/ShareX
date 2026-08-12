@@ -190,6 +190,17 @@ function Read-ResourceCatalog([string]$path)
     }
 
     [xml]$document = $text
+
+    $requiredHeaders = @('resmimetype', 'version', 'reader', 'writer')
+    $presentHeaders = @($document.root.resheader | ForEach-Object { [string]$_.name })
+    foreach ($header in $requiredHeaders)
+    {
+        if ($header -notin $presentHeaders)
+        {
+            Add-ValidationError "Resource file is missing required RESX header '$header': $path"
+        }
+    }
+
     $values = [ordered]@{}
     foreach ($item in $document.root.data)
     {
