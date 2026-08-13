@@ -320,7 +320,7 @@
                                   ResizeDirection="Columns"
                                   Background="Transparent"/>
 
-                    <Border Grid.Column="2" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                    <Grid Grid.Column="2" ClipToBounds="True">
                         <Grid RowDefinitions="Auto,*">
                             <Border x:Name="AdvancedPanel"
                                     Grid.Row="0"
@@ -356,16 +356,9 @@
                                 </Grid>
                             </Border>
 
-                            <Grid Grid.Row="1" Margin="12">
-                                <Grid x:Name="PreviewContent" RowDefinitions="Auto,*" RowSpacing="10" IsVisible="False">
-                                    <TextBlock x:Name="PreviewTitle"
-                                               Grid.Row="0"
-                                               Classes="section-heading"
-                                               FontWeight="Normal"
-                                               HorizontalAlignment="Stretch"
-                                               TextAlignment="Center"
-                                               TextTrimming="CharacterEllipsis"/>
-                                    <Border Grid.Row="1"
+                            <Grid Grid.Row="1">
+                                <Grid x:Name="PreviewContent" IsVisible="False">
+                                    <Border
                                             Background="{DynamicResource ShareX.Brush.Checkered}"
                                             BorderBrush="{DynamicResource ShareX.Brush.Border}"
                                             BorderThickness="1"
@@ -412,7 +405,7 @@
                                 </StackPanel>
                             </Grid>
                         </Grid>
-                    </Border>
+                    </Grid>
                 </Grid>
             </Grid>
 

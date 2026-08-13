@@ -406,7 +406,6 @@ public partial class HistoryWindow : Window
             return;
         }
 
-        PreviewTitle.Text = item.FileName;
         PreviewUnavailable.IsVisible = true;
 
         string? imageSource = null;
