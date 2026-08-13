@@ -136,6 +136,7 @@
                                             <DataTemplate x:DataType="history:ImageHistoryEntry">
                                                 <Border Classes="thumbnail-card"
                                                         Classes.selected="{Binding IsSelected}"
+                                                        Cursor="Hand"
                                                         AttachedToVisualTree="OnThumbnailAttached"
                                                         DetachedFromVisualTree="OnThumbnailDetached"
                                                         DataContextChanged="OnThumbnailDataContextChanged"
@@ -146,16 +147,14 @@
                                                     <StackPanel Width="{Binding ThumbnailWidth}" Spacing="3">
                                                         <Border Width="{Binding ThumbnailWidth}"
                                                                 IsVisible="{Binding ShowHeaderTop}"
-                                                                Background="Transparent"
-                                                                Cursor="Hand">
+                                                                Background="Transparent">
                                                             <TextBlock Text="{Binding FileName}"
                                                                        Foreground="{DynamicResource ShareX.Brush.Text}"
                                                                        FontWeight="Normal"
                                                                        TextAlignment="Center"
                                                                        HorizontalAlignment="Stretch"
                                                                        TextTrimming="CharacterEllipsis"
-                                                                       MaxLines="1"
-                                                                       ToolTip.Tip="{Binding Item.FilePath}"/>
+                                                                       MaxLines="1"/>
                                                         </Border>
                                                         <Border Width="{Binding ThumbnailWidth}"
                                                                 Height="{Binding ThumbnailHeight}"
@@ -193,16 +192,14 @@
                                                         </Border>
                                                         <Border Width="{Binding ThumbnailWidth}"
                                                                 IsVisible="{Binding ShowHeaderBottom}"
-                                                                Background="Transparent"
-                                                                Cursor="Hand">
+                                                                Background="Transparent">
                                                             <TextBlock Text="{Binding FileName}"
                                                                        Foreground="{DynamicResource ShareX.Brush.Text}"
                                                                        FontWeight="Normal"
                                                                        TextAlignment="Center"
                                                                        HorizontalAlignment="Stretch"
                                                                        TextTrimming="CharacterEllipsis"
-                                                                       MaxLines="1"
-                                                                       ToolTip.Tip="{Binding Item.FilePath}"/>
+                                                                       MaxLines="1"/>
                                                         </Border>
                                                     </StackPanel>
 
