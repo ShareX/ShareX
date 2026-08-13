@@ -721,24 +721,6 @@
   <data name="ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel" xml:space="preserve">
     <value>Antal nye forsøg, hvis uploaden mislykkes:</value>
   </data>
-  <data name="ApplicationSettingsWindow_UseSecondaryUploadersInOrderOfPreferenceWhenRetrying" xml:space="preserve">
-    <value>Brug sekundære uploadere i prioritetsordning ved nye forsøg</value>
-  </data>
-  <data name="ApplicationSettingsWindow_SecondaryImageUploaders" xml:space="preserve">
-    <value>Sekundære billeduploadere</value>
-  </data>
-  <data name="ApplicationSettingsWindow_MoveUp" xml:space="preserve">
-    <value>Flyt op</value>
-  </data>
-  <data name="ApplicationSettingsWindow_MoveDown" xml:space="preserve">
-    <value>Flyt ned</value>
-  </data>
-  <data name="ApplicationSettingsWindow_SecondaryTextUploaders" xml:space="preserve">
-    <value>Sekundære tekstuploadere</value>
-  </data>
-  <data name="ApplicationSettingsWindow_SecondaryFileUploaders" xml:space="preserve">
-    <value>Sekundære filuploadere</value>
-  </data>
   <data name="ApplicationSettingsWindow_SaveTasksToHistory" xml:space="preserve">
     <value>Gem opgaver i historikken</value>
   </data>

@@ -721,24 +721,6 @@
   <data name="ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel" xml:space="preserve">
     <value>Numero di tentativi se il caricamento non riesce:</value>
   </data>
-  <data name="ApplicationSettingsWindow_UseSecondaryUploadersInOrderOfPreferenceWhenRetrying" xml:space="preserve">
-    <value>Usa caricatori secondari in ordine di preferenza durante i nuovi tentativi</value>
-  </data>
-  <data name="ApplicationSettingsWindow_SecondaryImageUploaders" xml:space="preserve">
-    <value>Caricatori immagini secondari</value>
-  </data>
-  <data name="ApplicationSettingsWindow_MoveUp" xml:space="preserve">
-    <value>Sposta su</value>
-  </data>
-  <data name="ApplicationSettingsWindow_MoveDown" xml:space="preserve">
-    <value>Sposta giù</value>
-  </data>
-  <data name="ApplicationSettingsWindow_SecondaryTextUploaders" xml:space="preserve">
-    <value>Caricatori testo secondari</value>
-  </data>
-  <data name="ApplicationSettingsWindow_SecondaryFileUploaders" xml:space="preserve">
-    <value>Caricatori file secondari</value>
-  </data>
   <data name="ApplicationSettingsWindow_SaveTasksToHistory" xml:space="preserve">
     <value>Salva attività nella cronologia</value>
   </data>

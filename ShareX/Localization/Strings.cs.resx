@@ -721,24 +721,6 @@
   <data name="ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel" xml:space="preserve">
     <value>Počet opakování při neúspěšném nahrávání:</value>
   </data>
-  <data name="ApplicationSettingsWindow_UseSecondaryUploadersInOrderOfPreferenceWhenRetrying" xml:space="preserve">
-    <value>Při opakování použít sekundární služby nahrávání podle pořadí přednosti</value>
-  </data>
-  <data name="ApplicationSettingsWindow_SecondaryImageUploaders" xml:space="preserve">
-    <value>Sekundární služby nahrávání obrázků</value>
-  </data>
-  <data name="ApplicationSettingsWindow_MoveUp" xml:space="preserve">
-    <value>Přesunout nahoru</value>
-  </data>
-  <data name="ApplicationSettingsWindow_MoveDown" xml:space="preserve">
-    <value>Přesunout dolů</value>
-  </data>
-  <data name="ApplicationSettingsWindow_SecondaryTextUploaders" xml:space="preserve">
-    <value>Sekundární služby nahrávání textu</value>
-  </data>
-  <data name="ApplicationSettingsWindow_SecondaryFileUploaders" xml:space="preserve">
-    <value>Sekundární služby nahrávání souborů</value>
-  </data>
   <data name="ApplicationSettingsWindow_SaveTasksToHistory" xml:space="preserve">
     <value>Ukládat úlohy do historie</value>
   </data>

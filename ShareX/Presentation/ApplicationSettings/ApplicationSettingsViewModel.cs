@@ -21,7 +21,6 @@ using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
 using ShareX.Properties;
-using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -42,9 +41,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     private readonly DispatcherTimer _saveTimer;
     private SettingsNavigationItem? _selectedNavigationItem;
     private ClipboardFormatItem? _selectedClipboardFormat;
-    private UploaderOption<ImageDestination>? _selectedImageUploader;
-    private UploaderOption<TextDestination>? _selectedTextUploader;
-    private UploaderOption<FileDestination>? _selectedFileUploader;
     private string _personalFolderPath = string.Empty;
     private string _personalFolderPreview = string.Empty;
     private string _screenshotsFolderPreview = string.Empty;
@@ -69,9 +65,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     public ObservableCollection<SettingsNavigationItem> NavigationItems { get; private set; } = [];
     public ObservableCollection<ClipboardFormatItem> ClipboardFormats { get; private set; } = [];
-    public ObservableCollection<UploaderOption<ImageDestination>> SecondaryImageUploaders { get; private set; } = [];
-    public ObservableCollection<UploaderOption<TextDestination>> SecondaryTextUploaders { get; private set; } = [];
-    public ObservableCollection<UploaderOption<FileDestination>> SecondaryFileUploaders { get; private set; } = [];
     public IReadOnlyList<LanguageOption> LanguageOptions { get; } = CreateLanguageOptions();
     public IReadOnlyList<EnumOption<HotkeyType>> HotkeyTypeOptions { get; } = CreateEnumOptions<HotkeyType>();
     public IReadOnlyList<EnumOption<UpdateChannel>> UpdateChannelOptions { get; } = CreateEnumOptions<UpdateChannel>();
@@ -535,11 +528,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     }
 
     public decimal MaxUploadFailRetry { get => Settings.MaxUploadFailRetry; set => SetSetting(Settings.MaxUploadFailRetry, decimal.ToInt32(value), x => Settings.MaxUploadFailRetry = x); }
-    public bool UseSecondaryUploaders { get => Settings.UseSecondaryUploaders; set => SetSetting(Settings.UseSecondaryUploaders, value, x => Settings.UseSecondaryUploaders = x); }
-
-    public UploaderOption<ImageDestination>? SelectedImageUploader { get => _selectedImageUploader; set => SetField(ref _selectedImageUploader, value); }
-    public UploaderOption<TextDestination>? SelectedTextUploader { get => _selectedTextUploader; set => SetField(ref _selectedTextUploader, value); }
-    public UploaderOption<FileDestination>? SelectedFileUploader { get => _selectedFileUploader; set => SetField(ref _selectedFileUploader, value); }
 
     public bool HistorySaveTasks { get => Settings.HistorySaveTasks; set => SetSetting(Settings.HistorySaveTasks, value, x => Settings.HistorySaveTasks = x); }
     public bool HistoryCheckURL { get => Settings.HistoryCheckURL; set => SetSetting(Settings.HistoryCheckURL, value, x => Settings.HistoryCheckURL = x); }
@@ -704,10 +692,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         MarkChanged();
     }
 
-    public void MoveSelectedImageUploader(int offset) => MoveUploader(SecondaryImageUploaders, SelectedImageUploader, offset, list => Settings.SecondaryImageUploaders = list);
-    public void MoveSelectedTextUploader(int offset) => MoveUploader(SecondaryTextUploaders, SelectedTextUploader, offset, list => Settings.SecondaryTextUploaders = list);
-    public void MoveSelectedFileUploader(int offset) => MoveUploader(SecondaryFileUploaders, SelectedFileUploader, offset, list => Settings.SecondaryFileUploaders = list);
-
     public void EditQuickTaskMenu() => QuickTaskMenuEditorIntegration.Show();
 
     public async Task CheckDevBuildAsync()
@@ -862,11 +846,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             .Select(x => new ClipboardFormatItem(x, MarkChanged)));
         SelectedClipboardFormat = ClipboardFormats.FirstOrDefault();
 
-        SecondaryImageUploaders = CreateUploaderOptions(Settings.SecondaryImageUploaders);
-        SecondaryTextUploaders = CreateUploaderOptions(Settings.SecondaryTextUploaders);
-        SecondaryFileUploaders = CreateUploaderOptions(Settings.SecondaryFileUploaders);
-        SyncUploaderSettings();
-
         RefreshBufferSizeOptions();
 
         NavigationItems = CreateNavigationItems();
@@ -985,41 +964,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         {
             ScreenshotsFolderPreview = Strings.ApplicationSettingsWindow_ErrorPrefix + " " + e.Message;
         }
-    }
-
-    private void SyncUploaderSettings()
-    {
-        Settings.SecondaryImageUploaders = SecondaryImageUploaders.Select(x => x.Value).ToList();
-        Settings.SecondaryTextUploaders = SecondaryTextUploaders.Select(x => x.Value).ToList();
-        Settings.SecondaryFileUploaders = SecondaryFileUploaders.Select(x => x.Value).ToList();
-    }
-
-    private void MoveUploader<T>(ObservableCollection<UploaderOption<T>> items, UploaderOption<T>? selected, int offset, Action<List<T>> update)
-        where T : struct, Enum
-    {
-        if (selected == null || items.Count < 2)
-        {
-            return;
-        }
-
-        int oldIndex = items.IndexOf(selected);
-        int newIndex = Math.Clamp(oldIndex + offset, 0, items.Count - 1);
-        if (oldIndex == newIndex)
-        {
-            return;
-        }
-
-        items.Move(oldIndex, newIndex);
-        update(items.Select(x => x.Value).ToList());
-        MarkChanged();
-    }
-
-    private static ObservableCollection<UploaderOption<T>> CreateUploaderOptions<T>(List<T> configured) where T : struct, Enum
-    {
-        IReadOnlyList<T> values = Helpers.GetEnums<T>();
-        List<T> normalized = configured.Where(values.Contains).Distinct().ToList();
-        normalized.AddRange(values.Where(x => !normalized.Contains(x)));
-        return new ObservableCollection<UploaderOption<T>>(normalized.Select(x => new UploaderOption<T>(x, x.GetLocalizedDescription())));
     }
 
     private bool IsPage(string id) => SelectedNavigationItem?.Id == id;

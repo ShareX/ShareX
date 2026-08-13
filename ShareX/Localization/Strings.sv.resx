@@ -721,24 +721,6 @@
   <data name="ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel" xml:space="preserve">
     <value>Antal nya försök om uppladdningen misslyckas:</value>
   </data>
-  <data name="ApplicationSettingsWindow_UseSecondaryUploadersInOrderOfPreferenceWhenRetrying" xml:space="preserve">
-    <value>Använd sekundära uppladdare i prioritetsordning vid nya försök</value>
-  </data>
-  <data name="ApplicationSettingsWindow_SecondaryImageUploaders" xml:space="preserve">
-    <value>Sekundära bilduppladdare</value>
-  </data>
-  <data name="ApplicationSettingsWindow_MoveUp" xml:space="preserve">
-    <value>Flytta upp</value>
-  </data>
-  <data name="ApplicationSettingsWindow_MoveDown" xml:space="preserve">
-    <value>Flytta ned</value>
-  </data>
-  <data name="ApplicationSettingsWindow_SecondaryTextUploaders" xml:space="preserve">
-    <value>Sekundära textuppladdare</value>
-  </data>
-  <data name="ApplicationSettingsWindow_SecondaryFileUploaders" xml:space="preserve">
-    <value>Sekundära filuppladdare</value>
-  </data>
   <data name="ApplicationSettingsWindow_SaveTasksToHistory" xml:space="preserve">
     <value>Spara uppgifter i historiken</value>
   </data>

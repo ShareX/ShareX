@@ -83,12 +83,6 @@ public partial class ApplicationSettingsWindow : Window
         }
     }
     private void OnRemoveClipboardFormatClick(object? sender, RoutedEventArgs e) => ViewModel.RemoveSelectedClipboardFormat();
-    private void OnMoveImageUploaderUpClick(object? sender, RoutedEventArgs e) => ViewModel.MoveSelectedImageUploader(-1);
-    private void OnMoveImageUploaderDownClick(object? sender, RoutedEventArgs e) => ViewModel.MoveSelectedImageUploader(1);
-    private void OnMoveTextUploaderUpClick(object? sender, RoutedEventArgs e) => ViewModel.MoveSelectedTextUploader(-1);
-    private void OnMoveTextUploaderDownClick(object? sender, RoutedEventArgs e) => ViewModel.MoveSelectedTextUploader(1);
-    private void OnMoveFileUploaderUpClick(object? sender, RoutedEventArgs e) => ViewModel.MoveSelectedFileUploader(-1);
-    private void OnMoveFileUploaderDownClick(object? sender, RoutedEventArgs e) => ViewModel.MoveSelectedFileUploader(1);
     private void OnImagePrintSettingsClick(object? sender, RoutedEventArgs e) => ViewModel.ShowImagePrintSettings(this);
     private async void OnResetSettingsClick(object? sender, RoutedEventArgs e) => await ViewModel.ResetAsync();
 

@@ -428,18 +428,7 @@ namespace ShareX
 
             if (retry > 0)
             {
-                if (Program.Settings.UseSecondaryUploaders)
-                {
-                    Info.TaskSettings.ImageDestination = Program.Settings.SecondaryImageUploaders[retry - 1];
-                    Info.TaskSettings.ImageFileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
-                    Info.TaskSettings.TextDestination = Program.Settings.SecondaryTextUploaders[retry - 1];
-                    Info.TaskSettings.TextFileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
-                    Info.TaskSettings.FileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
-                }
-                else
-                {
-                    Thread.Sleep(1000);
-                }
+                Thread.Sleep(1000);
             }
 
             try

@@ -1732,36 +1732,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel", resourceCulture);
             }
         }
-        public static string ApplicationSettingsWindow_UseSecondaryUploadersInOrderOfPreferenceWhenRetrying {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsWindow_UseSecondaryUploadersInOrderOfPreferenceWhenRetrying", resourceCulture);
-            }
-        }
-        public static string ApplicationSettingsWindow_SecondaryImageUploaders {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsWindow_SecondaryImageUploaders", resourceCulture);
-            }
-        }
-        public static string ApplicationSettingsWindow_MoveUp {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsWindow_MoveUp", resourceCulture);
-            }
-        }
-        public static string ApplicationSettingsWindow_MoveDown {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsWindow_MoveDown", resourceCulture);
-            }
-        }
-        public static string ApplicationSettingsWindow_SecondaryTextUploaders {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsWindow_SecondaryTextUploaders", resourceCulture);
-            }
-        }
-        public static string ApplicationSettingsWindow_SecondaryFileUploaders {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsWindow_SecondaryFileUploaders", resourceCulture);
-            }
-        }
         public static string ApplicationSettingsWindow_SaveTasksToHistory {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_SaveTasksToHistory", resourceCulture);

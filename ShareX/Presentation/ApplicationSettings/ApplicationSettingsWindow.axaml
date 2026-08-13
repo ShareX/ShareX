@@ -464,41 +464,8 @@
                                         <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="0" Maximum="5" Value="{Binding MaxUploadFailRetry, Mode=TwoWay}"/>
                                     </Grid>
-                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_UseSecondaryUploadersInOrderOfPreferenceWhenRetrying}" IsChecked="{Binding UseSecondaryUploaders, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
-                            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="6">
-                                <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
-                                    <StackPanel Spacing="4">
-                                        <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_SecondaryImageUploaders}"/>
-                                        <ListBox Classes="settings-list" ItemsSource="{Binding SecondaryImageUploaders}" SelectedItem="{Binding SelectedImageUploader, Mode=TwoWay}"/>
-                                        <StackPanel Orientation="Horizontal" Spacing="4">
-                                            <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_MoveUp}" Click="OnMoveImageUploaderUpClick"/>
-                                            <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_MoveDown}" Click="OnMoveImageUploaderDownClick"/>
-                                        </StackPanel>
-                                    </StackPanel>
-                                </Border>
-                                <Border Grid.Column="1" Classes="section-card" controls:SettingsSearch.IsPanel="True">
-                                    <StackPanel Spacing="4">
-                                        <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_SecondaryTextUploaders}"/>
-                                        <ListBox Classes="settings-list" ItemsSource="{Binding SecondaryTextUploaders}" SelectedItem="{Binding SelectedTextUploader, Mode=TwoWay}"/>
-                                        <StackPanel Orientation="Horizontal" Spacing="4">
-                                            <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_MoveUp}" Click="OnMoveTextUploaderUpClick"/>
-                                            <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_MoveDown}" Click="OnMoveTextUploaderDownClick"/>
-                                        </StackPanel>
-                                    </StackPanel>
-                                </Border>
-                                <Border Grid.Column="2" Classes="section-card" controls:SettingsSearch.IsPanel="True">
-                                    <StackPanel Spacing="4">
-                                        <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_SecondaryFileUploaders}"/>
-                                        <ListBox Classes="settings-list" ItemsSource="{Binding SecondaryFileUploaders}" SelectedItem="{Binding SelectedFileUploader, Mode=TwoWay}"/>
-                                        <StackPanel Orientation="Horizontal" Spacing="4">
-                                            <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_MoveUp}" Click="OnMoveFileUploaderUpClick"/>
-                                            <Button Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_MoveDown}" Click="OnMoveFileUploaderDownClick"/>
-                                        </StackPanel>
-                                    </StackPanel>
-                                </Border>
-                            </Grid>
                         </StackPanel>
                     </ScrollViewer>
 

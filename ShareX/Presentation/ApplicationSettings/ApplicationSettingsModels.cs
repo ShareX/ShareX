@@ -81,8 +81,3 @@ public sealed class ClipboardFormatItem : INotifyPropertyChanged
     private void OnPropertyChanged([CallerMemberName] string? propertyName = null) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
-
-public sealed record UploaderOption<T>(T Value, string DisplayName) where T : struct, Enum
-{
-    public override string ToString() => DisplayName;
-}

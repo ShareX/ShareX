@@ -26,7 +26,6 @@
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
-using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -94,6 +93,14 @@ namespace ShareX
 
         #endregion Paths
 
+        #region Settings
+
+        public bool AutoCleanupBackupFiles = false;
+        public bool AutoCleanupLogFiles = false;
+        public int CleanupKeepFileCount = 10;
+
+        #endregion
+
         #region Main window
 
         public bool ShowThumbnailTitle = true;
@@ -103,31 +110,17 @@ namespace ShareX
 
         #endregion Main window
 
-        #region Settings
+        #region Clipboard formats
 
-        public bool AutoCleanupBackupFiles = false;
-        public bool AutoCleanupLogFiles = false;
-        public int CleanupKeepFileCount = 10;
+        public List<ClipboardFormat> ClipboardContentFormats = new List<ClipboardFormat>();
 
         #endregion
-
-        #region Proxy
-
-        public ProxyInfo ProxySettings = new ProxyInfo();
-
-        #endregion Proxy
 
         #region Upload
 
         public int UploadLimit = 0;
         public int BufferSizePower = 5;
-        public List<ClipboardFormat> ClipboardContentFormats = new List<ClipboardFormat>();
-
         public int MaxUploadFailRetry = 1;
-        public bool UseSecondaryUploaders = false;
-        public List<ImageDestination> SecondaryImageUploaders = new List<ImageDestination>();
-        public List<TextDestination> SecondaryTextUploaders = new List<TextDestination>();
-        public List<FileDestination> SecondaryFileUploaders = new List<FileDestination>();
 
         #endregion Upload
 
@@ -154,6 +147,12 @@ namespace ShareX
         public PrintSettings PrintSettings = new PrintSettings();
 
         #endregion Print
+
+        #region Proxy
+
+        public ProxyInfo ProxySettings = new ProxyInfo();
+
+        #endregion Proxy
 
         #region Advanced
 
