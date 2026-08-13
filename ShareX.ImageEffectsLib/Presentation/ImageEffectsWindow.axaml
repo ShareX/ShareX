@@ -100,14 +100,18 @@
 
             <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="8">
                 <StackPanel Orientation="Horizontal" Spacing="8">
-                    <Button Classes="picker-button" Command="{Binding LoadFileCommand}" IsVisible="{Binding IsToolMode}"
-                            ToolTip.Tip="{x:Static localization:Strings.ImageEffectsWindow_Open_image}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/></Button>
-                    <Button Classes="picker-button" Command="{Binding LoadClipboardCommand}" IsVisible="{Binding IsToolMode}"
-                            ToolTip.Tip="{x:Static localization:Strings.ImageEffectsWindow_Load_from_clipboard}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}"/></Button>
-                    <Button Classes="picker-button" Command="{Binding PackagePresetCommand}" IsEnabled="{Binding HasSelectedPreset}"
-                            ToolTip.Tip="{x:Static localization:Strings.ImageEffectsWindow_Package_preset}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.package}"/></Button>
-                    <Button Classes="picker-button" Command="{Binding OpenHelpCommand}"
-                            ToolTip.Tip="{x:Static localization:Strings.ImageEffectsWindow_Image_effects_page}" ToolTip.Placement="Top" ToolTip.VerticalOffset="-5"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}"/></Button>
+                    <Button Command="{Binding LoadFileCommand}" IsVisible="{Binding IsToolMode}">
+                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/><TextBlock Text="{x:Static localization:Strings.ImageEffectsWindow_Open_image}"/></StackPanel>
+                    </Button>
+                    <Button Command="{Binding LoadClipboardCommand}" IsVisible="{Binding IsToolMode}">
+                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}"/><TextBlock Text="{x:Static localization:Strings.ImageEffectsWindow_Load_from_clipboard}"/></StackPanel>
+                    </Button>
+                    <Button Command="{Binding PackagePresetCommand}" IsEnabled="{Binding HasSelectedPreset}">
+                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.package}"/><TextBlock Text="{x:Static localization:Strings.ImageEffectsWindow_Package_preset}"/></StackPanel>
+                    </Button>
+                    <Button Command="{Binding OpenHelpCommand}">
+                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}"/><TextBlock Text="{x:Static localization:Strings.ImageEffectsWindow_Image_effects_page}"/></StackPanel>
+                    </Button>
                 </StackPanel>
                 <Button Grid.Column="2" Command="{Binding SaveCommand}" IsVisible="{Binding IsToolMode}">
                     <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.save}"/><TextBlock Text="{x:Static localization:Strings.ImageEffectsWindow_Save_image}"/></StackPanel>
