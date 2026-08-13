@@ -64,7 +64,7 @@
     </Window.Styles>
 
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid Margin="16,0,16,16" RowDefinitions="Auto,*" RowSpacing="12">
+            <Grid Margin="10,0,10,10" RowDefinitions="Auto,*" RowSpacing="10">
                 <Border Grid.Row="0"
                         Classes="tool-panel docked-top-toolbar">
                     <Grid ColumnDefinitions="250,Auto,Auto,Auto,Auto,Auto,*">
@@ -115,7 +115,7 @@
                     </Grid>
                 </Border>
 
-                <Grid x:Name="MainGrid" Grid.Row="1" ColumnDefinitions="650,5,*">
+                <Grid x:Name="MainGrid" Grid.Row="1" ColumnDefinitions="650,10,*">
                     <Border Grid.Column="0" Classes="tool-panel" Padding="0" ClipToBounds="True">
                         <Grid RowDefinitions="Auto,*">
                             <Border Grid.Row="0"
