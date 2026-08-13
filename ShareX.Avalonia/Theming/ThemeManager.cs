@@ -257,13 +257,9 @@ namespace ShareX.AvaloniaUI.Theming
 
         private static void RunOnUIThread(Action action)
         {
-            // Do not create Avalonia's dispatcher before the platform is initialized.
-            // Configure can be called while application settings are loading; Refresh
-            // applies those settings after AvaloniaBootstrapper installs the platform.
             if (Application.Current == null)
             {
-                action();
-                return;
+                throw new InvalidOperationException("Avalonia must be initialized before applying theme changes.");
             }
 
             if (Dispatcher.UIThread.CheckAccess())

@@ -354,6 +354,9 @@ namespace ShareX
             CheckPuushMode();
             DebugWriteFlags();
 
+            DebugHelper.WriteLine("Avalonia application initializing.");
+            AvaloniaBootstrapper.Initialize(args, StartApplication, StopApplication);
+
             SettingManager.LoadInitialSettings();
 
             UpdateManager = new ShareXUpdateManager();
@@ -361,7 +364,7 @@ namespace ShareX
             CleanupManager.CleanupAsync();
 
             DebugHelper.WriteLine("Avalonia application starting.");
-            AvaloniaBootstrapper.Run(args, StartApplication, StopApplication);
+            AvaloniaBootstrapper.Run();
 
             CloseSequence();
         }
