@@ -830,7 +830,9 @@ namespace ShareX
                     EditImage = filePath => AnnotateImageFromFile(filePath),
                     PinToScreen = filePath => PinToScreen(filePath),
                     AnalyzeImage = filePath => AnalyzeImage(filePath),
-                    ShowImage = filePath => OpenImageViewer(filePath)
+                    ShowImage = filePath => OpenImageViewer(filePath),
+                    ShowImages = (filePaths, selectedIndex) =>
+                        ImageViewerWindowIntegration.ShowImage(filePaths, selectedIndex)
                 });
         }
 

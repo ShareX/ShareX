@@ -1030,7 +1030,21 @@ public partial class HistoryWindow : Window
     private void ShowSelectedImage()
     {
         HistoryItem? item = GetPrimaryItem();
-        if (item != null && File.Exists(item.FilePath) && FileHelpers.IsImageFile(item.FilePath)) _services.ShowImage?.Invoke(item.FilePath);
+        if (item == null || !File.Exists(item.FilePath) || !FileHelpers.IsImageFile(item.FilePath)) return;
+        int currentIndex = Array.IndexOf(_filteredHistoryItems, item);
+        int start = Math.Max(0, currentIndex - 100);
+        int end = Math.Min(_filteredHistoryItems.Length, start + 201);
+        List<string> files = [];
+        int selectedIndex = 0;
+        for (int i = start; i < end; i++)
+        {
+            string path = _filteredHistoryItems[i].FilePath;
+            if (!File.Exists(path) || !FileHelpers.IsImageFile(path)) continue;
+            if (ReferenceEquals(_filteredHistoryItems[i], item)) selectedIndex = files.Count;
+            files.Add(path);
+        }
+        if (_services.ShowImages != null) _services.ShowImages(files, selectedIndex);
+        else _services.ShowImage?.Invoke(item.FilePath);
     }
 
     private void OnUploadFileClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.UploadFile, false);

@@ -106,26 +106,32 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
 
     public bool LoadFiles(IReadOnlyList<string> filePaths, int selectedIndex)
     {
-        string? selectedPath = selectedIndex >= 0 && selectedIndex < filePaths.Count
-            ? filePaths[selectedIndex]
-            : null;
+        List<string> images = [];
+        int filteredSelectedIndex = -1;
+        for (int index = 0; index < filePaths.Count; index++)
+        {
+            string path = filePaths[index];
+            if (!File.Exists(path) || !FileHelpers.IsImageFile(path))
+            {
+                continue;
+            }
 
-        _images = filePaths
-            .Where(path => File.Exists(path) && FileHelpers.IsImageFile(path))
-            .ToArray();
+            if (index == selectedIndex)
+            {
+                filteredSelectedIndex = images.Count;
+            }
+            images.Add(path);
+        }
+
+        _images = images.ToArray();
         if (_images.Length == 0)
         {
             return false;
         }
 
-        _currentImageIndex = selectedPath == null
-            ? 0
-            : Array.FindIndex(_images,
-                path => string.Equals(path, selectedPath, StringComparison.OrdinalIgnoreCase));
-        if (_currentImageIndex < 0)
-        {
-            _currentImageIndex = Math.Clamp(selectedIndex, 0, _images.Length - 1);
-        }
+        _currentImageIndex = filteredSelectedIndex >= 0
+            ? filteredSelectedIndex
+            : Math.Clamp(selectedIndex, 0, _images.Length - 1);
 
         return LoadCurrentImage();
     }
