@@ -10,7 +10,7 @@
     <PackageVersion Include="Microsoft.ML.OnnxRuntime.DirectML" Version="1.24.4" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageVersion Include="SkiaSharp.Views.WindowsForms" Version="3.119.4" />
-    <PackageVersion Include="SSH.NET" Version="2025.1.0" />
+    <PackageVersion Include="SSH.NET" Version="2026.0.0" />
     <PackageVersion Include="ZXing.Net" Version="0.16.11" />
     <PackageVersion Include="ZXing.Net.Bindings.Windows.Compatibility" Version="0.16.14" />
     <PackageVersion Include="Avalonia" Version="12.1.1" />
