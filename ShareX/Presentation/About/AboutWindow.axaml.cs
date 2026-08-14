@@ -29,6 +29,7 @@ namespace ShareX;
 public partial class AboutWindow : Window
 {
     private readonly AvaloniaBitmap _logoBitmap;
+    private readonly ShareXClickerControl _clicker;
     private UpdateChecker? _updateChecker;
     private bool _updateChecked;
 
@@ -42,6 +43,10 @@ public partial class AboutWindow : Window
         logoStream.Position = 0;
         _logoBitmap = new AvaloniaBitmap(logoStream);
         LogoImage.Source = _logoBitmap;
+        Program.Settings.ShareXClicker ??= new ShareXClickerState();
+        _clicker = new ShareXClickerControl(Program.Settings.ShareXClicker, SettingManager.SaveApplicationConfigAsync,
+            LogoImage, ClickerOverlay, SectionsViewer, ClickerHost, AboutPanel.Background,
+            [BrandText, ProductNameText, AboutDetailsPanel, CopyrightText]);
 
         ProductNameText.Text = Program.Title;
         CopyrightText.Text = Strings.AboutWindow_Copyright;
@@ -62,7 +67,11 @@ public partial class AboutWindow : Window
 #endif
 
         Opened += OnOpened;
-        Closed += (_, _) => _logoBitmap.Dispose();
+        Closed += (_, _) =>
+        {
+            _clicker.Dispose();
+            _logoBitmap.Dispose();
+        };
     }
 
     private async void OnOpened(object? sender, EventArgs e)

@@ -43,6 +43,9 @@ namespace ShareX
         public int NameParserAutoIncrementNumber = 0;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
 
+        // Hidden About window easter egg state. The implementation lives in EasterEggs/ShareXClicker.
+        public ShareXClickerState ShareXClicker = new ShareXClickerState();
+
         // Main window
         public bool FirstTimeMinimizeToTray = true;
 

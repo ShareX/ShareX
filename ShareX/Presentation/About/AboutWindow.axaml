@@ -34,7 +34,8 @@
     <ThemeVariantScope>
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
               ColumnDefinitions="300,*">
-            <Border Grid.Column="0"
+            <Border x:Name="AboutPanel"
+                    Grid.Column="0"
                     Background="{DynamicResource ShareX.Brush.Background.Panel}"
                     Padding="24">
                 <Grid RowDefinitions="Auto,Auto,Auto,*,Auto" RowSpacing="14">
@@ -47,13 +48,15 @@
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Top"
                                    Stretch="Uniform"/>
-                            <TextBlock Text="ShareX"
+                            <TextBlock x:Name="BrandText"
+                                       Text="ShareX"
                                        Margin="0,225,0,0"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Top"
                                        FontSize="50"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource ShareX.Brush.Text}"/>
+                            <Canvas x:Name="ClickerOverlay" IsHitTestVisible="False"/>
                         </Grid>
                     </Grid>
 
@@ -64,7 +67,7 @@
                                TextAlignment="Center"
                                TextWrapping="Wrap"/>
 
-                    <StackPanel Grid.Row="2" Spacing="6" HorizontalAlignment="Center">
+                    <StackPanel x:Name="AboutDetailsPanel" Grid.Row="2" Spacing="6" HorizontalAlignment="Center">
                         <TextBlock x:Name="BuildText"
                                    IsVisible="False"
                                    FontWeight="Normal"
@@ -97,7 +100,8 @@
                 </Grid>
             </Border>
 
-            <ScrollViewer Grid.Column="1"
+            <ScrollViewer x:Name="SectionsViewer"
+                          Grid.Column="1"
                           Margin="22,14,14,14"
                           HorizontalContentAlignment="Center"
                           VerticalContentAlignment="Center"
@@ -130,6 +134,9 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </ScrollViewer>
+            <ContentControl x:Name="ClickerHost"
+                            Grid.Column="1"
+                            IsVisible="False"/>
         </Grid>
     </ThemeVariantScope>
 </Window>
