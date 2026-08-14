@@ -36,14 +36,28 @@
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
               ColumnDefinitions="300,*">
             <Border Grid.Column="0"
-                    Background="#232323"
+                    Background="{DynamicResource ShareX.Brush.Background.Panel}"
                     Padding="24">
                 <Grid RowDefinitions="Auto,Auto,Auto,*,Auto" RowSpacing="14">
                     <Grid Width="240" Height="330" HorizontalAlignment="Center">
-                        <Image x:Name="LogoImage"
-                               Source="avares://ShareX/Resources/About_Logo.png"
-                               Stretch="Uniform"
-                               PointerPressed="OnLogoPressed"/>
+                        <Grid x:Name="BrandingContainer"
+                              Background="Transparent"
+                              PointerPressed="OnLogoPressed">
+                            <Image x:Name="LogoImage"
+                                   Width="160"
+                                   Height="160"
+                                   Margin="0,50,0,0"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   Stretch="Uniform"/>
+                            <TextBlock Text="ShareX"
+                                       Margin="0,225,0,0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Top"
+                                       FontSize="50"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource ShareX.Brush.Text}"/>
+                        </Grid>
                         <Border x:Name="AnimationContainer"
                                 IsVisible="False"
                                 Background="Transparent"

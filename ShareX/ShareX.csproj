@@ -23,7 +23,6 @@
     <PackageReference Include="ZXing.Net.Bindings.Windows.Compatibility" />
   </ItemGroup>
   <ItemGroup>
-    <AvaloniaResource Include="Resources\About_Logo.png" />
     <AvaloniaResource Include="Resources\??.png" />
     <AvaloniaResource Include="Resources\globe.png" />
   </ItemGroup>

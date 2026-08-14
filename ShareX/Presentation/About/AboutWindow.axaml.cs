@@ -21,11 +21,15 @@ using ShareX.HelpersLib;
 using ShareX.Localization;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
+using DrawingBitmap = System.Drawing.Bitmap;
 
 namespace ShareX;
 
 public partial class AboutWindow : Window
 {
+    private readonly AvaloniaBitmap _logoBitmap;
     private UpdateChecker? _updateChecker;
     private bool _updateChecked;
 
@@ -33,6 +37,12 @@ public partial class AboutWindow : Window
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+
+        using DrawingBitmap logo = ShareXResources.Logo;
+        using Stream logoStream = logo.GetStream();
+        logoStream.Position = 0;
+        _logoBitmap = new AvaloniaBitmap(logoStream);
+        LogoImage.Source = _logoBitmap;
 
         ProductNameText.Text = Program.Title;
         CopyrightText.Text = Strings.AboutWindow_Copyright;
@@ -53,6 +63,7 @@ public partial class AboutWindow : Window
 #endif
 
         Opened += OnOpened;
+        Closed += (_, _) => _logoBitmap.Dispose();
     }
 
     private async void OnOpened(object? sender, EventArgs e)
@@ -88,7 +99,7 @@ public partial class AboutWindow : Window
 
     private void OnLogoPressed(object? sender, PointerPressedEventArgs e)
     {
-        LogoImage.IsVisible = false;
+        BrandingContainer.IsVisible = false;
         AnimationContainer.IsVisible = true;
         LogoAnimation.Start();
         TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
