@@ -15,7 +15,6 @@
 #nullable enable
 
 using Avalonia.Controls;
-using Avalonia.Input;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
@@ -95,21 +94,6 @@ public partial class AboutWindow : Window
                 UpdateStatusText.Text = Strings.AboutWindow_UpToDate;
                 break;
         }
-    }
-
-    private void OnLogoPressed(object? sender, PointerPressedEventArgs e)
-    {
-        BrandingContainer.IsVisible = false;
-        AnimationContainer.IsVisible = true;
-        LogoAnimation.Start();
-        TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
-        e.Handled = true;
-    }
-
-    private void OnAnimationPressed(object? sender, PointerPressedEventArgs e)
-    {
-        LogoAnimation.TogglePaused();
-        e.Handled = true;
     }
 
     private async void OnUpdateAvailableClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

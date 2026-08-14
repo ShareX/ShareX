@@ -1,6 +1,5 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:ShareX"
         xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.AboutWindow"
@@ -40,9 +39,7 @@
                     Padding="24">
                 <Grid RowDefinitions="Auto,Auto,Auto,*,Auto" RowSpacing="14">
                     <Grid Width="240" Height="330" HorizontalAlignment="Center">
-                        <Grid x:Name="BrandingContainer"
-                              Background="Transparent"
-                              PointerPressed="OnLogoPressed">
+                        <Grid>
                             <Image x:Name="LogoImage"
                                    Width="160"
                                    Height="160"
@@ -58,13 +55,6 @@
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource ShareX.Brush.Text}"/>
                         </Grid>
-                        <Border x:Name="AnimationContainer"
-                                IsVisible="False"
-                                Background="Transparent"
-                                PointerPressed="OnAnimationPressed">
-                            <local:AboutLogoAnimationControl x:Name="LogoAnimation"
-                                                             IsHitTestVisible="False"/>
-                        </Border>
                     </Grid>
 
                     <TextBlock x:Name="ProductNameText"
