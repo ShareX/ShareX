@@ -64,6 +64,7 @@ public partial class NotificationWindow : Window
     private bool _isCardPressed;
     private bool _isDragCandidate;
     private bool _fileDragStarted;
+    private bool _isFileDragActive;
     private Point _dragStart;
     private PointerPressedEventArgs? _dragEvent;
 
@@ -352,7 +353,7 @@ public partial class NotificationWindow : Window
 
     private void StartFade()
     {
-        if (_config == null)
+        if (_config == null || _isFileDragActive)
         {
             return;
         }
@@ -461,17 +462,35 @@ public partial class NotificationWindow : Window
         _isDragCandidate = false;
         _fileDragStarted = true;
         PointerPressedEventArgs dragEvent = _dragEvent;
-        IStorageFile? file = await StorageProvider.TryGetFileFromPathAsync(_config.FilePath);
-        if (file == null)
-        {
-            ResetPointerInteraction();
-            return;
-        }
+        _isFileDragActive = true;
+        _fadeTimer.Stop();
+        _fadeStopwatch.Reset();
+        Opacity = 1;
 
-        DataTransfer data = new();
-        data.Add(DataTransferItem.CreateFile(file));
-        await DragDrop.DoDragDropAsync(dragEvent, data, DragDropEffects.Copy | DragDropEffects.Move);
-        ResetPointerInteraction();
+        try
+        {
+            IStorageFile? file = await StorageProvider.TryGetFileFromPathAsync(_config.FilePath);
+            if (file == null)
+            {
+                return;
+            }
+
+            DataTransfer data = new();
+            data.Add(DataTransferItem.CreateFile(file));
+            await DragDrop.DoDragDropAsync(dragEvent, data, DragDropEffects.Copy | DragDropEffects.Move);
+        }
+        finally
+        {
+            _isFileDragActive = false;
+            ResetPointerInteraction();
+            bool wasPointerInside = _pointerInside;
+            UpdatePointerInside();
+
+            if (_durationEnded && !_pointerInside && !wasPointerInside)
+            {
+                StartFade();
+            }
+        }
     }
 
     private void OnCardPointerReleased(object? sender, PointerReleasedEventArgs e)
