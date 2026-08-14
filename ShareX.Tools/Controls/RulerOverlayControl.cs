@@ -61,6 +61,7 @@ public sealed class RulerOverlayControl : Control
     private const double LabelFontSize = 13;
     private const double LabelHorizontalPadding = 10;
     private const double LabelVerticalPadding = 5;
+    private const double LightAccentLuminanceThreshold = 0.45;
 
     private readonly DispatcherTimer _statusTimer;
     private readonly List<Measurement> _measurements = [];
@@ -627,9 +628,7 @@ public sealed class RulerOverlayControl : Control
     private IBrush GetContrastingTextBrush()
     {
         double luminance = GetRelativeLuminance(AccentColor);
-        double whiteContrast = 1.05 / (luminance + 0.05);
-        double blackContrast = (luminance + 0.05) / 0.05;
-        return whiteContrast >= blackContrast ? Brushes.White : Brushes.Black;
+        return luminance >= LightAccentLuminanceThreshold ? Brushes.Black : Brushes.White;
     }
 
     private static FormattedText CreateText(string text, IBrush brush) => new(
