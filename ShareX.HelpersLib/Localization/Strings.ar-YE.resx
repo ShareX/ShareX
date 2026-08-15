@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>عرض سجل التغييرات</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>يتوفر تحديث ShareX</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>اللون الأحمر (0-255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>الإصدار المستقر - Release</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>يتوفر إصدار أحدث.
-هل تريد تنزيله وتثبيته؟</value>
+    <value>هل تريد تنزيله وتثبيته؟</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>الإصدار الحالي</value>
@@ -1485,8 +1487,7 @@
     <value>الإصدار الأخير</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>يتوفر إصدار أحدث.
-هل تريد تنزيله؟</value>
+    <value>هل تريد تنزيله؟</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>التحديثات متاحة</value>

@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>Wijzigingslogboek weergeven</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>ShareX-update is beschikbaar</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>Rode kleur (0-255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>Release</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Er is een nieuwere versie beschikbaar.
-Wil je deze downloaden en installeren?</value>
+    <value>Wil je deze downloaden en installeren?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Huidige versie</value>
@@ -1485,8 +1487,7 @@ Wil je deze downloaden en installeren?</value>
     <value>Laatste versie</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>Er is een nieuwere versie beschikbaar.
-Wil je deze downloaden?</value>
+    <value>Wil je deze downloaden?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>Update is beschikbaar</value>

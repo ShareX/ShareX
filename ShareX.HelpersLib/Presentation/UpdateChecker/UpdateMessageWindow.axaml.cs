@@ -30,6 +30,7 @@ public partial class UpdateMessageWindow : Window
     public bool ActivateWindow { get; }
     public string MessageText { get; }
     public bool ShowChangelog { get; }
+    public string HeaderText => Localization.Strings.UpdateMessageWindow_Header;
     public string DialogTitle => Localization.Strings.UpdateMessageBox_UpdateMessageBox_update_is_available;
     public string YesText => Localization.Strings.MyMessageBox_MyMessageBox_Yes;
     public string NoText => Localization.Strings.MyMessageBox_MyMessageBox_No;

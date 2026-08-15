@@ -230,6 +230,9 @@ namespace ShareX.HelpersLib.Localization {
         public static string UpdateMessageWindow_View_changelog {
             get { return ResourceManager.GetString("UpdateMessageWindow_View_changelog", resourceCulture); }
         }
+        public static string UpdateMessageWindow_Header {
+            get { return ResourceManager.GetString("UpdateMessageWindow_Header", resourceCulture); }
+        }
         public static string CodeMenuEntryPixelInfo_Red_255 {
             get { return ResourceManager.GetString("CodeMenuEntryPixelInfo_Red_255", resourceCulture); }
         }

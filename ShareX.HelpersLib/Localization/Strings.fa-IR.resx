@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>مشاهده فهرست تغییرات</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>یک به‌روزرسانی ShareX در دسترس است</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>رنگ قرمز (0-255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>انتشار</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>نسخه جدیدتری در دسترس است.
-آیا می‌خواهید آن را دانلود و نصب کنید؟</value>
+    <value>آیا می‌خواهید آن را دانلود و نصب کنید؟</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>نسخه فعلی</value>
@@ -1485,8 +1487,7 @@
     <value>آخرین نسخه</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>نسخه جدیدتری در دسترس است.
-آیا می‌خواهید آن را دانلود کنید؟</value>
+    <value>آیا می‌خواهید آن را دانلود کنید؟</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>یک به‌روزرسانی در دسترس است</value>

@@ -54,7 +54,7 @@
                            VerticalAlignment="Center"/>
             </Border>
             <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                <TextBlock Text="{Binding DialogTitle}"
+                <TextBlock Text="{Binding HeaderText}"
                            FontSize="20"
                            FontWeight="SemiBold"
                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>

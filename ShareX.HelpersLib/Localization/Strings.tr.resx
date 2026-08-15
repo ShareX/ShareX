@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>Değişiklik günlüğünü görüntüle</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>ShareX güncelleştirmesi mevcut</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>Kırmızı renk (0-255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>Sürüm</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Daha yeni bir sürüm mevcut.
-İndirmek ve yüklemek ister misiniz?</value>
+    <value>İndirmek ve yüklemek ister misiniz?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Şu anki sürüm</value>
@@ -1485,8 +1487,7 @@
     <value>Son sürüm</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>Daha yeni bir sürüm mevcut.
-İndirmek ister misiniz?</value>
+    <value>İndirmek ister misiniz?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>Güncelleştirme mevcut</value>

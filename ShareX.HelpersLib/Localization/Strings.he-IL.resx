@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>הצגת יומן שינויים</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>קיים עדכון ל-ShareX</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>צבע אדום (0-255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>הפצה</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>גרסה חדשה יותר זמינה.
-האם תרצה להוריד ולהתקין אותה?</value>
+    <value>האם תרצה להוריד ולהתקין אותה?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>גרסה נוכחית</value>
@@ -1485,8 +1487,7 @@
     <value>גרסה עדכנית</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>גרסה חדשה יותר זמינה.
-האם תרצה להוריד אותה?</value>
+    <value>האם תרצה להוריד אותה?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>קיים עדכון</value>

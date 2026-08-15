@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>Vis ændringslog</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>En ShareX-opdatering er tilgængelig</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>Rød farve (0–255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>Stabil version</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>En nyere version er tilgængelig.
-Vil du hente og installere den?</value>
+    <value>Vil du hente og installere den?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Aktuel version</value>
@@ -1485,8 +1487,7 @@ Vil du hente og installere den?</value>
     <value>Seneste version</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>En nyere version er tilgængelig.
-Vil du hente den?</value>
+    <value>Vil du hente den?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>En opdatering er tilgængelig</value>

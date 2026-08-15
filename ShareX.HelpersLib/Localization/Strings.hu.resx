@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>Változásnapló megtekintése</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>ShareX-frissítés érhető el</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>Piros szín (0-255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>Kiadás</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Elérhető egy újabb verzió.
-Szeretné letölteni és telepíteni?</value>
+    <value>Szeretné letölteni és telepíteni?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Jelenlegi verzió</value>
@@ -1485,8 +1487,7 @@ Szeretné letölteni és telepíteni?</value>
     <value>Legújabb verzió</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>Elérhető egy újabb verzió.
-Szeretné letölteni?</value>
+    <value>Szeretné letölteni?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>Frissítés érhető el</value>

@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>Xem nhật ký thay đổi</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>Bản cập nhật ShareX khả dụng</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>Màu đỏ (0-255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>Bản phát hành</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Đã có phiên bản mới hơn.
-Bạn có muốn tải về và cài đặt không?</value>
+    <value>Bạn có muốn tải về và cài đặt không?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Phiên bản hiện tại</value>
@@ -1485,8 +1487,7 @@ Bạn có muốn tải về và cài đặt không?</value>
     <value>Phiên bản mới nhất</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>Đã có phiên bản mới hơn.
-Bạn có muốn tải về không?</value>
+    <value>Bạn có muốn tải về không?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>Bản cập nhật khả dụng</value>

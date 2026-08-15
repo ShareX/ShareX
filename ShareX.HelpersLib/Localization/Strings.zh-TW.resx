@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>檢視變更記錄</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>ShareX 有更新</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>紅色 (0-255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>正式版</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>已有新版本可用。
-是否要下載並安裝？</value>
+    <value>是否要下載並安裝？</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>目前版本</value>
@@ -1485,8 +1487,7 @@
     <value>最新版本</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>已有新版本可用。
-是否要下載？</value>
+    <value>是否要下載？</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>有更新</value>

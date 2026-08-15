@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>มุมมอง บันทึกการเปลี่ยนแปลง</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>มีอัปเดต ShareX</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>สีแดง (0-255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>รุ่น</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>มีเวอร์ชันใหม่กว่า
-คุณต้องการดาวน์โหลดและติดตั้งหรือไม่?</value>
+    <value>คุณต้องการดาวน์โหลดและติดตั้งหรือไม่?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>ปัจจุบัน เวอร์ชัน</value>
@@ -1485,8 +1487,7 @@
     <value>เวอร์ชันล่าสุด</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>มีเวอร์ชันใหม่กว่า
-คุณต้องการดาวน์โหลดหรือไม่?</value>
+    <value>คุณต้องการดาวน์โหลดหรือไม่?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>อัปเดต พร้อมใช้งาน</value>

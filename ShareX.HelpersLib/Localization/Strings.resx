@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>View changelog</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>ShareX update is available</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>Red color (0-255)</value>
   </data>
@@ -1391,8 +1394,7 @@
     <value>Release</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>A newer version is available.
-Would you like to download and install it?</value>
+    <value>Would you like to download and install it?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Current version</value>
@@ -1401,8 +1403,7 @@ Would you like to download and install it?</value>
     <value>Latest version</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>A newer version is available.
-Would you like to download it?</value>
+    <value>Would you like to download it?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>Update is available</value>

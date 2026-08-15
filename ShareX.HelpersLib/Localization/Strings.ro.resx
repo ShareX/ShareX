@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>Vizualizați jurnalul modificărilor</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>Actualizare ShareX disponibilă</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>Culoare roșie (0-255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>Lansare</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Este disponibilă o versiune mai nouă.
-Doriți să o descărcați și să o instalați?</value>
+    <value>Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Versiunea curentă</value>
@@ -1485,8 +1487,7 @@ Doriți să o descărcați și să o instalați?</value>
     <value>Cea mai recentă versiune</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>Este disponibilă o versiune mai nouă.
-Doriți să o descărcați?</value>
+    <value>Doriți să o descărcați?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>Actualizare disponibilă</value>

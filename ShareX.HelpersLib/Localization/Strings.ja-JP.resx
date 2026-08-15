@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>変更履歴を表示</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>ShareX の更新があります</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>赤色 (0-255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>公開版</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>新しいバージョンがあります。
-ダウンロードしてインストールしますか？</value>
+    <value>ダウンロードしてインストールしますか？</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>現在のバージョン</value>
@@ -1485,8 +1487,7 @@
     <value>最新バージョン</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>新しいバージョンがあります。
-ダウンロードしますか？</value>
+    <value>ダウンロードしますか？</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>更新があります</value>

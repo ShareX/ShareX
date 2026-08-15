@@ -259,6 +259,9 @@
   <data name="UpdateMessageWindow_View_changelog" xml:space="preserve">
     <value>Zobrazit seznam změn</value>
   </data>
+  <data name="UpdateMessageWindow_Header" xml:space="preserve">
+    <value>Je dostupná aktualizace ShareX</value>
+  </data>
   <data name="CodeMenuEntryPixelInfo_Red_255" xml:space="preserve">
     <value>Červená barva (0–255)</value>
   </data>
@@ -1475,8 +1478,7 @@
     <value>Vydaná verze</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Je dostupná novější verze.
-Chcete ji stáhnout a nainstalovat?</value>
+    <value>Chcete ji stáhnout a nainstalovat?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Aktuální verze</value>
@@ -1485,8 +1487,7 @@ Chcete ji stáhnout a nainstalovat?</value>
     <value>Nejnovější verze</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
-    <value>Je dostupná novější verze.
-Chcete ji stáhnout?</value>
+    <value>Chcete ji stáhnout?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>Je dostupná aktualizace</value>
