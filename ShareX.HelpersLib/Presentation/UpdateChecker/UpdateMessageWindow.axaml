@@ -31,12 +31,12 @@
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
-        <Style Selector="Button.link">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
+        <Style Selector="HyperlinkButton.link">
             <Setter Property="Padding" Value="0"/>
+            <Setter Property="MinHeight" Value="0"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
         </Style>
     </Window.Styles>
 
@@ -64,10 +64,10 @@
         <Border Grid.Row="1" Classes="message-card">
             <StackPanel Spacing="10">
                 <TextBlock Text="{Binding MessageText}" TextWrapping="Wrap"/>
-                <Button Classes="link"
-                        Content="{x:Static localization:Strings.UpdateMessageWindow_View_changelog}"
-                        IsVisible="{Binding ShowChangelog}"
-                        Click="OnViewChangelogClick"/>
+                <HyperlinkButton Classes="link"
+                                 Content="{x:Static localization:Strings.UpdateMessageWindow_View_changelog}"
+                                 IsVisible="{Binding ShowChangelog}"
+                                 Click="OnViewChangelogClick"/>
             </StackPanel>
         </Border>
 
