@@ -50,6 +50,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MessageBox = ShareX.AvaloniaUI.MessageBox;
+using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
+using MessageBoxDefaultButton = ShareX.AvaloniaUI.MessageBoxDefaultButton;
+using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
+using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 using ZXing;
 using ZXing.Common;
 using ZXing.QrCode;
@@ -2433,10 +2438,10 @@ namespace ShareX
 
                         if (cui.DestinationType == CustomUploaderDestinationType.None)
                         {
-                            DialogResult result = MessageBox.Show(string.Format(Strings.TaskHelpers_AddCustomUploaderConfirmation, cui),
+                            MessageBoxResult result = MessageBox.Show(string.Format(Strings.TaskHelpers_AddCustomUploaderConfirmation, cui),
                                 Strings.TaskHelpers_CustomUploaderConfirmationTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-                            if (result == DialogResult.No)
+                            if (result == MessageBoxResult.No)
                             {
                                 return;
                             }
@@ -2452,14 +2457,14 @@ namespace ShareX
 
                             string destinationsText = string.Join("/", destinations);
 
-                            DialogResult result = MessageBox.Show(string.Format(Strings.TaskHelpers_SetActiveCustomUploaderConfirmation, cui, destinationsText),
+                            MessageBoxResult result = MessageBox.Show(string.Format(Strings.TaskHelpers_SetActiveCustomUploaderConfirmation, cui, destinationsText),
                                 Strings.TaskHelpers_CustomUploaderConfirmationTitle, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-                            if (result == DialogResult.Yes)
+                            if (result == MessageBoxResult.Yes)
                             {
                                 activate = true;
                             }
-                            else if (result == DialogResult.Cancel)
+                            else if (result == MessageBoxResult.Cancel)
                             {
                                 return;
                             }
@@ -2535,7 +2540,7 @@ namespace ShareX
 
                 if (!Program.DefaultTaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects) &&
                     MessageBox.Show(Strings.WouldYouLikeToEnableImageEffects,
-                    "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == MessageBoxResult.Yes)
                 {
                     Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Add(AfterCaptureTasks.AddImageEffects);
                     MainWindowIntegration.RefreshMenus();

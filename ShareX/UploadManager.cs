@@ -36,6 +36,10 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using MessageBox = ShareX.AvaloniaUI.MessageBox;
+using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
+using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
+using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 
 namespace ShareX
 {
@@ -235,7 +239,7 @@ namespace ShareX
                 DebugHelper.WriteException(e);
 
                 if (MessageBox.Show("\"" + e.Message + "\"\r\n\r\n" + Strings.WouldYouLikeToRetryClipboardUpload, "ShareX - " + Strings.ClipboardUpload,
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == MessageBoxResult.Yes)
                 {
                     ClipboardUpload(taskSettings);
                 }

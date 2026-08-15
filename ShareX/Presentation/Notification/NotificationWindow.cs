@@ -39,10 +39,10 @@ using System.Linq;
 using DrawingBitmap = System.Drawing.Bitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingContentAlignment = System.Drawing.ContentAlignment;
-using FormsMessageBox = System.Windows.Forms.MessageBox;
-using FormsMessageBoxButtons = System.Windows.Forms.MessageBoxButtons;
-using FormsDialogResult = System.Windows.Forms.DialogResult;
 using FormsCursor = System.Windows.Forms.Cursor;
+using MessageBox = ShareX.AvaloniaUI.MessageBox;
+using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
+using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 
 namespace ShareX;
 
@@ -612,9 +612,9 @@ public partial class NotificationWindow : Window
                     TaskHelpers.PinToScreen(config.FilePath);
                     break;
                 case ToastClickAction.DeleteFile:
-                    if (FormsMessageBox.Show(Strings.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
+                    if (MessageBox.Show(Strings.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
                         "ShareX - " + Strings.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation,
-                        FormsMessageBoxButtons.YesNo) == FormsDialogResult.Yes)
+                        MessageBoxButtons.YesNo) == MessageBoxResult.Yes)
                     {
                         FileHelpers.DeleteFile(config.FilePath, true);
                     }

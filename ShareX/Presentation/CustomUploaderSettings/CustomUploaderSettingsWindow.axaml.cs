@@ -22,10 +22,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FormsDialogResult = System.Windows.Forms.DialogResult;
-using FormsMessageBox = System.Windows.Forms.MessageBox;
-using FormsMessageBoxButtons = System.Windows.Forms.MessageBoxButtons;
-using FormsMessageBoxIcon = System.Windows.Forms.MessageBoxIcon;
+using MessageBox = ShareX.AvaloniaUI.MessageBox;
+using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
+using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
+using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 
 namespace ShareX;
 
@@ -122,12 +122,12 @@ public partial class CustomUploaderSettingsWindow : Window
     private void OnClearClick(object? sender, RoutedEventArgs e)
     {
         if (_viewModel == null) return;
-        FormsDialogResult result = FormsMessageBox.Show(
+        MessageBoxResult result = MessageBox.Show(
             Strings.CustomUploaderSettingsWindow_ClearConfirmation,
             Strings.CustomUploaderSettingsWindow_ConfirmationTitle,
-            FormsMessageBoxButtons.YesNo,
-            FormsMessageBoxIcon.Question);
-        if (result == FormsDialogResult.Yes) _viewModel.Clear();
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+        if (result == MessageBoxResult.Yes) _viewModel.Clear();
     }
 
     private void OnBeautifyClick(object? sender, RoutedEventArgs e) => FormatData(Newtonsoft.Json.Formatting.Indented);

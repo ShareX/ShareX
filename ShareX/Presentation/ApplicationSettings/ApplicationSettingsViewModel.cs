@@ -33,6 +33,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using AvaloniaColor = Avalonia.Media.Color;
+using MessageBox = ShareX.AvaloniaUI.MessageBox;
+using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
+using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
+using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 
 namespace ShareX;
 
@@ -799,7 +803,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             Strings.ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings,
             "ShareX - " + Strings.Confirmation,
             MessageBoxButtons.YesNo,
-            MessageBoxIcon.Exclamation) == DialogResult.Yes);
+            MessageBoxIcon.Exclamation) == MessageBoxResult.Yes);
 
         if (!confirmed)
         {

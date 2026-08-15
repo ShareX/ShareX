@@ -131,6 +131,60 @@ namespace ShareX.AvaloniaUI.Localization {
                 return ResourceManager.GetString("CursorAssetLoader_Unsupported_cursor_bitmap_header", resourceCulture);
             }
         }
+
+        public static string MessageBox_Abort {
+            get {
+                return ResourceManager.GetString("MessageBox_Abort", resourceCulture);
+            }
+        }
+
+        public static string MessageBox_Cancel {
+            get {
+                return ResourceManager.GetString("MessageBox_Cancel", resourceCulture);
+            }
+        }
+
+        public static string MessageBox_Continue {
+            get {
+                return ResourceManager.GetString("MessageBox_Continue", resourceCulture);
+            }
+        }
+
+        public static string MessageBox_Ignore {
+            get {
+                return ResourceManager.GetString("MessageBox_Ignore", resourceCulture);
+            }
+        }
+
+        public static string MessageBox_No {
+            get {
+                return ResourceManager.GetString("MessageBox_No", resourceCulture);
+            }
+        }
+
+        public static string MessageBox_OK {
+            get {
+                return ResourceManager.GetString("MessageBox_OK", resourceCulture);
+            }
+        }
+
+        public static string MessageBox_Retry {
+            get {
+                return ResourceManager.GetString("MessageBox_Retry", resourceCulture);
+            }
+        }
+
+        public static string MessageBox_Try_again {
+            get {
+                return ResourceManager.GetString("MessageBox_Try_again", resourceCulture);
+            }
+        }
+
+        public static string MessageBox_Yes {
+            get {
+                return ResourceManager.GetString("MessageBox_Yes", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Search settings.

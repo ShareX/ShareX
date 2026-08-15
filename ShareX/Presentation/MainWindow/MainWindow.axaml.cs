@@ -39,11 +39,11 @@ using DrawingSize = System.Drawing.Size;
 using FormsCursor = System.Windows.Forms.Cursor;
 using FormsDataFormats = System.Windows.Forms.DataFormats;
 using FormsDataObject = System.Windows.Forms.DataObject;
-using FormsDialogResult = System.Windows.Forms.DialogResult;
-using FormsMessageBox = System.Windows.Forms.MessageBox;
-using FormsMessageBoxButtons = System.Windows.Forms.MessageBoxButtons;
 using FormsOrientation = System.Windows.Forms.Orientation;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
+using MessageBox = ShareX.AvaloniaUI.MessageBox;
+using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
+using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 
 namespace ShareX;
 
@@ -1171,9 +1171,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void DeleteSelectedFiles()
     {
-        if (FormsMessageBox.Show(Strings.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
+        if (MessageBox.Show(Strings.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
             "ShareX - " + Strings.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation,
-            FormsMessageBoxButtons.YesNo) == FormsDialogResult.Yes)
+            MessageBoxButtons.YesNo) == MessageBoxResult.Yes)
         {
             _uploadInfoManager.DeleteFiles();
             RemoveSelectedTasks();

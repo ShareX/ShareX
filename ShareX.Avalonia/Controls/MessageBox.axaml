@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ShareX.AvaloniaUI.MessageBoxWindow"
+        Width="480"
+        MinWidth="360"
+        MaxWidth="720"
+        SizeToContent="Height"
+        CanResize="False"
+        ShowInTaskbar="False"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterOwner">
+
+    <Grid RowDefinitions="Auto,Auto">
+        <ScrollViewer MaxHeight="420"
+                      HorizontalScrollBarVisibility="Disabled"
+                      VerticalScrollBarVisibility="Auto">
+            <Grid Margin="22,22,22,20"
+                  ColumnDefinitions="Auto,*"
+                  ColumnSpacing="16">
+                <Border x:Name="IconContainer"
+                        Width="48"
+                        Height="48"
+                        CornerRadius="8"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                        VerticalAlignment="Top">
+                    <TextBlock x:Name="IconText"
+                               Classes="icon"
+                               FontSize="24"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+
+                <SelectableTextBlock x:Name="MessageText"
+                                     Grid.Column="1"
+                                     FontFamily="{DynamicResource ShareX.FontFamily.Default}"
+                                     FontSize="13"
+                                     Foreground="{DynamicResource ShareX.Brush.Text}"
+                                     TextWrapping="Wrap"
+                                     VerticalAlignment="Center"/>
+            </Grid>
+        </ScrollViewer>
+
+        <Border Grid.Row="1"
+                Padding="14,12"
+                Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                BorderThickness="0,1,0,0">
+            <StackPanel x:Name="ButtonPanel"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Spacing="8"/>
+        </Border>
+    </Grid>
+</Window>

@@ -30,6 +30,10 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using MessageBox = ShareX.AvaloniaUI.MessageBox;
+using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
+using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
+using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -1168,8 +1172,8 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (Form.IsFullscreen)
                 {
-                    if (MessageBox.Show(Form, Strings.ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue,
-                        "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show(Strings.ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue,
+                        "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == MessageBoxResult.Yes)
                     {
                         Form.CloseWindow();
                     }

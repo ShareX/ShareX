@@ -35,6 +35,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MessageBox = ShareX.AvaloniaUI.MessageBox;
+using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
+using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
+using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -597,15 +601,15 @@ namespace ShareX.ScreenCaptureLib
             if (IsImageModified)
             {
                 Pause();
-                DialogResult dialogResult = MessageBox.Show(this, Strings.RegionCaptureForm_SaveChangesBeforeClosingEditor,
+                MessageBoxResult dialogResult = MessageBox.Show(Strings.RegionCaptureForm_SaveChangesBeforeClosingEditor,
                     Strings.RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-                if (dialogResult == DialogResult.Yes)
+                if (dialogResult == MessageBoxResult.Yes)
                 {
                     OnSaveImageRequested();
                 }
 
-                result = dialogResult != DialogResult.Cancel;
+                result = dialogResult != MessageBoxResult.Cancel;
                 Resume();
             }
 
