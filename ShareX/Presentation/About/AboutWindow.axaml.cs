@@ -45,7 +45,7 @@ public partial class AboutWindow : Window
         LogoImage.Source = _logoBitmap;
         Program.Settings.ShareXClicker ??= new ShareXClickerState();
         _clicker = new ShareXClickerControl(Program.Settings.ShareXClicker, SettingManager.SaveApplicationConfigAsync,
-            LogoImage, ClickerOverlay, SectionsViewer, ClickerHost, AboutPanel.Background,
+            LogoImage, ClickerOverlay, ClickerParticleOverlay, SectionsViewer, ClickerHost, AboutPanel.Background,
             [BrandText, ProductNameText, AboutDetailsPanel, CopyrightText]);
 
         ProductNameText.Text = Program.Title;

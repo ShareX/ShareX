@@ -137,6 +137,10 @@
             <ContentControl x:Name="ClickerHost"
                             Grid.Column="1"
                             IsVisible="False"/>
+            <Canvas x:Name="ClickerParticleOverlay"
+                    Grid.ColumnSpan="2"
+                    IsHitTestVisible="False"
+                    Panel.ZIndex="10"/>
         </Grid>
     </ThemeVariantScope>
 </Window>
