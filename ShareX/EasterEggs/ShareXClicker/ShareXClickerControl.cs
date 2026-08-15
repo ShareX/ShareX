@@ -22,10 +22,12 @@ using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Helpers = ShareX.HelpersLib.Helpers;
 
 namespace ShareX;
 
@@ -111,6 +113,7 @@ public sealed class ShareXClickerControl : IDisposable
         Point position = e.GetPosition(_overlay);
         Point particleOrigin = e.GetPosition(_particleOverlay);
         double clickGain = _game.Click();
+        Helpers.PlaySound(Resources.ActionCompletedSound);
         if (!_activated)
         {
             _activated = true;

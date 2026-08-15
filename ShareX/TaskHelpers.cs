@@ -2253,7 +2253,7 @@ namespace ShareX
                         }
                         else
                         {
-                            Helpers.PlaySoundAsync(Resources.CaptureSound);
+                            Helpers.PlaySoundSync(Resources.CaptureSound);
                         }
                     }
                     break;
@@ -2266,7 +2266,7 @@ namespace ShareX
                         }
                         else
                         {
-                            Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
+                            Helpers.PlaySoundSync(Resources.TaskCompletedSound);
                         }
                     }
                     break;
@@ -2279,7 +2279,7 @@ namespace ShareX
                         }
                         else
                         {
-                            Helpers.PlaySoundAsync(Resources.ActionCompletedSound);
+                            Helpers.PlaySoundSync(Resources.ActionCompletedSound);
                         }
                     }
                     break;
@@ -2292,7 +2292,7 @@ namespace ShareX
                         }
                         else
                         {
-                            Helpers.PlaySoundAsync(Resources.ErrorSound);
+                            Helpers.PlaySoundSync(Resources.ErrorSound);
                         }
                     }
                     break;

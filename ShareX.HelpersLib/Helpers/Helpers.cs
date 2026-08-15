@@ -25,7 +25,6 @@
 
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
-using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -399,7 +398,22 @@ namespace ShareX.HelpersLib
             return time;
         }
 
-        public static void PlaySoundAsync(Stream stream)
+        public static void PlaySound(Stream stream)
+        {
+            if (stream != null)
+            {
+                Task.Run(() =>
+                {
+                    using (stream)
+                    using (SoundPlayer soundPlayer = new SoundPlayer(stream))
+                    {
+                        soundPlayer.Play();
+                    }
+                });
+            }
+        }
+
+        public static void PlaySoundSync(Stream stream)
         {
             if (stream != null)
             {
