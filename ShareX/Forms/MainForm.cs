@@ -43,6 +43,7 @@ public sealed class MainForm : HotkeyForm
     private bool _isClosing;
 
     public bool IsReady { get; private set; }
+    internal bool IsClosing => _isClosing;
     internal ITrayIconService TrayIconService { get; }
 
     public MainForm()

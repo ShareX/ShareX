@@ -1109,8 +1109,12 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         {
             language.Icon.Dispose();
         }
-        FlushPersonalPath();
-        InvokeOnMainThread(Program.MainForm.ApplyApplicationSettings);
-        SettingManager.SaveApplicationConfigAsync();
+
+        if (!Program.MainForm.IsClosing)
+        {
+            FlushPersonalPath();
+            InvokeOnMainThread(Program.MainForm.ApplyApplicationSettings);
+            SettingManager.SaveApplicationConfigAsync();
+        }
     }
 }
