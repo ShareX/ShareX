@@ -109,6 +109,7 @@ public sealed class ShareXClickerControl : IDisposable
         }
 
         Point position = e.GetPosition(_overlay);
+        Point particleOrigin = e.GetPosition(_particleOverlay);
         double clickGain = _game.Click();
         if (!_activated)
         {
@@ -119,7 +120,7 @@ public sealed class ShareXClickerControl : IDisposable
         _counter.IsVisible = true;
         _pressUntil = ElapsedSeconds() + 0.12;
         AddFloatingText(position, clickGain);
-        AddParticles((int)Math.Ceiling(clickGain));
+        AddParticles((int)Math.Ceiling(clickGain), particleOrigin);
 
         if (_game.State.StoreDiscovered && !_storeVisible)
         {
@@ -364,7 +365,7 @@ public sealed class ShareXClickerControl : IDisposable
         _floatingTexts.Add(new FloatingText(text, Canvas.GetTop(text)));
     }
 
-    private void AddParticles(int count)
+    private void AddParticles(int count, Point? origin = null)
     {
         for (int i = 0; i < Math.Min(count, MaxParticles); i++)
         {
@@ -382,19 +383,23 @@ public sealed class ShareXClickerControl : IDisposable
                 IsHitTestVisible = false,
                 RenderTransformOrigin = RelativePoint.Center
             };
-            Point logoOrigin = _logoImage.TranslatePoint(default, _particleOverlay) ?? new Point(40, 50);
-            double angle = _random.NextDouble() * Math.PI * 2;
-            double distance = Math.Sqrt(_random.NextDouble());
-            double startX = logoOrigin.X + 80 + Math.Cos(angle) * distance * 65;
-            double startY = logoOrigin.Y + 80 + Math.Sin(angle) * distance * 65;
+            Point start = origin ?? RandomLogoPoint();
             double lifetime = 2.6 + _random.NextDouble() * 0.6;
-            LogoParticle particle = new(image, startX, startY, _random.NextDouble() * 140 - 70, -40 - _random.NextDouble() * 75,
+            LogoParticle particle = new(image, start.X, start.Y, _random.NextDouble() * 140 - 70, -40 - _random.NextDouble() * 75,
                 _random.NextDouble() * 200 - 100, lifetime);
             _particles.Add(particle);
             Canvas.SetLeft(image, particle.X);
             Canvas.SetTop(image, particle.Y);
             _particleOverlay.Children.Add(image);
         }
+    }
+
+    private Point RandomLogoPoint()
+    {
+        Point logoOrigin = _logoImage.TranslatePoint(default, _particleOverlay) ?? new Point(40, 50);
+        double angle = _random.NextDouble() * Math.PI * 2;
+        double distance = Math.Sqrt(_random.NextDouble());
+        return new Point(logoOrigin.X + 80 + Math.Cos(angle) * distance * 65, logoOrigin.Y + 80 + Math.Sin(angle) * distance * 65);
     }
 
     private void AddPassiveAnimations(double earned, double elapsedSeconds)
