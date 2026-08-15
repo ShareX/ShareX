@@ -23,8 +23,7 @@
     <PackageReference Include="ZXing.Net.Bindings.Windows.Compatibility" />
   </ItemGroup>
   <ItemGroup>
-    <AvaloniaResource Include="Resources\??.png" />
-    <AvaloniaResource Include="Resources\globe.png" />
+    <AvaloniaResource Include="Resources\Flags\*.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Localization\Strings.resx">

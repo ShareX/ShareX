@@ -1032,13 +1032,16 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             .Select(x => new LanguageOption(x, x.GetLocalizedDescription(), LoadLanguageIcon(x)))
             .ToArray();
 
-    private static AvaloniaBitmap LoadLanguageIcon(SupportedLanguage language)
+    private static AvaloniaBitmap? LoadLanguageIcon(SupportedLanguage language)
     {
-        string resourceName = language == SupportedLanguage.Automatic
-            ? "globe"
-            : LanguageHelper.GetCultureName(language).Split('-')[1].ToLowerInvariant();
+        if (language == SupportedLanguage.Automatic)
+        {
+            return null;
+        }
 
-        using Stream stream = AssetLoader.Open(new Uri($"avares://ShareX/Resources/{resourceName}.png"));
+        string resourceName = LanguageHelper.GetCultureName(language).Split('-')[1].ToLowerInvariant();
+
+        using Stream stream = AssetLoader.Open(new Uri($"avares://ShareX/Resources/Flags/{resourceName}.png"));
         return new AvaloniaBitmap(stream);
     }
 
@@ -1107,7 +1110,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         _disposed = true;
         foreach (LanguageOption language in LanguageOptions)
         {
-            language.Icon.Dispose();
+            language.Icon?.Dispose();
         }
 
         if (!Program.MainForm.IsClosing)
