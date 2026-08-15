@@ -103,11 +103,6 @@ public sealed class MainForm : HotkeyForm
 
     internal void ApplyApplicationSettings()
     {
-        if (_isClosing)
-        {
-            return;
-        }
-
         HotkeyRepeatLimit = Program.Settings.HotkeyRepeatLimit;
 
         HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
