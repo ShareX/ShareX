@@ -62,10 +62,12 @@
         </Grid>
 
         <Border Grid.Row="1" Classes="message-card">
-            <StackPanel Spacing="10">
-                <TextBlock Text="{Binding MessageText}" TextWrapping="Wrap"/>
+            <StackPanel Spacing="18">
+                <TextBlock Text="{Binding MessageText}" FontSize="15" FontWeight="Normal" TextWrapping="Wrap"/>
                 <HyperlinkButton Classes="link"
                                  Content="{x:Static localization:Strings.UpdateMessageWindow_View_changelog}"
+                                 FontSize="15"
+                                 FontWeight="Normal"
                                  IsVisible="{Binding ShowChangelog}"
                                  Click="OnViewChangelogClick"/>
             </StackPanel>
