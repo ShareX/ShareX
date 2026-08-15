@@ -40,6 +40,7 @@ namespace ShareX;
 public sealed class MainForm : HotkeyForm
 {
     private bool _forceClose;
+    private bool _isClosing;
 
     public bool IsReady { get; private set; }
     internal ITrayIconService TrayIconService { get; }
@@ -101,6 +102,11 @@ public sealed class MainForm : HotkeyForm
 
     internal void ApplyApplicationSettings()
     {
+        if (_isClosing)
+        {
+            return;
+        }
+
         HotkeyRepeatLimit = Program.Settings.HotkeyRepeatLimit;
 
         HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
@@ -445,6 +451,11 @@ public sealed class MainForm : HotkeyForm
         }
 
         base.OnFormClosing(e);
+
+        if (!e.Cancel)
+        {
+            _isClosing = true;
+        }
     }
 
     private void MainForm_FormClosed(object? sender, FormClosedEventArgs e)
