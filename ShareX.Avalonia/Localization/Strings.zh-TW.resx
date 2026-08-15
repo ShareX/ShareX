@@ -85,4 +85,31 @@
   <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
     <value>不支援的游標位元深度：{0}。</value>
   </data>
+  <data name="MessageBox_OK" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="MessageBox_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="MessageBox_Abort" xml:space="preserve">
+    <value>中止</value>
+  </data>
+  <data name="MessageBox_Retry" xml:space="preserve">
+    <value>重試</value>
+  </data>
+  <data name="MessageBox_Ignore" xml:space="preserve">
+    <value>忽略</value>
+  </data>
+  <data name="MessageBox_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="MessageBox_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="MessageBox_Try_again" xml:space="preserve">
+    <value>再試一次</value>
+  </data>
+  <data name="MessageBox_Continue" xml:space="preserve">
+    <value>繼續</value>
+  </data>
 </root>

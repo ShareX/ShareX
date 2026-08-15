@@ -85,4 +85,31 @@
   <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
     <value>Nicht unterstützte Farbtiefe des Cursors: {0}.</value>
   </data>
+  <data name="MessageBox_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MessageBox_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="MessageBox_Abort" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="MessageBox_Retry" xml:space="preserve">
+    <value>Wiederholen</value>
+  </data>
+  <data name="MessageBox_Ignore" xml:space="preserve">
+    <value>Ignorieren</value>
+  </data>
+  <data name="MessageBox_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="MessageBox_No" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="MessageBox_Try_again" xml:space="preserve">
+    <value>Erneut versuchen</value>
+  </data>
+  <data name="MessageBox_Continue" xml:space="preserve">
+    <value>Fortfahren</value>
+  </data>
 </root>

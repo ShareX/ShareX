@@ -85,4 +85,31 @@
   <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
     <value>असमर्थित कर्सर बिट गहराई: {0}।</value>
   </data>
+  <data name="MessageBox_OK" xml:space="preserve">
+    <value>ठीक है</value>
+  </data>
+  <data name="MessageBox_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="MessageBox_Abort" xml:space="preserve">
+    <value>निरस्त करें</value>
+  </data>
+  <data name="MessageBox_Retry" xml:space="preserve">
+    <value>पुनः प्रयास करें</value>
+  </data>
+  <data name="MessageBox_Ignore" xml:space="preserve">
+    <value>अनदेखा करें</value>
+  </data>
+  <data name="MessageBox_Yes" xml:space="preserve">
+    <value>हाँ</value>
+  </data>
+  <data name="MessageBox_No" xml:space="preserve">
+    <value>नहीं</value>
+  </data>
+  <data name="MessageBox_Try_again" xml:space="preserve">
+    <value>फिर से प्रयास करें</value>
+  </data>
+  <data name="MessageBox_Continue" xml:space="preserve">
+    <value>जारी रखें</value>
+  </data>
 </root>

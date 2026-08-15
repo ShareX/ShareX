@@ -85,4 +85,31 @@
   <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
     <value>عمق بیت نشانگر پشتیبانی نمی‌شود: {0}.</value>
   </data>
+  <data name="MessageBox_OK" xml:space="preserve">
+    <value>تایید</value>
+  </data>
+  <data name="MessageBox_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="MessageBox_Abort" xml:space="preserve">
+    <value>توقف</value>
+  </data>
+  <data name="MessageBox_Retry" xml:space="preserve">
+    <value>تلاش مجدد</value>
+  </data>
+  <data name="MessageBox_Ignore" xml:space="preserve">
+    <value>نادیده گرفتن</value>
+  </data>
+  <data name="MessageBox_Yes" xml:space="preserve">
+    <value>بله</value>
+  </data>
+  <data name="MessageBox_No" xml:space="preserve">
+    <value>خیر</value>
+  </data>
+  <data name="MessageBox_Try_again" xml:space="preserve">
+    <value>دوباره امتحان کنید</value>
+  </data>
+  <data name="MessageBox_Continue" xml:space="preserve">
+    <value>ادامه</value>
+  </data>
 </root>

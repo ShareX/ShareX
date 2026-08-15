@@ -85,4 +85,31 @@
   <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
     <value>Markørens bitdybde understøttes ikke: {0}.</value>
   </data>
+  <data name="MessageBox_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MessageBox_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="MessageBox_Abort" xml:space="preserve">
+    <value>Afbryd</value>
+  </data>
+  <data name="MessageBox_Retry" xml:space="preserve">
+    <value>Prøv igen</value>
+  </data>
+  <data name="MessageBox_Ignore" xml:space="preserve">
+    <value>Ignorer</value>
+  </data>
+  <data name="MessageBox_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="MessageBox_No" xml:space="preserve">
+    <value>Nej</value>
+  </data>
+  <data name="MessageBox_Try_again" xml:space="preserve">
+    <value>Prøv igen</value>
+  </data>
+  <data name="MessageBox_Continue" xml:space="preserve">
+    <value>Fortsæt</value>
+  </data>
 </root>

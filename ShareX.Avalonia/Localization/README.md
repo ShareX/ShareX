@@ -6,8 +6,9 @@ ShareX.Avalonia uses the shared `Strings.resx` catalog in this directory for its
 | --- | --- | ---: | --- |
 | Settings navigation | `SettingsNavigation_` | 1 | Complete |
 | Cursor asset diagnostics | `CursorAssetLoader_` | 8 | Complete |
+| Message box buttons | `MessageBox_` | 9 | Complete |
 
-All 9 keys are translated in all 28 supported cultures. Theme identifiers, asset URIs, font names, format tokens such as `$HEX`, and framework known-color names are stable technical data and are intentionally excluded.
+All 18 keys are translated in all 28 supported cultures. Theme identifiers, asset URIs, font names, format tokens such as `$HEX`, and framework known-color names are stable technical data and are intentionally excluded.
 
 The repository-level `ValidateTranslations.ps1` checks the supported-culture inventory, entry counts, key parity, non-empty values, format placeholders, UTF-8 and CRLF formatting, generated designers, source references, and remaining literal Avalonia UI text across every localized project.
 

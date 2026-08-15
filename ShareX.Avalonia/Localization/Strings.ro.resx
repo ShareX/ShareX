@@ -85,4 +85,31 @@
   <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
     <value>Adâncime de biți neacceptată pentru cursor: {0}.</value>
   </data>
+  <data name="MessageBox_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MessageBox_Cancel" xml:space="preserve">
+    <value>Anulați</value>
+  </data>
+  <data name="MessageBox_Abort" xml:space="preserve">
+    <value>Abandon</value>
+  </data>
+  <data name="MessageBox_Retry" xml:space="preserve">
+    <value>Reîncercare</value>
+  </data>
+  <data name="MessageBox_Ignore" xml:space="preserve">
+    <value>Ignorare</value>
+  </data>
+  <data name="MessageBox_Yes" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="MessageBox_No" xml:space="preserve">
+    <value>Nu</value>
+  </data>
+  <data name="MessageBox_Try_again" xml:space="preserve">
+    <value>Încercați din nou</value>
+  </data>
+  <data name="MessageBox_Continue" xml:space="preserve">
+    <value>Continuare</value>
+  </data>
 </root>

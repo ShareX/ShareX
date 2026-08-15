@@ -85,4 +85,31 @@
   <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
     <value>Markörens bitdjup stöds inte: {0}.</value>
   </data>
+  <data name="MessageBox_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MessageBox_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="MessageBox_Abort" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="MessageBox_Retry" xml:space="preserve">
+    <value>Försök igen</value>
+  </data>
+  <data name="MessageBox_Ignore" xml:space="preserve">
+    <value>Ignorera</value>
+  </data>
+  <data name="MessageBox_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="MessageBox_No" xml:space="preserve">
+    <value>Nej</value>
+  </data>
+  <data name="MessageBox_Try_again" xml:space="preserve">
+    <value>Försök igen</value>
+  </data>
+  <data name="MessageBox_Continue" xml:space="preserve">
+    <value>Fortsätt</value>
+  </data>
 </root>

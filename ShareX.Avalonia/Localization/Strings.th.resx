@@ -85,4 +85,31 @@
   <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
     <value>ไม่รองรับ เคอร์เซอร์ ความลึกบิต: {0}.</value>
   </data>
+  <data name="MessageBox_OK" xml:space="preserve">
+    <value>ตกลง</value>
+  </data>
+  <data name="MessageBox_Cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="MessageBox_Abort" xml:space="preserve">
+    <value>หยุด</value>
+  </data>
+  <data name="MessageBox_Retry" xml:space="preserve">
+    <value>ลองใหม่</value>
+  </data>
+  <data name="MessageBox_Ignore" xml:space="preserve">
+    <value>ละเว้น</value>
+  </data>
+  <data name="MessageBox_Yes" xml:space="preserve">
+    <value>ใช่</value>
+  </data>
+  <data name="MessageBox_No" xml:space="preserve">
+    <value>ไม่</value>
+  </data>
+  <data name="MessageBox_Try_again" xml:space="preserve">
+    <value>ลองอีกครั้ง</value>
+  </data>
+  <data name="MessageBox_Continue" xml:space="preserve">
+    <value>ดำเนินการต่อ</value>
+  </data>
 </root>

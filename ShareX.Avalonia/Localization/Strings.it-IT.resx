@@ -85,4 +85,31 @@
   <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
     <value>Profondità di bit del cursore non supportata: {0}.</value>
   </data>
+  <data name="MessageBox_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MessageBox_Cancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="MessageBox_Abort" xml:space="preserve">
+    <value>Interrompi</value>
+  </data>
+  <data name="MessageBox_Retry" xml:space="preserve">
+    <value>Riprova</value>
+  </data>
+  <data name="MessageBox_Ignore" xml:space="preserve">
+    <value>Ignora</value>
+  </data>
+  <data name="MessageBox_Yes" xml:space="preserve">
+    <value>Sì</value>
+  </data>
+  <data name="MessageBox_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="MessageBox_Try_again" xml:space="preserve">
+    <value>Riprova</value>
+  </data>
+  <data name="MessageBox_Continue" xml:space="preserve">
+    <value>Continua</value>
+  </data>
 </root>

@@ -85,4 +85,31 @@
   <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
     <value>Nem támogatott kurzor-bitmélység: {0}.</value>
   </data>
+  <data name="MessageBox_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MessageBox_Cancel" xml:space="preserve">
+    <value>Mégsem</value>
+  </data>
+  <data name="MessageBox_Abort" xml:space="preserve">
+    <value>Megszakítás</value>
+  </data>
+  <data name="MessageBox_Retry" xml:space="preserve">
+    <value>Újra</value>
+  </data>
+  <data name="MessageBox_Ignore" xml:space="preserve">
+    <value>Kihagyás</value>
+  </data>
+  <data name="MessageBox_Yes" xml:space="preserve">
+    <value>Igen</value>
+  </data>
+  <data name="MessageBox_No" xml:space="preserve">
+    <value>Nem</value>
+  </data>
+  <data name="MessageBox_Try_again" xml:space="preserve">
+    <value>Újrapróbálkozás</value>
+  </data>
+  <data name="MessageBox_Continue" xml:space="preserve">
+    <value>Folytatás</value>
+  </data>
 </root>

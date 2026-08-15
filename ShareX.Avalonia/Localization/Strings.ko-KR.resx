@@ -85,4 +85,31 @@
   <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
     <value>지원되지 않는 커서 비트 심도: {0}.</value>
   </data>
+  <data name="MessageBox_OK" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="MessageBox_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="MessageBox_Abort" xml:space="preserve">
+    <value>중단</value>
+  </data>
+  <data name="MessageBox_Retry" xml:space="preserve">
+    <value>다시 시도</value>
+  </data>
+  <data name="MessageBox_Ignore" xml:space="preserve">
+    <value>무시</value>
+  </data>
+  <data name="MessageBox_Yes" xml:space="preserve">
+    <value>네</value>
+  </data>
+  <data name="MessageBox_No" xml:space="preserve">
+    <value>아니요</value>
+  </data>
+  <data name="MessageBox_Try_again" xml:space="preserve">
+    <value>다시 시도</value>
+  </data>
+  <data name="MessageBox_Continue" xml:space="preserve">
+    <value>계속</value>
+  </data>
 </root>

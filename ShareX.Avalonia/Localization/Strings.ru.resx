@@ -85,4 +85,31 @@
   <data name="CursorAssetLoader_Unsupported_cursor_bit_depth" xml:space="preserve">
     <value>Неподдерживаемая глубина цвета курсора: {0}.</value>
   </data>
+  <data name="MessageBox_OK" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="MessageBox_Cancel" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="MessageBox_Abort" xml:space="preserve">
+    <value>Прервать</value>
+  </data>
+  <data name="MessageBox_Retry" xml:space="preserve">
+    <value>Повторить</value>
+  </data>
+  <data name="MessageBox_Ignore" xml:space="preserve">
+    <value>Пропустить</value>
+  </data>
+  <data name="MessageBox_Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="MessageBox_No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="MessageBox_Try_again" xml:space="preserve">
+    <value>Повторить попытку</value>
+  </data>
+  <data name="MessageBox_Continue" xml:space="preserve">
+    <value>Продолжить</value>
+  </data>
 </root>
