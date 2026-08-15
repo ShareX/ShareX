@@ -26,5 +26,4 @@ public sealed class ShareXClickerState
     public bool BetterClickPurchased;
     public bool DoubleClickPurchased;
     public bool StoreDiscovered;
-    public long LastActiveUtcTicks;
 }

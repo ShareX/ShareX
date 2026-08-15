@@ -43,8 +43,7 @@ public partial class AboutWindow : Window
         logoStream.Position = 0;
         _logoBitmap = new AvaloniaBitmap(logoStream);
         LogoImage.Source = _logoBitmap;
-        Program.Settings.ShareXClicker ??= new ShareXClickerState();
-        _clicker = new ShareXClickerControl(Program.Settings.ShareXClicker, SettingManager.SaveApplicationConfigAsync,
+        _clicker = new ShareXClickerControl(new ShareXClickerState(),
             LogoImage, ClickerOverlay, ClickerParticleOverlay, SectionsViewer, ClickerHost, AboutPanel.Background,
             [BrandText, ProductNameText, AboutDetailsPanel, CopyrightText]);
 

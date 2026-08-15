@@ -38,7 +38,6 @@ public sealed class ShareXClickerControl : IDisposable
     private const double MaxPassiveParticlesPerSecond = 140;
     private const double PassiveAnimationIntervalSeconds = 1;
     private readonly ShareXClickerGame _game;
-    private readonly Action _save;
     private readonly Image _logoImage;
     private readonly Canvas _overlay;
     private readonly Canvas _particleOverlay;
@@ -54,10 +53,8 @@ public sealed class ShareXClickerControl : IDisposable
     private readonly List<StoreRow> _buildingRows = [];
     private readonly List<StoreRow> _upgradeRows = [];
     private readonly TextBlock _counter;
-    private readonly Border _offlineNotification;
     private long _lastTick;
     private double _pressUntil;
-    private double _notificationUntil;
     private double _uiRefreshElapsed;
     private double _passiveVisualLogos;
     private double _passiveVisualCooldown;
@@ -67,11 +64,10 @@ public sealed class ShareXClickerControl : IDisposable
     private bool _storeVisible;
     private string _displayedBuildingIds = "";
 
-    public ShareXClickerControl(ShareXClickerState state, Action save, Image logoImage, Canvas overlay, Canvas particleOverlay, Control normalContent,
+    public ShareXClickerControl(ShareXClickerState state, Image logoImage, Canvas overlay, Canvas particleOverlay, Control normalContent,
         ContentControl storeHost, IBrush? panelBackground, IReadOnlyList<Control> aboutTextControls)
     {
         _game = new ShareXClickerGame(state);
-        _save = save ?? throw new ArgumentNullException(nameof(save));
         _logoImage = logoImage ?? throw new ArgumentNullException(nameof(logoImage));
         _overlay = overlay ?? throw new ArgumentNullException(nameof(overlay));
         _particleOverlay = particleOverlay ?? throw new ArgumentNullException(nameof(particleOverlay));
@@ -94,27 +90,6 @@ public sealed class ShareXClickerControl : IDisposable
         Canvas.SetTop(_counter, 278);
         _overlay.Children.Add(_counter);
 
-        _offlineNotification = new Border
-        {
-            Padding = new Thickness(8, 5),
-            CornerRadius = new CornerRadius(4),
-            Background = new SolidColorBrush(Color.FromArgb(235, 36, 47, 61)),
-            IsVisible = false,
-            Child = new StackPanel
-            {
-                Orientation = Orientation.Horizontal,
-                Spacing = 6,
-                Children =
-                {
-                    Icon(LucideIcons.clock, 14),
-                    new TextBlock { FontSize = 16, TextWrapping = TextWrapping.Wrap, MaxWidth = 190 }
-                }
-            }
-        };
-        Canvas.SetLeft(_offlineNotification, 10);
-        Canvas.SetTop(_offlineNotification, 8);
-        _overlay.Children.Add(_offlineNotification);
-
         _logoImage.Cursor = new Cursor(StandardCursorType.Hand);
         _logoImage.RenderTransformOrigin = RelativePoint.Center;
         _logoImage.PointerPressed += OnLogoPointerPressed;
@@ -134,7 +109,7 @@ public sealed class ShareXClickerControl : IDisposable
         }
 
         Point position = e.GetPosition(_overlay);
-        ShareXClickerClickResult result = _game.Click();
+        double clickGain = _game.Click();
         if (!_activated)
         {
             _activated = true;
@@ -143,15 +118,8 @@ public sealed class ShareXClickerControl : IDisposable
         HideAboutText();
         _counter.IsVisible = true;
         _pressUntil = ElapsedSeconds() + 0.12;
-        AddFloatingText(position, result.ClickGain);
-        AddParticles((int)Math.Ceiling(result.ClickGain));
-
-        if (result.OfflineGain >= 0.05)
-        {
-            ShowOfflineNotification(result.OfflineGain);
-            _game.MarkActiveNow();
-            _save();
-        }
+        AddFloatingText(position, clickGain);
+        AddParticles((int)Math.Ceiling(clickGain));
 
         if (_game.State.StoreDiscovered && !_storeVisible)
         {
@@ -190,10 +158,6 @@ public sealed class ShareXClickerControl : IDisposable
             RefreshUi();
         }
 
-        if (_offlineNotification.IsVisible && nowSeconds >= _notificationUntil)
-        {
-            _offlineNotification.IsVisible = false;
-        }
     }
 
     private void ShowStore()
@@ -272,8 +236,6 @@ public sealed class ShareXClickerControl : IDisposable
         {
             if (_game.BuyBuilding(building))
             {
-                _game.MarkActiveNow();
-                _save();
                 RefreshUi();
             }
         };
@@ -293,8 +255,6 @@ public sealed class ShareXClickerControl : IDisposable
         {
             if (_game.BuyUpgrade(upgrade))
             {
-                _game.MarkActiveNow();
-                _save();
                 RefreshUi();
             }
         };
@@ -514,13 +474,6 @@ public sealed class ShareXClickerControl : IDisposable
         }
     }
 
-    private void ShowOfflineNotification(double amount)
-    {
-        ((TextBlock)((StackPanel)_offlineNotification.Child!).Children[1]).Text = $"Welcome back!\n+{ShareXClickerNumberFormatter.Format(amount)} logos while you were away.";
-        _offlineNotification.IsVisible = true;
-        _notificationUntil = ElapsedSeconds() + 4;
-    }
-
     private TextBlock Icon(string glyph, double size)
     {
         TextBlock icon = new() { Text = glyph, FontSize = size, VerticalAlignment = VerticalAlignment.Center, Foreground = _accentBrush };
@@ -548,15 +501,11 @@ public sealed class ShareXClickerControl : IDisposable
         _timer.Tick -= OnTimerTick;
         _logoImage.PointerPressed -= OnLogoPointerPressed;
         _logoImage.RenderTransform = null;
-        _game.MarkActiveNow();
-        _save();
-
         foreach (FloatingText text in _floatingTexts) _overlay.Children.Remove(text.Control);
         foreach (LogoParticle particle in _particles) _particleOverlay.Children.Remove(particle.Control);
         _floatingTexts.Clear();
         _particles.Clear();
         _overlay.Children.Remove(_counter);
-        _overlay.Children.Remove(_offlineNotification);
     }
 
     private sealed class FloatingText(TextBlock control, double startTop)
