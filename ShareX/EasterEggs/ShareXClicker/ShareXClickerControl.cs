@@ -34,7 +34,9 @@ namespace ShareX;
 /// </summary>
 public sealed class ShareXClickerControl : IDisposable
 {
-    private const int MaxParticles = 36;
+    private const int MaxParticles = 100;
+    private const double MaxPassiveParticlesPerSecond = 70;
+    private const double PassiveAnimationIntervalSeconds = 1;
     private readonly ShareXClickerGame _game;
     private readonly Action _save;
     private readonly Image _logoImage;
@@ -58,6 +60,7 @@ public sealed class ShareXClickerControl : IDisposable
     private double _uiRefreshElapsed;
     private double _passiveVisualLogos;
     private double _passiveVisualCooldown;
+    private double _passiveParticleCarry;
     private bool _disposed;
     private bool _activated;
     private bool _storeVisible;
@@ -130,7 +133,11 @@ public sealed class ShareXClickerControl : IDisposable
 
         Point position = e.GetPosition(_overlay);
         ShareXClickerClickResult result = _game.Click();
-        _activated = true;
+        if (!_activated)
+        {
+            _activated = true;
+            _passiveVisualCooldown = PassiveAnimationIntervalSeconds;
+        }
         HideAboutText();
         _counter.IsVisible = true;
         _pressUntil = ElapsedSeconds() + 0.12;
@@ -413,7 +420,13 @@ public sealed class ShareXClickerControl : IDisposable
                 IsHitTestVisible = false,
                 RenderTransformOrigin = RelativePoint.Center
             };
-            LogoParticle particle = new(image, 112, 125, _random.NextDouble() * 140 - 70, -80 - _random.NextDouble() * 90, _random.NextDouble() * 200 - 100);
+            double angle = _random.NextDouble() * Math.PI * 2;
+            double distance = Math.Sqrt(_random.NextDouble());
+            double startX = 120 + Math.Cos(angle) * distance * 65;
+            double startY = 130 + Math.Sin(angle) * distance * 65;
+            double lifetime = 1.05 + _random.NextDouble() * 0.6;
+            LogoParticle particle = new(image, startX, startY, _random.NextDouble() * 140 - 70, -40 - _random.NextDouble() * 75,
+                _random.NextDouble() * 200 - 100, lifetime);
             _particles.Add(particle);
             Canvas.SetLeft(image, particle.X);
             Canvas.SetTop(image, particle.Y);
@@ -428,17 +441,31 @@ public sealed class ShareXClickerControl : IDisposable
             return;
         }
 
-        _passiveVisualLogos = Math.Min(10, _passiveVisualLogos + earned);
+        AddPassiveParticles(earned, elapsedSeconds);
+        _passiveVisualLogos += earned;
         _passiveVisualCooldown = Math.Max(0, _passiveVisualCooldown - elapsedSeconds);
         if (_passiveVisualLogos < 1 || _passiveVisualCooldown > 0)
         {
             return;
         }
 
-        _passiveVisualLogos -= 1;
-        _passiveVisualCooldown = 0.12;
-        AddFloatingText(new Point(120 + _random.Next(-35, 36), 135 + _random.Next(-20, 21)), 1);
-        AddParticles(1);
+        double displayedAmount = Math.Floor(_passiveVisualLogos);
+        _passiveVisualLogos -= displayedAmount;
+        _passiveVisualCooldown = PassiveAnimationIntervalSeconds;
+        AddFloatingText(new Point(120 + _random.Next(-35, 36), 135 + _random.Next(-20, 21)), displayedAmount);
+    }
+
+    private void AddPassiveParticles(double earned, double elapsedSeconds)
+    {
+        _passiveParticleCarry += Math.Min(earned, MaxPassiveParticlesPerSecond * elapsedSeconds);
+        int particleCount = (int)Math.Floor(_passiveParticleCarry);
+        if (particleCount <= 0)
+        {
+            return;
+        }
+
+        _passiveParticleCarry -= particleCount;
+        AddParticles(particleCount);
     }
 
     private void HideAboutText()
@@ -470,12 +497,14 @@ public sealed class ShareXClickerControl : IDisposable
             particle.Age += elapsedSeconds;
             particle.X += particle.VelocityX * elapsedSeconds;
             particle.Y += particle.VelocityY * elapsedSeconds;
-            particle.VelocityY += 290 * elapsedSeconds;
-            particle.Control.Opacity = Math.Max(0, 1 - particle.Age / 1.1);
+            particle.VelocityY += 420 * elapsedSeconds;
+            particle.Control.Opacity = particle.Age < particle.Lifetime - 0.35
+                ? 1
+                : Math.Max(0, (particle.Lifetime - particle.Age) / 0.35);
             particle.Control.RenderTransform = new RotateTransform(particle.Rotation * particle.Age);
             Canvas.SetLeft(particle.Control, particle.X);
             Canvas.SetTop(particle.Control, particle.Y);
-            if (particle.Age >= 1.1 || particle.Y > 330 || particle.X < -20 || particle.X > 245)
+            if (particle.Age >= particle.Lifetime || particle.Y > 360 || particle.X < -20 || particle.X > 245)
             {
                 RemoveParticle(particle);
             }
@@ -534,7 +563,7 @@ public sealed class ShareXClickerControl : IDisposable
         public double Age { get; set; }
     }
 
-    private sealed class LogoParticle(Image control, double x, double y, double velocityX, double velocityY, double rotation)
+    private sealed class LogoParticle(Image control, double x, double y, double velocityX, double velocityY, double rotation, double lifetime)
     {
         public Image Control { get; } = control;
         public double X { get; set; } = x;
@@ -542,6 +571,7 @@ public sealed class ShareXClickerControl : IDisposable
         public double VelocityX { get; } = velocityX;
         public double VelocityY { get; set; } = velocityY;
         public double Rotation { get; } = rotation;
+        public double Lifetime { get; } = lifetime;
         public double Age { get; set; }
     }
 
