@@ -114,6 +114,14 @@ public partial class AboutWindow : Window
         await UpdateMessageWindow.StartAsync(_updateChecker);
     }
 
+    private void OnLinkClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (sender is HyperlinkButton { DataContext: AboutLinkItem item })
+        {
+            URLHelpers.OpenURL(item.Uri.AbsoluteUri);
+        }
+    }
+
     private static IReadOnlyList<AboutSection> CreateSections()
     {
         return

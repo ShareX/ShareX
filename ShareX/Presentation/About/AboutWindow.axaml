@@ -124,7 +124,7 @@
                                                 <HyperlinkButton Grid.Column="1"
                                                                  Classes="about-link"
                                                                  Content="{Binding DisplayText}"
-                                                                 NavigateUri="{Binding Uri}"/>
+                                                                 Click="OnLinkClick"/>
                                             </Grid>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
