@@ -16,7 +16,6 @@
 
 using Avalonia.Media.Imaging;
 using ShareX.HelpersLib;
-using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -34,8 +33,6 @@ public sealed record LanguageOption(SupportedLanguage Value, string DisplayName,
 
 public sealed class ClipboardFormatItem : INotifyPropertyChanged
 {
-    private readonly Action _changed;
-
     public ClipboardFormat Model { get; }
 
     public string Description
@@ -50,7 +47,6 @@ public sealed class ClipboardFormatItem : INotifyPropertyChanged
 
             Model.Description = value;
             OnPropertyChanged();
-            _changed();
         }
     }
 
@@ -66,14 +62,12 @@ public sealed class ClipboardFormatItem : INotifyPropertyChanged
 
             Model.Format = value;
             OnPropertyChanged();
-            _changed();
         }
     }
 
-    public ClipboardFormatItem(ClipboardFormat model, Action changed)
+    public ClipboardFormatItem(ClipboardFormat model)
     {
         Model = model;
-        _changed = changed;
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;

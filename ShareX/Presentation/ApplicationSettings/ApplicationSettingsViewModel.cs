@@ -15,12 +15,10 @@
 #nullable enable
 
 using Avalonia.Platform;
-using Avalonia.Threading;
 using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
-using ShareX.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -30,7 +28,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using AvaloniaColor = Avalonia.Media.Color;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
@@ -42,7 +39,6 @@ namespace ShareX;
 
 public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisposable
 {
-    private readonly DispatcherTimer _saveTimer;
     private SettingsNavigationItem? _selectedNavigationItem;
     private ClipboardFormatItem? _selectedClipboardFormat;
     private string _personalFolderPath = string.Empty;
@@ -173,7 +169,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             }
 
             Settings.Language = value.Value;
-            MarkChanged();
 
             if (LanguageHelper.ChangeLanguage(value.Value))
             {
@@ -423,7 +418,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
             UpdatePersonalFolderPreview();
             _personalPathDirty = true;
-            MarkChanged();
         }
     }
 
@@ -658,9 +652,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     public ApplicationSettingsViewModel()
     {
-        _saveTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(650) };
-        _saveTimer.Tick += OnSaveTimerTick;
-
         Reload();
     }
 
@@ -668,10 +659,9 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     {
         ClipboardFormat format = new(description, value);
         Settings.ClipboardContentFormats.Add(format);
-        ClipboardFormatItem item = new(format, MarkChanged);
+        ClipboardFormatItem item = new(format);
         ClipboardFormats.Add(item);
         SelectedClipboardFormat = item;
-        MarkChanged();
     }
 
     public void RemoveSelectedClipboardFormat()
@@ -685,7 +675,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         Settings.ClipboardContentFormats.Remove(SelectedClipboardFormat.Model);
         ClipboardFormats.Remove(SelectedClipboardFormat);
         SelectedClipboardFormat = ClipboardFormats.Count == 0 ? null : ClipboardFormats[Math.Min(index, ClipboardFormats.Count - 1)];
-        MarkChanged();
     }
 
     public void ResetThumbnailSize()
@@ -693,7 +682,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         Settings.ThumbnailSize = new Size(200, 150);
         OnPropertyChanged(nameof(ThumbnailWidth));
         OnPropertyChanged(nameof(ThumbnailHeight));
-        MarkChanged();
     }
 
     public void EditQuickTaskMenu() => QuickTaskMenuEditorIntegration.Show();
@@ -723,7 +711,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             using Image image = TaskHelpers.GetScreenshot().CaptureActiveMonitor();
             PrintWindowIntegration.Show(image, Settings.PrintSettings, true, owner);
         });
-        MarkChanged();
     }
 
     public async Task ExportAsync(string path)
@@ -759,7 +746,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     {
         IsBusy = true;
         StatusMessage = Strings.ApplicationSettingsWindow_ImportingBackup;
-        _saveTimer.Stop();
 
         try
         {
@@ -811,7 +797,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
 
         IsBusy = true;
-        _saveTimer.Stop();
 
         try
         {
@@ -847,7 +832,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         RefreshStartWithWindows();
 
         ClipboardFormats = new ObservableCollection<ClipboardFormatItem>(Settings.ClipboardContentFormats
-            .Select(x => new ClipboardFormatItem(x, MarkChanged)));
+            .Select(x => new ClipboardFormatItem(x)));
         SelectedClipboardFormat = ClipboardFormats.FirstOrDefault();
 
         RefreshBufferSizeOptions();
@@ -997,14 +982,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
         setter(value);
         OnPropertyChanged(propertyName);
-        MarkChanged();
         return true;
-    }
-
-    private void MarkChanged()
-    {
-        _saveTimer.Stop();
-        _saveTimer.Start();
     }
 
     private void RefreshBufferSizeOptions()
@@ -1014,14 +992,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             .ToArray();
         OnPropertyChanged(nameof(BufferSizeOptions));
         OnPropertyChanged(nameof(SelectedBufferSize));
-    }
-
-    private void OnSaveTimerTick(object? sender, EventArgs e)
-    {
-        _saveTimer.Stop();
-        FlushPersonalPath();
-        InvokeOnMainThread(Program.MainForm.ApplyApplicationSettings);
-        SettingManager.SaveApplicationConfigAsync();
     }
 
     private void FlushPersonalPath()
@@ -1135,7 +1105,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
 
         _disposed = true;
-        _saveTimer.Stop();
         foreach (LanguageOption language in LanguageOptions)
         {
             language.Icon.Dispose();
