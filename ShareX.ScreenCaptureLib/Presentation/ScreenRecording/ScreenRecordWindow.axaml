@@ -31,6 +31,7 @@
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="CornerRadius" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
         <Style Selector="Button.recorder-action /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="BorderThickness" Value="0"/>
@@ -78,6 +79,9 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="TextBlock.action-label">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="StackPanel.action-content">
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
     </Window.Styles>
@@ -130,7 +134,7 @@
                                     Spacing="1">
                             <Button x:Name="StartButton"
                                     Classes="recorder-action left-rounded">
-                                <StackPanel Orientation="Horizontal" Spacing="7">
+                                <StackPanel Classes="action-content" Orientation="Horizontal" Spacing="7">
                                     <TextBlock x:Name="StartIcon"
                                                Classes="icon action-icon"
                                                Text="{x:Static theming:LucideIcons.circle_play}"/>
@@ -142,7 +146,7 @@
 
                             <Button x:Name="PauseButton"
                                     Classes="recorder-action">
-                                <StackPanel Orientation="Horizontal" Spacing="7">
+                                <StackPanel Classes="action-content" Orientation="Horizontal" Spacing="7">
                                     <TextBlock x:Name="PauseIcon"
                                                Classes="icon action-icon"
                                                Text="{x:Static theming:LucideIcons.pause}"/>
@@ -155,7 +159,7 @@
                             <Button x:Name="RestartButton"
                                     Classes="recorder-action"
                                     IsEnabled="False">
-                                <StackPanel Orientation="Horizontal" Spacing="7">
+                                <StackPanel Classes="action-content" Orientation="Horizontal" Spacing="7">
                                     <TextBlock Classes="icon action-icon"
                                                Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
                                     <TextBlock Classes="action-label"
@@ -165,7 +169,7 @@
 
                             <Button x:Name="AbortButton"
                                     Classes="recorder-action right-rounded">
-                                <StackPanel Orientation="Horizontal" Spacing="7">
+                                <StackPanel Classes="action-content" Orientation="Horizontal" Spacing="7">
                                     <TextBlock Classes="icon action-icon"
                                                Text="{x:Static theming:LucideIcons.x}"/>
                                     <TextBlock Classes="action-label" Text="{x:Static localization:Strings.ScreenRecordWindow_Abort}"/>
