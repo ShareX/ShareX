@@ -20,12 +20,16 @@
         <LayoutTransformControl x:Name="RegionTransform"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
-            <capture:RegionSelectionOverlay x:Name="RegionOverlay"
-                                            Focusable="True"
-                                            PointerPressed="OnRegionPointerPressed"
-                                            PointerMoved="OnRegionPointerMoved"
-                                            PointerReleased="OnRegionPointerReleased"
-                                            PointerWheelChanged="OnRegionPointerWheelChanged"/>
+            <Grid x:Name="RegionInputSurface"
+                  Background="Transparent"
+                  Focusable="True"
+                  PointerPressed="OnRegionPointerPressed"
+                  PointerMoved="OnRegionPointerMoved"
+                  PointerReleased="OnRegionPointerReleased"
+                  PointerWheelChanged="OnRegionPointerWheelChanged">
+                <capture:RegionSelectionOverlay x:Name="RegionOverlay"
+                                                IsHitTestVisible="False"/>
+            </Grid>
         </LayoutTransformControl>
 
         <!-- HUD is deliberately separate from the image-pixel transform. -->
