@@ -47,6 +47,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 {
     private const int BorderPixels = 1;
     private const int ToolbarGapPixels = 3;
+    private const double TimerWidth = 112;
     private const double ToolbarWidth = 461;
     private const double ToolbarHeight = 42;
     private const int RegionOr = 2;
@@ -75,6 +76,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private int _restartRequested;
     private bool _configuringGeometry;
     private bool _activateWindow = true;
+    private bool _showRecordingTimer = true;
 
     public event Action? StopRequested;
 
@@ -102,6 +104,27 @@ public partial class ScreenRecordWindow : Window, IDisposable
     public float Duration { get; set; }
     public bool AskConfirmationOnAbort { get; set; }
     public bool IsDisposed => _disposed;
+
+    public bool ShowRecordingTimer
+    {
+        get => _showRecordingTimer;
+        set
+        {
+            if (_showRecordingTimer == value)
+            {
+                return;
+            }
+
+            _showRecordingTimer = value;
+            TimerDragHandle.IsVisible = value;
+            RecorderControls.ColumnDefinitions[0].Width = new GridLength(value ? TimerWidth : 0);
+            Toolbar.Width = CurrentToolbarWidth;
+            ConfigureGeometry(_windowScaling);
+        }
+    }
+
+    private double CurrentToolbarWidth => ToolbarWidth - TimerWidth +
+        (ShowRecordingTimer ? TimerWidth : 0);
 
     public DrawingRectangle RecordingRegion => new(
         Position.X + _frameLeftPixels + BorderPixels,
@@ -541,7 +564,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
             int frameWidthPixels = _captureWidth + BorderPixels * 2;
             int frameHeightPixels = _captureHeight + BorderPixels * 2;
-            int toolbarWidthPixels = (int)Math.Ceiling(ToolbarWidth * _windowScaling);
+            int toolbarWidthPixels = (int)Math.Ceiling(CurrentToolbarWidth * _windowScaling);
             int contentWidthPixels = Math.Max(frameWidthPixels, toolbarWidthPixels);
 
             _frameLeftPixels = (contentWidthPixels - frameWidthPixels) / 2;
@@ -610,7 +633,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         int frameWidth = _captureWidth + BorderPixels * 2;
         int frameHeight = _captureHeight + BorderPixels * 2;
         int toolbarTop = frameHeight + ToolbarGapPixels;
-        int toolbarWidth = (int)Math.Ceiling(ToolbarWidth * _windowScaling);
+        int toolbarWidth = (int)Math.Ceiling(CurrentToolbarWidth * _windowScaling);
         int toolbarHeight = (int)Math.Ceiling(ToolbarHeight * _windowScaling);
 
         IntPtr windowRegion = CreateRectRgn(_frameLeftPixels, 0, _frameLeftPixels + frameWidth, frameHeight);

@@ -1432,6 +1432,9 @@
   <data name="TaskSettingsWindow_ShowCursorInRecording" xml:space="preserve">
     <value>रिकॉर्डिंग में कर्सर दिखाएँ</value>
   </data>
+  <data name="TaskSettingsWindow_ShowRecordingTimer" xml:space="preserve">
+    <value>रिकॉर्डिंग टाइमर दिखाएँ</value>
+  </data>
   <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
     <value>विलंब के बाद रिकॉर्डिंग आरंभ करें</value>
   </data>

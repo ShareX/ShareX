@@ -1432,6 +1432,9 @@
   <data name="TaskSettingsWindow_ShowCursorInRecording" xml:space="preserve">
     <value>הצגת הסמן בהקלטה</value>
   </data>
+  <data name="TaskSettingsWindow_ShowRecordingTimer" xml:space="preserve">
+    <value>הצגת טיימר ההקלטה</value>
+  </data>
   <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
     <value>התחלת הקלטה לאחר השהיה</value>
   </data>

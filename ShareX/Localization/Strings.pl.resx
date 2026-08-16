@@ -1432,6 +1432,9 @@
   <data name="TaskSettingsWindow_ShowCursorInRecording" xml:space="preserve">
     <value>Pokaż kursor w nagraniu</value>
   </data>
+  <data name="TaskSettingsWindow_ShowRecordingTimer" xml:space="preserve">
+    <value>Pokaż licznik nagrywania</value>
+  </data>
   <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
     <value>Rozpocznij nagrywanie po opóźnieniu</value>
   </data>

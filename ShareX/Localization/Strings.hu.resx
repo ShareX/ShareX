@@ -1432,6 +1432,9 @@
   <data name="TaskSettingsWindow_ShowCursorInRecording" xml:space="preserve">
     <value>Kurzor megjelenítése a felvételben</value>
   </data>
+  <data name="TaskSettingsWindow_ShowRecordingTimer" xml:space="preserve">
+    <value>Felvételi időzítő megjelenítése</value>
+  </data>
   <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
     <value>Felvétel indítása késleltetés után</value>
   </data>

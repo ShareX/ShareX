@@ -2917,6 +2917,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ShowCursorInRecording", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_ShowRecordingTimer {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowRecordingTimer", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_StartRecordingAfterADelay {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_StartRecordingAfterADelay", resourceCulture);

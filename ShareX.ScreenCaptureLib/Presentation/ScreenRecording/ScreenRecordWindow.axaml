@@ -104,8 +104,11 @@
                     BorderBrush="{DynamicResource ShareX.Brush.Border}"
                     BorderThickness="1">
                 <Grid>
-                    <Grid x:Name="RecorderControls"
-                          ColumnDefinitions="112,*">
+                    <Grid x:Name="RecorderControls">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="112"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
                         <Border x:Name="TimerDragHandle"
                                 Grid.Column="0"
                                 CornerRadius="7,0,0,7"

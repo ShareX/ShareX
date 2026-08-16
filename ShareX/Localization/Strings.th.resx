@@ -1432,6 +1432,9 @@
   <data name="TaskSettingsWindow_ShowCursorInRecording" xml:space="preserve">
     <value>แสดงเคอร์เซอร์ในการบันทึก</value>
   </data>
+  <data name="TaskSettingsWindow_ShowRecordingTimer" xml:space="preserve">
+    <value>แสดงตัวจับเวลาการบันทึก</value>
+  </data>
   <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
     <value>เริ่มบันทึกหลังจากหน่วงเวลา</value>
   </data>
