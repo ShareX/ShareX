@@ -225,7 +225,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             Countdown = TimeSpan.FromSeconds(Duration);
         }
 
-        SetRecordingAccent(Brushes.LimeGreen);
+        SetRecordingAccent(Brushes.Red);
         Timer.Start();
         _refreshTimer.Start();
         UpdateTimer();

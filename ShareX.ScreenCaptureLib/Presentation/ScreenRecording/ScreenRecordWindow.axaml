@@ -76,7 +76,7 @@
                                            Text="00:00:00"
                                            FontFamily="Cascadia Mono,Consolas"
                                            FontSize="14"
-                                           FontWeight="SemiBold"
+                                           FontWeight="Normal"
                                            VerticalAlignment="Center"/>
                             </StackPanel>
                         </Border>
