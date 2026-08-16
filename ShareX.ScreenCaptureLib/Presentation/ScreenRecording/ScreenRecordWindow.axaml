@@ -26,8 +26,51 @@
             <Setter Property="MinWidth" Value="86"/>
             <Setter Property="Height" Value="40"/>
             <Setter Property="MinHeight" Value="40"/>
+            <Setter Property="Margin" Value="0"/>
             <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Button.recorder-action /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="0"/>
+        </Style>
+        <Style Selector="Button.recorder-action:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="0"/>
+        </Style>
+        <Style Selector="Button.recorder-action:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="0"/>
+        </Style>
+        <Style Selector="Button.recorder-action:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="0"/>
+        </Style>
+        <Style Selector="Button.recorder-action.left-rounded">
+            <Setter Property="CornerRadius" Value="7,0,0,7"/>
+        </Style>
+        <Style Selector="Button.recorder-action.left-rounded /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="CornerRadius" Value="7,0,0,7"/>
+        </Style>
+        <Style Selector="Button.recorder-action.left-rounded:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="CornerRadius" Value="7,0,0,7"/>
+        </Style>
+        <Style Selector="Button.recorder-action.left-rounded:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="CornerRadius" Value="7,0,0,7"/>
+        </Style>
+        <Style Selector="Button.recorder-action.right-rounded">
+            <Setter Property="CornerRadius" Value="0,7,7,0"/>
+        </Style>
+        <Style Selector="Button.recorder-action.right-rounded /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="CornerRadius" Value="0,7,7,0"/>
+        </Style>
+        <Style Selector="Button.recorder-action.right-rounded:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="CornerRadius" Value="0,7,7,0"/>
+        </Style>
+        <Style Selector="Button.recorder-action.right-rounded:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="CornerRadius" Value="0,7,7,0"/>
         </Style>
         <Style Selector="TextBlock.action-icon">
             <Setter Property="FontSize" Value="15"/>
@@ -47,24 +90,24 @@
 
             <Border x:Name="Toolbar"
                     Canvas.Left="0"
-                    Width="474"
-                    Height="48"
-                    Padding="4"
-                    CornerRadius="7"
+                    Width="461"
+                    Height="42"
+                    Padding="0"
+                    CornerRadius="8"
+                    ClipToBounds="True"
                     Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                     BorderBrush="{DynamicResource ShareX.Brush.Border}"
                     BorderThickness="1">
                 <Grid>
                     <Grid x:Name="RecorderControls"
-                          ColumnDefinitions="112,*"
-                          ColumnSpacing="2">
+                          ColumnDefinitions="112,*">
                         <Border x:Name="TimerDragHandle"
                                 Grid.Column="0"
-                                CornerRadius="4"
+                                CornerRadius="7,0,0,7"
                                 Background="{DynamicResource ShareX.Brush.Background.Panel}"
                                 Cursor="SizeAll">
                             <StackPanel Orientation="Horizontal"
-                                        Spacing="8"
+                                        Spacing="9"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center">
                                 <Border x:Name="StatusIndicator"
@@ -83,9 +126,9 @@
 
                         <StackPanel Grid.Column="1"
                                     Orientation="Horizontal"
-                                    Spacing="2">
+                                    Spacing="1">
                             <Button x:Name="StartButton"
-                                    Classes="recorder-action">
+                                    Classes="recorder-action left-rounded">
                                 <StackPanel Orientation="Horizontal" Spacing="7">
                                     <TextBlock x:Name="StartIcon"
                                                Classes="icon action-icon"
@@ -120,7 +163,7 @@
                             </Button>
 
                             <Button x:Name="AbortButton"
-                                    Classes="recorder-action">
+                                    Classes="recorder-action right-rounded">
                                 <StackPanel Orientation="Horizontal" Spacing="7">
                                     <TextBlock Classes="icon action-icon"
                                                Text="{x:Static theming:LucideIcons.x}"/>
@@ -132,7 +175,7 @@
 
                     <Grid x:Name="AbortConfirmation"
                           ColumnDefinitions="*,Auto,Auto"
-                          ColumnSpacing="8"
+                          ColumnSpacing="1"
                           IsVisible="False">
                         <TextBlock Grid.Column="0"
                                    Margin="10,0"
@@ -145,7 +188,7 @@
                                 Content="{x:Static localization:Strings.ScreenRecordWindow_Cancel}"/>
                         <Button x:Name="ConfirmAbortButton"
                                 Grid.Column="2"
-                                Classes="recorder-action"
+                                Classes="recorder-action right-rounded"
                                 Content="{x:Static localization:Strings.ScreenRecordWindow_Abort}"/>
                     </Grid>
                 </Grid>

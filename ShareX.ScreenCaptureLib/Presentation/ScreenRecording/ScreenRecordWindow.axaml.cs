@@ -46,8 +46,8 @@ public partial class ScreenRecordWindow : Window, IDisposable
 {
     private const int BorderPixels = 1;
     private const int ToolbarGapPixels = 3;
-    private const double ToolbarWidth = 474;
-    private const double ToolbarHeight = 48;
+    private const double ToolbarWidth = 461;
+    private const double ToolbarHeight = 42;
     private const int RegionOr = 2;
     private const int RegionDiff = 4;
 
@@ -67,8 +67,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private PixelPoint _dragPointerOrigin;
     private PixelPoint _dragWindowOrigin;
     private double _windowScaling = 1;
+    private int _frameLeftPixels;
+    private int _toolbarLeftPixels;
     private int _lastIconStatus = -1;
     private int _restartRequested;
+    private bool _configuringGeometry;
     private bool _activateWindow = true;
 
     public event Action? StopRequested;
@@ -99,7 +102,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
     public bool IsDisposed => _disposed;
 
     public DrawingRectangle RecordingRegion => new(
-        Position.X + BorderPixels,
+        Position.X + _frameLeftPixels + BorderPixels,
         Position.Y + BorderPixels,
         _captureWidth,
         _captureHeight);
@@ -494,7 +497,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void OnPositionChanged(object? sender, PixelPointEventArgs e)
     {
-        if (_disposed)
+        if (_disposed || _configuringGeometry)
         {
             return;
         }
@@ -508,24 +511,54 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void ConfigureGeometry(double scaling)
     {
-        _windowScaling = Math.Max(0.5, scaling);
+        _configuringGeometry = true;
 
-        int frameWidthPixels = _captureWidth + BorderPixels * 2;
-        int frameHeightPixels = _captureHeight + BorderPixels * 2;
-        double frameWidth = frameWidthPixels / _windowScaling;
-        double frameHeight = frameHeightPixels / _windowScaling;
-        double gap = ToolbarGapPixels / _windowScaling;
-
-        RegionBorder.Width = frameWidth;
-        RegionBorder.Height = frameHeight;
-        Avalonia.Controls.Canvas.SetTop(Toolbar, frameHeight + gap);
-
-        Width = Math.Max(frameWidth, ToolbarWidth);
-        Height = frameHeight + gap + ToolbarHeight;
-
-        if (IsVisible)
+        try
         {
-            Dispatcher.UIThread.Post(ApplyNativeWindowRegion, DispatcherPriority.Loaded);
+            int recordingLeft = Position.X + _frameLeftPixels + BorderPixels;
+
+            _windowScaling = Math.Max(0.5, scaling);
+
+            int frameWidthPixels = _captureWidth + BorderPixels * 2;
+            int frameHeightPixels = _captureHeight + BorderPixels * 2;
+            int toolbarWidthPixels = (int)Math.Ceiling(ToolbarWidth * _windowScaling);
+            int contentWidthPixels = Math.Max(frameWidthPixels, toolbarWidthPixels);
+
+            _frameLeftPixels = (contentWidthPixels - frameWidthPixels) / 2;
+            _toolbarLeftPixels = (contentWidthPixels - toolbarWidthPixels) / 2;
+
+            double frameLeft = _frameLeftPixels / _windowScaling;
+            double toolbarLeft = _toolbarLeftPixels / _windowScaling;
+            double frameWidth = frameWidthPixels / _windowScaling;
+            double frameHeight = frameHeightPixels / _windowScaling;
+            double gap = ToolbarGapPixels / _windowScaling;
+
+            PixelPoint centeredPosition = new(
+                recordingLeft - _frameLeftPixels - BorderPixels,
+                Position.Y);
+
+            if (Position != centeredPosition)
+            {
+                Position = centeredPosition;
+            }
+
+            Avalonia.Controls.Canvas.SetLeft(RegionBorder, frameLeft);
+            RegionBorder.Width = frameWidth;
+            RegionBorder.Height = frameHeight;
+            Avalonia.Controls.Canvas.SetLeft(Toolbar, toolbarLeft);
+            Avalonia.Controls.Canvas.SetTop(Toolbar, frameHeight + gap);
+
+            Width = contentWidthPixels / _windowScaling;
+            Height = frameHeight + gap + ToolbarHeight;
+
+            if (IsVisible)
+            {
+                Dispatcher.UIThread.Post(ApplyNativeWindowRegion, DispatcherPriority.Loaded);
+            }
+        }
+        finally
+        {
+            _configuringGeometry = false;
         }
     }
 
@@ -560,13 +593,17 @@ public partial class ScreenRecordWindow : Window, IDisposable
         int toolbarWidth = (int)Math.Ceiling(ToolbarWidth * _windowScaling);
         int toolbarHeight = (int)Math.Ceiling(ToolbarHeight * _windowScaling);
 
-        IntPtr windowRegion = CreateRectRgn(0, 0, frameWidth, frameHeight);
+        IntPtr windowRegion = CreateRectRgn(_frameLeftPixels, 0, _frameLeftPixels + frameWidth, frameHeight);
         IntPtr apertureRegion = CreateRectRgn(
+            _frameLeftPixels + BorderPixels,
             BorderPixels,
-            BorderPixels,
-            frameWidth - BorderPixels,
+            _frameLeftPixels + frameWidth - BorderPixels,
             frameHeight - BorderPixels);
-        IntPtr toolbarRegion = CreateRectRgn(0, toolbarTop, toolbarWidth, toolbarTop + toolbarHeight);
+        IntPtr toolbarRegion = CreateRectRgn(
+            _toolbarLeftPixels,
+            toolbarTop,
+            _toolbarLeftPixels + toolbarWidth,
+            toolbarTop + toolbarHeight);
 
         if (windowRegion == IntPtr.Zero || apertureRegion == IntPtr.Zero || toolbarRegion == IntPtr.Zero)
         {
@@ -614,7 +651,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             _dragWindowOrigin.X + pointer.X - _dragPointerOrigin.X,
             _dragWindowOrigin.Y + pointer.Y - _dragPointerOrigin.Y);
         DrawingRectangle recordingRegion = new(
-            candidate.X + BorderPixels,
+            candidate.X + _frameLeftPixels + BorderPixels,
             candidate.Y + BorderPixels,
             _captureWidth,
             _captureHeight);
