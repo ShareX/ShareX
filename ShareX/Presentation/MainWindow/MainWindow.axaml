@@ -47,6 +47,9 @@
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
+        <Style Selector="Border.thumbnail-preview.clickable">
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
         <Style Selector="Border.combine-drop-zone">
             <Setter Property="Background" Value="#CC2B2B2B"/>
         </Style>
@@ -117,7 +120,9 @@
                                                        TextTrimming="CharacterEllipsis"
                                                        MaxLines="1"/>
                                         </Border>
-                                        <Border Width="{Binding Width}"
+                                        <Border Classes="thumbnail-preview"
+                                                Classes.clickable="{Binding IsClickable}"
+                                                Width="{Binding Width}"
                                                 Height="{Binding Height}"
                                                 Background="{DynamicResource ShareX.Brush.Background.Panel}"
                                                 CornerRadius="4"

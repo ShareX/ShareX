@@ -70,6 +70,27 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     public bool HasNoThumbnail => Thumbnail == null;
     public bool IsVideo => FileHelpers.IsVideoFile(Task.Info?.FilePath ?? Task.Info?.FileName);
     public bool ShowPlayIcon => HasThumbnail && IsVideo;
+    public bool IsClickable
+    {
+        get
+        {
+            TaskInfo? info = Task.Info;
+            string? filePath = info?.FilePath;
+
+            return Program.Settings.ThumbnailClickAction switch
+            {
+                ThumbnailViewClickAction.Default => !string.IsNullOrEmpty(filePath) && File.Exists(filePath),
+                ThumbnailViewClickAction.OpenImageViewer => !string.IsNullOrEmpty(filePath) &&
+                    File.Exists(filePath) && FileHelpers.IsImageFile(filePath),
+                ThumbnailViewClickAction.OpenFile => !string.IsNullOrEmpty(filePath) && File.Exists(filePath),
+                ThumbnailViewClickAction.OpenFolder => !string.IsNullOrEmpty(filePath),
+                ThumbnailViewClickAction.OpenURL => !string.IsNullOrWhiteSpace(info?.Result?.ToString()),
+                ThumbnailViewClickAction.EditImage => !string.IsNullOrEmpty(filePath) &&
+                    File.Exists(filePath) && FileHelpers.IsImageFile(filePath),
+                _ => false
+            };
+        }
+    }
 
     public bool IsSelected
     {
@@ -170,6 +191,7 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         PlaceholderIcon = GetPlaceholderIcon(info?.FilePath ?? info?.FileName);
         OnPropertyChanged(nameof(IsVideo));
         OnPropertyChanged(nameof(ShowPlayIcon));
+        OnPropertyChanged(nameof(IsClickable));
     }
 
     public void RefreshSettings()
