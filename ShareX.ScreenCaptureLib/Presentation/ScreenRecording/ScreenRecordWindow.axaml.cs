@@ -37,6 +37,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using DrawingColor = System.Drawing.Color;
 using DrawingIcon = System.Drawing.Icon;
+using DrawingImage = System.Drawing.Image;
 using DrawingRectangle = System.Drawing.Rectangle;
 using WinForms = System.Windows.Forms;
 
@@ -133,6 +134,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
         _trayPauseItem.Click += (_, _) => RunOnUIThread(PauseResumeRecording);
         _trayRestartItem.Click += (_, _) => RunOnUIThread(RestartRecording);
         _trayAbortItem.Click += (_, _) => RunOnUIThread(RequestAbortRecording);
+
+        SetTrayMenuIcon(_trayStartItem, LucideIcons.circle_play);
+        SetTrayMenuIcon(_trayPauseItem, LucideIcons.pause);
+        SetTrayMenuIcon(_trayRestartItem, LucideIcons.rotate_ccw);
+        SetTrayMenuIcon(_trayAbortItem, LucideIcons.x);
 
         _trayMenu = new WinForms.ContextMenuStrip();
         _trayMenu.Items.AddRange([_trayStartItem, _trayPauseItem, _trayRestartItem, _trayAbortItem]);
@@ -382,6 +388,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         _trayIcon.Visible = false;
         _trayIcon.MouseClick -= OnTrayIconMouseClick;
         _trayIcon.Dispose();
+        DisposeTrayMenuIcons();
         _trayMenu.Dispose();
         _ownedTrayIcon?.Dispose();
         _ownedTrayIcon = null;
@@ -425,6 +432,8 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 StartText.Text = Strings.ScreenRecordForm_Stop;
                 StartIcon.Text = LucideIcons.square;
                 _trayStartItem.Text = Strings.ScreenRecordForm_Stop;
+                SetTrayMenuIcon(_trayStartItem, LucideIcons.square);
+                SetTrayMenuIcon(_trayPauseItem, LucideIcons.pause);
                 RestartButton.IsEnabled = false;
                 _trayRestartItem.Enabled = false;
                 SetRecordingAccent(Brushes.Goldenrod);
@@ -440,9 +449,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 StartText.Text = paused ? Strings.ScreenRecordForm_Stop : Strings.ScreenRecordForm_Start;
                 StartIcon.Text = paused ? LucideIcons.square : LucideIcons.circle_play;
                 _trayStartItem.Text = StartText.Text;
+                SetTrayMenuIcon(_trayStartItem, paused ? LucideIcons.square : LucideIcons.circle_play);
                 PauseText.Text = Strings.Resume;
                 PauseIcon.Text = LucideIcons.play;
                 _trayPauseItem.Text = Strings.Resume;
+                SetTrayMenuIcon(_trayPauseItem, LucideIcons.play);
                 TimerDragHandle.Cursor = new Cursor(StandardCursorType.SizeAll);
                 RestartButton.IsEnabled = paused;
                 _trayRestartItem.Enabled = paused;
@@ -454,9 +465,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 StartText.Text = Strings.ScreenRecordForm_Stop;
                 StartIcon.Text = LucideIcons.square;
                 _trayStartItem.Text = Strings.ScreenRecordForm_Stop;
+                SetTrayMenuIcon(_trayStartItem, LucideIcons.square);
                 PauseText.Text = Strings.Pause;
                 PauseIcon.Text = LucideIcons.pause;
                 _trayPauseItem.Text = Strings.Pause;
+                SetTrayMenuIcon(_trayPauseItem, LucideIcons.pause);
                 TimerDragHandle.Cursor = Cursor.Default;
                 RestartButton.IsEnabled = true;
                 _trayRestartItem.Enabled = true;
@@ -711,6 +724,31 @@ public partial class ScreenRecordWindow : Window, IDisposable
         _ownedTrayIcon = icon;
         _trayIcon.Icon = icon;
         previous?.Dispose();
+    }
+
+    private static void SetTrayMenuIcon(WinForms.ToolStripMenuItem item, string glyph)
+    {
+        if (item.Tag as string == glyph && item.Image != null)
+        {
+            return;
+        }
+
+        using DrawingIcon icon = LucideTrayIcon.Create(glyph);
+        DrawingImage replacement = icon.ToBitmap();
+        DrawingImage? previous = item.Image;
+        item.Image = replacement;
+        item.Tag = glyph;
+        previous?.Dispose();
+    }
+
+    private void DisposeTrayMenuIcons()
+    {
+        foreach (WinForms.ToolStripItem item in _trayMenu.Items)
+        {
+            DrawingImage? image = item.Image;
+            item.Image = null;
+            image?.Dispose();
+        }
     }
 
     private void OnClosed(object? sender, EventArgs e)
