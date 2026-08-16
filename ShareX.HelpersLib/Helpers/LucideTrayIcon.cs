@@ -58,19 +58,15 @@ public static class LucideTrayIcon
     /// Creates a multi-resolution icon using the color appropriate for the
     /// current Windows taskbar theme.
     /// </summary>
-    public static Icon Create(string glyph)
+    public static Icon CreateIcon(string glyph)
     {
-        System.Drawing.Color color = IsLightTaskbarTheme() ?
-            System.Drawing.Color.Black :
-            System.Drawing.Color.White;
-
-        return Create(glyph, color);
+        return CreateIcon(glyph, GetThemeIconColor());
     }
 
     /// <summary>
     /// Creates a multi-resolution icon using a specific glyph color.
     /// </summary>
-    public static Icon Create(string glyph, System.Drawing.Color color)
+    public static Icon CreateIcon(string glyph, System.Drawing.Color color)
     {
         if (string.IsNullOrEmpty(glyph))
         {
@@ -83,6 +79,41 @@ public static class LucideTrayIcon
         using MemoryStream stream = new(iconData, writable: false);
         using Icon icon = new(stream, SystemInformation.SmallIconSize);
         return (Icon)icon.Clone();
+    }
+
+    /// <summary>
+    /// Creates a small bitmap using the color appropriate for the current
+    /// Windows taskbar theme.
+    /// </summary>
+    public static Image CreateImage(string glyph)
+    {
+        return CreateImage(glyph, GetThemeIconColor());
+    }
+
+    /// <summary>
+    /// Creates a small bitmap using a specific glyph color.
+    /// </summary>
+    public static Image CreateImage(string glyph, System.Drawing.Color color)
+    {
+        if (string.IsNullOrEmpty(glyph))
+        {
+            throw new ArgumentException("A Lucide glyph is required.", nameof(glyph));
+        }
+
+        SKColor skColor = new(color.R, color.G, color.B, color.A);
+        int size = Math.Max(SystemInformation.SmallIconSize.Width, SystemInformation.SmallIconSize.Height);
+        byte[] imageData = RenderGlyph(glyph, skColor, size);
+
+        using MemoryStream stream = new(imageData, writable: false);
+        using Image image = Image.FromStream(stream);
+        return new Bitmap(image);
+    }
+
+    private static System.Drawing.Color GetThemeIconColor()
+    {
+        return IsLightTaskbarTheme() ?
+            System.Drawing.Color.Black :
+            System.Drawing.Color.White;
     }
 
     private static bool IsLightTaskbarTheme()
@@ -221,7 +252,7 @@ public static class LucideTrayIcon
                 return;
             }
 
-            Icon replacement = Create(_glyph);
+            Icon replacement = CreateIcon(_glyph);
             Icon? previous = _ownedIcon;
             _trayIcon.Icon = replacement;
             _ownedIcon = replacement;

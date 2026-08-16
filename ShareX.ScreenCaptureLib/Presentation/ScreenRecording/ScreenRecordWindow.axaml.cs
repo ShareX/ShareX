@@ -288,7 +288,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             {
                 case ScreenRecordState.Waiting:
                     SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Waiting___);
-                    SetTrayIcon(LucideTrayIcon.Create(LucideIcons.video_off, DrawingColor.Gold));
+                    SetTrayIcon(LucideTrayIcon.CreateIcon(LucideIcons.video_off, DrawingColor.Gold));
                     _trayMenu.Enabled = false;
                     _trayIcon.Visible = true;
                     break;
@@ -428,7 +428,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         {
             case ScreenRecordingStatus.Working:
                 SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_);
-                SetTrayIcon(LucideTrayIcon.Create(LucideIcons.video, DrawingColor.Red));
+                SetTrayIcon(LucideTrayIcon.CreateIcon(LucideIcons.video, DrawingColor.Red));
                 StartText.Text = Strings.ScreenRecordForm_Stop;
                 StartIcon.Text = LucideIcons.square;
                 _trayStartItem.Text = Strings.ScreenRecordForm_Stop;
@@ -445,7 +445,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 SetTrayText("ShareX - " + (paused
                     ? Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_
                     : Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_));
-                SetTrayIcon(LucideTrayIcon.Create(LucideIcons.video_off, DrawingColor.Gold));
+                SetTrayIcon(LucideTrayIcon.CreateIcon(LucideIcons.video_off, DrawingColor.Gold));
                 StartText.Text = paused ? Strings.ScreenRecordForm_Stop : Strings.ScreenRecordForm_Start;
                 StartIcon.Text = paused ? LucideIcons.square : LucideIcons.circle_play;
                 _trayStartItem.Text = StartText.Text;
@@ -461,7 +461,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 break;
 
             case ScreenRecordingStatus.Recording:
-                SetTrayIcon(LucideTrayIcon.Create(LucideIcons.video, DrawingColor.Red));
+                SetTrayIcon(LucideTrayIcon.CreateIcon(LucideIcons.video, DrawingColor.Red));
                 StartText.Text = Strings.ScreenRecordForm_Stop;
                 StartIcon.Text = LucideIcons.square;
                 _trayStartItem.Text = Strings.ScreenRecordForm_Stop;
@@ -733,8 +733,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             return;
         }
 
-        using DrawingIcon icon = LucideTrayIcon.Create(glyph);
-        DrawingImage replacement = icon.ToBitmap();
+        DrawingImage replacement = LucideTrayIcon.CreateImage(glyph);
         DrawingImage? previous = item.Image;
         item.Image = replacement;
         item.Tag = glyph;

@@ -74,6 +74,7 @@
         </Style>
         <Style Selector="TextBlock.action-icon">
             <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="TextBlock.action-label">
