@@ -238,6 +238,9 @@
   <data name="ScreenRecordWindow_Pause" xml:space="preserve">
     <value>Sæt på pause</value>
   </data>
+  <data name="ScreenRecordWindow_Restart" xml:space="preserve">
+    <value>Genstart</value>
+  </data>
   <data name="ScreenRecordWindow_Abort" xml:space="preserve">
     <value>Annuller</value>
   </data>

@@ -238,6 +238,9 @@
   <data name="ScreenRecordWindow_Pause" xml:space="preserve">
     <value>Jeda</value>
   </data>
+  <data name="ScreenRecordWindow_Restart" xml:space="preserve">
+    <value>Mulai ulang</value>
+  </data>
   <data name="ScreenRecordWindow_Abort" xml:space="preserve">
     <value>Batalkan</value>
   </data>

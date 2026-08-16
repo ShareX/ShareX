@@ -238,6 +238,9 @@
   <data name="ScreenRecordWindow_Pause" xml:space="preserve">
     <value>暫停</value>
   </data>
+  <data name="ScreenRecordWindow_Restart" xml:space="preserve">
+    <value>重新錄製</value>
+  </data>
   <data name="ScreenRecordWindow_Abort" xml:space="preserve">
     <value>中止</value>
   </data>

@@ -238,6 +238,9 @@
   <data name="ScreenRecordWindow_Pause" xml:space="preserve">
     <value>रोकें</value>
   </data>
+  <data name="ScreenRecordWindow_Restart" xml:space="preserve">
+    <value>पुनः आरंभ करें</value>
+  </data>
   <data name="ScreenRecordWindow_Abort" xml:space="preserve">
     <value>निरस्त करें</value>
   </data>

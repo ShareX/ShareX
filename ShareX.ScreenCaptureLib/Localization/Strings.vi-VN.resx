@@ -238,6 +238,9 @@
   <data name="ScreenRecordWindow_Pause" xml:space="preserve">
     <value>Tạm dừng</value>
   </data>
+  <data name="ScreenRecordWindow_Restart" xml:space="preserve">
+    <value>Bắt đầu lại</value>
+  </data>
   <data name="ScreenRecordWindow_Abort" xml:space="preserve">
     <value>Hủy bỏ</value>
   </data>

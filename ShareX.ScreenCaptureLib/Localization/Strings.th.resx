@@ -238,6 +238,9 @@
   <data name="ScreenRecordWindow_Pause" xml:space="preserve">
     <value>หยุดชั่วคราว</value>
   </data>
+  <data name="ScreenRecordWindow_Restart" xml:space="preserve">
+    <value>เริ่มใหม่</value>
+  </data>
   <data name="ScreenRecordWindow_Abort" xml:space="preserve">
     <value>ยกเลิก</value>
   </data>

@@ -238,6 +238,9 @@
   <data name="ScreenRecordWindow_Pause" xml:space="preserve">
     <value>Duraklat</value>
   </data>
+  <data name="ScreenRecordWindow_Restart" xml:space="preserve">
+    <value>Yeniden başlat</value>
+  </data>
   <data name="ScreenRecordWindow_Abort" xml:space="preserve">
     <value>İptal et</value>
   </data>

@@ -238,6 +238,9 @@
   <data name="ScreenRecordWindow_Pause" xml:space="preserve">
     <value>일시 중지</value>
   </data>
+  <data name="ScreenRecordWindow_Restart" xml:space="preserve">
+    <value>재시작</value>
+  </data>
   <data name="ScreenRecordWindow_Abort" xml:space="preserve">
     <value>중단</value>
   </data>
