@@ -1435,6 +1435,9 @@
   <data name="TaskSettingsWindow_ShowRecordingTimer" xml:space="preserve">
     <value>显示录制计时器</value>
   </data>
+  <data name="TaskSettingsWindow_ShowRecordingButtonLabels" xml:space="preserve">
+    <value>显示录制按钮标签</value>
+  </data>
   <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
     <value>延迟后开始录制</value>
   </data>

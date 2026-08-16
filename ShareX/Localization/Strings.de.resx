@@ -1435,6 +1435,9 @@
   <data name="TaskSettingsWindow_ShowRecordingTimer" xml:space="preserve">
     <value>Aufnahme-Timer anzeigen</value>
   </data>
+  <data name="TaskSettingsWindow_ShowRecordingButtonLabels" xml:space="preserve">
+    <value>Beschriftungen der Aufnahmeschaltflächen anzeigen</value>
+  </data>
   <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
     <value>Aufnahme nach einer Verzögerung starten</value>
   </data>

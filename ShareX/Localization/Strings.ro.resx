@@ -1435,6 +1435,9 @@
   <data name="TaskSettingsWindow_ShowRecordingTimer" xml:space="preserve">
     <value>Afișează cronometrul înregistrării</value>
   </data>
+  <data name="TaskSettingsWindow_ShowRecordingButtonLabels" xml:space="preserve">
+    <value>Afișează etichetele butoanelor de înregistrare</value>
+  </data>
   <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
     <value>Pornește înregistrarea după o întârziere</value>
   </data>

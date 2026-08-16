@@ -1435,6 +1435,9 @@
   <data name="TaskSettingsWindow_ShowRecordingTimer" xml:space="preserve">
     <value>Mostra timer di registrazione</value>
   </data>
+  <data name="TaskSettingsWindow_ShowRecordingButtonLabels" xml:space="preserve">
+    <value>Mostra etichette dei pulsanti di registrazione</value>
+  </data>
   <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
     <value>Avvia registrazione dopo un ritardo</value>
   </data>

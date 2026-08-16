@@ -1435,6 +1435,9 @@
   <data name="TaskSettingsWindow_ShowRecordingTimer" xml:space="preserve">
     <value>Opnametimer weergeven</value>
   </data>
+  <data name="TaskSettingsWindow_ShowRecordingButtonLabels" xml:space="preserve">
+    <value>Labels van opnameknoppen weergeven</value>
+  </data>
   <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
     <value>Opname na een vertraging starten</value>
   </data>

@@ -48,6 +48,9 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private const int BorderPixels = 1;
     private const int ToolbarGapPixels = 3;
     private const double TimerWidth = 112;
+    private const double ActionButtonWidth = 86;
+    private const double CompactActionButtonWidth = 40;
+    private const int ActionButtonCount = 4;
     private const double ToolbarWidth = 461;
     private const double ToolbarHeight = 42;
     private const int RegionOr = 2;
@@ -77,6 +80,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private bool _configuringGeometry;
     private bool _activateWindow = true;
     private bool _showRecordingTimer = true;
+    private bool _showRecordingButtonLabels = true;
 
     public event Action? StopRequested;
 
@@ -124,7 +128,39 @@ public partial class ScreenRecordWindow : Window, IDisposable
     }
 
     private double CurrentToolbarWidth => ToolbarWidth - TimerWidth +
-        (ShowRecordingTimer ? TimerWidth : 0);
+        (ShowRecordingTimer ? TimerWidth : 0) -
+        (ShowRecordingButtonLabels ? 0 : (ActionButtonWidth - CompactActionButtonWidth) * ActionButtonCount);
+
+    private double DisplayedToolbarWidth => AbortConfirmation.IsVisible ? ToolbarWidth : CurrentToolbarWidth;
+
+    public bool ShowRecordingButtonLabels
+    {
+        get => _showRecordingButtonLabels;
+        set
+        {
+            if (_showRecordingButtonLabels == value)
+            {
+                return;
+            }
+
+            _showRecordingButtonLabels = value;
+            StartText.IsVisible = value;
+            PauseText.IsVisible = value;
+            RestartText.IsVisible = value;
+            AbortText.IsVisible = value;
+            UpdateActionToolTips();
+
+            double buttonWidth = value ? ActionButtonWidth : CompactActionButtonWidth;
+            foreach (Button button in new[] { StartButton, PauseButton, RestartButton, AbortButton })
+            {
+                button.Width = buttonWidth;
+                button.MinWidth = buttonWidth;
+            }
+
+            Toolbar.Width = DisplayedToolbarWidth;
+            ConfigureGeometry(_windowScaling);
+        }
+    }
 
     public DrawingRectangle RecordingRegion => new(
         Position.X + _frameLeftPixels + BorderPixels,
@@ -499,6 +535,16 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 _trayRestartItem.Enabled = true;
                 break;
         }
+
+        UpdateActionToolTips();
+    }
+
+    private void UpdateActionToolTips()
+    {
+        ToolTip.SetTip(StartButton, ShowRecordingButtonLabels ? null : StartText.Text);
+        ToolTip.SetTip(PauseButton, ShowRecordingButtonLabels ? null : PauseText.Text);
+        ToolTip.SetTip(RestartButton, ShowRecordingButtonLabels ? null : RestartText.Text);
+        ToolTip.SetTip(AbortButton, ShowRecordingButtonLabels ? null : AbortText.Text);
     }
 
     private void RequestAbortRecording()
@@ -517,6 +563,8 @@ public partial class ScreenRecordWindow : Window, IDisposable
     {
         RecorderControls.IsVisible = !show;
         AbortConfirmation.IsVisible = show;
+        Toolbar.Width = DisplayedToolbarWidth;
+        ConfigureGeometry(_windowScaling);
     }
 
     private void OnStopRequested()
@@ -564,7 +612,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
             int frameWidthPixels = _captureWidth + BorderPixels * 2;
             int frameHeightPixels = _captureHeight + BorderPixels * 2;
-            int toolbarWidthPixels = (int)Math.Ceiling(CurrentToolbarWidth * _windowScaling);
+            int toolbarWidthPixels = (int)Math.Ceiling(DisplayedToolbarWidth * _windowScaling);
             int contentWidthPixels = Math.Max(frameWidthPixels, toolbarWidthPixels);
 
             _frameLeftPixels = (contentWidthPixels - frameWidthPixels) / 2;
@@ -633,7 +681,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         int frameWidth = _captureWidth + BorderPixels * 2;
         int frameHeight = _captureHeight + BorderPixels * 2;
         int toolbarTop = frameHeight + ToolbarGapPixels;
-        int toolbarWidth = (int)Math.Ceiling(CurrentToolbarWidth * _windowScaling);
+        int toolbarWidth = (int)Math.Ceiling(DisplayedToolbarWidth * _windowScaling);
         int toolbarHeight = (int)Math.Ceiling(ToolbarHeight * _windowScaling);
 
         IntPtr windowRegion = CreateRectRgn(_frameLeftPixels, 0, _frameLeftPixels + frameWidth, frameHeight);

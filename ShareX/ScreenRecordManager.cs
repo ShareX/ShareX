@@ -195,7 +195,8 @@ namespace ShareX
                 ActivateWindow = startMethod == ScreenRecordStartMethod.Region,
                 Duration = duration,
                 AskConfirmationOnAbort = taskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort,
-                ShowRecordingTimer = taskSettings.CaptureSettings.ScreenRecordShowTimer
+                ShowRecordingTimer = taskSettings.CaptureSettings.ScreenRecordShowTimer,
+                ShowRecordingButtonLabels = taskSettings.CaptureSettings.ScreenRecordShowButtonLabels
             };
 
             recordForm.StopRequested += StopRecording;

@@ -2922,6 +2922,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ShowRecordingTimer", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_ShowRecordingButtonLabels {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowRecordingButtonLabels", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_StartRecordingAfterADelay {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_StartRecordingAfterADelay", resourceCulture);

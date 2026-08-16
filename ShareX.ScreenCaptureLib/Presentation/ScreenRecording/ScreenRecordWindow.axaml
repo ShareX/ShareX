@@ -165,7 +165,8 @@
                                 <StackPanel Classes="action-content" Orientation="Horizontal" Spacing="7">
                                     <TextBlock Classes="icon action-icon"
                                                Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
-                                    <TextBlock Classes="action-label"
+                                    <TextBlock x:Name="RestartText"
+                                               Classes="action-label"
                                                Text="{x:Static localization:Strings.ScreenRecordWindow_Restart}"/>
                                 </StackPanel>
                             </Button>
@@ -175,7 +176,9 @@
                                 <StackPanel Classes="action-content" Orientation="Horizontal" Spacing="7">
                                     <TextBlock Classes="icon action-icon"
                                                Text="{x:Static theming:LucideIcons.x}"/>
-                                    <TextBlock Classes="action-label" Text="{x:Static localization:Strings.ScreenRecordWindow_Abort}"/>
+                                    <TextBlock x:Name="AbortText"
+                                               Classes="action-label"
+                                               Text="{x:Static localization:Strings.ScreenRecordWindow_Abort}"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>
