@@ -1029,10 +1029,14 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     private static IReadOnlyList<LanguageOption> CreateLanguageOptions() =>
         Helpers.GetEnums<SupportedLanguage>()
-            .Select(x => new LanguageOption(x, x.GetLocalizedDescription(), LoadLanguageIcon(x)))
+            .Select(x => new LanguageOption(
+                x,
+                x.GetLocalizedDescription(),
+                LoadLanguageFlag(x),
+                x == SupportedLanguage.Automatic ? LucideIcons.languages : null))
             .ToArray();
 
-    private static AvaloniaBitmap? LoadLanguageIcon(SupportedLanguage language)
+    private static AvaloniaBitmap? LoadLanguageFlag(SupportedLanguage language)
     {
         if (language == SupportedLanguage.Automatic)
         {
@@ -1110,7 +1114,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         _disposed = true;
         foreach (LanguageOption language in LanguageOptions)
         {
-            language.Icon?.Dispose();
+            language.Flag?.Dispose();
         }
 
         if (!Program.MainForm.IsClosing)

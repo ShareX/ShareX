@@ -150,7 +150,11 @@
                                             <ComboBox.ItemTemplate>
                                                 <DataTemplate x:DataType="local:LanguageOption">
                                                     <StackPanel Orientation="Horizontal" Spacing="8">
-                                                        <Image Width="16" Height="16" Source="{Binding Icon}" Stretch="Uniform"/>
+                                                        <Grid Width="16" Height="16">
+                                                            <TextBlock Classes="icon" Text="{Binding IconGlyph}" FontSize="16"
+                                                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            <Image Source="{Binding Flag}" Stretch="Uniform"/>
+                                                        </Grid>
                                                         <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
                                                     </StackPanel>
                                                 </DataTemplate>

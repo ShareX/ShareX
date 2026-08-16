@@ -26,7 +26,7 @@ public sealed record EnumOption<T>(T Value, string DisplayName)
     public override string ToString() => DisplayName;
 }
 
-public sealed record LanguageOption(SupportedLanguage Value, string DisplayName, Bitmap? Icon)
+public sealed record LanguageOption(SupportedLanguage Value, string DisplayName, Bitmap? Flag, string? IconGlyph)
 {
     public override string ToString() => DisplayName;
 }
