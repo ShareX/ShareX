@@ -254,6 +254,15 @@ namespace ShareX
                             abortRequested = true;
                         }
 
+                        if (recordForm.ConsumeRestartRequest())
+                        {
+                            screenRecorder?.Dispose();
+                            screenRecorder = null;
+                            FileHelpers.DeleteFile(path);
+                            FileHelpers.DeleteFile(concatPath);
+                            FileHelpers.DeleteFile(tempPath);
+                        }
+
                         if (recordForm.Status == ScreenRecordingStatus.Waiting || recordForm.Status == ScreenRecordingStatus.Paused)
                         {
                             if (recordForm.Status == ScreenRecordingStatus.Paused && File.Exists(path))
@@ -290,6 +299,11 @@ namespace ShareX
                             if (recordForm.Status == ScreenRecordingStatus.Aborted)
                             {
                                 abortRequested = true;
+                            }
+
+                            if (recordForm.RestartRequested)
+                            {
+                                continue;
                             }
                         }
 

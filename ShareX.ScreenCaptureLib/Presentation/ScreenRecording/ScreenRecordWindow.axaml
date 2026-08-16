@@ -47,7 +47,7 @@
 
             <Border x:Name="Toolbar"
                     Canvas.Left="0"
-                    Width="386"
+                    Width="474"
                     Height="48"
                     Padding="4"
                     CornerRadius="7"
@@ -105,6 +105,17 @@
                                     <TextBlock x:Name="PauseText"
                                                Classes="action-label"
                                                Text="{x:Static localization:Strings.ScreenRecordWindow_Pause}"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="RestartButton"
+                                    Classes="recorder-action"
+                                    IsEnabled="False">
+                                <StackPanel Orientation="Horizontal" Spacing="7">
+                                    <TextBlock Classes="icon action-icon"
+                                               Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
+                                    <TextBlock Classes="action-label"
+                                               Text="{x:Static localization:Strings.ScreenRecordWindow_Restart}"/>
                                 </StackPanel>
                             </Button>
 

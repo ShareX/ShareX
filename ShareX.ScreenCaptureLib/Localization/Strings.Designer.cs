@@ -209,6 +209,9 @@ namespace ShareX.ScreenCaptureLib.Localization {
         public static string ScreenRecordWindow_Pause {
             get { return ResourceManager.GetString("ScreenRecordWindow_Pause", resourceCulture); }
         }
+        public static string ScreenRecordWindow_Restart {
+            get { return ResourceManager.GetString("ScreenRecordWindow_Restart", resourceCulture); }
+        }
         public static string ScreenRecordWindow_Abort {
             get { return ResourceManager.GetString("ScreenRecordWindow_Abort", resourceCulture); }
         }

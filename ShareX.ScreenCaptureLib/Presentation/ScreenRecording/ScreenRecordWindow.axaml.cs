@@ -46,7 +46,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 {
     private const int BorderPixels = 1;
     private const int ToolbarGapPixels = 3;
-    private const double ToolbarWidth = 386;
+    private const double ToolbarWidth = 474;
     private const double ToolbarHeight = 48;
     private const int RegionOr = 2;
     private const int RegionDiff = 4;
@@ -68,6 +68,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private PixelPoint _dragWindowOrigin;
     private double _windowScaling = 1;
     private int _lastIconStatus = -1;
+    private int _restartRequested;
     private bool _activateWindow = true;
 
     public event Action? StopRequested;
@@ -140,6 +141,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
         StartButton.Click += (_, _) => StartStopRecording();
         PauseButton.Click += (_, _) => PauseResumeRecording();
+        RestartButton.Click += (_, _) => RestartRecording();
         AbortButton.Click += (_, _) => RequestAbortRecording();
         CancelAbortButton.Click += (_, _) => ShowAbortConfirmation(false);
         ConfirmAbortButton.Click += (_, _) => AbortRecording();
@@ -201,6 +203,34 @@ public partial class ScreenRecordWindow : Window, IDisposable
         OnStopRequested();
         RecordResetEvent.Set();
     }
+
+    public void RestartRecording()
+    {
+        if (Status is not (ScreenRecordingStatus.Recording or ScreenRecordingStatus.Paused))
+        {
+            return;
+        }
+
+        bool stopActiveRecording = Status == ScreenRecordingStatus.Recording;
+
+        Interlocked.Exchange(ref _restartRequested, 1);
+        Status = ScreenRecordingStatus.Waiting;
+        Timer.Reset();
+        IsCountdown = false;
+        StopRecordingTimer();
+        UpdateUI();
+
+        if (stopActiveRecording)
+        {
+            OnStopRequested();
+        }
+
+        RecordResetEvent.Set();
+    }
+
+    public bool ConsumeRestartRequest() => Interlocked.Exchange(ref _restartRequested, 0) != 0;
+
+    public bool RestartRequested => Volatile.Read(ref _restartRequested) != 0;
 
     public void StartCountdown(int milliseconds)
     {
@@ -389,6 +419,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 StartText.Text = Strings.ScreenRecordForm_Stop;
                 StartIcon.Text = LucideIcons.square;
                 _trayStartItem.Text = Strings.ScreenRecordForm_Stop;
+                RestartButton.IsEnabled = false;
                 SetRecordingAccent(Brushes.Goldenrod);
                 break;
 
@@ -406,6 +437,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 PauseIcon.Text = LucideIcons.play;
                 _trayPauseItem.Text = Strings.Resume;
                 TimerDragHandle.Cursor = new Cursor(StandardCursorType.SizeAll);
+                RestartButton.IsEnabled = paused;
                 SetRecordingAccent(Brushes.Goldenrod);
                 break;
 
@@ -418,6 +450,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 PauseIcon.Text = LucideIcons.pause;
                 _trayPauseItem.Text = Strings.Pause;
                 TimerDragHandle.Cursor = Cursor.Default;
+                RestartButton.IsEnabled = true;
                 break;
         }
     }
