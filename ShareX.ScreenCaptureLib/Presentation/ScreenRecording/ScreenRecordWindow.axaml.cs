@@ -57,6 +57,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private readonly WinForms.ContextMenuStrip _trayMenu;
     private readonly WinForms.ToolStripMenuItem _trayStartItem;
     private readonly WinForms.ToolStripMenuItem _trayPauseItem;
+    private readonly WinForms.ToolStripMenuItem _trayRestartItem;
     private readonly WinForms.ToolStripMenuItem _trayAbortItem;
     private readonly WinForms.NotifyIcon _trayIcon;
 
@@ -126,13 +127,15 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
         _trayStartItem = new WinForms.ToolStripMenuItem(Strings.ScreenRecordForm_Start);
         _trayPauseItem = new WinForms.ToolStripMenuItem(Strings.Pause);
+        _trayRestartItem = new WinForms.ToolStripMenuItem(Strings.ScreenRecordWindow_Restart);
         _trayAbortItem = new WinForms.ToolStripMenuItem(Strings.ScreenRecordWindow_Abort);
         _trayStartItem.Click += (_, _) => RunOnUIThread(StartStopRecording);
         _trayPauseItem.Click += (_, _) => RunOnUIThread(PauseResumeRecording);
+        _trayRestartItem.Click += (_, _) => RunOnUIThread(RestartRecording);
         _trayAbortItem.Click += (_, _) => RunOnUIThread(RequestAbortRecording);
 
         _trayMenu = new WinForms.ContextMenuStrip();
-        _trayMenu.Items.AddRange([_trayStartItem, _trayPauseItem, _trayAbortItem]);
+        _trayMenu.Items.AddRange([_trayStartItem, _trayPauseItem, _trayRestartItem, _trayAbortItem]);
 
         _trayIcon = new WinForms.NotifyIcon
         {
@@ -423,6 +426,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 StartIcon.Text = LucideIcons.square;
                 _trayStartItem.Text = Strings.ScreenRecordForm_Stop;
                 RestartButton.IsEnabled = false;
+                _trayRestartItem.Enabled = false;
                 SetRecordingAccent(Brushes.Goldenrod);
                 break;
 
@@ -441,6 +445,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 _trayPauseItem.Text = Strings.Resume;
                 TimerDragHandle.Cursor = new Cursor(StandardCursorType.SizeAll);
                 RestartButton.IsEnabled = paused;
+                _trayRestartItem.Enabled = paused;
                 SetRecordingAccent(Brushes.Goldenrod);
                 break;
 
@@ -454,6 +459,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 _trayPauseItem.Text = Strings.Pause;
                 TimerDragHandle.Cursor = Cursor.Default;
                 RestartButton.IsEnabled = true;
+                _trayRestartItem.Enabled = true;
                 break;
         }
     }
