@@ -81,11 +81,12 @@
               ColumnDefinitions="Auto,Auto"
               MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=Window}}">
             <Border Grid.Column="0"
-                    Padding="4"
+                    Padding="4,4,0,4"
+                    VerticalAlignment="Top"
                     Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                     BorderBrush="{DynamicResource ShareX.Brush.Border}"
                     BorderThickness="1"
-                    CornerRadius="0,0,4,4">
+                    CornerRadius="0,0,0,4">
                 <Button x:Name="RegionToolButton"
                         Classes="toolbar-button active"
                         Click="OnRegionToolClick"
