@@ -61,12 +61,15 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
             OnPropertyChanged();
             OnPropertyChanged(nameof(HasThumbnail));
             OnPropertyChanged(nameof(HasNoThumbnail));
+            OnPropertyChanged(nameof(ShowPlayIcon));
             old?.Dispose();
         }
     }
 
     public bool HasThumbnail => Thumbnail != null;
     public bool HasNoThumbnail => Thumbnail == null;
+    public bool IsVideo => FileHelpers.IsVideoFile(Task.Info?.FilePath ?? Task.Info?.FileName);
+    public bool ShowPlayIcon => HasThumbnail && IsVideo;
 
     public bool IsSelected
     {
@@ -141,7 +144,8 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
 
         string? filePath = Task.Info?.FilePath;
 
-        if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsImageFile(filePath))
+        if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) &&
+            (FileHelpers.IsImageFile(filePath) || FileHelpers.IsVideoFile(filePath)))
         {
             StartThumbnailRefresh(filePath, null);
         }
@@ -164,6 +168,8 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         IsProgressVisible = Task.IsWorking && info?.Progress != null;
         IsFailed = Task.Status == TaskStatus.Failed;
         PlaceholderIcon = GetPlaceholderIcon(info?.FilePath ?? info?.FileName);
+        OnPropertyChanged(nameof(IsVideo));
+        OnPropertyChanged(nameof(ShowPlayIcon));
     }
 
     public void RefreshSettings()
@@ -180,12 +186,13 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     {
         int version = ++_refreshVersion;
         int width = Width;
-        _ = RefreshThumbnailAsync(version, width, filePath, image);
+        int height = Height;
+        _ = RefreshThumbnailAsync(version, width, height, filePath, image);
     }
 
-    private async Task RefreshThumbnailAsync(int version, int width, string? filePath, DrawingBitmap? image)
+    private async Task RefreshThumbnailAsync(int version, int width, int height, string? filePath, DrawingBitmap? image)
     {
-        Bitmap? bitmap = await System.Threading.Tasks.Task.Run(() => CreateThumbnail(width, filePath, image));
+        Bitmap? bitmap = await System.Threading.Tasks.Task.Run(() => CreateThumbnail(width, height, filePath, image));
 
         await Dispatcher.UIThread.InvokeAsync(() =>
         {
@@ -203,7 +210,7 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         });
     }
 
-    private static Bitmap? CreateThumbnail(int width, string? filePath, DrawingBitmap? image)
+    private static Bitmap? CreateThumbnail(int width, int height, string? filePath, DrawingBitmap? image)
     {
         try
         {
@@ -221,6 +228,18 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
                 return Bitmap.DecodeToWidth(stream, width, BitmapInterpolationMode.HighQuality);
             }
 
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsVideoFile(filePath))
+            {
+                using DrawingBitmap? shellThumbnail = NativeMethods.GetFileThumbnail(filePath, new System.Drawing.Size(width, height));
+
+                if (shellThumbnail != null)
+                {
+                    using MemoryStream stream = new();
+                    shellThumbnail.Save(stream, ImageFormat.Png);
+                    stream.Position = 0;
+                    return new Bitmap(stream);
+                }
+            }
         }
         catch (Exception e)
         {

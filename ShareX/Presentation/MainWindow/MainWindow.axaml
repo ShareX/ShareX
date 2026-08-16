@@ -126,6 +126,23 @@
                                                 <Image Source="{Binding Thumbnail}"
                                                        IsVisible="{Binding HasThumbnail}"
                                                        Stretch="Uniform"/>
+                                                <Border IsVisible="{Binding ShowPlayIcon}"
+                                                        Width="50"
+                                                        Height="50"
+                                                        Background="#B8181818"
+                                                        CornerRadius="25"
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center"
+                                                        IsHitTestVisible="False">
+                                                    <TextBlock Classes="icon"
+                                                               Text="{x:Static theming:LucideIcons.play}"
+                                                               Foreground="#A9A9A9"
+                                                               FontSize="18"
+                                                               Width="18"
+                                                               TextAlignment="Center"
+                                                               HorizontalAlignment="Center"
+                                                               VerticalAlignment="Center"/>
+                                                </Border>
                                                 <TextBlock Classes="icon"
                                                            Text="{Binding PlaceholderIcon}"
                                                            IsVisible="{Binding HasNoThumbnail}"
