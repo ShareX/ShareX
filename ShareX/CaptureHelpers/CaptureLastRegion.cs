@@ -24,30 +24,38 @@
 #endregion License Information (GPL v3)
 
 using ShareX.ScreenCaptureLib;
+using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 using System.Drawing;
+using System.Threading.Tasks;
 
 namespace ShareX
 {
     public class CaptureLastRegion : CaptureRegion
     {
+        protected override async Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings)
+        {
+            if (lastRegionCaptureType == RegionCaptureType.Default &&
+                RegionCaptureIntegration.LastRegionRectangle.IsEmpty)
+            {
+                return await ExecuteRegionCaptureAvaloniaAsync(taskSettings);
+            }
+
+            return Execute(taskSettings);
+        }
+
         protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
             switch (lastRegionCaptureType)
             {
                 default:
                 case RegionCaptureType.Default:
-                    if (RegionCaptureForm.LastRegionFillPath != null)
+                    if (!RegionCaptureIntegration.LastRegionRectangle.IsEmpty)
                     {
-                        using (Bitmap screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
-                        {
-                            Bitmap bmp = RegionCaptureTasks.ApplyRegionPathToImage(screenshot, RegionCaptureForm.LastRegionFillPath, out _);
-                            return new TaskMetadata(bmp);
-                        }
+                        Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(
+                            RegionCaptureIntegration.LastRegionRectangle);
+                        return new TaskMetadata(bmp);
                     }
-                    else
-                    {
-                        return ExecuteRegionCapture(taskSettings);
-                    }
+                    return ExecuteRegionCapture(taskSettings);
                 case RegionCaptureType.Light:
                     if (!RegionCaptureLightForm.LastScreenSelectionRectangle.IsEmpty)
                     {

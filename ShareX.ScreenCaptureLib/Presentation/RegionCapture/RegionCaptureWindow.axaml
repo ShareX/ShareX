@@ -1,0 +1,119 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="using:ShareX.ImageEditor.Presentation.Views"
+        xmlns:editorControls="using:ShareX.ImageEditor.Presentation.Controls"
+        xmlns:capture="using:ShareX.ScreenCaptureLib.Presentation.RegionCapture"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.ScreenCaptureLib.Presentation.RegionCapture.RegionCaptureWindow"
+        WindowDecorations="None"
+        CanResize="False"
+        ShowInTaskbar="False"
+        Topmost="True"
+        Background="Black"
+        FontFamily="{DynamicResource ShareX.FontFamily.Default}"
+        Foreground="{DynamicResource ShareX.Brush.Text}">
+    <Grid x:Name="RootGrid" Background="Black">
+        <!-- The shared editor workspace owns the frozen screenshot and annotations. -->
+        <views:EditorView x:Name="EditorWorkspace"/>
+
+        <!-- The region overlay uses image-pixel coordinates and is scaled once to physical pixels. -->
+        <LayoutTransformControl x:Name="RegionTransform"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+            <capture:RegionSelectionOverlay x:Name="RegionOverlay"
+                                            Focusable="True"
+                                            PointerPressed="OnRegionPointerPressed"
+                                            PointerMoved="OnRegionPointerMoved"
+                                            PointerReleased="OnRegionPointerReleased"
+                                            PointerWheelChanged="OnRegionPointerWheelChanged"/>
+        </LayoutTransformControl>
+
+        <!-- HUD is deliberately separate from the image-pixel transform. -->
+        <Canvas x:Name="HudCanvas" IsHitTestVisible="False">
+            <Border x:Name="MagnifierPanel"
+                    Padding="8"
+                    CornerRadius="8"
+                    Background="{DynamicResource ShareX.Brush.Background.Main}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                    BorderThickness="1"
+                    BoxShadow="0 8 24 #66000000"
+                    IsVisible="False">
+                <StackPanel Spacing="6">
+                    <Grid Width="150" Height="150">
+                        <Image x:Name="MagnifierImage"
+                               Width="150"
+                               Height="150"
+                               Stretch="Fill"
+                               RenderOptions.BitmapInterpolationMode="None"/>
+                        <Border Width="11"
+                                Height="11"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                BorderBrush="White"
+                                BorderThickness="1"
+                                BoxShadow="0 0 0 1 #CC000000"/>
+                    </Grid>
+                    <TextBlock x:Name="PointerInfoText"
+                               FontSize="12"
+                               FontWeight="SemiBold"
+                               TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border x:Name="SelectionInfoPanel"
+                    Padding="7,4"
+                    CornerRadius="5"
+                    Background="{DynamicResource ShareX.Brush.Background.Main}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                    BorderThickness="1"
+                    IsVisible="False">
+                <TextBlock x:Name="SelectionInfoText" FontSize="12" FontWeight="SemiBold"/>
+            </Border>
+        </Canvas>
+
+        <!-- Capture host toolbar: rectangle selection plus the shared non-destructive editor tools. -->
+        <Grid VerticalAlignment="Top"
+              HorizontalAlignment="Center"
+              ColumnDefinitions="Auto,Auto"
+              MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=Window}}">
+            <Border Grid.Column="0"
+                    Padding="4"
+                    Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                    BorderThickness="1"
+                    CornerRadius="0,0,4,4">
+                <Button x:Name="RegionToolButton"
+                        Classes="toolbar-button active"
+                        Click="OnRegionToolClick"
+                        ToolTip.Tip="Rectangle region"
+                        Content="{x:Static theming:LucideIcons.scan}"/>
+            </Border>
+
+            <editorControls:AnnotationToolbar x:Name="CaptureAnnotationToolbar"
+                                              Grid.Column="1"
+                                              ShowEditingActions="True"/>
+        </Grid>
+
+        <Border VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Padding="4"
+                Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                BorderThickness="1"
+                CornerRadius="4,4,0,0">
+            <StackPanel Orientation="Horizontal" Spacing="4">
+                <Button x:Name="CancelButton"
+                        Classes="toolbar-button"
+                        Click="OnCancelClick"
+                        ToolTip.Tip="Cancel (Esc)"
+                        Content="{x:Static theming:LucideIcons.x}"/>
+                <Button x:Name="CaptureButton"
+                        Classes="toolbar-button"
+                        Click="OnCaptureClick"
+                        ToolTip.Tip="Capture (Enter)"
+                        IsEnabled="False"
+                        Content="{x:Static theming:LucideIcons.check}"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -1076,9 +1076,13 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         // Static stroke widths
         public static int[] StrokeWidths => new[] { 2, 4, 6, 8, 10 };
 
+        public event EventHandler<EditorTool>? ToolSelectionRequested;
+
         [RelayCommand]
         private void SelectTool(EditorTool tool)
         {
+            ToolSelectionRequested?.Invoke(this, tool);
+
             if (tool == EditorTool.Image)
             {
                 DeselectRequested?.Invoke(this, EventArgs.Empty);

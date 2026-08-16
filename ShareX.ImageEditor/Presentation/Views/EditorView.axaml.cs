@@ -67,10 +67,13 @@ namespace ShareX.ImageEditor.Presentation.Views
         private bool _isSyncingFromVM;
         private bool _isSyncingToVM;
         private bool _skipNextCoreImageChanged;
+        private bool _isWorkspaceHostMode;
+        private bool _workspaceDisposed;
         private bool _suppressNextHistoryDirtyMark;
         private bool _pendingZoomToFitOnOpen;
         private int _pendingZoomToFitRetryCount;
         private int _pendingAutoCopyImageVersion;
+        private int _renderCorePending;
         private bool _overlayCanvasLayoutUpdatePending;
         private Rect? _lastOverlayCanvasRect;
         private double _lastOverlayCanvasZoom = -1;
@@ -103,7 +106,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             LayoutUpdated += OnLayoutUpdated;
 
             // SIP0018: Subscribe to Core events
-            _editorCore.InvalidateRequested += () => Avalonia.Threading.Dispatcher.UIThread.Post(RenderCore);
+            _editorCore.InvalidateRequested += RequestRenderCore;
             _editorCore.ImageChanged += () =>
             {
                 // Capture the one-shot skip synchronously so it applies to the event
@@ -124,7 +127,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                             vm.SyncImageDimensions(_editorCore.CanvasSize.Width, _editorCore.CanvasSize.Height);
 
                             // Sync Core image back to VM if change originated from Core (Undo/Redo, Core Crop)
-                            if (!_isSyncingFromVM && !_isSyncingToVM && _editorCore.SourceImage != null)
+                            if (!_isWorkspaceHostMode && !_isSyncingFromVM && !_isSyncingToVM && _editorCore.SourceImage != null)
                             {
                                 if (skipVmSync)
                                 {
@@ -945,6 +948,100 @@ namespace ShareX.ImageEditor.Presentation.Views
             _canvasControl = this.FindControl<SKCanvasControl>("CanvasControl");
         }
 
+        /// <summary>
+        /// Configures the editor canvas as a pixel-aligned workspace embedded in a fullscreen host.
+        /// The host supplies its own toolbars and completion controls.
+        /// </summary>
+        public void ConfigureForFullscreenWorkspace()
+        {
+            _isWorkspaceHostMode = true;
+
+            if (this.FindControl<Grid>("EditorCanvasHost") is Grid canvasHost)
+            {
+                canvasHost.Margin = new Thickness(0);
+            }
+
+            if (this.FindControl<ScrollViewer>("CanvasScrollViewer") is ScrollViewer scrollViewer)
+            {
+                scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
+                scrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
+            }
+        }
+
+        /// <summary>
+        /// Loads an owned bitmap directly into the shared workspace without creating the
+        /// normal editor preview and backup copies. This is intended for very large,
+        /// immutable capture backgrounds.
+        /// </summary>
+        public void LoadWorkspaceImage(SKBitmap bitmap)
+        {
+            ArgumentNullException.ThrowIfNull(bitmap);
+
+            if (_canvasControl == null)
+            {
+                throw new InvalidOperationException("The editor workspace must be initialized before loading an image.");
+            }
+
+            _suppressNextHistoryDirtyMark = true;
+            _canvasControl.Initialize(bitmap.Width, bitmap.Height);
+            _editorCore.LoadImage(bitmap);
+
+            if (DataContext is MainViewModel vm)
+            {
+                vm.SyncImageDimensions(bitmap.Width, bitmap.Height);
+                vm.Zoom = 1.0;
+                vm.IsDirty = false;
+            }
+        }
+
+        /// <summary>
+        /// Gives a host the same staged Escape behavior as the editor without closing its window.
+        /// </summary>
+        public bool CancelActiveInteractionOrSelection()
+        {
+            if (DataContext is MainViewModel vm)
+            {
+                if (vm.IsModalOpen)
+                {
+                    vm.CloseModalCommand.Execute(null);
+                    return true;
+                }
+
+                if (vm.IsEffectsPanelOpen)
+                {
+                    vm.CloseEffectsPanelCommand.Execute(null);
+                    return true;
+                }
+            }
+
+            if (_inputController.CancelCrop())
+            {
+                return true;
+            }
+
+            if (_selectionController.SelectedShape != null)
+            {
+                _selectionController.ClearSelection();
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>Releases the large raster buffers owned by an embedded workspace.</summary>
+        public void DisposeWorkspace()
+        {
+            if (_workspaceDisposed)
+            {
+                return;
+            }
+
+            _workspaceDisposed = true;
+            ClearEffectPreviewCache();
+            _canvasControl?.Dispose();
+            _editorCore.Dispose();
+        }
+
         private void LoadImageFromViewModel(MainViewModel vm)
         {
             if (vm.PreviewImage == null || _canvasControl == null) return;
@@ -1033,7 +1130,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void QueueAutoCopyImageToClipboard(MainViewModel vm)
         {
-            if (!vm.Options.AutoCopyImageToClipboard || !vm.HasPreviewImage)
+            if (_isWorkspaceHostMode || !vm.Options.AutoCopyImageToClipboard || !vm.HasPreviewImage)
             {
                 return;
             }
@@ -1053,7 +1150,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private async void AutoCopyImageToClipboard(MainViewModel vm)
         {
-            if (!vm.Options.AutoCopyImageToClipboard || !vm.HasPreviewImage)
+            if (_isWorkspaceHostMode || !vm.Options.AutoCopyImageToClipboard || !vm.HasPreviewImage)
             {
                 return;
             }
@@ -1508,6 +1605,18 @@ namespace ShareX.ImageEditor.Presentation.Views
         public void InsertImageAnnotation(SKBitmap skBitmap, Point? dropPosition = null)
         {
             InsertImageAnnotationCore(skBitmap, dropPosition);
+        }
+
+        /// <summary>Inserts host-provided capture content without treating it as a user edit.</summary>
+        public void InsertWorkspaceImageAnnotation(SKBitmap skBitmap, Point? position = null)
+        {
+            _suppressNextHistoryDirtyMark = true;
+            InsertImageAnnotationCore(skBitmap, position);
+
+            if (DataContext is MainViewModel vm)
+            {
+                vm.IsDirty = false;
+            }
         }
 
         private void InsertEmojiAnnotation(string unicodeSequence, string displayName, Point? dropPosition = null)

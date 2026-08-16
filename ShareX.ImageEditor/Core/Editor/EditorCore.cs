@@ -1982,7 +1982,18 @@ public class EditorCore : IDisposable
     public void Dispose()
     {
         _history?.Dispose();
+
+        foreach (Annotation annotation in _annotations)
+        {
+            if (annotation is IDisposable disposable)
+            {
+                disposable.Dispose();
+            }
+        }
+
+        _annotations.Clear();
         SourceImage?.Dispose();
+        SourceImage = null;
     }
 
     #endregion

@@ -1082,11 +1082,16 @@ public class EditorInputController
         // ISSUE-004 fix: Store ViewModel locally to prevent null reference if it changes
         var vm = ViewModel;
         if (!_isCreatingEffect || vm == null) return;
-        if (vm.PreviewImage == null || shape.Tag is not BaseEffectAnnotation) return;
+        if (shape.Tag is not BaseEffectAnnotation) return;
 
         if (_cachedSkBitmap == null)
         {
-            _cachedSkBitmap = BitmapConversionHelpers.ToSKBitmap(vm.PreviewImage);
+            _cachedSkBitmap = _view.EditorCore.SourceImage?.Copy();
+
+            if (_cachedSkBitmap == null && vm.PreviewImage != null)
+            {
+                _cachedSkBitmap = BitmapConversionHelpers.ToSKBitmap(vm.PreviewImage);
+            }
         }
 
         if (width <= 0 || height <= 0) return;

@@ -25,7 +25,10 @@
 
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
+using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
+using SkiaSharp;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -56,6 +59,87 @@ namespace ShareX
                     return ExecuteRegionCaptureLight(taskSettings);
                 case RegionCaptureType.Transparent:
                     return ExecuteRegionCaptureTransparent(taskSettings);
+            }
+        }
+
+        protected override async Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings)
+        {
+            if (GetType() == typeof(CaptureRegion) && RegionCaptureType == RegionCaptureType.Default)
+            {
+                return await ExecuteRegionCaptureAvaloniaAsync(taskSettings);
+            }
+
+            return Execute(taskSettings);
+        }
+
+        protected async Task<TaskMetadata> ExecuteRegionCaptureAvaloniaAsync(TaskSettings taskSettings)
+        {
+            Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
+            screenshot.CaptureCursor = false;
+
+            bool activeMonitorMode = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
+            Rectangle screenBounds = activeMonitorMode
+                ? CaptureHelpers.GetActiveScreenBounds()
+                : CaptureHelpers.GetScreenBounds();
+
+            SKBitmap frozenScreenshot;
+            using (Bitmap canvas = activeMonitorMode
+                ? screenshot.CaptureActiveMonitor()
+                : screenshot.CaptureFullscreen())
+            {
+                frozenScreenshot = GdiSkiaBitmapConverter.ToSKBitmap(canvas);
+            }
+
+            SKBitmap cursorBitmap = null;
+            Point cursorPosition = Point.Empty;
+
+            if (taskSettings.CaptureSettings.ShowCursor)
+            {
+                CursorData cursorData = new CursorData();
+                if (cursorData.IsVisible)
+                {
+                    using Bitmap cursor = cursorData.ToBitmap();
+                    cursorBitmap = GdiSkiaBitmapConverter.ToSKBitmap(cursor);
+                    cursorPosition = new Point(
+                        cursorData.DrawPosition.X - screenBounds.X,
+                        cursorData.DrawPosition.Y - screenBounds.Y);
+                }
+            }
+
+            AvaloniaRegionCaptureRequest request = new AvaloniaRegionCaptureRequest
+            {
+                Screenshot = frozenScreenshot,
+                ScreenBounds = screenBounds,
+                CaptureOptions = taskSettings.CaptureSettingsReference.SurfaceOptions,
+                EditorOptions = taskSettings.ToolsSettingsReference.ImageEditorOptions,
+                EnableAnnotations = !taskSettings.AdvancedSettings.RegionCaptureDisableAnnotation,
+                CursorBitmap = cursorBitmap,
+                CursorPosition = cursorPosition
+            };
+
+            AvaloniaRegionCaptureResult result = await RegionCaptureIntegration.CaptureAsync(request);
+            if (result == null)
+            {
+                return null;
+            }
+
+            using (result.Image)
+            {
+                Bitmap output = GdiSkiaBitmapConverter.ToGdiBitmap(result.Image);
+                TaskMetadata metadata = new TaskMetadata(output);
+
+                if (result.ImageModified)
+                {
+                    AllowAnnotation = false;
+                }
+
+                if (result.WindowInfo != null)
+                {
+                    metadata.UpdateInfo(result.WindowInfo);
+                }
+
+                lastRegionCaptureType = RegionCaptureType.Default;
+                return metadata;
             }
         }
 

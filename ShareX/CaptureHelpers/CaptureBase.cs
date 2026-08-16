@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace ShareX
@@ -50,24 +49,35 @@ namespace ShareX
                 NotificationWindow.CloseActiveWindow();
             }
 
-            if (taskSettings.CaptureSettings.ScreenshotDelay > 0)
-            {
-                int delay = (int)(taskSettings.CaptureSettings.ScreenshotDelay * 1000);
-
-                Task.Delay(delay).ContinueInCurrentContext(() =>
-                {
-                    CaptureInternal(taskSettings, autoHideForm);
-                });
-            }
-            else
-            {
-                CaptureInternal(taskSettings, autoHideForm);
-            }
+            _ = CaptureAsync(taskSettings, autoHideForm);
         }
 
         protected abstract TaskMetadata Execute(TaskSettings taskSettings);
 
-        private void CaptureInternal(TaskSettings taskSettings, bool autoHideForm)
+        protected virtual Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings)
+        {
+            return Task.FromResult(Execute(taskSettings));
+        }
+
+        private async Task CaptureAsync(TaskSettings taskSettings, bool autoHideForm)
+        {
+            try
+            {
+                if (taskSettings.CaptureSettings.ScreenshotDelay > 0)
+                {
+                    int delay = (int)(taskSettings.CaptureSettings.ScreenshotDelay * 1000);
+                    await Task.Delay(delay);
+                }
+
+                await CaptureInternalAsync(taskSettings, autoHideForm);
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+        }
+
+        private async Task CaptureInternalAsync(TaskSettings taskSettings, bool autoHideForm)
         {
             bool wait = false;
             bool showDesktopIcons = false;
@@ -89,7 +99,7 @@ namespace ShareX
 
             if (wait)
             {
-                Thread.Sleep(250);
+                await Task.Delay(250);
             }
 
             TaskMetadata metadata = null;
@@ -97,7 +107,7 @@ namespace ShareX
             try
             {
                 AllowAnnotation = true;
-                metadata = Execute(taskSettings);
+                metadata = await ExecuteAsync(taskSettings);
             }
             catch (Exception ex)
             {

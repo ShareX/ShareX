@@ -477,7 +477,7 @@
             </Border>
 
             <!-- Central Preview Canvas -->
-            <Grid Grid.Column="1" Margin="8">
+            <Grid x:Name="EditorCanvasHost" Grid.Column="1" Margin="8">
                 <ScrollViewer Name="CanvasScrollViewer"
                               Background="Transparent"
                               HorizontalScrollBarVisibility="Auto"
