@@ -142,6 +142,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
         _trayMenu = new WinForms.ContextMenuStrip();
         _trayMenu.Items.AddRange([_trayStartItem, _trayPauseItem, _trayRestartItem, _trayAbortItem]);
+        _trayMenu.Opening += (_, _) => RefreshTrayMenuIcons();
 
         _trayIcon = new WinForms.NotifyIcon
         {
@@ -728,16 +729,31 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private static void SetTrayMenuIcon(WinForms.ToolStripMenuItem item, string glyph)
     {
-        if (item.Tag as string == glyph && item.Image != null)
+        DrawingColor color = ThemeManager.IsDarkTheme ? DrawingColor.White : DrawingColor.Black;
+        string cacheKey = $"{glyph}:{color.ToArgb()}";
+
+        if (item.Tag as string == cacheKey && item.Image != null)
         {
             return;
         }
 
-        DrawingImage replacement = LucideTrayIcon.CreateImage(glyph);
+        DrawingImage replacement = LucideTrayIcon.CreateImage(glyph, color);
         DrawingImage? previous = item.Image;
         item.Image = replacement;
-        item.Tag = glyph;
+        item.Tag = cacheKey;
         previous?.Dispose();
+    }
+
+    private void RefreshTrayMenuIcons()
+    {
+        bool waitingOrPaused = Status is ScreenRecordingStatus.Waiting or ScreenRecordingStatus.Paused;
+        SetTrayMenuIcon(_trayStartItem,
+            Status is ScreenRecordingStatus.Working or ScreenRecordingStatus.Recording or ScreenRecordingStatus.Paused
+                ? LucideIcons.square
+                : LucideIcons.circle_play);
+        SetTrayMenuIcon(_trayPauseItem, waitingOrPaused ? LucideIcons.play : LucideIcons.pause);
+        SetTrayMenuIcon(_trayRestartItem, LucideIcons.rotate_ccw);
+        SetTrayMenuIcon(_trayAbortItem, LucideIcons.x);
     }
 
     private void DisposeTrayMenuIcons()
