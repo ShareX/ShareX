@@ -25,6 +25,8 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Media;
+using Avalonia.Platform;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using ShareX.ImageEditor.Core.Annotations;
@@ -34,6 +36,7 @@ using ShareX.ImageEditor.Presentation.Rendering;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using SkiaSharp;
 using System.ComponentModel;
+using System.Runtime.InteropServices;
 
 namespace ShareX.ImageEditor.Presentation.Views
 {
@@ -175,6 +178,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             {
                 if (e.PropertyName == nameof(MainViewModel.IsModalOpen) && !vm.IsModalOpen)
                 {
+                    ResetModalContentPosition();
                     Complete(null);
                 }
             };
@@ -188,14 +192,17 @@ namespace ShareX.ImageEditor.Presentation.Views
                 {
                     Complete(placement);
                     vm.CloseModalCommand.Execute(null);
+                    ResetModalContentPosition();
                 },
                 onCancel: () =>
                 {
                     Complete(null);
                     vm.CloseModalCommand.Execute(null);
+                    ResetModalContentPosition();
                 });
 
             vm.ModalContent = dialog;
+            PositionInsertImageModalOnCursorScreen();
             vm.IsModalOpen = true;
 
             return completionSource.Task;
@@ -211,7 +218,13 @@ namespace ShareX.ImageEditor.Presentation.Views
             switch (placement)
             {
                 case InsertImagePlacement.Center:
-                    position = null;
+                    Canvas? canvas = this.FindControl<Canvas>("AnnotationCanvas");
+                    Point? screenCenter = canvas == null ? null : GetCursorScreenCenter(canvas);
+                    position = screenCenter.HasValue
+                        ? new Point(
+                            Math.Clamp(screenCenter.Value.X, 0, _editorCore.CanvasSize.Width) - skBitmap.Width / 2.0,
+                            Math.Clamp(screenCenter.Value.Y, 0, _editorCore.CanvasSize.Height) - skBitmap.Height / 2.0)
+                        : null;
                     break;
                 case InsertImagePlacement.CanvasExpandDown:
                     int rightPadding = Math.Max(0, skBitmap.Width - canvasWidth);
@@ -309,5 +322,67 @@ namespace ShareX.ImageEditor.Presentation.Views
                 Math.Clamp(visibleCanvasCenter.Value.X, 0, _editorCore.CanvasSize.Width),
                 Math.Clamp(visibleCanvasCenter.Value.Y, 0, _editorCore.CanvasSize.Height));
         }
+
+        private void PositionInsertImageModalOnCursorScreen()
+        {
+            ContentControl? modalHost = this.FindControl<ContentControl>("ModalContentHost");
+            if (modalHost == null)
+            {
+                return;
+            }
+
+            modalHost.RenderTransform = null;
+            Point? targetCenter = GetCursorScreenCenter(this);
+            if (!targetCenter.HasValue)
+            {
+                return;
+            }
+
+            modalHost.RenderTransform = new TranslateTransform(
+                targetCenter.Value.X - Bounds.Width / 2,
+                targetCenter.Value.Y - Bounds.Height / 2);
+        }
+
+        private void ResetModalContentPosition()
+        {
+            ContentControl? modalHost = this.FindControl<ContentControl>("ModalContentHost");
+            if (modalHost != null)
+            {
+                modalHost.RenderTransform = null;
+            }
+        }
+
+        private Point? GetCursorScreenCenter(Visual relativeTo)
+        {
+            TopLevel? topLevel = TopLevel.GetTopLevel(this);
+            if (topLevel == null || !GetCursorPos(out NativePoint cursorPosition))
+            {
+                return null;
+            }
+
+            Screens? screens = topLevel.Screens;
+            Screen? screen = screens?.ScreenFromPoint(
+                new PixelPoint(cursorPosition.X, cursorPosition.Y));
+            if (screen == null)
+            {
+                return null;
+            }
+
+            PixelPoint screenCenter = new(
+                screen.Bounds.X + screen.Bounds.Width / 2,
+                screen.Bounds.Y + screen.Bounds.Height / 2);
+            return topLevel.TranslatePoint(topLevel.PointToClient(screenCenter), relativeTo);
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        private struct NativePoint
+        {
+            public int X;
+            public int Y;
+        }
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool GetCursorPos(out NativePoint point);
     }
 }

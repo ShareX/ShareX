@@ -706,7 +706,8 @@
                         PointerPressed="OnModalBackgroundPressed"/>
 
                 <!-- Modal Content -->
-                <ContentControl Content="{Binding ModalContent}"
+                <ContentControl x:Name="ModalContentHost"
+                                Content="{Binding ModalContent}"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"/>
             </Grid>
