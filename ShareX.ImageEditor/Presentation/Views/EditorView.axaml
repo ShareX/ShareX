@@ -625,34 +625,36 @@
         <!-- The normal editor opts into this lazy host; embedded workspaces leave it empty. -->
         <ContentControl x:Name="BuiltInToolbarsHost" Grid.Row="0"/>
 
-        <Border Classes="popup-surface zoom-upward app-toast"
-                Classes.open="{Binding IsNotificationOpen}"
-                Grid.Row="0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Bottom"
-                Margin="16,0,16,68"
-                MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                IsVisible="{Binding IsNotificationVisible}"
-                Cursor="Hand"
-                PointerEntered="OnNotificationPointerEntered"
-                PointerExited="OnNotificationPointerExited"
-                PointerPressed="OnNotificationPointerPressed"
-                ZIndex="28">
-            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                <TextBlock Grid.Column="0"
-                           Text="{Binding NotificationIcon}"
-                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                           FontWeight="Normal"
-                           FontSize="18"
-                           VerticalAlignment="Center"
-                           IsVisible="{Binding HasNotificationIcon}"/>
-                <TextBlock Grid.Column="1"
-                           Text="{Binding NotificationMessage}"
-                           TextWrapping="Wrap"
-                           VerticalAlignment="Center"
-                           Foreground="{DynamicResource ShareX.Brush.Text}"/>
-            </Grid>
-        </Border>
+        <Grid x:Name="EditorNotificationHost"
+              Grid.Row="0"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Bottom"
+              Margin="16,0,16,68"
+              ZIndex="28">
+            <Border Classes="popup-surface zoom-upward app-toast"
+                    Classes.open="{Binding IsNotificationOpen}"
+                    MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    IsVisible="{Binding IsNotificationVisible}"
+                    Cursor="Hand"
+                    PointerEntered="OnNotificationPointerEntered"
+                    PointerExited="OnNotificationPointerExited"
+                    PointerPressed="OnNotificationPointerPressed">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <TextBlock Grid.Column="0"
+                               Text="{Binding NotificationIcon}"
+                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                               FontWeight="Normal"
+                               FontSize="18"
+                               VerticalAlignment="Center"
+                               IsVisible="{Binding HasNotificationIcon}"/>
+                    <TextBlock Grid.Column="1"
+                               Text="{Binding NotificationMessage}"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Center"
+                               Foreground="{DynamicResource ShareX.Brush.Text}"/>
+                </Grid>
+            </Border>
+        </Grid>
 
         <Border x:Name="InteractionCaptureLayer"
                 Grid.Row="0"

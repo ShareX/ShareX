@@ -715,6 +715,11 @@ namespace ShareX.ImageEditor.Presentation.Views
                 {
                     ResetModalContentPosition();
                 }
+                else if (e.PropertyName == nameof(MainViewModel.NotificationMessage) &&
+                    !string.IsNullOrEmpty(vm.NotificationMessage))
+                {
+                    PositionNotificationOnCursorScreen();
+                }
                 else if (e.PropertyName == nameof(MainViewModel.StepStartNumber))
                 {
                     vm.RecalculateNumberCounter(_editorCore.Annotations);
@@ -1306,6 +1311,29 @@ namespace ShareX.ImageEditor.Presentation.Views
             {
                 vm.DismissNotification();
                 e.Handled = true;
+            }
+        }
+
+        private void PositionNotificationOnCursorScreen()
+        {
+            Grid? notificationHost = this.FindControl<Grid>("EditorNotificationHost");
+            if (notificationHost == null)
+            {
+                return;
+            }
+
+            notificationHost.RenderTransform = null;
+            if (!_isWorkspaceHostMode)
+            {
+                return;
+            }
+
+            Point? screenCenter = GetCursorScreenCenter(this);
+            if (screenCenter.HasValue)
+            {
+                notificationHost.RenderTransform = new TranslateTransform(
+                    screenCenter.Value.X - Bounds.Width / 2,
+                    0);
             }
         }
 
