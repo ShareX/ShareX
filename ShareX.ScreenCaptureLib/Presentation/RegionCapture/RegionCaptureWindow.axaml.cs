@@ -57,6 +57,7 @@ public partial class RegionCaptureWindow : Window
     private Grid _regionInputSurface = null!;
     private RegionSelectionOverlay _regionOverlay = null!;
     private LayoutTransformControl _regionTransform = null!;
+    private Grid _captureToolbar = null!;
     private AnnotationToolbar _annotationToolbar = null!;
     private Button _regionToolButton = null!;
     private StackPanel _magnifierPanel = null!;
@@ -239,6 +240,7 @@ public partial class RegionCaptureWindow : Window
         _regionInputSurface = this.FindControl<Grid>("RegionInputSurface")!;
         _regionOverlay = this.FindControl<RegionSelectionOverlay>("RegionOverlay")!;
         _regionTransform = this.FindControl<LayoutTransformControl>("RegionTransform")!;
+        _captureToolbar = this.FindControl<Grid>("CaptureToolbar")!;
         _annotationToolbar = this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
         _regionToolButton = this.FindControl<Button>("RegionToolButton")!;
         _magnifierPanel = this.FindControl<StackPanel>("MagnifierPanel")!;
@@ -326,6 +328,7 @@ public partial class RegionCaptureWindow : Window
             _lastPointerPoint = ClampPoint(new Point(
                 cursorPosition.X - _request.ScreenBounds.X,
                 cursorPosition.Y - _request.ScreenBounds.Y));
+            UpdateToolbarPosition(new PixelPoint(cursorPosition.X, cursorPosition.Y));
             UpdateHud(_lastPointerPoint);
 
             _ = LoadWindowRegionsAsync();
@@ -706,6 +709,30 @@ public partial class RegionCaptureWindow : Window
         RecreateMagnifierBitmap();
         UpdateHud(_lastPointerPoint);
         e.Handled = true;
+    }
+
+    private void UpdateToolbarPosition(PixelPoint desktopPoint)
+    {
+        if (_request == null)
+        {
+            return;
+        }
+
+        Screen? screen = Screens.ScreenFromPoint(desktopPoint);
+        if (screen == null)
+        {
+            return;
+        }
+
+        double scale = double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+        double monitorCenterX = screen.Bounds.X - _request.ScreenBounds.X + screen.Bounds.Width / 2d;
+        double monitorTop = screen.Bounds.Y - _request.ScreenBounds.Y;
+        double toolbarWidth = _captureToolbar.Bounds.Width > 0
+            ? _captureToolbar.Bounds.Width
+            : _captureToolbar.DesiredSize.Width;
+
+        AvaloniaCanvas.SetLeft(_captureToolbar, monitorCenterX / scale - toolbarWidth / 2d);
+        AvaloniaCanvas.SetTop(_captureToolbar, monitorTop / scale);
     }
 
     private void OnCaptureHostPointerPressed(object? sender, PointerPressedEventArgs e)

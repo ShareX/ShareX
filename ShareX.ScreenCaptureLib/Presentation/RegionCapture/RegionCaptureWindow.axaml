@@ -85,29 +85,30 @@
         </Canvas>
 
         <!-- Capture host toolbar: rectangle selection plus the shared non-destructive editor tools. -->
-        <Grid VerticalAlignment="Top"
-              HorizontalAlignment="Center"
-              ColumnDefinitions="Auto,Auto"
-              MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=Window}}">
-            <Border Grid.Column="0"
-                    Padding="4,4,0,4"
-                    VerticalAlignment="Top"
-                    Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
-                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                    BorderThickness="1,1,0,1"
-                    CornerRadius="0,0,0,4">
-                <Button x:Name="RegionToolButton"
-                        Classes="toolbar-button active"
-                        Click="OnRegionToolClick"
-                        ToolTip.Tip="Rectangle region"
-                        Content="{x:Static theming:LucideIcons.scan}"/>
-            </Border>
+        <Canvas>
+            <Grid x:Name="CaptureToolbar"
+                  ColumnDefinitions="Auto,Auto"
+                  MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=Window}}">
+                <Border Grid.Column="0"
+                        Padding="4,4,0,4"
+                        VerticalAlignment="Top"
+                        Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                        BorderThickness="1,1,0,1"
+                        CornerRadius="0,0,0,4">
+                    <Button x:Name="RegionToolButton"
+                            Classes="toolbar-button active"
+                            Click="OnRegionToolClick"
+                            ToolTip.Tip="Rectangle region"
+                            Content="{x:Static theming:LucideIcons.scan}"/>
+                </Border>
 
-            <editorControls:AnnotationToolbar x:Name="CaptureAnnotationToolbar"
-                                              Grid.Column="1"
-                                              MainToolbarBorderThickness="0,1,1,1"
-                                              MainToolbarCornerRadius="0,0,4,0"
-                                              ShowEditingActions="False"/>
-        </Grid>
+                <editorControls:AnnotationToolbar x:Name="CaptureAnnotationToolbar"
+                                                  Grid.Column="1"
+                                                  MainToolbarBorderThickness="0,1,1,1"
+                                                  MainToolbarCornerRadius="0,0,4,0"
+                                                  ShowEditingActions="False"/>
+            </Grid>
+        </Canvas>
     </Grid>
 </Window>
