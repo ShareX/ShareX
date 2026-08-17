@@ -1611,7 +1611,7 @@ namespace ShareX.ImageEditor.Presentation.Views
         public void InsertWorkspaceImageAnnotation(SKBitmap skBitmap, Point? position = null)
         {
             _suppressNextHistoryDirtyMark = true;
-            InsertImageAnnotationCore(skBitmap, position);
+            InsertImageAnnotationCore(skBitmap, position, showNotification: false);
 
             if (DataContext is MainViewModel vm)
             {
