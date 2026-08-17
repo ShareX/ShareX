@@ -9,6 +9,7 @@
 
 #nullable enable
 
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -55,6 +56,9 @@ public partial class ImageViewerWindow : Window
     {
         DataContext = _viewModel;
         AvaloniaXamlLoader.Load(this);
+        System.Drawing.Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
+        WindowStartupLocation = WindowStartupLocation.Manual;
+        Position = new PixelPoint(activeScreen.X, activeScreen.Y);
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Title = Localization.Strings.ImageViewerWindow_Title;
         KeyDown += OnKeyDown;
