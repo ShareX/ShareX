@@ -55,7 +55,6 @@ public partial class RegionCaptureWindow : Window
     private LayoutTransformControl _regionTransform = null!;
     private AnnotationToolbar _annotationToolbar = null!;
     private Button _regionToolButton = null!;
-    private Button _captureButton = null!;
     private Border _magnifierPanel = null!;
     private Image _magnifierImage = null!;
     private TextBlock _pointerInfoText = null!;
@@ -225,7 +224,6 @@ public partial class RegionCaptureWindow : Window
         _regionTransform = this.FindControl<LayoutTransformControl>("RegionTransform")!;
         _annotationToolbar = this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
         _regionToolButton = this.FindControl<Button>("RegionToolButton")!;
-        _captureButton = this.FindControl<Button>("CaptureButton")!;
         _magnifierPanel = this.FindControl<Border>("MagnifierPanel")!;
         _magnifierPanel.RenderTransform = _magnifierTransform;
         _magnifierImage = this.FindControl<Image>("MagnifierImage")!;
@@ -730,7 +728,6 @@ public partial class RegionCaptureWindow : Window
             rectangle,
             new Rect(0, 0, GetImageSize().Width, GetImageSize().Height));
         _selectedCandidate = candidate;
-        _captureButton.IsEnabled = HasValidSelection();
         UpdateSelectionInfo();
     }
 
@@ -740,7 +737,6 @@ public partial class RegionCaptureWindow : Window
         _selectedCandidate = null;
         _regionOverlay.SelectionRectangle = default;
         _regionOverlay.ShowHandles = false;
-        _captureButton.IsEnabled = false;
         _selectionInfoPanel.IsVisible = false;
         UpdateHover(_lastPointerPoint);
     }
@@ -958,21 +954,6 @@ public partial class RegionCaptureWindow : Window
             AvaloniaCanvas.SetLeft(panel, targetX);
             AvaloniaCanvas.SetTop(panel, targetY);
         }
-    }
-
-    private void OnCaptureClick(object? sender, RoutedEventArgs e)
-    {
-        if (HasValidSelection())
-        {
-            Complete(_regionOverlay.SelectionRectangle);
-        }
-        e.Handled = true;
-    }
-
-    private void OnCancelClick(object? sender, RoutedEventArgs e)
-    {
-        CancelCapture();
-        e.Handled = true;
     }
 
     private void RunCaptureAction(RegionCaptureAction action)

@@ -101,27 +101,5 @@
                                               MainToolbarCornerRadius="0,0,4,0"
                                               ShowEditingActions="True"/>
         </Grid>
-
-        <Border VerticalAlignment="Bottom"
-                HorizontalAlignment="Center"
-                Padding="4"
-                Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
-                BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                BorderThickness="1"
-                CornerRadius="4,4,0,0">
-            <StackPanel Orientation="Horizontal" Spacing="4">
-                <Button x:Name="CancelButton"
-                        Classes="toolbar-button"
-                        Click="OnCancelClick"
-                        ToolTip.Tip="Cancel (Esc)"
-                        Content="{x:Static theming:LucideIcons.x}"/>
-                <Button x:Name="CaptureButton"
-                        Classes="toolbar-button"
-                        Click="OnCaptureClick"
-                        ToolTip.Tip="Capture (Enter)"
-                        IsEnabled="False"
-                        Content="{x:Static theming:LucideIcons.check}"/>
-            </StackPanel>
-        </Border>
     </Grid>
 </Window>
