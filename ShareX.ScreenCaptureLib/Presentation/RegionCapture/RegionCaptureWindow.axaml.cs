@@ -73,6 +73,7 @@ public partial class RegionCaptureWindow : Window
     private readonly TranslateTransform _magnifierTransform = new();
     private bool _regionToolActive = true;
     private bool _keyboardInputEnabled;
+    private bool _suppressNextRightButtonReleaseAction;
     private bool _workspaceOwnsScreenshot;
     private bool _closing;
     private Exception? _startupException;
@@ -430,9 +431,13 @@ public partial class RegionCaptureWindow : Window
         _lastPointerPoint = point;
         PointerPointProperties properties = e.GetCurrentPoint(_regionInputSurface).Properties;
 
-        if (properties.IsRightButtonPressed)
+        if (TryCancelRegionCreation(e, point))
         {
-            RunCaptureAction(_request.CaptureOptions.RegionCaptureActionRightClick);
+            return;
+        }
+
+        if (properties.PointerUpdateKind == PointerUpdateKind.RightButtonPressed)
+        {
             e.Handled = true;
             return;
         }
@@ -516,6 +521,17 @@ public partial class RegionCaptureWindow : Window
 
         Point point = ClampPoint(e.GetPosition(_regionInputSurface));
         _lastPointerPoint = point;
+
+        if (TryCancelRegionCreation(e, point))
+        {
+            return;
+        }
+
+        if (TryHandleRightButtonRelease(e))
+        {
+            return;
+        }
+
         UpdateHud(point);
 
         switch (_interaction)
@@ -547,12 +563,37 @@ public partial class RegionCaptureWindow : Window
 
     private void OnRegionPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
-        if (_closing || _request == null || !_regionToolActive || _interaction == RegionInteraction.None)
+        if (_closing || _request == null || !_regionToolActive)
         {
             return;
         }
 
-        if (e.GetCurrentPoint(_regionInputSurface).Properties.PointerUpdateKind != PointerUpdateKind.LeftButtonReleased)
+        Point point = ClampPoint(e.GetPosition(_regionInputSurface));
+        _lastPointerPoint = point;
+
+        if (TryCancelRegionCreation(e, point))
+        {
+            return;
+        }
+
+        PointerPointProperties properties = e.GetCurrentPoint(_regionInputSurface).Properties;
+        PointerUpdateKind updateKind = properties.PointerUpdateKind;
+        if (TryHandleRightButtonRelease(e))
+        {
+            return;
+        }
+
+        if (_interaction == RegionInteraction.None)
+        {
+            if (updateKind == PointerUpdateKind.LeftButtonReleased && !properties.IsRightButtonPressed)
+            {
+                _suppressNextRightButtonReleaseAction = false;
+            }
+
+            return;
+        }
+
+        if (updateKind != PointerUpdateKind.LeftButtonReleased)
         {
             return;
         }
@@ -585,6 +626,43 @@ public partial class RegionCaptureWindow : Window
         }
 
         e.Handled = true;
+    }
+
+    private bool TryCancelRegionCreation(PointerEventArgs e, Point point)
+    {
+        PointerUpdateKind updateKind = e.GetCurrentPoint(_regionInputSurface).Properties.PointerUpdateKind;
+        if (updateKind is not PointerUpdateKind.RightButtonPressed and not PointerUpdateKind.RightButtonReleased ||
+            _interaction is not (RegionInteraction.Creating or RegionInteraction.PendingHover or RegionInteraction.Fixed))
+        {
+            return false;
+        }
+
+        _suppressNextRightButtonReleaseAction = updateKind == PointerUpdateKind.RightButtonPressed;
+        e.Pointer.Capture(null);
+        ClearSelection();
+        UpdateHud(point);
+        e.Handled = true;
+        return true;
+    }
+
+    private bool TryHandleRightButtonRelease(PointerEventArgs e)
+    {
+        if (e.GetCurrentPoint(_regionInputSurface).Properties.PointerUpdateKind != PointerUpdateKind.RightButtonReleased)
+        {
+            return false;
+        }
+
+        if (_suppressNextRightButtonReleaseAction)
+        {
+            _suppressNextRightButtonReleaseAction = false;
+        }
+        else if (_request != null)
+        {
+            RunCaptureAction(_request.CaptureOptions.RegionCaptureActionRightClick);
+        }
+
+        e.Handled = true;
+        return true;
     }
 
     private void OnRegionPointerWheelChanged(object? sender, PointerWheelEventArgs e)
