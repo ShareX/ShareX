@@ -117,6 +117,7 @@ public partial class RegionCaptureWindow : Window
         }
 
         ConfigureInitialPixelBounds();
+        UpdatePixelTransforms();
         Show();
         return _completionSource.Task;
     }
@@ -313,8 +314,6 @@ public partial class RegionCaptureWindow : Window
                 return;
             }
 
-            ApplyPixelSize();
-            UpdatePixelTransforms();
             _editorWorkspace.ConfigureForFullscreenWorkspace();
             _editorWorkspace.LoadWorkspaceImage(_request.Screenshot);
             _workspaceOwnsScreenshot = true;
