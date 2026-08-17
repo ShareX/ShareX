@@ -49,13 +49,8 @@
                                Height="150"
                                Stretch="Fill"
                                RenderOptions.BitmapInterpolationMode="None"/>
-                        <Border Width="11"
-                                Height="11"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                BorderBrush="White"
-                                BorderThickness="1"
-                                BoxShadow="0 0 0 1 #CC000000"/>
+                        <capture:MagnifierPixelGrid x:Name="MagnifierPixelGrid"
+                                                    IsHitTestVisible="False"/>
                     </Grid>
                     <TextBlock x:Name="PointerInfoText"
                                FontSize="12"

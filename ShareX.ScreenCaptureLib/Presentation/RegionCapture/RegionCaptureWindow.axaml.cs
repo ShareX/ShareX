@@ -58,6 +58,7 @@ public partial class RegionCaptureWindow : Window
     private Button _regionToolButton = null!;
     private Border _magnifierPanel = null!;
     private Image _magnifierImage = null!;
+    private MagnifierPixelGrid _magnifierPixelGrid = null!;
     private TextBlock _pointerInfoText = null!;
     private Border _selectionInfoPanel = null!;
     private TextBlock _selectionInfoText = null!;
@@ -238,6 +239,7 @@ public partial class RegionCaptureWindow : Window
         _magnifierPanel = this.FindControl<Border>("MagnifierPanel")!;
         _magnifierPanel.RenderTransform = _magnifierTransform;
         _magnifierImage = this.FindControl<Image>("MagnifierImage")!;
+        _magnifierPixelGrid = this.FindControl<MagnifierPixelGrid>("MagnifierPixelGrid")!;
         _pointerInfoText = this.FindControl<TextBlock>("PointerInfoText")!;
         _selectionInfoPanel = this.FindControl<Border>("SelectionInfoPanel")!;
         _selectionInfoText = this.FindControl<TextBlock>("SelectionInfoText")!;
@@ -985,6 +987,7 @@ public partial class RegionCaptureWindow : Window
             PixelFormat.Bgra8888,
             AlphaFormat.Premul);
         _magnifierImage.Source = _magnifierBitmap;
+        _magnifierPixelGrid.PixelCount = count;
     }
 
     private void UpdateSelectionInfo()
