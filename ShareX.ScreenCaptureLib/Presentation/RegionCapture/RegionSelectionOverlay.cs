@@ -30,12 +30,10 @@ public sealed class RegionSelectionOverlay : Control
     public static readonly StyledProperty<IBrush> AccentBrushProperty =
         AvaloniaProperty.Register<RegionSelectionOverlay, IBrush>(nameof(AccentBrush), Brushes.DodgerBlue);
 
-    private static readonly DashStyle AntDashStyle = new([5, 5], 0);
-    private static readonly DashStyle AntAlternateDashStyle = new([5, 5], 5);
-    private static readonly IPen AntBackdropPen = new Pen(
+    private static readonly IPen AntDashPen = new Pen(
         new SolidColorBrush(Color.FromArgb(230, 0, 0, 0)),
         1,
-        AntDashStyle);
+        new DashStyle([5, 5], 0));
     private static readonly IBrush HandleFill = Brushes.White;
     private static readonly IPen HandleBorder = new Pen(Brushes.Black, 1);
 
@@ -140,11 +138,7 @@ public sealed class RegionSelectionOverlay : Control
             active.Y + 0.5,
             Math.Max(0, active.Width - 1),
             Math.Max(0, active.Height - 1));
-        context.DrawRectangle(null, AntBackdropPen, antRectangle);
-        context.DrawRectangle(
-            null,
-            new Pen(AccentBrush, 1, AntAlternateDashStyle),
-            antRectangle);
+        DrawAntRectangle(context, antRectangle);
 
         if (ShowHandles && IsValid(SelectionRectangle))
         {
@@ -155,6 +149,15 @@ public sealed class RegionSelectionOverlay : Control
                 context.DrawRectangle(HandleFill, HandleBorder, handle);
             }
         }
+    }
+
+    private void DrawAntRectangle(DrawingContext context, Rect rectangle)
+    {
+        context.DrawRectangle(null, new Pen(AccentBrush, 1), rectangle);
+        context.DrawLine(AntDashPen, rectangle.TopLeft, rectangle.TopRight);
+        context.DrawLine(AntDashPen, rectangle.TopLeft, rectangle.BottomLeft);
+        context.DrawLine(AntDashPen, rectangle.TopRight, rectangle.BottomRight);
+        context.DrawLine(AntDashPen, rectangle.BottomLeft, rectangle.BottomRight);
     }
 
     public RegionResizeHandle HitTestHandle(Point point, double tolerance = 10)
