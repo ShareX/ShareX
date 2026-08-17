@@ -27,8 +27,15 @@ namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 /// </summary>
 public sealed class RegionSelectionOverlay : Control
 {
-    private static readonly IPen OuterBorderPen = new Pen(Brushes.Black, 3);
-    private static readonly IPen InnerBorderPen = new Pen(Brushes.White, 1);
+    public static readonly StyledProperty<IBrush> AccentBrushProperty =
+        AvaloniaProperty.Register<RegionSelectionOverlay, IBrush>(nameof(AccentBrush), Brushes.DodgerBlue);
+
+    private static readonly DashStyle AntDashStyle = new([5, 5], 0);
+    private static readonly DashStyle AntAlternateDashStyle = new([5, 5], 5);
+    private static readonly IPen AntBackdropPen = new Pen(
+        new SolidColorBrush(Color.FromArgb(230, 0, 0, 0)),
+        1,
+        AntDashStyle);
     private static readonly IBrush HandleFill = Brushes.White;
     private static readonly IPen HandleBorder = new Pen(Brushes.Black, 1);
 
@@ -37,6 +44,17 @@ public sealed class RegionSelectionOverlay : Control
     private bool _showHandles;
     private byte _dimAlpha = 51;
     private IBrush _dimBrush = new SolidColorBrush(Color.FromArgb(51, 0, 0, 0));
+
+    static RegionSelectionOverlay()
+    {
+        AffectsRender<RegionSelectionOverlay>(AccentBrushProperty);
+    }
+
+    public IBrush AccentBrush
+    {
+        get => GetValue(AccentBrushProperty);
+        set => SetValue(AccentBrushProperty, value);
+    }
 
     public Rect SelectionRectangle
     {
@@ -117,8 +135,16 @@ public sealed class RegionSelectionOverlay : Control
             return;
         }
 
-        context.DrawRectangle(null, OuterBorderPen, active);
-        context.DrawRectangle(null, InnerBorderPen, active);
+        Rect antRectangle = new(
+            active.X + 0.5,
+            active.Y + 0.5,
+            Math.Max(0, active.Width - 1),
+            Math.Max(0, active.Height - 1));
+        context.DrawRectangle(null, AntBackdropPen, antRectangle);
+        context.DrawRectangle(
+            null,
+            new Pen(AccentBrush, 1, AntAlternateDashStyle),
+            antRectangle);
 
         if (ShowHandles && IsValid(SelectionRectangle))
         {

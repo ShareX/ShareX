@@ -28,6 +28,7 @@
                   PointerReleased="OnRegionPointerReleased"
                   PointerWheelChanged="OnRegionPointerWheelChanged">
                 <capture:RegionSelectionOverlay x:Name="RegionOverlay"
+                                                AccentBrush="{DynamicResource ShareX.Brush.Accent.Start}"
                                                 IsHitTestVisible="False"/>
             </Grid>
         </LayoutTransformControl>
