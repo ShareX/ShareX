@@ -38,7 +38,6 @@
                             <DataTemplate x:DataType="vm:ToolbarCustomizationItemViewModel">
                                 <StackPanel Orientation="Horizontal" Spacing="4">
                                     <Border Width="1"
-                                            Margin="4,0"
                                             Background="{DynamicResource ShareX.Brush.Separator}"
                                             IsVisible="{Binding IsGroupSeparatorVisible}"/>
                                     <Button Classes="toolbar-button"
@@ -138,7 +137,7 @@
                     <StackPanel Orientation="Horizontal"
                                 Spacing="4"
                                 IsVisible="{Binding ShowEditingActions, ElementName=AnnotationToolbarRoot}">
-                        <Border Width="1" Margin="4,0" Background="{DynamicResource ShareX.Brush.Separator}"/>
+                        <Border Width="1" Background="{DynamicResource ShareX.Brush.Separator}"/>
                         <Button Classes="toolbar-button"
                                 IsEnabled="{Binding CanUndo}"
                                 Click="OnUndoClick"
