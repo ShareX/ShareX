@@ -698,7 +698,7 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        int delta = e.Delta.Y > 0 ? 2 : -2;
+        int delta = e.Delta.Y > 0 ? -2 : 2;
         int count = NormalizeMagnifierPixelCount(_request.CaptureOptions.MagnifierPixelCount + delta);
 
         _request.CaptureOptions.MagnifierPixelCount = count;
