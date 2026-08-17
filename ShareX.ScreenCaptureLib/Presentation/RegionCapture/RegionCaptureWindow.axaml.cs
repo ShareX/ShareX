@@ -56,9 +56,11 @@ public partial class RegionCaptureWindow : Window
     private LayoutTransformControl _regionTransform = null!;
     private AnnotationToolbar _annotationToolbar = null!;
     private Button _regionToolButton = null!;
-    private Border _magnifierPanel = null!;
+    private StackPanel _magnifierPanel = null!;
+    private Grid _magnifierView = null!;
     private Image _magnifierImage = null!;
     private MagnifierPixelGrid _magnifierPixelGrid = null!;
+    private Border _pointerInfoPanel = null!;
     private TextBlock _pointerInfoText = null!;
     private Border _selectionInfoPanel = null!;
     private TextBlock _selectionInfoText = null!;
@@ -236,10 +238,12 @@ public partial class RegionCaptureWindow : Window
         _regionTransform = this.FindControl<LayoutTransformControl>("RegionTransform")!;
         _annotationToolbar = this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
         _regionToolButton = this.FindControl<Button>("RegionToolButton")!;
-        _magnifierPanel = this.FindControl<Border>("MagnifierPanel")!;
+        _magnifierPanel = this.FindControl<StackPanel>("MagnifierPanel")!;
         _magnifierPanel.RenderTransform = _magnifierTransform;
+        _magnifierView = this.FindControl<Grid>("MagnifierView")!;
         _magnifierImage = this.FindControl<Image>("MagnifierImage")!;
         _magnifierPixelGrid = this.FindControl<MagnifierPixelGrid>("MagnifierPixelGrid")!;
+        _pointerInfoPanel = this.FindControl<Border>("PointerInfoPanel")!;
         _pointerInfoText = this.FindControl<TextBlock>("PointerInfoText")!;
         _selectionInfoPanel = this.FindControl<Border>("SelectionInfoPanel")!;
         _selectionInfoText = this.FindControl<TextBlock>("SelectionInfoText")!;
@@ -279,8 +283,9 @@ public partial class RegionCaptureWindow : Window
         _regionOverlay.DimAlpha = GetDimAlpha(_request.CaptureOptions);
         _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(GetInitialScaling());
 
-        _magnifierPanel.IsVisible = _request.CaptureOptions.ShowMagnifier;
-        _pointerInfoText.IsVisible = _request.CaptureOptions.ShowInfo;
+        _magnifierView.IsVisible = _request.CaptureOptions.ShowMagnifier;
+        _pointerInfoPanel.IsVisible = _request.CaptureOptions.ShowInfo;
+        _magnifierPanel.IsVisible = _magnifierView.IsVisible || _pointerInfoPanel.IsVisible;
         _regionToolButton.Classes.Set("active", true);
         _viewModel.SetHostToolbarToolsActive(false);
         Title = Localization.Strings.BaseRegionForm_InitializeComponent_Region_capture;
@@ -405,7 +410,11 @@ public partial class RegionCaptureWindow : Window
         _annotationToolbar.ShowToolOptions = false;
         _editorWorkspace.CancelActiveInteractionOrSelection();
         _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(Math.Max(1, RenderScaling));
-        _magnifierPanel.IsVisible = _request?.CaptureOptions.ShowMagnifier == true;
+        bool showMagnifier = _request?.CaptureOptions.ShowMagnifier == true;
+        bool showInfo = _request?.CaptureOptions.ShowInfo == true;
+        _magnifierView.IsVisible = showMagnifier;
+        _pointerInfoPanel.IsVisible = showInfo;
+        _magnifierPanel.IsVisible = showMagnifier || showInfo;
         UpdateHover(_lastPointerPoint);
         UpdateHud(_lastPointerPoint);
         _regionInputSurface.Focus();
@@ -884,11 +893,20 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        if (_request.CaptureOptions.ShowMagnifier)
+        bool showMagnifier = _request.CaptureOptions.ShowMagnifier;
+        bool showInfo = _request.CaptureOptions.ShowInfo;
+
+        if (showMagnifier || showInfo)
         {
-            UpdateMagnifier(imagePoint);
+            if (showMagnifier)
+            {
+                UpdateMagnifier(imagePoint);
+            }
+
+            _magnifierView.IsVisible = showMagnifier;
+            _pointerInfoPanel.IsVisible = showInfo;
             _magnifierPanel.IsVisible = true;
-            _pointerInfoText.Text = $"X: {_request.ScreenBounds.X + (int)imagePoint.X}, Y: {_request.ScreenBounds.Y + (int)imagePoint.Y}";
+            _pointerInfoText.Text = $"X: {_request.ScreenBounds.X + (int)imagePoint.X} Y: {_request.ScreenBounds.Y + (int)imagePoint.Y}";
 
             double scale = Math.Max(1, RenderScaling);
             Point pointer = new Point(imagePoint.X / scale, imagePoint.Y / scale);

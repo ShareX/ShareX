@@ -34,16 +34,16 @@
 
         <!-- HUD is deliberately separate from the image-pixel transform. -->
         <Canvas x:Name="HudCanvas" IsHitTestVisible="False">
-            <Border x:Name="MagnifierPanel"
-                    Padding="8"
-                    CornerRadius="8"
-                    Background="{DynamicResource ShareX.Brush.Background.Main}"
-                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                    BorderThickness="1"
-                    BoxShadow="0 8 24 #66000000"
-                    IsVisible="False">
-                <StackPanel Spacing="6">
+            <StackPanel x:Name="MagnifierPanel"
+                        Spacing="10"
+                        IsVisible="False">
+                <Grid x:Name="MagnifierView" Width="152" Height="152">
+                    <!-- Legacy magnifier: white outer ring around a black inner ring. -->
+                    <Ellipse Width="152" Height="152" Fill="White"/>
                     <Grid Width="150" Height="150">
+                        <Grid.Clip>
+                            <EllipseGeometry Rect="0,0,150,150"/>
+                        </Grid.Clip>
                         <Image x:Name="MagnifierImage"
                                Width="150"
                                Height="150"
@@ -52,12 +52,25 @@
                         <capture:MagnifierPixelGrid x:Name="MagnifierPixelGrid"
                                                     IsHitTestVisible="False"/>
                     </Grid>
+                    <Ellipse Width="150"
+                             Height="150"
+                             Stroke="Black"
+                             StrokeThickness="1"
+                             IsHitTestVisible="False"/>
+                </Grid>
+                <Border x:Name="PointerInfoPanel"
+                        HorizontalAlignment="Center"
+                        Padding="7,4"
+                        CornerRadius="5"
+                        Background="{DynamicResource ShareX.Brush.Background.Main}"
+                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                        BorderThickness="1">
                     <TextBlock x:Name="PointerInfoText"
                                FontSize="12"
                                FontWeight="SemiBold"
                                TextAlignment="Center"/>
-                </StackPanel>
-            </Border>
+                </Border>
+            </StackPanel>
 
             <Border x:Name="SelectionInfoPanel"
                     Padding="7,4"
