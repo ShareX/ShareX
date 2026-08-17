@@ -1008,6 +1008,27 @@ namespace ShareX.ImageEditor.Presentation.Views
             return sourceImage.GetPixel(x, y);
         }
 
+        /// <summary>Deletes the topmost annotation under a point supplied by an embedded host.</summary>
+        public bool DeleteWorkspaceAnnotationAt(Point workspacePoint)
+        {
+            Canvas? canvas = this.FindControl<Canvas>("AnnotationCanvas");
+            Point? canvasPoint = canvas == null ? null : this.TranslatePoint(workspacePoint, canvas);
+            if (canvas == null || !canvasPoint.HasValue)
+            {
+                return false;
+            }
+
+            Control? shape = _selectionController.HitTestShape(canvas, canvasPoint.Value);
+            if (shape == null)
+            {
+                return false;
+            }
+
+            _selectionController.SetSelectedShape(shape);
+            PerformDelete();
+            return true;
+        }
+
         /// <summary>
         /// Gives a host the same staged Escape behavior as the editor without closing its window.
         /// </summary>

@@ -22,6 +22,7 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using Avalonia.VisualTree;
 using ShareX.AvaloniaUI.Input;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
@@ -75,6 +76,7 @@ public partial class RegionCaptureWindow : Window
     private bool _regionToolActive = true;
     private bool _keyboardInputEnabled;
     private bool _suppressNextRightButtonReleaseAction;
+    private bool _annotationRightButtonPressed;
     private bool _workspaceOwnsScreenshot;
     private bool _closing;
     private Exception? _startupException;
@@ -87,6 +89,8 @@ public partial class RegionCaptureWindow : Window
         Topmost = true;
 #endif
         ResolveControls();
+        AddHandler(PointerPressedEvent, OnCaptureHostPointerPressed, RoutingStrategies.Tunnel, handledEventsToo: true);
+        AddHandler(PointerReleasedEvent, OnCaptureHostPointerReleased, RoutingStrategies.Tunnel, handledEventsToo: true);
     }
 
     public RegionCaptureWindow(AvaloniaRegionCaptureRequest request) : this()
@@ -698,6 +702,78 @@ public partial class RegionCaptureWindow : Window
         e.Handled = true;
     }
 
+    private void OnCaptureHostPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        if (_regionToolActive || _closing || _request == null || !IsEditorWorkspaceSource(e.Source))
+        {
+            return;
+        }
+
+        if (e.GetCurrentPoint(_editorWorkspace).Properties.PointerUpdateKind == PointerUpdateKind.RightButtonPressed)
+        {
+            _annotationRightButtonPressed = true;
+            e.Handled = true;
+        }
+    }
+
+    private void OnCaptureHostPointerReleased(object? sender, PointerReleasedEventArgs e)
+    {
+        if (!_annotationRightButtonPressed || _regionToolActive || _closing || _request == null)
+        {
+            return;
+        }
+
+        if (e.GetCurrentPoint(_editorWorkspace).Properties.PointerUpdateKind != PointerUpdateKind.RightButtonReleased)
+        {
+            return;
+        }
+
+        _annotationRightButtonPressed = false;
+        RunAnnotationRightClickAction(e.GetPosition(_editorWorkspace));
+        e.Handled = true;
+    }
+
+    private bool IsEditorWorkspaceSource(object? source)
+    {
+        Visual? visual = source as Visual;
+        while (visual != null)
+        {
+            if (ReferenceEquals(visual, _editorWorkspace))
+            {
+                return true;
+            }
+
+            visual = visual.GetVisualParent();
+        }
+
+        return false;
+    }
+
+    private void RunAnnotationRightClickAction(Point workspacePoint)
+    {
+        if (_request == null)
+        {
+            return;
+        }
+
+        RegionCaptureAction action = _request.CaptureOptions.RegionCaptureActionRightClick;
+        if (action == RegionCaptureAction.RemoveShapeCancelCapture)
+        {
+            if (!_editorWorkspace.DeleteWorkspaceAnnotationAt(workspacePoint))
+            {
+                CancelCapture();
+            }
+        }
+        else if (action == RegionCaptureAction.RemoveShape)
+        {
+            _editorWorkspace.DeleteWorkspaceAnnotationAt(workspacePoint);
+        }
+        else
+        {
+            RunCaptureAction(action);
+        }
+    }
+
     private void UpdateHover(Point imagePoint)
     {
         if (_request == null || HasValidSelection() || _interaction != RegionInteraction.None)
@@ -1007,7 +1083,14 @@ public partial class RegionCaptureWindow : Window
                 }
                 break;
             case RegionCaptureAction.SwapToolType:
-                ActivateAnnotationTool();
+                if (_regionToolActive)
+                {
+                    ActivateAnnotationTool();
+                }
+                else
+                {
+                    ActivateRegionTool();
+                }
                 break;
             case RegionCaptureAction.CaptureFullscreen:
                 Complete(new Rect(0, 0, _imageWidth, _imageHeight), includeWindowInfo: false);
