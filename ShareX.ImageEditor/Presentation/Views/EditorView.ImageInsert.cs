@@ -138,7 +138,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 return;
             }
 
-            InsertImagePlacement? placement = vm.Options.ShowInsertImageDialog
+            InsertImagePlacement? placement = vm.Options.ShowInsertImageDialog && !_isWorkspaceHostMode
                 ? await ShowInsertImageDialogAsync(vm, skBitmap)
                 : InsertImagePlacement.Center;
 
