@@ -202,7 +202,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 });
 
             vm.ModalContent = dialog;
-            PositionInsertImageModalOnCursorScreen();
+            PositionModalOnCursorScreen();
             vm.IsModalOpen = true;
 
             return completionSource.Task;
@@ -323,7 +323,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 Math.Clamp(visibleCanvasCenter.Value.Y, 0, _editorCore.CanvasSize.Height));
         }
 
-        private void PositionInsertImageModalOnCursorScreen()
+        private void PositionModalOnCursorScreen()
         {
             ContentControl? modalHost = this.FindControl<ContentControl>("ModalContentHost");
             if (modalHost == null)

@@ -706,6 +706,15 @@ namespace ShareX.ImageEditor.Presentation.Views
                         EnsureEffectBrowserPanel(vm).FocusSearchBox();
                     }
                 }
+                else if (e.PropertyName == nameof(MainViewModel.ModalContent) &&
+                    vm.ModalContent is EmojiPickerDialogViewModel)
+                {
+                    PositionModalOnCursorScreen();
+                }
+                else if (e.PropertyName == nameof(MainViewModel.IsModalOpen) && !vm.IsModalOpen)
+                {
+                    ResetModalContentPosition();
+                }
                 else if (e.PropertyName == nameof(MainViewModel.StepStartNumber))
                 {
                     vm.RecalculateNumberCounter(_editorCore.Annotations);
@@ -1719,8 +1728,15 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             const int defaultSize = 160;
 
-            var posX = dropPosition?.X ?? (_editorCore.CanvasSize.Width / 2 - defaultSize / 2.0);
-            var posY = dropPosition?.Y ?? (_editorCore.CanvasSize.Height / 2 - defaultSize / 2.0);
+            Point? screenCenter = dropPosition.HasValue ? null : GetCursorScreenCenter(canvas);
+            double centerX = screenCenter.HasValue
+                ? Math.Clamp(screenCenter.Value.X, 0, _editorCore.CanvasSize.Width)
+                : _editorCore.CanvasSize.Width / 2;
+            double centerY = screenCenter.HasValue
+                ? Math.Clamp(screenCenter.Value.Y, 0, _editorCore.CanvasSize.Height)
+                : _editorCore.CanvasSize.Height / 2;
+            var posX = dropPosition?.X ?? centerX - defaultSize / 2.0;
+            var posY = dropPosition?.Y ?? centerY - defaultSize / 2.0;
 
             var annotation = new EmojiAnnotation
             {
