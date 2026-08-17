@@ -751,7 +751,7 @@ public partial class RegionCaptureWindow : Window
 
         if (e.GetCurrentPoint(_editorWorkspace).Properties.PointerUpdateKind == PointerUpdateKind.RightButtonPressed)
         {
-            if (_viewModel?.IsModalOpen == true)
+            if (_viewModel?.IsModalOpen == true || IsEditorNotificationSource(e.Source))
             {
                 _annotationRightButtonPressed = false;
                 return;
@@ -785,6 +785,22 @@ public partial class RegionCaptureWindow : Window
         while (visual != null)
         {
             if (ReferenceEquals(visual, _editorWorkspace))
+            {
+                return true;
+            }
+
+            visual = visual.GetVisualParent();
+        }
+
+        return false;
+    }
+
+    private static bool IsEditorNotificationSource(object? source)
+    {
+        Visual? visual = source as Visual;
+        while (visual != null)
+        {
+            if (visual is Control { Name: "EditorNotificationHost" })
             {
                 return true;
             }
