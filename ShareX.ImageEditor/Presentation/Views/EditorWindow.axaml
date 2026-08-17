@@ -11,6 +11,6 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized">
 
-    <views:EditorView Name="EditorViewControl"/>
+    <views:EditorView Name="EditorViewControl" UseBuiltInToolbars="True"/>
 
 </Window>

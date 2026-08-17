@@ -50,6 +50,9 @@ namespace ShareX.ImageEditor.Presentation.Views
 {
     public partial class EditorView : UserControl
     {
+        public static readonly StyledProperty<bool> UseBuiltInToolbarsProperty =
+            AvaloniaProperty.Register<EditorView, bool>(nameof(UseBuiltInToolbars));
+
         private static readonly Cursor ArrowCursor = new(StandardCursorType.Arrow);
         internal const double OverlayCanvasBleed = 24;
 
@@ -82,6 +85,8 @@ namespace ShareX.ImageEditor.Presentation.Views
         private ImageEditorOptions? _effectBrowserPanelOptions;
         private Cursor? _interactionCursorOverride;
         private CursorAssetLoader.CustomCursorKind? _interactionCursorAsset;
+        private ContentControl _builtInToolbarsHost = null!;
+        private EditorBuiltInToolbars? _builtInToolbars;
 
         // Window-level key handler reference (so shortcuts work regardless of focus)
         private Window? _parentWindow;
@@ -92,6 +97,7 @@ namespace ShareX.ImageEditor.Presentation.Views
         public EditorView()
         {
             InitializeComponent();
+            _builtInToolbarsHost = this.FindControl<ContentControl>("BuiltInToolbarsHost")!;
 
             _editorCore = new EditorCore();
 
@@ -187,6 +193,49 @@ namespace ShareX.ImageEditor.Presentation.Views
             AddHandler(DragDrop.DropEvent, OnDrop);
             AddHandler(DragDrop.DragOverEvent, OnDragOver);
 
+        }
+
+        public bool UseBuiltInToolbars
+        {
+            get => GetValue(UseBuiltInToolbarsProperty);
+            set => SetValue(UseBuiltInToolbarsProperty, value);
+        }
+
+        protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+        {
+            base.OnPropertyChanged(change);
+
+            if (change.Property == UseBuiltInToolbarsProperty && _builtInToolbarsHost != null)
+            {
+                UpdateBuiltInToolbars();
+            }
+        }
+
+        private void UpdateBuiltInToolbars()
+        {
+            if (UseBuiltInToolbars)
+            {
+                if (_builtInToolbars == null)
+                {
+                    _builtInToolbars = new EditorBuiltInToolbars();
+                    _builtInToolbars.ZoomChanged += OnZoomChanged;
+                    _builtInToolbars.ZoomToFitRequested += OnZoomPickerZoomToFitRequested;
+                    _builtInToolbarsHost.Content = _builtInToolbars;
+
+                    if (IsLoaded)
+                    {
+                        HookAnnotationToolbarEvents();
+                    }
+                }
+            }
+            else if (_builtInToolbars != null)
+            {
+                UnhookAnnotationToolbarEvents();
+                _builtInToolbars.ZoomChanged -= OnZoomChanged;
+                _builtInToolbars.ZoomToFitRequested -= OnZoomPickerZoomToFitRequested;
+                _builtInToolbarsHost.Content = null;
+                _builtInToolbars = null;
+            }
         }
 
         private void OnLayoutUpdated(object? sender, EventArgs e)
@@ -703,7 +752,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void OnFileMenuRequested(object? sender, EventArgs e)
         {
-            this.FindControl<AnnotationToolbar>("AnnotationToolbarControl")?.OpenFileMenu();
+            _builtInToolbars?.OpenFileMenu();
         }
 
         private EffectBrowserPanel EnsureEffectBrowserPanel(MainViewModel vm)
@@ -1343,7 +1392,13 @@ namespace ShareX.ImageEditor.Presentation.Views
                     {
                         case Key.Z: vm.UndoCommand.Execute(null); e.Handled = true; break;
                         case Key.Y: vm.RedoCommand.Execute(null); e.Handled = true; break;
-                        case Key.H: vm.ToggleToolbarsCommand.Execute(null); e.Handled = true; break;
+                        case Key.H:
+                            if (!_isWorkspaceHostMode)
+                            {
+                                vm.ToggleToolbarsCommand.Execute(null);
+                                e.Handled = true;
+                            }
+                            break;
                         case Key.X: vm.CutAnnotationCommand.Execute(null); e.Handled = true; break;
                         case Key.C:
                             if (vm.CopyCommand.CanExecute(null))

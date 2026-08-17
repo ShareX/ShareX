@@ -39,7 +39,7 @@ namespace ShareX.ImageEditor.Presentation.Views
     {
         private void HookAnnotationToolbarEvents()
         {
-            var toolbar = this.FindControl<AnnotationToolbar>("AnnotationToolbarControl");
+            AnnotationToolbar? toolbar = _builtInToolbars?.AnnotationToolbar;
             if (toolbar == null)
             {
                 return;
@@ -68,7 +68,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void UnhookAnnotationToolbarEvents()
         {
-            var toolbar = this.FindControl<AnnotationToolbar>("AnnotationToolbarControl");
+            AnnotationToolbar? toolbar = _builtInToolbars?.AnnotationToolbar;
             if (toolbar == null)
             {
                 return;

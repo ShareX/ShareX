@@ -1,0 +1,180 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
+             xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
+             xmlns:editorTheming="using:ShareX.ImageEditor.Presentation.Theming"
+             xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
+             x:Class="ShareX.ImageEditor.Presentation.Views.EditorBuiltInToolbars"
+             x:DataType="vm:MainViewModel">
+    <Grid>
+        <Border Classes="editor-toolbar-host top"
+                Classes.hidden="{Binding AreToolbarsHidden}"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                IsHitTestVisible="{Binding ShowToolbars}">
+            <controls:AnnotationToolbar x:Name="AnnotationToolbarControl"
+                                        DataContext="{Binding ToolbarAdapter}"
+                                        ShowEditingActions="False"
+                                        MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+        </Border>
+
+        <Border Classes="editor-toolbar-host bottom"
+                Classes.hidden="{Binding AreToolbarsHidden}"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Padding="4"
+                Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                BorderThickness="1"
+                CornerRadius="4,4,0,0"
+                MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                ClipToBounds="False"
+                IsHitTestVisible="{Binding ShowToolbars}">
+            <StackPanel Orientation="Horizontal" Spacing="4" ClipToBounds="False">
+                <controls:ZoomPickerDropdown SelectedZoom="{Binding Zoom}"
+                                             ZoomChanged="OnZoomChanged"
+                                             ZoomToFitRequested="OnZoomToFitRequested"
+                                             Height="40"
+                                             ToolTip.Tip="{x:Static res:Strings.EditorView_ZoomCtrlWheel}"
+                                             ToolTip.Placement="Top"
+                                             ToolTip.VerticalOffset="-5"/>
+
+                <Border Width="1"
+                        Height="38"
+                        Background="{DynamicResource ShareX.Brush.Separator}"
+                        Margin="4,0"
+                        IsVisible="{Binding ShowBottomToolbar}"/>
+
+                <Grid Width="90"
+                      Height="40"
+                      Margin="4,0,10,0"
+                      ClipToBounds="False"
+                      VerticalAlignment="Bottom"
+                      IsVisible="{Binding ShowTaskButtons}">
+                    <Button Command="{Binding CancelCommand}"
+                            Classes="task-mode-button danger"
+                            BorderThickness="1"
+                            Height="40"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Right"
+                            Width="55"
+                            Padding="27,0,10,0"
+                            CornerRadius="0,4,4,0"
+                            ToolTip.Tip="{x:Static res:Strings.EditorView_CancelEsc}"
+                            ToolTip.Placement="Top"
+                            ToolTip.VerticalOffset="-5"
+                            ZIndex="0">
+                        <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionCancel}"
+                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                   FontSize="18"
+                                   FontWeight="Normal"
+                                   VerticalAlignment="Center"/>
+                    </Button>
+
+                    <Button Command="{Binding ContinueCommand}"
+                            Classes="task-mode-button success"
+                            Width="56"
+                            Height="56"
+                            CornerRadius="28"
+                            BorderThickness="1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Margin="0,0,0,-8"
+                            ToolTip.Tip="{Binding ContinueButtonTooltip}"
+                            ToolTip.Placement="Top"
+                            ToolTip.VerticalOffset="-5"
+                            ZIndex="20">
+                        <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionContinue}"
+                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                   FontSize="22"
+                                   FontWeight="Normal"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="4,0,0,0"/>
+                    </Button>
+                </Grid>
+
+                <Button Command="{Binding CopyCommand}"
+                        Width="40"
+                        Padding="0"
+                        IsVisible="{Binding ShowBottomToolbar}"
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_CopyimagetoclipboardCtrlC}"
+                        ToolTip.Placement="Top"
+                        ToolTip.VerticalOffset="-5">
+                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionCopy}"
+                               FontSize="18"
+                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                               FontWeight="Normal"/>
+                </Button>
+
+                <Button Command="{Binding SaveCommand}"
+                        Width="40"
+                        Padding="0"
+                        IsVisible="{Binding ShowBottomToolbar}"
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_SaveimageCtrlS}"
+                        ToolTip.Placement="Top"
+                        ToolTip.VerticalOffset="-5">
+                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSave}"
+                               FontSize="18"
+                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                               FontWeight="Normal"/>
+                </Button>
+
+                <Button Command="{Binding SaveAsCommand}"
+                        Width="40"
+                        Padding="0"
+                        IsVisible="{Binding ShowBottomToolbar}"
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_SaveimageasEllipsisCtrlShiftS}"
+                        ToolTip.Placement="Top"
+                        ToolTip.VerticalOffset="-5">
+                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSaveAs}"
+                               FontSize="18"
+                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                               FontWeight="Normal"/>
+                </Button>
+
+                <Button Command="{Binding PinToScreenCommand}"
+                        IsEnabled="{Binding HasPreviewImage}"
+                        Width="40"
+                        Padding="0"
+                        IsVisible="{Binding ShowBottomToolbar}"
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_PinimagetoscreenCtrlP}"
+                        ToolTip.Placement="Top"
+                        ToolTip.VerticalOffset="-5">
+                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionPinToScreen}"
+                               FontSize="18"
+                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                               FontWeight="Normal"/>
+                </Button>
+
+                <Button Command="{Binding PrintCommand}"
+                        IsEnabled="{Binding HasPreviewImage}"
+                        Width="40"
+                        Padding="0"
+                        IsVisible="{Binding ShowBottomToolbar}"
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_PrintimageEllipsisCtrlShiftP}"
+                        ToolTip.Placement="Top"
+                        ToolTip.VerticalOffset="-5">
+                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionPrint}"
+                               FontSize="18"
+                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                               FontWeight="Normal"/>
+                </Button>
+
+                <Button Command="{Binding UploadCommand}"
+                        IsEnabled="{Binding HasPreviewImage}"
+                        Width="40"
+                        Padding="0"
+                        IsVisible="{Binding ShowBottomToolbar}"
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_UploadimageCtrlU}"
+                        ToolTip.Placement="Top"
+                        ToolTip.VerticalOffset="-5">
+                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionUpload}"
+                               FontSize="18"
+                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                               FontWeight="Normal"/>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

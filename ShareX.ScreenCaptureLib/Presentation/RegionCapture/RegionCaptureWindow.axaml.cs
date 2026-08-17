@@ -168,6 +168,13 @@ public partial class RegionCaptureWindow : Window
 
     protected override void OnKeyDown(KeyEventArgs e)
     {
+        if (_keyboardInputEnabled && !_closing && e.Key == Key.H && e.KeyModifiers == KeyModifiers.Control)
+        {
+            _captureToolbar.Classes.Set("hidden", !_captureToolbar.Classes.Contains("hidden"));
+            e.Handled = true;
+            return;
+        }
+
         base.OnKeyDown(e);
 
         if (!_keyboardInputEnabled || _closing || _request == null)

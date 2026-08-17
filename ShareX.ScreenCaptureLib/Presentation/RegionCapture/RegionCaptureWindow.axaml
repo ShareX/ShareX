@@ -11,6 +11,27 @@
         Background="Black"
         FontFamily="{DynamicResource ShareX.FontFamily.Default}"
         Foreground="{DynamicResource ShareX.Brush.Text}">
+    <Window.Styles>
+        <Style Selector="Grid.capture-toolbar">
+            <Setter Property="Opacity" Value="1"/>
+            <Setter Property="RenderTransform" Value="translateY(0px)"/>
+            <Setter Property="RenderTransformOrigin" Value="50%,0%"/>
+            <Setter Property="IsHitTestVisible" Value="True"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Opacity" Duration="0:0:0.2"/>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+                </Transitions>
+            </Setter>
+
+            <Style Selector="^.hidden">
+                <Setter Property="Opacity" Value="0"/>
+                <Setter Property="RenderTransform" Value="translateY(-28px)"/>
+                <Setter Property="IsHitTestVisible" Value="False"/>
+            </Style>
+        </Style>
+    </Window.Styles>
+
     <Grid x:Name="RootGrid" Background="Black">
         <!-- The shared editor workspace owns the frozen screenshot and annotations. -->
         <views:EditorView x:Name="EditorWorkspace"/>
@@ -87,6 +108,7 @@
         <!-- Capture host toolbar: rectangle selection plus the shared non-destructive editor tools. -->
         <Canvas>
             <Grid x:Name="CaptureToolbar"
+                  Classes="capture-toolbar"
                   ColumnDefinitions="Auto,Auto"
                   MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=Window}}">
                 <Border Grid.Column="0"
