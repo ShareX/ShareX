@@ -116,7 +116,7 @@ public partial class RegionCaptureWindow : Window
             throw new InvalidOperationException("A capture request is required.");
         }
 
-        ConfigurePixelBounds(GetInitialScaling());
+        ConfigureInitialPixelBounds();
         Show();
         return _completionSource.Task;
     }
@@ -313,7 +313,7 @@ public partial class RegionCaptureWindow : Window
                 return;
             }
 
-            ConfigurePixelBounds(RenderScaling);
+            ApplyPixelSize();
             UpdatePixelTransforms();
             _editorWorkspace.ConfigureForFullscreenWorkspace();
             _editorWorkspace.LoadWorkspaceImage(_request.Screenshot);
@@ -1314,15 +1314,29 @@ public partial class RegionCaptureWindow : Window
             : new Size(_imageWidth, _imageHeight);
     }
 
-    private void ConfigurePixelBounds(double scaling)
+    private void ConfigureInitialPixelBounds()
     {
         if (_request == null)
         {
             return;
         }
 
-        scaling = double.IsFinite(scaling) && scaling > 0 ? scaling : 1;
+        // Set Position exactly once, while the HWND still has its small initial size, so
+        // Win32 selects the DPI of the monitor at the virtual desktop origin. Reassigning
+        // Position after the window spans multiple monitors can make MonitorFromWindow
+        // select a different monitor and silently change Avalonia's internal scale.
         Position = new PixelPoint(_request.ScreenBounds.X, _request.ScreenBounds.Y);
+        ApplyPixelSize();
+    }
+
+    private void ApplyPixelSize()
+    {
+        if (_request == null)
+        {
+            return;
+        }
+
+        double scaling = double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
         Width = _request.ScreenBounds.Width / scaling;
         Height = _request.ScreenBounds.Height / scaling;
     }
