@@ -23,12 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.Localization;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.ImageEditor.Integration;
-using ShareX.Properties;
+using ShareX.Localization;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -300,10 +299,7 @@ namespace ShareX
                 {
                     singleInstanceManager.ArgumentsReceived += SingleInstanceManager_ArgumentsReceived;
 
-                    using (TimerResolutionManager timerResolutionManager = new TimerResolutionManager())
-                    {
-                        Run(args);
-                    }
+                    Run(args);
 
                     if (restartRequested)
                     {
