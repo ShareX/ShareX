@@ -22,8 +22,8 @@
         <Border Padding="4"
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                BorderThickness="1"
-                CornerRadius="0,0,4,4"
+                BorderThickness="{Binding MainToolbarBorderThickness, ElementName=AnnotationToolbarRoot}"
+                CornerRadius="{Binding MainToolbarCornerRadius, ElementName=AnnotationToolbarRoot}"
                 HorizontalAlignment="Center">
             <ScrollViewer HorizontalScrollBarVisibility="Auto"
                           VerticalScrollBarVisibility="Disabled">

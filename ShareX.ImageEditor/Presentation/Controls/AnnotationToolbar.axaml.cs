@@ -46,6 +46,12 @@ public partial class AnnotationToolbar : UserControl
     public static readonly StyledProperty<bool> ShowToolOptionsProperty =
         AvaloniaProperty.Register<AnnotationToolbar, bool>(nameof(ShowToolOptions), true);
 
+    public static readonly StyledProperty<Thickness> MainToolbarBorderThicknessProperty =
+        AvaloniaProperty.Register<AnnotationToolbar, Thickness>(nameof(MainToolbarBorderThickness), new Thickness(1));
+
+    public static readonly StyledProperty<CornerRadius> MainToolbarCornerRadiusProperty =
+        AvaloniaProperty.Register<AnnotationToolbar, CornerRadius>(nameof(MainToolbarCornerRadius), new CornerRadius(0, 0, 4, 4));
+
     private IAnnotationToolbarAdapter? _toolbarAdapter;
 
     public event EventHandler<IBrush>? ColorChanged;
@@ -87,6 +93,18 @@ public partial class AnnotationToolbar : UserControl
     {
         get => GetValue(ShowToolOptionsProperty);
         set => SetValue(ShowToolOptionsProperty, value);
+    }
+
+    public Thickness MainToolbarBorderThickness
+    {
+        get => GetValue(MainToolbarBorderThicknessProperty);
+        set => SetValue(MainToolbarBorderThicknessProperty, value);
+    }
+
+    public CornerRadius MainToolbarCornerRadius
+    {
+        get => GetValue(MainToolbarCornerRadiusProperty);
+        set => SetValue(MainToolbarCornerRadiusProperty, value);
     }
 
     public void OpenFileMenu()

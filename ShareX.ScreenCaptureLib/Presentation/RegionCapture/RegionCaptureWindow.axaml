@@ -86,7 +86,7 @@
                     VerticalAlignment="Top"
                     Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                     BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                    BorderThickness="1"
+                    BorderThickness="1,1,0,1"
                     CornerRadius="0,0,0,4">
                 <Button x:Name="RegionToolButton"
                         Classes="toolbar-button active"
@@ -97,6 +97,8 @@
 
             <editorControls:AnnotationToolbar x:Name="CaptureAnnotationToolbar"
                                               Grid.Column="1"
+                                              MainToolbarBorderThickness="0,1,1,1"
+                                              MainToolbarCornerRadius="0,0,4,0"
                                               ShowEditingActions="True"/>
         </Grid>
 
