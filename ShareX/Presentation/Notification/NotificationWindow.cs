@@ -310,12 +310,18 @@ public partial class NotificationWindow : Window
 
     private void PositionWindow()
     {
-        if (_config == null || Screens.Primary == null)
+        if (_config == null)
         {
             return;
         }
 
-        Screen screen = Screens.Primary;
+        System.Drawing.Point cursor = FormsCursor.Position;
+        Screen? screen = Screens.ScreenFromPoint(new PixelPoint(cursor.X, cursor.Y)) ?? Screens.Primary;
+        if (screen == null)
+        {
+            return;
+        }
+
         PixelRect area = screen.WorkingArea;
         PixelSize size = PixelSize.FromSize(Bounds.Size, screen.Scaling);
         int offset = Math.Max(0, _config.Offset) - (int)Math.Round(ShadowMargin * screen.Scaling);
