@@ -994,6 +994,20 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
         }
 
+        /// <summary>Reads a pixel from the live raster owned by an embedded workspace.</summary>
+        public SKColor GetWorkspacePixel(int x, int y)
+        {
+            SKBitmap? sourceImage = _editorCore.SourceImage;
+            if (sourceImage == null ||
+                x < 0 || y < 0 ||
+                x >= _editorCore.CanvasSize.Width || y >= _editorCore.CanvasSize.Height)
+            {
+                return SKColors.Transparent;
+            }
+
+            return sourceImage.GetPixel(x, y);
+        }
+
         /// <summary>
         /// Gives a host the same staged Escape behavior as the editor without closing its window.
         /// </summary>

@@ -8,7 +8,6 @@
         WindowDecorations="None"
         CanResize="False"
         ShowInTaskbar="False"
-        Topmost="True"
         Background="Black"
         FontFamily="{DynamicResource ShareX.FontFamily.Default}"
         Foreground="{DynamicResource ShareX.Brush.Text}">
