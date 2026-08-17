@@ -1063,8 +1063,12 @@ public partial class RegionCaptureWindow : Window
 
         if (ReferenceEquals(panel, _magnifierPanel))
         {
+            double scale = Math.Max(1, RenderScaling);
+            targetX = Math.Round(targetX * scale) / scale;
+            targetY = Math.Round(targetY * scale) / scale;
             _magnifierTransform.X = targetX;
             _magnifierTransform.Y = targetY;
+            _magnifierPixelGrid.InvalidateVisual();
         }
         else
         {

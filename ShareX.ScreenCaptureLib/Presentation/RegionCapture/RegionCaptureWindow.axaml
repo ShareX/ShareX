@@ -50,6 +50,7 @@
                                Stretch="Fill"
                                RenderOptions.BitmapInterpolationMode="None"/>
                         <capture:MagnifierPixelGrid x:Name="MagnifierPixelGrid"
+                                                    RenderOptions.EdgeMode="Aliased"
                                                     IsHitTestVisible="False"/>
                     </Grid>
                     <Ellipse Width="150"
