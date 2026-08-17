@@ -129,6 +129,7 @@ public partial class RegionCaptureWindow : Window
         {
             _magnifierBitmap?.Dispose();
             _magnifierBitmap = null;
+            _editorWorkspace.DetachHostAnnotationToolbar(_annotationToolbar);
 
             if (_viewModel != null)
             {
@@ -287,6 +288,7 @@ public partial class RegionCaptureWindow : Window
 
         _editorWorkspace.DataContext = _viewModel;
         _annotationToolbar.DataContext = _viewModel.ToolbarAdapter;
+        _editorWorkspace.AttachHostAnnotationToolbar(_annotationToolbar);
         _annotationToolbar.IsVisible = _request.EnableAnnotations;
         _annotationToolbar.ShowToolOptions = false;
 

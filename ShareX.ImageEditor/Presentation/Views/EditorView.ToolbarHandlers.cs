@@ -45,6 +45,17 @@ namespace ShareX.ImageEditor.Presentation.Views
                 return;
             }
 
+            HookAnnotationToolbarEvents(toolbar);
+        }
+
+        public void AttachHostAnnotationToolbar(AnnotationToolbar toolbar)
+        {
+            ArgumentNullException.ThrowIfNull(toolbar);
+            HookAnnotationToolbarEvents(toolbar);
+        }
+
+        private void HookAnnotationToolbarEvents(AnnotationToolbar toolbar)
+        {
             toolbar.ColorChanged += OnColorChanged;
             toolbar.FillColorChanged += OnFillColorChanged;
             toolbar.TextColorChanged += OnTextColorChanged;
@@ -74,6 +85,17 @@ namespace ShareX.ImageEditor.Presentation.Views
                 return;
             }
 
+            UnhookAnnotationToolbarEvents(toolbar);
+        }
+
+        public void DetachHostAnnotationToolbar(AnnotationToolbar toolbar)
+        {
+            ArgumentNullException.ThrowIfNull(toolbar);
+            UnhookAnnotationToolbarEvents(toolbar);
+        }
+
+        private void UnhookAnnotationToolbarEvents(AnnotationToolbar toolbar)
+        {
             toolbar.ColorChanged -= OnColorChanged;
             toolbar.FillColorChanged -= OnFillColorChanged;
             toolbar.TextColorChanged -= OnTextColorChanged;
