@@ -431,6 +431,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             {
                 vm.CancelEffectPreview();
                 vm.CloseModalCommand.Execute(null);
+                e.Handled = true;
             }
         }
 

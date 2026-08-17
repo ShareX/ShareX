@@ -751,6 +751,12 @@ public partial class RegionCaptureWindow : Window
 
         if (e.GetCurrentPoint(_editorWorkspace).Properties.PointerUpdateKind == PointerUpdateKind.RightButtonPressed)
         {
+            if (_viewModel?.IsModalOpen == true)
+            {
+                _annotationRightButtonPressed = false;
+                return;
+            }
+
             _annotationRightButtonPressed = true;
             e.Handled = true;
         }
