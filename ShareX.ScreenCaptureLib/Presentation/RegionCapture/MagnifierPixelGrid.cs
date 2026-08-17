@@ -78,6 +78,12 @@ public sealed class MagnifierPixelGrid : Control
         int centerRight = SnapPhysical(originPhysicalX + (centerIndex + 1) * Bounds.Width * scale / count);
         int centerBottom = SnapPhysical(originPhysicalY + (centerIndex + 1) * Bounds.Height * scale / count);
 
+        // Grid lines occupy the physical pixel immediately before each cell boundary.
+        // Start the center outline there too, matching the legacy magnifier while
+        // keeping its already-correct right and bottom edges unchanged.
+        centerLeft--;
+        centerTop--;
+
         DrawPhysicalOutline(
             context,
             Brushes.Black,
