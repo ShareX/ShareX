@@ -44,6 +44,9 @@ namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 
 public partial class RegionCaptureWindow : Window
 {
+    private const double MagnifierSize = 150;
+    private const int MinimumMagnifierPixelSize = 6;
+
     private readonly TaskCompletionSource<AvaloniaRegionCaptureResult?> _completionSource =
         new(TaskCreationOptions.RunContinuationsAsynchronously);
 
@@ -696,15 +699,7 @@ public partial class RegionCaptureWindow : Window
         }
 
         int delta = e.Delta.Y > 0 ? 2 : -2;
-        int count = Math.Clamp(
-            _request.CaptureOptions.MagnifierPixelCount + delta,
-            RegionCaptureOptions.MagnifierPixelCountMinimum,
-            RegionCaptureOptions.MagnifierPixelCountMaximum);
-
-        if ((count & 1) == 0)
-        {
-            count += delta > 0 ? 1 : -1;
-        }
+        int count = NormalizeMagnifierPixelCount(_request.CaptureOptions.MagnifierPixelCount + delta);
 
         _request.CaptureOptions.MagnifierPixelCount = count;
         _request.CaptureOptions.ShowMagnifier = true;
@@ -967,14 +962,7 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        int count = Math.Clamp(
-            _request.CaptureOptions.MagnifierPixelCount,
-            RegionCaptureOptions.MagnifierPixelCountMinimum,
-            RegionCaptureOptions.MagnifierPixelCountMaximum);
-        if ((count & 1) == 0)
-        {
-            count++;
-        }
+        int count = NormalizeMagnifierPixelCount(_request.CaptureOptions.MagnifierPixelCount);
 
         if (_magnifierBitmap?.PixelSize == new PixelSize(count, count))
         {
@@ -991,11 +979,13 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        int count = requestedCount ?? _request.CaptureOptions.MagnifierPixelCount;
-        count = Math.Clamp(count, RegionCaptureOptions.MagnifierPixelCountMinimum, RegionCaptureOptions.MagnifierPixelCountMaximum);
-        if ((count & 1) == 0)
+        int count = NormalizeMagnifierPixelCount(requestedCount ?? _request.CaptureOptions.MagnifierPixelCount);
+        _request.CaptureOptions.MagnifierPixelCount = count;
+
+        if (_magnifierBitmap?.PixelSize == new PixelSize(count, count))
         {
-            count++;
+            _magnifierPixelGrid.PixelCount = count;
+            return;
         }
 
         _magnifierBitmap?.Dispose();
@@ -1006,6 +996,29 @@ public partial class RegionCaptureWindow : Window
             AlphaFormat.Premul);
         _magnifierImage.Source = _magnifierBitmap;
         _magnifierPixelGrid.PixelCount = count;
+    }
+
+    private int NormalizeMagnifierPixelCount(int requestedCount)
+    {
+        double scale = double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+        int sizeLimitedMaximum = (int)Math.Floor(MagnifierSize * scale / MinimumMagnifierPixelSize);
+        int maximum = Math.Clamp(
+            sizeLimitedMaximum,
+            RegionCaptureOptions.MagnifierPixelCountMinimum,
+            RegionCaptureOptions.MagnifierPixelCountMaximum);
+
+        if ((maximum & 1) == 0)
+        {
+            maximum--;
+        }
+
+        int count = Math.Clamp(requestedCount, RegionCaptureOptions.MagnifierPixelCountMinimum, maximum);
+        if ((count & 1) == 0)
+        {
+            count = count < maximum ? count + 1 : count - 1;
+        }
+
+        return count;
     }
 
     private void UpdateSelectionInfo()

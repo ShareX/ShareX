@@ -95,19 +95,16 @@ public sealed class MagnifierPixelGrid : Control
             originPhysicalY,
             scale);
 
-        if (Math.Min(centerRight - centerLeft, centerBottom - centerTop) >= 6)
-        {
-            DrawPhysicalOutline(
-                context,
-                Brushes.White,
-                centerLeft + 1,
-                centerTop + 1,
-                centerRight - 1,
-                centerBottom - 1,
-                originPhysicalX,
-                originPhysicalY,
-                scale);
-        }
+        DrawPhysicalOutline(
+            context,
+            Brushes.White,
+            centerLeft + 1,
+            centerTop + 1,
+            centerRight - 1,
+            centerBottom - 1,
+            originPhysicalX,
+            originPhysicalY,
+            scale);
     }
 
     private static int SnapPhysical(double value) =>
