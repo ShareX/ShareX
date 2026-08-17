@@ -261,6 +261,7 @@ public partial class RegionCaptureWindow : Window
         _editorWorkspace.DataContext = _viewModel;
         _annotationToolbar.DataContext = _viewModel.ToolbarAdapter;
         _annotationToolbar.IsVisible = _request.EnableAnnotations;
+        _annotationToolbar.ShowToolOptions = false;
 
         _regionInputSurface.Width = _request.Screenshot.Width;
         _regionInputSurface.Height = _request.Screenshot.Height;
@@ -390,6 +391,7 @@ public partial class RegionCaptureWindow : Window
         _regionOverlay.ShowHandles = HasValidSelection();
         _regionToolButton.Classes.Set("active", true);
         _viewModel?.SetHostToolbarToolsActive(false);
+        _annotationToolbar.ShowToolOptions = false;
         _editorWorkspace.CancelActiveInteractionOrSelection();
         _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(Math.Max(1, RenderScaling));
         _magnifierPanel.IsVisible = _request?.CaptureOptions.ShowMagnifier == true;
@@ -415,6 +417,7 @@ public partial class RegionCaptureWindow : Window
         _hoverCandidate = null;
         _regionToolButton.Classes.Set("active", false);
         _viewModel?.SetHostToolbarToolsActive(true);
+        _annotationToolbar.ShowToolOptions = true;
         _magnifierPanel.IsVisible = false;
         _selectionInfoPanel.IsVisible = false;
         _editorWorkspace.Focus();

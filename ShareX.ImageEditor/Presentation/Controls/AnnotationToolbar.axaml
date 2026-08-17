@@ -164,14 +164,15 @@
             </ScrollViewer>
         </Border>
 
-        <Border Padding="4,0,4,4"
-                Margin="0,-1,0,0"
-                Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
-                BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                BorderThickness="1,0,1,1"
-                CornerRadius="0,0,4,4"
-                HorizontalAlignment="Center"
-                IsVisible="{Binding ShowToolOptionsSeparator}">
+        <Grid IsVisible="{Binding ShowToolOptions, ElementName=AnnotationToolbarRoot}">
+            <Border Padding="4,0,4,4"
+                    Margin="0,-1,0,0"
+                    Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                    BorderThickness="1,0,1,1"
+                    CornerRadius="0,0,4,4"
+                    HorizontalAlignment="Center"
+                    IsVisible="{Binding ShowToolOptionsSeparator}">
             <ScrollViewer HorizontalScrollBarVisibility="Auto"
                           VerticalScrollBarVisibility="Disabled">
                 <StackPanel Orientation="Horizontal"
@@ -437,7 +438,8 @@
                         </Popup>
                     </Grid>
                 </StackPanel>
-            </ScrollViewer>
-        </Border>
+                </ScrollViewer>
+            </Border>
+        </Grid>
     </StackPanel>
 </UserControl>

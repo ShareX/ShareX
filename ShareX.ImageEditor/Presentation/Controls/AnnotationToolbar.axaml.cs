@@ -43,6 +43,9 @@ public partial class AnnotationToolbar : UserControl
     public static readonly StyledProperty<bool> ShowEditingActionsProperty =
         AvaloniaProperty.Register<AnnotationToolbar, bool>(nameof(ShowEditingActions), true);
 
+    public static readonly StyledProperty<bool> ShowToolOptionsProperty =
+        AvaloniaProperty.Register<AnnotationToolbar, bool>(nameof(ShowToolOptions), true);
+
     private IAnnotationToolbarAdapter? _toolbarAdapter;
 
     public event EventHandler<IBrush>? ColorChanged;
@@ -78,6 +81,12 @@ public partial class AnnotationToolbar : UserControl
     {
         get => GetValue(ShowEditingActionsProperty);
         set => SetValue(ShowEditingActionsProperty, value);
+    }
+
+    public bool ShowToolOptions
+    {
+        get => GetValue(ShowToolOptionsProperty);
+        set => SetValue(ShowToolOptionsProperty, value);
     }
 
     public void OpenFileMenu()
