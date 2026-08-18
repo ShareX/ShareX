@@ -109,27 +109,19 @@
         <Canvas>
             <Grid x:Name="CaptureToolbar"
                   Classes="capture-toolbar"
-                  ColumnDefinitions="Auto,Auto"
                   MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=Window}}">
-                <Border Grid.Column="0"
-                        Padding="4,4,0,4"
-                        VerticalAlignment="Top"
-                        Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
-                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                        BorderThickness="1,1,0,1"
-                        CornerRadius="0,0,0,4">
-                    <Button x:Name="RegionToolButton"
-                            Classes="toolbar-button active"
-                            Click="OnRegionToolClick"
-                            ToolTip.Tip="Rectangle region"
-                            Content="{x:Static theming:LucideIcons.scan}"/>
-                </Border>
-
                 <editorControls:AnnotationToolbar x:Name="CaptureAnnotationToolbar"
-                                                  Grid.Column="1"
-                                                  MainToolbarBorderThickness="0,1,1,1"
-                                                  MainToolbarCornerRadius="0,0,4,0"
-                                                  ShowEditingActions="False"/>
+                                                  MainToolbarBorderThickness="1"
+                                                  MainToolbarCornerRadius="0,0,4,4"
+                                                  ShowEditingActions="False">
+                    <editorControls:AnnotationToolbar.MainToolbarLeadingContent>
+                        <Button x:Name="RegionToolButton"
+                                Classes="toolbar-button active"
+                                Click="OnRegionToolClick"
+                                ToolTip.Tip="Rectangle region"
+                                Content="{x:Static theming:LucideIcons.scan}"/>
+                    </editorControls:AnnotationToolbar.MainToolbarLeadingContent>
+                </editorControls:AnnotationToolbar>
             </Grid>
         </Canvas>
     </Grid>

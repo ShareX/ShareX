@@ -78,6 +78,9 @@ public partial class RegionCaptureWindow : Window
     private Point _lastPointerPoint;
     private Rect _interactionStartRectangle;
     private readonly TranslateTransform _magnifierTransform = new();
+    private double _captureToolbarCenterX = double.NaN;
+    private double _captureToolbarTop = double.NaN;
+    private double _positionedCaptureToolbarWidth = double.NaN;
     private int _imageWidth;
     private int _imageHeight;
     private bool _regionToolActive = true;
@@ -129,6 +132,7 @@ public partial class RegionCaptureWindow : Window
         {
             _magnifierBitmap?.Dispose();
             _magnifierBitmap = null;
+            _captureToolbar.LayoutUpdated -= OnCaptureToolbarLayoutUpdated;
             _editorWorkspace.DetachHostAnnotationToolbar(_annotationToolbar);
 
             if (_viewModel != null)
@@ -249,6 +253,7 @@ public partial class RegionCaptureWindow : Window
         _regionOverlay = this.FindControl<RegionSelectionOverlay>("RegionOverlay")!;
         _regionTransform = this.FindControl<LayoutTransformControl>("RegionTransform")!;
         _captureToolbar = this.FindControl<Grid>("CaptureToolbar")!;
+        _captureToolbar.LayoutUpdated += OnCaptureToolbarLayoutUpdated;
         _annotationToolbar = this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
         _regionToolButton = this.FindControl<Button>("RegionToolButton")!;
         _magnifierPanel = this.FindControl<StackPanel>("MagnifierPanel")!;
@@ -736,12 +741,36 @@ public partial class RegionCaptureWindow : Window
         double scale = double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
         double monitorCenterX = screen.Bounds.X - _request.ScreenBounds.X + screen.Bounds.Width / 2d;
         double monitorTop = screen.Bounds.Y - _request.ScreenBounds.Y;
+        _captureToolbarCenterX = monitorCenterX / scale;
+        _captureToolbarTop = monitorTop / scale;
+        _positionedCaptureToolbarWidth = double.NaN;
+        PositionCaptureToolbar();
+    }
+
+    private void OnCaptureToolbarLayoutUpdated(object? sender, EventArgs e)
+    {
+        PositionCaptureToolbar();
+    }
+
+    private void PositionCaptureToolbar()
+    {
+        if (!double.IsFinite(_captureToolbarCenterX) || !double.IsFinite(_captureToolbarTop))
+        {
+            return;
+        }
+
         double toolbarWidth = _captureToolbar.Bounds.Width > 0
             ? _captureToolbar.Bounds.Width
             : _captureToolbar.DesiredSize.Width;
+        if (!double.IsFinite(toolbarWidth) || toolbarWidth <= 0 ||
+            Math.Abs(toolbarWidth - _positionedCaptureToolbarWidth) < 0.01)
+        {
+            return;
+        }
 
-        AvaloniaCanvas.SetLeft(_captureToolbar, monitorCenterX / scale - toolbarWidth / 2d);
-        AvaloniaCanvas.SetTop(_captureToolbar, monitorTop / scale);
+        _positionedCaptureToolbarWidth = toolbarWidth;
+        AvaloniaCanvas.SetLeft(_captureToolbar, _captureToolbarCenterX - toolbarWidth / 2d);
+        AvaloniaCanvas.SetTop(_captureToolbar, _captureToolbarTop);
     }
 
     private void OnCaptureHostPointerPressed(object? sender, PointerPressedEventArgs e)

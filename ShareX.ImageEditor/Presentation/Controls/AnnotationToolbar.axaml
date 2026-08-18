@@ -28,6 +28,8 @@
             <ScrollViewer HorizontalScrollBarVisibility="Auto"
                           VerticalScrollBarVisibility="Disabled">
                 <StackPanel Orientation="Horizontal" Spacing="4">
+                    <ContentControl x:Name="MainToolbarLeadingContentHost"
+                                    IsVisible="False"/>
                     <ItemsControl ItemsSource="{ReflectionBinding VisibleToolbarItems}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
