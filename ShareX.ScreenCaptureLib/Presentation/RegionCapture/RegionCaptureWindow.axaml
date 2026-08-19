@@ -60,8 +60,13 @@
                         IsVisible="False">
                 <Grid x:Name="MagnifierView" Width="152" Height="152">
                     <!-- Legacy magnifier: white outer ring around a black inner ring. -->
-                    <Ellipse Width="152" Height="152" Fill="White"/>
-                    <Grid Width="150" Height="150">
+                    <Ellipse x:Name="MagnifierCircleOuter"
+                             Width="152" Height="152" Fill="White"/>
+                    <Border x:Name="MagnifierSquareOuter"
+                            Width="152" Height="152"
+                            Background="White"
+                            IsVisible="False"/>
+                    <Grid x:Name="MagnifierContent" Width="150" Height="150">
                         <Grid.Clip>
                             <EllipseGeometry Rect="0,0,150,150"/>
                         </Grid.Clip>
@@ -74,11 +79,19 @@
                                                     RenderOptions.EdgeMode="Aliased"
                                                     IsHitTestVisible="False"/>
                     </Grid>
-                    <Ellipse Width="150"
+                    <Ellipse x:Name="MagnifierCircleInner"
+                             Width="150"
                              Height="150"
                              Stroke="Black"
                              StrokeThickness="1"
                              IsHitTestVisible="False"/>
+                    <Border x:Name="MagnifierSquareInner"
+                            Width="150" Height="150"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            IsVisible="False"
+                            IsHitTestVisible="False"
+                            RenderOptions.EdgeMode="Aliased"/>
                 </Grid>
                 <Border x:Name="PointerInfoPanel"
                         HorizontalAlignment="Center"

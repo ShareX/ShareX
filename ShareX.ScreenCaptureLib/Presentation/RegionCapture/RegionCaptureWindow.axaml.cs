@@ -303,11 +303,26 @@ public partial class RegionCaptureWindow : Window
         _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(GetInitialScaling());
 
         _magnifierView.IsVisible = _request.CaptureOptions.ShowMagnifier;
+        ApplyMagnifierShape();
         _pointerInfoPanel.IsVisible = _request.CaptureOptions.ShowInfo;
         _magnifierPanel.IsVisible = _magnifierView.IsVisible || _pointerInfoPanel.IsVisible;
         _regionToolButton.Classes.Set("active", true);
         _viewModel.SetHostToolbarToolsActive(false);
         Title = Localization.Strings.BaseRegionForm_InitializeComponent_Region_capture;
+    }
+
+    private void ApplyMagnifierShape()
+    {
+        bool useSquare = _request?.CaptureOptions.UseSquareMagnifier == true;
+        this.FindControl<Control>("MagnifierCircleOuter")!.IsVisible = !useSquare;
+        this.FindControl<Control>("MagnifierCircleInner")!.IsVisible = !useSquare;
+        this.FindControl<Control>("MagnifierSquareOuter")!.IsVisible = useSquare;
+        this.FindControl<Control>("MagnifierSquareInner")!.IsVisible = useSquare;
+
+        Grid magnifierContent = this.FindControl<Grid>("MagnifierContent")!;
+        magnifierContent.Clip = useSquare
+            ? null
+            : new EllipseGeometry(new Rect(0, 0, MagnifierSize, MagnifierSize));
     }
 
     private async void OnOpened(object? sender, EventArgs e)
