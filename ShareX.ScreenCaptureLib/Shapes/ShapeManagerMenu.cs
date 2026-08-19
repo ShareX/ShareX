@@ -1084,27 +1084,6 @@ namespace ShareX.ScreenCaptureLib
                 tsddbOptions.DropDownItems.Add(tslnudFixedSize);
             }
 
-            ToolStripMenuItem tsmiShowFPS = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Show_FPS);
-            tsmiShowFPS.Checked = Options.ShowFPS;
-            tsmiShowFPS.CheckOnClick = true;
-            tsmiShowFPS.Click += (sender, e) =>
-            {
-                Options.ShowFPS = tsmiShowFPS.Checked;
-                Form.UpdateTitle();
-            };
-            tsddbOptions.DropDownItems.Add(tsmiShowFPS);
-
-            ToolStripLabeledNumericUpDown tslnudFPSLimit = new ToolStripLabeledNumericUpDown(Strings.FPSLimit);
-            tslnudFPSLimit.Content.Minimum = 0;
-            tslnudFPSLimit.Content.Maximum = 300;
-            tslnudFPSLimit.Content.Value = Options.FPSLimit;
-            tslnudFPSLimit.Content.ValueChanged = (sender, e) =>
-            {
-                Options.FPSLimit = (int)tslnudFPSLimit.Content.Value;
-                Form.FPSManager.FPSLimit = Options.FPSLimit;
-            };
-            tsddbOptions.DropDownItems.Add(tslnudFPSLimit);
-
             ToolStripMenuItem tsmiSwitchToDrawingToolAfterSelection = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection);
             tsmiSwitchToDrawingToolAfterSelection.Checked = Options.SwitchToDrawingToolAfterSelection;
             tsmiSwitchToDrawingToolAfterSelection.CheckOnClick = true;

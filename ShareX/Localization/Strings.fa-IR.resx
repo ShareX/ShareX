@@ -1417,12 +1417,6 @@
   <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
     <value>ارتفاع ثابت:</value>
   </data>
-  <data name="TaskSettingsWindow_ShowFPS" xml:space="preserve">
-    <value>نمایش FPS</value>
-  </data>
-  <data name="TaskSettingsWindow_FPSLimit" xml:space="preserve">
-    <value>محدودیت FPS:</value>
-  </data>
   <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
     <value>FPS ضبط صفحه:</value>
   </data>

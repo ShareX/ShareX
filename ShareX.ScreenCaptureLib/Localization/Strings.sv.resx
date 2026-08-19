@@ -474,9 +474,6 @@
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Skriv ut bild... (Ctrl + P)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
-    <value>Visa FPS</value>
-  </data>
   <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
     <value>Ny rad: Retur, OK: Ctrl + Retur</value>
   </data>
@@ -663,9 +660,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Fönstret stängs innan webbsidan för snabbtangenter öppnas. Vill du fortsätta?</value>
-  </data>
-  <data name="FPSLimit" xml:space="preserve">
-    <value>FPS-gräns:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
     <value>Infoga bildfil...</value>

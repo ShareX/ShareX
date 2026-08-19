@@ -1417,12 +1417,6 @@
   <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
     <value>ความสูงคงที่:</value>
   </data>
-  <data name="TaskSettingsWindow_ShowFPS" xml:space="preserve">
-    <value>แสดง FPS</value>
-  </data>
-  <data name="TaskSettingsWindow_FPSLimit" xml:space="preserve">
-    <value>FPS ขีดจำกัด:</value>
-  </data>
   <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
     <value>บันทึกหน้าจอ FPS:</value>
   </data>

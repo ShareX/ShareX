@@ -474,9 +474,6 @@
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>छवि प्रिंट करें... (Ctrl + P)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
-    <value>FPS दिखाएँ</value>
-  </data>
   <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
     <value>नई पंक्ति: Enter, ठीक है: Ctrl + Enter</value>
   </data>
@@ -663,9 +660,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>कीबाइंड वेब पृष्ठ खोलने से पहले यह विंडो बंद हो जाएगी। क्या आप जारी रखना चाहते हैं?</value>
-  </data>
-  <data name="FPSLimit" xml:space="preserve">
-    <value>FPS सीमा:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
     <value>छवि फ़ाइल सम्मिलित करें...</value>

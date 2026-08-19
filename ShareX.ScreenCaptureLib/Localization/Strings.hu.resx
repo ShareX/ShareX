@@ -472,9 +472,6 @@
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Nyomtatás kép... (Ctrl + P)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
-    <value>FPS megjelenítése</value>
-  </data>
   <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
     <value>Új sor: Enter, OK: Ctrl + Enter</value>
   </data>
@@ -660,9 +657,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>This ablak will close előtte megnyitásing the kulcsbinds web page. Do you want to continue?</value>
-  </data>
-  <data name="FPSLimit" xml:space="preserve">
-    <value>FPS-korlát:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
     <value>Insert kép fájl...</value>

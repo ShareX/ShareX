@@ -1417,12 +1417,6 @@
   <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
     <value>Altura fixa:</value>
   </data>
-  <data name="TaskSettingsWindow_ShowFPS" xml:space="preserve">
-    <value>Mostrar FPS</value>
-  </data>
-  <data name="TaskSettingsWindow_FPSLimit" xml:space="preserve">
-    <value>Limite de FPS:</value>
-  </data>
   <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
     <value>FPS da gravação de tela:</value>
   </data>

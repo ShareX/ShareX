@@ -443,9 +443,6 @@ namespace ShareX.ScreenCaptureLib.Localization {
         public static string ShapeManager_CreateToolbar_PrintImage {
             get { return ResourceManager.GetString("ShapeManager_CreateToolbar_PrintImage", resourceCulture); }
         }
-        public static string ShapeManager_CreateContextMenu_Show_FPS {
-            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_FPS", resourceCulture); }
-        }
         public static string NewLineEnterOKCtrlEnter {
             get { return ResourceManager.GetString("NewLineEnterOKCtrlEnter", resourceCulture); }
         }
@@ -628,9 +625,6 @@ namespace ShareX.ScreenCaptureLib.Localization {
         }
         public static string ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue {
             get { return ResourceManager.GetString("ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue", resourceCulture); }
-        }
-        public static string FPSLimit {
-            get { return ResourceManager.GetString("FPSLimit", resourceCulture); }
         }
         public static string ShapeManager_CreateToolbar_InsertImageFile {
             get { return ResourceManager.GetString("ShapeManager_CreateToolbar_InsertImageFile", resourceCulture); }

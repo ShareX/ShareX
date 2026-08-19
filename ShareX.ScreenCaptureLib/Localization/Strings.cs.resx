@@ -474,9 +474,6 @@
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Vytisknout obrázek... (Ctrl + P)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
-    <value>Zobrazit FPS</value>
-  </data>
   <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
     <value>Nový řádek: Enter, OK: Ctrl + Enter</value>
   </data>
@@ -663,9 +660,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Toto okno se před otevřením webové stránky klávesových zkratek zavře. Chcete pokračovat?</value>
-  </data>
-  <data name="FPSLimit" xml:space="preserve">
-    <value>Limit FPS:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
     <value>Vložit soubor obrázku...</value>

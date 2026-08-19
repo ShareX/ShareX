@@ -2892,16 +2892,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_FixedHeight", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_ShowFPS {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_ShowFPS", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_FPSLimit {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_FPSLimit", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_ScreenRecordingFPS {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_ScreenRecordingFPS", resourceCulture);

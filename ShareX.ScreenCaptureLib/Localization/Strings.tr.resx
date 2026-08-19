@@ -472,9 +472,6 @@
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Resimi yazdır... (Ctrl + P)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
-    <value>FPS göster</value>
-  </data>
   <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
     <value>Yeni satır: Enter, Tamam: Ctrl + Enter</value>
   </data>
@@ -660,9 +657,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Tuşlar web sayfası açılmadan önce bu pencere kapanacaktır. Devam etmek istediğinize emin misiniz?</value>
-  </data>
-  <data name="FPSLimit" xml:space="preserve">
-    <value>FPS limiti:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
     <value>Resim dosyası ekle...</value>

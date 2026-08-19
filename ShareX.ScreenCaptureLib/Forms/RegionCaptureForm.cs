@@ -90,8 +90,6 @@ namespace ShareX.ScreenCaptureLib
 
         internal ShapeManager ShapeManager { get; private set; }
         internal bool IsClosing { get; private set; }
-        internal FPSManager FPSManager { get; private set; }
-
         internal Bitmap DimmedCanvas;
         internal Image CustomNodeImage = Resources.CircleNode;
         internal int ToolbarHeight;
@@ -101,7 +99,7 @@ namespace ShareX.ScreenCaptureLib
         private GraphicsPath regionFillPath, regionDrawPath;
         private Pen borderPen, borderDotPen, borderDotStaticPen, textOuterBorderPen, textInnerBorderPen, markerPen, canvasBorderPen;
         private Brush textBrush, textShadowBrush, textBackgroundBrush;
-        private Font infoFont, infoFontMedium, infoFontBig;
+        private Font infoFont, infoFontMedium;
         private Stopwatch timerStart;
         private bool pause, isKeyAllowed, forceClose;
         private RectangleAnimation regionAnimation;
@@ -142,8 +140,6 @@ namespace ShareX.ScreenCaptureLib
             CanvasRectangle = ClientArea;
 
             timerStart = new Stopwatch();
-            FPSManager = new FPSManager(Options.FPSLimit);
-            FPSManager.FPSUpdated += FpsManager_FPSChanged;
             regionAnimation = new RectangleAnimation()
             {
                 Duration = TimeSpan.FromMilliseconds(200)
@@ -164,7 +160,6 @@ namespace ShareX.ScreenCaptureLib
             borderDotStaticPen = new Pen(Color.White) { DashPattern = new float[] { 5, 5 } };
             infoFont = new Font("Verdana", 9);
             infoFontMedium = new Font("Verdana", 12);
-            infoFontBig = new Font("Verdana", 16, FontStyle.Bold);
             markerPen = new Pen(Color.FromArgb(200, Color.Red));
 
             canvasBackgroundColor = ShareXResources.Theme.BackgroundColor;
@@ -299,10 +294,6 @@ namespace ShareX.ScreenCaptureLib
                     title.AppendFormat(" - {0}", fileName);
                 }
 
-                if (!IsFullscreen && Options.ShowFPS)
-                {
-                    title.AppendFormat(" - FPS: {0}", FPSManager.FPS.ToString());
-                }
             }
             else
             {
@@ -849,8 +840,6 @@ namespace ShareX.ScreenCaptureLib
                 timerStart.Start();
             }
 
-            FPSManager.Update();
-
             UpdateCoordinates();
 
             ShapeManager.UpdateObjects();
@@ -867,14 +856,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             ShapeManager.Update();
-        }
-
-        private void FpsManager_FPSChanged()
-        {
-            if (Options.ShowFPS && !IsFullscreen)
-            {
-                UpdateTitle();
-            }
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -901,11 +882,6 @@ namespace ShareX.ScreenCaptureLib
 
             DrawBackground(g);
             DrawShapes(g);
-
-            if (Options.ShowFPS && IsFullscreen)
-            {
-                DrawFPS(g, 10);
-            }
 
             if (!pause)
             {
@@ -1115,20 +1091,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 g.DrawEllipse(borderDotStaticPen, rect);
             }
-        }
-
-        private void DrawFPS(Graphics g, int offset)
-        {
-            Point textPosition = new Point(offset, offset);
-
-            if (IsFullscreen)
-            {
-                Rectangle rectScreen = CaptureHelpers.GetActiveScreenBounds();
-                rectScreen = RectangleToClient(rectScreen);
-                textPosition = textPosition.Add(rectScreen.Location);
-            }
-
-            g.DrawTextWithShadow(FPSManager.FPS.ToString(), textPosition, infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
         }
 
         private void DrawInfoText(Graphics g, string text, RectangleF rect, Font font, int padding)
@@ -1729,7 +1691,6 @@ namespace ShareX.ScreenCaptureLib
             borderDotStaticPen?.Dispose();
             infoFont?.Dispose();
             infoFontMedium?.Dispose();
-            infoFontBig?.Dispose();
             textBrush?.Dispose();
             textShadowBrush?.Dispose();
             textBackgroundBrush?.Dispose();

@@ -472,9 +472,6 @@
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Друк зображення... (Ctrl + P)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
-    <value>Показати FPS</value>
-  </data>
   <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
     <value>Новий рядок: Enter, OK: Ctrl + Enter</value>
   </data>
@@ -660,9 +657,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Це вікно закриється перед відкриттям веб-сторінки сполучень клавіш. Ви хочете продовжити?</value>
-  </data>
-  <data name="FPSLimit" xml:space="preserve">
-    <value>Обмеження FPS:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
     <value>Вставити файл зображення...</value>

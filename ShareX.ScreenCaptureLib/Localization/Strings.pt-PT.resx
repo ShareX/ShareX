@@ -472,9 +472,6 @@
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Imprimir imagem... (Ctrl + P)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
-    <value>Mostrar FPS</value>
-  </data>
   <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
     <value>Nova linha: Enter, OK: Ctrl + Enter</value>
   </data>
@@ -660,9 +657,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Esta janela irá fechar antes de abrir o site de atalhos. Deseja continuar?</value>
-  </data>
-  <data name="FPSLimit" xml:space="preserve">
-    <value>Limite de FPS:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
     <value>Inserir imagem...</value>

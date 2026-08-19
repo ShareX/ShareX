@@ -472,9 +472,6 @@
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Bild drucken... (Strg + P)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
-    <value>FPS anzeigen</value>
-  </data>
   <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
     <value>Neue Zeile: Enter, OK: Strg + Enter</value>
   </data>
@@ -660,9 +657,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Dieses Fenster wird geschlossen, bevor die Tastenkürzel-Webseite geöffnet wird. Möchten Sie fortfahren?</value>
-  </data>
-  <data name="FPSLimit" xml:space="preserve">
-    <value>FPS-Limit:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
     <value>Bilddatei einfügen...</value>

@@ -447,9 +447,7 @@ internal sealed class TaskSettingsPageBuilder
                 Check(Strings.TaskSettingsWindow_ShowScreenWideCrosshair, () => options.ShowCrosshair, value => options.ShowCrosshair = value)),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_FixedSizeAndPerformance,
                 Check(Strings.TaskSettingsWindow_FixedSizeRegionMode, fixedSize),
-                Row(Strings.TaskSettingsWindow_FixedWidth, fixedWidth), Row(Strings.TaskSettingsWindow_FixedHeight, fixedHeight),
-                Check(Strings.TaskSettingsWindow_ShowFPS, () => options.ShowFPS, value => options.ShowFPS = value),
-                Row(Strings.TaskSettingsWindow_FPSLimit, Number(() => options.FPSLimit, value => options.FPSLimit = (int)value, 1, 1000))),
+                Row(Strings.TaskSettingsWindow_FixedWidth, fixedWidth), Row(Strings.TaskSettingsWindow_FixedHeight, fixedHeight)),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_SnapSizes, snapEditor));
     }
 

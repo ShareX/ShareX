@@ -474,9 +474,6 @@
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Udskriv billede... (Ctrl + P)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
-    <value>Vis FPS</value>
-  </data>
   <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
     <value>Ny linje: Retur, OK: Ctrl + Retur</value>
   </data>
@@ -663,9 +660,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Vinduet lukkes før websiden for genvejstaster åbnes. Vil du fortsætte?</value>
-  </data>
-  <data name="FPSLimit" xml:space="preserve">
-    <value>FPS-grænse:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
     <value>Indsæt billedfil...</value>

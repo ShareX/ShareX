@@ -73,8 +73,6 @@ namespace ShareX.ScreenCaptureLib
         public bool EnableAnimations = true;
         public bool IsFixedSize = false;
         public Size FixedSize = new Size(250, 250);
-        public bool ShowFPS = false;
-        public int FPSLimit = 100;
         public int MenuIconSize = 0;
         public bool MenuLocked = false;
         public bool RememberMenuState = false;
