@@ -336,7 +336,7 @@ internal sealed class MainMenuBuilder
                 ImageEffectsLib.ImageEffectPreset? preset = presets[i];
                 if (preset != null)
                 {
-                    items.Add(new MainMenuEntry(preset.ToString(), LucideIcons.wand_sparkles,
+                    items.Add(new MainMenuEntry(preset.ToString(), string.Empty,
                         () => Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset = index,
                         isChecked: index == Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset,
                         toggleType: MainMenuToggleType.Radio));
@@ -346,7 +346,7 @@ internal sealed class MainMenuBuilder
 
         if (items.Count == 0)
         {
-            items.Add(new MainMenuEntry(Strings.MainMenuBuilder_NoImageEffectPresets, LucideIcons.wand_sparkles, isEnabled: false));
+            items.Add(new MainMenuEntry(Strings.MainMenuBuilder_NoImageEffectPresets, string.Empty, isEnabled: false));
         }
 
         return items;
