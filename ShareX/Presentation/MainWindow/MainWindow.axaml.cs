@@ -472,12 +472,36 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             if (entry.CreateChildren != null)
             {
                 AddLazySubmenu(item, entry.CreateChildren, menu);
+
+                if (entry.ExecuteAsync != null)
+                {
+                    item.AddHandler(PointerPressedEvent, (_, e) =>
+                    {
+                        PointerPoint point = e.GetCurrentPoint(item);
+                        if (point.Properties.PointerUpdateKind == PointerUpdateKind.LeftButtonPressed &&
+                            new Rect(item.Bounds.Size).Contains(point.Position))
+                        {
+                            item.IsChecked = item.ToggleType switch
+                            {
+                                MenuItemToggleType.CheckBox => !item.IsChecked,
+                                MenuItemToggleType.Radio => true,
+                                _ => item.IsChecked
+                            };
+                            item.RaiseEvent(new RoutedEventArgs(MenuItem.ClickEvent, item));
+                        }
+                    }, RoutingStrategies.Tunnel, handledEventsToo: true);
+                }
             }
 
             if (entry.ExecuteAsync != null)
             {
-                item.Click += (_, _) =>
+                item.Click += (_, e) =>
                 {
+                    if (!ReferenceEquals(e.Source, item))
+                    {
+                        return;
+                    }
+
                     if (!entry.StaysOpenOnClick)
                     {
                         // Modal WinForms dialogs and capture overlays cannot be opened while

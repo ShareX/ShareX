@@ -325,16 +325,7 @@ internal sealed class MainMenuBuilder
 
     private IReadOnlyList<MainMenuEntry> BuildImageEffectPresetMenu()
     {
-        List<MainMenuEntry> items = new()
-        {
-            new MainMenuEntry(Strings.MainMenuBuilder_EnableAddImageEffects, LucideIcons.wand_sparkles,
-                () => Program.DefaultTaskSettings.AfterCaptureJob =
-                    Program.DefaultTaskSettings.AfterCaptureJob.Swap(AfterCaptureTasks.AddImageEffects),
-                isChecked: Program.DefaultTaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects),
-                toggleType: MainMenuToggleType.CheckBox,
-                staysOpenOnClick: true),
-            MainMenuEntry.Separator()
-        };
+        List<MainMenuEntry> items = new();
         List<ImageEffectsLib.ImageEffectPreset>? presets = Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets;
 
         if (presets != null)
@@ -353,7 +344,7 @@ internal sealed class MainMenuBuilder
             }
         }
 
-        if (items.Count == 2)
+        if (items.Count == 0)
         {
             items.Add(new MainMenuEntry(Strings.MainMenuBuilder_NoImageEffectPresets, LucideIcons.wand_sparkles, isEnabled: false));
         }
