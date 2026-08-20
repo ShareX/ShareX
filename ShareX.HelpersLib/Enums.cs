@@ -198,15 +198,6 @@ namespace ShareX.HelpersLib
         macos64
     }
 
-    public enum StepType // Localized
-    {
-        Numbers,
-        LettersUppercase,
-        LettersLowercase,
-        RomanNumeralsUppercase,
-        RomanNumeralsLowercase
-    }
-
     public enum CutOutEffectType // Localized
     {
         None,

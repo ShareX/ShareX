@@ -988,21 +988,6 @@
   <data name="ImageDestination_FileUploader" xml:space="preserve">
     <value>Вивантажувач файлів</value>
   </data>
-  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
-    <value>Автоматичний розмір</value>
-  </data>
-  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
-    <value>Повноекранний</value>
-  </data>
-  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
-    <value>Максимізований</value>
-  </data>
-  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
-    <value>Звичайний</value>
-  </data>
-  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
-    <value>Попередній стан</value>
-  </data>
   <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
     <value>Великий квадрат</value>
   </data>
@@ -1279,15 +1264,6 @@
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>Рік (2 цифри)</value>
   </data>
-  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
-    <value>FFmpeg (Гарна якість)</value>
-  </data>
-  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
-    <value>.NET (Погана якість)</value>
-  </data>
-  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
-    <value>Octree quantizer (середня якість)</value>
-  </data>
   <data name="ScrollMethod_DownArrow" xml:space="preserve">
     <value>Стрілка вниз</value>
   </data>
@@ -1299,96 +1275,6 @@
   </data>
   <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
     <value>Повідомлення про прокрутку</value>
-  </data>
-  <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>Стрілка (A)</value>
-  </data>
-  <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>Курсор</value>
-  </data>
-  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>Еліпс (E)</value>
-  </data>
-  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>Від руки (F)</value>
-  </data>
-  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
-    <value>Стрілка від руки</value>
-  </data>
-  <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Зображення (файл)</value>
-  </data>
-  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
-    <value>Зображення (екран)</value>
-  </data>
-  <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>Лінія (L)</value>
-  </data>
-  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
-    <value>Збільшення</value>
-  </data>
-  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
-    <value>Прямокутник (R)</value>
-  </data>
-  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
-    <value>Розумна гумка</value>
-  </data>
-  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>Текстова хмарка (S)</value>
-  </data>
-  <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>Крок (I)</value>
-  </data>
-  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Текст (тло) (T)</value>
-  </data>
-  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Текст (контур) (O)</value>
-  </data>
-  <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Розмиття (B)</value>
-  </data>
-  <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Підсвічування (Р)</value>
-  </data>
-  <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Пікселізація (P)</value>
-  </data>
-  <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>Еліптична область</value>
-  </data>
-  <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>Довільна область</value>
-  </data>
-  <data name="ShapeType_RegionRectangle" xml:space="preserve">
-    <value>Прямокутна область</value>
-  </data>
-  <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Обрізка зображення (C)</value>
-  </data>
-  <data name="ShapeType_ToolCutOut" xml:space="preserve">
-    <value>Вирізати (X)</value>
-  </data>
-  <data name="ShapeType_ToolSelect" xml:space="preserve">
-    <value>Вибрати та перемістити (M)</value>
-  </data>
-  <data name="ShapeType_ToolSpotlight" xml:space="preserve">
-    <value>Прожектор</value>
-  </data>
-  <data name="StepType_LettersLowercase" xml:space="preserve">
-    <value>Літери (нижній регістр)</value>
-  </data>
-  <data name="StepType_LettersUppercase" xml:space="preserve">
-    <value>Літери (верхній регістр)</value>
-  </data>
-  <data name="StepType_Numbers" xml:space="preserve">
-    <value>Числа</value>
-  </data>
-  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
-    <value>Римські цифри (нижній регістр)</value>
-  </data>
-  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
-    <value>Римські цифри (верхній регістр)</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Автоматично</value>

@@ -988,21 +988,6 @@
   <data name="ImageDestination_FileUploader" xml:space="preserve">
     <value>檔案上傳工具</value>
   </data>
-  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
-    <value>自動尺寸</value>
-  </data>
-  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
-    <value>全螢幕</value>
-  </data>
-  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
-    <value>最大化</value>
-  </data>
-  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
-    <value>一般</value>
-  </data>
-  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
-    <value>先前狀態</value>
-  </data>
   <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
     <value>大正方形</value>
   </data>
@@ -1279,15 +1264,6 @@
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>目前年份 (2 位數字)</value>
   </data>
-  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
-    <value>FFmpeg (高品質)</value>
-  </data>
-  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
-    <value>.NET (低品質)</value>
-  </data>
-  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
-    <value>八元樹量化 (中等品質)</value>
-  </data>
   <data name="ScrollMethod_DownArrow" xml:space="preserve">
     <value>向下箭頭</value>
   </data>
@@ -1299,96 +1275,6 @@
   </data>
   <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
     <value>捲動訊息</value>
-  </data>
-  <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>箭頭 (A)</value>
-  </data>
-  <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>游標</value>
-  </data>
-  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>橢圓 (E)</value>
-  </data>
-  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>鼠繪 (F)</value>
-  </data>
-  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
-    <value>鼠繪箭頭</value>
-  </data>
-  <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>圖片 (檔案)</value>
-  </data>
-  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
-    <value>圖片 (螢幕)</value>
-  </data>
-  <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>線條 (L)</value>
-  </data>
-  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
-    <value>放大</value>
-  </data>
-  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
-    <value>矩形 (R)</value>
-  </data>
-  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
-    <value>智慧擦子</value>
-  </data>
-  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>對話氣球 (S)</value>
-  </data>
-  <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>序號 (I)</value>
-  </data>
-  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>文字 (背景) (T)</value>
-  </data>
-  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>文字 (外框) (O)</value>
-  </data>
-  <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>模糊 (B)</value>
-  </data>
-  <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>高亮 (H)</value>
-  </data>
-  <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>馬賽克 (P)</value>
-  </data>
-  <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>橢圓</value>
-  </data>
-  <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>鼠繪區域</value>
-  </data>
-  <data name="ShapeType_RegionRectangle" xml:space="preserve">
-    <value>矩形</value>
-  </data>
-  <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>裁切圖片 (C)</value>
-  </data>
-  <data name="ShapeType_ToolCutOut" xml:space="preserve">
-    <value>剪紙效果 (X)</value>
-  </data>
-  <data name="ShapeType_ToolSelect" xml:space="preserve">
-    <value>選取並移動 (M)</value>
-  </data>
-  <data name="ShapeType_ToolSpotlight" xml:space="preserve">
-    <value>聚光燈</value>
-  </data>
-  <data name="StepType_LettersLowercase" xml:space="preserve">
-    <value>字母 (小寫)</value>
-  </data>
-  <data name="StepType_LettersUppercase" xml:space="preserve">
-    <value>字母 (大寫)</value>
-  </data>
-  <data name="StepType_Numbers" xml:space="preserve">
-    <value>數字</value>
-  </data>
-  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
-    <value>羅馬數字 (小寫)</value>
-  </data>
-  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
-    <value>羅馬數字 (大寫)</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>自動</value>

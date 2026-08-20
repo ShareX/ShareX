@@ -988,21 +988,6 @@
   <data name="ImageDestination_FileUploader" xml:space="preserve">
     <value>파일 업로더</value>
   </data>
-  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
-    <value>자동 조정</value>
-  </data>
-  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
-    <value>전체화면</value>
-  </data>
-  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
-    <value>최대화</value>
-  </data>
-  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
-    <value>기본</value>
-  </data>
-  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
-    <value>이전 상태</value>
-  </data>
   <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
     <value>큰 정사각형</value>
   </data>
@@ -1279,15 +1264,6 @@
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>현재 년도 (2자리)</value>
   </data>
-  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
-    <value>FFmpeg (좋은 품질)</value>
-  </data>
-  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
-    <value>.NET (나쁜 품질)</value>
-  </data>
-  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
-    <value>팔진트리 양자화 (보통 품질)</value>
-  </data>
   <data name="ScrollMethod_DownArrow" xml:space="preserve">
     <value>아래쪽 화살표</value>
   </data>
@@ -1299,96 +1275,6 @@
   </data>
   <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
     <value>스크롤 메시지</value>
-  </data>
-  <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>화살표 그리기</value>
-  </data>
-  <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>커서 그리기</value>
-  </data>
-  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>타원 그리기</value>
-  </data>
-  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>자유롭게 그리기</value>
-  </data>
-  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
-    <value>자유형 화살표</value>
-  </data>
-  <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>이미지 파일 그리기</value>
-  </data>
-  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
-    <value>스크린 화면을 그리기</value>
-  </data>
-  <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>선분 그리기</value>
-  </data>
-  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
-    <value>확대</value>
-  </data>
-  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
-    <value>직사각형 그리기</value>
-  </data>
-  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
-    <value>스마트 지우개</value>
-  </data>
-  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>말풍선 그리기</value>
-  </data>
-  <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>단계 그리기</value>
-  </data>
-  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>텍스트(칠) 그리기</value>
-  </data>
-  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>텍스트(획) 그리기</value>
-  </data>
-  <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>흐림 효과</value>
-  </data>
-  <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>강조 효과</value>
-  </data>
-  <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>모자이크 효과</value>
-  </data>
-  <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>타원 영역</value>
-  </data>
-  <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>자유형 영역</value>
-  </data>
-  <data name="ShapeType_RegionRectangle" xml:space="preserve">
-    <value>직사각형 영역</value>
-  </data>
-  <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>이미지 자르기(C)</value>
-  </data>
-  <data name="ShapeType_ToolCutOut" xml:space="preserve">
-    <value>잘라내기(X)</value>
-  </data>
-  <data name="ShapeType_ToolSelect" xml:space="preserve">
-    <value>선택 및 이동(M)</value>
-  </data>
-  <data name="ShapeType_ToolSpotlight" xml:space="preserve">
-    <value>스포트라이트</value>
-  </data>
-  <data name="StepType_LettersLowercase" xml:space="preserve">
-    <value>문자(소문자)</value>
-  </data>
-  <data name="StepType_LettersUppercase" xml:space="preserve">
-    <value>문자(대문자)</value>
-  </data>
-  <data name="StepType_Numbers" xml:space="preserve">
-    <value>숫자</value>
-  </data>
-  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
-    <value>로마 숫자(소문자)</value>
-  </data>
-  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
-    <value>로마 숫자(대문자)</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>자동</value>
