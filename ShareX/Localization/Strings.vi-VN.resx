@@ -178,9 +178,6 @@
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Chỉnh sửa hình ảnh</value>
   </data>
-  <data name="MainMenuBuilder_EnableAddImageEffects" xml:space="preserve">
-    <value>Bật thêm hiệu ứng hình ảnh</value>
-  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>Kích hoạt phím tắt</value>
   </data>
@@ -330,12 +327,6 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Vùng...</value>
-  </data>
-  <data name="MainMenuBuilder_RegionLight" xml:space="preserve">
-    <value>Vùng (sáng)...</value>
-  </data>
-  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
-    <value>Vùng (trong suốt)...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Khởi động lại với quyền quản trị viên</value>
@@ -1438,9 +1429,6 @@
   <data name="TaskSettingsWindow_AskForConfirmationWhenAborting" xml:space="preserve">
     <value>Yêu cầu xác nhận khi hủy</value>
   </data>
-  <data name="TaskSettingsWindow_UseTransparentRegionSelection" xml:space="preserve">
-    <value>Dùng lựa chọn vùng trong suốt</value>
-  </data>
   <data name="TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis" xml:space="preserve">
     <value>Tùy chọn quay màn hình...</value>
   </data>
@@ -1512,9 +1500,6 @@
   </data>
   <data name="TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg" xml:space="preserve">
     <value>Phân cách phần mở rộng bằng dấu phẩy, ví dụ: png, jpg, jpeg</value>
-  </data>
-  <data name="TaskSettingsWindow_UseLegacyImageEditor" xml:space="preserve">
-    <value>Dùng trình chỉnh sửa ảnh cũ</value>
   </data>
   <data name="TaskSettingsWindow_Format" xml:space="preserve">
     <value>Định dạng:</value>
@@ -1614,9 +1599,6 @@
   </data>
   <data name="TaskSettingsWindow_OverrideToolsSettings" xml:space="preserve">
     <value>Ghi đè cài đặt công cụ</value>
-  </data>
-  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
-    <value>Trình chỉnh sửa ảnh</value>
   </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Bộ chọn màu màn hình</value>
@@ -1923,33 +1905,6 @@
   </data>
   <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
     <value>Khởi động đã được tổ chức của bạn bật</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Title" xml:space="preserve">
-    <value>ShareX - Chọn trình sửa ảnh</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Heading" xml:space="preserve">
-    <value>Chọn một trình sửa ảnh</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Subtitle" xml:space="preserve">
-    <value>Chọn trình sửa ảnh mà ShareX sẽ mở.</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_ModernEditor" xml:space="preserve">
-    <value>Trình sửa ảnh hiện đại</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Recommended" xml:space="preserve">
-    <value>Được đề xuất</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_ModernDescription" xml:space="preserve">
-    <value>Trình sửa ảnh ShareX hiện tại với các công cụ và cải tiến mới nhất.</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_LegacyEditor" xml:space="preserve">
-    <value>Trình sửa ảnh cũ</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_LegacyDescription" xml:space="preserve">
-    <value>Trình sửa vùng chụp cổ điển của ShareX.</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_ChangeLater" xml:space="preserve">
-    <value>Bạn có thể thay đổi lựa chọn này sau trong Cài đặt tác vụ → Công cụ.</value>
   </data>
   <data name="ShortenURLWindow_Title" xml:space="preserve">
     <value>ShareX - Rút gọn URL</value>

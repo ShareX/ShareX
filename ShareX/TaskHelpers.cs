@@ -132,12 +132,6 @@ namespace ShareX
                 case HotkeyType.RectangleRegion:
                     new CaptureRegion().Capture(safeTaskSettings);
                     break;
-                case HotkeyType.RectangleLight:
-                    new CaptureRegion(RegionCaptureType.Light).Capture(safeTaskSettings);
-                    break;
-                case HotkeyType.RectangleTransparent:
-                    new CaptureRegion(RegionCaptureType.Transparent).Capture(safeTaskSettings);
-                    break;
                 case HotkeyType.CustomRegion:
                     new CaptureCustomRegion().Capture(safeTaskSettings);
                     break;
@@ -214,7 +208,7 @@ namespace ShareX
                     }
                     break;
                 case HotkeyType.PinToScreenFromScreen:
-                    PinToScreenFromScreen(safeTaskSettings);
+                    await PinToScreenFromScreen(safeTaskSettings);
                     break;
                 case HotkeyType.PinToScreenFromClipboard:
                     PinToScreenFromClipboard(safeTaskSettings);
@@ -1245,40 +1239,11 @@ namespace ShareX
             ToolsIntegration.ShowClipboardViewerWindow();
         }
 
-        private static void ShowImageEditorSelector(TaskSettings taskSettings)
-        {
-            if (taskSettings.ToolsSettingsReference.ShowImageEditorSelector)
-            {
-                bool? useLegacyImageEditor = ImageEditorSelectorWindowIntegration.Show();
-
-                if (useLegacyImageEditor.HasValue)
-                {
-                    taskSettings.ToolsSettingsReference.UseLegacyImageEditor = useLegacyImageEditor.Value;
-                    taskSettings.ToolsSettingsReference.ShowImageEditorSelector = false;
-                }
-            }
-        }
-
         public static void OpenImageEditor(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            ShowImageEditorSelector(taskSettings);
-
-            if (taskSettings.ToolsSettingsReference.UseLegacyImageEditor)
-            {
-                using (EditorStartupForm editorStartupForm = new EditorStartupForm(taskSettings.CaptureSettingsReference.SurfaceOptions))
-                {
-                    if (editorStartupForm.ShowDialog() == DialogResult.OK)
-                    {
-                        AnnotateImageAsync(editorStartupForm.Image, editorStartupForm.ImageFilePath, taskSettings);
-                    }
-                }
-            }
-            else
-            {
-                AnnotateImageAsync(null, null, taskSettings);
-            }
+            AnnotateImageAsync(null, null, taskSettings);
         }
 
         public static void AnnotateImageFromFile(string filePath, TaskSettings taskSettings = null)
@@ -1319,87 +1284,7 @@ namespace ShareX
 
         public static Bitmap AnnotateImage(Bitmap bmp, string filePath, TaskSettings taskSettings, bool taskMode = false)
         {
-            ShowImageEditorSelector(taskSettings);
-
-            if (taskSettings.ToolsSettingsReference.UseLegacyImageEditor)
-            {
-                return AnnotateImageLegacy(bmp, filePath, taskSettings, taskMode);
-            }
-
             return AnnotateImageModern(bmp, filePath, taskSettings, taskMode);
-        }
-
-        private static Bitmap AnnotateImageLegacy(Bitmap bmp, string filePath, TaskSettings taskSettings, bool taskMode = false)
-        {
-            if (bmp != null)
-            {
-                bmp = ImageHelpers.NonIndexedBitmap(bmp);
-
-                using (bmp)
-                {
-                    RegionCaptureMode mode = taskMode ? RegionCaptureMode.TaskEditor : RegionCaptureMode.Editor;
-                    RegionCaptureOptions options = taskSettings.CaptureSettingsReference.SurfaceOptions;
-
-                    using (RegionCaptureForm form = new RegionCaptureForm(mode, options, bmp))
-                    {
-                        form.ImageFilePath = filePath;
-
-                        form.SaveImageRequested += (output, newFilePath) =>
-                        {
-                            using (output)
-                            {
-                                if (string.IsNullOrEmpty(newFilePath))
-                                {
-                                    string screenshotsFolder = GetScreenshotsFolder(taskSettings);
-                                    string fileName = GetFileName(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
-                                    newFilePath = Path.Combine(screenshotsFolder, fileName);
-                                }
-
-                                ImageHelpers.SaveImage(output, newFilePath);
-                            }
-
-                            return newFilePath;
-                        };
-
-                        form.SaveImageAsRequested += (output, newFilePath) =>
-                        {
-                            using (output)
-                            {
-                                if (string.IsNullOrEmpty(newFilePath))
-                                {
-                                    string screenshotsFolder = GetScreenshotsFolder(taskSettings);
-                                    string fileName = GetFileName(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
-                                    newFilePath = Path.Combine(screenshotsFolder, fileName);
-                                }
-
-                                newFilePath = ImageHelpers.SaveImageFileDialog(output, newFilePath);
-                            }
-
-                            return newFilePath;
-                        };
-
-                        form.CopyImageRequested += MainFormCopyImage;
-                        form.UploadImageRequested += output => MainFormUploadImage(output, taskSettings);
-                        form.PrintImageRequested += MainFormPrintImage;
-                        form.ShowDialog();
-
-                        switch (form.Result)
-                        {
-                            case RegionResult.Close: // Esc
-                            case RegionResult.AnnotateCancelTask:
-                                return null;
-                            case RegionResult.Region: // Enter
-                            case RegionResult.AnnotateRunAfterCaptureTasks:
-                                return form.GetResultImage();
-                            case RegionResult.Fullscreen: // Space or right click
-                            case RegionResult.AnnotateContinueTask:
-                                return (Bitmap)form.Canvas.Clone();
-                        }
-                    }
-                }
-            }
-
-            return null;
         }
 
         private static Bitmap AnnotateImageModern(Bitmap bmp, string filePath, TaskSettings taskSettings, bool taskMode = false,
@@ -1802,18 +1687,18 @@ namespace ShareX
             });
         }
 
-        private static Task<string[]> ScanQRCodeAsync(QRCodeScanMode mode, string filePath)
+        private static async Task<string[]> ScanQRCodeAsync(QRCodeScanMode mode, string filePath)
         {
             using Bitmap bitmap = mode switch
             {
                 QRCodeScanMode.Screen => new Screenshot().CaptureFullscreen(),
-                QRCodeScanMode.Region => RegionCaptureTasks.GetRegionImage(
+                QRCodeScanMode.Region => await RegionCaptureTasks.GetRegionImageAsync(
                     TaskSettings.GetDefaultTaskSettings().CaptureSettings.SurfaceOptions),
                 QRCodeScanMode.ImageFile when !string.IsNullOrWhiteSpace(filePath) => ImageHelpers.LoadImage(filePath),
                 _ => null
             };
 
-            return Task.FromResult(bitmap != null ? BarcodeScan(bitmap) : null);
+            return bitmap != null ? BarcodeScan(bitmap) : null;
         }
 
         private static Task SaveQRCodeAsync(string text, int size, string filePath)
@@ -1900,17 +1785,17 @@ namespace ShareX
             ToolsIntegration.ShowAnalyzeImageWindow(
                 filePath,
                 options,
-                () =>
+                async () =>
                 {
-                    using Bitmap region = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions);
+                    using Bitmap region = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.SurfaceOptions);
                     if (region == null)
                     {
-                        return Task.FromResult<byte[]>(null);
+                        return null;
                     }
 
                     using MemoryStream stream = new MemoryStream();
                     region.Save(stream, ImageFormat.Png);
-                    return Task.FromResult(stream.ToArray());
+                    return stream.ToArray();
                 },
                 () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
         }
@@ -1919,7 +1804,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
+            using (Bitmap bmp = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.SurfaceOptions))
             {
                 await OCRImage(bmp, taskSettings);
             }
@@ -1978,17 +1863,17 @@ namespace ShareX
                                 using Bitmap source = ImageHelpers.ByteArrayToBitmap(imageData);
                                 return await OCRHelper.OCR(source, language, scaleFactor, singleLine);
                             },
-                            () =>
+                            async () =>
                             {
-                                using Bitmap region = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions);
+                                using Bitmap region = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.SurfaceOptions);
                                 if (region == null)
                                 {
-                                    return Task.FromResult<byte[]>(null);
+                                    return null;
                                 }
 
                                 using MemoryStream regionStream = new MemoryStream();
                                 region.Save(regionStream, ImageFormat.Png);
-                                return Task.FromResult(regionStream.ToArray());
+                                return regionStream.ToArray();
                             },
                             openHelp: () => URLHelpers.OpenURL(Links.DocsOCR));
 
@@ -2048,10 +1933,16 @@ namespace ShareX
             PinToScreenOptions options = taskSettings.ToolsSettingsReference.PinToScreenOptions;
             ToolsIntegration.ShowPinToScreenWindow(new PinToScreenServices
             {
-                CaptureRegionAsync = () =>
+                CaptureRegionAsync = async () =>
                 {
-                    using Image image = RegionCaptureTasks.GetRegionImage(out Rectangle rect);
-                    return Task.FromResult(CreatePinToScreenSource(image, rect.Location));
+                    var selection = await RegionCaptureTasks.GetRegionImageWithRectangleAsync();
+                    if (selection == null)
+                    {
+                        return null;
+                    }
+
+                    using Image image = selection.Value.Image;
+                    return CreatePinToScreenSource(image, selection.Value.Rectangle.Location);
                 },
                 GetClipboardImageAsync = () =>
                 {
@@ -2104,11 +1995,15 @@ namespace ShareX
             PinToScreen(image, taskSettings);
         }
 
-        public static void PinToScreenFromScreen(TaskSettings taskSettings = null)
+        public static async Task PinToScreenFromScreen(TaskSettings taskSettings = null)
         {
-            Image image = RegionCaptureTasks.GetRegionImage(out Rectangle rect);
+            var selection = await RegionCaptureTasks.GetRegionImageWithRectangleAsync();
+            if (selection == null)
+            {
+                return;
+            }
 
-            PinToScreen(image, rect.Location, taskSettings);
+            PinToScreen(selection.Value.Image, selection.Value.Rectangle.Location, taskSettings);
         }
 
         public static void PinToScreenFromClipboard(TaskSettings taskSettings = null)
@@ -2334,8 +2229,6 @@ namespace ShareX
                 HotkeyType.CustomWindow => LucideIcons.scan,
                 HotkeyType.ActiveMonitor => LucideIcons.monitor,
                 HotkeyType.RectangleRegion => LucideIcons.scan,
-                HotkeyType.RectangleLight => LucideIcons.square,
-                HotkeyType.RectangleTransparent => LucideIcons.square_dashed,
                 HotkeyType.CustomRegion => LucideIcons.scan_line,
                 HotkeyType.LastRegion => LucideIcons.layers,
                 HotkeyType.ScrollingCapture => LucideIcons.scroll_text,

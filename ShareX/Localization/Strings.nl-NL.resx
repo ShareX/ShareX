@@ -178,9 +178,6 @@
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Bewerken afbeelding</value>
   </data>
-  <data name="MainMenuBuilder_EnableAddImageEffects" xml:space="preserve">
-    <value>Afbeeldingseffecten toevoegen inschakelen</value>
-  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>Schakel sneltoetsen in</value>
   </data>
@@ -330,12 +327,6 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Regio...</value>
-  </data>
-  <data name="MainMenuBuilder_RegionLight" xml:space="preserve">
-    <value>Regio (licht)...</value>
-  </data>
-  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
-    <value>Regio (transparant)...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Opnieuw starten als beheerder</value>
@@ -1438,9 +1429,6 @@
   <data name="TaskSettingsWindow_AskForConfirmationWhenAborting" xml:space="preserve">
     <value>Om bevestiging vragen bij afbreken</value>
   </data>
-  <data name="TaskSettingsWindow_UseTransparentRegionSelection" xml:space="preserve">
-    <value>Transparante gebiedsselectie gebruiken</value>
-  </data>
   <data name="TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis" xml:space="preserve">
     <value>Opties voor schermopname...</value>
   </data>
@@ -1512,9 +1500,6 @@
   </data>
   <data name="TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg" xml:space="preserve">
     <value>Scheid extensies met komma&apos;s, bijvoorbeeld: png, jpg, jpeg</value>
-  </data>
-  <data name="TaskSettingsWindow_UseLegacyImageEditor" xml:space="preserve">
-    <value>Verouderde afbeeldingseditor gebruiken</value>
   </data>
   <data name="TaskSettingsWindow_Format" xml:space="preserve">
     <value>Indeling:</value>
@@ -1614,9 +1599,6 @@
   </data>
   <data name="TaskSettingsWindow_OverrideToolsSettings" xml:space="preserve">
     <value>Gereedschapsinstellingen overschrijven</value>
-  </data>
-  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
-    <value>Afbeeldingseditor</value>
   </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Schermkleurkiezer</value>
@@ -1923,33 +1905,6 @@
   </data>
   <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
     <value>Opstarten is ingeschakeld door uw organisatie</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Title" xml:space="preserve">
-    <value>ShareX - Afbeeldingseditor kiezen</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Heading" xml:space="preserve">
-    <value>Kies een afbeeldingseditor</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Subtitle" xml:space="preserve">
-    <value>Selecteer welke editor ShareX moet openen.</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_ModernEditor" xml:space="preserve">
-    <value>Moderne afbeeldingseditor</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Recommended" xml:space="preserve">
-    <value>Aanbevolen</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_ModernDescription" xml:space="preserve">
-    <value>De huidige ShareX-editor met de nieuwste hulpmiddelen en verbeteringen.</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_LegacyEditor" xml:space="preserve">
-    <value>Klassieke afbeeldingseditor</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_LegacyDescription" xml:space="preserve">
-    <value>De klassieke ShareX-editor voor gebiedsopnamen.</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_ChangeLater" xml:space="preserve">
-    <value>U kunt dit later wijzigen via Taakinstellingen → Hulpmiddelen.</value>
   </data>
   <data name="ShortenURLWindow_Title" xml:space="preserve">
     <value>ShareX - URL inkorten</value>

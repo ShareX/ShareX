@@ -178,9 +178,6 @@
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Edytuj obraz</value>
   </data>
-  <data name="MainMenuBuilder_EnableAddImageEffects" xml:space="preserve">
-    <value>Włącz dodawanie efektów obrazu</value>
-  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>Włącz skróty klawiszowe</value>
   </data>
@@ -330,12 +327,6 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Region...</value>
-  </data>
-  <data name="MainMenuBuilder_RegionLight" xml:space="preserve">
-    <value>Region (jasny)...</value>
-  </data>
-  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
-    <value>Region (przezroczysty)...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Uruchom ponownie jako administrator</value>
@@ -1438,9 +1429,6 @@
   <data name="TaskSettingsWindow_AskForConfirmationWhenAborting" xml:space="preserve">
     <value>Poproś o potwierdzenie przy anulowaniu</value>
   </data>
-  <data name="TaskSettingsWindow_UseTransparentRegionSelection" xml:space="preserve">
-    <value>Użyj przezroczystego wyboru regionu</value>
-  </data>
   <data name="TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis" xml:space="preserve">
     <value>Opcje nagrywania ekranu...</value>
   </data>
@@ -1512,9 +1500,6 @@
   </data>
   <data name="TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg" xml:space="preserve">
     <value>Oddziel rozszerzenia przecinkami, na przykład: png, jpg, jpeg</value>
-  </data>
-  <data name="TaskSettingsWindow_UseLegacyImageEditor" xml:space="preserve">
-    <value>Użyj starszego edytora obrazów</value>
   </data>
   <data name="TaskSettingsWindow_Format" xml:space="preserve">
     <value>Format:</value>
@@ -1614,9 +1599,6 @@
   </data>
   <data name="TaskSettingsWindow_OverrideToolsSettings" xml:space="preserve">
     <value>Zastąp ustawienia narzędzi</value>
-  </data>
-  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
-    <value>Edytor obrazów</value>
   </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Próbnik koloru ekranu</value>
@@ -1923,33 +1905,6 @@
   </data>
   <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
     <value>Uruchamianie zostało włączone przez organizację</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Title" xml:space="preserve">
-    <value>ShareX - Wybór edytora obrazów</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Heading" xml:space="preserve">
-    <value>Wybierz edytor obrazów</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Subtitle" xml:space="preserve">
-    <value>Wybierz edytor, który ma otwierać ShareX.</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_ModernEditor" xml:space="preserve">
-    <value>Nowoczesny edytor obrazów</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Recommended" xml:space="preserve">
-    <value>Zalecany</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_ModernDescription" xml:space="preserve">
-    <value>Aktualny edytor ShareX z najnowszymi narzędziami i ulepszeniami.</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_LegacyEditor" xml:space="preserve">
-    <value>Starszy edytor obrazów</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_LegacyDescription" xml:space="preserve">
-    <value>Klasyczny edytor przechwytywania obszaru ShareX.</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_ChangeLater" xml:space="preserve">
-    <value>Możesz to później zmienić w Ustawienia zadania → Narzędzia.</value>
   </data>
   <data name="ShortenURLWindow_Title" xml:space="preserve">
     <value>ShareX - Skracanie adresu URL</value>

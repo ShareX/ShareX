@@ -907,14 +907,8 @@
   <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
     <value>Código QR (escanear región)</value>
   </data>
-  <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>Capturar región (simple)</value>
-  </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Capturar región</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>Capturar región (transparente)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Regla</value>

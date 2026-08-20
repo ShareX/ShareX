@@ -124,7 +124,7 @@ public partial class ScrollingCaptureWindow : Window
         {
             await Task.Delay(250);
 
-            if (_service.SelectWindow())
+            if (await _service.SelectWindowAsync())
             {
                 await CaptureSelectedWindowAsync();
             }

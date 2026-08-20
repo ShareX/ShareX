@@ -907,14 +907,8 @@
   <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
     <value>二维码（扫描区域）</value>
   </data>
-  <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>截图矩形区域（高亮）</value>
-  </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>截图矩形区域</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>截图矩形区域（透明度）</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>测量尺</value>

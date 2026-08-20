@@ -178,9 +178,6 @@
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>แก้ไข รูปภาพ...</value>
   </data>
-  <data name="MainMenuBuilder_EnableAddImageEffects" xml:space="preserve">
-    <value>เปิดใช้งาน เพิ่ม เอฟเฟกต์รูปภาพ</value>
-  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>เปิดใช้งานปุ่มลัด</value>
   </data>
@@ -330,12 +327,6 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>พื้นที่...</value>
-  </data>
-  <data name="MainMenuBuilder_RegionLight" xml:space="preserve">
-    <value>พื้นที่ (สว่าง)...</value>
-  </data>
-  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
-    <value>พื้นที่ (โปร่งใส)...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>เริ่มใหม่ในฐานะผู้ดูแลระบบ</value>
@@ -1438,9 +1429,6 @@
   <data name="TaskSettingsWindow_AskForConfirmationWhenAborting" xml:space="preserve">
     <value>ขอการยืนยันเมื่อยกเลิก</value>
   </data>
-  <data name="TaskSettingsWindow_UseTransparentRegionSelection" xml:space="preserve">
-    <value>ใช้ โปร่งใส พื้นที่ การเลือก</value>
-  </data>
   <data name="TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis" xml:space="preserve">
     <value>บันทึกหน้าจอ ตัวเลือก...</value>
   </data>
@@ -1512,9 +1500,6 @@
   </data>
   <data name="TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg" xml:space="preserve">
     <value>คั่นนามสกุลด้วยจุลภาค ตัวอย่าง: png, jpg, jpeg</value>
-  </data>
-  <data name="TaskSettingsWindow_UseLegacyImageEditor" xml:space="preserve">
-    <value>ใช้ รุ่นเก่า ตัวแก้ไขรูปภาพ</value>
   </data>
   <data name="TaskSettingsWindow_Format" xml:space="preserve">
     <value>รูปแบบ:</value>
@@ -1614,9 +1599,6 @@
   </data>
   <data name="TaskSettingsWindow_OverrideToolsSettings" xml:space="preserve">
     <value>เขียนทับ เครื่องมือ การตั้งค่า</value>
-  </data>
-  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
-    <value>ตัวแก้ไขรูปภาพ</value>
   </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>หน้าจอ ตัวเลือกสี</value>
@@ -1923,33 +1905,6 @@
   </data>
   <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
     <value>การเริ่มระบบถูกเปิดใช้งานโดยองค์กรของคุณ</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Title" xml:space="preserve">
-    <value>ShareX - ตัวแก้ไขรูปภาพ ตัวเลือก</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Heading" xml:space="preserve">
-    <value>เลือก ตัวแก้ไขรูปภาพ</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Subtitle" xml:space="preserve">
-    <value>เลือกตัวแก้ไขที่ ShareX ควรเปิด</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_ModernEditor" xml:space="preserve">
-    <value>ทันสมัย ตัวแก้ไขรูปภาพ</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_Recommended" xml:space="preserve">
-    <value>แนะนำ</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_ModernDescription" xml:space="preserve">
-    <value>ตัวแก้ไข ShareX รุ่นปัจจุบัน พร้อมเครื่องมือและการปรับปรุงล่าสุด</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_LegacyEditor" xml:space="preserve">
-    <value>ตัวแก้ไขรูปภาพรุ่นเก่า</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_LegacyDescription" xml:space="preserve">
-    <value>คลาสสิก ShareX พื้นที่-จับภาพ ตัวแก้ไข.</value>
-  </data>
-  <data name="ImageEditorSelectorWindow_ChangeLater" xml:space="preserve">
-    <value>คุณสามารถเปลี่ยนได้ภายหลังใน การตั้งค่างาน → เครื่องมือ</value>
   </data>
   <data name="ShortenURLWindow_Title" xml:space="preserve">
     <value>ShareX - ย่อ URL</value>

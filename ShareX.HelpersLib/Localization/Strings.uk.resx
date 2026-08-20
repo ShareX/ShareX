@@ -907,14 +907,8 @@
   <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
     <value>QR-код (сканувати область)</value>
   </data>
-  <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>Захоплення області (спрощено)</value>
-  </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Захоплення області</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>Захоплення області (прозоре тло)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Лінійка</value>

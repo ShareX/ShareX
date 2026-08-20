@@ -24,6 +24,7 @@ using ShareX.ScreenCaptureLib;
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Threading.Tasks;
 using WinFormsMouseEventArgs = System.Windows.Forms.MouseEventArgs;
 using WinFormsNotifyIcon = System.Windows.Forms.NotifyIcon;
 
@@ -191,11 +192,12 @@ public partial class AutoCaptureWindow : Window
         StatusIcon.Foreground = Avalonia.Media.Brushes.DodgerBlue;
     }
 
-    private void SelectRegion()
+    private async Task SelectRegionAsync()
     {
-        if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rectangle, TaskSettings.CaptureSettings.SurfaceOptions))
+        var selection = await RegionCaptureTasks.GetRectangleRegionAsync(TaskSettings.CaptureSettings.SurfaceOptions);
+        if (selection != null)
         {
-            Program.Settings.AutoCaptureRegion = rectangle;
+            Program.Settings.AutoCaptureRegion = selection.Value.Rectangle;
             UpdateRegion();
         }
     }
@@ -229,7 +231,7 @@ public partial class AutoCaptureWindow : Window
 
     private void OnExecuteClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e) => Execute();
 
-    private void OnSelectRegionClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e) => SelectRegion();
+    private async void OnSelectRegionClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e) => await SelectRegionAsync();
 
     private void OnFullscreenChanged(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {

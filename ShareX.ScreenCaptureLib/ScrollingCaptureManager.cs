@@ -210,9 +210,17 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool SelectWindow()
+        public async Task<bool> SelectWindowAsync()
         {
-            return RegionCaptureTasks.GetRectangleRegion(out selectedRectangle, out selectedWindow, new RegionCaptureOptions());
+            var selection = await RegionCaptureTasks.GetRectangleRegionAsync(new RegionCaptureOptions());
+            if (selection == null)
+            {
+                return false;
+            }
+
+            selectedRectangle = selection.Value.Rectangle;
+            selectedWindow = selection.Value.WindowInfo;
+            return selectedWindow != null;
         }
 
         private bool IsScrollReachedBottom(IntPtr handle)

@@ -878,14 +878,8 @@ namespace ShareX.HelpersLib.Localization {
         public static string HotkeyType_QRCodeScanRegion {
             get { return ResourceManager.GetString("HotkeyType_QRCodeScanRegion", resourceCulture); }
         }
-        public static string HotkeyType_RectangleLight {
-            get { return ResourceManager.GetString("HotkeyType_RectangleLight", resourceCulture); }
-        }
         public static string HotkeyType_RectangleRegion {
             get { return ResourceManager.GetString("HotkeyType_RectangleRegion", resourceCulture); }
-        }
-        public static string HotkeyType_RectangleTransparent {
-            get { return ResourceManager.GetString("HotkeyType_RectangleTransparent", resourceCulture); }
         }
         public static string HotkeyType_Ruler {
             get { return ResourceManager.GetString("HotkeyType_Ruler", resourceCulture); }

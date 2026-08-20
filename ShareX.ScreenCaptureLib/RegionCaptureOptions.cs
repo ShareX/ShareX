@@ -24,9 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.ImageEffectsLib;
-using System.Collections.Generic;
-using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -60,38 +57,8 @@ namespace ShareX.ScreenCaptureLib
         public int MagnifierPixelSize = 10;
         public bool ShowCenterCrosshair = false;
         public bool ShowCrosshair = false;
-        public bool UseLightResizeNodes = false;
-        public bool EnableAnimations = true;
-        public int MenuIconSize = 0;
-        public bool MenuLocked = false;
-        public bool RememberMenuState = false;
-        public bool MenuCollapsed = false;
-        public Point MenuPosition = Point.Empty;
         public int InputDelay = 500;
-        public bool SwitchToDrawingToolAfterSelection = false;
-        public bool SwitchToSelectionToolAfterDrawing = false;
         public bool ActiveMonitorMode = false;
-
-        // Annotation
-        public AnnotationOptions AnnotationOptions = new AnnotationOptions();
-        public ShapeType LastRegionTool = ShapeType.RegionRectangle;
-        public ShapeType LastAnnotationTool = ShapeType.DrawingRectangle;
-        public ShapeType LastEditorTool = ShapeType.DrawingRectangle;
-
-        // Image editor
-        public ImageEditorStartMode ImageEditorStartMode = ImageEditorStartMode.AutoSize;
-        public WindowState ImageEditorWindowState = new WindowState();
-        public bool ZoomToFitOnOpen = false;
-        public bool EditorAutoCopyImage = false;
-        public bool AutoCloseEditorOnTask = false;
-        public bool ShowEditorPanTip = true;
-        public ImageInterpolationMode ImageEditorResizeInterpolationMode = ImageInterpolationMode.Bicubic;
-        public Size EditorNewImageSize = new Size(800, 600);
-        public bool EditorNewImageTransparent = false;
-        public Color EditorNewImageBackgroundColor = Color.White;
-        public Color EditorCanvasColor = Color.Transparent;
-        public List<ImageEffectPreset> ImageEffectPresets = new List<ImageEffectPreset>();
-        public int SelectedImageEffectPreset = 0;
 
         // Color picker
         public ColorPickerOptions ColorPickerOptions = new ColorPickerOptions();

@@ -907,13 +907,7 @@
   <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
     <value>رمز QR (مسح منطقة)</value>
   </data>
-  <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>التقاط مساحة (حدود فاتحة)</value>
-  </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
-    <value>التقاط مساحة</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>التقاط مساحة</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">

@@ -331,353 +331,32 @@
   <data name="ScrollingCaptureWindow_Capture_successful" xml:space="preserve">
     <value>कैप्चर सफल</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
-    <value>कार्य रद्द करें (Esc)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
-    <value>छवि अपलोड करें (Ctrl + U)</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
-    <value>हाइलाइट रंग...</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
-    <value>आकार चयन के बाद आरेखण टूल पर जाएँ</value>
-  </data>
-  <data name="CutOutEffectSize" xml:space="preserve">
-    <value>काटने के प्रभाव का आकार:</value>
-  </data>
-  <data name="ImageEffects" xml:space="preserve">
-    <value>छवि प्रभाव जोड़ें...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
-    <value>क्षैतिज पलटें</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
-    <value>बहु-क्षेत्र मोड</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
-    <value>पिक्सेल आकार:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
-    <value>छवि आकार...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
-    <value>हटाएँ</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
-    <value>परिवर्तन लागू करें और कार्य जारी रखें (Enter)</value>
-  </data>
-  <data name="OpenKeybindsPage" xml:space="preserve">
-    <value>कीबाइंड वेब पृष्ठ खोलें...</value>
-  </data>
-  <data name="Duplicate" xml:space="preserve">
-    <value>प्रतिलिपि बनाएँ</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
-    <value>संपादित करें</value>
-  </data>
-  <data name="ImageSaved" xml:space="preserve">
-    <value>छवि सहेजी गई</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>कार्य होने पर संपादक स्वतः बंद करें</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
-    <value>पूर्ववत करें</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
-    <value>फिर से करें</value>
-  </data>
-  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
-    <value>छवि संपादक</value>
-  </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>क्षेत्र कैप्चर</value>
   </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>क्षेत्र कैप्चर करें (Tab)</value>
   </data>
-  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
-    <value>क्लिपबोर्ड में कोई छवि नहीं है।</value>
-  </data>
-  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
-    <value>नई पंक्ति: Ctrl + Enter, ठीक है: Enter</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
-    <value>मॉनिटर कैप्चर करें</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
-    <value>सबसे पीछे भेजें</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
-    <value>सक्रिय मॉनिटर कैप्चर करें</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
-    <value>आगे लाएँ</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
-    <value>90° वामावर्त घुमाएँ</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
-    <value>इंटरपोलेशन मोड:</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>रिकॉर्डिंग रोकने के लिए क्लिक करें।</value>
     <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
-  </data>
-  <data name="ShapeManager_CenterPoints" xml:space="preserve">
-    <value>केंद्र बिंदु:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
-    <value>विकल्प</value>
-  </data>
-  <data name="ShapeManager_BorderStyle" xml:space="preserve">
-    <value>किनारे की शैली:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
-    <value>कैप्चर करें</value>
-  </data>
-  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
-    <value>X: {0} Y: {1} चौ: {2} ऊँ: {3}</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
-    <value>छवि फ़ाइल खोलें...</value>
-  </data>
-  <data name="Processing" xml:space="preserve">
-    <value>प्रक्रिया जारी है...</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>प्रतीक्षा हो रही है...</value>
     <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
   </data>
-  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
-    <value>90° दक्षिणावर्त घुमाएँ</value>
-  </data>
-  <data name="CloseEsc" xml:space="preserve">
-    <value>बंद करें (Esc)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
-    <value>पहले चरण का मान:</value>
-  </data>
-  <data name="Highlight" xml:space="preserve">
-    <value>हाइलाइट</value>
-  </data>
-  <data name="MagnifyStrength" xml:space="preserve">
-    <value>आवर्धन तीव्रता:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
-    <value>कोने की त्रिज्या:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
-    <value>छवि प्रिंट करें... (Ctrl + P)</value>
-  </data>
-  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
-    <value>नई पंक्ति: Enter, ठीक है: Ctrl + Enter</value>
-  </data>
-  <data name="ShapeManager_CursorType" xml:space="preserve">
-    <value>कर्सर प्रकार:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
-    <value>ड्रॉप शैडो</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
-    <value>वर्गाकार आवर्धक</value>
-  </data>
   <data name="Resume" xml:space="preserve">
     <value>जारी रखें</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
-    <value>संपादक आरंभ मोड:</value>
-  </data>
-  <data name="ImageSavedAs" xml:space="preserve">
-    <value>छवि सहेजी गई</value>
-  </data>
-  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
-    <value>तीर शीर्ष दिशा:</value>
-  </data>
-  <data name="ShapeManager_FreehandSmoothing" xml:space="preserve">
-    <value>मुक्तहस्त चिकनापन:</value>
-  </data>
-  <data name="ShapeManager_FreehandCurveInterpolation" xml:space="preserve">
-    <value>वक्र इंटरपोलेशन</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
-    <value>पूर्ण स्क्रीन कैप्चर करें</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
-    <value>क्षेत्र कैप्चर करें</value>
-  </data>
-  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
-    <value>हल्का आयत कैप्चर</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
-    <value>छवि सहेजें (Ctrl + S)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
-    <value>नई छवि...</value>
-  </data>
-  <data name="Blur" xml:space="preserve">
-    <value>धुंधला</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
     <value>एन्कोडिंग हो रही है...</value>
     <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
-    <value>धुंधलापन तीव्रता:</value>
-  </data>
-  <data name="ImageUploading" xml:space="preserve">
-    <value>छवि अपलोड हो रही है</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
-    <value>एनिमेशन सक्षम करें</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
-    <value>पीछे भेजें</value>
-  </data>
-  <data name="ImageCopied" xml:space="preserve">
-    <value>छवि कॉपी की गई</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
-    <value>भराव रंग...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
-    <value>छवि इस रूप में सहेजें... (Ctrl + Shift + S)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
-    <value>कार्य जारी रखें (Space या दायाँ क्लिक)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
-    <value>फ़ॉन्ट आकार:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
-    <value>कैनवास आकार...</value>
-  </data>
-  <data name="MenuIconSize" xml:space="preserve">
-    <value>मेनू आइकन आकार:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
-    <value>लंबवत पलटें</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
-    <value>छवि स्वतः काटें...</value>
-  </data>
-  <data name="Pixelate" xml:space="preserve">
-    <value>पिक्सेलेट</value>
-  </data>
-  <data name="LockMenu" xml:space="preserve">
-    <value>मेनू लॉक करें</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
-    <value>सबसे आगे लाएँ</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
-    <value>180° घुमाएँ</value>
-  </data>
-  <data name="LightResizeNodes" xml:space="preserve">
-    <value>हल्के आकार बदलने वाले नोड उपयोग करें</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
-    <value>पिछला क्षेत्र कैप्चर करें</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
-    <value>स्क्रीन से छवि सम्मिलित करें...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
-    <value>सभी हटाएँ</value>
-  </data>
-  <data name="AutoCopyImageToClipboard" xml:space="preserve">
-    <value>छवि को क्लिपबोर्ड पर स्वतः कॉपी करें</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
-    <value>किनारे का आकार:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
-    <value>संपादक मेनू</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
-    <value>छवि/पाठ चिपकाएँ</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
-    <value>छवि काटें...</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
-    <value>किनारे का रंग...</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
-    <value>आवर्धक दिखाएँ</value>
-  </data>
   <data name="Pause" xml:space="preserve">
     <value>रोकें</value>
   </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
-    <value>ShareX - छवि संपादक</value>
-  </data>
-  <data name="DropShadowColor" xml:space="preserve">
-    <value>ड्रॉप शैडो रंग...</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
-    <value>आकार बनाने के बाद चयन टूल पर जाएँ</value>
-  </data>
-  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
-    <value>पारदर्शी आयत कैप्चर</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
-    <value>स्थिति और आकार जानकारी दिखाएँ</value>
-  </data>
   <data name="ScreenRecordForm_Start" xml:space="preserve">
     <value>आरंभ करें</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
-    <value>चरण प्रकार:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>छवि को क्लिपबोर्ड पर कॉपी करें (Ctrl + C)</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_center_crosshair" xml:space="preserve">
-    <value>केंद्र क्रॉसहेयर दिखाएँ</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
-    <value>पूरी स्क्रीन का क्रॉसहेयर दिखाएँ</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
-    <value>छवि</value>
-  </data>
-  <data name="RectangleRegion_GetColorPickerText" xml:space="preserve">
-    <value>RGB: {0}, {1}, {2}
-हेक्स: {3}
-X: {4} Y: {5}</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
-    <value>आवर्धक पिक्सेल संख्या:</value>
-  </data>
-  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
-    <value>कीबाइंड वेब पृष्ठ खोलने से पहले यह विंडो बंद हो जाएगी। क्या आप जारी रखना चाहते हैं?</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
-    <value>छवि फ़ाइल सम्मिलित करें...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
-    <value>खोलते समय फ़िट करने के लिए ज़ूम करें</value>
-  </data>
-  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
-    <value>सुझाव: मध्य माउस बटन दबाकर खींचते हुए छवि को पैन कर सकते हैं।</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
-    <value>चित्र लेने के बाद के कार्य चलाएँ (Enter)</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
-    <value>मेनू स्थिति याद रखें</value>
-  </data>
-  <data name="CutOutEffectType" xml:space="preserve">
-    <value>काटने का प्रभाव:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
-    <value>आवर्धक पिक्सेल आकार:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
-    <value>टूल विकल्प</value>
   </data>
   <data name="ScreenRecordForm_Stop" xml:space="preserve">
     <value>रोकें</value>
@@ -685,41 +364,6 @@ X: {4} Y: {5}</value>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
     <value>रिकॉर्डिंग आरंभ करने के लिए क्लिक करें।</value>
     <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
-  </data>
-  <data name="ImageURL" xml:space="preserve">
-    <value>छवि URL</value>
-  </data>
-  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
-    <value>कुछ परिवर्तन सहेजे नहीं गए हैं।
-
-क्या आप छवि संपादक बंद करने से पहले परिवर्तन सहेजना चाहते हैं?</value>
-  </data>
-  <data name="CutOutBackgroundColor" xml:space="preserve">
-    <value>कटी हुई पृष्ठभूमि का रंग...</value>
-  </data>
-  <data name="RulerAngle" xml:space="preserve">
-    <value>कोण</value>
-  </data>
-  <data name="RulerPerimeter" xml:space="preserve">
-    <value>परिमाप</value>
-  </data>
-  <data name="RulerArea" xml:space="preserve">
-    <value>क्षेत्रफल</value>
-  </data>
-  <data name="RulerWidth" xml:space="preserve">
-    <value>चौड़ाई</value>
-  </data>
-  <data name="RulerHeight" xml:space="preserve">
-    <value>ऊँचाई</value>
-  </data>
-  <data name="RulerDistance" xml:space="preserve">
-    <value>दूरी</value>
-  </data>
-  <data name="RulerRight" xml:space="preserve">
-    <value>दायाँ</value>
-  </data>
-  <data name="RulerBottom" xml:space="preserve">
-    <value>नीचे</value>
   </data>
   <data name="FFmpegOptionsWindow_Preset_ultra_fast" xml:space="preserve">
     <value>अति तेज़</value>
@@ -897,14 +541,5 @@ X: {4} Y: {5}</value>
   </data>
   <data name="FFmpegOptionsWindow_Codec_video_encoding" xml:space="preserve">
     <value>वीडियो एन्कोडिंग</value>
-  </data>
-  <data name="ShapeManager_Spotlight_dim" xml:space="preserve">
-    <value>धुंधलापन:</value>
-  </data>
-  <data name="ShapeManager_Spotlight_blur" xml:space="preserve">
-    <value>धुंधला:</value>
-  </data>
-  <data name="ShapeManager_Spotlight_ellipse_shape" xml:space="preserve">
-    <value>दीर्घवृत्त आकार</value>
   </data>
 </root>

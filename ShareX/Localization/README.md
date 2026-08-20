@@ -6,10 +6,10 @@ All translatable strings in the ShareX project use the shared `Strings.resx` res
 
 | Area | Resource prefixes | Source files | Keys | Status |
 | --- | --- | ---: | ---: | --- |
-| Main window | `MainWindow_`, `MainMenuBuilder_`, `ThumbnailItemViewModel_` | 4 | 142 | Complete |
+| Main window | `MainWindow_`, `MainMenuBuilder_`, `ThumbnailItemViewModel_` | 4 | 139 | Complete |
 | Application settings | `ApplicationSettingsWindow_` | 3 | 174 | Complete |
 | Hotkey settings | `HotkeySettingsWindow_` | 3 | 23 | Complete |
-| Task settings | `TaskSettingsWindow_` | 4 | 247 | Complete |
+| Task settings | `TaskSettingsWindow_` | 4 | 244 | Complete |
 | Drag and drop upload | `DragDropUploadWindow_` | 2 | 2 | Complete |
 | Clipboard upload | `ClipboardUploadWindow_` | 2 | 8 | Complete |
 | Notification | None (content supplied dynamically) | 4 | 0 | Reviewed |
@@ -18,7 +18,6 @@ All translatable strings in the ShareX project use the shared `Strings.resx` res
 | Multi-upload confirmation | `MultiUploadConfirmationWindow_` | 2 | 5 | Complete |
 | Debug log | `DebugLogWindow_` | 2 | 9 | Complete |
 | First-time configuration | `FirstTimeConfigWindow_` | 2 | 11 | Complete |
-| Image editor selector | `ImageEditorSelectorWindow_` | 2 | 9 | Complete |
 | Shorten URL | `ShortenURLWindow_` | 2 | 6 | Complete |
 | URL upload | `URLUploadWindow_` | 2 | 7 | Complete |
 | Before upload | `BeforeUploadWindow_` | 2 | 10 | Complete |

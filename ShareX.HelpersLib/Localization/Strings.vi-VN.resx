@@ -907,14 +907,8 @@
   <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
     <value>Mã QR (quét vùng)</value>
   </data>
-  <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>Chụp theo vùng (Bản nhẹ hơn)</value>
-  </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Chụp theo vùng</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>Chụp theo vùng (Trong suốt)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Thước đo</value>

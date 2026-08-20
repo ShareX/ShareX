@@ -907,14 +907,8 @@
   <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
     <value>QR code (Scan 영역)</value>
   </data>
-  <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>직사각형 영역 촬영 (어둡지 않게)</value>
-  </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>직사각형 영역 촬영</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>직사각형 영역 촬영 (투명하게)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>측정</value>

@@ -118,8 +118,6 @@ internal sealed class MainMenuBuilder
             Parent(Strings.MainMenuBuilder_Window, LucideIcons.app_window, BuildWindowMenu),
             Parent(Strings.MainMenuBuilder_Monitor, LucideIcons.monitor, BuildMonitorMenu),
             Item(Strings.MainMenuBuilder_Region, LucideIcons.scan, () => new CaptureRegion().Capture(autoHide)),
-            Item(Strings.MainMenuBuilder_RegionLight, LucideIcons.square, () => new CaptureRegion(RegionCaptureType.Light).Capture(autoHide)),
-            Item(Strings.MainMenuBuilder_RegionTransparent, LucideIcons.square_dashed, () => new CaptureRegion(RegionCaptureType.Transparent).Capture(autoHide)),
             Item(Strings.MainMenuBuilder_LastRegion, LucideIcons.layers, () => new CaptureLastRegion().Capture(autoHide)),
             Item(Strings.MainMenuBuilder_ScreenRecording, LucideIcons.video,
                 () => TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region)),

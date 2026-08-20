@@ -326,10 +326,12 @@ internal sealed class TaskSettingsPageBuilder
         BoundValue<decimal?> regionHeight = NumericValue(capture.CaptureCustomRegion.Height, value =>
             capture.CaptureCustomRegion = new DrawingRectangle(capture.CaptureCustomRegion.X, capture.CaptureCustomRegion.Y, capture.CaptureCustomRegion.Width, (int)(value ?? 0)));
 
-        Button selectRegion = Button(Strings.TaskSettingsWindow_SelectRegionWithEllipsis, () =>
+        Button selectRegion = Button(Strings.TaskSettingsWindow_SelectRegionWithEllipsis, async () =>
         {
-            if (RegionCaptureTasks.GetRectangleRegion(out DrawingRectangle rectangle, capture.SurfaceOptions))
+            var selection = await RegionCaptureTasks.GetRectangleRegionAsync(capture.SurfaceOptions);
+            if (selection != null)
             {
+                DrawingRectangle rectangle = selection.Value.Rectangle;
                 regionX.Value = rectangle.X;
                 regionY.Value = rectangle.Y;
                 regionWidth.Value = rectangle.Width;
@@ -434,7 +436,6 @@ internal sealed class TaskSettingsPageBuilder
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_EncodingAndCapture,
                 Check(Strings.TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions, () => capture.ScreenRecordTwoPassEncoding, value => capture.ScreenRecordTwoPassEncoding = value),
                 Check(Strings.TaskSettingsWindow_AskForConfirmationWhenAborting, () => capture.ScreenRecordAskConfirmationOnAbort, value => capture.ScreenRecordAskConfirmationOnAbort = value),
-                Check(Strings.TaskSettingsWindow_UseTransparentRegionSelection, () => capture.ScreenRecordTransparentRegion, value => capture.ScreenRecordTransparentRegion = value),
                 Button(Strings.TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis, ShowScreenRecordingOptions)));
     }
 
@@ -656,8 +657,6 @@ internal sealed class TaskSettingsPageBuilder
         var picker = tools.ScreenColorPickerOptions;
         return Page("tools", Strings.TaskSettingsWindow_Tools, LucideIcons.wrench,
             OverrideCard(_toolsOverride, Strings.TaskSettingsWindow_OverrideToolsSettings),
-            EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_ImageEditor,
-                Check(Strings.TaskSettingsWindow_UseLegacyImageEditor, () => tools.UseLegacyImageEditor, value => tools.UseLegacyImageEditor = value)),
             EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_ScreenColorPicker,
                 Row(Strings.TaskSettingsWindow_Format, Text(() => picker.Format, value => picker.Format = value)),
                 Row(Strings.TaskSettingsWindow_FormatCtrlPlusClick, Text(() => picker.FormatCtrl, value => picker.FormatCtrl = value)),

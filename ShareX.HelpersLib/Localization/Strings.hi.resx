@@ -907,14 +907,8 @@
   <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
     <value>QR कोड (क्षेत्र स्कैन करें)</value>
   </data>
-  <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>क्षेत्र कैप्चर करें (हल्का)</value>
-  </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>क्षेत्र कैप्चर करें</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>क्षेत्र कैप्चर करें (पारदर्शी)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>मापनी</value>

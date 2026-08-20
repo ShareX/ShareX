@@ -230,11 +230,7 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         RectangleRegion,
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
-        RectangleLight,
-        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
-        RectangleTransparent,
-        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
-        CustomRegion,
+        CustomRegion = 17,
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         LastRegion,
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
@@ -396,11 +392,6 @@ namespace ShareX
     public enum ThumbnailTitleLocation // Localized
     {
         Top, Bottom
-    }
-
-    public enum RegionCaptureType
-    {
-        Default, Light, Transparent
     }
 
     public enum ScreenTearingTestMode

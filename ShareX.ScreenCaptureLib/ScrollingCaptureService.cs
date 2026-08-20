@@ -32,7 +32,7 @@ public sealed class ScrollingCaptureService : IDisposable
         _manager = new ScrollingCaptureManager(options);
     }
 
-    public bool SelectWindow() => _manager.SelectWindow();
+    public Task<bool> SelectWindowAsync() => _manager.SelectWindowAsync();
 
     public Task<ScrollingCaptureStatus> StartCaptureAsync() => _manager.StartCapture();
 

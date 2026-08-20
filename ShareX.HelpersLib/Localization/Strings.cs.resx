@@ -907,14 +907,8 @@
   <data name="HotkeyType_QRCodeScanRegion" xml:space="preserve">
     <value>QR kód (skenovat oblast)</value>
   </data>
-  <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>Zachytit oblast (světlá)</value>
-  </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Zachytit oblast</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>Zachytit oblast (průhledná)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Pravítko</value>

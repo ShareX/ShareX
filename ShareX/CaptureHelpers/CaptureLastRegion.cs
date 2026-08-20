@@ -34,8 +34,7 @@ namespace ShareX
     {
         protected override async Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings)
         {
-            if (lastRegionCaptureType == RegionCaptureType.Default &&
-                RegionCaptureIntegration.LastRegionRectangle.IsEmpty)
+            if (RegionCaptureIntegration.LastRegionRectangle.IsEmpty)
             {
                 return await ExecuteRegionCaptureAvaloniaAsync(taskSettings);
             }
@@ -45,38 +44,14 @@ namespace ShareX
 
         protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
-            switch (lastRegionCaptureType)
+            if (!RegionCaptureIntegration.LastRegionRectangle.IsEmpty)
             {
-                default:
-                case RegionCaptureType.Default:
-                    if (!RegionCaptureIntegration.LastRegionRectangle.IsEmpty)
-                    {
-                        Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(
-                            RegionCaptureIntegration.LastRegionRectangle);
-                        return new TaskMetadata(bmp);
-                    }
-                    return ExecuteRegionCapture(taskSettings);
-                case RegionCaptureType.Light:
-                    if (!RegionCaptureLightForm.LastScreenSelectionRectangle.IsEmpty)
-                    {
-                        Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(RegionCaptureLightForm.LastScreenSelectionRectangle);
-                        return new TaskMetadata(bmp);
-                    }
-                    else
-                    {
-                        return ExecuteRegionCaptureLight(taskSettings);
-                    }
-                case RegionCaptureType.Transparent:
-                    if (!RegionCaptureLightForm.LastScreenSelectionRectangle.IsEmpty)
-                    {
-                        Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(RegionCaptureLightForm.LastScreenSelectionRectangle);
-                        return new TaskMetadata(bmp);
-                    }
-                    else
-                    {
-                        return ExecuteRegionCaptureTransparent(taskSettings);
-                    }
+                Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(
+                    RegionCaptureIntegration.LastRegionRectangle);
+                return new TaskMetadata(bmp);
             }
+
+            return null;
         }
     }
 }

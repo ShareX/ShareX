@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,187 +23,91 @@
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
 using ShareX.HelpersLib;
+using ShareX.ImageEditor.Integration;
+using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
+using SkiaSharp;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Windows.Forms;
+using System.Threading.Tasks;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib;
+
+public static class RegionCaptureTasks
 {
-    public static class RegionCaptureTasks
+    public static async Task<Bitmap?> GetRegionImageAsync(RegionCaptureOptions? options = null)
     {
-        public static Bitmap GetRegionImage(RegionCaptureOptions options = null)
+        AvaloniaRegionCaptureResult? result = await CaptureAsync(options);
+        if (result == null)
         {
-            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
-
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
-            {
-                form.ShowDialog();
-
-                return form.GetResultImage();
-            }
-        }
-
-        public static Bitmap GetRegionImage(out Rectangle rect, RegionCaptureOptions options = null)
-        {
-            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
-
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
-            {
-                form.ShowDialog();
-
-                rect = form.GetSelectedRectangle();
-                return form.GetResultImage();
-            }
-        }
-
-        public static bool GetRectangleRegion(out Rectangle rect, RegionCaptureOptions options = null)
-        {
-            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
-
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
-            {
-                form.ShowDialog();
-
-                rect = form.GetSelectedRectangle();
-            }
-
-            return !rect.IsEmpty;
-        }
-
-        public static bool GetRectangleRegion(out Rectangle rect, out WindowInfo windowInfo, RegionCaptureOptions options = null)
-        {
-            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
-
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
-            {
-                form.ShowDialog();
-
-                rect = form.GetSelectedRectangle();
-                windowInfo = form.GetWindowInfo();
-            }
-
-            return !rect.IsEmpty;
-        }
-
-        public static bool GetRectangleRegionTransparent(out Rectangle rect)
-        {
-            using (RegionCaptureLightForm regionCaptureTransparentForm = new RegionCaptureLightForm(null))
-            {
-                if (regionCaptureTransparentForm.ShowDialog() == DialogResult.OK)
-                {
-                    rect = regionCaptureTransparentForm.ScreenSelectionRectangle;
-                    return true;
-                }
-            }
-
-            rect = Rectangle.Empty;
-            return false;
-        }
-
-        public static PointInfo GetPointInfo(RegionCaptureOptions options, Bitmap canvas = null)
-        {
-            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
-            newOptions.DetectWindows = false;
-            newOptions.BackgroundDimStrength = 0;
-
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.ScreenColorPicker, newOptions, canvas))
-            {
-                form.ShowDialog();
-
-                if (form.Result == RegionResult.Region)
-                {
-                    PointInfo pointInfo = new PointInfo();
-                    pointInfo.Position = form.CurrentPosition;
-                    pointInfo.Color = form.ShapeManager.GetCurrentColor();
-                    return pointInfo;
-                }
-            }
-
             return null;
         }
 
-        public static SimpleWindowInfo GetWindowInfo(RegionCaptureOptions options)
+        using (result.Image)
         {
-            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
-            newOptions.BackgroundDimStrength = 0;
-            newOptions.ShowMagnifier = false;
+            return GdiSkiaBitmapConverter.ToGdiBitmap(result.Image);
+        }
+    }
 
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.OneClick, newOptions))
-            {
-                form.ShowDialog();
-
-                if (form.Result == RegionResult.Region)
-                {
-                    return form.SelectedWindow;
-                }
-            }
-
+    public static async Task<(Bitmap Image, Rectangle Rectangle)?> GetRegionImageWithRectangleAsync(
+        RegionCaptureOptions? options = null)
+    {
+        AvaloniaRegionCaptureResult? result = await CaptureAsync(options);
+        if (result == null)
+        {
             return null;
         }
 
-        public static void ShowScreenRuler(RegionCaptureOptions options)
+        using (result.Image)
         {
-            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
-            newOptions.QuickCrop = false;
-            newOptions.UseLightResizeNodes = true;
-
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Ruler, newOptions))
-            {
-                form.ShowDialog();
-            }
+            return (GdiSkiaBitmapConverter.ToGdiBitmap(result.Image), result.ScreenRectangle);
         }
+    }
 
-        public static Bitmap ApplyRegionPathToImage(Bitmap bmp, GraphicsPath gp, out Rectangle resultArea)
+    public static async Task<(Rectangle Rectangle, WindowInfo? WindowInfo)?> GetRectangleRegionAsync(
+        RegionCaptureOptions? options = null)
+    {
+        AvaloniaRegionCaptureResult? result = await CaptureAsync(options);
+        if (result == null)
         {
-            if (bmp != null && gp != null)
-            {
-                Rectangle regionArea = Rectangle.Round(gp.GetBounds());
-                Rectangle screenRectangle = CaptureHelpers.GetScreenBounds();
-                resultArea = Rectangle.Intersect(regionArea, new Rectangle(0, 0, screenRectangle.Width, screenRectangle.Height));
-
-                if (resultArea.IsValid())
-                {
-                    using (Bitmap bmpResult = bmp.CreateEmptyBitmap())
-                    using (Graphics g = Graphics.FromImage(bmpResult))
-                    using (TextureBrush brush = new TextureBrush(bmp))
-                    {
-                        g.PixelOffsetMode = PixelOffsetMode.Half;
-                        g.SmoothingMode = SmoothingMode.HighQuality;
-
-                        g.FillPath(brush, gp);
-
-                        return ImageHelpers.CropBitmap(bmpResult, resultArea);
-                    }
-                }
-            }
-
-            resultArea = Rectangle.Empty;
             return null;
         }
 
-        private static RegionCaptureOptions GetRegionCaptureOptions(RegionCaptureOptions options)
+        result.Image.Dispose();
+        return (result.ScreenRectangle, result.WindowInfo);
+    }
+
+    private static async Task<AvaloniaRegionCaptureResult?> CaptureAsync(RegionCaptureOptions? options)
+    {
+        options ??= new RegionCaptureOptions();
+
+        Screenshot screenshot = new Screenshot
         {
-            if (options == null)
-            {
-                return new RegionCaptureOptions();
-            }
-            else
-            {
-                return new RegionCaptureOptions()
-                {
-                    DetectControls = options.DetectControls,
-                    ShowMagnifier = options.ShowMagnifier,
-                    UseSquareMagnifier = options.UseSquareMagnifier,
-                    MagnifierPixelCount = options.MagnifierPixelCount,
-                    MagnifierPixelSize = options.MagnifierPixelSize,
-                    ShowCenterCrosshair = options.ShowCenterCrosshair,
-                    ShowCrosshair = options.ShowCrosshair,
-                    AnnotationOptions = options.AnnotationOptions,
-                    ScreenColorPickerInfoText = options.ScreenColorPickerInfoText,
-                    ActiveMonitorMode = options.ActiveMonitorMode
-                };
-            }
+            CaptureCursor = false
+        };
+
+        Rectangle screenBounds = options.ActiveMonitorMode
+            ? CaptureHelpers.GetActiveScreenBounds()
+            : CaptureHelpers.GetScreenBounds();
+
+        SKBitmap frozenScreenshot;
+        using (Bitmap canvas = options.ActiveMonitorMode
+            ? screenshot.CaptureActiveMonitor()
+            : screenshot.CaptureFullscreen())
+        {
+            frozenScreenshot = GdiSkiaBitmapConverter.ToSKBitmap(canvas);
         }
+
+        AvaloniaRegionCaptureRequest request = new AvaloniaRegionCaptureRequest
+        {
+            Screenshot = frozenScreenshot,
+            ScreenBounds = screenBounds,
+            CaptureOptions = options,
+            EditorOptions = new ImageEditorOptions(),
+            EnableAnnotations = false
+        };
+
+        return await RegionCaptureIntegration.CaptureAsync(request);
     }
 }

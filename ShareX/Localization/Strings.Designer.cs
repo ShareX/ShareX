@@ -261,11 +261,6 @@ namespace ShareX.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Enable add image effects.
         /// </summary>
-        public static string MainMenuBuilder_EnableAddImageEffects {
-            get {
-                return ResourceManager.GetString("MainMenuBuilder_EnableAddImageEffects", resourceCulture);
-            }
-        }
         
         /// <summary>
         ///   Looks up a localized string similar to Enable hotkeys.
@@ -549,20 +544,10 @@ namespace ShareX.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Region (light)....
         /// </summary>
-        public static string MainMenuBuilder_RegionLight {
-            get {
-                return ResourceManager.GetString("MainMenuBuilder_RegionLight", resourceCulture);
-            }
-        }
         
         /// <summary>
         ///   Looks up a localized string similar to Region (transparent)....
         /// </summary>
-        public static string MainMenuBuilder_RegionTransparent {
-            get {
-                return ResourceManager.GetString("MainMenuBuilder_RegionTransparent", resourceCulture);
-            }
-        }
         
         /// <summary>
         ///   Looks up a localized string similar to Restart as administrator.
@@ -2927,11 +2912,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_AskForConfirmationWhenAborting", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_UseTransparentRegionSelection {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_UseTransparentRegionSelection", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis", resourceCulture);
@@ -3050,11 +3030,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_SeparateExtensionsWithCommasForExamplePngJpgJpeg", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_UseLegacyImageEditor {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_UseLegacyImageEditor", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_Format {
@@ -3220,11 +3195,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_OverrideToolsSettings {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_OverrideToolsSettings", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_ImageEditor {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_ImageEditor", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_ScreenColorPicker {
@@ -3735,51 +3705,6 @@ namespace ShareX.Localization {
         public static string FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy {
             get {
                 return ResourceManager.GetString("FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy", resourceCulture);
-            }
-        }
-        public static string ImageEditorSelectorWindow_Title {
-            get {
-                return ResourceManager.GetString("ImageEditorSelectorWindow_Title", resourceCulture);
-            }
-        }
-        public static string ImageEditorSelectorWindow_Heading {
-            get {
-                return ResourceManager.GetString("ImageEditorSelectorWindow_Heading", resourceCulture);
-            }
-        }
-        public static string ImageEditorSelectorWindow_Subtitle {
-            get {
-                return ResourceManager.GetString("ImageEditorSelectorWindow_Subtitle", resourceCulture);
-            }
-        }
-        public static string ImageEditorSelectorWindow_ModernEditor {
-            get {
-                return ResourceManager.GetString("ImageEditorSelectorWindow_ModernEditor", resourceCulture);
-            }
-        }
-        public static string ImageEditorSelectorWindow_Recommended {
-            get {
-                return ResourceManager.GetString("ImageEditorSelectorWindow_Recommended", resourceCulture);
-            }
-        }
-        public static string ImageEditorSelectorWindow_ModernDescription {
-            get {
-                return ResourceManager.GetString("ImageEditorSelectorWindow_ModernDescription", resourceCulture);
-            }
-        }
-        public static string ImageEditorSelectorWindow_LegacyEditor {
-            get {
-                return ResourceManager.GetString("ImageEditorSelectorWindow_LegacyEditor", resourceCulture);
-            }
-        }
-        public static string ImageEditorSelectorWindow_LegacyDescription {
-            get {
-                return ResourceManager.GetString("ImageEditorSelectorWindow_LegacyDescription", resourceCulture);
-            }
-        }
-        public static string ImageEditorSelectorWindow_ChangeLater {
-            get {
-                return ResourceManager.GetString("ImageEditorSelectorWindow_ChangeLater", resourceCulture);
             }
         }
         public static string ShortenURLWindow_Title {

@@ -408,7 +408,6 @@ namespace ShareX
         public float ScreenRecordDuration = 3f;
         public bool ScreenRecordTwoPassEncoding = false;
         public bool ScreenRecordAskConfirmationOnAbort = false;
-        public bool ScreenRecordTransparentRegion = false;
 
         #endregion Capture / Screen recorder
 
@@ -469,8 +468,6 @@ namespace ShareX
         public AIOptions AIOptions = new AIOptions();
         public ImageEditorOptions ImageEditorOptions = new ImageEditorOptions();
         public BackgroundRemoverOptions BackgroundRemoverOptions = new BackgroundRemoverOptions();
-        public bool UseLegacyImageEditor = false;
-        public bool ShowImageEditorSelector = true;
     }
 
     public class TaskSettingsAdvanced
