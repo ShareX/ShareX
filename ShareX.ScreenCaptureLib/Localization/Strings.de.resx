@@ -394,6 +394,9 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Bereichsaufnahme</value>
   </data>
+  <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
+    <value>Bereich aufnehmen (Tab)</value>
+  </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>Modus Bereich mit fester Größe</value>
   </data>

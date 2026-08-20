@@ -394,6 +394,9 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>영역 촬영</value>
   </data>
+  <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
+    <value>직사각형 영역 촬영 (Tab)</value>
+  </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>고정 영역 크기 모드</value>
   </data>

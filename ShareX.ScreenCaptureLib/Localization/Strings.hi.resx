@@ -394,6 +394,9 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>क्षेत्र कैप्चर</value>
   </data>
+  <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
+    <value>क्षेत्र कैप्चर करें (Tab)</value>
+  </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>निश्चित आकार क्षेत्र मोड</value>
   </data>

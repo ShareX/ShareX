@@ -394,6 +394,9 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>ناحیه ضبط</value>
   </data>
+  <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
+    <value>ضبط ناحیه (Tab)</value>
+  </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>حالت ناحیه با اندازه ثابت</value>
   </data>

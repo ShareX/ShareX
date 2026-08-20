@@ -365,6 +365,9 @@ namespace ShareX.ScreenCaptureLib.Localization {
         public static string BaseRegionForm_InitializeComponent_Region_capture {
             get { return ResourceManager.GetString("BaseRegionForm_InitializeComponent_Region_capture", resourceCulture); }
         }
+        public static string RegionCaptureWindow_RectangleRegionTab {
+            get { return ResourceManager.GetString("RegionCaptureWindow_RectangleRegionTab", resourceCulture); }
+        }
         public static string ShapeManager_CreateContextMenu_Fixed_size_region_mode {
             get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Fixed_size_region_mode", resourceCulture); }
         }

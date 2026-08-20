@@ -3,6 +3,7 @@
         xmlns:views="using:ShareX.ImageEditor.Presentation.Views"
         xmlns:editorControls="using:ShareX.ImageEditor.Presentation.Controls"
         xmlns:capture="using:ShareX.ScreenCaptureLib.Presentation.RegionCapture"
+        xmlns:localization="using:ShareX.ScreenCaptureLib.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.ScreenCaptureLib.Presentation.RegionCapture.RegionCaptureWindow"
         WindowDecorations="None"
@@ -131,7 +132,7 @@
                         <Button x:Name="RegionToolButton"
                                 Classes="toolbar-button active"
                                 Click="OnRegionToolClick"
-                                ToolTip.Tip="Rectangle region"
+                                ToolTip.Tip="{x:Static localization:Strings.RegionCaptureWindow_RectangleRegionTab}"
                                 Content="{x:Static theming:LucideIcons.scan}"/>
                     </editorControls:AnnotationToolbar.MainToolbarLeadingContent>
                 </editorControls:AnnotationToolbar>
