@@ -397,9 +397,6 @@
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>직사각형 영역 촬영 (Tab)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
-    <value>고정 영역 크기 모드</value>
-  </data>
   <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
     <value>클립보드에 이미지가 없습니다</value>
   </data>
@@ -423,9 +420,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>보간 모드</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
-    <value>너비:</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>Click to 중지 recording.</value>
@@ -537,9 +531,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
     <value>뒤로 보내기</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
-    <value>높이:</value>
   </data>
   <data name="ImageCopied" xml:space="preserve">
     <value>이미지 copied</value>

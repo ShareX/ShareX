@@ -2877,21 +2877,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ShowScreenWideCrosshair", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_FixedSizeRegionMode {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_FixedSizeRegionMode", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_FixedWidth {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_FixedWidth", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_FixedHeight {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_FixedHeight", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_ScreenRecordingFPS {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_ScreenRecordingFPS", resourceCulture);
@@ -3190,16 +3175,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_InformationAndMagnifier {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_InformationAndMagnifier", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_FixedSizeAndPerformance {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_FixedSizeAndPerformance", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_SnapSizes {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_SnapSizes", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_Recording {

@@ -1408,15 +1408,6 @@
   <data name="TaskSettingsWindow_ShowScreenWideCrosshair" xml:space="preserve">
     <value>पूरी स्क्रीन का क्रॉसहेयर दिखाएँ</value>
   </data>
-  <data name="TaskSettingsWindow_FixedSizeRegionMode" xml:space="preserve">
-    <value>निश्चित आकार क्षेत्र मोड</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedWidth" xml:space="preserve">
-    <value>निश्चित चौड़ाई:</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
-    <value>निश्चित ऊँचाई:</value>
-  </data>
   <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
     <value>स्क्रीन रिकॉर्डिंग FPS:</value>
   </data>
@@ -1596,12 +1587,6 @@
   </data>
   <data name="TaskSettingsWindow_InformationAndMagnifier" xml:space="preserve">
     <value>जानकारी और आवर्धक</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedSizeAndPerformance" xml:space="preserve">
-    <value>निश्चित आकार और प्रदर्शन</value>
-  </data>
-  <data name="TaskSettingsWindow_SnapSizes" xml:space="preserve">
-    <value>स्नैप आकार</value>
   </data>
   <data name="TaskSettingsWindow_Recording" xml:space="preserve">
     <value>रिकॉर्डिंग</value>

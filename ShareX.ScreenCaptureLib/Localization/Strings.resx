@@ -397,9 +397,6 @@
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Rectangle region (Tab)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
-    <value>Fixed size region mode</value>
-  </data>
   <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
     <value>Clipboard does not contain an image.</value>
   </data>
@@ -423,9 +420,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Interpolation mode:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
-    <value>Width:</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>Click to stop recording.</value>
@@ -540,9 +534,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
     <value>Send backward</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
-    <value>Height:</value>
   </data>
   <data name="ImageCopied" xml:space="preserve">
     <value>Image copied</value>

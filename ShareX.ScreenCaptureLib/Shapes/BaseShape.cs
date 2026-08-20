@@ -226,18 +226,8 @@ namespace ShareX.ScreenCaptureLib
         public virtual void OnCreating()
         {
             PointF pos = Manager.Form.ScaledClientMousePosition;
-
-            if (Options.IsFixedSize && ShapeCategory == ShapeCategory.Region)
-            {
-                Manager.IsMoving = true;
-                Rectangle = new RectangleF(new PointF(pos.X - (Options.FixedSize.Width / 2), pos.Y - (Options.FixedSize.Height / 2)), Options.FixedSize);
-                OnCreated();
-            }
-            else
-            {
-                Manager.IsCreating = true;
-                Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
-            }
+            Manager.IsCreating = true;
+            Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
         }
 
         public virtual void OnCreated()
@@ -294,11 +284,6 @@ namespace ShareX.ScreenCaptureLib
 
                     pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, degree, startDegree).Round();
                 }
-                else if (Manager.IsSnapResizing)
-                {
-                    pos = Manager.SnapPosition(StartPosition, pos);
-                }
-
                 EndPosition = pos;
             }
             else if (Manager.IsMoving && !Manager.IsPanning)

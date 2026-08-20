@@ -901,21 +901,6 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawShapes(Graphics g)
         {
-            // Draw snap rectangles
-            if (ShapeManager.IsCreating && ShapeManager.IsSnapResizing)
-            {
-                BaseShape shape = ShapeManager.CurrentShape;
-
-                if (shape != null && shape.ShapeType != ShapeType.RegionFreehand && shape.ShapeType != ShapeType.DrawingFreehand)
-                {
-                    foreach (Size size in Options.SnapSizes)
-                    {
-                        RectangleF snapRect = CaptureHelpers.CalculateNewRectangle(shape.StartPosition, shape.EndPosition, size);
-                        g.DrawRectangleProper(markerPen, snapRect);
-                    }
-                }
-            }
-
             List<BaseShape> areas = ShapeManager.ValidRegions.ToList();
 
             if (areas.Count > 0)

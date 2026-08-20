@@ -1408,15 +1408,6 @@
   <data name="TaskSettingsWindow_ShowScreenWideCrosshair" xml:space="preserve">
     <value>إظهار علامة تقاطع على كامل الشاشة</value>
   </data>
-  <data name="TaskSettingsWindow_FixedSizeRegionMode" xml:space="preserve">
-    <value>وضع المنطقة ذات الحجم الثابت</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedWidth" xml:space="preserve">
-    <value>العرض الثابت:</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
-    <value>الارتفاع الثابت:</value>
-  </data>
   <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
     <value>FPS لتسجيل الشاشة:</value>
   </data>
@@ -1596,12 +1587,6 @@
   </data>
   <data name="TaskSettingsWindow_InformationAndMagnifier" xml:space="preserve">
     <value>المعلومات والمكبر</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedSizeAndPerformance" xml:space="preserve">
-    <value>الحجم الثابت والأداء</value>
-  </data>
-  <data name="TaskSettingsWindow_SnapSizes" xml:space="preserve">
-    <value>أحجام المحاذاة</value>
   </data>
   <data name="TaskSettingsWindow_Recording" xml:space="preserve">
     <value>التسجيل</value>

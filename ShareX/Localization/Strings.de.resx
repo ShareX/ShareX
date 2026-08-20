@@ -1408,15 +1408,6 @@
   <data name="TaskSettingsWindow_ShowScreenWideCrosshair" xml:space="preserve">
     <value>Bildschirmweites Fadenkreuz anzeigen</value>
   </data>
-  <data name="TaskSettingsWindow_FixedSizeRegionMode" xml:space="preserve">
-    <value>Bereichsmodus mit fester Größe</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedWidth" xml:space="preserve">
-    <value>Feste Breite:</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
-    <value>Feste Höhe:</value>
-  </data>
   <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
     <value>FPS der Bildschirmaufnahme:</value>
   </data>
@@ -1596,12 +1587,6 @@
   </data>
   <data name="TaskSettingsWindow_InformationAndMagnifier" xml:space="preserve">
     <value>Informationen und Lupe</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedSizeAndPerformance" xml:space="preserve">
-    <value>Feste Größe und Leistung</value>
-  </data>
-  <data name="TaskSettingsWindow_SnapSizes" xml:space="preserve">
-    <value>Einrastgrößen</value>
   </data>
   <data name="TaskSettingsWindow_Recording" xml:space="preserve">
     <value>Aufnahme</value>

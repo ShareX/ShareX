@@ -397,9 +397,6 @@
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>จับภาพ พื้นที่ (Tab)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
-    <value>โหมดพื้นที่ขนาดคงที่</value>
-  </data>
   <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
     <value>คลิปบอร์ด ไม่ มี รูปภาพ.</value>
   </data>
@@ -423,9 +420,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>โหมดการประมาณค่า:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
-    <value>ความกว้าง:</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>คลิกเพื่อ หยุด การบันทึก.</value>
@@ -540,9 +534,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
     <value>ส่งไปด้านหลัง</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
-    <value>ความสูง:</value>
   </data>
   <data name="ImageCopied" xml:space="preserve">
     <value>รูปภาพ คัดลอกแล้ว</value>

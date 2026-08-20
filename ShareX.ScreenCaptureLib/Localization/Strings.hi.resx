@@ -397,9 +397,6 @@
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>क्षेत्र कैप्चर करें (Tab)</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
-    <value>निश्चित आकार क्षेत्र मोड</value>
-  </data>
   <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
     <value>क्लिपबोर्ड में कोई छवि नहीं है।</value>
   </data>
@@ -423,9 +420,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>इंटरपोलेशन मोड:</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
-    <value>चौड़ाई:</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>रिकॉर्डिंग रोकने के लिए क्लिक करें।</value>
@@ -540,9 +534,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
     <value>पीछे भेजें</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
-    <value>ऊँचाई:</value>
   </data>
   <data name="ImageCopied" xml:space="preserve">
     <value>छवि कॉपी की गई</value>

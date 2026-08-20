@@ -1408,15 +1408,6 @@
   <data name="TaskSettingsWindow_ShowScreenWideCrosshair" xml:space="preserve">
     <value>Mostrar mira em toda a tela</value>
   </data>
-  <data name="TaskSettingsWindow_FixedSizeRegionMode" xml:space="preserve">
-    <value>Modo de região com tamanho fixo</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedWidth" xml:space="preserve">
-    <value>Largura fixa:</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
-    <value>Altura fixa:</value>
-  </data>
   <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
     <value>FPS da gravação de tela:</value>
   </data>
@@ -1596,12 +1587,6 @@
   </data>
   <data name="TaskSettingsWindow_InformationAndMagnifier" xml:space="preserve">
     <value>Informações e lupa</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedSizeAndPerformance" xml:space="preserve">
-    <value>Tamanho fixo e desempenho</value>
-  </data>
-  <data name="TaskSettingsWindow_SnapSizes" xml:space="preserve">
-    <value>Tamanhos de encaixe</value>
   </data>
   <data name="TaskSettingsWindow_Recording" xml:space="preserve">
     <value>Gravação</value>

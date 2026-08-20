@@ -1408,15 +1408,6 @@
   <data name="TaskSettingsWindow_ShowScreenWideCrosshair" xml:space="preserve">
     <value>نمایش نشانه تقاطع در سراسر صفحه</value>
   </data>
-  <data name="TaskSettingsWindow_FixedSizeRegionMode" xml:space="preserve">
-    <value>حالت ناحیه با اندازه ثابت</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedWidth" xml:space="preserve">
-    <value>عرض ثابت:</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedHeight" xml:space="preserve">
-    <value>ارتفاع ثابت:</value>
-  </data>
   <data name="TaskSettingsWindow_ScreenRecordingFPS" xml:space="preserve">
     <value>FPS ضبط صفحه:</value>
   </data>
@@ -1596,12 +1587,6 @@
   </data>
   <data name="TaskSettingsWindow_InformationAndMagnifier" xml:space="preserve">
     <value>اطلاعات و ذره‌بین</value>
-  </data>
-  <data name="TaskSettingsWindow_FixedSizeAndPerformance" xml:space="preserve">
-    <value>اندازه ثابت و کارایی</value>
-  </data>
-  <data name="TaskSettingsWindow_SnapSizes" xml:space="preserve">
-    <value>اندازه‌های چسبش</value>
   </data>
   <data name="TaskSettingsWindow_Recording" xml:space="preserve">
     <value>ضبط</value>

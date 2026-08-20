@@ -254,8 +254,6 @@ namespace ShareX.ScreenCaptureLib
         public bool IsCornerMoving { get; private set; }
         // Is holding Shift?
         public bool IsProportionalResizing { get; private set; }
-        // Is holding Alt?
-        public bool IsSnapResizing { get; private set; }
         public bool IsRenderingOutput { get; private set; }
         public PointF RenderOffset { get; private set; }
         public bool IsImageModified { get; internal set; }
@@ -589,9 +587,6 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.ShiftKey:
                     IsProportionalResizing = true;
                     break;
-                case Keys.Menu:
-                    IsSnapResizing = true;
-                    break;
                 case Keys.Left:
                     isLeftPressed = true;
                     break;
@@ -827,9 +822,6 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case Keys.ShiftKey:
                     IsProportionalResizing = false;
-                    break;
-                case Keys.Menu:
-                    IsSnapResizing = false;
                     break;
                 case Keys.Left:
                     isLeftPressed = false;
@@ -1266,32 +1258,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public PointF SnapPosition(PointF posOnClick, PointF posCurrent)
-        {
-            SizeF currentSize = CaptureHelpers.CreateRectangle(posOnClick, posCurrent).Size;
-            Vector2 vector = new Vector2(currentSize.Width, currentSize.Height);
-
-            SnapSize snapSize = (from size in Options.SnapSizes
-                                 let distance = MathHelpers.Distance(vector, new Vector2(size.Width, size.Height))
-                                 where distance > 0 && distance < RegionCaptureOptions.SnapDistance
-                                 orderby distance
-                                 select size).FirstOrDefault();
-
-            if (snapSize != null)
-            {
-                PointF posNew = CaptureHelpers.CalculateNewPosition(posOnClick, posCurrent, snapSize);
-
-                RectangleF newRect = CaptureHelpers.CreateRectangle(posOnClick, posNew);
-
-                if (Form.ClientArea.Contains(newRect.Round()))
-                {
-                    return posNew;
-                }
-            }
-
-            return posCurrent;
-        }
-
         private void UpdateCurrentHoverShape()
         {
             CurrentHoverShape = CheckHover();
@@ -1326,27 +1292,15 @@ namespace ShareX.ScreenCaptureLib
                             return null;
                     }
 
-                    if (Options.IsFixedSize && IsCurrentShapeTypeRegion)
+                    SimpleWindowInfo window = FindSelectedWindow();
+
+                    if (window != null && !window.Rectangle.IsEmpty)
                     {
-                        PointF location = Form.ScaledClientMousePosition;
+                        Rectangle hoverArea = Form.RectangleToClient(window.Rectangle);
 
                         BaseShape rectangleRegionShape = CreateShape(ShapeType.RegionRectangle);
-                        rectangleRegionShape.Rectangle = new RectangleF(new PointF(location.X - (Options.FixedSize.Width / 2),
-                            location.Y - (Options.FixedSize.Height / 2)), Options.FixedSize);
+                        rectangleRegionShape.Rectangle = Rectangle.Intersect(Form.ClientArea, hoverArea);
                         return rectangleRegionShape;
-                    }
-                    else
-                    {
-                        SimpleWindowInfo window = FindSelectedWindow();
-
-                        if (window != null && !window.Rectangle.IsEmpty)
-                        {
-                            Rectangle hoverArea = Form.RectangleToClient(window.Rectangle);
-
-                            BaseShape rectangleRegionShape = CreateShape(ShapeType.RegionRectangle);
-                            rectangleRegionShape.Rectangle = Rectangle.Intersect(Form.ClientArea, hoverArea);
-                            return rectangleRegionShape;
-                        }
                     }
                 }
             }
@@ -1518,7 +1472,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void ResetModifiers()
         {
-            IsCtrlModifier = IsCornerMoving = IsProportionalResizing = IsSnapResizing = false;
+            IsCtrlModifier = IsCornerMoving = IsProportionalResizing = false;
         }
 
         private void ClearTools()

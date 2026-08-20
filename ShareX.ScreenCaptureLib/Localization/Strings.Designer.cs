@@ -368,9 +368,6 @@ namespace ShareX.ScreenCaptureLib.Localization {
         public static string RegionCaptureWindow_RectangleRegionTab {
             get { return ResourceManager.GetString("RegionCaptureWindow_RectangleRegionTab", resourceCulture); }
         }
-        public static string ShapeManager_CreateContextMenu_Fixed_size_region_mode {
-            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Fixed_size_region_mode", resourceCulture); }
-        }
         public static string EditorStartupForm_ClipboardDoesNotContainAnImage {
             get { return ResourceManager.GetString("EditorStartupForm_ClipboardDoesNotContainAnImage", resourceCulture); }
         }
@@ -394,9 +391,6 @@ namespace ShareX.ScreenCaptureLib.Localization {
         }
         public static string ShapeManager_CreateToolbar_InterpolationMode {
             get { return ResourceManager.GetString("ShapeManager_CreateToolbar_InterpolationMode", resourceCulture); }
-        }
-        public static string ShapeManager_CreateContextMenu_Width_ {
-            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Width_", resourceCulture); }
         }
         public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_ {
             get { return ResourceManager.GetString("ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_", resourceCulture); }
@@ -508,9 +502,6 @@ namespace ShareX.ScreenCaptureLib.Localization {
         }
         public static string ShapeManager_CreateToolbar_SendBackward {
             get { return ResourceManager.GetString("ShapeManager_CreateToolbar_SendBackward", resourceCulture); }
-        }
-        public static string ShapeManager_CreateContextMenu_Height_ {
-            get { return ResourceManager.GetString("ShapeManager_CreateContextMenu_Height_", resourceCulture); }
         }
         public static string ImageCopied {
             get { return ResourceManager.GetString("ImageCopied", resourceCulture); }

@@ -390,42 +390,6 @@ internal sealed class TaskSettingsPageBuilder
         BindEnabled(pixelCount, magnifier);
         BindEnabled(pixelSize, magnifier);
 
-        BoundValue<bool> fixedSize = new(options.IsFixedSize, value => options.IsFixedSize = value);
-        NumericUpDown fixedWidth = Number(() => options.FixedSize.Width, value => options.FixedSize = new DrawingSize((int)value, options.FixedSize.Height), 1, 100000);
-        NumericUpDown fixedHeight = Number(() => options.FixedSize.Height, value => options.FixedSize = new DrawingSize(options.FixedSize.Width, (int)value), 1, 100000);
-        BindEnabled(fixedWidth, fixedSize);
-        BindEnabled(fixedHeight, fixedSize);
-
-        ObservableCollection<SnapSize> snapSizes = new(options.SnapSizes);
-        ListBox snapList = new() { ItemsSource = snapSizes, MaxHeight = 125 };
-        snapList.Classes.Add("settings-list");
-        NumericUpDown snapWidth = Number(() => 640, _ => { }, 1, 100000);
-        NumericUpDown snapHeight = Number(() => 360, _ => { }, 1, 100000);
-        Button addSnap = Button(Strings.TaskSettingsWindow_Add, () =>
-        {
-            SnapSize size = new((int)(snapWidth.Value ?? 640), (int)(snapHeight.Value ?? 360));
-            options.SnapSizes.Add(size);
-            snapSizes.Add(size);
-            snapList.SelectedItem = size;
-        });
-        Button removeSnap = Button(Strings.TaskSettingsWindow_Remove, () =>
-        {
-            if (snapList.SelectedItem is SnapSize size)
-            {
-                options.SnapSizes.Remove(size);
-                snapSizes.Remove(size);
-            }
-        });
-
-        StackPanel snapEditor = new() { Spacing = 4 };
-        snapEditor.Children.Add(snapList);
-        snapEditor.Children.Add(new StackPanel
-        {
-            Orientation = Orientation.Horizontal,
-            Spacing = 6,
-            Children = { Label("Width:"), snapWidth, Label("Height:"), snapHeight, addSnap, removeSnap }
-        });
-
         return Page("capture-region", Strings.TaskSettingsWindow_RegionCapture, LucideIcons.crop,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Selection,
                 Check(Strings.TaskSettingsWindow_UseMultiRegionMode, () => !options.QuickCrop, value => options.QuickCrop = !value),
@@ -444,11 +408,7 @@ internal sealed class TaskSettingsPageBuilder
                 Row(Strings.TaskSettingsWindow_MagnifierPixelCount, pixelCount),
                 Row(Strings.TaskSettingsWindow_MagnifierPixelSize, pixelSize),
                 Check(Strings.TaskSettingsWindow_ShowCenterCrosshair, () => options.ShowCenterCrosshair, value => options.ShowCenterCrosshair = value),
-                Check(Strings.TaskSettingsWindow_ShowScreenWideCrosshair, () => options.ShowCrosshair, value => options.ShowCrosshair = value)),
-            EnabledCard(_captureOverride, Strings.TaskSettingsWindow_FixedSizeAndPerformance,
-                Check(Strings.TaskSettingsWindow_FixedSizeRegionMode, fixedSize),
-                Row(Strings.TaskSettingsWindow_FixedWidth, fixedWidth), Row(Strings.TaskSettingsWindow_FixedHeight, fixedHeight)),
-            EnabledCard(_captureOverride, Strings.TaskSettingsWindow_SnapSizes, snapEditor));
+                Check(Strings.TaskSettingsWindow_ShowScreenWideCrosshair, () => options.ShowCrosshair, value => options.ShowCrosshair = value)));
     }
 
     private Control BuildScreenRecorderPage()

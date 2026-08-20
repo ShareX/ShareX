@@ -1065,25 +1065,6 @@ namespace ShareX.ScreenCaptureLib
             tsmiEnableAnimations.Click += (sender, e) => Options.EnableAnimations = tsmiEnableAnimations.Checked;
             tsddbOptions.DropDownItems.Add(tsmiEnableAnimations);
 
-            if (!Form.IsEditorMode)
-            {
-                ToolStripMenuItem tsmiFixedSize = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_Fixed_size_region_mode);
-                tsmiFixedSize.Checked = Options.IsFixedSize;
-                tsmiFixedSize.CheckOnClick = true;
-                tsmiFixedSize.Click += (sender, e) => Options.IsFixedSize = tsmiFixedSize.Checked;
-                tsddbOptions.DropDownItems.Add(tsmiFixedSize);
-
-                ToolStripDoubleLabeledNumericUpDown tslnudFixedSize = new ToolStripDoubleLabeledNumericUpDown(Strings.ShapeManager_CreateContextMenu_Width_,
-                    Strings.ShapeManager_CreateContextMenu_Height_);
-                tslnudFixedSize.Content.Minimum = 10;
-                tslnudFixedSize.Content.Maximum = 10000;
-                tslnudFixedSize.Content.Increment = 10;
-                tslnudFixedSize.Content.Value = Options.FixedSize.Width;
-                tslnudFixedSize.Content.Value2 = Options.FixedSize.Height;
-                tslnudFixedSize.Content.ValueChanged = (sender, e) => Options.FixedSize = new Size((int)tslnudFixedSize.Content.Value, (int)tslnudFixedSize.Content.Value2);
-                tsddbOptions.DropDownItems.Add(tslnudFixedSize);
-            }
-
             ToolStripMenuItem tsmiSwitchToDrawingToolAfterSelection = new ToolStripMenuItem(Strings.ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection);
             tsmiSwitchToDrawingToolAfterSelection.Checked = Options.SwitchToDrawingToolAfterSelection;
             tsmiSwitchToDrawingToolAfterSelection.CheckOnClick = true;

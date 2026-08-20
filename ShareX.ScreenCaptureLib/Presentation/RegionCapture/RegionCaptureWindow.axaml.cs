@@ -580,14 +580,6 @@ public partial class RegionCaptureWindow : Window
         {
             _interaction = RegionInteraction.Moving;
         }
-        else if (_request.CaptureOptions.IsFixedSize)
-        {
-            Size fixedSize = new Size(_request.CaptureOptions.FixedSize.Width, _request.CaptureOptions.FixedSize.Height);
-            Point first = new Point(point.X - fixedSize.Width / 2, point.Y - fixedSize.Height / 2);
-            Point second = new Point(first.X + fixedSize.Width, first.Y + fixedSize.Height);
-            SetSelection(RegionSelectionOverlay.NormalizeAndClamp(first, second, GetImageSize()), null);
-            _interaction = RegionInteraction.Fixed;
-        }
         else if (RegionSelectionOverlay.IsValid(_regionOverlay.HoverRectangle))
         {
             SetSelection(_regionOverlay.HoverRectangle, _hoverCandidate);
@@ -734,7 +726,7 @@ public partial class RegionCaptureWindow : Window
     {
         PointerUpdateKind updateKind = e.GetCurrentPoint(_regionInputSurface).Properties.PointerUpdateKind;
         if (updateKind is not PointerUpdateKind.RightButtonPressed and not PointerUpdateKind.RightButtonReleased ||
-            _interaction is not (RegionInteraction.Creating or RegionInteraction.PendingHover or RegionInteraction.Fixed))
+            _interaction is not (RegionInteraction.Creating or RegionInteraction.PendingHover))
         {
             return false;
         }
@@ -1559,7 +1551,6 @@ public partial class RegionCaptureWindow : Window
         PendingHover,
         Creating,
         Moving,
-        Resizing,
-        Fixed
+        Resizing
     }
 }
