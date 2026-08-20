@@ -198,6 +198,14 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
+        if (_regionToolActive && _interaction == RegionInteraction.Creating &&
+            (e.Key is Key.LeftShift or Key.RightShift))
+        {
+            UpdateSelectionDuringCreation(_lastCreationPoint, e.KeyModifiers | KeyModifiers.Shift);
+            e.Handled = true;
+            return;
+        }
+
         if (_regionToolActive && e.Key == Key.Enter && HasValidSelection())
         {
             e.Handled = true;
@@ -247,6 +255,14 @@ public partial class RegionCaptureWindow : Window
         {
             _isMovingSelectionDuringCreation = false;
             _wasControlHeldDuringCreation = false;
+        }
+
+        if (_keyboardInputEnabled && !_closing && _request != null && _regionToolActive &&
+            _interaction == RegionInteraction.Creating && (e.Key is Key.LeftShift or Key.RightShift))
+        {
+            UpdateSelectionDuringCreation(_lastCreationPoint, e.KeyModifiers & ~KeyModifiers.Shift);
+            e.Handled = true;
+            return;
         }
 
         if (e.Key != Key.Escape || e.KeyModifiers != KeyModifiers.None || _closing)
