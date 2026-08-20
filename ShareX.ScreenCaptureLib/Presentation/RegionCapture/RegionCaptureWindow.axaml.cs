@@ -308,6 +308,7 @@ public partial class RegionCaptureWindow : Window
         _regionInputSurface.Width = _imageWidth;
         _regionInputSurface.Height = _imageHeight;
         _regionOverlay.DimAlpha = GetDimAlpha(_request.CaptureOptions);
+        _regionOverlay.ShowCenterCrosshair = _request.CaptureOptions.ShowCenterCrosshair;
         _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(GetInitialScaling());
 
         _magnifierView.IsVisible = _request.CaptureOptions.ShowMagnifier;

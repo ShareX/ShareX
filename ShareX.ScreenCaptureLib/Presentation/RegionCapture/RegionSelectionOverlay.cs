@@ -36,10 +36,12 @@ public sealed class RegionSelectionOverlay : Control
         new DashStyle([5, 5], 0));
     private static readonly IBrush HandleFill = Brushes.White;
     private static readonly IPen HandleBorder = new Pen(Brushes.Black, 1);
+    private static readonly IPen CenterCrosshairShadowPen = new Pen(Brushes.Black, 1);
 
     private Rect _selectionRectangle;
     private Rect _hoverRectangle;
     private bool _showHandles;
+    private bool _showCenterCrosshair;
     private byte _dimAlpha = 51;
     private IBrush _dimBrush = new SolidColorBrush(Color.FromArgb(51, 0, 0, 0));
 
@@ -93,6 +95,19 @@ public sealed class RegionSelectionOverlay : Control
         }
     }
 
+    public bool ShowCenterCrosshair
+    {
+        get => _showCenterCrosshair;
+        set
+        {
+            if (_showCenterCrosshair != value)
+            {
+                _showCenterCrosshair = value;
+                InvalidateVisual();
+            }
+        }
+    }
+
     public byte DimAlpha
     {
         get => _dimAlpha;
@@ -140,6 +155,11 @@ public sealed class RegionSelectionOverlay : Control
             Math.Max(0, active.Height - 1));
         DrawAntRectangle(context, antRectangle);
 
+        if (ShowCenterCrosshair && IsValid(SelectionRectangle))
+        {
+            DrawCenterCrosshair(context, SelectionRectangle);
+        }
+
         if (ShowHandles && IsValid(SelectionRectangle))
         {
             foreach (Point point in GetHandlePoints(SelectionRectangle))
@@ -158,6 +178,20 @@ public sealed class RegionSelectionOverlay : Control
         context.DrawLine(AntDashPen, rectangle.TopLeft, rectangle.BottomLeft);
         context.DrawLine(AntDashPen, rectangle.TopRight, rectangle.BottomRight);
         context.DrawLine(AntDashPen, rectangle.BottomLeft, rectangle.BottomRight);
+    }
+
+    private void DrawCenterCrosshair(DrawingContext context, Rect rectangle)
+    {
+        const double crossSize = 10;
+        Point center = rectangle.Center;
+        DrawCross(context, CenterCrosshairShadowPen, new Point(center.X - 1, center.Y - 1), crossSize);
+        DrawCross(context, new Pen(AccentBrush, 1), center, crossSize);
+    }
+
+    private static void DrawCross(DrawingContext context, IPen pen, Point center, double size)
+    {
+        context.DrawLine(pen, new Point(center.X - size, center.Y), new Point(center.X + size, center.Y));
+        context.DrawLine(pen, new Point(center.X, center.Y - size), new Point(center.X, center.Y + size));
     }
 
     public RegionResizeHandle HitTestHandle(Point point, double tolerance = 10)
