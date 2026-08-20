@@ -76,6 +76,7 @@ public partial class RegionCaptureWindow : Window
     private RegionResizeHandle _resizeHandle;
     private Point _pressPoint;
     private Point _lastPointerPoint;
+    private Point _lastCreationPoint;
     private Rect _interactionStartRectangle;
     private readonly TranslateTransform _magnifierTransform = new();
     private double _captureToolbarCenterX = double.NaN;
@@ -85,6 +86,8 @@ public partial class RegionCaptureWindow : Window
     private int _imageHeight;
     private bool _regionToolActive = true;
     private bool _keyboardInputEnabled;
+    private bool _isMovingSelectionDuringCreation;
+    private bool _wasControlHeldDuringCreation;
     private bool _suppressNextRightButtonReleaseAction;
     private bool _annotationRightButtonPressed;
     private bool _workspaceOwnsScreenshot;
@@ -238,6 +241,13 @@ public partial class RegionCaptureWindow : Window
     protected override void OnKeyUp(KeyEventArgs e)
     {
         base.OnKeyUp(e);
+
+        if ((_interaction is RegionInteraction.Creating or RegionInteraction.PendingHover) &&
+            (e.Key is Key.LeftCtrl or Key.RightCtrl))
+        {
+            _isMovingSelectionDuringCreation = false;
+            _wasControlHeldDuringCreation = false;
+        }
 
         if (e.Key != Key.Escape || e.KeyModifiers != KeyModifiers.None || _closing)
         {
@@ -574,6 +584,13 @@ public partial class RegionCaptureWindow : Window
             _interaction = RegionInteraction.Creating;
         }
 
+        if (_interaction is RegionInteraction.Creating or RegionInteraction.PendingHover)
+        {
+            _lastCreationPoint = point;
+            _isMovingSelectionDuringCreation = false;
+            _wasControlHeldDuringCreation = e.KeyModifiers.HasFlag(KeyModifiers.Control);
+        }
+
         _regionOverlay.ShowHandles = false;
         e.Pointer.Capture(_regionInputSurface);
         e.Handled = true;
@@ -611,11 +628,12 @@ public partial class RegionCaptureWindow : Window
                 {
                     _interaction = RegionInteraction.Creating;
                     _selectedCandidate = null;
-                    SetSelection(RegionSelectionOverlay.NormalizeAndClamp(_pressPoint, point, GetImageSize()), null);
+                    SetSelection(default, null);
+                    UpdateSelectionDuringCreation(point, e.KeyModifiers);
                 }
                 break;
             case RegionInteraction.Creating:
-                SetSelection(RegionSelectionOverlay.NormalizeAndClamp(_pressPoint, point, GetImageSize()), null);
+                UpdateSelectionDuringCreation(point, e.KeyModifiers);
                 break;
             case RegionInteraction.Moving:
                 MoveSelection(point.X - _pressPoint.X, point.Y - _pressPoint.Y, _interactionStartRectangle);
@@ -668,6 +686,7 @@ public partial class RegionCaptureWindow : Window
         e.Pointer.Capture(null);
         _interaction = RegionInteraction.None;
         _resizeHandle = RegionResizeHandle.None;
+        ResetCreationModifiers();
 
         Rect selection = _regionOverlay.SelectionRectangle;
         if (selection.Width < _request.CaptureOptions.MinimumSize || selection.Height < _request.CaptureOptions.MinimumSize)
@@ -947,6 +966,7 @@ public partial class RegionCaptureWindow : Window
     private void ClearSelection()
     {
         _interaction = RegionInteraction.None;
+        ResetCreationModifiers();
         _selectedCandidate = null;
         _regionOverlay.SelectionRectangle = default;
         _regionOverlay.ShowHandles = false;
@@ -965,6 +985,65 @@ public partial class RegionCaptureWindow : Window
         double x = Math.Clamp(source.X + dx, 0, Math.Max(0, bounds.Width - source.Width));
         double y = Math.Clamp(source.Y + dy, 0, Math.Max(0, bounds.Height - source.Height));
         SetSelection(new Rect(x, y, source.Width, source.Height), null);
+    }
+
+    private void UpdateSelectionDuringCreation(Point point, KeyModifiers modifiers)
+    {
+        bool controlHeld = modifiers.HasFlag(KeyModifiers.Control);
+        if (!controlHeld)
+        {
+            _isMovingSelectionDuringCreation = false;
+        }
+        else if (RegionSelectionOverlay.IsValid(_regionOverlay.SelectionRectangle) &&
+            (_isMovingSelectionDuringCreation || !_wasControlHeldDuringCreation))
+        {
+            MoveSelectionDuringCreation(point);
+            _isMovingSelectionDuringCreation = true;
+            _lastCreationPoint = point;
+            _wasControlHeldDuringCreation = true;
+            return;
+        }
+
+        bool constrainToSquare = modifiers.HasFlag(KeyModifiers.Shift);
+        SetSelection(CreateSelectionRectangle(_pressPoint, point, GetImageSize(), constrainToSquare), null);
+        _lastCreationPoint = point;
+        _wasControlHeldDuringCreation = controlHeld;
+    }
+
+    private void MoveSelectionDuringCreation(Point point)
+    {
+        Rect before = _regionOverlay.SelectionRectangle;
+        MoveSelection(point.X - _lastCreationPoint.X, point.Y - _lastCreationPoint.Y, before);
+        Rect after = _regionOverlay.SelectionRectangle;
+        _pressPoint = ClampPoint(new Point(
+            _pressPoint.X + after.X - before.X,
+            _pressPoint.Y + after.Y - before.Y));
+    }
+
+    private static Rect CreateSelectionRectangle(Point first, Point second, Size bounds, bool constrainToSquare)
+    {
+        if (!constrainToSquare)
+        {
+            return RegionSelectionOverlay.NormalizeAndClamp(first, second, bounds);
+        }
+
+        double deltaX = second.X - first.X;
+        double deltaY = second.Y - first.Y;
+        double side = Math.Max(Math.Abs(deltaX), Math.Abs(deltaY));
+        double availableWidth = deltaX < 0 ? first.X : bounds.Width - first.X;
+        double availableHeight = deltaY < 0 ? first.Y : bounds.Height - first.Y;
+        side = Math.Max(0, Math.Min(side, Math.Min(availableWidth, availableHeight)));
+
+        Point constrained = new(
+            first.X + (deltaX < 0 ? -side : side),
+            first.Y + (deltaY < 0 ? -side : side));
+        return RegionSelectionOverlay.NormalizeAndClamp(first, constrained, bounds);
+    }
+
+    private void ResetCreationModifiers()
+    {
+        _isMovingSelectionDuringCreation = false;
+        _wasControlHeldDuringCreation = false;
     }
 
     private void ResizeSelection(Point point)
