@@ -36,7 +36,6 @@ public sealed class RegionSelectionOverlay : Control
         new DashStyle([5, 5], 0));
     private static readonly IBrush HandleFill = Brushes.White;
     private static readonly IPen HandleBorder = new Pen(Brushes.Black, 1);
-    private static readonly IPen CenterCrosshairShadowPen = new Pen(Brushes.Black, 1);
 
     private Rect _selectionRectangle;
     private Rect _hoverRectangle;
@@ -182,16 +181,19 @@ public sealed class RegionSelectionOverlay : Control
 
     private void DrawCenterCrosshair(DrawingContext context, Rect rectangle)
     {
-        const double crossSize = 10;
         Point center = rectangle.Center;
-        DrawCross(context, CenterCrosshairShadowPen, new Point(center.X - 1, center.Y - 1), crossSize);
-        DrawCross(context, new Pen(AccentBrush, 1), center, crossSize);
+        int centerX = (int)Math.Floor(center.X);
+        int centerY = (int)Math.Floor(center.Y);
+        DrawPixelCross(context, Brushes.Black, centerX - 1, centerY - 1);
+        DrawPixelCross(context, AccentBrush, centerX, centerY);
     }
 
-    private static void DrawCross(DrawingContext context, IPen pen, Point center, double size)
+    private static void DrawPixelCross(DrawingContext context, IBrush brush, int centerX, int centerY)
     {
-        context.DrawLine(pen, new Point(center.X - size, center.Y), new Point(center.X + size, center.Y));
-        context.DrawLine(pen, new Point(center.X, center.Y - size), new Point(center.X, center.Y + size));
+        const int radius = 10;
+        const int diameter = radius * 2 + 1;
+        context.DrawRectangle(brush, null, new Rect(centerX - radius, centerY, diameter, 1));
+        context.DrawRectangle(brush, null, new Rect(centerX, centerY - radius, 1, diameter));
     }
 
     public RegionResizeHandle HitTestHandle(Point point, double tolerance = 10)
