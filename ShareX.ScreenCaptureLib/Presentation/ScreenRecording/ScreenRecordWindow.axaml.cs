@@ -374,7 +374,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                     Hide();
                     _trayMenu.Enabled = false;
                     SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Encoding___);
-                    SetTrayIcon(Properties.Resources.camcorder__pencil.ToIcon());
+                    SetTrayIcon(LucideTrayIcon.CreateIcon(LucideIcons.file_video_camera));
                     break;
             }
         });
@@ -406,12 +406,12 @@ public partial class ScreenRecordWindow : Window, IDisposable
                     {
                         return;
                     }
-                    icon = Properties.Resources.camcorder__pencil.ToIcon();
+                    icon = LucideTrayIcon.CreateIcon(LucideIcons.file_video_camera);
                 }
             }
             else
             {
-                icon = Properties.Resources.camcorder__pencil.ToIcon();
+                icon = LucideTrayIcon.CreateIcon(LucideIcons.file_video_camera);
             }
 
             SetTrayIcon(icon);

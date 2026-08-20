@@ -230,7 +230,7 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         RectangleRegion,
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
-        CustomRegion = 17,
+        CustomRegion,
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         LastRegion,
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]

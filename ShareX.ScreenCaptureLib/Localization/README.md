@@ -9,7 +9,7 @@ ScreenCaptureLib uses the shared `Strings.resx` catalog in this directory for al
 | Scrolling capture windows | `ScrollingCaptureWindow_` | 27 | Complete |
 | Region capture | `BaseRegionForm_`, `RegionCaptureWindow_` | 2 | Complete |
 
-All catalog keys are available in all supported cultures. Remaining WinForms views retain their form-specific `.resx` catalogs, while `Properties/Resources.resx` is limited to bitmap and cursor assets.
+All catalog keys are available in all supported cultures. Remaining WinForms views retain their form-specific `.resx` catalogs.
 
 Run validation from the repository root:
 
