@@ -227,14 +227,14 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        if (_regionToolActive && HasValidSelection() && e.Key is Key.Left or Key.Right or Key.Up or Key.Down)
+        if (_regionToolActive && e.Key is Key.Left or Key.Right or Key.Up or Key.Down)
         {
-            double distance = e.KeyModifiers.HasFlag(KeyModifiers.Shift)
+            int distance = e.KeyModifiers.HasFlag(KeyModifiers.Shift)
                 ? RegionCaptureOptions.MoveSpeedMaximum
                 : RegionCaptureOptions.MoveSpeedMinimum;
-            double dx = e.Key == Key.Left ? -distance : e.Key == Key.Right ? distance : 0;
-            double dy = e.Key == Key.Up ? -distance : e.Key == Key.Down ? distance : 0;
-            MoveSelection(dx, dy);
+            int dx = e.Key == Key.Left ? -distance : e.Key == Key.Right ? distance : 0;
+            int dy = e.Key == Key.Up ? -distance : e.Key == Key.Down ? distance : 0;
+            System.Windows.Forms.Cursor.Position = System.Windows.Forms.Cursor.Position.Add(dx, dy);
             e.Handled = true;
             return;
         }
