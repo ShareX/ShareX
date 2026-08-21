@@ -86,6 +86,10 @@ internal sealed class DestinationSettingsPageBuilder
         {
             cards.Add(BuildBoxFolderCard());
         }
+        else if (definition.Id == "amazon-s3")
+        {
+            cards.AddRange(BuildAmazonS3Cards());
+        }
 
         List<Control> simpleEditors = [];
         foreach (PropertyInfo property in properties)
@@ -132,6 +136,122 @@ internal sealed class DestinationSettingsPageBuilder
         }
 
         return Page(definition.Id, definition.Title, icon, cards.ToArray());
+    }
+
+    private IEnumerable<Control> BuildAmazonS3Cards()
+    {
+        AmazonS3Settings settings = _config.AmazonS3Settings;
+        TextBlock preview = Hint(string.Empty);
+
+        void UpdatePreview()
+        {
+            preview.Text = new AmazonS3(settings).GetPreviewURL();
+        }
+
+        TextBox accessKey = Text(() => settings.AccessKeyID, value => settings.AccessKeyID = value);
+        Button accessKeyOpen = Button("...", () =>
+            URLHelpers.OpenURL("https://console.aws.amazon.com/iam/home?#security_credential"));
+
+        TextBox secretKey = Text(() => settings.SecretAccessKey, value => settings.SecretAccessKey = value);
+        secretKey.PasswordChar = '●';
+
+        TextBox endpoint = Text(() => settings.Endpoint, value =>
+        {
+            settings.Endpoint = value;
+            UpdatePreview();
+        });
+        TextBox region = Text(() => settings.Region, value =>
+        {
+            settings.Region = value;
+            UpdatePreview();
+        });
+
+        ComboBox endpoints = new() { ItemsSource = AmazonS3.Endpoints };
+        endpoints.Classes.Add("form-control");
+        endpoints.SelectedItem = AmazonS3.Endpoints.FirstOrDefault(x =>
+            x.Endpoint.Equals(settings.Endpoint, StringComparison.OrdinalIgnoreCase));
+        endpoints.SelectionChanged += (_, _) =>
+        {
+            if (endpoints.SelectedItem is AmazonS3Endpoint selected)
+            {
+                ((DestinationValue<string>)endpoint.DataContext!).Value = selected.Endpoint;
+                ((DestinationValue<string>)region.DataContext!).Value = selected.Region;
+            }
+        };
+
+        TextBox bucket = Text(() => settings.Bucket, value =>
+        {
+            settings.Bucket = value;
+            UpdatePreview();
+        });
+        Button bucketOpen = Button("...", () => URLHelpers.OpenURL("https://console.aws.amazon.com/s3/home"));
+
+        TextBox objectPrefix = Text(() => settings.ObjectPrefix, value =>
+        {
+            settings.ObjectPrefix = value;
+            UpdatePreview();
+        });
+        TextBox customDomain = Text(() => settings.CustomDomain, value =>
+        {
+            settings.CustomDomain = value;
+            UpdatePreview();
+        });
+        customDomain.IsEnabled = settings.UseCustomCNAME;
+        CheckBox useCustomDomain = Check(FormatLabel(nameof(settings.UseCustomCNAME)), () => settings.UseCustomCNAME, value =>
+        {
+            settings.UseCustomCNAME = value;
+            customDomain.IsEnabled = value;
+            UpdatePreview();
+        });
+
+        CheckBox usePathStyle = Check(FormatLabel(nameof(settings.UsePathStyle)), () => settings.UsePathStyle,
+            value => settings.UsePathStyle = value);
+        ComboBox storageClass = EnumCombo(typeof(AmazonS3StorageClass), settings.StorageClass,
+            value => settings.StorageClass = (AmazonS3StorageClass)value);
+        Button storageClassHelp = Button("?", () => URLHelpers.OpenURL("https://aws.amazon.com/s3/storage-classes/"));
+        CheckBox signedPayload = Check(FormatLabel(nameof(settings.SignedPayload)), () => settings.SignedPayload,
+            value => settings.SignedPayload = value);
+        CheckBox publicAcl = Check(FormatLabel(nameof(settings.SetPublicACL)), () => settings.SetPublicACL,
+            value => settings.SetPublicACL = value);
+        CheckBox removeImageExtension = Check(FormatLabel("Image"), () => settings.RemoveExtensionImage, value =>
+        {
+            settings.RemoveExtensionImage = value;
+            UpdatePreview();
+        });
+        CheckBox removeVideoExtension = Check(FormatLabel("Video"), () => settings.RemoveExtensionVideo, value =>
+        {
+            settings.RemoveExtensionVideo = value;
+            UpdatePreview();
+        });
+        CheckBox removeTextExtension = Check(FormatLabel("Text"), () => settings.RemoveExtensionText, value =>
+        {
+            settings.RemoveExtensionText = value;
+            UpdatePreview();
+        });
+
+        UpdatePreview();
+        Grid previewRow = Row(FormatLabel("URLPreview") + ":", preview);
+        previewRow.Margin = new Thickness(0, 6, 0, 0);
+
+        yield return Card(Localization.Strings.DestinationSettings_Settings,
+            Row(FormatLabel(nameof(settings.AccessKeyID)) + ":", EditorWithButton(accessKey, accessKeyOpen)),
+            Row(FormatLabel(nameof(settings.SecretAccessKey)) + ":", secretKey),
+            Row(FormatLabel("Endpoints") + ":", endpoints),
+            Row(FormatLabel(nameof(settings.Endpoint)) + ":", endpoint),
+            Row(FormatLabel(nameof(settings.Region)) + ":", region),
+            Row(FormatLabel(nameof(settings.Bucket)) + ":", EditorWithButton(bucket, bucketOpen)),
+            Row(FormatLabel(nameof(settings.ObjectPrefix)) + ":", objectPrefix),
+            useCustomDomain,
+            Row(FormatLabel(nameof(settings.CustomDomain)) + ":", customDomain),
+            previewRow);
+
+        yield return Card(FormatLabel("Advanced"),
+            Row(FormatLabel(nameof(settings.StorageClass)) + ":", EditorWithButton(storageClass, storageClassHelp)),
+            signedPayload,
+            publicAcl,
+            usePathStyle,
+            Row(FormatLabel("RemoveFileExtensionOn") + ":",
+                HorizontalControls(removeImageExtension, removeVideoExtension, removeTextExtension)));
     }
 
     private Control BuildImgurAlbumsCard()
@@ -588,6 +708,7 @@ internal sealed class DestinationSettingsPageBuilder
             "lobfile" => member.Name == nameof(UploadersConfig.LithiioSettings),
             "onedrive" => member.Name == nameof(UploadersConfig.OneDriveV2SelectedFolder),
             "box" => member.Name == nameof(UploadersConfig.BoxSelectedFolder),
+            "amazon-s3" => member.Name == nameof(UploadersConfig.AmazonS3Settings),
             _ => false
         };
     }
@@ -681,6 +802,22 @@ internal sealed class DestinationSettingsPageBuilder
         Grid row = new() { ColumnDefinitions = new ColumnDefinitions("210,*"), ColumnSpacing = 8 };
         row.Children.Add(new TextBlock { Text = label, FontWeight = FontWeight.Normal, VerticalAlignment = VerticalAlignment.Center });
         Grid.SetColumn(editor, 1); row.Children.Add(editor); return row;
+    }
+
+    private static Grid EditorWithButton(Control editor, Button button)
+    {
+        Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("*,Auto"), ColumnSpacing = 6 };
+        grid.Children.Add(editor);
+        Grid.SetColumn(button, 1);
+        grid.Children.Add(button);
+        return grid;
+    }
+
+    private static StackPanel HorizontalControls(params Control[] controls)
+    {
+        StackPanel panel = new() { Orientation = Orientation.Horizontal, Spacing = 12 };
+        foreach (Control control in controls) panel.Children.Add(control);
+        return panel;
     }
 
     internal static CheckBox Check(string text, Func<bool> getter, Action<bool> setter)
