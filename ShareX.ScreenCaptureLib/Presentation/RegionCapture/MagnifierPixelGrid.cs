@@ -80,10 +80,10 @@ public sealed class MagnifierPixelGrid : Control
 
         using (context.PushOpacity(75d / byte.MaxValue))
         {
-            DrawPhysicalRectangle(context, AccentBrush, left, centerTop, centerLeft, centerBottom, originPhysicalX, originPhysicalY, scale);
-            DrawPhysicalRectangle(context, AccentBrush, centerRight, centerTop, right, centerBottom, originPhysicalX, originPhysicalY, scale);
-            DrawPhysicalRectangle(context, AccentBrush, centerLeft, top, centerRight, centerTop, originPhysicalX, originPhysicalY, scale);
-            DrawPhysicalRectangle(context, AccentBrush, centerLeft, centerBottom, centerRight, bottom, originPhysicalX, originPhysicalY, scale);
+            DrawPhysicalRectangle(context, AccentBrush, left, centerTop, centerLeft, centerBottom - 1, originPhysicalX, originPhysicalY, scale);
+            DrawPhysicalRectangle(context, AccentBrush, centerRight, centerTop, right, centerBottom - 1, originPhysicalX, originPhysicalY, scale);
+            DrawPhysicalRectangle(context, AccentBrush, centerLeft, top, centerRight - 1, centerTop, originPhysicalX, originPhysicalY, scale);
+            DrawPhysicalRectangle(context, AccentBrush, centerLeft, centerBottom, centerRight - 1, bottom, originPhysicalX, originPhysicalY, scale);
         }
 
         for (int index = 1; index < count; index++)
