@@ -230,8 +230,6 @@ internal sealed class DestinationSettingsPageBuilder
         });
 
         UpdatePreview();
-        Grid previewRow = Row(FormatLabel("URLPreview") + ":", preview);
-        previewRow.Margin = new Thickness(0, 6, 0, 0);
 
         yield return Card(Localization.Strings.DestinationSettings_Settings,
             Row(FormatLabel(nameof(settings.AccessKeyID)) + ":", EditorWithButton(accessKey, accessKeyOpen)),
@@ -243,7 +241,7 @@ internal sealed class DestinationSettingsPageBuilder
             Row(FormatLabel(nameof(settings.ObjectPrefix)) + ":", objectPrefix),
             useCustomDomain,
             Row(FormatLabel(nameof(settings.CustomDomain)) + ":", customDomain),
-            previewRow);
+            PreviewRow(preview));
 
         yield return Card(FormatLabel("Advanced"),
             Row(FormatLabel(nameof(settings.StorageClass)) + ":", EditorWithButton(storageClass, storageClassHelp)),
@@ -466,10 +464,10 @@ internal sealed class DestinationSettingsPageBuilder
             Row(Localization.Strings.DestinationSettings_Browser_status, browseStatus));
     }
 
-    private Control EditorRow(object owner, DestinationMember member, string label)
+    private Control EditorRow(object owner, DestinationMember member, string label, Action? valueChanged = null)
     {
         Type type = Nullable.GetUnderlyingType(member.ValueType) ?? member.ValueType;
-        Control editor = CreateEditor(owner, member, type, label);
+        Control editor = CreateEditor(owner, member, type, label, valueChanged);
         string? description = member.GetAttribute<DescriptionAttribute>()?.Description;
 
         Control row = type == typeof(bool) ? editor : Row(label + ":", editor);
@@ -481,18 +479,26 @@ internal sealed class DestinationSettingsPageBuilder
         return row;
     }
 
-    private Control CreateEditor(object owner, DestinationMember member, Type type, string label)
+    private Control CreateEditor(object owner, DestinationMember member, Type type, string label, Action? valueChanged)
     {
         if (type == typeof(bool))
         {
-            return Check(label, () => Convert.ToBoolean(member.GetValue(owner)), value => member.SetValue(owner, value));
+            return Check(label, () => Convert.ToBoolean(member.GetValue(owner)), value =>
+            {
+                member.SetValue(owner, value);
+                valueChanged?.Invoke();
+            });
         }
 
         if (type == typeof(string))
         {
             TextBox text = Text(
                 () => member.GetValue(owner)?.ToString() ?? string.Empty,
-                value => member.SetValue(owner, value));
+                value =>
+                {
+                    member.SetValue(owner, value);
+                    valueChanged?.Invoke();
+                });
             if (IsSecret(member))
             {
                 text.PasswordChar = '●';
@@ -502,7 +508,11 @@ internal sealed class DestinationSettingsPageBuilder
 
         if (type.IsEnum)
         {
-            return EnumCombo(type, member.GetValue(owner), value => member.SetValue(owner, value));
+            return EnumCombo(type, member.GetValue(owner), value =>
+            {
+                member.SetValue(owner, value);
+                valueChanged?.Invoke();
+            });
         }
 
         if (type == typeof(int) && TryCreateSelectionEditor(owner, member, out ComboBox selectionEditor))
@@ -513,14 +523,22 @@ internal sealed class DestinationSettingsPageBuilder
         if (IsNumericType(type))
         {
             decimal current = Convert.ToDecimal(member.GetValue(owner) ?? 0);
-            return Number(current, value => member.SetValue(owner, ConvertNumeric(value, type)), type);
+            return Number(current, value =>
+            {
+                member.SetValue(owner, ConvertNumeric(value, type));
+                valueChanged?.Invoke();
+            }, type);
         }
 
         if (IsStringList(type))
         {
             return Text(
                 () => string.Join(", ", (IEnumerable<string>?)member.GetValue(owner) ?? []),
-                value => member.SetValue(owner, value.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList()));
+                value =>
+                {
+                    member.SetValue(owner, value.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList());
+                    valueChanged?.Invoke();
+                });
         }
 
         object? nested = member.GetValue(owner);
@@ -611,9 +629,30 @@ internal sealed class DestinationSettingsPageBuilder
         {
             details.Children.Clear();
             if (listBox.SelectedItem is not { } selected) return;
+
+            Action? valueChanged = null;
+            TextBlock? preview = null;
+            if (selected is FTPAccount account)
+            {
+                TextBlock ftpPreview = Hint(account.PreviewHttpPath);
+                preview = ftpPreview;
+                valueChanged = () => ftpPreview.Text = account.PreviewHttpPath;
+            }
+
+            bool previewAdded = false;
             foreach (DestinationMember child in GetEditableMembers(selected.GetType()))
             {
-                details.Children.Add(EditorRow(selected, child, FormatLabel(child.Name)));
+                details.Children.Add(EditorRow(selected, child, FormatLabel(child.Name), valueChanged));
+                if (preview != null && child.Name == nameof(FTPAccount.HttpHomePathNoExtension))
+                {
+                    details.Children.Add(PreviewRow(preview));
+                    previewAdded = true;
+                }
+            }
+
+            if (preview != null && !previewAdded)
+            {
+                details.Children.Add(PreviewRow(preview));
             }
         }
 
@@ -802,6 +841,13 @@ internal sealed class DestinationSettingsPageBuilder
         Grid row = new() { ColumnDefinitions = new ColumnDefinitions("210,*"), ColumnSpacing = 8 };
         row.Children.Add(new TextBlock { Text = label, FontWeight = FontWeight.Normal, VerticalAlignment = VerticalAlignment.Center });
         Grid.SetColumn(editor, 1); row.Children.Add(editor); return row;
+    }
+
+    private static Grid PreviewRow(TextBlock preview)
+    {
+        Grid row = Row(FormatLabel("URLPreview") + ":", preview);
+        row.Classes.Add("preview-row");
+        return row;
     }
 
     private static Grid EditorWithButton(Control editor, Button button)

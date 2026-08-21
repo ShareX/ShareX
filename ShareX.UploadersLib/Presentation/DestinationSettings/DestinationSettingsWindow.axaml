@@ -20,6 +20,7 @@
 
     <Window.Styles>
         <Style Selector="Grid.page-title"><Setter Property="Margin" Value="0,0,0,14"/></Style>
+        <Style Selector="Grid.preview-row"><Setter Property="Margin" Value="0,6"/></Style>
         <Style Selector="TextBlock.page-title-text">
             <Setter Property="FontSize" Value="24"/><Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/><Setter Property="VerticalAlignment" Value="Center"/>
