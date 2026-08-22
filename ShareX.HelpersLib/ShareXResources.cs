@@ -143,20 +143,8 @@ namespace ShareX.HelpersLib
                 ApplyCustomThemeToContextMenuStrip(control.ContextMenuStrip);
             }
 
-            if (control is MenuButton mb && mb.Menu != null)
-            {
-                ApplyCustomThemeToContextMenuStrip(mb.Menu);
-            }
-
             switch (control)
             {
-                case ColorButton colorButton:
-                    colorButton.FlatStyle = FlatStyle.Flat;
-                    colorButton.FlatAppearance.BorderColor = Theme.BorderColor;
-                    colorButton.ForeColor = Theme.TextColor;
-                    colorButton.BackColor = Theme.LightBackgroundColor;
-                    colorButton.BorderColor = Theme.BorderColor;
-                    return;
                 case Button btn:
                     btn.FlatStyle = FlatStyle.Flat;
                     btn.FlatAppearance.BorderColor = Theme.BorderColor;
@@ -188,12 +176,6 @@ namespace ShareX.HelpersLib
                     lv.BackColor = Theme.LightBackgroundColor;
                     lv.SupportCustomTheme();
                     return;
-                case SplitContainerCustomSplitter sccs:
-                    sccs.SplitterColor = Theme.BackgroundColor;
-                    sccs.SplitterLineColor = Theme.BorderColor;
-                    sccs.Panel1.BackColor = Theme.BackgroundColor;
-                    sccs.Panel2.BackColor = Theme.BackgroundColor;
-                    break;
                 case SplitContainer sc:
                     sc.Panel1.BackColor = Theme.BackgroundColor;
                     sc.Panel2.BackColor = Theme.BackgroundColor;
@@ -229,7 +211,6 @@ namespace ShareX.HelpersLib
                     return;
                 case ToolStrip ts:
                     ts.Font = Theme.MenuFont;
-                    ts.Renderer = new ToolStripDarkRenderer();
                     ApplyCustomThemeToToolStripItemCollection(ts.Items);
                     return;
                 case LinkLabel ll:
@@ -280,7 +261,6 @@ namespace ShareX.HelpersLib
         {
             if (cms != null)
             {
-                cms.Renderer = new ToolStripDarkRenderer();
                 cms.Font = Theme.ContextMenuFont;
                 cms.Opacity = Theme.ContextMenuOpacityDouble;
                 ApplyCustomThemeToToolStripItemCollection(cms.Items);

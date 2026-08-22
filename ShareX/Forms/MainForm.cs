@@ -14,13 +14,11 @@
 
 #nullable enable
 
-using ShareX.Localization;
 using Avalonia.Styling;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
-using ShareX.Properties;
-using ShareX.ScreenCaptureLib;
+using ShareX.Localization;
 using ShareX.UploadersLib;
 using System;
 using System.Drawing;
