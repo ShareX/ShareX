@@ -286,13 +286,15 @@
                                                     <TextBlock Classes="icon"
                                                                Text="{x:Static theming:LucideIcons.circle_check}"
                                                                IsVisible="{Binding IsRegistered}"
-                                                               Foreground="#3FA75F"
+                                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                               FontSize="17"
                                                                HorizontalAlignment="Center"
                                                                VerticalAlignment="Center"/>
                                                     <TextBlock Classes="icon"
                                                                Text="{x:Static theming:LucideIcons.circle_x}"
                                                                IsVisible="{Binding !IsRegistered}"
-                                                               Foreground="#C95252"
+                                                               Foreground="#C65F5F"
+                                                               FontSize="17"
                                                                HorizontalAlignment="Center"
                                                                VerticalAlignment="Center"/>
                                                     <TextBlock Grid.Column="1"
