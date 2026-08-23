@@ -418,14 +418,20 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShareURL(SelectedItem.Info.Result.ToString(), urlSharingService);
         }
 
-        public void SearchImageUsingGoogleLens()
+        public async void SearchImageUsingGoogleLens()
         {
-            if (IsItemSelected && SelectedItem.IsURLExist) TaskHelpers.SearchImageUsingGoogleLens(SelectedItem.Info.Result.URL);
+            if (IsItemSelected && SelectedItem.IsURLExist)
+            {
+                await TaskHelpers.SearchImageUsingGoogleLensAsync(SelectedItem.Info.Result.URL);
+            }
         }
 
-        public void SearchImageUsingBing()
+        public async void SearchImageUsingBing()
         {
-            if (IsItemSelected && SelectedItem.IsURLExist) TaskHelpers.SearchImageUsingBing(SelectedItem.Info.Result.URL);
+            if (IsItemSelected && SelectedItem.IsURLExist)
+            {
+                await TaskHelpers.SearchImageUsingBingAsync(SelectedItem.Info.Result.URL);
+            }
         }
 
         public void ShowQRCode()

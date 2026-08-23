@@ -68,7 +68,7 @@ namespace ShareX.UploadersLib.FileUploaders
             APIKey = apiKey;
         }
 
-        public string Login(string email, string password)
+        public async Task<string> LoginAsync(string email, string password, CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("e", email);
@@ -77,7 +77,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             // Successful: status,apikey,expire,usage
             // Failed: status
-            string response = SendRequestMultiPart(PuushAPIAuthenticationURL, arguments);
+            string response = await SendRequestMultiPartAsync(PuushAPIAuthenticationURL, arguments,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -92,7 +93,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public bool DeleteFile(string id)
+        public async Task<bool> DeleteFileAsync(string id, CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("k", APIKey);
@@ -101,7 +102,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             // Successful: status\nlist of history items
             // Failed: status
-            string response = SendRequestMultiPart(PuushAPIDeletionURL, arguments);
+            string response = await SendRequestMultiPartAsync(PuushAPIDeletionURL, arguments,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -116,7 +118,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return false;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("k", APIKey);
@@ -124,7 +126,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             // Successful: status,url,id,usage
             // Failed: status
-            UploadResult result = SendRequestFile(PuushAPIUploadURL, stream, fileName, "f", arguments);
+            UploadResult result = await SendRequestFileAsync(PuushAPIUploadURL, stream, fileName, "f", arguments,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {

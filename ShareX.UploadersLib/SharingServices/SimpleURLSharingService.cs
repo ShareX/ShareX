@@ -48,15 +48,16 @@ namespace ShareX.UploadersLib.SharingServices
             URLFormatString = urlFormatString;
         }
 
-        public override UploadResult ShareURL(string url)
+        protected override Task<UploadResult> ShareURLCoreAsync(string url, CancellationToken cancellationToken)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
 
             string encodedURL = URLHelpers.URLEncode(url);
             string resultURL = string.Format(URLFormatString, encodedURL);
             URLHelpers.OpenURL(resultURL);
 
-            return result;
+            return Task.FromResult(result);
         }
     }
 }

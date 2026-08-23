@@ -75,7 +75,7 @@ namespace ShareX.UploadersLib.FileUploaders
             AzureStorageCacheControl = cacheControl;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             if (string.IsNullOrEmpty(AzureStorageAccountName)) Errors.Add(Localization.Strings.AzureStorage_Account_name_must_not_be_empty);
             if (string.IsNullOrEmpty(AzureStorageAccountAccessKey)) Errors.Add(Localization.Strings.AzureStorage_Access_key_must_not_be_empty);
@@ -114,7 +114,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
 
-            SendRequest(HttpMethod.PUT, requestURL, stream, contentType, null, requestHeaders);
+            await SendRequestAsync(HttpMethod.PUT, requestURL, stream, contentType, null, requestHeaders, cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (LastResponseInfo != null && LastResponseInfo.IsSuccess)
             {

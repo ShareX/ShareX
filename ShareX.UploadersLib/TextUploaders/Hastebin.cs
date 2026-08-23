@@ -52,7 +52,7 @@ namespace ShareX.UploadersLib.TextUploaders
         public string SyntaxHighlighting { get; set; }
         public bool UseFileExtension { get; set; }
 
-        public override UploadResult UploadText(string text, string fileName)
+        protected override async Task<UploadResult> UploadTextCoreAsync(string text, string fileName, CancellationToken cancellationToken)
         {
             UploadResult ur = new UploadResult();
 
@@ -69,7 +69,8 @@ namespace ShareX.UploadersLib.TextUploaders
                     domain = "https://hastebin.com";
                 }
 
-                ur.Response = SendRequest(HttpMethod.POST, URLHelpers.CombineURL(domain, "documents"), text);
+                ur.Response = await SendRequestAsync(HttpMethod.POST, URLHelpers.CombineURL(domain, "documents"), text,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(ur.Response))
                 {

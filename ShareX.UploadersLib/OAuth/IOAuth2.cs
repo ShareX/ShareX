@@ -23,12 +23,15 @@
 
 #endregion License Information (GPL v3)
 
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace ShareX.UploadersLib
 {
     public interface IOAuth2 : IOAuth2Basic
     {
-        bool RefreshAccessToken();
+        Task<bool> RefreshAccessTokenAsync(CancellationToken cancellationToken = default);
 
-        bool CheckAuthorization();
+        Task<bool> CheckAuthorizationAsync(CancellationToken cancellationToken = default);
     }
 }

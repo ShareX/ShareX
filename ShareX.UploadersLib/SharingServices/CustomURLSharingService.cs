@@ -70,27 +70,30 @@ namespace ShareX.UploadersLib.SharingServices
             uploader = customUploaderItem;
         }
 
-        public override UploadResult ShareURL(string url)
+        protected override async Task<UploadResult> ShareURLCoreAsync(string url, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
             CustomUploaderInput input = new CustomUploaderInput("", url);
 
             if (uploader.Body == CustomUploaderBody.None)
             {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input));
+                result.Response = await SendRequestAsync(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
             }
             else if (uploader.Body == CustomUploaderBody.MultipartFormData)
             {
-                result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.RequestMethod);
+                result.Response = await SendRequestMultiPartAsync(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input),
+                    null, uploader.RequestMethod, cancellationToken).ConfigureAwait(false);
             }
             else if (uploader.Body == CustomUploaderBody.FormURLEncoded)
             {
-                result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input));
+                result.Response = await SendRequestURLEncodedAsync(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), cancellationToken: cancellationToken).ConfigureAwait(false);
             }
             else if (uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML)
             {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(), null,
-                    uploader.GetHeaders(input));
+                result.Response = await SendRequestAsync(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(), null,
+                    uploader.GetHeaders(input), cancellationToken: cancellationToken).ConfigureAwait(false);
             }
             else
             {

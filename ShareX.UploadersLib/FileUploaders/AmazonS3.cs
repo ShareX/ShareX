@@ -109,7 +109,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Settings = settings;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             bool isPathStyleRequest = Settings.UsePathStyle;
 
@@ -202,7 +202,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string url = URLHelpers.CombineURL(scheme + host, canonicalURI);
             url = URLHelpers.FixPrefix(url);
 
-            SendRequest(HttpMethod.PUT, url, stream, contentType, null, headers);
+            await SendRequestAsync(HttpMethod.PUT, url, stream, contentType, null, headers, cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (LastResponseInfo != null && LastResponseInfo.IsSuccess)
             {

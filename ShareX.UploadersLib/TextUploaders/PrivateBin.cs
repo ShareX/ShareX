@@ -53,7 +53,7 @@ namespace ShareX.UploadersLib.TextUploaders
     {
         private PrivateBinSettings Settings { get; } = settings;
 
-        public override UploadResult UploadText(string text, string fileName)
+        protected override async Task<UploadResult> UploadTextCoreAsync(string text, string fileName, CancellationToken cancellationToken)
         {
             var result = new UploadResult();
 
@@ -88,7 +88,8 @@ namespace ShareX.UploadersLib.TextUploaders
                 headers.Add("Authorization", "Basic " + token);
             }
 
-            SendRequest(HttpMethod.POST, Settings.CustomUrl, JsonConvert.SerializeObject(payload), RequestHelpers.ContentTypeJSON, null, headers);
+            await SendRequestAsync(HttpMethod.POST, Settings.CustomUrl, JsonConvert.SerializeObject(payload), RequestHelpers.ContentTypeJSON, null, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (LastResponseInfo.IsSuccess)
             {

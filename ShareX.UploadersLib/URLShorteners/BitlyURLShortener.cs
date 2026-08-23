@@ -69,16 +69,16 @@ namespace ShareX.UploadersLib.URLShorteners
             AuthInfo = oauth;
         }
 
-        public string GetAuthorizationURL()
+        public Task<string> GetAuthorizationURLAsync(CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("redirect_uri", Links.Callback);
 
-            return URLHelpers.CreateQueryString("https://bitly.com/oauth/authorize", args);
+            return Task.FromResult(URLHelpers.CreateQueryString("https://bitly.com/oauth/authorize", args));
         }
 
-        public bool GetAccessToken(string code)
+        public async Task<bool> GetAccessTokenAsync(string code, CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("client_id", AuthInfo.Client_ID);
@@ -86,7 +86,8 @@ namespace ShareX.UploadersLib.URLShorteners
             args.Add("code", code);
             args.Add("redirect_uri", Links.Callback);
 
-            string response = SendRequestURLEncoded(HttpMethod.POST, URLAccessToken, args);
+            string response = await SendRequestURLEncodedAsync(HttpMethod.POST, URLAccessToken, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -109,7 +110,7 @@ namespace ShareX.UploadersLib.URLShorteners
             return headers;
         }
 
-        public override UploadResult ShortenURL(string url)
+        protected override async Task<UploadResult> ShortenURLCoreAsync(string url, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult { URL = url };
 
@@ -122,7 +123,8 @@ namespace ShareX.UploadersLib.URLShorteners
 
                 NameValueCollection headers = GetAuthHeaders();
 
-                result.Response = SendRequest(HttpMethod.POST, URLShorten, json, RequestHelpers.ContentTypeJSON, null, headers);
+                result.Response = await SendRequestAsync(HttpMethod.POST, URLShorten, json, RequestHelpers.ContentTypeJSON, null, headers,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 BitlyShortenResponse responseData = JsonConvert.DeserializeObject<BitlyShortenResponse>(result.Response);
 

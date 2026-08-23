@@ -30,9 +30,10 @@ namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class ShareCX : FileUploader
     {
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            UploadResult result = SendRequestFile("http://file1.share.cx/cgi-bin/upload.cgi", stream, fileName, "file_0");
+            UploadResult result = await SendRequestFileAsync("http://file1.share.cx/cgi-bin/upload.cgi", stream, fileName, "file_0",
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {

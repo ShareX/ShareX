@@ -53,14 +53,14 @@ namespace ShareX.UploadersLib.URLShorteners
             Settings = settings;
         }
 
-        public override UploadResult ShortenURL(string url)
+        protected override async Task<UploadResult> ShortenURLCoreAsync(string url, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult { URL = url };
-            result.ShortenedURL = Submit(url);
+            result.ShortenedURL = await SubmitAsync(url, cancellationToken).ConfigureAwait(false);
             return result;
         }
 
-        public string Submit(string url)
+        public async Task<string> SubmitAsync(string url, CancellationToken cancellationToken = default)
         {
             if (string.IsNullOrEmpty(Settings.Host))
             {
@@ -87,7 +87,8 @@ namespace ShareX.UploadersLib.URLShorteners
             NameValueCollection headers = new NameValueCollection();
             headers.Add("X-API-KEY", Settings.APIKey);
 
-            string response = SendRequest(HttpMethod.POST, requestURL, json, RequestHelpers.ContentTypeJSON, headers: headers);
+            string response = await SendRequestAsync(HttpMethod.POST, requestURL, json, RequestHelpers.ContentTypeJSON, headers: headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {

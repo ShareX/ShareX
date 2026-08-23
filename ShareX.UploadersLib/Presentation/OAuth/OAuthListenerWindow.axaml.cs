@@ -63,7 +63,7 @@ public partial class OAuthListenerWindow : Window
 
             if (connected && !_isClosed)
             {
-                OAuthUserInfo? userInfo = await Task.Run(_oauth.GetUserInfo);
+                OAuthUserInfo? userInfo = await _oauth.GetUserInfoAsync();
                 SubmittedResult = new OAuthListenerWindowResult(_oauth.AuthInfo, userInfo);
             }
         }
@@ -94,10 +94,10 @@ public partial class OAuthListenerWindow : Window
         public string State { get; set; } = string.Empty;
         public string Scope { get; set; } = string.Empty;
 
-        public string GetAuthorizationURL() => string.Empty;
-        public bool GetAccessToken(string code) => false;
-        public bool RefreshAccessToken() => false;
-        public bool CheckAuthorization() => false;
-        public OAuthUserInfo? GetUserInfo() => null;
+        public Task<string> GetAuthorizationURLAsync(CancellationToken cancellationToken = default) => Task.FromResult(string.Empty);
+        public Task<bool> GetAccessTokenAsync(string code, CancellationToken cancellationToken = default) => Task.FromResult(false);
+        public Task<bool> RefreshAccessTokenAsync(CancellationToken cancellationToken = default) => Task.FromResult(false);
+        public Task<bool> CheckAuthorizationAsync(CancellationToken cancellationToken = default) => Task.FromResult(false);
+        public Task<OAuthUserInfo?> GetUserInfoAsync(CancellationToken cancellationToken = default) => Task.FromResult<OAuthUserInfo?>(null);
     }
 }

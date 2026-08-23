@@ -23,10 +23,18 @@
 
 #endregion License Information (GPL v3)
 
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace ShareX.UploadersLib
 {
     public abstract class URLSharer : Uploader
     {
-        public abstract UploadResult ShareURL(string url);
+        public Task<UploadResult> ShareURLAsync(string url, CancellationToken cancellationToken = default)
+        {
+            return RunOperationAsync(token => ShareURLCoreAsync(url, token), cancellationToken);
+        }
+
+        protected abstract Task<UploadResult> ShareURLCoreAsync(string url, CancellationToken cancellationToken);
     }
 }

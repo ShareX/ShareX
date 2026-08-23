@@ -62,7 +62,7 @@ namespace ShareX.UploadersLib.URLShorteners
             return null;
         }
 
-        public override UploadResult ShortenURL(string url)
+        protected override async Task<UploadResult> ShortenURLCoreAsync(string url, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult { URL = url };
 
@@ -78,7 +78,8 @@ namespace ShareX.UploadersLib.URLShorteners
 
             NameValueCollection headers = GetAuthHeaders();
 
-            string response = SendRequest(HttpMethod.POST, RequestURL, json, RequestHelpers.ContentTypeJSON, null, headers);
+            string response = await SendRequestAsync(HttpMethod.POST, RequestURL, json, RequestHelpers.ContentTypeJSON, null, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {

@@ -72,48 +72,52 @@ namespace ShareX.UploadersLib.TextUploaders
             uploader = customUploaderItem;
         }
 
-        public override UploadResult UploadText(string text, string fileName)
+        protected override async Task<UploadResult> UploadTextCoreAsync(string text, string fileName, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult();
             CustomUploaderInput input = new CustomUploaderInput(fileName, text);
 
             if (uploader.Body == CustomUploaderBody.None)
             {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input));
+                result.Response = await SendRequestAsync(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
             }
             else if (uploader.Body == CustomUploaderBody.MultipartFormData)
             {
                 if (string.IsNullOrEmpty(uploader.FileFormName))
                 {
-                    result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input),
-                        null, uploader.RequestMethod);
+                    result.Response = await SendRequestMultiPartAsync(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input),
+                        null, uploader.RequestMethod, cancellationToken).ConfigureAwait(false);
                 }
                 else
                 {
                     byte[] bytes = Encoding.UTF8.GetBytes(text);
                     using (MemoryStream stream = new MemoryStream(bytes))
                     {
-                        result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(), uploader.GetArguments(input),
-                            uploader.GetHeaders(input), null, uploader.RequestMethod);
+                        result = await SendRequestFileAsync(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(),
+                            uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.RequestMethod,
+                            cancellationToken: cancellationToken).ConfigureAwait(false);
                     }
                 }
             }
             else if (uploader.Body == CustomUploaderBody.FormURLEncoded)
             {
-                result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input));
+                result.Response = await SendRequestURLEncodedAsync(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), cancellationToken: cancellationToken).ConfigureAwait(false);
             }
             else if (uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML)
             {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(),
-                    null, uploader.GetHeaders(input));
+                result.Response = await SendRequestAsync(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(),
+                    null, uploader.GetHeaders(input), cancellationToken: cancellationToken).ConfigureAwait(false);
             }
             else if (uploader.Body == CustomUploaderBody.Binary)
             {
                 byte[] bytes = Encoding.UTF8.GetBytes(text);
                 using (MemoryStream stream = new MemoryStream(bytes))
                 {
-                    result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, MimeTypes.GetMimeTypeFromFileName(fileName),
-                        null, uploader.GetHeaders(input));
+                    result.Response = await SendRequestAsync(uploader.RequestMethod, uploader.GetRequestURL(input), stream,
+                        MimeTypes.GetMimeTypeFromFileName(fileName), null, uploader.GetHeaders(input),
+                        cancellationToken: cancellationToken).ConfigureAwait(false);
                 }
             }
             else

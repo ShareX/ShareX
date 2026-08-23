@@ -369,7 +369,7 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
         SelectedUploader = Uploaders[index];
         StatusMessage = string.Format(Strings.CustomUploaderSettingsWindow_Testing, SelectedUploader.Title);
 
-        UploadResult? result = await Task.Run(() => RunTest(type, _config.CustomUploadersList[index], textInput));
+        UploadResult? result = await RunTestAsync(type, _config.CustomUploadersList[index], textInput);
         LastResult = result;
         IsTesting = false;
         StatusMessage = result == null
@@ -408,7 +408,7 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
 
     public void CloseSyntaxTest() => IsSyntaxTestVisible = false;
 
-    private static UploadResult? RunTest(CustomUploaderDestinationType type, CustomUploaderItem item, string? textInput)
+    private static async Task<UploadResult?> RunTestAsync(CustomUploaderDestinationType type, CustomUploaderItem item, string? textInput)
     {
         try
         {
@@ -419,32 +419,32 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
                     using (Stream stream = ShareXResources.Logo.GetStream())
                     {
                         CustomImageUploader uploader = new(item);
-                        result = uploader.Upload(stream, "Test.png");
+                        result = await uploader.UploadAsync(stream, "Test.png");
                         result.Errors.Add(uploader.Errors);
                     }
                     break;
                 case CustomUploaderDestinationType.TextUploader:
                     if (string.IsNullOrEmpty(textInput)) return null;
                     CustomTextUploader textUploader = new(item);
-                    result = textUploader.UploadText(textInput, "Test.txt");
+                    result = await textUploader.UploadTextAsync(textInput, "Test.txt");
                     result.Errors.Add(textUploader.Errors);
                     break;
                 case CustomUploaderDestinationType.FileUploader:
                     using (Stream stream = ShareXResources.Logo.GetStream())
                     {
                         CustomFileUploader uploader = new(item);
-                        result = uploader.Upload(stream, "Test.png");
+                        result = await uploader.UploadAsync(stream, "Test.png");
                         result.Errors.Add(uploader.Errors);
                     }
                     break;
                 case CustomUploaderDestinationType.URLShortener:
                     CustomURLShortener shortener = new(item);
-                    result = shortener.ShortenURL(Links.Website);
+                    result = await shortener.ShortenURLAsync(Links.Website);
                     result.Errors.Add(shortener.Errors);
                     break;
                 case CustomUploaderDestinationType.URLSharingService:
                     CustomURLSharer sharer = new(item);
-                    result = sharer.ShareURL(Links.Website);
+                    result = await sharer.ShareURLAsync(Links.Website);
                     result.Errors.Add(sharer.Errors);
                     break;
             }

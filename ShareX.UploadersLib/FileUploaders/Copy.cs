@@ -65,24 +65,25 @@ namespace ShareX.UploadersLib.FileUploaders
 
         // https://developers.copy.com/documentation#authentication/oauth-handshake
         // https://developers.copy.com/console
-        public string GetAuthorizationURL()
+        public async Task<string> GetAuthorizationURLAsync(CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("oauth_callback", Links.Callback);
 
-            return GetAuthorizationURL(URLRequestToken, URLAuthorize, AuthInfo, args);
+            return await GetAuthorizationURLAsync(URLRequestToken, URLAuthorize, AuthInfo, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public bool GetAccessToken(string verificationCode = null)
+        public async Task<bool> GetAccessTokenAsync(string verificationCode = null, CancellationToken cancellationToken = default)
         {
             AuthInfo.AuthVerifier = verificationCode;
-            return GetAccessToken(URLAccessToken, AuthInfo);
+            return await GetAccessTokenAsync(URLAccessToken, AuthInfo, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         #region Copy accounts
 
         // https://developers.copy.com/documentation#api-calls/profile
-        public CopyAccountInfo GetAccountInfo()
+        public async Task<CopyAccountInfo> GetAccountInfoAsync(CancellationToken cancellationToken = default)
         {
             CopyAccountInfo account = null;
 
@@ -90,7 +91,8 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 string query = OAuthManager.GenerateQuery(URLAccountInfo, null, HttpMethod.GET, AuthInfo);
 
-                string response = SendRequest(HttpMethod.GET, query, null, APIHeaders);
+                string response = await SendRequestAsync(HttpMethod.GET, query, null, APIHeaders,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -112,13 +114,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
         // https://developers.copy.com/documentation#api-calls/filesystem - Download Raw File Conents
         // GET https://api.copy.com/rest/files/PATH/TO/FILE
-        public bool DownloadFile(string path, Stream downloadStream)
+        public async Task<bool> DownloadFileAsync(string path, Stream downloadStream, CancellationToken cancellationToken = default)
         {
             if (!string.IsNullOrEmpty(path) && OAuthInfo.CheckOAuth(AuthInfo))
             {
                 string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLEncode(path, true));
                 string query = OAuthManager.GenerateQuery(url, null, HttpMethod.GET, AuthInfo);
-                return SendRequestDownload(HttpMethod.GET, query, downloadStream);
+                return await SendRequestDownloadAsync(HttpMethod.GET, query, downloadStream,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
             }
 
             return false;
@@ -126,7 +129,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
         // https://developers.copy.com/documentation#api-calls/filesystem - Create File or Directory
         // POST https://api.copy.com/rest/files/PATH/TO/FILE?overwrite=true
-        public UploadResult UploadFile(Stream stream, string path, string fileName)
+        public async Task<UploadResult> UploadFileAsync(Stream stream, string path, string fileName,
+            CancellationToken cancellationToken = default)
         {
             if (!OAuthInfo.CheckOAuth(AuthInfo))
             {
@@ -142,7 +146,8 @@ namespace ShareX.UploadersLib.FileUploaders
             string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
 
             // There's a 1GB and 5 hour(max time for a single upload) limit to all uploads through the API.
-            UploadResult result = SendRequestFile(query, stream, fileName, "file", headers: APIHeaders);
+            UploadResult result = await SendRequestFileAsync(query, stream, fileName, "file", headers: APIHeaders,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {
@@ -151,7 +156,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (content != null && content.objects != null && content.objects.Length > 0)
                 {
                     AllowReportProgress = false;
-                    result.URL = CreatePublicURL(content.objects[0].path, URLType);
+                result.URL = await CreatePublicURLAsync(content.objects[0].path, URLType, cancellationToken).ConfigureAwait(false);
                 }
             }
 
@@ -160,7 +165,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         // https://developers.copy.com/documentation#api-calls/filesystem - Read Root Directory
         // GET https://api.copy.com/rest/meta/copy
-        public CopyContentInfo GetMetadata(string path)
+        public async Task<CopyContentInfo> GetMetadataAsync(string path, CancellationToken cancellationToken = default)
         {
             CopyContentInfo contentInfo = null;
 
@@ -170,7 +175,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 string query = OAuthManager.GenerateQuery(url, null, HttpMethod.GET, AuthInfo);
 
-                string response = SendRequest(HttpMethod.GET, query);
+                string response = await SendRequestAsync(HttpMethod.GET, query,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -183,9 +189,9 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #endregion Files and metadata
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            return UploadFile(stream, UploadPath, fileName);
+            return await UploadFileAsync(stream, UploadPath, fileName, cancellationToken).ConfigureAwait(false);
         }
 
         public string GetLinkURL(CopyLinksInfo link, string path, CopyURLType urlType = CopyURLType.Default)
@@ -204,7 +210,8 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        public string CreatePublicURL(string path, CopyURLType urlType = CopyURLType.Default)
+        public async Task<string> CreatePublicURLAsync(string path, CopyURLType urlType = CopyURLType.Default,
+            CancellationToken cancellationToken = default)
         {
             path = path.Trim('/');
 
@@ -219,7 +226,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string content = JsonConvert.SerializeObject(publicLink);
 
-            string response = SendRequest(HttpMethod.POST, query, content, headers: APIHeaders);
+            string response = await SendRequestAsync(HttpMethod.POST, query, content, headers: APIHeaders,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -231,11 +239,12 @@ namespace ShareX.UploadersLib.FileUploaders
             return "";
         }
 
-        public string GetPublicURL(string path, CopyURLType urlType = CopyURLType.Default)
+        public async Task<string> GetPublicURLAsync(string path, CopyURLType urlType = CopyURLType.Default,
+            CancellationToken cancellationToken = default)
         {
             path = path.Trim('/');
 
-            CopyContentInfo fileInfo = GetMetadata(path);
+            CopyContentInfo fileInfo = await GetMetadataAsync(path, cancellationToken).ConfigureAwait(false);
             foreach (CopyLinksInfo link in fileInfo.links)
             {
                 if (!link.expired && link.@public)

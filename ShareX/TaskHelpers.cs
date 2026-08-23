@@ -1754,14 +1754,14 @@ namespace ShareX
             ToolsIntegration.ShowRulerWindow();
         }
 
-        public static void SearchImageUsingGoogleLens(string url)
+        public static Task<UploadResult> SearchImageUsingGoogleLensAsync(string url)
         {
-            new GoogleLensSharingService().CreateSharer(null, null).ShareURL(url);
+            return new GoogleLensSharingService().CreateSharer(null, null).ShareURLAsync(url);
         }
 
-        public static void SearchImageUsingBing(string url)
+        public static Task<UploadResult> SearchImageUsingBingAsync(string url)
         {
-            new BingVisualSearchSharingService().CreateSharer(null, null).ShareURL(url);
+            return new BingVisualSearchSharingService().CreateSharer(null, null).ShareURLAsync(url);
         }
 
         public static void AnalyzeImage(TaskSettings taskSettings = null)

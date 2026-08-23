@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public sealed class TurlURLShortener : URLShortener
     {
-        public override UploadResult ShortenURL(string url)
+        protected override async Task<UploadResult> ShortenURLCoreAsync(string url, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult { URL = url };
 
@@ -50,7 +50,8 @@ namespace ShareX.UploadersLib.URLShorteners
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
                 arguments.Add("url", url);
 
-                result.Response = SendRequest(HttpMethod.GET, "http://turl.ca/api.php", arguments);
+                result.Response = await SendRequestAsync(HttpMethod.GET, "http://turl.ca/api.php", arguments,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {

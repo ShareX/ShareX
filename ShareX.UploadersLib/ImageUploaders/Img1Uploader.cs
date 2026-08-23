@@ -31,9 +31,10 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         private const string uploadURL = "http://img1.us/?app";
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            UploadResult result = SendRequestFile(uploadURL, stream, fileName, "fileup");
+            UploadResult result = await SendRequestFileAsync(uploadURL, stream, fileName, "fileup",
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {

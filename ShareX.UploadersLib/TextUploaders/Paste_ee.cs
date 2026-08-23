@@ -65,7 +65,7 @@ namespace ShareX.UploadersLib.TextUploaders
             APIKey = apiKey;
         }
 
-        public override UploadResult UploadText(string text, string fileName)
+        protected override async Task<UploadResult> UploadTextCoreAsync(string text, string fileName, CancellationToken cancellationToken)
         {
             if (string.IsNullOrEmpty(APIKey))
             {
@@ -97,7 +97,8 @@ namespace ShareX.UploadersLib.TextUploaders
                 NameValueCollection headers = new NameValueCollection();
                 headers.Add("X-Auth-Token", APIKey);
 
-                ur.Response = SendRequest(HttpMethod.POST, "https://api.paste.ee/v1/pastes", json, RequestHelpers.ContentTypeJSON, null, headers);
+                ur.Response = await SendRequestAsync(HttpMethod.POST, "https://api.paste.ee/v1/pastes", json, RequestHelpers.ContentTypeJSON, null, headers,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(ur.Response))
                 {

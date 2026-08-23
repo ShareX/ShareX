@@ -54,9 +54,10 @@ namespace ShareX.UploadersLib.FileUploaders
             Uploader = uploader;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            UploadResult result = SendRequestFile(Uploader.UploadURL, stream, fileName, "files[]");
+            UploadResult result = await SendRequestFileAsync(Uploader.UploadURL, stream, fileName, "files[]",
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {

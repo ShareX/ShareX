@@ -282,7 +282,7 @@ internal sealed class DestinationSettingsPageBuilder
         }
 
         album.SelectionChanged += (_, _) => _config.ImgurSelectedAlbum = (album.SelectedItem as DestinationChoice)?.Value as ImgurAlbumData;
-        Button refresh = Button(Localization.Strings.DestinationSettings_Refresh_albums, () =>
+        Button refresh = Button(Localization.Strings.DestinationSettings_Refresh_albums, async () =>
         {
             try
             {
@@ -292,7 +292,7 @@ internal sealed class DestinationSettingsPageBuilder
                     return;
                 }
 
-                _config.ImgurAlbumList = new Imgur(_config.ImgurOAuth2Info).GetAlbums();
+                _config.ImgurAlbumList = await new Imgur(_config.ImgurOAuth2Info).GetAlbumsAsync();
                 LoadAlbums(_config.ImgurAlbumList);
             }
             catch (Exception exception)
@@ -374,21 +374,21 @@ internal sealed class DestinationSettingsPageBuilder
         OneDrive.RootFolder,
         () => _config.OneDriveV2SelectedFolder ?? OneDrive.RootFolder,
         value => _config.OneDriveV2SelectedFolder = value,
-        value => new OneDrive(_config.OneDriveV2OAuth2Info).GetPathInfo(value.id)?.value,
+        async value => (await new OneDrive(_config.OneDriveV2OAuth2Info).GetPathInfoAsync(value.id))?.value,
         value => value.name);
 
     private Control BuildBoxFolderCard() => BuildRemoteFolderCard(
         Box.RootFolder,
         () => _config.BoxSelectedFolder ?? Box.RootFolder,
         value => _config.BoxSelectedFolder = value,
-        value => new Box(_config.BoxOAuth2Info).GetFiles(value)?.entries?.Where(x => x.type == "folder"),
+        async value => (await new Box(_config.BoxOAuth2Info).GetFilesAsync(value))?.entries?.Where(x => x.type == "folder"),
         value => value.name);
 
     private Control BuildRemoteFolderCard<T>(
         T root,
         Func<T> getSelected,
         Action<T> setSelected,
-        Func<T, IEnumerable<T>?> getChildren,
+        Func<T, Task<IEnumerable<T>?>> getChildren,
         Func<T, string?> getName) where T : class
     {
         ObservableCollection<DestinationChoice> folders = new();
@@ -399,12 +399,12 @@ internal sealed class DestinationSettingsPageBuilder
         Stack<T> history = new();
         T currentFolder = root;
 
-        void Load(T folder)
+        async Task LoadAsync(T folder)
         {
             try
             {
                 folders.Clear();
-                foreach (T child in getChildren(folder) ?? [])
+                foreach (T child in await getChildren(folder) ?? [])
                 {
                     folders.Add(new DestinationChoice(child, getName(child) ?? Localization.Strings.DestinationSettings_Unnamed_folder));
                 }
@@ -431,31 +431,31 @@ internal sealed class DestinationSettingsPageBuilder
             }
         };
 
-        Button refresh = Button(Localization.Strings.DestinationSettings_Refresh, () => Load(currentFolder));
-        Button open = Button(Localization.Strings.DestinationSettings_Open_folder, () =>
+        Button refresh = Button(Localization.Strings.DestinationSettings_Refresh, () => LoadAsync(currentFolder));
+        Button open = Button(Localization.Strings.DestinationSettings_Open_folder, async () =>
         {
             if ((list.SelectedItem as DestinationChoice)?.Value is T selected)
             {
                 history.Push(currentFolder);
                 currentFolder = selected;
-                Load(currentFolder);
+                await LoadAsync(currentFolder);
             }
         });
-        Button back = Button(Localization.Strings.DestinationSettings_Back, () =>
+        Button back = Button(Localization.Strings.DestinationSettings_Back, async () =>
         {
             if (history.Count > 0)
             {
                 currentFolder = history.Pop();
-                Load(currentFolder);
+                await LoadAsync(currentFolder);
             }
         });
-        Button rootButton = Button(Localization.Strings.DestinationSettings_Root, () =>
+        Button rootButton = Button(Localization.Strings.DestinationSettings_Root, async () =>
         {
             history.Clear();
             currentFolder = root;
             setSelected(root);
             selectedStatus.Text = getName(root) ?? Localization.Strings.DestinationSettings_Root_folder;
-            Load(root);
+            await LoadAsync(root);
         });
 
         return Card(Localization.Strings.DestinationSettings_Upload_folder,
@@ -916,6 +916,14 @@ internal sealed class DestinationSettingsPageBuilder
     internal static Button Button(string text, Action action)
     {
         Button button = new() { Content = text }; button.Classes.Add("compact"); button.Click += (_, _) => action(); return button;
+    }
+
+    internal static Button Button(string text, Func<Task> action)
+    {
+        Button button = new() { Content = text };
+        button.Classes.Add("compact");
+        button.Click += async (_, _) => await action();
+        return button;
     }
 
     internal static StackPanel ButtonRow(params Button[] buttons)

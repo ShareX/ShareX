@@ -30,9 +30,10 @@ namespace ShareX.UploadersLib.ImageUploaders
 {
     public sealed class ImmioUploader : ImageUploader
     {
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            UploadResult result = SendRequestFile("http://imm.io/store/", stream, fileName, "image");
+            UploadResult result = await SendRequestFileAsync("http://imm.io/store/", stream, fileName, "image",
+                cancellationToken: cancellationToken).ConfigureAwait(false);
             if (result.IsSuccess)
             {
                 ImmioResponse response = JsonConvert.DeserializeObject<ImmioResponse>(result.Response);

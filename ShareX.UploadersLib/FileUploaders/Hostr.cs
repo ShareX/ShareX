@@ -59,14 +59,15 @@ namespace ShareX.UploadersLib.FileUploaders
             Password = password;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             UploadResult result = null;
 
             if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
             {
                 NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Email, Password);
-                result = SendRequestFile("https://api.hostr.co/file", stream, fileName, "file", headers: headers);
+                result = await SendRequestFileAsync("https://api.hostr.co/file", stream, fileName, "file", headers: headers,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (result.IsSuccess)
                 {

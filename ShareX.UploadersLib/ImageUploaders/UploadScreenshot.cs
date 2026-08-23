@@ -39,14 +39,15 @@ namespace ShareX.UploadersLib.ImageUploaders
             APIKey = key;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("apiKey", APIKey);
             arguments.Add("xmlOutput", "1");
             //arguments.Add("testMode", "1");
 
-            UploadResult result = SendRequestFile("http://img1.uploadscreenshot.com/api-upload.php", stream, fileName, "userfile", arguments);
+            UploadResult result = await SendRequestFileAsync("http://img1.uploadscreenshot.com/api-upload.php", stream, fileName, "userfile", arguments,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             return ParseResult(result);
         }

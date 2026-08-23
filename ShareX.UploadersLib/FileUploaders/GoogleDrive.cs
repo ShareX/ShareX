@@ -86,24 +86,24 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        public bool RefreshAccessToken()
+        public Task<bool> RefreshAccessTokenAsync(CancellationToken cancellationToken = default)
         {
-            return OAuth2.RefreshAccessToken();
+            return OAuth2.RefreshAccessTokenAsync(cancellationToken);
         }
 
-        public bool CheckAuthorization()
+        public Task<bool> CheckAuthorizationAsync(CancellationToken cancellationToken = default)
         {
-            return OAuth2.CheckAuthorization();
+            return OAuth2.CheckAuthorizationAsync(cancellationToken);
         }
 
-        public string GetAuthorizationURL()
+        public Task<string> GetAuthorizationURLAsync(CancellationToken cancellationToken = default)
         {
-            return OAuth2.GetAuthorizationURL();
+            return OAuth2.GetAuthorizationURLAsync(cancellationToken);
         }
 
-        public bool GetAccessToken(string code)
+        public Task<bool> GetAccessTokenAsync(string code, CancellationToken cancellationToken = default)
         {
-            return OAuth2.GetAccessToken(code);
+            return OAuth2.GetAccessTokenAsync(code, cancellationToken);
         }
 
         private string GetMetadata(string name, string parentID, string driveID = "")
@@ -139,9 +139,10 @@ namespace ShareX.UploadersLib.FileUploaders
             return JsonConvert.SerializeObject(metadata);
         }
 
-        private void SetPermissions(string fileID, GoogleDrivePermissionRole role, GoogleDrivePermissionType type, bool allowFileDiscovery)
+        private async Task SetPermissionsAsync(string fileID, GoogleDrivePermissionRole role, GoogleDrivePermissionType type,
+            bool allowFileDiscovery, CancellationToken cancellationToken)
         {
-            if (!CheckAuthorization()) return;
+            if (!await CheckAuthorizationAsync(cancellationToken).ConfigureAwait(false)) return;
 
             string url = string.Format("https://www.googleapis.com/drive/v3/files/{0}/permissions?supportsAllDrives=true", fileID);
 
@@ -152,12 +153,14 @@ namespace ShareX.UploadersLib.FileUploaders
                 allowFileDiscovery = allowFileDiscovery.ToString()
             });
 
-            SendRequest(HttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON, null, OAuth2.GetAuthHeaders());
+            await SendRequestAsync(HttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON, null, OAuth2.GetAuthHeaders(),
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public List<GoogleDriveFile> GetFolders(string driveID = "", bool trashed = false, bool writer = true)
+        public async Task<List<GoogleDriveFile>> GetFoldersAsync(string driveID = "", bool trashed = false, bool writer = true,
+            CancellationToken cancellationToken = default)
         {
-            if (!CheckAuthorization()) return null;
+            if (!await CheckAuthorizationAsync(cancellationToken).ConfigureAwait(false)) return null;
 
             string query = "mimeType = 'application/vnd.google-apps.folder'";
 
@@ -189,7 +192,8 @@ namespace ShareX.UploadersLib.FileUploaders
             do
             {
                 args["pageToken"] = pageToken;
-                string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v3/files", args, OAuth2.GetAuthHeaders());
+                string response = await SendRequestAsync(HttpMethod.GET, "https://www.googleapis.com/drive/v3/files", args, OAuth2.GetAuthHeaders(),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
                 pageToken = "";
 
                 if (!string.IsNullOrEmpty(response))
@@ -208,9 +212,9 @@ namespace ShareX.UploadersLib.FileUploaders
             return folders;
         }
 
-        public List<GoogleDriveSharedDrive> GetDrives()
+        public async Task<List<GoogleDriveSharedDrive>> GetDrivesAsync(CancellationToken cancellationToken = default)
         {
-            if (!CheckAuthorization()) return null;
+            if (!await CheckAuthorizationAsync(cancellationToken).ConfigureAwait(false)) return null;
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             List<GoogleDriveSharedDrive> drives = new List<GoogleDriveSharedDrive>();
@@ -220,7 +224,8 @@ namespace ShareX.UploadersLib.FileUploaders
             do
             {
                 args["pageToken"] = pageToken;
-                string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v3/drives", args, OAuth2.GetAuthHeaders());
+                string response = await SendRequestAsync(HttpMethod.GET, "https://www.googleapis.com/drive/v3/drives", args, OAuth2.GetAuthHeaders(),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
                 pageToken = "";
 
                 if (!string.IsNullOrEmpty(response))
@@ -239,14 +244,15 @@ namespace ShareX.UploadersLib.FileUploaders
             return drives;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            if (!CheckAuthorization()) return null;
+            if (!await CheckAuthorizationAsync(cancellationToken).ConfigureAwait(false)) return null;
 
             string metadata = GetMetadata(fileName, FolderID, DriveID);
 
-            UploadResult result = SendRequestFile("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id,webViewLink,webContentLink&supportsAllDrives=true",
-                stream, fileName, "file", headers: OAuth2.GetAuthHeaders(), contentType: "multipart/related", relatedData: metadata);
+            UploadResult result = await SendRequestFileAsync("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id,webViewLink,webContentLink&supportsAllDrives=true",
+                stream, fileName, "file", headers: OAuth2.GetAuthHeaders(), contentType: "multipart/related", relatedData: metadata,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
@@ -258,7 +264,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
                     if (IsPublic)
                     {
-                        SetPermissions(upload.id, GoogleDrivePermissionRole.reader, GoogleDrivePermissionType.anyone, false);
+                        await SetPermissionsAsync(upload.id, GoogleDrivePermissionRole.reader, GoogleDrivePermissionType.anyone, false,
+                            cancellationToken).ConfigureAwait(false);
                     }
 
                     if (DirectLink)

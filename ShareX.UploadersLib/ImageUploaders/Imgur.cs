@@ -91,16 +91,16 @@ namespace ShareX.UploadersLib.ImageUploaders
             AuthInfo = oauth;
         }
 
-        public string GetAuthorizationURL()
+        public Task<string> GetAuthorizationURLAsync(CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("response_type", "pin");
 
-            return URLHelpers.CreateQueryString("https://api.imgur.com/oauth2/authorize", args);
+            return Task.FromResult(URLHelpers.CreateQueryString("https://api.imgur.com/oauth2/authorize", args));
         }
 
-        public bool GetAccessToken(string pin)
+        public async Task<bool> GetAccessTokenAsync(string pin, CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("client_id", AuthInfo.Client_ID);
@@ -108,7 +108,8 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("grant_type", "pin");
             args.Add("pin", pin);
 
-            string response = SendRequestMultiPart("https://api.imgur.com/oauth2/token", args);
+            string response = await SendRequestMultiPartAsync("https://api.imgur.com/oauth2/token", args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -125,7 +126,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             return false;
         }
 
-        public bool RefreshAccessToken()
+        public async Task<bool> RefreshAccessTokenAsync(CancellationToken cancellationToken = default)
         {
             if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
             {
@@ -135,7 +136,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                 args.Add("client_secret", AuthInfo.Client_Secret);
                 args.Add("grant_type", "refresh_token");
 
-                string response = SendRequestMultiPart("https://api.imgur.com/oauth2/token", args);
+                string response = await SendRequestMultiPartAsync("https://api.imgur.com/oauth2/token", args,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -160,11 +162,11 @@ namespace ShareX.UploadersLib.ImageUploaders
             return headers;
         }
 
-        public bool CheckAuthorization()
+        public async Task<bool> CheckAuthorizationAsync(CancellationToken cancellationToken = default)
         {
             if (OAuth2Info.CheckOAuth(AuthInfo))
             {
-                if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
+                if (AuthInfo.Token.IsExpired && !await RefreshAccessTokenAsync(cancellationToken).ConfigureAwait(false))
                 {
                     Errors.Add(Localization.Strings.UploaderErrors_Refresh_access_token_failed);
                     return false;
@@ -179,13 +181,14 @@ namespace ShareX.UploadersLib.ImageUploaders
             return true;
         }
 
-        public List<ImgurAlbumData> GetAlbums(int maxPage = 10, int perPage = 100)
+        public async Task<List<ImgurAlbumData>> GetAlbumsAsync(int maxPage = 10, int perPage = 100,
+            CancellationToken cancellationToken = default)
         {
             List<ImgurAlbumData> albums = new List<ImgurAlbumData>();
 
             for (int i = 0; i < maxPage; i++)
             {
-                List<ImgurAlbumData> tempAlbums = GetAlbumsPage(i, perPage);
+                List<ImgurAlbumData> tempAlbums = await GetAlbumsPageAsync(i, perPage, cancellationToken).ConfigureAwait(false);
 
                 if (tempAlbums != null && tempAlbums.Count > 0)
                 {
@@ -205,15 +208,16 @@ namespace ShareX.UploadersLib.ImageUploaders
             return albums;
         }
 
-        private List<ImgurAlbumData> GetAlbumsPage(int page, int perPage)
+        private async Task<List<ImgurAlbumData>> GetAlbumsPageAsync(int page, int perPage, CancellationToken cancellationToken)
         {
-            if (CheckAuthorization())
+            if (await CheckAuthorizationAsync(cancellationToken).ConfigureAwait(false))
             {
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("page", page.ToString()); // default: 0
                 args.Add("perPage", perPage.ToString()); // default: 50, max: 100
 
-                string response = SendRequest(HttpMethod.GET, "https://api.imgur.com/3/account/me/albums", args, GetAuthHeaders());
+                string response = await SendRequestAsync(HttpMethod.GET, "https://api.imgur.com/3/account/me/albums", args, GetAuthHeaders(),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 ImgurResponse imgurResponse = JsonConvert.DeserializeObject<ImgurResponse>(response);
 
@@ -233,11 +237,12 @@ namespace ShareX.UploadersLib.ImageUploaders
             return null;
         }
 
-        public List<ImgurImageData> GetAlbumImages(string albumID)
+        public async Task<List<ImgurImageData>> GetAlbumImagesAsync(string albumID, CancellationToken cancellationToken = default)
         {
-            if (CheckAuthorization())
+            if (await CheckAuthorizationAsync(cancellationToken).ConfigureAwait(false))
             {
-                string response = SendRequest(HttpMethod.GET, $"https://api.imgur.com/3/album/{albumID}/images", headers: GetAuthHeaders());
+                string response = await SendRequestAsync(HttpMethod.GET, $"https://api.imgur.com/3/album/{albumID}/images", headers: GetAuthHeaders(),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 ImgurResponse imgurResponse = JsonConvert.DeserializeObject<ImgurResponse>(response);
 
@@ -257,19 +262,20 @@ namespace ShareX.UploadersLib.ImageUploaders
             return null;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            return InternalUpload(stream, fileName, true);
+            return await InternalUploadAsync(stream, fileName, true, cancellationToken).ConfigureAwait(false);
         }
 
-        private UploadResult InternalUpload(Stream stream, string fileName, bool refreshTokenOnError)
+        private async Task<UploadResult> InternalUploadAsync(Stream stream, string fileName, bool refreshTokenOnError,
+            CancellationToken cancellationToken)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             NameValueCollection headers;
 
             if (UploadMethod == AccountType.User)
             {
-                if (!CheckAuthorization())
+                if (!await CheckAuthorizationAsync(cancellationToken).ConfigureAwait(false))
                 {
                     return null;
                 }
@@ -300,7 +306,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                 fileFormName = "image";
             }
 
-            UploadResult result = SendRequestFile("https://api.imgur.com/3/upload", stream, fileName, fileFormName, args, headers);
+            UploadResult result = await SendRequestFileAsync("https://api.imgur.com/3/upload", stream, fileName, fileFormName, args, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
@@ -367,11 +374,11 @@ namespace ShareX.UploadersLib.ImageUploaders
                         {
                             if (UploadMethod == AccountType.User && refreshTokenOnError &&
                                 ((string)errorData.error).Equals("The access token provided is invalid.", StringComparison.OrdinalIgnoreCase) &&
-                                RefreshAccessToken())
+                                await RefreshAccessTokenAsync(cancellationToken).ConfigureAwait(false))
                             {
                                 DebugHelper.WriteLine("Imgur access token refreshed, reuploading image.");
 
-                                return InternalUpload(stream, fileName, false);
+                                return await InternalUploadAsync(stream, fileName, false, cancellationToken).ConfigureAwait(false);
                             }
 
                             Errors.AddFirst(string.Format(Localization.Strings.Imgur_Upload_failed,

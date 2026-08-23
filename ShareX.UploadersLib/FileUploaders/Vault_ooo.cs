@@ -59,7 +59,7 @@ namespace ShareX.UploadersLib.FileUploaders
         private const int BYTE_CHUNK_SIZE = 256 * 1024 * 381; // Copied from web client (99 MB)
         private static readonly DateTime ORIGIN_TIME = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             #region Calculating sizes
 
@@ -100,13 +100,15 @@ namespace ShareX.UploadersLib.FileUploaders
 
             #endregion
 
-            Dictionary<string, string> requestHeaders = new Dictionary<string, string>();
+            NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders.Add("X-Get-Raw-File", "1");
             Dictionary<string, long> postRequestJson = new Dictionary<string, long>();
             postRequestJson.Add("chunks", chunks);
             postRequestJson.Add("fileLength", fullUploadSize);
 
-            string postResult = SendRequest(HttpMethod.POST, URLHelpers.CombineURL(APIURL, fullFileName), JsonConvert.SerializeObject(postRequestJson), RequestHelpers.ContentTypeJSON, requestHeaders);
+            string postResult = await SendRequestAsync(HttpMethod.POST, URLHelpers.CombineURL(APIURL, fullFileName),
+                JsonConvert.SerializeObject(postRequestJson), RequestHelpers.ContentTypeJSON, headers: requestHeaders,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
             Vault_oooMetaInfo metaInfo = JsonConvert.DeserializeObject<Vault_oooMetaInfo>(postResult);
 
             if (string.IsNullOrEmpty(metaInfo.UrlPathName))
@@ -115,8 +117,13 @@ namespace ShareX.UploadersLib.FileUploaders
             #region Upload in chunks
 
             List<byte> dumpStash = new List<byte>();
-            LoopStartEnd((chunkStart, chunkEnd, i) =>
+            int lastChunkEnd = 0;
+            for (int i = 0; i < chunks; i++)
             {
+                cancellationToken.ThrowIfCancellationRequested();
+                int chunkStart = i == 0 ? 0 : lastChunkEnd;
+                int chunkEnd = (int)Math.Min(fileSize, (long)chunkStart + BYTE_CHUNK_SIZE);
+                lastChunkEnd = chunkEnd;
                 int chunkLength = chunkEnd - chunkStart;
                 byte[] plainBytes = new byte[chunkLength];
                 stream.ReadExactly(plainBytes);
@@ -163,9 +170,11 @@ namespace ShareX.UploadersLib.FileUploaders
                     headers.Add("X-Put-Chunk-End", (uploadChunkStart + ms.Length).ToString());
                     headers.Add("X-Put-JWT", metaInfo.Token);
 
-                    SendRequest(HttpMethod.PUT, URLHelpers.CombineURL(APIURL, metaInfo.UrlPathName), ms, "application/octet-stream", null, headers);
+                    ms.Position = 0;
+                    await SendRequestAsync(HttpMethod.PUT, URLHelpers.CombineURL(APIURL, metaInfo.UrlPathName), ms,
+                        "application/octet-stream", null, headers, cancellationToken: cancellationToken).ConfigureAwait(false);
                 }
-            }, chunks, fileSize);
+            }
 
             #endregion
 

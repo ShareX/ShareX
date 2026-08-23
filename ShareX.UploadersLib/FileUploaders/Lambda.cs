@@ -64,11 +64,12 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public static string[] UploadURLs = new string[] { "https://lbda.net/", "https://lambda.sx/" };
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("api_key", Config.UserAPIKey);
-            UploadResult result = SendRequestFile(uploadUrl, stream, fileName, "file", arguments, method: HttpMethod.PUT);
+            UploadResult result = await SendRequestFileAsync(uploadUrl, stream, fileName, "file", arguments, method: HttpMethod.PUT,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.Response == null)
             {

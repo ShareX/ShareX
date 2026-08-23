@@ -58,7 +58,7 @@ namespace ShareX.UploadersLib.TextUploaders
             this.settings = settings;
         }
 
-        public override UploadResult UploadText(string text, string fileName)
+        protected override async Task<UploadResult> UploadTextCoreAsync(string text, string fileName, CancellationToken cancellationToken)
         {
             UploadResult ur = new UploadResult();
 
@@ -70,7 +70,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("description", settings.Description);
                 arguments.Add("parent", "");
 
-                SendRequestMultiPart("https://paste2.org/", arguments);
+                await SendRequestMultiPartAsync("https://paste2.org/", arguments, cancellationToken: cancellationToken).ConfigureAwait(false);
                 ur.URL = LastResponseInfo.ResponseURL;
             }
 

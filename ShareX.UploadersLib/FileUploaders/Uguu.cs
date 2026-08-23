@@ -41,9 +41,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class Uguu : FileUploader
     {
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            UploadResult result = SendRequestFile("https://uguu.se/upload.php?output=text", stream, fileName, "files[]");
+            UploadResult result = await SendRequestFileAsync("https://uguu.se/upload.php?output=text", stream, fileName, "files[]",
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {

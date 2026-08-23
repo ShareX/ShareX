@@ -62,7 +62,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             Config = config;
         }
 
-        public bool GetAccessToken()
+        public async Task<bool> GetAccessTokenAsync(CancellationToken cancellationToken = default)
         {
             if (!string.IsNullOrEmpty(Config.Username) && !string.IsNullOrEmpty(Config.Password))
             {
@@ -70,7 +70,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                 args.Add("user", Config.Username);
                 args.Add("password", Config.Password);
 
-                string response = SendRequestMultiPart(URLAccessToken, args);
+                string response = await SendRequestMultiPartAsync(URLAccessToken, args,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -87,14 +88,15 @@ namespace ShareX.UploadersLib.ImageUploaders
             return false;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("api_key", APIKey);
             arguments.Add("auth_token", Config.Auth_token);
             arguments.Add("public", Config.IsPublic ? "y" : "n");
 
-            UploadResult result = SendRequestFile(URLUpload, stream, fileName, "file", arguments);
+            UploadResult result = await SendRequestFileAsync(URLUpload, stream, fileName, "file", arguments,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(result.Response))
             {

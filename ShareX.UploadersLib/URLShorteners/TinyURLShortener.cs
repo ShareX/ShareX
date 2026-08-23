@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public sealed class TinyURLShortener : URLShortener
     {
-        public override UploadResult ShortenURL(string url)
+        protected override async Task<UploadResult> ShortenURLCoreAsync(string url, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult { URL = url };
 
@@ -50,7 +50,8 @@ namespace ShareX.UploadersLib.URLShorteners
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
                 arguments.Add("url", url);
 
-                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "http://tinyurl.com/api-create.php", arguments);
+                result.Response = result.ShortenedURL = await SendRequestAsync(HttpMethod.GET, "http://tinyurl.com/api-create.php", arguments,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
             }
 
             return result;

@@ -68,10 +68,10 @@ internal sealed class DestinationSettingsAccounts
             DestinationSettingsPageBuilder.ButtonRow(DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Get_user_key, () =>
                 URLHelpers.OpenURL(UploaderConfigurationClient.GetPasteEeAuthorizationURL())))),
         "puush" => UserPasswordLogin("puush", () => _config.PuushAPIKey,
-            (username, password) => new Puush().Login(username, password),
+            (username, password) => new Puush().LoginAsync(username, password),
             value => _config.PuushAPIKey = value),
         "lobfile" => UserPasswordLogin("LobFile", () => _config.LithiioSettings.UserAPIKey,
-            (username, password) => new LobFile().FetchAPIKey(username, password),
+            (username, password) => new LobFile().FetchAPIKeyAsync(username, password),
             value => _config.LithiioSettings.UserAPIKey = value),
         "pushbullet" => PushbulletAccount(),
         _ => null
@@ -83,11 +83,11 @@ internal sealed class DestinationSettingsAccounts
             string.IsNullOrEmpty(_config.ImageShackSettings.Auth_token)
                 ? Localization.Strings.DestinationSettings_Not_connected
                 : Localization.Strings.DestinationSettings_Connected);
-        Button login = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Log_in, () =>
+        Button login = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Log_in, async () =>
         {
             try
             {
-                status.Text = UploaderConfigurationClient.LoginImageShack(_config.ImageShackSettings)
+                status.Text = await UploaderConfigurationClient.LoginImageShackAsync(_config.ImageShackSettings)
                     ? Localization.Strings.DestinationSettings_Connected
                     : Localization.Strings.DestinationSettings_Login_failed;
             }
@@ -115,11 +115,11 @@ internal sealed class DestinationSettingsAccounts
             string.IsNullOrEmpty(_config.PastebinSettings.UserKey)
                 ? Localization.Strings.DestinationSettings_Not_connected
                 : Localization.Strings.DestinationSettings_Connected);
-        Button login = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Log_in, () =>
+        Button login = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Log_in, async () =>
         {
             try
             {
-                status.Text = UploaderConfigurationClient.LoginPastebin(_config.PastebinSettings)
+                status.Text = await UploaderConfigurationClient.LoginPastebinAsync(_config.PastebinSettings)
                     ? Localization.Strings.DestinationSettings_Connected
                     : Localization.Strings.DestinationSettings_Login_failed;
             }
@@ -136,7 +136,7 @@ internal sealed class DestinationSettingsAccounts
             DestinationSettingsPageBuilder.ButtonRow(login, register));
     }
 
-    private Control UserPasswordLogin(string serviceName, Func<string> getKey, Func<string, string, string?> login, Action<string> saveKey)
+    private Control UserPasswordLogin(string serviceName, Func<string> getKey, Func<string, string, Task<string?>> login, Action<string> saveKey)
     {
         TextBox username = DestinationSettingsPageBuilder.Text(() => string.Empty, _ => { });
         TextBox password = DestinationSettingsPageBuilder.Text(() => string.Empty, _ => { });
@@ -144,11 +144,11 @@ internal sealed class DestinationSettingsAccounts
         TextBox apiKey = DestinationSettingsPageBuilder.Text(getKey, saveKey);
         apiKey.PasswordChar = '●';
         TextBlock status = DestinationSettingsPageBuilder.Hint(Localization.Strings.DestinationSettings_Enter_credentials_to_retrieve_API_key);
-        Button connect = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Log_in, () =>
+        Button connect = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Log_in, async () =>
         {
             try
             {
-                string? key = login(username.Text ?? string.Empty, password.Text ?? string.Empty);
+                string? key = await login(username.Text ?? string.Empty, password.Text ?? string.Empty);
                 if (!string.IsNullOrWhiteSpace(key))
                 {
                     ((DestinationValue<string>)apiKey.DataContext!).Value = key;
@@ -204,11 +204,11 @@ internal sealed class DestinationSettingsAccounts
         }
 
         device.SelectionChanged += (_, _) => _config.PushbulletSettings.SelectedDevice = device.SelectedIndex;
-        Button refresh = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Refresh_devices, () =>
+        Button refresh = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Refresh_devices, async () =>
         {
             try
             {
-                _config.PushbulletSettings.DeviceList = new Pushbullet(_config.PushbulletSettings).GetDeviceList() ?? [];
+                _config.PushbulletSettings.DeviceList = await new Pushbullet(_config.PushbulletSettings).GetDeviceListAsync() ?? [];
                 Reload();
             }
             catch (Exception exception)
@@ -242,13 +242,13 @@ internal sealed class DestinationSettingsAccounts
                 : Localization.Strings.DestinationSettings_Not_connected);
         }
 
-        Button open = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Open_authorization_page, () =>
+        Button open = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Open_authorization_page, async () =>
         {
             try
             {
                 OAuth2Info info = createInfo();
                 IOAuth2Basic uploader = createUploader(info);
-                string url = uploader.GetAuthorizationURL();
+                string url = await uploader.GetAuthorizationURLAsync();
                 setInfo(string.IsNullOrEmpty(url) ? null : uploader.AuthInfo);
                 if (!string.IsNullOrEmpty(url)) URLHelpers.OpenURL(url);
                 UpdateStatus(Localization.Strings.DestinationSettings_Authorization_page_opened);
@@ -259,13 +259,14 @@ internal sealed class DestinationSettingsAccounts
                 UpdateStatus(exception.Message);
             }
         });
-        Button complete = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Complete_authorization, () =>
+        Button complete = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Complete_authorization, async () =>
         {
             try
             {
                 OAuth2Info? info = getInfo();
                 string authorizationCode = code.Text ?? string.Empty;
-                bool result = info != null && !string.IsNullOrWhiteSpace(authorizationCode) && createUploader(info).GetAccessToken(authorizationCode);
+                bool result = info != null && !string.IsNullOrWhiteSpace(authorizationCode) &&
+                    await createUploader(info).GetAccessTokenAsync(authorizationCode);
                 UpdateStatus(result
                     ? Localization.Strings.DestinationSettings_Connected
                     : Localization.Strings.DestinationSettings_Authorization_failed);
@@ -276,11 +277,11 @@ internal sealed class DestinationSettingsAccounts
                 UpdateStatus(exception.Message);
             }
         });
-        Button refresh = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Refresh_token, () =>
+        Button refresh = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Refresh_token, async () =>
         {
             try
             {
-                bool result = getInfo() is { } info && createUploader(info) is IOAuth2 oauth && oauth.RefreshAccessToken();
+                bool result = getInfo() is { } info && createUploader(info) is IOAuth2 oauth && await oauth.RefreshAccessTokenAsync();
                 UpdateStatus(result
                     ? Localization.Strings.DestinationSettings_Connected
                     : Localization.Strings.DestinationSettings_Token_refresh_failed);
@@ -350,12 +351,12 @@ internal sealed class DestinationSettingsAccounts
             ? Localization.Strings.DestinationSettings_Connected
             : Localization.Strings.DestinationSettings_Not_connected);
 
-        Button open = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Open_authorization_page, () =>
+        Button open = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Open_authorization_page, async () =>
         {
             try
             {
                 OAuthInfo info = UploaderOAuthClientFactory.CreateFlickr();
-                string url = new FlickrUploader(info).GetAuthorizationURL();
+                string url = await new FlickrUploader(info).GetAuthorizationURLAsync();
                 if (!string.IsNullOrEmpty(url)) { _config.FlickrOAuthInfo = info; URLHelpers.OpenURL(url); }
                 UpdateStatus(Localization.Strings.DestinationSettings_Authorization_page_opened);
             }
@@ -365,11 +366,12 @@ internal sealed class DestinationSettingsAccounts
                 UpdateStatus(exception.Message);
             }
         });
-        Button complete = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Complete_authorization, () =>
+        Button complete = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Complete_authorization, async () =>
         {
             try
             {
-                bool result = _config.FlickrOAuthInfo != null && new FlickrUploader(_config.FlickrOAuthInfo).GetAccessToken(code.Text ?? string.Empty);
+                bool result = _config.FlickrOAuthInfo != null &&
+                    await new FlickrUploader(_config.FlickrOAuthInfo).GetAccessTokenAsync(code.Text ?? string.Empty);
                 UpdateStatus(result
                     ? Localization.Strings.DestinationSettings_Connected
                     : Localization.Strings.DestinationSettings_Authorization_failed);
@@ -397,12 +399,12 @@ internal sealed class DestinationSettingsAccounts
             ? Localization.Strings.DestinationSettings_Connected
             : Localization.Strings.DestinationSettings_Not_connected);
 
-        Button open = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Open_authorization_page, () =>
+        Button open = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Open_authorization_page, async () =>
         {
             try
             {
                 OAuthInfo info = UploaderOAuthClientFactory.CreatePhotobucket();
-                string url = new Photobucket(info).GetAuthorizationURL();
+                string url = await new Photobucket(info).GetAuthorizationURLAsync();
                 if (!string.IsNullOrEmpty(url)) { _config.PhotobucketOAuthInfo = info; URLHelpers.OpenURL(url); }
                 UpdateStatus(Localization.Strings.DestinationSettings_Authorization_page_opened);
             }
@@ -412,13 +414,13 @@ internal sealed class DestinationSettingsAccounts
                 UpdateStatus(exception.Message);
             }
         });
-        Button complete = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Complete_authorization, () =>
+        Button complete = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Complete_authorization, async () =>
         {
             try
             {
                 if (_config.PhotobucketOAuthInfo == null) return;
                 Photobucket uploader = new(_config.PhotobucketOAuthInfo);
-                bool result = uploader.GetAccessToken(code.Text ?? string.Empty);
+                bool result = await uploader.GetAccessTokenAsync(code.Text ?? string.Empty);
                 if (result) _config.PhotobucketAccountInfo = uploader.GetAccountInfo();
                 UpdateStatus(result
                     ? Localization.Strings.DestinationSettings_Connected

@@ -31,7 +31,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 {
     public sealed class ImageBin : ImageUploader
     {
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("t", "file");
@@ -42,7 +42,8 @@ namespace ShareX.UploadersLib.ImageUploaders
             arguments.Add("sfile", "Upload");
             arguments.Add("url", "");
 
-            UploadResult result = SendRequestFile("http://imagebin.ca/upload.php", stream, fileName, "f", arguments);
+            UploadResult result = await SendRequestFileAsync("http://imagebin.ca/upload.php", stream, fileName, "f", arguments,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {

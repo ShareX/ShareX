@@ -64,29 +64,29 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        public bool RefreshAccessToken()
+        public Task<bool> RefreshAccessTokenAsync(CancellationToken cancellationToken = default)
         {
-            return OAuth2.RefreshAccessToken();
+            return OAuth2.RefreshAccessTokenAsync(cancellationToken);
         }
 
-        public bool CheckAuthorization()
+        public Task<bool> CheckAuthorizationAsync(CancellationToken cancellationToken = default)
         {
-            return OAuth2.CheckAuthorization();
+            return OAuth2.CheckAuthorizationAsync(cancellationToken);
         }
 
-        public string GetAuthorizationURL()
+        public Task<string> GetAuthorizationURLAsync(CancellationToken cancellationToken = default)
         {
-            return OAuth2.GetAuthorizationURL();
+            return OAuth2.GetAuthorizationURLAsync(cancellationToken);
         }
 
-        public bool GetAccessToken(string code)
+        public Task<bool> GetAccessTokenAsync(string code, CancellationToken cancellationToken = default)
         {
-            return OAuth2.GetAccessToken(code);
+            return OAuth2.GetAccessTokenAsync(code, cancellationToken);
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            if (!CheckAuthorization()) return null;
+            if (!await CheckAuthorizationAsync(cancellationToken).ConfigureAwait(false)) return null;
 
             string title = Path.GetFileNameWithoutExtension(fileName);
             string description = "";
@@ -124,8 +124,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string metadata = JsonConvert.SerializeObject(uploadVideo);
 
-            UploadResult result = SendRequestFile("https://www.googleapis.com/upload/youtube/v3/videos?part=id,snippet,status", stream, fileName, "file",
-                headers: OAuth2.GetAuthHeaders(), relatedData: metadata);
+            UploadResult result = await SendRequestFileAsync("https://www.googleapis.com/upload/youtube/v3/videos?part=id,snippet,status", stream, fileName, "file",
+                headers: OAuth2.GetAuthHeaders(), relatedData: metadata, cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(result.Response))
             {

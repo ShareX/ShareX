@@ -73,16 +73,16 @@ namespace ShareX.UploadersLib.FileUploaders
             ShareAccessLevel = BoxShareAccessLevel.Open;
         }
 
-        public string GetAuthorizationURL()
+        public Task<string> GetAuthorizationURLAsync(CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
 
-            return URLHelpers.CreateQueryString("https://www.box.com/api/oauth2/authorize", args);
+            return Task.FromResult(URLHelpers.CreateQueryString("https://www.box.com/api/oauth2/authorize", args));
         }
 
-        public bool GetAccessToken(string pin)
+        public async Task<bool> GetAccessTokenAsync(string pin, CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("grant_type", "authorization_code");
@@ -90,7 +90,8 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("client_secret", AuthInfo.Client_Secret);
 
-            string response = SendRequestMultiPart("https://www.box.com/api/oauth2/token", args);
+            string response = await SendRequestMultiPartAsync("https://www.box.com/api/oauth2/token", args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -107,7 +108,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return false;
         }
 
-        public bool RefreshAccessToken()
+        public async Task<bool> RefreshAccessTokenAsync(CancellationToken cancellationToken = default)
         {
             if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
             {
@@ -117,7 +118,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 args.Add("client_id", AuthInfo.Client_ID);
                 args.Add("client_secret", AuthInfo.Client_Secret);
 
-                string response = SendRequestMultiPart("https://www.box.com/api/oauth2/token", args);
+                string response = await SendRequestMultiPartAsync("https://www.box.com/api/oauth2/token", args,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -142,11 +144,11 @@ namespace ShareX.UploadersLib.FileUploaders
             return headers;
         }
 
-        public bool CheckAuthorization()
+        public async Task<bool> CheckAuthorizationAsync(CancellationToken cancellationToken = default)
         {
             if (OAuth2Info.CheckOAuth(AuthInfo))
             {
-                if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
+                if (AuthInfo.Token.IsExpired && !await RefreshAccessTokenAsync(cancellationToken).ConfigureAwait(false))
                 {
                     Errors.Add(Localization.Strings.UploaderErrors_Refresh_access_token_failed);
                     return false;
@@ -161,21 +163,22 @@ namespace ShareX.UploadersLib.FileUploaders
             return true;
         }
 
-        public BoxFileInfo GetFiles(BoxFileEntry folder)
+        public Task<BoxFileInfo> GetFilesAsync(BoxFileEntry folder, CancellationToken cancellationToken = default)
         {
-            return GetFiles(folder.id);
+            return GetFilesAsync(folder.id, cancellationToken);
         }
 
-        public BoxFileInfo GetFiles(string id)
+        public async Task<BoxFileInfo> GetFilesAsync(string id, CancellationToken cancellationToken = default)
         {
-            if (!CheckAuthorization())
+            if (!await CheckAuthorizationAsync(cancellationToken).ConfigureAwait(false))
             {
                 return null;
             }
 
             string url = string.Format("https://api.box.com/2.0/folders/{0}/items", id);
 
-            string response = SendRequest(HttpMethod.GET, url, headers: GetAuthHeaders());
+            string response = await SendRequestAsync(HttpMethod.GET, url, headers: GetAuthHeaders(),
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -185,9 +188,12 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public string CreateSharedLink(string id, BoxShareAccessLevel accessLevel)
+        public async Task<string> CreateSharedLinkAsync(string id, BoxShareAccessLevel accessLevel,
+            CancellationToken cancellationToken = default)
         {
-            string response = SendRequest(HttpMethod.PUT, "https://api.box.com/2.0/files/" + id, "{\"shared_link\": {\"access\": \"" + accessLevel.ToString().ToLower() + "\"}}", headers: GetAuthHeaders());
+            string response = await SendRequestAsync(HttpMethod.PUT, "https://api.box.com/2.0/files/" + id,
+                "{\"shared_link\": {\"access\": \"" + accessLevel.ToString().ToLower() + "\"}}", headers: GetAuthHeaders(),
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -202,9 +208,9 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            if (!CheckAuthorization())
+            if (!await CheckAuthorizationAsync(cancellationToken).ConfigureAwait(false))
             {
                 return null;
             }
@@ -217,7 +223,8 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("parent_id", FolderID);
 
-            UploadResult result = SendRequestFile("https://upload.box.com/api/2.0/files/content", stream, fileName, "filename", args, GetAuthHeaders());
+            UploadResult result = await SendRequestFileAsync("https://upload.box.com/api/2.0/files/content", stream, fileName, "filename", args,
+                GetAuthHeaders(), cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {
@@ -230,7 +237,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     if (Share)
                     {
                         AllowReportProgress = false;
-                        result.URL = CreateSharedLink(fileEntry.id, ShareAccessLevel);
+                        result.URL = await CreateSharedLinkAsync(fileEntry.id, ShareAccessLevel, cancellationToken).ConfigureAwait(false);
                     }
                     else
                     {

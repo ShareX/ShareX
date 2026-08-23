@@ -41,9 +41,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class Transfersh : FileUploader
     {
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            UploadResult result = SendRequestFile("https://transfer.sh", stream, fileName, "file");
+            UploadResult result = await SendRequestFileAsync("https://transfer.sh", stream, fileName, "file",
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {

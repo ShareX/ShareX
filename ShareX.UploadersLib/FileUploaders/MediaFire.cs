@@ -73,22 +73,22 @@ namespace ShareX.UploadersLib.FileUploaders
             this.pasw = pasw;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             AllowReportProgress = false;
-            GetSessionToken();
+            await GetSessionTokenAsync(cancellationToken).ConfigureAwait(false);
             AllowReportProgress = true;
-            string key = SimpleUpload(stream, fileName);
+            string key = await SimpleUploadAsync(stream, fileName, cancellationToken).ConfigureAwait(false);
             AllowReportProgress = false;
             string url;
-            while ((url = PollUpload(key, fileName)) == null)
+            while ((url = await PollUploadAsync(key, fileName, cancellationToken).ConfigureAwait(false)) == null)
             {
-                Thread.Sleep(pollInterval);
+                await Task.Delay(pollInterval, cancellationToken).ConfigureAwait(false);
             }
             return new UploadResult() { IsSuccess = true, URL = url };
         }
 
-        private void GetSessionToken()
+        private async Task GetSessionTokenAsync(CancellationToken cancellationToken)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("email", user);
@@ -97,7 +97,8 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("token_version", "2");
             args.Add("response_format", "json");
             args.Add("signature", GetInitSignature());
-            string respStr = SendRequestMultiPart(apiUrl + "user/get_session_token.php", args);
+            string respStr = await SendRequestMultiPartAsync(apiUrl + "user/get_session_token.php", args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
             GetSessionTokenResponse resp = DeserializeResponse<GetSessionTokenResponse>(respStr);
             EnsureSuccess(resp);
             if (resp.session_token == null || resp.time == null || resp.secret_key == null)
@@ -107,7 +108,7 @@ namespace ShareX.UploadersLib.FileUploaders
             signatureKey = (int)resp.secret_key;
         }
 
-        private string SimpleUpload(Stream stream, string fileName)
+        private async Task<string> SimpleUploadAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("session_token", sessionToken);
@@ -115,7 +116,8 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_format", "json");
             args.Add("signature", GetSignature("upload/simple.php", args));
             string url = URLHelpers.CreateQueryString(apiUrl + "upload/simple.php", args);
-            UploadResult res = SendRequestFile(url, stream, fileName, "Filedata");
+            UploadResult res = await SendRequestFileAsync(url, stream, fileName, "Filedata",
+                cancellationToken: cancellationToken).ConfigureAwait(false);
             if (!res.IsSuccess) throw new IOException(res.ErrorsToString());
             SimpleUploadResponse resp = DeserializeResponse<SimpleUploadResponse>(res.Response);
             EnsureSuccess(resp);
@@ -123,7 +125,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return resp.doupload.key;
         }
 
-        private string PollUpload(string uploadKey, string fileName)
+        private async Task<string> PollUploadAsync(string uploadKey, string fileName, CancellationToken cancellationToken)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("session_token", sessionToken);
@@ -131,7 +133,8 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("filename", fileName);
             args.Add("response_format", "json");
             args.Add("signature", GetSignature("upload/poll_upload.php", args));
-            string respStr = SendRequestMultiPart(apiUrl + "upload/poll_upload.php", args);
+            string respStr = await SendRequestMultiPartAsync(apiUrl + "upload/poll_upload.php", args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
             PollUploadResponse resp = DeserializeResponse<PollUploadResponse>(respStr);
             EnsureSuccess(resp);
             if (resp.doupload.result == null || resp.doupload.status == null) throw new IOException(Localization.Strings.MediaFire_Invalid_response);

@@ -61,7 +61,7 @@ namespace ShareX.UploadersLib.TextUploaders
             this.settings = settings;
         }
 
-        public override UploadResult UploadText(string text, string fileName)
+        protected override async Task<UploadResult> UploadTextCoreAsync(string text, string fileName, CancellationToken cancellationToken)
         {
             UploadResult ur = new UploadResult();
 
@@ -80,7 +80,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("tabbing", "true");
                 arguments.Add("tabtype", "real");
 
-                SendRequestMultiPart(APIURL, arguments);
+                await SendRequestMultiPartAsync(APIURL, arguments, cancellationToken: cancellationToken).ConfigureAwait(false);
                 ur.URL = LastResponseInfo.ResponseURL;
             }
 

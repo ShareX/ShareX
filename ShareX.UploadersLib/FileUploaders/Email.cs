@@ -137,10 +137,11 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             Send(ToEmail, Subject, Body, stream, fileName);
-            return new UploadResult { IsURLExpected = false };
+            return Task.FromResult(new UploadResult { IsURLExpected = false });
         }
     }
 }

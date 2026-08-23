@@ -29,6 +29,7 @@ using System;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ShareX.UploadersLib
@@ -53,7 +54,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public async Task<bool> ConnectAsync()
+        public async Task<bool> ConnectAsync(CancellationToken cancellationToken = default)
         {
             Dispose();
 
@@ -64,7 +65,7 @@ namespace ShareX.UploadersLib
 
             OAuth.RedirectURI = redirectURI;
             OAuth.State = state;
-            string url = OAuth.GetAuthorizationURL();
+            string url = await OAuth.GetAuthorizationURLAsync(cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(url))
             {
@@ -86,7 +87,7 @@ namespace ShareX.UploadersLib
                 listener.Prefixes.Add(redirectURI);
                 listener.Start();
 
-                HttpListenerContext context = await listener.GetContextAsync();
+                HttpListenerContext context = await listener.GetContextAsync().WaitAsync(cancellationToken).ConfigureAwait(false);
                 queryCode = context.Request.QueryString.Get("code");
                 queryState = context.Request.QueryString.Get("state");
 
@@ -114,8 +115,8 @@ namespace ShareX.UploadersLib
 
                     using (Stream responseOutput = response.OutputStream)
                     {
-                        await responseOutput.WriteAsync(buffer, 0, buffer.Length);
-                        await responseOutput.FlushAsync();
+                        await responseOutput.WriteAsync(buffer, cancellationToken).ConfigureAwait(false);
+                        await responseOutput.FlushAsync(cancellationToken).ConfigureAwait(false);
                     }
                 }
             }
@@ -129,7 +130,7 @@ namespace ShareX.UploadersLib
 
             if (queryState == state && !string.IsNullOrEmpty(queryCode))
             {
-                return await Task.Run(() => OAuth.GetAccessToken(queryCode));
+                return await OAuth.GetAccessTokenAsync(queryCode, cancellationToken).ConfigureAwait(false);
             }
 
             return false;

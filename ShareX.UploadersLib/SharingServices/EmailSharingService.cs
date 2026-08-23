@@ -51,8 +51,9 @@ namespace ShareX.UploadersLib.SharingServices
             this.config = config;
         }
 
-        public override UploadResult ShareURL(string url)
+        protected override Task<UploadResult> ShareURLCoreAsync(string url, CancellationToken cancellationToken)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
 
             if (config.EmailAutomaticSend && !string.IsNullOrEmpty(config.EmailAutomaticSendTo))
@@ -101,7 +102,7 @@ namespace ShareX.UploadersLib.SharingServices
 
             //URLHelpers.OpenURL("mailto:?body=" + URLHelpers.URLEncode(url));
 
-            return result;
+            return Task.FromResult(result);
         }
     }
 }

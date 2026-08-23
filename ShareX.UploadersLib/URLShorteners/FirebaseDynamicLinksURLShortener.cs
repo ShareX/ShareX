@@ -78,7 +78,7 @@ namespace ShareX.UploadersLib.URLShorteners
         public string DynamicLinkDomain { get; set; }
         public bool IsShort { get; set; }
 
-        public override UploadResult ShortenURL(string url)
+        protected override async Task<UploadResult> ShortenURLCoreAsync(string url, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult { URL = url };
 
@@ -106,7 +106,8 @@ namespace ShareX.UploadersLib.URLShorteners
             };
 
             string serializedRequestOptions = JsonConvert.SerializeObject(requestOptions);
-            result.Response = SendRequest(HttpMethod.POST, "https://firebasedynamiclinks.googleapis.com/v1/shortLinks", serializedRequestOptions, RequestHelpers.ContentTypeJSON, args);
+            result.Response = await SendRequestAsync(HttpMethod.POST, "https://firebasedynamiclinks.googleapis.com/v1/shortLinks", serializedRequestOptions,
+                RequestHelpers.ContentTypeJSON, args, cancellationToken: cancellationToken).ConfigureAwait(false);
 
             FirebaseResponse firebaseResponse = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response);
 

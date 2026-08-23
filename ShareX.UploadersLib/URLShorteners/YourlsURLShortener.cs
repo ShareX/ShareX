@@ -57,7 +57,7 @@ namespace ShareX.UploadersLib.URLShorteners
         public string Username { get; set; }
         public string Password { get; set; }
 
-        public override UploadResult ShortenURL(string url)
+        protected override async Task<UploadResult> ShortenURLCoreAsync(string url, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult { URL = url };
 
@@ -85,7 +85,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 //arguments.Add("title", "");
                 arguments.Add("format", "simple");
 
-                result.Response = SendRequestMultiPart(APIURL, arguments);
+                result.Response = await SendRequestMultiPartAsync(APIURL, arguments, cancellationToken: cancellationToken).ConfigureAwait(false);
                 result.ShortenedURL = result.Response;
             }
 

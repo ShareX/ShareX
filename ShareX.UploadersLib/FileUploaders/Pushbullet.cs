@@ -65,7 +65,7 @@ namespace ShareX.UploadersLib.FileUploaders
             apiSendPushURL = apiURL + "/pushes",
             apiRequestFileUploadURL = apiURL + "/upload-request";
 
-        public UploadResult PushFile(Stream stream, string fileName)
+        public async Task<UploadResult> PushFileAsync(Stream stream, string fileName, CancellationToken cancellationToken = default)
         {
             NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
@@ -73,7 +73,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             upArgs.Add("file_name", fileName);
 
-            string uploadRequest = SendRequestMultiPart(apiRequestFileUploadURL, upArgs, headers);
+            string uploadRequest = await SendRequestMultiPartAsync(apiRequestFileUploadURL, upArgs, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (uploadRequest == null) return null;
 
@@ -92,7 +93,8 @@ namespace ShareX.UploadersLib.FileUploaders
             upArgs.Add("policy", fileInfo.data.policy);
             upArgs.Add("content-type", fileInfo.data.content_type);
 
-            UploadResult uploadResult = SendRequestFile(fileInfo.upload_url, stream, fileName, "file", upArgs);
+            UploadResult uploadResult = await SendRequestFileAsync(fileInfo.upload_url, stream, fileName, "file", upArgs,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (uploadResult == null) return null;
 
@@ -102,7 +104,8 @@ namespace ShareX.UploadersLib.FileUploaders
             pushArgs.Add("body", "Sent via ShareX");
             pushArgs.Add("file_type", fileInfo.file_type);
 
-            string pushResult = SendRequestMultiPart(apiSendPushURL, pushArgs, headers);
+            string pushResult = await SendRequestMultiPartAsync(apiSendPushURL, pushArgs, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (pushResult == null) return null;
 
@@ -114,7 +117,8 @@ namespace ShareX.UploadersLib.FileUploaders
             return uploadResult;
         }
 
-        private string Push(string pushType, string valueType, string value, string title)
+        private async Task<string> PushAsync(string pushType, string valueType, string value, string title,
+            CancellationToken cancellationToken = default)
         {
             NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
@@ -132,7 +136,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     args.Add("body", "Sent via ShareX");
             }
 
-            string response = SendRequestMultiPart(apiSendPushURL, args, headers);
+            string response = await SendRequestMultiPartAsync(apiSendPushURL, args, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (response == null) return null;
 
@@ -144,30 +149,31 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public string PushNote(string note, string title)
+        public Task<string> PushNoteAsync(string note, string title, CancellationToken cancellationToken = default)
         {
-            return Push("note", "body", note, title);
+            return PushAsync("note", "body", note, title, cancellationToken);
         }
 
-        public string PushLink(string link, string title)
+        public Task<string> PushLinkAsync(string link, string title, CancellationToken cancellationToken = default)
         {
-            return Push("link", "url", link, title);
+            return PushAsync("link", "url", link, title, cancellationToken);
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             if (string.IsNullOrEmpty(Config.UserAPIKey)) throw new Exception(Localization.Strings.Common_API_key_is_missing);
             if (Config.CurrentDevice == null) throw new Exception(Localization.Strings.Pushbullet_No_device_selected);
             if (string.IsNullOrEmpty(Config.CurrentDevice.Key)) throw new Exception(Localization.Strings.Pushbullet_Device_key_is_missing);
 
-            return PushFile(stream, fileName);
+            return await PushFileAsync(stream, fileName, cancellationToken).ConfigureAwait(false);
         }
 
-        public List<PushbulletDevice> GetDeviceList()
+        public async Task<List<PushbulletDevice>> GetDeviceListAsync(CancellationToken cancellationToken = default)
         {
             NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
-            string response = SendRequest(HttpMethod.GET, apiGetDevicesURL, headers: headers);
+            string response = await SendRequestAsync(HttpMethod.GET, apiGetDevicesURL, headers: headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             PushbulletResponseDevices devicesResponse = JsonConvert.DeserializeObject<PushbulletResponseDevices>(response);
 

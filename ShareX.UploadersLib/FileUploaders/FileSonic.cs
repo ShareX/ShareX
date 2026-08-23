@@ -44,15 +44,16 @@ namespace ShareX.UploadersLib.FileUploaders
             Password = password;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             UploadResult result = null;
 
-            string url = GetUploadURL();
+            string url = await GetUploadURLAsync(cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(url))
             {
-                result = SendRequestFile(url, stream, fileName, "file");
+                result = await SendRequestFileAsync(url, stream, fileName, "file",
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {
@@ -67,7 +68,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
-        public string GetUploadURL()
+        public async Task<string> GetUploadURLAsync(CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("method", "getUploadUrl");
@@ -75,7 +76,8 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("u", Username);
             args.Add("p", Password);
 
-            string response = SendRequest(HttpMethod.GET, APIURL, args);
+            string response = await SendRequestAsync(HttpMethod.GET, APIURL, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             XDocument xd = XDocument.Parse(response);
             return xd.GetValue("FSApi_Upload/getUploadUrl/response/url");

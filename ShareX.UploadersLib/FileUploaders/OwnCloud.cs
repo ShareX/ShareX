@@ -79,7 +79,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Password = password;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             if (string.IsNullOrEmpty(Host))
             {
@@ -107,7 +107,8 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Username, Password);
             headers["OCS-APIREQUEST"] = "true";
 
-            string response = SendRequest(HttpMethod.PUT, url, stream, MimeTypes.GetMimeTypeFromFileName(fileName), null, headers);
+            string response = await SendRequestAsync(HttpMethod.PUT, url, stream, MimeTypes.GetMimeTypeFromFileName(fileName), null, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             UploadResult result = new UploadResult(response);
 
@@ -116,7 +117,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (CreateShare)
                 {
                     AllowReportProgress = false;
-                    result.URL = ShareFile(path, fileName);
+                    result.URL = await ShareFileAsync(path, fileName, cancellationToken).ConfigureAwait(false);
                 }
                 else
                 {
@@ -128,7 +129,7 @@ namespace ShareX.UploadersLib.FileUploaders
         }
 
         // https://doc.owncloud.org/server/10.0/developer_manual/core/ocs-share-api.html#create-a-new-share
-        public string ShareFile(string path, string fileName)
+        public async Task<string> ShareFileAsync(string path, string fileName, CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("path", path); // path to the file/folder which should be shared
@@ -164,7 +165,8 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Username, Password);
             headers["OCS-APIREQUEST"] = "true";
 
-            string response = SendRequestMultiPart(url, args, headers);
+            string response = await SendRequestMultiPartAsync(url, args, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {

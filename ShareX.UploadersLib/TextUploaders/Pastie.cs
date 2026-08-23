@@ -46,7 +46,7 @@ namespace ShareX.UploadersLib.TextUploaders
     {
         public bool IsPublic { get; set; }
 
-        public override UploadResult UploadText(string text, string fileName)
+        protected override async Task<UploadResult> UploadTextCoreAsync(string text, string fileName, CancellationToken cancellationToken)
         {
             UploadResult ur = new UploadResult();
 
@@ -57,7 +57,8 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("paste[restricted]", IsPublic ? "0" : "1");
                 arguments.Add("paste[authorization]", "burger");
 
-                SendRequestURLEncoded(HttpMethod.POST, "http://pastie.org/pastes", arguments);
+                await SendRequestURLEncodedAsync(HttpMethod.POST, "http://pastie.org/pastes", arguments,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
                 ur.URL = LastResponseInfo.ResponseURL;
             }
 

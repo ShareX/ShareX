@@ -30,12 +30,13 @@ namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class FileBin : FileUploader
     {
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("MAX_FILE_SIZE", "82428800");
 
-            UploadResult result = SendRequestFile("http://filebin.ca/upload.php", stream, fileName, "file", args);
+            UploadResult result = await SendRequestFileAsync("http://filebin.ca/upload.php", stream, fileName, "file", args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {

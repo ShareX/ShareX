@@ -88,21 +88,22 @@ namespace ShareX.UploadersLib.FileUploaders
             AuthInfo = oauth;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            return UploadFile(stream, UploadPath, fileName, AutoCreateShareableLink, UseDirectLink);
+            return await UploadFileAsync(stream, UploadPath, fileName, AutoCreateShareableLink, UseDirectLink,
+                cancellationToken).ConfigureAwait(false);
         }
 
-        public string GetAuthorizationURL()
+        public Task<string> GetAuthorizationURLAsync(CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
 
-            return URLHelpers.CreateQueryString(URLOAuth2Authorize, args);
+            return Task.FromResult(URLHelpers.CreateQueryString(URLOAuth2Authorize, args));
         }
 
-        public bool GetAccessToken(string code)
+        public async Task<bool> GetAccessTokenAsync(string code, CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("client_id", AuthInfo.Client_ID);
@@ -110,7 +111,8 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("grant_type", "authorization_code");
             args.Add("code", code);
 
-            string response = SendRequestMultiPart(URLOAuth2Token, args);
+            string response = await SendRequestMultiPartAsync(URLOAuth2Token, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -156,11 +158,12 @@ namespace ShareX.UploadersLib.FileUploaders
             return "";
         }
 
-        public DropboxAccount GetCurrentAccount()
+        public async Task<DropboxAccount> GetCurrentAccountAsync(CancellationToken cancellationToken = default)
         {
             if (OAuth2Info.CheckOAuth(AuthInfo))
             {
-                string response = SendRequest(HttpMethod.POST, URLGetCurrentAccount, "null", RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = await SendRequestAsync(HttpMethod.POST, URLGetCurrentAccount, "null", RequestHelpers.ContentTypeJSON, null, GetAuthHeaders(),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -171,7 +174,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public bool DownloadFile(string path, Stream downloadStream)
+        public async Task<bool> DownloadFileAsync(string path, Stream downloadStream, CancellationToken cancellationToken = default)
         {
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
@@ -183,13 +186,15 @@ namespace ShareX.UploadersLib.FileUploaders
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("arg", json);
 
-                return SendRequestDownload(HttpMethod.POST, URLDownload, downloadStream, args, GetAuthHeaders(), null, RequestHelpers.ContentTypeJSON);
+                return await SendRequestDownloadAsync(HttpMethod.POST, URLDownload, downloadStream, args, GetAuthHeaders(), null,
+                    RequestHelpers.ContentTypeJSON, cancellationToken).ConfigureAwait(false);
             }
 
             return false;
         }
 
-        public UploadResult UploadFile(Stream stream, string path, string fileName, bool createShareableLink = false, bool useDirectLink = false)
+        public async Task<UploadResult> UploadFileAsync(Stream stream, string path, string fileName, bool createShareableLink = false,
+            bool useDirectLink = false, CancellationToken cancellationToken = default)
         {
             if (stream.Length > 150000000)
             {
@@ -208,7 +213,8 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("arg", json);
 
-            string response = SendRequest(HttpMethod.POST, URLUpload, stream, RequestHelpers.ContentTypeOctetStream, args, GetAuthHeaders());
+            string response = await SendRequestAsync(HttpMethod.POST, URLUpload, stream, RequestHelpers.ContentTypeOctetStream, args, GetAuthHeaders(),
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             UploadResult ur = new UploadResult(response);
 
@@ -222,7 +228,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         AllowReportProgress = false;
 
-                        ur.URL = CreateShareableLink(metadata.path_display, useDirectLink);
+                        ur.URL = await CreateShareableLinkAsync(metadata.path_display, useDirectLink, cancellationToken).ConfigureAwait(false);
                     }
                     else
                     {
@@ -234,7 +240,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return ur;
         }
 
-        public DropboxMetadata GetMetadata(string path)
+        public async Task<DropboxMetadata> GetMetadataAsync(string path, CancellationToken cancellationToken = default)
         {
             DropboxMetadata metadata = null;
 
@@ -248,7 +254,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     include_has_explicit_shared_members = false
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLGetMetadata, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = await SendRequestAsync(HttpMethod.POST, URLGetMetadata, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders(),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -259,14 +266,14 @@ namespace ShareX.UploadersLib.FileUploaders
             return metadata;
         }
 
-        public bool IsExists(string path)
+        public async Task<bool> IsExistsAsync(string path, CancellationToken cancellationToken = default)
         {
-            DropboxMetadata metadata = GetMetadata(path);
+            DropboxMetadata metadata = await GetMetadataAsync(path, cancellationToken).ConfigureAwait(false);
 
             return metadata != null && !metadata.tag.Equals("deleted", StringComparison.OrdinalIgnoreCase);
         }
 
-        public string CreateShareableLink(string path, bool directLink)
+        public async Task<string> CreateShareableLinkAsync(string path, bool directLink, CancellationToken cancellationToken = default)
         {
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
@@ -279,7 +286,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLCreateSharedLink, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = await SendRequestAsync(HttpMethod.POST, URLCreateSharedLink, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders(),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 DropboxLinkMetadata linkMetadata = null;
 
@@ -289,7 +297,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
                 else if (IsError && Errors.Errors[Errors.Count - 1].Text.Contains("\"shared_link_already_exists\"")) // Ugly workaround
                 {
-                    DropboxListSharedLinksResult result = ListSharedLinks(path, true);
+                    DropboxListSharedLinksResult result = await ListSharedLinksAsync(path, true, cancellationToken).ConfigureAwait(false);
 
                     if (result != null && result.links != null && result.links.Length > 0)
                     {
@@ -313,7 +321,8 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public DropboxListSharedLinksResult ListSharedLinks(string path, bool directOnly = false)
+        public async Task<DropboxListSharedLinksResult> ListSharedLinksAsync(string path, bool directOnly = false,
+            CancellationToken cancellationToken = default)
         {
             DropboxListSharedLinksResult result = null;
 
@@ -325,7 +334,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     direct_only = directOnly
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLListSharedLinks, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = await SendRequestAsync(HttpMethod.POST, URLListSharedLinks, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders(),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -336,7 +346,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
-        public DropboxMetadata Copy(string fromPath, string toPath)
+        public async Task<DropboxMetadata> CopyAsync(string fromPath, string toPath, CancellationToken cancellationToken = default)
         {
             DropboxMetadata metadata = null;
 
@@ -348,7 +358,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     to_path = VerifyPath(toPath)
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLCopy, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = await SendRequestAsync(HttpMethod.POST, URLCopy, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders(),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -359,7 +370,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return metadata;
         }
 
-        public DropboxMetadata CreateFolder(string path)
+        public async Task<DropboxMetadata> CreateFolderAsync(string path, CancellationToken cancellationToken = default)
         {
             DropboxMetadata metadata = null;
 
@@ -370,7 +381,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     path = VerifyPath(path)
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLCreateFolder, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = await SendRequestAsync(HttpMethod.POST, URLCreateFolder, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders(),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -381,7 +393,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return metadata;
         }
 
-        public DropboxMetadata Delete(string path)
+        public async Task<DropboxMetadata> DeleteAsync(string path, CancellationToken cancellationToken = default)
         {
             DropboxMetadata metadata = null;
 
@@ -392,7 +404,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     path = VerifyPath(path)
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLDelete, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = await SendRequestAsync(HttpMethod.POST, URLDelete, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders(),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -403,7 +416,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return metadata;
         }
 
-        public DropboxMetadata Move(string fromPath, string toPath)
+        public async Task<DropboxMetadata> MoveAsync(string fromPath, string toPath, CancellationToken cancellationToken = default)
         {
             DropboxMetadata metadata = null;
 
@@ -415,7 +428,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     to_path = VerifyPath(toPath)
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLMove, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = await SendRequestAsync(HttpMethod.POST, URLMove, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders(),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {

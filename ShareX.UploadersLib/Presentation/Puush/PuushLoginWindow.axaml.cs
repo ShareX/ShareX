@@ -51,7 +51,7 @@ public partial class PuushLoginWindow : Window
 
         try
         {
-            string? apiKey = await Task.Run(() => new Puush().Login(email, password));
+            string? apiKey = await new Puush().LoginAsync(email, password);
             if (!string.IsNullOrEmpty(apiKey))
             {
                 SubmittedApiKey = apiKey;

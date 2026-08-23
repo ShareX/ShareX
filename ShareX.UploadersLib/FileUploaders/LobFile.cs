@@ -59,12 +59,13 @@ namespace ShareX.UploadersLib.FileUploaders
             Config = config;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("api_key", Config.UserAPIKey);
 
-            UploadResult result = SendRequestFile("https://lobfile.com/api/v3/upload", stream, fileName, "file", args);
+            UploadResult result = await SendRequestFileAsync("https://lobfile.com/api/v3/upload", stream, fileName, "file", args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {
@@ -83,13 +84,14 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
-        public string FetchAPIKey(string email, string password)
+        public async Task<string> FetchAPIKeyAsync(string email, string password, CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("email", email);
             args.Add("password", password);
 
-            string response = SendRequestMultiPart("https://lobfile.com/api/v3/fetch-api-key", args);
+            string response = await SendRequestMultiPartAsync("https://lobfile.com/api/v3/fetch-api-key", args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {

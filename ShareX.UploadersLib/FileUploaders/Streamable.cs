@@ -63,7 +63,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Password = password;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             NameValueCollection headers = null;
 
@@ -73,14 +73,15 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             string url = URLHelpers.CombineURL(Host, "upload");
-            UploadResult result = SendRequestFile(url, stream, fileName, "file", headers: headers);
+            UploadResult result = await SendRequestFileAsync(url, stream, fileName, "file", headers: headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
-            TranscodeFile(result);
+            await TranscodeFileAsync(result, cancellationToken).ConfigureAwait(false);
 
             return result;
         }
 
-        private void TranscodeFile(UploadResult result)
+        private async Task TranscodeFileAsync(UploadResult result, CancellationToken cancellationToken)
         {
             StreamableTranscodeResponse transcodeResponse = JsonConvert.DeserializeObject<StreamableTranscodeResponse>(result.Response);
 
@@ -91,7 +92,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 while (!StopUploadRequested)
                 {
-                    string statusJson = SendRequest(HttpMethod.GET, URLHelpers.CombineURL(Host, "videos", transcodeResponse.Shortcode));
+                    string statusJson = await SendRequestAsync(HttpMethod.GET, URLHelpers.CombineURL(Host, "videos", transcodeResponse.Shortcode),
+                        cancellationToken: cancellationToken).ConfigureAwait(false);
                     StreamableStatusResponse response = JsonConvert.DeserializeObject<StreamableStatusResponse>(statusJson);
 
                     if (response.status > 2)
@@ -122,7 +124,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     progress.UpdateProgress(response.percent - progress.Position);
                     OnProgressChanged(progress);
 
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000, cancellationToken).ConfigureAwait(false);
                 }
             }
             else

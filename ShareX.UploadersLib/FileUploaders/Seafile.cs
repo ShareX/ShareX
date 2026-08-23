@@ -79,7 +79,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region SeafileAuth
 
-        public string GetAuthToken(string username, string password)
+        public async Task<string> GetAuthTokenAsync(string username, string password, CancellationToken cancellationToken = default)
         {
             string url = URLHelpers.FixPrefix(APIURL);
             url = URLHelpers.CombineURL(url, "auth-token/?format=json");
@@ -90,7 +90,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 { "password", password }
             };
 
-            string response = SendRequestMultiPart(url, args);
+            string response = await SendRequestMultiPartAsync(url, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -106,12 +107,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region SeafileChecks
 
-        public bool CheckAPIURL()
+        public async Task<bool> CheckAPIURLAsync(CancellationToken cancellationToken = default)
         {
             string url = URLHelpers.FixPrefix(APIURL);
             url = URLHelpers.CombineURL(url, "ping/?format=json");
 
-            string response = SendRequest(HttpMethod.GET, url);
+            string response = await SendRequestAsync(HttpMethod.GET, url,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -124,7 +126,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return false;
         }
 
-        public bool CheckAuthToken()
+        public async Task<bool> CheckAuthTokenAsync(CancellationToken cancellationToken = default)
         {
             string url = URLHelpers.FixPrefix(APIURL);
             url = URLHelpers.CombineURL(url, "auth/ping/?format=json");
@@ -132,7 +134,8 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
-            string response = SendRequest(HttpMethod.GET, url, null, headers);
+            string response = await SendRequestAsync(HttpMethod.GET, url, null, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -149,7 +152,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region SeafileAccountInformation
 
-        public SeafileCheckAccInfoResponse GetAccountInfo()
+        public async Task<SeafileCheckAccInfoResponse> GetAccountInfoAsync(CancellationToken cancellationToken = default)
         {
             string url = URLHelpers.FixPrefix(APIURL);
             url = URLHelpers.CombineURL(url, "account/info/?format=json");
@@ -157,7 +160,8 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
-            string response = SendRequest(HttpMethod.GET, url, null, headers);
+            string response = await SendRequestAsync(HttpMethod.GET, url, null, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -173,7 +177,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region SeafileLibraries
 
-        public string GetOrMakeDefaultLibrary(string authtoken = null)
+        public async Task<string> GetOrMakeDefaultLibraryAsync(string authtoken = null, CancellationToken cancellationToken = default)
         {
             string url = URLHelpers.FixPrefix(APIURL);
             url = URLHelpers.CombineURL(url, "default-repo/?format=json");
@@ -181,7 +185,8 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + (authtoken ?? AuthToken));
 
-            string response = SendRequest(HttpMethod.GET, url, null, headers);
+            string response = await SendRequestAsync(HttpMethod.GET, url, null, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -193,7 +198,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public List<SeafileLibraryObj> GetLibraries()
+        public async Task<List<SeafileLibraryObj>> GetLibrariesAsync(CancellationToken cancellationToken = default)
         {
             string url = URLHelpers.FixPrefix(APIURL);
             url = URLHelpers.CombineURL(url, "repos/?format=json");
@@ -201,7 +206,8 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
-            string response = SendRequest(HttpMethod.GET, url, null, headers);
+            string response = await SendRequestAsync(HttpMethod.GET, url, null, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -213,7 +219,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public bool ValidatePath(string path)
+        public async Task<bool> ValidatePathAsync(string path, CancellationToken cancellationToken = default)
         {
             string url = URLHelpers.FixPrefix(APIURL);
             url = URLHelpers.CombineURL(url, "repos/" + RepoID + "/dir/?p=" + path + "&format=json");
@@ -221,7 +227,8 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
-            string response = SendRequest(HttpMethod.GET, url, null, headers);
+            string response = await SendRequestAsync(HttpMethod.GET, url, null, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -235,7 +242,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region SeafileEncryptedLibrary
 
-        public bool DecryptLibrary(string libraryPassword)
+        public async Task<bool> DecryptLibraryAsync(string libraryPassword, CancellationToken cancellationToken = default)
         {
             string url = URLHelpers.FixPrefix(APIURL);
             url = URLHelpers.CombineURL(url, "repos/" + RepoID + "/?format=json");
@@ -246,7 +253,8 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("password", libraryPassword);
 
-            string response = SendRequestMultiPart(url, args, headers);
+            string response = await SendRequestMultiPartAsync(url, args, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -267,7 +275,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region SeafileUpload
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             if (string.IsNullOrEmpty(APIURL))
             {
@@ -298,7 +306,8 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
-            string response = SendRequest(HttpMethod.GET, url, null, headers);
+            string response = await SendRequestAsync(HttpMethod.GET, url, null, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             string responseURL = response.Trim('"');
 
@@ -306,14 +315,15 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("filename", fileName);
             args.Add("parent_dir", Path);
 
-            UploadResult result = SendRequestFile(responseURL, stream, fileName, "file", args, headers);
+            UploadResult result = await SendRequestFileAsync(responseURL, stream, fileName, "file", args, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!IsError)
             {
                 if (CreateShareableURL && !IsLibraryEncrypted)
                 {
                     AllowReportProgress = false;
-                    result.URL = ShareFile(Path + fileName);
+                    result.URL = await ShareFileAsync(Path + fileName, cancellationToken).ConfigureAwait(false);
 
                     if (CreateShareableURLRaw)
                     {
@@ -333,7 +343,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
-        public string ShareFile(string path)
+        public async Task<string> ShareFileAsync(string path, CancellationToken cancellationToken = default)
         {
             string url = URLHelpers.FixPrefix(APIURL);
             url = URLHelpers.CombineURL(url, "repos", RepoID, "file/shared-link/");
@@ -347,8 +357,9 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
-            SendRequestURLEncoded(HttpMethod.PUT, url, args, headers);
-            return LastResponseInfo.Headers["Location"];
+            await SendRequestURLEncodedAsync(HttpMethod.PUT, url, args, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+            return LastResponseInfo?.Headers?["Location"];
         }
 
         #endregion SeafileUpload

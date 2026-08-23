@@ -25,29 +25,34 @@
 
 using System.IO;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ShareX.UploadersLib
 {
     public abstract class TextUploader : GenericUploader
     {
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected sealed override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
-            using (StreamReader sr = new StreamReader(stream, Encoding.UTF8))
-            {
-                return UploadText(sr.ReadToEnd(), fileName);
-            }
+            using StreamReader reader = new StreamReader(stream, Encoding.UTF8, true, BufferSize, true);
+            string text = await reader.ReadToEndAsync(cancellationToken).ConfigureAwait(false);
+            return await UploadTextCoreAsync(text, fileName, cancellationToken).ConfigureAwait(false);
         }
 
-        public abstract UploadResult UploadText(string text, string fileName);
+        public Task<UploadResult> UploadTextAsync(string text, string fileName, CancellationToken cancellationToken = default)
+        {
+            return RunOperationAsync(token => UploadTextCoreAsync(text, fileName, token), cancellationToken);
+        }
 
-        public UploadResult UploadTextFile(string filePath)
+        protected abstract Task<UploadResult> UploadTextCoreAsync(string text, string fileName, CancellationToken cancellationToken);
+
+        public async Task<UploadResult> UploadTextFileAsync(string filePath, CancellationToken cancellationToken = default)
         {
             if (File.Exists(filePath))
             {
-                using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
-                {
-                    return Upload(stream, Path.GetFileName(filePath));
-                }
+                await using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read,
+                    BufferSize, FileOptions.Asynchronous | FileOptions.SequentialScan);
+                return await UploadAsync(stream, Path.GetFileName(filePath), cancellationToken).ConfigureAwait(false);
             }
 
             return null;

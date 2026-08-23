@@ -43,14 +43,14 @@ namespace ShareX.UploadersLib.URLShorteners
     {
         private const string API_ENDPOINT = "http://vurl.com/api.php";
 
-        public override UploadResult ShortenURL(string url)
+        protected override async Task<UploadResult> ShortenURLCoreAsync(string url, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult { URL = url };
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("url", url);
 
-            string response = SendRequest(HttpMethod.GET, API_ENDPOINT, args);
+            string response = await SendRequestAsync(HttpMethod.GET, API_ENDPOINT, args, cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response) && response != "Invalid URL")
             {

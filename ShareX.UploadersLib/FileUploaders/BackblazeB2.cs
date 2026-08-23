@@ -94,7 +94,7 @@ namespace ShareX.UploadersLib.FileUploaders
             CustomUrl = customUrl;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             string parsedUploadPath = NameParser.Parse(NameParserType.FilePath, UploadPath);
             string destinationPath = URLHelpers.CombineURL(parsedUploadPath, fileName);
@@ -103,7 +103,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
             // STEP 1: authorize, get auth token, api url, download url
             DebugHelper.WriteLine($"B2 uploader: Attempting to authorize as '{ApplicationKeyId}'.");
-            B2Authorization auth = B2ApiAuthorize(ApplicationKeyId, ApplicationKey, out string authError);
+            B2ApiResult<B2Authorization> authorizationResult = await B2ApiAuthorizeAsync(ApplicationKeyId, ApplicationKey,
+                cancellationToken).ConfigureAwait(false);
+            B2Authorization auth = authorizationResult.Value;
+            string authError = authorizationResult.Error;
             if (authError != null)
             {
                 DebugHelper.WriteLine("B2 uploader: Failed to authorize.");
@@ -120,11 +123,17 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 DebugHelper.WriteLine("B2 uploader: Key doesn't have a bucket ID set, so I'm looking for a bucket ID.");
 
-                string newBucketId = B2ApiGetBucketId(auth, BucketName, out string getBucketError);
-                if (getBucketError != null)
+                B2ApiResult<string> bucketResult = await B2ApiGetBucketIdAsync(auth, BucketName, cancellationToken).ConfigureAwait(false);
+                string newBucketId = bucketResult.Value;
+                if (bucketResult.Error == null)
                 {
                     DebugHelper.WriteLine($"B2 uploader: It's {newBucketId}.");
                     bucketId = newBucketId;
+                }
+                else
+                {
+                    Errors.Add(string.Format(Localization.Strings.BackblazeB2_Upload_failed_with_error, bucketResult.Error));
+                    return null;
                 }
             }
 
@@ -153,26 +162,27 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     int delay = (int)Math.Pow(2, tries - 1) * 1000;
                     DebugHelper.WriteLine($"Waiting ${delay} ms for backoff.");
-                    Thread.Sleep(delay);
+                    await Task.Delay(delay, cancellationToken).ConfigureAwait(false);
                 }
 
                 // STEP 2: get upload url that we need to POST to in step 3
                 if (url == null)
                 {
                     DebugHelper.WriteLine("B2 uploader: Getting new upload URL.");
-                    url = B2ApiGetUploadUrl(auth, bucketId, out string getUrlError);
-                    if (getUrlError != null)
+                    B2ApiResult<B2UploadUrl> uploadUrlResult = await B2ApiGetUploadUrlAsync(auth, bucketId, cancellationToken).ConfigureAwait(false);
+                    url = uploadUrlResult.Value;
+                    if (uploadUrlResult.Error != null)
                     {
                         // this is guaranteed to be unrecoverable, so bail out
                         DebugHelper.WriteLine("B2 uploader: Got error trying to get upload URL.");
-                        Errors.Add(string.Format(Localization.Strings.BackblazeB2_Could_not_get_upload_URL, getUrlError));
+                        Errors.Add(string.Format(Localization.Strings.BackblazeB2_Could_not_get_upload_URL, uploadUrlResult.Error));
                         return null;
                     }
                 }
 
                 // STEP 3: upload file and see if anything went wrong
                 DebugHelper.WriteLine($"B2 uploader: Uploading to URL {url.uploadUrl}");
-                B2UploadResult uploadResult = B2ApiUploadFile(url, destinationPath, stream);
+                B2UploadResult uploadResult = await B2ApiUploadFileAsync(url, destinationPath, stream, cancellationToken).ConfigureAwait(false);
                 HashSet<string> expiredTokenCodes = new HashSet<string>(new List<string> { "expired_auth_token", "bad_auth_token" });
 
                 if (uploadResult.RC == -1)
@@ -183,7 +193,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     url = null;
                     continue;
                 }
-                else if (uploadResult.RC == 401 && expiredTokenCodes.Contains(uploadResult.Error.code))
+                else if (uploadResult.RC == 401 && expiredTokenCodes.Contains(uploadResult.Error?.code))
                 {
                     // Unauthorized, our token expired
                     DebugHelper.WriteLine("B2 uploader: Upload auth token expired, trying with new URL.");
@@ -253,23 +263,24 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <param name="key">The application key <b>or</b> account master key.</param>
         /// <param name="error">Will be set to a non-null value on failure.</param>
         /// <returns>Null if an error occurs, and <c>error</c> will contain an error message. Otherwise, a <see cref="B2Authorization"/>.</returns>
-        private B2Authorization B2ApiAuthorize(string keyId, string key, out string error)
+        private async Task<B2ApiResult<B2Authorization>> B2ApiAuthorizeAsync(string keyId, string key,
+            CancellationToken cancellationToken)
         {
             NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(keyId, key);
+            ResponseInfo res = await GetResponseAsync(HttpMethod.GET, B2AuthorizeAccountUrl, headers: headers,
+                allowNon2xxResponses: true, cancellationToken: cancellationToken).ConfigureAwait(false);
 
-            using (HttpWebResponse res = GetResponse(HttpMethod.GET, B2AuthorizeAccountUrl, headers: headers, allowNon2xxResponses: true))
+            if (res == null)
             {
-                if (res.StatusCode != HttpStatusCode.OK)
-                {
-                    error = StringifyB2Error(res);
-                    return null;
-                }
-
-                string body = RequestHelpers.ResponseToString(res);
-
-                error = null;
-                return JsonConvert.DeserializeObject<B2Authorization>(body);
+                return new B2ApiResult<B2Authorization>(null, "Connection failed.");
             }
+
+            if (res.StatusCode != HttpStatusCode.OK)
+            {
+                return new B2ApiResult<B2Authorization>(null, StringifyB2Error(res));
+            }
+
+            return new B2ApiResult<B2Authorization>(JsonConvert.DeserializeObject<B2Authorization>(res.ResponseText), null);
         }
 
         /// <summary>
@@ -279,7 +290,8 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <param name="bucketName">The bucket to get the ID for.</param>
         /// <param name="error">Will be set to a non-null value on failure.</param>
         /// <returns>Null if an error occurs, and <c>error</c> will contain an error message. Otherwise, the bucket ID.</returns>
-        private string B2ApiGetBucketId(B2Authorization auth, string bucketName, out string error)
+        private async Task<B2ApiResult<string>> B2ApiGetBucketIdAsync(B2Authorization auth, string bucketName,
+            CancellationToken cancellationToken)
         {
             NameValueCollection headers = new NameValueCollection()
             {
@@ -294,42 +306,38 @@ namespace ShareX.UploadersLib.FileUploaders
 
             using (Stream data = CreateJsonBody(reqBody))
             {
-                using (HttpWebResponse res = GetResponse(HttpMethod.POST, auth.apiUrl + B2ListBucketsPath,
-                    contentType: ApplicationJson, headers: headers, data: data, allowNon2xxResponses: true))
+                ResponseInfo res = await GetResponseAsync(HttpMethod.POST, auth.apiUrl + B2ListBucketsPath,
+                    contentType: ApplicationJson, headers: headers, data: data, allowNon2xxResponses: true,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
+
+                if (res == null)
                 {
-                    if (res.StatusCode != HttpStatusCode.OK)
-                    {
-                        error = StringifyB2Error(res);
-                        return null;
-                    }
-
-                    string body = RequestHelpers.ResponseToString(res);
-
-                    JObject json;
-
-                    try
-                    {
-                        json = JObject.Parse(body);
-                    }
-                    catch (JsonException e)
-                    {
-                        DebugHelper.WriteLine($"B2 uploader: Could not parse b2_list_buckets response: {e}");
-                        error = "B2 upload failed: Couldn't parse b2_list_buckets response.";
-                        return null;
-                    }
-
-                    string bucketId = json.SelectToken("buckets")?.FirstOrDefault(b => b["bucketName"].ToString() == bucketName)?.
-                        SelectToken("bucketId")?.ToString() ?? "";
-
-                    if (!string.IsNullOrWhiteSpace(bucketId))
-                    {
-                        error = null;
-                        return bucketId;
-                    }
-
-                    error = $"B2 upload failed: Couldn't find bucket {bucketName}.";
-                    return null;
+                    return new B2ApiResult<string>(null, "Connection failed.");
                 }
+
+                if (res.StatusCode != HttpStatusCode.OK)
+                {
+                    return new B2ApiResult<string>(null, StringifyB2Error(res));
+                }
+
+                JObject json;
+
+                try
+                {
+                    json = JObject.Parse(res.ResponseText);
+                }
+                catch (JsonException e)
+                {
+                    DebugHelper.WriteLine($"B2 uploader: Could not parse b2_list_buckets response: {e}");
+                    return new B2ApiResult<string>(null, "B2 upload failed: Couldn't parse b2_list_buckets response.");
+                }
+
+                string bucketId = json.SelectToken("buckets")?.FirstOrDefault(b => b["bucketName"].ToString() == bucketName)?.
+                    SelectToken("bucketId")?.ToString() ?? "";
+
+                return !string.IsNullOrWhiteSpace(bucketId)
+                    ? new B2ApiResult<string>(bucketId, null)
+                    : new B2ApiResult<string>(null, $"B2 upload failed: Couldn't find bucket {bucketName}.");
             }
         }
 
@@ -340,7 +348,8 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <param name="bucketId">The bucket ID to get an upload URL for.</param>
         /// <param name="error">Will be set to a non-null value on failure.</param>
         /// <returns>Null if an error occurs, and <c>error</c> will contain an error message. Otherwise, a <see cref="B2UploadUrl"/></returns>
-        private B2UploadUrl B2ApiGetUploadUrl(B2Authorization auth, string bucketId, out string error)
+        private async Task<B2ApiResult<B2UploadUrl>> B2ApiGetUploadUrlAsync(B2Authorization auth, string bucketId,
+            CancellationToken cancellationToken)
         {
             NameValueCollection headers = new NameValueCollection() { ["Authorization"] = auth.authorizationToken };
 
@@ -348,20 +357,21 @@ namespace ShareX.UploadersLib.FileUploaders
 
             using (Stream data = CreateJsonBody(reqBody))
             {
-                using (HttpWebResponse res = GetResponse(HttpMethod.POST, auth.apiUrl + B2GetUploadUrlPath,
-                    contentType: ApplicationJson, headers: headers, data: data, allowNon2xxResponses: true))
+                ResponseInfo res = await GetResponseAsync(HttpMethod.POST, auth.apiUrl + B2GetUploadUrlPath,
+                    contentType: ApplicationJson, headers: headers, data: data, allowNon2xxResponses: true,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
+
+                if (res == null)
                 {
-                    if (res.StatusCode != HttpStatusCode.OK)
-                    {
-                        error = StringifyB2Error(res);
-                        return null;
-                    }
-
-                    string body = RequestHelpers.ResponseToString(res);
-
-                    error = null;
-                    return JsonConvert.DeserializeObject<B2UploadUrl>(body);
+                    return new B2ApiResult<B2UploadUrl>(null, "Connection failed.");
                 }
+
+                if (res.StatusCode != HttpStatusCode.OK)
+                {
+                    return new B2ApiResult<B2UploadUrl>(null, StringifyB2Error(res));
+                }
+
+                return new B2ApiResult<B2UploadUrl>(JsonConvert.DeserializeObject<B2UploadUrl>(res.ResponseText), null);
             }
         }
 
@@ -380,7 +390,8 @@ namespace ShareX.UploadersLib.FileUploaders
         ///         <li><b>If the connection failed:</b> <c>(-1, null, null)</c></li>
         ///     </ul>
         /// </returns>
-        private B2UploadResult B2ApiUploadFile(B2UploadUrl b2UploadUrl, string destinationPath, Stream file)
+        private async Task<B2UploadResult> B2ApiUploadFileAsync(B2UploadUrl b2UploadUrl, string destinationPath, Stream file,
+            CancellationToken cancellationToken)
         {
             // we want to send 'Content-Disposition: inline; filename="screenshot.png"'
             // this should display the uploaded data inline if possible, but if that fails, present a sensible filename
@@ -413,26 +424,24 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string contentType = MimeTypes.GetMimeTypeFromFileName(destinationPath);
 
-            using (HttpWebResponse res = GetResponse(HttpMethod.POST, b2UploadUrl.uploadUrl,
-                contentType: contentType, headers: headers, data: file, allowNon2xxResponses: true))
+            ResponseInfo res = await GetResponseAsync(HttpMethod.POST, b2UploadUrl.uploadUrl,
+                contentType: contentType, headers: headers, data: file, allowNon2xxResponses: true,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            // if connection failed, res will be null, and here we -do- want to check explicitly for this
+            // since the server might be down
+            if (res == null)
             {
-                // if connection failed, res will be null, and here we -do- want to check explicitly for this
-                // since the server might be down
-                if (res == null)
-                {
-                    return new B2UploadResult(-1, null, null);
-                }
-
-                if (res.StatusCode != HttpStatusCode.OK)
-                {
-                    return new B2UploadResult((int)res.StatusCode, ParseB2Error(res), null);
-                }
-
-                string body = RequestHelpers.ResponseToString(res);
-                DebugHelper.WriteLine($"B2 uploader: B2ApiUploadFile() reports success! '{body}'");
-
-                return new B2UploadResult((int)res.StatusCode, null, JsonConvert.DeserializeObject<B2Upload>(body));
+                return new B2UploadResult(-1, null, null);
             }
+
+            if (res.StatusCode != HttpStatusCode.OK)
+            {
+                return new B2UploadResult((int)res.StatusCode, ParseB2Error(res), null);
+            }
+
+            DebugHelper.WriteLine($"B2 uploader: B2ApiUploadFile() reports success! '{res.ResponseText}'");
+            return new B2UploadResult((int)res.StatusCode, null, JsonConvert.DeserializeObject<B2Upload>(res.ResponseText));
         }
 
         /// <summary>
@@ -484,7 +493,7 @@ namespace ShareX.UploadersLib.FileUploaders
         /// The parse result, or null if the response is successful or cannot be parsed.
         /// </returns>
         /// <exception cref="IOException">If the response body cannot be read.</exception>
-        private static B2Error ParseB2Error(HttpWebResponse res)
+        private static B2Error ParseB2Error(ResponseInfo res)
         {
             if (WebHelpers.IsSuccessStatusCode(res.StatusCode))
             {
@@ -493,7 +502,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             try
             {
-                string body = RequestHelpers.ResponseToString(res);
+                string body = res.ResponseText;
                 DebugHelper.WriteLine($"B2 uploader: ParseB2Error() got: {body}");
                 B2Error err = JsonConvert.DeserializeObject<B2Error>(body);
                 return err;
@@ -507,9 +516,9 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <summary>
         /// Creates a user facing error message from a failed B2 request.
         /// </summary>
-        /// <param name="res">A <see cref="HttpWebResponse"/> with a non-2xx status code.</param>
+        /// <param name="res">A response with a non-2xx status code.</param>
         /// <returns>A string describing the error.</returns>
-        private static string StringifyB2Error(HttpWebResponse res)
+        private static string StringifyB2Error(ResponseInfo res)
         {
             B2Error err = ParseB2Error(res);
             if (err == null)
@@ -533,8 +542,20 @@ namespace ShareX.UploadersLib.FileUploaders
             return new MemoryStream(Encoding.UTF8.GetBytes(body));
         }
 
+        private readonly struct B2ApiResult<T>
+        {
+            public T Value { get; }
+            public string Error { get; }
+
+            public B2ApiResult(T value, string error)
+            {
+                Value = value;
+                Error = error;
+            }
+        }
+
         /// <summary>
-        /// The result of <see cref="BackblazeB2.B2ApiUploadFile(B2UploadUrl, string, Stream)"/>.
+        /// The result of a B2 file upload request.
         /// </summary>
         private class B2UploadResult
         {

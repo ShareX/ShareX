@@ -48,12 +48,13 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public string UserKey { get; set; }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             if (!string.IsNullOrEmpty(UserKey)) args.Add("userkey", UserKey);
 
-            UploadResult result = SendRequestFile("https://vgy.me/upload", stream, fileName, "file", args);
+            UploadResult result = await SendRequestFileAsync("https://vgy.me/upload", stream, fileName, "file", args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {

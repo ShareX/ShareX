@@ -78,18 +78,18 @@ namespace ShareX.UploadersLib.FileUploaders
             APIKey = apiKey;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             if (AccountType == AccountType.User)
             {
-                SendSpaceManager.PrepareUploadInfo(APIKey, Username, Password);
+                await SendSpaceManager.PrepareUploadInfoAsync(APIKey, Username, Password, cancellationToken).ConfigureAwait(false);
             }
             else
             {
-                SendSpaceManager.PrepareUploadInfo(APIKey);
+                await SendSpaceManager.PrepareUploadInfoAsync(APIKey, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
 
-            return Upload(stream, fileName, SendSpaceManager.UploadInfo);
+            return await UploadAsync(stream, fileName, SendSpaceManager.UploadInfo, cancellationToken).ConfigureAwait(false);
         }
 
         #region Helpers
@@ -256,7 +256,8 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <param name="email">Valid email address required</param>
         /// <param name="password">Can be left empty and the API will create a unique password or enter one with 4-20 chars</param>
         /// <returns>true = success, false = error</returns>
-        public bool AuthRegister(string username, string fullname, string email, string password)
+        public async Task<bool> AuthRegisterAsync(string username, string fullname, string email, string password,
+            CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("method", "auth.register");
@@ -266,7 +267,8 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("email", email);
             args.Add("password", password);
 
-            string response = SendRequestMultiPart(APIURL, args);
+            string response = await SendRequestMultiPartAsync(APIURL, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -281,7 +283,7 @@ namespace ShareX.UploadersLib.FileUploaders
         /// http://www.sendspace.com/dev_method.html?method=auth.createToken
         /// </summary>
         /// <returns>A token to be used with the auth.login method</returns>
-        public string AuthCreateToken()
+        public async Task<string> AuthCreateTokenAsync(CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("method", "auth.createToken");
@@ -290,7 +292,8 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("app_version", AppVersion); // Application specific, formatting / style is up to you
             args.Add("response_format", "xml"); // Value must be: XML
 
-            string response = SendRequestMultiPart(APIURL, args);
+            string response = await SendRequestMultiPartAsync(APIURL, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -313,7 +316,8 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <param name="username">Registered user name</param>
         /// <param name="password">Registered password</param>
         /// <returns>Account informations including session key</returns>
-        public LoginInfo AuthLogin(string token, string username, string password)
+        public async Task<LoginInfo> AuthLoginAsync(string token, string username, string password,
+            CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("method", "auth.login");
@@ -323,7 +327,8 @@ namespace ShareX.UploadersLib.FileUploaders
             string passwordHash = TranslatorHelper.TextToHash(password, HashType.MD5);
             args.Add("tokened_password", TranslatorHelper.TextToHash(token + passwordHash, HashType.MD5));
 
-            string response = SendRequestMultiPart(APIURL, args);
+            string response = await SendRequestMultiPartAsync(APIURL, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -345,13 +350,14 @@ namespace ShareX.UploadersLib.FileUploaders
         /// </summary>
         /// <param name="sessionKey">Received from auth.login</param>
         /// <returns>true = success, false = error</returns>
-        public bool AuthCheckSession(string sessionKey)
+        public async Task<bool> AuthCheckSessionAsync(string sessionKey, CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("method", "auth.checkSession");
             args.Add("session_key", sessionKey);
 
-            string response = SendRequestMultiPart(APIURL, args);
+            string response = await SendRequestMultiPartAsync(APIURL, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -377,13 +383,14 @@ namespace ShareX.UploadersLib.FileUploaders
         /// </summary>
         /// <param name="sessionKey">Received from auth.login</param>
         /// <returns>true = success, false = error</returns>
-        public bool AuthLogout(string sessionKey)
+        public async Task<bool> AuthLogoutAsync(string sessionKey, CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("method", "auth.logout");
             args.Add("session_key", sessionKey);
 
-            string response = SendRequestMultiPart(APIURL, args);
+            string response = await SendRequestMultiPartAsync(APIURL, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -403,14 +410,15 @@ namespace ShareX.UploadersLib.FileUploaders
         /// </summary>
         /// <param name="sessionKey">Received from auth.login</param>
         /// <returns>URL to upload the file to, progress_url for real-time progress information, max_file_size for max size current user can upload, upload_identifier & extra_info to be passed with the upload form</returns>
-        public UploadInfo UploadGetInfo(string sessionKey)
+        public async Task<UploadInfo> UploadGetInfoAsync(string sessionKey, CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("method", "upload.getInfo");
             args.Add("session_key", sessionKey);
             args.Add("speed_limit", SpeedLimit.ToString());
 
-            string response = SendRequest(HttpMethod.GET, APIURL, args);
+            string response = await SendRequestAsync(HttpMethod.GET, APIURL, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -430,7 +438,7 @@ namespace ShareX.UploadersLib.FileUploaders
         /// Obtains the basic information needed to make an anonymous upload. This method does not require authentication or login.
         /// </summary>
         /// <returns>URL to upload the file to, progress_url for real-time progress information, max_file_size for max size current user can upload, upload_identifier & extra_info to be passed in the upload form</returns>
-        public UploadInfo AnonymousUploadGetInfo()
+        public async Task<UploadInfo> AnonymousUploadGetInfoAsync(CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("method", "anonymous.uploadGetInfo");
@@ -439,7 +447,8 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("api_version", APIVersion);
             args.Add("app_version", AppVersion);
 
-            string response = SendRequest(HttpMethod.GET, APIURL, args);
+            string response = await SendRequestAsync(HttpMethod.GET, APIURL, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -493,7 +502,8 @@ namespace ShareX.UploadersLib.FileUploaders
             return PrepareArguments(max_file_size, upload_identifier, extra_info, null, null, null, null, null, null);
         }
 
-        public UploadResult Upload(Stream stream, string fileName, UploadInfo uploadInfo)
+        public async Task<UploadResult> UploadAsync(Stream stream, string fileName, UploadInfo uploadInfo,
+            CancellationToken cancellationToken = default)
         {
             UploadResult result = null;
 
@@ -501,7 +511,8 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 Dictionary<string, string> args = PrepareArguments(uploadInfo.MaxFileSize, uploadInfo.UploadIdentifier, uploadInfo.ExtraInfo);
 
-                result = SendRequestFile(uploadInfo.URL, stream, fileName, "userfile", args);
+                result = await SendRequestFileAsync(uploadInfo.URL, stream, fileName, "userfile", args,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (result.IsSuccess)
                 {
@@ -535,12 +546,23 @@ namespace ShareX.UploadersLib.FileUploaders
                 this.sendSpace = sendSpace;
 
                 cts = new CancellationTokenSource();
-                Task.Run(() => DoWork(cts.Token), cts.Token);
+                _ = DoWorkAsync(cts.Token);
             }
 
-            private void DoWork(CancellationToken ct)
+            private async Task DoWorkAsync(CancellationToken ct)
             {
-                Thread.Sleep(1000);
+                try
+                {
+                    await DoWorkCoreAsync(ct).ConfigureAwait(false);
+                }
+                catch (OperationCanceledException) when (ct.IsCancellationRequested)
+                {
+                }
+            }
+
+            private async Task DoWorkCoreAsync(CancellationToken ct)
+            {
+                await Task.Delay(1000, ct).ConfigureAwait(false);
                 ProgressInfo progressInfo = new ProgressInfo();
                 DateTime time;
                 while (!ct.IsCancellationRequested)
@@ -548,7 +570,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     time = DateTime.Now;
                     try
                     {
-                        string response = sendSpace.SendRequest(HttpMethod.POST, url);
+                        string response = await sendSpace.SendRequestAsync(HttpMethod.POST, url,
+                            cancellationToken: ct).ConfigureAwait(false);
 
                         progressInfo.ParseResponse(response);
 
@@ -566,7 +589,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     int elapsed = (int)(DateTime.Now - time).TotalMilliseconds;
                     if (elapsed < interval)
                     {
-                        Thread.Sleep(interval - elapsed);
+                        await Task.Delay(interval - elapsed, ct).ConfigureAwait(false);
                     }
                 }
             }

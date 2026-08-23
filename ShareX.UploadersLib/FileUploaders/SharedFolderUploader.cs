@@ -75,8 +75,9 @@ namespace ShareX.UploadersLib.FileUploaders
             this.account = account;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             UploadResult result = new UploadResult();
 
             string filePath = account.GetLocalhostPath(fileName);
@@ -91,7 +92,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
             }
 
-            return result;
+            return Task.FromResult(result);
         }
     }
 }

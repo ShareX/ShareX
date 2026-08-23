@@ -58,7 +58,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Settings = settings;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             if (string.IsNullOrEmpty(Settings.URL))
             {
@@ -91,11 +91,13 @@ namespace ShareX.UploadersLib.FileUploaders
                 metaDataReq.Login = Settings.Login;
                 metaDataReq.Password = Settings.Password;
             }
-            string metaDataResp = SendRequest(HttpMethod.POST, Settings.URL + "/upload", JsonConvert.SerializeObject(metaDataReq), headers: requestHeaders);
+            string metaDataResp = await SendRequestAsync(HttpMethod.POST, Settings.URL + "/upload", JsonConvert.SerializeObject(metaDataReq), headers: requestHeaders,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
             UploadMetadataResponse metaData = JsonConvert.DeserializeObject<UploadMetadataResponse>(metaDataResp);
             requestHeaders["x-uploadtoken"] = metaData.uploadToken;
             string url = $"{Settings.URL}/file/{metaData.id}/{metaData.files.First().Value.id}/{fileName}";
-            UploadResult FileDatReq = SendRequestFile(url, stream, fileName, "file", headers: requestHeaders);
+            UploadResult FileDatReq = await SendRequestFileAsync(url, stream, fileName, "file", headers: requestHeaders,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             return ConvertResult(metaData, FileDatReq);
         }

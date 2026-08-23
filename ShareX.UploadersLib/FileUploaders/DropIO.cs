@@ -54,11 +54,11 @@ namespace ShareX.UploadersLib.FileUploaders
             APIKey = apiKey;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             DropName = "ShareX_" + Helpers.GetRandomAlphanumeric(10);
             DropDescription = "";
-            Drop drop = CreateDrop(DropName, DropDescription, false, false, false);
+            Drop drop = await CreateDropAsync(DropName, DropDescription, false, false, false, cancellationToken).ConfigureAwait(false);
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("version", "2.0");
@@ -67,7 +67,8 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("token", drop.AdminToken);
             args.Add("drop_name", drop.Name);
 
-            UploadResult result = SendRequestFile("http://assets.drop.io/upload", stream, fileName, "file", args);
+            UploadResult result = await SendRequestFileAsync("http://assets.drop.io/upload", stream, fileName, "file", args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (result.IsSuccess)
             {
@@ -93,7 +94,8 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        private Drop CreateDrop(string name, string description, bool guests_can_comment, bool guests_can_add, bool guests_can_delete)
+        private async Task<Drop> CreateDropAsync(string name, string description, bool guests_can_comment, bool guests_can_add,
+            bool guests_can_delete, CancellationToken cancellationToken)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("version", "2.0");
@@ -110,7 +112,8 @@ namespace ShareX.UploadersLib.FileUploaders
             // determines whether guests can delete assets
             args.Add("guests_can_delete", guests_can_delete.ToString());
 
-            string response = SendRequestMultiPart("http://api.drop.io/drops", args);
+            string response = await SendRequestMultiPartAsync("http://api.drop.io/drops", args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             XDocument doc = XDocument.Parse(response);
             XElement root = doc.Element("drop");

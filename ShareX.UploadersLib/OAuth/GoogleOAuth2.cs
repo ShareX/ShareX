@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System.Collections.Generic;
@@ -38,9 +40,9 @@ namespace ShareX.UploadersLib
 
         public OAuth2Info AuthInfo { get; private set; }
         private Uploader GoogleUploader { get; set; }
-        public string RedirectURI { get; set; }
-        public string State { get; set; }
-        public string Scope { get; set; }
+        public string RedirectURI { get; set; } = string.Empty;
+        public string State { get; set; } = string.Empty;
+        public string Scope { get; set; } = string.Empty;
 
         public GoogleOAuth2(OAuth2Info oauth, Uploader uploader)
         {
@@ -48,7 +50,7 @@ namespace ShareX.UploadersLib
             GoogleUploader = uploader;
         }
 
-        public string GetAuthorizationURL()
+        public Task<string> GetAuthorizationURLAsync(CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("response_type", "code");
@@ -57,10 +59,10 @@ namespace ShareX.UploadersLib
             args.Add("state", State);
             args.Add("scope", Scope);
 
-            return URLHelpers.CreateQueryString(AuthorizationEndpoint, args);
+            return Task.FromResult(URLHelpers.CreateQueryString(AuthorizationEndpoint, args));
         }
 
-        public bool GetAccessToken(string code)
+        public async Task<bool> GetAccessTokenAsync(string code, CancellationToken cancellationToken = default)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("code", code);
@@ -69,11 +71,12 @@ namespace ShareX.UploadersLib
             args.Add("redirect_uri", RedirectURI);
             args.Add("grant_type", "authorization_code");
 
-            string response = GoogleUploader.SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);
+            string response = await GoogleUploader.SendRequestURLEncodedAsync(HttpMethod.POST, TokenEndpoint, args,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {
-                OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
+                OAuth2Token? token = JsonConvert.DeserializeObject<OAuth2Token>(response);
 
                 if (token != null && !string.IsNullOrEmpty(token.access_token))
                 {
@@ -86,7 +89,7 @@ namespace ShareX.UploadersLib
             return false;
         }
 
-        public bool RefreshAccessToken()
+        public async Task<bool> RefreshAccessTokenAsync(CancellationToken cancellationToken = default)
         {
             if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
             {
@@ -96,11 +99,12 @@ namespace ShareX.UploadersLib
                 args.Add("client_secret", AuthInfo.Client_Secret);
                 args.Add("grant_type", "refresh_token");
 
-                string response = GoogleUploader.SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);
+                string response = await GoogleUploader.SendRequestURLEncodedAsync(HttpMethod.POST, TokenEndpoint, args,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(response))
                 {
-                    OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
+                    OAuth2Token? token = JsonConvert.DeserializeObject<OAuth2Token>(response);
 
                     if (token != null && !string.IsNullOrEmpty(token.access_token))
                     {
@@ -116,11 +120,11 @@ namespace ShareX.UploadersLib
             return false;
         }
 
-        public bool CheckAuthorization()
+        public async Task<bool> CheckAuthorizationAsync(CancellationToken cancellationToken = default)
         {
             if (OAuth2Info.CheckOAuth(AuthInfo))
             {
-                if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
+                if (AuthInfo.Token.IsExpired && !await RefreshAccessTokenAsync(cancellationToken).ConfigureAwait(false))
                 {
                     GoogleUploader.Errors.Add(Localization.Strings.UploaderErrors_Refresh_access_token_failed);
                     return false;
@@ -142,9 +146,10 @@ namespace ShareX.UploadersLib
             return headers;
         }
 
-        public OAuthUserInfo GetUserInfo()
+        public async Task<OAuthUserInfo?> GetUserInfoAsync(CancellationToken cancellationToken = default)
         {
-            string response = GoogleUploader.SendRequest(HttpMethod.GET, UserInfoEndpoint, null, GetAuthHeaders());
+            string response = await GoogleUploader.SendRequestAsync(HttpMethod.GET, UserInfoEndpoint, null, GetAuthHeaders(),
+                cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {

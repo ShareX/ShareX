@@ -48,7 +48,7 @@ namespace ShareX.UploadersLib.TextUploaders
             this.settings = settings;
         }
 
-        public override UploadResult UploadText(string text, string fileName)
+        protected override async Task<UploadResult> UploadTextCoreAsync(string text, string fileName, CancellationToken cancellationToken)
         {
             UploadResult ur = new UploadResult();
 
@@ -71,7 +71,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("tags", settings.Tags);
                 arguments.Add("type", settings.TextFormat);
 
-                ur.Response = SendRequestMultiPart(APIURL, arguments);
+                ur.Response = await SendRequestMultiPartAsync(APIURL, arguments, cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(ur.Response))
                 {

@@ -56,7 +56,7 @@ namespace ShareX.UploadersLib.URLShorteners
         public bool IsSecret { get; set; }
         public bool UseAPIv1 { get; set; }
 
-        public override UploadResult ShortenURL(string url)
+        protected override async Task<UploadResult> ShortenURLCoreAsync(string url, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult { URL = url };
 
@@ -88,7 +88,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 args.Add("is_secret", "true");
             }
 
-            string response = SendRequest(HttpMethod.GET, Host, args);
+            string response = await SendRequestAsync(HttpMethod.GET, Host, args, cancellationToken: cancellationToken).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(response))
             {

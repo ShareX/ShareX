@@ -53,7 +53,7 @@ namespace ShareX.UploadersLib.TextUploaders
         public string API_KEY { get; set; }
         public string API_USERNAME { get; set; }
 
-        public override UploadResult UploadText(string text, string fileName)
+        protected override async Task<UploadResult> UploadTextCoreAsync(string text, string fileName, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult();
 
@@ -69,7 +69,8 @@ namespace ShareX.UploadersLib.TextUploaders
                     headers = RequestHelpers.CreateAuthenticationHeader(API_USERNAME, API_KEY);
                 }
 
-                result.Response = SendRequestMultiPart(API_ENDPOINT, args, headers);
+                result.Response = await SendRequestMultiPartAsync(API_ENDPOINT, args, headers,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {

@@ -25,6 +25,8 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -38,7 +40,8 @@ namespace ShareX.UploadersLib.FileUploaders
         public static string Password;
         public static SendSpace.UploadInfo UploadInfo;
 
-        public static UploaderErrorManager PrepareUploadInfo(string apiKey, string username = null, string password = null)
+        public static async Task<UploaderErrorManager> PrepareUploadInfoAsync(string apiKey, string username = null, string password = null,
+            CancellationToken cancellationToken = default)
         {
             SendSpace sendSpace = new SendSpace(apiKey);
 
@@ -48,7 +51,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     AccountType = AccountType.Anonymous;
 
-                    UploadInfo = sendSpace.AnonymousUploadGetInfo();
+                    UploadInfo = await sendSpace.AnonymousUploadGetInfoAsync(cancellationToken).ConfigureAwait(false);
                     if (UploadInfo == null) throw new Exception(Localization.Strings.SendSpace_Upload_information_is_missing);
                 }
                 else
@@ -59,16 +62,17 @@ namespace ShareX.UploadersLib.FileUploaders
 
                     if (string.IsNullOrEmpty(Token))
                     {
-                        Token = sendSpace.AuthCreateToken();
+                        Token = await sendSpace.AuthCreateTokenAsync(cancellationToken).ConfigureAwait(false);
                         if (string.IsNullOrEmpty(Token)) throw new Exception(Localization.Strings.SendSpace_Token_is_missing);
                     }
                     if (string.IsNullOrEmpty(SessionKey) || (DateTime.Now - LastSessionKey).TotalMinutes > 30)
                     {
-                        SessionKey = sendSpace.AuthLogin(Token, username, password).SessionKey;
+                        SendSpace.LoginInfo loginInfo = await sendSpace.AuthLoginAsync(Token, username, password, cancellationToken).ConfigureAwait(false);
+                        SessionKey = loginInfo?.SessionKey;
                         if (string.IsNullOrEmpty(SessionKey)) throw new Exception(Localization.Strings.SendSpace_Session_key_is_missing);
                         LastSessionKey = DateTime.Now;
                     }
-                    UploadInfo = sendSpace.UploadGetInfo(SessionKey);
+                    UploadInfo = await sendSpace.UploadGetInfoAsync(SessionKey, cancellationToken).ConfigureAwait(false);
                     if (UploadInfo == null) throw new Exception(Localization.Strings.SendSpace_Upload_information_is_missing);
                 }
             }

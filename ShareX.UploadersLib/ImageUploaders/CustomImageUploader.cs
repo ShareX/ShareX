@@ -71,20 +71,22 @@ namespace ShareX.UploadersLib.ImageUploaders
             uploader = customUploaderItem;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
         {
             UploadResult result = new UploadResult();
             CustomUploaderInput input = new CustomUploaderInput(fileName, "");
 
             if (uploader.Body == CustomUploaderBody.MultipartFormData)
             {
-                result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(), uploader.GetArguments(input),
-                    uploader.GetHeaders(input), null, uploader.RequestMethod);
+                result = await SendRequestFileAsync(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(),
+                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.RequestMethod,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
             }
             else if (uploader.Body == CustomUploaderBody.Binary)
             {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, MimeTypes.GetMimeTypeFromFileName(fileName),
-                    null, uploader.GetHeaders(input));
+                result.Response = await SendRequestAsync(uploader.RequestMethod, uploader.GetRequestURL(input), stream,
+                    MimeTypes.GetMimeTypeFromFileName(fileName), null, uploader.GetHeaders(input),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
             }
             else
             {

@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -28,8 +28,14 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using NetHttpMethod = System.Net.Http.HttpMethod;
 
 namespace ShareX.UploadersLib
 {
@@ -37,21 +43,23 @@ namespace ShareX.UploadersLib
     {
         public delegate void ProgressEventHandler(ProgressManager progress);
         public event ProgressEventHandler ProgressChanged;
-
         public event Action<string> EarlyURLCopyRequested;
+
+        private readonly object operationLock = new object();
+        private CancellationTokenSource operationCancellation;
 
         public bool IsUploading { get; protected set; }
         public UploaderErrorManager Errors { get; private set; } = new UploaderErrorManager();
         public bool IsError => !StopUploadRequested && Errors != null && Errors.Count > 0;
         public int BufferSize { get; set; } = 8192;
+        public TimeSpan RequestTimeout { get; set; } = Timeout.InfiniteTimeSpan;
+        public bool AllowAutoRedirect { get; set; } = true;
 
         protected bool StopUploadRequested { get; set; }
         protected bool AllowReportProgress { get; set; } = true;
         protected bool ReturnResponseOnError { get; set; }
-
         protected ResponseInfo LastResponseInfo { get; set; }
-
-        private HttpWebRequest currentWebRequest;
+        protected CancellationToken CurrentCancellationToken => operationCancellation?.Token ?? CancellationToken.None;
 
         protected void OnProgressChanged(ProgressManager progress)
         {
@@ -60,309 +68,267 @@ namespace ShareX.UploadersLib
 
         protected void OnEarlyURLCopyRequested(string url)
         {
-            if (EarlyURLCopyRequested != null && !string.IsNullOrEmpty(url))
+            if (!string.IsNullOrEmpty(url))
             {
-                EarlyURLCopyRequested(url);
+                EarlyURLCopyRequested?.Invoke(url);
             }
         }
 
         public string ToErrorString()
         {
-            if (IsError)
-            {
-                return string.Join(Environment.NewLine, Errors);
-            }
-
-            return "";
+            return IsError ? string.Join(Environment.NewLine, Errors) : "";
         }
 
         public virtual void StopUpload()
         {
-            if (IsUploading)
-            {
-                StopUploadRequested = true;
+            CancellationTokenSource cancellation = null;
 
-                if (currentWebRequest != null)
+            lock (operationLock)
+            {
+                if (IsUploading)
                 {
-                    try
-                    {
-                        currentWebRequest.Abort();
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                    }
+                    StopUploadRequested = true;
+                    cancellation = operationCancellation;
                 }
             }
+
+            cancellation?.Cancel();
         }
 
-        internal string SendRequest(HttpMethod method, string url, Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null)
+        protected async Task<T> RunOperationAsync<T>(Func<CancellationToken, Task<T>> operation, CancellationToken cancellationToken = default)
         {
-            return SendRequest(method, url, (Stream)null, null, args, headers, cookies);
-        }
-
-        protected string SendRequest(HttpMethod method, string url, Stream data, string contentType = null, Dictionary<string, string> args = null, NameValueCollection headers = null,
-            CookieCollection cookies = null)
-        {
-            using (HttpWebResponse webResponse = GetResponse(method, url, data, contentType, args, headers, cookies))
+            if (operation == null)
             {
-                return ProcessWebResponseText(webResponse);
+                throw new ArgumentNullException(nameof(operation));
+            }
+
+            CancellationTokenSource cancellation;
+
+            lock (operationLock)
+            {
+                if (operationCancellation != null)
+                {
+                    throw new InvalidOperationException("This uploader is already processing an operation.");
+                }
+
+                StopUploadRequested = false;
+                IsUploading = true;
+                cancellation = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+                operationCancellation = cancellation;
+            }
+
+            try
+            {
+                return await operation(cancellation.Token).ConfigureAwait(false);
+            }
+            catch (OperationCanceledException) when (StopUploadRequested && !cancellationToken.IsCancellationRequested)
+            {
+                return default;
+            }
+            finally
+            {
+                lock (operationLock)
+                {
+                    operationCancellation = null;
+                    IsUploading = false;
+                }
+
+                cancellation.Dispose();
             }
         }
 
-        protected string SendRequest(HttpMethod method, string url, string content, string contentType = null, Dictionary<string, string> args = null, NameValueCollection headers = null,
-            CookieCollection cookies = null)
+        internal Task<string> SendRequestAsync(HttpMethod method, string url, Dictionary<string, string> args = null, NameValueCollection headers = null,
+            CookieCollection cookies = null, CancellationToken cancellationToken = default)
         {
-            byte[] data = Encoding.UTF8.GetBytes(content);
-
-            using (MemoryStream ms = new MemoryStream())
-            {
-                ms.Write(data, 0, data.Length);
-
-                return SendRequest(method, url, ms, contentType, args, headers, cookies);
-            }
+            return SendRequestAsync(method, url, (HttpContent)null, args, headers, cookies, false, cancellationToken);
         }
 
-        internal string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null)
+        protected Task<string> SendRequestAsync(HttpMethod method, string url, Stream data, string contentType = null, Dictionary<string, string> args = null,
+            NameValueCollection headers = null, CookieCollection cookies = null, CancellationToken cancellationToken = default)
+        {
+            HttpContent content = data == null ? null : CreateStreamContent(data, 0, GetStreamLength(data), contentType);
+            return SendRequestAsync(method, url, content, args, headers, cookies, true, cancellationToken);
+        }
+
+        protected Task<string> SendRequestAsync(HttpMethod method, string url, string content, string contentType = null, Dictionary<string, string> args = null,
+            NameValueCollection headers = null, CookieCollection cookies = null, CancellationToken cancellationToken = default)
+        {
+            ByteArrayContent requestContent = new ByteArrayContent(Encoding.UTF8.GetBytes(content ?? ""));
+            SetContentType(requestContent, contentType);
+            return SendRequestAsync(method, url, requestContent, args, headers, cookies, true, cancellationToken);
+        }
+
+        internal Task<string> SendRequestURLEncodedAsync(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null,
+            CookieCollection cookies = null, CancellationToken cancellationToken = default)
         {
             string query = URLHelpers.CreateQueryString(args);
-
-            return SendRequest(method, url, query, RequestHelpers.ContentTypeURLEncoded, null, headers, cookies);
+            return SendRequestAsync(method, url, query, RequestHelpers.ContentTypeURLEncoded, null, headers, cookies, cancellationToken);
         }
 
-        protected bool SendRequestDownload(HttpMethod method, string url, Stream downloadStream, Dictionary<string, string> args = null,
-            NameValueCollection headers = null, CookieCollection cookies = null, string contentType = null)
+        protected async Task<bool> SendRequestDownloadAsync(HttpMethod method, string url, Stream downloadStream, Dictionary<string, string> args = null,
+            NameValueCollection headers = null, CookieCollection cookies = null, string contentType = null, CancellationToken cancellationToken = default)
         {
-            using (HttpWebResponse response = GetResponse(method, url, null, contentType, args, headers, cookies))
+            if (downloadStream == null)
             {
-                if (response != null)
-                {
-                    using (Stream responseStream = response.GetResponseStream())
-                    {
-                        responseStream.CopyStreamTo(downloadStream, BufferSize);
-                    }
-
-                    return true;
-                }
+                throw new ArgumentNullException(nameof(downloadStream));
             }
 
-            return false;
-        }
-
-        protected string SendRequestMultiPart(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
-            HttpMethod method = HttpMethod.POST)
-        {
-            string boundary = RequestHelpers.CreateBoundary();
-            string contentType = RequestHelpers.ContentTypeMultipartFormData + "; boundary=" + boundary;
-            byte[] data = RequestHelpers.MakeInputContent(boundary, args);
-
-            using (MemoryStream stream = new MemoryStream())
-            {
-                stream.Write(data, 0, data.Length);
-
-                using (HttpWebResponse webResponse = GetResponse(method, url, stream, contentType, null, headers, cookies))
-                {
-                    return ProcessWebResponseText(webResponse);
-                }
-            }
-        }
-
-        protected UploadResult SendRequestFile(string url, Stream data, string fileName, string fileFormName, Dictionary<string, string> args = null,
-            NameValueCollection headers = null, CookieCollection cookies = null, HttpMethod method = HttpMethod.POST, string contentType = RequestHelpers.ContentTypeMultipartFormData,
-            string relatedData = null)
-        {
-            UploadResult result = new UploadResult();
-
-            IsUploading = true;
-            StopUploadRequested = false;
+            url = URLHelpers.CreateQueryString(url, args);
+            using HttpRequestMessage request = CreateRequest(method, url, null, contentType, headers, cookies);
+            CancellationToken effectiveToken = GetEffectiveCancellationToken(cancellationToken);
+            bool ownsUploadingState = BeginRequestScope();
 
             try
             {
-                string boundary = RequestHelpers.CreateBoundary();
-                contentType += "; boundary=" + boundary;
+                using CancellationTokenSource timeoutCancellation = CreateTimeoutCancellation(effectiveToken);
+                CancellationToken requestToken = timeoutCancellation?.Token ?? effectiveToken;
+                HttpClient client = HttpClientFactory.Create(AllowAutoRedirect, infiniteTimeout: true);
 
-                byte[] bytesArguments = RequestHelpers.MakeInputContent(boundary, args, false);
-                byte[] bytesDataOpen;
+                using HttpResponseMessage response = await client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, requestToken).ConfigureAwait(false);
 
-                if (relatedData != null)
+                if (!response.IsSuccessStatusCode)
                 {
-                    bytesDataOpen = RequestHelpers.MakeRelatedFileInputContentOpen(boundary, "application/json; charset=UTF-8", relatedData, fileName);
-                }
-                else
-                {
-                    bytesDataOpen = RequestHelpers.MakeFileInputContentOpen(boundary, fileFormName, fileName);
-                }
-
-                byte[] bytesDataClose = RequestHelpers.MakeFileInputContentClose(boundary);
-
-                long contentLength = bytesArguments.Length + bytesDataOpen.Length + data.Length + bytesDataClose.Length;
-
-                HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
-
-                using (Stream requestStream = request.GetRequestStream())
-                {
-                    requestStream.Write(bytesArguments, 0, bytesArguments.Length);
-                    requestStream.Write(bytesDataOpen, 0, bytesDataOpen.Length);
-                    if (!TransferData(data, requestStream)) return null;
-                    requestStream.Write(bytesDataClose, 0, bytesDataClose.Length);
+                    ResponseInfo errorInfo = await CreateResponseInfoAsync(response, true, requestToken).ConfigureAwait(false);
+                    LastResponseInfo = errorInfo;
+                    ProcessError(CreateStatusCodeException(response), url, errorInfo);
+                    return false;
                 }
 
-                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-                {
-                    result.ResponseInfo = ProcessWebResponse(response);
-                    result.Response = result.ResponseInfo?.ResponseText;
-                }
-
-                result.IsSuccess = true;
+                await using Stream responseStream = await response.Content.ReadAsStreamAsync(requestToken).ConfigureAwait(false);
+                await responseStream.CopyToAsync(downloadStream, BufferSize, requestToken).ConfigureAwait(false);
+                LastResponseInfo = await CreateResponseInfoAsync(response, false, requestToken).ConfigureAwait(false);
+                return true;
+            }
+            catch (OperationCanceledException e) when (!effectiveToken.IsCancellationRequested)
+            {
+                ProcessError(CreateTimeoutException(e), url);
+                return false;
+            }
+            catch (OperationCanceledException)
+            {
+                throw;
             }
             catch (Exception e)
             {
-                if (!StopUploadRequested)
-                {
-                    string response = ProcessError(e, url);
-
-                    if (ReturnResponseOnError && e is WebException)
-                    {
-                        result.Response = response;
-                    }
-                }
+                ProcessError(e, url);
+                return false;
             }
             finally
             {
-                currentWebRequest = null;
-                IsUploading = false;
+                EndRequestScope(ownsUploadingState);
+            }
+        }
+
+        protected Task<string> SendRequestMultiPartAsync(string url, Dictionary<string, string> args, NameValueCollection headers = null,
+            CookieCollection cookies = null, HttpMethod method = HttpMethod.POST, CancellationToken cancellationToken = default)
+        {
+            MultipartFormDataContent content = CreateMultipartFormDataContent(args);
+            return SendRequestAsync(method, url, content, null, headers, cookies, true, cancellationToken);
+        }
+
+        protected async Task<UploadResult> SendRequestFileAsync(string url, Stream data, string fileName, string fileFormName,
+            Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null,
+            HttpMethod method = HttpMethod.POST, string contentType = RequestHelpers.ContentTypeMultipartFormData, string relatedData = null,
+            CancellationToken cancellationToken = default)
+        {
+            if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
+            UploadResult result = new UploadResult();
+            using HttpContent content = relatedData == null
+                ? CreateFileMultipartContent(data, fileName, fileFormName, args)
+                : CreateRelatedMultipartContent(data, fileName, relatedData);
+
+            content.Headers.ContentType.MediaType = contentType;
+            ResponseInfo responseInfo = await GetResponseAsync(method, url, content, headers: headers, cookies: cookies,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            result.ResponseInfo = responseInfo ?? LastResponseInfo;
+            result.Response = responseInfo?.ResponseText;
+
+            if (responseInfo != null)
+            {
+                result.IsSuccess = true;
+            }
+            else if (ReturnResponseOnError)
+            {
+                result.Response = LastResponseInfo?.ResponseText;
             }
 
             return result;
         }
 
-        protected UploadResult SendRequestFileRange(string url, Stream data, string fileName, long contentPosition = 0, long contentLength = -1,
-            Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null, HttpMethod method = HttpMethod.PUT)
+        protected async Task<UploadResult> SendRequestFileRangeAsync(string url, Stream data, string fileName, long contentPosition = 0,
+            long contentLength = -1, Dictionary<string, string> args = null, NameValueCollection headers = null,
+            CookieCollection cookies = null, HttpMethod method = HttpMethod.PUT, CancellationToken cancellationToken = default)
         {
-            UploadResult result = new UploadResult();
-
-            IsUploading = true;
-            StopUploadRequested = false;
-
-            try
+            if (data == null)
             {
-                url = URLHelpers.CreateQueryString(url, args);
-
-                if (contentLength == -1)
-                {
-                    contentLength = data.Length;
-                }
-                contentLength = Math.Min(contentLength, data.Length - contentPosition);
-
-                string contentType = MimeTypes.GetMimeTypeFromFileName(fileName);
-
-                if (headers == null)
-                {
-                    headers = new NameValueCollection();
-                }
-                long startByte = contentPosition;
-                long endByte = startByte + contentLength - 1;
-                long dataLength = data.Length;
-                headers.Add("Content-Range", $"bytes {startByte}-{endByte}/{dataLength}");
-
-                HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
-
-                using (Stream requestStream = request.GetRequestStream())
-                {
-                    if (!TransferData(data, requestStream, contentPosition, contentLength))
-                    {
-                        return null;
-                    }
-                }
-
-                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-                {
-                    result.ResponseInfo = ProcessWebResponse(response);
-                    result.Response = result.ResponseInfo?.ResponseText;
-                }
-
-                result.IsSuccess = true;
+                throw new ArgumentNullException(nameof(data));
             }
-            catch (Exception e)
-            {
-                if (!StopUploadRequested)
-                {
-                    string response = ProcessError(e, url);
 
-                    if (ReturnResponseOnError && e is WebException)
-                    {
-                        result.Response = response;
-                    }
-                }
-            }
-            finally
+            long dataLength = GetStreamLength(data);
+
+            if (contentPosition < 0 || contentPosition > dataLength)
             {
-                currentWebRequest = null;
-                IsUploading = false;
+                throw new ArgumentOutOfRangeException(nameof(contentPosition));
+            }
+
+            if (contentLength < 0)
+            {
+                contentLength = dataLength - contentPosition;
+            }
+
+            contentLength = Math.Min(contentLength, dataLength - contentPosition);
+            using HttpContent content = CreateStreamContent(data, contentPosition, contentLength, MimeTypes.GetMimeTypeFromFileName(fileName));
+
+            if (contentLength > 0)
+            {
+                content.Headers.ContentRange = new ContentRangeHeaderValue(contentPosition, contentPosition + contentLength - 1, dataLength);
+            }
+
+            ResponseInfo responseInfo = await GetResponseAsync(method, url, content, args, headers, cookies,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+            UploadResult result = new UploadResult()
+            {
+                IsSuccess = responseInfo != null,
+                ResponseInfo = responseInfo ?? LastResponseInfo,
+                Response = responseInfo?.ResponseText
+            };
+
+            if (responseInfo == null && ReturnResponseOnError)
+            {
+                result.Response = LastResponseInfo?.ResponseText;
             }
 
             return result;
         }
 
-        protected HttpWebResponse GetResponse(HttpMethod method, string url, Stream data = null, string contentType = null, Dictionary<string, string> args = null,
-            NameValueCollection headers = null, CookieCollection cookies = null, bool allowNon2xxResponses = false)
+        protected Task<ResponseInfo> GetResponseAsync(HttpMethod method, string url, Stream data = null, string contentType = null,
+            Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null,
+            bool allowNon2xxResponses = false, CancellationToken cancellationToken = default)
         {
-            IsUploading = true;
-            StopUploadRequested = false;
-
-            try
-            {
-                url = URLHelpers.CreateQueryString(url, args);
-
-                long contentLength = 0;
-
-                if (data != null)
-                {
-                    contentLength = data.Length;
-                }
-
-                HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
-
-                if (contentLength > 0)
-                {
-                    using (Stream requestStream = request.GetRequestStream())
-                    {
-                        if (!TransferData(data, requestStream))
-                        {
-                            return null;
-                        }
-                    }
-                }
-
-                return (HttpWebResponse)request.GetResponse();
-            }
-            catch (WebException we) when (we.Response != null && allowNon2xxResponses)
-            {
-                // if we.Response != null, then the request was successful, but
-                // returned a non-200 status code
-                return we.Response as HttpWebResponse;
-            }
-            catch (Exception e)
-            {
-                if (!StopUploadRequested)
-                {
-                    ProcessError(e, url);
-                }
-            }
-            finally
-            {
-                currentWebRequest = null;
-                IsUploading = false;
-            }
-
-            return null;
+            HttpContent content = data == null ? null : CreateStreamContent(data, 0, GetStreamLength(data), contentType);
+            return GetResponseAsync(method, url, content, args, headers, cookies, allowNon2xxResponses, true, cancellationToken);
         }
 
-        #region Helper methods
-
-        protected bool TransferData(Stream dataStream, Stream requestStream, long dataPosition = 0, long dataLength = -1)
+        protected bool TransferData(Stream dataStream, Stream destinationStream, long dataPosition = 0, long dataLength = -1)
         {
-            if (dataPosition >= dataStream.Length)
+            if (dataStream == null)
+            {
+                throw new ArgumentNullException(nameof(dataStream));
+            }
+
+            if (destinationStream == null)
+            {
+                throw new ArgumentNullException(nameof(destinationStream));
+            }
+
+            long sourceLength = GetStreamLength(dataStream);
+
+            if (dataPosition >= sourceLength)
             {
                 return true;
             }
@@ -372,23 +338,27 @@ namespace ShareX.UploadersLib
                 dataStream.Position = dataPosition;
             }
 
-            if (dataLength == -1)
+            if (dataLength < 0)
             {
-                dataLength = dataStream.Length;
+                dataLength = sourceLength - dataPosition;
             }
-            dataLength = Math.Min(dataLength, dataStream.Length - dataPosition);
 
-            ProgressManager progress = new ProgressManager(dataStream.Length, dataPosition);
-            int length = (int)Math.Min(BufferSize, dataLength);
-            byte[] buffer = new byte[length];
-            int bytesRead;
+            dataLength = Math.Min(dataLength, sourceLength - dataPosition);
+            ProgressManager progress = new ProgressManager(sourceLength, dataPosition);
+            byte[] buffer = new byte[Math.Max(1, (int)Math.Min(BufferSize, dataLength))];
+            long remaining = dataLength;
 
-            long bytesRemaining = dataLength;
-            while (!StopUploadRequested && (bytesRead = dataStream.Read(buffer, 0, length)) > 0)
+            while (!StopUploadRequested && remaining > 0)
             {
-                requestStream.Write(buffer, 0, bytesRead);
-                bytesRemaining -= bytesRead;
-                length = (int)Math.Min(buffer.Length, bytesRemaining);
+                int bytesRead = dataStream.Read(buffer, 0, (int)Math.Min(buffer.Length, remaining));
+
+                if (bytesRead == 0)
+                {
+                    break;
+                }
+
+                destinationStream.Write(buffer, 0, bytesRead);
+                remaining -= bytesRead;
 
                 if (AllowReportProgress && progress.UpdateProgress(bytesRead))
                 {
@@ -396,156 +366,26 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            return !StopUploadRequested;
+            return !StopUploadRequested && remaining == 0;
         }
 
-        private string ProcessError(Exception e, string requestURL)
-        {
-            string responseText = null;
-
-            if (e != null)
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine(Localization.Strings.Uploader_Error_message);
-                sb.AppendLine(e.Message);
-
-                if (!string.IsNullOrEmpty(requestURL))
-                {
-                    sb.AppendLine();
-                    sb.AppendLine(Localization.Strings.Uploader_Request_URL);
-                    sb.AppendLine(requestURL);
-                }
-
-                if (e is WebException webException)
-                {
-                    try
-                    {
-                        using (HttpWebResponse webResponse = (HttpWebResponse)webException.Response)
-                        {
-                            ResponseInfo responseInfo = ProcessWebResponse(webResponse);
-
-                            if (responseInfo != null)
-                            {
-                                responseText = responseInfo.ResponseText;
-
-                                sb.AppendLine();
-                                sb.AppendLine(Localization.Strings.ResponseWindow_Status_code + ":");
-                                sb.AppendLine($"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
-
-                                if (!string.IsNullOrEmpty(requestURL) && !requestURL.Equals(responseInfo.ResponseURL))
-                                {
-                                    sb.AppendLine();
-                                    sb.AppendLine(Localization.Strings.ResponseWindow_Response_URL + ":");
-                                    sb.AppendLine(responseInfo.ResponseURL);
-                                }
-
-                                if (responseInfo.Headers != null)
-                                {
-                                    sb.AppendLine();
-                                    sb.AppendLine(Localization.Strings.ResponseWindow_Headers + ":");
-                                    sb.AppendLine(responseInfo.Headers.ToString().TrimEnd());
-                                }
-
-                                sb.AppendLine();
-                                sb.AppendLine(Localization.Strings.ResponseWindow_Response_text + ":");
-                                sb.AppendLine(responseInfo.ResponseText);
-                            }
-                        }
-                    }
-                    catch (Exception nested)
-                    {
-                        DebugHelper.WriteException(nested, "ProcessError() WebException handler");
-                    }
-                }
-
-                sb.AppendLine();
-                sb.AppendLine(Localization.Strings.Uploader_Stack_trace);
-                sb.Append(e.StackTrace);
-
-                string errorText = sb.ToString();
-
-                if (Errors == null) Errors = new UploaderErrorManager();
-                Errors.Add(errorText);
-
-                DebugHelper.WriteLine("Error:\r\n" + errorText);
-            }
-
-            return responseText;
-        }
-
-        private HttpWebRequest CreateWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null,
-            string contentType = null, long contentLength = 0)
-        {
-            LastResponseInfo = null;
-
-            HttpWebRequest request = RequestHelpers.CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
-            currentWebRequest = request;
-            return request;
-        }
-
-        private ResponseInfo ProcessWebResponse(HttpWebResponse response)
-        {
-            if (response != null)
-            {
-                ResponseInfo responseInfo = new ResponseInfo()
-                {
-                    StatusCode = response.StatusCode,
-                    StatusDescription = response.StatusDescription,
-                    ResponseURL = response.ResponseUri.OriginalString,
-                    Headers = response.Headers
-                };
-
-                using (Stream responseStream = response.GetResponseStream())
-                using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
-                {
-                    responseInfo.ResponseText = reader.ReadToEnd();
-                }
-
-                LastResponseInfo = responseInfo;
-
-                return responseInfo;
-            }
-
-            return null;
-        }
-
-        private string ProcessWebResponseText(HttpWebResponse response)
-        {
-            ResponseInfo responseInfo = ProcessWebResponse(response);
-
-            if (responseInfo != null)
-            {
-                return responseInfo.ResponseText;
-            }
-
-            return null;
-        }
-
-        #endregion Helper methods
-
-        #region OAuth methods
-
-        protected string GetAuthorizationURL(string requestTokenURL, string authorizeURL, OAuthInfo authInfo,
-            Dictionary<string, string> customParameters = null, HttpMethod httpMethod = HttpMethod.GET)
+        protected async Task<string> GetAuthorizationURLAsync(string requestTokenURL, string authorizeURL, OAuthInfo authInfo,
+            Dictionary<string, string> customParameters = null, HttpMethod httpMethod = HttpMethod.GET,
+            CancellationToken cancellationToken = default)
         {
             string url = OAuthManager.GenerateQuery(requestTokenURL, customParameters, httpMethod, authInfo);
-
-            string response = SendRequest(httpMethod, url);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return OAuthManager.GetAuthorizationURL(response, authInfo, authorizeURL);
-            }
-
-            return null;
+            string response = await SendRequestAsync(httpMethod, url, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return string.IsNullOrEmpty(response) ? null : OAuthManager.GetAuthorizationURL(response, authInfo, authorizeURL);
         }
 
-        protected bool GetAccessToken(string accessTokenURL, OAuthInfo authInfo, HttpMethod httpMethod = HttpMethod.GET)
+        protected async Task<bool> GetAccessTokenAsync(string accessTokenURL, OAuthInfo authInfo, HttpMethod httpMethod = HttpMethod.GET,
+            CancellationToken cancellationToken = default)
         {
-            return GetAccessTokenEx(accessTokenURL, authInfo, httpMethod) != null;
+            return await GetAccessTokenExAsync(accessTokenURL, authInfo, httpMethod, cancellationToken).ConfigureAwait(false) != null;
         }
 
-        protected NameValueCollection GetAccessTokenEx(string accessTokenURL, OAuthInfo authInfo, HttpMethod httpMethod = HttpMethod.GET)
+        protected async Task<NameValueCollection> GetAccessTokenExAsync(string accessTokenURL, OAuthInfo authInfo,
+            HttpMethod httpMethod = HttpMethod.GET, CancellationToken cancellationToken = default)
         {
             if (string.IsNullOrEmpty(authInfo.AuthToken) || string.IsNullOrEmpty(authInfo.AuthSecret))
             {
@@ -553,17 +393,344 @@ namespace ShareX.UploadersLib
             }
 
             string url = OAuthManager.GenerateQuery(accessTokenURL, null, httpMethod, authInfo);
-
-            string response = SendRequest(httpMethod, url);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return OAuthManager.ParseAccessTokenResponse(response, authInfo);
-            }
-
-            return null;
+            string response = await SendRequestAsync(httpMethod, url, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return string.IsNullOrEmpty(response) ? null : OAuthManager.ParseAccessTokenResponse(response, authInfo);
         }
 
-        #endregion OAuth methods
+        private async Task<string> SendRequestAsync(HttpMethod method, string url, HttpContent content, Dictionary<string, string> args,
+            NameValueCollection headers, CookieCollection cookies, bool disposeContent, CancellationToken cancellationToken)
+        {
+            ResponseInfo responseInfo = await GetResponseAsync(method, url, content, args, headers, cookies, false, disposeContent,
+                cancellationToken).ConfigureAwait(false);
+            return responseInfo?.ResponseText;
+        }
+
+        private async Task<ResponseInfo> GetResponseAsync(HttpMethod method, string url, HttpContent content,
+            Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null,
+            bool allowNon2xxResponses = false, bool disposeContent = false, CancellationToken cancellationToken = default)
+        {
+            url = URLHelpers.CreateQueryString(url, args);
+            using HttpRequestMessage request = CreateRequest(method, url, content, null, headers, cookies);
+            CancellationToken effectiveToken = GetEffectiveCancellationToken(cancellationToken);
+            bool ownsUploadingState = BeginRequestScope();
+
+            try
+            {
+                using CancellationTokenSource timeoutCancellation = CreateTimeoutCancellation(effectiveToken);
+                CancellationToken requestToken = timeoutCancellation?.Token ?? effectiveToken;
+                HttpClient client = HttpClientFactory.Create(AllowAutoRedirect, infiniteTimeout: true);
+
+                using HttpResponseMessage response = await client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, requestToken).ConfigureAwait(false);
+                ResponseInfo responseInfo = await CreateResponseInfoAsync(response, true, requestToken).ConfigureAwait(false);
+                LastResponseInfo = responseInfo;
+
+                if (!response.IsSuccessStatusCode && !allowNon2xxResponses)
+                {
+                    ProcessError(CreateStatusCodeException(response), url, responseInfo);
+                    return null;
+                }
+
+                return responseInfo;
+            }
+            catch (OperationCanceledException e) when (!effectiveToken.IsCancellationRequested)
+            {
+                ProcessError(CreateTimeoutException(e), url);
+                return null;
+            }
+            catch (OperationCanceledException)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                ProcessError(e, url);
+                return null;
+            }
+            finally
+            {
+                if (disposeContent)
+                {
+                    content?.Dispose();
+                }
+
+                EndRequestScope(ownsUploadingState);
+            }
+        }
+
+        private HttpRequestMessage CreateRequest(HttpMethod method, string url, HttpContent content, string contentType,
+            NameValueCollection headers, CookieCollection cookies)
+        {
+            LastResponseInfo = null;
+
+            if (content == null && (!string.IsNullOrEmpty(contentType) || HasContentHeaders(headers)))
+            {
+                content = new ByteArrayContent(Array.Empty<byte>());
+            }
+
+            if (!string.IsNullOrEmpty(contentType))
+            {
+                SetContentType(content, contentType);
+            }
+
+            HttpRequestMessage request = new HttpRequestMessage(new NetHttpMethod(method.ToString()), url)
+            {
+                Content = content
+            };
+
+            AddHeaders(request, headers);
+            AddCookies(request, headers?["Cookie"], cookies);
+            return request;
+        }
+
+        private HttpContent CreateStreamContent(Stream data, long position, long length, string contentType)
+        {
+            ProgressManager progress = new ProgressManager(GetStreamLength(data), position);
+            ProgressStreamContent content = new ProgressStreamContent(data, position, length, BufferSize, bytesRead =>
+            {
+                if (AllowReportProgress && progress.UpdateProgress(bytesRead))
+                {
+                    OnProgressChanged(progress);
+                }
+            });
+            SetContentType(content, contentType);
+            return content;
+        }
+
+        private MultipartFormDataContent CreateFileMultipartContent(Stream data, string fileName, string fileFormName,
+            Dictionary<string, string> args)
+        {
+            MultipartFormDataContent content = CreateMultipartFormDataContent(args);
+            HttpContent fileContent = CreateStreamContent(data, 0, GetStreamLength(data), MimeTypes.GetMimeTypeFromFileName(fileName));
+            content.Add(fileContent, fileFormName, fileName);
+            return content;
+        }
+
+        private MultipartContent CreateRelatedMultipartContent(Stream data, string fileName, string relatedData)
+        {
+            string boundary = RequestHelpers.CreateBoundary();
+            MultipartContent content = new MultipartContent("related", boundary);
+            ByteArrayContent metadataContent = new ByteArrayContent(Encoding.UTF8.GetBytes(relatedData));
+            metadataContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json; charset=UTF-8");
+            content.Add(metadataContent);
+            content.Add(CreateStreamContent(data, 0, GetStreamLength(data), MimeTypes.GetMimeTypeFromFileName(fileName)));
+            return content;
+        }
+
+        private static MultipartFormDataContent CreateMultipartFormDataContent(Dictionary<string, string> args)
+        {
+            string boundary = RequestHelpers.CreateBoundary();
+            MultipartFormDataContent content = new MultipartFormDataContent(boundary);
+
+            if (args != null)
+            {
+                foreach (KeyValuePair<string, string> argument in args)
+                {
+                    if (!string.IsNullOrEmpty(argument.Key))
+                    {
+                        StringContent valueContent = new StringContent(argument.Value ?? "", Encoding.UTF8);
+                        valueContent.Headers.ContentType = null;
+                        content.Add(valueContent, argument.Key);
+                    }
+                }
+            }
+
+            return content;
+        }
+
+        private static void AddHeaders(HttpRequestMessage request, NameValueCollection headers)
+        {
+            if (headers == null)
+            {
+                return;
+            }
+
+            foreach (string name in headers.AllKeys)
+            {
+                if (string.IsNullOrEmpty(name) || name.Equals("Cookie", StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
+                string[] values = headers.GetValues(name);
+
+                if (!request.Headers.TryAddWithoutValidation(name, values))
+                {
+                    request.Content?.Headers.TryAddWithoutValidation(name, values);
+                }
+            }
+        }
+
+        private static void AddCookies(HttpRequestMessage request, string cookieHeader, CookieCollection cookies)
+        {
+            List<string> values = new List<string>();
+
+            if (!string.IsNullOrWhiteSpace(cookieHeader))
+            {
+                values.Add(cookieHeader);
+            }
+
+            if (cookies != null)
+            {
+                values.AddRange(cookies.Cast<Cookie>().Select(cookie => $"{cookie.Name}={cookie.Value}"));
+            }
+
+            if (values.Count > 0)
+            {
+                request.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", values));
+            }
+        }
+
+        private static bool HasContentHeaders(NameValueCollection headers)
+        {
+            return headers != null && headers.AllKeys.Any(name => name != null && name.StartsWith("Content-", StringComparison.OrdinalIgnoreCase));
+        }
+
+        private static void SetContentType(HttpContent content, string contentType)
+        {
+            if (content != null && !string.IsNullOrWhiteSpace(contentType))
+            {
+                content.Headers.ContentType = MediaTypeHeaderValue.Parse(contentType);
+            }
+        }
+
+        private static async Task<ResponseInfo> CreateResponseInfoAsync(HttpResponseMessage response, bool readResponseText,
+            CancellationToken cancellationToken)
+        {
+            WebHeaderCollection headers = new WebHeaderCollection();
+
+            foreach (KeyValuePair<string, IEnumerable<string>> header in response.Headers.Concat(response.Content.Headers))
+            {
+                headers[header.Key] = string.Join(", ", header.Value);
+            }
+
+            return new ResponseInfo()
+            {
+                StatusCode = response.StatusCode,
+                StatusDescription = response.ReasonPhrase,
+                ResponseURL = response.RequestMessage?.RequestUri?.OriginalString,
+                Headers = headers,
+                ResponseText = readResponseText ? await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false) : null
+            };
+        }
+
+        private string ProcessError(Exception exception, string requestURL, ResponseInfo responseInfo = null)
+        {
+            if (exception == null)
+            {
+                return null;
+            }
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(Localization.Strings.Uploader_Error_message);
+            sb.AppendLine(exception.Message);
+
+            if (!string.IsNullOrEmpty(requestURL))
+            {
+                sb.AppendLine();
+                sb.AppendLine(Localization.Strings.Uploader_Request_URL);
+                sb.AppendLine(requestURL);
+            }
+
+            if (responseInfo != null)
+            {
+                sb.AppendLine();
+                sb.AppendLine(Localization.Strings.ResponseWindow_Status_code + ":");
+                sb.AppendLine($"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
+
+                if (!string.IsNullOrEmpty(responseInfo.ResponseURL) && !string.Equals(requestURL, responseInfo.ResponseURL, StringComparison.Ordinal))
+                {
+                    sb.AppendLine();
+                    sb.AppendLine(Localization.Strings.ResponseWindow_Response_URL + ":");
+                    sb.AppendLine(responseInfo.ResponseURL);
+                }
+
+                if (responseInfo.Headers != null)
+                {
+                    sb.AppendLine();
+                    sb.AppendLine(Localization.Strings.ResponseWindow_Headers + ":");
+                    sb.AppendLine(responseInfo.Headers.ToString().TrimEnd());
+                }
+
+                sb.AppendLine();
+                sb.AppendLine(Localization.Strings.ResponseWindow_Response_text + ":");
+                sb.AppendLine(responseInfo.ResponseText);
+            }
+
+            sb.AppendLine();
+            sb.AppendLine(Localization.Strings.Uploader_Stack_trace);
+            sb.Append(exception.StackTrace);
+
+            string errorText = sb.ToString();
+            Errors ??= new UploaderErrorManager();
+            Errors.Add(errorText);
+            DebugHelper.WriteLine("Error:\r\n" + errorText);
+            return responseInfo?.ResponseText;
+        }
+
+        private static HttpRequestException CreateStatusCodeException(HttpResponseMessage response)
+        {
+            return new HttpRequestException($"Response status code does not indicate success: {(int)response.StatusCode} ({response.ReasonPhrase}).",
+                null, response.StatusCode);
+        }
+
+        private TimeoutException CreateTimeoutException(OperationCanceledException exception)
+        {
+            string message = RequestTimeout == Timeout.InfiniteTimeSpan
+                ? "The HTTP request timed out."
+                : $"The request timed out after {RequestTimeout}.";
+            return new TimeoutException(message, exception);
+        }
+
+        private CancellationToken GetEffectiveCancellationToken(CancellationToken cancellationToken)
+        {
+            return cancellationToken.CanBeCanceled ? cancellationToken : CurrentCancellationToken;
+        }
+
+        private CancellationTokenSource CreateTimeoutCancellation(CancellationToken cancellationToken)
+        {
+            if (RequestTimeout == Timeout.InfiniteTimeSpan)
+            {
+                return null;
+            }
+
+            if (RequestTimeout <= TimeSpan.Zero)
+            {
+                throw new ArgumentOutOfRangeException(nameof(RequestTimeout), "The request timeout must be positive or infinite.");
+            }
+
+            CancellationTokenSource cancellation = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            cancellation.CancelAfter(RequestTimeout);
+            return cancellation;
+        }
+
+        private bool BeginRequestScope()
+        {
+            if (IsUploading)
+            {
+                return false;
+            }
+
+            StopUploadRequested = false;
+            IsUploading = true;
+            return true;
+        }
+
+        private void EndRequestScope(bool ownsUploadingState)
+        {
+            if (ownsUploadingState)
+            {
+                IsUploading = false;
+            }
+        }
+
+        private static long GetStreamLength(Stream stream)
+        {
+            if (!stream.CanSeek)
+            {
+                throw new NotSupportedException("Uploader request streams must be seekable so their content length can be sent without buffering.");
+            }
+
+            return stream.Length;
+        }
     }
 }

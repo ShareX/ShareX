@@ -900,8 +900,11 @@ namespace ShareX
                 {
                     uploader.EarlyURLCopyRequested += url =>
                     {
-                        ClipboardHelpers.CopyText(url);
-                        EarlyURLCopied = true;
+                        threadWorker.Invoke(() =>
+                        {
+                            ClipboardHelpers.CopyText(url);
+                            EarlyURLCopied = true;
+                        });
                     };
                 }
 
@@ -914,7 +917,7 @@ namespace ShareX
 
                 Info.UploadDuration = Stopwatch.StartNew();
 
-                UploadResult result = uploader.Upload(stream, fileName);
+                UploadResult result = uploader.UploadAsync(stream, fileName).GetAwaiter().GetResult();
 
                 Info.UploadDuration.Stop();
 
@@ -980,7 +983,7 @@ namespace ShareX
 
             if (urlShortener != null)
             {
-                return urlShortener.ShortenURL(url);
+                return urlShortener.ShortenURLAsync(url).GetAwaiter().GetResult();
             }
 
             return null;
@@ -1001,7 +1004,7 @@ namespace ShareX
 
                 if (urlSharer != null)
                 {
-                    return urlSharer.ShareURL(url);
+                    return urlSharer.ShareURLAsync(url).GetAwaiter().GetResult();
                 }
             }
 

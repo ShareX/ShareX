@@ -66,7 +66,7 @@ namespace ShareX.UploadersLib.TextUploaders
             Settings = settings;
         }
 
-        public bool Login()
+        public async Task<bool> LoginAsync(CancellationToken cancellationToken = default)
         {
             if (!string.IsNullOrEmpty(Settings.Username) && !string.IsNullOrEmpty(Settings.Password))
             {
@@ -76,7 +76,8 @@ namespace ShareX.UploadersLib.TextUploaders
                 loginArgs.Add("api_user_name", Settings.Username);
                 loginArgs.Add("api_user_password", Settings.Password);
 
-                string loginResponse = SendRequestMultiPart("https://pastebin.com/api/api_login.php", loginArgs);
+                string loginResponse = await SendRequestMultiPartAsync("https://pastebin.com/api/api_login.php", loginArgs,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (!string.IsNullOrEmpty(loginResponse) && !loginResponse.StartsWith("Bad API request"))
                 {
@@ -90,7 +91,7 @@ namespace ShareX.UploadersLib.TextUploaders
             return false;
         }
 
-        public override UploadResult UploadText(string text, string fileName)
+        protected override async Task<UploadResult> UploadTextCoreAsync(string text, string fileName, CancellationToken cancellationToken)
         {
             UploadResult ur = new UploadResult();
 
@@ -113,7 +114,8 @@ namespace ShareX.UploadersLib.TextUploaders
                     args.Add("api_user_key", Settings.UserKey); // this paramater is part of the login system
                 }
 
-                ur.Response = SendRequestMultiPart("https://pastebin.com/api/api_post.php", args);
+                ur.Response = await SendRequestMultiPartAsync("https://pastebin.com/api/api_post.php", args,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 if (URLHelpers.IsValidURL(ur.Response))
                 {
